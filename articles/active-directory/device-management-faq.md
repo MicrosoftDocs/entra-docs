@@ -1,6 +1,6 @@
 ---
-title: Azure Active Directory automatic device registration FAQ | Microsoft Docs
-description: Automatic device registration with Azure Active Directory FAQ.
+title: Azure Active Directory device management FAQ | Microsoft Docs
+description: Azure Active Directory device management FAQ.
 services: active-directory
 documentationcenter: ''
 author: MarkusVi
@@ -12,12 +12,12 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/23/2017
+ms.date: 08/17/2017
 ms.author: markvi
 ms.reviewer: jairoc
 
 ---
-# Azure Active Directory automatic device registration FAQ
+# Azure Active Directory device management FAQ
 
 **Q: I registered the device recently. Why can’t I see the device under my user info in the Azure portal?**
 
