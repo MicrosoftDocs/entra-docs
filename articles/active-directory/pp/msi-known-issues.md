@@ -1,30 +1,26 @@
 ---
-title: FAQs and known issues with Managed Service Identity (MSI) for Azure Active Directory
+title: FAQ and known issues with Managed Service Identity (MSI) for Azure Active Directory
 description: Known issues with Managed Service Identity for Azure Active Directory.
 services: active-directory
 documentationcenter: 
-author: bryanla
+author: BryanLa
 manager: mtillman
 editor: 
-ms.assetid: 2097381a-a7ec-4e3b-b4ff-5d2fb17403b6
 ms.service: active-directory
 ms.devlang: 
 ms.topic: article
 ms.tgt_pltfrm: 
 ms.workload: identity
-ms.date: 12/12/2017
+ms.date: 12/15/2017
 ms.author: bryanla
+ROBOTS: NOINDEX,NOFOLLOW
 ---
 
-# FAQs and known issues with Managed Service Identity (MSI) for Azure Active Directory
+# FAQ and known issues with Managed Service Identity (MSI) for Azure Active Directory
 
-[!INCLUDE[preview-notice](../../includes/active-directory-msi-preview-notice.md)]
+[!INCLUDE[preview-notice](~/includes/active-directory-msi-preview-notice-ua.md)]
 
-## Frequently Asked Questions (FAQs)
-
-### Is there a private preview available, for additional features?
-
-Yes. If you would like to be considered for enrollment in the private preview, [visit our sign-up page](https://aka.ms/azuremsiprivatepreview).
+## Frequently asked questions
 
 ### Does MSI work with Azure Cloud Services?
 
@@ -64,11 +60,11 @@ Where:
 
 When Managed Service Identity is enabled on a VM, the following error is shown when attempting to use the “Automation script” feature for the VM, or its resource group:
 
-![MSI automation script export error](media/msi-known-issues/automation-script-export-error.png)
+![MSI automation script export error](~/articles/active-directory/media/msi-known-issues/automation-script-export-error.png)
 
 The Managed Service Identity VM extension does not currently support the ability to export its schema to a resource group template. As a result, the generated template does not show configuration parameters to enable Managed Service Identity on the resource. These sections can be added manually by following the examples in [Configure a VM Managed Service Identity by using a template](msi-qs-configure-template-windows-vm.md).
 
-When the schema export functionality becomes available for the MSI VM extension, it will be listed in [Exporting Resource Groups that contain VM extensions](../virtual-machines/windows/extensions-export-templates.md#supported-virtual-machine-extensions).
+When the schema export functionality becomes available for the MSI VM extension, it will be listed in [Exporting Resource Groups that contain VM extensions](~/articles/virtual-machines/windows/extensions-export-templates.md#supported-virtual-machine-extensions).
 
 ### Configuration blade does not appear in the Azure portal
 
@@ -99,3 +95,18 @@ Once the VM is started, the tag can be removed by using following command:
 ```azurecli-interactive
 az vm update -n <VM Name> -g <Resource Group> --remove tags.fixVM
 ```
+
+## Known issues with User Assigned MSI *(Private Preview Feature)*
+
+- The only way to remove all user assigned MSIs is by enabling the system assigned MSI. 
+- Provisioning of the VM extension to a VM might fail due to DNS lookup failures. Restart the VM, and try again. 
+- Azure CLI: `Az resource show` and `Az resource list` will fail on a VM with a user assigned MSI. As a workaround, please use `az vm/vmss show`
+- Azure Storage tutorial is only available in Central US EUAP at the moment. 
+- When a User Assigned MSI is granted access to a resource, the IAM blade for that resource shows "Unable to access data." As a workaround, use the CLI to view/edit role assignments for that resource.
+- Creating a user assigned MSI with an underscore in the name, is not supported.
+- When adding a second user assigned identity, the clientID might not be available to requests tokens for it. As a mitigation, restart the MSI VM extension with the following two bash commands:
+ - `sudo bash -c "/var/lib/waagent/Microsoft.ManagedIdentity.ManagedIdentityExtensionForLinux-1.0.0.8/msi-extension-handler disable"`
+ - `sudo bash -c "/var/lib/waagent/Microsoft.ManagedIdentity.ManagedIdentityExtensionForLinux-1.0.0.8/msi-extension-handler enable"`
+- The VMAgent on Windows does not currently support User Assigned MSI. 
+- Assigning a role to an MSI to access a resource currently doesn't require special permissions. 
+- When a VM has a user assigned MSI but no system assigned MSI, the portal UI will show MSI as enabled. To enable the system assigned MSI, use an Azure Resource Manager template, an Azure CLI, or an SDK.
