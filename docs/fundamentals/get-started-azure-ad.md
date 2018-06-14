@@ -29,7 +29,7 @@ Azure AD includes a full suite of identity management capabilities including the
 The rest of this article tells you how to get started with Azure AD. 
 
 ## Sign up for Azure Active Directory Premium
-To [get started with Azure Active Directory (Azure AD) Premium](active-directory-get-started-premium.md), you can purchase licenses and associate them with your Azure subscription. If you create a new Azure subscription, you will also need to activate your licensing plan and Azure AD service access. 
+To [get started with Azure Active Directory (Azure AD) Premium](../active-directory-get-started-premium.md), you can purchase licenses and associate them with your Azure subscription. If you create a new Azure subscription, you will also need to activate your licensing plan and Azure AD service access. 
 
 To sign up for Active Directory Premium, you have several options: 
 
@@ -77,7 +77,7 @@ You can use group-based license assignment to set up rules such as in the follow
 Review assigned and available licenses under **Azure Active Directory** > **Licenses** > **All products**.
 
 ## Configure self-service password reset
-[Self-service password reset (SSPR)](authentication/quickstart-sspr.md) offers a simple means for IT administrators to enable users to reset or unlock their passwords or accounts. The system includes detailed reporting to track when users use the system along with notifications to alert you to misuse or abuse.
+[Self-service password reset (SSPR)](../authentication/quickstart-sspr.md) offers a simple means for IT administrators to enable users to reset or unlock their passwords or accounts. The system includes detailed reporting to track when users use the system along with notifications to alert you to misuse or abuse.
 
 ### Verification step
 Review enabled SSPR properties under **Azure Active Directory** > **Password reset** to ensure the proper user and group assignments have been made. 

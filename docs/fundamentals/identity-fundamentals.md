@@ -39,7 +39,7 @@ Watch this short video for a quick overview of Azure AD identity management and 
 
 Microsoft not only provides an identity that takes you everywhere, but also a set of tools to automate, help secure, and manage IT within your organization. Even after the advent of cloud computing, there is still demand to manage and control IT tasks like helpdesk calls to reset user passwords, user group management, and application requests. Complicating things further, employees are now bringing their personal devices to work and using readily available SaaS applications, which makes maintaining control over their applications across corporate datacenters and public cloud platforms a significant challenge.
 
-[!INCLUDE [identity](../../includes/azure-ad-licenses.md)]
+[!INCLUDE [identity](../../../includes/azure-ad-licenses.md)]
 
 ## Connect on-premises Active Directory with Azure AD and Office 365
 Organizations that have made large investments in on-premises Active Directory can extend those investments to the cloud by integrating their on-premises directories with Azure AD into [hybrid identity management](https://docs.microsoft.com/azure/active-directory/active-directory-hybrid-identity-design-considerations-overview). Doing so makes your users more productive by providing a common identity for accessing resources regardless of location. Users and organizations can then use single sign-on (SSO) to access both on-premises resources and cloud services such as Office 365.
