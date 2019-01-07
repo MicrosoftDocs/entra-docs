@@ -1,29 +1,29 @@
 ---
-title: 'Tutorial: Azure Active Directory integration with Trello | Microsoft Docs'
-description: Learn how to configure single sign-on between Azure Active Directory and Trello.
+title: 'Tutorial: Azure Active Directory integration with Pavaso Digital Close | Microsoft Docs'
+description: Learn how to configure single sign-on between Azure Active Directory and Pavaso Digital Close.
 services: active-directory
 documentationCenter: na
 author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 
-ms.assetid: cd5ae365-9ed6-43a6-920b-f7814b993949
+ms.assetid: 23d83f82-39c3-4fc2-88c9-f8074cc44d43
 ms.service: Azure-Active-Directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 01/02/2019
+ms.date: 01/03/2019
 ms.author: jeedes
 
 ---
-# Tutorial: Azure Active Directory integration with Trello
+# Tutorial: Azure Active Directory integration with Pavaso Digital Close
 
-In this tutorial, you learn how to integrate Trello with Azure Active Directory (Azure AD).
-Integrating Trello with Azure AD provides you with the following benefits:
+In this tutorial, you learn how to integrate Pavaso Digital Close with Azure Active Directory (Azure AD).
+Integrating Pavaso Digital Close with Azure AD provides you with the following benefits:
 
-* You can control in Azure AD who has access to Trello.
-* You can enable your users to be automatically signed-in to Trello (Single Sign-On) with their Azure AD accounts.
+* You can control in Azure AD who has access to Pavaso Digital Close.
+* You can enable your users to be automatically signed-in to Pavaso Digital Close (Single Sign-On) with their Azure AD accounts.
 * You can manage your accounts in one central location - the Azure portal.
 
 If you want to know more details about SaaS app integration with Azure AD, see [What is application access and single sign-on with Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
@@ -31,24 +31,22 @@ If you don't have an Azure subscription, [create a free account](https://azure.m
 
 ## Prerequisites
 
-To configure Azure AD integration with Trello, you need the following items:
+To configure Azure AD integration with Pavaso Digital Close, you need the following items:
 
 * An Azure AD subscription. If you don't have an Azure AD environment, you can get one-month trial [here](https://azure.microsoft.com/pricing/free-trial/)
-* Trello single sign-on enabled subscription
+* Pavaso Digital Close single sign-on enabled subscription
 
 ## Scenario description
 
 In this tutorial, you configure and test Azure AD single sign-on in a test environment.
 
-* Trello supports **SP and IDP** initiated SSO
+* Pavaso Digital Close supports **SP and IDP** initiated SSO
 
-* Trello supports **Just In Time** user provisioning
+## Adding Pavaso Digital Close from the gallery
 
-## Adding Trello from the gallery
+To configure the integration of Pavaso Digital Close into Azure AD, you need to add Pavaso Digital Close from the gallery to your list of managed SaaS apps.
 
-To configure the integration of Trello into Azure AD, you need to add Trello from the gallery to your list of managed SaaS apps.
-
-**To add Trello from the gallery, perform the following steps:**
+**To add Pavaso Digital Close from the gallery, perform the following steps:**
 
 1. In the **[Azure portal](https://portal.azure.com)**, on the left navigation panel, click **Azure Active Directory** icon.
 
@@ -62,9 +60,9 @@ To configure the integration of Trello into Azure AD, you need to add Trello fro
 
 	![The New application button](common/add-new-app.png)
 
-4. In the search box, type **Trello**, select **Trello** from result panel then click **Add** button to add the application.
+4. In the search box, type **Pavaso Digital Close**, select **Pavaso Digital Close** from result panel then click **Add** button to add the application.
 
-	 ![Trello in the results list](common/search-new-app.png)
+	 ![Pavaso Digital Close in the results list](common/search-new-app.png)
 
 ## Configure and test Azure AD single sign-on
 
@@ -74,22 +72,19 @@ For single sign-on to work, a link relationship between an Azure AD user and the
 To configure and test Azure AD single sign-on with [Application name], you need to complete the following building blocks:
 
 1. **[Configure Azure AD Single Sign-On](#configure-azure-ad-single-sign-on)** - to enable your users to use this feature.
-2. **[Configure Trello Single Sign-On](#configure-trello-single-sign-on)** - to configure the Single Sign-On settings on application side.
+2. **[Configure Pavaso Digital Close Single Sign-On](#configure-pavaso-digital-close-single-sign-on)** - to configure the Single Sign-On settings on application side.
 3. **[Create an Azure AD test user](#create-an-azure-ad-test-user)** - to test Azure AD single sign-on with Britta Simon.
 4. **[Assign the Azure AD test user](#assign-the-azure-ad-test-user)** - to enable Britta Simon to use Azure AD single sign-on.
-5. **[Create Trello test user](#create-trello-test-user)** - to have a counterpart of Britta Simon in Trello that is linked to the Azure AD representation of user.
+5. **[Create Pavaso Digital Close test user](#create-pavaso-digital-close-test-user)** - to have a counterpart of Britta Simon in Pavaso Digital Close that is linked to the Azure AD representation of user.
 6. **[Test single sign-on](#test-single-sign-on)** - to verify whether the configuration works.
 
 ### Configure Azure AD single sign-on
 
 In this section, you enable Azure AD single sign-on in the Azure portal.
 
-> [!NOTE]
-> You should get the **\<enterprise\>** slug from Trello. If you don't have the slug value, contact [Trello support team](mailto:support@trello.com) to get the slug for you enterprise.
-
 To configure Azure AD single sign-on with [Application name], perform the following steps:
 
-1. In the [Azure portal](https://portal.azure.com/), on the **Trello** application integration page, select **Single sign-on**.
+1. In the [Azure portal](https://portal.azure.com/), on the **Pavaso Digital Close** application integration page, select **Single sign-on**.
 
     ![Configure single sign-on link](common/select-sso.png)
 
@@ -103,59 +98,29 @@ To configure Azure AD single sign-on with [Application name], perform the follow
 
 4. On the **Basic SAML Configuration** section, If you wish to configure the application in **IDP** initiated mode, perform the following steps:
 
-    ![Trello Domain and URLs single sign-on information](common/idp-intiated.png)
+    ![Pavaso Digital Close Domain and URLs single sign-on information](common/idp-intiated.png)
 
     a. In the **Identifier** text box, type a URL using the following pattern:
-    `https://trello.com/auth/saml/metadata`
+    `https://<SUBDOMAIN>.pavaso.com/AuthServices`
 
     b. In the **Reply URL** text box, type a URL using the following pattern:
-    `https://trello.com/auth/saml/consume/<enterprise>`
+    `https://<SUBDOMAIN>.pavaso.com/AuthServices/Acs`
 
 5. Click **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
 
-    ![Trello Domain and URLs single sign-on information](common/metadata-upload-additional-signon.png)
+    In the **Sign-on URL** text box, type a URL using the following pattern:
+    `https://<SUBDOMAIN>.pavaso.com`.
 
-	In the **Sign-on URL** text box, type a URL using the following pattern:
-    `https://trello.com/auth/saml/login/<enterprise>`
+    ![Pavaso Digital Close Domain and URLs single sign-on information](common/metadata-upload-additional-signon.png)
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign-on URL. Contact [Trello Client support team](mailto:support@trello.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Azure portal.
+	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign-on URL. Contact [Pavaso Digital Close Client support team](mailto:support@pavaso.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Azure portal.
 
-6. Trello application expects the SAML assertions in a specific format. Configure the following claims for this application. You can manage the values of these attributes from the **User Attributes** section on application integration page. On the **Set up Single Sign-On with SAML** page, click **Edit** button to open **User Attributes** dialog.
+6. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
 
-	![image](common/edit-attribute.png)
+	![The Certificate download link](common/metadataxml.png)
 
-7. In the **User Claims** section on the **User Attributes** dialog, configure SAML token attribute as shown in the image above and perform the following steps:
-
-	| Name |  Source Attribute|
-    | --- | --- |
-	| User.Email | user.mail |
-	| User.FirstName | user.givenname |
-	| User.LastName | user.surname |
-
-	a. Click **Add new claim** to open the **Manage user claims** dialog.
-
-	![image](common/new-save-attribute.png)
-
-	![image](common/new-attribute-details.png)
-
-	b. In the **Name** textbox, type the attribute name shown for that row.
-
-	c. Leave the **Namespace** blank.
-
-	d. Select Source as **Attribute**.
-
-	e. From the **Source attribute** list, type the attribute value shown for that row.
-
-	f. Click **Ok**
-
-	g. Click **Save**.
-
-8. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Certificate (Base64)** from the given options as per your requirement and save it on your computer.
-
-	![The Certificate download link](common/certificatebase64.png)
-
-9. On the **Set up Trello** section, copy the appropriate URL(s) as per your requirement.
+7. On the **Set up Pavaso Digital Close** section, copy the appropriate URL(s) as per your requirement.
 
 	![Copy configuration URLs](common/copy-configuration-urls.png)
 
@@ -165,11 +130,11 @@ To configure Azure AD single sign-on with [Application name], perform the follow
 
 	c. Logout URL
 
-### Configure Trello Single Sign-On
+### Configure Pavaso Digital Close single sign-on
 
-To configure single sign-on on **Trello** side, you need to send the downloaded **Certificate (Base64)** and appropriate copied URLs from Azure portal to [Trello support team](mailto:support@trello.com). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **Pavaso Digital Close** side, you need to send the downloaded **Federation Metadata XML** and appropriate copied URLs from Azure portal to [Pavaso Digital Close support team](mailto:support@pavaso.com). They set this setting to have the SAML SSO connection set properly on both sides.
 
-### Create an Azure AD test user 
+### Create an Azure AD test user
 
 The objective of this section is to create a test user in the Azure portal called Britta Simon.
 
@@ -196,15 +161,15 @@ The objective of this section is to create a test user in the Azure portal calle
 
 ### Assign the Azure AD test user
 
-In this section, you enable Britta Simon to use Azure single sign-on by granting access to Trello.
+In this section, you enable Britta Simon to use Azure single sign-on by granting access to Pavaso Digital Close.
 
-1. In the Azure portal, select **Enterprise Applications**, select **All applications**, then select **Trello**.
+1. In the Azure portal, select **Enterprise Applications**, select **All applications**, then select **Pavaso Digital Close**.
 
 	![Enterprise applications blade](common/enterprise-applications.png)
 
-2. In the applications list, select **Trello**.
+2. In the applications list, select **Pavaso Digital Close**.
 
-	![The Trello link in the Applications list](common/all-applications.png)
+	![The Pavaso Digital Close link in the Applications list](common/all-applications.png)
 
 3. In the menu on the left, select **Users and groups**.
 
@@ -220,24 +185,20 @@ In this section, you enable Britta Simon to use Azure single sign-on by granting
 
 7. In the **Add Assignment** dialog click the **Assign** button.
 
-### Create Trello test user
+### Create Pavaso Digital Close test user
 
-In this section, a user called Britta Simon is created in Trello. Trello supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in Trello, a new one is created after authentication.
-
-> [!Note]
-> If you need to create a user manually, Contact [Trello support team](mailto:support@trello.com).
+In this section, you create a user called Britta Simon in Pavaso Digital Close. Work with [Pavaso Digital Close support team](mailto:support@pavaso.com) to add the users in the Pavaso Digital Close platform. Users must be created and activated before you use single sign-on.
 
 ### Test single sign-on 
 
 In this section, you test your Azure AD single sign-on configuration using the Access Panel.
 
-When you click the Trello tile in the Access Panel, you should be automatically signed in to the Trello for which you set up SSO. For more information about the Access Panel, see [Introduction to the Access Panel](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
+When you click the Pavaso Digital Close tile in the Access Panel, you should be automatically signed in to the Pavaso Digital Close for which you set up SSO. For more information about the Access Panel, see [Introduction to the Access Panel](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
 
-## Additional Resources
+## Additional resources
 
 - [ List of Tutorials on How to Integrate SaaS Apps with Azure Active Directory ](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
 - [What is application access and single sign-on with Azure Active Directory? ](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [What is conditional access in Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
-
