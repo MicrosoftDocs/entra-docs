@@ -1,29 +1,29 @@
 ---
-title: 'Tutorial: Azure Active Directory integration with Expiration Reminder | Microsoft Docs'
-description: Learn how to configure single sign-on between Azure Active Directory and Expiration Reminder.
+title: 'Tutorial: Azure Active Directory integration with iDiD Manager | Microsoft Docs'
+description: Learn how to configure single sign-on between Azure Active Directory and iDiD Manager.
 services: active-directory
 documentationCenter: na
 author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 
-ms.assetid: 3df3d73e-80a4-4b35-bd3d-90bc4f6f6afd
+ms.assetid: 5d2a0c25-168e-4842-b83b-74f8f50a8624
 ms.service: Azure-Active-Directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 01/17/2019
+ms.date: 1/11/2019
 ms.author: jeedes
 
 ---
-# Tutorial: Azure Active Directory integration with Expiration Reminder
+# Tutorial: Azure Active Directory integration with iDiD Manager
 
-In this tutorial, you learn how to integrate Expiration Reminder with Azure Active Directory (Azure AD).
-Integrating Expiration Reminder with Azure AD provides you with the following benefits:
+In this tutorial, you learn how to integrate iDiD Manager with Azure Active Directory (Azure AD).
+Integrating iDiD Manager with Azure AD provides you with the following benefits:
 
-* You can control in Azure AD who has access to Expiration Reminder.
-* You can enable your users to be automatically signed-in to Expiration Reminder (Single Sign-On) with their Azure AD accounts.
+* You can control in Azure AD who has access to iDiD Manager.
+* You can enable your users to be automatically signed-in to iDiD Manager (Single Sign-On) with their Azure AD accounts.
 * You can manage your accounts in one central location - the Azure portal.
 
 If you want to know more details about SaaS app integration with Azure AD, see [What is application access and single sign-on with Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
@@ -31,22 +31,22 @@ If you don't have an Azure subscription, [create a free account](https://azure.m
 
 ## Prerequisites
 
-To configure Azure AD integration with Expiration Reminder, you need the following items:
+To configure Azure AD integration with iDiD Manager, you need the following items:
 
 * An Azure AD subscription. If you don't have an Azure AD environment, you can get one-month trial [here](https://azure.microsoft.com/pricing/free-trial/)
-* Expiration Reminder single sign-on enabled subscription
+* iDiD Manager single sign-on enabled subscription
 
 ## Scenario description
 
 In this tutorial, you configure and test Azure AD single sign-on in a test environment.
 
-* Expiration Reminder supports **SP** initiated SSO
+* iDiD Manager supports **SP and IDP** initiated SSO
 
-## Adding Expiration Reminder from the gallery
+## Adding iDiD Manager from the gallery
 
-To configure the integration of Expiration Reminder into Azure AD, you need to add Expiration Reminder from the gallery to your list of managed SaaS apps.
+To configure the integration of iDiD Manager into Azure AD, you need to add iDiD Manager from the gallery to your list of managed SaaS apps.
 
-**To add Expiration Reminder from the gallery, perform the following steps:**
+**To add iDiD Manager from the gallery, perform the following steps:**
 
 1. In the **[Azure portal](https://portal.azure.com)**, on the left navigation panel, click **Azure Active Directory** icon.
 
@@ -60,31 +60,31 @@ To configure the integration of Expiration Reminder into Azure AD, you need to a
 
 	![The New application button](common/add-new-app.png)
 
-4. In the search box, type **Expiration Reminder**, select **Expiration Reminder** from result panel then click **Add** button to add the application.
+4. In the search box, type **iDiD Manager**, select **iDiD Manager** from result panel then click **Add** button to add the application.
 
-	 ![Expiration Reminder in the results list](common/search-new-app.png)
+	 ![iDiD Manager in the results list](common/search-new-app.png)
 
 ## Configure and test Azure AD single sign-on
 
-In this section, you configure and test Azure AD single sign-on with Expiration Reminder based on a test user called **Britta Simon**.
-For single sign-on to work, a link relationship between an Azure AD user and the related user in Expiration Reminder needs to be established.
+In this section, you configure and test Azure AD single sign-on with [Application name] based on a test user called **Britta Simon**.
+For single sign-on to work, a link relationship between an Azure AD user and the related user in [Application name] needs to be established.
 
-To configure and test Azure AD single sign-on with Expiration Reminder, you need to complete the following building blocks:
+To configure and test Azure AD single sign-on with [Application name], you need to complete the following building blocks:
 
 1. **[Configure Azure AD Single Sign-On](#configure-azure-ad-single-sign-on)** - to enable your users to use this feature.
-2. **[Configure Expiration Reminder Single Sign-On](#configure-expiration-reminder-single-sign-on)** - to configure the Single Sign-On settings on application side.
+2. **[Configure iDiD Manager Single Sign-On](#configure-idid-manager-single-sign-on)** - to configure the Single Sign-On settings on application side.
 3. **[Create an Azure AD test user](#create-an-azure-ad-test-user)** - to test Azure AD single sign-on with Britta Simon.
 4. **[Assign the Azure AD test user](#assign-the-azure-ad-test-user)** - to enable Britta Simon to use Azure AD single sign-on.
-5. **[Create Expiration Reminder test user](#create-expiration-reminder-test-user)** - to have a counterpart of Britta Simon in Expiration Reminder that is linked to the Azure AD representation of user.
+5. **[Create iDiD Manager test user](#create-idid-manager-test-user)** - to have a counterpart of Britta Simon in iDiD Manager that is linked to the Azure AD representation of user.
 6. **[Test single sign-on](#test-single-sign-on)** - to verify whether the configuration works.
 
 ### Configure Azure AD single sign-on
 
 In this section, you enable Azure AD single sign-on in the Azure portal.
 
-To configure Azure AD single sign-on with Expiration Reminder, perform the following steps:
+To configure Azure AD single sign-on with [Application name], perform the following steps:
 
-1. In the [Azure portal](https://portal.azure.com/), on the **Expiration Reminder** application integration page, select **Single sign-on**.
+1. In the [Azure portal](https://portal.azure.com/), on the **iDiD Manager** application integration page, select **Single sign-on**.
 
     ![Configure single sign-on link](common/select-sso.png)
 
@@ -96,32 +96,27 @@ To configure Azure AD single sign-on with Expiration Reminder, perform the follo
 
 	![Edit Basic SAML Configuration](common/edit-urls.png)
 
-4. On the **Basic SAML Configuration** section, perform the following steps:
+4. On the **Basic SAML Configuration** section, perform the following steps if you wish to configure the application in **SP** initiated mode:
 
-    ![Expiration Reminder Domain and URLs single sign-on information](common/sp-signonurl.png)
+    ![iDiD Manager Domain and URLs single sign-on information](common/both-preintegrated-signon.png)
 
-    In the **Sign-on URL** text box, type a URL:
-    `https://app.expirationreminder.net/account/sso`
+    a. Click **Set additional URLs**.
 
-5. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Certificate (Raw)** from the given options as per your requirement and save it on your computer.
+    b. In the **Sign-on URL** text box, type a URL using the following pattern:
+    `https://idid2.fi/saml/login/<domain>`
 
-	![The Certificate download link](common/certificateraw.png)
+    > [!NOTE]
+	> The value is not real. Update the value with the actual Sign-on URL. Contact [iDiD Manager Client support team](mailto:support@idid.fi) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Azure portal.
 
-6. On the **Set up Expiration Reminder** section, copy the appropriate URL(s) as per your requirement.
+5. On the **Set up Single Sign-On with SAML** page, In the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
 
-	![Copy configuration URLs](common/copy-configuration-urls.png)
+	![The Certificate download link](common/copy-metadataurl.png)
 
-	a. Login URL
+### Configure iDiD Manager Single Sign-On
 
-	b. Azure Ad Identifier
+To configure single sign-on on **iDiD Manager** side, you need to send the **App Federation Metadata Url** to [iDiD Manager support team](mailto:support@idid.fi). They set this setting to have the SAML SSO connection set properly on both sides.
 
-	c. Logout URL
-
-### Configure Expiration Reminder Single Sign-On
-
-To configure single sign-on on **Expiration Reminder** side, you need to send the downloaded **Certificate (Raw)** and appropriate copied URLs from Azure portal to [Expiration Reminder support team](mailto:support@expirationreminder.net). They set this setting to have the SAML SSO connection set properly on both sides.
-
-### Create an Azure AD test user
+### Create an Azure AD test user 
 
 The objective of this section is to create a test user in the Azure portal called Britta Simon.
 
@@ -148,15 +143,15 @@ The objective of this section is to create a test user in the Azure portal calle
 
 ### Assign the Azure AD test user
 
-In this section, you enable Britta Simon to use Azure single sign-on by granting access to Expiration Reminder.
+In this section, you enable Britta Simon to use Azure single sign-on by granting access to iDiD Manager.
 
-1. In the Azure portal, select **Enterprise Applications**, select **All applications**, then select **Expiration Reminder**.
+1. In the Azure portal, select **Enterprise Applications**, select **All applications**, then select **iDiD Manager**.
 
 	![Enterprise applications blade](common/enterprise-applications.png)
 
-2. In the applications list, type and select **Expiration Reminder**.
+2. In the applications list, select **iDiD Manager**.
 
-	![The Expiration Reminder link in the Applications list](common/all-applications.png)
+	![The iDiD Manager link in the Applications list](common/all-applications.png)
 
 3. In the menu on the left, select **Users and groups**.
 
@@ -172,15 +167,15 @@ In this section, you enable Britta Simon to use Azure single sign-on by granting
 
 7. In the **Add Assignment** dialog click the **Assign** button.
 
-### Create Expiration Reminder test user
+### Create iDiD Manager test user
 
-In this section, you create a user called Britta Simon in Expiration Reminder. Work with [Expiration Reminder support team](mailto:support@expirationreminder.net) to add the users in the Expiration Reminder platform. Users must be created and activated before you use single sign-on.
+In this section, you create a user called Britta Simon in iDiD Manager. Work with [iDiD Manager support team](mailto:support@idid.fi) to add the users in the iDiD Manager platform. Users must be created and activated before you use single sign-on.
 
-### Test single sign-on
+### Test single sign-on 
 
 In this section, you test your Azure AD single sign-on configuration using the Access Panel.
 
-When you click the Expiration Reminder tile in the Access Panel, you should be automatically signed in to the Expiration Reminder for which you set up SSO. For more information about the Access Panel, see [Introduction to the Access Panel](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
+When you click the iDiD Manager tile in the Access Panel, you should be automatically signed in to the iDiD Manager for which you set up SSO. For more information about the Access Panel, see [Introduction to the Access Panel](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
 
 ## Additional Resources
 
