@@ -1,30 +1,29 @@
 ---
-title: 'Tutorial: Azure Active Directory integration with join.me | Microsoft Docs'
-description: Learn how to configure single sign-on between Azure Active Directory and join.me.
+title: 'Tutorial: Azure Active Directory integration with Explanation-Based Auditing System | Microsoft Docs'
+description: Learn how to configure single sign-on between Azure Active Directory and Explanation-Based Auditing System.
 services: active-directory
 documentationCenter: na
 author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 
-ms.assetid: cda5ea0d-3270-4ba5-ad81-4df108eaad12
+ms.assetid: 419744c2-3b71-4953-9434-99b632a10854
 ms.service: Azure-Active-Directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 02/25/2019
+ms.date: 02/27/2019
 ms.author: jeedes
 
-ms.collection: M365-identity-device-management
 ---
-# Tutorial: Azure Active Directory integration with join.me
+# Tutorial: Azure Active Directory integration with Explanation-Based Auditing System
 
-In this tutorial, you learn how to integrate join.me with Azure Active Directory (Azure AD).
-Integrating join.me with Azure AD provides you with the following benefits:
+In this tutorial, you learn how to integrate Explanation-Based Auditing System with Azure Active Directory (Azure AD).
+Integrating Explanation-Based Auditing System with Azure AD provides you with the following benefits:
 
-* You can control in Azure AD who has access to join.me.
-* You can enable your users to be automatically signed-in to join.me (Single Sign-On) with their Azure AD accounts.
+* You can control in Azure AD who has access to Explanation-Based Auditing System.
+* You can enable your users to be automatically signed-in to Explanation-Based Auditing System (Single Sign-On) with their Azure AD accounts.
 * You can manage your accounts in one central location - the Azure portal.
 
 If you want to know more details about SaaS app integration with Azure AD, see [What is application access and single sign-on with Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
@@ -32,22 +31,24 @@ If you don't have an Azure subscription, [create a free account](https://azure.m
 
 ## Prerequisites
 
-To configure Azure AD integration with join.me, you need the following items:
+To configure Azure AD integration with Explanation-Based Auditing System, you need the following items:
 
 * An Azure AD subscription. If you don't have an Azure AD environment, you can get one-month trial [here](https://azure.microsoft.com/pricing/free-trial/)
-* join.me single sign-on enabled subscription
+* Explanation-Based Auditing System single sign-on enabled subscription
 
 ## Scenario description
 
 In this tutorial, you configure and test Azure AD single sign-on in a test environment.
 
-* join.me supports **IDP** initiated SSO
+* Explanation-Based Auditing System supports **SP** initiated SSO
 
-## Adding join.me from the gallery
+* Explanation-Based Auditing System supports **just-in-time** user Provisioning 
 
-To configure the integration of join.me into Azure AD, you need to add join.me from the gallery to your list of managed SaaS apps.
+## Adding Explanation-Based Auditing System from the gallery
 
-**To add join.me from the gallery, perform the following steps:**
+To configure the integration of Explanation-Based Auditing System into Azure AD, you need to add Explanation-Based Auditing System from the gallery to your list of managed SaaS apps.
+
+**To add Explanation-Based Auditing System from the gallery, perform the following steps:**
 
 1. In the **[Azure portal](https://portal.azure.com)**, on the left navigation panel, click **Azure Active Directory** icon.
 
@@ -61,31 +62,31 @@ To configure the integration of join.me into Azure AD, you need to add join.me f
 
 	![The New application button](common/add-new-app.png)
 
-4. In the search box, type **join.me**, select **join.me** from result panel then click **Add** button to add the application.
+4. In the search box, type **Explanation-Based Auditing System**, select **Explanation-Based Auditing System** from result panel then click **Add** button to add the application.
 
-	 ![join.me in the results list](common/search-new-app.png)
+	 ![Explanation-Based Auditing System in the results list](common/search-new-app.png)
 
 ## Configure and test Azure AD single sign-on
 
-In this section, you configure and test Azure AD single sign-on with join.me based on a test user called **Britta Simon**.
-For single sign-on to work, a link relationship between an Azure AD user and the related user in join.me needs to be established.
+In this section, you configure and test Azure AD single sign-on with Explanation-Based Auditing System based on a test user called **Britta Simon**.
+For single sign-on to work, a link relationship between an Azure AD user and the related user in Explanation-Based Auditing System needs to be established.
 
-To configure and test Azure AD single sign-on with join.me, you need to complete the following building blocks:
+To configure and test Azure AD single sign-on with Explanation-Based Auditing System, you need to complete the following building blocks:
 
 1. **[Configure Azure AD Single Sign-On](#configure-azure-ad-single-sign-on)** - to enable your users to use this feature.
-2. **[Configure join.me Single Sign-On](#configure-joinme-single-sign-on)** - to configure the Single Sign-On settings on application side.
+2. **[Configure Explanation-Based Auditing System Single Sign-On](#configure-explanation-based-auditing-system-single-sign-on)** - to configure the Single Sign-On settings on application side.
 3. **[Create an Azure AD test user](#create-an-azure-ad-test-user)** - to test Azure AD single sign-on with Britta Simon.
 4. **[Assign the Azure AD test user](#assign-the-azure-ad-test-user)** - to enable Britta Simon to use Azure AD single sign-on.
-5. **[Create join.me test user](#create-joinme-test-user)** - to have a counterpart of Britta Simon in join.me that is linked to the Azure AD representation of user.
+5. **[Create Explanation-Based Auditing System test user](#create-explanation-based-auditing-system-test-user)** - to have a counterpart of Britta Simon in Explanation-Based Auditing System that is linked to the Azure AD representation of user.
 6. **[Test single sign-on](#test-single-sign-on)** - to verify whether the configuration works.
 
 ### Configure Azure AD single sign-on
 
 In this section, you enable Azure AD single sign-on in the Azure portal.
 
-To configure Azure AD single sign-on with join.me, perform the following steps:
+To configure Azure AD single sign-on with Explanation-Based Auditing System, perform the following steps:
 
-1. In the [Azure portal](https://portal.azure.com/), on the **join.me** application integration page, select **Single sign-on**.
+1. In the [Azure portal](https://portal.azure.com/), on the **Explanation-Based Auditing System** application integration page, select **Single sign-on**.
 
     ![Configure single sign-on link](common/select-sso.png)
 
@@ -97,19 +98,22 @@ To configure Azure AD single sign-on with join.me, perform the following steps:
 
 	![Edit Basic SAML Configuration](common/edit-urls.png)
 
-4. On the **Basic SAML Configuration** section, the user does not have to perform any step as the app is already pre-integrated with Azure.
+4. On the **Basic SAML Configuration** section, perform the following steps:
 
-    ![join.me Domain and URLs single sign-on information](common/preintegrated.png)
+    ![Explanation-Based Auditing System Domain and URLs single sign-on information](common/sp-signonurl.png)
+
+    In the **Sign-on URL** text box, type a URL:
+    `https://ebas.maizeanalytics.com`
 
 5. On the **Set up Single Sign-On with SAML** page, In the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
 
 	![The Certificate download link](common/copy-metadataurl.png)
 
-### Configure join.me Single Sign-On
+### Configure Explanation-Based Auditing System Single Sign-On
 
-To configure single sign-on on **join.me** side, you need to send the **App Federation Metadata Url** to [join.me support team](https://help.join.me/s/?language). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **Explanation-Based Auditing System** side, you need to send the **App Federation Metadata Url** to [Explanation-Based Auditing System support team](mailto:support@maizeanalytics.com). They set this setting to have the SAML SSO connection set properly on both sides.
 
-### Create an Azure AD test user
+### Create an Azure AD test user 
 
 The objective of this section is to create a test user in the Azure portal called Britta Simon.
 
@@ -136,15 +140,15 @@ The objective of this section is to create a test user in the Azure portal calle
 
 ### Assign the Azure AD test user
 
-In this section, you enable Britta Simon to use Azure single sign-on by granting access to join.me.
+In this section, you enable Britta Simon to use Azure single sign-on by granting access to Explanation-Based Auditing System.
 
-1. In the Azure portal, select **Enterprise Applications**, select **All applications**, then select **join.me**.
+1. In the Azure portal, select **Enterprise Applications**, select **All applications**, then select **Explanation-Based Auditing System**.
 
 	![Enterprise applications blade](common/enterprise-applications.png)
 
-2. In the applications list, select **join.me**.
+2. In the applications list, select **Explanation-Based Auditing System**.
 
-	![The join.me link in the Applications list](common/all-applications.png)
+	![The Explanation-Based Auditing System link in the Applications list](common/all-applications.png)
 
 3. In the menu on the left, select **Users and groups**.
 
@@ -160,15 +164,15 @@ In this section, you enable Britta Simon to use Azure single sign-on by granting
 
 7. In the **Add Assignment** dialog click the **Assign** button.
 
-### Create join.me test user
+### Create Explanation-Based Auditing System test user
 
-In this section, you create a user called Britta Simon in join.me. Work with [join.me support team](https://help.join.me/s/?language) to add the users in the join.me platform. Users must be created and activated before you use single sign-on.
+In this section, a user called Britta Simon is created in Explanation-Based Auditing System. Explanation-Based Auditing System supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in Explanation-Based Auditing System, a new one is created after authentication.
 
-### Test single sign-on
+### Test single sign-on 
 
 In this section, you test your Azure AD single sign-on configuration using the Access Panel.
 
-When you click the join.me tile in the Access Panel, you should be automatically signed in to the join.me for which you set up SSO. For more information about the Access Panel, see [Introduction to the Access Panel](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
+When you click the Explanation-Based Auditing System tile in the Access Panel, you should be automatically signed in to the Explanation-Based Auditing System for which you set up SSO. For more information about the Access Panel, see [Introduction to the Access Panel](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
 
 ## Additional Resources
 
