@@ -1,30 +1,30 @@
 ---
-title: 'Tutorial: Azure Active Directory integration with Qualtrics | Microsoft Docs'
-description: Learn how to configure single sign-on between Azure Active Directory and Qualtrics.
+title: 'Tutorial: Azure Active Directory integration with Shibumi | Microsoft Docs'
+description: Learn how to configure single sign-on between Azure Active Directory and Shibumi.
 services: active-directory
 documentationCenter: na
 author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 
-ms.assetid: 4df889ab-2685-4d15-a163-1ba26567eeda
+ms.assetid: 4644612b-025f-4c71-9482-341cc570d7d1
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 03/27/2019
+ms.date: 03/26/2019
 ms.author: jeedes
 
 ---
-# Tutorial: Azure Active Directory integration with Qualtrics
+# Tutorial: Azure Active Directory integration with Shibumi
 
-In this tutorial, you learn how to integrate Qualtrics with Azure Active Directory (Azure AD).
-Integrating Qualtrics with Azure AD provides you with the following benefits:
+In this tutorial, you learn how to integrate Shibumi with Azure Active Directory (Azure AD).
+Integrating Shibumi with Azure AD provides you with the following benefits:
 
-* You can control in Azure AD who has access to Qualtrics.
-* You can enable your users to be automatically signed-in to Qualtrics (Single Sign-On) with their Azure AD accounts.
+* You can control in Azure AD who has access to Shibumi.
+* You can enable your users to be automatically signed-in to Shibumi (Single Sign-On) with their Azure AD accounts.
 * You can manage your accounts in one central location - the Azure portal.
 
 If you want to know more details about SaaS app integration with Azure AD, see [What is application access and single sign-on with Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
@@ -32,24 +32,24 @@ If you don't have an Azure subscription, [create a free account](https://azure.m
 
 ## Prerequisites
 
-To configure Azure AD integration with Qualtrics, you need the following items:
+To configure Azure AD integration with Shibumi, you need the following items:
 
 * An Azure AD subscription. If you don't have an Azure AD environment, you can get one-month trial [here](https://azure.microsoft.com/pricing/free-trial/)
-* Qualtrics single sign-on enabled subscription
+* Shibumi single sign-on enabled subscription
 
 ## Scenario description
 
 In this tutorial, you configure and test Azure AD single sign-on in a test environment.
 
-* Qualtrics supports **SP** initiated SSO
+* Shibumi supports **SP** and **IDP** initiated SSO
 
-* Qualtrics supports **Just In Time** user provisioning
+* Shibumi supports **Just-In-Time** user provisioning
 
-## Adding Qualtrics from the gallery
+## Adding Shibumi from the gallery
 
-To configure the integration of Qualtrics into Azure AD, you need to add Qualtrics from the gallery to your list of managed SaaS apps.
+To configure the integration of Shibumi into Azure AD, you need to add Shibumi from the gallery to your list of managed SaaS apps.
 
-**To add Qualtrics from the gallery, perform the following steps:**
+**To add Shibumi from the gallery, perform the following steps:**
 
 1. In the **[Azure portal](https://portal.azure.com)**, on the left navigation panel, click **Azure Active Directory** icon.
 
@@ -63,31 +63,31 @@ To configure the integration of Qualtrics into Azure AD, you need to add Qualtri
 
 	![The New application button](common/add-new-app.png)
 
-4. In the search box, type **Qualtrics**, select **Qualtrics** from result panel then click **Add** button to add the application.
+4. In the search box, type **Shibumi**, select **Shibumi** from result panel then click **Add** button to add the application.
 
-	 ![Qualtrics in the results list](common/search-new-app.png)
+	 ![Shibumi in the results list](common/search-new-app.png)
 
 ## Configure and test Azure AD single sign-on
 
-In this section, you configure and test Azure AD single sign-on with Qualtrics based on a test user called **Britta Simon**.
-For single sign-on to work, a link relationship between an Azure AD user and the related user in Qualtrics needs to be established.
+In this section, you configure and test Azure AD single sign-on with Shibumi based on a test user called **Britta Simon**.
+For single sign-on to work, a link relationship between an Azure AD user and the related user in Shibumi needs to be established.
 
-To configure and test Azure AD single sign-on with Qualtrics, you need to complete the following building blocks:
+To configure and test Azure AD single sign-on with Shibumi, you need to complete the following building blocks:
 
 1. **[Configure Azure AD Single Sign-On](#configure-azure-ad-single-sign-on)** - to enable your users to use this feature.
-2. **[Configure Qualtrics Single Sign-On](#configure-qualtrics-single-sign-on)** - to configure the Single Sign-On settings on application side.
+2. **[Configure Shibumi Single Sign-On](#configure-shibumi-single-sign-on)** - to configure the Single Sign-On settings on application side.
 3. **[Create an Azure AD test user](#create-an-azure-ad-test-user)** - to test Azure AD single sign-on with Britta Simon.
 4. **[Assign the Azure AD test user](#assign-the-azure-ad-test-user)** - to enable Britta Simon to use Azure AD single sign-on.
-5. **[Create Qualtrics test user](#create-qualtrics-test-user)** - to have a counterpart of Britta Simon in Qualtrics that is linked to the Azure AD representation of user.
+5. **[Create Shibumi test user](#create-shibumi-test-user)** - to have a counterpart of Britta Simon in Shibumi that is linked to the Azure AD representation of user.
 6. **[Test single sign-on](#test-single-sign-on)** - to verify whether the configuration works.
 
 ### Configure Azure AD single sign-on
 
 In this section, you enable Azure AD single sign-on in the Azure portal.
 
-To configure Azure AD single sign-on with Qualtrics, perform the following steps:
+To configure Azure AD single sign-on with Shibumi, perform the following steps:
 
-1. In the [Azure portal](https://portal.azure.com/), on the **Qualtrics** application integration page, select **Single sign-on**.
+1. In the [Azure portal](https://portal.azure.com/), on the **Shibumi** application integration page, select **Single sign-on**.
 
     ![Configure single sign-on link](common/select-sso.png)
 
@@ -99,29 +99,31 @@ To configure Azure AD single sign-on with Qualtrics, perform the following steps
 
 	![Edit Basic SAML Configuration](common/edit-urls.png)
 
-4. On the **Basic SAML Configuration** section, perform the following steps:
+4. On the **Basic SAML Configuration** section, if you wish to configure the application in **IDP** initiated mode, perform the following steps:
 
-    ![Qualtrics Domain and URLs single sign-on information](common/sp-identifier.png)
+    ![Shibumi Domain and URLs single sign-on information](common/idp-intiated.png)
 
-	a. In the **Sign on URL** text box, type a URL using the following pattern:
-    `https://<companyname>.qualtrics.com`
+    a. In the **Identifier** text box, type a URL using the following pattern:
+    `https://<SUBDOMAIN>.shibumi.com`
 
-    b. In the **Identifier (Entity ID)** text box, type a URL using the following pattern:
+    b. In the **Reply URL** text box, type a URL using the following pattern:
+    `https://<SUBDOMAIN>.shibumi.com/saml/SSO`
 
-    | |
-	|--|
-	| `https://<companyname>.qualtrics.com/WRSAML/simplesaml/www/module.php/saml/sp/metadata.php/default-sp`|
-	| `https://<companyname>.co1.qualtrics.com/WRSAML/simplesaml/www/module.php/saml/sp/metadata.php/default-sp`|
-	| |
+5. Click **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
+
+    ![Shibumi Domain and URLs single sign-on information](common/metadata-upload-additional-signon.png)
+
+    In the **Sign-on URL** text box, type a URL using the following pattern:
+    `https://<SUBDOMAIN>.shibumi.com/saml/SSO`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Sign on URL and Identifier. Contact [Qualtrics Client support team](https://www.qualtrics.com/support/) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Azure portal.
+	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign-on URL. Contact [Shibumi Client support team](mailto:support@shibumi.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Azure portal.
 
-5. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
+6. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
 
 	![The Certificate download link](common/metadataxml.png)
 
-6. On the **Set up Qualtrics** section, copy the appropriate URL(s) as per your requirement.
+7. On the **Set up Shibumi** section, copy the appropriate URL(s) as per your requirement.
 
 	![Copy configuration URLs](common/copy-configuration-urls.png)
 
@@ -131,9 +133,9 @@ To configure Azure AD single sign-on with Qualtrics, perform the following steps
 
 	c. Logout URL
 
-### Configure Qualtrics Single Sign-On
+### Configure Shibumi Single Sign-On
 
-To configure single sign-on on **Qualtrics** side, you need to send the downloaded **Federation Metadata XML** and appropriate copied URLs from Azure portal to [Qualtrics support team](https://www.qualtrics.com/support/). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **Shibumi** side, you need to send the downloaded **Federation Metadata XML** and appropriate copied URLs from Azure portal to [Shibumi support team](mailto:support@shibumi.com). They set this setting to have the SAML SSO connection set properly on both sides.
 
 ### Create an Azure AD test user 
 
@@ -161,15 +163,15 @@ The objective of this section is to create a test user in the Azure portal calle
 
 ### Assign the Azure AD test user
 
-In this section, you enable Britta Simon to use Azure single sign-on by granting access to Qualtrics.
+In this section, you enable Britta Simon to use Azure single sign-on by granting access to Shibumi.
 
-1. In the Azure portal, select **Enterprise Applications**, select **All applications**, then select **Qualtrics**.
+1. In the Azure portal, select **Enterprise Applications**, select **All applications**, then select **Shibumi**.
 
 	![Enterprise applications blade](common/enterprise-applications.png)
 
-2. In the applications list, select **Qualtrics**.
+2. In the applications list, select **Shibumi**.
 
-	![The Qualtrics link in the Applications list](common/all-applications.png)
+	![The Shibumi link in the Applications list](common/all-applications.png)
 
 3. In the menu on the left, select **Users and groups**.
 
@@ -185,15 +187,15 @@ In this section, you enable Britta Simon to use Azure single sign-on by granting
 
 7. In the **Add Assignment** dialog click the **Assign** button.
 
-### Create Qualtrics test user
+### Create Shibumi test user
 
-In this section, a user called Britta Simon is created in Qualtrics. Qualtrics supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in Qualtrics, a new one is created after authentication.
+In this section, a user called Britta Simon is created in Shibumi. Shibumi supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in Shibumi, a new one is created after authentication.
 
 ### Test single sign-on 
 
 In this section, you test your Azure AD single sign-on configuration using the Access Panel.
 
-When you click the Qualtrics tile in the Access Panel, you should be automatically signed in to the Qualtrics for which you set up SSO. For more information about the Access Panel, see [Introduction to the Access Panel](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
+When you click the Shibumi tile in the Access Panel, you should be automatically signed in to the Shibumi for which you set up SSO. For more information about the Access Panel, see [Introduction to the Access Panel](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
 
 ## Additional Resources
 
