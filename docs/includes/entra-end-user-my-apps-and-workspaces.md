@@ -5,7 +5,7 @@ services: active-directory
 author: eross-msft
 ms.service: active-directory
 ms.topic: include
-ms.date: 03/06/2019
+ms.date: 09/10/2019
 ms.author: lizross
 ms.custom: include file
 ---
