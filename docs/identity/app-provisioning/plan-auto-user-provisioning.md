@@ -80,7 +80,7 @@ The Azure AD provisioning service provisions users to SaaS apps and other system
 
 In this example, users and or groups are created in an HR database connected to an on-premises directory. The Azure AD provisioning service manages automatic user provisioning to the target SaaS applications.
 
- ![user provisioning](media/auto-user-provision-dp/hybridprovisioning.png)
+ ![user provisioning](./media/plan-auto-user-provisioning/hybridprovisioning.png)
 
 **Description of workflow:**
 
@@ -96,7 +96,7 @@ In this example, users and or groups are created in an HR database connected to 
 
 In this example, user creation occurs in Azure AD and the  Azure AD provisioning service manages automatic user provisioning to the target (SaaS) applications.
 
-![Picture 2](media/auto-user-provision-dp/cloudprovisioning.png)
+![Picture 2](./media/plan-auto-user-provisioning/cloudprovisioning.png)
 
 **Description of workflow:**
 
@@ -110,7 +110,7 @@ In this example, user creation occurs in Azure AD and the  Azure AD provisioning
 
 In this example, the users and or groups are created in a cloud HR application like such as Workday and SuccessFactors. The Azure AD provisioning service and Azure AD Connect provisioning agent provisions the user data from the cloud HR app tenant into AD. Once the accounts are updated in AD, it is synced with Azure AD through Azure AD Connect, and the email addresses and username attributes can be written back to the cloud HR app tenant.
 
-![Picture 2](media/auto-user-provision-dp/workdayprovisioning.png)
+![Picture 2](./media/plan-auto-user-provisioning/workdayprovisioning.png)
 
 1.	**HR team** performs the transactions in the cloud HR app tenant.
 2.	**Azure AD provisioning service** runs the scheduled cycles from the cloud HR app tenant and identifies changes that need to be processed for sync with AD.
@@ -168,7 +168,7 @@ Setting up automatic user provisioning is a per-application process. For each ap
 
 The image below shows one version of the required admin credentials:
 
-![Provisioning screen to manage user account provisioning settings](media/auto-user-provision-dp/userprovisioning-admincredentials.png)
+![Provisioning screen to manage user account provisioning settings](./media/plan-auto-user-provisioning/userprovisioning-admincredentials.png)
 
 While some applications require the admin username and password, others may require a bearer token.
 
@@ -194,15 +194,15 @@ For each application, document the following information:
 
 Before implementing automatic user provisioning, you must determine the users and groups to be provisioned to your application.
 
-* Use [scoping filters](define-conditional-rules-for-provisioning-user-accounts.md) to define attribute-based rules that determine which users are provisioned to an application.
+* Use [scoping filters](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md) to define attribute-based rules that determine which users are provisioned to an application.
 
-* Next, use [user and group assignments](assign-user-or-group-access-portal.md) as needed for additional filtering.
+* Next, use [user and group assignments](../manage-apps/assign-user-or-group-access-portal.md) as needed for additional filtering.
 
 ### Define user and group attribute mapping
 
 To implement automatic user provisioning, you need to define the user and group attributes that are needed for the application. There's a pre-configured set of attributes and [attribute-mappings](../app-provisioning/configure-automatic-user-provisioning-portal.md) between Azure AD user objects, and each SaaS application’s user objects. Not all SaaS apps enable group attributes.
 
-Azure AD supports by direct attribute-to-attribute mapping, providing constant values, or [writing expressions for attribute mappings](functions-for-customizing-application-data.md). This flexibility gives you fine control of what will be populated in the targeted system's attribute. You can use [Microsoft Graph API](export-import-provisioning-configuration.md) and Graph Explorer to export your user provisioning attribute mappings and schema to a JSON file and import it back into Azure AD.
+Azure AD supports by direct attribute-to-attribute mapping, providing constant values, or [writing expressions for attribute mappings](../app-provisioning/functions-for-customizing-application-data.md). This flexibility gives you fine control of what will be populated in the targeted system's attribute. You can use [Microsoft Graph API](../app-provisioning/export-import-provisioning-configuration.md) and Graph Explorer to export your user provisioning attribute mappings and schema to a JSON file and import it back into Azure AD.
 
 For more information, see [Customizing User Provisioning Attribute-Mappings for SaaS Applications in Azure Active Directory](../app-provisioning/customize-application-attributes.md).
 
@@ -307,7 +307,7 @@ Refer to the following links to troubleshoot any issues that may turn up during 
 
 ### Helpful documentation
 
-* [Writing expressions for attribute mappings](functions-for-customizing-application-data.md)
+* [Writing expressions for attribute mappings](../app-provisioning/functions-for-customizing-application-data.md)
 
 * [Azure AD synchronization API overview](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/synchronization-overview)
 
@@ -326,6 +326,6 @@ Refer to the following links to troubleshoot any issues that may turn up during 
 ## Next steps
 * [Configure Automatic User Provisioning](../app-provisioning/configure-automatic-user-provisioning-portal.md)
 
-* [Export or import your provisioning configuration by using Microsoft Graph API](export-import-provisioning-configuration.md)
+* [Export or import your provisioning configuration by using Microsoft Graph API](../app-provisioning/export-import-provisioning-configuration.md)
 
-* [Writing expressions for attribute mappings in Azure Active directory](functions-for-customizing-application-data.md)
+* [Writing expressions for attribute mappings in Azure Active directory](../app-provisioning/functions-for-customizing-application-data.md)

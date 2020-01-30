@@ -26,7 +26,7 @@ A scoping filter allows the Azure Active Directory (Azure AD) provisioning servi
 
 Scoping filters can be used differently depending on the type of provisioning connector:
 
-* **Outbound provisioning from Azure AD to SaaS applications**. When Azure AD is the source system, [user and group assignments](assign-user-or-group-access-portal.md) are the most common method for determining which users are in scope for provisioning. These assignments also are used for enabling single sign-on and provide a single method to manage access and provisioning. Scoping filters can be used optionally, in addition to assignments or instead of them, to filter users based on attribute values.
+* **Outbound provisioning from Azure AD to SaaS applications**. When Azure AD is the source system, [user and group assignments](../manage-apps/assign-user-or-group-access-portal.md) are the most common method for determining which users are in scope for provisioning. These assignments also are used for enabling single sign-on and provide a single method to manage access and provisioning. Scoping filters can be used optionally, in addition to assignments or instead of them, to filter users based on attribute values.
 
     >[!TIP]
     > You can disable provisioning based on assignments for an enterprise application by changing settings in the [Scope](../app-provisioning/user-provisioning.md#how-do-i-set-up-automatic-provisioning-to-an-application) menu under the provisioning settings to **Sync all users and groups**. Using this option plus attribute-based scoping filters offers faster performance than using group-based assignments.  
@@ -47,7 +47,7 @@ Each user or group processed by the Azure AD provisioning service is always eval
 
 As an example, consider the following scoping filter:
 
-![Scoping filter](media/define-conditional-rules-for-provisioning-user-accounts/scoping-filter.PNG) 
+![Scoping filter](./media/define-conditional-rules-for-provisioning-user-accounts/scoping-filter.PNG) 
 
 According to this scoping filter, users must satisfy the following criteria to be provisioned:
 
@@ -109,7 +109,7 @@ Scoping filters are configured as part of the attribute mappings for each Azure 
 13. Select **Save** on the **Attribute Mapping** screen. 
 
 >[!IMPORTANT] 
-> Saving a new scoping filter triggers a new full sync for the application, where all users in the source system are evaluated again against the new scoping filter. If a user in the application was previously in scope for provisioning, but falls out of scope, their account is disabled or deprovisioned in the application. To override this default behavior, refer to [Skip deletion for user accounts that go out of scope](skip-out-of-scope-deletions.md).
+> Saving a new scoping filter triggers a new full sync for the application, where all users in the source system are evaluated again against the new scoping filter. If a user in the application was previously in scope for provisioning, but falls out of scope, their account is disabled or deprovisioned in the application. To override this default behavior, refer to [Skip deletion for user accounts that go out of scope](../app-provisioning/skip-out-of-scope-deletions.md).
 
 
 ## Common scoping filters
