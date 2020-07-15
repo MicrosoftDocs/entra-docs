@@ -12,10 +12,13 @@ ms.devlang: na
 ms.topic: include
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 10/04/2018
+ms.date: 04/12/2019
 ms.author: celested
-ms.custom: include file
+ms.custom: include file 
+
 ---
 
-> [!NOTE]
-> This article is part of the [Microsoft identity platform (Azure Active Directory for developers) documentation](../articles/active-directory/develop/index.yml).
+|   |
+|---|
+| **Applies to:**<br><ul><li>Microsoft identity platform endpoint</ul> |
+|   |
