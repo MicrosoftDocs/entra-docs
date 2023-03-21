@@ -6,10 +6,10 @@ author: rwike77
 manager: CelesteDG
 
 ms.service: active-directory
-ms.subservice: develop
+ms.subservice: workload-identities
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 02/17/2023
+ms.date: 03/07/2023
 ms.author: ryanwi
 ms.reviewer: shkhalid, udayh, cbrooks
 ms.custom: aaddev, references_regions
@@ -85,7 +85,7 @@ Creating multiple federated identity credentials under the same user-assigned ma
 
 When you use automation or Azure Resource Manager templates (ARM templates) to create federated identity credentials under the same parent identity, create the federated credentials sequentially. Federated identity credentials under different managed identities can be created in parallel without any restrictions.
 
-If federated identity credentials are provisioned in a loop, you can [provision them serially](/azure/azure-resource-manager/templates/copy-resources#serial-or-parallel) by setting *"mode": "serial"*.
+If federated identity credentials are provisioned in a loop, you can [provision them serially](../../azure-resource-manager/templates/copy-resources.md#serial-or-parallel) by setting *"mode": "serial"*.
 
 You can also provision multiple new federated identity credentials sequentially using the *dependsOn* property. The following Azure Resource Manager template (ARM template) example creates three new federated identity credentials sequentially on a user-assigned managed identity by using the *dependsOn* property:
 
@@ -180,9 +180,9 @@ It's possible to use a deny [Azure Policy](../../governance/policy/overview.md) 
 
 ## Throttling limits
 
-*Applies to: user-assigned managed identities (public preview)*  
+*Applies to: user-assigned managed identities*  
 
-The following table describes limits on requests to the user-assigned managed identities REST APIS.  If you exceed a throttling limit, you receive an HTTP 429 error.
+The following table describes limits on requests to the user-assigned managed identities (public preview) REST APIS.  If you exceed a throttling limit, you receive an HTTP 429 error.
 
 | Operation         | Requests-per-second per Azure AD tenant    | Requests-per-second per subscription    | Requests-per-second per resource    |
 |-------------------|----------------|----------------|----------------|
@@ -193,7 +193,7 @@ The following table describes limits on requests to the user-assigned managed id
 
 ## Errors
 
-*Applies to: applications and user-assigned managed identities (public preview)*
+*Applies to: applications and user-assigned managed identities*
 
 The following error codes may be returned when creating, updating, getting, listing, or deleting federated identity credentials.
 
