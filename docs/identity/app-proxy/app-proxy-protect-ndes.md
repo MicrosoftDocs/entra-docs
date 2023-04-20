@@ -8,7 +8,7 @@ ms.service: active-directory
 ms.subservice: app-proxy
 ms.workload: identity
 ms.topic: how-to
-ms.date: 03/14/2023
+ms.date: 04/19/2023
 ms.author: kenwith
 ---
 
@@ -32,7 +32,7 @@ Azure AD Application Proxy is built on Azure. It gives you a massive amount of n
 1. Under **Manage**, select **Application proxy**.
 1. Select **Download connector service**.
 
-    ![Download connector service to see the Terms of Service](./media/active-directory-app-proxy-protect-ndes/application-proxy-download-connector-service.png)
+    ![Download connector service to see the Terms of Service](./media/app-proxy-protect-ndes/application-proxy-download-connector-service.png)
 
 1. Read the Terms of Service. When you're ready, select **Accept terms & Download**.
 1. Copy the Azure AD Application Proxy connector setup file to your NDES server. 
@@ -51,7 +51,7 @@ Azure AD Application Proxy is built on Azure. It gives you a massive amount of n
 1. At the end of the setup, a note is shown for environments with an outbound proxy. To configure the Azure AD Application Proxy connector to work through the outbound proxy, run the provided script, such as `C:\Program Files\Microsoft AAD App Proxy connector\ConfigureOutBoundProxy.ps1`.
 1. On the Application proxy page in the Azure portal, the new connector is listed with a status of *Active*, as shown in the following example:
 
-    ![The new Azure AD Application Proxy connector shown as active in the Azure portal](./media/active-directory-app-proxy-protect-ndes/connected-app-proxy.png)
+    ![The new Azure AD Application Proxy connector shown as active in the Azure portal](./media/app-proxy-protect-ndes/connected-app-proxy.png)
 
     > [!NOTE]
     > To provide high availability for applications authenticating through the Azure AD Application Proxy, you can install connectors on multiple VMs. Repeat the same steps listed in the previous section to install the connector on other servers joined to the Azure AD DS managed domain.
@@ -60,7 +60,7 @@ Azure AD Application Proxy is built on Azure. It gives you a massive amount of n
 
 1. Select **Enterprise applications**.
 
-   ![ensure that you're engaging the right stakeholders](./media/active-directory-app-proxy-protect-ndes/azure-active-directory-enterprise-applications.png)
+   ![ensure that you're engaging the right stakeholders](./media/app-proxy-protect-ndes/enterprise-applications.png)
 
 1. Select **+New Application**, and then select **On-premises application**. 
 
@@ -68,23 +68,18 @@ Azure AD Application Proxy is built on Azure. It gives you a massive amount of n
 
    * **Name**: Enter a name for the application.
    * **Internal Url**: Enter the internal URL/FQDN of your NDES server on which you installed the connector.
-   * **Pre Authentication**: Select **Passthrough**. It’s not possible to use any form of pre-authentication. The protocol used for Certificate Requests (SCEP) doesn't provide such option.
+   * **Pre Authentication**: Select **Passthrough**. It’s not possible to use any form of pre authentication. The protocol used for Certificate Requests (SCEP) doesn't provide such option.
    * Copy the provided **External URL** to your clipboard.
 
 1. Select **+Add** to save your application.
 
 1. Test whether you can access your NDES server via the Azure AD Application proxy by pasting the link you copied in step 15 into a browser. You should see a default IIS welcome page.
-
 1. As a final test, add the *mscep.dll* path to the existing URL you pasted in the previous step:
-
-  `https://scep-test93635307549127448334.msappproxy.net/certsrv/mscep/mscep.dll`
-
+    `https://scep-test93635307549127448334.msappproxy.net/certsrv/mscep/mscep.dll`
 1. You should see an **HTTP Error 403 – Forbidden** response.
-
 1. Change the NDES URL provided (via Microsoft Intune) to devices. This change could either be in Microsoft Configuration Manager or the Microsoft Intune admin center.
-
-   * For Configuration Manager, go to the certificate registration point and adjust the URL. This URL is what devices call out to and present their challenge.
-   * For Intune standalone, either edit or create a new SCEP policy and add the new URL.
+    - For Configuration Manager, go to the certificate registration point and adjust the URL. This URL is what devices call out to and present their challenge.
+    - For Intune standalone, either edit or create a new SCEP policy and add the new URL.
 
 ## Next steps
 
