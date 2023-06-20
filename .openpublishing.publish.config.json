@@ -16,8 +16,6 @@
     }
   ],
   "notification_subscribers": [
-    "celested@microsoft.com",
-    " joflore@microsoft.com"
   ],
   "sync_notification_subscribers": [],
   "branches_to_filter": [],
@@ -28,7 +26,19 @@
       "url": "https://github.com/Microsoft/templates.docs.msft",
       "branch": "main",
       "branch_mapping": {}
-    }
+    },
+	  {
+      "path_to_root": "microsoft-graph",
+      "url": "https://github.com/MicrosoftGraph/microsoft-graph-docs",
+      "branch": "main",
+      "branch_mapping": {}
+    },
+    {
+      "path_to_root": "articles/reusable-content",
+      "url": "https://github.com/MicrosoftDocs/reusable-content",
+      "branch": "main",
+      "branch_mapping": {}
+    }    
   ],
   "branch_target_mapping": {}
 }
