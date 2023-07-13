@@ -113,44 +113,44 @@ Finally, you'll need to agree on the deprovisioning behavior.  When the connecto
 If you do not already have a directory server, and wish to try out this feature, then [Prepare Active Directory Lightweight Directory Services for provisioning from Azure AD](../articles/active-directory/app-provisioning/on-premises-ldap-connector-prepare-directory.md) shows how to create a test AD LDS environment.   If you already have  another directory server deployed, you can skip that article, and continue installing and configuring the ECMA connector host.
 
 
-## Download, install, and configure the Azure AD Connect Provisioning Agent Package
+## Install and configure the Azure AD Connect Provisioning Agent
 
 If you have already downloaded the provisioning agent and configured it for another on-premises application, then continue reading in the next section.
-
-  1.  In the Azure portal, select **Azure Active Directory**.
-  2.  On the left, select **Azure AD Connect**.
-  3.  On the left, select **Cloud sync**.
+ 1. Sign in to the Azure portal.
+ 2. Go to **Enterprise applications** and select **New application**.
+ 3. Search for the **On-premises ECMA app** application, give the app a name, and select **Create** to add it to your tenant.
+ 4. From the menu, navigate to the **Provisioning** page of your application.
+ 5. Select **Get started**.
+ 6. On the **Provisioning** page, change the mode to **Automatic**.
  
- :::image type="content" source="media/active-directory-cloud-sync-how-to-install/new-ux-1.png" alt-text="Screenshot of new UX screen." lightbox="media/active-directory-cloud-sync-how-to-install/new-ux-1.png":::
+ :::image type="content" source="media/app-provisioning-sql/configure-7.png" alt-text="Screenshot of selecting Automatic." lightbox="media/app-provisioning-sql/configure-7.png":::
 
- 4. On the left, select **Agent**.
- 5. Select **Download on-premises agent**, and select **Accept terms & download**.
+ 7. Under **On-premises Connectivity**, select **Download and install**, and select **Accept terms & download**.
+ 
+ :::image type="content" source="media/app-provisioning-sql/download-1.png" alt-text="Screenshot of download location for agent." lightbox="media/app-provisioning-sql/download-1.png":::
+     
+ 8. Leave the portal and open the provisioning agent installer, agree to the terms of service, and select **next**.
+ 9. Open the provisioning agent wizard.
+ 10. In the **Select Extension** step, select **On-premises application provisioning** and then select **Next**.
 
-     >[!NOTE]
-     >Please use different provisioning agents for on-premises application provisioning and Azure AD Connect Cloud Sync / HR-driven provisioning. All three scenarios should not be managed on the same agent. 
-
- 1. Open the provisioning agent installer, agree to the terms of service, and select **next**.
- 1. When the provisioning agent wizard opens, continue to the **Select Extension** tab and select **On-premises application provisioning** when prompted for the extension you want to enable.
- 1. The provisioning agent will use the operating system's web browser to display a popup window for you to authenticate to Azure AD, and potentially also your organization's identity provider.  If you are using Internet Explorer as the browser on Windows Server, then you may need to add Microsoft web sites to your browser's trusted site list to allow JavaScript to run correctly.
- 1. Provide credentials for an Azure AD administrator when you're prompted to authorize. The user is required to have the Hybrid Identity Administrator or Global Administrator role.
- 1. Select **Confirm** to confirm the setting. Once installation is successful, you can select **Exit**, and also close the Provisioning Agent Package installer.
-
+ :::image type="content" source="media/app-provisioning-sql/sync-agent-select-on-premises.png" alt-text="Screenshot that shows how to select on-premises provisioning." lightbox="media/app-provisioning-sql/sync-agent-select-on-premises.png":::
+    
+ 11. The provisioning agent will use the operating system's web browser to display a popup window for you to authenticate to Azure AD, and potentially also your organization's identity provider.  If you are using Internet Explorer as the browser on Windows Server, then you may need to add Microsoft web sites to your browser's trusted site list to allow JavaScript to run correctly.
+ 12. Provide credentials for an Azure AD administrator when you're prompted to authorize. The user is required to have the Hybrid Identity Administrator or Global Administrator role.
+ 13. Select **Confirm** to confirm the setting. Once installation is successful, you can select **Exit**, and also close the Provisioning Agent Package installer.
+ 
 ## Configure the On-premises ECMA app
 
- 1. Sign in to the Azure portal as an administrator.
- 1. Go to **Enterprise applications** and select **New application**.
- 1. Search for the **On-premises ECMA app** application, give the app a name, and select **Create** to add it to your tenant.
- 1. Navigate to the **Provisioning** page of your application.
- 1. Select **Get started**.
- 1. On the **Provisioning** page, change the mode to **Automatic**.
-     ![Screenshot that shows changing the mode to Automatic.](.\media\active-directory-app-provisioning-sql\configure-7.png)</br>
- 1. On the **On-Premises Connectivity** section, select the agent that you just deployed and select **Assign Agent(s)**.
- 1. Keep this browser window open, as you complete the next step of configuration using the configuration wizard.
+ 1. Back in the portal, on the **On-Premises Connectivity** section, select the agent that you deployed and select **Assign Agent(s)**.
+
+      ![Screenshot that shows how to select and assign and agent.](.\media\app-provisioning-sql\configure-7a.png)
+
+ 2. Keep this browser window open, as you complete the next step of configuration using the configuration wizard.
 
  ## Configure the Azure AD ECMA Connector Host certificate
  1. On the Windows Server where the provisioning agent is installed, right click the Microsoft ECMA2Host Configuration Wizard from the start menu, and run as administrator.  Running as a Windows administrator is necessary for the wizard to create the necessary Windows event logs.
  2. After the ECMA Connector Host Configuration starts, if this is the first time you have run the wizard, it will ask you to create a certificate. Leave the default port **8585** and select **Generate certificate** to generate a certificate. The autogenerated certificate will be self-signed as part of the trusted root. The SAN matches the host name.
-     [![Screenshot that shows configuring your settings.](.\media\active-directory-app-provisioning-sql\configure-1.png)](.\media\active-directory-app-provisioning-sql\configure-1.png#lightbox)
+     [![Screenshot that shows configuring your settings.](.\media\app-provisioning-sql\configure-1.png)](.\media\app-provisioning-sql\configure-1.png#lightbox)
  3. Select **Save**.
 
 >[!NOTE]
@@ -166,9 +166,9 @@ Depending on the options you select, some of the wizard screens might not be ava
     ```
  1. If you have not already done so, launch the Microsoft ECMA2Host Configuration Wizard from the start menu.
  2. Select **New Connector**.
-     [![Screenshot that shows choosing New Connector.](.\media\active-directory-app-provisioning-sql\sql-3.png)](.\media\active-directory-app-provisioning-sql\sql-3.png#lightbox)</br>
+     [![Screenshot that shows choosing New Connector.](.\media\app-provisioning-sql\sql-3.png)](.\media\app-provisioning-sql\sql-3.png#lightbox)</br>
  3. On the **Properties** page, fill in the boxes with the values specified in the table that follows the image and select **Next**.
-     [![Screenshot that shows entering properties.](.\media\active-directory-app-provisioning-ldap\create-1.png)](.\media\active-directory-app-provisioning-ldap\create-1.png#lightbox)
+     [![Screenshot that shows entering properties.](.\media\app-provisioning-ldap\create-1.png)](.\media\app-provisioning-ldap\create-1.png#lightbox)
 
      |Property|Value|
      |-----|-----|
@@ -177,7 +177,7 @@ Depending on the options you select, some of the wizard screens might not be ava
      |Secret Token|Enter your secret token here. It should be 12 characters minimum.|
      |Extension DLL|For the generic LDAP connector, select **Microsoft.IAM.Connector.GenericLdap.dll**.|
 4. On the **Connectivity** page, you will configure how the ECMA Connector Host will communicate with the directory server, and set some of the configuration options. Fill in the boxes with the values specified in the table that follows the image and select **Next**.  When you select **Next**, the connector will query the directory server for its configuration.
-     [![Screenshot that shows the Connectivity page.](.\media\active-directory-app-provisioning-ldap\create-2.png)](.\media\active-directory-app-provisioning-ldap\create-2.png#lightbox)</br>
+     [![Screenshot that shows the Connectivity page.](.\media\app-provisioning-ldap\create-2.png)](.\media\app-provisioning-ldap\create-2.png#lightbox)</br>
      
      |Property|Description|
      |-----|-----|
@@ -211,7 +211,7 @@ Depending on the options you select, some of the wizard screens might not be ava
     
  1. On the **Partitions** page, keep the default and select **Next**.
  1. On the **Run Profiles** page, ensure the **Export** checkbox and the **Full import** checkbox are both selected. Then select **Next**.
-     [![Screenshot that shows the Run Profiles page.](.\media\active-directory-app-provisioning-ldap\create-3.png)](.\media\active-directory-app-provisioning-ldap\create-3.png#lightbox)</br>
+     [![Screenshot that shows the Run Profiles page.](.\media\app-provisioning-ldap\create-3.png)](.\media\app-provisioning-ldap\create-3.png#lightbox)</br>
      
      |Property|Description|
      |-----|-----|
@@ -249,7 +249,7 @@ Depending on the options you select, some of the wizard screens might not be ava
 
 
  15. The ECMA host discovers the attributes supported by the target directory. You can choose which of those attributes you want to expose to Azure AD. These attributes can then be configured in the Azure portal for provisioning. On the **Select Attributes** page, add all the attributes in the dropdown list, one at a time, that are required as mandatory attributes or that you wish to provision from Azure AD.
-     [![Screenshot that shows the Select Attributes page.](.\media\active-directory-app-provisioning-ldap\create-5.png)](.\media\active-directory-app-provisioning-ldap\create-5.png#lightbox)</br>
+     [![Screenshot that shows the Select Attributes page.](.\media\app-provisioning-ldap\create-5.png)](.\media\app-provisioning-ldap\create-5.png#lightbox)</br>
       The **Attribute** dropdown list shows any attribute that was discovered in the target directory and *wasn't* chosen on the previous use of the configuration wizard **Select Attributes** page.
 
      Make sure that `Treat as single value` checkbox is unchecked for the `objectClass` attribute, and if `userPassword` is being set, is either unselectable or checked for the `userPassword` attribute.
@@ -294,7 +294,7 @@ Follow these steps to confirm that the connector host has started and has identi
  1. On the server running the Azure AD ECMA Connector Host, select **Start**.
  2. Select **run** if needed, then enter **services.msc** in the box.
  3. In the **Services** list, ensure that **Microsoft ECMA2Host** is present and running. If it is not running, select **Start**.
-     [![Screenshot that shows the service is running.](.\media\active-directory-app-provisioning-sql\configure-2.png)](.\media\active-directory-app-provisioning-sql\configure-2.png#lightbox)
+     [![Screenshot that shows the service is running.](.\media\app-provisioning-sql\configure-2.png)](.\media\app-provisioning-sql\configure-2.png#lightbox)
  1. If you have recently started the service, and have many user objects in the directory server, then wait several minutes for the connector to establish a connection with the directory server.
  1. On the server running the Azure AD ECMA Connector Host, launch PowerShell.
  1. Change to the folder where the ECMA host was installed, such as `C:\Program Files\Microsoft ECMA2Host`.
@@ -327,9 +327,9 @@ Follow these steps to confirm that the connector host has started and has identi
      >[!NOTE]
      >If you just assigned the agent to the application, please wait 10 minutes for the registration to complete. The connectivity test won't work until the registration completes. Forcing the agent registration to complete by restarting the provisioning agent on your server can speed up the registration process. Go to your server, search for **services** in the Windows search bar, identify the **Azure AD Connect Provisioning Agent** service, right-click the service, and restart.
  4. Select **Test Connection**, and wait one minute.
-     [![Screenshot that shows assigning an agent.](.\media\active-directory-app-provisioning-ldap\test-1.png)](.\media\active-directory-app-provisioning-ldap\test-1.png#lightbox)
+     [![Screenshot that shows assigning an agent.](.\media\app-provisioning-ldap\test-1.png)](.\media\app-provisioning-ldap\test-1.png#lightbox)
  5. After the connection test is successful and indicates that the supplied credentials are authorized to enable provisioning, select **Save**.</br>
-     [![Screenshot that shows testing an agent.](.\media\active-directory-app-provisioning-sql\configure-9.png)](.\media\active-directory-app-provisioning-sql\configure-9.png#lightbox)
+     [![Screenshot that shows testing an agent.](.\media\app-provisioning-sql\configure-9.png)](.\media\app-provisioning-sql\configure-9.png#lightbox)
 
 
 ## Configure attribute mapping
@@ -399,13 +399,13 @@ Otherwise, if the LDAP directory is empty, then select a test user from Azure AD
  2. Select the **On-premises ECMA app** application.
  3. On the left, under **Manage**, select **Users and groups**.
  4. Select **Add user/group**.
-     [![Screenshot that shows adding a user.](.\media\active-directory-app-provisioning-sql\app-2.png)](.\media\active-directory-app-provisioning-sql\app-2.png#lightbox)
+     [![Screenshot that shows adding a user.](.\media\app-provisioning-sql\app-2.png)](.\media\app-provisioning-sql\app-2.png#lightbox)
 5. Under **Users**, select **None Selected**.
-     [![Screenshot that shows None Selected.](.\media\active-directory-app-provisioning-sql\app-3.png)](.\media\active-directory-app-provisioning-sql\app-3.png#lightbox)
+     [![Screenshot that shows None Selected.](.\media\app-provisioning-sql\app-3.png)](.\media\app-provisioning-sql\app-3.png#lightbox)
  6. Select users from the right and select the **Select** button.</br>
-     [![Screenshot that shows Select users.](.\media\active-directory-app-provisioning-sql\app-4.png)](.\media\active-directory-app-provisioning-sql\app-4.png#lightbox)
+     [![Screenshot that shows Select users.](.\media\app-provisioning-sql\app-4.png)](.\media\app-provisioning-sql\app-4.png#lightbox)
  7. Now select **Assign**.
-     [![Screenshot that shows Assign users.](.\media\active-directory-app-provisioning-sql\app-5.png)](.\media\active-directory-app-provisioning-sql\app-5.png#lightbox)
+     [![Screenshot that shows Assign users.](.\media\app-provisioning-sql\app-5.png)](.\media\app-provisioning-sql\app-5.png#lightbox)
 
 
 
@@ -423,7 +423,7 @@ Now that your attributes are mapped and users are assigned, you can test on-dema
  3. On the left, select **Provisioning**.
  4. Select **Provision on demand**.
  5. Search for one of your test users, and select **Provision**.
- [![Screenshot that shows testing on-demand provisioning.](.\media\active-directory-app-provisioning-ldap\test-2.png)](.\media\active-directory-app-provisioning-ldap\test-2.png#lightbox)</br>
+ [![Screenshot that shows testing on-demand provisioning.](.\media\app-provisioning-ldap\test-2.png)](.\media\app-provisioning-ldap\test-2.png#lightbox)</br>
  6. After several seconds, then the message **Successfully created user in target system** will appear, with a list of the user attributes.
 
 ## Start provisioning users
@@ -446,16 +446,16 @@ After waiting, check the directory server to ensure users are being provisioned.
 
  1. Open Server Manager and select AD LDS on the left.
  2. Right-click your instance of AD LDS and select ldp.exe from the pop-up.
-   [![Screenshot of the Ldp tool location.](media/active-directory-app-provisioning-ldap/ldp-1.png)](media/active-directory-app-provisioning-ldap/ldp-1.png#lightbox)</br>
+   [![Screenshot of the Ldp tool location.](media/app-provisioning-ldap/ldp-1.png)](media/app-provisioning-ldap/ldp-1.png#lightbox)</br>
  3. At the top of ldp.exe, select **Connection** and **Connect**.
  4. Enter the following information and click **OK**.
     - Server:  APP3
     - Port: 636
     - Place a check in the SSL box
-    [![Screenshot showing the Ldp connection for checking users.](media/active-directory-app-provisioning-ldap/ldp-2.png)](media/active-directory-app-provisioning-ldap/ldp-2.png#lightbox)</br>
+    [![Screenshot showing the Ldp connection for checking users.](media/app-provisioning-ldap/ldp-2.png)](media/app-provisioning-ldap/ldp-2.png#lightbox)</br>
  5. At the top, under **Connection** select **Bind**.
  6. Leave the defaults and click **OK**.
  7. At the top, select **View** and **Tree**
  8. For the BaseDN enter **CN=App,DC=contoso,DC=lab** and click **OK**.
  9. On the left, expand the DN and click on **CN=CloudUsers,CN=App,DC=contoso,DC=lab**.  You should see your users who were provisioned from Azure AD.
-  [![Screenshot showing Ldp binding for users.](media/active-directory-app-provisioning-ldap/test-3.png)](media/active-directory-app-provisioning-ldap/test-3.png#lightbox)</br>
+  [![Screenshot showing Ldp binding for users.](media/app-provisioning-ldap/test-3.png)](media/app-provisioning-ldap/test-3.png#lightbox)</br>
