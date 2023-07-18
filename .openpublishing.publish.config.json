@@ -2,8 +2,8 @@
   "docsets_to_publish": [
     {
       "docset_name": "microsoft-entra-docs",
-      "build_source_folder": "microsoft-entra-docs",
-      "build_output_subfolder": "microsoft-entra-docs",
+      "build_source_folder": "docs",
+      "build_output_subfolder": "docs",
       "locale": "en-us",
       "monikers": [],
       "moniker_ranges": [],
