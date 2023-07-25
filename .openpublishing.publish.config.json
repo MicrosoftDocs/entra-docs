@@ -1,5 +1,4 @@
-{
-  "docsets_to_publish": [
+"docsets_to_publish": [
     {
       "docset_name": "entra-docs",
       "build_source_folder": "docs",
@@ -18,14 +17,26 @@
   "notification_subscribers": [],
   "sync_notification_subscribers": [],
   "branches_to_filter": [],
-  "need_preview_pull_request": true,
+  "need_preview_pull_request": false,
   "dependent_repositories": [
     {
       "path_to_root": "_themes",
       "url": "https://github.com/Microsoft/templates.docs.msft",
       "branch": "main",
       "branch_mapping": {}
-    }
+    },
+    {
+    "path_to_root": "microsoft-graph",
+      "url": "https://github.com/MicrosoftGraph/microsoft-graph-docs",
+      "branch": "main",
+      "branch_mapping": {}
+    },
+    {
+      "path_to_root": "articles/reusable-content",
+      "url": "https://github.com/MicrosoftDocs/reusable-content",
+      "branch": "main",
+      "branch_mapping": {}
+    }    
   ],
   "branch_target_mapping": {}
 }

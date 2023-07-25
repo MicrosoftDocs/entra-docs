@@ -40,13 +40,12 @@
     "overwrite": [],
     "externalReference": [],
     "globalMetadata": {
-      "breadcrumb_path": "/entra-docs/breadcrumb/toc.json",
+      "breadcrumb_path": "/entra/breadcrumb/toc.json",
       "extendBreadcrumb": true,
-      "feedback_system": "None",
-      "permissioned-type": "public"
+      "feedback_system": "None"
     },
     "fileMetadata": {},
     "template": [],
-    "dest": "entra-docs"
+    "dest": "entra"
   }
 }
