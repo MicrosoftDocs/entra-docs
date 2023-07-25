@@ -1,4 +1,5 @@
-"docsets_to_publish": [
+{
+    "docsets_to_publish": [
     {
       "docset_name": "entra-docs",
       "build_source_folder": "docs",
@@ -39,3 +40,4 @@
     }    
   ],
   "branch_target_mapping": {}
+}
