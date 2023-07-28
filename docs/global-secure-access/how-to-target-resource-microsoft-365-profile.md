@@ -52,7 +52,7 @@ After administrators confirm the policy settings using [report-only mode](../act
 
 ### User exclusions
 
-[!INCLUDE [active-directory-policy-exclusions](../../includes/active-directory-policy-exclude-user.md)]
+[!INCLUDE [active-directory-policy-exclusions](../includes/active-directory-policy-exclude-user.md)]
 
 ## Next steps
 
