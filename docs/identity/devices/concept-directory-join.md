@@ -32,8 +32,7 @@ Any organization can deploy Azure AD joined devices no matter the size or indust
 |   | Windows Autopilot |
 | **Device sign in options** | Organizational accounts using: |
 |   | Password |
-|   | Windows Hello for Business |
-|   | FIDO2.0 security keys (preview) |
+|   | [Passwordless](/azure/active-directory/authentication/concept-authentication-passwordless) options like [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/hello-planning-guide) and FIDO2.0 security keys. |
 | **Device management** | Mobile Device Management (example: Microsoft Intune) |
 |   | [Configuration Manager standalone or co-management with Microsoft Intune](/mem/configmgr/comanage/overview) |
 | **Key capabilities** | SSO to both cloud and on-premises resources |
@@ -74,7 +73,7 @@ The goal of Azure AD joined devices is to simplify:
 - Cloud-based management of work-owned devices
 - Users to sign in to their devices with their Azure AD or synced Active Directory work or school accounts.
 
-![Azure AD joined devices](./media/concept-azure-ad-join/azure-ad-joined-device.png)
+![Azure AD joined devices](./media/concept-directory-join/azure-ad-joined-device.png)
 
 Azure AD Join can be deployed by using any of the following methods:
 
@@ -87,5 +86,5 @@ Azure AD Join can be deployed by using any of the following methods:
 - [Plan your Azure AD join implementation](device-join-plan.md)
 - [Co-management using Configuration Manager and Microsoft Intune](/mem/configmgr/comanage/overview)
 - [How to manage the local administrators group on Azure AD joined devices](assign-local-admin.md)
-- [Manage device identities using the Azure portal](device-management-azure-portal.md)
+- [Manage device identities using the Azure portal](manage-device-identities.md)
 - [Manage stale devices in Azure AD](manage-stale-devices.md)
