@@ -1,5 +1,5 @@
 ---
-title: "Quickstart: Sign in users in JavaScript React single-page apps (SPA) with auth code and call Microsoft Graph"
+title: "Quickstart: Sign in users in a single-page app (SPA) and call the Microsoft Graph API using React"
 description: In this quickstart, learn how a JavaScript React single-page application (SPA) can sign in users of personal accounts, work accounts, and school accounts by using the authorization code flow and call Microsoft Graph.
 services: active-directory
 author: henrymbuguakiarie
@@ -7,14 +7,17 @@ manager: CelesteDG
 
 ms.service: active-directory
 ms.subservice: develop
-ms.topic: include
+ms.topic: quickstart
 ms.workload: identity
-ms.date: 12/06/2021
+ms.date: 07/27/2023
 ms.author: henrymbugua
 ms.reviewer: j-mantu
 ms.custom: aaddev, "scenarios:getting-started", "languages:JavaScript", devx-track-js
 #Customer intent: As an app developer, I want to learn how to login, logout, conditionally render components to authenticated users, and acquire an access token for a protected resource such as Microsoft Graph by using the Microsoft identity platform so that my JavaScript React app can sign in users of personal accounts, work accounts, and school accounts.
 ---
+
+# Quickstart: Sign in users in a single-page app (SPA) and call the Microsoft Graph API using React
+
 
 In this quickstart, you download and run a code sample that demonstrates how a JavaScript React single-page application (SPA) can sign in users and call Microsoft Graph using the authorization code flow. The code sample demonstrates how to get an access token to call the Microsoft Graph API or any web API.
 
@@ -35,7 +38,7 @@ To start your quickstart application, use either of the following options.
 
 ### Option 1 (Express): Register and auto configure your app and then download your code sample
 
-1. Go to the <a href="https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade/quickStartType/ReactSpaQuickstartPage/sourceType/docs" target="_blank">Azure portal - App registrations</a> quickstart experience.
+1. Go to the [Azure portal - App registrations](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade/quickStartType/AngularSpaQuickstartPage/sourceType/docs) quickstart experience.
 1. Enter a name for your application.
 1. Under **Supported account types**, select **Accounts in any organizational directory and personal Microsoft accounts**.
 1. Select **Register**.
@@ -47,8 +50,8 @@ To start your quickstart application, use either of the following options.
 
 [!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
 
-1. Sign in to the <a href="https://portal.azure.com/" target="_blank">Azure portal</a>.
-1. If you have access to multiple tenants, use the **Directories + subscriptions** filter :::image type="icon" source="../../media/common/portal-directory-subscription-filter.png" border="false"::: in the top menu to switch to the tenant in which you want to register the application.
+1. Sign in to the [Azure portal](https://portal.azure.com/).
+1. If you have access to multiple tenants, use the **Directories + subscriptions** filter :::image type="icon" source="media/common/portal-directory-subscription-filter.png" border="false"::: in the top menu to switch to the tenant in which you want to register the application.
 1. Search for and select **Azure Active Directory**.
 Under **Manage**, select **App registrations** > **New registration**.
 1. When the **Register an application** page appears, enter a name for your application.
@@ -59,7 +62,7 @@ Under **Manage**, select **App registrations** > **New registration**.
 1. Set the **Redirect URIs** value to `http://localhost:3000/`. This is the default port NodeJS will listen on your local machine. We’ll return the authentication response to this URI after successfully authenticating the user.
 1. Select **Configure** to apply the changes.
 1. Under **Platform Configurations** expand **Single-page application**.
-1. Confirm that under **Grant types** ![Already configured](../../media/quickstart-v2-javascript/green-check.png) Your Redirect URI is eligible for the Authorization Code Flow with PKCE.
+1. Confirm that under **Grant types** ![Already configured](media/quickstart-v2-javascript/green-check.png) Your Redirect URI is eligible for the Authorization Code Flow with PKCE.
 
 #### Step 2: Download the project
 
@@ -93,7 +96,7 @@ Modify the values in the `msalConfig` section as described here:
 - `Enter_the_Application_Id_Here` is the **Application (client) ID** for the application you registered.
 
    To find the value of **Application (client) ID**, go to the app registration's **Overview** page in the Azure portal.
-- `Enter_the_Cloud_Instance_Id_Here` is the instance of the Azure cloud. For the main or global Azure cloud, enter `https://login.microsoftonline.com`. For **national** clouds (for example, China), see [National clouds](../../authentication-national-cloud.md).
+- `Enter_the_Cloud_Instance_Id_Here` is the instance of the Azure cloud. For the main or global Azure cloud, enter `https://login.microsoftonline.com`. For **national** clouds (for example, China), see [National clouds](authentication-national-cloud.md).
 - `Enter_the_Tenant_info_here` is set to one of the following:
   - If your application supports *accounts in this organizational directory*, replace this value with the **Tenant ID** or **Tenant name**. For example, `contoso.microsoft.com`.
 
@@ -141,7 +144,7 @@ Run the project with a web server by using Node.js:
 
 ### How the sample works
 
-![Diagram showing the authorization code flow for a single-page application.](../../media/quickstart-v2-javascript-auth-code/diagram-01-auth-code-flow.png)
+![Diagram showing the authorization code flow for a single-page application.](media/quickstart-v2-javascript-auth-code/diagram-01-auth-code-flow.png)
 
 ### msal.js
 
@@ -158,4 +161,4 @@ npm install @azure/msal-browser @azure/msal-react
 Next, try a step-by-step tutorial to learn how to build a React SPA from scratch that signs in users and calls the Microsoft Graph API to get user profile data:
 
 > [!div class="nextstepaction"]
-> [Tutorial: Sign in users and call Microsoft Graph](../../tutorial-v2-react.md)
+> [Tutorial: Sign in users and call Microsoft Graph](tutorial-v2-react.md)

@@ -1,23 +1,22 @@
 ---
-title: "Quickstart: ASP.NET web app that signs in users"
+title: "Quickstart: Sign in users and call the Microsoft Graph API from an ASP.NET web app"
 description: Download and run a code sample that shows how an ASP.NET web app can sign in Azure AD users.
 services: active-directory
-
 author: cilwerner
-
 manager: CelesteDG
 
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: quickstart
-ms.workload: identity
-ms.date: 01/18/2023
+ms.date: 07/28/2023
 ms.author: cwerner
 
 ms.reviewer: jmprieur
 ms.custom: "devx-track-csharp, aaddev, identityplatformtop40, scenarios:getting-started, languages:ASP.NET, contperf-fy21q1"
 # Customer intent: As an application developer, I want to see a sample ASP.NET web app that can sign in Azure AD users.
 ---
+
+# Quickstart: Sign in users and call the Microsoft Graph API from an ASP.NET web app
 
 In this quickstart, you download and run a code sample that demonstrates an ASP.NET web application that can sign in users with Azure Active Directory (Azure AD) accounts. 
 
@@ -39,7 +38,7 @@ You have two options to start building your application: automatic or manual con
 
 If you want to automatically configure your app and then download the code sample, follow these steps:
 
-1. Go to the <a href="https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/applicationsListBlade/quickStartType/AspNetWebAppQuickstartPage/sourceType/docs" target="_blank">Azure portal page for app registration</a>.
+1. Go to the [Azure portal - App registrations](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade/quickStartType/AngularSpaQuickstartPage/sourceType/docs) quickstart experience.
 1. Enter a name for your application and select **Register**.
 1. Follow the instructions to download and automatically configure your new application in one click.
 
@@ -49,8 +48,8 @@ If you want to manually configure your application and code sample, use the foll
 
 #### Step 1: Register your application
 
-1. Sign in to the <a href="https://portal.azure.com/" target="_blank">Azure portal</a>.
-1. If you have access to multiple tenants, use the **Directory + subscription** filter :::image type="icon" source="../../media/common/portal-directory-subscription-filter.png" border="false"::: in the top menu to switch to the tenant in which you want to register the application.
+1. Sign in to the [Azure portal](https://portal.azure.com).
+1. If you have access to multiple tenants, use the **Directory + subscription** filter :::image type="icon" source="media/common/portal-directory-subscription-filter.png" border="false"::: in the top menu to switch to the tenant in which you want to register the application.
 1. Search for and select **Azure Active Directory**.
 1. Under **Manage**, select **App registrations** > **New registration**.
 1. For **Name**, enter a name for your application. For example, enter **ASPNET-Quickstart**. Users of your app will see this name, and you can change it later.
@@ -64,7 +63,7 @@ If you want to manually configure your application and code sample, use the foll
 
 [Download the ASP.NET code sample](https://github.com/AzureADQuickStarts/AppModelv2-WebApp-OpenIDConnect-DotNet/archive/master.zip)
 
-[!INCLUDE [active-directory-develop-path-length-tip](../error-handling-and-tips/path-length-tip.md)]
+[!INCLUDE [active-directory-develop-path-length-tip](includes/error-handling-and-tips/path-length-tip.md)]
 
 
 #### Step 3: Run the project
@@ -98,7 +97,7 @@ This section gives an overview of the code required to sign in users. This overv
 
 ### How the sample works
 
-![Diagram of the interaction between the web browser, the web app, and the Microsoft identity platform in the sample app.](../../media/quickstart-v2-aspnet-webapp/aspnetwebapp-intro.svg)
+![Diagram of the interaction between the web browser, the web app, and the Microsoft identity platform in the sample app.](media/quickstart-v2-aspnet-webapp/aspnetwebapp-intro.svg)
 
 ### OWIN middleware NuGet packages
 
@@ -182,11 +181,11 @@ You can call Microsoft Graph from the controller by getting the instance of Grap
     }
 ```
 
-[!INCLUDE [Help and support](../error-handling-and-tips/help-support-include.md)]
+[!INCLUDE [Help and support](includes/error-handling-and-tips/help-support-include.md)]
 
 ## Next steps
 
 For a complete step-by-step guide on building applications and new features, including a full explanation of this quickstart, try out the ASP.NET tutorial.
 
 > [!div class="nextstepaction"]
-> [Add sign-in to an ASP.NET web app](../../tutorial-v2-asp-webapp.md)
+> [Add sign-in to an ASP.NET web app](tutorial-v2-asp-webapp.md)
