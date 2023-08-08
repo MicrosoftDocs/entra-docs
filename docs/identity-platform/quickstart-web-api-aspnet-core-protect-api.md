@@ -15,12 +15,14 @@ ms.custom: devx-track-csharp, "scenarios:getting-started", "languages:aspnet-cor
 #Customer intent: As an application developer, I want to know how to write an ASP.NET Core web API that uses the Microsoft identity platform to authorize API requests from clients.
 ---
 
+# Quickstart: Protect an ASP.NET Core web API with the Microsoft identity platform
+
 The following quickstart uses a ASP.NET Core web API code sample to demonstrate how to restrict resource access to authorized accounts. The sample supports authorization of personal Microsoft accounts and accounts in any Azure Active Directory (Azure AD) organization.
 
 ## Prerequisites
 
 - Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- [Azure Active Directory tenant](../../quickstart-create-new-tenant.md)
+- [Azure Active Directory tenant](quickstart-create-new-tenant.md)
 - [.NET Core SDK 6.0+](https://dotnet.microsoft.com/)
 - [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) or [Visual Studio Code](https://code.visualstudio.com/)
 
@@ -31,7 +33,7 @@ The following quickstart uses a ASP.NET Core web API code sample to demonstrate 
 First, register the web API in your Azure AD tenant and add a scope by following these steps:
 
 1. Sign in to the [Azure portal](https://portal.azure.com).
-1. If access to multiple tenants is available, use the **Directories + subscriptions** filter :::image type="icon" source="../../media/common/portal-directory-subscription-filter.png" border="false"::: in the top menu to switch to the tenant in which to register the application.
+1. If access to multiple tenants is available, use the **Directories + subscriptions** filter :::image type="icon" source="media/common/portal-directory-subscription-filter.png" border="false"::: in the top menu to switch to the tenant in which to register the application.
 1. Search for and select **Azure Active Directory**.
 1. Under **Manage**, select **App registrations** > **New registration**.
 1. For **Name**, enter a name for the application. For example, enter **AspNetCoreWebApi-Quickstart**. Users of the app will see this name, and can be changed later.
@@ -101,7 +103,7 @@ info: Microsoft.Hosting.Lifetime[0]
 
 ## How the sample works
 
-The web API receives a token from a client application, and the code in the web API validates the token. This scenario is explained in more detail in [Scenario: Protected web API](../../scenario-protected-web-api-overview.md).
+The web API receives a token from a client application, and the code in the web API validates the token. This scenario is explained in more detail in [Scenario: Protected web API](scenario-protected-web-api-overview.md).
 
 ### Startup class
 
@@ -174,7 +176,7 @@ namespace webapi.Controllers
 }
 ```
 
-[!INCLUDE [Help and support](../error-handling-and-tips/help-support-include.md)]
+[!INCLUDE [Help and support](includes/error-handling-and-tips/help-support-include.md)]
 
 ## Next steps
 

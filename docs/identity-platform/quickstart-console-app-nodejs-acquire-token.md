@@ -1,5 +1,5 @@
 ---
-title: "Quickstart: Call Microsoft Graph from a Node.js console app"
+title: "Quickstart: Acquire a token and call Microsoft Graph from a Node.js console app"
 description: In this quickstart, you download and run a code sample that shows how a Node.js console application can get an access token and call an API protected by a Microsoft identity platform endpoint, using the app's own identity
 services: active-directory
 author: cilwerner
@@ -13,9 +13,11 @@ ms.author: cwerner
 ms.custom: mode-other
 ---
 
+# Quickstart: Acquire a token and call Microsoft Graph from a Node.js console app
+
 In this quickstart, you download and run a code sample that demonstrates how a Node.js console application can get an access token using the app's identity to call the Microsoft Graph API and display a [list of users](/graph/api/user-list) in the directory. The code sample demonstrates how an unattended job or Windows service can run with an application identity, instead of a user's identity.
 
-This quickstart uses the [Microsoft Authentication Library for Node.js (MSAL Node)](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-node) with the [client credentials grant](../../v2-oauth2-client-creds-grant-flow.md).
+This quickstart uses the [Microsoft Authentication Library for Node.js (MSAL Node)](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-node) with the [client credentials grant](v2-oauth2-client-creds-grant-flow.md).
 
 ## Prerequisites
 
@@ -34,7 +36,7 @@ Follow the steps below to get started.
 To register your application and add the app's registration information to your solution manually, follow these steps:
 
 1. Sign in to the [Azure portal](https://portal.azure.com).
-1. If you have access to multiple tenants, use the **Directories + subscriptions** filter :::image type="icon" source="../../media/common/portal-directory-subscription-filter.png" border="false"::: in the top menu to switch to the tenant in which you want to register the application.
+1. If you have access to multiple tenants, use the **Directories + subscriptions** filter :::image type="icon" source="media/common/portal-directory-subscription-filter.png" border="false"::: in the top menu to switch to the tenant in which you want to register the application.
 1. Search for and select **Azure Active Directory**.
 1. Under **Manage**, select **App registrations** > **New registration**.
 1. Enter a **Name** for your application, for example `msal-node-cli`. Users of your app might see this name, and you can change it later.
@@ -64,7 +66,7 @@ To register your application and add the app's registration information to your 
    - `Enter_the_Tenant_Id_Here` - replace this value with the **Tenant ID** or **Tenant name** (for example, contoso.microsoft.com).  Find these values on the app registration's **Overview** pane in the Azure portal.
    - `Enter_the_Client_Secret_Here` - replace this value with the client secret you created earlier. To generate a new key, use **Certificates & secrets** in the app registration settings in the Azure portal.
    
-   Using a plaintext secret in the source code poses an increased security risk for your application. Although the sample in this quickstart uses a plaintext client secret, it's only for simplicity. We recommend using [certificate credentials](../../active-directory-certificate-credentials.md) instead of client secrets in your confidential client applications, especially those apps you intend to deploy to production.
+   Using a plaintext secret in the source code poses an increased security risk for your application. Although the sample in this quickstart uses a plaintext client secret, it's only for simplicity. We recommend using [certificate credentials](active-directory-certificate-credentials.md) instead of client secrets in your confidential client applications, especially those apps you intend to deploy to production.
 
 3. Edit *.env* and replace the Azure AD and Microsoft Graph endpoints with the following values:
    - For the Azure AD endpoint, replace `Enter_the_Cloud_Instance_Id_Here` with `https://login.microsoftonline.com`.
@@ -112,7 +114,7 @@ Below, some of the important aspects of the sample application are discussed.
 
 ### MSAL Node
 
-[MSAL Node](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-node) is the library used to sign in users and request tokens used to access an API protected by Microsoft identity platform. As described, this quickstart requests tokens by application permissions (using the application's own identity) instead of delegated permissions. The authentication flow used in this case is known as [OAuth 2.0 client credentials flow](../../v2-oauth2-client-creds-grant-flow.md). For more information on how to use MSAL Node with daemon apps, see [Scenario: Daemon application](../../scenario-daemon-overview.md).
+[MSAL Node](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-node) is the library used to sign in users and request tokens used to access an API protected by Microsoft identity platform. As described, this quickstart requests tokens by application permissions (using the application's own identity) instead of delegated permissions. The authentication flow used in this case is known as [OAuth 2.0 client credentials flow](v2-oauth2-client-creds-grant-flow.md). For more information on how to use MSAL Node with daemon apps, see [Scenario: Daemon application](scenario-daemon-overview.md).
 
  You can install MSAL Node by running the following npm command.
 
@@ -166,11 +168,11 @@ const tokenResponse = await cca.acquireTokenByClientCredential(tokenRequest);
 | `tokenRequest` | Contains the scopes requested. For confidential clients, this should use the format similar to `{Application ID URI}/.default` to indicate that the scopes being requested are the ones statically defined in the app object set in the Azure portal (for Microsoft Graph, `{Application ID URI}` points to `https://graph.microsoft.com`). For custom web APIs, `{Application ID URI}` is defined under **Expose an API** section in Azure portal's Application Registration. |
 | `tokenResponse` | The response contains an access token for the scopes requested. |
 
-[!INCLUDE [Help and support](../error-handling-and-tips/help-support-include.md)]
+[!INCLUDE [Help and support](includes/error-handling-and-tips/help-support-include.md)]
 
 ## Next steps
 
 To learn more about daemon/console app development with MSAL Node, see the tutorial:
 
 > [!div class="nextstepaction"]
-> [Daemon application that calls web APIs](../../tutorial-v2-nodejs-console.md)
+> [Daemon application that calls web APIs](tutorial-v2-nodejs-console.md)

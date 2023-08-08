@@ -1,5 +1,5 @@
 ---
-title: "Quickstart: Add authentication to a Node.js web app with MSAL Node"
+title: "Quickstart: Sign in users and call the Microsoft Graph API from a Node.js web application using MSAL Node"
 description: In this quickstart, you learn how to implement authentication with a Node.js web app and the Microsoft Authentication Library (MSAL) for Node.js.
 services: active-directory
 author: cilwerner
@@ -9,12 +9,14 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: quickstart
 ms.workload: identity
-ms.date: 11/22/2021
+ms.date: 07/27/2023
 ms.author: cwerner
 ms.reviewer: jmprieur
 ms.custom: aaddev, scenarios:getting-started, languages:js, devx-track-js
 # Customer intent: As an application developer, I want to know how to set up authentication in a web application built using Node.js and MSAL Node.
 ---
+
+# Quickstart: Sign in users and call the Microsoft Graph API from a Node.js web application using MSAL Node
 
 In this quickstart, you download and run a code sample that demonstrates how a Node.js web app can sign in users by using the authorization code flow. The code sample also demonstrates how to get an access token to call the Microsoft Graph API.
 
@@ -35,8 +37,8 @@ This quickstart uses the Microsoft Authentication Library for Node.js (MSAL Node
 
 [!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
 
-1. Sign in to the <a href="https://portal.azure.com/" target="_blank">Azure portal</a>.
-1. If you have access to multiple tenants, use the **Directories + subscriptions** filter :::image type="icon" source="../../media/common/portal-directory-subscription-filter.png" border="false"::: in the top menu to switch to the tenant in which you want to register the application.
+1. Sign in to the [Azure portal](https://portal.azure.com/).
+1. If you have access to multiple tenants, use the **Directories + subscriptions** filter :::image type="icon" source="media/common/portal-directory-subscription-filter.png" border="false"::: in the top menu to switch to the tenant in which you want to register the application.
 1. Under **Manage**, select **App registrations** > **New registration**.
 1. Enter a **Name** for your application. Users of your app might see this name, and you can change it later.
 1. Under **Supported account types**, select **Accounts in this organizational directory only**.
@@ -117,4 +119,4 @@ npm install @azure/msal-node
 
 Learn more about the web app scenario that the Microsoft identity platform supports:
 > [!div class="nextstepaction"]
-> [Web app that signs in users scenario](../../scenario-web-app-sign-user-overview.md)
+> [Web app that signs in users scenario](scenario-web-app-sign-user-overview.md)
