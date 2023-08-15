@@ -8,10 +8,11 @@ ms.service: active-directory
 ms.topic: how-to
 ms.workload: identity
 ms.subservice: report-monitor
-ms.date: 07/28/2023
+ms.date: 08/10/2023
 ms.author: sarahlipsey
 ms.reviewer: sarbar
 ---
+
 # How to use Azure Active Directory Workbooks
 
 Workbooks are found in Azure AD and in Azure Monitor. The concepts, processes, and best practices are the same for both types of workbooks, however, workbooks for Azure Active Directory (AD) cover only those identity management scenarios that are associated with Azure AD.
@@ -25,7 +26,7 @@ When using workbooks, you can either start with an empty workbook, or use an exi
 
 To use Azure Workbooks for Azure AD, you need:
 
-- An Azure AD tenant with a [Premium P1 license](../fundamentals/active-directory-get-started-premium.md)
+- An Azure AD tenant with a [Premium P1 license](../fundamentals/get-started-premium.md)
 - A Log Analytics workspace *and* access to that workspace
 - The appropriate roles for Azure Monitor *and* Azure AD
 
