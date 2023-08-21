@@ -1,0 +1,71 @@
+### YamlMime:Hub
+title: Microsoft Entra documentation
+summary: Learn more about the Microsoft Entra family of multicloud identity and access solutions.
+brand: azure
+
+metadata:
+  title: Microsoft Entra documentation
+  description: Learn more about the Microsoft Entra family of multicloud identity and network access solutions. Find content to help solve secure access needs across your multifaceted digital landscape, protect access to any app or resource for any user, verify and secure every identity and every access request, discover permissions and govern access, and simplify user experience with intelligent real-time access controls.
+  services: azure
+  ms.service: active-directory
+  ms.topic: hub-page
+  author: CelesteDG
+  ms.author: celested
+  ms.date: 07/11/2023
+
+productDirectory:
+  title: Getting started
+  items:
+    - title: Azure AD (Microsoft Entra ID)
+      imageSrc: ./media/new-icons/azure-ad-color.png
+      summary: "Manage user identities and control access to your apps, data, and resources."
+      url: /azure/active-directory
+    - title: Microsoft Entra ID Protection
+      imageSrc: ./media/new-icons/id-protection-color.png
+      summary: "Identify and address identity risks in your organization."
+      url: /azure/active-directory/identity-protection/
+    - title: Microsoft Entra ID Governance
+      imageSrc: ./media/new-icons/id-governance-color.png
+      summary: "Protect, monitor, and audit access to critical assets while ensuring employee productivity."
+      url: /azure/active-directory/governance/
+    - title: Microsoft Entra External ID
+      imageSrc: ./media/new-icons/azure-ad-color.png
+      summary: "Secure and manage any external user, including customers and partners, in your organization."
+      url: /azure/active-directory/external-identities
+    - title: Microsoft Entra Internet Access
+      imageSrc: ./media/new-icons/internet-access-color.png
+      summary: "Protect access to all internet, SaaS, and Microsoft 365 apps and resources with an identity-centric Secure Web Gateway."
+      url: https://aka.ms/GlobalSecureAccessDocs
+    - title: Microsoft Entra Private Access
+      imageSrc: ./media/new-icons/private-access-color.png
+      summary: "Secure access to all private apps and resources with identity-centric Zero Trust Network Access (ZTNA)."
+      url: https://aka.ms/GlobalSecureAccessDocs
+    - title: Microsoft Entra Permissions Management
+      imageSrc: ./media/new-icons/permissions-management-color.png
+      summary: "One unified model to manage permissions of any identity across any cloud."
+      url: /azure/active-directory/cloud-infrastructure-entitlement-management/
+    - title: Microsoft Entra Verified ID
+      imageSrc: ./media/new-icons/verified-id-color.png
+      summary: "Enable more secure interactions while respecting privacy with an industry-leading global platform."
+      url: /azure/active-directory/verifiable-credentials/
+    - title: Microsoft Entra Workload ID
+      imageSrc: ./media/new-icons/workload-id-color.png
+      summary: "Secure identities for apps and services and their access to cloud resources."
+      url: /azure/active-directory/workload-identities/
+          
+additionalContent:
+  sections:
+    - title: Announcements and resources
+      items:
+        - title: "Microsoft Entra"
+          summary: "Learn more about Microsoft Entra and how the Entra family of products can help your business."
+          url: https://aka.ms/MicrosoftEntra
+        - title: "New name for Azure Active Directory"
+          summary: "Learn more about the new name, what the change means, and how it affects you."
+          url: https://aka.ms/AzureADNewName
+        - title: "Introducing Security Service Edge (SSE)"
+          summary: "Read the blog on expanded capabilities for securing access with Microsoft Entra."
+          url: https://aka.ms/EntraMomentSecurityblog
+        - title: "Microsoft security documentation"
+          summary: "Technical guidance to help security professionals build and implement cybersecurity strategy, architecture, and prioritized roadmaps."
+          url: /security/
