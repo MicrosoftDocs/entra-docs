@@ -29,7 +29,7 @@ productDirectory:
       summary: "Protect, monitor, and audit access to critical assets while ensuring employee productivity."
       url: /azure/active-directory/governance/
     - title: Microsoft Entra External ID
-      imageSrc: ./media/index/azure-ad-color.png
+      imageSrc: ./media/index/placeholder-icon.png
       summary: "Secure and manage any external user, including customers and partners, in your organization."
       url: /azure/active-directory/external-identities
     - title: Microsoft Entra Internet Access
