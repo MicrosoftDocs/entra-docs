@@ -1,0 +1,20 @@
+{
+  "BaseConfiguration": "docutune-default.json",
+  "DocSets": [
+    {
+      "DocsetName": "entra-docs",
+      "BasePath": "/entra"
+    }
+  ],
+  "MetadataDelimiter": "\"",
+  "Exclude": [
+  ],
+  "PreloadTOCFiles": [
+  ],
+  "TermFiles": [
+    "Dictionary-Onboard.ps1",
+    "Bundle-Standard.txt",
+    "Bundle-Cloud.txt"
+  ],
+  "ApplyPolicies": []
+}
