@@ -93,7 +93,7 @@ The connectivity tab is where you add the device links for the remote network. Y
 
 This process is covered in detail in the [How to manage remote network device links](how-to-manage-remote-network-device-links.md).
 
-![Screenshot of the general tab of the create device link process.](media/how-to-create-remote-networks/device-link-general-tab.png)
+![Screenshot of the general tab of the create device link process.](media/how-to-create-remote-networks/add-device-link.png)
 
 ### Traffic forwarding profiles
 
