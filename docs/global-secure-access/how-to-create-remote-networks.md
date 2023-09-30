@@ -60,13 +60,13 @@ Before you can set up remote networks, you need to onboard your tenant informati
 
 You MUST complete the email step before selecting the checkbox. 
 
-## Create a remote network
+# High-level steps 
 
 You can create a remote network in the Microsoft Entra admin center or through the Microsoft Graph API.
 
 At a high level, there are 5 steps involved in creating a remote network and have an active IPsec tunnel - 
 1. Enter the basic details like **Name** and **Region** of remote network. **Region** specifies where you want your other end of IPsec tunnel (one end being your router or CPE).
-2. Add a device link (or IPsec tunnel) to the remote network. In this step, you enter your router's details in Entra portal. This tells Microsoft where to expect IPsec/IKE negotiations to come from.
+2. Add a device link (or IPsec tunnel) to the remote network. In this step, you enter your router's details in Entra admin center. This tells Microsoft where to expect IKE negotiations to come from.
 3. Associate a traffic forwarding profile with the remote network. This specifies what traffic will be acquired over the IPsec tunnel. We use dynamic routing through BGP.
 4. Get IPsec tunnel details of Microsoft's end by clicking on **View configuration** button. In step 2, you told your router's details to Microsoft, in this step Microsoft tells you its own side of connectivity configuration.
 5. Take Microsoft's connectivity configuration from step 4 and enter it in management console of your router or CPE. Note that this step is *not* in Microsoft Entra admin center.
@@ -106,12 +106,12 @@ You can assign the remote network to a traffic forwarding profile when you creat
 The final tab in the process is to review all of the settings that you provided. Review the details provided here and select the **Create remote network** button.
 
 ### View connectivity configuration for your CPE
-After the remote network is created, you will end up on screen with list of all remote networks. Click on **View configration** besides the one that you just created. This will open a task pane which has connectivity information of Microsoft's side that you will use to set up your CPE in step 5.
+After the remote network is created, you will see the list of all remote networks. Click on **View configration** besides the one that you just created. This will open a task pane which has connectivity information of Microsoft's side that you will use to set up your CPE in step 5.
 
 This process is covered in detail in the [How to configure your customer premise equipment](how-to-configure-customer-premises-equipment.md).
 
 ### Set up your CPE
-Thise step is performed in management console your CPE, not in Microsoft Entra admin center. Unless you do this, your IPsec will *not* be set up. IPsec is a bi-directional communication. IKE negotiations happens between two parties before the tunnel is successfully set up. So, do not miss this step.
+This step is performed in management console your CPE, not in Microsoft Entra admin center. Until you do this, your IPsec will *not* be set up. IPsec is a bi-directional communication. IKE negotiations happens between two parties before the tunnel is successfully set up. So, do not miss this step.
 
 # [Microsoft Graph API](#tab/microsoft-graph-api) 
 
@@ -204,6 +204,8 @@ There are a few things to consider and verify when creating remote networks. You
         - Update the public IP address in the crypto profile of your CPE.
         - Go to the **Global Secure Access** > **Devices** > **Remote Networks**.
         - Select the appropriate remote network, delete the old tunnel, and recreate a new tunnel with the updated public IP address.
+
+- **Verify Microsoft's public IP address**: When you delete a device link and/or create a new one, you may get another public IP endpoint of that link in **View configuration** for that remote network. This change can cause the IKE negotiation to fail. If you encounter this scenario, update the public IP address in the crypto profile of your CPE.
 
 - **Port forwarding**: In some situations, the ISP router can also be a network address translation (NAT) device. A NAT converts the private IP addresses of home devices to a public internet-routable device.
     - Generally, a NAT device changes both the IP address and the port. This port changing is the root of the problem.
