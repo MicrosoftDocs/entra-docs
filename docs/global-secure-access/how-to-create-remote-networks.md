@@ -64,12 +64,12 @@ You MUST complete the email step before selecting the checkbox.
 
 You can create a remote network in the Microsoft Entra admin center or through the Microsoft Graph API.
 
-At a high level, there are 5 steps involved in creating a remote network and have an active IPsec tunnel - 
-1. Enter the basic details like **Name** and **Region** of remote network. **Region** specifies where you want your other end of IPsec tunnel (one end being your router or CPE).
-2. Add a device link (or IPsec tunnel) to the remote network. In this step, you enter your router's details in Entra admin center. This tells Microsoft where to expect IKE negotiations to come from.
-3. Associate a traffic forwarding profile with the remote network. This specifies what traffic will be acquired over the IPsec tunnel. We use dynamic routing through BGP.
-4. Get IPsec tunnel details of Microsoft's end by clicking on **View configuration** button. In step 2, you told your router's details to Microsoft, in this step Microsoft tells you its own side of connectivity configuration.
-5. Take Microsoft's connectivity configuration from step 4 and enter it in management console of your router or CPE. Note that this step is *not* in Microsoft Entra admin center.
+At a high level, there are five steps for creating a remote network and configuring an active IPsec tunnel: 
+1. Enter the basic details like the **Name** and **Region** of your remote network. **Region** specifies where you want your other end of IPsec tunnel. The other end of the tunnel is your router or CPE.
+1. Add a device link (or IPsec tunnel) to the remote network. In this step, you enter your router's details in the Microsoft Entra admin center. This tells Microsoft where to expect IKE negotiations to come from.
+1. Associate a traffic forwarding profile with the remote network, which specifies what traffic will be acquired over the IPsec tunnel. We use dynamic routing through BGP.
+1. Get IPsec tunnel details of Microsoft's end by selecting **View configuration**. In step 2, you provided your router's details to Microsoft. In this step Microsoft provides its side of the connectivity configuration.
+1. Take Microsoft's connectivity configuration from step 4 and enter it in the management console of your router or CPE. Note that this step is *not* in the Microsoft Entra admin center.
 
 # [Microsoft Entra admin center](#tab/microsoft-entra-admin-center) 
 
