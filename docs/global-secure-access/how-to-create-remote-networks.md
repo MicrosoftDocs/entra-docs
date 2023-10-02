@@ -13,7 +13,7 @@ ms.service: network-access
 
 Remote networks are remote locations, such as a branch office, or networks that require internet connectivity. Setting up remote networks connects your users in remote locations to Global Secure Access (preview). Once a remote network is configured, you can assign a traffic forwarding profile to manage your corporate network traffic. Global Secure Access provides remote network connectivity so you can apply network security policies to your outbound traffic. 
 
-There are multiple ways to connect remote networks to Global Secure Access. In a nutshell, you're creating an Internet Protocol Security (IPSec) tunnel between a core router (also called Customer Premise Equipment or CPE) at your remote network and the nearest Global Secure Access endpoint. All internet-bound traffic is routed through the core router of the remote network for security policy evaluation in the cloud. Installation of a client isn't required on individual devices.
+There are multiple ways to connect remote networks to Global Secure Access. In a nutshell, you're creating an Internet Protocol Security (IPSec) tunnel between a core router, known as the Customer Premise Equipment (CPE), at your remote network and the nearest Global Secure Access endpoint. All internet-bound traffic is routed through the core router of the remote network for security policy evaluation in the cloud. Installation of a client isn't required on individual devices.
 
 This article explains how to create a remote network for Global Secure Access (preview).
 
@@ -29,7 +29,7 @@ To configure remote networks, you must have:
 
 ### Known limitations
 
-- At this time, the number of remote networks per tenant is limited to 10, and the number of device links per remote network is limited to 4.
+- At this time, the number of remote networks per tenant is limited to 10, and the number of device links per remote network is limited to four.
 - Customer premises equipment (CPE) devices must support the following protocols:
     - Internet Protocol Security (IPSec)
     - Internet Key Exchange Version 2 (IKEv2)
