@@ -45,7 +45,7 @@ You can add a device link to a remote network at any time.
     - **Local BGP address**: Enter a BGP IP address that is *not* part of your on-premises network where your CPE (customer premise equipment) resides. Suppose your on-premises network is 10.1.0.0/16, then you can use 10.2.0.4 as your Local BGP address. Enter this address as the peer BGP​​ IP address on your CPE. The peer and local details are reversed, depending on where the configuration is completed.
     - **Link ASN**: Provide the autonomous system number of the CPE.  A BGP-enabled connection between two network gateways requires that they have different autonomous system numbers (ASNs). For more information, see the **Valid ASNs** section of the [Remote network configurations](reference-remote-network-configurations.md) article.
     - **Redundancy**: Select either *No redundancy* or *Zone redundancy* for your IPSec tunnel.
-    - **Zone redundant local BGP address**: This is an optional field that shows up only when you select **Zone redundancy**. Enter a BGP IP address that is *not* part of your on-premises network where your CPE (customer premise equipment) resides and different from **Local BGP address**.
+    - **Zone redundant local BGP address**: This is an optional field that shows up only when you select **Zone redundancy**. Enter a BGP IP address that is *not* part of your on-premises network where your CPE resides and is different from the **Local BGP address**.
     - **Bandwidth capacity (Mbps)**: Specify tunnel bandwidth. Available options are 250, 500, 750, and 1000 Mbps.
 1. Select the **Next** button.
 
