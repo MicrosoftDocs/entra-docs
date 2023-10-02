@@ -60,7 +60,7 @@ Before you can set up remote networks, you need to onboard your tenant informati
 
 You MUST complete the email step before selecting the checkbox. 
 
-# High-level steps 
+## High-level steps 
 
 You can create a remote network in the Microsoft Entra admin center or through the Microsoft Graph API.
 
