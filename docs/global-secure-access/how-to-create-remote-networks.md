@@ -106,7 +106,7 @@ You can assign the remote network to a traffic forwarding profile when you creat
 The final tab in the process is to review all of the settings that you provided. Review the details provided here and select the **Create remote network** button.
 
 ### View connectivity configuration for your CPE
-After the remote network is created, you will see the list of all remote networks. Click on **View configration** besides the one that you just created. This will open a task pane which has connectivity information of Microsoft's side that you will use to set up your CPE in step 5.
+After the remote network is created, you will see the list of all remote networks. Click on **View configuration** besides the one that you just created. This will open a task pane which has connectivity information of Microsoft's side that you will use to set up your CPE in step 5.
 
 This process is covered in detail in the [How to configure your customer premise equipment](how-to-configure-customer-premises-equipment.md).
 
