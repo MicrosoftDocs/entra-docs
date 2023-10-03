@@ -48,7 +48,7 @@ There no limitations for the IKE phase 1 combinations. Any mix and match of encr
 
 The IPSec encryption and integrity configurations are provided in the following table:
 
-| IPSec integrity | IPSec encryption |
+| IPSec encryption | IPSec integrity |
 | --- | --- |
 | GCMAES128  | GCMAES128  |
 | GCMAES192 | GCMAES192 |

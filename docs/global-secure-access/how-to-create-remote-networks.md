@@ -13,7 +13,7 @@ ms.service: network-access
 
 Remote networks are remote locations, such as a branch office, or networks that require internet connectivity. Setting up remote networks connects your users in remote locations to Global Secure Access (preview). Once a remote network is configured, you can assign a traffic forwarding profile to manage your corporate network traffic. Global Secure Access provides remote network connectivity so you can apply network security policies to your outbound traffic. 
 
-There are multiple ways to connect remote networks to Global Secure Access. In a nutshell, you're creating an Internet Protocol Security (IPSec) tunnel between a core router at your remote network and the nearest Global Secure Access endpoint. All internet-bound traffic is routed through the core router of the remote network for security policy evaluation in the cloud. Installation of a client isn't required on individual devices.
+There are multiple ways to connect remote networks to Global Secure Access. In a nutshell, you're creating an Internet Protocol Security (IPSec) tunnel between a core router, known as the Customer Premise Equipment (CPE), at your remote network and the nearest Global Secure Access endpoint. All internet-bound traffic is routed through the core router of the remote network for security policy evaluation in the cloud. Installation of a client isn't required on individual devices.
 
 This article explains how to create a remote network for Global Secure Access (preview).
 
@@ -52,7 +52,7 @@ Before you can set up remote networks, you need to onboard your tenant informati
     
     ![Screenshot of the first tab of the onboarding form.](media/how-to-create-remote-networks/onboard-tenant-info.png)
 
-1. Select the email address link. It sends a predrafted email in your default mail client on your device. Send that email to the Global Secure Access team. Once your tenant is processed - which may take up to seven business days - we'll send IPsec tunnel and BDG connectivity details to the email you used.
+1. Select the email address link. It sends a predrafted email in your default mail client on your device. Send that email to the Global Secure Access team. Once your tenant is processed, we'll send IPsec tunnel and BGP connectivity details to the email you used.
 
     ![Screenshot of the send email steps for the onboard tenant process.](media/how-to-create-remote-networks/onboard-tenant-send-email.png)
 
@@ -60,9 +60,16 @@ Before you can set up remote networks, you need to onboard your tenant informati
 
 You MUST complete the email step before selecting the checkbox. 
 
-## Create a remote network
+## High-level steps 
 
 You can create a remote network in the Microsoft Entra admin center or through the Microsoft Graph API.
+
+At a high level, there are five steps for creating a remote network and configuring an active IPsec tunnel: 
+1. Enter the basic details like the **Name** and **Region** of your remote network. **Region** specifies where you want your other end of IPsec tunnel. The other end of the tunnel is your router or CPE.
+1. Add a device link (or IPsec tunnel) to the remote network. In this step, you enter your router's details in the Microsoft Entra admin center. This tells Microsoft where to expect IKE negotiations to come from.
+1. Associate a traffic forwarding profile with the remote network, which specifies what traffic will be acquired over the IPsec tunnel. We use dynamic routing through BGP.
+1. Get IPsec tunnel details of Microsoft's end by selecting **View configuration**. In step 2, you provided your router's details to Microsoft. In this step Microsoft provides its side of the connectivity configuration.
+1. Take Microsoft's connectivity configuration from step 4 and enter it in the management console of your router or CPE. Note that this step is *not* in the Microsoft Entra admin center.
 
 # [Microsoft Entra admin center](#tab/microsoft-entra-admin-center) 
 
@@ -82,11 +89,11 @@ The first step is to provide the name and location of your remote network. Compl
 
 ### Connectivity
 
-The connectivity tab is where you add the device links for the remote network. You need to provide the device type, IP address, border gateway protocol (BGP) address, and autonomous system number (ASN) for each device link. You can also add device links after creating the remote network.
+The connectivity tab is where you add the device links for the remote network. You need to provide the device type, public IP address of your CPE, border gateway protocol (BGP) address, and autonomous system number (ASN) for each device link. You can also add device links after creating the remote network.
 
 This process is covered in detail in the [How to manage remote network device links](how-to-manage-remote-network-device-links.md).
 
-![Screenshot of the general tab of the create device link process.](media/how-to-create-remote-networks/device-link-general-tab.png)
+![Screenshot of the general tab of the create device link process.](media/how-to-create-remote-networks/add-device-link.png)
 
 ### Traffic forwarding profiles
 
@@ -96,9 +103,15 @@ You can assign the remote network to a traffic forwarding profile when you creat
 1. Select the appropriate traffic forwarding profile.
 1. Select the **Review + Create** button.
 
-### Review and create
-
 The final tab in the process is to review all of the settings that you provided. Review the details provided here and select the **Create remote network** button.
+
+### View connectivity configuration for your CPE
+After the remote network is created, you will see the list of all remote networks. Click on **View configuration** besides the one that you just created. This will open a task pane which has connectivity information of Microsoft's side that you will use to set up your CPE in step 5.
+
+This process is covered in detail in the [How to configure your customer premise equipment](how-to-configure-customer-premises-equipment.md).
+
+### Set up your CPE
+This step is performed in management console your CPE, not in Microsoft Entra admin center. Until you do this, your IPsec will *not* be set up. IPsec is a bi-directional communication. IKE negotiations happens between two parties before the tunnel is successfully set up. So, do not miss this step.
 
 # [Microsoft Graph API](#tab/microsoft-graph-api) 
 
@@ -191,6 +204,8 @@ There are a few things to consider and verify when creating remote networks. You
         - Update the public IP address in the crypto profile of your CPE.
         - Go to the **Global Secure Access** > **Devices** > **Remote Networks**.
         - Select the appropriate remote network, delete the old tunnel, and recreate a new tunnel with the updated public IP address.
+
+- **Verify Microsoft's public IP address**: When you delete a device link and/or create a new one, you may get another public IP endpoint of that link in **View configuration** for that remote network. This change can cause the IKE negotiation to fail. If you encounter this scenario, update the public IP address in the crypto profile of your CPE.
 
 - **Port forwarding**: In some situations, the ISP router can also be a network address translation (NAT) device. A NAT converts the private IP addresses of home devices to a public internet-routable device.
     - Generally, a NAT device changes both the IP address and the port. This port changing is the root of the problem.

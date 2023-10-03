@@ -41,31 +41,32 @@ You can add a device link to a remote network at any time.
     - **Link name**: Name of your CPE.
     - **Device type**: Choose one of the options from the dropdown list.
     - **IP address**: Public IP address of your device.
-    - **Peer BGP address**: The border gateway protocol address of the CPE.
-    - **Link ASN**: Provide the autonomous system number of the CPE. For more information, see the **Valid ASNs** section of the [Remote network configurations](reference-remote-network-configurations.md) article.
+    - **Peer BGP address**: Enter BGP IP address of your CPE (customer premise equipment). Enter this address as the local BGP IP address on the CPE. The peer and local details are reversed, depending on where the configuration is completed.
+    - **Local BGP address**: Enter a BGP IP address that is *not* part of your on-premises network where your CPE (customer premise equipment) resides. Suppose your on-premises network is 10.1.0.0/16, then you can use 10.2.0.4 as your Local BGP address. Enter this address as the peer BGP​​ IP address on your CPE. The peer and local details are reversed, depending on where the configuration is completed.
+    - **Link ASN**: Provide the autonomous system number of the CPE.  A BGP-enabled connection between two network gateways requires that they have different autonomous system numbers (ASNs). For more information, see the **Valid ASNs** section of the [Remote network configurations](reference-remote-network-configurations.md) article.
     - **Redundancy**: Select either *No redundancy* or *Zone redundancy* for your IPSec tunnel.
-    - **Bandwidth capacity (Mbps)**: Choose the bandwidth for your IPSec tunnel.
+    - **Zone redundant local BGP address**: This is an optional field that shows up only when you select **Zone redundancy**. Enter a BGP IP address that is *not* part of your on-premises network where your CPE resides and is different from the **Local BGP address**.
+    - **Bandwidth capacity (Mbps)**: Specify tunnel bandwidth. Available options are 250, 500, 750, and 1000 Mbps.
 1. Select the **Next** button.
 
-![Screenshot of the general tab of the create device link process.](media/how-to-manage-remote-network-device-links/device-link-general-tab.png)
+![Screenshot of the general tab of the create device link process.](media/how-to-manage-remote-network-device-links/add-device-link.png)
 
 **Details**
 
 1. **IKEv2** is selected by default. Currently only IKEv2 is supported.
-1. The IPSec/IKE policy is set to **Default** but you can change to **Custom**.
-    - If you select **Custom**, you must use a combination of settings that are supported by Global Secure Access.
-    - The valid configurations you can use are mapped out in the [Remote network valid configurations](reference-remote-network-configurations.md) reference article.
-    - Whether you choose Default or Custom, the IPSec/IKE policy you specify must match the policy on your CPE.
-    - View the [remote network valid configurations](reference-remote-network-configurations.md).
-
+    - The IPSec/IKE policy is set to **Default** but you can change to **Custom**. Setting up a device link with custom IPSec/IKE policy is covered in detail in [How to create remote network with custom IKE policy](how-to-create-remote-network-custom-ike-policy.md).
+    - If you select **Custom**, you must use a combination of settings that are supported by Global Secure Access. The valid configurations you can use are mapped out in the [Remote network valid configurations](reference-remote-network-configurations.md) reference article.
+    - Whether you choose **Default** or **Custom**, the IPSec/IKE policy you specify must match the policy on your CPE.   
 1. Select the **Next** button.
 
 ![Screenshot of the custom details for the device link.](media/how-to-manage-remote-network-device-links/device-link-details.png)
 
 **Security**
 
-1. Enter the Preshared key (PSK): `<Enter the secret key. The same secret key must be used on your CPE.>` 
-1. Select **Add link**. 
+1. Enter the Preshared key (PSK). The same secret key must be used on your CPE.
+1. Select **Add link**.
+
+![Screenshot of the security tab for the device link.](media/how-to-manage-remote-network-device-links/add-device-link-security-tab.png)
 
 ## Add a device link using Microsoft Graph API
 
