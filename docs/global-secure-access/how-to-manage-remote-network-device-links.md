@@ -54,7 +54,7 @@ You can add a device link to a remote network at any time.
 **Details**
 
 1. **IKEv2** is selected by default. Currently only IKEv2 is supported.
-1. The IPSec/IKE policy is set to **Default** but you can change to **Custom**. Setting up a device link with custom IPSec/IKE policy is covered in detail in [How to create remote network with custom IKE policy](how-to-create-remote-network-custom-ike-policy.md).
+    - The IPSec/IKE policy is set to **Default** but you can change to **Custom**. Setting up a device link with custom IPSec/IKE policy is covered in detail in [How to create remote network with custom IKE policy](how-to-create-remote-network-custom-ike-policy.md).
     - If you select **Custom**, you must use a combination of settings that are supported by Global Secure Access. The valid configurations you can use are mapped out in the [Remote network valid configurations](reference-remote-network-configurations.md) reference article.
     - Whether you choose **Default** or **Custom**, the IPSec/IKE policy you specify must match the policy on your CPE.   
 1. Select the **Next** button.
