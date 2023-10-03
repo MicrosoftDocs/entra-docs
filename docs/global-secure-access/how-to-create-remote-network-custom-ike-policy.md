@@ -50,7 +50,7 @@ To create a remote network with a custom IKE policy, you must have:
 
 1. **IKEv2** is selected by default. Currently only IKEv2 is supported.
 1. Change the IPSec/IKE policy to **Custom**.
-    - Choose **Encryption**, **IKEv2 integrity** and **DHGroup** under IKE phase 1. You can choose any options from the dropdowns. Avilable options are listed here - [Remote network valid configurations](reference-remote-network-configurations.md).
+    - Choose **Encryption**, **IKEv2 integrity** and **DHGroup** under IKE phase 1. You can choose any options from the dropdowns. Available options are listed here - [Remote network valid configurations](reference-remote-network-configurations.md).
     - Choose **IPsec encryption**, **IPsec integrity**, **PFS group** and **SA lifetime (seconds)** under IKE phase 2. Make sure your selection of  **IPsec encryption** and **IPsec integrity** aligns with combination documented here - [Remote network valid configurations](reference-remote-network-configurations.md).
 3. Whether you choose Default or Custom, the IPSec/IKE policy you specify must match the crypto policy on your CPE.
 4. Select the **Next** button.
