@@ -24,7 +24,7 @@ the link in the **Version** column to view the source on the
 
 ## Microsoft Entra Domain Services
 
-[!INCLUDE [azure-policy-reference-rp-aads](../../includes/policy/reference/byrp/microsoft.aad.md)]
+[!INCLUDE [azure-policy-reference-rp-aads](~/../azure-docs-pr/includes/policy/reference/byrp/microsoft.aad.md)]
 
 ## Next steps
 
