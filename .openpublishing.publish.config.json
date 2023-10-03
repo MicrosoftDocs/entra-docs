@@ -27,6 +27,12 @@
       "branch_mapping": {}
     },
     {
+      "path_to_root": "azure-docs-pr",
+      "url": "https://github.com/MicrosoftDocs/azure-docs-pr",
+      "branch": "main",
+      "branch_mapping": {}
+    },    
+    {
       "path_to_root": "microsoft-graph",
       "url": "https://github.com/MicrosoftGraph/microsoft-graph-docs",
       "branch": "main",
