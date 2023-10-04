@@ -5,7 +5,7 @@ author: shlipsey3
 ms.author: sarahlipsey
 manager: amycolannino
 ms.topic: reference
-ms.date: 09/13/2023
+ms.date: 10/04/2023
 ms.service: network-access
 ms.custom: 
 ---
@@ -25,7 +25,7 @@ When you select **Default** as your IPsec/IKE policy when configuring remote net
 | Properties | Combination 1 | Combination 2 | Combination 3 | Combination 4 | Combination 5 |
 | --- | --- | --- | --- | --- | --- |
 | IKE encryption | GCMAES256 | GCMAES128 | AES256 | AES128 | AES256 |
-| IKEv2 integrity | SHA384 | SHA256 | SHA384 | SHA256 | SHA256 |
+| IKE integrity | SHA384 | SHA256 | SHA384 | SHA256 | SHA256 |
 | DH group | DHGroup24 | DHGroup24 | DHGroup24 | DHGroup24 | DHGroup2 |
 
 ### IKE Phase 2 combinations
@@ -53,7 +53,7 @@ The IPSec encryption and integrity configurations are provided in the following 
 | GCMAES128  | GCMAES128  |
 | GCMAES192 | GCMAES192 |
 | GCMAES256 | GCMAES256 |
-| None | SHA24 |
+| None | SHA256 |
 
 - PFS group - No limitation.
 - SA lifetime - must be >300 seconds.
