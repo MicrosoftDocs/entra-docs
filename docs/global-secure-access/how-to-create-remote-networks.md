@@ -193,7 +193,7 @@ There are a few things to consider and verify when creating remote networks. You
 
 - **Verify IKE crypto profile**: The crypto profile (IKE phase 1 and phase 2 algorithms) set for a device link should match what has been set on the CPE. If you chose the **default IKE policy**, ensure that your CPE is set up with the crypto profile specified in the [Remote network configurations](reference-remote-network-configurations.md) reference article.
 
-- **Verify pre-shared key**: Compare the pre-shared key (PSK) you specified when creating the device link in Microsoft Global Secure Access with the PSK you specified on your CPE. This detail is added on the **Security** tab during the **Add a link** process. For more information, see [How to manage remote network device links.](how-to-manage-remote-network-device-links.md#add-a-device-link-using-the-microsoft-entra-admin-center).
+- **Verify pre-shared key**: Compare the pre-shared key (PSK) you specified when creating the device link in Microsoft Global Secure Access with the PSK you specified on your CPE. This detail is added on the **Security** tab during the **Add a link** process. For more information, see [How to manage remote network device links.](how-to-manage-remote-network-device-links.md#add-a-link---security-tab).
 
 - **Verify local and peer BGP IP addresses**: The public IP addresses and BGP addresses specified while creating a device link in Microsoft Global Secure Access should match what you specified when configuring the CPE. 
     - The local and peer BGP addresses are reversed between the CPE and what is entered in Global Secure Access.
