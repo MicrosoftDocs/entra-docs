@@ -1,11 +1,11 @@
 ---
 title: Global Secure Access points of presence
-description: Global Secure Access points of presence.
+description: Global Secure Access points of presence for Microsoft Entra Internet and Microsoft Entra Private Access.
 author: shlipsey3
 ms.author: sarahlipsey
 manager: amycolannino
 ms.topic: reference
-ms.date: 07/03/2023
+ms.date: 10/05/2023
 ms.service: network-access
 ms.custom: references_regions
 ---
