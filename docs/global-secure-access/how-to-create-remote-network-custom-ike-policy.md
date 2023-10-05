@@ -88,7 +88,7 @@ There are several details to enter on the General tab. Pay close attention to th
 
 1. Select the **Next** button.
 
-![Screenshot of the custom details for the device link.](media/how-to-manage-remote-network-device-links/device-link-details.png)
+    ![Screenshot of the custom details for the device link.](media/how-to-create-remote-network-custom-ike-policy/device-link-details.png)
 
 ### Add a link Security tab
 

@@ -133,6 +133,8 @@ Sample response:
 }
 ```
 
+---
+
 ## How to delete device links
 
 You can delete device links through the Microsoft Entra admin center and using the Microsoft Graph API.
@@ -149,7 +151,7 @@ You can delete device links through the Microsoft Entra admin center and using t
 
     ![Screenshot of the delete icon for remote network device links.](media/how-to-manage-remote-network-device-links/delete-device-link.png)
 
-## Delete a device link using Microsoft Graph API
+### [Microsoft Graph API](#tab/microsoft-graph-api)
 
 1. Sign in to [Graph Explorer](https://aka.ms/ge).
 1. Select `DELETE` as the HTTP method from the dropdown.
@@ -160,6 +162,8 @@ You can delete device links through the Microsoft Entra admin center and using t
     DELETE https://graph.microsoft.com/beta/networkaccess/connectivity/branches/BRANCH_ID/deviceLinks/LINK_ID
     
     ```
+
+---
 
 [!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
 

@@ -60,18 +60,23 @@ Before you can set up remote networks, you need to onboard your tenant informati
 
 You MUST complete the email step before selecting the checkbox. 
 
-## High-level steps 
+## High-level steps
 
 You can create a remote network in the Microsoft Entra admin center or through the Microsoft Graph API.
 
-At a high level, there are five steps for creating a remote network and configuring an active IPsec tunnel: 
-1. Enter the basic details like the **Name** and **Region** of your remote network. **Region** specifies where you want your other end of IPsec tunnel. The other end of the tunnel is your router or CPE.
-1. Add a device link (or IPsec tunnel) to the remote network. In this step, you enter your router's details in the Microsoft Entra admin center. This tells Microsoft where to expect IKE negotiations to come from.
-1. Associate a traffic forwarding profile with the remote network, which specifies what traffic will be acquired over the IPsec tunnel. We use dynamic routing through BGP.
-1. Get IPsec tunnel details of Microsoft's end by selecting **View configuration**. In step 2, you provided your router's details to Microsoft. In this step Microsoft provides its side of the connectivity configuration.
-1. Take Microsoft's connectivity configuration from step 4 and enter it in the management console of your router or CPE. Note that this step is *not* in the Microsoft Entra admin center.
+At a high level, there are five steps for creating a remote network and configuring an active IPsec tunnel:
+ 
+1. [**Basics**](#basics): Enter the basic details like the **Name** and **Region** of your remote network. **Region** specifies where you want your other end of IPsec tunnel. The other end of the tunnel is your router or CPE.
 
-# [Microsoft Entra admin center](#tab/microsoft-entra-admin-center) 
+1. [**Connectivity**](#connectivity): Add a device link (or IPsec tunnel) to the remote network. In this step, you enter your router's details in the Microsoft Entra admin center, which tells Microsoft where to expect IKE negotiations to come from.
+
+1. [**Traffic forwarding profile**](#traffic-forwarding-profiles): Associate a traffic forwarding profile with the remote network, which specifies what traffic will be acquired over the IPsec tunnel. We use dynamic routing through BGP.
+
+1. [**View CPE connectivity configuration**](#view-cpe-connectivity-configuration): Retrieve the IPsec tunnel details of Microsoft's end of the tunnel. On the **Connectivity** step, you provided your router's details to Microsoft. In this step, you retrieve Microsoft's side of the connectivity configuration.
+
+1. [**Set up your CPE**](#set-up-your-cpe): Take Microsoft's connectivity configuration from the previous step and enter it in the management console of your router or CPE. Note that this step is *not* in the Microsoft Entra admin center.
+
+## [Microsoft Entra admin center](#tab/microsoft-entra-admin-center) 
 
 Remote networks are configured on three tabs. You must complete each tab in order. After completing the tab either select the next tab from the top of the page, or select the **Next** button at the bottom of the page.
 
@@ -105,23 +110,28 @@ You can assign the remote network to a traffic forwarding profile when you creat
 
 The final tab in the process is to review all of the settings that you provided. Review the details provided here and select the **Create remote network** button.
 
-### View connectivity configuration for your CPE
-After the remote network is created, you will see the list of all remote networks. Click on **View configuration** besides the one that you just created. This will open a task pane which has connectivity information of Microsoft's side that you will use to set up your CPE in step 5.
+### View CPE connectivity configuration
+
+All your remote networks appear on the **Remote network** page. Select the **View configuration** link in the **Connectivity details** column to view your configuration details.
+
+These details contain the connectivity information from Microsoft's side of the bidirectional communication channel that you will use to set up your CPE.
 
 This process is covered in detail in the [How to configure your customer premise equipment](how-to-configure-customer-premises-equipment.md).
 
 ### Set up your CPE
-This step is performed in management console your CPE, not in Microsoft Entra admin center. Until you do this, your IPsec will *not* be set up. IPsec is a bi-directional communication. IKE negotiations happens between two parties before the tunnel is successfully set up. So, do not miss this step.
 
-# [Microsoft Graph API](#tab/microsoft-graph-api) 
+This step is performed in management console your CPE, not in Microsoft Entra admin center. Until you do this, your IPsec will *not* be set up. IPsec is a bidirectional communication. IKE negotiations happens between two parties before the tunnel is successfully set up. So, do not miss this step.
+
+## [Microsoft Graph API](#tab/microsoft-graph-api)
 
 Global Secure Access remote networks can be viewed and managed using Microsoft Graph on the `/beta` endpoint. Creating a remote network and assigning a traffic forwarding profile are separate API calls.
 
 1. Sign in to [Graph Explorer](https://aka.ms/ge).
-1. Select POST as the HTTP method. 
-1. Select BETA as the API version. 
-1. Add the following query to use Create Branches API 
-    ```
+1. Select POST as the HTTP method.
+1. Select BETA as the API version.
+1. Run the following query:
+
+    ```http
     POST https://graph.microsoft.com/beta/networkaccess/connectivity/branches 
     { 
         "name": "ContosoBranch", 
@@ -149,22 +159,20 @@ Global Secure Access remote networks can be viewed and managed using Microsoft G
     }  
     ```
 
-1. Select **Run query** to create a remote network.
-
 ### Assign a traffic forwarding profile
 
 Associating a traffic forwarding profile to your remote network using the Microsoft Graph API is two step process. First, locate the ID of the traffic profile. The ID is different for all tenants. Second, associate the traffic forwarding profile with your desired remote network.
 
 1. Sign in to [Graph Explorer](https://aka.ms/ge).
-1. Select **PATCH** as the HTTP method from the dropdown. 
-1. Select the API version to **beta**. 
+1. Select **PATCH** as the HTTP method from the dropdown.
+1. Select the API version to **beta**.
 1. Enter the query:
     ```
     GET https://graph.microsoft.com/beta/networkaccess/forwardingprofiles 
     ```
-1. Select **Run query**. 
-1. Find the ID of the desired traffic forwarding profile. 
-1. Select PATCH as the HTTP method from the dropdown. 
+1. Select **Run query**.
+1. Find the ID of the desired traffic forwarding profile.
+1. Select PATCH as the HTTP method from the dropdown.
 1. Enter the query:
     ```
         PATCH https://graph.microsoft.com/beta/networkaccess/connectivity/branches/d2b05c5-1e2e-4f1d-ba5a-1a678382ef16/forwardingProfiles
@@ -177,7 +185,6 @@ Associating a traffic forwarding profile to your remote network using the Micros
         }
     ```
 
-1. Select **Run query** to update the remote network.
 ---
 
 ## Verify your remote network configurations
