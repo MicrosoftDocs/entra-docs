@@ -43,19 +43,23 @@ There are three sections with details you can edit:
 
 #### Basics
 
-From this page you can delete the selected remote network. The only detail you can edit after a remote network is created is the name. Select the pencil icon to edit the name of the remote network.
+From this page, you can delete the selected remote network. You can only change the name of a remote network after it's created. Select the pencil icon to edit the name of the remote network.
 
 ![Screenshot of the basics tab with the pencil icon highlighted.](./media/how-to-manage-remote-networks/remote-network-basics.png)
 
 #### Links
 
-From this page you can add a new device link or delete an existing device link. You can't edit the details of a device link after it was created. Select the trash can icon to delete a remote network device link.
+Add a new device link or delete an existing device link from this page. You can't edit the details of a device link after it was created. Select the trash can icon to delete a remote network device link.
 
 ![Screenshot of the delete option in the device links page.](./media/how-to-manage-remote-networks/delete-device-link.png)
 
 #### Traffic profiles
 
-From this page you can enable or disable the available traffic forwarding profile. To view or manage the details of the traffic forwarding profiles, browse to **Connect** > **Traffic forwarding**.
+From this page, you can enable or disable the available traffic forwarding profile. At this time, only the Microsoft 365 access profile can be applied to remote networks.
+
+![Screenshot of the traffic profiles options on the remote networks.](./media/how-to-manage-remote-networks/remote-network-traffic-profile.png)
+
+You can also assign a remote network to the Microsoft 365 traffic forwarding profile from **Traffic forwarding** area of Global Secure Access. Browse to **Connect** > **Traffic forwarding** and select the **Add/edit assignments** button for the traffic profile. For more information, see [Global Secure Access traffic forwarding](concept-traffic-forwarding.md).
 
 ### [Microsoft Graph API](#tab/microsoft-graph-api)
 

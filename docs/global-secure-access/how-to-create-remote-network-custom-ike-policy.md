@@ -64,7 +64,7 @@ There are several details to enter on the General tab. Pay close attention to th
         - A BGP-enabled connection between two network gateways requires that they have different ASNs.
         - For more information, see the **Valid ASNs** section of the [Remote network configurations](reference-remote-network-configurations.md#valid-autonomous-system-number-asn) article.
     - **Redundancy**: Select either *No redundancy* or *Zone redundancy* for your IPSec tunnel.
-    - **Zone redundant local BGP address**: This is an optional field that shows up only when you select **Zone redundancy**.
+    - **Zone redundant local BGP address**: This optional field shows up only when you select **Zone redundancy**.
         - Enter a BGP IP address that is *not* part of your on-premises network where your CPE resides *and* is different from **Local BGP address**.
     - **Bandwidth capacity (Mbps)**: Specify tunnel bandwidth. Available options are 250, 500, 750, and 1000 Mbps.
 1. Select the **Next** button.
@@ -141,6 +141,8 @@ Remote networks with a custom IKE policy can be created using Microsoft Graph on
     ]
 }
 ```
+
+---
 
 [!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
 

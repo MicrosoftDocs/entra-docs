@@ -52,7 +52,7 @@ Before you can set up remote networks, you need to onboard your tenant informati
     
     ![Screenshot of the first tab of the onboarding form.](media/how-to-create-remote-networks/onboard-tenant-info.png)
 
-1. Select the email address link. It sends a predrafted email in your default mail client on your device. Send that email to the Global Secure Access team. Once your tenant is processed, we'll send IPsec tunnel and BGP connectivity details to the email you used.
+1. Select the email address link. It sends a pre-drafted email in your default mail client on your device. Send that email to the Global Secure Access team. Once your tenant is processed, we'll send IPsec tunnel and BGP connectivity details to the email you used.
 
     ![Screenshot of the send email steps for the onboard tenant process.](media/how-to-create-remote-networks/onboard-tenant-send-email.png)
 
@@ -70,11 +70,11 @@ At a high level, there are five steps for creating a remote network and configur
 
 1. [**Connectivity**](#connectivity): Add a device link (or IPsec tunnel) to the remote network. In this step, you enter your router's details in the Microsoft Entra admin center, which tells Microsoft where to expect IKE negotiations to come from.
 
-1. [**Traffic forwarding profile**](#traffic-forwarding-profiles): Associate a traffic forwarding profile with the remote network, which specifies what traffic will be acquired over the IPsec tunnel. We use dynamic routing through BGP.
+1. [**Traffic forwarding profile**](#traffic-forwarding-profiles): Associate a traffic forwarding profile with the remote network, which specifies what traffic to acquire over the IPsec tunnel. We use dynamic routing through BGP.
 
 1. [**View CPE connectivity configuration**](#view-cpe-connectivity-configuration): Retrieve the IPsec tunnel details of Microsoft's end of the tunnel. On the **Connectivity** step, you provided your router's details to Microsoft. In this step, you retrieve Microsoft's side of the connectivity configuration.
 
-1. [**Set up your CPE**](#set-up-your-cpe): Take Microsoft's connectivity configuration from the previous step and enter it in the management console of your router or CPE. Note that this step is *not* in the Microsoft Entra admin center.
+1. [**Set up your CPE**](#set-up-your-cpe): Take Microsoft's connectivity configuration from the previous step and enter it in the management console of your router or CPE. This step is *not* in the Microsoft Entra admin center.
 
 ## [Microsoft Entra admin center](#tab/microsoft-entra-admin-center) 
 
@@ -88,7 +88,7 @@ The first step is to provide the name and location of your remote network. Compl
 1. Select the **Create remote network** button and provide the following details:
     - **Name**
     - **Region**
-1. Select the **Next** button.
+1. Select the **Next: Connectivity** button. You can also select the **Connectivity** tab.
 
     ![Screenshot of the basics tab of the create device link process.](media/how-to-create-remote-networks/create-basics-tab.png)
 
@@ -114,13 +114,13 @@ The final tab in the process is to review all of the settings that you provided.
 
 All your remote networks appear on the **Remote network** page. Select the **View configuration** link in the **Connectivity details** column to view your configuration details.
 
-These details contain the connectivity information from Microsoft's side of the bidirectional communication channel that you will use to set up your CPE.
+These details contain the connectivity information from Microsoft's side of the bidirectional communication channel that you use to set up your CPE.
 
 This process is covered in detail in the [How to configure your customer premise equipment](how-to-configure-customer-premises-equipment.md).
 
 ### Set up your CPE
 
-This step is performed in management console your CPE, not in Microsoft Entra admin center. Until you do this, your IPsec will *not* be set up. IPsec is a bidirectional communication. IKE negotiations happens between two parties before the tunnel is successfully set up. So, do not miss this step.
+This step is performed in management console your CPE, not in Microsoft Entra admin center. Until you complete this step, your IPsec will *not* be set up. IPsec is a bidirectional communication. IKE negotiations happen between two parties before the tunnel is successfully set up. So, don't miss this step.
 
 ## [Microsoft Graph API](#tab/microsoft-graph-api)
 

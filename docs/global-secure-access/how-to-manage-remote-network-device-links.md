@@ -64,24 +64,22 @@ There are several details to enter on the General tab. Pay close attention to th
         - A BGP-enabled connection between two network gateways requires that they have different ASNs.
         - For more information, see the **Valid ASNs** section of the [Remote network configurations](reference-remote-network-configurations.md#valid-autonomous-system-number-asn) article.
     - **Redundancy**: Select either *No redundancy* or *Zone redundancy* for your IPSec tunnel.
-    - **Zone redundant local BGP address**: This is an optional field that shows up only when you select **Zone redundancy**.
+    - **Zone redundant local BGP address**: This optional field shows up only when you select **Zone redundancy**.
         - Enter a BGP IP address that is *not* part of your on-premises network where your CPE resides and is different from the **Local BGP address**.
     - **Bandwidth capacity (Mbps)**: Specify tunnel bandwidth. Available options are 250, 500, 750, and 1000 Mbps.
 1. Select the **Next** button.
 
 ### Add a link - Details tab
 
-The **Details** tab is where you establish the bidirectional communication channel between Global Secure Access and your CPE.
+The **Details** tab is where you establish the bidirectional communication channel between Global Secure Access and your CPE. Configure your IPSec/IKE policy and select the **Next** button.
 
 ![Screenshot of the default device link details.](./media/how-to-manage-remote-network-device-links/default-device-link-details.png)
 
 - **IKEv2** is selected by default. Currently only IKEv2 is supported.
 - The IPSec/IKE policy is set to **Default** but you can change to **Custom**.
-- If you choose the custom IPSec/IKE policy, first review the details in [How to create remote network with custom IKE policy](how-to-create-remote-network-custom-ike-policy.md).
+- If you choose the custom IPSec/IKE policy, first review the [How to create remote network with custom IKE policy](how-to-create-remote-network-custom-ike-policy.md) article.
 - If you select **Custom**, you must use a combination of settings that are supported by Global Secure Access. The valid configurations you can use are mapped out in the [Remote network valid configurations](reference-remote-network-configurations.md) reference article.
 - Whether you choose **Default** or **Custom**, the IPSec/IKE policy you specify must match the policy you enter on your CPE.
-
-1. Select the **Next** button.
 
 ### Add a link - Security tab
 
@@ -143,7 +141,7 @@ You can delete device links through the Microsoft Entra admin center and using t
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
 
-1. Browse to **Global Secure Access (preview)** > **Devices** > **Remote network**. evice links appear in the **Links** column on the list of remote networks.
+1. Browse to **Global Secure Access (preview)** > **Devices** > **Remote network**. Device links appear in the **Links** column on the list of remote networks.
 
 1. Select the device link from the **Links** column to access the device link details page.
 
