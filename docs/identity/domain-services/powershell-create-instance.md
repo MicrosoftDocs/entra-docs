@@ -20,7 +20,7 @@ Microsoft Entra Domain Services provides managed domain services such as domain 
 
 This article shows you how to enable Domain Services using PowerShell.
 
-[!INCLUDE [updated-for-az.md](../../includes/updated-for-az.md)]
+[!INCLUDE [updated-for-az.md](~/../azure-docs-pr/includes/updated-for-az.md)]
 
 ## Prerequisites
 
