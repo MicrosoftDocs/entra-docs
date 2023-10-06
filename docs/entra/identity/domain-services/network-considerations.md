@@ -61,7 +61,7 @@ A managed domain connects to a subnet in an Azure virtual network. Design this s
 
 The following example diagram outlines a valid design where the managed domain has its own subnet, there's a gateway subnet for external connectivity, and application workloads are in a connected subnet within the virtual network:
 
-![Recommended subnet design](./media/active-directory-domain-services-design-guide/vnet-subnet-design.png)
+![Recommended subnet design](./media/entra-domain-services-design-guide/vnet-subnet-design.png)
 
 <a name='connections-to-the-azure-ad-ds-virtual-network'></a>
 
@@ -78,7 +78,7 @@ You can connect application workloads hosted in other Azure virtual networks usi
 
 Virtual network peering is a mechanism that connects two virtual networks in the same region through the Azure backbone network. Global virtual network peering can connect virtual network across Azure regions. Once peered, the two virtual networks let resources, such as VMs, communicate with each other directly using private IP addresses. Using virtual network peering lets you deploy a managed domain with your application workloads deployed in other virtual networks.
 
-![Virtual network connectivity using peering](./media/active-directory-domain-services-design-guide/vnet-peering.png)
+![Virtual network connectivity using peering](./media/entra-domain-services-design-guide/vnet-peering.png)
 
 For more information, see [Azure virtual network peering overview](/azure/virtual-network/virtual-network-peering-overview).
 
@@ -86,7 +86,7 @@ For more information, see [Azure virtual network peering overview](/azure/virtua
 
 You can connect a virtual network to another virtual network (VNet-to-VNet) in the same way that you can configure a virtual network to an on-premises site location. Both connections use a VPN gateway to create a secure tunnel using IPsec/IKE. This connection model lets you deploy the managed domain into an Azure virtual network and then connect on-premises locations or other clouds.
 
-![Virtual network connectivity using a VPN Gateway](./media/active-directory-domain-services-design-guide/vnet-connection-vpn-gateway.jpg)
+![Virtual network connectivity using a VPN Gateway](./media/entra-domain-services-design-guide/vnet-connection-vpn-gateway.jpg)
 
 For more information on using virtual private networking, read [Configure a VNet-to-VNet VPN gateway connection by using the Microsoft Entra admin center](/azure/vpn-gateway/vpn-gateway-howto-vnet-vnet-resource-manager-portal).
 
