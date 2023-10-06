@@ -127,7 +127,7 @@ With the administrative tools installed, let's see how to use them to administer
 1. Select **Active Directory Administrative Center**.
 1. To explore the managed domain, choose the domain name in the left pane, such as *aaddscontoso*. Two containers named *AADDC Computers* and *AADDC Users* are at the top of the list.
 
-    ![List the available containers part of the managed domain](./media/tutorial-create-management-vm/active-directory-administrative-center.png)
+    ![List the available containers part of the managed domain](./media/tutorial-create-management-vm/entra-administrative-center.png)
 
 1. To see the users and groups that belong to the managed domain, select the **AADDC Users** container. The user accounts and groups from your Microsoft Entra tenant are listed in this container.
 
