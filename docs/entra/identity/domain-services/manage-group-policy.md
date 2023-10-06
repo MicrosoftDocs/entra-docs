@@ -60,7 +60,7 @@ To create and configure Group Policy Object (GPOs), you need to install the Grou
 1. On the **Server Roles** page, click **Next**.
 1. On the **Features** page, select the **Group Policy Management** feature.
 
-    ![Install the 'Group Policy Management' from the Features page](./media/active-directory-domain-services-admin-guide/install-rsat-server-manager-add-roles-gp-management.png)
+    ![Install the 'Group Policy Management' from the Features page](./media/entra-domain-services-admin-guide/install-rsat-server-manager-add-roles-gp-management.png)
 
 1. On the **Confirmation** page, select **Install**. It may take a minute or two to install the Group Policy Management tools.
 1. When feature installation is complete, select **Close** to exit the **Add Roles and Features** wizard.
@@ -75,7 +75,7 @@ Default group policy objects (GPOs) exist for users and computers in a managed d
 1. From the Start screen, select **Administrative Tools**. A list of available management tools is shown, including **Group Policy Management** installed in the previous section.
 1. To open the Group Policy Management Console (GPMC), choose **Group Policy Management**.
 
-    ![The Group Policy Management Console opens ready to edit group policy objects](./media/active-directory-domain-services-admin-guide/gp-management-console.png)
+    ![The Group Policy Management Console opens ready to edit group policy objects](./media/entra-domain-services-admin-guide/gp-management-console.png)
 
 There are two built-in Group Policy Objects (GPOs) in a managed domain - one for the *AADDC Computers* container, and one for the *AADDC Users* container. You can customize these GPOs to configure group policy as needed within your managed domain.
 
@@ -83,15 +83,15 @@ There are two built-in Group Policy Objects (GPOs) in a managed domain - one for
 
     Two built-in containers exist for *AADDC Computers* and *AADDC Users*. Each of these containers has a default GPO applied to them.
 
-    ![Built-in GPOs applied to the default 'AADDC Computers' and 'AADDC Users' containers](./media/active-directory-domain-services-admin-guide/builtin-gpos.png)
+    ![Built-in GPOs applied to the default 'AADDC Computers' and 'AADDC Users' containers](./media/entra-domain-services-admin-guide/builtin-gpos.png)
 
 1. These built-in GPOs can be customized to configure specific group policies on your managed domain. Right-select one of the GPOs, such as *AADDC Computers GPO*, then choose **Edit...**.
 
-    ![Choose the option to 'Edit' one of the built-in GPOs](./media/active-directory-domain-services-admin-guide/edit-builtin-gpo.png)
+    ![Choose the option to 'Edit' one of the built-in GPOs](./media/entra-domain-services-admin-guide/edit-builtin-gpo.png)
 
 1. The Group Policy Management Editor tool opens to let you customize the GPO, such as *Account Policies*:
 
-    ![Screenshot of the Group Policy Management Editor.](./media/active-directory-domain-services-admin-guide/gp-editor.png)
+    ![Screenshot of the Group Policy Management Editor.](./media/entra-domain-services-admin-guide/gp-editor.png)
 
     When done, choose **File > Save** to save the policy. Computers refresh Group Policy by default every 90 minutes and apply the changes you made.
 
@@ -101,19 +101,19 @@ To group similar policy settings, you often create additional GPOs instead of ap
 
 1. In the **Group Policy Management** console, select your custom organizational unit (OU), such as *MyCustomOU*. Right-select the OU and choose **Create a GPO in this domain, and Link it here...**:
 
-    ![Create a custom GPO in the Group Policy Management console](./media/active-directory-domain-services-admin-guide/gp-create-gpo.png)
+    ![Create a custom GPO in the Group Policy Management console](./media/entra-domain-services-admin-guide/gp-create-gpo.png)
 
 1. Specify a name for the new GPO, such as *My custom GPO*, then select **OK**. You can optionally base this custom GPO on an existing GPO and set of policy options.
 
-    ![Specify a name for the new custom GPO](./media/active-directory-domain-services-admin-guide/gp-specify-gpo-name.png)
+    ![Specify a name for the new custom GPO](./media/entra-domain-services-admin-guide/gp-specify-gpo-name.png)
 
 1. The custom GPO is created and linked to your custom OU. To now configure the policy settings, right-select the custom GPO and choose **Edit...**:
 
-    ![Choose the option to 'Edit' your custom GPO](./media/active-directory-domain-services-admin-guide/gp-gpo-created.png)
+    ![Choose the option to 'Edit' your custom GPO](./media/entra-domain-services-admin-guide/gp-gpo-created.png)
 
 1. The **Group Policy Management Editor** opens to let you customize the GPO:
 
-    ![Customize GPO to configure settings as required](./media/active-directory-domain-services-admin-guide/gp-customize-gpo.png)
+    ![Customize GPO to configure settings as required](./media/entra-domain-services-admin-guide/gp-customize-gpo.png)
 
     When done, choose **File > Save** to save the policy. Computers refresh Group Policy by default every 90 minutes and apply the changes you made.
 

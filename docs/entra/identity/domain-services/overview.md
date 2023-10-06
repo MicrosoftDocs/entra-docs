@@ -44,7 +44,7 @@ A managed domain is configured to perform a one-way synchronization from Microso
 
 In a hybrid environment with an on-premises AD DS environment, [Microsoft Entra Connect][azure-ad-connect] synchronizes identity information with Microsoft Entra ID, which is then synchronized to the managed domain.
 
-![Synchronization in Microsoft Entra Domain Services with Microsoft Entra ID and on-premises AD DS using AD Connect](./media/active-directory-domain-services-design-guide/sync-topology.png)
+![Synchronization in Microsoft Entra Domain Services with Microsoft Entra ID and on-premises AD DS using AD Connect](./media/entra-domain-services-design-guide/sync-topology.png)
 
 Domain Services replicates identity information from Microsoft Entra ID, so it works with Microsoft Entra tenants that are cloud-only, or synchronized with an on-premises AD DS environment. The same set of Domain Services features exists for both environments.
 

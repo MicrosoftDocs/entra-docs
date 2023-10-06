@@ -24,7 +24,7 @@ This article explains why managed domains are suspended, and how to recover a su
 
 Through the lifecycle of a managed domain, there are different states that indicate its health. If the managed domain reports an issue, quickly resolve the underlying cause to stop the state from continuing to degrade.
 
-![The progression of states that a managed domain takes towards suspension](media/active-directory-domain-services-suspension/suspension-timeline.PNG)
+![The progression of states that a managed domain takes towards suspension](media/entra-domain-services-suspension/suspension-timeline.PNG)
 
 A managed domain can be in one of the following states:
 

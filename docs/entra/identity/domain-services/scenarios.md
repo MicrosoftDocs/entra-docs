@@ -84,7 +84,7 @@ To let you use a single set of AD credentials, Azure virtual machines (VMs) can 
 
 VMs that are joined to a managed domain can also be administered and secured using group policy. Required security baselines can be applied to VMs to lock them down in accordance with corporate security guidelines. For example, you can use group policy management capabilities to restrict the types of applications that can be launched on the VM.
 
-![Streamlined administration of Azure virtual machines](./media/active-directory-domain-services-scenarios/streamlined-vm-administration.png)
+![Streamlined administration of Azure virtual machines](./media/entra-domain-services-scenarios/streamlined-vm-administration.png)
 
 Let's look at a common example scenario. As servers and other infrastructure reaches end-of-life, Contoso wants to move applications currently hosted on premises to the cloud. Their current IT standard mandates that servers hosting corporate applications must be domain-joined and managed using group policy.
 
@@ -104,7 +104,7 @@ The following deployment considerations apply to this example use case:
 
 As a sample scenario, Contoso has an on-premises application that was purchased from an ISV many years ago. The application is currently in maintenance mode by the ISV and requesting changes to the application is prohibitively expensive. This application has a web-based frontend that collects user credentials using a web form and then authenticates users by performing an LDAP bind to the on-premises AD DS environment.
 
-![LDAP bind](./media/active-directory-domain-services-scenarios/ldap-bind.png)
+![LDAP bind](./media/entra-domain-services-scenarios/ldap-bind.png)
 
 Contoso would like to migrate this application to Azure. The application should continue to works as-is, with no changes needed. Additionally, users should be able to authenticate using their existing corporate credentials and without additional training. It should be transparent to end users where the application is running.
 
@@ -136,7 +136,7 @@ The following deployment considerations apply to this example use case:
 
 Some applications include multiple tiers, where one of the tiers needs to perform authenticated calls to a backend tier, such as a database. AD service accounts are commonly used in these scenarios. When you lift-and-shift applications into Azure, Microsoft Entra Domain Services lets you continue to use service accounts in the same way. You can choose to use the same service account that is synchronized from your on-premises directory to Microsoft Entra ID or create a custom OU and then create a separate service account in that OU. With either approach, applications continue to function the same way to make authenticated calls to other tiers and services.
 
-![Service account using WIA](./media/active-directory-domain-services-scenarios/wia-service-account.png)
+![Service account using WIA](./media/entra-domain-services-scenarios/wia-service-account.png)
 
 In this example scenario, Contoso has a custom-built software vault application that includes a web front end, a SQL server, and a backend FTP server. Windows-integrated authentication using service accounts authenticates the web front end to the FTP server. The web front end is set up to run as a service account. The backend server is configured to authorize access from the service account for the web front end. Contoso doesn't want to deploy and manage their own domain controller VMs in the cloud to move this application to Azure.
 

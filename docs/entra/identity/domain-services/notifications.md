@@ -26,7 +26,7 @@ To alert you of issues with a managed domain, you can configure email notificati
 
 The following example email notification indicates a critical warning or alert was generated on the managed domain:
 
-![Example email notification](./media/active-directory-domain-services-alerts/email-alert.png)
+![Example email notification](./media/entra-domain-services-alerts/email-alert.png)
 
 > [!WARNING]
 > Always make sure that the email comes from a verified Microsoft sender before you click the links in the message. The email notifications always come from the `azure-noreply@microsoft.com` address.

@@ -22,7 +22,7 @@ In a hybrid environment, objects and credentials from an on-premises AD DS domai
 
 The following diagram illustrates how synchronization works between Domain Services, Microsoft Entra ID, and an optional on-premises AD DS environment:
 
-![Synchronization overview for a Microsoft Entra Domain Services managed domain](./media/active-directory-domain-services-design-guide/sync-topology.png)
+![Synchronization overview for a Microsoft Entra Domain Services managed domain](./media/entra-domain-services-design-guide/sync-topology.png)
 
 <a name='synchronization-from-azure-ad-to-azure-ad-ds'></a>
 
