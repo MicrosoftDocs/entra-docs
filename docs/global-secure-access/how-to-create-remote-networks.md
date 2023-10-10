@@ -25,17 +25,19 @@ To configure remote networks, you must have:
 - Completed the [onboarding process](#onboard-your-tenant-for-remote-networks) for remote networks
 - The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 - To use the Microsoft 365 traffic forwarding profile, a Microsoft 365 E3 license is recommended.
+- Customer premises equipment (CPE) devices must support the following protocols:
+    - Internet Protocol Security (IPSec)
+    - Internet Key Exchange Version 2 (IKEv2)
+    - Border Gateway Protocol (BGP)
+- Remote network connectivity solution uses *RouteBased* VPN configuration with *any-to-any* (wildcard or 0.0.0.0/0) traffic selectors.
+- Remote network connectivity solution uses *Responder* modes. So, your device must initiate the connection.
 - Review the valid configurations for setting up remote networks here - [Global Secure Access remote network configurations](reference-remote-network-configurations.md)
 
 ### Known limitations
 
 - At this time, the number of remote networks per tenant is limited to 10, and the number of device links per remote network is limited to four.
-- Customer premises equipment (CPE) devices must support the following protocols:
-    - Internet Protocol Security (IPSec)
-    - Internet Key Exchange Version 2 (IKEv2)
-    - Border Gateway Protocol (BGP)
-- Remote network connectivity solution uses *RouteBased* and *Responder* modes.
 - Microsoft 365 traffic can be accessed through remote network connectivity without the Global Secure Access Client; however the Conditional Access policy isn't enforced. In other words, Conditional Access policies for the Global Secure Access Microsoft 365 traffic are only enforced when a user has the Global Secure Access Client.
+- For Entra Private Access, you must use Global Secure Access Client. Remote network connectivity only supports Entra Internet Access.
 
 ## Onboard your tenant for remote networks
 
