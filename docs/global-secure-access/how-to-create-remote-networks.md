@@ -29,8 +29,8 @@ To configure remote networks, you must have:
     - Internet Protocol Security (IPSec)
     - Internet Key Exchange Version 2 (IKEv2)
     - Border Gateway Protocol (BGP)
-- Remote network connectivity solution uses *RouteBased* VPN configuration with *any-to-any* (wildcard or 0.0.0.0/0) traffic selectors. Make sure that your device has correct traffic selector set.
-- Remote network connectivity solution uses *Responder* modes. So, your device must initiate the connection.
+- Remote network connectivity solution uses *RouteBased* VPN configuration with *any-to-any* (wildcard or 0.0.0.0/0) traffic selectors. Make sure that your CPE (on premises router) has correct traffic selector set.
+- Remote network connectivity solution uses *Responder* modes. So, your CPE (on premises router) must initiate the connection.
 - Review the valid configurations for setting up remote networks here - [Global Secure Access remote network configurations](reference-remote-network-configurations.md)
 
 ### Known limitations
