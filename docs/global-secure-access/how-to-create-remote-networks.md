@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: how-to
-ms.date: 08/30/2023
+ms.date: 10/11/2023
 ms.service: network-access
 
 ---
@@ -13,7 +13,7 @@ ms.service: network-access
 
 Remote networks are remote locations, such as a branch office, or networks that require internet connectivity. Setting up remote networks connects your users in remote locations to Global Secure Access (preview). Once a remote network is configured, you can assign a traffic forwarding profile to manage your corporate network traffic. Global Secure Access provides remote network connectivity so you can apply network security policies to your outbound traffic. 
 
-There are multiple ways to connect remote networks to Global Secure Access. In a nutshell, you're creating an Internet Protocol Security (IPSec) tunnel between a core router, known as the Customer Premise Equipment (CPE), at your remote network and the nearest Global Secure Access endpoint. All internet-bound traffic is routed through the core router of the remote network for security policy evaluation in the cloud. Installation of a client isn't required on individual devices.
+There are multiple ways to connect remote networks to Global Secure Access. In a nutshell, you're creating an Internet Protocol Security (IPSec) tunnel between a core router, known as the customer premises equipment (CPE), at your remote network and the nearest Global Secure Access endpoint. All internet-bound traffic is routed through the core router of the remote network for security policy evaluation in the cloud. Installation of a client isn't required on individual devices.
 
 This article explains how to create a remote network for Global Secure Access (preview).
 
@@ -21,21 +21,24 @@ This article explains how to create a remote network for Global Secure Access (p
 
 To configure remote networks, you must have: 
 
-- A **Global Secure Access Administrator** role in Microsoft Entra ID
-- Completed the [onboarding process](#onboard-your-tenant-for-remote-networks) for remote networks
+- A **Global Secure Access Administrator** role in Microsoft Entra ID.
+- Completed the [onboarding process](#onboard-your-tenant-for-remote-networks) for remote networks.
 - The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 - To use the Microsoft 365 traffic forwarding profile, a Microsoft 365 E3 license is recommended.
-- Review the valid configurations for setting up remote networks here - [Global Secure Access remote network configurations](reference-remote-network-configurations.md)
+- Customer premises equipment (CPE) must support the following protocols:
+    - Internet Protocol Security (IPSec)
+    - GCMEAES128, GCMAES 192 or GCMAES256 algorithms for IKE phase 2 negotiation
+    - Internet Key Exchange Version 2 (IKEv2)
+    - Border Gateway Protocol (BGP)
+- [Review the valid configurations for setting up remote networks](reference-remote-network-configurations.md).
+- Remote network connectivity solution uses *RouteBased* VPN configuration with *any-to-any* (wildcard or 0.0.0.0/0) traffic selectors. Make sure that your CPE has the correct traffic selector set.
+- Remote network connectivity solution uses *Responder* modes. Your CPE must initiate the connection.
 
 ### Known limitations
 
 - At this time, the number of remote networks per tenant is limited to 10, and the number of device links per remote network is limited to four.
-- Customer premises equipment (CPE) devices must support the following protocols:
-    - Internet Protocol Security (IPSec)
-    - Internet Key Exchange Version 2 (IKEv2)
-    - Border Gateway Protocol (BGP)
-- Remote network connectivity solution uses *RouteBased* and *Responder* modes.
 - Microsoft 365 traffic can be accessed through remote network connectivity without the Global Secure Access Client; however the Conditional Access policy isn't enforced. In other words, Conditional Access policies for the Global Secure Access Microsoft 365 traffic are only enforced when a user has the Global Secure Access Client.
+- For Entra Private Access, you must use Global Secure Access Client. Remote network connectivity only supports Entra Internet Access.
 
 ## Onboard your tenant for remote networks
 
