@@ -27,7 +27,7 @@ To configure remote networks, you must have:
 - To use the Microsoft 365 traffic forwarding profile, a Microsoft 365 E3 license is recommended.
 - Customer premises equipment (CPE) must support the following protocols:
     - Internet Protocol Security (IPSec)
-    - GCMEAES128, GCMAES 192 or GCMAES256 algorithms for phase 2 negotiation
+    - GCMEAES128, GCMAES 192 or GCMAES256 algorithms for IKE phase 2 negotiation
     - Internet Key Exchange Version 2 (IKEv2)
     - Border Gateway Protocol (BGP)
 - [Review the valid configurations for setting up remote networks](reference-remote-network-configurations.md).
