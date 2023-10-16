@@ -62,7 +62,7 @@ View Internet Access traffic logs in the Microsoft Entra admin center. Navigate 
     - There is no support for UDP, no L3/4 filtering support, and standard ports are assumed for HTTP/S traffic.
 - Only FQDN-based filtering is currently supported. URL based filtering isn't yet supported.
 - "Remote Network" or "Branch" connectivity scenarios aren't supported.
-- Users are'nt allowed to block access to all websites by default.
+- Users aren't allowed to block access to all websites by default.
 
 ## Troubleshooting
 
