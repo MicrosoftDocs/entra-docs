@@ -57,7 +57,7 @@ Create a Conditional Access policy for end users or groups and link it to the fi
 1. Select **Internet traffic** from the drop-down menu to set the traffic profile this policy applies to.
 1. Select **Sessions**, select **Use Global Secure Access policy profile**, and then choose a web filtering profile.
 1. Select **Select**.
-1. In the **Enable policY** section **Report-only** is the default.
+1. In the **Enable policy** section, **Report-only** is the default.
 1. Select **Create**.
 
 ## Test policy enforcement
