@@ -39,11 +39,26 @@ Create a web filtering policy that contains a grouping of rules.
 
 ## Create a policy profile to assign / link policies to a profile
 Create a policy profile to assign, or link, policies with a profile.
-1. 
+1. In the Microsoft Entra admin center, navigate to **Global Secure Access** > **Security profiles**.
+1. Select **Create profile**.
+1. Enter a name and description for the policy and select **Next**.
+1. Select **Link a policy** and then select **Existing policy**.
+1. Select the policy you already created and select **Add**.
+1. Select **Next** to review the security profile and associated policy.
+1. Select **Create a profile**.
+1. Select **Refresh** to refresh the profiles page and view the new profile.
 
 ## Create a Conditional Access policy
 Create a Conditional Access policy for end users or groups and link it to the filtering profile.
-1. 
+1. In the Microsoft Entra admin center, navigate to **Identity** > **Protection** > **Conditional Access**.
+1. Select **Create new policy**.
+1. Enter a name and assign a user or group.
+1. Select **Target resources** and then select **Global Secure Access (Preview)** from the drop-down menu to set what the policy applies to.
+1. Select **Internet traffic** from the drop-down menu to set the traffic profile this policy applies to.
+1. Select **Sessions**, select **Use Global Secure Access policy profile**, and then choose a web filtering profile.
+1. Select **Select**.
+1. In the **Enable policY** section **Report-only** is the default.
+1. Select **Create**.
 
 ## Test policy enforcement
 Use a Windows device with the Global Secure Access client installed. Sign in as a user that is assigned the Internet traffic acquisition profile. Test that navigating to websites is allowed or restricted as expected.
