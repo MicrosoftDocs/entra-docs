@@ -1,6 +1,6 @@
 ---
-title: Learn about Microsoft Entra Private Access
-description: Learn about how Microsoft Entra Private Access secures access to your private corporate resources through the creation of Quick Access and Global Secure Access apps.
+title: Learn about Microsoft Entra Internet Access
+description: Learn about how Microsoft Entra Internet Access secures access to the Internet.
 author: kenwith
 ms.author: kenwith
 manager: amycolannino
