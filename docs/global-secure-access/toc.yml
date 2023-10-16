@@ -74,6 +74,13 @@ items:
         href: how-to-configure-quick-access.md 
       - name: Configure Per-app Access
         href: how-to-configure-per-app-access.md
+  - name: Internet Access
+    expanded: true
+    items:
+      - name: About Internet Access
+        href: concept-internet-access.md
+      - name: Configure web content filtering
+        href: how-to-configure-web-content-filtering.md
   - name: Logs and monitoring
     expanded: false
     items:
