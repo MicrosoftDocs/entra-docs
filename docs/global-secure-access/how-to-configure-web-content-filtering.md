@@ -15,7 +15,7 @@ ms.reviewer: frankgomulka
 
 Filtering web content is a critical component when implementing Internet access controls for a modern Security Service Edge (SSE) solution. 
 
-Microsoft Entra Internet Access includes Web Content Filtering (WCF) as part of the Secure Web Gateway feature. Microsoft integrates filtering with Microsoft Entra ID and Microsoft Entra Conditional Access which results in filter policies that are user-aware and easy to manage.
+Microsoft Entra Internet Access includes Web Content Filtering (WCF) as part of the Secure Web Gateway feature. Microsoft integrates filtering with Microsoft Entra ID and Microsoft Entra Conditional Access, which results in filter policies that are user-aware and easy to manage.
 
 ## Prerequisites
 
@@ -52,17 +52,17 @@ To check if the client is acquiring Internet traffic, right-click on the Global 
 
 Navigate to an approved site and check if it loads properly. Next, navigate to a restricted site and confirm the site is blocked.
 
-View Internet Access traffic logs in the Microsoft Entra admin center. Navigate to **Global Secure Access** > **Monitor** > **traffic logs**. Note that it takes ~15 minutes for new entries to appear.
+View Internet Access traffic logs in the Microsoft Entra admin center. Navigate to **Global Secure Access** > **Monitor** > **traffic logs**. It takes approximately 15 minutes for new entries to appear.
 
 
 ## Limitations
-- There is currently no end-user notification on blocks, either from the client or the browser.
-- Admin are not allowed to configure their own Internet traffic acquisition profiles for the client.
+- There's currently no end-user notification on blocks, either from the client or the browser.
+- Admins aren't allowed to configure their own Internet traffic acquisition profiles for the client.
     - The client traffic acquisition policy includes TCP ports 80/443 for all valid FQDNs only.
     - There is no support for UDP, no L3/4 filtering support, and standard ports are assumed for HTTP/S traffic.
-- Only FQDN-based filtering is currently supported. URL based filtering is not yet supported.
-- "Remote Network" or "Branch" connectivity scenarios are not supported.
-- Users are not allowed to block access to all websites by default.
+- Only FQDN-based filtering is currently supported. URL based filtering isn't yet supported.
+- "Remote Network" or "Branch" connectivity scenarios aren't supported.
+- Users are'nt allowed to block access to all websites by default.
 
 ## Troubleshooting
 
