@@ -59,7 +59,7 @@ View Internet Access traffic logs in the Microsoft Entra admin center. Navigate 
 - There's currently no end-user notification on blocks, either from the client or the browser.
 - Admins aren't allowed to configure their own Internet traffic acquisition profiles for the client.
     - The client traffic acquisition policy includes TCP ports 80/443 for all valid FQDNs only.
-    - There is no support for UDP, no L3/4 filtering support, and standard ports are assumed for HTTP/S traffic.
+    - There's no support for UDP, no L3/4 filtering support, and standard ports are assumed for HTTP/S traffic.
 - Only FQDN-based filtering is currently supported. URL based filtering isn't yet supported.
 - "Remote Network" or "Branch" connectivity scenarios aren't supported.
 - Users aren't allowed to block access to all websites by default.
