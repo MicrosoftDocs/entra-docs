@@ -79,8 +79,6 @@ View Internet Access traffic logs in the Microsoft Entra admin center. Navigate 
 - "Remote Network" or "Branch" connectivity scenarios aren't supported.
 - Users aren't allowed to block access to all websites by default.
 
-## Troubleshooting
-
 ## Next steps
 
 - [Learn about the traffic dashboard](concept-traffic-dashboard.md)
