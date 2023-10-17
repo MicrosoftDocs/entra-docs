@@ -1,5 +1,6 @@
 {
   "build": {
+    "markdownEngineName": "markdig",
     "content": [
       {
         "files": [
@@ -24,6 +25,8 @@
     "resource": [
       {
         "files": [
+          "**/*.gif",
+          "**/*.jpeg",
           "**/*.png",
           "**/*.jpg",
           "**/*.svg"
@@ -44,10 +47,193 @@
       "breadcrumb_path": "/entra/breadcrumb/toc.json",
       "extendBreadcrumb": true,
       "uhfHeaderId": "MSDocsHeader-Entra",
-      "feedback_system": "None"
+      "feedback_product_url": "https://feedback.azure.com/d365community/forum/79b1327d-d925-ec11-b6e6-000d3a4f06a4",
+      "searchScope": "Microsoft Entra"
     },
-    "fileMetadata": {},
-    "template": [],
-    "dest": "entra"
+    "no-loc": {
+      "includes/policy/**/*.md": "[audit, deny, modify, disabled, auditifnotexists, deployifnotexists]"
+    },
+    "fileMetadata": {}, 
+    "template": [
+      "docs.html",
+      "default","DocFx.Plugins.PlantUml/template"
+    ],
+    "dest": "entra",
+    "recommendations": true,
+    "recommendation_types": ["Training", "Certification"],
+    "uhfHeaderId": "entra",
+    "contributors_to_exclude": [
+      "alexbuckgit",
+      "atookey",
+      "chbain",
+      "Court72",
+      "deneha",
+      "denrea",
+      "DuncanmaMSFT",
+      "garycentric",
+      "GitHubber17",
+      "hexiaokai",
+      "itechedit",
+      "Ja-Dunn",
+      "Jak-MS",
+      "JasonWHowell",
+      "jborsecnik",
+      "john-par",
+      "jomolnar",
+      "KatieCumming",
+      "Kellylorenebaker",
+      "kiwhit",
+      "ktoliver",
+      "Lisaco88",
+      "MattGLaBelle",
+      "meganbradley",
+      "megvanhuygen",
+      "openpublishingbuild",
+      "PMEds28",
+      "PRmerger",
+      "PRMerger17",
+      "PRMerger-2",
+      "PRMerger3",
+      "PRMerger4",
+      "PRMerger5",
+      "PRMerger9",
+      "rjagiewich",
+      "rmca14",
+      "Saisang",
+      "sdwheeler",
+      "ShannonLeavitt",
+      "ShawnJackson",
+      "shawnmariejones",
+      "TedA-M",
+      "tfosmark",
+      "TimShererWithAquent",
+      "tiburd",
+      "trishamc",
+      "ttorble",
+      "tysonn",
+      "v-albemi",
+      "v-andreaco",
+      "v-anpasi",
+      "v-ccolin",
+      "v-dansch",
+      "v-dihans",
+      "v-rihow",
+      "v-shils",
+      "v-shmck",
+      "v-thepet"
+    ],
+    "featureFlags": {
+      "docs/**/*.md": [
+        "show_learn_banner"
+        ],
+      "docs/active-directory/**/*.md": [
+        "binaryRatingUpdate"
+        ]
+    },
+    "learn_banner_products": {
+      "docs/**/*.md": [
+        "entra"
+        ]
+      },
+    "feedback_product_url": {
+      "docs/identity/**/*.md": "https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789",
+      "docs/identity-platform/*.md": "https://docs.microsoft.com/azure/active-directory/develop/developer-support-help-options",
+      "docs/workload-id/*.md": "https://aka.ms/microsoftentraexternalid"
+    },
+    "manager": {
+      "docs/architecture/*.md": "martincoetzer",
+      "docs/external-id/**/*.md": "CelesteDG",
+      "docs/fundamentals/*.md": "amycolannino",
+      "docs/global-secure-access/*.md": "amycolannino",
+      "docs/id-governance/**/*.md": "amycolannino",
+      "docs/id-protection/*.md": "amycolannino",
+      "docs/identity/**/*.md": "amycolannino",
+      "docs/identity-platform/**/*.md": "CelesteDG",
+      "docs/permissions-management/*.md": "amycolannino",
+      "docs/standards/**/*.md": "martincoetzer",
+      "docs/verified-id/*.md": "amycolannino",
+      "docs/workload-id/**/*.md": "CelesteDG"
+    },
+    "ms.service": {
+      "docs/architecture/*.md": "entra",
+      "docs/external-id/**/*.md": "entra-external-id",
+      "docs/fundamentals/*.md": "entra",
+      "docs/global-secure-access/*.md": "global-secure-access",
+      "docs/id-governance/*.md": "entra-id-governance",
+      "docs/id-protection/*.md": "entra-id-protection",
+      "docs/identity/**/*.md": "entra-id",
+      "docs/identity/app-provisioning/*.md": "entra-id",
+      "docs/identity/app-proxy/*.md": "entra-id",
+      "docs/identity/authentication/*.md": "entra-id",
+      "docs/identity/conditional-access/*.md": "entra-id",
+      "docs/identity/devices/*.md": "entra-id",
+      "docs/identity/domain-services/*.md": "entra-id",
+      "docs/identity/enterprise-apps/*.md": "entra-id",
+      "docs/identity/hybrid/*.md": "entra-id",
+      "docs/identity/managed-identities/*.md": "entra-id",
+      "docs/identity/monitoring-health/*.md": "entra-id",
+      "docs/identity/multi-tenant-organizations/*.md": "entra-id",
+      "docs/identity/role-based-access-control/*.md": "entra-id",
+      "docs/identity/saas-apps/*.md": "entra-id",
+      "docs/identity/users/*.md": "entra-id",
+      "docs/identity-platform/*.md": "identity-platform",
+      "docs/permissions-management/*.md": "entra-permissions-management",
+      "docs/standards/*.md": "entra",
+      "docs/verified-id/*.md": "entra-verified-id",
+      "docs/workload-id/*.md": "entra-workload-id"
+    },
+    "ms.subservice": {
+      "docs/*.md": "",
+      "docs/architecture/*.md": "architecture/*",
+      "docs/external-id/customers/*.md": "external-id-customers",
+      "docs/fundamentals/*.md": "fundamentals",
+      "docs/id-governance/privileged-identity-management/*.md": "privileged-identity-management/*",
+      "docs/identity/app-proxy/*.md": "app-proxy",
+      "docs/identity/authentication/*.md": "authentication/*",
+      "docs/identity/conditional-access/*.md": "conditional-access/*",
+      "docs/identity/devices/*.md": "devices",
+      "docs/identity/domain-services/*.md": "domain-services",
+      "docs/identity/enterprise-apps/*.md": "enterprise-apps",
+      "docs/identity/managed-identities/*.md": "managed-identities",
+      "docs/identity/monitoring-health/*.md": "monitoring-health",
+      "docs/identity/multi-tenant-organizations/*.md": "multi-tenant-organizations",
+      "docs/identity/role-based-access-control/*.md": "role-based-access-control",
+      "docs/identity/saas-apps/*.md": "saas-apps",
+      "docs/identity/users/*.md": "users",
+      "docs/permissions-management/*.md": "governance",
+      "docs/standards/*.md": "standards"
+    },
+    "titleSuffix": {
+      "docs/*.md": "Microsoft Entra",
+      "docs/architecture/*.md": "Microsoft Entra",
+      "docs/architecture/*.yml": "Microsoft Entra",
+      "docs/external-id/*.md": "Microsoft Entra External ID",
+      "docs/external-id/*.yml": "Microsoft Entra External ID",
+      "docs/external-id/customers/*.md": "Microsoft Entra External ID",
+      "docs/external-id/customers/*.yml": "Microsoft Entra External ID",
+      "docs/fundamentals/*.md": "Microsoft Entra",
+      "docs/fundamentals/*.yml": "Microsoft Entra",
+      "docs/global-secure-access/*.md": "Global Secure Access",
+      "docs/global-secure-access/*.yml": "Global Secure Access",
+      "docs/id-governance/*.md": "Microsoft Entra ID Governance",
+      "docs/id-governance/*.yml": "Microsoft Entra ID Governance",
+      "docs/id-governance/privileged-identity-management/*.md": "Microsoft Entra ID Governance",
+      "docs/id-governance/privileged-identity-management/*.yml": "Microsoft Entra ID Governance",
+      "docs/id-protection/*.md": "Microsoft Entra ID Protection",
+      "docs/id-protection/*.yml": "Microsoft Entra ID Protection",
+      "docs/identity/*.yml": "Microsoft Entra ID",
+      "docs/identity/**/*.md": "Microsoft Entra ID",
+      "docs/identity/**/*.yml": "Microsoft Entra ID",
+      "docs/identity-platform/*.md": "Microsoft identity platform",
+      "docs/identity-platform/*.yml": "Microsoft identity platform",
+      "docs/permissions-management/*.md": "Microsoft Entra Permissions Management",
+      "docs/permissions-management/*.yml": "Microsoft Entra Permissions Management",
+      "docs/standards/*.md": "Microsoft Entra",
+      "docs/standards/*.yml": "Microsoft Entra",
+      "docs/verified-id/*.md": "Microsoft Entra Verified ID",
+      "docs/verified-id/*.yml": "Microsoft Entra Verified ID",
+      "docs/workload-id/*.md": "Microsoft Entra Workload ID",
+      "docs/workload-id/*.yml": "Microsoft Entra Workload ID"
+    }
   }
 }
