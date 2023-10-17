@@ -61,7 +61,7 @@ The IPSec encryption and integrity configurations are provided in the following 
 
 ### Valid autonomous system number (ASN)
 
-You can use any values *except* for the following reserved ASNs:
+You can use any 2 byte values (between 1 to 65534) *except* for the following reserved ASNs:
 
 - Azure reserved ASNs: 12076, 65517,65518, 65519, 65520, 8076, 8075
 - IANA reserved ASNs: 23456, >= 64496 && <= 64511, >= 65535 && <= 65551, 4294967295
