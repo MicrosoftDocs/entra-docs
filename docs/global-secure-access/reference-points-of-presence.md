@@ -18,10 +18,10 @@ During the preview, Global Secure Access (preview) is available in limited point
 | Europe | North America | South America | Africa | Asia |
 |---|---|---|---|---|
 | Amsterdam, Netherlands | Cheyenne, Wyoming, USA | Rio de Janeiro, Brazil | Johannesburg, South Africa | Dubai, UAE|
-| Berlin, Germany | Chicago, Illinois, USA | | Cape Town, South Africa | |
-| Dublin, Ireland | Des Moines, Iowa, USA |  | | |
-| Frankfurt, Germany | Manassas, Virginia, USA | | | |
-| Gavle, Sweden | Montreal, Quebec, Canada | | | |
+| Berlin, Germany | Chicago, Illinois, USA | | Cape Town, South Africa | Chennai, India |
+| Dublin, Ireland | Des Moines, Iowa, USA |  | | Pune, India |
+| Frankfurt, Germany | Manassas, Virginia, USA | | | Singapore, Singapore |
+| Gavle, Sweden | Montreal, Quebec, Canada | | | Sydney, Australia |
 | London, UK | Phoenix, Arizona, USA | | | |
 | Milan, Italy | Quincy, Washington, USA  | | | |
 | Paris, France | San Antonio, Texas, USA | | | |
