@@ -1,7 +1,7 @@
 {
     "redirections": [
       {
-        "source_path_from_root": "docs/identity/domain-services/delete-aadds.md",
+        "source_path_from_root": "/docs/identity/domain-services/delete-aadds.md",
         "redirect_url": "/entra/identity/domain-services/delete",
         "redirect_document_id": false  
       }
