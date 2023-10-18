@@ -227,8 +227,8 @@
     "ms.subservice": {
       "docs/*.md": "",
       "docs/*.yml": "",
-      "docs/architecture/*.md": "architecture/*",
-      "docs/architecture/*.yml": "architecture/*",
+      "docs/architecture/*.md": "architecture",
+      "docs/architecture/*.yml": "architecture",
       "docs/external-id/customers/*.md": "external-id-customers",
       "docs/external-id/customers/*.yml": "external-id-customers",
       "docs/fundamentals/*.md": "fundamentals",
