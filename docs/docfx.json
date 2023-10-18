@@ -295,6 +295,16 @@
       "docs/verified-id/*.yml": "Microsoft Entra Verified ID",
       "docs/workload-id/*.md": "Microsoft Entra Workload ID",
       "docs/workload-id/*.yml": "Microsoft Entra Workload ID"
+    },
+    "sensitive-language-wl": {
+      "exclude": [
+        "articles/active-directory/app-provisioning/sap-successfactors-integration-reference.md",
+        "articles/active-directory/authentication/howto-mfa-nps-extension-advanced.md",
+        "articles/active-directory/hybrid/how-to-connect-health-adfs-risky-ip.md",
+        "articles/active-directory/hybrid/how-to-connect-sso-quick-start.md",
+        "articles/active-directory/hybrid/reference-connect-government-cloud.md",
+        "articles/active-directory/saas-apps/g-suite-provisioning-tutorial.md"
+      ]  
     }
   }
 }
