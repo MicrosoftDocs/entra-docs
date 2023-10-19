@@ -19,7 +19,7 @@ When you set up rules to filter web content, you can select based on a category.
 |---------|---------|
 |Alcohol + tobacco    |Sites that are contain, promote, or sell alcohol- or tobacco-related products or services.|
 |Child abuse images   |Sites that present or discuss children in abusive or sexual acts.|
-|Child inappropriate    |Sites that are unsuitable for children, which may contain R-rated or tasteless content, profanity, or adult material.|
+|Child inappropriate    |Sites that are unsuitable for children, which might contain R-rated or tasteless content, profanity, or adult material.|
 |Criminal activity|Sites that promote or advise on how to commit illegal or criminal activity. Sites that promote how to avoid detection of criminal activity. Criminal activity includes murder, building bombs, illegal manipulation of electronic devices, hacking, fraud, and illegal distribution of software.|
 |Dating + personals    |Sites that promote networking for relationships such as dating and marriage, such as matchmaking, online dating, and spousal introduction.|
 |Gambling    |Sites that offer or related to online gambling, lottery, betting agencies involving chance, and casinos.|
@@ -65,10 +65,10 @@ When you set up rules to filter web content, you can select based on a category.
 |News  |    Sites covering news and current events such as newspapers, newswire services, personalized news services, broadcasting sites, and magazines.      |
 |Non-profits + NGOs     |   Sites devoted to clubs, communities, unions, and non-profit organizations. Many of these groups exist for educational or charitable purposes.       |
 |Personal sites     |    Sites about or hosted by personal individuals, including those hosted on commercial sites such as Blogger, AOL, etc.      |
-|Private IP addresses      |  Sites that are private IP addresses as defined in RFC 1918, that is, hosts that do not require access to hosts in other enterprises (or require limited access) and whose IP address may be ambiguous between enterprises but are well-defined within a certain enterprise.        |
+|Private IP addresses      |  Sites that are private IP addresses as defined in RFC 1918, that is, hosts that do not require access to hosts in other enterprises (or require limited access) and whose IP address might be ambiguous between enterprises but are well-defined within a certain enterprise.        |
 |Professional networking   | Sites that enable professional networking for online communities.   |
 |Search engines + portals   |Sites enabling the searching of the Web, newsgroups, images, directories, and other online content. Includes portal and directory sites such as white/yellow pages.    |
-|Translators     |   Sites that translate Web pages or phrases from one language to another. These sites bypass the proxy server, presenting the risk that unauthorized content may be accessed, similar to using an anonymizer.       |
+|Translators     |   Sites that translate Web pages or phrases from one language to another. These sites bypass the proxy server, presenting the risk that unauthorized content might be accessed, similar to using an anonymizer.       |
 |Web repository + storage   |  Web pages including collections of shareware, freeware, open source, and other software downloads.        |
 |Web-based email     | Sites that enable users to send and receive email through a web accessible email account.         |
 |     |         |
