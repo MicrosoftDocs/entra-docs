@@ -11,7 +11,7 @@ ms.custom:
 ---
 # Global Secure Access (preview) web content filtering categories
 
-When you set up rules to filter web content you can select based on a category. This article provides a list of categories along with explanations.
+When you set up rules to filter web content, you can select based on a category. This article provides a list of categories along with explanations.
 
 ## Liability
 
@@ -20,10 +20,10 @@ When you set up rules to filter web content you can select based on a category. 
 |Alcohol + tobacco    |Sites that are contain, promote, or sell alcohol- or tobacco-related products or services.|
 |Child abuse images   |Sites that present or discuss children in abusive or sexual acts.|
 |Child inappropriate    |Sites that are unsuitable for children, which may contain R-rated or tasteless content, profanity, or adult material.|
-|Criminal activity|Sites that promote or advise on how to commit illegal or criminal activity, or to avoid detection for such activity. Criminal activity includes murder, building bombs, illegal manipulation of electronic devices, hacking, fraud, and illegal distribution of software.|
+|Criminal activity|Sites that promote or advise on how to commit illegal or criminal activity. Sites that promote how to avoid detection of criminal activity. Criminal activity includes murder, building bombs, illegal manipulation of electronic devices, hacking, fraud, and illegal distribution of software.|
 |Dating + personals    |Sites that promote networking for relationships such as dating and marriage, such as matchmaking, online dating, and spousal introduction.|
 |Gambling    |Sites that offer or related to online gambling, lottery, betting agencies involving chance, and casinos.|
-|Hacking    |Sites that promote or advise on how to get unauthorized access to proprietary computer systems, for stealing information, perpetrating fraud, creating viruses, or committing other illegal activity related to theft or digital inform.|
+|Hacking    |Sites that promote or advise gaining unauthorized access to proprietary computer systems. Sites that promote stealing information, perpetrating fraud, creating viruses, or committing other illegal activity related to theft or digital inform.|
 |Hate + intolerance|Sites that promote a supremacist political agenda, encouraging oppression of people or groups of people based on their race, religion, gender, age, disability, sexual orientation, or nationality.|
 |Illegal drug    |Sites with information on the purchase, manufacture, and use of illegal or recreational drugs, and misuse of prescription drugs and other compounds.|
 |Illegal software    |Sites that illegally distribute software or copyrighted materials such as movies, music, software cracks, illicit serial numbers, illegal license key generators.|
