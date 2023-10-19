@@ -21,7 +21,7 @@ Microsoft Entra Internet Access includes Web Content Filtering (WCF) as part of 
 
 - Ensure your tenant is signed up for Microsoft Entra Internet Access (preview).
 - Install the Global Secure Access client on end user devices.
-- Disable the Quick UDP Internet Connections (QUIC) protocol (443 UDP) on device as UDP traffic is not supported. When you disable this protocol the fallback is usually HTTPS (443 TCP).
+- Disable the Quick UDP Internet Connections (QUIC) protocol (443 UDP) on device as UDP traffic isn't supported. When you disable this protocol, the fallback is usually HTTPS (443 TCP).
 - Check/Disable secure DNS. To tunnel network traffic based on rules of Fully Qualified Domain Name (FQDN) in the forwarding profile, DNS over HTTPS needs to be disabled. To learn more about disabling DNS over HTTPS in Windows, see [Configure the DNS client to support DoH](/windows-server/networking/dns/doh-client-support#configure-the-dns-client-to-support-doh).
 - Disable built-in DNS client on Chrome and Edge.
 
