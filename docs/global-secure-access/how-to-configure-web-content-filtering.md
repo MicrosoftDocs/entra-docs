@@ -36,9 +36,7 @@ Create a web filtering policy that contains a grouping of rules.
 1. Select **Create policy**.
 1. Enter a name and description for the policy and select **Next**.
 1. Select **Add rule**.
-1. Enter a name, select a web category, and then select **Add**.
-1. Select **Next** to review the policy and then select **Create policy**.
-
+1. Enter a name, select a web category, and then select **Add**.1. Select **Next** to review the policy and then select **Create policy**.
 
 ## Create a policy profile to assign / link policies to a profile
 Create a policy profile to assign, or link, policies with a profile.
