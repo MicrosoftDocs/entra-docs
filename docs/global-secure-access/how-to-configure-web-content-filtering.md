@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: how-to
-ms.date: 10/05/2023
+ms.date: 10/19/2023
 ms.service: network-access
 ms.custom: 
 ms.reviewer: frankgomulka
@@ -19,8 +19,9 @@ Microsoft Entra Internet Access includes Web Content Filtering (WCF) as part of 
 
 ## Prerequisites
 
-Ensure your tenant is signed up for Microsoft Entra Internet Access (preview).
-Install the Global Secure Access client on end user devices.
+- Ensure your tenant is signed up for Microsoft Entra Internet Access (preview).
+- Install the Global Secure Access client on end user devices.
+- Ensure you disable QUIC, Check/Disable secure DNS, disable built-in DNS client on Chrome and Edge.
 
 ## Enable traffic forwarding
 Enable the Microsoft Entra Internet Access forwarding profile to forward user traffic. 
@@ -39,6 +40,10 @@ Create a web filtering policy that contains a grouping of rules.
 
 ## Create a policy profile to assign / link policies to a profile
 Create a policy profile to assign, or link, policies with a profile.
+
+> [!NOTE]
+> To learn more about Microsoft Entra Conditional Access policy profiles, see [Building a Conditional Access policy](/azure/active-directory/conditional-access/concept-conditional-access-policies).
+
 1. In the Microsoft Entra admin center, navigate to **Global Secure Access** > **Security profiles**.
 1. Select **Create profile**.
 1. Enter a name and description for the policy and select **Next**.
@@ -49,7 +54,7 @@ Create a policy profile to assign, or link, policies with a profile.
 1. Select **Refresh** to refresh the profiles page and view the new profile.
 
 ## Create a Conditional Access policy
-Create a Conditional Access policy for end users or groups and link it to the filtering profile.
+Create a Conditional Access policy and set session controls for end users or groups and link it to the filtering profile. To learn more about sessions controls, see [Conditional Access: Session](/azure/active-directory/conditional-access/concept-conditional-access-session). 
 1. In the Microsoft Entra admin center, navigate to **Identity** > **Protection** > **Conditional Access**.
 1. Select **Create new policy**.
 1. Enter a name and assign a user or group.
@@ -80,5 +85,4 @@ View Internet Access traffic logs in the Microsoft Entra admin center. Navigate 
 - Users aren't allowed to block access to all websites by default.
 
 ## Next steps
-
 - [Learn about the traffic dashboard](concept-traffic-dashboard.md)
