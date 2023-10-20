@@ -95,7 +95,7 @@ When configuring a Conditional Access policy, you have granular control over the
 >[!NOTE]
 > The "All guest and external users" selection has now been replaced with "Guest and external users" and all its sub types. For customers who previously had a Condtional Access policy with "All guest and external users" selected will now see "Guest and external users" along with all sub types being selected. This change in UX does not have any functional impact on how policy is evaluated by Conditional Access backend. The new selection provides customers the needed granularity to choose specifc types of guest and external users to include/exclude from user scope when creating their Conditional Access policy.
 
-Learn more about [Conditional Access user assignments](../conditional-access/concept-conditional-access-users-groups.md).
+Learn more about [Conditional Access user assignments](~/identity/conditional-access/concept-conditional-access-users-groups.md).
 
 ### Comparing External Identities Conditional Access policies
 
@@ -215,7 +215,7 @@ In external user scenarios, the authentication methods that are acceptable for f
 |Windows Hello for Business                   | &#x2705;        |          |
 
 
-To configure a Conditional Access policy that applies authentication strength requirements to external users or guests, see [Conditional Access: Require an authentication strength for external users](../conditional-access/howto-conditional-access-policy-authentication-strength-external.md).
+To configure a Conditional Access policy that applies authentication strength requirements to external users or guests, see [Conditional Access: Require an authentication strength for external users](~/identity/conditional-access/howto-conditional-access-policy-authentication-strength-external.md).
 
 <a name='user-experience-for-external-azure-ad-users'></a>
 
@@ -236,7 +236,7 @@ If the user is unable to complete MFA, or if a Conditional Access policy (such a
 
 Organizations can use Conditional Access policies to require users' devices to be managed by Microsoft Intune. Such policies can block external user access, because an external user can't register their unmanaged device with the resource organization. Devices can only be managed by a user's home tenant.
 
-However, you can use device trust settings to unblock external users while still requiring managed devices. In your cross-tenant access settings, you can choose to trust claims from an external user's home tenant about whether the user's device meets their device compliance policies or is [Microsoft Entra hybrid joined](../conditional-access/howto-conditional-access-policy-compliant-device.md). You can set device trust settings for all Microsoft Entra organizations or individual organizations.
+However, you can use device trust settings to unblock external users while still requiring managed devices. In your cross-tenant access settings, you can choose to trust claims from an external user's home tenant about whether the user's device meets their device compliance policies or is [Microsoft Entra hybrid joined](~/identity/conditional-access/howto-conditional-access-policy-compliant-device.md). You can set device trust settings for all Microsoft Entra organizations or individual organizations.
 
 When device trust settings are enabled, Microsoft Entra ID checks a user's authentication session for a device claim. If the session contains a device claim indicating that the policies have already been met in the user's home tenant, the external user is granted seamless sign-on to your shared resource.
 
@@ -251,33 +251,33 @@ When creating Conditional Access policies for external users, you can evaluate a
 Device filters can be used together with cross-tenant access settings to base policies on devices that are managed in other organizations. For example, suppose you want to block devices from an external Microsoft Entra tenant based on a specific device attribute. You can set up a device attribute-based policy by doing the following:
 
 - Configure your cross-tenant access settings to trust device claims from that organization.
-- Assign the device attribute you want to use for filtering to one of the [supported device extension attributes](../conditional-access/concept-condition-filters-for-devices.md#supported-operators-and-device-properties-for-filters).
+- Assign the device attribute you want to use for filtering to one of the [supported device extension attributes](~/identity/conditional-access/concept-condition-filters-for-devices.md#supported-operators-and-device-properties-for-filters).
 - Create a Conditional Access policy with a device filter that blocks access to devices containing that attribute.
 
-Learn more about [filtering for devices with Conditional Access](../conditional-access/concept-condition-filters-for-devices.md).
+Learn more about [filtering for devices with Conditional Access](~/identity/conditional-access/concept-condition-filters-for-devices.md).
 ### Mobile application management policies
 
-We don't recommend requiring an app protection policy for external users. Conditional Access grant controls such as **Require approved client apps** and **Require app protection policies** require the device to be registered in the resource tenant. These controls can only be applied to [iOS and Android devices](../conditional-access/concept-conditional-access-conditions.md#device-platforms). Because a user’s device can only be managed by their home tenant, these controls can't be applied to external guest users.
+We don't recommend requiring an app protection policy for external users. Conditional Access grant controls such as **Require approved client apps** and **Require app protection policies** require the device to be registered in the resource tenant. These controls can only be applied to [iOS and Android devices](~/identity/conditional-access/concept-conditional-access-conditions.md#device-platforms). Because a user’s device can only be managed by their home tenant, these controls can't be applied to external guest users.
 
 ### Location-based Conditional Access
 
-The [location-based policy](../conditional-access/concept-conditional-access-conditions.md#locations) based on IP ranges can be  enforced if the inviting organization can create a trusted IP address range that defines their partner organizations.
+The [location-based policy](~/identity/conditional-access/concept-conditional-access-conditions.md#locations) based on IP ranges can be  enforced if the inviting organization can create a trusted IP address range that defines their partner organizations.
 
 Policies can also be enforced based on **geographical locations**.
 
 ### Risk-based Conditional Access
 
-The [Sign-in risk policy](../conditional-access/concept-conditional-access-conditions.md#sign-in-risk) is enforced if the external guest user satisfies the grant control. For example, an organization could require Microsoft Entra multifactor authentication for medium or high sign-in risk. However, if a user hasn't previously registered for Microsoft Entra multifactor authentication in the resource tenant, the user will be blocked. This is done to prevent malicious users from registering their own Microsoft Entra multifactor authentication credentials in the event they compromise a legitimate user’s password.
+The [Sign-in risk policy](~/identity/conditional-access/concept-conditional-access-conditions.md#sign-in-risk) is enforced if the external guest user satisfies the grant control. For example, an organization could require Microsoft Entra multifactor authentication for medium or high sign-in risk. However, if a user hasn't previously registered for Microsoft Entra multifactor authentication in the resource tenant, the user will be blocked. This is done to prevent malicious users from registering their own Microsoft Entra multifactor authentication credentials in the event they compromise a legitimate user’s password.
 
-The [User-risk policy](../conditional-access/concept-conditional-access-conditions.md#user-risk), however, can't be resolved in the resource tenant. For example, if you require a password change for high-risk external guest users, they'll be blocked because of the inability to reset passwords in the resource directory.
+The [User-risk policy](~/identity/conditional-access/concept-conditional-access-conditions.md#user-risk), however, can't be resolved in the resource tenant. For example, if you require a password change for high-risk external guest users, they'll be blocked because of the inability to reset passwords in the resource directory.
 
 ### Conditional Access client apps condition
 
-[Client apps conditions](../conditional-access/concept-conditional-access-conditions.md#client-apps) behave the same for B2B guest users as they do for any other type of user. For example, you could prevent guest users from using legacy authentication protocols.
+[Client apps conditions](~/identity/conditional-access/concept-conditional-access-conditions.md#client-apps) behave the same for B2B guest users as they do for any other type of user. For example, you could prevent guest users from using legacy authentication protocols.
 
 ### Conditional Access session controls
 
-[Session controls](../conditional-access/concept-conditional-access-session.md) behave the same for B2B guest users as they do for any other type of user.
+[Session controls](~/identity/conditional-access/concept-conditional-access-session.md) behave the same for B2B guest users as they do for any other type of user.
 
 ## Identity protection and user risk policies
 
@@ -289,12 +289,12 @@ Identity Protection detects compromised credentials for Microsoft Entra users an
 
 You can prevent external users from being impacted by risk-based policies by creating a group in Microsoft Entra ID that contains all of your organization's external users. Then, add this group as an exclusion for your built-in Identity Protection user risk and sign-in risk policies, and any Conditional Access policies that use sign-in risk as a condition.
 
-For more information, see [Identity Protection and B2B users](../identity-protection/concept-identity-protection-b2b.md).
+For more information, see [Identity Protection and B2B users](~/id-protection/concept-identity-protection-b2b.md).
 
 ## Next steps
 
 For more information, see the following articles:
 
 - [Zero Trust policies for allowing guest access and B2B external user access](/microsoft-365/security/office-365-security/identity-access-policies-guest-access?view=o365-worldwide&preserve-view=true)
-- [Identity Protection and B2B users](../identity-protection/concept-identity-protection-b2b.md)
+- [Identity Protection and B2B users](~/id-protection/concept-identity-protection-b2b.md)
 - [Frequently Asked Questions (FAQs)](./faq.yml)

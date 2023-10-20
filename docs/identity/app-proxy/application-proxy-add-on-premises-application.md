@@ -112,7 +112,7 @@ To enable TLS 1.2:
 Start by enabling communication to Azure data centers to prepare your environment for Microsoft Entra application proxy. If there's a firewall in the path, make sure it's open. An open firewall allows the connector to make HTTPS (TCP) requests to the Application Proxy.
 
 > [!IMPORTANT]
-> If you are installing the connector for Azure Government cloud follow the [prerequisites](../hybrid/connect/reference-connect-government-cloud.md#allow-access-to-urls) and [installation steps](../hybrid/connect/reference-connect-government-cloud.md#install-the-agent-for-the-azure-government-cloud). This requires enabling access to a different set of URLs and an additional parameter to run the installation.
+> If you are installing the connector for Azure Government cloud follow the [prerequisites](~/identity/hybrid/connect/reference-connect-government-cloud.md#allow-access-to-urls) and [installation steps](~/identity/hybrid/connect/reference-connect-government-cloud.md#install-the-agent-for-the-azure-government-cloud). This requires enabling access to a different set of URLs and an additional parameter to run the installation.
 
 ### Open ports
 

@@ -105,7 +105,7 @@ The web app sample in this tutorial uses the [express-session](https://www.npmjs
 
 1. Create an *.env.dev* file in the root of your project folder. Then add the following code:
 
-:::code language="text" source="~/ms-identity-node/App/.env.dev":::
+:::code language="text" source="~/../ms-identity-node/App/.env.dev":::
 
 Fill in these details with the values you obtain from Azure app registration portal:
 
@@ -129,51 +129,51 @@ Fill in these details with the values you obtain from Azure app registration por
 
 2. Next, create a file named *authConfig.js* in the root of your project for reading in these parameters. Once created, add the following code there:
 
-:::code language="js" source="~/ms-identity-node/App/authConfig.js":::
+:::code language="js" source="~/../ms-identity-node/App/authConfig.js":::
 
 ## Add code for user sign-in and token acquisition
 
 1. Create a new folder named *auth*, and add a new file named *AuthProvider.js* under it. This will contain the **AuthProvider** class, which encapsulates the necessary authentication logic using MSAL Node. Add the following code there:
 
-:::code language="js" source="~/ms-identity-node/App/auth/AuthProvider.js":::
+:::code language="js" source="~/../ms-identity-node/App/auth/AuthProvider.js":::
 
 1. Next, create a new file named *auth.js* under the *routes* folder and add the following code there:
 
-:::code language="js" source="~/ms-identity-node/App/routes/auth.js":::
+:::code language="js" source="~/../ms-identity-node/App/routes/auth.js":::
 
 2. Update the *index.js* route by replacing the existing code with the following code snippet:
 
-:::code language="js" source="~/ms-identity-node/App/routes/index.js":::
+:::code language="js" source="~/../ms-identity-node/App/routes/index.js":::
 
 3. Finally, update the *users.js* route by replacing the existing code with the following code snippet:
 
-:::code language="js" source="~/ms-identity-node/App/routes/users.js":::
+:::code language="js" source="~/../ms-identity-node/App/routes/users.js":::
 
 ## Add code for calling the Microsoft Graph API
 
 Create a file named *fetch.js* in the root of your project and add the following code:
 
-:::code language="js" source="~/ms-identity-node/App/fetch.js":::
+:::code language="js" source="~/../ms-identity-node/App/fetch.js":::
 
 ## Add views for displaying data
 
 1. In the *views* folder, update the *index.hbs* file by replacing the existing code with the following:
 
-:::code language="hbs" source="~/ms-identity-node/App/views/index.hbs":::
+:::code language="hbs" source="~/../ms-identity-node/App/views/index.hbs":::
 
 2. Still in the same folder, create another file named *id.hbs* for displaying the contents of user's ID token:
 
-:::code language="hbs" source="~/ms-identity-node/App/views/id.hbs":::
+:::code language="hbs" source="~/../ms-identity-node/App/views/id.hbs":::
 
 3. Finally, create another file named *profile.hbs* for displaying the result of the call made to Microsoft Graph:
 
-:::code language="hbs" source="~/ms-identity-node/App/views/profile.hbs":::
+:::code language="hbs" source="~/../ms-identity-node/App/views/profile.hbs":::
 
 ## Register routers and add state management
 
 In the *app.js* file in the root of the project folder, register the routes you've created earlier and add session support for tracking authentication state using the **express-session** package. Replace the existing code there with the following code snippet:
 
-:::code language="js" source="~/ms-identity-node/App/app.js":::
+:::code language="js" source="~/../ms-identity-node/App/app.js":::
 
 ## Test sign in and call Microsoft Graph
 

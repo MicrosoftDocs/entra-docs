@@ -349,7 +349,7 @@ Example of usage within the workflow:
 ### Add user to groups
 
 
-Allows users to be added to Microsoft 365 and cloud-only security groups. Mail-enabled, distribution, dynamic and role-assignable groups aren't supported. To control access to on-premises applications and resources, you need to enable group writeback. For more information, see [Microsoft Entra Connect group writeback](../hybrid/connect/how-to-connect-group-writeback-v2.md). 
+Allows users to be added to Microsoft 365 and cloud-only security groups. Mail-enabled, distribution, dynamic and role-assignable groups aren't supported. To control access to on-premises applications and resources, you need to enable group writeback. For more information, see [Microsoft Entra Connect group writeback](~/identity/hybrid/connect/how-to-connect-group-writeback-v2.md). 
 
 
 You're able to customize the task name and description for this task.
@@ -424,7 +424,7 @@ For Microsoft Graph, the parameters for the **Add user to teams** task are as fo
 
 ### Enable user account
 
-Allows cloud-only user accounts to be enabled. Users with Microsoft Entra role assignments aren't supported, nor are users with membership or ownership of role-assignable groups. You can utilize Microsoft Entra ID's HR driven provisioning to on-premises Active Directory to disable and enable synchronized accounts with an attribute mapping to `accountDisabled` based on data from your HR source. For more information, see: [Workday Configure attribute mappings](../saas-apps/workday-inbound-tutorial.md#part-4-configure-attribute-mappings) and [SuccessFactors Configure attribute mappings](../saas-apps/sap-successfactors-inbound-provisioning-tutorial.md#part-4-configure-attribute-mappings). You're able to customize the task name and description for this task in the Microsoft Entra admin center.
+Allows cloud-only user accounts to be enabled. Users with Microsoft Entra role assignments aren't supported, nor are users with membership or ownership of role-assignable groups. You can utilize Microsoft Entra ID's HR driven provisioning to on-premises Active Directory to disable and enable synchronized accounts with an attribute mapping to `accountDisabled` based on data from your HR source. For more information, see: [Workday Configure attribute mappings](~/identity/saas-apps/workday-inbound-tutorial.md#part-4-configure-attribute-mappings) and [SuccessFactors Configure attribute mappings](~/identity/saas-apps/sap-successfactors-inbound-provisioning-tutorial.md#part-4-configure-attribute-mappings). You're able to customize the task name and description for this task in the Microsoft Entra admin center.
 
 :::image type="content" source="media/lifecycle-workflow-task/enable-task.png" alt-text="Screenshot of Workflows task: enable user account.":::
 
@@ -498,7 +498,7 @@ For more information on setting up a Logic app to run with Lifecycle Workflows, 
 
 ### Disable user account
 
-Allows cloud-only user accounts to be disabled. Users with Microsoft Entra role assignments aren't supported, nor are users with membership or ownership of role-assignable groups. You can utilize Microsoft Entra ID's HR driven provisioning to on-premises Active Directory to disable and enable synchronized accounts with an attribute mapping to `accountDisabled` based on data from your HR source. For more information, see: [Workday Configure attribute mappings](../saas-apps/workday-inbound-tutorial.md#part-4-configure-attribute-mappings) and [SuccessFactors Configure attribute mappings](../saas-apps/sap-successfactors-inbound-provisioning-tutorial.md#part-4-configure-attribute-mappings). You're able to customize the task name and description for this task in the Microsoft Entra admin center.
+Allows cloud-only user accounts to be disabled. Users with Microsoft Entra role assignments aren't supported, nor are users with membership or ownership of role-assignable groups. You can utilize Microsoft Entra ID's HR driven provisioning to on-premises Active Directory to disable and enable synchronized accounts with an attribute mapping to `accountDisabled` based on data from your HR source. For more information, see: [Workday Configure attribute mappings](~/identity/saas-apps/workday-inbound-tutorial.md#part-4-configure-attribute-mappings) and [SuccessFactors Configure attribute mappings](~/identity/saas-apps/sap-successfactors-inbound-provisioning-tutorial.md#part-4-configure-attribute-mappings). You're able to customize the task name and description for this task in the Microsoft Entra admin center.
 
 :::image type="content" source="media/lifecycle-workflow-task/disable-task.png" alt-text="Screenshot of Workflows task: disable user account.":::
 
@@ -528,7 +528,7 @@ For Microsoft Graph, the parameters for the **Disable user account** task are as
 
 ### Remove user from selected groups
 
-Allows users to be removed from Microsoft 365 and cloud-only security groups. Mail-enabled, distribution, dynamic and role-assignable groups aren't supported. To control access to on-premises applications and resources, you need to enable group writeback. For more information, see [Microsoft Entra Connect group writeback](../hybrid/connect/how-to-connect-group-writeback-v2.md). 
+Allows users to be removed from Microsoft 365 and cloud-only security groups. Mail-enabled, distribution, dynamic and role-assignable groups aren't supported. To control access to on-premises applications and resources, you need to enable group writeback. For more information, see [Microsoft Entra Connect group writeback](~/identity/hybrid/connect/how-to-connect-group-writeback-v2.md). 
 
 
 You're able to customize the task name and description for this task in the Microsoft Entra admin center.
@@ -568,7 +568,7 @@ For Microsoft Graph, the parameters for the **Remove user from selected groups**
 
 ### Remove users from all groups
 
-Allows users to be removed from every Microsoft 365 and cloud-only security group they're a member of. Mail-enabled, distribution, dynamic and role-assignable groups aren't supported. To control access to on-premises applications and resources, you need to enable group writeback. For more information, see [Microsoft Entra Connect group writeback](../hybrid/connect/how-to-connect-group-writeback-v2.md).
+Allows users to be removed from every Microsoft 365 and cloud-only security group they're a member of. Mail-enabled, distribution, dynamic and role-assignable groups aren't supported. To control access to on-premises applications and resources, you need to enable group writeback. For more information, see [Microsoft Entra Connect group writeback](~/identity/hybrid/connect/how-to-connect-group-writeback-v2.md).
 
 
 

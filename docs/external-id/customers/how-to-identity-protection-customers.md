@@ -15,13 +15,13 @@ ms.custom: it-pro
 ---
 # Investigate risk with Identity Protection in Microsoft Entra ID for customers
 
-Microsoft Entra [Identity Protection](../../identity-protection/overview-identity-protection.md) provides ongoing risk detection for your customer tenant. It allows organizations to discover, investigate, and remediate identity-based risks. Identity Protection comes with risk reports that can be used to investigate identity risks in customer tenants. In this article, you learn how to investigate and mitigate risks.
+Microsoft Entra [Identity Protection](~/id-protection/overview-identity-protection.md) provides ongoing risk detection for your customer tenant. It allows organizations to discover, investigate, and remediate identity-based risks. Identity Protection comes with risk reports that can be used to investigate identity risks in customer tenants. In this article, you learn how to investigate and mitigate risks.
 
 ## Identity Protection reporting
 
 Identity Protection provides two reports. The *Risky users* report is where administrators can find which users are at risk and details about detections. The *risk detections* report gives information about each risk detection. This report includes the risk type, other risks triggered at the same time, the location of the sign-in attempt, and more.
 
-Each report launches with a list of all detections for the period shown at the top of the report. Reports can be filtered using the filters across the top of the report. Administrators can choose to download the data, or use [MS Graph API and Microsoft Graph PowerShell SDK](../../identity-protection/howto-identity-protection-graph-api.md) to continuously export the data.
+Each report launches with a list of all detections for the period shown at the top of the report. Reports can be filtered using the filters across the top of the report. Administrators can choose to download the data, or use [MS Graph API and Microsoft Graph PowerShell SDK](~/id-protection/howto-identity-protection-graph-api.md) to continuously export the data.
 
 ## Service limitations and considerations
 
@@ -30,7 +30,7 @@ Consider the following points when using Identity Protection:
 - Identity Protection is not available in trial tenants.
 - Identity Protection is on by default.
 - Identity Protection is available for both local and social identities, such as Google or Facebook. Detection is limited because the external identity provider manages the social account credentials.
-- Currently in Microsoft Entra customer tenants, a subset of the [Microsoft Entra ID Protection risk detections](../../identity-protection/overview-identity-protection.md) is available. Microsoft Entra ID for customers supports the following risk detections:  
+- Currently in Microsoft Entra customer tenants, a subset of the [Microsoft Entra ID Protection risk detections](~/id-protection/overview-identity-protection.md) is available. Microsoft Entra ID for customers supports the following risk detections:  
 
 |Risk detection type  |Description  |
 |---------|---------|

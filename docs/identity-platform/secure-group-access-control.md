@@ -25,7 +25,7 @@ Microsoft Entra ID allows the use of groups to manage access to resources in an 
 
 To learn more about the benefits of groups for access control, see [manage access to an application](~/identity/enterprise-apps/what-is-access-management.md).
 
-While developing an application, authorize access with the groups claim. To learn more, see how to [configure group claims for applications with Microsoft Entra ID](../hybrid/connect/how-to-connect-fed-group-claims.md).
+While developing an application, authorize access with the groups claim. To learn more, see how to [configure group claims for applications with Microsoft Entra ID](~/identity/hybrid/connect/how-to-connect-fed-group-claims.md).
 
 Today, many applications select a subset of groups with the `securityEnabled` flag set to `true` to avoid scale challenges, that is, to reduce the number of groups returned in the token. Setting the `securityEnabled` flag to be true for a group doesn't guarantee that the group is securely managed.
 

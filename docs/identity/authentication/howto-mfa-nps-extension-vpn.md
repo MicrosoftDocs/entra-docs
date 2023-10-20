@@ -119,7 +119,7 @@ If the Azure Active Directory PowerShell module is not already present, it is in
 
 To use the NPS extension, on-premises users must be synced with Microsoft Entra ID and enabled for MFA. This guide assumes that on-premises users are synced with Microsoft Entra ID via Microsoft Entra Connect. Instructions for enabling users for MFA are provided below.
 
-For information about Microsoft Entra Connect, see [Integrate your on-premises directories with Microsoft Entra ID](../hybrid/whatis-hybrid-identity.md).
+For information about Microsoft Entra Connect, see [Integrate your on-premises directories with Microsoft Entra ID](~/identity/hybrid/whatis-hybrid-identity.md).
 
 <a name='azure-active-directory-guid-id'></a>
 
@@ -469,4 +469,4 @@ For more information, see [Integrate your existing NPS infrastructure with Micro
 
 [Remote Desktop Gateway and Azure Multi-Factor Authentication Server using RADIUS](howto-mfaserver-nps-rdg.md)
 
-[Integrate your on-premises directories with Microsoft Entra ID](../hybrid/whatis-hybrid-identity.md)
+[Integrate your on-premises directories with Microsoft Entra ID](~/identity/hybrid/whatis-hybrid-identity.md)

@@ -43,8 +43,8 @@ The EmployeeHireDate and EmployeeLeaveDateTime contain dates and times that must
 
 |Scenario|Expression/Format|Target|More Information|
 |-----|-----|-----|-----|
-|Workday to Active Directory User Provisioning|FormatDateTime([StatusHireDate], "yyyy-MM-ddzzz", "yyyyMMddHHmmss.fZ")|On-premises AD string attribute|[Attribute mappings for Workday](../saas-apps/workday-inbound-tutorial.md#below-are-some-example-attribute-mappings-between-workday-and-active-directory-with-some-common-expressions)|
-|SuccessFactors to Active Directory User Provisioning|FormatDateTime([endDate], ,"M/d/yyyy hh:mm:ss tt","yyyyMMddHHmmss.fZ")|On-premises AD string attribute|[Attribute mappings for SAP Success Factors](../saas-apps/sap-successfactors-inbound-provisioning-tutorial.md)|
+|Workday to Active Directory User Provisioning|FormatDateTime([StatusHireDate], "yyyy-MM-ddzzz", "yyyyMMddHHmmss.fZ")|On-premises AD string attribute|[Attribute mappings for Workday](~/identity/saas-apps/workday-inbound-tutorial.md#below-are-some-example-attribute-mappings-between-workday-and-active-directory-with-some-common-expressions)|
+|SuccessFactors to Active Directory User Provisioning|FormatDateTime([endDate], ,"M/d/yyyy hh:mm:ss tt","yyyyMMddHHmmss.fZ")|On-premises AD string attribute|[Attribute mappings for SAP Success Factors](~/identity/saas-apps/sap-successfactors-inbound-provisioning-tutorial.md)|
 |Custom import to Active Directory|Must be in the format "yyyyMMddHHmmss.fZ"|On-premises AD string attribute||
 |Microsoft Graph User API|Must be in the format "YYYY-MM-DDThh:mm:ssZ"|EmployeeHireDate and EmployeeLeaveDateTime||
 |Workday to Microsoft Entra user provisioning|Can use a direct mapping.  No expression is needed but may be used to adjust the time portion of EmployeeHireDate and EmployeeLeaveDateTime|EmployeeHireDate and EmployeeLeaveDateTime||
@@ -105,7 +105,7 @@ To ensure timing accuracy of scheduled workflows it’s crucial to consider:
  1. Back on the **Attribute mappings** screen, you should see your new attribute mapping.  
  1. Select **Save schema**.
 
-For more information on attributes, see [Attribute mapping in Microsoft Entra Connect cloud sync.](../hybrid/cloud-sync/how-to-attribute-mapping.md)
+For more information on attributes, see [Attribute mapping in Microsoft Entra Connect cloud sync.](~/identity/hybrid/cloud-sync/how-to-attribute-mapping.md)
 
 ## How to create a custom sync rule in Microsoft Entra Connect for EmployeeHireDate
 The following example walks you through setting up a custom synchronization rule that synchronizes the Active Directory attribute to the employeeHireDate attribute in Microsoft Entra ID.
@@ -149,10 +149,10 @@ The following example walks you through setting up a custom synchronization rule
 
 > [!NOTE]
 >- **msDS-cloudExtensionAttribute1** is an example source.
->- **Starting with [Microsoft Entra Connect 2.0.3.0](../hybrid/connect/reference-connect-version-history.md#functional-changes-10), `employeeHireDate` is added to the default 'Out to Microsoft Entra ID' rule, so steps 10-16 are not required.**
->- **Starting with [Microsoft Entra Connect 2.1.19.0](../hybrid/connect/reference-connect-version-history.md#functional-changes-1), `employeeLeaveDateTime` is added to the default 'Out to Microsoft Entra ID' rule, so steps 10-16 aren't required.**
+>- **Starting with [Microsoft Entra Connect 2.0.3.0](~/identity/hybrid/connect/reference-connect-version-history.md#functional-changes-10), `employeeHireDate` is added to the default 'Out to Microsoft Entra ID' rule, so steps 10-16 are not required.**
+>- **Starting with [Microsoft Entra Connect 2.1.19.0](~/identity/hybrid/connect/reference-connect-version-history.md#functional-changes-1), `employeeLeaveDateTime` is added to the default 'Out to Microsoft Entra ID' rule, so steps 10-16 aren't required.**
 
-For more information, see [How to customize a synchronization rule](../hybrid/connect/how-to-connect-create-custom-sync-rule.md) and [Make a change to the default configuration.](../hybrid/connect/how-to-connect-sync-change-the-configuration.md)
+For more information, see [How to customize a synchronization rule](~/identity/hybrid/connect/how-to-connect-create-custom-sync-rule.md) and [Make a change to the default configuration.](~/identity/hybrid/connect/how-to-connect-sync-change-the-configuration.md)
 
 ## Edit attribute mapping in the provisioning application
 

@@ -117,7 +117,7 @@ When analyzing authentication details, take note of the following details:
     - A **satisfied by claim in the token** message is incorrectly displayed when sign-in events are initially logged. 
     - The **Primary authentication** row isn't initially logged.
 - If you're unsure of a detail in the logs, gather the **Request ID** and **Correlation ID** to use for further analyzing or troubleshooting.
-- If Conditional Access policies for authentication or session lifetime are applied, they're listed above the sign-in attempts. If you don't see either of these, those policies aren't currently applied. For more information, see [Conditional Access session controls](../conditional-access/concept-conditional-access-session.md).
+- If Conditional Access policies for authentication or session lifetime are applied, they're listed above the sign-in attempts. If you don't see either of these, those policies aren't currently applied. For more information, see [Conditional Access session controls](~/identity/conditional-access/concept-conditional-access-session.md).
 
 ### [Conditional Access](#tab/conditional-access)
 
@@ -132,7 +132,7 @@ If Conditional Access (CA) policies are in use in your tenant, you can see if th
 
 Because Conditional Access (CA) policies can change the sign-in experience for your users and potentially disrupt their processes, it's a good idea to be absolutely sure your policy is configured correctly. With **Report-only** mode, you can configure a policy and evaluate its potential impact before enabling the policy.
 
-This tab of the sign-in logs displays the results of sign-in attempts that were in scope for the policy. For more information, see the [What is Conditional Access report-only mode?](../conditional-access/concept-conditional-access-report-only.md) article.
+This tab of the sign-in logs displays the results of sign-in attempts that were in scope for the policy. For more information, see the [What is Conditional Access report-only mode?](~/identity/conditional-access/concept-conditional-access-report-only.md) article.
 
 ---
 
@@ -150,7 +150,7 @@ The following scenarios are important to consider when you're reviewing sign-in 
 - **Continuous access evaluation:** Shows whether continuous access evaluation (CAE) was applied to the sign-in event.
     - There are multiple sign-in requests for each authentication, which can appear on either the interactive or non-interactive tabs.
     - CAE is only displayed as true for one of the requests, and it can appear on the interactive tab or non-interactive tab.
-    - For more information, see [Monitor and troubleshoot sign-ins with continuous access evaluation in Microsoft Entra ID](../conditional-access/howto-continuous-access-evaluation-troubleshoot.md).
+    - For more information, see [Monitor and troubleshoot sign-ins with continuous access evaluation in Microsoft Entra ID](~/identity/conditional-access/howto-continuous-access-evaluation-troubleshoot.md).
 
 - **Cross-tenant access type:** Describes the type of cross-tenant access used by the actor to access the resource. Possible values are: 
     - `none` - A sign-in event that didn't cross a Microsoft Entra tenant's boundaries.

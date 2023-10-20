@@ -33,7 +33,7 @@ ms.collection: M365-identity-device-management
 
   ![Diagram that shows the access reviews flow.](./media/deploy-access-review/1-planning-review.png)
 
-Access reviews are an [Microsoft Entra ID Governance](identity-governance-overview.md) capability. The other capabilities are [entitlement management](entitlement-management-overview.md), [Privileged Identity Management (PIM)](../privileged-identity-management/pim-configure.md), lifecycle workflows, provisioning and [terms of use](../conditional-access/terms-of-use.md). Together, they help you address these four questions:
+Access reviews are an [Microsoft Entra ID Governance](identity-governance-overview.md) capability. The other capabilities are [entitlement management](entitlement-management-overview.md), [Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/pim-configure.md), lifecycle workflows, provisioning and [terms of use](~/identity/conditional-access/terms-of-use.md). Together, they help you address these four questions:
 
 * Which users should have access to which resources?
 * What are those users doing with that access?
@@ -163,7 +163,7 @@ Typical targets for review include:
 * [Applications integrated with Microsoft Entra ID for single sign-on](~/identity/enterprise-apps/what-is-application-management.md), such as SaaS and line of business.
 * Group [membership](~/fundamentals/concept-learn-about-groups.md?context=azure%2factive-directory%2fusers-groups-roles%2fcontext%2fugr-context) synchronized to Microsoft Entra ID, or created in Microsoft Entra ID or Microsoft 365, including Microsoft Teams.
 * [Access package](./entitlement-management-overview.md) that groups resources such as groups, apps, and sites into a single package to manage access.
-* [Microsoft Entra roles​ and Azure resource roles](../privileged-identity-management/pim-resource-roles-assign-roles.md) as defined in PIM.
+* [Microsoft Entra roles​ and Azure resource roles](~/id-governance/privileged-identity-management/pim-resource-roles-assign-roles.md) as defined in PIM.
 
 ### Who will create and manage access reviews?
 
@@ -307,7 +307,7 @@ To learn how to review guest users' access to group memberships, see [Manage gue
 
 ### Review access to on-premises groups
 
-Access reviews can't change the group membership of groups that you synchronize from on-premises with [Microsoft Entra Connect](../hybrid/connect/whatis-azure-ad-connect.md). This restriction is because the source of authority is on-premises.
+Access reviews can't change the group membership of groups that you synchronize from on-premises with [Microsoft Entra Connect](~/identity/hybrid/connect/whatis-azure-ad-connect.md). This restriction is because the source of authority is on-premises.
 
 You can still use access reviews to schedule and maintain regular reviews of on-premises groups. Reviewers will then take action in the on-premises group. This strategy keeps access reviews as the tool for all reviews.
 
@@ -345,7 +345,7 @@ Access reviews can be for the members of a group or for users who were assigned 
 
 ## Plan review of Microsoft Entra ID and Azure resource roles
 
-[Privileged Identity Management](../privileged-identity-management/pim-configure.md) simplifies how enterprises manage privileged access to resources in Microsoft Entra ID. Using PIM keeps the list of privileged roles in [Microsoft Entra ID](~/identity/role-based-access-control/permissions-reference.md) and [Azure resources](/azure/role-based-access-control/built-in-roles) smaller. It also increases the overall security of the directory.
+[Privileged Identity Management](~/id-governance/privileged-identity-management/pim-configure.md) simplifies how enterprises manage privileged access to resources in Microsoft Entra ID. Using PIM keeps the list of privileged roles in [Microsoft Entra ID](~/identity/role-based-access-control/permissions-reference.md) and [Azure resources](/azure/role-based-access-control/built-in-roles) smaller. It also increases the overall security of the directory.
 
 Access reviews allow reviewers to attest whether users still need to be in a role. Just like access reviews for access packages, reviews for Microsoft Entra roles and Azure resources are integrated into the PIM admin user experience.
 
@@ -405,9 +405,9 @@ Follow the instructions in the articles listed in the table.
 
 | How-to articles | Description |
 | - | - |
- [Create access reviews](../privileged-identity-management/pim-create-roles-and-resource-roles-review.md?toc=/azure/active-directory/governance/toc.json)| Create access reviews for privileged Microsoft Entra roles in PIM. |
-| [Self-review your access](../privileged-identity-management/pim-perform-roles-and-resource-roles-review.md?toc=/azure/active-directory/governance/toc.json)| If you're assigned to an administrative role, approve or deny access to your role. |
-| [Complete an access review](../privileged-identity-management/pim-complete-roles-and-resource-roles-review.md?toc=/azure/active-directory/governance/toc.json)| View an access review and apply the results. |
+ [Create access reviews](~/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md?toc=/azure/active-directory/governance/toc.json)| Create access reviews for privileged Microsoft Entra roles in PIM. |
+| [Self-review your access](~/id-governance/privileged-identity-management/pim-perform-roles-and-resource-roles-review.md?toc=/azure/active-directory/governance/toc.json)| If you're assigned to an administrative role, approve or deny access to your role. |
+| [Complete an access review](~/id-governance/privileged-identity-management/pim-complete-roles-and-resource-roles-review.md?toc=/azure/active-directory/governance/toc.json)| View an access review and apply the results. |
 
 ### Review Azure resource roles
 
@@ -419,9 +419,9 @@ Follow the instructions in the articles listed in the table.
 
 | How-to articles| Description |
 | - | -|
-| [Create access reviews](../privileged-identity-management/pim-create-roles-and-resource-roles-review.md?toc=/azure/active-directory/governance/toc.json)| Create access reviews for privileged Azure resource roles in PIM. |
-| [Self-review your access](../privileged-identity-management/pim-perform-roles-and-resource-roles-review.md?toc=/azure/active-directory/governance/toc.json)| If you're assigned to an administrative role, approve or deny access to your role. |
-| [Complete an access review](../privileged-identity-management/pim-complete-roles-and-resource-roles-review.md?toc=/azure/active-directory/governance/toc.json)| View an access review and apply the results. |
+| [Create access reviews](~/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md?toc=/azure/active-directory/governance/toc.json)| Create access reviews for privileged Azure resource roles in PIM. |
+| [Self-review your access](~/id-governance/privileged-identity-management/pim-perform-roles-and-resource-roles-review.md?toc=/azure/active-directory/governance/toc.json)| If you're assigned to an administrative role, approve or deny access to your role. |
+| [Complete an access review](~/id-governance/privileged-identity-management/pim-complete-roles-and-resource-roles-review.md?toc=/azure/active-directory/governance/toc.json)| View an access review and apply the results. |
 
 ## Use the Access Reviews API
 
@@ -440,7 +440,7 @@ When you create new Microsoft Graph API queries for automation, use [Graph Explo
 
 ## Monitor access reviews
 
-Access reviews activities are recorded and available from the [Microsoft Entra audit logs](../reports-monitoring/concept-audit-logs.md). You can filter the audit data on the category, activity type, and date range. Here's a sample query.
+Access reviews activities are recorded and available from the [Microsoft Entra audit logs](~/identity/monitoring-health/concept-audit-logs.md). You can filter the audit data on the category, activity type, and date range. Here's a sample query.
 
 | Category| Policy |
 | - | - |
@@ -454,11 +454,11 @@ Access reviews activities are recorded and available from the [Microsoft Entra a
 | | Apply decision |
 | Date range| Seven days |
 
-For more advanced queries and analysis of access reviews, and to track changes and completion of reviews, export your Microsoft Entra audit logs to [Azure Log Analytics](../reports-monitoring/howto-archive-logs-to-storage-account.md) or Azure Event Hubs. When audit logs are stored in Log Analytics, you can use the [powerful analytics language](../reports-monitoring/howto-analyze-activity-logs-log-analytics.md) and build your own dashboards.
+For more advanced queries and analysis of access reviews, and to track changes and completion of reviews, export your Microsoft Entra audit logs to [Azure Log Analytics](~/identity/monitoring-health/howto-archive-logs-to-storage-account.md) or Azure Event Hubs. When audit logs are stored in Log Analytics, you can use the [powerful analytics language](~/identity/monitoring-health/howto-analyze-activity-logs-log-analytics.md) and build your own dashboards.
 
 ## Next steps
 
 Learn about the following related technologies:
 
 * [What is Microsoft entitlement management?](entitlement-management-overview.md)
-* [What is Microsoft Privileged Identity Management?](../privileged-identity-management/pim-configure.md)
+* [What is Microsoft Privileged Identity Management?](~/id-governance/privileged-identity-management/pim-configure.md)

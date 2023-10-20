@@ -45,7 +45,7 @@ Using smart lockout doesn't guarantee that a genuine user is never locked out. W
 
 Smart lockout can be integrated with hybrid deployments that use password hash sync or pass-through authentication to protect on-premises Active Directory Domain Services (AD DS) accounts from being locked out by attackers. By setting smart lockout policies in Microsoft Entra ID appropriately, attacks can be filtered out before they reach on-premises AD DS.
 
-When using [pass-through authentication](../hybrid/connect/how-to-connect-pta.md), the following considerations apply:
+When using [pass-through authentication](~/identity/hybrid/connect/how-to-connect-pta.md), the following considerations apply:
 
 * The Microsoft Entra lockout threshold is **less** than the AD DS account lockout threshold. Set the values so that the AD DS account lockout threshold is at least two or three times greater than the Microsoft Entra lockout threshold.
 * The Microsoft Entra lockout duration must be set longer than the AD DS account lockout duration. The Microsoft Entra duration is set in seconds, while the AD DS duration is set in minutes.

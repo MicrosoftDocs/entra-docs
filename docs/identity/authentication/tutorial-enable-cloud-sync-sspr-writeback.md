@@ -24,7 +24,7 @@ Microsoft Entra Connect cloud sync can synchronize Microsoft Entra password chan
 - An account with:
   - [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) role 
 - Microsoft Entra ID configured for self-service password reset. If needed, complete this tutorial to enable Microsoft Entra SSPR. 
-- An on-premises AD DS environment configured with [Microsoft Entra Connect cloud sync version 1.1.977.0 or later](~/identity/app-provisioning/provisioning-agent-release-version-history.md). Learn how to [identify the agent's current version](../hybrid/cloud-sync/how-to-automatic-upgrade.md). If needed, configure Microsoft Entra Connect cloud sync using [this tutorial](tutorial-enable-sspr.md). 
+- An on-premises AD DS environment configured with [Microsoft Entra Connect cloud sync version 1.1.977.0 or later](~/identity/app-provisioning/provisioning-agent-release-version-history.md). Learn how to [identify the agent's current version](~/identity/hybrid/cloud-sync/how-to-automatic-upgrade.md). If needed, configure Microsoft Entra Connect cloud sync using [this tutorial](tutorial-enable-sspr.md). 
 
 
 ## Deployment steps
@@ -153,5 +153,5 @@ For more information about how to validate or set up the appropriate permissions
 
 ## Next steps
 
-- For more information about cloud sync and a comparison between Microsoft Entra Connect and cloud sync, see [What is Microsoft Entra Connect cloud sync?](../hybrid/cloud-sync/what-is-cloud-sync.md)
+- For more information about cloud sync and a comparison between Microsoft Entra Connect and cloud sync, see [What is Microsoft Entra Connect cloud sync?](~/identity/hybrid/cloud-sync/what-is-cloud-sync.md)
 - For a tutorial about setting up password writeback by using Microsoft Entra Connect, see [Tutorial: Enable Microsoft Entra self-service password reset writeback to an on-premises environment](tutorial-enable-sspr-writeback.md).

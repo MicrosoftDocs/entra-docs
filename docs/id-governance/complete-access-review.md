@@ -128,4 +128,4 @@ Denied B2B direct connect users and teams lose access to all shared channels in 
  
 - [Manage access reviews](manage-access-review.md) 
 - [Create an access review of groups or applications](create-access-review.md)
-- [Create an access review of users in a Microsoft Entra administrative role](../privileged-identity-management/pim-create-roles-and-resource-roles-review.md)
+- [Create an access review of users in a Microsoft Entra administrative role](~/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md)

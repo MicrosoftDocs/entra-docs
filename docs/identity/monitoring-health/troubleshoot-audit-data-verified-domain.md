@@ -65,4 +65,4 @@ Additionally, in most cases, there are no changes to users as their **UserPrinci
 
 ## Next Steps
 
-[Microsoft Entra Connect Sync service shadow attributes](../hybrid/connect/how-to-connect-syncservice-shadow-attributes.md)
+[Microsoft Entra Connect Sync service shadow attributes](~/identity/hybrid/connect/how-to-connect-syncservice-shadow-attributes.md)

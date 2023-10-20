@@ -239,7 +239,7 @@ The user was authenticated successfully, but the user isn't assigned the Global 
 
 ### Privileged Identity Management enabled
 
-Authentication was successful, but Privileged Identity Management has been enabled and the user currently isn't a Hybrid Identity Administrator. For more information, see [Privileged Identity Management](../../privileged-identity-management/pim-getting-started.md).
+Authentication was successful, but Privileged Identity Management has been enabled and the user currently isn't a Hybrid Identity Administrator. For more information, see [Privileged Identity Management](~/id-governance/privileged-identity-management/pim-getting-started.md).
 
 <div id="get-msolcompanyinformation-failed">
 <!--

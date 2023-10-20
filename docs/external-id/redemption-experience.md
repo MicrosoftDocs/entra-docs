@@ -19,7 +19,7 @@ ms.collection: engagement-fy23, M365-identity-device-management
 
 # Microsoft Entra B2B collaboration invitation redemption
 
-This article describes the ways guest users can access your resources and the consent process they'll encounter. If you send an invitation email to the guest, the invitation includes a link the guest can redeem to get access to your app or portal. The invitation email is just one of the ways guests can get access to your resources. As an alternative, you can add guests to your directory and give them a direct link to the portal or app you want to share. Regardless of the method they use, guests are guided through a first-time consent process. This process ensures that your guests agree to privacy terms and accept any [terms of use](../conditional-access/terms-of-use.md) you've set up.
+This article describes the ways guest users can access your resources and the consent process they'll encounter. If you send an invitation email to the guest, the invitation includes a link the guest can redeem to get access to your app or portal. The invitation email is just one of the ways guests can get access to your resources. As an alternative, you can add guests to your directory and give them a direct link to the portal or app you want to share. Regardless of the method they use, guests are guided through a first-time consent process. This process ensures that your guests agree to privacy terms and accept any [terms of use](~/identity/conditional-access/terms-of-use.md) you've set up.
 
 When you add a guest user to your directory, the guest user account has a consent status (viewable in PowerShell) that’s initially set to **PendingAcceptance**. This setting remains until the guest accepts your invitation and agrees to your privacy policy and terms of use. After that, the consent status changes to **Accepted**, and the consent pages are no longer presented to the guest.
 
@@ -82,7 +82,7 @@ When a user selects the **Accept invitation** link in an [invitation email](invi
 
 :::image type="content" source="media/redemption-experience/invitation-redemption.png" alt-text="Screenshot showing the redemption flow diagram.":::
 
-1. Microsoft Entra ID performs user-based discovery to determine if the user already exists in a managed Microsoft Entra tenant. (Unmanaged Microsoft Entra accounts can no longer be used for the redemption flow.) If the user’s User Principal Name ([UPN](../hybrid/connect/plan-connect-userprincipalname.md#what-is-userprincipalname)) matches both an existing Microsoft Entra account and a personal MSA, the user is prompted to choose which account they want to redeem with.
+1. Microsoft Entra ID performs user-based discovery to determine if the user already exists in a managed Microsoft Entra tenant. (Unmanaged Microsoft Entra accounts can no longer be used for the redemption flow.) If the user’s User Principal Name ([UPN](~/identity/hybrid/connect/plan-connect-userprincipalname.md#what-is-userprincipalname)) matches both an existing Microsoft Entra account and a personal MSA, the user is prompted to choose which account they want to redeem with.
 
 2. If an admin has enabled [SAML/WS-Fed IdP federation](direct-federation.md), Microsoft Entra ID checks if the user’s domain suffix matches the domain of a configured SAML/WS-Fed identity provider and redirects the user to the pre-configured identity provider.
 
@@ -113,7 +113,7 @@ When a guest signs in to a resource in a partner organization for the first time
 
    :::image type="content" source="media/redemption-experience/terms-of-use-accept.png" alt-text="Screenshot showing new terms of use."::: 
 
-   You can configure [terms of use](../conditional-access/terms-of-use.md) in **External Identities** > **Terms of use**.
+   You can configure [terms of use](~/identity/conditional-access/terms-of-use.md) in **External Identities** > **Terms of use**.
 
 3. Unless otherwise specified, the guest is redirected to the Apps access panel, which lists the applications the guest can access.
 

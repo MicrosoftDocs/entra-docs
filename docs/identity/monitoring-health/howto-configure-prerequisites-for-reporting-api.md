@@ -144,6 +144,6 @@ Programmatic access APIs:
 
 ## Next steps
 
-* [Get started with Microsoft Entra ID Protection and Microsoft Graph](../identity-protection/howto-identity-protection-graph-api.md)
+* [Get started with Microsoft Entra ID Protection and Microsoft Graph](~/id-protection/howto-identity-protection-graph-api.md)
 * [Audit API reference](/graph/api/resources/directoryaudit) 
 * [Sign-in API reference](/graph/api/resources/signin)

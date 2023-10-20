@@ -93,7 +93,7 @@ Follow these steps to enable Microsoft Entra SSO.
     > [!Note]
     > If the **Identifier** and **Reply URL** values do not get auto populated, then fill in the values manually according to your requirement.
 
-1. Alibaba Cloud Service (Role-based SSO) require roles to be configured in Microsoft Entra ID. The role claim is pre-configured so you don't have to configure it but you still need to create them in Microsoft Entra ID using this [article](~/identity-platform/howto-add-app-roles-in-azure-ad-apps.md#app-roles-ui).
+1. Alibaba Cloud Service (Role-based SSO) require roles to be configured in Microsoft Entra ID. The role claim is pre-configured so you don't have to configure it but you still need to create them in Microsoft Entra ID using this [article](~/identity-platform/howto-add-app-roles-in-apps.md#app-roles-ui).
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 

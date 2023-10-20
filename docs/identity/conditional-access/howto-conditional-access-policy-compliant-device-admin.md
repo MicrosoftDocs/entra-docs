@@ -21,9 +21,9 @@ Accounts that are assigned administrative rights are targeted by attackers. Requ
 
 More information about device compliance policies can be found in the article, [Set rules on devices to allow access to resources in your organization using Intune](/intune/protect/device-compliance-get-started)
 
-Requiring a Microsoft Entra hybrid joined device is dependent on your devices already being Microsoft Entra hybrid joined. For more information, see the article [Configure Microsoft Entra hybrid join](../devices/how-to-hybrid-join.md).
+Requiring a Microsoft Entra hybrid joined device is dependent on your devices already being Microsoft Entra hybrid joined. For more information, see the article [Configure Microsoft Entra hybrid join](~/identity/devices/how-to-hybrid-join.md).
 
-Microsoft recommends you require enable this policy for the following roles at a minimum, based on [identity score recommendations](../reports-monitoring/concept-identity-secure-score.md):
+Microsoft recommends you require enable this policy for the following roles at a minimum, based on [identity score recommendations](~/identity/monitoring-health/concept-identity-secure-score.md):
 
 - Global administrator
 - Application administrator

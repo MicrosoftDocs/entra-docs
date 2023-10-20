@@ -145,4 +145,4 @@ When a certificate expires, you get a warning telling you to upload another cert
 ## Next steps
 
 * [Enable single sign-on](application-proxy-configure-single-sign-on-with-kcd.md) to your published apps with Microsoft Entra authentication.
-* [Conditional Access](../conditional-access/concept-conditional-access-cloud-apps.md) for your published cloud apps.
+* [Conditional Access](~/identity/conditional-access/concept-conditional-access-cloud-apps.md) for your published cloud apps.

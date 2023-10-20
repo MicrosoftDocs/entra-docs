@@ -25,7 +25,7 @@ Integration benefits:
 
     -   See, [Embrace proactive security with Zero Trust](https://www.microsoft.com/security/business/zero-trust)
 
-    -   See, [What is Conditional Access?](../conditional-access/overview.md)
+    -   See, [What is Conditional Access?](~/identity/conditional-access/overview.md)
 
 -   No-code integration with Microsoft Entra ID and web apps:
 
@@ -121,7 +121,7 @@ You need the following components. Prior DAP experience isn't necessary.
     directory
 
     -   See, [Microsoft Entra Connect Sync: Understand and customize
-        synchronization](../hybrid/connect/how-to-connect-sync-whatis.md)
+        synchronization](~/identity/hybrid/connect/how-to-connect-sync-whatis.md)
 
 -   An account with Microsoft Entra Application Administrator permissions
 

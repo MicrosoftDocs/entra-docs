@@ -19,7 +19,7 @@ ms.custom: not-enterprise-apps
 In this tutorial, you'll learn to implement secure hybrid access (SHA) with single sign-on (SSO) to Kerberos applications by using the F5 BIG-IP advanced configuration. Enabling BIG-IP published services for Microsoft Entra SSO provides many benefits, including:
 
 * Improved [Zero Trust](https://www.microsoft.com/security/blog/2020/04/02/announcing-microsoft-zero-trust-assessment-tool/) governance through Microsoft Entra pre-authentication, and use of the Conditional Access security policy enforcement solution. 
-  * See, [What is Conditional Access?](../conditional-access/overview.md)
+  * See, [What is Conditional Access?](~/identity/conditional-access/overview.md)
 * Full SSO between Microsoft Entra ID and BIG-IP published services
 * Identity management and access from a single control plane, the [Microsoft Entra admin center](https://entra.microsoft.com)
 
@@ -31,7 +31,7 @@ For this scenario, you'll configure a line-of-business application for Kerberos 
 
 To integrate the application with Microsoft Entra ID requires support from a federation-based protocol, such as Security Assertion Markup Language (SAML). Because modernizing the application introduces the risk of potential downtime, there are other options. 
 
-While you're using Kerberos Constrained Delegation (KCD) for SSO, you can use [Microsoft Entra application proxy](../app-proxy/application-proxy.md) to access the application remotely. You can achieve the protocol transition to bridge the legacy application to the modern, identity control plane. 
+While you're using Kerberos Constrained Delegation (KCD) for SSO, you can use [Microsoft Entra application proxy](~/identity/app-proxy/application-proxy.md) to access the application remotely. You can achieve the protocol transition to bridge the legacy application to the modern, identity control plane. 
 
 Another approach is to use an F5 BIG-IP Application Delivery Controller. This approach enables overlay of the application with Microsoft Entra pre-authentication and KCD SSO. It improves the overall Zero Trust posture of the application.
 
@@ -72,7 +72,7 @@ Prior BIG-IP experience isn't necessary. You need:
   * F5 BIG-IP APM standalone license
   * F5 BIG-IP APM add-on license on a BIG-IP Local Traffic Manager (LTM)
   * 90-day BIG-IP [Free Trial](https://www.f5.com/trial/big-ip-trial.php) license
-* User identities [synchronized](../hybrid/connect/how-to-connect-sync-whatis.md) from an on-premises directory to Microsoft Entra ID, or created in Microsoft Entra ID and flowed back to your on-premises directory.
+* User identities [synchronized](~/identity/hybrid/connect/how-to-connect-sync-whatis.md) from an on-premises directory to Microsoft Entra ID, or created in Microsoft Entra ID and flowed back to your on-premises directory.
 * One of the following roles in Microsoft Entra tenant: Global Administrator, Cloud Application Administrator, or Application Administrator.
 * A web server [certificate](~/identity/enterprise-apps/f5-bigip-deployment-guide.md) for publishing services over HTTPS, or use default BIG-IP certificates while testing.
 * A Kerberos application, or go to active-directory-wp.com to learn to configure [SSO with IIS on Windows](https://active-directory-wp.com/docs/Networking/Single_Sign_On/SSO_with_IIS_on_Windows.html).
@@ -437,7 +437,7 @@ For more information, see the F5 articles:
 
 ## Summary
 
-Your application is published and accessible via SHA, by its URL or through Microsoft application portals. The application is visible as a target resource in [Microsoft Entra Conditional Access](../conditional-access/concept-conditional-access-policies.md). 
+Your application is published and accessible via SHA, by its URL or through Microsoft application portals. The application is visible as a target resource in [Microsoft Entra Conditional Access](~/identity/conditional-access/concept-conditional-access-policies.md). 
 
 For increased security, organizations that use this pattern can block direct access to the application, which forces a strict path through BIG-IP.
 
@@ -462,7 +462,7 @@ While troubleshooting, consider the following points:
 * Ensure there are no duplicate SPNs in your environment. Run the following query at the command line: `setspn -q HTTP/my_target_SPN`.
 
 > [!NOTE]
-> To validate an IIS application is configured for KCD, see [Troubleshoot Kerberos constrained delegation configurations for Application Proxy](../app-proxy/application-proxy-back-end-kerberos-constrained-delegation-how-to.md). See also the AskF5 article, [Kerberos Single Sign-On Method](https://techdocs.f5.com/en-us/bigip-15-1-0/big-ip-access-policy-manager-single-sign-on-concepts-configuration/kerberos-single-sign-on-method.html).
+> To validate an IIS application is configured for KCD, see [Troubleshoot Kerberos constrained delegation configurations for Application Proxy](~/identity/app-proxy/application-proxy-back-end-kerberos-constrained-delegation-how-to.md). See also the AskF5 article, [Kerberos Single Sign-On Method](https://techdocs.f5.com/en-us/bigip-15-1-0/big-ip-access-policy-manager-single-sign-on-concepts-configuration/kerberos-single-sign-on-method.html).
 
 **Increase log verbosity**
 
@@ -498,5 +498,5 @@ For help diagnosing KCD-related problems, see the F5 BIG-IP deployment guide [Co
 
 * MyF5 article, [Active Directory Authentication](https://techdocs.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-authentication-single-sign-on-11-5-0/2.html)
 * [Forget passwords, go passwordless](https://www.microsoft.com/security/business/identity/passwordless)
-* [What is Conditional Access?](../conditional-access/overview.md)
+* [What is Conditional Access?](~/identity/conditional-access/overview.md)
 * [Zero Trust framework to enable remote work](https://www.microsoft.com/security/blog/2020/04/02/announcing-microsoft-zero-trust-assessment-tool/)

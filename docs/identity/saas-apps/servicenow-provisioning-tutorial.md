@@ -70,9 +70,9 @@ The Microsoft Entra provisioning service allows you to scope who will be provisi
 
 Keep the following tips in mind:
 
-- When you're assigning users and groups to ServiceNow, you must select a role other than Default Access. Users with the Default Access role are excluded from provisioning and will be marked as not effectively entitled in the provisioning logs. If the only role available on the application is the Default Access role, you can [update the application manifest](~/identity-platform/howto-add-app-roles-in-azure-ad-apps.md) to add more roles. 
+- When you're assigning users and groups to ServiceNow, you must select a role other than Default Access. Users with the Default Access role are excluded from provisioning and will be marked as not effectively entitled in the provisioning logs. If the only role available on the application is the Default Access role, you can [update the application manifest](~/identity-platform/howto-add-app-roles-in-apps.md) to add more roles. 
 
-- If you need additional roles, you can [update the application manifest](~/identity-platform/howto-add-app-roles-in-azure-ad-apps.md) to add new roles.
+- If you need additional roles, you can [update the application manifest](~/identity-platform/howto-add-app-roles-in-apps.md) to add new roles.
 
 
 ## Step 5: Configure automatic user provisioning to ServiceNow 
@@ -126,7 +126,7 @@ This operation starts the initial synchronization cycle of all users and groups 
 
 After you've configured provisioning, use the following resources to monitor your deployment:
 
-- Use the [provisioning logs](../reports-monitoring/concept-provisioning-logs.md) to determine which users have been provisioned successfully or unsuccessfully.
+- Use the [provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md) to determine which users have been provisioned successfully or unsuccessfully.
 - Check the [progress bar](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md) to see the status of the provisioning cycle and how close it is to completion.
 - If the provisioning configuration seems to be in an unhealthy state, the application will go into quarantine. [Learn more about quarantine states](~/identity/app-provisioning/application-provisioning-quarantine-status.md).  
 

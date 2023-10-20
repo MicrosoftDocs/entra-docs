@@ -97,10 +97,10 @@ Alternatively, a DNS entry with a CNAME record for every individual application 
 for example in above instance  >`'home.contoso.ashcorp.us'` points to > `home-ashcorp1.msappproxy.net`
 
 
-For more detailed instructions for Application Proxy, see [Tutorial: Add an on-premises application for remote access through Application Proxy in Microsoft Entra ID](../app-proxy/application-proxy-add-on-premises-application.md).
+For more detailed instructions for Application Proxy, see [Tutorial: Add an on-premises application for remote access through Application Proxy in Microsoft Entra ID](~/identity/app-proxy/application-proxy-add-on-premises-application.md).
 
 ## See also
-- [Tutorial: Add an on-premises application for remote access through Application Proxy in Microsoft Entra ID](../app-proxy/application-proxy-add-on-premises-application.md) 
+- [Tutorial: Add an on-premises application for remote access through Application Proxy in Microsoft Entra ID](~/identity/app-proxy/application-proxy-add-on-premises-application.md) 
 - [Plan a Microsoft Entra application proxy deployment](application-proxy-deployment-plan.md) 
 - [Remote access to on-premises applications through Microsoft Entra application proxy](application-proxy.md)
 - [Understand and solve Microsoft Entra application proxy CORS issues](application-proxy-understand-cors-issues.md)

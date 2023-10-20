@@ -195,7 +195,7 @@ For authorization, consider using token claims instead of some Microsoft Graph c
 
 On mobile devices, an authentication broker like Microsoft Authenticator improves resilience. The authentication broker uses a primary refresh token (PRT) with claims about the user and device. Use PRT for authentication tokens to access other applications from the device. When a PRT requests application access, Microsoft Entra ID trusts its device and MFA claims. This increases resilience by reducing steps to authenticate the device. Users aren't challenged with multiple MFA prompts on the same device.
 
-See, [What is a Primary Refresh Token?](../devices/concept-primary-refresh-token.md)
+See, [What is a Primary Refresh Token?](~/identity/devices/concept-primary-refresh-token.md)
 
   ![Diagram of an app calling Microsoft identity platform, through a token cache and token store, and authentication broker on the device running the application.](media/resilience-client-app/authentication-broker.png)
 
@@ -210,10 +210,10 @@ Continuous Access Evaluation (CAE) increases application security and resilience
 
 Learn more:
 
-* [Continuous Access Evaluation](../conditional-access/concept-continuous-access-evaluation.md)
+* [Continuous Access Evaluation](~/identity/conditional-access/concept-continuous-access-evaluation.md)
 * [Securing applications with Continuous Access Evaluation](/security/zero-trust/develop/secure-with-cae)
-* [Critical event evaluation](../conditional-access/concept-continuous-access-evaluation.md#critical-event-evaluation)
-* [Conditional Access policy evaluation](../conditional-access/concept-continuous-access-evaluation.md#conditional-access-policy-evaluation)
+* [Critical event evaluation](~/identity/conditional-access/concept-continuous-access-evaluation.md#critical-event-evaluation)
+* [Conditional Access policy evaluation](~/identity/conditional-access/concept-continuous-access-evaluation.md#conditional-access-policy-evaluation)
 * [How to use CAE enabled APIs in your applications](~/identity-platform/app-resilience-continuous-access-evaluation.md)
 
 If you develop resource APIs, go to `openid.net` for [Shared Signals – A Secure Webhooks Framework](https://openid.net/wg/sse/).

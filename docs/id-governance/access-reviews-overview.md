@@ -38,7 +38,7 @@ Microsoft Entra ID enables you to collaborate with users from inside your organi
 
 ## When should you use access reviews?
 
-- **Too many users in privileged roles:** It's a good idea to check how many users have administrative access, how many of them are Global Administrators, and if there are any invited guests or partners that haven't been removed after being assigned to do an administrative task. You can recertify the role assignment users in [Microsoft Entra roles](../privileged-identity-management/pim-perform-roles-and-resource-roles-review.md?toc=/azure/active-directory/governance/toc.json) such as Global Administrators, or [Azure resources roles](../privileged-identity-management/pim-perform-roles-and-resource-roles-review.md?toc=/azure/active-directory/governance/toc.json) such as User Access Administrator in the [Microsoft Entra Privileged Identity Management (PIM)](../privileged-identity-management/pim-configure.md) experience.
+- **Too many users in privileged roles:** It's a good idea to check how many users have administrative access, how many of them are Global Administrators, and if there are any invited guests or partners that haven't been removed after being assigned to do an administrative task. You can recertify the role assignment users in [Microsoft Entra roles](~/id-governance/privileged-identity-management/pim-perform-roles-and-resource-roles-review.md?toc=/azure/active-directory/governance/toc.json) such as Global Administrators, or [Azure resources roles](~/id-governance/privileged-identity-management/pim-perform-roles-and-resource-roles-review.md?toc=/azure/active-directory/governance/toc.json) such as User Access Administrator in the [Microsoft Entra Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/pim-configure.md) experience.
 - **When automation is not possible:** You can create rules for dynamic membership on security groups or Microsoft 365 Groups, but what if the HR data isn't in Microsoft Entra ID or if users still need access after leaving the group to train their replacement? You can then create a review on that group to ensure those who still need access should have continued access.
 - **When a group is used for a new purpose:** If you have a group that is going to be synced to Microsoft Entra ID, or if you plan to enable the application Salesforce for everyone in the Sales team group, it would be useful to ask the group owner to review the group membership prior to the group being used in a different risk content.
 - **Business critical data access:** for certain resources, such as [business critical applications](identity-governance-applications-prepare.md), it might be required as part of compliance processes to ask people to regularly reconfirm and give a justification on why they need continued access.
@@ -57,8 +57,8 @@ Depending on what you want to review, you'll either create your access review in
 | --- | --- | --- | --- |
 | Security group members</br>Office group members | Specified reviewers</br>Group owners</br>Self-review | access reviews</br>Microsoft Entra groups | Access panel |
 | Assigned to a connected app | Specified reviewers</br>Self-review | access reviews</br>Microsoft Entra enterprise apps (in preview) | Access panel |
-| Microsoft Entra role | Specified reviewers</br>Self-review | [PIM](../privileged-identity-management/pim-create-roles-and-resource-roles-review.md?toc=/azure/active-directory/governance/toc.json) | Microsoft Entra Admin Center |
-| Azure resource role | Specified reviewers</br>Self-review | [PIM](../privileged-identity-management/pim-create-roles-and-resource-roles-review.md?toc=/azure/active-directory/governance/toc.json) | Microsoft Entra Admin Center |
+| Microsoft Entra role | Specified reviewers</br>Self-review | [PIM](~/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md?toc=/azure/active-directory/governance/toc.json) | Microsoft Entra Admin Center |
+| Azure resource role | Specified reviewers</br>Self-review | [PIM](~/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md?toc=/azure/active-directory/governance/toc.json) | Microsoft Entra Admin Center |
 | Access package assignments | Specified reviewers</br>Group members</br>Self-review | entitlement management | Access panel |
 
 ## License requirements
@@ -72,6 +72,6 @@ Depending on what you want to review, you'll either create your access review in
 
 - [Prepare for an access review of users' access to an application](access-reviews-application-preparation.md)
 - [Create an access review of groups or applications](create-access-review.md)
-- [Create an access review of users in a Microsoft Entra administrative role](../privileged-identity-management/pim-create-roles-and-resource-roles-review.md?toc=/azure/active-directory/governance/toc.json)
+- [Create an access review of users in a Microsoft Entra administrative role](~/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md?toc=/azure/active-directory/governance/toc.json)
 - [Review access to groups or applications](perform-access-review.md)
 - [Complete an access review of groups or applications](complete-access-review.md)

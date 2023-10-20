@@ -31,7 +31,7 @@ The following short video provides an excellent overview of the Microsoft Entra 
 Use a custom claims provider for the following scenarios:
 
 - **Migration of legacy systems** - You may have legacy identity systems such as Active Directory Federation Services (AD FS) or data stores (such as LDAP directory) that hold information about users. You'd like to migrate these applications, but can't fully migrate the identity data into Microsoft Entra ID. Your apps may depend on certain information on the token, and can't be rearchitected.
-- **Integration with other data stores that can't be synced to the directory** - You may have third-party systems, or your own systems that store user data. Ideally this information could be consolidated, either through [synchronization](../hybrid/cloud-sync/what-is-cloud-sync.md) or direct migration, in the Microsoft Entra directory. However, that isn't always feasible. The restriction may be because of data residency, regulations, or other requirements.
+- **Integration with other data stores that can't be synced to the directory** - You may have third-party systems, or your own systems that store user data. Ideally this information could be consolidated, either through [synchronization](~/identity/hybrid/cloud-sync/what-is-cloud-sync.md) or direct migration, in the Microsoft Entra directory. However, that isn't always feasible. The restriction may be because of data residency, regulations, or other requirements.
 
 ## Token issuance start event listener
 

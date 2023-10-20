@@ -51,8 +51,8 @@ Use the following list to plan for authentication deployment.
   * See the video, [How to configure and enforce multifactor authentication in your tenant](https://www.youtube.com/watch?v=qNndxl7gqVM)
   * See, [Plan a Microsoft Entra multifactor authentication deployment](~/identity/authentication/howto-mfa-getstarted.md) 
 * **Conditional Access** - Implement automated access-control decisions for users to access cloud apps, based on conditions: 
-  * See, [What is Conditional Access?](../conditional-access/overview.md)
-  * See, [Plan a Conditional Access deployment](../conditional-access/plan-conditional-access.md)
+  * See, [What is Conditional Access?](~/identity/conditional-access/overview.md)
+  * See, [Plan a Conditional Access deployment](~/identity/conditional-access/plan-conditional-access.md)
 * **Microsoft Entra self-service password reset (SSPR)** - Help users reset a password without administrator intervention:
   * See, [Passwordless authentication options for Microsoft Entra ID](~/identity/authentication/concept-authentication-passwordless.md)
   * See, [Plan a Microsoft Entra self-service password reset deployment](~/identity/authentication/howto-sspr-deployment.md) 
@@ -70,21 +70,21 @@ Use the following list to help deploy applications and devices.
 * **My Apps portal** - A web-based portal to discover and access applications. Enable user productivity with self-service, for instance requesting access to groups, or managing access to resources on behalf of others. 
   * See, [My Apps portal overview](~/identity/enterprise-apps/myapps-overview.md)
 * **Devices** - Evaluate device integration methods with Microsoft Entra ID, choose the implementation plan, and more.
-  * See, [Plan your Microsoft Entra device deployment](../devices/plan-device-deployment.md)  
+  * See, [Plan your Microsoft Entra device deployment](~/identity/devices/plan-device-deployment.md)  
 
 ## Hybrid scenarios  
 
 The following list describes features and services for productivity gains in hybrid scenarios.
 
 * **Active Directory Federation Services (AD FS)** - Migrate user authentication from federation to cloud with pass-through authentication or password hash sync:
-  *  See, [What is federation with Microsoft Entra ID?](../hybrid/connect/whatis-fed.md)
-  *  See, [Migrate from federation to cloud authentication](../hybrid/connect/migrate-from-federation-to-cloud-authentication.md)
+  *  See, [What is federation with Microsoft Entra ID?](~/identity/hybrid/connect/whatis-fed.md)
+  *  See, [Migrate from federation to cloud authentication](~/identity/hybrid/connect/migrate-from-federation-to-cloud-authentication.md)
 * **Microsoft Entra application proxy** - Enable employees to be productive at any place or time, and from a device. Learn about software as a service (SaaS) apps in the cloud and corporate apps on-premises. Microsoft Entra application proxy enables access without virtual private networks (VPNs) or demilitarized zones (DMZs):
-  * See, [Remote access to on-premises applications through Microsoft Entra application proxy](../app-proxy/application-proxy.md)
-  * See, [Plan a Microsoft Entra application proxy deployment](../app-proxy/application-proxy-deployment-plan.md)
+  * See, [Remote access to on-premises applications through Microsoft Entra application proxy](~/identity/app-proxy/application-proxy.md)
+  * See, [Plan a Microsoft Entra application proxy deployment](~/identity/app-proxy/application-proxy-deployment-plan.md)
 * **Seamless single sign-on (Seamless SSO)** - Use Seamless SSO for user sign-in, on corporate devices connected to a corporate network. Users don't need to enter passwords to sign in to Microsoft Entra ID, and usually don't need to enter usernames. Authorized users access cloud-based apps without extra on-premises components:
-  * See, [Microsoft Entra SSO: Quickstart](../hybrid/connect/how-to-connect-sso-quick-start.md) 
-  * See, [Microsoft Entra seamless SSO: Technical deep dive](../hybrid/connect/how-to-connect-sso-how-it-works.md)
+  * See, [Microsoft Entra SSO: Quickstart](~/identity/hybrid/connect/how-to-connect-sso-quick-start.md) 
+  * See, [Microsoft Entra seamless SSO: Technical deep dive](~/identity/hybrid/connect/how-to-connect-sso-how-it-works.md)
 
 ## Users
 
@@ -103,15 +103,15 @@ Use the following list to learn about identity governance and reporting. Items i
 Learn more: [Secure access for a connected world—meet Microsoft Entra](https://www.microsoft.com/en-us/security/blog/?p=114039)
 
 * **Privileged identity management (PIM)** - Manage privileged administrative roles across Microsoft Entra ID, Azure resources, and other Microsoft Online Services. Use it for just-in-time access, request approval workflows, and fully integrated access reviews to help prevent malicious activities: 
-  * See, [Start using Privileged Identity Management](../privileged-identity-management/pim-getting-started.md)
-  * See, [Plan a Privileged Identity Management deployment](../privileged-identity-management/pim-deployment-plan.md) 
+  * See, [Start using Privileged Identity Management](~/id-governance/privileged-identity-management/pim-getting-started.md)
+  * See, [Plan a Privileged Identity Management deployment](~/id-governance/privileged-identity-management/pim-deployment-plan.md) 
 * **Reporting and monitoring** - Your Microsoft Entra reporting and monitoring solution design has dependencies and constraints: legal, security, operations, environment, and processes. 
-  * See, [Microsoft Entra reporting and monitoring deployment dependencies](../reports-monitoring/plan-monitoring-and-reporting.md)
+  * See, [Microsoft Entra reporting and monitoring deployment dependencies](~/identity/monitoring-health/plan-monitoring-and-reporting.md)
 * **Access reviews** - Understand and manage access to resources:
-  * See, [What are access reviews?](../governance/access-reviews-overview.md)
-  * See, [Plan a Microsoft Entra access reviews deployment](../governance/deploy-access-reviews.md)  
+  * See, [What are access reviews?](~/id-governance/access-reviews-overview.md)
+  * See, [Plan a Microsoft Entra access reviews deployment](~/id-governance/deploy-access-reviews.md)  
 * **Identity governance** - Meet your compliance and risk management objectives for access to critical applications. Learn how to enforce accurate access.
-  * See, [Govern access for applications in your environment](../governance/identity-governance-applications-prepare.md)
+  * See, [Govern access for applications in your environment](~/id-governance/identity-governance-applications-prepare.md)
 
 ## Best practices for a pilot
 

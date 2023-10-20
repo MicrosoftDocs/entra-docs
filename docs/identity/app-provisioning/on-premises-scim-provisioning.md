@@ -14,7 +14,7 @@ ms.reviewer: arvinh
 
 # Microsoft Entra on-premises application provisioning to SCIM-enabled apps
 
-The Microsoft Entra provisioning service supports a [SCIM 2.0](https://techcommunity.microsoft.com/t5/security-compliance-and-identity/provisioning-with-scim-getting-started/ba-p/880010) client that can be used to automatically provision users into cloud or on-premises applications. This article outlines how you can use the Microsoft Entra provisioning service to provision users into an on-premises application that's SCIM enabled. If you want to provision users into non-SCIM on-premises applications that use SQL as a data store, see the [Microsoft Entra ECMA Connector Host Generic SQL Connector tutorial](tutorial-ecma-sql-connector.md). If you want to provision users into cloud apps such as DropBox and Atlassian, review the app-specific [tutorials](../saas-apps/tutorial-list.md).
+The Microsoft Entra provisioning service supports a [SCIM 2.0](https://techcommunity.microsoft.com/t5/security-compliance-and-identity/provisioning-with-scim-getting-started/ba-p/880010) client that can be used to automatically provision users into cloud or on-premises applications. This article outlines how you can use the Microsoft Entra provisioning service to provision users into an on-premises application that's SCIM enabled. If you want to provision users into non-SCIM on-premises applications that use SQL as a data store, see the [Microsoft Entra ECMA Connector Host Generic SQL Connector tutorial](tutorial-ecma-sql-connector.md). If you want to provision users into cloud apps such as DropBox and Atlassian, review the app-specific [tutorials](~/identity/saas-apps/tutorial-list.md).
 
 ![Diagram that shows SCIM architecture.](./media/on-premises-scim-provisioning/scim-4.png)
 
@@ -70,7 +70,7 @@ Once the agent is installed, no further configuration is necessary on-premises, 
 1. Test provisioning a few users [on demand](provision-on-demand.md).
 1. Add more users into scope by assigning them to your application.
 1. Go to the **Provisioning** pane, and select **Start provisioning**.
-1. Monitor using the [provisioning logs](../reports-monitoring/concept-provisioning-logs.md).
+1. Monitor using the [provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md).
 
 The following video provides an overview of on-premises provisioning.
 

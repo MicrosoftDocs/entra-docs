@@ -293,7 +293,7 @@ As of now, there's no way for the administrator to manually force or re-trigger 
 
 ## Understanding Sign-in logs
 
-Sign-in logs provide information about sign-ins and how your resources are used by your users. For more information about sign-in logs, see [Sign-in logs in Microsoft Entra ID](../reports-monitoring/concept-sign-ins.md).
+Sign-in logs provide information about sign-ins and how your resources are used by your users. For more information about sign-in logs, see [Sign-in logs in Microsoft Entra ID](~/identity/monitoring-health/concept-sign-ins.md).
 
 Let's walk through two scenarios, one where the certificate satisfies single-factor authentication and another where the certificate satisfies MFA.
 

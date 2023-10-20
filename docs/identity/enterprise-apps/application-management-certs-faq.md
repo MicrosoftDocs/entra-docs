@@ -65,13 +65,13 @@ On the other hand, if your organization doesn't have an internal certificate aut
 
 ## I need to replace the certificate for Microsoft Entra application proxy applications and need more instructions
 
-To replace certificates for Microsoft Entra application proxy applications, see [PowerShell sample - Replace certificate in Application Proxy apps](../app-proxy/scripts/powershell-get-custom-domain-replace-cert.md).
+To replace certificates for Microsoft Entra application proxy applications, see [PowerShell sample - Replace certificate in Application Proxy apps](~/identity/app-proxy/scripts/powershell-get-custom-domain-replace-cert.md).
 
 <a name='how-do-i-manage-certificates-for-custom-domains-in-azure-ad-application-proxy'></a>
 
 ## How do I manage certificates for custom domains in Microsoft Entra application proxy?
 
-To configure an on-premises app to use a custom domain, you need a verified Microsoft Entra custom domain, a PFX certificate for the custom domain, and an on-premises app to configure. To learn more, see [Custom domains in Microsoft Entra application proxy](../app-proxy/application-proxy-configure-custom-domain.md).
+To configure an on-premises app to use a custom domain, you need a verified Microsoft Entra custom domain, a PFX certificate for the custom domain, and an on-premises app to configure. To learn more, see [Custom domains in Microsoft Entra application proxy](~/identity/app-proxy/application-proxy-configure-custom-domain.md).
 
 ## I need to update the token signing certificate on the application side. Where can I get it on Microsoft Entra ID side?
 
@@ -95,7 +95,7 @@ To renew an application token signing certificate, see [How to renew a token sig
 
 ## How do I update Microsoft Entra ID after changing my federation certificates?
 
-To update Microsoft Entra ID after changing your federation certificates, see [Renew federation certificates for Microsoft 365 and Microsoft Entra ID](../hybrid/connect/how-to-connect-fed-o365-certs.md).
+To update Microsoft Entra ID after changing your federation certificates, see [Renew federation certificates for Microsoft 365 and Microsoft Entra ID](~/identity/hybrid/connect/how-to-connect-fed-o365-certs.md).
 
 ## Can I use the same SAML certificate across different apps?
 

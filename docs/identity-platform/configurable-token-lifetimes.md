@@ -16,7 +16,7 @@ ms.reviewer: joroja
 ---
 # Configurable token lifetimes in the Microsoft identity platform (preview)
 
-You can specify the lifetime of an access, ID, or SAML token issued by the Microsoft identity platform. You can set token lifetimes for all apps in your organization or for a multi-tenant (multi-organization) application. We currently don't support configuring the token lifetimes for [managed identity service principals](../managed-identities-azure-resources/overview.md).
+You can specify the lifetime of an access, ID, or SAML token issued by the Microsoft identity platform. You can set token lifetimes for all apps in your organization or for a multi-tenant (multi-organization) application. We currently don't support configuring the token lifetimes for [managed identity service principals](~/identity/managed-identities-azure-resources/overview.md).
 
 In Microsoft Entra ID, a policy object represents a set of rules that are enforced on individual applications or on all applications in an organization. Each policy type has a unique structure, with a set of properties that are applied to objects to which they're assigned.
 
@@ -26,7 +26,7 @@ For examples, read [examples of how to configure token lifetimes](configure-toke
 
 > [!NOTE]
 > Configurable token lifetime policy only applies to mobile and desktop clients that access SharePoint Online and OneDrive for Business resources, and does not apply to web browser sessions.
-> To manage the lifetime of web browser sessions for SharePoint Online and OneDrive for Business, use the [Conditional Access session lifetime](../conditional-access/howto-conditional-access-session-lifetime.md) feature. Refer to the [SharePoint Online blog](https://techcommunity.microsoft.com/t5/SharePoint-Blog/Introducing-Idle-Session-Timeout-in-SharePoint-and-OneDrive/ba-p/119208) to learn more about configuring idle session timeouts.
+> To manage the lifetime of web browser sessions for SharePoint Online and OneDrive for Business, use the [Conditional Access session lifetime](~/identity/conditional-access/howto-conditional-access-session-lifetime.md) feature. Refer to the [SharePoint Online blog](https://techcommunity.microsoft.com/t5/SharePoint-Blog/Introducing-Idle-Session-Timeout-in-SharePoint-and-OneDrive/ba-p/119208) to learn more about configuring idle session timeouts.
 
 ## License requirements
 
@@ -65,7 +65,7 @@ You cannot set token lifetime policies for refresh tokens and session tokens. Fo
 >
 > Existing token's lifetime will not be changed. After they expire, a new token will be issued based on the default value.
 >
-> If you need to continue to define the time period before a user is asked to sign in again, configure sign-in frequency in Conditional Access. To learn more about Conditional Access, read [Configure authentication session management with Conditional Access](../conditional-access/howto-conditional-access-session-lifetime.md).
+> If you need to continue to define the time period before a user is asked to sign in again, configure sign-in frequency in Conditional Access. To learn more about Conditional Access, read [Configure authentication session management with Conditional Access](~/identity/conditional-access/howto-conditional-access-session-lifetime.md).
 
 ## Configurable token lifetime properties
 A token lifetime policy is a type of policy object that contains token lifetime rules. This policy controls how long access, SAML, and ID tokens for this resource are considered valid. Token lifetime policies cannot be set for refresh and session tokens. If no policy is set, the system enforces the default lifetime value.
@@ -89,7 +89,7 @@ Access, ID, and SAML2 token configuration are affected by the following properti
 
 ### Refresh and session token lifetime policy properties
 
-Refresh and session token configuration are affected by the following properties and their respectively set values. After the retirement of refresh and session token configuration on January 30, 2021, Microsoft Entra ID will only honor the default values described below. If you decide not to use [Conditional Access](../conditional-access/howto-conditional-access-session-lifetime.md) to manage sign-in frequency, your refresh and session tokens will be set to the default configuration on that date and you'll no longer be able to change their lifetimes.  
+Refresh and session token configuration are affected by the following properties and their respectively set values. After the retirement of refresh and session token configuration on January 30, 2021, Microsoft Entra ID will only honor the default values described below. If you decide not to use [Conditional Access](~/identity/conditional-access/howto-conditional-access-session-lifetime.md) to manage sign-in frequency, your refresh and session tokens will be set to the default configuration on that date and you'll no longer be able to change their lifetimes.  
 
 |Property   |Policy property string    |Affects |Default |
 |----------|-----------|------------|------------|
@@ -99,7 +99,7 @@ Refresh and session token configuration are affected by the following properties
 |Single-Factor Session Token Max Age  |MaxAgeSessionSingleFactor |Session tokens (persistent and non-persistent)  |Until-revoked |
 |Multi-Factor Session Token Max Age  |MaxAgeSessionMultiFactor  |Session tokens (persistent and non-persistent)  |Until-revoked |
 
-Non-persistent session tokens have a Max Inactive Time of 24 hours whereas persistent session tokens have a Max Inactive Time of 90 days. Anytime the SSO session token is used within its validity period, the validity period is extended another 24 hours or 90 days. If the SSO session token isn't used within its Max Inactive Time period, it's considered expired and will no longer be accepted. Any changes to this default period should be changed using [Conditional Access](../conditional-access/howto-conditional-access-session-lifetime.md).
+Non-persistent session tokens have a Max Inactive Time of 24 hours whereas persistent session tokens have a Max Inactive Time of 90 days. Anytime the SSO session token is used within its validity period, the validity period is extended another 24 hours or 90 days. If the SSO session token isn't used within its Max Inactive Time period, it's considered expired and will no longer be accepted. Any changes to this default period should be changed using [Conditional Access](~/identity/conditional-access/howto-conditional-access-session-lifetime.md).
 
 You can use PowerShell to find the policies that will be affected by the retirement.  Use the [PowerShell cmdlets](configure-token-lifetimes.md#get-started) to see the all policies created in your organization, or to find which apps are linked to a specific policy.
 

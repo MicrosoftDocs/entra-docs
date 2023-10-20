@@ -37,14 +37,14 @@ Other benefits include:
 
 - One control plane to govern identity and access
   - The [Microsoft Entra admin center](https://entra.microsoft.com)
-- Preemptive [Conditional Access](../conditional-access/overview.md)
+- Preemptive [Conditional Access](~/identity/conditional-access/overview.md)
 - [Microsoft Entra multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md)
 - Adaptive protection through user and session risk profiling
-  - [Identity Protection](../identity-protection/overview-identity-protection.md)
-- [Leaked credential detection](../identity-protection/concept-identity-protection-risks.md)
+  - [Identity Protection](~/id-protection/overview-identity-protection.md)
+- [Leaked credential detection](~/id-protection/concept-identity-protection-risks.md)
 - [Self-service password reset (SSPR)](~/identity/authentication/tutorial-enable-sspr.md)
 - Entitlement management for governed guest access
-  - [Partner collaboration](../governance/entitlement-management-external-users.md)
+  - [Partner collaboration](~/id-governance/entitlement-management-external-users.md)
 - App discovery and control
   - [Defender for Cloud Apps (CASB)](/defender-cloud-apps/what-is-defender-for-cloud-apps)
 - Threat monitoring and analytics with [Microsoft Sentinel](https://azure.microsoft.com/services/azure-sentinel/)
@@ -62,7 +62,7 @@ BIG-IP Local Traffic Manager (LTM) is for secure service publishing, while an Ac
 With integration, you achieve the protocol transition to secure legacy, or non-Azure AD integrated services, with controls such as: 
 
 * [Password-less authentication](https://www.microsoft.com/security/business/identity/passwordless)
-* [Conditional Access](../conditional-access/overview.md)
+* [Conditional Access](~/identity/conditional-access/overview.md)
 
 In the scenario, a BIG-IP is a reverse proxy that hands off service pre-authentication and authorization to Microsoft Entra ID. The integration is based on a standard federation trust between the APM and Microsoft Entra ID. This scenario is common with SHA. Learn more: [Configure F5 BIG-IP SSL-VPN for Microsoft Entra SSO](f5-passwordless-vpn.md). With SHA you can secure Security Assertion Markup Language (SAML), Open Authorization (OAuth), and OpenID Connect (OIDC) resources. 
 
@@ -75,9 +75,9 @@ The following diagram illustrates the front-end pre-authentication exchange betw
 
 1. In the portal, a user selects an application icon, resolving URL to the SAML SP (BIG-IP)
 2. BIG-IP redirects the user to the SAML identity provider (IdP), Microsoft Entra ID, for pre-authentication
-3. Microsoft Entra ID processes Conditional Access policies and [session controls](../conditional-access/concept-conditional-access-session.md) for authorization
+3. Microsoft Entra ID processes Conditional Access policies and [session controls](~/identity/conditional-access/concept-conditional-access-session.md) for authorization
 4. User goes back to BIG-IP, and presents the SAML claims issued by Microsoft Entra ID
-5. BIG-IP requests session information for [SSO](../hybrid/connect/how-to-connect-sso.md) and [role-based access control (RBAC)](/azure/role-based-access-control/overview) to the published service
+5. BIG-IP requests session information for [SSO](~/identity/hybrid/connect/how-to-connect-sso.md) and [role-based access control (RBAC)](/azure/role-based-access-control/overview) to the published service
 6. BIG-IP forwards the client request to the back-end service
 
 ## User experience
@@ -124,7 +124,7 @@ Integrating an F5 BIG-IP with Microsoft Entra ID for SHA has the following prere
   - A 90-day BIG-IP Access Policy Manager&trade; (APM) [trial license](https://www.f5.com/trial/big-ip-trial.php)
 - Microsoft Entra ID licensing:
   - An [Azure free account](https://azure.microsoft.com/free/active-directory/) has minimum core requirements for SHA with password-less authentication
-  - A [Premium subscription](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing) has [Conditional Access](../conditional-access/overview.md), [multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md), and [Identity Protection](../identity-protection/overview-identity-protection.md)
+  - A [Premium subscription](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing) has [Conditional Access](~/identity/conditional-access/overview.md), [multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md), and [Identity Protection](~/id-protection/overview-identity-protection.md)
 
 ## Configuration scenarios
 

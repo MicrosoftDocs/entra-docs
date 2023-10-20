@@ -52,7 +52,7 @@ There are changes that require special considerations when testing, from simple 
 
 | Scenario| Recommendation |
 |-|-|
-|Changing the authentication type from federated to PHS/PTA or vice-versa| Use [staged rollout](../hybrid/connect/how-to-connect-staged-rollout.md) to test the impact of changing the authentication type.|
+|Changing the authentication type from federated to PHS/PTA or vice-versa| Use [staged rollout](~/identity/hybrid/connect/how-to-connect-staged-rollout.md) to test the impact of changing the authentication type.|
 |Rolling out a new Conditional Access policy or Identity Protection Policy|Create a new Conditional Access policy and assign to test users.|
 |Onboarding a test environment of an application|Add the application to a production environment, hide it from the MyApps panel, and assign it to test users during the quality assurance (QA) phase.|
 |Changing of sync rules|Perform the changes in a test Microsoft Entra Connect with the same configuration that is currently in production, also known as staging mode, and analyze CSExport Results. If satisfied, swap to production when ready.|
@@ -68,7 +68,7 @@ There are changes that require special considerations when testing, from simple 
 
 ### Access reviews to applications
 
-Over time, users may accumulate access to resources as they move throughout different teams and positions. It's important that resource owners review the access to applications on a regular basis and remove privileges that are no longer needed throughout the lifecycle of users. Microsoft Entra [access reviews](../governance/access-reviews-overview.md) enable organizations to efficiently manage group memberships, access to enterprise applications, and role assignments. Resource owners should review users' access on a regular basis to make sure only the right people have continued access. Ideally, you should consider using Microsoft Entra access reviews for this task.
+Over time, users may accumulate access to resources as they move throughout different teams and positions. It's important that resource owners review the access to applications on a regular basis and remove privileges that are no longer needed throughout the lifecycle of users. Microsoft Entra [access reviews](~/id-governance/access-reviews-overview.md) enable organizations to efficiently manage group memberships, access to enterprise applications, and role assignments. Resource owners should review users' access on a regular basis to make sure only the right people have continued access. Ideally, you should consider using Microsoft Entra access reviews for this task.
 
 ![Access reviews start page](./media/ops-guide-auth/ops-img15.png)
 
@@ -77,7 +77,7 @@ Over time, users may accumulate access to resources as they move throughout diff
 
 ### Access reviews to external identities
 
-It's crucial to keep access to external identities constrained only to resources that are needed, during the time that is needed. Establish a regular automated access review process for all external identities and application access using Microsoft Entra [access reviews](../governance/access-reviews-overview.md). If a process already exists on-premises, consider using Microsoft Entra access reviews. Once an application is retired or no longer used, remove all the external identities that had access to the application.
+It's crucial to keep access to external identities constrained only to resources that are needed, during the time that is needed. Establish a regular automated access review process for all external identities and application access using Microsoft Entra [access reviews](~/id-governance/access-reviews-overview.md). If a process already exists on-premises, consider using Microsoft Entra access reviews. Once an application is retired or no longer used, remove all the external identities that had access to the application.
 
 > [!NOTE]
 > Each user who interacts with access reviews must have a paid Microsoft Entra ID P2 license.
@@ -88,13 +88,13 @@ It's crucial to keep access to external identities constrained only to resources
 
 Hackers often target admin accounts and other elements of privileged access to rapidly gain access to sensitive data and systems. Since users with privileged roles tend to accumulate over time, it's important to review and manage admin access on a regular basis and provide just-in-time privileged access to Microsoft Entra ID and Azure resources.
 
-If no process exists in your organization to manage privileged accounts, or you currently have admins who use their regular user accounts to manage services and resources, you should immediately begin using separate accounts, for example one for regular day-to-day activities; the other for privileged access and configured with MFA. Better yet, if your organization has a Microsoft Entra ID P2 subscription, then you should immediately deploy [Microsoft Entra Privileged Identity Management](../privileged-identity-management/pim-configure.md#license-requirements) (PIM). In the same token, you should also review those privileged accounts and [assign less privileged roles](~/identity/role-based-access-control/security-planning.md) if applicable.
+If no process exists in your organization to manage privileged accounts, or you currently have admins who use their regular user accounts to manage services and resources, you should immediately begin using separate accounts, for example one for regular day-to-day activities; the other for privileged access and configured with MFA. Better yet, if your organization has a Microsoft Entra ID P2 subscription, then you should immediately deploy [Microsoft Entra Privileged Identity Management](~/id-governance/privileged-identity-management/pim-configure.md#license-requirements) (PIM). In the same token, you should also review those privileged accounts and [assign less privileged roles](~/identity/role-based-access-control/security-planning.md) if applicable.
 
-Another aspect of privileged account management that should be implemented is in defining [access reviews](../governance/access-reviews-overview.md) for those accounts, either manually or [automated through PIM](../privileged-identity-management/pim-perform-roles-and-resource-roles-review.md).
+Another aspect of privileged account management that should be implemented is in defining [access reviews](~/id-governance/access-reviews-overview.md) for those accounts, either manually or [automated through PIM](~/id-governance/privileged-identity-management/pim-perform-roles-and-resource-roles-review.md).
 
 #### Privileged account management recommended reading
 
-- [Roles in Microsoft Entra Privileged Identity Management](../privileged-identity-management/pim-roles.md)
+- [Roles in Microsoft Entra Privileged Identity Management](~/id-governance/privileged-identity-management/pim-roles.md)
 
 ### Emergency access accounts
 
@@ -117,7 +117,7 @@ To be clear, if the EA portal authorization level is currently set to "mixed mod
 
 ## Entitlement management
 
-[Entitlement management (EM)](../governance/entitlement-management-overview.md) allows app owners to bundle resources and assign them to specific personas in the organization (both internal and external). EM allows self-service sign up and delegation to business owners while keeping governance policies to grant access, set access durations, and allow approval workflows. 
+[Entitlement management (EM)](~/id-governance/entitlement-management-overview.md) allows app owners to bundle resources and assign them to specific personas in the organization (both internal and external). EM allows self-service sign up and delegation to business owners while keeping governance policies to grant access, set access durations, and allow approval workflows. 
 
 > [!NOTE]
 > Microsoft Entra Entitlement Management requires Microsoft Entra ID P2 licenses.

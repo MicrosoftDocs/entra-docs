@@ -106,9 +106,9 @@ If your Windows 10 or newer domain joined devices are [Microsoft Entra registere
 
 To register devices as Microsoft Entra hybrid join to respective tenants, organizations need to ensure that the  Service Connection Points (SCP) configuration is done on the devices and not in AD. More details on how to accomplish this task can be found in the article [Microsoft Entra hybrid join targeted deployment](hybrid-join-control.md). It's important for organizations to understand that certain Microsoft Entra capabilities won't work in a single forest, multiple Microsoft Entra tenants configurations.
 
-- [Device writeback](../hybrid/connect/how-to-connect-device-writeback.md) won't work. This configuration affects [Device based Conditional Access for on-premises apps that are federated using ADFS](/windows-server/identity/ad-fs/operations/configure-device-based-conditional-access-on-premises). This configuration also affects [Windows Hello for Business deployment when using the Hybrid Cert Trust model](/windows/security/identity-protection/hello-for-business/hello-hybrid-cert-trust).
-- [Groups writeback](../hybrid/connect/how-to-connect-group-writeback-v2.md) won't work. This configuration affects writeback of Office 365 Groups to a forest with Exchange installed.
-- [Seamless SSO](../hybrid/connect/how-to-connect-sso.md) won't work. This configuration affects SSO scenarios that organizations may be using on cross OS or browser platforms, for example iOS or Linux with Firefox, Safari, or Chrome without the Windows 10 extension.
+- [Device writeback](~/identity/hybrid/connect/how-to-connect-device-writeback.md) won't work. This configuration affects [Device based Conditional Access for on-premises apps that are federated using ADFS](/windows-server/identity/ad-fs/operations/configure-device-based-conditional-access-on-premises). This configuration also affects [Windows Hello for Business deployment when using the Hybrid Cert Trust model](/windows/security/identity-protection/hello-for-business/hello-hybrid-cert-trust).
+- [Groups writeback](~/identity/hybrid/connect/how-to-connect-group-writeback-v2.md) won't work. This configuration affects writeback of Office 365 Groups to a forest with Exchange installed.
+- [Seamless SSO](~/identity/hybrid/connect/how-to-connect-sso.md) won't work. This configuration affects SSO scenarios that organizations may be using on cross OS or browser platforms, for example iOS or Linux with Firefox, Safari, or Chrome without the Windows 10 extension.
 - [Microsoft Entra hybrid join for Windows down-level devices in managed environment](./how-to-hybrid-join-downlevel.md) won't work. For example, Microsoft Entra hybrid join on Windows Server 2012 R2 in a managed environment requires Seamless SSO and since Seamless SSO won't work, Microsoft Entra hybrid join for such a setup won't work.
 - [On-premises Microsoft Entra Password Protection](~/identity/authentication/concept-password-ban-bad-on-premises.md) won't work. This configuration affects the ability to do password changes and password reset events against on-premises Active Directory Domain Services (AD DS) domain controllers using the same global and custom banned password lists that are stored in Microsoft Entra ID.
 
@@ -137,12 +137,12 @@ Microsoft Entra hybrid join works with both, managed and federated environments 
 
 ### Managed environment
 
-A managed environment can be deployed either through [Password Hash Sync (PHS)](../hybrid/connect/whatis-phs.md) or [Pass Through Authentication (PTA)](../hybrid/connect/how-to-connect-pta.md) with [Seamless Single Sign On](../hybrid/connect/how-to-connect-sso.md).
+A managed environment can be deployed either through [Password Hash Sync (PHS)](~/identity/hybrid/connect/whatis-phs.md) or [Pass Through Authentication (PTA)](~/identity/hybrid/connect/how-to-connect-pta.md) with [Seamless Single Sign On](~/identity/hybrid/connect/how-to-connect-sso.md).
 
 These scenarios don't require you to configure a federation server for authentication.
 
 > [!NOTE]
-> [Cloud authentication using Staged rollout](../hybrid/connect/how-to-connect-staged-rollout.md) is only supported starting at the Windows 10 1903 update.
+> [Cloud authentication using Staged rollout](~/identity/hybrid/connect/how-to-connect-staged-rollout.md) is only supported starting at the Windows 10 1903 update.
 
 
 ### Federated environment
@@ -168,7 +168,7 @@ Beginning with version 1.1.819.0, Microsoft Entra Connect provides you with a wi
 
 ## Review on-premises AD users UPN support for Microsoft Entra hybrid join
 
-Sometimes, on-premises AD users UPNs are different from your Microsoft Entra UPNs. In these cases, Windows 10 or newer Microsoft Entra hybrid join provides limited support for on-premises AD UPNs based on the [authentication method](../hybrid/connect/choose-ad-authn.md), domain type, and Windows version. There are two types of on-premises AD UPNs that can exist in your environment:
+Sometimes, on-premises AD users UPNs are different from your Microsoft Entra UPNs. In these cases, Windows 10 or newer Microsoft Entra hybrid join provides limited support for on-premises AD UPNs based on the [authentication method](~/identity/hybrid/connect/choose-ad-authn.md), domain type, and Windows version. There are two types of on-premises AD UPNs that can exist in your environment:
 
 - Routable users UPN: A routable UPN has a valid verified domain that is registered with a domain registrar. For example, if contoso.com is the primary domain in Microsoft Entra ID, contoso.org is the primary domain in on-premises AD owned by Contoso and [verified in Microsoft Entra ID](~/fundamentals/add-custom-domain.md).
 - Non-routable users UPN: A non-routable UPN doesn't have a verified domain and is applicable only within your organization's private network. For example, if contoso.com is the primary domain in Microsoft Entra ID and contoso.local is the primary domain in on-premises AD but isn't a verifiable domain in the internet and only used within Contoso's network.

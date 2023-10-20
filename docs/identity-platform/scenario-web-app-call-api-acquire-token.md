@@ -199,11 +199,11 @@ public ModelAndView getUserFromGraph(HttpServletRequest httpRequest, HttpServlet
 
 In the Node.js sample, the code that acquires a token is in the `acquireToken` method of the `AuthProvider` class.
 
-:::code language="js" source="~/ms-identity-node/App/auth/AuthProvider.js" range="79-121":::
+:::code language="js" source="~/../ms-identity-node/App/auth/AuthProvider.js" range="79-121":::
 
 This access token is then used to handle requests to the `/profile` endpoint:
 
-:::code language="js" source="~/ms-identity-node/App/routes/users.js" range="29-39":::
+:::code language="js" source="~/../ms-identity-node/App/routes/users.js" range="29-39":::
 
 # [Python](#tab/python)
 
@@ -211,7 +211,7 @@ In the Python sample, the code that calls the API is in *app.py*.
 
 The code attempts to get a token from the token cache. If it can't get a token, it redirects the user to the sign-in route. Otherwise, it can proceed to call the API.
 
-:::code language="python" source="~/ms-identity-python-webapp-tutorial/app.py" range="60-71":::
+:::code language="python" source="~/../ms-identity-python-webapp-tutorial/app.py" range="60-71":::
 
 ---
 

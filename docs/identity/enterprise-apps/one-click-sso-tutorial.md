@@ -76,5 +76,5 @@ The one-click SSO feature is designed to configure single sign-on for Azure Mark
 
 ## Additional resources
 
-- [List of tutorials on how to integrate SaaS apps with Microsoft Entra ID](../saas-apps/tutorial-list.md)
+- [List of tutorials on how to integrate SaaS apps with Microsoft Entra ID](~/identity/saas-apps/tutorial-list.md)
 - [What is the My Apps Secure Sign-in browser extension?](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510)

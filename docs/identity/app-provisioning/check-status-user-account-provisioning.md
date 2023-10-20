@@ -15,13 +15,13 @@ ms.reviewer: arvinh
 
 # Tutorial: Reporting on automatic user account provisioning
 
-Microsoft Entra ID includes a [user account provisioning service](user-provisioning.md). The service helps automate the provisioning deprovisioning of user accounts in SaaS apps and other systems. The automation helps with end-to-end identity lifecycle management. Microsoft Entra ID supports preintegrated user provisioning connectors for many applications and systems. To learn more about user provisioning tutorials, see [Provisioning Tutorials](../saas-apps/tutorial-list.md).
+Microsoft Entra ID includes a [user account provisioning service](user-provisioning.md). The service helps automate the provisioning deprovisioning of user accounts in SaaS apps and other systems. The automation helps with end-to-end identity lifecycle management. Microsoft Entra ID supports preintegrated user provisioning connectors for many applications and systems. To learn more about user provisioning tutorials, see [Provisioning Tutorials](~/identity/saas-apps/tutorial-list.md).
 
 This article describes how to check the status of provisioning jobs after they have been set up, and how to troubleshoot the provisioning of individual users and groups.
 
 ## Overview
 
-Provisioning connectors are set up and configured using the [Microsoft Entra admin center](https://entra.microsoft.com), by following the [provided documentation](../saas-apps/tutorial-list.md) for the supported application. When the connector is configured and running, provisioning jobs can be reported using the following methods:
+Provisioning connectors are set up and configured using the [Microsoft Entra admin center](https://entra.microsoft.com), by following the [provided documentation](~/identity/saas-apps/tutorial-list.md) for the supported application. When the connector is configured and running, provisioning jobs can be reported using the following methods:
 
 - The [Microsoft Entra admin center](https://entra.microsoft.com)
 
@@ -64,7 +64,7 @@ The **Current Status** should be the first place admins look to check on the ope
 
 ## Provisioning logs 
 
-All activities performed by the provisioning service are recorded in the Microsoft Entra [provisioning logs](../reports-monitoring/concept-provisioning-logs.md?context=azure/active-directory/manage-apps/context/manage-apps-context). You can access the provisioning logs in the Microsoft Entra admin center. You can search the provisioning data based on the name of the user or the identifier in either the source system or the target system. For details, see [Provisioning logs](../reports-monitoring/concept-provisioning-logs.md?context=azure/active-directory/manage-apps/context/manage-apps-context). 
+All activities performed by the provisioning service are recorded in the Microsoft Entra [provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md?context=azure/active-directory/manage-apps/context/manage-apps-context). You can access the provisioning logs in the Microsoft Entra admin center. You can search the provisioning data based on the name of the user or the identifier in either the source system or the target system. For details, see [Provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md?context=azure/active-directory/manage-apps/context/manage-apps-context). 
 
 
 ## Troubleshooting

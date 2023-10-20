@@ -352,7 +352,7 @@ Today, many groups are still managed in on-premises Active Directory. To answer 
 
 Microsoft 365 groups are created and managed in the cloud. The writeback capability allows you to write back Microsoft 365 groups as distribution groups to an Active Directory forest with Exchange installed. Users with on-premises Exchange mailboxes can then send and receive emails from these groups. The group writeback feature doesn't support Microsoft Entra security groups or distribution groups.
 
-For more details, please refer to documentation for the [Microsoft Entra Connect Sync service](../hybrid/connect/how-to-connect-syncservice-features.md).
+For more details, please refer to documentation for the [Microsoft Entra Connect Sync service](~/identity/hybrid/connect/how-to-connect-syncservice-features.md).
 
 Microsoft 365 group writeback is a public preview feature of Microsoft Entra ID and is available with any paid Microsoft Entra ID license plan. For more information about previews, see [Universal License Terms For Online Services](https://www.microsoft.com/licensing/terms/product/ForOnlineServices/all).
 
@@ -361,4 +361,4 @@ Microsoft 365 group writeback is a public preview feature of Microsoft Entra ID 
 You can find more Azure Active Directory PowerShell documentation at [Microsoft Entra Cmdlets](/powershell/azure/active-directory/install-adv2).
 
 * [Managing access to resources with Microsoft Entra groups](~/fundamentals/concept-learn-about-groups.md?context=azure/active-directory/users-groups-roles/context/ugr-context)
-* [Integrating your on-premises identities with Microsoft Entra ID](../hybrid/whatis-hybrid-identity.md?context=azure/active-directory/users-groups-roles/context/ugr-context)
+* [Integrating your on-premises identities with Microsoft Entra ID](~/identity/hybrid/whatis-hybrid-identity.md?context=azure/active-directory/users-groups-roles/context/ugr-context)

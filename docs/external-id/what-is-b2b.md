@@ -90,7 +90,7 @@ You can delegate guest user management to application owners so that they can ad
 
 Bring your external partners on board in ways customized to your organization's needs.
 
-- Use [Microsoft Entra entitlement management](../governance/entitlement-management-overview.md) to configure policies that [manage access for external users](../governance/entitlement-management-external-users.md#how-access-works-for-external-users).
+- Use [Microsoft Entra entitlement management](~/id-governance/entitlement-management-overview.md) to configure policies that [manage access for external users](~/id-governance/entitlement-management-external-users.md#how-access-works-for-external-users).
 - Use the [B2B collaboration invitation APIs](/graph/api/resources/invitation) to customize your onboarding experiences.
 
 ## Integrate with Identity providers

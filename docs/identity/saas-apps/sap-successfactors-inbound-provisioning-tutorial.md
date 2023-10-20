@@ -178,7 +178,7 @@ This section provides steps for user account provisioning from SuccessFactors to
 
 To provision to Active Directory on-premises, the Provisioning agent must be installed on a domain-joined server that has network access to the desired Active Directory domain(s).
 
-Transfer the downloaded agent installer to the server host and follow the steps listed [in the install agent section](../cloud-sync/how-to-install.md) to complete the agent configuration.
+Transfer the downloaded agent installer to the server host and follow the steps listed [in the install agent section](/azure/active-directory/cloud-sync/how-to-install) to complete the agent configuration.
 
 ### Part 3: In the provisioning app, configure connectivity to SuccessFactors and Active Directory
 In this step, we establish connectivity with SuccessFactors and Active Directory. 

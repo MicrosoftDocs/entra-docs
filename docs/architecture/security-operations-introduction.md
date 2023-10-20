@@ -29,9 +29,9 @@ Microsoft Entra ID creates a common user identity for authentication and authori
 
 To achieve hybrid identity with Microsoft Entra ID, one of three authentication methods can be used, depending on your scenarios. The three methods are:
 
-* [Password hash synchronization (PHS)](../hybrid/connect/whatis-phs.md)
-* [Pass-through authentication (PTA)](../hybrid/connect/how-to-connect-pta.md)
-* [Federation (AD FS)](../hybrid/connect/whatis-fed.md)
+* [Password hash synchronization (PHS)](~/identity/hybrid/connect/whatis-phs.md)
+* [Pass-through authentication (PTA)](~/identity/hybrid/connect/how-to-connect-pta.md)
+* [Federation (AD FS)](~/identity/hybrid/connect/whatis-fed.md)
 
 As you audit your current security operations or establish security operations for your Azure environment, we recommend you:
 
@@ -79,9 +79,9 @@ Microsoft has many products and services that enable you to customize your IT en
 
 * Cloud-based Azure environments
 
-  * [Monitor sign-ins with the Microsoft Entra sign-in log](../reports-monitoring/concept-sign-ins.md)
-  * [Audit activity reports in the Azure portal](../reports-monitoring/concept-audit-logs.md)
-  * [Investigate risk with Microsoft Entra ID Protection](../identity-protection/howto-identity-protection-investigate-risk.md) 
+  * [Monitor sign-ins with the Microsoft Entra sign-in log](~/identity/monitoring-health/concept-sign-ins.md)
+  * [Audit activity reports in the Azure portal](~/identity/monitoring-health/concept-audit-logs.md)
+  * [Investigate risk with Microsoft Entra ID Protection](~/id-protection/howto-identity-protection-investigate-risk.md) 
   * [Connect Microsoft Entra ID Protection data to Microsoft Sentinel](/azure/sentinel/data-connectors/azure-active-directory-identity-protection)
 
 * Active Directory Domain Services (AD DS)
@@ -96,8 +96,8 @@ Microsoft has many products and services that enable you to customize your IT en
 
 The log files you use for investigation and monitoring are:
 
-* [Microsoft Entra audit logs](../reports-monitoring/concept-audit-logs.md)
-* [Sign-in logs](../reports-monitoring/concept-sign-ins.md)
+* [Microsoft Entra audit logs](~/identity/monitoring-health/concept-audit-logs.md)
+* [Sign-in logs](~/identity/monitoring-health/concept-sign-ins.md)
 * [Microsoft 365 Audit logs](/microsoft-365/compliance/auditing-solutions-overview)
 * [Azure Key Vault logs](/azure/key-vault/general/logging?tabs=Vault)
 
@@ -109,25 +109,25 @@ From the Azure portal, you can view the Microsoft Entra audit logs. Download log
 
 * **[Azure Monitor](/azure/azure-monitor/overview)** - Enables automated monitoring and alerting of various conditions. Can create or use workbooks to combine data from different sources.
 
-* **[Azure Event Hubs](/azure/event-hubs/event-hubs-about)** integrated with a SIEM. Microsoft Entra logs can be integrated to other SIEMs such as Splunk, ArcSight, QRadar and Sumo Logic via the Azure Event Hubs integration. For more information, see [Stream Microsoft Entra logs to an Azure event hub](../reports-monitoring/howto-stream-logs-to-event-hub.md).
+* **[Azure Event Hubs](/azure/event-hubs/event-hubs-about)** integrated with a SIEM. Microsoft Entra logs can be integrated to other SIEMs such as Splunk, ArcSight, QRadar and Sumo Logic via the Azure Event Hubs integration. For more information, see [Stream Microsoft Entra logs to an Azure event hub](~/identity/monitoring-health/howto-stream-logs-to-event-hub.md).
 
 * **[Microsoft Defender for Cloud Apps](/cloud-app-security/what-is-cloud-app-security)** - Enables you to discover and manage apps, govern across apps and resources, and check the compliance of your cloud apps.
 
-* **[Securing workload identities with Identity Protection Preview](../identity-protection/concept-workload-identity-risk.md)** - Used to detect risk on workload identities across sign-in behavior and offline indicators of compromise.
+* **[Securing workload identities with Identity Protection Preview](~/id-protection/concept-workload-identity-risk.md)** - Used to detect risk on workload identities across sign-in behavior and offline indicators of compromise.
 
-Much of what you will monitor and alert on are the effects of your Conditional Access policies. You can use the Conditional Access insights and reporting workbook to examine the effects of one or more Conditional Access policies on your sign-ins and the results of policies, including device state. This workbook enables you to view an impact summary, and identify the impact over a specific time period. You can also use the workbook to investigate the sign-ins of a specific user. For more information, see [Conditional Access insights and reporting](../conditional-access/howto-conditional-access-insights-reporting.md).
+Much of what you will monitor and alert on are the effects of your Conditional Access policies. You can use the Conditional Access insights and reporting workbook to examine the effects of one or more Conditional Access policies on your sign-ins and the results of policies, including device state. This workbook enables you to view an impact summary, and identify the impact over a specific time period. You can also use the workbook to investigate the sign-ins of a specific user. For more information, see [Conditional Access insights and reporting](~/identity/conditional-access/howto-conditional-access-insights-reporting.md).
 
 The remainder of this article describes what to monitor and alert on. Where there are specific pre-built solutions we link to them or provide samples following the table. Otherwise, you can build alerts using the preceding tools.
 
-* **[Identity Protection](../identity-protection/overview-identity-protection.md)** generates three key reports that you can use to help with your investigation:
+* **[Identity Protection](~/id-protection/overview-identity-protection.md)** generates three key reports that you can use to help with your investigation:
 
 * **Risky users** contains information about which users are at risk, details about detections, history of all risky sign-ins, and risk history.
 
-* **Risky sign-ins** contains information surrounding the circumstance of a sign-in that might indicate suspicious circumstances. For more information on investigating information from this report, see [How To: Investigate risk](../identity-protection/howto-identity-protection-investigate-risk.md).
+* **Risky sign-ins** contains information surrounding the circumstance of a sign-in that might indicate suspicious circumstances. For more information on investigating information from this report, see [How To: Investigate risk](~/id-protection/howto-identity-protection-investigate-risk.md).
 
 * **Risk detections** contains information on risk signals detected by Microsoft Entra ID Protection that informs sign-in and user risk. For more information, see the [Microsoft Entra security operations guide for user accounts](security-operations-user-accounts.md).
 
-For more information, see [What is Identity Protection](../identity-protection/overview-identity-protection.md).
+For more information, see [What is Identity Protection](~/id-protection/overview-identity-protection.md).
 
 ### Data sources for domain controller monitoring
 
@@ -145,39 +145,39 @@ If you don't plan to use Microsoft Defender for Identity, monitor your domain co
 
 As part of an Azure hybrid environment, the following items should be baselined and included in your monitoring and alerting strategy.
 
-* **PTA Agent** - The pass-through authentication agent is used to enable pass-through authentication and is installed on-premises. See [Microsoft Entra pass-through authentication agent: Version release history](../hybrid/connect/reference-connect-pta-version-history.md) for information on verifying your agent version and next steps.
+* **PTA Agent** - The pass-through authentication agent is used to enable pass-through authentication and is installed on-premises. See [Microsoft Entra pass-through authentication agent: Version release history](~/identity/hybrid/connect/reference-connect-pta-version-history.md) for information on verifying your agent version and next steps.
 
 * **AD FS/WAP** - Active Directory Federation Services (Azure AD FS) and Web Application Proxy (WAP) enable secure sharing of digital identity and entitlement rights across your security and enterprise boundaries. For information on security best practices, see [Best practices for securing Active Directory Federation Services](/windows-server/identity/ad-fs/deployment/best-practices-securing-ad-fs).
 
-* **Microsoft Entra Connect Health Agent** - The agent used to provide a communications link for Microsoft Entra Connect Health. For information on installing the agent, see [Microsoft Entra Connect Health agent installation](../hybrid/connect/how-to-connect-health-agent-install.md).
+* **Microsoft Entra Connect Health Agent** - The agent used to provide a communications link for Microsoft Entra Connect Health. For information on installing the agent, see [Microsoft Entra Connect Health agent installation](~/identity/hybrid/connect/how-to-connect-health-agent-install.md).
 
-* **Microsoft Entra Connect Sync Engine** - The on-premises component, also called the sync engine. For information on the feature, see [Microsoft Entra Connect Sync service features](../hybrid/connect/how-to-connect-syncservice-features.md).
+* **Microsoft Entra Connect Sync Engine** - The on-premises component, also called the sync engine. For information on the feature, see [Microsoft Entra Connect Sync service features](~/identity/hybrid/connect/how-to-connect-syncservice-features.md).
 
 * **Password Protection DC agent** - Azure password protection DC agent is used to help with monitoring and reporting event log messages. For information, see [Enforce on-premises Microsoft Entra Password Protection for Active Directory Domain Services](~/identity/authentication/concept-password-ban-bad-on-premises.md).
 
 * **Password Filter DLL** - The password filter DLL of the DC Agent receives user password-validation requests from the operating system. The filter forwards them to the DC Agent service that's running locally on the DC. For information on using the DLL, see [Enforce on-premises Microsoft Entra Password Protection for Active Directory Domain Services](~/identity/authentication/concept-password-ban-bad-on-premises.md).
 
-* **Password writeback Agent** - Password writeback is a feature enabled with [Microsoft Entra Connect](../hybrid/whatis-hybrid-identity.md) that allows password changes in the cloud to be written back to an existing on-premises directory in real time. For more information on this feature, see [How does self-service password reset writeback work in Microsoft Entra ID](~/identity/authentication/concept-sspr-writeback.md).
+* **Password writeback Agent** - Password writeback is a feature enabled with [Microsoft Entra Connect](~/identity/hybrid/whatis-hybrid-identity.md) that allows password changes in the cloud to be written back to an existing on-premises directory in real time. For more information on this feature, see [How does self-service password reset writeback work in Microsoft Entra ID](~/identity/authentication/concept-sspr-writeback.md).
 
-* **Microsoft Entra application proxy Connector** - Lightweight agents that sit on-premises and facilitate the outbound connection to the Application Proxy service. For more information, see [Understand Microsoft Entra Application Proxy connectors](../app-proxy/application-proxy-connectors.md).
+* **Microsoft Entra application proxy Connector** - Lightweight agents that sit on-premises and facilitate the outbound connection to the Application Proxy service. For more information, see [Understand Microsoft Entra Application Proxy connectors](~/identity/app-proxy/application-proxy-connectors.md).
 
 ## Components of cloud-based authentication
 
 As part of an Azure cloud-based environment, the following items should be baselined and included in your monitoring and alerting strategy.
 
-* **Microsoft Entra application proxy** - This cloud service provides secure remote access to on-premises web applications. For more information, see [Remote access to on-premises applications through Microsoft Entra application proxy](../app-proxy/application-proxy-connectors.md).
+* **Microsoft Entra application proxy** - This cloud service provides secure remote access to on-premises web applications. For more information, see [Remote access to on-premises applications through Microsoft Entra application proxy](~/identity/app-proxy/application-proxy-connectors.md).
 
-* **Microsoft Entra Connect** - Services used for a Microsoft Entra Connect solution. For more information, see [What is Microsoft Entra Connect](../hybrid/connect/whatis-azure-ad-connect.md).
+* **Microsoft Entra Connect** - Services used for a Microsoft Entra Connect solution. For more information, see [What is Microsoft Entra Connect](~/identity/hybrid/connect/whatis-azure-ad-connect.md).
 
-* **Microsoft Entra Connect Health** - Service Health provides you with a customizable dashboard that tracks the health of your Azure services in the regions where you use them. For more information, see [Microsoft Entra Connect Health](../hybrid/connect/whatis-azure-ad-connect.md).
+* **Microsoft Entra Connect Health** - Service Health provides you with a customizable dashboard that tracks the health of your Azure services in the regions where you use them. For more information, see [Microsoft Entra Connect Health](~/identity/hybrid/connect/whatis-azure-ad-connect.md).
 
 * **Microsoft Entra multifactor authentication** - multifactor authentication requires a user to provide more than one form of proof for authentication. This approach can provide a proactive first step to securing your environment. For more information, see [Microsoft Entra multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md).
 
 * **Dynamic groups** - Dynamic configuration of security group membership for Microsoft Entra Administrators can set rules to populate groups that are created in Microsoft Entra ID based on user attributes. For more information, see [Dynamic groups and Microsoft Entra B2B collaboration](~/external-id/use-dynamic-groups.md).
 
-* **Conditional Access** - Conditional Access is the tool used by Microsoft Entra ID to bring signals together, to make decisions, and enforce organizational policies. Conditional Access is at the heart of the new identity driven control plane. For more information, see [What is Conditional Access](../conditional-access/overview.md).
+* **Conditional Access** - Conditional Access is the tool used by Microsoft Entra ID to bring signals together, to make decisions, and enforce organizational policies. Conditional Access is at the heart of the new identity driven control plane. For more information, see [What is Conditional Access](~/identity/conditional-access/overview.md).
 
-* **Identity Protection** - A tool that enables organizations to automate the detection and remediation of identity-based risks, investigate risks using data in the portal, and export risk detection data to your SIEM. For more information, see [What is Identity Protection](../identity-protection/overview-identity-protection.md).
+* **Identity Protection** - A tool that enables organizations to automate the detection and remediation of identity-based risks, investigate risks using data in the portal, and export risk detection data to your SIEM. For more information, see [What is Identity Protection](~/id-protection/overview-identity-protection.md).
 
 * **Group-based licensing** - Licenses can be assigned to groups rather than directly to users. Microsoft Entra ID stores information about license assignment states for users.
 
@@ -189,19 +189,19 @@ As part of an Azure cloud-based environment, the following items should be basel
 
 * **Azure Resource Manager** - Azure Resource Manager is the deployment and management service for Azure. It provides a management layer that enables you to create, update, and delete resources in your Azure account. For more information, see [What is Azure Resource Manager](/azure/azure-resource-manager/management/overview).
 
-* **Managed identity** - Managed identities eliminate the need for developers to manage credentials. Managed identities provide an identity for applications to use when connecting to resources that support Microsoft Entra authentication. For more information, see [What are managed identities for Azure resources](../managed-identities-azure-resources/overview.md).
+* **Managed identity** - Managed identities eliminate the need for developers to manage credentials. Managed identities provide an identity for applications to use when connecting to resources that support Microsoft Entra authentication. For more information, see [What are managed identities for Azure resources](~/identity/managed-identities-azure-resources/overview.md).
 
-* **Privileged Identity Management** - PIM is a service in Microsoft Entra ID that enables you to manage, control, and monitor access to important resources in your organization. For more information, see [What is Microsoft Entra Privileged Identity Management](../privileged-identity-management/pim-configure.md).
+* **Privileged Identity Management** - PIM is a service in Microsoft Entra ID that enables you to manage, control, and monitor access to important resources in your organization. For more information, see [What is Microsoft Entra Privileged Identity Management](~/id-governance/privileged-identity-management/pim-configure.md).
 
-* **Access reviews** - Microsoft Entra access reviews enable organizations to efficiently manage group memberships, access to enterprise applications, and role assignments. User's access can be reviewed regularly to make sure only the right people have continued access. For more information, see [What are Microsoft Entra access reviews](../governance/access-reviews-overview.md).
+* **Access reviews** - Microsoft Entra access reviews enable organizations to efficiently manage group memberships, access to enterprise applications, and role assignments. User's access can be reviewed regularly to make sure only the right people have continued access. For more information, see [What are Microsoft Entra access reviews](~/id-governance/access-reviews-overview.md).
 
-* **Entitlement management** - Microsoft Entra entitlement management is an [identity governance](../governance/identity-governance-overview.md) feature. Organizations can manage identity and access lifecycle at scale, by automating access request workflows, access assignments, reviews, and expiration. For more information, see [What is Microsoft Entra entitlement management](../governance/entitlement-management-overview.md).
+* **Entitlement management** - Microsoft Entra entitlement management is an [identity governance](~/id-governance/identity-governance-overview.md) feature. Organizations can manage identity and access lifecycle at scale, by automating access request workflows, access assignments, reviews, and expiration. For more information, see [What is Microsoft Entra entitlement management](~/id-governance/entitlement-management-overview.md).
 
 * **Activity logs** - The Activity log is an Azure [platform log](/azure/azure-monitor/essentials/platform-logs-overview) that provides insight into subscription-level events. This log includes such information as when a resource is modified or when a virtual machine is started. For more information, see [Azure Activity log](/azure/azure-monitor/essentials/activity-log).
 
 * **Self-service password reset service** - Microsoft Entra self-service password reset (SSPR) gives users the ability to change or reset their password. The administrator or help desk isn't required. For more information, see [How it works: Microsoft Entra self-service password reset](~/identity/authentication/concept-sspr-howitworks.md).
 
-* **Device services** - Device identity management is the foundation for [device-based Conditional Access](../conditional-access/concept-conditional-access-grant.md). With device-based Conditional Access policies, you can ensure that access to resources in your environment is only possible with managed devices. For more information, see [What is a device identity](../devices/overview.md).
+* **Device services** - Device identity management is the foundation for [device-based Conditional Access](~/identity/conditional-access/concept-conditional-access-grant.md). With device-based Conditional Access policies, you can ensure that access to resources in your environment is only possible with managed devices. For more information, see [What is a device identity](~/identity/devices/overview.md).
 
 * **Self-service group management** - You can enable users to create and manage their own security groups or Microsoft 365 groups in Microsoft Entra ID. The owner of the group can approve or deny membership requests and can delegate control of group membership. Self-service group management features aren't available for mail-enabled security groups or distribution lists. For more information, see [Set up self-service group management in Microsoft Entra ID](~/identity/users/groups-self-service-management.md).
 

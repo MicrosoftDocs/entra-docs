@@ -47,4 +47,4 @@ The installer creates a scheduled task on the system that runs in the user conte
 ## Next steps
 
 - [Microsoft Entra hybrid join verification](how-to-hybrid-join-verify.md)
-- [Use Conditional Access to require compliant or Microsoft Entra hybrid joined device](../conditional-access/howto-conditional-access-policy-compliant-device.md)
+- [Use Conditional Access to require compliant or Microsoft Entra hybrid joined device](~/identity/conditional-access/howto-conditional-access-policy-compliant-device.md)

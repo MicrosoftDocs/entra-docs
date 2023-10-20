@@ -40,7 +40,7 @@ Organizations can use terms of use along with Conditional Access policies to req
 To use and configure Microsoft Entra terms of use policies, you must have:
 
 * A working Microsoft Entra tenant with Microsoft Entra ID P1, or trial license enabled. If needed, [create one for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* Administrators who interact with terms of use must have one or more of the following role assignments depending on the tasks they're performing. To follow the [Zero Trust principle of least privilege](/security/zero-trust/), consider using [Privileged Identity Management (PIM)](../privileged-identity-management/pim-configure.md) to just-in-time activate privileged role assignments.
+* Administrators who interact with terms of use must have one or more of the following role assignments depending on the tasks they're performing. To follow the [Zero Trust principle of least privilege](/security/zero-trust/), consider using [Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/pim-configure.md) to just-in-time activate privileged role assignments.
    * Read terms of use configuration and Conditional Access policies 
       * [Security Reader](~/identity/role-based-access-control/permissions-reference.md#security-reader)
       * [Global Reader](~/identity/role-based-access-control/permissions-reference.md#global-reader)
@@ -266,7 +266,7 @@ The following procedure describes how to add a ToU language.
 
 ## Per-device terms of use
 
-The **Require users to consent on every device** setting enables you to require end users to accept your terms of use policy on every device they're accessing from. The end user's device must be registered in Microsoft Entra ID. When the device is registered, the device ID is used to enforce the terms of use policy on each device. Their experience is dependent on permissions to join devices as well as the platform and software used, for more information see, [device identity in Microsoft Entra ID](../devices/overview.md).
+The **Require users to consent on every device** setting enables you to require end users to accept your terms of use policy on every device they're accessing from. The end user's device must be registered in Microsoft Entra ID. When the device is registered, the device ID is used to enforce the terms of use policy on each device. Their experience is dependent on permissions to join devices as well as the platform and software used, for more information see, [device identity in Microsoft Entra ID](~/identity/devices/overview.md).
 
 Per-device terms of use have the following constraints:
 
@@ -366,7 +366,7 @@ A: Yes. Currently there are 108 different languages an administrator can configu
 A: The terms of use policy is triggered during the sign-in experience.
 
 **Q: What applications can I target a terms of use policy to?**<br />
-A: You can create a Conditional Access policy on the enterprise applications using modern authentication. For more information, see [enterprise applications](./~/identity/enterprise-apps/view-applications-portal.md).
+A: You can create a Conditional Access policy on the enterprise applications using modern authentication. For more information, see [enterprise applications](~/identity/enterprise-apps/view-applications-portal.md).
 
 **Q: Can I add multiple terms of use policies to a given user or app?**<br />
 A: Yes, by creating multiple Conditional Access policies targeting those groups or applications. If a user falls in scope of multiple terms of use policies, they accept one terms of use policy at a time.

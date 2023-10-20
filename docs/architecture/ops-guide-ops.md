@@ -63,14 +63,14 @@ Unless one has been established, you should define a process to upgrade these co
 
 #### Hybrid management recommended reading
 
-- [Microsoft Entra Connect: Automatic upgrade](../hybrid/connect/how-to-connect-install-automatic-upgrade.md)
-- [Understand Microsoft Entra application proxy connectors | Automatic updates](../app-proxy/application-proxy-connectors.md#automatic-updates)
+- [Microsoft Entra Connect: Automatic upgrade](~/identity/hybrid/connect/how-to-connect-install-automatic-upgrade.md)
+- [Understand Microsoft Entra application proxy connectors | Automatic updates](~/identity/app-proxy/application-proxy-connectors.md#automatic-updates)
 
 <a name='azure-ad-connect-health-alert-baseline'></a>
 
 ### Microsoft Entra Connect Health alert baseline
 
-Organizations should deploy [Microsoft Entra Connect Health](../hybrid/connect/whatis-azure-ad-connect.md#what-is-azure-ad-connect-health) for monitoring and reporting of Microsoft Entra Connect and AD FS. Microsoft Entra Connect and AD FS are critical components that can break lifecycle management and authentication and therefore lead to outages. Microsoft Entra Connect Health helps monitor and gain insights into your on-premises identity infrastructure thus ensuring the reliability of your environment.
+Organizations should deploy [Microsoft Entra Connect Health](~/identity/hybrid/connect/whatis-azure-ad-connect.md#what-is-azure-ad-connect-health) for monitoring and reporting of Microsoft Entra Connect and AD FS. Microsoft Entra Connect and AD FS are critical components that can break lifecycle management and authentication and therefore lead to outages. Microsoft Entra Connect Health helps monitor and gain insights into your on-premises identity infrastructure thus ensuring the reliability of your environment.
 
 ![Microsoft Entra Connect Heath architecture](./media/ops-guide-auth/ops-img16.png)
 
@@ -80,7 +80,7 @@ As you monitor the health of your environment, you must immediately address any 
 
 #### Microsoft Entra Connect Health recommended reading
 
-- [Microsoft Entra Connect Health Agent Installation](../hybrid/connect/how-to-connect-health-agent-install.md)
+- [Microsoft Entra Connect Health Agent Installation](~/identity/hybrid/connect/how-to-connect-health-agent-install.md)
 
 ### On-premises agents logs
 
@@ -88,10 +88,10 @@ Some identity and access management services require on-premises agents to enabl
 
 #### On-premises agents logs recommended reading
 
-- [Troubleshoot Application Proxy](../app-proxy/application-proxy-troubleshoot.md)
+- [Troubleshoot Application Proxy](~/identity/app-proxy/application-proxy-troubleshoot.md)
 - [Self-service password reset troubleshooting](~/identity/authentication/troubleshoot-sspr.md)
-- [Understand Microsoft Entra application proxy connectors](../app-proxy/application-proxy-connectors.md)
-- [Microsoft Entra Connect: Troubleshoot Pass-through Authentication](../hybrid/connect/tshoot-connect-pass-through-authentication.md#collecting-pass-through-authentication-agent-logs)
+- [Understand Microsoft Entra application proxy connectors](~/identity/app-proxy/application-proxy-connectors.md)
+- [Microsoft Entra Connect: Troubleshoot Pass-through Authentication](~/identity/hybrid/connect/tshoot-connect-pass-through-authentication.md#collecting-pass-through-authentication-agent-logs)
 - [Troubleshoot error codes for the Microsoft Entra multifactor authentication NPS extension](~/identity/authentication/howto-mfa-nps-extension-errors.md)
 
 ### On-premises agents management
@@ -104,14 +104,14 @@ Adopting best practices can help the optimal operation of on-premises agents. Co
 
 #### On-premises agents management recommended reading
 
-- [Understand Microsoft Entra application proxy connectors](../app-proxy/application-proxy-connectors.md)
-- [Microsoft Entra pass-through authentication - quickstart](../hybrid/connect/how-to-connect-pta-quick-start.md#step-4-ensure-high-availability)
+- [Understand Microsoft Entra application proxy connectors](~/identity/app-proxy/application-proxy-connectors.md)
+- [Microsoft Entra pass-through authentication - quickstart](~/identity/hybrid/connect/how-to-connect-pta-quick-start.md#step-4-ensure-high-availability)
 
 ## Management at scale
 
 ### Identity secure score
 
-The [identity secure score](../reports-monitoring/concept-identity-secure-score.md) provides a quantifiable measure of the security posture of your organization. It's key to constantly review and address findings reported and strive to have the highest score possible. The score helps you to:
+The [identity secure score](~/identity/monitoring-health/concept-identity-secure-score.md) provides a quantifiable measure of the security posture of your organization. It's key to constantly review and address findings reported and strive to have the highest score possible. The score helps you to:
 
 - Objectively measure your identity security posture
 - Plan identity security improvements
@@ -127,10 +127,10 @@ Microsoft sends email communications to administrators to notify various changes
 
 There are two "From" addresses used by Microsoft Entra ID: <o365mc@email2.microsoft.com>, which sends Message Center notifications; and <azure-noreply@microsoft.com>, which sends notifications related to:
 
-- [Microsoft Entra access reviews](../governance/access-reviews-overview.md)
-- [Microsoft Entra Connect Health](../hybrid/connect/how-to-connect-health-operations.md#enable-email-notifications)
-- [Microsoft Entra ID Protection](../identity-protection/howto-identity-protection-configure-notifications.md)
-- [Microsoft Entra Privileged Identity Management](../privileged-identity-management/pim-email-notifications.md)
+- [Microsoft Entra access reviews](~/id-governance/access-reviews-overview.md)
+- [Microsoft Entra Connect Health](~/identity/hybrid/connect/how-to-connect-health-operations.md#enable-email-notifications)
+- [Microsoft Entra ID Protection](~/id-protection/howto-identity-protection-configure-notifications.md)
+- [Microsoft Entra Privileged Identity Management](~/id-governance/privileged-identity-management/pim-email-notifications.md)
 - [Enterprise App Expiring Certificate Notifications](~/identity/enterprise-apps/tutorial-manage-certificates-for-federated-single-sign-on.md#add-email-notification-addresses-for-certificate-expiration)
 - Enterprise App Provisioning Service Notifications
 

@@ -242,7 +242,7 @@ if let application = try? MSALPublicClientApplication(configuration: config) { /
 
 Configuration parameters can be loaded from many sources, like a JavaScript file or from environment variables. Below, an *authConfig.js* file is used. 
 
-:::code language="js" source="~/ms-identity-JavaScript-nodejs-desktop/App/authConfig.js":::
+:::code language="js" source="~/../ms-identity-JavaScript-nodejs-desktop/App/authConfig.js":::
 
 Import the configuration object from *authConfig.js* file. MSAL Node can be initialized minimally as below. See the available [configuration options](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-node/docs/configuration.md).  
 

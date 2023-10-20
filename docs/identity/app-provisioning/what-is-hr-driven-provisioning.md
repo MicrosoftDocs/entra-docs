@@ -36,7 +36,7 @@ For information on Microsoft Identity Manager and the systems it supports see th
 
 
 ## Next steps 
-- [What is identity lifecycle management](../governance/what-is-identity-lifecycle-management.md)
-- [What is provisioning?](../governance/what-is-provisioning.md)
+- [What is identity lifecycle management](~/id-governance/what-is-identity-lifecycle-management.md)
+- [What is provisioning?](~/id-governance/what-is-provisioning.md)
 - [What is app provisioning?](~/identity/app-provisioning/user-provisioning.md)
-- [What is inter-directory provisioning?](../hybrid/what-is-inter-directory-provisioning.md)
+- [What is inter-directory provisioning?](~/identity/hybrid/what-is-inter-directory-provisioning.md)

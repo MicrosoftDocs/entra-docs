@@ -106,7 +106,7 @@ Follow these steps to enable Microsoft Entra SSO.
    | company | CompanyName       |
 
    > [!NOTE]
-   > Andromeda expects roles for users assigned to the application. Please set up these roles in Microsoft Entra ID so that users can be assigned the appropriate roles. To understand how to configure roles in Microsoft Entra ID, see [here](~/identity-platform/howto-add-app-roles-in-azure-ad-apps.md#app-roles-ui).
+   > Andromeda expects roles for users assigned to the application. Please set up these roles in Microsoft Entra ID so that users can be assigned the appropriate roles. To understand how to configure roles in Microsoft Entra ID, see [here](~/identity-platform/howto-add-app-roles-in-apps.md#app-roles-ui).
 
    a. Click **Add new claim** to open the **Manage user claims** dialog.
 

@@ -60,7 +60,7 @@ The response can be authorized in one of the following ways:
 
 - **System-assigned managed identity (Default)** - With this choice you enable and utilize the Logic Apps system-assigned managed identity. For more information, see: [Authenticate access to Azure resources with managed identities in Azure Logic Apps](/azure/logic-apps/create-managed-service-identity)
 - **No authorization** -  With this choice no authorization will be granted, and you separately have to assign an application permission (LifecycleWorkflows.ReadWrite.All), or role assignment (Lifecycle Workflows Administrator). If an application is responding we don't recommend this option, as it isn't following the principle of least privilege. This option may also be used if responses are only provided on behalf of a user (LifecycleWorkflows.ReadWrite.All delegated permission AND Lifecycle Workflows Administrator role assignment)
-- **Existing application** - With this choice you're able to choose an existing application to respond. This can be a regular application and a system or user-assigned managed identity. For more information on managed identity types, see: [Managed identity types](../managed-identities-azure-resources/overview.md#managed-identity-types).
+- **Existing application** - With this choice you're able to choose an existing application to respond. This can be a regular application and a system or user-assigned managed identity. For more information on managed identity types, see: [Managed identity types](~/identity/managed-identities-azure-resources/overview.md#managed-identity-types).
 
 ## Custom task extension integration with Azure Logic Apps high-level steps
 

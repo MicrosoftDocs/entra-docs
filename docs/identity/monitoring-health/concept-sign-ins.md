@@ -182,7 +182,7 @@ Sign-in log data visualization that relates to risky sign-ins is available in th
 - Risky user sign-ins 
 - Risky workload identities
 
-For more information about the Microsoft Entra ID Protection tools, see the [Microsoft Entra ID Protection overview](../identity-protection/overview-identity-protection.md).
+For more information about the Microsoft Entra ID Protection tools, see the [Microsoft Entra ID Protection overview](~/id-protection/overview-identity-protection.md).
 
 <a name='azure-ad-usage-and-insights'></a>
 

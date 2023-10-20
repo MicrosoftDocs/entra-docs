@@ -31,11 +31,11 @@ In this tutorial:
 
 1. Under **Pages**, open the *Index.cshtml.cs* file and replace the entire contents of the file with the following snippet. Check that the project `namespace` matches your project name.
 
-   :::code language="csharp" source="~/ms-identity-docs-code-dotnet/web-app-aspnet/Pages/Index.cshtml.cs" :::
+   :::code language="csharp" source="~/../ms-identity-docs-code-dotnet/web-app-aspnet/Pages/Index.cshtml.cs" :::
 
 1. Open *Index.cshtml* and add the following code to the bottom of the file. This will handle how the information received from the API is displayed:
 
-   :::code language="csharp" source="~/ms-identity-docs-code-dotnet/web-app-aspnet/Pages/Index.cshtml" range="13-17" :::
+   :::code language="csharp" source="~/../ms-identity-docs-code-dotnet/web-app-aspnet/Pages/Index.cshtml" range="13-17" :::
 
 ## Test the application
 

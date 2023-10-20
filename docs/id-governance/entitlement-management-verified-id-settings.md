@@ -30,7 +30,7 @@ This article describes how to configure the verified ID requirement settings for
 
 ## Prerequisites
 
-Before you begin, you must set up your tenant to use the [Microsoft Entra Verified ID service](../verifiable-credentials/decentralized-identifier-overview.md). You can find detailed instructions on how to do that here: [Configure your tenant for Microsoft Entra Verified ID](../verifiable-credentials/verifiable-credentials-configure-tenant.md). 
+Before you begin, you must set up your tenant to use the [Microsoft Entra Verified ID service](~/verified-id/decentralized-identifier-overview.md). You can find detailed instructions on how to do that here: [Configure your tenant for Microsoft Entra Verified ID](~/verified-id/verifiable-credentials-configure-tenant.md). 
 
 
 ## License requirements
@@ -57,7 +57,7 @@ To add a verified ID requirement to an access package, you must start from the a
 
 1. On the **Requests** tab, scroll to the **Required Verified Ids** section.
 
-1. Select **+ Add issuer** and choose an issuer from the Microsoft Entra Verified ID network. If you want to issue your own credentials to users, see: [Issue Microsoft Entra Verified ID credentials from an application](../verifiable-credentials/verifiable-credentials-configure-issuer.md).
+1. Select **+ Add issuer** and choose an issuer from the Microsoft Entra Verified ID network. If you want to issue your own credentials to users, see: [Issue Microsoft Entra Verified ID credentials from an application](~/verified-id/verifiable-credentials-configure-issuer.md).
     :::image type="content" source="media/entitlement-management-verified-id-settings/select-issuer.png" alt-text="Select issuer for Microsoft Entra Verified I D.":::
 
 1. Select the **credential type(s)** you want users to present during the request process.

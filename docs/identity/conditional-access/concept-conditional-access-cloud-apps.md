@@ -22,7 +22,7 @@ ms.collection: M365-identity-device-management
 
 Target resources (formerly Cloud apps, actions, and authentication context) are key signals in a Conditional Access policy. Conditional Access policies allow administrators to assign controls to specific applications, services, actions, or authentication context.
 
-- Administrators can choose from the list of applications or services that include built-in Microsoft applications and any [Microsoft Entra integrated applications](~/identity/enterprise-apps/what-is-application-management.md) including gallery, non-gallery, and applications published through [Application Proxy](../app-proxy/what-is-application-proxy.md).
+- Administrators can choose from the list of applications or services that include built-in Microsoft applications and any [Microsoft Entra integrated applications](~/identity/enterprise-apps/what-is-application-management.md) including gallery, non-gallery, and applications published through [Application Proxy](~/identity/app-proxy/what-is-application-proxy.md).
 - Administrators may choose to define policy not based on a cloud application but on a [user action](#user-actions) like **Register security information** or **Register or join devices**, allowing Conditional Access to enforce controls around those actions.
 - Administrators can target [traffic forwarding profiles](#traffic-forwarding-profiles) from Global Secure Access for enhanced functionality.
 - Administrators can use [authentication context](#authentication-context) to provide an extra layer of security in applications. 
@@ -140,7 +140,7 @@ We're continually adding more administrative portals to the list.
 
 Administrators can add any Microsoft Entra registered application to Conditional Access policies. These applications may include: 
 
-- Applications published through [Microsoft Entra application proxy](../app-proxy/what-is-application-proxy.md)
+- Applications published through [Microsoft Entra application proxy](~/identity/app-proxy/what-is-application-proxy.md)
 - [Applications added from the gallery](~/identity/enterprise-apps/add-application-portal.md)
 - [Custom applications not in the gallery](~/identity/enterprise-apps/view-applications-portal.md)
 - [Legacy applications published through app delivery controllers and networks](~/identity/enterprise-apps/secure-hybrid-access.md)
@@ -176,10 +176,10 @@ User actions are tasks that can be performed by a user. Currently, Conditional A
 > [!NOTE]
 > When applying a policy targeting user actions for register security information, if the user account is a guest from [Microsoft personal account (MSA)](~/external-id/microsoft-account.md), using the control 'Require multifactor authentication', will require the MSA user to register security information with the organization. If the guest user is from another provider such as [Google](~/external-id/google-federation.md), access will be blocked.
 
-- **Register or join devices**: This user action enables administrators to enforce Conditional Access policy when users [register](../devices/concept-device-registration.md) or [join](../devices/concept-directory-join.md) devices to Microsoft Entra ID. It provides granularity in configuring multifactor authentication for registering or joining devices instead of a tenant-wide policy that currently exists. There are three key considerations with this user action: 
+- **Register or join devices**: This user action enables administrators to enforce Conditional Access policy when users [register](~/identity/devices/concept-device-registration.md) or [join](~/identity/devices/concept-directory-join.md) devices to Microsoft Entra ID. It provides granularity in configuring multifactor authentication for registering or joining devices instead of a tenant-wide policy that currently exists. There are three key considerations with this user action: 
    - `Require multifactor authentication` is the only access control available with this user action and all others are disabled. This restriction prevents conflicts with access controls that are either dependent on Microsoft Entra device registration or not applicable to Microsoft Entra device registration. 
    - `Client apps`, `Filters for devices` and `Device state` conditions aren't available with this user action since they're dependent on Microsoft Entra device registration to enforce Conditional Access policies.
-   - When a Conditional Access policy is enabled with this user action, you must set **Identity** > **Devices** > **Overview** > **Device Settings** - `Devices to be Microsoft Entra joined or Microsoft Entra registered require multifactor authentication` to **No**. Otherwise, the Conditional Access policy with this user action isn't properly enforced. More information about this device setting can found in [Configure device settings](../devices/manage-device-identities.md#configure-device-settings).
+   - When a Conditional Access policy is enabled with this user action, you must set **Identity** > **Devices** > **Overview** > **Device Settings** - `Devices to be Microsoft Entra joined or Microsoft Entra registered require multifactor authentication` to **No**. Otherwise, the Conditional Access policy with this user action isn't properly enforced. More information about this device setting can found in [Configure device settings](~/identity/devices/manage-device-identities.md#configure-device-settings).
 
 ## Traffic forwarding profiles
 

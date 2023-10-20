@@ -116,7 +116,7 @@ The following table provides specific MDM installation guidance depending on whi
 - [**macOS**: Deploy the Microsoft Enterprise SSO plug-in](/mem/intune/configuration/use-enterprise-sso-plug-in-macos-with-intune)
 
 > [!IMPORTANT]
-> Although, any MDM is supported for deploying the SSO Extension, many organizations implement [**device-based Conditional Access polices**](../conditional-access/concept-conditional-access-grant.md#require-device-to-be-marked-as-compliant) by way of evaluating MDM compliance policies. If a third-party MDM is being used, ensure that the MDM vendor supports [**Intune Partner Compliance**](/mem/intune/protect/device-compliance-partners) if you would like to use device-based Conditional Access policies. When the SSO Extension is deployed via Intune or an MDM provider that supports Intune Partner Compliance, the extension can pass the device certificate to Microsoft Entra ID so that device authentication can be completed.   
+> Although, any MDM is supported for deploying the SSO Extension, many organizations implement [**device-based Conditional Access polices**](~/identity/conditional-access/concept-conditional-access-grant.md#require-device-to-be-marked-as-compliant) by way of evaluating MDM compliance policies. If a third-party MDM is being used, ensure that the MDM vendor supports [**Intune Partner Compliance**](/mem/intune/protect/device-compliance-partners) if you would like to use device-based Conditional Access policies. When the SSO Extension is deployed via Intune or an MDM provider that supports Intune Partner Compliance, the extension can pass the device certificate to Microsoft Entra ID so that device authentication can be completed.   
 
 #### Validate SSO configuration profile on macOS device
 
@@ -591,7 +591,7 @@ Finished SSO request.
 
 At this point in the authentication/authorization flow, the PRT has been bootstrapped and it should be visible in the macOS keychain access. See [Checking Keychain Access for PRT](#checking-keychain-access-for-prt). The **MSAL macOS sample** application  uses the access token received from the Microsoft SSO Extension Broker to display the user's information.
 
-Next, examine server-side [Microsoft Entra sign-in logs](../reports-monitoring/concept-sign-in-log-activity-details.md) based on the correlation ID collected from the client-side SSO extension logs. For more information, see [Sign-in logs in Microsoft Entra ID](../reports-monitoring/concept-sign-ins.md).
+Next, examine server-side [Microsoft Entra sign-in logs](~/identity/monitoring-health/concept-sign-in-log-activity-details.md) based on the correlation ID collected from the client-side SSO extension logs. For more information, see [Sign-in logs in Microsoft Entra ID](~/identity/monitoring-health/concept-sign-ins.md).
 
 <a name='view-azure-ad-sign-in-logs-by-correlation-id-filter'></a>
 

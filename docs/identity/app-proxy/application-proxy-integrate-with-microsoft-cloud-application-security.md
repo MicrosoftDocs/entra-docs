@@ -37,13 +37,13 @@ On-premises application:
 
 Configure Application Proxy:
 
-- Configure Microsoft Entra ID to use Application Proxy, including preparing your environment and installing the Application Proxy connector. For a tutorial, see [Add an on-premises applications for remote access through Application Proxy in Microsoft Entra ID](../app-proxy/application-proxy-add-on-premises-application.md). 
+- Configure Microsoft Entra ID to use Application Proxy, including preparing your environment and installing the Application Proxy connector. For a tutorial, see [Add an on-premises applications for remote access through Application Proxy in Microsoft Entra ID](~/identity/app-proxy/application-proxy-add-on-premises-application.md). 
 
 <a name='add-on-premises-application-to-azure-ad'></a>
 
 ## Add on-premises application to Microsoft Entra ID
 
-Add an on-premises application to Microsoft Entra ID. For a quickstart, see [Add an on-premises app to Microsoft Entra ID](../app-proxy/application-proxy-add-on-premises-application.md#add-an-on-premises-app-to-azure-ad). When adding the application, be sure to set the following two settings in the **Add your on-premises application** blade:
+Add an on-premises application to Microsoft Entra ID. For a quickstart, see [Add an on-premises app to Microsoft Entra ID](~/identity/app-proxy/application-proxy-add-on-premises-application.md#add-an-on-premises-app-to-azure-ad). When adding the application, be sure to set the following two settings in the **Add your on-premises application** blade:
 
 - **Pre Authentication**: Enter **Microsoft Entra ID**.
 - **Translate URLs in Application Body**: Choose **Yes**.
@@ -52,7 +52,7 @@ Those two settings are required for the application to work with Defender for Cl
 
 ## Test the on-premises application
 
-After adding your application to Microsoft Entra ID, use the steps in [Test the application](../app-proxy/application-proxy-add-on-premises-application.md#test-the-application) to add a user for testing, and test the sign-on. 
+After adding your application to Microsoft Entra ID, use the steps in [Test the application](~/identity/app-proxy/application-proxy-add-on-premises-application.md#test-the-application) to add a user for testing, and test the sign-on. 
 
 ## Deploy Conditional Access App Control
 

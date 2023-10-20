@@ -34,7 +34,7 @@ Take a look at our video for an overview of the MFA Server Migration Utility and
 ## Limitations and requirements
 
 - The MFA Server Migration Utility requires a new build of the MFA Server solution to be installed on your Primary MFA Server. The build makes updates to the MFA Server data file, and includes the new MFA Server Migration Utility. You don't have to update the WebSDK or User portal. Installing the update _doesn't_ start the migration automatically.
-- The MFA Server Migration Utility copies the data from the database file onto the user objects in Microsoft Entra ID. During migration, users can be targeted for Microsoft Entra multifactor authentication for testing purposes using [Staged Rollout](../hybrid/connect/how-to-connect-staged-rollout.md). Staged migration lets you test without making any changes to your domain federation settings. Once migrations are complete, you must finalize your migration by making changes to your domain federation settings.
+- The MFA Server Migration Utility copies the data from the database file onto the user objects in Microsoft Entra ID. During migration, users can be targeted for Microsoft Entra multifactor authentication for testing purposes using [Staged Rollout](~/identity/hybrid/connect/how-to-connect-staged-rollout.md). Staged migration lets you test without making any changes to your domain federation settings. Once migrations are complete, you must finalize your migration by making changes to your domain federation settings.
 - AD FS running Windows Server 2016 or higher is required to provide MFA authentication on any AD FS relying parties, not including Microsoft Entra ID and Office 365. 
 - Review your AD FS access control policies and make sure none requires MFA to be performed on-premises as part of the authentication process.
 - Staged rollout can target a maximum of 500,000 users (10 groups containing a maximum of 50,000 users each).
@@ -564,4 +564,4 @@ Set the **Staged Rollout for Azure MFA** to **Off**. Users will once again be re
 ## Next steps
 
 - [Overview of how to migrate from MFA Server to Microsoft Entra multifactor authentication](how-to-migrate-mfa-server-to-azure-mfa.md)
-- [Migrate to cloud authentication using Staged Rollout](../hybrid/connect/how-to-connect-staged-rollout.md)
+- [Migrate to cloud authentication using Staged Rollout](~/identity/hybrid/connect/how-to-connect-staged-rollout.md)

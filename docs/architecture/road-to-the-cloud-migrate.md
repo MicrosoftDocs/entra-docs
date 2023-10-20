@@ -42,7 +42,7 @@ Additional considerations include:
 
 >[!NOTE]
 >* We recommend user communications and evangelizing for a smooth deployment. See [Sample SSPR rollout materials](https://www.microsoft.com/download/details.aspx?id=56768).
->* If you use Microsoft Entra ID Protection, enable [password reset as a control in Conditional Access policies](../identity-protection/howto-identity-protection-configure-risk-policies.md) for users marked as risky.
+>* If you use Microsoft Entra ID Protection, enable [password reset as a control in Conditional Access policies](~/id-protection/howto-identity-protection-configure-risk-policies.md) for users marked as risky.
 
 ### Move management of groups
 
@@ -80,7 +80,7 @@ Microsoft Entra cloud HR provisioning can also manage Active Directory accounts 
 
 ### Move lifecycle workflows
 
-Evaluate your existing joiner/mover/leaver workflows and processes for applicability and relevance to your Microsoft Entra cloud environment. You can then simplify these workflows and [create new ones](../governance/create-lifecycle-workflow.md) using [lifecycle workflows](../governance/what-are-lifecycle-workflows.md).
+Evaluate your existing joiner/mover/leaver workflows and processes for applicability and relevance to your Microsoft Entra cloud environment. You can then simplify these workflows and [create new ones](~/id-governance/create-lifecycle-workflow.md) using [lifecycle workflows](~/id-governance/what-are-lifecycle-workflows.md).
 
 ### Move external identity management
 
@@ -90,9 +90,9 @@ If your organization provisions accounts in Active Directory or other on-premise
 
 * For existing Active Directory accounts that you provision for external identities, you can remove the overhead of managing local credentials (for example, passwords) by configuring them for business-to-business (B2B) collaboration. Follow the steps in [Invite internal users to B2B collaboration](~/external-id/invite-internal-users.md).
 
-* Use [Microsoft Entra entitlement management](../governance/entitlement-management-overview.md) to grant access to applications and resources. Most companies have dedicated systems and workflows for this purpose that you can now move out of on-premises tools.
+* Use [Microsoft Entra entitlement management](~/id-governance/entitlement-management-overview.md) to grant access to applications and resources. Most companies have dedicated systems and workflows for this purpose that you can now move out of on-premises tools.
 
-* Use [access reviews](../governance/access-reviews-external-users.md) to remove access rights and/or external identities that are no longer needed.
+* Use [access reviews](~/id-governance/access-reviews-external-users.md) to remove access rights and/or external identities that are no longer needed.
 
 ## Devices
 
@@ -108,7 +108,7 @@ You can integrate non-Windows workstations with Microsoft Entra ID to enhance th
 
     * Plan to deploy [Platform SSO for macOS 13](https://techcommunity.microsoft.com/t5/microsoft-intune-blog/microsoft-simplifies-endpoint-manager-enrollment-for-apple/ba-p/3570319).
 
-* For Linux, you can [sign in to a Linux virtual machine (VM) by using Microsoft Entra credentials](../devices/howto-vm-sign-in-azure-ad-linux.md).
+* For Linux, you can [sign in to a Linux virtual machine (VM) by using Microsoft Entra credentials](~/identity/devices/howto-vm-sign-in-azure-ad-linux.md).
 
 ### Replace other Windows versions for workstations
 
@@ -190,7 +190,7 @@ After you move SaaS applications that were federated to Microsoft Entra ID, ther
 
 * [Migrate from Azure Multi-Factor Authentication Server to Microsoft Entra multifactor authentication](~/identity/authentication/how-to-migrate-mfa-server-to-azure-mfa.md)
 
-* [Migrate from federation to cloud authentication](../hybrid/connect/migrate-from-federation-to-cloud-authentication.md)
+* [Migrate from federation to cloud authentication](~/identity/hybrid/connect/migrate-from-federation-to-cloud-authentication.md)
 
 * [Move remote access to internal applications](#move-remote-access-to-internal-applications), if you're using Microsoft Entra application proxy
 
@@ -306,9 +306,9 @@ Here are key points about usage of Microsoft Entra ID for VPN authentication:
 
 * Check if your VPN providers support modern authentication. For example:
 
-  * [Tutorial: Microsoft Entra SSO integration with Cisco AnyConnect](../saas-apps/cisco-anyconnect.md)
+  * [Tutorial: Microsoft Entra SSO integration with Cisco AnyConnect](~/identity/saas-apps/cisco-anyconnect.md)
 
-  * [Tutorial: Microsoft Entra SSO integration with Palo Alto Networks GlobalProtect](../saas-apps/palo-alto-networks-globalprotect-tutorial.md) 
+  * [Tutorial: Microsoft Entra SSO integration with Palo Alto Networks GlobalProtect](~/identity/saas-apps/palo-alto-networks-globalprotect-tutorial.md) 
 
 * For Windows 10 devices, consider integrating [Microsoft Entra ID support into the built-in VPN client](/windows-server/remote/remote-access/how-to-aovpn-conditional-access).
 
@@ -316,7 +316,7 @@ Here are key points about usage of Microsoft Entra ID for VPN authentication:
 
 ### Move remote access to internal applications
 
-To simplify your environment, you can use [Microsoft Entra application proxy](../app-proxy/application-proxy.md) or [secure hybrid access](~/identity/enterprise-apps/secure-hybrid-access.md) partners to provide remote access. This allows you to remove the dependency on on-premises reverse proxy solutions.
+To simplify your environment, you can use [Microsoft Entra application proxy](~/identity/app-proxy/application-proxy.md) or [secure hybrid access](~/identity/enterprise-apps/secure-hybrid-access.md) partners to provide remote access. This allows you to remove the dependency on on-premises reverse proxy solutions.
 
 It's important to mention that enabling remote access to an application by using the preceding technologies is an interim step. You need to do more work to completely decouple the application from Active Directory. 
 

@@ -30,7 +30,7 @@ Organizations must decide the level of risk they want to require access control 
 
 Choosing to apply access control on a **High** risk level reduces the number of times a policy is triggered and minimizes the impact to users. However, it excludes **Low** and **Medium** risks from the policy, which may not block an attacker from exploiting a compromised identity. Selecting a **Low** risk level to require access control introduces more user interrupts.
 
-Configured trusted [network locations](../conditional-access/location-condition.md) are used by Identity Protection in some risk detections to reduce false positives.
+Configured trusted [network locations](~/identity/conditional-access/location-condition.md) are used by Identity Protection in some risk detections to reduce false positives.
 
 ### Risk remediation
 
@@ -58,7 +58,7 @@ Policies allow for excluding users such as your [emergency access or break-glass
 
 ## Enable policies
 
-Organizations can choose to deploy risk-based policies in Conditional Access using the steps outlined below or using the [Conditional Access templates](../conditional-access/concept-conditional-access-policy-common.md#conditional-access-templates).
+Organizations can choose to deploy risk-based policies in Conditional Access using the steps outlined below or using the [Conditional Access templates](~/identity/conditional-access/concept-conditional-access-policy-common.md#conditional-access-templates).
 
 Before organizations enable remediation policies, they may want to [investigate](howto-identity-protection-investigate-risk.md) and [remediate](howto-identity-protection-remediate-unblock.md) any active risks.
 
@@ -86,7 +86,7 @@ Before organizations enable remediation policies, they may want to [investigate]
 1. Confirm your settings and set **Enable policy** to **Report-only**.
 1. Select **Create** to create to enable your policy.
 
-After confirming your settings using [report-only mode](../conditional-access/howto-conditional-access-insights-reporting.md), an administrator can move the **Enable policy** toggle from **Report-only** to **On**.
+After confirming your settings using [report-only mode](~/identity/conditional-access/howto-conditional-access-insights-reporting.md), an administrator can move the **Enable policy** toggle from **Report-only** to **On**.
 
 ### Sign-in risk policy in Conditional Access
 
@@ -112,7 +112,7 @@ After confirming your settings using [report-only mode](../conditional-access/ho
 1. Confirm your settings and set **Enable policy** to **Report-only**.
 1. Select **Create** to create to enable your policy.
 
-After confirming your settings using [report-only mode](../conditional-access/howto-conditional-access-insights-reporting.md), an administrator can move the **Enable policy** toggle from **Report-only** to **On**.
+After confirming your settings using [report-only mode](~/identity/conditional-access/howto-conditional-access-insights-reporting.md), an administrator can move the **Enable policy** toggle from **Report-only** to **On**.
 
 ## Migrate risk policies from Identity Protection to Conditional Access
 
@@ -129,8 +129,8 @@ If you already have risk policies enabled in Identity Protection, we highly reco
 
 ### Migrating to Conditional Access
 
-1. **Create an equivalent** [user risk-based](#user-risk-policy-in-conditional-access) and [sign-in risk-based](#sign-in-risk-policy-in-conditional-access) policy in Conditional Access in report-only mode. You can create a policy with the steps above or using [Conditional Access templates](../conditional-access/concept-conditional-access-policy-common.md) based on Microsoft's recommendations and your organizational requirements.
-    1. Ensure that the new Conditional Access risk policy works as expected by testing it in [report-only mode](../conditional-access/howto-conditional-access-insights-reporting.md).
+1. **Create an equivalent** [user risk-based](#user-risk-policy-in-conditional-access) and [sign-in risk-based](#sign-in-risk-policy-in-conditional-access) policy in Conditional Access in report-only mode. You can create a policy with the steps above or using [Conditional Access templates](~/identity/conditional-access/concept-conditional-access-policy-common.md) based on Microsoft's recommendations and your organizational requirements.
+    1. Ensure that the new Conditional Access risk policy works as expected by testing it in [report-only mode](~/identity/conditional-access/howto-conditional-access-insights-reporting.md).
 1. **Enable** the new Conditional Access risk policy. You can choose to have both policies running side-by-side to confirm the new policies are working as expected before turning off the Identity Protection risk policies.
     1. Browse back to **Protection** > **Conditional Access**. 
     1. Select this new policy to edit it.
@@ -138,7 +138,7 @@ If you already have risk policies enabled in Identity Protection, we highly reco
 1. **Disable** the old risk policies in Identity Protection.
     1. Browse to **Protection** > **Identity Protection** > Select the **User risk** or **Sign-in risk** policy.
     1. Set **Enforce policy** to **Off**
-1. Create other risk policies if needed in [Conditional Access](../conditional-access/concept-conditional-access-policy-common.md).
+1. Create other risk policies if needed in [Conditional Access](~/identity/conditional-access/concept-conditional-access-policy-common.md).
 
 ## Next steps
 
@@ -146,4 +146,4 @@ If you already have risk policies enabled in Identity Protection, we highly reco
 - [What is risk](concept-identity-protection-risks.md)
 - [Investigate risk detections](howto-identity-protection-investigate-risk.md)
 - [Simulate risk detections](howto-identity-protection-simulate-risk.md)
-- [Require reauthentication every time](../conditional-access/howto-conditional-access-session-lifetime.md#require-reauthentication-every-time)
+- [Require reauthentication every time](~/identity/conditional-access/howto-conditional-access-session-lifetime.md#require-reauthentication-every-time)

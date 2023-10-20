@@ -115,7 +115,7 @@ Follow these steps to enable Microsoft Entra SSO.
   > [!NOTE]
   > Ardoq expects roles for users that are assigned to the application. Be sure to set up these roles in Microsoft Entra ID, so users can be assigned the appropriate roles. Your roles should be set up with the values "admin", "writer", "reader", and/or "contributor".
   >
-  > Learn how to [configure roles in Microsoft Entra ID](~/identity-platform/howto-add-app-roles-in-azure-ad-apps.md#app-roles-ui).    
+  > Learn how to [configure roles in Microsoft Entra ID](~/identity-platform/howto-add-app-roles-in-apps.md#app-roles-ui).    
  
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 

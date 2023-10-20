@@ -37,7 +37,7 @@ Using the information in this tutorial, an administrator of the application lear
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 The administrator wants to make sure that users or guests have appropriate access. They decide to ask users of the application to participate in an access review and recertify or attest to their need for access. When the access review is finished, they can then make changes and remove access from users who no longer need it. For more information, see
-[Manage user and guest user access with access reviews](../governance/manage-access-review.md).
+[Manage user and guest user access with access reviews](~/id-governance/manage-access-review.md).
 
 To create an access review:
 
@@ -78,11 +78,11 @@ You can track the progress of access reviews as they are completed.
 1. In the list, select the access review you created.
 1. On the **Overview** page, check the progress of the access review. 
 
-The **Results** page provides information on each user under review in the instance, including the ability to Stop, Reset, and Download results. To learn more, check out the [Complete an access review of groups and applications in Microsoft Entra access reviews](../governance/complete-access-review.md) article. 
+The **Results** page provides information on each user under review in the instance, including the ability to Stop, Reset, and Download results. To learn more, check out the [Complete an access review of groups and applications in Microsoft Entra access reviews](~/id-governance/complete-access-review.md) article. 
 
 ## Access the audit logs report
 
-The audit logs report combines several reports around application activities into a single view for context-based reporting. For more information, see [Audit logs in Microsoft Entra ID](../reports-monitoring/concept-audit-logs.md).
+The audit logs report combines several reports around application activities into a single view for context-based reporting. For more information, see [Audit logs in Microsoft Entra ID](~/identity/monitoring-health/concept-audit-logs.md).
 
 To access the audit logs report, go to **Identity** > **Monitoring & health** > **Audit logs**.
 
@@ -98,14 +98,14 @@ The audit logs report consolidates the following reports:
 
 ## Access the sign-ins report
 
-The Sign-ins view includes all user sign-ins, and the Application Usage report. You also can view application usage information in the Manage section of the Enterprise applications overview. For more information, see [Sign-in logs in Microsoft Entra ID](../reports-monitoring/concept-sign-ins.md)
+The Sign-ins view includes all user sign-ins, and the Application Usage report. You also can view application usage information in the Manage section of the Enterprise applications overview. For more information, see [Sign-in logs in Microsoft Entra ID](~/identity/monitoring-health/concept-sign-ins.md)
 
 To access the sign-in logs report, go to **Identity** > **Monitoring & health** > **Sign-in logs**.
 
 ## Send logs to Azure Monitor
 
 The Microsoft Entra activity logs only store information for a maximum of 30 days. Depending on your needs, you may require extra storage to back up the activity logs data. Using the Azure Monitor, you can archive the audit and sign logs to an Azure storage account to retain the data for a longer time. 
-The Azure Monitor is also useful for rich visualization, monitoring and alerting of data. To learn more about the Azure Monitor and the cost considerations for extra storage, see [Microsoft Entra activity logs in Azure Monitor](../reports-monitoring/concept-log-monitoring-integration-options-considerations.md).
+The Azure Monitor is also useful for rich visualization, monitoring and alerting of data. To learn more about the Azure Monitor and the cost considerations for extra storage, see [Microsoft Entra activity logs in Azure Monitor](~/identity/monitoring-health/concept-log-monitoring-integration-options-considerations.md).
 
 To send logs to your logs analytics workspace:
 

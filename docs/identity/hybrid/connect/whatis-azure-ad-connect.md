@@ -15,7 +15,7 @@ ms.collection: M365-identity-device-management
 
 # What is Microsoft Entra Connect?
 
-Microsoft Entra Connect is an on-premises Microsoft application that's designed to meet and accomplish your hybrid identity goals. If you're evaluating how to best meet your goals, you should also consider the cloud-managed solution [Microsoft Entra Cloud Sync](../cloud-sync/what-is-cloud-sync.md).
+Microsoft Entra Connect is an on-premises Microsoft application that's designed to meet and accomplish your hybrid identity goals. If you're evaluating how to best meet your goals, you should also consider the cloud-managed solution [Microsoft Entra Cloud Sync](/azure/active-directory/cloud-sync/what-is-cloud-sync).
 
 
 > [!div class="nextstepaction"]
@@ -35,7 +35,7 @@ Microsoft Entra Cloud Sync is the future of synchronization for Microsoft.  It w
 
 Before moving the Microsoft Entra Connect V2.0, you should consider moving to cloud sync.  You can see if cloud sync is right for you, by accessing the [Check sync tool](https://aka.ms/M365Wizard) from the portal or via the link provided.
 
-For more information see [What is cloud sync?](../cloud-sync/what-is-cloud-sync.md)
+For more information see [What is cloud sync?](/azure/active-directory/cloud-sync/what-is-cloud-sync)
 
 <a name='azure-ad-connect-features'></a>
 

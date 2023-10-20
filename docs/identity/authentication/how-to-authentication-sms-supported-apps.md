@@ -53,7 +53,7 @@ For the same reason, Microsoft Office mobile apps (except Microsoft Teams, Compa
 
 To make Non-Micorosoft apps compatible with the SMS sign-in feature: 
 - Integrate Non-Microsoft web apps with Microsoft Entra ID and use Microsoft Entra authentication. Use Security Assertion Markup Language [SAML](~/identity/enterprise-apps/add-application-portal-setup-sso.md) or OpenID Connect [OIDC](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md) to integrate with Microsoft Entra SSO. 
-- Integrate Non-Microsoft on-prem apps with Microsoft Entra ID using [Microsoft Entra application proxy](../app-proxy/application-proxy-add-on-premises-application.md)
+- Integrate Non-Microsoft on-prem apps with Microsoft Entra ID using [Microsoft Entra application proxy](~/identity/app-proxy/application-proxy-add-on-premises-application.md)
 - Integrate Non-Microsoft client apps with [Microsoft identity platform](~/identity-platform/v2-overview.md) for authentication 
     - [Sample app iOS](~/identity-platform/tutorial-v2-ios.md)
     - [Sample app Android](~/identity-platform/tutorial-v2-android.md)
@@ -64,7 +64,7 @@ To make Non-Micorosoft apps compatible with the SMS sign-in feature:
 - See the following links to enable SMS sign-in for native mobile apps using MSAL Libraries: 
   - [iOS](https://github.com/AzureAD/microsoft-authentication-library-for-objc)
   - [Android](https://github.com/AzureAD/microsoft-authentication-library-for-android)
-- [Integrate SAAS application with Microsoft Entra ID](../saas-apps/tutorial-list.md)
+- [Integrate SAAS application with Microsoft Entra ID](~/identity/saas-apps/tutorial-list.md)
 
 ## Recommended content
 

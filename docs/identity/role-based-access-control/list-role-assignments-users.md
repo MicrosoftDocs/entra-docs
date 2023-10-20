@@ -30,7 +30,7 @@ For more information, see [Prerequisites to use PowerShell or Graph Explorer](pr
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-Follow these steps to list Microsoft Entra roles for a user using the Microsoft Entra admin center. Your experience will be different depending on whether you have [Microsoft Entra Privileged Identity Management (PIM)](../privileged-identity-management/pim-configure.md) enabled.
+Follow these steps to list Microsoft Entra roles for a user using the Microsoft Entra admin center. Your experience will be different depending on whether you have [Microsoft Entra Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/pim-configure.md) enabled.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 

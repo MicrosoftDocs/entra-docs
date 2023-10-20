@@ -66,7 +66,7 @@ Here are the least privileged roles required for this deployment:
 | Authentication Administrator| To implement and manage authentication methods. |
 | User| To configure Authenticator app on device, or to enroll security key device for web or Windows 10 sign-in. |
 
-As part of this deployment plan, we recommend that passwordless authentication be enabled for all [privileged accounts](../privileged-identity-management/pim-configure.md).
+As part of this deployment plan, we recommend that passwordless authentication be enabled for all [privileged accounts](~/id-governance/privileged-identity-management/pim-configure.md).
 
 ### Microsoft Authenticator app and security keys
 
@@ -77,7 +77,7 @@ The prerequisites are determined by your selected passwordless authentication me
 | [Combined registration for Microsoft Entra multifactor authentication and self-service password reset (SSPR)](howto-registration-mfa-sspr-combined.md) is enabled| √| √|
 | [Users can perform Microsoft Entra multifactor authentication](howto-mfa-getstarted.md)| √| √|
 | [Users have registered for Microsoft Entra multifactor authentication and SSPR](howto-registration-mfa-sspr-combined.md)| √| √|
-| [Users have registered their mobile devices to Microsoft Entra ID](../devices/overview.md)| √| |
+| [Users have registered their mobile devices to Microsoft Entra ID](~/identity/devices/overview.md)| √| |
 | Windows 10 version 1809 or higher using a supported browser like Microsoft Edge or Mozilla Firefox (version 67 or higher). Microsoft recommends version 1903 or higher for native support.| | √|
 | Compatible security keys. Ensure that you're using a [Microsoft-tested and verified FIDO2 security key](concept-authentication-passwordless.md), or other compatible FIDO2 security key.| | √|
 
@@ -378,7 +378,7 @@ For more information, see [track registered authentication methods and usage acr
 
 #### Sign-in activity reports
 
-Use the [sign-in activity report](../reports-monitoring/concept-sign-ins.md) to track the authentication methods used to sign in to the various applications. 
+Use the [sign-in activity report](~/identity/monitoring-health/concept-sign-ins.md) to track the authentication methods used to sign in to the various applications. 
 
 Select the user row, and then select the **Authentication Details** tab to view which authentication method was used for which sign-in activity.
 

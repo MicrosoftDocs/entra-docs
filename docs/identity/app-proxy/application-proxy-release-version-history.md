@@ -73,7 +73,7 @@ July 22, 2020: Released for download
 This version is only available for install via the download page. 
 
 ### New features and improvements
--	Improved support for Azure Government cloud environments. For steps on how to properly install the connector for Azure Government cloud review the [pre-requisites](../hybrid/connect/reference-connect-government-cloud.md#allow-access-to-urls) and [installation steps](../hybrid/connect/reference-connect-government-cloud.md#install-the-agent-for-the-azure-government-cloud).
+-	Improved support for Azure Government cloud environments. For steps on how to properly install the connector for Azure Government cloud review the [pre-requisites](~/identity/hybrid/connect/reference-connect-government-cloud.md#allow-access-to-urls) and [installation steps](~/identity/hybrid/connect/reference-connect-government-cloud.md#install-the-agent-for-the-azure-government-cloud).
 - Support for using the Remote Desktop Services web client with Application Proxy. See [Publish Remote Desktop with Microsoft Entra application proxy](application-proxy-integrate-with-remote-desktop-services.md) for more details.
 - Improved websocket extension negotiations. 
 - Support for optimized routing between connector groups and Application Proxy cloud services based on region. See [Optimize traffic flow with Microsoft Entra application proxy](application-proxy-network-topology.md) for more details. 

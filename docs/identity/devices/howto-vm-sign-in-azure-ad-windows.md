@@ -270,7 +270,7 @@ To connect to the remote computer:
 - You're then prompted to allow the remote desktop connection when connecting to a new PC. Microsoft Entra remembers up to 15 hosts for 30 days before prompting again. If you see this dialogue, select **Yes** to connect.
 
 > [!IMPORTANT]
-> If your organization has configured and is using [Microsoft Entra Conditional Access](../conditional-access/overview.md), your device must satisfy the Conditional Access requirements to allow connection to the remote computer. Conditional Access policies may be applied to the application **Microsoft Remote Desktop (a4a365df-50f1-4397-bc59-1a1564b8bb9c)** for controlled access.
+> If your organization has configured and is using [Microsoft Entra Conditional Access](~/identity/conditional-access/overview.md), your device must satisfy the Conditional Access requirements to allow connection to the remote computer. Conditional Access policies may be applied to the application **Microsoft Remote Desktop (a4a365df-50f1-4397-bc59-1a1564b8bb9c)** for controlled access.
 
 > [!NOTE]
 > The Windows lock screen in the remote session doesn't support Microsoft Entra authentication tokens or passwordless authentication methods like FIDO keys. The lack of support for these authentication methods means that users can't unlock their screens in a remote session. When you try to lock a remote session, either through user action or system policy, the session is instead disconnected and the service sends a message to the user explaining they've been disconnected. Disconnecting the session also ensures that when the connection is relaunched after a period of inactivity, Microsoft Entra ID reevaluates the applicable Conditional Access policies.

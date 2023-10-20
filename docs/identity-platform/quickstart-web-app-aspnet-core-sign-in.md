@@ -79,7 +79,7 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 1. In your IDE, open the project folder, *ms-identity-docs-code-dotnet\web-app-aspnet*, containing the sample.
 1. Open *appsettings.json* and replace the file contents with the following snippet;
 
-    :::code language="csharp" source="~/ms-identity-docs-code-dotnet/web-app-aspnet/appsettings.json" :::
+    :::code language="csharp" source="~/../ms-identity-docs-code-dotnet/web-app-aspnet/appsettings.json" :::
 
     * `TenantId` - The identifier of the tenant where the application is registered. Replace the text in quotes with the `Directory (tenant) ID` that was recorded earlier from the overview page of the registered application.
     * `ClientId` - The identifier of the application, also referred to as the client. Replace the text in quotes with the `Application (client) ID` value that was recorded earlier from the overview page of the registered application.

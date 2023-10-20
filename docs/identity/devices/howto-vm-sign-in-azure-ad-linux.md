@@ -549,4 +549,4 @@ PubkeyAcceptedKeyTypes +ssh-rsa-cert-v01@openssh.com
 ## Next steps
 
 - [What is a device identity?](overview.md)
-- [Common Conditional Access policies](../conditional-access/concept-conditional-access-policy-common.md)
+- [Common Conditional Access policies](~/identity/conditional-access/concept-conditional-access-policy-common.md)

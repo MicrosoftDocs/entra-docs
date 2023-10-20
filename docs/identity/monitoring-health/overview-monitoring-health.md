@@ -66,7 +66,7 @@ You can use the provisioning logs to find answers to questions like:
 
 Reviewing the data in the Microsoft Entra activity logs can provide helpful information for IT administrators. To streamline the process of reviewing data on key scenarios, we've created several reports on common scenarios that use the activity logs.
 
-- [Identity Protection](../identity-protection/overview-identity-protection.md) uses sign-in data to create reports on risky users and sign-in activities.
+- [Identity Protection](~/id-protection/overview-identity-protection.md) uses sign-in data to create reports on risky users and sign-in activities.
 - Activity related to your applications, such as service principal and app credential activity, are used to create reports in [Usage and insights](concept-usage-insights-report.md).
 - [Microsoft Entra workbooks](overview-workbooks.md) provide a customizable way to view and analyze the activity logs. 
 - [Monitor the status of Microsoft Entra recommendations to improve your tenant's security.](overview-recommendations.md)

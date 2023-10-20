@@ -119,7 +119,7 @@ You can also use PowerShell cmdlets to remove the never-expires configuration or
 This guidance applies to other providers, such as Intune and Microsoft 365, which also rely on Microsoft Entra ID for identity and directory services. Password expiration is the only part of the policy that can be changed.
 
 > [!NOTE]
-> By default only passwords for user accounts that aren't synchronized through Microsoft Entra Connect can be configured to not expire. For more information about directory synchronization, see [Connect AD with Microsoft Entra ID](../hybrid/connect/how-to-connect-password-hash-synchronization.md#password-expiration-policy).
+> By default only passwords for user accounts that aren't synchronized through Microsoft Entra Connect can be configured to not expire. For more information about directory synchronization, see [Connect AD with Microsoft Entra ID](~/identity/hybrid/connect/how-to-connect-password-hash-synchronization.md#password-expiration-policy).
 
 ### Set or check the password policies by using PowerShell
 

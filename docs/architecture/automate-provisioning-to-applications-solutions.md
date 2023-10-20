@@ -31,7 +31,7 @@ In most designs, the human resources (HR) system is the source-of-authority for 
 
 ### Synchronizing identities with cloud HR
 
-The Microsoft Entra provisioning service enables organizations to [bring identities from popular HR systems](~/identity/app-provisioning/what-is-hr-driven-provisioning.md) (examples: [Workday](../saas-apps/workday-inbound-tutorial.md) and [SuccessFactors](../saas-apps/sap-successfactors-inbound-provisioning-cloud-only-tutorial.md)), into Microsoft Entra ID directly, or into AD DS. This provisioning capability enables new hires to access the resources they need from the first day of work.
+The Microsoft Entra provisioning service enables organizations to [bring identities from popular HR systems](~/identity/app-provisioning/what-is-hr-driven-provisioning.md) (examples: [Workday](~/identity/saas-apps/workday-inbound-tutorial.md) and [SuccessFactors](~/identity/saas-apps/sap-successfactors-inbound-provisioning-cloud-only-tutorial.md)), into Microsoft Entra ID directly, or into AD DS. This provisioning capability enables new hires to access the resources they need from the first day of work.
 
 ### On-premises HR + joining multiple data sources
 
@@ -63,15 +63,15 @@ As customers transition identity management to the cloud, more users and groups 
 
 3. When an external user from a partner organization is created in Microsoft Entra ID using B2B, MIM can automatically provision them [into AD DS](/microsoft-identity-manager/microsoft-identity-manager-2016-graph-b2b-scenario) and give those guests access to [on-premises Windows-Integrated Authentication or Kerberos-based applications](~/external-id/hybrid-cloud-to-on-premises.md). Alternatively, customers can user [PowerShell scripts](https://github.com/Azure-Samples/B2B-to-AD-Sync) to automate the creation of guest accounts on-premises. 
 
-1. When a group is created in Microsoft Entra ID, it can be automatically synchronized to AD DS using [Microsoft Entra Connect Sync](../hybrid/connect/how-to-connect-group-writeback-v2.md).
+1. When a group is created in Microsoft Entra ID, it can be automatically synchronized to AD DS using [Microsoft Entra Connect Sync](~/identity/hybrid/connect/how-to-connect-group-writeback-v2.md).
 
 1. When users need access to cloud apps that still rely on legacy access protocols (for example, LDAP and Kerberos/NTLM), [Microsoft Entra Domain Services](https://azure.microsoft.com/services/active-directory-ds/) synchronizes identities between Microsoft Entra ID and a managed AD domain.
 
 |No.| What | From | To | Technology |
 | - | - | - | - | - |
-| 1 |Users, groups| AD DS| Microsoft Entra ID| [Microsoft Entra Connect cloud sync](../hybrid/cloud-sync/what-is-cloud-sync.md) |
-| 2 |Users, groups, devices| AD DS| Microsoft Entra ID| [Microsoft Entra Connect Sync](../hybrid/connect/whatis-azure-ad-connect.md) |
-| 3 |Groups| Microsoft Entra ID| AD DS| [Microsoft Entra Connect Sync](../hybrid/connect/how-to-connect-group-writeback-v2.md) |
+| 1 |Users, groups| AD DS| Microsoft Entra ID| [Microsoft Entra Connect cloud sync](~/identity/hybrid/cloud-sync/what-is-cloud-sync.md) |
+| 2 |Users, groups, devices| AD DS| Microsoft Entra ID| [Microsoft Entra Connect Sync](~/identity/hybrid/connect/whatis-azure-ad-connect.md) |
+| 3 |Groups| Microsoft Entra ID| AD DS| [Microsoft Entra Connect Sync](~/identity/hybrid/connect/how-to-connect-group-writeback-v2.md) |
 | 4 |Guest accounts| Microsoft Entra ID| AD DS| [MIM](/microsoft-identity-manager/microsoft-identity-manager-2016-graph-b2b-scenario), [PowerShell](https://github.com/Azure-Samples/B2B-to-AD-Sync)|
 | 5 |Users, groups| Microsoft Entra ID| Managed AD| [Microsoft Entra Domain Services](https://azure.microsoft.com/services/active-directory-ds/) |
 
@@ -85,7 +85,7 @@ After identities are in Microsoft Entra ID through HR-provisioning or Microsoft 
 
 ### Automate provisioning to apps and clouds that support the SCIM standard
 
-Microsoft Entra ID supports the System for Cross-Domain Identity Management ([SCIM 2.0](https://aka.ms/scimoverview)) standard and integrates with hundreds of popular SaaS applications such as [Dropbox](../saas-apps/dropboxforbusiness-provisioning-tutorial.md) and [Atlassian](../saas-apps/atlassian-cloud-provisioning-tutorial.md) or other clouds such as [Amazon Web Services (AWS)](../saas-apps/aws-single-sign-on-provisioning-tutorial.md), [Google Cloud](../saas-apps/g-suite-provisioning-tutorial.md). Application developers can use the System for Cross-Domain Identity Management (SCIM) user management API to automate provisioning users and groups between Microsoft Entra ID and your application.
+Microsoft Entra ID supports the System for Cross-Domain Identity Management ([SCIM 2.0](https://aka.ms/scimoverview)) standard and integrates with hundreds of popular SaaS applications such as [Dropbox](~/identity/saas-apps/dropboxforbusiness-provisioning-tutorial.md) and [Atlassian](~/identity/saas-apps/atlassian-cloud-provisioning-tutorial.md) or other clouds such as [Amazon Web Services (AWS)](~/identity/saas-apps/aws-single-sign-on-provisioning-tutorial.md), [Google Cloud](~/identity/saas-apps/g-suite-provisioning-tutorial.md). Application developers can use the System for Cross-Domain Identity Management (SCIM) user management API to automate provisioning users and groups between Microsoft Entra ID and your application.
 
 ![SCIM standard](media/automate-user-provisioning-to-applications-solutions/automate-provisioning-scim-standard.png)
 
@@ -138,7 +138,7 @@ After users are provisioned into Microsoft Entra ID, use Lifecycle Workflows (LC
 
 * **Leaver**: When users leave the company for various reasons (termination, separation, leave of absence or retirement), have their access revoked in a timely manner.
 
-[Learn more about Microsoft Entra Lifecycle Workflows](../governance/what-are-lifecycle-workflows.md)
+[Learn more about Microsoft Entra Lifecycle Workflows](~/id-governance/what-are-lifecycle-workflows.md)
 
 > [!Note]
 > For scenarios not covered by LCW, customers can leverage the extensibility of [Logic Applications](/azure/logic-apps/logic-apps-overview).
@@ -149,6 +149,6 @@ Organizations often need a complete audit trail of what users have access to app
 
 ### Next steps
 
-1. Automate provisioning with any of your applications that are in the [Microsoft Entra app gallery](../saas-apps/tutorial-list.md), support [SCIM](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md), [SQL](~/identity/app-provisioning/on-premises-sql-connector-configure.md), or [LDAP](~/identity/app-provisioning/on-premises-ldap-connector-configure.md).
-2. Evaluate [Microsoft Entra Connect cloud sync](../hybrid/cloud-sync/what-is-cloud-sync.md) for synchronization between AD DS and Microsoft Entra ID
+1. Automate provisioning with any of your applications that are in the [Microsoft Entra app gallery](~/identity/saas-apps/tutorial-list.md), support [SCIM](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md), [SQL](~/identity/app-provisioning/on-premises-sql-connector-configure.md), or [LDAP](~/identity/app-provisioning/on-premises-ldap-connector-configure.md).
+2. Evaluate [Microsoft Entra Connect cloud sync](~/identity/hybrid/cloud-sync/what-is-cloud-sync.md) for synchronization between AD DS and Microsoft Entra ID
 3. Use the [Microsoft Identity Manager](/microsoft-identity-manager/microsoft-identity-manager-2016) for complex provisioning scenarios

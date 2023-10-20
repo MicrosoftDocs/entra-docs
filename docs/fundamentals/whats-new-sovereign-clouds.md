@@ -49,7 +49,7 @@ Cisco Unified Communications Manager (Unified CM) provides reliable, secure, sca
 - Manage your accounts in one central location - the Azure portal.
 
 
-For more information, see: [Azure Active Directory SSO integration with Cisco Unified Communications Manager](../saas-apps/cisco-unified-communications-manager-tutorial.md).
+For more information, see: [Azure Active Directory SSO integration with Cisco Unified Communications Manager](~/identity/saas-apps/cisco-unified-communications-manager-tutorial.md).
 
 ---
 
@@ -251,7 +251,7 @@ We're developing more recommendations, so stay tuned!
 
 For more information, see: 
 
-- [What are Azure Active Directory recommendations?](../reports-monitoring/overview-recommendations.md).
+- [What are Azure Active Directory recommendations?](~/identity/monitoring-health/overview-recommendations.md).
 - [Use the Azure AD recommendations API to implement Azure AD best practices for your tenant](/graph/api/resources/recommendations-api-overview)
 
 ---
@@ -288,7 +288,7 @@ For more information, see: [Protect user accounts from attacks with Azure Active
 **Service category:** Enterprise Apps             
 **Product capability:** SSO          
 
-Filter and transform group names in token claims configuration using regular expression. Many application configurations on ADFS and other IdPs rely on the ability to create authorization claims based on the content of Group Names using regular expression functions in the claim rules.  Azure AD now has the capability to use a regular expression match and replace function to create claim content based on Group **onpremisesSAMAccount** names. This functionality allows those applications to be moved to Azure AD for authentication using the same group management patterns. For more information, see: [Configure group claims for applications by using Azure Active Directory](../hybrid/connect/how-to-connect-fed-group-claims.md).
+Filter and transform group names in token claims configuration using regular expression. Many application configurations on ADFS and other IdPs rely on the ability to create authorization claims based on the content of Group Names using regular expression functions in the claim rules.  Azure AD now has the capability to use a regular expression match and replace function to create claim content based on Group **onpremisesSAMAccount** names. This functionality allows those applications to be moved to Azure AD for authentication using the same group management patterns. For more information, see: [Configure group claims for applications by using Azure Active Directory](~/identity/hybrid/connect/how-to-connect-fed-group-claims.md).
 
 ---
 
@@ -302,7 +302,7 @@ Azure AD now has the capability to filter the groups included in the token using
 
 For more information, see: 
 - [Group Filter](~/identity-platform/reference-claims-mapping-policy-type.md#group-filter).
-- [Configure group claims for applications by using Azure Active Directory](../hybrid/connect/how-to-connect-fed-group-claims.md).
+- [Configure group claims for applications by using Azure Active Directory](~/identity/hybrid/connect/how-to-connect-fed-group-claims.md).
 
 
 
@@ -324,7 +324,7 @@ Azure AD now supports claims transformations on multi-valued attributes and can 
 **Service category:** Access Reviews            
 **Product capability:** Identity Security & Protection       
 
-Post-authentication anomalous activity detection for workload identities. This detection focuses specifically on detection of post authenticated anomalous behavior performed by a workload identity (service principal). Post-authentication behavior is assessed for anomalies based on an action and/or sequence of actions occurring for the account. Based on the scoring of anomalies identified, the offline detection may score the account as low, medium, or high risk. The risk allocation from the offline detection will be available within the Risky workload identities reporting settings. A new detection type identified as Anomalous service principal activity appears in filter options. For more information, see: [Securing workload identities](../identity-protection/concept-workload-identity-risk.md).
+Post-authentication anomalous activity detection for workload identities. This detection focuses specifically on detection of post authenticated anomalous behavior performed by a workload identity (service principal). Post-authentication behavior is assessed for anomalies based on an action and/or sequence of actions occurring for the account. Based on the scoring of anomalies identified, the offline detection may score the account as low, medium, or high risk. The risk allocation from the offline detection will be available within the Risky workload identities reporting settings. A new detection type identified as Anomalous service principal activity appears in filter options. For more information, see: [Securing workload identities](~/id-protection/concept-workload-identity-risk.md).
 
 ---
 
@@ -351,7 +351,7 @@ For more information about Microsoft cloud settings for B2B collaboration, see: 
 
 Hybrid IT Admins now can sync both Active Directory and Azure AD Directory Extensions using Azure AD Connect cloud sync. This new capability adds the ability to dynamically discover the schema for both Active Directory and Azure AD, allowing customers to map the needed attributes using the  attribute mapping experience of cloud sync.
 
-For more information on how to enable this feature, see [Directory extensions and custom attribute mapping in cloud sync](../hybrid/cloud-sync/custom-attribute-mapping.md)
+For more information on how to enable this feature, see [Directory extensions and custom attribute mapping in cloud sync](~/identity/hybrid/cloud-sync/custom-attribute-mapping.md)
 
 
 ---
@@ -394,7 +394,7 @@ An IT admin can now add multiple domains to a single SAML/WS-Fed identity provid
 **Service category:** Conditional Access          
 **Product capability:** Identity Security & Protection     
 
-This risk detection baselines normal administrative user behavior in Azure AD, and spots anomalous patterns of behavior like suspicious changes to the directory. The detection is triggered against the administrator making the change or the object that was changed. For more information, see: [User-linked detections](../identity-protection/concept-identity-protection-risks.md).
+This risk detection baselines normal administrative user behavior in Azure AD, and spots anomalous patterns of behavior like suspicious changes to the directory. The detection is triggered against the administrator making the change or the object that was changed. For more information, see: [User-linked detections](~/id-protection/concept-identity-protection-risks.md).
 
 ---
 

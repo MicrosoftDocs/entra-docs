@@ -84,7 +84,7 @@ Resources that support system assigned managed identities allow you to:
 - Enable or disable managed identities at the resource level.
 - Use role-based access control (RBAC) to [grant permissions](howto-assign-access-portal.md).
 - View the create, read, update, and delete (CRUD) operations in [Azure Activity logs](/azure/azure-monitor/essentials/activity-log).
-- View sign in activity in Microsoft Entra ID [sign in logs](../reports-monitoring/concept-sign-ins.md).
+- View sign in activity in Microsoft Entra ID [sign in logs](~/identity/monitoring-health/concept-sign-ins.md).
 
 If you choose a user assigned managed identity instead:
 
@@ -92,7 +92,7 @@ If you choose a user assigned managed identity instead:
 - You can use RBAC role assignments to [grant permissions](howto-assign-access-portal.md).
 - User assigned managed identities can be used on more than one resource.
 - CRUD operations are available for review in [Azure Activity logs](/azure/azure-monitor/essentials/activity-log).
-- View sign in activity in Microsoft Entra ID [sign in logs](../reports-monitoring/concept-sign-ins.md).
+- View sign in activity in Microsoft Entra ID [sign in logs](~/identity/monitoring-health/concept-sign-ins.md).
 
 Operations on managed identities can be performed by using an Azure Resource Manager template, the Azure portal, Azure CLI, PowerShell, and REST APIs.
 

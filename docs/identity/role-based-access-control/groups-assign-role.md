@@ -37,7 +37,7 @@ For more information, see [Prerequisites to use PowerShell or Graph Explorer](pr
 Assigning a Microsoft Entra role to a group is similar to assigning users and service principals except that only groups that are role-assignable can be used.
 
 > [!TIP]
-> These steps apply to customers that have a Microsoft Entra ID P1 license. If you have a Microsoft Entra ID P2 license in your tenant, you should instead follow steps in [Assign Microsoft Entra roles in Privileged Identity Management](../privileged-identity-management/pim-how-to-add-role-to-user.md).
+> These steps apply to customers that have a Microsoft Entra ID P1 license. If you have a Microsoft Entra ID P2 license in your tenant, you should instead follow steps in [Assign Microsoft Entra roles in Privileged Identity Management](~/id-governance/privileged-identity-management/pim-how-to-add-role-to-user.md).
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
@@ -51,7 +51,7 @@ Assigning a Microsoft Entra role to a group is similar to assigning users and se
 
 1. Select **Add assignments**.
 
-    If you see something different from the following screenshot, you might have Microsoft Entra ID P2. For more information, see [Assign Microsoft Entra roles in Privileged Identity Management](../privileged-identity-management/pim-how-to-add-role-to-user.md).
+    If you see something different from the following screenshot, you might have Microsoft Entra ID P2. For more information, see [Assign Microsoft Entra roles in Privileged Identity Management](~/id-governance/privileged-identity-management/pim-how-to-add-role-to-user.md).
 
     :::image type="content" source="media/groups-assign-role/add-assignments.png" alt-text="Screenshot of Add assignments pane to assign role to users or groups." lightbox="media/groups-assign-role/add-assignments.png":::
 

@@ -91,7 +91,7 @@ Follow these steps to enable Microsoft Entra SSO.
 	| | |
 
 	> [!NOTE]
-	> To understand how to configure roles in Microsoft Entra ID, see [here](~/identity-platform/howto-add-app-roles-in-azure-ad-apps.md#app-roles-ui).
+	> To understand how to configure roles in Microsoft Entra ID, see [here](~/identity-platform/howto-add-app-roles-in-apps.md#app-roles-ui).
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (Raw)** and select **Download** to download the certificate and save it on your computer.
 

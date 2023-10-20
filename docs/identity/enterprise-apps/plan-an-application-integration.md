@@ -69,7 +69,7 @@ The following articles discuss the different ways applications integrate with Mi
 
 * [Determining which Active Directory to use](~/fundamentals/whatis.md)
 * [Using applications in the Azure application gallery](what-is-single-sign-on.md)
-* [Integrating SaaS applications tutorials list](../saas-apps/tutorial-list.md)
+* [Integrating SaaS applications tutorials list](~/identity/saas-apps/tutorial-list.md)
 
 <a name='capabilities-for-apps-not-listed-in-the-azure-ad-gallery'></a>
 

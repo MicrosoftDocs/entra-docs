@@ -69,7 +69,7 @@ sections:
       - question: |
           What is the difference between the single sign-on experience provided by Microsoft Entra join and Seamless SSO?
         answer: |
-          [Microsoft Entra join](../../devices/overview.md) provides SSO to users if their devices are registered with Microsoft Entra ID. These devices don't necessarily have to be domain-joined. SSO is provided using *primary refresh tokens* or *PRTs*, and not Kerberos. The user experience is most optimal on Windows 10 devices. SSO happens automatically on the Microsoft Edge browser. It also works on Chrome with the use of a browser extension.
+          [Microsoft Entra join](~/identity/devices/overview.md) provides SSO to users if their devices are registered with Microsoft Entra ID. These devices don't necessarily have to be domain-joined. SSO is provided using *primary refresh tokens* or *PRTs*, and not Kerberos. The user experience is most optimal on Windows 10 devices. SSO happens automatically on the Microsoft Edge browser. It also works on Chrome with the use of a browser extension.
           
           You can use Microsoft Entra join and Seamless SSO on your tenant. These two features are complementary. If both features are turned on, then SSO from Microsoft Entra join takes precedence over Seamless SSO.
           

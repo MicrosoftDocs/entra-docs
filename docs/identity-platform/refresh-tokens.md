@@ -33,7 +33,7 @@ Refresh tokens can be revoked at any time, because of timeouts and revocations. 
 
 ### Token timeouts
 
-You can't configure the lifetime of a refresh token. You can't reduce or lengthen their lifetime. Configure sign-in frequency in Conditional Access to define the time periods before a user is required to sign in again. For more information, see [Configuring authentication session management with Conditional Access](../conditional-access/howto-conditional-access-session-lifetime.md).
+You can't configure the lifetime of a refresh token. You can't reduce or lengthen their lifetime. Configure sign-in frequency in Conditional Access to define the time periods before a user is required to sign in again. For more information, see [Configuring authentication session management with Conditional Access](~/identity/conditional-access/howto-conditional-access-session-lifetime.md).
 
 Not all refresh tokens follow the rules set in the token lifetime policy. Specifically, refresh tokens used in single page apps are always fixed to 24 hours of activity, as if they have a `MaxAgeSessionSingleFactor` policy of 24 hours applied to them.
 

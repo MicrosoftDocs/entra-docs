@@ -98,7 +98,7 @@ Follow these steps to enable Microsoft Entra SSO.
    | `https://dashboard.meraki.com/saml/attributes/role`     | user.assignedroles     |
 
    > [!NOTE]
-   > To understand how to configure roles in Microsoft Entra ID, see [here](~/identity-platform/howto-add-app-roles-in-azure-ad-apps.md#app-roles-ui).
+   > To understand how to configure roles in Microsoft Entra ID, see [here](~/identity-platform/howto-add-app-roles-in-apps.md#app-roles-ui).
 
 1. In the **SAML Signing Certificate** section, click **Edit** button to open **SAML Signing Certificate** dialog.
 

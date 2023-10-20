@@ -75,7 +75,7 @@ If you get the same username/password error, this means that the Pass-through Au
 
 ### Sign-in failure reasons on the [Microsoft Entra admin center](https://entra.microsoft.com) (needs Premium license)
 
-If your tenant has a Microsoft Entra ID P1 or P2 license associated with it, you can also look at the [sign-in activity report](../../reports-monitoring/concept-sign-ins.md) on the [Microsoft Entra admin center](https://entra.microsoft.com/).
+If your tenant has a Microsoft Entra ID P1 or P2 license associated with it, you can also look at the [sign-in activity report](~/identity/monitoring-health/concept-sign-ins.md) on the [Microsoft Entra admin center](https://entra.microsoft.com/).
 
 [![Screenshot shows Microsoft Entra admin center - Sign-ins report,](./media/tshoot-connect-pass-through-authentication/sign-in-report.png)](./media/tshoot-connect-pass-through-authentication/sign-in-report.png#lightbox)
 

@@ -9,7 +9,7 @@
     expanded: true
     items:
     - name: List of app integration tutorials
-      href: ../saas-apps/tutorial-list.md
+      href: ~/identity/saas-apps/tutorial-list.md
     - name: Add an on-premises app with Application Proxy
       href: application-proxy-add-on-premises-application.md
     - name: Configure Application Proxy - Microsoft Graph

@@ -267,9 +267,9 @@ After creating Conditional Access policies to enforce the same controls as AD FS
 
 For more information, see the following resources:
 
-* [Plan a Conditional Access deployment](../conditional-access/plan-conditional-access.md)
+* [Plan a Conditional Access deployment](~/identity/conditional-access/plan-conditional-access.md)
 
-* [Common Conditional Access policies](../conditional-access/concept-conditional-access-policy-common.md)
+* [Common Conditional Access policies](~/identity/conditional-access/concept-conditional-access-policy-common.md)
 
 
 <a name='register-users-for-azure-ad-mfa'></a>
@@ -285,7 +285,7 @@ We recommend having your users register for combined security information, which
 Microsoft provides communication templates that you can provide to your users to guide them through the combined registration process. 
 These include templates for email, posters, table tents, and various other assets. Users register their information at `https://aka.ms/mysecurityinfo`, which takes them to the combined security registration screen. 
 
-We recommend that you [secure the security registration process with Conditional Access](../conditional-access/howto-conditional-access-policy-registration.md) that requires the registration to occur from a trusted device or location. For information on tracking registration statuses, see [Authentication method activity for Microsoft Entra ID](howto-authentication-methods-activity.md).
+We recommend that you [secure the security registration process with Conditional Access](~/identity/conditional-access/howto-conditional-access-policy-registration.md) that requires the registration to occur from a trusted device or location. For information on tracking registration statuses, see [Authentication method activity for Microsoft Entra ID](howto-authentication-methods-activity.md).
 
    > [!NOTE]
    > Users who must register their combined security information from a non-trusted location or device can be issued a Temporary Access Pass or alternatively, temporarily excluded from the policy.
@@ -368,6 +368,6 @@ Possible considerations when decommissions the MFA Servers include:
 
 ## Next Steps
 
-- [Deploy password hash synchronization](../hybrid/connect/whatis-phs.md)
-- [Learn more about Conditional Access](../conditional-access/overview.md)
+- [Deploy password hash synchronization](~/identity/hybrid/connect/whatis-phs.md)
+- [Learn more about Conditional Access](~/identity/conditional-access/overview.md)
 - [Migrate applications to Microsoft Entra ID](~/identity/enterprise-apps/migrate-adfs-apps-phases-overview.md)

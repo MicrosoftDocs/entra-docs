@@ -20,9 +20,9 @@ ms.collection: M365-identity-device-management
 Groups are part of an access control strategy. You can use Microsoft Entra security groups and Microsoft 365 Groups as the basis for securing access to resources. Use groups for the following access-control mechanisms:
 
 * Conditional Access policies
-  * [What is Conditional Access?](../conditional-access/overview.md)
+  * [What is Conditional Access?](~/identity/conditional-access/overview.md)
 * Entitlement management access packages
-  *  [What is entitlement management?](../governance/entitlement-management-overview.md)
+  *  [What is entitlement management?](~/id-governance/entitlement-management-overview.md)
 * Access to Microsoft 365 resources, Microsoft Teams, and SharePoint sites
 
 Groups have the following roles:

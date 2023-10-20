@@ -46,7 +46,7 @@ For the application that the administrator added to their tenant, they want to s
 
 ## Create a Conditional Access policy
 
-The administrator wants to make sure that only the people they assign to the application can securely sign in. To do this, they can configure a Conditional Access policy for a group of users that enforces multifactor authentication. For more information, see [What is Conditional Access?](../conditional-access/overview.md).
+The administrator wants to make sure that only the people they assign to the application can securely sign in. To do this, they can configure a Conditional Access policy for a group of users that enforces multifactor authentication. For more information, see [What is Conditional Access?](~/identity/conditional-access/overview.md).
 
 ### Create a group
 
@@ -91,7 +91,7 @@ In this tutorial, the administrator can find the basic steps to configure the ap
 
 ## Create a terms of use statement
 
-Juan wants to make sure that certain terms and conditions are known to users before they start using the application. For more information, see [Microsoft Entra terms of use](../conditional-access/terms-of-use.md).
+Juan wants to make sure that certain terms and conditions are known to users before they start using the application. For more information, see [Microsoft Entra terms of use](~/identity/conditional-access/terms-of-use.md).
 
 1. In Microsoft Word, create a new document.
 1. Type My terms of use, and then save the document on your computer as *mytou.pdf*.

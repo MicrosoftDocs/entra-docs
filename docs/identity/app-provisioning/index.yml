@@ -29,11 +29,11 @@ landingContent:
       - linkListType: tutorial
         links:
           - text: SAP Cloud Platform Identity Authentication provisioning
-            url: ../saas-apps/sap-cloud-platform-identity-authentication-provisioning-tutorial.md?context=/azure/active-directory/app-provisioning/context/app-provisioning-context
+            url: ~/identity/saas-apps/sap-cloud-platform-identity-authentication-provisioning-tutorial.md?context=/azure/active-directory/app-provisioning/context/app-provisioning-context
           - text: Oracle Fusion ERP provisioning
-            url: ../saas-apps/oracle-fusion-erp-provisioning-tutorial.md?context=/azure/active-directory/app-provisioning/context/app-provisioning-context
+            url: ~/identity/saas-apps/oracle-fusion-erp-provisioning-tutorial.md?context=/azure/active-directory/app-provisioning/context/app-provisioning-context
           - text: Atlassian Cloud provisioning
-            url: ../saas-apps/atlassian-cloud-provisioning-tutorial.md?context=/azure/active-directory/app-provisioning/context/app-provisioning-context
+            url: ~/identity/saas-apps/atlassian-cloud-provisioning-tutorial.md?context=/azure/active-directory/app-provisioning/context/app-provisioning-context
       - linkListType: how-to-guide
         links:
           - text: Adding a gallery app? Configure provisioning to the app
@@ -61,6 +61,6 @@ landingContent:
       - linkListType: tutorial
         links:
           - text: Workday provisioning
-            url: ../saas-apps/workday-inbound-tutorial.md?context=/azure/active-directory/app-provisioning/context/app-provisioning-context
+            url: ~/identity/saas-apps/workday-inbound-tutorial.md?context=/azure/active-directory/app-provisioning/context/app-provisioning-context
           - text: SAP SuccessFactors provisioning
-            url: ../saas-apps/sap-successfactors-inbound-provisioning-cloud-only-tutorial.md?context=/azure/active-directory/app-provisioning/context/app-provisioning-context
+            url: ~/identity/saas-apps/sap-successfactors-inbound-provisioning-cloud-only-tutorial.md?context=/azure/active-directory/app-provisioning/context/app-provisioning-context

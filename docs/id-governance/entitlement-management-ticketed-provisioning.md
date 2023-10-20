@@ -32,7 +32,7 @@ In this tutorial, you learn how to:
 - A Microsoft Entra user account with an active Azure subscription. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 - One of the following roles: Global Administrator, Cloud Application Administrator, Application Administrator, or owner of the service principal.
 - A [ServiceNow instance](https://www.servicenow.com/) of Rome or higher
-- SSO integration with ServiceNow. If this isn't already configured, see:[Tutorial: Microsoft Entra single sign-on (SSO) integration with ServiceNow](../saas-apps/servicenow-tutorial.md) before continuing.
+- SSO integration with ServiceNow. If this isn't already configured, see:[Tutorial: Microsoft Entra single sign-on (SSO) integration with ServiceNow](~/identity/saas-apps/servicenow-tutorial.md) before continuing.
 
 ## Adding Logic App Workflow to an existing Catalog for Entitlement Management
 

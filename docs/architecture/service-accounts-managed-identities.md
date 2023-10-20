@@ -49,7 +49,7 @@ Learn more:
 * [What is Azure Resource Manager?](/azure/azure-resource-manager/management/overview)
 * [What is Azure role-based Azure RBAC?](/azure/role-based-access-control/overview)
 * [Azure control plane and data plane](/azure/azure-resource-manager/management/control-plane-and-data-plane)
-* [Azure services that can use managed identities to access other services](../managed-identities-azure-resources/managed-identities-status.md)
+* [Azure services that can use managed identities to access other services](~/identity/managed-identities-azure-resources/managed-identities-status.md)
 
 ## System-assigned and user-assigned managed identities
 
@@ -117,8 +117,8 @@ If you're using a  service principal or a Microsoft Entra user account, evaluate
 
 ## Next steps
 
-* [What are managed identities for Azure resources?](../managed-identities-azure-resources/overview.md) 
-* [Configure managed identities for Azure resources on a VM using the Azure portal](../managed-identities-azure-resources/qs-configure-portal-windows-vm.md)
+* [What are managed identities for Azure resources?](~/identity/managed-identities-azure-resources/overview.md) 
+* [Configure managed identities for Azure resources on a VM using the Azure portal](~/identity/managed-identities-azure-resources/qs-configure-portal-windows-vm.md)
 
 **Service accounts**
 

@@ -24,7 +24,7 @@ The first decision in the migration process is which apps to migrate, which if a
 
 Discover applications using ADFS:
 
-- **Use Microsoft Entra Connect Health for ADFS**: If you have a Microsoft Entra ID P1 or P2 license, we recommend deploying [Microsoft Entra Connect Health](../hybrid/connect/how-to-connect-health-adfs.md) to analyze the app usage in your on-premises environment. You can use the [ADFS application report](./migrate-adfs-application-activity.md) to discover ADFS applications that can be migrated and evaluate the readiness of the application to be migrated.
+- **Use Microsoft Entra Connect Health for ADFS**: If you have a Microsoft Entra ID P1 or P2 license, we recommend deploying [Microsoft Entra Connect Health](~/identity/hybrid/connect/how-to-connect-health-adfs.md) to analyze the app usage in your on-premises environment. You can use the [ADFS application report](./migrate-adfs-application-activity.md) to discover ADFS applications that can be migrated and evaluate the readiness of the application to be migrated.
 
 - If you don’t have Microsoft Entra ID P1 or P2 licenses, we recommend using the ADFS to Microsoft Entra app migration tools based on [PowerShell](https://github.com/AzureAD/Deployment-Plans/tree/master/ADFS%20to%20AzureAD%20App%20Migration). Refer to [solution guide](./migrate-adfs-apps-stages.md):
 
@@ -90,9 +90,9 @@ For certain apps using legacy authentication protocols, sometimes modernizing th
 - Apps connected to an on-premises identity or federation provider that you don't want to change.
 - Apps developed using on-premises authentication standards that you have no plans to move
 
-Microsoft Entra ID can bring great benefits to these legacy apps. You can enable modern Microsoft Entra security and governance features like [Multi-Factor Authentication](~/identity/authentication/concept-mfa-howitworks.md), [Conditional Access](../conditional-access/overview.md), [Identity Protection](../identity-protection/index.yml), [Delegated Application Access](./manage-self-service-access.md), and [Access Reviews](../governance/manage-user-access-with-access-reviews.md#create-and-perform-an-access-review) against these apps without touching the app at all!
+Microsoft Entra ID can bring great benefits to these legacy apps. You can enable modern Microsoft Entra security and governance features like [Multi-Factor Authentication](~/identity/authentication/concept-mfa-howitworks.md), [Conditional Access](~/identity/conditional-access/overview.md), [Identity Protection](~/id-protection/index.yml), [Delegated Application Access](./manage-self-service-access.md), and [Access Reviews](~/id-governance/manage-user-access-with-access-reviews.md#create-and-perform-an-access-review) against these apps without touching the app at all!
 
-- Start by extending these apps into the cloud with [Microsoft Entra application proxy](../app-proxy/application-proxy.md).
+- Start by extending these apps into the cloud with [Microsoft Entra application proxy](~/identity/app-proxy/application-proxy.md).
 - Or explore using on of our [Secure Hybrid Access (SHA) partner integrations](secure-hybrid-access.md) that you might have deployed already.
 
 ### New Line of Business (LoB) apps

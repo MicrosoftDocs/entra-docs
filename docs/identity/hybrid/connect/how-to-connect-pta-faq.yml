@@ -37,7 +37,7 @@ sections:
       - question: |
           Does Conditional Access work with Pass-through Authentication?
         answer: |
-          Yes. All [Conditional Access](../../conditional-access/overview.md) capabilities, including Microsoft Entra multifactor authentication, work with Pass-through Authentication.
+          Yes. All [Conditional Access](~/identity/conditional-access/overview.md) capabilities, including Microsoft Entra multifactor authentication, work with Pass-through Authentication.
 
       - question: |
           Does Pass-through Authentication support "Alternate ID" as the username, instead of "userPrincipalName"?
@@ -235,6 +235,6 @@ additionalContent: |
   - [Technical deep dive](how-to-connect-pta-how-it-works.md): Understand how the Pass-through Authentication feature works.
   - [Troubleshoot](tshoot-connect-pass-through-authentication.md): Learn how to resolve common problems with the Pass-through Authentication feature.
   - [Security deep dive](how-to-connect-pta-security-deep-dive.md): Get deep technical information on the Pass-through Authentication feature.
-  - [Microsoft Entra hybrid join](../../devices/how-to-hybrid-join.md): Configure Microsoft Entra hybrid join capability on your tenant for SSO across your cloud and on-premises resources.
+  - [Microsoft Entra hybrid join](~/identity/devices/how-to-hybrid-join.md): Configure Microsoft Entra hybrid join capability on your tenant for SSO across your cloud and on-premises resources.
   - [Microsoft Entra seamless SSO](how-to-connect-sso.md): Learn more about this complementary feature.
   - [UserVoice](https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789): Use the Microsoft Entra forum to file new feature requests.

@@ -108,7 +108,7 @@ Learn more:
 
 If you bring your devices to Microsoft Entra ID, you maximize user productivity with single sign-on (SSO) across cloud and on-premises resources. 
 
-Learn more: [What is a device identity?](../../devices/overview.md)
+Learn more: [What is a device identity?](~/identity/devices/overview.md)
 
 <a name='azure-ad-joined-devices'></a>
 
@@ -116,7 +116,7 @@ Learn more: [What is a device identity?](../../devices/overview.md)
 
 Microsoft Entra joined devices are joined to Microsoft Entra ID. Users sign in to the device using their organization identity.
 
-Learn more: [Microsoft Entra joined devices](../../devices/concept-directory-join.md)
+Learn more: [Microsoft Entra joined devices](~/identity/devices/concept-directory-join.md)
 
 ### Known issues and resolution
 
@@ -134,7 +134,7 @@ Allow enough time for the UPN change to sync to Microsoft Entra ID. After you ve
 
 Microsoft Entra hybrid joined devices are joined to Active Directory and Microsoft Entra ID. You can implement Microsoft Entra hybrid join if your environment has an on-premises Active Directory footprint.
  
-Learn more: [Microsoft Entra hybrid joined devices](../../devices/concept-hybrid-join.md)
+Learn more: [Microsoft Entra hybrid joined devices](~/identity/devices/concept-hybrid-join.md)
 
 ### Known issues and resolution
 
@@ -219,7 +219,7 @@ On Android and iOS. brokers like Microsoft Authenticator enable:
 
 In addition, applications can participate in other features:
 
-* [Microsoft Entra Conditional Access documentation](../../conditional-access/index.yml)
+* [Microsoft Entra Conditional Access documentation](~/identity/conditional-access/index.yml)
 * [Use Microsoft Authenticator or Intune Company Portal on Xamarin applications](~/identity-platform/msal-net-use-brokers-with-xamarin-apps.md).
 
 ### Known issues

@@ -59,7 +59,7 @@ The following additional forms of verification can be used with Microsoft Entra 
 
 You can use [security defaults](~/fundamentals/security-defaults.md) in Microsoft Entra tenants to quickly enable Microsoft Authenticator for all users. You can enable Microsoft Entra multifactor authentication to prompt users and groups for additional verification during sign-in. 
 
-For more granular controls, you can use [Conditional Access](../conditional-access/overview.md) policies to define events or applications that require MFA. These policies can allow regular sign-in when the user is on the corporate network or a registered device but prompt for additional verification factors when the user is remote or on a personal device.
+For more granular controls, you can use [Conditional Access](~/identity/conditional-access/overview.md) policies to define events or applications that require MFA. These policies can allow regular sign-in when the user is on the corporate network or a registered device but prompt for additional verification factors when the user is remote or on a personal device.
 
 ![Diagram that shows how Conditional Access works to secure the sign-in process.](media/tutorial-enable-azure-mfa/conditional-access-overview.png)
 

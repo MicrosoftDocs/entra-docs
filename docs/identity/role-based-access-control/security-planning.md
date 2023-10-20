@@ -158,7 +158,7 @@ Ensure all users have signed into their administrative accounts and changed thei
 
 Microsoft Entra Connect synchronizes a hash of the hash of a user's password from on-premises Active Directory to a cloud-based Microsoft Entra organization. You can use password hash synchronization as a backup if you use federation with Active Directory Federation Services (AD FS). This backup can be useful if your on-premises Active Directory or AD FS servers are temporarily unavailable.
 
-Password hash sync enables users to sign in to a service by using the same password they use to sign in to their on-premises Active Directory instance. Password hash sync allows Identity Protection to detect compromised credentials by comparing password hashes with passwords known to be compromised. For more information, see [Implement password hash synchronization with Microsoft Entra Connect Sync](../hybrid/connect/how-to-connect-password-hash-synchronization.md).
+Password hash sync enables users to sign in to a service by using the same password they use to sign in to their on-premises Active Directory instance. Password hash sync allows Identity Protection to detect compromised credentials by comparing password hashes with passwords known to be compromised. For more information, see [Implement password hash synchronization with Microsoft Entra Connect Sync](~/identity/hybrid/connect/how-to-connect-password-hash-synchronization.md).
 
 <a name='require-multi-factor-authentication-for-users-in-privileged-roles-and-exposed-users'></a>
 
@@ -174,7 +174,7 @@ If you use Windows Hello for Business, the MFA requirement can be met using the 
 
 #### Configure Identity Protection
 
-Microsoft Entra ID Protection is an algorithm-based monitoring and reporting tool that detects potential vulnerabilities affecting your organization's identities. You can configure automated responses to those detected suspicious activities, and take appropriate action to resolve them. For more information, see [Microsoft Entra ID Protection](../identity-protection/overview-identity-protection.md).
+Microsoft Entra ID Protection is an algorithm-based monitoring and reporting tool that detects potential vulnerabilities affecting your organization's identities. You can configure automated responses to those detected suspicious activities, and take appropriate action to resolve them. For more information, see [Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md).
 
 #### Obtain your Microsoft 365 Secure Score (if using Microsoft 365)
 
@@ -268,7 +268,7 @@ The National Institute of Standards and Technology's (NIST) provides guidelines 
 
 #### Implement Privileged Identity Management (PIM) for JIT to additional administrative roles
 
-For Microsoft Entra ID, use [Microsoft Entra Privileged Identity Management](../privileged-identity-management/pim-configure.md) capability. Time-limited activation of privileged roles works by enabling you to:
+For Microsoft Entra ID, use [Microsoft Entra Privileged Identity Management](~/id-governance/privileged-identity-management/pim-configure.md) capability. Time-limited activation of privileged roles works by enabling you to:
 
 * Activate administrator privileges to do a specific task
 * Enforce MFA during the activation process
@@ -284,7 +284,7 @@ If you're already using Microsoft Entra Privileged Identity Management, adjust t
 
 #### Determine exposure to password-based sign-in protocols (if using Exchange Online)
 
-We recommend you identify every potential user who could be catastrophic to the organization if their credentials were compromised. For those users, put in place strong authentication requirements and use Microsoft Entra Conditional Access to keep them from signing in to their email using username and password. You can block [legacy authentication using Conditional Access](../conditional-access/block-legacy-authentication.md), and you can [block basic authentication](/exchange/clients-and-mobile-in-exchange-online/disable-basic-authentication-in-exchange-online) through Exchange online.
+We recommend you identify every potential user who could be catastrophic to the organization if their credentials were compromised. For those users, put in place strong authentication requirements and use Microsoft Entra Conditional Access to keep them from signing in to their email using username and password. You can block [legacy authentication using Conditional Access](~/identity/conditional-access/block-legacy-authentication.md), and you can [block basic authentication](/exchange/clients-and-mobile-in-exchange-online/disable-basic-authentication-in-exchange-online) through Exchange online.
 
 #### Complete a roles review assessment for Microsoft 365 roles (if using Microsoft 365)
 
@@ -321,7 +321,7 @@ You don't usually need to give users unrestricted permissions to all your Azure 
 
 #### Implement PIM for Microsoft Entra administrator roles
 
-Use Privileged identity Management with Microsoft Entra administrator roles to manage, control, and monitor access to Azure resources. Using PIM protects by lowering the exposure time of privileges and increasing your visibility into their use through reports and alerts. For more information, see [What is Microsoft Entra Privileged Identity Management](../privileged-identity-management/pim-configure.md).
+Use Privileged identity Management with Microsoft Entra administrator roles to manage, control, and monitor access to Azure resources. Using PIM protects by lowering the exposure time of privileges and increasing your visibility into their use through reports and alerts. For more information, see [What is Microsoft Entra Privileged Identity Management](~/id-governance/privileged-identity-management/pim-configure.md).
 
 #### Use Azure log integrations to send relevant Azure logs to your SIEM systems
 
@@ -398,7 +398,7 @@ Determine if current built-in Microsoft Entra administrator roles are still up t
 
 #### Review users who have administration of Microsoft Entra joined devices
 
-For more information, see [How to configure Microsoft Entra hybrid joined devices](../devices/hybrid-join-plan.md).
+For more information, see [How to configure Microsoft Entra hybrid joined devices](~/identity/devices/hybrid-join-plan.md).
 
 #### Review members of [built-in Microsoft 365 admin roles](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d)
 Skip this step if you're not using Microsoft 365.
@@ -428,7 +428,7 @@ Determine if you need to [transfer ownership of an Azure subscription to another
 
 4. Get help from Microsoft by [opening an Azure support request](/azure/azure-portal/supportability/how-to-create-azure-support-request).
 
-5. Look at the [Microsoft Entra sign-in reports](../reports-monitoring/overview-monitoring-health.md). There might be some time between an event occurring and when it's included in the report.
+5. Look at the [Microsoft Entra sign-in reports](~/identity/monitoring-health/overview-monitoring-health.md). There might be some time between an event occurring and when it's included in the report.
 
 6. For hybrid environments, if your on-premises infrastructure federated and your AD FS server aren't available, you can temporarily switch from federated authentication to use password hash sync. This switch reverts the domain federation back to managed authentication until the AD FS server becomes available.
 

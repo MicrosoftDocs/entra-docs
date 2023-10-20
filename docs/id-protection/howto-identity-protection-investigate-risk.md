@@ -122,7 +122,7 @@ Administrators can then choose to return to the user's risk or sign-ins report t
 
 ## Investigation framework
 
-Organizations may use the following frameworks to begin their investigation into any suspicious activity. Investigations may require having a conversation with the user in question, review of the [sign-in logs](../reports-monitoring/concept-sign-ins.md), or review of the [audit logs](../reports-monitoring/concept-audit-logs.md) to name a few.
+Organizations may use the following frameworks to begin their investigation into any suspicious activity. Investigations may require having a conversation with the user in question, review of the [sign-in logs](~/identity/monitoring-health/concept-sign-ins.md), or review of the [audit logs](~/identity/monitoring-health/concept-audit-logs.md) to name a few.
 
 1. Check the logs and validate whether the suspicious activity is normal for the given user.
    1. Look at the user’s past activities including at least the following properties to see if they're normal for the given user. 

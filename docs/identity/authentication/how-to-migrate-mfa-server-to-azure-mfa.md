@@ -58,7 +58,7 @@ Microsoft's MFA server can be integrated with many systems, and you must evaluat
 
 Common ways to think about moving users in batches include moving them by regions, departments, or roles such as administrators. You should move user accounts iteratively, starting with test and pilot groups, and make sure you have a rollback plan in place. 
 
-You can use the [MFA Server Migration Utility](how-to-mfa-server-migration-utility.md) to synchronize MFA data stored in the on-premises Azure MFA Server to Microsoft Entra multifactor authentication and use [Staged Rollout](../hybrid/connect/how-to-connect-staged-rollout.md) to reroute users to Azure MFA. Staged Rollout helps you test without making any changes to your domain federation settings.
+You can use the [MFA Server Migration Utility](how-to-mfa-server-migration-utility.md) to synchronize MFA data stored in the on-premises Azure MFA Server to Microsoft Entra multifactor authentication and use [Staged Rollout](~/identity/hybrid/connect/how-to-connect-staged-rollout.md) to reroute users to Azure MFA. Staged Rollout helps you test without making any changes to your domain federation settings.
 
 To help users to differentiate the newly added account from the old account linked to the MFA Server, make sure the Account name for the Mobile App on the MFA Server is named in a way to distinguish the two accounts. 
 For example, the Account name that appears under Mobile App on the MFA Server has been renamed to **On-Premises MFA Server**. 
@@ -69,7 +69,7 @@ We therefore recommend that regardless of the migration path you choose, that yo
 
 #### Migrating hardware security keys
 
-Microsoft Entra ID provides support for OATH hardware tokens. You can use the [MFA Server Migration Utility](how-to-mfa-server-migration-utility.md) to synchronize MFA settings between MFA Server and Microsoft Entra multifactor authentication and use [Staged Rollout](../hybrid/connect/how-to-connect-staged-rollout.md) to test user migrations without changing domain federation settings. 
+Microsoft Entra ID provides support for OATH hardware tokens. You can use the [MFA Server Migration Utility](how-to-mfa-server-migration-utility.md) to synchronize MFA settings between MFA Server and Microsoft Entra multifactor authentication and use [Staged Rollout](~/identity/hybrid/connect/how-to-connect-staged-rollout.md) to test user migrations without changing domain federation settings. 
 
 If you only want to migrate OATH hardware tokens, you need to [upload tokens to Microsoft Entra ID by using a CSV file](concept-authentication-oath-tokens.md#oath-hardware-tokens-preview), commonly referred to as a "seed file". 
 The seed file contains the secret keys, token serial numbers, and other necessary information needed to upload the tokens into Microsoft Entra ID. 
@@ -96,7 +96,7 @@ Our recommendations:
 - Use Microsoft Entra ID for authentication as it enables more robust security and governance
 - Move applications to Microsoft Entra ID if possible
 
-To select the best user authentication method for your organization, see [Choose the right authentication method for your Microsoft Entra hybrid identity solution](../hybrid/connect/choose-ad-authn.md). 
+To select the best user authentication method for your organization, see [Choose the right authentication method for your Microsoft Entra hybrid identity solution](~/identity/hybrid/connect/choose-ad-authn.md). 
 We recommend that you use Password Hash Synchronization (PHS).
 
 ### Passwordless authentication
@@ -145,7 +145,7 @@ Others might include:
 - Citrix Gateway
   - [Citrix Gateway](https://docs.citrix.com/en-us/citrix-gateway) supports both RADIUS and NPS extension integration, and a SAML integration.
 - Cisco VPN
-  - The Cisco VPN supports both RADIUS and [SAML authentication for SSO](../saas-apps/cisco-anyconnect.md).
+  - The Cisco VPN supports both RADIUS and [SAML authentication for SSO](~/identity/saas-apps/cisco-anyconnect.md).
   - By moving from RADIUS authentication to SAML, you can integrate the Cisco VPN without deploying the NPS extension.
 - All VPNs
   - We recommend federating your VPN as a SAML app if possible. This federation will allow you to use Conditional Access. For more information, see a [list of VPN vendors that are integrated into the Microsoft Entra ID](~/identity/enterprise-apps/secure-hybrid-access.md#secure-hybrid-access-through-azure-ad-partner-integrations) App gallery.

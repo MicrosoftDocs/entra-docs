@@ -380,11 +380,11 @@ Once you've started a provisioning job, you can monitor the status.
 
     :::image type="content" source="./media/cross-tenant-synchronization-configure/provisioning-job-start.png" alt-text="Screenshot of the Configurations Overview page that shows the status of the provisioning cycle." lightbox="./media/cross-tenant-synchronization-configure/provisioning-job-start.png":::
 
-1. Select **Provisioning logs** to determine which users have been provisioned successfully or unsuccessfully. By default, the logs are filtered by the service principal ID of the configuration. For more information, see [Provisioning logs in Microsoft Entra ID](../reports-monitoring/concept-provisioning-logs.md?toc=/azure/active-directory/multi-tenant-organizations/toc.json).
+1. Select **Provisioning logs** to determine which users have been provisioned successfully or unsuccessfully. By default, the logs are filtered by the service principal ID of the configuration. For more information, see [Provisioning logs in Microsoft Entra ID](~/identity/monitoring-health/concept-provisioning-logs.md?toc=/azure/active-directory/multi-tenant-organizations/toc.json).
 
     :::image type="content" source="./media/cross-tenant-synchronization-configure/provisioning-logs.png" alt-text="Screenshot of the Provisioning logs page that lists the log entries and their status." lightbox="./media/cross-tenant-synchronization-configure/provisioning-logs.png":::
 
-1. Select **Audit logs** to view all logged events in Microsoft Entra ID. For more information, see [Audit logs in Microsoft Entra ID](../reports-monitoring/concept-audit-logs.md).
+1. Select **Audit logs** to view all logged events in Microsoft Entra ID. For more information, see [Audit logs in Microsoft Entra ID](~/identity/monitoring-health/concept-audit-logs.md).
 
     :::image type="content" source="./media/cross-tenant-synchronization-configure/audit-logs-source.png" alt-text="Screenshot of the Audit logs page that lists the log entries and their status." lightbox="./media/cross-tenant-synchronization-configure/audit-logs-source.png":::
 

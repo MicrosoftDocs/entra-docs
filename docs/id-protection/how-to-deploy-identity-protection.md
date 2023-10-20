@@ -21,13 +21,13 @@ Microsoft Entra ID Protection detects identity-based risks, reports them, and al
 
 :::image type="content" source="media/how-to-deploy-identity-protection/identity-protection-overview.png" alt-text="Screenshot showing the Identity Protection Overview page showing some risky users and sign-ins." lightbox="media/how-to-deploy-identity-protection/identity-protection-overview.png":::
 
-This deployment plan extends concepts introduced in the [Conditional Access deployment plan](../conditional-access/plan-conditional-access.md).
+This deployment plan extends concepts introduced in the [Conditional Access deployment plan](~/identity/conditional-access/plan-conditional-access.md).
 
 ## Prerequisites
 
 * A working Microsoft Entra tenant with Microsoft Entra ID P2, or trial license enabled. If needed, [create one for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
    * Microsoft Entra ID P2 is required to include Identity Protection risk in Conditional Access policies.
-* Administrators who interact with Identity Protection must have one or more of the following role assignments depending on the tasks they're performing. To follow the [Zero Trust principle of least privilege](/security/zero-trust/), consider using [Privileged Identity Management (PIM)](../privileged-identity-management/pim-configure.md) to just-in-time activate privileged role assignments.
+* Administrators who interact with Identity Protection must have one or more of the following role assignments depending on the tasks they're performing. To follow the [Zero Trust principle of least privilege](/security/zero-trust/), consider using [Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/pim-configure.md) to just-in-time activate privileged role assignments.
    * Read Identity Protection and Conditional Access policies and configurations 
       * [Security Reader](~/identity/role-based-access-control/permissions-reference.md#security-reader)
       * [Global Reader](~/identity/role-based-access-control/permissions-reference.md#global-reader)
@@ -76,7 +76,7 @@ It's important to configure named locations in Conditional Access and add your V
 
 ### Report only mode 
 
-[Report-only mode](../conditional-access/howto-conditional-access-insights-reporting.md) is a Conditional Access policy state that allows administrators to evaluate the effect of Conditional Access policies before enforcing them in their environment.
+[Report-only mode](~/identity/conditional-access/howto-conditional-access-insights-reporting.md) is a Conditional Access policy state that allows administrators to evaluate the effect of Conditional Access policies before enforcing them in their environment.
 
 ## Step 3: Configure your policies
 
@@ -100,7 +100,7 @@ The article [Configure and enable risk policies](howto-identity-protection-confi
 
 ### Monitor and investigate
 
-The [Identity Protection workbook](../reports-monitoring/workbook-risk-analysis.md) can help monitor and look for patterns in your tenant. Monitor this workbook for trends and also Conditional Access Report Only mode results to see if there are any changes that need to be made, for example, additions to named locations.
+The [Identity Protection workbook](~/identity/monitoring-health/workbook-risk-analysis.md) can help monitor and look for patterns in your tenant. Monitor this workbook for trends and also Conditional Access Report Only mode results to see if there are any changes that need to be made, for example, additions to named locations.
  
 Microsoft Defender for Cloud Apps provides an investigation framework organizations can use as a starting point. For more information, see the article [How to investigate anomaly detection alerts](/defender-cloud-apps/investigate-anomaly-alerts).
 

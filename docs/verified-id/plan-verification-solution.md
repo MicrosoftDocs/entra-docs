@@ -126,7 +126,7 @@ Verifiable credentials can be used to enable faster onboarding by replacing some
 
    * To invite users to Microsoft Entra ID using B2B collaboration, the RP website can use a service principal that is granted the MS Graph scope of `User.Invite.All` to create invitations.
 
-   * If your RP is running in Azure, use Managed Identities to call Microsoft Graph. Using managed identities removes the risks of managing service principal credentials in code or configuration files. To learn more about Managed identities, go to [Managed identities for Azure resources.](../managed-identities-azure-resources/overview.md)
+   * If your RP is running in Azure, use Managed Identities to call Microsoft Graph. Using managed identities removes the risks of managing service principal credentials in code or configuration files. To learn more about Managed identities, go to [Managed identities for Azure resources.](~/identity/managed-identities-azure-resources/overview.md)
 
 ### Accessing high-value applications inside organizations 
 
@@ -219,7 +219,7 @@ Similarly, you can use a VC to generate a temporary access pass that allows user
 
 * Grant the RP website the ability to use a service principal granted the MS Graph scope `UserAuthenticationMethod.ReadWrite.All` to reset authentication methods. Don’t grant `User.ReadWrite.All`, which enables the ability to create and delete users.
 
-* If your RP is running in Azure, use Managed Identities to call Microsoft Graph. Managed Identities removes the risks around managing service principal credentials in code or configuration files. For more information, see [Managed identities for Azure resources.](../managed-identities-azure-resources/overview.md)
+* If your RP is running in Azure, use Managed Identities to call Microsoft Graph. Managed Identities removes the risks around managing service principal credentials in code or configuration files. For more information, see [Managed identities for Azure resources.](~/identity/managed-identities-azure-resources/overview.md)
 
 ## Plan for identity management 
 

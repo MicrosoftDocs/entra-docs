@@ -168,7 +168,7 @@ Use the following checklist to enhance application security.
 #### Conditional Access and identity protection
 
 * The modern security perimeter now extends beyond an organization's network. The perimeter includes user and device identity. 
-  * See, [What is Conditional Access?](../conditional-access/overview.md)
+  * See, [What is Conditional Access?](~/identity/conditional-access/overview.md)
 * Enhance the security of Azure AD B2C with Microsoft Entra ID Protection
   * See, [Identity Protection and Conditional Access in Azure AD B2C](/azure/active-directory-b2c/conditional-access-identity-protection-overview)
 

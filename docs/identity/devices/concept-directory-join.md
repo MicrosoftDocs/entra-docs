@@ -39,7 +39,7 @@ Any organization can deploy Microsoft Entra joined devices no matter the size or
 |   | Conditional Access through MDM enrollment and MDM compliance evaluation |
 |   | [Self-service Password Reset and Windows Hello PIN reset on lock screen](~/identity/authentication/howto-sspr-windows.md) |
 
-Microsoft Entra joined devices are signed in to using an organizational Microsoft Entra account. Access to resources can be controlled based on Microsoft Entra account and [Conditional Access policies](../conditional-access/howto-conditional-access-policy-compliant-device.md) applied to the device.
+Microsoft Entra joined devices are signed in to using an organizational Microsoft Entra account. Access to resources can be controlled based on Microsoft Entra account and [Conditional Access policies](~/identity/conditional-access/howto-conditional-access-policy-compliant-device.md) applied to the device.
 
 Administrators can secure and further control Microsoft Entra joined devices using Mobile Device Management (MDM) tools like Microsoft Intune or in co-management scenarios using Microsoft Configuration Manager. These tools provide a means to enforce organization-required configurations like: 
 

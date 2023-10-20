@@ -72,7 +72,7 @@ Once the agent is installed, no further configuration is necessary on-premises, 
 1.  Test provisioning a few users [on demand](~/identity/app-provisioning/provision-on-demand.md).
 1.  Add more users into scope by assigning them to your application.
 1.  Go to the **Provisioning** pane, and select **Start provisioning**.
-1.  Monitor using the [provisioning logs](../reports-monitoring/concept-provisioning-logs.md).
+1.  Monitor using the [provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md).
 
 The following video provides an overview of on-premises provisioning.
 > [!VIDEO https://www.youtube.com/embed/QdfdpaFolys]

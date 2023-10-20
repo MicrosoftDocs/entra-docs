@@ -46,8 +46,8 @@ Remote users need to securely single sign-on (SSO) into to on-premises applicati
 
 ## Implement header-based authentication with Microsoft Entra ID
 
-* [Add an on-premises application for remote access through Application Proxy in Microsoft Entra ID](../app-proxy/application-proxy-add-on-premises-application.md)  
+* [Add an on-premises application for remote access through Application Proxy in Microsoft Entra ID](~/identity/app-proxy/application-proxy-add-on-premises-application.md)  
 
-* [Header-based authentication for single sign-on with Application Proxy and PingAccess](../app-proxy/application-proxy-configure-single-sign-on-with-headers.md) 
+* [Header-based authentication for single sign-on with Application Proxy and PingAccess](~/identity/app-proxy/application-proxy-configure-single-sign-on-with-headers.md) 
 
 * [Secure legacy apps with app delivery controllers and networks](~/identity/enterprise-apps/secure-hybrid-access.md)

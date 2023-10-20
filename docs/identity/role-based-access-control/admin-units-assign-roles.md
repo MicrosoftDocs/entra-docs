@@ -98,7 +98,7 @@ You can assign a Microsoft Entra role with an administrative unit scope by using
    ![Select the role to scope and then select Add assignments](./media/admin-units-assign-roles/select-add-assignment.png)
 
 > [!Note]
-> To assign a role on an administrative unit by using Microsoft Entra Privileged Identity Management (PIM), see [Assign Microsoft Entra roles in PIM](../privileged-identity-management/pim-how-to-add-role-to-user.md?tabs=new#assign-a-role-with-restricted-scope).
+> To assign a role on an administrative unit by using Microsoft Entra Privileged Identity Management (PIM), see [Assign Microsoft Entra roles in PIM](~/id-governance/privileged-identity-management/pim-how-to-add-role-to-user.md?tabs=new#assign-a-role-with-restricted-scope).
 
 ### PowerShell
 

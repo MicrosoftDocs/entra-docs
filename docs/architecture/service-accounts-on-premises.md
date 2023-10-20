@@ -108,7 +108,7 @@ After you've found the service accounts in your on-premises environment, documen
 
 * **Anticipated lifetime and periodic attestation**: How long you anticipate that this account will be live, and how often the owner should review and attest to its ongoing need.
 
-* **Password security**: For user and local computer accounts, where the password is stored. Ensure that passwords are kept secure, and document who has access. Consider using [Privileged Identity Management](../privileged-identity-management/pim-configure.md) to secure stored passwords. 
+* **Password security**: For user and local computer accounts, where the password is stored. Ensure that passwords are kept secure, and document who has access. Consider using [Privileged Identity Management](~/id-governance/privileged-identity-management/pim-configure.md) to secure stored passwords. 
 
 ## Next steps
 

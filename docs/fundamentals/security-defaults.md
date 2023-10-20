@@ -36,7 +36,7 @@ These basic controls include:
 ### Who should use Conditional Access?
 
 - If you're an organization with Microsoft Entra ID P1 or P2 licenses, security defaults are probably not right for you.
-- If your organization has complex security requirements, you should consider [Conditional Access](../conditional-access/concept-conditional-access-policy-common.md#template-categories).
+- If your organization has complex security requirements, you should consider [Conditional Access](~/identity/conditional-access/concept-conditional-access-policy-common.md#template-categories).
 
 ## Enabling security defaults
 
@@ -129,7 +129,7 @@ Today, most compromising sign-in attempts come from legacy authentication. Legac
 After security defaults are enabled in your tenant, all authentication requests made by an older protocol will be blocked. Security defaults blocks Exchange Active Sync basic authentication.
 
 > [!WARNING]
-> Before you enable security defaults, make sure your administrators aren't using older authentication protocols. For more information, see [How to move away from legacy authentication](../conditional-access/block-legacy-authentication.md).
+> Before you enable security defaults, make sure your administrators aren't using older authentication protocols. For more information, see [How to move away from legacy authentication](~/identity/conditional-access/block-legacy-authentication.md).
 
 - [How to set up a multifunction device or application to send email using Microsoft 365](/exchange/mail-flow-best-practices/how-to-set-up-a-multifunction-device-or-application-to-send-email-using-microsoft-365-or-office-365)
 
@@ -209,7 +209,7 @@ Recommended steps when moving from security defaults
 
 Organizations who would like to test out the features of Conditional Access can [sign up for a free trial](get-started-premium.md) to get started.
 
-After administrators disable security defaults, organizations should immediately enable Conditional Access policies to protect their organization. These policies should include at least those policies in the [secure foundations category of Conditional Access templates](../conditional-access/concept-conditional-access-policy-common.md?tabs=secure-foundation#template-categories). Organizations with Microsoft Entra ID P2 licenses that include Microsoft Entra ID Protection can expand on this list to include [user and sign in risk-based policies](../identity-protection/howto-identity-protection-configure-risk-policies.md) to further strengthen their posture. 
+After administrators disable security defaults, organizations should immediately enable Conditional Access policies to protect their organization. These policies should include at least those policies in the [secure foundations category of Conditional Access templates](~/identity/conditional-access/concept-conditional-access-policy-common.md?tabs=secure-foundation#template-categories). Organizations with Microsoft Entra ID P2 licenses that include Microsoft Entra ID Protection can expand on this list to include [user and sign in risk-based policies](~/id-protection/howto-identity-protection-configure-risk-policies.md) to further strengthen their posture. 
 
 We recommend that you exclude at least one account from your Conditional Access policies. These excluded **emergency access** or **break-glass** accounts help prevent tenant-wide account lockout. In the unlikely scenario all administrators are locked out of your tenant, your emergency-access administrative account can be used to log into the tenant to take steps to recover access. For more information, see the article [Manage emergency access accounts](~/identity/role-based-access-control/security-emergency-access.md).
 

@@ -24,7 +24,7 @@ This article explains how to migrate from running federated servers such as Acti
 
 ## Staged Rollout 
 
-[Staged Rollout](../hybrid/connect/how-to-connect-staged-rollout.md) helps customers transition from AD FS to Microsoft Entra ID by testing cloud authentication with selected groups of users before switching the entire tenant. 
+[Staged Rollout](~/identity/hybrid/connect/how-to-connect-staged-rollout.md) helps customers transition from AD FS to Microsoft Entra ID by testing cloud authentication with selected groups of users before switching the entire tenant. 
 
 ## Enable Staged Rollout for certificate-based authentication on your tenant
 
@@ -38,7 +38,7 @@ To configure Staged Rollout, follow these steps:
 1. On the **Enable Staged Rollout** feature page, click **On** for the option [Certificate-based authentication](./certificate-based-authentication-federation-get-started.md)
 1. Click **Manage groups** and add groups you want to be part of cloud authentication. To avoid a time-out, ensure that the security groups contain no more than 200 members initially.
 
-For more information, see [Staged Rollout](../hybrid/connect/how-to-connect-staged-rollout.md).
+For more information, see [Staged Rollout](~/identity/hybrid/connect/how-to-connect-staged-rollout.md).
 
 >[!NOTE]
 > When Staged rollout is enabled for a user, the user is considered a managed user and all authentication will happen at Microsoft Entra ID. For a federated Tenant, if CBA is enabled on Staged Rollout, password authentication only works if PHS is enabled too otherwise password authentication will fail.

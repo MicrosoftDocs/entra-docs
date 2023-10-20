@@ -49,7 +49,7 @@ Click through to see all the AD forests that have been enabled for Seamless SSO.
 
 ## Sign-in failure reasons in the [Microsoft Entra admin center](https://entra.microsoft.com) (needs a Premium license)
 
-If your tenant has a Microsoft Entra ID P1 or P2 license associated with it, you can also look at the [sign-in activity report](../../reports-monitoring/concept-sign-ins.md) inside of Microsoft Entra ID in the [Microsoft Entra admin center](https://entra.microsoft.com).
+If your tenant has a Microsoft Entra ID P1 or P2 license associated with it, you can also look at the [sign-in activity report](~/identity/monitoring-health/concept-sign-ins.md) inside of Microsoft Entra ID in the [Microsoft Entra admin center](https://entra.microsoft.com).
 
 ![Screenshot of the Microsoft Entra admin center: Sign-ins report.](media/tshoot-connect-sso/sso9.png)
 
@@ -73,9 +73,9 @@ Browse to **Identity** > **Monitoring & health** > **Sign-ins** in the [[Microso
 Use the following checklist to troubleshoot Seamless SSO problems:
 
 - Ensure that the Seamless SSO feature is enabled in Microsoft Entra Connect. If you can't enable the feature (for example, due to a blocked port), ensure that you have all the [prerequisites](how-to-connect-sso-quick-start.md#step-1-check-the-prerequisites) in place.
-- If you have enabled both [Microsoft Entra join](../../devices/overview.md) and Seamless SSO on your tenant, ensure that the issue is not with Microsoft Entra join. SSO from Microsoft Entra join takes precedence over Seamless SSO if the device is both registered with Microsoft Entra ID and domain-joined. With SSO from Microsoft Entra join the user sees a sign-in tile that says "Connected to Windows".
+- If you have enabled both [Microsoft Entra join](~/identity/devices/overview.md) and Seamless SSO on your tenant, ensure that the issue is not with Microsoft Entra join. SSO from Microsoft Entra join takes precedence over Seamless SSO if the device is both registered with Microsoft Entra ID and domain-joined. With SSO from Microsoft Entra join the user sees a sign-in tile that says "Connected to Windows".
 - Ensure that the Microsoft Entra URL (`https://autologon.microsoftazuread-sso.com`) is part of the user's Intranet zone settings.
-- Ensure that the corporate device is joined to the Active Directory domain. The device _doesn't_ need to be [Microsoft Entra joined](../../devices/overview.md) for Seamless SSO to work.
+- Ensure that the corporate device is joined to the Active Directory domain. The device _doesn't_ need to be [Microsoft Entra joined](~/identity/devices/overview.md) for Seamless SSO to work.
 - Ensure that the user is logged on to the device through an Active Directory domain account.
 - Ensure that the user's account is from an Active Directory forest where Seamless SSO has been set up.
 - Ensure that the device is connected to the corporate network.

@@ -35,7 +35,7 @@ Some Microsoft services aren't available in all locations. For group license ass
 1. Select the **Save** button.
 
 > [!NOTE]
-> Group license assignment will never modify an existing usage location value on a user. We recommend that you always set usage location as part of your user creation flow in Microsoft Entra ID (for example, via [Microsoft Entra Connect](../hybrid/connect/whatis-azure-ad-connect.md) configuration). Following such a process ensures the result of license assignment is always correct, and users do not receive services in locations that are not allowed.
+> Group license assignment will never modify an existing usage location value on a user. We recommend that you always set usage location as part of your user creation flow in Microsoft Entra ID (for example, via [Microsoft Entra Connect](~/identity/hybrid/connect/whatis-azure-ad-connect.md) configuration). Following such a process ensures the result of license assignment is always correct, and users do not receive services in locations that are not allowed.
 
 ## Use group-based licensing with dynamic groups
 
@@ -115,7 +115,7 @@ You can use a PowerShell script to check if users have a license assigned direct
 
 ## Use Audit logs to monitor group-based licensing activity
 
-You can use [Microsoft Entra audit logs](../reports-monitoring/concept-audit-logs.md) to see all activity related to group-based licensing, including:
+You can use [Microsoft Entra audit logs](~/identity/monitoring-health/concept-audit-logs.md) to see all activity related to group-based licensing, including:
 - who changed licenses on groups
 - when the system started processing a group license change, and when it finished
 - what license changes were made to a user as a result of a group license assignment.

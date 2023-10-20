@@ -23,7 +23,7 @@ Here are some benefits of integrating applications with Microsoft Entra ID via D
 * A [Zero Trust](https://www.microsoft.com/security/business/zero-trust) security model adapts to modern environments and embraces a hybrid workplace while it helps protect people, devices, apps, and data.
 * [Single sign-on](https://azure.microsoft.com/solutions/active-directory-sso/#overview) provides secure and seamless access for device users and apps from any location.
 * [Multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md) prompts users during sign-in for forms of identification, such as a code on their device or a fingerprint scan.
-* [Conditional Access](../conditional-access/overview.md) provides policies as if/then statements. If a user wants to access a resource, then they must complete an action.
+* [Conditional Access](~/identity/conditional-access/overview.md) provides policies as if/then statements. If a user wants to access a resource, then they must complete an action.
 * [Datawiza](https://www.microsoft.com/security/blog/2022/05/17/easy-authentication-and-authorization-in-azure-active-directory-with-no-code-datawiza/) provides authentication and authorization in Microsoft Entra ID with no code. Use web applications such as Oracle JDE, Oracle EBS, Oracle Siebel, and home-grown apps.
 * Use the [Datawiza Cloud Management Console](https://console.datawiza.com) (DCMC) to manage access to applications in public clouds and on-premises.
 
@@ -46,7 +46,7 @@ To complete the steps in this article, you need:
 * A Microsoft Entra tenant linked to the Azure subscription.
 * A [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) role.
 * Docker and Docker Compose, to run DAP. For more information, see [Get Docker](https://docs.docker.com/get-docker/) and [Docker Compose Overview](https://docs.docker.com/compose/install/).
-* User identities synchronized from an on-premises directory to Microsoft Entra ID, or created in Microsoft Entra ID and flowed back to your on-premises directory. For more information, see [Microsoft Entra Connect Sync: Understand and customize synchronization](../hybrid/connect/how-to-connect-sync-whatis.md).
+* User identities synchronized from an on-premises directory to Microsoft Entra ID, or created in Microsoft Entra ID and flowed back to your on-premises directory. For more information, see [Microsoft Entra Connect Sync: Understand and customize synchronization](~/identity/hybrid/connect/how-to-connect-sync-whatis.md).
 * An Oracle EBS environment.
 
 ## Configure the Oracle EBS environment for SSO and create the DBC file

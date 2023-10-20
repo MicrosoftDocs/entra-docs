@@ -33,7 +33,7 @@ Microsoft Entra multifactor authentication helps safeguard access to data and ap
 For details, see [how to enable multifactor authentication](how-to-multifactor-authentication-customers.md).
 ## Identity protection
 
-Microsoft Entra [Identity Protection](../../identity-protection/overview-identity-protection.md) provides ongoing risk detection for your customer tenant. It allows you to discover, investigate, and remediate identity-based risks. Identity Protection allows organizations to accomplish three key tasks:
+Microsoft Entra [Identity Protection](~/id-protection/overview-identity-protection.md) provides ongoing risk detection for your customer tenant. It allows you to discover, investigate, and remediate identity-based risks. Identity Protection allows organizations to accomplish three key tasks:
 
 - Automate the detection and remediation of identity-based risks.
 

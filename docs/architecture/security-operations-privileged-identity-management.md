@@ -29,7 +29,7 @@ You're entirely responsible for all layers of security for your on-premises IT e
 
 * For more information on securing access for privileged users, see [Securing Privileged access for hybrid and cloud deployments in Microsoft Entra ID](~/identity/role-based-access-control/security-planning.md).
 
-* For a wide range of videos, how-to guides, and content of key concepts for privileged identity, visit [Privileged Identity Management documentation](../privileged-identity-management/index.yml).
+* For a wide range of videos, how-to guides, and content of key concepts for privileged identity, visit [Privileged Identity Management documentation](~/id-governance/privileged-identity-management/index.yml).
 
 Privileged Identity Management (PIM) is a Microsoft Entra service that enables you to manage, control, and monitor access to important resources in your organization. These resources include resources in Microsoft Entra ID, Azure, and other Microsoft Online Services such as Microsoft 365 or Microsoft Intune. You can use PIM to help mitigate the following risks:
 
@@ -47,9 +47,9 @@ Use this article provides guidance to set baselines, audit sign-ins, and usage o
 
 The log files you use for investigation and monitoring are:
 
-* [Microsoft Entra audit logs](../reports-monitoring/concept-audit-logs.md)
+* [Microsoft Entra audit logs](~/identity/monitoring-health/concept-audit-logs.md)
 
-* [Sign-in logs](../reports-monitoring/concept-sign-ins.md)
+* [Sign-in logs](~/identity/monitoring-health/concept-sign-ins.md)
 
 * [Microsoft 365 Audit logs](/microsoft-365/compliance/auditing-solutions-overview)
 
@@ -63,11 +63,11 @@ In the Azure portal, view the Microsoft Entra audit logs and download them as co
 
 * [**Azure Monitor**](/azure/azure-monitor/overview) – enables automated monitoring and alerting of various conditions. Can create or use workbooks to combine data from different sources.
 
-* [**Azure Event Hubs**](/azure/event-hubs/event-hubs-about) **integrated with a SIEM**- [Microsoft Entra logs can be integrated to other SIEMs](../reports-monitoring/howto-stream-logs-to-event-hub.md) such as Splunk, ArcSight, QRadar, and Sumo Logic via the Azure Event Hubs integration.
+* [**Azure Event Hubs**](/azure/event-hubs/event-hubs-about) **integrated with a SIEM**- [Microsoft Entra logs can be integrated to other SIEMs](~/identity/monitoring-health/howto-stream-logs-to-event-hub.md) such as Splunk, ArcSight, QRadar, and Sumo Logic via the Azure Event Hubs integration.
 
 * [**Microsoft Defender for Cloud Apps**](/cloud-app-security/what-is-cloud-app-security) – enables you to discover and manage apps, govern across apps and resources, and check your cloud apps’ compliance.
 
-* **[Securing workload identities with Identity Protection Preview](../identity-protection/concept-workload-identity-risk.md)** - Used to detect risk on workload identities across sign-in behavior and offline indicators of compromise.
+* **[Securing workload identities with Identity Protection Preview](~/id-protection/concept-workload-identity-risk.md)** - Used to detect risk on workload identities across sign-in behavior and offline indicators of compromise.
 
 The rest of this article has recommendations to set a baseline to monitor and alert on, with a tier model. Links to pre-built solutions appear after the table. You can build alerts using the preceding tools. The content is organized into the following areas:
 
@@ -100,13 +100,13 @@ Privileged Identity Management (PIM) generates alerts when there's suspicious or
 
 | What to monitor| Risk Level| Where | Filter/sub-filter UX | Notes |
 | - |- |- |- |- |
-| [Roles are being assigned outside of Privileged Identity Management](../privileged-identity-management/pim-how-to-configure-security-alerts.md#security-alerts) | High |Privileged Identity Management, Alerts |[Roles are being assigned outside of Privileged Identity Management](../privileged-identity-management/pim-how-to-configure-security-alerts.md#security-alerts) |[How to configure security alerts](../privileged-identity-management/pim-how-to-configure-security-alerts.md#security-alerts) <br>[Sigma rules](https://github.com/SigmaHQ/sigma/tree/master/rules/cloud/azure)|
-| [Potential stale accounts in a privileged role](../privileged-identity-management/pim-how-to-configure-security-alerts.md#security-alerts) | Medium |Privileged Identity Management, Alerts |[Potential stale accounts in a privileged role](../privileged-identity-management/pim-how-to-configure-security-alerts.md#security-alerts) |[How to configure security alerts](../privileged-identity-management/pim-how-to-configure-security-alerts.md#security-alerts) <br>[Sigma rules](https://github.com/SigmaHQ/sigma/tree/master/rules/cloud/azure)|
-| [Administrators aren't using their privileged roles](../privileged-identity-management/pim-how-to-configure-security-alerts.md#security-alerts) | Low |Privileged Identity Management, Alerts |[Administrators aren't using their privileged roles](../privileged-identity-management/pim-how-to-configure-security-alerts.md#security-alerts) |[How to configure security alerts](../privileged-identity-management/pim-how-to-configure-security-alerts.md#security-alerts) <br>[Sigma rules](https://github.com/SigmaHQ/sigma/tree/master/rules/cloud/azure)|
-| [Roles don't require multi-factor authentication for activation](../privileged-identity-management/pim-how-to-configure-security-alerts.md#security-alerts) | Low |Privileged Identity Management, Alerts |[Roles don't require multi-factor authentication for activation](../privileged-identity-management/pim-how-to-configure-security-alerts.md#security-alerts) |[How to configure security alerts](../privileged-identity-management/pim-how-to-configure-security-alerts.md#security-alerts) <br>[Sigma rules](https://github.com/SigmaHQ/sigma/tree/master/rules/cloud/azure)|
-| [The organization doesn't have Microsoft Entra ID P2 or Microsoft Entra ID Governance](../privileged-identity-management/pim-how-to-configure-security-alerts.md#security-alerts) | Low |Privileged Identity Management, Alerts |[The organization doesn't have Microsoft Entra ID P2 or Microsoft Entra ID Governance](../privileged-identity-management/pim-how-to-configure-security-alerts.md#security-alerts) |[How to configure security alerts](../privileged-identity-management/pim-how-to-configure-security-alerts.md#security-alerts) <br>[Sigma rules](https://github.com/SigmaHQ/sigma/tree/master/rules/cloud/azure)|
-| [There are too many global administrators](../privileged-identity-management/pim-how-to-configure-security-alerts.md#security-alerts) | Low |Privileged Identity Management, Alerts |[There are too many global administrators](../privileged-identity-management/pim-how-to-configure-security-alerts.md#security-alerts)|[How to configure security alerts](../privileged-identity-management/pim-how-to-configure-security-alerts.md#security-alerts) <br>[Sigma rules](https://github.com/SigmaHQ/sigma/tree/master/rules/cloud/azure)|
-| [Roles are being activated too frequently](../privileged-identity-management/pim-how-to-configure-security-alerts.md#security-alerts) | Low |Privileged Identity Management, Alerts |[Roles are being activated too frequently](../privileged-identity-management/pim-how-to-configure-security-alerts.md#security-alerts)|[How to configure security alerts](../privileged-identity-management/pim-how-to-configure-security-alerts.md#security-alerts) <br>[Sigma rules](https://github.com/SigmaHQ/sigma/tree/master/rules/cloud/azure)|
+| [Roles are being assigned outside of Privileged Identity Management](~/id-governance/privileged-identity-management/pim-how-to-configure-security-alerts.md#security-alerts) | High |Privileged Identity Management, Alerts |[Roles are being assigned outside of Privileged Identity Management](~/id-governance/privileged-identity-management/pim-how-to-configure-security-alerts.md#security-alerts) |[How to configure security alerts](~/id-governance/privileged-identity-management/pim-how-to-configure-security-alerts.md#security-alerts) <br>[Sigma rules](https://github.com/SigmaHQ/sigma/tree/master/rules/cloud/azure)|
+| [Potential stale accounts in a privileged role](~/id-governance/privileged-identity-management/pim-how-to-configure-security-alerts.md#security-alerts) | Medium |Privileged Identity Management, Alerts |[Potential stale accounts in a privileged role](~/id-governance/privileged-identity-management/pim-how-to-configure-security-alerts.md#security-alerts) |[How to configure security alerts](~/id-governance/privileged-identity-management/pim-how-to-configure-security-alerts.md#security-alerts) <br>[Sigma rules](https://github.com/SigmaHQ/sigma/tree/master/rules/cloud/azure)|
+| [Administrators aren't using their privileged roles](~/id-governance/privileged-identity-management/pim-how-to-configure-security-alerts.md#security-alerts) | Low |Privileged Identity Management, Alerts |[Administrators aren't using their privileged roles](~/id-governance/privileged-identity-management/pim-how-to-configure-security-alerts.md#security-alerts) |[How to configure security alerts](~/id-governance/privileged-identity-management/pim-how-to-configure-security-alerts.md#security-alerts) <br>[Sigma rules](https://github.com/SigmaHQ/sigma/tree/master/rules/cloud/azure)|
+| [Roles don't require multi-factor authentication for activation](~/id-governance/privileged-identity-management/pim-how-to-configure-security-alerts.md#security-alerts) | Low |Privileged Identity Management, Alerts |[Roles don't require multi-factor authentication for activation](~/id-governance/privileged-identity-management/pim-how-to-configure-security-alerts.md#security-alerts) |[How to configure security alerts](~/id-governance/privileged-identity-management/pim-how-to-configure-security-alerts.md#security-alerts) <br>[Sigma rules](https://github.com/SigmaHQ/sigma/tree/master/rules/cloud/azure)|
+| [The organization doesn't have Microsoft Entra ID P2 or Microsoft Entra ID Governance](~/id-governance/privileged-identity-management/pim-how-to-configure-security-alerts.md#security-alerts) | Low |Privileged Identity Management, Alerts |[The organization doesn't have Microsoft Entra ID P2 or Microsoft Entra ID Governance](~/id-governance/privileged-identity-management/pim-how-to-configure-security-alerts.md#security-alerts) |[How to configure security alerts](~/id-governance/privileged-identity-management/pim-how-to-configure-security-alerts.md#security-alerts) <br>[Sigma rules](https://github.com/SigmaHQ/sigma/tree/master/rules/cloud/azure)|
+| [There are too many global administrators](~/id-governance/privileged-identity-management/pim-how-to-configure-security-alerts.md#security-alerts) | Low |Privileged Identity Management, Alerts |[There are too many global administrators](~/id-governance/privileged-identity-management/pim-how-to-configure-security-alerts.md#security-alerts)|[How to configure security alerts](~/id-governance/privileged-identity-management/pim-how-to-configure-security-alerts.md#security-alerts) <br>[Sigma rules](https://github.com/SigmaHQ/sigma/tree/master/rules/cloud/azure)|
+| [Roles are being activated too frequently](~/id-governance/privileged-identity-management/pim-how-to-configure-security-alerts.md#security-alerts) | Low |Privileged Identity Management, Alerts |[Roles are being activated too frequently](~/id-governance/privileged-identity-management/pim-how-to-configure-security-alerts.md#security-alerts)|[How to configure security alerts](~/id-governance/privileged-identity-management/pim-how-to-configure-security-alerts.md#security-alerts) <br>[Sigma rules](https://github.com/SigmaHQ/sigma/tree/master/rules/cloud/azure)|
 
 <a name='azure-ad-roles-assignment'></a>
 
@@ -126,7 +126,7 @@ A privileged role administrator can customize PIM in their Microsoft Entra organ
 | Approvals and deny elevation| High| Microsoft Entra audit log| Service = Access Review<br>-and-<br>Category = UserManagement<br>-and-<br>Activity Type = Request Approved/Denied<br>-and-<br>Initiated actor = UPN| All elevations should be monitored. Log all elevations to give a clear indication of timeline for an attack.<br>[Microsoft Sentinel template](https://github.com/Azure/Azure-Sentinel/blob/master/Detections/AuditLogs/PIMElevationRequestRejected.yaml)<br><br>[Sigma rules](https://github.com/SigmaHQ/sigma/tree/master/rules/cloud/azure) |
 | Alert setting changes to disabled.| High| Microsoft Entra audit logs| Service =PIM<br>-and-<br>Category = Role Management<br>-and-<br>Activity Type = Disable PIM Alert<br>-and-<br>Status = Success /Failure| Always alert. Helps detect bad actor removing alerts associated with Microsoft Entra multifactor authentication requirements to activate privileged access. Helps detect suspicious or unsafe activity.<br>[Microsoft Sentinel template](https://github.com/Azure/Azure-Sentinel/blob/master/Detections/SecurityAlert/DetectPIMAlertDisablingActivity.yaml)<br><br>[Sigma rules](https://github.com/SigmaHQ/sigma/tree/master/rules/cloud/azure) |
 
-For more information on identifying role setting changes in the Microsoft Entra audit log, see [View audit history for Microsoft Entra roles in Privileged Identity Management](../privileged-identity-management/pim-how-to-use-audit-log.md).
+For more information on identifying role setting changes in the Microsoft Entra audit log, see [View audit history for Microsoft Entra roles in Privileged Identity Management](~/id-governance/privileged-identity-management/pim-how-to-use-audit-log.md).
 
 ## Azure resource role assignment
 
@@ -147,9 +147,9 @@ Monitoring Azure resource role assignments allows visibility into activity and a
 
 For more information on configuring alerts and auditing Azure resource roles, see:
 
-* [Configure security alerts for Azure resource roles in Privileged Identity Management](../privileged-identity-management/pim-resource-roles-configure-alerts.md)
+* [Configure security alerts for Azure resource roles in Privileged Identity Management](~/id-governance/privileged-identity-management/pim-resource-roles-configure-alerts.md)
 
-* [View audit report for Azure resource roles in Privileged Identity Management (PIM)](../privileged-identity-management/azure-pim-resource-rbac.md)
+* [View audit report for Azure resource roles in Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/azure-pim-resource-rbac.md)
 
 ## Access management for Azure resources and subscriptions
 
@@ -161,7 +161,7 @@ A user who has Resource administrator permissions can manage PIM for Resources. 
 | - |- |- |- |- |
 | Elevations| High| Microsoft Entra ID, under Manage, Properties| Periodically review setting.<br>Access management for Azure resources| Global administrators can elevate by enabling Access management for Azure resources.<br>Verify bad actors haven't gained permissions to assign roles in all Azure subscriptions and management groups associated with Active Directory. |
 
-For more information, see [Assign Azure resource roles in Privileged Identity Management](../privileged-identity-management/pim-resource-roles-assign-roles.md)
+For more information, see [Assign Azure resource roles in Privileged Identity Management](~/id-governance/privileged-identity-management/pim-resource-roles-assign-roles.md)
 
 ## Next steps
 

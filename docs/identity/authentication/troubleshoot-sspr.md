@@ -43,7 +43,7 @@ Many elements of the UI are hidden until they're needed. Make sure the option is
 
 On-premises password writeback is only visible if you've downloaded Microsoft Entra Connect and have configured the feature.
 
-For more information, see [Getting started with Microsoft Entra Connect](../hybrid/connect/how-to-connect-install-express.md).
+For more information, see [Getting started with Microsoft Entra Connect](~/identity/hybrid/connect/how-to-connect-install-express.md).
 
 ## SSPR reporting
 

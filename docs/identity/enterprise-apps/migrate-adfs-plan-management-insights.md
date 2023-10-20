@@ -45,7 +45,7 @@ Once you've migrated the apps, consider applying the following suggestions to en
 
 Microsoft Entra ID provides a centralized access location to manage your migrated apps. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) and enable the following capabilities:
 
-- **Secure user access to apps.** Enable [Conditional Access policies](../conditional-access/overview.md)or [Identity Protection](../identity-protection/overview-identity-protection.md)to secure user access to applications based on device state, location, and more.
+- **Secure user access to apps.** Enable [Conditional Access policies](~/identity/conditional-access/overview.md)or [Identity Protection](~/id-protection/overview-identity-protection.md)to secure user access to applications based on device state, location, and more.
 - **Automatic provisioning.** Set up [automatic provisioning of users](~/identity/app-provisioning/user-provisioning.md) with various third-party SaaS apps that users need to access. In addition to creating user identities, it includes the maintenance and removal of user identities as status or roles change.
 - **Delegate user access** **management**. As appropriate, enable self-service application access to your apps and *assign a business approver to approve access to those apps*. Use [Self-Service Group Management](~/identity/users/groups-self-service-management.md)for groups assigned to collections of apps.
 - **Delegate admin access** using **Directory Role** to assign an admin role (such as Application administrator, Cloud Application administrator, or Application developer) to your user.
@@ -55,10 +55,10 @@ Microsoft Entra ID provides a centralized access location to manage your migrate
 
 You can also use the [Microsoft Entra admin center](https://entra.microsoft.com) to audit all your apps from a centralized location,
 
-- **Audit your app** using **Enterprise Applications, Audit**, or access the same information from the [Microsoft Entra reporting API](../reports-monitoring/howto-configure-prerequisites-for-reporting-api.md) to integrate into your favorite tools.
+- **Audit your app** using **Enterprise Applications, Audit**, or access the same information from the [Microsoft Entra reporting API](~/identity/monitoring-health/howto-configure-prerequisites-for-reporting-api.md) to integrate into your favorite tools.
 - **View the permissions for an app** using **Enterprise Applications, Permissions** for apps using OAuth/OpenID Connect.
-- **Get sign-in insights** using **Enterprise Applications, Sign-Ins**. Access the same information from the [Microsoft Entra reporting API.](../reports-monitoring/howto-configure-prerequisites-for-reporting-api.md)
-- **Visualize your app’s usage** from the [Microsoft Entra ID Power BI content pack](../reports-monitoring/howto-use-workbooks.md)
+- **Get sign-in insights** using **Enterprise Applications, Sign-Ins**. Access the same information from the [Microsoft Entra reporting API.](~/identity/monitoring-health/howto-configure-prerequisites-for-reporting-api.md)
+- **Visualize your app’s usage** from the [Microsoft Entra ID Power BI content pack](~/identity/monitoring-health/howto-use-workbooks.md)
 
 ## Exit criteria
 

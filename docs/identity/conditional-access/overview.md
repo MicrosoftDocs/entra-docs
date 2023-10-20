@@ -57,7 +57,7 @@ These signals include:
 - Application
    - Users attempting to access specific applications can trigger different Conditional Access policies.
 - Real-time and calculated risk detection
-   - Signals integration with [Microsoft Entra ID Protection](../identity-protection/overview-identity-protection.md) allows Conditional Access policies to identify and remediate risky users and sign-in behavior.
+   - Signals integration with [Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md) allows Conditional Access policies to identify and remediate risky users and sign-in behavior.
 - [Microsoft Defender for Cloud Apps](/defender-cloud-apps/what-is-defender-for-cloud-apps)
    - Enables user application access and sessions to be monitored and controlled in real time. This integration increases visibility and control over access to and activities done within your cloud environment.
 
@@ -108,7 +108,7 @@ Conditional Access is found in the [Microsoft Entra admin center](https://entra.
 
 Customers with [Microsoft 365 Business Premium licenses](/office365/servicedescriptions/office-365-service-descriptions-technet-library) also have access to Conditional Access features. 
 
-Risk-based policies require access to [Identity Protection](../identity-protection/overview-identity-protection.md), which requires P2 licenses.
+Risk-based policies require access to [Identity Protection](~/id-protection/overview-identity-protection.md), which requires P2 licenses.
 
 Other products and features that may interact with Conditional Access policies require appropriate licensing for those products and features.
 

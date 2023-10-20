@@ -52,7 +52,7 @@ Each issuer has a single key set used for signing, updating, and recovery. This 
 
 **Microsoft Entra Verified ID Service** is used to store credential metadata and definitions; specifically, the rules and display definitions for your credentials.
 
-* Display definitions determine how claims are displayed in the holder’s wallet and also includes branding and other elements. The Display definition can be localized into multiple languages. See [How to customize your verifiable credentials](../verifiable-credentials/credential-design.md).
+* Display definitions determine how claims are displayed in the holder’s wallet and also includes branding and other elements. The Display definition can be localized into multiple languages. See [How to customize your verifiable credentials](~/verified-id/credential-design.md).
 
 * Rules are an issuer-defined model that describes the required inputs of a verifiable credential. Rules also defined trusted input sources, and the mapping of input claims to output claims stored in the VC. Depending on the type of attestation defined in the rules definition, the input claims can come from different providers. Input claims may come from an OIDC Identity Provider, from an id_token_hint or from self asserted claims during issuance via user input in the wallet.
 
@@ -159,7 +159,7 @@ In addition to the industry-specific standards and schemas that might be applica
 
 * **Favor abstract claims**: Each claim should meet the need while minimizing the detail. For example, a claim named “ageOver” with discrete values such as 13, 21, 60, is more abstract than a date of birth claim.
 
-* **Plan for revocability**: We recommend you define an index claim to enable mechanisms to find and revoke credentials. You're limited to defining one index claim per contract. It's important to note that values for indexed claims aren't stored in the backend, only a hash of the claim value. For more information, see [Revoke a previously issued verifiable credential](../verifiable-credentials/how-to-issuer-revoke.md).
+* **Plan for revocability**: We recommend you define an index claim to enable mechanisms to find and revoke credentials. You're limited to defining one index claim per contract. It's important to note that values for indexed claims aren't stored in the backend, only a hash of the claim value. For more information, see [Revoke a previously issued verifiable credential](~/verified-id/how-to-issuer-revoke.md).
 
 For other considerations on credential attributes, refer to the [Verifiable Credentials Data Model 1.0 (w3.org)](https://www.w3.org/TR/vc-data-model/) specification.
 
@@ -266,7 +266,7 @@ As part of your design considerations focused on security, we recommend the foll
 
 * For service principal that represents the issuance frontend website:
 
-   * Define a dedicated service principal to authorize access Azure Key Vault. If your website is on Azure, we recommend that you use an [Azure Managed Identity](../managed-identities-azure-resources/overview.md). 
+   * Define a dedicated service principal to authorize access Azure Key Vault. If your website is on Azure, we recommend that you use an [Azure Managed Identity](~/identity/managed-identities-azure-resources/overview.md). 
 
    * Treat the service principal that represents the website and the user as a single trust boundary. While it's possible to create multiple websites, there's only one key set for the issuance solution. 
 

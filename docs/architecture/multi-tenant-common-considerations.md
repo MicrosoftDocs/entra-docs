@@ -21,7 +21,7 @@ This article is the third in a series of articles that provide guidance for conf
 - [Multi-tenant user management scenarios](multi-tenant-user-management-scenarios.md) describes three scenarios for which you can use multi-tenant user management features: end user-initiated, scripted, and automated.
 - [Common solutions for multi-tenant user management](multi-tenant-common-solutions.md) when single tenancy doesn't work for your scenario, this article provides guidance for these challenges:  automatic user lifecycle management and resource allocation across tenants, sharing on-premises apps across tenants.
 
-The guidance helps to you achieve a consistent state of user lifecycle management. Lifecycle management includes provisioning, managing, and deprovisioning users across tenants using the available Azure tools that include [Microsoft Entra B2B collaboration](~/external-id/what-is-b2b.md) (B2B) and [cross-tenant synchronization](../multi-tenant-organizations/cross-tenant-synchronization-overview.md).
+The guidance helps to you achieve a consistent state of user lifecycle management. Lifecycle management includes provisioning, managing, and deprovisioning users across tenants using the available Azure tools that include [Microsoft Entra B2B collaboration](~/external-id/what-is-b2b.md) (B2B) and [cross-tenant synchronization](~/identity/multi-tenant-organizations/cross-tenant-synchronization-overview.md).
 
 Synchronization requirements are unique to your organization's specific needs. As you design a solution to meet your organization's requirements, the following considerations in this article will help you identify your best options.
 
@@ -33,7 +33,7 @@ Synchronization requirements are unique to your organization's specific needs. A
 
 ## Cross-tenant synchronization
 
-[Cross-tenant synchronization](../multi-tenant-organizations/cross-tenant-synchronization-overview.md) can address collaboration and access challenges of multi-tenant organizations. The following table shows common synchronization use cases. You can use both cross-tenant synchronization and customer development to satisfy use cases when considerations are relevant to more than one collaboration pattern.
+[Cross-tenant synchronization](~/identity/multi-tenant-organizations/cross-tenant-synchronization-overview.md) can address collaboration and access challenges of multi-tenant organizations. The following table shows common synchronization use cases. You can use both cross-tenant synchronization and customer development to satisfy use cases when considerations are relevant to more than one collaboration pattern.
 
 | Use case | Cross-tenant sync | Custom development |
 | - | - | - |
@@ -128,7 +128,7 @@ Where allowed, you can override this behavior with [Cross-Tenant Access Settings
 
 Additionally, while you can use the following Conditional Access conditions, be aware of the possible ramifications.
 
-- **Sign-in risk and user risk.** User behavior in their home tenant determines, in part, the sign-in risk and user risk. The home tenant stores the data and risk score. If resource tenant policies block an external user, a resource tenant admin might not be able to enable access. [Identity Protection and B2B users](../identity-protection/concept-identity-protection-b2b.md) explains how Identity Protection detects compromised credentials for Microsoft Entra users.
+- **Sign-in risk and user risk.** User behavior in their home tenant determines, in part, the sign-in risk and user risk. The home tenant stores the data and risk score. If resource tenant policies block an external user, a resource tenant admin might not be able to enable access. [Identity Protection and B2B users](~/id-protection/concept-identity-protection-b2b.md) explains how Identity Protection detects compromised credentials for Microsoft Entra users.
 - **Locations.** The named location definitions in the resource tenant determine the scope of the policy. The scope of the policy doesn't evaluate trusted locations managed in the home tenant. If your organization wants to share trusted locations across tenants, define the locations in each tenant where you define the resources and Conditional Access policies.
 
 ## Securing your multi-tenant environment
@@ -143,14 +143,14 @@ The following are considerations for configuring access control.
 - Create dedicated Conditional Access policies for external accounts.
 
 ### Monitoring your multi-tenant environment
-- Monitor for changes to cross-tenant access policies using the [audit logs UI](../reports-monitoring/concept-audit-logs.md), [API](/graph/api/resources/azure-ad-auditlog-overview), or [Azure Monitor integration](../reports-monitoring/tutorial-configure-log-analytics-workspace.md) (for proactive alerts). The audit events use the categories "CrossTenantAccessSettings" and "CrossTenantIdentitySyncSettings." By monitoring for audit events under these categories, you can identify any cross-tenant access policy changes in your tenant and take action. When creating alerts in Azure Monitor, you can create a query such as the one below to identify any cross-tenant access policy changes.   
+- Monitor for changes to cross-tenant access policies using the [audit logs UI](~/identity/monitoring-health/concept-audit-logs.md), [API](/graph/api/resources/azure-ad-auditlog-overview), or [Azure Monitor integration](~/identity/monitoring-health/tutorial-configure-log-analytics-workspace.md) (for proactive alerts). The audit events use the categories "CrossTenantAccessSettings" and "CrossTenantIdentitySyncSettings." By monitoring for audit events under these categories, you can identify any cross-tenant access policy changes in your tenant and take action. When creating alerts in Azure Monitor, you can create a query such as the one below to identify any cross-tenant access policy changes.   
 
 ```
 AuditLogs
 | where Category contains "CrossTenant"
 ```
 
-- Monitor application access in your tenant using the [cross-tenant access activity](../reports-monitoring/workbook-cross-tenant-access-activity.md) dashboard. This allows you to see who is accessing resources in your tenant and where those users are coming from. 
+- Monitor application access in your tenant using the [cross-tenant access activity](~/identity/monitoring-health/workbook-cross-tenant-access-activity.md) dashboard. This allows you to see who is accessing resources in your tenant and where those users are coming from. 
 
 
 ### Dynamic groups
@@ -171,7 +171,7 @@ When you're using security groups to control who is in scope for cross-tenant sy
 
 ### Terms and conditions
 
-[Microsoft Entra terms of use](../conditional-access/terms-of-use.md) provides a simple method that organizations can use to present information to end users. You can use terms of use to require external users to approve terms of use before accessing your resources.
+[Microsoft Entra terms of use](~/identity/conditional-access/terms-of-use.md) provides a simple method that organizations can use to present information to end users. You can use terms of use to require external users to approve terms of use before accessing your resources.
 
 <a name='licensing-considerations-for-guest-users-with-azure-ad-premium-features'></a>
 

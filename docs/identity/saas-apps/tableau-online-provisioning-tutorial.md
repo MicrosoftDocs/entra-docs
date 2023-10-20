@@ -83,7 +83,7 @@ The Microsoft Entra provisioning service allows you to scope who will be provisi
 
 * Start small. Test with a small set of users and groups before rolling out to everyone. When scope for provisioning is set to assigned users and groups, you can control this by assigning one or two users or groups to the app. When scope is set to all users and groups, you can specify an [attribute based scoping filter](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-* If you need additional roles, you can [update the application manifest](~/identity-platform/howto-add-app-roles-in-azure-ad-apps.md) to add new roles.
+* If you need additional roles, you can [update the application manifest](~/identity-platform/howto-add-app-roles-in-apps.md) to add new roles.
 
 ### Recommendations
 Tableau Cloud will only store the highest privileged role that is assigned to a user. In other words, if a user is assigned to two groups, the user’s role will reflect the highest privileged role.
@@ -251,7 +251,7 @@ In June 2022, Tableau released a SCIM 2.0 connector. Completing the steps below 
 ## Step 6: Monitor your deployment
 Once you've configured provisioning, use the following resources to monitor your deployment:
 
-* Use the [provisioning logs](../reports-monitoring/concept-provisioning-logs.md) to determine which users have been provisioned successfully or unsuccessfully
+* Use the [provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md) to determine which users have been provisioned successfully or unsuccessfully
 * Check the [progress bar](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md) to see the status of the provisioning cycle and how close it's to completion
 * If the provisioning configuration seems to be in an unhealthy state, the application will go into quarantine. Learn more about quarantine states [here](~/identity/app-provisioning/application-provisioning-quarantine-status.md).  
 

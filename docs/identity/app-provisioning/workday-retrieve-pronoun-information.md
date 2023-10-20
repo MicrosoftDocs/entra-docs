@@ -16,8 +16,8 @@ ms.reviewer: arvinh, chmutali
 # Configure Microsoft Entra provisioning to retrieve pronoun information from Workday
 This article describes how you can customize the following two HR-driven provisioning apps to fetch pronoun information from Workday.
 
-* [Workday to on-premises Active Directory user provisioning](../saas-apps/workday-inbound-tutorial.md)
-* [Workday to Microsoft Entra user provisioning](../saas-apps/workday-inbound-cloud-only-tutorial.md)
+* [Workday to on-premises Active Directory user provisioning](~/identity/saas-apps/workday-inbound-tutorial.md)
+* [Workday to Microsoft Entra user provisioning](~/identity/saas-apps/workday-inbound-cloud-only-tutorial.md)
 
 ## About pronoun information in Workday
 Workday introduced the ability for workers to [display pronoun information](https://community.workday.com/node/731178) in their worker profile in Workday 2021 R1 release. The ability to fetch pronoun data using Workday Web Services (WWS) API call was introduced in [Get_Workers API version 38.1](https://community.workday.com/sites/default/files/file-hosting/productionapi/Human_Resources/v38.1/Get_Workers.html) in Workday 2022 R1 release. 
@@ -32,7 +32,7 @@ This section describes the steps required to enable pronoun data in Workday. We 
    - [Steps: Set Up Public Profile Preferences * Human Capital Management * Reader * Administrator Guide (workday.com)](https://doc.workday.com/r/gJQvxHUyQOZv_31Vknf~3w/FuENV1VTRTHWo_h93KIjJA)
 1. Use Workday **Maintain Pronouns** task to define preferred pronoun data (HE/HIM, SHE/HER, and THEY/THEM) in your Workday tenant.
 1. Use Workday **Maintain Localization Settings task -> Personal Information** area to activate pronoun data for different countries/regions. 
-1. Select the Workday Integration System Security Group used with your Microsoft Entra integration. Update the [domain permissions for the security group](../saas-apps/workday-inbound-tutorial.md#configuring-domain-security-policy-permissions), so it has GET access for the Workday domain **Reports: Public Profile**.
+1. Select the Workday Integration System Security Group used with your Microsoft Entra integration. Update the [domain permissions for the security group](~/identity/saas-apps/workday-inbound-tutorial.md#configuring-domain-security-policy-permissions), so it has GET access for the Workday domain **Reports: Public Profile**.
     >[!div class="mx-imgBorder"] 
     >![Screenshot of permissions to setup in Workday.](./media/workday-pronoun-data/workday-pronoun-permissions.png)
 1. Activate Pending Security Policy changes.
@@ -87,6 +87,6 @@ To retrieve pronouns from Workday, update your Microsoft Entra provisioning app 
  
 ## Next steps
 
-* [Learn how to configure Workday to Active Directory provisioning](../saas-apps/workday-inbound-tutorial.md)
-* [Learn how to configure write back to Workday](../saas-apps/workday-writeback-tutorial.md)
+* [Learn how to configure Workday to Active Directory provisioning](~/identity/saas-apps/workday-inbound-tutorial.md)
+* [Learn how to configure write back to Workday](~/identity/saas-apps/workday-writeback-tutorial.md)
 * [Learn more about supported Workday Attributes for inbound provisioning](workday-attribute-reference.md)

@@ -40,7 +40,7 @@ For an overview of the feature, view this "What is Staged Rollout?" video:
     
     For both options, we recommend enabling single sign-on (SSO) to achieve a silent sign-in experience. 
     For Windows 7 or 8.1 domain-joined devices, we recommend using seamless SSO. For more information, see [What is seamless SSO](how-to-connect-sso.md). 
-    For Windows 10, Windows Server 2016 and later versions, it's recommended to use SSO via [Primary Refresh Token (PRT)](../../devices/concept-primary-refresh-token.md) with [Microsoft Entra joined devices](../../devices/concept-directory-join.md), [Microsoft Entra hybrid joined devices](../../devices/concept-hybrid-join.md) or [personal registered devices](../../devices/concept-device-registration.md) via Add Work or School Account.
+    For Windows 10, Windows Server 2016 and later versions, it's recommended to use SSO via [Primary Refresh Token (PRT)](~/identity/devices/concept-primary-refresh-token.md) with [Microsoft Entra joined devices](~/identity/devices/concept-directory-join.md), [Microsoft Entra hybrid joined devices](~/identity/devices/concept-hybrid-join.md) or [personal registered devices](~/identity/devices/concept-device-registration.md) via Add Work or School Account.
 
 -   You have configured all the appropriate tenant-branding and Conditional Access policies you need for users who are being migrated to cloud authentication.
 
@@ -59,7 +59,7 @@ The following scenarios are supported for Staged Rollout. The feature works only
 
 - Users who are provisioned to Microsoft Entra ID by using Microsoft Entra Connect. It doesn't apply to cloud-only users.
 
-- User sign-in traffic on browsers and *modern authentication* clients. Applications or cloud services that use [legacy authentication](../../conditional-access/block-legacy-authentication.md) fall back to federated authentication flows. An example of legacy authentication might be Exchange online with modern authentication turned off, or Outlook 2010, which doesn't support modern authentication.
+- User sign-in traffic on browsers and *modern authentication* clients. Applications or cloud services that use [legacy authentication](~/identity/conditional-access/block-legacy-authentication.md) fall back to federated authentication flows. An example of legacy authentication might be Exchange online with modern authentication turned off, or Outlook 2010, which doesn't support modern authentication.
 
 - Group size is currently limited to 50,000 users.  If you have groups that are larger than 50,000 users, it's recommended to split this group over multiple groups for Staged Rollout.
 
@@ -92,7 +92,7 @@ The following scenarios aren't supported for Staged Rollout:
 
 - Windows 10 Hybrid Join or Microsoft Entra join primary refresh token acquisition for all versions, when user's on-premises UPN isn't routable. This scenario falls back to the WS-Trust endpoint while in Staged Rollout mode, but stops working when staged migration is complete and user sign-on is no longer relying on federation server.
 
-- If you have a nonpersistent VDI setup with Windows 10, version 1903 or later, you must remain on a federated domain. Moving to a managed domain isn't supported on nonpersistent VDI. For more information, see [Device identity and desktop virtualization](../../devices/howto-device-identity-virtual-desktop-infrastructure.md).
+- If you have a nonpersistent VDI setup with Windows 10, version 1903 or later, you must remain on a federated domain. Moving to a managed domain isn't supported on nonpersistent VDI. For more information, see [Device identity and desktop virtualization](~/identity/devices/howto-device-identity-virtual-desktop-infrastructure.md).
 
 - If you have a Windows Hello for Business hybrid certificate trust with certs that are issued via your federation server acting as Registration Authority or smartcard users, the scenario isn't supported on a Staged Rollout. 
 
@@ -230,7 +230,7 @@ To test the sign-in with *password hash sync* or *pass-through authentication* (
 
    Users who have been targeted for Staged Rollout aren't redirected to your federated login page. Instead, they're asked to sign in on the Microsoft Entra tenant-branded sign-in page.
 
-1. Ensure that the sign-in successfully appears in the [Microsoft Entra sign-in activity report](../../reports-monitoring/concept-sign-ins.md) by filtering with the UserPrincipalName.
+1. Ensure that the sign-in successfully appears in the [Microsoft Entra sign-in activity report](~/identity/monitoring-health/concept-sign-ins.md) by filtering with the UserPrincipalName.
 
 To test sign-in with *seamless SSO*:
 
@@ -238,7 +238,7 @@ To test sign-in with *seamless SSO*:
 
    Users who have been targeted for Staged Rollout of *seamless SSO* are presented with a "Trying to sign you in ..." message before they're silently signed in.
 
-1. Ensure that the sign-in successfully appears in the [Microsoft Entra sign-in activity report](../../reports-monitoring/concept-sign-ins.md) by filtering with the UserPrincipalName.
+1. Ensure that the sign-in successfully appears in the [Microsoft Entra sign-in activity report](~/identity/monitoring-health/concept-sign-ins.md) by filtering with the UserPrincipalName.
 
    To track user sign-ins that still occur on Active Directory Federation Services (AD FS) for selected Staged Rollout users, follow the instructions at [AD FS troubleshooting: Events and logging](/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-logging#types-of-events). Check vendor documentation about how to check this on third-party federation providers.
    

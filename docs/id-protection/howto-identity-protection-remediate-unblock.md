@@ -46,7 +46,7 @@ The prerequisites for users before risk-based policies can be applied to allow s
 
 If a risk-based policy is applied to a user during sign-in before the above prerequisites are met, then the user is blocked. This block action is because they aren't able to perform the required access control, and admin intervention is required to unblock the user. 
 
-Risk-based policies are configured based on risk levels and only apply if the risk level of the sign-in or user matches the configured level. Some detections might not raise risk to the level where the policy applies, and administrators need to handle those risky users manually. Administrators can determine that extra measures are necessary like [blocking access from locations](../conditional-access/howto-conditional-access-policy-location.md) or lowering the acceptable risk in their policies.
+Risk-based policies are configured based on risk levels and only apply if the risk level of the sign-in or user matches the configured level. Some detections might not raise risk to the level where the policy applies, and administrators need to handle those risky users manually. Administrators can determine that extra measures are necessary like [blocking access from locations](~/identity/conditional-access/howto-conditional-access-policy-location.md) or lowering the acceptable risk in their policies.
 
 ### Self-remediation with self-service password reset
 
@@ -71,7 +71,7 @@ Administrators have options they can choose from:
 
 #### Allow on-premises password reset to remediate user risks (Preview)
 
-Organizations who have enabled [password hash synchronization](../hybrid/connect/whatis-phs.md) can allow password changes on-premises to remediate user risk.
+Organizations who have enabled [password hash synchronization](~/identity/hybrid/connect/whatis-phs.md) can allow password changes on-premises to remediate user risk.
 
 This configuration provides organizations two new capabilities:
 
@@ -114,8 +114,8 @@ If after investigation, an account is confirmed compromised:
       1. [Request a password reset](#manual-password-reset).
       1. Block the user if you suspect the attacker can reset the password or do multifactor authentication for the user.
       1. Revoke refresh tokens.
-      1. [Disable any devices](../devices/manage-device-identities.md) that are considered compromised.
-      1. If using [continuous access evaluation](../conditional-access/concept-continuous-access-evaluation.md), revoke all access tokens.
+      1. [Disable any devices](~/identity/devices/manage-device-identities.md) that are considered compromised.
+      1. If using [continuous access evaluation](~/identity/conditional-access/concept-continuous-access-evaluation.md), revoke all access tokens.
 
 For more information about what happens when confirming compromise, see the section [How should I give risk feedback and what happens under the hood?](howto-identity-protection-risk-feedback.md#how-should-i-give-risk-feedback-and-what-happens-under-the-hood).
 

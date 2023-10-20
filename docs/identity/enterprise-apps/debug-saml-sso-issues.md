@@ -79,7 +79,7 @@ You might sign in successfully and then see an error on the application's page. 
 
 To resolve the error, follow these steps, or watch this [short video about how to use Microsoft Entra ID to troubleshoot SAML SSO](https://www.youtube.com/watch?v=poQCJK0WPUk&list=PLLasX02E8BPBm1xNMRdvP6GtA6otQUqp0&index=8):
 
-1. If the application is in the Microsoft Entra Gallery, verify that you've followed all the steps for integrating the application with Microsoft Entra ID. To find the integration instructions for your application, see the [list of SaaS application integration tutorials](../saas-apps/tutorial-list.md).
+1. If the application is in the Microsoft Entra Gallery, verify that you've followed all the steps for integrating the application with Microsoft Entra ID. To find the integration instructions for your application, see the [list of SaaS application integration tutorials](~/identity/saas-apps/tutorial-list.md).
 1. Retrieve the SAML response.
     - If the My Apps Secure Sign-in extension is installed, from the **Test single sign-on** page, select **download the SAML response**.
     - If the extension isn't installed, use a tool such as [Fiddler](https://www.telerik.com/fiddler) to retrieve the SAML response.
@@ -95,4 +95,4 @@ To resolve the error, follow these steps, or watch this [short video about how t
 
 ## Next steps
 
-Now that single sign-on is working to your application, you could [Automate user provisioning and deprovisioning to SaaS applications](~/identity/app-provisioning/user-provisioning.md) or [get started with Conditional Access](../conditional-access/howto-policy-approved-app-or-app-protection.md).
+Now that single sign-on is working to your application, you could [Automate user provisioning and deprovisioning to SaaS applications](~/identity/app-provisioning/user-provisioning.md) or [get started with Conditional Access](~/identity/conditional-access/howto-policy-approved-app-or-app-protection.md).

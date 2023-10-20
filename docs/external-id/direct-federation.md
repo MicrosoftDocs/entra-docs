@@ -125,7 +125,7 @@ Next, your partner organization needs to configure their IdP with the required c
 
 ### SAML 2.0 configuration
 
-Microsoft Entra B2B can be configured to federate with IdPs that use the SAML protocol with specific requirements listed in this section. For more information about setting up a trust between your SAML IdP and Microsoft Entra ID, see  [Use a SAML 2.0 Identity Provider (IdP) for SSO](../hybrid/connect/how-to-connect-fed-saml-idp.md).  
+Microsoft Entra B2B can be configured to federate with IdPs that use the SAML protocol with specific requirements listed in this section. For more information about setting up a trust between your SAML IdP and Microsoft Entra ID, see  [Use a SAML 2.0 Identity Provider (IdP) for SSO](~/identity/hybrid/connect/how-to-connect-fed-saml-idp.md).  
 
 > [!NOTE]
 > The target domain for SAML/WS-Fed IdP federation must not be DNS-verified in Microsoft Entra ID. See the [Frequently asked questions](#frequently-asked-questions) section for details.

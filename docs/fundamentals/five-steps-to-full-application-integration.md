@@ -19,9 +19,9 @@ With Microsoft Entra ID, features such as Conditional Access, Microsoft Entra mu
 
 Learn more:
 
-* [What is Conditional Access?](../conditional-access/overview.md)
+* [What is Conditional Access?](~/identity/conditional-access/overview.md)
 * [How it works: Microsoft Entra multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md)
-* [Microsoft Entra seamless single sign-on](../hybrid/connect/how-to-connect-sso.md)
+* [Microsoft Entra seamless single sign-on](~/identity/hybrid/connect/how-to-connect-sso.md)
 * [What is app provisioning in Microsoft Entra ID?](~/identity/app-provisioning/user-provisioning.md)
 
 If your company has a Microsoft 365 subscription, you likely use Microsoft Entra ID. However, you can use Microsoft Entra ID for applications. If you centralize application management, identity management features, tools, and policies for your app portfolio. The benefit is a unified solution that improves security, reduces costs, increases productivity, and enables compliance. In addition, there's remote access to on-premises apps.
@@ -41,17 +41,17 @@ See: [Quickstart: Add an enterprise application](~/identity/enterprise-apps/add-
 
 Microsoft Entra ID has a gallery of integrated applications to make it easy to get started. Add a gallery app to your Microsoft Entra organization (see previous link) and learn about integrating software as a service (SaaS) tutorials.
 
-See: [Tutorials for integrating SaaS applications with Microsoft Entra ID](../saas-apps/tutorial-list.md) 
+See: [Tutorials for integrating SaaS applications with Microsoft Entra ID](~/identity/saas-apps/tutorial-list.md) 
 
 ### Integration tutorials
 
 Use the following tutorials to learn to integrate common tools with Microsoft Entra single sign-on (SSO).
 
-* Tutorial: [Microsoft Entra SSO integration with ServiceNow](../saas-apps/servicenow-tutorial.md)
-* Tutorial: [Microsoft Entra SSO integration with Workday](../saas-apps/workday-tutorial.md)
-* Tutorial: [Microsoft Entra SSO integration with Salesforce](../saas-apps/salesforce-tutorial.md)
-* Tutorial: [Microsoft Entra SSO integration with AWS Single-Account Access](../saas-apps/amazon-web-service-tutorial.md)
-* Tutorial: [Microsoft Entra SSO integration with Slack](../saas-apps/slack-tutorial.md)
+* Tutorial: [Microsoft Entra SSO integration with ServiceNow](~/identity/saas-apps/servicenow-tutorial.md)
+* Tutorial: [Microsoft Entra SSO integration with Workday](~/identity/saas-apps/workday-tutorial.md)
+* Tutorial: [Microsoft Entra SSO integration with Salesforce](~/identity/saas-apps/salesforce-tutorial.md)
+* Tutorial: [Microsoft Entra SSO integration with AWS Single-Account Access](~/identity/saas-apps/amazon-web-service-tutorial.md)
+* Tutorial: [Microsoft Entra SSO integration with Slack](~/identity/saas-apps/slack-tutorial.md)
 
 ### Apps not in the gallery
 
@@ -95,8 +95,8 @@ During discovery, there might be applications not tracked by the IT team, which 
 * Enable single sign-on (SSO) access to applications in the My Apps portal
   * See: [Create collections on the My Apps portal](~/identity/enterprise-apps/access-panel-collections.md)
 * Use Identity Protection and Conditional Access to increase data from app usage, and extend benefits to recently added apps
-  * [What is Identity Protection?](../identity-protection/overview-identity-protection.md)
-  * [What is Conditional Access?](../conditional-access/overview.md)
+  * [What is Identity Protection?](~/id-protection/overview-identity-protection.md)
+  * [What is Conditional Access?](~/identity/conditional-access/overview.md)
 
 ### App owner awareness
 
@@ -134,13 +134,13 @@ You can migrate apps that use a different cloud-based IdP. Your organization mig
 
 Traditionally, application security enabled access during a connection to a corporate network. However, organization grant access to apps for customers, partners, and/or employees, regardless of location. Application Proxy Service in Microsoft Entra connects on-premises apps to Microsoft Entra ID and doesn't require edge servers or more infrastructure.
 
-See: [Using Microsoft Entra application proxy to publish on-premises apps for remote users](../app-proxy/what-is-application-proxy.md)
+See: [Using Microsoft Entra application proxy to publish on-premises apps for remote users](~/identity/app-proxy/what-is-application-proxy.md)
 
 The following diagram illustrates Application Proxy Service processing a user request.
 
    ![Diagram of the Microsoft Entra application proxy Service processing a user request.](./media/five-steps-to-full-application-integration/app-proxy.png)
 
-See: [Tutorial: Add an on-premises application for remote access through Application Proxy in Microsoft Entra ID](../app-proxy/application-proxy-add-on-premises-application.md) 
+See: [Tutorial: Add an on-premises application for remote access through Application Proxy in Microsoft Entra ID](~/identity/app-proxy/application-proxy-add-on-premises-application.md) 
 
 In addition, integrate application delivery controllers like F5 BIG-IP APM, or Zscaler Private Access, with Microsoft Entra ID. Benefits are modern authentication and identity management, traffic management, and security features. We call this solution secure hybrid access. 
 
@@ -148,11 +148,11 @@ See: [Secure hybrid access: Protect legacy apps with Microsoft Entra ID](~/ident
 
 For the following services, there are Microsoft Entra integration tutorials.
 
-* [Tutorial: Microsoft Entra SSO integration with Akamai](../saas-apps/akamai-tutorial.md)
-* [Tutorial: Microsoft Entra SSO integration with Citrix ADC SAML Connector for Microsoft Entra ID (Kerberos-based authentication)](../saas-apps/citrix-netscaler-tutorial.md)
+* [Tutorial: Microsoft Entra SSO integration with Akamai](~/identity/saas-apps/akamai-tutorial.md)
+* [Tutorial: Microsoft Entra SSO integration with Citrix ADC SAML Connector for Microsoft Entra ID (Kerberos-based authentication)](~/identity/saas-apps/citrix-netscaler-tutorial.md)
   * Formerly known as Citrix Netscaler
 * [Integrate F5 BIG-IP with Microsoft Entra ID](~/identity/enterprise-apps/f5-integration.md)
-* [Tutorial: Integrate Zscaler Private Access (ZPA) with Microsoft Entra ID](../saas-apps/zscalerprivateaccess-tutorial.md)
+* [Tutorial: Integrate Zscaler Private Access (ZPA) with Microsoft Entra ID](~/identity/saas-apps/zscalerprivateaccess-tutorial.md)
 
 ## Integrate apps your developers build
 

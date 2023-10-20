@@ -361,7 +361,7 @@ Now that you have the Microsoft Entra ECMA Connector Host talking with Microsoft
 >[!IMPORTANT]
 >If you were signed in using a Hybrid Identity Administrator role, you need to sign-out and sign-in with an account that has the Application Administrator, Cloud Application Administrator or Global Administrator role, for this section.  The Hybrid Identity Administrator role does not have permissions to assign users to applications.
 
-If there are existing users in the InputFile.txt, then you should create application role assignments for those existing users. To learn more about how to create application role assignments in bulk, see [governing an application's existing users in Microsoft Entra ID](../governance/identity-governance-applications-existing-users.md).
+If there are existing users in the InputFile.txt, then you should create application role assignments for those existing users. To learn more about how to create application role assignments in bulk, see [governing an application's existing users in Microsoft Entra ID](~/id-governance/identity-governance-applications-existing-users.md).
 
 Otherwise, if there are no current users of the application, then select a test user from Microsoft Entra who will be provisioned to the application.
 

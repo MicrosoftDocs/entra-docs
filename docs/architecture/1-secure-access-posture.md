@@ -72,7 +72,7 @@ Levels of control can be accomplished through various methods, depending on your
 
 #### Reduce attack surface
 
-* [What is Microsoft Entra Privileged Identity Management?](../privileged-identity-management/pim-configure.md) -  manage, control, and monitor access to resources in Microsoft Entra ID, Azure, and other Microsoft Online Services such as Microsoft 365 or Microsoft Intune
+* [What is Microsoft Entra Privileged Identity Management?](~/id-governance/privileged-identity-management/pim-configure.md) -  manage, control, and monitor access to resources in Microsoft Entra ID, Azure, and other Microsoft Online Services such as Microsoft 365 or Microsoft Intune
 * [Data loss prevention in Exchange Server](/exchange/policy-and-compliance/data-loss-prevention/data-loss-prevention?view=exchserver-2019&preserve-view=true)
 
 #### Confirm compliance with activity and audit log reviews

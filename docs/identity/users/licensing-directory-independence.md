@@ -35,7 +35,7 @@ If a non-administrative user of organization 'Contoso' creates a test organizati
 
 ## Synchronization independence
 
-You can configure each Microsoft Entra organization independently to get data synchronized from different AD forests, using the Microsoft Entra Connect tool.  See [topologies for Microsoft Entra Connect](../hybrid/connect/plan-connect-topologies.md) for more information on supported topologies when there are multiple Microsoft Entra tenants.
+You can configure each Microsoft Entra organization independently to get data synchronized from different AD forests, using the Microsoft Entra Connect tool.  See [topologies for Microsoft Entra Connect](~/identity/hybrid/connect/plan-connect-topologies.md) for more information on supported topologies when there are multiple Microsoft Entra tenants.
 
 <a name='add-an-azure-ad-organization'></a>
 

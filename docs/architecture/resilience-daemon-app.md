@@ -26,7 +26,7 @@ The following diagram illustrates a daemon application making a call to Microsof
 
 If you're building daemon apps on Microsoft Azure, use managed identities for Azure resources, which handle secrets and credentials. The feature improves resilience by handling certificate expiry, rotation, or trust. 
 
-See, [What are managed identities for Azure resources?](../managed-identities-azure-resources/overview.md)
+See, [What are managed identities for Azure resources?](~/identity/managed-identities-azure-resources/overview.md)
 
 Managed identities use long-lived access tokens and information from Microsoft identity platform to acquire new tokens before tokens expire. Your app runs while acquiring new tokens.
 

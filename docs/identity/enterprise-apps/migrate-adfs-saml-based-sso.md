@@ -22,13 +22,13 @@ To configure a SaaS application for SAML-based SSO, see [Quickstart: Set up SAML
 
 :::image type="content" source="media/migrate-adfs-saml-based-sso/sso-saml-user-attributes-claims.png" alt-text="Screenshot of the SAML SSO settings blade.":::
 
-Many SaaS applications have an [application-specific tutorial](../saas-apps/tutorial-list.md) that steps you through the configuration for SAML-based SSO.
+Many SaaS applications have an [application-specific tutorial](~/identity/saas-apps/tutorial-list.md) that steps you through the configuration for SAML-based SSO.
 
-Some apps can be migrated easily. Apps with more complex requirements, such as custom claims, may require extra configuration in Microsoft Entra ID and/or [Microsoft Entra Connect Health](../hybrid/connect/whatis-azure-ad-connect.md). For information about supported claims mappings, see [How to: Customize claims emitted in tokens for a specific app in a tenant (Preview)](~/identity-platform/saml-claims-customization.md).
+Some apps can be migrated easily. Apps with more complex requirements, such as custom claims, may require extra configuration in Microsoft Entra ID and/or [Microsoft Entra Connect Health](~/identity/hybrid/connect/whatis-azure-ad-connect.md). For information about supported claims mappings, see [How to: Customize claims emitted in tokens for a specific app in a tenant (Preview)](~/identity-platform/saml-claims-customization.md).
 
 Keep in mind the following limitations when mapping attributes:
 
-* Not all attributes that can be issued in AD FS show up in Microsoft Entra ID as attributes to emit to SAML tokens, even if those attributes are synced. When you edit the attribute, the **Value** dropdown list shows you the different attributes that are available in Microsoft Entra ID. Check [Microsoft Entra Connect Sync articles](../hybrid/connect/how-to-connect-sync-whatis.md) configuration to ensure that a required attribute—for example, **samAccountName**—is synced to Microsoft Entra ID. You can use the extension attributes to emit any claim that isn't part of the standard user schema in Microsoft Entra ID.
+* Not all attributes that can be issued in AD FS show up in Microsoft Entra ID as attributes to emit to SAML tokens, even if those attributes are synced. When you edit the attribute, the **Value** dropdown list shows you the different attributes that are available in Microsoft Entra ID. Check [Microsoft Entra Connect Sync articles](~/identity/hybrid/connect/how-to-connect-sync-whatis.md) configuration to ensure that a required attribute—for example, **samAccountName**—is synced to Microsoft Entra ID. You can use the extension attributes to emit any claim that isn't part of the standard user schema in Microsoft Entra ID.
 * In the most common scenarios, only the **NameID** claim and other common user identifier claims are required for an app. To determine if any extra claims are required, examine what claims you're issuing from AD FS.
 * Not all claims can be issued, as some claims are protected in Microsoft Entra ID.
 * The ability to use encrypted SAML tokens is now in preview. See [How to: customize claims issued in the SAML token for enterprise applications](~/identity-platform/saml-claims-customization.md).
@@ -39,7 +39,7 @@ If your users sign in to SaaS apps such as Salesforce, ServiceNow, or Workday, a
 
 Most SaaS applications can be configured in Microsoft Entra ID. Microsoft has many preconfigured connections to SaaS apps in the  [Microsoft Entra app gallery](https://azuremarketplace.microsoft.com/marketplace/apps/category/azure-active-directory-apps), which makes your transition easier. SAML 2.0 applications can be integrated with Microsoft Entra ID via the Microsoft Entra app gallery or as [non-gallery applications](add-application-portal.md).
 
-Apps that use OAuth 2.0 or OpenID Connect can be similarly integrated with Microsoft Entra ID as [app registrations](~/identity-platform/quickstart-register-app.md). Apps that use legacy protocols can use [Microsoft Entra application proxy](../app-proxy/application-proxy.md) to authenticate with Microsoft Entra ID.
+Apps that use OAuth 2.0 or OpenID Connect can be similarly integrated with Microsoft Entra ID as [app registrations](~/identity-platform/quickstart-register-app.md). Apps that use legacy protocols can use [Microsoft Entra application proxy](~/identity/app-proxy/application-proxy.md) to authenticate with Microsoft Entra ID.
 
 For any issues with onboarding your SaaS apps, you can contact the [SaaS Application Integration support alias](mailto:SaaSApplicationIntegrations@service.microsoft.com).
 
@@ -77,7 +77,7 @@ Apps that you can move easily today include SAML 2.0 apps that use the standard 
 
 The following require more configuration steps to migrate to Microsoft Entra ID:
 
-* Custom authorization or multi-factor authentication (MFA) rules in AD FS. You configure them using the [Microsoft Entra Conditional Access](../conditional-access/overview.md) feature.
+* Custom authorization or multi-factor authentication (MFA) rules in AD FS. You configure them using the [Microsoft Entra Conditional Access](~/identity/conditional-access/overview.md) feature.
 * Apps with multiple Reply URL endpoints. You configure them in Microsoft Entra ID using PowerShell or the Microsoft Entra admin center interface.
 * WS-Federation apps such as SharePoint apps that require SAML version 1.1 tokens. You can configure them manually using PowerShell. You can also add a preintegrated generic template for SharePoint and SAML 1.1 applications from the gallery. We support the SAML 2.0 protocol.
 * Complex claims issuance transforms rules. For information about supported claims mappings, see:

@@ -22,7 +22,7 @@ Integrate BIG-IP with Microsoft Entra ID for many benefits:
 
 * Improved Zero Trust governance through Microsoft Entra preauthentication and Conditional Access
   * See, [Zero Trust framework to enable remote work](https://www.microsoft.com/security/blog/2020/04/02/announcing-microsoft-zero-trust-assessment-tool/)  
-  * See, [What is Conditional Access?](../conditional-access/overview.md)
+  * See, [What is Conditional Access?](~/identity/conditional-access/overview.md)
 * Single sign-on (SSO) between Microsoft Entra ID and BIG-IP published services
 * Manage identities and access from the [Microsoft Entra admin center](https://entra.microsoft.com)
 
@@ -40,7 +40,7 @@ Legacy applications lack modern protocols to support Microsoft Entra integration
 With a BIG-IP in front of the app, you overlay the service with Microsoft Entra preauthentication and header-based SSO. This action improves the application's security posture.
 
    > [!NOTE]
-   > Gain remote access to this type of application with Microsoft Entra application proxy. </br> See, [Remote access to on-premises applications through Microsoft Entra application proxy](../app-proxy/application-proxy.md).
+   > Gain remote access to this type of application with Microsoft Entra application proxy. </br> See, [Remote access to on-premises applications through Microsoft Entra application proxy](~/identity/app-proxy/application-proxy.md).
 
 ## Scenario architecture
 
@@ -74,7 +74,7 @@ For this scenario, SHA supports SP- and IdP-initiated flows. The following diagr
     * F5 BIG-IP APM add-on license on an existing BIG-IP F5 BIG-IP&reg; Local Traffic Manager&trade; (LTM)
     * 90-day BIG-IP full feature [trial license](https://www.f5.com/trial/big-ip-trial.php)
 * User identities synchronized from an on-premises directory to Microsoft Entra ID, or created in Microsoft Entra ID and flowed back to the on-premises directory
-  * See, [Microsoft Entra Connect Sync: Understand and customize synchronization](../hybrid/connect/how-to-connect-sync-whatis.md)
+  * See, [Microsoft Entra Connect Sync: Understand and customize synchronization](~/identity/hybrid/connect/how-to-connect-sync-whatis.md)
 * One of the following roles: Global Administrator, Cloud Application Administrator, or Application Administrator.
 * An SSL Web certificate to publish services over HTTPS, or use default BIG-IP certs for testing
   * See, [Deploy F5 BIG-IP Virtual Edition VM in Azure](./f5-bigip-deployment-guide.md)

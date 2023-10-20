@@ -19,7 +19,7 @@ In this article, learn to secure SAP ERP using Microsoft Entra ID, through F5’
 
 Integrating a BIG-IP with Microsoft Entra ID provides many benefits, including:
 
-* [Improved Zero Trust governance](https://www.microsoft.com/security/blog/2020/04/02/announcing-microsoft-zero-trust-assessment-tool/) through Microsoft Entra pre-authentication   and [Conditional Access](../conditional-access/overview.md)
+* [Improved Zero Trust governance](https://www.microsoft.com/security/blog/2020/04/02/announcing-microsoft-zero-trust-assessment-tool/) through Microsoft Entra pre-authentication   and [Conditional Access](~/identity/conditional-access/overview.md)
 
 * Full SSO between Microsoft Entra ID and BIG-IP published services
 
@@ -76,7 +76,7 @@ Prior BIG-IP experience isn’t necessary, but you will need:
 
     * 90-day BIG-IP full feature [trial license](https://www.f5.com/trial/big-ip-trial.php).
 
-* User identities [synchronized](../hybrid/how-to-connect-sync-whatis.md) from an on-premises directory to Microsoft Entra ID, or created directly within Microsoft Entra ID and flowed back to your on-premises directory
+* User identities [synchronized](~/identity/hybrid/how-to-connect-sync-whatis.md) from an on-premises directory to Microsoft Entra ID, or created directly within Microsoft Entra ID and flowed back to your on-premises directory
 
 * An account with Microsoft Entra Application admin [permissions](/azure/active-directory/users-groups-roles/directory-assign-admin-roles#application-administrator)
 
@@ -355,7 +355,7 @@ You can fail to access the SHA protected application due to any number of factor
 
 * Ensure there are no duplicate SPNs in your AD environment by executing the following query at the command line on a domain PC: setspn -q HTTP/my_target_SPN
 
-You can refer to our [App Proxy guidance](../app-proxy/application-proxy-back-end-kerberos-constrained-delegation-how-to.md) to validate an IIS application is configured appropriately for KCD. F5’s article on [how the APM handles Kerberos SSO](https://techdocs.f5.com/en-us/bigip-15-1-0/big-ip-access-policy-manager-single-sign-on-concepts-configuration/kerberos-single-sign-on-method.html) is also a valuable resource.
+You can refer to our [App Proxy guidance](~/identity/app-proxy/application-proxy-back-end-kerberos-constrained-delegation-how-to.md) to validate an IIS application is configured appropriately for KCD. F5’s article on [how the APM handles Kerberos SSO](https://techdocs.f5.com/en-us/bigip-15-1-0/big-ip-access-policy-manager-single-sign-on-concepts-configuration/kerberos-single-sign-on-method.html) is also a valuable resource.
 
 ### Log analysis
 

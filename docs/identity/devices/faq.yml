@@ -50,7 +50,7 @@ sections:
       - question: I see the device record under the USER info and I see the state as registered. Am I set up correctly to use Conditional Access?
         answer: |
           The device join state, shown by **deviceID**, must match the state on Microsoft Entra ID and meet any evaluation criteria for Conditional Access. 
-          For more information, see [Require managed devices for cloud app access with Conditional Access](../conditional-access/concept-conditional-access-grant.md).
+          For more information, see [Require managed devices for cloud app access with Conditional Access](~/identity/conditional-access/concept-conditional-access-grant.md).
           
           
           
@@ -287,11 +287,11 @@ sections:
           Take the following steps:
           
           1.    [Create a compliance policy](/mem/intune/protect/compliance-policy-create-mac-os)
-          1.    [Define a Conditional Access policy for macOS devices](../conditional-access/overview.md) 
+          1.    [Define a Conditional Access policy for macOS devices](~/identity/conditional-access/overview.md) 
           
           **Remarks:**
           
-          - The users included in your Conditional Access policy need a [supported version of Office for macOS](../conditional-access/concept-conditional-access-conditions.md) to access resources. 
+          - The users included in your Conditional Access policy need a [supported version of Office for macOS](~/identity/conditional-access/concept-conditional-access-conditions.md) to access resources. 
           - During the first access try, your users are prompted to enroll the device by using the company portal.
           
 additionalContent: |

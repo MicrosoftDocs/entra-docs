@@ -125,7 +125,7 @@ To learn more about these packages refer to the documentation in [`msal-browser`
 
 1. In the *src* folder, open *authConfig.js* and add the following code snippet:
 
-   :::code language="javascript" source="~/ms-identity-docs-code-javascript/react-spa/src/authConfig.js" :::
+   :::code language="javascript" source="~/../ms-identity-docs-code-javascript/react-spa/src/authConfig.js" :::
 
 1. Replace the following values with the values from the Microsoft Entra admin center.
     - `clientId` - The identifier of the application, also referred to as the client. Replace `Enter_the_Application_Id_Here` with the **Application (client) ID** value that was recorded earlier from the overview page of the registered application.
@@ -141,7 +141,7 @@ All parts of the app that require authentication must be wrapped in the [`MsalPr
 
 1. In the *src* folder, open *index.js* and replace the contents of the file with the following code snippet to use the `msal` packages and bootstrap styling:
 
-    :::code language="javascript" source="~/ms-identity-docs-code-javascript/react-spa/src/index.js" :::
+    :::code language="javascript" source="~/../ms-identity-docs-code-javascript/react-spa/src/index.js" :::
 
 1. Save the file.
 

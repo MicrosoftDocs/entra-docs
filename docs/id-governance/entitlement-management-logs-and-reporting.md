@@ -23,7 +23,7 @@ ms.custom: devx-track-azurepowershell
 ---
 # Archive logs and reporting on entitlement management in Azure Monitor
 
-Microsoft Entra ID stores audit events for up to 30 days in the audit log. However, you can keep the audit data for longer than the default retention period, outlined in [How long does Microsoft Entra ID store reporting data?](../reports-monitoring/reference-reports-data-retention.md), by routing it to an Azure Storage account or using Azure Monitor. You can then use workbooks and custom queries and reports on this data.
+Microsoft Entra ID stores audit events for up to 30 days in the audit log. However, you can keep the audit data for longer than the default retention period, outlined in [How long does Microsoft Entra ID store reporting data?](~/identity/monitoring-health/reference-reports-data-retention.md), by routing it to an Azure Storage account or using Azure Monitor. You can then use workbooks and custom queries and reports on this data.
 
 
 <a name='configure-azure-ad-to-use-azure-monitor'></a>
@@ -34,7 +34,7 @@ Microsoft Entra ID stores audit events for up to 30 days in the audit log. Howev
 
 Before you use the Azure Monitor workbooks, you must configure Microsoft Entra ID to send a copy of its audit logs to Azure Monitor.
 
-Archiving Microsoft Entra audit logs requires you to have Azure Monitor in an Azure subscription. You can read more about the prerequisites and estimated costs of using Azure Monitor in [Microsoft Entra activity logs in Azure Monitor](../reports-monitoring/concept-log-monitoring-integration-options-considerations.md).
+Archiving Microsoft Entra audit logs requires you to have Azure Monitor in an Azure subscription. You can read more about the prerequisites and estimated costs of using Azure Monitor in [Microsoft Entra activity logs in Azure Monitor](~/identity/monitoring-health/concept-log-monitoring-integration-options-considerations.md).
 
 **Prerequisite role**: Global Administrator
 
@@ -44,7 +44,7 @@ Archiving Microsoft Entra audit logs requires you to have Azure Monitor in an Az
 
 1. Check if there's already a setting to send the audit logs to that workspace.
 
-1. If there isn't already a setting, select **Add diagnostic setting**. Use the instructions in [Integrate Microsoft Entra logs with Azure Monitor logs](../reports-monitoring/howto-integrate-activity-logs-with-azure-monitor-logs.md) to send the Microsoft Entra audit log to the Azure Monitor workspace.
+1. If there isn't already a setting, select **Add diagnostic setting**. Use the instructions in [Integrate Microsoft Entra logs with Azure Monitor logs](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.md) to send the Microsoft Entra audit log to the Azure Monitor workspace.
 
     ![Diagnostics settings pane](./media/entitlement-management-logs-and-reporting/audit-log-diagnostics-settings.png)
 
@@ -113,7 +113,7 @@ If you would like to know the oldest and newest audit events held in Azure Monit
 AuditLogs | where TimeGenerated > ago(3653d) | summarize OldestAuditEvent=min(TimeGenerated), NewestAuditEvent=max(TimeGenerated) by Type
 ```
 
-For more information on the columns that are stored for audit events in Azure Monitor, see [Interpret the Microsoft Entra audit logs schema in Azure Monitor](../reports-monitoring/overview-monitoring-health.md).
+For more information on the columns that are stored for audit events in Azure Monitor, see [Interpret the Microsoft Entra audit logs schema in Azure Monitor](~/identity/monitoring-health/overview-monitoring-health.md).
 
 ## Create custom Azure Monitor queries using Azure PowerShell
 

@@ -22,7 +22,7 @@ This article is the second in a series of articles that provide guidance for con
 - [Common considerations for multi-tenant user management](multi-tenant-common-considerations.md) provides guidance for these considerations: cross-tenant synchronization, directory object, Microsoft Entra Conditional Access, additional access control, and Office 365. 
 - [Common solutions for multi-tenant user management](multi-tenant-common-solutions.md) when single tenancy doesn't work for your scenario, this article provides guidance for these challenges:  automatic user lifecycle management and resource allocation across tenants, sharing on-premises apps across tenants.
 
-The guidance helps to you achieve a consistent state of user lifecycle management. Lifecycle management includes provisioning, managing, and deprovisioning users across tenants using the available Azure tools that include [Microsoft Entra B2B collaboration](~/external-id/what-is-b2b.md) (B2B) and [cross-tenant synchronization](../multi-tenant-organizations/cross-tenant-synchronization-overview.md).
+The guidance helps to you achieve a consistent state of user lifecycle management. Lifecycle management includes provisioning, managing, and deprovisioning users across tenants using the available Azure tools that include [Microsoft Entra B2B collaboration](~/external-id/what-is-b2b.md) (B2B) and [cross-tenant synchronization](~/identity/multi-tenant-organizations/cross-tenant-synchronization-overview.md).
 
 This article describes three scenarios for which you can use multi-tenant user management features.
 
@@ -42,7 +42,7 @@ Here are the most widely used ways to invite end users to access tenant resource
 
 - [**Application-based invitations.**](~/external-id/what-is-b2b.md) Microsoft applications (such as Teams and SharePoint) can enable external user invitations. Configure B2B invitation settings in both Microsoft Entra B2B and in the relevant applications.
 - [**MyApps.**](~/identity/enterprise-apps/myapps-overview.md) Users can invite and assign external users to applications using MyApps. The user account must have [application self-service sign up](~/identity/enterprise-apps/manage-self-service-access.md) approver permissions. Group owners can invite external users to their groups.
-- [**Entitlement management.**](../governance/entitlement-management-overview.md) Enable admins or resource owners to create access packages with resources, allowed external organizations, external user expiration, and access policies. Publish access packages to enable external user self-service sign-up for resource access.
+- [**Entitlement management.**](~/id-governance/entitlement-management-overview.md) Enable admins or resource owners to create access packages with resources, allowed external organizations, external user expiration, and access policies. Publish access packages to enable external user self-service sign-up for resource access.
 - [**Azure portal.**](~/external-id/add-users-administrator.md) End users with the [Guest Inviter role](~/external-id/external-collaboration-settings-configure.md) can sign in to the Azure portal and invite external users from the **Users** menu in Microsoft Entra ID.
 - [**Programmatic (PowerShell, Graph API).**](~/external-id/customize-invitation-api.md) End users with the [Guest Inviter role](~/external-id/external-collaboration-settings-configure.md) can use PowerShell or Graph API to invite external users.
 
@@ -95,7 +95,7 @@ By default, the GAL hides invited external users. Set external user attributes t
 
 ### Deprovisioning accounts
 
-End user-initiated scenarios decentralize access decisions, which can create the challenge of deciding when to remove an external user and their associated access. [Entitlement management](../governance/entitlement-management-overview.md) and [access reviews](../governance/manage-guest-access-with-access-reviews.md) let you review and remove existing external users and their resource access.
+End user-initiated scenarios decentralize access decisions, which can create the challenge of deciding when to remove an external user and their associated access. [Entitlement management](~/id-governance/entitlement-management-overview.md) and [access reviews](~/id-governance/manage-guest-access-with-access-reviews.md) let you review and remove existing external users and their resource access.
 
 When you invite users outside of entitlement management, you must create a separate process to review and manage their access. For example, if you directly invite an external user through SharePoint Online, it isn't in your entitlement management process.
 
@@ -131,7 +131,7 @@ The resource organization may augment profile data to support sharing scenarios 
 
 ### Deprovisioning accounts
 
-[Delta Query](/graph/delta-query-overview) can signal when an external user needs to be deprovisioned. [Entitlement management](../governance/entitlement-management-overview.md) and [access reviews](../governance/manage-guest-access-with-access-reviews.md) can provide a way to review and remove existing external users and their access to resources.
+[Delta Query](/graph/delta-query-overview) can signal when an external user needs to be deprovisioned. [Entitlement management](~/id-governance/entitlement-management-overview.md) and [access reviews](~/id-governance/manage-guest-access-with-access-reviews.md) can provide a way to review and remove existing external users and their access to resources.
 
 If you invite users outside of entitlement management, create a separate process to review and manage external user access. For example, if you invite the external user directly through SharePoint Online, it isn't in your entitlement management process.
 
@@ -167,7 +167,7 @@ This section describes three techniques for automating account provisioning in t
 
 <a name='technique-1-use-the-built-in-cross-tenant-synchronization-capability-in-azure-ad'></a>
 
-#### Technique 1: Use the [built-in cross-tenant synchronization capability in Microsoft Entra ID](../multi-tenant-organizations/cross-tenant-synchronization-overview.md)
+#### Technique 1: Use the [built-in cross-tenant synchronization capability in Microsoft Entra ID](~/identity/multi-tenant-organizations/cross-tenant-synchronization-overview.md)
 
 This approach only works when all tenants that you need to synchronize are in the same cloud instance (such as Commercial to Commercial).
 

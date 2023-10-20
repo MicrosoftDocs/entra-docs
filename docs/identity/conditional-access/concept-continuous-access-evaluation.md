@@ -205,10 +205,10 @@ Networks and network services used by clients connecting to identity and resourc
 
 ### Supported location policies
 
-CAE only has insight into [IP-based named locations](../conditional-access/location-condition.md#ipv4-and-ipv6-address-ranges). CAE doesn't have insight into other location conditions like [MFA trusted IPs](~/identity/authentication/howto-mfa-mfasettings.md#trusted-ips) or country/region-based locations. When a user comes from an MFA trusted IP, trusted location that includes MFA Trusted IPs, or country/region location, CAE won't be enforced after that user moves to a different location. In those cases, Microsoft Entra ID issues a one-hour access token without instant IP enforcement check. 
+CAE only has insight into [IP-based named locations](~/identity/conditional-access/location-condition.md#ipv4-and-ipv6-address-ranges). CAE doesn't have insight into other location conditions like [MFA trusted IPs](~/identity/authentication/howto-mfa-mfasettings.md#trusted-ips) or country/region-based locations. When a user comes from an MFA trusted IP, trusted location that includes MFA Trusted IPs, or country/region location, CAE won't be enforced after that user moves to a different location. In those cases, Microsoft Entra ID issues a one-hour access token without instant IP enforcement check. 
 
 > [!IMPORTANT]
-> If you want your location policies to be enforced in real time by continuous access evaluation, use only the [IP based Conditional Access location condition](../conditional-access/location-condition.md) and configure all IP addresses, **including both IPv4 and IPv6**, that can be seen by your identity provider and resources provider. Do not use country/region location conditions or the trusted ips feature that is available in Microsoft Entra multifactor authentication's service settings page.
+> If you want your location policies to be enforced in real time by continuous access evaluation, use only the [IP based Conditional Access location condition](~/identity/conditional-access/location-condition.md) and configure all IP addresses, **including both IPv4 and IPv6**, that can be seen by your identity provider and resources provider. Do not use country/region location conditions or the trusted ips feature that is available in Microsoft Entra multifactor authentication's service settings page.
 
 ### Named location limitations
 

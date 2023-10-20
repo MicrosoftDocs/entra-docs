@@ -26,7 +26,7 @@ Before you create or invite a new user, take some time to review the types of us
 
 - **Internal member**: These users are most likely full-time employees in your organization.
 - **Internal guest**: These users have an account in your tenant, but have guest-level privileges. It's possible they were created within your tenant prior to the availability of B2B collaboration.
-- **External member**: These users authenticate using an external account, but have member access to your tenant. These types of users are common in [multi-tenant organizations](../multi-tenant-organizations/overview.md#what-is-a-multi-tenant-organization).
+- **External member**: These users authenticate using an external account, but have member access to your tenant. These types of users are common in [multi-tenant organizations](~/identity/multi-tenant-organizations/overview.md#what-is-a-multi-tenant-organization).
 - **External guest**: These users are true guests of your tenant who authenticate using an external method and who have guest-level privileges. 
 
 For more information abut the differences between internal and external guests and members, see [B2B collaboration properties](~/external-id/user-properties.md).
@@ -148,7 +148,7 @@ When you invite an external guest user by sending an email invitation, you can c
 
 There might be scenarios in which you want to manually create consumer accounts in your Azure Active Directory B2C (Azure AD B2C) directory. For more information about creating consumer accounts, see [Create and delete consumer users in Azure AD B2C](/azure/active-directory-b2c/manage-users-portal).
 
-If you have an environment with both Microsoft Entra ID (cloud) and Windows Server Active Directory (on-premises), you can add new users by syncing the existing user account data. For more information about hybrid environments and users, see [Integrate your on-premises directories with Microsoft Entra ID](../hybrid/whatis-hybrid-identity.md).
+If you have an environment with both Microsoft Entra ID (cloud) and Windows Server Active Directory (on-premises), you can add new users by syncing the existing user account data. For more information about hybrid environments and users, see [Integrate your on-premises directories with Microsoft Entra ID](~/identity/hybrid/whatis-hybrid-identity.md).
 
 ## Delete a user
 

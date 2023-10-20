@@ -20,4 +20,4 @@ The required roles and licenses might vary based on the report. Global Administr
 | Usage and insights | Security Reader<br>Reports Reader<br> Security Administrator  | Premium P1/P2 |
 | Identity Protection* | Security Administrator<br>Security Operator<br>Security Reader<br>Global Reader<br>A custom role with `IdentityRiskEventReadWrite` permission | Azure AD Free<br>Microsoft 365 Apps<br>Azure AD Premium P1/P2 |
 
-*The level of access and capabilities for Identity Protection varies with the role and license. For more information, see the [license requirements for Identity Protection](../identity-protection/overview-identity-protection.md#license-requirements).
+*The level of access and capabilities for Identity Protection varies with the role and license. For more information, see the [license requirements for Identity Protection](~/id-protection/overview-identity-protection.md#license-requirements).

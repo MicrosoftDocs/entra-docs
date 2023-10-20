@@ -19,7 +19,7 @@ ms.custom: not-enterprise-apps
 In this article, learn to secure SAP ERP using Microsoft Entra ID, with F5 BIG-IP Easy Button Guided Configuration 16.1. Integrating a BIG-IP with Microsoft Entra ID has many benefits:
 
 * [Zero Trust framework to enable remote work](https://www.microsoft.com/security/blog/2020/04/02/announcing-microsoft-zero-trust-assessment-tool/) 
-* [What is Conditional Access?](../conditional-access/overview.md)
+* [What is Conditional Access?](~/identity/conditional-access/overview.md)
 * Single sign-on (SSO) between Microsoft Entra ID and BIG-IP published services
 * Manage identities and access from the [Microsoft Entra admin center](https://entra.microsoft.com)
 
@@ -68,7 +68,7 @@ SHA supports SP and IdP initiated flows. The following image illustrates the SP-
     * F5 BIG-IP APM add-on license on an existing BIG-IP F5 BIG-IP® Local Traffic Manager™ (LTM)
     * 90-day BIG-IP full feature [trial license](https://www.f5.com/trial/big-ip-trial.php)
 * User identities synchronized from an on-premises directory to Microsoft Entra ID, or created in Microsoft Entra ID and flowed back to the on-premises directory
-  * See, [Microsoft Entra Connect Sync: Understand and customize synchronization](../hybrid/connect/how-to-connect-sync-whatis.md)
+  * See, [Microsoft Entra Connect Sync: Understand and customize synchronization](~/identity/hybrid/connect/how-to-connect-sync-whatis.md)
 * One of the following roles: Global Administrator, Cloud Application Administrator, or Application Administrator.
 * An SSL Web certificate to publish services over HTTPS, or use default BIG-IP certs for testing
   * See, [Deploy F5 BIG-IP Virtual Edition VM in Azure](./f5-bigip-deployment-guide.md)
@@ -341,7 +341,7 @@ If you're unable to access the SHA-secured application, see the following troubl
 * Confirm no duplicate SPNs in the environment. 
   * On a domain computer, at the command line, use the query: `setspn -q HTTP/my_target_SPN`
 
-To validate an IIS application KCD configuration, see [Troubleshoot KCD configurations for Application Proxy](../app-proxy/application-proxy-back-end-kerberos-constrained-delegation-how-to.md) 
+To validate an IIS application KCD configuration, see [Troubleshoot KCD configurations for Application Proxy](~/identity/app-proxy/application-proxy-back-end-kerberos-constrained-delegation-how-to.md) 
 
 Go to techdocs.f5.com for [Kerberos Single Sign-On Method](https://techdocs.f5.com/en-us/bigip-15-1-0/big-ip-access-policy-manager-single-sign-on-concepts-configuration/kerberos-single-sign-on-method.html)
 

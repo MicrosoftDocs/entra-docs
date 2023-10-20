@@ -74,7 +74,7 @@ The following messaging protocols support legacy authentication:
 - Universal Outlook - Used by the Mail and Calendar app for Windows 10.
 - Other clients - Other protocols identified as utilizing legacy authentication.
 
-For more information about these authentication protocols and services, see [Sign-in log activity details](../reports-monitoring/concept-sign-in-log-activity-details.md).
+For more information about these authentication protocols and services, see [Sign-in log activity details](~/identity/monitoring-health/concept-sign-in-log-activity-details.md).
 
 ### Identify legacy authentication use
 
@@ -86,13 +86,13 @@ Before you can block legacy authentication in your directory, you need to first 
 1. Browse to **Identity** > **Monitoring & health** > **Sign-in logs**.
 1. Add the **Client App** column if it isn't shown by clicking on **Columns** > **Client App**.
 1. Select **Add filters** > **Client App** > choose all of the legacy authentication protocols and select **Apply**.
-1. If you've activated the [new sign-in activity reports preview](../reports-monitoring/concept-sign-ins.md), repeat the above steps also on the **User sign-ins (non-interactive)** tab.
+1. If you've activated the [new sign-in activity reports preview](~/identity/monitoring-health/concept-sign-ins.md), repeat the above steps also on the **User sign-ins (non-interactive)** tab.
 
 Filtering shows you sign-in attempts made by legacy authentication protocols. Clicking on each individual sign-in attempt shows you more details. The **Client App** field under the **Basic Info** tab indicates which legacy authentication protocol was used.
 
 These logs indicate where users are using clients that are still depending on legacy authentication. For users that don't appear in these logs and are confirmed to not be using legacy authentication, implement a Conditional Access policy for these users only.
 
-Additionally, to help triage legacy authentication within your tenant use the [Sign-ins using legacy authentication workbook](../reports-monitoring/workbook-legacy%20authentication.md).
+Additionally, to help triage legacy authentication within your tenant use the [Sign-ins using legacy authentication workbook](~/identity/monitoring-health/workbook-legacy%20authentication.md).
 
 #### Indicators from client
 

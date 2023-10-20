@@ -24,8 +24,8 @@ In this article, you'll find information on:
 
 The table below captures the list of SuccessFactors attributes included by default in the following two provisioning apps:
 
-- [SuccessFactors to Active Directory User Provisioning](../saas-apps/sap-successfactors-inbound-provisioning-tutorial.md)
-- [SuccessFactors to Microsoft Entra user provisioning](../saas-apps/sap-successfactors-inbound-provisioning-cloud-only-tutorial.md)
+- [SuccessFactors to Active Directory User Provisioning](~/identity/saas-apps/sap-successfactors-inbound-provisioning-tutorial.md)
+- [SuccessFactors to Microsoft Entra user provisioning](~/identity/saas-apps/sap-successfactors-inbound-provisioning-cloud-only-tutorial.md)
 
 Please refer to the [SAP SuccessFactors integration reference](./sap-successfactors-integration-reference.md#retrieving-more-attributes) to extend the schema for additional attributes. 
 

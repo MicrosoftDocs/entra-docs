@@ -83,7 +83,7 @@ FIDO 2 security key providers are in various stages of FIPS certification. We re
 
 For AAL2, the NIST requirement is reauthentication every 12 hours, regardless of user activity. Reauthentication is required after a period of inactivity of 30 minutes or longer. Because the session secret is something you have, presenting something you know, or are, is required.
 
-To meet the requirement for reauthentication, regardless of user activity, Microsoft recommends configuring [user sign-in frequency](../conditional-access/howto-conditional-access-session-lifetime.md) to 12 hours.
+To meet the requirement for reauthentication, regardless of user activity, Microsoft recommends configuring [user sign-in frequency](~/identity/conditional-access/howto-conditional-access-session-lifetime.md) to 12 hours.
 
 With NIST you can use compensating controls to confirm subscriber presence:
 

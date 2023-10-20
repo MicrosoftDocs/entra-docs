@@ -164,7 +164,7 @@ As organizations start a migration of IAM to Microsoft Entra ID, they must deter
 
 * **Implement a cloud-first approach**: Establish a policy that all new devices, apps, and services should be cloud-first. New applications and services that use legacy protocols (for example, NTLM, Kerberos, or LDAP) should be by exception only.
 
-* **Transition to the cloud**: Shift the management and integration of users, apps, and devices away from on-premises and over to cloud-first alternatives. Optimize user provisioning by taking advantage of [cloud-first provisioning capabilities](../governance/what-is-provisioning.md) that integrate with Microsoft Entra ID. 
+* **Transition to the cloud**: Shift the management and integration of users, apps, and devices away from on-premises and over to cloud-first alternatives. Optimize user provisioning by taking advantage of [cloud-first provisioning capabilities](~/id-governance/what-is-provisioning.md) that integrate with Microsoft Entra ID. 
 
 The transformation changes how users accomplish tasks and how support teams provide user support. The organization should design and implement initiatives or projects in a way that minimizes the impact on user productivity. 
 

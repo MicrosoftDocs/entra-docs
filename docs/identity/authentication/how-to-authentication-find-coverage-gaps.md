@@ -23,7 +23,7 @@ Requiring multifactor authentication (MFA) for the administrators in your tenant
 
 ## Detect current usage for Microsoft Entra Built-in administrator roles
 
-The [Microsoft Entra ID Secure Score](../reports-monitoring/concept-identity-secure-score.md) provides a score for **Require MFA for administrative roles** in your tenant. This improvement action tracks the MFA usage of Global administrator, Security administrator, Exchange administrator, and SharePoint administrator. 
+The [Microsoft Entra ID Secure Score](~/identity/monitoring-health/concept-identity-secure-score.md) provides a score for **Require MFA for administrative roles** in your tenant. This improvement action tracks the MFA usage of Global administrator, Security administrator, Exchange administrator, and SharePoint administrator. 
 
 There are different ways to check if your admins are covered by an MFA policy. 
 
@@ -31,7 +31,7 @@ There are different ways to check if your admins are covered by an MFA policy.
 
   ![Screenshot of the sign-in log.](./media/how-to-authentication-find-coverage-gaps/auth-requirement.png)
 
-  When viewing the details of a specific sign-in, select the **Authentication details** tab for details about the MFA requirements. For more information, see [Sign-in log activity details](../reports-monitoring/concept-sign-in-log-activity-details.md).
+  When viewing the details of a specific sign-in, select the **Authentication details** tab for details about the MFA requirements. For more information, see [Sign-in log activity details](~/identity/monitoring-health/concept-sign-in-log-activity-details.md).
   
   ![Screenshot of the authentication activity details.](./media/how-to-authentication-find-coverage-gaps/details.png)
 
@@ -49,7 +49,7 @@ If you find administrators who aren't protected by multifactor authentication, y
 
 - Run the [MFA enablement wizard](https://aka.ms/MFASetupGuide) to choose your MFA policy.
 
-- If you assign custom or built-in admin roles in [Privileged Identity Management](../privileged-identity-management/pim-configure.md), require multifactor authentication upon role activation.
+- If you assign custom or built-in admin roles in [Privileged Identity Management](~/id-governance/privileged-identity-management/pim-configure.md), require multifactor authentication upon role activation.
 
 ## Use Passwordless and phishing resistant authentication methods for your administrators
 

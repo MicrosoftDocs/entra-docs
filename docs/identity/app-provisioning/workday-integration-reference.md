@@ -17,9 +17,9 @@ ms.reviewer: arvinh, chmutali
 
 [Microsoft Entra user provisioning service](~/identity/app-provisioning/user-provisioning.md) integrates with [Workday HCM](https://www.workday.com) to manage the identity life cycle of users. Microsoft Entra ID offers three prebuilt integrations: 
 
-* [Workday to on-premises Active Directory user provisioning](../saas-apps/workday-inbound-tutorial.md)
-* [Workday to Microsoft Entra user provisioning](../saas-apps/workday-inbound-cloud-only-tutorial.md)
-* [Workday Writeback](../saas-apps/workday-writeback-tutorial.md)
+* [Workday to on-premises Active Directory user provisioning](~/identity/saas-apps/workday-inbound-tutorial.md)
+* [Workday to Microsoft Entra user provisioning](~/identity/saas-apps/workday-inbound-cloud-only-tutorial.md)
+* [Workday Writeback](~/identity/saas-apps/workday-writeback-tutorial.md)
 
 This article explains how the integration works and how you can customize the provisioning behavior for different HR scenarios. 
 
@@ -46,7 +46,7 @@ To further secure the connectivity between Microsoft Entra provisioning service 
 
 ### Limiting access to worker data in Workday using constrained security groups
 
-The default steps to [configure the Workday integration system user](../saas-apps/workday-inbound-tutorial.md#configure-integration-system-user-in-workday) grants access to retrieve all users in your Workday tenant. In certain integration scenarios, you may want to limit access. For example, only return users in certain supervisory organizations from the `Get_Workers` API call.
+The default steps to [configure the Workday integration system user](~/identity/saas-apps/workday-inbound-tutorial.md#configure-integration-system-user-in-workday) grants access to retrieve all users in your Workday tenant. In certain integration scenarios, you may want to limit access. For example, only return users in certain supervisory organizations from the `Get_Workers` API call.
 
 You can limit access by working with your Workday admin and configuring constrained integration system security groups. For more information about Workday, see [Workday community](https://community.workday.com/forums/customer-questions/620393) (*Workday Community access required for this article*).
 
@@ -529,6 +529,6 @@ Use the steps to retrieve attributes associated with international job assignmen
 
 ## Next steps
 
-* [Learn how to configure Workday to Active Directory provisioning](../saas-apps/workday-inbound-tutorial.md)
-* [Learn how to configure write back to Workday](../saas-apps/workday-writeback-tutorial.md)
+* [Learn how to configure Workday to Active Directory provisioning](~/identity/saas-apps/workday-inbound-tutorial.md)
+* [Learn how to configure write back to Workday](~/identity/saas-apps/workday-writeback-tutorial.md)
 * [Learn more about supported Workday Attributes for inbound provisioning](workday-attribute-reference.md)

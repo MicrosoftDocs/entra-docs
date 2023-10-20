@@ -17,9 +17,9 @@ ms.reviewer: chmutali
 
 [Microsoft Entra user provisioning service](~/identity/app-provisioning/user-provisioning.md) integrates with [SAP SuccessFactors Employee Central](https://www.sap.com/products/hcm/employee-central-payroll.html) to manage the identity life cycle of users. Microsoft Entra ID offers three prebuilt integrations: 
 
-* [SuccessFactors to on-premises Active Directory user provisioning](../saas-apps/sap-successfactors-inbound-provisioning-tutorial.md)
-* [SuccessFactors to Microsoft Entra user provisioning](../saas-apps/sap-successfactors-inbound-provisioning-cloud-only-tutorial.md)
-* [SuccessFactors Writeback](../saas-apps/sap-successfactors-writeback-tutorial.md)
+* [SuccessFactors to on-premises Active Directory user provisioning](~/identity/saas-apps/sap-successfactors-inbound-provisioning-tutorial.md)
+* [SuccessFactors to Microsoft Entra user provisioning](~/identity/saas-apps/sap-successfactors-inbound-provisioning-cloud-only-tutorial.md)
+* [SuccessFactors Writeback](~/identity/saas-apps/sap-successfactors-writeback-tutorial.md)
 
 This article explains how the integration works and how you can customize the provisioning behavior for different HR scenarios. 
 
@@ -466,6 +466,6 @@ Usually the *personIdExternal* attribute value in SuccessFactors matches the *us
 * The write-back app can't read the current primary flag settings and use the same values for the write operation. The flag values configured in the attribute-mapping are always be used. 
 
 ## Next steps
-* [Learn how to configure SuccessFactors to Active Directory provisioning](../saas-apps/sap-successfactors-inbound-provisioning-tutorial.md)
-* [Learn how to configure writeback to SuccessFactors](../saas-apps/sap-successfactors-writeback-tutorial.md)
+* [Learn how to configure SuccessFactors to Active Directory provisioning](~/identity/saas-apps/sap-successfactors-inbound-provisioning-tutorial.md)
+* [Learn how to configure writeback to SuccessFactors](~/identity/saas-apps/sap-successfactors-writeback-tutorial.md)
 * [Learn more about supported SuccessFactors Attributes for inbound provisioning](sap-successfactors-attribute-reference.md)

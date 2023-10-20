@@ -374,7 +374,7 @@ This group is a set of attributes used as the minimal attributes needed for a ge
 * Yammer (only User is consumed)
 * [Hybrid Business-to-Business (B2B) cross-org collaboration scenarios offered by resources like SharePoint](/sharepoint/create-b2b-extranet)
 
-This group is a set of attributes that can be used if the Microsoft Entra directory is not used to support Microsoft 365, Dynamics, or Intune. It has a small set of core attributes. Note that single sign-on or provisioning to some third-party applications requires configuring synchronization of attributes in addition to the attributes described here. Application requirements are described in the [SaaS app tutorial](../../saas-apps/tutorial-list.md) for each application.
+This group is a set of attributes that can be used if the Microsoft Entra directory is not used to support Microsoft 365, Dynamics, or Intune. It has a small set of core attributes. Note that single sign-on or provisioning to some third-party applications requires configuring synchronization of attributes in addition to the attributes described here. Application requirements are described in the [SaaS app tutorial](~/identity/saas-apps/tutorial-list.md) for each application.
 
 | Attribute Name | User | Contact | Group | Comment |
 | --- |:---:|:---:|:---:| --- |
@@ -397,7 +397,7 @@ This group is a set of attributes that can be used if the Microsoft Entra direct
 | userPrincipalName |X | | |UPN is the login ID for the user. Most often the same as [mail] value. |
 
 ## Windows 10
-A Windows 10 domain-joined computer(device) synchronizes some attributes to Microsoft Entra ID. For more information on the scenarios, see [Connect domain-joined devices to Microsoft Entra ID for Windows 10 experiences](../../devices/hybrid-join-plan.md). These attributes always synchronize and Windows 10 does not appear as an app you can unselect. A Windows 10 domain-joined computer is identified by having the attribute userCertificate populated.
+A Windows 10 domain-joined computer(device) synchronizes some attributes to Microsoft Entra ID. For more information on the scenarios, see [Connect domain-joined devices to Microsoft Entra ID for Windows 10 experiences](~/identity/devices/hybrid-join-plan.md). These attributes always synchronize and Windows 10 does not appear as an app you can unselect. A Windows 10 domain-joined computer is identified by having the attribute userCertificate populated.
 
 | Attribute Name | Device | Comment |
 | --- |:---:| --- |

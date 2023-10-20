@@ -122,4 +122,4 @@ Workbooks can be created from scratch or from a template. When creating a new wo
 ## Next steps
 
 * [Create interactive reports by using Monitor workbooks](/azure/azure-monitor/visualize/workbooks-overview).
-* [Create custom Azure Monitor queries using Azure PowerShell](../governance/entitlement-management-logs-and-reporting.md).
+* [Create custom Azure Monitor queries using Azure PowerShell](~/id-governance/entitlement-management-logs-and-reporting.md).

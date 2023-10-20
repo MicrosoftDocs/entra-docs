@@ -22,7 +22,7 @@ Azure Active Directory Authentication Library (ADAL) has been deprecated. While 
 
 ## Sign-ins workbook
 
-Workbooks are a set of queries that collect and visualize information that is available in Microsoft Entra logs. [Learn more about the sign-in logs schema here](../reports-monitoring/reference-azure-monitor-sign-ins-log-schema.md). The Sign-ins workbook in the Azure portal now has a table to assist you in determining which applications use ADAL and how often they are used. First, we’ll detail how to access the workbook before showing the visualization for the list of applications.
+Workbooks are a set of queries that collect and visualize information that is available in Microsoft Entra logs. [Learn more about the sign-in logs schema here](~/identity/monitoring-health/reference-azure-monitor-sign-ins-log-schema.md). The Sign-ins workbook in the Azure portal now has a table to assist you in determining which applications use ADAL and how often they are used. First, we’ll detail how to access the workbook before showing the visualization for the list of applications.
 
 <a name='step-1-send-azure-ad-sign-in-events-to-azure-monitor'></a>
 
@@ -30,7 +30,7 @@ Workbooks are a set of queries that collect and visualize information that is av
 
 Microsoft Entra ID doesn't send sign-in events to Azure Monitor by default, which the Sign-ins workbook in Azure Monitor requires.
 
-Configure AD to send sign-in events to Azure Monitor by following the steps in [Integrate your Microsoft Entra sign-in and audit logs with Azure Monitor](../reports-monitoring/howto-integrate-activity-logs-with-azure-monitor-logs.md). In the **Diagnostic settings** configuration step, select the **SignInLogs** check box.
+Configure AD to send sign-in events to Azure Monitor by following the steps in [Integrate your Microsoft Entra sign-in and audit logs with Azure Monitor](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.md). In the **Diagnostic settings** configuration step, select the **SignInLogs** check box.
 
 No sign-in event that occurred *before* you configure Microsoft Entra ID to send the events to Azure Monitor will appear in the Sign-ins workbook.
 

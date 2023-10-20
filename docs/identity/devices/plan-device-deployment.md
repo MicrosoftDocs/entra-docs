@@ -41,7 +41,7 @@ The key benefits of giving your devices a Microsoft Entra identity:
 
 * Increase productivity – Users can do [seamless sign-on (SSO)](./device-sso-to-on-premises-resources.md) to your on-premises and cloud resources, enabling productivity wherever they are.
 
-* Increase security – Apply [Conditional Access policies](../conditional-access/overview.md) to resources based on the identity of the device or user. Joining a device to Microsoft Entra ID is a prerequisite for increasing your security with a [Passwordless](~/identity/authentication/concept-authentication-passwordless.md) strategy.
+* Increase security – Apply [Conditional Access policies](~/identity/conditional-access/overview.md) to resources based on the identity of the device or user. Joining a device to Microsoft Entra ID is a prerequisite for increasing your security with a [Passwordless](~/identity/authentication/concept-authentication-passwordless.md) strategy.
 
    > [!VIDEO https://www.youtube-nocookie.com/embed/NcONUf-jeS4]
 
@@ -126,7 +126,7 @@ Conditional Access <br>(Require Microsoft Entra hybrid joined devices) | | | ![C
 
 Registered devices are often managed with [Microsoft Intune](/mem/intune/fundamentals/deployment-guide-enrollment). Devices are enrolled in Intune in several ways, depending on the operating system. 
 
-Microsoft Entra registered devices provide support for Bring Your Own Devices (BYOD) and corporate owned devices to SSO to cloud resources. Access to resources is based on the Microsoft Entra [Conditional Access policies](../conditional-access/concept-conditional-access-grant.md) applied to the device and the user.
+Microsoft Entra registered devices provide support for Bring Your Own Devices (BYOD) and corporate owned devices to SSO to cloud resources. Access to resources is based on the Microsoft Entra [Conditional Access policies](~/identity/conditional-access/concept-conditional-access-grant.md) applied to the device and the user.
 
 ### Registering devices
 

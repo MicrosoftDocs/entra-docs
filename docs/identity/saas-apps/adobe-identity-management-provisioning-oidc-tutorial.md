@@ -75,9 +75,9 @@ Add Adobe Identity Management (OIDC) from the Microsoft Entra application galler
 
 The Microsoft Entra provisioning service allows you to scope who will be provisioned based on assignment to the application and or based on attributes of the user / group. If you choose to scope who will be provisioned to your app based on assignment, you can use the following [steps](~/identity/enterprise-apps/assign-user-or-group-access-portal.md) to assign users and groups to the application. If you choose to scope who will be provisioned based solely on attributes of the user or group, you can use a scoping filter as described [here](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md). 
 
-* If you need additional roles, you can [update the application manifest](~/identity-platform/howto-add-app-roles-in-azure-ad-apps.md) to add new roles.
+* If you need additional roles, you can [update the application manifest](~/identity-platform/howto-add-app-roles-in-apps.md) to add new roles.
 
-* If you need additional roles, you can [update the application manifest](~/identity-platform/howto-add-app-roles-in-azure-ad-apps.md) to add new roles.
+* If you need additional roles, you can [update the application manifest](~/identity-platform/howto-add-app-roles-in-apps.md) to add new roles.
 
 
 ## Step 5: Configure automatic user provisioning to Adobe Identity Management (OIDC) 
@@ -161,7 +161,7 @@ This operation starts the initial synchronization cycle of all users and groups 
 ## Step 6: Monitor your deployment
 Once you've configured provisioning, use the following resources to monitor your deployment:
 
-* Use the [provisioning logs](../reports-monitoring/concept-provisioning-logs.md) to determine which users have been provisioned successfully or unsuccessfully
+* Use the [provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md) to determine which users have been provisioned successfully or unsuccessfully
 * Check the [progress bar](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md) to see the status of the provisioning cycle and how close it is to completion
 * If the provisioning configuration seems to be in an unhealthy state, the application will go into quarantine. Learn more about quarantine states [here](~/identity/app-provisioning/application-provisioning-quarantine-status.md).
 

@@ -110,4 +110,4 @@ These articles provide additional information on Microsoft Entra ID.
 * [Microsoft Entra cmdlets for configuring group settings](~/identity/users/groups-settings-cmdlets.md)
 * [Application Management in Microsoft Entra ID](~/identity/enterprise-apps/what-is-application-management.md)
 * [What is Microsoft Entra ID?](~/fundamentals/whatis.md)
-* [Integrate your on-premises identities with Microsoft Entra ID](../hybrid/whatis-hybrid-identity.md)
+* [Integrate your on-premises identities with Microsoft Entra ID](~/identity/hybrid/whatis-hybrid-identity.md)

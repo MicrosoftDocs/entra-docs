@@ -20,7 +20,7 @@ Solution 1 uses Microsoft Entra ID as the primary identity provider (IdP) for al
 
 [![Diagram that shows Microsoft Entra integration with various application environments using Cirrus to provide a CAS bridge and a SAML bridge.](media/multilateral-federation-solution-one/azure-ad-cirrus-bridge.png)](media/multilateral-federation-solution-one/cirrus-bridge.png#lightbox)
 
-If you're also using an on-premises Active Directory instance, you can [configure Active Directory](../hybrid/whatis-hybrid-identity.md) with hybrid identities. Implementing a solution of using Microsoft Entra ID with Cirrus Bridge provides:
+If you're also using an on-premises Active Directory instance, you can [configure Active Directory](~/identity/hybrid/whatis-hybrid-identity.md) with hybrid identities. Implementing a solution of using Microsoft Entra ID with Cirrus Bridge provides:
 
 * **Security Assertion Markup Language (SAML) bridge**: Configure multilateral federation and participation in InCommon and eduGAIN. You can also use the SAML bridge to configure Microsoft Entra Conditional Access policies, app assignment, governance, and other features for each multilateral federation app.
 
@@ -44,7 +44,7 @@ Here are some of the advantages of implementing Microsoft Entra ID with Cirrus B
 
 * **Streamlined configuration, deployment, and support model**
 
-  * [Cirrus Bridge](../saas-apps/cirrus-identity-bridge-for-azure-ad-tutorial.md) is registered in the Microsoft Entra app gallery.
+  * [Cirrus Bridge](~/identity/saas-apps/cirrus-identity-bridge-for-azure-ad-tutorial.md) is registered in the Microsoft Entra app gallery.
 
   * You benefit from an established process for configuring and setting up the bridge solution.
 
@@ -86,7 +86,7 @@ The following resources help with your migration to this solution architecture.
 | [Resources for migrating applications to Microsoft Entra ID](~/identity/enterprise-apps/migration-resources.md) | List of resources to help you migrate application access and authentication to Microsoft Entra ID |
 | [Microsoft Entra custom claims provider](~/identity-platform/custom-claims-provider-overview.md)| Overview of the Microsoft Entra custom claims provider |
 | [Custom security attributes](~/fundamentals/custom-security-attributes-manage.md) | Steps for managing access to custom security attributes |
-| [Microsoft Entra single sign-on integration with Cirrus Bridge](../saas-apps/cirrus-identity-bridge-for-azure-ad-tutorial.md) | Tutorial to integrate Cirrus Bridge with Microsoft Entra ID |
+| [Microsoft Entra single sign-on integration with Cirrus Bridge](~/identity/saas-apps/cirrus-identity-bridge-for-azure-ad-tutorial.md) | Tutorial to integrate Cirrus Bridge with Microsoft Entra ID |
 | [Cirrus Bridge overview](https://blog.cirrusidentity.com/documentation/azure-bridge-setup-rev-6.0) | Cirrus Identity documentation for configuring Cirrus Bridge with Microsoft Entra ID |
 | [Microsoft Entra multifactor authentication deployment considerations](~/identity/authentication/howto-mfa-getstarted.md) | Guidance for configuring Microsoft Entra multifactor authentication  |
 

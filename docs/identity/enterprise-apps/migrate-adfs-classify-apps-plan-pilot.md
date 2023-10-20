@@ -48,7 +48,7 @@ You can choose to begin the app migration with either the lowest priority apps o
 
 In a scenario where you may not have experience using Microsoft Entra ID and Identity services, consider moving your **lowest priority apps** to Microsoft Entra first. This minimizes your business impact, and you can build momentum. Once you've successfully moved these apps and have gained the stakeholder’s confidence, you can continue to migrate the other apps.
 
-If there's  no clear priority, you should consider moving the apps that are in the [Microsoft Entra Gallery](https://azuremarketplace.microsoft.com/marketplace/apps/category/azure-active-directory-apps) first and support multiple identity providers because they're easier to integrate. It's likely that these apps are the **highest-priority apps** in your organization. To help integrate your SaaS applications with Microsoft Entra ID, we have developed a collection of [tutorials](../saas-apps/tutorial-list.md) that walk you through configuration.
+If there's  no clear priority, you should consider moving the apps that are in the [Microsoft Entra Gallery](https://azuremarketplace.microsoft.com/marketplace/apps/category/azure-active-directory-apps) first and support multiple identity providers because they're easier to integrate. It's likely that these apps are the **highest-priority apps** in your organization. To help integrate your SaaS applications with Microsoft Entra ID, we have developed a collection of [tutorials](~/identity/saas-apps/tutorial-list.md) that walk you through configuration.
 
 When you have a deadline to migrate the apps, these highest priority apps bucket takes the major workload. You can eventually select the lower priority apps as they won't change the cost even though you've moved the deadline.
 
@@ -118,9 +118,9 @@ Before you initiate the migration process, take time to fully consider the secur
 
 ### Identities and data
 
-Most organizations have specific requirements about identities and data protection that vary by industry segment and by job functions within organizations. Refer to [identity and device access configurations](/microsoft-365/security/office-365-security/microsoft-365-policies-configurations) for our recommendations including a prescribed set of [Conditional Access policies](../conditional-access/overview.md) and related capabilities.
+Most organizations have specific requirements about identities and data protection that vary by industry segment and by job functions within organizations. Refer to [identity and device access configurations](/microsoft-365/security/office-365-security/microsoft-365-policies-configurations) for our recommendations including a prescribed set of [Conditional Access policies](~/identity/conditional-access/overview.md) and related capabilities.
 
-You can use this information to protect access to all services integrated with Microsoft Entra ID. These recommendations are aligned with Microsoft Secure Score and the [identity score in Microsoft Entra ID](../reports-monitoring/concept-identity-secure-score.md). The score helps you to:
+You can use this information to protect access to all services integrated with Microsoft Entra ID. These recommendations are aligned with Microsoft Secure Score and the [identity score in Microsoft Entra ID](~/identity/monitoring-health/concept-identity-secure-score.md). The score helps you to:
 
 - Objectively measure your identity security posture
 - Plan identity security improvements
@@ -134,7 +134,7 @@ The device and location that a user uses to access an app are also important. De
 
 :::image type="content" source="media/migrate-adfs-classify-apps-plan-pilot/user-location-data-access.png" alt-text="Diagram showing the relationship between User Location and Data Access.":::
 
-With these aspects of resource, user, and device in mind, you may choose to use [Microsoft Entra Conditional Access](../conditional-access/overview.md) capabilities. Conditional Access goes beyond user permissions: it's based on a combination of factors, such as the identity of a user or group, the network that the user is connected to, the device and application they're using, and the type of data they're trying to access. The access granted to the user adapts to this broader set of conditions.
+With these aspects of resource, user, and device in mind, you may choose to use [Microsoft Entra Conditional Access](~/identity/conditional-access/overview.md) capabilities. Conditional Access goes beyond user permissions: it's based on a combination of factors, such as the identity of a user or group, the network that the user is connected to, the device and application they're using, and the type of data they're trying to access. The access granted to the user adapts to this broader set of conditions.
 
 ## Exit criteria
 

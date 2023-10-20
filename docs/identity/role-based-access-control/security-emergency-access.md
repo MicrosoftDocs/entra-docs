@@ -101,7 +101,7 @@ Organizations should monitor sign-in and audit log activity from the emergency a
 
 ### Prerequisites
 
-1. [Send Microsoft Entra sign-in logs](../reports-monitoring/howto-integrate-activity-logs-with-azure-monitor-logs.md) to Azure Monitor.
+1. [Send Microsoft Entra sign-in logs](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.md) to Azure Monitor.
 
 ### Obtain Object IDs of the break glass accounts
 
@@ -228,4 +228,4 @@ These steps should be performed at regular intervals and for key changes:
 - [Sign up for Microsoft Entra ID P1 or P2](~/fundamentals/get-started-premium.md), if you haven’t signed up already
 - [How to require two-step verification for a user](~/identity/authentication/howto-mfa-userstates.md)
 - [Configure additional protections for Global Administrators in Microsoft 365](/microsoft-365/enterprise/protect-your-global-administrator-accounts), if you are using Microsoft 365
-- [Start an access review of Global Administrators](../privileged-identity-management/pim-create-roles-and-resource-roles-review.md) and [transition existing Global Administrators to more specific administrator roles](permissions-reference.md)
+- [Start an access review of Global Administrators](~/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md) and [transition existing Global Administrators to more specific administrator roles](permissions-reference.md)

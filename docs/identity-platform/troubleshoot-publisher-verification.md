@@ -49,8 +49,8 @@ Below are some common issues that may occur during the process.
 - **I'm getting an error related to multi-factor authentication. What should I do?** 
     Ensure [multi-factor authentication](~/identity/authentication/concept-mfa-licensing.md) is enabled and **required** for the user you're signing in with and for this scenario. For example, MFA could be:
     - Always required for the user you're signing in with.
-    - [Required for Azure management](../conditional-access/howto-conditional-access-policy-azure-management.md).
-    - [Required for the type of administrator](../conditional-access/howto-conditional-access-policy-admin-mfa.md) you're signing in with.
+    - [Required for Azure management](~/identity/conditional-access/howto-conditional-access-policy-azure-management.md).
+    - [Required for the type of administrator](~/identity/conditional-access/howto-conditional-access-policy-admin-mfa.md) you're signing in with.
 
 ## Making Microsoft Graph API calls 
 
@@ -305,11 +305,11 @@ The error message displayed will be: "Due to a configuration change made by your
 When a request to add a verified publisher is made, many signals are used to make a security risk assessment. If the user risk state is determined to be ‘AtRisk’, an error, “You're unable to add a verified publisher to this application. Contact your administrator for assistance” will be returned. Please investigate the user risk and take the appropriate steps to remediate the risk (guidance below): 
 
 **Remediation Steps**
-> [Investigate risk](../identity-protection/howto-identity-protection-investigate-risk.md#risky-users)
+> [Investigate risk](~/id-protection/howto-identity-protection-investigate-risk.md#risky-users)
 > 
-> [Remediate risk/unblock users](../identity-protection/howto-identity-protection-remediate-unblock.md)
+> [Remediate risk/unblock users](~/id-protection/howto-identity-protection-remediate-unblock.md)
 > 
-> [Self-remediation guidance](../identity-protection/howto-identity-protection-remediate-unblock.md)
+> [Self-remediation guidance](~/id-protection/howto-identity-protection-remediate-unblock.md)
 > 
 > Self-serve password reset (SSPR): If the organization allows SSPR, use aka.ms/sspr to reset the password for remediation. Please choose a strong password; Choosing a weak password may not reset the risk state.  
 > 

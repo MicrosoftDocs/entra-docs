@@ -33,7 +33,7 @@ The following scenarios are supported:
 
 The following scenarios are _not_ supported:
 
-- Detection of users with [leaked credentials](../../identity-protection/overview-identity-protection.md).
+- Detection of users with [leaked credentials](~/id-protection/overview-identity-protection.md).
 - Microsoft Entra Domain Services needs Password Hash Synchronization to be enabled on the tenant. Therefore tenants that use Pass-through Authentication _only_ don't work for scenarios that need Microsoft Entra Domain Services.
 - Pass-through Authentication is not integrated with [Microsoft Entra Connect Health](./whatis-azure-ad-connect.md).
 - Signing in to Microsoft Entra joined (AADJ) devices with a temporary or expired password is not supported for Pass-through authentication users. The error "the sign-in method you're trying to use isn't allowed" will appear.  These users must sign in to a browser to update their temporary password.
@@ -52,6 +52,6 @@ The following scenarios are _not_ supported:
 - [Frequently asked questions](how-to-connect-pta-faq.yml): Find answers to frequently asked questions about the Pass-through Authentication feature.
 - [Troubleshoot](tshoot-connect-pass-through-authentication.md): Learn how to resolve common problems with the Pass-through Authentication feature.
 - [Security deep dive](how-to-connect-pta-security-deep-dive.md): Get deep technical information on the Pass-through Authentication feature.
-- [Microsoft Entra hybrid join](../../devices/how-to-hybrid-join.md): Configure Microsoft Entra hybrid join capability on your tenant for SSO across your cloud and on-premises resources.
+- [Microsoft Entra hybrid join](~/identity/devices/how-to-hybrid-join.md): Configure Microsoft Entra hybrid join capability on your tenant for SSO across your cloud and on-premises resources.
 - [Microsoft Entra seamless SSO](how-to-connect-sso.md): Learn more about this complementary feature.
 - [UserVoice](https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789): Use the Microsoft Entra Forum to file new feature requests.

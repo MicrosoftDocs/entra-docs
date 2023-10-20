@@ -1362,7 +1362,7 @@ Once the initial cycle has started, you can select **Provisioning logs** in the 
 
 ## Publish your application to the Microsoft Entra application gallery
 
-If you're building an application used by more than one tenant, make it available in the Microsoft Entra application gallery. It's easy for organizations to discover the application and configure provisioning. Publishing your app in the Microsoft Entra gallery and making provisioning available to others is easy. Check out the steps [here](~/identity/enterprise-apps/v2-howto-app-gallery-listing.md). Microsoft works with you to integrate your application into the gallery, test your endpoint, and release onboarding [documentation](../saas-apps/tutorial-list.md) for customers.
+If you're building an application used by more than one tenant, make it available in the Microsoft Entra application gallery. It's easy for organizations to discover the application and configure provisioning. Publishing your app in the Microsoft Entra gallery and making provisioning available to others is easy. Check out the steps [here](~/identity/enterprise-apps/v2-howto-app-gallery-listing.md). Microsoft works with you to integrate your application into the gallery, test your endpoint, and release onboarding [documentation](~/identity/saas-apps/tutorial-list.md) for customers.
 
 ### Gallery onboarding checklist
 Use the checklist to onboard your application quickly and customers have a smooth deployment experience. The information is gathered from you when onboarding to the gallery. 
@@ -1457,4 +1457,4 @@ To help drive awareness and demand of our joint integration, we recommend you up
 > [Writing expressions for attribute mappings](functions-for-customizing-application-data.md)
 > [Scoping filters for user provisioning](define-conditional-rules-for-provisioning-user-accounts.md)
 > [Account provisioning notifications](user-provisioning.md)
-> [List of tutorials on how to integrate SaaS apps](../saas-apps/tutorial-list.md)
+> [List of tutorials on how to integrate SaaS apps](~/identity/saas-apps/tutorial-list.md)

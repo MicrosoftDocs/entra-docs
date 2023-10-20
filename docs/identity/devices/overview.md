@@ -27,7 +27,7 @@ There are three ways to get a device identity:
 - Microsoft Entra join
 - Microsoft Entra hybrid join
 
-Device identities are a prerequisite for scenarios like [device-based Conditional Access policies](../conditional-access/concept-conditional-access-grant.md) and [Mobile Device Management with the Microsoft Intune family of products](/mem/endpoint-manager-overview).
+Device identities are a prerequisite for scenarios like [device-based Conditional Access policies](~/identity/conditional-access/concept-conditional-access-grant.md) and [Mobile Device Management with the Microsoft Intune family of products](/mem/endpoint-manager-overview).
 
 ## Modern device scenario
 
@@ -58,4 +58,4 @@ Getting devices in to Microsoft Entra ID can be done in a self-service manner or
 - Learn more about [Microsoft Entra joined devices](concept-directory-join.md)
 - Learn more about [Microsoft Entra hybrid joined devices](concept-hybrid-join.md)
 - To get an overview of how to manage device identities, see [Managing device identities](manage-device-identities.md).
-- To learn more about device-based Conditional Access, see [Configure Microsoft Entra device-based Conditional Access policies](../conditional-access/concept-conditional-access-grant.md).
+- To learn more about device-based Conditional Access, see [Configure Microsoft Entra device-based Conditional Access policies](~/identity/conditional-access/concept-conditional-access-grant.md).

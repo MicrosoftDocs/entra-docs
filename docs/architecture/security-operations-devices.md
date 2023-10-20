@@ -20,15 +20,15 @@ Devices aren't commonly targeted in identity-based attacks, but *can* be used to
 
 * Unregistered
 
-* [Microsoft Entra registered](../devices/concept-device-registration.md)
+* [Microsoft Entra registered](~/identity/devices/concept-device-registration.md)
 
-* [Microsoft Entra joined](../devices/concept-directory-join.md)
+* [Microsoft Entra joined](~/identity/devices/concept-directory-join.md)
 
-* [Microsoft Entra hybrid joined](../devices/concept-hybrid-join.md)
+* [Microsoft Entra hybrid joined](~/identity/devices/concept-hybrid-join.md)
 
-Registered and joined devices are issued a [Primary Refresh Token (PRT),](../devices/concept-primary-refresh-token.md) which can be used as a primary authentication artifact, and in some cases as a multifactor authentication artifact. Attackers may try to register their own devices, use PRTs on legitimate devices to access business data, steal PRT-based tokens from legitimate user devices, or find misconfigurations in device-based controls in Microsoft Entra ID. With Microsoft Entra hybrid joined devices, the join process is initiated and controlled by administrators, reducing the available attack methods.
+Registered and joined devices are issued a [Primary Refresh Token (PRT),](~/identity/devices/concept-primary-refresh-token.md) which can be used as a primary authentication artifact, and in some cases as a multifactor authentication artifact. Attackers may try to register their own devices, use PRTs on legitimate devices to access business data, steal PRT-based tokens from legitimate user devices, or find misconfigurations in device-based controls in Microsoft Entra ID. With Microsoft Entra hybrid joined devices, the join process is initiated and controlled by administrators, reducing the available attack methods.
 
-For more information on device integration methods, see [Choose your integration methods](../devices/plan-device-deployment.md) in the article [Plan your Microsoft Entra device deployment.](../devices/plan-device-deployment.md)
+For more information on device integration methods, see [Choose your integration methods](~/identity/devices/plan-device-deployment.md) in the article [Plan your Microsoft Entra device deployment.](~/identity/devices/plan-device-deployment.md)
 
 To reduce the risk of bad actors attacking your infrastructure through devices, monitor
 
@@ -46,9 +46,9 @@ To reduce the risk of bad actors attacking your infrastructure through devices, 
 
 The log files you use for investigation and monitoring are:
 
-* [Microsoft Entra audit logs](../reports-monitoring/concept-audit-logs.md)
+* [Microsoft Entra audit logs](~/identity/monitoring-health/concept-audit-logs.md)
 
-* [Sign-in logs](../reports-monitoring/concept-sign-ins.md)
+* [Sign-in logs](~/identity/monitoring-health/concept-sign-ins.md)
 
 * [Microsoft 365 Audit logs](/purview/audit-solutions-overview)
 
@@ -62,19 +62,19 @@ From the Azure portal, you can view the Microsoft Entra audit logs and download 
 
 * **[Azure Monitor](/azure/azure-monitor/overview)** – enables automated monitoring and alerting of various conditions. Can create or use workbooks to combine data from different sources.
 
-* **[Azure Event Hubs](/azure/event-hubs/event-hubs-about) -integrated with a SIEM**- [Microsoft Entra logs can be integrated to other SIEMs](../reports-monitoring/howto-stream-logs-to-event-hub.md) such as Splunk, ArcSight, QRadar, and Sumo Logic via the Azure Event Hubs integration.
+* **[Azure Event Hubs](/azure/event-hubs/event-hubs-about) -integrated with a SIEM**- [Microsoft Entra logs can be integrated to other SIEMs](~/identity/monitoring-health/howto-stream-logs-to-event-hub.md) such as Splunk, ArcSight, QRadar, and Sumo Logic via the Azure Event Hubs integration.
 
 * **[Microsoft Defender for Cloud Apps](/defender-cloud-apps/what-is-defender-for-cloud-apps)** – enables you to discover and manage apps, govern across apps and resources, and check your cloud apps’ compliance.
 
-* **[Securing workload identities with Identity Protection Preview](../identity-protection/concept-workload-identity-risk.md)** - Used to detect risk on workload identities across sign-in behavior and offline indicators of compromise.
+* **[Securing workload identities with Identity Protection Preview](~/id-protection/concept-workload-identity-risk.md)** - Used to detect risk on workload identities across sign-in behavior and offline indicators of compromise.
 
-Much of what you'll monitor and alert on are the effects of your Conditional Access policies. You can use the [Conditional Access insights and reporting workbook](../conditional-access/howto-conditional-access-insights-reporting.md) to examine the effects of one or more Conditional Access policies on your sign-ins, and the results of policies including device state. This workbook enables you to view a summary, and identify the effects over a specific time period. You can also use the workbook to investigate the sign-ins of a specific user.
+Much of what you'll monitor and alert on are the effects of your Conditional Access policies. You can use the [Conditional Access insights and reporting workbook](~/identity/conditional-access/howto-conditional-access-insights-reporting.md) to examine the effects of one or more Conditional Access policies on your sign-ins, and the results of policies including device state. This workbook enables you to view a summary, and identify the effects over a specific time period. You can also use the workbook to investigate the sign-ins of a specific user.
 
  The rest of this article describes what we recommend you monitor and alert on, and is organized by the type of threat. Where there are specific pre-built solutions we link to them or provide samples following the table. Otherwise, you can build alerts using the preceding tools.
 
 ## Device registrations and joins outside policy
 
-Microsoft Entra registered and Microsoft Entra joined devices possess primary refresh tokens (PRTs), which are the equivalent of a single authentication factor. These devices can at times contain strong authentication claims. For more information on when PRTs contain strong authentication claims, see [When does a PRT get an MFA claim](../devices/concept-primary-refresh-token.md)? To keep bad actors from registering or joining devices, require multi-factor authentication (MFA) to register or join devices. Then monitor for any devices registered or joined without MFA. You’ll also need to watch for changes to MFA settings and policies, and device compliance policies.
+Microsoft Entra registered and Microsoft Entra joined devices possess primary refresh tokens (PRTs), which are the equivalent of a single authentication factor. These devices can at times contain strong authentication claims. For more information on when PRTs contain strong authentication claims, see [When does a PRT get an MFA claim](~/identity/devices/concept-primary-refresh-token.md)? To keep bad actors from registering or joining devices, require multi-factor authentication (MFA) to register or join devices. Then monitor for any devices registered or joined without MFA. You’ll also need to watch for changes to MFA settings and policies, and device compliance policies.
 
  | What to monitor| Risk Level| Where| Filter/sub-filter| Notes |
 | - |- |- |- |- |
@@ -167,7 +167,7 @@ Microsoft Entra sign-in for LINUX allows organizations to sign in to their Azure
 
 | What to monitor| Risk Level| Where| Filter/sub-filter| Notes |
 | - |- |- |- |- |
-| Non-Azure AD account signing in, especially over SSH| High| Local authentication logs| Ubuntu:  <br>monitor /var/log/auth.log for SSH use<br>RedHat: <br>monitor /var/log/sssd/ for SSH use| Look for: entries [where non-Azure AD accounts are successfully connecting to VMs](../devices/howto-vm-sign-in-azure-ad-linux.md). See following example. |
+| Non-Azure AD account signing in, especially over SSH| High| Local authentication logs| Ubuntu:  <br>monitor /var/log/auth.log for SSH use<br>RedHat: <br>monitor /var/log/sssd/ for SSH use| Look for: entries [where non-Azure AD accounts are successfully connecting to VMs](~/identity/devices/howto-vm-sign-in-azure-ad-linux.md). See following example. |
 
 Ubuntu example:
 
@@ -183,7 +183,7 @@ Ubuntu example:
 
    May 9 23:49:43 ubuntu1804 sshd[3909]: pam_unix(sshd:session): session opened for user localusertest01 by (uid=0).
 
-You can set policy for LINUX VM sign-ins, and detect and flag Linux VMs that have non-approved local accounts added. To learn more, see using [Azure Policy to ensure standards and assess compliance](../devices/howto-vm-sign-in-azure-ad-linux.md).
+You can set policy for LINUX VM sign-ins, and detect and flag Linux VMs that have non-approved local accounts added. To learn more, see using [Azure Policy to ensure standards and assess compliance](~/identity/devices/howto-vm-sign-in-azure-ad-linux.md).
 
 <a name='azure-ad-sign-ins-for-windows-server'></a>
 

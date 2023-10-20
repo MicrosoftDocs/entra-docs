@@ -96,25 +96,25 @@ In the Java quickstart, the sign-in button is located in the [main/resources/tem
 
 In the Node.js quickstart, the code for the sign-in button is located in *index.hbs* template file.
 
-:::code language="hbs" source="~/ms-identity-node/App/views/index.hbs" range="10-11":::
+:::code language="hbs" source="~/../ms-identity-node/App/views/index.hbs" range="10-11":::
 
 This template is served via the main (index) route of the app:
 
-:::code language="js" source="~/ms-identity-node/App/routes/index.js" range="6-15":::
+:::code language="js" source="~/../ms-identity-node/App/routes/index.js" range="6-15":::
 
 # [Python](#tab/python)
 
 In the Python quickstart, the code for the sign-in link is located in *login.html* template file.
 
-:::code language="python" source="~/ms-identity-python-webapp-tutorial/templates/login.html" range="19-19":::
+:::code language="python" source="~/../ms-identity-python-webapp-tutorial/templates/login.html" range="19-19":::
 
 When an unauthenticated user visits the home page, the `index` route in *app.py* redirects the user to the `login` route.
 
-:::code language="python" source="~/ms-identity-python-webapp-tutorial/app.py" range="49-57" highlight="7-8":::
+:::code language="python" source="~/../ms-identity-python-webapp-tutorial/app.py" range="49-57" highlight="7-8":::
 
 The `login` route figures out the appropriate `auth_uri` and renders the *login.html* template.
 
-:::code language="python" source="~/ms-identity-python-webapp-tutorial/app.py" range="28-33":::
+:::code language="python" source="~/../ms-identity-python-webapp-tutorial/app.py" range="28-33":::
 
 ---
 
@@ -173,7 +173,7 @@ public class AuthPageController {
 
 When the user selects the **Sign in** link, which triggers the `/auth/signin` route, the sign-in controller takes over to authenticate the user with Microsoft identity platform. 
 
-:::code language="js" source="~/ms-identity-node/App/auth/AuthProvider.js" range="15-77, 195-253":::
+:::code language="js" source="~/../ms-identity-node/App/auth/AuthProvider.js" range="15-77, 195-253":::
 
 # [Python](#tab/python)
 
@@ -181,7 +181,7 @@ When the user selects the **Sign in** link, they're brought to the Microsoft ide
 
 A successful sign-in redirects the user to the `auth_response` route, which completes the sign-in process using [`auth.complete_login`](https://identity-library.readthedocs.io/en/latest/#identity.web.Auth.complete_log_in), renders errors if any, and redirects the now authenticated user to the home page. 
 
-:::code language="python" source="~/ms-identity-python-webapp-tutorial/app.py" range="36-41":::
+:::code language="python" source="~/../ms-identity-python-webapp-tutorial/app.py" range="36-41":::
 
 ---
 
@@ -289,13 +289,13 @@ In our Java quickstart, the sign-out button is located in the main/resources/tem
 
 # [Node.js](#tab/nodejs)
 
-:::code language="hbs" source="~/ms-identity-node/App/views/index.hbs" range="2, 8":::
+:::code language="hbs" source="~/../ms-identity-node/App/views/index.hbs" range="2, 8":::
 
 # [Python](#tab/python)
 
 In the Python quickstart, the sign-out button is located in the *templates/index.html* file.
 
-:::code language="html" source="~/ms-identity-python-webapp-tutorial/templates/index.html" range="20":::
+:::code language="html" source="~/../ms-identity-python-webapp-tutorial/templates/index.html" range="20":::
 
 
 ---
@@ -355,13 +355,13 @@ In Java, sign-out is handled by calling the Microsoft identity platform `logout`
 
 When the user selects the **Sign out** button, the app triggers the `/auth/signout` route, which destroys the session and redirects the browser to Microsoft identity platform sign-out endpoint.
 
-:::code language="js" source="~/ms-identity-node/App/auth/AuthProvider.js" range="157-175":::
+:::code language="js" source="~/../ms-identity-node/App/auth/AuthProvider.js" range="157-175":::
 
 # [Python](#tab/python)
 
 When the user selects **Logout**, the app triggers the `logout` route, which redirects the browser to the Microsoft identity platform sign-out endpoint.
 
-:::code language="python" source="~/ms-identity-python-webapp-tutorial/app.py" range="44-46":::
+:::code language="python" source="~/../ms-identity-python-webapp-tutorial/app.py" range="44-46":::
 
 
 ---

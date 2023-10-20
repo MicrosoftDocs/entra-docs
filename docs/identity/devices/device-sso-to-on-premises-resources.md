@@ -25,7 +25,7 @@ This article explains how this works.
 
 - An [Microsoft Entra joined device](concept-directory-join.md).
 - On-premises SSO requires line-of-sight communication with your on-premises AD DS domain controllers. If Microsoft Entra joined devices aren't connected to your organization's network, a VPN or other network infrastructure is required. 
-- Microsoft Entra Connect or Microsoft Entra Connect cloud sync: To synchronize default user attributes like SAM Account Name, Domain Name, and UPN. For more information, see the article [Attributes synchronized by Microsoft Entra Connect](../hybrid/connect/reference-connect-sync-attributes-synchronized.md#windows-10).
+- Microsoft Entra Connect or Microsoft Entra Connect cloud sync: To synchronize default user attributes like SAM Account Name, Domain Name, and UPN. For more information, see the article [Attributes synchronized by Microsoft Entra Connect](~/identity/hybrid/connect/reference-connect-sync-attributes-synchronized.md#windows-10).
 
 ## How it works 
 
@@ -72,7 +72,7 @@ You can use:
  
 ## What you should know
 
-- You may have to adjust your [domain-based filtering](../hybrid/connect/how-to-connect-sync-configure-filtering.md#domain-based-filtering) in Microsoft Entra Connect to ensure that the data about the required domains is synchronized if you have multiple domains.
+- You may have to adjust your [domain-based filtering](~/identity/hybrid/connect/how-to-connect-sync-configure-filtering.md#domain-based-filtering) in Microsoft Entra Connect to ensure that the data about the required domains is synchronized if you have multiple domains.
 - Apps and resources that depend on Active Directory machine authentication don't work because Microsoft Entra joined devices don't have a computer object in AD DS. 
 - You can't share files with other users on a Microsoft Entra joined device.
 - Applications running on your Microsoft Entra joined device may authenticate users. They must use the implicit UPN or the NT4 type syntax with the domain FQDN name as the domain part, for example: user@contoso.corp.com or contoso.corp.com\user.

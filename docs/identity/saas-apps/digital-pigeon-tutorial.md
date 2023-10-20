@@ -51,7 +51,7 @@ Add Digital Pigeon from the Microsoft Entra application gallery to configure sin
 Follow the guidelines in the [create and assign a user account](~/identity/enterprise-apps/add-application-portal-assign-users.md) article to create a test user account called B.Simon.
 
    > [!NOTE]
-   > Please click [here](~/identity-platform/howto-add-app-roles-in-azure-ad-apps.md#app-roles-ui) to learn how to configure App Roles in Microsoft Entra ID. The Role value must be one of 'Digital Pigeon User', 'Digital Pigeon Power User', or 'Digital Pigeon Admin'. If a role claim is not supplied, the default role is configurable in the Digital Pigeon app (`Account Settings > SSO > SAML Provisioning Settings`) by a Digital Pigeon Owner, as seen below:
+   > Please click [here](~/identity-platform/howto-add-app-roles-in-apps.md#app-roles-ui) to learn how to configure App Roles in Microsoft Entra ID. The Role value must be one of 'Digital Pigeon User', 'Digital Pigeon Power User', or 'Digital Pigeon Admin'. If a role claim is not supplied, the default role is configurable in the Digital Pigeon app (`Account Settings > SSO > SAML Provisioning Settings`) by a Digital Pigeon Owner, as seen below:
    ![Screenshot shows how to configure SAML Provisioning Default Role.](media/digital-pigeon-tutorial/saml-default-role.png "SAML Default Role")
 
 Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, and assign roles. The wizard also provides a link to the single sign-on configuration pane. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides). 

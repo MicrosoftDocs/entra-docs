@@ -30,7 +30,7 @@ This workbook:
 
 ## Enabling provisioning logs
 
-You should already be familiar with Azure monitoring and Log Analytics. If not, jump over to learn about them and then come back to learn about application provisioning logs. To learn more about Azure monitoring, see [Azure Monitor overview](/azure/azure-monitor/overview). To learn more about Azure Monitor logs and Log Analytics, see [Overview of log queries in Azure Monitor](/azure/azure-monitor/logs/log-query-overview) and [Provisioning Logs for troubleshooting cloud sync](../hybrid/cloud-sync/how-to-troubleshoot.md).
+You should already be familiar with Azure monitoring and Log Analytics. If not, jump over to learn about them and then come back to learn about application provisioning logs. To learn more about Azure monitoring, see [Azure Monitor overview](/azure/azure-monitor/overview). To learn more about Azure Monitor logs and Log Analytics, see [Overview of log queries in Azure Monitor](/azure/azure-monitor/logs/log-query-overview) and [Provisioning Logs for troubleshooting cloud sync](~/identity/hybrid/cloud-sync/how-to-troubleshoot.md).
 
 ## Source and Target
 At the top of the workbook, using the drop-down, specify the source and target identities.  
@@ -139,5 +139,5 @@ To learn more about alerts, see [Azure Monitor Log Alerts](/azure/azure-monitor/
 
 ## Next steps 
 
-- [What is provisioning?](../hybrid/what-is-provisioning.md)
-- [Error codes](../hybrid/cloud-sync/reference-error-codes.md)
+- [What is provisioning?](~/identity/hybrid/what-is-provisioning.md)
+- [Error codes](~/identity/hybrid/cloud-sync/reference-error-codes.md)

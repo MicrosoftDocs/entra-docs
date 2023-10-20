@@ -27,8 +27,8 @@ This document focuses on enabling FIDO2 security key based passwordless authenti
 | [Combined security information registration](concept-registration-mfa-sspr-combined.md) | X | X |
 | Compatible [FIDO2 security keys](concept-authentication-passwordless.md#fido2-security-keys) | X | X |
 | WebAuthN requires Windows 10 version 1903 or higher | X | X |
-| [Microsoft Entra joined devices](../devices/concept-directory-join.md) require Windows 10 version 1909 or higher | X |   |
-| [Microsoft Entra hybrid joined devices](../devices/concept-hybrid-join.md) require Windows 10 version 2004 or higher |   | X |
+| [Microsoft Entra joined devices](~/identity/devices/concept-directory-join.md) require Windows 10 version 1909 or higher | X |   |
+| [Microsoft Entra hybrid joined devices](~/identity/devices/concept-hybrid-join.md) require Windows 10 version 2004 or higher |   | X |
 | Fully patched Windows Server 2016/2019 Domain Controllers. |   | X |
 | [Microsoft Entra Hybrid Authentication Management module](https://www.powershellgallery.com/packages/AzureADHybridAuthenticationManagement/2.1.1.0) |   | X |
 | [Microsoft Intune](/mem/intune/fundamentals/what-is-intune) (Optional) | X | X |
@@ -158,6 +158,6 @@ If you'd like to share feedback or encounter issues about this feature, share vi
 
 [Enable access to on-premises resources for Microsoft Entra ID and Microsoft Entra hybrid joined devices](howto-authentication-passwordless-security-key-on-premises.md)
 
-[Learn more about device registration](../devices/overview.md)
+[Learn more about device registration](~/identity/devices/overview.md)
 
 [Learn more about Microsoft Entra multifactor authentication](~/identity/authentication/howto-mfa-getstarted.md)

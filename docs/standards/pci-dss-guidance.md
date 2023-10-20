@@ -128,10 +128,10 @@ Learn more
 
 * [Introduction to delegated administration and isolated environments](~/architecture/secure-introduction.md)
 * [How to use the Microsoft Authenticator app](https://support.microsoft.com/account-billing/how-to-use-the-microsoft-authenticator-app-9783c865-0308-42fb-a519-8cf666fe0acc)
-* [What are managed identities for Azure resources?](../managed-identities-azure-resources/overview.md)
-* [What are access reviews?](../governance/access-reviews-overview.md)
-* [What is Conditional Access?](../conditional-access/overview.md)
-* [Audit logs in Microsoft Entra ID](../reports-monitoring/concept-audit-logs.md)
+* [What are managed identities for Azure resources?](~/identity/managed-identities-azure-resources/overview.md)
+* [What are access reviews?](~/id-governance/access-reviews-overview.md)
+* [What is Conditional Access?](~/identity/conditional-access/overview.md)
+* [Audit logs in Microsoft Entra ID](~/identity/monitoring-health/concept-audit-logs.md)
 
 ### Establish a responsibility matrix
 
@@ -176,7 +176,7 @@ Typically, web services such as Azure, have a shared infrastructure wherein cust
 * Conditional Access provides an identity-driven control plane and brings signals together, to make decisions, and enforce organizational policies.
 * Privileged role governance - access reviews, just-in-time (JIT) activation, etc.
 
-Learn more: [What is Conditional Access?](../conditional-access/overview.md)
+Learn more: [What is Conditional Access?](~/identity/conditional-access/overview.md)
 
 ### Data residency 
 
@@ -196,7 +196,7 @@ Implement accurate logging and monitoring to detect, and respond to, security in
 
 Learn more: 
 
-* [What are Microsoft Entra reports?](../reports-monitoring/overview-monitoring-health.md)
+* [What are Microsoft Entra reports?](~/identity/monitoring-health/overview-monitoring-health.md)
 * [Microsoft Entra built-in roles](~/identity/role-based-access-control/permissions-reference.md)
 
 ### Multi-application environments: host outside the CDE

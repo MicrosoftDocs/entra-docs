@@ -28,7 +28,7 @@ There are two possible reasons why you might need to edit the claims that are is
 
 1. The application requires a different set of claim URIs or claim values.
 
-2. The application requires the NameIdentifier claim to be something other than the user principal name [(UPN)](../hybrid/connect/plan-connect-userprincipalname.md#what-is-userprincipalname) that's stored in Microsoft Entra ID.
+2. The application requires the NameIdentifier claim to be something other than the user principal name [(UPN)](~/identity/hybrid/connect/plan-connect-userprincipalname.md#what-is-userprincipalname) that's stored in Microsoft Entra ID.
 
 For information about how to add and edit claims, see [Customizing claims issued in the SAML token for enterprise applications in Microsoft Entra ID](~/identity-platform/saml-claims-customization.md).
 

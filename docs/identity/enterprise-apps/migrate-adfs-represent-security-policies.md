@@ -109,7 +109,7 @@ Specify MFA rules based on a user's location in Microsoft Entra ID:
 
 1. Create a [new Conditional Access policy](~/identity/authentication/tutorial-enable-azure-mfa.md?bc=/azure/active-directory/conditional-access/breadcrumb/toc.json&toc=/azure/active-directory/conditional-access/toc.json).
 1. Set the **Assignments** to **All users**.
-1. [Configure named locations in Microsoft Entra ID](../conditional-access/location-condition.md). Otherwise, federation from inside your corporate network is trusted.
+1. [Configure named locations in Microsoft Entra ID](~/identity/conditional-access/location-condition.md). Otherwise, federation from inside your corporate network is trusted.
 1. Configure the **Conditions rules** to specify the locations for which you would like to enforce MFA.
 
    :::image type="content" source="media/migrate-adfs-represent-security-policies/mfa-location-1.png" alt-text="Screenshot shows the Locations pane for Conditions rules.":::
@@ -149,7 +149,7 @@ In this table, we've listed some useful Permit and Except options and how they m
 
 | Option | How to configure Permit option in Microsoft Entra ID?| How to configure Except option in Microsoft Entra ID? |
 | - | - | - |
-| From specific network| Maps to [Named Location](../conditional-access/location-condition.md) in Microsoft Entra ID| Use the **Exclude** option for [trusted locations](../conditional-access/location-condition.md) |
+| From specific network| Maps to [Named Location](~/identity/conditional-access/location-condition.md) in Microsoft Entra ID| Use the **Exclude** option for [trusted locations](~/identity/conditional-access/location-condition.md) |
 | From specific groups| [Set a User/Groups Assignment](assign-user-or-group-access-portal.md)| Use the **Exclude** option in Users and Groups |
 | From Devices with Specific Trust Level| Set this from the **Device State** control under Assignments -> Conditions| Use the **Exclude** option under Device State Condition and Include **All devices** |
 | With Specific Claims in the Request| This setting can't be migrated| This setting can't be migrated |
@@ -168,7 +168,7 @@ Here's an example of how to configure the Exclude option for trusted locations i
 
 When you map authorization rules, apps that authenticate with AD FS may use Active Directory groups for permissions. In such a case, use [Microsoft Entra Connect](https://go.microsoft.com/fwlink/?LinkId=615771) to sync these groups with Microsoft Entra ID before migrating the applications. Make sure that you verify those groups and membership before migration so that you can grant access to the same users when the application is migrated.
 
-For more information, see [Prerequisites for using Group attributes synchronized from Active Directory](../hybrid/connect/how-to-connect-fed-group-claims.md).
+For more information, see [Prerequisites for using Group attributes synchronized from Active Directory](~/identity/hybrid/connect/how-to-connect-fed-group-claims.md).
 
 ### Set up user self-provisioning
 
@@ -195,5 +195,5 @@ Accounts within your organization that represent an external user need to be dis
 ## Next steps
 
 - Read  [Migrating application authentication to Microsoft Entra ID](https://aka.ms/migrateapps/whitepaper).
-- Set up [Conditional Access](../conditional-access/overview.md) and [MFA](~/identity/authentication/concept-mfa-howitworks.md).
+- Set up [Conditional Access](~/identity/conditional-access/overview.md) and [MFA](~/identity/authentication/concept-mfa-howitworks.md).
 - Try a step-wise code sample:[AD FS to Microsoft Entra application migration playbook for developers](https://aka.ms/adfsplaybook).

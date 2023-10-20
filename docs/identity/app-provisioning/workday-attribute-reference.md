@@ -22,7 +22,7 @@ This section provides a list of attributes that you can fetch from Workday using
 
 The table below captures the list of Workday attributes and corresponding XPATH expressions that are shipped out of the box with the Workday inbound provisioning app connector. These XPATH values are used *if no version information is specified in the connection URL or if the version is set to v21.1*. 
 
-:::image type="content" source="../saas-apps/media/workday-inbound-tutorial/workday-url-no-version-info.png" alt-text="Workday no version info":::
+:::image type="content" source="~/identity/saas-apps/media/workday-inbound-tutorial/workday-url-no-version-info.png" alt-text="Workday no version info":::
 
 
 | \# | Workday Attribute Name                                  | Workday XPATH API expression                                                                                                                                                                                                                                                                                                                                                                                       |
@@ -112,12 +112,12 @@ The table below captures the list of Workday attributes and corresponding XPATH 
 
 If you are using WWS API v30.0 or above in the connection URL as shown below:
 
-:::image type="content" source="../saas-apps/media/workday-inbound-tutorial/workday-url-version-info.png" alt-text="Workday version info":::
+:::image type="content" source="~/identity/saas-apps/media/workday-inbound-tutorial/workday-url-version-info.png" alt-text="Workday version info":::
 
 ...then before turning on the provisioning job, please update the **XPATH API expressions** under **Attribute Mapping -> Advanced Options -> Edit attribute list for Workday** to use the values listed in the table. 
 
 
-To configure additional XPATHs, refer to the section [Tutorial: Managing your configuration](../saas-apps/workday-inbound-tutorial.md#managing-your-configuration). 
+To configure additional XPATHs, refer to the section [Tutorial: Managing your configuration](~/identity/saas-apps/workday-inbound-tutorial.md#managing-your-configuration). 
 
 
 | \# | Workday Attribute Name                                  | Workday XPATH API expression                                                                                                                                                                                                                                                                                                                                                |
@@ -204,7 +204,7 @@ To configure additional XPATHs, refer to the section [Tutorial: Managing your co
 | 80 | WorkSpaceReference                    | wd:Worker/wd:Worker\_Data/wd:Employment\_Data/wd:Worker\_Job\_Data\[@wd:Primary_Job=1]/wd:Position\_Data/wd:Work\_Space\_\_Reference/@wd:Descriptor                                                                                                                                                                                                                                  |
 
 ## Custom XPATH values
-The table below provides a list of other commonly used custom XPATH API expressions when provisioning workers from Workday to Active Directory or Microsoft Entra ID. Please test the XPATH API expressions provided here with your version of Workday referring to the instructions captured in the section [Tutorial: Managing your configuration](../saas-apps/workday-inbound-tutorial.md#managing-your-configuration).
+The table below provides a list of other commonly used custom XPATH API expressions when provisioning workers from Workday to Active Directory or Microsoft Entra ID. Please test the XPATH API expressions provided here with your version of Workday referring to the instructions captured in the section [Tutorial: Managing your configuration](~/identity/saas-apps/workday-inbound-tutorial.md#managing-your-configuration).
 
 To add more attributes to the XPATH table for the benefit of customers implementing this integration, please leave a comment below or directly [contribute](/contribute/) to the article. 
 

@@ -17,7 +17,7 @@ ms.collection: M365-identity-device-management
 ---
 # Common Conditional Access policy: User risk-based password change
 
-Microsoft works with researchers, law enforcement, various security teams at Microsoft, and other trusted sources to find leaked username and password pairs. Organizations with Microsoft Entra ID P2 licenses can create Conditional Access policies incorporating [Microsoft Entra ID Protection user risk detections](../identity-protection/concept-identity-protection-risks.md). 
+Microsoft works with researchers, law enforcement, various security teams at Microsoft, and other trusted sources to find leaked username and password pairs. Organizations with Microsoft Entra ID P2 licenses can create Conditional Access policies incorporating [Microsoft Entra ID Protection user risk detections](~/id-protection/concept-identity-protection-risks.md). 
 
 There are two locations where this policy may be configured, Conditional Access and Identity Protection. Configuration using a Conditional Access policy is the preferred method providing more context including enhanced diagnostic data, report-only mode integration, Graph API support, and the ability to utilize other Conditional Access attributes like sign-in frequency in the policy.
 
@@ -52,10 +52,10 @@ After administrators confirm the settings using [report-only mode](howto-conditi
 
 ## Next steps
 
-- [Require reauthentication every time](../conditional-access/howto-conditional-access-session-lifetime.md#require-reauthentication-every-time)
-- [Remediate risks and unblock users](../identity-protection/howto-identity-protection-remediate-unblock.md)
+- [Require reauthentication every time](~/identity/conditional-access/howto-conditional-access-session-lifetime.md#require-reauthentication-every-time)
+- [Remediate risks and unblock users](~/id-protection/howto-identity-protection-remediate-unblock.md)
 - [Conditional Access common policies](concept-conditional-access-policy-common.md)
 - [Sign-in risk-based Conditional Access](howto-conditional-access-policy-risk.md)
 - [Determine effect using Conditional Access report-only mode](howto-conditional-access-insights-reporting.md)
 - [Use report-only mode for Conditional Access to determine the results of new policy decisions.](concept-conditional-access-report-only.md)
-- [What is Microsoft Entra ID Protection?](../identity-protection/overview-identity-protection.md)
+- [What is Microsoft Entra ID Protection?](~/id-protection/overview-identity-protection.md)

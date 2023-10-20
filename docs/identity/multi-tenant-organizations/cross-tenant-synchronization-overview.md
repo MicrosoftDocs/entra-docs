@@ -29,7 +29,7 @@ Here are the primary goals of cross-tenant synchronization:
 
 ## Why use cross-tenant synchronization?
 
-Cross-tenant synchronization automates creating, updating, and deleting B2B collaboration users. Users created with cross-tenant synchronization are able to access both Microsoft applications (such as Teams and SharePoint) and non-Microsoft applications (such as [ServiceNow](../saas-apps/servicenow-provisioning-tutorial.md), [Adobe](../saas-apps/adobe-identity-management-provisioning-tutorial.md), and many more), regardless of which tenant the apps are integrated with. These users continue to benefit from the security capabilities in Microsoft Entra ID, such as [Microsoft Entra Conditional Access](../conditional-access/overview.md) and [cross-tenant access settings](~/external-id/cross-tenant-access-overview.md), and can be governed through features such as [Microsoft Entra entitlement management](../governance/entitlement-management-overview.md).
+Cross-tenant synchronization automates creating, updating, and deleting B2B collaboration users. Users created with cross-tenant synchronization are able to access both Microsoft applications (such as Teams and SharePoint) and non-Microsoft applications (such as [ServiceNow](~/identity/saas-apps/servicenow-provisioning-tutorial.md), [Adobe](~/identity/saas-apps/adobe-identity-management-provisioning-tutorial.md), and many more), regardless of which tenant the apps are integrated with. These users continue to benefit from the security capabilities in Microsoft Entra ID, such as [Microsoft Entra Conditional Access](~/identity/conditional-access/overview.md) and [cross-tenant access settings](~/external-id/cross-tenant-access-overview.md), and can be governed through features such as [Microsoft Entra entitlement management](~/id-governance/entitlement-management-overview.md).
 
 The following diagram shows how you can use cross-tenant synchronization to enable users to access applications across tenants in your organization.
 
@@ -205,7 +205,7 @@ Can I sync a mesh between multiple tenants?
 
 Can I use cross-tenant synchronization across organizations (outside my multitenant organization)?
 
--  For privacy reasons, cross-tenant synchronization is intended for use within an organization. We recommend using [entitlement management](../governance/entitlement-management-overview.md) for inviting B2B collaboration users across organizations.
+-  For privacy reasons, cross-tenant synchronization is intended for use within an organization. We recommend using [entitlement management](~/id-governance/entitlement-management-overview.md) for inviting B2B collaboration users across organizations.
 
 Can cross-tenant synchronization be used to migrate users from one tenant to another tenant?
 

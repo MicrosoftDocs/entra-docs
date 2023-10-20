@@ -230,7 +230,7 @@ $roleAssignment = New-AzureADMSRoleAssignment -RoleDefinitionId $roleDefinitionI
 
 ## View audit logs for attribute changes
 
-Sometimes you need information about custom security attribute changes, such as for auditing or troubleshooting purposes. Anytime someone makes changes to definitions or assignments, the changes get logged in the [Microsoft Entra audit logs](../reports-monitoring/concept-audit-logs.md).
+Sometimes you need information about custom security attribute changes, such as for auditing or troubleshooting purposes. Anytime someone makes changes to definitions or assignments, the changes get logged in the [Microsoft Entra audit logs](~/identity/monitoring-health/concept-audit-logs.md).
 
 Here are the custom security attribute-related activities that are logged:
 

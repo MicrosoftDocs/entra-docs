@@ -179,5 +179,5 @@ If the user attempts to upgrade multiple installations (5+) of Microsoft Authent
 To learn about Microsoft Entra authentication and passwordless methods, see the following articles:
 
 - [Learn how passwordless authentication works](concept-authentication-passwordless.md)
-- [Learn about device registration](../devices/overview.md)
+- [Learn about device registration](~/identity/devices/overview.md)
 - [Learn about Microsoft Entra multifactor authentication](~/identity/authentication/howto-mfa-getstarted.md)

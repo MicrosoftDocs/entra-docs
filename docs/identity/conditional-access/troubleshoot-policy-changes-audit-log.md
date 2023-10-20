@@ -35,7 +35,7 @@ Find these options under **Identity** > **Monitoring & health** > **Diagnostic s
 1. Select the **Date** range you want to query.
 1. From the **Service** filter, select **Conditional Access** and select the **Apply** button.
 
-    The audit logs display all activities, by default. Open the **Activity** filter to narrow down the activities. For a full list of the audit log activities for Conditional Access, see the [Audit log activities](../reports-monitoring/reference-audit-activities.md#conditional-access).
+    The audit logs display all activities, by default. Open the **Activity** filter to narrow down the activities. For a full list of the audit log activities for Conditional Access, see the [Audit log activities](~/identity/monitoring-health/reference-audit-activities.md#conditional-access).
 
 1. Select a row to view the details. The **Modified Properties** tab lists the modified JSON values for the selected audit activity.
 
@@ -193,6 +193,6 @@ For more information about programmatically updating your Conditional Access pol
 
 ## Next steps
 
-- [What is Microsoft Entra monitoring?](../reports-monitoring/overview-monitoring-health.md)
+- [What is Microsoft Entra monitoring?](~/identity/monitoring-health/overview-monitoring-health.md)
 - [Install and use the log analytics views for Microsoft Entra ID](/azure/azure-monitor/visualize/workbooks-view-designer-conversion-overview)
 - [Conditional Access: Programmatic access](howto-conditional-access-apis.md)

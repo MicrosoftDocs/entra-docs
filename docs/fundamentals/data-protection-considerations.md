@@ -31,7 +31,7 @@ The security tokens are issued by the Microsoft Entra authentication Services. I
 
 **Auditing**: Access is audited. For example, authorized actions such as create user and password reset create an audit trail that can be used by a tenant administrator to manage compliance efforts or investigations. Tenant administrators can generate audit reports by using the Microsoft Entra audit API.  
 
-Learn more: [Audit logs in Microsoft Entra ID](../reports-monitoring/concept-audit-logs.md)
+Learn more: [Audit logs in Microsoft Entra ID](~/identity/monitoring-health/concept-audit-logs.md)
 
 **Tenant Isolation**: Enforcement of security in Microsoft Entra multi-tenant environment helps achieve two primary goals:  
 
@@ -69,12 +69,12 @@ For more information about Secret encryption at rest, see the following table.
 |---|---|
 |Password hash sync</br>Cloud account passwords|Hash: Password Key Derivation Function 2 (PBKDF2), using HMAC-SHA256 @ 1000 iterations |
 |Directory in transit between data centers|AES-256-CTS-HMAC-SHA1-96</br>TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384 |
-|Pass-through authentication user credential flow|RSA 2048-Public/Private key pair </br> Learn more: [Microsoft Entra pass-through authentication security deep dive](../hybrid/connect/how-to-connect-pta-security-deep-dive.md)|
+|Pass-through authentication user credential flow|RSA 2048-Public/Private key pair </br> Learn more: [Microsoft Entra pass-through authentication security deep dive](~/identity/hybrid/connect/how-to-connect-pta-security-deep-dive.md)|
 |Self-service password reset password writeback with Microsoft Entra Connect: Cloud to on-premises communication |RSA 2048 Private/Public key pair</br>AES_GCM (256-bits key, 96-bits IV size)|
 |Self-service password reset: Answers to security questions|SHA256|
 |SSL certificates for Microsoft Entra application</br>Proxy published applications |AES-GCM 256-bit |
 |Disk-level encryption|XTS-AES 128|
-|[Seamless single sign-on (SSO)](../hybrid/connect/how-to-connect-sso-how-it-works.md) service account password</br>SaaS application provisioning credentials|AES-CBC 128-bit |
+|[Seamless single sign-on (SSO)](~/identity/hybrid/connect/how-to-connect-sso-how-it-works.md) service account password</br>SaaS application provisioning credentials|AES-CBC 128-bit |
 |Microsoft Entra managed identities|AES-GCM 256-bit|
 |Microsoft Authenticator app: Passwordless sign-in to Microsoft Entra ID |Asymmetric RSA Key 2048-bit|
 |Microsoft Authenticator app: Backup and restore of enterprise account metadata |AES-256  |

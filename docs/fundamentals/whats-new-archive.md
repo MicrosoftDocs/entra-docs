@@ -41,10 +41,10 @@ The What's new in Azure Active Directory? release notes provide information abou
 
 We've added the following new applications in our App gallery with Provisioning support. You can now automate creating, updating, and deleting of user accounts for these newly integrated apps:
 
-- [Acunetix 360](../saas-apps/acunetix-360-provisioning-tutorial.md)
-- [Akamai Enterprise Application Access](../saas-apps/akamai-enterprise-application-access-provisioning-tutorial.md)
-- [Ardoq](../saas-apps/ardoq-provisioning-tutorial.md)
-- [Torii](../saas-apps/torii-provisioning-tutorial.md)
+- [Acunetix 360](~/identity/saas-apps/acunetix-360-provisioning-tutorial.md)
+- [Akamai Enterprise Application Access](~/identity/saas-apps/akamai-enterprise-application-access-provisioning-tutorial.md)
+- [Ardoq](~/identity/saas-apps/ardoq-provisioning-tutorial.md)
+- [Torii](~/identity/saas-apps/torii-provisioning-tutorial.md)
 
 
 For more information about how to better secure your organization by using automated user account provisioning, see: [Automate user provisioning to SaaS applications with Azure AD](~/identity/app-provisioning/user-provisioning.md).
@@ -191,7 +191,7 @@ No functionalities are removed. The new PDF viewer adds functionality and the li
 Privileged Identity Management (PIM) role activation has been expanded to the Billing and AD extensions in the Azure portal. Shortcuts have been added to Subscriptions (billing) and Access Control (AD) to allow users to activate PIM roles directly from these settings. From the Subscriptions settings, select **View eligible subscriptions** in the horizontal command menu to check your eligible, active, and expired assignments. From there, you can activate an eligible assignment in the same pane. In Access control (IAM) for a resource, you can now select **View my access** to see your currently active and eligible role assignments and activate directly. By integrating PIM capabilities into different Azure portal blades, this new feature allows users to gain temporary access to view or edit subscriptions and resources more easily.
 
 
-For more information Microsoft cloud settings, see: [Activate my Azure resource roles in Privileged Identity Management](../privileged-identity-management/pim-resource-roles-activate-your-roles.md).
+For more information Microsoft cloud settings, see: [Activate my Azure resource roles in Privileged Identity Management](~/id-governance/privileged-identity-management/pim-resource-roles-activate-your-roles.md).
 
 ---
 
@@ -212,7 +212,7 @@ This release includes our first 3 recommendations:
 
 For more information, see: 
 
-- [What are Azure Active Directory recommendations?](../reports-monitoring/overview-recommendations.md)
+- [What are Azure Active Directory recommendations?](~/identity/monitoring-health/overview-recommendations.md)
 - [Use the Azure AD recommendations API to implement Azure AD best practices for your tenant](/graph/api/resources/recommendations-api-overview)
 
 ---
@@ -225,7 +225,7 @@ For more information, see:
 
 Now you can require users who are eligible for a role to satisfy Conditional Access policy requirements for activation: use specific authentication method enforced through Authentication Strengths, activate from Intune compliant device, comply with Terms of Use, and use 3rd party MFA and satisfy location requirements.
 
-For more information, see: [Configure Azure AD role settings in Privileged Identity Management](../privileged-identity-management/pim-how-to-change-default-settings.md).
+For more information, see: [Configure Azure AD role settings in Privileged Identity Management](~/id-governance/privileged-identity-management/pim-how-to-change-default-settings.md).
 
 
 ---
@@ -240,7 +240,7 @@ Unfamiliar sign-in properties risk detection now provides risk reasons as to whi
 
 Identity Protection now surfaces the unfamiliar properties in the Azure portal on UX and in API as *Additional Info* with a user-friendly description explaining that *the following properties are unfamiliar for this sign-in of the given user*. 
 
-There's no additional work to enable this feature, the unfamiliar properties are shown by default. For more information, see: [Sign-in risk](../identity-protection/concept-identity-protection-risks.md).
+There's no additional work to enable this feature, the unfamiliar properties are shown by default. For more information, see: [Sign-in risk](~/id-protection/concept-identity-protection-risks.md).
 
 
 ---
@@ -255,7 +255,7 @@ There's no additional work to enable this feature, the unfamiliar properties are
 
 In February 2023 we've added the following 10 new applications in our App gallery with Federation support:    
 
-[PROCAS](https://accounting.procas.com/), [Tanium Cloud SSO](../saas-apps/tanium-sso-tutorial.md), [LeanDNA](../saas-apps/leandna-tutorial.md), [CalendarAnything LWC](https://silverlinecrm.com/calendaranything/), [courses.work](../saas-apps/courseswork-tutorial.md), [Udemy Business SAML](../saas-apps/udemy-business-saml-tutorial.md), [Canva](../saas-apps/canva-tutorial.md), [Kno2fy](../saas-apps/kno2fy-tutorial.md), [IT-Conductor](../saas-apps/it-conductor-tutorial.md), [ナレッジワーク(Knowledge Work)](../saas-apps/knowledge-work-tutorial.md), [Valotalive Digital Signage Microsoft 365 integration](https://store.valotalive.com/#main), [Priority Matrix HIPAA](https://hipaa.prioritymatrix.com/), [Priority Matrix Government](https://hipaa.prioritymatrix.com/), [Beable](../saas-apps/beable-tutorial.md), [Grain](https://grain.com/app?dialog=integrations&integration=microsoft+teams), [DojoNavi](../saas-apps/dojonavi-tutorial.md), [Global Validity Access Manager](https://myaccessmanager.com/), [FieldEquip](https://app.fieldequip.com/), [Peoplevine](https://control.peoplevine.com/), [Respondent](../saas-apps/respondent-tutorial.md), [WebTMA](../saas-apps/webtma-tutorial.md), [ClearIP](https://clearip.com/login), [Pennylane](../saas-apps/pennylane-tutorial.md), [VsimpleSSO](https://app.vsimple.com/login), [Compliance Genie](../saas-apps/compliance-genie-tutorial.md), [Dataminr Corporate](https://dmcorp.okta.com/), [Talon](../saas-apps/talon-tutorial.md). 
+[PROCAS](https://accounting.procas.com/), [Tanium Cloud SSO](~/identity/saas-apps/tanium-sso-tutorial.md), [LeanDNA](~/identity/saas-apps/leandna-tutorial.md), [CalendarAnything LWC](https://silverlinecrm.com/calendaranything/), [courses.work](~/identity/saas-apps/courseswork-tutorial.md), [Udemy Business SAML](~/identity/saas-apps/udemy-business-saml-tutorial.md), [Canva](~/identity/saas-apps/canva-tutorial.md), [Kno2fy](~/identity/saas-apps/kno2fy-tutorial.md), [IT-Conductor](~/identity/saas-apps/it-conductor-tutorial.md), [ナレッジワーク(Knowledge Work)](~/identity/saas-apps/knowledge-work-tutorial.md), [Valotalive Digital Signage Microsoft 365 integration](https://store.valotalive.com/#main), [Priority Matrix HIPAA](https://hipaa.prioritymatrix.com/), [Priority Matrix Government](https://hipaa.prioritymatrix.com/), [Beable](~/identity/saas-apps/beable-tutorial.md), [Grain](https://grain.com/app?dialog=integrations&integration=microsoft+teams), [DojoNavi](~/identity/saas-apps/dojonavi-tutorial.md), [Global Validity Access Manager](https://myaccessmanager.com/), [FieldEquip](https://app.fieldequip.com/), [Peoplevine](https://control.peoplevine.com/), [Respondent](~/identity/saas-apps/respondent-tutorial.md), [WebTMA](~/identity/saas-apps/webtma-tutorial.md), [ClearIP](https://clearip.com/login), [Pennylane](~/identity/saas-apps/pennylane-tutorial.md), [VsimpleSSO](https://app.vsimple.com/login), [Compliance Genie](~/identity/saas-apps/compliance-genie-tutorial.md), [Dataminr Corporate](https://dmcorp.okta.com/), [Talon](~/identity/saas-apps/talon-tutorial.md). 
 
 
 You can also find the documentation of all the applications from here https://aka.ms/AppsTutorial.
@@ -273,7 +273,7 @@ For listing your application in the Azure AD app gallery, read the details here 
 
 We've added the following new applications in our App gallery with Provisioning support. You can now automate creating, updating, and deleting of user accounts for these newly integrated apps:
 
-- [Atmos](../saas-apps/atmos-provisioning-tutorial.md)
+- [Atmos](~/identity/saas-apps/atmos-provisioning-tutorial.md)
 
 
 For more information about how to better secure your organization by using automated user account provisioning, see: [Automate user provisioning to SaaS applications with Azure AD](~/identity/app-provisioning/user-provisioning.md).
@@ -290,7 +290,7 @@ For more information about how to better secure your organization by using autom
 **Service category:** Provisioning               
 **Product capability:** Collaboration          
 
-Cross-tenant synchronization allows you to set up a scalable and automated solution for users to access applications across tenants in your organization. It builds upon the Azure AD B2B functionality and automates creating, updating, and deleting B2B users. For more information, see: [What is cross-tenant synchronization? (preview)](../multi-tenant-organizations/cross-tenant-synchronization-overview.md).
+Cross-tenant synchronization allows you to set up a scalable and automated solution for users to access applications across tenants in your organization. It builds upon the Azure AD B2B functionality and automates creating, updating, and deleting B2B users. For more information, see: [What is cross-tenant synchronization? (preview)](~/identity/multi-tenant-organizations/cross-tenant-synchronization-overview.md).
 
 
 ---
@@ -305,7 +305,7 @@ Cross-tenant synchronization allows you to set up a scalable and automated solut
 
 In January 2023 we've added the following 10 new applications in our App gallery with Federation support:
 
-[MINT TMS](../saas-apps/mint-tms-tutorial.md),  [Exterro Legal GRC Software Platform](../saas-apps/exterro-legal-grc-software-platform-tutorial.md), [SIX.ONE Identity Access Manager](https://portal.six.one/), [Lusha](../saas-apps/lusha-tutorial.md), [Descartes](../saas-apps/descartes-tutorial.md), [Travel Management System](https://tms.billetkontoret.dk/), [Pinpoint (SAML)](../saas-apps/pinpoint-tutorial.md), [my.sdworx.com](../saas-apps/mysdworxcom-tutorial.md), [itopia Labs](https://labs.itopia.com/), [Better Stack](https://betteruptime.com/users/sign-up).
+[MINT TMS](~/identity/saas-apps/mint-tms-tutorial.md),  [Exterro Legal GRC Software Platform](~/identity/saas-apps/exterro-legal-grc-software-platform-tutorial.md), [SIX.ONE Identity Access Manager](https://portal.six.one/), [Lusha](~/identity/saas-apps/lusha-tutorial.md), [Descartes](~/identity/saas-apps/descartes-tutorial.md), [Travel Management System](https://tms.billetkontoret.dk/), [Pinpoint (SAML)](~/identity/saas-apps/pinpoint-tutorial.md), [my.sdworx.com](~/identity/saas-apps/mysdworxcom-tutorial.md), [itopia Labs](https://labs.itopia.com/), [Better Stack](https://betteruptime.com/users/sign-up).
 
 You can also find the documentation of all the applications from here https://aka.ms/AppsTutorial.
 
@@ -324,7 +324,7 @@ For listing your application in the Azure AD app gallery, read the details here 
 
 We've added the following new applications in our App gallery with Provisioning support. You can now automate creating, updating, and deleting of user accounts for these newly integrated apps:
 
-- [SurveyMonkey Enterprise](../saas-apps/surveymonkey-enterprise-provisioning-tutorial.md)
+- [SurveyMonkey Enterprise](~/identity/saas-apps/surveymonkey-enterprise-provisioning-tutorial.md)
 
 
 For more information about how to better secure your organization by using automated user account provisioning, see: [Automate user provisioning to SaaS applications with Azure AD](~/identity/app-provisioning/user-provisioning.md).
@@ -345,9 +345,9 @@ This experience helps administrators walk through the different steps involved i
 
 For more information, see:
 
-- [Create a new configuration for Azure AD Connect cloud sync](../hybrid/cloud-sync/how-to-configure.md)
-- [Attribute mapping in Azure AD Connect cloud sync](../hybrid/cloud-sync/how-to-attribute-mapping.md)
-- [Azure AD Connect cloud sync insights workbook](../hybrid/cloud-sync/how-to-cloud-sync-workbook.md)
+- [Create a new configuration for Azure AD Connect cloud sync](~/identity/hybrid/cloud-sync/how-to-configure.md)
+- [Attribute mapping in Azure AD Connect cloud sync](~/identity/hybrid/cloud-sync/how-to-attribute-mapping.md)
+- [Azure AD Connect cloud sync insights workbook](~/identity/hybrid/cloud-sync/how-to-cloud-sync-workbook.md)
 
 ---
 
@@ -359,7 +359,7 @@ For more information, see:
 
 Hybrid IT Admins now can sync both Active Directory and Azure AD Directory Extensions using Azure AD cloud sync. This new capability adds the ability to dynamically discover the schema for both Active Directory and Azure AD, allowing customers to map the needed attributes using the attribute mapping experience of Azure AD Connect cloud sync.
 
-For more information on how to enable this feature, see [Directory extensions and custom attribute mapping in Azure AD Connect cloud sync](../hybrid/cloud-sync/custom-attribute-mapping.md)
+For more information on how to enable this feature, see [Directory extensions and custom attribute mapping in Azure AD Connect cloud sync](~/identity/hybrid/cloud-sync/custom-attribute-mapping.md)
 
 
 ---
@@ -375,7 +375,7 @@ For more information on how to enable this feature, see [Directory extensions an
 **Service category:** Audit             
 **Product capability:** Monitoring & Reporting       
 
-This feature analyzes uploaded client-side logs, also known as diagnostic logs, from a Windows 10+ device that is having an issue(s) and suggests remediation steps to resolve the issue(s). Admins can work with end user to collect client-side logs, and then upload them to this troubleshooter in the Microsoft Entra admin center. For more information, see: [Troubleshooting Windows devices in Azure AD](../devices/troubleshoot-device-windows-joined.md).
+This feature analyzes uploaded client-side logs, also known as diagnostic logs, from a Windows 10+ device that is having an issue(s) and suggests remediation steps to resolve the issue(s). Admins can work with end user to collect client-side logs, and then upload them to this troubleshooter in the Microsoft Entra admin center. For more information, see: [Troubleshooting Windows devices in Azure AD](~/identity/devices/troubleshoot-device-windows-joined.md).
 
 
 ---
@@ -414,7 +414,7 @@ In this Public Preview refresh, we've enhanced the user experience with an updat
 - Admins can query templates programmatically via MSGraph API.
 
 
-For more information, see: [Conditional Access templates (Preview)](../conditional-access/concept-conditional-access-policy-common.md).
+For more information, see: [Conditional Access templates (Preview)](~/identity/conditional-access/concept-conditional-access-policy-common.md).
 
 ---
 
@@ -501,7 +501,7 @@ For steps to set up shared device mode with Intune, see: [Intune setup blog](htt
 
 We've added the following new applications in our App gallery with Provisioning support. You can now automate creating, updating, and deleting of user accounts for these newly integrated apps:
 
-- [GHAE](../saas-apps/ghae-provisioning-tutorial.md)
+- [GHAE](~/identity/saas-apps/ghae-provisioning-tutorial.md)
 
 
 For more information about how to better secure your organization by using automated user account provisioning, see: [Automate user provisioning to SaaS applications with Azure AD](~/identity/app-provisioning/user-provisioning.md).
@@ -532,7 +532,7 @@ Azure AD supports provisioning users into applications hosted on-premises or in 
 
 In December 2022 we've added the following 44 new applications in our App gallery with Federation support:
 
-[Bionexo IDM](https://login.bionexo.com/), [SMART Meeting Pro](https://www.smarttech.com/en/business/software/meeting-pro), [Venafi Control Plane – Datacenter](../saas-apps/venafi-control-plane-tutorial.md), [HighQ](../saas-apps/highq-tutorial.md), [Drawboard PDF](https://pdf.drawboard.com/), [ETU Skillsims](../saas-apps/etu-skillsims-tutorial.md), [TencentCloud IDaaS](../saas-apps/tencent-cloud-idaas-tutorial.md), [TeamHeadquarters Email Agent OAuth](https://thq.entry.com/), [Verizon MDM](https://verizonmdm.vzw.com/), [QRadar SOAR](../saas-apps/qradar-soar-tutorial.md), [Tripwire Enterprise](../saas-apps/tripwire-enterprise-tutorial.md), [Cisco Unified Communications Manager](../saas-apps/cisco-unified-communications-manager-tutorial.md), [Howspace](https://login.in.howspace.com/), [Flipsnack SAML](../saas-apps/flipsnack-saml-tutorial.md), [Albert](http://www.albertinvent.com/), [Altinget.no](https://www.altinget.no/), [Coveo Hosted Services](../saas-apps/coveo-hosted-services-tutorial.md), [Cybozu(cybozu.com)](../saas-apps/cybozu-tutorial.md), [BombBomb](https://app.bombbomb.com/app), [VMware Identity Service](../saas-apps/vmware-identity-service-tutorial.md), [HexaSync](https://app-az.hexasync.com/login), [Trifecta Teams](https://app.trifectateams.net/), [VerosoftDesign](https://verosoft-design.vercel.app/), [Mazepay](https://app.mazepay.com/), [Wistia](../saas-apps/wistia-tutorial.md), [Begin.AI](https://app.begin.ai/), [WebCE](../saas-apps/webce-tutorial.md), [Dream Broker Studio](https://dreambroker.com/studio/login/), [PKSHA Chatbot](../saas-apps/pksha-chatbot-tutorial.md), [PGM-BCP](https://ups-pgm-bcp.4gfactor.com/azure/), [ChartDesk SSO](../saas-apps/chartdesk-sso-tutorial.md), [Elsevier SP](../saas-apps/elsevier-sp-tutorial.md), [GreenCommerce IdentityServer](https://identity.jem-id.nl/Account/Login), [Fullview](https://app.fullview.io/sign-in), [Aqua Platform](../saas-apps/aqua-platform-tutorial.md), [SpedTrack](../saas-apps/spedtrack-tutorial.md), [Pinpoint](https://pinpoint.ddiworld.com/psg2?sso=true), [Darzin Outlook Add-in](https://outlook.darzin.com/graph-login.html), [Simply Stakeholders Outlook Add-in](https://outlook.simplystakeholders.com/graph-login.html), [tesma](../saas-apps/tesma-tutorial.md), [Parkable](../saas-apps/parkable-tutorial.md), [Unite Us](../saas-apps/unite-us-tutorial.md)
+[Bionexo IDM](https://login.bionexo.com/), [SMART Meeting Pro](https://www.smarttech.com/en/business/software/meeting-pro), [Venafi Control Plane – Datacenter](~/identity/saas-apps/venafi-control-plane-tutorial.md), [HighQ](~/identity/saas-apps/highq-tutorial.md), [Drawboard PDF](https://pdf.drawboard.com/), [ETU Skillsims](~/identity/saas-apps/etu-skillsims-tutorial.md), [TencentCloud IDaaS](~/identity/saas-apps/tencent-cloud-idaas-tutorial.md), [TeamHeadquarters Email Agent OAuth](https://thq.entry.com/), [Verizon MDM](https://verizonmdm.vzw.com/), [QRadar SOAR](~/identity/saas-apps/qradar-soar-tutorial.md), [Tripwire Enterprise](~/identity/saas-apps/tripwire-enterprise-tutorial.md), [Cisco Unified Communications Manager](~/identity/saas-apps/cisco-unified-communications-manager-tutorial.md), [Howspace](https://login.in.howspace.com/), [Flipsnack SAML](~/identity/saas-apps/flipsnack-saml-tutorial.md), [Albert](http://www.albertinvent.com/), [Altinget.no](https://www.altinget.no/), [Coveo Hosted Services](~/identity/saas-apps/coveo-hosted-services-tutorial.md), [Cybozu(cybozu.com)](~/identity/saas-apps/cybozu-tutorial.md), [BombBomb](https://app.bombbomb.com/app), [VMware Identity Service](~/identity/saas-apps/vmware-identity-service-tutorial.md), [HexaSync](https://app-az.hexasync.com/login), [Trifecta Teams](https://app.trifectateams.net/), [VerosoftDesign](https://verosoft-design.vercel.app/), [Mazepay](https://app.mazepay.com/), [Wistia](~/identity/saas-apps/wistia-tutorial.md), [Begin.AI](https://app.begin.ai/), [WebCE](~/identity/saas-apps/webce-tutorial.md), [Dream Broker Studio](https://dreambroker.com/studio/login/), [PKSHA Chatbot](~/identity/saas-apps/pksha-chatbot-tutorial.md), [PGM-BCP](https://ups-pgm-bcp.4gfactor.com/azure/), [ChartDesk SSO](~/identity/saas-apps/chartdesk-sso-tutorial.md), [Elsevier SP](~/identity/saas-apps/elsevier-sp-tutorial.md), [GreenCommerce IdentityServer](https://identity.jem-id.nl/Account/Login), [Fullview](https://app.fullview.io/sign-in), [Aqua Platform](~/identity/saas-apps/aqua-platform-tutorial.md), [SpedTrack](~/identity/saas-apps/spedtrack-tutorial.md), [Pinpoint](https://pinpoint.ddiworld.com/psg2?sso=true), [Darzin Outlook Add-in](https://outlook.darzin.com/graph-login.html), [Simply Stakeholders Outlook Add-in](https://outlook.simplystakeholders.com/graph-login.html), [tesma](~/identity/saas-apps/tesma-tutorial.md), [Parkable](~/identity/saas-apps/parkable-tutorial.md), [Unite Us](~/identity/saas-apps/unite-us-tutorial.md)
 
 You can also find the documentation of all the applications from here https://aka.ms/AppsTutorial,
 
@@ -650,7 +650,7 @@ Authenticator version 6.6.8 and higher on iOS will be FIPS 140 compliant for all
 
 In November 2022, we've added the following 22 new applications in our App gallery with Federation support
 
-[Adstream](../saas-apps/adstream-tutorial.md), [Databook](../saas-apps/databook-tutorial.md), [Ecospend IAM](https://ecospend.com/), [Digital Pigeon](../saas-apps/digital-pigeon-tutorial.md), [Drawboard Projects](../saas-apps/drawboard-projects-tutorial.md), [Vellum](https://www.vellum.ink/request-demo), [Veracity](https://aie-veracity.com/connect/azure), [Microsoft OneNote to Bloomberg Note Sync](https://www.bloomberg.com/professional/support/software-updates/), [DX NetOps Portal](../saas-apps/dx-netops-portal-tutorial.md), [itslearning Outlook integration](https://itslearning.com/global/), [Tranxfer](../saas-apps/tranxfer-tutorial.md), [Occupop](https://app.occupop.com/), [Nialli Workspace](https://ws.nialli.com/), [Tideways](https://app.tideways.io/login), [SOWELL](https://manager.sowellapp.com/#/?sso=true), [Prewise Learning](https://prewiselearning.com/), [CAPTOR for Intune](https://www.inkscreen.com/microsoft), [wayCloud Platform](https://app.way-cloud.de/login), [Nura Space Meeting Room](https://play.google.com/store/apps/details?id=com.meetingroom.prod), [Flexopus Exchange Integration](https://help.flexopus.com/de/microsoft-graph-integration), [Ren Systems](https://app.rensystems.com/login), [Nudge Security](https://www.nudgesecurity.io/login)
+[Adstream](~/identity/saas-apps/adstream-tutorial.md), [Databook](~/identity/saas-apps/databook-tutorial.md), [Ecospend IAM](https://ecospend.com/), [Digital Pigeon](~/identity/saas-apps/digital-pigeon-tutorial.md), [Drawboard Projects](~/identity/saas-apps/drawboard-projects-tutorial.md), [Vellum](https://www.vellum.ink/request-demo), [Veracity](https://aie-veracity.com/connect/azure), [Microsoft OneNote to Bloomberg Note Sync](https://www.bloomberg.com/professional/support/software-updates/), [DX NetOps Portal](~/identity/saas-apps/dx-netops-portal-tutorial.md), [itslearning Outlook integration](https://itslearning.com/global/), [Tranxfer](~/identity/saas-apps/tranxfer-tutorial.md), [Occupop](https://app.occupop.com/), [Nialli Workspace](https://ws.nialli.com/), [Tideways](https://app.tideways.io/login), [SOWELL](https://manager.sowellapp.com/#/?sso=true), [Prewise Learning](https://prewiselearning.com/), [CAPTOR for Intune](https://www.inkscreen.com/microsoft), [wayCloud Platform](https://app.way-cloud.de/login), [Nura Space Meeting Room](https://play.google.com/store/apps/details?id=com.meetingroom.prod), [Flexopus Exchange Integration](https://help.flexopus.com/de/microsoft-graph-integration), [Ren Systems](https://app.rensystems.com/login), [Nudge Security](https://www.nudgesecurity.io/login)
 
 You can also find the documentation of all the applications from here https://aka.ms/AppsTutorial,
 
@@ -669,8 +669,8 @@ For listing your application in the Azure AD app gallery, read the details here 
 
 We've added the following new applications in our App gallery with Provisioning support. You can now automate creating, updating, and deleting of user accounts for these newly integrated apps:
 
-- [Keepabl](../saas-apps/keepabl-provisioning-tutorial.md)
-- [Uber](../saas-apps/uber-provisioning-tutorial.md)
+- [Keepabl](~/identity/saas-apps/keepabl-provisioning-tutorial.md)
+- [Uber](~/identity/saas-apps/uber-provisioning-tutorial.md)
 
 For more information about how to better secure your organization by using automated user account provisioning, see: [Automate user provisioning to SaaS applications with Azure AD](~/identity/app-provisioning/user-provisioning.md).
 
@@ -830,7 +830,7 @@ We're announcing Public preview of Authentication strength, a Conditional Access
 **Service category:** B2B     
 **Product capability:** B2B/B2C   
 
-You can now require your business partner (B2B) guests across all Microsoft clouds to use specific authentication methods to access your resources with **Conditional Access Authentication Strength policies**. For more information, see: [Conditional Access: Require an authentication strength for external users](../conditional-access/howto-conditional-access-policy-authentication-strength-external.md).
+You can now require your business partner (B2B) guests across all Microsoft clouds to use specific authentication methods to access your resources with **Conditional Access Authentication Strength policies**. For more information, see: [Conditional Access: Require an authentication strength for external users](~/identity/conditional-access/howto-conditional-access-policy-authentication-strength-external.md).
 
 ---
 
@@ -863,8 +863,8 @@ This feature empowers users on Linux clients to register their devices with Azur
 
 
 For more information, see: 
-[Azure AD registered devices](../devices/concept-device-registration.md).
-[Plan your Azure Active Directory device deployment](../devices/plan-device-deployment.md)
+[Azure AD registered devices](~/identity/devices/concept-device-registration.md).
+[Plan your Azure Active Directory device deployment](~/identity/devices/plan-device-deployment.md)
 
 ---
 
@@ -895,7 +895,7 @@ We're excited to announce the public preview of Lifecycle Workflows, a new Ident
 - Automate out-of-the-box actions critical to required Joiner and Leaver scenarios and get rich reporting insights.
 - Extend workflows via Logic Apps integrations with custom tasks extensions for more complex scenarios.
 
-For more information, see: [What are Lifecycle Workflows? (Public Preview)](../governance/what-are-lifecycle-workflows.md).
+For more information, see: [What are Lifecycle Workflows? (Public Preview)](~/id-governance/what-are-lifecycle-workflows.md).
 
 ---
 
@@ -907,7 +907,7 @@ For more information, see: [What are Lifecycle Workflows? (Public Preview)](../g
 **Service category:** Access Reviews     
 **Product capability:** Identity Governance   
 
-This feature provides Machine Learning based recommendations to the reviewers of Azure AD Access Reviews to make the review experience easier and more accurate. The recommendation detects user affiliation with other users within the group, and applies the scoring mechanism we built by computing the user’s average distance with other users in the group. For more information, see: [Review recommendations for Access reviews](../governance/review-recommendations-access-reviews.md).
+This feature provides Machine Learning based recommendations to the reviewers of Azure AD Access Reviews to make the review experience easier and more accurate. The recommendation detects user affiliation with other users within the group, and applies the scoring mechanism we built by computing the user’s average distance with other users in the group. For more information, see: [Review recommendations for Access reviews](~/id-governance/review-recommendations-access-reviews.md).
 
 ---
 
@@ -919,7 +919,7 @@ This feature provides Machine Learning based recommendations to the reviewers of
 **Service category:** Provisioning  
 **Product capability:** Outbound to SaaS Applications   
 
-When configuring writeback of attributes from Azure AD to SAP SuccessFactors Employee Central, you can now specify the scope of users using Azure AD group assignment. For more information, see: [Tutorial: Configure attribute write-back from Azure AD to SAP SuccessFactors](../saas-apps/sap-successfactors-writeback-tutorial.md).
+When configuring writeback of attributes from Azure AD to SAP SuccessFactors Employee Central, you can now specify the scope of users using Azure AD group assignment. For more information, see: [Tutorial: Configure attribute write-back from Azure AD to SAP SuccessFactors](~/identity/saas-apps/sap-successfactors-writeback-tutorial.md).
 
 ---
 
@@ -974,7 +974,7 @@ For more information, see: [How to use additional context in Microsoft Authentic
 
 In October 2022 we've added the following 15 new applications in our App gallery with Federation support:
 
-[Unifii](https://www.unifii.com.au/), [WaitWell Staff App](https://waitwell.ca/), [AuthParency](https://login.authparency.com/microsoftidentity/account/signin), [Oncospark Code Interceptor](https://ci.oncospark.com/), [Thread Legal Case Management](https://login.microsoftonline.com/common/adminconsent?client_id=e676edf2-72f3-4781-a25f-0f33100f9f49&redirect_uri=https://app.thread.legal/consent/result/1), [e2open CM-Global](../saas-apps/e2open-cm-tutorial.md), [OpenText XM Fax and XM SendSecure](../saas-apps/xm-fax-and-xm-send-secure-tutorial.md),  [Contentkalender](../saas-apps/contentkalender-tutorial.md), [Evovia](../saas-apps/evovia-tutorial.md), [Parmonic](https://go.parmonic.com/), [mailto.wiki](https://marketplace.atlassian.com/apps/1223249/), [JobDiva Azure SSO](https://www.jobssos.com/index_azad.jsp?SSO=AZURE&ID=1), [Mapiq](../saas-apps/mapiq-tutorial.md), [IVM Smarthub](../saas-apps/ivm-smarthub-tutorial.md), [Span.zone – SSO and Read-only](https://span.zone/), [RecruiterPal](https://recruiterpal.com/en/try-for-free), [Broker groupe Achat Solutions](../saas-apps/broker-groupe-tutorial.md), [Philips SpeechLive](https://www.speechexec.com/login), [Crayon](../saas-apps/crayon-tutorial.md), [Cytric](../saas-apps/cytric-tutorial.md), [Notate](https://notateapp.com/), [ControlDocumentario](https://controldocumentario.com/Login.aspx), [Intuiflow](https://login.intuiflow.net/login), [Valence Security Platform](../saas-apps/valence-tutorial.md), [Skybreathe® Analytics](../saas-apps/skybreathe-analytics-tutorial.md)
+[Unifii](https://www.unifii.com.au/), [WaitWell Staff App](https://waitwell.ca/), [AuthParency](https://login.authparency.com/microsoftidentity/account/signin), [Oncospark Code Interceptor](https://ci.oncospark.com/), [Thread Legal Case Management](https://login.microsoftonline.com/common/adminconsent?client_id=e676edf2-72f3-4781-a25f-0f33100f9f49&redirect_uri=https://app.thread.legal/consent/result/1), [e2open CM-Global](~/identity/saas-apps/e2open-cm-tutorial.md), [OpenText XM Fax and XM SendSecure](~/identity/saas-apps/xm-fax-and-xm-send-secure-tutorial.md),  [Contentkalender](~/identity/saas-apps/contentkalender-tutorial.md), [Evovia](~/identity/saas-apps/evovia-tutorial.md), [Parmonic](https://go.parmonic.com/), [mailto.wiki](https://marketplace.atlassian.com/apps/1223249/), [JobDiva Azure SSO](https://www.jobssos.com/index_azad.jsp?SSO=AZURE&ID=1), [Mapiq](~/identity/saas-apps/mapiq-tutorial.md), [IVM Smarthub](~/identity/saas-apps/ivm-smarthub-tutorial.md), [Span.zone – SSO and Read-only](https://span.zone/), [RecruiterPal](https://recruiterpal.com/en/try-for-free), [Broker groupe Achat Solutions](~/identity/saas-apps/broker-groupe-tutorial.md), [Philips SpeechLive](https://www.speechexec.com/login), [Crayon](~/identity/saas-apps/crayon-tutorial.md), [Cytric](~/identity/saas-apps/cytric-tutorial.md), [Notate](https://notateapp.com/), [ControlDocumentario](https://controldocumentario.com/Login.aspx), [Intuiflow](https://login.intuiflow.net/login), [Valence Security Platform](~/identity/saas-apps/valence-tutorial.md), [Skybreathe® Analytics](~/identity/saas-apps/skybreathe-analytics-tutorial.md)
 
 You can also find the documentation of all the applications from here https://aka.ms/AppsTutorial,
 
@@ -992,7 +992,7 @@ For listing your application in the Azure AD app gallery, read the details here 
 
 You can now automate creating, updating, and deleting user accounts for these newly integrated apps:
 
-- [LawVu](../saas-apps/lawvu-provisioning-tutorial.md)
+- [LawVu](~/identity/saas-apps/lawvu-provisioning-tutorial.md)
 
 For more information about how to better secure your organization by using automated user account provisioning, see: [Automate user provisioning to SaaS applications with Azure AD](~/identity/app-provisioning/user-provisioning.md).
 
@@ -1032,8 +1032,8 @@ This feature empowers users on Linux clients to register their devices with Azur
 
 For more information, see:
 
-- [Azure AD registered devices](../devices/concept-device-registration.md)
-- [Plan your Azure Active Directory device deployment](../devices/plan-device-deployment.md)
+- [Azure AD registered devices](~/identity/devices/concept-device-registration.md)
+- [Plan your Azure Active Directory device deployment](~/identity/devices/plan-device-deployment.md)
 
 ---
 
@@ -1081,7 +1081,7 @@ For more information, see: [Enable accidental deletions prevention in the Azure 
 
 Identity protection expands its Anonymous and Malicious IP detections to protect ADFS sign-ins. This automatically applies to all customers who have AD Connect Health deployed and enabled, and show up as the existing "Anonymous IP" or "Malicious IP" detections with a token issuer type of "AD Federation Services".
 
-For more information, see: [What is risk?](../identity-protection/concept-identity-protection-risks.md)
+For more information, see: [What is risk?](~/id-protection/concept-identity-protection-risks.md)
 
 ---
 
@@ -1098,7 +1098,7 @@ For more information, see: [What is risk?](../identity-protection/concept-identi
 
 In September 2022 we've added the following 15 new applications in our App gallery with Federation support:
 
-[RocketReach SSO](../saas-apps/rocketreach-sso-tutorial.md), [Arena EU](../saas-apps/arena-eu-tutorial.md), [Zola](../saas-apps/zola-tutorial.md), [FourKites SAML2.0 SSO for Tracking](../saas-apps/fourkites-tutorial.md), [Syniverse Customer Portal](../saas-apps/syniverse-customer-portal-tutorial.md), [Rimo](https://rimo.app/), [Q Ware CMMS](https://qware.app/), Mapiq (OIDC), [NICE Cxone](../saas-apps/nice-cxone-tutorial.md), [dominKnow|ONE](../saas-apps/dominknowone-tutorial.md), [Waynbo for Azure AD](https://webportal-eu.waynbo.com/Login), [innDex](https://web.inndex.co.uk/azure/authorize), [Profiler Software](https://www.profiler.net.au/), [Trotto go links](https://trot.to/_/auth/login), [AsignetSSOIntegration](../saas-apps/asignet-sso-tutorial.md).
+[RocketReach SSO](~/identity/saas-apps/rocketreach-sso-tutorial.md), [Arena EU](~/identity/saas-apps/arena-eu-tutorial.md), [Zola](~/identity/saas-apps/zola-tutorial.md), [FourKites SAML2.0 SSO for Tracking](~/identity/saas-apps/fourkites-tutorial.md), [Syniverse Customer Portal](~/identity/saas-apps/syniverse-customer-portal-tutorial.md), [Rimo](https://rimo.app/), [Q Ware CMMS](https://qware.app/), Mapiq (OIDC), [NICE Cxone](~/identity/saas-apps/nice-cxone-tutorial.md), [dominKnow|ONE](~/identity/saas-apps/dominknowone-tutorial.md), [Waynbo for Azure AD](https://webportal-eu.waynbo.com/Login), [innDex](https://web.inndex.co.uk/azure/authorize), [Profiler Software](https://www.profiler.net.au/), [Trotto go links](https://trot.to/_/auth/login), [AsignetSSOIntegration](~/identity/saas-apps/asignet-sso-tutorial.md).
 
 You can also find the documentation of all the applications from here https://aka.ms/AppsTutorial,
 
@@ -1122,7 +1122,7 @@ For listing your application in the Azure AD app gallery, read the details here:
 
 Customers can now require a fresh authentication each time a user performs a certain action. Forced reauthentication supports requiring a user to reauthenticate during Intune device enrollment, password change for risky users, and risky sign-ins.
 
-For more information, see: [Configure authentication session management with Conditional Access](../conditional-access/howto-conditional-access-session-lifetime.md#require-reauthentication-every-time)
+For more information, see: [Configure authentication session management with Conditional Access](~/identity/conditional-access/howto-conditional-access-session-lifetime.md#require-reauthentication-every-time)
 
 ---
 
@@ -1132,7 +1132,7 @@ For more information, see: [Configure authentication session management with Con
 **Service category:** Access Reviews  
 **Product capability:** Identity Governance  
 
-Customers can now meet their complex audit and recertification requirements through multiple stages of reviews. For more information, see: [Create a multi-stage access review](../governance/create-access-review.md#create-a-multi-stage-access-review).
+Customers can now meet their complex audit and recertification requirements through multiple stages of reviews. For more information, see: [Create a multi-stage access review](~/id-governance/create-access-review.md#create-a-multi-stage-access-review).
 
 
 
@@ -1168,7 +1168,7 @@ A new policy API is available for the administrators to control tenant wide poli
 
 In some situations, you may want to restrict the ability for end users to self-service BitLocker keys. With this new functionality, you can now turn off self-service of BitLocker keys, so that only specific individuals with right privileges can recover a BitLocker key.
 
-For more information, see: [Block users from viewing their BitLocker keys (preview)](../devices/manage-device-identities.md#configure-device-settings)
+For more information, see: [Block users from viewing their BitLocker keys (preview)](~/identity/devices/manage-device-identities.md#configure-device-settings)
 
 
 ---
@@ -1194,7 +1194,7 @@ Identity Protection risk detections (alerts) are now also available in Microsoft
 
 In August 2022, we've added the following 40 new applications in our App gallery with Federation support
 
-[Albourne Castle](https://village.albourne.com/castle), [Adra by Trintech](../saas-apps/adra-by-trintech-tutorial.md), [workhub](../saas-apps/workhub-tutorial.md), [4DX](../saas-apps/4dx-tutorial.md), [Ecospend IAM V1](https://iamapi.sb.ecospend.com/account/login), [TigerGraph](../saas-apps/tigergraph-tutorial.md), [Sketch](../saas-apps/sketch-tutorial.md), [Lattice](../saas-apps/lattice-tutorial.md), [snapADDY Single Sign On](https://app.snapaddy.com/login), [RELAYTO Content Experience Platform](https://relayto.com/signin), [oVice](https://tour.ovice.in/login), [Arena](../saas-apps/arena-tutorial.md), [QReserve](../saas-apps/qreserve-tutorial.md), [Curator](../saas-apps/curator-tutorial.md), [NetMotion Mobility](../saas-apps/netmotion-mobility-tutorial.md), [HackNotice](../saas-apps/hacknotice-tutorial.md), [ERA_EHS_CORE](../saas-apps/era-ehs-core-tutorial.md), [AnyClip Teams Connector](https://videomanager.anyclip.com/login), [Wiz SSO](../saas-apps/wiz-sso-tutorial.md), [Tango Reserve by AgilQuest (EU Instance)](../saas-apps/tango-reserve-tutorial.md), [valid8Me](../saas-apps/valid8me-tutorial.md), [Ahrtemis](../saas-apps/ahrtemis-tutorial.md), [KPMG Leasing Tool](../saas-apps/kpmg-tool-tutorial.md) [Mist Cloud Admin SSO](../saas-apps/mist-cloud-admin-tutorial.md), [Ediwin SaaS EDI](../saas-apps/ediwin-saas-edi-tutorial.md), [LUSID](../saas-apps/lusid-tutorial.md), [Next Gen Math](https://nextgenmath.com/), [Total ID](https://www.tokyo-shoseki.co.jp/ict/), [Cheetah For Benelux](../saas-apps/cheetah-for-benelux-tutorial.md), [Live Center Australia](https://au.livecenter.com/), [Shop Floor Insight](https://www.dmsiworks.com/apps/shop-floor-insight), [Warehouse Insight](https://www.dmsiworks.com/apps/warehouse-insight), [myAOS](../saas-apps/myaos-tutorial.md), [Hero](https://admin.linc-ed.com/), [FigBytes](../saas-apps/figbytes-tutorial.md), [VerosoftDesign](https://verosoft-design.vercel.app/), [ViewpointOne - UK](https://identity-uk.team.viewpoint.com/), [EyeRate Reviews](https://azure-login.eyeratereviews.com/), [Lytx DriveCam](../saas-apps/lytx-drivecam-tutorial.md)
+[Albourne Castle](https://village.albourne.com/castle), [Adra by Trintech](~/identity/saas-apps/adra-by-trintech-tutorial.md), [workhub](~/identity/saas-apps/workhub-tutorial.md), [4DX](~/identity/saas-apps/4dx-tutorial.md), [Ecospend IAM V1](https://iamapi.sb.ecospend.com/account/login), [TigerGraph](~/identity/saas-apps/tigergraph-tutorial.md), [Sketch](~/identity/saas-apps/sketch-tutorial.md), [Lattice](~/identity/saas-apps/lattice-tutorial.md), [snapADDY Single Sign On](https://app.snapaddy.com/login), [RELAYTO Content Experience Platform](https://relayto.com/signin), [oVice](https://tour.ovice.in/login), [Arena](~/identity/saas-apps/arena-tutorial.md), [QReserve](~/identity/saas-apps/qreserve-tutorial.md), [Curator](~/identity/saas-apps/curator-tutorial.md), [NetMotion Mobility](~/identity/saas-apps/netmotion-mobility-tutorial.md), [HackNotice](~/identity/saas-apps/hacknotice-tutorial.md), [ERA_EHS_CORE](~/identity/saas-apps/era-ehs-core-tutorial.md), [AnyClip Teams Connector](https://videomanager.anyclip.com/login), [Wiz SSO](~/identity/saas-apps/wiz-sso-tutorial.md), [Tango Reserve by AgilQuest (EU Instance)](~/identity/saas-apps/tango-reserve-tutorial.md), [valid8Me](~/identity/saas-apps/valid8me-tutorial.md), [Ahrtemis](~/identity/saas-apps/ahrtemis-tutorial.md), [KPMG Leasing Tool](~/identity/saas-apps/kpmg-tool-tutorial.md) [Mist Cloud Admin SSO](~/identity/saas-apps/mist-cloud-admin-tutorial.md), [Ediwin SaaS EDI](~/identity/saas-apps/ediwin-saas-edi-tutorial.md), [LUSID](~/identity/saas-apps/lusid-tutorial.md), [Next Gen Math](https://nextgenmath.com/), [Total ID](https://www.tokyo-shoseki.co.jp/ict/), [Cheetah For Benelux](~/identity/saas-apps/cheetah-for-benelux-tutorial.md), [Live Center Australia](https://au.livecenter.com/), [Shop Floor Insight](https://www.dmsiworks.com/apps/shop-floor-insight), [Warehouse Insight](https://www.dmsiworks.com/apps/warehouse-insight), [myAOS](~/identity/saas-apps/myaos-tutorial.md), [Hero](https://admin.linc-ed.com/), [FigBytes](~/identity/saas-apps/figbytes-tutorial.md), [VerosoftDesign](https://verosoft-design.vercel.app/), [ViewpointOne - UK](https://identity-uk.team.viewpoint.com/), [EyeRate Reviews](https://azure-login.eyeratereviews.com/), [Lytx DriveCam](~/identity/saas-apps/lytx-drivecam-tutorial.md)
 
 You can also find the documentation of all the applications from here https://aka.ms/AppsTutorial,
 
@@ -1213,11 +1213,11 @@ For listing your application in the Azure AD app gallery, please read the detail
 
 You can now automate creating, updating, and deleting user accounts for these newly integrated apps:
 
-- [Ideagen Cloud](../saas-apps/ideagen-cloud-provisioning-tutorial.md)
-- [Lucid (All Products)](../saas-apps/lucid-all-products-provisioning-tutorial.md)
-- [Palo Alto Networks Cloud Identity Engine - Cloud Authentication Service](../saas-apps/palo-alto-networks-cloud-identity-engine-provisioning-tutorial.md)
-- [SuccessFactors Writeback](../saas-apps/sap-successfactors-writeback-tutorial.md)
-- [Tableau Cloud](../saas-apps/tableau-online-provisioning-tutorial.md)
+- [Ideagen Cloud](~/identity/saas-apps/ideagen-cloud-provisioning-tutorial.md)
+- [Lucid (All Products)](~/identity/saas-apps/lucid-all-products-provisioning-tutorial.md)
+- [Palo Alto Networks Cloud Identity Engine - Cloud Authentication Service](~/identity/saas-apps/palo-alto-networks-cloud-identity-engine-provisioning-tutorial.md)
+- [SuccessFactors Writeback](~/identity/saas-apps/sap-successfactors-writeback-tutorial.md)
+- [Tableau Cloud](~/identity/saas-apps/tableau-online-provisioning-tutorial.md)
 
 For more information about how to better secure your organization by using automated user account provisioning, see: [Automate user provisioning to SaaS applications with Azure AD](~/identity/app-provisioning/user-provisioning.md).
 
@@ -1245,7 +1245,7 @@ For more information on this capability and supported scenarios, see [Workload i
 
 In Azure AD entitlement management, a new form of access package assignment policy is being added. The automatic assignment policy includes a filter rule, similar to a dynamic group, that specifies the users in the tenant who should have assignments. When users come into scope of matching that filter rule criteria, an assignment is automatically created, and when they no longer match, the assignment is removed.
 
- For more information, see: [Configure an automatic assignment policy for an access package in Azure AD entitlement management (Preview)](../governance/entitlement-management-access-package-auto-assignment-policy.md).
+ For more information, see: [Configure an automatic assignment policy for an access package in Azure AD entitlement management (Preview)](~/id-governance/entitlement-management-access-package-auto-assignment-policy.md).
 
 
 
@@ -1310,7 +1310,7 @@ To learn more about trusts and how to deploy your own, visit [How trust relation
 
 In July 2022 we've added the following 28 new applications in our App gallery with Federation support:
 
-[Lunni Ticket Service](https://ticket.lunni.io/login), [Spring Health](https://benefits.springhealth.com/care), [Sorbet](https://lite.sorbetapp.com/login), [Planview ID](../saas-apps/planview-admin-tutorial.md), [Karbonalpha](https://saas.karbonalpha.com/settings/api), [Headspace](../saas-apps/headspace-tutorial.md), [SeekOut](../saas-apps/seekout-tutorial.md), [Stackby](../saas-apps/stackby-tutorial.md), [Infrascale Cloud Backup](../saas-apps/infrascale-cloud-backup-tutorial.md), [Keystone](../saas-apps/keystone-tutorial.md), [LMS・教育管理システム Leaf](../saas-apps/lms-and-education-management-system-leaf-tutorial.md), [ZDiscovery](../saas-apps/zdiscovery-tutorial.md), [ラインズeライブラリアドバンス (Lines eLibrary Advance)](../saas-apps/lines-elibrary-advance-tutorial.md), [Rootly](../saas-apps/rootly-tutorial.md), [Articulate 360](../saas-apps/articulate360-tutorial.md), [Rise.com](../saas-apps/risecom-tutorial.md), [SevOne Network Monitoring System (NMS)](../saas-apps/sevone-network-monitoring-system-tutorial.md), [PGM](https://ups-pgm.4gfactor.com/azure/), [TouchRight Software](https://app.touchrightsoftware.com/), [Tendium](../saas-apps/tendium-tutorial.md), [Training Platform](../saas-apps/training-platform-tutorial.md), [Znapio](https://app.znapio.com/), [Preset](../saas-apps/preset-tutorial.md), [itslearning MS Teams sync](https://itslearning.com/global/), [Veza](../saas-apps/veza-tutorial.md),
+[Lunni Ticket Service](https://ticket.lunni.io/login), [Spring Health](https://benefits.springhealth.com/care), [Sorbet](https://lite.sorbetapp.com/login), [Planview ID](~/identity/saas-apps/planview-admin-tutorial.md), [Karbonalpha](https://saas.karbonalpha.com/settings/api), [Headspace](~/identity/saas-apps/headspace-tutorial.md), [SeekOut](~/identity/saas-apps/seekout-tutorial.md), [Stackby](~/identity/saas-apps/stackby-tutorial.md), [Infrascale Cloud Backup](~/identity/saas-apps/infrascale-cloud-backup-tutorial.md), [Keystone](~/identity/saas-apps/keystone-tutorial.md), [LMS・教育管理システム Leaf](~/identity/saas-apps/lms-and-education-management-system-leaf-tutorial.md), [ZDiscovery](~/identity/saas-apps/zdiscovery-tutorial.md), [ラインズeライブラリアドバンス (Lines eLibrary Advance)](~/identity/saas-apps/lines-elibrary-advance-tutorial.md), [Rootly](~/identity/saas-apps/rootly-tutorial.md), [Articulate 360](~/identity/saas-apps/articulate360-tutorial.md), [Rise.com](~/identity/saas-apps/risecom-tutorial.md), [SevOne Network Monitoring System (NMS)](~/identity/saas-apps/sevone-network-monitoring-system-tutorial.md), [PGM](https://ups-pgm.4gfactor.com/azure/), [TouchRight Software](https://app.touchrightsoftware.com/), [Tendium](~/identity/saas-apps/tendium-tutorial.md), [Training Platform](~/identity/saas-apps/training-platform-tutorial.md), [Znapio](https://app.znapio.com/), [Preset](~/identity/saas-apps/preset-tutorial.md), [itslearning MS Teams sync](https://itslearning.com/global/), [Veza](~/identity/saas-apps/veza-tutorial.md),
 
 You can also find the documentation of all the applications from here https://aka.ms/AppsTutorial,
 
@@ -1360,7 +1360,7 @@ We highly recommend enabling this new protection when using Azure AD Multi-Facto
 
 You can now automate creating, updating, and deleting user accounts for these newly integrated apps:
 
-- [Tableau Cloud](../saas-apps/tableau-online-provisioning-tutorial.md)
+- [Tableau Cloud](~/identity/saas-apps/tableau-online-provisioning-tutorial.md)
 
 For more information about how to better secure your organization by using automated user account provisioning, see [Automate user provisioning to SaaS applications with Azure AD](~/identity/app-provisioning/user-provisioning.md).
  
@@ -1434,7 +1434,7 @@ Check out these resources to learn more:
 
  
 
-A new Azure AD Connect release fixes several bugs and includes new functionality. This release is also available for auto upgrade for eligible servers. For more information, see: [Azure AD Connect: Version release history](../hybrid/connect/reference-connect-version-history.md#21150).
+A new Azure AD Connect release fixes several bugs and includes new functionality. This release is also available for auto upgrade for eligible servers. For more information, see: [Azure AD Connect: Version release history](~/identity/hybrid/connect/reference-connect-version-history.md#21150).
 
 ---
  
@@ -1500,7 +1500,7 @@ All Devices List:
 - Columns can be reordered via drag and drop
 - Select all devices
 
-For more information, see: [Manage devices in Azure AD using the Azure portal](../devices/manage-device-identities.md#view-and-filter-your-devices).
+For more information, see: [Manage devices in Azure AD using the Azure portal](~/identity/devices/manage-device-identities.md#view-and-filter-your-devices).
 
 
  
@@ -1551,7 +1551,7 @@ For more information, see [Claims mapping policy - Microsoft Entra](~/identity-p
 
 You can now automate creating, updating, and deleting user accounts for these newly integrated apps:
 
-- [Whimsical](../saas-apps/whimsical-provisioning-tutorial.md)
+- [Whimsical](~/identity/saas-apps/whimsical-provisioning-tutorial.md)
 
 For more information about how to better secure your organization by using automated user account provisioning, see [Automate user provisioning to SaaS applications with Azure AD](~/identity/app-provisioning/user-provisioning.md).
  
@@ -1565,7 +1565,7 @@ For more information about how to better secure your organization by using autom
 **Service category:** Privileged Identity Management  
 **Product capability:** Privileged Identity Management  
  
-Customers can be alerted on assignments made outside PIM either directly on the Azure portal or also via email. For the current public preview, the assignments are being tracked at the subscription level. For more information, see [Configure security alerts for Azure roles in Privileged Identity Management](../privileged-identity-management/pim-resource-roles-configure-alerts.md#alerts).
+Customers can be alerted on assignments made outside PIM either directly on the Azure portal or also via email. For the current public preview, the assignments are being tracked at the subscription level. For more information, see [Configure security alerts for Azure roles in Privileged Identity Management](~/id-governance/privileged-identity-management/pim-resource-roles-configure-alerts.md#alerts).
  
 ---
 
@@ -1610,7 +1610,7 @@ Create "nested" groups with Azure AD Dynamic Groups! This feature enables you to
 
 In June 2022 we've added the following 22 new applications in our App gallery with Federation support:
 
-[Leadcamp Mailer](https://app.leadcamp.io/sign-in), [PULCE](https://ups.pulce.tech/index.php), [Hive Learning](../saas-apps/hive-learning-tutorial.md), [Planview LeanKit](../saas-apps/planview-leankit-tutorial.md), [Javelo](../saas-apps/javelo-tutorial.md), [きょうしつでビスケット,Agile Provisioning](https://online.viscuit.com/v1/all/?server=7), [xCarrier®](../saas-apps/xcarrier-tutorial.md), [Skillcast](../saas-apps/skillcast-tutorial.md), [JTRA](https://www.jingtengtech.com/r/#/register?id=1), [InnerSpace inTELLO](https://intello.innerspace.io/), [Seculio](../saas-apps/seculio-tutorial.md), [XplicitTrust Partner Console](https://console.xplicittrust.com/#/partner/auth), [Veracity Single-Sign On](https://www.veracity.com/), [Guardium Data Protection](../saas-apps/guardium-data-protection-tutorial.md), [IntellicureEHR v7](https://www.intellicure.com/wound-care-software/ehr/), [BMIS - Battery Management Information System](../saas-apps/battery-management-information-system-tutorial.md), [Finbiosoft Cloud](https://account.finbiosoft.com/), [Standard for Success K-12](../saas-apps/standard-for-success-tutorial.md), [E2open LSP](../saas-apps/e2open-lsp-tutorial.md), [TVU Service](../saas-apps/tvu-service-tutorial.md), [S4 - Digitsec](../saas-apps/s4-digitsec-tutorial.md).
+[Leadcamp Mailer](https://app.leadcamp.io/sign-in), [PULCE](https://ups.pulce.tech/index.php), [Hive Learning](~/identity/saas-apps/hive-learning-tutorial.md), [Planview LeanKit](~/identity/saas-apps/planview-leankit-tutorial.md), [Javelo](~/identity/saas-apps/javelo-tutorial.md), [きょうしつでビスケット,Agile Provisioning](https://online.viscuit.com/v1/all/?server=7), [xCarrier®](~/identity/saas-apps/xcarrier-tutorial.md), [Skillcast](~/identity/saas-apps/skillcast-tutorial.md), [JTRA](https://www.jingtengtech.com/r/#/register?id=1), [InnerSpace inTELLO](https://intello.innerspace.io/), [Seculio](~/identity/saas-apps/seculio-tutorial.md), [XplicitTrust Partner Console](https://console.xplicittrust.com/#/partner/auth), [Veracity Single-Sign On](https://www.veracity.com/), [Guardium Data Protection](~/identity/saas-apps/guardium-data-protection-tutorial.md), [IntellicureEHR v7](https://www.intellicure.com/wound-care-software/ehr/), [BMIS - Battery Management Information System](~/identity/saas-apps/battery-management-information-system-tutorial.md), [Finbiosoft Cloud](https://account.finbiosoft.com/), [Standard for Success K-12](~/identity/saas-apps/standard-for-success-tutorial.md), [E2open LSP](~/identity/saas-apps/e2open-lsp-tutorial.md), [TVU Service](~/identity/saas-apps/tvu-service-tutorial.md), [S4 - Digitsec](~/identity/saas-apps/s4-digitsec-tutorial.md).
 
 You can also find the documentation of all the applications from here https://aka.ms/AppsTutorial,
 
@@ -1718,7 +1718,7 @@ Azure Service Health will soon support service outage notifications to Tenant Ad
 
 In May 2022 we've added the following 25 new applications in our App gallery with Federation support:
 
-[UserZoom](../saas-apps/userzoom-tutorial.md), [AMX Mobile](https://www.amxsolutions.co.uk/), [i-Sight](../saas-apps/isight-tutorial.md), Method InSight, [Chronus SAML](../saas-apps/chronus-saml-tutorial.md), [Attendant Console for Microsoft Teams](https://attendant.anywhere365.io/), [Skopenow](../saas-apps/skopenow-tutorial.md), [Fidelity PlanViewer](../saas-apps/fidelity-planviewer-tutorial.md), [Lyve Cloud](../saas-apps/lyve-cloud-tutorial.md), [Framer](../saas-apps/framer-tutorial.md), [Authomize](../saas-apps/authomize-tutorial.md), [gamba!](../saas-apps/gamba-tutorial.md), [Datto File Protection Single Sign On](../saas-apps/datto-file-protection-tutorial.md), [LONEALERT](https://portal.lonealert.co.uk/auth/azure/saml/signin), [Payfactors](https://pf.payfactors.com/client/auth/login), [deBroome Brand Portal](../saas-apps/debroome-brand-portal-tutorial.md), [TeamSlide](../saas-apps/teamslide-tutorial.md), [Sensera Systems](https://sitecloud.senserasystems.com/), [YEAP](https://prismaonline.propay.be/logon/login.aspx), [Monaca Education](https://monaca.education/ja/signup), [Personify Inc](https://personifyinc.com/login), [Phenom TXM](../saas-apps/phenom-txm-tutorial.md), [Forcepoint Cloud Security Gateway - User Authentication](../saas-apps/forcepoint-cloud-security-gateway-tutorial.md), [GoalQuest](../saas-apps/goalquest-tutorial.md), [OpenForms](https://login.openforms.com/Login).
+[UserZoom](~/identity/saas-apps/userzoom-tutorial.md), [AMX Mobile](https://www.amxsolutions.co.uk/), [i-Sight](~/identity/saas-apps/isight-tutorial.md), Method InSight, [Chronus SAML](~/identity/saas-apps/chronus-saml-tutorial.md), [Attendant Console for Microsoft Teams](https://attendant.anywhere365.io/), [Skopenow](~/identity/saas-apps/skopenow-tutorial.md), [Fidelity PlanViewer](~/identity/saas-apps/fidelity-planviewer-tutorial.md), [Lyve Cloud](~/identity/saas-apps/lyve-cloud-tutorial.md), [Framer](~/identity/saas-apps/framer-tutorial.md), [Authomize](~/identity/saas-apps/authomize-tutorial.md), [gamba!](~/identity/saas-apps/gamba-tutorial.md), [Datto File Protection Single Sign On](~/identity/saas-apps/datto-file-protection-tutorial.md), [LONEALERT](https://portal.lonealert.co.uk/auth/azure/saml/signin), [Payfactors](https://pf.payfactors.com/client/auth/login), [deBroome Brand Portal](~/identity/saas-apps/debroome-brand-portal-tutorial.md), [TeamSlide](~/identity/saas-apps/teamslide-tutorial.md), [Sensera Systems](https://sitecloud.senserasystems.com/), [YEAP](https://prismaonline.propay.be/logon/login.aspx), [Monaca Education](https://monaca.education/ja/signup), [Personify Inc](https://personifyinc.com/login), [Phenom TXM](~/identity/saas-apps/phenom-txm-tutorial.md), [Forcepoint Cloud Security Gateway - User Authentication](~/identity/saas-apps/forcepoint-cloud-security-gateway-tutorial.md), [GoalQuest](~/identity/saas-apps/goalquest-tutorial.md), [OpenForms](https://login.openforms.com/Login).
 
 You can also find the documentation of all the applications from here https://aka.ms/AppsTutorial,
 
@@ -1753,9 +1753,9 @@ When editing a collection using the My Apps portal, users can now add their own 
 
 You can now automate creating, updating, and deleting user accounts for these newly integrated apps:
 
-- [Alinto Protect](../saas-apps/alinto-protect-provisioning-tutorial.md)
-- [Blinq](../saas-apps/blinq-provisioning-tutorial.md)
-- [Cerby](../saas-apps/cerby-provisioning-tutorial.md)
+- [Alinto Protect](~/identity/saas-apps/alinto-protect-provisioning-tutorial.md)
+- [Blinq](~/identity/saas-apps/blinq-provisioning-tutorial.md)
+- [Cerby](~/identity/saas-apps/cerby-provisioning-tutorial.md)
 
 For more information about how to better secure your organization by using automated user account provisioning, see: [Automate user provisioning to SaaS applications with Azure AD](~/identity/app-provisioning/user-provisioning.md).
  

@@ -70,7 +70,7 @@ Like application objects, service principals can also be created through multipl
   - When you subscribe to Microsoft 365 or begin a trial, one or more service principals are created in the directory representing the various services that are used to deliver all of the functionality associated with Microsoft 365.
   - Some Microsoft 365 services like SharePoint create service principals on an ongoing basis to allow secure communication between components including workflows.
 - When an admin adds an application from the app gallery (this will also create an underlying app object)
-- Add an application to use the [Microsoft Entra application proxy](../app-proxy/application-proxy.md)
+- Add an application to use the [Microsoft Entra application proxy](~/identity/app-proxy/application-proxy.md)
 - Connect an application for SSO using SAML or password SSO
 - Programmatically via the Microsoft Graph API or PowerShell
 

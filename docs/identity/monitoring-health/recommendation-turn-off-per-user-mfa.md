@@ -24,7 +24,7 @@ This article covers the recommendation to switch per-user multifactor authentica
 
 As an admin, you want to maintain security for your company’s resources, but you also want your employees to easily access resources as needed. MFA enables you to enhance the security posture of your tenant.
 
-In your tenant, you can enable MFA on a per-user basis. In this scenario, your users perform MFA each time they sign in. There are some exceptions, such as when they sign in from trusted IP addresses or when the remember MFA on trusted devices feature is turned on. While enabling MFA is a good practice, switching per-user MFA to MFA based on [Conditional Access](../conditional-access/overview.md) can reduce the number of times your users are prompted for MFA.
+In your tenant, you can enable MFA on a per-user basis. In this scenario, your users perform MFA each time they sign in. There are some exceptions, such as when they sign in from trusted IP addresses or when the remember MFA on trusted devices feature is turned on. While enabling MFA is a good practice, switching per-user MFA to MFA based on [Conditional Access](~/identity/conditional-access/overview.md) can reduce the number of times your users are prompted for MFA.
 
 This recommendation shows up if:
 
@@ -52,5 +52,5 @@ After all users have been migrated to Conditional Access MFA accounts, the recom
 - [Review the Microsoft Entra recommendations overview](overview-recommendations.md)
 - [Learn how to use Microsoft Entra recommendations](howto-use-recommendations.md)
 - [Explore the Microsoft Graph API properties for recommendations](/graph/api/resources/recommendation)
-- [Learn about requiring MFA for all users using Conditional Access](../conditional-access/howto-conditional-access-policy-all-users-mfa.md)
+- [Learn about requiring MFA for all users using Conditional Access](~/identity/conditional-access/howto-conditional-access-policy-all-users-mfa.md)
 - [View the MFA Conditional Access policy tutorial](~/identity/authentication/tutorial-enable-azure-mfa.md)

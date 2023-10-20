@@ -58,7 +58,7 @@ landingContent:
           - text: Assign users and groups
             url: assign-user-or-group-access-portal.md
           - text: Provision an app
-            url: ../governance/what-is-provisioning.md
+            url: ~/id-governance/what-is-provisioning.md
           - text: Configure My Apps
             url: ./myapps-overview.md
       - linkListType: learn
@@ -70,7 +70,7 @@ landingContent:
       - linkListType: how-to-guide
         links:
           - text: Set up Conditional Access
-            url: ../conditional-access/concept-conditional-access-cloud-apps.md
+            url: ~/identity/conditional-access/concept-conditional-access-cloud-apps.md
           - text: Set up Multi-Factor Authentication
             url: ~/identity/authentication/howto-mfa-getstarted.md
           - text: Manage certificates
@@ -88,7 +88,7 @@ landingContent:
       - linkListType: overview
         links:
           - text: Identity governance
-            url: ../governance/identity-governance-overview.md
+            url: ~/id-governance/identity-governance-overview.md
           - text: User and admin consent
             url: user-admin-consent-overview.md
       - linkListType: how-to-guide
@@ -102,7 +102,7 @@ landingContent:
           - text: Configure permissions classification
             url: configure-permission-classifications.md
           - text: Manage entitlement
-            url: ../governance/entitlement-management-scenarios.md
+            url: ~/id-governance/entitlement-management-scenarios.md
       - linkListType: learn
         links:
           - text: Configure admin consent workflow
@@ -114,7 +114,7 @@ landingContent:
           - text: View, search, sort, filter list of apps in a tenant
             url: view-applications-portal.md
           - text: Troubleshoot sign-in errors
-            url: ../reports-monitoring/howto-troubleshoot-sign-in-errors.md
+            url: ~/identity/monitoring-health/howto-troubleshoot-sign-in-errors.md
           - text: Disable user sign-in for an app
             url: disable-user-sign-in-portal.md
           - text: Remove user access to an app
@@ -126,21 +126,21 @@ landingContent:
       - linkListType: concept
         links:
           - text: Sign in logs
-            url: ../reports-monitoring/concept-sign-ins.md
+            url: ~/identity/monitoring-health/concept-sign-ins.md
           - text: Usage and insights report
-            url: ../reports-monitoring/concept-usage-insights-report.md
+            url: ~/identity/monitoring-health/concept-usage-insights-report.md
           - text: Audit logs
-            url: ../reports-monitoring/concept-audit-logs.md
+            url: ~/identity/monitoring-health/concept-audit-logs.md
           - text: Provisioning logs
-            url: ../reports-monitoring/concept-provisioning-logs.md
+            url: ~/identity/monitoring-health/concept-provisioning-logs.md
       - linkListType: how-to-guide
         links:
           - text: Access activity logs
-            url: ../reports-monitoring/howto-access-activity-logs.md
+            url: ~/identity/monitoring-health/howto-access-activity-logs.md
           - text: Download logs
-            url: ../reports-monitoring/howto-download-logs.md
+            url: ~/identity/monitoring-health/howto-download-logs.md
           - text: Set up access reviews
-            url: ../governance/deploy-access-reviews.md
+            url: ~/id-governance/deploy-access-reviews.md
           - text: Assign owners
             url: assign-app-owners.md
   - title: Remote access to on-premises apps
@@ -148,16 +148,16 @@ landingContent:
       - linkListType: concept
         links:
           - text: Application Proxy
-            url: ../app-proxy/application-proxy.md
+            url: ~/identity/app-proxy/application-proxy.md
       - linkListType: how-to-guide
         links:
           - text: Plan application Proxy deployment
-            url: ../app-proxy/application-proxy-deployment-plan.md
+            url: ~/identity/app-proxy/application-proxy-deployment-plan.md
           - text: Set up connectors
-            url: ../app-proxy/application-proxy-connectors.md
+            url: ~/identity/app-proxy/application-proxy-connectors.md
           - text: Configure single sign-on
-            url: ../app-proxy/application-proxy-config-sso-how-to.md
+            url: ~/identity/app-proxy/application-proxy-config-sso-how-to.md
           - text: Publish native client applications
-            url: ../app-proxy/application-proxy-configure-native-client-application.md
+            url: ~/identity/app-proxy/application-proxy-configure-native-client-application.md
           - text: Publish claims-aware applications
-            url: ../app-proxy/application-proxy-configure-for-claims-aware-applications.md
+            url: ~/identity/app-proxy/application-proxy-configure-for-claims-aware-applications.md

@@ -26,7 +26,7 @@ Enterprises onboarding users face significant challenges onboarding remote users
 
 1. A custom portal for new employee onboarding.
 
-2. A backend job provides new hires with a uniquely identifiable link to the employee onboarding portal from (A) that represents the new hire’s specific process. For this use case, the account for the new hire should already be provisioned in Microsoft Entra ID. Consider using [Lifecycle Workflows](../governance/what-are-lifecycle-workflows.md) as the triggering point of this flow.
+2. A backend job provides new hires with a uniquely identifiable link to the employee onboarding portal from (A) that represents the new hire’s specific process. For this use case, the account for the new hire should already be provisioned in Microsoft Entra ID. Consider using [Lifecycle Workflows](~/id-governance/what-are-lifecycle-workflows.md) as the triggering point of this flow.
 
 3. New hires select the link to the portal in (A) above and are guided through a wizard-like experience:
   1. New Hires are redirected to acquire a verified ID from the Identity verification partner (also referred to IDV. To learn more about the identity verification partners: <https://aka.ms/verifiedidisv>)

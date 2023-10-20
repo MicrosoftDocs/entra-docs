@@ -21,7 +21,7 @@ This article is the first in a series of articles that provide guidance for conf
 - [Common considerations for multi-tenant user management](multi-tenant-common-considerations.md) provides guidance for these considerations: cross-tenant synchronization, directory object, Microsoft Entra Conditional Access, additional access control, and Office 365. 
 - [Common solutions for multi-tenant user management](multi-tenant-common-solutions.md) when single tenancy doesn't work for your scenario, this article provides guidance for these challenges:  automatic user lifecycle management and resource allocation across tenants, sharing on-premises apps across tenants.
 
-The guidance helps to you achieve a consistent state of user lifecycle management. Lifecycle management includes provisioning, managing, and deprovisioning users across tenants using the available Azure tools that include [Microsoft Entra B2B collaboration](~/external-id/what-is-b2b.md) (B2B) and [cross-tenant synchronization](../multi-tenant-organizations/cross-tenant-synchronization-overview.md).
+The guidance helps to you achieve a consistent state of user lifecycle management. Lifecycle management includes provisioning, managing, and deprovisioning users across tenants using the available Azure tools that include [Microsoft Entra B2B collaboration](~/external-id/what-is-b2b.md) (B2B) and [cross-tenant synchronization](~/identity/multi-tenant-organizations/cross-tenant-synchronization-overview.md).
 
 Provisioning users into a single Microsoft Entra tenant provides a unified view of resources and a single set of policies and controls. This approach enables consistent user lifecycle management.
 
@@ -55,7 +55,7 @@ Most documentation for B2B refers to an external user as a guest user. It confla
 
 ## Cross-tenant synchronization
 
-[Cross-tenant synchronization](../multi-tenant-organizations/cross-tenant-synchronization-overview.md) enables multi-tenant organizations to provide seamless access and collaboration experiences to end users, leveraging existing B2B external collaboration capabilities. The feature doesn't allow cross-tenant synchronization across Microsoft sovereign clouds (such as Microsoft 365 US Government GCC High, DOD or Office 365 in China). See [Common considerations for multi-tenant user management](multi-tenant-common-considerations.md#cross-tenant-synchronization) for help with automated and custom cross-tenant synchronization scenarios.
+[Cross-tenant synchronization](~/identity/multi-tenant-organizations/cross-tenant-synchronization-overview.md) enables multi-tenant organizations to provide seamless access and collaboration experiences to end users, leveraging existing B2B external collaboration capabilities. The feature doesn't allow cross-tenant synchronization across Microsoft sovereign clouds (such as Microsoft 365 US Government GCC High, DOD or Office 365 in China). See [Common considerations for multi-tenant user management](multi-tenant-common-considerations.md#cross-tenant-synchronization) for help with automated and custom cross-tenant synchronization scenarios.
 
 Watch Arvind Harinder talk about the cross-tenant sync capability in Microsoft Entra ID (embedded below).
 
@@ -71,7 +71,7 @@ The following conceptual and how-to articles provide information about Microsoft
 - [B2B user tokens](~/external-id/user-token.md) provides examples of the bearer tokens for B2B for an external user.
 - [Conditional Access for B2B](~/external-id/authentication-conditional-access.md) describes how Conditional Access and MFA work for external users.
 - [Cross-tenant access settings](~/external-id/cross-tenant-access-overview.md) provides granular control over how external Microsoft Entra organizations collaborate with you (inbound access) and how your users collaborate with external Microsoft Entra organizations (outbound access).
-- [Cross-tenant synchronization overview](../multi-tenant-organizations/cross-tenant-synchronization-overview.md) explains how to automate creating, updating, and deleting Microsoft Entra B2B collaboration users across tenants in an organization.
+- [Cross-tenant synchronization overview](~/identity/multi-tenant-organizations/cross-tenant-synchronization-overview.md) explains how to automate creating, updating, and deleting Microsoft Entra B2B collaboration users across tenants in an organization.
 
 ### How-to articles
 
@@ -134,4 +134,4 @@ Microsoft mechanisms for creating and managing the lifecycle of your external us
 - [Multi-tenant user management scenarios](multi-tenant-user-management-scenarios.md) describes three scenarios for which you can use multi-tenant user management features: end user-initiated, scripted, and automated.
 - [Common considerations for multi-tenant user management](multi-tenant-common-considerations.md) provides guidance for these considerations: cross-tenant synchronization, directory object, Microsoft Entra Conditional Access, additional access control, and Office 365. 
 - [Common solutions for multi-tenant user management](multi-tenant-common-solutions.md) when single tenancy doesn't work for your scenario, this article provides guidance for these challenges:  automatic user lifecycle management and resource allocation across tenants, sharing on-premises apps across tenants.
-- [Multi-tenant synchronization from Active Directory](../hybrid/connect/plan-connect-topologies.md) describes various on-premises and Microsoft Entra topologies that use Microsoft Entra Connect Sync as the key integration solution.
+- [Multi-tenant synchronization from Active Directory](~/identity/hybrid/connect/plan-connect-topologies.md) describes various on-premises and Microsoft Entra topologies that use Microsoft Entra Connect Sync as the key integration solution.

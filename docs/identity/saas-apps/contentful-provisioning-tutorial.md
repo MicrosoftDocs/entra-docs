@@ -84,7 +84,7 @@ If you choose to scope who will be provisioned to your app based on assignment, 
 
 If you choose to scope who will be provisioned based solely on attributes of the user or group, use a scoping filter to [define conditional rules for provisioning user accounts](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md). 
 
-* When you assign users and groups to Contentful, you must select a role other than **Default Access**. Users who have the Default Access role are excluded from provisioning and are indicated in the provisioning logs as not effectively entitled. If the only role available on the application is the Default Access role, you can [update the application manifest](~/identity-platform/howto-add-app-roles-in-azure-ad-apps.md) to add more roles. 
+* When you assign users and groups to Contentful, you must select a role other than **Default Access**. Users who have the Default Access role are excluded from provisioning and are indicated in the provisioning logs as not effectively entitled. If the only role available on the application is the Default Access role, you can [update the application manifest](~/identity-platform/howto-add-app-roles-in-apps.md) to add more roles. 
 * Start small. Test with a small set of users and groups before you roll out to everyone. When provisioning scope is set to assigned users and groups, you can control the scope by assigning one or two users or groups to the app. When the scope is set to all users and groups, you can specify an [attribute-based scoping filter](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md). 
 
 ## Configure automatic user provisioning to Contentful 
@@ -161,7 +161,7 @@ This operation starts the initial sync cycle of all users and groups defined in 
 
 After you configure provisioning, use the following resources to monitor your deployment:
 
-* To determine which users have been provisioned successfully or unsuccessfully, view the [provisioning logs](../reports-monitoring/concept-provisioning-logs.md).
+* To determine which users have been provisioned successfully or unsuccessfully, view the [provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md).
 * To see the status of the provisioning cycle and how close it is to finishing, check the [progress bar](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md).
 * If the provisioning configuration seems to be in an unhealthy state, the application goes into quarantine. Learn more about [quarantine states](~/identity/app-provisioning/application-provisioning-quarantine-status.md).  
 

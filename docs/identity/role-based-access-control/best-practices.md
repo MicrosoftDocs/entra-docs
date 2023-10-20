@@ -41,15 +41,15 @@ Follow these steps to help you find the right role.
 
 ## 2. Use Privileged Identity Management to grant just-in-time access
 
-One of the principles of least privilege is that access should be granted only when required. [Microsoft Entra Privileged Identity Management (PIM)](../privileged-identity-management/pim-configure.md) lets you grant just-in-time access to your administrators. Microsoft recommends that you use PIM in Microsoft Entra ID. Using PIM, a user can be made eligible for a Microsoft Entra role where they can then activate the role for a limited time when needed. Privileged access is automatically removed when the timeframe expires. You can also configure PIM settings to require approval, receive notification emails when someone activates their role assignment, or other role settings. Notifications provide an alert when new users are added to highly privileged roles. For more information, see [Configure Microsoft Entra role settings in Privileged Identity Management](../privileged-identity-management/pim-how-to-change-default-settings.md).
+One of the principles of least privilege is that access should be granted only when required. [Microsoft Entra Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/pim-configure.md) lets you grant just-in-time access to your administrators. Microsoft recommends that you use PIM in Microsoft Entra ID. Using PIM, a user can be made eligible for a Microsoft Entra role where they can then activate the role for a limited time when needed. Privileged access is automatically removed when the timeframe expires. You can also configure PIM settings to require approval, receive notification emails when someone activates their role assignment, or other role settings. Notifications provide an alert when new users are added to highly privileged roles. For more information, see [Configure Microsoft Entra role settings in Privileged Identity Management](~/id-governance/privileged-identity-management/pim-how-to-change-default-settings.md).
 
 ## 3. Turn on multi-factor authentication for all your administrator accounts
 
 [Based on our studies](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/your-pa-word-doesn-t-matter/ba-p/731984), your account is 99.9% less likely to be compromised if you use multi-factor authentication (MFA). 
  
 You can enable MFA on Microsoft Entra roles using two methods:
-- [Role settings](../privileged-identity-management/pim-how-to-change-default-settings.md) in Privileged Identity Management
-- [Conditional Access](../conditional-access/howto-conditional-access-policy-admin-mfa.md)
+- [Role settings](~/id-governance/privileged-identity-management/pim-how-to-change-default-settings.md) in Privileged Identity Management
+- [Conditional Access](~/identity/conditional-access/howto-conditional-access-policy-admin-mfa.md)
 
 ## 4. Configure recurring access reviews to revoke unneeded permissions over time
 
@@ -59,7 +59,7 @@ Access reviews enable organizations to review administrator's access regularly t
 
 Microsoft recommends that you use access reviews to find and remove role assignments that are no longer needed. This helps you reduce the risk of unauthorized or excessive access and maintain your compliance standards.
 
-For information about access reviews for roles, see [Create an access review of Azure resource and Microsoft Entra roles in PIM](../privileged-identity-management/pim-create-roles-and-resource-roles-review.md). For information about access reviews of groups that are assigned roles, see [Create an access review of groups and applications in Microsoft Entra ID](../governance/create-access-review.md).
+For information about access reviews for roles, see [Create an access review of Azure resource and Microsoft Entra roles in PIM](~/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md). For information about access reviews of groups that are assigned roles, see [Create an access review of groups and applications in Microsoft Entra ID](~/id-governance/create-access-review.md).
 
 ## 5. Limit the number of Global Administrators to less than 5
 
@@ -85,7 +85,7 @@ Some roles include privileged permissions, such as the ability to update credent
 
 ## 7. Use groups for Microsoft Entra role assignments and delegate the role assignment
 
-If you have an external governance system that takes advantage of groups, then you should consider assigning roles to Microsoft Entra groups, instead of individual users. You can also manage role-assignable groups in PIM to ensure that there are no standing owners or members in these privileged groups. For more information, see [Privileged Identity Management (PIM) for Groups](../privileged-identity-management/concept-pim-for-groups.md).
+If you have an external governance system that takes advantage of groups, then you should consider assigning roles to Microsoft Entra groups, instead of individual users. You can also manage role-assignable groups in PIM to ensure that there are no standing owners or members in these privileged groups. For more information, see [Privileged Identity Management (PIM) for Groups](~/id-governance/privileged-identity-management/concept-pim-for-groups.md).
 
 You can assign an owner to role-assignable groups. That owner decides who is added to or removed from the group, so indirectly, decides who gets the role assignment. In this way, a Global Administrator or Privileged Role Administrator can delegate role management on a per-role basis by using groups. For more information, see [Use Microsoft Entra groups to manage role assignments](groups-concept.md).
 
@@ -93,7 +93,7 @@ You can assign an owner to role-assignable groups. That owner decides who is add
 
 It may be the case that an individual has five or six eligible assignments to Microsoft Entra roles through PIM. They'll have to activate each role individually, which can reduce productivity. Worse still, they can also have tens or hundreds of Azure resources assigned to them, which aggravates the problem.
  
-In this case, you should use [Privileged Identity Management (PIM) for Groups](../privileged-identity-management/concept-pim-for-groups.md). Create a PIM for Groups and grant it permanent access to multiple roles (Microsoft Entra ID and/or Azure). Make that user an eligible member or owner of this group. With just one activation, they'll have access to all the linked resources.
+In this case, you should use [Privileged Identity Management (PIM) for Groups](~/id-governance/privileged-identity-management/concept-pim-for-groups.md). Create a PIM for Groups and grant it permanent access to multiple roles (Microsoft Entra ID and/or Azure). Make that user an eligible member or owner of this group. With just one activation, they'll have access to all the linked resources.
 
 ![PIM for Groups diagram showing activating multiple roles at once](./media/best-practices/pim-for-groups.png)
 

@@ -26,7 +26,7 @@ A separate tenant is useful for an organization's IT department to validate tena
 Deploying a non-production environment in a separate tenant might be necessary during development of custom applications that can change data of production user objects with MS Graph or similar APIs (for example, applications that are granted Directory.ReadWrite.All, or similar wide scope).
 
 >[!Note]
->Microsoft Entra Connect synchronization to multiple tenants, which might be useful when deploying a non-production environment in a separate tenant. For more information, see [Microsoft Entra Connect: Supported topologies](../hybrid/connect/plan-connect-topologies.md).
+>Microsoft Entra Connect synchronization to multiple tenants, which might be useful when deploying a non-production environment in a separate tenant. For more information, see [Microsoft Entra Connect: Supported topologies](~/identity/hybrid/connect/plan-connect-topologies.md).
 
 ## Outcomes
 
@@ -62,7 +62,7 @@ Developers require access to the sandbox tenant during the development lifecycle
 
 In this example, Contoso uses [Microsoft Entra B2B Collaboration](~/external-id/what-is-b2b.md) to provision users from the corporate tenant to enable users that can manage and access resources in applications in the sandbox tenant without managing multiple credentials. This capability is primarily oriented to cross-organization collaboration scenarios. However, enterprises with multiple tenants like Contoso can use this capability to avoid additional credential lifecycle administration and user experience complexities.
 
-Use [External Identities cross-tenant access](~/external-id/cross-tenant-access-settings-b2b-collaboration.md) settings to manage how you collaborate with other Microsoft Entra organizations through B2B collaboration. These settings determine both the level of inbound access users in external Microsoft Entra organizations have to your resources, and the level of outbound access your users have to external organizations. They also let you trust multifactor authentication (MFA) and device claims ([compliant claims and Microsoft Entra hybrid joined claims](../conditional-access/howto-conditional-access-policy-compliant-device.md)) from other Microsoft Entra organizations. For details and planning considerations, see [Cross-tenant access in Microsoft Entra External ID](~/external-id/cross-tenant-access-overview.md).
+Use [External Identities cross-tenant access](~/external-id/cross-tenant-access-settings-b2b-collaboration.md) settings to manage how you collaborate with other Microsoft Entra organizations through B2B collaboration. These settings determine both the level of inbound access users in external Microsoft Entra organizations have to your resources, and the level of outbound access your users have to external organizations. They also let you trust multifactor authentication (MFA) and device claims ([compliant claims and Microsoft Entra hybrid joined claims](~/identity/conditional-access/howto-conditional-access-policy-compliant-device.md)) from other Microsoft Entra organizations. For details and planning considerations, see [Cross-tenant access in Microsoft Entra External ID](~/external-id/cross-tenant-access-overview.md).
 
 Another approach could have been to utilize the capabilities of Microsoft Entra Connect to sync the same on-premises Microsoft Entra credentials to multiple tenants, keeping the same password but differentiating on the users UPN domain.
 

@@ -43,7 +43,7 @@ Document the organizations you collaborate with, and organization users' domains
 If your users use Microsoft Entra B2B, you can discover the external Microsoft Entra tenants they're collaborating with, with the sign-in logs, PowerShell, or a workbook. Learn more:
 
 * [Get MsIdCrossTenantAccessActivity](https://github.com/AzureAD/MSIdentityTools/wiki/Get-MSIDCrossTenantAccessActivity)
-* [Cross-tenant access activity workbook](../reports-monitoring/workbook-cross-tenant-access-activity.md)
+* [Cross-tenant access activity workbook](~/identity/monitoring-health/workbook-cross-tenant-access-activity.md)
 
 You can enable future collaboration with: 
 
@@ -102,7 +102,7 @@ Learn more: [Configure cross-tenant access settings for B2B collaboration](~/ext
 
 Use entitlement management to ensure automatic guest-lifecycle governance. Create access packages and publish them to external users or to connected organizations, which support Microsoft Entra tenants and other domains. When you create an access package, restrict access to connected organizations. 
 
-Learn more: [What is entitlement management?](../governance/entitlement-management-overview.md)
+Learn more: [What is entitlement management?](~/id-governance/entitlement-management-overview.md)
 
 ## Control external user access
 
@@ -110,7 +110,7 @@ To begin collaboration, invite or enable a partner to access resources. Users ga
 
 * [Microsoft Entra B2B collaboration invitation redemption](~/external-id/redemption-experience.md) 
 * [Self-service sign-up](~/external-id/self-service-sign-up-overview.md)
-* [Requesting access to an access package in entitlement management](../governance/entitlement-management-request-access.md)
+* [Requesting access to an access package in entitlement management](~/id-governance/entitlement-management-request-access.md)
 
 When you enable Microsoft Entra B2B, you can invite guest users with links and email invitations. Self-service sign-up, and publishing access packages to the My Access portal, require more configuration. 
 
@@ -133,7 +133,7 @@ Determine who can invite guest users to access resources.
 
 Use Microsoft Entra entitlement management to configure questions that external users answer. The questions appear to approvers to help them make a decision. You can configure sets of questions for each access package policy, so approvers have relevant information for access they approve. For example, ask vendors for their vendor contract number. 
 
-Learn more: [Change approval and requestor information settings for an access package in entitlement management](../governance/entitlement-management-access-package-approval-policy.md)
+Learn more: [Change approval and requestor information settings for an access package in entitlement management](~/id-governance/entitlement-management-access-package-approval-policy.md)
 
 If you use a self-service portal, use API connectors to collect user attributes during sign-up. Use the attributes to assign access. You can create custom attributes in the Azure portal and use them in your self-service sign-up user flows. Read and write these attributes by using the Microsoft Graph API. 
 
@@ -174,13 +174,13 @@ We recommend the following guest-user restrictions:
   * You can make needed exceptions 
   * Create a Conditional Access policy with all guest and external users. Implement a policy to block access.
 
-Learn more: [Conditional Access: Cloud apps, actions, and authentication context](../conditional-access/concept-conditional-access-cloud-apps.md)
+Learn more: [Conditional Access: Cloud apps, actions, and authentication context](~/identity/conditional-access/concept-conditional-access-cloud-apps.md)
 
 ## Remove users who don't need access
 
 Establish a process to review and remove users who don't need access. Include external users in your tenant as guests, and users with member accounts.
 
-Learn more: [Use Microsoft Entra ID Governance to review and remove external users who no longer have resource access](../governance/access-reviews-external-users.md)
+Learn more: [Use Microsoft Entra ID Governance to review and remove external users who no longer have resource access](~/id-governance/access-reviews-external-users.md)
 
 Some organizations add external users as members (vendors, partners, and contractors). Assign an attribute, or username:
 
@@ -192,7 +192,7 @@ Evaluate external users with member accounts to determine access. You might have
 
 To find these users:
 
-* [Use Microsoft Entra ID Governance to review and remove external users who no longer have resource access](../governance/access-reviews-external-users.md)
+* [Use Microsoft Entra ID Governance to review and remove external users who no longer have resource access](~/id-governance/access-reviews-external-users.md)
 * Use a sample PowerShell script on [access-reviews-samples/ExternalIdentityUse/](https://github.com/microsoft/access-reviews-samples/tree/master/ExternalIdentityUse)
 
 <a name='transition-current-external-users-to-azure-ad-b2b'></a>

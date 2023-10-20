@@ -100,6 +100,6 @@ If you don't see the Conditional Access policies, confirm you're using a role th
 
 ## Next steps
 
-* [Troubleshoot sign-in problems](../conditional-access/troubleshoot-conditional-access.md#azure-ad-sign-in-events)
+* [Troubleshoot sign-in problems](~/identity/conditional-access/troubleshoot-conditional-access.md#azure-ad-sign-in-events)
 * [Review the Conditional Access sign-in logs FAQs](reports-faq.yml#conditional-access)
 * [Learn about the sign-in logs](concept-sign-ins.md)

@@ -29,7 +29,7 @@ As an owner of an enterprise application in Microsoft Entra ID, a user can manag
 
 **What do you do with applications where the owner is no longer with the organization?**
 
-If you have an ownerless application in your tenant, you can access the audit log for the application to investigate other users who may be involved in configuring the application. However, there are limitations on how long audit logs are stored. See [Microsoft Entra audit log reporting](../reports-monitoring/reference-reports-data-retention.md). 
+If you have an ownerless application in your tenant, you can access the audit log for the application to investigate other users who may be involved in configuring the application. However, there are limitations on how long audit logs are stored. See [Microsoft Entra audit log reporting](~/identity/monitoring-health/reference-reports-data-retention.md). 
 
 You may also see other users who have scoped permissions on the application by navigating to “Roles and Administrators” tab. Once you find the right person to own the application, a user with a highly privileged administrative role in the organization can assign the new owner for the application. See [Assign enterprise application owners](assign-app-owners.md).
 

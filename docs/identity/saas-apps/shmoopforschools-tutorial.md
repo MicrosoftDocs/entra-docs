@@ -96,7 +96,7 @@ Follow these steps to enable Microsoft Entra SSO.
    | role | user.assignedroles |
 
    > [!NOTE]
-   > Shmoop for School supports two roles for users: **Teacher** and **Student**. Set up these roles in Microsoft Entra ID so that users can be assigned the appropriate roles. To understand how to configure roles in Microsoft Entra ID, see [here](~/identity-platform/howto-add-app-roles-in-azure-ad-apps.md#app-roles-ui).
+   > Shmoop for School supports two roles for users: **Teacher** and **Student**. Set up these roles in Microsoft Entra ID so that users can be assigned the appropriate roles. To understand how to configure roles in Microsoft Entra ID, see [here](~/identity-platform/howto-add-app-roles-in-apps.md#app-roles-ui).
 
 1. On the **Set up Single Sign-On with SAML** page, In the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
 

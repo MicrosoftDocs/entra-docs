@@ -24,7 +24,7 @@ An [application](~/identity-platform/app-objects-and-service-principals.md?toc=/
 
 A [service principal](~/identity-platform/app-objects-and-service-principals.md?toc=/azure/active-directory/workload-identities/toc.json&bc=/azure/active-directory/workload-identities/breadcrumb/toc.json) is the *local* representation, or application instance, of a global application object in a specific tenant. An application object is used as a template to create a service principal object in every tenant where the application is used.  The service principal object defines what the app can actually do in a specific tenant, who can access the app, and what resources the app can access.
 
-A [managed identity](../managed-identities-azure-resources/overview.md?toc=/azure/active-directory/workload-identities/toc.json&bc=/azure/active-directory/workload-identities/breadcrumb/toc.json) is a special type of service principal that eliminates the need for developers to manage credentials.
+A [managed identity](~/identity/managed-identities-azure-resources/overview.md?toc=/azure/active-directory/workload-identities/toc.json&bc=/azure/active-directory/workload-identities/breadcrumb/toc.json) is a special type of service principal that eliminates the need for developers to manage credentials.
 
 Here are some ways that workload identities in Microsoft Entra ID are used:
 
@@ -55,19 +55,19 @@ Here are some ways you can use workload identities.
 
 Secure access with adaptive policies:
 
-- Apply Conditional Access policies to service principals owned by your organization using [Conditional Access for workload identities](../conditional-access/workload-identity.md?toc=/azure/active-directory/workload-identities/toc.json&bc=/azure/active-directory/workload-identities/breadcrumb/toc.json).
-- Enable real-time enforcement of Conditional Access location and risk policies using [Continuous access evaluation for workload identities](../conditional-access/concept-continuous-access-evaluation-workload.md?toc=/azure/active-directory/workload-identities/toc.json&bc=/azure/active-directory/workload-identities/breadcrumb/toc.json).
+- Apply Conditional Access policies to service principals owned by your organization using [Conditional Access for workload identities](~/identity/conditional-access/workload-identity.md?toc=/azure/active-directory/workload-identities/toc.json&bc=/azure/active-directory/workload-identities/breadcrumb/toc.json).
+- Enable real-time enforcement of Conditional Access location and risk policies using [Continuous access evaluation for workload identities](~/identity/conditional-access/concept-continuous-access-evaluation-workload.md?toc=/azure/active-directory/workload-identities/toc.json&bc=/azure/active-directory/workload-identities/breadcrumb/toc.json).
 - Manage [custom security attributes for an app](~/identity/enterprise-apps/custom-security-attributes-apps.md?toc=/azure/active-directory/workload-identities/toc.json&bc=/azure/active-directory/workload-identities/breadcrumb/toc.json)
 
 Intelligently detect compromised identities:
 
-- Detect risks (like leaked credentials), contain threats, and reduce risk to workload identities using [Identity Protection](../identity-protection/concept-workload-identity-risk.md?toc=/azure/active-directory/workload-identities/toc.json&bc=/azure/active-directory/workload-identities/breadcrumb/toc.json).
+- Detect risks (like leaked credentials), contain threats, and reduce risk to workload identities using [Identity Protection](~/id-protection/concept-workload-identity-risk.md?toc=/azure/active-directory/workload-identities/toc.json&bc=/azure/active-directory/workload-identities/breadcrumb/toc.json).
 
 Simplify lifecycle management:
 
-- Access Microsoft Entra protected resources without needing to manage secrets for workloads that run on Azure using [managed identities](../managed-identities-azure-resources/overview.md?toc=/azure/active-directory/workload-identities?toc=/azure/active-directory/workload-identities/toc.json&bc=/azure/active-directory/workload-identities/breadcrumb/toc.json).
+- Access Microsoft Entra protected resources without needing to manage secrets for workloads that run on Azure using [managed identities](~/identity/managed-identities-azure-resources/overview.md?toc=/azure/active-directory/workload-identities?toc=/azure/active-directory/workload-identities/toc.json&bc=/azure/active-directory/workload-identities/breadcrumb/toc.json).
 - Access Microsoft Entra protected resources without needing to manage secrets using [workload identity federation](workload-identity-federation.md) for supported scenarios such as GitHub Actions, workloads running on Kubernetes, or workloads running in compute platforms outside of Azure.
-- Review service principals and applications that are assigned to privileged directory roles in Microsoft Entra ID using [access reviews for service principals](../privileged-identity-management/pim-create-roles-and-resource-roles-review.md?toc=/azure/active-directory/workload-identities/toc.json&bc=/azure/active-directory/workload-identities/breadcrumb/toc.json).
+- Review service principals and applications that are assigned to privileged directory roles in Microsoft Entra ID using [access reviews for service principals](~/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md?toc=/azure/active-directory/workload-identities/toc.json&bc=/azure/active-directory/workload-identities/breadcrumb/toc.json).
 
 ## Next steps
 

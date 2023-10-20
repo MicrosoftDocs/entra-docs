@@ -76,7 +76,7 @@ The following roles can read Microsoft Entra reports:
 * Security Reader
 * Reports Reader
 
-Learn More About [Microsoft Entra Administrative Roles](~/identity/role-based-access-control/permissions-reference.md). Always apply the concept of least privileges to reduce the risk of an account compromise. Consider implementing [Privileged Identity Management](../privileged-identity-management/pim-configure.md) to further secure your organization.
+Learn More About [Microsoft Entra Administrative Roles](~/identity/role-based-access-control/permissions-reference.md). Always apply the concept of least privileges to reduce the risk of an account compromise. Consider implementing [Privileged Identity Management](~/id-governance/privileged-identity-management/pim-configure.md) to further secure your organization.
 
 ### Engage stakeholders
 
@@ -122,14 +122,14 @@ Learn more:
 #### Stream logs to storage and SIEM tools
 
 * [Integrate Microsoft Entra logs with Azure Monitor logs](./howto-integrate-activity-logs-with-azure-monitor-logs.md).
-* [Analyze Microsoft Entra activity logs with Azure Monitor logs](../reports-monitoring/howto-analyze-activity-logs-log-analytics.md).
+* [Analyze Microsoft Entra activity logs with Azure Monitor logs](~/identity/monitoring-health/howto-analyze-activity-logs-log-analytics.md).
 * Learn how to [stream logs to an event hub](./howto-stream-logs-to-event-hub.md).
 * Learn how to [Archive Microsoft Entra logs to an Azure Storage account](./howto-archive-logs-to-storage-account.md).
 * [Route Microsoft Entra logs to an event hub](./howto-stream-logs-to-event-hub.md)
 
 ## Next steps
 
-- Consider implementing [Privileged Identity Management](../privileged-identity-management/pim-configure.md) 
+- Consider implementing [Privileged Identity Management](~/id-governance/privileged-identity-management/pim-configure.md) 
 - Consider implementing [Azure role-based access control](/azure/role-based-access-control/overview)
 - [Learn more about report retention policies](./reference-reports-data-retention.md).
 - [Analyze Microsoft Entra activity logs with Azure Monitor logs](./howto-analyze-activity-logs-log-analytics.md)

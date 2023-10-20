@@ -56,13 +56,13 @@ In the current preview state, the following limitations apply to email as an alt
     * On some Microsoft sites and apps, such as Microsoft Office, the *Account Manager* control typically displayed in the upper right may display the user's UPN instead of the non-UPN email used to sign in.
 
 * **Unsupported flows** - Some flows are currently not compatible with non-UPN emails, such as the following:
-    * Identity Protection doesn't match non-UPN emails with *Leaked Credentials* risk detection. This risk detection uses the UPN to match credentials that have been leaked. For more information, see [How To: Investigate risk](../identity-protection/howto-identity-protection-investigate-risk.md).
+    * Identity Protection doesn't match non-UPN emails with *Leaked Credentials* risk detection. This risk detection uses the UPN to match credentials that have been leaked. For more information, see [How To: Investigate risk](~/id-protection/howto-identity-protection-investigate-risk.md).
     * When a user is signed-in with a non-UPN email, they cannot change their password. Microsoft Entra self-service password reset (SSPR) should work as expected. During SSPR, the user may see their UPN if they verify their identity using a non-UPN email.
 
 * **Unsupported scenarios** - The following scenarios are not supported. Sign-in with non-UPN email for:
-    * [Microsoft Entra hybrid joined devices](../devices/concept-hybrid-join.md)
-    * [Microsoft Entra joined devices](../devices/concept-directory-join.md)
-    * [Microsoft Entra registered devices](../devices/concept-device-registration.md)
+    * [Microsoft Entra hybrid joined devices](~/identity/devices/concept-hybrid-join.md)
+    * [Microsoft Entra joined devices](~/identity/devices/concept-directory-join.md)
+    * [Microsoft Entra registered devices](~/identity/devices/concept-device-registration.md)
     * [Resource Owner Password Credentials (ROPC)](~/identity-platform/v2-oauth-ropc.md)
     * [Single Sign-On and App Protection Policies on Mobile Platform](~/identity-platform/mobile-sso-support-overview.md)
     * Legacy authentication such as POP3 and SMTP
@@ -104,7 +104,7 @@ A different approach is to synchronize the Microsoft Entra ID and on-premises UP
 | Option | Description |
 |---|---|
 | [Alternate Login ID for AD FS](/windows-server/identity/ad-fs/operations/configuring-alternate-login-id) | Enable sign-in with an alternate attribute (such as Mail) for AD FS users. |
-| [Alternate Login ID in Microsoft Entra Connect](../hybrid/connect/plan-connect-userprincipalname.md#alternate-login-id) | Synchronize an alternate attribute (such as Mail) as the Microsoft Entra UPN. |
+| [Alternate Login ID in Microsoft Entra Connect](~/identity/hybrid/connect/plan-connect-userprincipalname.md#alternate-login-id) | Synchronize an alternate attribute (such as Mail) as the Microsoft Entra UPN. |
 | Email as an Alternate Login ID | Enable sign-in with verified domain *ProxyAddresses* for Microsoft Entra users. |
 
 <a name='synchronize-sign-in-email-addresses-to-azure-ad'></a>
@@ -451,12 +451,12 @@ For more information on hybrid identity operations, see [how password hash sync]
 
 <!-- INTERNAL LINKS -->
 [verify-domain]: ~/fundamentals/add-custom-domain.md
-[hybrid-auth-methods]: ../hybrid/connect/choose-ad-authn.md
-[azure-ad-connect]: ../hybrid/connect/whatis-azure-ad-connect.md
-[hybrid-overview]: ../hybrid/connect/cloud-governed-management-for-on-premises.md
-[phs-overview]: ../hybrid/connect/how-to-connect-password-hash-synchronization.md
-[pta-overview]: ../hybrid/connect/how-to-connect-pta-how-it-works.md
-[sign-in-logs]: ../reports-monitoring/concept-sign-ins.md
+[hybrid-auth-methods]: ~/identity/hybrid/connect/choose-ad-authn.md
+[azure-ad-connect]: ~/identity/hybrid/connect/whatis-azure-ad-connect.md
+[hybrid-overview]: ~/identity/hybrid/connect/cloud-governed-management-for-on-premises.md
+[phs-overview]: ~/identity/hybrid/connect/how-to-connect-password-hash-synchronization.md
+[pta-overview]: ~/identity/hybrid/connect/how-to-connect-pta-how-it-works.md
+[sign-in-logs]: ~/identity/monitoring-health/concept-sign-ins.md
 
 <!-- EXTERNAL LINKS -->
 [Install-Module]: /powershell/module/powershellget/install-module

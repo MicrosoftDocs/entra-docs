@@ -28,7 +28,7 @@ The primary [What's new in sovereign clouds release notes](whats-new-sovereign-c
 **Service category:** Conditional Access          
 **Product capability:** Identity Security & Protection     
 
-Customers can now bring one of the most powerful forms of access control in the industry to workload identities. Conditional Access supports risk-based policies for workload identities. Organizations can block sign-in attempts when Identity Protection detects compromised apps or services. For more information, see: [Create a risk-based Conditional Access policy](../conditional-access/workload-identity.md#create-a-risk-based-conditional-access-policy).
+Customers can now bring one of the most powerful forms of access control in the industry to workload identities. Conditional Access supports risk-based policies for workload identities. Organizations can block sign-in attempts when Identity Protection detects compromised apps or services. For more information, see: [Create a risk-based Conditional Access policy](~/identity/conditional-access/workload-identity.md#create-a-risk-based-conditional-access-policy).
 
 ---
 
@@ -48,7 +48,7 @@ Restore a recently deleted application, group, servicePrincipal, administrative 
 **Service category:** Authentications (Logins)     
 **Product capability:** Identity Security & Protection   
 
-We're excited to announce the general availability of hybrid cloud Kerberos trust, a new Windows Hello for Business deployment model to enable a password-less sign-in experience. With this new model, we’ve made Windows Hello for Business easier to deploy than the existing key trust and certificate trust deployment models by removing the need for maintaining complicated public key infrastructure (PKI), and Azure Active Directory (AD) Connect synchronization wait times. For more information, see: [Migrate to cloud authentication using Staged Rollout](../hybrid/connect/how-to-connect-staged-rollout.md).
+We're excited to announce the general availability of hybrid cloud Kerberos trust, a new Windows Hello for Business deployment model to enable a password-less sign-in experience. With this new model, we’ve made Windows Hello for Business easier to deploy than the existing key trust and certificate trust deployment models by removing the need for maintaining complicated public key infrastructure (PKI), and Azure Active Directory (AD) Connect synchronization wait times. For more information, see: [Migrate to cloud authentication using Staged Rollout](~/identity/hybrid/connect/how-to-connect-staged-rollout.md).
 
 ---
 
@@ -178,7 +178,7 @@ Azure AD certificate-based authentication (CBA) enables customers to allow or re
 **Product capability:** Device Lifecycle Management   
  
 
-BitLocker keys are sensitive security items. Audited BitLocker recovery ensures that when BitLocker keys are read, an audit log is generated so that you can trace who accesses this information for given devices. For more information, see: [View or copy BitLocker keys](../devices/manage-device-identities.md#view-or-copy-bitlocker-keys).
+BitLocker keys are sensitive security items. Audited BitLocker recovery ensures that when BitLocker keys are read, an audit log is generated so that you can trace who accesses this information for given devices. For more information, see: [View or copy BitLocker keys](~/identity/devices/manage-device-identities.md#view-or-copy-bitlocker-keys).
  
 ---
 
@@ -224,7 +224,7 @@ Pick a group of up to five members and provision them into your third-party appl
 
 The new Device Overview in the Azure portal provides meaningful and actionable insights about devices in your tenant.
 
-In the devices overview, you can view the number of total devices, stale devices, noncompliant devices, and unmanaged devices. You'll also find links to Intune, Conditional Access, BitLocker keys, and basic monitoring. For more information, see: [Manage device identities by using the Azure portal](../devices/manage-device-identities.md).
+In the devices overview, you can view the number of total devices, stale devices, noncompliant devices, and unmanaged devices. You'll also find links to Intune, Conditional Access, BitLocker keys, and basic monitoring. For more information, see: [Manage device identities by using the Azure portal](~/identity/devices/manage-device-identities.md).
  
 ---
 
@@ -238,7 +238,7 @@ In the devices overview, you can view the number of total devices, stale devices
 
 Added support for “Linux” device platform in Azure AD Conditional Access.
 
-An admin can now require a user is on a compliant Linux device, managed by Intune, to sign-in to a selected service (for example ‘all cloud apps’ or ‘Office 365’). For more information, see: [Device platforms](../conditional-access/concept-conditional-access-conditions.md#device-platforms)
+An admin can now require a user is on a compliant Linux device, managed by Intune, to sign-in to a selected service (for example ‘all cloud apps’ or ‘Office 365’). For more information, see: [Device platforms](~/identity/conditional-access/concept-conditional-access-conditions.md#device-platforms)
  
 ---
 
@@ -262,7 +262,7 @@ Cross-tenant access settings enable you to control how users in your organizatio
 
  
 
-Admins can now enforce Conditional Access policies based off of GPS location from Authenticator. For more information, see: [Named locations](../conditional-access/location-condition.md#named-locations).
+Admins can now enforce Conditional Access policies based off of GPS location from Authenticator. For more information, see: [Named locations](~/identity/conditional-access/location-condition.md#named-locations).
  
 ---
 
@@ -274,7 +274,7 @@ Admins can now enforce Conditional Access policies based off of GPS location fro
 
  
 
-We've improved the My Sign-ins experience to now support organization switching. Now users who are guests in other tenants can easily switch and sign-in to manage their security info and view activity. More improvements were made to make it easier to switch from My Sign-ins directly to other end user portals such as My Account, My Apps, My Groups, and My Access. For more information, see: [Sign-in logs in Azure Active Directory - preview](../reports-monitoring/concept-sign-ins.md)
+We've improved the My Sign-ins experience to now support organization switching. Now users who are guests in other tenants can easily switch and sign-in to manage their security info and view activity. More improvements were made to make it easier to switch from My Sign-ins directly to other end user portals such as My Account, My Apps, My Groups, and My Access. For more information, see: [Sign-in logs in Azure Active Directory - preview](~/identity/monitoring-health/concept-sign-ins.md)
  
 ---
 
@@ -300,7 +300,7 @@ Temporary Access Pass (TAP) is now generally available. TAP can be used to secur
 
 In some scenarios customers may want to require a fresh authentication, every time before a user performs specific actions. Sign-in frequency Every time support requiring a user to reauthenticate during Intune device enrollment, password change for risky users and risky sign-ins.
 
-More information: [Configure authentication session management](../conditional-access/howto-conditional-access-session-lifetime.md#require-reauthentication-every-time).
+More information: [Configure authentication session management](~/identity/conditional-access/howto-conditional-access-session-lifetime.md#require-reauthentication-every-time).
  
 ---
 
@@ -312,7 +312,7 @@ More information: [Configure authentication session management](../conditional-a
 
  
 
-Identity Protection now emits risk (such as unfamiliar sign-in properties) on non-interactive sign-ins. Admins can now find these non-interactive risky sign-ins using the "sign-in type" filter in the Risky sign-ins report. For more information, see: [How To: Investigate risk](../identity-protection/howto-identity-protection-investigate-risk.md).
+Identity Protection now emits risk (such as unfamiliar sign-in properties) on non-interactive sign-ins. Admins can now find these non-interactive risky sign-ins using the "sign-in type" filter in the Risky sign-ins report. For more information, see: [How To: Investigate risk](~/id-protection/howto-identity-protection-investigate-risk.md).
 
 ---
 
@@ -340,7 +340,7 @@ For more information on this capability and supported scenarios, see: [Workload 
 
  
 
-With Continuous access evaluation (CAE), critical security events and policies are evaluated in real time. This includes account disable, password reset, and location change. For more information, see: [Continuous access evaluation](../conditional-access/concept-continuous-access-evaluation.md)
+With Continuous access evaluation (CAE), critical security events and policies are evaluated in real time. This includes account disable, password reset, and location change. For more information, see: [Continuous access evaluation](~/identity/conditional-access/concept-continuous-access-evaluation.md)
  
 ---
 

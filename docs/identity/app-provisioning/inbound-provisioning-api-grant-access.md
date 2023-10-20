@@ -22,7 +22,7 @@ After you've configured [API-driven inbound provisioning app](inbound-provisioni
 Depending on how your API client authenticates with Microsoft Entra ID, you can select between two configuration options: 
 
 * [Configure a service principal](#configure-a-service-principal): Follow these instructions if your API client plans to use a service principal of an [Microsoft Entra registered app](~/identity-platform/howto-create-service-principal-portal.md) and authenticate using OAuth client credentials grant flow. 
-* [Configure a managed identity](#configure-a-managed-identity): Follow these instructions if your API client plans to use a Microsoft Entra [managed identity](../managed-identities-azure-resources/overview.md).
+* [Configure a managed identity](#configure-a-managed-identity): Follow these instructions if your API client plans to use a Microsoft Entra [managed identity](~/identity/managed-identities-azure-resources/overview.md).
 
 ## Configure a service principal 
 This configuration registers an app in Microsoft Entra ID that represents the external API client and grants it permission to invoke the inbound provisioning API. The service principal client id and client secret can be used in the OAuth client credentials grant flow. 
@@ -50,7 +50,7 @@ This configuration registers an app in Microsoft Entra ID that represents the ex
 
 This section describes how you can assign the necessary permissions to a managed identity. 
 
-1. Configure a [managed identity](../managed-identities-azure-resources/overview.md) for use with your Azure resource. 
+1. Configure a [managed identity](~/identity/managed-identities-azure-resources/overview.md) for use with your Azure resource. 
 1. Copy the name of your managed identity from the Microsoft Entra admin center. For example: The screenshot below shows the name of a system assigned managed identity associated with an Azure Logic Apps workflow called "CSV2SCIMBulkUpload". 
 
       [![Screenshot of managed identity name.](media/inbound-provisioning-api-grant-access/managed-identity-name.png)](media/inbound-provisioning-api-grant-access/managed-identity-name.png#lightbox) 

@@ -23,7 +23,7 @@ To use Microsoft Entra self-service password reset (SSPR), authentication inform
 You can prepopulate authentication contact information if you meet the following requirements:
 
 * You have properly formatted the data in your on-premises directory.
-* You have configured [Microsoft Entra Connect](../hybrid/connect/how-to-connect-install-express.md) for your Microsoft Entra tenant.
+* You have configured [Microsoft Entra Connect](~/identity/hybrid/connect/how-to-connect-install-express.md) for your Microsoft Entra tenant.
 
 Phone numbers must be in the format *+CountryCode PhoneNumber*, such  as *+1 4251234567*.
 

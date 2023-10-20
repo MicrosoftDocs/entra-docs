@@ -95,7 +95,7 @@ The Microsoft Entra provisioning service allows you to scope who will be provisi
 
 *  If a user has multiple roles assigned in Smartsheet, you **MUST** ensure that these role assignments are replicated in Microsoft Entra ID to avoid a scenario where users could lose access to Smartsheet objects permanently. Each unique role in Smartsheet **MUST** be assigned to a different group in Microsoft Entra ID. The user **MUST** then be added to each of the groups corresponding to roles desired. 
 
-* If you need additional roles, you can [update the application manifest](~/identity-platform/howto-add-app-roles-in-azure-ad-apps.md) to add new roles.
+* If you need additional roles, you can [update the application manifest](~/identity-platform/howto-add-app-roles-in-apps.md) to add new roles.
 
 ## Step 5: Configure automatic user provisioning to Smartsheet 
 
@@ -174,7 +174,7 @@ This operation starts the initial synchronization of all users and/or groups def
 ## Step 6: Monitor your deployment
 Once you've configured provisioning, use the following resources to monitor your deployment:
 
-* Use the [provisioning logs](../reports-monitoring/concept-provisioning-logs.md) to determine which users have been provisioned successfully or unsuccessfully
+* Use the [provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md) to determine which users have been provisioned successfully or unsuccessfully
 * Check the [progress bar](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md) to see the status of the provisioning cycle and how close it is to completion
 * If the provisioning configuration seems to be in an unhealthy state, the application will go into quarantine. Learn more about quarantine states [here](~/identity/app-provisioning/application-provisioning-quarantine-status.md).  
 

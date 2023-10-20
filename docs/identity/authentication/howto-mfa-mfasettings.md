@@ -83,9 +83,9 @@ To unblock a user, complete the following steps:
 
 ## Report suspicious activity
 
-**Report suspicious activity**, the updated **MFA Fraud Alert** feature, is now available. When an unknown and suspicious MFA prompt is received, users can report the fraud attempt by using Microsoft Authenticator or through their phone. These alerts are integrated with [Identity Protection](../identity-protection/overview-identity-protection.md) for more comprehensive coverage and capability. 
+**Report suspicious activity**, the updated **MFA Fraud Alert** feature, is now available. When an unknown and suspicious MFA prompt is received, users can report the fraud attempt by using Microsoft Authenticator or through their phone. These alerts are integrated with [Identity Protection](~/id-protection/overview-identity-protection.md) for more comprehensive coverage and capability. 
 
-Users who report an MFA prompt as suspicious are set to **High User Risk**. Administrators can use risk-based policies to limit access for these users, or enable self-service password reset (SSPR) for users to remediate problems on their own. If you previously used the **Fraud Alert** automatic blocking feature and don't have a Microsoft Entra ID P2 license for risk-based policies, you can use risk detection events to identify and disable impacted users and automatically prevent their sign-in. For more information about using risk-based policies, see [Risk-based access policies](../identity-protection/concept-identity-protection-policies.md).  
+Users who report an MFA prompt as suspicious are set to **High User Risk**. Administrators can use risk-based policies to limit access for these users, or enable self-service password reset (SSPR) for users to remediate problems on their own. If you previously used the **Fraud Alert** automatic blocking feature and don't have a Microsoft Entra ID P2 license for risk-based policies, you can use risk detection events to identify and disable impacted users and automatically prevent their sign-in. For more information about using risk-based policies, see [Risk-based access policies](~/id-protection/concept-identity-protection-policies.md).  
 
 To enable **Report suspicious activity** from the Authentication methods **Settings**:   
 
@@ -114,7 +114,7 @@ When a user reports a MFA prompt as suspicious, the event shows up in the Sign-i
 
 ### Manage suspicious activity events 
 
-Once a user has reported a prompt as suspicious, the risk should be investigated and remediated with [Identity Protection](../identity-protection/howto-identity-protection-remediate-unblock.md). 
+Once a user has reported a prompt as suspicious, the risk should be investigated and remediated with [Identity Protection](~/id-protection/howto-identity-protection-remediate-unblock.md). 
 
 ### Report suspicious activity and fraud alert 
 
@@ -295,7 +295,7 @@ The trusted IPs feature of Microsoft Entra multifactor authentication bypasses m
 > [!NOTE]
 > The trusted IPs can include private IP ranges only when you use MFA Server. For cloud-based Microsoft Entra multifactor authentication, you can use only public IP address ranges.
 >
-> IPv6 ranges are supported only in the [Named locations (preview)](../conditional-access/location-condition.md) interface.
+> IPv6 ranges are supported only in the [Named locations (preview)](~/identity/conditional-access/location-condition.md) interface.
 
 If your organization uses the NPS extension to provide MFA to on-premises applications, the source IP address will always appear to be the NPS server that the authentication attempt flows through.
 
@@ -425,7 +425,7 @@ The feature reduces the number of authentications on web apps, which normally pr
 >
 > The **remember multifactor authentication** feature isn't compatible with B2B users and won't be visible for B2B users when they sign in to the invited tenants.
 >
-> The **remember multifactor authentication** feature isn't compatible with the Sign-in frequency Conditional Access control. For more information, see [Configure authentication session management with Conditional Access](../conditional-access/howto-conditional-access-session-lifetime.md#configuring-authentication-session-controls).
+> The **remember multifactor authentication** feature isn't compatible with the Sign-in frequency Conditional Access control. For more information, see [Configure authentication session management with Conditional Access](~/identity/conditional-access/howto-conditional-access-session-lifetime.md#configuring-authentication-session-controls).
 
 <a name='enable-remember-multi-factor-authentication'></a>
 

@@ -70,7 +70,7 @@ Audit log activities and categories change periodically. The tables are updated 
 
 ## Access reviews
 
-With [Microsoft Entra ID Governance access reviews](../governance/manage-user-access-with-access-reviews.md), you can ensure users have the appropriate access. Access review audit logs can tell you who initiated or ended an access review. These logs can also tell you if any access review settings were changed.
+With [Microsoft Entra ID Governance access reviews](~/id-governance/manage-user-access-with-access-reviews.md), you can ensure users have the appropriate access. Access review audit logs can tell you who initiated or ended an access review. These logs can also tell you if any access review settings were changed.
 
 |Audit Category|Activity|
 |---|---|
@@ -114,7 +114,7 @@ With [Microsoft Entra ID Governance access reviews](../governance/manage-user-ac
 
 ## Account provisioning
 
-Each time an account is provisioned in your Microsoft Entra tenant, a log for that account is captured. Automated provisioning, such as with [Microsoft Entra Connect cloud sync](../hybrid/cloud-sync/what-is-cloud-sync.md), is found in this log. The Account provisioning service only has one audit category in the logs.
+Each time an account is provisioned in your Microsoft Entra tenant, a log for that account is captured. Automated provisioning, such as with [Microsoft Entra Connect cloud sync](~/identity/hybrid/cloud-sync/what-is-cloud-sync.md), is found in this log. The Account provisioning service only has one audit category in the logs.
 
 |Audit Category|Activity|
 |---|---|
@@ -135,7 +135,7 @@ Each time an account is provisioned in your Microsoft Entra tenant, a log for th
 
 ## Application proxy
 
-If you're utilizing [Application Proxy](../app-proxy/what-is-application-proxy.md) to provide your users with remote access to internal apps, the Application Proxy audit logs can help you keep track of changes to available applications or [Connector groups](../app-proxy/application-proxy-connector-groups.md).
+If you're utilizing [Application Proxy](~/identity/app-proxy/what-is-application-proxy.md) to provide your users with remote access to internal apps, the Application Proxy audit logs can help you keep track of changes to available applications or [Connector groups](~/identity/app-proxy/application-proxy-connector-groups.md).
 
 |Audit Category|Activity|
 |---|---|
@@ -552,7 +552,7 @@ This set of audit logs is related to [B2C](/azure/active-directory-b2c/overview)
 
 ## Conditional Access
 
-Use these logs to see when changes were made to your [Conditional Access policies](../conditional-access/troubleshoot-policy-changes-audit-log.md).
+Use these logs to see when changes were made to your [Conditional Access policies](~/identity/conditional-access/troubleshoot-policy-changes-audit-log.md).
 
 |Audit Category|Activity|
 |---|---|
@@ -816,7 +816,7 @@ Logs captured in the Core Directory service cover a wide variety of scenarios. C
 
 ## Device Registration Service
 
-If you need to manage [Microsoft Entra ID and Microsoft Entra hybrid joined devices](../devices/overview.md), use the logs captured in the Device Registration Service to review changes to devices.
+If you need to manage [Microsoft Entra ID and Microsoft Entra hybrid joined devices](~/identity/devices/overview.md), use the logs captured in the Device Registration Service to review changes to devices.
 
 |Audit Category|Activity|
 |---|---|
@@ -966,7 +966,7 @@ Use the Invited users logs to help you manage the status of users who were invit
 
 ## Lifecycle Workflows
 
-[Lifecycle Workflows](../governance/what-are-lifecycle-workflows.md)(preview) are a great way to automate identity related processes for joiners, movers, and leavers so you don't have to. For more information, see [Lifecycle Workflows audits](../governance/lifecycle-workflow-audits.md).
+[Lifecycle Workflows](~/id-governance/what-are-lifecycle-workflows.md)(preview) are a great way to automate identity related processes for joiners, movers, and leavers so you don't have to. For more information, see [Lifecycle Workflows audits](~/id-governance/lifecycle-workflow-audits.md).
 
 |Audit Category|Activity|
 |---|---|
@@ -1033,7 +1033,7 @@ Use the [MyApps](~/identity/enterprise-apps/myapps-overview.md) audit logs to id
 
 ## Privileged Identity Management (PIM)
 
-Many of the activities captured in the PIM audit logs are similar, so take note of details like *renew*, *timebound*, and *permanent*. PIM activities can generate many logs in a 24 hour period, so utilize the filters to narrow things down. For more information on the audit capabilities within the PIM service, see [View audit history for Microsoft Entra roles in PIM](../privileged-identity-management/pim-how-to-use-audit-log.md)
+Many of the activities captured in the PIM audit logs are similar, so take note of details like *renew*, *timebound*, and *permanent*. PIM activities can generate many logs in a 24 hour period, so utilize the filters to narrow things down. For more information on the audit capabilities within the PIM service, see [View audit history for Microsoft Entra roles in PIM](~/id-governance/privileged-identity-management/pim-how-to-use-audit-log.md)
 
 |Audit Category|Activity|
 |---|---|

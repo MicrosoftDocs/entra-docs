@@ -28,7 +28,7 @@ landingContent:
       - linkListType: concept
         links:
           - text: License requirements
-            url: ../governance/licensing-fundamentals.md
+            url: ~/id-governance/licensing-fundamentals.md
       - linkListType: video
         links:
           - text: Protect the keys to your kingdom

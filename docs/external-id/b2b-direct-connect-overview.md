@@ -155,7 +155,7 @@ Microsoft Entra ID includes information about cross-tenant access and B2B direct
 
    [ ![Screenshot showing a sign-in log](media/b2b-direct-connect-overview/sign-in-logs.png) ](media/b2b-direct-connect-overview/sign-in-logs.png#lightbox)
 
-- **Microsoft Entra access reviews**: With Microsoft Entra access reviews, a tenant admin can ensure that external guest users don’t have access to your apps and resources longer than is necessary by configuring a one-time or recurring access review of the external users. [Learn more about access reviews](../governance/access-reviews-overview.md).
+- **Microsoft Entra access reviews**: With Microsoft Entra access reviews, a tenant admin can ensure that external guest users don’t have access to your apps and resources longer than is necessary by configuring a one-time or recurring access review of the external users. [Learn more about access reviews](~/id-governance/access-reviews-overview.md).
 
 ### Microsoft Teams monitoring and audit logs
 

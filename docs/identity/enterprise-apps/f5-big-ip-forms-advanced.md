@@ -17,7 +17,7 @@ ms.custom: not-enterprise-apps
 Learn to configure F5 BIG-IP Access Policy Manager (APM) and Microsoft Entra ID for secure hybrid access (SHA) to form-based applications. BIG-IP published services for Microsoft Entra single sign-on (SSO) has benefits:
 
 * Improved Zero Trust governance through Microsoft Entra preauthentication and Conditional Access 
-  * See [What is Conditional Access?](../conditional-access/overview.md)
+  * See [What is Conditional Access?](~/identity/conditional-access/overview.md)
   * See [Zero Trust security](/azure/security/fundamentals/zero-trust)
 * Full SSO between Microsoft Entra ID and BIG-IP published services
 * Managed identities and access from one control plane
@@ -75,7 +75,7 @@ You need the following components:
   * F5 BIG-IP Access Policy Manager™ (APM) add-on license on a BIG-IP F5 BIG-IP® Local Traffic Manager™ (LTM)
   * 90-day BIG-IP full feature trial. See [Free Trials](https://www.f5.com/trial/big-ip-trial.php)
 * User identities synchronized from an on-premises directory to Microsoft Entra ID
-  * See [Microsoft Entra Connect Sync: Understand and customize synchronization](../hybrid/connect/how-to-connect-sync-whatis.md)
+  * See [Microsoft Entra Connect Sync: Understand and customize synchronization](~/identity/hybrid/connect/how-to-connect-sync-whatis.md)
 * An SSL certificate to publish services over HTTPS, or use default certificates while testing
   * See [SSL profile](./f5-bigip-deployment-guide.md#ssl-profile)
 * A form-based authentication application, or set up an IIS FBA app for testing
@@ -396,7 +396,7 @@ Learn more:
 
 Your application is published and accessible with SHA with the app URL or Microsoft portals.
 
-The application appears as a target resource in Conditional Access. Learn more: [Building a Conditional Access policy](../conditional-access/concept-conditional-access-policies.md).
+The application appears as a target resource in Conditional Access. Learn more: [Building a Conditional Access policy](~/identity/conditional-access/concept-conditional-access-policies.md).
 
 For increased security, block direct access to the application, enforcing a path through the BIG-IP.
 
@@ -476,5 +476,5 @@ To learn more, go to techdocs.f5.com for [Manual Chapter: Session Variables](htt
 
 * Go to techdocs.f5.com for [Manual Chapter: Active Directory Authentication](https://techdocs.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-authentication-single-sign-on-11-5-0/2.html)
 * [Passwordless authentication](https://www.microsoft.com/security/business/identity/passwordless)
-* [What is Conditional Access?](../conditional-access/overview.md)
+* [What is Conditional Access?](~/identity/conditional-access/overview.md)
 * [Zero Trust framework to enable remote work](https://www.microsoft.com/security/blog/2020/04/02/announcing-microsoft-zero-trust-assessment-tool/)

@@ -55,7 +55,7 @@ Microsoft Entra join works in managed and federated environments. We think most 
 
 ### Managed environment
 
-A managed environment can be deployed either through [Password Hash Sync](../hybrid/connect/how-to-connect-password-hash-synchronization.md) or [Pass Through Authentication](../hybrid/connect/how-to-connect-pta-quick-start.md) with Seamless Single Sign On.
+A managed environment can be deployed either through [Password Hash Sync](~/identity/hybrid/connect/how-to-connect-password-hash-synchronization.md) or [Pass Through Authentication](~/identity/hybrid/connect/how-to-connect-pta-quick-start.md) with Seamless Single Sign On.
 
 ### Federated environment
 
@@ -79,7 +79,7 @@ If your identity provider doesn't support these protocols, Microsoft Entra join 
 
 If you create users in your:
 
-- **On-premises Active Directory**, you need to synchronize them to Microsoft Entra ID using [Microsoft Entra Connect](../hybrid/connect/how-to-connect-sync-whatis.md). 
+- **On-premises Active Directory**, you need to synchronize them to Microsoft Entra ID using [Microsoft Entra Connect](~/identity/hybrid/connect/how-to-connect-sync-whatis.md). 
 - **Microsoft Entra ID**, no extra setup is required.
 
 On-premises user principal names (UPNs) that are different from Microsoft Entra UPNs aren't supported on Microsoft Entra joined devices. If your users use an on-premises UPN, you should plan to switch to using their primary UPN in Microsoft Entra ID.
@@ -157,7 +157,7 @@ Users get SSO from Microsoft Entra joined devices if the device has access to a 
 > [!NOTE]
 > Microsoft Entra joined devices can seamlessly provide access to both, on-premises and cloud applications. For more information, see [How SSO to on-premises resources works on Microsoft Entra joined devices](device-sso-to-on-premises-resources.md).
 
-**Recommendation:** Deploy [Microsoft Entra application proxy](../app-proxy/application-proxy.md) to enable secure access for these applications.
+**Recommendation:** Deploy [Microsoft Entra application proxy](~/identity/app-proxy/application-proxy.md) to enable secure access for these applications.
 
 ### On-premises network shares
 
@@ -240,7 +240,7 @@ Select **“Yes** if you require users to do MFA while joining devices to Micros
 
 ![Require multifactor Auth to join devices](./media/device-join-plan/03.png)
 
-**Recommendation:** Use the user action [Register or join devices](../conditional-access/concept-conditional-access-cloud-apps.md#user-actions) in Conditional Access for enforcing MFA for joining devices.
+**Recommendation:** Use the user action [Register or join devices](~/identity/conditional-access/concept-conditional-access-cloud-apps.md#user-actions) in Conditional Access for enforcing MFA for joining devices.
 
 ## Configure your mobility settings
 
@@ -295,7 +295,7 @@ If you have an MDM provider configured for your Microsoft Entra joined devices, 
 
 ![Compliant device](./media/device-join-plan/46.png)
 
-You can use this implementation to [require managed devices for cloud app access with Conditional Access](../conditional-access/concept-conditional-access-grant.md).
+You can use this implementation to [require managed devices for cloud app access with Conditional Access](~/identity/conditional-access/concept-conditional-access-grant.md).
 
 ## Next steps
 

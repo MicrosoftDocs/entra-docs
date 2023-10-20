@@ -257,11 +257,11 @@ Application security requires an advanced set of security capabilities that can 
 
 The following capabilities can be used to support Microsoft Entra application proxy:
 
-* User and location-based Conditional Access: Keep sensitive data protected by limiting user access based on geo-location or an IP address with [location-based Conditional Access policies](../conditional-access/location-condition.md).
+* User and location-based Conditional Access: Keep sensitive data protected by limiting user access based on geo-location or an IP address with [location-based Conditional Access policies](~/identity/conditional-access/location-condition.md).
 
-* Device-based Conditional Access: Ensure only enrolled, approved, and compliant devices can access corporate data with [device-based Conditional Access](../conditional-access/concept-conditional-access-grant.md).
+* Device-based Conditional Access: Ensure only enrolled, approved, and compliant devices can access corporate data with [device-based Conditional Access](~/identity/conditional-access/concept-conditional-access-grant.md).
 
-* Application-based Conditional Access: Work doesn't have to stop when a user isn't on the corporate network. [Secure access to corporate cloud and on-premises apps](../conditional-access/howto-policy-approved-app-or-app-protection.md) and maintain control with Conditional Access.
+* Application-based Conditional Access: Work doesn't have to stop when a user isn't on the corporate network. [Secure access to corporate cloud and on-premises apps](~/identity/conditional-access/howto-policy-approved-app-or-app-protection.md) and maintain control with Conditional Access.
 
 * Risk-based Conditional Access: Protect your data from malicious hackers with a [risk-based Conditional Access policy](https://www.microsoft.com/cloud-platform/conditional-access) that can be applied to all apps and all users, whether on-premises or in the cloud.
 
@@ -282,15 +282,15 @@ Microsoft advocates the principle of granting the least possible privilege to pe
 
 Minimizing the number of people who have access to secure information or resources will help in reducing the chance of a malicious actor obtaining unauthorized access, or an authorized user inadvertently impacting a sensitive resource.
 
-However, users still need to carry out day to day privileged operations, so enforcing just-in-time (JIT) based [Privileged Identity Management](../privileged-identity-management/pim-configure.md) policies to provide on-demand privileged access to Azure resources and Microsoft Entra ID is our recommended approach towards effectively managing administrative access and auditing.
+However, users still need to carry out day to day privileged operations, so enforcing just-in-time (JIT) based [Privileged Identity Management](~/id-governance/privileged-identity-management/pim-configure.md) policies to provide on-demand privileged access to Azure resources and Microsoft Entra ID is our recommended approach towards effectively managing administrative access and auditing.
 
 ### Reporting and monitoring
 
-Microsoft Entra ID provides additional insights into your organization’s application usage and operational health through [audit logs and reports](../reports-monitoring/concept-provisioning-logs.md?context=azure/active-directory/manage-apps/context/manage-apps-context). Application Proxy also makes it very easy to monitor connectors from the Microsoft Entra admin center and Windows Event Logs.
+Microsoft Entra ID provides additional insights into your organization’s application usage and operational health through [audit logs and reports](~/identity/monitoring-health/concept-provisioning-logs.md?context=azure/active-directory/manage-apps/context/manage-apps-context). Application Proxy also makes it very easy to monitor connectors from the Microsoft Entra admin center and Windows Event Logs.
 
 #### Application audit logs
 
-These logs provide detailed information about logins to applications configured with Application Proxy and the device and the user accessing the application. [Audit logs](../reports-monitoring/concept-provisioning-logs.md?context=azure/active-directory/manage-apps/context/manage-apps-context) are located in the Microsoft Entra admin center and in [Audit API](/graph/api/resources/directoryaudit) for export. Additionally, [usage and insights reports](../reports-monitoring/concept-usage-insights-report.md?context=azure/active-directory/manage-apps/context/manage-apps-context) are also available for your application.
+These logs provide detailed information about logins to applications configured with Application Proxy and the device and the user accessing the application. [Audit logs](~/identity/monitoring-health/concept-provisioning-logs.md?context=azure/active-directory/manage-apps/context/manage-apps-context) are located in the Microsoft Entra admin center and in [Audit API](/graph/api/resources/directoryaudit) for export. Additionally, [usage and insights reports](~/identity/monitoring-health/concept-usage-insights-report.md?context=azure/active-directory/manage-apps/context/manage-apps-context) are also available for your application.
 
 #### Application Proxy Connector monitoring
 

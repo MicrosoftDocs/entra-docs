@@ -79,7 +79,7 @@ The following table lists terminology that is not impacted by the Azure AD renam
 | PowerShell <br/><br/>&#8226; Azure Active Directory PowerShell <br/>&#8226; Azure AD PowerShell <br/>&#8226; Microsoft Graph PowerShell | Azure AD PowerShell for Graph is planned for deprecation on March 30, 2024. For more info on the deprecation plans, see the deprecation update. We encourage you to migrate to Microsoft Graph PowerShell, which is the recommended module for interacting with Azure AD. <br/><br/>[Microsoft Graph PowerShell](/powershell/microsoftgraph/overview) - Acts as an API wrapper for the Microsoft Graph APIs and helps administer every Microsoft Entra ID feature that has an API in Microsoft Graph. |
 | Accounts <br/><br/>&#8226; Microsoft account <br/>&#8226; Work or school account | For end user sign-ins and account experiences, follow guidance for work and school accounts in [Sign in with Microsoft branding guidelines](~/identity-platform/howto-add-branding-in-apps.md). |
 | Microsoft identity platform | The Microsoft identity platform encompasses all our identity and access developer assets. It continues to provide the resources to help you build applications that your users and customers can sign in to using their Microsoft identities or social accounts. |
-| <br/>&#8226; Azure AD Sync <br/>&#8226; DirSync | DirSync and Azure AD Sync aren't supported and no longer work. If you're still using DirSync or Azure AD Sync, you must upgrade to Microsoft Entra Connect to resume your sync process. For more info, see [Microsoft Entra Connect](../hybrid/connect/how-to-dirsync-upgrade-get-started.md). |
+| <br/>&#8226; Azure AD Sync <br/>&#8226; DirSync | DirSync and Azure AD Sync aren't supported and no longer work. If you're still using DirSync or Azure AD Sync, you must upgrade to Microsoft Entra Connect to resume your sync process. For more info, see [Microsoft Entra Connect](~/identity/hybrid/connect/how-to-dirsync-upgrade-get-started.md). |
 
 ## Frequently asked questions
 
@@ -99,8 +99,8 @@ The Microsoft Entra product family helps you protect all identities and secure n
 
 | Identity and access management | New identity categories | Network access |
 |---------|---------|---------|
-| [Microsoft Entra ID (previously known as Azure AD)](../index.yml) | [Microsoft Entra Verified ID](../verifiable-credentials/index.yml) | [Microsoft Entra Internet Access](https://aka.ms/GlobalSecureAccessDocs) |
-| [Microsoft Entra ID Governance](../governance/index.yml) | [Microsoft Entra Permissions Management](../cloud-infrastructure-entitlement-management/index.yml) | [Microsoft Entra Private Access](https://aka.ms/GlobalSecureAccessDocs) |
+| [Microsoft Entra ID (previously known as Azure AD)](../index.yml) | [Microsoft Entra Verified ID](~/verified-id/index.yml) | [Microsoft Entra Internet Access](https://aka.ms/GlobalSecureAccessDocs) |
+| [Microsoft Entra ID Governance](~/id-governance/index.yml) | [Microsoft Entra Permissions Management](~/permissions-management/index.yml) | [Microsoft Entra Private Access](https://aka.ms/GlobalSecureAccessDocs) |
 | [Microsoft Entra External ID](~/external-id/index.yml) | [Microsoft Entra Workload ID](~/workload-id/index.yml) |  |
 
 ### Where can I manage Microsoft Entra ID?

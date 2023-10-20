@@ -32,10 +32,10 @@ The following table details the different ways to get Microsoft Entra multifacto
 | If you're a user of | Capabilities and use cases |
 | --- | --- |
 | [Microsoft 365 Business Premium](https://www.microsoft.com/microsoft-365/business) and [EMS](https://www.microsoft.com/security/business/enterprise-mobility-security) or [Microsoft 365 E3 and E5](https://www.microsoft.com/microsoft-365/enterprise/compare-office-365-plans) | EMS E3, Microsoft 365 E3, and Microsoft 365 Business Premium includes Microsoft Entra ID P1. EMS E5 or Microsoft 365 E5 includes Microsoft Entra ID P2. You can use the same Conditional Access features noted in the following sections to provide multifactor authentication to users. |
-| [Microsoft Entra ID P1](~/fundamentals/get-started-premium.md) | You can use [Microsoft Entra Conditional Access](../conditional-access/howto-conditional-access-policy-all-users-mfa.md) to prompt users for multifactor authentication during certain scenarios or events to fit your business requirements. |
-| [Microsoft Entra ID P2](~/fundamentals/get-started-premium.md) | Provides the strongest security position and improved user experience. Adds [risk-based Conditional Access](../conditional-access/howto-conditional-access-policy-risk.md) to the Microsoft Entra ID P1 features that adapts to user's patterns and minimizes multifactor authentication prompts. |
+| [Microsoft Entra ID P1](~/fundamentals/get-started-premium.md) | You can use [Microsoft Entra Conditional Access](~/identity/conditional-access/howto-conditional-access-policy-all-users-mfa.md) to prompt users for multifactor authentication during certain scenarios or events to fit your business requirements. |
+| [Microsoft Entra ID P2](~/fundamentals/get-started-premium.md) | Provides the strongest security position and improved user experience. Adds [risk-based Conditional Access](~/identity/conditional-access/howto-conditional-access-policy-risk.md) to the Microsoft Entra ID P1 features that adapts to user's patterns and minimizes multifactor authentication prompts. |
 | [All Microsoft 365 plans](https://www.microsoft.com/microsoft-365/compare-microsoft-365-enterprise-plans) | Microsoft Entra multifactor authentication can be enabled for all users using [security defaults](~/fundamentals/security-defaults.md). Management of Microsoft Entra multifactor authentication is through the Microsoft 365 portal. For an improved user experience, upgrade to Microsoft Entra ID P1 or P2 and use Conditional Access. For more information, see [secure Microsoft 365 resources with multifactor authentication](/microsoft-365/admin/security-and-compliance/set-up-multi-factor-authentication).  |
-| [Office 365 free](https://www.microsoft.com/microsoft-365/enterprise/compare-office-365-plans)<br>[Microsoft Entra ID Free](../verifiable-credentials/how-to-create-a-free-developer-account.md) | You can use [security defaults](~/fundamentals/security-defaults.md) to prompt users for multifactor authentication as needed but you don't have granular control of enabled users or scenarios, but it does provide that additional security step.<br /> Even when security defaults aren't used to enable multifactor authentication for everyone, users assigned the *Microsoft Entra Global Administrator* role can be configured to use multifactor authentication. This feature of the free tier makes sure the critical administrator accounts are protected by multifactor authentication. |
+| [Office 365 free](https://www.microsoft.com/microsoft-365/enterprise/compare-office-365-plans)<br>[Microsoft Entra ID Free](~/verified-id/how-to-create-a-free-developer-account.md) | You can use [security defaults](~/fundamentals/security-defaults.md) to prompt users for multifactor authentication as needed but you don't have granular control of enabled users or scenarios, but it does provide that additional security step.<br /> Even when security defaults aren't used to enable multifactor authentication for everyone, users assigned the *Microsoft Entra Global Administrator* role can be configured to use multifactor authentication. This feature of the free tier makes sure the critical administrator accounts are protected by multifactor authentication. |
 
 ## Feature comparison based on licenses
 
@@ -62,7 +62,7 @@ The following table provides a list of the features that are available in the va
 
 ## Compare multifactor authentication policies
 
-Our recommended approach to enforce MFA is using [Conditional Access](../conditional-access/overview.md). Review the following table to determine the what capabilities are included in your licenses.
+Our recommended approach to enforce MFA is using [Conditional Access](~/identity/conditional-access/overview.md). Review the following table to determine the what capabilities are included in your licenses.
 
 | Policy | Security defaults | Conditional Access | Per-user MFA |
 | --- |:---:|:---:|:---:|
@@ -114,6 +114,6 @@ If you don't want to enable Microsoft Entra multifactor authentication for all u
 ## Next steps
 
 * For more information on costs, see [Microsoft Entra pricing](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
-* [What is Conditional Access](../conditional-access/overview.md)
-* [What is Identity Protection?](../identity-protection/overview-identity-protection.md)
+* [What is Conditional Access](~/identity/conditional-access/overview.md)
+* [What is Identity Protection?](~/id-protection/overview-identity-protection.md)
 * MFA can also be [enabled on a per-user basis](howto-mfa-userstates.md)

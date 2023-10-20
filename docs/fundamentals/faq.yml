@@ -94,7 +94,7 @@ sections:
         answer: |
           You can connect your on-premises directory to Microsoft Entra ID by using Microsoft Entra Connect.
           
-          For more information, see [Integrating your on-premises identities with Microsoft Entra ID](../hybrid/whatis-hybrid-identity.md).
+          For more information, see [Integrating your on-premises identities with Microsoft Entra ID](~/identity/hybrid/whatis-hybrid-identity.md).
           
           
           
@@ -105,7 +105,7 @@ sections:
           
           Implementing SSO from on-premises can be easily achieved with federation solutions such as Active Directory Federation Services (AD FS), or by configuring password hash sync. You can easily deploy both options by using the Microsoft Entra Connect configuration wizard.
           
-          For more information, see [Integrating your on-premises identities with Microsoft Entra ID](../hybrid/whatis-hybrid-identity.md).
+          For more information, see [Integrating your on-premises identities with Microsoft Entra ID](~/identity/hybrid/whatis-hybrid-identity.md).
           
           
           
@@ -123,7 +123,7 @@ sections:
         answer: |
           Yes. The Microsoft Entra ID P1 or P2 edition provides you with Microsoft Entra Connect Health. Microsoft Entra Connect Health helps you monitor and gain insight into your on-premises identity infrastructure and the synchronization services.  
           
-          For more information, see [Monitor your on-premises identity infrastructure and synchronization services in the cloud](../hybrid/connect/whatis-azure-ad-connect.md).  
+          For more information, see [Monitor your on-premises identity infrastructure and synchronization services in the cloud](~/identity/hybrid/connect/whatis-azure-ad-connect.md).  
           
           
   - name: Password management
@@ -239,7 +239,7 @@ sections:
         answer: |
           Microsoft Entra application proxy provides you with easy and secure access to on-premises web applications that you choose. You can access these applications in the same way that you access your software as a service (SaaS) apps in Microsoft Entra ID. There is no need for a VPN or to change your network infrastructure.  
           
-          For more information, see [How to provide secure remote access to on-premises applications](../app-proxy/application-proxy.md).
+          For more information, see [How to provide secure remote access to on-premises applications](~/identity/app-proxy/application-proxy.md).
           
           
           
@@ -248,7 +248,7 @@ sections:
         answer: |
           With Microsoft Entra Conditional Access, you can assign a unique access policy for each application. In your policy, you can require multi-factor authentication always, or when users are not connected to the local network.  
           
-          For more information, see [Securing access to Microsoft 365 and other apps connected to Microsoft Entra ID](../conditional-access/overview.md).
+          For more information, see [Securing access to Microsoft 365 and other apps connected to Microsoft Entra ID](~/identity/conditional-access/overview.md).
           
           
           

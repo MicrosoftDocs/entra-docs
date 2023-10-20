@@ -20,7 +20,7 @@ Learn to secure header-based applications with Microsoft Entra ID, with F5 BIG-I
 
 Integrating a BIG-IP with Microsoft Entra ID provides many benefits, including:
 * Improved Zero Trust governance through Microsoft Entra preauthentication and Conditional Access 
-  * See, [What is Conditional Access?](../conditional-access/overview.md)
+  * See, [What is Conditional Access?](~/identity/conditional-access/overview.md)
   * See, [Zero Trust security](/azure/security/fundamentals/zero-trust)
 * Full SSO between Microsoft Entra ID and BIG-IP published services
 * Managed identities and access from one control plane
@@ -38,7 +38,7 @@ This scenario covers the legacy application using HTTP authorization headers to 
 A BIG-IP in front of the application enables overlay of the service with Microsoft Entra preauthentication and headers-based SSO. This configuration improves overall application security posture.
 
    > [!NOTE] 
-   > Organizations can have remote access to this application type with Microsoft Entra application proxy. Learn more: [Remote access to on-premises applications through Microsoft Entra application proxy](../app-proxy/application-proxy.md)
+   > Organizations can have remote access to this application type with Microsoft Entra application proxy. Learn more: [Remote access to on-premises applications through Microsoft Entra application proxy](~/identity/app-proxy/application-proxy.md)
 
 ## Scenario architecture
 
@@ -74,7 +74,7 @@ For the scenario you need:
   * F5 BIG-IP Access Policy Manager™ (APM) add-on license on a BIG-IP F5 BIG-IP® Local Traffic Manager™ (LTM)
   * 90-day BIG-IP full feature trial. See, [Free Trials](https://www.f5.com/trial/big-ip-trial.php)
 * User identities synchronized from an on-premises directory to Microsoft Entra ID
-  * See, [Microsoft Entra Connect Sync: Understand and customize synchronization](../hybrid/connect/how-to-connect-sync-whatis.md)
+  * See, [Microsoft Entra Connect Sync: Understand and customize synchronization](~/identity/hybrid/connect/how-to-connect-sync-whatis.md)
 * An SSL web certificate to publish services over HTTPS, or use default BIG-IP certs for testing
   * See, [SSL profile](./f5-bigip-deployment-guide.md#ssl-profile)
 * A header-based application or set up an IIS header app for testing

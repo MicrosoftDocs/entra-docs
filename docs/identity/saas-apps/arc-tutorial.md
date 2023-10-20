@@ -104,7 +104,7 @@ Follow these steps to enable Microsoft Entra SSO.
    | groups    | user.assignedroles |
 
    > [!NOTE]
-   > Here the **groups** attribute is mapped with **user.assignedroles**. These are custom roles created in Microsoft Entra ID to map the group names back in application. You can find more guidance [here](~/identity-platform/howto-add-app-roles-in-azure-ad-apps.md#app-roles-ui) on how to create custom roles in Microsoft Entra ID.
+   > Here the **groups** attribute is mapped with **user.assignedroles**. These are custom roles created in Microsoft Entra ID to map the group names back in application. You can find more guidance [here](~/identity-platform/howto-add-app-roles-in-apps.md#app-roles-ui) on how to create custom roles in Microsoft Entra ID.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 

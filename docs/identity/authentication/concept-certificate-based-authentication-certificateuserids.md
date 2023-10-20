@@ -222,7 +222,7 @@ To synchronize X509:\<RFC822>RFC822Name, create an outbound synchronization rule
 > [!NOTE]
 > Make sure you use the latest version of [Microsoft Entra Connect](https://www.microsoft.com/download/details.aspx?id=47594). 
 
-For more information about declarative provisioning expressions, see [Microsoft Entra Connect: Declarative Provisioning Expressions](../hybrid/connect/concept-azure-ad-connect-sync-declarative-provisioning-expressions.md).
+For more information about declarative provisioning expressions, see [Microsoft Entra Connect: Declarative Provisioning Expressions](~/identity/hybrid/connect/concept-azure-ad-connect-sync-declarative-provisioning-expressions.md).
 
 <a name='synchronize-alternativesecurityid-attribute-from-ad-to-azure-ad-cba-certificateuserids'></a>
 

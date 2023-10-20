@@ -21,7 +21,7 @@ This article is the fourth in a series of articles that provide guidance for con
 - [Multi-tenant user management scenarios](multi-tenant-user-management-scenarios.md) describes three scenarios for which you can use multi-tenant user management features: end user-initiated, scripted, and automated.
 - [Common considerations for multi-tenant user management](multi-tenant-common-considerations.md) provides guidance for these considerations: cross-tenant synchronization, directory object, Microsoft Entra Conditional Access, additional access control, and Office 365. 
 
-The guidance helps to you achieve a consistent state of user lifecycle management. Lifecycle management includes provisioning, managing, and deprovisioning users across tenants using the available Azure tools that include [Microsoft Entra B2B collaboration](~/external-id/what-is-b2b.md) (B2B) and [cross-tenant synchronization](../multi-tenant-organizations/cross-tenant-synchronization-overview.md).
+The guidance helps to you achieve a consistent state of user lifecycle management. Lifecycle management includes provisioning, managing, and deprovisioning users across tenants using the available Azure tools that include [Microsoft Entra B2B collaboration](~/external-id/what-is-b2b.md) (B2B) and [cross-tenant synchronization](~/identity/multi-tenant-organizations/cross-tenant-synchronization-overview.md).
 
 Microsoft recommends a single tenant wherever possible. If single tenancy doesn't work for your scenario, reference the following solutions that Microsoft customers have successfully implemented for these challenges:
 
@@ -61,7 +61,7 @@ Each tenant admin performs the following steps to create the user objects.
     1. Address existing contact objects.
     1. Create external member user objects for the other tenant's internal member users.
     1. Synchronize user object attributes.
-1. Deploy and configure [Entitlement Management](../governance/entitlement-management-overview.md) access packages.
+1. Deploy and configure [Entitlement Management](~/id-governance/entitlement-management-overview.md) access packages.
     1. Resources to be shared.
     1. Expiration and access review policies.
 

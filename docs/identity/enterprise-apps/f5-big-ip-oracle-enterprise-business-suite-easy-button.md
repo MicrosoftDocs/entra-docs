@@ -19,7 +19,7 @@ ms.custom: not-enterprise-apps
 Learn to secure Oracle E-Business Suite (EBS) using Microsoft Entra ID, with F5 BIG-IP Easy Button Guided Configuration. Integrating a BIG-IP with Microsoft Entra ID has many benefits:
 
 * Improved Zero Trust governance through Microsoft Entra preauthentication and Conditional Access 
-  * See, [What is Conditional Access?](../conditional-access/overview.md)
+  * See, [What is Conditional Access?](~/identity/conditional-access/overview.md)
   * See, [Zero Trust security](/azure/security/fundamentals/zero-trust)
 * Full SSO between Microsoft Entra ID and BIG-IP published services
 * Managed identities and access from one control plane
@@ -79,7 +79,7 @@ You need the following components:
   * F5 BIG-IP Access Policy Manager&trade; (APM) add-on license on a BIG-IP F5 BIG-IP&reg; Local Traffic Manager&trade; (LTM)
   * 90-day BIG-IP full feature trial. See, [Free Trials](https://www.f5.com/trial/big-ip-trial.php).
 * User identities synchronized from an on-premises directory to Microsoft Entra ID
-  * See, [Microsoft Entra Connect Sync: Understand and customize synchronization](../hybrid/connect/how-to-connect-sync-whatis.md)
+  * See, [Microsoft Entra Connect Sync: Understand and customize synchronization](~/identity/hybrid/connect/how-to-connect-sync-whatis.md)
 * An SSL certificate to publish services over HTTPS, or use default certificates while testing
   * See, [SSL profile](./f5-bigip-deployment-guide.md#ssl-profile)
 * An Oracle EBS, Oracle AccessGate, and an LDAP-enabled Oracle Internet Database (OID)

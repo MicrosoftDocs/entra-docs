@@ -105,7 +105,7 @@ Deactivate the custom security attributes you no longer need. For more informati
 
 ## Symptom - Cannot add a role assignment at an attribute set scope using PIM
 
-When you try to add an eligible Microsoft Entra role assignment using [Microsoft Entra Privileged Identity Management (PIM)](../privileged-identity-management/pim-configure.md), you cannot set the scope to an attribute set.
+When you try to add an eligible Microsoft Entra role assignment using [Microsoft Entra Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/pim-configure.md), you cannot set the scope to an attribute set.
 
 **Cause**
 

@@ -47,7 +47,7 @@ Role-assignable groups benefit from extra protections comparing to non-role-assi
 
 To learn more about Microsoft Entra built-in roles and their permissions, see [Microsoft Entra built-in roles](~/identity/role-based-access-control/permissions-reference.md).
 
-Microsoft Entra role-assignable group feature is not part of Microsoft Entra Privileged Identity Management (Microsoft Entra PIM). For more information on licensing, see [Microsoft Entra ID Governance licensing fundamentals](../governance/licensing-fundamentals.md) .
+Microsoft Entra role-assignable group feature is not part of Microsoft Entra Privileged Identity Management (Microsoft Entra PIM). For more information on licensing, see [Microsoft Entra ID Governance licensing fundamentals](~/id-governance/licensing-fundamentals.md) .
 
 
 ## Relationship between role-assignable groups and PIM for Groups

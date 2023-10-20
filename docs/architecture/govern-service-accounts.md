@@ -27,7 +27,7 @@ Learn more:
 > [!NOTE] 
 > We do not recommend user accounts as service accounts because they are less secure. This includes on-premises service accounts synced to Microsoft Entra ID, because they aren't converted to service principals. Instead, we recommend managed identities, or service principals, and the use of Conditional Access.
 
-Learn more: [What is Conditional Access?](../conditional-access/overview.md)
+Learn more: [What is Conditional Access?](~/identity/conditional-access/overview.md)
 
 ## Plan your service account
 
@@ -161,7 +161,7 @@ Deprovisioning includes the following tasks:
 
 After the associated application or script is deprovisioned:
 
-* [Sign-in logs in Microsoft Entra ID](../reports-monitoring/concept-sign-ins.md) and resource access by the service account
+* [Sign-in logs in Microsoft Entra ID](~/identity/monitoring-health/concept-sign-ins.md) and resource access by the service account
   * If the account is active, determine how it's being used before continuing
 * For a managed service identity, disable service account sign-in, but don't remove it from the directory
 * Revoke service account role assignments and OAuth2 consent grants

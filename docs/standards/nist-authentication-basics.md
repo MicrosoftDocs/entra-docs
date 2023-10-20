@@ -64,7 +64,7 @@ Passwords are the most common known thing, and represent the largest attack surf
 
 * [Banned passwords](~/identity/authentication/tutorial-configure-custom-password-protection.md)
 
-* [Leaked credentials identification](../identity-protection/overview-identity-protection.md)
+* [Leaked credentials identification](~/id-protection/overview-identity-protection.md)
 
 * [Secure hashed storage](https://aka.ms/AADDataWhitepaper)
 

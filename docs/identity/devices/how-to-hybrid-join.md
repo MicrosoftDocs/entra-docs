@@ -17,15 +17,15 @@ ms.collection: M365-identity-device-management
 ---
 # Configure Microsoft Entra hybrid join
 
-Bringing your devices to Microsoft Entra ID maximizes user productivity through single sign-on (SSO) across your cloud and on-premises resources. You can secure access to your resources with [Conditional Access](../conditional-access/howto-conditional-access-policy-compliant-device.md) at the same time.
+Bringing your devices to Microsoft Entra ID maximizes user productivity through single sign-on (SSO) across your cloud and on-premises resources. You can secure access to your resources with [Conditional Access](~/identity/conditional-access/howto-conditional-access-policy-compliant-device.md) at the same time.
 
 > [!VIDEO https://www.youtube-nocookie.com/embed/hSCVR1oJhFI]
 
 ## Prerequisites
 
 - [Microsoft Entra Connect](https://www.microsoft.com/download/details.aspx?id=47594) version 1.1.819.0 or later.
-   - Don't exclude the default device attributes from your Microsoft Entra Connect Sync configuration. To learn more about default device attributes synced to Microsoft Entra ID, see [Attributes synchronized by Microsoft Entra Connect](../hybrid/connect/reference-connect-sync-attributes-synchronized.md#windows-10).
-   - If the computer objects of the devices you want to be Microsoft Entra hybrid joined belong to specific organizational units (OUs), configure the correct OUs to sync in Microsoft Entra Connect. To learn more about how to sync computer objects by using Microsoft Entra Connect, see [Organizational unit–based filtering](../hybrid/connect/how-to-connect-sync-configure-filtering.md#organizational-unitbased-filtering).
+   - Don't exclude the default device attributes from your Microsoft Entra Connect Sync configuration. To learn more about default device attributes synced to Microsoft Entra ID, see [Attributes synchronized by Microsoft Entra Connect](~/identity/hybrid/connect/reference-connect-sync-attributes-synchronized.md#windows-10).
+   - If the computer objects of the devices you want to be Microsoft Entra hybrid joined belong to specific organizational units (OUs), configure the correct OUs to sync in Microsoft Entra Connect. To learn more about how to sync computer objects by using Microsoft Entra Connect, see [Organizational unit–based filtering](~/identity/hybrid/connect/how-to-connect-sync-configure-filtering.md#organizational-unitbased-filtering).
 - Global Administrator credentials for your Microsoft Entra tenant.
 - Enterprise administrator credentials for each of the on-premises Active Directory Domain Services forests.
 - (**For federated domains**) At least Windows Server 2012 R2 with Active Directory Federation Services installed.
@@ -57,7 +57,7 @@ Verify devices can access the required Microsoft resources under the system acco
 
 ## Managed domains
 
-We think most organizations will deploy Microsoft Entra hybrid join with managed domains. Managed domains use [password hash sync (PHS)](../hybrid/connect/whatis-phs.md) or [pass-through authentication (PTA)](../hybrid/connect/how-to-connect-pta.md) with [seamless single sign-on](../hybrid/connect/how-to-connect-sso.md). Managed domain scenarios don't require configuring a federation server.
+We think most organizations will deploy Microsoft Entra hybrid join with managed domains. Managed domains use [password hash sync (PHS)](~/identity/hybrid/connect/whatis-phs.md) or [pass-through authentication (PTA)](~/identity/hybrid/connect/how-to-connect-pta.md) with [seamless single sign-on](~/identity/hybrid/connect/how-to-connect-sso.md). Managed domain scenarios don't require configuring a federation server.
 
 Configure Microsoft Entra hybrid join by using Microsoft Entra Connect for a managed domain:
 
@@ -146,5 +146,5 @@ If you experience issues with completing Microsoft Entra hybrid join for domain-
 
 - [Downlevel device enablement](how-to-hybrid-join-downlevel.md)
 - [Microsoft Entra hybrid join verification](how-to-hybrid-join-verify.md)
-- [Use Conditional Access to require compliant or Microsoft Entra hybrid joined device](../conditional-access/howto-conditional-access-policy-compliant-device.md)
+- [Use Conditional Access to require compliant or Microsoft Entra hybrid joined device](~/identity/conditional-access/howto-conditional-access-policy-compliant-device.md)
 - [Planning a Windows Hello for Business Deployment](/windows/security/identity-protection/hello-for-business/hello-planning-guide)

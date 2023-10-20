@@ -34,7 +34,7 @@ Use Microsoft Entra ID to implement recommendations from memorandum 22-09. Micro
 
 ## Single sign-on requirements
 
-The memo requires users sign in once and then access applications. With Microsoft single sign-on (SSO) users sign in once and then access cloud services and applications. See, [Microsoft Entra seamless single sign-on](../hybrid/connect/how-to-connect-sso.md).
+The memo requires users sign in once and then access applications. With Microsoft single sign-on (SSO) users sign in once and then access cloud services and applications. See, [Microsoft Entra seamless single sign-on](~/identity/hybrid/connect/how-to-connect-sso.md).
 
 ## Integration across agencies
 
@@ -86,7 +86,7 @@ Microsoft offers the following tools to support application and service discover
 
 | Tool| Usage |
 | - | - |
-|Usage Analytics for Active Directory Federation Services (AD FS)| Analyzes federated server authentication traffic. See, [Monitor AD FS using Microsoft Entra Connect Health](../hybrid/connect/how-to-connect-health-adfs.md)|
+|Usage Analytics for Active Directory Federation Services (AD FS)| Analyzes federated server authentication traffic. See, [Monitor AD FS using Microsoft Entra Connect Health](~/identity/hybrid/connect/how-to-connect-health-adfs.md)|
 | Microsoft Defender for Cloud Apps| Scans firewall logs to detect cloud apps, infrastructure as a service (IaaS) services, and platform as a service (PaaS) services. Integrate Defender for Cloud Apps with Defender for Endpoint to discovery data analyzed from Windows client devices. See, [Microsoft Defender for Cloud Apps overview](/defender-cloud-apps/what-is-defender-for-cloud-apps)|
 | Application Discovery worksheet| Document the current states of your applications. See, [Application Discovery worksheet](https://download.microsoft.com/download/2/8/3/283F995C-5169-43A0-B81D-B0ED539FB3DD/Application%20Discovery%20worksheet.xlsx)|
 
@@ -143,13 +143,13 @@ Learn more:
 
 Devices integrated with Microsoft Entra ID are hybrid-joined devices or Microsoft Entra joined devices. Separate device onboarding by client and user devices, and by physical and virtual machines that operate as infrastructure. For more information about deployment strategy for user devices, see the following guidance.
 
-* [Plan your Microsoft Entra device deployment](../devices/plan-device-deployment.md)
-* [Microsoft Entra hybrid joined devices](../devices/concept-hybrid-join.md)
-* [Microsoft Entra joined devices](../devices/concept-directory-join.md)
-* [Log in to a Windows virtual machine in Azure by using Microsoft Entra ID including passwordless](../devices/howto-vm-sign-in-azure-ad-windows.md)
-* [Log in to a Linux virtual machine in Azure by using Microsoft Entra ID and OpenSSH](../devices/howto-vm-sign-in-azure-ad-linux.md)
+* [Plan your Microsoft Entra device deployment](~/identity/devices/plan-device-deployment.md)
+* [Microsoft Entra hybrid joined devices](~/identity/devices/concept-hybrid-join.md)
+* [Microsoft Entra joined devices](~/identity/devices/concept-directory-join.md)
+* [Log in to a Windows virtual machine in Azure by using Microsoft Entra ID including passwordless](~/identity/devices/howto-vm-sign-in-azure-ad-windows.md)
+* [Log in to a Linux virtual machine in Azure by using Microsoft Entra ID and OpenSSH](~/identity/devices/howto-vm-sign-in-azure-ad-linux.md)
 * [Microsoft Entra join for Azure Virtual Desktop](/azure/architecture/example-scenario/wvd/azure-virtual-desktop-azure-active-directory-join)
-* [Device identity and desktop virtualization](../devices/howto-device-identity-virtual-desktop-infrastructure.md)
+* [Device identity and desktop virtualization](~/identity/devices/howto-device-identity-virtual-desktop-infrastructure.md)
 
 ## Next steps
 

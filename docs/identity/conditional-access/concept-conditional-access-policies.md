@@ -65,7 +65,7 @@ A policy can contain multiple [conditions](concept-conditional-access-conditions
 
 #### Sign-in risk
 
-For organizations with [Microsoft Entra ID Protection](../identity-protection/overview-identity-protection.md), the risk detections generated there can influence your Conditional Access policies.
+For organizations with [Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md), the risk detections generated there can influence your Conditional Access policies.
 
 #### Device platforms
 

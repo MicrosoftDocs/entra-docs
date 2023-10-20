@@ -34,7 +34,7 @@ Multi-factor Out-of-band <br> (something you have + something you know/are) | Mi
 
 <sup>1</sup> 30-second or 60-second OATH-TOTP SHA-1 token
 
-<sup>2</sup> For more information on device join states, see [Microsoft Entra device identity](../devices/index.yml)
+<sup>2</sup> For more information on device join states, see [Microsoft Entra device identity](~/identity/devices/index.yml)
 
 ## Public Switch Telephone Network (PSTN) SMS/Voice are not recommended
 

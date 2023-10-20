@@ -24,7 +24,7 @@ The Conditional Access feature in Microsoft Entra ID offers one of several ways 
 * Allowing only Intune enrolled devices to access specific services
 * Restricting user locations and IP ranges
 
-For more information on the full capabilities of Conditional Access, see the article [What is Conditional Access](../conditional-access/overview.md).
+For more information on the full capabilities of Conditional Access, see the article [What is Conditional Access](~/identity/conditional-access/overview.md).
 
 For developers building apps for Microsoft Entra ID, this article shows how you can use Conditional Access and you'll also learn about the impact of accessing resources that you don't have control over that may have Conditional Access policies applied. The article also explores the implications of Conditional Access in the on-behalf-of flow, web apps, accessing Microsoft Graph, and calling APIs.
 
@@ -174,7 +174,7 @@ To try out this scenario, see our [React SPA calling Node.js web API using on-be
 
 ## See also
 
-* To learn more about the capabilities, see [Conditional Access in Microsoft Entra ID](../conditional-access/overview.md).
+* To learn more about the capabilities, see [Conditional Access in Microsoft Entra ID](~/identity/conditional-access/overview.md).
 * For more Microsoft Entra code samples, see [samples](sample-v2-code.md).
 * For more info on the MSAL SDK's and access the reference documentation, see the [Microsoft Authentication Library overview](msal-overview.md).
 * To learn more about multi-tenant scenarios, see [How to sign in users using the multi-tenant pattern](howto-convert-app-to-be-multi-tenant.md).

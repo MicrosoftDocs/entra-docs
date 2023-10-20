@@ -37,7 +37,7 @@ The following image shows how these applications interact with Microsoft Entra I
 
 ### Pre-integrated applications
 
-Many applications are already pre-integrated (shown as “Cloud applications” in the image above) and can be set up with minimal effort. Each application in the Microsoft Entra gallery has an article available that shows you the steps required to [configure the application](../saas-apps/tutorial-list.md). For a simple example of how an application can be added to your Microsoft Entra tenant from the gallery, see [Quickstart: Add an enterprise application](add-application-portal.md).
+Many applications are already pre-integrated (shown as “Cloud applications” in the image above) and can be set up with minimal effort. Each application in the Microsoft Entra gallery has an article available that shows you the steps required to [configure the application](~/identity/saas-apps/tutorial-list.md). For a simple example of how an application can be added to your Microsoft Entra tenant from the gallery, see [Quickstart: Add an enterprise application](add-application-portal.md).
 
 ### Your own applications
 
@@ -47,7 +47,7 @@ If you want to make your application available through the gallery, you can [sub
 
 ### On-premises applications
 
-If you want to continue using an on-premises application, but take advantage of what Microsoft Entra ID offers, connect it with Microsoft Entra ID using [Microsoft Entra application proxy](../app-proxy/application-proxy.md). Application Proxy can be implemented when you want to publish on-premises applications externally. Remote users who need access to internal applications can then access them in a secure manner.
+If you want to continue using an on-premises application, but take advantage of what Microsoft Entra ID offers, connect it with Microsoft Entra ID using [Microsoft Entra application proxy](~/identity/app-proxy/application-proxy.md). Application Proxy can be implemented when you want to publish on-premises applications externally. Remote users who need access to internal applications can then access them in a secure manner.
 
 ## Manage access
 
@@ -109,7 +109,7 @@ It's important to periodically review and, if necessary, [manage the permissions
 
 Microsoft Entra multifactor authentication helps safeguard access to data and applications, providing another layer of security by using a second form of authentication. There are many methods that can be used for a second-factor authentication. Before you start, [plan the deployment of MFA for your application](~/identity/authentication/howto-mfa-getstarted.md) in your organization.
 
-Organizations can enable MFA with [Conditional Access](../conditional-access/overview.md) to make the solution fit their specific needs. Conditional Access policies allow administrators to assign controls to specific [applications, actions, or authentication context](../conditional-access/concept-conditional-access-cloud-apps.md).
+Organizations can enable MFA with [Conditional Access](~/identity/conditional-access/overview.md) to make the solution fit their specific needs. Conditional Access policies allow administrators to assign controls to specific [applications, actions, or authentication context](~/identity/conditional-access/concept-conditional-access-cloud-apps.md).
 
 ### Tokens and certificates
 
@@ -121,9 +121,9 @@ Microsoft Entra ID uses the [SHA-256 algorithm](certificate-signing-options.md) 
 
 ## Govern and monitor
 
-[Entitlement management](../governance/entitlement-management-scenarios.md) in Microsoft Entra ID enables you to manage interaction between applications and administrators, catalog owners, access package managers, approvers, and requestors.
+[Entitlement management](~/id-governance/entitlement-management-scenarios.md) in Microsoft Entra ID enables you to manage interaction between applications and administrators, catalog owners, access package managers, approvers, and requestors.
 
-Your Microsoft Entra reporting and monitoring solution depends on your legal, security, and operational requirements and your existing environment and processes. There are several logs that are maintained in Microsoft Entra ID and you should [plan for reporting and monitoring deployment](../reports-monitoring/plan-monitoring-and-reporting.md) to maintain the best experience as possible for your application.
+Your Microsoft Entra reporting and monitoring solution depends on your legal, security, and operational requirements and your existing environment and processes. There are several logs that are maintained in Microsoft Entra ID and you should [plan for reporting and monitoring deployment](~/identity/monitoring-health/plan-monitoring-and-reporting.md) to maintain the best experience as possible for your application.
 
 ## Clean up
 

@@ -351,7 +351,7 @@ Microsoft Entra ID can't find the user account in the tenant.
 - The user entered an incorrect username or password in the sign-in UI.
 - The password hasn't been synchronized to Microsoft Entra ID because of the following scenario:
 
-  - The tenant has enabled [password hash synchronization](../hybrid/connect/whatis-phs.md).
+  - The tenant has enabled [password hash synchronization](~/identity/hybrid/connect/whatis-phs.md).
   - The device is a Microsoft Entra hybrid joined device.
   - The user recently changed the password.
 

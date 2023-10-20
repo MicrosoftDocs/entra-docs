@@ -53,7 +53,7 @@ Conditional Access policies are access control configurations that bring togethe
 
 ![Screenshot that shows user, location, device, application, and risk signals coming together in Conditional Access policies.](./media/recoverability/miscofigurations-conditional-accss-signals.png)
 
-To learn more about Conditional Access policies, see [What is Conditional Access in Microsoft Entra ID?](../conditional-access/overview.md).
+To learn more about Conditional Access policies, see [What is Conditional Access in Microsoft Entra ID?](~/identity/conditional-access/overview.md).
 
 > [!NOTE]
 > While configuration alters the behavior or capabilities of an object or policy, not all changes to an object are configuration. You can change the data or attributes associated with an item, like changing a user's address, without affecting the capabilities of that user object.
@@ -86,14 +86,14 @@ Misconfiguration is most likely to occur when:
 It's critical that alterations to the intended configuration of a Microsoft Entra tenant are subject to robust change management processes, including:
 
 * Documenting the change, including prior state and intended post-change state.
-* Using Privileged Identity Management (PIM) to ensure that administrators with intent to change must deliberately escalate their privileges to do so. To learn more about PIM, see [What is Privileged Identity Management?](../privileged-identity-management/pim-configure.md).
-* Using a strong approval workflow for changes, for example, requiring [approval of PIM escalation of privileges](../privileged-identity-management/pim-approval-workflow.md).
+* Using Privileged Identity Management (PIM) to ensure that administrators with intent to change must deliberately escalate their privileges to do so. To learn more about PIM, see [What is Privileged Identity Management?](~/id-governance/privileged-identity-management/pim-configure.md).
+* Using a strong approval workflow for changes, for example, requiring [approval of PIM escalation of privileges](~/id-governance/privileged-identity-management/pim-approval-workflow.md).
 
 ## Monitor for configuration changes
 
 While you want to prevent misconfiguration, you can't set the bar for changes so high that it affects the ability of administrators to perform their work efficiently.
 
-Closely monitor for configuration changes by watching for the following operations in your [Microsoft Entra audit log](../reports-monitoring/concept-audit-logs.md):
+Closely monitor for configuration changes by watching for the following operations in your [Microsoft Entra audit log](~/identity/monitoring-health/concept-audit-logs.md):
 
 * Add
 * Create
@@ -160,14 +160,14 @@ Selecting some audit entries in the Audit log will provide you with details on t
 
 Azure Monitor workbooks can help you monitor configuration changes.
 
-The [Sensitive operations report workbook](../reports-monitoring/workbook-sensitive-operations-report.md) can help identify suspicious application and service principal activity that might indicate a compromise, including:
+The [Sensitive operations report workbook](~/identity/monitoring-health/workbook-sensitive-operations-report.md) can help identify suspicious application and service principal activity that might indicate a compromise, including:
 
 * Modified application or service principal credentials or authentication methods.
 * New permissions granted to service principals.
 * Directory role and group membership updates for service principals.
 * Modified federation settings.
 
-The [Cross-tenant access activity workbook](../reports-monitoring/workbook-cross-tenant-access-activity.md) can help you monitor which applications in external tenants your users are accessing and which applications your tenant external users are accessing. Use this workbook to look for anomalous changes in either inbound or outbound application access across tenants.
+The [Cross-tenant access activity workbook](~/identity/monitoring-health/workbook-cross-tenant-access-activity.md) can help you monitor which applications in external tenants your users are accessing and which applications your tenant external users are accessing. Use this workbook to look for anomalous changes in either inbound or outbound application access across tenants.
 
 ## Next steps
 

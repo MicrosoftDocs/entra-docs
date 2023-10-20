@@ -63,7 +63,7 @@ Once you have configured administrative units, you can apply this scope to your 
 
 You can protect the My Staff portal using Microsoft Entra Conditional Access policy. Use it for tasks like requiring multi-factor authentication before accessing My Staff.
 
-We strongly recommend that you protect My Staff using [Microsoft Entra Conditional Access policies](../conditional-access/index.yml). To apply a Conditional Access policy to My Staff, you must first visit the My Staff site once for a few minutes to automatically provision the service principal in your tenant for use by Conditional Access.
+We strongly recommend that you protect My Staff using [Microsoft Entra Conditional Access policies](~/identity/conditional-access/index.yml). To apply a Conditional Access policy to My Staff, you must first visit the My Staff site once for a few minutes to automatically provision the service principal in your tenant for use by Conditional Access.
 
 You'll see the service principal when you create a Conditional Access policy that applies to the My Staff cloud application.
 

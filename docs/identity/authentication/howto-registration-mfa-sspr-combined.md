@@ -30,9 +30,9 @@ To secure when and how users register for Microsoft Entra multifactor authentica
 > [!NOTE]
 > This policy applies only when a user accesses a combined registration page. This policy doesn't enforce MFA enrollment when a user accesses other applications.
 >
-> You can create an MFA registration policy by using [Microsoft Entra ID Protection - Configure MFA Policy](../identity-protection/howto-identity-protection-configure-mfa-policy.md).
+> You can create an MFA registration policy by using [Microsoft Entra ID Protection - Configure MFA Policy](~/id-protection/howto-identity-protection-configure-mfa-policy.md).
 
-For more information about creating trusted locations in Conditional Access, see [What is the location condition in Microsoft Entra Conditional Access?](../conditional-access/location-condition.md#named-locations)
+For more information about creating trusted locations in Conditional Access, see [What is the location condition in Microsoft Entra Conditional Access?](~/identity/conditional-access/location-condition.md#named-locations)
 
 ### Create a policy to require registration from a trusted location
 
@@ -61,7 +61,7 @@ Complete the following steps to create a policy that applies to all selected use
 
 ## Next steps
 
-If you need help, see [troubleshoot combined security info registration](howto-registration-mfa-sspr-combined-troubleshoot.md) or learn [What is the location condition in Microsoft Entra Conditional Access?](../conditional-access/location-condition.md)
+If you need help, see [troubleshoot combined security info registration](howto-registration-mfa-sspr-combined-troubleshoot.md) or learn [What is the location condition in Microsoft Entra Conditional Access?](~/identity/conditional-access/location-condition.md)
 
 Review how you can [enable self-service password reset](tutorial-enable-sspr.md) and [enable Microsoft Entra multifactor authentication](tutorial-enable-azure-mfa.md) in your tenant.
 

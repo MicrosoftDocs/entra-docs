@@ -19,7 +19,7 @@ In this article, learn to secure Oracle Enterprise Business Suite (EBS) using Mi
 
 Integrating a BIG-IP with Microsoft Entra ID provides many benefits, including:
 
-* [Improved Zero Trust governance](https://www.microsoft.com/security/blog/2020/04/02/announcing-microsoft-zero-trust-assessment-tool/) through Microsoft Entra pre-authentication and [Conditional Access](../conditional-access/overview.md)
+* [Improved Zero Trust governance](https://www.microsoft.com/security/blog/2020/04/02/announcing-microsoft-zero-trust-assessment-tool/) through Microsoft Entra pre-authentication and [Conditional Access](~/identity/conditional-access/overview.md)
 
 * Full SSO between Microsoft Entra ID and BIG-IP published services
 
@@ -82,7 +82,7 @@ Prior BIG-IP experience isn't necessary, but you need:
 
   * 90-day BIG-IP full feature [trial license](https://www.f5.com/trial/big-ip-trial.php).
 
-* User identities [synchronized](../hybrid/how-to-connect-sync-whatis.md) from an on-premises directory to Microsoft Entra ID or created directly within Microsoft Entra ID and flowed back to your on-premises directory
+* User identities [synchronized](~/identity/hybrid/how-to-connect-sync-whatis.md) from an on-premises directory to Microsoft Entra ID or created directly within Microsoft Entra ID and flowed back to your on-premises directory
 
 * An account with Microsoft Entra application admin [permissions](/azure/active-directory/users-groups-roles/directory-assign-admin-roles#application-administrator)
 

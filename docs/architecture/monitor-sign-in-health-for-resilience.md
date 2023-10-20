@@ -25,7 +25,7 @@ You can configure alerts based on the App sign-in health workbook. This workbook
 - Compare trends over a period of time. Week over week is the workbook's default setting.
 
 > [!NOTE]
-> See all available workbooks and the prerequisites for using them in [How to use Azure Monitor workbooks for reports](../reports-monitoring/howto-use-workbooks.md).
+> See all available workbooks and the prerequisites for using them in [How to use Azure Monitor workbooks for reports](~/identity/monitoring-health/howto-use-workbooks.md).
 
 During an impacting event, two things may happen:
 
@@ -37,7 +37,7 @@ During an impacting event, two things may happen:
 - A Microsoft Entra tenant.
 - A user with global administrator or security administrator role for the Microsoft Entra tenant.
 - A Log Analytics workspace in your Azure subscription to send logs to Azure Monitor logs. Learn how to  [create a Log Analytics workspace](/azure/azure-monitor/logs/quick-create-workspace).
-- Microsoft Entra logs integrated with Azure Monitor logs. Learn how to [Integrate Microsoft Entra sign-in logs with Azure Monitor Stream.](../reports-monitoring/howto-integrate-activity-logs-with-azure-monitor-logs.md)
+- Microsoft Entra logs integrated with Azure Monitor logs. Learn how to [Integrate Microsoft Entra sign-in logs with Azure Monitor Stream.](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.md)
 
 ## Configure the App sign-in health workbook 
 
@@ -224,4 +224,4 @@ After you set up queries and alerts, create business processes to manage the ale
 
 ## Next steps
 
-[Learn more about workbooks](../reports-monitoring/howto-use-workbooks.md)
+[Learn more about workbooks](~/identity/monitoring-health/howto-use-workbooks.md)

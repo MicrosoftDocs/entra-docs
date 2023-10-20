@@ -46,7 +46,7 @@ There is a need for user consent and for web sign in.
 
 ## Implement OIDC with Microsoft Entra ID
 
-* [Integrating applications with Microsoft Entra ID](../saas-apps/tutorial-list.md) 
+* [Integrating applications with Microsoft Entra ID](~/identity/saas-apps/tutorial-list.md) 
 
 * [OAuth 2.0 and OpenID Connect protocols on the Microsoft identity platform](~/identity-platform/v2-protocols.md) 
 

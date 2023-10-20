@@ -95,7 +95,7 @@ For information on installing the NPS role service Windows Server 2012 or older,
 
 ### Microsoft Entra synched with on-premises Active Directory
 
-To use the NPS extension, on-premises users must be synced with Microsoft Entra ID and enabled for MFA. This section assumes that on-premises users are synched with Microsoft Entra ID using AD Connect. For information on Microsoft Entra Connect, see [Integrate your on-premises directories with Microsoft Entra ID](../hybrid/whatis-hybrid-identity.md).
+To use the NPS extension, on-premises users must be synced with Microsoft Entra ID and enabled for MFA. This section assumes that on-premises users are synched with Microsoft Entra ID using AD Connect. For information on Microsoft Entra Connect, see [Integrate your on-premises directories with Microsoft Entra ID](~/identity/hybrid/whatis-hybrid-identity.md).
 
 <a name='azure-active-directory-guid-id'></a>
 
@@ -405,4 +405,4 @@ The image below from Microsoft Message Analyzer shows network traffic filtered o
 
 [Remote Desktop Gateway and Azure Multi-Factor Authentication Server using RADIUS](howto-mfaserver-nps-rdg.md)
 
-[Integrate your on-premises directories with Microsoft Entra ID](../hybrid/whatis-hybrid-identity.md)
+[Integrate your on-premises directories with Microsoft Entra ID](~/identity/hybrid/whatis-hybrid-identity.md)

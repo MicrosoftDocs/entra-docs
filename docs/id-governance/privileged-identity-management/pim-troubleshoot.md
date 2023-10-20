@@ -36,6 +36,6 @@ Assign the User Access Administrator role to the Privileged identity Management 
 
 ## Next steps
 
-- [License requirements to use Privileged Identity Management](../governance/licensing-fundamentals.md)
+- [License requirements to use Privileged Identity Management](~/id-governance/licensing-fundamentals.md)
 - [Securing privileged access for hybrid and cloud deployments in Microsoft Entra ID](~/identity/role-based-access-control/security-planning.md?toc=/azure/active-directory/privileged-identity-management/toc.json)
 - [Deploy Privileged Identity Management](pim-deployment-plan.md)

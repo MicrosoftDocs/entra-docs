@@ -104,7 +104,7 @@ To determine the TPMs that meet current standards, go to [NIST Computer Security
 
 For AAL3, NIST requirements are reauthentication every 12 hours, regardless of user activity. Reauthentication is required after a period of inactivity 15 minutes or longer. Presenting both factors is required.
 
-To meet the requirement for reauthentication, regardless of user activity, Microsoft recommends configuring [user sign-in frequency](../conditional-access/howto-conditional-access-session-lifetime.md) to 12 hours.
+To meet the requirement for reauthentication, regardless of user activity, Microsoft recommends configuring [user sign-in frequency](~/identity/conditional-access/howto-conditional-access-session-lifetime.md) to 12 hours.
 
 NIST allows for compensating controls to confirm subscriber presence:
 

@@ -37,7 +37,7 @@ There are three primary components to provisioning users into an on-premises app
 
 You don't need to open inbound connections to the corporate network. The provisioning agents only use outbound connections to the provisioning service, which means there's no need to open firewall ports for incoming connections. You also don't need a perimeter (DMZ) network because all connections are outbound and take place over a secure channel.
 
-The required outbound endpoints for the provisioning agents are detailed [here](../hybrid/cloud-sync/how-to-prerequisites.md#firewall-and-proxy-requirements).
+The required outbound endpoints for the provisioning agents are detailed [here](~/identity/hybrid/cloud-sync/how-to-prerequisites.md#firewall-and-proxy-requirements).
 
 ## ECMA Connector Host architecture
 The ECMA Connector Host has several areas it uses to achieve on-premises provisioning.  The diagram below is a conceptual drawing that presents these individual areas.  The table below describes the areas in more detail.
@@ -148,7 +148,7 @@ This article lists the versions and features of Microsoft Entra Connect Provisio
 Microsoft provides direct support for the latest agent version and one version before.
 
 ### Download link
-On-premises app provisioning has been rolled into the provisioning agent and is available from the portal.  See [installing the provisioning agent](../hybrid/cloud-sync/how-to-install.md).
+On-premises app provisioning has been rolled into the provisioning agent and is available from the portal.  See [installing the provisioning agent](~/identity/hybrid/cloud-sync/how-to-install.md).
 
 ### 1.1.892.0 
 

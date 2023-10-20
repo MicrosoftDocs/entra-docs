@@ -65,7 +65,7 @@ Details about the sign-in error are found in the **Sign-in logs**. Select the im
 
 You can stop users from seeing the interrupt by setting the **Show option to remain signed in** setting to **No** in the user settings. This setting disables the KMSI prompt for all users in your directory.
 
-You also can use the [persistent browser session controls in Conditional Access](../conditional-access/howto-conditional-access-session-lifetime.md) to prevent users from seeing the KMSI prompt. This option allows you to disable the KMSI prompt for a select group of users (such as the Global Administrators) without affecting sign-in behavior for everyone else in the directory.
+You also can use the [persistent browser session controls in Conditional Access](~/identity/conditional-access/howto-conditional-access-session-lifetime.md) to prevent users from seeing the KMSI prompt. This option allows you to disable the KMSI prompt for a select group of users (such as the Global Administrators) without affecting sign-in behavior for everyone else in the directory.
 
 To ensure that the KMSI prompt is shown only when it can benefit the user, the KMSI prompt is intentionally not shown in the following scenarios:
 

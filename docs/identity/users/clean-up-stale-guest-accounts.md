@@ -19,7 +19,7 @@ ms.collection: M365-identity-device-management
 
 As users collaborate with external partners, it’s possible that many guest accounts get created in Microsoft Entra tenants over time. When collaboration ends and the users no longer access your tenant, the guest accounts may become stale. Administrators can monitor guest accounts at scale using inactive guest insights. Administrators can also use Access Reviews to automatically review inactive guest users, block them from signing in, and, delete them from the directory.
 
-Learn more about [how to manage inactive user accounts in Microsoft Entra ID](../reports-monitoring/howto-manage-inactive-user-accounts.md).
+Learn more about [how to manage inactive user accounts in Microsoft Entra ID](~/identity/monitoring-health/howto-manage-inactive-user-accounts.md).
 
 There are a few recommended patterns that are effective at monitoring and cleaning up stale guest accounts:
 
@@ -27,7 +27,7 @@ There are a few recommended patterns that are effective at monitoring and cleani
 
 2. Create a multi-stage review whereby guests self-attest whether they still need access. A second-stage reviewer assesses results and makes a final decision. Guests with denied access are disabled and later deleted.
 
-3. Create a review to remove inactive external guests. Admins define inactive as period of days. They disable and later delete guests that don’t sign in to the tenant within that time frame. By default, this doesn't affect recently created users. [Learn more about how to identify inactive accounts](../reports-monitoring/howto-manage-inactive-user-accounts.md#how-to-detect-inactive-user-accounts).
+3. Create a review to remove inactive external guests. Admins define inactive as period of days. They disable and later delete guests that don’t sign in to the tenant within that time frame. By default, this doesn't affect recently created users. [Learn more about how to identify inactive accounts](~/identity/monitoring-health/howto-manage-inactive-user-accounts.md#how-to-detect-inactive-user-accounts).
 
 Use the following instructions to learn how to enhance monitoring of inactive guest accounts at scale and create Access Reviews that follow these patterns. Consider the configuration recommendations and then make the needed changes that suit your environment.
 
@@ -58,7 +58,7 @@ Use the following instructions to learn how to enhance monitoring of inactive gu
 
    `(user.userType -eq "Guest") and (user.mail -contains "@contoso.com") and (user.accountEnabled -eq true)`
 
-2. To [create an Access Review](../governance/create-access-review.md)
+2. To [create an Access Review](~/id-governance/create-access-review.md)
     for the dynamic group, navigate to **Microsoft Entra ID > Identity Governance > Access Reviews**.
 
 3. Select **New access review**.
@@ -126,7 +126,7 @@ Use the following instructions to learn how to enhance monitoring of inactive gu
 
    `(user.userType -eq "Guest") and (user.mail -contains "@contoso.com") and (user.accountEnabled -eq true)`
 
-2. To [create an access review](../governance/create-access-review.md) for the dynamic group, navigate to **Microsoft Entra ID > Identity Governance > Access Reviews**.
+2. To [create an access review](~/id-governance/create-access-review.md) for the dynamic group, navigate to **Microsoft Entra ID > Identity Governance > Access Reviews**.
 
 3. Select **New access review**.
 

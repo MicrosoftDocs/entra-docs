@@ -85,7 +85,7 @@ You also need a valid Microsoft Entra ID P1 or higher subscription license for e
 - A test and production instance of the cloud HR app.
 - Administrator permissions in the cloud HR app to create a system integration user and make changes to test employee data for testing purposes.
 - For user provisioning to Active Directory, a server running Windows Server 2016 or greater is required to host the Microsoft Entra Connect provisioning agent. This server should be a tier 0 server based on the Active Directory administrative tier model.
-- [Microsoft Entra Connect](../hybrid/connect/whatis-azure-ad-connect.md) for synchronizing users between Active Directory and Microsoft Entra ID.
+- [Microsoft Entra Connect](~/identity/hybrid/connect/whatis-azure-ad-connect.md) for synchronizing users between Active Directory and Microsoft Entra ID.
 
 ### Training resources
 
@@ -93,11 +93,11 @@ You also need a valid Microsoft Entra ID P1 or higher subscription license for e
 |:-|:-|
 | Videos | [What is user provisioning in Active Azure Directory?](https://youtu.be/_ZjARPpI6NI) |
 | | [How to deploy user provisioning in Active Azure Directory](https://youtu.be/pKzyts6kfrw) |
-| Tutorials | [List of tutorials on how to integrate SaaS apps with Microsoft Entra ID](../saas-apps/tutorial-list.md) |
-| | [Tutorial: Configure automatic user provisioning with Workday](../saas-apps/workday-inbound-tutorial.md) |
-| | [Tutorial: Configure automatic user provisioning with SAP SuccessFactors](../saas-apps/sap-successfactors-inbound-provisioning-tutorial.md) |
+| Tutorials | [List of tutorials on how to integrate SaaS apps with Microsoft Entra ID](~/identity/saas-apps/tutorial-list.md) |
+| | [Tutorial: Configure automatic user provisioning with Workday](~/identity/saas-apps/workday-inbound-tutorial.md) |
+| | [Tutorial: Configure automatic user provisioning with SAP SuccessFactors](~/identity/saas-apps/sap-successfactors-inbound-provisioning-tutorial.md) |
 | FAQ | [Automated user provisioning](~/identity/app-provisioning/user-provisioning.md#what-applications-and-systems-can-i-use-with-azure-ad-automatic-user-provisioning) |
-| | [Provisioning from Workday to Microsoft Entra ID](../saas-apps/workday-inbound-tutorial.md#frequently-asked-questions-faq) |
+| | [Provisioning from Workday to Microsoft Entra ID](~/identity/saas-apps/workday-inbound-tutorial.md#frequently-asked-questions-faq) |
 
 ### Solution architecture
 
@@ -116,7 +116,7 @@ The following key steps are indicated in the diagram:  
 2. **Microsoft Entra provisioning service** runs the scheduled cycles from the cloud HR app tenant and identifies changes to process for sync with Active Directory.
 3. **Microsoft Entra provisioning service** invokes the Microsoft Entra Connect provisioning agent with a request payload that contains Active Directory account create, update, enable, and disable operations.
 4. **Microsoft Entra Connect provisioning agent** uses a service account to manage Active Directory account data.
-5. **Microsoft Entra Connect** runs delta [sync](../hybrid/connect/how-to-connect-sync-whatis.md) to pull updates in Active Directory.
+5. **Microsoft Entra Connect** runs delta [sync](~/identity/hybrid/connect/how-to-connect-sync-whatis.md) to pull updates in Active Directory.
 6. **Active Directory** updates are synced with Microsoft Entra ID.
 7. **Microsoft Entra provisioning service** write backs email attribute and username from Microsoft Entra ID to the cloud HR app tenant.
 
@@ -208,9 +208,9 @@ We recommend the following production configuration:
 
 The cloud HR app to Active Directory user provisioning solution requires the deployment of one or more Microsoft Entra Connect provisioning agents. These agents must be deployed on servers that run Windows Server 2016 or greater. The servers must have a minimum of 4-GB RAM and .NET 4.7.1+ runtime. Ensure that the host server has network access to the target Active Directory domain.
 
-To prepare the on-premises environment, the Microsoft Entra Connect provisioning agent configuration wizard registers the agent with your Microsoft Entra tenant, [opens ports](../app-proxy/application-proxy-add-on-premises-application.md#open-ports), [allows access to URLs](../app-proxy/application-proxy-add-on-premises-application.md#allow-access-to-urls), and supports [outbound HTTPS proxy configuration](../saas-apps/workday-inbound-tutorial.md#how-do-i-configure-the-provisioning-agent-to-use-a-proxy-server-for-outbound-http-communication).
+To prepare the on-premises environment, the Microsoft Entra Connect provisioning agent configuration wizard registers the agent with your Microsoft Entra tenant, [opens ports](~/identity/app-proxy/application-proxy-add-on-premises-application.md#open-ports), [allows access to URLs](~/identity/app-proxy/application-proxy-add-on-premises-application.md#allow-access-to-urls), and supports [outbound HTTPS proxy configuration](~/identity/saas-apps/workday-inbound-tutorial.md#how-do-i-configure-the-provisioning-agent-to-use-a-proxy-server-for-outbound-http-communication).
 
-The provisioning agent configures a [Global Managed Service Account (GMSA)](../hybrid/cloud-sync/how-to-prerequisites.md#group-managed-service-accounts)
+The provisioning agent configures a [Global Managed Service Account (GMSA)](~/identity/hybrid/cloud-sync/how-to-prerequisites.md#group-managed-service-accounts)
 to communicate with the Active Directory domains.
 
 You can select domain controllers that should handle provisioning requests. If you have several geographically distributed domain controllers, install the provisioning agent in the same site as your preferred domain controllers. This positioning improves the reliability and performance of the end-to-end solution.
@@ -229,7 +229,7 @@ Deployment topology one is the most common deployment topology. Use this topolog
 
 **Salient configuration aspects**
 * Setup two provisioning agent nodes for high availability and failover. 
-* Use the [provisioning agent configuration wizard](../hybrid/cloud-sync/how-to-install.md#install-the-agent) to register your AD domain with your Microsoft Entra tenant. 
+* Use the [provisioning agent configuration wizard](~/identity/hybrid/cloud-sync/how-to-install.md#install-the-agent) to register your AD domain with your Microsoft Entra tenant. 
 * When configuring the provisioning app, select the AD domain from the dropdown of registered domains. 
 * If you're using scoping filters, configure [skip out of scope deletions flag](skip-out-of-scope-deletions.md) to prevent accidental account deactivations. 
 
@@ -259,7 +259,7 @@ For example: In the diagram, the provisioning apps are set up for each geographi
 
 **Salient configuration aspects**
 * Setup two provisioning agent nodes for high availability and failover. 
-* Use the [provisioning agent configuration wizard](../hybrid/cloud-sync/how-to-install.md#install-the-agent) to register all child AD domains with your Microsoft Entra tenant. 
+* Use the [provisioning agent configuration wizard](~/identity/hybrid/cloud-sync/how-to-install.md#install-the-agent) to register all child AD domains with your Microsoft Entra tenant. 
 * Create a separate HR2AD provisioning app for each target domain. 
 * When configuring the provisioning app, select the respective child AD domain from the dropdown of available AD domains. 
 * Use [scoping filters](define-conditional-rules-for-provisioning-user-accounts.md) in the provisioning app to define users that each app processes. 
@@ -276,8 +276,8 @@ For example: In the diagram, the provisioning apps are set up for each geographi
 
 **Salient configuration aspects**
 * Setup two provisioning agent nodes for high availability and failover. 
-* Configure [referral chasing](../hybrid/cloud-sync/how-to-manage-registry-options.md#configure-referral-chasing) on the provisioning agent. 
-* Use the [provisioning agent configuration wizard](../hybrid/cloud-sync/how-to-install.md#install-the-agent) to register the parent AD domain and all child AD domains with your Microsoft Entra tenant. 
+* Configure [referral chasing](~/identity/hybrid/cloud-sync/how-to-manage-registry-options.md#configure-referral-chasing) on the provisioning agent. 
+* Use the [provisioning agent configuration wizard](~/identity/hybrid/cloud-sync/how-to-install.md#install-the-agent) to register the parent AD domain and all child AD domains with your Microsoft Entra tenant. 
 * Create a separate HR2AD provisioning app for each target domain. 
 * When configuring each provisioning app, select the parent AD domain from the dropdown of available AD domains. Selecting the parent domain ensures forest-wide lookup while generating unique values for attributes like *userPrincipalName*, *samAccountName* and *mail*.
 * Use *parentDistinguishedName* with expression mapping to dynamically create user in the correct child domain and [OU container](#configure-active-directory-ou-container-assignment). 
@@ -295,8 +295,8 @@ For example: In the diagram, a single provisioning app manages users present in 
 
 **Salient configuration aspects**
 * Setup two provisioning agent nodes for high availability and failover. 
-* Configure [referral chasing](../hybrid/cloud-sync/how-to-manage-registry-options.md#configure-referral-chasing) on the provisioning agent. 
-* Use the [provisioning agent configuration wizard](../hybrid/cloud-sync/how-to-install.md#install-the-agent) to register the parent AD domain and all child AD domains with your Microsoft Entra tenant. 
+* Configure [referral chasing](~/identity/hybrid/cloud-sync/how-to-manage-registry-options.md#configure-referral-chasing) on the provisioning agent. 
+* Use the [provisioning agent configuration wizard](~/identity/hybrid/cloud-sync/how-to-install.md#install-the-agent) to register the parent AD domain and all child AD domains with your Microsoft Entra tenant. 
 * Create a single HR2AD provisioning app for the entire forest. 
 * When configuring the provisioning app, select the parent AD domain from the dropdown of available AD domains. Selecting the parent domain ensures forest-wide lookup while generating unique values for attributes like *userPrincipalName*, *samAccountName* and *mail*.
 * Use *parentDistinguishedName* with expression mapping to dynamically create user in the correct child domain and [OU container](#configure-active-directory-ou-container-assignment). 
@@ -311,7 +311,7 @@ Use this topology if your IT infrastructure has disconnected/disjoint AD forests
 **Salient configuration aspects**
 * Setup two different sets of provisioning agents for high availability and failover, one for each forest. 
 * Create two different provisioning apps, one for each forest. 
-* If you need to resolve cross domain references within the forest, enable [referral chasing](../hybrid/cloud-sync/how-to-manage-registry-options.md#configure-referral-chasing) on the provisioning agent. 
+* If you need to resolve cross domain references within the forest, enable [referral chasing](~/identity/hybrid/cloud-sync/how-to-manage-registry-options.md#configure-referral-chasing) on the provisioning agent. 
 * Create a separate HR2AD provisioning app for each disconnected forest. 
 * When configuring each provisioning app, select the appropriate parent AD domain from the dropdown of available AD domain names. 
 * Configure [skip out of scope deletions flag](skip-out-of-scope-deletions.md) to prevent accidental account deactivations. 
@@ -324,7 +324,7 @@ In large organizations, it isn't uncommon to have multiple HR systems. During bu
 
 **Salient configuration aspects**
 * Setup two different sets of provisioning agents for high availability and failover, one for each forest. 
-* If you need to resolve cross domain references within the forest, enable [referral chasing](../hybrid/cloud-sync/how-to-manage-registry-options.md#configure-referral-chasing) on the provisioning agent. 
+* If you need to resolve cross domain references within the forest, enable [referral chasing](~/identity/hybrid/cloud-sync/how-to-manage-registry-options.md#configure-referral-chasing) on the provisioning agent. 
 * Create a separate HR2AD provisioning app for each HR system and on-premises Active Directory combination.
 * When configuring each provisioning app, select the appropriate parent AD domain from the dropdown of available AD domain names. 
 * Configure [skip out of scope deletions flag](skip-out-of-scope-deletions.md) to prevent accidental account deactivations. 
@@ -363,7 +363,7 @@ By default, the attribute in the cloud HR app that represents the unique employe
 
 You can set multiple matching attributes and assign matching precedence. They're evaluated on matching precedence. As soon as a match is found, no further matching attributes are evaluated.
 
-You can also [customize the default attribute mappings](~/identity/app-provisioning/customize-application-attributes.md#understanding-attribute-mapping-types), such as changing or deleting existing attribute mappings. You can also create new attribute mappings according to your business needs. For more information, see the cloud HR app tutorial (such as [Workday](../saas-apps/workday-inbound-tutorial.md#managing-your-configuration)) for a list of custom attributes to map.
+You can also [customize the default attribute mappings](~/identity/app-provisioning/customize-application-attributes.md#understanding-attribute-mapping-types), such as changing or deleting existing attribute mappings. You can also create new attribute mappings according to your business needs. For more information, see the cloud HR app tutorial (such as [Workday](~/identity/saas-apps/workday-inbound-tutorial.md#managing-your-configuration)) for a list of custom attributes to map.
 
 ### Determine user account status
 
@@ -400,7 +400,7 @@ When you initiate the Joiners-Movers-Leavers process, gather the following requi
 | | What effective dates are considered for processing user termination? |
 | | How do employee and contingent worker conversions impact existing Active Directory accounts? |
 
-Depending on your requirements, you can modify the mappings to meet your integration goals. For more information, see the specific cloud HR app tutorial (such as [Workday](../saas-apps/workday-inbound-tutorial.md#part-4-configure-attribute-mappings)) for a list of custom attributes to map.
+Depending on your requirements, you can modify the mappings to meet your integration goals. For more information, see the specific cloud HR app tutorial (such as [Workday](~/identity/saas-apps/workday-inbound-tutorial.md#part-4-configure-attribute-mappings)) for a list of custom attributes to map.
 
 ### Generate a unique attribute value
 Attributes like CN, samAccountName, and the UPN have unique constraints. You may need to generate unique attribute values when you initiate the Joiners process.
@@ -479,9 +479,9 @@ The cloud HR user provisioning implementation might fail to work as desired in t
 
 Choose the cloud HR app that aligns to your solution requirements.
 
-**Workday**: To import worker profiles from Workday into Active Directory and Microsoft Entra ID, see [Tutorial: Configure Workday for automatic user provisioning](../saas-apps/workday-inbound-tutorial.md#planning-your-deployment). Optionally, you can write back the email address, username and phone number to Workday.
+**Workday**: To import worker profiles from Workday into Active Directory and Microsoft Entra ID, see [Tutorial: Configure Workday for automatic user provisioning](~/identity/saas-apps/workday-inbound-tutorial.md#planning-your-deployment). Optionally, you can write back the email address, username and phone number to Workday.
 
-**SAP SuccessFactors**: To import worker profiles from SuccessFactors into Active Directory and Microsoft Entra ID, see [Tutorial: Configure SAP SuccessFactors for automatic user provisioning](../saas-apps/sap-successfactors-inbound-provisioning-tutorial.md). Optionally, you can write back the email address and username to SuccessFactors.
+**SAP SuccessFactors**: To import worker profiles from SuccessFactors into Active Directory and Microsoft Entra ID, see [Tutorial: Configure SAP SuccessFactors for automatic user provisioning](~/identity/saas-apps/sap-successfactors-inbound-provisioning-tutorial.md). Optionally, you can write back the email address and username to SuccessFactors.
 
 ## Manage your configuration
 
@@ -503,7 +503,7 @@ All activities performed by the provisioning service are recorded in the Microso
 
 Install the [log analytics views for Microsoft Entra activity logs](/azure/azure-monitor/visualize/workbooks-view-designer-conversion-overview) to get access to [prebuilt reports](https://github.com/AzureAD/Deployment-Plans/tree/master/Log%20Analytics%20Views) around provisioning events in your environment.
 
-For more information, see how to [analyze the Microsoft Entra activity logs with your Azure Monitor logs](../reports-monitoring/howto-analyze-activity-logs-log-analytics.md).
+For more information, see how to [analyze the Microsoft Entra activity logs with your Azure Monitor logs](~/identity/monitoring-health/howto-analyze-activity-logs-log-analytics.md).
 
 ### Manage personal data
 
@@ -520,11 +520,11 @@ To troubleshoot any issues that might turn up during provisioning, see the follo
 - [Problem saving administrator credentials while configuring user provisioning to a Microsoft Entra Gallery application](./user-provisioning.md)
 - [No users are being provisioned to a Microsoft Entra Gallery application](application-provisioning-config-problem-no-users-provisioned.md)
 - [Wrong set of users are being provisioned to a Microsoft Entra Gallery application](~/identity/enterprise-apps/add-application-portal-assign-users.md)
-- [Setting up Windows Event Viewer for agent troubleshooting](../saas-apps/workday-inbound-tutorial.md#setting-up-windows-event-viewer-for-agent-troubleshooting)
-- [Setting up Audit Logs for service troubleshooting](../saas-apps/workday-inbound-tutorial.md#setting-up-azure-portal-audit-logs-for-service-troubleshooting)
-- [Understanding logs for AD User Account create operations](../saas-apps/workday-inbound-tutorial.md#understanding-logs-for-ad-user-account-create-operations)
-- [Understanding logs for Manager update operations](../saas-apps/workday-inbound-tutorial.md#understanding-logs-for-manager-update-operations)
-- [Resolving commonly encountered errors](../saas-apps/workday-inbound-tutorial.md#resolving-commonly-encountered-errors)
+- [Setting up Windows Event Viewer for agent troubleshooting](~/identity/saas-apps/workday-inbound-tutorial.md#setting-up-windows-event-viewer-for-agent-troubleshooting)
+- [Setting up Audit Logs for service troubleshooting](~/identity/saas-apps/workday-inbound-tutorial.md#setting-up-azure-portal-audit-logs-for-service-troubleshooting)
+- [Understanding logs for AD User Account create operations](~/identity/saas-apps/workday-inbound-tutorial.md#understanding-logs-for-ad-user-account-create-operations)
+- [Understanding logs for Manager update operations](~/identity/saas-apps/workday-inbound-tutorial.md#understanding-logs-for-manager-update-operations)
+- [Resolving commonly encountered errors](~/identity/saas-apps/workday-inbound-tutorial.md#resolving-commonly-encountered-errors)
 
 ### Next steps
 

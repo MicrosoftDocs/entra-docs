@@ -31,11 +31,11 @@ When users access a sensitive application, an administrator may factor multiple 
 
 ## Sign-in risk
 
-Administrators with access to [Identity Protection](../identity-protection/overview-identity-protection.md), can evaluate sign-in risk as part of a Conditional Access policy. Sign-in risk represents the probability that a given authentication request wasn't made by the identity owner. More information about sign-in risk can be found in the articles, [What is risk](../identity-protection/concept-identity-protection-risks.md) and [How To: Configure and enable risk policies](../identity-protection/howto-identity-protection-configure-risk-policies.md).
+Administrators with access to [Identity Protection](~/id-protection/overview-identity-protection.md), can evaluate sign-in risk as part of a Conditional Access policy. Sign-in risk represents the probability that a given authentication request wasn't made by the identity owner. More information about sign-in risk can be found in the articles, [What is risk](~/id-protection/concept-identity-protection-risks.md) and [How To: Configure and enable risk policies](~/id-protection/howto-identity-protection-configure-risk-policies.md).
 
 ## User risk 
 
-Administrators with access to [Identity Protection](../identity-protection/overview-identity-protection.md), can evaluate user risk as part of a Conditional Access policy. User risk represents the probability that a given identity or account is compromised. More information about user risk can be found in the articles, [What is risk](../identity-protection/concept-identity-protection-risks.md) and [How To: Configure and enable risk policies](../identity-protection/howto-identity-protection-configure-risk-policies.md).
+Administrators with access to [Identity Protection](~/id-protection/overview-identity-protection.md), can evaluate user risk as part of a Conditional Access policy. User risk represents the probability that a given identity or account is compromised. More information about user risk can be found in the articles, [What is risk](~/id-protection/concept-identity-protection-risks.md) and [How To: Configure and enable risk policies](~/id-protection/howto-identity-protection-configure-risk-policies.md).
 
 ## Device platforms
 

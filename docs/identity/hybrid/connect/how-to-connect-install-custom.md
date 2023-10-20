@@ -79,7 +79,7 @@ If your Global Administrator account has multifactor authentication enabled, you
 
 ![Screenshot showing the "Connect to Microsoft Entra ID" page. A multifactor authentication field prompts the user for a code.](./media/how-to-connect-install-custom/connectaadmfa.png)
 
-The Global Administrator account can also have [privileged identity management](../../privileged-identity-management/pim-getting-started.md) enabled.
+The Global Administrator account can also have [privileged identity management](~/id-governance/privileged-identity-management/pim-getting-started.md) enabled.
 
 To use authentication support for non-password scenarios such as federated accounts, smartcards and MFA scenarios, you can provide the switch **/InteractiveAuth** when starting the wizard. Using this switch will bypass the Wizard's authentication user interface and use the MSAL library's UI to handle the authentication.
 

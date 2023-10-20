@@ -30,7 +30,7 @@ For more information, see [Prerequisites to use PowerShell or Graph Explorer](pr
 
 ## Microsoft Entra admin center
 
-Follow these steps to assign Microsoft Entra roles using the Microsoft Entra admin center. Your experience will be different depending on whether you have [Microsoft Entra Privileged Identity Management (PIM)](../privileged-identity-management/pim-configure.md) enabled.
+Follow these steps to assign Microsoft Entra roles using the Microsoft Entra admin center. Your experience will be different depending on whether you have [Microsoft Entra Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/pim-configure.md) enabled.
 
 ### Assign a role
 
@@ -58,9 +58,9 @@ Follow these steps to assign Microsoft Entra roles using the Microsoft Entra adm
 
 ### Assign a role using PIM
 
-If you have [Microsoft Entra Privileged Identity Management (PIM)](../privileged-identity-management/pim-configure.md) enabled, you have additional role assignment capabilities. For example, you can make a user eligible for a role or set the duration. When PIM is enabled, there are two ways that you can assign roles using the Microsoft Entra admin center. You can use the Roles and administrators page or the PIM experience. Either way uses the same PIM service.
+If you have [Microsoft Entra Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/pim-configure.md) enabled, you have additional role assignment capabilities. For example, you can make a user eligible for a role or set the duration. When PIM is enabled, there are two ways that you can assign roles using the Microsoft Entra admin center. You can use the Roles and administrators page or the PIM experience. Either way uses the same PIM service.
 
-Follow these steps to assign roles using the **Roles and administrators** page. If you want to assign roles using Privileged Identity Management, see [Assign Microsoft Entra roles in Privileged Identity Management](../privileged-identity-management/pim-how-to-add-role-to-user.md).
+Follow these steps to assign roles using the **Roles and administrators** page. If you want to assign roles using Privileged Identity Management, see [Assign Microsoft Entra roles in Privileged Identity Management](~/id-governance/privileged-identity-management/pim-how-to-add-role-to-user.md).
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
@@ -84,7 +84,7 @@ Follow these steps to assign roles using the **Roles and administrators** page. 
 
 1. On the **Setting** tab, select whether you wan to make this role assignment **Eligible** or **Active**.
 
-    An eligible role assignment means that the user must perform one or more actions to use the role. An active role assignment means that the user doesn't have to perform any action to use the role. For more information about what these settings mean, see [PIM terminology](../privileged-identity-management/pim-configure.md#terminology).
+    An eligible role assignment means that the user must perform one or more actions to use the role. An active role assignment means that the user doesn't have to perform any action to use the role. For more information about what these settings mean, see [PIM terminology](~/id-governance/privileged-identity-management/pim-configure.md#terminology).
 
     ![Screenshot of Add assignments page and Setting tab with PIM enabled.](./media/manage-roles-portal/add-assignments-pim-setting.png)
 

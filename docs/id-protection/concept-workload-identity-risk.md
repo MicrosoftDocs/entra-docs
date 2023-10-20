@@ -80,9 +80,9 @@ Organizations can export data by configurating [diagnostic settings in Microsoft
 
 ## Enforce access controls with risk-based Conditional Access
 
-Using [Conditional Access for workload identities](../conditional-access/workload-identity.md), you can block access for specific accounts you choose when Identity Protection marks them "at risk." Policy can be applied to single-tenant service principals that have been registered in your tenant. Third-party SaaS, multi-tenanted apps, and managed identities are out of scope.
+Using [Conditional Access for workload identities](~/identity/conditional-access/workload-identity.md), you can block access for specific accounts you choose when Identity Protection marks them "at risk." Policy can be applied to single-tenant service principals that have been registered in your tenant. Third-party SaaS, multi-tenanted apps, and managed identities are out of scope.
 
-For improved security and resilience of your workload identities, Continuous Access Evaluation (CAE) for workload identities is a powerful tool that offers instant enforcement of your Conditional Access policies and any detected risk signals. CAE-enabled third party workload identities accessing CAE-capable first party resources are equipped with 24 hour Long Lived Tokens (LLT's) that are subject to continuous security checks. Refer to the [CAE for workload identities documentation](../conditional-access/concept-continuous-access-evaluation-workload.md) for information on configuring workload identity clients for CAE and up to date feature scope. 
+For improved security and resilience of your workload identities, Continuous Access Evaluation (CAE) for workload identities is a powerful tool that offers instant enforcement of your Conditional Access policies and any detected risk signals. CAE-enabled third party workload identities accessing CAE-capable first party resources are equipped with 24 hour Long Lived Tokens (LLT's) that are subject to continuous security checks. Refer to the [CAE for workload identities documentation](~/identity/conditional-access/concept-continuous-access-evaluation-workload.md) for information on configuring workload identity clients for CAE and up to date feature scope. 
 
 ## Investigate risky workload identities
 
@@ -112,8 +112,8 @@ The [Microsoft Entra Toolkit](https://github.com/microsoft/AzureADToolkit) is a 
 
 ## Next steps
 
-- [Conditional Access for workload identities](../conditional-access/workload-identity.md)
+- [Conditional Access for workload identities](~/identity/conditional-access/workload-identity.md)
 - [Microsoft Graph API](/graph/use-the-api)
-- [Microsoft Entra audit logs](../reports-monitoring/concept-audit-logs.md)
-- [Microsoft Entra sign-in logs](../reports-monitoring/concept-sign-ins.md)
+- [Microsoft Entra audit logs](~/identity/monitoring-health/concept-audit-logs.md)
+- [Microsoft Entra sign-in logs](~/identity/monitoring-health/concept-sign-ins.md)
 - [Simulate risk detections](howto-identity-protection-simulate-risk.md)

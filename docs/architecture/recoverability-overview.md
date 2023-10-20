@@ -152,7 +152,7 @@ The deletion of some objects can cause a ripple effect because of dependencies. 
 
 ## Monitoring and data retention
 
-The [Microsoft Entra audit log](../reports-monitoring/concept-audit-logs.md) contains information on all delete and configuration operations performed in your tenant. We recommend that you export these logs to a security information and event management tool such as [Microsoft Sentinel](/azure/sentinel/overview). You can also use Microsoft Graph to audit changes and build a custom solution to monitor differences over time. For more information on finding deleted items by using Microsoft Graph, see [List deleted items - Microsoft Graph v1.0](/graph/api/directory-deleteditems-list?tabs=http).
+The [Microsoft Entra audit log](~/identity/monitoring-health/concept-audit-logs.md) contains information on all delete and configuration operations performed in your tenant. We recommend that you export these logs to a security information and event management tool such as [Microsoft Sentinel](/azure/sentinel/overview). You can also use Microsoft Graph to audit changes and build a custom solution to monitor differences over time. For more information on finding deleted items by using Microsoft Graph, see [List deleted items - Microsoft Graph v1.0](/graph/api/directory-deleteditems-list?tabs=http).
 
 ### Audit logs
 
@@ -183,14 +183,14 @@ For information on monitoring configuration changes, see [Recover from misconfig
 
 Azure Monitor workbooks can help you monitor configuration changes.
 
-The [Sensitive operations report workbook](../reports-monitoring/workbook-sensitive-operations-report.md) can help identify suspicious application and service principal activity that might indicate a compromise, including:
+The [Sensitive operations report workbook](~/identity/monitoring-health/workbook-sensitive-operations-report.md) can help identify suspicious application and service principal activity that might indicate a compromise, including:
 
 - Modified application or service principal credentials or authentication methods.
 - New permissions granted to service principals.
 - Directory role and group membership updates for service principals.
 - Modified federation settings.
 
-The [Cross-tenant access activity workbook](../reports-monitoring/workbook-cross-tenant-access-activity.md)can help you monitor which applications in external tenants your users are accessing and which applications in your tenant external users are accessing. Use this workbook to look for anomalous changes in either inbound or outbound application access across tenants.
+The [Cross-tenant access activity workbook](~/identity/monitoring-health/workbook-cross-tenant-access-activity.md)can help you monitor which applications in external tenants your users are accessing and which applications in your tenant external users are accessing. Use this workbook to look for anomalous changes in either inbound or outbound application access across tenants.
 
 ## Operational security
 
@@ -198,7 +198,7 @@ Preventing unwanted changes is far less difficult than needing to re-create and 
 
 - Use a least privilege model. Ensure that each member of your team has the least privileges necessary to complete their usual tasks. Require a process to escalate privileges for more unusual tasks.
 - Administrative control of an object enables configuration and deletion. Use read-only admin roles, for example, the Global Reader role, for tasks that don't require operations to create, update, or delete (CRUD). When CRUD operations are required, use object-specific roles when possible. For example, User administrators can delete only users, and Application administrators can delete only applications. Use these more limited roles whenever possible, instead of a Global administrator role, which can delete anything, including the tenant.
-- [Use Privileged Identity Management (PIM)](../privileged-identity-management/pim-configure.md). PIM enables just-in-time escalation of privileges to perform tasks like hard deletion. You can configure PIM to have notifications or approvals for the privilege escalation.
+- [Use Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/pim-configure.md). PIM enables just-in-time escalation of privileges to perform tasks like hard deletion. You can configure PIM to have notifications or approvals for the privilege escalation.
 
 ## Next steps
 

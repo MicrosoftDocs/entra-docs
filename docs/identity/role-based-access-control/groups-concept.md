@@ -56,7 +56,7 @@ Role-assignable groups are designed to help prevent potential breaches by having
 
 ## Use PIM to make a group eligible for a role assignment
 
-If you don't want members of the group to have standing access to a role, you can use [Microsoft Entra Privileged Identity Management (PIM)](../privileged-identity-management/pim-configure.md) to make a group eligible for a role assignment. Each member of the group is then eligible to activate the role assignment for a fixed time duration.
+If you don't want members of the group to have standing access to a role, you can use [Microsoft Entra Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/pim-configure.md) to make a group eligible for a role assignment. Each member of the group is then eligible to activate the role assignment for a fixed time duration.
 
 [!INCLUDE [PIM for Groups note](~/includes/pim-for-groups-include.md)]
 

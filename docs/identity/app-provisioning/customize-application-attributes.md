@@ -359,4 +359,4 @@ Selecting this option forces a resynchronization of all users while the provisio
 - [Writing Expressions for Attribute-Mappings](functions-for-customizing-application-data.md)
 - [Scoping Filters for User Provisioning](define-conditional-rules-for-provisioning-user-accounts.md)
 - [Using SCIM to enable automatic provisioning of users and groups from Microsoft Entra ID to applications](use-scim-to-provision-users-and-groups.md)
-- [List of Tutorials on How to Integrate SaaS Apps](../saas-apps/tutorial-list.md)
+- [List of Tutorials on How to Integrate SaaS Apps](~/identity/saas-apps/tutorial-list.md)

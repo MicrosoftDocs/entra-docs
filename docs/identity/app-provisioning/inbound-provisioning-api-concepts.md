@@ -24,7 +24,7 @@ This document provides a conceptual overview of the Microsoft Entra API-driven i
 
 Today enterprises have a variety of authoritative systems of record. To establish end-to-end identity lifecycle, strengthen security posture and stay compliant with regulations, identity data in Microsoft Entra ID must be kept in sync with workforce data managed in these systems of record. The *system of record* could be an HR app, a payroll app, a spreadsheet or SQL tables in a database hosted either on-premises or in the cloud. 
 
-With API-driven inbound provisioning, the Microsoft Entra provisioning service now supports integration with *any* system of record. Customers and partners can use *any* automation tool of their choice to retrieve workforce data from the system of record and ingest it into Microsoft Entra ID. The IT admin has full control on how the data is processed and transformed with attribute mappings. Once the workforce data is available in Microsoft Entra ID, the IT admin can configure appropriate joiner-mover-leaver business processes using [Lifecycle Workflows](../governance/what-are-lifecycle-workflows.md).  
+With API-driven inbound provisioning, the Microsoft Entra provisioning service now supports integration with *any* system of record. Customers and partners can use *any* automation tool of their choice to retrieve workforce data from the system of record and ingest it into Microsoft Entra ID. The IT admin has full control on how the data is processed and transformed with attribute mappings. Once the workforce data is available in Microsoft Entra ID, the IT admin can configure appropriate joiner-mover-leaver business processes using [Lifecycle Workflows](~/id-governance/what-are-lifecycle-workflows.md).  
 
 ## Supported scenarios
 
@@ -73,7 +73,7 @@ In all the above scenarios, the integration is greatly simplified as Microsoft E
 - The rate limit for the inbound provisioning API is 40 bulk upload requests per second. Each bulk request can contain a maximum of 50 user records, thereby supporting an upload rate of 2000 records per second. 
 - Each API endpoint is associated with a specific provisioning app in Microsoft Entra ID. You can integrate multiple data sources by creating a provisioning app for each data source. 
 - Incoming bulk request payloads are processed in near real-time.
-- Admins can check provisioning progress by viewing the [provisioning logs](../reports-monitoring/concept-provisioning-logs.md). 
+- Admins can check provisioning progress by viewing the [provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md). 
 - API clients can track progress by querying [provisioning logs API](/graph/api/resources/provisioningobjectsummary).
 
 ### Recommended learning path

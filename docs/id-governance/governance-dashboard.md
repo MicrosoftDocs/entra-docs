@@ -50,4 +50,4 @@ You may see two types of errors on the dashboard:
 - [What are Lifecycle workflows?](what-are-lifecycle-workflows.md)
 - [What are Microsoft Entra access reviews](access-reviews-overview.md)
 - [What is Microsoft Entra entitlement management?](entitlement-management-overview.md)
-- [What is Microsoft Entra Privileged Identity Management?](../privileged-identity-management/pim-configure.md)
+- [What is Microsoft Entra Privileged Identity Management?](~/id-governance/privileged-identity-management/pim-configure.md)

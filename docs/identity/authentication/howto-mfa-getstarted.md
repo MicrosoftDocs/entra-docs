@@ -14,7 +14,7 @@ ms.collection: M365-identity-device-management
 ---
 # Plan a Microsoft Entra multifactor authentication deployment 
 
-Microsoft Entra multifactor authentication helps safeguard access to data and applications, providing another layer of security by using a second form of authentication. Organizations can enable multifactor authentication with [Conditional Access](../conditional-access/overview.md) to make the solution fit their specific needs.
+Microsoft Entra multifactor authentication helps safeguard access to data and applications, providing another layer of security by using a second form of authentication. Organizations can enable multifactor authentication with [Conditional Access](~/identity/conditional-access/overview.md) to make the solution fit their specific needs.
 
 This deployment guide shows you how to plan and implement an [Microsoft Entra multifactor authentication](concept-mfa-howitworks.md) roll-out.
 
@@ -27,8 +27,8 @@ Before you begin your deployment, ensure you meet the following prerequisites fo
 | Scenario | Prerequisite |
 |----------|--------------|
 |**Cloud-only** identity environment with modern authentication | **No prerequisite tasks** |
-|**Hybrid identity** scenarios | Deploy [Microsoft Entra Connect](../hybrid/whatis-hybrid-identity.md) and synchronize user identities between the on-premises Active Directory Domain Services (AD DS) and Microsoft Entra ID. |
-| **On-premises legacy applications** published for cloud access| Deploy [Microsoft Entra application proxy](../app-proxy/application-proxy-deployment-plan.md) |
+|**Hybrid identity** scenarios | Deploy [Microsoft Entra Connect](~/identity/hybrid/whatis-hybrid-identity.md) and synchronize user identities between the on-premises Active Directory Domain Services (AD DS) and Microsoft Entra ID. |
+| **On-premises legacy applications** published for cloud access| Deploy [Microsoft Entra application proxy](~/identity/app-proxy/application-proxy-deployment-plan.md) |
 
 ## Choose authentication methods for MFA
 
@@ -57,7 +57,7 @@ To learn more about the strength and security of these methods and how they work
 
 You can use this [PowerShell script](/samples/azure-samples/azure-mfa-authentication-method-analysis/azure-mfa-authentication-method-analysis/) to analyze users' MFA configurations and suggest the appropriate MFA authentication method. 
 
-For the best flexibility and usability, use the Microsoft Authenticator app. This authentication method provides the best user experience and multiple modes, such as passwordless, MFA push notifications, and OATH codes. The Microsoft Authenticator app also meets the National Institute of Standards and Technology (NIST) [Authenticator Assurance Level 2 requirements](../standards/nist-authenticator-assurance-level-2.md).
+For the best flexibility and usability, use the Microsoft Authenticator app. This authentication method provides the best user experience and multiple modes, such as passwordless, MFA push notifications, and OATH codes. The Microsoft Authenticator app also meets the National Institute of Standards and Technology (NIST) [Authenticator Assurance Level 2 requirements](~/standards/nist-authenticator-assurance-level-2.md).
 
 You can control the authentication methods available in your tenant. For example, you may want to block some of the least secure methods, such as SMS.
 
@@ -83,7 +83,7 @@ To learn more about creating Conditional Access policies, see [Conditional Acces
 - Become familiar with the user interface
 - Get a first impression of how Conditional Access works
 
-For end-to-end guidance on Microsoft Entra Conditional Access deployment, see the [Conditional Access deployment plan](../conditional-access/plan-conditional-access.md).
+For end-to-end guidance on Microsoft Entra Conditional Access deployment, see the [Conditional Access deployment plan](~/identity/conditional-access/plan-conditional-access.md).
 
 <a name='common-policies-for-azure-ad-multi-factor-authentication'></a>
 
@@ -91,25 +91,25 @@ For end-to-end guidance on Microsoft Entra Conditional Access deployment, see th
 
 Common use cases to require Microsoft Entra multifactor authentication include:
 
-- For [administrators](../conditional-access/howto-conditional-access-policy-admin-mfa.md)
+- For [administrators](~/identity/conditional-access/howto-conditional-access-policy-admin-mfa.md)
 - To [specific applications](tutorial-enable-azure-mfa.md)
-- For [all users](../conditional-access/howto-conditional-access-policy-all-users-mfa.md)
-- For [Azure management](../conditional-access/howto-conditional-access-policy-azure-management.md)
-- From [network locations you don't trust](../conditional-access/howto-conditional-access-policy-all-users-mfa.md)
+- For [all users](~/identity/conditional-access/howto-conditional-access-policy-all-users-mfa.md)
+- For [Azure management](~/identity/conditional-access/howto-conditional-access-policy-azure-management.md)
+- From [network locations you don't trust](~/identity/conditional-access/howto-conditional-access-policy-all-users-mfa.md)
 
 ### Named locations
 
-To manage your Conditional Access policies, the location condition of a Conditional Access policy enables you to tie access controls settings to the network locations of your users. We recommend using [Named Locations](../conditional-access/location-condition.md) so that you can create logical groupings of IP address ranges or countries and regions. This creates a policy for all apps that blocks sign-in from that named location. Be sure to exempt your administrators from this policy.
+To manage your Conditional Access policies, the location condition of a Conditional Access policy enables you to tie access controls settings to the network locations of your users. We recommend using [Named Locations](~/identity/conditional-access/location-condition.md) so that you can create logical groupings of IP address ranges or countries and regions. This creates a policy for all apps that blocks sign-in from that named location. Be sure to exempt your administrators from this policy.
 
 ### Risk-based policies
 
-If your organization uses [Microsoft Entra ID Protection](../identity-protection/overview-identity-protection.md) to detect risk signals, consider using [risk-based policies](../identity-protection/howto-identity-protection-configure-risk-policies.md) instead of named locations. Policies can be created to force password changes when there is a threat of compromised identity or require MFA when a sign-in is deemed [at risk](../identity-protection/howto-identity-protection-configure-risk-policies.md) such as leaked credentials, sign-ins from anonymous IP addresses, and more. 
+If your organization uses [Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md) to detect risk signals, consider using [risk-based policies](~/id-protection/howto-identity-protection-configure-risk-policies.md) instead of named locations. Policies can be created to force password changes when there is a threat of compromised identity or require MFA when a sign-in is deemed [at risk](~/id-protection/howto-identity-protection-configure-risk-policies.md) such as leaked credentials, sign-ins from anonymous IP addresses, and more. 
 
 Risk policies include:
 
-- [Require all users to register for Microsoft Entra multifactor authentication](../identity-protection/howto-identity-protection-configure-mfa-policy.md)
-- [Require a password change for users that are high-risk](../identity-protection/howto-identity-protection-configure-risk-policies.md#user-risk-policy-in-conditional-access)
-- [Require MFA for users with medium or high sign in risk](../identity-protection/howto-identity-protection-configure-risk-policies.md#sign-in-risk-policy-in-conditional-access)
+- [Require all users to register for Microsoft Entra multifactor authentication](~/id-protection/howto-identity-protection-configure-mfa-policy.md)
+- [Require a password change for users that are high-risk](~/id-protection/howto-identity-protection-configure-risk-policies.md#user-risk-policy-in-conditional-access)
+- [Require MFA for users with medium or high sign in risk](~/id-protection/howto-identity-protection-configure-risk-policies.md#sign-in-risk-policy-in-conditional-access)
 
 ### Convert users from per-user MFA to Conditional Access based MFA
 
@@ -170,13 +170,13 @@ It's critical to inform users about upcoming changes, registration requirements,
 ### Registration with Identity Protection
 
 Microsoft Entra ID Protection contributes both a registration policy for and automated risk detection and remediation policies to the Microsoft Entra multifactor authentication story. Policies can be created to force password changes when there is a threat of compromised identity or require MFA when a sign-in is deemed risky.
-If you use Microsoft Entra ID Protection, [configure the Microsoft Entra multifactor authentication registration policy](../identity-protection/howto-identity-protection-configure-mfa-policy.md) to prompt your users to register the next time they sign in interactively.
+If you use Microsoft Entra ID Protection, [configure the Microsoft Entra multifactor authentication registration policy](~/id-protection/howto-identity-protection-configure-mfa-policy.md) to prompt your users to register the next time they sign in interactively.
 
 ### Registration without Identity Protection
 
 If you don't have licenses that enable Microsoft Entra ID Protection, users are prompted to register the next time that MFA is required at sign-in. 
 To require users to use MFA, you can use Conditional Access policies and target frequently used applications like HR systems. 
-If a user's password is compromised, it could be used to register for MFA, taking control of their account. We therefore recommend [securing the security registration process with Conditional Access policies](../conditional-access/howto-conditional-access-policy-registration.md) requiring trusted devices and locations. 
+If a user's password is compromised, it could be used to register for MFA, taking control of their account. We therefore recommend [securing the security registration process with Conditional Access policies](~/identity/conditional-access/howto-conditional-access-policy-registration.md) requiring trusted devices and locations. 
 You can further secure the process by also requiring a [Temporary Access Pass](howto-authentication-temporary-access-pass.md). A time-limited passcode issued by an admin that satisfies strong authentication requirements and can be used to onboard other authentication methods, including Passwordless ones.
 
 ### Increase the security of registered users
@@ -221,7 +221,7 @@ Others might include:
   [Citrix Gateway](https://docs.citrix.com/en-us/advanced-concepts/implementation-guides/citrix-gateway-microsoft-azure.html#microsoft-azure-mfa-deployment-methods) supports both RADIUS and NPS extension integration, and a SAML integration.
 
 - Cisco VPN
-  - The Cisco VPN supports both RADIUS and [SAML authentication for SSO](../saas-apps/cisco-anyconnect.md).
+  - The Cisco VPN supports both RADIUS and [SAML authentication for SSO](~/identity/saas-apps/cisco-anyconnect.md).
   - By moving from RADIUS authentication to SAML, you can integrate the Cisco VPN without deploying the NPS extension.
 
 - All VPNs
@@ -255,7 +255,7 @@ You can monitor authentication method registration and usage across your organiz
 
 The Microsoft Entra sign-in reports include authentication details for events when a user is prompted for MFA, and if any Conditional Access policies were in use. You can also use PowerShell for reporting on users registered for Microsoft Entra multifactor authentication. 
 
-NPS extension and AD FS logs for cloud MFA activity are now included in the [Sign-in logs](../reports-monitoring/concept-sign-ins.md), and no longer published to the **Activity report**.
+NPS extension and AD FS logs for cloud MFA activity are now included in the [Sign-in logs](~/identity/monitoring-health/concept-sign-ins.md), and no longer published to the **Activity report**.
 
 For more information, and additional Microsoft Entra multifactor authentication reports, see [Review Microsoft Entra multifactor authentication events](howto-mfa-reporting.md#view-the-azure-ad-sign-ins-report).
 

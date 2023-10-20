@@ -22,9 +22,9 @@ ms.custom: not-enterprise-apps
 
 In this tutorial, learn how to integrate your on-premises Silverfort implementation with Microsoft Entra ID.
 
-Learn more: [Microsoft Entra hybrid joined devices](../devices/concept-hybrid-join.md).
+Learn more: [Microsoft Entra hybrid joined devices](~/identity/devices/concept-hybrid-join.md).
 
-Silverfort connects assets with Microsoft Entra ID. These bridged assets appear as regular applications in Microsoft Entra ID and can be protected with [Conditional Access](../conditional-access/overview.md), single-sign-on (SSO), multifactor authentication, auditing and more. Use Silverfort to connect assets including:
+Silverfort connects assets with Microsoft Entra ID. These bridged assets appear as regular applications in Microsoft Entra ID and can be protected with [Conditional Access](~/identity/conditional-access/overview.md), single-sign-on (SSO), multifactor authentication, auditing and more. Use Silverfort to connect assets including:
 
 - Legacy and homegrown applications
 - Remote desktop and Secure Shell (SSH)

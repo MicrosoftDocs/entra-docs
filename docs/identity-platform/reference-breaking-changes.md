@@ -38,7 +38,7 @@ Check this article regularly to learn about:
 
 **Protocol impacted**: RemoteConnect
 
-RemoteConnect is a cross-device flow that is used for Microsoft Authentication Broker and Microsoft Intune related scenarios involving [Primary Refresh Tokens](../devices/concept-primary-refresh-token.md). To help prevent phishing attacks, the RemoteConnect flow will be receiving updated UX language to call out that the remote device (the device which initiated the flow) will be able to access any applications used by your organization upon successful completion of the flow.
+RemoteConnect is a cross-device flow that is used for Microsoft Authentication Broker and Microsoft Intune related scenarios involving [Primary Refresh Tokens](~/identity/devices/concept-primary-refresh-token.md). To help prevent phishing attacks, the RemoteConnect flow will be receiving updated UX language to call out that the remote device (the device which initiated the flow) will be able to access any applications used by your organization upon successful completion of the flow.
 
 The prompt that appears will look something like this: 
 

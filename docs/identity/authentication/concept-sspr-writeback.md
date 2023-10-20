@@ -15,7 +15,7 @@ ms.custom: ignite-fall-2021
 ---
 # How does self-service password reset writeback work in Microsoft Entra ID?
 
-Microsoft Entra self-service password reset (SSPR) lets users reset their passwords in the cloud, but most companies also have an on-premises Active Directory Domain Services (AD DS) environment for users. Password writeback allows password changes in the cloud to be written back to an on-premises directory in real time by using either [Microsoft Entra Connect](../hybrid/whatis-hybrid-identity.md) or [Microsoft Entra Connect cloud sync](tutorial-enable-cloud-sync-sspr-writeback.md). When users change or reset their passwords using SSPR in the cloud, the updated passwords also written back to the on-premises AD DS environment.
+Microsoft Entra self-service password reset (SSPR) lets users reset their passwords in the cloud, but most companies also have an on-premises Active Directory Domain Services (AD DS) environment for users. Password writeback allows password changes in the cloud to be written back to an on-premises directory in real time by using either [Microsoft Entra Connect](~/identity/hybrid/whatis-hybrid-identity.md) or [Microsoft Entra Connect cloud sync](tutorial-enable-cloud-sync-sspr-writeback.md). When users change or reset their passwords using SSPR in the cloud, the updated passwords also written back to the on-premises AD DS environment.
 
 > [!IMPORTANT]
 > This conceptual article explains to an administrator how self-service password reset writeback works. If you're an end user already registered for self-service password reset and need to get back into your account, go to https://aka.ms/sspr.
@@ -24,9 +24,9 @@ Microsoft Entra self-service password reset (SSPR) lets users reset their passwo
 
 Password writeback is supported in environments that use the following hybrid identity models:
 
-* [Password hash synchronization](../hybrid/connect/how-to-connect-password-hash-synchronization.md)
-* [Pass-through authentication](../hybrid/connect/how-to-connect-pta.md)
-* [Active Directory Federation Services](../hybrid/connect/how-to-connect-fed-management.md)
+* [Password hash synchronization](~/identity/hybrid/connect/how-to-connect-password-hash-synchronization.md)
+* [Pass-through authentication](~/identity/hybrid/connect/how-to-connect-pta.md)
+* [Active Directory Federation Services](~/identity/hybrid/connect/how-to-connect-fed-management.md)
 
 Password writeback provides the following features:
 
@@ -49,7 +49,7 @@ To get started with SSPR writeback, complete either one or both of the following
 
 ## Microsoft Entra Connect and cloud sync side-by-side deployment
 
-You can deploy Microsoft Entra Connect and cloud sync side-by-side in different domains to target different sets of users. This helps existing users continue to writeback password changes while adding the option in cases where users are in disconnected domains because of a company merger or split. Microsoft Entra Connect and cloud sync can be configured in different domains so users from one domain can use Microsoft Entra Connect while users in another domain use cloud sync. Cloud sync can also provide higher availability because it doesn't rely on a single instance of Microsoft Entra Connect. For a feature comparison between the two deployment options, see [Comparison between Microsoft Entra Connect and cloud sync](../hybrid/cloud-sync/what-is-cloud-sync.md#comparison-between-azure-ad-connect-and-cloud-sync).
+You can deploy Microsoft Entra Connect and cloud sync side-by-side in different domains to target different sets of users. This helps existing users continue to writeback password changes while adding the option in cases where users are in disconnected domains because of a company merger or split. Microsoft Entra Connect and cloud sync can be configured in different domains so users from one domain can use Microsoft Entra Connect while users in another domain use cloud sync. Cloud sync can also provide higher availability because it doesn't rely on a single instance of Microsoft Entra Connect. For a feature comparison between the two deployment options, see [Comparison between Microsoft Entra Connect and cloud sync](~/identity/hybrid/cloud-sync/what-is-cloud-sync.md#comparison-between-azure-ad-connect-and-cloud-sync).
 
 ## How password writeback works
 
@@ -156,7 +156,7 @@ Passwords aren't written back in any of the following situations:
    * Any administrator cannot use password reset tool to reset their own password for password writeback.
 
 > [!WARNING]
-> Use of the checkbox "User must change password at next logon" in on-premises AD DS administrative tools like Active Directory Users and Computers or the Active Directory Administrative Center is supported as a preview feature of Microsoft Entra Connect. For more information, see [Implement password hash synchronization with Microsoft Entra Connect Sync](../hybrid/connect/how-to-connect-password-hash-synchronization.md).
+> Use of the checkbox "User must change password at next logon" in on-premises AD DS administrative tools like Active Directory Users and Computers or the Active Directory Administrative Center is supported as a preview feature of Microsoft Entra Connect. For more information, see [Implement password hash synchronization with Microsoft Entra Connect Sync](~/identity/hybrid/connect/how-to-connect-password-hash-synchronization.md).
 
 > [!NOTE]
 > If a user has the option "Password never expires" set in Active Directory (AD), the force password change flag will not be set in Active Directory (AD), so the user will not be prompted to change the password during the next sign-in even if the option to force the user to change their password on next logon option is selected during an administrator-initiated end-user password reset.

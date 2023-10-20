@@ -32,11 +32,11 @@ landingContent:
       - linkListType: how-to-guide
         links:
         - text: Remove unused applications
-          url: ../reports-monitoring/recommendation-remove-unused-apps.md?toc=/azure/active-directory/workload-identities/toc.json&bc=/azure/active-directory/workload-identities/breadcrumb/toc.json
+          url: ~/identity/monitoring-health/recommendation-remove-unused-apps.md?toc=/azure/active-directory/workload-identities/toc.json&bc=/azure/active-directory/workload-identities/breadcrumb/toc.json
         - text: Remove unused credentials from apps
-          url: ../reports-monitoring/recommendation-remove-unused-credential-from-apps.md?toc=/azure/active-directory/workload-identities/toc.json&bc=/azure/active-directory/workload-identities/breadcrumb/toc.json
+          url: ~/identity/monitoring-health/recommendation-remove-unused-credential-from-apps.md?toc=/azure/active-directory/workload-identities/toc.json&bc=/azure/active-directory/workload-identities/breadcrumb/toc.json
         - text: Renew expiring application credentials
-          url: ../reports-monitoring/recommendation-renew-expiring-application-credential.md?toc=/azure/active-directory/workload-identities/toc.json&bc=/azure/active-directory/workload-identities/breadcrumb/toc.json
+          url: ~/identity/monitoring-health/recommendation-renew-expiring-application-credential.md?toc=/azure/active-directory/workload-identities/toc.json&bc=/azure/active-directory/workload-identities/breadcrumb/toc.json
 # Card
   - title: Connect workloads without managing secrets
     linkLists:
@@ -67,32 +67,32 @@ landingContent:
       - linkListType: overview
         links:
           - text: Secure workload identities
-            url: ../identity-protection/concept-workload-identity-risk.md?toc=/azure/active-directory/workload-identities/toc.json&bc=/azure/active-directory/workload-identities/breadcrumb/toc.json
+            url: ~/id-protection/concept-workload-identity-risk.md?toc=/azure/active-directory/workload-identities/toc.json&bc=/azure/active-directory/workload-identities/breadcrumb/toc.json
     # Card
   - title: Apply Conditional Access policies to service principals
     linkLists:
       - linkListType: how-to-guide
         links:
           - text: Conditional Access for workload identities
-            url: ../conditional-access/workload-identity.md?toc=/azure/active-directory/workload-identities/toc.json&bc=/azure/active-directory/workload-identities/breadcrumb/toc.json
+            url: ~/identity/conditional-access/workload-identity.md?toc=/azure/active-directory/workload-identities/toc.json&bc=/azure/active-directory/workload-identities/breadcrumb/toc.json
   # Card
   - title: Enable real-time enforcement of Conditional Access location and risk policies
     linkLists:
       - linkListType: how-to-guide
         links:
           - text: Continuous access evaluation for workload identities
-            url: ../conditional-access/concept-continuous-access-evaluation-workload.md?toc=/azure/active-directory/workload-identities/toc.json&bc=/azure/active-directory/workload-identities/breadcrumb/toc.json
+            url: ~/identity/conditional-access/concept-continuous-access-evaluation-workload.md?toc=/azure/active-directory/workload-identities/toc.json&bc=/azure/active-directory/workload-identities/breadcrumb/toc.json
   # Card
   - title: Contain threats and reduce risk to workload identities
     linkLists:
       - linkListType: how-to-guide
         links:
           - text: Identity Protection
-            url: ../identity-protection/concept-workload-identity-risk.md?toc=/azure/active-directory/workload-identities/toc.json&bc=/azure/active-directory/workload-identities/breadcrumb/toc.json
+            url: ~/id-protection/concept-workload-identity-risk.md?toc=/azure/active-directory/workload-identities/toc.json&bc=/azure/active-directory/workload-identities/breadcrumb/toc.json
   # Card
   - title: Review service principals and applications privileged directory roles
     linkLists:
       - linkListType: how-to-guide
         links:
           - text: Access reviews for service principals
-            url: ../privileged-identity-management/pim-create-roles-and-resource-roles-review.md?toc=/azure/active-directory/workload-identities/toc.json&bc=/azure/active-directory/workload-identities/breadcrumb/toc.json
+            url: ~/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md?toc=/azure/active-directory/workload-identities/toc.json&bc=/azure/active-directory/workload-identities/breadcrumb/toc.json

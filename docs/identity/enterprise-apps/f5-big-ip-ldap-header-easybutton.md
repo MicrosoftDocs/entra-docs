@@ -19,7 +19,7 @@ ms.custom: not-enterprise-apps
 In this article, you can learn to secure header and LDAP-based applications using Microsoft Entra ID, by using the F5 BIG-IP Easy Button Guided Configuration 16.1. Integrating a BIG-IP with Microsoft Entra ID provides many benefits: 
 
 * Improved governance: See, [Zero Trust framework to enable remote work](https://www.microsoft.com/security/blog/2020/04/02/announcing-microsoft-zero-trust-assessment-tool/) and learn more about Microsoft Entra pre-authentication
-  * See also, [What is Conditional Access?](../conditional-access/overview.md) to learn about how it helps enforce organizational policies
+  * See also, [What is Conditional Access?](~/identity/conditional-access/overview.md) to learn about how it helps enforce organizational policies
 * Full single sign-on (SSO) between Microsoft Entra ID and BIG-IP published services
 * Manage identities and access from one control plane, the [Microsoft Entra admin center](https://entra.microsoft.com)
 
@@ -66,7 +66,7 @@ Prior BIG-IP experience isn't necessary, but you need:
   - F5 BIG-IP Access Policy Manager™ (APM) standalone license
   - F5 BIG-IP Access Policy Manager™ (APM) add-on license on a BIG-IP F5 BIG-IP® Local Traffic Manager™ (LTM)
   - 90-day BIG-IP product [Free Trial](https://www.f5.com/trial/big-ip-trial.php)
-- User identities [synchronized](../hybrid/connect/how-to-connect-sync-whatis.md) from an on-premises directory to Microsoft Entra ID
+- User identities [synchronized](~/identity/hybrid/connect/how-to-connect-sync-whatis.md) from an on-premises directory to Microsoft Entra ID
 - One of the following roles: Global Administrator, Cloud Application Administrator, or Application Administrator.
 - An [SSL Web certificate](./f5-bigip-deployment-guide.md#ssl-profile) for publishing services over HTTPS, or use default BIG-IP certificates while testing
 - A header-based application or [set up a simple IIS header app](/previous-versions/iis/6.0-sdk/ms525396(v=vs.90)) for testing

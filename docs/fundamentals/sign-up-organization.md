@@ -34,6 +34,6 @@ Sign up for Microsoft Entra ID or a new Microsoft Azure subscription, using eith
 
 - [Learn more about Microsoft Entra ID](./whatis.md)
 
-- [Use your on-premises identity infrastructure in the cloud](../hybrid/whatis-hybrid-identity.md)
+- [Use your on-premises identity infrastructure in the cloud](~/identity/hybrid/whatis-hybrid-identity.md)
 
 - [Visit the Microsoft Azure blog](https://azure.microsoft.com/blog/)

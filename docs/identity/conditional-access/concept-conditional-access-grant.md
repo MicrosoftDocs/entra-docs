@@ -33,7 +33,7 @@ Administrators can choose to enforce one or more controls when granting access. 
 - [Require multifactor authentication (Microsoft Entra multifactor authentication)](~/identity/authentication/concept-mfa-howitworks.md)
 - [Require authentication strength](#require-authentication-strength)
 - [Require device to be marked as compliant (Microsoft Intune)](/mem/intune/protect/device-compliance-get-started)
-- [Require Microsoft Entra hybrid joined device](../devices/concept-hybrid-join.md)
+- [Require Microsoft Entra hybrid joined device](~/identity/devices/concept-hybrid-join.md)
 - [Require approved client app](./howto-policy-approved-app-or-app-protection.md)
 - [Require app protection policy](./howto-policy-approved-app-or-app-protection.md)
 - [Require password change](#require-password-change)
@@ -61,7 +61,7 @@ Organizations that have deployed Intune can use the information returned from th
 
 A device can be marked as compliant by Intune for any device operating system or by a third-party mobile device management system for Windows devices. You can find a list of supported third-party mobile device management systems in [Support third-party device compliance partners in Intune](/mem/intune/protect/device-compliance-partners).
 
-Devices must be registered in Microsoft Entra ID before they can be marked as compliant. You can find more information about device registration in [What is a device identity?](../devices/overview.md).
+Devices must be registered in Microsoft Entra ID before they can be marked as compliant. You can find more information about device registration in [What is a device identity?](~/identity/devices/overview.md).
 
 The **Require device to be marked as compliant** control:
 
@@ -77,7 +77,7 @@ You can use the Microsoft Defender for Endpoint app with the approved client app
 
 ### Require Microsoft Entra hybrid joined device
 
-Organizations can choose to use the device identity as part of their Conditional Access policy. Organizations can require that devices are Microsoft Entra hybrid joined by using this checkbox. For more information about device identities, see [What is a device identity?](../devices/overview.md).
+Organizations can choose to use the device identity as part of their Conditional Access policy. Organizations can require that devices are Microsoft Entra hybrid joined by using this checkbox. For more information about device identities, see [What is a device identity?](~/identity/devices/overview.md).
 
 When you use the [device-code OAuth flow](~/identity-platform/v2-oauth2-device-code.md), the required grant control for the managed device or a device state condition isn't supported. This is because the device that is performing authentication can't provide its device state to the device that is providing a code. Also, the device state in the token is locked to the device performing authentication. Use the **Require multifactor authentication** control instead.
 
@@ -136,7 +136,7 @@ See [Require approved client apps for cloud app access with Conditional Access](
 
 In Conditional Access policy, you can require that an [Intune app protection policy](/mem/intune/apps/app-protection-policy) is present on the client app before access is available to the selected applications. These mobile application management (MAM) app protection policies allow you to manage and protect your organization's data within specific applications.
 
-To apply this grant control, Conditional Access requires that the device is registered in Microsoft Entra ID, which requires using a broker app. The broker app can be either Microsoft Authenticator for iOS or Microsoft Company Portal for Android devices. If a broker app isn't installed on the device when the user attempts to authenticate, the user is redirected to the app store to install the broker app. App protection policies are generally available for iOS and Android, and in public preview for Microsoft Edge on Windows. [Windows devices support no more than 3 Microsoft Entra user accounts in the same session](../devices/faq.yml#i-can-t-add-more-than-3-microsoft-entra-user-accounts-under-the-same-user-session-on-a-windows-10-11-device--why). For more information about how to apply policy to Windows devices, see the article [Require an app protection policy on Windows devices (preview)](how-to-app-protection-policy-windows.md).
+To apply this grant control, Conditional Access requires that the device is registered in Microsoft Entra ID, which requires using a broker app. The broker app can be either Microsoft Authenticator for iOS or Microsoft Company Portal for Android devices. If a broker app isn't installed on the device when the user attempts to authenticate, the user is redirected to the app store to install the broker app. App protection policies are generally available for iOS and Android, and in public preview for Microsoft Edge on Windows. [Windows devices support no more than 3 Microsoft Entra user accounts in the same session](~/identity/devices/faq.yml#i-can-t-add-more-than-3-microsoft-entra-user-accounts-under-the-same-user-session-on-a-windows-10-11-device--why). For more information about how to apply policy to Windows devices, see the article [Require an app protection policy on Windows devices (preview)](how-to-app-protection-policy-windows.md).
 
 Applications must meet certain requirements to support app protection policies. Developers can find more information about these requirements in the section [Apps you can manage with app protection policies](/mem/intune/apps/app-protection-policy#apps-you-can-manage-with-app-protection-policies). 
 

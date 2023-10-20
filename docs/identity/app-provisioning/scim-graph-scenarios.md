@@ -16,7 +16,7 @@ ms.reviewer: arvinh
 
 # Using SCIM and Microsoft Graph together to provision users and enrich your application with the data it needs
 
-**Target audience:** This article is targeted towards developers building applications to be integrated with Microsoft Entra ID. If you're looking to use applications already integrated with Microsoft Entra ID, such as Zoom, ServiceNow, and DropBox, you can skip this article and review the application specific [tutorials](../saas-apps/tutorial-list.md) or review [how the provisioning service works](./how-provisioning-works.md).
+**Target audience:** This article is targeted towards developers building applications to be integrated with Microsoft Entra ID. If you're looking to use applications already integrated with Microsoft Entra ID, such as Zoom, ServiceNow, and DropBox, you can skip this article and review the application specific [tutorials](~/identity/saas-apps/tutorial-list.md) or review [how the provisioning service works](./how-provisioning-works.md).
 
 **Common scenarios**
 

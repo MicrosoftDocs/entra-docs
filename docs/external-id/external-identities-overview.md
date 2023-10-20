@@ -45,7 +45,7 @@ There are various ways to add external users to your organization for B2B collab
 
 - Use self-service sign-up user flows to let external users sign up for applications themselves. The experience can be customized to allow sign-up with a work, school, or social identity (like Google or Facebook). You can also collect information about the user during the sign-up process.
 
-- Use [Microsoft Entra entitlement management](../governance/entitlement-management-overview.md), an identity governance feature that lets you manage [identity and access for external users at scale](../governance/entitlement-management-external-users.md#how-access-works-for-external-users) by automating access request workflows, access assignments, reviews, and expiration.
+- Use [Microsoft Entra entitlement management](~/id-governance/entitlement-management-overview.md), an identity governance feature that lets you manage [identity and access for external users at scale](~/id-governance/entitlement-management-external-users.md#how-access-works-for-external-users) by automating access request workflows, access assignments, reviews, and expiration.
 
 A user object is created for the B2B collaboration user in the same directory as your employees. This user object can be managed like other user objects in your directory, added to groups, and so on. You can assign permissions to the user object (for authorization) while letting them use their existing credentials (for authentication).
 
@@ -88,13 +88,13 @@ The following table gives a detailed comparison of the scenarios you can enable 
 | **Security policy and compliance**        | Managed by the host/inviting organization (for example, with [Conditional Access policies](authentication-conditional-access.md) and cross-tenant access settings). |  Managed by the host/inviting organization (for example, with [Conditional Access policies](authentication-conditional-access.md) and cross-tenant access settings). See also the [Teams documentation](/microsoftteams/security-compliance-overview).   | Managed by the organization via [Conditional Access and Identity Protection](/azure/active-directory-b2c/conditional-access-identity-protection-overview).         |
 | **Multifactor authentication**   | If inbound trust settings to accept MFA claims from the user's home tenant are configured, and MFA policies have already been met in the user's home tenant, the external user can sign in. If MFA trust isn't enabled, the user is presented with an MFA challenge from the resource organization. [Learn more](authentication-conditional-access.md#mfa-for-azure-ad-external-users) about MFA for Microsoft Entra external users.  | If inbound trust settings to accept MFA claims from the user's home tenant are configured, and MFA policies have already been met in the user's home tenant, the external user can sign in. If MFA trust isn't enabled, and Conditional Access policies require MFA, the user is blocked from accessing resources. You *must* configure your inbound trust settings to accept MFA claims from the organization. [Learn more](authentication-conditional-access.md#mfa-for-azure-ad-external-users) about MFA for Microsoft Entra external users. | [Integrates directly](/azure/active-directory-b2c/multi-factor-authentication) with Microsoft Entra multifactor authentication.   |
 | **Microsoft cloud settings**  | [Supported.](cross-cloud-settings.md)  | [Not supported.](cross-cloud-settings.md) | Not applicable.  |
-| **Entitlement management**  | [Supported.](../governance/entitlement-management-overview.md)  | Not supported. | Not applicable. |
+| **Entitlement management**  | [Supported.](~/id-governance/entitlement-management-overview.md)  | Not supported. | Not applicable. |
 | **Line-of-business (LOB) apps**  | Supported.  | Not supported. Only B2B direct connect-enabled apps can be shared (currently, Teams Connect shared channels).  | Works with [RESTful API](/azure/active-directory-b2c/technical-overview#add-your-own-business-logic-and-call-restful-apis).   |
 | **Conditional Access**        | Managed by the host/inviting organization. [Learn more](authentication-conditional-access.md) about Conditional Access policies. |  Managed by the host/inviting organization. [Learn more](authentication-conditional-access.md) about Conditional Access policies.   |  Managed by the organization via [Conditional Access and Identity Protection](/azure/active-directory-b2c/conditional-access-identity-protection-overview).        |
 | **Branding**  | Host/inviting organization's brand is used.  | For sign-in screens, the user’s home organization brand is used. In the shared channel, the resource organization's brand is used. | Fully customizable branding per application or organization.   |
 | **More information** | [Blog post](https://blogs.technet.microsoft.com/enterprisemobility/2017/02/01/azure-ad-b2b-new-updates-make-cross-business-collab-easy/), [Documentation](what-is-b2b.md)            |   [Documentation](b2b-direct-connect-overview.md)     | [Product page](https://azure.microsoft.com/services/active-directory-b2c/), [Documentation](/azure/active-directory-b2c/)       |
 
-Based on your organization’s requirements you might use cross-tenant synchronization in multi-tenant organizations. For more information about this new feature, see the [multi-tenant organization documentation](../multi-tenant-organizations/index.yml) and the [feature comparison](../multi-tenant-organizations/overview.md#compare-multi-tenant-capabilities). 
+Based on your organization’s requirements you might use cross-tenant synchronization in multi-tenant organizations. For more information about this new feature, see the [multi-tenant organization documentation](~/identity/multi-tenant-organizations/index.yml) and the [feature comparison](~/identity/multi-tenant-organizations/overview.md#compare-multi-tenant-capabilities). 
 
 ## Managing External Identities features
 
@@ -110,7 +110,7 @@ Cross-tenant access settings let you manage B2B collaboration and B2B direct con
 
 For more information, see [Cross-tenant access in Microsoft Entra External ID](cross-tenant-access-overview.md).
 
-Microsoft Entra ID has a feature for multi-tenant organizations called cross-tenant synchronization, which allows for a seamless collaboration experience across Microsoft Entra tenants. Cross-tenant synchronization settings are configured under the **Organization-specific access settings**. To learn more about multi-tenant organizations and cross-tenant synchronization see the [Multi-tenant organizations documentation](../multi-tenant-organizations/index.yml).
+Microsoft Entra ID has a feature for multi-tenant organizations called cross-tenant synchronization, which allows for a seamless collaboration experience across Microsoft Entra tenants. Cross-tenant synchronization settings are configured under the **Organization-specific access settings**. To learn more about multi-tenant organizations and cross-tenant synchronization see the [Multi-tenant organizations documentation](~/identity/multi-tenant-organizations/index.yml).
 
 ### Microsoft cloud settings for B2B collaboration
 
@@ -165,7 +165,7 @@ There are several Microsoft Entra technologies that are related to collaboration
 
 ### Microsoft Entra entitlement management for B2B guest user sign-up
 
-As an inviting organization, you might not know ahead of time who the individual external collaborators are who need access to your resources. You need a way for users from partner companies to sign themselves up with policies that you control. If you want to enable users from other organizations to request access, and upon approval be provisioned with guest accounts and assigned to groups, apps, and SharePoint Online sites, you can use [Microsoft Entra entitlement management](../governance/entitlement-management-overview.md) to configure policies that [manage access for external users](../governance/entitlement-management-external-users.md#how-access-works-for-external-users).
+As an inviting organization, you might not know ahead of time who the individual external collaborators are who need access to your resources. You need a way for users from partner companies to sign themselves up with policies that you control. If you want to enable users from other organizations to request access, and upon approval be provisioned with guest accounts and assigned to groups, apps, and SharePoint Online sites, you can use [Microsoft Entra entitlement management](~/id-governance/entitlement-management-overview.md) to configure policies that [manage access for external users](~/id-governance/entitlement-management-external-users.md#how-access-works-for-external-users).
 
 <a name='azure-ad-microsoft-graph-api-for-b2b-collaboration'></a>
 
@@ -187,11 +187,11 @@ If you offer a Software as a Service (SaaS) application to many organizations, y
 
 ### Multi-tenant organizations
 
-A multi-tenant organization is an organization that has more than one instance of Microsoft Entra ID. There are various reasons for [multi-tenancy](../multi-tenant-organizations/overview.md#what-is-a-multi-tenant-organization), like using multiple clouds or having multiple geographical boundaries. Multi-tenant organizations use a one-way synchronization service in Microsoft Entra ID, called [cross-tenant synchronization](../multi-tenant-organizations/cross-tenant-synchronization-overview.md). Cross-tenant synchronization enables seamless collaboration for a multi-tenant organization. It improves user experience and ensures that users can access resources, without receiving an invitation email and having to accept a consent prompt in each tenant.
+A multi-tenant organization is an organization that has more than one instance of Microsoft Entra ID. There are various reasons for [multi-tenancy](~/identity/multi-tenant-organizations/overview.md#what-is-a-multi-tenant-organization), like using multiple clouds or having multiple geographical boundaries. Multi-tenant organizations use a one-way synchronization service in Microsoft Entra ID, called [cross-tenant synchronization](~/identity/multi-tenant-organizations/cross-tenant-synchronization-overview.md). Cross-tenant synchronization enables seamless collaboration for a multi-tenant organization. It improves user experience and ensures that users can access resources, without receiving an invitation email and having to accept a consent prompt in each tenant.
 
 ## Next steps
 
 - [What is Microsoft Entra B2B collaboration?](what-is-b2b.md)
 - [What is Microsoft Entra B2B direct connect?](b2b-direct-connect-overview.md)
 - [About Azure AD B2C](/azure/active-directory-b2c/overview)
-- [About Microsoft Entra multi-tenant organizations](../multi-tenant-organizations/overview.md)
+- [About Microsoft Entra multi-tenant organizations](~/identity/multi-tenant-organizations/overview.md)

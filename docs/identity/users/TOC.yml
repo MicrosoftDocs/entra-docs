@@ -89,7 +89,7 @@
     - name: Self-service sign-up    
       href: directory-self-service-signup.md
     - name: Microsoft Entra Connect    
-      href: ../hybrid/whatis-hybrid-identity.md?context=/azure/active-directory/enterprise-users/context/ugr-context
+      href: ~/identity/hybrid/whatis-hybrid-identity.md?context=/azure/active-directory/enterprise-users/context/ugr-context
   - name: Groups
     items: 
     - name: Learn about groups and access rights  

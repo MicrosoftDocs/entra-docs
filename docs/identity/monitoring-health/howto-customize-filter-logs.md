@@ -90,7 +90,7 @@ On the sign-in logs page, you can switch between four sign-in log types. For mor
 
 - **Service principal sign-ins:** Sign-ins by apps and service principals that don't involve any user. In these sign-ins, the app or service provides a credential on its own behalf to authenticate or access resources.
 
-- **Managed identities for Azure resources sign-ins:** Sign-ins by Azure resources that have secrets managed by Azure. For more information, see [What are managed identities for Azure resources?](../managed-identities-azure-resources/overview.md).
+- **Managed identities for Azure resources sign-ins:** Sign-ins by Azure resources that have secrets managed by Azure. For more information, see [What are managed identities for Azure resources?](~/identity/managed-identities-azure-resources/overview.md).
 
 ### Customize the layout of the sign-in logs
 
@@ -192,7 +192,7 @@ The **Identity** filter enables you to specify the name or the identity that you
 You can search by the name or ID of the object. The ID varies by scenario.
 - If you're provisioning an object *from Microsoft Entra ID to Salesforce*, the **source ID** is the object ID of the user in Microsoft Entra ID. The **target ID** is the ID of the user at Salesforce.
 - If you're provisioning *from Workday to Microsoft Entra ID*, the **source ID** is the Workday worker employee ID. The **target ID** is the ID of the user in Microsoft Entra ID.
-- If you're provisioning users for [cross-tenant synchronization](../multi-tenant-organizations/cross-tenant-synchronization-configure.md), the **source ID** is ID of the user in the source tenant. The **target ID** is ID of the user in the target tenant.
+- If you're provisioning users for [cross-tenant synchronization](~/identity/multi-tenant-organizations/cross-tenant-synchronization-configure.md), the **source ID** is ID of the user in the source tenant. The **target ID** is ID of the user in the target tenant.
 
 > [!NOTE]
 > The name of the user might not always be present in the **Identity** column. There will always be one ID. 
@@ -232,7 +232,7 @@ In addition to the filters of the default view, you can set the following filter
 
 - **Target System**: You can specify where the identity is getting provisioned to. For example, when you're provisioning an object from Microsoft Entra ID to ServiceNow, the target system is ServiceNow. 
 
-- **Application**: You can show only records of applications with a display name or object ID that contains a specific string. For [cross-tenant synchronization](../multi-tenant-organizations/cross-tenant-synchronization-configure.md), use the object ID of the configuration and not the application ID.
+- **Application**: You can show only records of applications with a display name or object ID that contains a specific string. For [cross-tenant synchronization](~/identity/multi-tenant-organizations/cross-tenant-synchronization-configure.md), use the object ID of the configuration and not the application ID.
 
 ---
 

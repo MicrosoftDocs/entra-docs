@@ -63,9 +63,9 @@ As you monitor your application logs for security incidents, review the followin
 
 The log files you use for investigation and monitoring are:
 
-* [Microsoft Entra audit logs](../reports-monitoring/concept-audit-logs.md)
+* [Microsoft Entra audit logs](~/identity/monitoring-health/concept-audit-logs.md)
 
-* [Sign-in logs](../reports-monitoring/concept-sign-ins.md)
+* [Sign-in logs](~/identity/monitoring-health/concept-sign-ins.md)
 
 * [Microsoft 365 Audit logs](/purview/audit-solutions-overview)
 
@@ -79,13 +79,13 @@ From the Azure portal, you can view the Microsoft Entra audit logs and download 
 
 * **[Azure Monitor](/azure/azure-monitor/overview)** – automated monitoring and alerting of various conditions. Can create or use workbooks to combine data from different sources.
 
-* **[Azure Event Hubs](/azure/event-hubs/event-hubs-about) integrated with a SIEM**- [Microsoft Entra logs can be integrated to other SIEMs](../reports-monitoring/howto-stream-logs-to-event-hub.md) such as Splunk, ArcSight, QRadar, and Sumo Logic via the Azure Event Hubs integration.
+* **[Azure Event Hubs](/azure/event-hubs/event-hubs-about) integrated with a SIEM**- [Microsoft Entra logs can be integrated to other SIEMs](~/identity/monitoring-health/howto-stream-logs-to-event-hub.md) such as Splunk, ArcSight, QRadar, and Sumo Logic via the Azure Event Hubs integration.
 
 * **[Microsoft Defender for Cloud Apps](/defender-cloud-apps/what-is-defender-for-cloud-apps)** – discover and manage apps, govern across apps and resources, and check your cloud apps’ compliance.
 
-* **[Securing workload identities with Identity Protection Preview](../identity-protection/concept-workload-identity-risk.md)** - detects risk on workload identities across sign-in behavior and offline indicators of compromise.
+* **[Securing workload identities with Identity Protection Preview](~/id-protection/concept-workload-identity-risk.md)** - detects risk on workload identities across sign-in behavior and offline indicators of compromise.
 
-Much of what you monitor and alert on are the effects of your Conditional Access policies. You can use the [Conditional Access insights and reporting workbook](../conditional-access/howto-conditional-access-insights-reporting.md) to examine the effects of one or more Conditional Access policies on your sign-ins, and the results of policies, including device state. Use the workbook to view a summary, and identify the effects over a time period. You can use the workbook to investigate the sign-ins of a specific user.
+Much of what you monitor and alert on are the effects of your Conditional Access policies. You can use the [Conditional Access insights and reporting workbook](~/identity/conditional-access/howto-conditional-access-insights-reporting.md) to examine the effects of one or more Conditional Access policies on your sign-ins, and the results of policies, including device state. Use the workbook to view a summary, and identify the effects over a time period. You can use the workbook to investigate the sign-ins of a specific user.
 
 The remainder of this article is what we recommend you monitor and alert on. It's organized by the type of threat. Where there are pre-built solutions, we link to them or provide samples after the table. Otherwise, you can build alerts using the preceding tools.
 

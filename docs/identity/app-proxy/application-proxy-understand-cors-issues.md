@@ -112,6 +112,6 @@ You can change your app to support CORS by adding the Access-Control-Allow-Origi
 Some CORS issues can't be resolved, such as when your app redirects to *login.microsoftonline.com* to authenticate, and the access token expires. The CORS call then fails. A workaround for this scenario is to extend the lifetime of the access token, to prevent it from expiring during a user’s session. For more information about how to do this, see [Configurable token lifetimes in Microsoft Entra ID](~/identity-platform/configurable-token-lifetimes.md).
 
 ## See also
-- [Tutorial: Add an on-premises application for remote access through Application Proxy in Microsoft Entra ID](../app-proxy/application-proxy-add-on-premises-application.md) 
+- [Tutorial: Add an on-premises application for remote access through Application Proxy in Microsoft Entra ID](~/identity/app-proxy/application-proxy-add-on-premises-application.md) 
 - [Plan a Microsoft Entra application proxy deployment](application-proxy-deployment-plan.md) 
 - [Remote access to on-premises applications through Microsoft Entra application proxy](application-proxy.md)

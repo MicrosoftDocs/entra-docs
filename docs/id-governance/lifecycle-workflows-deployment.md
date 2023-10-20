@@ -28,7 +28,7 @@ ms.collection: M365-identity-device-management
 - **Reduce** or remove manual tasks that were done in the past with automated Lifecycle Workflows
 - **Apply** logic apps to extend workflows for more complex scenarios using your existing Logic apps
 
-Lifecycle Workflows are an [Microsoft Entra ID Governance](identity-governance-overview.md) capability. The other capabilities are [entitlement management](entitlement-management-overview.md), [access reviews](access-reviews-overview.md),[Privileged Identity Management (PIM)](../privileged-identity-management/pim-configure.md), and [terms of use](../conditional-access/terms-of-use.md). Together, they help you address these questions:
+Lifecycle Workflows are an [Microsoft Entra ID Governance](identity-governance-overview.md) capability. The other capabilities are [entitlement management](entitlement-management-overview.md), [access reviews](access-reviews-overview.md),[Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/pim-configure.md), and [terms of use](~/identity/conditional-access/terms-of-use.md). Together, they help you address these questions:
 
  - Which users should have access to which resources?
  - What are those users doing with that access?
@@ -109,7 +109,7 @@ The following information is important information about your organization and t
 
 |Item|Description|Documentation|
 |-----|-----|-----|
-|Inbound Provisioning|You have a process to create user accounts for employees in Microsoft Entra such as HR inbound, SuccessFactors, or MIM.<br><br> Alternatively you have a process to create user accounts in Active Directory and those accounts are provisioned to Microsoft Entra ID.|[Workday to Active Directory](../saas-apps/workday-inbound-tutorial.md)<br><br>[Workday to Microsoft Entra ID](../saas-apps/workday-inbound-tutorial.md)<br><br>[SuccessFactors to Active Directory](../saas-apps/sap-successfactors-inbound-provisioning-tutorial.md)</br></br>[SuccessFactors to Microsoft Entra ID](../saas-apps/sap-successfactors-inbound-provisioning-cloud-only-tutorial.md)<br><br>[Microsoft Entra Connect](../hybrid/connect/whatis-azure-ad-connect-v2.md)<br><br>[Microsoft Entra Connect cloud sync](../hybrid/cloud-sync/what-is-cloud-sync.md)<br><br>[API-driven inbound provisioning (Public preview)](~/identity/app-provisioning/inbound-provisioning-api-configure-app.md)|
+|Inbound Provisioning|You have a process to create user accounts for employees in Microsoft Entra such as HR inbound, SuccessFactors, or MIM.<br><br> Alternatively you have a process to create user accounts in Active Directory and those accounts are provisioned to Microsoft Entra ID.|[Workday to Active Directory](~/identity/saas-apps/workday-inbound-tutorial.md)<br><br>[Workday to Microsoft Entra ID](~/identity/saas-apps/workday-inbound-tutorial.md)<br><br>[SuccessFactors to Active Directory](~/identity/saas-apps/sap-successfactors-inbound-provisioning-tutorial.md)</br></br>[SuccessFactors to Microsoft Entra ID](~/identity/saas-apps/sap-successfactors-inbound-provisioning-cloud-only-tutorial.md)<br><br>[Microsoft Entra Connect](~/identity/hybrid/connect/whatis-azure-ad-connect-v2.md)<br><br>[Microsoft Entra Connect cloud sync](~/identity/hybrid/cloud-sync/what-is-cloud-sync.md)<br><br>[API-driven inbound provisioning (Public preview)](~/identity/app-provisioning/inbound-provisioning-api-configure-app.md)|
 |Attribute synchronization|The accounts in Microsoft Entra ID have the employeeHireDate and employeeLeaveDateTime attributes populated.  The values may be populated when the accounts are created from an HR system or synchronized from AD using Microsoft Entra Connect or cloud sync. You have extra attributes that are used to determine the scope such as department, populated or the ability to populate, with data.|[How to synchronize attributes for Lifecycle Workflows](how-to-lifecycle-workflow-sync-attributes.md)
 
 ## Understanding parts of a workflow
@@ -199,7 +199,7 @@ The following is some important information regarding time zones that you should
 -  if you're in a single time zone it's recommended that you hardcode the time portion to something that works for you.  An example would be 5am for new hire scenarios and 10pm for last day of work scenarios.
 - It's recommended, that if you're using temporary access pass (TAP), that you set the maximum lifetime to 24 hours.  Doing this will help ensure that the TAP hasn't expired after being sent to an employee who may be in a different timezone.  For more information, see [Configure Temporary Access Pass in Microsoft Entra ID to register Passwordless authentication methods.](~/identity/authentication/howto-authentication-temporary-access-pass.md#enable-the-temporary-access-pass-policy)
 
-For more information, see [How to synchronize attributes for Lifecycle Workflows](../governance/how-to-lifecycle-workflow-sync-attributes.md)
+For more information, see [How to synchronize attributes for Lifecycle Workflows](~/id-governance/how-to-lifecycle-workflow-sync-attributes.md)
 
 ## Review the tasks
 Now that we've determined the scenario and the who and when, you should consider whether the predefined tasks are sufficient or are you going to need extra tasks.  The following table has a list of the predefined tasks that are currently in the portal.  Use this table to determine if you want to add more tasks.
@@ -275,7 +275,7 @@ Using the on-demand feature allows you to test and evaluate whether the Lifecycl
 Once you have completed testing, you can either rework the Lifecycle Workflow or get ready for a broader distribution.
 
 ### Audit logs
-You can also get more information from the audit logs.  These logs can be accessed in the portal under Microsoft Entra ID/monitoring.  For more information, see [Audit logs in Microsoft Entra ID](../reports-monitoring/concept-audit-logs.md) and [Lifecycle workflow history.](lifecycle-workflow-history.md)
+You can also get more information from the audit logs.  These logs can be accessed in the portal under Microsoft Entra ID/monitoring.  For more information, see [Audit logs in Microsoft Entra ID](~/identity/monitoring-health/concept-audit-logs.md) and [Lifecycle workflow history.](lifecycle-workflow-history.md)
 
 
 

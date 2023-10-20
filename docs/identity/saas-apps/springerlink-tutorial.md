@@ -155,4 +155,4 @@ You can also use Microsoft Access Panel to test the application in any mode. Whe
 Once you configure Springer Link you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).
 
 
-- [What is Conditional Access in Microsoft Entra ID?](../conditional-access/overview.md)
+- [What is Conditional Access in Microsoft Entra ID?](~/identity/conditional-access/overview.md)

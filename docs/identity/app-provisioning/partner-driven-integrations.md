@@ -89,7 +89,7 @@ If you have built a SCIM Gateway and would like to add it to this list, follow t
 * Add any new partners in alphabetical order.
 * Limit your entries to 500 words.
 * Ensure that you provide contact information for customers to learn more.
-* To avoid duplication, only include applications that don't already have out of the box provisioning connectors in the [Microsoft Entra application gallery](../saas-apps/tutorial-list.md). 
+* To avoid duplication, only include applications that don't already have out of the box provisioning connectors in the [Microsoft Entra application gallery](~/identity/saas-apps/tutorial-list.md). 
 
 ## Disclaimer
 For independent software vendors: The Microsoft Entra Application Gallery Terms & Conditions, excluding Sections 2–4, apply to this Partner-Driven Integrations Catalog (the “Integrations Catalog”). References to the “Gallery” shall be read as the “Integrations Catalog” and references to an “App” shall be read as “Integration”.  

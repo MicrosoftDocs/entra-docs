@@ -133,7 +133,7 @@ Azure ABAC builds on Azure RBAC by adding role assignment conditions based on at
 
 ## Conditional Access
 
-Microsoft Entra [Conditional Access](../conditional-access/concept-conditional-access-cloud-apps.md) can be used to manage access to Azure management endpoints. Conditional Access policies can be applied to the Microsoft Azure Management cloud app to protect the Azure resource management endpoints such as:
+Microsoft Entra [Conditional Access](~/identity/conditional-access/concept-conditional-access-cloud-apps.md) can be used to manage access to Azure management endpoints. Conditional Access policies can be applied to the Microsoft Azure Management cloud app to protect the Azure resource management endpoints such as:
 
 * Azure Resource Manager Provider (services)
 
@@ -151,7 +151,7 @@ For example, an administrator may configure a Conditional Access policy, which a
 
 ## Azure Managed Identities
 
-A common challenge when building cloud applications is how to manage the credentials in your code for authenticating to cloud services. Keeping the credentials secure is an important task. Ideally, the credentials never appear on developer workstations and aren't checked into source control. [Managed identities for Azure resources](../managed-identities-azure-resources/overview.md) provide Azure services with an automatically managed identity in Microsoft Entra ID. You can use the identity to authenticate to any service that supports Microsoft Entra authentication without any credentials in your code.
+A common challenge when building cloud applications is how to manage the credentials in your code for authenticating to cloud services. Keeping the credentials secure is an important task. Ideally, the credentials never appear on developer workstations and aren't checked into source control. [Managed identities for Azure resources](~/identity/managed-identities-azure-resources/overview.md) provide Azure services with an automatically managed identity in Microsoft Entra ID. You can use the identity to authenticate to any service that supports Microsoft Entra authentication without any credentials in your code.
 
 There are two types of managed identities:
 
@@ -314,22 +314,22 @@ When a requirement exists to deploy IaaS workloads to Azure that require identit
 
 ![Diagram that shows Microsoft Entra authentication to Azure VMs.](media/secure-resource-management/sign-into-vm.png)
 
-**Supported operating systems**: Signing into virtual machines in Azure using Microsoft Entra authentication is currently supported in Windows and Linux. For more specifics on supported operating systems, refer to the documentation for [Windows](../devices/howto-vm-sign-in-azure-ad-windows.md) and [Linux](../devices/howto-vm-sign-in-azure-ad-linux.md).
+**Supported operating systems**: Signing into virtual machines in Azure using Microsoft Entra authentication is currently supported in Windows and Linux. For more specifics on supported operating systems, refer to the documentation for [Windows](~/identity/devices/howto-vm-sign-in-azure-ad-windows.md) and [Linux](~/identity/devices/howto-vm-sign-in-azure-ad-linux.md).
 
 **Credentials**: One of the key benefits of signing into virtual machines in Azure using Microsoft Entra authentication is the ability to use the same federated or managed Microsoft Entra credentials that you normally use for access to Microsoft Entra services for sign-in to the virtual machine.
 
 >[!NOTE]
 >The Microsoft Entra tenant that is used for sign-in in this scenario is the Microsoft Entra tenant that is associated with the subscription that the virtual machine has been provisioned into. This Microsoft Entra tenant can be one that has identities synchronized from on-premises AD DS. Organizations should make an informed choice that aligns with their isolation principals when choosing which subscription and Microsoft Entra tenant they wish to use for sign-in to these servers.
 
-**Network Requirements**: These virtual machines will need to access Microsoft Entra ID for authentication so you must ensure that the virtual machines network configuration permits outbound access to Microsoft Entra endpoints on 443. See the documentation for [Windows](../devices/howto-vm-sign-in-azure-ad-windows.md) and [Linux](../devices/howto-vm-sign-in-azure-ad-linux.md) for more information.
+**Network Requirements**: These virtual machines will need to access Microsoft Entra ID for authentication so you must ensure that the virtual machines network configuration permits outbound access to Microsoft Entra endpoints on 443. See the documentation for [Windows](~/identity/devices/howto-vm-sign-in-azure-ad-windows.md) and [Linux](~/identity/devices/howto-vm-sign-in-azure-ad-linux.md) for more information.
 
-**Role-based Access Control (RBAC)**: Two RBAC roles are available to provide the appropriate level of access to these virtual machines. These RBAC roles can be configured via the Azure portal or via the Azure Cloud Shell Experience. For more information, see [Configure role assignments for the VM](../devices/howto-vm-sign-in-azure-ad-windows.md).
+**Role-based Access Control (RBAC)**: Two RBAC roles are available to provide the appropriate level of access to these virtual machines. These RBAC roles can be configured via the Azure portal or via the Azure Cloud Shell Experience. For more information, see [Configure role assignments for the VM](~/identity/devices/howto-vm-sign-in-azure-ad-windows.md).
 
 * **Virtual machine administrator logon**: Users with this role assigned to them can log into an Azure virtual machine with administrator privileges.
 
 * **Virtual machine user logon**: Users with this role assigned to them can log into an Azure virtual machine with regular user privileges.
 
-Conditional Access: A key benefit of using Microsoft Entra ID for signing into Azure virtual machines is the ability to enforce Conditional Access as part of the sign-in process. This provides the ability for organizations to require conditions to be met before allowing access to the virtual machine and to use multifactor authentication to provide strong authentication. For more information, see [Using Conditional Access](../devices/howto-vm-sign-in-azure-ad-windows.md).
+Conditional Access: A key benefit of using Microsoft Entra ID for signing into Azure virtual machines is the ability to enforce Conditional Access as part of the sign-in process. This provides the ability for organizations to require conditions to be met before allowing access to the virtual machine and to use multifactor authentication to provide strong authentication. For more information, see [Using Conditional Access](~/identity/devices/howto-vm-sign-in-azure-ad-windows.md).
 
 >[!NOTE]
 >Remote connection to virtual machines joined to Microsoft Entra ID is only allowed from Windows 10, Windows 11, and Cloud PC PCs that are Microsoft Entra joined or Microsoft Entra hybrid joined to the same directory as the virtual machine.

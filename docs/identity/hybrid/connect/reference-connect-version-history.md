@@ -120,7 +120,7 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 
 ### Functional changes
 
-- We added a new attribute 'employeeLeaveDateTime' for syncing to Microsoft Entra ID. To learn more about how to use this attribute to manage your users' life cycles, please refer to [this article](../../governance/how-to-lifecycle-workflow-sync-attributes.md)
+- We added a new attribute 'employeeLeaveDateTime' for syncing to Microsoft Entra ID. To learn more about how to use this attribute to manage your users' life cycles, please refer to [this article](~/id-governance/how-to-lifecycle-workflow-sync-attributes.md)
 
 ### Bug fixes
 
@@ -295,7 +295,7 @@ When you upgrade to this V1.6 build or any newer builds, the group membership li
 ### Functional changes
 
 - We added the latest versions of Microsoft Identity Manager (MIM) Connectors (1.1.1610.0). For more information, see the [release history page of the MIM Connectors](/microsoft-identity-manager/reference/microsoft-identity-manager-2016-connector-version-history#1116100-september-2021).
-- We added a configuration option to disable the Soft Matching feature in Microsoft Entra Connect. We recommend that you disable Soft Matching unless you need it to take over cloud-only accounts. To disable Soft Matching, see [this reference article](../../hybrid/connect/how-to-connect-install-existing-tenant.md#hard-match-vs-soft-match).
+- We added a configuration option to disable the Soft Matching feature in Microsoft Entra Connect. We recommend that you disable Soft Matching unless you need it to take over cloud-only accounts. To disable Soft Matching, see [this reference article](~/identity/hybrid/connect/how-to-connect-install-existing-tenant.md#hard-match-vs-soft-match).
 
 ### Bug fixes
 
@@ -328,7 +328,7 @@ When you upgrade to this V1.6 build or any newer builds, the group membership li
 ### Functional changes
 
 - We added the latest versions of MIM Connectors (1.1.1610.0). For more information, see the [release history page of the MIM Connectors](/microsoft-identity-manager/reference/microsoft-identity-manager-2016-connector-version-history#1116100-september-2021).
-- We added a configuration option to disable the Soft Matching feature in Microsoft Entra Connect. We recommend that you disable Soft Matching unless you need it to take over cloud-only accounts. To disable Soft Matching, see [this reference article](../../hybrid/connect/how-to-connect-install-existing-tenant.md#hard-match-vs-soft-match).
+- We added a configuration option to disable the Soft Matching feature in Microsoft Entra Connect. We recommend that you disable Soft Matching unless you need it to take over cloud-only accounts. To disable Soft Matching, see [this reference article](~/identity/hybrid/connect/how-to-connect-install-existing-tenant.md#hard-match-vs-soft-match).
 
 ## 2.0.10.0
 
@@ -462,7 +462,7 @@ You can use these cmdlets to retrieve the TLS 1.2 enablement status or set it as
   - employeeType
   - employeeHireDate
     >[!NOTE]
-    > There's no corresponding EmployeeHireDate or EmployeeLeaveDateTime attribute in Active Directory. If you're importing from on-premises AD, you'll need to identify an attribute in AD that can be used. This attribute must be a string.  For more information see, [Synchronizing lifecycle workflow attributes](../../governance/how-to-lifecycle-workflow-sync-attributes.md)
+    > There's no corresponding EmployeeHireDate or EmployeeLeaveDateTime attribute in Active Directory. If you're importing from on-premises AD, you'll need to identify an attribute in AD that can be used. This attribute must be a string.  For more information see, [Synchronizing lifecycle workflow attributes](~/id-governance/how-to-lifecycle-workflow-sync-attributes.md)
 
 - This release requires PowerShell version 5.0 or newer to be installed on the Windows server. This version is part of Windows Server 2016 and newer.
 - We increased the group sync membership limits to 250,000 with the new V2 endpoint.

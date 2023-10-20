@@ -169,11 +169,11 @@ In the Azure portal, the reply URIs that you register on the **Authentication** 
 
 Here, the configuration parameters reside in *.env.dev* as environment variables:
 
-:::code language="text" source="~/ms-identity-node/App/.env.dev":::
+:::code language="text" source="~/../ms-identity-node/App/.env.dev":::
 
 These parameters are used to create a configuration object in *authConfig.js* file, which will eventually be used to initialize MSAL Node:
 
-:::code language="js" source="~/ms-identity-node/App/authConfig.js":::
+:::code language="js" source="~/../ms-identity-node/App/authConfig.js":::
 
 In the Azure portal, the reply URIs that you register on the Authentication page for your application need to match the redirectUri instances that the application defines (`http://localhost:3000/auth/redirect`).
 
@@ -183,16 +183,16 @@ For simplicity in this article, the client secret is stored in the configuration
 
 The configuration parameters are set in *.env* as environment variables:
 
-:::code language="python" source="~/ms-identity-python-webapp-tutorial/.env.sample" highlight="4,5,10":::
+:::code language="python" source="~/../ms-identity-python-webapp-tutorial/.env.sample" highlight="4,5,10":::
 
 
 Those environment variables are referenced in *app_config.py*:
 
-:::code language="python" source="~/ms-identity-python-webapp-tutorial/app_config.py" highlight="4,6,10":::
+:::code language="python" source="~/../ms-identity-python-webapp-tutorial/app_config.py" highlight="4,6,10":::
 
 The *.env* file should never be checked into source control, since it contains secrets. The quickstart sample includes a *.gitignore* file that prevents the *.env* file from being checked in.
 
-:::code language="text" source="~/ms-identity-python-webapp-tutorial/.gitignore" range="84-85" highlight="2":::
+:::code language="text" source="~/../ms-identity-python-webapp-tutorial/.gitignore" range="84-85" highlight="2":::
 
 
 ---
@@ -307,17 +307,17 @@ For details about the authorization code flow that this method triggers, see the
 
 The Node sample uses the Express framework. MSAL is initialized in *auth* route handler:
 
-:::code language="js" source="~/ms-identity-node/App/routes/auth.js" range="6-16":::
+:::code language="js" source="~/../ms-identity-node/App/routes/auth.js" range="6-16":::
 
 # [Python](#tab/python)
 
 The Python sample is built with the Flask framework, though other frameworks like Django could be used as well. The Flask app is initialized with the app configuration at the top of *app.py*:
 
-:::code language="python" source="~/ms-identity-python-webapp-tutorial/app.py" range="1-12" highlight="10":::
+:::code language="python" source="~/../ms-identity-python-webapp-tutorial/app.py" range="1-12" highlight="10":::
 
 Then the code constructs an [`auth` object](https://identity-library.readthedocs.io/en/latest/#identity.web.Auth) using the [identity package](https://pypi.org/project/identity/).
 
-:::code language="python" source="~/ms-identity-python-webapp-tutorial/app.py" range="20-25":::
+:::code language="python" source="~/../ms-identity-python-webapp-tutorial/app.py" range="20-25":::
 
 ---
 

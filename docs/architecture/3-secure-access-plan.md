@@ -48,9 +48,9 @@ See the following links to articles about resource grouping strategies:
   * Formulate an external access strategy for Teams
   * See, [Secure external access to Microsoft Teams, SharePoint, and OneDrive for Business with Microsoft Entra ID](9-secure-access-teams-sharepoint.md)
 * Use entitlement management access packages to create and delegate package management of applications, groups, teams, SharePoint sites, etc. 
-  * [Create a new access package in entitlement management](../governance/entitlement-management-access-package-create.md) 
+  * [Create a new access package in entitlement management](~/id-governance/entitlement-management-access-package-create.md) 
 * Apply Conditional Access policies to up to 250 applications, with the same access requirements
-  *  [What is Conditional Access?](../conditional-access/overview.md) 
+  *  [What is Conditional Access?](~/identity/conditional-access/overview.md) 
 * Define access for external user application groups
   *  [Overview: Cross-tenant access with Microsoft Entra External ID](~/external-id/cross-tenant-access-overview.md) 
 
@@ -83,7 +83,7 @@ Document the following information for application and resource group access by 
 
 Determine the sign-in requirements for external users who request access. Base requirements on the resource risk profile, and the user's risk assessment during sign-in. Configure sign-in conditions using Conditional Access: a condition and an outcome. For example, you can require MFA.
 
-Learn more: [What is Conditional Access?](../conditional-access/overview.md)
+Learn more: [What is Conditional Access?](~/identity/conditional-access/overview.md)
 
 **Resource risk-profile sign-in conditions**
 
@@ -112,9 +112,9 @@ Use the following table to help assess policy to address risk.
 
 To use device state as policy input, register or join the device to your tenant. To trust the device claims from the home tenant, configure cross-tenant access settings. See, [Modify inbound access settings](~/external-id/cross-tenant-access-settings-b2b-collaboration.md#modify-inbound-access-settings).
 
-You can use identity-protection risk policies. However, mitigate issues in the user home tenant. See, [Common Conditional Access policy: Sign-in risk-based multifactor authentication](../conditional-access/howto-conditional-access-policy-risk.md).
+You can use identity-protection risk policies. However, mitigate issues in the user home tenant. See, [Common Conditional Access policy: Sign-in risk-based multifactor authentication](~/identity/conditional-access/howto-conditional-access-policy-risk.md).
 
-For network locations, you can restrict access to IP addresses ranges that you own. Use this method if external partners access applications while at your location. See, [Conditional Access: Block access by location](../conditional-access/howto-conditional-access-policy-location.md)
+For network locations, you can restrict access to IP addresses ranges that you own. Use this method if external partners access applications while at your location. See, [Conditional Access: Block access by location](~/identity/conditional-access/howto-conditional-access-policy-location.md)
 
 ## Document access review policies
 
@@ -127,9 +127,9 @@ Document policies that dictate when to review resource access, and remove accoun
 Generally, organizations customize policy, however consider the following parameters:
 
 * **Entitlement management access reviews**:
-  * [Change lifecycle settings for an access package in entitlement management](../governance/entitlement-management-access-package-lifecycle-policy.md)
-  * [Create an access review of an access package in entitlement management](../governance/entitlement-management-access-reviews-create.md)
-  * [Add a connected organization in entitlement management](../governance/entitlement-management-organization.md): group users from a partner and schedule reviews
+  * [Change lifecycle settings for an access package in entitlement management](~/id-governance/entitlement-management-access-package-lifecycle-policy.md)
+  * [Create an access review of an access package in entitlement management](~/id-governance/entitlement-management-access-reviews-create.md)
+  * [Add a connected organization in entitlement management](~/id-governance/entitlement-management-organization.md): group users from a partner and schedule reviews
 * **Microsoft 365 groups**
   * [Microsoft 365 group expiration policy](/microsoft-365/solutions/microsoft-365-groups-expiration-policy?view=o365-worldwide&preserve-view=true)
 * **Options**: 
@@ -178,7 +178,7 @@ Entries in bold are recommended actions.
 
 Use entitlement management to provision and deprovision access to groups and teams, applications, and SharePoint sites. Define the connected organizations granted access, self-service requests, and approval workflows. To ensure access ends correctly, define expiration policies and access reviews for packages. 
 
-Learn more: [Create a new access package in entitlement management](../governance/entitlement-management-access-package-create.md) 
+Learn more: [Create a new access package in entitlement management](~/id-governance/entitlement-management-access-package-create.md) 
 
 <a name='manage-access-with-azure-ad-p1-microsoft-365-office-365-e3'></a>
 

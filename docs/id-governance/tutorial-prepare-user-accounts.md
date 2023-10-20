@@ -31,7 +31,7 @@ The off-boarding tutorials only require one account that has group and Teams mem
 
 ## Before you begin
 
-In most cases, users are going to be provisioned to Microsoft Entra ID either from an on-premises solution (such as Microsoft Entra Connect or Cloud sync) or with an HR solution. These users have the attributes and values populated at the time of creation. Setting up the infrastructure to provision users is outside the scope of this tutorial. For information, see [Tutorial: Basic Active Directory environment](../hybrid/cloud-sync/tutorial-basic-ad-azure.md) and [Tutorial: Integrate a single forest with a single Microsoft Entra tenant](../hybrid/cloud-sync/tutorial-single-forest.md)
+In most cases, users are going to be provisioned to Microsoft Entra ID either from an on-premises solution (such as Microsoft Entra Connect or Cloud sync) or with an HR solution. These users have the attributes and values populated at the time of creation. Setting up the infrastructure to provision users is outside the scope of this tutorial. For information, see [Tutorial: Basic Active Directory environment](~/identity/hybrid/cloud-sync/tutorial-basic-ad-azure.md) and [Tutorial: Integrate a single forest with a single Microsoft Entra tenant](~/identity/hybrid/cloud-sync/tutorial-single-forest.md)
 
 <a name='create-users-in-azure-ad'></a>
 

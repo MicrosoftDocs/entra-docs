@@ -51,7 +51,7 @@ While one of most important use cases that SAML addresses is SSO, especially by 
 
 ## Implement SAML authentication with Microsoft Entra ID
 
-* [Tutorials for integrating SaaS applications using Microsoft Entra ID](../saas-apps/tutorial-list.md) 
+* [Tutorials for integrating SaaS applications using Microsoft Entra ID](~/identity/saas-apps/tutorial-list.md) 
 
 * [Configuring SAML based single sign-on for non-gallery applications](~/identity/enterprise-apps/add-application-portal.md) 
 

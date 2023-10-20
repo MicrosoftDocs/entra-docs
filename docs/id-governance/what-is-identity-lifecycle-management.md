@@ -60,8 +60,8 @@ Similar processes are also needed for guests and other users.  Microsoft Entra e
 Microsoft Entra ID currently provides these features:
 
 * Users representing employees can be automatically created and updated in Microsoft Entra ID and Active Directory using [HR-driven provisioning](~/identity/app-provisioning/what-is-hr-driven-provisioning.md)
-* Users already present in Active Directory can be automatically created and maintained in Microsoft Entra ID using [inter-directory provisioning](../hybrid/what-is-inter-directory-provisioning.md)
-* Users can be automatically assigned to groups based on their properties, using [dynamic groups](~/external-id/use-dynamic-groups.md#what-are-dynamic-groups) and can, upon request, be assigned to groups, Teams, Microsoft Entra roles, Azure resource roles, and SharePoint Online sites, using [entitlement management](entitlement-management-scenarios.md) and [Privileged Identity Management](../privileged-identity-management/pim-configure.md)
+* Users already present in Active Directory can be automatically created and maintained in Microsoft Entra ID using [inter-directory provisioning](~/identity/hybrid/what-is-inter-directory-provisioning.md)
+* Users can be automatically assigned to groups based on their properties, using [dynamic groups](~/external-id/use-dynamic-groups.md#what-are-dynamic-groups) and can, upon request, be assigned to groups, Teams, Microsoft Entra roles, Azure resource roles, and SharePoint Online sites, using [entitlement management](entitlement-management-scenarios.md) and [Privileged Identity Management](~/id-governance/privileged-identity-management/pim-configure.md)
 * Updates to users can be automatically sent to more applications using [app provisioning](~/identity/app-provisioning/user-provisioning.md)
 
 ## Next steps 
@@ -70,4 +70,4 @@ Microsoft Entra ID currently provides these features:
 - [Govern access for external users in Microsoft Entra entitlement management](./entitlement-management-external-users.md)
 - [What is HR driven provisioning?](~/identity/app-provisioning/what-is-hr-driven-provisioning.md)
 - [What is app provisioning?](~/identity/app-provisioning/user-provisioning.md)
-- [What is inter-directory provisioning?](../hybrid/what-is-inter-directory-provisioning.md)
+- [What is inter-directory provisioning?](~/identity/hybrid/what-is-inter-directory-provisioning.md)

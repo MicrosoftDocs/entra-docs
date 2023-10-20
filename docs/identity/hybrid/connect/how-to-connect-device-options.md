@@ -42,5 +42,5 @@ The following documentation provides information about the various device option
 
 ## Next steps
 
-* [Configure Microsoft Entra hybrid join](../../devices/hybrid-join-plan.md)
+* [Configure Microsoft Entra hybrid join](~/identity/devices/hybrid-join-plan.md)
 * [Configure / Disable device writeback](how-to-connect-device-writeback.md)

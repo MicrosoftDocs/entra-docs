@@ -71,10 +71,10 @@ You can purchase the plan through Enterprise Agreement (EA)/Enterprise Subscript
 
 Microsoft Entra Workload ID has four premium features that require a license. 
 
-- [Conditional Access](../conditional-access/workload-identity.md):
+- [Conditional Access](~/identity/conditional-access/workload-identity.md):
 Supports location or risk-based policies for workload identities.
 
-- [Identity Protection](../identity-protection/concept-workload-identity-risk.md):
+- [Identity Protection](~/id-protection/concept-workload-identity-risk.md):
 Provides reports of compromised credentials, anomalous sign-ins, and
 suspicious changes to accounts.
 
@@ -82,7 +82,7 @@ suspicious changes to accounts.
 Enables delegation of reviews to the right people, focused on the most
 important privileged roles.
 
-- [App health recommendations](../reports-monitoring/howto-use-recommendations.md): Provides recommendations for addressing identity hygiene gaps in your application portfolio so you can improve the security and resilience posture of a tenant. 
+- [App health recommendations](~/identity/monitoring-health/howto-use-recommendations.md): Provides recommendations for addressing identity hygiene gaps in your application portfolio so you can improve the security and resilience posture of a tenant. 
 
 ## What do the numbers in each category on the [Workload identities - Microsoft Entra admin center](https://entra.microsoft.com/#view/Microsoft_Azure_ManagedServiceIdentity/WorkloadIdentitiesBlade) mean?
 

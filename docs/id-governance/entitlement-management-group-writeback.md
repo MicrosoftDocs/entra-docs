@@ -28,7 +28,7 @@ To set up group writeback for Microsoft 365 groups in access packages, you must 
 
 - Set up group writeback in the Microsoft Entra admin center. 
 - The Organizational Unit (OU) that is used to set up group writeback in Microsoft Entra Connect Configuration.
-- Complete the [group writeback enablement steps](../hybrid/connect/how-to-connect-group-writeback-enable.md) for Microsoft Entra Connect. 
+- Complete the [group writeback enablement steps](~/identity/hybrid/connect/how-to-connect-group-writeback-enable.md) for Microsoft Entra Connect. 
  
 Using group writeback, you can now sync Microsoft 365 groups that are part of access packages to on-premises Active Directory. To sync the groups, follow the steps: 
 

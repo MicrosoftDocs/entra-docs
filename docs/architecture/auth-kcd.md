@@ -44,11 +44,11 @@ Use KCD when there's a need to provide remote access, protect with pre-authentic
 
 Explore the following resources to learn more about implementing Windows authentication (KCD) with Microsoft Entra ID.
 
-* [Kerberos-based single sign-on (SSO) in Microsoft Entra ID with Application Proxy](../app-proxy/application-proxy-configure-single-sign-on-with-kcd.md) describes prerequisites and configuration steps.
-* The [Tutorial - Add an on-premises app - Application Proxy in Microsoft Entra ID](../app-proxy/application-proxy-add-on-premises-application.md) helps you to prepare your environment for use with Application Proxy.
+* [Kerberos-based single sign-on (SSO) in Microsoft Entra ID with Application Proxy](~/identity/app-proxy/application-proxy-configure-single-sign-on-with-kcd.md) describes prerequisites and configuration steps.
+* The [Tutorial - Add an on-premises app - Application Proxy in Microsoft Entra ID](~/identity/app-proxy/application-proxy-add-on-premises-application.md) helps you to prepare your environment for use with Application Proxy.
 
 ## Next steps
 
 * [Microsoft Entra authentication and synchronization protocol overview](auth-sync-overview.md) describes integration with authentication and synchronization protocols. Authentication integrations enable you to use Microsoft Entra ID and its security and management features with little or no changes to your applications that use legacy authentication methods. Synchronization integrations enable you to sync user and group data to Microsoft Entra ID and then user Microsoft Entra management capabilities. Some sync patterns enable automated provisioning.
-* [Understand single sign-on with an on-premises app using Application Proxy](../app-proxy/application-proxy-config-sso-how-to.md) describes how SSO allows your users to access an application without authenticating multiple times. SSO occurs in the cloud against Microsoft Entra ID and allows the service or Connector to impersonate the user to complete authentication challenges from the application.
-* [SAML single sign-on for on-premises apps with Microsoft Entra application proxy](../app-proxy/application-proxy-configure-single-sign-on-on-premises-apps.md) describes how you can provide remote access to on-premises applications that are secured with SAML authentication through Application Proxy.
+* [Understand single sign-on with an on-premises app using Application Proxy](~/identity/app-proxy/application-proxy-config-sso-how-to.md) describes how SSO allows your users to access an application without authenticating multiple times. SSO occurs in the cloud against Microsoft Entra ID and allows the service or Connector to impersonate the user to complete authentication challenges from the application.
+* [SAML single sign-on for on-premises apps with Microsoft Entra application proxy](~/identity/app-proxy/application-proxy-configure-single-sign-on-on-premises-apps.md) describes how you can provide remote access to on-premises applications that are secured with SAML authentication through Application Proxy.

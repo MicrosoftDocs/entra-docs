@@ -53,7 +53,7 @@ You can enumerate guest users with:
 Use the following tools to identify Microsoft Entra B2B collaboration, external Microsoft Entra tenants, and users accessing applications:
 
 * PowerShell module, [Get MsIdCrossTenantAccessActivity](https://github.com/AzureAD/MSIdentityTools/wiki/Get-MSIDCrossTenantAccessActivity)
-* [Cross-tenant access activity workbook](../reports-monitoring/workbook-cross-tenant-access-activity.md)
+* [Cross-tenant access activity workbook](~/identity/monitoring-health/workbook-cross-tenant-access-activity.md)
 
 ### Discover email domains and companyName property
 

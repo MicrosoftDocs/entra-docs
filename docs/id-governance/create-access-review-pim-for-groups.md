@@ -72,4 +72,4 @@ After you have reached this step, you may follow the instructions outlined under
 ## Next steps
 
 - [Create an access review of groups or applications](create-access-review.md)
-- [Approve activation requests for PIM for Groups members and owners (preview)](../privileged-identity-management/groups-approval-workflow.md)
+- [Approve activation requests for PIM for Groups members and owners (preview)](~/id-governance/privileged-identity-management/groups-approval-workflow.md)

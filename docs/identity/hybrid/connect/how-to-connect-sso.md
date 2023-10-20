@@ -33,10 +33,10 @@ Seamless SSO can be combined with either the [Password Hash Synchronization](how
 ## SSO via primary refresh token vs. Seamless SSO
 
 For Windows 10, Windows Server 2016 and later versions, it’s recommended to use SSO via primary refresh token (PRT). For Windows 7 and Windows 8.1, it’s recommended to use Seamless SSO.
-Seamless SSO needs the user's device to be domain-joined, but it isn't used on Windows 10 [Microsoft Entra joined devices](../../devices/concept-directory-join.md) or [Microsoft Entra hybrid joined devices](../../devices/concept-hybrid-join.md). SSO on Microsoft Entra joined, Microsoft Entra hybrid joined, and Microsoft Entra registered devices works based on the [Primary Refresh Token (PRT)](../../devices/concept-primary-refresh-token.md)
+Seamless SSO needs the user's device to be domain-joined, but it isn't used on Windows 10 [Microsoft Entra joined devices](~/identity/devices/concept-directory-join.md) or [Microsoft Entra hybrid joined devices](~/identity/devices/concept-hybrid-join.md). SSO on Microsoft Entra joined, Microsoft Entra hybrid joined, and Microsoft Entra registered devices works based on the [Primary Refresh Token (PRT)](~/identity/devices/concept-primary-refresh-token.md)
 
 SSO via PRT works once devices are registered with Microsoft Entra ID for Microsoft Entra hybrid joined, Microsoft Entra joined or personal registered devices via Add Work or School Account. 
-For more information on how SSO works with Windows 10 using PRT, see: [Primary Refresh Token (PRT) and Microsoft Entra ID](../../devices/concept-primary-refresh-token.md)
+For more information on how SSO works with Windows 10 using PRT, see: [Primary Refresh Token (PRT) and Microsoft Entra ID](~/identity/devices/concept-primary-refresh-token.md)
 
 
 ## Key benefits

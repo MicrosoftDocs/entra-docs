@@ -35,7 +35,7 @@ Configuration of the connection to SAP ECC is done using a wizard. Depending on 
 
  - A Microsoft Entra tenant with Microsoft Entra ID P1 or Premium P2 (or EMS E3 or E5). 
  
-    [!INCLUDE [active-directory-p1-license.md](active-directory-p1-license.md)]
+    [!INCLUDE [active-directory-p1-license.md](entra-p1-license.md)]
  - The Hybrid Identity Administrator role for configuring the provisioning agent and the Application Administrator or Cloud Application Administrator roles for configuring provisioning in the Azure portal.
  - The Microsoft Entra users to be provisioned to SAP ECC must already be populated with any attributes that will be required by SAP ECC. 
 

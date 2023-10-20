@@ -16,7 +16,7 @@ ms.collection: M365-identity-device-management
 
 # Configure cross-tenant access settings for B2B collaboration
 
-Use External Identities cross-tenant access settings to manage how you collaborate with other Microsoft Entra organizations through B2B collaboration. These settings determine both the level of *inbound* access users in external Microsoft Entra organizations have to your resources, and the level of *outbound* access your users have to external organizations. They also let you trust multi-factor authentication (MFA) and device claims ([compliant claims and Microsoft Entra hybrid joined claims](../conditional-access/howto-conditional-access-policy-compliant-device.md)) from other Microsoft Entra organizations. For details and planning considerations, see [Cross-tenant access in Microsoft Entra External ID](cross-tenant-access-overview.md).
+Use External Identities cross-tenant access settings to manage how you collaborate with other Microsoft Entra organizations through B2B collaboration. These settings determine both the level of *inbound* access users in external Microsoft Entra organizations have to your resources, and the level of *outbound* access your users have to external organizations. They also let you trust multi-factor authentication (MFA) and device claims ([compliant claims and Microsoft Entra hybrid joined claims](~/identity/conditional-access/howto-conditional-access-policy-compliant-device.md)) from other Microsoft Entra organizations. For details and planning considerations, see [Cross-tenant access in Microsoft Entra External ID](cross-tenant-access-overview.md).
 
 > [!IMPORTANT]
 > Microsoft is beginning to move customers using cross-tenant access settings to a new storage model on August 30, 2023. You may notice an entry in your audit logs informing you that your cross-tenant access settings were updated as our automated task migrates your settings. For a brief window while the migration processes, you will be unable to make changes to your settings. If you are unable to make a change, you should wait a few moments and try the change again. Once the migration completes, [you will no longer be capped with 25kb of storage space](./faq.yml#how-many-organizations-can-i-add-in-cross-tenant-access-settings-) and there will be no more limits on the number of partners you can add.
@@ -187,7 +187,7 @@ With inbound settings, you select which external users and groups will be able t
 
    - **Trust multi-factor authentication from Microsoft Entra tenants**: Select this checkbox to allow your Conditional Access policies to trust MFA claims from external organizations. During authentication, Microsoft Entra ID will check a user's credentials for a claim that the user has completed MFA. If not, an MFA challenge will be initiated in the user's home tenant.  
 
-   - **Trust compliant devices**: Allows your Conditional Access policies to trust [compliant device claims](../conditional-access/howto-conditional-access-policy-compliant-device.md) from an external organization when their users access your resources.
+   - **Trust compliant devices**: Allows your Conditional Access policies to trust [compliant device claims](~/identity/conditional-access/howto-conditional-access-policy-compliant-device.md) from an external organization when their users access your resources.
 
    - **Trust Microsoft Entra hybrid joined devices**: Allows your Conditional Access policies to trust Microsoft Entra hybrid joined device claims from an external organization when their users access your resources.
 
@@ -203,7 +203,7 @@ With inbound settings, you select which external users and groups will be able t
 
 ### Allow users to sync into this tenant
 
-If you select **Inbound access** of the added organization, you'll see the **Cross-tenant sync** tab and the **Allow users sync into this tenant** check box. Cross-tenant synchronization is a one-way synchronization service in Microsoft Entra ID that automates creating, updating, and deleting B2B collaboration users across tenants in an organization. For more information, see [Configure cross-tenant synchronization](../multi-tenant-organizations/cross-tenant-synchronization-configure.md) and the [Multi-tenant organizations documentation](../multi-tenant-organizations/index.yml).
+If you select **Inbound access** of the added organization, you'll see the **Cross-tenant sync** tab and the **Allow users sync into this tenant** check box. Cross-tenant synchronization is a one-way synchronization service in Microsoft Entra ID that automates creating, updating, and deleting B2B collaboration users across tenants in an organization. For more information, see [Configure cross-tenant synchronization](~/identity/multi-tenant-organizations/cross-tenant-synchronization-configure.md) and the [Multi-tenant organizations documentation](~/identity/multi-tenant-organizations/index.yml).
 
 :::image type="content" source="media/cross-tenant-access-settings-b2b-collaboration/cross-tenant-sync-tab.png" alt-text="Screenshot that shows the Cross-tenant sync tab with the Allow users sync into this tenant check box." lightbox="media/cross-tenant-access-settings-b2b-collaboration/cross-tenant-sync-tab.png":::
 

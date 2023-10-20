@@ -60,7 +60,7 @@ Identity related **NuGet packages** must be installed in the project for authent
 
 1. Open *Program.cs* and replace the entire file contents with the following snippet:
    
-   :::code language="csharp" source="~/ms-identity-docs-code-dotnet/web-app-aspnet/Program.cs" :::
+   :::code language="csharp" source="~/../ms-identity-docs-code-dotnet/web-app-aspnet/Program.cs" :::
 
 ## Add the sign in and sign out experience
 
@@ -89,11 +89,11 @@ After installing the NuGet packages and adding necessary code for authentication
 
 1. Open *_LoginPartial.cshtml* and add the following code for adding the sign in and sign out experience:
 
-   :::code language="csharp" source="~/ms-identity-docs-code-dotnet/web-app-aspnet/Pages/Shared/_LoginPartial.cshtml" :::
+   :::code language="csharp" source="~/../ms-identity-docs-code-dotnet/web-app-aspnet/Pages/Shared/_LoginPartial.cshtml" :::
 
 1. Open *_Layout.cshtml* and add a reference to `_LoginPartial` created in the previous step. This single line should be placed between `</ul>` and `</div>`:
 
-   :::code language="csharp" source="~/ms-identity-docs-code-dotnet/web-app-aspnet/Pages/Shared/_Layout.cshtml" range="29-31" :::
+   :::code language="csharp" source="~/../ms-identity-docs-code-dotnet/web-app-aspnet/Pages/Shared/_Layout.cshtml" range="29-31" :::
 
 ## Next steps
 

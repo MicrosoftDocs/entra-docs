@@ -61,11 +61,11 @@ AADRiskyUsers
 
 ## Storage account
 
-By routing logs to an Azure storage account, you can keep it for longer than the default retention period. For more information, see the article [Tutorial: Archive Microsoft Entra logs to an Azure storage account](../reports-monitoring/howto-archive-logs-to-storage-account.md).
+By routing logs to an Azure storage account, you can keep it for longer than the default retention period. For more information, see the article [Tutorial: Archive Microsoft Entra logs to an Azure storage account](~/identity/monitoring-health/howto-archive-logs-to-storage-account.md).
 
 ## Azure Event Hubs
 
-Azure Event Hubs can look at incoming data from sources like Microsoft Entra ID Protection and provide real-time analysis and correlation. For more information, see the article [Tutorial: Stream Microsoft Entra logs to an Azure event hub](../reports-monitoring/howto-stream-logs-to-event-hub.md)
+Azure Event Hubs can look at incoming data from sources like Microsoft Entra ID Protection and provide real-time analysis and correlation. For more information, see the article [Tutorial: Stream Microsoft Entra logs to an Azure event hub](~/identity/monitoring-health/howto-stream-logs-to-event-hub.md)
 
 ## Other options
 
@@ -75,8 +75,8 @@ Organizations can use the [Microsoft Graph API to programmatically interact with
 
 ## Next steps
 
-- [What is Microsoft Entra monitoring?](../reports-monitoring/overview-monitoring-health.md)
+- [What is Microsoft Entra monitoring?](~/identity/monitoring-health/overview-monitoring-health.md)
 - [Install and use the log analytics views for Microsoft Entra ID](/azure/azure-monitor/visualize/workbooks-view-designer-conversion-overview)
 - [Connect data from Microsoft Entra ID Protection](/azure/sentinel/data-connectors/azure-active-directory-identity-protection)
 - [Microsoft Entra ID Protection and the Microsoft Graph PowerShell SDK](howto-identity-protection-graph-api.md)
-- [Tutorial: Stream Microsoft Entra logs to an Azure event hub](../reports-monitoring/howto-stream-logs-to-event-hub.md)
+- [Tutorial: Stream Microsoft Entra logs to an Azure event hub](~/identity/monitoring-health/howto-stream-logs-to-event-hub.md)

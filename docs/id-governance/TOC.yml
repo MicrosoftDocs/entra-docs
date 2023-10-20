@@ -223,11 +223,11 @@
     - name: Microsoft Entra roles and Azure resource roles
       items:
       - name: Create an access review
-        href: ../privileged-identity-management/pim-create-roles-and-resource-roles-review.md?toc=/azure/active-directory/governance/toc.json
+        href: ~/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md?toc=/azure/active-directory/governance/toc.json
       - name: Perform an access review
-        href: ../privileged-identity-management/pim-perform-roles-and-resource-roles-review.md?toc=/azure/active-directory/governance/toc.json
+        href: ~/id-governance/privileged-identity-management/pim-perform-roles-and-resource-roles-review.md?toc=/azure/active-directory/governance/toc.json
       - name: Complete an access review
-        href: ../privileged-identity-management/pim-complete-roles-and-resource-roles-review.md?toc=/azure/active-directory/governance/toc.json
+        href: ~/id-governance/privileged-identity-management/pim-complete-roles-and-resource-roles-review.md?toc=/azure/active-directory/governance/toc.json
     - name: Microsoft Entra PIM for Groups
       items:
       - name: Create an access review

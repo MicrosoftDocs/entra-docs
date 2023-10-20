@@ -155,7 +155,7 @@ This step may already be complete on your tenant, but it's good to double-check 
 1. Browse to **Identity** > **Hybrid management** > **Microsoft Entra Connect**.
 3. Verify that your sync status is **Enabled** and that your last sync was less than an hour ago.
 
-If you need to kick off a new round of synchronization, see [Microsoft Entra Connect Sync: Scheduler](../hybrid/connect/how-to-connect-sync-feature-scheduler.md#start-the-scheduler).
+If you need to kick off a new round of synchronization, see [Microsoft Entra Connect Sync: Scheduler](~/identity/hybrid/connect/how-to-connect-sync-feature-scheduler.md#start-the-scheduler).
 
 ### Determine which authentication methods your users can use
 

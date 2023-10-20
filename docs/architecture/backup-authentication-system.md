@@ -55,7 +55,7 @@ During an outage, a user can authenticate using the backup authentication system
 1. The user has successfully authenticated using the same app and device in the last three days.
 1. The user isn't required to authenticate interactively
 1. The user is accessing a resource as a member of their home tenant, rather than exercising a B2B or B2C scenario.
-1. The user isn't subject to Conditional Access policies that limit the backup authentication system, like disabling [resilience defaults](../conditional-access/resilience-defaults.md).
+1. The user isn't subject to Conditional Access policies that limit the backup authentication system, like disabling [resilience defaults](~/identity/conditional-access/resilience-defaults.md).
 1. The user hasn't been subject to a revocation event, such as a credential change since their last successful authentication.
 
 ### How does interactive authentication and user activity affect resilience?
@@ -64,17 +64,17 @@ The backup authentication system relies on metadata from a prior authentication 
 
 ### How do Conditional Access policies affect resilience?
 
-Certain policies can't be evaluated in real-time by the backup authentication system and must rely on prior evaluations of these policies. Under outage conditions, the service uses a prior evaluation by default to maximize resilience. For example, access that is conditioned on a user having a particular role (like Application Administrator) continues during an outage based on the role the user had during that latest authentication. If the outage-only use of a previous evaluation needs to be restricted, tenant administrators can choose a strict evaluation of all Conditional Access policies, even under outage conditions, by disabling resilience defaults. This decision should be taken with care because disabling [resilience defaults](../conditional-access/resilience-defaults.md) for a given policy disables those users from using backup authentication. Resilience defaults must be re-enabled before an outage occurs for the backup system to provide resilience.
+Certain policies can't be evaluated in real-time by the backup authentication system and must rely on prior evaluations of these policies. Under outage conditions, the service uses a prior evaluation by default to maximize resilience. For example, access that is conditioned on a user having a particular role (like Application Administrator) continues during an outage based on the role the user had during that latest authentication. If the outage-only use of a previous evaluation needs to be restricted, tenant administrators can choose a strict evaluation of all Conditional Access policies, even under outage conditions, by disabling resilience defaults. This decision should be taken with care because disabling [resilience defaults](~/identity/conditional-access/resilience-defaults.md) for a given policy disables those users from using backup authentication. Resilience defaults must be re-enabled before an outage occurs for the backup system to provide resilience.
 
 Certain other types of policies don't support use of the backup authentication system. Use of the following policies reduce resilience: 
 
-- Use of the [sign-in frequency control](../conditional-access/concept-conditional-access-session.md#sign-in-frequency) as part of a Conditional Access policy.
-- Use of the [authentication methods policy](../conditional-access/concept-conditional-access-grant.md#require-authentication-strength).
-- Use of [classic Conditional Access policies](../conditional-access/policy-migration-mfa.md).
+- Use of the [sign-in frequency control](~/identity/conditional-access/concept-conditional-access-session.md#sign-in-frequency) as part of a Conditional Access policy.
+- Use of the [authentication methods policy](~/identity/conditional-access/concept-conditional-access-grant.md#require-authentication-strength).
+- Use of [classic Conditional Access policies](~/identity/conditional-access/policy-migration-mfa.md).
 
 ## Workload identity resilience in the backup authentication system
 
-In addition to user authentication, the backup authentication system provides resilience for [managed identities](../managed-identities-azure-resources/overview.md) and other key Azure infrastructure by offering a regionally isolated authentication service that is redundantly layered with the primary authentication service. This system enables the infrastructure authentication within an Azure region to be resilient to issues that may occur in another region or within the larger Microsoft Entra service. This system complements Azure’s cross-region architecture. Building your own applications using MI and following Azure’s [best practices for resilience and availability]() ensures your applications are highly resilient. In addition to MI, this regionally resilient backup system protects key Azure infrastructure and services that keep the cloud functional.
+In addition to user authentication, the backup authentication system provides resilience for [managed identities](~/identity/managed-identities-azure-resources/overview.md) and other key Azure infrastructure by offering a regionally isolated authentication service that is redundantly layered with the primary authentication service. This system enables the infrastructure authentication within an Azure region to be resilient to issues that may occur in another region or within the larger Microsoft Entra service. This system complements Azure’s cross-region architecture. Building your own applications using MI and following Azure’s [best practices for resilience and availability]() ensures your applications are highly resilient. In addition to MI, this regionally resilient backup system protects key Azure infrastructure and services that keep the cloud functional.
 
 ### Summary of infrastructure authentication support
 
@@ -249,5 +249,5 @@ The backup authentication system is supported in all cloud environments except M
 
 - [Application requirements for the backup authentication system](backup-authentication-system-apps.md)
 - [Introduction to the backup authentication system](https://azure.microsoft.com/blog/advancing-service-resilience-in-azure-active-directory-with-its-backup-authentication-service/)
-- [Resilience Defaults for Conditional Access](../conditional-access/resilience-defaults.md)
-- [Microsoft Entra SLA performance reporting](../reports-monitoring/reference-sla-performance.md)
+- [Resilience Defaults for Conditional Access](~/identity/conditional-access/resilience-defaults.md)
+- [Microsoft Entra SLA performance reporting](~/identity/monitoring-health/reference-sla-performance.md)

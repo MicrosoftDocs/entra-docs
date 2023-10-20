@@ -17,7 +17,7 @@ ms.collection:
 
 # Scenario - Using Microsoft Entra ID to secure access to SAP platforms and applications
 
-This document provides advice on the **technical design and configuration** of SAP platforms and applications when using Microsoft Entra ID as the primary user authentication service. Learn more about the initial setup in [this tutorial](../saas-apps/sap-hana-cloud-platform-identity-authentication-tutorial.md).
+This document provides advice on the **technical design and configuration** of SAP platforms and applications when using Microsoft Entra ID as the primary user authentication service. Learn more about the initial setup in [this tutorial](~/identity/saas-apps/sap-hana-cloud-platform-identity-authentication-tutorial.md).
 
 ## Terminology used in this guide
 
@@ -92,7 +92,7 @@ On the trust configuration in BTP, we recommend that "Create Shadow Users During
 
 #### Why this recommendation?
 
-When using federation, you can choose to define the trust configuration at the BTP Subaccount level. In that case, you must repeat the configuration for each other Subaccount you're using. By using IAS as an intermediate trust configuration, you benefit from centralized configuration across multiple Subaccounts and you can use IAS features such as [risk-based authentication](https://help.sap.com/viewer/6d6d63354d1242d185ab4830fc04feb1/Cloud/en-US/bc52fbf3d59447bbb6aa22f80d8b6056.html) and centralized [enrichment of assertion attributes](https://help.sap.com/viewer/6d6d63354d1242d185ab4830fc04feb1/Cloud/en-US/7124201682434efb946e1046fde06afe.html). To safeguard the user experience, these advanced security features should only be enforced at a single location. This could either be IAS or when keeping Microsoft Entra ID as the single authoritative user store (as is the premise of this paper), this would centrally be handled by Microsoft Entra [Conditional Access Management](../conditional-access/overview.md).
+When using federation, you can choose to define the trust configuration at the BTP Subaccount level. In that case, you must repeat the configuration for each other Subaccount you're using. By using IAS as an intermediate trust configuration, you benefit from centralized configuration across multiple Subaccounts and you can use IAS features such as [risk-based authentication](https://help.sap.com/viewer/6d6d63354d1242d185ab4830fc04feb1/Cloud/en-US/bc52fbf3d59447bbb6aa22f80d8b6056.html) and centralized [enrichment of assertion attributes](https://help.sap.com/viewer/6d6d63354d1242d185ab4830fc04feb1/Cloud/en-US/7124201682434efb946e1046fde06afe.html). To safeguard the user experience, these advanced security features should only be enforced at a single location. This could either be IAS or when keeping Microsoft Entra ID as the single authoritative user store (as is the premise of this paper), this would centrally be handled by Microsoft Entra [Conditional Access Management](~/identity/conditional-access/overview.md).
 
 Note: to IAS, every Subaccount is considered to be an "application", even though within that Subaccount one or more applications could be deployed.  Within IAS, every such application can be set up for federation with the same corporate identity provider (Microsoft Entra ID in this case).
 
@@ -100,11 +100,11 @@ Note: to IAS, every Subaccount is considered to be an "application", even though
 
 In Microsoft Entra ID:
 
-- Optionally [configure Microsoft Entra ID for seamless single sign-on](../hybrid/connect/how-to-connect-sso.md) (Seamless SSO), which automatically signs users in when they are on their corporate devices connected to your corporate network. When enabled, users don't need to type in their passwords to sign in to Microsoft Entra ID, and usually, even type in their usernames.
+- Optionally [configure Microsoft Entra ID for seamless single sign-on](~/identity/hybrid/connect/how-to-connect-sso.md) (Seamless SSO), which automatically signs users in when they are on their corporate devices connected to your corporate network. When enabled, users don't need to type in their passwords to sign in to Microsoft Entra ID, and usually, even type in their usernames.
 
 In Microsoft Entra ID and IAS:
 
-- Follow the documentation to connect Microsoft Entra ID to IAS in federation (proxy) mode ([SAP doc](https://developers.sap.com/tutorials/cp-ias-azure-ad.html), [Microsoft doc](../saas-apps/sap-hana-cloud-platform-identity-authentication-tutorial.md)). Watch out for the `NameID` setting on your SSO config in Microsoft Entra ID, because UPNs aren't necessarily email-addresses.
+- Follow the documentation to connect Microsoft Entra ID to IAS in federation (proxy) mode ([SAP doc](https://developers.sap.com/tutorials/cp-ias-azure-ad.html), [Microsoft doc](~/identity/saas-apps/sap-hana-cloud-platform-identity-authentication-tutorial.md)). Watch out for the `NameID` setting on your SSO config in Microsoft Entra ID, because UPNs aren't necessarily email-addresses.
 - Configure the "Bundled Application" to use Microsoft Entra ID by going to the "[Conditional Authentication](https://help.sap.com/viewer/6d6d63354d1242d185ab4830fc04feb1/Cloud/en-US/0143dce88a604533ab5ab17e639fec09.html)" page and setting the "Default Authenticating Identity Provider" to the Corporate Identity Provider representing your Microsoft Entra directory.
 
 In BTP:
@@ -136,7 +136,7 @@ While that could be a valid reason for using "User assignment required", it does
 
 #### Summary of implementation
 
-On the Microsoft Entra Enterprise Application representing the federation relation with IAS, disable "[User assignment required](~/identity/enterprise-apps/assign-user-or-group-access-portal.md)". This also means you can safely skip [assignment of users](../saas-apps/sap-hana-cloud-platform-identity-authentication-tutorial.md#assign-the-azure-ad-test-user).
+On the Microsoft Entra Enterprise Application representing the federation relation with IAS, disable "[User assignment required](~/identity/enterprise-apps/assign-user-or-group-access-portal.md)". This also means you can safely skip [assignment of users](~/identity/saas-apps/sap-hana-cloud-platform-identity-authentication-tutorial.md#assign-the-azure-ad-test-user).
 
 <a name='3---use-azure-ad-groups-for-authorization-through-role-collections-in-iasbtp'></a>
 
@@ -172,7 +172,7 @@ We recommend using the Microsoft Entra group's Group ID rather than its name bec
 In Microsoft Entra ID:
 
 - Create groups to which users can be added that need access to applications in BTP (for example, create a Microsoft Entra group for each Role Collection in BTP).
-- On the Microsoft Entra Enterprise Application representing the federation relation with IAS, configure the SAML User Attributes & Claims to [add a group claim for security groups](../hybrid/connect/how-to-connect-fed-group-claims.md#add-group-claims-to-tokens-for-saml-applications-using-sso-configuration):
+- On the Microsoft Entra Enterprise Application representing the federation relation with IAS, configure the SAML User Attributes & Claims to [add a group claim for security groups](~/identity/hybrid/connect/how-to-connect-fed-group-claims.md#add-group-claims-to-tokens-for-saml-applications-using-sso-configuration):
     - Set the Source attribute to "Group ID" and the Name to `Groups` (spelled exactly like this, with upper case 'G').
     - Further, in order to keep claims payloads small and to avoid running into the limitation whereby Microsoft Entra ID will limit the number of group claims to 150 in SAML assertions, we highly recommend limiting the groups returned in the claims to only those groups that explicitly were assigned:  
         - Under "Which groups associated with the user should be returned in the claim?" answer with "Groups assigned to the application".  Then for the groups you want to include as claims, assign them to the Enterprise Application using the "Users and Groups" section and selecting "Add user/group".
@@ -285,5 +285,5 @@ Regardless of where the authorization information comes from, it can then be emi
 
 ## Next Steps
 
-- Learn more about the initial setup in [this tutorial](../saas-apps/sap-hana-cloud-platform-identity-authentication-tutorial.md)
+- Learn more about the initial setup in [this tutorial](~/identity/saas-apps/sap-hana-cloud-platform-identity-authentication-tutorial.md)
 - Discover additional [SAP integration scenarios with Microsoft Entra ID](/azure/sap/workloads/integration-get-started#microsoft-entra-id-formerly-azure-ad) and beyond

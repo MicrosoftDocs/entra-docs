@@ -21,9 +21,9 @@ Use the entitlement management feature to manage the identity and access lifecyc
 
 Learn more:
 
-* [What is entitlement management?](../governance/entitlement-management-overview.md)
-* [What are access packages and what resources can I manage with them?](../governance/entitlement-management-overview.md#what-are-access-packages-and-what-resources-can-i-manage-with-them)
-* [What is provisioning?](../governance/what-is-provisioning.md)
+* [What is entitlement management?](~/id-governance/entitlement-management-overview.md)
+* [What are access packages and what resources can I manage with them?](~/id-governance/entitlement-management-overview.md#what-are-access-packages-and-what-resources-can-i-manage-with-them)
+* [What is provisioning?](~/id-governance/what-is-provisioning.md)
 
 ## Before you begin
 
@@ -48,9 +48,9 @@ Access packages reside in catalogs. When you want to group related resources and
 
 Learn more:
 
-* [Create and manage a catalog of resources in entitlement management](../governance/entitlement-management-catalog-create.md)
-* [Delegation and roles in entitlement management](../governance/entitlement-management-delegate.md)
-* [Add resources to a catalog](../governance/entitlement-management-catalog-create.md#add-resources-to-a-catalog)
+* [Create and manage a catalog of resources in entitlement management](~/id-governance/entitlement-management-catalog-create.md)
+* [Delegation and roles in entitlement management](~/id-governance/entitlement-management-delegate.md)
+* [Add resources to a catalog](~/id-governance/entitlement-management-catalog-create.md#add-resources-to-a-catalog)
 
 The following diagram shows a typical governance lifecycle of an external user gaining access to an access package, with an expiration.
 
@@ -58,12 +58,12 @@ The following diagram shows a typical governance lifecycle of an external user g
 
 ### Self-service external access
 
-You can make access packages available, through the Microsoft Entra My Access portal, to enable external users to request access. Policies determine who can request an access package. See, [Request access to an access package in entitlement management](../governance/entitlement-management-request-access.md).
+You can make access packages available, through the Microsoft Entra My Access portal, to enable external users to request access. Policies determine who can request an access package. See, [Request access to an access package in entitlement management](~/id-governance/entitlement-management-request-access.md).
 
 You specify who is allowed to request the access package:
 
 * Connected organizations
-  * See, [Add a connected organization in entitlement management](../governance/entitlement-management-organization.md)
+  * See, [Add a connected organization in entitlement management](~/id-governance/entitlement-management-organization.md)
 * Configured connected organizations
 * Users from organizations
 * Member or guest users in your tenant
@@ -84,7 +84,7 @@ Access packages can include an expiration date or a number of days you set for a
 
 ### Access reviews
 
-Access packages can require periodic access reviews, which require the package owner or a designee to attest to the continued need for users’ access. See, [Manage guest access with access reviews](../governance/manage-guest-access-with-access-reviews.md).
+Access packages can require periodic access reviews, which require the package owner or a designee to attest to the continued need for users’ access. See, [Manage guest access with access reviews](~/id-governance/manage-guest-access-with-access-reviews.md).
 
 Before you set up your review, determine the following criteria:
 
@@ -98,7 +98,7 @@ Before you set up your review, determine the following criteria:
 > [!IMPORTANT]
 > Access package reviews examine access granted through entitlement management. Set up other processes to review access to external users, outside entitlement management.
 
-Learn more: [Plan a Microsoft Entra access reviews deployment](../governance/deploy-access-reviews.md).
+Learn more: [Plan a Microsoft Entra access reviews deployment](~/id-governance/deploy-access-reviews.md).
 
 ## Using entitlement management automation
 
@@ -115,11 +115,11 @@ Learn more: [Plan a Microsoft Entra access reviews deployment](../governance/dep
 We recommend the following practices to govern external access with entitlement management.
 
 * For projects with one or more business partners, create and use access packages to onboard and provide access to resources. 
-  * [Create a new access package in entitlement management](../governance/entitlement-management-access-package-create.md)
+  * [Create a new access package in entitlement management](~/id-governance/entitlement-management-access-package-create.md)
 * If you have B2B users in your directory, you can assign them to access packages.
 * You can assign access in the Azure portal or with Microsoft Graph
-  * [View, add, and remove assignments for an access package in entitlement management](../governance/entitlement-management-access-package-assignments.md)
-  * [Create a new access package in entitlement management](../governance/entitlement-management-access-package-create.md)
+  * [View, add, and remove assignments for an access package in entitlement management](~/id-governance/entitlement-management-access-package-assignments.md)
+  * [Create a new access package in entitlement management](~/id-governance/entitlement-management-access-package-create.md)
 
 ### Identity Governance - Settings 
 
@@ -129,13 +129,13 @@ Use **Identity Governance - Settings** to remove users from your directory when 
 
 ### Delegate catalog and package management
 
-You can delegate catalog and package management to business owners, who have more information on who should access. See, [Delegation and roles in entitlement managements](../governance/entitlement-management-delegate.md)
+You can delegate catalog and package management to business owners, who have more information on who should access. See, [Delegation and roles in entitlement managements](~/id-governance/entitlement-management-delegate.md)
 
    ![Screenshot of options and entries under Roles and administrators.](media/secure-external-access/6-catalog-management.png)
 
 ### Enforce access package expiration
 
-You can enforce access expiration for external users. See, [Change lifecycle settings for an access package in entitlement management](../governance/entitlement-management-access-package-lifecycle-policy.md).
+You can enforce access expiration for external users. See, [Change lifecycle settings for an access package in entitlement management](~/id-governance/entitlement-management-access-package-lifecycle-policy.md).
 
    ![Screenshot of options and entries for Expiration.](media/secure-external-access/6-access-package-expiration.png)
 
@@ -146,7 +146,7 @@ You can enforce access expiration for external users. See, [Change lifecycle set
 
 ### Enforce guest-access package reviews
 
-You can enforce reviews of guest-access packages to avoid inappropriate access for guests. See, [Manage guest access with access reviews](../governance/manage-guest-access-with-access-reviews.md).
+You can enforce reviews of guest-access packages to avoid inappropriate access for guests. See, [Manage guest access with access reviews](~/id-governance/manage-guest-access-with-access-reviews.md).
 
    ![Screenshot of options and entries under New access package.](media/secure-external-access/6-new-access-package.png)
 
@@ -155,7 +155,7 @@ You can enforce reviews of guest-access packages to avoid inappropriate access f
   * You can use access package managers as reviewers
 * For less sensitive projects, users self-reviewing reduces the burden to remove access from users no longer with the organization.
 
-Learn more: [Govern access for external users in entitlement management](../governance/entitlement-management-external-users.md) 
+Learn more: [Govern access for external users in entitlement management](~/id-governance/entitlement-management-external-users.md) 
 
 ## Next steps
 

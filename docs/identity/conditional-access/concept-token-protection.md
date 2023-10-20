@@ -17,7 +17,7 @@ ms.collection: M365-identity-device-management
 
 Token protection (sometimes referred to as token binding in the industry) attempts to reduce attacks using token theft by ensuring a token is usable only from the intended device. When an attacker is able to steal a token, by hijacking or replay, they can impersonate their victim until the token expires or is revoked. Token theft is thought to be a relatively rare event, but the damage from it can be significant. 
 
-Token protection creates a cryptographically secure tie between the token and the device (client secret) it's issued to. Without the client secret, the bound token is useless. When a user registers a Windows 10 or newer device in Microsoft Entra ID, their primary identity is [bound to the device](../devices/concept-primary-refresh-token.md#how-is-the-prt-protected). What this means: A policy can ensure that only bound sign-in session (or refresh) tokens, otherwise known as Primary Refresh Tokens (PRTs) are used by applications when requesting access to a resource.
+Token protection creates a cryptographically secure tie between the token and the device (client secret) it's issued to. Without the client secret, the bound token is useless. When a user registers a Windows 10 or newer device in Microsoft Entra ID, their primary identity is [bound to the device](~/identity/devices/concept-primary-refresh-token.md#how-is-the-prt-protected). What this means: A policy can ensure that only bound sign-in session (or refresh) tokens, otherwise known as Primary Refresh Tokens (PRTs) are used by applications when requesting access to a resource.
 
 > [!IMPORTANT]
 > Token protection is currently in public preview. For more information about previews, see [Universal License Terms For Online Services](https://www.microsoft.com/licensing/terms/product/ForOnlineServices/all).
@@ -136,7 +136,7 @@ Use Microsoft Entra sign-in log to verify the outcome of a token protection enfo
 
 #### Log Analytics  
 
-You can also use [Log Analytics](../reports-monitoring/tutorial-configure-log-analytics-workspace.md) to query the sign-in logs (interactive and non-interactive) for blocked requests due to token protection enforcement failure.
+You can also use [Log Analytics](~/identity/monitoring-health/tutorial-configure-log-analytics-workspace.md) to query the sign-in logs (interactive and non-interactive) for blocked requests due to token protection enforcement failure.
 
 Here's a sample Log Analytics query searching the non-interactive sign-in logs for the last seven days, highlighting **Blocked** versus **Allowed** requests by **Application**. These queries are only samples and are subject to change.
 
@@ -197,4 +197,4 @@ AADNonInteractiveUserSignInLogs
 
 ## Next steps
 
-- [What is a Primary Refresh Token?](../devices/concept-primary-refresh-token.md)
+- [What is a Primary Refresh Token?](~/identity/devices/concept-primary-refresh-token.md)

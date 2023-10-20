@@ -26,13 +26,13 @@ You're entirely responsible for all layers of security for your on-premises IT e
 
 * For more information on the shared responsibility model, see [Shared responsibility in the cloud](/azure/security/fundamentals/shared-responsibility).
 * For more information on securing access for privileged users, see [Securing privileged access for hybrid and cloud deployments in Microsoft Entra ID](~/identity/role-based-access-control/security-planning.md).
-* For a wide range of videos, how-to guides, and content of key concepts for privileged identity, see [Privileged Identity Management documentation](../privileged-identity-management/index.yml).
+* For a wide range of videos, how-to guides, and content of key concepts for privileged identity, see [Privileged Identity Management documentation](~/id-governance/privileged-identity-management/index.yml).
 
 ## Log files to monitor
 
 The log files you use for investigation and monitoring are:
 
-* [Microsoft Entra audit logs](../reports-monitoring/concept-audit-logs.md)
+* [Microsoft Entra audit logs](~/identity/monitoring-health/concept-audit-logs.md)
 
 * [Microsoft 365 Audit logs](/microsoft-365/compliance/auditing-solutions-overview)
 
@@ -46,23 +46,23 @@ From the Azure portal, you can view the Microsoft Entra audit logs and download 
 
 * **[Azure Monitor](/azure/azure-monitor/overview)**. Enables automated monitoring and alerting of various conditions. Can create or use workbooks to combine data from different sources.
 
-* **[Azure Event Hubs](/azure/event-hubs/event-hubs-about)** integrated with a SIEM. Enables Microsoft Entra logs to be pushed to other SIEMs such as Splunk, ArcSight, QRadar, and Sumo Logic via the Azure Event Hubs integration. For more information, see [Stream Microsoft Entra logs to an Azure event hub](../reports-monitoring/howto-stream-logs-to-event-hub.md).
+* **[Azure Event Hubs](/azure/event-hubs/event-hubs-about)** integrated with a SIEM. Enables Microsoft Entra logs to be pushed to other SIEMs such as Splunk, ArcSight, QRadar, and Sumo Logic via the Azure Event Hubs integration. For more information, see [Stream Microsoft Entra logs to an Azure event hub](~/identity/monitoring-health/howto-stream-logs-to-event-hub.md).
 
 * **[Microsoft Defender for Cloud Apps](/cloud-app-security/what-is-cloud-app-security)**. Enables you to discover and manage apps, govern across apps and resources, and check your cloud apps' compliance.
 
-* **Microsoft Graph**. Enables you to export data and use Microsoft Graph to do more analysis. For more information, see [Microsoft Graph PowerShell SDK and Microsoft Entra ID Protection](../identity-protection/howto-identity-protection-graph-api.md).
+* **Microsoft Graph**. Enables you to export data and use Microsoft Graph to do more analysis. For more information, see [Microsoft Graph PowerShell SDK and Microsoft Entra ID Protection](~/id-protection/howto-identity-protection-graph-api.md).
 
-* **[Identity Protection](../identity-protection/overview-identity-protection.md)**. Generates three key reports you can use to help with your investigation:
+* **[Identity Protection](~/id-protection/overview-identity-protection.md)**. Generates three key reports you can use to help with your investigation:
 
   * **Risky users**. Contains information about which users are at risk, details about detections, history of all risky sign-ins, and risk history.
   
-  * **Risky sign-ins**. Contains information about a sign-in that might indicate suspicious circumstances. For more information on investigating information from this report, see [Investigate risk](../identity-protection/howto-identity-protection-investigate-risk.md).
+  * **Risky sign-ins**. Contains information about a sign-in that might indicate suspicious circumstances. For more information on investigating information from this report, see [Investigate risk](~/id-protection/howto-identity-protection-investigate-risk.md).
   
   * **Risk detections**. Contains information about other risks triggered when a risk is detected and other pertinent information such as sign-in location and any details from Microsoft Defender for Cloud Apps.
 
-* **[Securing workload identities with Identity Protection Preview](../identity-protection/concept-workload-identity-risk.md)**. Use to detect risk on workload identities across sign-in behavior and offline indicators of compromise.
+* **[Securing workload identities with Identity Protection Preview](~/id-protection/concept-workload-identity-risk.md)**. Use to detect risk on workload identities across sign-in behavior and offline indicators of compromise.
 
-Although we discourage the practice, privileged accounts can have standing administration rights. If you choose to use standing privileges, and the account is compromised, it can have a strongly negative effect. We recommend you prioritize monitoring privileged accounts and include the accounts in your Privileged Identity Management (PIM) configuration. For more information on PIM, see [Start using Privileged Identity Management](../privileged-identity-management/pim-getting-started.md). Also, we recommend you validate that admin accounts:
+Although we discourage the practice, privileged accounts can have standing administration rights. If you choose to use standing privileges, and the account is compromised, it can have a strongly negative effect. We recommend you prioritize monitoring privileged accounts and include the accounts in your Privileged Identity Management (PIM) configuration. For more information on PIM, see [Start using Privileged Identity Management](~/id-governance/privileged-identity-management/pim-getting-started.md). Also, we recommend you validate that admin accounts:
 
 * Are required.
 * Have the least privilege to execute the require activities.
@@ -144,7 +144,7 @@ You can monitor privileged account sign-in events in the Microsoft Entra sign-in
 
 ## Changes by privileged accounts
 
-Monitor all completed and attempted changes by a privileged account. This data enables you to establish what's normal activity for each privileged account and alert on activity that deviates from the expected. The Microsoft Entra audit logs are used to record this type of event. For more information on Microsoft Entra audit logs, see [Audit logs in Microsoft Entra ID](../reports-monitoring/concept-audit-logs.md).
+Monitor all completed and attempted changes by a privileged account. This data enables you to establish what's normal activity for each privileged account and alert on activity that deviates from the expected. The Microsoft Entra audit logs are used to record this type of event. For more information on Microsoft Entra audit logs, see [Audit logs in Microsoft Entra ID](~/identity/monitoring-health/concept-audit-logs.md).
 
 <a name='azure-active-directory-domain-services'></a>
 
@@ -174,9 +174,9 @@ Investigate changes to privileged accounts' authentication rules and privileges,
 | Accounts exempt from Conditional Access| High| Azure Monitor Logs<br>-or-<br>Access Reviews| Conditional Access = Insights and reporting| Any account exempt from Conditional Access is most likely bypassing security controls and is more vulnerable to compromise. Break-glass accounts are exempt. See information on how to monitor break-glass accounts later in this article.|
 | Addition of a Temporary Access Pass to a privileged account| High| Microsoft Entra audit logs| Activity: Admin registered security info<br><br>Status Reason: Admin registered temporary access pass method for user<br><br>Category: UserManagement<br><br>Initiated by (actor): User Principal Name<br><br>Target: User Principal Name|Monitor and alert on a Temporary Access Pass being created for a privileged user.<br>[Microsoft Sentinel template](https://github.com/Azure/Azure-Sentinel/tree/master/Detections/AuditLogs/AdditionofaTemporaryAccessPasstoaPrivilegedAccount.yaml)<br><br>[Sigma rules](https://github.com/SigmaHQ/sigma/tree/master/rules/cloud/azure) |
 
-For more information on how to monitor for exceptions to Conditional Access policies, see [Conditional Access insights and reporting](../conditional-access/howto-conditional-access-insights-reporting.md).
+For more information on how to monitor for exceptions to Conditional Access policies, see [Conditional Access insights and reporting](~/identity/conditional-access/howto-conditional-access-insights-reporting.md).
 
-For more information on discovering unused privileged accounts, see [Create an access review of Microsoft Entra roles in Privileged Identity Management](../privileged-identity-management/pim-create-roles-and-resource-roles-review.md).
+For more information on discovering unused privileged accounts, see [Create an access review of Microsoft Entra roles in Privileged Identity Management](~/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md).
 
 ## Assignment and elevation
 
@@ -227,7 +227,7 @@ You can monitor privileged account changes by using Microsoft Entra audit logs a
 
 For more information about managing elevation, see [Elevate access to manage all Azure subscriptions and management groups](/azure/role-based-access-control/elevate-access-global-admin). For information on monitoring elevations by using information available in the Microsoft Entra logs, see [Azure Activity log](/azure/azure-monitor/essentials/activity-log), which is part of the Azure Monitor documentation.
 
-For information about configuring alerts for Azure roles, see [Configure security alerts for Azure resource roles in Privileged Identity Management](../privileged-identity-management/pim-resource-roles-configure-alerts.md).
+For information about configuring alerts for Azure roles, see [Configure security alerts for Azure resource roles in Privileged Identity Management](~/id-governance/privileged-identity-management/pim-resource-roles-configure-alerts.md).
 
 ## Next steps
 

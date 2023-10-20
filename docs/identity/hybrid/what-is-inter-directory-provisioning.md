@@ -44,7 +44,7 @@ This capability of inter-directory provisioning offers the following significant
 - [Health Monitoring](./connect/whatis-azure-ad-connect.md) - can provide robust monitoring and provide a central location in the [Microsoft Entra admin center](https://entra.microsoft.com) to view this activity. 
 
 ## Next steps 
-- [What is identity lifecycle management](../governance/what-is-identity-lifecycle-management.md)
+- [What is identity lifecycle management](~/id-governance/what-is-identity-lifecycle-management.md)
 - [What is provisioning?](what-is-provisioning.md)
 - [What is HR driven provisioning?](~/identity/app-provisioning/what-is-hr-driven-provisioning.md)
 - [What is app provisioning?](~/identity/app-provisioning/user-provisioning.md)

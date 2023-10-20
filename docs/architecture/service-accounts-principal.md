@@ -79,7 +79,7 @@ When using service principals, use the following table to match challenges and m
 | Access reviews for service principals assigned to privileged roles| This functionality is in preview |
 | Service principal access reviews| Manual check of resource access control list using the Azure portal |
 | Over-permissioned service principals| When you create automation service accounts, or service principals, grant permissions for the task. Evaluate service principals to reduce privileges. |
-|Identify modifications to service principal credentials or authentication methods | - See, [Sensitive operations report workbook](../reports-monitoring/workbook-sensitive-operations-report.md) </br> - See the Tech Community blog post, [Microsoft Entra workbook to help you assess Solorigate risk](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/azure-ad-workbook-to-help-you-assess-solorigate-risk/ba-p/2010718)|
+|Identify modifications to service principal credentials or authentication methods | - See, [Sensitive operations report workbook](~/identity/monitoring-health/workbook-sensitive-operations-report.md) </br> - See the Tech Community blog post, [Microsoft Entra workbook to help you assess Solorigate risk](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/azure-ad-workbook-to-help-you-assess-solorigate-risk/ba-p/2010718)|
 
 ## Find accounts using service principals
 
@@ -102,7 +102,7 @@ To assess the security, evaluate privileges and credential storage. Use the foll
 |Can't manage service principal sign-in with Conditional Access| Monitor the sign-ins using the Microsoft Entra sign-in logs
 | Contributor is the default Azure role-based access control (Azure RBAC) role|Evaluate needs and apply the least possible permissions|
 
-Learn more: [What is Conditional Access?](../conditional-access/overview.md)
+Learn more: [What is Conditional Access?](~/identity/conditional-access/overview.md)
 
 ## Move from a user account to a service principal 
 
@@ -121,7 +121,7 @@ Learn more:
 Learn more about service principals:
 
 * [Create a Microsoft Entra application and service principal that can access resources](~/identity-platform/howto-create-service-principal-portal.md)
-* [Sign-in logs in Microsoft Entra ID](../reports-monitoring/concept-sign-ins.md)
+* [Sign-in logs in Microsoft Entra ID](~/identity/monitoring-health/concept-sign-ins.md)
 
 Secure service accounts:
 
@@ -134,4 +134,4 @@ Conditional Access:
 
 Use Conditional Access to block service principals from untrusted locations. 
 
-See, [Create a location-based Conditional Access policy](../conditional-access/workload-identity.md#create-a-location-based-conditional-access-policy)
+See, [Create a location-based Conditional Access policy](~/identity/conditional-access/workload-identity.md#create-a-location-based-conditional-access-policy)

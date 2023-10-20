@@ -68,7 +68,7 @@ Adjust the lifetime of an access token to control how often the client applicati
 
 Apply default token lifetime variation to organizations that have Continuous Access Evaluation (CAE) enabled. Apply default token lifetime variation even if the organizations use CTL policies. The default token lifetime for long lived token lifetime ranges from 20 to 28 hours. When the access token expires, the client must use the refresh token to silently acquire a new refresh token and access token.
 
-Organizations that use [Conditional Access sign-in frequency (SIF)](../conditional-access/howto-conditional-access-session-lifetime.md#user-sign-in-frequency) to enforce how frequently sign-ins occur can't override default access token lifetime variation. When organizations use SIF, the time between credential prompts for a client is the token lifetime that ranges from 60 - 90 minutes plus the sign-in frequency interval.  
+Organizations that use [Conditional Access sign-in frequency (SIF)](~/identity/conditional-access/howto-conditional-access-session-lifetime.md#user-sign-in-frequency) to enforce how frequently sign-ins occur can't override default access token lifetime variation. When organizations use SIF, the time between credential prompts for a client is the token lifetime that ranges from 60 - 90 minutes plus the sign-in frequency interval.  
 
 Here's an example of how default token lifetime variation works with sign-in frequency.  Let's say an organization sets sign-in frequency to occur every hour. When the token has lifetime ranging from 60-90 minutes due to token lifetime variation, the actual sign-in interval occurs anywhere between 1 hour to 2.5 hours.
 

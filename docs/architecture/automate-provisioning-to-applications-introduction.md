@@ -23,7 +23,7 @@ The article helps architects, Microsoft partners, and IT professionals with info
 
 Employees in an organization rely on many applications to perform their work. These applications often require IT admins or application owners to provision accounts before an employee can start accessing them. Organizations also need to manage the lifecycle of these accounts and keep them up to date with the latest information and remove accounts when users don't require them anymore.
 
-The Microsoft Entra provisioning service automates your identity lifecycle and keeps identities in sync across trusted source systems (like HR systems) and applications that users need access to. It enables you to bring users into Microsoft Entra ID and provision them into the various applications that they require. The provisioning capabilities are foundational building blocks that enable rich governance and lifecycle workflows. For [hybrid](../hybrid/whatis-hybrid-identity.md) scenarios, the Microsoft Entra agent model connects to on-premises or IaaS systems, and includes components such as the Microsoft Entra provisioning agent, Microsoft Identity Manager (MIM), and Microsoft Entra Connect.
+The Microsoft Entra provisioning service automates your identity lifecycle and keeps identities in sync across trusted source systems (like HR systems) and applications that users need access to. It enables you to bring users into Microsoft Entra ID and provision them into the various applications that they require. The provisioning capabilities are foundational building blocks that enable rich governance and lifecycle workflows. For [hybrid](~/identity/hybrid/whatis-hybrid-identity.md) scenarios, the Microsoft Entra agent model connects to on-premises or IaaS systems, and includes components such as the Microsoft Entra provisioning agent, Microsoft Identity Manager (MIM), and Microsoft Entra Connect.
 
 Thousands of organizations are running Microsoft Entra cloud-hosted services, with its hybrid components delivered on-premises, for provisioning scenarios. Microsoft invests in cloud-hosted and on-premises functionality, including MIM and Microsoft Entra Connect Sync, to help organizations provision users in their connected systems and applications. This article focuses on how organizations can use Microsoft Entra ID to address their provisioning needs and make clear which technology is most right for each scenario.
 
@@ -35,10 +35,10 @@ Thousands of organizations are running Microsoft Entra cloud-hosted services, wi
 | - | - | - | - |
 | Employees and contractors| HR systems| AD and Microsoft Entra ID| [Connect identities with your system of record](automate-provisioning-to-applications-solutions.md) |
 | Existing AD users and groups| AD DS| Microsoft Entra ID| [Synchronize identities between Microsoft Entra ID and Active Directory](automate-provisioning-to-applications-solutions.md) |
-| Users, groups| Microsoft Entra ID| SaaS and on-prem apps| [Automate provisioning to non-Microsoft applications](../governance/entitlement-management-organization.md) |
-| Access rights| Microsoft Entra ID Governance| SaaS and on-prem apps| [Entitlement management](../governance/entitlement-management-overview.md) |
-| Existing users and groups| AD, SaaS and on-prem apps| Identity governance (so I can review them)| [Microsoft Entra access reviews](../governance/access-reviews-overview.md) |
-| Non-employee users (with approval)| Other cloud directories| SaaS and on-prem apps| [Connected organizations](../governance/entitlement-management-organization.md) |
+| Users, groups| Microsoft Entra ID| SaaS and on-prem apps| [Automate provisioning to non-Microsoft applications](~/id-governance/entitlement-management-organization.md) |
+| Access rights| Microsoft Entra ID Governance| SaaS and on-prem apps| [Entitlement management](~/id-governance/entitlement-management-overview.md) |
+| Existing users and groups| AD, SaaS and on-prem apps| Identity governance (so I can review them)| [Microsoft Entra access reviews](~/id-governance/access-reviews-overview.md) |
+| Non-employee users (with approval)| Other cloud directories| SaaS and on-prem apps| [Connected organizations](~/id-governance/entitlement-management-organization.md) |
 | Users, groups| Microsoft Entra ID| Managed AD domain| [Microsoft Entra Domain Services](https://azure.microsoft.com/services/active-directory-ds/) |
 
 ## Example topologies

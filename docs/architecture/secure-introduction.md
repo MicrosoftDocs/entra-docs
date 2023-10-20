@@ -83,7 +83,7 @@ Azure resources, resource groups, subscriptions, and management groups are acces
 
 ![Diagram that shows Microsoft Entra role hierarchy.](media/secure-introduction/role-hierarchy.png)
 
-Azure resources that [support Managed Identities](../managed-identities-azure-resources/overview.md) allow resources to authenticate, be granted access to, and be assigned roles to other resources within the Microsoft Entra tenant boundary.
+Azure resources that [support Managed Identities](~/identity/managed-identities-azure-resources/overview.md) allow resources to authenticate, be granted access to, and be assigned roles to other resources within the Microsoft Entra tenant boundary.
 
 Applications using Microsoft Entra ID for sign-in may also use Azure resources such as compute or storage as part of its implementation. For example, a custom application that runs in Azure and trusts Microsoft Entra ID for authentication has directory objects and Azure resources.
 
@@ -159,7 +159,7 @@ Configuration settings in Microsoft Entra ID can affect any resource in the Micr
   * Bypass security requirements
 
 >[!NOTE]
->Using [Named Locations](../conditional-access/location-condition.md) can present some challenges to your [zero-trust journey](https://www.microsoft.com/security/business/zero-trust). Verify that using Named Locations fits into your security strategy and principles.
+>Using [Named Locations](~/identity/conditional-access/location-condition.md) can present some challenges to your [zero-trust journey](https://www.microsoft.com/security/business/zero-trust). Verify that using Named Locations fits into your security strategy and principles.
 Allowed authentication methods: Global administrators set the authentication methods allowed for the tenant.
 
 * **Self-service options**. Global Administrators set self-service options such as self-service-password reset and create Microsoft 365 groups at the tenant level.
@@ -237,7 +237,7 @@ Administrators manage how identity objects can access resources, and under what 
 
   * Applications
 
-In a hybrid environment, identities are typically synchronized from the on-premises Active Directory environment using [Microsoft Entra Connect](../hybrid/connect/whatis-azure-ad-connect.md).
+In a hybrid environment, identities are typically synchronized from the on-premises Active Directory environment using [Microsoft Entra Connect](~/identity/hybrid/connect/whatis-azure-ad-connect.md).
 
 ### Administration of identity services
 

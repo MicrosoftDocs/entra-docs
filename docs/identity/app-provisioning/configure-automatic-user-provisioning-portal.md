@@ -18,7 +18,7 @@ ms.reviewer: arvinh
 This article describes the general steps for managing automatic user account provisioning and deprovisioning for applications that support it. *User account provisioning* is the act of creating, updating, and/or disabling user account records in an application’s local user profile store. Most cloud and SaaS applications store the role and permissions in the user's own local user profile store. The presence of such a user record in the user's local store is *required* for single sign-on and access to work. To learn more about automatic user account provisioning, see [Automate User Provisioning and Deprovisioning to SaaS Applications with Microsoft Entra ID](user-provisioning.md).
 
 > [!IMPORTANT]
-> Microsoft Entra ID has a gallery that contains thousands of pre-integrated applications that are enabled for automatic provisioning with Microsoft Entra ID. You should start by finding the provisioning setup tutorial specific to your application in the [List of tutorials on how to integrate SaaS apps with Microsoft Entra ID](../saas-apps/tutorial-list.md). You'll likely find step-by-step guidance for configuring both the app and Microsoft Entra ID to create the provisioning connection.
+> Microsoft Entra ID has a gallery that contains thousands of pre-integrated applications that are enabled for automatic provisioning with Microsoft Entra ID. You should start by finding the provisioning setup tutorial specific to your application in the [List of tutorials on how to integrate SaaS apps with Microsoft Entra ID](~/identity/saas-apps/tutorial-list.md). You'll likely find step-by-step guidance for configuring both the app and Microsoft Entra ID to create the provisioning connection.
 
 ## Finding your apps in the portal
 

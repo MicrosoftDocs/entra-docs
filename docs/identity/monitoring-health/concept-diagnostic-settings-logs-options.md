@@ -66,19 +66,19 @@ Sign-in activity for Active Directory Federated Services (AD FS) applications ar
 
 ### Risky users
 
-The `RiskyUsers` logs identify users who are at risk based on their sign-in activity. This report is part of Microsoft Entra ID Protection and uses sign-in data from Microsoft Entra ID. For more information, see [What is Microsoft Entra ID Protection?](../identity-protection/overview-identity-protection.md).
+The `RiskyUsers` logs identify users who are at risk based on their sign-in activity. This report is part of Microsoft Entra ID Protection and uses sign-in data from Microsoft Entra ID. For more information, see [What is Microsoft Entra ID Protection?](~/id-protection/overview-identity-protection.md).
 
 ### User risk events
 
-The `UserRiskEvents` logs are part of Microsoft Entra ID Protection. These logs capture details about risky sign-in events. For more information, see [How to investigate risk](../identity-protection/howto-identity-protection-investigate-risk.md#risky-sign-ins).
+The `UserRiskEvents` logs are part of Microsoft Entra ID Protection. These logs capture details about risky sign-in events. For more information, see [How to investigate risk](~/id-protection/howto-identity-protection-investigate-risk.md#risky-sign-ins).
 
 ### Risky service principals
 
-The `RiskyServicePrincipals` logs provide information about service principals that Microsoft Entra ID Protection detected as risky. Service principal risk represents the probability that an identity or account is compromised. These risks are calculated asynchronously using data and patterns from Microsoft's internal and external threat intelligence sources. These sources may include security researchers, law enforcement professionals, and security teams at Microsoft. For more information, see [Securing workload identities](../identity-protection/concept-workload-identity-risk.md)
+The `RiskyServicePrincipals` logs provide information about service principals that Microsoft Entra ID Protection detected as risky. Service principal risk represents the probability that an identity or account is compromised. These risks are calculated asynchronously using data and patterns from Microsoft's internal and external threat intelligence sources. These sources may include security researchers, law enforcement professionals, and security teams at Microsoft. For more information, see [Securing workload identities](~/id-protection/concept-workload-identity-risk.md)
 
 ### Service principal risk events
 
-The `ServicePrincipalRiskEvents` logs provide details around the risky sign-in events for service principals. These logs may include any identified suspicious events related to the service principal accounts. For more information, see [Securing workload identities](../identity-protection/concept-workload-identity-risk.md)
+The `ServicePrincipalRiskEvents` logs provide details around the risky sign-in events for service principals. These logs may include any identified suspicious events related to the service principal accounts. For more information, see [Securing workload identities](~/id-protection/concept-workload-identity-risk.md)
 
 ### Enriched Microsoft 365 audit logs
 

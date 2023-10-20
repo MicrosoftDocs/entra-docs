@@ -31,7 +31,7 @@ This feature is an alternative to [Microsoft Entra Password Hash Synchronization
 
 ![Microsoft Entra pass-through authentication](./media/how-to-connect-pta/pta1.png)
 
-You can combine Pass-through Authentication with the [Seamless single sign-on](how-to-connect-sso.md) feature. If you have Windows 10 or later machines, use [Microsoft Entra hybrid join (AADJ)](../../devices/how-to-hybrid-join.md). This way, when your users are accessing applications on their corporate machines inside your corporate network, they don't need to type in their passwords to sign in.
+You can combine Pass-through Authentication with the [Seamless single sign-on](how-to-connect-sso.md) feature. If you have Windows 10 or later machines, use [Microsoft Entra hybrid join (AADJ)](~/identity/devices/how-to-hybrid-join.md). This way, when your users are accessing applications on their corporate machines inside your corporate network, they don't need to type in their passwords to sign in.
 
 <a name='key-benefits-of-using-azure-ad-pass-through-authentication'></a>
 
@@ -47,7 +47,7 @@ You can combine Pass-through Authentication with the [Seamless single sign-on](h
   - No management overhead. The agent automatically receives improvements and bug fixes.
 - *Secure*
   - On-premises passwords are never stored in the cloud in any form.
-  - Protects your user accounts by working seamlessly with [Microsoft Entra Conditional Access policies](../../conditional-access/overview.md), including Multi-Factor Authentication (MFA), [blocking legacy authentication](../../conditional-access/concept-conditional-access-conditions.md) and by [filtering out brute force password attacks](~/identity/authentication/howto-password-smart-lockout.md).
+  - Protects your user accounts by working seamlessly with [Microsoft Entra Conditional Access policies](~/identity/conditional-access/overview.md), including Multi-Factor Authentication (MFA), [blocking legacy authentication](~/identity/conditional-access/concept-conditional-access-conditions.md) and by [filtering out brute force password attacks](~/identity/authentication/howto-password-smart-lockout.md).
   - The agent only makes outbound connections from within your network. Therefore, there is no requirement to install the agent in a perimeter network, also known as a DMZ.
   - The communication between an agent and Microsoft Entra ID is secured using certificate-based authentication. These certificates are automatically renewed every few months by Microsoft Entra ID.
 - *Highly available*
@@ -57,7 +57,7 @@ You can combine Pass-through Authentication with the [Seamless single sign-on](h
 
 - Supports user sign-in into all web browser-based applications and into Microsoft Office client applications that use [modern authentication](https://aka.ms/modernauthga).
 - Sign-in usernames can be either the on-premises default username (`userPrincipalName`) or another attribute configured in Microsoft Entra Connect (known as `Alternate ID`).
-- The feature works seamlessly with [Conditional Access](../../conditional-access/overview.md) features such as Multi-Factor Authentication (MFA) to help secure your users.
+- The feature works seamlessly with [Conditional Access](~/identity/conditional-access/overview.md) features such as Multi-Factor Authentication (MFA) to help secure your users.
 - Integrated with cloud-based [self-service password management](~/identity/authentication/concept-sspr-howitworks.md), including password writeback to on-premises Active Directory and password protection by banning commonly used passwords.
 - Multi-forest environments are supported if there are forest trusts between your AD forests and if name suffix routing is correctly configured.
 - It is a free feature, and you don't need any paid editions of Microsoft Entra ID to use it.
@@ -71,7 +71,7 @@ You can combine Pass-through Authentication with the [Seamless single sign-on](h
 - [Quickstart](how-to-connect-pta-quick-start.md) - Get up and running Microsoft Entra pass-through authentication.
 - [Migrate your apps to Microsoft Entra ID](~/identity/enterprise-apps/migration-resources.md): Resources to help you migrate application access and authentication to Microsoft Entra ID.
 - [Smart Lockout](~/identity/authentication/howto-password-smart-lockout.md) - Configure Smart Lockout capability on your tenant to protect user accounts.
-- [Microsoft Entra hybrid join](../../devices/how-to-hybrid-join.md): Configure Microsoft Entra hybrid join capability on your tenant for SSO across your cloud and on-premises resources.  
+- [Microsoft Entra hybrid join](~/identity/devices/how-to-hybrid-join.md): Configure Microsoft Entra hybrid join capability on your tenant for SSO across your cloud and on-premises resources.  
 - [Current limitations](how-to-connect-pta-current-limitations.md) - Learn which scenarios are supported and which ones are not.
 - [Technical Deep Dive](how-to-connect-pta-how-it-works.md) - Understand how this feature works.
 - [Frequently Asked Questions](how-to-connect-pta-faq.yml) - Answers to frequently asked questions.

@@ -62,7 +62,7 @@ Incorporate the following access controls in your existing Conditional Access po
 
 - Provision multiple authentication methods for each user that rely on different communication channels, for example the Microsoft Authenticator app (internet-based), OATH token (generated on-device), and SMS (telephonic). The following PowerShell script will help you identify in advance, which additional methods your users should register: [Script for Microsoft Entra multifactor authentication authentication method analysis](/samples/azure-samples/azure-mfa-authentication-method-analysis/azure-mfa-authentication-method-analysis/).
 - Deploy Windows Hello for Business on Windows 10 devices to satisfy MFA requirements directly from device sign-in.
-- Use trusted devices via [Microsoft Entra hybrid join](../devices/overview.md) or [Microsoft Intune](/mem/intune/fundamentals/intune-planning-guide). Trusted devices will improve user experience because the trusted device itself can satisfy the strong authentication requirements of policy without an MFA challenge to the user. MFA will then be required when enrolling a new device and when accessing apps or resources from untrusted devices.
+- Use trusted devices via [Microsoft Entra hybrid join](~/identity/devices/overview.md) or [Microsoft Intune](/mem/intune/fundamentals/intune-planning-guide). Trusted devices will improve user experience because the trusted device itself can satisfy the strong authentication requirements of policy without an MFA challenge to the user. MFA will then be required when enrolling a new device and when accessing apps or resources from untrusted devices.
 - Use Microsoft Entra ID Protection risk-based policies that prevent access when the user or sign-in is at risk in place of fixed MFA policies.
 - If you are protecting VPN access using Microsoft Entra multifactor authentication NPS extension, consider federating your VPN solution as a [SAML app](~/identity/enterprise-apps/view-applications-portal.md) and determine the app category as recommended below. 
 
@@ -87,7 +87,7 @@ This example policy set will grant selected users in **AppUsers**, access to sel
 
 ### Contingencies for user lockout
 
-Alternatively, your organization can also create contingency policies. To create contingency policies, you must define tradeoff criteria between business continuity, operational cost, financial cost, and security risks. For example, you may activate a contingency policy only to a subset of users, for a subset of apps, for a subset of clients, or from a subset of locations. Contingency policies will give administrators and end users access to apps and resources, during a disruption when no mitigation method was implemented. Microsoft recommends enabling contingency policies in [report-only mode](../conditional-access/howto-conditional-access-insights-reporting.md) when not in use so that administrators can monitor the potential impact of the policies should they need to be turned on.
+Alternatively, your organization can also create contingency policies. To create contingency policies, you must define tradeoff criteria between business continuity, operational cost, financial cost, and security risks. For example, you may activate a contingency policy only to a subset of users, for a subset of apps, for a subset of clients, or from a subset of locations. Contingency policies will give administrators and end users access to apps and resources, during a disruption when no mitigation method was implemented. Microsoft recommends enabling contingency policies in [report-only mode](~/identity/conditional-access/howto-conditional-access-insights-reporting.md) when not in use so that administrators can monitor the potential impact of the policies should they need to be turned on.
 
  Understanding your exposure during a disruption helps reduce your risk and is a critical part of your planning process. To create your contingency plan, first determine the following business requirements of your organization:
 
@@ -228,7 +228,7 @@ User lockout can also occur if the following conditions are true:
 - Your organization uses a hybrid identity solution with pass-through authentication or federation.
 - Your on-premises identity systems (such as Active Directory, AD FS, or a dependent component) are unavailable. 
  
-To be more resilient, your organization should [enable password hash sync](../hybrid/connect/choose-ad-authn.md), because it enables you to [switch to using password hash sync](../hybrid/connect/plan-connect-user-signin.md) if your on-premises identity systems are down.
+To be more resilient, your organization should [enable password hash sync](~/identity/hybrid/connect/choose-ad-authn.md), because it enables you to [switch to using password hash sync](~/identity/hybrid/connect/plan-connect-user-signin.md) if your on-premises identity systems are down.
 
 #### Microsoft recommendations
  Enable password hash sync using the Microsoft Entra Connect wizard, regardless whether your organization uses federation or pass-through authentication.
@@ -250,7 +250,7 @@ Depending on which mitigations or contingencies are used during a disruption, yo
 1. As part of your change control strategy, document every change and the previous state to be able to roll back any contingencies you implemented as soon as the access controls are fully operational.
 2. Assume that malicious actors will attempt to harvest passwords through password spray or phishing attacks while you disabled MFA. Also, bad actors might already have passwords that previously did not grant access to any resource that can be attempted during this window. For critical users such as executives, you can partially mitigate this risk by resetting their passwords before disabling MFA for them.
 3. Archive all sign-in activity to identify who access what during the time MFA was disabled.
-4. [Triage all risk detections reported](../reports-monitoring/concept-sign-ins.md) during this window.
+4. [Triage all risk detections reported](~/identity/monitoring-health/concept-sign-ins.md) during this window.
 
 ## After a disruption
 
@@ -260,7 +260,7 @@ Undo the changes you made as part of the activated contingency plan once the ser
 2. Disable your contingency policies back to report-only mode. 
 3. Roll back any other changes you made and documented during the disruption.
 4. If you used an emergency access account, remember to regenerate credentials and physically secure the new credentials details as part of your emergency access account procedures.
-5. Continue to [Triage all risk detections reported](../reports-monitoring/concept-sign-ins.md) after the disruption for suspicious activity.
+5. Continue to [Triage all risk detections reported](~/identity/monitoring-health/concept-sign-ins.md) after the disruption for suspicious activity.
 6. Revoke all refresh tokens that were issued [using PowerShell](/powershell/module/azuread/revoke-azureaduserallrefreshtoken) to target a set of users. Revoking all refresh tokens is important for privileged accounts used during the disruption and doing it will force them to reauthenticate and meet the control of the restored policies.
 
 ## Emergency options
@@ -281,11 +281,11 @@ Undo the changes you made as part of the activated contingency plan once the ser
 
 * [Microsoft Entra authentication Documentation](./howto-mfaserver-iis.md)
 * [Manage emergency-access administrative accounts in Microsoft Entra ID](~/identity/role-based-access-control/security-emergency-access.md)
-* [Configure named locations in Microsoft Entra ID](../conditional-access/location-condition.md)
+* [Configure named locations in Microsoft Entra ID](~/identity/conditional-access/location-condition.md)
   * [Set-MsolDomainFederationSettings](/powershell/module/msonline/set-msoldomainfederationsettings)
-* [How to configure Microsoft Entra hybrid joined devices](../devices/hybrid-join-plan.md)
+* [How to configure Microsoft Entra hybrid joined devices](~/identity/devices/hybrid-join-plan.md)
 * [Windows Hello for Business Deployment Guide](/windows/security/identity-protection/hello-for-business/hello-deployment-guide)
   * [Password Guidance - Microsoft Research](https://research.microsoft.com/pubs/265143/microsoft_password_guidance.pdf)
-* [What are conditions in Microsoft Entra Conditional Access?](../conditional-access/concept-conditional-access-conditions.md)
-* [What are access controls in Microsoft Entra Conditional Access?](../conditional-access/controls.md)
-* [What is Conditional Access report-only mode?](../conditional-access/concept-conditional-access-report-only.md)
+* [What are conditions in Microsoft Entra Conditional Access?](~/identity/conditional-access/concept-conditional-access-conditions.md)
+* [What are access controls in Microsoft Entra Conditional Access?](~/identity/conditional-access/controls.md)
+* [What is Conditional Access report-only mode?](~/identity/conditional-access/concept-conditional-access-report-only.md)

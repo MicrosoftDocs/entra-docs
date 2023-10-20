@@ -30,7 +30,7 @@ To do a targeted deployment of Microsoft Entra hybrid join on Windows current de
 1. Clear the Service Connection Point (SCP) entry from Active Directory (AD) if it exists.
 1. Configure client-side registry setting for SCP on your domain-joined computers using a Group Policy Object (GPO).
 1. If you're using Active Directory Federation Services (AD FS), you must also configure the client-side registry setting for SCP on your AD FS server using a GPO.
-1. You may also need to [customize synchronization options](../hybrid/connect/how-to-connect-post-installation.md#additional-tasks-available-in-azure-ad-connect) in Microsoft Entra Connect to enable device synchronization. 
+1. You may also need to [customize synchronization options](~/identity/hybrid/connect/how-to-connect-post-installation.md#additional-tasks-available-in-azure-ad-connect) in Microsoft Entra Connect to enable device synchronization. 
 
 ### Clear the SCP from AD
 

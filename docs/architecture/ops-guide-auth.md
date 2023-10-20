@@ -56,12 +56,12 @@ Use the table below to find the recommended solution for mitigating the issue th
 | Issue | Recommendation |
 | :- | :- |
 | No mechanism to protect against weak passwords | Enable Microsoft Entra ID [self-service password reset (SSPR)](~/identity/authentication/concept-sspr-howitworks.md) and [password protection](~/identity/authentication/concept-password-ban-bad-on-premises.md) |
-| No mechanism to detect leaked passwords | Enable [password hash sync](../hybrid/connect/how-to-connect-password-hash-synchronization.md) (PHS) to gain insights |
+| No mechanism to detect leaked passwords | Enable [password hash sync](~/identity/hybrid/connect/how-to-connect-password-hash-synchronization.md) (PHS) to gain insights |
 | Using AD FS and unable to move to managed authentication | Enable [AD FS Extranet Smart Lockout](/windows-server/identity/ad-fs/operations/configure-ad-fs-extranet-smart-lockout-protection) and / or [Microsoft Entra Smart Lockout](~/identity/authentication/howto-password-smart-lockout.md) |
 | Password policy uses complexity-based rules such as length, multiple character sets, or expiration | Reconsider in favor of [Microsoft Recommended Practices](https://www.microsoft.com/research/publication/password-guidance/?from=http%3A%2F%2Fresearch.microsoft.com%2Fpubs%2F265143%2Fmicrosoft_password_guidance.pdf) and switch your approach to password management and deploy [Microsoft Entra password protection](~/identity/authentication/concept-password-ban-bad.md). |
-| Users aren't registered to use multifactor authentication | [Register all user's security information](../identity-protection/howto-identity-protection-configure-mfa-policy.md) so it can be used as a mechanism to verify the user's identity along with their password |
-| There is no revocation of passwords based on user risk | Deploy Microsoft Entra [Identity Protection user risk policies](../identity-protection/howto-identity-protection-configure-risk-policies.md) to force password changes on leaked credentials using SSPR |
-| There's no smart lockout mechanism to protect malicious authentication from bad actors coming from identified IP addresses | Deploy cloud-managed authentication with either password hash sync or [pass-through authentication](../hybrid/connect/how-to-connect-pta-quick-start.md) (PTA) |
+| Users aren't registered to use multifactor authentication | [Register all user's security information](~/id-protection/howto-identity-protection-configure-mfa-policy.md) so it can be used as a mechanism to verify the user's identity along with their password |
+| There is no revocation of passwords based on user risk | Deploy Microsoft Entra [Identity Protection user risk policies](~/id-protection/howto-identity-protection-configure-risk-policies.md) to force password changes on leaked credentials using SSPR |
+| There's no smart lockout mechanism to protect malicious authentication from bad actors coming from identified IP addresses | Deploy cloud-managed authentication with either password hash sync or [pass-through authentication](~/identity/hybrid/connect/how-to-connect-pta-quick-start.md) (PTA) |
 
 #### Password policies recommended reading
 
@@ -79,7 +79,7 @@ At a minimum, it's recommended you deploy Microsoft Entra ID [self-service passw
 - [Eliminate weak passwords](~/identity/authentication/concept-password-ban-bad.md) in your organization.
 
 > [!NOTE]
-> For organizations with a Microsoft Entra ID P2 subscription, it is recommended to deploy SSPR and use it as part of an [Identity Protection User Risk Policy](../identity-protection/howto-identity-protection-configure-risk-policies.md).
+> For organizations with a Microsoft Entra ID P2 subscription, it is recommended to deploy SSPR and use it as part of an [Identity Protection User Risk Policy](~/id-protection/howto-identity-protection-configure-risk-policies.md).
 
 ### Strong credential management
 
@@ -95,11 +95,11 @@ If your on-premises organization is lacking an outage resiliency strategy or has
 
 ![password hash sync flow](./media/ops-guide-auth/ops-img5.png)
 
-To better understand your authentication options, see [Choose the right authentication method for your Microsoft Entra hybrid identity solution](../hybrid/connect/choose-ad-authn.md).
+To better understand your authentication options, see [Choose the right authentication method for your Microsoft Entra hybrid identity solution](~/identity/hybrid/connect/choose-ad-authn.md).
 
 ### Programmatic usage of credentials
 
-Microsoft Entra ID scripts using PowerShell or applications using the Microsoft Graph API require secure authentication. Poor credential management executing those scripts and tools increase the risk of credential theft. If you're using scripts or applications that rely on hard-coded passwords or password prompts you should first review passwords in config files or source code, then replace those dependencies and use Azure Managed Identities, Integrated-Windows Authentication, or [certificates](../reports-monitoring/howto-configure-prerequisites-for-reporting-api.md) whenever possible. For applications where the previous solutions aren't possible, consider using [Azure Key Vault](https://azure.microsoft.com/services/key-vault/).
+Microsoft Entra ID scripts using PowerShell or applications using the Microsoft Graph API require secure authentication. Poor credential management executing those scripts and tools increase the risk of credential theft. If you're using scripts or applications that rely on hard-coded passwords or password prompts you should first review passwords in config files or source code, then replace those dependencies and use Azure Managed Identities, Integrated-Windows Authentication, or [certificates](~/identity/monitoring-health/howto-configure-prerequisites-for-reporting-api.md) whenever possible. For applications where the previous solutions aren't possible, consider using [Azure Key Vault](https://azure.microsoft.com/services/key-vault/).
 
 If you determine that there are service principals with password credentials and you're unsure how those password credentials are secured by scripts or applications, contact the owner of the application to better understand usage patterns.
 
@@ -109,7 +109,7 @@ Microsoft also recommends you contact application owners to understand usage pat
 
 ### On-premises authentication
 
-Federated Authentication with integrated Windows authentication (IWA) or Seamless Single Sign-On (SSO) managed authentication with password hash sync or pass-through authentication is the best user experience when inside the corporate network with line-of-sight to on-premises domain controllers. It minimizes credential prompt fatigue and reduces the risk of users falling prey to phishing attacks. If you're already using cloud-managed authentication with PHS or PTA, but users still need to type in their password when authenticating on-premises, then you should immediately [deploy Seamless SSO](../hybrid/connect/how-to-connect-sso.md). On the other hand, if you're currently federated with plans to eventually migrate to cloud-managed authentication, then you should implement Seamless SSO as part of the migration project.
+Federated Authentication with integrated Windows authentication (IWA) or Seamless Single Sign-On (SSO) managed authentication with password hash sync or pass-through authentication is the best user experience when inside the corporate network with line-of-sight to on-premises domain controllers. It minimizes credential prompt fatigue and reduces the risk of users falling prey to phishing attacks. If you're already using cloud-managed authentication with PHS or PTA, but users still need to type in their password when authenticating on-premises, then you should immediately [deploy Seamless SSO](~/identity/hybrid/connect/how-to-connect-sso.md). On the other hand, if you're currently federated with plans to eventually migrate to cloud-managed authentication, then you should implement Seamless SSO as part of the migration project.
 
 ### Device trust access policies
 
@@ -117,24 +117,24 @@ Like a user in your organization, a device is a core identity you want to protec
 
 - Avoiding friction, for example, with MFA, when the device is trusted
 - Blocking access from untrusted devices
-- For Windows 10 devices, provide [single sign-on to on-premises resources seamlessly](../devices/device-sso-to-on-premises-resources.md).
+- For Windows 10 devices, provide [single sign-on to on-premises resources seamlessly](~/identity/devices/device-sso-to-on-premises-resources.md).
 
 You can carry out this goal by bringing device identities and managing them in Microsoft Entra ID by using one of the following methods:
 
 - Organizations can use [Microsoft Intune](/mem/intune/fundamentals/what-is-intune) to manage the device and enforce compliance policies, attest device health, and set Conditional Access policies based on whether the device is compliant. Microsoft Intune can manage iOS devices, Mac desktops (Via JAMF integration), Windows desktops (natively using Mobile Device Management for Windows 10, and co-management with Microsoft Configuration Manager) and Android mobile devices.
-- [Microsoft Entra hybrid join](../devices/how-to-hybrid-join.md) provides management with Group Policies or Microsoft Configuration Manager in an environment with Active Directory domain-joined computers devices. Organizations can deploy a managed environment either through PHS or PTA with Seamless SSO. Bringing your devices to Microsoft Entra ID maximizes user productivity through SSO across your cloud and on-premises resources while enabling you to secure access to your cloud and on-premises resources with [Conditional Access](../conditional-access/overview.md) at the same time.
+- [Microsoft Entra hybrid join](~/identity/devices/how-to-hybrid-join.md) provides management with Group Policies or Microsoft Configuration Manager in an environment with Active Directory domain-joined computers devices. Organizations can deploy a managed environment either through PHS or PTA with Seamless SSO. Bringing your devices to Microsoft Entra ID maximizes user productivity through SSO across your cloud and on-premises resources while enabling you to secure access to your cloud and on-premises resources with [Conditional Access](~/identity/conditional-access/overview.md) at the same time.
 
-If you have domain-joined Windows devices that aren't registered in the cloud, or domain-joined Windows devices that are registered in the cloud but without Conditional Access policies, then you should register the unregistered devices and, in either case, [use Microsoft Entra hybrid join as a control](../conditional-access/concept-conditional-access-grant.md) in your Conditional Access policies.
+If you have domain-joined Windows devices that aren't registered in the cloud, or domain-joined Windows devices that are registered in the cloud but without Conditional Access policies, then you should register the unregistered devices and, in either case, [use Microsoft Entra hybrid join as a control](~/identity/conditional-access/concept-conditional-access-grant.md) in your Conditional Access policies.
 
 ![A screenshot of grant in Conditional Access policy requiring hybrid device](./media/ops-guide-auth/ops-img6.png)
 
-If you're managing devices with MDM or Microsoft Intune, but not using device controls in your Conditional Access policies, then we recommend using [Require device to be marked as compliant](../conditional-access/concept-conditional-access-grant.md#require-device-to-be-marked-as-compliant) as a control in those policies.
+If you're managing devices with MDM or Microsoft Intune, but not using device controls in your Conditional Access policies, then we recommend using [Require device to be marked as compliant](~/identity/conditional-access/concept-conditional-access-grant.md#require-device-to-be-marked-as-compliant) as a control in those policies.
 
 ![A screenshot of grant in Conditional Access policy requiring device compliance](./media/ops-guide-auth/ops-img7.png)
 
 #### Device trust access policies recommended reading
 
-- [How To: Plan your Microsoft Entra hybrid join implementation](../devices/hybrid-join-plan.md)
+- [How To: Plan your Microsoft Entra hybrid join implementation](~/identity/devices/hybrid-join-plan.md)
 - [Identity and device access configurations](/microsoft-365/security/office-365-security/microsoft-365-policies-configurations)
 
 ### Windows Hello for Business
@@ -147,7 +147,7 @@ If you would like to learn more about passwordless authentication, see [A world 
 
 ### Single sign-on for apps
 
-Providing a standardized single sign-on mechanism to the entire enterprise is crucial for best user experience, reduction of risk, ability to report, and governance. If you're using applications that support SSO with Microsoft Entra ID but are currently configured to use local accounts, you should reconfigure those applications to use SSO with Microsoft Entra ID. Likewise, if you're using any applications that support SSO with Microsoft Entra ID but are using another Identity Provider, you should reconfigure those applications to use SSO with Microsoft Entra ID as well. For applications that don't support federation protocols but do support forms-based authentication, we recommend you configure the application to use [password vaulting](../app-proxy/application-proxy-configure-single-sign-on-password-vaulting.md) with Microsoft Entra application proxy.
+Providing a standardized single sign-on mechanism to the entire enterprise is crucial for best user experience, reduction of risk, ability to report, and governance. If you're using applications that support SSO with Microsoft Entra ID but are currently configured to use local accounts, you should reconfigure those applications to use SSO with Microsoft Entra ID. Likewise, if you're using any applications that support SSO with Microsoft Entra ID but are using another Identity Provider, you should reconfigure those applications to use SSO with Microsoft Entra ID as well. For applications that don't support federation protocols but do support forms-based authentication, we recommend you configure the application to use [password vaulting](~/identity/app-proxy/application-proxy-configure-single-sign-on-password-vaulting.md) with Microsoft Entra application proxy.
 
 ![AppProxy Password-based Sign-on](./media/ops-guide-auth/ops-img8.png)
 
@@ -169,7 +169,7 @@ Finally, if you have a Microsoft Entra app gallery and use applications that sup
 ![Microsoft Entra ID as the primary identity provider](./media/ops-guide-auth/ops-img9.png)
 
 > [!NOTE]
-> [Microsoft Entra Connect Health for ADFS](../hybrid/connect/how-to-connect-health-adfs.md) can be used to collect configuration details about each application that can potentially be migrated to Microsoft Entra ID.
+> [Microsoft Entra Connect Health for ADFS](~/identity/hybrid/connect/how-to-connect-health-adfs.md) can be used to collect configuration details about each application that can potentially be migrated to Microsoft Entra ID.
 
 ### Assign users to applications
 
@@ -178,9 +178,9 @@ Finally, if you have a Microsoft Entra app gallery and use applications that sup
 - Delegate group management and governance to application owners.
 - Allow self-service access to the application.
 - Define dynamic groups if user attributes can consistently determine access to applications.
-- Implement attestation to groups used for application access using [Microsoft Entra access reviews](../governance/access-reviews-overview.md).
+- Implement attestation to groups used for application access using [Microsoft Entra access reviews](~/id-governance/access-reviews-overview.md).
 
-On the other hand, if you find applications that have assignment to individual users, be sure to implement [governance](../governance/index.yml) around those applications.
+On the other hand, if you find applications that have assignment to individual users, be sure to implement [governance](~/id-governance/index.yml) around those applications.
 
 #### Assign users to applications recommended reading
 
@@ -192,10 +192,10 @@ On the other hand, if you find applications that have assignment to individual u
 
 ### Named locations
 
-With [named locations](../conditional-access/location-condition.md) in Microsoft Entra ID, you can label trusted IP address ranges in your organization. Microsoft Entra ID uses named locations to:
+With [named locations](~/identity/conditional-access/location-condition.md) in Microsoft Entra ID, you can label trusted IP address ranges in your organization. Microsoft Entra ID uses named locations to:
 
 - Prevent false positives in risk events. Signing in from a trusted network location lowers a user's sign-in risk.
-- Configure [location-based Conditional Access](../conditional-access/location-condition.md).
+- Configure [location-based Conditional Access](~/identity/conditional-access/location-condition.md).
 
 ![Named location](./media/ops-guide-auth/ops-img10.png)
 
@@ -219,12 +219,12 @@ If you already own Microsoft Entra ID P2 licenses that support using risk in acc
 
 #### Risk-based access policies recommended reading
 
-- [How To: Configure the sign-in risk policy](../identity-protection/howto-identity-protection-configure-risk-policies.md)
-- [How To: Configure the user risk policy](../identity-protection/howto-identity-protection-configure-risk-policies.md)
+- [How To: Configure the sign-in risk policy](~/id-protection/howto-identity-protection-configure-risk-policies.md)
+- [How To: Configure the user risk policy](~/id-protection/howto-identity-protection-configure-risk-policies.md)
 
 ### Client application access policies
 
-Microsoft Intune Application Management (MAM) provides the ability to push data protection controls such as storage encryption, PIN, remote storage cleanup, etc. to compatible client mobile applications such as Outlook Mobile. In addition, Conditional Access policies can be created to [restrict access](../conditional-access/howto-policy-approved-app-or-app-protection.md) to cloud services such as Exchange Online from approved or compatible apps.
+Microsoft Intune Application Management (MAM) provides the ability to push data protection controls such as storage encryption, PIN, remote storage cleanup, etc. to compatible client mobile applications such as Outlook Mobile. In addition, Conditional Access policies can be created to [restrict access](~/identity/conditional-access/howto-policy-approved-app-or-app-protection.md) to cloud services such as Exchange Online from approved or compatible apps.
 
 If your employees install MAM-capable applications such as Office mobile apps to access corporate resources such as Exchange Online or SharePoint Online, and you also support BYOD (bring your own device), we recommend you deploy application MAM policies to manage the application configuration in personally owned devices without MDM enrollment and then update your Conditional Access policies to only allow access from MAM-capable clients.
 
@@ -241,7 +241,7 @@ Conditional Access is an essential tool for improving the security posture of yo
 - Avoid using the **All users** as a filter and inadvertently adding **Guests**
 - **Migrate all "legacy" policies to the Azure portal**
 - Catch all criteria for users, devices, and applications
-- Use Conditional Access policies to [implement MFA](../conditional-access/plan-conditional-access.md), rather than using a **per-user MFA**
+- Use Conditional Access policies to [implement MFA](~/identity/conditional-access/plan-conditional-access.md), rather than using a **per-user MFA**
 - Have a small set of core policies that can apply to multiple applications
 - Define empty exception groups and add them to the policies to have an exception strategy
 - Plan for [break glass](~/identity/role-based-access-control/security-planning.md#break-glass-what-to-do-in-an-emergency) accounts without MFA controls
@@ -251,10 +251,10 @@ Conditional Access is an essential tool for improving the security posture of yo
 
 #### Conditional Access recommended reading
 
-- [Best practices for Conditional Access in Microsoft Entra ID](../conditional-access/overview.md)
+- [Best practices for Conditional Access in Microsoft Entra ID](~/identity/conditional-access/overview.md)
 - [Identity and device access configurations](/microsoft-365/security/office-365-security/microsoft-365-policies-configurations)
-- [Microsoft Entra Conditional Access settings reference](../conditional-access/concept-conditional-access-conditions.md)
-- [Common Conditional Access policies](../conditional-access/concept-conditional-access-policy-common.md)
+- [Microsoft Entra Conditional Access settings reference](~/identity/conditional-access/concept-conditional-access-conditions.md)
+- [Common Conditional Access policies](~/identity/conditional-access/concept-conditional-access-policy-common.md)
 
 ## Access surface area
 
@@ -271,7 +271,7 @@ Attackers strongly prefer these protocols - in fact, nearly [100% of password sp
 
 If legacy authentication is widely used in your environment, you should plan to migrate legacy clients to clients that support [modern authentication](/microsoft-365/enterprise/modern-auth-for-office-2013-and-2016) as soon as possible. In the same token, if you have some users already using modern authentication but others that still use legacy authentication, you should take the following steps to lock down legacy authentication clients:
 
-1. Use [Sign-In Activity reports](../reports-monitoring/concept-sign-ins.md) to identify users who are still using legacy authentication and plan remediation:
+1. Use [Sign-In Activity reports](~/identity/monitoring-health/concept-sign-ins.md) to identify users who are still using legacy authentication and plan remediation:
 
    a. Upgrade to modern authentication capable clients to affected users.
    
@@ -325,7 +325,7 @@ Below are the user and group settings that can be locked down if there isn't an 
 
 #### User settings
 
-- **External Users** - external collaboration can happen organically in the enterprise with services like Teams, Power BI, SharePoint Online, and Azure Information Protection. If you have explicit constraints to control user-initiated external collaboration, it is recommended you enable external users by using [Microsoft Entra Entitlement management](../governance/entitlement-management-overview.md) or a controlled operation such as through your help desk. If you don't want to allow organic external collaboration for services, you can [block members from inviting external users completely](~/external-id/external-collaboration-settings-configure.md). Alternatively, you can also [allow or block specific domains](~/external-id/allow-deny-list.md) in external user invitations.
+- **External Users** - external collaboration can happen organically in the enterprise with services like Teams, Power BI, SharePoint Online, and Azure Information Protection. If you have explicit constraints to control user-initiated external collaboration, it is recommended you enable external users by using [Microsoft Entra Entitlement management](~/id-governance/entitlement-management-overview.md) or a controlled operation such as through your help desk. If you don't want to allow organic external collaboration for services, you can [block members from inviting external users completely](~/external-id/external-collaboration-settings-configure.md). Alternatively, you can also [allow or block specific domains](~/external-id/allow-deny-list.md) in external user invitations.
 - **App Registrations** - when App registrations are enabled, end users can onboard applications themselves and grant access to their data. A typical example of App registration is users enabling Outlook plug-ins, or voice assistants such as Alexa and Siri to read their email and calendar or send emails on their behalf. If the customer decides to turn off App registration, the InfoSec and IAM teams must be involved in the management of exceptions (app registrations that are needed based on business requirements), as they would need to register the applications with an admin account, and most likely require designing a process to operationalize the process.
 - **Administration Portal** - organizations can lock down the Microsoft Entra blade in the Azure portal so that non-administrators can't access Microsoft Entra management in the Azure portal and get confused. Go to the user settings in the Microsoft Entra management portal to restrict access:
 
@@ -348,7 +348,7 @@ Below are the user and group settings that can be locked down if there isn't an 
 
 ### Traffic from unexpected locations
 
-Attackers originate from various parts of the world. Manage this risk by using Conditional Access policies with location as the condition. The [location condition](../conditional-access/location-condition.md) of a Conditional Access policy enables you to block access for locations from where there's no business reason to sign in from.
+Attackers originate from various parts of the world. Manage this risk by using Conditional Access policies with location as the condition. The [location condition](~/identity/conditional-access/location-condition.md) of a Conditional Access policy enables you to block access for locations from where there's no business reason to sign in from.
 
 ![Create a new named location](./media/ops-guide-auth/ops-img14.png)
 
@@ -360,16 +360,16 @@ If available, use a security information and event management (SIEM) solution t
 
 ### Microsoft Entra logs archived and integrated with incident response plans
 
-Having access to sign-in activity, audits and risk events for Microsoft Entra ID is crucial for troubleshooting, usage analytics, and forensics investigations. Microsoft Entra ID provides access to these sources through REST APIs that have a limited retention period. A security information and event management (SIEM) system, or equivalent archival technology, is key for long-term storage of audits and supportability. To enable long-term storage of Microsoft Entra logs, you must either add them to your existing SIEM solution or use [Azure Monitor](../reports-monitoring/concept-log-monitoring-integration-options-considerations.md). Archive logs that can be used as part of your incident response plans and investigations.
+Having access to sign-in activity, audits and risk events for Microsoft Entra ID is crucial for troubleshooting, usage analytics, and forensics investigations. Microsoft Entra ID provides access to these sources through REST APIs that have a limited retention period. A security information and event management (SIEM) system, or equivalent archival technology, is key for long-term storage of audits and supportability. To enable long-term storage of Microsoft Entra logs, you must either add them to your existing SIEM solution or use [Azure Monitor](~/identity/monitoring-health/concept-log-monitoring-integration-options-considerations.md). Archive logs that can be used as part of your incident response plans and investigations.
 
 #### Logs recommended reading
 
 - [Microsoft Entra audit API reference](/graph/api/resources/directoryaudit)
 - [Microsoft Entra sign-in activity report API reference](/graph/api/resources/signin)
-- [Get data using the Microsoft Entra reporting API with certificates](../reports-monitoring/howto-configure-prerequisites-for-reporting-api.md)
-- [Microsoft Graph for Microsoft Entra ID Protection](../identity-protection/howto-identity-protection-graph-api.md)
+- [Get data using the Microsoft Entra reporting API with certificates](~/identity/monitoring-health/howto-configure-prerequisites-for-reporting-api.md)
+- [Microsoft Graph for Microsoft Entra ID Protection](~/id-protection/howto-identity-protection-graph-api.md)
 - [Office 365 Management Activity API reference](/office/office-365-management-api/office-365-management-activity-api-reference)
-- [How to use the Microsoft Entra ID Power BI Content Pack](../reports-monitoring/howto-use-workbooks.md)
+- [How to use the Microsoft Entra ID Power BI Content Pack](~/identity/monitoring-health/howto-use-workbooks.md)
 
 ## Summary
 

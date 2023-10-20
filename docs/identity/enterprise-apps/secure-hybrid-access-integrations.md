@@ -42,7 +42,7 @@ The solution that you build can include the following parts:
 * **Legacy authentication support** - Connect apps with legacy authentication methods and single sign-on (SSO)
 * **Conditional Access** - Enable customers to apply Microsoft Entra policies to apps in your solution without using the Microsoft Entra admin center
 
-Learn more: [What is Conditional Access?](../conditional-access/overview.md) 
+Learn more: [What is Conditional Access?](~/identity/conditional-access/overview.md) 
 
 See the following sections for technical considerations and recommendations.
 
@@ -65,7 +65,7 @@ If your solution uses SAML for IT administrator SSO, the SAML token won't enable
 You can use one of the following SAML approaches:
 
 * **Recommended SAML approach**: Create a new  registration in Azure Marketplace, which is an OIDC app. Customers add the SAML and OIDC apps to their tenant. If your application isn't in the Microsoft Entra gallery, you can start with a non-gallery multi-tenant app.
-  *  [Configure an OpenID Connect OAuth application from Microsoft Entra app gallery](../saas-apps/openidoauth-tutorial.md)
+  *  [Configure an OpenID Connect OAuth application from Microsoft Entra app gallery](~/identity/saas-apps/openidoauth-tutorial.md)
   *  [Making your application multi-tenant](~/identity-platform/howto-convert-app-to-be-multi-tenant.md)
 * **Alternate SAML approach**: Customers can create an OIDC application registration in their Microsoft Entra tenant and set the URIs, endpoints, and permissions
 
@@ -259,13 +259,13 @@ After the SaaS applications are registered in Microsoft Entra ID, the applicatio
 - **Applications support one-click SSO** - Microsoft Entra ID enables the applications. In the Microsoft Entra admin center, the customer performs one-click SSO with the administrative credentials for the supported SaaS applications. 
   - Learn more: [One-click app configuration of single sign-on](./one-click-sso-tutorial.md)
 - **Applications don't support one-click SSO** - The customer enables the applications to use Microsoft Entra ID. 
-  - [Tutorials for integrating SaaS applications with Microsoft Entra ID](../saas-apps/tutorial-list.md)
+  - [Tutorials for integrating SaaS applications with Microsoft Entra ID](~/identity/saas-apps/tutorial-list.md)
 
 <a name='connect-apps-to-azure-ad-with-legacy-authentication'></a>
 
 ### Connect apps to Microsoft Entra ID with legacy authentication
 
-Your solution can enable the customer to use SSO and Microsoft Entra features, even unsupported applications. To allow access with legacy protocols, your application calls Microsoft Entra ID to authenticate the user and apply [Microsoft Entra Conditional Access policies](../conditional-access/overview.md). Enable this integration from your console. Create a SAML or an OIDC application registration between your solution and Microsoft Entra ID.
+Your solution can enable the customer to use SSO and Microsoft Entra features, even unsupported applications. To allow access with legacy protocols, your application calls Microsoft Entra ID to authenticate the user and apply [Microsoft Entra Conditional Access policies](~/identity/conditional-access/overview.md). Enable this integration from your console. Create a SAML or an OIDC application registration between your solution and Microsoft Entra ID.
 
 #### Create a SAML application registration
 
@@ -365,7 +365,7 @@ https://graph.microsoft.com/v1.0/applications/{Application Object ID}
 
 ### Apply Conditional Access policies
 
-Customers and partners can use the Microsoft Graph API to create or apply per application [Conditional Access policies](../conditional-access/overview.md). For partners, customers can apply these policies from your solution without using the Microsoft Entra admin center. There are two options to apply Microsoft Entra Conditional Access policies:
+Customers and partners can use the Microsoft Graph API to create or apply per application [Conditional Access policies](~/identity/conditional-access/overview.md). For partners, customers can apply these policies from your solution without using the Microsoft Entra admin center. There are two options to apply Microsoft Entra Conditional Access policies:
 
 - [Assign the application to a Conditional Access policy](#use-a-conditional-access-policy)
 - [Create a new Conditional Access policy and assign the application to it](#create-a-new-conditional-access-policy)
@@ -450,7 +450,7 @@ https://graph.microsoft.com/v1.0/identity/conditionalAccess/policies/
 }
 ```
 
-To create new Microsoft Entra Conditional Access policies, see [Conditional Access: Programmatic access](../conditional-access/howto-conditional-access-apis.md).
+To create new Microsoft Entra Conditional Access policies, see [Conditional Access: Programmatic access](~/identity/conditional-access/howto-conditional-access-apis.md).
 
 ```https
 #Policy Template for Requiring Compliant Device
@@ -578,38 +578,38 @@ https://graph.microsoft.com/v1.0/servicePrincipals/3161ab85-8f57-4ae0-82d3-7a1f7
 To help protect legacy applications, while using networking and delivery controllers, Microsoft has partnerships with the following application delivery controller (ADC) providers.
 
 * **Akamai Enterprise Application Access**
-  * [Tutorial: Microsoft Entra SSO integration with Akamai](../saas-apps/akamai-tutorial.md)
+  * [Tutorial: Microsoft Entra SSO integration with Akamai](~/identity/saas-apps/akamai-tutorial.md)
 * **Citrix ADC**
-  * [Tutorial: Microsoft Entra SSO integration with Citrix ADC SAML Connector for Microsoft Entra ID (Kerberos-based authentication)](../saas-apps/citrix-netscaler-tutorial.md)
+  * [Tutorial: Microsoft Entra SSO integration with Citrix ADC SAML Connector for Microsoft Entra ID (Kerberos-based authentication)](~/identity/saas-apps/citrix-netscaler-tutorial.md)
 * **F5 BIG-IP Access Policy Manager**
   * [Tutorial: Microsoft Entra SSO integration with Citrix ADC SAML Connector for Microsoft Entra ID (Kerberos-based authentication)](./f5-integration.md)
 * **Kemp LoadMaster**
-  * [Tutorial: Microsoft Entra SSO integration with Kemp LoadMaster Microsoft Entra integration](../saas-apps/kemp-tutorial.md)
+  * [Tutorial: Microsoft Entra SSO integration with Kemp LoadMaster Microsoft Entra integration](~/identity/saas-apps/kemp-tutorial.md)
 * **Pulse Secure Virtual Traffic Manager**
-  * [Tutorial: Microsoft Entra SSO integration with Pulse Secure Virtual Traffic Manager](../saas-apps/pulse-secure-virtual-traffic-manager-tutorial.md)
+  * [Tutorial: Microsoft Entra SSO integration with Pulse Secure Virtual Traffic Manager](~/identity/saas-apps/pulse-secure-virtual-traffic-manager-tutorial.md)
 
 The following VPN solution providers connect with Microsoft Entra ID to enable modern authentication and authorization methods like SSO and multifactor authentication (MFA).
 
 * **Cisco AnyConnect**
-  * [Tutorial: Microsoft Entra SSO integration with Cisco AnyConnect](../saas-apps/cisco-anyconnect.md)
+  * [Tutorial: Microsoft Entra SSO integration with Cisco AnyConnect](~/identity/saas-apps/cisco-anyconnect.md)
 * **Fortinet FortiGate**
-  * [Tutorial: Microsoft Entra SSO integration with FortiGate SSL VPN](../saas-apps/fortigate-ssl-vpn-tutorial.md)
+  * [Tutorial: Microsoft Entra SSO integration with FortiGate SSL VPN](~/identity/saas-apps/fortigate-ssl-vpn-tutorial.md)
 * **F5 BIG-IP Access Policy Manager**
   * [Tutorial: Configure F5 BIG-IP SSL-VPN for Microsoft Entra SSO](./f5-passwordless-vpn.md)
 * **Palo Alto Networks GlobalProtect**
-  * [Tutorial: Microsoft Entra SSO integration with Palo Alto Networks - Admin UI](../saas-apps/paloaltoadmin-tutorial.md)
+  * [Tutorial: Microsoft Entra SSO integration with Palo Alto Networks - Admin UI](~/identity/saas-apps/paloaltoadmin-tutorial.md)
 * **Pulse Connect Secure**
-  * [Tutorial: Microsoft Entra SSO integration with Pulse Secure PCS](../saas-apps/pulse-secure-pcs-tutorial.md)
+  * [Tutorial: Microsoft Entra SSO integration with Pulse Secure PCS](~/identity/saas-apps/pulse-secure-pcs-tutorial.md)
 
 The following software-defined perimeter (SDP) solutions providers connect with Microsoft Entra ID for authentication and authorization methods like SSO and MFA.
 
 * **Datawiza Access Broker**
   * [Tutorial: Configure Secure Hybrid Access with Microsoft Entra ID and Datawiza](./datawiza-configure-sha.md)
 * **Perimeter 81**
-  * [Tutorial: Microsoft Entra SSO integration with Perimeter 81](../saas-apps/perimeter-81-tutorial.md)
+  * [Tutorial: Microsoft Entra SSO integration with Perimeter 81](~/identity/saas-apps/perimeter-81-tutorial.md)
 * **Silverfort Authentication Platform**
   * [Tutorial: Configure Secure Hybrid Access with Microsoft Entra ID and Silverfort](./silverfort-integration.md)
 * **Strata Maverics Identity Orchestrator**
-  * [Integrate Microsoft Entra SSO with Maverics Identity Orchestrator SAML Connector](../saas-apps/maverics-identity-orchestrator-saml-connector-tutorial.md)
+  * [Integrate Microsoft Entra SSO with Maverics Identity Orchestrator SAML Connector](~/identity/saas-apps/maverics-identity-orchestrator-saml-connector-tutorial.md)
 * **Zscaler Private Access**
-  * [Tutorial: Integrate Zscaler Private Access with Microsoft Entra ID](../saas-apps/zscalerprivateaccess-tutorial.md)
+  * [Tutorial: Integrate Zscaler Private Access with Microsoft Entra ID](~/identity/saas-apps/zscalerprivateaccess-tutorial.md)

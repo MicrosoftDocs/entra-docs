@@ -39,9 +39,9 @@ Use role-based access control (RBAC) to enforce authorizations through role assi
 
 Learn more:
 
-* [What is entitlement management?](../governance/entitlement-management-overview.md) 
-* [Create a new access package in entitlement management](../governance/entitlement-management-access-package-create.md)
-* [What are access reviews?](../governance/access-reviews-overview.md)
+* [What is entitlement management?](~/id-governance/entitlement-management-overview.md) 
+* [Create a new access package in entitlement management](~/id-governance/entitlement-management-access-package-create.md)
+* [What are access reviews?](~/id-governance/access-reviews-overview.md)
 
 ## Attribute-based controls
 
@@ -63,7 +63,7 @@ Combine dynamic groups with authentication context to control user access mappin
 
 Learn more:
 
-* [Conditional Access: Cloud apps, actions, and authentication context](../conditional-access/concept-conditional-access-cloud-apps.md)
+* [Conditional Access: Cloud apps, actions, and authentication context](~/identity/conditional-access/concept-conditional-access-cloud-apps.md)
 * [Developer guide to Conditional Access authentication context](~/identity-platform/developer-guide-conditional-access-authentication-context.md)
 * [Session policies](/defender-cloud-apps/session-policy-aad)
 
@@ -83,8 +83,8 @@ Use PIM for a privileged role, when it's implemented with Microsoft Entra identi
 
 Learn more: 
 
-* [What is Microsoft Entra Privileged Identity Management?](../privileged-identity-management/pim-configure.md)
-* [Plan a Privileged Identity Management deployment](../privileged-identity-management/pim-deployment-plan.md)
+* [What is Microsoft Entra Privileged Identity Management?](~/id-governance/privileged-identity-management/pim-configure.md)
+* [Plan a Privileged Identity Management deployment](~/id-governance/privileged-identity-management/pim-deployment-plan.md)
 
 ## Next steps
 

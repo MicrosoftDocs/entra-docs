@@ -122,9 +122,9 @@ You can [customize the Microsoft Entra sign-in page](~/fundamentals/how-to-custo
 
 Evaluate if you're currently using Conditional Access for authentication, or if you use access control policies in AD FS. 
 
-Consider replacing AD FS access control policies with the equivalent Microsoft Entra [Conditional Access policies](../../conditional-access/overview.md) and [Exchange Online Client Access Rules](/exchange/clients-and-mobile-in-exchange-online/client-access-rules/client-access-rules). You can use either Microsoft Entra ID or on-premises groups for Conditional Access.
+Consider replacing AD FS access control policies with the equivalent Microsoft Entra [Conditional Access policies](~/identity/conditional-access/overview.md) and [Exchange Online Client Access Rules](/exchange/clients-and-mobile-in-exchange-online/client-access-rules/client-access-rules). You can use either Microsoft Entra ID or on-premises groups for Conditional Access.
 
-**Disable Legacy Authentication** - Due to the increased risk associated with legacy authentication protocols create [Conditional Access policy to block legacy authentication](../../conditional-access/howto-conditional-access-policy-block-legacy.md).
+**Disable Legacy Authentication** - Due to the increased risk associated with legacy authentication protocols create [Conditional Access policy to block legacy authentication](~/identity/conditional-access/howto-conditional-access-policy-block-legacy.md).
 
 ### Plan support for MFA
 
@@ -183,7 +183,7 @@ The members in a group are automatically enabled for staged rollout. Nested and 
 
 The version of SSO that you use is dependent on your device OS and join state.
 
-- **For Windows 10, Windows Server 2016 and later versions**, we recommend using SSO via [Primary Refresh Token (PRT)](../../devices/concept-primary-refresh-token.md) with [Microsoft Entra joined devices](../../devices/concept-directory-join.md), [Microsoft Entra hybrid joined devices](../../devices/concept-hybrid-join.md) and [Microsoft Entra registered devices](../../devices/concept-device-registration.md). 
+- **For Windows 10, Windows Server 2016 and later versions**, we recommend using SSO via [Primary Refresh Token (PRT)](~/identity/devices/concept-primary-refresh-token.md) with [Microsoft Entra joined devices](~/identity/devices/concept-directory-join.md), [Microsoft Entra hybrid joined devices](~/identity/devices/concept-hybrid-join.md) and [Microsoft Entra registered devices](~/identity/devices/concept-device-registration.md). 
 
 - **For macOS and iOS devices**, we recommend using SSO via the [Microsoft Enterprise SSO plug-in for Apple devices](~/identity-platform/apple-sso-plugin.md). This feature requires that your Apple devices are managed by an MDM. If you use Intune as your MDM then follow the [Microsoft Enterprise SSO plug-in for Apple Intune deployment guide](/mem/intune/configuration/use-enterprise-sso-plug-in-ios-ipados-macos). If you use another MDM then follow the [Jamf Pro / generic MDM deployment guide](/mem/intune/configuration/use-enterprise-sso-plug-in-ios-ipados-macos). 
 
@@ -435,7 +435,7 @@ Migration requires assessing how the application is configured on-premises, and 
 
 > [!VIDEO https://www.youtube.com/embed/D0M-N-RQw0I]
 
-If you plan to keep using AD FS with on-premises & SaaS Applications using SAML / WS-FED or Oauth protocol, you'll use both AD FS and Microsoft Entra ID after you convert the domains for user authentication. In this case, you can protect your on-premises applications and resources with Secure Hybrid Access (SHA) through [Microsoft Entra application proxy](../../app-proxy/what-is-application-proxy.md) or one of [Microsoft Entra ID partner integrations](~/identity/enterprise-apps/secure-hybrid-access.md). Using Application Proxy or one of our partners can provide secure remote access to your on-premises applications. Users benefit by easily connecting to their applications from any device after a [single sign-on](~/identity/enterprise-apps/add-application-portal-setup-sso.md).
+If you plan to keep using AD FS with on-premises & SaaS Applications using SAML / WS-FED or Oauth protocol, you'll use both AD FS and Microsoft Entra ID after you convert the domains for user authentication. In this case, you can protect your on-premises applications and resources with Secure Hybrid Access (SHA) through [Microsoft Entra application proxy](~/identity/app-proxy/what-is-application-proxy.md) or one of [Microsoft Entra ID partner integrations](~/identity/enterprise-apps/secure-hybrid-access.md). Using Application Proxy or one of our partners can provide secure remote access to your on-premises applications. Users benefit by easily connecting to their applications from any device after a [single sign-on](~/identity/enterprise-apps/add-application-portal-setup-sso.md).
 
 You can move SaaS applications that are currently federated with ADFS to Microsoft Entra ID. Reconfigure to authenticate with Microsoft Entra ID either via a built-in connector from the [Azure App gallery](https://azuremarketplace.microsoft.com/marketplace/apps/category/azure-active-directory-apps), or by [registering the application in Microsoft Entra ID](~/identity-platform/quickstart-register-app.md).
 

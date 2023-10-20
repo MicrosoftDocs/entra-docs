@@ -98,7 +98,7 @@ To flag sign-in failures, you don't need extra permissions.
 While the names are similar, **flagged sign-ins** and **risky sign-ins** are different capabilities:
 
 - Flagged sign-ins are sign-in error events users are asking assistance on. 
-- A risky sign-in is a functionality of identity protection. For more information, see [what is identity protection](../identity-protection/overview-identity-protection.md).
+- A risky sign-in is a functionality of identity protection. For more information, see [what is identity protection](~/id-protection/overview-identity-protection.md).
 
 
 

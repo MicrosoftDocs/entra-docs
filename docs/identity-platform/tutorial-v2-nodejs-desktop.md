@@ -59,29 +59,29 @@ Create a folder to host your application, for example *ElectronDesktopApp*.
 
 2. Then, create a folder named *App*. Inside this folder, create a file named *index.html* that will serve as UI. Add the following code there:
 
-    :::code language="html" source="~/ms-identity-JavaScript-nodejs-desktop/App/index.html":::
+    :::code language="html" source="~/../ms-identity-JavaScript-nodejs-desktop/App/index.html":::
 
 3. Next, create file named *main.js* and add the following code:
 
-    :::code language="js" source="~/ms-identity-JavaScript-nodejs-desktop/App/main.js":::
+    :::code language="js" source="~/../ms-identity-JavaScript-nodejs-desktop/App/main.js":::
 
 In the code snippet above, we initialize an Electron main window object and create some event handlers for interactions with the Electron window. We also import configuration parameters, instantiate *authProvider* class for handling sign-in, sign-out and token acquisition, and call the Microsoft Graph API.
 
 4. In the same folder (*App*), create another file named *renderer.js* and add the following code:
 
-    :::code language="js" source="~/ms-identity-JavaScript-nodejs-desktop/App/renderer.js":::
+    :::code language="js" source="~/../ms-identity-JavaScript-nodejs-desktop/App/renderer.js":::
 
 The renderer methods are exposed by the preload script found in the *preload.js* file in order to give the renderer access to the `Node API` in a secure and controlled way
 
 5. Then, create a new file *preload.js* and add the following code:
 
-    :::code language="js" source="~/ms-identity-JavaScript-nodejs-desktop/App/preload.js":::
+    :::code language="js" source="~/../ms-identity-JavaScript-nodejs-desktop/App/preload.js":::
 
 This preload script exposes a renderer API to give the renderer process controlled access to some `Node APIs` by applying IPC channels that have been configured for communication between the main and renderer processes.
 
 6. Finally, create a file named *constants.js* that will store the strings constants for describing the application **events**:
 
-    :::code language="js" source="~/ms-identity-JavaScript-nodejs-desktop/App/constants.js":::
+    :::code language="js" source="~/../ms-identity-JavaScript-nodejs-desktop/App/constants.js":::
 
 You now have a simple GUI and interactions for your Electron app. After completing the rest of the tutorial, the file and folder structure of your project should look similar to the following:
 
@@ -103,7 +103,7 @@ ElectronDesktopApp/
 
 In *App* folder, create a file named *AuthProvider.js*. The *AuthProvider.js* file will contain an authentication provider class that will handle login, logout, token acquisition, account selection and related authentication tasks using MSAL Node. Add the following code there:
 
-:::code language="js" source="~/ms-identity-JavaScript-nodejs-desktop/App/AuthProvider.js":::
+:::code language="js" source="~/../ms-identity-JavaScript-nodejs-desktop/App/AuthProvider.js":::
 
 In the code snippet above, we first initialized MSAL Node `PublicClientApplication` by passing a configuration object (`msalConfig`). We then exposed `login`, `logout` and `getToken` methods to be called by main module (*main.js*). In `login` and `getToken`, we acquire ID and access tokens using MSAL Node `acquireTokenInteractive` public API.
 
@@ -111,13 +111,13 @@ In the code snippet above, we first initialized MSAL Node `PublicClientApplicati
 
 Create a file named *graph.js*. The *graph.js* file will contain an instance of the Microsoft Graph SDK Client to facilitate accessing data on the Microsoft Graph API, using the access token obtained by MSAL Node:
 
-:::code language="js" source="~/ms-identity-JavaScript-nodejs-desktop/App/graph.js":::
+:::code language="js" source="~/../ms-identity-JavaScript-nodejs-desktop/App/graph.js":::
 
 ## Add app registration details
 
 Create an environment file to store the app registration details that will be used when acquiring tokens. To do so, create a file named *authConfig.js* inside the root folder of the sample (*ElectronDesktopApp*), and add the following code:
 
-:::code language="js" source="~/ms-identity-JavaScript-nodejs-desktop/App/authConfig.js":::
+:::code language="js" source="~/../ms-identity-JavaScript-nodejs-desktop/App/authConfig.js":::
 
 Fill in these details with the values you obtain from Azure app registration portal:
 

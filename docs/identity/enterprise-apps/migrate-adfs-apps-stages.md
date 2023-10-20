@@ -24,14 +24,14 @@ Your applications may use modern or legacy protocols for authentication. When yo
 
 These apps can be reconfigured to authenticate with Microsoft Entra ID either via a built-in connector from the Azure App Gallery, or by registering the custom application in Microsoft Entra ID.
 
-Apps that use older protocols can be integrated using [Application Proxy](../app-proxy/what-is-application-proxy.md) or any of our [Secure Hybrid Access (SHA) partners](secure-hybrid-access-integrations.md).
+Apps that use older protocols can be integrated using [Application Proxy](~/identity/app-proxy/what-is-application-proxy.md) or any of our [Secure Hybrid Access (SHA) partners](secure-hybrid-access-integrations.md).
 
 For more information, see:
 
-* [Using Microsoft Entra application proxy to publish on-premises apps for remote users](../app-proxy/what-is-application-proxy.md).
+* [Using Microsoft Entra application proxy to publish on-premises apps for remote users](~/identity/app-proxy/what-is-application-proxy.md).
 * [What is application management?](what-is-application-management.md)
 * [AD FS application activity report to migrate applications to Microsoft Entra ID](migrate-adfs-application-activity.md).
-* [Monitor AD FS using Microsoft Entra Connect Health](../hybrid/connect/how-to-connect-health-adfs.md).
+* [Monitor AD FS using Microsoft Entra Connect Health](~/identity/hybrid/connect/how-to-connect-health-adfs.md).
 
 ## The migration process
 
@@ -71,7 +71,7 @@ Update the configuration of your production app to point to your production Micr
 
 :::image type="content" source="media/migrate-adfs-apps-stages/stage4.jpg" alt-text="Diagram showing migration stage 4.":::
 
- Apps that authenticate with AD FS can use Active Directory groups for permissions. Use [Microsoft Entra Connect Sync](../hybrid/connect/how-to-connect-sync-whatis.md) to sync identity data between your on-premises environment and Microsoft Entra ID before you begin migration. Verify those groups and membership before migration so that you can grant access to the same users when the application is migrated.
+ Apps that authenticate with AD FS can use Active Directory groups for permissions. Use [Microsoft Entra Connect Sync](~/identity/hybrid/connect/how-to-connect-sync-whatis.md) to sync identity data between your on-premises environment and Microsoft Entra ID before you begin migration. Verify those groups and membership before migration so that you can grant access to the same users when the application is migrated.
 
 ## Line of business apps
 

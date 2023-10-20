@@ -41,7 +41,7 @@ Next, if the application implements a provisioning protocol, then you should con
 
 1. Check if your application is on the [list of enterprise applications](~/identity/enterprise-apps/view-applications-portal.md) or [list of app registrations](~/identity-platform/app-objects-and-service-principals.md). If the application is already present in your tenant, then skip to step 5 in this section.
 1. If your application is a SaaS application that isn't already registered in your tenant, then check if the application is available the [application gallery](~/identity/enterprise-apps/overview-application-gallery.md) for applications that can be integrated for federated SSO. If it's in the gallery, then use the tutorials to integrate the application with Microsoft Entra ID.
-   1. Follow the [tutorial](../saas-apps/tutorial-list.md) to configure the application for federated SSO with Microsoft Entra ID.
+   1. Follow the [tutorial](~/identity/saas-apps/tutorial-list.md) to configure the application for federated SSO with Microsoft Entra ID.
    1. if the application supports provisioning, [configure the application for provisioning](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md).
    1. When complete, skip to the next section in this article.
    If the SaaS application isn't in the gallery, then [ask the SaaS vendor to onboard](~/identity/enterprise-apps/v2-howto-app-gallery-listing.md).  
@@ -51,17 +51,17 @@ Next, if the application implements a provisioning protocol, then you should con
 
      |Application supports| Next steps|
      |----|-----|
-     | OpenID Connect | [Add an OpenID Connect OAuth application](../saas-apps/openidoauth-tutorial.md) |
+     | OpenID Connect | [Add an OpenID Connect OAuth application](~/identity/saas-apps/openidoauth-tutorial.md) |
      | SAML 2.0 | Register the application and configure the application with [the SAML endpoints and certificate of Microsoft Entra ID](~/identity-platform/saml-protocol-reference.md) |
-     | SAML 1.1 | [Add a SAML-based application](../saas-apps/saml-tutorial.md) |
+     | SAML 1.1 | [Add a SAML-based application](~/identity/saas-apps/saml-tutorial.md) |
 
    * Otherwise, if this is an on-premises or IaaS hosted application that supports single sign-on, then configure single sign-on from Microsoft Entra ID to the application through the application proxy.
 
      |Application supports| Next steps|
      |----|-----|
-     | SAML 2.0| Deploy the [application proxy](../app-proxy/application-proxy.md) and configure an application for [SAML SSO](../app-proxy/application-proxy-configure-single-sign-on-on-premises-apps.md) |
-     | Integrated Windows Auth (IWA) | Deploy the [application proxy](../app-proxy/application-proxy.md), configure an application for [Integrated Windows authentication SSO](../app-proxy/application-proxy-configure-single-sign-on-with-kcd.md), and set firewall rules to prevent access to the application's endpoints except via the proxy.|
-     | header-based authentication | Deploy the [application proxy](../app-proxy/application-proxy.md) and configure an application for [header-based SSO](../app-proxy/application-proxy-configure-single-sign-on-with-headers.md) |
+     | SAML 2.0| Deploy the [application proxy](~/identity/app-proxy/application-proxy.md) and configure an application for [SAML SSO](~/identity/app-proxy/application-proxy-configure-single-sign-on-on-premises-apps.md) |
+     | Integrated Windows Auth (IWA) | Deploy the [application proxy](~/identity/app-proxy/application-proxy.md), configure an application for [Integrated Windows authentication SSO](~/identity/app-proxy/application-proxy-configure-single-sign-on-with-kcd.md), and set firewall rules to prevent access to the application's endpoints except via the proxy.|
+     | header-based authentication | Deploy the [application proxy](~/identity/app-proxy/application-proxy.md) and configure an application for [header-based SSO](~/identity/app-proxy/application-proxy-configure-single-sign-on-with-headers.md) |
 
 1. If your application has multiple roles, each user has only one role in the application, and the application relies upon Microsoft Entra ID to send a user's single application-specific role as a claim of a user signing into the application, then configure those application roles in Microsoft Entra ID on your application, and then assign each user to the application role. You can use  the [app roles UI](~/identity-platform/howto-add-app-roles-in-apps.md#app-roles-ui) to add those roles to the application manifest.  If you're using the Microsoft Authentication Libraries, there is a [code sample](~/identity-platform/sample-v2-code.md) for how to use app roles inside your application for access control.  If a user could have multiple roles simultaneously, then you may wish to implement the application to check security groups, either in the token claims or available via Microsoft Graph, instead of using application roles from the app manifest for access control.
 
@@ -77,7 +77,7 @@ Next, if the application implements a provisioning protocol, then you should con
 
      |Application supports| Next steps|
      |----|-----|
-     | Kerberos | Configure Microsoft Entra Connect [group writeback to AD](../hybrid/connect/how-to-connect-group-writeback-v2.md), create groups in Microsoft Entra ID and [write those groups to AD](~/identity/users/groups-write-back-portal.md) |
+     | Kerberos | Configure Microsoft Entra Connect [group writeback to AD](~/identity/hybrid/connect/how-to-connect-group-writeback-v2.md), create groups in Microsoft Entra ID and [write those groups to AD](~/identity/users/groups-write-back-portal.md) |
 
    * Otherwise, if this is an on-premises or IaaS hosted application, and isn't integrated with AD, then configure provisioning to that application, either via SCIM or to the underlying database or directory of the application.
 

@@ -39,7 +39,7 @@ Pass-through authentication has these key security capabilities:
   - For the complete list of the network requirements, see the [Microsoft Entra pass-through authentication quickstart](how-to-connect-pta-quick-start.md#step-1-check-the-prerequisites).
 - Passwords that users provide during sign-in are encrypted in the cloud before the on-premises authentication agents accept them for validation against Windows Server Active Directory (Windows Server AD).
 - The HTTPS channel between Microsoft Entra ID and the on-premises authentication agent is secured by using mutual authentication.
-- Pass-through authentication protects your user accounts by working seamlessly with [Microsoft Entra Conditional Access policies](../../conditional-access/overview.md), including multifactor authentication (MFA), [blocking legacy authentication](../../conditional-access/concept-conditional-access-conditions.md), and by [filtering out brute force password attacks](~/identity/authentication/howto-password-smart-lockout.md).
+- Pass-through authentication protects your user accounts by working seamlessly with [Microsoft Entra Conditional Access policies](~/identity/conditional-access/overview.md), including multifactor authentication (MFA), [blocking legacy authentication](~/identity/conditional-access/concept-conditional-access-conditions.md), and by [filtering out brute force password attacks](~/identity/authentication/howto-password-smart-lockout.md).
 
 ## Components involved in pass-through authentication
 

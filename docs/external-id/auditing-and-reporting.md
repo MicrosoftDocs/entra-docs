@@ -21,7 +21,7 @@ ms.collection: engagement-fy23, M365-identity-device-management
 With guest users, you have auditing capabilities similar to with member users.
 
 ## Access reviews
-You can use access reviews to periodically verify whether guest users still need access to your resources. The **Access reviews** feature is available in **Microsoft Entra ID** under **Identity Governance** > **Access reviews**. To learn how to use access reviews, see [Manage guest access with Microsoft Entra access reviews](../governance/manage-guest-access-with-access-reviews.md).
+You can use access reviews to periodically verify whether guest users still need access to your resources. The **Access reviews** feature is available in **Microsoft Entra ID** under **Identity Governance** > **Access reviews**. To learn how to use access reviews, see [Manage guest access with Microsoft Entra access reviews](~/id-governance/manage-guest-access-with-access-reviews.md).
 
 ## Audit logs
 

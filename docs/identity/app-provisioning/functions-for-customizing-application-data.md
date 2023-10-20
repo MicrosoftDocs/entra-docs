@@ -1260,4 +1260,4 @@ Add a comma between last name and first name.
 * [Scoping Filters for User Provisioning](define-conditional-rules-for-provisioning-user-accounts.md)
 * [Using SCIM to enable automatic provisioning of users and groups from Microsoft Entra ID to applications](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md)
 * [Account Provisioning Notifications](~/identity/app-provisioning/user-provisioning.md)
-* [List of Tutorials on How to Integrate SaaS Apps](../saas-apps/tutorial-list.md)
+* [List of Tutorials on How to Integrate SaaS Apps](~/identity/saas-apps/tutorial-list.md)

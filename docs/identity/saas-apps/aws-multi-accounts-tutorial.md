@@ -139,7 +139,7 @@ In this section, you enable Microsoft Entra SSO in the Azure portal and configur
    f. Select **Ok**, and then select **Save**.
 
    > [!NOTE]
-   > For more information about roles in Microsoft Entra ID, see [Add app roles to your application and receive them in the token](~/identity-platform/howto-add-app-roles-in-azure-ad-apps.md#app-roles-ui).
+   > For more information about roles in Microsoft Entra ID, see [Add app roles to your application and receive them in the token](~/identity-platform/howto-add-app-roles-in-apps.md#app-roles-ui).
 
 1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, select **Download** to download the federation metadata XML file, and then save it to your computer.
 

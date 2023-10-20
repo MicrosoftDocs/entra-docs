@@ -24,7 +24,7 @@ In this tutorial, learn to migrate user provisioning from Okta to Microsoft Entr
 
 When you switch from Okta provisioning to Microsoft Entra ID, there are two choices. Use a Microsoft Entra Connect server or Microsoft Entra cloud provisioning. 
 
-Learn more: [Comparison between Microsoft Entra Connect and cloud sync](../hybrid/cloud-sync/what-is-cloud-sync.md#comparison-between-azure-ad-connect-and-cloud-sync).
+Learn more: [Comparison between Microsoft Entra Connect and cloud sync](~/identity/hybrid/cloud-sync/what-is-cloud-sync.md#comparison-between-azure-ad-connect-and-cloud-sync).
 
 Microsoft Entra cloud provisioning is the most familiar migration path for Okta customers who use Universal Sync or User Sync. The cloud provisioning agents are lightweight. You can install them on, or near, domain controllers like the Okta directory sync agents. Don't install them on the same server.
 
@@ -38,7 +38,7 @@ When you synchronize users, use a Microsoft Entra Connect server if your organiz
 To use Microsoft Entra Connect, you need to sign in with one of the following roles: Global Administrator, or Hybrid Identity Administrator.
 
 >[!NOTE]
->Take all prerequisites into consideration when you install Microsoft Entra Connect or Microsoft Entra cloud provisioning. Before you continue with installation, see [Prerequisites for Microsoft Entra Connect](../hybrid/connect/how-to-connect-install-prerequisites.md).
+>Take all prerequisites into consideration when you install Microsoft Entra Connect or Microsoft Entra cloud provisioning. Before you continue with installation, see [Prerequisites for Microsoft Entra Connect](~/identity/hybrid/connect/how-to-connect-install-prerequisites.md).
 
 ## Confirm ImmutableID attribute synchronized by Okta
 
@@ -118,7 +118,7 @@ The following command gets on-premises Microsoft Entra users and exports a list 
 
 After you prepare your list of source and destination targets, install a Microsoft Entra Connect server. If you use Microsoft Entra Connect cloud provisioning, skip this section.
 
-1. Download and install Microsoft Entra Connect on a server. See, [Custom installation of Microsoft Entra Connect](../hybrid/connect/how-to-connect-install-custom.md).
+1. Download and install Microsoft Entra Connect on a server. See, [Custom installation of Microsoft Entra Connect](~/identity/hybrid/connect/how-to-connect-install-custom.md).
 2. In the left panel, select **Identifying users**.
 3. On the **Uniquely identifying your users** page, under **Select how users should be identified with Microsoft Entra ID**, select **Choose a specific attribute**. 
 4. If you haven't modified the Okta default, select **mS-DS-ConsistencyGUID**.
@@ -191,7 +191,7 @@ In this example, Okta stamped the **mail** attribute to the user's account, alth
 
 ## Install Microsoft Entra Connect cloud sync agents
 
-After you prepare your list of source and destination targets, install and configure Microsoft Entra Connect cloud sync agents. See, [Tutorial: Integrate a single forest with a single Microsoft Entra tenant](../hybrid/cloud-sync/tutorial-single-forest.md). 
+After you prepare your list of source and destination targets, install and configure Microsoft Entra Connect cloud sync agents. See, [Tutorial: Integrate a single forest with a single Microsoft Entra tenant](~/identity/hybrid/cloud-sync/tutorial-single-forest.md). 
 
    > [!NOTE]
    > If you use a Microsoft Entra Connect server, skip this section.

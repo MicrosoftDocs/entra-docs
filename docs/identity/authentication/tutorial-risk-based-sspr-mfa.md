@@ -70,7 +70,7 @@ The following three policies are available in Microsoft Entra ID Protection to p
 
 When you enable a policy user or sign in risk policy, you can also choose the threshold for risk level - *low and above*, *medium and above*, or *high*. This flexibility lets you decide how aggressive you want to be in enforcing any controls for suspicious sign-in events.
 
-For more information about Microsoft Entra ID Protection, see [What is Microsoft Entra ID Protection?](../identity-protection/overview-identity-protection.md)
+For more information about Microsoft Entra ID Protection, see [What is Microsoft Entra ID Protection?](~/id-protection/overview-identity-protection.md)
 
 ## Enable MFA registration policy
 
@@ -122,7 +122,7 @@ To enable this policy, complete the following steps:
 
 Most user sign-in events won't trigger the risk-based policies configured in the previous steps. A user may never see a prompt for additional MFA or to reset their password. If their credentials remain secure and their behavior consistent, their sign-in events would be successful.
 
-To test the Microsoft Entra ID Protection policies created in the previous steps, you need a way to simulate risky behavior or potential attacks. The steps to do these tests vary based on the Microsoft Entra ID Protection policy you want to validate. For more information on scenarios and steps, see [Simulate risk detections in Microsoft Entra ID Protection](../identity-protection/howto-identity-protection-simulate-risk.md).
+To test the Microsoft Entra ID Protection policies created in the previous steps, you need a way to simulate risky behavior or potential attacks. The steps to do these tests vary based on the Microsoft Entra ID Protection policy you want to validate. For more information on scenarios and steps, see [Simulate risk detections in Microsoft Entra ID Protection](~/id-protection/howto-identity-protection-simulate-risk.md).
 
 ## Clean up resources
 
@@ -140,4 +140,4 @@ In this tutorial, you enabled risk-based user policies for Microsoft Entra ID Pr
 > * Test risk-based policies for user sign-in attempts
 
 > [!div class="nextstepaction"]
-> [Learn more about Microsoft Entra ID Protection](../identity-protection/overview-identity-protection.md)
+> [Learn more about Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md)

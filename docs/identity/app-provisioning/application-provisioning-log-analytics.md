@@ -15,7 +15,7 @@ ms.reviewer: arvinh
 
 # Understand how provisioning integrates with Azure Monitor logs
 
-Provisioning integrates with Azure Monitor logs and Log Analytics. With Azure monitoring you can do things like create workbooks, also known as dashboards, store provisioning logs for 30+ days, and create custom queries and alerts. This article discusses how provisioning logs integrate with Azure Monitor logs. To learn more about how provisioning logs work in general, see [provisioning logs](../reports-monitoring/concept-provisioning-logs.md).
+Provisioning integrates with Azure Monitor logs and Log Analytics. With Azure monitoring you can do things like create workbooks, also known as dashboards, store provisioning logs for 30+ days, and create custom queries and alerts. This article discusses how provisioning logs integrate with Azure Monitor logs. To learn more about how provisioning logs work in general, see [provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md).
 
 ## Enabling provisioning logs
 
@@ -112,7 +112,7 @@ We're taking an open source and community-based approach to application provisio
 
 ## Next steps
 
-- [Log analytics](../reports-monitoring/howto-analyze-activity-logs-log-analytics.md)
+- [Log analytics](~/identity/monitoring-health/howto-analyze-activity-logs-log-analytics.md)
 - [Get started with queries in Azure Monitor logs](/azure/azure-monitor/logs/get-started-queries)
 - [Create and manage alert groups in the Azure portal](/azure/azure-monitor/alerts/action-groups)
 - [Install and use the log analytics views for Microsoft Entra ID](/azure/azure-monitor/visualize/workbooks-view-designer-conversion-overview)

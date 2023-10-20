@@ -26,7 +26,7 @@ Microsoft Graph provides a unified programmability model that organizations can 
 
 The following examples are provided as is with no support. You can use these examples as a basis for tooling in your organization. 
 
-Many of the following examples use tools like [Managed Identities](../managed-identities-azure-resources/overview.md), [Logic Apps](/azure/logic-apps/logic-apps-overview), [OneDrive](https://www.microsoft.com/microsoft-365/onedrive/online-cloud-storage), [Teams](https://www.microsoft.com/microsoft-365/microsoft-teams/group-chat-software/), and [Azure Key Vault](/azure/key-vault/general/overview).
+Many of the following examples use tools like [Managed Identities](~/identity/managed-identities-azure-resources/overview.md), [Logic Apps](/azure/logic-apps/logic-apps-overview), [OneDrive](https://www.microsoft.com/microsoft-365/onedrive/online-cloud-storage), [Teams](https://www.microsoft.com/microsoft-365/microsoft-teams/group-chat-software/), and [Azure Key Vault](/azure/key-vault/general/overview).
 
 ## Configure
 

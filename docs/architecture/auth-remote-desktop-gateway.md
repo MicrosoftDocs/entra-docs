@@ -40,8 +40,8 @@ Use Remote Desktop Gateway Services when you need to provide remote access and p
 
 Explore the following resources to learn more about implementing Remote Desktop Gateway services with Microsoft Entra ID.
 
-* [Publish Remote Desktop with Microsoft Entra application proxy](../app-proxy/application-proxy-integrate-with-remote-desktop-services.md) describes how Remote Desktop Service and Microsoft Entra application proxy work together to improve productivity of workers who are away from the corporate network.
-* The [Tutorial - Add an on-premises app - Application Proxy in Microsoft Entra ID](../app-proxy/application-proxy-add-on-premises-application.md) helps you to prepare your environment for use with Application Proxy.
+* [Publish Remote Desktop with Microsoft Entra application proxy](~/identity/app-proxy/application-proxy-integrate-with-remote-desktop-services.md) describes how Remote Desktop Service and Microsoft Entra application proxy work together to improve productivity of workers who are away from the corporate network.
+* The [Tutorial - Add an on-premises app - Application Proxy in Microsoft Entra ID](~/identity/app-proxy/application-proxy-add-on-premises-application.md) helps you to prepare your environment for use with Application Proxy.
 
 ## Next steps
 

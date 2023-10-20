@@ -62,7 +62,7 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 1. In your IDE, open the project folder, *ms-identity-docs-code-javascript/react-spa*, containing the sample.
 1. Open *src/authConfig.js* and update the following values with the information recorded earlier in the admin center.
 
-    :::code language="JavaScript" source="~/ms-identity-docs-code-javascript/react-spa/src/authConfig.js":::
+    :::code language="JavaScript" source="~/../ms-identity-docs-code-javascript/react-spa/src/authConfig.js":::
 
     * `clientId` - The identifier of the application, also referred to as the client. Replace the text in quotes with the **Application (client) ID** value that was recorded earlier.
     * `authority` - The identifier of the tenant where the application is registered. Replace the text in quotes with the **Directory (tenant) ID** value that was recorded earlier.

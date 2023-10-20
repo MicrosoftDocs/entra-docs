@@ -39,7 +39,7 @@ For more information, see the [Generic LDAP Connector reference](/microsoft-iden
 
  - A Microsoft Entra tenant with Microsoft Entra ID P1 or Premium P2 (or EMS E3 or E5). 
  
-    [!INCLUDE [active-directory-p1-license.md](active-directory-p1-license.md)]
+    [!INCLUDE [active-directory-p1-license.md](entra-p1-license.md)]
  - The Hybrid Identity Administrator role for configuring the provisioning agent and the Application Administrator or Cloud Application Administrator roles for configuring provisioning in the Azure portal.
  - The Microsoft Entra users to be provisioned to the LDAP directory must already be populated with the attributes that will be required by the directory server schema and are specific to each user.  For example, if the directory server requires each user to have a unique number between 10000 and 30000 as their User ID number to support a POSIX workload, then you would need to either generate that number from an existing attribute on the user, or extend the Microsoft Entra schema and populate that attribute on the users in scope of the LDAP-based application.  See [Graph extensibility](/graph/extensibility-overview?tabs=http#directory-azure-ad-extensions) for how to create additional directory extensions.
 

@@ -21,7 +21,7 @@ A *claims challenge* is a response sent from an API indicating that an access to
 
 A *claims request* is made by the client application to redirect the user back to the identity provider to retrieve a new token with claims that will satisfy the additional requirements that were not met.
 
-Applications that use enhanced security features like [Continuous Access Evaluation (CAE)](../conditional-access/concept-continuous-access-evaluation.md) and [Conditional Access authentication context](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/granular-conditional-access-for-sensitive-data-and-actions/ba-p/1751775) must be prepared to handle claims challenges.
+Applications that use enhanced security features like [Continuous Access Evaluation (CAE)](~/identity/conditional-access/concept-continuous-access-evaluation.md) and [Conditional Access authentication context](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/granular-conditional-access-for-sensitive-data-and-actions/ba-p/1751775) must be prepared to handle claims challenges.
 
 Your application will receive claims challenges from popular services like [Microsoft Graph](/graph/overview) only if it declares its [client capabilities](#client-capabilities) in its calls to the service.
 

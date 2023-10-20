@@ -81,7 +81,7 @@ In Microsoft Entra ID, users who have privileged roles, such as administrators, 
 
 - Deploy privileged access devices for privileged access to manage Microsoft 365 and Microsoft Entra ID. See [Device roles and profiles](/security/privileged-access-workstations/privileged-access-devices#device-roles-and-profiles).
 
-  Deploy Microsoft Entra Privileged Identity Management (PIM) for just-in-time access to all human accounts that have privileged roles. Require strong authentication to activate roles. See [What is Microsoft Entra Privileged Identity Management](../privileged-identity-management/pim-configure.md).
+  Deploy Microsoft Entra Privileged Identity Management (PIM) for just-in-time access to all human accounts that have privileged roles. Require strong authentication to activate roles. See [What is Microsoft Entra Privileged Identity Management](~/id-governance/privileged-identity-management/pim-configure.md).
 
 - Provide administrative roles that allow the least privilege necessary to do required tasks. See [Least privileged roles by task in Microsoft Entra ID](~/identity/role-based-access-control/delegate-by-task.md).
 
@@ -113,7 +113,7 @@ Credentials are a primary attack vector. Implement the following practices to ma
 
 Hybrid account password management requires hybrid components such as password protection agents and password writeback agents. If your on-premises infrastructure is compromised, attackers can control the machines on which these agents reside. This vulnerability won't compromise your cloud infrastructure. But your cloud accounts won't protect these components from on-premises compromise.
 
-On-premises accounts synced from Active Directory are marked to never expire in Microsoft Entra ID. This setting is usually mitigated by on-premises Active Directory password settings. If your instance of Active Directory is compromised and synchronization is disabled, set the [EnforceCloudPasswordPolicyForPasswordSyncedUsers](../hybrid/connect/how-to-connect-password-hash-synchronization.md) option to force password changes.
+On-premises accounts synced from Active Directory are marked to never expire in Microsoft Entra ID. This setting is usually mitigated by on-premises Active Directory password settings. If your instance of Active Directory is compromised and synchronization is disabled, set the [EnforceCloudPasswordPolicyForPasswordSyncedUsers](~/identity/hybrid/connect/how-to-connect-password-hash-synchronization.md) option to force password changes.
 
 ## Provision user access from the cloud
 
@@ -130,9 +130,9 @@ We recommend the following provisioning methods:
   We recommend limiting B2B guest accounts in the following ways:
 
   - Limit guest access to browsing groups and other properties in the directory. Use the external collaboration settings to restrict guests' ability to read groups they're not members of.
-  - Block access to the Azure portal. You can make rare necessary exceptions.  Create a Conditional Access policy that includes all guests and external users. Then implement a policy to block access. See [Conditional Access](../conditional-access/concept-conditional-access-cloud-apps.md).
+  - Block access to the Azure portal. You can make rare necessary exceptions.  Create a Conditional Access policy that includes all guests and external users. Then implement a policy to block access. See [Conditional Access](~/identity/conditional-access/concept-conditional-access-cloud-apps.md).
 
-- **Disconnected forests.** Use Microsoft Entra cloud provisioning to connect to disconnected forests. This approach eliminates the need to establish cross-forest connectivity or trusts, which can broaden the effect of an on-premises breach. For more information, see [What is Microsoft Entra Connect cloud sync](../hybrid/cloud-sync/what-is-cloud-sync.md).
+- **Disconnected forests.** Use Microsoft Entra cloud provisioning to connect to disconnected forests. This approach eliminates the need to establish cross-forest connectivity or trusts, which can broaden the effect of an on-premises breach. For more information, see [What is Microsoft Entra Connect cloud sync](~/identity/hybrid/cloud-sync/what-is-cloud-sync.md).
 
 ### Limitations and tradeoffs
 
@@ -152,7 +152,7 @@ Owners of groups that are used for access should be considered privileged identi
 
 Use Microsoft Entra capabilities to securely manage devices.
 
-Deploy Microsoft Entra joined Windows 10 workstations with mobile device management policies. Enable Windows Autopilot for a fully automated provisioning experience. See [Plan your Microsoft Entra join implementation](../devices/device-join-plan.md) and [Windows Autopilot](/autopilot/windows-autopilot).
+Deploy Microsoft Entra joined Windows 10 workstations with mobile device management policies. Enable Windows Autopilot for a fully automated provisioning experience. See [Plan your Microsoft Entra join implementation](~/identity/devices/device-join-plan.md) and [Windows Autopilot](/autopilot/windows-autopilot).
 
 - **Use Windows 10 workstations**.
   - Deprecate machines that run Windows 8.1 and earlier.
@@ -172,7 +172,7 @@ Deploy Microsoft Entra joined Windows 10 workstations with mobile device managem
 
 - **Legacy applications**
 
-  You can enable authentication, authorization, and remote access to legacy applications that don't support modern authentication. Use [Microsoft Entra application proxy](../app-proxy/application-proxy.md). Or, enable them through a network or application delivery controller solution by using secure hybrid access partner integrations. See [Secure legacy apps with Microsoft Entra ID](~/identity/enterprise-apps/secure-hybrid-access.md).
+  You can enable authentication, authorization, and remote access to legacy applications that don't support modern authentication. Use [Microsoft Entra application proxy](~/identity/app-proxy/application-proxy.md). Or, enable them through a network or application delivery controller solution by using secure hybrid access partner integrations. See [Secure legacy apps with Microsoft Entra ID](~/identity/enterprise-apps/secure-hybrid-access.md).
 
   Choose a VPN vendor that supports modern authentication. Integrate its authentication with Microsoft Entra ID. In an on-premises compromise, you can use Microsoft Entra ID to disable or block access by disabling the VPN.
 
@@ -184,9 +184,9 @@ Deploy Microsoft Entra joined Windows 10 workstations with mobile device managem
 
 ## Conditional Access policies
 
-Use Microsoft Entra Conditional Access to interpret signals and use them to make authentication decisions. For more information, see the [Conditional Access deployment plan](../conditional-access/plan-conditional-access.md).
+Use Microsoft Entra Conditional Access to interpret signals and use them to make authentication decisions. For more information, see the [Conditional Access deployment plan](~/identity/conditional-access/plan-conditional-access.md).
 
-- Use Conditional Access to block legacy authentication protocols whenever possible. Additionally, disable legacy authentication protocols at the application level by using an application-specific configuration. See [Block legacy authentication](../conditional-access/howto-conditional-access-policy-block-legacy.md).
+- Use Conditional Access to block legacy authentication protocols whenever possible. Additionally, disable legacy authentication protocols at the application level by using an application-specific configuration. See [Block legacy authentication](~/identity/conditional-access/howto-conditional-access-policy-block-legacy.md).
 
   For more information, see [Legacy authentication protocols](./auth-sync-overview.md#legacy-authentication-protocols). Or see specific details for [Exchange Online](/exchange/clients-and-mobile-in-exchange-online/disable-basic-authentication-in-exchange-online#how-basic-authentication-works-in-exchange-online) and [SharePoint Online](/powershell/module/sharepoint-online/set-spotenant).
 
@@ -198,7 +198,7 @@ Use Microsoft Entra Conditional Access to interpret signals and use them to make
 
 ## Monitor
 
-After you configure your environment to protect your Microsoft 365 from an on-premises compromise, proactively monitor the environment. For more information, see [What is Microsoft Entra monitoring?](../reports-monitoring/overview-monitoring-health.md)
+After you configure your environment to protect your Microsoft 365 from an on-premises compromise, proactively monitor the environment. For more information, see [What is Microsoft Entra monitoring?](~/identity/monitoring-health/overview-monitoring-health.md)
 
 ### Scenarios to monitor
 
@@ -206,9 +206,9 @@ Monitor the following key scenarios, in addition to any scenarios specific to yo
 
 - **Suspicious activity**
 
-  Monitor all Microsoft Entra risk events for suspicious activity. See [How To: Investigate risk](../identity-protection/howto-identity-protection-investigate-risk.md). Microsoft Entra ID Protection is natively integrated with [Microsoft Defender for Identity](/defender-for-identity/what-is).
+  Monitor all Microsoft Entra risk events for suspicious activity. See [How To: Investigate risk](~/id-protection/howto-identity-protection-investigate-risk.md). Microsoft Entra ID Protection is natively integrated with [Microsoft Defender for Identity](/defender-for-identity/what-is).
 
-  Define network named locations to avoid noisy detections on location-based signals. See [Using the location condition in a Conditional Access policy](../conditional-access/location-condition.md).
+  Define network named locations to avoid noisy detections on location-based signals. See [Using the location condition in a Conditional Access policy](~/identity/conditional-access/location-condition.md).
 
 - **User and Entity Behavioral Analytics (UEBA) alerts**
 
@@ -227,7 +227,7 @@ Monitor the following key scenarios, in addition to any scenarios specific to yo
 
 - **Privileged role activity**
 
-  Configure and review security alerts generated by Microsoft Entra Privileged Identity Management (PIM). Monitor direct assignment of privileged roles outside PIM by generating alerts whenever a user is assigned directly. See [Security alerts](../privileged-identity-management/pim-how-to-configure-security-alerts.md?tabs=new#security-alerts).
+  Configure and review security alerts generated by Microsoft Entra Privileged Identity Management (PIM). Monitor direct assignment of privileged roles outside PIM by generating alerts whenever a user is assigned directly. See [Security alerts](~/id-governance/privileged-identity-management/pim-how-to-configure-security-alerts.md?tabs=new#security-alerts).
 
 - **Microsoft Entra tenant-wide configurations**
 
@@ -261,11 +261,11 @@ Define a log storage and retention strategy, design, and implementation to facil
   - Audit logs
   - Risk events
 
-  Microsoft Entra ID provides Azure Monitor integration for the sign-in activity log and audit logs. See [Microsoft Entra activity logs in Azure Monitor](../reports-monitoring/concept-log-monitoring-integration-options-considerations.md).
+  Microsoft Entra ID provides Azure Monitor integration for the sign-in activity log and audit logs. See [Microsoft Entra activity logs in Azure Monitor](~/identity/monitoring-health/concept-log-monitoring-integration-options-considerations.md).
 
   Use the Microsoft Graph API to ingest risk events. See [Use the Microsoft Graph identity protection APIs](/graph/api/resources/identityprotection-overview).
 
-  You can stream Microsoft Entra logs to Azure Monitor logs. See [Integrate Microsoft Entra logs with Azure Monitor logs](../reports-monitoring/howto-integrate-activity-logs-with-azure-monitor-logs.md).
+  You can stream Microsoft Entra logs to Azure Monitor logs. See [Integrate Microsoft Entra logs with Azure Monitor logs](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.md).
 
 - **Hybrid infrastructure operating system security logs**. All hybrid identity infrastructure operating system logs should be archived and carefully monitored as a tier-0 system, because of the surface-area implications. Include the following elements:
 
@@ -275,7 +275,7 @@ Define a log storage and retention strategy, design, and implementation to facil
   - Network policy servers (NPSs) that have the Microsoft Entra multifactor authentication RADIUS extension
   - Microsoft Entra Connect
 
-    You must deploy Microsoft Entra Connect Health to monitor identity synchronization. See [What is Microsoft Entra Connect](../hybrid/connect/whatis-azure-ad-connect.md).
+    You must deploy Microsoft Entra Connect Health to monitor identity synchronization. See [What is Microsoft Entra Connect](~/identity/hybrid/connect/whatis-azure-ad-connect.md).
 
 ## Next steps
 

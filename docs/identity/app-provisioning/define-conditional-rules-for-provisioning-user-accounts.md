@@ -30,7 +30,7 @@ Scoping filters can be used differently depending on the type of provisioning co
     >[!TIP]
     > The more users and groups in scope for provisioning, the longer the synchronization process can take. Setting the scope to sync assigned users and groups,  limiting the number of groups assigned to the app, and limiting the size of the groups will reduce the time it takes to synchronize everyone that is in scope.  
 
-* **Inbound provisioning from HCM applications to Microsoft Entra ID and Active Directory**. When an [HCM application such as Workday](../saas-apps/workday-tutorial.md) is the source system, scoping filters are the primary method for determining which users should be provisioned from the HCM application to Active Directory or Microsoft Entra ID.
+* **Inbound provisioning from HCM applications to Microsoft Entra ID and Active Directory**. When an [HCM application such as Workday](~/identity/saas-apps/workday-tutorial.md) is the source system, scoping filters are the primary method for determining which users should be provisioned from the HCM application to Active Directory or Microsoft Entra ID.
 
 By default, Microsoft Entra provisioning connectors don't have any attribute-based scoping filters configured. 
 ::: zone-end
@@ -63,7 +63,7 @@ According to this scoping filter, users must satisfy the following criteria to b
 * Their job title must not be null or empty.
 
 ## Create scoping filters
-Scoping filters are configured as part of the attribute mappings for each Microsoft Entra user provisioning connector. The following procedure assumes that you already set up automatic provisioning for [one of the supported applications](../saas-apps/tutorial-list.md) and are adding a scoping filter to it.
+Scoping filters are configured as part of the attribute mappings for each Microsoft Entra user provisioning connector. The following procedure assumes that you already set up automatic provisioning for [one of the supported applications](~/identity/saas-apps/tutorial-list.md) and are adding a scoping filter to it.
 
 ### Create a scoping filter
 
@@ -161,4 +161,4 @@ Scoping filters are configured as part of the attribute mappings for each Micros
 * [Write expressions for attribute mappings](functions-for-customizing-application-data.md)
 * [Account provisioning notifications](~/identity/app-provisioning/user-provisioning.md)
 * [Use SCIM to enable automatic provisioning of users and groups from Microsoft Entra ID to applications](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md)
-* [List of tutorials on how to integrate SaaS apps](../saas-apps/tutorial-list.md)
+* [List of tutorials on how to integrate SaaS apps](~/identity/saas-apps/tutorial-list.md)

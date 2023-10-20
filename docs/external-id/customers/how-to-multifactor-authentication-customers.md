@@ -31,7 +31,7 @@ ms.custom: it-pro
 
 ## Create a Conditional Access policy
 
-Create a Conditional Access policy in your customer tenant that prompts users for MFA when they sign up or sign in to your app. (For more information, see [Common Conditional Access policy: Require MFA for all users](../../conditional-access/howto-conditional-access-policy-all-users-mfa.md)).
+Create a Conditional Access policy in your customer tenant that prompts users for MFA when they sign up or sign in to your app. (For more information, see [Common Conditional Access policy: Require MFA for all users](~/identity/conditional-access/howto-conditional-access-policy-all-users-mfa.md)).
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a Conditional Access Administrator, Security Administrator, or Global Administrator.
 

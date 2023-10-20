@@ -226,7 +226,7 @@ In this step, you'll grant "business process security" policy permissions for th
 
 ## Provisioning Agent installation prerequisites
 
-Review the [provisioning agent installation prerequisites](../cloud-sync/how-to-prerequisites.md) before proceeding to the next section. 
+Review the [provisioning agent installation prerequisites](/azure/active-directory/cloud-sync/how-to-prerequisites) before proceeding to the next section. 
 
 ## Configuring user provisioning from Workday to Active Directory
 
@@ -256,7 +256,7 @@ This section provides steps for user account provisioning from Workday to each A
 
 To provision to Active Directory on-premises, the Provisioning agent must be installed on a domain-joined server that has network access to the desired Active Directory domain(s).
 
-Transfer the downloaded agent installer to the server host and follow the steps listed [in the **Install agent** section](../cloud-sync/how-to-install.md) to complete the agent configuration.
+Transfer the downloaded agent installer to the server host and follow the steps listed [in the **Install agent** section](/azure/active-directory/cloud-sync/how-to-install) to complete the agent configuration.
 
 ### Part 3: In the provisioning app, configure connectivity to Workday and Active Directory
 In this step, we establish connectivity with Workday and Active Directory. 
@@ -561,7 +561,7 @@ Replace the variables [proxy-server] and [proxy-port] with your proxy server nam
 
 #### How do I ensure that the Provisioning Agent is able to communicate with the Microsoft Entra tenant and no firewalls are blocking ports required by the agent?
 
-You can also check whether all of the [required ports](../app-proxy/application-proxy-add-on-premises-application.md#open-ports) are open.
+You can also check whether all of the [required ports](~/identity/app-proxy/application-proxy-add-on-premises-application.md#open-ports) are open.
 
 #### Can one Provisioning Agent be configured to provision multiple AD domains?
 

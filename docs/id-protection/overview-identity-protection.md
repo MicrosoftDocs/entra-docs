@@ -88,7 +88,7 @@ Identity Protection requires users be a Security Reader, Security Operator, Secu
 
 Currently, the Security Operator role can't access the Risky sign-ins report.
 
-Conditional Access administrators can create policies that factor in user or sign-in risk as a condition. Find more information in the article [Conditional Access: Conditions](../conditional-access/concept-conditional-access-conditions.md#sign-in-risk).
+Conditional Access administrators can create policies that factor in user or sign-in risk as a condition. Find more information in the article [Conditional Access: Conditions](~/identity/conditional-access/concept-conditional-access-conditions.md#sign-in-risk).
 
 ## License requirements
 

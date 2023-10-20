@@ -172,4 +172,4 @@ When you click the Bright Pattern Omnichannel Contact Center tile in the Access 
 
 - [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
-- [What is Conditional Access in Microsoft Entra ID?](../conditional-access/overview.md)
+- [What is Conditional Access in Microsoft Entra ID?](~/identity/conditional-access/overview.md)

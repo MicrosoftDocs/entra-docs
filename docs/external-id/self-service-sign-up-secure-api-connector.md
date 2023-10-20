@@ -64,7 +64,7 @@ You can then [export the certificate](/azure/key-vault/certificates/how-to-expor
 
 #### Option 2: prepare a self-signed certificate using PowerShell
 
-[!INCLUDE [active-directory-b2c-create-self-signed-certificate](~/includes/entra-b2c-create-self-signed-certificate.md)]
+[!INCLUDE [active-directory-b2c-create-self-signed-certificate](~/../azure-docs-pr/includes/active-directory-b2c-create-self-signed-certificate.md)]
 
 ### Configure your API Connector
 

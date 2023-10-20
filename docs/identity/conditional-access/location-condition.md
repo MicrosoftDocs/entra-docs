@@ -187,7 +187,7 @@ Conditional Access policies apply to all IPv4 **and** [IPv6](/troubleshoot/azure
 
 ### Identifying IPv6 traffic with Microsoft Entra Sign-in activity reports
 
-You can discover IPv6 traffic in your tenant by going the [Microsoft Entra sign-in activity reports](../reports-monitoring/concept-sign-ins.md). After you have the activity report open, add the “IP address” column and add a colon (**:**) to the field. This filter helps distinguish IPv6 traffic from IPv4 traffic.
+You can discover IPv6 traffic in your tenant by going the [Microsoft Entra sign-in activity reports](~/identity/monitoring-health/concept-sign-ins.md). After you have the activity report open, add the “IP address” column and add a colon (**:**) to the field. This filter helps distinguish IPv6 traffic from IPv4 traffic.
 
 You can also find the client IP by clicking a row in the report, and then going to the “Location” tab in the sign-in activity details. 
 

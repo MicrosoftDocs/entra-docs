@@ -149,4 +149,4 @@ When you click the Learnster tile in the Access Panel, you should be automatical
 
 - [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
-- [What is Conditional Access in Microsoft Entra ID?](../conditional-access/overview.md)
+- [What is Conditional Access in Microsoft Entra ID?](~/identity/conditional-access/overview.md)

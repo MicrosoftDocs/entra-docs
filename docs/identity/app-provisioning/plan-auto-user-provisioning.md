@@ -53,7 +53,7 @@ This article uses the following terms:
 
 * Single sign-on (SSO) - The ability for a user to sign-on once and access all SSO enabled applications. In the context of user provisioning, SSO is a result of users having a single account to access all systems that use automatic user provisioning.
 
-* Source system - The repository of users that the Microsoft Entra ID provisions from. Microsoft Entra ID is the source system for most preintegrated provisioning connectors. However, there are some exceptions for cloud applications such as SAP, Workday, and AWS. For example, see [User provisioning from Workday to AD](../saas-apps/workday-inbound-tutorial.md).
+* Source system - The repository of users that the Microsoft Entra ID provisions from. Microsoft Entra ID is the source system for most preintegrated provisioning connectors. However, there are some exceptions for cloud applications such as SAP, Workday, and AWS. For example, see [User provisioning from Workday to AD](~/identity/saas-apps/workday-inbound-tutorial.md).
 
 * Target system - The repository of users that the Microsoft Entra ID provisions to. The Target system is typically a SaaS application such as ServiceNow, Zscaler, and Slack. The target system can also be an on-premises system such as AD.
 
@@ -67,7 +67,7 @@ This article uses the following terms:
 | Videos| [What is user provisioning in Active Azure Directory?](https://youtu.be/_ZjARPpI6NI) <br> [How to deploy user provisioning in Active Azure Directory?](https://youtu.be/pKzyts6kfrw) <br> [Integrating Salesforce with Microsoft Entra ID: How to automate User Provisioning](https://youtu.be/MAy8s5WSe3A) 
 | Online courses| SkillUp Online:  [Managing Identities](https://skillup.online/courses/course-v1:Microsoft+AZ-100.5+2018_T3/) <br> Learn how to integrate Microsoft Entra ID with many SaaS applications and to secure user access to those applications. |
 | Books| [Modern Authentication with Microsoft Entra ID for Web Applications (Developer Reference) 1st Edition](https://www.amazon.com/Authentication-Directory-Applications-Developer-Reference/dp/0735696942/ref=sr_1_fkmr0_1?keywords=Azure+multifactor+authentication&qid=1550168894&s=gateway&sr=8-1-fkmr0).  <br> ‎This is an authoritative, deep-dive guide to building Active Directory authentication solutions for these new environments. |
-| Tutorials| See the [list of tutorials on how to integrate SaaS apps with Microsoft Entra ID](../saas-apps/tutorial-list.md). |
+| Tutorials| See the [list of tutorials on how to integrate SaaS apps with Microsoft Entra ID](~/identity/saas-apps/tutorial-list.md). |
 | FAQ| [Frequently asked questions](~/identity/app-provisioning/user-provisioning.md) on automated user provisioning |
 
 ### Solution architectures
@@ -148,7 +148,7 @@ Use the Microsoft Entra admin center to view and manage all the applications tha
 
 ### Determine the type of connector to use
 
-The actual steps required to enable and configure automatic provisioning vary depending on the application. If the application you wish to automatically provision is listed in the [Microsoft Entra SaaS app gallery](../saas-apps/tutorial-list.md), then you should select the [app-specific integration tutorial](../saas-apps/tutorial-list.md) to configure its preintegrated user provisioning connector.
+The actual steps required to enable and configure automatic provisioning vary depending on the application. If the application you wish to automatically provision is listed in the [Microsoft Entra SaaS app gallery](~/identity/saas-apps/tutorial-list.md), then you should select the [app-specific integration tutorial](~/identity/saas-apps/tutorial-list.md) to configure its preintegrated user provisioning connector.
 
 If not, follow the steps:
 
@@ -210,7 +210,7 @@ Consider the following to reduce issues post-deployment:
 
 * Ensure that the attributes used to map user/group objects between source and target applications are resilient. They shouldn't cause users/groups to be provisioned incorrectly if the attributes change (for example, a user moves to a different part of the company).
 
-* Applications may have specific restrictions and/or requirements that need to be met for user provisioning to work correctly. For example, Slack truncates values for certain attributes. Refer to [automatic user provisioning tutorials](../saas-apps/tutorial-list.md) specific to each application.
+* Applications may have specific restrictions and/or requirements that need to be met for user provisioning to work correctly. For example, Slack truncates values for certain attributes. Refer to [automatic user provisioning tutorials](~/identity/saas-apps/tutorial-list.md) specific to each application.
 
 * Confirm schema consistency between source and target systems. Common issues include attributes such as UPN or mail not matching. For example, UPN in Microsoft Entra ID set as *john_smith@contoso.com* and in the app, it's *jsmith@contoso.com*. For more information, see The [User and group schema reference](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md).
 
@@ -275,7 +275,7 @@ After a successful [initial cycle](~/identity/app-provisioning/user-provisioning
 
 * The provisioning process goes into quarantine due to a high error rate and stays in quarantine for more than four weeks then it's automatically disabled.
 
-To review these events, and all other activities performed by the provisioning service, refer to Microsoft Entra [provisioning logs](../reports-monitoring/concept-provisioning-logs.md?context=azure/active-directory/manage-apps/context/manage-apps-context).
+To review these events, and all other activities performed by the provisioning service, refer to Microsoft Entra [provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md?context=azure/active-directory/manage-apps/context/manage-apps-context).
 
 To understand how long the provisioning cycles take and monitor the progress of the provisioning job, you can [check the status of user provisioning](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md).
 

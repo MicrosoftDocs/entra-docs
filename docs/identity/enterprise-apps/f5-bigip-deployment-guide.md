@@ -259,7 +259,7 @@ A BIG-IP system is administered with its web config UI. Access the UI from:
 
 - A machine in the BIG-IP internal network
 - A VPN client connected to the BIG-IP-VM internal network
-- Published via [Microsoft Entra application proxy](../app-proxy/application-proxy-add-on-premises-application.md)
+- Published via [Microsoft Entra application proxy](~/identity/app-proxy/application-proxy-add-on-premises-application.md)
 
 >[!NOTE]
 >Select one of the three previous methods before you proceed with the remaining configurations. If necessary, connect directly to the web config from the internet by configuring the BIG-IP primary IP with a public IP. Then add an NSG rule to allow the 8443 traffic to that primary IP. Restrict the source to your own trusted IP, otherwise anyone can connect. 

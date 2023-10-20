@@ -74,10 +74,10 @@ With this release, you can now recover applications along with their original se
 
 We've added the following new applications in our App gallery with Provisioning support. You can now automate creating, updating, and deleting of user accounts for these newly integrated apps:
 
-- [Datadog](../saas-apps/datadog-provisioning-tutorial.md)
-- [Litmos](../saas-apps/litmos-provisioning-tutorial.md)
-- [Postman](../saas-apps/postman-provisioning-tutorial.md)
-- [Recnice](../saas-apps/recnice-provisioning-tutorial.md)
+- [Datadog](~/identity/saas-apps/datadog-provisioning-tutorial.md)
+- [Litmos](~/identity/saas-apps/litmos-provisioning-tutorial.md)
+- [Postman](~/identity/saas-apps/postman-provisioning-tutorial.md)
+- [Recnice](~/identity/saas-apps/recnice-provisioning-tutorial.md)
 
 For more information about how to better secure your organization by using automated user account provisioning, see: [Automate user provisioning to SaaS applications with Azure AD](~/identity/app-provisioning/user-provisioning.md).
 
@@ -115,7 +115,7 @@ When a Conditional Access policy targets the Microsoft Admin Portals cloud app, 
 - Microsoft Intune admin center
 - Microsoft Purview compliance portal                   
 
-For more information, see: [Microsoft Admin Portals](../conditional-access/concept-conditional-access-cloud-apps.md#microsoft-admin-portals).
+For more information, see: [Microsoft Admin Portals](~/identity/conditional-access/concept-conditional-access-cloud-apps.md#microsoft-admin-portals).
 
 ---
 
@@ -165,7 +165,7 @@ In the Entra ID Governance entitlement management auto-assignment policy, there 
 **Service category:** Entitlement Management                             
 **Product capability:** Entitlement Management                    
 
-An administrator can configure that when a guest brought in through entitlement management has lost their last access package assignment, they're deleted after a specified number of days. For more information, see: [Govern access for external users in entitlement management](../governance/entitlement-management-external-users.md).
+An administrator can configure that when a guest brought in through entitlement management has lost their last access package assignment, they're deleted after a specified number of days. For more information, see: [Govern access for external users in entitlement management](~/id-governance/entitlement-management-external-users.md).
 
 ---
 
@@ -176,7 +176,7 @@ An administrator can configure that when a guest brought in through entitlement 
 **Product capability:** Access Control                    
 
 Strictly enforce Conditional Access policies in real-time using Continuous Access Evaluation.  Enable services like Microsoft Graph, Exchange Online, and SharePoint Online to block access requests from disallowed locations as part of a layered defense against token replay and other unauthorized access. For more information, see blog: [Public Preview: Strictly Enforce Location Policies with Continuous Access Evaluation](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/public-preview-strictly-enforce-location-policies-with/ba-p/3773133) and documentation:
-[Strictly enforce location policies using continuous access evaluation (preview)](../conditional-access/concept-continuous-access-evaluation-strict-enforcement.md).
+[Strictly enforce location policies using continuous access evaluation (preview)](~/identity/conditional-access/concept-continuous-access-evaluation-strict-enforcement.md).
 
 ---
 
@@ -189,16 +189,16 @@ Strictly enforce Conditional Access policies in real-time using Continuous Acces
 
 We've added the following new applications in our App gallery with Provisioning support. You can now automate creating, updating, and deleting of user accounts for these newly integrated apps:
 
-- [Airbase](../saas-apps/airbase-provisioning-tutorial.md)
-- [Airtable](../saas-apps/airtable-provisioning-tutorial.md)
-- [Cleanmail Swiss](../saas-apps/cleanmail-swiss-provisioning-tutorial.md)
-- [Informacast](../saas-apps/informacast-provisioning-tutorial.md)
-- [Kintone](../saas-apps/kintone-provisioning-tutorial.md)
-- [O'reilly learning platform](../saas-apps/oreilly-learning-platform-provisioning-tutorial.md)
-- [Tailscale](../saas-apps/tailscale-provisioning-tutorial.md)
-- [Tanium SSO](../saas-apps/tanium-sso-provisioning-tutorial.md)
-- [Vbrick Rev Cloud](../saas-apps/vbrick-rev-cloud-provisioning-tutorial.md)
-- [Xledger](../saas-apps/xledger-provisioning-tutorial.md)
+- [Airbase](~/identity/saas-apps/airbase-provisioning-tutorial.md)
+- [Airtable](~/identity/saas-apps/airtable-provisioning-tutorial.md)
+- [Cleanmail Swiss](~/identity/saas-apps/cleanmail-swiss-provisioning-tutorial.md)
+- [Informacast](~/identity/saas-apps/informacast-provisioning-tutorial.md)
+- [Kintone](~/identity/saas-apps/kintone-provisioning-tutorial.md)
+- [O'reilly learning platform](~/identity/saas-apps/oreilly-learning-platform-provisioning-tutorial.md)
+- [Tailscale](~/identity/saas-apps/tailscale-provisioning-tutorial.md)
+- [Tanium SSO](~/identity/saas-apps/tanium-sso-provisioning-tutorial.md)
+- [Vbrick Rev Cloud](~/identity/saas-apps/vbrick-rev-cloud-provisioning-tutorial.md)
+- [Xledger](~/identity/saas-apps/xledger-provisioning-tutorial.md)
 
 
 For more information about how to better secure your organization by using automated user account provisioning, see: [Automate user provisioning to SaaS applications with Azure AD](~/identity/app-provisioning/user-provisioning.md).
@@ -213,7 +213,7 @@ For more information about how to better secure your organization by using autom
 **Product capability:** Identity Security & Protection                    
 
 Real-time enforcement of risk events, revocation events, and Conditional Access location policies is now generally available for workload identities.
-Service principals on line of business (LOB) applications are now protected on access requests to Microsoft Graph. For more information, see: [Continuous access evaluation for workload identities (preview)](../conditional-access/concept-continuous-access-evaluation-workload.md).
+Service principals on line of business (LOB) applications are now protected on access requests to Microsoft Graph. For more information, see: [Continuous access evaluation for workload identities (preview)](~/identity/conditional-access/concept-continuous-access-evaluation-workload.md).
 
 ---
 
@@ -243,7 +243,7 @@ Learn more and get renaming details: [New name for Azure Active Directory](~/fun
 
 My Apps can now be targeted in Conditional Access policies. This solves a top customer blocker. The functionality is available in all clouds. GA also brings a new app launcher, which improves app launch performance for both SAML and other app types. 
 
-Learn More about setting up Conditional Access policies here: [Azure AD Conditional Access documentation](../conditional-access/index.yml).
+Learn More about setting up Conditional Access policies here: [Azure AD Conditional Access documentation](~/identity/conditional-access/index.yml).
 
 ---
 
@@ -273,7 +273,7 @@ This new feature, part of the Microsoft Entra ID Governance SKU, allows admins t
 **Service category:** Entitlement Management                          
 **Product capability:** Entitlement Management                
 
-Microsoft Entra ID Governance includes the ability for a customer to configure an assignment policy in an entitlement management access package that includes an attribute-based rule, similar to dynamic groups, of the users who should be assigned access. For more information, see: [Configure an automatic assignment policy for an access package in entitlement management](../governance/entitlement-management-access-package-auto-assignment-policy.md).
+Microsoft Entra ID Governance includes the ability for a customer to configure an assignment policy in an entitlement management access package that includes an attribute-based rule, similar to dynamic groups, of the users who should be assigned access. For more information, see: [Configure an automatic assignment policy for an access package in entitlement management](~/id-governance/entitlement-management-access-package-auto-assignment-policy.md).
 
 ---
 
@@ -288,7 +288,7 @@ Custom extensions in Entitlement Management are now generally available, and all
 For more information, see:
 
 - [Microsoft Entra ID Governance Entitlement Management New Generally Available Capabilities](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/microsoft-entra-id-governance-entitlement-management-new/ba-p/2466929)
-- [Trigger Logic Apps with custom extensions in entitlement management](../governance/entitlement-management-logic-apps-integration.md)
+- [Trigger Logic Apps with custom extensions in entitlement management](~/id-governance/entitlement-management-logic-apps-integration.md)
 
 ---
 
@@ -298,7 +298,7 @@ For more information, see:
 **Service category:** Conditional Access                             
 **Product capability:** Identity Security & Protection                  
 
-Conditional Access templates are predefined set of conditions and controls that provide a convenient method to deploy new policies aligned with Microsoft recommendations. Customers are assured that their policies reflect modern best practices for securing corporate assets, promoting secure, optimal access for their hybrid workforce. For more information, see: [Conditional Access templates](../conditional-access/concept-conditional-access-policy-common.md).
+Conditional Access templates are predefined set of conditions and controls that provide a convenient method to deploy new policies aligned with Microsoft recommendations. Customers are assured that their policies reflect modern best practices for securing corporate assets, promoting secure, optimal access for their hybrid workforce. For more information, see: [Conditional Access templates](~/identity/conditional-access/concept-conditional-access-policy-common.md).
 
 ---
 
@@ -340,7 +340,7 @@ Update the Company Branding functionality on the Microsoft Entra ID/Microsoft 36
 **Service category:** Access Reviews                            
 **Product capability:** Identity Governance                  
 
-This feature provides Machine Learning based recommendations to the reviewers of Azure AD Access Reviews to make the review experience easier and more accurate. The recommendation leverages machine learning based scoring mechanism and compares users’ relative affiliation with other users in the group, based on the organization’s reporting structure. For more information, see:  [Review recommendations for Access reviews](../governance/review-recommendations-access-reviews.md) and [Introducing Machine Learning based recommendations in Azure AD Access reviews](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/introducing-machine-learning-based-recommendations-in-azure-ad/ba-p/2466923)
+This feature provides Machine Learning based recommendations to the reviewers of Azure AD Access Reviews to make the review experience easier and more accurate. The recommendation leverages machine learning based scoring mechanism and compares users’ relative affiliation with other users in the group, based on the organization’s reporting structure. For more information, see:  [Review recommendations for Access reviews](~/id-governance/review-recommendations-access-reviews.md) and [Introducing Machine Learning based recommendations in Azure AD Access reviews](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/introducing-machine-learning-based-recommendations-in-azure-ad/ba-p/2466923)
 
 ---
 
@@ -360,7 +360,7 @@ Monitor guest accounts at scale with intelligent insights into inactive guest us
 **Service category:** Privileged Identity Management                            
 **Product capability:** Privileged Identity Management                  
 
-You can minimize the number of persistent administrators in applications such as [AWS](../saas-apps/aws-single-sign-on-provisioning-tutorial.md#just-in-time-jit-application-access-with-pim-for-groups-preview)/[GCP](../saas-apps/g-suite-provisioning-tutorial.md#just-in-time-jit-application-access-with-pim-for-groups-preview) and get JIT access to groups in AWS and GCP. While PIM for Groups is publicly available, we’ve released a public preview that integrates PIM with provisioning and reduces the activation delay from 40+ minutes to 1 – 2 minutes.
+You can minimize the number of persistent administrators in applications such as [AWS](~/identity/saas-apps/aws-single-sign-on-provisioning-tutorial.md#just-in-time-jit-application-access-with-pim-for-groups-preview)/[GCP](~/identity/saas-apps/g-suite-provisioning-tutorial.md#just-in-time-jit-application-access-with-pim-for-groups-preview) and get JIT access to groups in AWS and GCP. While PIM for Groups is publicly available, we’ve released a public preview that integrates PIM with provisioning and reduces the activation delay from 40+ minutes to 1 – 2 minutes.
 
 ---
 
@@ -370,7 +370,7 @@ You can minimize the number of persistent administrators in applications such as
 **Service category:** Privileged Identity Management                            
 **Product capability:** Privileged Identity Management                 
 
-Announcing API support (beta) for managing PIM security alerts for Azure AD roles. [Azure Privileged Identity Management (PIM)](../privileged-identity-management/index.yml) generates alerts when there's suspicious or unsafe activity in your organization in Azure Active Directory (Azure AD), part of Microsoft Entra. You can now manage these alerts using REST APIs. These alerts can also be [managed through the Azure portal](../privileged-identity-management/pim-resource-roles-configure-alerts.md). For more information, see:  [unifiedRoleManagementAlert resource type](/graph/api/resources/unifiedrolemanagementalert).
+Announcing API support (beta) for managing PIM security alerts for Azure AD roles. [Azure Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/index.yml) generates alerts when there's suspicious or unsafe activity in your organization in Azure Active Directory (Azure AD), part of Microsoft Entra. You can now manage these alerts using REST APIs. These alerts can also be [managed through the Azure portal](~/id-governance/privileged-identity-management/pim-resource-roles-configure-alerts.md). For more information, see:  [unifiedRoleManagementAlert resource type](/graph/api/resources/unifiedrolemanagementalert).
 
 ---
 
@@ -439,7 +439,7 @@ Using MAM Conditional Access, Microsoft Edge for Business provides users with se
 
 The new capability extends the benefits of app layer management to the Windows platform via Microsoft Edge for Business. Admins are empowered to configure the user experience and protect organizational data within Microsoft Edge for Business on un-managed Windows devices.
 
-For more information, see: [Require an app protection policy on Windows devices (preview)](../conditional-access/how-to-app-protection-policy-windows.md).
+For more information, see: [Require an app protection policy on Windows devices (preview)](~/identity/conditional-access/how-to-app-protection-policy-windows.md).
 
 ---
 
@@ -451,7 +451,7 @@ For more information, see: [Require an app protection policy on Windows devices 
 
 In July 2023 we've added the following 10 new applications in our App gallery with Federation support:    
 
-[Gainsight SAML](../saas-apps/gainsight-tutorial.md), [Dataddo](https://www.dataddo.com/), [Puzzel](https://www.puzzel.com/), [Worthix App](../saas-apps/worthix-app-tutorial.md), [iOps360 IdConnect](https://iops360.com/iops360-id-connect-azuread-single-sign-on/), [Airbase](../saas-apps/airbase-tutorial.md), [Couchbase Capella - SSO](../saas-apps/couchbase-capella-sso-tutorial.md), [SSO for Jama Connect®](../saas-apps/sso-for-jama-connect-tutorial.md), [mediment (メディメント)](https://mediment.jp/), [Netskope Cloud Exchange Administration Console](../saas-apps/netskope-cloud-exchange-administration-console-tutorial.md), [Uber](../saas-apps/uber-tutorial.md), [Plenda](https://app.plenda.nl/), [Deem Mobile](../saas-apps/deem-mobile-tutorial.md), [40SEAS](https://www.40seas.com/), [Vivantio](https://www.vivantio.com/), [AppTweak](https://www.apptweak.com/), [Vbrick Rev Cloud](../saas-apps/vbrick-rev-cloud-tutorial.md), [OptiTurn](../saas-apps/optiturn-tutorial.md), [Application Experience with Mist](https://www.mist.com/), [クラウド勤怠管理システムKING OF TIME](../saas-apps/cloud-attendance-management-system-king-of-time-tutorial.md), [Connect1](../saas-apps/connect1-tutorial.md), [DB Education Portal for Schools](../saas-apps/db-education-portal-for-schools-tutorial.md), [SURFconext](../saas-apps/surfconext-tutorial.md), [Chengliye Smart SMS Platform](../saas-apps/chengliye-smart-sms-platform-tutorial.md), [CivicEye SSO](../saas-apps/civic-eye-sso-tutorial.md), [Colloquial](../saas-apps/colloquial-tutorial.md), [BigPanda](../saas-apps/bigpanda-tutorial.md), [Foreman](https://foreman.mn/)
+[Gainsight SAML](~/identity/saas-apps/gainsight-tutorial.md), [Dataddo](https://www.dataddo.com/), [Puzzel](https://www.puzzel.com/), [Worthix App](~/identity/saas-apps/worthix-app-tutorial.md), [iOps360 IdConnect](https://iops360.com/iops360-id-connect-azuread-single-sign-on/), [Airbase](~/identity/saas-apps/airbase-tutorial.md), [Couchbase Capella - SSO](~/identity/saas-apps/couchbase-capella-sso-tutorial.md), [SSO for Jama Connect®](~/identity/saas-apps/sso-for-jama-connect-tutorial.md), [mediment (メディメント)](https://mediment.jp/), [Netskope Cloud Exchange Administration Console](~/identity/saas-apps/netskope-cloud-exchange-administration-console-tutorial.md), [Uber](~/identity/saas-apps/uber-tutorial.md), [Plenda](https://app.plenda.nl/), [Deem Mobile](~/identity/saas-apps/deem-mobile-tutorial.md), [40SEAS](https://www.40seas.com/), [Vivantio](https://www.vivantio.com/), [AppTweak](https://www.apptweak.com/), [Vbrick Rev Cloud](~/identity/saas-apps/vbrick-rev-cloud-tutorial.md), [OptiTurn](~/identity/saas-apps/optiturn-tutorial.md), [Application Experience with Mist](https://www.mist.com/), [クラウド勤怠管理システムKING OF TIME](~/identity/saas-apps/cloud-attendance-management-system-king-of-time-tutorial.md), [Connect1](~/identity/saas-apps/connect1-tutorial.md), [DB Education Portal for Schools](~/identity/saas-apps/db-education-portal-for-schools-tutorial.md), [SURFconext](~/identity/saas-apps/surfconext-tutorial.md), [Chengliye Smart SMS Platform](~/identity/saas-apps/chengliye-smart-sms-platform-tutorial.md), [CivicEye SSO](~/identity/saas-apps/civic-eye-sso-tutorial.md), [Colloquial](~/identity/saas-apps/colloquial-tutorial.md), [BigPanda](~/identity/saas-apps/bigpanda-tutorial.md), [Foreman](https://foreman.mn/)
 
 You can also find the documentation of all the applications from here https://aka.ms/AppsTutorial.
 
@@ -468,12 +468,12 @@ For listing your application in the Azure AD app gallery, read the details here 
 
 We've added the following new applications in our App gallery with Provisioning support. You can now automate creating, updating, and deleting of user accounts for these newly integrated apps:
 
-- [Albert](../saas-apps/albert-provisioning-tutorial.md)
-- [Rhombus Systems](../saas-apps/rhombus-systems-provisioning-tutorial.md)
-- [Axiad Cloud](../saas-apps/axiad-cloud-provisioning-tutorial.md)
-- [Dagster Cloud](../saas-apps/dagster-cloud-provisioning-tutorial.md)
-- [WATS](../saas-apps/wats-provisioning-tutorial.md)
-- [Funnel Leasing](../saas-apps/funnel-leasing-provisioning-tutorial.md)
+- [Albert](~/identity/saas-apps/albert-provisioning-tutorial.md)
+- [Rhombus Systems](~/identity/saas-apps/rhombus-systems-provisioning-tutorial.md)
+- [Axiad Cloud](~/identity/saas-apps/axiad-cloud-provisioning-tutorial.md)
+- [Dagster Cloud](~/identity/saas-apps/dagster-cloud-provisioning-tutorial.md)
+- [WATS](~/identity/saas-apps/wats-provisioning-tutorial.md)
+- [Funnel Leasing](~/identity/saas-apps/funnel-leasing-provisioning-tutorial.md)
 
 
 For more information about how to better secure your organization by using automated user account provisioning, see: [Automate user provisioning to SaaS applications with Azure AD](~/identity/app-provisioning/user-provisioning.md).
@@ -513,18 +513,18 @@ To learn more about MSAL for Python, see: [Microsoft Authentication Library (MSA
       
 We've added the following new applications in our App gallery with Provisioning support. You can now automate creating, updating, and deleting of user accounts for these newly integrated apps:
 
-- [Headspace](../saas-apps/headspace-provisioning-tutorial.md)
-- [Humbol](../saas-apps/humbol-provisioning-tutorial.md)
-- [LUSID](../saas-apps/lusid-provisioning-tutorial.md)
-- [Markit Procurement Service](../saas-apps/markit-procurement-service-provisioning-tutorial.md)
-- [Moqups](../saas-apps/moqups-provisioning-tutorial.md)
-- [Notion](../saas-apps/notion-provisioning-tutorial.md)
-- [OpenForms](../saas-apps/openforms-provisioning-tutorial.md)
-- [SafeGuard Cyber](../saas-apps/safeguard-cyber-provisioning-tutorial.md)
-- [Uni-tel A/S](../saas-apps/uni-tel-as-provisioning-tutorial.md)
-- [Vault Platform](../saas-apps/vault-platform-provisioning-tutorial.md)
-- [V-Client](../saas-apps/v-client-provisioning-tutorial.md)
-- [Veritas Enterprise Vault.cloud SSO-SCIM](../saas-apps/veritas-provisioning-tutorial.md)
+- [Headspace](~/identity/saas-apps/headspace-provisioning-tutorial.md)
+- [Humbol](~/identity/saas-apps/humbol-provisioning-tutorial.md)
+- [LUSID](~/identity/saas-apps/lusid-provisioning-tutorial.md)
+- [Markit Procurement Service](~/identity/saas-apps/markit-procurement-service-provisioning-tutorial.md)
+- [Moqups](~/identity/saas-apps/moqups-provisioning-tutorial.md)
+- [Notion](~/identity/saas-apps/notion-provisioning-tutorial.md)
+- [OpenForms](~/identity/saas-apps/openforms-provisioning-tutorial.md)
+- [SafeGuard Cyber](~/identity/saas-apps/safeguard-cyber-provisioning-tutorial.md)
+- [Uni-tel A/S](~/identity/saas-apps/uni-tel-as-provisioning-tutorial.md)
+- [Vault Platform](~/identity/saas-apps/vault-platform-provisioning-tutorial.md)
+- [V-Client](~/identity/saas-apps/v-client-provisioning-tutorial.md)
+- [Veritas Enterprise Vault.cloud SSO-SCIM](~/identity/saas-apps/veritas-provisioning-tutorial.md)
 
 For more information about how to better secure your organization by using automated user account provisioning, see: [Automate user provisioning to SaaS applications with Azure AD](~/identity/app-provisioning/user-provisioning.md).
 
@@ -536,7 +536,7 @@ For more information about how to better secure your organization by using autom
 **Service category:** Entitlement Management                          
 **Product capability:** Entitlement Management                
 
-The Entitlement Management service can now be targeted in the Conditional Access policy for inclusion or exclusion of applications. To target the Entitlement Management service, select “Azure AD Identity Governance - Entitlement Management” in the cloud apps picker. The Entitlement Management app includes the entitlement management part of My Access, the Entitlement Management part of the Entra and Azure portals, and the Entitlement Management part of MS Graph. For more information, see:  [Review your Conditional Access policies](../governance/entitlement-management-external-users.md#review-your-conditional-access-policies).
+The Entitlement Management service can now be targeted in the Conditional Access policy for inclusion or exclusion of applications. To target the Entitlement Management service, select “Azure AD Identity Governance - Entitlement Management” in the cloud apps picker. The Entitlement Management app includes the entitlement management part of My Access, the Entitlement Management part of the Entra and Azure portals, and the Entitlement Management part of MS Graph. For more information, see:  [Review your Conditional Access policies](~/id-governance/entitlement-management-external-users.md#review-your-conditional-access-policies).
 
 ---
 
@@ -570,7 +570,7 @@ Starting today the modernized experience for viewing previously accepted terms o
 
 Privileged Identity Management for Groups is now generally available. With this feature, you have the ability to grant users just-in-time membership in a group, which in turn provides access to Azure Active Directory roles, Azure roles, Azure SQL, Azure Key Vault, Intune, other application roles, and third-party applications. Through one activation, you can conveniently assign a combination of permissions across different applications and RBAC systems.
 
-PIM for Groups offers can also be used for just-in-time ownership. As the owner of the group, you can manage group properties, including membership. For more information, see: [Privileged Identity Management (PIM) for Groups](../privileged-identity-management/concept-pim-for-groups.md).
+PIM for Groups offers can also be used for just-in-time ownership. As the owner of the group, you can manage group properties, including membership. For more information, see: [Privileged Identity Management (PIM) for Groups](~/id-governance/privileged-identity-management/concept-pim-for-groups.md).
 
 ---
 
@@ -589,9 +589,9 @@ The Privileged Identity Management (PIM) integration with Conditional Access aut
 - Meet other requirements defined in Conditional Access policies
 
 The integration is available for all providers: PIM for Azure AD roles, PIM for Azure resources, PIM for groups. For more information, see:
-- [Configure Azure AD role settings in Privileged Identity Management](../privileged-identity-management/pim-how-to-change-default-settings.md)
-- [Configure Azure resource role settings in Privileged Identity Management](../privileged-identity-management/pim-resource-roles-configure-role-settings.md)
-- [Configure PIM for Groups settings](../privileged-identity-management/groups-role-settings.md)
+- [Configure Azure AD role settings in Privileged Identity Management](~/id-governance/privileged-identity-management/pim-how-to-change-default-settings.md)
+- [Configure Azure resource role settings in Privileged Identity Management](~/id-governance/privileged-identity-management/pim-resource-roles-configure-role-settings.md)
+- [Configure PIM for Groups settings](~/id-governance/privileged-identity-management/groups-role-settings.md)
 
 ---
 
@@ -621,7 +621,7 @@ The Converged Authentication Methods Policy enables you to manage all authentica
 **Service category:** Provisioning
 **Product capability:** Azure AD Connect cloud sync
 
-Hybrid IT Admins can now sync both Active Directory and Azure AD Directory Extensions using Azure AD Connect cloud sync. This new capability adds the ability to dynamically discover the schema for both Active Directory and Azure Active Directory, thereby, allowing customers to map the needed attributes using the attribute mapping experience of cloud sync. For more information, see [Directory extensions and custom attribute mapping in cloud sync](../hybrid/cloud-sync/custom-attribute-mapping.md).
+Hybrid IT Admins can now sync both Active Directory and Azure AD Directory Extensions using Azure AD Connect cloud sync. This new capability adds the ability to dynamically discover the schema for both Active Directory and Azure Active Directory, thereby, allowing customers to map the needed attributes using the attribute mapping experience of cloud sync. For more information, see [Directory extensions and custom attribute mapping in cloud sync](~/identity/hybrid/cloud-sync/custom-attribute-mapping.md).
 
 ---
 
@@ -675,7 +675,7 @@ SAML/Ws-Fed based identity providers for authentication in Azure AD B2B are gene
 **Service category:** Provisioning                          
 **Product capability:** Identity Lifecycle Management              
 
-Cross-tenant synchronization allows you to set up a scalable and automated solution for users to access applications across tenants in your organization. It builds upon the Azure Active Directory B2B functionality and automates creating, updating, and deleting B2B users within tenants in your organization. For more information, see: [What is cross-tenant synchronization?](../multi-tenant-organizations/cross-tenant-synchronization-overview.md).
+Cross-tenant synchronization allows you to set up a scalable and automated solution for users to access applications across tenants in your organization. It builds upon the Azure Active Directory B2B functionality and automates creating, updating, and deleting B2B users within tenants in your organization. For more information, see: [What is cross-tenant synchronization?](~/identity/multi-tenant-organizations/cross-tenant-synchronization-overview.md).
 
 ---
 
@@ -687,7 +687,7 @@ Cross-tenant synchronization allows you to set up a scalable and automated solut
 
 Last year we announced the [public preview of custom extensions in Entitlement Management](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/run-custom-workflows-in-azure-ad-entitlement-management/ba-p/2466938) allowing you to automate complex processes when access is requested or about to expire. We have recently expanded the public preview to allow for the access package assignment request to be paused while your external process is running. In addition, the external process can now provide feedback to Entitlement Management to either surface additional information to end users in MyAccess or even stop the access request. This expands the scenarios of custom extension from notifications to additional stakeholders or the generation of tickets to advanced scenarios such as external governance, risk and compliance checks. In the course of this update, we have also improved the audit logs, token security and the payload sent to the Logic App. To learn more about the preview refresh, see:
 
--  [Trigger Logic Apps with custom extensions in entitlement management (Preview)](../governance/entitlement-management-logic-apps-integration.md)
+-  [Trigger Logic Apps with custom extensions in entitlement management (Preview)](~/id-governance/entitlement-management-logic-apps-integration.md)
 - [accessPackageAssignmentRequest: resume](/graph/api/accesspackageassignmentrequest-resume)
 - [accessPackageAssignmentWorkflowExtension resource type](/graph/api/resources/accesspackageassignmentworkflowextension)
 - [accessPackageAssignmentRequestWorkflowExtension resource type](/graph/api/resources/accesspackageassignmentrequestworkflowextension)
@@ -702,7 +702,7 @@ Last year we announced the [public preview of custom extensions in Entitlement M
 
 The latest version of MSAL.NET graduates the Managed Identity APIs into the General Availability mode of support, which means that developers can integrate them safely in production workloads.
 
-Managed identities are a part of the Azure infrastructure, simplifying how developers handle credentials and secrets to access cloud resources. With Managed Identities, developers don't need to manually handle credential retrieval and security. Instead, they can rely on an automatically managed set of identities to connect to resources that support Azure Active Directory authentication. You can learn more in [What are managed identities for Azure resources?](../managed-identities-azure-resources/overview.md)
+Managed identities are a part of the Azure infrastructure, simplifying how developers handle credentials and secrets to access cloud resources. With Managed Identities, developers don't need to manually handle credential retrieval and security. Instead, they can rely on an automatically managed set of identities to connect to resources that support Azure Active Directory authentication. You can learn more in [What are managed identities for Azure resources?](~/identity/managed-identities-azure-resources/overview.md)
 
 With MSAL.NET 4.54.0, the Managed Identity APIs are now stable. There are a few changes that we added that make them easier to use and integrate that might require tweaking your code if you’ve used our [experimental implementation](https://den.dev/blog/managed-identity-msal-net/):
 
@@ -769,7 +769,7 @@ Admins can now restrict their users from self-service accessing their BitLocker 
       
 We've added the following new applications in our App gallery with Provisioning support. You can now automate creating, updating, and deleting of user accounts for these newly integrated apps:
 
-- [Sign In Enterprise Host Provisioning](../saas-apps/sign-in-enterprise-host-provisioning-tutorial.md)
+- [Sign In Enterprise Host Provisioning](~/identity/saas-apps/sign-in-enterprise-host-provisioning-tutorial.md)
 
 
 For more information about how to better secure your organization by using automated user account provisioning, see: [Automate user provisioning to SaaS applications with Azure AD](~/identity/app-provisioning/user-provisioning.md).
@@ -783,7 +783,7 @@ For more information about how to better secure your organization by using autom
 **Service category:** Other                               
 **Product capability:** Permissions Management                 
 
-The Azure Active Directory Insights tab in Microsoft Entra Permissions Management provides a view of all permanent role assignments assigned to Global Administrators, and a curated list of highly privileged roles. Administrators can then use the report to take further action within the Azure Active Directory console. For more information, see [View privileged role assignments in your organization (Preview)](../cloud-infrastructure-entitlement-management/product-privileged-role-insights.md).
+The Azure Active Directory Insights tab in Microsoft Entra Permissions Management provides a view of all permanent role assignments assigned to Global Administrators, and a curated list of highly privileged roles. Administrators can then use the report to take further action within the Azure Active Directory console. For more information, see [View privileged role assignments in your organization (Preview)](~/permissions-management/product-privileged-role-insights.md).
 
 ---
 
@@ -828,7 +828,7 @@ The Azure AD on-premises application provisioning feature now supports both the 
 **Service category:** Identity Protection                          
 **Product capability:** Identity Security & Protection               
 
-Identity Protection has added a new detection, using the Microsoft Threat Intelligence database, to detect sign-ins performed from IP addresses of known nation state and cyber-crime actors and allow customers to block these sign-ins by using risk-based Conditional Access policies. For more information, see: [Sign-in risk](../identity-protection/concept-identity-protection-risks.md).
+Identity Protection has added a new detection, using the Microsoft Threat Intelligence database, to detect sign-ins performed from IP addresses of known nation state and cyber-crime actors and allow customers to block these sign-ins by using risk-based Conditional Access policies. For more information, see: [Sign-in risk](~/id-protection/concept-identity-protection-risks.md).
 
 ---
 
@@ -854,7 +854,7 @@ In May 2023 we added the following 51 new applications in our App gallery with F
 
 
 
-[INEXTRACK](https://inexto.com/inexto-suite/inextrack), [Valotalive Digital Signage Microsoft 365 integration](https://valota.live/apps/microsoft-excel/), [Tailscale](http://tailscale.com/), [MANTL](https://console.mantl.com/), [ServusConnect](../saas-apps/servusconnect-tutorial.md), [Jigx MS Graph Demonstrator](https://www.jigx.com/), [Delivery Solutions](../saas-apps/delivery-solutions-tutorial.md), [Radiant IOT Portal](../saas-apps/radiant-iot-portal-tutorial.md), [Cosgrid Networks](../saas-apps/cosgrid-networks-tutorial.md), [voya SSO](https://app.voya.ai/), [Redocly](../saas-apps/redocly-tutorial.md), [Glaass Pro](https://glaass.net/pro/), [TalentLyftOIDC](https://www.talentlyft.com/en), [Cisco Expressway](../saas-apps/cisco-expressway-tutorial.md), [IBM TRIRIGA on Cloud](../saas-apps/ibm-tririga-on-cloud-tutorial.md), [Avionte Bold SAML Federated SSO](../saas-apps/avionte-bold-saml-federated-sso-tutorial.md), [InspectNTrack](http://www.inspecttrack.com/), [CAREERSHIP](../saas-apps/careership-tutorial.md), [Cisco Unity Connection](../saas-apps/cisco-unity-connection-tutorial.md), [HSC-Buddy](https://hsc-buddy.com/), [teamecho](https://app.teamecho.at/), [AskFora](https://askfora.com/), [Enterprise Bot](https://www.enterprisebot.ai/),[CMD+CTRL Base Camp](../saas-apps/cmd-ctrl-base-camp-tutorial.md), [Debitia Collections](https://www.debitia.com/), [EnergyManager](https://energymanager.no/), [Visual Workforce](https://prod.visualworkforce.com/), [Uplifter](https://uplifter.ai/), [AI2](https://tmti.net/services/), [TES Cloud](https://www.tes.ca/),[VEDA Cloud](../saas-apps/veda-cloud-tutorial.md), [SOC SST](../saas-apps/soc-sst-tutorial.md), [Alchemer](../saas-apps/alchemer-tutorial.md), [Cleanmail Swiss](https://www.alinto.com/fr/antispam-professionnel-cleanmail/), [WOX](https://woxday.com/), [WATS](https://wats.com/), [Data Quality Assistant](https://appsource.microsoft.com/en-GB/product/office/WA200004441?exp=kyyw&tab=Overview), [Softdrive](https://www.softdrive.co/), [Fluence Portal](https://portal.fluence.app/), [Humbol](https://www.humbol.app/en/product/), [Document360](../saas-apps/document360-tutorial.md), [Engage by Local Measure](https://www.localmeasure.com/),[Gate Property Management Software](https://gatesoftware.nl/), [Locus](../saas-apps/locus-tutorial.md), [Banyan Infrastructure](https://app.banyaninfrastructure.com/), [Proactis Rego Invoice Capture](../saas-apps/proactis-rego-invoice-capture-tutorial.md), [SecureTransport](../saas-apps/securetransport-tutorial.md), [Recnice](https://recnice.com/)
+[INEXTRACK](https://inexto.com/inexto-suite/inextrack), [Valotalive Digital Signage Microsoft 365 integration](https://valota.live/apps/microsoft-excel/), [Tailscale](http://tailscale.com/), [MANTL](https://console.mantl.com/), [ServusConnect](~/identity/saas-apps/servusconnect-tutorial.md), [Jigx MS Graph Demonstrator](https://www.jigx.com/), [Delivery Solutions](~/identity/saas-apps/delivery-solutions-tutorial.md), [Radiant IOT Portal](~/identity/saas-apps/radiant-iot-portal-tutorial.md), [Cosgrid Networks](~/identity/saas-apps/cosgrid-networks-tutorial.md), [voya SSO](https://app.voya.ai/), [Redocly](~/identity/saas-apps/redocly-tutorial.md), [Glaass Pro](https://glaass.net/pro/), [TalentLyftOIDC](https://www.talentlyft.com/en), [Cisco Expressway](~/identity/saas-apps/cisco-expressway-tutorial.md), [IBM TRIRIGA on Cloud](~/identity/saas-apps/ibm-tririga-on-cloud-tutorial.md), [Avionte Bold SAML Federated SSO](~/identity/saas-apps/avionte-bold-saml-federated-sso-tutorial.md), [InspectNTrack](http://www.inspecttrack.com/), [CAREERSHIP](~/identity/saas-apps/careership-tutorial.md), [Cisco Unity Connection](~/identity/saas-apps/cisco-unity-connection-tutorial.md), [HSC-Buddy](https://hsc-buddy.com/), [teamecho](https://app.teamecho.at/), [AskFora](https://askfora.com/), [Enterprise Bot](https://www.enterprisebot.ai/),[CMD+CTRL Base Camp](~/identity/saas-apps/cmd-ctrl-base-camp-tutorial.md), [Debitia Collections](https://www.debitia.com/), [EnergyManager](https://energymanager.no/), [Visual Workforce](https://prod.visualworkforce.com/), [Uplifter](https://uplifter.ai/), [AI2](https://tmti.net/services/), [TES Cloud](https://www.tes.ca/),[VEDA Cloud](~/identity/saas-apps/veda-cloud-tutorial.md), [SOC SST](~/identity/saas-apps/soc-sst-tutorial.md), [Alchemer](~/identity/saas-apps/alchemer-tutorial.md), [Cleanmail Swiss](https://www.alinto.com/fr/antispam-professionnel-cleanmail/), [WOX](https://woxday.com/), [WATS](https://wats.com/), [Data Quality Assistant](https://appsource.microsoft.com/en-GB/product/office/WA200004441?exp=kyyw&tab=Overview), [Softdrive](https://www.softdrive.co/), [Fluence Portal](https://portal.fluence.app/), [Humbol](https://www.humbol.app/en/product/), [Document360](~/identity/saas-apps/document360-tutorial.md), [Engage by Local Measure](https://www.localmeasure.com/),[Gate Property Management Software](https://gatesoftware.nl/), [Locus](~/identity/saas-apps/locus-tutorial.md), [Banyan Infrastructure](https://app.banyaninfrastructure.com/), [Proactis Rego Invoice Capture](~/identity/saas-apps/proactis-rego-invoice-capture-tutorial.md), [SecureTransport](~/identity/saas-apps/securetransport-tutorial.md), [Recnice](https://recnice.com/)
 
  
 You can also find the documentation of all the applications from here https://aka.ms/AppsTutorial,
@@ -923,7 +923,7 @@ To address this challenge, we're introducing a new system-preferred authenticati
 **Service category:** Privileged Identity Management                     
 **Product capability:** Privileged Identity Management            
 
-[Alert on Azure subscription role assignments made outside of Privileged Identity Management (PIM)](../privileged-identity-management/pim-resource-roles-configure-alerts.md) provides an alert in PIM for Azure subscription assignments made outside of PIM. An owner or User Access Administrator can take a quick remediation action to remove those assignments. 
+[Alert on Azure subscription role assignments made outside of Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/pim-resource-roles-configure-alerts.md) provides an alert in PIM for Azure subscription assignments made outside of PIM. An owner or User Access Administrator can take a quick remediation action to remove those assignments. 
 
 ---
 
@@ -953,7 +953,7 @@ The protected actions public preview introduces the ability to apply Conditional
 **Service category:** Conditional Access                  
 **Product capability:** User Authentication          
 
-Token Protection for sign-in sessions is our first release on a road-map to combat attacks involving token theft and replay. It provides Conditional Access enforcement of token proof-of-possession for supported clients and services that ensure that access to specified resources is only from a device to which the user has signed in. For more information, see: [Conditional Access: Token protection (preview)](../conditional-access/concept-token-protection.md).
+Token Protection for sign-in sessions is our first release on a road-map to combat attacks involving token theft and replay. It provides Conditional Access enforcement of token proof-of-possession for supported clients and services that ensure that access to specified resources is only from a device to which the user has signed in. For more information, see: [Conditional Access: Token protection (preview)](~/identity/conditional-access/concept-token-protection.md).
 
 ---
 
@@ -1009,7 +1009,7 @@ Due to a technical issue, we have recently started to emit additional audit logs
 
 In April 2023 we've added the following 10 new applications in our App gallery with Federation support:    
 
-[iTel Alert](https://www.itelalert.nl/), [goFLUENT](../saas-apps/gofluent-tutorial.md), [StructureFlow](https://app.structureflow.co/), [StructureFlow AU](https://au.structureflow.co/), [StructureFlow CA](https://ca.structureflow.co/), [StructureFlow EU](https://eu.structureflow.co/), [StructureFlow USA](https://us.structureflow.co/), [Predict360 SSO](../saas-apps/predict360-sso-tutorial.md), [Cegid Cloud](https://www.cegid.com/fr/nos-produits/), [HashiCorp Cloud Platform (HCP)](../saas-apps/hashicorp-cloud-platform-hcp-tutorial.md), [O'Reilly learning platform](../saas-apps/oreilly-learning-platform-tutorial.md), [LeftClick Web Services – RoomGuide](https://www.leftclick.cloud/digital_signage), [LeftClick Web Services – Sharepoint](https://www.leftclick.cloud/digital_signage), [LeftClick Web Services – Presence](https://www.leftclick.cloud/presence), [LeftClick Web Services - Single Sign-On](https://www.leftclick.cloud/presence), [InterPrice Technologies](http://www.interpricetech.com/), [WiggleDesk SSO](https://wiggledesk.com/), [Application Experience with Mist](https://www.mist.com/), [Connect Plans 360](https://connectplans360.com.au/), [Proactis Rego Source-to-Contract](../saas-apps/proactis-rego-source-to-contract-tutorial.md), [Danomics](https://www.danomics.com/), [Fountain](../saas-apps/fountain-tutorial.md), [Theom](../saas-apps/theom-tutorial.md), [DDC Web](../saas-apps/ddc-web-tutorial.md), [Dozuki](../saas-apps/dozuki-tutorial.md).
+[iTel Alert](https://www.itelalert.nl/), [goFLUENT](~/identity/saas-apps/gofluent-tutorial.md), [StructureFlow](https://app.structureflow.co/), [StructureFlow AU](https://au.structureflow.co/), [StructureFlow CA](https://ca.structureflow.co/), [StructureFlow EU](https://eu.structureflow.co/), [StructureFlow USA](https://us.structureflow.co/), [Predict360 SSO](~/identity/saas-apps/predict360-sso-tutorial.md), [Cegid Cloud](https://www.cegid.com/fr/nos-produits/), [HashiCorp Cloud Platform (HCP)](~/identity/saas-apps/hashicorp-cloud-platform-hcp-tutorial.md), [O'Reilly learning platform](~/identity/saas-apps/oreilly-learning-platform-tutorial.md), [LeftClick Web Services – RoomGuide](https://www.leftclick.cloud/digital_signage), [LeftClick Web Services – Sharepoint](https://www.leftclick.cloud/digital_signage), [LeftClick Web Services – Presence](https://www.leftclick.cloud/presence), [LeftClick Web Services - Single Sign-On](https://www.leftclick.cloud/presence), [InterPrice Technologies](http://www.interpricetech.com/), [WiggleDesk SSO](https://wiggledesk.com/), [Application Experience with Mist](https://www.mist.com/), [Connect Plans 360](https://connectplans360.com.au/), [Proactis Rego Source-to-Contract](~/identity/saas-apps/proactis-rego-source-to-contract-tutorial.md), [Danomics](https://www.danomics.com/), [Fountain](~/identity/saas-apps/fountain-tutorial.md), [Theom](~/identity/saas-apps/theom-tutorial.md), [DDC Web](~/identity/saas-apps/ddc-web-tutorial.md), [Dozuki](~/identity/saas-apps/dozuki-tutorial.md).
 
 
 You can also find the documentation of all the applications from here https://aka.ms/AppsTutorial.
@@ -1027,14 +1027,14 @@ For listing your application in the Azure AD app gallery, read the details here 
 
 We've added the following new applications in our App gallery with Provisioning support. You can now automate creating, updating, and deleting of user accounts for these newly integrated apps:
 
-- [Alvao](../saas-apps/alvao-provisioning-tutorial.md)
-- [Better Stack](../saas-apps/better-stack-provisioning-tutorial.md)
-- [BIS](../saas-apps/bis-provisioning-tutorial.md)
-- [Connecter](../saas-apps/connecter-provisioning-tutorial.md)
-- [Howspace](../saas-apps/howspace-provisioning-tutorial.md)
-- [Kno2fy](../saas-apps/kno2fy-provisioning-tutorial.md)
-- [Netsparker Enterprise](../saas-apps/netsparker-enterprise-provisioning-tutorial.md)
-- [uniFLOW Online](../saas-apps/uniflow-online-provisioning-tutorial.md)
+- [Alvao](~/identity/saas-apps/alvao-provisioning-tutorial.md)
+- [Better Stack](~/identity/saas-apps/better-stack-provisioning-tutorial.md)
+- [BIS](~/identity/saas-apps/bis-provisioning-tutorial.md)
+- [Connecter](~/identity/saas-apps/connecter-provisioning-tutorial.md)
+- [Howspace](~/identity/saas-apps/howspace-provisioning-tutorial.md)
+- [Kno2fy](~/identity/saas-apps/kno2fy-provisioning-tutorial.md)
+- [Netsparker Enterprise](~/identity/saas-apps/netsparker-enterprise-provisioning-tutorial.md)
+- [uniFLOW Online](~/identity/saas-apps/uniflow-online-provisioning-tutorial.md)
 
 
 For more information about how to better secure your organization by using automated user account provisioning, see: [Automate user provisioning to SaaS applications with Azure AD](~/identity/app-provisioning/user-provisioning.md).
@@ -1048,7 +1048,7 @@ For more information about how to better secure your organization by using autom
 **Service category:** Privileged Identity Management                     
 **Product capability:** End User Experiences            
 
-With this new experience, PIM now automatically manages any type of resource in a tenant, so discovery and activation is no longer required. With the new resource picker, users can directly choose the scope they want to manage from the Management Group down to the resources themselves, making it faster and easier to locate the resources they need to administer. For more information, see: [Assign Azure resource roles in Privileged Identity Management](../privileged-identity-management/pim-resource-roles-assign-roles.md).
+With this new experience, PIM now automatically manages any type of resource in a tenant, so discovery and activation is no longer required. With the new resource picker, users can directly choose the scope they want to manage from the Management Group down to the resources themselves, making it faster and easier to locate the resources they need to administer. For more information, see: [Assign Azure resource roles in Privileged Identity Management](~/id-governance/privileged-identity-management/pim-resource-roles-assign-roles.md).
 
 ---
 

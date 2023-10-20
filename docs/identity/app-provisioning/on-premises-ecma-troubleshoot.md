@@ -260,7 +260,7 @@ By default, the agent emits minimal error messages and stack trace information. 
 
 To gather more information for troubleshooting agent-related problems:
 
- 1. Install the `AADCloudSyncTools` PowerShell module as described in [`AADCloudSyncTools` PowerShell module for Microsoft Entra Connect cloud sync](../hybrid/cloud-sync/reference-powershell.md#install-the-aadcloudsynctools-powershell-module).
+ 1. Install the `AADCloudSyncTools` PowerShell module as described in [`AADCloudSyncTools` PowerShell module for Microsoft Entra Connect cloud sync](~/identity/hybrid/cloud-sync/reference-powershell.md#install-the-aadcloudsynctools-powershell-module).
  2. Use the `Export-AADCloudSyncToolsLogs` PowerShell cmdlet to capture the information. Use the following switches to fine-tune your data collection. Use:
 
       - **SkipVerboseTrace** to only export current logs without capturing verbose logs (default = false).
@@ -269,7 +269,7 @@ To gather more information for troubleshooting agent-related problems:
 
 ---------------------
 
-By using Microsoft Entra ID, you can monitor the provisioning service in the cloud and collect logs on-premises. The provisioning service emits logs for each user that was evaluated as part of the synchronization process. Those logs can be consumed through the [Azure portal UI, APIs, and log analytics](../reports-monitoring/concept-provisioning-logs.md). The ECMA host also generates logs on-premises. It shows each provisioning request that was received and the response that was sent to Microsoft Entra ID.
+By using Microsoft Entra ID, you can monitor the provisioning service in the cloud and collect logs on-premises. The provisioning service emits logs for each user that was evaluated as part of the synchronization process. Those logs can be consumed through the [Azure portal UI, APIs, and log analytics](~/identity/monitoring-health/concept-provisioning-logs.md). The ECMA host also generates logs on-premises. It shows each provisioning request that was received and the response that was sent to Microsoft Entra ID.
 
 ### Agent installation fails
 * The error `System.ComponentModel.Win32Exception: The specified service already exists` indicates that the previous ECMA host was unsuccessfully uninstalled. Uninstall the host application. Go to program files, and remove the ECMA host folder. You might want to store the configuration file for backup. 

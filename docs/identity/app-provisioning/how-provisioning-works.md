@@ -137,7 +137,7 @@ After the initial cycle, all other cycles will:
 > [!NOTE]
 > You can optionally disable the **Create**, **Update**, or **Delete** operations by using the **Target object actions** check boxes in the [Mappings](customize-application-attributes.md) section. The logic to disable a user during an update is also controlled via an attribute mapping from a field such as *accountEnabled*.
 
-The provisioning service continues running back-to-back incremental cycles indefinitely, at intervals defined in the [tutorial specific to each application](../saas-apps/tutorial-list.md). Incremental cycles continue until one of the events occurs:
+The provisioning service continues running back-to-back incremental cycles indefinitely, at intervals defined in the [tutorial specific to each application](~/identity/saas-apps/tutorial-list.md). Incremental cycles continue until one of the events occurs:
 
 - The service is manually stopped using the Microsoft Entra admin center, or using the appropriate Microsoft Graph API command.
 - A new initial cycle is triggered using the **Restart provisioning** option in the Microsoft Entra admin center, or using the appropriate Microsoft Graph API command. The action clears any stored watermark and causes all source objects to be evaluated again. Also, the action doesn't break the links between source and target objects. To break the links, use [Restart synchronizationJob](/graph/api/synchronization-synchronizationjob-restart?view=graph-rest-beta&tabs=http&preserve-view=true) with the request: 
@@ -161,7 +161,7 @@ Content-type: application/json
 
 ### Errors and retries
 
-If an error in the target system prevents an individual user from being added, updated, or deleted in the target system, the operation is retried in the next sync cycle. The errors are continually retried, gradually scaling back the frequency of retries. To resolve the failure, administrators must check the [provisioning logs](../reports-monitoring/concept-provisioning-logs.md?context=azure/active-directory/manage-apps/context/manage-apps-context) to determine the root cause and take the appropriate action. Common failures can include:
+If an error in the target system prevents an individual user from being added, updated, or deleted in the target system, the operation is retried in the next sync cycle. The errors are continually retried, gradually scaling back the frequency of retries. To resolve the failure, administrators must check the [provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md?context=azure/active-directory/manage-apps/context/manage-apps-context) to determine the root cause and take the appropriate action. Common failures can include:
 
 - Users not having an attribute populated in the source system that is required in the target system
 - Users having an attribute value in the source system for which there's a unique constraint in the target system, and the same value is present in another user record
@@ -182,7 +182,7 @@ Performance depends on whether your provisioning job is running an initial provi
 
 ### How to tell if users are being provisioned properly
 
-All operations run by the user provisioning service are recorded in the Microsoft Entra [Provisioning logs (preview)](../reports-monitoring/concept-provisioning-logs.md?context=azure/active-directory/manage-apps/context/manage-apps-context). The logs include all read and write operations made to the source and target systems, and the user data that was read or written during each operation. For information on how to read the provisioning logs in the Microsoft Entra admin center, see the [provisioning reporting guide](./check-status-user-account-provisioning.md).
+All operations run by the user provisioning service are recorded in the Microsoft Entra [Provisioning logs (preview)](~/identity/monitoring-health/concept-provisioning-logs.md?context=azure/active-directory/manage-apps/context/manage-apps-context). The logs include all read and write operations made to the source and target systems, and the user data that was read or written during each operation. For information on how to read the provisioning logs in the Microsoft Entra admin center, see the [provisioning reporting guide](./check-status-user-account-provisioning.md).
 
 ## Deprovisioning
 The Microsoft Entra provisioning service keeps source and target systems in sync by deprovisioning accounts when user access is removed.

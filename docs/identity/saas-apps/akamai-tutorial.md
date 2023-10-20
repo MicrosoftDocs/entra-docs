@@ -21,7 +21,7 @@ In this tutorial, you'll learn how to integrate Akamai with Microsoft Entra ID. 
 * Enable your users to be automatically signed-in to Akamai with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
-Microsoft Entra ID and Akamai Enterprise Application Access integration allows seamless access to legacy applications hosted in the cloud or on-premises. The integrated solution takes advantages of all the modern capabilities of Microsoft Entra ID like [Microsoft Entra Conditional Access](../conditional-access/overview.md), [Microsoft Entra ID Protection](../identity-protection/overview-identity-protection.md) and [Microsoft Entra ID Governance](../governance/identity-governance-overview.md) for legacy applications access without app modifications or agents installation.
+Microsoft Entra ID and Akamai Enterprise Application Access integration allows seamless access to legacy applications hosted in the cloud or on-premises. The integrated solution takes advantages of all the modern capabilities of Microsoft Entra ID like [Microsoft Entra Conditional Access](~/identity/conditional-access/overview.md), [Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md) and [Microsoft Entra ID Governance](~/id-governance/identity-governance-overview.md) for legacy applications access without app modifications or agents installation.
 
 The below image describes, where Akamai EAA fits into the broader Hybrid Secure Access scenario.
 

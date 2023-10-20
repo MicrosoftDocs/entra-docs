@@ -122,7 +122,7 @@ The following image shows the configuration screen in both Jira and Confluence:
 
 * **Enable Use of Application Proxy** checkbox, if you have configured your on-premise atlassian application in an App Proxy setup.
 
-   * For App proxy setup , follow the steps on the [Microsoft Entra application proxy Documentation](../app-proxy/what-is-application-proxy.md).
+   * For App proxy setup , follow the steps on the [Microsoft Entra application proxy Documentation](~/identity/app-proxy/what-is-application-proxy.md).
 ## Release Notes
 JIRA:
 

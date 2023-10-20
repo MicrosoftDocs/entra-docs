@@ -30,11 +30,11 @@ This article details recommended configurations and how different settings work 
 To give your users the right balance of security and ease of use by asking them to sign in at the right frequency, we recommend the following configurations:
 
 * If you have Microsoft Entra ID P1 or P2:
-    * Enable single sign-on (SSO) across applications using [managed devices](../devices/overview.md) or [Seamless SSO](../hybrid/connect/how-to-connect-sso.md).
-    * If reauthentication is required, use a Conditional Access [sign-in frequency policy](../conditional-access/howto-conditional-access-session-lifetime.md).
+    * Enable single sign-on (SSO) across applications using [managed devices](~/identity/devices/overview.md) or [Seamless SSO](~/identity/hybrid/connect/how-to-connect-sso.md).
+    * If reauthentication is required, use a Conditional Access [sign-in frequency policy](~/identity/conditional-access/howto-conditional-access-session-lifetime.md).
     * For users that sign in from non-managed devices or mobile device scenarios, persistent browser sessions may not be preferable, or you might use Conditional Access to enable persistent browser sessions with sign-in frequency policies. Limit the duration to an appropriate time based on the sign-in risk, where a user with less risk has a longer session duration.
 * If you have Microsoft 365 apps licenses or the free Microsoft Entra tier:
-    * Enable single sign-on (SSO) across applications using [managed devices](../devices/overview.md) or [Seamless SSO](../hybrid/connect/how-to-connect-sso.md).
+    * Enable single sign-on (SSO) across applications using [managed devices](~/identity/devices/overview.md) or [Seamless SSO](~/identity/hybrid/connect/how-to-connect-sso.md).
     * Keep the *Remain signed-in* option enabled and guide your users to accept it.
 * For mobile devices scenarios, make sure your users use the Microsoft Authenticator app. This app is used as a broker to other Microsoft Entra ID federated apps, and reduces authentication prompts on the device.
 
@@ -61,7 +61,7 @@ In this example scenario, the user needs to reauthenticate every 14 days. This b
 
 ### Managed devices
 
-Devices joined to Microsoft Entra ID using Microsoft Entra join or Microsoft Entra hybrid join receive a [Primary Refresh Tokens (PRT)](../devices/concept-primary-refresh-token.md) to use single sign-on (SSO) across applications. This PRT lets a user sign in once on the device and allows IT staff to make sure that standards for security and compliance are met. If a user needs to be asked to sign in more frequently on a joined device for some apps or scenarios, this can be achieved using [Conditional Access Sign-in Frequency](../conditional-access/howto-conditional-access-session-lifetime.md).
+Devices joined to Microsoft Entra ID using Microsoft Entra join or Microsoft Entra hybrid join receive a [Primary Refresh Tokens (PRT)](~/identity/devices/concept-primary-refresh-token.md) to use single sign-on (SSO) across applications. This PRT lets a user sign in once on the device and allows IT staff to make sure that standards for security and compliance are met. If a user needs to be asked to sign in more frequently on a joined device for some apps or scenarios, this can be achieved using [Conditional Access Sign-in Frequency](~/identity/conditional-access/howto-conditional-access-session-lifetime.md).
 
 ### Show option to remain signed-in
 
@@ -93,7 +93,7 @@ More information, see [Remember multifactor authentication](howto-mfa-mfasetting
 
 **Persistent browser session** allows users to remain signed in after closing and reopening their browser window. Similar to the *Remain signed-in* setting, it sets a persistent cookie on the browser. However, since it's configured by the admin, it doesn't require the user select **Yes** in the *Stay signed-in?* option so provides a better user experience. If you use the *Remain signed-in?* option, we recommend you enable the **Persistent browser session** policy instead.
 
-For more information. see [Configure authentication session management with Conditional Access](../conditional-access/howto-conditional-access-session-lifetime.md).
+For more information. see [Configure authentication session management with Conditional Access](~/identity/conditional-access/howto-conditional-access-session-lifetime.md).
 
 ### Configurable token lifetimes
 
@@ -103,7 +103,7 @@ This setting allows configuration of lifetime for token issued by Microsoft Entr
 
 Now that you understand how different settings works and the recommended configuration, it's time to check your tenants. You can start by looking at the sign-in logs to understand which session lifetime policies were applied during sign-in.
 
-Under each sign-in log, go to the **Authentication Details** tab and explore **Session Lifetime Policies Applied**. For more information, see the [Learn about the sign-in log activity details](../reports-monitoring/concept-sign-in-log-activity-details.md) article.
+Under each sign-in log, go to the **Authentication Details** tab and explore **Session Lifetime Policies Applied**. For more information, see the [Learn about the sign-in log activity details](~/identity/monitoring-health/concept-sign-in-log-activity-details.md) article.
 
 ![Screenshot of authentication details.](./media/concepts-azure-multi-factor-authentication-prompts-session-lifetime/details.png)
 
@@ -136,7 +136,7 @@ The following table summarizes the recommendations based on licenses:
 
 |              | Microsoft Entra ID Free and Microsoft 365 apps | Microsoft Entra ID P1 or P2 |
 |------------------------------|-----------------------------------|------------------|
-| **SSO**                      | [Microsoft Entra join](../devices/concept-directory-join.md) or [Microsoft Entra hybrid join](../devices/concept-hybrid-join.md), or [Seamless SSO](../hybrid/connect/how-to-connect-sso.md) for unmanaged devices. | Microsoft Entra join<br />Microsoft Entra hybrid join |
+| **SSO**                      | [Microsoft Entra join](~/identity/devices/concept-directory-join.md) or [Microsoft Entra hybrid join](~/identity/devices/concept-hybrid-join.md), or [Seamless SSO](~/identity/hybrid/connect/how-to-connect-sso.md) for unmanaged devices. | Microsoft Entra join<br />Microsoft Entra hybrid join |
 | **Reauthentication settings** | Remain signed-in                  | Use Conditional Access policies for sign-in frequency and persistent browser session |
 
 ## Next steps

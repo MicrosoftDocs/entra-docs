@@ -19,7 +19,7 @@ ms.custom: aaddev
 
 # Developer guide to Conditional Access authentication context
 
-[Conditional Access](../conditional-access/overview.md) is the Zero Trust control plane that allows you to target policies for access to all your apps – old or new, private, or public, on-premises, or multicloud. With [Conditional Access authentication context](../conditional-access/concept-conditional-access-cloud-apps.md#authentication-context), you can apply different policies within those apps.
+[Conditional Access](~/identity/conditional-access/overview.md) is the Zero Trust control plane that allows you to target policies for access to all your apps – old or new, private, or public, on-premises, or multicloud. With [Conditional Access authentication context](~/identity/conditional-access/concept-conditional-access-cloud-apps.md#authentication-context), you can apply different policies within those apps.
 
 Conditional Access authentication context (auth context) allows you to apply granular policies to sensitive data and actions instead of just at the app level. You can refine your Zero Trust policies for least privileged access while minimizing user friction and keeping users more productive and your resources more secure. Today, it can be used by applications using [OpenId Connect](https://openid.net/specs/openid-connect-core-1_0.html) for authentication developed by your company to protect sensitive resources, like high-value transactions or viewing employee personal data.
 
@@ -39,7 +39,7 @@ For example, while users may sign in to SharePoint using multi-factor authentica
 
 **First**, your app should be integrated with the Microsoft identity platform using the use [OpenID Connect](v2-protocols-oidc.md)/ [OAuth 2.0](v2-oauth2-auth-code-flow.md) protocols for authentication and authorization. We recommend you use [Microsoft identity platform authentication libraries](reference-v2-libraries.md) to integrate and secure your application with Microsoft Entra ID. [Microsoft identity platform documentation](index.yml) is a good place to start learning how to integrate your apps with the Microsoft identity platform. Conditional Access Auth Context feature support is built on top of protocol extensions provided by the industry standard [OpenID Connect](v2-protocols-oidc.md) protocol. Developers use a [Conditional Access Auth Context reference](/graph/api/conditionalaccessroot-list-authenticationcontextclassreferences) **value** with the [Claims Request](claims-challenge.md) parameter to give apps a way to trigger and satisfy policy.
 
-**Second**, [Conditional Access](../conditional-access/overview.md) requires Microsoft Entra ID P1 licensing. More information about licensing can be found on the [Microsoft Entra pricing page](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
+**Second**, [Conditional Access](~/identity/conditional-access/overview.md) requires Microsoft Entra ID P1 licensing. More information about licensing can be found on the [Microsoft Entra pricing page](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
 
 **Third**, today it's only available to applications that sign-in users. Applications that authenticate as themselves aren't supported. Use the [Authentication flows and application scenarios guide](authentication-flows-app-scenarios.md) to learn about the supported authentication app types and flows in the Microsoft identity platform.
 
@@ -50,7 +50,7 @@ Once your application is integrated using the supported authentication protocols
 > [!NOTE]
 > A detailed walkthrough of this feature is also available as a recorded session at [Use Conditional Access Auth Context in your app for step\-up authentication](https://www.youtube.com/watch?v=_iO7CfoktTY).
 
-**First**, declare and make the authentication contexts available in your tenant. For more information, see [Configure authentication contexts](../conditional-access/concept-conditional-access-cloud-apps.md#configure-authentication-contexts).
+**First**, declare and make the authentication contexts available in your tenant. For more information, see [Configure authentication contexts](~/identity/conditional-access/concept-conditional-access-cloud-apps.md#configure-authentication-contexts).
 
 Values **C1-C25** are available for use as **Auth Context IDs** in a tenant. Examples of auth context may be:
 
@@ -279,7 +279,7 @@ The table below will show all corner cases where ACRS is added to the token's cl
 - [Granular Conditional Access for sensitive data and actions (Blog)](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/granular-conditional-access-for-sensitive-data-and-actions/ba-p/1751775)
 - [Zero trust with the Microsoft identity platform](/security/zero-trust/develop/identity)
 - [Building Zero Trust ready apps with the Microsoft identity platform](/security/zero-trust/develop/identity)
-- [Conditional Access authentication context](../conditional-access/concept-conditional-access-cloud-apps.md#authentication-context)
+- [Conditional Access authentication context](~/identity/conditional-access/concept-conditional-access-cloud-apps.md#authentication-context)
 - [authenticationContextClassReference resource type - MS Graph](/graph/api/conditionalaccessroot-list-authenticationcontextclassreferences)
 - [Claims challenge, claims request, and client capabilities in the Microsoft identity platform](claims-challenge.md)
 - [Using authentication context with Microsoft Purview Information Protection and SharePoint](/purview/sensitivity-labels-teams-groups-sites#more-information-about-the-dependencies-for-the-authentication-context-option)

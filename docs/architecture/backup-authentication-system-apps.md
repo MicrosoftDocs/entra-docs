@@ -74,7 +74,7 @@ The backup authentication system partially supports the SAML 2.0 SSO protocol. F
 
 ##### Managed identity 
 
-Applications that use Managed Identities to acquire Microsoft Entra access tokens are protected. Microsoft recommends the use of user-assigned managed identities in most scenarios, however this protection applies to both [user and system-assigned managed identities](../managed-identities-azure-resources/overview.md). 
+Applications that use Managed Identities to acquire Microsoft Entra access tokens are protected. Microsoft recommends the use of user-assigned managed identities in most scenarios, however this protection applies to both [user and system-assigned managed identities](~/identity/managed-identities-azure-resources/overview.md). 
 
 ##### Service principal 
 
@@ -85,4 +85,4 @@ The backup authentication system doesn't currently support service principal-bas
 - [Microsoft Entra ID's backup authentication system](backup-authentication-system.md)
 - [Microsoft Authentication Library (MSAL)](~/identity-platform/msal-overview.md)
 - [Introduction to the backup authentication system](https://azure.microsoft.com/blog/advancing-service-resilience-in-azure-active-directory-with-its-backup-authentication-service/)
-- [Resilience Defaults for Conditional Access](../conditional-access/resilience-defaults.md)
+- [Resilience Defaults for Conditional Access](~/identity/conditional-access/resilience-defaults.md)

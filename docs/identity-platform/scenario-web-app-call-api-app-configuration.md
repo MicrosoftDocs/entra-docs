@@ -267,7 +267,7 @@ Code examples in this article and the following one are extracted from the [Node
 
 The sample currently lets MSAL Node produce the authorization-code URL and handles the navigation to the authorization endpoint for the Microsoft identity platform. This is shown below:
 
-:::code language="js" source="~/ms-identity-node/App/auth/AuthProvider.js" range="187-232":::
+:::code language="js" source="~/../ms-identity-node/App/auth/AuthProvider.js" range="187-232":::
 
 # [Python](#tab/python)
 
@@ -291,7 +291,7 @@ Microsoft.Identity.Web simplifies your code by setting the correct OpenID Connec
 
 The *handleRedirect* method in **AuthProvider** class processes the authorization code received from Microsoft Entra ID. This is shown below:
 
-:::code language="js" source="~/ms-identity-node/App/auth/AuthProvider.js" range="123-155":::
+:::code language="js" source="~/../ms-identity-node/App/auth/AuthProvider.js" range="123-155":::
 
 # [Java](#tab/java)
 
@@ -368,7 +368,7 @@ See [Web app that signs in users: Code configuration](scenario-web-app-sign-user
 
 The Microsoft sign-in screen sends the authorization code to the `/getAToken` URL that was specified in the app registration. The `auth_response` route handles that URL, calling `auth.complete_login` to process the authorization code, and then either returning an error or redirecting to the home page.
 
-:::code language="python" source="~/ms-identity-python-webapp-tutorial/app.py" range="36-41":::
+:::code language="python" source="~/../ms-identity-python-webapp-tutorial/app.py" range="36-41":::
 
 See `app.py` for the full context of that code.
 
@@ -486,7 +486,7 @@ The detail of the `SessionManagementHelper` class is provided in the [MSAL sampl
 
 In the Node.js sample, the application session is used to store the token cache. Using MSAL Node cache methods, the token cache in session is read before a token request is made, and then updated once the token request is successfully completed. This is shown below:
 
-:::code language="js" source="~/ms-identity-node/App/auth/AuthProvider.js" range="79-121":::
+:::code language="js" source="~/../ms-identity-node/App/auth/AuthProvider.js" range="79-121":::
 
 # [Python](#tab/python)
 
@@ -494,7 +494,7 @@ In the Python sample, the identity package takes care of the token cache, using 
 
 Flask has built-in support for sessions stored in a cookie, but due to the length of the identity cookies, the sample uses the [Flask-session](https://flask-session.readthedocs.io/) package instead. Everything is initialized in *app.py*:
 
-:::code language="python" source="~/ms-identity-python-webapp-tutorial/app.py" range="1-11,19-25" highlight="5,11":::
+:::code language="python" source="~/../ms-identity-python-webapp-tutorial/app.py" range="1-11,19-25" highlight="5,11":::
 
 Due to the `SESSION_TYPE="filesystem"` setting in `app_config.py`, the Flask-session package stores sessions using the local file system.
 

@@ -35,11 +35,11 @@ To learn more about supported regions, time to propagate federated credential up
 
 ## Prerequisites
 
-- If you're unfamiliar with managed identities for Azure resources, check out the [overview section](../managed-identities-azure-resources/overview.md). Be sure to review the [difference between a system-assigned and user-assigned managed identity](../managed-identities-azure-resources/overview.md#managed-identity-types).
+- If you're unfamiliar with managed identities for Azure resources, check out the [overview section](~/identity/managed-identities-azure-resources/overview.md). Be sure to review the [difference between a system-assigned and user-assigned managed identity](~/identity/managed-identities-azure-resources/overview.md#managed-identity-types).
 - If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/free/) before you continue.
 - Get the information for your external IdP and software workload, which you need in the following steps.
 - To create a user-assigned managed identity and configure a federated identity credential, your account needs the [Contributor](/azure/role-based-access-control/built-in-roles#contributor) or [Owner](/azure/role-based-access-control/built-in-roles#owner) role assignment.
-- [Create a user-assigned manged identity](../managed-identities-azure-resources/how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-azp#create-a-user-assigned-managed-identity)
+- [Create a user-assigned manged identity](~/identity/managed-identities-azure-resources/how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-azp#create-a-user-assigned-managed-identity)
 - Find the name of the user-assigned managed identity, which you need in the following steps.
 
 ## Configure a federated identity credential on a user-assigned managed identity
@@ -176,14 +176,14 @@ To delete a specific federated identity credential, select the **Delete** icon f
 
 ## Prerequisites
 
-- If you're unfamiliar with managed identities for Azure resources, check out the [overview section](../managed-identities-azure-resources/overview.md). Be sure to review the [difference between a system-assigned and user-assigned managed identity](../managed-identities-azure-resources/overview.md#managed-identity-types).
+- If you're unfamiliar with managed identities for Azure resources, check out the [overview section](~/identity/managed-identities-azure-resources/overview.md). Be sure to review the [difference between a system-assigned and user-assigned managed identity](~/identity/managed-identities-azure-resources/overview.md#managed-identity-types).
 - If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/free/) before you continue.
 - Get the information for your external IdP and software workload, which you need in the following steps.
 - To create a user-assigned managed identity and configure a federated identity credential, your account needs the [Contributor](/azure/role-based-access-control/built-in-roles#contributor) or [Owner](/azure/role-based-access-control/built-in-roles#owner) role assignment.
-- [Create a user-assigned manged identity](../managed-identities-azure-resources/how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-azcli#create-a-user-assigned-managed-identity-1)
+- [Create a user-assigned manged identity](~/identity/managed-identities-azure-resources/how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-azcli#create-a-user-assigned-managed-identity-1)
 - Find the name of the user-assigned managed identity, which you need in the following steps.
 
-[!INCLUDE [azure-cli-prepare-your-environment-no-header.md](~/../reusable-content/azure-cli/azure-cli-prepare-your-environment-no-header.md)]
+[!INCLUDE [azure-cli-prepare-your-environment-no-header.md](~/../articles/reusable-content/azure-cli/azure-cli-prepare-your-environment-no-header.md)]
 
 ## Configure a federated identity credential on a user-assigned managed identity
 
@@ -274,14 +274,14 @@ az identity federated-credential delete --name $ficId --identity-name $uaId --re
 ::: zone pivot="identity-wif-mi-methods-powershell"
 ## Prerequisites
 
-- If you're unfamiliar with managed identities for Azure resources, check out the [overview section](../managed-identities-azure-resources/overview.md). Be sure to review the [difference between a system-assigned and user-assigned managed identity](../managed-identities-azure-resources/overview.md#managed-identity-types).
+- If you're unfamiliar with managed identities for Azure resources, check out the [overview section](~/identity/managed-identities-azure-resources/overview.md). Be sure to review the [difference between a system-assigned and user-assigned managed identity](~/identity/managed-identities-azure-resources/overview.md#managed-identity-types).
 - If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/free/) before you continue.
 - Get the information for your external IdP and software workload, which you need in the following steps.
 - To create a user-assigned managed identity and configure a federated identity credential, your account needs the [Contributor](/azure/role-based-access-control/built-in-roles#contributor) or [Owner](/azure/role-based-access-control/built-in-roles#owner) role assignment.
 - To run the example scripts, you have two options:
   - Use [Azure Cloud Shell](/azure/cloud-shell/overview), which you can open by using the **Try It** button in the upper-right corner of code blocks.
   - Run scripts locally with Azure PowerShell, as described in the next section.
-- [Create a user-assigned manged identity](../managed-identities-azure-resources/how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-powershell#list-user-assigned-managed-identities-2)
+- [Create a user-assigned manged identity](~/identity/managed-identities-azure-resources/how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-powershell#list-user-assigned-managed-identities-2)
 - Find the name of the user-assigned managed identity, which you need in the following steps.
 
 ### Configure Azure PowerShell locally
@@ -348,11 +348,11 @@ Remove-AzFederatedIdentityCredentials -ResourceGroupName azure-rg-test -Identity
 
 ## Prerequisites
 
-- If you're unfamiliar with managed identities for Azure resources, check out the [overview section](../managed-identities-azure-resources/overview.md). Be sure to review the [difference between a system-assigned and user-assigned managed identity](../managed-identities-azure-resources/overview.md#managed-identity-types).
+- If you're unfamiliar with managed identities for Azure resources, check out the [overview section](~/identity/managed-identities-azure-resources/overview.md). Be sure to review the [difference between a system-assigned and user-assigned managed identity](~/identity/managed-identities-azure-resources/overview.md#managed-identity-types).
 - If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/free/) before you continue.
 - Get the information for your external IdP and software workload, which you need in the following steps.
 - To create a user-assigned managed identity and configure a federated identity credential, your account needs the [Contributor](/azure/role-based-access-control/built-in-roles#contributor) or [Owner](/azure/role-based-access-control/built-in-roles#owner) role assignment.
-- [Create a user-assigned manged identity](../managed-identities-azure-resources/how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-arm#create-a-user-assigned-managed-identity-3)
+- [Create a user-assigned manged identity](~/identity/managed-identities-azure-resources/how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-arm#create-a-user-assigned-managed-identity-3)
 - Find the name of the user-assigned managed identity, which you need in the following steps.
 
 ## Template creation and editing
@@ -465,14 +465,14 @@ Make sure that any kind of automation creates federated identity credentials und
 
 ## Prerequisites
 
-- If you're unfamiliar with managed identities for Azure resources, check out the [overview section](../managed-identities-azure-resources/overview.md). Be sure to review the [difference between a system-assigned and user-assigned managed identity](../managed-identities-azure-resources/overview.md#managed-identity-types).
+- If you're unfamiliar with managed identities for Azure resources, check out the [overview section](~/identity/managed-identities-azure-resources/overview.md). Be sure to review the [difference between a system-assigned and user-assigned managed identity](~/identity/managed-identities-azure-resources/overview.md#managed-identity-types).
 - If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/free/) before you continue.
 - Get the information for your external IdP and software workload, which you need in the following steps.
 - To create a user-assigned managed identity and configure a federated identity credential, your account needs the [Contributor](/azure/role-based-access-control/built-in-roles#contributor) or [Owner](/azure/role-based-access-control/built-in-roles#owner) role assignment.
 - You can run all the commands in this article either in the cloud or locally:
   - To run in the cloud, use [Azure Cloud Shell](/azure/cloud-shell/overview).
   - To run locally, install [curl](https://curl.se/download.html) and the [Azure CLI](/cli/azure/install-azure-cli).
-- [Create a user-assigned manged identity](../managed-identities-azure-resources/how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-rest#create-a-user-assigned-managed-identity-4)
+- [Create a user-assigned manged identity](~/identity/managed-identities-azure-resources/how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-rest#create-a-user-assigned-managed-identity-4)
 - Find the name of the user-assigned managed identity, which you need in the following steps.
 
 ## Obtain a bearer access token

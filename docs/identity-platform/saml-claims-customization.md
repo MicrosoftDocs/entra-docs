@@ -72,7 +72,7 @@ Select the desired source for the `NameIdentifier` (or `nameID`) claim. You can 
 | `onpremisessamaccountname` | The SAM account name that has been synced from on-premises Microsoft Entra ID. |
 | `objectid` | The object ID of the user in Microsoft Entra ID. |
 | `employeeid` | The employee ID of the user. |
-| `Directory extensions` | The directory extensions [synced from on-premises Active Directory using Microsoft Entra Connect Sync](../hybrid/connect/how-to-connect-sync-feature-directory-extensions.md). |
+| `Directory extensions` | The directory extensions [synced from on-premises Active Directory using Microsoft Entra Connect Sync](~/identity/hybrid/connect/how-to-connect-sync-feature-directory-extensions.md). |
 | `Extension Attributes 1-15` | The on-premises extension attributes used to extend the Microsoft Entra schema. |
 | `pairwiseid` | The persistent form of user identifier. |
 

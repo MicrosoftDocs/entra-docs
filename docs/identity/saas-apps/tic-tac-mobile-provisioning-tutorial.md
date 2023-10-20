@@ -60,7 +60,7 @@ Add Tic-Tac Mobile from the Microsoft Entra application gallery to start managin
 
 With the Microsoft Entra provisioning service, you can scope who will be provisioned based on assignment to the application or based on attributes of the user or group. If you choose to scope who will be provisioned to your app based on assignment, follow the steps in [Manage user assignment for an app in Microsoft Entra ID](~/identity/enterprise-apps/assign-user-or-group-access-portal.md) to assign users and groups to the application. If you choose to scope who will be provisioned based solely on attributes of the user or group, use a scoping filter as described in [Attribute-based application provisioning with scoping filters](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-* When you assign users and groups to Tic-Tac Mobile, you must select a role other than **Default Access**. Users with the default access role are excluded from provisioning and will be marked as not effectively entitled in the provisioning logs. If the only role available on the application is the default access role, you can [update the application manifest](~/identity-platform/howto-add-app-roles-in-azure-ad-apps.md) to add more roles.
+* When you assign users and groups to Tic-Tac Mobile, you must select a role other than **Default Access**. Users with the default access role are excluded from provisioning and will be marked as not effectively entitled in the provisioning logs. If the only role available on the application is the default access role, you can [update the application manifest](~/identity-platform/howto-add-app-roles-in-apps.md) to add more roles.
 * Start small. Test with a small set of users and groups before you roll out to everyone. When scope for provisioning is set to assigned users and groups, you can maintain control by assigning one or two users or groups to the app. When scope is set to all users and groups, you can specify an [attribute-based scoping filter](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 ## Step 5: Configure automatic user provisioning to Tic-Tac Mobile
@@ -141,7 +141,7 @@ This operation starts the initial synchronization cycle of all users and groups 
 
 After you've configured provisioning, use the following resources to monitor your deployment.
 
-1. Use the [provisioning logs](../reports-monitoring/concept-provisioning-logs.md) to determine which users have been provisioned successfully or unsuccessfully.
+1. Use the [provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md) to determine which users have been provisioned successfully or unsuccessfully.
 1. Check the [progress bar](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md) to see the status of the provisioning cycle and how close it is to completion.
 1. If the provisioning configuration seems to be in an unhealthy state, the application will go into quarantine. To learn more about quarantine states, see [Application provisioning in quarantine status](~/identity/app-provisioning/application-provisioning-quarantine-status.md).
 

@@ -54,7 +54,7 @@ For more information, see [What is HR driven provisioning?](~/identity/app-provi
 
 ![Diagram that shows the app provisioning flow.](media/what-is-provisioning/cloud-3b.png)
 
-In Microsoft Entra ID, the term **[app provisioning](~/identity/app-provisioning/user-provisioning.md)** refers to automatically creating copies of user identities in the applications that users need access to, for applications that have their own data store, distinct from Microsoft Entra ID or Active Directory. In addition to creating user identities, app provisioning includes the maintenance and removal of user identities from those apps, as the user's status or roles change. Common scenarios include provisioning a Microsoft Entra user into applications like [Dropbox](../saas-apps/dropboxforbusiness-provisioning-tutorial.md), [Salesforce](../saas-apps/salesforce-provisioning-tutorial.md), [ServiceNow](../saas-apps/servicenow-provisioning-tutorial.md), as each of these applications have their own user repository distinct from Microsoft Entra ID.
+In Microsoft Entra ID, the term **[app provisioning](~/identity/app-provisioning/user-provisioning.md)** refers to automatically creating copies of user identities in the applications that users need access to, for applications that have their own data store, distinct from Microsoft Entra ID or Active Directory. In addition to creating user identities, app provisioning includes the maintenance and removal of user identities from those apps, as the user's status or roles change. Common scenarios include provisioning a Microsoft Entra user into applications like [Dropbox](~/identity/saas-apps/dropboxforbusiness-provisioning-tutorial.md), [Salesforce](~/identity/saas-apps/salesforce-provisioning-tutorial.md), [ServiceNow](~/identity/saas-apps/servicenow-provisioning-tutorial.md), as each of these applications have their own user repository distinct from Microsoft Entra ID.
 
 Microsoft Entra ID also supports provisioning users into applications hosted on-premises or in a virtual machine, without having to open up any firewalls. If your application supports [SCIM](https://aka.ms/scimoverview), or you've built a SCIM gateway to connect to your legacy application, you can use the Microsoft Entra provisioning agent to [directly connect](~/identity/app-provisioning/on-premises-scim-provisioning.md) with your application and automate provisioning and deprovisioning. If you have legacy applications that don't support SCIM and rely on an [LDAP](~/identity/app-provisioning/on-premises-ldap-connector-configure.md) user store or a [SQL](~/identity/app-provisioning/on-premises-sql-connector-configure.md) database, or that have a [SOAP or REST API](~/identity/app-provisioning/on-premises-web-services-connector.md), Microsoft Entra ID can support those as well.
 
@@ -70,7 +70,7 @@ As many organizations historically have deployed HR-driven provisioning on-premi
 
 In addition, organizations may wish to also provision to on-premises systems from Microsoft Entra ID. For example, an organization may have brought guests into the Microsoft Entra directory, but those guests will need access to on-premises Windows Integrated Authentication (WIA) based web applications via the app proxy. This scenario requires the provisioning of on-premises AD accounts for those users in Microsoft Entra ID.
 
-For more information, see [What is inter-directory provisioning?](../hybrid/what-is-inter-directory-provisioning.md)
+For more information, see [What is inter-directory provisioning?](~/identity/hybrid/what-is-inter-directory-provisioning.md)
 
  
 ## Next steps
@@ -78,4 +78,4 @@ For more information, see [What is inter-directory provisioning?](../hybrid/what
 - [What is identity lifecycle management?](what-is-identity-lifecycle-management.md)
 - [What is HR driven provisioning?](~/identity/app-provisioning/what-is-hr-driven-provisioning.md)
 - [What is app provisioning?](~/identity/app-provisioning/user-provisioning.md)
-- [What is inter-directory provisioning?](../hybrid/what-is-inter-directory-provisioning.md)
+- [What is inter-directory provisioning?](~/identity/hybrid/what-is-inter-directory-provisioning.md)

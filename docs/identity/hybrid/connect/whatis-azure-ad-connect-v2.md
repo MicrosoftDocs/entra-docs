@@ -32,7 +32,7 @@ Microsoft Entra Connect cloud sync is the future of synchronization for Microsof
 
 Before moving to Microsoft Entra Connect V2, you should consider moving to Microsoft Entra Connect cloud sync. You can see if cloud sync is right for you by accessing the [Check sync tool](https://aka.ms/EvaluateSyncOptions) from the portal or via the link provided.
 
-For more information, see [What is cloud sync?](../cloud-sync/what-is-cloud-sync.md)
+For more information, see [What is cloud sync?](/azure/active-directory/cloud-sync/what-is-cloud-sync)
 
 ## What are the major changes? 
 

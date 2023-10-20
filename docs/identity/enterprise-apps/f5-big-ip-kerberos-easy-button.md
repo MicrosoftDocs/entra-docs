@@ -21,7 +21,7 @@ Learn to secure Kerberos-based applications with Microsoft Entra ID, through F5 
 Integrating a BIG-IP with Microsoft Entra ID provides many benefits, including:
 
 * Improved governance: See, [Zero Trust framework to enable remote work](https://www.microsoft.com/security/blog/2020/04/02/announcing-microsoft-zero-trust-assessment-tool/) and learn more about Microsoft Entra pre-authentication. 
-* Enforce organizational policies. See [What is Conditional Access?](../conditional-access/overview.md).
+* Enforce organizational policies. See [What is Conditional Access?](~/identity/conditional-access/overview.md).
 * Full SSO between Microsoft Entra ID and BIG-IP published services
 * Manage identities and access from a single control plane, the [Microsoft Entra admin center](https://entra.microsoft.com).
 
@@ -36,7 +36,7 @@ Because it's legacy, the application lacks modern protocols to support direct in
 A BIG-IP in front of the application enables overlay of the service with Microsoft Entra pre-authentication and headers-based SSO, improving the security posture of the application.
 
 > [!NOTE] 
-> Organizations can gain remote access to this type of application with [Microsoft Entra application proxy](../app-proxy/application-proxy.md)
+> Organizations can gain remote access to this type of application with [Microsoft Entra application proxy](~/identity/app-proxy/application-proxy.md)
 
 ## Scenario architecture
 
@@ -70,7 +70,7 @@ Prior BIG-IP experience isn't necessary, but you need:
     * F5 BIG-IP APM standalone
     * F5 BIG-IP APM add-on license on a BIG-IP F5 BIG-IP&reg; Local Traffic Manager&trade; (LTM)
     * 90-day BIG-IP [Free Trial](https://www.f5.com/trial/big-ip-trial.php) license
-* User identities [synchronized](../hybrid/connect/how-to-connect-sync-whatis.md) from an on-premises directory to Microsoft Entra ID, or created in Microsoft Entra ID and flowed back to your on-premises directory
+* User identities [synchronized](~/identity/hybrid/connect/how-to-connect-sync-whatis.md) from an on-premises directory to Microsoft Entra ID, or created in Microsoft Entra ID and flowed back to your on-premises directory
 * One of the following roles: Global Administrator, Cloud Application Administrator, or Application Administrator.
 * An [SSL Web certificate](./f5-bigip-deployment-guide.md) for publishing services over HTTPS, or use the default BIG-IP certificates while testing
 * A Kerberos application, or go to active-directory-wp.com to learn to configure [SSO with IIS on Windows](https://active-directory-wp.com/docs/Networking/Single_Sign_On/SSO_with_IIS_on_Windows.html).
@@ -431,7 +431,7 @@ If troubleshooting kerberos SSO issues, be aware of the following concepts.
 * Ensure the hostname for the domain controller and web application are resolvable in DNS
 * Ensure there are no duplicate SPNs in your AD environment: execute the following query at the command line on a domain PC: setspn -q HTTP/my_target_SPN
 
-You can refer to our [App Proxy guidance](../app-proxy/application-proxy-back-end-kerberos-constrained-delegation-how-to.md) to validate an IIS application is configured for KCD. See also the AskF5 article, [Kerberos single sign on method](https://techdocs.f5.com/en-us/bigip-15-1-0/big-ip-access-policy-manager-single-sign-on-concepts-configuration/kerberos-single-sign-on-method.html).
+You can refer to our [App Proxy guidance](~/identity/app-proxy/application-proxy-back-end-kerberos-constrained-delegation-how-to.md) to validate an IIS application is configured for KCD. See also the AskF5 article, [Kerberos single sign on method](https://techdocs.f5.com/en-us/bigip-15-1-0/big-ip-access-policy-manager-single-sign-on-concepts-configuration/kerberos-single-sign-on-method.html).
 
 ### Log analysis: increase verbosity
 

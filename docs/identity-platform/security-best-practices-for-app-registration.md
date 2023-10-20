@@ -63,7 +63,7 @@ Consider the following guidance related to certificates and secrets:
 
 - Always use [certificate credentials](./certificate-credentials.md) whenever possible and don't use password credentials, also known as *secrets*. While it's convenient to use password secrets as a credential, when possible use x509 certificates as the only credential type for getting tokens for an application.
   - Configure [application authentication method policies](/graph/api/resources/applicationauthenticationmethodpolicy) to govern the use of secrets by limiting their lifetimes or blocking their use altogether.
-- Use Key Vault with [managed identities](../managed-identities-azure-resources/overview.md) to manage credentials for an application.
+- Use Key Vault with [managed identities](~/identity/managed-identities-azure-resources/overview.md) to manage credentials for an application.
 - If an application is used only as a Public Client App (allows users to sign in using a public endpoint), make sure that there are no credentials specified on the application object.
 - Review the credentials used in applications for freshness of use and their expiration. An unused credential on an application can result in a security breach. Rollover credentials frequently and don't share credentials across applications. Don't have many credentials on one application.
 - Monitor your production pipelines to prevent credentials of any kind from being committed into code repositories.
@@ -86,7 +86,7 @@ Consider the following guidance related to defining the Application ID URI:
 
 ## App ownership configuration
 
-Owners can manage all aspects of a registered application. It's important to regularly review the ownership of all applications in the organization. For more information, see [Microsoft Entra access reviews](../governance/access-reviews-overview.md). Under **Owners** for the application in the Azure portal, the owners of the application can be managed.
+Owners can manage all aspects of a registered application. It's important to regularly review the ownership of all applications in the organization. For more information, see [Microsoft Entra access reviews](~/id-governance/access-reviews-overview.md). Under **Owners** for the application in the Azure portal, the owners of the application can be managed.
 
 :::image type="content" source="./media/application-registration-best-practices/app-ownership.png" alt-text="Screenshot that shows where owners of the application are managed.":::
 

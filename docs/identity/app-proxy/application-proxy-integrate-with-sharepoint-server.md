@@ -23,7 +23,7 @@ To perform the configuration, you need the following resources:
 - A SharePoint 2013 farm or newer.
 - A Microsoft Entra tenant with a plan that includes Application Proxy. Learn more about [Microsoft Entra ID plans and pricing](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
 - A [custom, verified domain](~/fundamentals/add-custom-domain.md) in the Microsoft Entra tenant.
-- On-premises Active Directory synchronized with Microsoft Entra Connect, through which users can [sign in to Azure](../hybrid/connect/plan-connect-user-signin.md).
+- On-premises Active Directory synchronized with Microsoft Entra Connect, through which users can [sign in to Azure](~/identity/hybrid/connect/plan-connect-user-signin.md).
 - An Application Proxy connector installed and running on a machine within the corporate domain.
 
 Configuring SharePoint with Application Proxy requires two URLs:
@@ -47,7 +47,7 @@ This article uses the following values:
 
 In this step, you create an application in your Microsoft Entra tenant that uses Application Proxy. You set the external URL and specify the internal URL, both of which are used later in SharePoint.
 
-1. Create the app as described with the following settings. For step-by-step instructions, see [Publishing applications using Microsoft Entra application proxy](../app-proxy/application-proxy-add-on-premises-application.md#add-an-on-premises-app-to-azure-ad).
+1. Create the app as described with the following settings. For step-by-step instructions, see [Publishing applications using Microsoft Entra application proxy](~/identity/app-proxy/application-proxy-add-on-premises-application.md#add-an-on-premises-app-to-azure-ad).
    * **Internal URL**: SharePoint internal URL that will be set later in SharePoint, such as `https://sharepoint`.
    * **Pre-Authentication**: Microsoft Entra ID
    * **Translate URLs in Headers**: No

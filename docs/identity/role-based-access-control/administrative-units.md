@@ -41,7 +41,7 @@ A central administrator could:
 Here are some of the constraints for administrative units.
 
 - Administrative units can't be nested.
-- Administrative units are currently not available in [Microsoft Entra ID Governance](../governance/identity-governance-overview.md).
+- Administrative units are currently not available in [Microsoft Entra ID Governance](~/id-governance/identity-governance-overview.md).
 
 ## Groups
 

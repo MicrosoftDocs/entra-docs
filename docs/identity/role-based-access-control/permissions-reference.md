@@ -402,7 +402,7 @@ Users with this role **cannot** do the following:
 
 ## Azure AD Joined Device Local Administrator
 
-This role is available for assignment only as an additional local administrator in [Device settings](../devices/assign-local-admin.md). Users with this role become local machine administrators on all Windows 10 devices that are joined to Microsoft Entra ID. They do not have the ability to manage devices objects in Microsoft Entra ID.
+This role is available for assignment only as an additional local administrator in [Device settings](~/identity/devices/assign-local-admin.md). Users with this role become local machine administrators on all Windows 10 devices that are joined to Microsoft Entra ID. They do not have the ability to manage devices objects in Microsoft Entra ID.
 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
@@ -1934,7 +1934,7 @@ Assign the Permissions Management Administrator role to users who need to do the
 
 - Manage all aspects of Microsoft Entra Permissions Management, when the service is present
 
-Learn more about Permissions Management roles and polices at [View information about roles/policies](../cloud-infrastructure-entitlement-management/how-to-view-role-policy.md).
+Learn more about Permissions Management roles and polices at [View information about roles/policies](~/permissions-management/how-to-view-role-policy.md).
 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
@@ -2113,8 +2113,8 @@ This is a [privileged role](privileged-roles-permissions.md). Users with this ro
 In | Can do
 --- | ---
 [Microsoft 365 Defender portal](/microsoft-365/security/defender/microsoft-365-defender-portal) | Monitor security-related policies across Microsoft 365 services<br>Manage security threats and alerts<br>View reports
-[Identity Protection](../identity-protection/overview-identity-protection.md) | All permissions of the Security Reader role<br>Perform all Identity Protection operations except for resetting passwords
-[Privileged Identity Management](../privileged-identity-management/pim-configure.md) | All permissions of the Security Reader role<br>**Cannot** manage Microsoft Entra role assignments or settings
+[Identity Protection](~/id-protection/overview-identity-protection.md) | All permissions of the Security Reader role<br>Perform all Identity Protection operations except for resetting passwords
+[Privileged Identity Management](~/id-governance/privileged-identity-management/pim-configure.md) | All permissions of the Security Reader role<br>**Cannot** manage Microsoft Entra role assignments or settings
 [Microsoft Purview compliance portal](/microsoft-365/compliance/microsoft-365-compliance-center) | Manage security policies<br>View, investigate, and respond to security threats<br>View reports
 Azure Advanced Threat Protection | Monitor and respond to suspicious security activity
 [Microsoft Defender for Endpoint](/microsoft-365/security/defender-endpoint/prepare-deployment) | Assign roles<br>Manage machine groups<br>Configure endpoint threat detection and automated remediation<br>View, investigate, and respond to alerts<br/>View machines/device inventory
@@ -2123,7 +2123,7 @@ Azure Advanced Threat Protection | Monitor and respond to suspicious security ac
 [Microsoft 365 service health](/microsoft-365/enterprise/view-service-health) | View the health of Microsoft 365 services
 [Smart lockout](~/identity/authentication/howto-password-smart-lockout.md) | Define the threshold and duration for lockouts when failed sign-in events happen.
 [Password Protection](~/identity/authentication/concept-password-ban-bad.md) | Configure custom banned password list or on-premises password protection.
-[Cross-tenant synchronization](../multi-tenant-organizations/cross-tenant-synchronization-overview.md) | Configure cross-tenant access settings for users in another tenant. Security Administrators can't directly create and delete users, but can indirectly create and delete synchronized users from another tenant when both tenants are configured for cross-tenant synchronization, which is a privileged permission.
+[Cross-tenant synchronization](~/identity/multi-tenant-organizations/cross-tenant-synchronization-overview.md) | Configure cross-tenant access settings for users in another tenant. Security Administrators can't directly create and delete users, but can indirectly create and delete synchronized users from another tenant when both tenants are configured for cross-tenant synchronization, which is a privileged permission.
 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
@@ -2218,8 +2218,8 @@ This is a [privileged role](privileged-roles-permissions.md). Users with this ro
 | In | Can do |
 | --- | --- |
 | [Microsoft 365 Defender portal](/microsoft-365/security/defender/microsoft-365-defender-portal) | All permissions of the Security Reader role<br/>View, investigate, and respond to security threats alerts<br/>Manage security settings in Microsoft 365 Defender portal |
-| [Identity Protection](../identity-protection/overview-identity-protection.md) | All permissions of the Security Reader role<br>Perform all Identity Protection operations except for configuring or changing risk-based policies, resetting passwords, and configuring alert e-mails. |
-| [Privileged Identity Management](../privileged-identity-management/pim-configure.md) | All permissions of the Security Reader role |
+| [Identity Protection](~/id-protection/overview-identity-protection.md) | All permissions of the Security Reader role<br>Perform all Identity Protection operations except for configuring or changing risk-based policies, resetting passwords, and configuring alert e-mails. |
+| [Privileged Identity Management](~/id-governance/privileged-identity-management/pim-configure.md) | All permissions of the Security Reader role |
 | [Microsoft Purview compliance portal](/microsoft-365/compliance/microsoft-365-compliance-center) | All permissions of the Security Reader role<br>View, investigate, and respond to security alerts |
 | [Microsoft Defender for Endpoint](/microsoft-365/security/defender-endpoint/prepare-deployment) | All permissions of the Security Reader role<br/>View, investigate, and respond to security alerts<br/>When you turn on role-based access control in Microsoft Defender for Endpoint, users with read-only permissions such as the Security Reader role lose access until they are assigned a Microsoft Defender for Endpoint role. |
 | [Intune](/intune/role-based-access-control) | All permissions of the Security Reader role |
@@ -2252,8 +2252,8 @@ This is a [privileged role](privileged-roles-permissions.md). Users with this ro
 In | Can do
 --- | ---
 [Microsoft 365 Defender portal](/microsoft-365/security/defender/microsoft-365-defender-portal) | View security-related policies across Microsoft 365 services<br>View security threats and alerts<br>View reports
-[Identity Protection](../identity-protection/overview-identity-protection.md) | View all Identity Protection reports and Overview
-[Privileged Identity Management](../privileged-identity-management/pim-configure.md) | Has read-only access to all information surfaced in Microsoft Entra Privileged Identity Management: Policies and reports for Microsoft Entra role assignments and security reviews.<br>**Cannot** sign up for Microsoft Entra Privileged Identity Management or make any changes to it. In the Privileged Identity Management portal or via PowerShell, someone in this role can activate additional roles (for example, Global Administrator or Privileged Role Administrator), if the user is eligible for them.
+[Identity Protection](~/id-protection/overview-identity-protection.md) | View all Identity Protection reports and Overview
+[Privileged Identity Management](~/id-governance/privileged-identity-management/pim-configure.md) | Has read-only access to all information surfaced in Microsoft Entra Privileged Identity Management: Policies and reports for Microsoft Entra role assignments and security reviews.<br>**Cannot** sign up for Microsoft Entra Privileged Identity Management or make any changes to it. In the Privileged Identity Management portal or via PowerShell, someone in this role can activate additional roles (for example, Global Administrator or Privileged Role Administrator), if the user is eligible for them.
 [Microsoft Purview compliance portal](/microsoft-365/compliance/microsoft-365-compliance-center) | View security policies<br>View and investigate security threats<br>View reports
 [Microsoft Defender for Endpoint](/microsoft-365/security/defender-endpoint/prepare-deployment) | View and investigate alerts<br/>When you turn on role-based access control in Microsoft Defender for Endpoint, users with read-only permissions such as the Security Reader role lose access until they are assigned a Microsoft Defender for Endpoint role.
 [Intune](/intune/role-based-access-control) | Views user, device, enrollment, configuration, and application information. Cannot make changes to Intune.

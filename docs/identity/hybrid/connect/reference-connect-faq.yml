@@ -365,7 +365,7 @@ sections:
           The Microsoft Entra Connect server contains critical identity data and should be treated as a Tier 0 component as documented in the [Active Directory administrative tier model](/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material). Please also refer to our [guidelines for securing your Microsoft Entra Connect server](./how-to-connect-install-prerequisites.md#azure-ad-connect-server).
           
           **Enable PHS for leaked credentials detection**
-          Password Hash Sync also enables [leaked credential detection](../../identity-protection/concept-identity-protection-risks.md) for your hybrid accounts. Microsoft works alongside dark web researchers and law enforcement agencies to find publicly available username/password pairs. If any of these pairs match those of your users, the associated account is moved to high risk. 
+          Password Hash Sync also enables [leaked credential detection](~/id-protection/concept-identity-protection-risks.md) for your hybrid accounts. Microsoft works alongside dark web researchers and law enforcement agencies to find publicly available username/password pairs. If any of these pairs match those of your users, the associated account is moved to high risk. 
           
           
   - name: Troubleshooting

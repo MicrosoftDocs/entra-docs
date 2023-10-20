@@ -32,9 +32,9 @@ You can enrich user attributes in Microsoft Entra ID to make more user attribute
 
 These two links provide guidance on making schema changes:
 
-* [Understand the Microsoft Entra schema and custom expressions](../hybrid/cloud-sync/concept-attributes.md)
+* [Understand the Microsoft Entra schema and custom expressions](~/identity/hybrid/cloud-sync/concept-attributes.md)
 
-* [Attributes synchronized by Microsoft Entra Connect](../hybrid/connect/reference-connect-sync-attributes-synchronized.md)
+* [Attributes synchronized by Microsoft Entra Connect](~/identity/hybrid/connect/reference-connect-sync-attributes-synchronized.md)
 
 These links provide more information on this topic but aren't specific to changing the schema:
 
@@ -52,7 +52,7 @@ These links provide more information about groups:
 
 * [Use self-service groups for user-initiated group management](~/identity/users/groups-self-service-management.md)
 
-* [Attribute-based application provisioning with scoping filters](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md) or [What is Microsoft Entra entitlement management?](../governance/entitlement-management-overview.md) (for application access)
+* [Attribute-based application provisioning with scoping filters](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md) or [What is Microsoft Entra entitlement management?](~/id-governance/entitlement-management-overview.md) (for application access)
 
 * [Compare groups](/microsoft-365/admin/create-groups/compare-groups)
 
@@ -64,13 +64,13 @@ You and your team might feel compelled to change your current employee provision
 
 Client workstations are traditionally joined to Active Directory and managed via Group Policy objects (GPOs) or device management solutions such as Microsoft Configuration Manager. Your teams will establish a new policy and process to prevent newly deployed workstations from being domain joined. Key points include:
 
-* Mandate [Microsoft Entra join](../devices/concept-directory-join.md) for new Windows client workstations to achieve "no more domain join."
+* Mandate [Microsoft Entra join](~/identity/devices/concept-directory-join.md) for new Windows client workstations to achieve "no more domain join."
 
 * Manage workstations from the cloud by using unified endpoint management (UEM) solutions such as [Intune](/mem/intune/fundamentals/what-is-intune).
 
 [Windows Autopilot](/autopilot/windows-autopilot) can help you establish a streamlined onboarding and device provisioning, which can enforce these directives.
 
-[Windows Local Administrator Password Solution](../devices/howto-manage-local-admin-passwords.md) (LAPS) enables a cloud-first solution to manage the passwords of local administrator accounts.
+[Windows Local Administrator Password Solution](~/identity/devices/howto-manage-local-admin-passwords.md) (LAPS) enables a cloud-first solution to manage the passwords of local administrator accounts.
 
 For more information, see [Learn more about cloud-native endpoints](/mem/solutions/cloud-native-endpoints/cloud-native-endpoints-overview).
 

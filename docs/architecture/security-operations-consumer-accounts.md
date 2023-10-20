@@ -53,9 +53,9 @@ Evaluate the following list:
 
 Use log files to investigate and monitor. See the following articles for more:
 
-* [Audit logs in Microsoft Entra ID](../reports-monitoring/concept-audit-logs.md)
-* [Sign-in logs in Microsoft Entra ID (preview)](../reports-monitoring/concept-sign-ins.md)
-* [How To: Investigate risk](../identity-protection/howto-identity-protection-investigate-risk.md)
+* [Audit logs in Microsoft Entra ID](~/identity/monitoring-health/concept-audit-logs.md)
+* [Sign-in logs in Microsoft Entra ID (preview)](~/identity/monitoring-health/concept-sign-ins.md)
+* [How To: Investigate risk](~/id-protection/howto-identity-protection-investigate-risk.md)
 
 ### Audit logs and automation tools
 
@@ -69,11 +69,11 @@ From the Azure portal, you can view Microsoft Entra audit logs and download as c
   * [Azure Monitor overview](/azure/azure-monitor/overview)
 * **Azure Event Hubs integrated with a SIEM** - integrate Microsoft Entra logs with SIEMs such as Splunk, ArcSight, QRadar and Sumo Logic with Azure Event Hubs
   * [Azure Event Hubs-A big data streaming platform and event ingestion service](/azure/event-hubs/event-hubs-about)
-  * [Tutorial: Stream Microsoft Entra logs to an Azure event hub](../reports-monitoring/howto-stream-logs-to-event-hub.md)
+  * [Tutorial: Stream Microsoft Entra logs to an Azure event hub](~/identity/monitoring-health/howto-stream-logs-to-event-hub.md)
 * **Microsoft Defender for Cloud Apps** – discover and manage apps, govern across apps and resources, and conform cloud app compliance
   * [Microsoft Defender for Cloud Apps overview](/defender-cloud-apps/what-is-defender-for-cloud-apps)
 * **Identity Protection** - detect risk on workload identities across sign-in behavior and offline indicators of compromise
-  * [Securing workload identities with Identity Protection](../identity-protection/concept-workload-identity-risk.md)
+  * [Securing workload identities with Identity Protection](~/id-protection/concept-workload-identity-risk.md)
 
 Use the remainder of the article for recommendations on what to monitor and alert. Refer to the tables, organized by threat type. See links to pre-built solutions or samples following the table. Build alerts using the previously mentioned tools.
 

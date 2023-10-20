@@ -115,7 +115,7 @@
     expanded: false
     items:
     - name: Integrate SaaS applications
-      href: ../saas-apps/tutorial-list.md
+      href: ~/identity/saas-apps/tutorial-list.md
     - name: Assign owners
       href: assign-app-owners.md
     - name: Configure properties

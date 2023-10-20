@@ -328,4 +328,4 @@ To configure and manage group settings using Microsoft Graph, see the [groupSett
 ## Additional reading
 
 * [Managing access to resources with Microsoft Entra groups](~/fundamentals/concept-learn-about-groups.md)
-* [Integrating your on-premises identities with Microsoft Entra ID](../hybrid/whatis-hybrid-identity.md)
+* [Integrating your on-premises identities with Microsoft Entra ID](~/identity/hybrid/whatis-hybrid-identity.md)

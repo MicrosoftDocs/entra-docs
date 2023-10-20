@@ -18,7 +18,7 @@ ms.custom: not-enterprise-apps
 
 With Conditional Access, administrators enforce policies on application and user policies in Microsoft Entra ID. Conditional Access brings together identity-driven signals, to make decisions, and enforce organizational policies. Cloudflare Access creates access to self-hosted, software as a service (SaaS), or nonweb applications.
 
-Learn more: [What is Conditional Access?](../conditional-access/overview.md)
+Learn more: [What is Conditional Access?](~/identity/conditional-access/overview.md)
 
 ## Prerequisites
 
@@ -61,7 +61,7 @@ Go to developers.cloudflare.com to [set up Microsoft Entra ID as an IdP](https:/
 9. Select **Properties**.
 10. For **Visible to users**, select **Yes**. This action enables the app to appear in App Launcher and in [My Apps](https://myapplications.microsoft.com/).
 11. Under **Security**, select **Conditional Access**.
-12. See, [Building a Conditional Access policy](../conditional-access/concept-conditional-access-policies.md).
+12. See, [Building a Conditional Access policy](~/identity/conditional-access/concept-conditional-access-policies.md).
 13. Create and enable other policies for the application.
 
 ## Create a Cloudflare Access application
@@ -86,6 +86,6 @@ Enforce Conditional Access policies on a Cloudflare Access application.
 
 ## Next steps
 
-* [What is Conditional Access?](../conditional-access/overview.md)
+* [What is Conditional Access?](~/identity/conditional-access/overview.md)
 * [Secure Hybrid Access with Microsoft Entra ID partner integrations](secure-hybrid-access-integrations.md)
 * [Tutorial: Configure Cloudflare with Microsoft Entra ID for secure hybrid access](cloudflare-integration.md)

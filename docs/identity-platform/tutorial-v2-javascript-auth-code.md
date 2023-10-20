@@ -67,7 +67,7 @@ Next, implement a small [Express](https://expressjs.com/) web server to serve yo
     ```
 2. Next, create file named *server.js* and add the following code:
  
-   :::code language="js" source="~/ms-identity-javascript-v2/server.js":::
+   :::code language="js" source="~/../ms-identity-javascript-v2/server.js":::
 
 ## Create the SPA UI
 
@@ -75,11 +75,11 @@ Next, implement a small [Express](https://expressjs.com/) web server to serve yo
 
     In the *index.html* file, add the following code:
 
-    :::code language="html" source="~/ms-identity-javascript-v2/app/index.html":::
+    :::code language="html" source="~/../ms-identity-javascript-v2/app/index.html":::
 
 2. Next, also in the *app* folder, create a file named *ui.js* and add the following code. This file will access and update DOM elements.
 
-    :::code language="js" source="~/ms-identity-javascript-v2/app/ui.js":::
+    :::code language="js" source="~/../ms-identity-javascript-v2/app/ui.js":::
 
 ## Register your application
 
@@ -93,11 +93,11 @@ If you'd like to use a different port, enter `http://localhost:<port>`, where `<
 
 Create a file named *authConfig.js* in the *app* folder to contain your configuration parameters for authentication, and then add the following code:
 
-:::code language="js" source="~/ms-identity-javascript-v2/app/authConfig.js":::
+:::code language="js" source="~/../ms-identity-javascript-v2/app/authConfig.js":::
 
 Still in the *app* folder, create a file named *graphConfig.js*. Add the following code to provide your application the configuration parameters for calling the Microsoft Graph API:
 
-:::code language="js" source="~/ms-identity-javascript-v2/app/graphConfig.js":::
+:::code language="js" source="~/../ms-identity-javascript-v2/app/graphConfig.js":::
 
 Modify the values in the `graphConfig` section as described here:
 
@@ -118,13 +118,13 @@ graphMailEndpoint: "https://graph.microsoft.com/v1.0/me/messages"
 
 In the *app* folder, create a file named *authPopup.js* and add the following authentication and token acquisition code for the login pop-up:
 
-:::code language="js" source="~/ms-identity-javascript-v2/app/authPopup.js":::
+:::code language="js" source="~/../ms-identity-javascript-v2/app/authPopup.js":::
 
 ### Redirect
 
 Create a file named *authRedirect.js* in the *app* folder and add the following authentication and token acquisition code for login redirect:
 
-:::code language="js" source="~/ms-identity-javascript-v2/app/authRedirect.js":::
+:::code language="js" source="~/../ms-identity-javascript-v2/app/authRedirect.js":::
 
 ### How the code works
 
@@ -163,7 +163,7 @@ The `acquireTokenSilent` method handles token acquisition and renewal without an
 
 Create file named *graph.js* in the *app* folder and add the following code for making REST calls to the Microsoft Graph API:
 
-:::code language="js" source="~/ms-identity-javascript-v2/app/graph.js":::
+:::code language="js" source="~/../ms-identity-javascript-v2/app/graph.js":::
 
 In the sample application created in this tutorial, the `callMSGraph()` method is used to make an HTTP `GET` request against a protected resource that requires a token. The request then returns the content to the caller. This method adds the acquired token in the *HTTP Authorization header*. In the sample application created in this tutorial, the protected resource is the Microsoft Graph API *me* endpoint which displays the signed-in user's profile information.
 

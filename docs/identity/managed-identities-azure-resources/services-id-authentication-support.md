@@ -46,7 +46,7 @@ The following services support Microsoft Entra authentication. New services are 
 | Azure SQL Managed Instance      | [What is Azure SQL Managed Instance?](/azure/azure-sql/managed-instance/sql-managed-instance-paas-overview#azure-active-directory-integration)                                                                                       |
 | Azure Static Web Apps           | [Authentication and authorization for Azure Static Web Apps](/azure/static-web-apps/authentication-authorization?tabs=invitations)
 | Azure Storage                   | [Authorize access to blobs using Microsoft Entra ID](/azure/storage/blobs/authorize-access-azure-active-directory) |
-| Azure Virtual Machines                | [Secure and use policies on virtual machines in Azure](../devices/howto-vm-sign-in-azure-ad-windows.md)   |
+| Azure Virtual Machines                | [Secure and use policies on virtual machines in Azure](~/identity/devices/howto-vm-sign-in-azure-ad-windows.md)   |
 
 ## Next steps
 

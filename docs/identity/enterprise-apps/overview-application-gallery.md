@@ -30,7 +30,7 @@ The following are benefits of using applications available in the gallery:
 - Configuration of the application is simple and minimal.
 - A quick search finds the needed application.
 - Free, Basic, and Premium Microsoft Entra users can all use the application.
-- Users can easily find [step-by-step configuration tutorials](../saas-apps/tutorial-list.md) that are available for onboarding gallery applications.
+- Users can easily find [step-by-step configuration tutorials](~/identity/saas-apps/tutorial-list.md) that are available for onboarding gallery applications.
 
 ## Applications in the gallery
 

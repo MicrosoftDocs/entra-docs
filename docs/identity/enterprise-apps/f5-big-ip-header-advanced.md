@@ -19,7 +19,7 @@ ms.custom: not-enterprise-apps
 Learn to implement secure hybrid access (SHA) with single sign-on (SSO) to header-based applications, using F5 BIG-IP advanced configuration. BIG-IP published applications and Microsoft Entra configuration benefits:
 
 * Improved Zero Trust governance through Microsoft Entra preauthentication and Conditional Access 
-  * See, [What is Conditional Access?](../conditional-access/overview.md)
+  * See, [What is Conditional Access?](~/identity/conditional-access/overview.md)
   * See, [Zero Trust security](/azure/security/fundamentals/zero-trust)
 * Full SSO between Microsoft Entra ID and BIG-IP published services
 * Managed identities and access from one control plane
@@ -71,7 +71,7 @@ For the scenario you need:
   * F5 BIG-IP Access Policy Manager™ (APM) add-on license on a BIG-IP F5 BIG-IP® Local Traffic Manager™ (LTM)
   * 90-day BIG-IP full feature trial. See, [Free Trials](https://www.f5.com/trial/big-ip-trial.php).
 * User identities synchronized from an on-premises directory to Microsoft Entra ID
-  * [Microsoft Entra Connect Sync: Understand and customize synchronization](../hybrid/connect/how-to-connect-sync-whatis.md)
+  * [Microsoft Entra Connect Sync: Understand and customize synchronization](~/identity/hybrid/connect/how-to-connect-sync-whatis.md)
 * An SSL certificate to publish services over HTTPS, or use default certificates while testing
   * See, [SSL profile](./f5-bigip-deployment-guide.md#ssl-profile)
 * A header-based application or an IIS header app for testing
@@ -92,7 +92,7 @@ The following instructions are an advanced configuration method, a flexible way 
 
 To implement SHA, the first step is to set up a SAML federation trust between BIG-IP APM and Microsoft Entra ID. The trust establishes the integration for BIG-IP to hand off preauthentication and Conditional Access to Microsoft Entra ID, before granting access to the published service.
 
-Learn more: [What is Conditional Access?](../conditional-access/overview.md)
+Learn more: [What is Conditional Access?](~/identity/conditional-access/overview.md)
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 2. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
@@ -149,7 +149,7 @@ Learn more: [What is Conditional Access?](../conditional-access/overview.md)
    ![Screenshot of User Attributes and Claims information such as surname, email address, identity, etc.](./media/f5-big-ip-header-advanced/user-attributes-claims.png)
 
    > [!NOTE]
-   > Add other claims the BIG-IP published application expects as headers. More defined claims are issued if they're in Microsoft Entra ID. Define directory memberships and user objects in Microsoft Entra ID before claims can be issued. See, [Configure group claims for applications by using Microsoft Entra ID](../hybrid/connect/how-to-connect-fed-group-claims.md).
+   > Add other claims the BIG-IP published application expects as headers. More defined claims are issued if they're in Microsoft Entra ID. Define directory memberships and user objects in Microsoft Entra ID before claims can be issued. See, [Configure group claims for applications by using Microsoft Entra ID](~/identity/hybrid/connect/how-to-connect-fed-group-claims.md).
 
 22. In the **SAML Signing Certificate** section, select **Download**. 
 23. The **Federation Metadata XML** file is saved on your computer.
@@ -446,5 +446,5 @@ Learn more:
 ## Resources
 
 * [Passwordless authentication](https://www.microsoft.com/security/business/identity/passwordless)
-* [What is Conditional Access?](../conditional-access/overview.md)
+* [What is Conditional Access?](~/identity/conditional-access/overview.md)
 * [Zero Trust framework to enable remote work](https://www.microsoft.com/security/blog/2020/04/02/announcing-microsoft-zero-trust-assessment-tool/)

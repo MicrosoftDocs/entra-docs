@@ -60,9 +60,9 @@ Learn more: [Authentication methods in Microsoft Entra ID - Microsoft Authentica
 
 Learn more:
 
-* [Plan your Microsoft Entra hybrid join implementation](../devices/hybrid-join-plan.md), or 
-* [How to: Plan your Microsoft Entra join implementation](../devices/device-join-plan.md)
-* See also, [Common Conditional Access policy: Require a compliant device, Microsoft Entra hybrid joined device, or multifactor authentication for all users](../conditional-access/howto-conditional-access-policy-compliant-device.md)
+* [Plan your Microsoft Entra hybrid join implementation](~/identity/devices/hybrid-join-plan.md), or 
+* [How to: Plan your Microsoft Entra join implementation](~/identity/devices/device-join-plan.md)
+* See also, [Common Conditional Access policy: Require a compliant device, Microsoft Entra hybrid joined device, or multifactor authentication for all users](~/identity/conditional-access/howto-conditional-access-policy-compliant-device.md)
 
 >[!NOTE]
 > Microsoft Authenticator isn't phishing-resistant. Configure Conditional Access policy to require that managed devices get protection from external phishing threats.
@@ -112,8 +112,8 @@ To enforce phishing-resistant multifactor authentication, integration might be n
 
 | Target system| Integration actions |
 | - | - |
-| Azure Linux virtual machine (VM)| Enable the [Linux VM for Microsoft Entra sign-in](../devices/howto-vm-sign-in-azure-ad-linux.md) |
-| Azure Windows VM| Enable the [Windows VM for Microsoft Entra sign-in](../devices/howto-vm-sign-in-azure-ad-windows.md) |
+| Azure Linux virtual machine (VM)| Enable the [Linux VM for Microsoft Entra sign-in](~/identity/devices/howto-vm-sign-in-azure-ad-linux.md) |
+| Azure Windows VM| Enable the [Windows VM for Microsoft Entra sign-in](~/identity/devices/howto-vm-sign-in-azure-ad-windows.md) |
 | Azure Virtual Desktop| Enable [Azure Virtual Desktop for Microsoft Entra sign-in](/azure/architecture/example-scenario/wvd/azure-virtual-desktop-azure-active-directory-join)|
 | VMs hosted on-premises or in other clouds| Enable [Azure Arc](/azure/azure-arc/overview) on the VM and then enable Microsoft Entra sign-in. Currently in private preview for Linux. Support for Windows VMs hosted in these environments is on our roadmap. |
 | Non-Microsoft virtual desktop solution| Integrate the virtual desktop solution as an app in Microsoft Entra ID|
@@ -147,7 +147,7 @@ The memo requires organizations to change ineffective password policies, such as
 * **Self-service password reset** to enable users to reset passwords, for instance after account recovery
   * [Tutorial: Enable users to unlock their account or reset passwords using Microsoft Entra self-service password reset](../authentication/tutorial-enable-sspr.md)
 * **Microsoft Entra ID Protection** for alerts about compromised credentials
- * [What is risk?](../identity-protection/concept-identity-protection-risks.md)
+ * [What is risk?](~/id-protection/concept-identity-protection-risks.md)
 
 Although the memo isn't specific about policies to use with passwords, consider the standard from NIST 800-63B. 
 

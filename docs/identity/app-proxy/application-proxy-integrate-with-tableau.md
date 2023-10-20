@@ -23,7 +23,7 @@ The scenario in this article assumes that you have:
 
 - [Tableau](https://onlinehelp.tableau.com/current/server/en-us/proxy.htm#azure) configured. 
 
-- An [Application Proxy connector](../app-proxy/application-proxy-add-on-premises-application.md) installed. 
+- An [Application Proxy connector](~/identity/app-proxy/application-proxy-add-on-premises-application.md) installed. 
 
  
 ## Enabling Application Proxy for Tableau 
@@ -39,7 +39,7 @@ To publish Tableau, you need to publish an application in the Microsoft Entra ad
 
 For:
 
-- Detailed instructions of steps 1-8, see [Publish applications using Microsoft Entra application proxy](../app-proxy/application-proxy-add-on-premises-application.md). 
+- Detailed instructions of steps 1-8, see [Publish applications using Microsoft Entra application proxy](~/identity/app-proxy/application-proxy-add-on-premises-application.md). 
 - Information about how to find Tableau values for the App Proxy fields, please see the Tableau documentation.  
 
 **To publish your app**: 

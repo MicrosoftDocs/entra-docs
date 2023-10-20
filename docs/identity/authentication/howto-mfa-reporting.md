@@ -18,7 +18,7 @@ ms.custom: has-azure-ad-ps-ref
 ---
 # Use the sign-ins report to review Microsoft Entra multifactor authentication events
 
-To review and understand Microsoft Entra multifactor authentication events, you can use the Microsoft Entra sign-ins report. This report shows authentication details for events when a user is prompted for multifactor authentication, and if any Conditional Access policies were in use. For detailed information on the sign-ins report, see the [overview of sign-in activity reports in Microsoft Entra ID](../reports-monitoring/concept-sign-ins.md).
+To review and understand Microsoft Entra multifactor authentication events, you can use the Microsoft Entra sign-ins report. This report shows authentication details for events when a user is prompted for multifactor authentication, and if any Conditional Access policies were in use. For detailed information on the sign-ins report, see the [overview of sign-in activity reports in Microsoft Entra ID](~/identity/monitoring-health/concept-sign-ins.md).
 
 <a name='view-the-azure-ad-sign-ins-report'></a>
 
@@ -36,7 +36,7 @@ The sign-ins report provides you with information about the usage of managed app
 - How many users are unable to complete the MFA challenge?
 - What are the common MFA issues end users are running into?
 
-To view the sign-in activity report in the [Microsoft Entra admin center](https://entra.microsoft.com), complete the following steps. You can also query data using the [reporting API](../reports-monitoring/howto-configure-prerequisites-for-reporting-api.md).
+To view the sign-in activity report in the [Microsoft Entra admin center](https://entra.microsoft.com), complete the following steps. You can also query data using the [reporting API](~/identity/monitoring-health/howto-configure-prerequisites-for-reporting-api.md).
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Identity** > then choose **Users** from the menu on the left-hand side.
@@ -145,7 +145,7 @@ The following additional information and reports are available for MFA events, i
 | Report | Location | Description |
 |:--- |:--- |:--- |
 | Blocked User History | Microsoft Entra ID > Security > MFA > Block/unblock users | Shows the history of requests to block or unblock users. |
-| Usage for on-premises components | Microsoft Entra ID > Security > MFA > Activity Report | Provides information on overall usage for MFA Server. NPS extension and AD FS logs for cloud MFA activity are now included in the [Sign-in logs](../reports-monitoring/concept-sign-ins.md), and no longer published on this report. |
+| Usage for on-premises components | Microsoft Entra ID > Security > MFA > Activity Report | Provides information on overall usage for MFA Server. NPS extension and AD FS logs for cloud MFA activity are now included in the [Sign-in logs](~/identity/monitoring-health/concept-sign-ins.md), and no longer published on this report. |
 | Bypassed User History | Microsoft Entra ID > Security > MFA > One-time bypass | Provides a history of MFA Server requests to bypass MFA for a user. |
 | Server status | Microsoft Entra ID > Security > MFA > Server status | Displays the status of MFA Servers associated with your account. |
 
@@ -165,4 +165,4 @@ Organizations that run the latest version of NPS extension or use Microsoft Entr
 
 ## Next steps
 
-This article provided an overview of the sign-ins activity report. For more detailed information on what this report contains, see [sign-in activity reports in Microsoft Entra ID](../reports-monitoring/concept-sign-ins.md).
+This article provided an overview of the sign-ins activity report. For more detailed information on what this report contains, see [sign-in activity reports in Microsoft Entra ID](~/identity/monitoring-health/concept-sign-ins.md).

@@ -82,7 +82,7 @@ The Active Directory configuration varies, depending on whether your Application
    ```
 
 ## Configure single sign-on 
-1. Publish your application according to the instructions described in [Publish applications with Application Proxy](../app-proxy/application-proxy-add-on-premises-application.md). Make sure to select **Microsoft Entra ID** as the **Preauthentication Method**.
+1. Publish your application according to the instructions described in [Publish applications with Application Proxy](~/identity/app-proxy/application-proxy-add-on-premises-application.md). Make sure to select **Microsoft Entra ID** as the **Preauthentication Method**.
 2. After your application appears in the list of enterprise applications, select it and click **Single sign-on**.
 3. Set the single sign-on mode to **Integrated Windows authentication**.  
 4. Enter the **Internal Application SPN** of the application server. In this example, the SPN for our published application is `http/www.contoso.com`. This SPN needs to be in the list of services to which the connector can present delegated credentials.

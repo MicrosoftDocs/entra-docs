@@ -39,17 +39,17 @@ Set up the sign-in method:
 * **Password hash synchronization** - an extension of the directory synchronization feature implemented by Microsoft Entra Connect server or cloud-provisioning agents
   * Use this feature to sign in to Microsoft Entra services like Microsoft 365
   * Sign in to the service with the password to sign in to the on-premises Active Directory instance
-  * See, [What is password hash synchronization with Microsoft Entra ID?](../hybrid/connect/whatis-phs.md)
+  * See, [What is password hash synchronization with Microsoft Entra ID?](~/identity/hybrid/connect/whatis-phs.md)
 * **Pass-through authentication** - sign in to on-premises and cloud applications with the same passwords 
   * When users sign in through Microsoft Entra ID, the pass-through authentication agent validates passwords against the on-premises AD
-  * See, [User sign-in with Microsoft Entra pass-through authentication](../hybrid/connect/how-to-connect-pta.md)
+  * See, [User sign-in with Microsoft Entra pass-through authentication](~/identity/hybrid/connect/how-to-connect-pta.md)
 * **Seamless SSO** - signs in users on corporate desktops connected to the corporate network
   * Users have access to cloud applications without other on-premises components
-  * See, [Microsoft Entra seamless SSO](../hybrid/connect/how-to-connect-sso.md)
+  * See, [Microsoft Entra seamless SSO](~/identity/hybrid/connect/how-to-connect-sso.md)
 
 To create a seamless authentication user experience in Microsoft Entra ID, deploy seamless SSO to password hash synchronization or pass-through authentication.
 
-For prerequisites of seamless SSO see, [Quickstart: Microsoft Entra seamless single sign-on](../hybrid/connect/how-to-connect-sso-quick-start.md#step-1-check-the-prerequisites).
+For prerequisites of seamless SSO see, [Quickstart: Microsoft Entra seamless single sign-on](~/identity/hybrid/connect/how-to-connect-sso-quick-start.md#step-1-check-the-prerequisites).
 
 For this tutorial, you configure password hash synchronization and seamless SSO.
 
@@ -93,7 +93,7 @@ For this tutorial, you configure password hash synchronization and seamless SSO.
 
 Before you test defederating a domain, in Microsoft Entra ID use a cloud authentication staged rollout to test defederating users. 
 
-Learn more: [Migrate to cloud authentication using Staged Rollout](../hybrid/connect/how-to-connect-staged-rollout.md)
+Learn more: [Migrate to cloud authentication using Staged Rollout](~/identity/hybrid/connect/how-to-connect-staged-rollout.md)
 
 After you enable password hash sync and seamless SSO on the Microsoft Entra Connect server, configure a staged rollout:
 

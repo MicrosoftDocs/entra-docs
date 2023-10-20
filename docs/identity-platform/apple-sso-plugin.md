@@ -311,7 +311,7 @@ Use the following configuration to enable Just in Time Registration for iOS/iPad
 Learn more about Just in Time Registration [here](https://techcommunity.microsoft.com/t5/intune-customer-success/just-in-time-registration-for-ios-ipados-with-microsoft-intune/ba-p/3660843). 
 
 #### Conditional Access policies and password changes
-Microsoft Enterprise SSO plug-in for Apple devices is compatible with various [Microsoft Entra Conditional Access policies](../conditional-access/overview.md) and password change events. `browser_sso_interaction_enabled` is required to be enabled to achieve compatibility. 
+Microsoft Enterprise SSO plug-in for Apple devices is compatible with various [Microsoft Entra Conditional Access policies](~/identity/conditional-access/overview.md) and password change events. `browser_sso_interaction_enabled` is required to be enabled to achieve compatibility. 
 
 Compatible events and policies are documented in the following sections:
 
@@ -324,7 +324,7 @@ When a user resets their password, all tokens that were issued before that will 
 [Multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md) is a process in which users are prompted during the sign-in process for an additional form of identification, such as a code on their cellphone or a fingerprint scan. Multifactor authentication can be enabled for specific resources. When the Microsoft Enterprise SSO plug-in is enabled, user will be asked to perform multifactor authentication in the first application that requires it. Microsoft Enterprise SSO plug-in will show its own user interface on top of the application that is currently active. 
 
 ##### User sign-in frequency
-[Sign-in frequency](../conditional-access/howto-conditional-access-session-lifetime.md#user-sign-in-frequency) defines the time period before a user is asked to sign in again when attempting to access a resource. If a user is trying to access a resource after the time period has passed in various apps, a user would normally need to sign in again in each of those apps. When the Microsoft Enterprise SSO plug-in is enabled, a user will be asked to sign in to the first application that participates in SSO. Microsoft Enterprise SSO plug-in will show its own user interface on top of the application that is currently active.
+[Sign-in frequency](~/identity/conditional-access/howto-conditional-access-session-lifetime.md#user-sign-in-frequency) defines the time period before a user is asked to sign in again when attempting to access a resource. If a user is trying to access a resource after the time period has passed in various apps, a user would normally need to sign in again in each of those apps. When the Microsoft Enterprise SSO plug-in is enabled, a user will be asked to sign in to the first application that participates in SSO. Microsoft Enterprise SSO plug-in will show its own user interface on top of the application that is currently active.
 
 ### Required network configuration
 The Microsoft Enterprise SSO plug-in relies on Apple's [enterprise SSO](https://developer.apple.com/documentation/authenticationservices) framework. Apple's enterprise SSO framework ensures that only an approved SSO plug-in can work for each identity provider by utilizing a technology called [associated domains](https://developer.apple.com/documentation/xcode/supporting-associated-domains). To verify the identity of the SSO plug-in, each Apple device will send a network request to an endpoint owned by the identity provider and read information about approved SSO plug-ins. In addition to reaching out directly to the identity provider, Apple has also implemented another caching for this information. 
@@ -369,7 +369,7 @@ The Microsoft Enterprise SSO plug-in relies on the [Apple Enterprise SSO framewo
 Native applications can also implement custom operations and communicate directly with the SSO plug-in. For more information, see this [2019 Worldwide Developer Conference video from Apple](https://developer.apple.com/videos/play/tech-talks/301/).
 
 > [!TIP]
-> Learn more about how the SSO plug-in works and how to troubleshoot the Microsoft Enterprise SSO Extension with the [SSO troubleshooting guide for Apple devices](../devices/troubleshoot-mac-sso-extension-plugin.md).
+> Learn more about how the SSO plug-in works and how to troubleshoot the Microsoft Enterprise SSO Extension with the [SSO troubleshooting guide for Apple devices](~/identity/devices/troubleshoot-mac-sso-extension-plugin.md).
 
 ### Applications that use MSAL
 
@@ -391,7 +391,7 @@ You don't need to change the code in those apps as long as the following conditi
 
 In this case, SSO is provided when the application creates a network request and opens a web browser to sign the user in. When a user is redirected to a Microsoft Entra sign-in URL, the SSO plug-in validates the URL and checks for an SSO credential for that URL. If it finds the credential, the SSO plug-in passes it to Microsoft Entra ID, which authorizes the application to complete the network request without asking the user to enter credentials. Additionally, if the device is known to Microsoft Entra ID, the SSO plug-in passes the device certificate to satisfy the device-based Conditional Access check. 
 
-To support SSO for non-MSAL apps, the SSO plug-in implements a protocol similar to the Windows browser plug-in described in [What is a primary refresh token?](../devices/concept-primary-refresh-token.md#browser-sso-using-prt). 
+To support SSO for non-MSAL apps, the SSO plug-in implements a protocol similar to the Windows browser plug-in described in [What is a primary refresh token?](~/identity/devices/concept-primary-refresh-token.md#browser-sso-using-prt). 
 
 Compared to MSAL-based apps, the SSO plug-in acts more transparently for non-MSAL apps. It integrates with the existing browser sign-in experience that apps provide. 
 
@@ -401,4 +401,4 @@ The end user sees the familiar experience and doesn't have to sign in again in e
 
 Learn about [Shared device mode for iOS devices](msal-ios-shared-devices.md).
 
-Learn about [troubleshooting the Microsoft Enterprise SSO Extension](../devices/troubleshoot-mac-sso-extension-plugin.md).
+Learn about [troubleshooting the Microsoft Enterprise SSO Extension](~/identity/devices/troubleshoot-mac-sso-extension-plugin.md).

@@ -18,16 +18,16 @@ ms.custom: not-enterprise-apps
 In this article, learn to protect your on-premises and cloud legacy authentication applications by connecting them to Microsoft Entra ID.
 
 * **[Application Proxy](#secure-hybrid-access-with-application-proxy)**:
-  * [Remote access to on-premises applications through Microsoft Entra application proxy](../app-proxy/application-proxy.md)
+  * [Remote access to on-premises applications through Microsoft Entra application proxy](~/identity/app-proxy/application-proxy.md)
   * Protect users, apps, and data in the cloud and on-premises 
-  * [Use it to publish on-premises web applications externally](../app-proxy/what-is-application-proxy.md)
+  * [Use it to publish on-premises web applications externally](~/identity/app-proxy/what-is-application-proxy.md)
   
 * **[Secure hybrid access through Microsoft Entra partner integrations](#partner-integrations-for-apps-on-premises-and-legacy-authentication)**:
 
   * [Pre-built solutions](#secure-hybrid-access-through-azure-ad-partner-integrations)
   * [Apply Conditional Access policies per application](secure-hybrid-access-integrations.md#apply-conditional-access-policies)
  
-In addition to Application Proxy, you can strengthen your security posture with [Microsoft Entra Conditional Access](../conditional-access/overview.md) and [Identity Protection](../identity-protection/overview-identity-protection.md). 
+In addition to Application Proxy, you can strengthen your security posture with [Microsoft Entra Conditional Access](~/identity/conditional-access/overview.md) and [Identity Protection](~/id-protection/overview-identity-protection.md). 
 
 <a name='single-sign-on-and-multi-factor-authentication'></a>
 
@@ -41,14 +41,14 @@ Use Application Proxy to protect users, apps, and data in the cloud, and on prem
 
 Learn more:
 
-* [Remote access to on-premises applications through Microsoft Entra application proxy](../app-proxy/application-proxy.md)
-* [Tutorial: Add an on-premises application for remote access through Application Proxy in Microsoft Entra ID](../app-proxy/application-proxy-add-on-premises-application.md)
-* [How to configure SSO to an Application Proxy application](../app-proxy/application-proxy-config-sso-how-to.md)
-* [Using Microsoft Entra application proxy to publish on-premises apps for remote users](../app-proxy/what-is-application-proxy.md)
+* [Remote access to on-premises applications through Microsoft Entra application proxy](~/identity/app-proxy/application-proxy.md)
+* [Tutorial: Add an on-premises application for remote access through Application Proxy in Microsoft Entra ID](~/identity/app-proxy/application-proxy-add-on-premises-application.md)
+* [How to configure SSO to an Application Proxy application](~/identity/app-proxy/application-proxy-config-sso-how-to.md)
+* [Using Microsoft Entra application proxy to publish on-premises apps for remote users](~/identity/app-proxy/what-is-application-proxy.md)
 
 ### Application publishing and access management
 
-Use Application Proxy remote access as a service to publish applications to users outside the corporate network. Help improve your cloud access management without requiring modification to your on-premises applications. Plan an [Microsoft Entra application proxy deployment](../app-proxy/application-proxy-deployment-plan.md).
+Use Application Proxy remote access as a service to publish applications to users outside the corporate network. Help improve your cloud access management without requiring modification to your on-premises applications. Plan an [Microsoft Entra application proxy deployment](~/identity/app-proxy/application-proxy-deployment-plan.md).
 
 ## Partner integrations for apps: on-premises and legacy authentication
 
@@ -67,27 +67,27 @@ The following partners offer solutions to support [Conditional Access policies p
 
 |Partner|Integration documentation|
 |---|---|
-|Akamai Technologies|[Tutorial: Microsoft Entra SSO integration with Akamai](../saas-apps/akamai-tutorial.md)|
-|Citrix Systems, Inc.|[Tutorial: Microsoft Entra SSO integration with Citrix ADC SAML Connector for Microsoft Entra ID (Kerberos-based authentication)](../saas-apps/citrix-netscaler-tutorial.md)|
+|Akamai Technologies|[Tutorial: Microsoft Entra SSO integration with Akamai](~/identity/saas-apps/akamai-tutorial.md)|
+|Citrix Systems, Inc.|[Tutorial: Microsoft Entra SSO integration with Citrix ADC SAML Connector for Microsoft Entra ID (Kerberos-based authentication)](~/identity/saas-apps/citrix-netscaler-tutorial.md)|
 |Cloudflare, Inc.|[Tutorial: Configure Cloudflare with Microsoft Entra ID for secure hybrid access](cloudflare-integration.md)|
 |Datawiza|[Tutorial: Configure Secure Hybrid Access with Microsoft Entra ID and Datawiza](./datawiza-configure-sha.md)|
 |F5, Inc.|[Integrate F5 BIG-IP with Microsoft Entra ID](f5-integration.md)</br>[Tutorial: Configure F5 BIG-IP SSL-VPN for Microsoft Entra SSO](f5-passwordless-vpn.md)|
-|Progress Software Corporation, Progress Kemp|[Tutorial: Microsoft Entra SSO integration with Kemp LoadMaster Microsoft Entra integration](../saas-apps/kemp-tutorial.md)|
-|Perimeter 81 Ltd.|[Tutorial: Microsoft Entra SSO integration with Perimeter 81](../saas-apps/perimeter-81-tutorial.md)|
+|Progress Software Corporation, Progress Kemp|[Tutorial: Microsoft Entra SSO integration with Kemp LoadMaster Microsoft Entra integration](~/identity/saas-apps/kemp-tutorial.md)|
+|Perimeter 81 Ltd.|[Tutorial: Microsoft Entra SSO integration with Perimeter 81](~/identity/saas-apps/perimeter-81-tutorial.md)|
 |Silverfort|[Tutorial: Configure Secure Hybrid Access with Microsoft Entra ID and Silverfort](silverfort-integration.md)|
-|Strata Identity, Inc.|[Integrate Microsoft Entra SSO with Maverics Identity Orchestrator SAML Connector](../saas-apps/maverics-identity-orchestrator-saml-connector-tutorial.md)|
+|Strata Identity, Inc.|[Integrate Microsoft Entra SSO with Maverics Identity Orchestrator SAML Connector](~/identity/saas-apps/maverics-identity-orchestrator-saml-connector-tutorial.md)|
 
 #### Partners with pre-built solutions and integration documentation
 
 |Partner|Integration documentation|
 |---|---|
-|Amazon Web Service, Inc.|[Tutorial: Microsoft Entra SSO integration with AWS ClientVPN](../saas-apps/aws-clientvpn-tutorial.md)|
-|Check Point Software Technologies Ltd.|[Tutorial: Microsoft Entra single SSO integration with Check Point Remote Secure Access VPN](../saas-apps/check-point-remote-access-vpn-tutorial.md)|
-|Cisco Systems, Inc.|[Tutorial: Microsoft Entra SSO integration with Cisco AnyConnect](../saas-apps/cisco-anyconnect.md)|
-|Fortinet, Inc.|[Tutorial: Microsoft Entra SSO integration with FortiGate SSL VPN](../saas-apps/fortigate-ssl-vpn-tutorial.md)|
-|Palo Alto Networks|[Tutorial: Microsoft Entra SSO integration with Palo Alto Networks Admin UI](../saas-apps/paloaltoadmin-tutorial.md)|
-|Pulse Secure|[Tutorial: Microsoft Entra SSO integration with Pulse Connect Secure (PCS)](../saas-apps/pulse-secure-pcs-tutorial.md)</br>[Tutorial: Microsoft Entra SSO integration with Pulse Secure Virtual Traffic Manager](../saas-apps/pulse-secure-virtual-traffic-manager-tutorial.md)|
-|Zscaler, Inc.|[Tutorial: Integrate Zscaler Private Access with Microsoft Entra ID](../saas-apps/zscalerprivateaccess-tutorial.md)|
+|Amazon Web Service, Inc.|[Tutorial: Microsoft Entra SSO integration with AWS ClientVPN](~/identity/saas-apps/aws-clientvpn-tutorial.md)|
+|Check Point Software Technologies Ltd.|[Tutorial: Microsoft Entra single SSO integration with Check Point Remote Secure Access VPN](~/identity/saas-apps/check-point-remote-access-vpn-tutorial.md)|
+|Cisco Systems, Inc.|[Tutorial: Microsoft Entra SSO integration with Cisco AnyConnect](~/identity/saas-apps/cisco-anyconnect.md)|
+|Fortinet, Inc.|[Tutorial: Microsoft Entra SSO integration with FortiGate SSL VPN](~/identity/saas-apps/fortigate-ssl-vpn-tutorial.md)|
+|Palo Alto Networks|[Tutorial: Microsoft Entra SSO integration with Palo Alto Networks Admin UI](~/identity/saas-apps/paloaltoadmin-tutorial.md)|
+|Pulse Secure|[Tutorial: Microsoft Entra SSO integration with Pulse Connect Secure (PCS)](~/identity/saas-apps/pulse-secure-pcs-tutorial.md)</br>[Tutorial: Microsoft Entra SSO integration with Pulse Secure Virtual Traffic Manager](~/identity/saas-apps/pulse-secure-virtual-traffic-manager-tutorial.md)|
+|Zscaler, Inc.|[Tutorial: Integrate Zscaler Private Access with Microsoft Entra ID](~/identity/saas-apps/zscalerprivateaccess-tutorial.md)|
 
 ## Next steps 
 Select a partner in the tables mentioned to learn how to integrate their solution with Microsoft Entra ID.

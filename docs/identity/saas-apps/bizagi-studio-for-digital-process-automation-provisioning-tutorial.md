@@ -77,7 +77,7 @@ With the Microsoft Entra provisioning service, you can scope who is provisioned 
 Note the following points about scoping:
 
 * Start small. Test with a small set of users and groups before rolling out to everyone. When scope for provisioning is set to assigned users and groups, you can control this by assigning one or two users or groups to the app. When scope is set to all users and groups, you can specify an [attribute based scoping filter](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
-* If you need additional roles, you can [update the application manifest](~/identity-platform/howto-add-app-roles-in-azure-ad-apps.md) to add new roles.
+* If you need additional roles, you can [update the application manifest](~/identity-platform/howto-add-app-roles-in-apps.md) to add new roles.
 
 
 ## Configure automatic user provisioning 
@@ -162,7 +162,7 @@ This operation starts the initial synchronization cycle of all users and groups 
 ## Monitor your deployment
 After you've configured provisioning, use the following resources to monitor your deployment:
 
-- Use the [provisioning logs](../reports-monitoring/concept-provisioning-logs.md) to determine which users have been provisioned successfully or unsuccessfully.
+- Use the [provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md) to determine which users have been provisioned successfully or unsuccessfully.
 - Check the [progress bar](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md) to see the status of the provisioning cycle, and how close it is to completion.
 - If the provisioning configuration is in an unhealthy state, the application will go into quarantine. For more information, see [Application provisioning in quarantine status](~/identity/app-provisioning/application-provisioning-quarantine-status.md).  
 

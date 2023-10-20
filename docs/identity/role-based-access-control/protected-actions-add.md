@@ -44,7 +44,7 @@ Protected actions use a Conditional Access authentication context, so you must c
 
 1. Create a new policy and select your authentication context.
 
-    For more information, see [Conditional Access: Cloud apps, actions, and authentication context](../conditional-access/concept-conditional-access-cloud-apps.md#authentication-context).
+    For more information, see [Conditional Access: Cloud apps, actions, and authentication context](~/identity/conditional-access/concept-conditional-access-cloud-apps.md#authentication-context).
 
     :::image type="content" source="media/protected-actions-add/policy-authentication-context.png" alt-text="Screenshot of New policy page to create a new policy with an authentication context." lightbox="media/protected-actions-add/policy-authentication-context.png":::
 
@@ -154,7 +154,7 @@ No Conditional Access authentication context values have been enabled in the ten
 
 **Solution**
 
-Enable authentication context for the tenant by adding a new authentication context. Ensure **Publish to apps** is checked, so the value is available to be selected. For more information, see [Authentication context](../conditional-access/concept-conditional-access-cloud-apps.md#authentication-context).
+Enable authentication context for the tenant by adding a new authentication context. Ensure **Publish to apps** is checked, so the value is available to be selected. For more information, see [Authentication context](~/identity/conditional-access/concept-conditional-access-cloud-apps.md#authentication-context).
 
 ### Symptom - Policy isn't getting triggered
 
@@ -166,7 +166,7 @@ The user hasn't been assigned to the Conditional Access policies used for protec
 
 **Solution 1**
 
-Use Conditional Access [What If](../conditional-access/troubleshoot-conditional-access-what-if.md) tool to check if the user has been assigned policy. When using the tool, select the user and the authentication context that was used with the protected action. Select What If and verify the expected policy is listed in the **Policies that will apply** table. If the policy doesn't apply, check the policy user assignment condition, and add the user.
+Use Conditional Access [What If](~/identity/conditional-access/troubleshoot-conditional-access-what-if.md) tool to check if the user has been assigned policy. When using the tool, select the user and the authentication context that was used with the protected action. Select What If and verify the expected policy is listed in the **Policies that will apply** table. If the policy doesn't apply, check the policy user assignment condition, and add the user.
 
 **Cause 2**
 
@@ -174,7 +174,7 @@ The user has previously satisfied policy. For example, the completed multifactor
 
 **Solution 2**
 
-Check the [Microsoft Entra sign-in events](../conditional-access/troubleshoot-conditional-access.md) to troubleshoot. The sign-in events include details about the session, including if the user has already completed multifactor authentication. When troubleshooting with the sign-in logs, it's also helpful to check the policy details page, to confirm an authentication context was requested.  
+Check the [Microsoft Entra sign-in events](~/identity/conditional-access/troubleshoot-conditional-access.md) to troubleshoot. The sign-in events include details about the session, including if the user has already completed multifactor authentication. When troubleshooting with the sign-in logs, it's also helpful to check the policy details page, to confirm an authentication context was requested.  
 
 ### Symptom - Policy is never satisfied
 
@@ -219,4 +219,4 @@ Make sure you're using Microsoft Graph PowerShell.
 ## Next steps
 
 - [What are protected actions in Microsoft Entra ID?](protected-actions-overview.md)
-- [Conditional Access authentication context](../conditional-access/concept-conditional-access-cloud-apps.md#authentication-context)
+- [Conditional Access authentication context](~/identity/conditional-access/concept-conditional-access-cloud-apps.md#authentication-context)

@@ -93,4 +93,4 @@ Device Registration is a prerequisite to cloud-based authentication. Commonly, d
 - [Microsoft Entra registered devices](concept-device-registration.md)
 - [Microsoft Entra hybrid joined devices](concept-hybrid-join.md)
 - [What is a Primary Refresh Token?](concept-primary-refresh-token.md)
-- [Microsoft Entra Connect: Device options](../hybrid/connect/how-to-connect-device-options.md)
+- [Microsoft Entra Connect: Device options](~/identity/hybrid/connect/how-to-connect-device-options.md)

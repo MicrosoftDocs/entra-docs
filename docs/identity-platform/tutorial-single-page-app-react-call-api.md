@@ -35,7 +35,7 @@ To allow the SPA to request access to Microsoft Graph, a reference to the `graph
 
 - In the *src* folder, open *graph.js* and replace the contents of the file with the following code snippet to request access to Microsoft Graph.
 
-   :::code language="javascript" source="~/ms-identity-docs-code-javascript/react-spa/src/graph.js" :::
+   :::code language="javascript" source="~/../ms-identity-docs-code-javascript/react-spa/src/graph.js" :::
 
 ## Update imports to use components in the application
 

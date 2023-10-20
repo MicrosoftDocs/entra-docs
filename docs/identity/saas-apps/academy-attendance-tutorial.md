@@ -97,7 +97,7 @@ Follow these steps to enable Microsoft Entra SSO.
    | role | user.assignedroles |
 
    > [!NOTE]
-   > Academy Attendance supports two roles for users: **Lecturer** and **Student**. Set up these roles in Microsoft Entra ID so that users can be assigned the appropriate roles. Please refer to [this](~/identity-platform/howto-add-app-roles-in-azure-ad-apps.md#app-roles-ui) doc which explains how to create custom roles in Microsoft Entra ID.
+   > Academy Attendance supports two roles for users: **Lecturer** and **Student**. Set up these roles in Microsoft Entra ID so that users can be assigned the appropriate roles. Please refer to [this](~/identity-platform/howto-add-app-roles-in-apps.md#app-roles-ui) doc which explains how to create custom roles in Microsoft Entra ID.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 

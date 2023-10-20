@@ -88,7 +88,7 @@ With Microsoft Entra ID, applications like Salesforce can be pre-configured for 
 
 In this case, all assigned users would be automatically provisioned to Salesforce. As they are added to different groups their role assignment would be updated in Salesforce. Users can discover and access Salesforce through My Apps, Office web clients, or by navigating to their organizational Salesforce sign in page. Administrators can easily view usage and assignment status using Microsoft Entra reporting.
 
-Administrators can employ [Microsoft Entra Conditional Access](../conditional-access/concept-conditional-access-users-groups.md) to set access policies for specific roles. These policies can include whether access is permitted outside the corporate environment and even multifactor authentication or device requirements to achieve access in various cases.
+Administrators can employ [Microsoft Entra Conditional Access](~/identity/conditional-access/concept-conditional-access-users-groups.md) to set access policies for specific roles. These policies can include whether access is permitted outside the corporate environment and even multifactor authentication or device requirements to achieve access in various cases.
 
 ## Access to Microsoft applications
 
@@ -109,5 +109,5 @@ As with enterprise apps, you can [assign users](assign-user-or-group-access-port
 
 ## Next steps
 
-* [Protecting apps with Conditional Access](../conditional-access/concept-conditional-access-cloud-apps.md)
+* [Protecting apps with Conditional Access](~/identity/conditional-access/concept-conditional-access-cloud-apps.md)
 * [Self-service group management/SSAA](~/identity/users/groups-self-service-management.md)

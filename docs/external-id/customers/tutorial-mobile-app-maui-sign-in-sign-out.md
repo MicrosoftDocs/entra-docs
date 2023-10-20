@@ -48,7 +48,7 @@ The next steps will organize our code so that the `main view` is defined.
 1. Select **Add**.
 1. The _MainView.xaml_ file will open in a new document tab, displaying all of the XAML markup that represents the UI of the page. Replace the XAML markup with the following markup:
 
-   :::code language="xaml" source="~/ms-identity-ciam-dotnet-tutorial/1-Authentication/2-sign-in-maui/Views/MainView.xaml" :::
+   :::code language="xaml" source="~/../ms-identity-ciam-dotnet-tutorial/1-Authentication/2-sign-in-maui/Views/MainView.xaml" :::
 
 1. Save the file.
 
@@ -67,7 +67,7 @@ The next step is to add the code for the button's `Clicked` event.
 
 1. In the **Solution Explorer** pane of Visual Studio, expand the **MainView.xaml** file to reveal its code-behind file **MainView.xaml.cs**. Open the **MainView.xaml.cs** and replace the content of the file with following code:
 
-   :::code language="csharp" source="~/ms-identity-ciam-dotnet-tutorial/1-Authentication/2-sign-in-maui/Views/MainView.xaml.cs" :::
+   :::code language="csharp" source="~/../ms-identity-ciam-dotnet-tutorial/1-Authentication/2-sign-in-maui/Views/MainView.xaml.cs" :::
 
    The `MainView` class is a content page responsible for displaying the main view of the app. In the constructor, it retrieves the cached user account using the `MSALClientHelper` from the `PublicClientSingleton` instance and enables the sign-in button, if no cached user account is found.
 
@@ -84,7 +84,7 @@ The next steps will organize the code so that `ClaimsView` page is defined. The 
 1. Select **Add**.
 1. The _ClaimsView.xaml_ file will open in a new document tab, displaying all of the XAML markup that represents the UI of the page. Replace the XAML markup with the following markup:
 
-   :::code language="xaml" source="~/ms-identity-ciam-dotnet-tutorial/1-Authentication/2-sign-in-maui/Views/ClaimsView.xaml" :::
+   :::code language="xaml" source="~/../ms-identity-ciam-dotnet-tutorial/1-Authentication/2-sign-in-maui/Views/ClaimsView.xaml" :::
 
    This XAML markup code represents the UI layout for a claim view in a .NET MAUI app. It starts by defining the `ContentPage` with a title and disabling the back button behavior.
 
@@ -98,7 +98,7 @@ The next step is to add the code to handle `ClaimsView` data.
 
 1. In the **Solution Explorer** pane of Visual Studio, expand the **ClaimsView.xaml** file to reveal its code-behind file **ClaimsView.xaml.cs**. Open the **ClaimsView.xaml.cs** and replace the content of the file with following code:
 
-   :::code language="csharp" source="~/ms-identity-ciam-dotnet-tutorial/1-Authentication/2-sign-in-maui/Views/ClaimsView.xaml.cs" :::
+   :::code language="csharp" source="~/../ms-identity-ciam-dotnet-tutorial/1-Authentication/2-sign-in-maui/Views/ClaimsView.xaml.cs" :::
 
    The _ClaimsView.xaml.cs_ code represents the code-behind for a claim view in a .NET MAUI app. It starts by importing the necessary namespaces and defining the `ClaimsView` class, which extends `ContentPage`. The `IdTokenClaims` property is an enumerable of strings, initially set to a single string indicating no claims found.
 
@@ -112,13 +112,13 @@ The `AppShell` class defines an app's visual hierarchy, the XAML markup used in 
 
 1. Double-click the `AppShell.xaml` file in the **Solution Explorer** pane to open the XAML editor. Replace the XAML markup with the following code:
 
-   :::code language="xaml" source="~/ms-identity-ciam-dotnet-tutorial/1-Authentication/2-sign-in-maui/AppShell.xaml" :::
+   :::code language="xaml" source="~/../ms-identity-ciam-dotnet-tutorial/1-Authentication/2-sign-in-maui/AppShell.xaml" :::
 
    The XAML code defines an `AppShell` class that disables the flyout behavior and sets the main content to a `ShellContent` element with a title `Home` and a content template pointing to the `MainView` class.
 
 1. In the **Solution Explorer** pane of Visual Studio, expand the **AppShell.xaml** file to reveal its code-behind file **AppShell.xaml.cs**. Open the **AppShell.xaml.cs** and replace the content of the file with following code:
 
-   :::code language="csharp" source="~/ms-identity-ciam-dotnet-tutorial/1-Authentication/2-sign-in-maui/AppShell.xaml.cs" :::
+   :::code language="csharp" source="~/../ms-identity-ciam-dotnet-tutorial/1-Authentication/2-sign-in-maui/AppShell.xaml.cs" :::
 
    You update the `AppShell.xaml.cs` file to include the necessary route registrations for the `MainView` and `ClaimsView`. By calling the `InitializeComponent()` method, you ensure the initialization of the `AppShell` class. The `RegisterRoute()` method associate the `mainview` and `claimsview` routes with their respective view types, `MainView` and `ClaimsView`.
 
@@ -134,7 +134,7 @@ A .NET MAUI app project contains a Platforms folder, with each child folder repr
 
 1. Double-click `Platforms/Android/MainActivity.cs` file in the **Solution Explorer** pane to open the csharp editor. Replace the content of the file with following code:
 
-   :::code language="csharp" source="~/ms-identity-ciam-dotnet-tutorial/1-Authentication/2-sign-in-maui/Platforms/Android/MainActivity.cs" :::
+   :::code language="csharp" source="~/../ms-identity-ciam-dotnet-tutorial/1-Authentication/2-sign-in-maui/Platforms/Android/MainActivity.cs" :::
 
    Let's break down the key parts of the code you have added:
 
@@ -158,7 +158,7 @@ A .NET MAUI app project contains a Platforms folder, with each child folder repr
 1. Select **C# Items** > **Class**. Name the file `MsalActivity.cs`.
 1. Replace the content of `MsalActivity.cs` file with the following code:
 
-   :::code language="csharp" source="~/ms-identity-ciam-dotnet-tutorial/1-Authentication/2-sign-in-maui/Platforms/Android/MsalActivity.cs" :::
+   :::code language="csharp" source="~/../ms-identity-ciam-dotnet-tutorial/1-Authentication/2-sign-in-maui/Platforms/Android/MsalActivity.cs" :::
 
    Let's break down the key parts of the code you have added:
 
@@ -181,7 +181,7 @@ To create `appsettings.json`, follow these steps:
 1. In the **Properties** pane, set **Copy to Output Directory** to **Copy always**.
 1. Replace the content of `appsettings.json` file with the following code:
 
-   :::code language="json" source="~/ms-identity-ciam-dotnet-tutorial/1-Authentication/2-sign-in-maui/appsettings.json" :::
+   :::code language="json" source="~/../ms-identity-ciam-dotnet-tutorial/1-Authentication/2-sign-in-maui/appsettings.json" :::
 
 1. In the `appsettings.json`, find the placeholder:
 

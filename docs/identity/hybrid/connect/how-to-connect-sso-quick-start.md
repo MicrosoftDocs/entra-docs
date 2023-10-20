@@ -215,7 +215,7 @@ You might need to configure `AmbientAuthenticationInPrivateModesEnabled` for InP
 To test the feature for a specific user, ensure that all the following conditions are in place:
 
 - The user signs in on a corporate device.
-- The device is joined to your Windows Server AD domain. The device *doesn't* need to be [Microsoft Entra joined](../../devices/overview.md).
+- The device is joined to your Windows Server AD domain. The device *doesn't* need to be [Microsoft Entra joined](~/identity/devices/overview.md).
 - The device has a direct connection to your domain controller, either on the corporate wired or wireless network or via a remote access connection, such as a VPN connection.
 - You've [rolled out the feature](#roll-out-the-feature) to this user through Group Policy.
 

@@ -140,6 +140,6 @@ If a user's UPN changes, you can no longer modify FIDO2 security keys to account
 
 [Enable FIDO2 authentication to on-premises resources](howto-authentication-passwordless-security-key-on-premises.md)
 
-[Learn more about device registration](../devices/overview.md)
+[Learn more about device registration](~/identity/devices/overview.md)
 
 [Learn more about Microsoft Entra multifactor authentication](~/identity/authentication/howto-mfa-getstarted.md)

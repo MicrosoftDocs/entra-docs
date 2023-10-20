@@ -98,10 +98,10 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
 > | ---- | --------------------- | ---------------- |
-> | [Add or delete services](../hybrid/connect/how-to-connect-health-operations.md) | [Owner](/azure/role-based-access-control/built-in-roles#owner) |  |
+> | [Add or delete services](~/identity/hybrid/connect/how-to-connect-health-operations.md) | [Owner](/azure/role-based-access-control/built-in-roles#owner) |  |
 > | Apply fixes to sync error | [Contributor](/azure/role-based-access-control/built-in-roles#contributor) | [Owner](/azure/role-based-access-control/built-in-roles#owner) |
 > | Configure notifications | [Contributor](/azure/role-based-access-control/built-in-roles#contributor) | [Owner](/azure/role-based-access-control/built-in-roles#owner) |
-> | [Configure settings](../hybrid/connect/how-to-connect-health-operations.md) | [Owner](/azure/role-based-access-control/built-in-roles#owner) |  |
+> | [Configure settings](~/identity/hybrid/connect/how-to-connect-health-operations.md) | [Owner](/azure/role-based-access-control/built-in-roles#owner) |  |
 > | Configure sync notifications | [Contributor](/azure/role-based-access-control/built-in-roles#contributor) | [Owner](/azure/role-based-access-control/built-in-roles#owner) |
 > | Read ADFS security reports | [Security Reader](/azure/role-based-access-control/built-in-roles#security-reader) | [Contributor](/azure/role-based-access-control/built-in-roles#contributor)<br/>[Owner](/azure/role-based-access-control/built-in-roles#owner)
 > | Read all configuration | [Reader](/azure/role-based-access-control/built-in-roles#reader) | [Contributor](/azure/role-based-access-control/built-in-roles#contributor)<br/>[Owner](/azure/role-based-access-control/built-in-roles#owner) |
@@ -165,7 +165,7 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
 > | ---- | --------------------- | ---------------- |
-> | Add resources to a catalog | [Identity Governance Administrator](permissions-reference.md#identity-governance-administrator) | With entitlement management, you can delegate this task to the [catalog owner](../governance/entitlement-management-catalog-create.md#add-more-catalog-owners) |
+> | Add resources to a catalog | [Identity Governance Administrator](permissions-reference.md#identity-governance-administrator) | With entitlement management, you can delegate this task to the [catalog owner](~/id-governance/entitlement-management-catalog-create.md#add-more-catalog-owners) |
 > | Add SharePoint Online sites to catalog | [SharePoint Administrator](permissions-reference.md#sharepoint-administrator) |  |
 
 ## Groups

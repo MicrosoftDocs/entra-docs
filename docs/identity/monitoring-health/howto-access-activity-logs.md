@@ -42,7 +42,7 @@ The required roles and licenses may vary based on the report. Global Administrat
 | Usage and insights | Security Reader<br>Reports Reader<br> Security Administrator | Premium P1 or P2 |
 | Identity Protection* | Security Administrator<br>Security Operator<br>Security Reader<br>Global Reader | Microsoft Entra ID Free/Microsoft 365 Apps<br>Microsoft Entra ID P1 or P2 |
 
-*The level of access and capabilities for Identity Protection vary with the role and license. For more information, see the [license requirements for Identity Protection](../identity-protection/overview-identity-protection.md#license-requirements).
+*The level of access and capabilities for Identity Protection vary with the role and license. For more information, see the [license requirements for Identity Protection](~/id-protection/overview-identity-protection.md#license-requirements).
 
 Audit logs are available for features that you've licensed. To access the sign-in logs using the Microsoft Graph API, your tenant must have a Microsoft Entra ID P1 or P2 license associated with it.
 
@@ -170,8 +170,8 @@ Use the following basic steps to access the reports in the Microsoft Entra admin
 
 1. Browse to **Protection** > **Identity Protection**.
 1. Explore the available reports.
-    - [Learn more about Identity Protection](../identity-protection/overview-identity-protection.md)
-    - [Learn how to investigate risk](../identity-protection/howto-identity-protection-investigate-risk.md)
+    - [Learn more about Identity Protection](~/id-protection/overview-identity-protection.md)
+    - [Learn how to investigate risk](~/id-protection/howto-identity-protection-investigate-risk.md)
 
 #### Usage and insights reports
 

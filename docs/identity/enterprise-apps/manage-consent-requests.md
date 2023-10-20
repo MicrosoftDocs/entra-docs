@@ -44,7 +44,7 @@ This article provides guidance on managing consent to applications and evaluatin
 - If your organization has the appropriate license:
 
     - Use other [OAuth application auditing features in Microsoft Defender for Cloud Apps](/defender-cloud-apps/investigate-risky-oauth).
-    - Use [Azure Monitor Workbooks](../reports-monitoring/howto-use-workbooks.md)  to monitor permissions and consent-related activity. The *Consent Insights* workbook provides a view of apps by number of failed consent requests. This information can help you prioritize applications for administrators to review and decide whether to grant them admin consent.
+    - Use [Azure Monitor Workbooks](~/identity/monitoring-health/howto-use-workbooks.md)  to monitor permissions and consent-related activity. The *Consent Insights* workbook provides a view of apps by number of failed consent requests. This information can help you prioritize applications for administrators to review and decide whether to grant them admin consent.
 
 ### Other considerations for reducing friction
 

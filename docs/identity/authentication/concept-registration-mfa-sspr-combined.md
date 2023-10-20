@@ -124,11 +124,11 @@ Users can access manage mode by going to [Security info](https://aka.ms/mysecuri
 ## Key usage scenarios
 
 ### Update a password in MySignIns (preview)
-A user navigates to [Security info](https://aka.ms/mysecurityinfo). After signing in, the user can update their password. For more information about different authentication methods that you can require by using Conditional Access policies, see [How to secure the registration of security info](../conditional-access/howto-conditional-access-policy-registration.md). When finished, the user has the new password updated on the Security info page.
+A user navigates to [Security info](https://aka.ms/mysecurityinfo). After signing in, the user can update their password. For more information about different authentication methods that you can require by using Conditional Access policies, see [How to secure the registration of security info](~/identity/conditional-access/howto-conditional-access-policy-registration.md). When finished, the user has the new password updated on the Security info page.
 
 
 ### Protect Security info registration with Conditional Access
-To secure when and how users register for Microsoft Entra multifactor authentication and self-service password reset, you can use user actions in Conditional Access policy. This functionality may be enabled in organizations that want users to register for Microsoft Entra multifactor authentication and SSPR from a central location, such as a trusted network location during HR onboarding. Learn more on how to configure [common Conditional Access policies for securing security info registration.](../conditional-access/howto-conditional-access-policy-registration.md)
+To secure when and how users register for Microsoft Entra multifactor authentication and self-service password reset, you can use user actions in Conditional Access policy. This functionality may be enabled in organizations that want users to register for Microsoft Entra multifactor authentication and SSPR from a central location, such as a trusted network location during HR onboarding. Learn more on how to configure [common Conditional Access policies for securing security info registration.](~/identity/conditional-access/howto-conditional-access-policy-registration.md)
 
 
 ### Set up security info during sign-in

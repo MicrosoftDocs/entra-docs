@@ -72,8 +72,8 @@ In this case, you'll need to analyze your claims rules on the Microsoft Entra ID
 If necessary, configure Conditional Access policies before you enable Staged Rollout. 
 For more information, see the following resources:
 
-* [Plan a Conditional Access deployment](../conditional-access/plan-conditional-access.md)
-* [Common Conditional Access policies](../conditional-access/concept-conditional-access-policy-common.md)
+* [Plan a Conditional Access deployment](~/identity/conditional-access/plan-conditional-access.md)
+* [Common Conditional Access policies](~/identity/conditional-access/concept-conditional-access-policy-common.md)
 
 ## Prepare AD FS 
 
@@ -223,12 +223,12 @@ After you configure the servers, you can add Microsoft Entra multifactor authent
 
 ## Prepare Staged Rollout 
 
-Now you're ready to enable [Staged Rollout](../hybrid/connect/how-to-connect-staged-rollout.md). Staged Rollout helps you to iteratively move your users to either PHS or PTA while also migrating their on-premises MFA settings.
+Now you're ready to enable [Staged Rollout](~/identity/hybrid/connect/how-to-connect-staged-rollout.md). Staged Rollout helps you to iteratively move your users to either PHS or PTA while also migrating their on-premises MFA settings.
 
-* Be sure to review the [supported scenarios](../hybrid/connect/how-to-connect-staged-rollout.md#supported-scenarios). 
-* First, you'll need to do either the [prework for PHS](../hybrid/connect/how-to-connect-staged-rollout.md#prework-for-password-hash-sync) or the [prework for PTA](../hybrid/connect/how-to-connect-staged-rollout.md#prework-for-pass-through-authentication). We  recommend PHS. 
-* Next, you'll do the [prework for seamless SSO](../hybrid/connect/how-to-connect-staged-rollout.md#prework-for-seamless-sso). 
-* [Enable the Staged Rollout of cloud authentication](../hybrid/connect/how-to-connect-staged-rollout.md#enable-a-staged-rollout-of-a-specific-feature-on-your-tenant) for your selected authentication method. 
+* Be sure to review the [supported scenarios](~/identity/hybrid/connect/how-to-connect-staged-rollout.md#supported-scenarios). 
+* First, you'll need to do either the [prework for PHS](~/identity/hybrid/connect/how-to-connect-staged-rollout.md#prework-for-password-hash-sync) or the [prework for PTA](~/identity/hybrid/connect/how-to-connect-staged-rollout.md#prework-for-pass-through-authentication). We  recommend PHS. 
+* Next, you'll do the [prework for seamless SSO](~/identity/hybrid/connect/how-to-connect-staged-rollout.md#prework-for-seamless-sso). 
+* [Enable the Staged Rollout of cloud authentication](~/identity/hybrid/connect/how-to-connect-staged-rollout.md#enable-a-staged-rollout-of-a-specific-feature-on-your-tenant) for your selected authentication method. 
 * Add the group(s) you created for Staged Rollout. Remember that you'll add users to groups iteratively, and that they can't be dynamic groups or nested groups. 
 
 <a name='register-users-for-azure-ad-mfa'></a>
@@ -244,7 +244,7 @@ We recommend having your users register for combined security information, which
 Microsoft provides communication templates that you can provide to your users to guide them through the combined registration process. 
 These include templates for email, posters, table tents, and various other assets. Users register their information at `https://aka.ms/mysecurityinfo`, which takes them to the combined security registration screen. 
 
-We recommend that you [secure the security registration process with Conditional Access](../conditional-access/howto-conditional-access-policy-registration.md) that requires the registration to occur from a trusted device or location. For information on tracking registration statuses, see [Authentication method activity for Microsoft Entra ID](howto-authentication-methods-activity.md).
+We recommend that you [secure the security registration process with Conditional Access](~/identity/conditional-access/howto-conditional-access-policy-registration.md) that requires the registration to occur from a trusted device or location. For information on tracking registration statuses, see [Authentication method activity for Microsoft Entra ID](howto-authentication-methods-activity.md).
 > [!NOTE]
 > Users who MUST register their combined security information from a non-trusted location or device can be issued a Temporary Access Pass or alternatively, temporarily excluded from the policy.
 
@@ -266,7 +266,7 @@ We don't recommend that you reuse groups that are used for security. If you're u
 
 ## Monitoring
 
-Many [Azure Monitor workbooks](../reports-monitoring/howto-use-workbooks.md) and **Usage & Insights** reports are available to monitor your deployment. 
+Many [Azure Monitor workbooks](~/identity/monitoring-health/howto-use-workbooks.md) and **Usage & Insights** reports are available to monitor your deployment. 
 These reports can be found in Microsoft Entra ID in the navigation pane under **Monitoring**. 
 
 ### Monitoring Staged Rollout
@@ -305,7 +305,7 @@ We recommend reviewing MFA Server logs to ensure no users or applications are us
 
 ### Convert your domains to managed authentication
 
-You should now [convert your federated domains in Microsoft Entra ID to managed](../hybrid/connect/migrate-from-federation-to-cloud-authentication.md#convert-domains-from-federated-to-managed) and remove the Staged Rollout configuration. 
+You should now [convert your federated domains in Microsoft Entra ID to managed](~/identity/hybrid/connect/migrate-from-federation-to-cloud-authentication.md#convert-domains-from-federated-to-managed) and remove the Staged Rollout configuration. 
 This conversion ensures new users use cloud authentication without being added to the migration groups.
 
 ### Revert claims rules on AD FS and remove MFA Server authentication provider

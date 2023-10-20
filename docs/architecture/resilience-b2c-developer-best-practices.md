@@ -75,7 +75,7 @@ Upon subsequent authentication requests, Azure AD B2C reads and validates the co
 
 ### How to configure SSO
 
-[Configure SSO](../hybrid/connect/how-to-connect-sso-quick-start.md) to be tenant-wide (default) to allow multiple applications and user flows in your tenant to share the same user session. Tenant-wide configuration provides most resiliency to fresh authentication.  
+[Configure SSO](~/identity/hybrid/connect/how-to-connect-sso-quick-start.md) to be tenant-wide (default) to allow multiple applications and user flows in your tenant to share the same user session. Tenant-wide configuration provides most resiliency to fresh authentication.  
 
 ## Safe deployment practices
 
@@ -95,7 +95,7 @@ Azure AD B2C uses secrets for applications, APIs, policies, and encryption. The 
 
 ### How to implement secret rotation
 
-- Use [managed identities](../managed-identities-azure-resources/overview.md) for supported resources to authenticate to any service that supports Microsoft Entra authentication. When you use managed identities, you can manage resources automatically, including rotation of credentials.
+- Use [managed identities](~/identity/managed-identities-azure-resources/overview.md) for supported resources to authenticate to any service that supports Microsoft Entra authentication. When you use managed identities, you can manage resources automatically, including rotation of credentials.
 - Take an inventory of all the [keys and certificates configured](/azure/active-directory-b2c/policy-keys-overview) in Azure AD B2C. This list is likely to include keys used in custom policies, [APIs](/azure/active-directory-b2c/secure-rest-api), signing ID token, and certificates for SAML.
 - Using CICD, rotate secrets that are about to expire within two months from the anticipated peak season. The recommended maximum cryptoperiod of private keys associated to a certificate is one year.
 - Proactively monitor and rotate the API access credentials such as passwords, and certificates.

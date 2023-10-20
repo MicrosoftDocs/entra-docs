@@ -107,7 +107,7 @@ To reset the password, users go to the [password reset portal](https://aka.ms/ss
 
 * For hybrid users, SSPR writes back the password to the on-prem Active Directory via the Microsoft Entra Connect service. 
 
-Note: For users who have [Password hash synchronization (PHS)](../hybrid/connect/whatis-phs.md) disabled, SSPR stores the passwords in the on-prem Active Directory only.
+Note: For users who have [Password hash synchronization (PHS)](~/identity/hybrid/connect/whatis-phs.md) disabled, SSPR stores the passwords in the on-prem Active Directory only.
 
 ### Best practices
 
@@ -213,7 +213,7 @@ For more information, see [Customize the Microsoft Entra functionality for self-
 
 ### Password Writeback
 
-**Password Writeback** is enabled with [Microsoft Entra Connect](../hybrid/whatis-hybrid-identity.md) and writes password resets in the cloud back to an existing on-premises directory in real time. For more information, see [What is Password Writeback?](./concept-sspr-writeback.md)
+**Password Writeback** is enabled with [Microsoft Entra Connect](~/identity/hybrid/whatis-hybrid-identity.md) and writes password resets in the cloud back to an existing on-premises directory in real time. For more information, see [What is Password Writeback?](./concept-sspr-writeback.md)
 
 We recommend the following settings:
 

@@ -36,9 +36,9 @@ A first step in being able to detect unexpected events and potential attacks is 
 
 The log files you use for investigation and monitoring are:
 
-* [Microsoft Entra audit logs](../reports-monitoring/concept-audit-logs.md)
+* [Microsoft Entra audit logs](~/identity/monitoring-health/concept-audit-logs.md)
 
-* [Sign-in logs](../reports-monitoring/concept-sign-ins.md)
+* [Sign-in logs](~/identity/monitoring-health/concept-sign-ins.md)
 
 * [Microsoft 365 Audit logs](/microsoft-365/compliance/auditing-solutions-overview)
 
@@ -52,11 +52,11 @@ From the Azure portal, you can view the Microsoft Entra audit logs and download 
 
 * **[Azure Monitor](/azure/azure-monitor/overview)** – Enables automated monitoring and alerting of various conditions. Can create or use workbooks to combine data from different sources.
 
-* **[Azure Event Hubs](/azure/event-hubs/event-hubs-about)** integrated with a SIEM - [Microsoft Entra logs can be integrated to other SIEMs](../reports-monitoring/howto-stream-logs-to-event-hub.md) such as Splunk, ArcSight, QRadar and Sumo Logic via the Azure Event Hubs integration.
+* **[Azure Event Hubs](/azure/event-hubs/event-hubs-about)** integrated with a SIEM - [Microsoft Entra logs can be integrated to other SIEMs](~/identity/monitoring-health/howto-stream-logs-to-event-hub.md) such as Splunk, ArcSight, QRadar and Sumo Logic via the Azure Event Hubs integration.
 
 * **[Microsoft Defender for Cloud Apps](/cloud-app-security/what-is-cloud-app-security)** – Enables you to discover and manage apps, govern across apps and resources, and check your cloud apps’ compliance.
 
-* **[Securing workload identities with Identity Protection Preview](../identity-protection/concept-workload-identity-risk.md)** - Used to detect risk on workload identities across sign-in behavior and offline indicators of compromise.
+* **[Securing workload identities with Identity Protection Preview](~/id-protection/concept-workload-identity-risk.md)** - Used to detect risk on workload identities across sign-in behavior and offline indicators of compromise.
 
 The remainder of this article describes what to monitor and alert on. It is organized by the type of threat. Where there are pre-built solutions, you'll find links to them, after the table. Otherwise, you can build alerts using the preceding tools.
 
@@ -80,9 +80,9 @@ The following are links to specific articles that focus on monitoring and alerti
 
 | What to monitor| Risk level| Where| Notes |
 | - | - | - | - |
-| Extranet lockout trends| High| Microsoft Entra Connect Health| See, [Monitor AD FS using Microsoft Entra Connect Health](../hybrid/connect/how-to-connect-health-adfs.md) for tools and techniques to help detect extranet lock-out trends. |
-| Failed sign-ins|High | Connect Health Portal| Export or download the Risky IP report and follow the guidance at [Risky IP report (public preview)](../hybrid/connect/how-to-connect-health-adfs-risky-ip.md) for next steps. |
-| In privacy compliant| Low| Microsoft Entra Connect Health| Configure Microsoft Entra Connect Health to disable data collections and monitoring using the [User privacy and Microsoft Entra Connect Health](../hybrid/connect/reference-connect-health-user-privacy.md) article. |
+| Extranet lockout trends| High| Microsoft Entra Connect Health| See, [Monitor AD FS using Microsoft Entra Connect Health](~/identity/hybrid/connect/how-to-connect-health-adfs.md) for tools and techniques to help detect extranet lock-out trends. |
+| Failed sign-ins|High | Connect Health Portal| Export or download the Risky IP report and follow the guidance at [Risky IP report (public preview)](~/identity/hybrid/connect/how-to-connect-health-adfs-risky-ip.md) for next steps. |
+| In privacy compliant| Low| Microsoft Entra Connect Health| Configure Microsoft Entra Connect Health to disable data collections and monitoring using the [User privacy and Microsoft Entra Connect Health](~/identity/hybrid/connect/reference-connect-health-user-privacy.md) article. |
 | Potential brute force attack on LDAP| Medium| Microsoft Defender for Identity| Use sensor to help detect potential brute force attacks against LDAP. |
 | Account enumeration reconnaissance| Medium| Microsoft Defender for Identity| Use sensor to help perform account enumeration reconnaissance. |
 | General correlation between Microsoft Entra ID and Azure AD FS|Medium | Microsoft Defender for Identity| Use capabilities to correlate activities between your Microsoft Entra ID and Azure AD FS environments. |
@@ -101,7 +101,7 @@ The following are specific things to look for:
 | Microsoft Entra pass-through authentication errors|Medium | Application and Service Logs\Microsoft\AzureAdConnect\AuthenticationAgent\Admin| AADSTS80005 - Validation encountered unpredictable WebException| A transient error. Retry the request. If it continues to fail, contact Microsoft support. |
 | Microsoft Entra pass-through authentication errors| Medium| Application and Service Logs\Microsoft\AzureAdConnect\AuthenticationAgent\Admin| AADSTS80007 - An error occurred communicating with Active Directory| Check the agent logs for more information and verify that Active Directory is operating as expected. |
 | Microsoft Entra pass-through authentication errors|High | Win32 LogonUserA function API| Log on events 4624(s): An account was successfully logged on<br>- correlate with –<br>4625(F): An account failed to log on| Use with the suspected usernames on the domain controller that is authenticating requests. Guidance at [LogonUserA function (winbase.h)](/windows/win32/api/winbase/nf-winbase-logonusera) |
-| Microsoft Entra pass-through authentication errors| Medium| PowerShell script of domain controller| See the query after the table. | Use the information at [Microsoft Entra Connect: Troubleshoot Pass-through Authentication](../hybrid/connect/tshoot-connect-pass-through-authentication.md)for guidance. |
+| Microsoft Entra pass-through authentication errors| Medium| PowerShell script of domain controller| See the query after the table. | Use the information at [Microsoft Entra Connect: Troubleshoot Pass-through Authentication](~/identity/hybrid/connect/tshoot-connect-pass-through-authentication.md)for guidance. |
 
 ```Kusto
 
@@ -130,11 +130,11 @@ Organizations might need to monitor for and alert on the creation of new Microso
 
 Microsoft Entra ID and Microsoft Entra application proxy give remote users a single sign-on (SSO) experience. Users securely connect to on-premises apps without a virtual private network (VPN) or dual-homed servers and firewall rules. If your Microsoft Entra application proxy connector server is compromised, attackers could alter the SSO experience or change access to published applications.
 
-To configure monitoring for Application Proxy, see [Troubleshoot Application Proxy problems and error messages](../app-proxy/application-proxy-troubleshoot.md). The data file that logs information can be found in Applications and Services Logs\Microsoft\AadApplicationProxy\Connector\Admin. For a complete reference guide to audit activity, see [Microsoft Entra audit activity reference](../reports-monitoring/reference-audit-activities.md). Specific things to monitor:
+To configure monitoring for Application Proxy, see [Troubleshoot Application Proxy problems and error messages](~/identity/app-proxy/application-proxy-troubleshoot.md). The data file that logs information can be found in Applications and Services Logs\Microsoft\AadApplicationProxy\Connector\Admin. For a complete reference guide to audit activity, see [Microsoft Entra audit activity reference](~/identity/monitoring-health/reference-audit-activities.md). Specific things to monitor:
 
 | What to monitor| Risk level| Where| Filter/sub-filter| Notes |
 | - | - | - | - | - |
-| Kerberos errors| Medium | Various tools| Medium | Kerberos authentication error guidance under Kerberos errors on [Troubleshoot Application Proxy problems and error messages](../app-proxy/application-proxy-troubleshoot.md). |
+| Kerberos errors| Medium | Various tools| Medium | Kerberos authentication error guidance under Kerberos errors on [Troubleshoot Application Proxy problems and error messages](~/identity/app-proxy/application-proxy-troubleshoot.md). |
 | DC security issues| High| DC Security Audit logs| Event ID 4742(S): A computer account was changed<br>-and-<br>Flag – Trusted for Delegation<br>-or-<br>Flag – Trusted to Authenticate for Delegation| Investigate any flag change. |
 | Pass-the-ticket like attacks| High| | | Follow guidance in:<br>[Security principal reconnaissance (LDAP) (external ID 2038)](/defender-for-identity/reconnaissance-discovery-alerts)<br>[Tutorial: Compromised credential alerts](/defender-for-identity/credential-access-alerts)<br>[Understand and use Lateral Movement Paths with Microsoft Defender for Identity](/defender-for-identity/understand-lateral-movement-paths)<br>[Understanding entity profiles](/defender-for-identity/investigate-assets) |
 
@@ -142,7 +142,7 @@ To configure monitoring for Application Proxy, see [Troubleshoot Application Pro
 
 For multifactor authentication (MFA) to be effective, you also need to block legacy authentication. You then need to monitor your environment and alert on any use of legacy authentication. Legacy authentication protocols like POP, SMTP, IMAP, and MAPI can’t enforce MFA. This makes these protocols the preferred entry points for attackers. For more information on tools that you can use to block legacy authentication, see [New tools to block legacy authentication in your organization](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/new-tools-to-block-legacy-authentication-in-your-organization/ba-p/1225302).
 
-Legacy authentication is captured in the Microsoft Entra sign-in log as part of the detail of the event. You can use the Azure Monitor workbook to help with identifying legacy authentication usage. For more information, see [Sign-ins using legacy authentication](../reports-monitoring/howto-use-workbooks.md), which is part of [How to use Azure Monitor Workbooks for Microsoft Entra reports](../reports-monitoring/howto-use-workbooks.md). You can also use the Insecure protocols workbook for Microsoft Sentinel. For more information, see [Microsoft Sentinel Insecure Protocols Workbook Implementation Guide](https://techcommunity.microsoft.com/t5/azure-sentinel/azure-sentinel-insecure-protocols-workbook-implementation-guide/ba-p/1197564). Specific activities to monitor include:
+Legacy authentication is captured in the Microsoft Entra sign-in log as part of the detail of the event. You can use the Azure Monitor workbook to help with identifying legacy authentication usage. For more information, see [Sign-ins using legacy authentication](~/identity/monitoring-health/howto-use-workbooks.md), which is part of [How to use Azure Monitor Workbooks for Microsoft Entra reports](~/identity/monitoring-health/howto-use-workbooks.md). You can also use the Insecure protocols workbook for Microsoft Sentinel. For more information, see [Microsoft Sentinel Insecure Protocols Workbook Implementation Guide](https://techcommunity.microsoft.com/t5/azure-sentinel/azure-sentinel-insecure-protocols-workbook-implementation-guide/ba-p/1197564). Specific activities to monitor include:
 
 | What to monitor| Risk level| Where| Filter/sub-filter| Notes |
 | - | - | - | - | - |
@@ -154,11 +154,11 @@ Legacy authentication is captured in the Microsoft Entra sign-in log as part of 
 
 Microsoft Entra Connect provides a centralized location that enables account and attribute synchronization between your on-premises and cloud-based Microsoft Entra environment. Microsoft Entra Connect is the Microsoft tool designed to meet and accomplish your hybrid identity goals. It provides the following features:
 
-* [Password hash synchronization](../hybrid/connect/whatis-phs.md) - A sign-in method that synchronizes a hash of a user’s on-premises AD password with Microsoft Entra ID.
+* [Password hash synchronization](~/identity/hybrid/connect/whatis-phs.md) - A sign-in method that synchronizes a hash of a user’s on-premises AD password with Microsoft Entra ID.
 
-* [Synchronization](../hybrid/connect/how-to-connect-sync-whatis.md) - Responsible for creating users, groups, and other objects. And, making sure identity information for your on-premises users and groups matches the cloud. This synchronization also includes password hashes.
+* [Synchronization](~/identity/hybrid/connect/how-to-connect-sync-whatis.md) - Responsible for creating users, groups, and other objects. And, making sure identity information for your on-premises users and groups matches the cloud. This synchronization also includes password hashes.
 
-* [Health Monitoring](../hybrid/connect/whatis-azure-ad-connect.md) - Microsoft Entra Connect Health can provide robust monitoring and provide a central location in the Azure portal to view this activity.
+* [Health Monitoring](~/identity/hybrid/connect/whatis-azure-ad-connect.md) - Microsoft Entra Connect Health can provide robust monitoring and provide a central location in the Azure portal to view this activity.
 
 Synchronizing identity between your on-premises environment and your cloud environment introduces a new attack surface for your on-premises and cloud-based environment. We recommend:
 
@@ -192,13 +192,13 @@ For information on what and how to monitor configuration information refer to:
 
 * For Microsoft Sentinel, see [Connect to Windows servers to collect security events](/sql/relational-databases/security/auditing/sql-server-audit-records).
 
-* For information on configuring and using Microsoft Entra Connect, see [What is Microsoft Entra Connect?](../hybrid/connect/whatis-azure-ad-connect.md)
+* For information on configuring and using Microsoft Entra Connect, see [What is Microsoft Entra Connect?](~/identity/hybrid/connect/whatis-azure-ad-connect.md)
 
 ### Monitoring and troubleshooting synchronization
 
  One function of Microsoft Entra Connect is to synchronize hash synchronization between a user’s on-premises password and Microsoft Entra ID. If passwords aren't synchronizing as expected, the synchronization might affect a subset of users or all users. Use the following to help verify proper operation or troubleshoot issues:
 
-* Information for checking and troubleshooting hash synchronization, see [Troubleshoot password hash synchronization with Microsoft Entra Connect Sync](../hybrid/connect/tshoot-connect-password-hash-synchronization.md).
+* Information for checking and troubleshooting hash synchronization, see [Troubleshoot password hash synchronization with Microsoft Entra Connect Sync](~/identity/hybrid/connect/tshoot-connect-password-hash-synchronization.md).
 
 * Modifications to the connector spaces, see [Troubleshoot Microsoft Entra Connect objects and attributes](/troubleshoot/azure/active-directory/troubleshoot-aad-connect-objects-attributes).
 
@@ -206,7 +206,7 @@ For information on what and how to monitor configuration information refer to:
 
 | What to monitor | Resources |
 | - | - |
-| Hash synchronization validation|See [Troubleshoot password hash synchronization with Microsoft Entra Connect Sync](../hybrid/connect/tshoot-connect-password-hash-synchronization.md) |
+| Hash synchronization validation|See [Troubleshoot password hash synchronization with Microsoft Entra Connect Sync](~/identity/hybrid/connect/tshoot-connect-password-hash-synchronization.md) |
  Modifications to the connector spaces|see [Troubleshoot Microsoft Entra Connect objects and attributes](/troubleshoot/azure/active-directory/troubleshoot-aad-connect-objects-attributes) |
 | Modifications to rules you configured| Monitor changes to: filtering, domain and OU, attribute, and group-based changes |
 | SQL and MSDE changes | Changes to logging parameters and addition of custom functions |
@@ -230,7 +230,7 @@ Monitoring single sign-on and Kerberos activity can help you detect general cred
 
 | What to monitor| Risk level| Where| Filter/sub-filter| Notes |
 | - | - | - | - | - |
-| Errors associated with SSO and Kerberos validation failures|Medium | Microsoft Entra sign-in log| | Single sign-on list of error codes at [Single sign-on](../hybrid/connect/tshoot-connect-sso.md). |
+| Errors associated with SSO and Kerberos validation failures|Medium | Microsoft Entra sign-in log| | Single sign-on list of error codes at [Single sign-on](~/identity/hybrid/connect/tshoot-connect-sso.md). |
 | Query for troubleshooting errors|Medium | PowerShell| See query following table. check in each forest with SSO enabled.| Check in each forest with SSO enabled. |
 | Kerberos-related events|High | Microsoft Defender for Identity monitoring| | Review guidance available at [Microsoft Defender for Identity Lateral Movement Paths (LMPs)](/defender-for-identity/understand-lateral-movement-paths) |
 
@@ -260,13 +260,13 @@ Detailed information for planning and implementing on-premises password protecti
 
 * \Applications and Services Logs\Microsoft\AzureADPasswordProtection\DCAgent\Trace
 
-The DC agent Admin log is the primary source of information for how the software is behaving. By default, the Trace log is off and must be enabled before data is logged. To troubleshoot application proxy problems and error messages, detailed information is available at [Troubleshoot Microsoft Entra application proxy](../app-proxy/application-proxy-troubleshoot.md). Information for these events is logged in:
+The DC agent Admin log is the primary source of information for how the software is behaving. By default, the Trace log is off and must be enabled before data is logged. To troubleshoot application proxy problems and error messages, detailed information is available at [Troubleshoot Microsoft Entra application proxy](~/identity/app-proxy/application-proxy-troubleshoot.md). Information for these events is logged in:
 
 * Applications and Services Logs\Microsoft\AadApplicationProxy\Connector\Admin
 
 * Microsoft Entra audit log, Category Application Proxy
 
-Complete reference for Microsoft Entra audit activities is available at [Microsoft Entra audit activity reference](../reports-monitoring/reference-audit-activities.md).
+Complete reference for Microsoft Entra audit activities is available at [Microsoft Entra audit activity reference](~/identity/monitoring-health/reference-audit-activities.md).
 
 ## Conditional Access
 
@@ -274,9 +274,9 @@ In Microsoft Entra ID, you can protect access to your resources by configuring C
 
 **Workbook Links**
 
-* [Conditional Access insights and reporting](../conditional-access/howto-conditional-access-insights-reporting.md)
+* [Conditional Access insights and reporting](~/identity/conditional-access/howto-conditional-access-insights-reporting.md)
 
-* [Conditional Access gap analysis workbook](../reports-monitoring/workbook-conditional-access-gap-analyzer.md)
+* [Conditional Access gap analysis workbook](~/identity/monitoring-health/workbook-conditional-access-gap-analyzer.md)
 
 Monitor changes to Conditional Access policies using the following information:
 

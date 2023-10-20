@@ -26,7 +26,7 @@ Follow these steps to set up Windows smart card sign-in:
 
 1. Join the machine to either Microsoft Entra ID or a hybrid environment (hybrid join). 
 1. Configure Microsoft Entra CBA in your tenant as described in [Configure Microsoft Entra CBA](how-to-certificate-based-authentication.md).
-1. Make sure the user is either on managed authentication or using [Staged Rollout](../hybrid/connect/how-to-connect-staged-rollout.md). 
+1. Make sure the user is either on managed authentication or using [Staged Rollout](~/identity/hybrid/connect/how-to-connect-staged-rollout.md). 
 1. Present the physical or virtual smart card to the test machine.
 1. Select the smart card icon, enter the PIN, and authenticate the user.  
 

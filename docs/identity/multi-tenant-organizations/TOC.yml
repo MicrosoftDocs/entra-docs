@@ -46,7 +46,7 @@
     - name: Provision on-demand
       href: ~/identity/app-provisioning/provision-on-demand.md?toc=/azure/active-directory/multi-tenant-organizations/toc.json&pivots=cross-tenant-synchronization
     - name: Provisioning logs
-      href: ../reports-monitoring/concept-provisioning-logs.md?toc=/azure/active-directory/multi-tenant-organizations/toc.json&pivots=cross-tenant-synchronization
+      href: ~/identity/monitoring-health/concept-provisioning-logs.md?toc=/azure/active-directory/multi-tenant-organizations/toc.json&pivots=cross-tenant-synchronization
     - name: Known issues
       href: ~/identity/app-provisioning/known-issues.md?toc=/azure/active-directory/multi-tenant-organizations/toc.json&pivots=cross-tenant-synchronization
 - name: Reference

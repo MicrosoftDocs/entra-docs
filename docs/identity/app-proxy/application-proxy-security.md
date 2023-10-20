@@ -37,7 +37,7 @@ If you choose Passthrough as your preauthentication method, you don't get this b
 
 Apply richer policy controls before connections to your network are established.
 
-With [Conditional Access](../conditional-access/concept-conditional-access-cloud-apps.md), you can define restrictions on how users are allowed to access your applications. You can create policies that restrict sign-ins based on location, strength of authentication, and user risk profile.
+With [Conditional Access](~/identity/conditional-access/concept-conditional-access-cloud-apps.md), you can define restrictions on how users are allowed to access your applications. You can create policies that restrict sign-ins based on location, strength of authentication, and user risk profile.
 
 You can also use Conditional Access to configure Multi-Factor Authentication policies, adding another layer of security to your user authentications. Additionally, your applications can also be routed to Microsoft Defender for Cloud Apps via Microsoft Entra Conditional Access to provide real-time monitoring and controls, via [access](/defender-cloud-apps/access-policy-aad) and [session](/defender-cloud-apps/session-policy-aad) policies
 
@@ -59,7 +59,7 @@ For more information about connectors, see [Understand Microsoft Entra applicati
 
 Get cutting-edge security protection.
 
-Because it's part of Microsoft Entra ID, Application Proxy can leverage [Microsoft Entra ID Protection](../identity-protection/overview-identity-protection.md), with data from the Microsoft Security Response Center and Digital Crimes Unit. Together we proactively identify compromised accounts and offer protection from high-risk sign-ins. We take into account numerous factors to determine which sign-in attempts are high risk. These factors include flagging infected devices, anonymizing networks, and atypical or unlikely locations.
+Because it's part of Microsoft Entra ID, Application Proxy can leverage [Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md), with data from the Microsoft Security Response Center and Digital Crimes Unit. Together we proactively identify compromised accounts and offer protection from high-risk sign-ins. We take into account numerous factors to determine which sign-in attempts are high risk. These factors include flagging infected devices, anonymizing networks, and atypical or unlikely locations.
 
 Many of these reports and events are already available through an API for integration with your security information and event management (SIEM) systems.
 

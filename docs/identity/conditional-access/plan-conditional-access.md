@@ -31,7 +31,7 @@ Microsoft provides [security defaults](~/fundamentals/security-defaults.md) that
 
 * A working Microsoft Entra tenant with Microsoft Entra ID P1, P2, or trial license enabled. If needed, [create one for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
    * Microsoft Entra ID P2 is required to include Identity Protection risk in Conditional Access policies.
-* Administrators who interact with Conditional Access must have one or more of the following role assignments depending on the tasks they're performing. To follow the [Zero Trust principle of least privilege](/security/zero-trust/), consider using [Privileged Identity Management (PIM)](../privileged-identity-management/pim-configure.md) to just-in-time activate privileged role assignments.
+* Administrators who interact with Conditional Access must have one or more of the following role assignments depending on the tasks they're performing. To follow the [Zero Trust principle of least privilege](/security/zero-trust/), consider using [Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/pim-configure.md) to just-in-time activate privileged role assignments.
    * Read Conditional Access policies and configurations 
       * [Security Reader](~/identity/role-based-access-control/permissions-reference.md#security-reader)
       * [Global Reader](~/identity/role-based-access-control/permissions-reference.md#global-reader)
@@ -83,13 +83,13 @@ Will this policy apply to any application, user action, or authentication contex
    * What locations will be included in or excluded from the policy?
 * What client app types will be included in or excluded from the policy?
 * Do you need to target specific device attributes? 
-* If using [Identity Protection](../identity-protection/concept-identity-protection-risks.md), do you want to incorporate sign-in or user risk?
+* If using [Identity Protection](~/id-protection/concept-identity-protection-risks.md), do you want to incorporate sign-in or user risk?
 
 ##### User and sign-in risk
 
 For organizations with Microsoft Entra ID P2 licenses, they can include user and sign-in risk in their Conditional Access policies. These additions can help reduce the friction of security measures by requiring multifactor authentication or secure password change only when a user or sign-in is considered risky.
 
-For more information about risk and its use in policy, see the article [What is risk](../identity-protection/concept-identity-protection-risks.md).
+For more information about risk and its use in policy, see the article [What is risk](~/id-protection/concept-identity-protection-risks.md).
 
 #### Block or grant controls
 
@@ -161,7 +161,7 @@ By default, each policy created from template is created in report-only mode. We
 
 [Enable policies in report-only mode](howto-conditional-access-insights-reporting.md). Once you save a policy in report-only mode, you can see the effect on real-time sign-ins in the sign-in logs. From the sign-in logs, select an event and navigate to the **Report-only** tab to see the result of each report-only policy.
 
-You can view the aggregate affects of your Conditional Access policies in the **Insights and Reporting workbook**. To access the workbook, you need an Azure Monitor subscription and you'll need to [stream your sign-in logs to a log analytics workspace](../reports-monitoring/howto-integrate-activity-logs-with-azure-monitor-logs.md).
+You can view the aggregate affects of your Conditional Access policies in the **Insights and Reporting workbook**. To access the workbook, you need an Azure Monitor subscription and you'll need to [stream your sign-in logs to a log analytics workspace](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.md).
 
 ### Plan for disruption
 
@@ -226,10 +226,10 @@ Perform each test in your test plan with test users. The test plan is important 
 
 | Policy | Scenario | Expected Result |
 |---|---|---|
-| [Risky sign-ins](../identity-protection/howto-identity-protection-configure-risk-policies.md) | User signs into App using an unapproved browser | Calculates a risk score based on the probability that the sign-in wasn't performed by the user. Requires user to self-remediate using MFA |
+| [Risky sign-ins](~/id-protection/howto-identity-protection-configure-risk-policies.md) | User signs into App using an unapproved browser | Calculates a risk score based on the probability that the sign-in wasn't performed by the user. Requires user to self-remediate using MFA |
 | [Device management](./concept-conditional-access-grant.md) | Authorized user attempts to sign in from an authorized device | Access granted |
 | [Device management](./concept-conditional-access-grant.md) | Authorized user attempts to sign in from an unauthorized device | Access blocked |
-| [Password change for risky users](../identity-protection/howto-identity-protection-configure-risk-policies.md) | Authorized user attempts to sign in with compromised credentials (high risk sign-in) | User is prompted to change password or access is blocked based on your policy |
+| [Password change for risky users](~/id-protection/howto-identity-protection-configure-risk-policies.md) | Authorized user attempts to sign in with compromised credentials (high risk sign-in) | User is prompted to change password or access is blocked based on your policy |
 
 ### Deploy in production
 
@@ -272,6 +272,6 @@ Once you've collected the information, See the following resources:
 
 [Learn more about Multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md)
 
-[Learn more about Identity Protection](../identity-protection/overview-identity-protection.md)
+[Learn more about Identity Protection](~/id-protection/overview-identity-protection.md)
 
 [Manage Conditional Access policies with Microsoft Graph API](/graph/api/resources/conditionalaccesspolicy)

@@ -28,7 +28,7 @@ The identifier for a directory extension attribute is of the form `extension_xxx
 
 Register directory extension attributes in one of the following ways:
 
-- Configure Microsoft Entra Connect to create them and to sync data into them from on-premises. See [Microsoft Entra Connect Sync Directory Extensions](../hybrid/connect/how-to-connect-sync-feature-directory-extensions.md).
+- Configure Microsoft Entra Connect to create them and to sync data into them from on-premises. See [Microsoft Entra Connect Sync Directory Extensions](~/identity/hybrid/connect/how-to-connect-sync-feature-directory-extensions.md).
 - Use Microsoft Graph to register, set the values of, and read from [directory extensions](/graph/extensibility-overview#directory-azure-ad-extensions). [PowerShell cmdlets](/powershell/azure/active-directory/using-extension-attributes-sample) are also available.
 
 <a name='emit-claims-with-data-from-azure-ad-connect'></a>

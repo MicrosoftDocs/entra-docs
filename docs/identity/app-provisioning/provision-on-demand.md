@@ -68,7 +68,7 @@ The provisioning service attempts to authorize access to the target system by ma
 
 #### Troubleshooting tips
 
-* Ensure that you've provided valid credentials, such as the secret token and tenant URL, to the target system. The required credentials vary by application. For detailed configuration tutorials, see the [tutorial list](../saas-apps/tutorial-list.md). 
+* Ensure that you've provided valid credentials, such as the secret token and tenant URL, to the target system. The required credentials vary by application. For detailed configuration tutorials, see the [tutorial list](~/identity/saas-apps/tutorial-list.md). 
 * Make sure that the target system supports filtering on the matching attributes defined in the **Attribute mappings** pane. You might need to check the API documentation provided by the application developer to understand the supported filters.
 * For System for Cross-domain Identity Management (SCIM) applications, you can use a tool like Postman. Such tools help you ensure that the application responds to authorization requests in the way that the Microsoft Entra provisioning service expects. Have a look at an [example request](./use-scim-to-provision-users-and-groups.md#request-3).
 
@@ -150,7 +150,7 @@ The **View details** section displays the attributes that were modified in the t
 
 #### Troubleshooting tips
 
-* Failures for exporting changes can vary greatly. Check the [documentation for provisioning logs](../reports-monitoring/howto-analyze-provisioning-logs.md#error-codes) for common failures.
+* Failures for exporting changes can vary greatly. Check the [documentation for provisioning logs](~/identity/monitoring-health/howto-analyze-provisioning-logs.md#error-codes) for common failures.
 * On-demand provisioning says the group or user can't be provisioned because they're not assigned to the application. There's a replication delay of up to a few minutes between when an object is assigned to an application and when that assignment is honored in on-demand provisioning. You may need to wait a few minutes and try again.  
 
 ## Frequently asked questions

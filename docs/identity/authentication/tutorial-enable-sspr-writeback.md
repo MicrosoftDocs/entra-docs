@@ -47,7 +47,7 @@ To complete this tutorial, you need the following resources and privileges:
 * Microsoft Entra ID configured for self-service password reset.
     * If needed, [complete the previous tutorial to enable Microsoft Entra SSPR](tutorial-enable-sspr.md).
 * An existing on-premises AD DS environment configured with a current version of Microsoft Entra Connect.
-    * If needed, configure Microsoft Entra Connect using the [Express](../hybrid/connect/how-to-connect-install-express.md) or [Custom](../hybrid/connect/how-to-connect-install-custom.md) settings.
+    * If needed, configure Microsoft Entra Connect using the [Express](~/identity/hybrid/connect/how-to-connect-install-express.md) or [Custom](~/identity/hybrid/connect/how-to-connect-install-custom.md) settings.
     * To use password writeback, domain controllers can run any supported version of Windows Server.
 
 <a name='configure-account-permissions-for-azure-ad-connect'></a>

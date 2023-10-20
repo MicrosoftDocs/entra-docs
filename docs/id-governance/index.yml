@@ -93,7 +93,7 @@ landingContent:
       - linkListType: overview
         links:
           - text: What is Privileged Identity Management?
-            url: ../privileged-identity-management/pim-configure.md
+            url: ~/id-governance/privileged-identity-management/pim-configure.md
   
   # Card
   - title: Ensure users see disclaimers
@@ -101,4 +101,4 @@ landingContent:
       - linkListType: how-to-guide
         links:
           - text: Require users to agree to a terms of use when using an app
-            url: ../conditional-access/terms-of-use.md
+            url: ~/identity/conditional-access/terms-of-use.md

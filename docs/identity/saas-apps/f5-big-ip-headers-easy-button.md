@@ -33,7 +33,7 @@ Being legacy, the application lacks modern protocols to support a direct integra
 Having a BIG-IP in front of the application enables us to overlay the service with Microsoft Entra pre-authentication and headers-based SSO, significantly improving the overall security posture of the application.
 
 > [!NOTE] 
-> Organizations can also gain remote access to this type of application with [Microsoft Entra application proxy](../app-proxy/application-proxy.md).
+> Organizations can also gain remote access to this type of application with [Microsoft Entra application proxy](~/identity/app-proxy/application-proxy.md).
 
 ## Scenario architecture
 
@@ -76,7 +76,7 @@ Prior BIG-IP experience isn’t necessary, but you’ll need:
 
   * 90-day BIG-IP full feature [trial license](https://www.f5.com/trial/big-ip-trial.php).
 
-* User identities [synchronized](../hybrid/how-to-connect-sync-whatis.md) from an on-premises directory to Microsoft Entra ID.
+* User identities [synchronized](~/identity/hybrid/how-to-connect-sync-whatis.md) from an on-premises directory to Microsoft Entra ID.
 
 * An account with Microsoft Entra application admin [permissions](/azure/active-directory/users-groups-roles/directory-assign-admin-roles#application-administrator).
 
