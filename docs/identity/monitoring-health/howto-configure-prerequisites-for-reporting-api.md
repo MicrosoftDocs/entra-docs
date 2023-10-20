@@ -44,7 +44,7 @@ To enable your application to access Microsoft Graph without user intervention, 
 
 [!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Reader](../roles/permissions-reference.md#security-reader).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Reader](~/identity/role-based-access-control/permissions-reference.md#security-reader).
 1. Browse to **Identity** > **Applications** > **App registrations**.
 
 1. Select **New registration**.
@@ -109,7 +109,7 @@ You need these values when configuring calls to the reporting API. We recommend 
 1. Copy the **Directory (tenant) ID**.
 1. Copy the **Application (client) ID**.
 1. Browse to **Certificates & secrets** > **Certificates** > **Upload certificate** and upload your certificate's public key file.
-    - If you don't have a certificate to upload, follow the steps outlined in the [Create a self-signed certificate to authenticate your application](../develop/howto-create-self-signed-certificate.md) article. 
+    - If you don't have a certificate to upload, follow the steps outlined in the [Create a self-signed certificate to authenticate your application](~/identity-platform/howto-create-self-signed-certificate.md) article. 
 
 Next you need to authenticate with the configuration settings you just gathered. Open PowerShell and run the following command, replacing the placeholders with your information.
 

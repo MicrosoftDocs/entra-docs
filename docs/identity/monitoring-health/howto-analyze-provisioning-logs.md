@@ -32,7 +32,7 @@ Application owners can view logs for their own applications. The following roles
 - Application Administrator
 - Cloud Application Administrator
 - Global Administrator
-- Users in a custom role with the [provisioningLogs permission](../roles/custom-enterprise-app-permissions.md#full-list-of-permissions)
+- Users in a custom role with the [provisioningLogs permission](~/identity/role-based-access-control/custom-enterprise-app-permissions.md#full-list-of-permissions)
 
 ## How to view the provisioning logs
 
@@ -48,7 +48,7 @@ There are several ways to view or analyze the Provisioning logs:
 
 To access the logs in the Azure portal:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../roles/permissions-reference.md#reports-reader).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](~/identity/role-based-access-control/permissions-reference.md#reports-reader).
 1. Browse to **Identity** > **Monitoring & health** > **Provisioning logs**.
 
 

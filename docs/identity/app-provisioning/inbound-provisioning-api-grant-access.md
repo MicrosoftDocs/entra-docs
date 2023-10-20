@@ -21,7 +21,7 @@ After you've configured [API-driven inbound provisioning app](inbound-provisioni
 
 Depending on how your API client authenticates with Microsoft Entra ID, you can select between two configuration options: 
 
-* [Configure a service principal](#configure-a-service-principal): Follow these instructions if your API client plans to use a service principal of an [Microsoft Entra registered app](../develop/howto-create-service-principal-portal.md) and authenticate using OAuth client credentials grant flow. 
+* [Configure a service principal](#configure-a-service-principal): Follow these instructions if your API client plans to use a service principal of an [Microsoft Entra registered app](~/identity-platform/howto-create-service-principal-portal.md) and authenticate using OAuth client credentials grant flow. 
 * [Configure a managed identity](#configure-a-managed-identity): Follow these instructions if your API client plans to use a Microsoft Entra [managed identity](../managed-identities-azure-resources/overview.md).
 
 ## Configure a service principal 
@@ -44,7 +44,7 @@ This configuration registers an app in Microsoft Entra ID that represents the ex
 1. Click on **Grant admin consent** on the next screen to complete the permission assignment. Click Yes on the confirmation dialog. Your app should have the following permission sets.
       [![Screenshot of app permissions.](media/inbound-provisioning-api-grant-access/api-client-permissions.png)](media/inbound-provisioning-api-grant-access/api-client-permissions.png#lightbox)  
 1. You're now ready to use the service principal with your API client.
-1. For production workloads, we recommend using [client certificate-based authentication](../develop/howto-authenticate-service-principal-powershell.md) with the service principal or managed identities. 
+1. For production workloads, we recommend using [client certificate-based authentication](~/identity-platform/howto-authenticate-service-principal-powershell.md) with the service principal or managed identities. 
 
 ## Configure a managed identity
 

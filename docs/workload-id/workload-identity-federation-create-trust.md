@@ -27,7 +27,7 @@ In this article, you learn how to create, list, and delete federated identity cr
 
 ## Important considerations and restrictions
 
-To create, update, or delete a federated identity credential, the account performing the action must have the [Application Administrator](../roles/permissions-reference.md#application-administrator), [Application Developer](../roles/permissions-reference.md#application-developer), [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator), or Application Owner role.  The [microsoft.directory/applications/credentials/update permission](../roles/custom-available-permissions.md#microsoftdirectoryapplicationscredentialsupdate) is required to update a federated identity credential.
+To create, update, or delete a federated identity credential, the account performing the action must have the [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator), [Application Developer](~/identity/role-based-access-control/permissions-reference.md#application-developer), [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator), or Application Owner role.  The [microsoft.directory/applications/credentials/update permission](~/identity/role-based-access-control/custom-available-permissions.md#microsoftdirectoryapplicationscredentialsupdate) is required to update a federated identity credential.
 
 [!INCLUDE [federated credential configuration](./includes/federated-credential-configuration-considerations.md)]
 
@@ -36,7 +36,7 @@ To learn more about supported regions, time to propagate federated credential up
 ::: zone pivot="identity-wif-apps-methods-azp"
 
 ## Prerequisites
-[Create an app registration](../develop/quickstart-register-app.md) in Microsoft Entra ID.  Grant your app access to the Azure resources targeted by your external software workload.
+[Create an app registration](~/identity-platform/quickstart-register-app.md) in Microsoft Entra ID.  Grant your app access to the Azure resources targeted by your external software workload.
 
 Find the object ID of the app (not the application (client) ID), which you need in the following steps.  You can find the object ID of the app in the [Microsoft Entra admin center](https://entra.microsoft.com).  Go to the list of app registrations and select your app registration.  In **Overview**->**Essentials**, find the **Object ID**.
 
@@ -182,7 +182,7 @@ To delete a federated identity credential, select the **Delete** icon for the cr
 
 [!INCLUDE [azure-cli-prepare-your-environment-no-header.md](~/articles/reusable-content/azure-cli/azure-cli-prepare-your-environment-no-header.md)]
 
-- [Create an app registration](../develop/quickstart-register-app.md) in Microsoft Entra ID.  Grant your app access to the Azure resources targeted by your external software workload.
+- [Create an app registration](~/identity-platform/quickstart-register-app.md) in Microsoft Entra ID.  Grant your app access to the Azure resources targeted by your external software workload.
 - Find the object ID, app (client) ID, or identifier URI of the app, which you need in the following steps.  You can find these values in the [Microsoft Entra admin center](https://entra.microsoft.com).  Go to the list of registered applications and select your app registration.  In **Overview**->**Essentials**, get the **Object ID**, **Application (client) ID**, or **Application ID URI** value, which you need in the following steps.
 - Get the *subject* and *issuer* information for your external IdP and software workload, which you need in the following steps.
 
@@ -312,7 +312,7 @@ az ad app federated-credential delete --id f6475511-fd81-4965-a00e-41e7792b7b9c 
 - To run the example scripts, you have two options:
   - Use [Azure Cloud Shell](/azure/cloud-shell/overview), which you can open by using the **Try It** button in the upper-right corner of code blocks.
   - Run scripts locally with Azure PowerShell, as described in the next section.
-- [Create an app registration](../develop/quickstart-register-app.md) in Microsoft Entra ID.  Grant your app access to the Azure resources targeted by your external software workload.
+- [Create an app registration](~/identity-platform/quickstart-register-app.md) in Microsoft Entra ID.  Grant your app access to the Azure resources targeted by your external software workload.
 - Find the object ID of the app (not the application (client) ID), which you need in the following steps.  You can find the object ID of the app in the [Microsoft Entra admin center](https://entra.microsoft.com).  Go to the list of registered applications and select your app registration.  In **Overview**->**Essentials**, find the **Object ID**.
 - Get the *subject* and *issuer* information for your external IdP and software workload, which you need in the following steps.
 
@@ -416,7 +416,7 @@ Remove-AzADAppFederatedCredential -ApplicationObjectId $appObjectId -FederatedCr
 ::: zone pivot="identity-wif-apps-methods-rest"
 
 ## Prerequisites
-[Create an app registration](../develop/quickstart-register-app.md) in Microsoft Entra ID.  Grant your app access to the Azure resources targeted by your external software workload.
+[Create an app registration](~/identity-platform/quickstart-register-app.md) in Microsoft Entra ID.  Grant your app access to the Azure resources targeted by your external software workload.
 
 Find the object ID of the app (not the application (client) ID), which you need in the following steps.  You can find the object ID of the app in the [Microsoft Entra admin center](https://entra.microsoft.com).  Go to the list of registered applications and select your app registration.  In **Overview**->**Essentials**, find the **Object ID**.
 
@@ -587,5 +587,5 @@ az rest -m DELETE  -u 'https://graph.microsoft.com/applications/f6475511-fd81-49
 - To learn how to use workload identity federation for Kubernetes, see [Microsoft Entra Workload ID for Kubernetes](https://azure.github.io/azure-workload-identity/docs/quick-start.html) open source project.
 - To learn how to use workload identity federation for GitHub Actions, see [Configure a GitHub Actions workflow to get an access token](/azure/developer/github/connect-from-azure).
 - Read the [GitHub Actions documentation](https://docs.github.com/actions/deployment/security-hardening-your-deployments/configuring-openid-connect-in-azure) to learn more about configuring your GitHub Actions workflow to get an access token from Microsoft identity provider and access Azure resources.
-- For more information, read about how Microsoft Entra ID uses the [OAuth 2.0 client credentials grant](../develop/v2-oauth2-client-creds-grant-flow.md#third-case-access-token-request-with-a-federated-credential) and a client assertion issued by another IdP to get a token.
-- For information about the required format of JWTs created by external identity providers, read about the [assertion format](../develop/certificate-credentials.md#assertion-format).
+- For more information, read about how Microsoft Entra ID uses the [OAuth 2.0 client credentials grant](~/identity-platform/v2-oauth2-client-creds-grant-flow.md#third-case-access-token-request-with-a-federated-credential) and a client assertion issued by another IdP to get a token.
+- For information about the required format of JWTs created by external identity providers, read about the [assertion format](~/identity-platform/certificate-credentials.md#assertion-format).

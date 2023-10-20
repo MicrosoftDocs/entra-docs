@@ -29,8 +29,8 @@ Using Microsoft Entra ID gives you granular per-application access controls to s
 ## Action plan
 
 1. [Install Microsoft Entra Connect](../hybrid/connect/how-to-connect-install-roadmap.md) on your AD FS server. 
-1. [Review the AD FS application activity report](../manage-apps/migrate-adfs-application-activity.md) to get insights about your AD FS applications. 
-1. Read the solution guide for [migrating applications to Microsoft Entra ID](../manage-apps/migrate-adfs-apps-stages.md). 
+1. [Review the AD FS application activity report](~/identity/enterprise-apps/migrate-adfs-application-activity.md) to get insights about your AD FS applications. 
+1. Read the solution guide for [migrating applications to Microsoft Entra ID](~/identity/enterprise-apps/migrate-adfs-apps-stages.md). 
 1. Migrate applications to Microsoft Entra ID. For more information, see the article [Migrate from federation to cloud authentication](../hybrid/connect/migrate-from-federation-to-cloud-authentication.md).
 
 ### Guided walkthrough

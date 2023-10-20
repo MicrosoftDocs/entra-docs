@@ -35,7 +35,7 @@ To hide an application from the My Apps portal and Microsoft 365 launcher, you n
 
 Use the following steps to hide an application from My Apps portal and Microsoft 365 application launcher.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [cloud application administrator](../roles/permissions-reference.md#cloud-application-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [cloud application administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
 1. Search for the application you want to hide, and select the application.
 1. In the left navigation pane, select **Properties**.
@@ -50,7 +50,7 @@ Use the following steps to hide an application from My Apps portal and Microsoft
 :::zone pivot="aad-powershell"
 
 
-To hide an application from the My Apps portal, using Azure AD PowerShell, you need to connect to Azure AD PowerShell and sign in as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator). You can manually add the **HideApp** tag to the service principal for the application. Run the following Azure AD PowerShell commands to set the application's **Visible to Users?** property to **No**.
+To hide an application from the My Apps portal, using Azure AD PowerShell, you need to connect to Azure AD PowerShell and sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). You can manually add the **HideApp** tag to the service principal for the application. Run the following Azure AD PowerShell commands to set the application's **Visible to Users?** property to **No**.
 
 ```PowerShell
 Connect-AzureAD
@@ -65,7 +65,7 @@ Set-AzureADServicePrincipal -ObjectId $objectId -Tags $tags
 
 :::zone pivot="ms-powershell"
 
-To hide an application from the My Apps portal, using Microsoft Graph PowerShell, you need to connect to Microsoft Graph PowerShell and sign in as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator). You can manually add the HideApp tag to the service principal for the application. Run the following Microsoft Graph PowerShell commands to set the application's **Visible to Users?** property to **No**.
+To hide an application from the My Apps portal, using Microsoft Graph PowerShell, you need to connect to Microsoft Graph PowerShell and sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). You can manually add the HideApp tag to the service principal for the application. Run the following Microsoft Graph PowerShell commands to set the application's **Visible to Users?** property to **No**.
 
 ```PowerShell
 Connect-MgGraph
@@ -79,7 +79,7 @@ Update-MgServicePrincipal -ServicePrincipalID  $objectId -Tags $tags
 
 :::zone pivot="ms-graph"
 
-To hide an enterprise application using [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer), you need to sign in as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator). 
+To hide an enterprise application using [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer), you need to sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 
 Run the following queries.
 
@@ -117,7 +117,7 @@ Run the following queries.
 
 Use the following steps to hide all Microsoft 365 applications from the My Apps portal. The applications are still visible in the Office 365 portal.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [global administrator](../roles/permissions-reference.md#global-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [global administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator). 
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 1. Select **App launchers**.
 2. Select **Settings**.

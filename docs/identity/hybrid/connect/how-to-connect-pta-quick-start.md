@@ -26,7 +26,7 @@ ms.collection: M365-identity-device-management
 Microsoft Entra pass-through authentication allows your users to sign in to both on-premises and cloud-based applications by using the same passwords. Pass-through Authentication signs users in by validating their passwords directly against on-premises Active Directory.
 
 >[!IMPORTANT]
->If you are migrating from AD FS (or other federation technologies) to Pass-through Authentication, view [Resources for migrating applications to Microsoft Entra ID](../../manage-apps/migration-resources.md).
+>If you are migrating from AD FS (or other federation technologies) to Pass-through Authentication, view [Resources for migrating applications to Microsoft Entra ID](~/identity/enterprise-apps/migration-resources.md).
 >[!NOTE]
 >If you deploying Pass Through Authentication with the Azure Government cloud, view [Hybrid Identity Considerations for Azure Government](./reference-connect-government-cloud.md).
 
@@ -96,7 +96,7 @@ If you have already installed Microsoft Entra Connect by using the [express inst
 ![Microsoft Entra Connect: Change user sign-in](./media/how-to-connect-pta-quick-start/changeusersignin.png)
 
 >[!IMPORTANT]
->Pass-through Authentication is a tenant-level feature. Turning it on affects the sign-in for users across _all_ the managed domains in your tenant. If you're switching from Active Directory Federation Services (AD FS) to Pass-through Authentication, you should wait at least 12 hours before shutting down your AD FS infrastructure. This wait time is to ensure that users can keep signing in to Exchange ActiveSync during the transition. For more help on migrating from AD FS to Pass-through Authentication, check out our deployment plans published [here](../../manage-apps/migration-resources.md).
+>Pass-through Authentication is a tenant-level feature. Turning it on affects the sign-in for users across _all_ the managed domains in your tenant. If you're switching from Active Directory Federation Services (AD FS) to Pass-through Authentication, you should wait at least 12 hours before shutting down your AD FS infrastructure. This wait time is to ensure that users can keep signing in to Exchange ActiveSync during the transition. For more help on migrating from AD FS to Pass-through Authentication, check out our deployment plans published [here](~/identity/enterprise-apps/migration-resources.md).
 
 ## Step 3: Test the feature
 
@@ -167,11 +167,11 @@ Second, you can create and run an unattended deployment script. This is useful w
 
 ## Step 5: Configure Smart Lockout capability
 
-Smart Lockout assists in locking out bad actors who are trying to guess your users’ passwords or using brute-force methods to get in. By configuring Smart Lockout settings in Microsoft Entra ID and / or appropriate lockout settings in on-premises Active Directory, attacks can be filtered out before they reach Active Directory. Read [this article](../../authentication/howto-password-smart-lockout.md) to learn more on how to configure Smart Lockout settings on your tenant to protect your user accounts.
+Smart Lockout assists in locking out bad actors who are trying to guess your users’ passwords or using brute-force methods to get in. By configuring Smart Lockout settings in Microsoft Entra ID and / or appropriate lockout settings in on-premises Active Directory, attacks can be filtered out before they reach Active Directory. Read [this article](~/identity/authentication/howto-password-smart-lockout.md) to learn more on how to configure Smart Lockout settings on your tenant to protect your user accounts.
 
 ## Next steps
-- [Migrate your apps to Microsoft Entra ID](../../manage-apps/migration-resources.md): Resources to help you migrate application access and authentication to Microsoft Entra ID.
-- [Smart Lockout](../../authentication/howto-password-smart-lockout.md): Learn how to configure the Smart Lockout capability on your tenant to protect user accounts.
+- [Migrate your apps to Microsoft Entra ID](~/identity/enterprise-apps/migration-resources.md): Resources to help you migrate application access and authentication to Microsoft Entra ID.
+- [Smart Lockout](~/identity/authentication/howto-password-smart-lockout.md): Learn how to configure the Smart Lockout capability on your tenant to protect user accounts.
 - [Current limitations](how-to-connect-pta-current-limitations.md): Learn which scenarios are supported with the Pass-through Authentication and which ones are not.
 - [Technical deep dive](how-to-connect-pta-how-it-works.md): Understand how the Pass-through Authentication feature works.
 - [Frequently asked questions](how-to-connect-pta-faq.yml): Find answers to frequently asked questions.

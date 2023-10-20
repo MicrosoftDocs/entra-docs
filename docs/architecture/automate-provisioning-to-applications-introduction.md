@@ -53,7 +53,7 @@ In this example, the organization has a cloud HR system such as Workday or Succe
 
 1. The Microsoft Entra provisioning service imports users from the cloud HR system and creates an account in Microsoft Entra ID, based on business rules that the organization defines.
 
-1. The user complete sets up the suitable authentication methods, such as the authenticator app, Fast Identity Online 2 (FIDO2)/Windows Hello for Business (WHfB) keys via [Temporary Access Pass](../authentication/howto-authentication-temporary-access-pass.md) and then signs into Teams. This Temporary Access Pass was automatically generated for the user through Microsoft Entra Life Cycle Workflows.
+1. The user complete sets up the suitable authentication methods, such as the authenticator app, Fast Identity Online 2 (FIDO2)/Windows Hello for Business (WHfB) keys via [Temporary Access Pass](~/identity/authentication/howto-authentication-temporary-access-pass.md) and then signs into Teams. This Temporary Access Pass was automatically generated for the user through Microsoft Entra Life Cycle Workflows.
 
 1. The Microsoft Entra provisioning service creates accounts in the various applications that the user needs, such as ServiceNow and Zoom. The user is able to request the necessary devices they need and start chatting with their teams.
 

@@ -46,7 +46,7 @@ The rows in a downloaded CSV template are as follows:
 [!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
 
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](../roles/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 1. Select Microsoft Entra ID.
    >[!NOTE]
    >Group owners can also bulk import members of groups they own.

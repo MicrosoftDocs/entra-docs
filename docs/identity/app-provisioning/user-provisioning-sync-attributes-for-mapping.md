@@ -118,7 +118,7 @@ Get-AzureADUser -ObjectId 0ccf8df6-62f1-4175-9e55-73da9e742690 | Select -ExpandP
 ## Create an extension attribute using cloud sync
 Cloud sync will automatically discover your extensions in on-premises Active Directory when you go to add a new mapping.  Use the steps below to autodiscover these attributes and set up a corresponding mapping to Microsoft Entra ID.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](../roles/permissions-reference.md#hybrid-identity-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
 1. Browse to **Identity** > **Hybrid management** > **Microsoft Entra Connect** > **Cloud sync**.
 1. Select the configuration you wish to add the extension attribute and mapping.
 1. Under **Manage attributes** select **click to edit mappings**.
@@ -142,7 +142,7 @@ If users who will access the applications originate in on-premises Active Direct
 
    ![Microsoft Entra Connect wizard Additional tasks page](./media/user-provisioning-sync-attributes-for-mapping/active-directory-connect-customize.png)
 
-2. Sign in as a [Global Administrator](../roles/permissions-reference.md#global-administrator).
+2. Sign in as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 
 3. On the **Optional Features** page, select **Directory extension attribute sync**.
 

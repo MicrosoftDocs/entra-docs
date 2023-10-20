@@ -39,7 +39,7 @@ In this tutorial, you configure and test Microsoft Entra SSO in a test environme
 
 To configure the integration of Catchpoint into Microsoft Entra ID, add Catchpoint to your list of managed SaaS apps.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
 1. In the **Add from the gallery** section, type **Catchpoint** in the search box.
 1. Select **Catchpoint** from the results panel and then add the app. Wait a few seconds while the app is added to your tenant.
@@ -67,7 +67,7 @@ Complete the following sections:
 
 Follow these steps in the Azure portal to enable Microsoft Entra SSO:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Catchpoint** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set Up Single Sign-On with SAML** page, select the pencil icon to edit the **Basic SAML Configuration** settings.
@@ -101,7 +101,7 @@ Follow these steps in the Azure portal to enable Microsoft Entra SSO:
    | namespace | user.assignedrole |
 
    > [!NOTE]
-   > The `namespace` claim needs to be mapped with the account name. This account name should be set up with a role in Microsoft Entra ID to be passed back in SAML response. For more information about roles in Microsoft Entra ID, see [Configure the role claim issued in the SAML token for enterprise applications](../develop/howto-add-app-roles-in-azure-ad-apps.md#app-roles-ui).
+   > The `namespace` claim needs to be mapped with the account name. This account name should be set up with a role in Microsoft Entra ID to be passed back in SAML response. For more information about roles in Microsoft Entra ID, see [Configure the role claim issued in the SAML token for enterprise applications](~/identity-platform/howto-add-app-roles-in-azure-ad-apps.md#app-roles-ui).
 
 1. Go to the **Set Up Single Sign-On with SAML** page. In the **SAML Signing Certificate** section, find **Certificate (Base64)**. Select **Download** to save the certificate to your computer.
 
@@ -117,7 +117,7 @@ Follow these steps in the Azure portal to enable Microsoft Entra SSO:
 
 In this section, you use the Azure portal to create a Microsoft Entra test user called B.Simon.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](../roles/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
 1. Select **New user** > **Create new user**, at the top of the screen.
 1. In the **User** properties, follow these steps:

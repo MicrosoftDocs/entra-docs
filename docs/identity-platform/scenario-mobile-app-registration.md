@@ -42,7 +42,7 @@ For more information, see [Scenarios and supported authentication flows](authent
 
 When you build a mobile app that uses interactive authentication, the most critical registration step is the redirect URI. This experience enables your app to get single sign-on (SSO) through Microsoft Authenticator (and Intune Company Portal on Android). It also supports device management policies.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Developer](../roles/permissions-reference.md#application-developer).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Developer](~/identity/role-based-access-control/permissions-reference.md#application-developer).
 1. Browse to **Identity** > **Applications** > **App registrations**.
 1. Select **New registration**.
 1. Enter a **Name** for the application.

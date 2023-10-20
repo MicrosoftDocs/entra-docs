@@ -40,7 +40,7 @@ You can view your available service plans, including the individual licenses, ch
 
 [!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Directory Reader](../roles/permissions-reference.md#directory-readers).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Directory Reader](~/identity/role-based-access-control/permissions-reference.md#directory-readers).
 
 1. Browse to **Identity** > **Billing** > **Licenses**.
 
@@ -63,7 +63,7 @@ Anyone who has a business need to use a licensed Microsoft Entra service must ha
 
 ### To assign a license to a user
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [License Administrator](../roles/permissions-reference.md#license-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [License Administrator](~/identity/role-based-access-control/permissions-reference.md#license-administrator).
 
 1. Browse to **Identity** > **Billing** > **Licenses**.
 
@@ -94,7 +94,7 @@ Anyone who has a business need to use a licensed Microsoft Entra service must ha
 
 ### To assign a license to a group
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [License Administrator](../roles/permissions-reference.md#license-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [License Administrator](~/identity/role-based-access-control/permissions-reference.md#license-administrator).
 
 1. Browse to **Identity** > **Billing** > **Licenses**.
 

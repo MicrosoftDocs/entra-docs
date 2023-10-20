@@ -142,7 +142,7 @@ items:
         - name: Daemon applications
           href: resilience-daemon-app.md
         - name: OpenID Connect metadata refresh
-          href: ../develop/howto-build-services-resilient-to-metadata-refresh.md?toc=/azure/active-directory/architecture/toc.json
+          href: ~/identity-platform/howto-build-services-resilient-to-metadata-refresh.md?toc=/azure/active-directory/architecture/toc.json
       - name: Monitor application health for resilience
         href: monitor-sign-in-health-for-resilience.md
     - name: Secure with Microsoft Entra ID

@@ -82,7 +82,7 @@ Before you can block legacy authentication in your directory, you need to first 
 
 #### Sign-in log indicators
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../roles/permissions-reference.md#conditional-access-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Identity** > **Monitoring & health** > **Sign-in logs**.
 1. Add the **Client App** column if it isn't shown by clicking on **Columns** > **Client App**.
 1. Select **Add filters** > **Client App** > choose all of the legacy authentication protocols and select **Apply**.
@@ -111,7 +111,7 @@ Many clients that previously only supported legacy authentication now support mo
 >
 > When implementing Exchange Active Sync (EAS) with CBA, configure clients to use modern authentication. Clients not using modern authentication for EAS with CBA **are not blocked** with [Deprecation of Basic authentication in Exchange Online](/exchange/clients-and-mobile-in-exchange-online/deprecation-of-basic-authentication-exchange-online). However, these clients **are blocked** by Conditional Access policies configured to block legacy authentication.
 >
-> For more Information on implementing support for CBA with Microsoft Entra ID and modern authentication See: [How to configure Microsoft Entra certificate-based authentication (Preview)](../authentication/how-to-certificate-based-authentication.md). As another option, CBA performed at a federation server can be used with modern authentication.
+> For more Information on implementing support for CBA with Microsoft Entra ID and modern authentication See: [How to configure Microsoft Entra certificate-based authentication (Preview)](~/identity/authentication/how-to-certificate-based-authentication.md). As another option, CBA performed at a federation server can be used with modern authentication.
 
 
 If you're using Microsoft Intune, you might be able to change the authentication type using the email profile you push or deploy to your devices. If you're using iOS devices (iPhones and iPads), you should take a look at [Add e-mail settings for iOS and iPadOS devices in Microsoft Intune](/mem/intune/configuration/email-settings-ios).
@@ -144,7 +144,7 @@ You can select all available grant controls for the **Other clients** condition;
 ## Next steps
 
 - [Determine effect using Conditional Access report-only mode](howto-conditional-access-insights-reporting.md)
-- If you aren't familiar with configuring Conditional Access policies yet, see [require MFA for specific apps with Microsoft Entra Conditional Access](../authentication/tutorial-enable-azure-mfa.md) for an example.
+- If you aren't familiar with configuring Conditional Access policies yet, see [require MFA for specific apps with Microsoft Entra Conditional Access](~/identity/authentication/tutorial-enable-azure-mfa.md) for an example.
 - For more information about modern authentication support, see [How modern authentication works for Office client apps](/microsoft-365/enterprise/modern-auth-for-office-2013-and-2016) 
 - [How to set up a multifunction device or application to send email using Microsoft 365](/exchange/mail-flow-best-practices/how-to-set-up-a-multifunction-device-or-application-to-send-email-using-microsoft-365-or-office-365)
 - [Enable modern authentication in Exchange Online](/exchange/clients-and-mobile-in-exchange-online/enable-or-disable-modern-authentication-in-exchange-online)

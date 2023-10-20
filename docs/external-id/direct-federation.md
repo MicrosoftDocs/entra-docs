@@ -98,7 +98,7 @@ Currently, the Microsoft Entra SAML/WS-Fed federation feature doesn't support se
 
 **What permissions are required to configure a SAML/Ws-Fed identity provider?**
 
-You need to be an [External Identity Provider Administrator](../roles/permissions-reference.md#external-identity-provider-administrator) or a [Global Administrator](../roles/permissions-reference.md#global-administrator) in your Microsoft Entra tenant to configure a SAML/Ws-Fed identity provider.
+You need to be an [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator) or a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) in your Microsoft Entra tenant to configure a SAML/Ws-Fed identity provider.
 
 ## Step 1: Determine if the partner needs to update their DNS text records
 
@@ -195,7 +195,7 @@ Next, configure federation with the IdP configured in step 1 in Microsoft Entra 
 
 [!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [External Identity Provider administrator](../roles/permissions-reference.md#external-identity-provider-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [External Identity Provider administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
 1. Browse to **Identity** > **External Identities** > **All identity providers**.
 4. Select **New SAML/WS-Fed IdP**.
 
@@ -248,7 +248,7 @@ On the **All identity providers** page, you can view the list of SAML/WS-Fed ide
 
 ![Screenshot showing an identity provider in the SAML WS-Fed list](media/direct-federation/new-saml-wsfed-idp-list-multi.png)
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [External Identity Provider administrator](../roles/permissions-reference.md#external-identity-provider-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [External Identity Provider administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
 1. Browse to **Identity** > **External Identities** > **All identity providers**.
 5. Under **SAML/WS-Fed identity providers**, scroll to an identity provider in the list or use the search box.
 6. To update the certificate or modify configuration details:
@@ -279,7 +279,7 @@ On the **All identity providers** page, you can view the list of SAML/WS-Fed ide
 You can remove your federation configuration. If you do, federation guest users who have already redeemed their invitations can no longer sign in. But you can give them access to your resources again by [resetting their redemption status](reset-redemption-status.md).
 To remove a configuration for an IdP in the Microsoft Entra admin center:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [External Identity Provider administrator](../roles/permissions-reference.md#external-identity-provider-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [External Identity Provider administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
 1. Browse to **Identity** > **External Identities** > **All identity providers**.
 1. Under **SAML/WS-Fed identity providers**, scroll to the identity provider in the list or use the search box.
 1. Select the link in the **Domains** column to view the IdP's domain details.

@@ -22,7 +22,7 @@ Microsoft Graph is the Microsoft unified API endpoint and the home of [Microsoft
 To successfully complete this tutorial, make sure you have the required prerequisites:
 
 - Microsoft Graph PowerShell SDK is installed. For more information, see the article [Install the Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/installation?view=graph-powershell-1.0&preserve-view=true).
-- Microsoft Graph PowerShell using a [Security Administrator](../roles/permissions-reference.md#security-administrator) role. The IdentityRiskEvent.Read.All, IdentityRiskyUser.ReadWrite.All Or IdentityRiskyUser.ReadWrite.All delegated permissions are required. To set the permissions to IdentityRiskEvent.Read.All and IdentityRiskyUser.ReadWrite.All, run:
+- Microsoft Graph PowerShell using a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator) role. The IdentityRiskEvent.Read.All, IdentityRiskyUser.ReadWrite.All Or IdentityRiskyUser.ReadWrite.All delegated permissions are required. To set the permissions to IdentityRiskEvent.Read.All and IdentityRiskyUser.ReadWrite.All, run:
 
    ```powershell
    Connect-MgGraph -Scopes "IdentityRiskEvent.Read.All","IdentityRiskyUser.ReadWrite.All"

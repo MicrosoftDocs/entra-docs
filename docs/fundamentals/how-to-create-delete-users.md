@@ -49,7 +49,7 @@ The required role of least privilege varies based on the type of user you're add
 
 [!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](../roles/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 
 1. Browse to **Identity** > **Users** > **All users**.
 1. Select  **New user** > **Create new user**.
@@ -116,7 +116,7 @@ The final tab captures several key details from the user creation process. Revie
 
 The overall process for inviting an external guest user is similar, except for a few details on the **Basics** tab and the email invitation process. You can't assign external users to administrative units. 
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](../roles/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
 1. Select  **New user** > **Invite external user**.
 
@@ -157,11 +157,11 @@ You can delete an existing user using the [Microsoft Entra admin center](https:/
 - You must have a Global Administrator, Privileged Authentication Administrator, or User Administrator role assignment to delete users in your organization.
 - Global Administrators and Privileged Authentication Administrators can delete any users including other administrators.
 - User Administrators can delete any non-admin users, Helpdesk Administrators, and other User Administrators.
-- For more information, see [Administrator role permissions in Microsoft Entra ID](../roles/permissions-reference.md).
+- For more information, see [Administrator role permissions in Microsoft Entra ID](~/identity/role-based-access-control/permissions-reference.md).
 
 To delete a user, follow these steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](../roles/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
 1. Search for and select the user you want to delete.
 1. Select **Delete user**.

@@ -38,7 +38,7 @@ For more information about creating trusted locations in Conditional Access, see
 
 Complete the following steps to create a policy that applies to all selected users that attempt to register using the combined registration experience, and blocks access unless they are connecting from a location marked as trusted network:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Conditional Access Administrator](../roles/permissions-reference.md#conditional-access-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Protection** > **Conditional Access**.
 1. Select **+ New policy**.
 1. Enter a name for this policy, such as *Combined Security Info Registration on Trusted Networks*.

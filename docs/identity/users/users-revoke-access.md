@@ -100,7 +100,7 @@ As an administrator in Microsoft Entra ID, open PowerShell, run ``Connect-AzureA
     ```
 
 >[!NOTE]
-> For information on specific roles that can perform these steps review [Microsoft Entra built-in roles](../roles/permissions-reference.md)
+> For information on specific roles that can perform these steps review [Microsoft Entra built-in roles](~/identity/role-based-access-control/permissions-reference.md)
 
 ## When access is revoked
 
@@ -130,6 +130,6 @@ Once admins have taken the above steps, the user can't gain new tokens for any a
 
 ## Next steps
 
-- [Secure access practices for Microsoft Entra administrators](../roles/security-planning.md)
+- [Secure access practices for Microsoft Entra administrators](~/identity/role-based-access-control/security-planning.md)
 - [Add or update user profile information](../fundamentals/how-to-manage-user-profile-info.md)
 - [Remove or Delete a former employee](/microsoft-365/admin/add-users/remove-former-employee)

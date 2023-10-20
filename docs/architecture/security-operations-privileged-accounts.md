@@ -25,7 +25,7 @@ Microsoft Entra ID uses identity and access management (IAM) as the control plan
 You're entirely responsible for all layers of security for your on-premises IT environment. When you use Azure services, prevention and response are the joint responsibilities of Microsoft as the cloud service provider and you as the customer.
 
 * For more information on the shared responsibility model, see [Shared responsibility in the cloud](/azure/security/fundamentals/shared-responsibility).
-* For more information on securing access for privileged users, see [Securing privileged access for hybrid and cloud deployments in Microsoft Entra ID](../roles/security-planning.md).
+* For more information on securing access for privileged users, see [Securing privileged access for hybrid and cloud deployments in Microsoft Entra ID](~/identity/role-based-access-control/security-planning.md).
 * For a wide range of videos, how-to guides, and content of key concepts for privileged identity, see [Privileged Identity Management documentation](../privileged-identity-management/index.yml).
 
 ## Log files to monitor
@@ -85,7 +85,7 @@ It's important that you prevent being accidentally locked out of your Microsoft 
 
 Emergency access accounts are highly privileged, and they aren't assigned to specific individuals. Emergency access accounts are limited to emergency or break-glass scenarios where normal privileged accounts can't be used. An example is when a Conditional Access policy is misconfigured and locks out all normal administrative accounts. Restrict emergency account use to only the times when it's absolutely necessary.
 
-For guidance on what to do in an emergency, see [Secure access practices for administrators in Microsoft Entra ID](../roles/security-planning.md).
+For guidance on what to do in an emergency, see [Secure access practices for administrators in Microsoft Entra ID](~/identity/role-based-access-control/security-planning.md).
 
 Send a high-priority alert every time an emergency access account is used.
 
@@ -98,7 +98,7 @@ Because break-glass accounts are only used if there's an emergency, your monitor
 * Account permission or roles changed.
 * Credential or auth method added or changed.
 
-For more information on managing emergency access accounts, see [Manage emergency access admin accounts in Microsoft Entra ID](../roles/security-emergency-access.md). For detailed information on creating an alert for an emergency account, see [Create an alert rule](../roles/security-emergency-access.md).
+For more information on managing emergency access accounts, see [Manage emergency access admin accounts in Microsoft Entra ID](~/identity/role-based-access-control/security-emergency-access.md). For detailed information on creating an alert for an emergency account, see [Create an alert rule](~/identity/role-based-access-control/security-emergency-access.md).
 
 ## Privileged account sign-in
 
@@ -125,7 +125,7 @@ You can monitor privileged account sign-in events in the Microsoft Entra sign-in
 | Failure because of Conditional Access requirement |High | Microsoft Entra sign-in log | Status = Failure<br>-and-<br>error code = 53003<br>-and-<br>Failure reason = Blocked by Conditional Access | This event can be an indication an attacker is trying to get into the account.<br>[Microsoft Sentinel template](https://github.com/Azure/Azure-Sentinel/blob/master/Detections/SigninLogs/UserAccounts-CABlockedSigninSpikes.yaml)<br><br>[Sigma rules](https://github.com/SigmaHQ/sigma/tree/master/rules/cloud/azure) |
 | Privileged accounts that don't follow naming policy| | Azure subscription | [List Azure role assignments using the Azure portal](/azure/role-based-access-control/role-assignments-list-portal)| List role assignments for subscriptions and alert where the sign-in name doesn't match your organization's format. An example is the use of ADM_ as a prefix. |
 | Interrupt |  High, medium | Microsoft Entra Sign-ins | Status = Interrupted<br>-and-<br>error code = 50074<br>-and-<br>Failure reason = Strong auth required<br>Status = Interrupted<br>-and-<br>Error code = 500121<br>Failure reason = Authentication failed during strong authentication request | This event can be an indication an attacker has the password for the account but can't pass the multi-factor authentication challenge.<br>[Microsoft Sentinel template](https://github.com/Azure/Azure-Sentinel/blob/master/Hunting%20Queries/MultipleDataSources/AADPrivilegedAccountsFailedMFA.yaml)<br><br>[Sigma rules](https://github.com/SigmaHQ/sigma/tree/master/rules/cloud/azure) |
-| Privileged accounts that don't follow naming policy| High | Microsoft Entra directory | [List Microsoft Entra role assignments](../roles/view-assignments.md)| List role assignments for Microsoft Entra roles and alert where the UPN doesn't match your organization's format. An example is the use of ADM_ as a prefix. |
+| Privileged accounts that don't follow naming policy| High | Microsoft Entra directory | [List Microsoft Entra role assignments](~/identity/role-based-access-control/view-assignments.md)| List role assignments for Microsoft Entra roles and alert where the UPN doesn't match your organization's format. An example is the use of ADM_ as a prefix. |
 | Discover privileged accounts not registered for multi-factor authentication | High | Microsoft Graph API| Query for IsMFARegistered eq false for admin accounts. [List credentialUserRegistrationDetails - Microsoft Graph beta](/graph/api/reportroot-list-credentialuserregistrationdetails?view=graph-rest-beta&preserve-view=true&tabs=http) | Audit and investigate to determine if the event is intentional or an oversight. |
 | Account lockout | High | Microsoft Entra sign-in log | Status = Failure<br>-and-<br>error code = 50053 | Define a baseline threshold, and then monitor and adjust to suit your organizational behaviors and limit false alerts from being generated.<br>[Microsoft Sentinel template](https://github.com/Azure/Azure-Sentinel/blob/master/Hunting%20Queries/MultipleDataSources/PrivilegedAccountsLockedOut.yaml)<br><br>[Sigma rules](https://github.com/SigmaHQ/sigma/tree/master/rules/cloud/azure) |
 | Account disabled or blocked for sign-ins | Low | Microsoft Entra sign-in log | Status = Failure<br>-and-<br>Target = User UPN<br>-and-<br>error code = 50057 | This event could indicate someone is trying to gain access to an account after they've left the organization. Although the account is blocked, it's still important to log and alert on this activity.<br>[Microsoft Sentinel template](https://github.com/Azure/Azure-Sentinel/blob/master/Hunting%20Queries/SigninLogs/UserAccounts-BlockedAccounts.yaml)<br><br>[Sigma rules](https://github.com/SigmaHQ/sigma/tree/master/rules/cloud/azure) |
@@ -202,7 +202,7 @@ To monitor for exceptions, you must first create a baseline. Determine the follo
 The following concepts and information help determine policies:
 
 * **Just-in-time admin principles**. Use the Microsoft Entra logs to capture information for performing administrative tasks that are common in your environment. Determine the typical amount of time needed to complete the tasks.
-* **Just-enough admin principles**. Determine the least-privileged role, which might be a custom role, that's needed for administrative tasks. For more information, see [Least privileged roles by task in Microsoft Entra ID](../roles/delegate-by-task.md).
+* **Just-enough admin principles**. Determine the least-privileged role, which might be a custom role, that's needed for administrative tasks. For more information, see [Least privileged roles by task in Microsoft Entra ID](~/identity/role-based-access-control/delegate-by-task.md).
 * **Establish an elevation policy**. After you have insight into the type of elevated privilege needed and how long is needed for each task, create policies that reflect elevated privileged usage for your environment. As an example, define a policy to limit Global Administrator access to one hour.
 
 After you establish your baseline and set policy, you can configure monitoring to detect and alert usage outside of policy.

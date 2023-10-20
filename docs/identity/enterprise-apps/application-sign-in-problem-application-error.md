@@ -21,7 +21,7 @@ In this scenario, Microsoft Entra ID signs the user in. But the application disp
 
 There are several possible reasons why the app didn't accept the response from Microsoft Entra ID. If there's an error message or code displayed, use the following resources to diagnose the error:
 
-- [Microsoft Entra authentication and authorization error codes](../develop/reference-error-codes.md)
+- [Microsoft Entra authentication and authorization error codes](~/identity-platform/reference-error-codes.md)
 - [Troubleshooting consent prompt errors](application-sign-in-unexpected-user-consent-error.md)
 
 If the error message doesn't clearly identify what's missing from the response, try the following:
@@ -36,7 +36,7 @@ If the error message doesn't clearly identify what's missing from the response, 
 
 To add an attribute in the Microsoft Entra configuration that will be sent in the Microsoft Entra response, follow these steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
 1. Enter the name of the existing application in the search box, and then select the application that you want to configure for single sign-on.
 1. After the app loads, select **Single sign-on** in the navigation pane.
@@ -64,7 +64,7 @@ If you're using [Microsoft Entra ID automated user provisioning](../app-provisio
 
 To change the User Identifier value, follow these steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
 1. Select the app that you want to configure for SSO.
 1. After the app loads, select **Single sign-on** in the navigation pane.
@@ -72,15 +72,15 @@ To change the User Identifier value, follow these steps:
 
 ### Change the NameID format
 
-If the application expects another format for the **NameID** (User Identifier) attribute, see the [Edit nameID](../develop/saml-claims-customization.md#edit-nameid) section to change the NameID format.
+If the application expects another format for the **NameID** (User Identifier) attribute, see the [Edit nameID](~/identity-platform/saml-claims-customization.md#edit-nameid) section to change the NameID format.
 
-Microsoft Entra ID selects the format for the **NameID** attribute (User Identifier) based on the value that's selected or the format that's requested by the app in the SAML AuthRequest. For more information, see the "NameIDPolicy" section of [Single sign-on SAML protocol](../develop/single-sign-on-saml-protocol.md#nameidpolicy).
+Microsoft Entra ID selects the format for the **NameID** attribute (User Identifier) based on the value that's selected or the format that's requested by the app in the SAML AuthRequest. For more information, see the "NameIDPolicy" section of [Single sign-on SAML protocol](~/identity-platform/single-sign-on-saml-protocol.md#nameidpolicy).
 
 ## The app expects a different signature method for the SAML response
 
 To change which parts of the SAML token are digitally signed by Microsoft Entra ID, follow these steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
 1. Select the application that you want to configure for single sign-on.
 1. After the application loads, select **Single sign-on** in the navigation pane.
@@ -99,7 +99,7 @@ By default, Microsoft Entra ID signs the SAML token by using the most-secure alg
 
 To change the signing algorithm, follow these steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
 1. Select the app that you want to configure for single sign-on.
 1. After the app loads, select **Single sign-on** from the navigation pane on the left side of the app.
@@ -111,5 +111,5 @@ To change the signing algorithm, follow these steps:
 ## Next steps
 
 - [How to debug SAML-based single sign-on to applications in Microsoft Entra ID](./debug-saml-sso-issues.md)
-- [Microsoft Entra authentication and authorization error codes](../develop/reference-error-codes.md)
+- [Microsoft Entra authentication and authorization error codes](~/identity-platform/reference-error-codes.md)
 - [Troubleshooting consent prompt errors](application-sign-in-unexpected-user-consent-error.md)

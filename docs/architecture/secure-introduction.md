@@ -97,7 +97,7 @@ Having a set of directory objects in the Microsoft Entra tenant boundary engende
 
 * Visibility. Identities can discover or enumerate resources, users, groups, access usage reporting and audit logs based on their permissions. For example, a member of the directory can discover users in the directory per Microsoft Entra ID [default user permissions](../fundamentals/users-default-permissions.md).
 
-* Applications can affect objects. Applications can manipulate directory objects through Microsoft Graph as part of their business logic. Typical examples include reading/setting user attributes, updating user's calendar, sending emails on behalf of the user, etc. Consent is necessary to allow applications to affect the tenant. Administrators can consent for all users. For more information, see [Permissions and consent in the Microsoft identity platform](../develop/v2-admin-consent.md).
+* Applications can affect objects. Applications can manipulate directory objects through Microsoft Graph as part of their business logic. Typical examples include reading/setting user attributes, updating user's calendar, sending emails on behalf of the user, etc. Consent is necessary to allow applications to affect the tenant. Administrators can consent for all users. For more information, see [Permissions and consent in the Microsoft identity platform](~/identity-platform/v2-admin-consent.md).
 
 >[!NOTE]
 >Use caution when using application permissions. For example, with Exchange Online, you should [scope application permissions to specific mailboxes and permissions](/graph/auth-limit-mailbox-access).
@@ -106,7 +106,7 @@ Having a set of directory objects in the Microsoft Entra tenant boundary engende
 
 ## Administrative units for role management
 
-Administrative units restrict permissions in a role to any portion of your organization that you define. You could, for example, use administrative units to delegate the [Helpdesk Administrator](../roles/permissions-reference.md) role to regional support specialists, so they can manage users only in the region that they support. An administrative unit is a Microsoft Entra resource that can be a container for other Microsoft Entra resources. An administrative unit can contain only:
+Administrative units restrict permissions in a role to any portion of your organization that you define. You could, for example, use administrative units to delegate the [Helpdesk Administrator](~/identity/role-based-access-control/permissions-reference.md) role to regional support specialists, so they can manage users only in the region that they support. An administrative unit is a Microsoft Entra resource that can be a container for other Microsoft Entra resources. An administrative unit can contain only:
 
 * Users
 
@@ -118,7 +118,7 @@ In the following diagram, administrative units are used to segment the Microsoft
 
 ![Diagram that shows Microsoft Entra Administrative units.](media/secure-introduction/administrative-units.png)
 
-For more information on administrative units, see [Administrative units in Microsoft Entra ID](../roles/administrative-units.md).
+For more information on administrative units, see [Administrative units in Microsoft Entra ID](~/identity/role-based-access-control/administrative-units.md).
 
 ### Common reasons for resource isolation
 
@@ -263,13 +263,13 @@ Who should have the ability to administer the environment and its resources? The
 
 Given the interdependence between a Microsoft Entra tenant and its resources, it's critical to understand the security and operational risks of compromise or error. If you're operating in a federated environment with synchronized accounts, an on-premises compromise can lead to a Microsoft Entra ID compromise.
 
-* **Identity compromise** - Within the boundary of a tenant, any identity can be assigned any role, given the one providing access has sufficient privileges. While the effect of compromised non-privileged identities is largely contained, compromised administrators can have broad implications. For example, if a Microsoft Entra Global Administrator account is compromised, Azure resources can become compromised. To mitigate risk of identity compromise, or bad actors, implement [tiered administration](/security/privileged-access-workstations/privileged-access-access-model) and ensure that you follow principles of least privilege for [Microsoft Entra Administrator Roles](../roles/delegate-by-task.md). Similarly, ensure that you create Conditional Access policies that specifically exclude test accounts and test service principals from accessing resources outside of the test applications. For more information on privileged access strategy, see [Privileged access: Strategy](/security/privileged-access-workstations/privileged-access-strategy).
+* **Identity compromise** - Within the boundary of a tenant, any identity can be assigned any role, given the one providing access has sufficient privileges. While the effect of compromised non-privileged identities is largely contained, compromised administrators can have broad implications. For example, if a Microsoft Entra Global Administrator account is compromised, Azure resources can become compromised. To mitigate risk of identity compromise, or bad actors, implement [tiered administration](/security/privileged-access-workstations/privileged-access-access-model) and ensure that you follow principles of least privilege for [Microsoft Entra Administrator Roles](~/identity/role-based-access-control/delegate-by-task.md). Similarly, ensure that you create Conditional Access policies that specifically exclude test accounts and test service principals from accessing resources outside of the test applications. For more information on privileged access strategy, see [Privileged access: Strategy](/security/privileged-access-workstations/privileged-access-strategy).
 
 * **Federated environment compromise**
 
 * **Trusting resource compromise** - Human identities aren't the only security consideration. Any compromised component of the Microsoft Entra tenant can affect trusting resources based on its level of permissions at the tenant and resource level. The effect of a compromised component of a Microsoft Entra ID trusting resource is determined by the privileges of the resource; resources that are deeply integrated with the directory to perform write operations can have profound impact in the entire tenant. Following [guidance for zero trust](/azure/architecture/guide/security/conditional-access-zero-trust) can help limit the impact of compromise.
 
-* **Application development** - Early stages of the development lifecycle for applications with writing privileges to Microsoft Entra ID, where bugs can unintentionally write changes to the Microsoft Entra objects, present a risk. Follow [Microsoft identity platform best practices](../develop/identity-platform-integration-checklist.md) during development to mitigate these risks.
+* **Application development** - Early stages of the development lifecycle for applications with writing privileges to Microsoft Entra ID, where bugs can unintentionally write changes to the Microsoft Entra objects, present a risk. Follow [Microsoft identity platform best practices](~/identity-platform/identity-platform-integration-checklist.md) during development to mitigate these risks.
 
 * **Operational error** - A security incident can occur not only due to bad actors, but also because of an operational error by tenant administrators or the resource owners. These risks occur in any architecture. Mitigate these risks with separation of duties, tiered administration, following principles of least privilege, and following best practices before trying to mitigate by using a separate tenant.
 

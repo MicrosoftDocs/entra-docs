@@ -83,4 +83,4 @@ Make these standard practices in an organization to help make sure that deployed
 ## Next steps
 
 - [Permissions and consent in the Microsoft identity platform](./permissions-consent-overview.md)
-- [Understanding Microsoft Entra application consent experiences](../develop/application-consent-experience.md)
+- [Understanding Microsoft Entra application consent experiences](~/identity-platform/application-consent-experience.md)

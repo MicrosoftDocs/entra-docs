@@ -7,7 +7,7 @@ ms.date: 03/30/2023
 ms.author: kengaderdus
 ---
 
-An API needs to publish a minimum of one scope, also called [Delegated Permission](../../../../develop/permissions-consent-overview.md), for the client apps to obtain an access token for a user successfully. To publish a scope, follow these steps:
+An API needs to publish a minimum of one scope, also called [Delegated Permission](~/identity-platform/permissions-consent-overview.md), for the client apps to obtain an access token for a user successfully. To publish a scope, follow these steps:
 
 1. From the **App registrations** page, select the API application that you created (*ciam-ToDoList-api*) to open its **Overview** page.
 1. Under **Manage**, select **Expose an API**.

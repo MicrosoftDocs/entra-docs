@@ -70,7 +70,7 @@ You can assign the following to these roles or groups:
 
 ### Principle of least privilege
 
-You assign users the role with the [least privileges necessary to perform their tasks](../roles/delegate-by-task.md). This practice minimizes the number of Global Administrators and instead uses specific administrator roles for certain scenarios.
+You assign users the role with the [least privileges necessary to perform their tasks](~/identity/role-based-access-control/delegate-by-task.md). This practice minimizes the number of Global Administrators and instead uses specific administrator roles for certain scenarios.
 
 > [!NOTE] 
 > Microsoft has very few Global Administrators. Learn more at [how Microsoft uses Privileged Identity Management](https://www.microsoft.com/itshowcase/Article/Content/887/Using-Azure-AD-Privileged-Identity-Management-for-elevated-access).
@@ -91,7 +91,7 @@ You can also set a start and end time for each type of assignment. This addition
 
 In case the role expires, you can **extend** or **renew** these assignments. 
 
-**We recommend** you keep zero permanently active assignments for roles other than the recommended [two break-glass emergency access accounts](../roles/security-emergency-access.md), which should have the permanent Global Administrator role. 
+**We recommend** you keep zero permanently active assignments for roles other than the recommended [two break-glass emergency access accounts](~/identity/role-based-access-control/security-emergency-access.md), which should have the permanent Global Administrator role. 
 
 ## Plan the project
 
@@ -162,7 +162,7 @@ First, ensure that all Global and Security admin roles are managed using PIM bec
 
 <a name='configure-pim-settings-for-azure-ad-roles'></a>
 
-You can use the Privileged label to identify roles with high privileges that you can manage with PIM. Privileged label is present on [**Roles and Administrator**](../roles/privileged-roles-permissions.md?tabs=admin-center) in Microsoft Entra ID admin center. See the article, [Microsoft Entra built-in roles](../roles/permissions-reference.md) to learn more.
+You can use the Privileged label to identify roles with high privileges that you can manage with PIM. Privileged label is present on [**Roles and Administrator**](~/identity/role-based-access-control/privileged-roles-permissions.md?tabs=admin-center) in Microsoft Entra ID admin center. See the article, [Microsoft Entra built-in roles](~/identity/role-based-access-control/permissions-reference.md) to learn more.
 
 ### Configure PIM settings for Microsoft Entra roles
 

@@ -126,7 +126,7 @@ Sign-ins are aggregated in the non-interactive users when the following data mat
 - Resource ID
 
 > [!NOTE]
-> The IP address of non-interactive sign-ins performed by [confidential clients](../develop/msal-client-applications.md) doesn't match the actual source IP of where the refresh token request is coming from. Instead, it shows the original IP used for the original token issuance.
+> The IP address of non-interactive sign-ins performed by [confidential clients](~/identity-platform/msal-client-applications.md) doesn't match the actual source IP of where the refresh token request is coming from. Instead, it shows the original IP used for the original token issuance.
 
 ### Service principal sign-ins
 

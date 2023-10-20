@@ -65,7 +65,7 @@ The following are known scenarios that will impact Gmail users:
 - Windows apps that use the [WebView](/windows/communitytoolkit/controls/wpf-winforms/webview) control, [WebView2](/microsoft-edge/webview2/), or the older WebBrowser control, for authentication. These apps should migrate to using the Web Account Manager (WAM) flow.
 - Android applications using the WebView UI element 
 - iOS applications using UIWebView/WKWebview 
-- [Apps using ADAL](../develop/howto-get-list-of-all-auth-library-apps.md)
+- [Apps using ADAL](~/identity-platform/howto-get-list-of-all-auth-library-apps.md)
 
 This change does not affect:
 - Web apps
@@ -196,7 +196,7 @@ First, create a new project in the Google Developers Console to obtain a client 
 You'll now set the Google client ID and client secret. You can use the Microsoft Entra admin center or PowerShell to do so. Be sure to test your Google federation configuration by inviting yourself. Use a Gmail address and try to redeem the invitation with your invited Google account. 
 
 **To configure Google federation in the Microsoft Entra admin center** 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [External Identity Provider administrator](../roles/permissions-reference.md#external-identity-provider-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [External Identity Provider administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
 1. Browse to **Identity** > **External Identities** > **All identity providers** and then select the **Google** button.
 5. Enter the client ID and client secret you obtained earlier. Select **Save**:
 
@@ -219,7 +219,7 @@ You'll now set the Google client ID and client secret. You can use the Microsoft
 You can delete your Google federation setup. If you do so, Google guest users who have already redeemed their invitation won't be able to sign in. But you can give them access to your resources again by [resetting their redemption status](reset-redemption-status.md).
  
 **To delete Google federation in the Microsoft Entra admin center**
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [External Identity Provider administrator](../roles/permissions-reference.md#external-identity-provider-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [External Identity Provider administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
 1. Browse to **Identity** > **External Identities** > **All identity providers**.
 1. On the **Google** line, select the ellipsis button (**...**) and then select **Delete**. 
    

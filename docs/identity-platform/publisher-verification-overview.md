@@ -38,10 +38,10 @@ Publisher verification for an app has the following benefits:
 
 - **Improved branding**. A blue *verified* badge appears in the Microsoft Entra app [consent prompt](application-consent-experience.md), on the enterprise apps page, and in other app elements that users and admins see.
 
-- **Smoother enterprise adoption**. Organization admins can configure [user consent policies](../manage-apps/configure-user-consent.md) that include publisher verification status as primary policy criteria.
+- **Smoother enterprise adoption**. Organization admins can configure [user consent policies](~/identity/enterprise-apps/configure-user-consent.md) that include publisher verification status as primary policy criteria.
 
 > [!NOTE]
-> Beginning November 2020, if [risk-based step-up consent](../manage-apps/configure-risk-based-step-up-consent.md) is enabled, users can't consent to most newly registered multitenant apps that *aren't* publisher verified. The policy applies to apps that were registered after November 8, 2020, which use OAuth 2.0 to request permissions that extend beyond the basic sign-in and read user profile, and which request consent from users in tenants that aren't the tenant where the app is registered. In this scenario, a warning appears on the consent screen. The warning informs the user that the app was created by an unverified publisher and that the app is risky to download or install.
+> Beginning November 2020, if [risk-based step-up consent](~/identity/enterprise-apps/configure-risk-based-step-up-consent.md) is enabled, users can't consent to most newly registered multitenant apps that *aren't* publisher verified. The policy applies to apps that were registered after November 8, 2020, which use OAuth 2.0 to request permissions that extend beyond the basic sign-in and read user profile, and which request consent from users in tenants that aren't the tenant where the app is registered. In this scenario, a warning appears on the consent screen. The warning informs the user that the app was created by an unverified publisher and that the app is risky to download or install.
 
 ## Requirements
 
@@ -62,11 +62,11 @@ App developers must meet a few requirements to complete the publisher verificati
 
 - The user who initiates verification must be authorized to make changes both to the app registration in Microsoft Entra ID and to the CPP account in Partner Center.  The user who initiates the verification must have one of the required roles in both Microsoft Entra ID and Partner Center.
 
-  - In Microsoft Entra ID, this user must be a member of one of the following [roles](../roles/permissions-reference.md): Application Admin, Cloud Application Admin, or Global Administrator.
+  - In Microsoft Entra ID, this user must be a member of one of the following [roles](~/identity/role-based-access-control/permissions-reference.md): Application Admin, Cloud Application Admin, or Global Administrator.
 
   - In Partner Center, this user must have one of the following [roles](/partner-center/permissions-overview): CPP Partner Admin, Account Admin, or Global Administrator (a shared role that's mastered in Microsoft Entra ID).
   
-- The user who initiates verification must sign in by using [Microsoft Entra multifactor authentication](../authentication/howto-mfa-getstarted.md).
+- The user who initiates verification must sign in by using [Microsoft Entra multifactor authentication](~/identity/authentication/howto-mfa-getstarted.md).
 
 - The publisher must consent to the [Microsoft identity platform for developers Terms of Use](/legal/microsoft-identity-platform/terms-of-use).
 
@@ -80,13 +80,13 @@ Publisher verification currently isn't supported in national clouds. Apps that a
 
 Review frequently asked questions about the publisher verification program. For common questions about requirements and the process, see [Mark an app as publisher verified](mark-app-as-publisher-verified.md).
 
-- **What does publisher verification *not* tell me about the app or its publisher?**  The blue *verified* badge doesn't imply or indicate quality criteria you might look for in an app. For example, you might want to know whether the app or its publisher have specific certifications, comply with industry standards, or adhere to best practices. Publisher verification doesn't give you this information. Other Microsoft programs, like [Microsoft 365 App Certification](/microsoft-365-app-certification/overview), do provide this information. Verified publisher status is only one of the several criteria to consider while evaluating the security and [OAuth consent requests](../manage-apps/manage-consent-requests.md) of an application.
+- **What does publisher verification *not* tell me about the app or its publisher?**  The blue *verified* badge doesn't imply or indicate quality criteria you might look for in an app. For example, you might want to know whether the app or its publisher have specific certifications, comply with industry standards, or adhere to best practices. Publisher verification doesn't give you this information. Other Microsoft programs, like [Microsoft 365 App Certification](/microsoft-365-app-certification/overview), do provide this information. Verified publisher status is only one of the several criteria to consider while evaluating the security and [OAuth consent requests](~/identity/enterprise-apps/manage-consent-requests.md) of an application.
 
 - **How much does publisher verification cost for the app developer? Does it require a license?** Microsoft doesn't charge developers for publisher verification. No license is required to become a verified publisher.
 
 - **How does publisher verification relate to Microsoft 365 Publisher Attestation and Microsoft 365 App Certification?** [Microsoft 365 Publisher Attestation](/microsoft-365-app-certification/docs/attestation) and [Microsoft 365 App Certification](/microsoft-365-app-certification/docs/certification) are complementary programs that help developers publish trustworthy apps that customers can confidently adopt. Publisher verification is the first step in this process. All developers who create apps that meet the criteria for completing Microsoft 365 Publisher Attestation or Microsoft 365 App Certification should complete publisher verification. The combined programs can give developers who integrate their apps with Microsoft 365 even more benefits.
 
-- **Is publisher verification the same as the Microsoft Entra application gallery?** No. Publisher verification complements the [Microsoft Entra application gallery](../manage-apps/v2-howto-app-gallery-listing.md), but it's a separate program. Developers who fit the publisher verification criteria should complete publisher verification independently of participating in the Microsoft Entra application gallery or other programs.
+- **Is publisher verification the same as the Microsoft Entra application gallery?** No. Publisher verification complements the [Microsoft Entra application gallery](~/identity/enterprise-apps/v2-howto-app-gallery-listing.md), but it's a separate program. Developers who fit the publisher verification criteria should complete publisher verification independently of participating in the Microsoft Entra application gallery or other programs.
 
 ## Next steps
 

@@ -27,7 +27,7 @@ You're entirely responsible for all layers of security for your on-premises IT e
 
 * For more information on the shared responsibility model, see [Shared responsibility in the cloud](/azure/security/fundamentals/shared-responsibility).
 
-* For more information on securing access for privileged users, see [Securing Privileged access for hybrid and cloud deployments in Microsoft Entra ID](../roles/security-planning.md).
+* For more information on securing access for privileged users, see [Securing Privileged access for hybrid and cloud deployments in Microsoft Entra ID](~/identity/role-based-access-control/security-planning.md).
 
 * For a wide range of videos, how-to guides, and content of key concepts for privileged identity, visit [Privileged Identity Management documentation](../privileged-identity-management/index.yml).
 

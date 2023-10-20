@@ -31,9 +31,9 @@ In this tutorial:
 - [.NET 7 SDK](https://dotnet.microsoft.com/download/dotnet/7.0)
 - An Azure account that has an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 - The Azure account must have permission to manage applications in Microsoft Entra ID. Any of the following Microsoft Entra roles include the required permissions:
-  - [Application administrator](../roles/permissions-reference.md#application-administrator)
-  - [Application developer](../roles/permissions-reference.md#application-developer)
-  - [Cloud application administrator](../roles/permissions-reference.md#cloud-application-administrator)
+  - [Application administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator)
+  - [Application developer](~/identity/role-based-access-control/permissions-reference.md#application-developer)
+  - [Cloud application administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator)
 - The tenant-id or domain of the Microsoft Entra ID associated with your Azure Account
 
 ## Create the app using the .NET CLI

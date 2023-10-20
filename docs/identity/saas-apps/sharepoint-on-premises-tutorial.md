@@ -42,7 +42,7 @@ To configure the federation in Microsoft Entra ID, you need to create a dedicate
 
 ### Create the enterprise application
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
 1. In the search box, enter **SharePoint on-premises**. Select **SharePoint on-premises** from the result pane.
 1. Specify a name for your application (in this tutorial, it is `SharePoint corporate farm`), and click **Create** to add the application.
@@ -203,7 +203,7 @@ Microsoft Entra ID has [two type of users](../external-identities/user-propertie
 
 ### Create a member user in Microsoft Entra ID
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](../roles/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
 1. Select **New user** > **Create new user**, at the top of the screen.
 1. In the **User** properties, follow these steps:
@@ -340,7 +340,7 @@ $t.Update()
 
 ### Add the URLs in the enterprise application
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > Select the previously created enterprise application, and select **Single sign-on**.
 
 1. On the **Set up Single Sign-On with SAML** page, edit **Basic SAML Configuration**.
@@ -352,7 +352,7 @@ $t.Update()
 ### Configure the lifetime of the security token
 
 By default, Microsoft Entra ID creates a SAML token that is valid for 1 hour.  
-This lifetime cannot be customized in the Azure portal, or using a Conditional Access policy, but it can be done by creating a [custom token lifetime policy](../develop/configurable-token-lifetimes.md) and apply it to the enterprise application created for SharePoint.  
+This lifetime cannot be customized in the Azure portal, or using a Conditional Access policy, but it can be done by creating a [custom token lifetime policy](~/identity-platform/configurable-token-lifetimes.md) and apply it to the enterprise application created for SharePoint.  
 To do this, complete the steps below using Windows PowerShell (at the time of this writing, AzureADPreview v2.0.2.149 does not work with PowerShell Core):
 
 1. Install the module [AzureADPreview](https://www.powershellgallery.com/packages/AzureADPreview/):

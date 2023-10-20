@@ -59,7 +59,7 @@ The SIEM tools you can integrate with your event hub can provide analysis and mo
 
 ### Quick steps
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../roles/permissions-reference.md#security-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
 1. Create an Event Hubs namespace and event hub.
 1. Browse to **Identity** > **Monitoring & health** > **Diagnostic settings**.
 1. Choose the logs you want to stream, select the **Stream to an event hub** option, and complete the fields.
@@ -103,7 +103,7 @@ Integrating Microsoft Entra logs with Azure Monitor logs provides a centralized 
  
 ### Quick steps
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../roles/permissions-reference.md#security-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
 1. [Create a Log Analytics workspace](/azure/azure-monitor/logs/quick-create-workspace).
 1. Browse to **Identity** > **Monitoring & health** > **Diagnostic settings**.
 1. Choose the logs you want to stream, select the **Send to Log Analytics workspace** option, and complete the fields.
@@ -207,7 +207,7 @@ Use the following basic steps to archive or download your activity logs.
 
 #### Archive activity logs to a storage account
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../roles/permissions-reference.md#security-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
 1. Create a storage account.
 1. Browse to **Identity** > **Monitoring & health** > **Diagnostic settings**.
 1. Choose the logs you want to stream, select the **Archive to a storage account** option, and complete the fields.
@@ -215,7 +215,7 @@ Use the following basic steps to archive or download your activity logs.
 
 #### Manually download activity logs
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../roles/permissions-reference.md#reports-reader).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](~/identity/role-based-access-control/permissions-reference.md#reports-reader).
 1. Browse to **Identity** > **Monitoring & health** > **Audit logs**/**Sign-in logs**/**Provisioning logs** from the **Monitoring** menu.
 1. Select **Download**.
     - [Learn more about how to download logs](howto-download-logs.md).

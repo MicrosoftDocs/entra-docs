@@ -50,26 +50,26 @@ See the following sections for technical considerations and recommendations.
 
 Azure Marketplace is a trusted source of applications for IT admins. Applications are compatible with Microsoft Entra ID and support SSO, automate user provisioning, and integrate into customer tenants with automated app registration.
 
-You can pre-integrate your application with Microsoft Entra ID to support SSO and automated provisioning. See, [Submit a request to publish your application in Microsoft Entra application gallery](../manage-apps/v2-howto-app-gallery-listing.md). 
+You can pre-integrate your application with Microsoft Entra ID to support SSO and automated provisioning. See, [Submit a request to publish your application in Microsoft Entra application gallery](~/identity/enterprise-apps/v2-howto-app-gallery-listing.md). 
 
-We recommend you become a verified publisher, so customers know you're the trusted publisher. See, [Publisher verification](../develop/publisher-verification-overview.md).
+We recommend you become a verified publisher, so customers know you're the trusted publisher. See, [Publisher verification](~/identity-platform/publisher-verification-overview.md).
 
 ## Enable single sign-on for IT admins
 
 There are several ways to enable SSO for IT administrators to your solution. See, [Plan a single sign-on deployment, SSO options](./plan-sso-deployment.md#single-sign-on-options).
 
-Microsoft Graph uses OIDC/OAuth. Customers use OIDC to sign in to your solution. Use the JSON Web Token (JWT) Microsoft Entra ID issues to interact with Microsoft Graph. See, [OpenID Connect on the Microsoft identity platform](../develop/v2-protocols-oidc.md).
+Microsoft Graph uses OIDC/OAuth. Customers use OIDC to sign in to your solution. Use the JSON Web Token (JWT) Microsoft Entra ID issues to interact with Microsoft Graph. See, [OpenID Connect on the Microsoft identity platform](~/identity-platform/v2-protocols-oidc.md).
 
-If your solution uses SAML for IT administrator SSO, the SAML token won't enable your solution to interact with Microsoft Graph. You can use SAML for IT administrator SSO, but your solution needs to support OIDC integration with Microsoft Entra ID, so it can get a JWT from Microsoft Entra ID to interact with Microsoft Graph. See, [How the Microsoft identity platform uses the SAML protocol](../develop/saml-protocol-reference.md).
+If your solution uses SAML for IT administrator SSO, the SAML token won't enable your solution to interact with Microsoft Graph. You can use SAML for IT administrator SSO, but your solution needs to support OIDC integration with Microsoft Entra ID, so it can get a JWT from Microsoft Entra ID to interact with Microsoft Graph. See, [How the Microsoft identity platform uses the SAML protocol](~/identity-platform/saml-protocol-reference.md).
 
 You can use one of the following SAML approaches:
 
 * **Recommended SAML approach**: Create a new  registration in Azure Marketplace, which is an OIDC app. Customers add the SAML and OIDC apps to their tenant. If your application isn't in the Microsoft Entra gallery, you can start with a non-gallery multi-tenant app.
   *  [Configure an OpenID Connect OAuth application from Microsoft Entra app gallery](../saas-apps/openidoauth-tutorial.md)
-  *  [Making your application multi-tenant](../develop/howto-convert-app-to-be-multi-tenant.md)
+  *  [Making your application multi-tenant](~/identity-platform/howto-convert-app-to-be-multi-tenant.md)
 * **Alternate SAML approach**: Customers can create an OIDC application registration in their Microsoft Entra tenant and set the URIs, endpoints, and permissions
 
-Use the client credentials grant type, which requires the solution to allow customers to enter a client ID and secret. The solution also requires you store this information. Get a JWT from Microsoft Entra ID, and then use it to interact with Microsoft Graph. See, [Get a token](../develop/v2-oauth2-client-creds-grant-flow.md#get-a-token). We recommend you repare customer documentation about how to create application registration in their Microsoft Entra tenant. Include endpoints, URIs, and permissions.
+Use the client credentials grant type, which requires the solution to allow customers to enter a client ID and secret. The solution also requires you store this information. Get a JWT from Microsoft Entra ID, and then use it to interact with Microsoft Graph. See, [Get a token](~/identity-platform/v2-oauth2-client-creds-grant-flow.md#get-a-token). We recommend you repare customer documentation about how to create application registration in their Microsoft Entra tenant. Include endpoints, URIs, and permissions.
 
 > [!NOTE]
 > Before applications are used for IT administrator or user SSO, the customer IT administrator must consent to the application in their tenant. See, [Grant tenant-wide admin consent to an application](./grant-admin-consent.md).

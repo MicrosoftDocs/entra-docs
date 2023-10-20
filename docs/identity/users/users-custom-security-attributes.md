@@ -28,18 +28,18 @@ ms.collection: M365-identity-device-management
 To assign or remove custom security attributes for a user in your Microsoft Entra tenant, you need:
 
 - Microsoft Entra ID P1 or P2 license
-- [Attribute Assignment Administrator](../roles/permissions-reference.md#attribute-assignment-administrator)
+- [Attribute Assignment Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator)
 - Microsoft.Graph module when using [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation)
 - [AzureADPreview](https://www.powershellgallery.com/packages/AzureADPreview) version 2.0.2.138 or later when using Azure AD PowerShell
 
 > [!IMPORTANT]
-> By default, [Global Administrator](../roles/permissions-reference.md#global-administrator) and other administrator roles do not have permissions to read, define, or assign custom security attributes.
+> By default, [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) and other administrator roles do not have permissions to read, define, or assign custom security attributes.
     
 ## Assign custom security attributes to a user
 
 [!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an [Attribute Assignment Administrator](../roles/permissions-reference.md#attribute-assignment-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an [Attribute Assignment Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator).
 
 1. Make sure that you have defined custom security attributes. For more information, see [Add or deactivate custom security attribute definitions in Microsoft Entra ID](../fundamentals/custom-security-attributes-add.md).
 
@@ -67,7 +67,7 @@ To assign or remove custom security attributes for a user in your Microsoft Entr
 
 ## Update custom security attribute assignment values for a user
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an [Attribute Assignment Administrator](../roles/permissions-reference.md#attribute-assignment-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an [Attribute Assignment Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator).
 
 1. Browse to **Identity**  > **Users** > **All users**.
 
@@ -87,7 +87,7 @@ To assign or remove custom security attributes for a user in your Microsoft Entr
 
 You can filter the list of custom security attributes assigned to users on the All users page.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an [Attribute Assignment Reader](../roles/permissions-reference.md#attribute-assignment-reader).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an [Attribute Assignment Reader](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-reader).
 
 1. Browse to **Identity**  > **Users** > **All users**.
 
@@ -107,7 +107,7 @@ You can filter the list of custom security attributes assigned to users on the A
 
 ## Remove custom security attribute assignments from a user
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an [Attribute Assignment Administrator](../roles/permissions-reference.md#attribute-assignment-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an [Attribute Assignment Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator).
 
 1. Browse to **Identity**  > **Users** > **All users**.
 
@@ -1093,6 +1093,6 @@ No, custom security attributes are not supported in B2C tenants and are not rela
 ## Next steps
 
 - [Add or deactivate custom security attribute definitions in Microsoft Entra ID](../fundamentals/custom-security-attributes-add.md)
-- [Assign, update, list, or remove custom security attributes for an application](../manage-apps/custom-security-attributes-apps.md)
+- [Assign, update, list, or remove custom security attributes for an application](~/identity/enterprise-apps/custom-security-attributes-apps.md)
 - [Examples: Assign, update, list, or remove custom security attribute assignments using the Microsoft Graph API](/graph/custom-security-attributes-examples)
 - [Troubleshoot custom security attributes in Microsoft Entra ID](../fundamentals/custom-security-attributes-troubleshoot.md)

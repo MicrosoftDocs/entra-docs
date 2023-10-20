@@ -30,7 +30,7 @@ To implement remote access with Microsoft Entra application proxy, see the follo
 * [Planning an Application Proxy deployment](../app-proxy/application-proxy-deployment-plan.md)
 * [High availability and load balancing best practices](../app-proxy/application-proxy-high-availability-load-balancing.md)
 * [Configure proxy servers](../app-proxy/application-proxy-configure-connectors-with-proxy-servers.md)
-* [Design a resilient access control strategy](../authentication/concept-resilient-controls.md)
+* [Design a resilient access control strategy](~/identity/authentication/concept-resilient-controls.md)
 
 ## Next steps
 

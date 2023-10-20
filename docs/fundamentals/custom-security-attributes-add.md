@@ -27,12 +27,12 @@ ms.collection: M365-identity-device-management
 To add or deactivate custom security attributes definitions, you must have:
 
 - Microsoft Entra ID P1 or P2 license
-- [Attribute Definition Administrator](../roles/permissions-reference.md#attribute-definition-administrator)
+- [Attribute Definition Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-definition-administrator)
 - Microsoft.Graph module when using [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation)
 - [AzureADPreview](https://www.powershellgallery.com/packages/AzureADPreview) version 2.0.2.138 or later when using Azure AD PowerShell
 
 > [!IMPORTANT]
-> By default, [Global Administrator](../roles/permissions-reference.md#global-administrator) and other administrator roles do not have permissions to read, define, or assign custom security attributes.
+> By default, [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) and other administrator roles do not have permissions to read, define, or assign custom security attributes.
 
 ## Add an attribute set
 
@@ -40,7 +40,7 @@ To add or deactivate custom security attributes definitions, you must have:
 
 An attribute set is a collection of related attributes. All custom security attributes must be part of an attribute set. Attribute sets cannot be renamed or deleted.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Attribute Definition Administrator](../roles/permissions-reference.md#attribute-definition-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Attribute Definition Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-definition-administrator).
 
 1. Browse to **Protection** > **Custom security attributes**.
 
@@ -60,7 +60,7 @@ An attribute set is a collection of related attributes. All custom security attr
 
 ## Add a custom security attribute definition
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Attribute Definition Administrator](../roles/permissions-reference.md#attribute-definition-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Attribute Definition Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-definition-administrator).
 
 1. Browse to **Protection** > **Custom security attributes**.
 
@@ -114,7 +114,7 @@ An attribute set is a collection of related attributes. All custom security attr
 
 Once you add a new custom security attribute definition, you can later edit some of the properties. Some properties are immutable and cannot be changed.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Attribute Definition Administrator](../roles/permissions-reference.md#attribute-definition-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Attribute Definition Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-definition-administrator).
 
 1. Browse to **Protection** > **Custom security attributes**.
 
@@ -132,7 +132,7 @@ Once you add a new custom security attribute definition, you can later edit some
 
 Once you add a custom security attribute definition, you can't delete it. However, you can deactivate a custom security attribute definition.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Attribute Definition Administrator](../roles/permissions-reference.md#attribute-definition-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Attribute Definition Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-definition-administrator).
 
 1. Browse to **Protection** > **Custom security attributes**.
 
@@ -1140,4 +1140,4 @@ No, you can't delete custom security attribute definitions. You can only [deacti
 
 - [Manage access to custom security attributes in Microsoft Entra ID](custom-security-attributes-manage.md)
 - [Assign, update, list, or remove custom security attributes for a user](../enterprise-users/users-custom-security-attributes.md)
-- [Assign, update, list, or remove custom security attributes for an application](../manage-apps/custom-security-attributes-apps.md)
+- [Assign, update, list, or remove custom security attributes for an application](~/identity/enterprise-apps/custom-security-attributes-apps.md)

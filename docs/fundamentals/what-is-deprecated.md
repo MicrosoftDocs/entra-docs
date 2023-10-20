@@ -31,7 +31,7 @@ Use the following table to learn about changes including deprecations, retiremen
 
 |Functionality, feature, or service|Change|Change date |
 |---|---|---:|
-|[System-preferred authentication methods](../authentication/concept-system-preferred-multifactor-authentication.md)|Feature change|Sometime after GA|
+|[System-preferred authentication methods](~/identity/authentication/concept-system-preferred-multifactor-authentication.md)|Feature change|Sometime after GA|
 |[Azure AD Graph API](https://aka.ms/aadgraphupdate)|Start of phased retirement|Jul 2023|
 |[Terms of Use experience](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/microsoft-entra-change-announcements-march-2023-train/ba-p/2967448)|Feature change|Jul 2023|
 |[Azure AD PowerShell and MSOnline PowerShell](https://aka.ms/aadgraphupdate)|Deprecation|Mar 30, 2024|
@@ -46,10 +46,10 @@ Use the following table to learn about changes including deprecations, retiremen
 |---|---|---:|
 |[Azure AD Authentication Library (ADAL)](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/microsoft-entra-change-announcements-march-2023-train/ba-p/2967448)|Retirement|Jun 30, 2023|
 |[My Apps improvements](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/microsoft-entra-change-announcements-march-2023-train/ba-p/2967448)|Feature change|Jun 30, 2023|
-|[Microsoft Authenticator Lite for Outlook mobile](../authentication/how-to-mfa-authenticator-lite.md)|Feature change|Jun 9, 2023|
+|[Microsoft Authenticator Lite for Outlook mobile](~/identity/authentication/how-to-mfa-authenticator-lite.md)|Feature change|Jun 9, 2023|
 |[My Groups experience](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/microsoft-entra-change-announcements-march-2023-train/ba-p/2967448)|Feature change|May 2023|
 |[My Apps browser extension](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/microsoft-entra-change-announcements-march-2023-train/ba-p/2967448)|Feature change|May 2023|
-|Microsoft Authenticator app [Number matching](../authentication/how-to-mfa-number-match.md)|Feature change|May 8, 2023|
+|Microsoft Authenticator app [Number matching](~/identity/authentication/how-to-mfa-number-match.md)|Feature change|May 8, 2023|
 |[Microsoft Entra Domain Services virtual network deployments](/entra/identity/domain-services/overview)|Retirement|Mar 1, 2023|
 |[License management API, PowerShell](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/migrate-your-apps-to-access-the-license-managements-apis-from/ba-p/2464366)|Retirement|*Mar 31, 2023|
 

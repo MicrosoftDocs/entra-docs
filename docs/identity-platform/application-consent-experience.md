@@ -70,7 +70,7 @@ Admins will see an additional control on the traditional consent prompt that wil
 
 :::image type="content" source="./media/application-consent-experience/consent_prompt_1a.png" alt-text="Consent prompt for scenario 1a":::
 
-Non-admin users will be blocked from granting consent to the application, and they'll be told to ask their admin for access to the app. If admin consent workflow is enabled in the user's tenant, non-admin users are able to submit a request for admin approval from the consent prompt. For more information on admin consent workflow, see [Admin consent workflow](../manage-apps/admin-consent-workflow-overview.md).
+Non-admin users will be blocked from granting consent to the application, and they'll be told to ask their admin for access to the app. If admin consent workflow is enabled in the user's tenant, non-admin users are able to submit a request for admin approval from the consent prompt. For more information on admin consent workflow, see [Admin consent workflow](~/identity/enterprise-apps/admin-consent-workflow-overview.md).
 
 :::image type="content" source="./media/application-consent-experience/consent_prompt_2b.png" alt-text="Screenshot of the consent prompt telling the user to ask an admin for access to the app.":::
 
@@ -92,7 +92,7 @@ In this scenario, an administrator consents to all of the permissions that an ap
 
  :::image type="content" source="./media/consent-framework/grant-consent.png" alt-text="Screenshot of explicit admin consent through the Azure portal." lightbox="./media/consent-framework/grant-consent.png":::
 
-All users in that tenant won't see the consent dialog unless the application requires new permissions. To learn which administrator roles can consent to delegated permissions, see [Administrator role permissions in Microsoft Entra ID](../roles/permissions-reference.md).
+All users in that tenant won't see the consent dialog unless the application requires new permissions. To learn which administrator roles can consent to delegated permissions, see [Administrator role permissions in Microsoft Entra ID](~/identity/role-based-access-control/permissions-reference.md).
 
    > [!IMPORTANT]
    > Granting explicit consent using the **Grant permissions** button is currently required for single-page applications (SPA) that use MSAL.js. Otherwise, the application fails when the access token is requested.
@@ -119,7 +119,7 @@ This section outlines the common issues with the consent experience and possible
 
 ## Troubleshoot known errors
 
-For troubleshooting steps, see [Unexpected error when performing consent to an application](../manage-apps/application-sign-in-unexpected-user-consent-error.md).
+For troubleshooting steps, see [Unexpected error when performing consent to an application](~/identity/enterprise-apps/application-sign-in-unexpected-user-consent-error.md).
 ## Next steps
 
 - Get a step-by-step overview of [how the Microsoft Entra consent framework implements consent](./quickstart-register-app.md).

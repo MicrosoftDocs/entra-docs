@@ -50,9 +50,9 @@ The following resources can help with your migration to this solution architectu
 
 | Migration resource   | Description           |
 | - | - |
-| [Resources for migrating applications to Microsoft Entra ID](../manage-apps/migration-resources.md) | List of resources to help you migrate application access and authentication to Microsoft Entra ID |
+| [Resources for migrating applications to Microsoft Entra ID](~/identity/enterprise-apps/migration-resources.md) | List of resources to help you migrate application access and authentication to Microsoft Entra ID |
 | [Configuring Shibboleth as a SAML proxy](https://shibboleth.atlassian.net/wiki/spaces/KB/pages/1467056889/Using+SAML+Proxying+in+the+Shibboleth+IdP+to+connect+with+Azure+AD) | Shibboleth article that describes how to use the SAML proxying feature to connect the Shibboleth IdP to Microsoft Entra ID |
-| [Microsoft Entra multifactor authentication deployment considerations](../authentication/howto-mfa-getstarted.md) | Guidance for configuring Microsoft Entra multifactor authentication |
+| [Microsoft Entra multifactor authentication deployment considerations](~/identity/authentication/howto-mfa-getstarted.md) | Guidance for configuring Microsoft Entra multifactor authentication |
 
 ## Next steps
 

@@ -69,7 +69,7 @@ Read only access allows you to view Microsoft Entra ID log data inside a workboo
 - **Update**:
   - Security Administrator
 
-For more information on Microsoft Entra built-in roles, see [Microsoft Entra built-in roles](../roles/permissions-reference.md).
+For more information on Microsoft Entra built-in roles, see [Microsoft Entra built-in roles](~/identity/role-based-access-control/permissions-reference.md).
 
 ## Access Log Analytics
 
@@ -77,7 +77,7 @@ To view the Microsoft Entra ID Log Analytics, you must already be sending your a
 
 [!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../roles/permissions-reference.md#reports-reader). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](~/identity/role-based-access-control/permissions-reference.md#reports-reader). 
 
 1. Browse to **Identity** > **Monitoring & health** > **Log Analytics**. A default search query runs.
 

@@ -39,7 +39,7 @@ Applications that you or your organization have registered are represented by bo
 > [!NOTE]
 > Deleting an application will also delete its service principal object in the application's home directory. For multi-tenant applications, service principal objects in other directories will not be deleted.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 1. If you have access to multiple tenants, use the **Directories + subscriptions** filter :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false"::: in the top menu to switch to the tenant that contains the app registration to which you want to add an app role.
 1. Browse to **Identity** > **Applications** > **App registrations** and then select the application that you want to configure. Once you've selected the app, you see the application's **Overview** page.
 1. From the **Overview** page, select **Delete**.
@@ -50,7 +50,7 @@ Applications that you or your organization have registered are represented by bo
 
 If you're viewing **App registrations** in the context of a tenant, a subset of the applications that appear under the **All apps** tab are from another tenant and were registered into your tenant during the consent process. More specifically, they're represented by only a service principal object in your tenant, with no corresponding application object. For more information on the differences between application and service principal objects, see [Application and service principal objects in Microsoft Entra ID](./app-objects-and-service-principals.md).
 
-In order to remove an application’s access to your directory (after having granted consent), the company administrator must remove its service principal. The administrator must have Global Administrator access. To learn how to delete a service principal, see [Delete an enterprise application](../manage-apps/delete-application-portal.md).
+In order to remove an application’s access to your directory (after having granted consent), the company administrator must remove its service principal. The administrator must have Global Administrator access. To learn how to delete a service principal, see [Delete an enterprise application](~/identity/enterprise-apps/delete-application-portal.md).
 
 ## Next steps
 

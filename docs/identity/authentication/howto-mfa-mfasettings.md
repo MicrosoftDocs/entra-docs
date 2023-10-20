@@ -51,7 +51,7 @@ The following settings are available:
 
 To configure account lockout settings, complete these steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](../roles/permissions-reference.md#authentication-policy-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Protection** > **Multifactor authentication** > **Account lockout**.
 1. Enter the values for your environment, and then select **Save**.
 
@@ -89,7 +89,7 @@ Users who report an MFA prompt as suspicious are set to **High User Risk**. Admi
 
 To enable **Report suspicious activity** from the Authentication methods **Settings**:   
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](../roles/permissions-reference.md#authentication-policy-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Protection** > **Authentication Methods** > **Settings**. 
 1. Set **Report suspicious activity** to **Enabled**. The feature remains disabled if you choose **Microsoft managed**. For more information about Microsoft managed values, see [Protecting authentication methods in Microsoft Entra ID](concept-authentication-default-enablement.md).
 1. Select **All users** or a specific group. 
@@ -323,7 +323,7 @@ Regardless of whether trusted IPs are defined, multifactor authentication is req
 
 You can use Conditional Access rules to define named locations by using the following steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../roles/permissions-reference.md#conditional-access-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Protection** > **Conditional Access** > **Named locations**.
 1. Select **New location**.
 1. Enter a name for the location.
@@ -335,7 +335,7 @@ You can use Conditional Access rules to define named locations by using the foll
 
 To enable trusted IPs by using Conditional Access policies, complete the following steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../roles/permissions-reference.md#conditional-access-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Protection** >  **Conditional Access** > **Named locations**.
 1. Select **Configure MFA trusted IPs**.
 1. On the **Service Settings** page, under **Trusted IPs**, choose one of these options:
@@ -358,7 +358,7 @@ To enable trusted IPs by using Conditional Access policies, complete the followi
 
 If you don't want to use Conditional Access policies to enable trusted IPs, you can configure the service settings for Microsoft Entra multifactor authentication by using the following steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](../roles/permissions-reference.md#authentication-policy-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Protection** > **Multifactor authentication** > **Service settings**.
 1. On the **Service settings** page, under **Trusted IPs**, choose one or both of the following options:
 
@@ -392,7 +392,7 @@ For more information, see [What authentication and verification methods are avai
 
 To enable or disable verification methods, complete the following steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](../roles/permissions-reference.md#authentication-policy-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Identity** > **Users**.
 1. Select **Per-user MFA**.
 1. Under **Multifactor authentication** at the top of the page, select **Service settings**.
@@ -433,7 +433,7 @@ The feature reduces the number of authentications on web apps, which normally pr
 
 To enable and configure the option to allow users to remember their MFA status and bypass prompts, complete the following steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](../roles/permissions-reference.md#authentication-policy-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Identity** > **Users**.
 1. Select **Per-user MFA**.
 1. Under **Multifactor authentication** at the top of the page, select **service settings**.

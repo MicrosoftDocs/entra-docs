@@ -28,7 +28,7 @@ If you're also using an on-premises Active Directory instance, you can [configur
 
 When you implement Microsoft Entra ID with Cirrus Bridge, you can take advantage of more capabilities in Microsoft Entra ID:
 
-* **Custom claims provider support**: With the [Microsoft Entra custom claims provider](../develop/custom-claims-provider-overview.md), you can use an external attribute store (like an external LDAP directory) to add claims into tokens for individual apps. The custom claims provider uses a custom extension that calls an external REST API to fetch claims from external systems.
+* **Custom claims provider support**: With the [Microsoft Entra custom claims provider](~/identity-platform/custom-claims-provider-overview.md), you can use an external attribute store (like an external LDAP directory) to add claims into tokens for individual apps. The custom claims provider uses a custom extension that calls an external REST API to fetch claims from external systems.
 
 * **Custom security attributes**: You can add custom attributes to objects in the directory and control who can read them. [Custom security attributes](../fundamentals/custom-security-attributes-overview.md) enable you to store more of your attributes directly in Microsoft Entra ID.
 
@@ -83,12 +83,12 @@ The following resources help with your migration to this solution architecture.
 
 | Migration resource   | Description           |
 | - | - |
-| [Resources for migrating applications to Microsoft Entra ID](../manage-apps/migration-resources.md) | List of resources to help you migrate application access and authentication to Microsoft Entra ID |
-| [Microsoft Entra custom claims provider](../develop/custom-claims-provider-overview.md)| Overview of the Microsoft Entra custom claims provider |
+| [Resources for migrating applications to Microsoft Entra ID](~/identity/enterprise-apps/migration-resources.md) | List of resources to help you migrate application access and authentication to Microsoft Entra ID |
+| [Microsoft Entra custom claims provider](~/identity-platform/custom-claims-provider-overview.md)| Overview of the Microsoft Entra custom claims provider |
 | [Custom security attributes](../fundamentals/custom-security-attributes-manage.md) | Steps for managing access to custom security attributes |
 | [Microsoft Entra single sign-on integration with Cirrus Bridge](../saas-apps/cirrus-identity-bridge-for-azure-ad-tutorial.md) | Tutorial to integrate Cirrus Bridge with Microsoft Entra ID |
 | [Cirrus Bridge overview](https://blog.cirrusidentity.com/documentation/azure-bridge-setup-rev-6.0) | Cirrus Identity documentation for configuring Cirrus Bridge with Microsoft Entra ID |
-| [Microsoft Entra multifactor authentication deployment considerations](../authentication/howto-mfa-getstarted.md) | Guidance for configuring Microsoft Entra multifactor authentication  |
+| [Microsoft Entra multifactor authentication deployment considerations](~/identity/authentication/howto-mfa-getstarted.md) | Guidance for configuring Microsoft Entra multifactor authentication  |
 
 ## Next steps
 

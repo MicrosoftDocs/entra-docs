@@ -20,7 +20,7 @@ ms.collection: M365-identity-device-management
 # Integrating applications with Microsoft Entra ID and establishing a baseline of reviewed access
 
 
-Once you've [established the policies](identity-governance-applications-define.md) for who should have access to an application, then you can [connect your application to Microsoft Entra ID](../manage-apps/what-is-application-management.md) and then [deploy the policies](identity-governance-applications-deploy.md) for governing access to them.
+Once you've [established the policies](identity-governance-applications-define.md) for who should have access to an application, then you can [connect your application to Microsoft Entra ID](~/identity/enterprise-apps/what-is-application-management.md) and then [deploy the policies](identity-governance-applications-deploy.md) for governing access to them.
 
 Microsoft Entra ID Governance can be integrated with many applications, including well-known applications such as SAP and those using [standards](../architecture/auth-sync-overview.md) such as OpenID Connect, SAML, SCIM, SQL, LDAP, SOAP and REST.  Through these standards, you can use Microsoft Entra ID with many popular SaaS applications and on-premises applications, including applications that your organization has developed.  This deployment plan covers how to connect your application to Microsoft Entra ID and enable identity governance features to be used for that application.
 
@@ -35,16 +35,16 @@ If neither of those criteria are met for an application, for example when the ap
 
 ## Integrate the application with Microsoft Entra ID to ensure only authorized users can access the application
 
-Typically this process of integrating an application begins when you configure that application to rely upon Microsoft Entra ID for user authentication, with a federated single sign-on (SSO) protocol connection, and then add provisioning.  The most commonly used protocols for SSO are [SAML and OpenID Connect](../develop/v2-protocols.md).  You can read more about the tools and process to [discover and migrate application authentication to Microsoft Entra ID](../manage-apps/migrate-adfs-apps-phases-overview.md).
+Typically this process of integrating an application begins when you configure that application to rely upon Microsoft Entra ID for user authentication, with a federated single sign-on (SSO) protocol connection, and then add provisioning.  The most commonly used protocols for SSO are [SAML and OpenID Connect](~/identity-platform/v2-protocols.md).  You can read more about the tools and process to [discover and migrate application authentication to Microsoft Entra ID](~/identity/enterprise-apps/migrate-adfs-apps-phases-overview.md).
 
 Next, if the application implements a provisioning protocol, then you should configure Microsoft Entra ID to provision users to the application, so that Microsoft Entra ID can signal to the application when a user has been granted access or a user's access has been removed.  These provisioning signals permit the application to make automatic corrections, such as to reassign content created by an employee who has left to their manager.
 
-1. Check if your application is on the [list of enterprise applications](../manage-apps/view-applications-portal.md) or [list of app registrations](../develop/app-objects-and-service-principals.md). If the application is already present in your tenant, then skip to step 5 in this section.
-1. If your application is a SaaS application that isn't already registered in your tenant, then check if the application is available the [application gallery](../manage-apps/overview-application-gallery.md) for applications that can be integrated for federated SSO. If it's in the gallery, then use the tutorials to integrate the application with Microsoft Entra ID.
+1. Check if your application is on the [list of enterprise applications](~/identity/enterprise-apps/view-applications-portal.md) or [list of app registrations](~/identity-platform/app-objects-and-service-principals.md). If the application is already present in your tenant, then skip to step 5 in this section.
+1. If your application is a SaaS application that isn't already registered in your tenant, then check if the application is available the [application gallery](~/identity/enterprise-apps/overview-application-gallery.md) for applications that can be integrated for federated SSO. If it's in the gallery, then use the tutorials to integrate the application with Microsoft Entra ID.
    1. Follow the [tutorial](../saas-apps/tutorial-list.md) to configure the application for federated SSO with Microsoft Entra ID.
    1. if the application supports provisioning, [configure the application for provisioning](../app-provisioning/configure-automatic-user-provisioning-portal.md).
    1. When complete, skip to the next section in this article.
-   If the SaaS application isn't in the gallery, then [ask the SaaS vendor to onboard](../manage-apps/v2-howto-app-gallery-listing.md).  
+   If the SaaS application isn't in the gallery, then [ask the SaaS vendor to onboard](~/identity/enterprise-apps/v2-howto-app-gallery-listing.md).  
 1. If this is a private or custom application, you can also select a single sign-on integration that's most appropriate, based on the location and capabilities of the application.
 
    * If this application is in the public cloud, and it supports single sign-on, then configure single sign-on directly from Microsoft Entra ID to the application.
@@ -52,7 +52,7 @@ Next, if the application implements a provisioning protocol, then you should con
      |Application supports| Next steps|
      |----|-----|
      | OpenID Connect | [Add an OpenID Connect OAuth application](../saas-apps/openidoauth-tutorial.md) |
-     | SAML 2.0 | Register the application and configure the application with [the SAML endpoints and certificate of Microsoft Entra ID](../develop/saml-protocol-reference.md) |
+     | SAML 2.0 | Register the application and configure the application with [the SAML endpoints and certificate of Microsoft Entra ID](~/identity-platform/saml-protocol-reference.md) |
      | SAML 1.1 | [Add a SAML-based application](../saas-apps/saml-tutorial.md) |
 
    * Otherwise, if this is an on-premises or IaaS hosted application that supports single sign-on, then configure single sign-on from Microsoft Entra ID to the application through the application proxy.
@@ -63,7 +63,7 @@ Next, if the application implements a provisioning protocol, then you should con
      | Integrated Windows Auth (IWA) | Deploy the [application proxy](../app-proxy/application-proxy.md), configure an application for [Integrated Windows authentication SSO](../app-proxy/application-proxy-configure-single-sign-on-with-kcd.md), and set firewall rules to prevent access to the application's endpoints except via the proxy.|
      | header-based authentication | Deploy the [application proxy](../app-proxy/application-proxy.md) and configure an application for [header-based SSO](../app-proxy/application-proxy-configure-single-sign-on-with-headers.md) |
 
-1. If your application has multiple roles, each user has only one role in the application, and the application relies upon Microsoft Entra ID to send a user's single application-specific role as a claim of a user signing into the application, then configure those application roles in Microsoft Entra ID on your application, and then assign each user to the application role. You can use  the [app roles UI](../develop/howto-add-app-roles-in-apps.md#app-roles-ui) to add those roles to the application manifest.  If you're using the Microsoft Authentication Libraries, there is a [code sample](../develop/sample-v2-code.md) for how to use app roles inside your application for access control.  If a user could have multiple roles simultaneously, then you may wish to implement the application to check security groups, either in the token claims or available via Microsoft Graph, instead of using application roles from the app manifest for access control.
+1. If your application has multiple roles, each user has only one role in the application, and the application relies upon Microsoft Entra ID to send a user's single application-specific role as a claim of a user signing into the application, then configure those application roles in Microsoft Entra ID on your application, and then assign each user to the application role. You can use  the [app roles UI](~/identity-platform/howto-add-app-roles-in-apps.md#app-roles-ui) to add those roles to the application manifest.  If you're using the Microsoft Authentication Libraries, there is a [code sample](~/identity-platform/sample-v2-code.md) for how to use app roles inside your application for access control.  If a user could have multiple roles simultaneously, then you may wish to implement the application to check security groups, either in the token claims or available via Microsoft Graph, instead of using application roles from the app manifest for access control.
 
 1. If the application supports provisioning, then [configure provisioning](../app-provisioning/configure-automatic-user-provisioning-portal.md) of assigned users and groups from Microsoft Entra ID to that application.  If this is a private or custom application, you can also select the integration that's most appropriate, based on the location and capabilities of the application.
 
@@ -90,7 +90,7 @@ Next, if the application implements a provisioning protocol, then you should con
      | local user accounts, managed through a MIM connector | configure an application with the [provisioning agent with a custom connector](../app-provisioning/on-premises-custom-connector.md)|
      | SAP ECC with NetWeaver AS ABAP 7.0 or later | configure an application with the [provisioning agent with a SAP ECC configured web services connector](../app-provisioning/on-premises-sap-connector-configure.md)|
 
-1. If your application uses Microsoft Graph to query groups from Microsoft Entra ID, then [consent](../develop/application-consent-experience.md) to the applications to have the appropriate permissions to read from your tenant.
+1. If your application uses Microsoft Graph to query groups from Microsoft Entra ID, then [consent](~/identity-platform/application-consent-experience.md) to the applications to have the appropriate permissions to read from your tenant.
 
 1. Set that access to **the application is only permitted for users assigned to the application**.  This setting prevents users from inadvertently seeing the application in MyApps, and attempting to sign into the application, prior to Conditional Access policies being enabled.
 

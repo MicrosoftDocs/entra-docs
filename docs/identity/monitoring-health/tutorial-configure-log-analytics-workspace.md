@@ -40,7 +40,7 @@ Familiarize yourself with these articles:
 
 - [How to integrate activity logs with Log Analytics](./howto-integrate-activity-logs-with-azure-monitor-logs.md)
 
-- [Manage emergency access account in Microsoft Entra ID](../roles/security-emergency-access.md)
+- [Manage emergency access account in Microsoft Entra ID](~/identity/role-based-access-control/security-emergency-access.md)
 
 - [KQL quick reference](/azure/data-explorer/kusto/query/kql-quick-reference)
 
@@ -57,7 +57,7 @@ To configure a Log Analytics workspace you need to **create the workspace** and 
 
 ### Create the workspace
 
-1. Sign in to the [Azure portal](https://portal.azure.com) as at least a [Security Administrator](../roles/permissions-reference.md#security-administrator)
+1. Sign in to the [Azure portal](https://portal.azure.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator)
 
 2. Browse to **Log Analytics workspaces**.
 
@@ -89,7 +89,7 @@ To configure a Log Analytics workspace you need to **create the workspace** and 
 
 To configure diagnostic settings, you need switch to the Microsoft Entra admin center to send your identity log information to your new workspace.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../roles/permissions-reference.md#security-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
 
 1. Browse to **Identity** > **Monitoring & health** > **Diagnostic settings**.
 
@@ -116,7 +116,7 @@ This procedure shows how to run queries using the **Kusto Query Language (KQL)**
 
 ### Run a query
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../roles/permissions-reference.md#reports-reader). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](~/identity/role-based-access-control/permissions-reference.md#reports-reader). 
 
 1. Browse to **Identity** > **Monitoring & health** > **Log Analytics**.
 
@@ -178,7 +178,7 @@ Create a new column by combining the values to two other columns:
 
 This procedure shows how to create a new workbook using the quickstart template.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../roles/permissions-reference.md#reports-reader).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](~/identity/role-based-access-control/permissions-reference.md#reports-reader).
 
 1. Browse to **Identity** > **Monitoring & health** > **Workbooks**. 
 
@@ -219,7 +219,7 @@ This procedure shows how to create a new workbook using the quickstart template.
 
 This procedure shows how to add a query to an existing workbook template. The example is based on a query that shows the distribution of conditional access success to failures.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../roles/permissions-reference.md#reports-reader).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](~/identity/role-based-access-control/permissions-reference.md#reports-reader).
 
 1. Browse to **Identity** > **Monitoring & health** > **Workbooks**. 
 

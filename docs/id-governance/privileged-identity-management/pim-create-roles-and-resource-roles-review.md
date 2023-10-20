@@ -26,7 +26,7 @@ The need for access to privileged Azure resource and Microsoft Entra roles by em
 
 For more information about licenses for PIM, refer to [License requirements to use Privileged Identity Management](../governance/licensing-fundamentals.md).
 
-To create access reviews for Azure resources, you must be assigned to the [Owner](/azure/role-based-access-control/built-in-roles#owner) or the [User Access Administrator](/azure/role-based-access-control/built-in-roles#user-access-administrator) role for the Azure resources. To create access reviews for Microsoft Entra roles, you must be assigned to the [Global Administrator](../roles/permissions-reference.md#global-administrator) or the [Privileged Role Administrator](../roles/permissions-reference.md#privileged-role-administrator) role.
+To create access reviews for Azure resources, you must be assigned to the [Owner](/azure/role-based-access-control/built-in-roles#owner) or the [User Access Administrator](/azure/role-based-access-control/built-in-roles#user-access-administrator) role for the Azure resources. To create access reviews for Microsoft Entra roles, you must be assigned to the [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) or the [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator) role.
 
 Access Reviews for **Service Principals** requires a Microsoft Entra Workload ID Premium plan in addition to Microsoft Entra ID P2 or Microsoft Entra ID Governance licenses. 
 
@@ -65,7 +65,7 @@ Access Reviews for **Service Principals** requires a Microsoft Entra Workload ID
 9. Use the **End** setting to specify how to end the recurring access review series. The series can end in three ways: it runs continuously to start reviews indefinitely, until a specific date, or after a defined number of occurrences has been completed. You, or another administrator who can manage reviews, can stop the series after creation by changing the date in **Settings**, so that it ends on that date.
 
 
-10. In the **Users Scope** section, select the scope of the review. For **Microsoft Entra roles**, the first scope option is Users and Groups. Directly assigned users and [role-assignable groups](../roles/groups-concept.md) will be included in this selection. For **Azure resource roles**, the first scope will be Users. Groups assigned to Azure resource roles are expanded to display transitive user assignments in the review with this selection. You may also select **Service Principals** to review the machine accounts with direct access to either the Azure resource or Microsoft Entra role.
+10. In the **Users Scope** section, select the scope of the review. For **Microsoft Entra roles**, the first scope option is Users and Groups. Directly assigned users and [role-assignable groups](~/identity/role-based-access-control/groups-concept.md) will be included in this selection. For **Azure resource roles**, the first scope will be Users. Groups assigned to Azure resource roles are expanded to display transitive user assignments in the review with this selection. You may also select **Service Principals** to review the machine accounts with direct access to either the Azure resource or Microsoft Entra role.
 
     :::image type="content" source="./media/pim-create-azure-ad-roles-and-resource-roles-review/users.png" alt-text="Users scope to review role membership of screenshot.":::
 
@@ -146,7 +146,7 @@ Based on your selections in **Upon completion settings**, auto-apply will be exe
 
 ## Impact of groups assigned to Microsoft Entra roles and Azure resource roles in access reviews
 
-•	For **Microsoft Entra roles**, role-assignable groups can be assigned to the role using [role-assignable groups](../roles/groups-concept.md). When a review is created on a Microsoft Entra role with role-assignable groups assigned, the group name shows up in the review without expanding the group membership. The reviewer can approve or deny access of the entire group to the role. Denied groups will lose their assignment to the role when review results are applied.
+•	For **Microsoft Entra roles**, role-assignable groups can be assigned to the role using [role-assignable groups](~/identity/role-based-access-control/groups-concept.md). When a review is created on a Microsoft Entra role with role-assignable groups assigned, the group name shows up in the review without expanding the group membership. The reviewer can approve or deny access of the entire group to the role. Denied groups will lose their assignment to the role when review results are applied.
 
 •	For **Azure resource roles**, any security group can be assigned to the role. When a review is created on an Azure resource role with a security group assigned, the users assigned to that security group will be fully expanded and shown to the reviewer of the role. When a reviewer denies a user that was assigned to the role via the security group, the user will not be removed from the group, and therefore the apply of the deny result will be unsuccessful.
 

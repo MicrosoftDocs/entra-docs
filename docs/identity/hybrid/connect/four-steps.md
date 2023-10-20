@@ -35,9 +35,9 @@ This section covers your options for managing user access to apps, enabling secu
 
 ### Make apps available to your users seamlessly
 
-Microsoft Entra ID enables administrators to [add applications](../../manage-apps/add-application-portal.md) to the Microsoft Entra application gallery in the [Microsoft Entra admin center](https://entra.microsoft.com) . Adding applications to the Enterprise applications gallery makes it easier for you to configure applications to use Microsoft Entra ID as your identity provider. It also lets you manage user access to the application with Conditional Access policies and configure single sign-on (SSO) to applications so that users don't have to enter their passwords repeatedly and are automatically signed into both on-premises and cloud-based applications.
+Microsoft Entra ID enables administrators to [add applications](~/identity/enterprise-apps/add-application-portal.md) to the Microsoft Entra application gallery in the [Microsoft Entra admin center](https://entra.microsoft.com) . Adding applications to the Enterprise applications gallery makes it easier for you to configure applications to use Microsoft Entra ID as your identity provider. It also lets you manage user access to the application with Conditional Access policies and configure single sign-on (SSO) to applications so that users don't have to enter their passwords repeatedly and are automatically signed into both on-premises and cloud-based applications.
 
-Once applications are integrated into Microsoft Entra gallery, users can see apps that are assigned to them and search and request other apps as needed. Microsoft Entra ID provides [several methods](../../manage-apps/end-user-experiences.md) for users to access their apps:
+Once applications are integrated into Microsoft Entra gallery, users can see apps that are assigned to them and search and request other apps as needed. Microsoft Entra ID provides [several methods](~/identity/enterprise-apps/end-user-experiences.md) for users to access their apps:
 
 * My Apps portal
 * Microsoft 365 app launcher
@@ -129,21 +129,21 @@ This section lists recommendations for removing friction from your organization 
 
 ### Enable Self-Service Password Reset for all users
 
-Azure's [self-service password reset](../../authentication/tutorial-enable-sspr.md) (SSPR) offers a simple means for IT administrators to allow users to reset and unlock their passwords or accounts without administrator intervention. The system includes detailed reporting that tracks when users access the system, along with notifications to alert you to misuse or abuse.
+Azure's [self-service password reset](~/identity/authentication/tutorial-enable-sspr.md) (SSPR) offers a simple means for IT administrators to allow users to reset and unlock their passwords or accounts without administrator intervention. The system includes detailed reporting that tracks when users access the system, along with notifications to alert you to misuse or abuse.
 
-By default, Microsoft Entra ID unlocks accounts when it performs a password reset. However, when you enable Microsoft Entra Connect [integration on-premises](../../authentication/concept-sspr-howitworks.md#on-premises-integration), you can also separate those two operations, which enable users to unlock their account without having to reset the password.
+By default, Microsoft Entra ID unlocks accounts when it performs a password reset. However, when you enable Microsoft Entra Connect [integration on-premises](~/identity/authentication/concept-sspr-howitworks.md#on-premises-integration), you can also separate those two operations, which enable users to unlock their account without having to reset the password.
 
 ### Ensure all users are registered for MFA and SSPR
 
 Azure provides reports that are used by organizations to ensure users are registered for MFA and SSPR. Users who haven't registered may need to be educated on the process.
 
-The MFA [sign-ins report](../../authentication/howto-mfa-reporting.md) includes information about MFA usage and gives you insights into how MFA is working in your organization. Having access to sign-in activity (and audits and risk detections) for Microsoft Entra ID is crucial for troubleshooting, usage analytics, and forensics investigations.
+The MFA [sign-ins report](~/identity/authentication/howto-mfa-reporting.md) includes information about MFA usage and gives you insights into how MFA is working in your organization. Having access to sign-in activity (and audits and risk detections) for Microsoft Entra ID is crucial for troubleshooting, usage analytics, and forensics investigations.
 
-Likewise, the [Self-service Password Management report](../../authentication/howto-sspr-reporting.md) can be used to determine who has (or hasn't) registered for SSPR.
+Likewise, the [Self-service Password Management report](~/identity/authentication/howto-sspr-reporting.md) can be used to determine who has (or hasn't) registered for SSPR.
 
 ### Self-service app management
 
-Before your users can self-discover applications from their access panel, you need to enable [self-service application access](../../manage-apps/manage-self-service-access.md) to any applications that you wish to allow users to self-discover and request access to them. The request can optionally require approval before access being granted. 
+Before your users can self-discover applications from their access panel, you need to enable [self-service application access](~/identity/enterprise-apps/manage-self-service-access.md) to any applications that you wish to allow users to self-discover and request access to them. The request can optionally require approval before access being granted. 
 
 ### Self-service group management
 
@@ -168,9 +168,9 @@ Security logs and reports provide you with an electronic record of activities an
 
 As you think about your approach to operations, there are a couple levels of administration to consider. The first level places the burden of administration on your Hybrid Identity Administrator(s). Always using the Hybrid Identity Administrator role, might be appropriate for smaller companies. But for larger organizations with help desk personnel and administrators responsible for specific tasks, assigning the role of Hybrid Identity Administrator can be a security risk since it provides those individuals with the ability to manage tasks that are beyond their capabilities. 
 
-In this case, you should consider the next level of administration. Using Microsoft Entra ID, you can designate end users as "limited administrators" who can manage tasks in less-privileged roles. For example, you might assign your help desk personnel the [security reader](../../roles/permissions-reference.md#security-reader) role to provide them with the ability to manage security-related features with read-only access. Or perhaps it makes sense to assign the [authentication administrator](../../roles/permissions-reference.md#authentication-administrator) role to individuals to give them the ability to reset non-password credentials or read and configure Azure Service Health.
+In this case, you should consider the next level of administration. Using Microsoft Entra ID, you can designate end users as "limited administrators" who can manage tasks in less-privileged roles. For example, you might assign your help desk personnel the [security reader](~/identity/role-based-access-control/permissions-reference.md#security-reader) role to provide them with the ability to manage security-related features with read-only access. Or perhaps it makes sense to assign the [authentication administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator) role to individuals to give them the ability to reset non-password credentials or read and configure Azure Service Health.
 
-To learn more, see [Administrator role permissions in Microsoft Entra ID](../../roles/permissions-reference.md).
+To learn more, see [Administrator role permissions in Microsoft Entra ID](~/identity/role-based-access-control/permissions-reference.md).
 
 <a name='monitor-hybrid-components-azure-ad-connect-sync-ad-fs-using-azure-ad-connect-health'></a>
 

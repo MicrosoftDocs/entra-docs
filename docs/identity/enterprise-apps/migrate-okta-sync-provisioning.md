@@ -55,7 +55,7 @@ Connect-MgGraph
 If you have the module, a warning might appear to update to the latest version.
 
 1. Import the module after it's installed.
-2. In the authentication window, sign in as at least a [Hybrid Identity Administrator](../roles/permissions-reference.md#hybrid-identity-administrator).
+2. In the authentication window, sign in as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
 
    ![Screenshot of the Microsoft Graph PowerShell window. The install-module, import-module, and connect commands are visible with their output.](./media/migrate-okta-sync-provisioning/import-module.png)
 
@@ -262,7 +262,7 @@ After you disable Okta provisioning, the Microsoft Entra Connect server can sync
 
 After you disable Okta provisioning, the Microsoft Entra Connect cloud sync agent can synchronize objects.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](../roles/permissions-reference.md#hybrid-identity-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
 2. Browse to **Identity** > **Hybrid management** > **Microsoft Entra Connect** > **Connect Sync**. 
 3. Select **Configuration** profile.
 4. Select **Enable**.

@@ -42,11 +42,11 @@ To use and configure Microsoft Entra terms of use policies, you must have:
 * A working Microsoft Entra tenant with Microsoft Entra ID P1, or trial license enabled. If needed, [create one for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * Administrators who interact with terms of use must have one or more of the following role assignments depending on the tasks they're performing. To follow the [Zero Trust principle of least privilege](/security/zero-trust/), consider using [Privileged Identity Management (PIM)](../privileged-identity-management/pim-configure.md) to just-in-time activate privileged role assignments.
    * Read terms of use configuration and Conditional Access policies 
-      * [Security Reader](../roles/permissions-reference.md#security-reader)
-      * [Global Reader](../roles/permissions-reference.md#global-reader)
+      * [Security Reader](~/identity/role-based-access-control/permissions-reference.md#security-reader)
+      * [Global Reader](~/identity/role-based-access-control/permissions-reference.md#global-reader)
    * Create or modify terms of use and Conditional Access policies 
-      * [Conditional Access Administrator](../roles/permissions-reference.md#conditional-access-administrator)
-      * [Security Administrator](../roles/permissions-reference.md#security-administrator)
+      * [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator)
+      * [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator)
 
 ## Terms of use document
 
@@ -56,7 +56,7 @@ Microsoft Entra terms of use policies use the PDF format to present content. The
 
 Once you've completed your terms of use policy document, use the following procedure to add it.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../roles/permissions-reference.md#conditional-access-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Protection** > **Conditional Access** > **Terms of use**.
 1. Select, **New terms**.
  
@@ -122,7 +122,7 @@ Once you've completed your terms of use policy document, use the following proce
 
 The Terms of use blade shows a count of the users who have accepted and declined. These counts and who accepted/declined are stored for the life of the terms of use policy.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../roles/permissions-reference.md#conditional-access-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Protection** > **Conditional Access** > **Terms of use**.
 
     ![Terms of use blade listing the number of user show have accepted and declined](./media/terms-of-use/view-tou.png)
@@ -147,7 +147,7 @@ If you want to view more activity, Microsoft Entra terms of use policies include
 
 To get started with Microsoft Entra audit logs, use the following procedure:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../roles/permissions-reference.md#conditional-access-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Protection** > **Conditional Access** > **Terms of use**.
 1. Select a terms of use policy.
 1. Select **View audit logs**.
@@ -190,7 +190,7 @@ Users can review and see the terms of use policies that they've accepted by usin
 
 You can edit some details of terms of use policies, but you can't modify an existing document. The following procedure describes how to edit the details.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../roles/permissions-reference.md#conditional-access-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Protection** > **Conditional Access** > **Terms of use**.
 1. Select the terms of use policy you want to edit.
 1. Select **Edit terms**.
@@ -209,7 +209,7 @@ You can edit some details of terms of use policies, but you can't modify an exis
 
 ## Update the version or pdf of an existing terms of use
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../roles/permissions-reference.md#conditional-access-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Protection** > **Conditional Access** > **Terms of use**.
 1. Select the terms of use policy you want to edit.
 1. Select **Edit terms**.
@@ -227,7 +227,7 @@ You can edit some details of terms of use policies, but you can't modify an exis
 
 ## View previous versions of a ToU
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../roles/permissions-reference.md#conditional-access-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Protection** > **Conditional Access** > **Terms of use**.
 1. Select the terms of use policy for which you want to view a version history.
 1. Select **Languages and version history**
@@ -239,7 +239,7 @@ You can edit some details of terms of use policies, but you can't modify an exis
 
 ## See who has accepted each version
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../roles/permissions-reference.md#conditional-access-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Protection** > **Conditional Access** > **Terms of use**.
 1. To see who has currently accepted the ToU, select the number under the **Accepted** column for the ToU you want.
 1. By default, the next page will show you the current state of each user's acceptance to the ToU
@@ -250,7 +250,7 @@ You can edit some details of terms of use policies, but you can't modify an exis
 
 The following procedure describes how to add a ToU language.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../roles/permissions-reference.md#conditional-access-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Protection** > **Conditional Access** > **Terms of use**.
 1. Select the terms of use policy you want to edit.
 1. Select **Edit Terms**
@@ -277,7 +277,7 @@ Per-device terms of use have the following constraints:
 
 You can delete old terms of use policies using the following procedure.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../roles/permissions-reference.md#conditional-access-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Protection** > **Conditional Access** > **Terms of use**.
 1. Select the terms of use policy you want to remove.
 1. Select **Delete terms**.
@@ -366,7 +366,7 @@ A: Yes. Currently there are 108 different languages an administrator can configu
 A: The terms of use policy is triggered during the sign-in experience.
 
 **Q: What applications can I target a terms of use policy to?**<br />
-A: You can create a Conditional Access policy on the enterprise applications using modern authentication. For more information, see [enterprise applications](./../manage-apps/view-applications-portal.md).
+A: You can create a Conditional Access policy on the enterprise applications using modern authentication. For more information, see [enterprise applications](./~/identity/enterprise-apps/view-applications-portal.md).
 
 **Q: Can I add multiple terms of use policies to a given user or app?**<br />
 A: Yes, by creating multiple Conditional Access policies targeting those groups or applications. If a user falls in scope of multiple terms of use policies, they accept one terms of use policy at a time.

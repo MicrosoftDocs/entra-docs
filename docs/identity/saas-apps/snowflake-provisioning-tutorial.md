@@ -31,8 +31,8 @@ This tutorial demonstrates the steps that you perform in Snowflake and Microsoft
 
 The scenario outlined in this tutorial assumes that you already have the following prerequisites:
 
-* [A Microsoft Entra tenant](../develop/quickstart-create-new-tenant.md)
-* A user account in Microsoft Entra ID with [permission](../roles/permissions-reference.md) to configure provisioning (Application Administrator, Cloud Application Administrator, Application Owner, or Global Administrator)
+* [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md)
+* A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (Application Administrator, Cloud Application Administrator, Application Owner, or Global Administrator)
 * [A Snowflake tenant](https://www.Snowflake.com/pricing/)
 * At least one user in Snowflake with the **ACCOUNTADMIN** role.
 
@@ -84,17 +84,17 @@ Before you configure Snowflake for automatic user provisioning with Microsoft En
 
 ## Step 3: Add Snowflake from the Microsoft Entra application gallery
 
-Add Snowflake from the Microsoft Entra application gallery to start managing provisioning to Snowflake. If you previously set up Snowflake for single sign-on (SSO), you can use the same application. However, we recommend that you create a separate app when you're initially testing the integration. [Learn more about adding an application from the gallery](../manage-apps/add-application-portal.md).
+Add Snowflake from the Microsoft Entra application gallery to start managing provisioning to Snowflake. If you previously set up Snowflake for single sign-on (SSO), you can use the same application. However, we recommend that you create a separate app when you're initially testing the integration. [Learn more about adding an application from the gallery](~/identity/enterprise-apps/add-application-portal.md).
 
 ## Step 4: Define who will be in scope for provisioning
 
-The Microsoft Entra provisioning service allows you to scope who will be provisioned based on assignment to the application, or based on attributes of the user or group. If you choose to scope who will be provisioned to your app based on assignment, you can use the [steps to assign users and groups to the application](../manage-apps/assign-user-or-group-access-portal.md). If you choose to scope who will be provisioned based solely on attributes of the user or group, you can [use a scoping filter](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+The Microsoft Entra provisioning service allows you to scope who will be provisioned based on assignment to the application, or based on attributes of the user or group. If you choose to scope who will be provisioned to your app based on assignment, you can use the [steps to assign users and groups to the application](~/identity/enterprise-apps/assign-user-or-group-access-portal.md). If you choose to scope who will be provisioned based solely on attributes of the user or group, you can [use a scoping filter](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 Keep these tips in mind:
 
-* When you're assigning users and groups to Snowflake, you must select a role other than Default Access. Users with the Default Access role are excluded from provisioning and will be marked as not effectively entitled in the provisioning logs. If the only role available on the application is the Default Access role, you can [update the application manifest](../develop/howto-add-app-roles-in-azure-ad-apps.md) to add more roles.
+* When you're assigning users and groups to Snowflake, you must select a role other than Default Access. Users with the Default Access role are excluded from provisioning and will be marked as not effectively entitled in the provisioning logs. If the only role available on the application is the Default Access role, you can [update the application manifest](~/identity-platform/howto-add-app-roles-in-azure-ad-apps.md) to add more roles.
 
-* If you need additional roles, you can [update the application manifest](../develop/howto-add-app-roles-in-azure-ad-apps.md) to add new roles.
+* If you need additional roles, you can [update the application manifest](~/identity-platform/howto-add-app-roles-in-azure-ad-apps.md) to add new roles.
 
 ## Step 5: Configure automatic user provisioning to Snowflake
 
@@ -102,7 +102,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 To configure automatic user provisioning for Snowflake in Microsoft Entra ID:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 
     ![Screenshot that shows the Enterprise applications pane.](common/enterprise-applications.png)
@@ -207,7 +207,7 @@ The Microsoft Entra provisioning service currently operates under particular [IP
 ## Additional resources
 
 * [Managing user account provisioning for enterprise apps](../app-provisioning/configure-automatic-user-provisioning-portal.md)
-* [What are application access and single sign-on with Microsoft Entra ID?](../manage-apps/what-is-single-sign-on.md)
+* [What are application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
 ## Next steps
 

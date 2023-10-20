@@ -54,7 +54,7 @@ To configure security defaults in your directory, you must be assigned at least 
 
 To enable security defaults:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](../roles/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 1. Browse to **Identity** > **Overview** > **Properties**.
 1. Select **Manage security defaults**.
 1. Set **Security defaults** to **Enabled**.
@@ -72,7 +72,7 @@ As part of enabling security defaults, administrators should revoke all existing
 
 ### Require all users to register for Microsoft Entra multifactor authentication
 
-All users have 14 days to register using the [Microsoft Authenticator app](../authentication/concept-authentication-authenticator-app.md) or any app supporting [OATH TOTP](../authentication/concept-authentication-oath-tokens.md). After the 14 days have passed, the user can't sign in until registration is completed. A user's 14-day period begins after their first successful interactive sign-in after enabling security defaults.
+All users have 14 days to register using the [Microsoft Authenticator app](~/identity/authentication/concept-authentication-authenticator-app.md) or any app supporting [OATH TOTP](~/identity/authentication/concept-authentication-oath-tokens.md). After the 14 days have passed, the user can't sign in until registration is completed. A user's 14-day period begins after their first successful interactive sign-in after enabling security defaults.
 
 When users sign in and are prompted to perform multifactor authentication, they see a screen providing them with a number to enter in the Microsoft Authenticator app. This measure helps prevent users from falling for MFA fatigue attacks.
 
@@ -169,10 +169,10 @@ It's critical to inform users about upcoming changes, registration requirements,
 
 ### Authentication methods
 
-Security defaults users are required to register for and use multifactor authentication using the [Microsoft Authenticator app using notifications](../authentication/concept-authentication-authenticator-app.md). Users might use verification codes from the Microsoft Authenticator app but can only register using the notification option. Users can also use any third party application using [OATH TOTP](../authentication/concept-authentication-oath-tokens.md) to generate codes.
+Security defaults users are required to register for and use multifactor authentication using the [Microsoft Authenticator app using notifications](~/identity/authentication/concept-authentication-authenticator-app.md). Users might use verification codes from the Microsoft Authenticator app but can only register using the notification option. Users can also use any third party application using [OATH TOTP](~/identity/authentication/concept-authentication-oath-tokens.md) to generate codes.
 
 > [!WARNING]
-> Do not disable methods for your organization if you are using security defaults. Disabling methods may lead to locking yourself out of your tenant. Leave all **Methods available to users** enabled in the [MFA service settings portal](../authentication/howto-mfa-getstarted.md#choose-authentication-methods-for-mfa).
+> Do not disable methods for your organization if you are using security defaults. Disabling methods may lead to locking yourself out of your tenant. Leave all **Methods available to users** enabled in the [MFA service settings portal](~/identity/authentication/howto-mfa-getstarted.md#choose-authentication-methods-for-mfa).
 
 ### B2B users
 
@@ -188,7 +188,7 @@ Organizations that choose to implement Conditional Access policies that replace 
 
 To disable security defaults in your directory:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](../roles/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 1. Browse to **Identity** > **Overview** > **Properties**.
 1. Select **Manage security defaults**.
 1. Set **Security defaults** to **Disabled (not recommended)**.
@@ -211,7 +211,7 @@ Organizations who would like to test out the features of Conditional Access can 
 
 After administrators disable security defaults, organizations should immediately enable Conditional Access policies to protect their organization. These policies should include at least those policies in the [secure foundations category of Conditional Access templates](../conditional-access/concept-conditional-access-policy-common.md?tabs=secure-foundation#template-categories). Organizations with Microsoft Entra ID P2 licenses that include Microsoft Entra ID Protection can expand on this list to include [user and sign in risk-based policies](../identity-protection/howto-identity-protection-configure-risk-policies.md) to further strengthen their posture. 
 
-We recommend that you exclude at least one account from your Conditional Access policies. These excluded **emergency access** or **break-glass** accounts help prevent tenant-wide account lockout. In the unlikely scenario all administrators are locked out of your tenant, your emergency-access administrative account can be used to log into the tenant to take steps to recover access. For more information, see the article [Manage emergency access accounts](../roles/security-emergency-access.md).
+We recommend that you exclude at least one account from your Conditional Access policies. These excluded **emergency access** or **break-glass** accounts help prevent tenant-wide account lockout. In the unlikely scenario all administrators are locked out of your tenant, your emergency-access administrative account can be used to log into the tenant to take steps to recover access. For more information, see the article [Manage emergency access accounts](~/identity/role-based-access-control/security-emergency-access.md).
 
 ## Next steps
 

@@ -88,7 +88,7 @@ This risk detection indicates that the application's valid credentials have been
 
 ### Simulate Leaked Credentials in GitHub for Workload Identities
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../roles/permissions-reference.md#security-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
 1. Browse to **Identity** > **Applications** > **App registrations**.
 1. Select **New registration** to register a new application or reuse an existing stale application.
 1. Select **Certificates & Secrets** > **New client Secret** , add a description of your client secret and set an expiration for the secret or specify a custom lifetime and select **Add**. Record the secret's value for later use for your GitHub Commit.

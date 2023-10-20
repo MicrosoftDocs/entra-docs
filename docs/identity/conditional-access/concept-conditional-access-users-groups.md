@@ -42,7 +42,7 @@ The following options are available to include when creating a Conditional Acces
          - Other external users, or users not represented by the other user type selections
       - One or more tenants can be specified for the selected user type(s), or you can specify all tenants. 
    - Directory roles
-      - Allows administrators to select specific [built-in Microsoft Entra directory roles](../roles/permissions-reference.md) used to determine policy assignment. For example, organizations may create a more restrictive policy on users actively assigned the Global Administrator role. Other role types aren't supported, including administrative unit-scoped roles and custom roles.
+      - Allows administrators to select specific [built-in Microsoft Entra directory roles](~/identity/role-based-access-control/permissions-reference.md) used to determine policy assignment. For example, organizations may create a more restrictive policy on users actively assigned the Global Administrator role. Other role types aren't supported, including administrative unit-scoped roles and custom roles.
    - Users and groups
       - Allows targeting of specific sets of users. For example, organizations can select a group that contains all members of the HR department when an HR app is selected as the cloud app. A group can be any type of user group in Microsoft Entra ID, including dynamic or assigned security and distribution groups. Policy is applied to nested users and groups.
 
@@ -53,7 +53,7 @@ The following options are available to include when creating a Conditional Acces
 > If users or groups are a member of over 2048 groups their access may be blocked. This limit applies to both direct and nested group membership.
 
 > [!WARNING]
-> Conditional Access policies do not support users assigned a directory role [scoped to an administrative unit](../roles/admin-units-assign-roles.md) or directory roles scoped directly to an object, like through [custom roles](../roles/custom-create.md).
+> Conditional Access policies do not support users assigned a directory role [scoped to an administrative unit](~/identity/role-based-access-control/admin-units-assign-roles.md) or directory roles scoped directly to an object, like through [custom roles](~/identity/role-based-access-control/custom-create.md).
 
 > [!NOTE]
 > When targeting policies to B2B direct connect external users, these policies will also be applied to B2B collaboration users accessing Teams or SharePoint Online who are also eligible for B2B direct connect. The same applies for policies targeted to B2B collaboration external users, meaning users accessing Teams shared channels will have B2B collaboration policies apply if they also have a guest user presence in the tenant.
@@ -62,8 +62,8 @@ The following options are available to include when creating a Conditional Acces
 
 When organizations both include and exclude a user or group, the user or group is excluded from the policy. The exclude action overrides the include action in policy. Exclusions are commonly used for emergency access or break-glass accounts. More information about emergency access accounts and why they're important can be found in the following articles: 
 
-* [Manage emergency access accounts in Microsoft Entra ID](../roles/security-emergency-access.md)
-* [Create a resilient access control management strategy with Microsoft Entra ID](../authentication/concept-resilient-controls.md)
+* [Manage emergency access accounts in Microsoft Entra ID](~/identity/role-based-access-control/security-emergency-access.md)
+* [Create a resilient access control management strategy with Microsoft Entra ID](~/identity/authentication/concept-resilient-controls.md)
 
 The following options are available to exclude when creating a Conditional Access policy.
 

@@ -32,7 +32,7 @@ Administrators can reset a user's password if the password is forgotten, if the 
 
 [!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Password Administrator](../roles/permissions-reference.md#password-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Password Administrator](~/identity/role-based-access-control/permissions-reference.md#password-administrator).
 
 1. Browse to **Identity** > **Users** > **All users**.
 

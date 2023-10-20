@@ -45,12 +45,12 @@ Microsoft Entra account is an identity provider option for your self-service sig
 :::image type="content" source="media/default-account/default-account-user-flow.png" alt-text="Screenshot of Microsoft Entra account in a self-service sign-up user flow." lightbox="media/default-account/default-account-user-flow.png":::
 
 ## Verifying the application's publisher domain
-As of November 2020, new application registrations show up as unverified in the user consent prompt unless [the application's publisher domain is verified](../develop/howto-configure-publisher-domain.md), ***and*** the company’s identity has been verified with the Microsoft Partner Network and associated with the application. ([Learn more](../develop/publisher-verification-overview.md) about this change.) For Microsoft Entra user flows, the publisher’s domain appears only when using a [Microsoft account](microsoft-account.md) or other Microsoft Entra tenant as the identity provider. To meet these new requirements, follow these steps:
+As of November 2020, new application registrations show up as unverified in the user consent prompt unless [the application's publisher domain is verified](~/identity-platform/howto-configure-publisher-domain.md), ***and*** the company’s identity has been verified with the Microsoft Partner Network and associated with the application. ([Learn more](~/identity-platform/publisher-verification-overview.md) about this change.) For Microsoft Entra user flows, the publisher’s domain appears only when using a [Microsoft account](microsoft-account.md) or other Microsoft Entra tenant as the identity provider. To meet these new requirements, follow these steps:
 
 1. [Verify your company identity using your Microsoft Partner Network (MPN) account](/partner-center/verification-responses). This process verifies information about your company and your company’s primary contact.
 1. Complete the publisher verification process to associate your MPN account with your app registration using one of the following options:
-   - If the app registration for the Microsoft account identity provider is in a Microsoft Entra tenant, [verify your app in the App Registration portal](../develop/mark-app-as-publisher-verified.md).
-   - If your app registration for the Microsoft account identity provider is in an Azure AD B2C tenant, [mark your app as publisher verified using Microsoft Graph APIs](../develop/troubleshoot-publisher-verification.md#making-microsoft-graph-api-calls) (for example, using Graph Explorer).
+   - If the app registration for the Microsoft account identity provider is in a Microsoft Entra tenant, [verify your app in the App Registration portal](~/identity-platform/mark-app-as-publisher-verified.md).
+   - If your app registration for the Microsoft account identity provider is in an Azure AD B2C tenant, [mark your app as publisher verified using Microsoft Graph APIs](~/identity-platform/troubleshoot-publisher-verification.md#making-microsoft-graph-api-calls) (for example, using Graph Explorer).
 
 ## Next steps
 

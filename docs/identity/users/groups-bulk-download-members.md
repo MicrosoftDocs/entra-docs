@@ -21,7 +21,7 @@ You can bulk download the members of a group in your organization to a comma-sep
 
 ## To bulk download group membership
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](../roles/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 1. Select Microsoft Entra ID.
 1. Select **Groups** > **All groups**.
 1. Open the group whose membership you want to download, and then select **Members**.

@@ -44,7 +44,7 @@ As you review your list, you may find you need to either assign an owner for tas
 
 #### Owners recommended reading
 
-- [Assigning administrator roles in Microsoft Entra ID](../roles/permissions-reference.md)
+- [Assigning administrator roles in Microsoft Entra ID](~/identity/role-based-access-control/permissions-reference.md)
 
 ## Hybrid management
 
@@ -89,10 +89,10 @@ Some identity and access management services require on-premises agents to enabl
 #### On-premises agents logs recommended reading
 
 - [Troubleshoot Application Proxy](../app-proxy/application-proxy-troubleshoot.md)
-- [Self-service password reset troubleshooting](../authentication/troubleshoot-sspr.md)
+- [Self-service password reset troubleshooting](~/identity/authentication/troubleshoot-sspr.md)
 - [Understand Microsoft Entra application proxy connectors](../app-proxy/application-proxy-connectors.md)
 - [Microsoft Entra Connect: Troubleshoot Pass-through Authentication](../hybrid/connect/tshoot-connect-pass-through-authentication.md#collecting-pass-through-authentication-agent-logs)
-- [Troubleshoot error codes for the Microsoft Entra multifactor authentication NPS extension](../authentication/howto-mfa-nps-extension-errors.md)
+- [Troubleshoot error codes for the Microsoft Entra multifactor authentication NPS extension](~/identity/authentication/howto-mfa-nps-extension-errors.md)
 
 ### On-premises agents management
 
@@ -131,7 +131,7 @@ There are two "From" addresses used by Microsoft Entra ID: <o365mc@email2.micros
 - [Microsoft Entra Connect Health](../hybrid/connect/how-to-connect-health-operations.md#enable-email-notifications)
 - [Microsoft Entra ID Protection](../identity-protection/howto-identity-protection-configure-notifications.md)
 - [Microsoft Entra Privileged Identity Management](../privileged-identity-management/pim-email-notifications.md)
-- [Enterprise App Expiring Certificate Notifications](../manage-apps/tutorial-manage-certificates-for-federated-single-sign-on.md#add-email-notification-addresses-for-certificate-expiration)
+- [Enterprise App Expiring Certificate Notifications](~/identity/enterprise-apps/tutorial-manage-certificates-for-federated-single-sign-on.md#add-email-notification-addresses-for-certificate-expiration)
 - Enterprise App Provisioning Service Notifications
 
 Refer to the following table to learn the type of notifications that are sent and where to check for them:
@@ -152,7 +152,7 @@ Refer to the following table to learn the type of notifications that are sent an
 
 ### AD FS lockdown
 
-Organizations, which configure applications to authenticate directly to Microsoft Entra ID benefit from [Microsoft Entra smart lockout](../authentication/concept-sspr-howitworks.md). If you use AD FS in Windows Server 2012 R2, implement AD FS [extranet lockout protection](/windows-server/identity/ad-fs/operations/configure-ad-fs-extranet-soft-lockout-protection). If you use AD FS on Windows Server 2016 or later, implement [extranet smart lockout](https://support.microsoft.com/help/4096478/extranet-smart-lockout-feature-in-windows-server-2016). At a minimum, we recommend you enable extranet lockout to contain the risk of brute force attacks against on-premises Active Directory. However, if you have AD FS in Windows 2016 or higher, you should also enable extranet smart lockout that will help to mitigate [password spray](https://www.microsoft.com/microsoft-365/blog/2018/03/05/azure-ad-and-adfs-best-practices-defending-against-password-spray-attacks/) attacks.
+Organizations, which configure applications to authenticate directly to Microsoft Entra ID benefit from [Microsoft Entra smart lockout](~/identity/authentication/concept-sspr-howitworks.md). If you use AD FS in Windows Server 2012 R2, implement AD FS [extranet lockout protection](/windows-server/identity/ad-fs/operations/configure-ad-fs-extranet-soft-lockout-protection). If you use AD FS on Windows Server 2016 or later, implement [extranet smart lockout](https://support.microsoft.com/help/4096478/extranet-smart-lockout-feature-in-windows-server-2016). At a minimum, we recommend you enable extranet lockout to contain the risk of brute force attacks against on-premises Active Directory. However, if you have AD FS in Windows 2016 or higher, you should also enable extranet smart lockout that will help to mitigate [password spray](https://www.microsoft.com/microsoft-365/blog/2018/03/05/azure-ad-and-adfs-best-practices-defending-against-password-spray-attacks/) attacks.
 
 If AD FS is only used for Microsoft Entra federation, there are some endpoints that can be turned off to minimize the attack surface area. For example, if AD FS is only used for Microsoft Entra ID, you should disable WS-Trust endpoints other than the endpoints enabled for **usernamemixed** and **windowstransport**.
 

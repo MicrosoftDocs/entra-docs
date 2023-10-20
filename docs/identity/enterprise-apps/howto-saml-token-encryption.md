@@ -59,7 +59,7 @@ To configure enterprise application's SAML token encryption, follow these steps:
 
 You can add the public cert to your application configuration within the Microsoft Entra admin center.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
 1. Enter the name of the existing application in the search box, and then select the application from the search results.
 1. On the application's page, select **Token encryption**.
@@ -101,10 +101,10 @@ To configure token encryption for an application registration, follow these step
 
 # [Portal](#tab/azure-portal)
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 1. Browse to **Identity** > **Applications** > **App registrations** > **All applications**.
 1. Enter the name of the existing application in the search box, and then select the application from the search results.
-1. In the application's page, select **Manifest** to edit the [application manifest](../develop/reference-app-manifest.md).
+1. In the application's page, select **Manifest** to edit the [application manifest](~/identity-platform/reference-app-manifest.md).
 
     The following example shows an application manifest configured with two encryption certificates, and with the second selected as the active one using the tokenEncryptionKeyId.
 
@@ -177,7 +177,7 @@ To configure token encryption for an application registration, follow these step
 
 # [Azure AD PowerShell](#tab/azuread-powershell)
 
-1. Use the latest Azure AD PowerShell module to connect to your tenant. You need to sign in as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator). 
+1. Use the latest Azure AD PowerShell module to connect to your tenant. You need to sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 
 1. Set the token encryption settings using the **[Set-AzureApplication](/powershell/module/azuread/set-azureadapplication?view=azureadps-2.0-preview&preserve-view=true)** command.
 
@@ -195,7 +195,7 @@ To configure token encryption for an application registration, follow these step
 
 # [Microsoft Graph PowerShell](#tab/msgraph-powershell)
 
-1. Use the Microsoft Graph PowerShell module to connect to your tenant. You need to sign in as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator).
+1. Use the Microsoft Graph PowerShell module to connect to your tenant. You need to sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 
 1. Set the token encryption settings using the **[Update-MgApplication](/powershell/module/microsoft.graph.applications/update-mgapplication?view=graph-powershell-1.0&preserve-view=true)** command.
 
@@ -248,5 +248,5 @@ To configure token encryption for an application registration, follow these step
 
 ## Next steps
 
-* Find out [How Microsoft Entra ID uses the SAML protocol](../develop/saml-protocol-reference.md)
-* Learn the format, security characteristics, and contents of [SAML tokens in Microsoft Entra ID](../develop/reference-saml-tokens.md)
+* Find out [How Microsoft Entra ID uses the SAML protocol](~/identity-platform/saml-protocol-reference.md)
+* Learn the format, security characteristics, and contents of [SAML tokens in Microsoft Entra ID](~/identity-platform/reference-saml-tokens.md)

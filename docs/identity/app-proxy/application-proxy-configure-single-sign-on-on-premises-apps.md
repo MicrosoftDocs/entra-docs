@@ -18,9 +18,9 @@ ms.reviewer: ashishj
 You can provide single sign-on (SSO) to on-premises applications that are secured with SAML authentication and provide remote access to these applications through Application Proxy. With SAML single sign-on, Microsoft Entra authenticates to the application by using the user's Microsoft Entra account. Microsoft Entra ID communicates the sign-on information to the application through a connection protocol. You can also map users to specific application roles based on rules you define in your SAML claims. By enabling Application Proxy in addition to SAML SSO, your users will have external access to the application and a seamless SSO experience.
 
 The applications must be able to consume SAML tokens issued by **Microsoft Entra ID**. 
-This configuration doesn't apply to applications using an on-premises identity provider. For these scenarios, we recommend reviewing [Resources for migrating applications to Microsoft Entra ID](../manage-apps/migration-resources.md).
+This configuration doesn't apply to applications using an on-premises identity provider. For these scenarios, we recommend reviewing [Resources for migrating applications to Microsoft Entra ID](~/identity/enterprise-apps/migration-resources.md).
 
-SAML SSO with Application Proxy also works with the SAML token encryption feature. For more info, see [Configure Microsoft Entra SAML token encryption](../manage-apps/howto-saml-token-encryption.md).
+SAML SSO with Application Proxy also works with the SAML token encryption feature. For more info, see [Configure Microsoft Entra SAML token encryption](~/identity/enterprise-apps/howto-saml-token-encryption.md).
 
 The protocol diagrams below describe the single sign-on sequence for both a service provider-initiated (SP-initiated) flow and an identity provider-initiated (IdP-initiated) flow. Application Proxy works with SAML SSO by caching the SAML request and response to and from the on-premises application.
 
@@ -38,7 +38,7 @@ The protocol diagrams below describe the single sign-on sequence for both a serv
 
 4. Select **SAML** as the single sign-on method.
 
-5. First set up SAML SSO to work while on the corporate network, see the basic SAML configuration section of [Configure SAML-based single sign-on](../develop/single-sign-on-saml-protocol.md) to configure SAML-based authentication for the application.
+5. First set up SAML SSO to work while on the corporate network, see the basic SAML configuration section of [Configure SAML-based single sign-on](~/identity-platform/single-sign-on-saml-protocol.md) to configure SAML-based authentication for the application.
 
 6. Add at least one user to the application and make sure the test account has access to the application. While connected to the corporate network, use the test account to see if you have single sign-on to the application. 
 
@@ -88,5 +88,5 @@ When you've completed all these steps, your app should be up and running. To tes
 
 ## Next steps
 
-- [How does Microsoft Entra application proxy provide single sign-on?](../manage-apps/what-is-single-sign-on.md)
+- [How does Microsoft Entra application proxy provide single sign-on?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 - [Troubleshoot Application Proxy](application-proxy-troubleshoot.md)

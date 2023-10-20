@@ -21,7 +21,7 @@ Microsoft Entra application proxy natively supports single sign-on access to app
 
 * **No additional software or changes to your apps** - You can use your existing Application Proxy connectors and it doesn't require any additional software to be installed.  
 
-* **Wide list of attributes and transformations available** - All header values available are based on standard claims that are issued by Microsoft Entra ID. All attributes and transformations available for [configuring claims for SAML or OIDC applications](../develop/saml-claims-customization.md#attributes) are also available to be used as header values. 
+* **Wide list of attributes and transformations available** - All header values available are based on standard claims that are issued by Microsoft Entra ID. All attributes and transformations available for [configuring claims for SAML or OIDC applications](~/identity-platform/saml-claims-customization.md#attributes) are also available to be used as header values. 
 
 ## Pre-requisites
 Before you get started with single sign-on for header-based authentication apps, make sure your environment is ready with the following settings and configurations:
@@ -72,8 +72,8 @@ Before you get started with single sign-on for header-based applications, you sh
 3. In Basic Configuration, **Microsoft Entra ID**, will be selected as the default. 
 4. Select the edit pencil, in Headers to configure headers to send to the application. 
 5. Select **Add new header**. Provide a **Name** for the header and select either **Attribute** or **Transformation** and select from the drop-down which header your application needs.  
-    - To learn more about the list of attribute available, see [Claims Customizations- Attributes](../develop/saml-claims-customization.md#attributes). 
-    - To learn more about the list of transformation available, see [Claims Customizations- Claim Transformations](../develop/saml-claims-customization.md#claim-transformations). 
+    - To learn more about the list of attribute available, see [Claims Customizations- Attributes](~/identity-platform/saml-claims-customization.md#attributes). 
+    - To learn more about the list of transformation available, see [Claims Customizations- Claim Transformations](~/identity-platform/saml-claims-customization.md#claim-transformations). 
     - You may also add a **Group Header**, to send all the groups a user is part of, or the groups assigned to the application as a header. To learn more about configuring groups as a value see: [Configure group claims for applications](../hybrid/connect/how-to-connect-fed-group-claims.md#add-group-claims-to-tokens-for-saml-applications-using-sso-configuration). 
 6. Select Save. 
 
@@ -90,6 +90,6 @@ When you've completed all these steps, your app should be running and available.
 
 ## Next steps
 
-- [What is single sign-on?](../manage-apps/what-is-single-sign-on.md)
+- [What is single sign-on?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 - [What is application proxy?](what-is-application-proxy.md)
-- [Quickstart Series on Application Management](../manage-apps/view-applications-portal.md)
+- [Quickstart Series on Application Management](~/identity/enterprise-apps/view-applications-portal.md)

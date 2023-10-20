@@ -26,7 +26,7 @@ You can enrich user attributes in Microsoft Entra ID to make more user attribute
 
 * App provisioning: The data source of app provisioning is Microsoft Entra ID, and necessary user attributes must be in there.
 
-* Application authorization: A token that Microsoft Entra ID issues can include claims generated from user attributes so that applications can make authorization decisions based on the claims in the token. It can also contain attributes coming from external data sources through a [custom claims provider](../develop/custom-claims-provider-overview.md).
+* Application authorization: A token that Microsoft Entra ID issues can include claims generated from user attributes so that applications can make authorization decisions based on the claims in the token. It can also contain attributes coming from external data sources through a [custom claims provider](~/identity-platform/custom-claims-provider-overview.md).
 
 * Group membership population and maintenance: Dynamic groups enable dynamic population of group membership based on user attributes, such as department information.
 
@@ -38,13 +38,13 @@ These two links provide guidance on making schema changes:
 
 These links provide more information on this topic but aren't specific to changing the schema:
 
-* [Use Microsoft Entra schema extension attributes in claims - Microsoft identity platform](../develop/schema-extensions.md)
+* [Use Microsoft Entra schema extension attributes in claims - Microsoft identity platform](~/identity-platform/schema-extensions.md)
 
 * [What are custom security attributes in Microsoft Entra ID (preview)?](../fundamentals/custom-security-attributes-overview.md)
 
 * [Customize Microsoft Entra attribute mappings in application provisioning](../app-provisioning/customize-application-attributes.md)
 
-* [Provide optional claims to Microsoft Entra apps - Microsoft identity platform](../develop/optional-claims.md)
+* [Provide optional claims to Microsoft Entra apps - Microsoft identity platform](~/identity-platform/optional-claims.md)
 
 These links provide more information about groups:
 

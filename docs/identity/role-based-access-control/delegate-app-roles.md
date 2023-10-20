@@ -37,7 +37,7 @@ By default in Microsoft Entra ID, all users can register applications and manage
 
 To disable the default ability to create application registrations or consent to applications, follow these steps to set one or both of these settings for your organization.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](../roles/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 
 1. Browse to **Identity** > **Users** > **User settings**.
 
@@ -53,11 +53,11 @@ To disable the default ability to create application registrations or consent to
 
 ### Grant individual permissions to create and consent to applications when the default ability is disabled
 
-Assign the [Application Developer role](../roles/permissions-reference.md#application-developer) to grant the ability to create application registrations when the **Users can register applications** setting is set to No. This role also grants permission to consent on one's own behalf when the **Users can consent to apps accessing company data on their behalf** setting is set to No.
+Assign the [Application Developer role](~/identity/role-based-access-control/permissions-reference.md#application-developer) to grant the ability to create application registrations when the **Users can register applications** setting is set to No. This role also grants permission to consent on one's own behalf when the **Users can consent to apps accessing company data on their behalf** setting is set to No.
 
 ## Assign application owners
 
-Assigning owners is a simple way to grant the ability to manage all aspects of Microsoft Entra configuration for a specific application registration or enterprise application. For more information, see [Assign enterprise application owners](../manage-apps/assign-app-owners.md).
+Assigning owners is a simple way to grant the ability to manage all aspects of Microsoft Entra configuration for a specific application registration or enterprise application. For more information, see [Assign enterprise application owners](~/identity/enterprise-apps/assign-app-owners.md).
 
 ## Assign built-in application admin roles
 

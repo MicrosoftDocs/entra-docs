@@ -30,7 +30,7 @@ When designing isolated environments, it's important to consider the following p
 
 * **Use only modern authentication** - Applications deployed in isolated environments must use claims-based modern authentication (for example, SAML, * Auth, OAuth2, and OpenID Connect) to use capabilities such as federation, Microsoft Entra B2B collaboration, delegation, and the consent framework. This way, legacy applications that have dependency on legacy authentication methods such as NT LAN Manager (NTLM) won't carry forward in isolated environments.
 
-* **Enforce strong authentication** - Strong authentication must always be used when accessing the isolated environment services and infrastructure. Whenever possible, [passwordless authentication](../authentication/concept-authentication-passwordless.md) such as [Windows for Business Hello](/windows/security/identity-protection/hello-for-business/hello-overview) or a [FIDO2 security keys](../authentication/howto-authentication-passwordless-security-key.md) should be used.
+* **Enforce strong authentication** - Strong authentication must always be used when accessing the isolated environment services and infrastructure. Whenever possible, [passwordless authentication](~/identity/authentication/concept-authentication-passwordless.md) such as [Windows for Business Hello](/windows/security/identity-protection/hello-for-business/hello-overview) or a [FIDO2 security keys](~/identity/authentication/howto-authentication-passwordless-security-key.md) should be used.
 
 * **Deploy secure workstations** - [Secure workstations](/security/privileged-access-workstations/privileged-access-devices) provide the mechanism to ensure that the platform and the identity that platform represents is properly attested and secured against exploitation. Two other approaches to consider are:
 
@@ -65,13 +65,13 @@ To mitigate inside threats, it's possible to outsource access to the global admi
 
 ### Emergency access accounts
 
-Provision [emergency access accounts](../roles/security-emergency-access.md) for "break glass" scenarios where normal administrative accounts can't be used in the event you're accidentally locked out of your Microsoft Entra organization. For on-premises environments using federation systems such as Active Directory Federation Services (AD FS) for authentication, maintain alternate cloud-only credentials for your global administrators to ensure service delivery during an on-premises infrastructure outage.
+Provision [emergency access accounts](~/identity/role-based-access-control/security-emergency-access.md) for "break glass" scenarios where normal administrative accounts can't be used in the event you're accidentally locked out of your Microsoft Entra organization. For on-premises environments using federation systems such as Active Directory Federation Services (AD FS) for authentication, maintain alternate cloud-only credentials for your global administrators to ensure service delivery during an on-premises infrastructure outage.
 
 ### Azure managed identities
 
 Use [Azure managed identities](../managed-identities-azure-resources/overview.md) for Azure resources that require a service identity. Check the [list of services that support managed identities](../managed-identities-azure-resources/managed-identities-status.md) when designing your Azure solutions.
 
-If managed identities aren't supported or not possible, consider [provisioning service principal objects](../develop/app-objects-and-service-principals.md).
+If managed identities aren't supported or not possible, consider [provisioning service principal objects](~/identity-platform/app-objects-and-service-principals.md).
 
 ### Hybrid service accounts
 
@@ -105,15 +105,15 @@ All human identities (local accounts and external identities provisioned through
 
 #### Passwordless credentials
 
-A [passwordless solution](../authentication/concept-authentication-passwordless.md) is the best solution for ensuring the most convenient and secure method of authentication. Passwordless credentials such as [FIDO security keys](../authentication/howto-authentication-passwordless-security-key.md) and [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/) are recommended for human identities with privileged roles.
+A [passwordless solution](~/identity/authentication/concept-authentication-passwordless.md) is the best solution for ensuring the most convenient and secure method of authentication. Passwordless credentials such as [FIDO security keys](~/identity/authentication/howto-authentication-passwordless-security-key.md) and [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/) are recommended for human identities with privileged roles.
 
 #### Password protection
 
-If the environment is synchronized from an on-premises Active Directory forest, you should deploy [Microsoft Entra password protection](../authentication/concept-password-ban-bad-on-premises.md) to eliminate weak passwords in your organization. [Microsoft Entra smart lockout](../authentication/howto-password-smart-lockout.md) should also be used in hybrid or cloud-only environments to lock out bad actors who are trying to guess your users' passwords or use brute-force methods to get in.
+If the environment is synchronized from an on-premises Active Directory forest, you should deploy [Microsoft Entra password protection](~/identity/authentication/concept-password-ban-bad-on-premises.md) to eliminate weak passwords in your organization. [Microsoft Entra smart lockout](~/identity/authentication/howto-password-smart-lockout.md) should also be used in hybrid or cloud-only environments to lock out bad actors who are trying to guess your users' passwords or use brute-force methods to get in.
 
 #### Self-service password management
 
-Users needing to change or reset their passwords is one of the biggest sources of volume and cost of help desk calls. In addition to cost, changing the password as a tool to mitigate a user risk is a fundamental step in improving the security posture of your organization. At a minimum, deploy [Self-Service Password Management](../authentication/howto-sspr-deployment.md) for human and test accounts with passwords to deflect help desk calls.
+Users needing to change or reset their passwords is one of the biggest sources of volume and cost of help desk calls. In addition to cost, changing the password as a tool to mitigate a user risk is a fundamental step in improving the security posture of your organization. At a minimum, deploy [Self-Service Password Management](~/identity/authentication/howto-sspr-deployment.md) for human and test accounts with passwords to deflect help desk calls.
 
 #### External identities passwords
 
@@ -128,13 +128,13 @@ For scenarios where service principals are needed, use certificate credentials f
 
 In both cases, Azure Key Vault can be used with Azure managed identities, so that the runtime environment (for example, an Azure function) can retrieve the credential from the key vault.
 
-Check this example to [create service principals with self-signed certificate](../develop/howto-authenticate-service-principal-powershell.md) for authentication of service principals with certificate credentials.
+Check this example to [create service principals with self-signed certificate](~/identity-platform/howto-authenticate-service-principal-powershell.md) for authentication of service principals with certificate credentials.
 
 ### Access policies
 
 In the following sections are recommendations for Azure solutions. For general guidance on Conditional Access policies for individual environments, check the [Conditional Access Best practices](../conditional-access/overview.md), [Microsoft Entra Operations Guide](./ops-guide-auth.md), and [Conditional Access for Zero Trust](/azure/architecture/guide/security/conditional-access-zero-trust):
 
-* Define [Conditional Access policies](../conditional-access/workload-identity.md) for the [Microsoft Azure Management](../authentication/howto-password-smart-lockout.md) cloud app to enforce identity security posture when accessing Azure Resource Manager. This should include controls on MFA and device-based controls to enable access only through secure workstations (more on this in the Privileged Roles section under Identity Governance). Additionally, use [Conditional Access to filter for devices](../conditional-access/concept-condition-filters-for-devices.md).
+* Define [Conditional Access policies](../conditional-access/workload-identity.md) for the [Microsoft Azure Management](~/identity/authentication/howto-password-smart-lockout.md) cloud app to enforce identity security posture when accessing Azure Resource Manager. This should include controls on MFA and device-based controls to enable access only through secure workstations (more on this in the Privileged Roles section under Identity Governance). Additionally, use [Conditional Access to filter for devices](../conditional-access/concept-condition-filters-for-devices.md).
 
 * All applications onboarded to isolated environments must have explicit Conditional Access policies applied as part of the onboarding process.
 
@@ -268,7 +268,7 @@ Below are some considerations when designing a governed subscription lifecycle p
 
 * In an Azure AD B2C tenant, the built-in roles don't support PIM. To increase security, we recommend using Microsoft Entra B2B collaboration to onboard the engineering teams managing Customer Identity Access Management (CIAM) from your Azure tenant, and assign them to Azure AD B2C privileged roles.
 
-* Following the emergency access guidelines for Microsoft Entra ID above, consider creating equivalent [emergency access accounts](../roles/security-emergency-access.md) in addition to the external administrators described above.
+* Following the emergency access guidelines for Microsoft Entra ID above, consider creating equivalent [emergency access accounts](~/identity/role-based-access-control/security-emergency-access.md) in addition to the external administrators described above.
 
 * We recommend the logical ownership of the underlying Microsoft Entra subscription of the B2C tenant aligns with the CIAM engineering teams, in the same way that the rest of Azure subscriptions are used for the B2C solutions.
 
@@ -393,7 +393,7 @@ The following scenarios must be explicitly monitored and investigated:
 
 * **User entity behavioral analytics (UEBA) alerts** - UEBA should be used to get insightful information based on anomaly detection. [Microsoft Microsoft 365 Defender for Cloud Apps](https://www.microsoft.com/security/business/siem-and-xdr/microsoft-defender-cloud-apps) provides [UEBA in the cloud](/defender-cloud-apps/tutorial-ueba). Customers can integrate [on-premises UEBA from Microsoft Microsoft 365 Defender for Identity](/microsoft-365/security/defender/microsoft-365-security-center-mdi). MCAS reads signals from Microsoft Entra ID Protection.
 
-* **Emergency access accounts activity** - Any access using [emergency access accounts](./security-operations-privileged-accounts.md) should be monitored and [alerts](../roles/security-emergency-access.md) created for investigations. This monitoring must include:
+* **Emergency access accounts activity** - Any access using [emergency access accounts](./security-operations-privileged-accounts.md) should be monitored and [alerts](~/identity/role-based-access-control/security-emergency-access.md) created for investigations. This monitoring must include:
 
   * Sign-ins
 

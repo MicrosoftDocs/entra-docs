@@ -32,9 +32,9 @@ All other Microsoft Entra services store customer data in global datacenters. To
 
 ## Microsoft Entra multifactor authentication
 
-MFA stores Identity Customer Data in global datacenters. To learn more about the user information collected and stored by cloud-based Microsoft Entra multifactor authentication and Azure Multi-Factor Authentication Server, see [Microsoft Entra multifactor authentication user data collection](../authentication/concept-mfa-data-residency.md).
+MFA stores Identity Customer Data in global datacenters. To learn more about the user information collected and stored by cloud-based Microsoft Entra multifactor authentication and Azure Multi-Factor Authentication Server, see [Microsoft Entra multifactor authentication user data collection](~/identity/authentication/concept-mfa-data-residency.md).
 
 ## Next steps
 
 For more information about any of the features and functionality described above, see these articles:
-- [What is multifactor authentication?](../authentication/concept-mfa-howitworks.md)
+- [What is multifactor authentication?](~/identity/authentication/concept-mfa-howitworks.md)

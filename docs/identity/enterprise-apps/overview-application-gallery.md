@@ -16,7 +16,7 @@ ms.custom: enterprise-apps
 
 # Overview of the Microsoft Entra application gallery
 
-The Microsoft Entra application gallery is a collection of software as a service (SaaS) [applications](../develop/app-objects-and-service-principals.md) that have been pre-integrated with Microsoft Entra ID. The collection contains thousands of applications that make it easy to deploy and configure [single sign-on (SSO)](../develop/single-sign-on-saml-protocol.md) and [automated user provisioning](../app-provisioning/user-provisioning.md).
+The Microsoft Entra application gallery is a collection of software as a service (SaaS) [applications](~/identity-platform/app-objects-and-service-principals.md) that have been pre-integrated with Microsoft Entra ID. The collection contains thousands of applications that make it easy to deploy and configure [single sign-on (SSO)](~/identity-platform/single-sign-on-saml-protocol.md) and [automated user provisioning](../app-provisioning/user-provisioning.md).
 
 To find the gallery when signed into your tenant, select **Enterprise applications**, select **All applications**, and then select **New application**.
 
@@ -83,7 +83,7 @@ When you select the **Create your own application** link near the top of the bla
 
 ## Request new gallery application
 
-After you successfully integrate an application with Microsoft Entra ID and thoroughly tested it, you can request to have it added to the gallery. Publishing an application to the gallery from the portal isn't supported but there is a process that you can follow to have it done for you. For more information about publishing to the gallery, select [Request new gallery application](../manage-apps/v2-howto-app-gallery-listing.md).
+After you successfully integrate an application with Microsoft Entra ID and thoroughly tested it, you can request to have it added to the gallery. Publishing an application to the gallery from the portal isn't supported but there is a process that you can follow to have it done for you. For more information about publishing to the gallery, select [Request new gallery application](~/identity/enterprise-apps/v2-howto-app-gallery-listing.md).
 
 ## Next steps
 

@@ -31,8 +31,8 @@ This tutorial describes the steps to follow in both Playvox and Microsoft Entra 
 
 The scenario in this tutorial assumes that you already have the following prerequisites:
 
-* [A Microsoft Entra tenant](../develop/quickstart-create-new-tenant.md).
-* A user account in Microsoft Entra ID with [permission](../roles/permissions-reference.md) to configure provisioning. For example, an account might have the Application Administrator, Cloud Application Administrator, Application Owner, or Global Administrator role.
+* [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md).
+* A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning. For example, an account might have the Application Administrator, Cloud Application Administrator, Application Owner, or Global Administrator role.
 * A user account in [Playvox](https://www.playvox.com) with Super Admin permissions.
 
 ## Step 1: Plan your provisioning deployment
@@ -67,17 +67,17 @@ The scenario in this tutorial assumes that you already have the following prereq
 
 ## Step 3: Add Playvox from the Microsoft Entra application gallery
 
-To start to manage provisioning to Playvox, add Playvox to your Microsoft Entra tenant from the application gallery. To learn more, see [Quickstart: Add an application to your Microsoft Entra tenant](../manage-apps/add-application-portal.md).
+To start to manage provisioning to Playvox, add Playvox to your Microsoft Entra tenant from the application gallery. To learn more, see [Quickstart: Add an application to your Microsoft Entra tenant](~/identity/enterprise-apps/add-application-portal.md).
 
 If you've previously set up Playvox for single sign-on (SSO), you can use the same application. However, we recommend that you create a separate app when testing the integration initially.
 
 ## Step 4: Define who will be in scope for provisioning
 
-You use the Microsoft Entra provisioning service to scope who will be provisioned, based either on assignment to the application or on attributes of the user or group. To scope who will be provisioned to your app based on assignment, see [Manage user assignment for an app in Microsoft Entra ID](../manage-apps/assign-user-or-group-access-portal.md) to learn how to assign users or groups to the application. To scope who will be provisioned based solely on attributes of the user or group, use a scoping filter as described in [Attribute-based application provisioning with scoping filters](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+You use the Microsoft Entra provisioning service to scope who will be provisioned, based either on assignment to the application or on attributes of the user or group. To scope who will be provisioned to your app based on assignment, see [Manage user assignment for an app in Microsoft Entra ID](~/identity/enterprise-apps/assign-user-or-group-access-portal.md) to learn how to assign users or groups to the application. To scope who will be provisioned based solely on attributes of the user or group, use a scoping filter as described in [Attribute-based application provisioning with scoping filters](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 Remember these points:
 
-* When assigning users to Playvox, you must select a role other than Default Access. Users with the Default Access role are excluded from provisioning and will be marked as not effectively entitled in the provisioning logs. If Default Access is the only role available on the application, you can [update the application manifest](../develop/howto-add-app-roles-in-azure-ad-apps.md) to add other roles.
+* When assigning users to Playvox, you must select a role other than Default Access. Users with the Default Access role are excluded from provisioning and will be marked as not effectively entitled in the provisioning logs. If Default Access is the only role available on the application, you can [update the application manifest](~/identity-platform/howto-add-app-roles-in-azure-ad-apps.md) to add other roles.
 
 * Start small. Test with a small set of users or groups before rolling out to everyone. When provisioning scope is based on assigned users or groups, you can control the size of the set by assigning only one or two users or groups to the app. When provisioning scope includes all users and groups, you can specify an [attribute-based scoping filter](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md) to limit the size of your test set.
 
@@ -87,7 +87,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 To configure automatic user provisioning for Playvox in Microsoft Entra ID:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 
     ![Partial screenshot of the Azure portal, with Enterprise applications and All applications items highlighted](common/enterprise-applications.png)
@@ -160,7 +160,7 @@ After you've configured provisioning, use the following resources to monitor you
 ## Additional resources
 
 * [Managing user account provisioning for enterprise apps](../app-provisioning/configure-automatic-user-provisioning-portal.md)
-* [What is application access and single sign-on with Microsoft Entra ID?](../manage-apps/what-is-single-sign-on.md)
+* [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
 ## Next steps
 

@@ -49,26 +49,26 @@ Use the following list to plan for authentication deployment.
 
 * **Microsoft Entra multifactor authentication** - Using admin-approved authentication methods, Microsoft Entra multifactor authentication helps safeguard access to your data and applications while meeting the demand for a simple sign-in process: 
   * See the video, [How to configure and enforce multifactor authentication in your tenant](https://www.youtube.com/watch?v=qNndxl7gqVM)
-  * See, [Plan a Microsoft Entra multifactor authentication deployment](../authentication/howto-mfa-getstarted.md) 
+  * See, [Plan a Microsoft Entra multifactor authentication deployment](~/identity/authentication/howto-mfa-getstarted.md) 
 * **Conditional Access** - Implement automated access-control decisions for users to access cloud apps, based on conditions: 
   * See, [What is Conditional Access?](../conditional-access/overview.md)
   * See, [Plan a Conditional Access deployment](../conditional-access/plan-conditional-access.md)
 * **Microsoft Entra self-service password reset (SSPR)** - Help users reset a password without administrator intervention:
-  * See, [Passwordless authentication options for Microsoft Entra ID](../authentication/concept-authentication-passwordless.md)
-  * See, [Plan a Microsoft Entra self-service password reset deployment](../authentication/howto-sspr-deployment.md) 
+  * See, [Passwordless authentication options for Microsoft Entra ID](~/identity/authentication/concept-authentication-passwordless.md)
+  * See, [Plan a Microsoft Entra self-service password reset deployment](~/identity/authentication/howto-sspr-deployment.md) 
 * **Passwordless authentication** - Implement passwordless authentication using the Microsoft Authenticator app or FIDO2 Security keys:
-  * See, [Enable passwordless sign-in with Microsoft Authenticator](../authentication/howto-authentication-passwordless-phone.md)
-  * See, [Plan a passwordless authentication deployment in Microsoft Entra ID](../authentication/howto-authentication-passwordless-deployment.md)
+  * See, [Enable passwordless sign-in with Microsoft Authenticator](~/identity/authentication/howto-authentication-passwordless-phone.md)
+  * See, [Plan a passwordless authentication deployment in Microsoft Entra ID](~/identity/authentication/howto-authentication-passwordless-deployment.md)
 
 ## Applications and devices
 
 Use the following list to help deploy applications and devices.
 
 * **Single sign-on (SSO)** - Enable user access to apps and resources while signing in once, without being required to enter credentials again: 
-  * See, [What is SSO in Microsoft Entra ID?](../manage-apps/what-is-single-sign-on.md)
-  * See, [Plan a SSO deployment](../manage-apps/plan-sso-deployment.md)
+  * See, [What is SSO in Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
+  * See, [Plan a SSO deployment](~/identity/enterprise-apps/plan-sso-deployment.md)
 * **My Apps portal** - A web-based portal to discover and access applications. Enable user productivity with self-service, for instance requesting access to groups, or managing access to resources on behalf of others. 
-  * See, [My Apps portal overview](../manage-apps/myapps-overview.md)
+  * See, [My Apps portal overview](~/identity/enterprise-apps/myapps-overview.md)
 * **Devices** - Evaluate device integration methods with Microsoft Entra ID, choose the implementation plan, and more.
   * See, [Plan your Microsoft Entra device deployment](../devices/plan-device-deployment.md)  
 

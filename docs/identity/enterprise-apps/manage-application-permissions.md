@@ -45,7 +45,7 @@ You can access the Microsoft Entra admin center to view the permissions granted 
 
 To review an application's permissions that have been granted for the entire organization or to a specific user or group:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
 1. Select the application that you want to restrict access to.
 1. Select **Permissions**. 
@@ -68,7 +68,7 @@ To revoke permissions in the **Admin consent** tab:
 
 ## Review and revoke permissions
 
-Use the following Azure AD PowerShell script to revoke all permissions granted to an application. You need to sign in as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator).
+Use the following Azure AD PowerShell script to revoke all permissions granted to an application. You need to sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 
 ```powershell
 Connect-AzureAD 
@@ -117,7 +117,7 @@ $assignments | ForEach-Object {
 
 ## Review and revoke permissions
 
-Use the following Microsoft Graph PowerShell script to revoke all permissions granted to an application. You need to sign in as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator).
+Use the following Microsoft Graph PowerShell script to revoke all permissions granted to an application. You need to sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 
 ```powershell
 Connect-MgGraph -Scopes "Application.ReadWrite.All", "Directory.ReadWrite.All", "DelegatedPermissionGrant.ReadWrite.All", "AppRoleAssignment.ReadWrite.All"
@@ -171,7 +171,7 @@ $spApplicationPermissions = Get-MgServicePrincipalAppRoleAssignedTo -ServicePrin
 
 ## Review and revoke permissions
 
-To review permissions, Sign in to [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator).
+To review permissions, Sign in to [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 
 You need to consent to the following permissions: 
 

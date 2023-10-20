@@ -73,13 +73,13 @@ Non-production environments are commonly referred to as sandbox environments.
 
 **Service principal objects** are also directory identities that can perform tasks independently from human intervention. The service principal defines the access policy and permissions for a user or application in the Microsoft Entra tenant. This mechanism enables core features such as authentication of the user or application during sign-in and authorization during resource access.
 
-Microsoft Entra ID allows application and service principal objects to authenticate with a password (also known as an application secret), or with a certificate. The use of passwords for service principals is discouraged and [we recommend using a certificate](../develop/howto-create-service-principal-portal.md) whenever possible.
+Microsoft Entra ID allows application and service principal objects to authenticate with a password (also known as an application secret), or with a certificate. The use of passwords for service principals is discouraged and [we recommend using a certificate](~/identity-platform/howto-create-service-principal-portal.md) whenever possible.
 
 * **Managed identities for Azure resources**. Managed identities are special service principals in Microsoft Entra ID. This type of service principal can be used to authenticate against services that support Microsoft Entra authentication without needing to store credentials in your code or handle secrets management. For more information, see [What are managed identities for Azure resources?](../managed-identities-azure-resources/overview.md)
 
 * **Device identity**: A device identity verifies  the device in the authentication flow has undergone a process to attest  the device is legitimate and meets the technical requirements. Once the device has successfully completed this process, the associated identity can be used to further control access to an organization's resources. With Microsoft Entra ID, devices can authenticate with a certificate.
 
-Some legacy scenarios required a human identity to be used in *non-human* scenarios. For example, when service accounts being used in on-premises applications such as scripts or batch jobs require access to Microsoft Entra ID. This pattern isn't recommended and we recommend you use [certificates](../authentication/concept-certificate-based-authentication-technical-deep-dive.md). However, if you do use a human identity with password for authentication, protect your Microsoft Entra accounts with [Microsoft Entra multifactor authentication](../authentication/concept-mfa-howitworks.md).
+Some legacy scenarios required a human identity to be used in *non-human* scenarios. For example, when service accounts being used in on-premises applications such as scripts or batch jobs require access to Microsoft Entra ID. This pattern isn't recommended and we recommend you use [certificates](~/identity/authentication/concept-certificate-based-authentication-technical-deep-dive.md). However, if you do use a human identity with password for authentication, protect your Microsoft Entra accounts with [Microsoft Entra multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md).
 
 **Hybrid identity**. A hybrid identity is an identity that spans on-premises and cloud environments. This provides the benefit of being able to use the same identity to access on-premises and cloud resources. The source of authority in this scenario is typically an on-premises directory, and the identity lifecycle around provisioning, de-provisioning and resource assignment is also driven from on-premises. For more information, see [Hybrid identity documentation](../hybrid/index.yml).
 
@@ -115,7 +115,7 @@ These are the functional areas provided by Microsoft Entra ID that are relevant 
 
 Microsoft Entra ID provides industry-leading strong authentication options that organizations can use to secure access to resources. Microsoft Entra multifactor authentication, device authentication and password-less capabilities allow organizations to deploy strong authentication options that suit their workforce's requirements.
 
-**Single sign-on (SSO)**. With single sign-on, users sign in once with one account to access all resources that trust the directory such as domain-joined devices, company resources, software as a service (SaaS) applications, and all Microsoft Entra integrated applications. For more information, see [single sign-on to applications in Microsoft Entra ID](../manage-apps/what-is-single-sign-on.md).
+**Single sign-on (SSO)**. With single sign-on, users sign in once with one account to access all resources that trust the directory such as domain-joined devices, company resources, software as a service (SaaS) applications, and all Microsoft Entra integrated applications. For more information, see [single sign-on to applications in Microsoft Entra ID](~/identity/enterprise-apps/what-is-single-sign-on.md).
 
 ### Authorization
 

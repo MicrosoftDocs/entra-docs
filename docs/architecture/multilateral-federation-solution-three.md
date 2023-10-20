@@ -54,7 +54,7 @@ The following resources can help with your migration to this solution architectu
 
 | Migration resource   | Description           |
 | - | - |
-| [Resources for migrating applications to Microsoft Entra ID](../manage-apps/migration-resources.md) | List of resources to help you migrate application access and authentication to Microsoft Entra ID |
+| [Resources for migrating applications to Microsoft Entra ID](~/identity/enterprise-apps/migration-resources.md) | List of resources to help you migrate application access and authentication to Microsoft Entra ID |
 
 ## Next steps
 

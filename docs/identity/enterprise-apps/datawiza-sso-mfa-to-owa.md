@@ -126,7 +126,7 @@ You need the following components. Prior DAP experience isn't necessary.
 -   An account with Microsoft Entra Application Administrator permissions
 
     -   See, Application Administrator and other roles on, [Microsoft Entra built-in
-        roles](../roles/permissions-reference.md)
+        roles](~/identity/role-based-access-control/permissions-reference.md)
 
 -   An Exchange Server environment. Supported versions:
 
@@ -381,7 +381,7 @@ time, effort, and errors.
 
 To provide more sign-in security, you can enforce Microsoft Entra multifactor authentication. The process starts in the Microsoft Entra admin center.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](../roles/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 2. Browse to **Identity** > **Overview** > **Properties** tab.
 3. Under **Security defaults**, select **Manage security defaults**.
 4. On the **Security defaults** pane, toggle the dropdown menu to select **Enabled**.

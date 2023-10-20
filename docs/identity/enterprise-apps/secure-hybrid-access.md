@@ -33,7 +33,7 @@ In addition to Application Proxy, you can strengthen your security posture with 
 
 ## Single sign-on and multifactor authentication
 
-With Microsoft Entra ID as an identity provider (IdP), you can use modern authentication and authorization methods like [single sign-on (SSO)](what-is-single-sign-on.md) and [Microsoft Entra multifactor authentication](../authentication/concept-mfa-howitworks.md) to secure legacy, on-premises applications.
+With Microsoft Entra ID as an identity provider (IdP), you can use modern authentication and authorization methods like [single sign-on (SSO)](what-is-single-sign-on.md) and [Microsoft Entra multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md) to secure legacy, on-premises applications.
 
 ## Secure hybrid access with Application Proxy
 

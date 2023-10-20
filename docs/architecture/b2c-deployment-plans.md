@@ -26,9 +26,9 @@ Azure Active Directory B2C (Azure AD B2C) is an identity and access management s
 - Identify customer locations and create a tenant in the corresponding datacenter
   - See, [Tutorial: Create an Azure Active Directory B2C tenant](/azure/active-directory-b2c/tutorial-create-tenant)
 - Confirm your application types and supported technologies:
-  -  [Overview of the Microsoft Authentication Library (MSAL)](../develop/msal-overview.md)
+  -  [Overview of the Microsoft Authentication Library (MSAL)](~/identity-platform/msal-overview.md)
   -  [Develop with open source languages, frameworks, databases, and tools in Azure](https://azure.microsoft.com/free/open-source/search/?OCID=AID2200277_SEM_f63bcafc4d5f1d7378bfaa2085b249f9:G:s&ef_id=f63bcafc4d5f1d7378bfaa2085b249f9:G:s&msclkid=f63bcafc4d5f1d7378bfaa2085b249f9).
-  - For back-end services, use the [client credentials](../develop/msal-authentication-flows.md#client-credentials) flow
+  - For back-end services, use the [client credentials](~/identity-platform/msal-authentication-flows.md#client-credentials) flow
 - To migrate from an identity provider (IdP):
   - [Seamless migration](/azure/active-directory-b2c/user-migration#seamless-migration)
   - Go to [`user-migration`](https://github.com/azure-ad-b2c/user-migration)
@@ -139,7 +139,7 @@ Use the following checklist for onboarding an application
 |Your identity groups| Cluster identities into groups with requirements, such as business-to-consumer (B2C), business-to-business (B2B) business-to-employee (B2E), and business-to-machine (B2M) for IoT device sign-in and service accounts.|
 |Identity provider (IdP)| See, [Select an identity provider](/azure/active-directory-b2c/add-identity-provider#select-an-identity-provider). For example, for a customer-to-customer (C2C) mobile app use an easy sign-in process. </br>B2C with digital services has compliance requirements. </br>Consider email sign-in. |
 |Regulatory constraints | Determine a need for remote profiles or privacy policies. |
-|Sign-in and sign-up flow | Confirm email verification or email verification during sign-up. </br>For check-out processes, see [How it works: Microsoft Entra multifactor authentication](../authentication/concept-mfa-howitworks.md). </br>See the video [Azure AD B2C user migration using Microsoft Graph API](https://www.youtube.com/watch?v=c8rN1ZaR7wk&list=PL3ZTgFEc7LyuJ8YRSGXBUVItCPnQz3YX0&index=4). |
+|Sign-in and sign-up flow | Confirm email verification or email verification during sign-up. </br>For check-out processes, see [How it works: Microsoft Entra multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md). </br>See the video [Azure AD B2C user migration using Microsoft Graph API](https://www.youtube.com/watch?v=c8rN1ZaR7wk&list=PL3ZTgFEc7LyuJ8YRSGXBUVItCPnQz3YX0&index=4). |
 |Application and authentication protocol| Implement client applications such as Web application, single-page application (SPA), or native. </br>Authentication protocols for client application and Azure AD B2C: OAuth, OIDC, and SAML. </br>See the video [Protecting Web APIs with Microsoft Entra ID](https://www.youtube.com/watch?v=r2TIVBCm7v4&list=PL3ZTgFEc7LyuJ8YRSGXBUVItCPnQz3YX0&index=9).|
 | User migration | Confirm if you'll [migrate users to Azure AD B2C](/azure/active-directory-b2c/user-migration): Just-in-time (JIT) migration and bulk import/export. </br>See the video [Azure AD B2C user migration strategies](https://www.youtube.com/watch?v=lCWR6PGUgz0&list=PL3ZTgFEc7LyuJ8YRSGXBUVItCPnQz3YX0&index=2).|
 
@@ -150,7 +150,7 @@ Use the following checklist for delivery.
 |Protocol information| Gather the base path, policies, and metadata URL of both variants. </br>Specify attributes such as sample sign-in, client application ID, secrets, and redirects.|
 |Application samples | See, [Azure Active Directory B2C code samples](/azure/active-directory-b2c/integrate-with-app-code-samples).|
 |Penetration testing | Inform your operations team about pen tests, then test user flows including the OAuth implementation. </br>See, [Penetration testing](/azure/security/fundamentals/pen-testing) and [Penetration testing rules of engagement](https://www.microsoft.com/msrc/pentest-rules-of-engagement).
-| Unit testing  | Unit test and generate tokens. </br>See, [Microsoft identity platform and OAuth 2.0 Resource Owner Password Credentials](../develop/v2-oauth-ropc.md). </br>If you reach the Azure AD B2C token limit, see [Azure AD B2C: File Support Requests](/azure/active-directory-b2c/find-help-open-support-ticket). </br>Reuse tokens to reduce investigation on your infrastructure. </br>[Set up a resource owner password credentials flow in Azure Active Directory B2C](/azure/active-directory-b2c/add-ropc-policy?pivots=b2c-user-flow&tabs=app-reg-ga).|
+| Unit testing  | Unit test and generate tokens. </br>See, [Microsoft identity platform and OAuth 2.0 Resource Owner Password Credentials](~/identity-platform/v2-oauth-ropc.md). </br>If you reach the Azure AD B2C token limit, see [Azure AD B2C: File Support Requests](/azure/active-directory-b2c/find-help-open-support-ticket). </br>Reuse tokens to reduce investigation on your infrastructure. </br>[Set up a resource owner password credentials flow in Azure Active Directory B2C](/azure/active-directory-b2c/add-ropc-policy?pivots=b2c-user-flow&tabs=app-reg-ga).|
 | Load testing | Learn about [Azure AD B2C service limits and restrictions](/azure/active-directory-b2c/service-limits). </br>Calculate the expected authentications and user sign-ins per month. </br>Assess high load traffic durations and business reasons: holiday, migration, and event. </br>Determine expected peak rates for sign-up, traffic, and geographic distribution, for example per second.  
 
 ### Security
@@ -159,7 +159,7 @@ Use the following checklist to enhance application security.
 
 * Authentication method, such as multifactor authentication:
   * MFA is recommended for users that trigger high-value transactions or other risk events. For example, banking, finance, and check-out processes.
-  * See, [What authentication and verification methods are available in Microsoft Entra ID?](../authentication/concept-authentication-methods.md)
+  * See, [What authentication and verification methods are available in Microsoft Entra ID?](~/identity/authentication/concept-authentication-methods.md)
 * Confirm use of anti-bot mechanisms
 * Assess the risk of attempts to create a fraudulent account or sign-in 
   * See, [Tutorial: Configure Microsoft Dynamics 365 Fraud Protection with Azure Active Directory B2C](/azure/active-directory-b2c/partner-dynamics-365-fraud-protection) 

@@ -20,7 +20,7 @@ With Microsoft Entra ID, features such as Conditional Access, Microsoft Entra mu
 Learn more:
 
 * [What is Conditional Access?](../conditional-access/overview.md)
-* [How it works: Microsoft Entra multifactor authentication](../authentication/concept-mfa-howitworks.md)
+* [How it works: Microsoft Entra multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md)
 * [Microsoft Entra seamless single sign-on](../hybrid/connect/how-to-connect-sso.md)
 * [What is app provisioning in Microsoft Entra ID?](../app-provisioning/user-provisioning.md)
 
@@ -29,7 +29,7 @@ If your company has a Microsoft 365 subscription, you likely use Microsoft Entra
 Learn more:
 
 * [Deploy your identity infrastructure for Microsoft 365](/microsoft-365/enterprise/deploy-identity-solution-overview?view=o365-worldwide&preserve-view=true)
-* [What is application management in Microsoft Entra ID?](../manage-apps/what-is-application-management.md)
+* [What is application management in Microsoft Entra ID?](~/identity/enterprise-apps/what-is-application-management.md)
 
 <a name='azure-ad-for-new-applications'></a>
 
@@ -37,7 +37,7 @@ Learn more:
 
 When your business acquires new applications, add them to the Microsoft Entra tenant. Establish a company policy of adding new apps to Microsoft Entra ID. 
 
-See: [Quickstart: Add an enterprise application](../manage-apps/add-application-portal.md)
+See: [Quickstart: Add an enterprise application](~/identity/enterprise-apps/add-application-portal.md)
 
 Microsoft Entra ID has a gallery of integrated applications to make it easy to get started. Add a gallery app to your Microsoft Entra organization (see previous link) and learn about integrating software as a service (SaaS) tutorials.
 
@@ -59,8 +59,8 @@ You can integrate applications that don't appear in the gallery, including appli
 
 Learn more:
 
-* [Quickstart: View enterprise applications](../manage-apps/view-applications-portal.md)
-* [Submit a request to publish your application in Microsoft Entra application gallery](../manage-apps/v2-howto-app-gallery-listing.md)
+* [Quickstart: View enterprise applications](~/identity/enterprise-apps/view-applications-portal.md)
+* [Submit a request to publish your application in Microsoft Entra application gallery](~/identity/enterprise-apps/v2-howto-app-gallery-listing.md)
 
 ## Determine application usage and prioritize integration 
 
@@ -73,7 +73,7 @@ Learn more:
 
 In addition, use the Active Directory Federation Services (AD FS) in the Azure portal to discover AD FS apps in your organization. Discover unique users that signed in to the apps, and see information about integration compatibility.
 
-See: [Review the application activity report](../manage-apps/migrate-adfs-application-activity.md)
+See: [Review the application activity report](~/identity/enterprise-apps/migrate-adfs-application-activity.md)
 
 ### Application migration
 
@@ -84,7 +84,7 @@ After you discover apps in your environment, prioritize the apps to migrate and 
 - Apps to be decommissioned, therefore not in migration
 - Apps that stay on-premises
 
-See: [Resources for migrating applications to Microsoft Entra ID](../manage-apps/migration-resources.md)
+See: [Resources for migrating applications to Microsoft Entra ID](~/identity/enterprise-apps/migration-resources.md)
 
 ## Integrate apps and identity providers
 
@@ -93,7 +93,7 @@ During discovery, there might be applications not tracked by the IT team, which 
 * Reduce on-premises user set-up, authentication, and IdP licensing fees
 * Lower administrative overhead with streamlined identity and access management process
 * Enable single sign-on (SSO) access to applications in the My Apps portal
-  * See: [Create collections on the My Apps portal](../manage-apps/access-panel-collections.md)
+  * See: [Create collections on the My Apps portal](~/identity/enterprise-apps/access-panel-collections.md)
 * Use Identity Protection and Conditional Access to increase data from app usage, and extend benefits to recently added apps
   * [What is Identity Protection?](../identity-protection/overview-identity-protection.md)
   * [What is Conditional Access?](../conditional-access/overview.md)
@@ -117,7 +117,7 @@ Improve the configuration illustrated in the previous diagram by moving applicat
 
 Learn more:
 
-* [Move application authentication to Microsoft Entra ID](../manage-apps/migrate-adfs-apps-stages.md)
+* [Move application authentication to Microsoft Entra ID](~/identity/enterprise-apps/migrate-adfs-apps-stages.md)
 * [Sign in and start apps from the My Apps portal](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510)
 
 See the following diagram of app authentication simplified by Microsoft Entra ID.
@@ -144,14 +144,14 @@ See: [Tutorial: Add an on-premises application for remote access through Applica
 
 In addition, integrate application delivery controllers like F5 BIG-IP APM, or Zscaler Private Access, with Microsoft Entra ID. Benefits are modern authentication and identity management, traffic management, and security features. We call this solution secure hybrid access. 
 
-See: [Secure hybrid access: Protect legacy apps with Microsoft Entra ID](../manage-apps/secure-hybrid-access.md)
+See: [Secure hybrid access: Protect legacy apps with Microsoft Entra ID](~/identity/enterprise-apps/secure-hybrid-access.md)
 
 For the following services, there are Microsoft Entra integration tutorials.
 
 * [Tutorial: Microsoft Entra SSO integration with Akamai](../saas-apps/akamai-tutorial.md)
 * [Tutorial: Microsoft Entra SSO integration with Citrix ADC SAML Connector for Microsoft Entra ID (Kerberos-based authentication)](../saas-apps/citrix-netscaler-tutorial.md)
   * Formerly known as Citrix Netscaler
-* [Integrate F5 BIG-IP with Microsoft Entra ID](../manage-apps/f5-integration.md)
+* [Integrate F5 BIG-IP with Microsoft Entra ID](~/identity/enterprise-apps/f5-integration.md)
 * [Tutorial: Integrate Zscaler Private Access (ZPA) with Microsoft Entra ID](../saas-apps/zscalerprivateaccess-tutorial.md)
 
 ## Integrate apps your developers build
@@ -160,17 +160,17 @@ For your developers' apps, use the Microsoft identity platform for authenticatio
 
 Learn more:
 
-* [Microsoft identity platform documentation](../develop/index.yml)
-* [Quickstart: Register an application with the Microsoft identity platform](../develop/quickstart-register-app.md)
+* [Microsoft identity platform documentation](~/identity-platform/index.yml)
+* [Quickstart: Register an application with the Microsoft identity platform](~/identity-platform/quickstart-register-app.md)
 
 Developers can use the platform for internal and customer-facing apps. For instance, use Microsoft Authentication Libraries (MSAL) to enable multifactor authentication and security to access apps.
 
 Learn more:
 
-* [Overview of the Microsoft Authentication Library (MSAL)](../develop/msal-overview.md)
-* [Microsoft identity platform code samples](../develop/sample-v2-code.md) 
+* [Overview of the Microsoft Authentication Library (MSAL)](~/identity-platform/msal-overview.md)
+* [Microsoft identity platform code samples](~/identity-platform/sample-v2-code.md) 
 * Video: [Overview of the Microsoft identity platform for developers](https://www.youtube.com/watch?v=zjezqZPPOfc&amp;list=PLLasX02E8BPBxGouWlJV-u-XZWOc2RkiX) (33:54)
 
 ## Next step
 
-[Resources for migrating applications to Microsoft Entra ID](../manage-apps/migration-resources.md)
+[Resources for migrating applications to Microsoft Entra ID](~/identity/enterprise-apps/migration-resources.md)

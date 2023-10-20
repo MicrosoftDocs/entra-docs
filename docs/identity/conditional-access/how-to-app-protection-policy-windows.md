@@ -44,7 +44,7 @@ The following steps help create a Conditional Access policy requiring an app pro
 > - If a device is already managed through mobile device management (MDM), then Intune MAM enrollment is blocked, and app protection policy settings aren't applied. 
 > - If a device becomes managed after MAM enrollment, app protection policy settings are no longer applied.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../roles/permissions-reference.md#conditional-access-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Protection** > **Conditional Access**.
 1. Select **Create new policy**.
 1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.

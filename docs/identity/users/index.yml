@@ -28,7 +28,7 @@ landingContent:
           - text: Users, groups, domains, and licenses 
             url: directory-overview-user-model.md
           - text: Custom roles overview
-            url: ../roles/custom-overview.md?context=/azure/active-directory/enterprise-users/context/ugr-context
+            url: ~/identity/role-based-access-control/custom-overview.md?context=/azure/active-directory/enterprise-users/context/ugr-context
       - linkListType: concept
         links:
           - text: Microsoft Entra organizational independence

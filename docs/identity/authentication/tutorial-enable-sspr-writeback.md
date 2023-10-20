@@ -43,7 +43,7 @@ To complete this tutorial, you need the following resources and privileges:
 * A working Microsoft Entra tenant with at least a Microsoft Entra ID P1 or trial license enabled.
     * If needed, [create one for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
     * For more information, see [Licensing requirements for Microsoft Entra SSPR](concept-sspr-licensing.md).
-* An account with [Hybrid Identity Administrator](../roles/permissions-reference.md#hybrid-identity-administrator).  
+* An account with [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).  
 * Microsoft Entra ID configured for self-service password reset.
     * If needed, [complete the previous tutorial to enable Microsoft Entra SSPR](tutorial-enable-sspr.md).
 * An existing on-premises AD DS environment configured with a current version of Microsoft Entra Connect.
@@ -132,7 +132,7 @@ With password writeback enabled in Microsoft Entra Connect, now configure Micros
 
 To enable password writeback in SSPR, complete the following steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as [Global Administrator](../roles/permissions-reference.md#global-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator). 
 1. Browse to **Protection** > **Password reset**, then choose **On-premises integration**.
 1. Check the option for **Write back passwords to your on-premises directory** .
 1. (optional) If Microsoft Entra Connect provisioning agents are detected, you can additionally check the option for **Write back passwords with Microsoft Entra Connect cloud sync**.   
@@ -147,7 +147,7 @@ To enable password writeback in SSPR, complete the following steps:
 
 If you no longer want to use the SSPR writeback functionality you have configured as part of this tutorial, complete the following steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as [Global Administrator](../roles/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 1. Browse to **Protection** > **Password reset**, then choose **On-premises integration**.
 1. Uncheck the option for **Write back passwords to your on-premises directory**.
 1. Uncheck the option for **Write back passwords with Microsoft Entra Connect cloud sync**.
@@ -155,7 +155,7 @@ If you no longer want to use the SSPR writeback functionality you have configure
 1. When ready, select **Save**.
 
 If you no longer want to use the Microsoft Entra Connect cloud sync for SSPR writeback functionality but want to continue using Microsoft Entra Connect Sync agent for writebacks complete the following steps:
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as [Global Administrator](../roles/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 1. Browse to **Protection** > **Password reset**, then choose **On-premises integration**.
 1. Uncheck the option for **Write back passwords with Microsoft Entra Connect cloud sync**.
 1. When ready, select **Save**.

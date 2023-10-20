@@ -82,7 +82,7 @@ In this scenario, you use the following credentials:
 
 By default, users can't create app passwords. The app passwords feature must be enabled before users can use them. To give users the ability to create app passwords, **admin needs** to complete the following steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](../roles/permissions-reference.md#authentication-policy-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Conditional Access** > **Named locations**.
 5. Click on **"Configure MFA trusted IPs"** in the bar across the top of the *Conditional Access | Named Locations* window.
 6. On the **Multifactor authentication** page, select the **Allow users to create app passwords to sign in to non-browser apps** option.

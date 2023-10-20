@@ -17,7 +17,7 @@ ms.custom: developer, devx-track-js
 
 # Sign in users in your own Node.js browserless application using the Device Code flow - Overview
 
-In this article, you learn how to build a Node.js browserless application that signs in users. The client application you build uses the [OAuth 2.0 device code flow](../../develop/v2-oauth2-device-code.md) to sign in users interactively, using another device such as a mobile phone.
+In this article, you learn how to build a Node.js browserless application that signs in users. The client application you build uses the [OAuth 2.0 device code flow](~/identity-platform/v2-oauth2-device-code.md) to sign in users interactively, using another device such as a mobile phone.
 
 We've organized the content into three separate articles so it's easy for you to follow: 
 

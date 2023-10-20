@@ -159,7 +159,7 @@ In this step, you configure a custom authentication extension, which will be use
 
 # [Microsoft Entra admin center](#tab/entra-admin-center)
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](../roles/permissions-reference.md#application-developer) and [Authentication Administrator](../roles/permissions-reference.md#authentication-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-developer) and [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 1. Select **Custom authentication extensions**, and then select **Create a custom authentication extension**.
 1. In **Basics**, select the **tokenIssuanceStart** event and select **Next**.
@@ -358,7 +358,7 @@ Follow these steps to register the **jwt.ms** web application:
 
 ### 3.1 Register a test web application
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](../roles/permissions-reference.md#application-developer).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-developer).
 1. Browse to **Identity** > **Applications** > **Application registrations**.
 1. Select **New registration**.
 1. Enter a **Name** for the application. For example, **My Test application**.
@@ -416,7 +416,7 @@ Follow these steps to connect the *My Test application* with your custom authent
 
 First assign the custom authentication extension as a custom claims provider source:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](../roles/permissions-reference.md#application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Browse to **Identity** > **Applications** > **Application registrations**.
 1. In the **Overview** page, under **Managed application in local directory**, select **My Test application**.
 1. Under **Manage**, select **Single sign-on**.

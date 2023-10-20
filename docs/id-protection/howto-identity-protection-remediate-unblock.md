@@ -82,7 +82,7 @@ This configuration provides organizations two new capabilities:
 
 To configure this setting
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Operator](../roles/permissions-reference.md#security-operator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Operator](~/identity/role-based-access-control/permissions-reference.md#security-operator).
 1. Browse to **Protection** > **Identity Protection** > **Settings**.
 1. Check the box to **Allow on-premises password change to reset user risk**.
 1. Select **Save**.

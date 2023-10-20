@@ -46,7 +46,7 @@ You must have the **Global Administrator** role to enable the 'Stay signed in?' 
 
 The KMSI setting is managed in **User settings**.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](../roles/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 1. Browse to **Identity** > **Users** > **User settings**.
 1. Set the **Show keep user signed in** toggle to **Yes**.
 

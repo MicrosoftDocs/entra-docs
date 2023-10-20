@@ -68,7 +68,7 @@ Integration with the Microsoft identity platform comes with benefits that do not
 
 ### Advanced security features
 
-**Multi-factor authentication.**  The Microsoft identity platform provides native multi-factor authentication. IT administrators can require multi-factor authentication to access your application, so that you do not have to code this support yourself. Learn more about [Multi-Factor Authentication](../authentication/index.yml).
+**Multi-factor authentication.**  The Microsoft identity platform provides native multi-factor authentication. IT administrators can require multi-factor authentication to access your application, so that you do not have to code this support yourself. Learn more about [Multi-Factor Authentication](~/identity/authentication/index.yml).
 
 **Anomalous sign in detection.** The Microsoft identity platform processes more than a billion sign-ins a day, while using machine learning algorithms to detect suspicious activity and notify IT administrators of possible problems. By supporting the Microsoft identity platform sign-in, your application gets the benefit of this protection. Learn more about [viewing Microsoft Entra reports](../reports-monitoring/overview-monitoring-health.md).
 

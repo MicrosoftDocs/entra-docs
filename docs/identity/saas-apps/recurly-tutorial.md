@@ -42,7 +42,7 @@ In this tutorial, you configure and test Microsoft Entra SSO in a test environme
 
 To configure the integration of Recurly into Microsoft Entra ID, you need to add Recurly from the gallery to your list of managed SaaS apps.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
 1. In the **Add from the gallery** section, type **Recurly** in the search box.
 1. Select **Recurly** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
@@ -70,7 +70,7 @@ To configure and test Microsoft Entra SSO with Recurly, perform the following st
 
 Follow these steps to enable Microsoft Entra SSO.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Recurly** application integration page, find the **Manage** section and select **single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
@@ -91,13 +91,13 @@ Follow these steps to enable Microsoft Entra SSO.
     
    ![image](common/default-attributes.png)
 
-7. Recurly application expects to enable token encryption in order to make SSO work. To activate token encryption, Browse to **Identity** > **Applications** > **Enterprise applications** > select your application > **Token encryption**. For more information see the article [Configure Microsoft Entra SAML token encryption](../manage-apps/howto-saml-token-encryption.md).
+7. Recurly application expects to enable token encryption in order to make SSO work. To activate token encryption, Browse to **Identity** > **Applications** > **Enterprise applications** > select your application > **Token encryption**. For more information see the article [Configure Microsoft Entra SAML token encryption](~/identity/enterprise-apps/howto-saml-token-encryption.md).
 
    ![Screenshot shows the activation of Token Encryption.](./media/recurly-tutorial/token.png "Token Encryption")
 
    1. Please contact [Recurly Support](mailto:support@recurly.com) to get a copy of the certificate to import.
    1. After importing the certificate, select the `...` next to the thumbprint status, click `Activate token encryption certificate`.
-   1. For more information on configuring token encryption, please refer this [link](../manage-apps/howto-saml-token-encryption.md).
+   1. For more information on configuring token encryption, please refer this [link](~/identity/enterprise-apps/howto-saml-token-encryption.md).
 
 <a name='create-an-azure-ad-test-user'></a>
 
@@ -105,7 +105,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 In this section, you'll create a test user called B.Simon.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](../roles/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
 1. Select **New user** > **Create new user**, at the top of the screen.
 1. In the **User** properties, follow these steps:
@@ -121,7 +121,7 @@ In this section, you'll create a test user called B.Simon.
 
 In this section, you'll enable B.Simon to use single sign-on by granting access to Recurly.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Recurly**.
 1. In the app's overview page, select **Users and groups**.
 1. Select **Add user/group**, then select **Users and groups** in the **Add Assignment** dialog.

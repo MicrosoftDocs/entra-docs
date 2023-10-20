@@ -51,7 +51,7 @@ Due to the greater flexibility of the system to respond to a sign-in attempt, yo
 You can start the Sign-in diagnostic from the **Diagnose and Solve Problems** area of Microsoft Entra ID. From Diagnose and Solve Problems you can review any flagged sign-in events or search for a specific sign-in event. You can also start this process from the Conditional Access Diagnose and Solve Problems area.
 
 **To search for sign-in events**:
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Reader](../roles/permissions-reference.md#global-reader).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Reader](~/identity/role-based-access-control/permissions-reference.md#global-reader).
 1. Browse to **Learn & support** > **Diagnose & solve problems** or **Protection** **Conditional Access** > **Diagnose and Solve Problems**. 
 1. Select the **Troubleshoot** link on the **Sign-in Diagnostic** tile.
 1. Select the **All Sign-In Events** tab to start a search. 

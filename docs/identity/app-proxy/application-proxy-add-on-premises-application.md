@@ -20,8 +20,8 @@ Microsoft Entra ID has an Application Proxy service that enables users to access
 :::image type="content" source="./media/application-proxy-add-on-premises-application/app-proxy-diagram.png" alt-text="Application Proxy Overview Diagram" lightbox="./media/application-proxy-add-on-premises-application/app-proxy-diagram.png":::
 
 Before you get started, make sure you're familiar with app management and **single sign-on (SSO)** concepts. Check out the following links:
-- [Quickstart Series on App Management in Microsoft Entra ID](../manage-apps/view-applications-portal.md)
-- [What is single sign-on (SSO)?](../manage-apps/what-is-single-sign-on.md)
+- [Quickstart Series on App Management in Microsoft Entra ID](~/identity/enterprise-apps/view-applications-portal.md)
+- [What is single sign-on (SSO)?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
 Connectors are a key part of Application Proxy. To learn more about connectors, see [Understand Microsoft Entra application proxy connectors](application-proxy-connectors.md).
 
@@ -155,7 +155,7 @@ To use Application Proxy, install a connector on each Windows server you're usin
 
 To install the connector:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](../roles/permissions-reference.md#application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Select your username in the upper-right corner. Verify you're signed in to a directory that uses Application Proxy. If you need to change directories, select **Switch directory** and choose a directory that uses Application Proxy.
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Application proxy**.
 1. Select **Download connector service**.
@@ -188,7 +188,7 @@ You can use the Microsoft Entra admin center or your Windows server to confirm t
 
 To confirm the connector installed and registered correctly:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](../roles/permissions-reference.md#application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Select your username in the upper-right corner. Verify you're signed in to a directory that uses Application Proxy. If you need to change directories, select **Switch directory** and choose a directory that uses Application Proxy.
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Application proxy**.
 1. View a connector to verify its details. The connectors should be expanded by default. If the connector you want to view isn't expanded, expand the connector to view the details. An active green label indicates that your connector can connect to the service. However, even though the label is green, a network issue could still block the connector from receiving messages.
@@ -215,7 +215,7 @@ To confirm the connector installed and registered correctly:
 ## Add an on-premises app to Microsoft Entra ID
 
 Now that you've prepared your environment and installed a connector, you're ready to add on-premises applications to Microsoft Entra ID.
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](../roles/permissions-reference.md#application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 1. Select **New application**.
 1. Select **Add an on-premises application** button, which appears about halfway down the page in the **On-premises applications** section. Alternatively, you can select **Create your own application** at the top of the page and then select **Configure Application Proxy for secure remote access to an on-premises application**.
@@ -289,4 +289,4 @@ You did these things:
 You're ready to configure the application for single sign-on. Use the following link to choose a single sign-on method and to find single sign-on tutorials.
 
 > [!div class="nextstepaction"]
-> [Configure single sign-on](../manage-apps/plan-sso-deployment.md#choosing-a-single-sign-on-method)
+> [Configure single sign-on](~/identity/enterprise-apps/plan-sso-deployment.md#choosing-a-single-sign-on-method)

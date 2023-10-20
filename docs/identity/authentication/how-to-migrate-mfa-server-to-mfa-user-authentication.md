@@ -356,10 +356,10 @@ The process for moving all application authentication is shown in the following 
 ![Process to migrate applications to to Microsoft Entra multifactor authentication.](media/how-to-migrate-mfa-server-to-mfa-user-authentication/mfa-app-migration-flow.png)
 
 If you can't move all your applications before the migration, move as many as possible before you start.
-For more information about migrating applications to Azure, see [Resources for migrating applications to Microsoft Entra ID](../manage-apps/migration-resources.md).
+For more information about migrating applications to Azure, see [Resources for migrating applications to Microsoft Entra ID](~/identity/enterprise-apps/migration-resources.md).
 
 ## Next steps
 
 - [Migrate from Microsoft MFA Server to Microsoft Entra multifactor authentication (Overview)](how-to-migrate-mfa-server-to-azure-mfa.md)
-- [Migrate applications from Windows Active Directory to Microsoft Entra ID](../manage-apps/migrate-adfs-apps-phases-overview.md)
+- [Migrate applications from Windows Active Directory to Microsoft Entra ID](~/identity/enterprise-apps/migrate-adfs-apps-phases-overview.md)
 - [Plan your cloud authentication strategy](../architecture/deployment-plans.md)

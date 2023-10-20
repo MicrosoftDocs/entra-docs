@@ -36,7 +36,7 @@ You can access the Usage and insights reports from the Azure portal and using Mi
 
 ### To access Usage & insights in the portal:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../roles/permissions-reference.md#reports-reader).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](~/identity/role-based-access-control/permissions-reference.md#reports-reader).
 1. Browse to **Identity** > **Monitoring & health** > **Usage & insights**.
 
 The **Usage & insights** reports are also available from the **Enterprise applications** area of Microsoft Entra ID. All users can access their own sign-ins at the [My Sign-Ins portal](https://mysignins.microsoft.com/security-info).
@@ -105,7 +105,7 @@ The **Authentication methods activity** in Usage & insights displays visualizati
 
 You can also access several other reports and tools related to authentication. 
 
-Are you planning on running a registration campaign to nudge users to sign up for MFA? Use the **Registration campaign** option from the side menu to set up a registration campaign. For more information, see [Nudge users to set up Microsoft Authenticator](../authentication/how-to-mfa-registration-campaign.md).
+Are you planning on running a registration campaign to nudge users to sign up for MFA? Use the **Registration campaign** option from the side menu to set up a registration campaign. For more information, see [Nudge users to set up Microsoft Authenticator](~/identity/authentication/how-to-mfa-registration-campaign.md).
 
 Looking for the details of a user and their authentication methods? Look at the **User registration details** report from the side menu and search for a name or UPN. The default MFA method and other methods registered are displayed. You can also see if the user is capable of registering for one of the authentication methods.
 
@@ -216,4 +216,4 @@ For more information, see [Application credential activity in Microsoft Graph](/
 ## Next steps
 
 - [Learn about the sign-ins report](concept-sign-ins.md)
-- [Learn about Microsoft Entra authentication](../authentication/overview-authentication.md)
+- [Learn about Microsoft Entra authentication](~/identity/authentication/overview-authentication.md)

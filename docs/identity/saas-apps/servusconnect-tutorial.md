@@ -43,13 +43,13 @@ Before you begin the process of configuring single sign-on, you must add the Ser
 
 ### Add ServusConnect from the Microsoft Entra gallery
 
-Add ServusConnect from the Microsoft Entra application gallery to configure single sign-on with ServusConnect. For more information on how to add application from the gallery, see the [Quickstart: Add application from the gallery](../manage-apps/add-application-portal.md).
+Add ServusConnect from the Microsoft Entra application gallery to configure single sign-on with ServusConnect. For more information on how to add application from the gallery, see the [Quickstart: Add application from the gallery](~/identity/enterprise-apps/add-application-portal.md).
 
 <a name='create-andor-assign-an-azure-ad-user'></a>
 
 ### Create and/or assign a Microsoft Entra user
 
-Follow the guidelines in the [create and assign a user account](../manage-apps/add-application-portal-assign-users.md) article to create a user (if required) and assign one or more users to the ServusConnect enterprise application. Only those users that you assign to the application will be able to access ServusConnect via single sign-on. Note that you can assign individual users or entire groups.
+Follow the guidelines in the [create and assign a user account](~/identity/enterprise-apps/add-application-portal-assign-users.md) article to create a user (if required) and assign one or more users to the ServusConnect enterprise application. Only those users that you assign to the application will be able to access ServusConnect via single sign-on. Note that you can assign individual users or entire groups.
 
 Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, and assign roles. The wizard also provides a link to the single sign-on configuration pane. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides).
 
@@ -59,7 +59,7 @@ Alternatively, you can also use the [Enterprise App Configuration Wizard](https:
 
 Complete the following steps to enable Microsoft Entra single sign-on.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **ServusConnect** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
@@ -137,8 +137,8 @@ In order to sign on, perform the following steps:
 
 ## Additional resources
 
-* [What is single sign-on with Microsoft Entra ID?](../manage-apps/what-is-single-sign-on.md)
-* [Plan a single sign-on deployment](../manage-apps/plan-sso-deployment.md).
+* [What is single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
+* [Plan a single sign-on deployment](~/identity/enterprise-apps/plan-sso-deployment.md).
 
 ## Next steps
 

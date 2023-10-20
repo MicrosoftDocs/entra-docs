@@ -20,7 +20,7 @@ ms.workload: identity
 
 The Conditional Access feature in Microsoft Entra ID offers one of several ways that you can use to secure your app and protect a service. Conditional Access enables developers and enterprise customers to protect services in a multitude of ways including:
 
-* [Multi-factor authentication](../authentication/concept-mfa-howitworks.md)
+* [Multi-factor authentication](~/identity/authentication/concept-mfa-howitworks.md)
 * Allowing only Intune enrolled devices to access specific services
 * Restricting user locations and IP ranges
 
@@ -47,7 +47,7 @@ Specifically, the following scenarios require code to handle Conditional Access 
 * Single-page apps using MSAL.js
 * Web Apps calling a resource
 
-Conditional Access policies can be applied to the app, but also can be applied to a web API your app accesses. To learn more about how to configure a Conditional Access policy, see [Quickstart: Require MFA for specific apps with Microsoft Entra Conditional Access](../authentication/tutorial-enable-azure-mfa.md).
+Conditional Access policies can be applied to the app, but also can be applied to a web API your app accesses. To learn more about how to configure a Conditional Access policy, see [Quickstart: Require MFA for specific apps with Microsoft Entra Conditional Access](~/identity/authentication/tutorial-enable-azure-mfa.md).
 
 Depending on the scenario, an enterprise customer can apply and remove Conditional Access policies at any time. For your app to continue functioning when a new policy is applied, implement challenge handling. The following examples illustrate challenge handling.
 

@@ -57,11 +57,11 @@ You need to add multifactor authentication to applications like
 
 ## Implement RADIUS with Microsoft Entra ID 
 
-* [Provide Microsoft Entra multifactor authentication capabilities using NPS](../authentication/howto-mfa-nps-extension.md) 
+* [Provide Microsoft Entra multifactor authentication capabilities using NPS](~/identity/authentication/howto-mfa-nps-extension.md) 
 
-* [Configure the Microsoft Entra multifactor authentication NPS extension](../authentication/howto-mfa-nps-extension-advanced.md) 
+* [Configure the Microsoft Entra multifactor authentication NPS extension](~/identity/authentication/howto-mfa-nps-extension-advanced.md) 
 
-* [VPN with Microsoft Entra multifactor authentication using the NPS extension](../authentication/howto-mfa-nps-extension-vpn.md) 
+* [VPN with Microsoft Entra multifactor authentication using the NPS extension](~/identity/authentication/howto-mfa-nps-extension-vpn.md) 
 
   
 ‎ 

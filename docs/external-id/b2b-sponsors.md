@@ -44,7 +44,7 @@ The Microsoft Entra B2B collaboration sponsor feature serves as a foundation for
 
 You can add up to five sponsors when inviting a new guest user. If you don’t specify a sponsor, the inviter will be added as a sponsor. To invite a guest user, you need to have the Global Administrator role or a limited administrator directory role such as Guest Inviter or User Administrator. 
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User administrator](../roles/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
 1. Select **New user** > **Invite external user** from the menu. 
 1. Entered the details on the Basics tab and select **Next: Properties**. 
@@ -60,7 +60,7 @@ You can also add sponsors with the Microsoft Graph API, using invitation manager
 
 When you invite a guest user, you became their sponsor by default. If you need to manually change the guest user's sponsor, follow these steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User administrator](../roles/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
 4. In the list, select the user's name to open their user profile
 5. Under **Properties** > **Job information** check the **Sponsors** field. If the guest user already has a sponsor, you can select **View** to see the sponsor's name.

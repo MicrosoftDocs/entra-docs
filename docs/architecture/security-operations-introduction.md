@@ -153,11 +153,11 @@ As part of an Azure hybrid environment, the following items should be baselined 
 
 * **Microsoft Entra Connect Sync Engine** - The on-premises component, also called the sync engine. For information on the feature, see [Microsoft Entra Connect Sync service features](../hybrid/connect/how-to-connect-syncservice-features.md).
 
-* **Password Protection DC agent** - Azure password protection DC agent is used to help with monitoring and reporting event log messages. For information, see [Enforce on-premises Microsoft Entra Password Protection for Active Directory Domain Services](../authentication/concept-password-ban-bad-on-premises.md).
+* **Password Protection DC agent** - Azure password protection DC agent is used to help with monitoring and reporting event log messages. For information, see [Enforce on-premises Microsoft Entra Password Protection for Active Directory Domain Services](~/identity/authentication/concept-password-ban-bad-on-premises.md).
 
-* **Password Filter DLL** - The password filter DLL of the DC Agent receives user password-validation requests from the operating system. The filter forwards them to the DC Agent service that's running locally on the DC. For information on using the DLL, see [Enforce on-premises Microsoft Entra Password Protection for Active Directory Domain Services](../authentication/concept-password-ban-bad-on-premises.md).
+* **Password Filter DLL** - The password filter DLL of the DC Agent receives user password-validation requests from the operating system. The filter forwards them to the DC Agent service that's running locally on the DC. For information on using the DLL, see [Enforce on-premises Microsoft Entra Password Protection for Active Directory Domain Services](~/identity/authentication/concept-password-ban-bad-on-premises.md).
 
-* **Password writeback Agent** - Password writeback is a feature enabled with [Microsoft Entra Connect](../hybrid/whatis-hybrid-identity.md) that allows password changes in the cloud to be written back to an existing on-premises directory in real time. For more information on this feature, see [How does self-service password reset writeback work in Microsoft Entra ID](../authentication/concept-sspr-writeback.md).
+* **Password writeback Agent** - Password writeback is a feature enabled with [Microsoft Entra Connect](../hybrid/whatis-hybrid-identity.md) that allows password changes in the cloud to be written back to an existing on-premises directory in real time. For more information on this feature, see [How does self-service password reset writeback work in Microsoft Entra ID](~/identity/authentication/concept-sspr-writeback.md).
 
 * **Microsoft Entra application proxy Connector** - Lightweight agents that sit on-premises and facilitate the outbound connection to the Application Proxy service. For more information, see [Understand Microsoft Entra Application Proxy connectors](../app-proxy/application-proxy-connectors.md).
 
@@ -171,7 +171,7 @@ As part of an Azure cloud-based environment, the following items should be basel
 
 * **Microsoft Entra Connect Health** - Service Health provides you with a customizable dashboard that tracks the health of your Azure services in the regions where you use them. For more information, see [Microsoft Entra Connect Health](../hybrid/connect/whatis-azure-ad-connect.md).
 
-* **Microsoft Entra multifactor authentication** - multifactor authentication requires a user to provide more than one form of proof for authentication. This approach can provide a proactive first step to securing your environment. For more information, see [Microsoft Entra multifactor authentication](../authentication/concept-mfa-howitworks.md).
+* **Microsoft Entra multifactor authentication** - multifactor authentication requires a user to provide more than one form of proof for authentication. This approach can provide a proactive first step to securing your environment. For more information, see [Microsoft Entra multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md).
 
 * **Dynamic groups** - Dynamic configuration of security group membership for Microsoft Entra Administrators can set rules to populate groups that are created in Microsoft Entra ID based on user attributes. For more information, see [Dynamic groups and Microsoft Entra B2B collaboration](../external-identities/use-dynamic-groups.md).
 
@@ -199,7 +199,7 @@ As part of an Azure cloud-based environment, the following items should be basel
 
 * **Activity logs** - The Activity log is an Azure [platform log](/azure/azure-monitor/essentials/platform-logs-overview) that provides insight into subscription-level events. This log includes such information as when a resource is modified or when a virtual machine is started. For more information, see [Azure Activity log](/azure/azure-monitor/essentials/activity-log).
 
-* **Self-service password reset service** - Microsoft Entra self-service password reset (SSPR) gives users the ability to change or reset their password. The administrator or help desk isn't required. For more information, see [How it works: Microsoft Entra self-service password reset](../authentication/concept-sspr-howitworks.md).
+* **Self-service password reset service** - Microsoft Entra self-service password reset (SSPR) gives users the ability to change or reset their password. The administrator or help desk isn't required. For more information, see [How it works: Microsoft Entra self-service password reset](~/identity/authentication/concept-sspr-howitworks.md).
 
 * **Device services** - Device identity management is the foundation for [device-based Conditional Access](../conditional-access/concept-conditional-access-grant.md). With device-based Conditional Access policies, you can ensure that access to resources in your environment is only possible with managed devices. For more information, see [What is a device identity](../devices/overview.md).
 

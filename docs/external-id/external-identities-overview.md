@@ -183,7 +183,7 @@ Organizations can enforce Conditional Access policies for external B2B collabora
 
 ### Multitenant applications
 
-If you offer a Software as a Service (SaaS) application to many organizations, you can configure your application to accept sign-ins from any Microsoft Entra tenant. This configuration is called making your application multi-tenant. Users in any Microsoft Entra tenant will be able to sign in to your application after consenting to use their account with your application. See how to [enable multitenant sign-ins](../develop/howto-convert-app-to-be-multi-tenant.md).
+If you offer a Software as a Service (SaaS) application to many organizations, you can configure your application to accept sign-ins from any Microsoft Entra tenant. This configuration is called making your application multi-tenant. Users in any Microsoft Entra tenant will be able to sign in to your application after consenting to use their account with your application. See how to [enable multitenant sign-ins](~/identity-platform/howto-convert-app-to-be-multi-tenant.md).
 
 ### Multi-tenant organizations
 

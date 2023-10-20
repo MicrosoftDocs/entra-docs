@@ -19,11 +19,11 @@ ms.collection: M365-identity-device-management
 ---
 # Troubleshooting the Microsoft Enterprise SSO Extension plugin on Apple devices
 
-This article provides troubleshooting guidance used by administrators to resolve issues with deploying and using the [Enterprise SSO plugin](../develop/apple-sso-plugin.md). The Apple SSO extension can be deployed to iOS/iPadOS and macOS.
+This article provides troubleshooting guidance used by administrators to resolve issues with deploying and using the [Enterprise SSO plugin](~/identity-platform/apple-sso-plugin.md). The Apple SSO extension can be deployed to iOS/iPadOS and macOS.
 
 Organizations may opt to deploy SSO to their corporate devices to provide a better experience for their end users. On Apple platforms, this process involves implementing Single Sign On (SSO) via [Primary Refresh Tokens](concept-primary-refresh-token.md).  SSO relieves end users of the burden of excessive authentication prompts.
 
-Microsoft has implemented a plugin built on top of Apple's SSO framework, which provides brokered authentication for applications integrated with Microsoft Entra ID. For more information, see the article [Microsoft Enterprise SSO plug-in for Apple devices](../develop/apple-sso-plugin.md).
+Microsoft has implemented a plugin built on top of Apple's SSO framework, which provides brokered authentication for applications integrated with Microsoft Entra ID. For more information, see the article [Microsoft Enterprise SSO plug-in for Apple devices](~/identity-platform/apple-sso-plugin.md).
 
 ## Extension types
 
@@ -149,7 +149,7 @@ Assuming the MDM administrator has followed the steps in the previous section [M
    |**3**|**Settings: Single Sign On Extension**|Indicates that this configuration profile is an **Apple SSO Extension** type.|
    |**4**|**Extension**| Identifier that maps to the **bundle ID** of the application that is running the **Microsoft Enterprise Extension Plugin**. The identifier must **always** be set to **`com.microsoft.CompanyPortalMac.ssoextension`** and the Team Identifier must appear as **(UBF8T346G9)** if the profile is installed on a macOS device.  If any values differ, then the MDM doesn't invoke the extension correctly.|
    |**5**|**Type**| The **Microsoft Enterprise SSO Extension** must **always** be set to a **Redirect** extension type. For more information, see [Redirect vs Credential Extension Types](#extension-types). |
-   |**6**|**URLs**| The login URLs belonging to the Identity Provider **(Microsoft Entra ID)**. See list of [supported URLs](../develop/apple-sso-plugin.md#manual-configuration-for-other-mdm-services). |
+   |**6**|**URLs**| The login URLs belonging to the Identity Provider **(Microsoft Entra ID)**. See list of [supported URLs](~/identity-platform/apple-sso-plugin.md#manual-configuration-for-other-mdm-services). |
 
    All Apple SSO Redirect Extensions must have the following MDM Payload components in the configuration profile:
 
@@ -158,10 +158,10 @@ Assuming the MDM administrator has followed the steps in the previous section [M
    |**Extension Identifier**| Includes both the Bundle Identifier and Team Identifier of the application on the macOS device, running the Extension. Note: The Microsoft Enterprise SSO Extension should always be set to: **com.microsoft.CompanyPortalMac.ssoextension (UBF8T346G9)** to inform the macOS operating system that the extension client code is part of the **Intune Company Portal application**. |
    |**Type**| Must be set to **Redirect** to indicate a **Redirect Extension** type. |
    |**URLs**| Endpoint URLs of the identity provider (Microsoft Entra ID), where the operating system routes authentication requests to the extension. |
-   |**Optional Extension Specific Configuration**| Dictionary values that may act as configuration parameters. In the context of Microsoft Enterprise SSO Extension, these configuration parameters are called feature flags. See [feature flag definitions](../develop/apple-sso-plugin.md#more-configuration-options). |
+   |**Optional Extension Specific Configuration**| Dictionary values that may act as configuration parameters. In the context of Microsoft Enterprise SSO Extension, these configuration parameters are called feature flags. See [feature flag definitions](~/identity-platform/apple-sso-plugin.md#more-configuration-options). |
 
    > [!NOTE] 
-   > The MDM definitions for Apple's SSO Extension profile can be referenced in the article [Extensible Single Sign-on MDM payload settings for Apple devices](https://support.apple.com/guide/deployment/depfd9cdf845/web) Microsoft has implemented our extension based on this schema. See [Microsoft Enterprise SSO plug-in for Apple devices](../develop/apple-sso-plugin.md#manual-configuration-for-other-mdm-services)
+   > The MDM definitions for Apple's SSO Extension profile can be referenced in the article [Extensible Single Sign-on MDM payload settings for Apple devices](https://support.apple.com/guide/deployment/depfd9cdf845/web) Microsoft has implemented our extension based on this schema. See [Microsoft Enterprise SSO plug-in for Apple devices](~/identity-platform/apple-sso-plugin.md#manual-configuration-for-other-mdm-services)
 
 1. To verify that the correct profile for the Microsoft Enterprise SSO Extension is installed, the **Extension** field should match: **com.microsoft.CompanyPortalMac.ssoextension (UBF8T346G9)**.
 1. Take note of the **Installed** field in the configuration profile as it can be a useful troubleshooting indicator, when changes are made to its configuration.
@@ -201,8 +201,8 @@ Once deployed the **Microsoft Enterprise SSO Extension for Apple devices** suppo
 
 | Application type | Interactive auth | Silent auth | Description | Examples |
 | --------- | :---: | :---: | --------- | :---: |
-| [**Native MSAL App**](../develop/apple-sso-plugin.md#applications-that-use-msal) |X|X| MSAL (Microsoft Authentication Library) is an application developer framework tailored for building applications with the Microsoft identity platform (Microsoft Entra ID).<br>Apps built on **MSAL version 1.1 or greater** are able to integrate with the Microsoft Enterprise SSO Extension.<br>*If the application is SSO extension (broker) aware it utilizes the extension without any further configuration* for more information, see our [MSAL developer sample documentation](https://github.com/AzureAD/microsoft-authentication-library-for-objc). | Microsoft To Do |
-| [**Non-MSAL Native/Browser SSO**](../develop/apple-sso-plugin.md#applications-that-dont-use-msal) ||X| Applications that use Apple networking technologies or webviews can be configured to obtain a shared credential from the SSO Extension<br>Feature flags must be configured to ensure that the bundle ID for each app is allowed to obtain the shared credential (PRT). | Microsoft Word<br>Safari<br>Microsoft Edge<br>Visual Studio | 
+| [**Native MSAL App**](~/identity-platform/apple-sso-plugin.md#applications-that-use-msal) |X|X| MSAL (Microsoft Authentication Library) is an application developer framework tailored for building applications with the Microsoft identity platform (Microsoft Entra ID).<br>Apps built on **MSAL version 1.1 or greater** are able to integrate with the Microsoft Enterprise SSO Extension.<br>*If the application is SSO extension (broker) aware it utilizes the extension without any further configuration* for more information, see our [MSAL developer sample documentation](https://github.com/AzureAD/microsoft-authentication-library-for-objc). | Microsoft To Do |
+| [**Non-MSAL Native/Browser SSO**](~/identity-platform/apple-sso-plugin.md#applications-that-dont-use-msal) ||X| Applications that use Apple networking technologies or webviews can be configured to obtain a shared credential from the SSO Extension<br>Feature flags must be configured to ensure that the bundle ID for each app is allowed to obtain the shared credential (PRT). | Microsoft Word<br>Safari<br>Microsoft Edge<br>Visual Studio | 
 
 > [!IMPORTANT]
 > Not all Microsoft first-party native applications use the MSAL framework. At the time of this article's publication, most of the Microsoft Office macOS applications still rely on the older ADAL library framework, and thus rely on the Browser SSO flow.
@@ -224,14 +224,14 @@ Once deployed the **Microsoft Enterprise SSO Extension for Apple devices** suppo
    com.microsoft.edgemac
    ``` 
 
-1. Now that the bundle ID(s) have been gathered, follow our [guidance to configure the feature flags](../develop/apple-sso-plugin.md#enable-sso-for-all-apps-with-a-specific-bundle-id-prefix) to ensure that **Non-MSAL Native/Browser SSO apps** can utilize the SSO Extension.  **Note: All bundle ids are case sensitive for the Feature flag configuration**.
+1. Now that the bundle ID(s) have been gathered, follow our [guidance to configure the feature flags](~/identity-platform/apple-sso-plugin.md#enable-sso-for-all-apps-with-a-specific-bundle-id-prefix) to ensure that **Non-MSAL Native/Browser SSO apps** can utilize the SSO Extension.  **Note: All bundle ids are case sensitive for the Feature flag configuration**.
 
 > [!CAUTION]
 > Applications that do not use Apple Networking technologies (**like WKWebview and NSURLSession**) will not be able to use the shared credential (PRT) from the SSO Extension. Both **Google Chrome** and **Mozilla Firefox** fall into this category. Even if they are configured in the MDM configuration profile, the result will be a regular authentication prompt in the browser. 
 
 ### Bootstrapping
 
-By default, only MSAL apps invoke the SSO Extension, and then in turn the Extension acquires a shared credential (PRT) from Microsoft Entra ID. However, the **Safari** browser application or other **Non-MSAL** applications can be configured to acquire the PRT. See [Allow users to sign in from applications that don't use MSAL and the Safari browser](../develop/apple-sso-plugin.md#allow-users-to-sign-in-from-applications-that-dont-use-msal-and-the-safari-browser). After the SSO extension acquires a PRT, it will store the credential in the user login Keychain. Next, check to ensure that the PRT is present in the user's keychain:
+By default, only MSAL apps invoke the SSO Extension, and then in turn the Extension acquires a shared credential (PRT) from Microsoft Entra ID. However, the **Safari** browser application or other **Non-MSAL** applications can be configured to acquire the PRT. See [Allow users to sign in from applications that don't use MSAL and the Safari browser](~/identity-platform/apple-sso-plugin.md#allow-users-to-sign-in-from-applications-that-dont-use-msal-and-the-safari-browser). After the SSO extension acquires a PRT, it will store the credential in the user login Keychain. Next, check to ensure that the PRT is present in the user's keychain:
 
 #### Checking keychain access for PRT
 
@@ -403,19 +403,19 @@ The SSO extension logs  are broken down into columns. The following screenshot s
 
 #### Feature flag configuration
 
-During the MDM configuration of the Microsoft Enterprise SSO Extension, an optional extension specific data can be sent as instructions to change how the SSO extension behaves. These configuration specific instructions are known as **Feature Flags**. The Feature Flag configuration is especially important for Non-MSAL/Browser SSO authorization requests types, as the Bundle ID can determine if the Extension is invoked or not. See [Feature Flag documentation](../develop/apple-sso-plugin.md#more-configuration-options). Every authorization request begins with a Feature Flag configuration report. The following screenshot walks through an example feature flag configuration:
+During the MDM configuration of the Microsoft Enterprise SSO Extension, an optional extension specific data can be sent as instructions to change how the SSO extension behaves. These configuration specific instructions are known as **Feature Flags**. The Feature Flag configuration is especially important for Non-MSAL/Browser SSO authorization requests types, as the Bundle ID can determine if the Extension is invoked or not. See [Feature Flag documentation](~/identity-platform/apple-sso-plugin.md#more-configuration-options). Every authorization request begins with a Feature Flag configuration report. The following screenshot walks through an example feature flag configuration:
 
 :::image type="content" source="media/troubleshoot-mac-sso-extension-plugin/feature-flag-configuration.png" alt-text="Screenshot showing an example feature flag configuration of the Microsoft SSO Extension.":::
 
 | Callout | Feature flag | Description |
 |:---------:|:---------|:---------|
-|**1**|**[browser_sso_interaction_enabled](../develop/apple-sso-plugin.md#allow-users-to-sign-in-from-applications-that-dont-use-msal-and-the-safari-browser)**|Non-MSAL or Safari browser can bootstrap a PRT   |
+|**1**|**[browser_sso_interaction_enabled](~/identity-platform/apple-sso-plugin.md#allow-users-to-sign-in-from-applications-that-dont-use-msal-and-the-safari-browser)**|Non-MSAL or Safari browser can bootstrap a PRT   |
 |**2**|**browser_sso_disable_mfa**|(Now deprecated) During bootstrapping of the PRT credential, by default MFA is required. Notice this configuration is set to **null** which means that the default configuration is enforced|
-|**3**|**[disable_explicit_app_prompt](../develop/apple-sso-plugin.md#disable-oauth-2-application-prompts)**|Replaces **prompt=login** authentication requests from applications to reduce prompting|
-|**4**|**[AppPrefixAllowList](../develop/apple-sso-plugin.md#enable-sso-for-all-apps-with-a-specific-bundle-id-prefix)**|Any Non-MSAL application that has a Bundle ID that starts with **`com.micorosoft.`** can be intercepted and handled by the SSO extension broker   |
+|**3**|**[disable_explicit_app_prompt](~/identity-platform/apple-sso-plugin.md#disable-oauth-2-application-prompts)**|Replaces **prompt=login** authentication requests from applications to reduce prompting|
+|**4**|**[AppPrefixAllowList](~/identity-platform/apple-sso-plugin.md#enable-sso-for-all-apps-with-a-specific-bundle-id-prefix)**|Any Non-MSAL application that has a Bundle ID that starts with **`com.micorosoft.`** can be intercepted and handled by the SSO extension broker   |
 
 > [!IMPORTANT]
-> Feature flags set to **null** means that their **default** configuration is in place. Check **[Feature Flag documentation](../develop/apple-sso-plugin.md#more-configuration-options)** for more details
+> Feature flags set to **null** means that their **default** configuration is in place. Check **[Feature Flag documentation](~/identity-platform/apple-sso-plugin.md#more-configuration-options)** for more details
 
 #### MSAL native application sign-in flow
 
@@ -765,5 +765,5 @@ Next, use the correlation ID obtained from the Browser SSO extension logs  to cr
 
 ## Next steps
 
-- [Microsoft Enterprise SSO plug-in for Apple devices (preview)](../develop/apple-sso-plugin.md)
+- [Microsoft Enterprise SSO plug-in for Apple devices (preview)](~/identity-platform/apple-sso-plugin.md)
 - [Deploy the Microsoft Enterprise SSO plug-in for Apple Devices (preview)](/mem/intune/configuration/use-enterprise-sso-plug-in-ios-ipados-macos)

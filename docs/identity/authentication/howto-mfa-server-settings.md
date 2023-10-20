@@ -39,7 +39,7 @@ The one-time bypass feature allows a user to authenticate a single time without 
 
 To create a one-time bypass, complete the following steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Administrator](../roles/permissions-reference.md#authentication-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
 1. Browse to **Protection** > **Multifactor authentication** > **One-time bypass**.
 1. Select **Add**.
 1. If necessary, select the replication group for the bypass.

@@ -34,7 +34,7 @@ Microsoft Entra ID uses a concept called *assignments* to determine which users 
 
 Before you configure and enable automatic user provisioning, decide which users or groups in Microsoft Entra ID need access to Wrike. Then assign these users or groups to Wrike by following the instructions here:
 
-* [Assign a user or group to an enterprise app](../manage-apps/assign-user-or-group-access-portal.md)
+* [Assign a user or group to an enterprise app](~/identity/enterprise-apps/assign-user-or-group-access-portal.md)
 
 ## Important tips for assigning users to Wrike
 
@@ -77,7 +77,7 @@ Before you configure Wrike for automatic user provisioning with Microsoft Entra 
 
 To add Wrike from the Microsoft Entra application gallery, follow these steps.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.Wrike**, select **Wrike** in the results panel, and then select **Add** to add the application.
 
 	![Wrike in the results list](common/search-new-app.png)
@@ -94,7 +94,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 ### Configure automatic user provisioning for Wrike in Microsoft Entra ID
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Wrike**.
 
 	![The Wrike link in the Applications list](common/all-applications.png)
@@ -146,7 +146,7 @@ You can use the **Current Status** section to monitor progress and follow links 
 ## Additional resources
 
 * [Manage user account provisioning for enterprise apps](../app-provisioning/configure-automatic-user-provisioning-portal.md)
-* [What is application access and single sign-on with Microsoft Entra ID?](../manage-apps/what-is-single-sign-on.md)
+* [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
 ## Next steps
 

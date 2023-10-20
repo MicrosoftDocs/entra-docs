@@ -15,7 +15,7 @@ ms.date: 04/10/2023
 
 # What are protected actions in Microsoft Entra ID?
 
-Protected actions in Microsoft Entra ID are permissions that have been assigned [Conditional Access policies](../conditional-access/overview.md). When a user attempts to perform a protected action, they must first satisfy the Conditional Access policies assigned to the required permissions. For example, to allow administrators to update Conditional Access policies, you can require that they first satisfy the [Phishing-resistant MFA](../authentication/concept-authentication-strengths.md#built-in-authentication-strengths) policy.
+Protected actions in Microsoft Entra ID are permissions that have been assigned [Conditional Access policies](../conditional-access/overview.md). When a user attempts to perform a protected action, they must first satisfy the Conditional Access policies assigned to the required permissions. For example, to allow administrators to update Conditional Access policies, you can require that they first satisfy the [Phishing-resistant MFA](~/identity/authentication/concept-authentication-strengths.md#built-in-authentication-strengths) policy.
 
 This article provides an overview of protected action and how to get started using them.
 
@@ -27,7 +27,7 @@ You use protected actions when you want to add an additional layer of protection
 
 We recommend using multi-factor authentication on all accounts, especially accounts with privileged roles. Protected actions can be used to require additional security. Here are some common stronger Conditional Access policies.
 
-- Stronger MFA authentication strengths, such as [Passwordless MFA](../authentication/concept-authentication-strengths.md#built-in-authentication-strengths) or [Phishing-resistant MFA](../authentication/concept-authentication-strengths.md#built-in-authentication-strengths),  
+- Stronger MFA authentication strengths, such as [Passwordless MFA](~/identity/authentication/concept-authentication-strengths.md#built-in-authentication-strengths) or [Phishing-resistant MFA](~/identity/authentication/concept-authentication-strengths.md#built-in-authentication-strengths),  
 - Privileged access workstations, by using Conditional Access policy [device filters](../conditional-access/concept-condition-filters-for-devices.md).
 - Shorter session timeouts, by using Conditional Access [sign-in frequency session controls](../conditional-access/howto-conditional-access-session-lifetime.md#user-sign-in-frequency). 
 
@@ -106,7 +106,7 @@ There are some known and expected limitations. The following applications will f
 - [Azure AD PowerShell](/powershell/azure/active-directory/overview?branch=main)
 - Creating a new [terms of use](../conditional-access/terms-of-use.md) page or [custom control](../conditional-access/controls.md) in the Microsoft Entra admin center. New terms of use pages or custom controls are registered with Conditional Access so are subject to Conditional Access create, update, and delete protected actions. Temporarily removing the policy requirement from the Conditional Access create, update, and delete actions will allow the creation of a new terms of use page or custom control.
 
-If your organization has developed an application that calls the Microsoft Graph API to perform a protected action, you should review the code sample for how to handle a claims challenge using step-up authentication. For more information, see [Developer guide to Conditional Access authentication context](../develop/developer-guide-conditional-access-authentication-context.md).
+If your organization has developed an application that calls the Microsoft Graph API to perform a protected action, you should review the code sample for how to handle a claims challenge using step-up authentication. For more information, see [Developer guide to Conditional Access authentication context](~/identity-platform/developer-guide-conditional-access-authentication-context.md).
 
 ## Best practices
 

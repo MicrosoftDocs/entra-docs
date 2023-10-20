@@ -49,7 +49,7 @@ Many developers already have tenants through services or subscriptions that are 
 
 To check the tenant:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Tenant Creator](../roles/permissions-reference.md#tenant-creator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Tenant Creator](~/identity/role-based-access-control/permissions-reference.md#tenant-creator).
 1. Check the upper-right corner. If you have a tenant, you'll automatically be signed in. You see the tenant name directly under your account name.
    * Hover over your account name to see your name, email address, directory or tenant ID (a GUID), and domain.
    * If your account is associated with multiple tenants, you can select your account name to open a menu where you can switch between tenants. Each tenant has its own tenant ID.

@@ -66,7 +66,7 @@ The following image illustrates the SAML SP-initiated flow for this scenario, bu
 Prior BIG-IP experience isn't necessary. You need:
 
 * An [Azure free account](https://azure.microsoft.com/free/active-directory/), or a higher-tier subscription.
-* A BIG-IP, or [deploy BIG-IP Virtual Edition in Azure](../manage-apps/f5-bigip-deployment-guide.md).
+* A BIG-IP, or [deploy BIG-IP Virtual Edition in Azure](~/identity/enterprise-apps/f5-bigip-deployment-guide.md).
 * Any of the following F5 BIG-IP licenses:
   * F5 BIG-IP Best bundle
   * F5 BIG-IP APM standalone license
@@ -74,7 +74,7 @@ Prior BIG-IP experience isn't necessary. You need:
   * 90-day BIG-IP [Free Trial](https://www.f5.com/trial/big-ip-trial.php) license
 * User identities [synchronized](../hybrid/connect/how-to-connect-sync-whatis.md) from an on-premises directory to Microsoft Entra ID, or created in Microsoft Entra ID and flowed back to your on-premises directory.
 * One of the following roles in Microsoft Entra tenant: Global Administrator, Cloud Application Administrator, or Application Administrator.
-* A web server [certificate](../manage-apps/f5-bigip-deployment-guide.md) for publishing services over HTTPS, or use default BIG-IP certificates while testing.
+* A web server [certificate](~/identity/enterprise-apps/f5-bigip-deployment-guide.md) for publishing services over HTTPS, or use default BIG-IP certificates while testing.
 * A Kerberos application, or go to active-directory-wp.com to learn to configure [SSO with IIS on Windows](https://active-directory-wp.com/docs/Networking/Single_Sign_On/SSO_with_IIS_on_Windows.html).
 
 ## BIG-IP configuration methods
@@ -92,7 +92,7 @@ This article covers the advanced configuration, a flexible SHA implementing that
 
 Before BIG-IP can hand off pre-authentication to Microsoft Entra ID, register it in your tenant. This process initiates SSO between both entities. The app you create from the F5 BIG-IP gallery template is the relying party that represents the SAML SP for the BIG-IP published application.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 2. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**, then select **New application**.
 3. The **Browse Microsoft Entra Gallery** pane appears with tiles for cloud platforms, on-premises applications, and featured applications. Applications in the **Featured applications** section have icons that indicate whether they support federated SSO and provisioning. 
 4. In the Azure gallery, search for **F5**, and select **F5 BIG-IP APM Azure AD integration**.

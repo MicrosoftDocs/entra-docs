@@ -24,7 +24,7 @@ Use the integration of Microsoft Entra activity logs and Azure Monitor to perfor
 - Compare your Microsoft Entra sign-in logs against security logs published by Microsoft Defender for Cloud.
 - Troubleshoot performance bottlenecks on your application’s sign-in page by correlating application performance data from Azure Application Insights.
 - Analyze the Identity Protection risky users and risk detections logs to detect threats in your environment.
-- Identify sign-ins from applications still using the Active Directory Authentication Library (ADAL) for authentication. [Learn about the ADAL end-of-support plan.](../develop/msal-migration.md)
+- Identify sign-ins from applications still using the Active Directory Authentication Library (ADAL) for authentication. [Learn about the ADAL end-of-support plan.](~/identity-platform/msal-migration.md)
 
 > [!NOTE]
 > Integrating Microsoft Entra logs with Azure Monitor automatically enables the Microsoft Entra data connector within Microsoft Sentinel.

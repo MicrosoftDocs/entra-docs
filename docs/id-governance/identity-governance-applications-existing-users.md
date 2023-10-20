@@ -90,7 +90,7 @@ When you create an assignment for a user to an access package, Microsoft Entra e
 
   - If the application uses an LDAP directory, follow the [guide for configuring Microsoft Entra ID to provision users into LDAP directories](../app-provisioning/on-premises-ldap-connector-configure.md) through the section to download, install, and configure the Microsoft Entra Connect Provisioning Agent package.
   - If the application uses a SQL database, follow the [guide for configuring Microsoft Entra ID to provision users into SQL-based applications](../app-provisioning/on-premises-sql-connector-configure.md) through the section to download, install, and configure the Microsoft Entra Connect Provisioning Agent package.
-  - If the application is a cloud application that supports the SCIM protocol, then you can add the application from the [application gallery](../manage-apps/overview-application-gallery.md).
+  - If the application is a cloud application that supports the SCIM protocol, then you can add the application from the [application gallery](~/identity/enterprise-apps/overview-application-gallery.md).
   - If the application is on-premises and supports the SCIM protocol, then follow the [guide for configuring Microsoft Entra ID to provision users into on-premises SCIM-based applications](../app-provisioning/on-premises-scim-provisioning.md).
 
 
@@ -208,7 +208,7 @@ If the application is already registered in Microsoft Entra ID, then continue to
 
 - If the application uses an LDAP directory, follow the [guide for configuring Microsoft Entra ID to provision users into LDAP directories](../app-provisioning/on-premises-ldap-connector-configure.md#configure-the-on-premises-ecma-app) section to create a new registration for an on-premises ECMA app in Microsoft Entra ID.  
 - If the application uses a SQL database, follow the [guide for configuring Microsoft Entra ID to provision users into SQL-based applications](../app-provisioning/on-premises-sql-connector-configure.md#4-configure-the-on-premises-ecma-app) section to create a new registration for an on-premises ECMA app in Microsoft Entra ID.
-- If it is a cloud application that supports the SCIM protocol, then you can add the application from the [application gallery](../manage-apps/overview-application-gallery.md).
+- If it is a cloud application that supports the SCIM protocol, then you can add the application from the [application gallery](~/identity/enterprise-apps/overview-application-gallery.md).
 - If the application is on-premises and supports the SCIM protocol, then follow the [guide for configuring Microsoft Entra ID to provision users into on-premises SCIM-based applications](../app-provisioning/on-premises-scim-provisioning.md).
 
 ## Check for users who are not already assigned to the application

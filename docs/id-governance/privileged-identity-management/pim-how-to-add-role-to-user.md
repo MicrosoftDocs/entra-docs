@@ -19,11 +19,11 @@ ms.custom: subject-rbac-steps
 
 # Assign Microsoft Entra roles in Privileged Identity Management
 
-With Microsoft Entra ID, a Global administrator can make **permanent** Microsoft Entra admin role assignments. These role assignments can be created using the [Microsoft Entra admin center](../roles/permissions-reference.md) or using [PowerShell commands](/powershell/module/azuread/#directory_roles).
+With Microsoft Entra ID, a Global administrator can make **permanent** Microsoft Entra admin role assignments. These role assignments can be created using the [Microsoft Entra admin center](~/identity/role-based-access-control/permissions-reference.md) or using [PowerShell commands](/powershell/module/azuread/#directory_roles).
 
 The Microsoft Entra Privileged Identity Management (PIM) service also allows Privileged role administrators to make permanent admin role assignments. Additionally, Privileged role administrators can make users **eligible** for Microsoft Entra admin roles. An eligible administrator can activate the role when they need it, and then their permissions expire once they're done.
 
-Privileged Identity Management support both built-in and custom Microsoft Entra roles. For more information on Microsoft Entra custom roles, see [Role-based access control in Microsoft Entra ID](../roles/custom-overview.md).
+Privileged Identity Management support both built-in and custom Microsoft Entra roles. For more information on Microsoft Entra custom roles, see [Role-based access control in Microsoft Entra ID](~/identity/role-based-access-control/custom-overview.md).
 
 >[!Note]
 >When a role is assigned, the assignment:
@@ -34,7 +34,7 @@ Privileged Identity Management support both built-in and custom Microsoft Entra 
 
 Follow these steps to make a user eligible for a Microsoft Entra admin role.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](../roles/permissions-reference.md#privileged-role-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
 1. Browse to **Identity governance** > **Privileged Identity Management** > **Microsoft Entra roles**.
 
@@ -70,9 +70,9 @@ Follow these steps to make a user eligible for a Microsoft Entra admin role.
 
 ## Assign a role with restricted scope
 
-For certain roles, the scope of the granted permissions can be restricted to a single admin unit, service principal, or application. This procedure is an example if assigning a role that has the scope of an administrative unit. For a list of roles that support scope via administrative unit, see [Assign scoped roles to an administrative unit](../roles/admin-units-assign-roles.md). This feature is currently being rolled out to Microsoft Entra organizations.
+For certain roles, the scope of the granted permissions can be restricted to a single admin unit, service principal, or application. This procedure is an example if assigning a role that has the scope of an administrative unit. For a list of roles that support scope via administrative unit, see [Assign scoped roles to an administrative unit](~/identity/role-based-access-control/admin-units-assign-roles.md). This feature is currently being rolled out to Microsoft Entra organizations.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](../roles/permissions-reference.md#privileged-role-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
 1. Browse to **Identity** > **Roles & admins** > **Roles & admins**.
 
@@ -90,7 +90,7 @@ For certain roles, the scope of the granted permissions can be restricted to a s
    - Select the role scope (in this case, administrative units)
    - Select an administrative unit for the scope
 
-For more information about creating administrative units, see [Add and remove administrative units](../roles/admin-units-manage.md).
+For more information about creating administrative units, see [Add and remove administrative units](~/identity/role-based-access-control/admin-units-manage.md).
 
 ## Assign a role using Microsoft Graph API
 
@@ -243,9 +243,9 @@ The following is an example of the response. The response object shown here migh
 
 ## Update or remove an existing role assignment
 
-Follow these steps to update or remove an existing role assignment. **Microsoft Entra ID P2 or Microsoft Entra ID Governance licensed customers only**: Don't assign a group as Active to a role through both Microsoft Entra ID and Privileged Identity Management (PIM). For a detailed explanation, see [Known issues](../roles/groups-concept.md#known-issues).
+Follow these steps to update or remove an existing role assignment. **Microsoft Entra ID P2 or Microsoft Entra ID Governance licensed customers only**: Don't assign a group as Active to a role through both Microsoft Entra ID and Privileged Identity Management (PIM). For a detailed explanation, see [Known issues](~/identity/role-based-access-control/groups-concept.md#known-issues).
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](../roles/permissions-reference.md#privileged-role-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
 1. Browse to **Identity governance** > **Privileged Identity Management** > **Microsoft Entra roles**. 
 

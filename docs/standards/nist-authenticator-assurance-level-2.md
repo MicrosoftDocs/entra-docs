@@ -49,7 +49,7 @@ The following table has authenticator types permitted for AAL2:
 
 For AAL2, use multi-factor cryptographic hardware or software authenticators. Passwordless authentication eliminates the greatest attack surface (the password), and offers users a streamlined method to authenticate.
 
-For guidance on selecting a passwordless authentication method, see [Plan a passwordless authentication deployment in Microsoft Entra ID](../authentication/howto-authentication-passwordless-deployment.md). See also, [Windows Hello for Business deployment guide](/windows/security/identity-protection/hello-for-business/hello-deployment-guide)
+For guidance on selecting a passwordless authentication method, see [Plan a passwordless authentication deployment in Microsoft Entra ID](~/identity/authentication/howto-authentication-passwordless-deployment.md). See also, [Windows Hello for Business deployment guide](/windows/security/identity-protection/hello-for-business/hello-deployment-guide)
 
 ## FIPS 140 validation
 
@@ -77,7 +77,7 @@ Microsoft Authenticator app (Push Notification/OTP/passwordless) on iOS uses FIP
 
 For OATH hardware tokens and smartcards we recommend you consult with your provider for current FIPS validation status.
 
-FIDO 2 security key providers are in various stages of FIPS certification. We recommend you review the list of [supported FIDO 2 key vendors](../authentication/concept-authentication-passwordless.md#fido2-security-key-providers). Consult with your provider for current FIPS validation status.
+FIDO 2 security key providers are in various stages of FIPS certification. We recommend you review the list of [supported FIDO 2 key vendors](~/identity/authentication/concept-authentication-passwordless.md#fido2-security-key-providers). Consult with your provider for current FIPS validation status.
 
 ## Reauthentication
 

@@ -62,13 +62,13 @@ Passwords are the most common known thing, and represent the largest attack surf
 
 * [Password complexity requirements](https://www.microsoft.com/research/wp-content/uploads/2016/06/Microsoft_Password_Guidance-1.pdf)
 
-* [Banned passwords](../authentication/tutorial-configure-custom-password-protection.md)
+* [Banned passwords](~/identity/authentication/tutorial-configure-custom-password-protection.md)
 
 * [Leaked credentials identification](../identity-protection/overview-identity-protection.md)
 
 * [Secure hashed storage](https://aka.ms/AADDataWhitepaper)
 
-* [Account lockout](../authentication/howto-password-smart-lockout.md)
+* [Account lockout](~/identity/authentication/howto-password-smart-lockout.md)
 
 ### Something you have
 

@@ -20,7 +20,7 @@ ms.collection: M365-identity-device-management
 
 You can use directory extensions to extend the schema in Microsoft Entra ID with your own attributes from on-premises Active Directory. This feature enables you to build LOB apps by consuming attributes that you continue to manage on-premises. 
 
-For additional information on directory extensions see [Using directory extension attributes in claims](../../develop/schema-extensions.md)
+For additional information on directory extensions see [Using directory extension attributes in claims](~/identity-platform/schema-extensions.md)
 
  You can see the available attributes by using [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer). You can also use this feature to create dynamic groups in Microsoft Entra ID.
 

@@ -135,7 +135,7 @@ Allowing users to register and consent to applications might initially sound con
 
 If you still want to prevent users in your directory from registering applications and from signing in to applications without administrator approval, there are two settings that you can change to turn off those capabilities:
 
-- To change the user consent settings in your organization, see [Configure how users consent to applications](../manage-apps/configure-user-consent.md).
+- To change the user consent settings in your organization, see [Configure how users consent to applications](~/identity/enterprise-apps/configure-user-consent.md).
 
 - To prevent users from registering their own applications:
   1. In the Microsoft Entra admin center, browse to **Identity** > **Users** > **User settings**.

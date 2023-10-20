@@ -104,7 +104,7 @@ After setting up custom extensibility in the catalog, administrators can create 
 
 With Azure, you're able to use [Azure Key Vault](/azure/key-vault/secrets/about-secrets) to store application secrets such as passwords. To register an application with secrets within the Microsoft Entra admin center, follow these steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../roles/permissions-reference.md#identity-governance-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
 1. Browse to **Identity** > **Applications** > **App registrations**.
 
@@ -131,7 +131,7 @@ After registering your application, you must add a client secret by following th
 1. Select Add.
 
 > [!NOTE]
-> To find more detailed information on registering an application, see: [Quickstart: Register an app in the Microsoft identity platform](../develop/quickstart-register-app.md):
+> To find more detailed information on registering an application, see: [Quickstart: Register an app in the Microsoft identity platform](~/identity-platform/quickstart-register-app.md):
 
 To authorize the created application to call the [MS Graph resume API](/graph/api/accesspackageassignmentrequest-resume) you'd do the following steps:
 

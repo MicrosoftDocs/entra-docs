@@ -35,7 +35,7 @@ There are two ways to start your quickstart application: express (option 1) and 
 
 ### Option 1: Register and automatically configure your app, and then download the code sample
 
-1. Go to the [Microsoft Entra admin center - App registrations](https://entra.microsoft.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade/quickStartType/AngularSpaQuickstartPage/sourceType/docs) quickstart experience as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator).
+1. Go to the [Microsoft Entra admin center - App registrations](https://entra.microsoft.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade/quickStartType/AngularSpaQuickstartPage/sourceType/docs) quickstart experience as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Enter a name for your application, and then select **Register**.
 1. Follow the instructions in the portal's quickstart experience to download the automatically configured application code.
 
@@ -45,7 +45,7 @@ There are two ways to start your quickstart application: express (option 1) and 
 
 To register your application and manually add the app's registration information to it, follow these steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 1. If you have access to multiple tenants, use the **Directories + subscriptions** filter :::image type="icon" source="./media/quickstart-configure-app-access-web-apis/portal-01-directory-subscription-filter.png" border="false"::: in the top menu to select the tenant containing your client app's registration.
 1. Browse to **Identity** > **Applications** > **App registrations** and select **New registration**.
 1. Enter a **Name** for your application, for example **java-webapp**. Users of your app might see this name. You can change it later.

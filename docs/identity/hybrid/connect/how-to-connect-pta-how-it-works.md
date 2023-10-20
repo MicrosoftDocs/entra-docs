@@ -49,8 +49,8 @@ The following diagram illustrates all the components and the steps involved:
 ## Next steps
 - [Current limitations](how-to-connect-pta-current-limitations.md): Learn which scenarios are supported and which ones are not.
 - [Quick Start](how-to-connect-pta-quick-start.md): Get up and running on Microsoft Entra pass-through authentication.
-- [Migrate your apps to Microsoft Entra ID](../../manage-apps/migration-resources.md): Resources to help you migrate application access and authentication to Microsoft Entra ID.
-- [Smart Lockout](../../authentication/howto-password-smart-lockout.md): Configure the Smart Lockout capability on your tenant to protect user accounts.
+- [Migrate your apps to Microsoft Entra ID](~/identity/enterprise-apps/migration-resources.md): Resources to help you migrate application access and authentication to Microsoft Entra ID.
+- [Smart Lockout](~/identity/authentication/howto-password-smart-lockout.md): Configure the Smart Lockout capability on your tenant to protect user accounts.
 - [Frequently Asked Questions](how-to-connect-pta-faq.yml): Find answers to frequently asked questions.
 - [Troubleshoot](tshoot-connect-pass-through-authentication.md): Learn how to resolve common problems with the Pass-through Authentication feature.
 - [Security Deep Dive](how-to-connect-pta-security-deep-dive.md): Get deep technical information on the Pass-through Authentication feature.

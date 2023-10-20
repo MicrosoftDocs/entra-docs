@@ -39,7 +39,7 @@ Here's what you need to know about email as an alternate login ID:
 
 * The feature is available in Microsoft Entra ID Free edition and higher.
 * The feature enables sign-in with *ProxyAddresses*, in addition to UPN, for cloud-authenticated Microsoft Entra users. More on how this applies to Microsoft Entra business-to-business (B2B) collaboration in the [B2B](#b2b-guest-user-sign-in-with-an-email-address) section.
-* When a user signs in with a non-UPN email, the `unique_name` and `preferred_username` claims (if present) in the [ID token](../develop/id-tokens.md) will return the non-UPN email.
+* When a user signs in with a non-UPN email, the `unique_name` and `preferred_username` claims (if present) in the [ID token](~/identity-platform/id-tokens.md) will return the non-UPN email.
     * If the non-UPN email in use becomes stale (no longer belongs to the user), these claims will return the UPN instead.
 * The feature supports managed authentication with Password Hash Sync (PHS) or Pass-Through Authentication (PTA).
 * There are two options for configuring the feature:
@@ -63,8 +63,8 @@ In the current preview state, the following limitations apply to email as an alt
     * [Microsoft Entra hybrid joined devices](../devices/concept-hybrid-join.md)
     * [Microsoft Entra joined devices](../devices/concept-directory-join.md)
     * [Microsoft Entra registered devices](../devices/concept-device-registration.md)
-    * [Resource Owner Password Credentials (ROPC)](../develop/v2-oauth-ropc.md)
-    * [Single Sign-On and App Protection Policies on Mobile Platform](../develop/mobile-sso-support-overview.md)
+    * [Resource Owner Password Credentials (ROPC)](~/identity-platform/v2-oauth-ropc.md)
+    * [Single Sign-On and App Protection Policies on Mobile Platform](~/identity-platform/mobile-sso-support-overview.md)
     * Legacy authentication such as POP3 and SMTP
     * Skype for Business
 
@@ -146,7 +146,7 @@ During preview, you currently need *Global Administrator* permissions to enable 
 
 [!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](../roles/permissions-reference.md#authentication-policy-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. From the navigation menu on the left-hand side of the Microsoft Entra window, select **Microsoft Entra Connect > Email as alternate login ID**.
 
     ![Screenshot of email as alternate login ID option in the Microsoft Entra admin center.](media/howto-authentication-use-email-signin/azure-ad-connect-screen.png)

@@ -53,7 +53,7 @@ By default, Authenticator Lite is [Microsoft managed](concept-authentication-def
 
 To disable Authenticator Lite in the Microsoft Entra admin center, complete the following steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](../roles/permissions-reference.md#authentication-policy-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Protection** > **Authentication methods** > **Microsoft Authenticator**.
 
 2. On the **Enable and Target** tab, click **Enable** and **All users** to enable the Authenticator policy for everyone or add select groups. Set the Authentication mode for these users/groups to **Any** or **Push**.

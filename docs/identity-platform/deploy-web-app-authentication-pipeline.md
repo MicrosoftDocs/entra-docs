@@ -143,7 +143,7 @@ Add a [service connection](/azure/devops/pipelines/library/service-endpoints) so
 
 An application is also created in your Microsoft Entra tenant that provides an identity for the pipeline.  You need the display name of the app registration in later steps.  To find the display name:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Developer](../roles/permissions-reference.md#application-developer).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Developer](~/identity/role-based-access-control/permissions-reference.md#application-developer).
 1. Browse to **Identity** > **Applications** > **App registrations** > **All applications**.
 1. Find the display name of the app registration, which is of the form `{organization}-{project}-{guid}`.
 
@@ -193,7 +193,7 @@ Save your changes and run the pipeline.
 
 Next, add a stage to the pipeline that deploys Azure resources.  The pipeline uses an [inline script](/azure/devops/pipelines/scripts/powershell) to create the App Service instance.  In a later step, the inline script creates a Microsoft Entra app registration for App Service authentication.  An Azure CLI bash script is used because Azure Resource Manager (and Azure Pipelines tasks) can't create an app registration.
 
-The inline script runs in the context of the pipeline, assign the [Application.Administrator](../roles/permissions-reference.md#application-administrator) role to the app so the script can create app registrations:
+The inline script runs in the context of the pipeline, assign the [Application.Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) role to the app so the script can create app registrations:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 1. Browse to **Identity** > **Roles & admins** > **Roles & admins**.

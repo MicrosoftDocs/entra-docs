@@ -43,7 +43,7 @@ As you review your list, you may find you need to either assign an owner for tas
 
 #### Owner recommended reading
 
-- [Assigning administrator roles in Microsoft Entra ID](../roles/permissions-reference.md)
+- [Assigning administrator roles in Microsoft Entra ID](~/identity/role-based-access-control/permissions-reference.md)
 
 ## Credentials management
 
@@ -55,10 +55,10 @@ Use the table below to find the recommended solution for mitigating the issue th
 
 | Issue | Recommendation |
 | :- | :- |
-| No mechanism to protect against weak passwords | Enable Microsoft Entra ID [self-service password reset (SSPR)](../authentication/concept-sspr-howitworks.md) and [password protection](../authentication/concept-password-ban-bad-on-premises.md) |
+| No mechanism to protect against weak passwords | Enable Microsoft Entra ID [self-service password reset (SSPR)](~/identity/authentication/concept-sspr-howitworks.md) and [password protection](~/identity/authentication/concept-password-ban-bad-on-premises.md) |
 | No mechanism to detect leaked passwords | Enable [password hash sync](../hybrid/connect/how-to-connect-password-hash-synchronization.md) (PHS) to gain insights |
-| Using AD FS and unable to move to managed authentication | Enable [AD FS Extranet Smart Lockout](/windows-server/identity/ad-fs/operations/configure-ad-fs-extranet-smart-lockout-protection) and / or [Microsoft Entra Smart Lockout](../authentication/howto-password-smart-lockout.md) |
-| Password policy uses complexity-based rules such as length, multiple character sets, or expiration | Reconsider in favor of [Microsoft Recommended Practices](https://www.microsoft.com/research/publication/password-guidance/?from=http%3A%2F%2Fresearch.microsoft.com%2Fpubs%2F265143%2Fmicrosoft_password_guidance.pdf) and switch your approach to password management and deploy [Microsoft Entra password protection](../authentication/concept-password-ban-bad.md). |
+| Using AD FS and unable to move to managed authentication | Enable [AD FS Extranet Smart Lockout](/windows-server/identity/ad-fs/operations/configure-ad-fs-extranet-smart-lockout-protection) and / or [Microsoft Entra Smart Lockout](~/identity/authentication/howto-password-smart-lockout.md) |
+| Password policy uses complexity-based rules such as length, multiple character sets, or expiration | Reconsider in favor of [Microsoft Recommended Practices](https://www.microsoft.com/research/publication/password-guidance/?from=http%3A%2F%2Fresearch.microsoft.com%2Fpubs%2F265143%2Fmicrosoft_password_guidance.pdf) and switch your approach to password management and deploy [Microsoft Entra password protection](~/identity/authentication/concept-password-ban-bad.md). |
 | Users aren't registered to use multifactor authentication | [Register all user's security information](../identity-protection/howto-identity-protection-configure-mfa-policy.md) so it can be used as a mechanism to verify the user's identity along with their password |
 | There is no revocation of passwords based on user risk | Deploy Microsoft Entra [Identity Protection user risk policies](../identity-protection/howto-identity-protection-configure-risk-policies.md) to force password changes on leaked credentials using SSPR |
 | There's no smart lockout mechanism to protect malicious authentication from bad actors coming from identified IP addresses | Deploy cloud-managed authentication with either password hash sync or [pass-through authentication](../hybrid/connect/how-to-connect-pta-quick-start.md) (PTA) |
@@ -71,19 +71,19 @@ Use the table below to find the recommended solution for mitigating the issue th
 
 Users needing to change or reset their passwords is one of the biggest sources of volume and cost of help desk calls. In addition to cost, changing the password as a tool to mitigate a user risk is a fundamental step in improving the security posture of your organization.
 
-At a minimum, it's recommended you deploy Microsoft Entra ID [self-service password reset](../authentication/concept-sspr-howitworks.md) (SSPR) and on-premises [password protection](../authentication/howto-password-ban-bad-on-premises-deploy.md) to accomplish:
+At a minimum, it's recommended you deploy Microsoft Entra ID [self-service password reset](~/identity/authentication/concept-sspr-howitworks.md) (SSPR) and on-premises [password protection](~/identity/authentication/howto-password-ban-bad-on-premises-deploy.md) to accomplish:
 
 - Deflect help desk calls.
 - Replace the use of temporary passwords.
 - Replace any existing self-service password management solution that relies on an on-premises solution.
-- [Eliminate weak passwords](../authentication/concept-password-ban-bad.md) in your organization.
+- [Eliminate weak passwords](~/identity/authentication/concept-password-ban-bad.md) in your organization.
 
 > [!NOTE]
 > For organizations with a Microsoft Entra ID P2 subscription, it is recommended to deploy SSPR and use it as part of an [Identity Protection User Risk Policy](../identity-protection/howto-identity-protection-configure-risk-policies.md).
 
 ### Strong credential management
 
-Passwords by themselves aren't secure enough to prevent bad actors from gaining access to your environment. At a minimum, any user with a privileged account must be enabled for multifactor authentication. Ideally, you should enable [combined registration](../authentication/concept-registration-mfa-sspr-combined.md) and require all users to register for MFA and SSPR using the [combined registration experience](https://support.microsoft.com/account-billing/set-up-your-security-info-from-a-sign-in-prompt-28180870-c256-4ebf-8bd7-5335571bf9a8). Eventually, we recommend you adopt a strategy to [provide resilience](../authentication/concept-resilient-controls.md) to reduce the risk of lockout due to unforeseen circumstances.
+Passwords by themselves aren't secure enough to prevent bad actors from gaining access to your environment. At a minimum, any user with a privileged account must be enabled for multifactor authentication. Ideally, you should enable [combined registration](~/identity/authentication/concept-registration-mfa-sspr-combined.md) and require all users to register for MFA and SSPR using the [combined registration experience](https://support.microsoft.com/account-billing/set-up-your-security-info-from-a-sign-in-prompt-28180870-c256-4ebf-8bd7-5335571bf9a8). Eventually, we recommend you adopt a strategy to [provide resilience](~/identity/authentication/concept-resilient-controls.md) to reduce the risk of lockout due to unforeseen circumstances.
 
 ![Combined user experience flow](./media/ops-guide-auth/ops-img4.png)
 
@@ -141,7 +141,7 @@ If you're managing devices with MDM or Microsoft Intune, but not using device co
 
 In Windows 10, [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/hello-identity-verification) replaces passwords with strong two-factor authentication on PCs. Windows Hello for Business enables a more streamlined MFA experience for users and reduces your dependency on passwords. If you haven't begun rolling out Windows 10 devices, or have only partially deployed them, we recommend you upgrade to Windows 10 and [enable Windows Hello for Business](/windows/security/identity-protection/hello-for-business/hello-manage-in-organization) on all devices.
 
-If you would like to learn more about passwordless authentication, see [A world without passwords with Microsoft Entra ID](../authentication/concept-authentication-passwordless.md).
+If you would like to learn more about passwordless authentication, see [A world without passwords with Microsoft Entra ID](~/identity/authentication/concept-authentication-passwordless.md).
 
 ## Application authentication and assignment
 
@@ -154,17 +154,17 @@ Providing a standardized single sign-on mechanism to the entire enterprise is cr
 > [!NOTE]
 > If you don't have a mechanism to discover unmanaged applications in your organization, we recommend implementing a discovery process using a cloud access security broker solution (CASB) such as [Microsoft Defender for Cloud Apps](https://www.microsoft.com/enterprise-mobility-security/cloud-app-security).
 
-Finally, if you have a Microsoft Entra app gallery and use applications that support SSO with Microsoft Entra ID, we recommend [listing the application in the app gallery](../manage-apps/v2-howto-app-gallery-listing.md).
+Finally, if you have a Microsoft Entra app gallery and use applications that support SSO with Microsoft Entra ID, we recommend [listing the application in the app gallery](~/identity/enterprise-apps/v2-howto-app-gallery-listing.md).
 
 #### Single sign-on recommended reading
 
-- [What is application access and single sign-on with Microsoft Entra ID](../manage-apps/what-is-single-sign-on.md)
+- [What is application access and single sign-on with Microsoft Entra ID](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
 <a name='migration-of-ad-fs-applications-to-azure-ad'></a>
 
 ### Migration of AD FS applications to Microsoft Entra ID
 
-[Migrating apps from AD FS to Microsoft Entra ID](../manage-apps/migrate-adfs-apps-stages.md) enables additional capabilities on security, more consistent manageability, and a better collaboration experience. If you have applications configured in AD FS that support SSO with Microsoft Entra ID, then you should reconfigure those applications to use SSO with Microsoft Entra ID. If you have applications configured in AD FS with uncommon configurations unsupported by Microsoft Entra ID, you should contact the app owners to understand if the special configuration is an absolute requirement of the application. If it isn't required, then you should reconfigure the application to use SSO with Microsoft Entra ID.
+[Migrating apps from AD FS to Microsoft Entra ID](~/identity/enterprise-apps/migrate-adfs-apps-stages.md) enables additional capabilities on security, more consistent manageability, and a better collaboration experience. If you have applications configured in AD FS that support SSO with Microsoft Entra ID, then you should reconfigure those applications to use SSO with Microsoft Entra ID. If you have applications configured in AD FS with uncommon configurations unsupported by Microsoft Entra ID, you should contact the app owners to understand if the special configuration is an absolute requirement of the application. If it isn't required, then you should reconfigure the application to use SSO with Microsoft Entra ID.
 
 ![Microsoft Entra ID as the primary identity provider](./media/ops-guide-auth/ops-img9.png)
 
@@ -173,7 +173,7 @@ Finally, if you have a Microsoft Entra app gallery and use applications that sup
 
 ### Assign users to applications
 
-[Assigning users to applications](../manage-apps/assign-user-or-group-access-portal.md) is best mapped by using groups because they allow greater flexibility and ability to manage at scale. The benefits of using groups include [attribute-based dynamic group membership](../enterprise-users/groups-dynamic-membership.md) and [delegation to app owners](../fundamentals/how-to-manage-groups.md). Therefore, if you're already using and managing groups, we recommend you take the following actions to improve management at scale:
+[Assigning users to applications](~/identity/enterprise-apps/assign-user-or-group-access-portal.md) is best mapped by using groups because they allow greater flexibility and ability to manage at scale. The benefits of using groups include [attribute-based dynamic group membership](../enterprise-users/groups-dynamic-membership.md) and [delegation to app owners](../fundamentals/how-to-manage-groups.md). Therefore, if you're already using and managing groups, we recommend you take the following actions to improve management at scale:
 
 - Delegate group management and governance to application owners.
 - Allow self-service access to the application.
@@ -184,8 +184,8 @@ On the other hand, if you find applications that have assignment to individual u
 
 #### Assign users to applications recommended reading
 
-- [Assign users and groups to an application in Microsoft Entra ID](../manage-apps/assign-user-or-group-access-portal.md)
-- [Delegate app registration permissions in Microsoft Entra ID](../roles/delegate-app-roles.md)
+- [Assign users and groups to an application in Microsoft Entra ID](~/identity/enterprise-apps/assign-user-or-group-access-portal.md)
+- [Delegate app registration permissions in Microsoft Entra ID](~/identity/role-based-access-control/delegate-app-roles.md)
 - [Dynamic membership rules for groups in Microsoft Entra ID](../enterprise-users/groups-dynamic-membership.md)
 
 ## Access policies
@@ -244,7 +244,7 @@ Conditional Access is an essential tool for improving the security posture of yo
 - Use Conditional Access policies to [implement MFA](../conditional-access/plan-conditional-access.md), rather than using a **per-user MFA**
 - Have a small set of core policies that can apply to multiple applications
 - Define empty exception groups and add them to the policies to have an exception strategy
-- Plan for [break glass](../roles/security-planning.md#break-glass-what-to-do-in-an-emergency) accounts without MFA controls
+- Plan for [break glass](~/identity/role-based-access-control/security-planning.md#break-glass-what-to-do-in-an-emergency) accounts without MFA controls
 - Ensure a consistent experience across Microsoft 365 client applications, for example, Teams, OneDrive, Outlook, etc.) by implementing the same set of controls for services such as Exchange Online and SharePoint Online
 - Assignment to policies should be implemented through groups, not individuals
 - Do regular reviews of the exception groups used in policies to limit the time users are out of the security posture. If you own Microsoft Entra ID P2, then you can use access reviews to automate the process
@@ -312,7 +312,7 @@ Below are a list of apps with permissions you might want to scrutinize for Micro
 | Microsoft Graph API| Directory.AccessAsUser.All |
 | Azure REST API | user_impersonation |
 
-To avoid this scenario, you should refer to [detect and remediate illicit consent grants in Office 365](/microsoft-365/security/office-365-security/detect-and-remediate-illicit-consent-grants) to identify and fix any applications with illicit grants or applications that have more grants than are necessary. Next, [remove self-service altogether](../manage-apps/configure-user-consent.md) and [establish governance procedures](../manage-apps/configure-admin-consent-workflow.md). Finally, schedule regular reviews of app permissions and remove them when they are not needed.
+To avoid this scenario, you should refer to [detect and remediate illicit consent grants in Office 365](/microsoft-365/security/office-365-security/detect-and-remediate-illicit-consent-grants) to identify and fix any applications with illicit grants or applications that have more grants than are necessary. Next, [remove self-service altogether](~/identity/enterprise-apps/configure-user-consent.md) and [establish governance procedures](~/identity/enterprise-apps/configure-admin-consent-workflow.md). Finally, schedule regular reviews of app permissions and remove them when they are not needed.
 
 #### Consent grants recommended reading
 
@@ -341,8 +341,8 @@ Below are the user and group settings that can be locked down if there isn't an 
 #### Groups recommended reading
 
 - [What is Microsoft Entra B2B collaboration?](../external-identities/what-is-b2b.md)
-- [Integrating Applications with Microsoft Entra ID](../develop/quickstart-register-app.md)
-- [Apps, permissions, and consent in Microsoft Entra ID.](../develop/quickstart-register-app.md)
+- [Integrating Applications with Microsoft Entra ID](~/identity-platform/quickstart-register-app.md)
+- [Apps, permissions, and consent in Microsoft Entra ID.](~/identity-platform/quickstart-register-app.md)
 - [Use groups to manage access to resources in Microsoft Entra ID](../fundamentals/concept-learn-about-groups.md)
 - [Setting up self-service application access management in Microsoft Entra ID](../enterprise-users/groups-self-service-management.md)
 

@@ -30,14 +30,14 @@ If you instead want to use the Microsoft 365 admin center to configure a multi-t
 ![Icon for the owner tenant.](./media/common/icon-tenant-owner.png)<br/>**Owner tenant**
 
 - For license information, see [License requirements](./multi-tenant-organization-overview.md#license-requirements).
-- [Security Administrator](../roles/permissions-reference.md#security-administrator) role to configure cross-tenant access settings and templates for the multi-tenant organization.
-- [Global Administrator](../roles/permissions-reference.md#global-administrator) role to consent to required permissions.
+- [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator) role to configure cross-tenant access settings and templates for the multi-tenant organization.
+- [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) role to consent to required permissions.
 
 ![Icon for the member tenant.](./media/common/icon-tenant-member.png)<br/>**Member tenant**
 
 - For license information, see [License requirements](./multi-tenant-organization-overview.md#license-requirements).
-- [Security Administrator](../roles/permissions-reference.md#security-administrator) role to configure cross-tenant access settings and templates for the multi-tenant organization.
-- [Global Administrator](../roles/permissions-reference.md#global-administrator) role to consent to required permissions.
+- [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator) role to configure cross-tenant access settings and templates for the multi-tenant organization.
+- [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) role to consent to required permissions.
 
 ## Step 1: Sign in to the owner tenant
 

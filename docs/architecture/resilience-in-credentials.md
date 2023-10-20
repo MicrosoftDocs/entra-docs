@@ -37,17 +37,17 @@ For second factors, the Microsoft Authenticator app or other authenticator apps 
 
 ## How do multiple credentials help resilience?
 
-Provisioning multiple credential types gives users options that accommodate their preferences and environmental constraints. As a result, interactive authentication where users are prompted for multifactor authentication will be more resilient to specific dependencies being unavailable at the time of the request. You can [optimize reauthentication prompts for multifactor authentication](../authentication/concepts-azure-multi-factor-authentication-prompts-session-lifetime.md).
+Provisioning multiple credential types gives users options that accommodate their preferences and environmental constraints. As a result, interactive authentication where users are prompted for multifactor authentication will be more resilient to specific dependencies being unavailable at the time of the request. You can [optimize reauthentication prompts for multifactor authentication](~/identity/authentication/concepts-azure-multi-factor-authentication-prompts-session-lifetime.md).
 
 In addition to individual user resiliency described above, enterprises should plan contingencies for large-scale disruptions such as operational errors that introduce a misconfiguration, a natural disaster, or an enterprise-wide resource outage to an on-premises federation service (especially when used for multifactor authentication). 
 
 ## How do I implement resilient credentials?
 
-* Deploy [Passwordless credentials](../authentication/howto-authentication-passwordless-deployment.md) such as Windows Hello for Business, Phone Authentication, and FIDO2 security keys to reduce dependencies.
+* Deploy [Passwordless credentials](~/identity/authentication/howto-authentication-passwordless-deployment.md) such as Windows Hello for Business, Phone Authentication, and FIDO2 security keys to reduce dependencies.
 * Deploy the [Microsoft Authenticator App](https://support.microsoft.com/account-billing/how-to-use-the-microsoft-authenticator-app-9783c865-0308-42fb-a519-8cf666fe0acc) as a second factor.
 * Turn on [password hash synchronization](../hybrid/connect/whatis-phs.md) for hybrid accounts that are synchronized from Windows Server Active Directory. This option can be enabled alongside federation services such as Active Directory Federation Services (AD FS) and provides a fallback in case the federation service fails.
 * [Analyze usage of multifactor authentication methods](/samples/azure-samples/azure-mfa-authentication-method-analysis/azure-mfa-authentication-method-analysis/) to improve user experience.
-* [Implement a resilient access control strategy](../authentication/concept-resilient-controls.md)
+* [Implement a resilient access control strategy](~/identity/authentication/concept-resilient-controls.md)
 
 ## Next steps
 ### Resilience resources for administrators and architects

@@ -60,7 +60,7 @@ To configure a Windows 11 or Windows 10 device for SSPR at the sign-in screen, r
 
 ### Windows 11 and Windows 10 prerequisites
 
-- Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](../roles/permissions-reference.md#authentication-policy-administrator) and [enable Microsoft Entra self-service password reset](tutorial-enable-sspr.md).
+- Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) and [enable Microsoft Entra self-service password reset](tutorial-enable-sspr.md).
 - Users must register for SSPR before using this feature at [https://aka.ms/ssprsetup](https://aka.ms/ssprsetup)
     - Not unique to using SSPR from the Windows sign-in screen, all users must provide the authentication contact information before they can reset their password.
 - Network proxy requirements:
@@ -146,7 +146,7 @@ To configure a Windows 7, 8, or 8.1 device for SSPR at the sign-in screen, revie
 
 ### Windows 7, 8, and 8.1 prerequisites
 
-- Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](../roles/permissions-reference.md#authentication-policy-administrator) and [enable Microsoft Entra self-service password reset](tutorial-enable-sspr.md).
+- Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) and [enable Microsoft Entra self-service password reset](tutorial-enable-sspr.md).
 - Users must register for SSPR before using this feature at [https://aka.ms/ssprsetup](https://aka.ms/ssprsetup)
     - Not unique to using SSPR from the Windows sign-in screen, all users must provide the authentication contact information before they can reset their password.
 - Network proxy requirements:

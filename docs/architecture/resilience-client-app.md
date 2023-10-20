@@ -22,9 +22,9 @@ The Microsoft Authentication Library (MSAL) is part of the Microsoft identity pl
 
 Learn more:
 
-* [Overview of the Microsoft Authentication Library](../develop/msal-overview.md)
-* [What is the Microsoft identity platform?](../develop/v2-overview.md)
-* [Microsoft identity platform documentation](../develop/index.yml)
+* [Overview of the Microsoft Authentication Library](~/identity-platform/msal-overview.md)
+* [What is the Microsoft identity platform?](~/identity-platform/v2-overview.md)
+* [Microsoft identity platform documentation](~/identity-platform/index.yml)
 
 MSAL caches tokens and uses a silent token acquisition pattern. MSAL serializes the token cache on operating systems that natively provide secure storage like Universal Windows Platform (UWP), iOS, and Android. Customize the serialization behavior when you're using: 
 
@@ -42,7 +42,7 @@ Learn more:
 
    ![Diagram of a device and and application using MSAL to call Microsoft Identity](media/resilience-client-app/resilience-with-microsoft-authentication-library.png)
 
-When you're using MSAL, token caching, refreshing, and silent acquisition is supported. Use simple patterns to acquire the tokens for authentication. There's support for many languages. Find code sample on, [Microsoft identity platform code samples](../develop/sample-v2-code.md).
+When you're using MSAL, token caching, refreshing, and silent acquisition is supported. Use simple patterns to acquire the tokens for authentication. There's support for many languages. Find code sample on, [Microsoft identity platform code samples](~/identity-platform/sample-v2-code.md).
 
 ## [C#](#tab/csharp)
 
@@ -116,8 +116,8 @@ Ensure apps serialize their token cache securely to persist the tokens between a
 
 Learn more:
 
-* [Refresh the access tokens](../develop/v2-oauth2-auth-code-flow.md#refresh-the-access-token)
-* [Microsoft identity platform access tokens](../develop/access-tokens.md)
+* [Refresh the access tokens](~/identity-platform/v2-oauth2-auth-code-flow.md#refresh-the-access-token)
+* [Microsoft identity platform access tokens](~/identity-platform/access-tokens.md)
 
    ![Diagram of an app calling to Microsoft identity platform, through a token cache and token store on the device running the application.](media/resilience-client-app/token-store.png)
 
@@ -158,8 +158,8 @@ Identity (ID) tokens and access tokens have standard claims that provide informa
 
 Learn more:
 
-* [Microsoft identity platform ID tokens](../develop/id-tokens.md)
-* [Microsoft identity platform access tokens](../develop/access-tokens.md)
+* [Microsoft identity platform ID tokens](~/identity-platform/id-tokens.md)
+* [Microsoft identity platform access tokens](~/identity-platform/access-tokens.md)
 
 > [!NOTE]
 > Some applications call the UserInfo endpoint to retrieve claims about the authenticated user. The information in the ID token is a superset of information from the UserInfo endpoint. Enable apps to use the ID token instead of calling the UserInfo endpoint.
@@ -168,12 +168,12 @@ Augment standard token claims with optional claims, such as groups. The **Applic
 
 Learn more: 
 
-* [Provide optional claims to your app](../develop/optional-claims.md)
-* [Configuring groups optional claims](../develop/optional-claims.md#configure-groups-optional-claims)
+* [Provide optional claims to your app](~/identity-platform/optional-claims.md)
+* [Configuring groups optional claims](~/identity-platform/optional-claims.md#configure-groups-optional-claims)
 
 We recommend you use and include app roles, which customers manage by using the portal or APIs. Assign roles to users and groups to control access. When a token is issued, the assigned roles are in the token roles claim. Information derived from a token prevents more APIs calls.
 
-See, [Add app roles to your application and receive them in the token](../develop/howto-add-app-roles-in-apps.md)
+See, [Add app roles to your application and receive them in the token](~/identity-platform/howto-add-app-roles-in-apps.md)
 
 Add claims based on tenant information. For example, an extension has an enterprise-specific User ID.
 
@@ -201,8 +201,8 @@ See, [What is a Primary Refresh Token?](../devices/concept-primary-refresh-token
 
 MSAL supports broker authentication. Learn more:
 
-* [SSO through Authentication broker on iOS](../develop/single-sign-on-macos-ios.md#sso-through-authentication-broker-on-ios)
-* [Enable cross-app SSO on Android using MSAL](../develop/msal-android-single-sign-on.md)
+* [SSO through Authentication broker on iOS](~/identity-platform/single-sign-on-macos-ios.md#sso-through-authentication-broker-on-ios)
+* [Enable cross-app SSO on Android using MSAL](~/identity-platform/msal-android-single-sign-on.md)
 
 ## Continuous Access Evaluation
 
@@ -214,13 +214,13 @@ Learn more:
 * [Securing applications with Continuous Access Evaluation](/security/zero-trust/develop/secure-with-cae)
 * [Critical event evaluation](../conditional-access/concept-continuous-access-evaluation.md#critical-event-evaluation)
 * [Conditional Access policy evaluation](../conditional-access/concept-continuous-access-evaluation.md#conditional-access-policy-evaluation)
-* [How to use CAE enabled APIs in your applications](../develop/app-resilience-continuous-access-evaluation.md)
+* [How to use CAE enabled APIs in your applications](~/identity-platform/app-resilience-continuous-access-evaluation.md)
 
 If you develop resource APIs, go to `openid.net` for [Shared Signals – A Secure Webhooks Framework](https://openid.net/wg/sse/).
 
 ## Next steps
 
-* [How to use CAE enabled APIs in your applications](../develop/app-resilience-continuous-access-evaluation.md)
+* [How to use CAE enabled APIs in your applications](~/identity-platform/app-resilience-continuous-access-evaluation.md)
 * [Increase the resilience of authentication and authorization in daemon applications you develop](resilience-daemon-app.md)
 * [Build resilience in your identity and access management infrastructure](resilience-in-infrastructure.md)
 * [Build resilience in your customer identity and access management with Azure AD B2C](resilience-b2c.md)

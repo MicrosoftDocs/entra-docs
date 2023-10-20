@@ -28,8 +28,8 @@ This feature is available only when you configure the following Enterprise Galle
 ## Prerequisites
 To complete the steps in this tutorial, you need access to Microsoft Entra admin center with the following roles: 
 
-* [Application Administrator](../roles/permissions-reference.md#application-administrator) (if you're configuring inbound user provisioning to Microsoft Entra ID) OR
-* [Application Administrator](../roles/permissions-reference.md#application-administrator) + [Hybrid Identity Administrator](../roles/permissions-reference.md#hybrid-identity-administrator) (if you're configuring inbound user provisioning to on-premises Active Directory)
+* [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) (if you're configuring inbound user provisioning to Microsoft Entra ID) OR
+* [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) + [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator) (if you're configuring inbound user provisioning to on-premises Active Directory)
 
 If you're configuring inbound user provisioning to on-premises Active Directory, you need access to a Windows Server where you can install the provisioning agent for connecting to your Active Directory domain controller. 
 

@@ -56,7 +56,7 @@ More information can be found about the problem by clicking **More Details** in 
 
 To find out which Conditional Access policy or policies applied and why do the following.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../roles/permissions-reference.md#conditional-access-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Identity** > **Monitoring & health** > **Sign-in logs**.
 1. Find the event for the sign-in to review. Add or remove filters and columns to filter out unnecessary information.
    1. Add filters to narrow the scope:
@@ -94,7 +94,7 @@ If you need to submit a support incident, provide the request ID and time and da
 | 53003 | BlockedByConditionalAccess |
 | 53004 | ProofUpBlockedDueToRisk |
 
-More information about error codes can be found in the article [Microsoft Entra authentication and authorization error codes](../develop/reference-error-codes.md). Error codes in the list appear with a prefix of `AADSTS` followed by the code seen in the browser, for example `AADSTS53002`.
+More information about error codes can be found in the article [Microsoft Entra authentication and authorization error codes](~/identity-platform/reference-error-codes.md). Error codes in the list appear with a prefix of `AADSTS` followed by the code seen in the browser, for example `AADSTS53002`.
 
 ## Service dependencies
 

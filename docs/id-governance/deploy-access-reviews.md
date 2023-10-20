@@ -160,7 +160,7 @@ After you integrate your organization's resources with Microsoft Entra ID, such 
 
 Typical targets for review include:
 
-* [Applications integrated with Microsoft Entra ID for single sign-on](../manage-apps/what-is-application-management.md), such as SaaS and line of business.
+* [Applications integrated with Microsoft Entra ID for single sign-on](~/identity/enterprise-apps/what-is-application-management.md), such as SaaS and line of business.
 * Group [membership](../fundamentals/concept-learn-about-groups.md?context=azure%2factive-directory%2fusers-groups-roles%2fcontext%2fugr-context) synchronized to Microsoft Entra ID, or created in Microsoft Entra ID or Microsoft 365, including Microsoft Teams.
 * [Access package](./entitlement-management-overview.md) that groups resources such as groups, apps, and sites into a single package to manage access.
 * [Microsoft Entra roles​ and Azure resource roles](../privileged-identity-management/pim-resource-roles-assign-roles.md) as defined in PIM.
@@ -176,7 +176,7 @@ The administrative role required to create, manage, or read an access review dep
 | Azure resource roles| User Access Administrator (for the resource)<p>Resource owner| User Access Administrator (for the resource)<p>Resource owner<p>Reader (for the resource) |
 | Access package| Global administrator<p>User administrator<p>Identity Governance administrator<p>Catalog owner (for the access package)<p>Access package manager (for the access package)| Global administrator<p>Global reader<p>User administrator<p>Identity Governance administrator<p>Catalog owner (for the access package)<p>Access package manager (for the access package)<p>Security reader  |
 
-For more information, see [Administrator role permissions in Microsoft Entra ID](../roles/permissions-reference.md).
+For more information, see [Administrator role permissions in Microsoft Entra ID](~/identity/role-based-access-control/permissions-reference.md).
 
 ### Who will review the access to the resource?
 
@@ -333,7 +333,7 @@ To create access reviews for an application, set the **User assignment required?
 
  ![Screenshot that shows planning app assignments.](./media/deploy-access-review/6-plan-applications-assignment-required.png)
 
-Then [assign the users and groups](../manage-apps/assign-user-or-group-access-portal.md) whose access you want to have reviewed.
+Then [assign the users and groups](~/identity/enterprise-apps/assign-user-or-group-access-portal.md) whose access you want to have reviewed.
 
 Read more about how to [prepare for an access review of users' access to an application](access-reviews-application-preparation.md).
 
@@ -345,7 +345,7 @@ Access reviews can be for the members of a group or for users who were assigned 
 
 ## Plan review of Microsoft Entra ID and Azure resource roles
 
-[Privileged Identity Management](../privileged-identity-management/pim-configure.md) simplifies how enterprises manage privileged access to resources in Microsoft Entra ID. Using PIM keeps the list of privileged roles in [Microsoft Entra ID](../roles/permissions-reference.md) and [Azure resources](/azure/role-based-access-control/built-in-roles) smaller. It also increases the overall security of the directory.
+[Privileged Identity Management](../privileged-identity-management/pim-configure.md) simplifies how enterprises manage privileged access to resources in Microsoft Entra ID. Using PIM keeps the list of privileged roles in [Microsoft Entra ID](~/identity/role-based-access-control/permissions-reference.md) and [Azure resources](/azure/role-based-access-control/built-in-roles) smaller. It also increases the overall security of the directory.
 
 Access reviews allow reviewers to attest whether users still need to be in a role. Just like access reviews for access packages, reviews for Microsoft Entra roles and Azure resources are integrated into the PIM admin user experience.
 

@@ -39,7 +39,7 @@ By following the improvement actions in the Microsoft Entra recommendations, you
 
 Identity secure score is available to free and paid customers.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Reader](../roles/permissions-reference.md#global-reader).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Reader](~/identity/role-based-access-control/permissions-reference.md#global-reader).
 1. Browse to **Protection** > **Identity Secure Score** to view the dashboard.
 
 The score and related recommendations are also found at **Identity** > **Overview** > **Recommendations**.

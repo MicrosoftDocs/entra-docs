@@ -21,7 +21,7 @@ zone_pivot_groups: enterprise-apps-minus-portal
 In this article, you learn how to restore a soft deleted enterprise application in your Microsoft Entra tenant. Soft deleted enterprise applications can be restored from the recycle bin within the first 30 days after their deletion. After the 30-day window, the enterprise application is permanently deleted and can't be restored.
 
 >[!IMPORTANT]
->If you deleted an [application registration](../develop/howto-remove-app.md) in its home tenant through app registrations in the Microsoft Entra admin center, the enterprise application, which is its corresponding service principal also got deleted. If you restore the deleted application registration through the Microsoft Entra admin center, its corresponding service principal, is also restored. You'll therefore be able to recover the service principal's previous configurations, except its previous policies such as Conditional Access policies, which aren't restored.
+>If you deleted an [application registration](~/identity-platform/howto-remove-app.md) in its home tenant through app registrations in the Microsoft Entra admin center, the enterprise application, which is its corresponding service principal also got deleted. If you restore the deleted application registration through the Microsoft Entra admin center, its corresponding service principal, is also restored. You'll therefore be able to recover the service principal's previous configurations, except its previous policies such as Conditional Access policies, which aren't restored.
 
 [!INCLUDE [portal updates](../includes/portal-update.md)]
 
@@ -191,4 +191,4 @@ DELETE https://graph.microsoft.com/v1.0/directory/deletedItems/{object-id}
 ## Next steps
 
 - [Recovery and deletion FAQ](delete-recover-faq.yml)
-- [Applications and service principals](../develop/app-objects-and-service-principals.md)
+- [Applications and service principals](~/identity-platform/app-objects-and-service-principals.md)

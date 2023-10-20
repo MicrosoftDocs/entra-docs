@@ -17,7 +17,7 @@ ms.custom:
 
 ## Process of adding an OpenID application from the gallery
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 
     ![The Enterprise applications blade](common/enterprise-applications.png)
@@ -151,4 +151,4 @@ Imagine that an application requires admin consent, and an admin signs in withou
 
 ## Next steps
 
-[Set up OIDC-based single sign-on (SSO) for an application in your Microsoft Entra tenant](../manage-apps/add-application-portal-setup-oidc-sso.md)
+[Set up OIDC-based single sign-on (SSO) for an application in your Microsoft Entra tenant](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md)

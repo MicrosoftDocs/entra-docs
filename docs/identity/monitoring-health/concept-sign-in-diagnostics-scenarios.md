@@ -64,7 +64,7 @@ In some cases, you want to know if sign-in events *aren't* interrupted by Condit
 
 ### Account locked
 
-Another common scenario is when a user attempts to sign in with incorrect credentials too many times. This error happens when too many password-based sign-in attempts have occurred with incorrect credentials. The diagnostic results provide information for the administrator to determine where the attempts are coming from and if they're legitimate user sign-in attempts or not. Running the sign-in diagnostic provides details about the apps, the number of attempts, the device used, the operating system, and the IP address. For more information, see [Microsoft Entra Smart Lockout](../authentication/howto-password-smart-lockout.md). 
+Another common scenario is when a user attempts to sign in with incorrect credentials too many times. This error happens when too many password-based sign-in attempts have occurred with incorrect credentials. The diagnostic results provide information for the administrator to determine where the attempts are coming from and if they're legitimate user sign-in attempts or not. Running the sign-in diagnostic provides details about the apps, the number of attempts, the device used, the operating system, and the IP address. For more information, see [Microsoft Entra Smart Lockout](~/identity/authentication/howto-password-smart-lockout.md). 
 
 ### Invalid username or password
 

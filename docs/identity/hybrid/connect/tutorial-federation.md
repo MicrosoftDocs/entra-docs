@@ -305,7 +305,7 @@ Now you'll verify that the users in your on-premises Active Directory tenant hav
 
 To verify that the users are synced:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](../../roles/permissions-reference.md#hybrid-identity-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
 1. Browse to **Identity** > **Users** > **All users**
 1. Verify that the new users appear in your tenant.
 

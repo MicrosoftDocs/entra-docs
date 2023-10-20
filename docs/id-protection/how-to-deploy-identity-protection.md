@@ -29,14 +29,14 @@ This deployment plan extends concepts introduced in the [Conditional Access depl
    * Microsoft Entra ID P2 is required to include Identity Protection risk in Conditional Access policies.
 * Administrators who interact with Identity Protection must have one or more of the following role assignments depending on the tasks they're performing. To follow the [Zero Trust principle of least privilege](/security/zero-trust/), consider using [Privileged Identity Management (PIM)](../privileged-identity-management/pim-configure.md) to just-in-time activate privileged role assignments.
    * Read Identity Protection and Conditional Access policies and configurations 
-      * [Security Reader](../roles/permissions-reference.md#security-reader)
-      * [Global Reader](../roles/permissions-reference.md#global-reader)
+      * [Security Reader](~/identity/role-based-access-control/permissions-reference.md#security-reader)
+      * [Global Reader](~/identity/role-based-access-control/permissions-reference.md#global-reader)
    * Manage Identity Protection 
-      * [Security Operator](../roles/permissions-reference.md#security-operator)
-      * [Security Administrator](../roles/permissions-reference.md#security-administrator)
+      * [Security Operator](~/identity/role-based-access-control/permissions-reference.md#security-operator)
+      * [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator)
    * Create or modify Conditional Access policies 
-      * [Conditional Access Administrator](../roles/permissions-reference.md#conditional-access-administrator)
-      * [Security Administrator](../roles/permissions-reference.md#security-administrator)
+      * [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator)
+      * [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator)
 * A test user (non-administrator) that allows you to verify policies work as expected before deploying to real users. If you need to create a user, see [Quickstart: Add new users to Microsoft Entra ID](../fundamentals/add-users.md).
 * A group that the non-administrator user is a member of. If you need to create a group, see [Create a group and add members in Microsoft Entra ID](../fundamentals/how-to-manage-groups.md).
 
@@ -68,7 +68,7 @@ Identity Protection sends risk signals to Conditional Access, to make decisions 
 
 ### Multifactor authentication
 
-For users to self-remediate risk though, they must register for Microsoft Entra multifactor authentication before they become risky. For more information, see the article [Plan a Microsoft Entra multifactor authentication deployment](../authentication/howto-mfa-getstarted.md).
+For users to self-remediate risk though, they must register for Microsoft Entra multifactor authentication before they become risky. For more information, see the article [Plan a Microsoft Entra multifactor authentication deployment](~/identity/authentication/howto-mfa-getstarted.md).
 
 ### Known network locations
 

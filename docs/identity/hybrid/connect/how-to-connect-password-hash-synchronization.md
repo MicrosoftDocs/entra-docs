@@ -213,7 +213,7 @@ If you use Microsoft Entra Domain Services to provide legacy authentication for 
 ## Enable password hash synchronization
 
 >[!IMPORTANT]
->If you are migrating from AD FS (or other federation technologies) to Password Hash Synchronization, view [Resources for migrating applications to Microsoft Entra ID](../../manage-apps/migration-resources.md).
+>If you are migrating from AD FS (or other federation technologies) to Password Hash Synchronization, view [Resources for migrating applications to Microsoft Entra ID](~/identity/enterprise-apps/migration-resources.md).
 
 When you install Microsoft Entra Connect by using the **Express Settings** option, password hash synchronization is automatically enabled. For more information, see [Getting started with Microsoft Entra Connect using express settings](how-to-connect-install-express.md).
 
@@ -251,4 +251,4 @@ If you have problems with password hash synchronization, see [Troubleshoot passw
 ## Next steps
 * [Microsoft Entra Connect Sync: Customizing synchronization options](how-to-connect-sync-whatis.md)
 * [Integrating your on-premises identities with Microsoft Entra ID](../whatis-hybrid-identity.md)
-* [Resources for migrating applications to Microsoft Entra ID](../../manage-apps/migration-resources.md)
+* [Resources for migrating applications to Microsoft Entra ID](~/identity/enterprise-apps/migration-resources.md)

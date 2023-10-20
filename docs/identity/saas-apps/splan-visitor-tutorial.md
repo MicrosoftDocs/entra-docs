@@ -42,7 +42,7 @@ In this tutorial, you'll configure and test Microsoft Entra SSO in a test enviro
 
 To configure the integration of Splan Visitor into Microsoft Entra ID, add Splan Visitor from the gallery to your list of managed SaaS apps.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
 1. In the **Add from the gallery** section, enter **Splan Visitor** in the search box.
 1. Select **Splan Visitor** from the results panel, and then add the app. Wait a few seconds while the app is added to your tenant.
@@ -70,7 +70,7 @@ To configure and test Microsoft Entra SSO with Splan Visitor, perform the follow
 
 Follow these steps to enable Microsoft Entra SSO in the Azure portal:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Splan Visitor** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up Single Sign-On with SAML** page, select the **pencil** icon for **Basic SAML Configuration** to edit the settings.
@@ -107,7 +107,7 @@ In this section, you'll create a test user named B.Simon.
 
 In this section, you'll enable B.Simon to use single sign-on by granting access to Splan Visitor.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Splan Visitor** to open the app overview.
 1. Find the **Manage** section, and then select **Users and groups**.
 1. Select **Add user**, and then select **Users and groups** in the **Add Assignment** dialog box.

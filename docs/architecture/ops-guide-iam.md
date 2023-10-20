@@ -40,7 +40,7 @@ As you review your list, you may find you need to either assign an owner for tas
 
 #### Assigning owners recommended reading
 
-- [Assigning administrator roles in Microsoft Entra ID](../roles/permissions-reference.md)
+- [Assigning administrator roles in Microsoft Entra ID](~/identity/role-based-access-control/permissions-reference.md)
 
 ## On-premises identity synchronization
 

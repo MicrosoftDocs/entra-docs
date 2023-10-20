@@ -74,7 +74,7 @@ This consent experience is affected by the permissions requested by the applicat
 
 Some permissions can be consented to by a regular user, while others require a tenant administrator’s consent.
 
-To learn more about user and admin consent, see [Configure the admin consent workflow](../manage-apps/configure-admin-consent-workflow.md).
+To learn more about user and admin consent, see [Configure the admin consent workflow](~/identity/enterprise-apps/configure-admin-consent-workflow.md).
 
 ### Admin consent
 

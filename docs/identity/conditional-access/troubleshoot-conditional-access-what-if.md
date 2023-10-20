@@ -75,4 +75,4 @@ This test could be expanded to incorporate other data points to narrow the scope
 * [What is Conditional Access report-only mode?](concept-conditional-access-report-only.md)
 * [What is Microsoft Entra ID Protection?](../identity-protection/overview-identity-protection.md)
 * [What is a device identity?](../devices/overview.md)
-* [How it works: Microsoft Entra multifactor authentication](../authentication/concept-mfa-howitworks.md)
+* [How it works: Microsoft Entra multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md)

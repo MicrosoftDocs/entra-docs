@@ -160,7 +160,7 @@ This section provides steps for user account provisioning from SuccessFactors to
 
 **To configure SuccessFactors to Microsoft Entra provisioning:**
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
 
 5. Search for **SuccessFactors to Microsoft Entra user Provisioning**, and add that app from the gallery.

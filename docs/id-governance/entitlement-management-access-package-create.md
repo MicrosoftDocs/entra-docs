@@ -56,7 +56,7 @@ Then once the access package is created, you can [change the hidden setting](ent
 
 To complete the following steps, you need a role of global Administrator, Identity Governance Administrator, catalog owner, or access package manager.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../roles/permissions-reference.md#identity-governance-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
 1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
 

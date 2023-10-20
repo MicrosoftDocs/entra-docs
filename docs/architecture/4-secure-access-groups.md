@@ -50,7 +50,7 @@ Determine who is granted permissions to create groups: Administrators, employees
 * Users can create Microsoft 365 Groups
 * [Manage who can create Microsoft 365 Groups](/microsoft-365/solutions/manage-creation-of-groups?view=o365-worldwide&preserve-view=true) 
   * Use PowerShell to configure this setting
-* [Restrict your Microsoft Entra app to a set of users in a Microsoft Entra tenant](../develop/howto-restrict-your-app-to-a-set-of-users.md)
+* [Restrict your Microsoft Entra app to a set of users in a Microsoft Entra tenant](~/identity-platform/howto-restrict-your-app-to-a-set-of-users.md)
 * [Set up self-service group management in Microsoft Entra ID](../enterprise-users/groups-self-service-management.md) 
 * [Troubleshoot and resolve groups issues](../enterprise-users/groups-troubleshooting.md) 
 
@@ -121,7 +121,7 @@ Use Microsoft Entra security groups to assign:
   * Enterprise mobility and security
   * See, [What is group-based licensing in Microsoft Entra ID?](../fundamentals/concept-group-based-licensing.md)
 * Elevated permissions
-  * See, [Use Microsoft Entra groups to manage role assignments](../roles/groups-concept.md)
+  * See, [Use Microsoft Entra groups to manage role assignments](~/identity/role-based-access-control/groups-concept.md)
 
 Learn more:
 

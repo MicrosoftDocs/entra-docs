@@ -22,7 +22,7 @@ In this article, we share some learnings that are based on our experience from w
 
 ## Use the Microsoft Authentication Library (MSAL)
 
-The [Microsoft Authentication Library (MSAL)](../develop/msal-overview.md) and the [Microsoft identity web authentication library for ASP.NET](../develop/reference-v2-libraries.md) simplify acquiring, managing, caching, and refreshing the tokens an application requires. These libraries are optimized specifically to support Microsoft Identity including features that improve application resiliency.
+The [Microsoft Authentication Library (MSAL)](~/identity-platform/msal-overview.md) and the [Microsoft identity web authentication library for ASP.NET](~/identity-platform/reference-v2-libraries.md) simplify acquiring, managing, caching, and refreshing the tokens an application requires. These libraries are optimized specifically to support Microsoft Identity including features that improve application resiliency.
 
 Developers should adopt latest releases of MSAL and stay up to date. See [how to increase resilience of authentication and authorization](resilience-app-development-overview.md) in your applications. Where possible, avoid implementing your own authentication stack and use well-established libraries.
 
@@ -69,7 +69,7 @@ Your business requirements and desired end-user experience will dictate your fre
 
 ## Configure Single sign-on
 
-With [Single sign-on (SSO)](../manage-apps/what-is-single-sign-on.md), users sign in once with a single account and get access to multiple applications. The application can be a web, mobile, or a Single page application (SPA), regardless of platform or domain name. When the user initially signs in to an application, Azure AD B2C persists a [cookie-based session](/azure/active-directory-b2c/session-behavior).
+With [Single sign-on (SSO)](~/identity/enterprise-apps/what-is-single-sign-on.md), users sign in once with a single account and get access to multiple applications. The application can be a web, mobile, or a Single page application (SPA), regardless of platform or domain name. When the user initially signs in to an application, Azure AD B2C persists a [cookie-based session](/azure/active-directory-b2c/session-behavior).
 
 Upon subsequent authentication requests, Azure AD B2C reads and validates the cookie-based session and issues an access token without prompting the user to sign in again. If SSO is configured with a limited scope at a policy or an application, later access to other policies and applications will require fresh authentication.
 

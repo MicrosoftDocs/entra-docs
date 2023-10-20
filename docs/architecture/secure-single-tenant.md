@@ -33,11 +33,11 @@ If a set of resources require unique tenant-wide settings, or the tenant's setti
 
 Global administrators can discover and obtain full access to any trusting resources. You can set up auditing and alerts to know when an administrator changes a resource if they're authenticated.
 
-You can also use administrative units (AU) in Microsoft Entra ID to provide some level of administrative separation. Administrative units restrict permissions in a role to any portion of your organization that you define. You could, for example, use administrative units to delegate the [Helpdesk Administrator](../roles/permissions-reference.md) role to regional support specialists, so they can manage users only in the region that they support.
+You can also use administrative units (AU) in Microsoft Entra ID to provide some level of administrative separation. Administrative units restrict permissions in a role to any portion of your organization that you define. You could, for example, use administrative units to delegate the [Helpdesk Administrator](~/identity/role-based-access-control/permissions-reference.md) role to regional support specialists, so they can manage users only in the region that they support.
 
 ![Diagram that shows administrative units.](media/secure-single-tenant/administrative-units.png)
 
-Administrative Units can be used to separate [user, groups and device objects](../roles/administrative-units.md). Assignments of those units can be managed by [dynamic membership rules](../roles/admin-units-members-dynamic.md).
+Administrative Units can be used to separate [user, groups and device objects](~/identity/role-based-access-control/administrative-units.md). Assignments of those units can be managed by [dynamic membership rules](~/identity/role-based-access-control/admin-units-members-dynamic.md).
 
 By using Privileged Identity Management (PIM) you can define who in your organization is the best person to approve the request for highly privileged roles. For example, admins requiring global administrator access to make tenant-wide changes.
 
@@ -102,7 +102,7 @@ Consider isolating sensitive or test resources according to [Azure landing zone 
 
 The pattern to scope management of Microsoft Entra ID trusting applications is outlined in the following section. 
 
-Microsoft Entra ID supports configuring multiple instances of custom and SaaS apps, but not most Microsoft services, against the same directory with [independent user assignments](../manage-apps/assign-user-or-group-access-portal.md). The above example contains both a production and a test version of the travel app. You can deploy preproduction versions against the corporate tenant to achieve app-specific configuration and policy separation that enables workload owners to perform testing with their corporate credentials. Nonproduction directory objects such as test users and test groups are associated to the nonproduction application with separate [ownership](https://aka.ms/AzureADSecuredAzure/14a) of those objects.
+Microsoft Entra ID supports configuring multiple instances of custom and SaaS apps, but not most Microsoft services, against the same directory with [independent user assignments](~/identity/enterprise-apps/assign-user-or-group-access-portal.md). The above example contains both a production and a test version of the travel app. You can deploy preproduction versions against the corporate tenant to achieve app-specific configuration and policy separation that enables workload owners to perform testing with their corporate credentials. Nonproduction directory objects such as test users and test groups are associated to the nonproduction application with separate [ownership](https://aka.ms/AzureADSecuredAzure/14a) of those objects.
 
 There are tenant-wide aspects that affect all trusting applications in the Microsoft Entra tenant boundary including:
 

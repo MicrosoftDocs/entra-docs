@@ -118,7 +118,7 @@ By using the device code flow, the application obtains tokens through a two-step
 
 In the following diagram:
 
-1. Whenever user authentication is required, the app provides a code and asks the user to use another device like an internet-connected smartphone to visit a URL (for example, `https://microsoft.com/devicelogin`). The user is then prompted to enter the code, and proceeding through a normal authentication experience including consent prompts and [multi-factor authentication](../authentication/concept-mfa-howitworks.md), if necessary.
+1. Whenever user authentication is required, the app provides a code and asks the user to use another device like an internet-connected smartphone to visit a URL (for example, `https://microsoft.com/devicelogin`). The user is then prompted to enter the code, and proceeding through a normal authentication experience including consent prompts and [multi-factor authentication](~/identity/authentication/concept-mfa-howitworks.md), if necessary.
 1. Upon successful authentication, the command-line app receives the required tokens through a back channel, and uses them to perform the web API calls it needs.
 
 ![Diagram of device code flow.](media/msal-authentication-flows/device-code.png)
@@ -240,8 +240,8 @@ To satisfy either requirement, one of these operations must have been completed:
 
 - You as the application developer have selected **Grant** in the Azure portal for yourself.
 - A tenant admin has selected **Grant/revoke admin consent for {tenant domain}** in the **API permissions** tab of the app registration in the Azure portal; see [Add permissions to access your web API](quickstart-configure-app-access-web-apis.md#add-permissions-to-access-your-web-api).
-- You've provided a way for users to consent to the application; see [User consent](../manage-apps/user-admin-consent-overview.md#user-consent).
-- You've provided a way for the tenant admin to consent for the application; see [Administrator consent](../manage-apps/user-admin-consent-overview.md#admin-consent).
+- You've provided a way for users to consent to the application; see [User consent](~/identity/enterprise-apps/user-admin-consent-overview.md#user-consent).
+- You've provided a way for the tenant admin to consent for the application; see [Administrator consent](~/identity/enterprise-apps/user-admin-consent-overview.md#admin-consent).
 
 For more information on consent, see [Permissions and consent](./permissions-consent-overview.md#consent).
 

@@ -146,7 +146,7 @@ Frequently, user accounts have an attribute that identifies a real user. For exa
 | User accounts that don't have expected attributes defined.| Low| Microsoft Entra audit logs| Activity: Add user<br>Status = success| Look for accounts with your standard attributes either null or in the wrong format. For example, EmployeeID <br> [Microsoft Sentinel template](https://github.com/Azure/Azure-Sentinel/blob/master/Detections/AuditLogs/Useraccountcreatedwithoutexpectedattributesdefined.yaml) |
 | User accounts created using incorrect naming format.| Low| Microsoft Entra audit logs| Activity: Add user<br>Status = success| Look for accounts with a UPN that does not follow your naming policy. <br> [Microsoft Sentinel template](https://github.com/Azure/Azure-Sentinel/blob/master/Detections/AuditLogs/UserAccountCreatedUsingIncorrectNamingFormat.yaml) |
 | Privileged accounts that don't follow naming policy.| High| Azure Subscription| [List Azure role assignments using the Azure portal - Azure RBAC](/azure/role-based-access-control/role-assignments-list-portal)| List role assignments for subscriptions and alert where sign-in name does not match your organizations format. For example, ADM_ as a prefix. |
-| Privileged accounts that don't follow naming policy.| High| Microsoft Entra directory| [List Microsoft Entra role assignments](../roles/view-assignments.md)| List roles assignments for Microsoft Entra roles alert where UPN doesn't match your organizations format. For example, ADM_ as a prefix. |
+| Privileged accounts that don't follow naming policy.| High| Microsoft Entra directory| [List Microsoft Entra role assignments](~/identity/role-based-access-control/view-assignments.md)| List roles assignments for Microsoft Entra roles alert where UPN doesn't match your organizations format. For example, ADM_ as a prefix. |
 
 For more information on parsing, see:
 
@@ -154,7 +154,7 @@ For more information on parsing, see:
 
 * Azure Subscriptions - [List Azure role assignments using Azure PowerShell](/azure/role-based-access-control/role-assignments-list-powershell)
 
-* Microsoft Entra ID - [List Microsoft Entra role assignments](../roles/view-assignments.md)
+* Microsoft Entra ID - [List Microsoft Entra role assignments](~/identity/role-based-access-control/view-assignments.md)
 
 ### Accounts created outside normal processes
 

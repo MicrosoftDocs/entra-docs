@@ -39,7 +39,7 @@ The option to restrict an app to a specific set of users, apps or security group
 
 [!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
 
-To update an application to require user assignment, you must be owner of the application under Enterprise apps, or be at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator).
+To update an application to require user assignment, you must be owner of the application under Enterprise apps, or be at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 1. If you have access to multiple tenants, use the **Directories + subscriptions** filter :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false"::: in the top menu to switch to the tenant that contains the app registration to which you want to add an app role.
@@ -49,7 +49,7 @@ To update an application to require user assignment, you must be owner of the ap
 1. Locate the setting **Assignment required?** and set it to **Yes**. When this option is set to **Yes**, users and services attempting to access the application or services must first be assigned for this application, or they won't be able to sign-in or obtain an access token.
 1. Select **Save** on the top bar.
 
-When an application requires assignment, user consent for that application isn't allowed. This is true even if users consent for that app would have otherwise been allowed. Be sure to [grant tenant-wide admin consent](../manage-apps/grant-admin-consent.md) to apps that require assignment.
+When an application requires assignment, user consent for that application isn't allowed. This is true even if users consent for that app would have otherwise been allowed. Be sure to [grant tenant-wide admin consent](~/identity/enterprise-apps/grant-admin-consent.md) to apps that require assignment.
 
 ## Assign the app to users and groups to restrict access
 
@@ -95,7 +95,7 @@ Follow the steps in this section to secure app-to-app authentication access for 
       Update-MgServicePrincipal -ServicePrincipalId (Get-MgServicePrincipal -Filter "AppId eq '$appId'").Id -AppRoleAssignmentRequired:$true
       ```
    > [!NOTE]
-   > If you don't want tokens to be issued for an application or if you want to block an application from being accessed by users or services in your tenant, create a service principal for the application and [disable user sign-in](../manage-apps/disable-user-sign-in-portal.md) for it.
+   > If you don't want tokens to be issued for an application or if you want to block an application from being accessed by users or services in your tenant, create a service principal for the application and [disable user sign-in](~/identity/enterprise-apps/disable-user-sign-in-portal.md) for it.
 
 ## More information
 

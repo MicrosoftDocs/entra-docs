@@ -26,7 +26,7 @@ ms.collection: M365-identity-device-management
 In Microsoft Entra ID, you can use role models to manage access at scale through identity governance.
 
  * You can use access packages to represent [organizational roles](identity-governance-organizational-roles.md) in your organization, such as "sales representative". An access package representing that organizational role would include all the access rights that a sales representative might typically need, across multiple resources.
- * Applications [can define their own roles](../develop/howto-add-app-roles-in-apps.md). For example, if you had a sales application, and that application included the app role "salesperson" in its manifest, you could then [include that role from the app manifest in an access package](entitlement-management-access-package-resources.md).  Applications can also use security groups in scenarios where a user could have multiple application-specific roles simultaneously.
+ * Applications [can define their own roles](~/identity-platform/howto-add-app-roles-in-apps.md). For example, if you had a sales application, and that application included the app role "salesperson" in its manifest, you could then [include that role from the app manifest in an access package](entitlement-management-access-package-resources.md).  Applications can also use security groups in scenarios where a user could have multiple application-specific roles simultaneously.
  * You can use roles for delegating administrative access.  If you have a catalog for all the access packages needed by sales, you could assign someone to be responsible for that catalog, by assigning them a catalog-specific role.
 
 This article discusses how to use roles to manage aspects within Microsoft Entra entitlement management, for controlling access to the entitlement management resources.
@@ -128,7 +128,7 @@ The following table lists the tasks that the entitlement management roles can do
 
 ## Required roles to add resources to a catalog
 
-A Global administrator can add or remove any group (cloud-created security groups or cloud-created Microsoft 365 Groups), application, or SharePoint Online site in a catalog. A User administrator can add or remove any group or application in a catalog, except for a group configured as assignable to a directory role.  For more information on role-assignable groups, reference [Create a role-assignable group in Microsoft Entra ID](../roles/groups-create-eligible.md).
+A Global administrator can add or remove any group (cloud-created security groups or cloud-created Microsoft 365 Groups), application, or SharePoint Online site in a catalog. A User administrator can add or remove any group or application in a catalog, except for a group configured as assignable to a directory role.  For more information on role-assignable groups, reference [Create a role-assignable group in Microsoft Entra ID](~/identity/role-based-access-control/groups-create-eligible.md).
 
 > [!NOTE]
 > Users that have been assigned the User administrator role will no longer be able to create catalogs or manage access packages in a catalog they do not own. If users in your organization have been assigned the User administrator role to configure catalogs, access packages, or policies in entitlement management, you should instead assign these users the **Identity Governance administrator** role.
@@ -137,17 +137,17 @@ For a user who isn't a global administrator, to add groups, applications, or Sha
 
 | Microsoft Entra directory role | Entitlement management role | Can add security group | Can add Microsoft 365 Group | Can add app | Can add SharePoint Online site |
 | --- | :---: | :---: | :---: | :---: | :---: |
-| [Global administrator](../roles/permissions-reference.md) | n/a |  :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Identity Governance administrator](../roles/permissions-reference.md) | n/a | :heavy_check_mark:  | :heavy_check_mark: | :heavy_check_mark: |  |
-| [Intune administrator](../roles/permissions-reference.md) | Catalog owner | :heavy_check_mark: | :heavy_check_mark: |  |  |
-| [Exchange administrator](../roles/permissions-reference.md) | Catalog owner |  | :heavy_check_mark: |  |  |
-| [Teams service administrator](../roles/permissions-reference.md) | Catalog owner |  | :heavy_check_mark: |  |  |
-| [SharePoint administrator](../roles/permissions-reference.md) | Catalog owner |  | :heavy_check_mark: |  | :heavy_check_mark: |
-| [Application administrator](../roles/permissions-reference.md) | Catalog owner |  |  | :heavy_check_mark: |  |
-| [Cloud application administrator](../roles/permissions-reference.md) | Catalog owner |  |  | :heavy_check_mark: |  |
+| [Global administrator](~/identity/role-based-access-control/permissions-reference.md) | n/a |  :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| [Identity Governance administrator](~/identity/role-based-access-control/permissions-reference.md) | n/a | :heavy_check_mark:  | :heavy_check_mark: | :heavy_check_mark: |  |
+| [Intune administrator](~/identity/role-based-access-control/permissions-reference.md) | Catalog owner | :heavy_check_mark: | :heavy_check_mark: |  |  |
+| [Exchange administrator](~/identity/role-based-access-control/permissions-reference.md) | Catalog owner |  | :heavy_check_mark: |  |  |
+| [Teams service administrator](~/identity/role-based-access-control/permissions-reference.md) | Catalog owner |  | :heavy_check_mark: |  |  |
+| [SharePoint administrator](~/identity/role-based-access-control/permissions-reference.md) | Catalog owner |  | :heavy_check_mark: |  | :heavy_check_mark: |
+| [Application administrator](~/identity/role-based-access-control/permissions-reference.md) | Catalog owner |  |  | :heavy_check_mark: |  |
+| [Cloud application administrator](~/identity/role-based-access-control/permissions-reference.md) | Catalog owner |  |  | :heavy_check_mark: |  |
 | User | Catalog owner | Only if group owner | Only if group owner | Only if app owner |  |
 
-To determine the least privileged role for a task, you can also reference [Administrator roles by admin task in Microsoft Entra ID](../roles/delegate-by-task.md#entitlement-management).
+To determine the least privileged role for a task, you can also reference [Administrator roles by admin task in Microsoft Entra ID](~/identity/role-based-access-control/delegate-by-task.md#entitlement-management).
 
 ## Delegated management of guest user lifecycle
 
@@ -170,7 +170,7 @@ To prevent delegated employees from configuring entitlement management to let ex
 
 You can view the list of catalogs currently enabled for external users in the Microsoft Entra admin center.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../roles/permissions-reference.md#identity-governance-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
 1. Browse to **Identity governance** > **Entitlement management** > **Catalogs**.
 

@@ -57,7 +57,7 @@ All users start out *Disabled*. When you enroll users in per-user Microsoft Entr
 
 To view and manage user states, complete the following steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Administrator](../roles/permissions-reference.md#authentication-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
 1. Select **Per-user MFA**. 
    :::image type="content" border="true" source="media/howto-mfa-userstates/selectmfa-cropped.png" alt-text="Screenshot of select multifactor authentication from the Users window in Azure AD.":::

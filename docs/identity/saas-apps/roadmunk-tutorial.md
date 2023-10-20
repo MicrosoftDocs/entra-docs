@@ -39,7 +39,7 @@ Roadmunk supports SSO that's started by the *service provider* (SP) and by the *
 
 To integrate Roadmunk into Microsoft Entra ID, from the gallery, add Roadmunk to your list of managed SaaS apps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
 1. In the **Add from the gallery** section, in the search box, type **Roadmunk**.
 1. Select **Roadmunk** from the results, and then add the app. Wait a few seconds while the app is added to your tenant.
@@ -68,7 +68,7 @@ Here's an overview of how to configure and test Microsoft Entra SSO with Roadmun
 
 Follow these steps to enable Microsoft Entra SSO in the Azure portal:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Roadmunk** application integration page, find the **Manage** section, and then select **single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pen icon for **Basic SAML Configuration** to edit the settings.
@@ -110,7 +110,7 @@ Follow these steps to enable Microsoft Entra SSO in the Azure portal:
 
 In this section, you'll create a test user. You'll name the user *B.Simon*.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](../roles/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
 1. Select **New user** > **Create new user**, at the top of the screen.
 1. In the **User** properties, follow these steps:

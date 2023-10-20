@@ -25,7 +25,7 @@ You use scoping filters to prevent objects in applications that support automate
 
 Scoping filters can be used differently depending on the type of provisioning connector:
 
-* **Outbound provisioning from Microsoft Entra ID to SaaS applications**. When Microsoft Entra ID is the source system, [user and group assignments](../manage-apps/assign-user-or-group-access-portal.md) are the most common method for determining which users are in scope for provisioning. These assignments also are used for enabling single sign-on and provide a single method to manage access and provisioning. Scoping filters can be used optionally, in addition to assignments or instead of them, to filter users based on attribute values.
+* **Outbound provisioning from Microsoft Entra ID to SaaS applications**. When Microsoft Entra ID is the source system, [user and group assignments](~/identity/enterprise-apps/assign-user-or-group-access-portal.md) are the most common method for determining which users are in scope for provisioning. These assignments also are used for enabling single sign-on and provide a single method to manage access and provisioning. Scoping filters can be used optionally, in addition to assignments or instead of them, to filter users based on attribute values.
 
     >[!TIP]
     > The more users and groups in scope for provisioning, the longer the synchronization process can take. Setting the scope to sync assigned users and groups,  limiting the number of groups assigned to the app, and limiting the size of the groups will reduce the time it takes to synchronize everyone that is in scope.  
@@ -36,7 +36,7 @@ By default, Microsoft Entra provisioning connectors don't have any attribute-bas
 ::: zone-end
 
 ::: zone pivot="cross-tenant-synchronization"
-When Microsoft Entra ID is the source system, [user and group assignments](../manage-apps/assign-user-or-group-access-portal.md) are the most common method for determining which users are in scope for provisioning. Reducing the number of users in scope improves performance and synchronizing assigned users and groups instead of synchronizing all users and groups is recommended.
+When Microsoft Entra ID is the source system, [user and group assignments](~/identity/enterprise-apps/assign-user-or-group-access-portal.md) are the most common method for determining which users are in scope for provisioning. Reducing the number of users in scope improves performance and synchronizing assigned users and groups instead of synchronizing all users and groups is recommended.
 
 Scoping filters can be used optionally, in addition to scoping by assignment. A scoping filter allows the Microsoft Entra provisioning service to include or exclude any users who have an attribute that matches a specific value. For example, when provisioning users from a sales team, you can specify that only users with a "Department" attribute of "Sales" should be in scope for provisioning.
 ::: zone-end
@@ -69,7 +69,7 @@ Scoping filters are configured as part of the attribute mappings for each Micros
 
 [!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](../roles/permissions-reference.md#application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 
 ::: zone pivot="app-provisioning"
 

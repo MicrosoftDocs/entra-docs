@@ -42,7 +42,7 @@ The previous versions of Microsoft Entra Connect shipped with a SQL Server 2012 
 
 ### MSAL authentication library 
 
-The previous versions of Microsoft Entra Connect shipped with the ADAL authentication library. This library will be deprecated after December 2022. The V2 release ships with the newer MSAL library. For more information, see [Overview of the MSAL library](../../develop/msal-overview.md).
+The previous versions of Microsoft Entra Connect shipped with the ADAL authentication library. This library will be deprecated after December 2022. The V2 release ships with the newer MSAL library. For more information, see [Overview of the MSAL library](~/identity-platform/msal-overview.md).
 
 ### Visual C++ Redist 14 
 

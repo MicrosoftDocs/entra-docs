@@ -228,7 +228,7 @@ Authentication was successful, but Azure AD PowerShell has an authentication pro
 
 ### Microsoft Entra Global Administrator role needed
 
-The user was authenticated successfully, but the user isn't assigned the Global Administrator role. You can [assign the Global Administrator role](../../roles/permissions-reference.md) to the user.
+The user was authenticated successfully, but the user isn't assigned the Global Administrator role. You can [assign the Global Administrator role](~/identity/role-based-access-control/permissions-reference.md) to the user.
 
 <div id="privileged-identity-management">
 <!--

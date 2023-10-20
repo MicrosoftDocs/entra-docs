@@ -56,7 +56,7 @@ With flagging enabled, the same browser application and client must be used or t
 
 ### Admin: Find flagged events in reports
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Reader](../roles/permissions-reference.md#global-reader).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Reader](~/identity/role-based-access-control/permissions-reference.md#global-reader).
 1. Browse to **Identity** > **Monitoring & health** > **Sign-in logs**.
 1. Open the **Add filters** menu and select **Flagged for review**. All events that were flagged by users are shown.
 1. If needed, apply more filters to refine the event view.

@@ -80,8 +80,8 @@ You also need a valid Microsoft Entra ID P1 or higher subscription license for e
 
 ### Prerequisites
 
-- [Hybrid Identity Administrator](../roles/permissions-reference.md#hybrid-identity-administrator) role to configure the Connect provisioning agent.
-- [Application Administrator](../roles/permissions-reference.md#application-administrator) role to configure the provisioning app.
+- [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator) role to configure the Connect provisioning agent.
+- [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) role to configure the provisioning app.
 - A test and production instance of the cloud HR app.
 - Administrator permissions in the cloud HR app to create a system integration user and make changes to test employee data for testing purposes.
 - For user provisioning to Active Directory, a server running Windows Server 2016 or greater is required to host the Microsoft Entra Connect provisioning agent. This server should be a tier 0 server based on the Active Directory administrative tier model.
@@ -427,9 +427,9 @@ With this expression, if the Municipality value is Dallas, Austin, Seattle, or L
 
 ## Plan for password delivery of new user accounts
 
-When you initiate the Joiners process, you need to set and deliver a temporary password of new user accounts. With cloud HR to Microsoft Entra user provisioning, you can roll out the Microsoft Entra ID [self-service password reset](../authentication/tutorial-enable-sspr.md) (SSPR) capability for the user on day one.
+When you initiate the Joiners process, you need to set and deliver a temporary password of new user accounts. With cloud HR to Microsoft Entra user provisioning, you can roll out the Microsoft Entra ID [self-service password reset](~/identity/authentication/tutorial-enable-sspr.md) (SSPR) capability for the user on day one.
 
-SSPR is a simple means for IT administrators to enable users to reset their passwords or unlock their accounts. You can provision the **Mobile Number** attribute from the cloud HR app to Active Directory and sync it with Microsoft Entra ID. After the **Mobile Number** attribute is in Microsoft Entra ID, you can enable SSPR for the user's account. Then on day one, the new user can use the registered and verified mobile number for authentication. Refer to the [SSPR documentation](../authentication/howto-sspr-authenticationdata.md) for details on how to prepopulate authentication contact information. 
+SSPR is a simple means for IT administrators to enable users to reset their passwords or unlock their accounts. You can provision the **Mobile Number** attribute from the cloud HR app to Active Directory and sync it with Microsoft Entra ID. After the **Mobile Number** attribute is in Microsoft Entra ID, you can enable SSPR for the user's account. Then on day one, the new user can use the registered and verified mobile number for authentication. Refer to the [SSPR documentation](~/identity/authentication/howto-sspr-authenticationdata.md) for details on how to prepopulate authentication contact information. 
 
 ## Plan for initial cycle
 
@@ -519,7 +519,7 @@ To troubleshoot any issues that might turn up during provisioning, see the follo
 - [Sync an attribute from your on-premises Active Directory to Microsoft Entra ID for provisioning to an application](user-provisioning-sync-attributes-for-mapping.md)
 - [Problem saving administrator credentials while configuring user provisioning to a Microsoft Entra Gallery application](./user-provisioning.md)
 - [No users are being provisioned to a Microsoft Entra Gallery application](application-provisioning-config-problem-no-users-provisioned.md)
-- [Wrong set of users are being provisioned to a Microsoft Entra Gallery application](../manage-apps/add-application-portal-assign-users.md)
+- [Wrong set of users are being provisioned to a Microsoft Entra Gallery application](~/identity/enterprise-apps/add-application-portal-assign-users.md)
 - [Setting up Windows Event Viewer for agent troubleshooting](../saas-apps/workday-inbound-tutorial.md#setting-up-windows-event-viewer-for-agent-troubleshooting)
 - [Setting up Audit Logs for service troubleshooting](../saas-apps/workday-inbound-tutorial.md#setting-up-azure-portal-audit-logs-for-service-troubleshooting)
 - [Understanding logs for AD User Account create operations](../saas-apps/workday-inbound-tutorial.md#understanding-logs-for-ad-user-account-create-operations)

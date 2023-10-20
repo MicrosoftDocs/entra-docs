@@ -24,7 +24,7 @@ landingContent:
       - linkListType: concept
         links:
           - text: What type of apps does Microsoft Entra ID support?
-            url: ../develop/v2-app-types.md
+            url: ~/identity-platform/v2-app-types.md
           - text: What is single sign-on?
             url: what-is-single-sign-on.md
   - title: Develop an app
@@ -32,11 +32,11 @@ landingContent:
       - linkListType: concept
         links:
           - text: Authentication and authorization concepts
-            url: ../develop/authentication-vs-authorization.md
+            url: ~/identity-platform/authentication-vs-authorization.md
       - linkListType: how-to-guide
         links:
           - text: Build an app using Microsoft identities or social accounts
-            url: ../develop/v2-overview.md
+            url: ~/identity-platform/v2-overview.md
   - title: Integrate an app with the tenant
     linkLists:
       - linkListType: how-to-guide
@@ -46,7 +46,7 @@ landingContent:
           - text: Add a pre-integrated cloud application
             url: add-application-portal.md
           - text: Register your app
-            url: ../develop/quickstart-register-app.md
+            url: ~/identity-platform/quickstart-register-app.md
           - text: Migrate AD FS apps to Microsoft Entra ID
             url: ./migrate-adfs-apps-stages.md
   - title: Configure an app
@@ -72,7 +72,7 @@ landingContent:
           - text: Set up Conditional Access
             url: ../conditional-access/concept-conditional-access-cloud-apps.md
           - text: Set up Multi-Factor Authentication
-            url: ../authentication/howto-mfa-getstarted.md
+            url: ~/identity/authentication/howto-mfa-getstarted.md
           - text: Manage certificates
             url: ./tutorial-manage-certificates-for-federated-single-sign-on.md
           - text: Set up tenant restrictions
@@ -94,7 +94,7 @@ landingContent:
       - linkListType: how-to-guide
         links:
           - text: Assign roles
-            url: ../develop/howto-add-app-roles-in-apps.md
+            url: ~/identity-platform/howto-add-app-roles-in-apps.md
           - text: Configure user consent
             url: configure-user-consent.md
           - text: Configure admin consent

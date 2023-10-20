@@ -30,7 +30,7 @@ This dashboard is designed to empower organizations with rich insights and actio
 To access this new dashboard, you need: 
 
 - Microsoft Entra ID Free, or Microsoft Entra ID P1, or Microsoft Entra ID P2 licenses for your users.
-- Users must have at least the [Security Reader](../roles/permissions-reference.md#security-reader) role assigned.
+- Users must have at least the [Security Reader](~/identity/role-based-access-control/permissions-reference.md#security-reader) role assigned.
 - To view a comprehensive list of recommendations and select the recommended action links, you need Microsoft Entra ID P2 licenses.
 
 ## Access the dashboard

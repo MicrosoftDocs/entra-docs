@@ -39,7 +39,7 @@ Always use the role with the fewest permissions available to accomplish the requ
 | Infrastructure admins | Certificate rollover owner | Cloud Application Administrator |
 | Business owner/stakeholder | User attestation in application, configuration on users with permissions | None |
 
-To learn more about Microsoft Entra administrative roles, see [Microsoft Entra built-in roles](../roles/permissions-reference.md).
+To learn more about Microsoft Entra administrative roles, see [Microsoft Entra built-in roles](~/identity/role-based-access-control/permissions-reference.md).
 
 ## Certificates
 
@@ -92,9 +92,9 @@ This flowchart can help you decide which SSO method is best for your situation.
  
 The following SSO protocols are available to use:
 
-- **OpenID Connect and OAuth** - Choose OpenID Connect and OAuth 2.0 if the application you're connecting to supports it. For more information, see [OAuth 2.0 and OpenID Connect protocols on the Microsoft identity platform](../develop/v2-protocols.md). For steps to implement OpenID Connect SSO, see [Set up OIDC-based single sign-on for an application in Microsoft Entra ID](add-application-portal-setup-oidc-sso.md).
+- **OpenID Connect and OAuth** - Choose OpenID Connect and OAuth 2.0 if the application you're connecting to supports it. For more information, see [OAuth 2.0 and OpenID Connect protocols on the Microsoft identity platform](~/identity-platform/v2-protocols.md). For steps to implement OpenID Connect SSO, see [Set up OIDC-based single sign-on for an application in Microsoft Entra ID](add-application-portal-setup-oidc-sso.md).
 
-- **SAML** - Choose SAML whenever possible for existing applications that don't use OpenID Connect or OAuth. For more information, see [single sign-on SAML protocol](../develop/single-sign-on-saml-protocol.md).
+- **SAML** - Choose SAML whenever possible for existing applications that don't use OpenID Connect or OAuth. For more information, see [single sign-on SAML protocol](~/identity-platform/single-sign-on-saml-protocol.md).
 
 - **Password-based** - Choose password-based when the application has an HTML sign-in page. Password-based SSO is also known as password vaulting. Password-based SSO enables you to manage user access and passwords to web applications that don't support identity federation. It's also useful where several users need to share a single account, such as to your organization's social media app accounts. 
 

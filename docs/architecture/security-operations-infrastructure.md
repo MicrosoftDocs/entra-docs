@@ -252,7 +252,7 @@ If you deploy Microsoft Entra Password Protection, monitoring and reporting are 
 
 The domain controller (DC) agent and proxy services both log event log messages. All PowerShell cmdlets described below are only available on the proxy server (see the AzureADPasswordProtection PowerShell module). The DC agent software doesn't install a PowerShell module.
 
-Detailed information for planning and implementing on-premises password protection is available at [Plan and deploy on-premises Microsoft Entra Password Protection](../authentication/howto-password-ban-bad-on-premises-deploy.md). For monitoring details, see [Monitor on-premises Microsoft Entra Password Protection](../authentication/howto-password-ban-bad-on-premises-monitor.md). On each domain controller, the DC agent service software writes the results of each individual password validation operation (and other status) to the following local event log:
+Detailed information for planning and implementing on-premises password protection is available at [Plan and deploy on-premises Microsoft Entra Password Protection](~/identity/authentication/howto-password-ban-bad-on-premises-deploy.md). For monitoring details, see [Monitor on-premises Microsoft Entra Password Protection](~/identity/authentication/howto-password-ban-bad-on-premises-monitor.md). On each domain controller, the DC agent service software writes the results of each individual password validation operation (and other status) to the following local event log:
 
 * \Applications and Services Logs\Microsoft\AzureADPasswordProtection\DCAgent\Admin
 

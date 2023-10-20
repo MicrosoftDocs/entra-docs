@@ -165,7 +165,7 @@ Privileged Identity Management supports the following scenarios:
 
 ## Managing privileged access Microsoft Entra groups (preview)
 
-In Privileged Identity Management (PIM), you can now assign eligibility for membership or ownership of PIM for Groups. Starting with this preview, you can assign Microsoft Entra built-in roles to cloud groups and use PIM to manage group member and owner eligibility and activation. For more information about role-assignable groups in Microsoft Entra ID, see [Use Microsoft Entra groups to manage role assignments](../roles/groups-concept.md).
+In Privileged Identity Management (PIM), you can now assign eligibility for membership or ownership of PIM for Groups. Starting with this preview, you can assign Microsoft Entra built-in roles to cloud groups and use PIM to manage group member and owner eligibility and activation. For more information about role-assignable groups in Microsoft Entra ID, see [Use Microsoft Entra groups to manage role assignments](~/identity/role-based-access-control/groups-concept.md).
 
 >[!Important]
 > To assign a PIM for Groups to a role for administrative access to Exchange, Security & Compliance Center, or SharePoint, use the Azure portal **Roles and Administrators** experience and not in the PIM for Groups experience to make the user or group eligible for activation into the group.
@@ -199,5 +199,5 @@ When you use B2B collaboration, you can invite an external user to your organiza
 ## Next steps
 
 - [License requirements to use Privileged Identity Management](../governance/licensing-fundamentals.md)
-- [Securing privileged access for hybrid and cloud deployments in Microsoft Entra ID](../roles/security-planning.md?toc=/azure/active-directory/privileged-identity-management/toc.json)
+- [Securing privileged access for hybrid and cloud deployments in Microsoft Entra ID](~/identity/role-based-access-control/security-planning.md?toc=/azure/active-directory/privileged-identity-management/toc.json)
 - [Deploy Privileged Identity Management](pim-deployment-plan.md)

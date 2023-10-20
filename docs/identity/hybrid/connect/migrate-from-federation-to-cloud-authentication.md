@@ -162,8 +162,8 @@ Get-MsolDomainFederationSettings –DomainName yourdomain.com
 
 >[!NOTE] 
 >Microsoft MFA Server is nearing the end of support life, and if you're using it you must move to Microsoft Entra multifactor authentication. 
-For more information, see **[Migrate from Microsoft MFA Server to Azure multifactor authentication documentation](../../authentication/how-to-migrate-mfa-server-to-azure-mfa.md)**.
->If you plan to use Microsoft Entra multifactor authentication, we recommend that you use **[combined registration for self-service password reset (SSPR) and multifactor authentication](../../authentication/concept-registration-mfa-sspr-combined.md)** to have your users register their authentication methods once. 
+For more information, see **[Migrate from Microsoft MFA Server to Azure multifactor authentication documentation](~/identity/authentication/how-to-migrate-mfa-server-to-azure-mfa.md)**.
+>If you plan to use Microsoft Entra multifactor authentication, we recommend that you use **[combined registration for self-service password reset (SSPR) and multifactor authentication](~/identity/authentication/concept-registration-mfa-sspr-combined.md)** to have your users register their authentication methods once. 
 
 ## Plan for implementation
 
@@ -185,7 +185,7 @@ The version of SSO that you use is dependent on your device OS and join state.
 
 - **For Windows 10, Windows Server 2016 and later versions**, we recommend using SSO via [Primary Refresh Token (PRT)](../../devices/concept-primary-refresh-token.md) with [Microsoft Entra joined devices](../../devices/concept-directory-join.md), [Microsoft Entra hybrid joined devices](../../devices/concept-hybrid-join.md) and [Microsoft Entra registered devices](../../devices/concept-device-registration.md). 
 
-- **For macOS and iOS devices**, we recommend using SSO via the [Microsoft Enterprise SSO plug-in for Apple devices](../../develop/apple-sso-plugin.md). This feature requires that your Apple devices are managed by an MDM. If you use Intune as your MDM then follow the [Microsoft Enterprise SSO plug-in for Apple Intune deployment guide](/mem/intune/configuration/use-enterprise-sso-plug-in-ios-ipados-macos). If you use another MDM then follow the [Jamf Pro / generic MDM deployment guide](/mem/intune/configuration/use-enterprise-sso-plug-in-ios-ipados-macos). 
+- **For macOS and iOS devices**, we recommend using SSO via the [Microsoft Enterprise SSO plug-in for Apple devices](~/identity-platform/apple-sso-plugin.md). This feature requires that your Apple devices are managed by an MDM. If you use Intune as your MDM then follow the [Microsoft Enterprise SSO plug-in for Apple Intune deployment guide](/mem/intune/configuration/use-enterprise-sso-plug-in-ios-ipados-macos). If you use another MDM then follow the [Jamf Pro / generic MDM deployment guide](/mem/intune/configuration/use-enterprise-sso-plug-in-ios-ipados-macos). 
 
 - **For Windows 7 and 8.1 devices**, we recommend using [seamless SSO](how-to-connect-sso.md) with domain-joined to register the computer in Microsoft Entra ID. You don't have to sync these accounts like you do for Windows 10 devices. However, you must complete this [prework for seamless SSO using PowerShell](how-to-connect-staged-rollout.md#prework-for-seamless-sso).
 
@@ -435,13 +435,13 @@ Migration requires assessing how the application is configured on-premises, and 
 
 > [!VIDEO https://www.youtube.com/embed/D0M-N-RQw0I]
 
-If you plan to keep using AD FS with on-premises & SaaS Applications using SAML / WS-FED or Oauth protocol, you'll use both AD FS and Microsoft Entra ID after you convert the domains for user authentication. In this case, you can protect your on-premises applications and resources with Secure Hybrid Access (SHA) through [Microsoft Entra application proxy](../../app-proxy/what-is-application-proxy.md) or one of [Microsoft Entra ID partner integrations](../../manage-apps/secure-hybrid-access.md). Using Application Proxy or one of our partners can provide secure remote access to your on-premises applications. Users benefit by easily connecting to their applications from any device after a [single sign-on](../../manage-apps/add-application-portal-setup-sso.md).
+If you plan to keep using AD FS with on-premises & SaaS Applications using SAML / WS-FED or Oauth protocol, you'll use both AD FS and Microsoft Entra ID after you convert the domains for user authentication. In this case, you can protect your on-premises applications and resources with Secure Hybrid Access (SHA) through [Microsoft Entra application proxy](../../app-proxy/what-is-application-proxy.md) or one of [Microsoft Entra ID partner integrations](~/identity/enterprise-apps/secure-hybrid-access.md). Using Application Proxy or one of our partners can provide secure remote access to your on-premises applications. Users benefit by easily connecting to their applications from any device after a [single sign-on](~/identity/enterprise-apps/add-application-portal-setup-sso.md).
 
-You can move SaaS applications that are currently federated with ADFS to Microsoft Entra ID. Reconfigure to authenticate with Microsoft Entra ID either via a built-in connector from the [Azure App gallery](https://azuremarketplace.microsoft.com/marketplace/apps/category/azure-active-directory-apps), or by [registering the application in Microsoft Entra ID](../../develop/quickstart-register-app.md).
+You can move SaaS applications that are currently federated with ADFS to Microsoft Entra ID. Reconfigure to authenticate with Microsoft Entra ID either via a built-in connector from the [Azure App gallery](https://azuremarketplace.microsoft.com/marketplace/apps/category/azure-active-directory-apps), or by [registering the application in Microsoft Entra ID](~/identity-platform/quickstart-register-app.md).
 
 For more information, see – 
 
-- [Moving application authentication from Active Directory Federation Services to Microsoft Entra ID](../../manage-apps/migrate-adfs-apps-stages.md) and
+- [Moving application authentication from Active Directory Federation Services to Microsoft Entra ID](~/identity/enterprise-apps/migrate-adfs-apps-stages.md) and
 - [AD FS to Microsoft Entra application migration playbook for developers](/samples/azure-samples/ms-identity-adfs-to-aad/ms-identity-dotnet-adfs-to-aad/)
 
 ### Remove relying party trust
@@ -456,5 +456,5 @@ For a full list of steps to take to completely remove AD FS from the environment
 
 ## Next steps
 
-- [Learn about migrating applications](../../manage-apps/migration-resources.md)
+- [Learn about migrating applications](~/identity/enterprise-apps/migration-resources.md)
 - [Deploy other identity features](../../architecture/deployment-plans.md)

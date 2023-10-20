@@ -47,7 +47,7 @@ The following are the high-level steps that Microsoft Entra ID uses to determine
 1. A user (or service principal) acquires a token to the Microsoft Graph endpoint.
 1. The user makes an API call to Microsoft Entra ID via Microsoft Graph using the issued token.
 1. Depending on the circumstance, Microsoft Entra ID takes one of the following actions:
-   - Evaluates the user’s role memberships based on the [wids claim](../develop/access-tokens.md) in the user’s access token.
+   - Evaluates the user’s role memberships based on the [wids claim](~/identity-platform/access-tokens.md) in the user’s access token.
    - Retrieves all the role assignments that apply for the user, either directly or via group membership, to the resource on which the action is being taken.
 1. Microsoft Entra ID determines if the action in the API call is included in the roles the user has for this resource.
 1. If the user doesn't have a role with the action at the requested scope, access is not granted. Otherwise access is granted.

@@ -113,4 +113,4 @@ The self-signed certificate you created following the steps above has a limited 
 
 ## Next steps
 
-[Manage certificates for federated single sign-on in Microsoft Entra ID](../manage-apps/tutorial-manage-certificates-for-federated-single-sign-on.md)
+[Manage certificates for federated single sign-on in Microsoft Entra ID](~/identity/enterprise-apps/tutorial-manage-certificates-for-federated-single-sign-on.md)

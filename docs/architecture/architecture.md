@@ -121,4 +121,4 @@ Using operational controls such as multi-factor authentication (MFA) for any ope
 
 ## Next steps
 
-[Microsoft Entra developer's guide](../develop/index.yml)
+[Microsoft Entra developer's guide](~/identity-platform/index.yml)

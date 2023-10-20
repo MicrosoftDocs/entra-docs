@@ -51,7 +51,7 @@ Before you can add a self-service sign-up user flow to your applications, you ne
 > [!NOTE]
 > This setting can also be configured with the [authenticationFlowsPolicy](/graph/api/resources/authenticationflowspolicy?view=graph-rest-1.0&preserve-view=true) resource type in the Microsoft Graph API.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](../roles/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **User settings**, and then under **External users**, select **Manage external collaboration settings**.
 1. Set the **Enable guest self-service sign up via user flows** toggle to **Yes**.
 
@@ -62,7 +62,7 @@ Before you can add a self-service sign-up user flow to your applications, you ne
 
 Next, you'll create the user flow for self-service sign-up and add it to an application.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](../roles/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **External Identities** > **User flows**, and then select **New user flow**.
 
    :::image type="content" source="media/self-service-sign-up-user-flow/new-user-flow.png" alt-text="Screenshot of the new user flow button.":::
@@ -84,7 +84,7 @@ Next, you'll create the user flow for self-service sign-up and add it to an appl
 
 You can choose order in which the attributes are displayed on the sign-up page. 
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](../roles/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **External Identities** > **User flows**.
 3. Select the self-service sign-up user flow from the list.
 4. Under **Customize**, select **Page layouts**.
@@ -95,7 +95,7 @@ You can choose order in which the attributes are displayed on the sign-up page.
 
 Now you'll associate applications with the user flow to enable sign-up for those applications. New users who access the associated applications will be presented with your new self-service sign-up experience.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](../roles/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **External Identities** > **User flows**
 1. Under **Self-service sign up**, select **User flows**.
 1. Select the self-service sign-up user flow from the list.

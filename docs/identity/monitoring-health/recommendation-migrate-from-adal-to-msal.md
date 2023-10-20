@@ -29,7 +29,7 @@ When an application is identified as an ADAL application, each day the recommend
 
 ## Value 
 
-MSAL is designed to enable a secure solution without developers having to worry about the implementation details. MSAL simplifies how tokens are acquired, managed, cached, and refreshed. MSAL also uses best practices for resilience. For more information on migrating to MSAL, see [Migrate applications to MSAL](../develop/msal-migration.md).
+MSAL is designed to enable a secure solution without developers having to worry about the implementation details. MSAL simplifies how tokens are acquired, managed, cached, and refreshed. MSAL also uses best practices for resilience. For more information on migrating to MSAL, see [Migrate applications to MSAL](~/identity-platform/msal-migration.md).
 
 Existing apps that use ADAL will continue to work after the end-of-support date.
 
@@ -91,7 +91,7 @@ You can run the following set of commands in Windows PowerShell. These commands 
 1. Get a list of your recommendations:
     - `Get-MgDirectoryRecommendation | Format-List`
 
-1. Update the code for your apps using the instructions in [How to migrate to MSAL](../develop/msal-migration.md#how-to-migrate-to-msal).
+1. Update the code for your apps using the instructions in [How to migrate to MSAL](~/identity-platform/msal-migration.md#how-to-migrate-to-msal).
 
 ---
 
@@ -106,7 +106,7 @@ To reduce false positives, the service uses a 30 day window for ADAL requests. T
 
 ### How were ADAL applications identified before the recommendation was released?
 
-The [Microsoft Entra sign-ins workbook](../develop/howto-get-list-of-all-auth-library-apps.md) was an alternative method to identify these apps. The workbook is still available to you, but using the workbook requires streaming sign-in logs to Azure Monitor first. The ADAL to MSAL recommendation works out of the box. Plus, the sign-ins workbook doesn't capture Service Principal sign-ins, while the recommendation does.
+The [Microsoft Entra sign-ins workbook](~/identity-platform/howto-get-list-of-all-auth-library-apps.md) was an alternative method to identify these apps. The workbook is still available to you, but using the workbook requires streaming sign-in logs to Azure Monitor first. The ADAL to MSAL recommendation works out of the box. Plus, the sign-ins workbook doesn't capture Service Principal sign-ins, while the recommendation does.
 
 ### Why is the number of ADAL applications different in the workbook and the recommendation?
 

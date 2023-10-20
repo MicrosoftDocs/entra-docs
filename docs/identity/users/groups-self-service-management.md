@@ -43,7 +43,7 @@ Groups created in | Security group default behavior | Microsoft 365 group defaul
 
 ## Make a group available for user self-service
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](../roles/permissions-reference.md#groups-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
 1. Select Microsoft Entra ID.
 
 2. Select **All groups** > **Groups**, and then select **General** settings.
@@ -93,7 +93,7 @@ The group settings enable you to control who can create security and Microsoft 3
 Here are some additional details about these group settings.
 
 - These setting can take up to 15 minutes to take effect.
-- If you want to enable some, but not all, of your users to create groups, you can assign those users a role that can create groups, such as [Groups Administrator](../roles/permissions-reference.md#groups-administrator).
+- If you want to enable some, but not all, of your users to create groups, you can assign those users a role that can create groups, such as [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
 - These settings are for users and don't impact service principals. For example, if you have a service principal with permissions to create groups, even if you set these settings to **No**, the service principal will still be able to create groups. 
 
 ## Configure group settings using Microsoft Graph
@@ -108,6 +108,6 @@ These articles provide additional information on Microsoft Entra ID.
 
 * [Manage access to resources with Microsoft Entra groups](../fundamentals/concept-learn-about-groups.md)
 * [Microsoft Entra cmdlets for configuring group settings](../enterprise-users/groups-settings-cmdlets.md)
-* [Application Management in Microsoft Entra ID](../manage-apps/what-is-application-management.md)
+* [Application Management in Microsoft Entra ID](~/identity/enterprise-apps/what-is-application-management.md)
 * [What is Microsoft Entra ID?](../fundamentals/whatis.md)
 * [Integrate your on-premises identities with Microsoft Entra ID](../hybrid/whatis-hybrid-identity.md)

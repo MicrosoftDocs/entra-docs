@@ -33,7 +33,7 @@ Microsoft Entra ID uses a concept called "assignments" to determine which users 
 
 Before configuring and enabling the provisioning service, you will need to decide what users and/or groups in Microsoft Entra ID represent the users who need access to LinkedIn Sales Navigator. Once decided, you can assign these users to LinkedIn Sales Navigator by following the instructions here:
 
-[Assign a user or group to an enterprise app](../manage-apps/assign-user-or-group-access-portal.md)
+[Assign a user or group to an enterprise app](~/identity/enterprise-apps/assign-user-or-group-access-portal.md)
 
 ### Important tips for assigning users to LinkedIn Sales Navigator
 
@@ -79,7 +79,7 @@ The first step is to retrieve your LinkedIn access token. If you are an Enterpri
 
 1. Save your access token to your clipboard or computer before leaving the page.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 
 1. Browse to **Identity** > **Applications** > **Enterprise applications**
 
@@ -118,4 +118,4 @@ For more information on how to read the Microsoft Entra provisioning logs, see [
 ## Additional Resources
 
 * [Managing user account provisioning for Enterprise Apps](../app-provisioning/configure-automatic-user-provisioning-portal.md)
-* [What is application access and single sign-on with Microsoft Entra ID?](../manage-apps/what-is-single-sign-on.md)
+* [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)

@@ -21,7 +21,7 @@ ms.custom: enterprise-apps
 
 In this article, you learn how to enable self-service application access using the Microsoft Entra admin center.
 
-Before your users can self-discover applications from the [My Apps portal](./myapps-overview.md), you need to enable **Self-service application access** for the applications. This functionality is available for applications that were added from the Microsoft Entra Gallery, [Microsoft Entra application proxy](../app-proxy/application-proxy.md), or were added using [user or admin consent](../develop/application-consent-experience.md).
+Before your users can self-discover applications from the [My Apps portal](./myapps-overview.md), you need to enable **Self-service application access** for the applications. This functionality is available for applications that were added from the Microsoft Entra Gallery, [Microsoft Entra application proxy](../app-proxy/application-proxy.md), or were added using [user or admin consent](~/identity-platform/application-consent-experience.md).
 
 Using this feature, you can:
 
@@ -53,7 +53,7 @@ Self-service application access is a great way to allow users to self-discover a
 
 To enable self-service application access to an application, follow the steps below:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
 1. Enter the name of the existing application in the search box, and then select the application from the search results.
 1. In the left navigation menu, select **Self-service**.

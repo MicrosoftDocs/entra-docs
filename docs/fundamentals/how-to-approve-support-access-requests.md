@@ -22,7 +22,7 @@ This article describes how the process works and how to approve Microsoft Suppor
 
 ## Prerequisites
 
-Only authorized users in your tenant can view and manage Microsoft Support access requests. To view, approve, and reject Microsoft Support access requests, a role must have the permission `microsoft.azure.supportTickets/allEntities/allTasks`. To see which roles have this permission, search the [Microsoft Entra built-in roles](../roles/permissions-reference.md) for the required permission.
+Only authorized users in your tenant can view and manage Microsoft Support access requests. To view, approve, and reject Microsoft Support access requests, a role must have the permission `microsoft.azure.supportTickets/allEntities/allTasks`. To see which roles have this permission, search the [Microsoft Entra built-in roles](~/identity/role-based-access-control/permissions-reference.md) for the required permission.
 
 ## Scenarios and workflow
 
@@ -42,7 +42,7 @@ This cross-tenant scenario is the primary scenario where a support access reques
 
 When you have a pending support access request, you can view and approve that request from a couple places.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Service Support Administrator](../roles/permissions-reference.md#service-support-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Service Support Administrator](~/identity/role-based-access-control/permissions-reference.md#service-support-administrator).
 
 1. Browse to **Learn & support** > **Diagnose and solve problems**.
 

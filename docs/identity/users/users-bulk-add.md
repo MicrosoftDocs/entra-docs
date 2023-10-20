@@ -49,12 +49,12 @@ The rows in a downloaded CSV template are as follows:
 - We don't recommend adding new columns to the template. Any additional columns you add are ignored and not processed.
 - We recommend that you download the latest version of the CSV template as often as possible.
 - Make sure to check there is no unintended whitespace before/after any field. For **User principal name**, having such whitespace would cause import failure.
-- Ensure that values in **Initial password** comply with the currently active [password policy](../authentication/concept-sspr-policy.md#username-policies).
+- Ensure that values in **Initial password** comply with the currently active [password policy](~/identity/authentication/concept-sspr-policy.md#username-policies).
 
 ## To create users in bulk
 
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](../roles/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Select Microsoft Entra ID.
 1. Select **All users** >  **Users** > **Bulk create**.
 1. On the **Bulk create user** page, select **Download** to receive a valid comma-separated values (CSV) file of user properties, and then add users you want to create.
@@ -84,7 +84,7 @@ Next, you can check to see that the users you created exist in the Microsoft Ent
 
 ## Verify users in the Azure portal
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](../roles/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Select Microsoft Entra ID.
 1. Select **All users** > **Users**.
 1. Under **Show**, select **All users** and verify that the users you created are listed.

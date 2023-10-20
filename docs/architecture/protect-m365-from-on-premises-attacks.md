@@ -61,7 +61,7 @@ To address the threats described above, we recommend you adhere to the principle
 
    These administrator accounts are restricted-use accounts. No on-premises accounts should have administrative privileges in Microsoft 365.
 
-   For more information, see [About admin roles](/microsoft-365/admin/add-users/about-admin-roles). Also, see [Roles for Microsoft 365 in Microsoft Entra ID](../roles/m365-workload-docs.md).
+   For more information, see [About admin roles](/microsoft-365/admin/add-users/about-admin-roles). Also, see [Roles for Microsoft 365 in Microsoft Entra ID](~/identity/role-based-access-control/m365-workload-docs.md).
 
 1. **Manage devices from Microsoft 365.** Use Microsoft Entra join and cloud-based mobile device management (MDM) to eliminate dependencies on your on-premises device management infrastructure. These dependencies can compromise device and security controls.
 
@@ -83,29 +83,29 @@ In Microsoft Entra ID, users who have privileged roles, such as administrators, 
 
   Deploy Microsoft Entra Privileged Identity Management (PIM) for just-in-time access to all human accounts that have privileged roles. Require strong authentication to activate roles. See [What is Microsoft Entra Privileged Identity Management](../privileged-identity-management/pim-configure.md).
 
-- Provide administrative roles that allow the least privilege necessary to do required tasks. See [Least privileged roles by task in Microsoft Entra ID](../roles/delegate-by-task.md).
+- Provide administrative roles that allow the least privilege necessary to do required tasks. See [Least privileged roles by task in Microsoft Entra ID](~/identity/role-based-access-control/delegate-by-task.md).
 
 - To enable a rich role assignment experience that includes delegation and multiple roles at the same time, consider using Microsoft Entra security groups or Microsoft 365 Groups. These groups are collectively called *cloud groups*.
 
-  Also, enable role-based access control. See [Assign Microsoft Entra roles to groups](../roles/groups-assign-role.md). You can use administrative units to restrict the scope of roles to a portion of the organization. See [Administrative units in Microsoft Entra ID](../roles/administrative-units.md).
+  Also, enable role-based access control. See [Assign Microsoft Entra roles to groups](~/identity/role-based-access-control/groups-assign-role.md). You can use administrative units to restrict the scope of roles to a portion of the organization. See [Administrative units in Microsoft Entra ID](~/identity/role-based-access-control/administrative-units.md).
 
-- Deploy emergency access accounts. Do *not* use on-premises password vaults to store credentials. See [Manage emergency access accounts in Microsoft Entra ID](../roles/security-emergency-access.md).
+- Deploy emergency access accounts. Do *not* use on-premises password vaults to store credentials. See [Manage emergency access accounts in Microsoft Entra ID](~/identity/role-based-access-control/security-emergency-access.md).
 
-For more information, see [Securing privileged access](/security/privileged-access-workstations/overview). Also, see [Secure access practices for administrators in Microsoft Entra ID](../roles/security-planning.md).
+For more information, see [Securing privileged access](/security/privileged-access-workstations/overview). Also, see [Secure access practices for administrators in Microsoft Entra ID](~/identity/role-based-access-control/security-planning.md).
 
 ### Use cloud authentication
 
 Credentials are a primary attack vector. Implement the following practices to make credentials more secure:
 
-- **Deploy passwordless authentication**. Reduce the use of passwords as much as possible by deploying passwordless credentials. These credentials are managed and validated natively in the cloud. For more information, see [Plan a passwordless authentication deployment in Microsoft Entra ID](../authentication/howto-authentication-passwordless-deployment.md).
+- **Deploy passwordless authentication**. Reduce the use of passwords as much as possible by deploying passwordless credentials. These credentials are managed and validated natively in the cloud. For more information, see [Plan a passwordless authentication deployment in Microsoft Entra ID](~/identity/authentication/howto-authentication-passwordless-deployment.md).
 
   Choose from these authentication methods:
 
   - [Windows Hello for business](/windows/security/identity-protection/hello-for-business/passwordless-strategy)
-  - [The Microsoft Authenticator app](../authentication/howto-authentication-passwordless-phone.md)
-  - [FIDO2 security keys](../authentication/howto-authentication-passwordless-security-key-windows.md)
+  - [The Microsoft Authenticator app](~/identity/authentication/howto-authentication-passwordless-phone.md)
+  - [FIDO2 security keys](~/identity/authentication/howto-authentication-passwordless-security-key-windows.md)
 
-- **Deploy multifactor authentication**. For more information, see [Plan a Microsoft Entra multifactor authentication deployment](../authentication/howto-mfa-getstarted.md).
+- **Deploy multifactor authentication**. For more information, see [Plan a Microsoft Entra multifactor authentication deployment](~/identity/authentication/howto-mfa-getstarted.md).
 
   Provision multiple strong credentials by using Microsoft Entra multifactor authentication. That way, access to cloud resources requires a Microsoft Entra ID managed credential in addition to an on-premises password. For more information, see [Build resilience with credential management](./resilience-in-credentials.md) and [Create a resilient access control management strategy by using Microsoft Entra ID](./resilience-overview.md).
 
@@ -168,11 +168,11 @@ Deploy Microsoft Entra joined Windows 10 workstations with mobile device managem
 
 - **SaaS and line-of-business (LOB) applications that support modern authentication protocols**
 
-  Use Microsoft Entra ID for SSO. The more apps you configure to use Microsoft Entra ID for authentication, the less risk in an on-premises compromise. For more information, see [What is single sign-on in Microsoft Entra ID](../manage-apps/what-is-single-sign-on.md).
+  Use Microsoft Entra ID for SSO. The more apps you configure to use Microsoft Entra ID for authentication, the less risk in an on-premises compromise. For more information, see [What is single sign-on in Microsoft Entra ID](~/identity/enterprise-apps/what-is-single-sign-on.md).
 
 - **Legacy applications**
 
-  You can enable authentication, authorization, and remote access to legacy applications that don't support modern authentication. Use [Microsoft Entra application proxy](../app-proxy/application-proxy.md). Or, enable them through a network or application delivery controller solution by using secure hybrid access partner integrations. See [Secure legacy apps with Microsoft Entra ID](../manage-apps/secure-hybrid-access.md).
+  You can enable authentication, authorization, and remote access to legacy applications that don't support modern authentication. Use [Microsoft Entra application proxy](../app-proxy/application-proxy.md). Or, enable them through a network or application delivery controller solution by using secure hybrid access partner integrations. See [Secure legacy apps with Microsoft Entra ID](~/identity/enterprise-apps/secure-hybrid-access.md).
 
   Choose a VPN vendor that supports modern authentication. Integrate its authentication with Microsoft Entra ID. In an on-premises compromise, you can use Microsoft Entra ID to disable or block access by disabling the VPN.
 
@@ -218,7 +218,7 @@ Monitor the following key scenarios, in addition to any scenarios specific to yo
 
 - **Emergency access accounts activity**
 
-  Monitor any access that uses emergency access accounts. See [Manage emergency access accounts in Microsoft Entra ID](../roles/security-emergency-access.md). Create alerts for investigations. This monitoring must include the following actions: 
+  Monitor any access that uses emergency access accounts. See [Manage emergency access accounts in Microsoft Entra ID](~/identity/role-based-access-control/security-emergency-access.md). Create alerts for investigations. This monitoring must include the following actions: 
 
   - Sign-ins
   - Credential management

@@ -115,7 +115,7 @@ This change will be rolled out in December 2021 over the course of several weeks
 
 **Endpoints impacted**: v2.0 and v1.0
 
-**Protocol impacted**: All user flows for apps [requiring user assignment](../manage-apps/what-is-access-management.md#requiring-user-assignment-for-an-app)
+**Protocol impacted**: All user flows for apps [requiring user assignment](~/identity/enterprise-apps/what-is-access-management.md#requiring-user-assignment-for-an-app)
 
 **Change**
 

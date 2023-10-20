@@ -591,4 +591,4 @@ https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroups/<RES
 
 ## Next steps
 
-- For information about the required format of JWTs created by external identity providers, read about the [assertion format](../develop/certificate-credentials.md#assertion-format).
+- For information about the required format of JWTs created by external identity providers, read about the [assertion format](~/identity-platform/certificate-credentials.md#assertion-format).

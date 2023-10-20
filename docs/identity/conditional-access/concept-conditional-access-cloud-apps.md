@@ -22,7 +22,7 @@ ms.collection: M365-identity-device-management
 
 Target resources (formerly Cloud apps, actions, and authentication context) are key signals in a Conditional Access policy. Conditional Access policies allow administrators to assign controls to specific applications, services, actions, or authentication context.
 
-- Administrators can choose from the list of applications or services that include built-in Microsoft applications and any [Microsoft Entra integrated applications](../manage-apps/what-is-application-management.md) including gallery, non-gallery, and applications published through [Application Proxy](../app-proxy/what-is-application-proxy.md).
+- Administrators can choose from the list of applications or services that include built-in Microsoft applications and any [Microsoft Entra integrated applications](~/identity/enterprise-apps/what-is-application-management.md) including gallery, non-gallery, and applications published through [Application Proxy](../app-proxy/what-is-application-proxy.md).
 - Administrators may choose to define policy not based on a cloud application but on a [user action](#user-actions) like **Register security information** or **Register or join devices**, allowing Conditional Access to enforce controls around those actions.
 - Administrators can target [traffic forwarding profiles](#traffic-forwarding-profiles) from Global Secure Access for enhanced functionality.
 - Administrators can use [authentication context](#authentication-context) to provide an extra layer of security in applications. 
@@ -141,10 +141,10 @@ We're continually adding more administrative portals to the list.
 Administrators can add any Microsoft Entra registered application to Conditional Access policies. These applications may include: 
 
 - Applications published through [Microsoft Entra application proxy](../app-proxy/what-is-application-proxy.md)
-- [Applications added from the gallery](../manage-apps/add-application-portal.md)
-- [Custom applications not in the gallery](../manage-apps/view-applications-portal.md)
-- [Legacy applications published through app delivery controllers and networks](../manage-apps/secure-hybrid-access.md)
-- Applications that use [password based single sign-on](../manage-apps/configure-password-single-sign-on-non-gallery-applications.md)
+- [Applications added from the gallery](~/identity/enterprise-apps/add-application-portal.md)
+- [Custom applications not in the gallery](~/identity/enterprise-apps/view-applications-portal.md)
+- [Legacy applications published through app delivery controllers and networks](~/identity/enterprise-apps/secure-hybrid-access.md)
+- Applications that use [password based single sign-on](~/identity/enterprise-apps/configure-password-single-sign-on-non-gallery-applications.md)
 
 > [!NOTE]
 > Since Conditional Access policy sets the requirements for accessing a service you are not able to apply it to a client (public/native) application. In other words, the policy is not set directly on a client (public/native) application, but is applied when a client calls a service. For example, a policy set on SharePoint service applies to the clients calling SharePoint. A policy set on Exchange applies to the attempt to access the email using Outlook client. That is why client (public/native) applications are not available for selection in the Cloud Apps picker and Conditional Access option is not available in the application settings for the client (public/native) application registered in your tenant. 
@@ -171,7 +171,7 @@ In some cases, an **All cloud apps** policy could inadvertently block user acces
 
 User actions are tasks that can be performed by a user. Currently, Conditional Access supports two user actions: 
 
-- **Register security information**: This user action allows Conditional Access policy to enforce when users who are enabled for combined registration attempt to register their security information. More information can be found in the article, [Combined security information registration](../authentication/concept-registration-mfa-sspr-combined.md).
+- **Register security information**: This user action allows Conditional Access policy to enforce when users who are enabled for combined registration attempt to register their security information. More information can be found in the article, [Combined security information registration](~/identity/authentication/concept-registration-mfa-sspr-combined.md).
 
 > [!NOTE]
 > When applying a policy targeting user actions for register security information, if the user account is a guest from [Microsoft personal account (MSA)](../external-identities/microsoft-account.md), using the control 'Require multifactor authentication', will require the MSA user to register security information with the organization. If the guest user is from another provider such as [Google](../external-identities/google-federation.md), access will be blocked.
@@ -224,7 +224,7 @@ For more information about authentication context use in applications, see the f
 
 - [Use sensitivity labels to protect content in Microsoft Teams, Microsoft 365 groups, and SharePoint sites](/purview/sensitivity-labels-teams-groups-sites)
 - [Microsoft Defender for Cloud Apps](/defender-cloud-apps/session-policy-aad?branch=pr-en-us-2082#require-step-up-authentication-authentication-context)
-- [Custom applications](../develop/developer-guide-conditional-access-authentication-context.md)
+- [Custom applications](~/identity-platform/developer-guide-conditional-access-authentication-context.md)
 
 ## Next steps
 

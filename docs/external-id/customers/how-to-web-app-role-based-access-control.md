@@ -26,7 +26,7 @@ In this article, you learn how to receive user roles or group membership or both
 
 ## Prerequisites
 
-- If you've not done so, complete the steps in [Using role-based access control for applications](how-to-use-app-roles-customers.md) article. This article shows you how to create roles for your application, how to assign users and groups to those roles, how to add members to a group and how to add a group claim to a to security token. Learn more about [ID tokens](../../develop/id-tokens.md) and [access tokens](../../develop/access-tokens.md). 
+- If you've not done so, complete the steps in [Using role-based access control for applications](how-to-use-app-roles-customers.md) article. This article shows you how to create roles for your application, how to assign users and groups to those roles, how to add members to a group and how to add a group claim to a to security token. Learn more about [ID tokens](~/identity-platform/id-tokens.md) and [access tokens](~/identity-platform/access-tokens.md). 
 
 - If you've not done so, complete the steps in [Sign in users in your own Node.js web application](tutorial-web-app-node-sign-in-prepare-tenant.md)
 
@@ -87,7 +87,7 @@ let groups = tokenResponse.idTokenClaims.groups;
 The groups claim value is the group's *objectId*. If a user is a member of multiple groups, the `groups` string contains all groups separated by a comma, such as `7f0621bc-b758-44fa-a2c6-...,6b35e65d-f3c8-4c6e-9538-...`.
 
 > [!NOTE] 
-> If you assign a user [Microsoft Entra in-built roles](../../roles/permissions-reference.md) or commonly known as directory roles, those roles appear in the *groups* claim of the security token. 
+> If you assign a user [Microsoft Entra in-built roles](~/identity/role-based-access-control/permissions-reference.md) or commonly known as directory roles, those roles appear in the *groups* claim of the security token. 
 
 ## Handle groups overage
 
@@ -111,11 +111,11 @@ Use the instructions in [Configuring group claims and app roles in tokens](/secu
 
 In the client app, you can verify whether a signed-in user has the necessary role(s) to access a protected route or call an API endpoint. This can be done by checking the `roles` claim in the ID token. To implement this protection in your app, you can build guards by using a custom middleware. 
 
-In your service app (API app), you can also protect the API endpoints. After you [validate the access token](../../develop/access-tokens.md#validate-tokens) sent by the client app, you can check for the *roles* or *groups* claims in the payload claims of the access token. 
+In your service app (API app), you can also protect the API endpoints. After you [validate the access token](~/identity-platform/access-tokens.md#validate-tokens) sent by the client app, you can check for the *roles* or *groups* claims in the payload claims of the access token. 
 
 ## Do I use App Roles or Groups?
 
-In this article, you have learned that you can use *App Roles* or *Groups* to implement RBAC in your application. The preferred approach is to use app roles as app roles provide more granular control when managing access/permissions at the application level. For more information on how to choose an approach, see [Choose an approach](../../develop/custom-rbac-for-developers.md#choose-an-approach).   
+In this article, you have learned that you can use *App Roles* or *Groups* to implement RBAC in your application. The preferred approach is to use app roles as app roles provide more granular control when managing access/permissions at the application level. For more information on how to choose an approach, see [Choose an approach](~/identity-platform/custom-rbac-for-developers.md#choose-an-approach).   
 
 ## Next steps
 

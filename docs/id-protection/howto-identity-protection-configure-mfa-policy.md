@@ -30,11 +30,11 @@ We recommend that you require Microsoft Entra multifactor authentication for use
 - Delivers strong authentication through a range of verification options.
 - Plays a key role in preparing your organization to self-remediate from risk detections in Identity Protection.
 
-For more information on Microsoft Entra multifactor authentication, see [What is Microsoft Entra multifactor authentication?](../authentication/howto-mfa-getstarted.md)
+For more information on Microsoft Entra multifactor authentication, see [What is Microsoft Entra multifactor authentication?](~/identity/authentication/howto-mfa-getstarted.md)
 
 ## Policy configuration
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../roles/permissions-reference.md#security-administrator)
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator)
 1. Browse to **Protection** > **Identity Protection** > **MFA registration policy**.
    1. Under **Assignments** > **Users**
       1. Under **Include**, select **All users** or **Select individuals and groups** if limiting your rollout.
@@ -53,5 +53,5 @@ For an overview of the related user experience, see:
 ## Next steps
 
 - [Enable sign-in and user risk policies](howto-identity-protection-configure-risk-policies.md)
-- [Enable Microsoft Entra self-service password reset](../authentication/howto-sspr-deployment.md)
-- [Enable Microsoft Entra multifactor authentication](../authentication/howto-mfa-getstarted.md)
+- [Enable Microsoft Entra self-service password reset](~/identity/authentication/howto-sspr-deployment.md)
+- [Enable Microsoft Entra multifactor authentication](~/identity/authentication/howto-mfa-getstarted.md)

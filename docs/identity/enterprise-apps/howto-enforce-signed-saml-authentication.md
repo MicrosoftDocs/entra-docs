@@ -49,7 +49,7 @@ To configure SAML request signature verification, you need:
 
 ## Configure SAML Request Signature Verification
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
 1. Enter the name of the existing application in the search box, and then select the application from the search results.
 1. Navigate to **Single sign-on**.
@@ -77,5 +77,5 @@ To configure SAML request signature verification, you need:
 
 ## Next steps  
 
-- Find out [How Microsoft Entra ID uses the SAML protocol](../develop/saml-protocol-reference.md) 
-- Learn the format, security characteristics, and contents of [SAML tokens in Microsoft Entra ID](../develop/reference-saml-tokens.md)
+- Find out [How Microsoft Entra ID uses the SAML protocol](~/identity-platform/saml-protocol-reference.md) 
+- Learn the format, security characteristics, and contents of [SAML tokens in Microsoft Entra ID](~/identity-platform/reference-saml-tokens.md)

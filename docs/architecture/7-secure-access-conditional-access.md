@@ -76,7 +76,7 @@ Use a naming convention that clarifies policy purpose. External access examples 
 
 You can block external users from accessing resources with Conditional Access policies. 
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../roles/permissions-reference.md#conditional-access-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Protection** > **Conditional Access**.
 1. Select **Create new policy**.
 1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
@@ -93,7 +93,7 @@ You can block external users from accessing resources with Conditional Access po
 > [!NOTE]
 > After administrators confirm the settings using [report-only mode](../conditional-access/howto-conditional-access-insights-reporting.md), they can move the **Enable policy** toggle from **Report-only** to **On**.
 
-Learn more: [Manage emergency access accounts in Microsoft Entra ID](../roles/security-emergency-access.md)
+Learn more: [Manage emergency access accounts in Microsoft Entra ID](~/identity/role-based-access-control/security-emergency-access.md)
 
 ### Allow external access to specific external users
 
@@ -101,7 +101,7 @@ There are scenarios when it's necessary to allow access for a small, specific gr
 
 Before you begin, we recommend you create a security group, which contains external users who access resources. See, [Quickstart: Create a group with members and view all groups and members in Microsoft Entra ID](../fundamentals/groups-view-azure-portal.md).
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../roles/permissions-reference.md#conditional-access-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Protection** > **Conditional Access**.
 1. Select **Create new policy**.
 1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
@@ -117,7 +117,7 @@ Before you begin, we recommend you create a security group, which contains exter
 > [!NOTE]
 > After administrators confirm the settings using [report-only mode](../conditional-access/howto-conditional-access-insights-reporting.md), they can move the **Enable policy** toggle from **Report-only** to **On**.
 
-Learn more: [Manage emergency access accounts in Microsoft Entra ID](../roles/security-emergency-access.md)
+Learn more: [Manage emergency access accounts in Microsoft Entra ID](~/identity/role-based-access-control/security-emergency-access.md)
 
 ### Service provider access
 

@@ -44,7 +44,7 @@ This feature can be used in the Azure portal, Microsoft Graph, and in PowerShell
 
 ### Steps to create a memberOf dynamic group
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](../roles/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Groups** > **All groups**.
 1. Select **New group**.
 1. Fill in group details. The group type can be Security or Microsoft 365, and the membership type can be set to **Dynamic User** or **Dynamic Device**.

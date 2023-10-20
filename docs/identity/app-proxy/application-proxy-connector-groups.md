@@ -31,7 +31,7 @@ To group your connectors, you have to make sure you [installed multiple connecto
 ## Create connector groups
 
 Use these steps to create as many connector groups as you want.
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](../roles/permissions-reference.md#application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Application proxy**.
 1. Select **New connector group**. The New Connector Group blade appears.
 
@@ -120,4 +120,4 @@ In the example below, the company has two datacenters, A and B, with two connect
 ## Next steps
 
 [Understand Microsoft Entra application proxy connectors](application-proxy-connectors.md)
-[Enable single-sign on](../manage-apps/what-is-single-sign-on.md)
+[Enable single-sign on](~/identity/enterprise-apps/what-is-single-sign-on.md)

@@ -152,7 +152,7 @@ The actual steps required to enable and configure automatic provisioning vary de
 
 If not, follow the steps:
 
-1. [Create a request](../manage-apps/v2-howto-app-gallery-listing.md) for a preintegrated user provisioning connector. Our team works with you and the application developer to onboard your application to our platform if it supports SCIM.
+1. [Create a request](~/identity/enterprise-apps/v2-howto-app-gallery-listing.md) for a preintegrated user provisioning connector. Our team works with you and the application developer to onboard your application to our platform if it supports SCIM.
 
 1. Use the [BYOA SCIM](../app-provisioning/use-scim-to-provision-users-and-groups.md) generic user provisioning support for the app. Using SCIM is a requirement for Microsoft Entra ID to provision users to the app without a preintegrated provisioning connector.
 
@@ -194,7 +194,7 @@ Before implementing automatic user provisioning, you must determine the users an
 
 * Use [scoping filters](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md) to define attribute-based rules that determine which users are provisioned to an application.
 
-* Next, use [user and group assignments](../manage-apps/assign-user-or-group-access-portal.md) as needed for more filtering.
+* Next, use [user and group assignments](~/identity/enterprise-apps/assign-user-or-group-access-portal.md) as needed for more filtering.
 
 ### Define user and group attribute mapping
 
@@ -299,7 +299,7 @@ Refer to the following links to troubleshoot any issues that may turn up during 
 
 * [No users are being provisioned to a Microsoft Entra Gallery application](../app-provisioning/application-provisioning-config-problem-no-users-provisioned.md)
 
-* [Wrong set of users are being provisioned to a Microsoft Entra Gallery application](../manage-apps/add-application-portal-assign-users.md)
+* [Wrong set of users are being provisioned to a Microsoft Entra Gallery application](~/identity/enterprise-apps/add-application-portal-assign-users.md)
 
 ### Helpful documentation
 

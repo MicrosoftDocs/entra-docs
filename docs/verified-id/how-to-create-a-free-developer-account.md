@@ -26,7 +26,7 @@ ms.author: barclayn
  With a free Microsoft Entra account, you can onboard the verifiable credential service and test issuing and verifying verifiable credentials. Create a free account in either of two ways:
 
 - [Join the free Microsoft 365 Developer Program](https://aka.ms/o365devprogram), and get a free sandbox, tools, and other resources (for example, a Microsoft Entra account with P2 licenses, configured users, groups, and mailboxes).
-- [Create a new tenant](../develop/quickstart-create-new-tenant.md) and [activate a free trial of Microsoft Entra ID P1 or P2](https://azure.microsoft.com/trial/get-started-active-directory/) in your new tenant.
+- [Create a new tenant](~/identity-platform/quickstart-create-new-tenant.md) and [activate a free trial of Microsoft Entra ID P1 or P2](https://azure.microsoft.com/trial/get-started-active-directory/) in your new tenant.
 
 If you decide to sign up for the free Microsoft 365 developer program, you need to follow a few easy steps:
 

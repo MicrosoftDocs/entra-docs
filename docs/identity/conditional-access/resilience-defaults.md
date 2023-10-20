@@ -54,7 +54,7 @@ If the required controls of a policy weren't previously satisfied, the policy is
 - Country/region location (resolving new IP or GPS coordinates)
 - Authentication strengths
 
-When active, the Backup Authentication Service doesn't evaluate authentication methods required by [authentication strengths](../authentication/concept-authentication-strengths.md). If you used a non-phishing-resistant authentication method before an outage, during an outage you aren't prompted for multifactor authentication even if accessing a resource protected by a Conditional Access policy with a phishing-resistant authentication strength.
+When active, the Backup Authentication Service doesn't evaluate authentication methods required by [authentication strengths](~/identity/authentication/concept-authentication-strengths.md). If you used a non-phishing-resistant authentication method before an outage, during an outage you aren't prompted for multifactor authentication even if accessing a resource protected by a Conditional Access policy with a phishing-resistant authentication strength.
 
 ## Resilience defaults enabled
 
@@ -81,7 +81,7 @@ You can configure Conditional Access resilience defaults from the Microsoft Entr
 
 ### Microsoft Entra admin center
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../roles/permissions-reference.md#conditional-access-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Protection** > **Conditional Access**.
 1. Create a new policy or select an existing policy
 1. Open the Session control settings

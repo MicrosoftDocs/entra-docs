@@ -28,7 +28,7 @@ Using Microsoft Entra ID, part of Microsoft Entra, with a Microsoft Entra ID P1 
 
 [!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](../roles/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 1. In the search box enter **Enterprise applications** and choose **Enterprise applications** from the search results.
 1. Select an application that you added from the Application Gallery to open it.
 1. Select **Users and groups**, and then select **Add user**.
@@ -40,7 +40,7 @@ Using Microsoft Entra ID, part of Microsoft Entra, with a Microsoft Entra ID P1 
 These articles provide additional information on Microsoft Entra ID.
 
 * [Managing access to resources with Microsoft Entra groups](../fundamentals/concept-learn-about-groups.md)
-* [Application Management in Microsoft Entra ID](../manage-apps/what-is-application-management.md)
+* [Application Management in Microsoft Entra ID](~/identity/enterprise-apps/what-is-application-management.md)
 * [Microsoft Entra cmdlets for configuring group settings](../enterprise-users/groups-settings-cmdlets.md)
 * [What is Microsoft Entra ID?](../fundamentals/whatis.md)
 * [Integrating your on-premises identities with Microsoft Entra ID](../hybrid/whatis-hybrid-identity.md)

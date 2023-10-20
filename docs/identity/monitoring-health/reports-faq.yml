@@ -46,7 +46,7 @@ sections:
       - question: |
           Do I need to be a Global Administrator to see the activity logs in the Microsoft Entra admin center?
         answer: |
-          No, the [least privilege role](../roles/delegate-by-task.md) to view audit and sign-in logs is **Reports Reader**. Other roles include **Security Reader** and **Security Administrator**.
+          No, the [least privilege role](~/identity/role-based-access-control/delegate-by-task.md) to view audit and sign-in logs is **Reports Reader**. Other roles include **Security Reader** and **Security Administrator**.
 
       - question: |
           What logs can I integrate with Azure Monitor?
@@ -175,7 +175,7 @@ sections:
       - question: |
           How can I restrict sign-in (authentication) for various apps that I see in the Service Principal sign-in logs?
         answer:
-          If you wish to control how authentication works in your tenant for specific client or resource apps, follow instructions in the [Restrict Microsoft Entra app to a set of users](../develop/howto-restrict-your-app-to-a-set-of-users.md) article.
+          If you wish to control how authentication works in your tenant for specific client or resource apps, follow instructions in the [Restrict Microsoft Entra app to a set of users](~/identity-platform/howto-restrict-your-app-to-a-set-of-users.md) article.
 
       - question: |
           Why do sign-ins that are technically non-interactive show up on my interactive sign-in logs?

@@ -54,7 +54,7 @@ sections:
           
           If others need to sign in and access services by using the same subscription, you can assign them the appropriate [built-in role](/azure/role-based-access-control/built-in-roles). For more information, see [Assign Azure roles using the Azure portal](/azure/role-based-access-control/role-assignments-portal).
           
-          By default, the person who signs up for an Azure subscription is assigned the Global Administrator role for the directory. The Global Administrator has access to all Microsoft Entra directory features. Microsoft Entra ID has a different set of administrator roles to manage the directory and identity-related features. These administrators will have access to various features in the Azure portal. The administrator's role determines what they can do, like create or edit users, assign administrative roles to others, reset user passwords, manage user licenses, or manage domains.  For additional information on Microsoft Entra directory admins and their roles, see [Assign a user to administrator roles in Microsoft Entra ID](./how-subscriptions-associated-directory.md) and [Assigning administrator roles in Microsoft Entra ID](../roles/permissions-reference.md).
+          By default, the person who signs up for an Azure subscription is assigned the Global Administrator role for the directory. The Global Administrator has access to all Microsoft Entra directory features. Microsoft Entra ID has a different set of administrator roles to manage the directory and identity-related features. These administrators will have access to various features in the Azure portal. The administrator's role determines what they can do, like create or edit users, assign administrative roles to others, reset user passwords, manage user licenses, or manage domains.  For additional information on Microsoft Entra directory admins and their roles, see [Assign a user to administrator roles in Microsoft Entra ID](./how-subscriptions-associated-directory.md) and [Assigning administrator roles in Microsoft Entra ID](~/identity/role-based-access-control/permissions-reference.md).
           
           Additionally, Microsoft Entra paid services like Enterprise Mobility + Security complement other web services, such as Microsoft 365 and Microsoft Azure, with comprehensive enterprise-scale management and security solutions.
           
@@ -140,7 +140,7 @@ sections:
         answer: |
           Password write-back operates in real time.
           
-          For more information, see [Getting started with password management](../authentication/tutorial-enable-sspr.md).
+          For more information, see [Getting started with password management](~/identity/authentication/tutorial-enable-sspr.md).
           
           
           
@@ -149,14 +149,14 @@ sections:
         answer: |
           Yes, if you have password write-back enabled, the password operations performed by an admin are written back to your on-premises environment.  
           
-          For more answers to password-related questions, see [Password management frequently asked questions](../authentication/active-directory-passwords-faq.yml).
+          For more answers to password-related questions, see [Password management frequently asked questions](~/identity/authentication/active-directory-passwords-faq.yml).
           
           
           
       - question: |
           What can I do if I can't remember my existing Microsoft 365 / Microsoft Entra password while trying to change my password?
         answer: |
-          For this type of situation, there are a couple of options.  Use self-service password reset (SSPR) if it's available.  Whether SSPR works depends on how it's configured.  For more information, see [How does the password reset portal work](../authentication/howto-sspr-deployment.md).
+          For this type of situation, there are a couple of options.  Use self-service password reset (SSPR) if it's available.  Whether SSPR works depends on how it's configured.  For more information, see [How does the password reset portal work](~/identity/authentication/howto-sspr-deployment.md).
           
           For Microsoft 365 users, your admin can reset the password by using the steps outlined in [Reset user passwords](https://support.office.com/article/Admins-Reset-user-passwords-7A5D073B-7FAE-4AA5-8F96-9ECD041ABA9C?ui=en-US&rs=en-US&ad=US).
           
@@ -202,7 +202,7 @@ sections:
           
           For more information, see:
           
-          * [Configuring single sign-on to applications that are not in the Microsoft Entra application gallery](../develop/single-sign-on-saml-protocol.md)
+          * [Configuring single sign-on to applications that are not in the Microsoft Entra application gallery](~/identity-platform/single-sign-on-saml-protocol.md)
           * [Using SCIM to enable automatic provisioning of users and groups from Microsoft Entra ID to applications](../app-provisioning/use-scim-to-provision-users-and-groups.md)
           
           
@@ -217,7 +217,7 @@ sections:
           * Direct sign-in to federated apps
           * Deep links to federated, password-based, or existing apps
           
-          For more information, see [End user experiences for applications](../manage-apps/end-user-experiences.md).
+          For more information, see [End user experiences for applications](~/identity/enterprise-apps/end-user-experiences.md).
           
           
           
@@ -228,9 +228,9 @@ sections:
           
           For more information, see:
           
-          * [Authentication Scenarios for Microsoft Entra ID](../develop/authentication-vs-authorization.md)
+          * [Authentication Scenarios for Microsoft Entra ID](~/identity-platform/authentication-vs-authorization.md)
           * [Active Directory authentication protocols](/previous-versions/azure/dn151124(v=azure.100))
-          * [Single sign-on for applications in Microsoft Entra ID](../manage-apps/what-is-single-sign-on.md)
+          * [Single sign-on for applications in Microsoft Entra ID](~/identity/enterprise-apps/what-is-single-sign-on.md)
           
           
           

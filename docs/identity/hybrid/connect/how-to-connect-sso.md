@@ -85,7 +85,7 @@ For more information on how SSO works with Windows 10 using PRT, see: [Primary R
 ## Next steps
 
 - [**Quick Start**](how-to-connect-sso-quick-start.md) - Get up and running Microsoft Entra seamless SSO.
-- [**Deployment Plan**](../../manage-apps/plan-sso-deployment.md) - Step-by-step deployment plan.
+- [**Deployment Plan**](~/identity/enterprise-apps/plan-sso-deployment.md) - Step-by-step deployment plan.
 - [**Technical Deep Dive**](how-to-connect-sso-how-it-works.md) - Understand how this feature works.
 - [**Frequently Asked Questions**](how-to-connect-sso-faq.yml) - Answers to frequently asked questions.
 - [**Troubleshoot**](tshoot-connect-sso.md) - Learn how to resolve common issues with the feature.

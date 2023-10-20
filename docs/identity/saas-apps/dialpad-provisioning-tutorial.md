@@ -35,7 +35,7 @@ Microsoft Entra ID uses a concept called assignments to determine which users sh
 
 Before configuring and enabling automatic user provisioning, you should decide which users and/or groups in Microsoft Entra ID need access to Dialpad. Once decided, you can assign these users and/or groups to Dialpad by following the instructions here:
  
-* [Assign a user or group to an enterprise app](../manage-apps/assign-user-or-group-access-portal.md) 
+* [Assign a user or group to an enterprise app](~/identity/enterprise-apps/assign-user-or-group-access-portal.md) 
 
  ## Important tips for assigning users to Dialpad
 
@@ -67,7 +67,7 @@ To configuring Dialpad for automatic user provisioning with Microsoft Entra ID, 
 
 **To add Dialpad from the Microsoft Entra application gallery, perform the following steps:**
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
 1. In the **Add from the gallery** section, type **Dialpad**, select **Dialpad** in the results panel.
 	![Dialpad in the results list](common/search-new-app.png)
@@ -96,7 +96,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 ### To configure automatic user provisioning for Dialpad in Microsoft Entra ID:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications**
 
 	![Enterprise applications blade](common/enterprise-applications.png)
@@ -154,7 +154,7 @@ For more information on how to read the Microsoft Entra provisioning logs, see [
 ## Additional resources
 
 * [Managing user account provisioning for Enterprise Apps](../app-provisioning/configure-automatic-user-provisioning-portal.md)
-* [What is application access and single sign-on with Microsoft Entra ID?](../manage-apps/what-is-single-sign-on.md)
+* [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
 ## Next steps
 

@@ -76,7 +76,7 @@ The following roles can read Microsoft Entra reports:
 * Security Reader
 * Reports Reader
 
-Learn More About [Microsoft Entra Administrative Roles](../roles/permissions-reference.md). Always apply the concept of least privileges to reduce the risk of an account compromise. Consider implementing [Privileged Identity Management](../privileged-identity-management/pim-configure.md) to further secure your organization.
+Learn More About [Microsoft Entra Administrative Roles](~/identity/role-based-access-control/permissions-reference.md). Always apply the concept of least privileges to reduce the risk of an account compromise. Consider implementing [Privileged Identity Management](../privileged-identity-management/pim-configure.md) to further secure your organization.
 
 ### Engage stakeholders
 

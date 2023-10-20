@@ -47,7 +47,7 @@ Registration features for passwordless authentication methods rely on the combin
 
 [!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](../roles/permissions-reference.md#authentication-policy-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Protection** > **Authentication methods** > **Authentication method policy**.
 1. Under the method **FIDO2 Security Key**, click **All users**, or click **Add groups** to select specific groups. *Only security groups are supported*.
 1. **Save** the configuration.
@@ -142,4 +142,4 @@ If a user's UPN changes, you can no longer modify FIDO2 security keys to account
 
 [Learn more about device registration](../devices/overview.md)
 
-[Learn more about Microsoft Entra multifactor authentication](../authentication/howto-mfa-getstarted.md)
+[Learn more about Microsoft Entra multifactor authentication](~/identity/authentication/howto-mfa-getstarted.md)

@@ -45,11 +45,11 @@ A token issuance event extension involves the following components:
 
 For details, see:
 
-- [About custom authentication extensions](../../develop/custom-extension-overview.md?context=/azure/active-directory/external-identities/customers/context/customers-context)  
-- [Configure a custom claims provider token issuance event](../../develop/custom-extension-get-started.md?context=/azure/active-directory/external-identities/customers/context/customers-context) using a custom claims provider.
+- [About custom authentication extensions](~/identity-platform/custom-extension-overview.md?context=/azure/active-directory/external-identities/customers/context/customers-context)  
+- [Configure a custom claims provider token issuance event](~/identity-platform/custom-extension-get-started.md?context=/azure/active-directory/external-identities/customers/context/customers-context) using a custom claims provider.
 
 ## Next steps
 
-- To learn more about how custom extensions work, see [Custom authentication extensions](../../develop/custom-extension-overview.md?context=/azure/active-directory/external-identities/customers/context/customers-context).
-- Configure a [custom claims provider token issuance event](../../develop/custom-extension-get-started.md?context=/azure/active-directory/external-identities/customers/context/customers-context).
+- To learn more about how custom extensions work, see [Custom authentication extensions](~/identity-platform/custom-extension-overview.md?context=/azure/active-directory/external-identities/customers/context/customers-context).
+- Configure a [custom claims provider token issuance event](~/identity-platform/custom-extension-get-started.md?context=/azure/active-directory/external-identities/customers/context/customers-context).
 - See the [Microsoft Entra ID for customers Developer Center](https://aka.ms/ciam/dev) for the latest developer content and resources.

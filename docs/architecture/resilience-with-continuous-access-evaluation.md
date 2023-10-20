@@ -36,10 +36,10 @@ Microsoft is working with the industry to build [standards](https://openid.net/w
 
 ## How do I implement CAE?
 
-* [Update your code to use CAE-enabled APIs](../develop/app-resilience-continuous-access-evaluation.md).
+* [Update your code to use CAE-enabled APIs](~/identity-platform/app-resilience-continuous-access-evaluation.md).
 * [Enable CAE](../conditional-access/concept-continuous-access-evaluation.md) in the Microsoft Entra Security Configuration.
 * Ensure that your organization is using [compatible versions](../conditional-access/concept-continuous-access-evaluation.md) of Microsoft Office native applications.
-* [Optimize your reauthentication prompts](../authentication/concepts-azure-multi-factor-authentication-prompts-session-lifetime.md).
+* [Optimize your reauthentication prompts](~/identity/authentication/concepts-azure-multi-factor-authentication-prompts-session-lifetime.md).
 
 
 ## Next steps

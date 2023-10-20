@@ -27,7 +27,7 @@ To get an access token, your app must be registered with the Microsoft identity 
 
 ### Get an access token
 
-Use the [OAuth 2.0 client credentials grant flow](../develop/v2-oauth2-client-creds-grant-flow.md) to acquire the access token by using the Microsoft identity platform. Use a trusted library for this purpose. In this tutorial, we use the Microsoft Authentication Library [MSAL](../develop/msal-overview.md). MSAL simplifies adding authentication and authorization to an app that can call a secure web API.
+Use the [OAuth 2.0 client credentials grant flow](~/identity-platform/v2-oauth2-client-creds-grant-flow.md) to acquire the access token by using the Microsoft identity platform. Use a trusted library for this purpose. In this tutorial, we use the Microsoft Authentication Library [MSAL](~/identity-platform/msal-overview.md). MSAL simplifies adding authentication and authorization to an app that can call a secure web API.
 
 # [HTTP](#tab/http)
 
@@ -137,9 +137,9 @@ In the preceding code, provide the following parameters:
 | Client secret | Required | The client secret that you generated for your app.|
 | Scopes | Required | Must be set to `3db474b9-6a0c-4840-96ac-1fceb342124f/.default`. This will produce an access token with a **roles** claim of `VerifiableCredential.Create.All`. |
 
-For more information about how to get an access token by using a console app's identity, see one of the following articles: [C#](../develop/quickstart-v2-netcore-daemon.md), [Python](../develop/quickstart-v2-python-daemon.md), [Node.js](../develop/quickstart-v2-nodejs-console.md), or [Java](../develop/quickstart-v2-java-daemon.md).
+For more information about how to get an access token by using a console app's identity, see one of the following articles: [C#](~/identity-platform/quickstart-v2-netcore-daemon.md), [Python](~/identity-platform/quickstart-v2-python-daemon.md), [Node.js](~/identity-platform/quickstart-v2-nodejs-console.md), or [Java](~/identity-platform/quickstart-v2-java-daemon.md).
 
-You can also [access a token request with a certificate](../develop/v2-oauth2-client-creds-grant-flow.md) instead of client secret.
+You can also [access a token request with a certificate](~/identity-platform/v2-oauth2-client-creds-grant-flow.md) instead of client secret.
 
 # [HTTP](#tab/http)
 

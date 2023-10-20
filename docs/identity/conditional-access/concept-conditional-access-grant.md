@@ -30,7 +30,7 @@ The control for blocking access considers any assignments and prevents access ba
 
 Administrators can choose to enforce one or more controls when granting access. These controls include the following options: 
 
-- [Require multifactor authentication (Microsoft Entra multifactor authentication)](../authentication/concept-mfa-howitworks.md)
+- [Require multifactor authentication (Microsoft Entra multifactor authentication)](~/identity/authentication/concept-mfa-howitworks.md)
 - [Require authentication strength](#require-authentication-strength)
 - [Require device to be marked as compliant (Microsoft Intune)](/mem/intune/protect/device-compliance-get-started)
 - [Require Microsoft Entra hybrid joined device](../devices/concept-hybrid-join.md)
@@ -47,13 +47,13 @@ By default, Conditional Access requires all selected controls.
 
 ### Require multifactor authentication
 
-Selecting this checkbox requires users to perform Microsoft Entra multifactor authentication. You can find more information about deploying Microsoft Entra multifactor authentication in [Planning a cloud-based Microsoft Entra multifactor authentication deployment](../authentication/howto-mfa-getstarted.md).
+Selecting this checkbox requires users to perform Microsoft Entra multifactor authentication. You can find more information about deploying Microsoft Entra multifactor authentication in [Planning a cloud-based Microsoft Entra multifactor authentication deployment](~/identity/authentication/howto-mfa-getstarted.md).
 
 [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/hello-overview) satisfies the requirement for multifactor authentication in Conditional Access policies.
 
 ### Require authentication strength
 
-Administrators can choose to require [specific authentication strengths](../authentication/concept-authentication-strengths.md) in their Conditional Access policies. These authentication strengths are defined in the **Microsoft Entra admin center** > **Protection** > **Authentication methods** > **Authentication strengths**. Administrators can choose to create their own or use the built-in versions.
+Administrators can choose to require [specific authentication strengths](~/identity/authentication/concept-authentication-strengths.md) in their Conditional Access policies. These authentication strengths are defined in the **Microsoft Entra admin center** > **Protection** > **Authentication methods** > **Authentication strengths**. Administrators can choose to create their own or use the built-in versions.
 
 ### Require device to be marked as compliant
 
@@ -79,7 +79,7 @@ You can use the Microsoft Defender for Endpoint app with the approved client app
 
 Organizations can choose to use the device identity as part of their Conditional Access policy. Organizations can require that devices are Microsoft Entra hybrid joined by using this checkbox. For more information about device identities, see [What is a device identity?](../devices/overview.md).
 
-When you use the [device-code OAuth flow](../develop/v2-oauth2-device-code.md), the required grant control for the managed device or a device state condition isn't supported. This is because the device that is performing authentication can't provide its device state to the device that is providing a code. Also, the device state in the token is locked to the device performing authentication. Use the **Require multifactor authentication** control instead.
+When you use the [device-code OAuth flow](~/identity-platform/v2-oauth2-device-code.md), the required grant control for the managed device or a device state condition isn't supported. This is because the device that is performing authentication can't provide its device state to the device that is providing a code. Also, the device state in the token is locked to the device performing authentication. Use the **Require multifactor authentication** control instead.
 
 The **Require Microsoft Entra hybrid joined device** control:
    - Only supports domain-joined Windows down-level (before Windows 10) and Windows current (Windows 10+) devices.

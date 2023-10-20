@@ -34,7 +34,7 @@ This tutorial assumes that you've met the following prerequisites:
 
 Microsoft Entra ID uses a concept called *assignments* to determine which users should receive access to selected apps. In the context of automatic user provisioning, only the users or groups that have been assigned to an application in Microsoft Entra ID are synchronized.
 
-Before you configure and enable automatic user provisioning, you should decide which users or groups in Microsoft Entra ID need access to Foodee. After you've made this determination, you can assign these users or groups to Foodee by following the instructions in [Assign a user or group to an enterprise app](../manage-apps/assign-user-or-group-access-portal.md).
+Before you configure and enable automatic user provisioning, you should decide which users or groups in Microsoft Entra ID need access to Foodee. After you've made this determination, you can assign these users or groups to Foodee by following the instructions in [Assign a user or group to an enterprise app](~/identity/enterprise-apps/assign-user-or-group-access-portal.md).
 
 ## Important tips for assigning users to Foodee 
 
@@ -66,7 +66,7 @@ To configure Foodee for automatic user provisioning by using Microsoft Entra ID,
 
 To add Foodee from the Microsoft Entra application gallery, do the following:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 
 	![The Enterprise applications pane](common/enterprise-applications.png)
@@ -88,7 +88,7 @@ In this section, you configure the Microsoft Entra provisioning service to creat
 
 Configure automatic user provisioning for Foodee in Microsoft Entra ID by doing the following:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 
 	![Enterprise applications pane](common/enterprise-applications.png)
@@ -160,7 +160,7 @@ You can use the **Current Status** section to monitor progress and follow links 
 ## Additional resources
 
 * [Manage user account provisioning for enterprise apps](../app-provisioning/configure-automatic-user-provisioning-portal.md)
-* [What is application access and single sign-on with Microsoft Entra ID?](../manage-apps/what-is-single-sign-on.md)
+* [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
 ## Next steps
 

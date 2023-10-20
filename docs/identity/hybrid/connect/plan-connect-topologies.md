@@ -144,7 +144,7 @@ It's possible to have more than one staging server when you want to have multipl
 <a name='multiple-azure-ad-tenants'></a>
 
 ## Multiple Microsoft Entra tenants
-We recommend having a single tenant in Microsoft Entra ID for an organization. Before you plan to use multiple Microsoft Entra tenants, see the article [Administrative units management in Microsoft Entra ID](../../roles/administrative-units.md). It covers common scenarios where you can use a single tenant.
+We recommend having a single tenant in Microsoft Entra ID for an organization. Before you plan to use multiple Microsoft Entra tenants, see the article [Administrative units management in Microsoft Entra ID](~/identity/role-based-access-control/administrative-units.md). It covers common scenarios where you can use a single tenant.
 
 <a name='sync-ad-objects-to-multiple-azure-ad-tenants'></a>
 

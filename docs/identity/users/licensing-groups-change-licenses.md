@@ -42,7 +42,7 @@ Before you update the license assignments, it's important to verify certain assu
 
 On the **Update license assignments** page, if you see that some checkboxes are unavailable, it indicates services that can't be changed because they're inherited from a group license.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [License Administrator](../roles/permissions-reference.md#license-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [License Administrator](~/identity/role-based-access-control/permissions-reference.md#license-administrator).
 1. Select Microsoft Entra ID.
 1. Select **All users** > **Users**, and then open the **Profile** page for a user.
 1. Select **Licenses**.
@@ -58,7 +58,7 @@ Microsoft Entra ID applies the new licenses and removes the old licenses simulta
 
 ## Change group license assignments
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [License Administrator](../roles/permissions-reference.md#license-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [License Administrator](~/identity/role-based-access-control/permissions-reference.md#license-administrator).
 1. Select Microsoft Entra ID.
 1. Select **All groups** > **Groups**, and then open the **Overview** page for a group.
 1. Select **Licenses**.

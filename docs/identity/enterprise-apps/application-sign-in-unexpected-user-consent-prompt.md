@@ -35,7 +35,7 @@ Further prompts can be expected in various scenarios:
 
 - The user who originally consented to the application was an administrator, but they didn't consent on-behalf of the entire organization.
 
-- The application is using [incremental and dynamic consent](../develop/permissions-consent-overview.md#consent) to request further permissions after consent was initially granted. Incremental and dynamic consent is often used when optional features of an application require permissions beyond those required for baseline functionality.
+- The application is using [incremental and dynamic consent](~/identity-platform/permissions-consent-overview.md#consent) to request further permissions after consent was initially granted. Incremental and dynamic consent is often used when optional features of an application require permissions beyond those required for baseline functionality.
 
 - Consent was revoked after being granted initially.
 
@@ -52,7 +52,7 @@ Further prompts can be expected in various scenarios:
 
 To ensure the permissions granted for the application are up-to-date, you can compare the permissions that are being requested by the application with the permissions already granted in the tenant. 
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
 1. Enter the name of the existing application in the search box, and then select the application from the search results.
 1. Under Security in the left-hand navigation, choose **Permissions**
@@ -78,8 +78,8 @@ Determining whether an individual user can consent to an application can be conf
 
 ## Next steps
 
-- [Apps, permissions, and consent in Azure Active Directory (v1.0 endpoint)](../develop/quickstart-register-app.md)
+- [Apps, permissions, and consent in Azure Active Directory (v1.0 endpoint)](~/identity-platform/quickstart-register-app.md)
 
-- [Scopes, permissions, and consent in the Microsoft identity platform (v2.0 endpoint)](../develop/permissions-consent-overview.md)
+- [Scopes, permissions, and consent in the Microsoft identity platform (v2.0 endpoint)](~/identity-platform/permissions-consent-overview.md)
 
 - [Unexpected error when performing consent to an application](application-sign-in-unexpected-user-consent-error.md)

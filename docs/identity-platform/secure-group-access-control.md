@@ -23,7 +23,7 @@ Microsoft Entra ID allows the use of groups to manage access to resources in an 
 - External groups synced from on-premises Active Directory
 - Administrator managed or self-service managed groups
 
-To learn more about the benefits of groups for access control, see [manage access to an application](../manage-apps/what-is-access-management.md).
+To learn more about the benefits of groups for access control, see [manage access to an application](~/identity/enterprise-apps/what-is-access-management.md).
 
 While developing an application, authorize access with the groups claim. To learn more, see how to [configure group claims for applications with Microsoft Entra ID](../hybrid/connect/how-to-connect-fed-group-claims.md).
 

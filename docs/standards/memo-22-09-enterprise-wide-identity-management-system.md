@@ -116,8 +116,8 @@ For apps that use legacy authentication protocols:
 Learn more
 
 * [Microsoft Entra integrations with authentication protocols](../architecture/auth-sync-overview.md)
-* [What is the Microsoft identity platform?](../develop/v2-overview.md)
-* [Secure hybrid access: Protect legacy apps with Microsoft Entra ID](../manage-apps/secure-hybrid-access.md)
+* [What is the Microsoft identity platform?](~/identity-platform/v2-overview.md)
+* [Secure hybrid access: Protect legacy apps with Microsoft Entra ID](~/identity/enterprise-apps/secure-hybrid-access.md)
 
 
 ## Connecting devices

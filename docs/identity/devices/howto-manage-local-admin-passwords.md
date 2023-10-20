@@ -75,11 +75,11 @@ LAPS is available to all customers with Microsoft Entra ID Free or higher licens
 
 ### Required roles or permission
 
-Other than the built-in Microsoft Entra roles of Cloud Device Administrator, Intune Administrator, and Global Administrator that are granted *device.LocalCredentials.Read.All*, you can use [Microsoft Entra custom roles](../roles/custom-create.md) or administrative units to authorize local administrator password recovery. For example,
+Other than the built-in Microsoft Entra roles of Cloud Device Administrator, Intune Administrator, and Global Administrator that are granted *device.LocalCredentials.Read.All*, you can use [Microsoft Entra custom roles](~/identity/role-based-access-control/custom-create.md) or administrative units to authorize local administrator password recovery. For example,
 
-- Custom roles must be assigned the *microsoft.directory/deviceLocalCredentials/password/read* permission to authorize local administrator password recovery. During the preview, you must create a custom role and grant permissions using the [Microsoft Graph API](../roles/custom-create.md#create-a-role-with-the-microsoft-graph-api) or [PowerShell](../roles/custom-create.md#create-a-role-using-powershell). Once you have created the custom role, you can assign it to users.
+- Custom roles must be assigned the *microsoft.directory/deviceLocalCredentials/password/read* permission to authorize local administrator password recovery. During the preview, you must create a custom role and grant permissions using the [Microsoft Graph API](~/identity/role-based-access-control/custom-create.md#create-a-role-with-the-microsoft-graph-api) or [PowerShell](~/identity/role-based-access-control/custom-create.md#create-a-role-using-powershell). Once you have created the custom role, you can assign it to users.
 
-- You can also create a Microsoft Entra ID [administrative unit](../roles/administrative-units.md), add devices, and assign the Cloud Device Administrator role scoped to the administrative unit to authorize local administrator password recovery.
+- You can also create a Microsoft Entra ID [administrative unit](~/identity/role-based-access-control/administrative-units.md), add devices, and assign the Cloud Device Administrator role scoped to the administrative unit to authorize local administrator password recovery.
 
 <a name='enabling-windows-laps-with-azure-ad'></a>
 
@@ -87,7 +87,7 @@ Other than the built-in Microsoft Entra roles of Cloud Device Administrator, Int
 
 To enable Windows LAPS with Microsoft Entra ID, you must take actions in Microsoft Entra ID and the devices you wish to manage. We recommend organizations [manage Windows LAPS using Microsoft Intune](/mem/intune/protect/windows-laps-policy). However, if your devices are Microsoft Entra joined but you're not using Microsoft Intune or Microsoft Intune isn't supported (like for Windows Server 2019/2022), you can still deploy Windows LAPS for Microsoft Entra ID manually. For more information, see the article [Configure Windows LAPS policy settings](/windows-server/identity/laps/laps-management-policy-settings).
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Device Administrator](../roles/permissions-reference.md#cloud-device-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Device Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-device-administrator).
 1. Browse to **Identity** > **Devices** > **Overview** > **Device settings**
 1. Select **Yes** for the Enable Local Administrator Password Solution (LAPS) setting and select **Save**. You may also use the Microsoft Graph API [Update deviceRegistrationPolicy](/graph/api/deviceregistrationpolicy-update?view=graph-rest-beta&preserve-view=true).
 1. Configure a client-side policy and set the **BackUpDirectory** to be Microsoft Entra ID.
@@ -105,13 +105,13 @@ The following built-in roles are granted these actions by default:
 
 |Built-in role|microsoft.directory/deviceLocalCredentials/standard/read and microsoft.directory/deviceLocalCredentials/password/read|microsoft.directory/deviceLocalCredentials/standard/read|
 |---|---|---|
-|[Global Administrator](../roles/permissions-reference.md#global-administrator)|Yes|Yes|
-|[Cloud Device Administrator](../roles/permissions-reference.md#cloud-device-administrator)|Yes|Yes|
-|[Intune Service Administrator](../roles/permissions-reference.md#intune-administrator)|Yes|Yes|
-|[Global Reader](../roles/permissions-reference.md#global-reader)|No|Yes|
-|[Helpdesk Administrator](../roles/permissions-reference.md#helpdesk-administrator)|No|Yes|
-|[Security Administrator](../roles/permissions-reference.md#security-administrator)|No|Yes|
-|[Security Reader](../roles/permissions-reference.md#security-reader)|No|Yes|
+|[Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator)|Yes|Yes|
+|[Cloud Device Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-device-administrator)|Yes|Yes|
+|[Intune Service Administrator](~/identity/role-based-access-control/permissions-reference.md#intune-administrator)|Yes|Yes|
+|[Global Reader](~/identity/role-based-access-control/permissions-reference.md#global-reader)|No|Yes|
+|[Helpdesk Administrator](~/identity/role-based-access-control/permissions-reference.md#helpdesk-administrator)|No|Yes|
+|[Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator)|No|Yes|
+|[Security Reader](~/identity/role-based-access-control/permissions-reference.md#security-reader)|No|Yes|
 
 Any roles not listed are granted neither action.
 

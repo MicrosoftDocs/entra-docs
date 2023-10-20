@@ -187,7 +187,7 @@ Microsoft Authenticator app has four main functions:
 
 * **Multifactor authentication** with push notification or verification code
 * **Authentication broker** on iOS and Android devices fir SSO for applications using brokered authentication
-  * [Enable cross-app SSO on Android using MSAL](../../develop/msal-android-single-sign-on.md)
+  * [Enable cross-app SSO on Android using MSAL](~/identity-platform/msal-android-single-sign-on.md)
 * **Device registration** or workplace join, to Microsoft Entra ID, which is a requirement for Intune App Protection and Device Enrolment/Management
 * **Phone sign in**, which requires MFA and device registration
 
@@ -197,7 +197,7 @@ Microsoft Authenticator app has four main functions:
 
 Use the Microsoft Authenticator app for out-of-band verification. Instead of an automated phone call, or SMS, to the user during sign-in, MFA pushes a notification to the Microsoft Authenticator app on the user device. The user selects **Approve**, or the user enters a PIN or biometric and selects **Authenticate**.
 
-Learn more: [How it works: Microsoft Entra multifactor authentication](../../authentication/concept-mfa-howitworks.md)
+Learn more: [How it works: Microsoft Entra multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md)
 
 **Known issues** 
 
@@ -220,7 +220,7 @@ On Android and iOS. brokers like Microsoft Authenticator enable:
 In addition, applications can participate in other features:
 
 * [Microsoft Entra Conditional Access documentation](../../conditional-access/index.yml)
-* [Use Microsoft Authenticator or Intune Company Portal on Xamarin applications](../../develop/msal-net-use-brokers-with-xamarin-apps.md).
+* [Use Microsoft Authenticator or Intune Company Portal on Xamarin applications](~/identity-platform/msal-net-use-brokers-with-xamarin-apps.md).
 
 ### Known issues
 
@@ -268,7 +268,7 @@ When multiple users are registered on the same key, the sign-in screen shows acc
 
 To remove references to old UPNs, users reset the security key and re-register.
 
-Learn more: [Enable passwordless security key sign-in, Known issue, UPN changes](../../authentication/howto-authentication-passwordless-security-key.md#known-issues)
+Learn more: [Enable passwordless security key sign-in, Known issue, UPN changes](~/identity/authentication/howto-authentication-passwordless-security-key.md#known-issues)
 
 ## OneDrive known issues and workarounds
 
@@ -299,4 +299,4 @@ New meeting notes created after the UPN change aren't affected.
 
 * [Microsoft Entra Connect: Design concepts](./plan-connect-design-concepts.md)
 * [Microsoft Entra UserPrincipalName population](./plan-connect-userprincipalname.md)
-* [Microsoft identity platform ID tokens](../../develop/id-tokens.md)
+* [Microsoft identity platform ID tokens](~/identity-platform/id-tokens.md)

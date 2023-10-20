@@ -26,7 +26,7 @@ As an administrator, you [create an access review of groups or applications](cre
 ## Prerequisites
  
 - Microsoft Entra ID P2 or Microsoft Entra ID Governance
-- Global administrator, User administrator, or Identity Governance administrator to manage access of reviews on groups and applications. Global administrators and Privileged Role administrators can manage reviews of role-assignable groups See [Use Microsoft Entra groups to manage role assignments](../roles/groups-concept.md)
+- Global administrator, User administrator, or Identity Governance administrator to manage access of reviews on groups and applications. Global administrators and Privileged Role administrators can manage reviews of role-assignable groups See [Use Microsoft Entra groups to manage role assignments](~/identity/role-based-access-control/groups-concept.md)
 - Security readers have read access.
  
 For more information, see [License requirements](access-reviews-overview.md#license-requirements).
@@ -38,7 +38,7 @@ For more information, see [License requirements](access-reviews-overview.md#lice
 
 You can track the progress of access reviews as they're completed.
  
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../roles/permissions-reference.md#identity-governance-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
 1. Browse to **Identity governance** > **Access Reviews**.
  

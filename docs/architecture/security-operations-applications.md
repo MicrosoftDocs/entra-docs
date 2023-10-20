@@ -26,7 +26,7 @@ This article provides guidance to monitor and alert on application events. It's 
 
 * Gather insights that enable you to build and configure new applications more securely
 
-If you're unfamiliar with how applications work in Microsoft Entra ID, see [Apps and service principals in Microsoft Entra ID](../develop/app-objects-and-service-principals.md).
+If you're unfamiliar with how applications work in Microsoft Entra ID, see [Apps and service principals in Microsoft Entra ID](~/identity-platform/app-objects-and-service-principals.md).
 
 > [!NOTE]
 > If you have not yet reviewed the [Microsoft Entra security operations overview](security-operations-introduction.md), consider doing so now.
@@ -156,7 +156,7 @@ The act of consenting to an application isn't malicious. However, investigate ne
 
 For more information on consent operations, see the following resources:
 
-* [Managing consent to applications and evaluating consent requests in Microsoft Entra ID](../manage-apps/manage-consent-requests.md)
+* [Managing consent to applications and evaluating consent requests in Microsoft Entra ID](~/identity/enterprise-apps/manage-consent-requests.md)
 
 * [Detect and Remediate Illicit Consent Grants - Office 365](/microsoft-365/security/office-365-security/detect-and-remediate-illicit-consent-grants)
 
@@ -172,7 +172,7 @@ For more information on consent operations, see the following resources:
 
 There are several flows in the  OAuth 2.0 protocol. The recommended flow for an application depends on the type of application being built. In some cases, there's a choice of flows available to the application. For this case, some authentication flows are recommended over others. Specifically, avoid resource owner password credentials (ROPC) because these require the user to expose their current password credentials to the application. The application then uses the credentials to authenticate the user against the identity provider. Most applications should use the auth code flow, or auth code flow with Proof Key for Code Exchange (PKCE), because this flow is recommended.
 
-The only scenario where ROPC is suggested is for automated application testing. See [Run automated integration tests](../develop/test-automate-integration-testing.md) for details.  
+The only scenario where ROPC is suggested is for automated application testing. See [Run automated integration tests](~/identity-platform/test-automate-integration-testing.md) for details.  
 
 Device code flow is another OAuth 2.0 protocol flow for input-constrained devices and isn't used in all environments. When device code flow appears in the environment, and isn't used in an input constrained device scenario. More investigation is warranted for a misconfigured application or potentially something malicious.
 
@@ -180,8 +180,8 @@ Monitor application authentication using the following formation:
 
 | What to monitor| Risk level| Where| Filter/sub-filter| Notes |
 | - | - | - | - | - |
-| Applications that are using the ROPC authentication flow|Medium | Microsoft Entra sign-in log|Status=Success<br><br>Authentication Protocol-ROPC| High level of trust is being placed in this application as the credentials can be cached or stored. Move if possible to a more secure authentication flow. This should only be used in automated testing of applications, if at all. For more information, see [Microsoft identity platform and OAuth 2.0 Resource Owner Password Credentials](../develop/v2-oauth-ropc.md)<br><br>[Sigma rules](https://github.com/SigmaHQ/sigma/tree/master/rules/cloud/azure)|
-|Applications using the Device code flow |Low to medium|Microsoft Entra sign-in log|Status=Success<br><br>Authentication Protocol-Device Code|Device code flows are used for input constrained devices, which may not be in all environments. If successful device code flows appear, without a need for them, investigate for validity. For more information, see [Microsoft identity platform and the OAuth 2.0 device authorization grant flow](../develop/v2-oauth2-device-code.md)<br><br>[Sigma rules](https://github.com/SigmaHQ/sigma/tree/master/rules/cloud/azure)|
+| Applications that are using the ROPC authentication flow|Medium | Microsoft Entra sign-in log|Status=Success<br><br>Authentication Protocol-ROPC| High level of trust is being placed in this application as the credentials can be cached or stored. Move if possible to a more secure authentication flow. This should only be used in automated testing of applications, if at all. For more information, see [Microsoft identity platform and OAuth 2.0 Resource Owner Password Credentials](~/identity-platform/v2-oauth-ropc.md)<br><br>[Sigma rules](https://github.com/SigmaHQ/sigma/tree/master/rules/cloud/azure)|
+|Applications using the Device code flow |Low to medium|Microsoft Entra sign-in log|Status=Success<br><br>Authentication Protocol-Device Code|Device code flows are used for input constrained devices, which may not be in all environments. If successful device code flows appear, without a need for them, investigate for validity. For more information, see [Microsoft identity platform and the OAuth 2.0 device authorization grant flow](~/identity-platform/v2-oauth2-device-code.md)<br><br>[Sigma rules](https://github.com/SigmaHQ/sigma/tree/master/rules/cloud/azure)|
 
 ## Application configuration changes
 

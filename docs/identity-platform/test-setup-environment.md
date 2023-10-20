@@ -67,7 +67,7 @@ You can [manually create a tenant](quickstart-create-new-tenant.md), which will 
 
 For convenience, you may want to invite yourself and other members of your development team to be guest users in the tenant. This will create separate guest objects in the test tenant, but means you only have to manage one set of credentials for your corporate account and your test account.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Developer](../roles/permissions-reference.md#application-developer).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Developer](~/identity/role-based-access-control/permissions-reference.md#application-developer).
 1. Browse to **Identity** > **Users** > **All users**.
 1. Select **New user** > **Invite external user** and invite your work account email address.
 1. Repeat for other members of the development and/or testing team for your application.
@@ -97,14 +97,14 @@ If your app will primarily be used by a single organization (commonly referred t
 
 Replicating Conditional Access policies ensures you don't encounter unexpected blocked access when moving to production and your application can appropriately handle the errors it's likely to receive.
 
-Viewing your production tenant Conditional Access policies may need to be performed by a [Conditional Access Administrator](../roles/permissions-reference.md#conditional-access-administrator).
+Viewing your production tenant Conditional Access policies may need to be performed by a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
 
 1. Go to **Identity** > **Applications** > **Enterprise applications** > **Conditional Access**.
 1. View the list of policies in your tenant. Click the first one.
 1. Navigate to **Cloud apps or actions**.
 1. If the policy only applies to a select group of apps, then move on to the next policy. If not, then it will likely apply to your app as well when you move to production. You should copy the policy over to your test tenant.
 
-In a new tab or browser session, sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../roles/permissions-reference.md#conditional-access-administrator) to access your test tenant.
+In a new tab or browser session, sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) to access your test tenant.
 
 1. Browse to **Protection** > **Conditional Access**.
 1. Select **Create new policy**

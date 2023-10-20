@@ -32,7 +32,7 @@ To download and install the My Apps Secure Sign-in Extension, use one of the fol
 
 To test SAML-based single sign-on between Microsoft Entra ID and a target application:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
 1. From the list of enterprise applications, select the application for which you want to test single sign-on, and then from the options on the left, select **Single sign-on**.
 1. To open the SAML-based single sign-on testing experience, go to **Test single sign-on** (step 5). If the **Test** button is greyed out, you need to fill out and save the required attributes first in the **Basic SAML Configuration** section.
@@ -88,7 +88,7 @@ To resolve the error, follow these steps, or watch this [short video about how t
    - Claims issued in the token
    - Certificate used to sign the token.
 
-     For more information on the SAML response, see [Single Sign-on SAML protocol](../develop/single-sign-on-saml-protocol.md).
+     For more information on the SAML response, see [Single Sign-on SAML protocol](~/identity-platform/single-sign-on-saml-protocol.md).
 
 1. Now that you've reviewed the SAML response, see [Error on an application's page after signing in](application-sign-in-problem-application-error.md) for guidance on how to resolve the problem.
 1. If you're still not able to sign in successfully, you can ask the application vendor what is missing from the SAML response.

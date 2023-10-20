@@ -126,7 +126,7 @@ When BTP and IAS have been configured for user **authentication** via federation
 
 #### What are we recommending?
 
-We recommend that you don't put any authorization directly in Microsoft Entra itself and explicitly turn off "[User assignment required](../manage-apps/assign-user-or-group-access-portal.md)" on the Enterprise Application in Microsoft Entra ID. Note that for SAML applications, this setting is enabled by default, so you must take explicit action to disable it.
+We recommend that you don't put any authorization directly in Microsoft Entra itself and explicitly turn off "[User assignment required](~/identity/enterprise-apps/assign-user-or-group-access-portal.md)" on the Enterprise Application in Microsoft Entra ID. Note that for SAML applications, this setting is enabled by default, so you must take explicit action to disable it.
 
 #### Why this recommendation?
 
@@ -136,7 +136,7 @@ While that could be a valid reason for using "User assignment required", it does
 
 #### Summary of implementation
 
-On the Microsoft Entra Enterprise Application representing the federation relation with IAS, disable "[User assignment required](../manage-apps/assign-user-or-group-access-portal.md)". This also means you can safely skip [assignment of users](../saas-apps/sap-hana-cloud-platform-identity-authentication-tutorial.md#assign-the-azure-ad-test-user).
+On the Microsoft Entra Enterprise Application representing the federation relation with IAS, disable "[User assignment required](~/identity/enterprise-apps/assign-user-or-group-access-portal.md)". This also means you can safely skip [assignment of users](../saas-apps/sap-hana-cloud-platform-identity-authentication-tutorial.md#assign-the-azure-ad-test-user).
 
 <a name='3---use-azure-ad-groups-for-authorization-through-role-collections-in-iasbtp'></a>
 
@@ -233,7 +233,7 @@ Because IAS is the centralized component which has been set up to federate with 
 
 When configuring federation between Microsoft Entra ID and IAS, as well as between IAS and BTP, SAML metadata is exchanged which contains X.509 certificates used for encryption and cryptographic signatures of the SAML tokens being sent between both parties. These certificates have expiration dates and must be updated periodically (even in emergency situations when a certificate was compromised for example).
 
-Note: the default validity period of the initial Microsoft Entra certificate used to sign SAML assertions is 3 years (and note that the certificate is specific to the Enterprise Application, unlike OpenID Connect and OAuth 2.0 tokens which are signed by a global certificate in Microsoft Entra ID). You can choose to [generate a new certificate with a different expiration date](../manage-apps/tutorial-manage-certificates-for-federated-single-sign-on.md#customize-the-expiration-date-for-your-federation-certificate-and-roll-it-over-to-a-new-certificate), or create and import your own certificate.
+Note: the default validity period of the initial Microsoft Entra certificate used to sign SAML assertions is 3 years (and note that the certificate is specific to the Enterprise Application, unlike OpenID Connect and OAuth 2.0 tokens which are signed by a global certificate in Microsoft Entra ID). You can choose to [generate a new certificate with a different expiration date](~/identity/enterprise-apps/tutorial-manage-certificates-for-federated-single-sign-on.md#customize-the-expiration-date-for-your-federation-certificate-and-roll-it-over-to-a-new-certificate), or create and import your own certificate.
 
 When certificates expire, they can no longer be used, and new certificates must be configured. Therefore, a process must be established to keep the certificate configuration inside the relying party (which needs to validate the signatures) up to date with the actual certificates being used to sign the SAML tokens.
 
@@ -261,7 +261,7 @@ If the certificates are allowed to expire, or when they are replaced in time but
 
 #### Summary of implementation
 
-[Add an email notification address for certificate expiration](../manage-apps/tutorial-manage-certificates-for-federated-single-sign-on.md#add-email-notification-addresses-for-certificate-expiration) in Microsoft Entra ID and set it to a group mailbox so that it isn't sent to a single individual (who may even no longer have an account by the time the certificate is about to expire). By default, only the user who created the Enterprise Application will receive a notification.
+[Add an email notification address for certificate expiration](~/identity/enterprise-apps/tutorial-manage-certificates-for-federated-single-sign-on.md#add-email-notification-addresses-for-certificate-expiration) in Microsoft Entra ID and set it to a group mailbox so that it isn't sent to a single individual (who may even no longer have an account by the time the certificate is about to expire). By default, only the user who created the Enterprise Application will receive a notification.
 
 Consider building automation to execute the entire certificate rollover process.  For example, one can periodically check for expiring certificates and replace them while updating all relying parties with the new metadata.
 

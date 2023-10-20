@@ -82,7 +82,7 @@ You can add any application that already exists in your organization, or any thi
 * Self-service connection of applications that use the [System for Cross-Domain Identity Management (SCIM) protocol for user provisioning](../app-provisioning/use-scim-to-provision-users-and-groups.md)
 * Ability to add links to any application in the [Office 365 app launcher](https://support.microsoft.com/office/meet-the-microsoft-365-app-launcher-79f12104-6fed-442f-96a0-eb089a3f476a) or [My Apps](https://myapplications.microsoft.com/)
 
-If you're looking for developer guidance on how to integrate custom apps with Microsoft Entra ID, see [Authentication Scenarios for Microsoft Entra ID](../develop/authentication-vs-authorization.md). When you develop an app that uses a modern protocol like [OpenId Connect/OAuth](../develop/v2-protocols.md) to authenticate users, you can register it with the Microsoft identity platform by using the [App registrations](../develop/quickstart-register-app.md) experience in the Azure portal.
+If you're looking for developer guidance on how to integrate custom apps with Microsoft Entra ID, see [Authentication Scenarios for Microsoft Entra ID](~/identity-platform/authentication-vs-authorization.md). When you develop an app that uses a modern protocol like [OpenId Connect/OAuth](~/identity-platform/v2-protocols.md) to authenticate users, you can register it with the Microsoft identity platform by using the [App registrations](~/identity-platform/quickstart-register-app.md) experience in the Azure portal.
 
 ### Authentication Types
 
@@ -96,7 +96,7 @@ With Microsoft Entra application proxy, you can provide access to applications l
 
 ### Integrating custom applications
 
-If you want to add your custom application to the Azure Application Gallery, see [Publish your app to the Microsoft Entra app gallery](../manage-apps/v2-howto-app-gallery-listing.md).
+If you want to add your custom application to the Azure Application Gallery, see [Publish your app to the Microsoft Entra app gallery](~/identity/enterprise-apps/v2-howto-app-gallery-listing.md).
 
 ## Managing access to applications
 

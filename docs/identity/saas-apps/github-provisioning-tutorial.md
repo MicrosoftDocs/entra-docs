@@ -38,7 +38,7 @@ Microsoft Entra ID uses a concept called "assignments" to determine which users 
 
 Before configuring and enabling the provisioning service, you need to decide what users and/or groups in Microsoft Entra ID represent the users who need access to your GitHub app. Once decided, you can assign these users to your GitHub app by following the instructions here:
 
-For more information, see [Assign a user or group to an enterprise app](../manage-apps/assign-user-or-group-access-portal.md).
+For more information, see [Assign a user or group to an enterprise app](~/identity/enterprise-apps/assign-user-or-group-access-portal.md).
 
 ### Important tips for assigning users to GitHub
 
@@ -54,7 +54,7 @@ This section guides you through connecting your Microsoft Entra ID to GitHub's S
 
 ### Configure automatic user account provisioning to GitHub in Microsoft Entra ID
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 
 2. If you have already configured GitHub for single sign-on, search for your instance of GitHub using the search field. Otherwise, select **Add** and search for **GitHub** in the application gallery. Select GitHub from the search results, and add it to your list of applications.
@@ -94,7 +94,7 @@ For more information on how to read the Microsoft Entra provisioning logs, see [
 ## Additional resources
 
 * [Managing user account provisioning for Enterprise Apps](../app-provisioning/configure-automatic-user-provisioning-portal.md)
-* [What is application access and single sign-on with Microsoft Entra ID?](../manage-apps/what-is-single-sign-on.md)
+* [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
 ## Next steps
 

@@ -18,11 +18,11 @@ You can use the Microsoft Entra admin center and the Azure portal to manage Micr
 
 ## Prerequisites
 
-Only certain Microsoft Entra roles are authorized to manage Microsoft Support access requests. To manage Microsoft Support access requests, a role must have the permission `microsoft.azure.supportTickets/allEntities/allTasks`. To see which Microsoft Entra roles have this permission, search the [Microsoft Entra built-in roles](../roles/permissions-reference.md) for the required permission.
+Only certain Microsoft Entra roles are authorized to manage Microsoft Support access requests. To manage Microsoft Support access requests, a role must have the permission `microsoft.azure.supportTickets/allEntities/allTasks`. To see which Microsoft Entra roles have this permission, search the [Microsoft Entra built-in roles](~/identity/role-based-access-control/permissions-reference.md) for the required permission.
 
 ## View support access requests
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Service Support Administrator](../roles/permissions-reference.md#service-support-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Service Support Administrator](~/identity/role-based-access-control/permissions-reference.md#service-support-administrator).
 
 1. Browse to **Learn & support** > **Diagnose and solve problems**.
 

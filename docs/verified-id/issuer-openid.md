@@ -36,7 +36,7 @@ Examples of the HTTP requests sent to your identity provider are included below.
 
 To receive a verifiable credential, your users need to sign into your IDP from the Microsoft Authenticator app. 
 
-To enable this exchange, register an application with your identity provider. If you are using Microsoft Entra ID, you can find the instructions [here](../develop/quickstart-register-app.md). Use the following values when registering.
+To enable this exchange, register an application with your identity provider. If you are using Microsoft Entra ID, you can find the instructions [here](~/identity-platform/quickstart-register-app.md). Use the following values when registering.
 
 | Setting | Value |
 | ------- | ----- |

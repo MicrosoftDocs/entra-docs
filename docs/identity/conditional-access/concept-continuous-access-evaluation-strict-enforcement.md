@@ -71,7 +71,7 @@ Repeat steps 2 and 3 with expanding groups of users until Strictly Enforce Locat
 
 Administrators can investigate the Sign-in logs to find cases with **IP address (seen by resource)**.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Reader](../roles/permissions-reference.md#global-reader).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Reader](~/identity/role-based-access-control/permissions-reference.md#global-reader).
 1. Browse to **Identity** > **Monitoring & health** > **Sign-in logs**.
 1. Find events to review by adding filters and columns to filter out unnecessary information.
    1. Add the **IP address (seen by resource)** column and filter out any blank items to narrow the scope. The **IP address (seen by resource)** is blank when that IP seen by Microsoft Entra ID matches the IP address seen by the resource.
@@ -111,6 +111,6 @@ Administrators can investigate the Sign-in logs to find cases with **IP address 
 ## Next steps
 
 - [Continuous access evaluation in Microsoft Entra ID](concept-continuous-access-evaluation.md)
-- [Claims challenges, claims requests, and client capabilities](../develop/claims-challenge.md)
-- [How to use continuous access evaluation enabled APIs in your applications](../develop/app-resilience-continuous-access-evaluation.md)
+- [Claims challenges, claims requests, and client capabilities](~/identity-platform/claims-challenge.md)
+- [How to use continuous access evaluation enabled APIs in your applications](~/identity-platform/app-resilience-continuous-access-evaluation.md)
 - [Monitor and troubleshoot sign-ins with continuous access evaluation](howto-continuous-access-evaluation-troubleshoot.md#potential-ip-address-mismatch-between-azure-ad-and-resource-provider)

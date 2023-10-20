@@ -62,7 +62,7 @@ We detect risk on workload identities across sign-in behavior and offline indica
 
 Organizations can find workload identities that have been flagged for risk in one of two locations:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Reader](../roles/permissions-reference.md#security-reader).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Reader](~/identity/role-based-access-control/permissions-reference.md#security-reader).
 1. Browse to **Protection** > **Identity Protection** > **Risky workload identities**.
    
 :::image type="content" source="media/concept-workload-identity-risk/workload-identity-detections-in-risk-detections-report.png" alt-text="Screenshot showing risks detected against workload identities in the report." lightbox="media/concept-workload-identity-risk/workload-identity-detections-in-risk-detections-report.png":::

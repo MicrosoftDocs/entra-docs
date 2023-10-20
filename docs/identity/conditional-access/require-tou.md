@@ -40,7 +40,7 @@ This section provides you with the steps to create a sample ToU. When you create
 
 1. In Microsoft Word, create a new document.
 1. Type **My terms of use**, and then save the document on your computer as **mytou.pdf**.
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../roles/permissions-reference.md#conditional-access-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Protection** > **Conditional Access** > **Terms of use**.
 
 
@@ -104,4 +104,4 @@ When no longer needed, delete the test user and the Conditional Access policy:
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Require MFA for specific apps](../authentication/tutorial-enable-azure-mfa.md)
+> [Require MFA for specific apps](~/identity/authentication/tutorial-enable-azure-mfa.md)

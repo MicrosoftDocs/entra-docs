@@ -48,7 +48,7 @@ Follow these instructions to configure writeback of user email addresses and use
 
 **To configure Workday Writeback connector:**
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
 1. Search for **Workday Writeback**, and add that app from the gallery.
 1. After the app is added and the app details screen is shown, select **Provisioning**.

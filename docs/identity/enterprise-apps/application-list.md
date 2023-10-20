@@ -30,15 +30,15 @@ When filtered to **All Applications**, the **All Applications** **List** shows e
 - When signing up for, or signing in to, a third-party application integrated with Microsoft Entra ID. One example is [Smartsheet](https://app.smartsheet.com/b/home) or [DocuSign](https://www.docusign.net/member/MemberLogin.aspx).
 - Microsoft apps such as Microsoft 365.
 - When you use managed identities for Azure resources. For more information, see [Managed identity types](../managed-identities-azure-resources/overview.md#managed-identity-types).
-- When you add a new application registration by creating a custom-developed application using the [Application Registry](../develop/quickstart-register-app.md)
-- When you add a new application registration by creating a custom-developed application using the [V2.0 Application Registration portal](../develop/quickstart-register-app.md)
+- When you add a new application registration by creating a custom-developed application using the [Application Registry](~/identity-platform/quickstart-register-app.md)
+- When you add a new application registration by creating a custom-developed application using the [V2.0 Application Registration portal](~/identity-platform/quickstart-register-app.md)
 - When you add an application, you’re developing using Visual Studio’s [ASP.NET Authentication Methods](/aspnet/visual-studio/overview/2013/creating-web-projects-in-visual-studio#orgauthoptions) or [Connected Services](https://devblogs.microsoft.com/visualstudio/connecting-to-cloud-services/)
 - When you create a service principal object using the [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation) module.
-- When you [consent to an application](../develop/howto-convert-app-to-be-multi-tenant.md) as an administrator to use data in your tenant
-- When a [user consents to an application](../develop/howto-convert-app-to-be-multi-tenant.md) to use data in your tenant
+- When you [consent to an application](~/identity-platform/howto-convert-app-to-be-multi-tenant.md) as an administrator to use data in your tenant
+- When a [user consents to an application](~/identity-platform/howto-convert-app-to-be-multi-tenant.md) to use data in your tenant
 - When you enable certain services that store data in your tenant. One example is Password Reset, which is modeled as a service principal to store your password reset policy securely.
 
-Learn more about how, and why, apps are added to your directory, see [How applications are added to Microsoft Entra ID](../develop/how-applications-are-added.md).
+Learn more about how, and why, apps are added to your directory, see [How applications are added to Microsoft Entra ID](~/identity-platform/how-applications-are-added.md).
 
 ## Next steps
 

@@ -50,4 +50,4 @@ Applications that the recommendation identified appear in the list of **Impacted
 - [Review the Microsoft Entra recommendations overview](overview-recommendations.md)
 - [Learn how to use Microsoft Entra recommendations](howto-use-recommendations.md)
 - [Explore the Microsoft Graph API properties for recommendations](/graph/api/resources/recommendations-api-overview)
-- [Learn about app and service principal objects in Microsoft Entra ID](../develop/app-objects-and-service-principals.md)
+- [Learn about app and service principal objects in Microsoft Entra ID](~/identity-platform/app-objects-and-service-principals.md)

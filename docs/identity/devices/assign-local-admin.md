@@ -38,16 +38,16 @@ By adding Microsoft Entra roles to the local administrators group, you can updat
 
 ## Manage the Global Administrator role
 
-To view and update the membership of the [Global Administrator](../roles/permissions-reference.md#global-administrator) role, see:
+To view and update the membership of the [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) role, see:
 
-- [View all members of an administrator role in Microsoft Entra ID](../roles/manage-roles-portal.md)
+- [View all members of an administrator role in Microsoft Entra ID](~/identity/role-based-access-control/manage-roles-portal.md)
 - [Assign a user to administrator roles in Microsoft Entra ID](../fundamentals/how-subscriptions-associated-directory.md)
 
 ## Manage the Azure AD Joined Device Local Administrator role 
 
-You can manage the [Azure AD Joined Device Local Administrator](../roles/permissions-reference.md#azure-ad-joined-device-local-administrator) role from **Device settings**. 
+You can manage the [Azure AD Joined Device Local Administrator](~/identity/role-based-access-control/permissions-reference.md#azure-ad-joined-device-local-administrator) role from **Device settings**. 
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Device Administrator](../roles/permissions-reference.md#cloud-device-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Device Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-device-administrator).
 1. Browse to **Identity** > **Devices** > **All devices** > **Device settings**.
 1. Select **Manage Additional local administrators on all Microsoft Entra joined devices**.
 1. Select **Add assignments** then choose the other administrators you want to add and select **Add**.

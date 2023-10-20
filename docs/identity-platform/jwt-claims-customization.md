@@ -16,7 +16,7 @@ ms.reviewer: rahulnagraj, alamaral
 
 # Customize claims issued in the JSON web token (JWT) for enterprise applications
 
-The Microsoft identity platform supports [single sign-on (SSO)](../manage-apps/what-is-single-sign-on.md) with most preintegrated applications in the Microsoft Entra application gallery and custom applications. When a user authenticates to an application through the Microsoft identity platform using the OIDC protocol, the Microsoft identity platform sends a token to the application. The application validates and uses the token to sign the user in instead of prompting for a username and password.
+The Microsoft identity platform supports [single sign-on (SSO)](~/identity/enterprise-apps/what-is-single-sign-on.md) with most preintegrated applications in the Microsoft Entra application gallery and custom applications. When a user authenticates to an application through the Microsoft identity platform using the OIDC protocol, the Microsoft identity platform sends a token to the application. The application validates and uses the token to sign the user in instead of prompting for a username and password.
 
 These JSON Web tokens (JWT) used by OIDC and OAuth applications contain pieces of information about the user known as *claims*. A claim is information that an identity provider states about a user inside the token they issue for that user. In an [OIDC response](v2-protocols-oidc.md), claims data is typically contained in the ID Token issued by the identity provider in the form of a JWT.
 
@@ -26,7 +26,7 @@ These JSON Web tokens (JWT) used by OIDC and OAuth applications contain pieces o
 
 To view or edit the claims issued in the JWT to the application:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
 1. Select the application, select **Single sign-on** in the left-hand menu, and then select **Edit** in the **Attributes & Claims** section.
 

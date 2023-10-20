@@ -21,9 +21,9 @@ You can customize the role claim in the access token that is received after an a
 ## Prerequisites
 
 - A Microsoft Entra subscription with a configured tenant. For more information, see [Quickstart: Set up a tenant](quickstart-create-new-tenant.md).
-- An enterprise application that has been added to the tenant. For more information, see [Quickstart: Add an enterprise application](../manage-apps/add-application-portal.md).
-- Single sign-on (SSO) configured for the application. For more information, see [Enable single sign-on for an enterprise application](../manage-apps/add-application-portal-setup-sso.md).
-- A user account that is assigned to the role. For more information, see [Quickstart: Create and assign a user account](../manage-apps/add-application-portal-assign-users.md).
+- An enterprise application that has been added to the tenant. For more information, see [Quickstart: Add an enterprise application](~/identity/enterprise-apps/add-application-portal.md).
+- Single sign-on (SSO) configured for the application. For more information, see [Enable single sign-on for an enterprise application](~/identity/enterprise-apps/add-application-portal-setup-sso.md).
+- A user account that is assigned to the role. For more information, see [Quickstart: Create and assign a user account](~/identity/enterprise-apps/add-application-portal-assign-users.md).
 
 > [!NOTE]
 > This article explains how to create, update, or delete application roles on the service principal using APIs. To use the new user interface for App Roles, see [Add app roles to your application and receive them in the token](./howto-add-app-roles-in-apps.md).
@@ -34,7 +34,7 @@ You can customize the role claim in the access token that is received after an a
 
 Use the following steps to locate the enterprise application:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
 1. Enter the name of the existing application in the search box, and then select the application from the search results.
 1. After the application is selected, copy the object ID from the overview pane.

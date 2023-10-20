@@ -66,7 +66,7 @@ Let's enable the custom banned password list and add some entries. You can add a
 
 To enable the custom banned password list and add entries to it, complete the following steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](../roles/permissions-reference.md#authentication-policy-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Protection** > **Authentication methods**, then **Password protection**.
 1. Set the option for **Enforce custom list** to *Yes*.
 1. Add strings to the **Custom banned password list**, one string per line. The following considerations and limitations apply to the custom banned password list:
@@ -109,7 +109,7 @@ To see the custom banned password list in action, try to change the password to 
 
 If you no longer want to use the custom banned password list you have configured as part of this tutorial, complete the following steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](../roles/permissions-reference.md#authentication-policy-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Protection** > **Authentication methods**, then **Password protection**.
 1. Set the option for **Enforce custom list** to *No*.
 1. To update the custom banned password configuration, select **Save**.

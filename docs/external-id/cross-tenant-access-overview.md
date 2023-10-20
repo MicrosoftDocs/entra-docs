@@ -149,8 +149,8 @@ To collaborate with a partner tenant in a different Microsoft Azure cloud, both 
 
 ## Custom roles for managing cross-tenant access settings
 
-Cross-tenant access settings can be managed with custom roles defined by your organization. This enables you to [define your own finely-scoped roles](../roles/custom-create.md) to manage cross-tenant access settings instead of using one of the built-in roles for management.
-Your organization can define custom roles to manage cross-tenant access settings. This allows you to create [your own finely-scoped roles](../roles/custom-create.md) to manage cross-tenant access settings instead of using built-in roles for management.
+Cross-tenant access settings can be managed with custom roles defined by your organization. This enables you to [define your own finely-scoped roles](~/identity/role-based-access-control/custom-create.md) to manage cross-tenant access settings instead of using one of the built-in roles for management.
+Your organization can define custom roles to manage cross-tenant access settings. This allows you to create [your own finely-scoped roles](~/identity/role-based-access-control/custom-create.md) to manage cross-tenant access settings instead of using built-in roles for management.
 ### Recommended custom roles
 
 #### Cross-tenant access administrator
@@ -217,7 +217,7 @@ Please find the list of recommended actions for this role below.
 | microsoft.directory/crossTenantAccessPolicy/partners/tenantRestrictions/update |
 
 ## Protect cross-tenant access administrative actions
-Any actions that modify cross-tenant access settings are considered protected actions and can be additionally protected with Conditional Access policies. For more information and configuration steps see [protected actions](../roles/protected-actions-overview.md).
+Any actions that modify cross-tenant access settings are considered protected actions and can be additionally protected with Conditional Access policies. For more information and configuration steps see [protected actions](~/identity/role-based-access-control/protected-actions-overview.md).
 
 ## Identify inbound and outbound sign-ins
 

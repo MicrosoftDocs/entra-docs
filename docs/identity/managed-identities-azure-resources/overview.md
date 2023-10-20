@@ -32,7 +32,7 @@ The following video shows how you can use managed identities:</br>
 Here are some of the benefits of using managed identities:
 
 - You don't need to manage credentials. Credentials aren’t even accessible to you.
-- You can use managed identities to authenticate to any resource that supports [Microsoft Entra authentication](../authentication/overview-authentication.md), including your own applications.
+- You can use managed identities to authenticate to any resource that supports [Microsoft Entra authentication](~/identity/authentication/overview-authentication.md), including your own applications.
 - Managed identities can be used at no extra cost.
 
 > [!NOTE]

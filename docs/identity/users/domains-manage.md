@@ -20,7 +20,7 @@ ms.collection: M365-identity-device-management
 ---
 # Managing custom domain names in your Microsoft Entra ID
 
-A domain name is an important part of the identifier for resources in many Microsoft Entra deployments. It's part of a user name or email address for a user, part of the address for a group, and is sometimes part of the app ID URI for an application. A resource in Microsoft Entra ID can include a domain name that's owned by the Microsoft Entra organization (sometimes called a tenant) that contains the resource. [Global Administrators](../roles/permissions-reference.md#global-administrator) and [Domain name administrators](../roles/permissions-reference.md#domain-name-administrator) can manage domains in Microsoft Entra ID. 
+A domain name is an important part of the identifier for resources in many Microsoft Entra deployments. It's part of a user name or email address for a user, part of the address for a group, and is sometimes part of the app ID URI for an application. A resource in Microsoft Entra ID can include a domain name that's owned by the Microsoft Entra organization (sometimes called a tenant) that contains the resource. [Global Administrators](~/identity/role-based-access-control/permissions-reference.md#global-administrator) and [Domain name administrators](~/identity/role-based-access-control/permissions-reference.md#domain-name-administrator) can manage domains in Microsoft Entra ID. 
 
 <a name='set-the-primary-domain-name-for-your-azure-ad-organization'></a>
 
@@ -30,7 +30,7 @@ A domain name is an important part of the identifier for resources in many Micro
 
 When your organization is created, the initial domain name, such as ‘contoso.onmicrosoft.com,’ is also the primary domain name. The primary domain is the default domain name for a new user when you create a new user. Setting a primary domain name streamlines the process for an administrator to create new users in the portal. To change the primary domain name:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](../roles/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 1. Select Microsoft Entra ID.
 3. Select **Custom domain names**.
   

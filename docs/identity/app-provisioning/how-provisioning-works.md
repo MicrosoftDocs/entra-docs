@@ -33,7 +33,7 @@ The **Microsoft Entra provisioning service** provisions users to SaaS apps and o
 
 The Microsoft Entra provisioning service uses the [SCIM 2.0 protocol](https://techcommunity.microsoft.com/t5/Identity-Standards-Blog/bg-p/IdentityStandards) for automatic provisioning. The service connects to the SCIM endpoint for the application, and uses SCIM user object schema and REST APIs to automate the provisioning and deprovisioning of users and groups. A SCIM-based provisioning connector is provided for most applications in the Microsoft Entra gallery. Developers use the SCIM 2.0 user management API in Microsoft Entra ID to build endpoints for their apps that integrate with the provisioning service. For details, see [Build a SCIM endpoint and configure user provisioning](../app-provisioning/use-scim-to-provision-users-and-groups.md).
 
-To request an automatic Microsoft Entra provisioning connector for an app that doesn't currently have one, see [Microsoft Entra Application Request](../manage-apps/v2-howto-app-gallery-listing.md).
+To request an automatic Microsoft Entra provisioning connector for an app that doesn't currently have one, see [Microsoft Entra Application Request](~/identity/enterprise-apps/v2-howto-app-gallery-listing.md).
 
 ## Authorization
 
@@ -54,7 +54,7 @@ When you configure provisioning to a SaaS application, one of the types of attri
 ## Scoping 
 ### Assignment-based scoping
 
-For outbound provisioning from Microsoft Entra ID to a SaaS application, relying on [user or group assignments](../manage-apps/assign-user-or-group-access-portal.md) is the most common way to determine which users are in scope for provisioning. Because user assignments are also used for enabling single sign-on, the same method can be used for managing both access and provisioning. Assignment-based scoping doesn't apply to inbound provisioning scenarios such as Workday and Successfactors.
+For outbound provisioning from Microsoft Entra ID to a SaaS application, relying on [user or group assignments](~/identity/enterprise-apps/assign-user-or-group-access-portal.md) is the most common way to determine which users are in scope for provisioning. Because user assignments are also used for enabling single sign-on, the same method can be used for managing both access and provisioning. Assignment-based scoping doesn't apply to inbound provisioning scenarios such as Workday and Successfactors.
 
 * **Groups.** With a Microsoft Entra ID P1 or P2 license plan, you can use groups to assign access to a SaaS application. Then, when the provisioning scope is set to **Sync only assigned users and groups**, the Microsoft Entra provisioning service provisions or deprovisions users based on whether they're members of a group that's assigned to the application. The group object itself isn't provisioned unless the application supports group objects. Ensure that groups assigned to your application have the property "SecurityEnabled" set to "True".
 
@@ -96,7 +96,7 @@ When the provisioning service is started, the first cycle will:
 
 1. Query all users and groups from the source system, retrieving all attributes defined in the [attribute mappings](customize-application-attributes.md).
 
-2. Filter the users and groups returned, using any configured [assignments](../manage-apps/assign-user-or-group-access-portal.md) or [attribute-based scoping filters](define-conditional-rules-for-provisioning-user-accounts.md).
+2. Filter the users and groups returned, using any configured [assignments](~/identity/enterprise-apps/assign-user-or-group-access-portal.md) or [attribute-based scoping filters](define-conditional-rules-for-provisioning-user-accounts.md).
 
 3. When a user is assigned or in scope for provisioning, the service queries the target system for a matching user using the specified [matching attributes](customize-application-attributes.md#understanding-attribute-mapping-properties). Example: If the userPrincipal name in the source system is the matching attribute and maps to userName in the target system, then the provisioning service queries the target system for userNames that match the userPrincipal name values in the source system.
 
@@ -116,7 +116,7 @@ After the initial cycle, all other cycles will:
 
 1. Query the source system for any users and groups that were updated since the last watermark was stored.
 
-2. Filter the users and groups returned, using any configured [assignments](../manage-apps/assign-user-or-group-access-portal.md) or [attribute-based scoping filters](define-conditional-rules-for-provisioning-user-accounts.md).
+2. Filter the users and groups returned, using any configured [assignments](~/identity/enterprise-apps/assign-user-or-group-access-portal.md) or [attribute-based scoping filters](define-conditional-rules-for-provisioning-user-accounts.md).
 
 3. When a user is assigned or in scope for provisioning, the service queries the target system for a matching user using the specified [matching attributes](customize-application-attributes.md#understanding-attribute-mapping-properties).
 

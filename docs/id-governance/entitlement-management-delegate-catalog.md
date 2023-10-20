@@ -43,7 +43,7 @@ Follow these steps to assign a user to the catalog creator role.
 
 **Prerequisite role:** Global Administrator or Identity Governance Administrator
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../roles/permissions-reference.md#identity-governance-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
 1. Browse to **Identity governance** > **Entitlement management** > **settings**.
 
@@ -63,7 +63,7 @@ To allow delegated roles, such as catalog creators and access package managers, 
 
 **Prerequisite role:** Global Administrator or Identity Governance Administrator
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../roles/permissions-reference.md#identity-governance-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
 1. Browse to **Identity** > **Users** > **User settings**.
 

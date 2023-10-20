@@ -72,7 +72,7 @@ Access to My Apps can be blocked due to a problem with the user’s account. Fol
 
 To check if a user’s account is present, follow these steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](../roles/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
 1. Search for the user you're interested in and select the row to view the details of the user.
 1. Check the properties of the user object to be sure that they look as you expect and no data is missing.
@@ -81,7 +81,7 @@ To check if a user’s account is present, follow these steps:
 
 To check a user’s account status, follow these steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](../roles/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
 1. Search for the user you're interested in and select the row with the user's details.
 1. Select **Profile**.
@@ -91,7 +91,7 @@ To check a user’s account status, follow these steps:
 
 To reset a user’s password, follow these steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](../roles/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
 1. Search for the user you're interested in and select the row with the user's details.
 1. Select the **Reset password** button at the top of the user pane.
@@ -103,14 +103,14 @@ To reset a user’s password, follow these steps:
 
 To enable self-service password reset, follow these deployment steps:
 
-- [Enable users to reset their Microsoft Entra passwords](../authentication/tutorial-enable-sspr.md)
-- [Enable users to reset or change their Active Directory on-premises passwords](../authentication/tutorial-enable-sspr.md)
+- [Enable users to reset their Microsoft Entra passwords](~/identity/authentication/tutorial-enable-sspr.md)
+- [Enable users to reset or change their Active Directory on-premises passwords](~/identity/authentication/tutorial-enable-sspr.md)
 
 ### Check a user’s multi-factor authentication status
 
 To check a user’s multi-factor authentication status, follow these steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](../roles/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
 1. Select the **Per-user MFA** button at the top of the pane.
 1. Once the **Multi-Factor Authentication** administration portal loads, ensure you are on the **Users** tab.
@@ -123,7 +123,7 @@ To check a user’s multi-factor authentication status, follow these steps:
 
 To check a user’s authentication contact info used for Multi-factor authentication, Conditional Access, Identity Protection, and Password Reset, follow these steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](../roles/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
 1. Search for the user you're interested in and select the row with the user's details.
 1. Select **Authentication method** under **Manage**.
@@ -133,7 +133,7 @@ To check a user’s authentication contact info used for Multi-factor authentica
 
 To check a user’s group memberships, follow these steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](../roles/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
 1. Search for the user you're interested in and select the row with the user's details.
 1. Select **Groups** to see which groups the user is a member of.
@@ -147,7 +147,7 @@ This is because My Apps currently reads up to 999 app role assignments to determ
 To check if a user has more than 999 app role assignments, follow these steps:
 
 1. Install the [**Microsoft.Graph**](https://github.com/microsoftgraph/msgraph-sdk-powershell) PowerShell module.
-1. Run `Connect-MgGraph -Scopes "User.ReadBasic.All Application.Read.All"`and sign in as at least a [User Administrator](../roles/permissions-reference.md#user-administrator)..
+1. Run `Connect-MgGraph -Scopes "User.ReadBasic.All Application.Read.All"`and sign in as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator)..
 1. Run `(Get-MgUserAppRoleAssignment -UserId "<user-id>" -PageSize 999).Count` to determine the number of app role assignments the user currently has granted.
 1. If the result is 999, the user likely has more than 999 app roles assignments.
 
@@ -155,7 +155,7 @@ To check if a user has more than 999 app role assignments, follow these steps:
 
 To check a user’s assigned licenses, follow these steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](../roles/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
 1. Search for the user you're interested in and select the row with the user's details.
 1. Select **Licenses** to see which licenses the user currently has assigned.
@@ -164,7 +164,7 @@ To check a user’s assigned licenses, follow these steps:
 
 To assign a license to a user, follow these steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](../roles/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
 1. Search for the user you're interested in and select the row with the user's details.
 1. Select **Licenses** to see which licenses the user currently has assigned.
@@ -181,7 +181,7 @@ Deep links or User access URLs are links your users may use to access their pass
 
 To check if you have the correct deep link, follow these steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
 1. Enter the name of the existing application in the search box, and then select the application from the search results.
 1. Find the label **User Access URL**. Your deep link should match this URL.

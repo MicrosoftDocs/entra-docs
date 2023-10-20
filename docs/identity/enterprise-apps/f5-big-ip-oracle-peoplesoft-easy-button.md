@@ -95,11 +95,11 @@ With the Easy Button, admins don't go between Microsoft Entra ID and a BIG-IP to
 
 Before a client or service accesses Microsoft Graph, the Microsoft identity platform must trust it.
 
-Learn more: [Quickstart: Register an application with the Microsoft identity platform](../develop/quickstart-register-app.md)
+Learn more: [Quickstart: Register an application with the Microsoft identity platform](~/identity-platform/quickstart-register-app.md)
 
 The following instructions help you create a tenant app registration to authorize Easy Button access to Graph. With these permissions, the BIG-IP pushes the configurations to establish a trust between a SAML SP instance for published application, and Microsoft Entra ID as the SAML IdP.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 2. Browse to **Identity** > **Applications** > **App registrations > New registration**.
 3. Enter an application **Name**.
 4. For **Accounts in this organizational directory only**, specify who uses the application.

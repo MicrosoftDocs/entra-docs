@@ -103,8 +103,8 @@ Welcome to what's new in Azure Active Directory application proxy documentation.
 
 ## April 2021
 
-Application proxy content has moved out of the [application management content set](../manage-apps/index.yml) and into its own content set.
+Application proxy content has moved out of the [application management content set](~/identity/enterprise-apps/index.yml) and into its own content set.
 
 ## March 2021
 
-To learn about new and updated content in March, see the [what's new in application management](../manage-apps/whats-new-docs.md) content page.
+To learn about new and updated content in March, see the [what's new in application management](~/identity/enterprise-apps/whats-new-docs.md) content page.

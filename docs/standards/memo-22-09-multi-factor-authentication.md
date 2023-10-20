@@ -29,9 +29,9 @@ Some federal agencies have deployed modern credentials such as FIDO2 security ke
 
 Learn more:
 
-* [FIDO2 security keys](../authentication/concept-authentication-passwordless.md#fido2-security-keys)
+* [FIDO2 security keys](~/identity/authentication/concept-authentication-passwordless.md#fido2-security-keys)
 * [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/hello-overview)
-* [Overview of Microsoft Entra certificate-based authentication](../authentication/concept-certificate-based-authentication.md)
+* [Overview of Microsoft Entra certificate-based authentication](~/identity/authentication/concept-certificate-based-authentication.md)
 
 Some agencies are modernizing their authentication credentials. There are multiple options for meeting phishing-resistant multifactor authentication requirements with Microsoft Entra ID. Microsoft recommends adopting phishing-resistant multifactor authentication method that matches the agency capabilities. Consider what's possible now for phishing-resistance multifactor authentication to improve the overall cybersecurity posture. Implement modern credentials. However, if the quickest path isn't a modern approach, take the step to begin the journey toward modern approaches.
 
@@ -40,11 +40,11 @@ Some agencies are modernizing their authentication credentials. There are multip
 ### Modern approaches
 
 * **FIDO2 security keys** are, according to the Cybersecurity & Infrastructure Security Agency (CISA) the gold standard of multifactor authentication
-  * See, [Passwordless authentication options for Microsoft Entra ID, FIDO2 security keys](../authentication/concept-authentication-passwordless.md#fido2-security-keys)
+  * See, [Passwordless authentication options for Microsoft Entra ID, FIDO2 security keys](~/identity/authentication/concept-authentication-passwordless.md#fido2-security-keys)
   * Go to cisa.gov for [More than a Password](https://www.cisa.gov/mfa)
 * **Microsoft Entra certificate authentication** without dependency on a federated identity provider. 
   * This solution includes smart card implementations: Common Access Card (CAC), Personal Identity Verification (PIV), and derived PIV credentials for mobile devices or security keys
-  * See, [Overview of Microsoft Entra certificate-based authentication](../authentication/concept-certificate-based-authentication.md)
+  * See, [Overview of Microsoft Entra certificate-based authentication](~/identity/authentication/concept-certificate-based-authentication.md)
 * **Windows Hello for Business** has phishing-resistant multifactor authentication
   * See, [Windows Hello for Business Deployment Overview](/windows/security/identity-protection/hello-for-business/hello-deployment-guide)
   * See, [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/)
@@ -53,7 +53,7 @@ Some agencies are modernizing their authentication credentials. There are multip
 
 Microsoft Authenticator and Conditional Access policies enforce managed devices: Microsoft Entra hybrid joined devices or devices marked as compliant. Install Microsoft Authenticator on devices accessing applications protected by Microsoft Entra ID.
  
-Learn more: [Authentication methods in Microsoft Entra ID - Microsoft Authenticator app](../authentication/concept-authentication-authenticator-app.md)
+Learn more: [Authentication methods in Microsoft Entra ID - Microsoft Authenticator app](~/identity/authentication/concept-authentication-authenticator-app.md)
 
    >[!Important]
    >To meet the phishing-resistant requirement: Manage only the devices accessing the protected application. Users allowed to use Microsoft Authenticator are in scope for Conditional Access policy requiring managed devices for access. A Conditional Access policy blocks access to the Microsoft Intune Enrollment Cloud App. Users allowed to use Microsoft Authenticator are in scope for this Conditional Access policy. Use the same group(s) to allow Microsoft Authenticator authentication in Conditional Access policies to ensure that users enabled for the authentication method are in scope for both policies. This Conditional Access policy prevents the most significant vector of phishing threats from malicious external actors. It also prevents malicious actor from phishing Microsoft Authenticator to register a credential, or join a device and enroll it in Intune to mark it as compliant.
@@ -104,7 +104,7 @@ The following table details the availability of phishing-resistant multifactor a
 | Android mobile device| ![Checkmark with solid fill](media/memo-22-09/check.jpg)| ![Checkmark with solid fill](media/memo-22-09/check.jpg)| Not applicable| Not applicable| ![Checkmark with solid fill](media/memo-22-09/check.jpg) |
 | macOS device| ![Checkmark with solid fill](media/memo-22-09/check.jpg)| ![Checkmark with solid fill](media/memo-22-09/check.jpg)| Edge/Chrome | Not applicable| ![Checkmark with solid fill](media/memo-22-09/check.jpg) |
 
-Learn more: [Browser support for FIDO2 passwordless authentication](../authentication/fido2-compatibility.md)
+Learn more: [Browser support for FIDO2 passwordless authentication](~/identity/authentication/fido2-compatibility.md)
 
 ### Virtual device sign-in scenarios that require integration
 

@@ -16,7 +16,7 @@ ms.custom: enterprise-apps
 
 # Manage consent to applications and evaluate consent requests
 
-Microsoft recommends that you [restrict user consent](../manage-apps/configure-user-consent.md) to allow users to consent only for apps from verified publishers, and only for permissions that you select. For apps that don't meet these criteria, the decision-making process is centralized with your organization's security and identity administrator team.
+Microsoft recommends that you [restrict user consent](~/identity/enterprise-apps/configure-user-consent.md) to allow users to consent only for apps from verified publishers, and only for permissions that you select. For apps that don't meet these criteria, the decision-making process is centralized with your organization's security and identity administrator team.
 
 After you've disabled or restricted user consent, you have several important steps to take to help keep your organization secure as you continue to allow business-critical applications to be used. These steps are crucial to minimize impact on your organization's support team and IT administrators, and to help prevent the use of unmanaged accounts in third-party applications.
 
@@ -27,8 +27,8 @@ This article provides guidance on managing consent to applications and evaluatin
  - Consider enabling the [admin consent workflow](configure-admin-consent-workflow.md) to allow users to request administrator approval directly from the consent screen.
 
  - Ensure that all administrators understand the:
-   - [Permissions and consent framework](../develop/permissions-consent-overview.md)
-   - How the [consent consent experience and prompts](../develop/application-consent-experience.md) work.
+   - [Permissions and consent framework](~/identity-platform/permissions-consent-overview.md)
+   - How the [consent consent experience and prompts](~/identity-platform/application-consent-experience.md) work.
    - How to [evaluate a request for tenant-wide admin consent](#evaluate-a-request-for-tenant-wide-admin-consent).
 
  - Review your organization's existing processes for users to request administrator approval for an application, and update them if necessary. If processes are changed:
@@ -66,15 +66,15 @@ Before you grant tenant-wide admin consent, it's important to ensure that you tr
 
 When you're evaluating a request to grant admin consent, here are some recommendations to consider:
 
-- Understand the [permissions and consent framework](../develop/permissions-consent-overview.md) in the Microsoft identity platform.
+- Understand the [permissions and consent framework](~/identity-platform/permissions-consent-overview.md) in the Microsoft identity platform.
 
-- Understand the difference between [delegated permissions and application permissions](../develop/permissions-consent-overview.md#permission-types).
+- Understand the difference between [delegated permissions and application permissions](~/identity-platform/permissions-consent-overview.md#permission-types).
 
    Application permissions allow the application to access the data for the entire organization, without any user interaction. Delegated permissions allow the application to act on behalf of a user who was signed into the application at some point.
 
 - Understand the permissions that are being requested.
 
-   The permissions requested by the application are listed in the [consent prompt](../develop/application-consent-experience.md). Expanding the permission title displays the permission’s description. The description for application permissions generally ends in "without a signed-in user." The description for delegated permissions generally end with "on behalf of the signed-in user." Permissions for the Microsoft Graph API are described in [Microsoft Graph Permissions Reference](/graph/permissions-reference). Refer to the documentation for other APIs to understand the permissions they expose.
+   The permissions requested by the application are listed in the [consent prompt](~/identity-platform/application-consent-experience.md). Expanding the permission title displays the permission’s description. The description for application permissions generally ends in "without a signed-in user." The description for delegated permissions generally end with "on behalf of the signed-in user." Permissions for the Microsoft Graph API are described in [Microsoft Graph Permissions Reference](/graph/permissions-reference). Refer to the documentation for other APIs to understand the permissions they expose.
 
    If you don't understand a permission that's being requested, do *not* grant consent.
 

@@ -17,7 +17,7 @@ ms.reviewer: ashishj
 
 Microsoft Entra application proxy helps you improve productivity by publishing on-premises applications so that remote employees can securely access them, too. In the Microsoft Entra admin center, you can also set up single sign-on (SSO) to these apps. Your users only need to authenticate with Microsoft Entra ID, and they can access your enterprise application without having to sign in again.
 
-Application Proxy supports several [single sign-on modes](../manage-apps/plan-sso-deployment.md#choosing-a-single-sign-on-method). Password-based sign-on is intended for applications that use a username/password combination for authentication. When you configure password-based sign-on for your application, your users have to sign in to the on-premises application once. After that, Microsoft Entra ID stores the sign-in information and automatically provides it to the application when your users access it remotely.
+Application Proxy supports several [single sign-on modes](~/identity/enterprise-apps/plan-sso-deployment.md#choosing-a-single-sign-on-method). Password-based sign-on is intended for applications that use a username/password combination for authentication. When you configure password-based sign-on for your application, your users have to sign in to the on-premises application once. After that, Microsoft Entra ID stores the sign-in information and automatically provides it to the application when your users access it remotely.
 
 You should already have published and tested your app with Application Proxy. If not, follow the steps in [Publish applications using Microsoft Entra application proxy](application-proxy-add-on-premises-application.md) then come back here.
 
@@ -25,7 +25,7 @@ You should already have published and tested your app with Application Proxy. If
 
 [!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](../roles/permissions-reference.md#application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
 1. From the list, select the app that you want to set up with SSO.  
 1. Select **Application Proxy**. 
@@ -62,5 +62,5 @@ Go to the My Apps portal. Sign in with your credentials (or the credentials for 
 
 ## Next steps
 
-- Read about other ways to implement [Single sign-on](../manage-apps/what-is-single-sign-on.md)
+- Read about other ways to implement [Single sign-on](~/identity/enterprise-apps/what-is-single-sign-on.md)
 - Learn about [Security considerations for accessing apps remotely with Microsoft Entra application proxy](application-proxy-security.md)

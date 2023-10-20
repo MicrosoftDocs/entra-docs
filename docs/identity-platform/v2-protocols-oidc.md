@@ -220,7 +220,7 @@ Several other validations are common and vary by application scenario, including
 
 * Ensuring the user/organization has signed up for the app.
 * Ensuring the user has proper authorization/privileges
-* Ensuring a certain strength of authentication has occurred, such as [multi-factor authentication](../authentication/concept-mfa-howitworks.md).
+* Ensuring a certain strength of authentication has occurred, such as [multi-factor authentication](~/identity/authentication/concept-mfa-howitworks.md).
 
 Once you've validated the ID token, you can begin a session with the user and use the information in the token's claims for app personalization, display, or for storing their data.
 

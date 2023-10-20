@@ -64,7 +64,7 @@ Combine dynamic groups with authentication context to control user access mappin
 Learn more:
 
 * [Conditional Access: Cloud apps, actions, and authentication context](../conditional-access/concept-conditional-access-cloud-apps.md)
-* [Developer guide to Conditional Access authentication context](../develop/developer-guide-conditional-access-authentication-context.md)
+* [Developer guide to Conditional Access authentication context](~/identity-platform/developer-guide-conditional-access-authentication-context.md)
 * [Session policies](/defender-cloud-apps/session-policy-aad)
 
 ### Attributes assigned to resources

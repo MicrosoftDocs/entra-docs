@@ -45,13 +45,13 @@ Microsoft Entra ID uses a concept called "assignments" to determine which users 
 
 Before configuring and enabling the provisioning service, you need to decide what users and/or groups in Microsoft Entra ID represent the users who need access to your Box app. Once decided, you can assign these users to your Box app by following the instructions here:
 
-[Assign a user or group to an enterprise app](../manage-apps/assign-user-or-group-access-portal.md)
+[Assign a user or group to an enterprise app](~/identity/enterprise-apps/assign-user-or-group-access-portal.md)
 
 ## Assign users and groups
 The **Box > Users and Groups** tab in the Azure portal allows you to specify which users and groups should be granted access to Box. Assignment of a user or group causes the following things to occur:
 
 * Microsoft Entra ID permits the assigned user (either by direct assignment or group membership) to authenticate to Box. If a user is not assigned, then Microsoft Entra ID does not permit them to sign in to Box and returns an error on the Microsoft Entra sign-in page.
-* An app tile for Box is added to the user's [application launcher](../manage-apps/end-user-experiences.md).
+* An app tile for Box is added to the user's [application launcher](~/identity/enterprise-apps/end-user-experiences.md).
 * If automatic provisioning is enabled, then the assigned users and/or groups are added to the provisioning queue to be automatically provisioned.
   
   * If only user objects were configured to be provisioned, then all directly assigned users are placed in the provisioning queue, and all users that are members of any assigned groups are placed in the provisioning queue. 
@@ -82,7 +82,7 @@ If automatic provisioning is enabled, then the assigned users and/or groups are 
 
 The objective of this section is to outline how to enable provisioning of Active Directory user accounts to Box.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 
 2. If you have already configured Box for single sign-on, search for your instance of Box using the search field. Otherwise, select **Add** and search for **Box** in the application gallery. Select Box from the search results, and add it to your list of applications.
@@ -129,5 +129,5 @@ In your Box tenant, synchronized users are listed under **Managed Users** in the
 ## Additional resources
 
 * [Managing user account provisioning for Enterprise Apps](tutorial-list.md)
-* [What is application access and single sign-on with Microsoft Entra ID?](../manage-apps/what-is-single-sign-on.md)
+* [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 * [Configure Single Sign-on](box-tutorial.md)

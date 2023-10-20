@@ -41,7 +41,7 @@ This recommendation improves your user's productivity and minimizes the sign-in 
     - Review your Conditional Access policies.
 
 2. Require MFA using a Conditional Access policy.
-    - [Secure user sign-in events with Microsoft Entra multifactor authentication](../authentication/tutorial-enable-azure-mfa.md).
+    - [Secure user sign-in events with Microsoft Entra multifactor authentication](~/identity/authentication/tutorial-enable-azure-mfa.md).
 
 3. Ensure that the per-user MFA configuration is turned off. 
 
@@ -53,4 +53,4 @@ After all users have been migrated to Conditional Access MFA accounts, the recom
 - [Learn how to use Microsoft Entra recommendations](howto-use-recommendations.md)
 - [Explore the Microsoft Graph API properties for recommendations](/graph/api/resources/recommendation)
 - [Learn about requiring MFA for all users using Conditional Access](../conditional-access/howto-conditional-access-policy-all-users-mfa.md)
-- [View the MFA Conditional Access policy tutorial](../authentication/tutorial-enable-azure-mfa.md)
+- [View the MFA Conditional Access policy tutorial](~/identity/authentication/tutorial-enable-azure-mfa.md)

@@ -35,7 +35,7 @@ If you’re not able to configure the Identifier or the Reply URL, confirm the I
 
 To know the patterns pre-configured for the application:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator). Go to step 4. If you are already in the application configuration blade in Microsoft Entra ID.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). Go to step 4. If you are already in the application configuration blade in Microsoft Entra ID.
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
 1. Select the application you want to configure single sign-on.
 1. Once the application loads, select the **Single sign-on** from the application’s left-hand navigation menu.
@@ -55,7 +55,7 @@ If the values don’t match with the patterns pre-configured in Microsoft Entra 
 
 You won’t be able to select the EntityID (User Identifier) format that Microsoft Entra ID sends to the application in the response after user authentication.
 
-Microsoft Entra ID select the format for the NameID attribute (User Identifier) based on the value selected or the format requested by the application in the SAML AuthRequest. For more information visit the article [Single Sign-On SAML protocol](../develop/single-sign-on-saml-protocol.md#authnrequest) under the section NameIDPolicy,
+Microsoft Entra ID select the format for the NameID attribute (User Identifier) based on the value selected or the format requested by the application in the SAML AuthRequest. For more information visit the article [Single Sign-On SAML protocol](~/identity-platform/single-sign-on-saml-protocol.md#authnrequest) under the section NameIDPolicy,
 
 <a name='cant-find-the-azure-ad-metadata-to-complete-the-configuration-with-the-application'></a>
 
@@ -63,7 +63,7 @@ Microsoft Entra ID select the format for the NameID attribute (User Identifier) 
 
 To download the application metadata or certificate from Microsoft Entra ID, follow these steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
 1. Select the application you have configured single sign-on.
 1. Once the application loads, click the **Single sign-on** from the application’s left-hand navigation menu.
@@ -73,7 +73,7 @@ Microsoft Entra doesn’t provide a URL to get the metadata. The metadata can on
 
 ## Customize SAML claims sent to an application
 
-To learn how to customize the SAML attribute claims sent to your application, see [Claims mapping in Microsoft Entra ID](../develop/saml-claims-customization.md) for more information.
+To learn how to customize the SAML attribute claims sent to your application, see [Claims mapping in Microsoft Entra ID](~/identity-platform/saml-claims-customization.md) for more information.
 
 ## Next steps
 

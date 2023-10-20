@@ -72,13 +72,13 @@ Microsoft Entra Privileged Identity Management is included in Microsoft Entra ID
 
 After you start using Microsoft Entra Privileged Identity Management:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](../roles/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 
 1. To switch directories where you want to use Privileged Identity Management, select your user name in the upper right corner of the Microsoft Entra admin center.
 
 1. Browse to **Identity governance** > **Privileged Identity Management**.
 
-Make sure the first person to use PIM in your organization is assigned to the [Security Administrator](../roles/permissions-reference.md#security-administrator) and [Privileged Role Administrator](../roles/permissions-reference.md#privileged-role-administrator) roles. Only Privileged Role Administrators can manage the Microsoft Entra directory role assignments of users. The PIM security wizard walks you through the initial discovery and assignment experience. You can exit the wizard without making any additional changes at this time.
+Make sure the first person to use PIM in your organization is assigned to the [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator) and [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator) roles. Only Privileged Role Administrators can manage the Microsoft Entra directory role assignments of users. The PIM security wizard walks you through the initial discovery and assignment experience. You can exit the wizard without making any additional changes at this time.
 
 #### Identify and categorize accounts that are in highly privileged roles
 
@@ -112,7 +112,7 @@ Evaluate the accounts that are assigned or eligible for the Global Administrator
 
 #### Turn on multifactor authentication and register all other highly privileged single-user non-federated administrator accounts
 
-Require Microsoft Entra multifactor authentication at sign-in for all individual users who are permanently assigned to one or more of the Microsoft Entra administrator roles: Global Administrator, Privileged Role Administrator, Exchange Administrator, and SharePoint Administrator. Use the guidance at [Enforce multifactor authentication on your administrators](../authentication/how-to-authentication-find-coverage-gaps.md#enforce-multifactor-authentication-on-your-administrators) and ensure that all those users have registered at [https://aka.ms/mfasetup](https://aka.ms/mfasetup). More information can be found under step 2 and step 3 of the guide [Protect user and device access in Microsoft 365](/purview/protect-access-to-data-and-services). 
+Require Microsoft Entra multifactor authentication at sign-in for all individual users who are permanently assigned to one or more of the Microsoft Entra administrator roles: Global Administrator, Privileged Role Administrator, Exchange Administrator, and SharePoint Administrator. Use the guidance at [Enforce multifactor authentication on your administrators](~/identity/authentication/how-to-authentication-find-coverage-gaps.md#enforce-multifactor-authentication-on-your-administrators) and ensure that all those users have registered at [https://aka.ms/mfasetup](https://aka.ms/mfasetup). More information can be found under step 2 and step 3 of the guide [Protect user and device access in Microsoft 365](/purview/protect-access-to-data-and-services). 
 
 ## Stage 2: Mitigate frequently used attacks
 
@@ -168,7 +168,7 @@ Microsoft Entra ID recommends that you require multifactor authentication for al
 
 Turn on:
 
-* [MFA using Conditional Access policies](../authentication/howto-mfa-getstarted.md) for all users in your organization.
+* [MFA using Conditional Access policies](~/identity/authentication/howto-mfa-getstarted.md) for all users in your organization.
 
 If you use Windows Hello for Business, the MFA requirement can be met using the Windows Hello sign-in experience. For more information, see [Windows Hello](/windows/uwp/security/microsoft-passport).
 

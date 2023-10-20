@@ -25,7 +25,7 @@ Add new users or delete existing users from your tenant. To add or delete users,
 
 You can create a new user for your organization or invite an external user from the same starting point.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](../roles/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 
 1. Browse to **Identity** > **Users** > **All users**.
 
@@ -66,11 +66,11 @@ You can delete an existing user using Microsoft Entra admin center.
 - You must have a Global Administrator, Privileged Authentication Administrator or User Administrator role assignment to delete users in your organization.
 - Global Admins and Privileged Authentication Admins can delete any users including other admins.
 - User Administrators can delete any non-admin users, Helpdesk Administrators and other User Administrators.
-- For more information, see [Administrator role permissions](../roles/permissions-reference.md).
+- For more information, see [Administrator role permissions](~/identity/role-based-access-control/permissions-reference.md).
 
 To delete a user, follow these steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](../roles/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 
 1. Browse to **Identity** > **Users** > **All users**.
 

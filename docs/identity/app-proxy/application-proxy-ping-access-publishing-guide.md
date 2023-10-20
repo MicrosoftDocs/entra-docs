@@ -46,7 +46,7 @@ If you've enabled Application Proxy and installed a connector already, you can s
 
 The Application Proxy connector is a Windows Server service that directs the traffic from your remote employees to your published applications. For more detailed installation instructions, see [Tutorial: Add an on-premises application for remote access through Application Proxy in Microsoft Entra ID](../app-proxy/application-proxy-add-on-premises-application.md).
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](../roles/permissions-reference.md#application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Application proxy**.
 1. Select **Download connector service**. The **Application Proxy Connector Download** page appears.
 
@@ -163,7 +163,7 @@ To collect this information:
 
 **Update the `acceptMappedClaims` field:**
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](../roles/permissions-reference.md#application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Select your username in the upper-right corner. Verify you're signed in to a directory that uses Application Proxy. If you need to change directories, select **Switch directory** and choose a directory that uses Application Proxy.
 1. Browse to **Identity** > **Applications** > **App registrations** and select your application.
 1. From the sidebar of the **App registrations** page for your application, select **Manifest**. The manifest JSON code for your application's registration appears.
@@ -173,7 +173,7 @@ To collect this information:
 ### Use of optional claims (optional)
 
 Optional claims allows you to add standard-but-not-included-by-default claims that every user and tenant has. 
-You can configure optional claims for your application by modifying the application manifest. For more info, see the [Understanding the Microsoft Entra application manifest article](../develop/reference-app-manifest.md)
+You can configure optional claims for your application by modifying the application manifest. For more info, see the [Understanding the Microsoft Entra application manifest article](~/identity-platform/reference-app-manifest.md)
 
 Example to include email address into the access_token that PingAccess will consume:
 
@@ -194,14 +194,14 @@ Example to include email address into the access_token that PingAccess will cons
 
 ### Use of claims mapping policy (optional)
 
-[Claims Mapping Policy (preview)](../develop/reference-claims-mapping-policy-type.md#claims-mapping-policy-properties) for attributes which do not exist in Microsoft Entra ID. Claims mapping allows you to migrate old on-prem apps to the cloud by adding additional custom claims that are backed by your ADFS or user objects
+[Claims Mapping Policy (preview)](~/identity-platform/reference-claims-mapping-policy-type.md#claims-mapping-policy-properties) for attributes which do not exist in Microsoft Entra ID. Claims mapping allows you to migrate old on-prem apps to the cloud by adding additional custom claims that are backed by your ADFS or user objects
 
-To make your application use a custom claim and include additional fields, be sure you've also [created a custom claims mapping policy and assigned it to the application](../develop/saml-claims-customization.md).
+To make your application use a custom claim and include additional fields, be sure you've also [created a custom claims mapping policy and assigned it to the application](~/identity-platform/saml-claims-customization.md).
 
 > [!NOTE]
 > To use a custom claim, you must also have a custom policy defined and assigned to the application. This policy should include all required custom attributes.
 >
-> You can do policy definition and assignment through PowerShell or Microsoft Graph. If you're doing them in PowerShell, you may need to first use `New-AzureADPolicy` and then assign it to the application with `Add-AzureADServicePrincipalPolicy`. For more information, see [Claims mapping policy assignment](../develop/saml-claims-customization.md).
+> You can do policy definition and assignment through PowerShell or Microsoft Graph. If you're doing them in PowerShell, you may need to first use `New-AzureADPolicy` and then assign it to the application with `Add-AzureADServicePrincipalPolicy`. For more information, see [Claims mapping policy assignment](~/identity-platform/saml-claims-customization.md).
 
 Example:
 ```powershell
@@ -231,5 +231,5 @@ When you've completed all these steps, your application should be up and running
 ## Next steps
 
 - [Configuring PingAccess to use Microsoft Entra ID as the token provider](https://docs.pingidentity.com/access/sources/dita/topic?category=pingaccess&Releasestatus_ce=Current&resourceid=pa_configure_pa_to_use_azure_ad_as_the_token_provider)
-- [Single sign-on to applications in Microsoft Entra ID](../manage-apps/what-is-single-sign-on.md)
+- [Single sign-on to applications in Microsoft Entra ID](~/identity/enterprise-apps/what-is-single-sign-on.md)
 - [Troubleshoot Application Proxy problems and error messages](application-proxy-troubleshoot.md)

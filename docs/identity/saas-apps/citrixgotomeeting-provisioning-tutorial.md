@@ -32,7 +32,7 @@ Microsoft Entra ID uses a concept called "assignments" to determine which users 
 
 Before configuring and enabling the provisioning service, you need to decide what users and/or groups in Microsoft Entra ID represent the users who need access to your GoToMeeting app. Once decided, you can assign these users to your GoToMeeting app by following the instructions here:
 
-[Assign a user or group to an enterprise app](../manage-apps/assign-user-or-group-access-portal.md)
+[Assign a user or group to an enterprise app](~/identity/enterprise-apps/assign-user-or-group-access-portal.md)
 
 ### Important tips for assigning users to GoToMeeting
 
@@ -49,7 +49,7 @@ This section guides you through connecting your Microsoft Entra ID to GoToMeetin
 
 ### To configure automatic user account provisioning:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 
 1. If you have already configured GoToMeeting for single sign-on, search for your instance of GoToMeeting using the search field. Otherwise, select **Add** and search for **GoToMeeting** in the application gallery. Select GoToMeeting from the search results, and add it to your list of applications.
@@ -84,5 +84,5 @@ For more information on how to read the Microsoft Entra provisioning logs, see [
 ## Additional resources
 
 * [Managing user account provisioning for Enterprise Apps](tutorial-list.md)
-* [What is application access and single sign-on with Microsoft Entra ID?](../manage-apps/what-is-single-sign-on.md)
+* [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 * [Configure Single Sign-on](./citrix-gotomeeting-tutorial.md)

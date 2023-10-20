@@ -48,7 +48,7 @@ To complete this article, you need the following resources and privileges:
 
 Once you have configured administrative units, you can apply this scope to your users who access My Staff. Only users who are assigned an administrative role can access My Staff. To enable My Staff, complete the following steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](../roles/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 
 1. Browse to **Identity** > **Users** > **User settings**.
 
@@ -75,7 +75,7 @@ When a user goes to My Staff, they are shown the names of the [administrative un
 
 ## Reset a user's password
 
-Before you can reset passwords for on-premises users, you must fulfill the following prerequisite conditions. For detailed instructions, see [Enable self-service password reset](../authentication/tutorial-enable-sspr-writeback.md) tutorial.
+Before you can reset passwords for on-premises users, you must fulfill the following prerequisite conditions. For detailed instructions, see [Enable self-service password reset](~/identity/authentication/tutorial-enable-sspr-writeback.md) tutorial.
 
 * Configure permissions for password writeback
 * Enable password writeback in Microsoft Entra Connect

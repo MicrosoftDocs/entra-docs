@@ -97,7 +97,7 @@ Learn more: [Migrate to cloud authentication using Staged Rollout](../hybrid/con
 
 After you enable password hash sync and seamless SSO on the Microsoft Entra Connect server, configure a staged rollout:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](../roles/permissions-reference.md#hybrid-identity-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
 2. Browse to **Identity** > **Hybrid management** > **Microsoft Entra Connect** > **Connect Sync**. 
 3. Confirm **Password Hash Sync** is enabled in the tenant.
 4. Select **Enable staged rollout for managed user sign-in**.
@@ -132,7 +132,7 @@ Users that converted to managed authentication might need access to applications
 
 Configure the enterprise application registration for Okta.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 2. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
 
    ![Screenshot of the left menu of the Microsoft Entra admin center.](media/migrate-okta-federation/enterprise-application.png)

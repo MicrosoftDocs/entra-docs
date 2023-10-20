@@ -33,7 +33,7 @@ Some organizations configure domains in their Microsoft Entra tenant to federate
 
 When a user signs into an application, they are first presented with a Microsoft Entra sign-in page. After they have typed their UPN, if they are in a federated domain they are then taken to the sign-in page of the IdP serving that domain. Under certain circumstances, administrators might want to direct users to the sign-in page when they're signing in to specific applications.
 
-As a result users can skip the initial Microsoft Entra ID page. This process is referred to as "sign-in auto-acceleration." Microsoft does not recommend configuring auto-acceleration any longer, as it can prevent the use of stronger authentication methods such as FIDO and hinders collaboration. See [Enable passwordless security key sign-in](../authentication/howto-authentication-passwordless-security-key.md) to learn the benefits of not configuring auto-acceleration. To learn how to prevent sign-in auto-acceleration, see [Disable auto-acceleration sign-in](prevent-domain-hints-with-home-realm-discovery.md).
+As a result users can skip the initial Microsoft Entra ID page. This process is referred to as "sign-in auto-acceleration." Microsoft does not recommend configuring auto-acceleration any longer, as it can prevent the use of stronger authentication methods such as FIDO and hinders collaboration. See [Enable passwordless security key sign-in](~/identity/authentication/howto-authentication-passwordless-security-key.md) to learn the benefits of not configuring auto-acceleration. To learn how to prevent sign-in auto-acceleration, see [Disable auto-acceleration sign-in](prevent-domain-hints-with-home-realm-discovery.md).
 
 In cases where the tenant is federated to another IdP for sign-in, auto-acceleration makes user sign-in more streamlined.  You can configure auto-acceleration for individual applications. See [Configure auto-acceleration](configure-authentication-for-federated-users-portal.md) to learn how to force auto-acceleration using HRD.
 
@@ -126,7 +126,7 @@ The policy type is "[HomeRealmDiscoveryPolicy](/graph/api/resources/homerealmdis
 
 Additionally, two tenant-level HRD options exist, not shown above:
 
-- **AlternateIdLogin** is optional.  If enabled, this [allows users to sign in with their email addresses instead of their UPN](../authentication/howto-authentication-use-email-signin.md) at the Microsoft Entra sign-in page.  Alternate IDs rely on the user not being auto-accelerated to a federated IDP.
+- **AlternateIdLogin** is optional.  If enabled, this [allows users to sign in with their email addresses instead of their UPN](~/identity/authentication/howto-authentication-use-email-signin.md) at the Microsoft Entra sign-in page.  Alternate IDs rely on the user not being auto-accelerated to a federated IDP.
 
 - **DomainHintPolicy** is an optional complex object that [*prevents* domain hints from auto-accelerating users to federated domains](prevent-domain-hints-with-home-realm-discovery.md). This tenant-wide setting is used to ensure that applications that send domain hints don't prevent users from signing in with cloud-managed credentials.
 
@@ -146,4 +146,4 @@ HRD policies can be created and then assigned to specific organizations and serv
 
 - [Configure sign in behavior for an application by using a Home Realm Discovery policy](configure-authentication-for-federated-users-portal.md)
 - [Disable auto-acceleration to a federated IDP during user sign-in with Home Realm Discovery policy](prevent-domain-hints-with-home-realm-discovery.md)
-- For more information about how authentication works in Microsoft Entra ID, see [Authentication scenarios for Microsoft Entra ID](../develop/authentication-vs-authorization.md).
+- For more information about how authentication works in Microsoft Entra ID, see [Authentication scenarios for Microsoft Entra ID](~/identity-platform/authentication-vs-authorization.md).

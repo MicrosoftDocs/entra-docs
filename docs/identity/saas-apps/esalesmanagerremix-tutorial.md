@@ -22,7 +22,7 @@ By integrating Microsoft Entra ID with E Sales Manager Remix, you get the follow
 - You can enable your users to get signed in automatically to E Sales Manager Remix (single sign-on, or SSO) with their Microsoft Entra accounts.
 - You can manage your accounts in one central location, the Azure portal.
 
-To learn more about SaaS app integration with Microsoft Entra ID, see [What is application access and single sign-on with Microsoft Entra ID?](../manage-apps/what-is-single-sign-on.md).
+To learn more about SaaS app integration with Microsoft Entra ID, see [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md).
 
 ## Prerequisites
 
@@ -50,7 +50,7 @@ The scenario outlined in this tutorial consists of two main building blocks:
 ## Add E Sales Manager Remix from the gallery
 To configure the integration of Microsoft Entra ID with E Sales Manager Remix, add E Sales Manager Remix from the gallery to your list of managed SaaS apps by doing the following:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 
 	![The "Enterprise applications" window][2]
@@ -79,7 +79,7 @@ To configure and test Microsoft Entra single sign-on with E Sales Manager Remix,
 
 Enable Microsoft Entra single sign-on in the Azure portal and configure single sign-on in your E Sales Manager Remix application by doing the following:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **E Sales Manager Remix** application integration page, select **Single sign-on**.
 
 	![The "Single sign-on" link][4]
@@ -171,7 +171,7 @@ Enable Microsoft Entra single sign-on in the Azure portal and configure single s
 
 In this section, you create test user.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](../roles/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
 1. Select **New user** > **Create new user**, at the top of the screen.
 1. In the **User** properties, follow these steps:
@@ -217,7 +217,7 @@ In this section, you enable user Britta Simon to use Azure single sign-on by gra
 
 ![Assign the user role][200] 
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 
 	![The "Enterprise applications" and "All applications" links][201] 
@@ -251,7 +251,7 @@ For more information about the Access Panel, see [Introduction to the Access 
 ## Additional resources
 
 * [List of tutorials about integrating SaaS apps with Microsoft Entra ID](tutorial-list.md)
-* [What is application access and single sign-on with Microsoft Entra ID?](../manage-apps/what-is-single-sign-on.md)
+* [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
 <!--Image references-->
 

@@ -38,7 +38,7 @@ Make sure your organization's external collaboration settings are configured suc
 
 To add B2B collaboration users to the directory, follow these steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User administrator](../roles/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 
 1. Browse to **Identity** > **Users** > **All users**.
 
@@ -121,7 +121,7 @@ The user is added to your directory with a user principal name (UPN) in the form
 
 If you need to manually add B2B collaboration users to a group after the user was invited, follow these steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User administrator](../roles/permissions-reference.md#user-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator). 
 1. Browse to **Identity** > **Groups** > **All groups**.
 4. Select a group (or select **New group** to create a new one). It's a good idea to include in the group description that the group contains B2B guest users.
 5. Under **Manage**, select **Members**.
@@ -140,7 +140,7 @@ You can also use dynamic groups with Microsoft Entra B2B collaboration. For more
 
 To add B2B collaboration users to an application, follow these steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User administrator](../roles/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 4. On the **All applications** page, select the application to which you want to add guest users.
 5. Under **Manage**, select **Users and groups**.

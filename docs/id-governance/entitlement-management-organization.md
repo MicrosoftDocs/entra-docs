@@ -76,7 +76,7 @@ For a demonstration of how to add a connected organization, watch the following 
 
 **Prerequisite role**: *Global Administrator* or  *Identity Governance Administrator*
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../roles/permissions-reference.md#identity-governance-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
 1. Browse to **Identity governance** > **Entitlement management** > **Connected organizations**.
 
@@ -88,7 +88,7 @@ To add an external Microsoft Entra directory or domain as a connected organizati
 
 **Prerequisite role**: *Global Administrator* or *Identity Governance Administrator*
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../roles/permissions-reference.md#identity-governance-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
 1. Browse to **Identity governance** > **Entitlement management** > **Connected organizations**.
 
@@ -141,7 +141,7 @@ If the connected organization changes to a different domain, the organization's 
 
 **Prerequisite role**: *Global Administrator* or *Identity Governance Administrator*
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../roles/permissions-reference.md#identity-governance-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
 1. Browse to **Identity governance** > **Entitlement management** > **Connected organizations**.
 
@@ -160,7 +160,7 @@ If you no longer have a relationship with an external Microsoft Entra directory 
 
 **Prerequisite role**: *Global Administrator* or *Identity Governance Administrator*
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../roles/permissions-reference.md#identity-governance-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
 1. Browse to **Identity governance** > **Entitlement management** > **Connected organizations**.
 

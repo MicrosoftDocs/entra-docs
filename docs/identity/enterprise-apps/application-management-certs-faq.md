@@ -75,13 +75,13 @@ To configure an on-premises app to use a custom domain, you need a verified Micr
 
 ## I need to update the token signing certificate on the application side. Where can I get it on Microsoft Entra ID side?
 
-You can renew a SAML X.509 Certificate, see [SAML Signing certificate](../develop/single-sign-on-saml-protocol.md).
+You can renew a SAML X.509 Certificate, see [SAML Signing certificate](~/identity-platform/single-sign-on-saml-protocol.md).
 
 <a name='what-is-azure-ad-signing-key-rollover'></a>
 
 ## What is Microsoft Entra ID signing key rollover?
 
-You can find more details [here](../develop/signing-key-rollover.md).
+You can find more details [here](~/identity-platform/signing-key-rollover.md).
 
 ## How do I renew application token encryption certificate?
 

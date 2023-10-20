@@ -24,7 +24,7 @@ Use the tools and guidance provided to follow the precise steps needed to migrat
 - **General migration guidance** – Use the whitepaper, tools, email templates, and applications questionnaire in the [Microsoft Entra apps migration toolkit](./migration-resources.md) to discover, classify, and migrate your apps.
 - **SaaS applications** – See our list of [SaaS app tutorials](../saas-apps/tutorial-list.md) and the [Microsoft Entra SSO deployment plan](plan-sso-deployment.md) to walk through the end-to-end process.
 - **Applications running on-premises** – Learn all [about the Microsoft Entra application proxy](../app-proxy/application-proxy.md) and use the complete [Microsoft Entra application proxy deployment plan](https://aka.ms/AppProxyDPDownload) to get going quickly or consider our [Secure Hybrid Access partners](secure-hybrid-access.md), which you may already own.
-- **Apps you’re developing** – Read our step-by-step [integration](../develop/quickstart-register-app.md) and [registration](../develop/quickstart-register-app.md) guidance.
+- **Apps you’re developing** – Read our step-by-step [integration](~/identity-platform/quickstart-register-app.md) and [registration](~/identity-platform/quickstart-register-app.md) guidance.
 
 > [!VIDEO https://www.youtube.com/embed/PvI4Q4P_HfU]
 
@@ -43,7 +43,7 @@ Depending on how you configure your app, verify that SSO works properly.
 | **Password-Based SSO** | Download and install the [MyApps Secure Sign-in Extension](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510#download-and-install-the-my-apps-secure-sign-in-extension). This extension helps you start any of your organization's cloud apps that require you to use an SSO process. |
 | **[Application Proxy](../app-proxy/application-proxy.md)** | Ensure your connector is running and assigned to your application. Visit the [Application Proxy troubleshooting guide](../app-proxy/application-proxy-troubleshoot.md) for further assistance. |
 
-You can test each app by logging in with a test user and make sure all functionality is the same as prior to the migration. If you determine during testing that users need to update their [MFA](../authentication/howto-mfa-userstates.md) or [SSPR](../authentication/tutorial-enable-sspr.md)settings, or you're adding this functionality during the migration, be sure to add that to your end-user communication plan. See [MFA](https://aka.ms/mfatemplates) and [SSPR](https://aka.ms/ssprtemplates) end-user communication templates.
+You can test each app by logging in with a test user and make sure all functionality is the same as prior to the migration. If you determine during testing that users need to update their [MFA](~/identity/authentication/howto-mfa-userstates.md) or [SSPR](~/identity/authentication/tutorial-enable-sspr.md)settings, or you're adding this functionality during the migration, be sure to add that to your end-user communication plan. See [MFA](https://aka.ms/mfatemplates) and [SSPR](https://aka.ms/ssprtemplates) end-user communication templates.
 
 ## Troubleshoot
 

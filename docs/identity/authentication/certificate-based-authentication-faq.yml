@@ -37,7 +37,7 @@ sections:
       - question: |
           How can an administrator enable Microsoft Entra CBA?
         answer: |        
-          1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](../roles/permissions-reference.md#authentication-policy-administrator).
+          1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
           2. Browse to **Protection** > **Authentication methods** > **Policies**.
           3. Select policy: **Certificate-based Authentication**.
           4. On the **Enable and Target** tab, select the **Enable** toggle to enable certificate-based authentication.
@@ -131,7 +131,7 @@ sections:
           How can I use single-factor certificates to complete MFA?
         answer: |
           We have support for single factor CBA to get MFA. CBA SF + passwordless phone sign-in (PSI) and CBA SF + FIDO2 are the two supported combinations to get MFA using single factor certificates.
-          [MFA with single factor certificates](../authentication/concept-certificate-based-authentication-technical-deep-dive.md#mfa-authentication-flow-using-single-factor-certificates-and-passwordless-sign-in) 
+          [MFA with single factor certificates](~/identity/authentication/concept-certificate-based-authentication-technical-deep-dive.md#mfa-authentication-flow-using-single-factor-certificates-and-passwordless-sign-in) 
           
       - question: |
           CertificateUserIds update fails with value already there. How can an admin query all the user objects with the same value?

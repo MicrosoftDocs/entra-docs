@@ -223,7 +223,7 @@ For further investigation of password spray risk detections, see the article [Gu
 
 #### User reported suspicious activity
 
-**Calculated offline**. This risk detection is reported when a user denies a multifactor authentication (MFA) prompt and [reports it as suspicious activity](../authentication/howto-mfa-mfasettings.md#report-suspicious-activity). An MFA prompt not initiated by a user may mean their credentials are compromised. 
+**Calculated offline**. This risk detection is reported when a user denies a multifactor authentication (MFA) prompt and [reports it as suspicious activity](~/identity/authentication/howto-mfa-mfasettings.md#report-suspicious-activity). An MFA prompt not initiated by a user may mean their credentials are compromised. 
 
 ## Nonpremium detections
 

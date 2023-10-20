@@ -106,7 +106,7 @@ While there's no perfect solution or recommendation for every customer, the foll
 - [Prerequisites for configuring Microsoft Entra ID for identity governance](identity-governance-applications-prepare.md)
 - [Plan an access reviews deployment to manage resource access lifecycle](deploy-access-reviews.md)
 - [Identity and device access configurations](/microsoft-365/enterprise/microsoft-365-policies-configurations)
-- [Securing privileged access](../roles/security-planning.md)
+- [Securing privileged access](~/identity/role-based-access-control/security-planning.md)
 
 You may also wish to engage with one of Microsoft's [services and integration partners](services-and-integration-partners.md) to plan your deployment or integrate with the applications and other systems in your environment.
 
@@ -130,7 +130,7 @@ Once you've started using these identity governance features, you can easily aut
 
 ## Appendix - least privileged roles for managing in Identity Governance features
 
-It's a best practice to use the least privileged role to perform administrative tasks in Identity Governance. We recommend that you use Microsoft Entra PIM to activate a role as needed to perform these tasks. The following are the least privileged [directory roles](../roles/permissions-reference.md) to configure Identity Governance features:
+It's a best practice to use the least privileged role to perform administrative tasks in Identity Governance. We recommend that you use Microsoft Entra PIM to activate a role as needed to perform these tasks. The following are the least privileged [directory roles](~/identity/role-based-access-control/permissions-reference.md) to configure Identity Governance features:
 
 | Feature | Least privileged role |
 | ------- | --------------------- |

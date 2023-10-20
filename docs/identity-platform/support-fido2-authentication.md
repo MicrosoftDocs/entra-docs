@@ -17,13 +17,13 @@ ms.custom: aaddev
 
 # Support passwordless authentication with FIDO2 keys in apps you develop
 
-These configurations and best practices will help you avoid common scenarios that block [FIDO2 passwordless authentication](../authentication/concept-authentication-passwordless.md) from being available to users of your applications.
+These configurations and best practices will help you avoid common scenarios that block [FIDO2 passwordless authentication](~/identity/authentication/concept-authentication-passwordless.md) from being available to users of your applications.
 
 ## General best practices
 
 ### Domain hints
 
-Don't use a domain hint to bypass [home-realm discovery](../manage-apps/configure-authentication-for-federated-users-portal.md). This feature is meant to make sign-ins more streamlined, but the federated identity provider may not support passwordless authentication.
+Don't use a domain hint to bypass [home-realm discovery](~/identity/enterprise-apps/configure-authentication-for-federated-users-portal.md). This feature is meant to make sign-ins more streamlined, but the federated identity provider may not support passwordless authentication.
 
 ### Requiring specific credentials
 
@@ -57,8 +57,8 @@ If you are not using MSAL, you should still use the system web browser for authe
 
 ### Web and single-page apps
 
-The availability of FIDO2 passwordless authentication for applications that run in a web browser will depend on the combination of browser and platform. You can consult our [FIDO2 compatibility matrix](../authentication/fido2-compatibility.md) to check if the combination your users will encounter is supported.
+The availability of FIDO2 passwordless authentication for applications that run in a web browser will depend on the combination of browser and platform. You can consult our [FIDO2 compatibility matrix](~/identity/authentication/fido2-compatibility.md) to check if the combination your users will encounter is supported.
 
 ## Next steps
 
-[Passwordless authentication options for Microsoft Entra ID](../authentication/concept-authentication-passwordless.md)
+[Passwordless authentication options for Microsoft Entra ID](~/identity/authentication/concept-authentication-passwordless.md)

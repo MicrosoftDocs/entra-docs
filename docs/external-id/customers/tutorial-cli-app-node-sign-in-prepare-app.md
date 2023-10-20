@@ -18,7 +18,7 @@ ms.custom: developer, devx-track-js
 
 # Tutorial: Prepare a Node.js CLI application for authentication
 
-In this article, you create a Node.js CLI application that signs in users. The client application you build uses the [OAuth 2.0 Authorization Code Flow](../../develop/v2-oauth2-auth-code-flow.md) with Proof Key for Code Exchange (PKCE) for secure user authentication.
+In this article, you create a Node.js CLI application that signs in users. The client application you build uses the [OAuth 2.0 Authorization Code Flow](~/identity-platform/v2-oauth2-auth-code-flow.md) with Proof Key for Code Exchange (PKCE) for secure user authentication.
 
 In this tutorial, you'll: 
 

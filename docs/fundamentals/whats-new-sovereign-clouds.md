@@ -30,7 +30,7 @@ This page updates monthly, so revisit it regularly. If you're looking for items 
 **Service category:** Enterprise Apps                  
 **Product capability:** SSO             
 
-Today, when group claims are added to tokens Azure Active Directory attempts to include all of the groups the user is a member of.  In larger organizations where users are members of hundreds of groups this can often exceed the limits of what can go in the token.  This feature enables more customers to connect their apps to Azure Active Directory by making connections easier and more robust through automation of the application’s creation process. This specifically allows the set of groups included in the token to be limited to only those that are assigned to the application. For more information, see: [Regex-based claims transformation](../develop/saml-claims-customization.md#regex-based-claims-transformation).
+Today, when group claims are added to tokens Azure Active Directory attempts to include all of the groups the user is a member of.  In larger organizations where users are members of hundreds of groups this can often exceed the limits of what can go in the token.  This feature enables more customers to connect their apps to Azure Active Directory by making connections easier and more robust through automation of the application’s creation process. This specifically allows the set of groups included in the token to be limited to only those that are assigned to the application. For more information, see: [Regex-based claims transformation](~/identity-platform/saml-claims-customization.md#regex-based-claims-transformation).
 
 ---
 
@@ -63,7 +63,7 @@ Microsoft Authenticator app’s number matching feature has been Generally Avail
 
 If customers don’t enable number match for all Microsoft Authenticator push notifications prior to May 8, 2023, Authenticator users may experience inconsistent sign-ins while the services are rolling out this change. To ensure consistent behavior for all users, we highly recommend you enable number match for Microsoft Authenticator push notifications in advance.
 
-For more information, see: [How to use number matching in multifactor authentication (MFA) notifications - Authentication methods policy](../authentication/how-to-mfa-number-match.md)
+For more information, see: [How to use number matching in multifactor authentication (MFA) notifications - Authentication methods policy](~/identity/authentication/how-to-mfa-number-match.md)
 
 ---
 
@@ -87,7 +87,7 @@ Admins can now restrict their users from self-service accessing their BitLocker 
 **Service category:** User Access Management                           
 **Product capability:** User Management               
 
-The ability for users to create tenants from the Manage Tenant overview has been present in Azure AD since almost the beginning of the Azure portal.  This new capability in the User Settings pane allows admins to restrict their users from being able to create new tenants. There's also a new [Tenant Creator](../roles/permissions-reference.md#tenant-creator) role to allow specific users to create tenants. For more information, see [Default user permissions](../fundamentals/users-default-permissions.md#restrict-member-users-default-permissions).
+The ability for users to create tenants from the Manage Tenant overview has been present in Azure AD since almost the beginning of the Azure portal.  This new capability in the User Settings pane allows admins to restrict their users from being able to create new tenants. There's also a new [Tenant Creator](~/identity/role-based-access-control/permissions-reference.md#tenant-creator) role to allow specific users to create tenants. For more information, see [Default user permissions](../fundamentals/users-default-permissions.md#restrict-member-users-default-permissions).
 
 ---
 
@@ -104,7 +104,7 @@ My Apps has been updated to a new app discovery view that is more accessible and
 - Drag and drop apps to reorder and move
 - Add sites directly from the home screen
 
-For more information, see [My Apps portal overview](../manage-apps/myapps-overview.md).
+For more information, see [My Apps portal overview](~/identity/enterprise-apps/myapps-overview.md).
 
 ---
 
@@ -118,7 +118,7 @@ Microsoft Authenticator app’s number matching feature has been Generally Avail
 
 If customers don’t enable number match for all Microsoft Authenticator push notifications prior to May 8, 2023, Authenticator users may experience inconsistent sign-ins while the services are rolling out this change. To ensure consistent behavior for all users, we highly recommend you enable number match for Microsoft Authenticator push notifications in advance.
 
-For more information, see: [How to use number matching in multifactor authentication (MFA) notifications - Authentication methods policy](../authentication/how-to-mfa-number-match.md)
+For more information, see: [How to use number matching in multifactor authentication (MFA) notifications - Authentication methods policy](~/identity/authentication/how-to-mfa-number-match.md)
 
 ---
 
@@ -130,7 +130,7 @@ For more information, see: [How to use number matching in multifactor authentica
 
 Currently, organizations and users rely on a range of authentication methods, each offering varying degrees of security. While Multifactor Authentication (MFA) is crucial, some MFA methods are more secure than others. Despite having access to more secure MFA options, users frequently choose less secure methods for various reasons.
 
-To address this challenge, we're introducing a new system-preferred authentication method for MFA. When users sign in, the system will determine and display the most secure MFA method that the user has registered. This prompts users to switch from the default method to the most secure option. While users may still choose a different MFA method, they'll always be prompted to use the most secure method first for every session that requires MFA. For more information, see: [System-preferred multifactor authentication - Authentication methods policy](../authentication/concept-system-preferred-multifactor-authentication.md).
+To address this challenge, we're introducing a new system-preferred authentication method for MFA. When users sign in, the system will determine and display the most secure MFA method that the user has registered. This prompts users to switch from the default method to the most secure option. While users may still choose a different MFA method, they'll always be prompted to use the most secure method first for every session that requires MFA. For more information, see: [System-preferred multifactor authentication - Authentication methods policy](~/identity/authentication/concept-system-preferred-multifactor-authentication.md).
 
 ---
 
@@ -175,7 +175,7 @@ Azure Active Directory SCIM validator will enable you to test your server for co
 **Service category:** MFA                     
 **Product capability:** Identity Security & Protection            
 
-Last year we announced the combined registration user experience for MFA and  self-service password reset (SSPR) was rolling out as the default experience for all organizations. We're happy to announce that the combined security information registration experience is now fully rolled out. This change doesn't affect tenants located in the China region. For more information, see: [Combined security information registration for Azure Active Directory overview](../authentication/concept-registration-mfa-sspr-combined.md).
+Last year we announced the combined registration user experience for MFA and  self-service password reset (SSPR) was rolling out as the default experience for all organizations. We're happy to announce that the combined security information registration experience is now fully rolled out. This change doesn't affect tenants located in the China region. For more information, see: [Combined security information registration for Azure Active Directory overview](~/identity/authentication/concept-registration-mfa-sspr-combined.md).
 
 ---
 
@@ -195,7 +195,7 @@ In the **All Devices** settings under the Registered column, you can now select 
 **Service category:** My Apps            
 **Product capability:** End User Experiences      
 
-We have consolidated relevant app launcher settings in a new App launchers section in the Azure and Microsoft Entra admin centers. The entry point can be found under Enterprise applications, where Collections used to be. You can find the Collections option by selecting App launchers. In addition, we've added a new App launchers Settings option. This option has some settings you may already be familiar with like the Microsoft 365 settings. The new Settings options also have controls for previews. As an admin, you can choose to try out new app launcher features while they are in preview. Enabling a preview feature means that the feature turns on for your organization. This enabled feature reflects in the My Apps portal, and other app launchers for all of your users. To learn more about the preview settings, see: [End-user experiences for applications](../manage-apps/end-user-experiences.md).
+We have consolidated relevant app launcher settings in a new App launchers section in the Azure and Microsoft Entra admin centers. The entry point can be found under Enterprise applications, where Collections used to be. You can find the Collections option by selecting App launchers. In addition, we've added a new App launchers Settings option. This option has some settings you may already be familiar with like the Microsoft 365 settings. The new Settings options also have controls for previews. As an admin, you can choose to try out new app launcher features while they are in preview. Enabling a preview feature means that the feature turns on for your organization. This enabled feature reflects in the My Apps portal, and other app launchers for all of your users. To learn more about the preview settings, see: [End-user experiences for applications](~/identity/enterprise-apps/end-user-experiences.md).
 
 
 ---
@@ -206,7 +206,7 @@ We have consolidated relevant app launcher settings in a new App launchers secti
 **Service category:** RBAC                          
 **Product capability:** Access Control               
 
-Custom roles give you fine-grained control over what access your admins have. This release of custom roles includes the ability to delegate management of app registrations and enterprise apps. For more information, see: [Overview of role-based access control in Azure Active Directory](../roles/custom-overview.md).
+Custom roles give you fine-grained control over what access your admins have. This release of custom roles includes the ability to delegate management of app registrations and enterprise apps. For more information, see: [Overview of role-based access control in Azure Active Directory](~/identity/role-based-access-control/custom-overview.md).
 
 ---
 
@@ -264,7 +264,7 @@ For more information, see:
 
 With a recent improvement, Smart Lockout now synchronizes the lockout state across Azure Active Directory data centers, so the total number of failed sign-in attempts allowed before an account is locked will match the configured lockout threshold.
 
-For more information, see: [Protect user accounts from attacks with Azure Active Directory smart lockout](../authentication/howto-password-smart-lockout.md).
+For more information, see: [Protect user accounts from attacks with Azure Active Directory smart lockout](~/identity/authentication/howto-password-smart-lockout.md).
 
 ---
 
@@ -276,7 +276,7 @@ For more information, see: [Protect user accounts from attacks with Azure Active
 
 Customers with Cloud MFA activity from ADFS adapter, or NPS Extension, can now see these events in the Sign-in logs, rather than the legacy multi-factor authentication activity report.  Not all attributes in the sign-in logs are populated for these events due to limited data from the on-premises components. Customers with ADFS using AD Health Connect and customers using NPS with the latest NPS extension installed will have a richer set of data in the events.
 
-For more information, see: [Protect user accounts from attacks with Azure Active Directory smart lockout](../authentication/howto-password-smart-lockout.md).
+For more information, see: [Protect user accounts from attacks with Azure Active Directory smart lockout](~/identity/authentication/howto-password-smart-lockout.md).
 
 ---
 
@@ -301,7 +301,7 @@ Filter and transform group names in token claims configuration using regular exp
 Azure AD now has the capability to filter the groups included in the token using substring match on the display name or **onPremisesSAMAccountName** attributes of the group object.  Only Groups the user is a member of will be included in the token. This was a blocker for some of our customers to migrate their apps from ADFS to Azure AD. This feature unblocks those challenges. 
 
 For more information, see: 
-- [Group Filter](../develop/reference-claims-mapping-policy-type.md#group-filter).
+- [Group Filter](~/identity-platform/reference-claims-mapping-policy-type.md#group-filter).
 - [Configure group claims for applications by using Azure Active Directory](../hybrid/connect/how-to-connect-fed-group-claims.md).
 
 
@@ -314,7 +314,7 @@ For more information, see:
 **Service category:** Enterprise Apps             
 **Product capability:** SSO        
 
-Azure AD now supports claims transformations on multi-valued attributes and can emit multi-valued claims. More functions to allow match and string operations on claims processing to enable apps to be migrated from other IdPs to Azure AD. This includes:  Match on Empty(), NotEmpty(), Prefix(), Suffix(), and extract substring operators. For more information, see: [Claims mapping policy type](../develop/reference-claims-mapping-policy-type.md).
+Azure AD now supports claims transformations on multi-valued attributes and can emit multi-valued claims. More functions to allow match and string operations on claims processing to enable apps to be migrated from other IdPs to Azure AD. This includes:  Match on Empty(), NotEmpty(), Prefix(), Suffix(), and extract substring operators. For more information, see: [Claims mapping policy type](~/identity-platform/reference-claims-mapping-policy-type.md).
 
 ---
 
@@ -404,7 +404,7 @@ This risk detection baselines normal administrative user behavior in Azure AD, a
 **Service category:** Directory Management             
 **Product capability:** AuthZ/Access Delegation       
 
-You can now use administrative units to delegate management of specified devices in your tenant by adding devices to an administrative unit, and assigning built-in and custom device management roles scoped to that administrative unit. For more information, see: [Device management](../roles/administrative-units.md#device-management).
+You can now use administrative units to delegate management of specified devices in your tenant by adding devices to an administrative unit, and assigning built-in and custom device management roles scoped to that administrative unit. For more information, see: [Device management](~/identity/role-based-access-control/administrative-units.md#device-management).
 
 ---
 

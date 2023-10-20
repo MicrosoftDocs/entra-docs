@@ -18,7 +18,7 @@ ms.custom: developer, devx-track-js
 
 This tutorial demonstrates how to prepare your Node.js daemon client app, then configure it to acquire an access token for calling a web API. The application you build uses [Microsoft Authentication Library (MSAL) for Node](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-node) to simplify adding authorization to your node daemon application.
 
-The [OAuth 2.0 client credentials grant flow](../../develop/v2-oauth2-client-creds-grant-flow.md) permits a web service (confidential client) to use its own credentials, instead of impersonating a user, to authenticate before calling another web service. The client credentials grant flow is commonly used for server-to-server interactions that must run in the background, without immediate interaction with a user.
+The [OAuth 2.0 client credentials grant flow](~/identity-platform/v2-oauth2-client-creds-grant-flow.md) permits a web service (confidential client) to use its own credentials, instead of impersonating a user, to authenticate before calling another web service. The client credentials grant flow is commonly used for server-to-server interactions that must run in the background, without immediate interaction with a user.
 
 In this tutorial, you'll:
 
@@ -156,7 +156,7 @@ module.exports = {
 ```
 In the code: 
 
-- Prepare the `tokenRequest` and `apiConfig` object. The `tokenRequest` contains the scope for which you request an access token. The scope looks something like `api://Enter_the_Web_Api_Application_Id_Here/.default`. The `apiConfig` object contains the endpoint to your web API. Learn more about [OAuth 2.0 client credentials flow](../../develop/v2-oauth2-client-creds-grant-flow.md).
+- Prepare the `tokenRequest` and `apiConfig` object. The `tokenRequest` contains the scope for which you request an access token. The scope looks something like `api://Enter_the_Web_Api_Application_Id_Here/.default`. The `apiConfig` object contains the endpoint to your web API. Learn more about [OAuth 2.0 client credentials flow](~/identity-platform/v2-oauth2-client-creds-grant-flow.md).
 
 - You create a confidential client instance by passing the `msalConfig` object to the [ConfidentialClientApplication](/javascript/api/%40azure/msal-node/confidentialclientapplication#constructors) class' constructor.
 

@@ -36,7 +36,7 @@ Microsoft Entra Connect Health now provides the *Risky IP report*, which detects
 > [!NOTE]
 > To use this report, you must ensure that AD FS auditing is enabled. For more information, see [Enable auditing for AD FS](how-to-connect-health-agent-install.md#enable-auditing-for-ad-fs).
 >
-> To access this preview release, you need Global Administrator or [Security Reader](../../roles/permissions-reference.md#security-reader) permissions.  
+> To access this preview release, you need Global Administrator or [Security Reader](~/identity/role-based-access-control/permissions-reference.md#security-reader) permissions.  
 
 ## What's in the report?
 
@@ -133,7 +133,7 @@ You should add the identified malicious IP address to the firewall or block it i
 
 **Why can't I access the report?**
 
-You need to have Global Administrator or [Security Reader](../../roles/permissions-reference.md#security-reader) permissions. Contact your Global Administrator for access.
+You need to have Global Administrator or [Security Reader](~/identity/role-based-access-control/permissions-reference.md#security-reader) permissions. Contact your Global Administrator for access.
 
 ## Next steps
 * [Microsoft Entra Connect Health](./whatis-azure-ad-connect.md)

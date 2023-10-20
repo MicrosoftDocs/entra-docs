@@ -16,7 +16,7 @@ ms.custom: enterprise-apps
 
 # Add an OpenID Connect-based single sign-on application
 
-Add an application that supports [OpenID Connect (OIDC)](../develop/v2-protocols.md) based single sign-on (SSO) to your Microsoft Entra tenant.
+Add an application that supports [OpenID Connect (OIDC)](~/identity-platform/v2-protocols.md) based single sign-on (SSO) to your Microsoft Entra tenant.
 
 It is recommended that you use a non-production environment to test the steps in this page.
 
@@ -35,7 +35,7 @@ When you add an enterprise application that uses the OIDC standard for SSO, you 
 
 To configure OIDC-based SSO for an application:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
 1. In the **All applications** pane, select **New application**.
 1. The **Browse Microsoft Entra Gallery** pane opens and displays tiles for cloud platforms, on-premises applications, and featured applications. Applications listed in the **Featured applications** section have icons indicating whether they support federated SSO and provisioning. Search for and select the application. In this example, **SmartSheet** is being used.
@@ -43,7 +43,7 @@ To configure OIDC-based SSO for an application:
 
     :::image type="content" source="media/add-application-portal-setup-oidc-sso/oidc-sso-configuration.png" alt-text="Complete the consent screen for an application.":::
 
-1. Select **Consent on behalf of your organization** and then select **Accept**. The application is added to your tenant and the application home page appears. To learn more about user and admin consent, see [Understand user and admin consent](../develop/howto-convert-app-to-be-multi-tenant.md#understand-user-and-admin-consent-and-make-appropriate-code-changes).
+1. Select **Consent on behalf of your organization** and then select **Accept**. The application is added to your tenant and the application home page appears. To learn more about user and admin consent, see [Understand user and admin consent](~/identity-platform/howto-convert-app-to-be-multi-tenant.md#understand-user-and-admin-consent-and-make-appropriate-code-changes).
 
 ## Next steps
 

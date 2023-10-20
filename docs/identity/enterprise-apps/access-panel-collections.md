@@ -37,7 +37,7 @@ To create collections on the My Apps portal, you need:
 
 To create a collection, you must have a Microsoft Entra ID P1 or P2 license.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 1. Under **Manage**, select **App launchers**.
 1. Select **New collection**. In the **New collection** page, enter a **Name** for the collection (we recommend not using "collection" in the name). Then enter a **Description**.

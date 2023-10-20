@@ -56,7 +56,7 @@ The following core requirements must be met in order to configure and implement 
 
 *  **Azure onboarding**: Before deploying application proxy, user identities must be synchronized from an on-premises directory or created directly within your Microsoft Entra tenants. Identity synchronization allows Microsoft Entra ID to pre-authenticate users before granting them access to App Proxy published applications and to have the necessary user identifier information to perform single sign-on (SSO).
 
-* **Conditional Access requirements**: We do not recommend using Application Proxy for intranet access because this adds latency that will impact users. We recommend using Application Proxy with pre-authentication and Conditional Access policies for remote access from the internet.  An  approach to provide Conditional Access for intranet use is to modernize applications so they can directly authenticate with Microsoft Entra ID. Refer to [Resources for migrating applications to Microsoft Entra ID](../manage-apps/migration-resources.md) for more information.
+* **Conditional Access requirements**: We do not recommend using Application Proxy for intranet access because this adds latency that will impact users. We recommend using Application Proxy with pre-authentication and Conditional Access policies for remote access from the internet.  An  approach to provide Conditional Access for intranet use is to modernize applications so they can directly authenticate with Microsoft Entra ID. Refer to [Resources for migrating applications to Microsoft Entra ID](~/identity/enterprise-apps/migration-resources.md) for more information.
 
 * **Service limits**: To protect against overconsumption of resources by individual tenants there are throttling limits set per application and tenant. To see these limits refer to [Microsoft Entra service limits and restrictions](../enterprise-users/directory-service-limits-restrictions.md). These throttling limits are based on a benchmark far above typical usage volume and provides ample buffer for a majority of deployments.
 
@@ -243,11 +243,11 @@ Choosing the **Passthrough** option allows users to access the published applica
 
 Performing SSO is only possible if Microsoft Entra ID can identify the user requesting access to a resource, so your application must be configured to pre-authenticate users with Microsoft Entra ID upon access for SSO to function, otherwise the SSO options will be disabled.
 
-Read [Single sign-on to applications in Microsoft Entra ID](../manage-apps/what-is-single-sign-on.md) to help you choose the most appropriate SSO method when configuring your applications.
+Read [Single sign-on to applications in Microsoft Entra ID](~/identity/enterprise-apps/what-is-single-sign-on.md) to help you choose the most appropriate SSO method when configuring your applications.
 
 ###  Working with other types of applications
 
-Microsoft Entra application proxy can also support applications that have been developed to use the [Microsoft Authentication Library (MSAL)](../develop/v2-overview.md). It supports native client apps by consuming Microsoft Entra ID issued tokens received in the header information of client request to perform pre-authentication on behalf of the users.
+Microsoft Entra application proxy can also support applications that have been developed to use the [Microsoft Authentication Library (MSAL)](~/identity-platform/v2-overview.md). It supports native client apps by consuming Microsoft Entra ID issued tokens received in the header information of client request to perform pre-authentication on behalf of the users.
 
 Read [publishing native and mobile client apps](./application-proxy-configure-native-client-application.md) and [claims-based applications](./application-proxy-configure-for-claims-aware-applications.md) to learn about available configurations of Application Proxy.
 
@@ -271,7 +271,7 @@ The following capabilities can be used to support Microsoft Entra application pr
 
 ### Required roles
 
-Microsoft advocates the principle of granting the least possible privilege to perform needed tasks with Microsoft Entra ID. [Review the different Azure roles that are available](../roles/permissions-reference.md) and choose the right one to address the needs of each persona. Some roles may need to be applied temporarily and removed after the deployment is completed.
+Microsoft advocates the principle of granting the least possible privilege to perform needed tasks with Microsoft Entra ID. [Review the different Azure roles that are available](~/identity/role-based-access-control/permissions-reference.md) and choose the right one to address the needs of each persona. Some roles may need to be applied temporarily and removed after the deployment is completed.
 
 | Business role| Business tasks| Microsoft Entra roles |
 |---|---|---|

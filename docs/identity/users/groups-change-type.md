@@ -29,7 +29,7 @@ You can change a group's membership from static to dynamic (or vice-versa) In Mi
 
 The following steps can be performed using an account that has either the Global administrator, user administrator or groups administrator roles assigned. 
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](../roles/permissions-reference.md#groups-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
 1. Select Microsoft Entra ID.
 1.  **Groups**.
 1. From the **All groups** list, open the group that you want to change.

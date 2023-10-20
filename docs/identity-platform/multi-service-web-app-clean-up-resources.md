@@ -38,7 +38,7 @@ This command might take several minutes to run.
 
 ## Delete the app registration
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Developer](../roles/permissions-reference.md#application-developer).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Developer](~/identity/role-based-access-control/permissions-reference.md#application-developer).
 1. Browse to **Identity** > **Applications** > **App registrations**. 
 1. Select the application you created.
 1. In the app registration overview, select **Delete**.

@@ -50,7 +50,7 @@ The provisioning logs record all the operations performed by the provisioning se
 For more information on how to read the provisioning logs in the Microsoft Entra admin center, see [provisioning reporting guide](check-status-user-account-provisioning.md).
 
 ## How long will it take to provision users?
-When you're using automatic user provisioning with an application, there are some things to keep in mind. First, Microsoft Entra ID automatically provisions and updates user accounts in an app based on things like [user and group assignment](../manage-apps/assign-user-or-group-access-portal.md). The sync happens at a regularly scheduled time interval, typically every 40 minutes.
+When you're using automatic user provisioning with an application, there are some things to keep in mind. First, Microsoft Entra ID automatically provisions and updates user accounts in an app based on things like [user and group assignment](~/identity/enterprise-apps/assign-user-or-group-access-portal.md). The sync happens at a regularly scheduled time interval, typically every 40 minutes.
 
 The time it takes for a given user to be provisioned depends mainly on whether your provisioning job is running an initial cycle or an incremental cycle.
 

@@ -34,16 +34,16 @@ To manage these scenarios previously, you had to manually delete the guest userâ
 
 To reset a user's redemption status, you'll need one of the following roles:
 
-- [Helpdesk Administrator](../roles/permissions-reference.md#helpdesk-administrator) (least privileged)
-- [User Administrator](../roles/permissions-reference.md#user-administrator)
-- [Global Administrator](../roles/permissions-reference.md#global-administrator)
+- [Helpdesk Administrator](~/identity/role-based-access-control/permissions-reference.md#helpdesk-administrator) (least privileged)
+- [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator)
+- [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator)
 
 ## Use the Microsoft Entra admin center to reset redemption status
 
 [!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
 
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](../roles/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
 1. In the list, select the user's name to open their user profile.
 1. (Optional) If the user wants to sign in using a different email:

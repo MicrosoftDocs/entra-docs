@@ -60,7 +60,7 @@ AWS supports SP-initiated and IDP-initiated SSO.
 
 To configure the integration of AWS into Microsoft Entra ID, you add AWS from the gallery to your list of managed software as a service (SaaS) apps.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
 1. In the **Add from the gallery** section, type **Amazon Web Services** in the search box.
 1. In the results list, select **Amazon Web Services**, and then add the app. In a few seconds, the app is added to your tenant.
@@ -91,7 +91,7 @@ To configure and test Microsoft Entra single sign-on with AWS, do the following:
 
 In this section, you enable Microsoft Entra SSO in the Azure portal and configure SSO in your AWS application by doing the following:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** >
  **Amazon Web Services (AWS)**.
 1. select **Single sign-on**.
@@ -139,7 +139,7 @@ In this section, you enable Microsoft Entra SSO in the Azure portal and configur
    f. Select **Ok**, and then select **Save**.
 
    > [!NOTE]
-   > For more information about roles in Microsoft Entra ID, see [Add app roles to your application and receive them in the token](../develop/howto-add-app-roles-in-azure-ad-apps.md#app-roles-ui).
+   > For more information about roles in Microsoft Entra ID, see [Add app roles to your application and receive them in the token](~/identity-platform/howto-add-app-roles-in-azure-ad-apps.md#app-roles-ui).
 
 1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, select **Download** to download the federation metadata XML file, and then save it to your computer.
 

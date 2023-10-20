@@ -48,15 +48,15 @@ Users sign in once with their organizational account. This account is the same o
 
 Shared accounts not only increase oversight and improve usability, they also enhance your security. Users with permissions to use the credentials don't see the shared password, but rather get permissions to use the password as part of an orchestrated authentication flow. Further, some password SSO applications give you the option of using Microsoft Entra ID to periodically rollover (update) passwords. The system uses large, complex passwords, which increases account security. The administrator can easily grant or revoke access to an application, knows who has access to the account, and who has accessed it in the past.
 
-Microsoft Entra ID supports shared accounts for any Enterprise Mobility Suite (EMS) or Microsoft Entra ID P1 or P2 license plan, across all types of password single sign-on applications. You can share accounts for any of thousands of pre-integrated applications in the application gallery and can add your own password-authenticating application with [custom SSO apps](../manage-apps/what-is-single-sign-on.md).
+Microsoft Entra ID supports shared accounts for any Enterprise Mobility Suite (EMS) or Microsoft Entra ID P1 or P2 license plan, across all types of password single sign-on applications. You can share accounts for any of thousands of pre-integrated applications in the application gallery and can add your own password-authenticating application with [custom SSO apps](~/identity/enterprise-apps/what-is-single-sign-on.md).
 
 Microsoft Entra features that enable account sharing include:
 
-* [Password single sign-on](../manage-apps/plan-sso-deployment.md#single-sign-on-options)
+* [Password single sign-on](~/identity/enterprise-apps/plan-sso-deployment.md#single-sign-on-options)
 * Password single sign-on agent
 * [Group assignment](groups-self-service-management.md)
 * Custom Password apps
-* [App usage dashboard/reports](../authentication/howto-sspr-reporting.md)
+* [App usage dashboard/reports](~/identity/authentication/howto-sspr-reporting.md)
 * End-user access portals
 * [App proxy](../app-proxy/application-proxy.md)
 * [Active Directory Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.AzureActiveDirectory)
@@ -69,10 +69,10 @@ To use Microsoft Entra ID to share an account, you need to:
 * Configure the application for password Single Sign-On (SSO)
 * Use [group-based assignment](groups-saasapps.md) and select the option to enter a shared credential
 
-You can also make your shared account more secure with Multi-Factor Authentication (MFA) (learn more about [securing applications with Microsoft Entra ID](../authentication/concept-mfa-howitworks.md)) and you can delegate the ability to manage who has access to the application using [Microsoft Entra self-service](groups-self-service-management.md) group management.
+You can also make your shared account more secure with Multi-Factor Authentication (MFA) (learn more about [securing applications with Microsoft Entra ID](~/identity/authentication/concept-mfa-howitworks.md)) and you can delegate the ability to manage who has access to the application using [Microsoft Entra self-service](groups-self-service-management.md) group management.
 
 ## Next steps
 
-* [Application Management in Microsoft Entra ID](../manage-apps/what-is-application-management.md)
+* [Application Management in Microsoft Entra ID](~/identity/enterprise-apps/what-is-application-management.md)
 * [Protecting apps with Conditional Access](/azure/active-directory-b2c/overview)
 * [Self-service group management/SSAA](groups-self-service-management.md)

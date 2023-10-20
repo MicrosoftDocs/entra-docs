@@ -327,7 +327,7 @@ In the next steps, you'll create a new folder for the JavaScript SPA and set up 
 
 Before you proceed with authentication, register the application on Microsoft Entra ID:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Developer](../roles/permissions-reference.md#application-developer).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Developer](~/identity/role-based-access-control/permissions-reference.md#application-developer).
 1. If access to multiple tenants is available, use the **Directories + subscriptions** filter :::image type="icon" source="media/common/portal-directory-subscription-filter.png" border="false"::: in the top menu to switch to the tenant in which you want to register the application.
 1. Browse to **Identity** > **Applications** > **App registrations**, select **New registration**.
 1. For **Name**, enter a name for the application (for example, **sampleApp**). You can change the name later if necessary.

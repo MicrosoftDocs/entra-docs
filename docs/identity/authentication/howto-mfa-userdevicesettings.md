@@ -42,7 +42,7 @@ You can add authentication methods for a user by using the Microsoft Entra admin
 
 To add authentication methods for a user in the Microsoft Entra admin center:  
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Administrator](../roles/permissions-reference.md#authentication-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
 1. Browse to **Identity** > **Users** > **All users**. 
 1. Choose the user for whom you wish to add an authentication method and select **Authentication methods**.  
 1. At the top of the window, select **+ Add authentication method**.
@@ -88,7 +88,7 @@ Authentication methods can also be managed using Microsoft Graph APIs. For more 
 
 If you're assigned the *Authentication Administrator* role, you can require users to reset their password, re-register for MFA, or revoke existing MFA sessions from their user object. To manage user settings, complete the following steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Administrator](../roles/permissions-reference.md#authentication-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
 1. Browse to **Identity** > **Users** > **All users**. 
 1. Choose the user you wish to perform an action on and select **Authentication methods**. At the top of the window, then choose one of the following options for the user:
    - **Reset password** resets the user's password and assigns a temporary password that must be changed on the next sign-in.
@@ -102,7 +102,7 @@ If you're assigned the *Authentication Administrator* role, you can require user
 
    To delete a user's app passwords, complete the following steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Administrator](../roles/permissions-reference.md#authentication-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
 1. Browse to **Identity** > **Users** > **All users**. 
 1. Select **Multifactor authentication**. You may need to scroll to the right to see this menu option. Select the example screenshot below to see the full window and menu location:
     [![Select multifactor authentication from the Users window in Microsoft Entra ID.](media/howto-mfa-userstates/selectmfa-cropped.png)](media/howto-mfa-userstates/selectmfa.png#lightbox)

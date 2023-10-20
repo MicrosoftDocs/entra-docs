@@ -94,7 +94,7 @@ We recommend you copy and convert this JSON list to a CSV format:
 
 To migrate a SAML 2.0 application to Microsoft Entra ID, configure the application in your Microsoft Entra tenant for application access. In this example, we convert a Salesforce instance. 
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 2. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**, then select **New application**.
 
     ![Screenshot of the New Application option on All applications.](media/migrate-applications-from-okta/list-of-new-applications.png)
@@ -156,7 +156,7 @@ To migrate a SAML 2.0 application to Microsoft Entra ID, configure the applicati
      ![Screenshot of the Salesforce sign-in page.](media/migrate-applications-from-okta/new-identity-provider.png)
 
 >[!NOTE]
->If configuration is correct, the test user lands on the Salesforce home page. For troubleshooting help, see the [debugging guide](../manage-apps/debug-saml-sso-issues.md).
+>If configuration is correct, the test user lands on the Salesforce home page. For troubleshooting help, see the [debugging guide](~/identity/enterprise-apps/debug-saml-sso-issues.md).
 
 18. On the **Enterprise applications** page, assign the remaining users to the Salesforce application, with the correct roles.
 
@@ -179,20 +179,20 @@ To migrate an OpenID Connect (OIDC) or OAuth 2.0 application to Microsoft Entra 
 
 To complete the migration, repeat configuration for all applications in the Okta tenant.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
 2. Select **New application**.
 3. Select **Create your own application**. 
 4. On the menu that appears, name the OIDC app and then select **Register an application you're working on to integrate with Microsoft Entra ID**. 
 5. Select **Create**.
-6. On the next page, set up the tenancy of your application registration. For more information, see [Tenancy in Microsoft Entra ID](../develop/single-and-multi-tenant-apps.md). Go to **Accounts in any organizational directory (Any Microsoft Entra directory - Multitenant)** > **Register**.
+6. On the next page, set up the tenancy of your application registration. For more information, see [Tenancy in Microsoft Entra ID](~/identity-platform/single-and-multi-tenant-apps.md). Go to **Accounts in any organizational directory (Any Microsoft Entra directory - Multitenant)** > **Register**.
 
     ![Screenshot of the option for Accounts in any organizational directory (Any Microsoft Entra directory - Multitenant).](media/migrate-applications-from-okta/multitenant-register-app.png)
 
 7. On the **App registrations** page, under **Microsoft Entra ID**, open the created registration.
 
 >[!NOTE]
->Depending on the [application scenario](../develop/authentication-flows-app-scenarios.md), there are various configuration actions. Most scenarios require an app client secret.
+>Depending on the [application scenario](~/identity-platform/authentication-flows-app-scenarios.md), there are various configuration actions. Most scenarios require an app client secret.
 
 8. On the **Overview** page, record the **Application (client) ID**. You use this ID in your application.
 
@@ -230,7 +230,7 @@ To complete the migration, repeat configuration for all applications in the Okta
 
 ## Migrate a custom authorization server to Microsoft Entra ID
 
-Okta authorization servers map one-to-one to application registrations that [expose an API](../develop/quickstart-configure-app-expose-web-apis.md#add-a-scope).
+Okta authorization servers map one-to-one to application registrations that [expose an API](~/identity-platform/quickstart-configure-app-expose-web-apis.md#add-a-scope).
 
 Map the default Okta authorization server to Microsoft Graph scopes or permissions.
 

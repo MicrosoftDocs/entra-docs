@@ -42,7 +42,7 @@ sections:
       - question: |
           Does Pass-through Authentication support "Alternate ID" as the username, instead of "userPrincipalName"?
         answer: |
-          Yes, both pass-through authentication (PTA) and password hash sync (PHS) support sign-in using a non-UPN value, such as an alternate email. For more information about [Alternate Login ID](../../authentication/howto-authentication-use-email-signin.md).
+          Yes, both pass-through authentication (PTA) and password hash sync (PHS) support sign-in using a non-UPN value, such as an alternate email. For more information about [Alternate Login ID](~/identity/authentication/howto-authentication-use-email-signin.md).
           
       - question: |
           Does password hash synchronization act as a fallback to Pass-through Authentication?
@@ -82,7 +82,7 @@ sections:
       - question: |
           What happens if my user's password has expired and they try to sign in by using Pass-through Authentication?
         answer: |
-          If you have configured [password writeback](../../authentication/concept-sspr-writeback.md) for a specific user, and if the user signs in by using Pass-through Authentication, they can change or reset their passwords. The passwords are written back to on-premises Active Directory as expected.
+          If you have configured [password writeback](~/identity/authentication/concept-sspr-writeback.md) for a specific user, and if the user signs in by using Pass-through Authentication, they can change or reset their passwords. The passwords are written back to on-premises Active Directory as expected.
           
           If you haven't configured password writeback for a specific user or if the user doesn't have a valid Microsoft Entra ID license assigned, the user can't update their password in the cloud. They can't update their password, even if their password has expired. The user instead sees this message: "Your organization doesn't allow you to update your password on this site. Update it according to the method recommended by your organization, or ask your admin if you need help." The user or the administrator must reset their password in on-premises Active Directory.
           
@@ -93,13 +93,13 @@ sections:
 
           For more details please check the documentation below:
 
-          [Microsoft identity platform access tokens - Microsoft identity platform | Microsoft Docs](../../develop/access-tokens.md)
+          [Microsoft identity platform access tokens - Microsoft identity platform | Microsoft Docs](~/identity-platform/access-tokens.md)
 
      
       - question: |
           How does Pass-through Authentication protect you against brute-force password attacks?
         answer: |
-          [Read information about Smart Lockout](../../authentication/howto-password-smart-lockout.md).
+          [Read information about Smart Lockout](~/identity/authentication/howto-password-smart-lockout.md).
           
       - question: |
           What do Pass-through Authentication Agents communicate over ports 80 and 443?
@@ -147,7 +147,7 @@ sections:
         answer: |
           As long as a Pass-through Authentication Agent is running, it remains active and continually handles user sign-in requests. If you want to uninstall an Authentication Agent, go to **Control Panel -> Programs -> Programs and Features** and uninstall both the **Microsoft Entra Connect Authentication Agent** and the **Microsoft Entra Connect Agent Updater** programs.
           
-          If you check the Pass-through Authentication blade on the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](../../roles/permissions-reference.md#hybrid-identity-administrator). after completing the preceding step, you'll see the Authentication Agent showing as **Inactive**. This is _expected_. The Authentication Agent is automatically dropped from the list after 10 days.
+          If you check the Pass-through Authentication blade on the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator). after completing the preceding step, you'll see the Authentication Agent showing as **Inactive**. This is _expected_. The Authentication Agent is automatically dropped from the list after 10 days.
           
       - question: |
           I already use AD FS to sign in to Microsoft Entra ID. How do I switch it to Pass-through Authentication?
@@ -230,8 +230,8 @@ additionalContent: |
 
   - [Current limitations](how-to-connect-pta-current-limitations.md): Learn the scenarios that are supported and the ones that are not.
   - [Quick start](how-to-connect-pta-quick-start.md): Get up and running on Microsoft Entra pass-through authentication.
-  - [Migrate your apps to Microsoft Entra ID](../../manage-apps/migration-resources.md): Resources to help you migrate application access and authentication to Microsoft Entra ID.
-  - [Smart Lockout](../../authentication/howto-password-smart-lockout.md): Learn how to configure the Smart Lockout capability on your tenant to protect user accounts.
+  - [Migrate your apps to Microsoft Entra ID](~/identity/enterprise-apps/migration-resources.md): Resources to help you migrate application access and authentication to Microsoft Entra ID.
+  - [Smart Lockout](~/identity/authentication/howto-password-smart-lockout.md): Learn how to configure the Smart Lockout capability on your tenant to protect user accounts.
   - [Technical deep dive](how-to-connect-pta-how-it-works.md): Understand how the Pass-through Authentication feature works.
   - [Troubleshoot](tshoot-connect-pass-through-authentication.md): Learn how to resolve common problems with the Pass-through Authentication feature.
   - [Security deep dive](how-to-connect-pta-security-deep-dive.md): Get deep technical information on the Pass-through Authentication feature.

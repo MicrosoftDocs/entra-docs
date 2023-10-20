@@ -13,7 +13,7 @@
   - name: Roles you can't manage with PIM 
     href: pim-roles.md
   - name: Secure privileged access in Microsoft Entra ID
-    href: ../roles/security-planning.md?toc=/azure/active-directory/privileged-identity-management/toc.json
+    href: ~/identity/role-based-access-control/security-planning.md?toc=/azure/active-directory/privileged-identity-management/toc.json
 
   - name: Overview dashboards
     href: pim-resource-roles-overview-dashboards.md

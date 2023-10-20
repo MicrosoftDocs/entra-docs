@@ -126,7 +126,7 @@ If you deployed Microsoft Entra hybrid join, you can deploy another group policy
 
 Before you convert to Conditional Access, confirm the base MFA tenant settings for your organization.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](../roles/permissions-reference.md#global-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator). 
 2. Browse to **Identity** > **Users** > **All users**.
 3. Select **Per-user MFA** on the top menu of the **Users** pane.
 4. The legacy Microsoft Entra multifactor authentication portal appears. Or select [Microsoft Entra multifactor authentication portal](https://aka.ms/mfaportal).
@@ -149,7 +149,7 @@ Before you convert to Conditional Access, confirm the base MFA tenant settings f
     ![Screenshot of cleared checkboxes on the Require Trusted Devices for Access screen.](media/migrate-okta-sign-on-policies-conditional-access/uncheck-fields-legacy-portal.png)
 
     >[!NOTE]
-    >See [Optimize reauthentication prompts and understand session lifetime for Microsoft Entra multifactor authentication](../authentication/concepts-azure-multi-factor-authentication-prompts-session-lifetime.md).
+    >See [Optimize reauthentication prompts and understand session lifetime for Microsoft Entra multifactor authentication](~/identity/authentication/concepts-azure-multi-factor-authentication-prompts-session-lifetime.md).
 
 
 ## Build a Conditional Access policy
@@ -184,7 +184,7 @@ For individual registration, users go to [Microsoft Sign-in pane](https://aka.ms
 
 To manage registration, users go to [Microsoft My Sign-Ins | Security Info](https://aka.ms/mysecurityinfo).
 
-Learn more: [Enable combined security information registration in Microsoft Entra ID](../authentication/howto-registration-mfa-sspr-combined.md).
+Learn more: [Enable combined security information registration in Microsoft Entra ID](~/identity/authentication/howto-registration-mfa-sspr-combined.md).
 
    >[!NOTE]
    >If users registered, they're redirected to the **My Security** page, after they satisfy MFA.

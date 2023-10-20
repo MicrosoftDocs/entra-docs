@@ -68,7 +68,7 @@ To improve the tutorial experience, you can learn industry-standard terminology 
 
 Set up a SAML federation trust between the BIG-IP to allow the Microsoft Entra BIG-IP to hand off the pre-authentication and [Conditional Access](../conditional-access/overview.md) to Microsoft Entra ID, before it grants access to the published VPN service.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 2. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**, then select **New application**.
 3. In the gallery, search for *F5* and select **F5 BIG-IP APM Azure AD integration**.
 4. Enter a name for the application.

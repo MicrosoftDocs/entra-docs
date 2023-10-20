@@ -50,7 +50,7 @@ Mitigating an actual disruption must be an organization’s primary focus in dea
 
 ### Administrator lockout contingency
 
-To unlock admin access to your tenant, you should create emergency access accounts. These emergency access accounts, also known as *break glass* accounts, allow access to manage Microsoft Entra configuration when normal privileged account access procedures aren’t available. At least two emergency access accounts should be created following the [emergency access account recommendations](../roles/security-emergency-access.md).
+To unlock admin access to your tenant, you should create emergency access accounts. These emergency access accounts, also known as *break glass* accounts, allow access to manage Microsoft Entra configuration when normal privileged account access procedures aren’t available. At least two emergency access accounts should be created following the [emergency access account recommendations](~/identity/role-based-access-control/security-emergency-access.md).
 
 ### Mitigating user lockout
 
@@ -64,7 +64,7 @@ Incorporate the following access controls in your existing Conditional Access po
 - Deploy Windows Hello for Business on Windows 10 devices to satisfy MFA requirements directly from device sign-in.
 - Use trusted devices via [Microsoft Entra hybrid join](../devices/overview.md) or [Microsoft Intune](/mem/intune/fundamentals/intune-planning-guide). Trusted devices will improve user experience because the trusted device itself can satisfy the strong authentication requirements of policy without an MFA challenge to the user. MFA will then be required when enrolling a new device and when accessing apps or resources from untrusted devices.
 - Use Microsoft Entra ID Protection risk-based policies that prevent access when the user or sign-in is at risk in place of fixed MFA policies.
-- If you are protecting VPN access using Microsoft Entra multifactor authentication NPS extension, consider federating your VPN solution as a [SAML app](../manage-apps/view-applications-portal.md) and determine the app category as recommended below. 
+- If you are protecting VPN access using Microsoft Entra multifactor authentication NPS extension, consider federating your VPN solution as a [SAML app](~/identity/enterprise-apps/view-applications-portal.md) and determine the app category as recommended below. 
 
 >[!NOTE]
 > Risk-based policies require [Microsoft Entra ID P2](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing) licenses.
@@ -203,7 +203,7 @@ Order of activation:
 
 ### Contingencies for user lockout from on-prem resources (NPS extension)
 
-If you are protecting VPN access using Microsoft Entra multifactor authentication NPS extension, consider federating your VPN solution as a [SAML app](../manage-apps/view-applications-portal.md) and determine the app category as recommended below. 
+If you are protecting VPN access using Microsoft Entra multifactor authentication NPS extension, consider federating your VPN solution as a [SAML app](~/identity/enterprise-apps/view-applications-portal.md) and determine the app category as recommended below. 
 
 If you have deployed Microsoft Entra multifactor authentication NPS extension to protect on-prem resources, such as VPN and Remote Desktop Gateway, with MFA - you should consider in advance if you are ready to disable MFA in a case of emergency.
 
@@ -280,7 +280,7 @@ Undo the changes you made as part of the activated contingency plan once the ser
 ## Learn more
 
 * [Microsoft Entra authentication Documentation](./howto-mfaserver-iis.md)
-* [Manage emergency-access administrative accounts in Microsoft Entra ID](../roles/security-emergency-access.md)
+* [Manage emergency-access administrative accounts in Microsoft Entra ID](~/identity/role-based-access-control/security-emergency-access.md)
 * [Configure named locations in Microsoft Entra ID](../conditional-access/location-condition.md)
   * [Set-MsolDomainFederationSettings](/powershell/module/msonline/set-msoldomainfederationsettings)
 * [How to configure Microsoft Entra hybrid joined devices](../devices/hybrid-join-plan.md)

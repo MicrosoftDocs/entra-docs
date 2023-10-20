@@ -28,11 +28,11 @@ Before adding groups and members, [learn about groups and membership types](conc
 
 [!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
 
-You can create a basic group and add your members at the same time using the Microsoft Entra admin center. Microsoft Entra roles that can manage groups include **Groups Administrator**, **User Administrator**, **Privileged Role Administrator**, or **Global Administrator**. Review the [appropriate Microsoft Entra roles for managing groups](../roles/delegate-by-task.md#groups)
+You can create a basic group and add your members at the same time using the Microsoft Entra admin center. Microsoft Entra roles that can manage groups include **Groups Administrator**, **User Administrator**, **Privileged Role Administrator**, or **Global Administrator**. Review the [appropriate Microsoft Entra roles for managing groups](~/identity/role-based-access-control/delegate-by-task.md#groups)
 
 To create a basic group and add members:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](../roles/permissions-reference.md#groups-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
 
 1. Browse to **Identity** > **Groups** > **All groups**.
  
@@ -57,7 +57,7 @@ To create a basic group and add members:
     - You must have the **Privileged Role Administrator** or **Global Administrator** role.
     - Enabling this option automatically selects **Assigned** as the Membership type.
     - The ability to add roles while creating the group is added to the process.
-    - [Learn more about role-assignable groups](../roles/groups-create-eligible.md).
+    - [Learn more about role-assignable groups](~/identity/role-based-access-control/groups-create-eligible.md).
 
 1. Select a **Membership type.** For more information on membership types, see the [learn about groups and membership types](concept-learn-about-groups.md) article.
 
@@ -81,7 +81,7 @@ Need to add multiple members at one time? Learn about the [add members in bulk](
 
 ### Add members or owners of a group
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](../roles/permissions-reference.md#groups-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
 
 1. Browse to **Identity** > **Groups** > **All groups**.
 
@@ -99,7 +99,7 @@ Need to add multiple members at one time? Learn about the [add members in bulk](
 
 ### Remove members or owners of a group
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](../roles/permissions-reference.md#groups-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
 
 1. Browse to **Identity** > **Groups** > **All groups**.
 
@@ -117,7 +117,7 @@ You can edit a group's name, description, or membership type. You'll need the **
 
 To edit your group settings:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](../roles/permissions-reference.md#groups-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
 
 1. Browse to **Identity** > **Groups** > **All groups**.
 
@@ -155,7 +155,7 @@ We currently don't support:
 
 ### Add a group to another group
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](../roles/permissions-reference.md#groups-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
 
 1. Browse to **Identity** > **Groups** > **All groups**.
 
@@ -201,7 +201,7 @@ You can delete a group for any number of reasons, but typically it will be becau
 - Created a duplicate group by mistake. 
 - No longer need the group.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](../roles/permissions-reference.md#groups-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
 
 1. Browse to **Identity** > **Groups** > **All groups**.
 

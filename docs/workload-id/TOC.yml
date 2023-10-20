@@ -10,7 +10,7 @@
 - name: Concepts
   items:
       - name: Applications and service principals
-        href: ../develop/app-objects-and-service-principals.md?toc=/azure/active-directory/workload-identities/toc.json&bc=/azure/active-directory/workload-identities/breadcrumb/toc.json     
+        href: ~/identity-platform/app-objects-and-service-principals.md?toc=/azure/active-directory/workload-identities/toc.json&bc=/azure/active-directory/workload-identities/breadcrumb/toc.json     
       - name: Managed identities
         href: ../managed-identities-azure-resources/overview.md?toc=/azure/active-directory/workload-identities/toc.json&bc=/azure/active-directory/workload-identities/breadcrumb/toc.json
       - name: Workload identity federation
@@ -36,7 +36,7 @@
   - name: Create an access review
     href: ../privileged-identity-management/pim-create-roles-and-resource-roles-review.md?toc=/azure/active-directory/workload-identities/toc.json&bc=/azure/active-directory/workload-identities/breadcrumb/toc.json
   - name: Manage custom security attributes for an app
-    href: ../manage-apps/custom-security-attributes-apps.md?toc=/azure/active-directory/workload-identities/toc.json&bc=/azure/active-directory/workload-identities/breadcrumb/toc.json
+    href: ~/identity/enterprise-apps/custom-security-attributes-apps.md?toc=/azure/active-directory/workload-identities/toc.json&bc=/azure/active-directory/workload-identities/breadcrumb/toc.json
   - name: Check app health status and mitigate risk
     items:
       - name: Remove unused applications

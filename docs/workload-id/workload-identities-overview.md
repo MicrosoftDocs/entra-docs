@@ -20,9 +20,9 @@ A workload identity is an identity you assign to a software workload (such as an
 
 In Microsoft Entra, workload identities are applications, service principals, and managed identities.  
 
-An [application](../develop/app-objects-and-service-principals.md?toc=/azure/active-directory/workload-identities/toc.json&bc=/azure/active-directory/workload-identities/breadcrumb/toc.json) is an abstract entity, or template, defined by its application object.  The application object is the *global* representation of your application for use across all tenants. The application object describes how tokens are issued, the resources the application needs to access, and the actions that the application can take.
+An [application](~/identity-platform/app-objects-and-service-principals.md?toc=/azure/active-directory/workload-identities/toc.json&bc=/azure/active-directory/workload-identities/breadcrumb/toc.json) is an abstract entity, or template, defined by its application object.  The application object is the *global* representation of your application for use across all tenants. The application object describes how tokens are issued, the resources the application needs to access, and the actions that the application can take.
 
-A [service principal](../develop/app-objects-and-service-principals.md?toc=/azure/active-directory/workload-identities/toc.json&bc=/azure/active-directory/workload-identities/breadcrumb/toc.json) is the *local* representation, or application instance, of a global application object in a specific tenant. An application object is used as a template to create a service principal object in every tenant where the application is used.  The service principal object defines what the app can actually do in a specific tenant, who can access the app, and what resources the app can access.
+A [service principal](~/identity-platform/app-objects-and-service-principals.md?toc=/azure/active-directory/workload-identities/toc.json&bc=/azure/active-directory/workload-identities/breadcrumb/toc.json) is the *local* representation, or application instance, of a global application object in a specific tenant. An application object is used as a template to create a service principal object in every tenant where the application is used.  The service principal object defines what the app can actually do in a specific tenant, who can access the app, and what resources the app can access.
 
 A [managed identity](../managed-identities-azure-resources/overview.md?toc=/azure/active-directory/workload-identities/toc.json&bc=/azure/active-directory/workload-identities/breadcrumb/toc.json) is a special type of service principal that eliminates the need for developers to manage credentials.
 
@@ -57,7 +57,7 @@ Secure access with adaptive policies:
 
 - Apply Conditional Access policies to service principals owned by your organization using [Conditional Access for workload identities](../conditional-access/workload-identity.md?toc=/azure/active-directory/workload-identities/toc.json&bc=/azure/active-directory/workload-identities/breadcrumb/toc.json).
 - Enable real-time enforcement of Conditional Access location and risk policies using [Continuous access evaluation for workload identities](../conditional-access/concept-continuous-access-evaluation-workload.md?toc=/azure/active-directory/workload-identities/toc.json&bc=/azure/active-directory/workload-identities/breadcrumb/toc.json).
-- Manage [custom security attributes for an app](../manage-apps/custom-security-attributes-apps.md?toc=/azure/active-directory/workload-identities/toc.json&bc=/azure/active-directory/workload-identities/breadcrumb/toc.json)
+- Manage [custom security attributes for an app](~/identity/enterprise-apps/custom-security-attributes-apps.md?toc=/azure/active-directory/workload-identities/toc.json&bc=/azure/active-directory/workload-identities/breadcrumb/toc.json)
 
 Intelligently detect compromised identities:
 

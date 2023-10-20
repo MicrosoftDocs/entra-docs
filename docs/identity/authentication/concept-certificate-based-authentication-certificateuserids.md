@@ -44,7 +44,7 @@ For cloud-only users, only users with roles **Global Administrators**, **Privile
  
 Tenant admins can use the following steps to update certificate user IDs for a user account:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](../roles/permissions-reference.md#user-administrator). Search for and select **All users**. 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator). Search for and select **All users**. 
 
    :::image type="content" border="true" source="./media/concept-certificate-based-authentication-certificateuserids/user.png" alt-text="Screenshot of test user account.":::
 

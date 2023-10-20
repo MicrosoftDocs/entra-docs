@@ -81,4 +81,4 @@ You can specify which built-in or custom attributes you want to include as claim
 
 ## Next steps
 
-Learn more about [adding claims from custom claims providers](../../develop/custom-extension-get-started.md).
+Learn more about [adding claims from custom claims providers](~/identity-platform/custom-extension-get-started.md).

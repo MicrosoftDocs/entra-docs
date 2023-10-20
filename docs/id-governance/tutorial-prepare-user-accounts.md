@@ -173,7 +173,7 @@ Some of the attributes required for the pre-hire onboarding tutorial are exposed
 
 For the tutorial, the **mail** attribute only needs to be set on the manager account and the **manager** attribute set on the employee account.  Use the following steps:
 
- 1. Sign in to the [Microsoft Entra admin Center](https://entra.microsoft.com) as at least a [User Administrator](../roles/permissions-reference.md#user-administrator).
+ 1. Sign in to the [Microsoft Entra admin Center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
  1. Browse to > **Identity** > **Users** > **All Users**.
  1. Select **Melva Prince**.
  1. At the top, select **Edit**.
@@ -193,7 +193,7 @@ The employeeHireDate attribute is new to Microsoft Entra ID.  It isn't exposed t
 
 In order to do this, we must get the object ID for our user Melva Prince.
 
-1. Sign in to the [Microsoft Entra admin Center](https://entra.microsoft.com) as at least a [User Administrator](../roles/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin Center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to > **Identity** > **Users** > **All Users**.
 1. Select **Melva Prince**.
 1. Select the copy sign next to the **Object ID**.
@@ -243,7 +243,7 @@ In this scenario, we use this feature of Microsoft Entra ID to generate a tempor
 
 To use this feature, it must be enabled on our Microsoft Entra tenant.  To do this, use the following steps.
 
-1. Sign in to the [Microsoft Entra admin Center](https://entra.microsoft.com) as at least a [Global Administrator](../roles/permissions-reference.md#global-administrator). 
+1. Sign in to the [Microsoft Entra admin Center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator). 
 1. Browse to **Protection** > **Authentication methods** > **Temporary Access Pass**
 1. Select **Yes** to enable the policy and add Britta Simon and select which users have the policy applied, and any **General** settings.
 

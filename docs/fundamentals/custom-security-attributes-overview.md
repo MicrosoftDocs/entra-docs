@@ -42,7 +42,7 @@ Custom security attributes include these capabilities:
 Custom security attributes **aren't** supported in the following areas:
 
 - [Microsoft Entra Domain Services](/entra/identity/domain-services/overview)
-- [SAML token claims](../develop/saml-claims-customization.md)
+- [SAML token claims](~/identity-platform/saml-claims-customization.md)
 
 ## Features of custom security attributes
 
@@ -84,7 +84,7 @@ For more information about working with extensions, see [Add custom data to reso
 
 1. **Check permissions**
 
-    Check that you are assigned the [Attribute Definition Administrator](../roles/permissions-reference.md#attribute-definition-administrator) or [Attribute Assignment Administrator](../roles/permissions-reference.md#attribute-assignment-administrator) roles. If not, check with your administrator to assign you the appropriate role at tenant scope or attribute set scope. By default, [Global Administrator](../roles/permissions-reference.md#global-administrator) and other administrator roles do not have permissions to read, define, or assign custom security attributes. If necessary, a Global Administrator can assign these roles to themselves.
+    Check that you are assigned the [Attribute Definition Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-definition-administrator) or [Attribute Assignment Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator) roles. If not, check with your administrator to assign you the appropriate role at tenant scope or attribute set scope. By default, [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) and other administrator roles do not have permissions to read, define, or assign custom security attributes. If necessary, a Global Administrator can assign these roles to themselves.
 
     ![Diagram showing checking permissions to add custom security attributes in Microsoft Entra ID.](./media/custom-security-attributes-overview/attributes-permissions.png)
 
@@ -177,13 +177,13 @@ Microsoft Entra ID provides built-in roles to work with custom security attribut
 > [!div class="mx-tableFixed"]
 > | Role | Permissions |
 > | --- | --- |
-> | [Attribute Definition Reader](../roles/permissions-reference.md#attribute-definition-reader) | Read attribute sets<br/>Read custom security attribute definitions |
-> | [Attribute Definition Administrator](../roles/permissions-reference.md#attribute-definition-administrator) | Manage all aspects of attribute sets<br/>Manage all aspects of custom security attribute definitions |
-> | [Attribute Assignment Reader](../roles/permissions-reference.md#attribute-assignment-reader) | Read attribute sets<br/>Read custom security attribute definitions<br/>Read custom security attribute keys and values for users and service principals |
-> | [Attribute Assignment Administrator](../roles/permissions-reference.md#attribute-assignment-administrator) | Read attribute sets<br/>Read custom security attribute definitions<br/>Read and update custom security attribute keys and values for users and service principals |
+> | [Attribute Definition Reader](~/identity/role-based-access-control/permissions-reference.md#attribute-definition-reader) | Read attribute sets<br/>Read custom security attribute definitions |
+> | [Attribute Definition Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-definition-administrator) | Manage all aspects of attribute sets<br/>Manage all aspects of custom security attribute definitions |
+> | [Attribute Assignment Reader](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-reader) | Read attribute sets<br/>Read custom security attribute definitions<br/>Read custom security attribute keys and values for users and service principals |
+> | [Attribute Assignment Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator) | Read attribute sets<br/>Read custom security attribute definitions<br/>Read and update custom security attribute keys and values for users and service principals |
 
 > [!IMPORTANT]
-> By default, [Global Administrator](../roles/permissions-reference.md#global-administrator) and other administrator roles do not have permissions to read, define, or assign custom security attributes.
+> By default, [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) and other administrator roles do not have permissions to read, define, or assign custom security attributes.
 
 ## Microsoft Graph APIs
     

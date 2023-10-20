@@ -42,16 +42,16 @@ Before you begin the process of configuring single sign-on, you need to add the 
 
 ### Add Digital Pigeon from the Microsoft Entra gallery
 
-Add Digital Pigeon from the Microsoft Entra application gallery to configure single sign-on with Digital Pigeon. For more information on how to add application from the gallery, see the [Quickstart: Add application from the gallery](../manage-apps/add-application-portal.md).
+Add Digital Pigeon from the Microsoft Entra application gallery to configure single sign-on with Digital Pigeon. For more information on how to add application from the gallery, see the [Quickstart: Add application from the gallery](~/identity/enterprise-apps/add-application-portal.md).
 
 <a name='create-and-assign-azure-ad-test-user'></a>
 
 ### Create and assign Microsoft Entra test user
 
-Follow the guidelines in the [create and assign a user account](../manage-apps/add-application-portal-assign-users.md) article to create a test user account called B.Simon.
+Follow the guidelines in the [create and assign a user account](~/identity/enterprise-apps/add-application-portal-assign-users.md) article to create a test user account called B.Simon.
 
    > [!NOTE]
-   > Please click [here](../develop/howto-add-app-roles-in-azure-ad-apps.md#app-roles-ui) to learn how to configure App Roles in Microsoft Entra ID. The Role value must be one of 'Digital Pigeon User', 'Digital Pigeon Power User', or 'Digital Pigeon Admin'. If a role claim is not supplied, the default role is configurable in the Digital Pigeon app (`Account Settings > SSO > SAML Provisioning Settings`) by a Digital Pigeon Owner, as seen below:
+   > Please click [here](~/identity-platform/howto-add-app-roles-in-azure-ad-apps.md#app-roles-ui) to learn how to configure App Roles in Microsoft Entra ID. The Role value must be one of 'Digital Pigeon User', 'Digital Pigeon Power User', or 'Digital Pigeon Admin'. If a role claim is not supplied, the default role is configurable in the Digital Pigeon app (`Account Settings > SSO > SAML Provisioning Settings`) by a Digital Pigeon Owner, as seen below:
    ![Screenshot shows how to configure SAML Provisioning Default Role.](media/digital-pigeon-tutorial/saml-default-role.png "SAML Default Role")
 
 Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, and assign roles. The wizard also provides a link to the single sign-on configuration pane. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides). 
@@ -62,7 +62,7 @@ Alternatively, you can also use the [Enterprise App Configuration Wizard](https:
 
 Complete the following steps to enable Microsoft Entra single sign-on.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Digital Pigeon** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
@@ -141,8 +141,8 @@ You can also use Microsoft My Apps to test the application in any mode. When you
 
 * Should you run into any issues or require additional support, please contact the [Digital Pigeon support team](mailto:help@digitalpigeon.com)
 * For an alternative step-by-step guide, please refer to the Digital Pigeon KB article: [Microsoft Entra SSO Configuration](https://digitalpigeon.zendesk.com/hc/en-us/articles/5403612403855-Azure-AD-SSO-Configuration)
-* [What is single sign-on with Microsoft Entra ID?](../manage-apps/what-is-single-sign-on.md)
-* [Plan a single sign-on deployment](../manage-apps/plan-sso-deployment.md).
+* [What is single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
+* [Plan a single sign-on deployment](~/identity/enterprise-apps/plan-sso-deployment.md).
 
 ## Next steps
 

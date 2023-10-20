@@ -25,7 +25,7 @@ Another approach is to use Microsoft Entra groups and group claims as shown in t
 
 ## Declare roles for an application
 
-You define app roles by using the [Microsoft Entra admin center](https://entra.microsoft.com) during the [app registration process](quickstart-register-app.md). App roles are defined on an application registration representing a service, app or API. When a user signs in to the application, Microsoft Entra ID emits a `roles` claim for each role that the user or service principal has been granted. This can be used to implement [claim-based authorization](./claims-validation.md). App roles can be assigned [to a user or a group of users](../manage-apps/add-application-portal-assign-users.md). App roles can also be assigned to the service principal for another application, or [to the service principal for a managed identity](../managed-identities-azure-resources/how-to-assign-app-role-managed-identity-powershell.md).
+You define app roles by using the [Microsoft Entra admin center](https://entra.microsoft.com) during the [app registration process](quickstart-register-app.md). App roles are defined on an application registration representing a service, app or API. When a user signs in to the application, Microsoft Entra ID emits a `roles` claim for each role that the user or service principal has been granted. This can be used to implement [claim-based authorization](./claims-validation.md). App roles can be assigned [to a user or a group of users](~/identity/enterprise-apps/add-application-portal-assign-users.md). App roles can also be assigned to the service principal for another application, or [to the service principal for a managed identity](../managed-identities-azure-resources/how-to-assign-app-role-managed-identity-powershell.md).
 
 Currently, if you add a service principal to a group, and then assign an app role to that group, Microsoft Entra ID doesn't add the `roles` claim to tokens it issues.
 
@@ -39,7 +39,7 @@ The number of roles you add counts toward application manifest limits enforced b
 
 To create an app role by using the Microsoft Entra admin center's user interface:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 1. If you have access to multiple tenants, use the **Directories + subscriptions** filter :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false"::: in the top menu to switch to the tenant that contains the app registration to which you want to add an app role.
 1. Browse to **Identity** > **Applications** > **App registrations** and then select the application you want to define app roles in.
 1. Under manage select **App roles**, and then select **Create app role**.
@@ -75,13 +75,13 @@ If you have not already done so, you'll need to assign yourself as the applicati
 
 ## Assign app roles to applications
 
-Once you've added app roles in your application, you can assign an app role to a client app by using the Microsoft Entra admin center or programmatically by using [Microsoft Graph](/graph/api/user-post-approleassignments). This is not to be confused with [assigning roles to users](../roles/manage-roles-portal.md).
+Once you've added app roles in your application, you can assign an app role to a client app by using the Microsoft Entra admin center or programmatically by using [Microsoft Graph](/graph/api/user-post-approleassignments). This is not to be confused with [assigning roles to users](~/identity/role-based-access-control/manage-roles-portal.md).
 
 When you assign app roles to an application, you create _application permissions_. Application permissions are typically used by daemon apps or back-end services that need to authenticate and make authorized API call as themselves, without the interaction of a user.
 
 To assign app roles to an application by using the Microsoft Entra admin center:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 1. Browse to **Identity** > **Applications** > **App registrations** and then select **All applications**.
 1. Select **All applications** to view a list of all your applications. If your application doesn't appear in the list, use the filters at the top of the **All applications** list to restrict the list, or scroll down the list to locate your application.
 1. Select the application to which you want to assign an app role.
@@ -127,11 +127,11 @@ App roles are preferred by developers when they want to describe and control the
 
 ## Assign users and groups to Microsoft Entra roles
 
-Once you've added app roles in your application, you can assign users and groups to [Microsoft Entra roles](../roles/permissions-reference.md). Assignment of users and groups to roles can be done through the portal's UI, or programmatically using [Microsoft Graph](/graph/api/user-post-approleassignments). When the users assigned to the various roles sign in to the application, their tokens will have their assigned roles in the `roles` claim.
+Once you've added app roles in your application, you can assign users and groups to [Microsoft Entra roles](~/identity/role-based-access-control/permissions-reference.md). Assignment of users and groups to roles can be done through the portal's UI, or programmatically using [Microsoft Graph](/graph/api/user-post-approleassignments). When the users assigned to the various roles sign in to the application, their tokens will have their assigned roles in the `roles` claim.
 
 To assign users and groups to roles by using the Microsoft Entra admin center:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 1. If you have access to multiple tenants, use the **Directories + subscriptions** filter :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false"::: in the top menu to switch to the tenant that contains the app registration to which you want to add an app role.
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 1. Select **All applications** to view a list of all your applications. If your application doesn't appear in the list, use the filters at the top of the **All applications** list to restrict the list, or scroll down the list to locate your application.

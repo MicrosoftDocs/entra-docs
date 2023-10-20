@@ -25,7 +25,7 @@ This article covers how to add user profile information, such as a profile pictu
 
 When new users are created, only a few details are added to their user profile. If your organization needs more details, they can be added after the user is created. 
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](../roles/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 
 1. Browse to **Identity** > **Users** > **All users**.
 
@@ -82,7 +82,7 @@ All your changes are saved for the user.
 
 In the **User settings** area, you can adjust several settings that affect all users. Some settings are managed in a separate area linked from this page. These settings require the Global Administrator role.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](../roles/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 1. Browse to **Identity** > **Users** > **User settings**.
 
 [ ![Screenshot of the Microsoft Entra user settings options.](media/how-to-manage-user-profile-info/user-settings.png) ](media/how-to-manage-user-profile-info/user-settings.png#lightbox)

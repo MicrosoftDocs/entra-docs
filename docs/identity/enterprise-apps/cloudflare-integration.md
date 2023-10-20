@@ -71,7 +71,7 @@ Integrate Cloudflare Zero Trust account with an instance of Microsoft Entra ID.
 
 Use the instructions in the following three sections to register Cloudflare with Microsoft Entra ID.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 2. Browse to **Identity** > **Applications** > **App registrations**.
 3. Select **New registration**.
 4. Enter an application **Name**.

@@ -38,14 +38,14 @@ With PIM for Groups you can use policies similar to ones you use in PIM for Micr
 
 When working with Microsoft Entra ID, you can assign a Microsoft Entra security group or Microsoft 365 group to a Microsoft Entra role. This is possible only with groups that are created as role-assignable.
 
-To learn more about Microsoft Entra role-assignable groups, see [Create a role-assignable group in Microsoft Entra ID](../roles/groups-create-eligible.md). 
+To learn more about Microsoft Entra role-assignable groups, see [Create a role-assignable group in Microsoft Entra ID](~/identity/role-based-access-control/groups-create-eligible.md). 
 
 Role-assignable groups benefit from extra protections comparing to non-role-assignable groups:
 
 - **Role-assignable groups** - only the Global Administrator, Privileged Role Administrator, or the group Owner can manage the group. Also, no other users can change the credentials of the users who are (active) members of the group. This feature helps prevent an admin from elevating to a higher privileged role without going through a request and approval procedure.
 - **Non-role-assignable groups** - various Microsoft Entra roles can manage these groups – that includes Exchange Administrators, Groups Administrators, User Administrators, etc. Also, various roles Microsoft Entra roles can change the credentials of the users who are (active) members of the group – that includes Authentication Administrators, Helpdesk Administrators, User Administrators, etc.
 
-To learn more about Microsoft Entra built-in roles and their permissions, see [Microsoft Entra built-in roles](../roles/permissions-reference.md).
+To learn more about Microsoft Entra built-in roles and their permissions, see [Microsoft Entra built-in roles](~/identity/role-based-access-control/permissions-reference.md).
 
 Microsoft Entra role-assignable group feature is not part of Microsoft Entra Privileged Identity Management (Microsoft Entra PIM). For more information on licensing, see [Microsoft Entra ID Governance licensing fundamentals](../governance/licensing-fundamentals.md) .
 
@@ -72,7 +72,7 @@ To provide a group of users with just-in-time access to Microsoft Entra roles wi
 
 ## Privileged Identity Management and group nesting
 
-In Microsoft Entra ID, role-assignable groups can’t have other groups nested inside them. To learn more, see [Use Microsoft Entra groups to manage role assignments](../roles/groups-concept.md). This is applicable to active membership: one group can't be an active member of another group that is role-assignable.
+In Microsoft Entra ID, role-assignable groups can’t have other groups nested inside them. To learn more, see [Use Microsoft Entra groups to manage role assignments](~/identity/role-based-access-control/groups-concept.md). This is applicable to active membership: one group can't be an active member of another group that is role-assignable.
 
 One group can be an eligible member of another group, even if one of those groups is role-assignable.
 

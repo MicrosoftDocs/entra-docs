@@ -66,7 +66,7 @@ Microsoft Entra Connect comes with several features you can optionally turn on o
 
 [Password hash synchronization](how-to-connect-password-hash-synchronization.md) synchronizes the password hash in Active Directory to Microsoft Entra ID. The  end-user can use the same password on-premises and in the cloud but only manage it in one location. Since it uses your on-premises Active Directory as the authority, you can also use your own password policy.
 
-[Password writeback](../../authentication/tutorial-enable-sspr.md) will allow your users to change and reset their passwords in the cloud and have your on-premises password policy applied.
+[Password writeback](~/identity/authentication/tutorial-enable-sspr.md) will allow your users to change and reset their passwords in the cloud and have your on-premises password policy applied.
 
 [Device writeback](how-to-connect-device-writeback.md) will allow a device registered in Microsoft Entra ID to be written back to on-premises Active Directory so it can be used for Conditional Access.
 
@@ -80,7 +80,7 @@ The [prevent accidental deletes](how-to-connect-sync-feature-prevent-accidental-
 |Configure filtering | [Microsoft Entra Connect Sync: Configure filtering](how-to-connect-sync-configure-filtering.md)|
 |Password hash synchronization | [Password hash synchronization](how-to-connect-password-hash-synchronization.md)|
 |Pass-through Authentication | [Pass-through authentication](how-to-connect-pta.md)
-|Password writeback | [Getting started with password management](../../authentication/tutorial-enable-sspr.md)|
+|Password writeback | [Getting started with password management](~/identity/authentication/tutorial-enable-sspr.md)|
 |Device writeback | [Enabling device writeback in Microsoft Entra Connect](how-to-connect-device-writeback.md)|
 |Prevent accidental deletes | [Microsoft Entra Connect Sync: Prevent accidental deletes](how-to-connect-sync-feature-prevent-accidental-deletes.md)|
 |Automatic upgrade | [Microsoft Entra Connect: Automatic upgrade](how-to-connect-install-automatic-upgrade.md)|

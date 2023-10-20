@@ -33,7 +33,7 @@ Microsoft Entra ID uses a concept called "assignments" to determine which users 
 
 Before you configure and enable the provisioning service, you must decide which users in Microsoft Entra ID need access to your Pingboard app. Then you can assign these users to your Pingboard app by following the instructions here:
 
-[Assign a user to an enterprise app](../manage-apps/assign-user-or-group-access-portal.md)
+[Assign a user to an enterprise app](~/identity/enterprise-apps/assign-user-or-group-access-portal.md)
 
 ### Important tips for assigning users to Pingboard
 
@@ -50,7 +50,7 @@ This section guides you through connecting your Microsoft Entra ID to the Pingbo
 
 ### To configure automatic user account provisioning to Pingboard in Microsoft Entra ID
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 
 1. If you already configured Pingboard for single sign-on, search for your instance of Pingboard by using the search field. Otherwise, select **Add** and search for **Pingboard** in the application gallery. Select **Pingboard** from the search results, and add it to your list of applications.
@@ -94,5 +94,5 @@ For more information on how to read the Microsoft Entra provisioning logs, see [
 ## Additional resources
 
 * [Manage user account provisioning for enterprise apps](../app-provisioning/configure-automatic-user-provisioning-portal.md)
-* [What is application access and single sign-on with Microsoft Entra ID?](../manage-apps/what-is-single-sign-on.md)
+* [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 * [Configure single sign-on](pingboard-tutorial.md)

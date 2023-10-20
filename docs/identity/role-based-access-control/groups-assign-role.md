@@ -39,7 +39,7 @@ Assigning a Microsoft Entra role to a group is similar to assigning users and se
 > [!TIP]
 > These steps apply to customers that have a Microsoft Entra ID P1 license. If you have a Microsoft Entra ID P2 license in your tenant, you should instead follow steps in [Assign Microsoft Entra roles in Privileged Identity Management](../privileged-identity-management/pim-how-to-add-role-to-user.md).
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](../roles/permissions-reference.md#privileged-role-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
 1. Browse to **Identity** > **Roles & admins** > **Roles & admins**.
 

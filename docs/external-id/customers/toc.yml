@@ -291,11 +291,11 @@ items:
         - name: Add claims from external systems
           items:
            - name: About custom authentication extensions
-             href: ../../develop/custom-extension-overview.md?context=/azure/active-directory/external-identities/customers/context/customers-context
+             href: ~/identity-platform/custom-extension-overview.md?context=/azure/active-directory/external-identities/customers/context/customers-context
            - name: Configure a custom claims provider token issuance event
-             href: ../../develop/custom-extension-get-started.md?context=/azure/active-directory/external-identities/customers/context/customers-context
+             href: ~/identity-platform/custom-extension-get-started.md?context=/azure/active-directory/external-identities/customers/context/customers-context
            - name: Troubleshoot your custom claims provider API
-             href: ../../develop/custom-extension-troubleshoot.md?context=/azure/active-directory/external-identities/customers/context/customers-context
+             href: ~/identity-platform/custom-extension-troubleshoot.md?context=/azure/active-directory/external-identities/customers/context/customers-context
     - name: Secure
       items:
       - name: Multifactor authentication
@@ -327,7 +327,7 @@ items:
     - name: Company branding CSS template reference guide
       href: /azure/active-directory/fundamentals/reference-company-branding-css-template
     - name: Help and support options
-      href: ../../develop/developer-support-help-options.md?context=/azure/active-directory/external-identities/customers/context/customers-context
+      href: ~/identity-platform/developer-support-help-options.md?context=/azure/active-directory/external-identities/customers/context/customers-context
     - name: MSAL references 
       items:
         - name: MSAL.NET

@@ -160,4 +160,4 @@ If you'd like to share feedback or encounter issues about this feature, share vi
 
 [Learn more about device registration](../devices/overview.md)
 
-[Learn more about Microsoft Entra multifactor authentication](../authentication/howto-mfa-getstarted.md)
+[Learn more about Microsoft Entra multifactor authentication](~/identity/authentication/howto-mfa-getstarted.md)

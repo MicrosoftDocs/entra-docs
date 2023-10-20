@@ -51,7 +51,7 @@ The connector provides a bridge between the capabilities of the ECMA Connector H
 
 If you have already downloaded the provisioning agent and configured it for another on-premises application, then continue reading in the next section.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](../roles/permissions-reference.md#hybrid-identity-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
 1. Browse to **Identity** > **Hybrid management** > **Microsoft Entra Connect** > **Cloud sync** > **Agents**.
  
  :::image type="content" source="../../../includes/media/active-directory-cloud-sync-how-to-install/new-ux-1.png" alt-text="Screenshot of new UX screen." lightbox="../../../includes/media/active-directory-cloud-sync-how-to-install/new-ux-1.png":::
@@ -71,7 +71,7 @@ If you have already downloaded the provisioning agent and configured it for anot
 
 [!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](../roles/permissions-reference.md#application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications**. 
 1. Select **New application**.
 1. Search for the **On-premises ECMA app** application, give the app a name, and select **Create** to add it to your tenant.
@@ -271,7 +271,7 @@ Follow these steps to confirm that the connector host has started and has identi
    > [!NOTE]
    > If the window had timed out, then you need to re-select the agent.
    
-   1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](../roles/permissions-reference.md#application-administrator).
+   1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
    1. Browse to **Identity** > **Applications** > **Enterprise applications**.
    1. Select the **On-premises ECMA app** application.
    1. Select **Provisioning**.
@@ -298,7 +298,7 @@ Return to the web browser window where you were configuring the application prov
 > [!NOTE]
 > If the window had timed out, then you need to re-select the agent.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](../roles/permissions-reference.md#application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 1. Select the **On-premises ECMA app** application.
 1. Select **Provisioning**.
@@ -324,7 +324,7 @@ Now you need to map attributes between the representation of the user in Microso
 
 You'll use the Azure portal to configure the mapping between the Microsoft Entra user's attributes and the attributes that you previously selected in the ECMA Host configuration wizard.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](../roles/permissions-reference.md#application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 1. Select the **On-premises ECMA app** application.
 1. Select **Provisioning**.
@@ -366,7 +366,7 @@ If there are existing users in the InputFile.txt, then you should create applica
 Otherwise, if there are no current users of the application, then select a test user from Microsoft Entra who will be provisioned to the application.
 
 1. Ensure that the user selected has all the properties, mapped to the required attributes of the schema.
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](../roles/permissions-reference.md#application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 1. Select the **On-premises ECMA app** application.
 1. On the left, under **Manage**, select **Users and groups**.
@@ -379,7 +379,7 @@ Otherwise, if there are no current users of the application, then select a test 
 
 Now that your attributes are mapped and users are assigned, you can test on-demand provisioning with one of your users.
  
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](../roles/permissions-reference.md#application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 1. Select the **On-premises ECMA app** application.
 1. Select **Provisioning**.

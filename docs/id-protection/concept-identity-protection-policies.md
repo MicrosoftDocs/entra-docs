@@ -72,7 +72,7 @@ If you already have Identity Protection risk policies set up, we encourage you t
 
 Identity Protection can help organizations roll out Microsoft Entra multifactor authentication using a policy requiring registration at sign-in. Enabling this policy is a great way to ensure new users in your organization have registered for MFA on their first day. Multifactor authentication is one of the self-remediation methods for risk events within Identity Protection. Self-remediation allows your users to take action on their own to reduce helpdesk call volume.
 
-More information about Microsoft Entra multifactor authentication can be found in the article, [How it works: Microsoft Entra multifactor authentication](../authentication/concept-mfa-howitworks.md).
+More information about Microsoft Entra multifactor authentication can be found in the article, [How it works: Microsoft Entra multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md).
 
 ## Next steps
 

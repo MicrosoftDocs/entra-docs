@@ -22,7 +22,7 @@ This article provides a comprehensive list of the audit categories and their rel
 
 Audit log activities and categories change periodically. The tables are updated regularly, but may not be in sync with what is available in Microsoft Entra ID. Provide us with feedback if you think there's a missing audit category or activity.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../roles/permissions-reference.md#reports-reader).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](~/identity/role-based-access-control/permissions-reference.md#reports-reader).
 1. Browse to **Identity** > **Monitoring & health** > **Audit logs**.
 1. Adjust the filters accordingly.
 1. Select a row from the resulting table to view the details.
@@ -1021,7 +1021,7 @@ If you're using [MIM](/microsoft-identity-manager/microsoft-identity-manager-201
 
 ## MyApps
 
-Use the [MyApps](../manage-apps/myapps-overview.md) audit logs to identify when an application was added to a collection for your MyApp portal.
+Use the [MyApps](~/identity/enterprise-apps/myapps-overview.md) audit logs to identify when an application was added to a collection for your MyApp portal.
 
 |Audit Category|Activity|
 |---|---|

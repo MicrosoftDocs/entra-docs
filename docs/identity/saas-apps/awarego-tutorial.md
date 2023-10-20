@@ -38,7 +38,7 @@ In this tutorial, you configure and test Microsoft Entra SSO in a test environme
 
 To configure the integration of AwareGo into Microsoft Entra ID, you need to add AwareGo from the gallery to your list of managed software as a service (SaaS) apps.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
 1. In the **Add from the gallery** section, type **AwareGo** in the search box.
 1. In the results pane, select **AwareGo**, and then add the app. In a few seconds, the app is added to your tenant.
@@ -68,7 +68,7 @@ To configure and test Microsoft Entra SSO with AwareGo, do the following:
 
 To enable Microsoft Entra SSO in the Azure portal, do the following:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **AwareGo** application integration page, under **Manage**, select **single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. To edit the settings, on the **Set up Single Sign-On with SAML** pane, select the **Edit** button.
@@ -103,7 +103,7 @@ To enable Microsoft Entra SSO in the Azure portal, do the following:
 
 In this section, you create a test user called B.Simon.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](../roles/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
 1. Select **New user** > **Create new user**, at the top of the screen.
 1. In the **User** properties, follow these steps:

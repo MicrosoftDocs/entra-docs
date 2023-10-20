@@ -65,7 +65,7 @@ Microsoft Entra ID lets you choose which authentication methods can be used duri
 
 To enable the authentication method for passwordless phone sign-in, complete the following steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](../roles/permissions-reference.md#authentication-policy-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Protection** > **Authentication methods** > **Policies**.
 1. Under **Microsoft Authenticator**, choose the following options:
    1. **Enable** - Yes or No
@@ -82,7 +82,7 @@ Users register themselves for the passwordless authentication method of Microsof
 
 ### Direct phone Sign-in registration 
 Users can register for passwordless phone sign-in directly within the Microsoft Authenticator app  without the need to first registering Microsoft Authenticator with their account, all while never accruing a password. Here's how:
-1. Acquire a [Temporary Access Pass](../authentication/howto-authentication-temporary-access-pass.md) from your Admin or Organization. 
+1. Acquire a [Temporary Access Pass](~/identity/authentication/howto-authentication-temporary-access-pass.md) from your Admin or Organization. 
 2. Download and install the Microsoft Authenticator app on your mobile device. 
 3. Open Microsoft Authenticator and click **Add account** and then choose **Work or school account.**
 4. Choose **Sign in**. 
@@ -136,7 +136,7 @@ After the user has utilized passwordless phone sign-in, the app continues to gui
 
 ## Management
 
-The Authentication methods policy is the recommended way to manage Microsoft Authenticator. [Authentication Policy Administrators](../roles/permissions-reference.md#authentication-policy-administrator) can edit this policy to enable or disable Microsoft Authenticator. Admins can include or exclude specific users and groups from using it. 
+The Authentication methods policy is the recommended way to manage Microsoft Authenticator. [Authentication Policy Administrators](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) can edit this policy to enable or disable Microsoft Authenticator. Admins can include or exclude specific users and groups from using it. 
 
 Admins can also configure parameters to better control how Microsoft Authenticator can be used. For example, they can add location or app name to the sign-in request so users have greater context before they approve.  
 
@@ -180,4 +180,4 @@ To learn about Microsoft Entra authentication and passwordless methods, see the 
 
 - [Learn how passwordless authentication works](concept-authentication-passwordless.md)
 - [Learn about device registration](../devices/overview.md)
-- [Learn about Microsoft Entra multifactor authentication](../authentication/howto-mfa-getstarted.md)
+- [Learn about Microsoft Entra multifactor authentication](~/identity/authentication/howto-mfa-getstarted.md)

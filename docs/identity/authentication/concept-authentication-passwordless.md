@@ -87,7 +87,7 @@ Users can register and then select a FIDO2 security key at the sign-in interface
 
 FIDO2 security keys can be used to sign in to their Microsoft Entra ID or Microsoft Entra hybrid joined Windows 10 devices and get single-sign on to their cloud and on-premises resources. Users can also sign in to supported browsers. FIDO2 security keys are a great option for enterprises who are very security sensitive or have scenarios or employees who aren't willing or able to use their phone as a second factor.
 
-We have a reference document for which [browsers support FIDO2 authentication with Microsoft Entra ID](fido2-compatibility.md), and best practices for developers wanting to [support FIDO2 auth in the applications they develop](../develop/support-fido2-authentication.md).
+We have a reference document for which [browsers support FIDO2 authentication with Microsoft Entra ID](fido2-compatibility.md), and best practices for developers wanting to [support FIDO2 auth in the applications they develop](~/identity-platform/support-fido2-authentication.md).
 
 ![Sign in to Microsoft Edge with a security key](./media/concept-authentication-passwordless/concept-web-sign-in-security-key.png)
 

@@ -16,7 +16,7 @@ ms.date: 03/03/2023
 
 Learn to use the Microsoft identity platform and Microsoft Entra ID to increase the resilience of daemon applications. Find information about background processes, services, server to server apps, and applications without users.
 
-See, [What is the Microsoft identity platform?](../develop/v2-overview.md)
+See, [What is the Microsoft identity platform?](~/identity-platform/v2-overview.md)
 
 The following diagram illustrates a daemon application making a call to Microsoft identity platform.
 
@@ -36,7 +36,7 @@ Managed identities use regional endpoints, which help prevent out-of-region fail
 
 If you develop daemon apps and don't use managed identities, use the Microsoft Authentication Library (MSAL) for authentication and authorization. MSAL eases the process of providing client credentials. For example, your application doesn't need to create and sign JSON web token assertions with certificate-based credentials.
 
-See, [Overview of the Microsoft Authentication Library (MSAL)](../develop/msal-overview.md)
+See, [Overview of the Microsoft Authentication Library (MSAL)](~/identity-platform/msal-overview.md)
 
 ### Microsoft.Identity.Web for .NET developers
 

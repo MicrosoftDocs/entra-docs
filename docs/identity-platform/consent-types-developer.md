@@ -83,14 +83,14 @@ To view the full list of Microsoft graph permissions, see [Microsoft graph permi
 
 You can also configure permissions on your own resources to require admin consent. For more information on how to add scopes that require admin consent, see [Add a scope that requires admin consent](quickstart-configure-app-expose-web-apis.md#add-a-scope-requiring-admin-consent).
 
-Some organizations may change the default user consent policy for the tenant. When your application requests access to permissions they're evaluated against these policies. The user may need to request admin consent even when not required by default. To learn how administrators manage consent policies for applications, see [Manage app consent policies](../manage-apps/manage-app-consent-policies.md).
+Some organizations may change the default user consent policy for the tenant. When your application requests access to permissions they're evaluated against these policies. The user may need to request admin consent even when not required by default. To learn how administrators manage consent policies for applications, see [Manage app consent policies](~/identity/enterprise-apps/manage-app-consent-policies.md).
 
 >[!NOTE] 
 >In requests to the authorization, token or consent endpoints for the Microsoft Identity platform, if the resource identifier is omitted in the scope parameter, the resource is assumed to be Microsoft Graph. For example, scope=User.Read is equivalent to `https://graph.microsoft.com/User.Read`.
 
 ### Admin Consent for Application permissions
 
-Application permissions always require admin consent. Application permissions don't have a user context and the consent grant isn't done on behalf of any specific user. Instead, the client application is granted permissions directly, these types of permissions are used only by daemon services and other non-interactive applications that run in the background. Administrators need to configure the permissions upfront and [grant admin consent](../manage-apps/grant-admin-consent.md) through the Azure portal. 
+Application permissions always require admin consent. Application permissions don't have a user context and the consent grant isn't done on behalf of any specific user. Instead, the client application is granted permissions directly, these types of permissions are used only by daemon services and other non-interactive applications that run in the background. Administrators need to configure the permissions upfront and [grant admin consent](~/identity/enterprise-apps/grant-admin-consent.md) through the Azure portal. 
 
 ### Admin consent for Multi-tenant applications
 

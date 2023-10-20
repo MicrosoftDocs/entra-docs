@@ -54,7 +54,7 @@ You can enable password writeback in SSPR directly in the portal or through Powe
 ### Enable password writeback in the portal
 To use *password writeback* and enable the self-service password reset (SSPR) service to detect the cloud sync agent, using the portal, complete the following steps: 
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](../../roles/permissions-reference.md#hybrid-identity-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
  2. On the left, select **Protection**, select **Password reset**, then choose **On-premises integration**.
  3. Check the option for **Enable password write back for synced users** .
  4. (optional) If Microsoft Entra Connect provisioning agents are detected, you can additionally check the option for **Write back passwords with Microsoft Entra Cloud Sync**.   
@@ -70,7 +70,7 @@ To use *password writeback* and enable the self-service password reset (SSPR) se
    Set-AADCloudSyncPasswordWritebackConfiguration -Enable $true -Credential $(Get-Credential)
   ```
 
-For more information about using password writeback with Microsoft Entra Cloud Sync, see [Tutorial: Enable cloud sync self-service password reset writeback to an on-premises environment (preview)](../../authentication/tutorial-enable-cloud-sync-sspr-writeback.md).
+For more information about using password writeback with Microsoft Entra Cloud Sync, see [Tutorial: Enable cloud sync self-service password reset writeback to an on-premises environment (preview)](~/identity/authentication/tutorial-enable-cloud-sync-sspr-writeback.md).
 
 ## Install an agent in the US government cloud
 

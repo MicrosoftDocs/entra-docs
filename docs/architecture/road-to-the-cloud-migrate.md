@@ -29,16 +29,16 @@ A typical migration workstream has the following stages:
 
 ### Enable password self-service
 
-We recommend a [passwordless environment](../authentication/concept-authentication-passwordless.md). Until then, you can migrate password self-service workflows from on-premises systems to Microsoft Entra ID to simplify your environment. Microsoft Entra ID [self-service password reset (SSPR)](../authentication/concept-sspr-howitworks.md) gives users the ability to change or reset their password, with no administrator or help desk involvement.
+We recommend a [passwordless environment](~/identity/authentication/concept-authentication-passwordless.md). Until then, you can migrate password self-service workflows from on-premises systems to Microsoft Entra ID to simplify your environment. Microsoft Entra ID [self-service password reset (SSPR)](~/identity/authentication/concept-sspr-howitworks.md) gives users the ability to change or reset their password, with no administrator or help desk involvement.
 
-To enable self-service capabilities, choose the appropriate [authentication methods](../authentication/concept-authentication-methods.md) for your organization. After the authentication methods are updated, you can enable user self-service password capability for your Microsoft Entra authentication environment. For deployment guidance, see [Deployment considerations for Microsoft Entra self-service password reset](../authentication/howto-sspr-deployment.md).
+To enable self-service capabilities, choose the appropriate [authentication methods](~/identity/authentication/concept-authentication-methods.md) for your organization. After the authentication methods are updated, you can enable user self-service password capability for your Microsoft Entra authentication environment. For deployment guidance, see [Deployment considerations for Microsoft Entra self-service password reset](~/identity/authentication/howto-sspr-deployment.md).
 
 Additional considerations include:
 
-* Deploy [Microsoft Entra Password Protection](../authentication/howto-password-ban-bad-on-premises-operations.md) in a subset of domain controllers with **Audit** mode to gather information about the impact of modern policies. 
-* Gradually enable [combined registration for SSPR and Microsoft Entra multifactor authentication](../authentication/concept-registration-mfa-sspr-combined.md). For example, roll out by region, subsidiary, or department for all users. 
+* Deploy [Microsoft Entra Password Protection](~/identity/authentication/howto-password-ban-bad-on-premises-operations.md) in a subset of domain controllers with **Audit** mode to gather information about the impact of modern policies. 
+* Gradually enable [combined registration for SSPR and Microsoft Entra multifactor authentication](~/identity/authentication/concept-registration-mfa-sspr-combined.md). For example, roll out by region, subsidiary, or department for all users. 
 * Go through a cycle of password change for all users to flush out weak passwords. After the cycle is complete, implement the policy expiration time.
-* Switch the Password Protection configuration in the domain controllers that have the mode set to **Enforced**. For more information, see [Enable on-premises Microsoft Entra Password Protection](../authentication/howto-password-ban-bad-on-premises-operations.md).
+* Switch the Password Protection configuration in the domain controllers that have the mode set to **Enforced**. For more information, see [Enable on-premises Microsoft Entra Password Protection](~/identity/authentication/howto-password-ban-bad-on-premises-operations.md).
 
 >[!NOTE]
 >* We recommend user communications and evangelizing for a smooth deployment. See [Sample SSPR rollout materials](https://www.microsoft.com/download/details.aspx?id=56768).
@@ -104,7 +104,7 @@ You can integrate non-Windows workstations with Microsoft Entra ID to enhance th
 
     * Register macOS to Microsoft Entra ID and [enroll/manage them by using a mobile device management solution](/mem/intune/enrollment/macos-enroll).
 
-    * Deploy the [Microsoft Enterprise SSO (single sign-on) plug-in for Apple devices](../develop/apple-sso-plugin.md).
+    * Deploy the [Microsoft Enterprise SSO (single sign-on) plug-in for Apple devices](~/identity-platform/apple-sso-plugin.md).
 
     * Plan to deploy [Platform SSO for macOS 13](https://techcommunity.microsoft.com/t5/microsoft-intune-blog/microsoft-simplifies-endpoint-manager-enrollment-for-apple/ba-p/3570319).
 
@@ -168,7 +168,7 @@ Microsoft Entra ID can be used with each type of application to provide levels o
 
 To discover modern authentication apps:
 
-* If you're using AD FS, use the [AD FS application activity report](../manage-apps/migrate-adfs-application-activity.md).
+* If you're using AD FS, use the [AD FS application activity report](~/identity/enterprise-apps/migrate-adfs-application-activity.md).
 
 * If you're using a different identity provider, use the logs and configuration.
 
@@ -186,9 +186,9 @@ When you plan your migration to Microsoft Entra ID, consider migrating the apps 
 
 After you move SaaS applications that were federated to Microsoft Entra ID, there are a few steps to decommission the on-premises federation system:
 
-* [Move application authentication to Microsoft Entra ID](../manage-apps/migrate-adfs-apps-stages.md)
+* [Move application authentication to Microsoft Entra ID](~/identity/enterprise-apps/migrate-adfs-apps-stages.md)
 
-* [Migrate from Azure Multi-Factor Authentication Server to Microsoft Entra multifactor authentication](../authentication/how-to-migrate-mfa-server-to-azure-mfa.md)
+* [Migrate from Azure Multi-Factor Authentication Server to Microsoft Entra multifactor authentication](~/identity/authentication/how-to-migrate-mfa-server-to-azure-mfa.md)
 
 * [Migrate from federation to cloud authentication](../hybrid/connect/migrate-from-federation-to-cloud-authentication.md)
 
@@ -248,7 +248,7 @@ In the most preferred approach, you undertake projects to migrate from legacy ap
 
 2. Lift and shift legacy apps to VMs on the Azure virtual network that are domain-joined to Microsoft Entra Domain Services.
 
-3. Publish legacy apps to the cloud by using Microsoft Entra application proxy or a [secure hybrid access](../manage-apps/secure-hybrid-access.md) partner.
+3. Publish legacy apps to the cloud by using Microsoft Entra application proxy or a [secure hybrid access](~/identity/enterprise-apps/secure-hybrid-access.md) partner.
 
 4. As legacy apps retire through attrition, eventually decommission Microsoft Entra Domain Services running in the Azure virtual network.
 
@@ -261,7 +261,7 @@ In the most preferred approach, you undertake projects to migrate from legacy ap
 
 If the first approach isn't possible and an application has a strong dependency on Active Directory, you can extend on-premises Active Directory to Azure IaaS.
 
-You can replatform to support modern serverless hosting--for example, use platform as a service (PaaS). Or, you can update the code to support modern authentication. You can also enable the app to integrate with Microsoft Entra ID directly. [Learn about Microsoft Authentication Library in the Microsoft identity platform](../develop/msal-overview.md).
+You can replatform to support modern serverless hosting--for example, use platform as a service (PaaS). Or, you can update the code to support modern authentication. You can also enable the app to integrate with Microsoft Entra ID directly. [Learn about Microsoft Authentication Library in the Microsoft identity platform](~/identity-platform/msal-overview.md).
 
 1. Connect an Azure virtual network to the on-premises network via virtual private network (VPN) or Azure ExpressRoute.
 
@@ -269,7 +269,7 @@ You can replatform to support modern serverless hosting--for example, use platfo
 
 3. Lift and shift legacy apps to VMs on the Azure virtual network that are domain joined.
 
-4. Publish legacy apps to the cloud by using Microsoft Entra application proxy or a [secure hybrid access](../manage-apps/secure-hybrid-access.md) partner.
+4. Publish legacy apps to the cloud by using Microsoft Entra application proxy or a [secure hybrid access](~/identity/enterprise-apps/secure-hybrid-access.md) partner.
 
 5. Eventually, decommission the on-premises Active Directory infrastructure and run Active Directory in the Azure virtual network entirely.
 
@@ -285,7 +285,7 @@ This approach enables you to decouple the app from the existing Active Directory
 
 2. Lift and shift legacy apps to VMs on the Azure virtual network that are domain-joined to the new Active Directory instance.
 
-3. Publish legacy apps to the cloud by using Microsoft Entra application proxy or a [secure hybrid access](../manage-apps/secure-hybrid-access.md) partner.
+3. Publish legacy apps to the cloud by using Microsoft Entra application proxy or a [secure hybrid access](~/identity/enterprise-apps/secure-hybrid-access.md) partner.
 
 4. As legacy apps retire through attrition, eventually decommission the Active Directory instance running in the Azure virtual network.
 
@@ -316,7 +316,7 @@ Here are key points about usage of Microsoft Entra ID for VPN authentication:
 
 ### Move remote access to internal applications
 
-To simplify your environment, you can use [Microsoft Entra application proxy](../app-proxy/application-proxy.md) or [secure hybrid access](../manage-apps/secure-hybrid-access.md) partners to provide remote access. This allows you to remove the dependency on on-premises reverse proxy solutions.
+To simplify your environment, you can use [Microsoft Entra application proxy](../app-proxy/application-proxy.md) or [secure hybrid access](~/identity/enterprise-apps/secure-hybrid-access.md) partners to provide remote access. This allows you to remove the dependency on on-premises reverse proxy solutions.
 
 It's important to mention that enabling remote access to an application by using the preceding technologies is an interim step. You need to do more work to completely decouple the application from Active Directory. 
 

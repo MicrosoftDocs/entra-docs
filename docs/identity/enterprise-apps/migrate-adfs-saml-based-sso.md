@@ -24,14 +24,14 @@ To configure a SaaS application for SAML-based SSO, see [Quickstart: Set up SAML
 
 Many SaaS applications have an [application-specific tutorial](../saas-apps/tutorial-list.md) that steps you through the configuration for SAML-based SSO.
 
-Some apps can be migrated easily. Apps with more complex requirements, such as custom claims, may require extra configuration in Microsoft Entra ID and/or [Microsoft Entra Connect Health](../hybrid/connect/whatis-azure-ad-connect.md). For information about supported claims mappings, see [How to: Customize claims emitted in tokens for a specific app in a tenant (Preview)](../develop/saml-claims-customization.md).
+Some apps can be migrated easily. Apps with more complex requirements, such as custom claims, may require extra configuration in Microsoft Entra ID and/or [Microsoft Entra Connect Health](../hybrid/connect/whatis-azure-ad-connect.md). For information about supported claims mappings, see [How to: Customize claims emitted in tokens for a specific app in a tenant (Preview)](~/identity-platform/saml-claims-customization.md).
 
 Keep in mind the following limitations when mapping attributes:
 
 * Not all attributes that can be issued in AD FS show up in Microsoft Entra ID as attributes to emit to SAML tokens, even if those attributes are synced. When you edit the attribute, the **Value** dropdown list shows you the different attributes that are available in Microsoft Entra ID. Check [Microsoft Entra Connect Sync articles](../hybrid/connect/how-to-connect-sync-whatis.md) configuration to ensure that a required attribute—for example, **samAccountName**—is synced to Microsoft Entra ID. You can use the extension attributes to emit any claim that isn't part of the standard user schema in Microsoft Entra ID.
 * In the most common scenarios, only the **NameID** claim and other common user identifier claims are required for an app. To determine if any extra claims are required, examine what claims you're issuing from AD FS.
 * Not all claims can be issued, as some claims are protected in Microsoft Entra ID.
-* The ability to use encrypted SAML tokens is now in preview. See [How to: customize claims issued in the SAML token for enterprise applications](../develop/saml-claims-customization.md).
+* The ability to use encrypted SAML tokens is now in preview. See [How to: customize claims issued in the SAML token for enterprise applications](~/identity-platform/saml-claims-customization.md).
 
 ## Software as a service (SaaS) apps
 
@@ -39,7 +39,7 @@ If your users sign in to SaaS apps such as Salesforce, ServiceNow, or Workday, a
 
 Most SaaS applications can be configured in Microsoft Entra ID. Microsoft has many preconfigured connections to SaaS apps in the  [Microsoft Entra app gallery](https://azuremarketplace.microsoft.com/marketplace/apps/category/azure-active-directory-apps), which makes your transition easier. SAML 2.0 applications can be integrated with Microsoft Entra ID via the Microsoft Entra app gallery or as [non-gallery applications](add-application-portal.md).
 
-Apps that use OAuth 2.0 or OpenID Connect can be similarly integrated with Microsoft Entra ID as [app registrations](../develop/quickstart-register-app.md). Apps that use legacy protocols can use [Microsoft Entra application proxy](../app-proxy/application-proxy.md) to authenticate with Microsoft Entra ID.
+Apps that use OAuth 2.0 or OpenID Connect can be similarly integrated with Microsoft Entra ID as [app registrations](~/identity-platform/quickstart-register-app.md). Apps that use legacy protocols can use [Microsoft Entra application proxy](../app-proxy/application-proxy.md) to authenticate with Microsoft Entra ID.
 
 For any issues with onboarding your SaaS apps, you can contact the [SaaS Application Integration support alias](mailto:SaaSApplicationIntegrations@service.microsoft.com).
 
@@ -62,7 +62,7 @@ This functionality validates the signature of signed authentication requests. An
 
 ## Custom claims providers (preview)
 
-To migrate data from legacy systems such as ADFS, or data stores such as LDAP, your apps are dependent on certain data in the tokens. You can use custom claims providers to add claims into the token. For more information, see [Custom claims provider overview](../develop/custom-claims-provider-overview.md).
+To migrate data from legacy systems such as ADFS, or data stores such as LDAP, your apps are dependent on certain data in the tokens. You can use custom claims providers to add claims into the token. For more information, see [Custom claims provider overview](~/identity-platform/custom-claims-provider-overview.md).
 
 ## Apps and configurations that can be moved today
 
@@ -72,7 +72,7 @@ Apps that you can move easily today include SAML 2.0 apps that use the standard 
 * Email address
 * Given name
 * Surname
-* Alternate attribute as SAML **NameID**, including the Microsoft Entra ID mail attribute, mail prefix, employee ID, extension attributes 1-15, or on-premises **SamAccountName** attribute. For more information, see [Editing the NameIdentifier claim](../develop/saml-claims-customization.md).
+* Alternate attribute as SAML **NameID**, including the Microsoft Entra ID mail attribute, mail prefix, employee ID, extension attributes 1-15, or on-premises **SamAccountName** attribute. For more information, see [Editing the NameIdentifier claim](~/identity-platform/saml-claims-customization.md).
 * Custom claims.
 
 The following require more configuration steps to migrate to Microsoft Entra ID:
@@ -81,8 +81,8 @@ The following require more configuration steps to migrate to Microsoft Entra ID:
 * Apps with multiple Reply URL endpoints. You configure them in Microsoft Entra ID using PowerShell or the Microsoft Entra admin center interface.
 * WS-Federation apps such as SharePoint apps that require SAML version 1.1 tokens. You can configure them manually using PowerShell. You can also add a preintegrated generic template for SharePoint and SAML 1.1 applications from the gallery. We support the SAML 2.0 protocol.
 * Complex claims issuance transforms rules. For information about supported claims mappings, see:
-  * [Claims mapping in Microsoft Entra ID](../develop/saml-claims-customization.md).
-  * [Customizing claims issued in the SAML token for enterprise applications in Microsoft Entra ID](../develop/saml-claims-customization.md).
+  * [Claims mapping in Microsoft Entra ID](~/identity-platform/saml-claims-customization.md).
+  * [Customizing claims issued in the SAML token for enterprise applications in Microsoft Entra ID](~/identity-platform/saml-claims-customization.md).
 
 <a name='apps-and-configurations-not-supported-in-azure-ad-today'></a>
 
@@ -149,7 +149,7 @@ SaaS apps need to know where to send authentication requests and how to validate
 | **IdP sign-out URL** <p> Sign-out URL of the IdP from the app's perspective (where the user is redirected when they choose to sign out of the app).| The sign-out URL is either the same as the sign-on URL, or the same URL with `wa=wsignout1.0` appended. For example: `https://fs.contoso.com/adfs/ls/?wa=wsignout1.0`| Replace `{tenant-id}` with your tenant ID. <p> For apps that use the SAML-P protocol: <p> `https://login.microsoftonline.com/{tenant-id}/saml2` <p> For apps that use the WS-Federation protocol: `https://login.microsoftonline.com/common/wsfederation?wa=wsignout1.0` |
 | **Token signing certificate** <p> The IdP uses the private key of the certificate to sign issued tokens. It verifies that the token came from the same IdP that the app is configured to trust.| Find the AD FS token signing certificate in AD FS Management under **Certificates**.| Find it in the Microsoft Entra admin center in the application's **Single sign-on properties** under the header **SAML Signing Certificate**. There, you can download the certificate for upload to the app. <p> If the application has more than one certificate, you can find all certificates in the federation metadata XML file. |
 | **Identifier/ "issuer"** <p> Identifier of the IdP from the app's perspective (sometimes called the "issuer ID"). <p> In the SAML token, the value appears as the Issuer element.| The identifier for AD FS is usually the federation service identifier in AD FS Management under **Service > Edit Federation Service Properties**. For example: `http://fs.contoso.com/adfs/services/trust`| Replace `{tenant-id}` with your tenant ID. <p> `https://sts.windows.net/{tenant-id}/` |
-| **IdP federation metadata** <p> Location of the IdP's publicly available federation metadata. (Some apps use federation metadata as an alternative to the administrator configuring URLs, identifier, and token signing certificate individually.)| Find the AD FS federation metadata URL in AD FS Management under **Service > Endpoints > Metadata > Type: Federation Metadata**. For example: `https://fs.contoso.com/FederationMetadata/2007-06/FederationMetadata.xml`| The corresponding value for Microsoft Entra ID follows the pattern `https://login.microsoftonline.com/{TenantDomainName}/FederationMetadata/2007-06/FederationMetadata.xml`. Replace {TenantDomainName} with your tenant's name in the format `contoso.onmicrosoft.com`. <p> For more information, see [Federation metadata](../develop/federation-metadata.md). |
+| **IdP federation metadata** <p> Location of the IdP's publicly available federation metadata. (Some apps use federation metadata as an alternative to the administrator configuring URLs, identifier, and token signing certificate individually.)| Find the AD FS federation metadata URL in AD FS Management under **Service > Endpoints > Metadata > Type: Federation Metadata**. For example: `https://fs.contoso.com/FederationMetadata/2007-06/FederationMetadata.xml`| The corresponding value for Microsoft Entra ID follows the pattern `https://login.microsoftonline.com/{TenantDomainName}/FederationMetadata/2007-06/FederationMetadata.xml`. Replace {TenantDomainName} with your tenant's name in the format `contoso.onmicrosoft.com`. <p> For more information, see [Federation metadata](~/identity-platform/federation-metadata.md). |
 
 ## Next steps
 

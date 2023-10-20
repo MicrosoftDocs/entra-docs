@@ -48,10 +48,10 @@ There is a need for user consent and for web sign in.
 
 * [Integrating applications with Microsoft Entra ID](../saas-apps/tutorial-list.md) 
 
-* [OAuth 2.0 and OpenID Connect protocols on the Microsoft identity platform](../develop/v2-protocols.md) 
+* [OAuth 2.0 and OpenID Connect protocols on the Microsoft identity platform](~/identity-platform/v2-protocols.md) 
 
-* [Microsoft identity platform and OpenID Connect protocol](../develop/v2-protocols-oidc.md) 
+* [Microsoft identity platform and OpenID Connect protocol](~/identity-platform/v2-protocols-oidc.md) 
 
 * [Web sign-in with OpenID Connect in Azure Active Directory B2C](/azure/active-directory-b2c/openid-connect) 
 
-* [Secure your application by using OpenID Connect and Microsoft Entra ID](../develop/v2-protocols-oidc.md) 
+* [Secure your application by using OpenID Connect and Microsoft Entra ID](~/identity-platform/v2-protocols-oidc.md) 

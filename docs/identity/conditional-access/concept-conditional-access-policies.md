@@ -152,11 +152,11 @@ The article [Common Conditional Access policies](concept-conditional-access-poli
 
 ## Next steps
 
-[Create a Conditional Access policy](../authentication/tutorial-enable-azure-mfa.md?bc=/azure/active-directory/conditional-access/breadcrumb/toc.json&toc=/azure/active-directory/conditional-access/toc.json#create-a-conditional-access-policy)
+[Create a Conditional Access policy](~/identity/authentication/tutorial-enable-azure-mfa.md?bc=/azure/active-directory/conditional-access/breadcrumb/toc.json&toc=/azure/active-directory/conditional-access/toc.json#create-a-conditional-access-policy)
 
 [Use report-only mode for Conditional Access to determine the results of new policy decisions.](concept-conditional-access-report-only.md)
 
-[Planning a cloud-based Microsoft Entra multifactor authentication deployment](../authentication/howto-mfa-getstarted.md)
+[Planning a cloud-based Microsoft Entra multifactor authentication deployment](~/identity/authentication/howto-mfa-getstarted.md)
 
 [Managing device compliance with Intune](/mem/intune/protect/device-compliance-get-started)
 

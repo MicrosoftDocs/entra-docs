@@ -43,8 +43,8 @@ You need to protect with pre-authentication and provide SSO through password vau
 
 ## Implement password-based SSO with Microsoft Entra ID
 
-* [What is password based SSO](../manage-apps/what-is-single-sign-on.md) 
+* [What is password based SSO](~/identity/enterprise-apps/what-is-single-sign-on.md) 
 
-* [Configure password based SSO for cloud applications](../manage-apps/configure-password-single-sign-on-non-gallery-applications.md)
+* [Configure password based SSO for cloud applications](~/identity/enterprise-apps/configure-password-single-sign-on-non-gallery-applications.md)
 
 * [Configure password-based SSO for on-premises applications with Application Proxy](../app-proxy/application-proxy-configure-single-sign-on-password-vaulting.md)

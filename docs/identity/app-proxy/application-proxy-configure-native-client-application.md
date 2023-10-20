@@ -22,7 +22,7 @@ To support native client applications, Application Proxy accepts Microsoft Entra
 
 ![Relationship between end users, Microsoft Entra ID, and published applications](./media/application-proxy-configure-native-client-application/richclientflow.png)
 
-To publish native applications, use the Microsoft Authentication Library, which takes care of authentication and supports many client environments. Application Proxy fits into the [Desktop app that calls a web API on behalf of a signed-in user](../develop/authentication-flows-app-scenarios.md#desktop-app-that-calls-a-web-api-on-behalf-of-a-signed-in-user) scenario.
+To publish native applications, use the Microsoft Authentication Library, which takes care of authentication and supports many client environments. Application Proxy fits into the [Desktop app that calls a web API on behalf of a signed-in user](~/identity-platform/authentication-flows-app-scenarios.md#desktop-app-that-calls-a-web-api-on-behalf-of-a-signed-in-user) scenario.
 
 This article walks you through the four steps to publish a native application with Application Proxy and the Azure AD Authentication Library.
 
@@ -35,7 +35,7 @@ Publish your proxy application as you would any other application and assign use
 [!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
 
 You now need to register your application in Microsoft Entra ID, as follows:
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](../roles/permissions-reference.md#application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Select your username in the upper-right corner. Verify you're signed in to a directory that uses Application Proxy. If you need to change directories, select **Switch directory** and choose a directory that uses Application Proxy.
 1. Browse to **Identity** > **Applications** > **App registrations**. The list of all app registrations appears.
 1. Select **New registration**. The **Register an application** page appears.
@@ -51,7 +51,7 @@ You now need to register your application in Microsoft Entra ID, as follows:
 1. Under **Redirect URI**, select **Public client (mobile & desktop)**, and then type the redirect URI `https://login.microsoftonline.com/common/oauth2/nativeclient` for your application.
 1. Select and read the **Microsoft Platform Policies**, and then select **Register**. An overview page for the new application registration is created and displayed.
 
-For more detailed information about creating a new application registration, see [Integrating applications with Microsoft Entra ID](../develop/quickstart-register-app.md).
+For more detailed information about creating a new application registration, see [Integrating applications with Microsoft Entra ID](~/identity-platform/quickstart-register-app.md).
 
 ## Step 3: Grant access to your proxy application
 
@@ -114,6 +114,6 @@ After you edit the MSAL code with these parameters, your users can authenticate 
 
 ## Next steps
 
-For more information about the native application flow, see [mobile](../develop/authentication-flows-app-scenarios.md#mobile-app-that-calls-a-web-api-on-behalf-of-an-interactive-user) and [desktop](../develop/authentication-flows-app-scenarios.md#desktop-app-that-calls-a-web-api-on-behalf-of-a-signed-in-user) apps in Microsoft Entra ID.
+For more information about the native application flow, see [mobile](~/identity-platform/authentication-flows-app-scenarios.md#mobile-app-that-calls-a-web-api-on-behalf-of-an-interactive-user) and [desktop](~/identity-platform/authentication-flows-app-scenarios.md#desktop-app-that-calls-a-web-api-on-behalf-of-a-signed-in-user) apps in Microsoft Entra ID.
 
-Learn about setting up [Single sign-on to applications in Microsoft Entra ID](../manage-apps/plan-sso-deployment.md#choosing-a-single-sign-on-method).
+Learn about setting up [Single sign-on to applications in Microsoft Entra ID](~/identity/enterprise-apps/plan-sso-deployment.md#choosing-a-single-sign-on-method).

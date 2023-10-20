@@ -16,7 +16,7 @@ ms.custom: enterprise-apps
 
 # What is application management in Microsoft Entra ID?
 
-Application management in Microsoft Entra ID is the process of creating, configuring, managing, and monitoring applications in the cloud. When an [application](../develop/app-objects-and-service-principals.md) is registered in a Microsoft Entra tenant, users who have been assigned to it can securely access it. Many types of applications can be registered in Microsoft Entra ID. For more information, see [Application types for the Microsoft identity platform](../develop/v2-app-types.md).
+Application management in Microsoft Entra ID is the process of creating, configuring, managing, and monitoring applications in the cloud. When an [application](~/identity-platform/app-objects-and-service-principals.md) is registered in a Microsoft Entra tenant, users who have been assigned to it can securely access it. Many types of applications can be registered in Microsoft Entra ID. For more information, see [Application types for the Microsoft identity platform](~/identity-platform/v2-app-types.md).
 
 In this article, you learn these important aspects of managing the lifecycle of an application:
 
@@ -41,9 +41,9 @@ Many applications are already pre-integrated (shown as “Cloud applications” 
 
 ### Your own applications
 
-If you develop your own business application, you can register it with Microsoft Entra ID to take advantage of the security features that the tenant provides. You can register your application in **App Registrations**, or you can register it using the **Create your own application** link when adding a new application in **Enterprise applications**. Consider how [authentication](../develop/authentication-flows-app-scenarios.md) is implemented in your application for integration with Microsoft Entra ID. 
+If you develop your own business application, you can register it with Microsoft Entra ID to take advantage of the security features that the tenant provides. You can register your application in **App Registrations**, or you can register it using the **Create your own application** link when adding a new application in **Enterprise applications**. Consider how [authentication](~/identity-platform/authentication-flows-app-scenarios.md) is implemented in your application for integration with Microsoft Entra ID. 
 
-If you want to make your application available through the gallery, you can [submit a request to have it added](../manage-apps/v2-howto-app-gallery-listing.md).
+If you want to make your application available through the gallery, you can [submit a request to have it added](~/identity/enterprise-apps/v2-howto-app-gallery-listing.md).
 
 ### On-premises applications
 
@@ -69,7 +69,7 @@ As an administrator, you can [grant tenant-wide admin consent](grant-admin-conse
 
 ### Single sign-on
 
-Consider implementing SSO in your application. You can manually configure most applications for SSO. The most popular options in Microsoft Entra ID are [SAML-based SSO and OpenID Connect-based SSO](../develop/v2-protocols.md). Before you start, make sure that you understand the requirements for SSO and how to [plan for deployment](plan-sso-deployment.md). For more information on how to configure SAML-based SSO for an enterprise application in your Microsoft Entra tenant, see [Enable single sign-on for an application by using Microsoft Entra ID](add-application-portal-setup-sso.md).
+Consider implementing SSO in your application. You can manually configure most applications for SSO. The most popular options in Microsoft Entra ID are [SAML-based SSO and OpenID Connect-based SSO](~/identity-platform/v2-protocols.md). Before you start, make sure that you understand the requirements for SSO and how to [plan for deployment](plan-sso-deployment.md). For more information on how to configure SAML-based SSO for an enterprise application in your Microsoft Entra tenant, see [Enable single sign-on for an application by using Microsoft Entra ID](add-application-portal-setup-sso.md).
 
 ### User, group, and owner assignment
 
@@ -107,15 +107,15 @@ It's important to periodically review and, if necessary, [manage the permissions
 
 ### Multifactor authentication and Conditional Access
 
-Microsoft Entra multifactor authentication helps safeguard access to data and applications, providing another layer of security by using a second form of authentication. There are many methods that can be used for a second-factor authentication. Before you start, [plan the deployment of MFA for your application](../authentication/howto-mfa-getstarted.md) in your organization.
+Microsoft Entra multifactor authentication helps safeguard access to data and applications, providing another layer of security by using a second form of authentication. There are many methods that can be used for a second-factor authentication. Before you start, [plan the deployment of MFA for your application](~/identity/authentication/howto-mfa-getstarted.md) in your organization.
 
 Organizations can enable MFA with [Conditional Access](../conditional-access/overview.md) to make the solution fit their specific needs. Conditional Access policies allow administrators to assign controls to specific [applications, actions, or authentication context](../conditional-access/concept-conditional-access-cloud-apps.md).
 
 ### Tokens and certificates
 
-Different types of security tokens are used in an authentication flow in Microsoft Entra ID depending on the protocol used. For example, [SAML tokens](../develop/reference-saml-tokens.md) are used for the SAML protocol, and [ID tokens](../develop/id-tokens.md) and [access tokens](../develop/access-tokens.md) are used for the OpenID Connect protocol. Tokens are signed with the unique certificate that's generated in Microsoft Entra ID and by specific standard algorithms. 
+Different types of security tokens are used in an authentication flow in Microsoft Entra ID depending on the protocol used. For example, [SAML tokens](~/identity-platform/reference-saml-tokens.md) are used for the SAML protocol, and [ID tokens](~/identity-platform/id-tokens.md) and [access tokens](~/identity-platform/access-tokens.md) are used for the OpenID Connect protocol. Tokens are signed with the unique certificate that's generated in Microsoft Entra ID and by specific standard algorithms. 
 
-You can provide more security by [encrypting the token](howto-saml-token-encryption.md). You can also manage the information in a token including the [roles that are allowed](../develop/howto-add-app-roles-in-apps.md) for the application.
+You can provide more security by [encrypting the token](howto-saml-token-encryption.md). You can also manage the information in a token including the [roles that are allowed](~/identity-platform/howto-add-app-roles-in-apps.md) for the application.
 
 Microsoft Entra ID uses the [SHA-256 algorithm](certificate-signing-options.md) by default to sign the SAML response. Use SHA-256 unless the application requires SHA-1. Establish a process for [managing the lifetime of the certificate](./tutorial-manage-certificates-for-federated-single-sign-on.md). The maximum lifetime of a signing certificate is three years. To prevent or minimize outage due to a certificate expiring, use roles and email distribution lists to ensure that certificate-related change notifications are closely monitored. 
 

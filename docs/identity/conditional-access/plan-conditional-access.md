@@ -33,11 +33,11 @@ Microsoft provides [security defaults](../fundamentals/security-defaults.md) tha
    * Microsoft Entra ID P2 is required to include Identity Protection risk in Conditional Access policies.
 * Administrators who interact with Conditional Access must have one or more of the following role assignments depending on the tasks they're performing. To follow the [Zero Trust principle of least privilege](/security/zero-trust/), consider using [Privileged Identity Management (PIM)](../privileged-identity-management/pim-configure.md) to just-in-time activate privileged role assignments.
    * Read Conditional Access policies and configurations 
-      * [Security Reader](../roles/permissions-reference.md#security-reader)
-      * [Global Reader](../roles/permissions-reference.md#global-reader)
+      * [Security Reader](~/identity/role-based-access-control/permissions-reference.md#security-reader)
+      * [Global Reader](~/identity/role-based-access-control/permissions-reference.md#global-reader)
    * Create or modify Conditional Access policies 
-      * [Conditional Access Administrator](../roles/permissions-reference.md#conditional-access-administrator)
-      * [Security Administrator](../roles/permissions-reference.md#security-administrator)
+      * [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator)
+      * [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator)
 * A test user (non-administrator) that allows you to verify policies work as expected before deploying to real users. If you need to create a user, see [Quickstart: Add new users to Microsoft Entra ID](../fundamentals/add-users.md).
 * A group that the non-administrator user is a member of. If you need to create a group, see [Create a group and add members in Microsoft Entra ID](../fundamentals/how-to-manage-groups.md).
 
@@ -117,7 +117,7 @@ Do you want to enforce any of the following access controls on cloud apps?
 
 ### Combining policies
 
-When creating and assigning policies, you must take into account how access tokens work. [Access tokens](../develop/access-tokens.md) grant or deny access based on whether the users making a request have been authorized and authenticated. If the requestor can prove they're who they claim to be, they can access the protected resources or functionality. 
+When creating and assigning policies, you must take into account how access tokens work. [Access tokens](~/identity-platform/access-tokens.md) grant or deny access based on whether the users making a request have been authorized and authenticated. If the requestor can prove they're who they claim to be, they can access the protected resources or functionality. 
 
 **Access tokens are issued by default if a Conditional Access policy condition does not trigger an access control**. 
 
@@ -167,7 +167,7 @@ You can view the aggregate affects of your Conditional Access policies in the **
 
 If you rely on a single access control such as multifactor authentication or a network location to secure your IT systems, you're susceptible to access failures if that single access control becomes unavailable or misconfigured. 
 
-**To reduce the risk of lockout during unforeseen disruptions, [plan resilience strategies](../authentication/concept-resilient-controls.md) for your organization**.
+**To reduce the risk of lockout during unforeseen disruptions, [plan resilience strategies](~/identity/authentication/concept-resilient-controls.md) for your organization**.
 
 ### Set naming standards for your policies
 
@@ -189,7 +189,7 @@ A descriptive name helps you to keep an overview of your Conditional Access impl
 
 #### Naming standards for emergency access controls
 
-In addition to your active policies, implement disabled policies that act as secondary [resilient access controls in outage or emergency scenarios](../authentication/concept-resilient-controls.md). Your naming standard for the contingency policies should include:
+In addition to your active policies, implement disabled policies that act as secondary [resilient access controls in outage or emergency scenarios](~/identity/authentication/concept-resilient-controls.md). Your naming standard for the contingency policies should include:
 
 * ENABLE IN EMERGENCY at the beginning to make the name stand out among the other policies.
 * The name of disruption it should apply to.
@@ -270,7 +270,7 @@ Once you've collected the information, See the following resources:
 
 ## Next Steps
 
-[Learn more about Multifactor authentication](../authentication/concept-mfa-howitworks.md)
+[Learn more about Multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md)
 
 [Learn more about Identity Protection](../identity-protection/overview-identity-protection.md)
 

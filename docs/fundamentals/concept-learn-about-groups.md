@@ -59,7 +59,7 @@ This option also lets you give people outside of your organization access to the
 
 ## What to know before adding access rights to a group
 
-After creating a Microsoft Entra group, you need to grant it the appropriate access. Each application, resource, and service that requires access permissions needs to be managed separately because the permissions for one may not be the same as another. Grant access using the [principle of least privilege](../develop/secure-least-privileged-access.md) to help reduce the risk of attack or a security breach.
+After creating a Microsoft Entra group, you need to grant it the appropriate access. Each application, resource, and service that requires access permissions needs to be managed separately because the permissions for one may not be the same as another. Grant access using the [principle of least privilege](~/identity-platform/secure-least-privileged-access.md) to help reduce the risk of attack or a security breach.
 
 <a name='how-access-management-in-azure-ad-works'></a>
 

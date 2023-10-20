@@ -36,7 +36,7 @@ To add an enterprise application to your Microsoft Entra tenant, you need:
 
 To assign an owner to an enterprise application:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
 1. Select the application that you want to add an owner to.
 1. Select **Owners**, and then select **Add** to get a list of user accounts that you can choose an owner from.
@@ -49,7 +49,7 @@ To assign an owner to an enterprise application:
 
 Use the following Microsoft Graph PowerShell cmdlet to add an owner to an enterprise application.
 
-You need to sign in as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator) and consent to the `Application.ReadWrite.All` permission.
+You need to sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator) and consent to the `Application.ReadWrite.All` permission.
 
 In the following example, the user's object ID is 8afc02cb-4d62-4dba-b536-9f6d73e9be26 and the applicationId is 46e6adf4-a9cf-4b60-9390-0ba6fb00bf6b.
 
@@ -68,7 +68,7 @@ New-MgServicePrincipalOwnerByRef -ServicePrincipalId '46e6adf4-a9cf-4b60-9390-0b
 
 :::zone pivot="ms-graph"
 
-To assign an owner to an application, sign in to [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator).
+To assign an owner to an application, sign in to [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 
 You need to consent to the `Application.ReadWrite.All` permission.
 
@@ -90,4 +90,4 @@ Content-Type: application/json
 
 ## Next steps
 
-- [Delegate app registration permissions in Microsoft Entra ID](../roles/delegate-app-roles.md)
+- [Delegate app registration permissions in Microsoft Entra ID](~/identity/role-based-access-control/delegate-app-roles.md)

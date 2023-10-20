@@ -57,7 +57,7 @@ This type of authorization is common for daemons and service accounts that need 
 
 In order to enable this ACL-based authorization pattern, Microsoft Entra ID doesn't require that applications be authorized to get tokens for another application. Thus, app-only tokens can be issued without a `roles` claim. Applications that expose APIs must implement permission checks in order to accept tokens.
 
-If you'd like to prevent applications from getting role-less app-only access tokens for your application, [ensure that assignment requirements are enabled for your app](../manage-apps/what-is-access-management.md#requiring-user-assignment-for-an-app). This will block users and applications without assigned roles from being able to get a token for this application. 
+If you'd like to prevent applications from getting role-less app-only access tokens for your application, [ensure that assignment requirements are enabled for your app](~/identity/enterprise-apps/what-is-access-management.md#requiring-user-assignment-for-an-app). This will block users and applications without assigned roles from being able to get a token for this application. 
 
 ### Application permissions
 

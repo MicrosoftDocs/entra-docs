@@ -20,7 +20,7 @@ In this tutorial, you can learn how to integrate HighGear with Microsoft Entra I
 * You can enable your users to be automatically signed-in to HighGear (Single Sign-On) with their Microsoft Entra accounts.
 * You can manage your accounts in one central location.
 
-If you want to know more details about SaaS app integration with Microsoft Entra ID, see [What is application access and single sign-on with Microsoft Entra ID](../manage-apps/what-is-single-sign-on.md).
+If you want to know more details about SaaS app integration with Microsoft Entra ID, see [What is application access and single sign-on with Microsoft Entra ID](~/identity/enterprise-apps/what-is-single-sign-on.md).
 If you don't have an Azure subscription, [create a free account](https://azure.microsoft.com/free/) before you begin.
 
 ## Prerequisites
@@ -42,7 +42,7 @@ To configure the integration of HighGear into Microsoft Entra ID, you need to ad
 
 **To add HighGear from the gallery, perform the following steps:**
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
 1. In the **Add from the gallery** section, type **HighGear** in the search box.
 1. Select **HighGear** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
@@ -71,7 +71,7 @@ In this section, you can learn how to enable Microsoft Entra single sign-on.
 
 To configure Microsoft Entra single sign-on with your HighGear system, perform the following steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **HighGear** application integration page, select **Single sign-on**.
 
     ![Configure single sign-on link](common/select-sso.png)
@@ -152,7 +152,7 @@ To configure HighGear for Single Sign-On, please log in to your HighGear system.
 
 The objective of this section is to create a test user called Britta Simon.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](../roles/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
 1. Select **New user** > **Create new user**, at the top of the screen.
 1. In the **User** properties, follow these steps:
@@ -168,7 +168,7 @@ The objective of this section is to create a test user called Britta Simon.
 
 In this section, you enable Britta Simon to use Azure single sign-on by granting access to HighGear.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **HighGear**.
 
     ![The HighGear link in the Applications list](common/all-applications.png)
@@ -221,6 +221,6 @@ When you click the HighGear tile in the Access Panel, you should be automaticall
 
 - [List of Tutorials on How to Integrate SaaS Apps with Microsoft Entra ID](./tutorial-list.md)
 
-- [What is application access and single sign-on with Microsoft Entra ID?](../manage-apps/what-is-single-sign-on.md)
+- [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
 - [What is Conditional Access in Microsoft Entra ID?](../conditional-access/overview.md)

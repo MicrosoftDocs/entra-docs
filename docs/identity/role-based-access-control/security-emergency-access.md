@@ -38,7 +38,7 @@ Create two or more emergency access accounts. These accounts should be cloud-onl
 
 ### How to create an emergency access account
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](../roles/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 
 1. Browse to **Identity** > **Users** > **All users**.
 
@@ -79,7 +79,7 @@ When configuring these accounts, the following requirements must be met:
 
 To reduce the risk of an attack resulting from a compromised password, Microsoft Entra ID recommends that you require multifactor authentication for all individual users. This group includes administrators and all others (for example, financial officers) whose compromised account would have a significant impact.
 
-However, at least one of your emergency access accounts should not have the same multifactor authentication mechanism as your other non-emergency accounts. This includes third-party multifactor authentication solutions. If you have a Conditional Access policy to require [multifactor authentication for every administrator](../authentication/howto-mfa-userstates.md) for Microsoft Entra ID and other connected software as a service (SaaS) apps, you should exclude emergency access accounts from this requirement, and configure a different mechanism instead. Additionally, you should make sure the accounts do not have a per-user multifactor authentication policy.
+However, at least one of your emergency access accounts should not have the same multifactor authentication mechanism as your other non-emergency accounts. This includes third-party multifactor authentication solutions. If you have a Conditional Access policy to require [multifactor authentication for every administrator](~/identity/authentication/howto-mfa-userstates.md) for Microsoft Entra ID and other connected software as a service (SaaS) apps, you should exclude emergency access accounts from this requirement, and configure a different mechanism instead. Additionally, you should make sure the accounts do not have a per-user multifactor authentication policy.
 
 ### Exclude at least one account from Conditional Access policies
 
@@ -91,7 +91,7 @@ Some organizations use AD Domain Services and AD FS or similar identity provider
 
 ## Store account credentials safely
 
-Organizations need to ensure that the credentials for emergency access accounts are kept secure and known only to individuals who are authorized to use them. Some customers use a smartcard for Windows Server AD, a [FIDO2 security key](../authentication/howto-authentication-passwordless-security-key.md) for Microsoft Entra ID and others use passwords. A password for an emergency access account is usually separated into two or three parts, written on separate pieces of paper, and stored in secure, fireproof safes that are in secure, separate locations.
+Organizations need to ensure that the credentials for emergency access accounts are kept secure and known only to individuals who are authorized to use them. Some customers use a smartcard for Windows Server AD, a [FIDO2 security key](~/identity/authentication/howto-authentication-passwordless-security-key.md) for Microsoft Entra ID and others use passwords. A password for an emergency access account is usually separated into two or three parts, written on separate pieces of paper, and stored in secure, fireproof safes that are in secure, separate locations.
 
 If using passwords, make sure the accounts have strong passwords that do not expire. Ideally, the passwords should be at least 16 characters long and randomly generated.
 
@@ -105,7 +105,7 @@ Organizations should monitor sign-in and audit log activity from the emergency a
 
 ### Obtain Object IDs of the break glass accounts
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](../roles/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 
 1. Browse to **Identity** > **Users** > **All users**.
 
@@ -226,6 +226,6 @@ These steps should be performed at regular intervals and for key changes:
 - [Securing privileged access for hybrid and cloud deployments in Microsoft Entra ID](security-planning.md)
 - [Add users using Microsoft Entra ID](../fundamentals/add-users.md) and [assign the new user to the Global Administrator role](../fundamentals/how-subscriptions-associated-directory.md)
 - [Sign up for Microsoft Entra ID P1 or P2](../fundamentals/get-started-premium.md), if you haven’t signed up already
-- [How to require two-step verification for a user](../authentication/howto-mfa-userstates.md)
+- [How to require two-step verification for a user](~/identity/authentication/howto-mfa-userstates.md)
 - [Configure additional protections for Global Administrators in Microsoft 365](/microsoft-365/enterprise/protect-your-global-administrator-accounts), if you are using Microsoft 365
 - [Start an access review of Global Administrators](../privileged-identity-management/pim-create-roles-and-resource-roles-review.md) and [transition existing Global Administrators to more specific administrator roles](permissions-reference.md)

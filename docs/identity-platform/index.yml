@@ -219,7 +219,7 @@ additionalContent:
           Make existing SaaS applications like Dropbox, Salesforce, and ServiceNow available to your organization's users, configure SSO, and manage security.
           Or, become an independent software vendor (ISV) by publishing your own SaaS application for use by _other_ organizations that use Microsoft Entra ID.
         links:
-        - url: ../manage-apps/what-is-application-management.md
+        - url: ~/identity/enterprise-apps/what-is-application-management.md
           text: Application management documentation
       ## CARD 4 ####################
       - title: Manage application users and their access

@@ -81,7 +81,7 @@ You will also need to synchronize your sensitivity labels to Microsoft Entra ID.
 
 ## Assign a label to a new group in Azure portal
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](../roles/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 1. Select Microsoft Entra ID.
 1. Choose **Groups** > **All groups** > **New group**.
 1. On the **New Group** page, select **Office 365**, and then fill out the required information for the new group and select a sensitivity label from the list.
@@ -94,7 +94,7 @@ Your group is created and the site and group settings associated with the select
 
 ## Assign a label to an existing group in Azure portal
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](../roles/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 1. Select Microsoft Entra ID.
 1. Select **Groups**.
 1. From the **All groups** page, select the group that you want to label.
@@ -106,7 +106,7 @@ Your group is created and the site and group settings associated with the select
 
 ## Remove a label from an existing group in Azure portal
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](../roles/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 1. Select Microsoft Entra ID.
 1. Select **Groups** > **All groups**.
 1. From the **All groups** page, select the group that you want to remove the label from.
@@ -149,7 +149,7 @@ If the label you are looking for is not in the list, this could be the case for 
 
 Labels can be swapped at any time using the same steps as assigning a label to an existing group, as follows:
 
-1. 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](../roles/permissions-reference.md#global-administrator).
+1. 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 1. Select Microsoft Entra ID.
 1. Select **Groups**.
 1. Choose **All groups**, select the group that you want to label.

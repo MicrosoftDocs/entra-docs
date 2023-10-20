@@ -84,7 +84,7 @@ There are several ways to configure an application for single sign-on, and the m
 * Web applications
 * Web APIs that you want to expose to rich applications on different devices
 * Applications hosted behind a Remote Desktop Gateway
-* Rich client apps that are integrated with the [Microsoft Authentication Library (MSAL)](../develop/v2-overview.md)
+* Rich client apps that are integrated with the [Microsoft Authentication Library (MSAL)](~/identity-platform/v2-overview.md)
 
 App Proxy works with apps that use the following native authentication protocol:
 
@@ -96,7 +96,7 @@ App Proxy also supports the following authentication protocols with third-party 
 * [**Forms- or password-based authentication**](./application-proxy-configure-single-sign-on-password-vaulting.md). With this authentication method, users sign on to the application with a username and password the first time they access it. After the first sign-on, Microsoft Entra ID supplies the username and password to the application. In this scenario, authentication is handled by Microsoft Entra ID.
 * [**SAML authentication**](./application-proxy-configure-single-sign-on-on-premises-apps.md). SAML-based single sign-on is supported for applications that use either SAML 2.0 or WS-Federation protocols. With SAML single sign-on, Microsoft Entra authenticates to the application by using the user's Microsoft Entra account.
 
-For more information on supported methods, see [Choosing a single sign-on method](../manage-apps/plan-sso-deployment.md#choosing-a-single-sign-on-method).
+For more information on supported methods, see [Choosing a single sign-on method](~/identity/enterprise-apps/plan-sso-deployment.md#choosing-a-single-sign-on-method).
 
 ### Security benefits
 
@@ -116,7 +116,7 @@ The remote access solution offered by Application Proxy and Microsoft Entra ID s
 
 Another major benefit of implementing Application Proxy is extending Microsoft Entra ID to your on-premises environment. In fact, implementing App Proxy is a key step in moving your organization and apps to the cloud. By moving to the cloud and away from on-premises authentication, you reduce your on-premises footprint and use Microsoft Entra identity management capabilities as your control plane. With minimal or no updates to existing applications, you have access to cloud capabilities such as single sign-on, multi-factor authentication, and central management. Installing the necessary components to App Proxy is a simple process for establishing a remote access framework. And by moving to the cloud, you have access to the latest Microsoft Entra features, updates, and functionality, such as high availability and the disaster recovery.
 
-To learn more about migrating your apps to Microsoft Entra ID, see the [Migrating Your Applications to Microsoft Entra ID](../manage-apps/migration-resources.md).
+To learn more about migrating your apps to Microsoft Entra ID, see the [Migrating Your Applications to Microsoft Entra ID](~/identity/enterprise-apps/migration-resources.md).
 
 ## Architecture
 
@@ -134,7 +134,7 @@ The following diagram illustrates in general how Microsoft Entra authentication 
 
 |**Component**|**Description**|
 |:-|:-|
-|Endpoint|The endpoint is a URL or an [user portal](../manage-apps/end-user-experiences.md). Users can reach applications while outside of your network by accessing an external URL. Users within your network can access the application through a URL or a user portal. When users go to one of these endpoints, they authenticate in Microsoft Entra ID and then are routed through the connector to the on-premises application.|
+|Endpoint|The endpoint is a URL or an [user portal](~/identity/enterprise-apps/end-user-experiences.md). Users can reach applications while outside of your network by accessing an external URL. Users within your network can access the application through a URL or a user portal. When users go to one of these endpoints, they authenticate in Microsoft Entra ID and then are routed through the connector to the on-premises application.|
 |Microsoft Entra ID|Microsoft Entra ID performs the authentication using the tenant directory stored in the cloud.|
 |Application Proxy service|This Application Proxy service runs in the cloud as part of Microsoft Entra ID. It passes the sign-on token from the user to the Application Proxy Connector. Application Proxy forwards any accessible headers on the request and sets the headers as per its protocol, to the client IP address. If the incoming request to the proxy already has that header, the client IP address is added to the end of the comma-separated list that is the value of the header.|
 |Application Proxy connector|The connector is a lightweight agent that runs on a Windows Server inside your network. The connector manages communication between the Application Proxy service in the cloud and the on-premises application. The connector only uses outbound connections, so you don't have to open any inbound ports or put anything in the DMZ. The connectors are stateless and pull information from the cloud as necessary. For more information about connectors, like how they load-balance and authenticate, see [Understand Microsoft Entra application proxy connectors](./application-proxy-connectors.md).|

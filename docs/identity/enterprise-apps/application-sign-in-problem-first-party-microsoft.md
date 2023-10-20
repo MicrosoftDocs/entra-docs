@@ -55,7 +55,7 @@ Following are some common issues folks run into when their users can't sign in t
 
   - Make sure the user’s account is **enabled** for sign-ins. [Check a user’s account status](#problems-with-the-users-account)
 
-  - Make sure the user’s **password is not expired or forgotten.** [Reset a user’s password](#reset-a-users-password) or [Enable self-service password reset](../authentication/tutorial-enable-sspr.md)
+  - Make sure the user’s **password is not expired or forgotten.** [Reset a user’s password](#reset-a-users-password) or [Enable self-service password reset](~/identity/authentication/tutorial-enable-sspr.md)
 
   - Make sure **Multi-Factor Authentication** isn't blocking user access. [Check a user’s multi-factor authentication status](#check-a-users-multi-factor-authentication-status) or [Check a user’s authentication contact info](#check-a-users-authentication-contact-info)
 
@@ -113,7 +113,7 @@ Application access can be blocked due to a problem with a user that is assigned 
 
 To check if a user’s account is present, follow these steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](../roles/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
 
 1. **Search** for the user you're interested in and select the row with the user's details.
@@ -124,7 +124,7 @@ To check if a user’s account is present, follow these steps:
 
 To check a user’s account status, follow these steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](../roles/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
 1. **Search** for the user you're interested in and select the row with the user's details.
 1. Select **Profile**.
@@ -134,7 +134,7 @@ To check a user’s account status, follow these steps:
 
 To reset a user’s password, follow these steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](../roles/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
 1. **Search** for the user you're interested in and select the row with the user's details.
 1. Select the **Reset password** button at the top of the user pane.
@@ -146,15 +146,15 @@ To reset a user’s password, follow these steps:
 
 To enable self-service password reset, follow the deployment steps in the following section:
 
-- [Enable users to reset their Microsoft Entra passwords](../authentication/tutorial-enable-sspr.md)
+- [Enable users to reset their Microsoft Entra passwords](~/identity/authentication/tutorial-enable-sspr.md)
 
-- [Enable users to reset or change their Active Directory on-premises passwords](../authentication/tutorial-enable-sspr.md)
+- [Enable users to reset or change their Active Directory on-premises passwords](~/identity/authentication/tutorial-enable-sspr.md)
 
 ### Check a user’s multi-factor authentication status
 
 To check a user’s multi-factor authentication status, follow these steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](../roles/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
 
 1. Select the **Multi-Factor Authentication** button at the top of the pane.
@@ -171,7 +171,7 @@ To check a user’s multi-factor authentication status, follow these steps:
 
 To check a user’s authentication contact info used for Multi-factor authentication, Conditional Access, Identity Protection, and Password Reset, follow these steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](../roles/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
 1. **Search** for the user you're interested in and select the row with the user's details.
 
@@ -185,7 +185,7 @@ To check a user’s authentication contact info used for Multi-factor authentica
 
 To check a user’s group memberships, follow these steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](../roles/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
 1. **Search** for the user you're interested in and select the row with the user's details.
 
@@ -195,7 +195,7 @@ To check a user’s group memberships, follow these steps:
 
 To check a user’s assigned licenses, follow these steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](../roles/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
 1. **Search** for the user you're interested in and select the row with the user's details.
 
@@ -205,7 +205,7 @@ To check a user’s assigned licenses, follow these steps:
 
 To assign a license to a user, follow these steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](../roles/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
 1. **Search** for the user you're interested in and select the row with the user's details.
 
@@ -237,7 +237,7 @@ Application access can be blocked due to a problem with a group that is assigned
 
 To check a group’s membership, follow these steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](../roles/permissions-reference.md#user-administrator) or [groups administrator](../roles/permissions-reference.md#groups-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator) or [groups administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
 1. Browse to **Identity** > **Groups** > **All Groups**.
 1. Search for the group you're interested in and select the row with the group's details.
 1. Select **Members** to review the list of users assigned to this group.
@@ -246,7 +246,7 @@ To check a group’s membership, follow these steps:
 
 To check a dynamic group’s membership criteria, follow these steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](../roles/permissions-reference.md#user-administrator) or [groups administrator](../roles/permissions-reference.md#groups-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator) or [groups administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
 1. Browse to **Identity** > **Groups** > **All Groups**.
 1. Search for the group you're interested in and select the row with the group's details.
 
@@ -258,7 +258,7 @@ To check a dynamic group’s membership criteria, follow these steps:
 
 To check a group’s assigned licenses, follow these steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](../roles/permissions-reference.md#user-administrator) or [groups administrator](../roles/permissions-reference.md#groups-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator) or [groups administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
 1. Browse to **Identity** > **Groups** > **All Groups**.
 1. Search for the group you're interested in and select the row with the group's details.
 
@@ -268,7 +268,7 @@ To check a group’s assigned licenses, follow these steps:
 
 To reprocess a group’s assigned licenses, follow these steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](../roles/permissions-reference.md#user-administrator) or [groups administrator](../roles/permissions-reference.md#groups-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator) or [groups administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
 1. Browse to **Identity** > **Groups** > **All Groups**.
 1. Search for the group you're interested in and select the row with the group's details.
 
@@ -285,7 +285,7 @@ To reprocess a group’s assigned licenses, follow these steps:
 
 To assign a license to a group, follow these steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](../roles/permissions-reference.md#user-administrator) or [groups administrator](../roles/permissions-reference.md#groups-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator) or [groups administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
 1. Browse to **Identity** > **Groups** > **All Groups**.
 1. Search for the group you're interested in and select the row with the group's details.
 
@@ -310,7 +310,7 @@ To assign a license to a group, follow these steps:
 
 To check or validate a single Conditional Access policy:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [conditional access administrator](../roles/permissions-reference.md#conditional-access-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [conditional access administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator). 
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 
 1. Select the **Conditional Access** navigation item.
@@ -328,7 +328,7 @@ To check or validate a single Conditional Access policy:
 
 To check or validate a single application’s currently configured Conditional Access policy:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
 1. Search for the application you're interested in, or the user is attempting to sign in to by application display name or application ID.
 
@@ -347,7 +347,7 @@ To check or validate a single application’s currently configured Conditional A
 
 To check or validate a single Conditional Access policy:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [conditional access administrator](../roles/permissions-reference.md#conditional-access-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [conditional access administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator). 
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 1. Select the **Conditional Access** navigation item.
 1. Select the policy you're interested in inspecting.
@@ -369,26 +369,26 @@ Application access can be blocked because the proper permissions consent operati
 
 - For any OpenID Connect-enabled application that requests permissions, navigating to the application’s sign-in screen performs a user level consent to the application for the signed-in user.
 
-- If you wish to do this programmatically, see [Requesting individual user consent](../develop/permissions-consent-overview.md#requesting-individual-user-consent).
+- If you wish to do this programmatically, see [Requesting individual user consent](~/identity-platform/permissions-consent-overview.md#requesting-individual-user-consent).
 
 ### Perform administrator-level consent operation for any application
 
 - For **only applications developed using the V1 application model**, you can force this administrator level consent to occur by adding “**?prompt=admin\_consent**” to the end of an application’s sign-in URL.
 
-- For **any application developed using the V2 application model**, you can enforce this administrator-level consent to occur by following the instructions under the **Request the permissions from a directory admin** section of [Using the admin consent endpoint](../develop/permissions-consent-overview.md#using-the-admin-consent-endpoint).
+- For **any application developed using the V2 application model**, you can enforce this administrator-level consent to occur by following the instructions under the **Request the permissions from a directory admin** section of [Using the admin consent endpoint](~/identity-platform/permissions-consent-overview.md#using-the-admin-consent-endpoint).
 
 ### Perform administrator-level consent for a single-tenant application
 
 - For **single-tenant applications** that request permissions (like those you're developing or own in your organization), you can perform an **administrative-level consent** operation on behalf of all users by signing in as a Global Administrator and clicking on the **Grant permissions** button at the top of the **Application Registry -&gt; All Applications -&gt; Select an App -&gt; Required Permissions** pane.
 
-- For **any application developed using the V1 or V2 application model**, you can enforce this administrator-level consent to occur by following the instructions under the **Request the permissions from a directory admin** section of [Using the admin consent endpoint](../develop/permissions-consent-overview.md#using-the-admin-consent-endpoint).
+- For **any application developed using the V1 or V2 application model**, you can enforce this administrator-level consent to occur by following the instructions under the **Request the permissions from a directory admin** section of [Using the admin consent endpoint](~/identity-platform/permissions-consent-overview.md#using-the-admin-consent-endpoint).
 
 ### Perform administrator-level consent for a multi-tenant application
 
 - For **multi-tenant applications** that request permissions (like an application a third party, or Microsoft, develops), you can perform an **administrative-level consent** operation. Sign in as a Global Administrator and clicking on the **Grant permissions** button under the **Enterprise Applications -&gt; All Applications -&gt; Select an App -&gt; Permissions** pane (available soon).
 
-- You can also enforce this administrator-level consent to occur by following the instructions under the **Request the permissions from a directory admin** section of [Using the admin consent endpoint](../develop/permissions-consent-overview.md#using-the-admin-consent-endpoint).
+- You can also enforce this administrator-level consent to occur by following the instructions under the **Request the permissions from a directory admin** section of [Using the admin consent endpoint](~/identity-platform/permissions-consent-overview.md#using-the-admin-consent-endpoint).
 
 ## Next steps
 
-[Using the admin consent endpoint](../develop/permissions-consent-overview.md#using-the-admin-consent-endpoint)
+[Using the admin consent endpoint](~/identity-platform/permissions-consent-overview.md#using-the-admin-consent-endpoint)

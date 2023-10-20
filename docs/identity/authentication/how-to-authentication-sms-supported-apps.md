@@ -52,11 +52,11 @@ For the same reason, Microsoft Office mobile apps (except Microsoft Teams, Compa
 ## Support for Non-Microsoft apps 
 
 To make Non-Micorosoft apps compatible with the SMS sign-in feature: 
-- Integrate Non-Microsoft web apps with Microsoft Entra ID and use Microsoft Entra authentication. Use Security Assertion Markup Language [SAML](../manage-apps/add-application-portal-setup-sso.md) or OpenID Connect [OIDC](../manage-apps/add-application-portal-setup-oidc-sso.md) to integrate with Microsoft Entra SSO. 
+- Integrate Non-Microsoft web apps with Microsoft Entra ID and use Microsoft Entra authentication. Use Security Assertion Markup Language [SAML](~/identity/enterprise-apps/add-application-portal-setup-sso.md) or OpenID Connect [OIDC](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md) to integrate with Microsoft Entra SSO. 
 - Integrate Non-Microsoft on-prem apps with Microsoft Entra ID using [Microsoft Entra application proxy](../app-proxy/application-proxy-add-on-premises-application.md)
-- Integrate Non-Microsoft client apps with [Microsoft identity platform](../develop/v2-overview.md) for authentication 
-    - [Sample app iOS](../develop/tutorial-v2-ios.md)
-    - [Sample app Android](../develop/tutorial-v2-android.md)
+- Integrate Non-Microsoft client apps with [Microsoft identity platform](~/identity-platform/v2-overview.md) for authentication 
+    - [Sample app iOS](~/identity-platform/tutorial-v2-ios.md)
+    - [Sample app Android](~/identity-platform/tutorial-v2-android.md)
 
 ## Next steps
 
@@ -68,6 +68,6 @@ To make Non-Micorosoft apps compatible with the SMS sign-in feature:
 
 ## Recommended content
 
-- [Add an application to your Microsoft Entra ID](../manage-apps/add-application-portal.md)
-- [Overview of MSAL libraries to acquire token from Microsoft identity platform to authenticate users](../develop/msal-overview.md)
+- [Add an application to your Microsoft Entra ID](~/identity/enterprise-apps/add-application-portal.md)
+- [Overview of MSAL libraries to acquire token from Microsoft identity platform to authenticate users](~/identity-platform/msal-overview.md)
 - [Configure Microsoft Managed Home Screen with Microsoft Entra ID](/mem/intune/apps/app-configuration-managed-home-screen-app)

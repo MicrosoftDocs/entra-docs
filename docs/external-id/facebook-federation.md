@@ -68,7 +68,7 @@ Now you'll set the Facebook client ID and client secret, either by entering it i
 
 [!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [External Identity Provider administrator](../roles/permissions-reference.md#external-identity-provider-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [External Identity Provider administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
 1. Browse to **Identity** > **External Identities** > **All identity providers**, then select **Facebook**.
 1. For the **Client ID**, enter the **App ID** of the Facebook application that you created earlier.
 1. For the **Client secret**, enter the **App secret** that you recorded.
@@ -93,7 +93,7 @@ You can delete your Facebook federation setup. If you do so, any users who have 
 
 ### To delete Facebook federation in the Microsoft Entra admin center: 
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [External Identity Provider administrator](../roles/permissions-reference.md#external-identity-provider-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [External Identity Provider administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
 1. Browse to **Identity** > **External Identities** > **All identity providers**.
 1. Select the **Facebook** line, and then select **Delete**. 
 1. Select **Yes** to confirm deletion.

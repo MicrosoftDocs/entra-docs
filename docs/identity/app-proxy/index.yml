@@ -27,22 +27,22 @@ landingContent:
       - linkListType: quickstart
         links:
           - text: View your apps
-            url: ../manage-apps/view-applications-portal.md
+            url: ~/identity/enterprise-apps/view-applications-portal.md
           - text: Add an app
-            url: ../manage-apps/add-application-portal.md
+            url: ~/identity/enterprise-apps/add-application-portal.md
   - title: Understand single sign-on
     linkLists:
       - linkListType: architecture
         links:
           - text: Single sign-on concepts
-            url: ../manage-apps/what-is-single-sign-on.md
+            url: ~/identity/enterprise-apps/what-is-single-sign-on.md
           - text: Single sign-on options
-            url: ../manage-apps/plan-sso-deployment.md
+            url: ~/identity/enterprise-apps/plan-sso-deployment.md
   - title: Develop new apps
     linkLists:
       - linkListType: learn
         links:
           - text: Guidance for developers
-            url: ../manage-apps/v2-howto-app-gallery-listing.md
+            url: ~/identity/enterprise-apps/v2-howto-app-gallery-listing.md
           - text: Understand the platform
-            url: ../develop/v2-overview.md
+            url: ~/identity-platform/v2-overview.md

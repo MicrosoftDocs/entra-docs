@@ -55,14 +55,14 @@ We recommend the following practices for service account privileges.
 * Don't assign built-in roles to service accounts
   * See, [oAuth2PermissionGrant resource type](/graph/api/resources/oauth2permissiongrant)
 * The service principal is assigned a privileged role
-  * [Create and assign a custom role in Microsoft Entra ID](../roles/custom-create.md)
+  * [Create and assign a custom role in Microsoft Entra ID](~/identity/role-based-access-control/custom-create.md)
 * Don't include service accounts as members of any groups with elevated permissions
   * See, [Get-AzureADDirectoryRoleMember](/powershell/module/azuread/get-azureaddirectoryrolemember):
    
 >`Get-AzureADDirectoryRoleMember`, and filter for objectType "Service Principal", or use</br>
 >`Get-AzureADServicePrincipal | % { Get-AzureADServiceAppRoleAssignment -ObjectId $_ }`
 
-* See, [Introduction to permissions and consent](../develop/permissions-consent-overview.md) to limit the functionality a service account can access on a resource
+* See, [Introduction to permissions and consent](~/identity-platform/permissions-consent-overview.md) to limit the functionality a service account can access on a resource
 * Service principals and managed identities can use OAuth 2.0 scopes in a delegated context impersonating a signed-on user, or as service account in the application context. In the application context, no one is signed in.
 * Confirm the scopes service accounts request for resources
   * If an account requests Files.ReadWrite.All, evaluate if it needs File.Read.All
@@ -78,7 +78,7 @@ We recommend the following practices for service account privileges.
 After you understand the purpose, scope, and permissions, create your service account, use the instructions in the following articles. 
 
 * [How to use managed identities for App Service and Azure Functions](/azure/app-service/overview-managed-identity?tabs=dotnet)
-* [Create a Microsoft Entra application and service principal that can access resources](../develop/howto-create-service-principal-portal.md)
+* [Create a Microsoft Entra application and service principal that can access resources](~/identity-platform/howto-create-service-principal-portal.md)
 
 Use a managed identity when possible. If you can't use a managed identity, use a service principal. If you can't use a service principal, then use a Microsoft Entra user account.
 

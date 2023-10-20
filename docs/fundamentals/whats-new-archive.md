@@ -90,7 +90,7 @@ For more information, see: [Update your Groups info in the My Apps portal](https
 **Service category:** Authentications (Logins)                      
 **Product capability:** Extensibility             
 
-A custom claims provider lets you call an API and map custom claims into the token during the authentication flow. The API call is made after the user has completed all their authentication challenges, and a token is about to be issued to the app. For more information, see: [Custom authentication extensions (preview)](../develop/custom-claims-provider-overview.md).
+A custom claims provider lets you call an API and map custom claims into the token during the authentication flow. The API call is made after the user has completed all their authentication challenges, and a token is about to be issued to the app. For more information, see: [Custom authentication extensions (preview)](~/identity-platform/custom-claims-provider-overview.md).
 
 ---
 
@@ -100,7 +100,7 @@ A custom claims provider lets you call an API and map custom claims into the tok
 **Service category:** MFA                     
 **Product capability:** User Authentication             
 
-The Converged Authentication Methods Policy enables you to manage all authentication methods used for MFA and SSPR in one policy, migrate off the legacy MFA and SSPR policies, and target authentication methods to groups of users instead of enabling them for all users in your tenant. For more information, see: [Manage authentication methods](../authentication/concept-authentication-methods-manage.md).
+The Converged Authentication Methods Policy enables you to manage all authentication methods used for MFA and SSPR in one policy, migrate off the legacy MFA and SSPR policies, and target authentication methods to groups of users instead of enabling them for all users in your tenant. For more information, see: [Manage authentication methods](~/identity/authentication/concept-authentication-methods-manage.md).
 
 ---
 
@@ -134,7 +134,7 @@ Microsoft Authenticator app’s number matching feature has been Generally Avail
 
 If customers don’t enable number match for all Microsoft Authenticator push notifications prior to May 8, 2023, Authenticator users may experience inconsistent sign-ins while the services are rolling out this change. To ensure consistent behavior for all users, we highly recommend you enable number match for Microsoft Authenticator push notifications in advance.
 
-For more information, see: [How to use number matching in multifactor authentication (MFA) notifications - Authentication methods policy](../authentication/how-to-mfa-number-match.md)
+For more information, see: [How to use number matching in multifactor authentication (MFA) notifications - Authentication methods policy](~/identity/authentication/how-to-mfa-number-match.md)
 
 ---
 
@@ -391,7 +391,7 @@ This feature analyzes uploaded client-side logs, also known as diagnostic logs, 
 End users can now enable password-less phone sign-in for multiple accounts in the Authenticator App on any supported iOS device. Consultants, students, and others with multiple accounts in Azure AD can add each account to Microsoft Authenticator and use password-less phone sign-in for all of them from the same iOS device. The Azure AD accounts can be in the same tenant or different tenants. Guest accounts aren't supported for multiple account sign-ins from one device.
 
 
-End users aren't required to enable the optional telemetry setting in the Authenticator App. For more information, see: [Enable passwordless sign-in with Microsoft Authenticator](../authentication/howto-authentication-passwordless-phone.md).
+End users aren't required to enable the optional telemetry setting in the Authenticator App. For more information, see: [Enable passwordless sign-in with Microsoft Authenticator](~/identity/authentication/howto-authentication-passwordless-phone.md).
 
 
 ---
@@ -426,7 +426,7 @@ For more information, see: [Conditional Access templates (Preview)](../condition
 **Service category:** User Access Management             
 **Product capability:** User Management       
 
-The ability for users to create tenants from the Manage Tenant overview has been present in Azure AD since almost the beginning of the Azure portal. This new capability in the User Settings option allows admins to restrict their users from being able to create new tenants. There's also a new [Tenant Creator](../roles/permissions-reference.md#tenant-creator) role to allow specific users to create tenants. For more information, see [Default user permissions](../fundamentals/users-default-permissions.md#restrict-member-users-default-permissions).
+The ability for users to create tenants from the Manage Tenant overview has been present in Azure AD since almost the beginning of the Azure portal. This new capability in the User Settings option allows admins to restrict their users from being able to create new tenants. There's also a new [Tenant Creator](~/identity/role-based-access-control/permissions-reference.md#tenant-creator) role to allow specific users to create tenants. For more information, see [Default user permissions](../fundamentals/users-default-permissions.md#restrict-member-users-default-permissions).
 
 
 ---
@@ -439,7 +439,7 @@ The ability for users to create tenants from the Manage Tenant overview has been
 **Service category:** My Apps            
 **Product capability:** End User Experiences      
 
-We have consolidated relevant app launcher settings in a new App launchers section in the Azure and Microsoft Entra admin centers. The entry point can be found under Enterprise applications, where Collections used to be. You can find the Collections option by selecting App launchers. In addition, we've added a new App launchers Settings option. This option has some settings you may already be familiar with like the Microsoft 365 settings. The new Settings options also have controls for previews. As an admin, you can choose to try out new app launcher features while they are in preview. Enabling a preview feature means that the feature turns on for your organization. This enabled feature reflects in the My Apps portal, and other app launchers for all of your users. To learn more about the preview settings, see: [End-user experiences for applications](../manage-apps/end-user-experiences.md).
+We have consolidated relevant app launcher settings in a new App launchers section in the Azure and Microsoft Entra admin centers. The entry point can be found under Enterprise applications, where Collections used to be. You can find the Collections option by selecting App launchers. In addition, we've added a new App launchers Settings option. This option has some settings you may already be familiar with like the Microsoft 365 settings. The new Settings options also have controls for previews. As an admin, you can choose to try out new app launcher features while they are in preview. Enabling a preview feature means that the feature turns on for your organization. This enabled feature reflects in the My Apps portal, and other app launchers for all of your users. To learn more about the preview settings, see: [End-user experiences for applications](~/identity/enterprise-apps/end-user-experiences.md).
 
 
 ---
@@ -452,7 +452,7 @@ We have consolidated relevant app launcher settings in a new App launchers secti
 **Service category:** MFA          
 **Product capability:** User Authentication     
 
-The Converged Authentication Methods Policy enables you to manage all authentication methods used for MFA and SSPR in one policy. You can migrate off the legacy MFA and SSPR policies, and target authentication methods to groups of users instead of enabling them for all users in the tenant. For more information, see: [Manage authentication methods for Azure AD](../authentication/concept-authentication-methods-manage.md).
+The Converged Authentication Methods Policy enables you to manage all authentication methods used for MFA and SSPR in one policy. You can migrate off the legacy MFA and SSPR policies, and target authentication methods to groups of users instead of enabling them for all users in the tenant. For more information, see: [Manage authentication methods for Azure AD](~/identity/authentication/concept-authentication-methods-manage.md).
 
 
 ---
@@ -465,7 +465,7 @@ The Converged Authentication Methods Policy enables you to manage all authentica
 **Service category:** Directory Management             
 **Product capability:** AuthZ/Access Delegation       
 
-You can now use administrative units to delegate management of specified devices in your tenant by adding devices to an administrative unit. You're also able to assign built-in, and custom device management roles, scoped to that administrative unit. For more information, see: [Device management](../roles/administrative-units.md#device-management).
+You can now use administrative units to delegate management of specified devices in your tenant by adding devices to an administrative unit. You're also able to assign built-in, and custom device management roles, scoped to that administrative unit. For more information, see: [Device management](~/identity/role-based-access-control/administrative-units.md#device-management).
 
 
 ---
@@ -483,7 +483,7 @@ Companies often provide mobile devices to frontline workers that need are shared
 For more information on deploying frontline solutions, see: [frontline deployment documentation](https://aka.ms/frontlinewhitepaper).
 
 
-For more information on shared-device mode, see: [Azure Active Directory Shared Device Mode documentation](../develop/msal-android-shared-devices.md#microsoft-applications-that-support-shared-device-mode).
+For more information on shared-device mode, see: [Azure Active Directory Shared Device Mode documentation](~/identity-platform/msal-android-shared-devices.md#microsoft-applications-that-support-shared-device-mode).
 
 
 For steps to set up shared device mode with Intune, see: [Intune setup blog](https://techcommunity.microsoft.com/t5/intune-customer-success/enroll-android-enterprise-dedicated-devices-into-azure-ad-shared/ba-p/1820093). 
@@ -576,15 +576,15 @@ The number of features and capabilities that we're adding to Microsoft Authentic
 - Support for Microsoft accounts (MSA) 
 - Support for Azure AD B2C accounts 
 - Handling throttling 
-- Proactive token refresh and token revocation based on policy or critical events for Microsoft Graph and other APIs that support [Continuous Access Evaluation (CAE)](../develop/app-resilience-continuous-access-evaluation.md)
+- Proactive token refresh and token revocation based on policy or critical events for Microsoft Graph and other APIs that support [Continuous Access Evaluation (CAE)](~/identity-platform/app-resilience-continuous-access-evaluation.md)
 - Auth broker support with device-based Conditional Access policies 
 - Azure AD hardware-based certificate authentication (CBA) on mobile  
 - System browsers on mobile devices 
-And more. For an up-to-date list, refer to our [migration guide](../develop/msal-migration.md#how-to-migrate-to-msal). 
+And more. For an up-to-date list, refer to our [migration guide](~/identity-platform/msal-migration.md#how-to-migrate-to-msal). 
 
 ### How to migrate? 
 
-To make the migration process easier, we published a [comprehensive guide](../develop/msal-migration.md#how-to-migrate-to-msal) that documents the migration paths across different platforms and programming languages. 
+To make the migration process easier, we published a [comprehensive guide](~/identity-platform/msal-migration.md#how-to-migrate-to-msal) that documents the migration paths across different platforms and programming languages. 
 
 In addition to the Microsoft Authentication Library to Microsoft Authentication Library update, we recommend migrating from Azure AD Graph API to Microsoft Graph. This change enables you to take advantage of the latest additions and enhancements, such as CAE, across the Microsoft service offering through a single, unified endpoint. You can read more in our [Migrate your apps from Azure AD Graph to Microsoft Graph](/graph/migrate-azure-ad-graph-overview) guide. You can post any questions to [Microsoft Q&A](/answers/topics/azure-active-directory.html) or [Stack Overflow](https://stackoverflow.com/questions/tagged/msal).
 
@@ -635,7 +635,7 @@ For more information, see:
 **Service category:** Microsoft Authenticator App              
 **Product capability:** User Authentication     
 
-Authenticator version 6.6.8 and higher on iOS will be FIPS 140 compliant for all Azure AD authentications using push multi-factor authentications (MFA), Password-less Phone Sign-In (PSI), and time-based one-time pass-codes (TOTP). No changes in configuration are required in the Authenticator app or Azure portal to enable this capability. For more information, see: [FIPS 140 compliant for Azure AD authentication](../authentication/concept-authentication-authenticator-app.md#fips-140-compliant-for-azure-ad-authentication).
+Authenticator version 6.6.8 and higher on iOS will be FIPS 140 compliant for all Azure AD authentications using push multi-factor authentications (MFA), Password-less Phone Sign-In (PSI), and time-based one-time pass-codes (TOTP). No changes in configuration are required in the Authenticator app or Azure portal to enable this capability. For more information, see: [FIPS 140 compliant for Azure AD authentication](~/identity/authentication/concept-authentication-authenticator-app.md#fips-140-compliant-for-azure-ad-authentication).
 
 
 ---
@@ -806,7 +806,7 @@ An IT admin can now add multiple domains to a single SAML/WS-Fed identity provid
 
 In the end of October, the total number of required permissions for any single application registration must not exceed 400 permissions across all APIs. Applications exceeding the limit are unable to increase the number of permissions configured for. The existing limit on the number of distinct APIs for permissions required remains unchanged and may not exceed 50 APIs.
 
-In the Azure portal, the required permissions list is under API Permissions within specific applications in the application registration menu. When using Microsoft Graph or Microsoft Graph PowerShell, the required permissions list is in the requiredResourceAccess property of an [application](/graph/api/resources/application) entity. For more information, see: [Validation differences by supported account types (signInAudience)](../develop/supported-accounts-validation.md).
+In the Azure portal, the required permissions list is under API Permissions within specific applications in the application registration menu. When using Microsoft Graph or Microsoft Graph PowerShell, the required permissions list is in the requiredResourceAccess property of an [application](/graph/api/resources/application) entity. For more information, see: [Validation differences by supported account types (signInAudience)](~/identity-platform/supported-accounts-validation.md).
 
 
 ---
@@ -819,7 +819,7 @@ In the Azure portal, the required permissions list is under API Permissions with
 **Service category:** Conditional Access   
 **Product capability:** User Authentication  
 
-We're announcing Public preview of Authentication strength, a Conditional Access control that allows administrators to specify which authentication methods can be used to access a resource.  For more information, see: [Conditional Access authentication strength (preview)](../authentication/concept-authentication-strengths.md). You can use custom authentication strengths to restrict access by requiring specific FIDO2 keys using the Authenticator Attestation GUIDs (AAGUIDs), and apply this through Conditional Access policies. For more information, see: [FIDO2 security key advanced options](../authentication/concept-authentication-strengths.md#fido2-security-key-advanced-options).
+We're announcing Public preview of Authentication strength, a Conditional Access control that allows administrators to specify which authentication methods can be used to access a resource.  For more information, see: [Conditional Access authentication strength (preview)](~/identity/authentication/concept-authentication-strengths.md). You can use custom authentication strengths to restrict access by requiring specific FIDO2 keys using the Authenticator Attestation GUIDs (AAGUIDs), and apply this through Conditional Access policies. For more information, see: [FIDO2 security key advanced options](~/identity/authentication/concept-authentication-strengths.md#fido2-security-key-advanced-options).
 
 ---
 
@@ -876,7 +876,7 @@ For more information, see:
 **Service category:** MFA     
 **Product capability:** Identity Security & Protection  
 
-Beginning September 30, 2024, Azure Active Directory Multi-Factor Authentication Server deployments will no longer service multi-factor authentication (MFA) requests, which could cause authentications to fail for your organization. To ensure uninterrupted authentication services, and to remain in a supported state, organizations should migrate their users’ authentication data to the cloud-based Azure Active Directory Multi-Factor Authentication service using the latest Migration Utility included in the most recent Azure Active Directory Multi-Factor Authentication Server update. For more information, see: [Migrate from MFA Server to Azure AD Multi-Factor Authentication](../authentication/how-to-migrate-mfa-server-to-azure-mfa.md).
+Beginning September 30, 2024, Azure Active Directory Multi-Factor Authentication Server deployments will no longer service multi-factor authentication (MFA) requests, which could cause authentications to fail for your organization. To ensure uninterrupted authentication services, and to remain in a supported state, organizations should migrate their users’ authentication data to the cloud-based Azure Active Directory Multi-Factor Authentication service using the latest Migration Utility included in the most recent Azure Active Directory Multi-Factor Authentication Server update. For more information, see: [Migrate from MFA Server to Azure AD Multi-Factor Authentication](~/identity/authentication/how-to-migrate-mfa-server-to-azure-mfa.md).
 
 ---
 
@@ -936,7 +936,7 @@ To prevent accidental notification approvals, admins can now require users to en
 The number matching feature greatly up-levels the security posture of the Microsoft Authenticator app and protects organizations from MFA fatigue attacks. We highly encourage our customers to adopt this feature applying the rollout controls we have built. Number Matching will begin to be enabled for all users of the Microsoft Authenticator app starting February 27 2023.
 
 
-For more information, see: [How to use number matching in multifactor authentication (MFA) notifications - Authentication methods policy](../authentication/how-to-mfa-number-match.md).
+For more information, see: [How to use number matching in multifactor authentication (MFA) notifications - Authentication methods policy](~/identity/authentication/how-to-mfa-number-match.md).
 
 ---
 
@@ -958,7 +958,7 @@ The feature is available for both MFA and Password-less Phone Sign-in notificati
 We highly encourage our customers to adopt these critical security features to reduce accidental approvals of Authenticator notifications by end users.
 
 
-For more information, see: [How to use additional context in Microsoft Authenticator notifications - Authentication methods policy](../authentication/how-to-mfa-additional-context.md).
+For more information, see: [How to use additional context in Microsoft Authenticator notifications - Authentication methods policy](~/identity/authentication/how-to-mfa-additional-context.md).
 
 ---
 
@@ -1010,7 +1010,7 @@ For more information about how to better secure your organization by using autom
 **Service category:** Azure AD Connect cloud sync
 **Product capability:** Identity Lifecycle Management
 
-Password writeback in Azure AD Connect cloud sync now provides customers the ability to synchronize Azure AD password changes made in the cloud to an on-premises directory in real time. This can be accomplished using the lightweight Azure AD cloud provisioning agent. For more information, see: [Tutorial: Enable cloud sync self-service password reset writeback to an on-premises environment](../authentication/tutorial-enable-cloud-sync-sspr-writeback.md).
+Password writeback in Azure AD Connect cloud sync now provides customers the ability to synchronize Azure AD password changes made in the cloud to an on-premises directory in real time. This can be accomplished using the lightweight Azure AD cloud provisioning agent. For more information, see: [Tutorial: Enable cloud sync self-service password reset writeback to an on-premises environment](~/identity/authentication/tutorial-enable-cloud-sync-sspr-writeback.md).
 
 ---
 
@@ -1261,8 +1261,8 @@ In Azure AD entitlement management, a new form of access package assignment poli
 
 Users can now configure multiple instances of the same application within an Azure AD tenant. It's now supported for both IdP, and Service Provider (SP), initiated single sign-on requests. Multiple application accounts can now have a separate service principal to handle instance-specific claims mapping and roles assignment. For more information, see:
 
-- [Configure SAML app multi-instancing for an application - Microsoft Entra](../develop/configure-app-multi-instancing.md)
-- [Customize app SAML token claims - Microsoft Entra](../develop/saml-claims-customization.md)
+- [Configure SAML app multi-instancing for an application - Microsoft Entra](~/identity-platform/configure-app-multi-instancing.md)
+- [Customize app SAML token claims - Microsoft Entra](~/identity-platform/saml-claims-customization.md)
 
 
 
@@ -1277,7 +1277,7 @@ Users can now configure multiple instances of the same application within an Azu
  
 
 Administrators up until recently has the capability to transform claims using many transformations, however using regular expression for claims transformation wasn't exposed to customers. With this public preview release, administrators can now configure and use regular expressions for claims transformation using portal UX. 
-For more information, see:[Customize app SAML token claims - Microsoft Entra](../develop/saml-claims-customization.md).
+For more information, see:[Customize app SAML token claims - Microsoft Entra](~/identity-platform/saml-claims-customization.md).
  
 
 ---
@@ -1393,7 +1393,7 @@ Azure Service Health supports service outage notifications to Tenant Admins for 
 End users can now enable passwordless phone sign-in for multiple accounts in the Authenticator App on any supported iOS device. Consultants, students, and others with multiple accounts in Azure AD can add each account to Microsoft Authenticator and use passwordless phone sign-in for all of them from the same iOS device. The Azure AD accounts can be in either the same, or different, tenants. Guest accounts aren't supported for multiple account sign-ins from one device.
 
 
-End users are encouraged to enable the optional telemetry setting in the Authenticator App, if not done so already.  For more information, see:  [Enable passwordless sign-in with Microsoft Authenticator](../authentication/howto-authentication-passwordless-phone.md)
+End users are encouraged to enable the optional telemetry setting in the Authenticator App, if not done so already.  For more information, see:  [Enable passwordless sign-in with Microsoft Authenticator](~/identity/authentication/howto-authentication-passwordless-phone.md)
 
  
 
@@ -1411,14 +1411,14 @@ End users are encouraged to enable the optional telemetry setting in the Authent
 
 Previously to set up and administer your AAD-DS instance you needed top level permissions of Azure Contributor and Azure AD Global Administrator. Now for both initial creation, and ongoing administration, you can utilize more fine grain permissions for enhanced security and control. The prerequisites now minimally require:
 
-- You need [Application Administrator](../roles/permissions-reference.md#application-administrator) and [Groups Administrator](../roles/permissions-reference.md#groups-administrator) Azure AD roles in your tenant to enable Azure AD DS.
+- You need [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) and [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator) Azure AD roles in your tenant to enable Azure AD DS.
 - You need [Domain Services Contributor](/azure/role-based-access-control/built-in-roles#domain-services-contributor) Azure role to create the required Azure AD DS resources.
  
 
 Check out these resources to learn more:
 
 - [Tutorial - Create an Azure Active Directory Domain Services managed domain](/entra/identity/domain-services/tutorial-create-instance#prerequisites)
-- [Least privileged roles by task](../roles/delegate-by-task.md#domain-services)
+- [Least privileged roles by task](~/identity/role-based-access-control/delegate-by-task.md#domain-services)
 - [Azure built-in roles - Azure RBAC](/azure/role-based-access-control/built-in-roles#domain-services-contributor)
 
  
@@ -1474,7 +1474,7 @@ Accidental deletion of users in your apps or in your on-premises directory could
 **Product capability:** End User Experiences  
  
 
-An improved app discovery view for My Apps is in public preview. The preview shows users more apps in the same space and allows them to scroll between collections. It doesn't currently support drag-and-drop and list view. Users can opt into the preview by selecting Try the preview and opt out by selecting Return to previous view. To learn more about My Apps, see [My Apps portal overview](../manage-apps/myapps-overview.md).
+An improved app discovery view for My Apps is in public preview. The preview shows users more apps in the same space and allows them to scroll between collections. It doesn't currently support drag-and-drop and list view. Users can opt into the preview by selecting Try the preview and opt out by selecting Return to previous view. To learn more about My Apps, see [My Apps portal overview](~/identity/enterprise-apps/myapps-overview.md).
 
 
  
@@ -1518,7 +1518,7 @@ For more information, see: [Manage devices in Azure AD using the Azure portal](.
 
 Previously the only way to have persistent NameID value was to ​configure user attribute with an empty value. Admins can now explicitly configure the NameID value to be persistent ​along with the corresponding format.
 
-For more information, see: [Customize app SAML token claims - Microsoft identity platform](../develop/saml-claims-customization.md#attributes).
+For more information, see: [Customize app SAML token claims - Microsoft identity platform](~/identity-platform/saml-claims-customization.md#attributes).
  
 
 ---
@@ -1534,7 +1534,7 @@ For more information, see: [Customize app SAML token claims - Microsoft identity
 
 With this new parity update, customers can now integrate non-gallery applications such as Socure DevHub with Azure AD to have SSO via SAML.
 
-For more information, see [Claims mapping policy - Microsoft Entra](../develop/reference-claims-mapping-policy-type.md#claim-schema-entry-elements).
+For more information, see [Claims mapping policy - Microsoft Entra](~/identity-platform/reference-claims-mapping-policy-type.md#claim-schema-entry-elements).
  
 
 ---
@@ -1578,7 +1578,7 @@ Customers can be alerted on assignments made outside PIM either directly on the 
 
  
 
-Temporary Access Pass (TAP) is now generally available. TAP can be used to securely register password-less methods such as Phone Sign-in, phishing resistant methods such as FIDO2, and even help Windows onboarding (AADJ and WHFB). TAP also makes recovery easier when a user has lost or forgotten their strong authentication methods and needs to sign in to register new authentication methods. For more information, see: [Configure Temporary Access Pass in Azure AD to register Passwordless authentication methods](../authentication/howto-authentication-temporary-access-pass.md).
+Temporary Access Pass (TAP) is now generally available. TAP can be used to securely register password-less methods such as Phone Sign-in, phishing resistant methods such as FIDO2, and even help Windows onboarding (AADJ and WHFB). TAP also makes recovery easier when a user has lost or forgotten their strong authentication methods and needs to sign in to register new authentication methods. For more information, see: [Configure Temporary Access Pass in Azure AD to register Passwordless authentication methods](~/identity/authentication/howto-authentication-temporary-access-pass.md).
  
 
 ---
@@ -1817,7 +1817,7 @@ When setting up federation with a partner's IdP, new guest users from that domai
 
  
 
-Groups Administrators assigned over the scope of an administrative unit can now create groups within the administrative unit.  This enables scoped Group Administrators to create groups that they can manage directly, without needing to elevate to Global Administrator or Privileged Role Administrator. For more information, see: [Administrative units in Azure Active Directory](../roles/administrative-units.md).
+Groups Administrators assigned over the scope of an administrative unit can now create groups within the administrative unit.  This enables scoped Group Administrators to create groups that they can manage directly, without needing to elevate to Global Administrator or Privileged Role Administrator. For more information, see: [Administrative units in Azure Active Directory](~/identity/role-based-access-control/administrative-units.md).
  
 
 ---
@@ -1831,7 +1831,7 @@ Groups Administrators assigned over the scope of an administrative unit can now 
 
  
 
-The public preview of dynamic administrative units now supports the **onPremisesDistinguishedName** property for users. This makes it possible to create dynamic rules that incorporate the organizational unit of the user from on-premises AD. For more information, see: [Manage users or devices for an administrative unit with dynamic membership rules (Preview)](../roles/admin-units-members-dynamic.md).
+The public preview of dynamic administrative units now supports the **onPremisesDistinguishedName** property for users. This makes it possible to create dynamic rules that incorporate the organizational unit of the user from on-premises AD. For more information, see: [Manage users or devices for an administrative unit with dynamic membership rules (Preview)](~/identity/role-based-access-control/admin-units-members-dynamic.md).
  
 
 ---
@@ -1845,7 +1845,7 @@ The public preview of dynamic administrative units now supports the **onPremises
 
  
 
-Smart Lockout now synchronizes the lockout state across Azure AD data centers, so the total number of failed sign-in attempts allowed before an account is locked out will match the configured lockout threshold. For more information, see: [Protect user accounts from attacks with Azure Active Directory smart lockout](../authentication/howto-password-smart-lockout.md).
+Smart Lockout now synchronizes the lockout state across Azure AD data centers, so the total number of failed sign-in attempts allowed before an account is locked out will match the configured lockout threshold. For more information, see: [Protect user accounts from attacks with Azure Active Directory smart lockout](~/identity/authentication/howto-password-smart-lockout.md).
  
 
 ---

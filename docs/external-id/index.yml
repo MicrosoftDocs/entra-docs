@@ -122,5 +122,5 @@ additionalContent:
           # Card
         - title: Mobile app
           summary: App with a native user interface that runs on a mobile device.
-          url: ../develop/index-mobile.yml           
+          url: ~/identity-platform/index-mobile.yml           
 ## BAND 2 - ADDITIONAL CONTENT END ##########################################################################################################################

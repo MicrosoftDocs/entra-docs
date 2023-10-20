@@ -73,7 +73,7 @@ sections:
         answer: |
           This answer is applicable only to Microsoft Entra ID P1 organizations.
           
-          1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](../roles/permissions-reference.md#privileged-role-administrator).
+          1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
           1. Browse to **Identity** > **Users** > **All users**.
           1. Select a user.
           1. Select **Assigned roles**.

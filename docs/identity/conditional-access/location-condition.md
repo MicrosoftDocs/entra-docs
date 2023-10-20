@@ -94,7 +94,7 @@ Every time the user shares their GPS location, the app does jailbreak detection 
 > [!NOTE]
 > A Conditional Access policy with GPS-based named locations in report-only mode prompts users to share their GPS location, even though they aren't blocked from signing in.
 
-GPS location doesn't work with [passwordless authentication methods](../authentication/concept-authentication-passwordless.md). 
+GPS location doesn't work with [passwordless authentication methods](~/identity/authentication/concept-authentication-passwordless.md). 
 
 Multiple Conditional Access policies may prompt users for their GPS location before all are applied. Because of the way Conditional Access policies are applied, a user may be denied access if they pass the location check but fail another policy. For more information about policy enforcement, see the article [Building a Conditional Access policy](concept-conditional-access-policies.md).
 
@@ -117,13 +117,13 @@ Some IP addresses don't map to a specific country or region. To capture these IP
 
 ### Configure MFA trusted IPs
 
-You can also configure IP address ranges representing your organization's local intranet in the [multifactor authentication service settings](https://account.activedirectory.windowsazure.com/usermanagement/mfasettings.aspx). This feature enables you to configure up to 50 IP address ranges. The IP address ranges are in CIDR format. For more information, see [Trusted IPs](../authentication/howto-mfa-mfasettings.md#trusted-ips).  
+You can also configure IP address ranges representing your organization's local intranet in the [multifactor authentication service settings](https://account.activedirectory.windowsazure.com/usermanagement/mfasettings.aspx). This feature enables you to configure up to 50 IP address ranges. The IP address ranges are in CIDR format. For more information, see [Trusted IPs](~/identity/authentication/howto-mfa-mfasettings.md#trusted-ips).  
 
 If you have Trusted IPs configured, they show up as **MFA Trusted IPs** in the list of locations for the location condition.
 
 #### Skipping multifactor authentication
 
-On the multifactor authentication service settings page, you can identify corporate intranet users by selecting  **Skip multifactor authentication for requests from federated users on my intranet**. This setting indicates that the inside corporate network claim, which is issued by AD FS, should be trusted and used to identify the user as being on the corporate network. For more information, see [Enable the Trusted IPs feature by using Conditional Access](../authentication/howto-mfa-mfasettings.md#enable-the-trusted-ips-feature-by-using-conditional-access).
+On the multifactor authentication service settings page, you can identify corporate intranet users by selecting  **Skip multifactor authentication for requests from federated users on my intranet**. This setting indicates that the inside corporate network claim, which is issued by AD FS, should be trusted and used to identify the user as being on the corporate network. For more information, see [Enable the Trusted IPs feature by using Conditional Access](~/identity/authentication/howto-mfa-mfasettings.md#enable-the-trusted-ips-feature-by-using-conditional-access).
 
 After checking this option, including the named location **MFA Trusted IPs** will apply to any policies with this option selected.
 
@@ -136,7 +136,7 @@ If both steps fail, a user is considered to be no longer on a trusted IP.
 
 ## Define locations
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../roles/permissions-reference.md#conditional-access-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Protection** > **Conditional Access** > **Named locations**.
 1. Choose **New location**.
 1. Give your location a name.
@@ -167,7 +167,7 @@ This option applies to:
 
 #### Multifactor authentication trusted IPs
 
-Using the trusted IPs section of multifactor authentication's service settings is no longer recommended. This control only accepts IPv4 addresses and should only be used for specific scenarios covered in the article [Configure Microsoft Entra multifactor authentication settings](../authentication/howto-mfa-mfasettings.md#trusted-ips)
+Using the trusted IPs section of multifactor authentication's service settings is no longer recommended. This control only accepts IPv4 addresses and should only be used for specific scenarios covered in the article [Configure Microsoft Entra multifactor authentication settings](~/identity/authentication/howto-mfa-mfasettings.md#trusted-ips)
 
 If you have these trusted IPs configured, they show up as **MFA Trusted IPs** in the list of locations for the location condition.
 

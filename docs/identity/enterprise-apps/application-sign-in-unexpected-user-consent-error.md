@@ -17,7 +17,7 @@ ms.custom: enterprise-apps
 
 # Unexpected error when performing consent to an application
 
-This article discusses errors that can occur during the process of consenting to an application. If you're troubleshooting unexpected consent prompts that don't contain any error messages, see [Authentication Scenarios for Microsoft Entra ID](../develop/authentication-vs-authorization.md).
+This article discusses errors that can occur during the process of consenting to an application. If you're troubleshooting unexpected consent prompts that don't contain any error messages, see [Authentication Scenarios for Microsoft Entra ID](~/identity-platform/authentication-vs-authorization.md).
 
 Many applications that integrate with Microsoft Entra ID require permissions to access other resources in order to function. When these resources are also integrated with Microsoft Entra ID, the permission to access them is often requested using the common consent framework. A consent prompt is displayed, which generally occurs the first time an application is used but can also occur on a subsequent use of the application.
 
@@ -79,14 +79,14 @@ These errors all occur when the application a user is trying to consent to is re
 * **AADSTS900981:** An admin consent request was received for a risky app. (AdminConsentRequestRiskyAppWarning)
 * This app may be risky. Only continue if you trust this app.
 
-Both of these messages will be displayed when Microsoft has determined that the consent request may be risky. Among many other factors, this may occur if a [verified publisher](../develop/publisher-verification-overview.md) hasn't been added to the app registration. The first error code and message will be shown to end-users when the [Admin consent workflow](configure-admin-consent-workflow.md) is disabled. The second code and message will be shown to end-users when the admin consent workflow is enabled and to admins.
+Both of these messages will be displayed when Microsoft has determined that the consent request may be risky. Among many other factors, this may occur if a [verified publisher](~/identity-platform/publisher-verification-overview.md) hasn't been added to the app registration. The first error code and message will be shown to end-users when the [Admin consent workflow](configure-admin-consent-workflow.md) is disabled. The second code and message will be shown to end-users when the admin consent workflow is enabled and to admins.
 
 End-users won't be able to grant consent to apps that have been detected as risky. Admins are able to, but should evaluate the app carefully and proceed with caution. If the app seems suspicious upon further review, it can be reported to Microsoft from the consent screen.
 
 ## Next steps
 
-[Apps, permissions, and consent in Azure Active Directory (v1.0 endpoint)](../develop/quickstart-register-app.md)<br>
+[Apps, permissions, and consent in Azure Active Directory (v1.0 endpoint)](~/identity-platform/quickstart-register-app.md)<br>
 
-[Scopes, permissions, and consent in the Microsoft identity platform (v2.0 endpoint)](../develop/permissions-consent-overview.md)
+[Scopes, permissions, and consent in the Microsoft identity platform (v2.0 endpoint)](~/identity-platform/permissions-consent-overview.md)
 
 [Unexpected consent prompt when signing in to an application](application-sign-in-unexpected-user-consent-prompt.md)

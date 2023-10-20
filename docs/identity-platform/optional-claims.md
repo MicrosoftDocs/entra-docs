@@ -17,7 +17,7 @@ ms.reviewer: ludwignick
 
 You can configure optional claims for your application through the Azure portal or application manifest.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 1. Browse to **Identity** > **Applications** > **App registrations**.
 1. Choose the application for which you want to configure optional claims based on your scenario and desired outcome.
 1. Under **Manage**, select **Token configuration**.

@@ -30,19 +30,19 @@ When Microsoft Entra ID pre-authenticates access to BIG-IP published services, t
 - Password-less authentication with:
   -  [Windows Hello](/windows/security/identity-protection/hello-for-business/)
   -  [MS Authenticator](https://support.microsoft.com/account-billing/download-and-install-the-microsoft-authenticator-app-351498fc-850a-45da-b7b6-27e523b8702a)
-  -  [Fast Identity Online (FIDO) keys](../authentication/howto-authentication-passwordless-security-key.md)
-  -  [Certificate-based authentication](../authentication/concept-certificate-based-authentication.md)
+  -  [Fast Identity Online (FIDO) keys](~/identity/authentication/howto-authentication-passwordless-security-key.md)
+  -  [Certificate-based authentication](~/identity/authentication/concept-certificate-based-authentication.md)
 
 Other benefits include:
 
 - One control plane to govern identity and access
   - The [Microsoft Entra admin center](https://entra.microsoft.com)
 - Preemptive [Conditional Access](../conditional-access/overview.md)
-- [Microsoft Entra multifactor authentication](../authentication/concept-mfa-howitworks.md)
+- [Microsoft Entra multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md)
 - Adaptive protection through user and session risk profiling
   - [Identity Protection](../identity-protection/overview-identity-protection.md)
 - [Leaked credential detection](../identity-protection/concept-identity-protection-risks.md)
-- [Self-service password reset (SSPR)](../authentication/tutorial-enable-sspr.md)
+- [Self-service password reset (SSPR)](~/identity/authentication/tutorial-enable-sspr.md)
 - Entitlement management for governed guest access
   - [Partner collaboration](../governance/entitlement-management-external-users.md)
 - App discovery and control
@@ -124,7 +124,7 @@ Integrating an F5 BIG-IP with Microsoft Entra ID for SHA has the following prere
   - A 90-day BIG-IP Access Policy Manager&trade; (APM) [trial license](https://www.f5.com/trial/big-ip-trial.php)
 - Microsoft Entra ID licensing:
   - An [Azure free account](https://azure.microsoft.com/free/active-directory/) has minimum core requirements for SHA with password-less authentication
-  - A [Premium subscription](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing) has [Conditional Access](../conditional-access/overview.md), [multifactor authentication](../authentication/concept-mfa-howitworks.md), and [Identity Protection](../identity-protection/overview-identity-protection.md)
+  - A [Premium subscription](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing) has [Conditional Access](../conditional-access/overview.md), [multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md), and [Identity Protection](../identity-protection/overview-identity-protection.md)
 
 ## Configuration scenarios
 

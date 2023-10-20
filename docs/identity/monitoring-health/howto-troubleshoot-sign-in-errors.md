@@ -36,7 +36,7 @@ You need:
 
 [!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../roles/permissions-reference.md#reports-reader).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](~/identity/role-based-access-control/permissions-reference.md#reports-reader).
 1. Browse to **Identity** > **Monitoring & health** > **Sign-in logs**. 
 1. Use the filters to narrow down the results
     - Search by username if you're troubleshooting a specific user.
@@ -72,7 +72,7 @@ The following failure reasons and details are common:
 If you need more specifics to research, you can use the **sign-in error code** for further research.
 
 - Enter the error code into the **[Error code lookup tool](https://login.microsoftonline.com/error)** to get the error code description and remediation information.
-- Search for an error code in the **[sign-ins error codes reference](../develop/reference-error-codes.md)**. 
+- Search for an error code in the **[sign-ins error codes reference](~/identity-platform/reference-error-codes.md)**. 
 
 The following error codes are associated with sign-in events, but this list isn't exhaustive:
 

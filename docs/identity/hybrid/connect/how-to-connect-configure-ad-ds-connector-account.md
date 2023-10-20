@@ -35,7 +35,7 @@ The following table provides a summary of the permissions required on AD objects
 | Password hash sync |<li>Replicate Directory Changes - required for basic read only</li>  <li>Replicate Directory Changes All |
 | Exchange hybrid deployment |Read and Write permissions to the attributes documented in [Exchange hybrid writeback](reference-connect-sync-attributes-synchronized.md#exchange-hybrid-writeback) for users, groups, and contacts. |
 | Exchange Mail Public Folder |Read permissions to the attributes documented in [Exchange Mail Public Folder](reference-connect-sync-attributes-synchronized.md#exchange-mail-public-folder) for public folders. | 
-| Password writeback |Read and Write permissions to the attributes documented in [Getting started with password management](../../authentication/tutorial-enable-sspr-writeback.md) for users. |
+| Password writeback |Read and Write permissions to the attributes documented in [Getting started with password management](~/identity/authentication/tutorial-enable-sspr-writeback.md) for users. |
 | Device writeback |Read and Write permissions to device objects and containers documented in [device writeback](how-to-connect-device-writeback.md). |
 | Group writeback |Read, Create, Update, and Delete group objects for synchronized **Office 365 groups**.|
 

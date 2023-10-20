@@ -37,7 +37,7 @@ Continuous access evaluation for workload identities supports [Conditional Acces
 
 ## Enable your application
 
-Developers can opt in to Continuous access evaluation for workload identities when their API requests `xms_cc` as an optional claim. The `xms_cc` claim with a value of `cp1` in the access token is the authoritative way to identify a client application is capable of handling a claims challenge. For more information about how to make this work in your application, see the article, [Claims challenges, claims requests, and client capabilities](../develop/claims-challenge.md).
+Developers can opt in to Continuous access evaluation for workload identities when their API requests `xms_cc` as an optional claim. The `xms_cc` claim with a value of `cp1` in the access token is the authoritative way to identify a client application is capable of handling a claims challenge. For more information about how to make this work in your application, see the article, [Claims challenges, claims requests, and client capabilities](~/identity-platform/claims-challenge.md).
 
 ### Disable 
 
@@ -51,14 +51,14 @@ When a client’s access to a resource is blocked due to CAE being triggered, th
 
 The following steps detail how an admin can verify sign in activity in the sign-in logs: 
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../roles/permissions-reference.md#conditional-access-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Identity** > **Monitoring & health** > **Sign-in logs** > **Service Principal Sign-ins**. You can use filters to ease the debugging process. 
 1. Select an entry to see activity details. The **Continuous access evaluation** field indicates whether a CAE token was issued in a particular sign-in attempt. 
 
 ## Next steps
 
-- [Register an application with Microsoft Entra ID and create a service principal](../develop/howto-create-service-principal-portal.md#register-an-application-with-azure-ad-and-create-a-service-principal)
-- [How to use Continuous Access Evaluation enabled APIs in your applications](../develop/app-resilience-continuous-access-evaluation.md)
+- [Register an application with Microsoft Entra ID and create a service principal](~/identity-platform/howto-create-service-principal-portal.md#register-an-application-with-azure-ad-and-create-a-service-principal)
+- [How to use Continuous Access Evaluation enabled APIs in your applications](~/identity-platform/app-resilience-continuous-access-evaluation.md)
 - [Sample application using continuous access evaluation](https://github.com/Azure-Samples/ms-identity-dotnetcore-daemon-graph-cae)
 - [Securing workload identities with Microsoft Entra ID Protection](../identity-protection/concept-workload-identity-risk.md)
 - [What is continuous access evaluation?](../conditional-access/concept-continuous-access-evaluation.md)

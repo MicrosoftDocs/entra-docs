@@ -18,7 +18,7 @@ ms.reviewer: aiwang, dmwendia
 
 # Get a complete list of apps using ADAL in your tenant
 
-Azure Active Directory Authentication Library (ADAL) has been deprecated. While existing apps that use ADAL continue to work, Microsoft will no longer release security fixes on ADAL. Use the [Microsoft Authentication Library (MSAL)](/entra/msal/) to avoid putting your app's security at risk. If you have existing applications that use ADAL, be sure to [migrate them to MSAL](../develop/msal-migration.md). This article provides guidance on how to use Azure Monitor workbooks to obtain a list of all apps that use ADAL in your tenant.
+Azure Active Directory Authentication Library (ADAL) has been deprecated. While existing apps that use ADAL continue to work, Microsoft will no longer release security fixes on ADAL. Use the [Microsoft Authentication Library (MSAL)](/entra/msal/) to avoid putting your app's security at risk. If you have existing applications that use ADAL, be sure to [migrate them to MSAL](~/identity-platform/msal-migration.md). This article provides guidance on how to use Azure Monitor workbooks to obtain a list of all apps that use ADAL in your tenant.
 
 ## Sign-ins workbook
 
@@ -40,7 +40,7 @@ No sign-in event that occurred *before* you configure Microsoft Entra ID to send
 
 Once you've integrated your Microsoft Entra sign-in and audit logs with Azure Monitor as specified in the Azure Monitor integration, access the sign-ins workbook:
 
-   1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../roles/permissions-reference.md#reports-reader).
+   1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](~/identity/role-based-access-control/permissions-reference.md#reports-reader).
    1. Browse to **Identity** > **Monitoring & health** > **Workbooks**.
    1. In the **Usage** section, open the **Sign-ins** workbook.
 

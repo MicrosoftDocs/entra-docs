@@ -22,7 +22,7 @@ Integrating Uberflip with Microsoft Entra ID provides you with the following ben
 * You can enable your users to be automatically signed in to Uberflip (single sign-on) with their Microsoft Entra accounts.
 * You can manage your accounts in one central location: the Azure portal.
 
-For details about software as a service (SaaS) app integration with Microsoft Entra ID, see [What is application access and single sign-on with Microsoft Entra ID?](../manage-apps/what-is-single-sign-on.md).
+For details about software as a service (SaaS) app integration with Microsoft Entra ID, see [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md).
 
 ## Prerequisites
 
@@ -44,7 +44,7 @@ Uberflip supports the following features:
 
 To configure the integration of Uberflip into Microsoft Entra ID, you need to add Uberflip from the Azure Marketplace to your list of managed SaaS apps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
 
    ![The New application option](common/add-new-app.png)
@@ -76,7 +76,7 @@ In this section, you enable Microsoft Entra single sign-on.
 
 To configure Microsoft Entra single sign-on with Uberflip, take the following steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Uberflip** application integration page, select **Single sign-on**.
 
     ![Configure single sign-on option](common/select-sso.png)
@@ -128,7 +128,7 @@ To configure single sign-on on the Uberflip side, you need to send the downloade
 
 In this section, you create a test user named B. Simon.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](../roles/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
 1. Select **New user** > **Create new user**, at the top of the screen.
 1. In the **User** properties, follow these steps:
@@ -183,6 +183,6 @@ When you select **Uberflip** in the My Apps portal, you should be automatically 
 
 * [List of tutorials for integrating SaaS applications with Microsoft Entra ID](./tutorial-list.md)
 
-* [What is application access and single sign-on with Microsoft Entra ID?](../manage-apps/what-is-single-sign-on.md)
+* [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
 * [What is Conditional Access in Microsoft Entra ID?](../conditional-access/overview.md)

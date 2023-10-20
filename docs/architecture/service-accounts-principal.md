@@ -19,7 +19,7 @@ ms.collection: M365-identity-device-management
 
 A Microsoft Entra service principal is the local representation of an application object in a tenant or directory. It's the identity of the application instance. Service principals define application access and resources the application accesses. A service principal is created in each tenant where the application is used and references the globally unique application object. The tenant secures the service principal sign-in and access to resources. 
 
-Learn more: [Application and service principal objects in Microsoft Entra ID](../develop/app-objects-and-service-principals.md)
+Learn more: [Application and service principal objects in Microsoft Entra ID](~/identity-platform/app-objects-and-service-principals.md)
 
 ## Tenant-service principal relationships
 
@@ -36,7 +36,7 @@ An application instance has two properties: the ApplicationID (or ClientID) and 
 
 The ApplicationID represents the global application and is the same for application instances, across tenants. The ObjectID is a unique value for an application object. As with users, groups, and other resources, the ObjectID helps to identify an application instance in Microsoft Entra ID.
 
-To learn more, see [Application and service principal relationship in Microsoft Entra ID](../develop/app-objects-and-service-principals.md)
+To learn more, see [Application and service principal relationship in Microsoft Entra ID](~/identity-platform/app-objects-and-service-principals.md)
 
 ### Create an application and its service principal object
 
@@ -113,14 +113,14 @@ When using Microsoft Graph, check the API documentation. Ensure the permission t
 Learn more:
 
 * [How to use managed identities for App Service and Azure Functions](/azure/app-service/overview-managed-identity?tabs=dotnet)
-* [Create a Microsoft Entra application and service principal that can access resources](../develop/howto-create-service-principal-portal.md)
-* [Use Azure PowerShell to create a service principal with a certificate](../develop/howto-authenticate-service-principal-powershell.md)
+* [Create a Microsoft Entra application and service principal that can access resources](~/identity-platform/howto-create-service-principal-portal.md)
+* [Use Azure PowerShell to create a service principal with a certificate](~/identity-platform/howto-authenticate-service-principal-powershell.md)
 
 ## Next steps
 
 Learn more about service principals:
 
-* [Create a Microsoft Entra application and service principal that can access resources](../develop/howto-create-service-principal-portal.md)
+* [Create a Microsoft Entra application and service principal that can access resources](~/identity-platform/howto-create-service-principal-portal.md)
 * [Sign-in logs in Microsoft Entra ID](../reports-monitoring/concept-sign-ins.md)
 
 Secure service accounts:

@@ -33,7 +33,7 @@ To review and take action on admin consent requests, you need:
 
 To review the admin consent requests and take action:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator) who is a designated reviewer.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator) who is a designated reviewer.
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 1. Under **Activity**, select **Admin consent requests**.
 1. Select **My Pending** tab to view and act on the pending requests. 

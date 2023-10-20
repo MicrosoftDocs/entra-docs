@@ -44,6 +44,6 @@ Rich client and modern app scenarios and RESTful web API access.
 
 * [Integrating applications with Microsoft Entra ID](../saas-apps/tutorial-list.md) 
 
-* [OAuth 2.0 and OpenID Connect protocols on the Microsoft identity platform](../develop/v2-protocols.md) 
+* [OAuth 2.0 and OpenID Connect protocols on the Microsoft identity platform](~/identity-platform/v2-protocols.md) 
 
-* [Application types and OAuth2](../develop/v2-app-types.md) 
+* [Application types and OAuth2](~/identity-platform/v2-app-types.md) 

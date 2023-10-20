@@ -77,7 +77,7 @@ Some administrator roles are exempted from these policies, across all group work
 
 ## Configure naming policy in Azure portal
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](../roles/permissions-reference.md#groups-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
 1. Select Microsoft Entra ID.
 
 1. Select **All groups** > **Groups**, then select **Naming policy** to open the Naming policy page.

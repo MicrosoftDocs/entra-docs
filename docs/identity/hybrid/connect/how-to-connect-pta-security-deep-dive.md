@@ -39,7 +39,7 @@ Pass-through authentication has these key security capabilities:
   - For the complete list of the network requirements, see the [Microsoft Entra pass-through authentication quickstart](how-to-connect-pta-quick-start.md#step-1-check-the-prerequisites).
 - Passwords that users provide during sign-in are encrypted in the cloud before the on-premises authentication agents accept them for validation against Windows Server Active Directory (Windows Server AD).
 - The HTTPS channel between Microsoft Entra ID and the on-premises authentication agent is secured by using mutual authentication.
-- Pass-through authentication protects your user accounts by working seamlessly with [Microsoft Entra Conditional Access policies](../../conditional-access/overview.md), including multifactor authentication (MFA), [blocking legacy authentication](../../conditional-access/concept-conditional-access-conditions.md), and by [filtering out brute force password attacks](../../authentication/howto-password-smart-lockout.md).
+- Pass-through authentication protects your user accounts by working seamlessly with [Microsoft Entra Conditional Access policies](../../conditional-access/overview.md), including multifactor authentication (MFA), [blocking legacy authentication](../../conditional-access/concept-conditional-access-conditions.md), and by [filtering out brute force password attacks](~/identity/authentication/howto-password-smart-lockout.md).
 
 ## Components involved in pass-through authentication
 
@@ -224,7 +224,7 @@ To auto update an authentication agent:
 - [Current limitations](how-to-connect-pta-current-limitations.md): Learn what scenarios are supported.
 - [Quickstart](how-to-connect-pta-quick-start.md): Get set up with Microsoft Entra pass-through authentication.
 - [Migrate from AD FS to pass-through authentication](https://aka.ms/adfstoptadpdownload): Review this detailed guide that helps you migrate from AD FS or other federation technologies to pass-through authentication.
-- [Smart Lockout](../../authentication/howto-password-smart-lockout.md): Configure the Smart Lockout capability on your tenant to protect user accounts.
+- [Smart Lockout](~/identity/authentication/howto-password-smart-lockout.md): Configure the Smart Lockout capability on your tenant to protect user accounts.
 - [How it works](how-to-connect-pta-how-it-works.md): Learn the basics of how Microsoft Entra pass-through authentication works.
 - [Frequently asked questions](how-to-connect-pta-faq.yml): Find answers to common questions.
 - [Troubleshoot](tshoot-connect-pass-through-authentication.md): Learn how to resolve common problems with pass-through authentication.

@@ -49,11 +49,11 @@ Many large organizations want options for their users to obtain sufficient permi
  **Cloud Application Administrator** | Can add and manage enterprise applications and enterprise app registrations. This role has all of the permissions of the Application Administrator, except it can't manage application proxy settings.
 **Application Developer** | Can add and update application registrations, but can't manage enterprise applications or configure an application proxy.
 
-New Microsoft Entra administrator roles are being added. Check the Azure portal or the [administrator role permission reference](../roles/permissions-reference.md) for current available roles.
+New Microsoft Entra administrator roles are being added. Check the Azure portal or the [administrator role permission reference](~/identity/role-based-access-control/permissions-reference.md) for current available roles.
 
 ## Assign app access
 
-You can use Microsoft Entra ID to assign group access to [enterprise apps deployed in your Microsoft Entra organization](../manage-apps/assign-user-or-group-access-portal.md?context=azure/active-directory/users-groups-roles/context/ugr-context). If you combine dynamic groups with group assignment to apps, you can automate user app access assignments as your organization grows. You'll need a Microsoft Entra ID P1 or Premium P2 license to assign access to enterprise apps.
+You can use Microsoft Entra ID to assign group access to [enterprise apps deployed in your Microsoft Entra organization](~/identity/enterprise-apps/assign-user-or-group-access-portal.md?context=azure/active-directory/users-groups-roles/context/ugr-context). If you combine dynamic groups with group assignment to apps, you can automate user app access assignments as your organization grows. You'll need a Microsoft Entra ID P1 or Premium P2 license to assign access to enterprise apps.
 
 Microsoft Entra ID also gives you granular control of the data that flows between the app and the groups to whom you assign access. In [Enterprise Applications](https://portal.azure.com/#blade/Microsoft_AAD_IAM/StartboardApplicationsMenuBlade/AllApps), open an app and select **Provisioning** to:
 
@@ -67,4 +67,4 @@ Microsoft Entra ID also gives you granular control of the data that flows betwee
 
 If you're a beginning Microsoft Entra administrator, get the basics down in [Microsoft Entra Fundamentals](../fundamentals/index.yml).
 
-Or you can start [creating groups](../fundamentals/how-to-manage-groups.md?context=azure/active-directory/users-groups-roles/context/ugr-context), [assigning licenses](../fundamentals/license-users-groups.md?context=azure/active-directory/users-groups-roles/context/ugr-context), [assigning app access](../manage-apps/assign-user-or-group-access-portal.md?context=azure/active-directory/users-groups-roles/context/ugr-context) or [assigning administrator roles](../roles/permissions-reference.md).
+Or you can start [creating groups](../fundamentals/how-to-manage-groups.md?context=azure/active-directory/users-groups-roles/context/ugr-context), [assigning licenses](../fundamentals/license-users-groups.md?context=azure/active-directory/users-groups-roles/context/ugr-context), [assigning app access](~/identity/enterprise-apps/assign-user-or-group-access-portal.md?context=azure/active-directory/users-groups-roles/context/ugr-context) or [assigning administrator roles](~/identity/role-based-access-control/permissions-reference.md).

@@ -20,7 +20,7 @@ To help integrate your cloud-enabled [software as a service (SaaS)](https://azur
 
 For a list of all SaaS apps that have been pre-integrated into Microsoft Entra ID, see the [Active Directory Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/category/azure-active-directory-apps).
 
-Use the [application network portal](../manage-apps/v2-howto-app-gallery-listing.md) to request a [SCIM](../app-provisioning/use-scim-to-provision-users-and-groups.md) enabled application to be added to the gallery for automatic provisioning or a SAML / OIDC enabled application to be added to the gallery for SSO.
+Use the [application network portal](~/identity/enterprise-apps/v2-howto-app-gallery-listing.md) to request a [SCIM](../app-provisioning/use-scim-to-provision-users-and-groups.md) enabled application to be added to the gallery for automatic provisioning or a SAML / OIDC enabled application to be added to the gallery for SSO.
 
 ## Quick links
 
@@ -46,4 +46,4 @@ To find more tutorials, use the table of contents on the left.
 
 ## Next steps
 
-To learn more about application management, see [What is application management](../manage-apps/what-is-application-management.md).
+To learn more about application management, see [What is application management](~/identity/enterprise-apps/what-is-application-management.md).

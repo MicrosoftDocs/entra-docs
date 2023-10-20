@@ -18,8 +18,8 @@ ms.reviewer: arvinh
 Microsoft Entra ID provides support for user provisioning to third-party SaaS applications such as Salesforce, G Suite and others. If you enable user provisioning for a third-party SaaS application, the Microsoft Entra admin center controls its attribute values through attribute-mappings.
 
 Before you get started, make sure you're familiar with app management and **single sign-on (SSO)** concepts. Check out the following links:
-- [Quickstart Series on App Management in Microsoft Entra ID](../manage-apps/view-applications-portal.md)
-- [What is single sign-on (SSO)?](../manage-apps/what-is-single-sign-on.md)
+- [Quickstart Series on App Management in Microsoft Entra ID](~/identity/enterprise-apps/view-applications-portal.md)
+- [What is single sign-on (SSO)?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
 There's a preconfigured set of attributes and attribute-mappings between Microsoft Entra user objects and each SaaS app's user objects. Some apps manage other types of objects along with Users, such as Groups.
 
@@ -31,7 +31,7 @@ You can customize the default attribute-mappings according to your business need
 
 Follow these steps to access the **Mappings** feature of user provisioning:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](../roles/permissions-reference.md#application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 1. A list of all configured apps is shown, including apps that were added from the gallery.
 1. Select any app to load its app management pane, where you can view reports and manage app settings.
@@ -100,7 +100,7 @@ Group provisioning can be optionally enabled or disabled by selecting the group 
 The attributes provisioned as part of Group objects can be customized in the same manner as User objects, described previously. 
 
 > [!TIP]
-> Provisioning of group objects (properties and members) is a distinct concept from [assigning groups](../manage-apps/assign-user-or-group-access-portal.md) to an application. It's possible to assign a group to an application, but only provision the user objects contained in the group. Provisioning of full group objects isn't required to use groups in assignments.
+> Provisioning of group objects (properties and members) is a distinct concept from [assigning groups](~/identity/enterprise-apps/assign-user-or-group-access-portal.md) to an application. It's possible to assign a group to an application, but only provision the user objects contained in the group. Provisioning of full group objects isn't required to use groups in assignments.
 
 ## Editing the list of supported attributes
 
@@ -145,7 +145,7 @@ When you're editing the list of supported attributes, the following properties a
 #### Provisioning a custom extension attribute to a SCIM compliant application
 
 The SCIM RFC defines a core user and group schema, while also allowing for extensions to the schema to meet your application's needs. To add a custom attribute to a SCIM application:
-   1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](../roles/permissions-reference.md#application-administrator).
+   1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
    1. Browse to **Identity** > **Applications** > **Enterprise applications**.
    1. Select your application, and then select **Provisioning**.
    1. Under **Mappings**, select the object (user or group) for which you'd like to add a custom attribute.

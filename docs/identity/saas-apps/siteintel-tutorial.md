@@ -21,7 +21,7 @@ In this tutorial, you'll learn how to integrate SiteIntel with Microsoft Entra I
 * Enable your users to be automatically signed in to SiteIntel with their Microsoft Entra accounts.
 * Manage your accounts in one central location, the Azure portal.
 
-To learn more about software as a service (SaaS) app integration with Microsoft Entra ID, see [What is application access and single sign-on with Microsoft Entra ID?](../manage-apps/what-is-single-sign-on.md).
+To learn more about software as a service (SaaS) app integration with Microsoft Entra ID, see [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md).
 
 ## Prerequisites
 
@@ -41,7 +41,7 @@ In this tutorial, you configure and test Microsoft Entra SSO in a test environme
 
 To configure the integration of SiteIntel into Microsoft Entra ID, you need to add SiteIntel from the gallery to your list of managed SaaS apps.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
 1. In the **Add from the gallery** box, enter **SiteIntel**.
 1. In the results list, select **SiteIntel**, and then add the app. Wait a few seconds while the app is added to your tenant.
@@ -74,7 +74,7 @@ To configure and test Microsoft Entra SSO with SiteIntel, complete the following
 
 To enable Microsoft Entra SSO in the Azure portal, do the following:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **SiteIntel** application integration page, go to the **Manage** section, and then select **single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, next to **Basic SAML Configuration**, select **Edit** (pen icon).
@@ -110,7 +110,7 @@ To enable Microsoft Entra SSO in the Azure portal, do the following:
 
 In this section, you create a test user called B.Simon.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](../roles/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
 1. Select **New user** > **Create new user**, at the top of the screen.
 1. In the **User** properties, follow these steps:
@@ -157,7 +157,7 @@ When you select the **SiteIntel** tile in the Access Panel, you should be automa
 ## Additional resources
 
 - [List of tutorials about how to integrate SaaS apps with Microsoft Entra ID](./tutorial-list.md)
-- [What are application access and single sign-on with Microsoft Entra ID?](../manage-apps/what-is-single-sign-on.md)
+- [What are application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 - [What is Conditional Access in Microsoft Entra ID?](../conditional-access/overview.md)
 - [What is session control in Microsoft Defender for Cloud Apps?](/cloud-app-security/proxy-intro-aad)
 - [How to protect SiteIntel with advanced visibility and controls](/cloud-app-security/proxy-intro-aad)

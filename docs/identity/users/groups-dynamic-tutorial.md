@@ -41,7 +41,7 @@ You're not required to assign licenses to the users for them to be members in dy
 
 First, you'll create a group for your guest users who all are from a single partner company. They need special licensing, so it's often more efficient to create a group for this purpose.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](../roles/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 1. Select Microsoft Entra ID.
 2. Select **Groups** > **All groups** > **New group**.
    ![select command to start a new group](./media/groups-dynamic-tutorial/new-group.png)
@@ -87,7 +87,7 @@ Perhaps your ultimate administrative plan is to assign all of your guest users t
 
 ### To remove the guest users group
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](../roles/permissions-reference.md#groups-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
 1. Browse to **Groups** > **All groups**. 
 1. Select the **Guest users Contoso** group, select the ellipsis (...), and then select **Delete**. When you delete the group, any assigned licenses are removed.
 

@@ -18,7 +18,7 @@ ms.custom: aaddev, engagement-fy23
 
 Microsoft Entra ID supports the SAML 2.0 web browser single sign-out profile. For single sign-out to work correctly, the **LogoutURL** for the application must be explicitly registered with Microsoft Entra ID during application registration. 
 
-If the app is [added to the Azure App Gallery](../manage-apps/v2-howto-app-gallery-listing.md) then this value can be set by default. Otherwise, the value must be determined and set by the person adding the app to their Microsoft Entra tenant. Microsoft Entra ID uses the **LogoutURL** to redirect users after they're signed out. Microsoft Entra ID supports redirect binding (HTTP GET), and not HTTP POST binding.
+If the app is [added to the Azure App Gallery](~/identity/enterprise-apps/v2-howto-app-gallery-listing.md) then this value can be set by default. Otherwise, the value must be determined and set by the person adding the app to their Microsoft Entra tenant. Microsoft Entra ID uses the **LogoutURL** to redirect users after they're signed out. Microsoft Entra ID supports redirect binding (HTTP GET), and not HTTP POST binding.
 
 The following diagram shows the workflow of the Microsoft Entra single sign-out process.
 

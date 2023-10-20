@@ -42,7 +42,7 @@ To assign users to an enterprise application, you need:
 
 To assign a user or group account to an enterprise application:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
 1. Enter the name of the existing application in the search box, and then select the application from the search results.
 1. Select **Users and groups**, and then select **Add user/group**.
@@ -65,7 +65,7 @@ To assign a user or group account to an enterprise application:
 :::zone pivot="aad-powershell"
 
 1. Open an elevated Windows PowerShell command prompt.
-1. Run `Connect-AzureAD` and sign in as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator).
+1. Run `Connect-AzureAD` and sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Use the following script to assign a user and role to an application:
 
     ```powershell
@@ -127,7 +127,7 @@ This example assigns the user Britta Simon to the Microsoft Workplace Analytics 
 ## Unassign users, and groups, from an application
 
 1. Open an elevated Windows PowerShell command prompt.
-1. Run `Connect-AzureAD` and sign in as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator).
+1. Run `Connect-AzureAD` and sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Use the following script to remove a user and role from an application.
 
     ```powershell
@@ -175,7 +175,7 @@ $assignments | ForEach-Object {
 :::zone pivot="ms-powershell"
 
 1. Open an elevated Windows PowerShell command prompt.
-1. Run `Connect-MgGraph -Scopes "Application.ReadWrite.All", "Directory.ReadWrite.All", "AppRoleAssignment.ReadWrite.All"` and sign in as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator).
+1. Run `Connect-MgGraph -Scopes "Application.ReadWrite.All", "Directory.ReadWrite.All", "AppRoleAssignment.ReadWrite.All"` and sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Use the following script to assign a user and role to an application:
 
 ```powershell    
@@ -204,7 +204,7 @@ New-MgUserAppRoleAssignment -UserId $userId -BodyParameter $params |
 ## Unassign users, and groups, from an application
 
 1. Open an elevated Windows PowerShell command prompt.
-1. Run `Connect-MgGraph -Scopes "Application.ReadWrite.All", "Directory.ReadWrite.All", "AppRoleAssignment.ReadWrite.All"` and sign in as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator). Use the following script to remove a user and role from an application.
+1. Run `Connect-MgGraph -Scopes "Application.ReadWrite.All", "Directory.ReadWrite.All", "AppRoleAssignment.ReadWrite.All"` and sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). Use the following script to remove a user and role from an application.
 ```powershell
 # Get the user and the service principal
 
@@ -239,7 +239,7 @@ $assignments | ForEach-Object {
 
 :::zone pivot="ms-graph"
 
-1. To assign users and groups to an application, sign in to [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer)as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator).
+1. To assign users and groups to an application, sign in to [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer)as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 
     You'll need to consent to the following permissions: 
 

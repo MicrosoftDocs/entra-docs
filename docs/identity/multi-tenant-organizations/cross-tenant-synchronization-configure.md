@@ -34,14 +34,14 @@ By the end of this article, you'll be able to:
 ![Icon for the source tenant.](./media/common/icon-tenant-source.png)<br/>**Source tenant**
 
 - Microsoft Entra ID P1 or P2 license. For more information, see [License requirements](cross-tenant-synchronization-overview.md#license-requirements).
-- [Security Administrator](../roles/permissions-reference.md#security-administrator) role to configure cross-tenant access settings.
-- [Hybrid Identity Administrator](../roles/permissions-reference.md#hybrid-identity-administrator) role to configure cross-tenant synchronization.
-- [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator) or [Application Administrator](../roles/permissions-reference.md#application-administrator) role to assign users to a configuration and to delete a configuration.
+- [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator) role to configure cross-tenant access settings.
+- [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator) role to configure cross-tenant synchronization.
+- [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator) or [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) role to assign users to a configuration and to delete a configuration.
 
 ![Icon for the target tenant.](./media/common/icon-tenant-target.png)<br/>**Target tenant**
 
 - Microsoft Entra ID P1 or P2 license. For more information, see [License requirements](cross-tenant-synchronization-overview.md#license-requirements).
-- [Security Administrator](../roles/permissions-reference.md#security-administrator) role to configure cross-tenant access settings.
+- [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator) role to configure cross-tenant access settings.
 
 ## Step 1: Plan your provisioning deployment
 
@@ -205,7 +205,7 @@ Start small. Test with a small set of users before rolling out to everyone. When
 
     :::image type="content" source="./media/cross-tenant-synchronization-configure/users-and-groups.png" alt-text="Screenshot that shows the Users and groups page with a user assigned to the configuration." lightbox="./media/cross-tenant-synchronization-configure/users-and-groups.png":::
 
-    For more information, see [Assign users and groups to an application](../manage-apps/assign-user-or-group-access-portal.md).
+    For more information, see [Assign users and groups to an application](~/identity/enterprise-apps/assign-user-or-group-access-portal.md).
 
 ## Step 8: (Optional) Define who is in scope for provisioning with scoping filters
 
@@ -535,4 +535,4 @@ Change the Guest invite settings in the target tenant to a less restrictive sett
 
 - [Tutorial: Reporting on automatic user account provisioning](../app-provisioning/check-status-user-account-provisioning.md)
 - [Managing user account provisioning for enterprise apps in the Azure portal](../app-provisioning/configure-automatic-user-provisioning-portal.md)
-- [What is single sign-on in Microsoft Entra ID?](../manage-apps/what-is-single-sign-on.md)
+- [What is single sign-on in Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)

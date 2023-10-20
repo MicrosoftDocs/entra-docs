@@ -21,7 +21,7 @@ Integrating Jobscience with Microsoft Entra ID provides you with the following b
 - You can enable your users to automatically get signed-on to Jobscience (Single Sign-On) with their Microsoft Entra accounts
 - You can manage your accounts in one central location - the Azure portal
 
-If you want to know more details about SaaS app integration with Microsoft Entra ID, see [what is application access and single sign-on with Microsoft Entra ID](../manage-apps/what-is-single-sign-on.md).
+If you want to know more details about SaaS app integration with Microsoft Entra ID, see [what is application access and single sign-on with Microsoft Entra ID](~/identity/enterprise-apps/what-is-single-sign-on.md).
 
 ## Prerequisites
 
@@ -50,7 +50,7 @@ To configure the integration of Jobscience into Microsoft Entra ID, you need to 
 
 **To add Jobscience from the gallery, perform the following steps:**
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
 1. In the **Add from the gallery** section, type **Jobscience** in the search box.
 1. Select **Jobscience** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
@@ -80,7 +80,7 @@ In this section, you enable Microsoft Entra single sign-on in the Azure portal a
 
 **To configure Microsoft Entra single sign-on with Jobscience, perform the following steps:**
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Jobscience** application integration page, click **Single sign-on**.
 
     ![Screenshot shows Single sign-on selected under Manage.][4]
@@ -263,7 +263,7 @@ In this section, you enable Britta Simon to use Azure single sign-on by granting
 
 **To assign Britta Simon to Jobscience, perform the following steps:**
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Jobscience**.
 
     ![Screenshot shows Jobscience selected.](./media/jobscience-tutorial/tutorial_jobscience_app.png) 
@@ -292,7 +292,7 @@ For more information about the Access Panel, see [Introduction to the Access Pan
 ## Additional resources
 
 * [List of Tutorials on How to Integrate SaaS Apps with Microsoft Entra ID](tutorial-list.md)
-* [What is application access and single sign-on with Microsoft Entra ID?](../manage-apps/what-is-single-sign-on.md)
+* [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
 <!--Image references-->
 

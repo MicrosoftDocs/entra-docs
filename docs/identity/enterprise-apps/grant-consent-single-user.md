@@ -174,4 +174,4 @@ In the example, the resource enterprise application is Microsoft Graph of object
 
 - [Configure the admin consent workflow](configure-admin-consent-workflow.md)
 - [Configure how users consent to applications](configure-user-consent.md)
-- [Permissions and consent in the Microsoft identity platform](../develop/permissions-consent-overview.md)
+- [Permissions and consent in the Microsoft identity platform](~/identity-platform/permissions-consent-overview.md)

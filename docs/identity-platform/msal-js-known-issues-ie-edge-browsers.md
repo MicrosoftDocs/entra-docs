@@ -61,7 +61,7 @@ Note, these workarounds won't solve the issue for InPrivate browsing since both 
 
 ## Issues due to popup blockers
 
-There are cases when popups are blocked in IE or Microsoft Edge, for example when a second popup occurs during [multi-factor authentication](../authentication/concept-mfa-howitworks.md). You'll get an alert in the browser to allow for the pop-up window once or always. If you choose to allow, the browser opens the pop-up window automatically and returns a `null` handle for it. As a result, the library doesn't have a handle for the window and there's no way to close the pop-up window. The same issue doesn't happen in Chrome when it prompts you to allow pop-up windows because it doesn't automatically open a pop-up window.
+There are cases when popups are blocked in IE or Microsoft Edge, for example when a second popup occurs during [multi-factor authentication](~/identity/authentication/concept-mfa-howitworks.md). You'll get an alert in the browser to allow for the pop-up window once or always. If you choose to allow, the browser opens the pop-up window automatically and returns a `null` handle for it. As a result, the library doesn't have a handle for the window and there's no way to close the pop-up window. The same issue doesn't happen in Chrome when it prompts you to allow pop-up windows because it doesn't automatically open a pop-up window.
 
 As a **workaround**, developers need to allow popups in IE and Microsoft Edge before they start using their app to avoid this issue.
 

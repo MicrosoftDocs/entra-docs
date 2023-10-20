@@ -39,7 +39,7 @@ To configure permission classifications, you need:
 
 Follow these steps to classify permissions using the Microsoft Entra admin center:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Consent and permissions** > **Permission classifications**.
 1. Choose the tab for the permission classification you'd like to update.
 1. Choose **Add permissions** to classify another permission.
@@ -56,7 +56,7 @@ In this example, we've classified the minimum set of permission required for sin
 
 You can use the latest [Azure AD PowerShell](/powershell/module/azuread/?preserve-view=true&view=azureadps-2.0), to classify permissions. Permission classifications are configured on the **ServicePrincipal** object of the API that publishes the permissions.
 
-Run the following command to connect to Azure AD PowerShell. To consent to the required scopes, sign in as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator).
+Run the following command to connect to Azure AD PowerShell. To consent to the required scopes, sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 
 ```powershell
 Connect-AzureAD
@@ -133,7 +133,7 @@ Connect-AzureAD
 
 You can use [Microsoft Graph PowerShell](/powershell/microsoftgraph/get-started?preserve-view=true&view=graph-powershell-1.0), to classify permissions. Permission classifications are configured on the **ServicePrincipal** object of the API that publishes the permissions.
 
-Run the following command to connect to Microsoft Graph PowerShell. To consent to the required scopes, sign in as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator).
+Run the following command to connect to Microsoft Graph PowerShell. To consent to the required scopes, sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 
 ```powershell
 Connect-MgGraph -Scopes "Policy.ReadWrite.PermissionGrant".
@@ -204,7 +204,7 @@ Remove-MgServicePrincipalDelegatedPermissionClassification -DelegatedPermissionC
 
 :::zone pivot="ms-graph"
 
-To configure permissions classifications for an enterprise application, sign in to [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator).
+To configure permissions classifications for an enterprise application, sign in to [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 
 You need to consent to the `Policy.ReadWrite.PermissionGrant` permission.
 
@@ -240,4 +240,4 @@ DELETE https://graph.microsoft.com/v1.0/servicePrincipals(appId='00000003-0000-0
 ## Next steps
 
 - [Manage app consent policies](manage-app-consent-policies.md)
-- [Permissions and consent in the Microsoft identity platform](../develop/permissions-consent-overview.md)
+- [Permissions and consent in the Microsoft identity platform](~/identity-platform/permissions-consent-overview.md)

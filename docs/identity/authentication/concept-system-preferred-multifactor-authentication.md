@@ -32,7 +32,7 @@ After system-preferred MFA is enabled, the authentication system does all the wo
 
 By default, system-preferred MFA is Microsoft managed and disabled for all users. 
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](../roles/permissions-reference.md#authentication-policy-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Protection** > **Authentication methods** > **Settings**.
 1. For **System-preferred multifactor authentication**, choose whether to explicitly enable or disable the feature, and include or exclude any users. Excluded groups take precedence over include groups. 
 
@@ -103,7 +103,7 @@ Content-Type: application/json
 
 ## Known issue
 
-A fix for [FIDO2 security keys](../develop/support-fido2-authentication.md#mobile) is being rolled out with the change of the Microsoft managed setting to **Enabled**. As part of the rollout, we adjusted the preferred methods list, which moved certificate-based authentication (CBA) lower on the list of preferred methods. This change is necessary due to a known issue where users within the scope of CBA can't use any other available authentication method. We are actively working to address this issue, and once the fix is rolled out, CBA will return to its appropriate position on the list of preferred methods. However, tenants that use a Conditional Access policy that mandates CBA will have the ability to bypass this downgrade and be unaffected by the change.
+A fix for [FIDO2 security keys](~/identity-platform/support-fido2-authentication.md#mobile) is being rolled out with the change of the Microsoft managed setting to **Enabled**. As part of the rollout, we adjusted the preferred methods list, which moved certificate-based authentication (CBA) lower on the list of preferred methods. This change is necessary due to a known issue where users within the scope of CBA can't use any other available authentication method. We are actively working to address this issue, and once the fix is rolled out, CBA will return to its appropriate position on the list of preferred methods. However, tenants that use a Conditional Access policy that mandates CBA will have the ability to bypass this downgrade and be unaffected by the change.
 
 ## FAQ
 

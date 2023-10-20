@@ -48,7 +48,7 @@ To configure group and team owner consent settings through the Microsoft Entra a
 
 Follow these steps to manage group owner consent to apps accessing group data:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](../roles/permissions-reference.md#global-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator). 
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Consent and permissions** > **User consent settings**.
 3. Under **Group owner consent for apps accessing data** select the option you'd like to enable.
 4. Select **Save** to save your settings.
@@ -64,7 +64,7 @@ You can use the [Microsoft Graph PowerShell](/powershell/microsoftgraph/get-star
 
 ### Connect to Microsoft Graph PowerShell
 
-Connect to Microsoft Graph PowerShell and sign in as a [global administrator](../roles/permissions-reference.md#global-administrator). For reading the current user consent settings, use `Policy.Read.All` permission. For reading and changing the user consent settings, use `Policy.ReadWrite.Authorization` permission.
+Connect to Microsoft Graph PowerShell and sign in as a [global administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator). For reading the current user consent settings, use `Policy.Read.All` permission. For reading and changing the user consent settings, use `Policy.ReadWrite.Authorization` permission.
 
 change the profile to beta by using the `Select-MgProfile` command
 ```powershell
@@ -158,7 +158,7 @@ Update-MgDirectorySetting -DirectorySettingId $settings.Id -Values $settings.Val
 
 To manage group and team owner consent settings through directory setting using [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer):
 
-You need to sign in as a [global administrator](../roles/permissions-reference.md#global-administrator). For reading the current user consent settings, consent to `Policy.Read.All` permission. For reading and changing the user consent settings, consent to `Policy.ReadWrite.Authorization` permission.
+You need to sign in as a [global administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator). For reading the current user consent settings, consent to `Policy.Read.All` permission. For reading and changing the user consent settings, consent to `Policy.ReadWrite.Authorization` permission.
 
 ### Retrieve the current setting through directory settings
 

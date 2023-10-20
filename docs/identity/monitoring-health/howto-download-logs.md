@@ -53,7 +53,7 @@ Microsoft Entra ID stores activity logs for a specific period. For more informat
 
 You can access the activity logs from the **Monitoring** section of Microsoft Entra ID or from the **Users** page of Microsoft Entra ID. If you view the audit logs from the **Users** page, the filter category is set to **UserManagement**. Similarly, if you view the audit logs from the **Groups** page, the filter category is set to **GroupManagement**. Regardless of how you access the activity logs, your download is based on the filter you've set. 
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../roles/permissions-reference.md#reports-reader).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](~/identity/role-based-access-control/permissions-reference.md#reports-reader).
 1. Browse to **Identity** > **Monitoring & health** > **Audit logs**/**Sign-in logs**/**Provisioning logs**.
 1. Select **Download**.
     - For audit and sign-in logs, a window appears where you select the download format (CSV or JSON).

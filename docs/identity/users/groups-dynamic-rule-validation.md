@@ -28,7 +28,7 @@ To evaluate the dynamic group rule membership feature, the administrator must ha
 
 ## Step-by-step walk-through
 
-To get started, sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](../roles/permissions-reference.md#groups-administrator).
+To get started, sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
 
 Browse to **Identity** > **Groups** > **All groups**. Select an existing dynamic group or create a new dynamic group and select **Dynamic membership rules**. You can then see the **Validate Rules** tab.
 

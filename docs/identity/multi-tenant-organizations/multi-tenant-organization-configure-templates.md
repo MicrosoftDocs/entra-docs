@@ -26,8 +26,8 @@ This article describes how to configure a policy template for your multi-tenant 
 ## Prerequisites
 
 - For license information, see [License requirements](./multi-tenant-organization-overview.md#license-requirements).
-- [Security Administrator](../roles/permissions-reference.md#security-administrator) role to configure cross-tenant access settings and templates for the multi-tenant organization.
-- [Global Administrator](../roles/permissions-reference.md#global-administrator) role to consent to required permissions.
+- [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator) role to configure cross-tenant access settings and templates for the multi-tenant organization.
+- [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) role to consent to required permissions.
 
 ## Cross-tenant access policy partner template
 

@@ -39,7 +39,7 @@ You also need the following accounts to *install* Microsoft Entra Connect:
 
 - **AD DS Enterprise Administrator account**: Optionally used to create the required AD DS Connector account.
 
-- **Microsoft Entra Global Administrator account**:  Used to create the Microsoft Entra Connector account and to configure Microsoft Entra ID. You can view Global Administrator and Hybrid Identity Administrator accounts in the [Microsoft Entra admin center](https://entra.microsoft.com). See [List Microsoft Entra role assignments](../../roles/view-assignments.md).
+- **Microsoft Entra Global Administrator account**:  Used to create the Microsoft Entra Connector account and to configure Microsoft Entra ID. You can view Global Administrator and Hybrid Identity Administrator accounts in the [Microsoft Entra admin center](https://entra.microsoft.com). See [List Microsoft Entra role assignments](~/identity/role-based-access-control/view-assignments.md).
 
 - **SQL SA account (optional)**: Used to create the ADSync database when you use the full version of SQL Server. The instance of SQL Server can be local or remote to the Microsoft Entra Connect installation. This account can be the same account as the Enterprise Administrator account.
 
@@ -83,7 +83,7 @@ If you're upgrading from DirSync, the AD DS Enterprise Administrator credentials
 
 Credentials for the Microsoft Entra Global Administrator account are used only during installation. The account is used to create the Microsoft Entra Connector account that syncs changes to Microsoft Entra ID. The account also enables sync as a feature in Microsoft Entra ID.
 
-For more information, see [Global Administrator](../../roles/permissions-reference.md#global-administrator).
+For more information, see [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 
 ### AD DS Connector account required permissions for express settings
 
@@ -154,7 +154,7 @@ Which permissions you require depends on the optional features you enable. If yo
 | Password hash sync |- Replicate Directory Changes<br />- Replicate Directory Changes All |
 | Exchange hybrid deployment |Write permissions to the attributes documented in [Exchange hybrid writeback](reference-connect-sync-attributes-synchronized.md#exchange-hybrid-writeback) for users, groups, and contacts. |
 | Exchange Mail Public Folder |Read permissions to the attributes documented in [Exchange Mail Public Folder](reference-connect-sync-attributes-synchronized.md#exchange-mail-public-folder) for public folders. |
-| Password writeback |Write permissions to the attributes documented in [Getting started with password management](../../authentication/tutorial-enable-sspr-writeback.md) for users. |
+| Password writeback |Write permissions to the attributes documented in [Getting started with password management](~/identity/authentication/tutorial-enable-sspr-writeback.md) for users. |
 | Device writeback |Permissions granted with a PowerShell script as described in [Device writeback](how-to-connect-device-writeback.md). |
 | Group writeback |Allows you to writeback *Microsoft 365 Groups* to a forest that has Exchange installed.|
 

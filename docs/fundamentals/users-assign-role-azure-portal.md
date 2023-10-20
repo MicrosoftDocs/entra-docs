@@ -19,9 +19,9 @@ The ability to manage resources is granted by assigning roles that provide the r
 
 Before assigning roles to users, review the following Microsoft Learn articles:
 
-- [Learn about Microsoft Entra roles](../roles/concept-understand-roles.md)
+- [Learn about Microsoft Entra roles](~/identity/role-based-access-control/concept-understand-roles.md)
 - [Learn about role based access control](/azure/role-based-access-control/rbac-and-directory-admin-roles)
-- [Explore the Azure built-in roles](../roles/permissions-reference.md)
+- [Explore the Azure built-in roles](~/identity/role-based-access-control/permissions-reference.md)
 
 ## Assign roles
 
@@ -31,7 +31,7 @@ There are two main steps to the role assignment process. First you'll select the
 
 [!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Privileged Role Administrator](../roles/permissions-reference.md#privileged-role-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
 1. Browse to **Identity** > **Users** > **All users**.
 

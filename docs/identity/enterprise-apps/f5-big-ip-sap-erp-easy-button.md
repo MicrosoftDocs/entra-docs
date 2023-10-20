@@ -87,11 +87,11 @@ This tutorial uses Guided Configuration 16.1 with an Easy Button template. With 
 
 Before a client or service accesses Microsoft Graph, the Microsoft identity platform must trust it. 
 
-See, [Quickstart: Register an application with the Microsoft identity platform](../develop/quickstart-register-app.md)
+See, [Quickstart: Register an application with the Microsoft identity platform](~/identity-platform/quickstart-register-app.md)
 
 Register the Easy Button client in Microsoft Entra ID, then it's allowed to establish a trust between SAML SP instances of a BIG-IP published application, and Microsoft Entra ID as the SAML IdP.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 2. Browse to **Identity** > **Applications** > **App registrations** > **New registration**.
 3. Enter a **Name** for the new application. 
 4. In **Accounts in this organizational directory only**, specify who can use the application.

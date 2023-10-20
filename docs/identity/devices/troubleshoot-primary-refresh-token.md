@@ -311,7 +311,7 @@ The XML response from the [WS-Trust protocol][WS-Trust] endpoint (required for f
 
 #### Common server error codes ("AADSTS" prefix)
 
-You can find a full list and description of server error codes in [Microsoft Entra authentication and authorization error codes](../develop/reference-error-codes.md).
+You can find a full list and description of server error codes in [Microsoft Entra authentication and authorization error codes](~/identity-platform/reference-error-codes.md).
 
 <details>
 <summary>AADSTS50155: Device authentication failed</summary>

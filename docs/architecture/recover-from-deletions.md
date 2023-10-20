@@ -89,7 +89,7 @@ The most frequent scenarios for application deletion are:
 * An administrator intentionally deletes the application, for example, in response to a support request.
 * An automation script in Microsoft Graph or PowerShell triggers the deletion. For example, you might want a process for deleting abandoned applications that are no longer used or managed. In general, create an offboarding process for applications rather than scripting to avoid unintentional deletions.
 
-When you delete an application, the application registration by default enters the soft-delete state. To understand the relationship between application registrations and service principals, see [Apps and service principals in Microsoft Entra ID - Microsoft identity platform](../develop/app-objects-and-service-principals.md).
+When you delete an application, the application registration by default enters the soft-delete state. To understand the relationship between application registrations and service principals, see [Apps and service principals in Microsoft Entra ID - Microsoft identity platform](~/identity-platform/app-objects-and-service-principals.md).
 
 ### Administrative units
 
@@ -133,7 +133,7 @@ For more information on how to restore soft-deleted Microsoft 365 Groups, see th
 
 ### Applications and service principals
 
-Applications have two objects: the application registration and the service principal. For more information on the differences between the registration and the service principal, see [Apps and service principals in Microsoft Entra ID](../develop/app-objects-and-service-principals.md).
+Applications have two objects: the application registration and the service principal. For more information on the differences between the registration and the service principal, see [Apps and service principals in Microsoft Entra ID](~/identity-platform/app-objects-and-service-principals.md).
 
 To restore an application from the Azure portal, select **App registrations** > **Deleted applications**. Select the application registration to restore, and then select **Restore app registration**.
 

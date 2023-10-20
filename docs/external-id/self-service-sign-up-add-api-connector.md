@@ -27,7 +27,7 @@ To use an [API connector](api-connectors-overview.md), you first create the API 
 
 [!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](../roles/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **External Identities** > **Overview**.
 1. Select **All API connectors**, and then select **New API connector**.
 
@@ -92,7 +92,7 @@ Additionally, the claims are typically sent in all request:
 
 Follow these steps to add an API connector to a self-service sign-up user flow.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](../roles/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **External Identities** > **Overview**.
 4. Select **User flows**, and then select the user flow you want to add the API connector to.
 5. Select **API connectors**, and then select the API endpoints you want to invoke at the following steps in the user flow:

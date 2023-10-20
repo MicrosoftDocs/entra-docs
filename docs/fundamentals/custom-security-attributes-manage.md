@@ -27,11 +27,11 @@ For people in your organization to effectively work with [custom security attrib
 To manage access to custom security attributes, you must have:
 
 - Microsoft Entra ID P1 or P2 license
-- [Attribute Assignment Administrator](../roles/permissions-reference.md#attribute-assignment-administrator)
+- [Attribute Assignment Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator)
 - Microsoft.Graph module when using [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation)
 
 > [!IMPORTANT]
-> By default, [Global Administrator](../roles/permissions-reference.md#global-administrator) and other administrator roles do not have permissions to read, define, or assign custom security attributes.
+> By default, [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) and other administrator roles do not have permissions to read, define, or assign custom security attributes.
 
 ## Step 1: Figure out how to organize your attributes
 
@@ -49,12 +49,12 @@ Microsoft Entra role assignments are an additive model, so your effective permis
 
 ## Step 3: Review the available roles
 
-You need to determine who needs access to work with custom security attributes in your organization. To help you manage access to custom security attributes, there are four Microsoft Entra built-in roles. By default, [Global Administrator](../roles/permissions-reference.md#global-administrator) and other administrator roles do not have permissions to read, define, or assign custom security attributes. If necessary, a Global Administrator can assign these roles to themselves.
+You need to determine who needs access to work with custom security attributes in your organization. To help you manage access to custom security attributes, there are four Microsoft Entra built-in roles. By default, [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) and other administrator roles do not have permissions to read, define, or assign custom security attributes. If necessary, a Global Administrator can assign these roles to themselves.
 
-- [Attribute Definition Administrator](../roles/permissions-reference.md#attribute-definition-administrator)
-- [Attribute Assignment Administrator](../roles/permissions-reference.md#attribute-assignment-administrator)
-- [Attribute Definition Reader](../roles/permissions-reference.md#attribute-definition-reader)
-- [Attribute Assignment Reader](../roles/permissions-reference.md#attribute-assignment-reader)
+- [Attribute Definition Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-definition-administrator)
+- [Attribute Assignment Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator)
+- [Attribute Definition Reader](~/identity/role-based-access-control/permissions-reference.md#attribute-definition-reader)
+- [Attribute Assignment Reader](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-reader)
 
 The following table provides a high-level comparison of the custom security attributes roles.
 
@@ -98,14 +98,14 @@ Once you have a better understanding of how your attributes will be organized an
 
 | I want to grant this access | Assign this role | Scope |
 | --- | --- | :---: |
-| <ul><li>Read all attribute sets in a tenant</li><li>Read all attribute definitions in a tenant</li><li>[Add or edit all attribute sets in a tenant](custom-security-attributes-add.md)</li><li>[Add, edit, or deactivate all attribute definitions in a tenant](custom-security-attributes-add.md)</li></ul> | [Attribute Definition Administrator](../roles/permissions-reference.md#attribute-definition-administrator) | ![Icon for tenant scope.](./media/custom-security-attributes-manage/icon-tenant.png)<br/>Tenant |
-| <ul><li>Read attribute definitions in a scoped attribute set</li><li>[Add, edit, or deactivate attribute definitions in a scoped attribute set](custom-security-attributes-add.md)</li><li>**Cannot** update the scoped attribute set</li><li>**Cannot** read, add, or update other attribute sets</li></ul> | [Attribute Definition Administrator](../roles/permissions-reference.md#attribute-definition-administrator) | ![Icon for attribute set scope.](./media/custom-security-attributes-manage/icon-attribute-set.png)<br/>Attribute set |
-| <ul><li>Read all attribute sets in a tenant</li><li>Read all attribute definitions in a tenant</li><li>Read all attribute assignments in a tenant for users</li><li>Read all attribute assignments in a tenant for applications (service principals)</li><li>[Assign all attributes in a tenant to users](../enterprise-users/users-custom-security-attributes.md)</li><li>[Assign all attributes in a tenant to applications (service principals)](../manage-apps/custom-security-attributes-apps.md)</li><li>[Author Azure role assignment conditions that use the Principal attribute for all attributes in a tenant](/azure/role-based-access-control/conditions-format#attributes)</li></ul> | [Attribute Assignment Administrator](../roles/permissions-reference.md#attribute-assignment-administrator) | ![Icon for tenant scope.](./media/custom-security-attributes-manage/icon-tenant.png)<br/>Tenant |
-| <ul><li>Read attribute definitions in a scoped attribute set</li><li>Read attribute assignments that use attributes in a scoped attribute set for users</li><li>Read attribute assignments that use attributes in a scoped attribute set for applications (service principals)</li><li>[Assign attributes in a scoped attribute set to users](../enterprise-users/users-custom-security-attributes.md)</li><li>[Assign attributes in a scoped attribute set to applications (service principals)](../manage-apps/custom-security-attributes-apps.md)</li><li>[Author Azure role assignment conditions that use the Principal attribute for all attributes in a scoped attribute set](/azure/role-based-access-control/conditions-format#attributes)</li><li>**Cannot** read attributes in other attribute sets</li><li>**Cannot** read attribute assignments that use attributes in other attribute sets</li></ul> | [Attribute Assignment Administrator](../roles/permissions-reference.md#attribute-assignment-administrator) | ![Icon for attribute set scope.](./media/custom-security-attributes-manage/icon-attribute-set.png)<br/>Attribute set |
-| <ul><li>Read all attribute sets in a tenant</li><li>Read all attribute definitions in a tenant</li></ul> | [Attribute Definition Reader](../roles/permissions-reference.md#attribute-definition-reader) | ![Icon for tenant scope.](./media/custom-security-attributes-manage/icon-tenant.png)<br/>Tenant |
-| <ul><li>Read attribute definitions in a scoped attribute set</li><li>**Cannot** read other attribute sets</li></ul> | [Attribute Definition Reader](../roles/permissions-reference.md#attribute-definition-reader) | ![Icon for attribute set scope.](./media/custom-security-attributes-manage/icon-attribute-set.png)<br/>Attribute set |
-| <ul><li>Read all attribute sets in a tenant</li><li>Read all attribute definitions in a tenant</li><li>Read all attribute assignments in a tenant for users</li><li>Read all attribute assignments in a tenant for applications (service principals)</li></ul> | [Attribute Assignment Reader](../roles/permissions-reference.md#attribute-assignment-reader) | ![Icon for tenant scope.](./media/custom-security-attributes-manage/icon-tenant.png)<br/>Tenant |
-| <ul><li>Read attribute definitions in a scoped attribute set</li><li>Read attribute assignments that use attributes in a scoped attribute set for users</li><li>Read attribute assignments that use attributes in a scoped attribute set for applications (service principals)</li><li>**Cannot** read attributes in other attribute sets</li><li>**Cannot** read attribute assignments that use attributes in other attribute sets</li></ul> | [Attribute Assignment Reader](../roles/permissions-reference.md#attribute-assignment-reader) | ![Icon for attribute set scope.](./media/custom-security-attributes-manage/icon-attribute-set.png)<br/>Attribute set |
+| <ul><li>Read all attribute sets in a tenant</li><li>Read all attribute definitions in a tenant</li><li>[Add or edit all attribute sets in a tenant](custom-security-attributes-add.md)</li><li>[Add, edit, or deactivate all attribute definitions in a tenant](custom-security-attributes-add.md)</li></ul> | [Attribute Definition Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-definition-administrator) | ![Icon for tenant scope.](./media/custom-security-attributes-manage/icon-tenant.png)<br/>Tenant |
+| <ul><li>Read attribute definitions in a scoped attribute set</li><li>[Add, edit, or deactivate attribute definitions in a scoped attribute set](custom-security-attributes-add.md)</li><li>**Cannot** update the scoped attribute set</li><li>**Cannot** read, add, or update other attribute sets</li></ul> | [Attribute Definition Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-definition-administrator) | ![Icon for attribute set scope.](./media/custom-security-attributes-manage/icon-attribute-set.png)<br/>Attribute set |
+| <ul><li>Read all attribute sets in a tenant</li><li>Read all attribute definitions in a tenant</li><li>Read all attribute assignments in a tenant for users</li><li>Read all attribute assignments in a tenant for applications (service principals)</li><li>[Assign all attributes in a tenant to users](../enterprise-users/users-custom-security-attributes.md)</li><li>[Assign all attributes in a tenant to applications (service principals)](~/identity/enterprise-apps/custom-security-attributes-apps.md)</li><li>[Author Azure role assignment conditions that use the Principal attribute for all attributes in a tenant](/azure/role-based-access-control/conditions-format#attributes)</li></ul> | [Attribute Assignment Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator) | ![Icon for tenant scope.](./media/custom-security-attributes-manage/icon-tenant.png)<br/>Tenant |
+| <ul><li>Read attribute definitions in a scoped attribute set</li><li>Read attribute assignments that use attributes in a scoped attribute set for users</li><li>Read attribute assignments that use attributes in a scoped attribute set for applications (service principals)</li><li>[Assign attributes in a scoped attribute set to users](../enterprise-users/users-custom-security-attributes.md)</li><li>[Assign attributes in a scoped attribute set to applications (service principals)](~/identity/enterprise-apps/custom-security-attributes-apps.md)</li><li>[Author Azure role assignment conditions that use the Principal attribute for all attributes in a scoped attribute set](/azure/role-based-access-control/conditions-format#attributes)</li><li>**Cannot** read attributes in other attribute sets</li><li>**Cannot** read attribute assignments that use attributes in other attribute sets</li></ul> | [Attribute Assignment Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator) | ![Icon for attribute set scope.](./media/custom-security-attributes-manage/icon-attribute-set.png)<br/>Attribute set |
+| <ul><li>Read all attribute sets in a tenant</li><li>Read all attribute definitions in a tenant</li></ul> | [Attribute Definition Reader](~/identity/role-based-access-control/permissions-reference.md#attribute-definition-reader) | ![Icon for tenant scope.](./media/custom-security-attributes-manage/icon-tenant.png)<br/>Tenant |
+| <ul><li>Read attribute definitions in a scoped attribute set</li><li>**Cannot** read other attribute sets</li></ul> | [Attribute Definition Reader](~/identity/role-based-access-control/permissions-reference.md#attribute-definition-reader) | ![Icon for attribute set scope.](./media/custom-security-attributes-manage/icon-attribute-set.png)<br/>Attribute set |
+| <ul><li>Read all attribute sets in a tenant</li><li>Read all attribute definitions in a tenant</li><li>Read all attribute assignments in a tenant for users</li><li>Read all attribute assignments in a tenant for applications (service principals)</li></ul> | [Attribute Assignment Reader](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-reader) | ![Icon for tenant scope.](./media/custom-security-attributes-manage/icon-tenant.png)<br/>Tenant |
+| <ul><li>Read attribute definitions in a scoped attribute set</li><li>Read attribute assignments that use attributes in a scoped attribute set for users</li><li>Read attribute assignments that use attributes in a scoped attribute set for applications (service principals)</li><li>**Cannot** read attributes in other attribute sets</li><li>**Cannot** read attribute assignments that use attributes in other attribute sets</li></ul> | [Attribute Assignment Reader](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-reader) | ![Icon for attribute set scope.](./media/custom-security-attributes-manage/icon-attribute-set.png)<br/>Attribute set |
 
 ## Step 6: Assign roles
 
@@ -119,7 +119,7 @@ The following examples show how to assign a custom security attribute role to a 
 
 # [Admin center](#tab/admin-center)
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Attribute Assignment Administrator](../roles/permissions-reference.md#attribute-assignment-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Attribute Assignment Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator).
 
 1. Browse to **Protection** > **Custom security attributes**.
 
@@ -180,7 +180,7 @@ The following examples show how to assign a custom security attribute role to a 
 
 # [Admin center](#tab/admin-center)
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Attribute Assignment Administrator](../roles/permissions-reference.md#attribute-assignment-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Attribute Assignment Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator).
 
 1. Browse to **Identity** > **Roles & admins** > **Roles & admins**.
 

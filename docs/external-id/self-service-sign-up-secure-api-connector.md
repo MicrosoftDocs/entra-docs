@@ -33,7 +33,7 @@ HTTP basic authentication is defined in [RFC 2617](https://tools.ietf.org/html/r
 
 To configure an API Connector with HTTP basic authentication, follow these steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](../roles/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **External Identities** > **Overview**.
 1. Select **All API connectors**, and then select the **API Connector** you want to configure.
 1. For the **Authentication type**, select **Basic**.
@@ -70,7 +70,7 @@ You can then [export the certificate](/azure/key-vault/certificates/how-to-expor
 
 To configure an API Connector with client certificate authentication, follow these steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](../roles/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **External Identities** > **Overview**.
 1. Select **All API connectors**, and then select the **API Connector** you want to configure.
 1. For the **Authentication type**, select **Certificate**.

@@ -71,7 +71,7 @@ To map this rule to Microsoft Entra ID:
 
 ## Map multi-factor authentication rules
 
-An on-premises deployment of [Multi-Factor Authentication (MFA)](../authentication/concept-mfa-howitworks.md) and AD FS still works after the migration because you're federated with AD FS. However, consider migrating to Azure's built-in MFA capabilities that are tied into Microsoft Entra Conditional Access workflows.
+An on-premises deployment of [Multi-Factor Authentication (MFA)](~/identity/authentication/concept-mfa-howitworks.md) and AD FS still works after the migration because you're federated with AD FS. However, consider migrating to Azure's built-in MFA capabilities that are tied into Microsoft Entra Conditional Access workflows.
 
 The following are examples of types of MFA rules in AD FS, and how you can map them to Microsoft Entra ID based on different conditions.
 
@@ -85,7 +85,7 @@ The users/groups selector is a rule that allows you to enforce MFA on a per-grou
 
 Specify MFA rules for a user or a group in Microsoft Entra ID:
 
-1. Create a [new Conditional Access policy](../authentication/tutorial-enable-azure-mfa.md?bc=/azure/active-directory/conditional-access/breadcrumb/toc.json&toc=/azure/active-directory/conditional-access/toc.json).
+1. Create a [new Conditional Access policy](~/identity/authentication/tutorial-enable-azure-mfa.md?bc=/azure/active-directory/conditional-access/breadcrumb/toc.json&toc=/azure/active-directory/conditional-access/toc.json).
 1. Select **Assignments**. Add the user(s) or group(s) for which you want to enforce MFA.
 1. Configure the **Access controls** options as shown in the following screenshots:
 
@@ -95,7 +95,7 @@ Specify MFA rules for a user or a group in Microsoft Entra ID:
 
 Specify MFA rules for unregistered devices in Microsoft Entra ID:
 
-1. Create a [new Conditional Access policy](../authentication/tutorial-enable-azure-mfa.md?bc=/azure/active-directory/conditional-access/breadcrumb/toc.json&toc=/azure/active-directory/conditional-access/toc.json).
+1. Create a [new Conditional Access policy](~/identity/authentication/tutorial-enable-azure-mfa.md?bc=/azure/active-directory/conditional-access/breadcrumb/toc.json&toc=/azure/active-directory/conditional-access/toc.json).
 1. Set the **Assignments** to **All users**.
 1. Configure the **Access controls** options as shown below:
 
@@ -107,7 +107,7 @@ When you set the **For multiple controls** option to **Require one of the select
 
 Specify MFA rules based on a user's location in Microsoft Entra ID:
 
-1. Create a [new Conditional Access policy](../authentication/tutorial-enable-azure-mfa.md?bc=/azure/active-directory/conditional-access/breadcrumb/toc.json&toc=/azure/active-directory/conditional-access/toc.json).
+1. Create a [new Conditional Access policy](~/identity/authentication/tutorial-enable-azure-mfa.md?bc=/azure/active-directory/conditional-access/breadcrumb/toc.json&toc=/azure/active-directory/conditional-access/toc.json).
 1. Set the **Assignments** to **All users**.
 1. [Configure named locations in Microsoft Entra ID](../conditional-access/location-condition.md). Otherwise, federation from inside your corporate network is trusted.
 1. Configure the **Conditions rules** to specify the locations for which you would like to enforce MFA.
@@ -141,7 +141,7 @@ Built-in access control policies in AD FS 2016:
    :::image type="content" source="media/migrate-adfs-represent-security-policies/map-built-in-access-control-policies-1.png" alt-text="Screenshot shows Microsoft Entra ID built in access control.":::
 
 
-To implement built-in policies in Microsoft Entra ID, use a [new Conditional Access policy](../authentication/tutorial-enable-azure-mfa.md?bc=/azure/active-directory/conditional-access/breadcrumb/toc.json&toc=/azure/active-directory/conditional-access/toc.json) and configure the access controls, or use the custom policy designer in AD FS 2016 to configure access control policies. The Rule Editor has an exhaustive list of Permit and Except options that can help you make all kinds of permutations.
+To implement built-in policies in Microsoft Entra ID, use a [new Conditional Access policy](~/identity/authentication/tutorial-enable-azure-mfa.md?bc=/azure/active-directory/conditional-access/breadcrumb/toc.json&toc=/azure/active-directory/conditional-access/toc.json) and configure the access controls, or use the custom policy designer in AD FS 2016 to configure access control policies. The Rule Editor has an exhaustive list of Permit and Except options that can help you make all kinds of permutations.
 
 :::image type="content" source="media/migrate-adfs-represent-security-policies/map-built-in-access-control-policies-2.png" alt-text="Screenshot shows Microsoft Entra ID built in access control policies.":::
 
@@ -195,5 +195,5 @@ Accounts within your organization that represent an external user need to be dis
 ## Next steps
 
 - Read  [Migrating application authentication to Microsoft Entra ID](https://aka.ms/migrateapps/whitepaper).
-- Set up [Conditional Access](../conditional-access/overview.md) and [MFA](../authentication/concept-mfa-howitworks.md).
+- Set up [Conditional Access](../conditional-access/overview.md) and [MFA](~/identity/authentication/concept-mfa-howitworks.md).
 - Try a step-wise code sample:[AD FS to Microsoft Entra application migration playbook for developers](https://aka.ms/adfsplaybook).

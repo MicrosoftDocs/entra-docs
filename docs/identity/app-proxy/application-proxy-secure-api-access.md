@@ -15,7 +15,7 @@ ms.custom: has-adal-ref
 ---
 # Secure access to on-premises APIs with Microsoft Entra application proxy
 
-You may have business logic APIs running on-premises, or hosted on virtual machines in the cloud. Your native Android, iOS, Mac, or Windows apps need to interact with the API endpoints to use data or provide user interaction. Microsoft Entra application proxy and the [Microsoft Authentication Library (MSAL)](../develop/reference-v2-libraries.md) let your native apps securely access your on-premises APIs. Microsoft Entra application proxy is a faster and more secure solution than opening firewall ports and controlling authentication and authorization at the app layer.
+You may have business logic APIs running on-premises, or hosted on virtual machines in the cloud. Your native Android, iOS, Mac, or Windows apps need to interact with the API endpoints to use data or provide user interaction. Microsoft Entra application proxy and the [Microsoft Authentication Library (MSAL)](~/identity-platform/reference-v2-libraries.md) let your native apps securely access your on-premises APIs. Microsoft Entra application proxy is a faster and more secure solution than opening firewall ports and controlling authentication and authorization at the app layer.
 
 This article walks you through setting up a Microsoft Entra application proxy solution for hosting a web API service that native apps can access.
 
@@ -29,7 +29,7 @@ The following diagram shows how you can use Microsoft Entra application proxy to
 
 ![Microsoft Entra application proxy API access](./media/application-proxy-secure-api-access/overview-publish-api-app-proxy.png)
 
-The Microsoft Entra application proxy forms the backbone of the solution, working as a public endpoint for API access, and providing authentication and authorization. You can access your APIs from a vast array of platforms by using the [Microsoft Authentication Library (MSAL)](../develop/reference-v2-libraries.md) libraries.
+The Microsoft Entra application proxy forms the backbone of the solution, working as a public endpoint for API access, and providing authentication and authorization. You can access your APIs from a vast array of platforms by using the [Microsoft Authentication Library (MSAL)](~/identity-platform/reference-v2-libraries.md) libraries.
 
 Since Microsoft Entra application proxy authentication and authorization are built on top of Microsoft Entra ID, you can use Microsoft Entra Conditional Access to ensure only trusted devices can access APIs published through Application Proxy. Use Microsoft Entra join or Microsoft Entra hybrid joined for desktops, and Intune Managed for devices. You can also take advantage of Microsoft Entra ID P1 or P2 features like Microsoft Entra multifactor authentication, and the machine learning-backed security of [Microsoft Entra ID Protection](../identity-protection/overview-identity-protection.md).
 
@@ -48,7 +48,7 @@ To publish the SecretAPI web API through Application Proxy:
 
 1. Build and publish the sample SecretAPI project as an ASP.NET web app on your local computer or intranet. Make sure you can access the web app locally.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](../roles/permissions-reference.md#application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 
@@ -100,7 +100,7 @@ You've published your web API through Microsoft Entra application proxy. Now, ad
 Native apps are programs developed to use on a particular platform or device. Before your native app can connect and access an API, you must register it in Microsoft Entra ID. The following steps show how to register a native app and give it access to the web API you published through Application Proxy.
 
 To register the AppProxyNativeAppSample native app:
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](../roles/permissions-reference.md#application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **App registrations**.
 
@@ -136,10 +136,10 @@ You've now registered the AppProxyNativeAppSample app in Microsoft Entra ID. To 
 
 ## Configure the native app code
 
-The last step is to configure the native app. The code snippet that's used in the following steps is based on [Add the Microsoft Authentication Library to your code (.NET C# sample)](application-proxy-configure-native-client-application.md#step-4-add-the-microsoft-authentication-library-to-your-code-net-c-sample). The code is customized for this example. The code must be added to the *Form1.cs* file in the NativeClient sample app where it will cause the [MSAL library](../develop/reference-v2-libraries.md) to acquire the token for requesting the API call and attach it as bearer to the header in the request.
+The last step is to configure the native app. The code snippet that's used in the following steps is based on [Add the Microsoft Authentication Library to your code (.NET C# sample)](application-proxy-configure-native-client-application.md#step-4-add-the-microsoft-authentication-library-to-your-code-net-c-sample). The code is customized for this example. The code must be added to the *Form1.cs* file in the NativeClient sample app where it will cause the [MSAL library](~/identity-platform/reference-v2-libraries.md) to acquire the token for requesting the API call and attach it as bearer to the header in the request.
 
 > [!NOTE]
-> The sample app uses Azure Active Directory Authentication Library (ADAL). Read how to [add MSAL to your project](../develop/tutorial-v2-windows-desktop.md#add-msal-to-your-project). Remember to [add the reference to MSAL](../develop/tutorial-v2-windows-desktop.md#add-the-code-to-initialize-msal) to the class and remove the ADAL reference.
+> The sample app uses Azure Active Directory Authentication Library (ADAL). Read how to [add MSAL to your project](~/identity-platform/tutorial-v2-windows-desktop.md#add-msal-to-your-project). Remember to [add the reference to MSAL](~/identity-platform/tutorial-v2-windows-desktop.md#add-the-code-to-initialize-msal) to the class and remove the ADAL reference.
 
 To configure the native app code:
 
@@ -204,5 +204,5 @@ After you configure the parameters, build and run the native app. When you selec
 ## Next steps
 
 - [Tutorial: Add an on-premises application for remote access through Application Proxy in Microsoft Entra ID](application-proxy-add-on-premises-application.md)
-- [Quickstart: Configure a client application to access web APIs](../develop/quickstart-configure-app-access-web-apis.md)
+- [Quickstart: Configure a client application to access web APIs](~/identity-platform/quickstart-configure-app-access-web-apis.md)
 - [How to enable native client applications to interact with proxy applications](application-proxy-configure-native-client-application.md)

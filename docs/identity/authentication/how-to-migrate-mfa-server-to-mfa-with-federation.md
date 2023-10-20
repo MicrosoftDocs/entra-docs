@@ -370,4 +370,4 @@ Possible considerations when decommissions the MFA Servers include:
 
 - [Deploy password hash synchronization](../hybrid/connect/whatis-phs.md)
 - [Learn more about Conditional Access](../conditional-access/overview.md)
-- [Migrate applications to Microsoft Entra ID](../manage-apps/migrate-adfs-apps-phases-overview.md)
+- [Migrate applications to Microsoft Entra ID](~/identity/enterprise-apps/migrate-adfs-apps-phases-overview.md)

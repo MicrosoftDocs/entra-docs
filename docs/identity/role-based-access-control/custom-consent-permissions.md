@@ -35,7 +35,7 @@ To allow users to grant consent to applications on behalf of themselves (user co
 
 - microsoft.directory/servicePrincipals/managePermissionGrantsForSelf.{id}
 
-Where `{id}` is replaced by the ID of an [app consent policy](../manage-apps/manage-app-consent-policies.md) which will set the conditions which must be met for this permission to be active.
+Where `{id}` is replaced by the ID of an [app consent policy](~/identity/enterprise-apps/manage-app-consent-policies.md) which will set the conditions which must be met for this permission to be active.
 
 For example, to allow users to grant consent on their own behalf, subject to the built-in app consent policy with ID `microsoft-user-default-low`, you would use the permission `...managePermissionGrantsForSelf.microsoft-user-default-low`.
 
@@ -45,13 +45,13 @@ To delegate tenant-wide admin consent to apps, for both delegated permissions an
 
 - microsoft.directory/servicePrincipals/managePermissionGrantsForAll.{id}
 
-Where `{id}` is replaced by the ID of an [app consent policy](../manage-apps/manage-app-consent-policies.md) which will set the conditions which must be met for this permission to be usable.
+Where `{id}` is replaced by the ID of an [app consent policy](~/identity/enterprise-apps/manage-app-consent-policies.md) which will set the conditions which must be met for this permission to be usable.
 
-For example, to allow role assignees to grant tenant-wide admin consent to apps subject to a custom [app consent policy](../manage-apps/manage-app-consent-policies.md) with ID `low-risk-any-app`, you would use the permission `microsoft.directory/servicePrincipals/managePermissionGrantsForAll.low-risk-any-app`.
+For example, to allow role assignees to grant tenant-wide admin consent to apps subject to a custom [app consent policy](~/identity/enterprise-apps/manage-app-consent-policies.md) with ID `low-risk-any-app`, you would use the permission `microsoft.directory/servicePrincipals/managePermissionGrantsForAll.low-risk-any-app`.
 
 #### Managing app consent policies
 
-To delegate the creation, update and deletion of [app consent policies](../manage-apps/manage-app-consent-policies.md).
+To delegate the creation, update and deletion of [app consent policies](~/identity/enterprise-apps/manage-app-consent-policies.md).
 
 - microsoft.directory/permissionGrantPolicies/create
 - microsoft.directory/permissionGrantPolicies/standard/read
@@ -73,4 +73,4 @@ To delegate the creation, update and deletion of [app consent policies](../manag
 ## Next steps
 
 - [Create and assign a custom role in Microsoft Entra ID](custom-create.md)
-- [View the assignments for a custom role](../roles/view-assignments.md)
+- [View the assignments for a custom role](~/identity/role-based-access-control/view-assignments.md)
