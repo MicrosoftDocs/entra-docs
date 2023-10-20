@@ -147,7 +147,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 1. Click **Single Sign-On** on the left navigation bar and then select **Active Directory**.
 
-    ![Screenshot for the single sign-on.](./media/tap-app-security-tutorial/active-directory.png)
+    ![Screenshot for the single sign-on.](./media/tap-app-security-tutorial/entra)
 
 1. Click on the **Integrate Active Directory app** button. Then enter the domain of your organization and click **Save** button.
 

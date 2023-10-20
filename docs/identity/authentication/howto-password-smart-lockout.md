@@ -64,7 +64,7 @@ To verify your on-premises AD DS account lockout policy, complete the following 
 3. Browse to **Computer Configuration** > **Policies** > **Windows Settings** > **Security Settings** > **Account Policies** > **Account Lockout Policy**.
 4. Verify your **Account lockout threshold** and **Reset account lockout counter after** values.
 
-![Modify the on-premises Active Directory account lockout policy](./media/howto-password-smart-lockout/active-directory-on-premises-account-lockout-policy.png)
+![Modify the on-premises Active Directory account lockout policy](./media/howto-password-smart-lockout/entra-on-premises-account-lockout-policy.png)
 
 <a name='manage-azure-ad-smart-lockout-values'></a>
 
@@ -87,7 +87,7 @@ To check or modify the smart lockout values for your organization, complete the 
 > [!NOTE]
 > If the first sign-in after a lockout period has expired also fails, the account locks out again. If an account locks repeatedly, the lockout duration increases.
 
-![Customize the Microsoft Entra smart lockout policy in the Microsoft Entra admin center](./media/howto-password-smart-lockout/azure-active-directory-custom-smart-lockout-policy.png)
+![Customize the Microsoft Entra smart lockout policy in the Microsoft Entra admin center](./media/howto-password-smart-lockout/azure-entra-custom-smart-lockout-policy.png)
 
 ## Testing Smart lockout
 

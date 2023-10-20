@@ -20,7 +20,7 @@ The following video provides an overview of on-premises provisioning.
 
 The computer that runs the provisioning agent should have:
 
-- Connectivity to SAP ECC NetWeaver AS ABAP 7.51 with outbound connectivity to login.microsoftonline.com, [other Microsoft Online Services](/microsoft-365/enterprise/urls-and-ip-address-ranges) and [Azure](../articles/azure-portal/azure-portal-safelist-urls.md) domains. An example is a Windows Server 2016 virtual machine hosted in Azure IaaS or behind a proxy. 
+- Connectivity to SAP ECC NetWeaver AS ABAP 7.51 with outbound connectivity to login.microsoftonline.com, [other Microsoft Online Services](/microsoft-365/enterprise/urls-and-ip-address-ranges) and [Azure](/azure/azure-portal/azure-portal-safelist-urls) domains. An example is a Windows Server 2016 virtual machine hosted in Azure IaaS or behind a proxy. 
 - At least 3 GB of RAM, to host a provisioning agent. 
 - .NET Framework 4.7.2 
 - A Windows Server 2016 or a later version. 
@@ -237,7 +237,7 @@ Now you will map attributes between the representation of the user in Microsoft 
 
 You'll use the Azure portal to configure the mapping between the Microsoft Entra user's attributes and the attributes that you previously selected in the ECMA Host configuration wizard.
 
- 1. Ensure that the Microsoft Entra schema includes the attributes that are required by SAP ECC. If it requires users to have an attribute, and that attribute is not already part of your Microsoft Entra schema for a user, then you will need to use the [directory extension feature](../articles/active-directory/app-provisioning/user-provisioning-sync-attributes-for-mapping.md) to add that attribute as an extension.
+ 1. Ensure that the Microsoft Entra schema includes the attributes that are required by SAP ECC. If it requires users to have an attribute, and that attribute is not already part of your Microsoft Entra schema for a user, then you will need to use the [directory extension feature](~/identity/app-provisioning/user-provisioning-sync-attributes-for-mapping.md) to add that attribute as an extension.
  1. In the Microsoft Entra admin center, under **Enterprise applications**, select the **On-premises ECMA app** application, and then the **Provisioning** page.
  1. Select **Edit provisioning**, and wait 10 seconds.
  1. Expand **Mappings** and select **Provision Microsoft Entra users**. If this is the first time you've configured the attribute mappings for this application, there will be only one mapping present, for a placeholder.
@@ -288,7 +288,7 @@ Now that you have the Microsoft Entra ECMA Connector Host talking with Microsoft
 >If you were signed in using a Hybrid Identity Administrator role, you need to sign-out and sign-in with an account that has the Application Administrator, Cloud Application Administrator or Global Administrator role, for this section.  The Hybrid Identity Administrator role does not have permissions to assign users to applications.
 
 
-If there are existing users in the SAP ECC, then you should create application role assignments for those existing users. To learn more about how to create application role assignments in bulk, see [governing an application's existing users in Microsoft Entra ID](../articles/active-directory/governance/identity-governance-applications-existing-users.md).
+If there are existing users in the SAP ECC, then you should create application role assignments for those existing users. To learn more about how to create application role assignments in bulk, see [governing an application's existing users in Microsoft Entra ID](~/id-governance/identity-governance-applications-existing-users.md).
 
 Otherwise, if there are no current users of the application, then select a test user from Microsoft Entra who will be provisioned to the application.
 

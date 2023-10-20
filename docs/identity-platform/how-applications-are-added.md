@@ -143,4 +143,4 @@ If you still want to prevent users in your directory from registering applicatio
 
 <!--Image references-->
 
-[apps_service_principals_directory]: ../media/active-directory-how-applications-are-added/HowAppsAreAddedToAAD.jpg
+[apps_service_principals_directory]: ../media/entra-how-applications-are-added/HowAppsAreAddedToAAD.jpg

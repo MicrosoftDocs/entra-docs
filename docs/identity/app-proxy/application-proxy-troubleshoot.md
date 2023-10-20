@@ -84,6 +84,3 @@ This list covers errors that your end users might encounter when they try to acc
 * [Enable Conditional Access](./application-proxy-integrate-with-sharepoint-server.md)
 
 
-<!--Image references-->
-[1]: ./media/application-proxy-troubleshoot/connectorproperties.png
-[2]: ./media/active-directory-application-proxy-troubleshoot/sessionlog.png

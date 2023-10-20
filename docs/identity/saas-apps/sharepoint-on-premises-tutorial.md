@@ -76,7 +76,7 @@ In this section, you configure the SAML authentication and define the claims tha
 
 1. The settings should now look like this:
 
-    ![Basic SAML settings](./media/sharepoint-on-premises-tutorial/azure-active-directory-app-saml-ids.png)
+    ![Basic SAML settings](./media/sharepoint-on-premises-tutorial/azure-entra-app-saml-ids)
 
 1. Copy the information that you'll need later in SharePoint:
 
@@ -250,7 +250,7 @@ Microsoft Entra user `AzureUser1@demo1984.onmicrosoft.com` can now use his/her i
     1. Check **Customize the name of the group claim**, then check **Emit groups as role claims** and click **Save**.
     1. The **User Attributes & Claims** should look like this:
 
-    ![Claims for users and group](./media/sharepoint-on-premises-tutorial/azure-active-directory-claims-with-group.png)
+    ![Claims for users and group](./media/sharepoint-on-premises-tutorial/azure-entra-claims-with-group)
 
 <a name='create-a-security-group-in-azure-active-directory'></a>
 
@@ -264,7 +264,7 @@ Let's create a security group.
 
 1. Fill in the **Group type** (Security), **Group name** (for example, `AzureGroup1`), and **Membership type**. Add the user you created above as a member and click select **Create**:
 
-    ![Create a Microsoft Entra security group](./media/sharepoint-on-premises-tutorial/azure-active-directory-new-group.png)
+    ![Create a Microsoft Entra security group](./media/sharepoint-on-premises-tutorial/azure-entra-new-group)
   
 ### Grant permissions to the security group in SharePoint
 
@@ -272,7 +272,7 @@ Microsoft Entra security groups are identified with their attribute `Id`, which 
 Without a custom claims provider, users need to type the exact value (`Id`) of the group in the people picker, and select the corresponding claim type. This is not user-friendly nor reliable.  
 To avoid this, this article uses third-party claims provider [AzureCP](https://yvand.github.io/AzureCP/) to find the group in a friendly way in SharePoint:
 
-![People picker search Microsoft Entra group](./media/sharepoint-on-premises-tutorial/sp-people-picker-search-azure-active-directory-group.png)
+![People picker search Microsoft Entra group](./media/sharepoint-on-premises-tutorial/sp-people-picker-search-azure-entra-group)
 
 ## Manage Guest users access
 
@@ -305,7 +305,7 @@ As a conclusion, to ensure that guest accounts are all identified with the same 
     
     1. The **User Attributes & Claims** should look like this:
     
-    ![User Attributes & Claims for Guests](./media/sharepoint-on-premises-tutorial/azure-active-directory-claims-guests.png)
+    ![User Attributes & Claims for Guests](./media/sharepoint-on-premises-tutorial/azure-entra-claims-guests)
 
 ### Invite guest users in SharePoint
 
@@ -347,7 +347,7 @@ $t.Update()
 
 1. In the section **Reply URL (Assertion Consumer Service URL)**, add the URL (for example, `https://otherwebapp.contoso.local/`) of all additional web applications that need to sign in users with Microsoft Entra ID and click **Save**.
 
-![Specify additional web applications](./media/sharepoint-on-premises-tutorial/azure-active-directory-app-reply-urls.png)
+![Specify additional web applications](./media/sharepoint-on-premises-tutorial/azure-entra-app-reply-urls)
 
 ### Configure the lifetime of the security token
 

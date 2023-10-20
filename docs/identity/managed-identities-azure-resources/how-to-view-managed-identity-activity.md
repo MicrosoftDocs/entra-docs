@@ -89,7 +89,7 @@ System-assigned identity:
 
 1. Browse to **Microsoft Entra ID**.
 
-![Browse to active directory](./media/how-to-view-managed-identity-activity/browse-to-active-directory.png)
+![Browse to active directory](./media/how-to-view-managed-identity-activity/browse-to-entra.png)
 
 2. Select **Sign-in logs** from the **Monitoring** section.
 

@@ -189,6 +189,3 @@ A successful challenge returns you to the prompt without an error.
 * [Azure PowerShell](/powershell/azure/)
 * [Azure Cmdlet Reference](/powershell/azure/get-started-azureps)
 * [Set-MsolCompanySettings](/powershell/module/msonline/set-msolcompanysettings?view=azureadps-1.0&preserve-view=true)
-
-<!--Image references-->
-[1]: ./media/active-directory-self-service-signup/SelfServiceSignUpControls.png

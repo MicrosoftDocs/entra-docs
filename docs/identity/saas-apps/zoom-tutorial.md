@@ -97,7 +97,7 @@ Follow these steps to enable Microsoft Entra SSO.
 	![Screenshot of Copy configuration URLs.](common/copy-configuration-urls.png)
 
 > [!NOTE]
-> To learn how to configure Role in Microsoft Entra ID, see [Configure the role claim issued in the SAML token for enterprise applications](~/identity-platform/active-directory-enterprise-app-role-management.md).
+> To learn how to configure Role in Microsoft Entra ID, see [Configure the role claim issued in the SAML token for enterprise applications](~/identity-platform/enterprise-app-role-management.md).
 
 > [!NOTE]
 > Zoom might expect a group claim in the SAML payload. If you have created any groups, contact the [Zoom Client support team](https://support.zoom.us/hc/) with the group information so they can configure the group information on their end. You also need to provide the Object ID to [Zoom Client support team](https://support.zoom.us/hc/) so they can configure the Object ID on their end. To get the Object ID, see [Configuring Zoom with Azure](https://support.zoom.us/hc/articles/115005887566).

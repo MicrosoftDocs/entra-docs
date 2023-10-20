@@ -11,7 +11,7 @@
  ms.custom: include file
 ---
 
-- Each managed identity counts towards the object quota limit in a Microsoft Entra tenant as described in [Microsoft Entra service limits and restrictions](../articles/active-directory/enterprise-users/directory-service-limits-restrictions.md).
+- Each managed identity counts towards the object quota limit in a Microsoft Entra tenant as described in [Microsoft Entra service limits and restrictions](~/identity/users/directory-service-limits-restrictions.md).
 -	The rate at which managed identities can be created have the following limits:
 
     1. Per Microsoft Entra tenant per Azure region: 400 create operations per 20 seconds.

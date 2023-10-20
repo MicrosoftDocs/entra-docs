@@ -1,6 +1,6 @@
 This document describes the steps you need to perform to automatically provision and deprovision users from Microsoft Entra ID into an LDAP directory. The document illustrates how you can provision users into AD LDS as an example LDAP directory, but you can provision into any of the supported LDAP directory servers mentioned in the following sections. Provisioning users into Active Directory Domain Services through this solution is not supported.
  
-For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](../articles/active-directory/app-provisioning/user-provisioning.md) and [on-premises application provisioning architecture](../articles/active-directory/app-provisioning/on-premises-application-provisioning-architecture.md). The following video provides an overview of on-premises provisioning.
+For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md) and [on-premises application provisioning architecture](~/identity/app-provisioning/on-premises-application-provisioning-architecture.md). The following video provides an overview of on-premises provisioning.
 
 
 > [!VIDEO https://www.youtube.com/embed/QdfdpaFolys]
@@ -11,7 +11,7 @@ For important details on what this service does, how it works, and frequently as
 
  - An application that uses a directory server to query users.
  - A target directory, other than Active Directory Domain Services, in which users can be created, updated, and deleted. For example, Active Directory Lightweight Services (AD LDS).  This directory instance should not be a directory that is also used to provision users into Microsoft Entra ID, because having both scenarios may create a loop with Microsoft Entra Connect.
- - A computer with at least 3 GB of RAM, to host a provisioning agent. The computer should have Windows Server 2016 or a later version of Windows Server, with connectivity to the target directory, and with outbound connectivity to login.microsoftonline.com, [other Microsoft Online Services](/microsoft-365/enterprise/urls-and-ip-address-ranges) and [Azure](../articles/azure-portal/azure-portal-safelist-urls.md?tabs=public-cloud) domains. An example is a Windows Server 2016 virtual machine hosted in Azure IaaS or behind a proxy.
+ - A computer with at least 3 GB of RAM, to host a provisioning agent. The computer should have Windows Server 2016 or a later version of Windows Server, with connectivity to the target directory, and with outbound connectivity to login.microsoftonline.com, [other Microsoft Online Services](/microsoft-365/enterprise/urls-and-ip-address-ranges) and [Azure](/azure/azure-portal/azure-portal-safelist-urls?tabs=public-cloud) domains. An example is a Windows Server 2016 virtual machine hosted in Azure IaaS or behind a proxy.
  - The .NET Framework 4.7.2 needs to be installed.
  - Optional:  Although it is not required, it is recommended to download [Microsoft Edge for Windows Server](https://www.microsoft.com/en-us/edge?r=1) and use it in-place of Internet Explorer.
 
@@ -113,7 +113,7 @@ Finally, you'll need to agree on the deprovisioning behavior.  When the connecto
 
 ## Prepare the LDAP directory
 
-If you do not already have a directory server, and wish to try out this feature, then [Prepare Active Directory Lightweight Directory Services for provisioning from Microsoft Entra ID](../articles/active-directory/app-provisioning/on-premises-ldap-connector-prepare-directory.md) shows how to create a test AD LDS environment.   If you already have  another directory server deployed, you can skip that article, and continue installing and configuring the ECMA connector host.
+If you do not already have a directory server, and wish to try out this feature, then [Prepare Active Directory Lightweight Directory Services for provisioning from Microsoft Entra ID](~/identity/app-provisioning/on-premises-ldap-connector-prepare-directory.md) shows how to create a test AD LDS environment.   If you already have  another directory server deployed, you can skip that article, and continue installing and configuring the ECMA connector host.
 
 
 <a name='install-and-configure-the-azure-ad-connect-provisioning-agent'></a>
@@ -349,7 +349,7 @@ Follow these steps to confirm that the connector host has started and has identi
 
 If your directory server requires additional attributes that are not part of the default Microsoft Entra schema for users, then when provisioning you can configure to supply values of those attributes from a constant, from an expression transformed from other Microsoft Entra attributes, or by extending the Microsoft Entra schema.
 
-If the directory server requires users to have an attribute, such as `uidNumber` for the OpenLDAP POSIX schema, and that attribute is not already part of your Microsoft Entra schema for a user, and must be unique for each user, then you will need to either generate that attribute from other attributes of the user via an [expression](../articles/active-directory/app-provisioning/functions-for-customizing-application-data.md), or use the [directory extension feature](../articles/active-directory/app-provisioning/user-provisioning-sync-attributes-for-mapping.md) to add that attribute as an extension.
+If the directory server requires users to have an attribute, such as `uidNumber` for the OpenLDAP POSIX schema, and that attribute is not already part of your Microsoft Entra schema for a user, and must be unique for each user, then you will need to either generate that attribute from other attributes of the user via an [expression](~/identity/app-provisioning/functions-for-customizing-application-data.md), or use the [directory extension feature](~/identity/app-provisioning/user-provisioning-sync-attributes-for-mapping.md) to add that attribute as an extension.
 
 If your users originate in Active Directory Domain Services, and has the attribute in that directory, then you can use Microsoft Entra Connect or Microsoft Entra Connect cloud sync to configure that the attribute should be synched from Active Directory Domain Services to Microsoft Entra ID, so that it is available for provisioning to other systems.
 
@@ -385,7 +385,7 @@ In this section, you'll configure the mapping between the Microsoft Entra user's
     - Mapping type: direct
     - Source attribute: `isSoftDeleted`
     - Target attribute: `urn:ietf:params:scim:schemas:extension:ECMA2Host:2.0:User:msDS-UserAccountDisabled`
- 1. For each of the mappings in the following table for your directory server, Select **Add New Mapping**, and specify the source and target attributes.  If you are provisioning into an existing directory with existing users, you will need to edit the mapping for the attribute that is in common  to set the **Match objects using this attribute** for that attribute. Learn more about attribute mapping [here](../articles/active-directory/app-provisioning/customize-application-attributes.md#understanding-attribute-mapping-properties).
+ 1. For each of the mappings in the following table for your directory server, Select **Add New Mapping**, and specify the source and target attributes.  If you are provisioning into an existing directory with existing users, you will need to edit the mapping for the attribute that is in common  to set the **Match objects using this attribute** for that attribute. Learn more about attribute mapping [here](~/identity/app-provisioning/customize-application-attributes.md#understanding-attribute-mapping-properties).
 
      For AD LDS:
 
@@ -450,7 +450,7 @@ Now that you have the Microsoft Entra ECMA Connector Host talking with Microsoft
 >[!IMPORTANT]
 >If you were signed in using a Hybrid Identity Administrator role, you need to sign-out and sign-in with an account that has the Application Administrator, Cloud Application Administrator or Global Administrator role, for this section.  The Hybrid Identity Administrator role does not have permissions to assign users to applications.
 
-If there are existing users in the LDAP directory, then you should create application role assignments for those existing users. To learn more about how to create application role assignments in bulk, see [governing an application's existing users in Microsoft Entra ID](../articles/active-directory/governance/identity-governance-applications-existing-users.md).
+If there are existing users in the LDAP directory, then you should create application role assignments for those existing users. To learn more about how to create application role assignments in bulk, see [governing an application's existing users in Microsoft Entra ID](~/id-governance/identity-governance-applications-existing-users.md).
 
 Otherwise, if the LDAP directory is empty, then select a test user from Microsoft Entra ID who has the required attributes and will be provisioned to the application's directory server.
 
@@ -505,7 +505,7 @@ If the error message is **Failed to create User**, then check the attributes tha
 
 For more information, change to the **Troubleshooting & Recommendations** tab.
 
-For other errors, see [troubleshooting on-premises application provisioning](../articles/active-directory/app-provisioning/on-premises-ecma-troubleshoot.md).
+For other errors, see [troubleshooting on-premises application provisioning](~/identity/app-provisioning/on-premises-ecma-troubleshoot.md).
 
 If you wish to pause provisioning to this application, on the provisioning configuration page, you can change the provisioning status to **Off**, and select **Save**. This action stops the provisioning service from running in the future.
 

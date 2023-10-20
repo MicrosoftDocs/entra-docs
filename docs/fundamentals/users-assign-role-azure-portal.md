@@ -37,11 +37,11 @@ There are two main steps to the role assignment process. First you'll select the
 
 1. Search for and select the user getting the role assignment.
 
-      ![Screenshot of the Users - All users list with Alain Charon highlighted.](media/active-directory-users-assign-role-azure-portal/select-existing-user.png)
+      ![Screenshot of the Users - All users list with Alain Charon highlighted.](media/entra-users-assign-role-azure-portal/select-existing-user.png)
 
 1. Select **Assigned roles** from the side menu, then select **Add assignments**. 
 
-    ![Screenshot of the user's overview page with Assigned roles option highlighted.](media/active-directory-users-assign-role-azure-portal/user-profile-assign-roles.png)
+    ![Screenshot of the user's overview page with Assigned roles option highlighted.](media/entra-users-assign-role-azure-portal/user-profile-assign-roles.png)
 
 1. Select a role to assign from the dropdown list and select the **Next** button.
 
@@ -49,7 +49,7 @@ There are two main steps to the role assignment process. First you'll select the
 
 You can assign roles as either _eligible_ or _active_. Eligible roles are assigned to a user but must be elevated Just-In-Time by the user through Privileged Identity Management (PIM). For more information about how to use PIM, see [Privileged Identity Management](~/id-governance/privileged-identity-management/index.yml).
 
-![Screenshot of the assigned roles page with the assignment types highlighted.](media/active-directory-users-assign-role-azure-portal/role-assignment-types.png)
+![Screenshot of the assigned roles page with the assignment types highlighted.](media/entra-users-assign-role-azure-portal/role-assignment-types.png)
 
 1. From the Setting section of the **Add assignments** page, select an **Assignment type** option.
 
@@ -61,7 +61,7 @@ You can assign roles as either _eligible_ or _active_. Eligible roles are assign
 
     Assigned roles appear in the associated section for the user, so eligible and active roles are listed separately. 
 
-    ![Screenshot of the role assignment settings.](media/active-directory-users-assign-role-azure-portal/role-assignment-settings.png)
+    ![Screenshot of the role assignment settings.](media/entra-users-assign-role-azure-portal/role-assignment-settings.png)
 
 ## Update roles
 
@@ -75,7 +75,7 @@ You can change the settings of a role assignment, for example to change an activ
 
 1. Change the settings as needed and select the **Save** button.
 
-    ![Screenshot of assigned roles page with the Remove and Update options highlighted.](media/active-directory-users-assign-role-azure-portal/remove-update-role-assignment.png)
+    ![Screenshot of assigned roles page with the Remove and Update options highlighted.](media/entra-users-assign-role-azure-portal/remove-update-role-assignment.png)
 
 ## Remove roles
 

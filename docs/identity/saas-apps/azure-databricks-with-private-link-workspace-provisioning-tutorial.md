@@ -33,7 +33,7 @@ If you have already downloaded the provisioning agent and configured it for anot
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
 1. Browse to **Identity** > **Hybrid management** > **Microsoft Entra Connect** > **Cloud sync**.
 
-   [![Screenshot of new UX screen.](media/azure-databricks-with-private-link-workspace-provisioning-tutorial/azure-active-directory-connect-new-ux.png)](media/azure-databricks-with-private-link-workspace-provisioning-tutorial/azure-active-directory-connect-new-ux.png#lightbox)
+   [![Screenshot of new UX screen.](media/azure-databricks-with-private-link-workspace-provisioning-tutorial/azure-entra-connect-new-ux.png)](media/azure-databricks-with-private-link-workspace-provisioning-tutorial/azure-entra-connect-new-ux.png#lightbox)
 
 1.  On the left, select **Agent**.
 1.  Select **Download on-premises agent**, and select **Accept terms & download**.  

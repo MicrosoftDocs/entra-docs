@@ -149,7 +149,7 @@ sections:
         answer: |
           Yes, if you have password write-back enabled, the password operations performed by an admin are written back to your on-premises environment.  
           
-          For more answers to password-related questions, see [Password management frequently asked questions](~/identity/authentication/active-directory-passwords-faq.yml).
+          For more answers to password-related questions, see [Password management frequently asked questions](~/identity/authentication/passwords-faq.yml).
           
           
           

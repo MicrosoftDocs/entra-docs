@@ -29,7 +29,7 @@ Use the following steps if you want to allow users in your directory to be able 
     | **All members (excluding guests)** | Choose this option if you want all member users in your directory to be able to request this access package. This option doesn't include any guest users you might have invited into your directory. |
     | **All users (including guests)** | Choose this option if you want all member users and guest users in your directory to be able to request this access package. |
 
-    Guest users are external users who have been invited into your directory via [Microsoft Entra B2B](../articles/active-directory/external-identities/what-is-b2b.md). For more information about the differences between member users and guest users, see [What are the default user permissions in Microsoft Entra ID?](../articles/active-directory/fundamentals/users-default-permissions.md).
+    Guest users are external users who have been invited into your directory via [Microsoft Entra B2B](~/external-id/what-is-b2b.md). For more information about the differences between member users and guest users, see [What are the default user permissions in Microsoft Entra ID?](~/fundamentals/users-default-permissions.md).
 
 1. If you selected **Specific users and groups**, select **Add users and groups**.
 
@@ -43,11 +43,11 @@ Use the following steps if you want to allow users in your directory to be able 
 
 ## Allow users not in your directory to request the access package
 
-Users who are in another Microsoft Entra directory or domain might not have been invited into your directory yet. Microsoft Entra directories must be configured to allow invitations in **Collaboration restrictions**. For more information, see [Configure external collaboration settings](../articles/active-directory/external-identities/external-collaboration-settings-configure.md).
+Users who are in another Microsoft Entra directory or domain might not have been invited into your directory yet. Microsoft Entra directories must be configured to allow invitations in **Collaboration restrictions**. For more information, see [Configure external collaboration settings](~/external-id/external-collaboration-settings-configure.md).
 
 A guest user account will be created for a user not yet in your directory whose request is approved or does not need approval. The guest will be invited but won't receive an invite email. Instead, they'll receive an email when their access package assignment is delivered. Later, when that guest user no longer has any access package assignments because the last assignment expired or was canceled, the account will be blocked from sign-in and subsequently deleted. The blocking and deletion happen by default.
 
-If you want guest users to remain in your directory indefinitely, even if they have no access package assignments, you can change the settings for your entitlement management configuration. For more information about the guest user object, see [Properties of a Microsoft Entra B2B collaboration user](../articles/active-directory/external-identities/user-properties.md).
+If you want guest users to remain in your directory indefinitely, even if they have no access package assignments, you can change the settings for your entitlement management configuration. For more information about the guest user object, see [Properties of a Microsoft Entra B2B collaboration user](~/external-id/user-properties.md).
 
 Follow these steps if you want to allow users not in your directory to request the access package:
 
@@ -73,7 +73,7 @@ Follow these steps if you want to allow users not in your directory to request t
 
     ![Screenshot that shows the search box for selecting a directory for requests to an access package.](./media/entitlement-management-request-policy/select-directories.png)
 
-    If the organization that you want to collaborate with isn't in the list, you can ask your administrator to add it as a connected organization. For more information, see [Add a connected organization](../articles/active-directory/governance/entitlement-management-organization.md).
+    If the organization that you want to collaborate with isn't in the list, you can ask your administrator to add it as a connected organization. For more information, see [Add a connected organization](~/id-governance/entitlement-management-organization.md).
 
 1. If you selected **All connected organizations**, then you should confirm with your global administrator the list of connected organizations that are currently configured and planned to be in scope.
 
@@ -81,7 +81,7 @@ Follow these steps if you want to allow users not in your directory to request t
 
 1. After you select all your connected organizations, choose **Select**.
 
-    All users from the selected connected organizations will be able to request this access package. This includes users in Microsoft Entra ID from all subdomains associated with the organization, unless the Azure B2B allowlist or blocklist blocks those domains. If you specify a social identity provider domain, such as **live.com**, then any user from the social identity provider will be able to request this access package. For more information, see [Allow or block invitations to B2B users from specific organizations](../articles/active-directory/external-identities/allow-deny-list.md).
+    All users from the selected connected organizations will be able to request this access package. This includes users in Microsoft Entra ID from all subdomains associated with the organization, unless the Azure B2B allowlist or blocklist blocks those domains. If you specify a social identity provider domain, such as **live.com**, then any user from the social identity provider will be able to request this access package. For more information, see [Allow or block invitations to B2B users from specific organizations](~/external-id/allow-deny-list.md).
 
 1. Skip down to the [Specify approval settings](#specify-approval-settings) section.
 
@@ -93,7 +93,7 @@ Follow these steps if you want to bypass access requests and allow administrator
 
     ![Screenshot that shows the option for allowing only administrator direct assignments for an access package.](./media/entitlement-management-request-policy/none-admin-direct-assignments-only.png)
 
-    After you create the access package, you can directly assign specific internal and external users to it. If you specify an external user, a guest user account is created in your directory. For information about directly assigning a user, see [View, add, and remove assignments for an access package](../articles/active-directory/governance/entitlement-management-access-package-assignments.md).
+    After you create the access package, you can directly assign specific internal and external users to it. If you specify an external user, a guest user account is created in your directory. For information about directly assigning a user, see [View, add, and remove assignments for an access package](~/id-governance/entitlement-management-access-package-assignments.md).
 
 1. Skip down to the [Enable requests](#enable-requests) section.
 
@@ -143,11 +143,11 @@ Use the following steps to add approvers after you select the number of stages.
 
 1. If you selected **Manager** as the first approver, select **Add fallback** to select one or more users or groups in your directory to be a fallback approver. Fallback approvers receive the request if entitlement management can't find the manager for the user who's requesting access.
 
-    Entitlement management finds the manager by using the **Manager** attribute. The attribute is in the user's profile in Microsoft Entra ID. For more information, see [Add or update a user's profile information and settings](../articles/active-directory/fundamentals/active-directory-users-profile-azure-portal.md).
+    Entitlement management finds the manager by using the **Manager** attribute. The attribute is in the user's profile in Microsoft Entra ID. For more information, see [Add or update a user's profile information and settings](~/fundamentals/active-directory-users-profile-azure-portal.md).
 
 1. If you selected **Sponsors** as the first approver, select **Add fallback** to select one or more users or groups in your directory to be a fallback approver. Fallback approvers receive the request if entitlement management can't find the sponsor for the user who's requesting access.
 
-    Entitlement management finds sponsors by using the **Sponsors** attribute. The attribute is in the user's profile in Microsoft Entra ID. For more information, see [Add or update a user's profile information and settings](../articles/active-directory/fundamentals/active-directory-users-profile-azure-portal.md).
+    Entitlement management finds sponsors by using the **Sponsors** attribute. The attribute is in the user's profile in Microsoft Entra ID. For more information, see [Add or update a user's profile information and settings](~/fundamentals/active-directory-users-profile-azure-portal.md).
 
 1. If you selected **Choose specific approvers**, select **Add approvers** to select one or more users or groups in your directory to be approvers.
 
@@ -237,11 +237,11 @@ Also, requests can't be forwarded on the last day of the request duration. So in
 
 ## Add a verified ID requirement (preview)
 
-Use the following steps if you want to add a verified ID requirement to your access package policy. Users who want access to the access package need to present the required verified IDs before successfully submitting their request. To learn how to configure your tenant with the Microsoft Entra Verified ID service, see [Introduction to Microsoft Entra Verified ID](../articles/active-directory/verifiable-credentials/decentralized-identifier-overview.md).
+Use the following steps if you want to add a verified ID requirement to your access package policy. Users who want access to the access package need to present the required verified IDs before successfully submitting their request. To learn how to configure your tenant with the Microsoft Entra Verified ID service, see [Introduction to Microsoft Entra Verified ID](~/verified-id/decentralized-identifier-overview.md).
 
 You need a global administrator role to add verified ID requirements to an access package. An Identity Governance administrator, user administrator, catalog owner, or access package manager can't yet add verified ID requirements.
 
-1. Select **+ Add issuer**, and then select an issuer from the Microsoft Entra Verified ID network. If you want to issue your own credentials to users, you can find instructions in [Issue Microsoft Entra Verified ID credentials from an application](../articles/active-directory/verifiable-credentials/verifiable-credentials-configure-issuer.md).
+1. Select **+ Add issuer**, and then select an issuer from the Microsoft Entra Verified ID network. If you want to issue your own credentials to users, you can find instructions in [Issue Microsoft Entra Verified ID credentials from an application](~/verified-id/verifiable-credentials-configure-issuer.md).
 
     :::image type="content" source="media/entitlement-management-request-policy/access-package-select-issuer.png" alt-text="Screenshot that shows the pane for selecting an issuer for an access package.":::
 
@@ -290,6 +290,6 @@ You need a global administrator role to add verified ID requirements to an acces
 1. Select the **Attributes** tab to view attributes associated with resources that you added to the access package.
 
     > [!NOTE]
-    > To add or update attributes for an access package's resources, go to **Catalogs** and find the catalog associated with the access package. To learn more about how to edit the attributes list for a specific catalog resource and the prerequisite roles, read [Add resource attributes in the catalog](../articles/active-directory/governance/entitlement-management-catalog-create.md#add-resource-attributes-in-the-catalog).
+    > To add or update attributes for an access package's resources, go to **Catalogs** and find the catalog associated with the access package. To learn more about how to edit the attributes list for a specific catalog resource and the prerequisite roles, read [Add resource attributes in the catalog](~/id-governance/entitlement-management-catalog-create.md#add-resource-attributes-in-the-catalog).
 
 1. Select **Next**.

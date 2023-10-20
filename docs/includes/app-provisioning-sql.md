@@ -1,6 +1,6 @@
 This document describes the steps you need to perform to automatically provision and deprovision users from Microsoft Entra ID into an SQL database.  
  
-For important details on what this service does, how it works, and frequently asked questions, check out the [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](../articles/active-directory/app-provisioning/user-provisioning.md) and [on-premises application provisioning architecture](../articles/active-directory/app-provisioning/on-premises-application-provisioning-architecture.md) articles. 
+For important details on what this service does, how it works, and frequently asked questions, check out the [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md) and [on-premises application provisioning architecture](~/identity/app-provisioning/on-premises-application-provisioning-architecture.md) articles. 
 
 
 The following video provides an overview of on-premises provisioning.
@@ -14,7 +14,7 @@ The following video provides an overview of on-premises provisioning.
 The application relies upon an SQL database, in which records for users can be created, updated, and deleted. The computer that runs the provisioning agent should have:
 
 - A Windows Server 2016 or a later version. 
--  Connectivity to the target database system, and with outbound connectivity to login.microsoftonline.com, [other Microsoft Online Services](/microsoft-365/enterprise/urls-and-ip-address-ranges) and [Azure](../articles/azure-portal/azure-portal-safelist-urls.md) domains. An example is a Windows Server 2016 virtual machine hosted in Azure IaaS or behind a proxy. 
+-  Connectivity to the target database system, and with outbound connectivity to login.microsoftonline.com, [other Microsoft Online Services](/microsoft-365/enterprise/urls-and-ip-address-ranges) and [Azure](/azure/azure-portal/azure-portal-safelist-urls) domains. An example is a Windows Server 2016 virtual machine hosted in Azure IaaS or behind a proxy. 
 - At least 3 GB of RAM, to host a provisioning agent. 
 - .NET Framework 4.7.2 
 - An ODBC driver for the SQL database.
@@ -82,7 +82,7 @@ This article illustrates how to use the table method to interact with the sample
 
 ## Choose the unique identifiers in your application's database schema
 
-Most applications will have a unique identifier for each user of the application.  If you're provisioning into an existing database table, you should identify a column of that table that has a value for each user, where that value is unique and doesn't change.  This column will be the **Anchor**, which Microsoft Entra ID uses to identify existing rows to be able to update or delete them. For more information on anchors, see [About anchor attributes and distinguished names](../articles/active-directory/app-provisioning/on-premises-application-provisioning-architecture.md#about-anchor-attributes-and-distinguished-names).
+Most applications will have a unique identifier for each user of the application.  If you're provisioning into an existing database table, you should identify a column of that table that has a value for each user, where that value is unique and doesn't change.  This column will be the **Anchor**, which Microsoft Entra ID uses to identify existing rows to be able to update or delete them. For more information on anchors, see [About anchor attributes and distinguished names](~/identity/app-provisioning/on-premises-application-provisioning-architecture.md#about-anchor-attributes-and-distinguished-names).
 
 If your application's database already exists, has users in it, and you want to have Microsoft Entra ID keep those users up to date, then you'll need to have an identifier for each user that is the same between the application's database and the Microsoft Entra schema.  For example, if you assign a user to the application in Microsoft Entra ID, and that user is already in that database, then changes to that user in Microsoft Entra ID should update an existing row for that user, rather than add a new row.  Since Microsoft Entra ID likely doesn't store an application's internal identifier for that user, you'll want to select another column for **querying** the database. The value of this column could be a user principal name, or an email address, employee ID, or other identifier that is present in Microsoft Entra ID on each user that is in scope of the application.  If the user identifier that the application uses isn't an attribute stored in the Microsoft Entra representation of the user, then you don't need to extend the Microsoft Entra user schema with an extension attribute, and populate that attribute from your database.  You can extend the Microsoft Entra schema and set extension values using [PowerShell](/powershell/azure/active-directory/using-extension-attributes-sample).
 
@@ -92,7 +92,7 @@ If your application's database already exists, has users in it, and you want to 
 
 When Microsoft Entra ID has established a link between a user in Microsoft Entra ID and a record in the database, either for a user already in the database or a new user, then Microsoft Entra ID can provision attribute changes from the Microsoft Entra user into the database. In addition to the unique identifiers, inspect your database to identify if there are any other required properties.  If there are, then ensure that the users who will be provisioned into the database have attributes that can be mapped onto the required properties.
 
-You can also configure [deprovisioning](../articles/active-directory/app-provisioning/how-provisioning-works.md#deprovisioning) behavior.  If a user that is assigned to the application is deleted in Microsoft Entra ID, then Microsoft Entra ID will send a delete operation to the database.  You may also wish to have Microsoft Entra ID update the database when a user goes out of scope of being able to use the application.  If a user is unassigned from an app, soft-deleted in Microsoft Entra ID, or blocked from sign-in, then you can configure Microsoft Entra ID to send an attribute change.  If you're provisioning into an existing database table, then you'll want to have a column of that table to map to **isSoftDeleted**.  When the user goes out of scope, Microsoft Entra ID will set the value for that user to **True**.
+You can also configure [deprovisioning](~/identity/app-provisioning/how-provisioning-works.md#deprovisioning) behavior.  If a user that is assigned to the application is deleted in Microsoft Entra ID, then Microsoft Entra ID will send a delete operation to the database.  You may also wish to have Microsoft Entra ID update the database when a user goes out of scope of being able to use the application.  If a user is unassigned from an app, soft-deleted in Microsoft Entra ID, or blocked from sign-in, then you can configure Microsoft Entra ID to send an attribute change.  If you're provisioning into an existing database table, then you'll want to have a column of that table to map to **isSoftDeleted**.  When the user goes out of scope, Microsoft Entra ID will set the value for that user to **True**.
 
 ## 1. Install the ODBC driver
 
@@ -330,7 +330,7 @@ In the last step of the SQL connection settings, configure how attributes are su
 
       - **Anchor**: The values of this attribute should be unique for each object in the target database. The Microsoft Entra provisioning service will query the ECMA connector host by using this attribute after the initial cycle. This anchor value should be the same as the anchor value you configured earlier on the **Schema 3** page.
       - **Query Attribute**:  This attribute should be the same as the Anchor.
-      - **DN**: The **Autogenerated** option should be selected in most cases. If it isn't selected, ensure that the DN attribute is mapped to an attribute in Microsoft Entra ID that stores the DN in this format: CN = anchorValue, Object = objectType.  For more information on anchors and the DN, see [About anchor attributes and distinguished names](../articles/active-directory/app-provisioning/on-premises-application-provisioning-architecture.md#about-anchor-attributes-and-distinguished-names).
+      - **DN**: The **Autogenerated** option should be selected in most cases. If it isn't selected, ensure that the DN attribute is mapped to an attribute in Microsoft Entra ID that stores the DN in this format: CN = anchorValue, Object = objectType.  For more information on anchors and the DN, see [About anchor attributes and distinguished names](~/identity/app-provisioning/on-premises-application-provisioning-architecture.md#about-anchor-attributes-and-distinguished-names).
      
      |Property|Description|
      |-----|-----|
@@ -402,7 +402,7 @@ Now you need to map attributes between the representation of the user in Microso
 
 You'll use the Azure portal to configure the mapping between the Microsoft Entra user's attributes and the attributes that you previously selected in the ECMA Host configuration wizard.
 
- 1. Ensure that the Microsoft Entra schema includes the attributes that are required by the database. If the database requires users to have an attribute, such as `uidNumber`, and that attribute is not already part of your Microsoft Entra schema for a user, then you will need to use the [directory extension feature](../articles/active-directory/app-provisioning/user-provisioning-sync-attributes-for-mapping.md) to add that attribute as an extension.
+ 1. Ensure that the Microsoft Entra schema includes the attributes that are required by the database. If the database requires users to have an attribute, such as `uidNumber`, and that attribute is not already part of your Microsoft Entra schema for a user, then you will need to use the [directory extension feature](~/identity/app-provisioning/user-provisioning-sync-attributes-for-mapping.md) to add that attribute as an extension.
  1. In the Microsoft Entra admin center, under **Enterprise applications**, select the **On-premises ECMA app** application, and then the **Provisioning** page.
  2. Select **Edit provisioning**, and wait 10 seconds.
  3. Expand **Mappings** and select **Provision Microsoft Entra users**. If this is the first time you've configured the attribute mappings for this application, there will be only one mapping present, for a placeholder.
@@ -451,7 +451,7 @@ Now that you have the Microsoft Entra ECMA Connector Host talking with Microsoft
 >If you were signed in using a Hybrid Identity Administrator role, you need to sign-out and sign-in with an account that has the Application Administrator, Cloud Application Administrator or Global Administrator role, for this section.  The Hybrid Identity Administrator role does not have permissions to assign users to applications.
 
 
-If there are existing users in the SQL database, then you should create application role assignments for those existing users. To learn more about how to create application role assignments in bulk, see [governing an application's existing users in Microsoft Entra ID](../articles/active-directory/governance/identity-governance-applications-existing-users.md).
+If there are existing users in the SQL database, then you should create application role assignments for those existing users. To learn more about how to create application role assignments in bulk, see [governing an application's existing users in Microsoft Entra ID](~/id-governance/identity-governance-applications-existing-users.md).
 
 Otherwise, if there are no current users of the application, then select a test user from Microsoft Entra who will be provisioned to the application.
 

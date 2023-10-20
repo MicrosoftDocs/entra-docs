@@ -32,7 +32,7 @@ To further secure the connectivity between Microsoft Entra provisioning service 
 1. Open the file and search for tag **Microsoft Entra ID** 
 
    >[!div class="mx-imgBorder"] 
-   >![Microsoft Entra IP range](media/sap-successfactors-integration-reference/azure-active-directory-ip-range.png)
+   >![Microsoft Entra IP range](media/sap-successfactors-integration-reference/azure-entra-ip-range.png)
 
 1. Copy all IP address ranges listed within the element *addressPrefixes* and use the range to build your IP address restriction list.
 1. Translate the CIDR values to IP ranges.  

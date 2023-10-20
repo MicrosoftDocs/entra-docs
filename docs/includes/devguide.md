@@ -18,4 +18,4 @@ ms.custom: include file
 ---
 
 > [!NOTE]
-> This article is part of the [Microsoft identity platform (Azure Active Directory for developers) documentation](../articles/active-directory/develop/index.yml).
+> This article is part of the [Microsoft identity platform (Azure Active Directory for developers) documentation](~/identity-platform/index.yml).

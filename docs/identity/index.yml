@@ -20,13 +20,13 @@ highlightedContent:
   items:
     - title: What is Microsoft Entra ID?
       itemType: overview # controls the icon image and super-title text
-      url: ./fundamentals/whatis.md
+      url: ~/fundamentals/whatis.md
     - title: What's new in Microsoft Entra ID?
       itemType: whats-new
-      url: ./fundamentals/whats-new.md
+      url: ~/fundamentals/whats-new.md
     - title: Microsoft Entra feature deployment guide
       itemType: concept
-      url: ./fundamentals/concept-secure-remote-workers.md
+      url: ~/fundamentals/concept-secure-remote-workers.md
     - title: Microsoft Entra
       itemType: get-started
       url: /entra

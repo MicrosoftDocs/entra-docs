@@ -118,7 +118,7 @@ Follow these steps to enable Microsoft Entra SSO.
 	| Roles | user.assignedroles |
 
     > [!NOTE]
-	> Please click [here](~/identity-platform/active-directory-enterprise-app-role-management.md) to know how to configure **Role** in Microsoft Entra ID.
+	> Please click [here](~/identity-platform/enterprise-app-role-management.md) to know how to configure **Role** in Microsoft Entra ID.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 

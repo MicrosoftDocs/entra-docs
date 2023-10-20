@@ -13,4 +13,4 @@ ms.author: davidmu
 ---
 
 > [!WARNING]
-> This content is for the older Azure AD v1.0 endpoint. Use the [Microsoft identity platform](../articles/active-directory/develop/index.yml) for new projects.
+> This content is for the older Azure AD v1.0 endpoint. Use the [Microsoft identity platform](~/identity-platform/index.yml) for new projects.

@@ -233,7 +233,7 @@ Find the application ID (client ID) of the multi-tenant application and share it
 
 The following steps are performed by the customer in the customer's tenant *Tenant2*. The customer can use the Azure portal, Azure PowerShell, or Azure CLI.
 
-The user executing the steps must be an administrator with a privileged role such as [Application Administrator](../articles/active-directory/roles/permissions-reference.md#application-administrator), [Cloud Application Administrator](../articles/active-directory/roles/permissions-reference.md#cloud-application-administrator), or [Global Administrator](../articles/active-directory/roles/permissions-reference.md#global-administrator).
+The user executing the steps must be an administrator with a privileged role such as [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator), [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator), or [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 
 # [Portal](#tab/azure-portal)
 
@@ -244,7 +244,7 @@ Sign in to the [Azure portal](https://portal.azure.com) and follow these steps.
 To install the service provider's registered application in the customer's tenant, you create a service principal with the application ID from the registered app. You can create the service principal in either of the following ways:
 
 - Use [Microsoft Graph](/graph/api/serviceprincipal-post-serviceprincipals), [Microsoft Graph PowerShell](/powershell/module/microsoft.graph.applications/new-mgserviceprincipal?view=graph-powershell-beta&preserve-view=true), [Azure PowerShell](/powershell/module/az.resources/new-azadserviceprincipal), or [Azure CLI](/cli/azure/ad/sp#az-ad-sp-create) to manually create the service principal.
-- Construct an [admin-consent URL](../articles/active-directory/manage-apps/grant-admin-consent.md#construct-the-url-for-granting-tenant-wide-admin-consent) and grant tenant-wide consent to create the service principal. You'll need to provide them with your AppId.
+- Construct an [admin-consent URL](~/identity/enterprise-apps/grant-admin-consent.md#construct-the-url-for-granting-tenant-wide-admin-consent) and grant tenant-wide consent to create the service principal. You'll need to provide them with your AppId.
 
 #### The customer creates a key vault
 
@@ -262,7 +262,7 @@ To create the key vault, the user's account must be assigned the **Key Vault Con
 
 Take note of the key vault name and URI Applications that access your key vault must use this URI.
 
-For more information, see [Quickstart - Create an Azure Key Vault with the Azure portal](../articles/key-vault/general/quick-create-portal.md).
+For more information, see [Quickstart - Create an Azure Key Vault with the Azure portal](/azure/key-vault/general/quick-create-portal).
 
 #### The customer assigns Key Vault Crypto Officer role to a user account
 

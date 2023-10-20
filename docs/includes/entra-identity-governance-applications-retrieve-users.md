@@ -15,7 +15,7 @@ This section shows how to interact with Microsoft Entra ID by using [Microsoft G
 The first time your organization uses these cmdlets for this scenario, you need to be in a Global Administrator role to allow Microsoft Graph PowerShell to be used in your tenant. Subsequent interactions can use a lower-privileged role, such as:
 
 - User Administrator, if you anticipate creating new users.
-- Application Administrator or [Identity Governance Administrator](../articles/active-directory/roles/permissions-reference.md#identity-governance-administrator), if you're just managing application role assignments.
+- Application Administrator or [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator), if you're just managing application role assignments.
 
 1. Open PowerShell.
 1. If you don't have the [Microsoft Graph PowerShell modules](https://www.powershellgallery.com/packages/Microsoft.Graph) already installed, install the `Microsoft.Graph.Users` module and others by using this command:
@@ -129,7 +129,7 @@ The first time your organization uses these cmdlets for this scenario, you need 
 
 1. If there were users who couldn't be located in Microsoft Entra ID, or weren't active and able to sign in, but you want to have their access reviewed or their attributes updated in the database, you need to update or create Microsoft Entra users for them. You can create users in bulk by using either:
 
-   - A CSV file, as described in [Bulk create users in the Microsoft Entra admin center](../articles/active-directory/enterprise-users/users-bulk-add.md)
+   - A CSV file, as described in [Bulk create users in the Microsoft Entra admin center](~/identity/users/users-bulk-add.md)
    - The [New-MgUser](/powershell/module/microsoft.graph.users/new-mguser?view=graph-powershell-1.0#examples&preserve-view=true) cmdlet  
 
    Ensure that these new users are populated with the attributes required for Microsoft Entra ID to later match them to the existing users in the application, and the attributes required by Microsoft Entra ID, including `userPrincipalName`, `mailNickname` and `displayName`.  The `userPrincipalName` must be unique among all the users in the directory.

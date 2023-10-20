@@ -45,5 +45,5 @@ Most IT administrators are familiar with Active Directory Domain Services concep
 
 - [What is Microsoft Entra ID?](./whatis.md)
 - [Compare self-managed Active Directory Domain Services, Microsoft Entra ID, and managed Microsoft Entra Domain Services](/entra/identity/domain-services/compare-identity-solutions)
-- [Frequently asked questions about Microsoft Entra ID](./active-directory-faq.yml)
+- [Frequently asked questions about Microsoft Entra ID](faq.yml)
 - [What's new in Microsoft Entra ID?](./whats-new.md)

@@ -35,7 +35,7 @@ Learn more:
 
 Some agencies are modernizing their authentication credentials. There are multiple options for meeting phishing-resistant multifactor authentication requirements with Microsoft Entra ID. Microsoft recommends adopting phishing-resistant multifactor authentication method that matches the agency capabilities. Consider what's possible now for phishing-resistance multifactor authentication to improve the overall cybersecurity posture. Implement modern credentials. However, if the quickest path isn't a modern approach, take the step to begin the journey toward modern approaches.
 
-   ![Diagram of Microsoft Entra phishing-resistant multifactor authentication methods.](media/memo-22-09/azure-active-directory-pr-methods.png)
+   ![Diagram of Microsoft Entra phishing-resistant multifactor authentication methods.](media/memo-22-09/azure-entra-pr-methods.png)
 
 ### Modern approaches
 
@@ -143,9 +143,9 @@ The memo requires organizations to change ineffective password policies, such as
 
 * **Password protection** to enforce a common list of weak passwords that Microsoft maintains
   * In addition, include custom banned passwords
-  * See, [Eliminate bad passwords using Microsoft Entra Password Protection](../authentication/concept-password-ban-bad.md)
+  * See, [Eliminate bad passwords using Microsoft Entra Password Protection](~/identity/authentication/concept-password-ban-bad.md)
 * **Self-service password reset** to enable users to reset passwords, for instance after account recovery
-  * [Tutorial: Enable users to unlock their account or reset passwords using Microsoft Entra self-service password reset](../authentication/tutorial-enable-sspr.md)
+  * [Tutorial: Enable users to unlock their account or reset passwords using Microsoft Entra self-service password reset](~/identity/authentication/tutorial-enable-sspr.md)
 * **Microsoft Entra ID Protection** for alerts about compromised credentials
  * [What is risk?](~/id-protection/concept-identity-protection-risks.md)
 

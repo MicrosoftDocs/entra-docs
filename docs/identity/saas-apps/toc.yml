@@ -53,7 +53,7 @@
       - name: Active and Thriving
         href: active-and-thriving-tutorial.md
       - name: Active Directory SSO for DoubleYou
-        href: active-directory-sso-for-doubleyou-tutorial.md    
+        href: entra-sso-for-doubleyou-tutorial.md    
       - name: Acunetix 360
         href: acunetix-360-tutorial.md
       - name: Adaptive Insights

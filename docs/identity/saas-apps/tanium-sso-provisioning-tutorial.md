@@ -25,7 +25,7 @@ This tutorial describes the steps you need to perform in both Tanium SSO and Mic
 > * Remove users in Tanium SSO when they do not require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and Tanium SSO.
 > * Provision groups and group memberships in Tanium SSO.
-> * [Single sign-on](tanium-cloud-sso-tutorial.md) to Tanium SSO (recommended).
+> * [Single sign-on](~/identity/saas-apps/tanium-sso-tutorial.md) to Tanium SSO (recommended).
 
 ## Prerequisites
 

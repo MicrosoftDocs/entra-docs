@@ -89,7 +89,7 @@ You can also use an integrated development environment to open the folder.
 
 1. Create a virtual environment for the app:
 
-    [!INCLUDE [Virtual environment setup](~/../azure-docs-pr/articles/app-service/includes/quickstart-python/virtual-environment-setup.md)]
+    [!INCLUDE [Virtual environment setup](/azure/app-service/includes/quickstart-python/virtual-environment-setup)]
 
 1. Install the requirements using `pip`:
 

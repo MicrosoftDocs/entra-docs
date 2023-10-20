@@ -53,12 +53,12 @@ If your endpoints are running AnyConnect or the Cisco Secure Client version 4.10
 
 When using Microsoft Entra Connect, the ObjectGUID attribute of users is not synchronized from on-premises AD to Microsoft Entra ID by default. To synchronize this attribute, enable the optional **Directory Extension attribute sync** and select the objectGUID attributes for users.
 
-   ![Microsoft Entra Connect wizard Optional features page](./media/cisco-umbrella-user-management-provisioning-tutorial/active-directory-connect-directory-extension-attribute-sync.png)
+   ![Microsoft Entra Connect wizard Optional features page](./media/cisco-umbrella-user-management-provisioning-tutorial/entra-connect-directory-extension-attribute-sync.png)
 
 > [!NOTE]
 > The search under **Available Attributes** is case sensitive.
 
-   ![Screenshot that shows the "Directory extensions" selection page](./media/cisco-umbrella-user-management-provisioning-tutorial/active-directory-connect-directory-extensions.png)
+   ![Screenshot that shows the "Directory extensions" selection page](./media/cisco-umbrella-user-management-provisioning-tutorial/entra-connect-directory-extensions.png)
 
 > [!NOTE]
 > This step is not required if all your endpoints are running Cisco Secure Client or AnyConnect version 4.10 MR6 or higher.

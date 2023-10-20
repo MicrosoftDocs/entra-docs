@@ -44,11 +44,11 @@ For more information on the Sync behavior for the new Microsoft Edge, see the ar
 
 Microsoft Edge browser setting group (favorites, reading list) syncing can be enabled or disabled by end users through Microsoft Edge browser Settings menu option.
 
-![Account](./media/enterprise-state-roaming-windows-settings-reference/active-directory-enterprise-state-roaming-edge.png)
+![Account](./media/enterprise-state-roaming-windows-settings-reference/entra-enterprise-state-roaming-edge.png)
 
 For Windows 10 version 1803 or later, Internet Explorer setting group (favorites, typed URLs) syncing can be enabled or disabled by end users through Internet Explorer Settings menu option. 
 
-![Settings](./media/enterprise-state-roaming-windows-settings-reference/active-directory-enterprise-state-roaming-ie.png)
+![Settings](./media/enterprise-state-roaming-windows-settings-reference/entra-enterprise-state-roaming-ie.png)
 
 ## Next steps
 

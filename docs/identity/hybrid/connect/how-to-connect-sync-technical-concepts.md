@@ -85,6 +85,3 @@ Whenever a rule determines that a new connector space object needs to be created
 ## Additional Resources
 * [Microsoft Entra Connect Sync: Customizing Synchronization options](how-to-connect-sync-whatis.md)
 * [Integrating your on-premises identities with Microsoft Entra ID](../whatis-hybrid-identity.md)
-
-<!--Image references-->
-[1]: ./media/active-directory-aadsync-technical-concepts/ic750598.png

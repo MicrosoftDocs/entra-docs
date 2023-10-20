@@ -66,7 +66,7 @@ In this step, you create an application in your Microsoft Entra tenant that uses
     - Translate URLs in Headers: No
     - Translate URLs in Application Body: No
 
-        ![Screenshot that shows the options you use to create the app.](./media/application-proxy-integrate-with-sharepoint-server/create-application-azure-active-directory.png)
+        ![Screenshot that shows the options you use to create the app.](./media/application-proxy-integrate-with-sharepoint-server/create-application-azure-entra.png)
 
 2. Assign the [same groups](~/identity/saas-apps/sharepoint-on-premises-tutorial.md#grant-permissions-to-a-security-group) you assigned to the on-premises SharePoint Gallery Application.
 
