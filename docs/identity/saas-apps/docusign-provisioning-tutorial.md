@@ -87,10 +87,10 @@ The objective of this section is to outline how to enable user provisioning of A
 
 It starts the initial synchronization of any users assigned to DocuSign in the Users and Groups section. The initial sync takes longer to perform than subsequent syncs, which occur approximately every 40 minutes as long as the service is running. You can use the **Synchronization Details** section to monitor progress and follow links to provisioning activity logs, which describe all actions performed by the provisioning service on your DocuSign app.
 
-For more information on how to read the Microsoft Entra provisioning logs, see [Reporting on automatic user account provisioning](../app-provisioning/check-status-user-account-provisioning.md).
+For more information on how to read the Microsoft Entra provisioning logs, see [Reporting on automatic user account provisioning](~/identity/app-provisioning/check-status-user-account-provisioning.md).
 
 ## Troubleshooting Tips
-* Provisioning a role or permission profile for a user in Docusign can be accomplished by using an expression in your attribute mappings using the [switch](../app-provisioning/functions-for-customizing-application-data.md#switch) and [singleAppRoleAssignment](../app-provisioning/functions-for-customizing-application-data.md#singleapproleassignment) functions. For example, the expression below will provision the ID "8032066" when a user has the "DS Admin" role assigned in Microsoft Entra ID. It will not provision any permission profile if the user isn't assigned a role on the Microsoft Entra ID side. The ID can be retrieved from the DocuSign [portal](https://support.docusign.com/).
+* Provisioning a role or permission profile for a user in Docusign can be accomplished by using an expression in your attribute mappings using the [switch](~/identity/app-provisioning/functions-for-customizing-application-data.md#switch) and [singleAppRoleAssignment](~/identity/app-provisioning/functions-for-customizing-application-data.md#singleapproleassignment) functions. For example, the expression below will provision the ID "8032066" when a user has the "DS Admin" role assigned in Microsoft Entra ID. It will not provision any permission profile if the user isn't assigned a role on the Microsoft Entra ID side. The ID can be retrieved from the DocuSign [portal](https://support.docusign.com/).
 
 Switch(SingleAppRoleAssignment([appRoleAssignments])," ", "DS Admin", "8032066")
 

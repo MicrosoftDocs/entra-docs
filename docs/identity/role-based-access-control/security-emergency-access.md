@@ -69,7 +69,7 @@ Create two or more emergency access accounts. These accounts should be cloud-onl
 When configuring these accounts, the following requirements must be met:
 
 - The emergency access accounts should not be associated with any individual user in the organization. Make sure that your accounts are not connected with any employee-supplied mobile phones, hardware tokens that travel with individual employees, or other employee-specific credentials. This precaution covers instances where an individual employee is unreachable when the credential is needed. It is important to ensure that any registered devices are kept in a known, secure location that has multiple means of communicating with Microsoft Entra ID.
-- Use strong authentication for your emergency access accounts and make sure it doesn’t use the same authentication methods as your other administrative accounts. For example, if your normal administrator account uses the Microsoft Authenticator app for strong authentication, use a FIDO2 security key for your emergency accounts. Consider the [dependencies of various authentication methods](../architecture/resilience-in-credentials.md), to avoid adding external requirements into the authentication process.
+- Use strong authentication for your emergency access accounts and make sure it doesn’t use the same authentication methods as your other administrative accounts. For example, if your normal administrator account uses the Microsoft Authenticator app for strong authentication, use a FIDO2 security key for your emergency accounts. Consider the [dependencies of various authentication methods](~/architecture/resilience-in-credentials.md), to avoid adding external requirements into the authentication process.
 - The device or credential must not expire or be in scope of automated cleanup due to lack of use.  
 - In Microsoft Entra Privileged Identity Management, you should make the Global Administrator role assignment permanent rather than eligible for your emergency access accounts. 
 
@@ -224,8 +224,8 @@ These steps should be performed at regular intervals and for key changes:
 ## Next steps
 
 - [Securing privileged access for hybrid and cloud deployments in Microsoft Entra ID](security-planning.md)
-- [Add users using Microsoft Entra ID](../fundamentals/add-users.md) and [assign the new user to the Global Administrator role](../fundamentals/how-subscriptions-associated-directory.md)
-- [Sign up for Microsoft Entra ID P1 or P2](../fundamentals/get-started-premium.md), if you haven’t signed up already
+- [Add users using Microsoft Entra ID](~/fundamentals/add-users.md) and [assign the new user to the Global Administrator role](~/fundamentals/how-subscriptions-associated-directory.md)
+- [Sign up for Microsoft Entra ID P1 or P2](~/fundamentals/get-started-premium.md), if you haven’t signed up already
 - [How to require two-step verification for a user](~/identity/authentication/howto-mfa-userstates.md)
 - [Configure additional protections for Global Administrators in Microsoft 365](/microsoft-365/enterprise/protect-your-global-administrator-accounts), if you are using Microsoft 365
 - [Start an access review of Global Administrators](../privileged-identity-management/pim-create-roles-and-resource-roles-review.md) and [transition existing Global Administrators to more specific administrator roles](permissions-reference.md)

@@ -40,23 +40,23 @@ These links provide more information on this topic but aren't specific to changi
 
 * [Use Microsoft Entra schema extension attributes in claims - Microsoft identity platform](~/identity-platform/schema-extensions.md)
 
-* [What are custom security attributes in Microsoft Entra ID (preview)?](../fundamentals/custom-security-attributes-overview.md)
+* [What are custom security attributes in Microsoft Entra ID (preview)?](~/fundamentals/custom-security-attributes-overview.md)
 
-* [Customize Microsoft Entra attribute mappings in application provisioning](../app-provisioning/customize-application-attributes.md)
+* [Customize Microsoft Entra attribute mappings in application provisioning](~/identity/app-provisioning/customize-application-attributes.md)
 
 * [Provide optional claims to Microsoft Entra apps - Microsoft identity platform](~/identity-platform/optional-claims.md)
 
 These links provide more information about groups:
 
-* [Create or edit a dynamic group and get status in Microsoft Entra ID](../enterprise-users/groups-create-rule.md)
+* [Create or edit a dynamic group and get status in Microsoft Entra ID](~/identity/users/groups-create-rule.md)
 
-* [Use self-service groups for user-initiated group management](../enterprise-users/groups-self-service-management.md)
+* [Use self-service groups for user-initiated group management](~/identity/users/groups-self-service-management.md)
 
-* [Attribute-based application provisioning with scoping filters](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md) or [What is Microsoft Entra entitlement management?](../governance/entitlement-management-overview.md) (for application access)
+* [Attribute-based application provisioning with scoping filters](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md) or [What is Microsoft Entra entitlement management?](../governance/entitlement-management-overview.md) (for application access)
 
 * [Compare groups](/microsoft-365/admin/create-groups/compare-groups)
 
-* [Restrict guest access permissions in Microsoft Entra ID](../enterprise-users/users-restrict-guest-permissions.md)
+* [Restrict guest access permissions in Microsoft Entra ID](~/identity/users/users-restrict-guest-permissions.md)
 
 You and your team might feel compelled to change your current employee provisioning to use cloud-only accounts at this stage. The effort is nontrivial but doesn't provide enough business value. We recommend that you plan this transition at a different phase of your transformation.
 
@@ -80,7 +80,7 @@ Traditionally, application servers are often joined to an on-premises Active Dir
 
 The organization has a process to evaluate Microsoft Entra alternatives when it's considering new services, apps, or infrastructure. Directives for a cloud-first approach to applications should be as follows. (New on-premises applications or legacy applications should be a rare exception when no modern alternative exists.)
 
-* Provide a recommendation to change the procurement policy and application development policy to require modern protocols (OIDC/OAuth2 and SAML) and authenticate by using Microsoft Entra ID. New apps should also support [Microsoft Entra app provisioning](../app-provisioning/what-is-hr-driven-provisioning.md) and have no dependency on LDAP queries. Exceptions require explicit review and approval.
+* Provide a recommendation to change the procurement policy and application development policy to require modern protocols (OIDC/OAuth2 and SAML) and authenticate by using Microsoft Entra ID. New apps should also support [Microsoft Entra app provisioning](~/identity/app-provisioning/what-is-hr-driven-provisioning.md) and have no dependency on LDAP queries. Exceptions require explicit review and approval.
 
   > [!IMPORTANT]
   > Depending on the anticipated demands of applications that require legacy protocols, you can choose to deploy [Microsoft Entra Domain Services](/entra/identity/domain-services/overview) when more current alternatives won't work.

@@ -22,7 +22,7 @@ In this tutorial, you'll learn how to integrate SAP Cloud Identity Services with
 * Manage your accounts in one central location.
 
 > [!TIP]
-> Follow the recommendations and best-practice guide "[Using Microsoft Entra ID to secure access to SAP platforms and applications](../fundamentals/scenario-azure-first-sap-identity-integration.md)" to operationalize the setup.
+> Follow the recommendations and best-practice guide "[Using Microsoft Entra ID to secure access to SAP platforms and applications](~/fundamentals/scenario-azure-first-sap-identity-integration.md)" to operationalize the setup.
 
 ## Prerequisites
 
@@ -219,4 +219,4 @@ You can also use Microsoft My Apps to test the application in any mode. When you
 
 Once you configure the SAP Cloud Identity Services you can enforce session controls, which protect exfiltration and infiltration of your organization’s sensitive data in real time. Session controls extend from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).
 
-Consult the [recommendations and best-practice guide](../fundamentals/scenario-azure-first-sap-identity-integration.md) to operationalize the setup.
+Consult the [recommendations and best-practice guide](~/fundamentals/scenario-azure-first-sap-identity-integration.md) to operationalize the setup.

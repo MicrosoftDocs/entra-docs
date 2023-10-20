@@ -75,7 +75,7 @@ Learn how core authentication and Microsoft Entra concepts apply to the Microsof
 
 [Azure AD B2C](/azure/active-directory-b2c/overview) - Build customer-facing applications your users can sign in to using their social accounts like Facebook or Google, or by using an email address and password.
 
-[Microsoft Entra B2B](../external-identities/what-is-b2b.md) - Invite external users into your Microsoft Entra tenant as "guest" users, and assign permissions for authorization while they use their existing credentials for authentication.
+[Microsoft Entra B2B](~/external-id/what-is-b2b.md) - Invite external users into your Microsoft Entra tenant as "guest" users, and assign permissions for authorization while they use their existing credentials for authentication.
 
 ## Next steps
 

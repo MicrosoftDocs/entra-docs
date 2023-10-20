@@ -47,7 +47,7 @@ You can test each app by logging in with a test user and make sure all functiona
 
 ## Troubleshoot
 
-If you run into problems, check out our [apps troubleshooting guide](../app-provisioning/isv-automatic-provisioning-multi-tenant-apps.md) and [Secure Hybrid Access partner integration article](secure-hybrid-access-integrations.md) to get help. You can also check out our troubleshooting articles, see [Problems signing in to SAML-based single sign-on configured apps](/troubleshoot/azure/active-directory/troubleshoot-sign-in-saml-based-apps).
+If you run into problems, check out our [apps troubleshooting guide](~/identity/app-provisioning/isv-automatic-provisioning-multi-tenant-apps.md) and [Secure Hybrid Access partner integration article](secure-hybrid-access-integrations.md) to get help. You can also check out our troubleshooting articles, see [Problems signing in to SAML-based single sign-on configured apps](/troubleshoot/azure/active-directory/troubleshoot-sign-in-saml-based-apps).
 
 ## Plan rollback
 

@@ -133,7 +133,7 @@ Be sure to uninstall any older version of the Azure Active Directory PowerShell 
 
    In the **Sign in to your Account** screen that opens, enter your admin account and password to connect you to your service, and select **Sign in**.
 
-1. Follow the steps in [Microsoft Entra cmdlets for configuring group settings](../enterprise-users/groups-settings-cmdlets.md) to create group settings for this organization.
+1. Follow the steps in [Microsoft Entra cmdlets for configuring group settings](~/identity/users/groups-settings-cmdlets.md) to create group settings for this organization.
 
 ### View the current settings
 
@@ -173,7 +173,7 @@ That's it. You've set your naming policy and added your blocked words.
 
 ## Export or import custom blocked words
 
-For more information, see the article [Microsoft Entra cmdlets for configuring group settings](../enterprise-users/groups-settings-cmdlets.md).
+For more information, see the article [Microsoft Entra cmdlets for configuring group settings](~/identity/users/groups-settings-cmdlets.md).
 
 Here's an example of a PowerShell script to export multiple blocked words:
 
@@ -258,9 +258,9 @@ Microsoft 365 admin center | Microsoft 365 admin center is compliant with naming
 
 These articles provide additional information on Microsoft Entra groups.
 
-- [See existing groups](../fundamentals/groups-view-azure-portal.md)
+- [See existing groups](~/fundamentals/groups-view-azure-portal.md)
 - [Expiration policy for Microsoft 365 groups](groups-lifecycle.md)
-- [Manage settings of a group](../fundamentals/how-to-manage-groups.md)
-- [Manage members of a group](../fundamentals/how-to-manage-groups.md)
-- [Manage memberships of a group](../fundamentals/how-to-manage-groups.md)
+- [Manage settings of a group](~/fundamentals/how-to-manage-groups.md)
+- [Manage members of a group](~/fundamentals/how-to-manage-groups.md)
+- [Manage memberships of a group](~/fundamentals/how-to-manage-groups.md)
 - [Manage dynamic rules for users in a group](groups-dynamic-membership.md)

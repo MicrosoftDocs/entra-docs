@@ -140,7 +140,7 @@ If you're using an Azure DevOps service connection that automatically creates a 
 
 ### Add a federated credential
 
-Federated identity credentials are a type of credential that allows workloads, such as GitHub Actions, workloads running on Kubernetes, or workloads running in compute platforms outside of Azure access Microsoft Entra protected resources without needing to manage secrets using [workload identity federation](../../../workload-identities/workload-identity-federation.md).
+Federated identity credentials are a type of credential that allows workloads, such as GitHub Actions, workloads running on Kubernetes, or workloads running in compute platforms outside of Azure access Microsoft Entra protected resources without needing to manage secrets using [workload identity federation](~/workload-id/workload-identity-federation.md).
 
 To add a federated credential, follow these steps:
 
@@ -149,9 +149,9 @@ To add a federated credential, follow these steps:
 1. In the **Federated credential scenario** drop-down box, select one of the supported scenarios, and follow the corresponding guidance to complete the configuration.
 
     - **Customer managed keys** for encrypt data in your tenant using Azure Key Vault in another tenant.
-    - **GitHub actions deploying Azure resources** to [configure a GitHub workflow](../../../workload-identities/workload-identity-federation-create-trust.md#github-actions) to get tokens for your application and deploy assets to Azure.
-    - **Kubernetes accessing Azure resources** to configure a [Kubernetes service account](../../../workload-identities/workload-identity-federation-create-trust.md#kubernetes) to get tokens for your application and access Azure resources.
-    - **Other issuer** to configure an identity managed by an external [OpenID Connect provider](../../../workload-identities/workload-identity-federation-create-trust.md#other-identity-providers) to get tokens for your application and access Azure resources.
+    - **GitHub actions deploying Azure resources** to [configure a GitHub workflow](~/workload-id/workload-identity-federation-create-trust.md#github-actions) to get tokens for your application and deploy assets to Azure.
+    - **Kubernetes accessing Azure resources** to configure a [Kubernetes service account](~/workload-id/workload-identity-federation-create-trust.md#kubernetes) to get tokens for your application and access Azure resources.
+    - **Other issuer** to configure an identity managed by an external [OpenID Connect provider](~/workload-id/workload-identity-federation-create-trust.md#other-identity-providers) to get tokens for your application and access Azure resources.
     
 
 For more information, how to get an access token with a federated credential, check out the [Microsoft identity platform and the OAuth 2.0 client credentials flow](../../v2-oauth2-client-creds-grant-flow.md#third-case-access-token-request-with-a-federated-credential) article.

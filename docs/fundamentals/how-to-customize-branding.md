@@ -201,5 +201,5 @@ Microsoft Entra ID supports right-to-left functionality for languages such as Ar
 ## Next steps
 
 - [View the CSS template reference guide](reference-company-branding-css-template.md)
-- [Learn more about default user permissions in Microsoft Entra ID](../fundamentals/users-default-permissions.md)
+- [Learn more about default user permissions in Microsoft Entra ID](~/fundamentals/users-default-permissions.md)
 - [Manage the 'stay signed in' prompt](how-to-manage-stay-signed-in-prompt.md)

@@ -133,7 +133,7 @@ Consider your organizational needs while you determine the strategy for this dep
 
 ### Engage the right stakeholders
 
-When technology projects fail, they typically do so due to mismatched expectations on impact, outcomes, and responsibilities. To avoid these pitfalls, [ensure that you are engaging the right stakeholders](../architecture/deployment-plans.md) and that stakeholder roles in the project are well understood by documenting the stakeholders and their project input and accountabilities.
+When technology projects fail, they typically do so due to mismatched expectations on impact, outcomes, and responsibilities. To avoid these pitfalls, [ensure that you are engaging the right stakeholders](~/architecture/deployment-plans.md) and that stakeholder roles in the project are well understood by documenting the stakeholders and their project input and accountabilities.
 
 #### Required administrator roles
 
@@ -146,9 +146,9 @@ When technology projects fail, they typically do so due to mismatched expectatio
 
 ### Plan a pilot
 
-We recommend that the initial configuration of SSPR is in a test environment. Start with a pilot group by enabling SSPR for a subset of users in your organization. See [Best practices for a pilot](../architecture/deployment-plans.md).
+We recommend that the initial configuration of SSPR is in a test environment. Start with a pilot group by enabling SSPR for a subset of users in your organization. See [Best practices for a pilot](~/architecture/deployment-plans.md).
 
-To create a group, see how to [create a group and add members in Microsoft Entra ID](../fundamentals/how-to-manage-groups.md). 
+To create a group, see how to [create a group and add members in Microsoft Entra ID](~/fundamentals/how-to-manage-groups.md). 
 
 ## Plan configuration
 
@@ -241,7 +241,7 @@ At each stage of your deployment from initial pilot groups through organization-
 
 ### Plan testing
 
-To ensure that your deployment works as expected, plan a set of test cases to validate the implementation. To assess the test cases, you need a non-administrator test user with a password. If you need to create a user, see [Add new users to Microsoft Entra ID](../fundamentals/add-users.md).
+To ensure that your deployment works as expected, plan a set of test cases to validate the implementation. To assess the test cases, you need a non-administrator test user with a password. If you need to create a user, see [Add new users to Microsoft Entra ID](~/fundamentals/add-users.md).
 
 The following table includes useful test scenarios you can use to document your organizations expected results based on your policies.
 <br>

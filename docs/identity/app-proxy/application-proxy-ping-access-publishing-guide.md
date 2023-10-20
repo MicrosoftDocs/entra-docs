@@ -29,7 +29,7 @@ Your users won't notice anything different when they sign in to use your corpora
 
 Since this scenario comes from a partnership between Microsoft Entra ID and PingAccess, you need licenses for both services. However, Microsoft Entra ID P1 or P2 subscriptions include a basic PingAccess license that covers up to 20 applications. If you need to publish more than 20 header-based applications, you can purchase an additional license from PingAccess.
 
-For more information, see [Microsoft Entra editions](../fundamentals/whatis.md).
+For more information, see [Microsoft Entra editions](~/fundamentals/whatis.md).
 
 ## Publish your application in Azure
 

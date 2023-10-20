@@ -90,9 +90,9 @@ There are two main categories of users of your apps and resources that Microsoft
 
 - **Internal:** Employees, contractors, and vendors that have accounts within your identity provider. This might need further pivots with different rules for managers or leadership versus other employees.
 
-- **External:** Vendors, suppliers, distributors, or other business partners that interact with your organization in the regular course of business with [Microsoft Entra B2B collaboration.](../external-identities/what-is-b2b.md)
+- **External:** Vendors, suppliers, distributors, or other business partners that interact with your organization in the regular course of business with [Microsoft Entra B2B collaboration.](~/external-id/what-is-b2b.md)
 
-You can define groups for these users and populate these groups in diverse ways. You may choose that an administrator must manually add members into a group, or you can enable self-service group membership. Rules can be established that automatically add members into groups based on the specified criteria using [dynamic groups](../enterprise-users/groups-dynamic-membership.md).
+You can define groups for these users and populate these groups in diverse ways. You may choose that an administrator must manually add members into a group, or you can enable self-service group membership. Rules can be established that automatically add members into groups based on the specified criteria using [dynamic groups](~/identity/users/groups-dynamic-membership.md).
 
 External users may also refer to customers. [Azure AD B2C](/azure/active-directory-b2c/overview), a separate product supports customer authentication. However, it is outside the scope of this paper.
 

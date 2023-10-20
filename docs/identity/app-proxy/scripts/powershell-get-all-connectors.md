@@ -28,7 +28,7 @@ This sample requires the [Azure Active Directory PowerShell 2.0 for Graph module
 
 ## Sample script
 
-[!code-azurepowershell[main](~/powershell_scripts/application-proxy/get-all-connectors.ps1 "Get all connector groups and connectors in the directory")]
+[!code-azurepowershell[main](~/../powershell_scripts/application-proxy/get-all-connectors.ps1 "Get all connector groups and connectors in the directory")]
 
 ## Script explanation
 

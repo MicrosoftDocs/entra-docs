@@ -56,7 +56,7 @@ To add an attribute in the Microsoft Entra configuration that will be sent in th
 
 Signing in to the app fails because the SAML response is missing an attribute such as a role. Or it fails because the app expects a different format or value for the **NameID** (User Identifier) attribute.
 
-If you're using [Microsoft Entra ID automated user provisioning](../app-provisioning/user-provisioning.md) to create, maintain, and remove users in the app, verify that the user has been provisioned to the SaaS app. For more information, see [No users are being provisioned to a Microsoft Entra Gallery application](../app-provisioning/application-provisioning-config-problem-no-users-provisioned.md).
+If you're using [Microsoft Entra ID automated user provisioning](~/identity/app-provisioning/user-provisioning.md) to create, maintain, and remove users in the app, verify that the user has been provisioned to the SaaS app. For more information, see [No users are being provisioned to a Microsoft Entra Gallery application](~/identity/app-provisioning/application-provisioning-config-problem-no-users-provisioned.md).
 
 <a name='add-an-attribute-to-the-azure-ad-app-configuration'></a>
 

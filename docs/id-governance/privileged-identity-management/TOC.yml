@@ -125,6 +125,6 @@
   - name: PowerShell examples for Microsoft Entra roles
     href: /powershell/microsoftgraph/tutorial-pim
   - name: Microsoft Entra service limits
-    href: ../enterprise-users/directory-service-limits-restrictions.md
+    href: ~/identity/users/directory-service-limits-restrictions.md
   - name: PowerShell Migration 
     href: pim-powershell-migration.md

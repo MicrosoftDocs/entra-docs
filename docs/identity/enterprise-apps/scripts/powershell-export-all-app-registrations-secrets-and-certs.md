@@ -24,7 +24,7 @@ This sample requires the [Microsoft Graph PowerShell](/powershell/microsoftgraph
 
 ## Sample script
 
-[!code-azurepowershell[main](~/powershell_scripts/application-management/export-all-app-registrations-secrets-and-certs.ps1 "Exports all secrets and certificates for the specified app registrations in your directory.")]
+[!code-azurepowershell[main](~/../powershell_scripts/application-management/export-all-app-registrations-secrets-and-certs.ps1 "Exports all secrets and certificates for the specified app registrations in your directory.")]
 
 ## Script explanation
 

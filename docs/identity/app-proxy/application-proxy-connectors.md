@@ -116,7 +116,7 @@ In general, the more users you have, the larger a machine you'll need. Below is 
 > [!NOTE]
 > There is not much difference in the maximum TPS between 4, 8, and 16 core machines. The main difference between those is in the expected latency.
 >
-> This table also focuses on the expected performance of a connector based on the type of machine it is installed on. This is separate from the Application Proxy service's throttling limits, see [Service limits and restrictions](../enterprise-users/directory-service-limits-restrictions.md).
+> This table also focuses on the expected performance of a connector based on the type of machine it is installed on. This is separate from the Application Proxy service's throttling limits, see [Service limits and restrictions](~/identity/users/directory-service-limits-restrictions.md).
 
 ## Security and networking
 

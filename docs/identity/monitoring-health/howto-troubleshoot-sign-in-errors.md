@@ -89,7 +89,7 @@ The following error codes are associated with sign-in events, but this list isn'
     - This error often appears if the user hasn't completed setting up MFA.
     - Instruct the user to complete the setup process through to sign-in.
 
-If all else fails, or the issue persists despite taking the recommended course of action, open a support request. For more information, see [how to get support for Microsoft Entra ID](../fundamentals/how-to-get-support.md). 
+If all else fails, or the issue persists despite taking the recommended course of action, open a support request. For more information, see [how to get support for Microsoft Entra ID](~/fundamentals/how-to-get-support.md). 
 
 ## Next steps
 

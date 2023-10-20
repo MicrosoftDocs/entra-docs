@@ -19,7 +19,7 @@ ms.collection: M365-identity-device-management
 
 The following are design considerations for all isolation configurations. Throughout this content, there are many links. We link to content, rather than duplicate it here, so you'll always have access to the most up-to-date information.
 
-For general guidance on how to configure Microsoft Entra tenants (isolated or not), refer to the [Microsoft Entra feature deployment guide](../fundamentals/concept-secure-remote-workers.md).
+For general guidance on how to configure Microsoft Entra tenants (isolated or not), refer to the [Microsoft Entra feature deployment guide](~/fundamentals/concept-secure-remote-workers.md).
 
 >[!NOTE]
 >For all isolated tenants we suggest you use clear and differentiated branding to help avoid human error of working in the wrong tenant.
@@ -117,7 +117,7 @@ Users needing to change or reset their passwords is one of the biggest sources o
 
 #### External identities passwords
 
-By using Microsoft Entra B2B collaboration, an [invitation and redemption process](../external-identities/what-is-b2b.md) lets external users such as partners, developers, and subcontractors use their own credentials to access your company's resources. This mitigates the need to introduce more passwords into the isolated tenants.
+By using Microsoft Entra B2B collaboration, an [invitation and redemption process](~/external-id/what-is-b2b.md) lets external users such as partners, developers, and subcontractors use their own credentials to access your company's resources. This mitigates the need to introduce more passwords into the isolated tenants.
 
 >[!Note]
 >Some applications, infrastructure, or workflows might require a local credential. Evaluate this on a case-by-case basis.
@@ -148,7 +148,7 @@ In the following sections are recommendations for Azure solutions. For general g
 
 * External identities provisioned with Microsoft Entra B2B might need to reprovision multifactor authentication credentials in the resource tenant. This might be necessary if a cross-tenant access policy hasn't been set up with the resource tenant. This means that onboarding to the system is bootstrapped with a single factor. With this approach, the risk mitigation is for the organization to have a process to proof the user and credential risk profile prior to a B2B invitation being issued. Additionally, define Conditional Access to the registration process as described previously.
 
-* Use [External identities cross-tenant access settings](../external-identities/cross-tenant-access-overview.md) to manage how they collaborate with other Microsoft Entra organizations and other Microsoft Azure clouds through B2B collaboration and [B2B direct connect](../external-identities/cross-tenant-access-settings-b2b-direct-connect.md).
+* Use [External identities cross-tenant access settings](~/external-id/cross-tenant-access-overview.md) to manage how they collaborate with other Microsoft Entra organizations and other Microsoft Azure clouds through B2B collaboration and [B2B direct connect](~/external-id/cross-tenant-access-settings-b2b-direct-connect.md).
 
 * For specific device configuration and control, you can use device filters in Conditional Access policies to [target or exclude specific devices](../conditional-access/concept-condition-filters-for-devices.md). This enables you to restrict access to Azure management tools from a designated secure admin workstation (SAW). Other approaches you can take include using [Azure Virtual desktop](/azure/virtual-desktop/terminology), [Azure Bastion](/azure/bastion/bastion-overview), or [Cloud PC](/graph/cloudpc-concept-overview).
 
@@ -254,7 +254,7 @@ Below are some considerations when designing a governed subscription lifecycle p
 
   1. Configure the groups to become eligible for Azure RBAC roles using Microsoft Entra PIM with the corresponding controls such as activation policy, access reviews, approvers, etc.
 
-  1. Then [delegate the management of the groups](../enterprise-users/groups-self-service-management.md) to solution owners.
+  1. Then [delegate the management of the groups](~/identity/users/groups-self-service-management.md) to solution owners.
 
   1. As a guardrail, don't assign product owners to User Access Administrator or Owner roles to avoid inadvertent direct assignment of roles outside Microsoft Entra PIM, or potentially changing the subscription to a different tenant altogether.
 

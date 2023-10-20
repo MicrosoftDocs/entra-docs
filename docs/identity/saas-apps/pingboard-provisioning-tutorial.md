@@ -81,7 +81,7 @@ This section guides you through connecting your Microsoft Entra ID to the Pingbo
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Pingboard**.
 
-1. In the **Attribute Mappings** section, review the user attributes to be synchronized from Microsoft Entra ID to Pingboard. The attributes selected as **Matching** properties are used to match the user accounts in Pingboard for update operations. Select **Save** to commit any changes. For more information, see [Customize user provisioning attribute mappings](../app-provisioning/customize-application-attributes.md).
+1. In the **Attribute Mappings** section, review the user attributes to be synchronized from Microsoft Entra ID to Pingboard. The attributes selected as **Matching** properties are used to match the user accounts in Pingboard for update operations. Select **Save** to commit any changes. For more information, see [Customize user provisioning attribute mappings](~/identity/app-provisioning/customize-application-attributes.md).
 
 1. To enable the Microsoft Entra provisioning service for Pingboard, in the **Settings** section, change **Provisioning Status** to **On**.
 
@@ -89,10 +89,10 @@ This section guides you through connecting your Microsoft Entra ID to the Pingbo
 
 The initial synchronization takes longer to run than following syncs, which occur approximately every 40 minutes as long as the service is running. Use the **Synchronization Details** section to monitor progress and follow links to provisioning activity logs. The logs describe all actions taken by the provisioning service on your Pingboard app.
 
-For more information on how to read the Microsoft Entra provisioning logs, see [Report on automatic user account provisioning](../app-provisioning/check-status-user-account-provisioning.md).
+For more information on how to read the Microsoft Entra provisioning logs, see [Report on automatic user account provisioning](~/identity/app-provisioning/check-status-user-account-provisioning.md).
 
 ## Additional resources
 
-* [Manage user account provisioning for enterprise apps](../app-provisioning/configure-automatic-user-provisioning-portal.md)
+* [Manage user account provisioning for enterprise apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 * [Configure single sign-on](pingboard-tutorial.md)

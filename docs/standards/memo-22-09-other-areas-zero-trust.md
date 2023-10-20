@@ -96,8 +96,8 @@ Document your processes for operating the Microsoft Entra environment. Use Micro
 
 Learn more:
 
-* [Microsoft Entra ID Governance operations reference guide](../architecture/ops-guide-govern.md)
-* [Microsoft Entra security operations guide](../architecture/security-operations-introduction.md)
+* [Microsoft Entra ID Governance operations reference guide](~/architecture/ops-guide-govern.md)
+* [Microsoft Entra security operations guide](~/architecture/security-operations-introduction.md)
 * [What is Microsoft Entra ID Governance?](../governance/identity-governance-overview.md) 
 * [Meet authorization requirements of memorandum 22-09](memo-22-09-authorization.md). 
 

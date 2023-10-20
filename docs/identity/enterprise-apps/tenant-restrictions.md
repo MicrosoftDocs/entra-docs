@@ -222,7 +222,7 @@ At this time, authentication to consumer applications doesn't appear in the [adm
 The `restrict-msa` policy blocks the use of consumer applications, but allows through several other types of traffic and authentication:
 
 1. User-less traffic for devices.  This includes traffic for Autopilot, Windows Update, and organizational telemetry.
-1. B2B authentication of consumer accounts. Users with Microsoft accounts that are [invited to collaborate with a tenant](../external-identities/redemption-experience.md#invitation-redemption-flow) authenticate to login.live.com in order to access a resource tenant.
+1. B2B authentication of consumer accounts. Users with Microsoft accounts that are [invited to collaborate with a tenant](~/external-id/redemption-experience.md#invitation-redemption-flow) authenticate to login.live.com in order to access a resource tenant.
     1. This access is controlled using the `Restrict-Access-To-Tenants` header to allow or deny access to that resource tenant.
 1. "Passthrough" authentication, used by many Azure apps and Office.com, where apps use Microsoft Entra ID to sign in consumer users in a consumer context.
     1. This access is also controlled using the `Restrict-Access-To-Tenants` header to allow or deny access to the special "passthrough" tenant (`f8cdef31-a31e-4b4a-93e4-5f571e91255a`).  If this tenant doesn't appear in your `Restrict-Access-To-Tenants` list of allowed domains, consumer accounts will be blocked by Microsoft Entra ID from signing into these apps.
@@ -239,8 +239,8 @@ For such environments that can't break and inspect traffic to add the tenant res
 
 - [Conditional Access: Only allow use of managed/compliant devices](/mem/intune/protect/conditional-access-intune-common-ways-use#device-based-conditional-access)
 - [Conditional Access: Manage access for guest/external users](/microsoft-365/security/office-365-security/identity-access-policies-guest-access)
-- [B2B Collaboration: Restrict outbound rules by Cross-tenant access for the same tenants listed in the parameter "Restrict-Access-To-Tenants"](../external-identities/cross-tenant-access-settings-b2b-collaboration.md)
-- [B2B Collaboration: Restrict invitations to B2B users to the same domains listed in the "Restrict-Access-To-Tenants" parameter](../external-identities/allow-deny-list.md)
+- [B2B Collaboration: Restrict outbound rules by Cross-tenant access for the same tenants listed in the parameter "Restrict-Access-To-Tenants"](~/external-id/cross-tenant-access-settings-b2b-collaboration.md)
+- [B2B Collaboration: Restrict invitations to B2B users to the same domains listed in the "Restrict-Access-To-Tenants" parameter](~/external-id/allow-deny-list.md)
 - [Application management: Restrict how users consent to applications](configure-user-consent.md)
 - [Intune: Apply App Policy through Intune to restrict usage of managed apps to only the UPN of the account that enrolled the device](/mem/intune/apps/app-configuration-policies-use-android) - Check the section under, **Allow only configured organization accounts in apps** subheading.
 

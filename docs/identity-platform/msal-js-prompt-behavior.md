@@ -53,7 +53,7 @@ The following prompt values can be used when authenticating with the Microsoft i
 | `none`  | Ensures that the user isn't presented with any interactive prompt. If the request can't be completed silently by using single-sign on, the Microsoft identity platform returns a *login_required* or *interaction_required* error. |
 | `consent`  | Triggers the OAuth consent dialog after the user signs in, asking the user to grant permissions to the app. |
 | `select_account` | Interrupts single sign-on by providing an account selection experience listing all the accounts in session or an option to choose a different account altogether. |
-| `create` | Triggers a sign-up dialog allowing external users to create an account. For more information, see: [Self-service sign-up](../external-identities/self-service-sign-up-overview.md) |
+| `create` | Triggers a sign-up dialog allowing external users to create an account. For more information, see: [Self-service sign-up](~/external-id/self-service-sign-up-overview.md) |
 
 MSAL.js will throw an `invalid_prompt` error for any unsupported prompt values:
 

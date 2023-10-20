@@ -1255,9 +1255,9 @@ Add a comma between last name and first name.
 
 
 ## Related Articles
-* [Automate User Provisioning/Deprovisioning to SaaS Apps](../app-provisioning/user-provisioning.md)
-* [Customizing Attribute Mappings for User Provisioning](../app-provisioning/customize-application-attributes.md)
+* [Automate User Provisioning/Deprovisioning to SaaS Apps](~/identity/app-provisioning/user-provisioning.md)
+* [Customizing Attribute Mappings for User Provisioning](~/identity/app-provisioning/customize-application-attributes.md)
 * [Scoping Filters for User Provisioning](define-conditional-rules-for-provisioning-user-accounts.md)
-* [Using SCIM to enable automatic provisioning of users and groups from Microsoft Entra ID to applications](../app-provisioning/use-scim-to-provision-users-and-groups.md)
-* [Account Provisioning Notifications](../app-provisioning/user-provisioning.md)
+* [Using SCIM to enable automatic provisioning of users and groups from Microsoft Entra ID to applications](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md)
+* [Account Provisioning Notifications](~/identity/app-provisioning/user-provisioning.md)
 * [List of Tutorials on How to Integrate SaaS Apps](../saas-apps/tutorial-list.md)

@@ -108,13 +108,13 @@ For more information about working with extensions, see [Add custom data to reso
 
 1. **Assign attributes**
 
-    Assign custom security attributes to Microsoft Entra objects for your business scenarios. [Learn more](../enterprise-users/users-custom-security-attributes.md)
+    Assign custom security attributes to Microsoft Entra objects for your business scenarios. [Learn more](~/identity/users/users-custom-security-attributes.md)
 
     ![Diagram showing delegated administrators assigning custom security attributes to Microsoft Entra objects.](./media/custom-security-attributes-overview/delegate-attributes-assign.png)
 
 1. **Use attributes**
 
-    Filter users and applications that use custom security attributes. [Learn more](../enterprise-users/users-custom-security-attributes.md)
+    Filter users and applications that use custom security attributes. [Learn more](~/identity/users/users-custom-security-attributes.md)
 
     Add conditions that use custom security attributes to Azure role assignments for fine-grained access control. [Learn more](/azure/role-based-access-control/conditions-custom-security-attributes)
 
@@ -219,4 +219,4 @@ Depending on whether you have a Microsoft Entra ID P1 or P2 license, here are th
 
 - [Add or deactivate custom security attribute definitions in Microsoft Entra ID](custom-security-attributes-add.md)
 - [Manage access to custom security attributes in Microsoft Entra ID](custom-security-attributes-manage.md)
-- [Assign, update, list, or remove custom security attributes for a user](../enterprise-users/users-custom-security-attributes.md)
+- [Assign, update, list, or remove custom security attributes for a user](~/identity/users/users-custom-security-attributes.md)

@@ -22,7 +22,7 @@ This article is the second in a series of articles that provide guidance for con
 - [Common considerations for multi-tenant user management](multi-tenant-common-considerations.md) provides guidance for these considerations: cross-tenant synchronization, directory object, Microsoft Entra Conditional Access, additional access control, and Office 365. 
 - [Common solutions for multi-tenant user management](multi-tenant-common-solutions.md) when single tenancy doesn't work for your scenario, this article provides guidance for these challenges:  automatic user lifecycle management and resource allocation across tenants, sharing on-premises apps across tenants.
 
-The guidance helps to you achieve a consistent state of user lifecycle management. Lifecycle management includes provisioning, managing, and deprovisioning users across tenants using the available Azure tools that include [Microsoft Entra B2B collaboration](../external-identities/what-is-b2b.md) (B2B) and [cross-tenant synchronization](../multi-tenant-organizations/cross-tenant-synchronization-overview.md).
+The guidance helps to you achieve a consistent state of user lifecycle management. Lifecycle management includes provisioning, managing, and deprovisioning users across tenants using the available Azure tools that include [Microsoft Entra B2B collaboration](~/external-id/what-is-b2b.md) (B2B) and [cross-tenant synchronization](../multi-tenant-organizations/cross-tenant-synchronization-overview.md).
 
 This article describes three scenarios for which you can use multi-tenant user management features.
 
@@ -40,11 +40,11 @@ For example, a global professional services firm collaborates with subcontractor
 
 Here are the most widely used ways to invite end users to access tenant resources.
 
-- [**Application-based invitations.**](../external-identities/what-is-b2b.md) Microsoft applications (such as Teams and SharePoint) can enable external user invitations. Configure B2B invitation settings in both Microsoft Entra B2B and in the relevant applications.
+- [**Application-based invitations.**](~/external-id/what-is-b2b.md) Microsoft applications (such as Teams and SharePoint) can enable external user invitations. Configure B2B invitation settings in both Microsoft Entra B2B and in the relevant applications.
 - [**MyApps.**](~/identity/enterprise-apps/myapps-overview.md) Users can invite and assign external users to applications using MyApps. The user account must have [application self-service sign up](~/identity/enterprise-apps/manage-self-service-access.md) approver permissions. Group owners can invite external users to their groups.
 - [**Entitlement management.**](../governance/entitlement-management-overview.md) Enable admins or resource owners to create access packages with resources, allowed external organizations, external user expiration, and access policies. Publish access packages to enable external user self-service sign-up for resource access.
-- [**Azure portal.**](../external-identities/add-users-administrator.md) End users with the [Guest Inviter role](../external-identities/external-collaboration-settings-configure.md) can sign in to the Azure portal and invite external users from the **Users** menu in Microsoft Entra ID.
-- [**Programmatic (PowerShell, Graph API).**](../external-identities/customize-invitation-api.md) End users with the [Guest Inviter role](../external-identities/external-collaboration-settings-configure.md) can use PowerShell or Graph API to invite external users.
+- [**Azure portal.**](~/external-id/add-users-administrator.md) End users with the [Guest Inviter role](~/external-id/external-collaboration-settings-configure.md) can sign in to the Azure portal and invite external users from the **Users** menu in Microsoft Entra ID.
+- [**Programmatic (PowerShell, Graph API).**](~/external-id/customize-invitation-api.md) End users with the [Guest Inviter role](~/external-id/external-collaboration-settings-configure.md) can use PowerShell or Graph API to invite external users.
 
 ### Redeeming invitations
 
@@ -55,19 +55,19 @@ When an invited user receives an invitation, they can follow the link contained 
 Invited users can also try to directly access the resource, referred to as just-in-time (JIT) redemption, if either of the following scenarios are true.
 
 - The invited user already has a Microsoft Entra ID or Microsoft account, or
-- Admins have enabled [email one-time passcodes](../external-identities/one-time-passcode.md).
+- Admins have enabled [email one-time passcodes](~/external-id/one-time-passcode.md).
 
 During JIT redemption, the following considerations may apply.
 
-- If administrators haven't [suppressed consent prompts](../external-identities/cross-tenant-access-settings-b2b-collaboration.md), the user must consent before accessing the resource.
+- If administrators haven't [suppressed consent prompts](~/external-id/cross-tenant-access-settings-b2b-collaboration.md), the user must consent before accessing the resource.
 - PowerShell allows control over whether an email is sent when [using PowerShell](https://microsoft-my.sharepoint.com/powershell/module/azuread/new-azureadmsinvitation?view=azureadps-2.0&preserve-view=true) to invite users.
-- You can allow or block invitations to external users from specific organizations by using an [allowlist or a blocklist](../external-identities/allow-deny-list.md).
+- You can allow or block invitations to external users from specific organizations by using an [allowlist or a blocklist](~/external-id/allow-deny-list.md).
 
-For more information, see [Microsoft Entra B2B collaboration invitation redemption](../external-identities/redemption-experience.md).
+For more information, see [Microsoft Entra B2B collaboration invitation redemption](~/external-id/redemption-experience.md).
 
 ### Enabling one-time passcode authentication
 
-In scenarios where you allow for ad hoc B2B, enable [email one-time passcode authentication](../external-identities/one-time-passcode.md). This feature authenticates external users when you can't authenticate them through other means, such as:
+In scenarios where you allow for ad hoc B2B, enable [email one-time passcode authentication](~/external-id/one-time-passcode.md). This feature authenticates external users when you can't authenticate them through other means, such as:
 
 - Microsoft Entra ID.
 - Microsoft account (MSA).
@@ -159,7 +159,7 @@ To act like a single company deployed into a cross-cloud architecture, all users
 
 This scenario requires automatic synchronization and identity management to configure users in both tenants while associating them with the proper entitlement and data protection policies.
 
-[Cross-cloud B2B](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/collaborate-securely-across-organizational-boundaries-and/ba-p/3094109) requires you to configure [Cross-Tenant Access Settings](../external-identities/cross-cloud-settings.md) for each organization with which you want to collaborate in the remote cloud instance.
+[Cross-cloud B2B](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/collaborate-securely-across-organizational-boundaries-and/ba-p/3094109) requires you to configure [Cross-Tenant Access Settings](~/external-id/cross-cloud-settings.md) for each organization with which you want to collaborate in the remote cloud instance.
 
 ### Provisioning accounts
 
@@ -228,7 +228,7 @@ Reference the following table as a decision tree while you design your solution.
 | You can share ALL applications connected to Microsoft Entra ID among all companies. | Yes | No. Only applications in the resource tenant are shared. You can't share applications remaining in other tenants. |
 | Global resource administration | Continue at tenant level. | Consolidated in the resource tenant. |
 | Licensing: Office 365 SharePoint Online, unified GAL, Teams access all support guests; however, other Exchange Online scenarios don't. | Continues at tenant level. | Continues at tenant level. |
-| Licensing: [Microsoft Entra ID (premium)](../external-identities/external-identities-pricing.md) | First 50 K Monthly Active Users are free (per tenant). | First 50 K Monthly Active Users are free. |
+| Licensing: [Microsoft Entra ID (premium)](~/external-id/external-identities-pricing.md) | First 50 K Monthly Active Users are free (per tenant). | First 50 K Monthly Active Users are free. |
 | Licensing: SaaS apps | Remain in individual tenants, may require licenses per user per tenant. | All shared resources reside in the single resource tenant. You can investigate consolidating licenses to the single tenant if appropriate. |
 
 #### Mesh topology

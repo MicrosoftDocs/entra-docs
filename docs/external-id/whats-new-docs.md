@@ -13,11 +13,11 @@ manager: CelesteDG
 
 # Azure Active Directory External Identities: What's new
 
-Welcome to what's new in Azure Active Directory External Identities documentation. This article lists new docs that have been added and those that have had significant updates in the last three months. To learn what's new with the External Identities service, see [What's new in Azure Active Directory](../fundamentals/whats-new.md).
+Welcome to what's new in Azure Active Directory External Identities documentation. This article lists new docs that have been added and those that have had significant updates in the last three months. To learn what's new with the External Identities service, see [What's new in Azure Active Directory](~/fundamentals/whats-new.md).
 
 ## September 2023
 
-This month, we renamed Azure Active Directory (Azure AD) to Microsoft Entra ID. For more information about the rebranding, see the [New name for Azure Active Directory](../fundamentals/new-name.md) article.
+This month, we renamed Azure Active Directory (Azure AD) to Microsoft Entra ID. For more information about the rebranding, see the [New name for Azure Active Directory](~/fundamentals/new-name.md) article.
 
 ### Updated articles
 

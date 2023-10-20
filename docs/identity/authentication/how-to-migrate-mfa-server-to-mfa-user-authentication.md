@@ -295,7 +295,7 @@ Detailed Microsoft Entra multifactor authentication registration information can
 
 Monitor applications you moved to Microsoft Entra ID with the App sign-in health workbook or the application activity usage report.
 
-* **App sign-in health workbook**. See [Monitoring application sign-in health for resilience](../architecture/monitor-sign-in-health-for-resilience.md) for detailed guidance on using this workbook.
+* **App sign-in health workbook**. See [Monitoring application sign-in health for resilience](~/architecture/monitor-sign-in-health-for-resilience.md) for detailed guidance on using this workbook.
 * **Microsoft Entra application activity usage report**. This [report](https://portal.azure.com/#blade/Microsoft_AAD_IAM/UsageAndInsightsMenuBlade/Azure%20AD%20application%20activity) can be used to view the successful and failed sign-ins for individual applications as well as the ability to drill down and view sign-in activity for a specific application. 
 
 ## Clean up tasks
@@ -362,4 +362,4 @@ For more information about migrating applications to Azure, see [Resources for m
 
 - [Migrate from Microsoft MFA Server to Microsoft Entra multifactor authentication (Overview)](how-to-migrate-mfa-server-to-azure-mfa.md)
 - [Migrate applications from Windows Active Directory to Microsoft Entra ID](~/identity/enterprise-apps/migrate-adfs-apps-phases-overview.md)
-- [Plan your cloud authentication strategy](../architecture/deployment-plans.md)
+- [Plan your cloud authentication strategy](~/architecture/deployment-plans.md)

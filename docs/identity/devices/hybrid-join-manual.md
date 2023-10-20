@@ -253,7 +253,7 @@ The `http://schemas.microsoft.com/ws/2008/06/identity/claims/issuerid` claim mus
 
 In the preceding claim, `<verified-domain-name>` is a placeholder. Replace it with one of your verified domain names in Microsoft Entra ID. For example, use `Value = "http://contoso.com/adfs/services/trust/"`.
 
-For more information about verified domain names, see [Add a custom domain name to Microsoft Entra ID](../fundamentals/add-custom-domain.md).  
+For more information about verified domain names, see [Add a custom domain name to Microsoft Entra ID](~/fundamentals/add-custom-domain.md).  
 
 To get a list of your verified company domains, you can use the [Get-MsolDomain](/powershell/module/msonline/get-msoldomain) cmdlet.
 

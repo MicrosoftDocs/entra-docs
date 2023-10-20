@@ -73,7 +73,7 @@ Federated identity providers (IdPs) such as Active Directory Federation Services
 
 Learn more:
 
-* [Protecting Microsoft 365 from on-premises attacks](../architecture/protect-m365-from-on-premises-attacks.md)
+* [Protecting Microsoft 365 from on-premises attacks](~/architecture/protect-m365-from-on-premises-attacks.md)
 * [Deploying AD Federation Services in Azure](/windows-server/identity/ad-fs/deployment/how-to-connect-fed-azure-adfs)
 * [Configuring AD FS for user certificate authentication](/windows-server/identity/ad-fs/operations/configure-user-certificate-authentication)
 
@@ -122,7 +122,7 @@ To enforce phishing-resistant multifactor authentication, integration might be n
 
 Use Conditional Access to enforce multifactor authentication for users in your tenant. With the addition of cross-tenant access policies, you can enforce it on external users.
 
-Learn more: [Overview: Cross-tenant access with Microsoft Entra External ID](../external-identities/cross-tenant-access-overview.md)
+Learn more: [Overview: Cross-tenant access with Microsoft Entra External ID](~/external-id/cross-tenant-access-overview.md)
 
 #### Enforcement across agencies
 
@@ -131,7 +131,7 @@ Use Microsoft Entra B2B collaboration to meet requirements that facilitate integ
 - Limit what other Microsoft tenants your users access
 - Allow access to users you don't have to manage in your tenant, but enforce multifactor authentication and other access requirements
 
-Learn more: [B2B collaboration overview](../external-identities/what-is-b2b.md)
+Learn more: [B2B collaboration overview](~/external-id/what-is-b2b.md)
 
 Enforce multifactor authentication for partners and external users who access organizational resources. This action is common in inter-agency collaboration scenarios. Use Microsoft Entra cross-tenant access policies to configure multifactor authentication for external users who access applications and resources.
 
@@ -143,11 +143,11 @@ The memo requires organizations to change ineffective password policies, such as
 
 * **Password protection** to enforce a common list of weak passwords that Microsoft maintains
   * In addition, include custom banned passwords
-  * See, [Eliminate bad passwords using Microsoft Entra Password Protection](..//authentication/concept-password-ban-bad.md)
+  * See, [Eliminate bad passwords using Microsoft Entra Password Protection](../authentication/concept-password-ban-bad.md)
 * **Self-service password reset** to enable users to reset passwords, for instance after account recovery
-  * [Tutorial: Enable users to unlock their account or reset passwords using Microsoft Entra self-service password reset](..//authentication/tutorial-enable-sspr.md)
+  * [Tutorial: Enable users to unlock their account or reset passwords using Microsoft Entra self-service password reset](../authentication/tutorial-enable-sspr.md)
 * **Microsoft Entra ID Protection** for alerts about compromised credentials
- * [What is risk?](..//identity-protection/concept-identity-protection-risks.md)
+ * [What is risk?](../identity-protection/concept-identity-protection-risks.md)
 
 Although the memo isn't specific about policies to use with passwords, consider the standard from NIST 800-63B. 
 

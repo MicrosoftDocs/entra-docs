@@ -23,15 +23,15 @@ The following video provides a quick overview of the steps involved when plannin
 
 ## Overview
 
-The [Microsoft Entra user provisioning service](../app-provisioning/user-provisioning.md) integrates with the [Workday Human Resources API](https://community.workday.com/sites/default/files/file-hosting/productionapi/Human_Resources/v21.1/Get_Workers.html) in order to provision user accounts. The Workday user provisioning workflows supported by the Microsoft Entra user provisioning service enable automation of the following human resources and identity lifecycle management scenarios:
+The [Microsoft Entra user provisioning service](~/identity/app-provisioning/user-provisioning.md) integrates with the [Workday Human Resources API](https://community.workday.com/sites/default/files/file-hosting/productionapi/Human_Resources/v21.1/Get_Workers.html) in order to provision user accounts. The Workday user provisioning workflows supported by the Microsoft Entra user provisioning service enable automation of the following human resources and identity lifecycle management scenarios:
 
-* **Hiring new employees** - When a new employee is added to Workday, a user account is automatically created in Microsoft Entra ID and optionally Microsoft 365 and [other SaaS applications supported by Microsoft Entra ID](../app-provisioning/user-provisioning.md), with write-back of the email address to Workday.
+* **Hiring new employees** - When a new employee is added to Workday, a user account is automatically created in Microsoft Entra ID and optionally Microsoft 365 and [other SaaS applications supported by Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md), with write-back of the email address to Workday.
 
-* **Employee attribute and profile updates** - When an employee record is updated in Workday (such as their name, title, or manager), their user account will be automatically updated Microsoft Entra ID and optionally Microsoft 365 and [other SaaS applications supported by Microsoft Entra ID](../app-provisioning/user-provisioning.md).
+* **Employee attribute and profile updates** - When an employee record is updated in Workday (such as their name, title, or manager), their user account will be automatically updated Microsoft Entra ID and optionally Microsoft 365 and [other SaaS applications supported by Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 
-* **Employee terminations** - When an employee is terminated in Workday, their user account is automatically disabled in Microsoft Entra ID and optionally Microsoft 365 and [other SaaS applications supported by Microsoft Entra ID](../app-provisioning/user-provisioning.md).
+* **Employee terminations** - When an employee is terminated in Workday, their user account is automatically disabled in Microsoft Entra ID and optionally Microsoft 365 and [other SaaS applications supported by Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 
-* **Employee rehires** - When an employee is rehired in Workday, their old account can be automatically reactivated or re-provisioned (depending on your preference) to Microsoft Entra ID and optionally Microsoft 365 and [other SaaS applications supported by Microsoft Entra ID](../app-provisioning/user-provisioning.md).
+* **Employee rehires** - When an employee is rehired in Workday, their old account can be automatically reactivated or re-provisioned (depending on your preference) to Microsoft Entra ID and optionally Microsoft 365 and [other SaaS applications supported by Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 
 ### Who is this user provisioning solution best suited for?
 
@@ -71,7 +71,7 @@ Configuring Cloud HR driven user provisioning from Workday to Microsoft Entra ID
 * Attribute transformation 
 * Scoping filters
 
-Please refer to the [cloud HR deployment plan](../app-provisioning/plan-cloud-hr-provision.md) for comprehensive guidelines around these topics. 
+Please refer to the [cloud HR deployment plan](~/identity/app-provisioning/plan-cloud-hr-provision.md) for comprehensive guidelines around these topics. 
 
 ## Configure integration system user in Workday
 
@@ -115,7 +115,7 @@ The following sections describe steps for configuring user provisioning from Wor
      > [!NOTE]
      > If no version information is specified in the URL, the app uses Workday Web Services (WWS) v21.1 and no changes are required to the default XPATH API expressions shipped with the app. To use a specific WWS API version, specify version number in the URL <br>
      > Example: `https://wd3-impl-services1.workday.com/ccx/service/contoso4/Human_Resources/v34.0` <br>
-     > <br> If you are using a WWS API v30.0+, before turning on the provisioning job, please update the **XPATH API expressions** under **Attribute Mapping -> Advanced Options -> Edit attribute list for Workday** referring to the section [Managing your configuration](workday-inbound-tutorial.md#managing-your-configuration) and [Workday attribute reference](../app-provisioning/workday-attribute-reference.md#xpath-values-for-workday-web-services-wws-api-v30).  
+     > <br> If you are using a WWS API v30.0+, before turning on the provisioning job, please update the **XPATH API expressions** under **Attribute Mapping -> Advanced Options -> Edit attribute list for Workday** referring to the section [Managing your configuration](workday-inbound-tutorial.md#managing-your-configuration) and [Workday attribute reference](~/identity/app-provisioning/workday-attribute-reference.md#xpath-values-for-workday-web-services-wws-api-v30).  
 
    * **Notification Email –** Enter your email address, and check the  "send email if failure occurs" checkbox.
 
@@ -160,7 +160,7 @@ In this section, you will configure how user data flows from Workday to Microsof
 
       * **Constant** - Write a static, constant string value to the AD attribute
 
-      * **Expression** – Allows you to write a custom value to the AD attribute, based on one or more Workday attributes. [For more info, see this article on expressions](../app-provisioning/functions-for-customizing-application-data.md).
+      * **Expression** – Allows you to write a custom value to the AD attribute, based on one or more Workday attributes. [For more info, see this article on expressions](~/identity/app-provisioning/functions-for-customizing-application-data.md).
 
    * **Source attribute** - The user attribute from Workday. If the attribute you are looking for is not present, see [Customizing the list of Workday user attributes](workday-inbound-tutorial.md#customizing-the-list-of-workday-user-attributes).
 
@@ -204,9 +204,9 @@ Once the Workday provisioning app configurations have been completed, you can tu
 
 ## Next steps
 
-* [Learn more about Microsoft Entra ID and Workday integration scenarios and web service calls](../app-provisioning/workday-integration-reference.md)
-* [Learn more about supported Workday Attributes for inbound provisioning](../app-provisioning/workday-attribute-reference.md)
+* [Learn more about Microsoft Entra ID and Workday integration scenarios and web service calls](~/identity/app-provisioning/workday-integration-reference.md)
+* [Learn more about supported Workday Attributes for inbound provisioning](~/identity/app-provisioning/workday-attribute-reference.md)
 * [Learn how to configure Workday Writeback](workday-writeback-tutorial.md)
-* [Learn how to review logs and get reports on provisioning activity](../app-provisioning/check-status-user-account-provisioning.md)
+* [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)
 * [Learn how to configure single sign-on between Workday and Microsoft Entra ID](workday-tutorial.md)
-* [Learn how to export and import your provisioning configurations](../app-provisioning/export-import-provisioning-configuration.md)
+* [Learn how to export and import your provisioning configurations](~/identity/app-provisioning/export-import-provisioning-configuration.md)

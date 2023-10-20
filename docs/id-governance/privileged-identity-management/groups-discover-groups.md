@@ -24,7 +24,7 @@ In Microsoft Entra ID, you can use Privileged Identity Management (PIM) to manag
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-Before starting, you need a Microsoft Entra Security group or Microsoft 365 group. To learn more about group management in Microsoft Entra ID, see [Manage Microsoft Entra groups and group membership](../fundamentals/how-to-manage-groups.md).
+Before starting, you need a Microsoft Entra Security group or Microsoft 365 group. To learn more about group management in Microsoft Entra ID, see [Manage Microsoft Entra groups and group membership](~/fundamentals/how-to-manage-groups.md).
 
 Dynamic groups and groups synchronized from on-premises environment cannot be managed in PIM for Groups.
 

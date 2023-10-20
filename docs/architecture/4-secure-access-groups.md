@@ -51,8 +51,8 @@ Determine who is granted permissions to create groups: Administrators, employees
 * [Manage who can create Microsoft 365 Groups](/microsoft-365/solutions/manage-creation-of-groups?view=o365-worldwide&preserve-view=true) 
   * Use PowerShell to configure this setting
 * [Restrict your Microsoft Entra app to a set of users in a Microsoft Entra tenant](~/identity-platform/howto-restrict-your-app-to-a-set-of-users.md)
-* [Set up self-service group management in Microsoft Entra ID](../enterprise-users/groups-self-service-management.md) 
-* [Troubleshoot and resolve groups issues](../enterprise-users/groups-troubleshooting.md) 
+* [Set up self-service group management in Microsoft Entra ID](~/identity/users/groups-self-service-management.md) 
+* [Troubleshoot and resolve groups issues](~/identity/users/groups-troubleshooting.md) 
 
 ### Invitations to groups
 
@@ -74,7 +74,7 @@ Dynamic groups have users or devices, but not both. To assign users to the dynam
 
    ![Screenshot of options and entries under Dynamic membership rules.](media/secure-external-access/4-dynamic-membership-rules.png)
 
-Learn more: [Create or update a dynamic group in Microsoft Entra ID](../enterprise-users/groups-create-rule.md)
+Learn more: [Create or update a dynamic group in Microsoft Entra ID](~/identity/users/groups-create-rule.md)
 
 ### Use groups for one function
 
@@ -119,14 +119,14 @@ Use Microsoft Entra security groups to assign:
   * Microsoft 365
   * Dynamics 365
   * Enterprise mobility and security
-  * See, [What is group-based licensing in Microsoft Entra ID?](../fundamentals/concept-group-based-licensing.md)
+  * See, [What is group-based licensing in Microsoft Entra ID?](~/fundamentals/concept-group-based-licensing.md)
 * Elevated permissions
   * See, [Use Microsoft Entra groups to manage role assignments](~/identity/role-based-access-control/groups-concept.md)
 
 Learn more:
 
-* [Manage Microsoft Entra groups and group membership](../fundamentals/how-to-manage-groups.md)
-* [Microsoft Entra version 2 cmdlets for group management](../enterprise-users/groups-settings-v2-cmdlets.md). 
+* [Manage Microsoft Entra groups and group membership](~/fundamentals/how-to-manage-groups.md)
+* [Microsoft Entra version 2 cmdlets for group management](~/identity/users/groups-settings-v2-cmdlets.md). 
 
 > [!NOTE]
 > Use security groups to assign up to 1,500 applications. 

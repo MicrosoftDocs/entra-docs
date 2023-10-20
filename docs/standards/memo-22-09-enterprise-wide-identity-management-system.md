@@ -47,9 +47,9 @@ With Microsoft Entra cross-tenant access settings, agencies manage how they coll
 
 Learn more:
 
-* [B2B collaboration overview](../external-identities/what-is-b2b.md)
-* [Microsoft Entra B2B in government and national clouds](../external-identities/b2b-government-national-clouds.md)
-* [Federation with SAML/WS-Fed identity providers for guest users](..//external-identities/direct-federation.md)
+* [B2B collaboration overview](~/external-id/what-is-b2b.md)
+* [Microsoft Entra B2B in government and national clouds](~/external-id/b2b-government-national-clouds.md)
+* [Federation with SAML/WS-Fed identity providers for guest users](~/external-id/direct-federation.md)
 
 ## Connecting applications
 
@@ -78,7 +78,7 @@ For your application inventory, determine applications that use cloud-ready prot
   * LDAP
   * Basic authentication
 
-Learn more [Microsoft Entra integrations with authentication protocols](../architecture/auth-sync-overview.md).
+Learn more [Microsoft Entra integrations with authentication protocols](~/architecture/auth-sync-overview.md).
 
 #### Application and service discovery tools
 
@@ -115,7 +115,7 @@ For apps that use legacy authentication protocols:
 
 Learn more
 
-* [Microsoft Entra integrations with authentication protocols](../architecture/auth-sync-overview.md)
+* [Microsoft Entra integrations with authentication protocols](~/architecture/auth-sync-overview.md)
 * [What is the Microsoft identity platform?](~/identity-platform/v2-overview.md)
 * [Secure hybrid access: Protect legacy apps with Microsoft Entra ID](~/identity/enterprise-apps/secure-hybrid-access.md)
 

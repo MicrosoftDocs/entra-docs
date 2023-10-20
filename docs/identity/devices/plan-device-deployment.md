@@ -55,7 +55,7 @@ Consider your organizational needs while you determine the strategy for this dep
 
 ### Engage the right stakeholders
 
-When technology projects fail, they typically do because of mismatched expectations on impact, outcomes, and responsibilities. To avoid these pitfalls, [ensure that you're engaging the right stakeholders,](../architecture/deployment-plans.md) and that stakeholder roles in the project are well understood. 
+When technology projects fail, they typically do because of mismatched expectations on impact, outcomes, and responsibilities. To avoid these pitfalls, [ensure that you're engaging the right stakeholders,](~/architecture/deployment-plans.md) and that stakeholder roles in the project are well understood. 
 
 For this plan, add the following stakeholders to your list:
 
@@ -72,7 +72,7 @@ Communication is critical to the success of any new service. Proactively communi
 
 ### Plan a pilot
 
-We recommend that the initial configuration of your integration method is in a test environment, or with a small group of test devices. See [Best practices for a pilot](../architecture/deployment-plans.md).
+We recommend that the initial configuration of your integration method is in a test environment, or with a small group of test devices. See [Best practices for a pilot](~/architecture/deployment-plans.md).
 
 You may want to do a [targeted deployment of Microsoft Entra hybrid join](hybrid-join-control.md) before enabling it across the entire organization.
 

@@ -204,7 +204,7 @@ This scenario is suitable in cases where:
 
 ### Option 6 - Maintain parallel provisioning and SSO for apps in each Microsoft Entra ID
 
-One option is for each Microsoft Entra ID to independently provide SSO and [provision](../app-provisioning/user-provisioning.md) users from their directory into the target app. For example, if Contoso IT are using an app such as Salesforce, they would provide Litware with administrative rights to create users in the same Salesforce subscription.
+One option is for each Microsoft Entra ID to independently provide SSO and [provision](~/identity/app-provisioning/user-provisioning.md) users from their directory into the target app. For example, if Contoso IT are using an app such as Salesforce, they would provide Litware with administrative rights to create users in the same Salesforce subscription.
 
 ![parallel provisioning for apps](media/parallel-identity-options/identity-combined-6.png)
 
@@ -264,7 +264,7 @@ In this scenario, Litware is assumed to have:
 - An identity provider that supports SAML, such as PingFederate or OKTA.
 - A publicly routed DNS domain such as Litware.com and users with email addresses in that domain
 
-In this approach, Contoso would configure a [direct federation](../external-identities/direct-federation.md) relationship from their tenant for that domain to Litware's identity provider, and then regularly read updates to Litware users from their directory to invite the Litware users into Contoso's Microsoft Entra ID. This update can be done with a MIM Graph connector. If Contoso also has Active Directory-based apps that they wish to make available to Litware users, then MIM could also create users in Active Directory that would map to the UPNs of Microsoft Entra users, so that the app proxy could perform KCD on behalf of a representation of a Litware user in Contoso's Active Directory.
+In this approach, Contoso would configure a [direct federation](~/external-id/direct-federation.md) relationship from their tenant for that domain to Litware's identity provider, and then regularly read updates to Litware users from their directory to invite the Litware users into Contoso's Microsoft Entra ID. This update can be done with a MIM Graph connector. If Contoso also has Active Directory-based apps that they wish to make available to Litware users, then MIM could also create users in Active Directory that would map to the UPNs of Microsoft Entra users, so that the app proxy could perform KCD on behalf of a representation of a Litware user in Contoso's Active Directory.
 
 ![Use B2B direct federation](media/parallel-identity-options/identity-combined-9.png)
 
@@ -279,7 +279,7 @@ In this approach, Contoso would configure a [direct federation](../external-iden
 ## Next steps
 
 - [What is Microsoft Entra Connect cloud sync](../hybrid/cloud-sync/what-is-cloud-sync.md)
-- [Setup Inbound provisioning for Microsoft Entra ID](../app-provisioning/plan-cloud-hr-provision.md)
-- [Setup B2B direct federation](../external-identities/direct-federation.md)
+- [Setup Inbound provisioning for Microsoft Entra ID](~/identity/app-provisioning/plan-cloud-hr-provision.md)
+- [Setup B2B direct federation](~/external-id/direct-federation.md)
 - [Multi-tenant user management options](multi-tenant-user-management-introduction.md)
-- [What is application provisioning?](../app-provisioning/user-provisioning.md)
+- [What is application provisioning?](~/identity/app-provisioning/user-provisioning.md)

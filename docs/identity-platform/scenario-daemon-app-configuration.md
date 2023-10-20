@@ -70,7 +70,7 @@ Here's an example of defining the configuration in an [*appsettings.json*](https
 
 ```
 
-You provide a certificate instead of the client secret, or [workload identity federation](../workload-identities/workload-identity-federation.md) credentials.
+You provide a certificate instead of the client secret, or [workload identity federation](~/workload-id/workload-identity-federation.md) credentials.
 
 # [Java](#tab/java)
 

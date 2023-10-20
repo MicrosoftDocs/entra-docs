@@ -32,7 +32,7 @@ To learn about more benefits, see
 * [What is single sign-on in Microsoft Entra ID?](./what-is-single-sign-on.md)
 
 >[!NOTE]
->Classic VPNs remain network orientated, often providing little to no fine-grained access to corporate applications. We encourage a more identity-centric approach to achieve Zero Trust. Learn more: [Five steps for integrating all your apps with Microsoft Entra ID](../fundamentals/five-steps-to-full-application-integration.md).
+>Classic VPNs remain network orientated, often providing little to no fine-grained access to corporate applications. We encourage a more identity-centric approach to achieve Zero Trust. Learn more: [Five steps for integrating all your apps with Microsoft Entra ID](~/fundamentals/five-steps-to-full-application-integration.md).
 
 ## Scenario description
 
@@ -332,5 +332,5 @@ Your SSL-VPN service is published and accessible via SHA, either with its URL or
 ## Resources
 
 - [The end of passwords, go passwordless](https://www.microsoft.com/security/business/identity/passwordless)
-- [Five steps to full application integration with Microsoft Entra ID](../fundamentals/five-steps-to-full-application-integration.md)
+- [Five steps to full application integration with Microsoft Entra ID](~/fundamentals/five-steps-to-full-application-integration.md)
 - [Microsoft Zero Trust framework to enable remote work](https://www.microsoft.com/security/blog/2020/04/02/announcing-microsoft-zero-trust-assessment-tool/)

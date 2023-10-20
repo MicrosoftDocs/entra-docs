@@ -92,8 +92,8 @@ To verify that you’ve successfully restored a Microsoft 365 group, run the `Ge
 
 These articles provide additional information on Microsoft Entra groups.
 
-* [See existing groups](../fundamentals/groups-view-azure-portal.md)
-* [Manage settings of a group](../fundamentals/how-to-manage-groups.md)
-* [Manage members of a group](../fundamentals/how-to-manage-groups.md)
-* [Manage memberships of a group](../fundamentals/how-to-manage-groups.md)
+* [See existing groups](~/fundamentals/groups-view-azure-portal.md)
+* [Manage settings of a group](~/fundamentals/how-to-manage-groups.md)
+* [Manage members of a group](~/fundamentals/how-to-manage-groups.md)
+* [Manage memberships of a group](~/fundamentals/how-to-manage-groups.md)
 * [Manage dynamic rules for users in a group](groups-dynamic-membership.md)

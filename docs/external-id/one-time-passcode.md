@@ -122,7 +122,7 @@ For more information about the different redemption process pathways, see [B2B c
 
 **Will the “No account? Create one!” option for self-service sign-up go away?**
 
-No. It’s easy to get [self-service sign-up in the context of External Identities](self-service-sign-up-overview.md) confused with self-service sign-up for email-verified users, but they're two different features. The unmanaged ("viral") feature that has been deprecated is [self-service sign-up with email-verified users](../enterprise-users/directory-self-service-signup.md), which resulted in guests creating an unmanaged Microsoft Entra account. However, self-service sign-up for External Identities will continue to be available, which results in your guests signing up to your organization with a [variety of identity providers](identity-providers.md).  
+No. It’s easy to get [self-service sign-up in the context of External Identities](self-service-sign-up-overview.md) confused with self-service sign-up for email-verified users, but they're two different features. The unmanaged ("viral") feature that has been deprecated is [self-service sign-up with email-verified users](~/identity/users/directory-self-service-signup.md), which resulted in guests creating an unmanaged Microsoft Entra account. However, self-service sign-up for External Identities will continue to be available, which results in your guests signing up to your organization with a [variety of identity providers](identity-providers.md).  
 
 **What does Microsoft recommend we do with existing Microsoft accounts (MSA)?**
 

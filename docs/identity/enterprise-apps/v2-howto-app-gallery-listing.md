@@ -32,7 +32,7 @@ To publish your application in the gallery, you must first read and agree to spe
 	- For federated applications (SAML/WS-Fed), the application should preferably support [software-as-a-service (SaaS) model](https://azure.microsoft.com/overview/what-is-saas/) but it is not mandatory and it can be an on-premises application as well. Enterprise gallery applications must support multiple user configurations and not any specific user.
 
 	- For OpenID Connect, the application should be multitenant and [Microsoft Entra consent framework](~/identity-platform/application-consent-experience.md) must be correctly implemented. Refer to [this](~/identity-platform/howto-convert-app-to-be-multi-tenant.md) link to convert the application into multitenant.
-- Provisioning is optional yet highly recommended. To learn more about Microsoft Entra SCIM, see [build a SCIM endpoint and configure user provisioning with Microsoft Entra ID](../app-provisioning/use-scim-to-provision-users-and-groups.md).
+- Provisioning is optional yet highly recommended. To learn more about Microsoft Entra SCIM, see [build a SCIM endpoint and configure user provisioning with Microsoft Entra ID](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md).
 
 You can sign up for a free, test Development account. It's free for 90 days and you get all of the premium Microsoft Entra features with it. You can also extend the account if you use it for development work: [Join the Microsoft 365 Developer Program](/office/developer-program/microsoft-365-developer-program).
 
@@ -78,7 +78,7 @@ After your account is added, you can sign in to the Microsoft Application Networ
 
 On the application **Registration** form, select the feature that you want to enable. Select **OpenID Connect & OAuth 2.0**, **SAML 2.0/WS-Fed**, or **Password SSO(UserName & Password)** depending on the feature that your application supports.
 
-If you're implementing a [SCIM](../app-provisioning/use-scim-to-provision-users-and-groups.md) 2.0 endpoint for user provisioning, select **User Provisioning (SCIM 2.0)**. Download the schema to provide in the onboarding request. For more information, see [Export provisioning configuration and roll back to a known good state](../app-provisioning/export-import-provisioning-configuration.md). The schema that you configured is used when testing the non-gallery application to build the gallery application.
+If you're implementing a [SCIM](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md) 2.0 endpoint for user provisioning, select **User Provisioning (SCIM 2.0)**. Download the schema to provide in the onboarding request. For more information, see [Export provisioning configuration and roll back to a known good state](~/identity/app-provisioning/export-import-provisioning-configuration.md). The schema that you configured is used when testing the non-gallery application to build the gallery application.
 
 If you wish to register an MDM application in the Microsoft Entra application gallery, select **Register an MDM app**.
 

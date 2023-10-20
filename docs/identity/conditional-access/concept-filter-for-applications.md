@@ -43,7 +43,7 @@ Custom security attributes are security sensitive and can only be managed by del
 
 ## Create custom security attributes
 
-Follow the instructions in the article, [Add or deactivate custom security attributes in Microsoft Entra ID (Preview)](../fundamentals/custom-security-attributes-add.md) to add the following **Attribute set** and **New attributes**. 
+Follow the instructions in the article, [Add or deactivate custom security attributes in Microsoft Entra ID (Preview)](~/fundamentals/custom-security-attributes-add.md) to add the following **Attribute set** and **New attributes**. 
 
 - Create an **Attribute set** named *ConditionalAccessTest*.
 - Create **New attributes** named *policyRequirement* that **Allow multiple values to be assigned** and **Only allow predefined values to be assigned**. We add the following predefined values:

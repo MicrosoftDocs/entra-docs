@@ -170,7 +170,7 @@ Beginning with version 1.1.819.0, Microsoft Entra Connect provides you with a wi
 
 Sometimes, on-premises AD users UPNs are different from your Microsoft Entra UPNs. In these cases, Windows 10 or newer Microsoft Entra hybrid join provides limited support for on-premises AD UPNs based on the [authentication method](../hybrid/connect/choose-ad-authn.md), domain type, and Windows version. There are two types of on-premises AD UPNs that can exist in your environment:
 
-- Routable users UPN: A routable UPN has a valid verified domain that is registered with a domain registrar. For example, if contoso.com is the primary domain in Microsoft Entra ID, contoso.org is the primary domain in on-premises AD owned by Contoso and [verified in Microsoft Entra ID](../fundamentals/add-custom-domain.md).
+- Routable users UPN: A routable UPN has a valid verified domain that is registered with a domain registrar. For example, if contoso.com is the primary domain in Microsoft Entra ID, contoso.org is the primary domain in on-premises AD owned by Contoso and [verified in Microsoft Entra ID](~/fundamentals/add-custom-domain.md).
 - Non-routable users UPN: A non-routable UPN doesn't have a verified domain and is applicable only within your organization's private network. For example, if contoso.com is the primary domain in Microsoft Entra ID and contoso.local is the primary domain in on-premises AD but isn't a verifiable domain in the internet and only used within Contoso's network.
 
 > [!NOTE]

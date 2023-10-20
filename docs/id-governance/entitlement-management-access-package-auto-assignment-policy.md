@@ -22,7 +22,7 @@ ms.collection: M365-identity-device-management
 ---
 # Configure an automatic assignment policy for an access package in entitlement management
 
-You can use rules to determine access package assignment based on user properties in Microsoft Entra ID, part of Microsoft Entra.  In Entitlement Management, an access package can have multiple policies, and each policy establishes how users get an assignment to the access package, and for how long.  As an administrator, you can establish a policy for automatic assignments by supplying a membership rule, that Entitlement Management will follow to create and remove assignments automatically.  Similar to a [dynamic group](../enterprise-users/groups-create-rule.md), when an automatic assignment policy is created, user attributes are evaluated for matches with the policy's membership rule. When an attribute changes for a user, these automatic assignment policy rules in the access packages are processed for membership changes. Assignments to users are then added or removed depending on whether they meet the rule criteria.
+You can use rules to determine access package assignment based on user properties in Microsoft Entra ID, part of Microsoft Entra.  In Entitlement Management, an access package can have multiple policies, and each policy establishes how users get an assignment to the access package, and for how long.  As an administrator, you can establish a policy for automatic assignments by supplying a membership rule, that Entitlement Management will follow to create and remove assignments automatically.  Similar to a [dynamic group](~/identity/users/groups-create-rule.md), when an automatic assignment policy is created, user attributes are evaluated for matches with the policy's membership rule. When an attribute changes for a user, these automatic assignment policy rules in the access packages are processed for membership changes. Assignments to users are then added or removed depending on whether they meet the rule criteria.
 
 You can have at most one automatic assignment policy in an access package, and the policy can only be created by an administrator.  (Catalog owners and access package managers cannot create automatic assignment policies.)
 
@@ -30,7 +30,7 @@ This article describes how to create an access package automatic assignment poli
 
 ## Before you begin
 
-You'll need to have attributes populated on the users who will be in scope for being assigned access.  The attributes you can use in the rules criteria of an access package assignment policy are those attributes listed in [supported properties](../enterprise-users/groups-dynamic-membership.md#supported-properties), along with [extension attributes and custom extension properties](../enterprise-users/groups-dynamic-membership.md#extension-properties-and-custom-extension-properties).  These attributes can be brought into Microsoft Entra ID from [Graph](/graph/api/resources/user), an HR system such as [SuccessFactors](../app-provisioning/sap-successfactors-integration-reference.md), [Microsoft Entra Connect cloud sync](../hybrid/cloud-sync/how-to-attribute-mapping.md) or [Microsoft Entra Connect Sync](../hybrid/connect/how-to-connect-sync-feature-directory-extensions.md).  The rules can include up to 5000 users per policy.
+You'll need to have attributes populated on the users who will be in scope for being assigned access.  The attributes you can use in the rules criteria of an access package assignment policy are those attributes listed in [supported properties](~/identity/users/groups-dynamic-membership.md#supported-properties), along with [extension attributes and custom extension properties](~/identity/users/groups-dynamic-membership.md#extension-properties-and-custom-extension-properties).  These attributes can be brought into Microsoft Entra ID from [Graph](/graph/api/resources/user), an HR system such as [SuccessFactors](~/identity/app-provisioning/sap-successfactors-integration-reference.md), [Microsoft Entra Connect cloud sync](../hybrid/cloud-sync/how-to-attribute-mapping.md) or [Microsoft Entra Connect Sync](../hybrid/connect/how-to-connect-sync-feature-directory-extensions.md).  The rules can include up to 5000 users per policy.
 
 ## License requirements
 
@@ -54,10 +54,10 @@ To create a policy for an access package, you need to start from the access pack
 
 1. In the first tab, you'll specify the rule. Select **Edit**.
 
-1. Provide a dynamic membership rule, using the [membership rule builder](../enterprise-users/groups-dynamic-membership.md) or by clicking **Edit** on the rule syntax text box.
+1. Provide a dynamic membership rule, using the [membership rule builder](~/identity/users/groups-dynamic-membership.md) or by clicking **Edit** on the rule syntax text box.
 
    > [!NOTE]
-   > The rule builder might not be able to display some rules constructed in the text box, and validating a rule currently requires the you to be in the Global administrator role. For more information, see [rule builder in the Microsoft Entra admin center](../enterprise-users/groups-create-rule.md#rule-builder-in-the-azure-portal).
+   > The rule builder might not be able to display some rules constructed in the text box, and validating a rule currently requires the you to be in the Global administrator role. For more information, see [rule builder in the Microsoft Entra admin center](~/identity/users/groups-create-rule.md#rule-builder-in-the-azure-portal).
 
     ![Screenshot of an access package automatic assignment policy rule configuration.](./media/entitlement-management-access-package-auto-assignment-policy/auto-assignment-rule-configuration.png)
 

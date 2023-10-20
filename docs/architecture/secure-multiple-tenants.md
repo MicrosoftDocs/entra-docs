@@ -60,19 +60,19 @@ The sandbox tenant is brought online to prevent those applications under develop
 
 Developers require access to the sandbox tenant during the development lifecycle, ideally with self-service access requiring additional permissions that are restricted in the production environment. Examples of these additional permissions might include creating, deleting, and updating user accounts, registering applications, provisioning and deprovisioning Azure resources, and changes to policies or overall configuration of the environment.
 
-In this example, Contoso uses [Microsoft Entra B2B Collaboration](../external-identities/what-is-b2b.md) to provision users from the corporate tenant to enable users that can manage and access resources in applications in the sandbox tenant without managing multiple credentials. This capability is primarily oriented to cross-organization collaboration scenarios. However, enterprises with multiple tenants like Contoso can use this capability to avoid additional credential lifecycle administration and user experience complexities.
+In this example, Contoso uses [Microsoft Entra B2B Collaboration](~/external-id/what-is-b2b.md) to provision users from the corporate tenant to enable users that can manage and access resources in applications in the sandbox tenant without managing multiple credentials. This capability is primarily oriented to cross-organization collaboration scenarios. However, enterprises with multiple tenants like Contoso can use this capability to avoid additional credential lifecycle administration and user experience complexities.
 
-Use [External Identities cross-tenant access](../external-identities/cross-tenant-access-settings-b2b-collaboration.md) settings to manage how you collaborate with other Microsoft Entra organizations through B2B collaboration. These settings determine both the level of inbound access users in external Microsoft Entra organizations have to your resources, and the level of outbound access your users have to external organizations. They also let you trust multifactor authentication (MFA) and device claims ([compliant claims and Microsoft Entra hybrid joined claims](../conditional-access/howto-conditional-access-policy-compliant-device.md)) from other Microsoft Entra organizations. For details and planning considerations, see [Cross-tenant access in Microsoft Entra External ID](../external-identities/cross-tenant-access-overview.md).
+Use [External Identities cross-tenant access](~/external-id/cross-tenant-access-settings-b2b-collaboration.md) settings to manage how you collaborate with other Microsoft Entra organizations through B2B collaboration. These settings determine both the level of inbound access users in external Microsoft Entra organizations have to your resources, and the level of outbound access your users have to external organizations. They also let you trust multifactor authentication (MFA) and device claims ([compliant claims and Microsoft Entra hybrid joined claims](../conditional-access/howto-conditional-access-policy-compliant-device.md)) from other Microsoft Entra organizations. For details and planning considerations, see [Cross-tenant access in Microsoft Entra External ID](~/external-id/cross-tenant-access-overview.md).
 
 Another approach could have been to utilize the capabilities of Microsoft Entra Connect to sync the same on-premises Microsoft Entra credentials to multiple tenants, keeping the same password but differentiating on the users UPN domain.
 
 ## Multi-tenant resource isolation
 
-With a new tenant, you have a separate set of administrators. Organizations can choose to use corporate identities through [Microsoft Entra B2B collaboration](../external-identities/what-is-b2b.md). Similarly, organizations can implement [Azure Lighthouse](/azure/lighthouse/overview) for cross-tenant management of Azure resources so that non-production Azure subscriptions are managed by identities in the production counterpart. Azure Lighthouse can't be used to manage services outside of Azure, such as Microsoft Intune. For Managed Service Providers (MSPs), [Microsoft 365 Lighthouse](/microsoft-365/lighthouse/m365-lighthouse-overview?view=o365-worldwide&preserve-view=true) is an admin portal that helps secure and manage devices, data, and users at scale for small- and medium-sized business (SMB) customers who are using Microsoft 365 Business Premium, Microsoft 365 E3, or Windows 365 Business.
+With a new tenant, you have a separate set of administrators. Organizations can choose to use corporate identities through [Microsoft Entra B2B collaboration](~/external-id/what-is-b2b.md). Similarly, organizations can implement [Azure Lighthouse](/azure/lighthouse/overview) for cross-tenant management of Azure resources so that non-production Azure subscriptions are managed by identities in the production counterpart. Azure Lighthouse can't be used to manage services outside of Azure, such as Microsoft Intune. For Managed Service Providers (MSPs), [Microsoft 365 Lighthouse](/microsoft-365/lighthouse/m365-lighthouse-overview?view=o365-worldwide&preserve-view=true) is an admin portal that helps secure and manage devices, data, and users at scale for small- and medium-sized business (SMB) customers who are using Microsoft 365 Business Premium, Microsoft 365 E3, or Windows 365 Business.
 
 This will allow users to continue to use their corporate credentials, while achieving the benefits of separation.
 
-Microsoft Entra B2B collaboration in sandbox tenants should be configured to allow only identities from the corporate environment to be onboarded using Azure B2B [allow/deny lists](../external-identities/allow-deny-list.md). For tenants that you do want to allow for B2B consider using External Identities cross-tenant access settings for cross tenant multifactor authentication\Device trust.
+Microsoft Entra B2B collaboration in sandbox tenants should be configured to allow only identities from the corporate environment to be onboarded using Azure B2B [allow/deny lists](~/external-id/allow-deny-list.md). For tenants that you do want to allow for B2B consider using External Identities cross-tenant access settings for cross tenant multifactor authentication\Device trust.
 
 >[!IMPORTANT]
 >Multi-tenant architectures with external identity access enabled provide only resource isolation, but don't enable identity isolation. Resource isolation using Microsoft Entra B2B collaboration and Azure Lighthouse don't mitigate risks related to identities.
@@ -101,7 +101,7 @@ The tenant you use to isolate resources may contain the same types of objects, A
 
 These identities might be provisioned for:
 
-* Employees who come with their corporate account through [Microsoft Entra B2B collaboration](../external-identities/what-is-b2b.md).
+* Employees who come with their corporate account through [Microsoft Entra B2B collaboration](~/external-id/what-is-b2b.md).
 
 * Employees who need local accounts for administration, emergency administrative access, or other technical reasons.
 
@@ -127,7 +127,7 @@ Microsoft Online Services:
 
 * Administrators of non-production test environments shouldn't be provisioning Microsoft Online Services unless those services are specifically being tested. This avoids inappropriate use of Microsoft services, for example setting up production SharePoint sites in a test environment.
 
-* Similarly, provisioning of Microsoft Online services that can be initiated by end users (also known as ad-hoc subscriptions) should be locked down. For more information, see [What is self-service sign-up for Microsoft Entra ID?](../enterprise-users/directory-self-service-signup.md).
+* Similarly, provisioning of Microsoft Online services that can be initiated by end users (also known as ad-hoc subscriptions) should be locked down. For more information, see [What is self-service sign-up for Microsoft Entra ID?](~/identity/users/directory-self-service-signup.md).
 
 * Generally, all non-essential license features should be disabled for the tenant using group-based licensing. This should be done by the same team that manages licenses in the production tenant, to avoid misconfiguration by developers who might not know the effect of enabling licensed features.
 

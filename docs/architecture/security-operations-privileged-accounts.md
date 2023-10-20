@@ -60,7 +60,7 @@ From the Azure portal, you can view the Microsoft Entra audit logs and download 
   
   * **Risk detections**. Contains information about other risks triggered when a risk is detected and other pertinent information such as sign-in location and any details from Microsoft Defender for Cloud Apps.
 
-* **[Securing workload identities with Identity Protection Preview](..//identity-protection/concept-workload-identity-risk.md)**. Use to detect risk on workload identities across sign-in behavior and offline indicators of compromise.
+* **[Securing workload identities with Identity Protection Preview](../identity-protection/concept-workload-identity-risk.md)**. Use to detect risk on workload identities across sign-in behavior and offline indicators of compromise.
 
 Although we discourage the practice, privileged accounts can have standing administration rights. If you choose to use standing privileges, and the account is compromised, it can have a strongly negative effect. We recommend you prioritize monitoring privileged accounts and include the accounts in your Privileged Identity Management (PIM) configuration. For more information on PIM, see [Start using Privileged Identity Management](../privileged-identity-management/pim-getting-started.md). Also, we recommend you validate that admin accounts:
 

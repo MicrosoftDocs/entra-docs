@@ -45,13 +45,13 @@ We recommend you change user UPN when their primary email address changes. Durin
 
 ### UPNs in Active Directory
 
-In Active Directory, the default UPN suffix is the domain DNS name where you created the user account. In most cases, you register this domain name as the enterprise domain. If you create the user account in the contoso.com domain, the default UPN is: username@contoso.com. However, you can add more UPN suffixes by using Active Directory domains and trusts. Learn more: [Add your custom domain name using the [Microsoft Entra admin center](https://entra.microsoft.com)](../../fundamentals/add-custom-domain.md).
+In Active Directory, the default UPN suffix is the domain DNS name where you created the user account. In most cases, you register this domain name as the enterprise domain. If you create the user account in the contoso.com domain, the default UPN is: username@contoso.com. However, you can add more UPN suffixes by using Active Directory domains and trusts. Learn more: [Add your custom domain name using the [Microsoft Entra admin center](https://entra.microsoft.com)](~/fundamentals/add-custom-domain.md).
 
 For example, if you add labs.contoso.com and change the user UPNs and email to reflect that, the result is: username@labs.contoso.com.
 
    >[!IMPORTANT]
    > If you change the suffix in Active Directory, add and verify a matching custom domain name in Microsoft Entra ID. 
-   > [Add your custom domain name using the Microsoft Entra admin center](../../fundamentals/add-custom-domain.md)
+   > [Add your custom domain name using the Microsoft Entra admin center](~/fundamentals/add-custom-domain.md)
 
    ![Screenshot of the Add customer domain option, under Custom domain names.](./media/howto-troubleshoot-upn-changes/custom-domains.png)
 
@@ -76,7 +76,7 @@ If the userPrincipalName attribute value doesn't correspond to a verified domain
 
 Use our best practices to test bulk UPN changes. Have a tested roll-back plan for reverting UPNs if issues can't be resolved. After your pilot is running, target small user sets, with organizational roles, and sets of apps or devices. This process helps you understand the user experience. Include this information in your communications to stakeholders and users.
 
-Learn more: [Microsoft Entra deployment plans](../../architecture/deployment-plans.md)
+Learn more: [Microsoft Entra deployment plans](~/architecture/deployment-plans.md)
 
 Create a procedure to change UPNs for individual users. We recommend a procedure that includes documentation about known issues and workarounds.
 
@@ -89,7 +89,7 @@ Software as a service (SaaS) and line of business (LoB) applications often rely 
 Learn more:
 
 * [What is SaaS?](https://azure.microsoft.com/overview/what-is-saas/)
-* [What is app provisioning in Microsoft Entra ID?](../../app-provisioning/user-provisioning.md)
+* [What is app provisioning in Microsoft Entra ID?](~/identity/app-provisioning/user-provisioning.md)
 
 ### Known issues
 
@@ -101,8 +101,8 @@ Use automated app provisioning in Microsoft Entra ID to create, maintain, and re
 
 Learn more:
 
-* [What is app provisioning in Microsoft Entra ID?](../../app-provisioning/user-provisioning.md)
-* [Tutorial: Develop and plan provisioning for a SCIM endpoint in Microsoft Entra ID](../../app-provisioning/use-scim-to-provision-users-and-groups.md)
+* [What is app provisioning in Microsoft Entra ID?](~/identity/app-provisioning/user-provisioning.md)
+* [Tutorial: Develop and plan provisioning for a SCIM endpoint in Microsoft Entra ID](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md)
 
 ## Managed devices known issues and workarounds
 

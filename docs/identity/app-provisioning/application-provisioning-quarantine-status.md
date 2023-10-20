@@ -86,7 +86,7 @@ If any of the retries above gets a successful response, the job is automatically
 
 First, resolve the issue that caused the application to be placed in quarantine.
 
-- Check the application's provisioning settings to make sure you've [entered valid Admin Credentials](../app-provisioning/configure-automatic-user-provisioning-portal.md#configuring-automatic-user-account-provisioning). Microsoft Entra ID must establish a trust with the target application. Ensure that you have entered valid credentials and your account has the necessary permissions.
+- Check the application's provisioning settings to make sure you've [entered valid Admin Credentials](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md#configuring-automatic-user-account-provisioning). Microsoft Entra ID must establish a trust with the target application. Ensure that you have entered valid credentials and your account has the necessary permissions.
 
 - Review the [provisioning logs](../reports-monitoring/concept-provisioning-logs.md) to further investigate what errors are causing quarantine and address the error. Go to **Microsoft Entra ID** &gt; **Enterprise Apps** &gt; **Provisioning logs (preview)** in the **Activity** section.
 

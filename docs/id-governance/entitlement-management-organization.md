@@ -48,13 +48,13 @@ For example, suppose you work at Woodgrove Bank and you want to collaborate with
 
 In this case, you can configure two connected organizations, then one access package with one policy.
 
-1. Ensure that you have [email one-time passcode (OTP) authentication](../external-identities/one-time-passcode.md) turned on, so that  users from those domains that aren't yet part of Microsoft Entra directories who'll authenticate using email one-time-passcode when requesting access or later accessing your resources.  In addition, you may need to [configure your Microsoft Entra B2B external collaboration settings](entitlement-management-external-users.md?#configure-your-azure-ad-b2b-external-collaboration-settings) to allow external users access.
+1. Ensure that you have [email one-time passcode (OTP) authentication](~/external-id/one-time-passcode.md) turned on, so that  users from those domains that aren't yet part of Microsoft Entra directories who'll authenticate using email one-time-passcode when requesting access or later accessing your resources.  In addition, you may need to [configure your Microsoft Entra B2B external collaboration settings](entitlement-management-external-users.md?#configure-your-azure-ad-b2b-external-collaboration-settings) to allow external users access.
 1. Create a connected organization for Contoso. When you specify the domain *contoso.com*, entitlement management will recognize that there is no existing Microsoft Entra tenant associated with that domain, and that users from that connected organization will be recognized if they  authenticate with an email one-time-passcode with a *contoso.com* email address domain.
 1. Create another connected organization for Graphic Design Institute.  When you specify the domain *graphicdesigninstitute.com*, entitlement management will recognize that there is a tenant associated with that domain.
 1. In a catalog that allows external users to request, create an access package.
 1. In that access package, create an access package assignment policy for **users not yet in your directory**. In that policy, select the option **Specific connected organizations** and specify the two connected organizations. This will allow users from each organization, with an identity source that matches one of the connected organizations, to request the access package.
 1. When external users with a user principal name that has a domain of *contoso.com* request the access package, they will authenticate using email. This email domain will match the Contoso-connected organization and the user will be allowed to request the package. After they request, [how access works for external users](entitlement-management-external-users.md?#how-access-works-for-external-users) describes how the B2B user is then invited and access is assigned for the external user.
-1. In addition, external users that are using an organizational account from the Graphic Design Institute tenant would match the Graphic Design Institute-connected organization and be allowed to request the access package. And, because Graphic Design Institute uses Microsoft Entra ID, any users with a principal name that matches another [verified domain](../fundamentals/add-custom-domain.md#verify-your-custom-domain-name) that's added to the Graphic Design Institute tenant, such as *graphicdesigninstitute.example*, would also be able to request access packages by using the same policy.
+1. In addition, external users that are using an organizational account from the Graphic Design Institute tenant would match the Graphic Design Institute-connected organization and be allowed to request the access package. And, because Graphic Design Institute uses Microsoft Entra ID, any users with a principal name that matches another [verified domain](~/fundamentals/add-custom-domain.md#verify-your-custom-domain-name) that's added to the Graphic Design Institute tenant, such as *graphicdesigninstitute.example*, would also be able to request access packages by using the same policy.
 
 [ ![Diagram of connected organizations in example and their relationships with an assignment policy and with a tenant.](./media/entitlement-management-organization/connected-organization-example.png) ](./media/entitlement-management-organization/connected-organization-example-expanded.png#lightbox)
 
@@ -62,8 +62,8 @@ How users from the Microsoft Entra directory or domain authenticate depends on t
 
 - Microsoft Entra ID, in the same cloud
 - Microsoft Entra ID, in another cloud
-- [Direct federation](../external-identities/direct-federation.md)
-- [One-time passcode](../external-identities/one-time-passcode.md) (domain)
+- [Direct federation](~/external-id/direct-federation.md)
+- [One-time passcode](~/external-id/one-time-passcode.md) (domain)
 - Microsoft Account
 
 For a demonstration of how to add a connected organization, watch the following video:
@@ -113,7 +113,7 @@ To add an external Microsoft Entra directory or domain as a connected organizati
     ![The "Select directories + domains" pane](./media/entitlement-management-organization/organization-select-directories-domains.png)
 
     > [!NOTE]
-    > Access from some domains could be blocked by the Microsoft Entra business to business (B2B) allow or deny list. In addition, users who have an email address that has the same domain as a connected organization configured for Microsoft Entra authentication, but who do not authenticate to that Microsoft Entra directory, will not be recognized as part of that connected organization. For more information, see [Allow or block invitations to B2B users from specific organizations](../external-identities/allow-deny-list.md).  
+    > Access from some domains could be blocked by the Microsoft Entra business to business (B2B) allow or deny list. In addition, users who have an email address that has the same domain as a connected organization configured for Microsoft Entra authentication, but who do not authenticate to that Microsoft Entra directory, will not be recognized as part of that connected organization. For more information, see [Allow or block invitations to B2B users from specific organizations](~/external-id/allow-deny-list.md).  
 
 1. Select **Add** to add the Microsoft Entra directory or domain. **You can add multiple Microsoft Entra directories and domains**.
 
@@ -125,7 +125,7 @@ To add an external Microsoft Entra directory or domain as a connected organizati
 
 1. Select the **Sponsors** tab, and then add optional sponsors for this connected organization.
 
-    Sponsors are internal or external users already in your directory that are the point of contact for the relationship with this connected organization. Internal sponsors are member users in your directory. External sponsors are guest users from the connected organization that were previously invited and are already in your directory. Sponsors can be utilized as approvers when users in this connected organization request access to this access package. For information about how to invite a guest user to your directory, see [Add Microsoft Entra B2B collaboration users](../external-identities/add-users-administrator.md).
+    Sponsors are internal or external users already in your directory that are the point of contact for the relationship with this connected organization. Internal sponsors are member users in your directory. External sponsors are guest users from the connected organization that were previously invited and are already in your directory. Sponsors can be utilized as approvers when users in this connected organization request access to this access package. For information about how to invite a guest user to your directory, see [Add Microsoft Entra B2B collaboration users](~/external-id/add-users-administrator.md).
 
     When you select **Add/Remove**, a pane opens in which you can choose internal or external sponsors. The pane displays an unfiltered list of users and groups in your directory.
 

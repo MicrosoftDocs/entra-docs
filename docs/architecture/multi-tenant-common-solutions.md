@@ -21,7 +21,7 @@ This article is the fourth in a series of articles that provide guidance for con
 - [Multi-tenant user management scenarios](multi-tenant-user-management-scenarios.md) describes three scenarios for which you can use multi-tenant user management features: end user-initiated, scripted, and automated.
 - [Common considerations for multi-tenant user management](multi-tenant-common-considerations.md) provides guidance for these considerations: cross-tenant synchronization, directory object, Microsoft Entra Conditional Access, additional access control, and Office 365. 
 
-The guidance helps to you achieve a consistent state of user lifecycle management. Lifecycle management includes provisioning, managing, and deprovisioning users across tenants using the available Azure tools that include [Microsoft Entra B2B collaboration](../external-identities/what-is-b2b.md) (B2B) and [cross-tenant synchronization](../multi-tenant-organizations/cross-tenant-synchronization-overview.md).
+The guidance helps to you achieve a consistent state of user lifecycle management. Lifecycle management includes provisioning, managing, and deprovisioning users across tenants using the available Azure tools that include [Microsoft Entra B2B collaboration](~/external-id/what-is-b2b.md) (B2B) and [cross-tenant synchronization](../multi-tenant-organizations/cross-tenant-synchronization-overview.md).
 
 Microsoft recommends a single tenant wherever possible. If single tenancy doesn't work for your scenario, reference the following solutions that Microsoft customers have successfully implemented for these challenges:
 
@@ -100,14 +100,14 @@ Company A provides SSO to on-premises apps for its own internal users using Azur
 
 Admins in tenant A perform the following steps to enable their external users to access the same on-premises applications.
 
-1. [Configure access to SAML apps](../external-identities/hybrid-cloud-to-on-premises.md#access-to-saml-apps).
-1. [Configure access to other applications](../external-identities/hybrid-cloud-to-on-premises.md#access-to-iwa-and-kcd-apps).
-1. Create on-premises users through [MIM](../external-identities/hybrid-cloud-to-on-premises.md#create-b2b-guest-user-objects-through-mim) or [PowerShell](https://www.microsoft.com/download/details.aspx?id=51495).
+1. [Configure access to SAML apps](~/external-id/hybrid-cloud-to-on-premises.md#access-to-saml-apps).
+1. [Configure access to other applications](~/external-id/hybrid-cloud-to-on-premises.md#access-to-iwa-and-kcd-apps).
+1. Create on-premises users through [MIM](~/external-id/hybrid-cloud-to-on-premises.md#create-b2b-guest-user-objects-through-mim) or [PowerShell](https://www.microsoft.com/download/details.aspx?id=51495).
 
 The following articles provide additional information about B2B collaboration.
 
-- [Grant B2B users in Microsoft Entra ID access to your on-premises resources](../external-identities/hybrid-cloud-to-on-premises.md) describes how you can provide B2B users access to on-premises apps.
-- [Microsoft Entra B2B collaboration for hybrid organizations](../external-identities/hybrid-organizations.md) describes how you can give your external partners access to apps and resources in your organization.
+- [Grant B2B users in Microsoft Entra ID access to your on-premises resources](~/external-id/hybrid-cloud-to-on-premises.md) describes how you can provide B2B users access to on-premises apps.
+- [Microsoft Entra B2B collaboration for hybrid organizations](~/external-id/hybrid-organizations.md) describes how you can give your external partners access to apps and resources in your organization.
 
 ## Next steps
 

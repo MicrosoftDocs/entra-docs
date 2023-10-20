@@ -45,7 +45,7 @@ If you have any DAP relationships in your tenant, you will see them in the list 
 
 ## Next steps
 
-If you're a beginning Microsoft Entra administrator, get the basics down in [Microsoft Entra Fundamentals](../fundamentals/index.yml).
+If you're a beginning Microsoft Entra administrator, get the basics down in [Microsoft Entra Fundamentals](~/fundamentals/index.yml).
 
 - [Delegated administration privileges (DAP) FAQ](/partner-center/dap-faq)
 - [Granular delegated admin privileges (GDAP) introduction](/partner-center/gdap-introduction)

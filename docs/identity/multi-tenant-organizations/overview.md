@@ -51,7 +51,7 @@ As your organization evolves, your IT team must adapt to meet the changing needs
 
 ## B2B direct connect
 
-To enable users across tenants to collaborate in [Teams Connect shared channels](/microsoftteams/platform/concepts/build-and-test/shared-channels), you can use [Microsoft Entra B2B direct connect](../external-identities/b2b-direct-connect-overview.md). B2B direct connect is a feature of External Identities that lets you set up a mutual trust relationship with another Microsoft Entra organization for seamless collaboration in Teams. When the trust is established, the B2B direct connect user has single sign-on access using credentials from their home tenant.
+To enable users across tenants to collaborate in [Teams Connect shared channels](/microsoftteams/platform/concepts/build-and-test/shared-channels), you can use [Microsoft Entra B2B direct connect](~/external-id/b2b-direct-connect-overview.md). B2B direct connect is a feature of External Identities that lets you set up a mutual trust relationship with another Microsoft Entra organization for seamless collaboration in Teams. When the trust is established, the B2B direct connect user has single sign-on access using credentials from their home tenant.
 
 Here's the primary constraint with using B2B direct connect across multiple tenants:
 
@@ -59,22 +59,22 @@ Here's the primary constraint with using B2B direct connect across multiple tena
 
 :::image type="content" source="./media/overview/multi-tenant-b2b-direct-connect.png" alt-text="Diagram that shows using B2B direct connect across tenants." lightbox="./media/overview/multi-tenant-b2b-direct-connect.png":::
 
-For more information, see [B2B direct connect overview](../external-identities/b2b-direct-connect-overview.md).
+For more information, see [B2B direct connect overview](~/external-id/b2b-direct-connect-overview.md).
 
 ## B2B collaboration
 
-To enable users across tenants to collaborate, you can use [Microsoft Entra B2B collaboration](../external-identities/what-is-b2b.md). B2B collaboration is a feature within External Identities that lets you invite guest users to collaborate with your organization. Once the external user has redeemed their invitation or completed sign-up, they're represented in your tenant as a user object. With B2B collaboration, you can securely share your company's applications and services with external users, while maintaining control over your own corporate data.
+To enable users across tenants to collaborate, you can use [Microsoft Entra B2B collaboration](~/external-id/what-is-b2b.md). B2B collaboration is a feature within External Identities that lets you invite guest users to collaborate with your organization. Once the external user has redeemed their invitation or completed sign-up, they're represented in your tenant as a user object. With B2B collaboration, you can securely share your company's applications and services with external users, while maintaining control over your own corporate data.
 
 Here are the primary constraints with using B2B collaboration across multiple tenants:
 
-- Administrators must invite users using the B2B invitation process or build an onboarding experience using the [B2B collaboration invitation manager](../external-identities/external-identities-overview.md#azure-ad-microsoft-graph-api-for-b2b-collaboration).
+- Administrators must invite users using the B2B invitation process or build an onboarding experience using the [B2B collaboration invitation manager](~/external-id/external-identities-overview.md#azure-ad-microsoft-graph-api-for-b2b-collaboration).
 - Administrators might have to synchronize users using custom scripts.
 - Depending on automatic redemption settings, users might need to accept a consent prompt and follow a redemption process in each tenant.
 - By default, users are of type external guest, which has different permissions than external member and might not be the desired user experience.
 
 :::image type="content" source="./media/overview/multi-tenant-b2b-collaboration.png" alt-text="Diagram that shows using B2B collaboration across tenants." lightbox="./media/overview/multi-tenant-b2b-collaboration.png":::
 
-For more information, see [B2B collaboration overview](../external-identities/what-is-b2b.md).
+For more information, see [B2B collaboration overview](~/external-id/what-is-b2b.md).
 
 ## Cross-tenant synchronization
 
@@ -117,13 +117,13 @@ For more information, see [What is a multi-tenant organization in Microsoft Entr
 
 Depending on the needs of your organization, you can use any combination of B2B direct connect, B2B collaboration, cross-tenant synchronization, and multi-tenant organization capabilities. B2B direct connect and B2B collaboration are independent capabilities, while cross-tenant synchronization and multi-tenant organization capabilities are independent of each other, though both rely on underlying B2B collaboration.
 
-The following table compares the capabilities of each feature. For more information about different external identity scenarios, see [Comparing External Identities feature sets](../external-identities/external-identities-overview.md#comparing-external-identities-feature-sets).
+The following table compares the capabilities of each feature. For more information about different external identity scenarios, see [Comparing External Identities feature sets](~/external-id/external-identities-overview.md#comparing-external-identities-feature-sets).
 
 |  | B2B direct connect<br/>(Org-to-org external or internal) | B2B collaboration<br/>(Org-to-org external or internal) | Cross-tenant synchronization<br/>(Org internal) | Multi-tenant organization<br/>(Org internal) |
 | --- | --- | --- | --- | --- |
 | **Purpose** | Users can access Teams Connect shared channels hosted in external tenants. | Users can access apps/resources hosted in external tenants, usually with limited guest privileges. Depending on automatic redemption settings, users might need to accept a consent prompt in each tenant. | Users can seamlessly access apps/resources across the same organization, even if they're hosted in different tenants. | Users can more seamlessly collaborate across a multi-tenant organization in new Teams and people search. |
 | **Value** | Enables external collaboration within Teams Connect shared channels only. More convenient for administrators because they don't have to manage B2B users. | Enables external collaboration. More control and monitoring for administrators by managing the B2B collaboration users. Administrators can limit the access that these external users have to their apps/resources. | Enables collaboration across organizational tenants. Administrators don't have to manually invite and synchronize users between tenants to ensure continuous access to apps/resources within the organization. | Enables collaboration across organizational tenants. Administrators continue to have full configuration ability via cross-tenant access settings. Optional cross-tenant access templates allow pre-configuration of cross-tenant access settings. |
-| **Primary administrator workflow** | Configure cross-tenant access to provide external users inbound access to tenant the credentials for their home tenant. | Add external users to resource tenant by using the B2B invitation process or build your own onboarding experience using the [B2B collaboration invitation manager](../external-identities/external-identities-overview.md#azure-ad-microsoft-graph-api-for-b2b-collaboration). | Configure the cross-tenant synchronization engine to synchronize users between multiple tenants as B2B collaboration users. | Create a multi-tenant organization, add (invite) tenants, join a multi-tenant organization. Leverage existing B2B collaboration users or use cross-tenant synchronization to provision B2B collaboration users. |
+| **Primary administrator workflow** | Configure cross-tenant access to provide external users inbound access to tenant the credentials for their home tenant. | Add external users to resource tenant by using the B2B invitation process or build your own onboarding experience using the [B2B collaboration invitation manager](~/external-id/external-identities-overview.md#azure-ad-microsoft-graph-api-for-b2b-collaboration). | Configure the cross-tenant synchronization engine to synchronize users between multiple tenants as B2B collaboration users. | Create a multi-tenant organization, add (invite) tenants, join a multi-tenant organization. Leverage existing B2B collaboration users or use cross-tenant synchronization to provision B2B collaboration users. |
 | **Trust level** | Mid trust. B2B direct connect users are less easy to track, mandating a certain level of trust with the external organization. | Low to mid trust. User objects can be tracked easily and managed with granular controls. | High trust. All tenants are part of the same organization, and users are typically granted member access to all apps/resources. | High trust. All tenants are part of the same organization, and users are typically granted member access to all apps/resources. |
 | **Effect on users** | Users access the resource tenant using the credentials for their home tenant. User objects aren't created in the resource tenant. | External users are added to a tenant as B2B collaboration users. | Within the same organization, users are synchronized from their home tenant to the resource tenant as B2B collaboration users. | Within the same multi-tenant organization, B2B collaboration users, particularly member users, benefit from enhanced, seamless collaboration across Microsoft 365. |
 | **User type** | B2B direct connect user<br/>- N/A | B2B collaboration user<br/>- External member<br/>- External guest (default) | B2B collaboration user<br/>- External member (default)<br/>- External guest | B2B collaboration user<br/>- External member (default)<br/>- External guest |

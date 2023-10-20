@@ -17,7 +17,7 @@ ms.custom: it-pro
 
 # Configure cross-tenant synchronization
 
-This article describes the steps to configure cross-tenant synchronization using the Microsoft Entra admin center. When configured, Microsoft Entra ID automatically provisions and de-provisions B2B users in your target tenant. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](../app-provisioning/user-provisioning.md).
+This article describes the steps to configure cross-tenant synchronization using the Microsoft Entra admin center. When configured, Microsoft Entra ID automatically provisions and de-provisions B2B users in your target tenant. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 
 :::image type="content" source="./media/common/configure-diagram.png" alt-text="Diagram that shows cross-tenant synchronization between source tenant and target tenant." lightbox="./media/common/configure-diagram.png":::
 
@@ -47,11 +47,11 @@ By the end of this article, you'll be able to:
 
 1. Define how you would like to [structure the tenants in your organization](cross-tenant-synchronization-topology.md).
 
-1. Learn about [how the provisioning service works](../app-provisioning/how-provisioning-works.md).
+1. Learn about [how the provisioning service works](~/identity/app-provisioning/how-provisioning-works.md).
 
-1. Determine who will be in [scope for provisioning](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md?toc=/azure/active-directory/multi-tenant-organizations/toc.json&pivots=cross-tenant-synchronization).
+1. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md?toc=/azure/active-directory/multi-tenant-organizations/toc.json&pivots=cross-tenant-synchronization).
 
-1. Determine what data to [map between tenants](../app-provisioning/customize-application-attributes.md).
+1. Determine what data to [map between tenants](~/identity/app-provisioning/customize-application-attributes.md).
 
 ## Step 2: Enable user synchronization in the target tenant
 
@@ -75,7 +75,7 @@ By the end of this article, you'll be able to:
 
 1. Check the **Allow users sync into this tenant** check box.
 
-    :::image type="content" source="../media/external-identities/access-settings-users-sync.png" alt-text="Screenshot that shows the  Cross-tenant sync tab with the Allow users sync into this tenant check box." lightbox="../media/external-identities/access-settings-users-sync.png":::
+    :::image type="content" source="~/media/external-identities/access-settings-users-sync.png" alt-text="Screenshot that shows the  Cross-tenant sync tab with the Allow users sync into this tenant check box." lightbox="~/media/external-identities/access-settings-users-sync.png":::
 
 1. Select **Save**. 
 
@@ -89,7 +89,7 @@ In this step, you automatically redeem invitations so users from the source tena
 
 1. Check the **Automatically redeem invitations with the tenant** &lt;tenant&gt; check box.
 
-    :::image type="content" source="../media/external-identities/inbound-consent-prompt-setting.png" alt-text="Screenshot that shows the inbound Automatic redemption check box." lightbox="../media/external-identities/inbound-consent-prompt-setting.png":::
+    :::image type="content" source="~/media/external-identities/inbound-consent-prompt-setting.png" alt-text="Screenshot that shows the inbound Automatic redemption check box." lightbox="~/media/external-identities/inbound-consent-prompt-setting.png":::
 
 1. Select **Save**. 
 
@@ -115,7 +115,7 @@ In this step, you automatically redeem invitations in the source tenant.
 
 1. Check the **Automatically redeem invitations with the tenant** &lt;tenant&gt; check box.
 
-    :::image type="content" source="../media/external-identities/outbound-consent-prompt-setting.png" alt-text="Screenshot that shows the outbound Automatic redemption check box." lightbox="../media/external-identities/outbound-consent-prompt-setting.png":::
+    :::image type="content" source="~/media/external-identities/outbound-consent-prompt-setting.png" alt-text="Screenshot that shows the outbound Automatic redemption check box." lightbox="~/media/external-identities/outbound-consent-prompt-setting.png":::
 
 1. Select **Save**. 
 
@@ -227,7 +227,7 @@ Regardless of the value you selected for **Scope** in the previous step, you can
 
 1. Add any scoping filters to define which users are in scope for provisioning. 
 
-    To configure scoping filters, refer to the instructions provided in [Scoping users or groups to be provisioned with scoping filters](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md?toc=/azure/active-directory/multi-tenant-organizations/toc.json&pivots=cross-tenant-synchronization).
+    To configure scoping filters, refer to the instructions provided in [Scoping users or groups to be provisioned with scoping filters](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md?toc=/azure/active-directory/multi-tenant-organizations/toc.json&pivots=cross-tenant-synchronization).
 
     :::image type="content" source="./media/cross-tenant-synchronization-configure/provisioning-attribute-mapping-scoping-filter.png" alt-text="Screenshot that shows the Add Scoping Filter page with sample filter." lightbox="./media/cross-tenant-synchronization-configure/provisioning-attribute-mapping-scoping-filter.png":::
 
@@ -241,7 +241,7 @@ Regardless of the value you selected for **Scope** in the previous step, you can
 
 ![Icon for the source tenant.](./media/common/icon-tenant-source.png)<br/>**Source tenant**
 
-Attribute mappings allow you to define how data should flow between the source tenant and target tenant. For information on how to customize the default attribute mappings, see [Tutorial - Customize user provisioning attribute-mappings for SaaS applications in Microsoft Entra ID](../app-provisioning/customize-application-attributes.md).
+Attribute mappings allow you to define how data should flow between the source tenant and target tenant. For information on how to customize the default attribute mappings, see [Tutorial - Customize user provisioning attribute-mappings for SaaS applications in Microsoft Entra ID](~/identity/app-provisioning/customize-application-attributes.md).
 
 1. In the source tenant, select **Provisioning** and expand the **Mappings** section.
 
@@ -257,7 +257,7 @@ Attribute mappings allow you to define how data should flow between the source t
 
 1. Review the **Constant Value** setting for the **userType** attribute.
 
-    This setting defines the type of user that will be created in the target tenant and can be one of the values in the following table. By default, users will be created as external member (B2B collaboration users). For more information, see [Properties of a Microsoft Entra B2B collaboration user](../external-identities/user-properties.md).
+    This setting defines the type of user that will be created in the target tenant and can be one of the values in the following table. By default, users will be created as external member (B2B collaboration users). For more information, see [Properties of a Microsoft Entra B2B collaboration user](~/external-id/user-properties.md).
 
     | Constant Value | Description |
     | --- | --- |
@@ -290,7 +290,7 @@ Attribute mappings allow you to define how data should flow between the source t
     - Flip the first name and last name and add a comma in between.
     - Add the domain name in parentheses at the end of the display name.
 
-    For examples, see [Reference for writing expressions for attribute mappings in Microsoft Entra ID](../app-provisioning/functions-for-customizing-application-data.md?toc=/azure/active-directory/multi-tenant-organizations/toc.json#examples).
+    For examples, see [Reference for writing expressions for attribute mappings in Microsoft Entra ID](~/identity/app-provisioning/functions-for-customizing-application-data.md?toc=/azure/active-directory/multi-tenant-organizations/toc.json#examples).
 
     :::image type="content" source="./media/cross-tenant-synchronization-configure/provisioning-attribute-mapping-displayname-expression.png" alt-text="Screenshot of the Edit Attribute page that shows the displayName attribute with the Expression box." lightbox="./media/cross-tenant-synchronization-configure/provisioning-attribute-mapping-displayname-expression.png":::
 
@@ -306,11 +306,11 @@ Attribute mappings allow you to define how data should flow between the source t
 
 1. In the **Notification Email** box, enter the email address of a person or group who should receive provisioning error notifications.
 
-    Email notifications are sent within 24 hours of the job entering quarantine state. For custom alerts, see [Understand how provisioning integrates with Azure Monitor logs](../app-provisioning/application-provisioning-log-analytics.md).
+    Email notifications are sent within 24 hours of the job entering quarantine state. For custom alerts, see [Understand how provisioning integrates with Azure Monitor logs](~/identity/app-provisioning/application-provisioning-log-analytics.md).
 
 1. To prevent accidental deletion, select **Prevent accidental deletion** and specify a threshold value.
 
-    For more information, see [Enable accidental deletions prevention in the Microsoft Entra provisioning service](../app-provisioning/accidental-deletions.md?toc=/azure/active-directory/multi-tenant-organizations/toc.json&pivots=cross-tenant-synchronization).
+    For more information, see [Enable accidental deletions prevention in the Microsoft Entra provisioning service](~/identity/app-provisioning/accidental-deletions.md?toc=/azure/active-directory/multi-tenant-organizations/toc.json&pivots=cross-tenant-synchronization).
 
 1. Select **Save** to save any changes.
 
@@ -350,7 +350,7 @@ Now that you have a configuration, you can test on-demand provisioning with one 
 
 1. If all is working as expected, assign additional users to the configuration.
 
-    For more information, see [On-demand provisioning in Microsoft Entra ID](../app-provisioning/provision-on-demand.md?toc=/azure/active-directory/multi-tenant-organizations/toc.json&pivots=cross-tenant-synchronization).
+    For more information, see [On-demand provisioning in Microsoft Entra ID](~/identity/app-provisioning/provision-on-demand.md?toc=/azure/active-directory/multi-tenant-organizations/toc.json&pivots=cross-tenant-synchronization).
 
 ## Step 12: Start the provisioning job
 
@@ -374,9 +374,9 @@ The provisioning job starts the initial synchronization cycle of all users defin
 
 Once you've started a provisioning job, you can monitor the status.
 
-1. In the source tenant, on the **Overview** page, check the progress bar to see the status of the provisioning cycle and how close it's to completion. For more information, see [Check the status of user provisioning](../app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md).
+1. In the source tenant, on the **Overview** page, check the progress bar to see the status of the provisioning cycle and how close it's to completion. For more information, see [Check the status of user provisioning](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md).
 
-    If provisioning seems to be in an unhealthy state, the configuration will go into quarantine. For more information, see [Application provisioning in quarantine status](../app-provisioning/application-provisioning-quarantine-status.md).
+    If provisioning seems to be in an unhealthy state, the configuration will go into quarantine. For more information, see [Application provisioning in quarantine status](~/identity/app-provisioning/application-provisioning-quarantine-status.md).
 
     :::image type="content" source="./media/cross-tenant-synchronization-configure/provisioning-job-start.png" alt-text="Screenshot of the Configurations Overview page that shows the status of the provisioning cycle." lightbox="./media/cross-tenant-synchronization-configure/provisioning-job-start.png":::
 
@@ -404,7 +404,7 @@ Even though users are being provisioned in the target tenant, they still might b
 
 1. Under **External user leave settings**, choose whether to allow external users to leave your organization themselves.
 
-This setting also applies to B2B collaboration and B2B direct connect, so if you set **External user leave settings** to **No**, B2B collaboration users and B2B direct connect users can't leave your organization themselves. For more information, see [Leave an organization as an external user](../external-identities/leave-the-organization.md#more-information-for-administrators).
+This setting also applies to B2B collaboration and B2B direct connect, so if you set **External user leave settings** to **No**, B2B collaboration users and B2B direct connect users can't leave your organization themselves. For more information, see [Leave an organization as an external user](~/external-id/leave-the-organization.md#more-information-for-administrators).
 
 ## Troubleshooting tips
 
@@ -464,7 +464,7 @@ Restoring a previously soft-deleted user in the target tenant isn't supported.
 
 **Solution**
 
-Manually restore the soft-deleted user in the target tenant. For more information, see [Restore or remove a recently deleted user using Microsoft Entra ID](../fundamentals/users-restore.md).
+Manually restore the soft-deleted user in the target tenant. For more information, see [Restore or remove a recently deleted user using Microsoft Entra ID](~/fundamentals/users-restore.md).
 
 #### Symptom - Users are skipped because SMS sign-in is enabled on the user
 Users are skipped from synchronization. The scoping step includes the following filter with status false: "Filter external users.alternativeSecurityIds EQUALS 'None'"
@@ -529,10 +529,10 @@ This error indicates the Guest invite settings in the target tenant are configur
 
 **Solution**
 
-Change the Guest invite settings in the target tenant to a less restrictive setting. For more information, see [Configure external collaboration settings](../external-identities/external-collaboration-settings-configure.md).
+Change the Guest invite settings in the target tenant to a less restrictive setting. For more information, see [Configure external collaboration settings](~/external-id/external-collaboration-settings-configure.md).
 
 ## Next steps
 
-- [Tutorial: Reporting on automatic user account provisioning](../app-provisioning/check-status-user-account-provisioning.md)
-- [Managing user account provisioning for enterprise apps in the Azure portal](../app-provisioning/configure-automatic-user-provisioning-portal.md)
+- [Tutorial: Reporting on automatic user account provisioning](~/identity/app-provisioning/check-status-user-account-provisioning.md)
+- [Managing user account provisioning for enterprise apps in the Azure portal](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 - [What is single sign-on in Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)

@@ -19,8 +19,8 @@ ms.collection: M365-identity-device-management
 
 Understanding collaboration helps secure external access to your resources. Use the information in this article to move external collaboration into Microsoft Entra B2B (Microsoft Entra B2B) collaboration. 
 
-* See, [B2B collaboration overview](../external-identities/what-is-b2b.md)
-* Learn about: [External Identities in Microsoft Entra ID](../external-identities/external-identities-overview.md)
+* See, [B2B collaboration overview](~/external-id/what-is-b2b.md)
+* Learn about: [External Identities in Microsoft Entra ID](~/external-id/external-identities-overview.md)
 
 ## Before you begin
 
@@ -65,7 +65,7 @@ You can use an allowlist or blocklist for organizations. You can use an allowlis
 * **Allowlist** - limit collaboration to a list of domains. Other domains are on the blocklist.
 * **Blocklist** - allow collaboration with domains not on the blocklist
 
-Learn more: [Allow or block invitations to B2B users from specific organizations](../external-identities/allow-deny-list.md) 
+Learn more: [Allow or block invitations to B2B users from specific organizations](~/external-id/allow-deny-list.md) 
 
 > [!IMPORTANT]
 > Allowlists and blocklists don't apply to users in your directory. By default, they don't apply to OneDrive for Business and SharePoint allowlist or blocklists; these lists are separate. However, you can enable [SharePoint-OneDrive B2B integration](/sharepoint/sharepoint-azureb2b-integration).  
@@ -82,7 +82,7 @@ Learn more:
 
 * [Microsoft Azure operated by 21Vianet](/azure/china/overview-operations)
 * [Azure Government developer guide](/azure/azure-government/documentation-government-developer-guide)
-* [Configure Microsoft cloud settings for B2B collaboration (Preview)](../external-identities/cross-cloud-settings.md).
+* [Configure Microsoft cloud settings for B2B collaboration (Preview)](~/external-id/cross-cloud-settings.md).
 
 You can allow inbound access to specific tenants (allowlist), and set the default policy to block access. Then, create organizational policies that allow access by user, group, or application.
 
@@ -93,7 +93,7 @@ You can block access to tenants (blocklist). Set the default policy to **Allow**
 
 To control external organizations users access, configure outbound access policies similarly to inbound access: allowlist and blocklist. Configure default and organization-specific policies. 
 
-Learn more: [Configure cross-tenant access settings for B2B collaboration](../external-identities/cross-tenant-access-settings-b2b-collaboration.md)
+Learn more: [Configure cross-tenant access settings for B2B collaboration](~/external-id/cross-tenant-access-settings-b2b-collaboration.md)
 
 > [!NOTE]
 > Cross tenant access settings apply to Microsoft Entra tenants. To control access for partners not using Microsoft Entra ID, use external collaboration settings.
@@ -108,21 +108,21 @@ Learn more: [What is entitlement management?](../governance/entitlement-manageme
 
 To begin collaboration, invite or enable a partner to access resources. Users gain access by:
 
-* [Microsoft Entra B2B collaboration invitation redemption](../external-identities/redemption-experience.md) 
-* [Self-service sign-up](../external-identities/self-service-sign-up-overview.md)
+* [Microsoft Entra B2B collaboration invitation redemption](~/external-id/redemption-experience.md) 
+* [Self-service sign-up](~/external-id/self-service-sign-up-overview.md)
 * [Requesting access to an access package in entitlement management](../governance/entitlement-management-request-access.md)
 
 When you enable Microsoft Entra B2B, you can invite guest users with links and email invitations. Self-service sign-up, and publishing access packages to the My Access portal, require more configuration. 
 
 > [!NOTE]
-> Self-service sign-up enforces no allowlist or blocklist in external collaboration settings. Instead, use cross tenant access settings. You can integrate allowlists and blocklists with self-service sign-up using custom API connectors. See, [Add an API connector to a user flow](../external-identities/self-service-sign-up-add-api-connector.md).
+> Self-service sign-up enforces no allowlist or blocklist in external collaboration settings. Instead, use cross tenant access settings. You can integrate allowlists and blocklists with self-service sign-up using custom API connectors. See, [Add an API connector to a user flow](~/external-id/self-service-sign-up-add-api-connector.md).
 
 ### Guest user invitations
 
 Determine who can invite guest users to access resources.
 
 * Most restrictive: Allow only administrators and users with the Guest Inviter role
-  * See, [Configure external collaboration settings](../external-identities/external-collaboration-settings-configure.md)
+  * See, [Configure external collaboration settings](~/external-id/external-collaboration-settings-configure.md)
 * If security requirements permit, allow all Member UserType to invite guests
 * Determine if Guest UserType can invite guests
   * Guest is the default Microsoft Entra B2B user account
@@ -139,7 +139,7 @@ If you use a self-service portal, use API connectors to collect user attributes 
 
 Learn more:
 
-* [Use API connectors to customize and extend self-service sign-up](../external-identities/api-connectors-overview.md)
+* [Use API connectors to customize and extend self-service sign-up](~/external-id/api-connectors-overview.md)
 * [Manage Azure AD B2C with Microsoft Graph](/azure/active-directory-b2c/microsoft-graph-operations)
 
 <a name='troubleshoot-invitation-redemption-to-azure-ad-users'></a>
@@ -152,7 +152,7 @@ Invited guest users from a collaboration partner can have trouble redeeming an i
 * The partner’s home tenant restrictions prevent external collaboration
 * The user isn't in the partner Microsoft Entra tenant. For example, users at contoso.com are in Active Directory. 
   * They can redeem invitations with the email one-time password (OTP)
-  * See, [Microsoft Entra B2B collaboration invitation redemption](../external-identities/redemption-experience.md)
+  * See, [Microsoft Entra B2B collaboration invitation redemption](~/external-id/redemption-experience.md)
 
 ## External user access
 
@@ -209,7 +209,7 @@ Include or exclude:
 
 You can transition these internal users while maintaining current access, user principal name (UPN), and group memberships. 
 
-Lear more: [Invite external users to B2B collaboration](../external-identities/invite-internal-users.md)
+Lear more: [Invite external users to B2B collaboration](~/external-id/invite-internal-users.md)
 
 ## Decommission collaboration methods
 

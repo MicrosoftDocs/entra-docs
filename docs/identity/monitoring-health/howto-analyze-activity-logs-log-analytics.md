@@ -29,7 +29,7 @@ This article describes to analyze the Microsoft Entra activity logs in your Log 
 
 To analyze activity logs with Log Analytics, you need:
 
-- A Microsoft Entra tenant with a [Premium P1 license](../fundamentals/get-started-premium.md)
+- A Microsoft Entra tenant with a [Premium P1 license](~/fundamentals/get-started-premium.md)
 - A Log Analytics workspace *and* access to that workspace
 - The appropriate roles for Azure Monitor *and* Microsoft Entra ID
 
@@ -134,7 +134,7 @@ You can also set up alerts on a query. After running a query, the **+ New alert 
 
 Microsoft Entra workbooks provide several reports related to common scenarios involving audit, sign-in, and provisioning events. *You can also alert on any of the data provided in the reports, using the steps described in the previous section.*
 
-* **Provisioning analysis:** This workbook shows reports related to auditing provisioning activity. Activities can include the number of new users provisioned, provisioning failures, number of users updated, update failures, the number of users deprovisioned, and corresponding failures. For more information, see [Understand how provisioning integrates with Azure Monitor logs](../app-provisioning/application-provisioning-log-analytics.md).
+* **Provisioning analysis:** This workbook shows reports related to auditing provisioning activity. Activities can include the number of new users provisioned, provisioning failures, number of users updated, update failures, the number of users deprovisioned, and corresponding failures. For more information, see [Understand how provisioning integrates with Azure Monitor logs](~/identity/app-provisioning/application-provisioning-log-analytics.md).
 
 * **Sign-ins Events**: This workbook shows the most relevant reports related to monitoring sign-in activity, such as sign-ins by application, user, device, and a summary view tracking the number of sign-ins over time.
 

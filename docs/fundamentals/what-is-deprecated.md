@@ -76,7 +76,7 @@ Use the definitions in this section help clarify the state, availability, and su
 * **End-of-life** - engineering investments have ended, and the feature is unavailable to any customer
 
 ## Next steps
-[What's new in Microsoft Entra ID?](../fundamentals/whats-new.md)
+[What's new in Microsoft Entra ID?](~/fundamentals/whats-new.md)
 
 ## Resources
 * [Microsoft Entra change announcement blog](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/microsoft-entra-change-announcements-november-2022-train/ba-p/2967452)

@@ -48,7 +48,7 @@ For B2B collaboration end-users who perform cross-tenant sign-ins, their home te
 
    - **Guest users have the same access as members (most inclusive)**: This option gives guests the same access to Microsoft Entra resources and directory data as member users.
 
-   - **Guest users have limited access to properties and memberships of directory objects**: (Default) This setting blocks guests from certain directory tasks, like enumerating users, groups, or other directory resources. Guests can see membership of all non-hidden groups. [Learn more about default guest permissions](../fundamentals/users-default-permissions.md#member-and-guest-users).
+   - **Guest users have limited access to properties and memberships of directory objects**: (Default) This setting blocks guests from certain directory tasks, like enumerating users, groups, or other directory resources. Guests can see membership of all non-hidden groups. [Learn more about default guest permissions](~/fundamentals/users-default-permissions.md#member-and-guest-users).
 
    - **Guest user access is restricted to properties and memberships of their own directory objects (most restrictive)**: With this setting, guests can access only their own profiles. Guests aren't allowed to see other users' profiles, groups, or group memberships.
 
@@ -71,7 +71,7 @@ For B2B collaboration end-users who perform cross-tenant sign-ins, their home te
    - **No**: Users can't leave your organization themselves. They'll see a message guiding them to contact your admin or privacy contact to request removal from your organization.
 
    > [!IMPORTANT]
-   > You can configure **External user leave settings** only if you have [added your privacy information](../fundamentals/properties-area.md) to your Microsoft Entra tenant. Otherwise, this setting will be unavailable.
+   > You can configure **External user leave settings** only if you have [added your privacy information](~/fundamentals/properties-area.md) to your Microsoft Entra tenant. Otherwise, this setting will be unavailable.
 
    ![Screenshot showing External user leave settings in the portal.](media/external-collaboration-settings-configure/external-user-leave-settings.png)
 

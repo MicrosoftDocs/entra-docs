@@ -38,7 +38,7 @@ Lifecycle Workflows are an [Microsoft Entra ID Governance](identity-governance-o
  
 Planning your Lifecycle Workflow deployment is essential to make sure you achieve your desired governance strategy for users in your organization.
 
-For more information on deployment plans, see [Microsoft Entra deployment plans](../architecture/deployment-plans.md)
+For more information on deployment plans, see [Microsoft Entra deployment plans](~/architecture/deployment-plans.md)
 
 ## License requirements
 
@@ -56,7 +56,7 @@ Consider your organizational needs to determine the strategy for deploying Lifec
 
 ### Engage the right stakeholders
 
-When technology projects fail, they typically do so because of mismatched expectations on impact, outcomes, and responsibilities. To avoid these pitfalls, [ensure that you're engaging the right stakeholders](../architecture/deployment-plans.md) and that project roles are clear.
+When technology projects fail, they typically do so because of mismatched expectations on impact, outcomes, and responsibilities. To avoid these pitfalls, [ensure that you're engaging the right stakeholders](~/architecture/deployment-plans.md) and that project roles are clear.
 
 For Lifecycle Workflows, you'll likely include representatives from the following teams within your organization:
 
@@ -109,7 +109,7 @@ The following information is important information about your organization and t
 
 |Item|Description|Documentation|
 |-----|-----|-----|
-|Inbound Provisioning|You have a process to create user accounts for employees in Microsoft Entra such as HR inbound, SuccessFactors, or MIM.<br><br> Alternatively you have a process to create user accounts in Active Directory and those accounts are provisioned to Microsoft Entra ID.|[Workday to Active Directory](../saas-apps/workday-inbound-tutorial.md)<br><br>[Workday to Microsoft Entra ID](../saas-apps/workday-inbound-tutorial.md)<br><br>[SuccessFactors to Active Directory](../saas-apps/sap-successfactors-inbound-provisioning-tutorial.md)</br></br>[SuccessFactors to Microsoft Entra ID](../saas-apps/sap-successfactors-inbound-provisioning-cloud-only-tutorial.md)<br><br>[Microsoft Entra Connect](../hybrid/connect/whatis-azure-ad-connect-v2.md)<br><br>[Microsoft Entra Connect cloud sync](../hybrid/cloud-sync/what-is-cloud-sync.md)<br><br>[API-driven inbound provisioning (Public preview)](../app-provisioning/inbound-provisioning-api-configure-app.md)|
+|Inbound Provisioning|You have a process to create user accounts for employees in Microsoft Entra such as HR inbound, SuccessFactors, or MIM.<br><br> Alternatively you have a process to create user accounts in Active Directory and those accounts are provisioned to Microsoft Entra ID.|[Workday to Active Directory](../saas-apps/workday-inbound-tutorial.md)<br><br>[Workday to Microsoft Entra ID](../saas-apps/workday-inbound-tutorial.md)<br><br>[SuccessFactors to Active Directory](../saas-apps/sap-successfactors-inbound-provisioning-tutorial.md)</br></br>[SuccessFactors to Microsoft Entra ID](../saas-apps/sap-successfactors-inbound-provisioning-cloud-only-tutorial.md)<br><br>[Microsoft Entra Connect](../hybrid/connect/whatis-azure-ad-connect-v2.md)<br><br>[Microsoft Entra Connect cloud sync](../hybrid/cloud-sync/what-is-cloud-sync.md)<br><br>[API-driven inbound provisioning (Public preview)](~/identity/app-provisioning/inbound-provisioning-api-configure-app.md)|
 |Attribute synchronization|The accounts in Microsoft Entra ID have the employeeHireDate and employeeLeaveDateTime attributes populated.  The values may be populated when the accounts are created from an HR system or synchronized from AD using Microsoft Entra Connect or cloud sync. You have extra attributes that are used to determine the scope such as department, populated or the ability to populate, with data.|[How to synchronize attributes for Lifecycle Workflows](how-to-lifecycle-workflow-sync-attributes.md)
 
 ## Understanding parts of a workflow
@@ -263,7 +263,7 @@ In your pilot, we recommend that you:
 * Start with Lifecycle Workflows where the results are applied to a small subset of users.
 * Monitor audit logs to ensure all events are properly audited.
 
-For more information, see [Best practices for a pilot.](../architecture/deployment-plans.md).
+For more information, see [Best practices for a pilot.](~/architecture/deployment-plans.md).
 
 
 

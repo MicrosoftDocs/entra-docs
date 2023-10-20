@@ -47,7 +47,7 @@ Use the following list to help measure the level of access control.
 Organizations can start with highly managed controls to meet compliance targets, and then delegate some control to end users, over time. There can be simultaneous access-management models in an organization. 
 
 > [!NOTE]
-> Partner-managed credentials are a method to signal the termination of access to resources, when an external user loses access to resources in their own company. Learn more: [B2B collaboration overview](../external-identities/what-is-b2b.md)
+> Partner-managed credentials are a method to signal the termination of access to resources, when an external user loses access to resources in their own company. Learn more: [B2B collaboration overview](~/external-id/what-is-b2b.md)
 
 ## External-access security goals
 

@@ -31,7 +31,7 @@ SAP likely runs critical functions, such as HR and ERP, for your business. At th
 
 Customers who use SAP SuccessFactors can easily bring identities into [Microsoft Entra ID](../saas-apps/sap-successfactors-inbound-provisioning-cloud-only-tutorial.md) or [on-premises Active Directory](../saas-apps/sap-successfactors-inbound-provisioning-tutorial.md) by using native connectors. The connectors support the following scenarios:
 
-* **Hiring new employees**: When a new employee is added to SuccessFactors, a user account is automatically created in Microsoft Entra ID and optionally Microsoft 365 and [other software as a service (SaaS) applications that Microsoft Entra ID supports](../app-provisioning/user-provisioning.md). This process includes write-back of the email address to SuccessFactors.
+* **Hiring new employees**: When a new employee is added to SuccessFactors, a user account is automatically created in Microsoft Entra ID and optionally Microsoft 365 and [other software as a service (SaaS) applications that Microsoft Entra ID supports](~/identity/app-provisioning/user-provisioning.md). This process includes write-back of the email address to SuccessFactors.
 * **Employee attribute and profile updates**: When an employee record is updated in SuccessFactors (such as name, title, or manager), the employee's user account is automatically updated in Microsoft Entra ID and optionally Microsoft 365 and other SaaS applications that Microsoft Entra ID supports.
 * **Employee terminations**: When an employee is terminated in SuccessFactors, the employee's user account is automatically disabled in Microsoft Entra ID and optionally Microsoft 365 and other SaaS applications that Microsoft Entra ID supports.
 * **Employee rehires**: When an employee is rehired in SuccessFactors, the employee's old account can be automatically reactivated or re-provisioned (depending on your preference) to Microsoft Entra ID and optionally Microsoft 365 and other SaaS applications that Microsoft Entra ID supports.
@@ -64,7 +64,7 @@ After your users are in Microsoft Entra ID, you can provision accounts into the 
 
 Customers who have yet to transition from applications such as  SAP R/3 and SAP ERP Central Component (SAP ECC) to SAP S/4HANA can still rely on the Microsoft Entra provisioning service to provision user accounts. Within SAP R/3 and SAP ECC, you expose the necessary Business Application Programming Interfaces (BAPIs) for creating, updating, and deleting users. Within Microsoft Entra ID, you have two options:
 
-* Use the lightweight Microsoft Entra provisioning agent and [web services connector](../app-provisioning/on-premises-web-services-connector.md) to [provision users into apps such as SAP ECC](../app-provisioning/on-premises-sap-connector-configure.md).
+* Use the lightweight Microsoft Entra provisioning agent and [web services connector](~/identity/app-provisioning/on-premises-web-services-connector.md) to [provision users into apps such as SAP ECC](~/identity/app-provisioning/on-premises-sap-connector-configure.md).
 * In scenarios where you need to do more complex group and role management, use [Microsoft Identity Manager](/microsoft-identity-manager/reference/microsoft-identity-manager-2016-ma-ws) to manage access to your legacy SAP applications.
 
 ## Trigger custom workflows

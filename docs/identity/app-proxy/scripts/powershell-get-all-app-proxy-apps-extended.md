@@ -30,7 +30,7 @@ This sample requires the [Azure Active Directory PowerShell 2.0 for Graph module
 
 ## Sample script
 
-[!code-azurepowershell[main](~/powershell_scripts/application-proxy/get-all-appproxy-apps-extended.ps1 "Get all Application Proxy apps")]
+[!code-azurepowershell[main](~/../powershell_scripts/application-proxy/get-all-appproxy-apps-extended.ps1 "Get all Application Proxy apps")]
 
 ## Script explanation
 

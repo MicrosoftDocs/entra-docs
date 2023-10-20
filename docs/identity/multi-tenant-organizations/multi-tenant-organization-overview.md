@@ -37,7 +37,7 @@ Organizations that own multiple Microsoft Entra tenants and want to streamline i
 
 The multi-tenant organization capability is built on the assumption of reciprocal provisioning of B2B member users across multi-tenant organization tenants.
 
-As such, the multi-tenant organization capability assumes the simultaneous use of Microsoft Entra cross-tenant synchronization or an alternative bulk provisioning engine for [external identities](../external-identities/user-properties.md).
+As such, the multi-tenant organization capability assumes the simultaneous use of Microsoft Entra cross-tenant synchronization or an alternative bulk provisioning engine for [external identities](~/external-id/user-properties.md).
 
 ## Benefits
 
@@ -78,7 +78,7 @@ Administrators staying in control of their resources is a guiding principle for 
 
 - Cross-tenant access partner configurations
 
-    For more information, see [Configure cross-tenant access settings for B2B collaboration](../external-identities/cross-tenant-access-settings-b2b-collaboration.md) and [crossTenantAccessPolicyConfigurationPartner resource type](/graph/api/resources/crosstenantaccesspolicyconfigurationpartner?view=graph-rest-beta&preserve-view=true).
+    For more information, see [Configure cross-tenant access settings for B2B collaboration](~/external-id/cross-tenant-access-settings-b2b-collaboration.md) and [crossTenantAccessPolicyConfigurationPartner resource type](/graph/api/resources/crosstenantaccesspolicyconfigurationpartner?view=graph-rest-beta&preserve-view=true).
 
 - Cross-tenant access identity synchronization
 
@@ -126,7 +126,7 @@ The multi-tenant organization capability has been designed with the following co
 
 ## External user segmentation
 
-By defining a multi-tenant organization, as well as pivoting on the Microsoft Entra user property of userType, [external identities](../external-identities/user-properties.md) are segmented as follows:
+By defining a multi-tenant organization, as well as pivoting on the Microsoft Entra user property of userType, [external identities](~/external-id/user-properties.md) are segmented as follows:
 
 - External members originating from within a multi-tenant organization
 - External guests originating from within a multi-tenant organization

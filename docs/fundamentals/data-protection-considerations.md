@@ -83,7 +83,7 @@ For more information about Secret encryption at rest, see the following table.
 
 * [Microsoft Service Trust Documents](https://servicetrust.microsoft.com/Documents/TrustDocuments)
 * [Microsoft Azure Trust Center](https://azure.microsoft.com/overview/trusted-cloud/)
-* [Recover from deletions in Microsoft Entra ID](../architecture/recover-from-deletions.md)
+* [Recover from deletions in Microsoft Entra ID](~/architecture/recover-from-deletions.md)
 
 ## Next steps
 

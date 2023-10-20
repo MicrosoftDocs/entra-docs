@@ -22,7 +22,7 @@ This PowerShell script example exports all app registrations secrets and certifi
 
 ## Sample script
 
-[!code-azurepowershell[main](~/powershell_scripts/application-management/export-apps-with-secrets-beyond-required.ps1 "Exports all apps with secrets and certificates expiring beyond the required date for the specified apps in your directory.")]
+[!code-azurepowershell[main](~/../powershell_scripts/application-management/export-apps-with-secrets-beyond-required.ps1 "Exports all apps with secrets and certificates expiring beyond the required date for the specified apps in your directory.")]
 
 ## Script explanation
 

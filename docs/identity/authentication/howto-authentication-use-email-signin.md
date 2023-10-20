@@ -128,7 +128,7 @@ One of the user attributes that's automatically synchronized by Microsoft Entra 
 
 ![Diagram of email as an alternate login ID for B 2 B guest user sign-in.](media/howto-authentication-use-email-signin/email-alternate-login-id-b2b.png)
 
-Email as an alternate login ID applies to [Microsoft Entra B2B collaboration](../external-identities/what-is-b2b.md) under a "bring your own sign-in identifiers" model. When email as an alternate login ID is enabled in the home tenant, Microsoft Entra users can perform guest sign in with non-UPN email on the resource tenant endpoint. No action is required from the resource tenant to enable this functionality.
+Email as an alternate login ID applies to [Microsoft Entra B2B collaboration](~/external-id/what-is-b2b.md) under a "bring your own sign-in identifiers" model. When email as an alternate login ID is enabled in the home tenant, Microsoft Entra users can perform guest sign in with non-UPN email on the resource tenant endpoint. No action is required from the resource tenant to enable this functionality.
 
 > [!NOTE]
 > When an alternate login ID is used on a resource tenant endpoint that does not have the functionality enabled, the sign-in process will work seamlessly, but SSO will be interrupted.  
@@ -450,7 +450,7 @@ To learn more about hybrid identity, such as Microsoft Entra application proxy o
 For more information on hybrid identity operations, see [how password hash sync][phs-overview] or [pass-through authentication][pta-overview] synchronization work.
 
 <!-- INTERNAL LINKS -->
-[verify-domain]: ../fundamentals/add-custom-domain.md
+[verify-domain]: ~/fundamentals/add-custom-domain.md
 [hybrid-auth-methods]: ../hybrid/connect/choose-ad-authn.md
 [azure-ad-connect]: ../hybrid/connect/whatis-azure-ad-connect.md
 [hybrid-overview]: ../hybrid/connect/cloud-governed-management-for-on-premises.md

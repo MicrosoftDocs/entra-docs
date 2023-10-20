@@ -137,7 +137,7 @@ If you want to delay the UserID or Email writeback so that it happens on or afte
    IgnoreFlowIfNullOrEmpty(IIF(DateDiff("d", Now(), CDate([employeeHireDate])) >= 0, "", [userPrincipalName]))
    ```
 
-   The expression above uses the [DateDiff](../app-provisioning/functions-for-customizing-application-data.md#datediff) function to evaluate the difference between *employeeHireDate* and today's date in UTC obtained using [Now](../app-provisioning/functions-for-customizing-application-data.md#now) function. If *employeeHireDate* is greater than or equal to today's date, then it updates the UserID. Else it returns an empty value and the [IgnoreFlowIfNullOrEmpty](../app-provisioning/functions-for-customizing-application-data.md#ignoreflowifnullorempty) function excludes this attribute from Writeback.
+   The expression above uses the [DateDiff](~/identity/app-provisioning/functions-for-customizing-application-data.md#datediff) function to evaluate the difference between *employeeHireDate* and today's date in UTC obtained using [Now](~/identity/app-provisioning/functions-for-customizing-application-data.md#now) function. If *employeeHireDate* is greater than or equal to today's date, then it updates the UserID. Else it returns an empty value and the [IgnoreFlowIfNullOrEmpty](~/identity/app-provisioning/functions-for-customizing-application-data.md#ignoreflowifnullorempty) function excludes this attribute from Writeback.
 
 > [!IMPORTANT]
 > For the delayed Writeback to work as expected, an operation in on-premises AD or Microsoft Entra ID must trigger a change to the user just a day before the arrival or on the hire date, so that this user's profile is updated and is considered for Writeback. It must be a change, that updates an attribute value on the user profile, where the new attribute value is different from the old attribute value. 
@@ -149,7 +149,7 @@ For the phone number writeback operation to be successful, it is important to se
 This example assumes that the phone number value in Microsoft Entra ID for *telephoneNumber* or *mobile* has the format `+<isdCode><space><phoneNumber>`. <br>
 Example: If the phone number value is set to `+1 1112223333` or `+1 (111) 222-3333`, then `1` is the ISD Code and the country code name corresponding to it is `USA`.
 
-Use the regular expression mappings below to send the right country code name and country code number to Workday. You can use either *telphoneNumber* or *mobile* as the source attribute. The examples below use *telephoneNumber*. All expressions here use the [Replace](../app-provisioning/functions-for-customizing-application-data.md#replace) function. 
+Use the regular expression mappings below to send the right country code name and country code number to Workday. You can use either *telphoneNumber* or *mobile* as the source attribute. The examples below use *telephoneNumber*. All expressions here use the [Replace](~/identity/app-provisioning/functions-for-customizing-application-data.md#replace) function. 
 
 **Example mapping for *WorkphoneLandlineNumber* or *WorkphoneMobileNumber***
 
@@ -165,7 +165,7 @@ Replace([telephoneNumber], , "\\+(?<isdCode>\\d*) (?<phoneNumber>.*)", , "${isdC
 
 **Example mapping for *WorkphoneLandlineCountryCodeName* or *WorkphoneMobileCountryCodeName***
 
-The expression below extracts the isdCode and uses [Switch](../app-provisioning/functions-for-customizing-application-data.md#switch) function to lookup the right country code name to send to Workday. 
+The expression below extracts the isdCode and uses [Switch](~/identity/app-provisioning/functions-for-customizing-application-data.md#switch) function to lookup the right country code name to send to Workday. 
 
 ```C#
 Switch(Replace([telephoneNumber], , "\\+(?<isdCode>\\d*) (?<phoneNumber>.*)", , "${isdCode}", , ), "USA",
@@ -289,7 +289,7 @@ Replace(Replace([telephoneNumber], , "\+(?<isdCode>\d* )(?<phoneNumber>.* )[x](?
 Once the Workday provisioning app configurations have been completed, you can turn on the provisioning service in the Microsoft Entra admin center.
 
 > [!TIP]
-> By default when you turn on the provisioning service, it will initiate provisioning operations for all users in scope. If there are errors in the mapping or Workday data issues, then the provisioning job might fail and go into the quarantine state. To avoid this, as a best practice, we recommend configuring **Source Object Scope** filter and testing  your attribute mappings with a few test users using the [provision on demand](../app-provisioning/provision-on-demand.md) feature before launching the full sync for all users. Once you have verified that the mappings work and are giving you the desired results, then you can either remove the filter or gradually expand it to include more users.
+> By default when you turn on the provisioning service, it will initiate provisioning operations for all users in scope. If there are errors in the mapping or Workday data issues, then the provisioning job might fail and go into the quarantine state. To avoid this, as a best practice, we recommend configuring **Source Object Scope** filter and testing  your attribute mappings with a few test users using the [provision on demand](~/identity/app-provisioning/provision-on-demand.md) feature before launching the full sync for all users. Once you have verified that the mappings work and are giving you the desired results, then you can either remove the filter or gradually expand it to include more users.
 
 1. In the **Provisioning** tab, set the **Provisioning Status** to **On**.
 
@@ -322,8 +322,8 @@ Once the Workday provisioning app configurations have been completed, you can tu
 
 ## Next steps
 
-* [Learn more about Microsoft Entra ID and Workday integration scenarios and web service calls](../app-provisioning/workday-integration-reference.md)
-* [Learn how to review logs and get reports on provisioning activity](../app-provisioning/check-status-user-account-provisioning.md)
+* [Learn more about Microsoft Entra ID and Workday integration scenarios and web service calls](~/identity/app-provisioning/workday-integration-reference.md)
+* [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)
 * [Learn how to configure single sign-on between Workday and Microsoft Entra ID](workday-tutorial.md)
 * [Learn how to integrate other SaaS applications with Microsoft Entra ID](tutorial-list.md)
-* [Learn how to export and import your provisioning configurations](../app-provisioning/export-import-provisioning-configuration.md)
+* [Learn how to export and import your provisioning configurations](~/identity/app-provisioning/export-import-provisioning-configuration.md)

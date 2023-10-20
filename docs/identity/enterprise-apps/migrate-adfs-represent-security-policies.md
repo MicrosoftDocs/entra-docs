@@ -40,7 +40,7 @@ This maps to Microsoft Entra ID in one of the following ways:
     > [!Note]
     > Setting **User assignment required** to **Yes** requires that users are assigned to the application to gain access. When set to **No**, all users have access. This switch doesn't control what users see in the **My Apps** experience.
 
-1. In the **Users and groups tab**, assign your application to the **All Users** automatic group. You must [enable Dynamic Groups](../enterprise-users/groups-create-rule.md) in your Microsoft Entra tenant for the default **All Users** group to be available.
+1. In the **Users and groups tab**, assign your application to the **All Users** automatic group. You must [enable Dynamic Groups](~/identity/users/groups-create-rule.md) in your Microsoft Entra tenant for the default **All Users** group to be available.
 
     :::image type="content" source="media/migrate-adfs-represent-security-policies/permit-access-to-all-users-3.png" alt-text="Screenshot shows My SaaS Apps in Microsoft Entra ID.":::
 
@@ -52,7 +52,7 @@ Explicit group authorization in AD FS:
 
 To map this rule to Microsoft Entra ID:
 
-1. In the [Microsoft Entra admin center](https://entra.microsoft.com/#home), [create a user group](../fundamentals/how-to-manage-groups.md) that corresponds to the group of users from AD FS.
+1. In the [Microsoft Entra admin center](https://entra.microsoft.com/#home), [create a user group](~/fundamentals/how-to-manage-groups.md) that corresponds to the group of users from AD FS.
 1. Assign app permissions to the group:
 
    :::image type="content" source="media/migrate-adfs-represent-security-policies/allow-a-group-explicitly-2.png" alt-text="Screenshot shows how to add a user assignment to the app.":::
@@ -172,7 +172,7 @@ For more information, see [Prerequisites for using Group attributes synchronized
 
 ### Set up user self-provisioning
 
-Some SaaS applications support the ability to Just-in-Time (JIT) provision users when they first sign in to the application. In Microsoft Entra ID, app provisioning refers to automatically creating user identities and roles in the cloud ([SaaS](https://azure.microsoft.com/overview/what-is-saas/)) applications that users need to access. Users that are migrated already have an account in the SaaS application. Any new users added after the migration need to be provisioned. Test [SaaS app provisioning](../app-provisioning/user-provisioning.md) once the application is migrated.
+Some SaaS applications support the ability to Just-in-Time (JIT) provision users when they first sign in to the application. In Microsoft Entra ID, app provisioning refers to automatically creating user identities and roles in the cloud ([SaaS](https://azure.microsoft.com/overview/what-is-saas/)) applications that users need to access. Users that are migrated already have an account in the SaaS application. Any new users added after the migration need to be provisioned. Test [SaaS app provisioning](~/identity/app-provisioning/user-provisioning.md) once the application is migrated.
 
 <a name='sync-external-users-in-azure-ad'></a>
 
@@ -182,11 +182,11 @@ Your existing external users can be set up in these two ways in AD FS:
 
 - **External users with a local account within your organization**—You continue to use these accounts in the same way that your internal user accounts work. These external user accounts have a principle name within your organization, although the account's email may point externally.
 
-As you progress with your migration, you can take advantage of the benefits that [Microsoft Entra B2B](../external-identities/what-is-b2b.md) offers by migrating these users to use their own corporate identity when such an identity is available. This streamlines the process of signing in for those users, as they're often signed in with their own corporate sign-in. Your organization's administration is easier as well, by not having to manage accounts for external users.
+As you progress with your migration, you can take advantage of the benefits that [Microsoft Entra B2B](~/external-id/what-is-b2b.md) offers by migrating these users to use their own corporate identity when such an identity is available. This streamlines the process of signing in for those users, as they're often signed in with their own corporate sign-in. Your organization's administration is easier as well, by not having to manage accounts for external users.
 
 - **Federated external Identities**—If you're currently federating with an external organization, you have a few approaches to take:
-  - [Add Microsoft Entra B2B collaboration users in the Microsoft Entra admin center](../external-identities/add-users-administrator.md). You can proactively send B2B collaboration invitations from the Microsoft Entra administrative portal to the partner organization for individual members to continue using the apps and assets they're used to.
-  - [Create a self-service B2B sign-up workflow](../external-identities/self-service-portal.md) that generates a request for individual users at your partner organization using the B2B invitation API.
+  - [Add Microsoft Entra B2B collaboration users in the Microsoft Entra admin center](~/external-id/add-users-administrator.md). You can proactively send B2B collaboration invitations from the Microsoft Entra administrative portal to the partner organization for individual members to continue using the apps and assets they're used to.
+  - [Create a self-service B2B sign-up workflow](~/external-id/self-service-portal.md) that generates a request for individual users at your partner organization using the B2B invitation API.
 
 No matter how your existing external users are configured, they likely have permissions that are associated with their account, either in group membership or specific permissions. Evaluate whether these permissions need to be migrated or cleaned up.
 

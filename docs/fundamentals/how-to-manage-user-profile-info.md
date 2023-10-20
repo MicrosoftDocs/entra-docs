@@ -98,12 +98,12 @@ The following settings can be managed from **User settings**.
     - Guest users have limited access to properties and memberships of directory objects
     - Guest user access is restricted to properties and memberships of their own directory objects (most restrictive)
 - Restrict access to the Microsoft Entra administration portal
-- [Allow users to connect their work or school account with LinkedIn](../enterprise-users/linkedin-user-consent.md)
+- [Allow users to connect their work or school account with LinkedIn](~/identity/users/linkedin-user-consent.md)
 - [Enable the "Stay signed in?" prompt](how-to-manage-stay-signed-in-prompt.md)
 - Manage external collaboration settings
-    - [Guest user access](../enterprise-users/users-restrict-guest-permissions.md)
-    - [Guest invite setting](../external-identities/external-collaboration-settings-configure.md)
-    - [External user leave settings](../external-identities/self-service-sign-up-user-flow.md#enable-self-service-sign-up-for-your-tenant)
+    - [Guest user access](~/identity/users/users-restrict-guest-permissions.md)
+    - [Guest invite setting](~/external-id/external-collaboration-settings-configure.md)
+    - [External user leave settings](~/external-id/self-service-sign-up-user-flow.md#enable-self-service-sign-up-for-your-tenant)
     - Collaboration restrictions
 - Manage user feature settings
     - Users can use preview features for My Apps
@@ -114,4 +114,4 @@ The following settings can be managed from **User settings**.
 - [Add or delete users](./add-users.md)
 - [Assign roles to users](./how-subscriptions-associated-directory.md)
 - [Create a basic group and add members](./how-to-manage-groups.md)
-- [View Microsoft Entra enterprise user management documentation](../enterprise-users/index.yml)
+- [View Microsoft Entra enterprise user management documentation](~/identity/users/index.yml)

@@ -94,6 +94,6 @@ You can remove role assignments from the **Administrative roles** page for a sel
 
 - [Add or change profile information](./how-to-manage-user-profile-info.md)
 
-- [Add guest users from another directory](../external-identities/what-is-b2b.md)
+- [Add guest users from another directory](~/external-id/what-is-b2b.md)
 
-- [Explore other user management tasks](../enterprise-users/index.yml)
+- [Explore other user management tasks](~/identity/users/index.yml)

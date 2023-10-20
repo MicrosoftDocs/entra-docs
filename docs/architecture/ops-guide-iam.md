@@ -136,7 +136,7 @@ The [Microsoft Entra Connect Configuration Documenter](https://github.com/Micros
 
 ### Group-based licensing for Microsoft cloud services
 
-Microsoft Entra ID streamlines the management of licenses through [group-based licensing](../fundamentals/concept-group-based-licensing.md) for Microsoft cloud services. This way, IAM provides the group infrastructure and delegated management of those groups to the proper teams in the organizations. There are multiple ways to set up the membership of groups in Microsoft Entra ID, including:
+Microsoft Entra ID streamlines the management of licenses through [group-based licensing](~/fundamentals/concept-group-based-licensing.md) for Microsoft cloud services. This way, IAM provides the group infrastructure and delegated management of those groups to the proper teams in the organizations. There are multiple ways to set up the membership of groups in Microsoft Entra ID, including:
 
 - **Synchronized from on-premises** - Groups can come from on-premises directories, which could be a good fit for organizations that have established group management processes that can be extended to assign licenses in Microsoft 365.
 
@@ -155,26 +155,26 @@ Use the following guidelines to define service plans to users:
 - Optionally, an attribute can be defined to hold the packages for users.
 
 > [!IMPORTANT]
-> Group-based licensing in Microsoft Entra ID introduces the concept of users in a licensing error state. If you notice any licensing errors, then you should immediately [identify and resolve](../enterprise-users/licensing-groups-resolve-problems.md) any license assignment problems.
+> Group-based licensing in Microsoft Entra ID introduces the concept of users in a licensing error state. If you notice any licensing errors, then you should immediately [identify and resolve](~/identity/users/licensing-groups-resolve-problems.md) any license assignment problems.
 
 ![A screenshot of a computer screen Description automatically generated](./media/ops-guide-auth/ops-img2.png)
 
 #### Lifecycle management
 
-If you're currently using a tool, such as [Microsoft Identity Manager](/microsoft-identity-manager/) or third-party system, that relies on an on-premises infrastructure, we recommend you offload assignment from the existing tool, implement group-based licensing and define a group lifecycle management based on [groups](../enterprise-users/licensing-group-advanced.md#use-group-based-licensing-with-dynamic-groups). Likewise, if your existing process doesn't account for new employees or employees that leave the organization, you should deploy group-based licensing based on dynamic groups and define a group membership lifecycle. Finally, if group-based licensing is deployed against on-premises groups that lack lifecycle management, consider using cloud groups to enable capabilities such as delegated ownership or attribute-based dynamic membership.
+If you're currently using a tool, such as [Microsoft Identity Manager](/microsoft-identity-manager/) or third-party system, that relies on an on-premises infrastructure, we recommend you offload assignment from the existing tool, implement group-based licensing and define a group lifecycle management based on [groups](~/identity/users/licensing-group-advanced.md#use-group-based-licensing-with-dynamic-groups). Likewise, if your existing process doesn't account for new employees or employees that leave the organization, you should deploy group-based licensing based on dynamic groups and define a group membership lifecycle. Finally, if group-based licensing is deployed against on-premises groups that lack lifecycle management, consider using cloud groups to enable capabilities such as delegated ownership or attribute-based dynamic membership.
 
 ### Assignment of apps with "All users" group
 
 Resource owners may believe that the **All users** group contains only **Enterprise Employees** when they may actually contain both **Enterprise Employees** and **Guests**. As a result, you should take special care when using the **All users** group for application assignment and granting access to resources such as SharePoint content or applications.
 
 > [!IMPORTANT]
-> If the **All users** group is enabled and used for Conditional Access policies, app or resource assignment, make sure to [secure the group](../external-identities/use-dynamic-groups.md) if you don't want it to include guest users. Furthermore, you should fix your licensing assignments by creating and assigning to groups that contain **Enterprise Employees** only. On the other hand, if you find that the **All users** group is enabled but not being used to grant access to resources, make sure your organization's operational guidance is to intentionally use that group (which includes both **Enterprise Employees** and **Guests**).
+> If the **All users** group is enabled and used for Conditional Access policies, app or resource assignment, make sure to [secure the group](~/external-id/use-dynamic-groups.md) if you don't want it to include guest users. Furthermore, you should fix your licensing assignments by creating and assigning to groups that contain **Enterprise Employees** only. On the other hand, if you find that the **All users** group is enabled but not being used to grant access to resources, make sure your organization's operational guidance is to intentionally use that group (which includes both **Enterprise Employees** and **Guests**).
 
 ### Automated user provisioning to apps
 
-[Automated user provisioning](../app-provisioning/user-provisioning.md) to applications is the best way to create a consistent provisioning, deprovisioning, and lifecycle of identities across multiple systems.
+[Automated user provisioning](~/identity/app-provisioning/user-provisioning.md) to applications is the best way to create a consistent provisioning, deprovisioning, and lifecycle of identities across multiple systems.
 
-If you're currently provisioning apps in an ad-hoc manner or using things like CSV files, JIT, or an on-premises solution that doesn't address lifecycle management, we recommend you [implement application provisioning](../app-provisioning/user-provisioning.md#how-do-i-set-up-automatic-provisioning-to-an-application) with Microsoft Entra ID for supported applications and define a consistent pattern for applications that aren't yet supported by Microsoft Entra ID.
+If you're currently provisioning apps in an ad-hoc manner or using things like CSV files, JIT, or an on-premises solution that doesn't address lifecycle management, we recommend you [implement application provisioning](~/identity/app-provisioning/user-provisioning.md#how-do-i-set-up-automatic-provisioning-to-an-application) with Microsoft Entra ID for supported applications and define a consistent pattern for applications that aren't yet supported by Microsoft Entra ID.
 
 ![Microsoft Entra provisioning service](./media/ops-guide-auth/ops-img3.png)
 

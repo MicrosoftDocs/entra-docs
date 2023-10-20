@@ -65,7 +65,7 @@ If you don't have a tenant associated with your account, you'll see a GUID under
 
 ### Create a new Microsoft Entra tenant
 
-If you don't already have a Microsoft Entra tenant or if you want to create a new one for development, see [Create a new tenant in Microsoft Entra ID](../fundamentals/create-new-tenant.md). If you want to create a tenant for app testing, see [build a test environment](test-setup-environment.md).
+If you don't already have a Microsoft Entra tenant or if you want to create a new one for development, see [Create a new tenant in Microsoft Entra ID](~/fundamentals/create-new-tenant.md). If you want to create a tenant for app testing, see [build a test environment](test-setup-environment.md).
 
 You'll provide the following information to create your new tenant:
 

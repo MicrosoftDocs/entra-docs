@@ -15,7 +15,7 @@ ms.author: thwimmer
 
 # Tutorial: Configure Snowflake for automatic user provisioning
 
-This tutorial demonstrates the steps that you perform in Snowflake and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and deprovision users and groups to [Snowflake](https://www.Snowflake.com/pricing/). For important details on what this service does, how it works, and frequently asked questions, see [What is automated SaaS app user provisioning in Microsoft Entra ID?](../app-provisioning/user-provisioning.md). 
+This tutorial demonstrates the steps that you perform in Snowflake and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and deprovision users and groups to [Snowflake](https://www.Snowflake.com/pricing/). For important details on what this service does, how it works, and frequently asked questions, see [What is automated SaaS app user provisioning in Microsoft Entra ID?](~/identity/app-provisioning/user-provisioning.md). 
 
 ## Capabilities supported
 
@@ -38,9 +38,9 @@ The scenario outlined in this tutorial assumes that you already have the followi
 
 ## Step 1: Plan your provisioning deployment
 
-1. Learn about [how the provisioning service works](../app-provisioning/user-provisioning.md).
-1. Determine who will be in [scope for provisioning](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
-1. Determine what data to [map between Microsoft Entra ID and Snowflake](../app-provisioning/customize-application-attributes.md). 
+1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
+1. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine what data to [map between Microsoft Entra ID and Snowflake](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-snowflake-to-support-provisioning-with-azure-ad'></a>
 
@@ -88,7 +88,7 @@ Add Snowflake from the Microsoft Entra application gallery to start managing pro
 
 ## Step 4: Define who will be in scope for provisioning
 
-The Microsoft Entra provisioning service allows you to scope who will be provisioned based on assignment to the application, or based on attributes of the user or group. If you choose to scope who will be provisioned to your app based on assignment, you can use the [steps to assign users and groups to the application](~/identity/enterprise-apps/assign-user-or-group-access-portal.md). If you choose to scope who will be provisioned based solely on attributes of the user or group, you can [use a scoping filter](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+The Microsoft Entra provisioning service allows you to scope who will be provisioned based on assignment to the application, or based on attributes of the user or group. If you choose to scope who will be provisioned to your app based on assignment, you can use the [steps to assign users and groups to the application](~/identity/enterprise-apps/assign-user-or-group-access-portal.md). If you choose to scope who will be provisioned based solely on attributes of the user or group, you can [use a scoping filter](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 Keep these tips in mind:
 
@@ -165,7 +165,7 @@ To configure automatic user provisioning for Snowflake in Microsoft Entra ID:
     |displayName|String|
     |members|Reference|
 
-1. To configure scoping filters, see the instructions in the      [Scoping filter tutorial](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, see the instructions in the      [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 1. To enable the Microsoft Entra provisioning service for Snowflake, change **Provisioning Status** to **On** in the **Settings** section.
 
@@ -188,8 +188,8 @@ This operation starts the initial synchronization of all users and groups define
 After you've configured provisioning, use the following resources to monitor your deployment:
 
 * Use the [provisioning logs](../reports-monitoring/concept-provisioning-logs.md) to determine which users have been provisioned successfully or unsuccessfully.
-* Check the [progress bar](../app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md) to see the status of the provisioning cycle and how close it is to completion.
-* If the provisioning configuration seems to be in an unhealthy state, the application will go into quarantine. [Learn more about quarantine states](../app-provisioning/application-provisioning-quarantine-status.md).  
+* Check the [progress bar](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md) to see the status of the provisioning cycle and how close it is to completion.
+* If the provisioning configuration seems to be in an unhealthy state, the application will go into quarantine. [Learn more about quarantine states](~/identity/app-provisioning/application-provisioning-quarantine-status.md).  
 
 ## Connector limitations
 
@@ -197,7 +197,7 @@ Snowflake-generated SCIM tokens expire in 6 months. Be aware that you need to re
 
 ## Troubleshooting tips
 
-The Microsoft Entra provisioning service currently operates under particular [IP ranges](../app-provisioning/use-scim-to-provision-users-and-groups.md#ip-ranges). If necessary, you can restrict other IP ranges and add these particular IP ranges to the allowlist of your application. That technique will allow traffic flow from the Microsoft Entra provisioning service to your application.
+The Microsoft Entra provisioning service currently operates under particular [IP ranges](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md#ip-ranges). If necessary, you can restrict other IP ranges and add these particular IP ranges to the allowlist of your application. That technique will allow traffic flow from the Microsoft Entra provisioning service to your application.
 
 ## Change log
 
@@ -206,9 +206,9 @@ The Microsoft Entra provisioning service currently operates under particular [IP
 
 ## Additional resources
 
-* [Managing user account provisioning for enterprise apps](../app-provisioning/configure-automatic-user-provisioning-portal.md)
+* [Managing user account provisioning for enterprise apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What are application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
 ## Next steps
 
-* [Learn how to review logs and get reports on provisioning activity](../app-provisioning/check-status-user-account-provisioning.md)
+* [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)

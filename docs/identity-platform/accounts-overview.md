@@ -64,7 +64,7 @@ In the above diagram:
   - A tenant profile for `tom@live.com` exists in each of these tenants.
 - Information about Tom and Bob in other tenants may differ from that in the system of record. They may differ by attributes such as Job title, Office Location, and so on. They may be members of groups and/or roles within each organization (Microsoft Entra tenant). We refer to this information as bob@contoso.com tenant profile.
 
-In the diagram, bob@contoso.com and tom@live.com have access to resources in different Microsoft Entra tenants. For more information, see [Add Microsoft Entra B2B collaboration users in the Azure portal](../external-identities/add-users-administrator.md).
+In the diagram, bob@contoso.com and tom@live.com have access to resources in different Microsoft Entra tenants. For more information, see [Add Microsoft Entra B2B collaboration users in the Azure portal](~/external-id/add-users-administrator.md).
 
 ## Accounts and single sign-on (SSO)
 

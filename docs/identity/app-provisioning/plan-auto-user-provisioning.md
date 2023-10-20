@@ -19,7 +19,7 @@ Many organizations rely on software as a service (SaaS) applications such as Ser
 
 Microsoft Entra automatic user provisioning simplifies this process by securely automating the creation, maintenance, and removal of user identities in SaaS applications based on business rules. This automation allows you to effectively scale your identity management systems on both cloud-only and hybrid environments as you expand their dependency on cloud-based solutions.
 
-See [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](../app-provisioning/user-provisioning.md) to better understand the functionality.
+See [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md) to better understand the functionality.
 
 ## Learn
 
@@ -68,7 +68,7 @@ This article uses the following terms:
 | Online courses| SkillUp Online:  [Managing Identities](https://skillup.online/courses/course-v1:Microsoft+AZ-100.5+2018_T3/) <br> Learn how to integrate Microsoft Entra ID with many SaaS applications and to secure user access to those applications. |
 | Books| [Modern Authentication with Microsoft Entra ID for Web Applications (Developer Reference) 1st Edition](https://www.amazon.com/Authentication-Directory-Applications-Developer-Reference/dp/0735696942/ref=sr_1_fkmr0_1?keywords=Azure+multifactor+authentication&qid=1550168894&s=gateway&sr=8-1-fkmr0).  <br> ‎This is an authoritative, deep-dive guide to building Active Directory authentication solutions for these new environments. |
 | Tutorials| See the [list of tutorials on how to integrate SaaS apps with Microsoft Entra ID](../saas-apps/tutorial-list.md). |
-| FAQ| [Frequently asked questions](../app-provisioning/user-provisioning.md) on automated user provisioning |
+| FAQ| [Frequently asked questions](~/identity/app-provisioning/user-provisioning.md) on automated user provisioning |
 
 ### Solution architectures
 
@@ -86,9 +86,9 @@ In this example, users and or groups are created in an HR database connected to 
 
 1. **Microsoft Entra Connect agent** runs scheduled synchronizations of identities (users and groups) from the local AD to Microsoft Entra ID.
 
-1. **Microsoft Entra provisioning service** begins an [initial cycle](../app-provisioning/user-provisioning.md) against the source system and target system. 
+1. **Microsoft Entra provisioning service** begins an [initial cycle](~/identity/app-provisioning/user-provisioning.md) against the source system and target system. 
 
-1. **Microsoft Entra provisioning service** queries the source system for any users and groups changed since the initial cycle, and pushes changes in [incremental cycles](../app-provisioning/user-provisioning.md).
+1. **Microsoft Entra provisioning service** queries the source system for any users and groups changed since the initial cycle, and pushes changes in [incremental cycles](~/identity/app-provisioning/user-provisioning.md).
 
 #### Automatic user provisioning for cloud-only enterprises
 
@@ -100,9 +100,9 @@ In this example, user creation occurs in Microsoft Entra ID and the  Microsoft E
 
 1. Users/groups are created in Microsoft Entra ID.
 
-1. **Microsoft Entra provisioning service** begins an [initial cycle](../app-provisioning/user-provisioning.md) against the source system and target system. 
+1. **Microsoft Entra provisioning service** begins an [initial cycle](~/identity/app-provisioning/user-provisioning.md) against the source system and target system. 
 
-1. **Microsoft Entra provisioning service** queries the source system for any users and groups updated since the initial cycle, and performs any [incremental cycles](../app-provisioning/user-provisioning.md).
+1. **Microsoft Entra provisioning service** queries the source system for any users and groups updated since the initial cycle, and performs any [incremental cycles](~/identity/app-provisioning/user-provisioning.md).
 
 #### Automatic user provisioning for cloud HR applications 
 
@@ -124,7 +124,7 @@ Consider your organizational needs to determine the strategy for deploying user 
 
 ### Engage the right stakeholders
 
-When technology projects fail, it's typically because of mismatched expectations on impact, outcomes, and responsibilities. To avoid these pitfalls, [ensure you're engaging the right stakeholders](../architecture/deployment-plans.md) and that stakeholder roles in the project are well understood by documenting the stakeholders and their project input and accountabilities.
+When technology projects fail, it's typically because of mismatched expectations on impact, outcomes, and responsibilities. To avoid these pitfalls, [ensure you're engaging the right stakeholders](~/architecture/deployment-plans.md) and that stakeholder roles in the project are well understood by documenting the stakeholders and their project input and accountabilities.
 
 ### Plan communications
 
@@ -132,7 +132,7 @@ Communication is critical to the success of any new service. Proactively communi
 
 ### Plan a pilot
 
-We recommend that the initial configuration of automatic user provisioning is in a test environment with a small subset of users before scaling it to all users in production. See [best practices](../architecture/deployment-plans.md#best-practices-for-a-pilot) for running a pilot.
+We recommend that the initial configuration of automatic user provisioning is in a test environment with a small subset of users before scaling it to all users in production. See [best practices](~/architecture/deployment-plans.md#best-practices-for-a-pilot) for running a pilot.
 
 #### Best practices for a pilot  
 
@@ -140,11 +140,11 @@ A pilot allows you to test with a small group before deploying a capability for 
 
 In your first wave, target IT, usability, and other appropriate users who can test and provide feedback. Use this feedback to further develop the communications and instructions you send to your users, and to give insights into the types of issues your support staff may see.
 
-Widen the rollout to larger groups of users by increasing the scope of the group(s) targeted. Increasing the scope of the group(s) is done through [dynamic group membership](../enterprise-users/groups-dynamic-membership.md), or by manually adding users to the targeted group(s).
+Widen the rollout to larger groups of users by increasing the scope of the group(s) targeted. Increasing the scope of the group(s) is done through [dynamic group membership](~/identity/users/groups-dynamic-membership.md), or by manually adding users to the targeted group(s).
 
 ## Plan application connections and administration
 
-Use the Microsoft Entra admin center to view and manage all the applications that support provisioning. See [Finding your apps in the portal](../app-provisioning/configure-automatic-user-provisioning-portal.md).
+Use the Microsoft Entra admin center to view and manage all the applications that support provisioning. See [Finding your apps in the portal](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md).
 
 ### Determine the type of connector to use
 
@@ -154,15 +154,15 @@ If not, follow the steps:
 
 1. [Create a request](~/identity/enterprise-apps/v2-howto-app-gallery-listing.md) for a preintegrated user provisioning connector. Our team works with you and the application developer to onboard your application to our platform if it supports SCIM.
 
-1. Use the [BYOA SCIM](../app-provisioning/use-scim-to-provision-users-and-groups.md) generic user provisioning support for the app. Using SCIM is a requirement for Microsoft Entra ID to provision users to the app without a preintegrated provisioning connector.
+1. Use the [BYOA SCIM](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md) generic user provisioning support for the app. Using SCIM is a requirement for Microsoft Entra ID to provision users to the app without a preintegrated provisioning connector.
 
-1. If the application is able to utilize the BYOA SCIM connector, then refer to [BYOA SCIM integration tutorial](../app-provisioning/use-scim-to-provision-users-and-groups.md) to configure the BYOA SCIM connector for the application.
+1. If the application is able to utilize the BYOA SCIM connector, then refer to [BYOA SCIM integration tutorial](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md) to configure the BYOA SCIM connector for the application.
 
-For more information, see [What applications and systems can I use with Microsoft Entra automatic user provisioning?](../app-provisioning/user-provisioning.md)
+For more information, see [What applications and systems can I use with Microsoft Entra automatic user provisioning?](~/identity/app-provisioning/user-provisioning.md)
 
 ### Collect information to authorize application access
 
-Setting up automatic user provisioning is a per-application process. For each application, you need to provide [administrator credentials](../app-provisioning/configure-automatic-user-provisioning-portal.md) to connect to the target system’s user management endpoint.
+Setting up automatic user provisioning is a per-application process. For each application, you need to provide [administrator credentials](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md) to connect to the target system’s user management endpoint.
 
 The image shows one version of the required admin credentials:
 
@@ -192,17 +192,17 @@ For each application, document the following information:
 
 Before implementing automatic user provisioning, you must determine the users and groups to be provisioned to your application.
 
-* Use [scoping filters](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md) to define attribute-based rules that determine which users are provisioned to an application.
+* Use [scoping filters](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md) to define attribute-based rules that determine which users are provisioned to an application.
 
 * Next, use [user and group assignments](~/identity/enterprise-apps/assign-user-or-group-access-portal.md) as needed for more filtering.
 
 ### Define user and group attribute mapping
 
-To implement automatic user provisioning, you need to define the user and group attributes that are needed for the application. There's a preconfigured set of attributes and [attribute-mappings](../app-provisioning/configure-automatic-user-provisioning-portal.md) between Microsoft Entra user objects, and each SaaS application’s user objects. Not all SaaS apps enable group attributes.
+To implement automatic user provisioning, you need to define the user and group attributes that are needed for the application. There's a preconfigured set of attributes and [attribute-mappings](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md) between Microsoft Entra user objects, and each SaaS application’s user objects. Not all SaaS apps enable group attributes.
 
-Microsoft Entra ID supports by direct attribute-to-attribute mapping, providing constant values, or [writing expressions for attribute mappings](../app-provisioning/functions-for-customizing-application-data.md). This flexibility gives you fine control over what is populated in the targeted system's attribute. You can use [Microsoft Graph API](../app-provisioning/export-import-provisioning-configuration.md) and Graph Explorer to export your user provisioning attribute mappings and schema to a JSON file and import it back into Microsoft Entra ID.
+Microsoft Entra ID supports by direct attribute-to-attribute mapping, providing constant values, or [writing expressions for attribute mappings](~/identity/app-provisioning/functions-for-customizing-application-data.md). This flexibility gives you fine control over what is populated in the targeted system's attribute. You can use [Microsoft Graph API](~/identity/app-provisioning/export-import-provisioning-configuration.md) and Graph Explorer to export your user provisioning attribute mappings and schema to a JSON file and import it back into Microsoft Entra ID.
 
-For more information, see [Customizing User Provisioning Attribute-Mappings for SaaS Applications in Microsoft Entra ID](../app-provisioning/customize-application-attributes.md).
+For more information, see [Customizing User Provisioning Attribute-Mappings for SaaS Applications in Microsoft Entra ID](~/identity/app-provisioning/customize-application-attributes.md).
 
 ### Special considerations for user provisioning
 
@@ -212,7 +212,7 @@ Consider the following to reduce issues post-deployment:
 
 * Applications may have specific restrictions and/or requirements that need to be met for user provisioning to work correctly. For example, Slack truncates values for certain attributes. Refer to [automatic user provisioning tutorials](../saas-apps/tutorial-list.md) specific to each application.
 
-* Confirm schema consistency between source and target systems. Common issues include attributes such as UPN or mail not matching. For example, UPN in Microsoft Entra ID set as *john_smith@contoso.com* and in the app, it's *jsmith@contoso.com*. For more information, see The [User and group schema reference](../app-provisioning/use-scim-to-provision-users-and-groups.md).
+* Confirm schema consistency between source and target systems. Common issues include attributes such as UPN or mail not matching. For example, UPN in Microsoft Entra ID set as *john_smith@contoso.com* and in the app, it's *jsmith@contoso.com*. For more information, see The [User and group schema reference](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md).
 
 ## Plan testing and security
 
@@ -237,7 +237,7 @@ It's common for a security review to be required as part of a deployment. If you
 
 If the automatic user provisioning implementation fails to work as desired in the production environment, the following rollback steps can assist you in reverting to a previous known good state:
 
-1. Review the [provisioning logs](../app-provisioning/check-status-user-account-provisioning.md) to determine what incorrect operations occurred on the affected users and/or groups.
+1. Review the [provisioning logs](~/identity/app-provisioning/check-status-user-account-provisioning.md) to determine what incorrect operations occurred on the affected users and/or groups.
 
 1. Use provisioning audit logs to determine the last known good state of the users and/or groups affected. Also review the source systems (Microsoft Entra ID or AD).
 
@@ -257,7 +257,7 @@ The provisioning service stores the state of both systems after the initial cycl
 
 ### Configure automatic user provisioning
 
-Use the [Microsoft Entra admin center](https://entra.microsoft.com) to manage automatic user account provisioning and deprovisioning for applications that support it. Follow the steps in [How do I set up automatic provisioning to an application?](../app-provisioning/user-provisioning.md)
+Use the [Microsoft Entra admin center](https://entra.microsoft.com) to manage automatic user account provisioning and deprovisioning for applications that support it. Follow the steps in [How do I set up automatic provisioning to an application?](~/identity/app-provisioning/user-provisioning.md)
 
 The Microsoft Entra user provisioning service can also be configured and managed using the [Microsoft Graph API](/graph/api/resources/synchronization-overview).
 
@@ -267,7 +267,7 @@ Now that you've deployed, you need to manage the solution.
 
 ### Monitor user provisioning operation health
 
-After a successful [initial cycle](../app-provisioning/user-provisioning.md), the Microsoft Entra provisioning service will run incremental updates indefinitely, at intervals specific to each application, until one of the following events occurs:
+After a successful [initial cycle](~/identity/app-provisioning/user-provisioning.md), the Microsoft Entra provisioning service will run incremental updates indefinitely, at intervals specific to each application, until one of the following events occurs:
 
 * The service is manually stopped, and a new initial cycle is triggered using the [Microsoft Entra admin center](https://entra.microsoft.com), or using the appropriate [Microsoft Graph API](/graph/api/resources/synchronization-overview) command.
 
@@ -277,13 +277,13 @@ After a successful [initial cycle](../app-provisioning/user-provisioning.md), th
 
 To review these events, and all other activities performed by the provisioning service, refer to Microsoft Entra [provisioning logs](../reports-monitoring/concept-provisioning-logs.md?context=azure/active-directory/manage-apps/context/manage-apps-context).
 
-To understand how long the provisioning cycles take and monitor the progress of the provisioning job, you can [check the status of user provisioning](../app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md).
+To understand how long the provisioning cycles take and monitor the progress of the provisioning job, you can [check the status of user provisioning](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md).
 
 ### Gain insights from reports
 
 Microsoft Entra ID can provide more insights into your organization’s user provisioning usage and operational health through audit logs and reports. To learn more about user insights, see [Check the status of user provisioning](application-provisioning-when-will-provisioning-finish-specific-user.md).
 
-Admins should check the  provisioning summary report to monitor the operational health of the provisioning job. All activities performed by the provisioning service are recorded in the Microsoft Entra audit logs. See [Tutorial: Reporting on automatic user account provisioning](../app-provisioning/check-status-user-account-provisioning.md).
+Admins should check the  provisioning summary report to monitor the operational health of the provisioning job. All activities performed by the provisioning service are recorded in the Microsoft Entra audit logs. See [Tutorial: Reporting on automatic user account provisioning](~/identity/app-provisioning/check-status-user-account-provisioning.md).
 
 We recommend that you assume ownership of and consume these reports on a cadence that meets your organization’s requirements. Microsoft Entra ID retains most audit data for 30 days.
 
@@ -291,19 +291,19 @@ We recommend that you assume ownership of and consume these reports on a cadence
 
 Refer to the following links to troubleshoot any issues that may turn up during provisioning:
 
-* [Problem configuring user provisioning to a Microsoft Entra Gallery application](../app-provisioning/application-provisioning-config-problem.md)
+* [Problem configuring user provisioning to a Microsoft Entra Gallery application](~/identity/app-provisioning/application-provisioning-config-problem.md)
 
-* [Sync an attribute from your on-premises Active Directory to Microsoft Entra ID for provisioning to an application](../app-provisioning/user-provisioning-sync-attributes-for-mapping.md)
+* [Sync an attribute from your on-premises Active Directory to Microsoft Entra ID for provisioning to an application](~/identity/app-provisioning/user-provisioning-sync-attributes-for-mapping.md)
 
 * [Problem saving administrator credentials while configuring user provisioning to a Microsoft Entra Gallery application](./user-provisioning.md)
 
-* [No users are being provisioned to a Microsoft Entra Gallery application](../app-provisioning/application-provisioning-config-problem-no-users-provisioned.md)
+* [No users are being provisioned to a Microsoft Entra Gallery application](~/identity/app-provisioning/application-provisioning-config-problem-no-users-provisioned.md)
 
 * [Wrong set of users are being provisioned to a Microsoft Entra Gallery application](~/identity/enterprise-apps/add-application-portal-assign-users.md)
 
 ### Helpful documentation
 
-* [Writing expressions for attribute mappings](../app-provisioning/functions-for-customizing-application-data.md)
+* [Writing expressions for attribute mappings](~/identity/app-provisioning/functions-for-customizing-application-data.md)
 
 * [Microsoft Entra synchronization API overview](/graph/api/resources/synchronization-overview)
 
@@ -320,8 +320,8 @@ Refer to the following links to troubleshoot any issues that may turn up during 
 * [Microsoft Q&A Microsoft Entra forum](/answers/tags/455/entra-id)
 
 ## Next steps
-* [Configure Automatic User Provisioning](../app-provisioning/configure-automatic-user-provisioning-portal.md)
+* [Configure Automatic User Provisioning](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 
-* [Export or import your provisioning configuration by using Microsoft Graph API](../app-provisioning/export-import-provisioning-configuration.md)
+* [Export or import your provisioning configuration by using Microsoft Graph API](~/identity/app-provisioning/export-import-provisioning-configuration.md)
 
-* [Writing expressions for attribute mappings in Microsoft Entra ID](../app-provisioning/functions-for-customizing-application-data.md)
+* [Writing expressions for attribute mappings in Microsoft Entra ID](~/identity/app-provisioning/functions-for-customizing-application-data.md)

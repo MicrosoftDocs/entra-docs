@@ -117,9 +117,9 @@ For organizations already using AD FS or another on-premises authentication prov
 
 ### Enable automatic deprovisioning of accounts
 
-Enabling automated provisioning and deprovisioning to your applications is the best strategy for governing the lifecycle of identities across multiple systems. Microsoft Entra ID supports [automated, policy-based provisioning and deprovisioning](../../app-provisioning/configure-automatic-user-provisioning-portal.md) of user accounts to various popular SaaS applications such as ServiceNow and Salesforce, and others that implement the [SCIM 2.0 protocol](../../app-provisioning/use-scim-to-provision-users-and-groups.md). Unlike traditional provisioning solutions, which require custom code or manual uploading of CSV files, the provisioning service is hosted in the cloud, and features pre-integrated connectors that can be set up and managed using the [Microsoft Entra admin center](https://entra.microsoft.com). A key benefit of automatic deprovisioning is that it helps secure your organization by instantly removing users' identities from key SaaS apps when they leave the organization.
+Enabling automated provisioning and deprovisioning to your applications is the best strategy for governing the lifecycle of identities across multiple systems. Microsoft Entra ID supports [automated, policy-based provisioning and deprovisioning](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md) of user accounts to various popular SaaS applications such as ServiceNow and Salesforce, and others that implement the [SCIM 2.0 protocol](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md). Unlike traditional provisioning solutions, which require custom code or manual uploading of CSV files, the provisioning service is hosted in the cloud, and features pre-integrated connectors that can be set up and managed using the [Microsoft Entra admin center](https://entra.microsoft.com). A key benefit of automatic deprovisioning is that it helps secure your organization by instantly removing users' identities from key SaaS apps when they leave the organization.
 
-To learn more about automatic user account provisioning and how it works, see [Automate User Provisioning and Deprovisioning to SaaS Applications with Microsoft Entra ID](../../app-provisioning/user-provisioning.md).
+To learn more about automatic user account provisioning and how it works, see [Automate User Provisioning and Deprovisioning to SaaS Applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 
 ## Step 3 - Empower your users securely
 
@@ -152,7 +152,7 @@ Assigning users to applications is best mapped when using groups, because they a
 * Attribute-based using dynamic group membership
 * Delegation to app owners
 
-Microsoft Entra ID provides the ability to manage access to resources using security groups and Microsoft 365 groups. These groups are managed by a group owner who can approve or deny membership requests and delegate control of group membership. The [self-service group management](../../enterprise-users/groups-self-service-management.md) feature, saves time by allowing group owners who aren't assigned an administrative role to create and manage groups without having to rely on administrators to handle their requests.
+Microsoft Entra ID provides the ability to manage access to resources using security groups and Microsoft 365 groups. These groups are managed by a group owner who can approve or deny membership requests and delegate control of group membership. The [self-service group management](~/identity/users/groups-self-service-management.md) feature, saves time by allowing group owners who aren't assigned an administrative role to create and manage groups without having to rely on administrators to handle their requests.
 
 ## Step 4 - Operationalize your insights
 

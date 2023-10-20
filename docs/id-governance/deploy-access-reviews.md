@@ -74,7 +74,7 @@ Consider your organizational needs to determine the strategy for deploying acces
 
 ### Engage the right stakeholders
 
-When technology projects fail, they typically do so because of mismatched expectations on impact, outcomes, and responsibilities. To avoid these pitfalls, [ensure that you're engaging the right stakeholders](../architecture/deployment-plans.md) and that project roles are clear.
+When technology projects fail, they typically do so because of mismatched expectations on impact, outcomes, and responsibilities. To avoid these pitfalls, [ensure that you're engaging the right stakeholders](~/architecture/deployment-plans.md) and that project roles are clear.
 
 For access reviews, you'll likely include representatives from the following teams within your organization:
 
@@ -148,7 +148,7 @@ In your pilot, we recommend that you:
 * Document any access removed as a part of the pilot in case you need to quickly restore it.
 * Monitor audit logs to ensure all events are properly audited.
 
-For more information, see [Best practices for a pilot](../architecture/deployment-plans.md).
+For more information, see [Best practices for a pilot](~/architecture/deployment-plans.md).
 
 ## Introduction to access reviews
 
@@ -161,7 +161,7 @@ After you integrate your organization's resources with Microsoft Entra ID, such 
 Typical targets for review include:
 
 * [Applications integrated with Microsoft Entra ID for single sign-on](~/identity/enterprise-apps/what-is-application-management.md), such as SaaS and line of business.
-* Group [membership](../fundamentals/concept-learn-about-groups.md?context=azure%2factive-directory%2fusers-groups-roles%2fcontext%2fugr-context) synchronized to Microsoft Entra ID, or created in Microsoft Entra ID or Microsoft 365, including Microsoft Teams.
+* Group [membership](~/fundamentals/concept-learn-about-groups.md?context=azure%2factive-directory%2fusers-groups-roles%2fcontext%2fugr-context) synchronized to Microsoft Entra ID, or created in Microsoft Entra ID or Microsoft 365, including Microsoft Teams.
 * [Access package](./entitlement-management-overview.md) that groups resources such as groups, apps, and sites into a single package to manage access.
 * [Microsoft Entra roles​ and Azure resource roles](../privileged-identity-management/pim-resource-roles-assign-roles.md) as defined in PIM.
 
@@ -270,7 +270,7 @@ Select the **Lifecycle** tab and scroll down to access reviews.
 
 ## Plan access reviews for groups
 
-Besides access packages, reviewing group membership is the most effective way of governing access. Assign access to resources via [Security groups or Microsoft 365 groups](../fundamentals/concept-learn-about-groups.md). Add users to those groups to gain access.
+Besides access packages, reviewing group membership is the most effective way of governing access. Assign access to resources via [Security groups or Microsoft 365 groups](~/fundamentals/concept-learn-about-groups.md). Add users to those groups to gain access.
 
 A single group can be granted access to all appropriate resources. You can assign the group access to individual resources or to an access package that groups applications and other resources. With this method, you can review access to the group rather than an individual's access to each application.
 

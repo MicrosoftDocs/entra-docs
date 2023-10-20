@@ -36,7 +36,7 @@ Use the following guidance to remove unmanaged Microsoft Entra accounts from Mic
 
 After you run a tool, users with unmanaged Microsoft Entra accounts access the tenant, and re-redeem their invitations. However, Microsoft Entra ID prevents users from redeeming with an unmanaged Microsoft Entra account. They can redeem with another account type. Google Federation and SAML/WS-Federation aren't enabled by default. Therefore, users redeem with a Microsoft account (MSA) or email one-time password (OTP). MSA is recommended. 
 
-Learn more: [Invitation redemption flow](../external-identities/redemption-experience.md#invitation-redemption-flow)
+Learn more: [Invitation redemption flow](~/external-id/redemption-experience.md#invitation-redemption-flow)
 
 ## Overtaken tenants and domains
 

@@ -115,7 +115,7 @@ After these attackers gain access, they can request access to privileged informa
 One common method to improve protection for all users is to require a stronger form of account verification, such as multifactor authentication, for everyone. After users complete registration, they'll be prompted for another authentication whenever necessary. Microsoft decides when a user is prompted for multifactor authentication, based on factors such as location, device, role and task. This functionality protects all registered applications, including SaaS applications.
 
 > [!NOTE]
-> In case of [B2B direct connect](../external-identities/b2b-direct-connect-overview.md) users, any multifactor authentication requirement from security defaults enabled in resource tenant will need to be satisfied, including multifactor authentication registration by the direct connect user in their home tenant.  
+> In case of [B2B direct connect](~/external-id/b2b-direct-connect-overview.md) users, any multifactor authentication requirement from security defaults enabled in resource tenant will need to be satisfied, including multifactor authentication registration by the direct connect user in their home tenant.  
 
 ### Block legacy authentication protocols
 
@@ -176,7 +176,7 @@ Security defaults users are required to register for and use multifactor authent
 
 ### B2B users
 
-Any [B2B guest](../external-identities/what-is-b2b.md) users or [B2B direct connect](../external-identities/b2b-direct-connect-overview.md) users that access your directory are treated the same as your organization's users.
+Any [B2B guest](~/external-id/what-is-b2b.md) users or [B2B direct connect](~/external-id/b2b-direct-connect-overview.md) users that access your directory are treated the same as your organization's users.
 
 ### Disabled MFA status
 

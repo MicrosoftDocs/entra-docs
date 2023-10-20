@@ -75,7 +75,7 @@ Although this deployment changes no other relying parties in your AD FS farm, yo
 
 ## Plan the project
 
-When technology projects fail, it's typically because of mismatched expectations on impact, outcomes, and responsibilities. To avoid these pitfalls, [ensure that you're engaging the right stakeholders](../../architecture/deployment-plans.md) and that stakeholder roles in the project are well understood.
+When technology projects fail, it's typically because of mismatched expectations on impact, outcomes, and responsibilities. To avoid these pitfalls, [ensure that you're engaging the right stakeholders](~/architecture/deployment-plans.md) and that stakeholder roles in the project are well understood.
 
 ### Plan communications
 
@@ -113,7 +113,7 @@ You can't customize Microsoft Entra sign-in experience. No matter how your users
 
 #### Organization branding
 
-You can [customize the Microsoft Entra sign-in page](../../fundamentals/how-to-customize-branding.md). Some visual changes from AD FS on sign-in pages should be expected after the conversion. 
+You can [customize the Microsoft Entra sign-in page](~/fundamentals/how-to-customize-branding.md). Some visual changes from AD FS on sign-in pages should be expected after the conversion. 
 
 >[!NOTE] 
 >Organization branding isn't available in free Microsoft Entra ID licenses unless you've a Microsoft 365 license.
@@ -175,7 +175,7 @@ This section includes prework before you switch your sign-in method and convert 
 
 Create groups for staged rollout and also for Conditional Access policies if you decide to add them.
 
-We recommend you use a group mastered in Microsoft Entra ID, also known as a cloud-only group. You can use Microsoft Entra security groups or Microsoft 365 Groups for both moving users to MFA and for Conditional Access policies. For more information, see [creating a Microsoft Entra security group](../../fundamentals/how-to-manage-groups.md), and this [overview of Microsoft 365 Groups for administrators](/microsoft-365/admin/create-groups/office-365-groups).
+We recommend you use a group mastered in Microsoft Entra ID, also known as a cloud-only group. You can use Microsoft Entra security groups or Microsoft 365 Groups for both moving users to MFA and for Conditional Access policies. For more information, see [creating a Microsoft Entra security group](~/fundamentals/how-to-manage-groups.md), and this [overview of Microsoft 365 Groups for administrators](/microsoft-365/admin/create-groups/office-365-groups).
 
 The members in a group are automatically enabled for staged rollout. Nested and dynamic groups aren't supported for staged rollout.
 
@@ -457,4 +457,4 @@ For a full list of steps to take to completely remove AD FS from the environment
 ## Next steps
 
 - [Learn about migrating applications](~/identity/enterprise-apps/migration-resources.md)
-- [Deploy other identity features](../../architecture/deployment-plans.md)
+- [Deploy other identity features](~/architecture/deployment-plans.md)

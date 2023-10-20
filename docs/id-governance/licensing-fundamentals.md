@@ -39,7 +39,7 @@ The Microsoft Entra ID Governance capabilities are currently available in two pr
 - A subscription to **Microsoft Entra ID Governance** requires that the tenant also have an active subscription to another product, one that contains the `AAD_PREMIUM` or `AAD_PREMIUM_P2` service plan. Examples of products meeting this prerequisite include **Microsoft Entra ID P1** or **Microsoft 365 E3**.
 - A subscription to **Microsoft Entra ID Governance Step Up for Microsoft Entra ID P2** requires that the tenant also have an active subscription to another product, one that contains the `AAD_PREMIUM_P2` service plan.  Examples of products meeting this prerequisite include **Microsoft Entra ID P2** or **Microsoft 365 E5**.
 
-The [product names and service plan identifiers for licensing](../enterprise-users/licensing-service-plan-reference.md) lists additional products that include the prerequisite service plans.
+The [product names and service plan identifiers for licensing](~/identity/users/licensing-service-plan-reference.md) lists additional products that include the prerequisite service plans.
 
 >[!NOTE]
 >A subscription to a prerequisite for a Microsoft Entra ID Governance product must be active in the tenant. If a prerequisite is not present, or the subscription expires, then Microsoft Entra ID Governance scenarios may not function as expected.  

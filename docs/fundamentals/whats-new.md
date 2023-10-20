@@ -79,7 +79,7 @@ We've added the following new applications in our App gallery with Provisioning 
 - [Postman](../saas-apps/postman-provisioning-tutorial.md)
 - [Recnice](../saas-apps/recnice-provisioning-tutorial.md)
 
-For more information about how to better secure your organization by using automated user account provisioning, see: [Automate user provisioning to SaaS applications with Azure AD](../app-provisioning/user-provisioning.md).
+For more information about how to better secure your organization by using automated user account provisioning, see: [Automate user provisioning to SaaS applications with Azure AD](~/identity/app-provisioning/user-provisioning.md).
 
 ---
 
@@ -143,7 +143,7 @@ Visit https://aka.ms/tenant-restrictions-enforcement for more information on ten
 **Service category:** B2B                               
 **Product capability:** B2B/B2C                    
 
-Cross-tenant access settings can be managed with custom roles defined by your organization. This enables you to define your own finely-scoped roles to manage cross-tenant access settings instead of using one of the built-in roles for management. [Learn more about creating your own custom roles](../external-identities/cross-tenant-access-overview.md#custom-roles-for-managing-cross-tenant-access-settings).
+Cross-tenant access settings can be managed with custom roles defined by your organization. This enables you to define your own finely-scoped roles to manage cross-tenant access settings instead of using one of the built-in roles for management. [Learn more about creating your own custom roles](~/external-id/cross-tenant-access-overview.md#custom-roles-for-managing-cross-tenant-access-settings).
 
 You can also now protect privileged actions inside of cross-tenant access settings using Conditional Access. For example, you can require MFA before allowing changes to default settings for B2B collaboration. Learn more about [Protected actions](~/identity/role-based-access-control/protected-actions-overview.md).
 
@@ -201,7 +201,7 @@ We've added the following new applications in our App gallery with Provisioning 
 - [Xledger](../saas-apps/xledger-provisioning-tutorial.md)
 
 
-For more information about how to better secure your organization by using automated user account provisioning, see: [Automate user provisioning to SaaS applications with Azure AD](../app-provisioning/user-provisioning.md).
+For more information about how to better secure your organization by using automated user account provisioning, see: [Automate user provisioning to SaaS applications with Azure AD](~/identity/app-provisioning/user-provisioning.md).
 
 
 ---
@@ -231,7 +231,7 @@ Azure AD is being renamed to Microsoft Entra ID. The name change rolls out acros
 
 Capabilities, licensing, and usage of the product isn't changing. To make the transition seamless for you, the pricing, terms, service level agreements, URLs, APIs, PowerShell cmdlets, Microsoft Authentication Library (MSAL) and developer tooling remain the same.   
 
-Learn more and get renaming details: [New name for Azure Active Directory](../fundamentals/new-name.md).
+Learn more and get renaming details: [New name for Azure Active Directory](~/fundamentals/new-name.md).
 
 ---
 
@@ -320,7 +320,7 @@ Lifecycle Workflows, one of our newest Microsoft Entra ID Governance capabilitie
 **Service category:** User Experience and Management                            
 **Product capability:** User Authentication                
 
-Update the Microsoft Entra ID and Microsoft 365 sign in experience with new Company Branding capabilities. You can apply your company’s brand guidance to authentication experiences with predefined templates. For more information, see: [Company Branding](../fundamentals/how-to-customize-branding.md) 
+Update the Microsoft Entra ID and Microsoft 365 sign in experience with new Company Branding capabilities. You can apply your company’s brand guidance to authentication experiences with predefined templates. For more information, see: [Company Branding](~/fundamentals/how-to-customize-branding.md) 
 
 ---
 
@@ -330,7 +330,7 @@ Update the Microsoft Entra ID and Microsoft 365 sign in experience with new Comp
 **Service category:** User Experience and Management                            
 **Product capability:** End User Experiences                  
 
-Update the Company Branding functionality on the Microsoft Entra ID/Microsoft 365 sign in experience to allow customizing Self Service Password Reset (SSPR) hyperlinks, footer hyperlinks, and a browser icon. For more information, see: [Company Branding](../fundamentals/how-to-customize-branding.md) 
+Update the Company Branding functionality on the Microsoft Entra ID/Microsoft 365 sign in experience to allow customizing Self Service Password Reset (SSPR) hyperlinks, footer hyperlinks, and a browser icon. For more information, see: [Company Branding](~/fundamentals/how-to-customize-branding.md) 
 
 ---
 
@@ -350,7 +350,7 @@ This feature provides Machine Learning based recommendations to the reviewers of
 **Service category:** Reporting                            
 **Product capability:** Identity Governance                  
 
-Monitor guest accounts at scale with intelligent insights into inactive guest users in your organization. Customize the inactivity threshold depending on your organization’s needs, narrow down the scope of guest users you want to monitor and identify the guest users that may be inactive. For more information, see: [Monitor and clean up stale guest accounts using access reviews](../enterprise-users/clean-up-stale-guest-accounts.md).
+Monitor guest accounts at scale with intelligent insights into inactive guest users in your organization. Customize the inactivity threshold depending on your organization’s needs, narrow down the scope of guest users you want to monitor and identify the guest users that may be inactive. For more information, see: [Monitor and clean up stale guest accounts using access reviews](~/identity/users/clean-up-stale-guest-accounts.md).
 
 ---
 
@@ -393,7 +393,7 @@ The Azure mobile app has been enhanced to empower admins with specific permissio
 **Service category:** Provisioning                              
 **Product capability:** Inbound to Azure AD                  
 
-With API-driven inbound provisioning, Microsoft Entra ID provisioning service now supports integration with any system of record. Customers and partners can use any automation tool of their choice to retrieve workforce data from any system of record for provisioning into Entra ID and connected on-premises Active Directory domains. The IT admin has full control on how the data is processed and transformed with attribute mappings. Once the workforce data is available in Entra ID, the IT admin can configure appropriate joiner-mover-leaver business processes using Entra ID Governance Lifecycle Workflows. For more information, see: [API-driven inbound provisioning concepts (Public preview)](../app-provisioning/inbound-provisioning-api-concepts.md).
+With API-driven inbound provisioning, Microsoft Entra ID provisioning service now supports integration with any system of record. Customers and partners can use any automation tool of their choice to retrieve workforce data from any system of record for provisioning into Entra ID and connected on-premises Active Directory domains. The IT admin has full control on how the data is processed and transformed with attribute mappings. Once the workforce data is available in Entra ID, the IT admin can configure appropriate joiner-mover-leaver business processes using Entra ID Governance Lifecycle Workflows. For more information, see: [API-driven inbound provisioning concepts (Public preview)](~/identity/app-provisioning/inbound-provisioning-api-concepts.md).
 
 ---
 
@@ -403,7 +403,7 @@ With API-driven inbound provisioning, Microsoft Entra ID provisioning service no
 **Service category:** Group Management                                
 **Product capability:** Directory                    
 
-This feature enables admins to create dynamic group rules based on the user objects' employeeHireDate attribute. For more information, see: [Properties of type string](../enterprise-users/groups-dynamic-membership.md#properties-of-type-string).
+This feature enables admins to create dynamic group rules based on the user objects' employeeHireDate attribute. For more information, see: [Properties of type string](~/identity/users/groups-dynamic-membership.md#properties-of-type-string).
 
 ---
 
@@ -423,7 +423,7 @@ We have increased the number of properties admins are able to define when creati
 **Service category:** User Management                                  
 **Product capability:** User Management                   
 
-The All Users list now features an infinite scroll, and admins can now modify more properties in the User Profile. For more information, see: [How to create, invite, and delete users](../fundamentals/how-to-create-delete-users.md).
+The All Users list now features an infinite scroll, and admins can now modify more properties in the User Profile. For more information, see: [How to create, invite, and delete users](~/fundamentals/how-to-create-delete-users.md).
 
 ---
 
@@ -476,7 +476,7 @@ We've added the following new applications in our App gallery with Provisioning 
 - [Funnel Leasing](../saas-apps/funnel-leasing-provisioning-tutorial.md)
 
 
-For more information about how to better secure your organization by using automated user account provisioning, see: [Automate user provisioning to SaaS applications with Azure AD](../app-provisioning/user-provisioning.md).
+For more information about how to better secure your organization by using automated user account provisioning, see: [Automate user provisioning to SaaS applications with Azure AD](~/identity/app-provisioning/user-provisioning.md).
 
 
 ---
@@ -526,7 +526,7 @@ We've added the following new applications in our App gallery with Provisioning 
 - [V-Client](../saas-apps/v-client-provisioning-tutorial.md)
 - [Veritas Enterprise Vault.cloud SSO-SCIM](../saas-apps/veritas-provisioning-tutorial.md)
 
-For more information about how to better secure your organization by using automated user account provisioning, see: [Automate user provisioning to SaaS applications with Azure AD](../app-provisioning/user-provisioning.md).
+For more information about how to better secure your organization by using automated user account provisioning, see: [Automate user provisioning to SaaS applications with Azure AD](~/identity/app-provisioning/user-provisioning.md).
 
 ---
 
@@ -665,7 +665,7 @@ Authentication strength is now in General Availability for members and external 
 **Service category:** B2B                        
 **Product capability:** B2B/B2C             
 
-SAML/Ws-Fed based identity providers for authentication in Azure AD B2B are generally available in US Sec, US Nat and China clouds. For more information, see: [Federation with SAML/WS-Fed identity providers for guest users](../external-identities/direct-federation.md).
+SAML/Ws-Fed based identity providers for authentication in Azure AD B2B are generally available in US Sec, US Nat and China clouds. For more information, see: [Federation with SAML/WS-Fed identity providers for guest users](~/external-id/direct-federation.md).
 
 ---
 
@@ -731,7 +731,7 @@ A new and improved My Groups experience is now available at [myaccount.microsoft
 **Service category:** User Access Management                           
 **Product capability:** User Management               
 
-The ability for users to create tenants from the Manage Tenant overview has been present in Azure AD since almost the beginning of the Azure portal.  This new capability in the User Settings pane allows admins to restrict their users from being able to create new tenants. There's also a new [Tenant Creator](~/identity/role-based-access-control/permissions-reference.md#tenant-creator) role to allow specific users to create tenants. For more information, see [Default user permissions](../fundamentals/users-default-permissions.md#restrict-member-users-default-permissions).
+The ability for users to create tenants from the Manage Tenant overview has been present in Azure AD since almost the beginning of the Azure portal.  This new capability in the User Settings pane allows admins to restrict their users from being able to create new tenants. There's also a new [Tenant Creator](~/identity/role-based-access-control/permissions-reference.md#tenant-creator) role to allow specific users to create tenants. For more information, see [Default user permissions](~/fundamentals/users-default-permissions.md#restrict-member-users-default-permissions).
 
 ---
 
@@ -772,7 +772,7 @@ We've added the following new applications in our App gallery with Provisioning 
 - [Sign In Enterprise Host Provisioning](../saas-apps/sign-in-enterprise-host-provisioning-tutorial.md)
 
 
-For more information about how to better secure your organization by using automated user account provisioning, see: [Automate user provisioning to SaaS applications with Azure AD](../app-provisioning/user-provisioning.md).
+For more information about how to better secure your organization by using automated user account provisioning, see: [Automate user provisioning to SaaS applications with Azure AD](~/identity/app-provisioning/user-provisioning.md).
 
 
 ---
@@ -818,7 +818,7 @@ For more information, see: [How to enable Microsoft Authenticator Lite for Outlo
 **Service category:** Provisioning                          
 **Product capability:** Outbound to On-premises Applications               
 
-The Azure AD on-premises application provisioning feature now supports both the [PowerShell](../app-provisioning/on-premises-powershell-connector.md) and [web services](../app-provisioning/on-premises-web-services-connector.md) connectors. you can now provision users into a flat file using the PowerShell connector or an app such as SAP ECC using the web services connector. For more information, see: [Provisioning users into applications using PowerShell](../app-provisioning/on-premises-powershell-connector.md).
+The Azure AD on-premises application provisioning feature now supports both the [PowerShell](~/identity/app-provisioning/on-premises-powershell-connector.md) and [web services](~/identity/app-provisioning/on-premises-web-services-connector.md) connectors. you can now provision users into a flat file using the PowerShell connector or an app such as SAP ECC using the web services connector. For more information, see: [Provisioning users into applications using PowerShell](~/identity/app-provisioning/on-premises-powershell-connector.md).
 
 ---
 
@@ -838,7 +838,7 @@ Identity Protection has added a new detection, using the Microsoft Threat Intell
 **Service category:** Conditional Access                            
 **Product capability:** Identity Security & Protection               
 
-When configuring a Conditional Access policy, customers now have granular control over the types of external users they want to apply the policy to. External users are categorized based on how they authenticate (internally or externally) and their relationship to your organization (guest or member). For more information, see: [Assigning Conditional Access policies to external user types](../external-identities/authentication-conditional-access.md#assigning-conditional-access-policies-to-external-user-types).
+When configuring a Conditional Access policy, customers now have granular control over the types of external users they want to apply the policy to. External users are categorized based on how they authenticate (internally or externally) and their relationship to your organization (guest or member). For more information, see: [Assigning Conditional Access policies to external user types](~/external-id/authentication-conditional-access.md#assigning-conditional-access-policies-to-external-user-types).
 
 ---
 
@@ -879,7 +879,7 @@ We have improved My Sign-ins and My Security-Info to give you more clarity on th
 **Service category:** B2B                        
 **Product capability:** B2B/B2C             
 
-SAML/Ws-Fed based identity providers for authentication in Azure AD B2B are generally available in US Sec, US Nat and China clouds. For more information, see: [Federation with SAML/WS-Fed identity providers for guest users](../external-identities/direct-federation.md).
+SAML/Ws-Fed based identity providers for authentication in Azure AD B2B are generally available in US Sec, US Nat and China clouds. For more information, see: [Federation with SAML/WS-Fed identity providers for guest users](~/external-id/direct-federation.md).
 
 ---
 
@@ -933,7 +933,7 @@ To address this challenge, we're introducing a new system-preferred authenticati
 **Service category:** User Management                     
 **Product capability:** User Management            
 
-We have increased the number of properties that admins are able to define when creating and inviting a user in the Entra admin portal. This brings our UX to parity with our Create User APIs. Additionally, admins can now add users to a group or administrative unit, and assign roles. For more information, see:  [How to create, invite, and delete users](../fundamentals/how-to-create-delete-users.md).
+We have increased the number of properties that admins are able to define when creating and inviting a user in the Entra admin portal. This brings our UX to parity with our Create User APIs. Additionally, admins can now add users to a group or administrative unit, and assign roles. For more information, see:  [How to create, invite, and delete users](~/fundamentals/how-to-create-delete-users.md).
 
 ---
 
@@ -1037,7 +1037,7 @@ We've added the following new applications in our App gallery with Provisioning 
 - [uniFLOW Online](../saas-apps/uniflow-online-provisioning-tutorial.md)
 
 
-For more information about how to better secure your organization by using automated user account provisioning, see: [Automate user provisioning to SaaS applications with Azure AD](../app-provisioning/user-provisioning.md).
+For more information about how to better secure your organization by using automated user account provisioning, see: [Automate user provisioning to SaaS applications with Azure AD](~/identity/app-provisioning/user-provisioning.md).
 
 
 ---

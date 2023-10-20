@@ -18,7 +18,7 @@ ms.author: thwimmer
 
 # Tutorial: Configure Contentful for automatic user provisioning
 
-This article describes the steps you need to complete in Contentful and in Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users and groups to [Contentful](https://www.contentful.com/) by using the Microsoft Entra provisioning service. For important details about what this service does and how it works, and for frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](../app-provisioning/user-provisioning.md). 
+This article describes the steps you need to complete in Contentful and in Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users and groups to [Contentful](https://www.contentful.com/) by using the Microsoft Entra provisioning service. For important details about what this service does and how it works, and for frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
 ## Capabilities supported
 
@@ -39,9 +39,9 @@ The scenario outlined in this tutorial assumes that you already have the followi
  
 ## Plan your provisioning deployment
 
-1. Learn about [how the provisioning service works](../app-provisioning/user-provisioning.md).
-2. Determine who will be in [scope for provisioning](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
-3. Determine what data to [map between Microsoft Entra ID and Contentful](../app-provisioning/customize-application-attributes.md). 
+1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
+2. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+3. Determine what data to [map between Microsoft Entra ID and Contentful](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='configure-contentful-to-support-provisioning-with-azure-ad'></a>
 
@@ -82,10 +82,10 @@ You can use the Microsoft Entra provisioning service to scope who will be provis
 
 If you choose to scope who will be provisioned to your app based on assignment, complete the steps to [assign users and groups to the application](~/identity/enterprise-apps/assign-user-or-group-access-portal.md).
 
-If you choose to scope who will be provisioned based solely on attributes of the user or group, use a scoping filter to [define conditional rules for provisioning user accounts](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md). 
+If you choose to scope who will be provisioned based solely on attributes of the user or group, use a scoping filter to [define conditional rules for provisioning user accounts](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md). 
 
 * When you assign users and groups to Contentful, you must select a role other than **Default Access**. Users who have the Default Access role are excluded from provisioning and are indicated in the provisioning logs as not effectively entitled. If the only role available on the application is the Default Access role, you can [update the application manifest](~/identity-platform/howto-add-app-roles-in-azure-ad-apps.md) to add more roles. 
-* Start small. Test with a small set of users and groups before you roll out to everyone. When provisioning scope is set to assigned users and groups, you can control the scope by assigning one or two users or groups to the app. When the scope is set to all users and groups, you can specify an [attribute-based scoping filter](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md). 
+* Start small. Test with a small set of users and groups before you roll out to everyone. When provisioning scope is set to assigned users and groups, you can control the scope by assigning one or two users or groups to the app. When the scope is set to all users and groups, you can specify an [attribute-based scoping filter](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md). 
 
 ## Configure automatic user provisioning to Contentful 
 
@@ -124,7 +124,7 @@ This section guides you through the steps to set up the Microsoft Entra provisio
 
 8. In the **Mappings** section, select **Synchronize Microsoft Entra users to Contentful**.
 
-9. In the **Attribute-Mapping** section, review the user attributes that are synced from Microsoft Entra ID to Contentful. The attributes selected as **Matching** properties are used to match the user accounts in Contentful for update operations. If you choose to change the [matching target attribute](../app-provisioning/customize-application-attributes.md), you must ensure that the Contentful API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+9. In the **Attribute-Mapping** section, review the user attributes that are synced from Microsoft Entra ID to Contentful. The attributes selected as **Matching** properties are used to match the user accounts in Contentful for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you must ensure that the Contentful API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|
    |---|---|---|
@@ -141,7 +141,7 @@ This section guides you through the steps to set up the Microsoft Entra provisio
     |displayName|String|&check;|
     |members|Reference|
 
-12. To set up scoping filters, complete the steps that are described in the [scoping filter tutorial](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+12. To set up scoping filters, complete the steps that are described in the [scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 13. To enable the Microsoft Entra provisioning service for Contentful, in the **Settings** section, for **Provisioning Status**, select **On**.
 
@@ -162,11 +162,11 @@ This operation starts the initial sync cycle of all users and groups defined in 
 After you configure provisioning, use the following resources to monitor your deployment:
 
 * To determine which users have been provisioned successfully or unsuccessfully, view the [provisioning logs](../reports-monitoring/concept-provisioning-logs.md).
-* To see the status of the provisioning cycle and how close it is to finishing, check the [progress bar](../app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md).
-* If the provisioning configuration seems to be in an unhealthy state, the application goes into quarantine. Learn more about [quarantine states](../app-provisioning/application-provisioning-quarantine-status.md).  
+* To see the status of the provisioning cycle and how close it is to finishing, check the [progress bar](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md).
+* If the provisioning configuration seems to be in an unhealthy state, the application goes into quarantine. Learn more about [quarantine states](~/identity/app-provisioning/application-provisioning-quarantine-status.md).  
 
 ## Next steps
 
-* [Learn how to review logs and get reports on provisioning activity](../app-provisioning/check-status-user-account-provisioning.md)
-* [Manage user account provisioning for Enterprise Apps](../app-provisioning/configure-automatic-user-provisioning-portal.md)
+* [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)
+* [Manage user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)

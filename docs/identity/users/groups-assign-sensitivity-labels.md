@@ -46,7 +46,7 @@ To apply published labels to groups, you must first enable the feature. These st
     ```
 
     > [!NOTE]
-    > If no group settings have been created for this Microsoft Entra organization, you will get an empty screen. In this case, you must first create the settings. Follow the steps in [Microsoft Entra cmdlets for configuring group settings](../enterprise-users/groups-settings-cmdlets.md) to create group settings for this Microsoft Entra organization.  
+    > If no group settings have been created for this Microsoft Entra organization, you will get an empty screen. In this case, you must first create the settings. Follow the steps in [Microsoft Entra cmdlets for configuring group settings](~/identity/users/groups-settings-cmdlets.md) to create group settings for this Microsoft Entra organization.  
     
     > [!NOTE]
     > If the sensitivity label has been enabled previously, you will see **EnableMIPLabels** =  **True**. In this case, you do not need to do anything.
@@ -166,5 +166,5 @@ If you must make a change, use an [Azure AD PowerShell script](https://github.co
 
 - [Use sensitivity labels with Microsoft Teams, Microsoft 365 groups, and SharePoint sites](/purview/sensitivity-labels-teams-groups-sites)
 - [Update groups after label policy change manually with Azure AD PowerShell script](https://github.com/microsoftgraph/powershell-aad-samples/blob/master/ReassignSensitivityLabelToO365Groups.ps1)
-- [Edit your group settings](../fundamentals/how-to-manage-groups.md)
-- [Manage groups using PowerShell commands](../enterprise-users/groups-settings-v2-cmdlets.md)
+- [Edit your group settings](~/fundamentals/how-to-manage-groups.md)
+- [Manage groups using PowerShell commands](~/identity/users/groups-settings-v2-cmdlets.md)

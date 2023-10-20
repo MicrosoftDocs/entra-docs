@@ -85,7 +85,7 @@ sections:
       - question: |
           How do I leave a tenant when I'm added as a collaborator?
         answer: |
-         Information on how to leave tenants where you were added as a collaborator is documented in [Leave an organization as an external user](../external-identities/leave-the-organization.md)
+         Information on how to leave tenants where you were added as a collaborator is documented in [Leave an organization as an external user](~/external-id/leave-the-organization.md)
           
           
           
@@ -203,7 +203,7 @@ sections:
           For more information, see:
           
           * [Configuring single sign-on to applications that are not in the Microsoft Entra application gallery](~/identity-platform/single-sign-on-saml-protocol.md)
-          * [Using SCIM to enable automatic provisioning of users and groups from Microsoft Entra ID to applications](../app-provisioning/use-scim-to-provision-users-and-groups.md)
+          * [Using SCIM to enable automatic provisioning of users and groups from Microsoft Entra ID to applications](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md)
           
           
           
@@ -257,7 +257,7 @@ sections:
         answer: |
           Use Microsoft Entra ID to automate the creation, maintenance, and removal of user identities in many popular cloud SaaS apps.
           
-          For more information, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](../app-provisioning/user-provisioning.md).
+          For more information, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
           
           
           

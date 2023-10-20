@@ -52,7 +52,7 @@ See the following links to articles about resource grouping strategies:
 * Apply Conditional Access policies to up to 250 applications, with the same access requirements
   *  [What is Conditional Access?](../conditional-access/overview.md) 
 * Define access for external user application groups
-  *  [Overview: Cross-tenant access with Microsoft Entra External ID](../external-identities/cross-tenant-access-overview.md) 
+  *  [Overview: Cross-tenant access with Microsoft Entra External ID](~/external-id/cross-tenant-access-overview.md) 
 
 Document the grouped applications. Considerations include:
 
@@ -95,9 +95,9 @@ Consider the following risk-based policies to trigger MFA.
 
 Learn more: 
 
-* [Tutorial: Enforce multi-factor authentication for B2B guest users](../external-identities/b2b-tutorial-require-mfa.md)
+* [Tutorial: Enforce multi-factor authentication for B2B guest users](~/external-id/b2b-tutorial-require-mfa.md)
 * Trust MFA from external tenants
-  * See, [Configure cross-tenant access settings for B2B collaboration, Modify inbound access settings](../external-identities/cross-tenant-access-settings-b2b-collaboration.md#modify-inbound-access-settings)
+  * See, [Configure cross-tenant access settings for B2B collaboration, Modify inbound access settings](~/external-id/cross-tenant-access-settings-b2b-collaboration.md#modify-inbound-access-settings)
 
 ### User and device sign-in conditions
 
@@ -110,7 +110,7 @@ Use the following table to help assess policy to address risk.
 | Identity protection is High risk| Require user to change password |
 | Network location| To access confidential projects, require sign-in from an IP address range |
 
-To use device state as policy input, register or join the device to your tenant. To trust the device claims from the home tenant, configure cross-tenant access settings. See, [Modify inbound access settings](../external-identities/cross-tenant-access-settings-b2b-collaboration.md#modify-inbound-access-settings).
+To use device state as policy input, register or join the device to your tenant. To trust the device claims from the home tenant, configure cross-tenant access settings. See, [Modify inbound access settings](~/external-id/cross-tenant-access-settings-b2b-collaboration.md#modify-inbound-access-settings).
 
 You can use identity-protection risk policies. However, mitigate issues in the user home tenant. See, [Common Conditional Access policy: Sign-in risk-based multifactor authentication](../conditional-access/howto-conditional-access-policy-risk.md).
 

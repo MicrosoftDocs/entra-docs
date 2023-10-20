@@ -71,7 +71,7 @@ When a user selects **Yes** on the *Stay signed in?* prompt option during sign-i
 
 If you have a Microsoft Entra ID P1 or P2 license, we recommend using Conditional Access policy for *Persistent browser session*. This policy overwrites the *Stay signed in?* setting and provides an improved user experience. If you don't have a Microsoft Entra ID P1 or P2 license, we recommend enabling the stay signed in setting for your users.
 
-For more information on configuring the option to let users remain signed-in, see [How to manage the 'Stay signed in?' prompt](../fundamentals/how-to-manage-stay-signed-in-prompt.md).
+For more information on configuring the option to let users remain signed-in, see [How to manage the 'Stay signed in?' prompt](~/fundamentals/how-to-manage-stay-signed-in-prompt.md).
 
 <a name='remember-multi-factor-authentication--'></a>
 

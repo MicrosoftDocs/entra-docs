@@ -89,11 +89,11 @@ The following list describes features and services for productivity gains in hyb
 ## Users
 
 * **User identities** - Learn about automation to create, maintain, and remove user identities in cloud apps, such as Dropbox, Salesforce, ServiceNow, and more. 
-  * See, [Plan an automatic user provisioning deployment in Microsoft Entra ID](../app-provisioning/plan-auto-user-provisioning.md)
+  * See, [Plan an automatic user provisioning deployment in Microsoft Entra ID](~/identity/app-provisioning/plan-auto-user-provisioning.md)
 * **Identity governance** - Create identity governance and enhance business processes that rely on identity data. With HR products, such as Workday or Successfactors, manage employee and contingent-staff identity lifecycle with rules. These rules map Joiner-Mover-Leaver processes, such as New Hire, Terminate, Transfer, to IT actions such as Create, Enable, Disable.
-  * See, [Plan cloud HR application to Microsoft Entra user provisioning](../app-provisioning/plan-cloud-hr-provision.md) 
+  * See, [Plan cloud HR application to Microsoft Entra user provisioning](~/identity/app-provisioning/plan-cloud-hr-provision.md) 
 * **Microsoft Entra B2B collaboration** - Improve external-user collaboration with secure access to applications: 
-  * See, [B2B collaboration overview](../external-identities/what-is-b2b.md)
+  * See, [B2B collaboration overview](~/external-id/what-is-b2b.md)
   * See, [Plan a Microsoft Entra B2B collaboration deployment](secure-external-access-resources.md)
 
 ## Identity Governance and reporting
@@ -125,4 +125,4 @@ In your first phase, target IT, usability, and other users who can test and prov
 
 Widen the pilot to larger groups of users by using dynamic membership, or by manually adding users to the targeted group(s).
 
-Learn more: [Dynamic membership rules for groups in Microsoft Entra ID](../enterprise-users/groups-dynamic-membership.md)
+Learn more: [Dynamic membership rules for groups in Microsoft Entra ID](~/identity/users/groups-dynamic-membership.md)

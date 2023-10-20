@@ -13,7 +13,7 @@ manager:
 
 # Azure Active Directory application provisioning: What's new
 
-Welcome to what's new in Azure Active Directory application provisioning documentation. This article lists new docs that have been added and those that have had significant updates in the last three months. To learn what's new with the provisioning service, see [What's new in Azure Active Directory](../fundamentals/whats-new.md).
+Welcome to what's new in Azure Active Directory application provisioning documentation. This article lists new docs that have been added and those that have had significant updates in the last three months. To learn what's new with the provisioning service, see [What's new in Azure Active Directory](~/fundamentals/whats-new.md).
 
 ## March 2022
 

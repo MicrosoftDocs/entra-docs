@@ -20,7 +20,7 @@ Federation is a collection of domains that have established trust. The level of 
 
 You can federate your on-premises environment with Microsoft Entra ID and use this federation for authentication and authorization.  This sign-in method ensures that all user authentication occurs on-premises.  This method allows administrators to implement more rigorous levels of access control. Federation with AD FS and PingFederate is available.
 
-![Federated identity](../media/whatis-hybrid-identity/federated-identity.png)
+![Federated identity](~/identity/hybrid/media/whatis-hybrid-identity/federated-identity.png)
 
 
 > [!TIP]

@@ -81,7 +81,7 @@ If included in your subscription, [assign groups to an application](assign-user-
 
 ### Automate provisioning
 
-[Application provisioning](../app-provisioning/user-provisioning.md) refers to automatically creating user identities and roles in the applications that users need to access. In addition to creating user identities, automatic provisioning includes the maintenance and removal of user identities as status or roles change.
+[Application provisioning](~/identity/app-provisioning/user-provisioning.md) refers to automatically creating user identities and roles in the applications that users need to access. In addition to creating user identities, automatic provisioning includes the maintenance and removal of user identities as status or roles change.
 
 ### Identity providers
 

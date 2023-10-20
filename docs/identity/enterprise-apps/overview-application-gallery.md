@@ -16,7 +16,7 @@ ms.custom: enterprise-apps
 
 # Overview of the Microsoft Entra application gallery
 
-The Microsoft Entra application gallery is a collection of software as a service (SaaS) [applications](~/identity-platform/app-objects-and-service-principals.md) that have been pre-integrated with Microsoft Entra ID. The collection contains thousands of applications that make it easy to deploy and configure [single sign-on (SSO)](~/identity-platform/single-sign-on-saml-protocol.md) and [automated user provisioning](../app-provisioning/user-provisioning.md).
+The Microsoft Entra application gallery is a collection of software as a service (SaaS) [applications](~/identity-platform/app-objects-and-service-principals.md) that have been pre-integrated with Microsoft Entra ID. The collection contains thousands of applications that make it easy to deploy and configure [single sign-on (SSO)](~/identity-platform/single-sign-on-saml-protocol.md) and [automated user provisioning](~/identity/app-provisioning/user-provisioning.md).
 
 To find the gallery when signed into your tenant, select **Enterprise applications**, select **All applications**, and then select **New application**.
 
@@ -45,7 +45,7 @@ If you don’t find the application that you are looking for in the featured app
 When searching for an application, you can also specify specific filters, such as single sign-on options, automated provisioning, and categories. 
 
 - **Single sign-on options** – You can search for applications that support these SSO options: SAML, OpenID Connect (OIDC), Password, or Linked. For more information about these options, see [Plan a single sign-on deployment in Microsoft Entra ID](plan-sso-deployment.md).
-- **User account management** – The only option available is [automated provisioning](../app-provisioning/user-provisioning.md).
+- **User account management** – The only option available is [automated provisioning](~/identity/app-provisioning/user-provisioning.md).
 - **Categories** – When an application is added to the gallery it can be classified in a specific category. Many categories are available such as **Business management**, **Collaboration**, or **Education**.
 
 ### Cloud platforms
@@ -71,7 +71,7 @@ A collection of featured applications is listed by default when you open the Mic
 :::image type="content" source="media/overview-application-gallery/featured-applications.png" alt-text="Screenshot showing the featured applications on the Microsoft Entra application gallery blade in the Microsoft Entra admin center.":::
 
 - **Federated SSO** - When you set up [SSO](what-is-single-sign-on.md) to work between multiple identity providers, it's called federation. An SSO implementation based on federation protocols improves security, reliability, user experiences, and implementation. Some applications implement federated SSO as SAML-based or as OIDC-based. For SAML applications, when you select create, the application is added to your tenant. For OIDC applications, the administrator must first sign up or sign-in on the application's website to add the application to Microsoft Entra ID.
-- **Provisioning** - Microsoft Entra ID to SaaS [application provisioning](../app-provisioning/user-provisioning.md) refers to automatically creating user identities and roles in the SaaS applications that users need access to.
+- **Provisioning** - Microsoft Entra ID to SaaS [application provisioning](~/identity/app-provisioning/user-provisioning.md) refers to automatically creating user identities and roles in the SaaS applications that users need access to.
 
 ## Create your own application
 

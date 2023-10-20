@@ -107,7 +107,7 @@ When a guest signs in to a resource in a partner organization for the first time
    :::image type="content" source="media/redemption-experience/new-review-permissions.png" alt-text="Screenshot showing the Review permissions page.":::
 
    > [!NOTE]
-   > For information about how you as a tenant administrator can link to your organization's privacy statement, see [How-to: Add your organization's privacy info in Microsoft Entra ID](../fundamentals/properties-area.md).
+   > For information about how you as a tenant administrator can link to your organization's privacy statement, see [How-to: Add your organization's privacy info in Microsoft Entra ID](~/fundamentals/properties-area.md).
 
 2. If terms of use are configured, the guest opens and reviews the terms of use, and then selects **Accept**. 
 
@@ -128,7 +128,7 @@ You might want to automatically redeem invitations so users don't have to accept
 
 :::image type="content" source="media/redemption-experience/email-consent-prompt-suppressed.png" alt-text="Screenshot that shows B2B notification email when the consent prompt is suppressed.":::
 
-For information about how to automatically redeem invitations, see [cross-tenant access overview](cross-tenant-access-overview.md#automatic-redemption-setting) and [Configure cross-tenant access settings for B2B collaboration](../external-identities/cross-tenant-access-settings-b2b-collaboration.md).
+For information about how to automatically redeem invitations, see [cross-tenant access overview](cross-tenant-access-overview.md#automatic-redemption-setting) and [Configure cross-tenant access settings for B2B collaboration](~/external-id/cross-tenant-access-settings-b2b-collaboration.md).
 
 ## Next steps
 

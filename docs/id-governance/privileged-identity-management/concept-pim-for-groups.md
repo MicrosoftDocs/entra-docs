@@ -80,7 +80,7 @@ If a user is an active member of Group A, and Group A is an eligible member of G
 
 ## Privileged Identity Management and app provisioning (Public Preview)
 
-If the group is configured for [app provisioning](../app-provisioning/index.yml), activation of group membership will trigger provisioning of group membership (and user account itself if it wasn’t provisioned previously) to the application using SCIM protocol. 
+If the group is configured for [app provisioning](~/identity/app-provisioning/index.yml), activation of group membership will trigger provisioning of group membership (and user account itself if it wasn’t provisioned previously) to the application using SCIM protocol. 
 
 In Public Preview we have a functionality that triggers provisioning right after group membership is activated in PIM.
 Provisioning configuration depends on the application. Generally, we recommend having at least two groups assigned to the application. Depending on the number of roles in your application, you may choose to define additional “privileged groups.”:

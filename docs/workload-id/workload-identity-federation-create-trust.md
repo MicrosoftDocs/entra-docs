@@ -180,7 +180,7 @@ To delete a federated identity credential, select the **Delete** icon for the cr
 
 - If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/free/) before you continue.
 
-[!INCLUDE [azure-cli-prepare-your-environment-no-header.md](~/articles/reusable-content/azure-cli/azure-cli-prepare-your-environment-no-header.md)]
+[!INCLUDE [azure-cli-prepare-your-environment-no-header.md](~/../reusable-content/azure-cli/azure-cli-prepare-your-environment-no-header.md)]
 
 - [Create an app registration](~/identity-platform/quickstart-register-app.md) in Microsoft Entra ID.  Grant your app access to the Azure resources targeted by your external software workload.
 - Find the object ID, app (client) ID, or identifier URI of the app, which you need in the following steps.  You can find these values in the [Microsoft Entra admin center](https://entra.microsoft.com).  Go to the list of registered applications and select your app registration.  In **Overview**->**Essentials**, get the **Object ID**, **Application (client) ID**, or **Application ID URI** value, which you need in the following steps.

@@ -47,7 +47,7 @@ Applications that require that a user record is present in the application befor
 
 Microsoft Entra ID provides several integration paths to enable automatic user provisioning for your application.
 
-* The [Microsoft Entra provisioning service](../app-provisioning/user-provisioning.md) manages the provisioning and deprovisioning of users from Microsoft Entra ID to your application (outbound provisioning) and from your application to Microsoft Entra ID (inbound provisioning). The service connects to the System for Cross-Domain Identity Management (SCIM) user management API endpoints provided by your application.
+* The [Microsoft Entra provisioning service](~/identity/app-provisioning/user-provisioning.md) manages the provisioning and deprovisioning of users from Microsoft Entra ID to your application (outbound provisioning) and from your application to Microsoft Entra ID (inbound provisioning). The service connects to the System for Cross-Domain Identity Management (SCIM) user management API endpoints provided by your application.
 
 * When using the [Microsoft Graph](/graph/), your application manages inbound and outbound provisioning of users and groups from Microsoft Entra ID to your application by querying the Microsoft Graph API.
 
@@ -80,9 +80,9 @@ For more information on how the Microsoft Entra provisioning service users SCIM,
 
 * [Learn more about the SCIM standard](https://aka.ms/SCIMOverview)
 
-* [Using System for Cross-Domain Identity Management (SCIM) to automatically provision users and groups from Microsoft Entra ID to applications](../app-provisioning/use-scim-to-provision-users-and-groups.md)
+* [Using System for Cross-Domain Identity Management (SCIM) to automatically provision users and groups from Microsoft Entra ID to applications](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md)
 
-* [Understand the Microsoft Entra SCIM implementation](../app-provisioning/use-scim-to-provision-users-and-groups.md)
+* [Understand the Microsoft Entra SCIM implementation](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md)
 
 ## Microsoft Graph for Provisioning
 

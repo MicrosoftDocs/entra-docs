@@ -21,7 +21,7 @@ This article is the third in a series of articles that provide guidance for conf
 - [Multi-tenant user management scenarios](multi-tenant-user-management-scenarios.md) describes three scenarios for which you can use multi-tenant user management features: end user-initiated, scripted, and automated.
 - [Common solutions for multi-tenant user management](multi-tenant-common-solutions.md) when single tenancy doesn't work for your scenario, this article provides guidance for these challenges:  automatic user lifecycle management and resource allocation across tenants, sharing on-premises apps across tenants.
 
-The guidance helps to you achieve a consistent state of user lifecycle management. Lifecycle management includes provisioning, managing, and deprovisioning users across tenants using the available Azure tools that include [Microsoft Entra B2B collaboration](../external-identities/what-is-b2b.md) (B2B) and [cross-tenant synchronization](../multi-tenant-organizations/cross-tenant-synchronization-overview.md).
+The guidance helps to you achieve a consistent state of user lifecycle management. Lifecycle management includes provisioning, managing, and deprovisioning users across tenants using the available Azure tools that include [Microsoft Entra B2B collaboration](~/external-id/what-is-b2b.md) (B2B) and [cross-tenant synchronization](../multi-tenant-organizations/cross-tenant-synchronization-overview.md).
 
 Synchronization requirements are unique to your organization's specific needs. As you design a solution to meet your organization's requirements, the following considerations in this article will help you identify your best options.
 
@@ -58,8 +58,8 @@ The [Microsoft Exchange Online](#microsoft-exchange-online) section of this arti
 
 When you use the console to manually create an invitation for an external user account, it creates the user object with a guest user type. Using other techniques to create invitations enable you to set the user type to something other than an external guest account. For example, when using the API, you can configure whether the account is an external member account or an external guest account.
 
-- Some of the [limits on guest functionality can be removed](../external-identities/user-properties.md#guest-user-permissions).
-- You can [convert guest accounts to member user type.](../external-identities/user-properties.md#can-azure-ad-b2b-users-be-added-as-members-instead-of-guests)
+- Some of the [limits on guest functionality can be removed](~/external-id/user-properties.md#guest-user-permissions).
+- You can [convert guest accounts to member user type.](~/external-id/user-properties.md#can-azure-ad-b2b-users-be-added-as-members-instead-of-guests)
 
 If you convert from an external guest user to an external member user account, there might be issues with how Exchange Online handles B2B accounts. You can't mail-enable accounts that you invited as external member users. To mail-enable an external member account, use the following best approach.
 
@@ -119,7 +119,7 @@ A mail contact object can't convert to a user object. Therefore, properties asso
 
 The state of the user, device, or network in the user's home tenant doesn't convey to the resource tenant. Therefore, an external user might not satisfy Conditional Access policies that use the following controls.
 
-Where allowed, you can override this behavior with [Cross-Tenant Access Settings (CTAS)](../external-identities/cross-tenant-access-overview.md) that honor MFA and device compliance from the home tenant.
+Where allowed, you can override this behavior with [Cross-Tenant Access Settings (CTAS)](~/external-id/cross-tenant-access-overview.md) that honor MFA and device compliance from the home tenant.
 
 - **Require multifactor authentication.** Without CTAS configured, an external user must register/respond to MFA in the resource tenant (even if MFA was satisfied in the home tenant), which results in multiple MFA challenges. If they need to reset their MFA proofs, they might not be aware of the multiple MFA proof registrations across tenants. The lack of awareness might require the user to contact an administrator in the home tenant, resource tenant, or both.
 - **Require device to be marked as compliant.** Without CTAS configured, device identity isn't registered in the resource tenant, so the external user can't access resources that require this control.
@@ -137,7 +137,7 @@ Review the [security checklist](/azure/security/fundamentals/steps-secure-identi
 ### Conditional access
 The following are considerations for configuring access control.
 
-- Define [access control policies](../external-identities/authentication-conditional-access.md) to control access to resources.
+- Define [access control policies](~/external-id/authentication-conditional-access.md) to control access to resources.
 - Design Conditional Access policies with external users in mind.
 - Create policies specifically for external users.
 - Create dedicated Conditional Access policies for external accounts.
@@ -155,7 +155,7 @@ AuditLogs
 
 ### Dynamic groups
 
-If your organization is using the [**all users** dynamic group](../external-identities/use-dynamic-groups.md) condition in your existing Conditional Access policy, this policy affects external users because they are in scope of **all users**.
+If your organization is using the [**all users** dynamic group](~/external-id/use-dynamic-groups.md) condition in your existing Conditional Access policy, this policy affects external users because they are in scope of **all users**.
 
 ### Require user assignment for applications
 
@@ -177,7 +177,7 @@ When you're using security groups to control who is in scope for cross-tenant sy
 
 ### Licensing considerations for guest users with Microsoft Entra ID P1 or P2 features
 
-Microsoft Entra External ID pricing is based on monthly active users (MAU). The number of active users is the count of unique users with authentication activity within a calendar month. [Billing model for Microsoft Entra External ID](../external-identities/external-identities-pricing.md) describes how pricing is based on monthly active users (MAU), which is the count of unique users with authentication activity within a calendar month.
+Microsoft Entra External ID pricing is based on monthly active users (MAU). The number of active users is the count of unique users with authentication activity within a calendar month. [Billing model for Microsoft Entra External ID](~/external-id/external-identities-pricing.md) describes how pricing is based on monthly active users (MAU), which is the count of unique users with authentication activity within a calendar month.
 
 ## Office 365 considerations
 
@@ -225,7 +225,7 @@ One of the most useful features of **Set-MailUser** is the ability to manipulate
 
 ### Microsoft SharePoint Online
 
-SharePoint Online has its own service-specific permissions depending on whether the user (internal or external) is of type member or guest in the Microsoft Entra tenant. [Office 365 external sharing and Microsoft Entra B2B collaboration](../external-identities/what-is-b2b.md) describes how you can enable integration with SharePoint and OneDrive to share files, folders, list items, document libraries, and sites with people outside your organization, while using Azure B2B for authentication and management.
+SharePoint Online has its own service-specific permissions depending on whether the user (internal or external) is of type member or guest in the Microsoft Entra tenant. [Office 365 external sharing and Microsoft Entra B2B collaboration](~/external-id/what-is-b2b.md) describes how you can enable integration with SharePoint and OneDrive to share files, folders, list items, document libraries, and sites with people outside your organization, while using Azure B2B for authentication and management.
 
 After you enable external sharing in SharePoint Online, the ability to search for guest users in the SharePoint Online people picker is **OFF** by default. This setting prohibits guest users from being discoverable when they're hidden from the Exchange Online GAL. You can enable guest users to become visible in two ways (not mutually exclusive):
 

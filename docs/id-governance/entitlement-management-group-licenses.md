@@ -21,12 +21,12 @@ ms.collection: M365-identity-device-management
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
  
-With Microsoft Entra ID, you can use groups to manage the [licenses for your applications](../enterprise-users/licensing-groups-assign.md). You can make the management of these groups even easier by using entitlement management: 
+With Microsoft Entra ID, you can use groups to manage the [licenses for your applications](~/identity/users/licensing-groups-assign.md). You can make the management of these groups even easier by using entitlement management: 
 
 * Configure periodic access reviews to ensure only employees that need the licenses are in the group. 
 * Allow other employees to request membership to the group.
 
-In this tutorial, you play the role of an IT administrator for Woodgrove Bank. You're asked to create an access package so employees in your organization can easily gain access to Office licenses. (You should already have a group that manages your [Office licenses](../enterprise-users/licensing-groups-assign.md).) You want to be able to review these group members every year. You also want to allow new employees to request Office licenses, pending manager approval.
+In this tutorial, you play the role of an IT administrator for Woodgrove Bank. You're asked to create an access package so employees in your organization can easily gain access to Office licenses. (You should already have a group that manages your [Office licenses](~/identity/users/licensing-groups-assign.md).) You want to be able to review these group members every year. You also want to allow new employees to request Office licenses, pending manager approval.
  
 To use entitlement management, you must have one of these licenses:
 
@@ -52,7 +52,7 @@ For more information, see [License requirements](entitlement-management-overview
 
 1. Select **Next: Resource roles** to go to the **Resource roles** tab.
 
-1. On this tab, you select the resources and the resource role to include in the access package. In this scenario, select **Groups and Teams** and search for your group that has assigned [Office licenses](../enterprise-users/licensing-groups-assign.md).
+1. On this tab, you select the resources and the resource role to include in the access package. In this scenario, select **Groups and Teams** and search for your group that has assigned [Office licenses](~/identity/users/licensing-groups-assign.md).
 
 1. In the **Role** list, select **Member**.
 

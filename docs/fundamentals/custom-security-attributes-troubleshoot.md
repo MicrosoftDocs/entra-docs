@@ -91,7 +91,7 @@ There are no custom security attributes defined and assigned yet for your tenant
 
 **Solution 3**
 
-Add and assign custom security attributes to users or enterprise applications. For more information, see [Add or deactivate custom security attribute definitions in Microsoft Entra ID](custom-security-attributes-add.md), [Assign, update, list, or remove custom security attributes for a user](../enterprise-users/users-custom-security-attributes.md), or [Assign, update, list, or remove custom security attributes for an application](~/identity/enterprise-apps/custom-security-attributes-apps.md).
+Add and assign custom security attributes to users or enterprise applications. For more information, see [Add or deactivate custom security attribute definitions in Microsoft Entra ID](custom-security-attributes-add.md), [Assign, update, list, or remove custom security attributes for a user](~/identity/users/users-custom-security-attributes.md), or [Assign, update, list, or remove custom security attributes for an application](~/identity/enterprise-apps/custom-security-attributes-apps.md).
 
 ## Symptom - Custom security attributes cannot be deleted
 

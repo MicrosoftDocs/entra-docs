@@ -49,7 +49,7 @@ You can create a new user for your organization or invite an external user from 
 
 ## Add a new guest user
 
-You can also invite new guest user to collaborate with your organization by selecting **Invite external user** from the **New user** page. If your organization's external collaboration settings are configured to allow guests, the user will be emailed an invitation they must accept in order to begin collaborating. For more information about inviting B2B collaboration users, see [Invite B2B users to Microsoft Entra ID](../external-identities/add-users-administrator.md).
+You can also invite new guest user to collaborate with your organization by selecting **Invite external user** from the **New user** page. If your organization's external collaboration settings are configured to allow guests, the user will be emailed an invitation they must accept in order to begin collaborating. For more information about inviting B2B collaboration users, see [Invite B2B users to Microsoft Entra ID](~/external-id/add-users-administrator.md).
 
 The process for inviting a guest is the same as [adding a new user](./add-users.md#add-a-new-user), with two exceptions. The email address won't follow the same domain rules as users from your organization. You can also include a personal message. 
 
@@ -94,5 +94,5 @@ After you've added your users, you can do the following basic processes:
 - [Add or change profile information](./how-to-manage-user-profile-info.md)
 - [Assign roles to users](./how-subscriptions-associated-directory.md)
 - [Create a basic group and add members](./how-to-manage-groups.md)
-- [Work with dynamic groups and users](../enterprise-users/groups-create-rule.md)
-- [Add guest users from another directory](../external-identities/what-is-b2b.md)
+- [Work with dynamic groups and users](~/identity/users/groups-create-rule.md)
+- [Add guest users from another directory](~/external-id/what-is-b2b.md)

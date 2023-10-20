@@ -18,7 +18,7 @@ ms.author: thwimmer
 
 This article describes the steps that you'll take in both ServiceNow and Microsoft Entra ID to configure automatic user provisioning. When Microsoft Entra ID is configured, it automatically provisions and deprovisions users and groups to [ServiceNow](https://www.servicenow.com) by using the Microsoft Entra provisioning service. 
 
-For more information on the Microsoft Entra automatic user provisioning service, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](../app-provisioning/user-provisioning.md). 
+For more information on the Microsoft Entra automatic user provisioning service, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
 ## Capabilities supported
 
@@ -42,9 +42,9 @@ For more information on the Microsoft Entra automatic user provisioning service,
 
 ## Step 1: Plan your provisioning deployment
 
-- Learn about [how the provisioning service works](../app-provisioning/user-provisioning.md).
-- Determine who will be in [scope for provisioning](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
-- Determine what data to [map between Microsoft Entra ID and ServiceNow](../app-provisioning/customize-application-attributes.md). 
+- Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
+- Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+- Determine what data to [map between Microsoft Entra ID and ServiceNow](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-servicenow-to-support-provisioning-with-azure-ad'></a>
 
@@ -66,7 +66,7 @@ Add ServiceNow from the Microsoft Entra application gallery to start managing pr
 
 ## Step 4: Define who will be in scope for provisioning 
 
-The Microsoft Entra provisioning service allows you to scope who will be provisioned based on assignment to the application, or based on attributes of the user or group. If you choose to scope who will be provisioned to your app based on assignment, you can use the [steps to assign users and groups to the application](~/identity/enterprise-apps/assign-user-or-group-access-portal.md). If you choose to scope who will be provisioned based solely on attributes of the user or group, you can [use a scoping filter](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md). 
+The Microsoft Entra provisioning service allows you to scope who will be provisioned based on assignment to the application, or based on attributes of the user or group. If you choose to scope who will be provisioned to your app based on assignment, you can use the [steps to assign users and groups to the application](~/identity/enterprise-apps/assign-user-or-group-access-portal.md). If you choose to scope who will be provisioned based solely on attributes of the user or group, you can [use a scoping filter](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md). 
 
 Keep the following tips in mind:
 
@@ -102,7 +102,7 @@ To configure automatic user provisioning for ServiceNow in Microsoft Entra ID:
 
 1. Review the user attributes that are synchronized from Microsoft Entra ID to ServiceNow in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in ServiceNow for update operations. 
 
-   If you choose to change the [matching target attribute](../app-provisioning/customize-application-attributes.md), you'll need to ensure that the ServiceNow API supports filtering users based on that attribute. 
+   If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you'll need to ensure that the ServiceNow API supports filtering users based on that attribute. 
    
    Select the **Save** button to commit any changes.
 
@@ -110,7 +110,7 @@ To configure automatic user provisioning for ServiceNow in Microsoft Entra ID:
 
 1. Review the group attributes that are synchronized from Microsoft Entra ID to ServiceNow in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in ServiceNow for update operations. Select the **Save** button to commit any changes.
 
-1. To configure scoping filters, see the instructions in the [Scoping filter tutorial](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, see the instructions in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 1. To enable the Microsoft Entra provisioning service for ServiceNow, change **Provisioning Status** to **On** in the **Settings** section.
 
@@ -127,15 +127,15 @@ This operation starts the initial synchronization cycle of all users and groups 
 After you've configured provisioning, use the following resources to monitor your deployment:
 
 - Use the [provisioning logs](../reports-monitoring/concept-provisioning-logs.md) to determine which users have been provisioned successfully or unsuccessfully.
-- Check the [progress bar](../app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md) to see the status of the provisioning cycle and how close it is to completion.
-- If the provisioning configuration seems to be in an unhealthy state, the application will go into quarantine. [Learn more about quarantine states](../app-provisioning/application-provisioning-quarantine-status.md).  
+- Check the [progress bar](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md) to see the status of the provisioning cycle and how close it is to completion.
+- If the provisioning configuration seems to be in an unhealthy state, the application will go into quarantine. [Learn more about quarantine states](~/identity/app-provisioning/application-provisioning-quarantine-status.md).  
 
 ## Troubleshooting tips
 
 - When you're provisioning certain attributes (such as **Department** and **Location**) in ServiceNow, the values must already exist in a reference table in ServiceNow. If they don't, you'll get an **InvalidLookupReference** error. 
 
    For example, you might have two locations (Seattle, Los Angeles) and three departments (Sales, Finance, Marketing) in a certain table in ServiceNow. If you try to provision a user whose department is "Sales" and whose location is "Seattle," that user will be provisioned successfully. If you try to provision a user whose department is "Sales" and whose location is "LA," the user won't be provisioned. The location "LA" must be added to the reference table in ServiceNow, or the user attribute in Microsoft Entra ID must be updated to match the format in ServiceNow. 
-- If you get an **EntryJoiningPropertyValueIsMissing** error, review your [attribute mappings](../app-provisioning/customize-application-attributes.md) to identify the matching attribute. This value must be present on the user or group you're trying to provision. 
+- If you get an **EntryJoiningPropertyValueIsMissing** error, review your [attribute mappings](~/identity/app-provisioning/customize-application-attributes.md) to identify the matching attribute. This value must be present on the user or group you're trying to provision. 
 - To understand any requirements or limitations (for example, the format to specify a country code for a user), review the [ServiceNow SOAP API](https://docs.servicenow.com/bundle/rome-application-development/page/integrate/web-services-apis/reference/r_DirectWebServiceAPIFunctions.html).
 - Provisioning requests are sent by default to https://{your-instance-name}.service-now.com/{table-name}. If you need a custom tenant URL, you can provide the entire URL as the instance name.
 - The **ServiceNowInstanceInvalid** error indicates a problem communicating with the ServiceNow instance. Here's the text of the error:
@@ -151,7 +151,7 @@ After you've configured provisioning, use the following resources to monitor you
 
   If you still can't resolve your problem, contact ServiceNow support, and ask them to turn on SOAP debugging to help troubleshoot. 
 
-- The Microsoft Entra provisioning service currently operates under particular [IP ranges](../app-provisioning/use-scim-to-provision-users-and-groups.md#ip-ranges). If necessary, you can restrict other IP ranges and add these particular IP ranges to the allowlist of your application. That technique will allow traffic flow from the Microsoft Entra provisioning service to your application.
+- The Microsoft Entra provisioning service currently operates under particular [IP ranges](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md#ip-ranges). If necessary, you can restrict other IP ranges and add these particular IP ranges to the allowlist of your application. That technique will allow traffic flow from the Microsoft Entra provisioning service to your application.
 
 - Self-hosted ServiceNow instances aren't supported. 
 
@@ -159,9 +159,9 @@ After you've configured provisioning, use the following resources to monitor you
 
 ## Additional resources
 
-- [Managing user account provisioning for enterprise apps](../app-provisioning/configure-automatic-user-provisioning-portal.md)
+- [Managing user account provisioning for enterprise apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 - [What is single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
 ## Next steps
 
-- [Learn how to review logs and get reports on provisioning activity](../app-provisioning/check-status-user-account-provisioning.md)
+- [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)

@@ -29,7 +29,7 @@ Before you create or invite a new user, take some time to review the types of us
 - **External member**: These users authenticate using an external account, but have member access to your tenant. These types of users are common in [multi-tenant organizations](../multi-tenant-organizations/overview.md#what-is-a-multi-tenant-organization).
 - **External guest**: These users are true guests of your tenant who authenticate using an external method and who have guest-level privileges. 
 
-For more information abut the differences between internal and external guests and members, see [B2B collaboration properties](../external-identities/user-properties.md).
+For more information abut the differences between internal and external guests and members, see [B2B collaboration properties](~/external-id/user-properties.md).
 
 Authentication methods vary based on the type of user you create. Internal guests and members have credentials in your Microsoft Entra tenant that can be managed by administrators. These users can also reset their own password. External members authenticate to their home Microsoft Entra tenant and your Microsoft Entra tenant authenticates the user through a federated sign-in with the external member's Microsoft Entra tenant. If external members forget their password, the administrator in their Microsoft Entra tenant can reset their password. External guests set up their own password using the link they receive in email when their account is created.
 
@@ -177,6 +177,6 @@ When a user is deleted, any licenses consumed by the user are made available for
 
 ## Next steps
 
-* [Learn about B2B collaboration users](../external-identities/add-users-administrator.md)
+* [Learn about B2B collaboration users](~/external-id/add-users-administrator.md)
 * [Review the default user permissions](users-default-permissions.md)
 * [Add a custom domain](add-custom-domain.md)

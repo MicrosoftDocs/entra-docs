@@ -24,7 +24,7 @@ If you don’t have an Azure subscription, create a [free account](https://azure
 
 The updated experience for creating new users covered in this article is available as a Microsoft Entra ID preview feature. This feature is enabled by default, but you can opt out by going to **Identity** > **Settings** > **Preview hub** and disabling the **Create user experience** feature. For more information about previews, see [Universal License Terms for Online Services](https://www.microsoft.com/licensing/terms/product/ForOnlineServices/all).
 
-Instructions for the legacy create user process can be found in the [Add or delete users](../fundamentals/add-users.md) article.
+Instructions for the legacy create user process can be found in the [Add or delete users](~/fundamentals/add-users.md) article.
 
 ## Prerequisites
 
@@ -38,7 +38,7 @@ To complete the scenario in this quickstart, you need:
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-This quickstart guide provides the basic steps to invite an external user. To learn about all of the properties and settings that you can include when you invite an external user, see [How to create and delete a user](../fundamentals/how-to-create-delete-users.md).
+This quickstart guide provides the basic steps to invite an external user. To learn about all of the properties and settings that you can include when you invite an external user, see [How to create and delete a user](~/fundamentals/how-to-create-delete-users.md).
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 

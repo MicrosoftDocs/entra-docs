@@ -23,7 +23,7 @@ With the information in the Microsoft Entra sign-in logs, you can figure out wha
 To complete the scenario in this quickstart, you need:
 
 - **Access to a Microsoft Entra tenant**: If you don't have access to a Microsoft Entra tenant, see [Create your Azure free account today](https://azure.microsoft.com/free/?WT.mc_id=A261C142F). 
-- **A test account called Isabella Simonsen**: If you don't know how to create a test account, see [Add cloud-based users](../fundamentals/add-users.md#add-a-new-user).
+- **A test account called Isabella Simonsen**: If you don't know how to create a test account, see [Add cloud-based users](~/fundamentals/add-users.md#add-a-new-user).
 - **Access to the Microsoft Graph API**: If you haven't configured access yet, see [How to configure the prerequisites for the reporting API](howto-configure-prerequisites-for-reporting-api.md).
 
 
@@ -65,7 +65,7 @@ Review the outcome of your query.
 
 ## Clean up resources
 
-When no longer needed, delete the test user. If you don't know how to delete a Microsoft Entra user, see [Delete users from Microsoft Entra ID](../fundamentals/add-users.md#delete-a-user).
+When no longer needed, delete the test user. If you don't know how to delete a Microsoft Entra user, see [Delete users from Microsoft Entra ID](~/fundamentals/add-users.md#delete-a-user).
 
 ## Next steps
 

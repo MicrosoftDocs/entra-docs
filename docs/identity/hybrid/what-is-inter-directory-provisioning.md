@@ -46,5 +46,5 @@ This capability of inter-directory provisioning offers the following significant
 ## Next steps 
 - [What is identity lifecycle management](../governance/what-is-identity-lifecycle-management.md)
 - [What is provisioning?](what-is-provisioning.md)
-- [What is HR driven provisioning?](../app-provisioning/what-is-hr-driven-provisioning.md)
-- [What is app provisioning?](../app-provisioning/user-provisioning.md)
+- [What is HR driven provisioning?](~/identity/app-provisioning/what-is-hr-driven-provisioning.md)
+- [What is app provisioning?](~/identity/app-provisioning/user-provisioning.md)

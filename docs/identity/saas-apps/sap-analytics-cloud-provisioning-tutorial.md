@@ -19,7 +19,7 @@ ms.author: thwimmer
 
 # Tutorial: Configure SAP Analytics Cloud for automatic user provisioning
 
-This tutorial describes the steps you need to perform in both SAP Analytics Cloud and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users and groups to [SAP Analytics Cloud](https://www.sapanalytics.cloud/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](../app-provisioning/user-provisioning.md). 
+This tutorial describes the steps you need to perform in both SAP Analytics Cloud and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users and groups to [SAP Analytics Cloud](https://www.sapanalytics.cloud/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
 > [!NOTE]
 > We are working with SAP to deploy a new gallery application that provides a single point to configure your SAP Analytics Cloud application.
@@ -47,9 +47,9 @@ The scenario outlined in this tutorial assumes that you already have the followi
 
 ## Step 1: Plan your provisioning deployment
 
-1. Learn about [how the provisioning service works](../app-provisioning/user-provisioning.md).
-2. Determine who is in [scope for provisioning](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
-3. Determine what data to [map between Microsoft Entra ID and SAP Analytics Cloud](../app-provisioning/customize-application-attributes.md). 
+1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
+2. Determine who is in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+3. Determine what data to [map between Microsoft Entra ID and SAP Analytics Cloud](~/identity/app-provisioning/customize-application-attributes.md). 
 
 ## Step 2: Configure SAP Analytics Cloud to support SSO with Microsoft Entra ID
 

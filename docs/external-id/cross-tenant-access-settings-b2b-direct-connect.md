@@ -191,7 +191,7 @@ With inbound settings, you select which external users and groups will be able t
 
    - **Automatically redeem invitations with the tenant** &lt;tenant&gt;: Check this setting if you want to automatically redeem invitations. If so, users from the specified tenant won't have to accept the consent prompt the first time they access this tenant using cross-tenant synchronization, B2B collaboration, or B2B direct connect. This setting will only suppress the consent prompt if the specified tenant checks this setting for outbound access as well.
 
-    ![Screenshot that shows the inbound Automatic redemption check box.](../media/external-identities/inbound-consent-prompt-setting.png)
+    ![Screenshot that shows the inbound Automatic redemption check box.](~/media/external-identities/inbound-consent-prompt-setting.png)
 
 1. Select **Save**.
 
@@ -284,7 +284,7 @@ With outbound settings, you select which of your users and groups will be able t
 
    - **Automatically redeem invitations with the tenant** &lt;tenant&gt;: Check this setting if you want to automatically redeem invitations. If so, users from this tenant don't have to accept the consent prompt the first time they access the specified tenant using cross-tenant synchronization, B2B collaboration, or B2B direct connect. This setting will only suppress the consent prompt if the specified tenant checks this setting for inbound access as well.
 
-    ![Screenshot that shows the outbound Automatic redemption check box.](../media/external-identities/outbound-consent-prompt-setting.png)
+    ![Screenshot that shows the outbound Automatic redemption check box.](~/media/external-identities/outbound-consent-prompt-setting.png)
 
 1. Select **Save**.
 

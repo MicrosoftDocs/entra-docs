@@ -36,7 +36,7 @@ External / B2B users of type `member` created by cross-tenant synchronization ca
 
  ### Provisioning users
 
-An external user from the source (home) tenant can't be provisioned into another tenant. Internal guest users from the source tenant can't be provisioned into another tenant. Only internal member users from the source tenant can be provisioned into the target tenant. For more information, see [Properties of a Microsoft Entra B2B collaboration user](../external-identities/user-properties.md).
+An external user from the source (home) tenant can't be provisioned into another tenant. Internal guest users from the source tenant can't be provisioned into another tenant. Only internal member users from the source tenant can be provisioned into the target tenant. For more information, see [Properties of a Microsoft Entra B2B collaboration user](~/external-id/user-properties.md).
 
 In addition, users that are enabled for SMS sign-in cannot be synchronized through cross-tenant synchronization.
 

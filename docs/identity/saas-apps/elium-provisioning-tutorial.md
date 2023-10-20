@@ -18,7 +18,7 @@ ms.author: thwimmer
 This tutorial shows how to configure Elium and Microsoft Entra ID to automatically provision and de-provision users or groups to Elium.
 
 > [!NOTE]
-> This tutorial describes a connector that's built on top of the Microsoft Entra user Provisioning service. For important details about what this service does and how it works, and for frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](../app-provisioning/user-provisioning.md).
+> This tutorial describes a connector that's built on top of the Microsoft Entra user Provisioning service. For important details about what this service does and how it works, and for frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 >
 > This connector is currently in preview. For more information about previews, see [Universal License Terms For Online Services](https://www.microsoft.com/licensing/terms/product/ForOnlineServices/all).
 
@@ -122,7 +122,7 @@ To configure automatic user provisioning for Elium in Microsoft Entra ID, follow
 
     ![Attribute mappings between Microsoft Entra ID and Elium](media/Elium-provisioning-tutorial/userattribute.png)
 
-1. To configure scoping filters, follow the instructions in the [Scoping filter tutorial](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, follow the instructions in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 1. To enable the Microsoft Entra provisioning service for Elium, change the **Provisioning Status** to **On** in the **Settings** section.
 
@@ -136,15 +136,15 @@ To configure automatic user provisioning for Elium in Microsoft Entra ID, follow
 
     ![Save button for provisioning configuration](common/provisioning-configuration-save.png)
 
-This operation starts the initial synchronization of all users and groups defined in **Scope** in the **Settings** section. This initial sync process takes longer than later syncs. For more information about the time required for provisioning, see [How long will it take to provision users?](../app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md#how-long-will-it-take-to-provision-users).
+This operation starts the initial synchronization of all users and groups defined in **Scope** in the **Settings** section. This initial sync process takes longer than later syncs. For more information about the time required for provisioning, see [How long will it take to provision users?](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md#how-long-will-it-take-to-provision-users).
 
-Use the **Current Status** section to monitor progress and follow links to your provisioning activity report. The provisioning activity report describes all actions performed by the Microsoft Entra provisioning service on Elium. For more information, see [Check the status of user provisioning](../app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md). To read the Microsoft Entra provisioning logs, see [Reporting on automatic user account provisioning](../app-provisioning/check-status-user-account-provisioning.md).
+Use the **Current Status** section to monitor progress and follow links to your provisioning activity report. The provisioning activity report describes all actions performed by the Microsoft Entra provisioning service on Elium. For more information, see [Check the status of user provisioning](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md). To read the Microsoft Entra provisioning logs, see [Reporting on automatic user account provisioning](~/identity/app-provisioning/check-status-user-account-provisioning.md).
 
 ## Additional resources
 
-* [Managing user account provisioning for Enterprise Apps](../app-provisioning/configure-automatic-user-provisioning-portal.md).
+* [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md).
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
 ## Next steps
 
-* [Learn how to review logs and get reports on provisioning activity](../app-provisioning/check-status-user-account-provisioning.md)
+* [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)

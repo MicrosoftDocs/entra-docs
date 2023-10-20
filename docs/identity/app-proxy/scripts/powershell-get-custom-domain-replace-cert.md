@@ -28,7 +28,7 @@ This sample requires the [Azure Active Directory PowerShell 2.0 for Graph module
 
 ## Sample script
 
-[!code-azurepowershell[main](~/powershell_scripts/application-proxy/get-custom-domain-replace-cert.ps1 "Get all Application Proxy applications published with the identical certificate and replace it")]
+[!code-azurepowershell[main](~/../powershell_scripts/application-proxy/get-custom-domain-replace-cert.ps1 "Get all Application Proxy applications published with the identical certificate and replace it")]
 
 ## Script explanation
 

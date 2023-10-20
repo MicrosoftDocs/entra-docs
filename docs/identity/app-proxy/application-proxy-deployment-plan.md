@@ -58,7 +58,7 @@ The following core requirements must be met in order to configure and implement 
 
 * **Conditional Access requirements**: We do not recommend using Application Proxy for intranet access because this adds latency that will impact users. We recommend using Application Proxy with pre-authentication and Conditional Access policies for remote access from the internet.  An  approach to provide Conditional Access for intranet use is to modernize applications so they can directly authenticate with Microsoft Entra ID. Refer to [Resources for migrating applications to Microsoft Entra ID](~/identity/enterprise-apps/migration-resources.md) for more information.
 
-* **Service limits**: To protect against overconsumption of resources by individual tenants there are throttling limits set per application and tenant. To see these limits refer to [Microsoft Entra service limits and restrictions](../enterprise-users/directory-service-limits-restrictions.md). These throttling limits are based on a benchmark far above typical usage volume and provides ample buffer for a majority of deployments.
+* **Service limits**: To protect against overconsumption of resources by individual tenants there are throttling limits set per application and tenant. To see these limits refer to [Microsoft Entra service limits and restrictions](~/identity/users/directory-service-limits-restrictions.md). These throttling limits are based on a benchmark far above typical usage volume and provides ample buffer for a majority of deployments.
 
 * **Public certificate**: If you are using custom domain names, you must procure a TLS/SSL certificate. Depending on your organizational requirements, getting a certificate can take some time and we recommend beginning the process as early as possible. Azure Application Proxy supports standard, [wildcard](application-proxy-wildcard.md), or SAN-based certificates. For more details see [Configure custom domains with Microsoft Entra application proxy](application-proxy-configure-custom-domain.md).
 
@@ -212,7 +212,7 @@ You can also allow users to self-service access to your application by assigning
 
 If enabled, users will then be able to log into the MyApps portal and request access, and either be auto approved and added to the already permitted self-service group, or need approval from a designated approver.
 
-Guest users can also be [invited to access internal applications published via Application Proxy through Microsoft Entra B2B](../external-identities/add-users-information-worker.md).
+Guest users can also be [invited to access internal applications published via Application Proxy through Microsoft Entra B2B](~/external-id/add-users-information-worker.md).
 
 For on premises applications that are normally accessible anonymously, requiring no authentication, you may prefer to disable the option located in the application’s **Properties**.
 

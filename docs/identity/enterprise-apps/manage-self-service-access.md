@@ -79,4 +79,4 @@ Once you complete self-service application configuration, users can navigate to 
 
 ## Next steps
 
-[Setting up Microsoft Entra ID for self-service group management](../enterprise-users/groups-self-service-management.md)
+[Setting up Microsoft Entra ID for self-service group management](~/identity/users/groups-self-service-management.md)

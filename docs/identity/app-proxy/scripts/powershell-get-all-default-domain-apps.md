@@ -28,7 +28,7 @@ This sample requires the [Azure Active Directory PowerShell 2.0 for Graph module
 
 ## Sample script
 
-[!code-azurepowershell[main](~/powershell_scripts/application-proxy/get-all-default-domain-apps.ps1 "Get all Application Proxy apps using default domains (.msappproxy.net)")]
+[!code-azurepowershell[main](~/../powershell_scripts/application-proxy/get-all-default-domain-apps.ps1 "Get all Application Proxy apps using default domains (.msappproxy.net)")]
 
 ## Script explanation
 

@@ -38,17 +38,17 @@ Generally, users seeking external collaboration know the applications to use, an
 To find collaborating users:
 
 * Microsoft 365 [Audit log activities](/purview/audit-log-activities?view=o365-worldwide&preserve-view=true) - search for events and discover activities audited in Microsoft 365
-* [Auditing and reporting a B2B collaboration user](../external-identities/auditing-and-reporting.md) - verify guest user access, and see records of system and user activities
+* [Auditing and reporting a B2B collaboration user](~/external-id/auditing-and-reporting.md) - verify guest user access, and see records of system and user activities
 
 ## Enumerate guest users and organizations
 
-External users might be Microsoft Entra B2B users with partner-managed credentials, or external users with locally provisioned credentials. Typically, these users are the Guest UserType. To learn about inviting guests users and sharing resources, see [B2B collaboration overview](../external-identities/what-is-b2b.md).
+External users might be Microsoft Entra B2B users with partner-managed credentials, or external users with locally provisioned credentials. Typically, these users are the Guest UserType. To learn about inviting guests users and sharing resources, see [B2B collaboration overview](~/external-id/what-is-b2b.md).
 
 You can enumerate guest users with:
 
 * [Microsoft Graph API](/graph/api/user-list?tabs=http)
 * [PowerShell](/graph/api/user-list?tabs=http)
-* [Azure portal](../enterprise-users/users-bulk-download.md)
+* [Azure portal](~/identity/users/users-bulk-download.md)
 
 Use the following tools to identify Microsoft Entra B2B collaboration, external Microsoft Entra tenants, and users accessing applications:
 
@@ -63,7 +63,7 @@ You can determine external organizations with the domain names of external user 
 
 Use the allowlist or blocklist to enable your organization to collaborate with, or block, organizations at the tenant level. Control B2B invitations and redemptions regardless of source (such as Microsoft Teams, SharePoint, or the Azure portal). 
 
-See, [Allow or block invitations to B2B users from specific organizations](../external-identities/allow-deny-list.md)
+See, [Allow or block invitations to B2B users from specific organizations](~/external-id/allow-deny-list.md)
 
 If you use entitlement management, you can confine access packages to a subset of partners with the **Specific connected organizations** option, under New access packages, in Identity Governance.
 

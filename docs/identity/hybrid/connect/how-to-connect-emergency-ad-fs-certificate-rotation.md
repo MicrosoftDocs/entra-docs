@@ -172,7 +172,7 @@ If your federation partners can't consume your federation metadata, you must man
 
 
 ## Revoke the refresh tokens via PowerShell
-Now you want to revoke the refresh tokens for users who might have them and force them to log in again and get new tokens. This logs users out of their phones, current webmail sessions, and other places that are using tokens and refresh tokens. For more information, see [Revoke-AzureADUserAllRefreshToken](/powershell/module/azuread/revoke-azureaduserallrefreshtoken?preserve-view=true&view=azureadps-2.0). Also see [Revoke user access in Microsoft Entra ID](../../enterprise-users/users-revoke-access.md).
+Now you want to revoke the refresh tokens for users who might have them and force them to log in again and get new tokens. This logs users out of their phones, current webmail sessions, and other places that are using tokens and refresh tokens. For more information, see [Revoke-AzureADUserAllRefreshToken](/powershell/module/azuread/revoke-azureaduserallrefreshtoken?preserve-view=true&view=azureadps-2.0). Also see [Revoke user access in Microsoft Entra ID](~/identity/users/users-revoke-access.md).
 
 ## Next steps
 

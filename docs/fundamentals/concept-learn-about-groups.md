@@ -42,7 +42,7 @@ There are two group types and three group membership types. Review the options t
 
 **Security:** Used to manage user and computer access to shared resources.
 
-For example, you can create a security group so that all group members have the same set of security permissions. Members of a security group can include users, devices, other groups, and [service principals](../architecture/service-accounts-principal.md), which define access policy and permissions. Owners of a security group can include users and service principals.
+For example, you can create a security group so that all group members have the same set of security permissions. Members of a security group can include users, devices, other groups, and [service principals](~/architecture/service-accounts-principal.md), which define access policy and permissions. Owners of a security group can include users and service principals.
 
 **Microsoft 365:** Provides collaboration opportunities by giving group members access to a shared mailbox, calendar, files, SharePoint sites, and more.
 
@@ -54,7 +54,7 @@ This option also lets you give people outside of your organization access to the
 - **Dynamic device:** Lets you use dynamic group rules to automatically add and remove devices. If a device's attributes change, the system looks at your dynamic group rules for the directory to see if the device meets the rule requirements (is added), or no longer meets the rules requirements (is removed).
 
     > [!IMPORTANT]
-    > You can create a dynamic group for either devices or users, but not for both. You can't create a device group based on the device owners' attributes. Device membership rules can only reference device attributions. For more info about creating a dynamic group for users and devices, see [Create a dynamic group and check status](../enterprise-users/groups-create-rule.md)
+    > You can create a dynamic group for either devices or users, but not for both. You can't create a device group based on the device owners' attributes. Device membership rules can only reference device attributions. For more info about creating a dynamic group for users and devices, see [Create a dynamic group and check status](~/identity/users/groups-create-rule.md)
 
 
 ## What to know before adding access rights to a group
@@ -77,7 +77,7 @@ After creating a group, you need to decide how to assign access rights. Explore 
 
 - **Group assignment.** The resource owner assigns a Microsoft Entra group to the resource, which automatically gives all of the group members access to the resource. Group membership is managed by both the group owner and the resource owner, letting either owner add or remove members from the group. For more information about managing group membership, see the [Manage groups](how-to-manage-groups.md) article. 
 
-- **Rule-based assignment.** The resource owner creates a group and uses a rule to define which users are assigned to a specific resource. The rule is based on attributes that are assigned to individual users. The resource owner manages the rule, determining which attributes and values are required to allow access the resource. For more information, see [Create a dynamic group and check status](../enterprise-users/groups-create-rule.md).
+- **Rule-based assignment.** The resource owner creates a group and uses a rule to define which users are assigned to a specific resource. The rule is based on attributes that are assigned to individual users. The resource owner manages the rule, determining which attributes and values are required to allow access the resource. For more information, see [Create a dynamic group and check status](~/identity/users/groups-create-rule.md).
 
 - **External authority assignment.** Access comes from an external source, such as an on-premises directory or a SaaS app. In this situation, the resource owner assigns a group to provide access to the resource and then the external source manages the group members.
 
@@ -86,12 +86,12 @@ After creating a group, you need to decide how to assign access rights. Explore 
 ### Can users join groups without being assigned?
 The group owner can let users find their own groups to join, instead of assigning them. The owner can also set up the group to automatically accept all users that join or to require approval.
 
-After a user requests to join a group, the request is forwarded to the group owner. If it's required, the owner can approve the request and the user is notified of the group membership. If you have multiple owners and one of them disapproves, the user is notified, but isn't added to the group. For more information and instructions about how to let your users request to join groups, see [Set up Microsoft Entra ID so users can request to join groups](../enterprise-users/groups-self-service-management.md).
+After a user requests to join a group, the request is forwarded to the group owner. If it's required, the owner can approve the request and the user is notified of the group membership. If you have multiple owners and one of them disapproves, the user is notified, but isn't added to the group. For more information and instructions about how to let your users request to join groups, see [Set up Microsoft Entra ID so users can request to join groups](~/identity/users/groups-self-service-management.md).
 
 ## Next steps
 
 - [Create and manage Microsoft Entra groups and group membership](how-to-manage-groups.md)
 - [Learn about group-based licensing in Microsoft Entra ID](./concept-group-based-licensing.md)
-- [Manage access to SaaS apps using groups](../enterprise-users/groups-saasapps.md)
-- [Manage dynamic rules for users in a group](../enterprise-users/groups-create-rule.md)
+- [Manage access to SaaS apps using groups](~/identity/users/groups-saasapps.md)
+- [Manage dynamic rules for users in a group](~/identity/users/groups-create-rule.md)
 - [Learn about Privileged Identity Management for Microsoft Entra roles](../privileged-identity-management/pim-create-roles-and-resource-roles-review.md)

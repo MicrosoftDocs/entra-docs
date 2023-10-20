@@ -117,7 +117,7 @@ You can see soft-deleted users in the Azure portal on the **Users | Deleted user
 
 For more information on how to restore users, see the following documentation:
 
-* To restore from the Azure portal, see [Restore or permanently remove recently deleted user](../fundamentals/users-restore.md).
+* To restore from the Azure portal, see [Restore or permanently remove recently deleted user](~/fundamentals/users-restore.md).
 * To restore by using Microsoft Graph, see [Restore deleted item – Microsoft Graph v1.0](/graph/api/directory-deleteditems-restore?tabs=http).
 
 ### Groups
@@ -128,7 +128,7 @@ You can see soft-deleted Microsoft 365 Groups in the Azure portal on the **Group
 
 For more information on how to restore soft-deleted Microsoft 365 Groups, see the following documentation:
 
-* To restore from the Azure portal, see [Restore a deleted Microsoft 365 Group](../enterprise-users/groups-restore-deleted.md).
+* To restore from the Azure portal, see [Restore a deleted Microsoft 365 Group](~/identity/users/groups-restore-deleted.md).
 * To restore by using Microsoft Graph, see [Restore deleted item – Microsoft Graph v1.0](/graph/api/directory-deleteditems-restore?tabs=http).
 
 ### Applications and service principals

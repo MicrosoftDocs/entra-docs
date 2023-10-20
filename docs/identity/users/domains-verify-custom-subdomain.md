@@ -118,6 +118,6 @@ Invoking API with a federated verified subdomain with user references | POST | 4
 
 ## Next steps
 
-- [Add custom domain names](../fundamentals/add-custom-domain.md?context=azure/active-directory/users-groups-roles/context/ugr-context)
+- [Add custom domain names](~/fundamentals/add-custom-domain.md?context=azure/active-directory/users-groups-roles/context/ugr-context)
 - [Manage domain names](domains-manage.md)
 - [ForceDelete a custom domain name with Microsoft Graph API](/graph/api/domain-forcedelete)

@@ -31,7 +31,7 @@ In most designs, the human resources (HR) system is the source-of-authority for 
 
 ### Synchronizing identities with cloud HR
 
-The Microsoft Entra provisioning service enables organizations to [bring identities from popular HR systems](../app-provisioning/what-is-hr-driven-provisioning.md) (examples: [Workday](../saas-apps/workday-inbound-tutorial.md) and [SuccessFactors](../saas-apps/sap-successfactors-inbound-provisioning-cloud-only-tutorial.md)), into Microsoft Entra ID directly, or into AD DS. This provisioning capability enables new hires to access the resources they need from the first day of work.
+The Microsoft Entra provisioning service enables organizations to [bring identities from popular HR systems](~/identity/app-provisioning/what-is-hr-driven-provisioning.md) (examples: [Workday](../saas-apps/workday-inbound-tutorial.md) and [SuccessFactors](../saas-apps/sap-successfactors-inbound-provisioning-cloud-only-tutorial.md)), into Microsoft Entra ID directly, or into AD DS. This provisioning capability enables new hires to access the resources they need from the first day of work.
 
 ### On-premises HR + joining multiple data sources
 
@@ -61,7 +61,7 @@ Use the numbered sections in the next two section to cross reference the followi
 
 As customers transition identity management to the cloud, more users and groups are created directly in Microsoft Entra ID. However, they still need a presence on-premises in AD DS to access various resources.
 
-3. When an external user from a partner organization is created in Microsoft Entra ID using B2B, MIM can automatically provision them [into AD DS](/microsoft-identity-manager/microsoft-identity-manager-2016-graph-b2b-scenario) and give those guests access to [on-premises Windows-Integrated Authentication or Kerberos-based applications](../external-identities/hybrid-cloud-to-on-premises.md). Alternatively, customers can user [PowerShell scripts](https://github.com/Azure-Samples/B2B-to-AD-Sync) to automate the creation of guest accounts on-premises. 
+3. When an external user from a partner organization is created in Microsoft Entra ID using B2B, MIM can automatically provision them [into AD DS](/microsoft-identity-manager/microsoft-identity-manager-2016-graph-b2b-scenario) and give those guests access to [on-premises Windows-Integrated Authentication or Kerberos-based applications](~/external-id/hybrid-cloud-to-on-premises.md). Alternatively, customers can user [PowerShell scripts](https://github.com/Azure-Samples/B2B-to-AD-Sync) to automate the creation of guest accounts on-premises. 
 
 1. When a group is created in Microsoft Entra ID, it can be automatically synchronized to AD DS using [Microsoft Entra Connect Sync](../hybrid/connect/how-to-connect-group-writeback-v2.md).
 
@@ -89,9 +89,9 @@ Microsoft Entra ID supports the System for Cross-Domain Identity Management ([SC
 
 ![SCIM standard](media/automate-user-provisioning-to-applications-solutions/automate-provisioning-scim-standard.png)
 
-In addition to the pre-integrated gallery applications, Microsoft Entra ID supports provisioning to SCIM enabled line of business applications, whether hosted [on-premises](../app-provisioning/on-premises-scim-provisioning.md) or in the cloud. The Microsoft Entra provisioning service creates users and groups in these applications, and manages updates such as when a user is promoted or leaves the company).
+In addition to the pre-integrated gallery applications, Microsoft Entra ID supports provisioning to SCIM enabled line of business applications, whether hosted [on-premises](~/identity/app-provisioning/on-premises-scim-provisioning.md) or in the cloud. The Microsoft Entra provisioning service creates users and groups in these applications, and manages updates such as when a user is promoted or leaves the company).
 
-[Learn more about provisioning to SCIM enabled applications](../app-provisioning/use-scim-to-provision-users-and-groups.md)
+[Learn more about provisioning to SCIM enabled applications](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md)
 
 ### Automate provisioning to on-premises applications
 
@@ -99,14 +99,14 @@ Many applications don't support the SCIM standard, and customers have historical
 
 |Protocol |Connector|
 |-----|-----|
-| LDAP | [LDAP](../app-provisioning/on-premises-ldap-connector-configure.md)|
-| SQL  | [SQL](../app-provisioning/tutorial-ecma-sql-connector.md) |
-| REST | [Web Services](../app-provisioning/on-premises-web-services-connector.md)|
-| SOAP | [Web Services](../app-provisioning/on-premises-web-services-connector.md)|
-| Flat-file| [PowerShell](../app-provisioning/on-premises-powershell-connector.md) |
-| Custom | [Custom ECMA connectors](../app-provisioning/on-premises-custom-connector.md) |
+| LDAP | [LDAP](~/identity/app-provisioning/on-premises-ldap-connector-configure.md)|
+| SQL  | [SQL](~/identity/app-provisioning/tutorial-ecma-sql-connector.md) |
+| REST | [Web Services](~/identity/app-provisioning/on-premises-web-services-connector.md)|
+| SOAP | [Web Services](~/identity/app-provisioning/on-premises-web-services-connector.md)|
+| Flat-file| [PowerShell](~/identity/app-provisioning/on-premises-powershell-connector.md) |
+| Custom | [Custom ECMA connectors](~/identity/app-provisioning/on-premises-custom-connector.md) |
 
-[Learn more about on-premises application provisioning](../app-provisioning/user-provisioning.md)
+[Learn more about on-premises application provisioning](~/identity/app-provisioning/user-provisioning.md)
 
 ### Use integrations developed by partners
 
@@ -114,7 +114,7 @@ Microsoft partners have developed SCIM gateways that allow you to synchronize us
 
 ![Agent with SCIM gateway](media/automate-user-provisioning-to-applications-solutions/provisioning-agent-with-scim-gateway.png)
 
-[Learn more about partner driven integrations](../app-provisioning/partner-driven-integrations.md)
+[Learn more about partner driven integrations](~/identity/app-provisioning/partner-driven-integrations.md)
 
 ### Manage local app passwords
 
@@ -149,6 +149,6 @@ Organizations often need a complete audit trail of what users have access to app
 
 ### Next steps
 
-1. Automate provisioning with any of your applications that are in the [Microsoft Entra app gallery](../saas-apps/tutorial-list.md), support [SCIM](../app-provisioning/use-scim-to-provision-users-and-groups.md), [SQL](../app-provisioning/on-premises-sql-connector-configure.md), or [LDAP](../app-provisioning/on-premises-ldap-connector-configure.md).
+1. Automate provisioning with any of your applications that are in the [Microsoft Entra app gallery](../saas-apps/tutorial-list.md), support [SCIM](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md), [SQL](~/identity/app-provisioning/on-premises-sql-connector-configure.md), or [LDAP](~/identity/app-provisioning/on-premises-ldap-connector-configure.md).
 2. Evaluate [Microsoft Entra Connect cloud sync](../hybrid/cloud-sync/what-is-cloud-sync.md) for synchronization between AD DS and Microsoft Entra ID
 3. Use the [Microsoft Identity Manager](/microsoft-identity-manager/microsoft-identity-manager-2016) for complex provisioning scenarios

@@ -30,7 +30,7 @@ In the B2B collaboration flows, we add users to the directory and dynamically up
 <a name='azure-ad-directories'></a>
 
 ## Microsoft Entra directories
-Microsoft Entra B2B is subject to Microsoft Entra service directory limits. For details about the number of directories a user can create and the number of directories to which a user or guest user can belong, see [Microsoft Entra service limits and restrictions](../enterprise-users/directory-service-limits-restrictions.md).
+Microsoft Entra B2B is subject to Microsoft Entra service directory limits. For details about the number of directories a user can create and the number of directories to which a user or guest user can belong, see [Microsoft Entra service limits and restrictions](~/identity/users/directory-service-limits-restrictions.md).
 
 ## Next steps
 

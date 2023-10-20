@@ -150,7 +150,7 @@ You can remove a license from a user's Microsoft Entra user page, from the group
 
 After you've assigned your licenses, you can perform the following processes:
 
-- [Identify and resolve license assignment problems](../enterprise-users/licensing-groups-resolve-problems.md)
-- [Add licensed users to a group for licensing](../enterprise-users/licensing-groups-migrate-users.md)
-- [Scenarios, limitations, and known issues using groups to manage licensing in Microsoft Entra ID](../enterprise-users/licensing-group-advanced.md)
+- [Identify and resolve license assignment problems](~/identity/users/licensing-groups-resolve-problems.md)
+- [Add licensed users to a group for licensing](~/identity/users/licensing-groups-migrate-users.md)
+- [Scenarios, limitations, and known issues using groups to manage licensing in Microsoft Entra ID](~/identity/users/licensing-group-advanced.md)
 - [Add or change profile information](./how-to-manage-user-profile-info.md)

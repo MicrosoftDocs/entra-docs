@@ -21,7 +21,7 @@ This article is the first in a series of articles that provide guidance for conf
 - [Common considerations for multi-tenant user management](multi-tenant-common-considerations.md) provides guidance for these considerations: cross-tenant synchronization, directory object, Microsoft Entra Conditional Access, additional access control, and Office 365. 
 - [Common solutions for multi-tenant user management](multi-tenant-common-solutions.md) when single tenancy doesn't work for your scenario, this article provides guidance for these challenges:  automatic user lifecycle management and resource allocation across tenants, sharing on-premises apps across tenants.
 
-The guidance helps to you achieve a consistent state of user lifecycle management. Lifecycle management includes provisioning, managing, and deprovisioning users across tenants using the available Azure tools that include [Microsoft Entra B2B collaboration](../external-identities/what-is-b2b.md) (B2B) and [cross-tenant synchronization](../multi-tenant-organizations/cross-tenant-synchronization-overview.md).
+The guidance helps to you achieve a consistent state of user lifecycle management. Lifecycle management includes provisioning, managing, and deprovisioning users across tenants using the available Azure tools that include [Microsoft Entra B2B collaboration](~/external-id/what-is-b2b.md) (B2B) and [cross-tenant synchronization](../multi-tenant-organizations/cross-tenant-synchronization-overview.md).
 
 Provisioning users into a single Microsoft Entra tenant provides a unified view of resources and a single set of policies and controls. This approach enables consistent user lifecycle management.
 
@@ -41,15 +41,15 @@ Microsoft Entra B2B collaboration (B2B) enables you to securely share your compa
 
 You can use B2B collaboration to provide external access for your organization's users to access multiple tenants that you manage. Traditionally, B2B external user access can authorize access to users that your own organization doesn't manage. However, external user access can manage access across multiple tenants that your organization manages.
 
-An area of confusion with Microsoft Entra B2B collaboration surrounds the [properties of a B2B guest user](../external-identities/user-properties.md). The difference between internal versus external user accounts and member versus guest user types contributes to confusion. Initially, all internal users are member users with **UserType** attribute set to *Member* (member users). An internal user has an account in your Microsoft Entra ID that is authoritative and authenticates to the tenant where the user resides. A member user is a licensed user with default [member-level permissions](../fundamentals/users-default-permissions.md) in the tenant. Treat member users as employees of your organization.
+An area of confusion with Microsoft Entra B2B collaboration surrounds the [properties of a B2B guest user](~/external-id/user-properties.md). The difference between internal versus external user accounts and member versus guest user types contributes to confusion. Initially, all internal users are member users with **UserType** attribute set to *Member* (member users). An internal user has an account in your Microsoft Entra ID that is authoritative and authenticates to the tenant where the user resides. A member user is a licensed user with default [member-level permissions](~/fundamentals/users-default-permissions.md) in the tenant. Treat member users as employees of your organization.
 
-You can invite an internal user of one tenant into another tenant as an external user. An external user signs in with an external Microsoft Entra account, social identity, or other external identity provider. External users authenticate outside the tenant to which you invite the external user. At the B2B first release, all external users were of **UserType** *Guest* (guest users). Guest users have [restricted permissions](../fundamentals/users-default-permissions.md) in the tenant. For example, guest users can't enumerate the list of all users nor groups in the tenant directory.
+You can invite an internal user of one tenant into another tenant as an external user. An external user signs in with an external Microsoft Entra account, social identity, or other external identity provider. External users authenticate outside the tenant to which you invite the external user. At the B2B first release, all external users were of **UserType** *Guest* (guest users). Guest users have [restricted permissions](~/fundamentals/users-default-permissions.md) in the tenant. For example, guest users can't enumerate the list of all users nor groups in the tenant directory.
 
 For the **UserType** property on users, B2B supports flipping the bit from internal to external, and vice versa, which contributes to the confusion.
 
 You can change an internal user from member user to guest user. For example, you can have an unlicensed internal guest user with guest-level permissions in the tenant, which is useful when you provide a user account and credentials to a person that isn't an employee of your organization.
 
-You can change an external user from guest user to member user, giving member-level permissions to the external user. Making this change is useful when you manage multiple tenants for your organization and need to give member-level permissions to a user across all tenants. This need may occur regardless of whether the user is internal or external in any given tenant. Member users may require more [licenses](../external-identities/external-identities-pricing.md).
+You can change an external user from guest user to member user, giving member-level permissions to the external user. Making this change is useful when you manage multiple tenants for your organization and need to give member-level permissions to a user across all tenants. This need may occur regardless of whether the user is internal or external in any given tenant. Member users may require more [licenses](~/external-id/external-identities-pricing.md).
 
 Most documentation for B2B refers to an external user as a guest user. It conflates the **UserType** property in a way that assumes all guest users are external. When documentation calls out a guest user, it assumes that it's an external guest user. This article specifically and intentionally refers to external versus internal and member user versus guest user.
 
@@ -65,19 +65,19 @@ The following conceptual and how-to articles provide information about Microsoft
 
 ### Conceptual articles
 
-- [B2B best practices](../external-identities/b2b-fundamentals.md) features recommendations for providing the smoothest experience for users and administrators.
-- [B2B and Office 365 external sharing](../external-identities/what-is-b2b.md) explains the similarities and differences among sharing resources through B2B, Office 365, and SharePoint/OneDrive.
-- [Properties on a Microsoft Entra B2B collaboration user](../external-identities/user-properties.md) describes the properties and states of the external user object in Microsoft Entra ID. The description provides details before and after invitation redemption.
-- [B2B user tokens](../external-identities/user-token.md) provides examples of the bearer tokens for B2B for an external user.
-- [Conditional Access for B2B](../external-identities/authentication-conditional-access.md) describes how Conditional Access and MFA work for external users.
-- [Cross-tenant access settings](../external-identities/cross-tenant-access-overview.md) provides granular control over how external Microsoft Entra organizations collaborate with you (inbound access) and how your users collaborate with external Microsoft Entra organizations (outbound access).
+- [B2B best practices](~/external-id/b2b-fundamentals.md) features recommendations for providing the smoothest experience for users and administrators.
+- [B2B and Office 365 external sharing](~/external-id/what-is-b2b.md) explains the similarities and differences among sharing resources through B2B, Office 365, and SharePoint/OneDrive.
+- [Properties on a Microsoft Entra B2B collaboration user](~/external-id/user-properties.md) describes the properties and states of the external user object in Microsoft Entra ID. The description provides details before and after invitation redemption.
+- [B2B user tokens](~/external-id/user-token.md) provides examples of the bearer tokens for B2B for an external user.
+- [Conditional Access for B2B](~/external-id/authentication-conditional-access.md) describes how Conditional Access and MFA work for external users.
+- [Cross-tenant access settings](~/external-id/cross-tenant-access-overview.md) provides granular control over how external Microsoft Entra organizations collaborate with you (inbound access) and how your users collaborate with external Microsoft Entra organizations (outbound access).
 - [Cross-tenant synchronization overview](../multi-tenant-organizations/cross-tenant-synchronization-overview.md) explains how to automate creating, updating, and deleting Microsoft Entra B2B collaboration users across tenants in an organization.
 
 ### How-to articles
 
-- [Use PowerShell to bulk invite Microsoft Entra B2B collaboration users](../external-identities/bulk-invite-powershell.md) describes how to use PowerShell to send bulk invitations to external users.
-- [Enforce multifactor authentication for B2B guest users](../external-identities/b2b-tutorial-require-mfa.md) explains how you can use Conditional Access and MFA policies to enforce tenant, app, or individual external user authentication levels.
-- [Email one-time passcode authentication](../external-identities/one-time-passcode.md) describes how the Email one-time passcode feature authenticates external users when they can't authenticate through other means like Microsoft Entra ID, a Microsoft account (MSA), or Google Federation.
+- [Use PowerShell to bulk invite Microsoft Entra B2B collaboration users](~/external-id/bulk-invite-powershell.md) describes how to use PowerShell to send bulk invitations to external users.
+- [Enforce multifactor authentication for B2B guest users](~/external-id/b2b-tutorial-require-mfa.md) explains how you can use Conditional Access and MFA policies to enforce tenant, app, or individual external user authentication levels.
+- [Email one-time passcode authentication](~/external-id/one-time-passcode.md) describes how the Email one-time passcode feature authenticates external users when they can't authenticate through other means like Microsoft Entra ID, a Microsoft account (MSA), or Google Federation.
 
 ## Terminology
 

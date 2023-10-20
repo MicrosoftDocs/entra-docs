@@ -20,7 +20,7 @@ ms.reviewer: krbain
 
 Microsoft Entra groups are used to manage users that all need the same access and permissions to resources, such as potentially restricted apps and services. Instead of adding special permissions to individual users, you create a group that applies the special permissions to every member of that group. 
 
-This article covers basic group scenarios where a single group is added to a single resource and users are added as members to that group. For more complex scenarios like dynamic memberships and rule creation, see the [Microsoft Entra user management documentation](../enterprise-users/index.yml).
+This article covers basic group scenarios where a single group is added to a single resource and users are added as members to that group. For more complex scenarios like dynamic memberships and rule creation, see the [Microsoft Entra user management documentation](~/identity/users/index.yml).
 
 Before adding groups and members, [learn about groups and membership types](concept-learn-about-groups.md) to help you decide which options to use when you create a group.
 
@@ -77,7 +77,7 @@ A welcome notification is sent to all users when they're added to a new Microsof
 
 Members and owners can be added to and removed from existing groups. The process is the same for members and owners. You'll need the **Groups Administrator** or **User Administrator** role to add and remove members and owners.
 
-Need to add multiple members at one time? Learn about the [add members in bulk](../enterprise-users/groups-bulk-import-members.md) option.
+Need to add multiple members at one time? Learn about the [add members in bulk](~/identity/users/groups-bulk-import-members.md) option.
 
 ### Add members or owners of a group
 
@@ -137,7 +137,7 @@ To edit your group settings:
     
     - **Membership type.** Change the membership type. If you enabled the **Microsoft Entra roles can be assigned to the group** option, you can't change the membership type. For more info about the available membership types, see the [learn about groups and membership types](concept-learn-about-groups.md) article. 
     
-    - **Object ID.** You can't change the Object ID, but you can copy it to use in your PowerShell commands for the group. For more info about using PowerShell cmdlets, see [Microsoft Entra cmdlets for configuring group settings](../enterprise-users/groups-settings-v2-cmdlets.md).
+    - **Object ID.** You can't change the Object ID, but you can copy it to use in your PowerShell commands for the group. For more info about using PowerShell cmdlets, see [Microsoft Entra cmdlets for configuring group settings](~/identity/users/groups-settings-v2-cmdlets.md).
 
 ## Add or remove a group from another group
 
@@ -212,7 +212,7 @@ You can delete a group for any number of reasons, but typically it will be becau
 ## Next steps
 
 - [Learn about groups and assigning access rights to groups](concept-learn-about-groups.md)
-- [Manage groups using PowerShell commands](../enterprise-users/groups-settings-v2-cmdlets.md)
-- [Manage dynamic rules for users in a group](../enterprise-users/groups-create-rule.md)
-- [Scenarios, limitations, and known issues using groups to manage licensing in Microsoft Entra ID](../enterprise-users/licensing-group-advanced.md#limitations-and-known-issues)
+- [Manage groups using PowerShell commands](~/identity/users/groups-settings-v2-cmdlets.md)
+- [Manage dynamic rules for users in a group](~/identity/users/groups-create-rule.md)
+- [Scenarios, limitations, and known issues using groups to manage licensing in Microsoft Entra ID](~/identity/users/licensing-group-advanced.md#limitations-and-known-issues)
 - [Associate or add an Azure subscription to Microsoft Entra ID](./how-subscriptions-associated-directory.md)

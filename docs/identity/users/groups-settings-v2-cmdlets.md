@@ -18,8 +18,8 @@ ms.collection: M365-identity-device-management
 # Microsoft Entra version 2 cmdlets for group management
 
 > [!div class="op_single_selector"]
-> - [Azure portal](../fundamentals/how-to-manage-groups.md?context=azure/active-directory/users-groups-roles/context/ugr-context)
-> - [PowerShell](../enterprise-users/groups-settings-v2-cmdlets.md)
+> - [Azure portal](~/fundamentals/how-to-manage-groups.md?context=azure/active-directory/users-groups-roles/context/ugr-context)
+> - [PowerShell](~/identity/users/groups-settings-v2-cmdlets.md)
 >
 >
 
@@ -360,5 +360,5 @@ Microsoft 365 group writeback is a public preview feature of Microsoft Entra ID 
 
 You can find more Azure Active Directory PowerShell documentation at [Microsoft Entra Cmdlets](/powershell/azure/active-directory/install-adv2).
 
-* [Managing access to resources with Microsoft Entra groups](../fundamentals/concept-learn-about-groups.md?context=azure/active-directory/users-groups-roles/context/ugr-context)
+* [Managing access to resources with Microsoft Entra groups](~/fundamentals/concept-learn-about-groups.md?context=azure/active-directory/users-groups-roles/context/ugr-context)
 * [Integrating your on-premises identities with Microsoft Entra ID](../hybrid/whatis-hybrid-identity.md?context=azure/active-directory/users-groups-roles/context/ugr-context)

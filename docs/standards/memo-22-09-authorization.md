@@ -51,7 +51,7 @@ Attribute-based access control (ABAC) uses metadata assigned to a user or resour
 
 Use attributes assigned to users, stored in Microsoft Entra ID, to create user authorizations. Users are automatically assigned to dynamic groups based on a rule set you define during group creation. Rules add or remove a user from the group based on rule evaluation against the user and their attributes. We recommend you maintain attributes and don't set static attributes on creation day.
 
-Learn more: [Create or update a dynamic group in Microsoft Entra ID](../enterprise-users/groups-create-rule.md)
+Learn more: [Create or update a dynamic group in Microsoft Entra ID](~/identity/users/groups-create-rule.md)
 
 ### Attributes assigned to data
 

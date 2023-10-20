@@ -37,7 +37,7 @@ The descriptions and linked pages are provided by the partners themselves. You c
 
 Microsoft Entra ID Governance allows you to balance your organization's need for security and employee productivity with the right processes and visibility, across hundreds of [Microsoft Entra ID Governance integrations with applications](apps.md). These application integrations are used to automate identity lifecycle management, through protocols such as SCIM, to implement governance controls across your organization.
 
-In cases where an application doesn't support SCIM, partners have built gateways between the Microsoft Entra SCIM client and additional applications.  For a list of applications integrated through a partner offering, see [partner-driven integrations](../app-provisioning/partner-driven-integrations.md).
+In cases where an application doesn't support SCIM, partners have built gateways between the Microsoft Entra SCIM client and additional applications.  For a list of applications integrated through a partner offering, see [partner-driven integrations](~/identity/app-provisioning/partner-driven-integrations.md).
 
 
 ## Next steps

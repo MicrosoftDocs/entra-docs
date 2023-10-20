@@ -34,7 +34,7 @@ Using group writeback, you can now sync Microsoft 365 groups that are part of ac
 
 1. Create a Microsoft Entra Microsoft 365 group.
 
-1. Set the group to be written back to on-premises Active Directory. For instructions, see [Group writeback in the Microsoft Entra admin center](../enterprise-users/groups-write-back-portal.md). 
+1. Set the group to be written back to on-premises Active Directory. For instructions, see [Group writeback in the Microsoft Entra admin center](~/identity/users/groups-write-back-portal.md). 
 
 1. Add the group to an access package as a resource role. See [Create a new access package](entitlement-management-access-package-create.md#select-resource-roles) for guidance. 
 

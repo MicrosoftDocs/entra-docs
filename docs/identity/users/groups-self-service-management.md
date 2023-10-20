@@ -20,17 +20,17 @@ ms.collection: M365-identity-device-management
 
 # Set up self-service group management in Microsoft Entra ID 
 
-You can enable users to create and manage their own security groups or Microsoft 365 groups in Microsoft Entra ID, part of Microsoft Entra. The owner of the group can approve or deny membership requests, and can delegate control of group membership. Self-service group management features are not available for [mail-enabled security groups or distribution lists](../fundamentals/concept-learn-about-groups.md).
+You can enable users to create and manage their own security groups or Microsoft 365 groups in Microsoft Entra ID, part of Microsoft Entra. The owner of the group can approve or deny membership requests, and can delegate control of group membership. Self-service group management features are not available for [mail-enabled security groups or distribution lists](~/fundamentals/concept-learn-about-groups.md).
 
 ## Self-service group membership
 
 You can allow users to create security groups, which are used to manage access to shared resources. Security groups can be created by users in Azure portals, using Azure AD PowerShell, or from the [MyApps Groups Access panel](https://account.activedirectory.windowsazure.com/r#/groups). Only the group's owners can update membership, but you can provide group owners the ability to approve or deny membership requests from the MyApps Groups Access panel. Security groups created by self-service through the MyApps Groups Access panel are available to join for all users, whether owner-approved or auto-approved. In the MyApps Groups Access panel, you can change membership options when you create the group.
 
-Microsoft 365 groups, which provide collaboration opportunities for your users, can be created in any of the Microsoft 365 applications, such as SharePoint, Microsoft Teams, and Planner. Microsoft 365 groups can also be created in Azure portals, using Azure AD PowerShell, or from the MyApps Groups Access panel. For more information on the difference between security groups and Microsoft 365 groups, see [Learn about groups](../fundamentals/concept-learn-about-groups.md#what-to-know-before-creating-a-group)
+Microsoft 365 groups, which provide collaboration opportunities for your users, can be created in any of the Microsoft 365 applications, such as SharePoint, Microsoft Teams, and Planner. Microsoft 365 groups can also be created in Azure portals, using Azure AD PowerShell, or from the MyApps Groups Access panel. For more information on the difference between security groups and Microsoft 365 groups, see [Learn about groups](~/fundamentals/concept-learn-about-groups.md#what-to-know-before-creating-a-group)
 
 Groups created in | Security group default behavior | Microsoft 365 group default behavior
 ------------------ | ------------------------------- | ---------------------------------
-[Azure AD PowerShell](../enterprise-users/groups-settings-cmdlets.md) | Only owners can add members<br>Visible but not available to join in MyApp Groups Access panel | Open to join for all users
+[Azure AD PowerShell](~/identity/users/groups-settings-cmdlets.md) | Only owners can add members<br>Visible but not available to join in MyApp Groups Access panel | Open to join for all users
 [Azure portal](https://portal.azure.com) | Only owners can add members<br>Visible but not available to join in MyApps Groups Access panel<br>Owner is not assigned automatically at group creation | Open to join for all users
 [MyApps Groups Access panel](https://account.activedirectory.windowsazure.com/r#/joinGroups) | Open to join for all users<br>Membership options can be changed when the group is created | Open to join for all users<br>Membership options can be changed when the group is created
 
@@ -106,8 +106,8 @@ To configure the _Users can create security groups in Azure portals, API or Powe
 
 These articles provide additional information on Microsoft Entra ID.
 
-* [Manage access to resources with Microsoft Entra groups](../fundamentals/concept-learn-about-groups.md)
-* [Microsoft Entra cmdlets for configuring group settings](../enterprise-users/groups-settings-cmdlets.md)
+* [Manage access to resources with Microsoft Entra groups](~/fundamentals/concept-learn-about-groups.md)
+* [Microsoft Entra cmdlets for configuring group settings](~/identity/users/groups-settings-cmdlets.md)
 * [Application Management in Microsoft Entra ID](~/identity/enterprise-apps/what-is-application-management.md)
-* [What is Microsoft Entra ID?](../fundamentals/whatis.md)
+* [What is Microsoft Entra ID?](~/fundamentals/whatis.md)
 * [Integrate your on-premises identities with Microsoft Entra ID](../hybrid/whatis-hybrid-identity.md)

@@ -46,9 +46,9 @@ To finish this tutorial, you need the following resources and privileges:
     * If needed, [create an Azure account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * An account with *Global Administrator* or *Authentication Policy Administrator* privileges.
 * A non-administrator user with a password you know, like *testuser*. You'll test the end-user SSPR experience using this account in this tutorial.
-    * If you need to create a user, see [Quickstart: Add new users to Microsoft Entra ID](../fundamentals/add-users.md).
+    * If you need to create a user, see [Quickstart: Add new users to Microsoft Entra ID](~/fundamentals/add-users.md).
 * A group that the non-administrator user is a member of, likes *SSPR-Test-Group*. You'll enable SSPR for this group in this tutorial.
-    * If you need to create a group, see [Create a basic group and add members using Microsoft Entra ID](../fundamentals/how-to-manage-groups.md).
+    * If you need to create a group, see [Create a basic group and add members using Microsoft Entra ID](~/fundamentals/how-to-manage-groups.md).
 
 ## Enable self-service password reset
 

@@ -15,7 +15,7 @@ The automatic redemption setting is an inbound and outbound organizational trust
 
 - **Automatically redeem invitations with the tenant** &lt;tenant&gt;
 
-:::image type="content" source="../media/external-identities/inbound-consent-prompt-setting.png" alt-text="Screenshot that shows the inbound Automatic redemption check box." lightbox="../media/external-identities/inbound-consent-prompt-setting.png":::
+:::image type="content" source="~/media/external-identities/inbound-consent-prompt-setting.png" alt-text="Screenshot that shows the inbound Automatic redemption check box." lightbox="~/media/external-identities/inbound-consent-prompt-setting.png":::
 
 #### Compare setting for different scenarios
 
@@ -30,9 +30,9 @@ The following table shows how this setting compares when enabled for these scena
 | Item | Cross-tenant synchronization | B2B collaboration | B2B direct connect |
 | --- | :---: | :---: | :---: |
 | Automatic redemption setting | Required | Optional | Optional |
-| Users receive a [B2B collaboration invitation email](../external-identities/invitation-email-elements.md) | No | No | N/A |
-| Users must accept a [consent prompt](../external-identities/redemption-experience.md#consent-experience-for-the-guest) | No | No | No |
-| Users receive a [B2B collaboration notification email](../external-identities/redemption-experience.md#automatic-redemption-process-setting) | No | Yes | N/A |
+| Users receive a [B2B collaboration invitation email](~/external-id/invitation-email-elements.md) | No | No | N/A |
+| Users must accept a [consent prompt](~/external-id/redemption-experience.md#consent-experience-for-the-guest) | No | No | No |
+| Users receive a [B2B collaboration notification email](~/external-id/redemption-experience.md#automatic-redemption-process-setting) | No | Yes | N/A |
 
 This setting doesn't impact application consent experiences. For more information, see [Consent experience for applications in Microsoft Entra ID](~/identity-platform/application-consent-experience.md). This setting isn't supported for organizations across different Microsoft cloud environments, such as Azure commercial and Azure Government.
 

@@ -50,7 +50,7 @@ If you need to add resources to an access package, you should check whether the 
 
 1. If the resources aren't already in the catalog, and you're an administrator or a catalog owner, you can [add resources to a catalog](entitlement-management-catalog-create.md#add-resources-to-a-catalog). The types of resources you can add are groups, applications, and SharePoint Online sites. For example:
 
-   * Groups can be cloud-created Microsoft 365 Groups or cloud-created Microsoft Entra security groups. Groups that originate in an on-premises Active Directory can't be assigned as resources because their owner or member attributes can't be changed in Microsoft Entra ID. To give users access to an application that uses AD security group memberships, create a new group in Microsoft Entra ID, configure [group writeback to AD](../hybrid/connect/how-to-connect-group-writeback-v2.md), and [enable that group to be written to AD](../enterprise-users/groups-write-back-portal.md). Groups that originate in Exchange Online as Distribution groups can't be modified in Microsoft Entra ID either.
+   * Groups can be cloud-created Microsoft 365 Groups or cloud-created Microsoft Entra security groups. Groups that originate in an on-premises Active Directory can't be assigned as resources because their owner or member attributes can't be changed in Microsoft Entra ID. To give users access to an application that uses AD security group memberships, create a new group in Microsoft Entra ID, configure [group writeback to AD](../hybrid/connect/how-to-connect-group-writeback-v2.md), and [enable that group to be written to AD](~/identity/users/groups-write-back-portal.md). Groups that originate in Exchange Online as Distribution groups can't be modified in Microsoft Entra ID either.
    * Applications can be Microsoft Entra enterprise applications, which include both software as a service (SaaS) applications and your own applications integrated with Microsoft Entra ID. If your application hasn't yet been integrated with Microsoft Entra ID, see [govern access for applications in your environment](identity-governance-applications-prepare.md) and [integrate an application with Microsoft Entra ID](identity-governance-applications-integrate.md).
    * Sites can be SharePoint Online sites or SharePoint Online site collections.
 
@@ -85,7 +85,7 @@ You can have entitlement management automatically add users to a group or a team
 - When a group or team is part of an access package and a user is assigned to that access package, the user is added to that group or team, if not already present.
 - When a user's access package assignment expires, they're removed from the group or team, unless they currently have an assignment to another access package that includes that same group or team.
 
-You can select any [Microsoft Entra security group or Microsoft 365 Group](../fundamentals/how-to-manage-groups.md). Administrators can add any group to a catalog; catalog owners can add any group to the catalog if they're owner of the group. Keep the following Microsoft Entra constraints in mind when selecting a group:
+You can select any [Microsoft Entra security group or Microsoft 365 Group](~/fundamentals/how-to-manage-groups.md). Administrators can add any group to a catalog; catalog owners can add any group to the catalog if they're owner of the group. Keep the following Microsoft Entra constraints in mind when selecting a group:
 
 - When a user, including a guest, is added as a member to a group or team, they can see all the other members of that group or team.
 - Microsoft Entra ID can't change the membership of a group that was synchronized from Windows Server Active Directory using Microsoft Entra Connect, or that was created in Exchange Online as a distribution group.  
@@ -262,6 +262,6 @@ If you want the users to also be assigned to the access package, you can [direct
 
 ## Next steps
 
-- [Create a basic group and add members using Microsoft Entra ID](../fundamentals/how-to-manage-groups.md)
+- [Create a basic group and add members using Microsoft Entra ID](~/fundamentals/how-to-manage-groups.md)
 - [How to: Configure the role claim issued in the SAML token for enterprise applications](~/identity-platform/enterprise-app-role-management.md)
 - [Introduction to SharePoint Online](/sharepoint/introduction)

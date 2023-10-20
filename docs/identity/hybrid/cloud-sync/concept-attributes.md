@@ -47,7 +47,7 @@ For example, if you had the mail attribute "john.smith@contoso.com" and needed t
 * **INPUT** (mail): "john.smith@contoso.com"
 * **OUTPUT**: "john.smith"
 
-For more information on how to write custom expressions and the syntax, see [Writing expressions for attribute mappings in Microsoft Entra ID](../../app-provisioning/functions-for-customizing-application-data.md).
+For more information on how to write custom expressions and the syntax, see [Writing expressions for attribute mappings in Microsoft Entra ID](~/identity/app-provisioning/functions-for-customizing-application-data.md).
 
 The following table lists common attributes and how they're synchronized to Microsoft Entra ID.
 

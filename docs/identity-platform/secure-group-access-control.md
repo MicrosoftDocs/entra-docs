@@ -42,5 +42,5 @@ The following table presents several security best practices for security groups
 
 ## Next steps
 
-- [Manage app and resource access using Microsoft Entra groups](../fundamentals/concept-learn-about-groups.md)
+- [Manage app and resource access using Microsoft Entra groups](~/fundamentals/concept-learn-about-groups.md)
 - [Restrict your Microsoft Entra app to a set of users in a Microsoft Entra tenant](./howto-restrict-your-app-to-a-set-of-users.md)

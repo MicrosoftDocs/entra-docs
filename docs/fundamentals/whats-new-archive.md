@@ -47,7 +47,7 @@ We've added the following new applications in our App gallery with Provisioning 
 - [Torii](../saas-apps/torii-provisioning-tutorial.md)
 
 
-For more information about how to better secure your organization by using automated user account provisioning, see: [Automate user provisioning to SaaS applications with Azure AD](../app-provisioning/user-provisioning.md).
+For more information about how to better secure your organization by using automated user account provisioning, see: [Automate user provisioning to SaaS applications with Azure AD](~/identity/app-provisioning/user-provisioning.md).
 
 
 ---
@@ -64,8 +64,8 @@ Workload Identity Federation enables developers to use managed identities for th
 - Accessing Azure resources from other cloud platforms that support OIDC, such as Google Cloud Platform.
 
 For more information, see: 
-- [Workload identity federation](../workload-identities/workload-identity-federation.md).
-- [Configure a user-assigned managed identity to trust an external identity provider (preview)](../workload-identities/workload-identity-federation-create-trust-user-assigned-managed-identity.md)
+- [Workload identity federation](~/workload-id/workload-identity-federation.md).
+- [Configure a user-assigned managed identity to trust an external identity provider (preview)](~/workload-id/workload-identity-federation-create-trust-user-assigned-managed-identity.md)
 - [Use Azure AD workload identity with Azure Kubernetes Service (AKS)](/azure/aks/workload-identity-overview)
 
 ---
@@ -120,7 +120,7 @@ Some key questions this workbook can help answer are:
 - What specific identities failed? And what step did they fail on?
 - For any given user, what tenants / applications were they provisioned or deprovisioned to?
 
-For more information, see: [Provisioning insights workbook](../app-provisioning/provisioning-workbook.md).
+For more information, see: [Provisioning insights workbook](~/identity/app-provisioning/provisioning-workbook.md).
 
 ---
 
@@ -161,7 +161,7 @@ Microsoft cloud settings let you collaborate with organizations from different M
 - Microsoft Azure commercial and Microsoft Azure Government
 - Microsoft Azure commercial and Microsoft Azure operated by 21Vianet
 
-For more information about Microsoft cloud settings for B2B collaboration, see [Microsoft cloud settings](../external-identities/cross-tenant-access-overview.md#microsoft-cloud-settings).
+For more information about Microsoft cloud settings for B2B collaboration, see [Microsoft cloud settings](~/external-id/cross-tenant-access-overview.md#microsoft-cloud-settings).
 
 ---
 
@@ -276,7 +276,7 @@ We've added the following new applications in our App gallery with Provisioning 
 - [Atmos](../saas-apps/atmos-provisioning-tutorial.md)
 
 
-For more information about how to better secure your organization by using automated user account provisioning, see: [Automate user provisioning to SaaS applications with Azure AD](../app-provisioning/user-provisioning.md).
+For more information about how to better secure your organization by using automated user account provisioning, see: [Automate user provisioning to SaaS applications with Azure AD](~/identity/app-provisioning/user-provisioning.md).
 
 
 ---
@@ -327,7 +327,7 @@ We've added the following new applications in our App gallery with Provisioning 
 - [SurveyMonkey Enterprise](../saas-apps/surveymonkey-enterprise-provisioning-tutorial.md)
 
 
-For more information about how to better secure your organization by using automated user account provisioning, see: [Automate user provisioning to SaaS applications with Azure AD](../app-provisioning/user-provisioning.md).
+For more information about how to better secure your organization by using automated user account provisioning, see: [Automate user provisioning to SaaS applications with Azure AD](~/identity/app-provisioning/user-provisioning.md).
 
 
 ---
@@ -426,7 +426,7 @@ For more information, see: [Conditional Access templates (Preview)](../condition
 **Service category:** User Access Management             
 **Product capability:** User Management       
 
-The ability for users to create tenants from the Manage Tenant overview has been present in Azure AD since almost the beginning of the Azure portal. This new capability in the User Settings option allows admins to restrict their users from being able to create new tenants. There's also a new [Tenant Creator](~/identity/role-based-access-control/permissions-reference.md#tenant-creator) role to allow specific users to create tenants. For more information, see [Default user permissions](../fundamentals/users-default-permissions.md#restrict-member-users-default-permissions).
+The ability for users to create tenants from the Manage Tenant overview has been present in Azure AD since almost the beginning of the Azure portal. This new capability in the User Settings option allows admins to restrict their users from being able to create new tenants. There's also a new [Tenant Creator](~/identity/role-based-access-control/permissions-reference.md#tenant-creator) role to allow specific users to create tenants. For more information, see [Default user permissions](~/fundamentals/users-default-permissions.md#restrict-member-users-default-permissions).
 
 
 ---
@@ -504,7 +504,7 @@ We've added the following new applications in our App gallery with Provisioning 
 - [GHAE](../saas-apps/ghae-provisioning-tutorial.md)
 
 
-For more information about how to better secure your organization by using automated user account provisioning, see: [Automate user provisioning to SaaS applications with Azure AD](../app-provisioning/user-provisioning.md).
+For more information about how to better secure your organization by using automated user account provisioning, see: [Automate user provisioning to SaaS applications with Azure AD](~/identity/app-provisioning/user-provisioning.md).
 
 
 ---
@@ -517,7 +517,7 @@ For more information about how to better secure your organization by using autom
 **Service category:** Provisioning            
 **Product capability:** Outbound to On-premises Applications        
 
-Azure AD supports provisioning users into applications hosted on-premises or in a virtual machine, without having to open up any firewalls. If your application supports [SCIM](https://techcommunity.microsoft.com/t5/identity-standards-blog/provisioning-with-scim-getting-started/ba-p/880010), or you've built a SCIM gateway to connect to your legacy application, you can use the Azure AD Provisioning agent to [directly connect](../app-provisioning/on-premises-scim-provisioning.md) with your application and automate provisioning and deprovisioning. If you have legacy applications that don't support SCIM and rely on an [LDAP](../app-provisioning/on-premises-ldap-connector-configure.md) user store, or a [SQL](../app-provisioning/tutorial-ecma-sql-connector.md) database, Azure AD can support those as well.
+Azure AD supports provisioning users into applications hosted on-premises or in a virtual machine, without having to open up any firewalls. If your application supports [SCIM](https://techcommunity.microsoft.com/t5/identity-standards-blog/provisioning-with-scim-getting-started/ba-p/880010), or you've built a SCIM gateway to connect to your legacy application, you can use the Azure AD Provisioning agent to [directly connect](~/identity/app-provisioning/on-premises-scim-provisioning.md) with your application and automate provisioning and deprovisioning. If you have legacy applications that don't support SCIM and rely on an [LDAP](~/identity/app-provisioning/on-premises-ldap-connector-configure.md) user store, or a [SQL](~/identity/app-provisioning/tutorial-ecma-sql-connector.md) database, Azure AD can support those as well.
 
 
 ---
@@ -620,8 +620,8 @@ Developers can now use managed identities for their software workloads running a
 - Accessing Azure resources from other cloud platforms that support OIDC, such as Google Cloud.
 
 For more information, see: 
-- [Configure a user-assigned managed identity to trust an external identity provider (preview)](../workload-identities/workload-identity-federation-create-trust-user-assigned-managed-identity.md)
-- [Workload identity federation](../workload-identities/workload-identity-federation.md)
+- [Configure a user-assigned managed identity to trust an external identity provider (preview)](~/workload-id/workload-identity-federation-create-trust-user-assigned-managed-identity.md)
+- [Workload identity federation](~/workload-id/workload-identity-federation.md)
 - [Use an Azure AD workload identity (preview) on Azure Kubernetes Service (AKS)](/azure/aks/workload-identity-overview)
 
 
@@ -672,7 +672,7 @@ We've added the following new applications in our App gallery with Provisioning 
 - [Keepabl](../saas-apps/keepabl-provisioning-tutorial.md)
 - [Uber](../saas-apps/uber-provisioning-tutorial.md)
 
-For more information about how to better secure your organization by using automated user account provisioning, see: [Automate user provisioning to SaaS applications with Azure AD](../app-provisioning/user-provisioning.md).
+For more information about how to better secure your organization by using automated user account provisioning, see: [Automate user provisioning to SaaS applications with Azure AD](~/identity/app-provisioning/user-provisioning.md).
 
 
 ---
@@ -685,7 +685,7 @@ For more information about how to better secure your organization by using autom
 **Service category:** Group Management           
 **Product capability:** Directory     
 
-Admins can now pause, and resume, the processing of individual dynamic groups in the Entra Admin Center. For more information, see: [Create or update a dynamic group in Azure Active Directory](../enterprise-users/groups-create-rule.md).
+Admins can now pause, and resume, the processing of individual dynamic groups in the Entra Admin Center. For more information, see: [Create or update a dynamic group in Azure Active Directory](~/identity/users/groups-create-rule.md).
 
 
 ---
@@ -769,7 +769,7 @@ We continue to share additional guidance on IPv6 enablement in Azure AD at this 
 **Service category:** Provisioning
 **Product capability:** Azure AD Connect cloud sync
 
-Microsoft stops support for Azure AD provisioning agent with versions 1.1.818.0 and below starting Feb 1,2023. If you're using Azure AD Connect cloud sync, make sure you have the latest version of the agent. You can view info about the agent release history [here](../app-provisioning/provisioning-agent-release-version-history.md). You can download the latest version [here](https://download.msappproxy.net/Subscription/d3c8b69d-6bf7-42be-a529-3fe9c2e70c90/Connector/provisioningAgentInstaller)
+Microsoft stops support for Azure AD provisioning agent with versions 1.1.818.0 and below starting Feb 1,2023. If you're using Azure AD Connect cloud sync, make sure you have the latest version of the agent. You can view info about the agent release history [here](~/identity/app-provisioning/provisioning-agent-release-version-history.md). You can download the latest version [here](https://download.msappproxy.net/Subscription/d3c8b69d-6bf7-42be-a529-3fe9c2e70c90/Connector/provisioningAgentInstaller)
 
 You can find out which version of the agent you're using as follows:
 
@@ -791,7 +791,7 @@ Product governed by the Modern Policy follow a [continuous support and servicing
 **Service category:** B2B        
 **Product capability:** B2B/B2C   
 
-An IT admin can now add multiple domains to a single SAML/WS-Fed identity provider configuration to invite users from multiple domains to authenticate from the same identity provider endpoint. For more information, see: [Federation with SAML/WS-Fed identity providers for guest users](../external-identities/direct-federation.md).
+An IT admin can now add multiple domains to a single SAML/WS-Fed identity provider configuration to invite users from multiple domains to authenticate from the same identity provider endpoint. For more information, see: [Federation with SAML/WS-Fed identity providers for guest users](~/external-id/direct-federation.md).
 
 
 ---
@@ -994,7 +994,7 @@ You can now automate creating, updating, and deleting user accounts for these ne
 
 - [LawVu](../saas-apps/lawvu-provisioning-tutorial.md)
 
-For more information about how to better secure your organization by using automated user account provisioning, see: [Automate user provisioning to SaaS applications with Azure AD](../app-provisioning/user-provisioning.md).
+For more information about how to better secure your organization by using automated user account provisioning, see: [Automate user provisioning to SaaS applications with Azure AD](~/identity/app-provisioning/user-provisioning.md).
 
 
 
@@ -1049,7 +1049,7 @@ For more information, see:
 
 Independent Software Vendors(ISVs) and developers can self-test their SCIM endpoints for compatibility: We have made it easier for ISVs to validate that their endpoints are compatible with the SCIM-based Azure AD provisioning services. This is now in general availability (GA) status.
 
-For more information, see: [Tutorial: Validate a SCIM endpoint](../app-provisioning/scim-validator-tutorial.md)
+For more information, see: [Tutorial: Validate a SCIM endpoint](~/identity/app-provisioning/scim-validator-tutorial.md)
 
 ---
 
@@ -1065,7 +1065,7 @@ For more information, see: [Tutorial: Validate a SCIM endpoint](../app-provision
 
 Accidental deletion of users in any system could be disastrous. We’re excited to announce the general availability of the accidental deletions prevention capability as part of the Azure AD provisioning service. When the number of deletions to be processed in a single provisioning cycle spikes above a customer defined threshold the following will happen. The Azure AD provisioning service pauses, provide you with visibility into the potential deletions, and allow you to accept or reject the deletions. This functionality has historically been available for Azure AD Connect, and Azure AD Connect cloud sync. It's now available across the various provisioning flows, including both HR-driven provisioning and application provisioning.
 
-For more information, see: [Enable accidental deletions prevention in the Azure AD provisioning service](../app-provisioning/accidental-deletions.md)
+For more information, see: [Enable accidental deletions prevention in the Azure AD provisioning service](~/identity/app-provisioning/accidental-deletions.md)
 
 ---
 
@@ -1153,8 +1153,8 @@ A new policy API is available for the administrators to control tenant wide poli
 
  For more information, see:
 
-- [Leave an organization as an external user](../external-identities/leave-the-organization.md)
-- [Configure external collaboration settings](../external-identities/external-collaboration-settings-configure.md)
+- [Leave an organization as an external user](~/external-id/leave-the-organization.md)
+- [Configure external collaboration settings](~/external-id/external-collaboration-settings-configure.md)
 
 
 
@@ -1219,7 +1219,7 @@ You can now automate creating, updating, and deleting user accounts for these ne
 - [SuccessFactors Writeback](../saas-apps/sap-successfactors-writeback-tutorial.md)
 - [Tableau Cloud](../saas-apps/tableau-online-provisioning-tutorial.md)
 
-For more information about how to better secure your organization by using automated user account provisioning, see: [Automate user provisioning to SaaS applications with Azure AD](../app-provisioning/user-provisioning.md).
+For more information about how to better secure your organization by using automated user account provisioning, see: [Automate user provisioning to SaaS applications with Azure AD](~/identity/app-provisioning/user-provisioning.md).
 
 
 
@@ -1232,7 +1232,7 @@ For more information about how to better secure your organization by using autom
 
 Entra Workload Identity Federation allows developers to exchange tokens issued by another identity provider with Azure AD tokens, without needing secrets. It eliminates the need to store, and manage, credentials inside the code or secret stores to access Azure AD protected resources such as Azure and Microsoft Graph. By removing the secrets required to access Azure AD protected resources, workload identity federation can improve the security posture of your organization. This feature also reduces the burden of secret management and minimizes the risk of service downtime due to expired credentials. 
 
-For more information on this capability and supported scenarios, see [Workload identity federation](../workload-identities/workload-identity-federation.md).
+For more information on this capability and supported scenarios, see [Workload identity federation](~/workload-id/workload-identity-federation.md).
 
 
 ---
@@ -1329,7 +1329,7 @@ For listing your application in the Azure AD app gallery, please read the detail
 **Product capability:** Identity Lifecycle Management  
  
 
-Pick a group of up to five members and provision them into your third-party applications in seconds. Get started testing, troubleshooting, and provisioning to non-Microsoft applications such as ServiceNow, ZScaler, and Adobe. For more information, see: [On-demand provisioning in Azure Active Directory](../app-provisioning/provision-on-demand.md).
+Pick a group of up to five members and provision them into your third-party applications in seconds. Get started testing, troubleshooting, and provisioning to non-Microsoft applications such as ServiceNow, ZScaler, and Adobe. For more information, see: [On-demand provisioning in Azure Active Directory](~/identity/app-provisioning/provision-on-demand.md).
  
 
 ---
@@ -1362,7 +1362,7 @@ You can now automate creating, updating, and deleting user accounts for these ne
 
 - [Tableau Cloud](../saas-apps/tableau-online-provisioning-tutorial.md)
 
-For more information about how to better secure your organization by using automated user account provisioning, see [Automate user provisioning to SaaS applications with Azure AD](../app-provisioning/user-provisioning.md).
+For more information about how to better secure your organization by using automated user account provisioning, see [Automate user provisioning to SaaS applications with Azure AD](~/identity/app-provisioning/user-provisioning.md).
  
 
 ---
@@ -1447,7 +1447,7 @@ A new Azure AD Connect release fixes several bugs and includes new functionality
 
  
 
-Cross-tenant access settings enable you to control how users in your organization collaborate with members of external Azure AD organizations. Now you have granular inbound and outbound access control settings that work on a per org, user, group, and application basis. These settings also make it possible for you to trust security claims from external Azure AD organizations like multi-factor authentication (MFA), device compliance, and hybrid Azure AD joined devices. For more information, see: [Cross-tenant access with Azure AD External Identities](../external-identities/cross-tenant-access-overview.md).
+Cross-tenant access settings enable you to control how users in your organization collaborate with members of external Azure AD organizations. Now you have granular inbound and outbound access control settings that work on a per org, user, group, and application basis. These settings also make it possible for you to trust security claims from external Azure AD organizations like multi-factor authentication (MFA), device compliance, and hybrid Azure AD joined devices. For more information, see: [Cross-tenant access with Azure AD External Identities](~/external-id/cross-tenant-access-overview.md).
  
 
 ---
@@ -1460,7 +1460,7 @@ Cross-tenant access settings enable you to control how users in your organizatio
 **Product capability:** Outbound to SaaS Applications  
  
 
-Accidental deletion of users in your apps or in your on-premises directory could be disastrous. We’re excited to announce the general availability of the accidental deletions prevention capability. When a provisioning job would cause a spike in deletions, it will first pause and provide you with visibility into the potential deletions. You can then accept or reject the deletions and have time to update the job’s scope if necessary. For more information, see [Understand how expression builder in Application Provisioning works](../app-provisioning/expression-builder.md).
+Accidental deletion of users in your apps or in your on-premises directory could be disastrous. We’re excited to announce the general availability of the accidental deletions prevention capability. When a provisioning job would cause a spike in deletions, it will first pause and provide you with visibility into the potential deletions. You can then accept or reject the deletions and have time to update the job’s scope if necessary. For more information, see [Understand how expression builder in Application Provisioning works](~/identity/app-provisioning/expression-builder.md).
  
 
 ---
@@ -1553,7 +1553,7 @@ You can now automate creating, updating, and deleting user accounts for these ne
 
 - [Whimsical](../saas-apps/whimsical-provisioning-tutorial.md)
 
-For more information about how to better secure your organization by using automated user account provisioning, see [Automate user provisioning to SaaS applications with Azure AD](../app-provisioning/user-provisioning.md).
+For more information about how to better secure your organization by using automated user account provisioning, see [Automate user provisioning to SaaS applications with Azure AD](~/identity/app-provisioning/user-provisioning.md).
  
 
 ---
@@ -1593,7 +1593,7 @@ Temporary Access Pass (TAP) is now generally available. TAP can be used to secur
 
  
 
-Create "nested" groups with Azure AD Dynamic Groups! This feature enables you to build dynamic Azure AD Security Groups and Microsoft 365 groups based on other groups! For example, you can now create Dynamic-Group-A with members of Group-X and Group-Y. For more information, see: [Steps to create a memberOf dynamic group](../enterprise-users/groups-dynamic-rule-member-of.md#steps-to-create-a-memberof-dynamic-group).
+Create "nested" groups with Azure AD Dynamic Groups! This feature enables you to build dynamic Azure AD Security Groups and Microsoft 365 groups based on other groups! For example, you can now create Dynamic-Group-A with members of Group-X and Group-Y. For more information, see: [Steps to create a memberOf dynamic group](~/identity/users/groups-dynamic-rule-member-of.md#steps-to-create-a-memberof-dynamic-group).
  
 
 ---
@@ -1664,7 +1664,7 @@ User Profile:
 - A new monitoring tab
 - More user properties can be viewed and edited in the properties tab
 
- For more information, see: [User management enhancements in Azure Active Directory](../enterprise-users/users-search-enhanced.md).
+ For more information, see: [User management enhancements in Azure Active Directory](~/identity/users/users-search-enhanced.md).
 
 ---
  
@@ -1684,7 +1684,7 @@ You can now create or update dynamic device groups using the following propertie
 - extensionAttribute1-15
 - profileType
 
-For more information on how to use this feature, see: [Dynamic membership rule for device groups](../enterprise-users/groups-dynamic-membership.md#rules-for-devices).
+For more information on how to use this feature, see: [Dynamic membership rule for device groups](~/identity/users/groups-dynamic-membership.md#rules-for-devices).
  
 
 ---
@@ -1757,7 +1757,7 @@ You can now automate creating, updating, and deleting user accounts for these ne
 - [Blinq](../saas-apps/blinq-provisioning-tutorial.md)
 - [Cerby](../saas-apps/cerby-provisioning-tutorial.md)
 
-For more information about how to better secure your organization by using automated user account provisioning, see: [Automate user provisioning to SaaS applications with Azure AD](../app-provisioning/user-provisioning.md).
+For more information about how to better secure your organization by using automated user account provisioning, see: [Automate user provisioning to SaaS applications with Azure AD](~/identity/app-provisioning/user-provisioning.md).
  
 
 ---
@@ -1789,7 +1789,7 @@ Microsoft cloud settings let you collaborate with organizations from different M
 -Microsoft Azure global cloud and Microsoft Azure Government
 -Microsoft Azure global cloud and Microsoft Azure operated by 21Vianet
 
-To learn more about Microsoft cloud settings for B2B collaboration, see: [Cross-tenant access overview - Azure AD](../external-identities/cross-tenant-access-overview.md#microsoft-cloud-settings).
+To learn more about Microsoft cloud settings for B2B collaboration, see: [Cross-tenant access overview - Azure AD](~/external-id/cross-tenant-access-overview.md#microsoft-cloud-settings).
  
 
 ---
@@ -1803,7 +1803,7 @@ To learn more about Microsoft cloud settings for B2B collaboration, see: [Cross-
 
  
 
-When setting up federation with a partner's IdP, new guest users from that domain can use their own IdP-managed organizational account to sign in to your Azure AD tenant and start collaborating with you. There's no need for the guest user to create a separate Azure AD account. To learn more about federating with SAML or WS-Fed identity providers in External Identities, see: [Federation with a SAML/WS-Fed identity provider (IdP) for B2B - Azure AD](../external-identities/direct-federation.md).
+When setting up federation with a partner's IdP, new guest users from that domain can use their own IdP-managed organizational account to sign in to your Azure AD tenant and start collaborating with you. There's no need for the guest user to create a separate Azure AD account. To learn more about federating with SAML or WS-Fed identity providers in External Identities, see: [Federation with a SAML/WS-Fed identity provider (IdP) for B2B - Azure AD](~/external-id/direct-federation.md).
  
 
 ---

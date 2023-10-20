@@ -63,7 +63,7 @@ Reporting and monitoring are used to meet your business requirements, gain insig
 
 ## Stakeholders, communications, and documentation
 
-When technology projects fail, they typically do so due to mismatched expectations on effect, outcomes, and responsibilities. To avoid these pitfalls, [ensure that you're engaging the right stakeholders](../architecture/deployment-plans.md). Also ensure that stakeholder roles in the project are well understood by documenting the stakeholders and their project input and responsibilities.
+When technology projects fail, they typically do so due to mismatched expectations on effect, outcomes, and responsibilities. To avoid these pitfalls, [ensure that you're engaging the right stakeholders](~/architecture/deployment-plans.md). Also ensure that stakeholder roles in the project are well understood by documenting the stakeholders and their project input and responsibilities.
 
 Stakeholders need to access Microsoft Entra logs to gain operational insights. Likely users include security team members, internal or external auditors, and the identity and access management operations team.
 
@@ -80,7 +80,7 @@ Learn More About [Microsoft Entra Administrative Roles](~/identity/role-based-ac
 
 ### Engage stakeholders
 
-Successful projects align expectations, outcomes, and responsibilities. See, [Microsoft Entra deployment plans](../architecture/deployment-plans.md). Document and communicate stakeholder roles that require input and accountability.
+Successful projects align expectations, outcomes, and responsibilities. See, [Microsoft Entra deployment plans](~/architecture/deployment-plans.md). Document and communicate stakeholder roles that require input and accountability.
 
 ### Communications plan
 

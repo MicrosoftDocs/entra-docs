@@ -65,7 +65,7 @@ Once you've taken the automated approaches described in this article, you have a
 
 Once you find your apps, you identify these types of apps in your organization:
 
-- Apps that use modern authentication protocols such as [Security Assertion Markup Language (SAML)](../architecture/auth-saml.md) or [OpenID Connect (OIDC)](../architecture/auth-oidc.md).
+- Apps that use modern authentication protocols such as [Security Assertion Markup Language (SAML)](~/architecture/auth-saml.md) or [OpenID Connect (OIDC)](~/architecture/auth-oidc.md).
 - Apps that use legacy authentication such as [Kerberos](https://techcommunity.microsoft.com/t5/itops-talk-blog/deep-dive-how-azure-ad-kerberos-works/ba-p/3070889) or NT LAN Manager (NTLM) that you choose to modernize.
 - Apps that use legacy authentication protocols that you choose NOT to modernize
 - New Line of Business (LoB) apps

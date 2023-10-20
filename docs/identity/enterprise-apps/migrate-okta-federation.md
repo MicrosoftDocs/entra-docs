@@ -263,7 +263,7 @@ After you configure the Okta app in Microsoft Entra ID and configure the IDP in 
 
 After you configure the Okta reverse-federation app, ask users to conduct testing on the managed authentication experience. We recommend you configure company branding to help users recognize the tenant.
 
-Learn more: [Configure your company branding](../fundamentals/how-to-customize-branding.md).
+Learn more: [Configure your company branding](~/fundamentals/how-to-customize-branding.md).
 
   >[!IMPORTANT]
   >Before you defederate the domains from Okta, identify needed Conditional Access policies. You can secure your environment before cut-off. See, [Tutorial: Migrate Okta sign-on policies to Microsoft Entra Conditional Access](migrate-okta-sign-on-policies-conditional-access.md).

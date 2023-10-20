@@ -28,7 +28,7 @@ This sample requires the [Azure Active Directory PowerShell 2.0 for Graph module
 
 ## Sample script
 
-[!code-azurepowershell[main](~/powershell_scripts/application-proxy/assign-user-to-app.ps1 "Assign a user to an application")]
+[!code-azurepowershell[main](~/../powershell_scripts/application-proxy/assign-user-to-app.ps1 "Assign a user to an application")]
 
 ## Script explanation
 

@@ -19,7 +19,7 @@ ms.collection: M365-identity-device-management
 
 Identity Protection detects compromised credentials for Microsoft Entra users. If your credential is detected as compromised, it means that someone else may have your password and be using it illegitimately. To prevent further risk to your account, it's important to securely reset your password so that the bad actor can no longer use your compromised password. Identity Protection marks accounts that may be compromised as "at risk."
 
-You can use your organizational credentials to sign-in to another organization as a guest. This process is referred to [business-to-business or B2B collaboration](../external-identities/what-is-b2b.md). Organizations can configure policies to block users from signing-in if their credentials are considered [at risk](concept-identity-protection-risks.md). If your account is at risk and you're blocked from signing-in to another organization as a guest, you may be able to self-remediate your account using the following steps. If your organization hasn't enabled self-service password reset, your administrator will need to manually remediate your account.
+You can use your organizational credentials to sign-in to another organization as a guest. This process is referred to [business-to-business or B2B collaboration](~/external-id/what-is-b2b.md). Organizations can configure policies to block users from signing-in if their credentials are considered [at risk](concept-identity-protection-risks.md). If your account is at risk and you're blocked from signing-in to another organization as a guest, you may be able to self-remediate your account using the following steps. If your organization hasn't enabled self-service password reset, your administrator will need to manually remediate your account.
 
 ## How to unblock your account 
 
@@ -81,4 +81,4 @@ Excluding B2B users from your organization's risk-based Conditional Access polic
 
 See the following articles on Microsoft Entra B2B collaboration:
 
-- [What is Microsoft Entra B2B collaboration?](../external-identities/what-is-b2b.md)
+- [What is Microsoft Entra B2B collaboration?](~/external-id/what-is-b2b.md)

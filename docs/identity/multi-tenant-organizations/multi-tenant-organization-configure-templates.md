@@ -31,7 +31,7 @@ This article describes how to configure a policy template for your multi-tenant 
 
 ## Cross-tenant access policy partner template
 
-The [cross-tenant access partner configuration](../external-identities/cross-tenant-access-settings-b2b-collaboration.md) handles trust settings and automatic user consent settings between partner tenants. For example, you can use these settings to trust multi-factor authentication claims for inbound users from the target partner tenant. With the template in an unconfigured state, partner configurations for partner tenants in the multi-tenant organization won't be amended, with all trust settings passed through from default settings. However, if you configure the template, then partner configurations will be amended corresponding to the policy template. 
+The [cross-tenant access partner configuration](~/external-id/cross-tenant-access-settings-b2b-collaboration.md) handles trust settings and automatic user consent settings between partner tenants. For example, you can use these settings to trust multi-factor authentication claims for inbound users from the target partner tenant. With the template in an unconfigured state, partner configurations for partner tenants in the multi-tenant organization won't be amended, with all trust settings passed through from default settings. However, if you configure the template, then partner configurations will be amended corresponding to the policy template. 
 
 ### Configure inbound and outbound automatic redemption
 

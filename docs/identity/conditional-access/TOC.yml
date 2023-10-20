@@ -161,7 +161,7 @@
   - name: Pricing
     href: https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing
   - name: Service updates
-    href: ../fundamentals/whats-new.md
+    href: ~/fundamentals/whats-new.md
   - name: Stack Overflow
     href: https://stackoverflow.com/questions/tagged/azure-active-directory
   - name: Videos

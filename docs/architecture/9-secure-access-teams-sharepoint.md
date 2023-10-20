@@ -34,7 +34,7 @@ Sharing in Microsoft 365 is partially governed by the **External Identities, Ext
 Learn more:
 
 * [Microsoft Entra admin center](https://entra.microsoft.com)
-* [External Identities in Microsoft Entra ID](../external-identities/external-identities-overview.md)
+* [External Identities in Microsoft Entra ID](~/external-id/external-identities-overview.md)
 
 ### Guest user access
 
@@ -108,9 +108,9 @@ Learn more:
 As a part of your strategy to govern external collaboration, it's recommended you enable SharePoint and OneDrive integration with Microsoft Entra B2B. Microsoft Entra B2B has guest-user authentication and management. With SharePoint and OneDrive integration, use one-time passcodes for external sharing of files, folders, list items, document libraries, and sites. 
 
 Learn more: 
-* [Email one-time passcode authentication](../external-identities/one-time-passcode.md)
+* [Email one-time passcode authentication](~/external-id/one-time-passcode.md)
 * [SharePoint and OneDrive integration with Microsoft Entra B2B](/sharepoint/sharepoint-azureb2b-integration)
-* [B2B collaboration overview](../external-identities/what-is-b2b.md)
+* [B2B collaboration overview](~/external-id/what-is-b2b.md)
 
 If you enable Microsoft Entra B2B integration, then SharePoint and OneDrive sharing is subject to the Microsoft Entra organizational relationships settings, such as **Members can invite** and **Guests can invite**.
 

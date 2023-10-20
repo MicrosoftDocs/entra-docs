@@ -33,7 +33,7 @@ Microsoft Q&A is Azure's recommended source for community support. We recommend 
 |------------|---------------------------|
 | Microsoft Authentication Library (MSAL)                                     | [[`msal`]](/answers/tags/455/entra-id)                            |
 | Open Web Interface for .NET (OWIN) middleware                               | [[`azure-active-directory`]](/answers/topics/azure-active-directory.html) |
-| [Microsoft Entra B2B / External Identities](../external-identities/what-is-b2b.md) | [[`azure-ad-b2b`]](/answers/tags/438/entra-external-id)                     |
+| [Microsoft Entra B2B / External Identities](~/external-id/what-is-b2b.md) | [[`azure-ad-b2b`]](/answers/tags/438/entra-external-id)                     |
 | [Azure AD B2C](https://azure.microsoft.com/services/active-directory-b2c/)  | [[`azure-ad-b2c`]](/answers/tags/438/entra-external-id)                     |
 | [Microsoft Graph API](https://developer.microsoft.com/graph/)               | [[`azure-ad-graph`]](/answers/tags/455/entra-id)                 |
 | All other authentication and authorization areas                            | [[`azure-active-directory`]](/answers/topics/azure-active-directory.html) |

@@ -274,7 +274,7 @@ sections:
         answer: |
               No, this won’t work, because a guest user in Microsoft Entra ID doesn't have the attribute that is required by any of the logon identities mentioned above.
           
-              In this case there is a fallback to “User principal name”. For more details on the B2B scenario please read [Grant B2B users in Microsoft Entra ID access to your on-premises applications](../external-identities/hybrid-cloud-to-on-premises.md).
+              In this case there is a fallback to “User principal name”. For more details on the B2B scenario please read [Grant B2B users in Microsoft Entra ID access to your on-premises applications](~/external-id/hybrid-cloud-to-on-premises.md).
           
   - name: Pass-through authentication
     questions:

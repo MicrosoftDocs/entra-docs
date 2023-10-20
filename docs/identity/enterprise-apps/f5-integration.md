@@ -176,7 +176,7 @@ Tutorials for using Easy Button templates, *F5 BIG-IP Easy Button for SSO to*:
 
 Microsoft Entra B2B guest access to SHA-protected applications is possible, but might require steps not in the tutorials. One example is Kerberos SSO, when a BIG-IP performs kerberos constrained delegation (KCD) to obtain a service ticket from domain controllers. Without a local representation of a local guest user, a domain controller won't honor the request because there's no user. To support this scenario, ensure external identities are flowed down from your Microsoft Entra tenant to the directory used by the application. 
 
-Learn more: [Grant B2B users in Microsoft Entra ID access to your on-premises applications](../external-identities/hybrid-cloud-to-on-premises.md)
+Learn more: [Grant B2B users in Microsoft Entra ID access to your on-premises applications](~/external-id/hybrid-cloud-to-on-premises.md)
 
 ## Next steps
 

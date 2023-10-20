@@ -88,10 +88,10 @@ When you create an assignment for a user to an access package, Microsoft Entra e
 - You need to have an appropriate administrative role. If this is the first time you're performing these steps, you need the Global Administrator role to authorize the use of Microsoft Graph PowerShell in your tenant.
 - Your application needs at least one service principal in your tenant:
 
-  - If the application uses an LDAP directory, follow the [guide for configuring Microsoft Entra ID to provision users into LDAP directories](../app-provisioning/on-premises-ldap-connector-configure.md) through the section to download, install, and configure the Microsoft Entra Connect Provisioning Agent package.
-  - If the application uses a SQL database, follow the [guide for configuring Microsoft Entra ID to provision users into SQL-based applications](../app-provisioning/on-premises-sql-connector-configure.md) through the section to download, install, and configure the Microsoft Entra Connect Provisioning Agent package.
+  - If the application uses an LDAP directory, follow the [guide for configuring Microsoft Entra ID to provision users into LDAP directories](~/identity/app-provisioning/on-premises-ldap-connector-configure.md) through the section to download, install, and configure the Microsoft Entra Connect Provisioning Agent package.
+  - If the application uses a SQL database, follow the [guide for configuring Microsoft Entra ID to provision users into SQL-based applications](~/identity/app-provisioning/on-premises-sql-connector-configure.md) through the section to download, install, and configure the Microsoft Entra Connect Provisioning Agent package.
   - If the application is a cloud application that supports the SCIM protocol, then you can add the application from the [application gallery](~/identity/enterprise-apps/overview-application-gallery.md).
-  - If the application is on-premises and supports the SCIM protocol, then follow the [guide for configuring Microsoft Entra ID to provision users into on-premises SCIM-based applications](../app-provisioning/on-premises-scim-provisioning.md).
+  - If the application is on-premises and supports the SCIM protocol, then follow the [guide for configuring Microsoft Entra ID to provision users into on-premises SCIM-based applications](~/identity/app-provisioning/on-premises-scim-provisioning.md).
 
 
 ## Collect existing users from an application
@@ -142,7 +142,7 @@ First, get a list of the users from the tables. Most databases provide a way to 
 
 ### Collect existing users from an application's database table by using PowerShell
 
-This section applies to applications that use another SQL database as the underlying data store, where you're using the [ECMA Connector Host](../app-provisioning/on-premises-sql-connector-configure.md) to provision users into that application. If you haven't yet configured the provisioning agent, use that guide to create the DSN connection file you'll use in this section.
+This section applies to applications that use another SQL database as the underlying data store, where you're using the [ECMA Connector Host](~/identity/app-provisioning/on-premises-sql-connector-configure.md) to provision users into that application. If you haven't yet configured the provisioning agent, use that guide to create the DSN connection file you'll use in this section.
 
 1. Log in to the system where the provisioning agent is or will be installed.
 1. Open PowerShell.
@@ -198,7 +198,7 @@ This section applies to applications that use another SQL database as the underl
 
 Now that you have a list of all the users obtained from the application, you'll match those users from the application's data store with users in Microsoft Entra ID.  
 
-Before you proceed, review the information about [matching users in the source and target systems](../app-provisioning/customize-application-attributes.md#matching-users-in-the-source-and-target--systems). You'll configure Microsoft Entra provisioning with equivalent mappings afterward. That step will allow Microsoft Entra provisioning to query the application's data store with the same matching rules.
+Before you proceed, review the information about [matching users in the source and target systems](~/identity/app-provisioning/customize-application-attributes.md#matching-users-in-the-source-and-target--systems). You'll configure Microsoft Entra provisioning with equivalent mappings afterward. That step will allow Microsoft Entra provisioning to query the application's data store with the same matching rules.
 
 [!INCLUDE [active-directory-identity-governance-applications-retrieve-users.md](~/includes/entra-identity-governance-applications-retrieve-users.md)]
 
@@ -206,10 +206,10 @@ Before you proceed, review the information about [matching users in the source a
 
 If the application is already registered in Microsoft Entra ID, then continue to the next step.
 
-- If the application uses an LDAP directory, follow the [guide for configuring Microsoft Entra ID to provision users into LDAP directories](../app-provisioning/on-premises-ldap-connector-configure.md#configure-the-on-premises-ecma-app) section to create a new registration for an on-premises ECMA app in Microsoft Entra ID.  
-- If the application uses a SQL database, follow the [guide for configuring Microsoft Entra ID to provision users into SQL-based applications](../app-provisioning/on-premises-sql-connector-configure.md#4-configure-the-on-premises-ecma-app) section to create a new registration for an on-premises ECMA app in Microsoft Entra ID.
+- If the application uses an LDAP directory, follow the [guide for configuring Microsoft Entra ID to provision users into LDAP directories](~/identity/app-provisioning/on-premises-ldap-connector-configure.md#configure-the-on-premises-ecma-app) section to create a new registration for an on-premises ECMA app in Microsoft Entra ID.  
+- If the application uses a SQL database, follow the [guide for configuring Microsoft Entra ID to provision users into SQL-based applications](~/identity/app-provisioning/on-premises-sql-connector-configure.md#4-configure-the-on-premises-ecma-app) section to create a new registration for an on-premises ECMA app in Microsoft Entra ID.
 - If it is a cloud application that supports the SCIM protocol, then you can add the application from the [application gallery](~/identity/enterprise-apps/overview-application-gallery.md).
-- If the application is on-premises and supports the SCIM protocol, then follow the [guide for configuring Microsoft Entra ID to provision users into on-premises SCIM-based applications](../app-provisioning/on-premises-scim-provisioning.md).
+- If the application is on-premises and supports the SCIM protocol, then follow the [guide for configuring Microsoft Entra ID to provision users into on-premises SCIM-based applications](~/identity/app-provisioning/on-premises-scim-provisioning.md).
 
 ## Check for users who are not already assigned to the application
 
@@ -272,22 +272,22 @@ The previous steps have confirmed that all the users in the application's data s
 
 ## Configure application provisioning
 
-If your application uses an LDAP directory, a SQL database, or supports SCIM, then before you create new assignments, configure [provisioning of Microsoft Entra users](../app-provisioning/user-provisioning.md) to the application. Configuring provisioning before creating assignments will enable Microsoft Entra ID to match up the users in Microsoft Entra ID with the application role assignments to the users already in the application's data store.  If your application has an on-premises directory or database to be provisioned, and also supports federated SSO, then you may need two service principals to represent the application in your directory: one for provisioning and one for SSO.   If your application does not support provisioning, then continue reading in the next section.
+If your application uses an LDAP directory, a SQL database, or supports SCIM, then before you create new assignments, configure [provisioning of Microsoft Entra users](~/identity/app-provisioning/user-provisioning.md) to the application. Configuring provisioning before creating assignments will enable Microsoft Entra ID to match up the users in Microsoft Entra ID with the application role assignments to the users already in the application's data store.  If your application has an on-premises directory or database to be provisioned, and also supports federated SSO, then you may need two service principals to represent the application in your directory: one for provisioning and one for SSO.   If your application does not support provisioning, then continue reading in the next section.
 
 1. Ensure that the application is configured to require users to have application role assignments, so that only selected users will be provisioned to the application.
 1. If provisioning hasn't been configured for the application, configure it now (but don't start provisioning):
 
-   * If the application uses an LDAP directory, follow the [guide for configuring Microsoft Entra ID to provision users into LDAP directories](../app-provisioning/on-premises-ldap-connector-configure.md).
-   * If the application uses a SQL database, follow the [guide for configuring Microsoft Entra ID to provision users into SQL-based applications](../app-provisioning/on-premises-sql-connector-configure.md).
-   * For other applications, follow steps 1-3 to [configure provisioning via Graph APIs](../app-provisioning/application-provisioning-configuration-api.md).
+   * If the application uses an LDAP directory, follow the [guide for configuring Microsoft Entra ID to provision users into LDAP directories](~/identity/app-provisioning/on-premises-ldap-connector-configure.md).
+   * If the application uses a SQL database, follow the [guide for configuring Microsoft Entra ID to provision users into SQL-based applications](~/identity/app-provisioning/on-premises-sql-connector-configure.md).
+   * For other applications, follow steps 1-3 to [configure provisioning via Graph APIs](~/identity/app-provisioning/application-provisioning-configuration-api.md).
 
-1. Check the [attribute mappings](../app-provisioning/customize-application-attributes.md) for provisioning to that application. Make sure that **Match objects using this attribute** is set for the Microsoft Entra attribute and column that you used in the previous sections for matching.  
+1. Check the [attribute mappings](~/identity/app-provisioning/customize-application-attributes.md) for provisioning to that application. Make sure that **Match objects using this attribute** is set for the Microsoft Entra attribute and column that you used in the previous sections for matching.  
 
    If these rules aren't using the same attributes that you used earlier, then when application role assignments are created, Microsoft Entra ID might be unable to locate existing users in the application's data store. Microsoft Entra ID might then inadvertently create duplicate users.
 1. Check that there's an attribute mapping for `isSoftDeleted` to an attribute of the application. 
 
    When a user is unassigned from the application, soft-deleted in Microsoft Entra ID, or blocked from sign-in, Microsoft Entra provisioning will update the attribute mapped to `isSoftDeleted`. If no attribute is mapped, users who later are unassigned from the application role will continue to exist in the application's data store.
-1. If provisioning has already been enabled for the application, check that the application provisioning is not in [quarantine](../app-provisioning/application-provisioning-quarantine-status.md). Resolve any issues that are causing the quarantine before you proceed.
+1. If provisioning has already been enabled for the application, check that the application provisioning is not in [quarantine](~/identity/app-provisioning/application-provisioning-quarantine-status.md). Resolve any issues that are causing the quarantine before you proceed.
 
 <a name='create-app-role-assignments-in-azure-ad'></a>
 
@@ -350,13 +350,13 @@ If the application does not support provisioning, then
 
    If any users aren't assigned to application roles, check the Microsoft Entra audit log for an error from a previous step.
 
-1. If the application service principal is for provisioning, and the **Provisioning Status** for the service principal is **Off**, turn it to **On**.  You can also start provisioning [using Graph APIs](../app-provisioning/application-provisioning-configuration-api.md#step-4-start-the-provisioning-job).
-1. Based on the guidance for [how long will it take to provision users](../app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md#how-long-will-it-take-to-provision-users), wait for Microsoft Entra provisioning to match the existing users of the application to those users just assigned.
-1. Monitor the [provisioning status](../app-provisioning/check-status-user-account-provisioning.md) through the Portal or [Graph APIs](../app-provisioning/application-provisioning-configuration-api.md#monitor-the-provisioning-job-status) to ensure that all users were matched successfully.
+1. If the application service principal is for provisioning, and the **Provisioning Status** for the service principal is **Off**, turn it to **On**.  You can also start provisioning [using Graph APIs](~/identity/app-provisioning/application-provisioning-configuration-api.md#step-4-start-the-provisioning-job).
+1. Based on the guidance for [how long will it take to provision users](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md#how-long-will-it-take-to-provision-users), wait for Microsoft Entra provisioning to match the existing users of the application to those users just assigned.
+1. Monitor the [provisioning status](~/identity/app-provisioning/check-status-user-account-provisioning.md) through the Portal or [Graph APIs](~/identity/app-provisioning/application-provisioning-configuration-api.md#monitor-the-provisioning-job-status) to ensure that all users were matched successfully.
 
-   If you don't see users being provisioned, check the [troubleshooting guide for no users being provisioned](../app-provisioning/application-provisioning-config-problem-no-users-provisioned.md). If you see an error in the provisioning status and are provisioning to an on-premises application, check the [troubleshooting guide for on-premises application provisioning](../app-provisioning/on-premises-ecma-troubleshoot.md).
+   If you don't see users being provisioned, check the [troubleshooting guide for no users being provisioned](~/identity/app-provisioning/application-provisioning-config-problem-no-users-provisioned.md). If you see an error in the provisioning status and are provisioning to an on-premises application, check the [troubleshooting guide for on-premises application provisioning](~/identity/app-provisioning/on-premises-ecma-troubleshoot.md).
 
-1. Check the provisioning log through the [Microsoft Entra admin center](../reports-monitoring/concept-provisioning-logs.md) or [Graph APIs](../app-provisioning/application-provisioning-configuration-api.md#monitor-provisioning-events-using-the-provisioning-logs).  Filter the log to the status **Failure**.  If there are failures with an ErrorCode of **DuplicateTargetEntries**,  this indicates an ambiguity in your provisioning matching rules, and you'll need to update the Microsoft Entra users or the mappings that are used for matching to ensure each Microsoft Entra user matches one application user.  Then filter the log to the action **Create** and status **Skipped**.  If users were skipped with the SkipReason code of **NotEffectivelyEntitled**, this may indicate that the user accounts in Microsoft Entra ID were not matched because the user account status was **Disabled**.
+1. Check the provisioning log through the [Microsoft Entra admin center](../reports-monitoring/concept-provisioning-logs.md) or [Graph APIs](~/identity/app-provisioning/application-provisioning-configuration-api.md#monitor-provisioning-events-using-the-provisioning-logs).  Filter the log to the status **Failure**.  If there are failures with an ErrorCode of **DuplicateTargetEntries**,  this indicates an ambiguity in your provisioning matching rules, and you'll need to update the Microsoft Entra users or the mappings that are used for matching to ensure each Microsoft Entra user matches one application user.  Then filter the log to the action **Create** and status **Skipped**.  If users were skipped with the SkipReason code of **NotEffectivelyEntitled**, this may indicate that the user accounts in Microsoft Entra ID were not matched because the user account status was **Disabled**.
 
 After the Microsoft Entra provisioning service has matched the users based on the application role assignments you've created, subsequent changes to those users will be sent to the application.
 

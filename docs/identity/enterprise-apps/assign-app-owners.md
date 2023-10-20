@@ -86,7 +86,7 @@ Content-Type: application/json
 :::zone-end
 
 > [!NOTE]
-> If the user setting **Restrict access to Microsoft Entra administration portal** is set to `Yes`, non-admin users aren't able to use the Microsoft Entra admin center to manage the applications they own. For more information about the actions that can be performed on owned enterprise applications, see [Owned enterprise applications](../fundamentals/users-default-permissions.md#owned-enterprise-applications). 
+> If the user setting **Restrict access to Microsoft Entra administration portal** is set to `Yes`, non-admin users aren't able to use the Microsoft Entra admin center to manage the applications they own. For more information about the actions that can be performed on owned enterprise applications, see [Owned enterprise applications](~/fundamentals/users-default-permissions.md#owned-enterprise-applications). 
 
 ## Next steps
 

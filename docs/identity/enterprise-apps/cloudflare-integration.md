@@ -23,7 +23,7 @@ In this tutorial, learn to integrate Microsoft Entra ID with Cloudflare Zero Tru
 * A Microsoft Entra subscription
   * If you don't have one, get an [Azure free account](https://azure.microsoft.com/free/)
 * A Microsoft Entra tenant linked to the Microsoft Entra subscription
-  * See, [Quickstart: Create a new tenant in Microsoft Entra ID](../fundamentals/create-new-tenant.md)
+  * See, [Quickstart: Create a new tenant in Microsoft Entra ID](~/fundamentals/create-new-tenant.md)
 * A Cloudflare Zero Trust account
   * If you don't have one, go to [Get started with Cloudflare's Zero Trust platform](https://dash.cloudflare.com/sign-up/teams)
 * One of the following roles: Global Administrator, Cloud Application Administrator, or Application Administrator.

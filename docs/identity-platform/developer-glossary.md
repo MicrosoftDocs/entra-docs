@@ -234,11 +234,11 @@ A type of [client application](#client-application) that executes all code on a 
 
 ## Workload identity
 
-An identity used by a software workload like an application, service, script, or container to authenticate and access other services and resources. In Microsoft Entra ID, workload identities are apps, service principals, and managed identities.  For more information, see [workload identity overview](../workload-identities/workload-identities-overview.md).
+An identity used by a software workload like an application, service, script, or container to authenticate and access other services and resources. In Microsoft Entra ID, workload identities are apps, service principals, and managed identities.  For more information, see [workload identity overview](~/workload-id/workload-identities-overview.md).
 
 ## Workload identity federation
 
-Allows you to securely access Microsoft Entra protected resources from external apps and services without needing to manage secrets (for supported scenarios).  For more information, see [workload identity federation](../workload-identities/workload-identity-federation.md).
+Allows you to securely access Microsoft Entra protected resources from external apps and services without needing to manage secrets (for supported scenarios).  For more information, see [workload identity federation](~/workload-id/workload-identity-federation.md).
 
 ## Next steps
 
@@ -256,7 +256,7 @@ Many of the terms in this glossary are related to the OAuth 2.0 and OpenID Conne
 [Graph-App-Resource]: /graph/api/resources/application
 [Graph-Sp-Resource]: /graph/api/resources/serviceprincipal
 [Graph-User-Resource]: /graph/api/resources/user
-[AAD-How-Subscriptions-Assoc]:../fundamentals/how-subscriptions-associated-directory.md
+[AAD-How-Subscriptions-Assoc]:~/fundamentals/how-subscriptions-associated-directory.md
 [AAD-How-To-Integrate]: ./how-to-integrate.md
 [AAD-How-To-Tenant]:quickstart-create-new-tenant.md
 [AAD-Integrating-Apps]:./quickstart-register-app.md

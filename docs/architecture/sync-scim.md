@@ -43,10 +43,10 @@ You want to automatically provision user information from an HCM system to Micro
 
 ## Implement SCIM with Microsoft Entra ID 
 
-* [How provisioning works in Microsoft Entra ID](../app-provisioning/how-provisioning-works.md)
+* [How provisioning works in Microsoft Entra ID](~/identity/app-provisioning/how-provisioning-works.md)
 
-* [Managing user account provisioning for enterprise apps in the Azure portal](../app-provisioning/configure-automatic-user-provisioning-portal.md)
+* [Managing user account provisioning for enterprise apps in the Azure portal](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 
-* [Build a SCIM endpoint and configure user provisioning with Microsoft Entra ID](../app-provisioning/use-scim-to-provision-users-and-groups.md)
+* [Build a SCIM endpoint and configure user provisioning with Microsoft Entra ID](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md)
 
-* [SCIM 2.0 protocol compliance of the Microsoft Entra provisioning service](../app-provisioning/application-provisioning-config-problem-scim-compatibility.md)
+* [SCIM 2.0 protocol compliance of the Microsoft Entra provisioning service](~/identity/app-provisioning/application-provisioning-config-problem-scim-compatibility.md)

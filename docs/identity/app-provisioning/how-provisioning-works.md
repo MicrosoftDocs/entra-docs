@@ -31,7 +31,7 @@ The **Microsoft Entra provisioning service** provisions users to SaaS apps and o
 
 ## Provisioning using SCIM 2.0
 
-The Microsoft Entra provisioning service uses the [SCIM 2.0 protocol](https://techcommunity.microsoft.com/t5/Identity-Standards-Blog/bg-p/IdentityStandards) for automatic provisioning. The service connects to the SCIM endpoint for the application, and uses SCIM user object schema and REST APIs to automate the provisioning and deprovisioning of users and groups. A SCIM-based provisioning connector is provided for most applications in the Microsoft Entra gallery. Developers use the SCIM 2.0 user management API in Microsoft Entra ID to build endpoints for their apps that integrate with the provisioning service. For details, see [Build a SCIM endpoint and configure user provisioning](../app-provisioning/use-scim-to-provision-users-and-groups.md).
+The Microsoft Entra provisioning service uses the [SCIM 2.0 protocol](https://techcommunity.microsoft.com/t5/Identity-Standards-Blog/bg-p/IdentityStandards) for automatic provisioning. The service connects to the SCIM endpoint for the application, and uses SCIM user object schema and REST APIs to automate the provisioning and deprovisioning of users and groups. A SCIM-based provisioning connector is provided for most applications in the Microsoft Entra gallery. Developers use the SCIM 2.0 user management API in Microsoft Entra ID to build endpoints for their apps that integrate with the provisioning service. For details, see [Build a SCIM endpoint and configure user provisioning](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md).
 
 To request an automatic Microsoft Entra provisioning connector for an app that doesn't currently have one, see [Microsoft Entra Application Request](~/identity/enterprise-apps/v2-howto-app-gallery-listing.md).
 
@@ -58,15 +58,15 @@ For outbound provisioning from Microsoft Entra ID to a SaaS application, relying
 
 * **Groups.** With a Microsoft Entra ID P1 or P2 license plan, you can use groups to assign access to a SaaS application. Then, when the provisioning scope is set to **Sync only assigned users and groups**, the Microsoft Entra provisioning service provisions or deprovisions users based on whether they're members of a group that's assigned to the application. The group object itself isn't provisioned unless the application supports group objects. Ensure that groups assigned to your application have the property "SecurityEnabled" set to "True".
 
-* **Dynamic groups.** The Microsoft Entra user provisioning service can read and provision users in [dynamic groups](../enterprise-users/groups-create-rule.md). Keep these caveats and recommendations in mind:
+* **Dynamic groups.** The Microsoft Entra user provisioning service can read and provision users in [dynamic groups](~/identity/users/groups-create-rule.md). Keep these caveats and recommendations in mind:
 
   * Dynamic groups can impact the performance of end-to-end provisioning from Microsoft Entra ID to SaaS applications.
 
-  * How fast a user in a dynamic group is provisioned or deprovisioned in a SaaS application depends on how fast the dynamic group can evaluate membership changes. For information about how to check the processing status of a dynamic group, see [Check processing status for a membership rule](../enterprise-users/groups-create-rule.md).
+  * How fast a user in a dynamic group is provisioned or deprovisioned in a SaaS application depends on how fast the dynamic group can evaluate membership changes. For information about how to check the processing status of a dynamic group, see [Check processing status for a membership rule](~/identity/users/groups-create-rule.md).
 
   * When a user loses membership in the dynamic group, it's considered a deprovisioning event. Consider this scenario when creating rules for dynamic groups.
 
-* **Nested groups.** The Microsoft Entra user provisioning service can't read or provision users in nested groups. The service can only read and provision users that are immediate members of an explicitly assigned group. This limitation of "group-based assignments to applications" also affects single sign-on (see [Using a group to manage access to SaaS applications](../enterprise-users/groups-saasapps.md)). Instead, directly assign or otherwise [scope in](define-conditional-rules-for-provisioning-user-accounts.md) the groups that contain the users who need to be provisioned.
+* **Nested groups.** The Microsoft Entra user provisioning service can't read or provision users in nested groups. The service can only read and provision users that are immediate members of an explicitly assigned group. This limitation of "group-based assignments to applications" also affects single sign-on (see [Using a group to manage access to SaaS applications](~/identity/users/groups-saasapps.md)). Instead, directly assign or otherwise [scope in](define-conditional-rules-for-provisioning-user-accounts.md) the groups that contain the users who need to be provisioned.
 
 ### Attribute-based scoping 
 
@@ -201,7 +201,7 @@ Confirm the mapping for *active* for your application. If you're using an applic
 **Configure your application to delete a user**
 
 The scenario triggers a disable or a delete: 
-* A user is soft-deleted in Microsoft Entra ID (sent to the recycle bin / AccountEnabled property set to false). Thirty days after a user is deleted in Microsoft Entra ID, they're permanently deleted from the tenant. At this point, the provisioning service sends a DELETE request to permanently delete the user in the application. At any time during the 30-day window, you can [manually delete a user permanently](../fundamentals/users-restore.md), which sends a delete request to the application.
+* A user is soft-deleted in Microsoft Entra ID (sent to the recycle bin / AccountEnabled property set to false). Thirty days after a user is deleted in Microsoft Entra ID, they're permanently deleted from the tenant. At this point, the provisioning service sends a DELETE request to permanently delete the user in the application. At any time during the 30-day window, you can [manually delete a user permanently](~/fundamentals/users-restore.md), which sends a delete request to the application.
 * A user is permanently deleted / removed from the recycle bin in Microsoft Entra ID.
 * A user is unassigned from an app.
 * A user goes from in scope to out of scope (doesn't pass a scoping filter anymore).
@@ -240,10 +240,10 @@ When developing an application, always support both soft-deletes and hard-delete
 
 ## Next Steps
 
-[Plan an automatic user provisioning deployment](../app-provisioning/plan-auto-user-provisioning.md)
+[Plan an automatic user provisioning deployment](~/identity/app-provisioning/plan-auto-user-provisioning.md)
 
 [Configure provisioning for a gallery app](./configure-automatic-user-provisioning-portal.md)
 
-[Build a SCIM endpoint and configure provisioning when creating your own app](../app-provisioning/use-scim-to-provision-users-and-groups.md)
+[Build a SCIM endpoint and configure provisioning when creating your own app](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md)
 
 [Troubleshoot problems with configuring and provisioning users to an application](./application-provisioning-config-problem.md).

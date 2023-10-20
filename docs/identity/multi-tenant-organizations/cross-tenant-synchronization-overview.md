@@ -17,7 +17,7 @@ ms.custom: it-pro
 
 # What is cross-tenant synchronization?
 
-*Cross-tenant synchronization* automates creating, updating, and deleting [Microsoft Entra B2B collaboration](../external-identities/what-is-b2b.md) users across tenants in an organization. It enables users to access applications and collaborate across tenants, while still allowing the organization to evolve. 
+*Cross-tenant synchronization* automates creating, updating, and deleting [Microsoft Entra B2B collaboration](~/external-id/what-is-b2b.md) users across tenants in an organization. It enables users to access applications and collaborate across tenants, while still allowing the organization to evolve. 
 
 Here are the primary goals of cross-tenant synchronization:
 
@@ -29,7 +29,7 @@ Here are the primary goals of cross-tenant synchronization:
 
 ## Why use cross-tenant synchronization?
 
-Cross-tenant synchronization automates creating, updating, and deleting B2B collaboration users. Users created with cross-tenant synchronization are able to access both Microsoft applications (such as Teams and SharePoint) and non-Microsoft applications (such as [ServiceNow](../saas-apps/servicenow-provisioning-tutorial.md), [Adobe](../saas-apps/adobe-identity-management-provisioning-tutorial.md), and many more), regardless of which tenant the apps are integrated with. These users continue to benefit from the security capabilities in Microsoft Entra ID, such as [Microsoft Entra Conditional Access](../conditional-access/overview.md) and [cross-tenant access settings](../external-identities/cross-tenant-access-overview.md), and can be governed through features such as [Microsoft Entra entitlement management](../governance/entitlement-management-overview.md).
+Cross-tenant synchronization automates creating, updating, and deleting B2B collaboration users. Users created with cross-tenant synchronization are able to access both Microsoft applications (such as Teams and SharePoint) and non-Microsoft applications (such as [ServiceNow](../saas-apps/servicenow-provisioning-tutorial.md), [Adobe](../saas-apps/adobe-identity-management-provisioning-tutorial.md), and many more), regardless of which tenant the apps are integrated with. These users continue to benefit from the security capabilities in Microsoft Entra ID, such as [Microsoft Entra Conditional Access](../conditional-access/overview.md) and [cross-tenant access settings](~/external-id/cross-tenant-access-overview.md), and can be governed through features such as [Microsoft Entra entitlement management](../governance/entitlement-management-overview.md).
 
 The following diagram shows how you can use cross-tenant synchronization to enable users to access applications across tenants in your organization.
 
@@ -49,7 +49,7 @@ With cross-tenant synchronization, you can do the following:
 
 ## Teams and Microsoft 365
 
-Users created by cross-tenant synchronization will have the same experience when accessing Microsoft Teams and other Microsoft 365 services as B2B collaboration users created through a manual invitation. If your organization uses shared channels, please see the [known issues](../app-provisioning/known-issues.md) document for additional details. Over time, the `member` userType will be used by the various Microsoft 365 services to provide differentiated end user experiences for users in a multitenant organization.
+Users created by cross-tenant synchronization will have the same experience when accessing Microsoft Teams and other Microsoft 365 services as B2B collaboration users created through a manual invitation. If your organization uses shared channels, please see the [known issues](~/identity/app-provisioning/known-issues.md) document for additional details. Over time, the `member` userType will be used by the various Microsoft 365 services to provide differentiated end user experiences for users in a multitenant organization.
 
 ## Properties
 
@@ -86,7 +86,7 @@ To configure this setting using Microsoft Graph, see the [Update crossTenantAcce
 
 For cross-tenant synchronization, users don't receive an email or have to accept a consent prompt. If users want to see what tenants they belong to, they can open their [My Account](https://support.microsoft.com/account-billing/my-account-portal-for-work-or-school-accounts-eab41bfe-3b9e-441e-82be-1f6e568d65fd) page and select **Organizations**. In the Microsoft Entra admin center, users can open their [Portal settings](/azure/azure-portal/set-preferences), view their **Directories + subscriptions**, and switch directories.
 
-For more information, including privacy information, see [Leave an organization as an external user](../external-identities/leave-the-organization.md).
+For more information, including privacy information, see [Leave an organization as an external user](~/external-id/leave-the-organization.md).
 
 ## Get started
 
@@ -112,7 +112,7 @@ In any source tenant, navigate to the **Cross-tenant access settings** page and 
 - What attributes you want to include
 - Any transformations
 
-For anyone that has used Microsoft Entra ID to [provision identities into a SaaS application](../app-provisioning/user-provisioning.md), this experience will be familiar. Once you have synchronization configured, you can start testing with a few users and make sure they're created with all the attributes that you need. When testing is complete, you can quickly add additional users to synchronize and roll out across your organization. For more information, see [Configure cross-tenant synchronization](cross-tenant-synchronization-configure.md).
+For anyone that has used Microsoft Entra ID to [provision identities into a SaaS application](~/identity/app-provisioning/user-provisioning.md), this experience will be familiar. Once you have synchronization configured, you can start testing with a few users and make sure they're created with all the attributes that you need. When testing is complete, you can quickly add additional users to synchronize and roll out across your organization. For more information, see [Configure cross-tenant synchronization](cross-tenant-synchronization-configure.md).
 
 :::image type="content" source="./media/cross-tenant-synchronization-overview/configure-source.png" alt-text="Diagram that shows a cross-tenant synchronization job configured in the source tenant.":::
 
@@ -120,7 +120,7 @@ For anyone that has used Microsoft Entra ID to [provision identities into a SaaS
 
 In the source tenant: Using this feature requires Microsoft Entra ID P1 licenses. Each user who is synchronized with cross-tenant synchronization must have a P1 license in their home/source tenant. To find the right license for your requirements, see [Compare generally available features of Microsoft Entra ID](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
 
-In the target tenant: Cross-tenant sync relies on the Microsoft Entra External ID billing model. To understand the external identities licensing model, see [MAU billing model for Microsoft Entra External ID](../external-identities/external-identities-pricing.md). You will also need at least one Microsoft Entra ID P1 license in the target tenant to enable auto-redemption. 
+In the target tenant: Cross-tenant sync relies on the Microsoft Entra External ID billing model. To understand the external identities licensing model, see [MAU billing model for Microsoft Entra External ID](~/external-id/external-identities-pricing.md). You will also need at least one Microsoft Entra ID P1 license in the target tenant to enable auto-redemption. 
 
 ## Frequently asked questions
 
@@ -150,7 +150,7 @@ How often does cross-tenant synchronization run?
 
 How do I control what is synchronized into the target tenant?
 
-- In the source tenant, you can control which users are provisioned with the configuration or attribute-based filters. You can also control what attributes on the user object are synchronized. For more information, see [Scoping users or groups to be provisioned with scoping filters](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md?toc=/azure/active-directory/multi-tenant-organizations/toc.json&pivots=cross-tenant-synchronization).
+- In the source tenant, you can control which users are provisioned with the configuration or attribute-based filters. You can also control what attributes on the user object are synchronized. For more information, see [Scoping users or groups to be provisioned with scoping filters](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md?toc=/azure/active-directory/multi-tenant-organizations/toc.json&pivots=cross-tenant-synchronization).
 
 If a user is removed from the scope of sync in a source tenant, will cross-tenant synchronization soft delete them in the target?
 
@@ -166,7 +166,7 @@ What user types can be synchronized?
 
 - Internal members can be synchronized from source tenants. Internal guests can't be synchronized from source tenants.
 - Users can be synchronized to target tenants as external members (default) or external guests.
-- For more information about the UserType definitions, see [Properties of a Microsoft Entra B2B collaboration user](../external-identities/user-properties.md).
+- For more information about the UserType definitions, see [Properties of a Microsoft Entra B2B collaboration user](~/external-id/user-properties.md).
 
 I have existing B2B collaboration users. What will happen to them?
 
@@ -213,7 +213,7 @@ Can cross-tenant synchronization be used to migrate users from one tenant to ano
 
 #### B2B collaboration
 
-Does cross-tenant synchronization resolve any present [B2B collaboration](../external-identities/what-is-b2b.md) limitations?
+Does cross-tenant synchronization resolve any present [B2B collaboration](~/external-id/what-is-b2b.md) limitations?
 
 - Since cross-tenant synchronization is built on existing B2B collaboration technology, existing limitations apply. Examples include (but aren't limited to):
 
@@ -221,7 +221,7 @@ Does cross-tenant synchronization resolve any present [B2B collaboration](../ext
 
 #### B2B direct connect
 
-How does cross-tenant synchronization relate to [B2B direct connect](../external-identities/b2b-direct-connect-overview.md)?
+How does cross-tenant synchronization relate to [B2B direct connect](~/external-id/b2b-direct-connect-overview.md)?
 
 - B2B direct connect is the underlying identity technology required for [Teams Connect shared channels](/microsoftteams/platform/concepts/build-and-test/shared-channels).
 - We recommend B2B collaboration for all other cross-tenant application access scenarios, including both Microsoft and non-Microsoft applications.
@@ -257,12 +257,12 @@ What federation options are supported for users in the target tenant back to the
 
 Does cross-tenant synchronization use System for Cross-Domain Identity Management (SCIM)?
 
-- No. Currently, Microsoft Entra ID supports a SCIM client, but not a SCIM server. For more information, see [SCIM synchronization with Microsoft Entra ID](../architecture/sync-scim.md).
+- No. Currently, Microsoft Entra ID supports a SCIM client, but not a SCIM server. For more information, see [SCIM synchronization with Microsoft Entra ID](~/architecture/sync-scim.md).
 
 #### Deprovisioning
 Does cross-tenant synchronization support deprovisioning users?
 
-- Yes, when the below actions occur in the source tenant, the user will be [soft deleted](../architecture/recover-from-deletions.md#soft-deletions) in the target tenant. 
+- Yes, when the below actions occur in the source tenant, the user will be [soft deleted](~/architecture/recover-from-deletions.md#soft-deletions) in the target tenant. 
 
   - Delete the user in the source tenant
   - Unassign the user from the cross-tenant synchronization configuration
@@ -274,7 +274,7 @@ Does cross-tenant synchronization support deprovisioning users?
 Does cross-tenant synchronization support restoring users? 
 
 - If the user in the source tenant is restored, reassigned to the app, meets the scoping condition again within 30 days of soft deletion, it will be restored in the target tenant.
-- IT admins can also manually [restore](../fundamentals/users-restore.md) the user directly in the target tenant.
+- IT admins can also manually [restore](~/fundamentals/users-restore.md) the user directly in the target tenant.
 
 How can I deprovision all the users that are currently in scope of cross-tenant synchronization? 
 

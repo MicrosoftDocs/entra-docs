@@ -60,7 +60,7 @@ There are four different mapping types supported:
 
 - **Direct** – the target attribute is populated with the value of an attribute of the linked object in Microsoft Entra ID.
 - **Constant** – the target attribute is populated with a specific string you specified.
-- **Expression** - the target attribute is populated based on the result of a script-like expression. For more information about expressions, see [Writing Expressions for Attribute-Mappings in Microsoft Entra ID](../app-provisioning/functions-for-customizing-application-data.md).
+- **Expression** - the target attribute is populated based on the result of a script-like expression. For more information about expressions, see [Writing Expressions for Attribute-Mappings in Microsoft Entra ID](~/identity/app-provisioning/functions-for-customizing-application-data.md).
 - **None** - the target attribute is left unmodified. However, if the target attribute is ever empty, it's populated with the Default value that you specify.
 
 Along with these four basic types, custom attribute-mappings support the concept of an optional **default** value assignment. The default value assignment ensures that a target attribute is populated with a value if there's not a value in Microsoft Entra ID or on the target object. The most common configuration is to leave this blank.
@@ -72,7 +72,7 @@ Along with this property, attribute-mappings also supports the attributes:
 
 - **Source attribute** - The user attribute from the source system (example: Microsoft Entra ID).
 - **Target attribute** – The user attribute in the target system (example: ServiceNow).
-- **Default value if null (optional)** - The value that is passed to the target system if the source attribute is null. This value is only provisioned when a user is created. The "default value when null" isn't provisioned when updating an existing user. For example, add a default value for job title, when creating a user, with the expression: `Switch(IsPresent([jobTitle]), "DefaultValue", "True", [jobTitle])`. For more information about expressions, see [Reference for writing expressions for attribute mappings in Microsoft Entra ID](../app-provisioning/functions-for-customizing-application-data.md).
+- **Default value if null (optional)** - The value that is passed to the target system if the source attribute is null. This value is only provisioned when a user is created. The "default value when null" isn't provisioned when updating an existing user. For example, add a default value for job title, when creating a user, with the expression: `Switch(IsPresent([jobTitle]), "DefaultValue", "True", [jobTitle])`. For more information about expressions, see [Reference for writing expressions for attribute mappings in Microsoft Entra ID](~/identity/app-provisioning/functions-for-customizing-application-data.md).
 - **Match objects using this attribute** – Whether this mapping should be used to uniquely identify users between the source and target systems. It's typically set on the userPrincipalName or mail attribute in Microsoft Entra ID, which is typically mapped to a username field in a target application.
 - **Matching precedence** – Multiple matching attributes can be set. When there are multiple, they're evaluated in the order defined by this field. As soon as a match is found, no further matching attributes are evaluated. While you can set as many matching attributes as you would like, consider whether the attributes you're using as matching attributes are truly unique and need to be matching attributes. Generally customers have one or two matching attributes in their configuration. 
 - **Apply this mapping**
@@ -203,7 +203,7 @@ Custom attributes can't be referential attributes, multi-value or complex-typed 
 ## Provisioning a role to a SCIM app
 Use the steps in the example to provision roles for a user to your application. The description is specific to custom SCIM applications. For gallery applications such as Salesforce and ServiceNow, use the predefined role mappings. The bullets describe how to transform the AppRoleAssignments attribute to the format your application expects.
 
-- Mapping an appRoleAssignment in Microsoft Entra ID to a role in your application requires that you transform the attribute using an [expression](../app-provisioning/functions-for-customizing-application-data.md). The appRoleAssignment attribute **shouldn't be mapped directly** to a role attribute without using an expression to parse the role details. 
+- Mapping an appRoleAssignment in Microsoft Entra ID to a role in your application requires that you transform the attribute using an [expression](~/identity/app-provisioning/functions-for-customizing-application-data.md). The appRoleAssignment attribute **shouldn't be mapped directly** to a role attribute without using an expression to parse the role details. 
 
 - **SingleAppRoleAssignment**
 

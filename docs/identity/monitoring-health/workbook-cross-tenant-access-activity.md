@@ -26,7 +26,7 @@ This article provides you with an overview of the **Cross-tenant access activity
 
 Tenant administrators who are making changes to policies governing cross-tenant access can use this workbook to visualize and review existing access activity patterns before making policy changes. For example, you can identify the apps your users are accessing in external organizations so that you don't inadvertently block critical business processes. Understanding how external users access resources in your tenant (inbound access) and how users in your tenant access resources in external tenants (outbound access) helps ensure you have the right cross-tenant policies in place.
 
-For more information, see the [Microsoft Entra External ID documentation](../external-identities/index.yml).
+For more information, see the [Microsoft Entra External ID documentation](~/external-id/index.yml).
 
 ## How to access the workbook
 

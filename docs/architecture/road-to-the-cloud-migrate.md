@@ -64,9 +64,9 @@ You can simplify your environment by removing application provisioning flows fro
 
 * Applications that aren't in the gallery but support the SCIM 2.0 protocol. These applications are natively compatible with the Microsoft Entra cloud provisioning service.
 
-* On-premises applications that have an ECMA connector available. These applications can be integrated with [Microsoft Entra on-premises application provisioning](../app-provisioning/on-premises-application-provisioning-architecture.md).
+* On-premises applications that have an ECMA connector available. These applications can be integrated with [Microsoft Entra on-premises application provisioning](~/identity/app-provisioning/on-premises-application-provisioning-architecture.md).
 
-For more information, check [Plan an automatic user-provisioning deployment for Microsoft Entra ID](../app-provisioning/plan-auto-user-provisioning.md).
+For more information, check [Plan an automatic user-provisioning deployment for Microsoft Entra ID](~/identity/app-provisioning/plan-auto-user-provisioning.md).
 
 ### Move to cloud HR provisioning
 
@@ -76,7 +76,7 @@ You can reduce your on-premises footprint by moving the HR provisioning workflow
 
 * For new employees who need access to applications that have dependency on Active Directory, you can provision *hybrid accounts*.
 
-Microsoft Entra cloud HR provisioning can also manage Active Directory accounts for existing employees. For more information, see [Plan cloud HR application to Microsoft Entra user provisioning](../app-provisioning/plan-cloud-hr-provision.md) and [Plan the deployment project](../app-provisioning/plan-auto-user-provisioning.md).
+Microsoft Entra cloud HR provisioning can also manage Active Directory accounts for existing employees. For more information, see [Plan cloud HR application to Microsoft Entra user provisioning](~/identity/app-provisioning/plan-cloud-hr-provision.md) and [Plan the deployment project](~/identity/app-provisioning/plan-auto-user-provisioning.md).
 
 ### Move lifecycle workflows
 
@@ -86,9 +86,9 @@ Evaluate your existing joiner/mover/leaver workflows and processes for applicabi
 
 If your organization provisions accounts in Active Directory or other on-premises directories for external identities such as vendors, contractors, or consultants, you can simplify your environment by managing those third-party user objects natively in the cloud. Here are some possibilities:
 
-* For new external users, use [Microsoft Entra External ID](../external-identities/external-identities-overview.md), which stops the Active Directory footprint of users.
+* For new external users, use [Microsoft Entra External ID](~/external-id/external-identities-overview.md), which stops the Active Directory footprint of users.
 
-* For existing Active Directory accounts that you provision for external identities, you can remove the overhead of managing local credentials (for example, passwords) by configuring them for business-to-business (B2B) collaboration. Follow the steps in [Invite internal users to B2B collaboration](../external-identities/invite-internal-users.md).
+* For existing Active Directory accounts that you provision for external identities, you can remove the overhead of managing local credentials (for example, passwords) by configuring them for business-to-business (B2B) collaboration. Follow the steps in [Invite internal users to B2B collaboration](~/external-id/invite-internal-users.md).
 
 * Use [Microsoft Entra entitlement management](../governance/entitlement-management-overview.md) to grant access to applications and resources. Most companies have dedicated systems and workflows for this purpose that you can now move out of on-premises tools.
 

@@ -66,7 +66,7 @@ Organizations may choose to require other grant controls with or in place of **R
 
 ### Guest user registration
 
-For [guest users](../external-identities/what-is-b2b.md) who need to register for multifactor authentication in your directory you may choose to block registration from outside of [trusted network locations](concept-conditional-access-conditions.md#locations) using the following guide.
+For [guest users](~/external-id/what-is-b2b.md) who need to register for multifactor authentication in your directory you may choose to block registration from outside of [trusted network locations](concept-conditional-access-conditions.md#locations) using the following guide.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Protection** > **Conditional Access**.

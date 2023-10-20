@@ -82,7 +82,7 @@ SAML is an open standard utilized for exchanging authentication and authorizatio
 
 #### System for Cross-Domain Identity Management (SCIM)
 
-Created to simplify the process of managing user identities, SCIM provisioning allows organizations to efficiently operate in the cloud and easily add or remove users, benefitting budgets, reducing risk, and streamlining workflows. SCIM also facilitates communication between cloud-based applications.  To learn more, read [Develop and plan provisioning for a SCIM endpoint](../app-provisioning/use-scim-to-provision-users-and-groups.md?toc=/active-directory/develop/toc.json&bc=/active-directory/develop/breadcrumb/toc.json).
+Created to simplify the process of managing user identities, SCIM provisioning allows organizations to efficiently operate in the cloud and easily add or remove users, benefitting budgets, reducing risk, and streamlining workflows. SCIM also facilitates communication between cloud-based applications.  To learn more, read [Develop and plan provisioning for a SCIM endpoint](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md?toc=/active-directory/develop/toc.json&bc=/active-directory/develop/breadcrumb/toc.json).
 
 #### Web Services Federation (WS-Fed)
 

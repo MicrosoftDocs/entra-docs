@@ -124,8 +124,8 @@ On-premises accounts synced from Active Directory are marked to never expire in 
 We recommend the following provisioning methods:
 
 - **Provision from cloud HR apps to Microsoft Entra ID.** This provisioning enables an on-premises compromise to be isolated. This isolation doesn't disrupt your joiner-mover-leaver cycle from your cloud HR apps to Microsoft Entra ID.
-- **Cloud applications.** Where possible, deploy Microsoft Entra app provisioning as opposed to on-premises provisioning solutions. This method protects some of your software as a service (SaaS) apps from malicious hacker profiles in on-premises breaches. For more information, see [What is app provisioning in Microsoft Entra ID](../app-provisioning/user-provisioning.md).
-- **External identities.** Use Microsoft Entra B2B collaboration to reduce the dependency on on-premises accounts for external collaboration with partners, customers, and suppliers. Carefully evaluate any direct federation with other identity providers. For more information, see [B2B collaboration overview](../external-identities/what-is-b2b.md).
+- **Cloud applications.** Where possible, deploy Microsoft Entra app provisioning as opposed to on-premises provisioning solutions. This method protects some of your software as a service (SaaS) apps from malicious hacker profiles in on-premises breaches. For more information, see [What is app provisioning in Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
+- **External identities.** Use Microsoft Entra B2B collaboration to reduce the dependency on on-premises accounts for external collaboration with partners, customers, and suppliers. Carefully evaluate any direct federation with other identity providers. For more information, see [B2B collaboration overview](~/external-id/what-is-b2b.md).
 
   We recommend limiting B2B guest accounts in the following ways:
 
@@ -192,7 +192,7 @@ Use Microsoft Entra Conditional Access to interpret signals and use them to make
 
 - Implement the recommended identity and device access configurations. See [Common Zero Trust identity and device access policies](/microsoft-365/security/office-365-security/identity-access-policies).
 
-- If you're using a version of Microsoft Entra ID that doesn't include Conditional Access, use [Security defaults in Microsoft Entra ID](../fundamentals/security-defaults.md).
+- If you're using a version of Microsoft Entra ID that doesn't include Conditional Access, use [Security defaults in Microsoft Entra ID](~/fundamentals/security-defaults.md).
 
   For more information about Microsoft Entra feature licensing, see the [Microsoft Entra pricing guide](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
 
@@ -281,4 +281,4 @@ Define a log storage and retention strategy, design, and implementation to facil
 
 - [Build resilience into identity and access management by using Microsoft Entra ID](resilience-overview.md)
 - [Secure external access to resources](secure-external-access-resources.md) 
-- [Integrate all your apps with Microsoft Entra ID](../fundamentals/five-steps-to-full-application-integration.md)
+- [Integrate all your apps with Microsoft Entra ID](~/fundamentals/five-steps-to-full-application-integration.md)

@@ -20,7 +20,7 @@ ms.custom: has-azure-ad-ps-ref
 
 To secure user sign-in events in Microsoft Entra ID, you can require multifactor authentication. Enabling Microsoft Entra multifactor authentication using Conditional Access policies is the recommended approach to protect users. Conditional Access is a Microsoft Entra ID P1 or P2 feature that lets you apply rules to require MFA as needed in certain scenarios. To get started using Conditional Access, see [Tutorial: Secure user sign-in events with Microsoft Entra multifactor authentication](tutorial-enable-azure-mfa.md).
 
-For Microsoft Entra ID Free tenants without Conditional Access, you can [use security defaults to protect users](../fundamentals/security-defaults.md). Users are prompted for MFA as needed, but you can't define your own rules to control the behavior.
+For Microsoft Entra ID Free tenants without Conditional Access, you can [use security defaults to protect users](~/fundamentals/security-defaults.md). Users are prompted for MFA as needed, but you can't define your own rules to control the behavior.
 
 If needed, you can instead enable each account for per-user Microsoft Entra multifactor authentication. When users are enabled individually, they perform multifactor authentication each time they sign in (with some exceptions, such as when they sign in from trusted IP addresses or when the _remember MFA on trusted devices_ feature is turned on).
 

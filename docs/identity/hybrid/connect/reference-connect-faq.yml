@@ -331,7 +331,7 @@ sections:
       - question: |
           Do you publish a timeline for when you plan to push out auto upgrades?  
         answer: |
-          Auto upgrade is the first step in the release process of a newer version. Whenever there's a new release, upgrades are pushed automatically. Newer versions of Microsoft Entra Connect are pre-announced in the [Microsoft Entra Roadmap](../../fundamentals/whats-new.md).
+          Auto upgrade is the first step in the release process of a newer version. Whenever there's a new release, upgrades are pushed automatically. Newer versions of Microsoft Entra Connect are pre-announced in the [Microsoft Entra Roadmap](~/fundamentals/whats-new.md).
           
       - question: |
           Does auto upgrade also upgrade Microsoft Entra Connect Health?  
@@ -381,7 +381,7 @@ sections:
           
           * Search for technical questions and answers or ask your own questions by going to [the Microsoft Entra community](/answers/topics/azure-active-directory.html).
           
-          [Get support for Microsoft Entra ID](../../fundamentals/how-to-get-support.md)
+          [Get support for Microsoft Entra ID](~/fundamentals/how-to-get-support.md)
           
       - question: |
           Why am I seeing Events 6311 and 6401 occur after Sync Step Errors?

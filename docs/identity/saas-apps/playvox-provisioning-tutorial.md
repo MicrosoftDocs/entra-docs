@@ -19,7 +19,7 @@ ms.author: thwimmer
 
 # Tutorial: Configure Playvox for automatic user provisioning
 
-This tutorial describes the steps to follow in both Playvox and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users or groups to [Playvox](https://www.playvox.com) by using the Microsoft Entra provisioning service. For important details on what this service does and how it works, and for frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](../app-provisioning/user-provisioning.md).
+This tutorial describes the steps to follow in both Playvox and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users or groups to [Playvox](https://www.playvox.com) by using the Microsoft Entra provisioning service. For important details on what this service does and how it works, and for frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 
 ## Capabilities supported
 > [!div class="checklist"]
@@ -37,11 +37,11 @@ The scenario in this tutorial assumes that you already have the following prereq
 
 ## Step 1: Plan your provisioning deployment
 
-1. Learn [how the provisioning service works](../app-provisioning/user-provisioning.md).
+1. Learn [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
 
-2. Determine who will be [in scope for provisioning](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+2. Determine who will be [in scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-3. Determine what data to [map between Microsoft Entra ID and Playvox](../app-provisioning/customize-application-attributes.md).
+3. Determine what data to [map between Microsoft Entra ID and Playvox](~/identity/app-provisioning/customize-application-attributes.md).
 
 <a name='step-2-configure-playvox-to-support-provisioning-by-using-azure-ad'></a>
 
@@ -73,13 +73,13 @@ If you've previously set up Playvox for single sign-on (SSO), you can use the sa
 
 ## Step 4: Define who will be in scope for provisioning
 
-You use the Microsoft Entra provisioning service to scope who will be provisioned, based either on assignment to the application or on attributes of the user or group. To scope who will be provisioned to your app based on assignment, see [Manage user assignment for an app in Microsoft Entra ID](~/identity/enterprise-apps/assign-user-or-group-access-portal.md) to learn how to assign users or groups to the application. To scope who will be provisioned based solely on attributes of the user or group, use a scoping filter as described in [Attribute-based application provisioning with scoping filters](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+You use the Microsoft Entra provisioning service to scope who will be provisioned, based either on assignment to the application or on attributes of the user or group. To scope who will be provisioned to your app based on assignment, see [Manage user assignment for an app in Microsoft Entra ID](~/identity/enterprise-apps/assign-user-or-group-access-portal.md) to learn how to assign users or groups to the application. To scope who will be provisioned based solely on attributes of the user or group, use a scoping filter as described in [Attribute-based application provisioning with scoping filters](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 Remember these points:
 
 * When assigning users to Playvox, you must select a role other than Default Access. Users with the Default Access role are excluded from provisioning and will be marked as not effectively entitled in the provisioning logs. If Default Access is the only role available on the application, you can [update the application manifest](~/identity-platform/howto-add-app-roles-in-azure-ad-apps.md) to add other roles.
 
-* Start small. Test with a small set of users or groups before rolling out to everyone. When provisioning scope is based on assigned users or groups, you can control the size of the set by assigning only one or two users or groups to the app. When provisioning scope includes all users and groups, you can specify an [attribute-based scoping filter](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md) to limit the size of your test set.
+* Start small. Test with a small set of users or groups before rolling out to everyone. When provisioning scope is based on assigned users or groups, you can control the size of the set by assigning only one or two users or groups to the app. When provisioning scope includes all users and groups, you can specify an [attribute-based scoping filter](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md) to limit the size of your test set.
 
 ## Step 5: Configure automatic user provisioning to Playvox
 
@@ -120,7 +120,7 @@ To configure automatic user provisioning for Playvox in Microsoft Entra ID:
 
 8. In the **Mappings** section, select **Synchronize Microsoft Entra users to Playvox**.
 
-9. Review the user attributes that are synchronized from Microsoft Entra ID to Playvox in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Playvox for update operations. If you choose to change the [matching target attribute](../app-provisioning/customize-application-attributes.md), make sure that the Playvox API supports filtering users based on that attribute. Select **Save** to commit any changes.
+9. Review the user attributes that are synchronized from Microsoft Entra ID to Playvox in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Playvox for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), make sure that the Playvox API supports filtering users based on that attribute. Select **Save** to commit any changes.
 
    |Attribute|Type|Supported for filtering|
    |---|---|---|
@@ -133,7 +133,7 @@ To configure automatic user provisioning for Playvox in Microsoft Entra ID:
    |name.formatted|String|
    |externalId|String|
 
-10. To configure scoping filters, see the instructions in the [Scoping filter tutorial](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+10. To configure scoping filters, see the instructions in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 11. To enable the Microsoft Entra provisioning service for Playvox, change the **Provisioning Status** to **On** in the **Settings** section.
 
@@ -154,14 +154,14 @@ This operation starts the initial synchronization cycle of all users and groups 
 After you've configured provisioning, use the following resources to monitor your deployment:
 
 * Use the [provisioning logs](../reports-monitoring/concept-provisioning-logs.md) to determine which users have been provisioned successfully or unsuccessfully.
-* Check the [progress bar](../app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md) to see the status of the provisioning cycle and how close it is to completion.
-* If the provisioning configuration seems to be in an unhealthy state, the application will go into quarantine. To learn more about quarantine states, see [Application provisioning in quarantine status](../app-provisioning/application-provisioning-quarantine-status.md).
+* Check the [progress bar](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md) to see the status of the provisioning cycle and how close it is to completion.
+* If the provisioning configuration seems to be in an unhealthy state, the application will go into quarantine. To learn more about quarantine states, see [Application provisioning in quarantine status](~/identity/app-provisioning/application-provisioning-quarantine-status.md).
 
 ## Additional resources
 
-* [Managing user account provisioning for enterprise apps](../app-provisioning/configure-automatic-user-provisioning-portal.md)
+* [Managing user account provisioning for enterprise apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
 ## Next steps
 
-* [Learn how to review logs and get reports on provisioning activity](../app-provisioning/check-status-user-account-provisioning.md)
+* [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)

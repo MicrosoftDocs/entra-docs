@@ -50,13 +50,13 @@ The experiences and issues described in this article have the following scope.
 
 - As part of a multi-tenant organization, newly invited B2B users receive an additional user property that includes the home tenant identifier of the B2B user. Already redeemed B2B users don't have this additional user property. Currently, Microsoft 365 admin center share users functionality or Microsoft Entra cross-tenant synchronization are currently the only accepted methods to get this additional user property populated.
 
-- As part of a multi-tenant organization, [reset redemption status for a B2B user](../external-identities/reset-redemption-status.md) is currently unavailable and disabled.
+- As part of a multi-tenant organization, [reset redemption status for a B2B user](~/external-id/reset-redemption-status.md) is currently unavailable and disabled.
 
 ## B2B user or B2B member related issues
 
-- The promotion of B2B guests to B2B members represents a strategic decision by multi-tenant organizations to consider B2B members as trusted users of the organization. Review the [default permissions](../fundamentals/users-default-permissions.md) for B2B members.
+- The promotion of B2B guests to B2B members represents a strategic decision by multi-tenant organizations to consider B2B members as trusted users of the organization. Review the [default permissions](~/fundamentals/users-default-permissions.md) for B2B members.
 
-- To promote B2B guests to B2B members, a source tenant administrator can amend the [attribute mappings](cross-tenant-synchronization-configure.md#step-9-review-attribute-mappings), or a target tenant administrator can [change the userType](../fundamentals/how-to-manage-user-profile-info.md#add-or-change-profile-information) if the property is not recurringly synchronized.
+- To promote B2B guests to B2B members, a source tenant administrator can amend the [attribute mappings](cross-tenant-synchronization-configure.md#step-9-review-attribute-mappings), or a target tenant administrator can [change the userType](~/fundamentals/how-to-manage-user-profile-info.md#add-or-change-profile-information) if the property is not recurringly synchronized.
 
 
 - In [SharePoint OneDrive](/sharepoint/), the promotion of B2B guests to B2B members may not happen automatically. If faced with a user type mismatch between Microsoft Entra ID and SharePoint OneDrive, try [Set-SPUser [-SyncFromAD]](/powershell/module/sharepoint-server/set-spuser).
@@ -98,8 +98,8 @@ The experiences and issues described in this article have the following scope.
 
 - Cross-tenant synchronization deprovisioning: By default, when provisioning scope is reduced while a synchronization job is running, users fall out of scope and are soft deleted, unless Target Object Actions for Delete is disabled. For more information, see [Deprovisioning](cross-tenant-synchronization-overview.md#deprovisioning) and [Define who is in scope for provisioning](cross-tenant-synchronization-configure.md#step-8-optional-define-who-is-in-scope-for-provisioning-with-scoping-filters).
 
-- Cross-tenant synchronization deprovisioning: Currently, [SkipOutOfScopeDeletions](../app-provisioning/skip-out-of-scope-deletions.md?toc=/azure/active-directory/multi-tenant-organizations/toc.json&pivots=cross-tenant-synchronization) works for application provisioning jobs, but not for Microsoft Entra cross-tenant synchronization. To avoid soft deletion of users taken out of scope of cross-tenant synchronization, set [Target Object Actions for Delete](cross-tenant-synchronization-configure.md#step-8-optional-define-who-is-in-scope-for-provisioning-with-scoping-filters) to disabled.
+- Cross-tenant synchronization deprovisioning: Currently, [SkipOutOfScopeDeletions](~/identity/app-provisioning/skip-out-of-scope-deletions.md?toc=/azure/active-directory/multi-tenant-organizations/toc.json&pivots=cross-tenant-synchronization) works for application provisioning jobs, but not for Microsoft Entra cross-tenant synchronization. To avoid soft deletion of users taken out of scope of cross-tenant synchronization, set [Target Object Actions for Delete](cross-tenant-synchronization-configure.md#step-8-optional-define-who-is-in-scope-for-provisioning-with-scoping-filters) to disabled.
 
 ## Next steps
 
-- [Known issues for provisioning in Microsoft Entra ID](../app-provisioning/known-issues.md?toc=/azure/active-directory/multi-tenant-organizations/toc.json&pivots=cross-tenant-synchronization)
+- [Known issues for provisioning in Microsoft Entra ID](~/identity/app-provisioning/known-issues.md?toc=/azure/active-directory/multi-tenant-organizations/toc.json&pivots=cross-tenant-synchronization)

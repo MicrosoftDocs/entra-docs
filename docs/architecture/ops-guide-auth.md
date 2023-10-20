@@ -173,7 +173,7 @@ Finally, if you have a Microsoft Entra app gallery and use applications that sup
 
 ### Assign users to applications
 
-[Assigning users to applications](~/identity/enterprise-apps/assign-user-or-group-access-portal.md) is best mapped by using groups because they allow greater flexibility and ability to manage at scale. The benefits of using groups include [attribute-based dynamic group membership](../enterprise-users/groups-dynamic-membership.md) and [delegation to app owners](../fundamentals/how-to-manage-groups.md). Therefore, if you're already using and managing groups, we recommend you take the following actions to improve management at scale:
+[Assigning users to applications](~/identity/enterprise-apps/assign-user-or-group-access-portal.md) is best mapped by using groups because they allow greater flexibility and ability to manage at scale. The benefits of using groups include [attribute-based dynamic group membership](~/identity/users/groups-dynamic-membership.md) and [delegation to app owners](~/fundamentals/how-to-manage-groups.md). Therefore, if you're already using and managing groups, we recommend you take the following actions to improve management at scale:
 
 - Delegate group management and governance to application owners.
 - Allow self-service access to the application.
@@ -186,7 +186,7 @@ On the other hand, if you find applications that have assignment to individual u
 
 - [Assign users and groups to an application in Microsoft Entra ID](~/identity/enterprise-apps/assign-user-or-group-access-portal.md)
 - [Delegate app registration permissions in Microsoft Entra ID](~/identity/role-based-access-control/delegate-app-roles.md)
-- [Dynamic membership rules for groups in Microsoft Entra ID](../enterprise-users/groups-dynamic-membership.md)
+- [Dynamic membership rules for groups in Microsoft Entra ID](~/identity/users/groups-dynamic-membership.md)
 
 ## Access policies
 
@@ -325,7 +325,7 @@ Below are the user and group settings that can be locked down if there isn't an 
 
 #### User settings
 
-- **External Users** - external collaboration can happen organically in the enterprise with services like Teams, Power BI, SharePoint Online, and Azure Information Protection. If you have explicit constraints to control user-initiated external collaboration, it is recommended you enable external users by using [Microsoft Entra Entitlement management](../governance/entitlement-management-overview.md) or a controlled operation such as through your help desk. If you don't want to allow organic external collaboration for services, you can [block members from inviting external users completely](../external-identities/external-collaboration-settings-configure.md). Alternatively, you can also [allow or block specific domains](../external-identities/allow-deny-list.md) in external user invitations.
+- **External Users** - external collaboration can happen organically in the enterprise with services like Teams, Power BI, SharePoint Online, and Azure Information Protection. If you have explicit constraints to control user-initiated external collaboration, it is recommended you enable external users by using [Microsoft Entra Entitlement management](../governance/entitlement-management-overview.md) or a controlled operation such as through your help desk. If you don't want to allow organic external collaboration for services, you can [block members from inviting external users completely](~/external-id/external-collaboration-settings-configure.md). Alternatively, you can also [allow or block specific domains](~/external-id/allow-deny-list.md) in external user invitations.
 - **App Registrations** - when App registrations are enabled, end users can onboard applications themselves and grant access to their data. A typical example of App registration is users enabling Outlook plug-ins, or voice assistants such as Alexa and Siri to read their email and calendar or send emails on their behalf. If the customer decides to turn off App registration, the InfoSec and IAM teams must be involved in the management of exceptions (app registrations that are needed based on business requirements), as they would need to register the applications with an admin account, and most likely require designing a process to operationalize the process.
 - **Administration Portal** - organizations can lock down the Microsoft Entra blade in the Azure portal so that non-administrators can't access Microsoft Entra management in the Azure portal and get confused. Go to the user settings in the Microsoft Entra management portal to restrict access:
 
@@ -340,11 +340,11 @@ Below are the user and group settings that can be locked down if there isn't an 
 
 #### Groups recommended reading
 
-- [What is Microsoft Entra B2B collaboration?](../external-identities/what-is-b2b.md)
+- [What is Microsoft Entra B2B collaboration?](~/external-id/what-is-b2b.md)
 - [Integrating Applications with Microsoft Entra ID](~/identity-platform/quickstart-register-app.md)
 - [Apps, permissions, and consent in Microsoft Entra ID.](~/identity-platform/quickstart-register-app.md)
-- [Use groups to manage access to resources in Microsoft Entra ID](../fundamentals/concept-learn-about-groups.md)
-- [Setting up self-service application access management in Microsoft Entra ID](../enterprise-users/groups-self-service-management.md)
+- [Use groups to manage access to resources in Microsoft Entra ID](~/fundamentals/concept-learn-about-groups.md)
+- [Setting up self-service application access management in Microsoft Entra ID](~/identity/users/groups-self-service-management.md)
 
 ### Traffic from unexpected locations
 

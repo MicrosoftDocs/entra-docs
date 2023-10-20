@@ -451,7 +451,7 @@ As a user, open a browser and connect to the application external URL. You can s
 
 ### Microsoft Entra B2B guest access
 
-SHA supports [Microsoft Entra B2B guest access](../external-identities/hybrid-cloud-to-on-premises.md). Guest identities are synchronized from your Microsoft Entra tenant to your target Kerberos domain. Have a local representation of guest objects for BIG-IP to perform KCD SSO to the back-end application. 
+SHA supports [Microsoft Entra B2B guest access](~/external-id/hybrid-cloud-to-on-premises.md). Guest identities are synchronized from your Microsoft Entra tenant to your target Kerberos domain. Have a local representation of guest objects for BIG-IP to perform KCD SSO to the back-end application. 
 
 ## Troubleshooting
 

@@ -109,7 +109,7 @@ You need the following components. Prior DAP experience isn't necessary.
 
 -   A Microsoft Entra tenant linked to the Azure account
 
-    -   See, [Quickstart: Create a new tenant in Microsoft Entra ID](../fundamentals/create-new-tenant.md)
+    -   See, [Quickstart: Create a new tenant in Microsoft Entra ID](~/fundamentals/create-new-tenant.md)
 
 -   Docker and Docker Compose are required to run DAP
 

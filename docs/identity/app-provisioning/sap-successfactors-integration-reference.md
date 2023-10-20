@@ -15,7 +15,7 @@ ms.reviewer: chmutali
 
 # How Microsoft Entra provisioning integrates with SAP SuccessFactors 
 
-[Microsoft Entra user provisioning service](../app-provisioning/user-provisioning.md) integrates with [SAP SuccessFactors Employee Central](https://www.sap.com/products/hcm/employee-central-payroll.html) to manage the identity life cycle of users. Microsoft Entra ID offers three prebuilt integrations: 
+[Microsoft Entra user provisioning service](~/identity/app-provisioning/user-provisioning.md) integrates with [SAP SuccessFactors Employee Central](https://www.sap.com/products/hcm/employee-central-payroll.html) to manage the identity life cycle of users. Microsoft Entra ID offers three prebuilt integrations: 
 
 * [SuccessFactors to on-premises Active Directory user provisioning](../saas-apps/sap-successfactors-inbound-provisioning-tutorial.md)
 * [SuccessFactors to Microsoft Entra user provisioning](../saas-apps/sap-successfactors-inbound-provisioning-cloud-only-tutorial.md)

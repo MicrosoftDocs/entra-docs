@@ -42,7 +42,7 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
 > | ---- | --------------------- | ---------------- |
-> | Create Azure AD B2C directories | [All non-guest users](../fundamentals/users-default-permissions.md) |  |
+> | Create Azure AD B2C directories | [All non-guest users](~/fundamentals/users-default-permissions.md) |  |
 > | Create B2C applications | [Global Administrator](permissions-reference.md#global-administrator) |  |
 > | Create enterprise applications | [Cloud Application Administrator](permissions-reference.md#cloud-application-administrator) | [Application Administrator](permissions-reference.md#application-administrator) |
 > | Create, read, update, and delete B2C policies | [B2C IEF Policy Administrator](permissions-reference.md#b2c-ief-policy-administrator) |  |
@@ -66,7 +66,7 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | Task | Least privileged role | Additional roles |
 > | ---- | --------------------- | ---------------- |
 > | Configure company branding | [Global Administrator](permissions-reference.md#global-administrator) |  |
-> | Read all configuration | [Directory Readers](permissions-reference.md#directory-readers) | [Default user role](../fundamentals/users-default-permissions.md) |
+> | Read all configuration | [Directory Readers](permissions-reference.md#directory-readers) | [Default user role](~/fundamentals/users-default-permissions.md) |
 
 ## Company properties
 
@@ -117,7 +117,7 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | Task | Least privileged role | Additional roles |
 > | ---- | --------------------- | ---------------- |
 > | Manage domains | [Domain Name Administrator](permissions-reference.md#domain-name-administrator) |  |
-> | Read all configuration | [Directory Readers](permissions-reference.md#directory-readers) | [Default user role](../fundamentals/users-default-permissions.md) |
+> | Read all configuration | [Directory Readers](permissions-reference.md#directory-readers) | [Default user role](~/fundamentals/users-default-permissions.md) |
 
 ## Domain Services
 
@@ -136,7 +136,7 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | Delete device | [Cloud Device Administrator](permissions-reference.md#cloud-device-administrator) | [Intune Administrator](permissions-reference.md#intune-administrator) |
 > | Disable device | [Cloud Device Administrator](permissions-reference.md#cloud-device-administrator) | [Intune Administrator](permissions-reference.md#intune-administrator) |
 > | Enable device | [Cloud Device Administrator](permissions-reference.md#cloud-device-administrator) | [Intune Administrator](permissions-reference.md#intune-administrator) |
-> | Read basic configuration | [Default user role](../fundamentals/users-default-permissions.md) |  |
+> | Read basic configuration | [Default user role](~/fundamentals/users-default-permissions.md) |  |
 > | Read BitLocker keys | [Cloud Device Administrator](permissions-reference.md#cloud-device-administrator) | [Helpdesk Administrator](permissions-reference.md#helpdesk-administrator)<br/>[Intune Administrator](permissions-reference.md#intune-administrator)<br/>[Security Administrator](permissions-reference.md#security-administrator)<br/>[Security Reader](permissions-reference.md#security-reader) |
 
 ## Enterprise applications
@@ -147,18 +147,18 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | Consent to any delegated permissions | [Cloud Application Administrator](permissions-reference.md#cloud-application-administrator) | [Application Administrator](permissions-reference.md#application-administrator) |
 > | Consent to application permissions not including Microsoft Graph | [Cloud Application Administrator](permissions-reference.md#cloud-application-administrator) | [Application Administrator](permissions-reference.md#application-administrator) |
 > | Consent to application permissions to Microsoft Graph | [Privileged Role Administrator](permissions-reference.md#privileged-role-administrator) |  |
-> | Consent to applications accessing own data | [Default user role](../fundamentals/users-default-permissions.md) |  |
+> | Consent to applications accessing own data | [Default user role](~/fundamentals/users-default-permissions.md) |  |
 > | Create enterprise application | [Cloud Application Administrator](permissions-reference.md#cloud-application-administrator) | [Application Administrator](permissions-reference.md#application-administrator) |
 > | Manage Application Proxy | [Application Administrator](permissions-reference.md#application-administrator) |  |
 > | Manage user settings | [Global Administrator](permissions-reference.md#global-administrator) |  |
 > | Read access review of a group or of an app | [Security Reader](permissions-reference.md#security-reader) | [Security Administrator](permissions-reference.md#security-administrator)<br/>[User Administrator](permissions-reference.md#user-administrator) |
-> | Read all configuration | [Default user role](../fundamentals/users-default-permissions.md) |  |
-> | Update enterprise application assignments | [Enterprise application owner](../fundamentals/users-default-permissions.md#object-ownership) | [Cloud Application Administrator](permissions-reference.md#cloud-application-administrator)<br/>[Application Administrator](permissions-reference.md#application-administrator)<br/>[User Administrator](permissions-reference.md#user-administrator) |
-> | Update enterprise application owners | [Enterprise application owner](../fundamentals/users-default-permissions.md#object-ownership) | [Cloud Application Administrator](permissions-reference.md#cloud-application-administrator)<br/>[Application Administrator](permissions-reference.md#application-administrator) |
-> | Update enterprise application properties | [Enterprise application owner](../fundamentals/users-default-permissions.md#object-ownership) | [Cloud Application Administrator](permissions-reference.md#cloud-application-administrator)<br/>[Application Administrator](permissions-reference.md#application-administrator) |
-> | Update enterprise application provisioning | [Enterprise application owner](../fundamentals/users-default-permissions.md#object-ownership) | [Cloud Application Administrator](permissions-reference.md#cloud-application-administrator)<br/>[Application Administrator](permissions-reference.md#application-administrator) |
-> | Update enterprise application self-service | [Enterprise application owner](../fundamentals/users-default-permissions.md#object-ownership) | [Cloud Application Administrator](permissions-reference.md#cloud-application-administrator)<br/>[Application Administrator](permissions-reference.md#application-administrator) |
-> | Update single sign-on properties | [Enterprise application owner](../fundamentals/users-default-permissions.md#object-ownership) | [Cloud Application Administrator](permissions-reference.md#cloud-application-administrator)<br/>[Application Administrator](permissions-reference.md#application-administrator) |
+> | Read all configuration | [Default user role](~/fundamentals/users-default-permissions.md) |  |
+> | Update enterprise application assignments | [Enterprise application owner](~/fundamentals/users-default-permissions.md#object-ownership) | [Cloud Application Administrator](permissions-reference.md#cloud-application-administrator)<br/>[Application Administrator](permissions-reference.md#application-administrator)<br/>[User Administrator](permissions-reference.md#user-administrator) |
+> | Update enterprise application owners | [Enterprise application owner](~/fundamentals/users-default-permissions.md#object-ownership) | [Cloud Application Administrator](permissions-reference.md#cloud-application-administrator)<br/>[Application Administrator](permissions-reference.md#application-administrator) |
+> | Update enterprise application properties | [Enterprise application owner](~/fundamentals/users-default-permissions.md#object-ownership) | [Cloud Application Administrator](permissions-reference.md#cloud-application-administrator)<br/>[Application Administrator](permissions-reference.md#application-administrator) |
+> | Update enterprise application provisioning | [Enterprise application owner](~/fundamentals/users-default-permissions.md#object-ownership) | [Cloud Application Administrator](permissions-reference.md#cloud-application-administrator)<br/>[Application Administrator](permissions-reference.md#application-administrator) |
+> | Update enterprise application self-service | [Enterprise application owner](~/fundamentals/users-default-permissions.md#object-ownership) | [Cloud Application Administrator](permissions-reference.md#cloud-application-administrator)<br/>[Application Administrator](permissions-reference.md#application-administrator) |
+> | Update single sign-on properties | [Enterprise application owner](~/fundamentals/users-default-permissions.md#object-ownership) | [Cloud Application Administrator](permissions-reference.md#cloud-application-administrator)<br/>[Application Administrator](permissions-reference.md#application-administrator) |
 
 ## Entitlement management
 
@@ -178,13 +178,13 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | Create, update, or delete access review of a group or of an app | [User Administrator](permissions-reference.md#user-administrator) |  |
 > | Manage group expiration | [User Administrator](permissions-reference.md#user-administrator) |  |
 > | Manage group settings | [Groups Administrator](permissions-reference.md#groups-administrator) | [User Administrator](permissions-reference.md#user-administrator) |
-> | Read all configuration (except hidden membership) | [Directory Readers](permissions-reference.md#directory-readers) | [Default user role](../fundamentals/users-default-permissions.md) |
-> | Read hidden membership | Group member | [Group owner](../fundamentals/users-default-permissions.md#object-ownership)<br/>[Password Administrator](permissions-reference.md#password-administrator)<br/>[Exchange Administrator](permissions-reference.md#exchange-administrator)<br/>[SharePoint Administrator](permissions-reference.md#sharepoint-administrator)<br/>[Teams Administrator](permissions-reference.md#teams-administrator)<br/>[User Administrator](permissions-reference.md#user-administrator) |
+> | Read all configuration (except hidden membership) | [Directory Readers](permissions-reference.md#directory-readers) | [Default user role](~/fundamentals/users-default-permissions.md) |
+> | Read hidden membership | Group member | [Group owner](~/fundamentals/users-default-permissions.md#object-ownership)<br/>[Password Administrator](permissions-reference.md#password-administrator)<br/>[Exchange Administrator](permissions-reference.md#exchange-administrator)<br/>[SharePoint Administrator](permissions-reference.md#sharepoint-administrator)<br/>[Teams Administrator](permissions-reference.md#teams-administrator)<br/>[User Administrator](permissions-reference.md#user-administrator) |
 > | Read membership of groups with hidden membership | [Helpdesk Administrator](permissions-reference.md#helpdesk-administrator) | [User Administrator](permissions-reference.md#user-administrator)<br/>[Teams Administrator](permissions-reference.md#teams-administrator) |
 > | Revoke license | [License Administrator](permissions-reference.md#license-administrator) | [User Administrator](permissions-reference.md#user-administrator) |
-> | Update group membership | [Group owner](../fundamentals/users-default-permissions.md#object-ownership) | [User Administrator](permissions-reference.md#user-administrator) |
-> | Update group owners | [Group owner](../fundamentals/users-default-permissions.md#object-ownership) | [User Administrator](permissions-reference.md#user-administrator) |
-> | Update group properties | [Group owner](../fundamentals/users-default-permissions.md#object-ownership) | [User Administrator](permissions-reference.md#user-administrator) |
+> | Update group membership | [Group owner](~/fundamentals/users-default-permissions.md#object-ownership) | [User Administrator](permissions-reference.md#user-administrator) |
+> | Update group owners | [Group owner](~/fundamentals/users-default-permissions.md#object-ownership) | [User Administrator](permissions-reference.md#user-administrator) |
+> | Update group properties | [Group owner](~/fundamentals/users-default-permissions.md#object-ownership) | [User Administrator](permissions-reference.md#user-administrator) |
 > | Delete group | [Groups Administrator](permissions-reference.md#groups-administrator) | [User Administrator](permissions-reference.md#user-administrator) |
 
 ## Identity Protection
@@ -209,7 +209,7 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | Task | Least privileged role | Additional roles |
 > | ---- | --------------------- | ---------------- |
 > | Assign license | [License Administrator](permissions-reference.md#license-administrator) | [User Administrator](permissions-reference.md#user-administrator) |
-> | Read all configuration | [Directory Readers](permissions-reference.md#directory-readers) | [Default user role](../fundamentals/users-default-permissions.md) |
+> | Read all configuration | [Directory Readers](permissions-reference.md#directory-readers) | [Default user role](~/fundamentals/users-default-permissions.md) |
 > | Revoke license | [License Administrator](permissions-reference.md#license-administrator) | [User Administrator](permissions-reference.md#user-administrator) |
 > | Try or buy subscription | [Billing Administrator](permissions-reference.md#billing-administrator) |  |
 
@@ -297,7 +297,7 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | ---- | --------------------- | ---------------- |
 > | Manage role assignments | [Privileged Role Administrator](permissions-reference.md#privileged-role-administrator) |  |
 > | Read access review of a Microsoft Entra role  | [Security Reader](permissions-reference.md#security-reader) | [Security Administrator](permissions-reference.md#security-administrator)<br/>[Privileged Role Administrator](permissions-reference.md#privileged-role-administrator) |
-> | Read all configuration | [Default user role](../fundamentals/users-default-permissions.md) |  |
+> | Read all configuration | [Default user role](~/fundamentals/users-default-permissions.md) |  |
 
 ## Security - Authentication methods
 
@@ -389,7 +389,7 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | Invalidate refresh tokens of limited admins | [User Administrator](permissions-reference.md#user-administrator) |  |
 > | Invalidate refresh tokens of non-admins | [Helpdesk Administrator](permissions-reference.md#helpdesk-administrator) | [User Administrator](permissions-reference.md#user-administrator) |
 > | Invalidate refresh tokens of privileged admins | [Privileged Authentication Administrator](permissions-reference.md#privileged-authentication-administrator) |  |
-> | Read basic configuration | [Default user role](../fundamentals/users-default-permissions.md) |  |
+> | Read basic configuration | [Default user role](~/fundamentals/users-default-permissions.md) |  |
 > | Reset password for limited admins | [User Administrator](permissions-reference.md#user-administrator) |  |
 > | Reset password of non-admins | [Password Administrator](permissions-reference.md#password-administrator) | [User Administrator](permissions-reference.md#user-administrator) |
 > | Reset password of privileged admins | [Privileged Authentication Administrator](permissions-reference.md#privileged-authentication-administrator) |  |

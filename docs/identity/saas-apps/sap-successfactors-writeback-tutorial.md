@@ -242,7 +242,7 @@ This section provides steps for
 
    * **Notification Email –** Enter your email address, and check the "send email if failure occurs" checkbox.
     > [!NOTE]
-    > The Microsoft Entra provisioning service sends email notification if the provisioning job goes into a [quarantine](../app-provisioning/application-provisioning-quarantine-status.md) state.
+    > The Microsoft Entra provisioning service sends email notification if the provisioning job goes into a [quarantine](~/identity/app-provisioning/application-provisioning-quarantine-status.md) state.
 
    * Click the **Test Connection** button. If the connection test succeeds, click the **Save** button at  the top. If it fails, double-check that the SuccessFactors credentials and URL are valid.
     >[!div class="mx-imgBorder"]
@@ -279,7 +279,7 @@ In this section, you will configure how user data flows from SuccessFactors to A
    | 11 | mobile | cellPhoneNumber | Use this mapping to flow *telephoneNumber* from Microsoft Entra ID to SuccessFactors business / work phone number. |
    | 12 | 10606 | cellPhoneType | This constant value is the SuccessFactors ID value associated with cell phone. Update this value to match your SuccessFactors environment. See the section [Retrieve constant value for phoneType](#retrieve-constant-value-for-phonetype) for steps to set this value. |
    | 13 | false | cellPhoneIsPrimary | Use this attribute to set the primary flag for cell phone number. Valid values are true or false. |
-   | 14 | [extensionAttribute1-15] | userId | Use this mapping to ensure that the active record in SuccessFactors is updated when there are multiple employment records for the same user. For more details refer to [Enabling writeback with UserID](../app-provisioning/sap-successfactors-integration-reference.md#enabling-writeback-with-userid) |
+   | 14 | [extensionAttribute1-15] | userId | Use this mapping to ensure that the active record in SuccessFactors is updated when there are multiple employment records for the same user. For more details refer to [Enabling writeback with UserID](~/identity/app-provisioning/sap-successfactors-integration-reference.md#enabling-writeback-with-userid) |
  
 1. Validate and review your attribute mappings. 
  
@@ -337,12 +337,12 @@ Once the SuccessFactors provisioning app configurations have been completed, you
 
 ## Supported scenarios, known issues and limitations
 
-Refer to the [Writeback scenarios section](../app-provisioning/sap-successfactors-integration-reference.md#writeback-scenarios) of the SAP SuccessFactors integration reference guide. 
+Refer to the [Writeback scenarios section](~/identity/app-provisioning/sap-successfactors-integration-reference.md#writeback-scenarios) of the SAP SuccessFactors integration reference guide. 
 
 ## Next steps
 
-* [Deep dive into Microsoft Entra ID and SAP SuccessFactors integration reference](../app-provisioning/sap-successfactors-integration-reference.md)
-* [Learn how to review logs and get reports on provisioning activity](../app-provisioning/check-status-user-account-provisioning.md)
+* [Deep dive into Microsoft Entra ID and SAP SuccessFactors integration reference](~/identity/app-provisioning/sap-successfactors-integration-reference.md)
+* [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)
 * [Learn how to configure single sign-on between SuccessFactors and Microsoft Entra ID](successfactors-tutorial.md)
 * [Learn how to integrate other SaaS applications with Microsoft Entra ID](tutorial-list.md)
-* [Learn how to export and import your provisioning configurations](../app-provisioning/export-import-provisioning-configuration.md)
+* [Learn how to export and import your provisioning configurations](~/identity/app-provisioning/export-import-provisioning-configuration.md)

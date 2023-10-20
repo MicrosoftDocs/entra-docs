@@ -23,7 +23,7 @@ This sample requires the [Microsoft Graph PowerShell](/powershell/microsoftgraph
 
 ## Sample script
 
-[!code-azurepowershell[main](~/powershell_scripts/application-management/export-enterprise-apps-with-expiring-secrets.ps1 "Exports all apps with expiring secrets and certificates for the specified apps in your directory.")]
+[!code-azurepowershell[main](~/../powershell_scripts/application-management/export-enterprise-apps-with-expiring-secrets.ps1 "Exports all apps with expiring secrets and certificates for the specified apps in your directory.")]
 
 ## Script explanation
 

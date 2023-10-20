@@ -73,7 +73,7 @@ We're excited to announce the general availability of hybrid cloud Kerberos trus
 **Product capability:** Outbound to SaaS Applications  
  
 
-Accidental deletion of users in your apps or in your on-premises directory could be disastrous. We’re excited to announce the general availability of the accidental deletions prevention capability. When a provisioning job would cause a spike in deletions, it will first pause and provide you with visibility into the potential deletions. You can then accept or reject the deletions and have time to update the job’s scope if necessary. For more information, see [Understand how expression builder in Application Provisioning works](../app-provisioning/expression-builder.md).
+Accidental deletion of users in your apps or in your on-premises directory could be disastrous. We’re excited to announce the general availability of the accidental deletions prevention capability. When a provisioning job would cause a spike in deletions, it will first pause and provide you with visibility into the potential deletions. You can then accept or reject the deletions and have time to update the job’s scope if necessary. For more information, see [Understand how expression builder in Application Provisioning works](~/identity/app-provisioning/expression-builder.md).
  
 
 ---
@@ -102,7 +102,7 @@ Password writeback in Azure AD Connect cloud sync now provides customers the abi
 
 Accidental deletion of users in any system could be disastrous. We’re excited to announce the general availability of the accidental deletions prevention capability as part of the Azure AD provisioning service. When the number of deletions to be processed in a single provisioning cycle spikes above a customer defined threshold, the Azure AD provisioning service pauses, provide you with visibility into the potential deletions, and allow you to accept or reject the deletions. This functionality has historically been available for Azure AD Connect, and Azure AD Connect cloud sync. It's now available across the various provisioning flows, including both HR-driven provisioning and application provisioning.
 
-For more information, see: [Enable accidental deletions prevention in the Azure AD provisioning service](../app-provisioning/accidental-deletions.md)
+For more information, see: [Enable accidental deletions prevention in the Azure AD provisioning service](~/identity/app-provisioning/accidental-deletions.md)
 
 ---
 
@@ -196,7 +196,7 @@ You can now create or update dynamic device groups using the following propertie
 - extensionAttribute1-15
 - profileType
 
-For more information on how to use this feature, see: [Dynamic membership rule for device groups](../enterprise-users/groups-dynamic-membership.md#rules-for-devices) 
+For more information on how to use this feature, see: [Dynamic membership rule for device groups](~/identity/users/groups-dynamic-membership.md#rules-for-devices) 
  
 ---
 
@@ -210,7 +210,7 @@ For more information on how to use this feature, see: [Dynamic membership rule f
 **Product capability:** Identity Lifecycle Management  
  
 
-Pick a group of up to five members and provision them into your third-party applications in seconds. Get started testing, troubleshooting, and provisioning to non-Microsoft applications such as ServiceNow, ZScaler, and Adobe. For more information, see: [On-demand provisioning in Azure Active Directory](../app-provisioning/provision-on-demand.md).
+Pick a group of up to five members and provision them into your third-party applications in seconds. Get started testing, troubleshooting, and provisioning to non-Microsoft applications such as ServiceNow, ZScaler, and Adobe. For more information, see: [On-demand provisioning in Azure Active Directory](~/identity/app-provisioning/provision-on-demand.md).
  
 ---
 
@@ -250,7 +250,7 @@ An admin can now require a user is on a compliant Linux device, managed by Intun
 
  
 
-Cross-tenant access settings enable you to control how users in your organization collaborate with members of external Azure AD organizations. Now you’ll have granular inbound and outbound access control settings that work on a per org, user, group, and application basis. These settings also make it possible for you to trust security claims from external Azure AD organizations like multi-factor authentication (MFA), device compliance, and hybrid Azure AD joined devices. For more information, see: [Cross-tenant access with Azure AD External Identities](../external-identities/cross-tenant-access-overview.md).
+Cross-tenant access settings enable you to control how users in your organization collaborate with members of external Azure AD organizations. Now you’ll have granular inbound and outbound access control settings that work on a per org, user, group, and application basis. These settings also make it possible for you to trust security claims from external Azure AD organizations like multi-factor authentication (MFA), device compliance, and hybrid Azure AD joined devices. For more information, see: [Cross-tenant access with Azure AD External Identities](~/external-id/cross-tenant-access-overview.md).
  
 ---
 
@@ -327,7 +327,7 @@ Identity Protection now emits risk (such as unfamiliar sign-in properties) on no
 
 Entra Workload Identity Federation allows developers to exchange tokens issued by another identity provider with Azure AD tokens, without needing secrets. It eliminates the need to store, and manage, credentials inside the code or secret stores to access Azure AD protected resources such as Azure and Microsoft Graph. By removing the secrets required to access Azure AD protected resources, workload identity federation can improve the security posture of your organization. This feature also reduces the burden of secret management and minimizes the risk of service downtime due to expired credentials.
 
-For more information on this capability and supported scenarios, see: [Workload identity federation](../workload-identities/workload-identity-federation.md).
+For more information on this capability and supported scenarios, see: [Workload identity federation](~/workload-id/workload-identity-federation.md).
  
 
 ---

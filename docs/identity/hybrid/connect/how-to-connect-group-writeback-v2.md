@@ -79,7 +79,7 @@ To see the default behavior in your environment for newly created groups, use th
 
 > If a `directorySetting` value of `Group.Unified` exists with a `NewUnifiedGroupWritebackDefault` value of `false`, Microsoft 365 groups *won't automatically* be enabled for writeback when they're created. If the value is not specified or is set to `true`, newly created Microsoft 365 groups *will automatically* be written back.  
 
-You can also use the PowerShell cmdlet [AzureADDirectorySetting](../../enterprise-users/groups-settings-cmdlets.md). 
+You can also use the PowerShell cmdlet [AzureADDirectorySetting](~/identity/users/groups-settings-cmdlets.md). 
 
 > Example: `Get-AzureADDirectorySetting | ? { $_.DisplayName -eq "Group.Unified"} | Select-Object -ExpandProperty Values` 
 

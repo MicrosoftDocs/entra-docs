@@ -45,7 +45,7 @@ The pillars intersect with:
 
 Use the article series to build a plan to meet memo requirements. It assumes use of Microsoft 365 products and a Microsoft Entra tenant. 
 
-Learn more: [Quickstart: Create a new tenant in Microsoft Entra ID](../fundamentals/create-new-tenant.md).
+Learn more: [Quickstart: Create a new tenant in Microsoft Entra ID](~/fundamentals/create-new-tenant.md).
 
 The article series instructions encompass agency investments in Microsoft technologies that align with the memo's identity-related actions.
 

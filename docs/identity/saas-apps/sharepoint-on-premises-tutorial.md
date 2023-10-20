@@ -197,7 +197,7 @@ The basic configuration of the trust between SharePoint and Microsoft Entra ID i
 
 ## Sign in as a member user
 
-Microsoft Entra ID has [two type of users](../external-identities/user-properties.md): Guest users and Member users. Let's start with a member user, which is merely a user that is homed in your organization.
+Microsoft Entra ID has [two type of users](~/external-id/user-properties.md): Guest users and Member users. Let's start with a member user, which is merely a user that is homed in your organization.
 
 <a name='create-a-member-user-in-azure-active-directory'></a>
 

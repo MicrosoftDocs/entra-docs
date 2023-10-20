@@ -123,7 +123,7 @@ You need to create an [application](/graph/api/resources/application?view=graph-
 |-----|-----|-----|
 |MS Graph|Create extensions using GRAPH|[Create extensionProperty](/graph/api/application-post-extensionproperty?view=graph-rest-1.0&tabs=http&preserve-view=true)|
 |PowerShell|Create extensions using PowerShell|[New-AzureADApplicationExtensionProperty](/powershell/module/azuread/new-azureadapplicationextensionproperty?view=azureadps-2.0&preserve-view=true)| 
-Using cloud sync and Microsoft Entra Connect|Create extensions using Microsoft Entra Connect|[Create an extension attribute using Microsoft Entra Connect](../../app-provisioning/user-provisioning-sync-attributes-for-mapping.md#create-an-extension-attribute-using-azure-ad-connect)|
+Using cloud sync and Microsoft Entra Connect|Create extensions using Microsoft Entra Connect|[Create an extension attribute using Microsoft Entra Connect](~/identity/app-provisioning/user-provisioning-sync-attributes-for-mapping.md#create-an-extension-attribute-using-azure-ad-connect)|
 |Customizing attributes to sync|Information on customizing which attributes to synch|[Customize which attributes to synchronize with Microsoft Entra ID](../connect/how-to-connect-sync-feature-directory-extensions.md#customize-which-attributes-to-synchronize-with-azure-ad)
 
 ## Use attribute mapping to map Directory Extensions
@@ -134,7 +134,7 @@ To discover and map attributes, click **Add attribute mapping**.  The attributes
 
 For information on new attributes that are added and updated in Microsoft Entra ID see the [user resource type](/graph/api/resources/user?view=graph-rest-1.0&preserve-view=true#properties) and consider subscribing to [change notifications](/graph/webhooks).
 
-For more information on extension attributes, see [Syncing extension attributes for Microsoft Entra Application Provisioning](../../app-provisioning/user-provisioning-sync-attributes-for-mapping.md)
+For more information on extension attributes, see [Syncing extension attributes for Microsoft Entra Application Provisioning](~/identity/app-provisioning/user-provisioning-sync-attributes-for-mapping.md)
 
 ## Additional resources
 

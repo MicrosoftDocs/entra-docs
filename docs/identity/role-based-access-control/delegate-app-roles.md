@@ -68,7 +68,7 @@ Microsoft Entra ID has a set of built-in admin roles for granting access to mana
 
 For more information and to view the description for these roles, see [Microsoft Entra built-in roles](permissions-reference.md).
 
-Follow the instructions in the [Assign roles to users with Microsoft Entra ID](../fundamentals/how-subscriptions-associated-directory.md) how-to guide to assign the Application Administrator or Cloud Application Administrator roles.
+Follow the instructions in the [Assign roles to users with Microsoft Entra ID](~/fundamentals/how-subscriptions-associated-directory.md) how-to guide to assign the Application Administrator or Cloud Application Administrator roles.
 
 > [!IMPORTANT]
 > Application Administrators and Cloud Application Administrators can add credentials to an application and use those credentials to impersonate the application’s identity. The application may have permissions that are an elevation of privilege over the admin role's permissions. An admin in this role could potentially create or update users or other objects while impersonating the application, depending on the application's permissions.
@@ -85,7 +85,7 @@ This separation allows you to create a single role definition and then assign it
 
 Tips when creating and using custom roles for delegating application management:
 - Custom roles only grant access in the most current app registration blades of the Microsoft Entra admin center. They do not grant access in the legacy app registrations blades.
-- Custom roles do not grant access to the Microsoft Entra admin center when the [Restrict access to Microsoft Entra administration portal](../fundamentals/users-default-permissions.md) user setting is set to **Yes**.
+- Custom roles do not grant access to the Microsoft Entra admin center when the [Restrict access to Microsoft Entra administration portal](~/fundamentals/users-default-permissions.md) user setting is set to **Yes**.
 - App registrations the user has access to using role assignments only show up in the ‘All applications’ tab on the App registration page. They do not show up in the ‘Owned applications’ tab.
 
 For more information on the basics of custom roles, see the [custom roles overview](custom-overview.md), as well as how to [create a custom role](custom-create.md) and how to [assign a role](custom-assign-powershell.md).

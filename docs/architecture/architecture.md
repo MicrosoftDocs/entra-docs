@@ -18,9 +18,9 @@ ms.collection: M365-identity-device-management
 
 # What is the Microsoft Entra architecture?
 
-Microsoft Entra ID enables you to securely manage access to Azure services and resources for your users. Included with Microsoft Entra ID is a full suite of identity management capabilities. For information about Microsoft Entra features, see [What is Microsoft Entra ID?](../fundamentals/whatis.md)
+Microsoft Entra ID enables you to securely manage access to Azure services and resources for your users. Included with Microsoft Entra ID is a full suite of identity management capabilities. For information about Microsoft Entra features, see [What is Microsoft Entra ID?](~/fundamentals/whatis.md)
 
-With Microsoft Entra ID, you can create and manage users and groups, and enable permissions to allow and deny access to enterprise resources. For information about identity management, see [The fundamentals of Azure identity management](../fundamentals/whatis.md).
+With Microsoft Entra ID, you can create and manage users and groups, and enable permissions to allow and deny access to enterprise resources. For information about identity management, see [The fundamentals of Azure identity management](~/fundamentals/whatis.md).
 
 <a name='azure-ad-architecture'></a>
 

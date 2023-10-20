@@ -44,10 +44,10 @@ To complete this tutorial, you need the following resources and privileges:
 * An account with *Conditional Access Administrator*, *Security Administrator*, or *Global Administrator* privileges. Some MFA settings can also be managed by an *Authentication Policy Administrator*. For more information, see [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 
 * A non-administrator account with a password that you know. For this tutorial, we created such an account, named *testuser*. In this tutorial, you test the end-user experience of configuring and using Microsoft Entra multifactor authentication.
-    * If you need information about creating a user account, see [Add or delete users using Microsoft Entra ID](../fundamentals/add-users.md).
+    * If you need information about creating a user account, see [Add or delete users using Microsoft Entra ID](~/fundamentals/add-users.md).
 
 * A group that the non-administrator user is a member of. For this tutorial, we created such a group, named *MFA-Test-Group*. In this tutorial, you enable Microsoft Entra multifactor authentication for this group.
-    * If you need more information about creating a group, see [Create a basic group and add members using Microsoft Entra ID](../fundamentals/how-to-manage-groups.md).
+    * If you need more information about creating a group, see [Create a basic group and add members using Microsoft Entra ID](~/fundamentals/how-to-manage-groups.md).
 
 ## Create a Conditional Access policy
 

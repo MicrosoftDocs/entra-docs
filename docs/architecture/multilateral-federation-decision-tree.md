@@ -28,7 +28,7 @@ The following resources can help with your migration to the solutions covered in
 | - | - | - |
 | [Resources for migrating applications to Microsoft Entra ID](~/identity/enterprise-apps/migration-resources.md) | List of resources to help you migrate application access and authentication to Microsoft Entra ID | Solution 1, Solution 2, and Solution 3 |
 | [Microsoft Entra custom claims provider](~/identity-platform/custom-claims-provider-overview.md)| Overview of the Microsoft Entra custom claims provider | Solution 1 |
-| [Custom security attributes](../fundamentals/custom-security-attributes-manage.md) | Steps for managing access to custom security attributes | Solution 1 |
+| [Custom security attributes](~/fundamentals/custom-security-attributes-manage.md) | Steps for managing access to custom security attributes | Solution 1 |
 | [Microsoft Entra SSO integration with Cirrus Bridge](../saas-apps/cirrus-identity-bridge-for-azure-ad-tutorial.md) | Tutorial to integrate Cirrus Bridge with Microsoft Entra ID | Solution 1 |
 | [Cirrus Bridge overview](https://blog.cirrusidentity.com/documentation/azure-bridge-setup-rev-6.0) | Cirrus Identity documentation for configuring Cirrus Bridge with Microsoft Entra ID | Solution 1 |
 | [Configuring Shibboleth as a SAML proxy](https://shibboleth.atlassian.net/wiki/spaces/KB/pages/1467056889/Using+SAML+Proxying+in+the+Shibboleth+IdP+to+connect+with+Azure+AD) | Shibboleth article that describes how to use the SAML proxying feature to connect the Shibboleth identity provider (IdP) to Microsoft Entra ID | Solution 2 |

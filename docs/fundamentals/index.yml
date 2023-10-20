@@ -30,7 +30,7 @@ landingContent:
       - linkListType: concept
         links:
           - text: Microsoft Entra architecture
-            url: ../architecture/architecture.md
+            url: ~/architecture/architecture.md
 
   # Card 
   - title: Get started

@@ -136,7 +136,7 @@ If your ADFS server has not been configured to automatically update certificates
 ## Get started with Microsoft Entra Connect Health
 To get started with Microsoft Entra Connect Health, use the following steps:
 
-1. [Get Microsoft Entra ID P1 or P2](../../fundamentals/get-started-premium.md) or [start a trial](https://azure.microsoft.com/trial/get-started-active-directory/).
+1. [Get Microsoft Entra ID P1 or P2](~/fundamentals/get-started-premium.md) or [start a trial](https://azure.microsoft.com/trial/get-started-active-directory/).
 2. [Download and install Microsoft Entra Connect Health Agents](#download-and-install-azure-ad-connect-health-agent) on your identity servers.
 3. View the Microsoft Entra Connect Health dashboard at [https://aka.ms/aadconnecthealth](https://aka.ms/aadconnecthealth).
 

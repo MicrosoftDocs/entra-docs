@@ -22,7 +22,7 @@ Learn more:
 * [What is Conditional Access?](../conditional-access/overview.md)
 * [How it works: Microsoft Entra multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md)
 * [Microsoft Entra seamless single sign-on](../hybrid/connect/how-to-connect-sso.md)
-* [What is app provisioning in Microsoft Entra ID?](../app-provisioning/user-provisioning.md)
+* [What is app provisioning in Microsoft Entra ID?](~/identity/app-provisioning/user-provisioning.md)
 
 If your company has a Microsoft 365 subscription, you likely use Microsoft Entra ID. However, you can use Microsoft Entra ID for applications. If you centralize application management, identity management features, tools, and policies for your app portfolio. The benefit is a unified solution that improves security, reduces costs, increases productivity, and enables compliance. In addition, there's remote access to on-premises apps.
 

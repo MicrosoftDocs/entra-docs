@@ -32,7 +32,7 @@ See the following two sections for licensing and credentials prerequisites.
 
 There are licensing requirements if you switch from Okta sign-on to Conditional Access. The process requires a Microsoft Entra ID P1 license to enable registration for Microsoft Entra multifactor authentication.
 
-Learn more: [Assign or remove licenses in the Microsoft Entra admin center](../fundamentals/license-users-groups.md)
+Learn more: [Assign or remove licenses in the Microsoft Entra admin center](~/fundamentals/license-users-groups.md)
 
 ### Enterprise Administrator credentials
 

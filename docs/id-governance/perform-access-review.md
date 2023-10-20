@@ -132,7 +132,7 @@ To review access of B2B direct connect users, use the following instructions:
 > [!NOTE]
 > Unlike internal users and B2B collaboration users, B2B direct connect users and teams _don't_ have recommendations based on last sign-in activity to make decisions when you perform the review.
 
-If a team you review has shared channels, all B2B direct connect users and teams that access those shared channels are part of the review. This includes B2B collaboration users and internal users. When a B2B direct connect user or team is denied access in an access review, the user loses access to every shared channel in the team. To learn more about B2B direct connect users, read [B2B direct connect](../external-identities/b2b-direct-connect-overview.md).
+If a team you review has shared channels, all B2B direct connect users and teams that access those shared channels are part of the review. This includes B2B collaboration users and internal users. When a B2B direct connect user or team is denied access in an access review, the user loses access to every shared channel in the team. To learn more about B2B direct connect users, read [B2B direct connect](~/external-id/b2b-direct-connect-overview.md).
 
 ## Set up what will happen if no action is taken on access review
 When the access review is set up, the administrator has the option to use advanced settings to determine what will happen if a reviewer doesn't respond to an access review request.

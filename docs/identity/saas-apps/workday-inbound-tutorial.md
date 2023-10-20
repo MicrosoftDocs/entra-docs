@@ -26,20 +26,20 @@ The following video provides a quick overview of the steps involved when plannin
 
 ## Overview
 
-The [Microsoft Entra user provisioning service](../app-provisioning/user-provisioning.md) integrates with the [Workday Human Resources API](https://community.workday.com/sites/default/files/file-hosting/productionapi/Human_Resources/v21.1/Get_Workers.html) in order to provision user accounts. The Workday user provisioning workflows supported by the Microsoft Entra user provisioning service enable automation of the following human resources and identity lifecycle management scenarios:
+The [Microsoft Entra user provisioning service](~/identity/app-provisioning/user-provisioning.md) integrates with the [Workday Human Resources API](https://community.workday.com/sites/default/files/file-hosting/productionapi/Human_Resources/v21.1/Get_Workers.html) in order to provision user accounts. The Workday user provisioning workflows supported by the Microsoft Entra user provisioning service enable automation of the following human resources and identity lifecycle management scenarios:
 
-* **Hiring new employees** - When a new employee is added to Workday, a user account is automatically created in Active Directory, Microsoft Entra ID, and optionally Microsoft 365 and [other SaaS applications supported by Microsoft Entra ID](../app-provisioning/user-provisioning.md), with write-back of IT-managed contact information to Workday.
+* **Hiring new employees** - When a new employee is added to Workday, a user account is automatically created in Active Directory, Microsoft Entra ID, and optionally Microsoft 365 and [other SaaS applications supported by Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md), with write-back of IT-managed contact information to Workday.
 
-* **Employee attribute and profile updates** - When an employee record is updated in Workday (such as their name, title, or manager), their user account will be automatically updated in Active Directory, Microsoft Entra ID, and optionally Microsoft 365 and [other SaaS applications supported by Microsoft Entra ID](../app-provisioning/user-provisioning.md).
+* **Employee attribute and profile updates** - When an employee record is updated in Workday (such as their name, title, or manager), their user account will be automatically updated in Active Directory, Microsoft Entra ID, and optionally Microsoft 365 and [other SaaS applications supported by Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 
-* **Employee terminations** - When an employee is terminated in Workday, their user account is automatically disabled in Active Directory, Microsoft Entra ID, and optionally Microsoft 365 and [other SaaS applications supported by Microsoft Entra ID](../app-provisioning/user-provisioning.md).
+* **Employee terminations** - When an employee is terminated in Workday, their user account is automatically disabled in Active Directory, Microsoft Entra ID, and optionally Microsoft 365 and [other SaaS applications supported by Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 
-* **Employee rehires** - When an employee is rehired in Workday, their old account can be automatically reactivated or re-provisioned (depending on your preference) to Active Directory, Microsoft Entra ID, and optionally Microsoft 365 and [other SaaS applications supported by Microsoft Entra ID](../app-provisioning/user-provisioning.md).
+* **Employee rehires** - When an employee is rehired in Workday, their old account can be automatically reactivated or re-provisioned (depending on your preference) to Active Directory, Microsoft Entra ID, and optionally Microsoft 365 and [other SaaS applications supported by Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 
 ### What's new
-This section captures recent Workday integration enhancements. For a list of comprehensive updates, planned changes and archives, please visit the page [What's new in Microsoft Entra ID?](../fundamentals/whats-new.md) 
+This section captures recent Workday integration enhancements. For a list of comprehensive updates, planned changes and archives, please visit the page [What's new in Microsoft Entra ID?](~/fundamentals/whats-new.md) 
 
-* **Oct 2020 - Enabled provision on demand for Workday:** Using [on-demand provisioning](../app-provisioning/provision-on-demand.md) you can now test end-to-end provisioning for a specific user profile in Workday to verify your attribute mapping and expression logic.   
+* **Oct 2020 - Enabled provision on demand for Workday:** Using [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) you can now test end-to-end provisioning for a specific user profile in Workday to verify your attribute mapping and expression logic.   
 
 * **May 2020 - Ability to writeback phone numbers to Workday:** In addition to email and username, you can now writeback work phone number and mobile phone number from Microsoft Entra ID to Workday. For more details, refer to the [writeback app tutorial](workday-writeback-tutorial.md).
 
@@ -85,7 +85,7 @@ Configuring Workday to Active Directory user provisioning requires considerable 
 * Number of Workday to AD user provisioning apps to deploy
 * Selecting the right matching identifier, attribute mapping, transformation and scoping filters
 
-Please refer to the [cloud HR deployment plan](../app-provisioning/plan-cloud-hr-provision.md) for comprehensive guidelines and recommended best practices. 
+Please refer to the [cloud HR deployment plan](~/identity/app-provisioning/plan-cloud-hr-provision.md) for comprehensive guidelines and recommended best practices. 
 
 ## Configure integration system user in Workday
 
@@ -281,7 +281,7 @@ In this step, we establish connectivity with Workday and Active Directory.
       > [!NOTE]
      > If no version information is specified in the URL, the app uses Workday Web Services (WWS) v21.1 and no changes are required to the default XPATH API expressions shipped with the app. To use a specific WWS API version, specify version number in the URL <br>
      > Example: `https://wd3-impl-services1.workday.com/ccx/service/contoso4/Human_Resources/v34.0` <br>
-     > <br> If you are using a WWS API v30.0+, before turning on the provisioning job, please update the **XPATH API expressions** under **Attribute Mapping -> Advanced Options -> Edit attribute list for Workday** referring to the section [Managing your configuration](#managing-your-configuration) and [Workday attribute reference](../app-provisioning/workday-attribute-reference.md#xpath-values-for-workday-web-services-wws-api-v30).  
+     > <br> If you are using a WWS API v30.0+, before turning on the provisioning job, please update the **XPATH API expressions** under **Attribute Mapping -> Advanced Options -> Edit attribute list for Workday** referring to the section [Managing your configuration](#managing-your-configuration) and [Workday attribute reference](~/identity/app-provisioning/workday-attribute-reference.md#xpath-values-for-workday-web-services-wws-api-v30).  
 
    * **Active Directory Forest -** The "Name" of your Active Directory domain, as registered with the agent. Use the dropdown to select the target domain for provisioning. This value is typically a string like: *contoso.com*
 
@@ -294,7 +294,7 @@ In this step, we establish connectivity with Workday and Active Directory.
    * **Notification Email –** Enter your email address, and check the "send email if failure occurs" checkbox.
 
      > [!NOTE]
-     > The Microsoft Entra provisioning service sends email notification if the provisioning job goes into a [quarantine](../app-provisioning/application-provisioning-quarantine-status.md) state.
+     > The Microsoft Entra provisioning service sends email notification if the provisioning job goes into a [quarantine](~/identity/app-provisioning/application-provisioning-quarantine-status.md) state.
 
    * Click the **Test Connection** button. If the connection test succeeds, click the **Save** button at  the top. If it fails, double-check that the Workday credentials and the AD credentials configured on the agent setup are valid.
 
@@ -327,10 +327,10 @@ In this section, you will configure how user data flows from Workday to Active D
       * Operator: IS NOT NULL
 
    > [!TIP]
-   > When you are configuring the provisioning app for the first time, you will need to test and verify your attribute mappings and expressions to make sure that it is giving you the desired result. Microsoft recommends using [scoping filters](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md) under **Source Object Scope** and [on-demand provisioning](../app-provisioning/provision-on-demand.md) to test your mappings with a few test users from Workday. Once you have verified that the mappings work, then you can either remove the filter or gradually expand it to include more users.
+   > When you are configuring the provisioning app for the first time, you will need to test and verify your attribute mappings and expressions to make sure that it is giving you the desired result. Microsoft recommends using [scoping filters](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md) under **Source Object Scope** and [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to test your mappings with a few test users from Workday. Once you have verified that the mappings work, then you can either remove the filter or gradually expand it to include more users.
 
    > [!CAUTION] 
-   > The default behavior of the provisioning engine is to disable/delete users that go out of scope. This may not be desirable in your Workday to AD integration. To override this default behavior refer to the article [Skip deletion of user accounts that go out of scope](../app-provisioning/skip-out-of-scope-deletions.md)
+   > The default behavior of the provisioning engine is to disable/delete users that go out of scope. This may not be desirable in your Workday to AD integration. To override this default behavior refer to the article [Skip deletion of user accounts that go out of scope](~/identity/app-provisioning/skip-out-of-scope-deletions.md)
 
 1. In the **Target Object Actions** field, you can globally filter what actions are performed on Active Directory. **Create** and **Update** are most common.
 
@@ -344,7 +344,7 @@ In this section, you will configure how user data flows from Workday to Active D
 
          * **Constant** - Write a static, constant string value to the AD attribute
 
-         * **Expression** – Allows you to write a custom value to the AD attribute, based on one or more Workday attributes. [For more info, see this article on expressions](../app-provisioning/functions-for-customizing-application-data.md).
+         * **Expression** – Allows you to write a custom value to the AD attribute, based on one or more Workday attributes. [For more info, see this article on expressions](~/identity/app-provisioning/functions-for-customizing-application-data.md).
 
       * **Source attribute** - The user attribute from Workday. If the attribute you are looking for is not present, see [Customizing the list of Workday user attributes](#customizing-the-list-of-workday-user-attributes).
 
@@ -371,9 +371,9 @@ In this section, you will configure how user data flows from Workday to Active D
 
 * The expression that maps to the *parentDistinguishedName* attribute is used to provision a user to different OUs based on one or more Workday source attributes. This example here places users in different OUs based on what city they are in.
 
-* The *userPrincipalName* attribute in Active Directory is generated using the de-duplication function [SelectUniqueValue](../app-provisioning/functions-for-customizing-application-data.md#selectuniquevalue) that checks for existence of a generated value in the target AD domain and only sets it if it is unique.  
+* The *userPrincipalName* attribute in Active Directory is generated using the de-duplication function [SelectUniqueValue](~/identity/app-provisioning/functions-for-customizing-application-data.md#selectuniquevalue) that checks for existence of a generated value in the target AD domain and only sets it if it is unique.  
 
-* [There is documentation on writing expressions here](../app-provisioning/functions-for-customizing-application-data.md). This section includes examples on how to remove special characters.
+* [There is documentation on writing expressions here](~/identity/app-provisioning/functions-for-customizing-application-data.md). This section includes examples on how to remove special characters.
 
 | WORKDAY ATTRIBUTE | ACTIVE DIRECTORY ATTRIBUTE |  MATCHING ID? | CREATE / UPDATE |
 | ---------- | ---------- | ---------- | ---------- |
@@ -402,14 +402,14 @@ In this section, you will configure how user data flows from Workday to Active D
 | **LocalReference** |  preferredLanguage  |     |  Create + update |                                               
 | **Switch(\[Municipality\], "OU=Default Users,DC=contoso,DC=com", "Dallas", "OU=Dallas,OU=Users,DC=contoso,DC=com", "Austin", "OU=Austin,OU=Users,DC=contoso,DC=com", "Seattle", "OU=Seattle,OU=Users,DC=contoso,DC=com", "London", "OU=London,OU=Users,DC=contoso,DC=com")**  | parentDistinguishedName     |     |  Create + update |
 
-Once your attribute mapping configuration is complete, you can test provisioning for a single user using [on-demand provisioning](../app-provisioning/provision-on-demand.md) and then [enable and launch the user provisioning service](#enable-and-launch-user-provisioning).
+Once your attribute mapping configuration is complete, you can test provisioning for a single user using [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) and then [enable and launch the user provisioning service](#enable-and-launch-user-provisioning).
 
 ## Enable and launch user provisioning
 
-Once the Workday provisioning app configurations have been completed and you have verified provisioning for a single user with [on-demand provisioning](../app-provisioning/provision-on-demand.md), you can turn on the provisioning service.
+Once the Workday provisioning app configurations have been completed and you have verified provisioning for a single user with [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md), you can turn on the provisioning service.
 
 > [!TIP]
-> By default when you turn on the provisioning service, it will initiate provisioning operations for all users in scope. If there are errors in the mapping or Workday data issues, then the provisioning job might fail and go into the quarantine state. To avoid this, as a best practice, we recommend configuring **Source Object Scope** filter and testing  your attribute mappings with a few test users using [on-demand provisioning](../app-provisioning/provision-on-demand.md) before launching the full sync for all users. Once you have verified that the mappings work and are giving you the desired results, then you can either remove the filter or gradually expand it to include more users.
+> By default when you turn on the provisioning service, it will initiate provisioning operations for all users in scope. If there are errors in the mapping or Workday data issues, then the provisioning job might fail and go into the quarantine state. To avoid this, as a best practice, we recommend configuring **Source Object Scope** filter and testing  your attribute mappings with a few test users using [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) before launching the full sync for all users. Once you have verified that the mappings work and are giving you the desired results, then you can either remove the filter or gradually expand it to include more users.
 
 1. Go to the **Provisioning** blade and click on **Start provisioning**.
 
@@ -512,7 +512,7 @@ When suggesting a new idea, please check to see if someone else has already sugg
 
 #### What is the GA version of the Provisioning Agent?
 
-Refer to [Microsoft Entra Connect Provisioning Agent: Version release history](../app-provisioning/provisioning-agent-release-version-history.md) for the latest GA version of the Provisioning Agent.  
+Refer to [Microsoft Entra Connect Provisioning Agent: Version release history](~/identity/app-provisioning/provisioning-agent-release-version-history.md) for the latest GA version of the Provisioning Agent.  
 
 #### How do I know the version of my Provisioning Agent?
 
@@ -701,9 +701,9 @@ Here is how you can handle such requirements for constructing *CN* or *displayNa
   ```
 
   See also:
-  * [Switch Function Syntax](../app-provisioning/functions-for-customizing-application-data.md#switch)
-  * [Join Function Syntax](../app-provisioning/functions-for-customizing-application-data.md#join)
-  * [Append Function Syntax](../app-provisioning/functions-for-customizing-application-data.md#append)
+  * [Switch Function Syntax](~/identity/app-provisioning/functions-for-customizing-application-data.md#switch)
+  * [Join Function Syntax](~/identity/app-provisioning/functions-for-customizing-application-data.md#join)
+  * [Append Function Syntax](~/identity/app-provisioning/functions-for-customizing-application-data.md#append)
 
 #### How can I use SelectUniqueValue to generate unique values for samAccountName attribute?
 
@@ -721,17 +721,17 @@ How the above expression works: If the user is John Smith, it first tries to gen
 
 See also:
 
-* [Mid Function Syntax](../app-provisioning/functions-for-customizing-application-data.md#mid)
-* [Replace Function Syntax](../app-provisioning/functions-for-customizing-application-data.md#replace)
-* [SelectUniqueValue Function Syntax](../app-provisioning/functions-for-customizing-application-data.md#selectuniquevalue)
+* [Mid Function Syntax](~/identity/app-provisioning/functions-for-customizing-application-data.md#mid)
+* [Replace Function Syntax](~/identity/app-provisioning/functions-for-customizing-application-data.md#replace)
+* [SelectUniqueValue Function Syntax](~/identity/app-provisioning/functions-for-customizing-application-data.md#selectuniquevalue)
 
 #### How do I remove characters with diacritics and convert them into normal English alphabets?
 
-Use the function [NormalizeDiacritics](../app-provisioning/functions-for-customizing-application-data.md#normalizediacritics) to remove special characters in first name and last name of the user, while constructing the email address or CN value for the user.
+Use the function [NormalizeDiacritics](~/identity/app-provisioning/functions-for-customizing-application-data.md#normalizediacritics) to remove special characters in first name and last name of the user, while constructing the email address or CN value for the user.
 
 ## Troubleshooting tips
 
-This section provides specific guidance on how to troubleshoot provisioning issues with your Workday integration using the Microsoft Entra audit logs and Windows Server Event Viewer logs. It builds on top of the generic troubleshooting steps and concepts captured in the [Tutorial: Reporting on automatic user account provisioning](../app-provisioning/check-status-user-account-provisioning.md)
+This section provides specific guidance on how to troubleshoot provisioning issues with your Workday integration using the Microsoft Entra audit logs and Windows Server Event Viewer logs. It builds on top of the generic troubleshooting steps and concepts captured in the [Tutorial: Reporting on automatic user account provisioning](~/identity/app-provisioning/check-status-user-account-provisioning.md)
 
 This section covers the following aspects of troubleshooting:
 
@@ -920,7 +920,7 @@ If the provisioning service is unable to connect to Workday or Active Directory,
 |#|Error Scenario |Probable Causes|Recommended Resolution|
 |--|---|---|---|
 |1.| Export operation failures in the audit log with the message *Error: OperationsError-SvcErr: An operation error occurred. No superior reference has been configured for the directory service. The directory service is therefore unable to issue referrals to objects outside this forest.* | This error usually shows up if the *Active Directory Container* OU is not set correctly or if there are issues with the Expression Mapping used for *parentDistinguishedName*. | Check the *Active Directory Container* OU parameter for typos. If you are using *parentDistinguishedName* in the attribute mapping ensure that it always evaluates to a known container within the AD domain. Check the *Export* event in the audit logs to see the generated value. |
-|2.| Export operation failures in the audit log with error code: *SystemForCrossDomainIdentityManagementBadResponse* and message *Error: ConstraintViolation-AtrErr: A value in the request is invalid. A value for the attribute was not in the acceptable range of values. \nError Details: CONSTRAINT_ATT_TYPE - company*. | While this error is specific to the *company* attribute, you may see this error for other attributes like *CN* as well. This error appears due to AD enforced schema constraint. By default, the attributes like *company* and *CN* in AD have an upper limit of 64 characters. If the value coming from Workday is more than 64 characters, then you will see this error message. | Check the *Export* event in the audit logs to see the value for the attribute reported in the error message. Consider truncating the value coming from Workday using the [Mid](../app-provisioning/functions-for-customizing-application-data.md#mid) function or changing the mappings to an AD attribute that does not have similar length constraints.  |
+|2.| Export operation failures in the audit log with error code: *SystemForCrossDomainIdentityManagementBadResponse* and message *Error: ConstraintViolation-AtrErr: A value in the request is invalid. A value for the attribute was not in the acceptable range of values. \nError Details: CONSTRAINT_ATT_TYPE - company*. | While this error is specific to the *company* attribute, you may see this error for other attributes like *CN* as well. This error appears due to AD enforced schema constraint. By default, the attributes like *company* and *CN* in AD have an upper limit of 64 characters. If the value coming from Workday is more than 64 characters, then you will see this error message. | Check the *Export* event in the audit logs to see the value for the attribute reported in the error message. Consider truncating the value coming from Workday using the [Mid](~/identity/app-provisioning/functions-for-customizing-application-data.md#mid) function or changing the mappings to an AD attribute that does not have similar length constraints.  |
 
 #### AD user account update errors
 
@@ -1058,7 +1058,7 @@ To do this change, you must use [Workday Studio](https://community.workday.com/s
 
 ### Exporting and importing your configuration
 
-Refer to the article [Exporting and importing provisioning configuration](../app-provisioning/export-import-provisioning-configuration.md)
+Refer to the article [Exporting and importing provisioning configuration](~/identity/app-provisioning/export-import-provisioning-configuration.md)
 
 ## Managing personal data
 
@@ -1072,8 +1072,8 @@ With respect to data retention, the Microsoft Entra provisioning service does no
 
 ## Next steps
 
-* [Learn more about Microsoft Entra ID and Workday integration scenarios and web service calls](../app-provisioning/workday-integration-reference.md)
-* [Learn how to review logs and get reports on provisioning activity](../app-provisioning/check-status-user-account-provisioning.md)
+* [Learn more about Microsoft Entra ID and Workday integration scenarios and web service calls](~/identity/app-provisioning/workday-integration-reference.md)
+* [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)
 * [Learn how to configure single sign-on between Workday and Microsoft Entra ID](workday-tutorial.md)
 * [Learn how to configure Workday Writeback](workday-writeback-tutorial.md)
 * [Learn how to use Microsoft Graph APIs to manage provisioning configurations](/graph/api/resources/synchronization-overview)

@@ -406,7 +406,7 @@ For increased security, organizations using this pattern can block direct access
 
 ### Microsoft Entra B2B guest access
 
-[Microsoft Entra B2B guest access](../external-identities/hybrid-cloud-to-on-premises.md) is supported for this scenario, with guest identities flowing down from your Microsoft Entra tenant to the directory the application uses for authorization. Without a local representation of a guest object in AD, the BIG-IP fails to receive a kerberos ticket for KCD SSO to the back-end application.
+[Microsoft Entra B2B guest access](~/external-id/hybrid-cloud-to-on-premises.md) is supported for this scenario, with guest identities flowing down from your Microsoft Entra tenant to the directory the application uses for authorization. Without a local representation of a guest object in AD, the BIG-IP fails to receive a kerberos ticket for KCD SSO to the back-end application.
 
 ## Advanced deployment
 

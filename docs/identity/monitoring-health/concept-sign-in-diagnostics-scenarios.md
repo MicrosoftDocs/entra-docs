@@ -41,7 +41,7 @@ Conditional Access policies are used to apply the right access controls when nee
 - [Multi-factor authentication (MFA) from Conditional Access](../conditional-access/concept-conditional-access-grant.md#require-multifactor-authentication):
     - Your Conditional Access policies triggered the MFA process for the user.
 
-- [B2B blocked sign-in due to Conditional Access](../external-identities/authentication-conditional-access.md#conditional-access-for-external-users):
+- [B2B blocked sign-in due to Conditional Access](~/external-id/authentication-conditional-access.md#conditional-access-for-external-users):
     - You have a Conditional Access policy in place to block external identities from signing in.
 
 ## Multi-factor authentication  
@@ -93,7 +93,7 @@ Sign-in can fail due to an application configuration issue for the Microsoft Ent
 
 Sign-in events can be interrupted due to security defaults settings. Security defaults enforce best practice security for your organization. One best practice is to require MFA to be configured and used to prevent password sprays, replay attacks, and phishing attempts from being successful. 
 
-For more information, see [What are security defaults?](../fundamentals/security-defaults.md) 
+For more information, see [What are security defaults?](~/fundamentals/security-defaults.md) 
 
 ### Error code insights 
 
@@ -111,7 +111,7 @@ For more information, see [How to block legacy authentication to Microsoft Entra
 
 This diagnostic scenario detects a blocked or interrupted sign-in due to the user being from another organization. For example, a B2B sign-in, where a Conditional Access policy requires that the client's device is joined to the resource tenant. 
 
-For more information, see [Conditional Access for B2B collaboration users](../external-identities/authentication-conditional-access.md). 
+For more information, see [Conditional Access for B2B collaboration users](~/external-id/authentication-conditional-access.md). 
 
 ### Blocked by risk policy 
 

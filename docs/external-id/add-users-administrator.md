@@ -22,11 +22,11 @@ As a user who is assigned any of the limited administrator directory roles, you 
 After you add a guest user to the directory, you can either send the guest user a direct link to a shared app, or the guest user can select the redemption URL in the invitation email. For more information about the redemption process, see [B2B collaboration invitation redemption](redemption-experience.md).
 
 > [!IMPORTANT]
-> You should follow the steps in [How-to: Add your organization's privacy info in Microsoft Entra ID](../fundamentals/properties-area.md) to add the URL of your organization's privacy statement. As part of the first time invitation redemption process, an invited user must consent to your privacy terms to continue. 
+> You should follow the steps in [How-to: Add your organization's privacy info in Microsoft Entra ID](~/fundamentals/properties-area.md) to add the URL of your organization's privacy statement. As part of the first time invitation redemption process, an invited user must consent to your privacy terms to continue. 
 
 The updated experience for creating new users covered in this article is available as a Microsoft Entra ID preview feature. This feature is enabled by default, but you can opt out by going to **Identity** > **Overview** > **Preview features** and disabling the **Create user experience** feature. For more information about previews, see [Universal License Terms for Online Services](https://www.microsoft.com/licensing/terms/product/ForOnlineServices/all).
 
-Instructions for the legacy create user process can be found in the [Add or delete users](../fundamentals/add-users.md) article.
+Instructions for the legacy create user process can be found in the [Add or delete users](~/fundamentals/add-users.md) article.
 
 ## Before you begin
 
@@ -48,7 +48,7 @@ To add B2B collaboration users to the directory, follow these steps:
 
 ### Basics
 
-In this section, you're inviting the guest to your tenant using *their email address*. If you need to create a guest user with a domain account, use the [create new user process](../fundamentals/how-to-create-delete-users.md#create-a-new-user) but change the **User type** to **Guest**. 
+In this section, you're inviting the guest to your tenant using *their email address*. If you need to create a guest user with a domain account, use the [create new user process](~/fundamentals/how-to-create-delete-users.md#create-a-new-user) but change the **User type** to **Guest**. 
 
 - **Email**: Enter the email address for the guest user you're inviting.
 

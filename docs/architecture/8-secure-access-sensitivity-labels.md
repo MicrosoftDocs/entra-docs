@@ -109,7 +109,7 @@ Learn more:
 
 * [Enable sensitivity labels for Office files in SharePoint and OneDrive](/purview/sensitivity-labels-sharepoint-onedrive-files?view=o365-worldwide&preserve-view=true).
 * [Use sensitivity labels to protect content in Microsoft Teams, Microsoft 365 Groups, and SharePoint sites](/purview/sensitivity-labels-teams-groups-sites)
-* [Assign sensitivity labels to Microsoft 365 groups in Microsoft Entra ID](../enterprise-users/groups-assign-sensitivity-labels.md)
+* [Assign sensitivity labels to Microsoft 365 groups in Microsoft Entra ID](~/identity/users/groups-assign-sensitivity-labels.md)
 
 ### Implement sensitivity labels
 

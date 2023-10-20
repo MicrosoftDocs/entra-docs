@@ -62,14 +62,14 @@ Once the agent is installed, no further configuration is necessary on-premises, 
    ![Screenshot that shows assigning an agent.](media/azure-databricks-with-private-link-workspace-provisioning-tutorial//on-premises-assign-agents.png)
 
 1.  Create an Admin Token in Azure Databricks User Settings Console and enter the same in the **Secret Token** field
-1.  Select **Test Connection**, and save the credentials. The application SCIM endpoint must be actively listening for inbound provisioning requests, otherwise the test fails. Use the steps [here](../app-provisioning/on-premises-ecma-troubleshoot.md#troubleshoot-test-connection-issues) if you run into connectivity issues. 
+1.  Select **Test Connection**, and save the credentials. The application SCIM endpoint must be actively listening for inbound provisioning requests, otherwise the test fails. Use the steps [here](~/identity/app-provisioning/on-premises-ecma-troubleshoot.md#troubleshoot-test-connection-issues) if you run into connectivity issues. 
 
    >[!NOTE]
    > If the test connection fails, you will see the request made. Please note that while the URL in the test connection error message is truncated, the actual request sent to the application contains the entire URL provided above. 
 
-1.  Configure any [attribute mappings](../app-provisioning/customize-application-attributes.md) or [scoping](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md) rules required for your application.
+1.  Configure any [attribute mappings](~/identity/app-provisioning/customize-application-attributes.md) or [scoping](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md) rules required for your application.
 1.  Add users to scope by [assigning users and groups](~/identity/enterprise-apps/add-application-portal-assign-users.md) to the application.
-1.  Test provisioning a few users [on demand](../app-provisioning/provision-on-demand.md).
+1.  Test provisioning a few users [on demand](~/identity/app-provisioning/provision-on-demand.md).
 1.  Add more users into scope by assigning them to your application.
 1.  Go to the **Provisioning** pane, and select **Start provisioning**.
 1.  Monitor using the [provisioning logs](../reports-monitoring/concept-provisioning-logs.md).
@@ -78,13 +78,13 @@ The following video provides an overview of on-premises provisioning.
 > [!VIDEO https://www.youtube.com/embed/QdfdpaFolys]
 
 ## More requirements
-* Ensure your [SCIM](https://techcommunity.microsoft.com/t5/identity-standards-blog/provisioning-with-scim-getting-started/ba-p/880010) implementation meets the [Microsoft Entra SCIM requirements](../app-provisioning/use-scim-to-provision-users-and-groups.md).  
+* Ensure your [SCIM](https://techcommunity.microsoft.com/t5/identity-standards-blog/provisioning-with-scim-getting-started/ba-p/880010) implementation meets the [Microsoft Entra SCIM requirements](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md).  
   Microsoft Entra ID offers open-source [reference code](https://github.com/AzureAD/SCIMReferenceCode/wiki) that developers can use to bootstrap their SCIM implementation.
 * Support the /schemas endpoint to reduce configuration required. 
 
 ## Next steps
 
-* [App provisioning](../app-provisioning/user-provisioning.md)
-* [Generic SQL connector](../app-provisioning/on-premises-sql-connector-configure.md)
-* [Tutorial: ECMA Connector Host generic SQL connector](../app-provisioning/tutorial-ecma-sql-connector.md)
-* [Known issues](../app-provisioning/known-issues.md)
+* [App provisioning](~/identity/app-provisioning/user-provisioning.md)
+* [Generic SQL connector](~/identity/app-provisioning/on-premises-sql-connector-configure.md)
+* [Tutorial: ECMA Connector Host generic SQL connector](~/identity/app-provisioning/tutorial-ecma-sql-connector.md)
+* [Known issues](~/identity/app-provisioning/known-issues.md)

@@ -19,7 +19,7 @@ ms.author: thwimmer
 
 # Tutorial: Configure Clarizen One for automatic user provisioning
 
-This tutorial describes the steps you need to perform in both Clarizen One and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users and groups to [Clarizen One](https://www.clarizen.com/) by using the Microsoft Entra provisioning service. For information on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to software as a service (SaaS) applications with Microsoft Entra ID](../app-provisioning/user-provisioning.md).
+This tutorial describes the steps you need to perform in both Clarizen One and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users and groups to [Clarizen One](https://www.clarizen.com/) by using the Microsoft Entra provisioning service. For information on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to software as a service (SaaS) applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 
 ## Capabilities supported
 
@@ -40,9 +40,9 @@ The scenario outlined in this tutorial assumes that you already have the followi
 
 ## Step 1: Plan your provisioning deployment
 
-1. Learn about [how the provisioning service works](../app-provisioning/user-provisioning.md).
-1. Determine who will be in [scope for provisioning](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
-1. Determine what data to [map between Microsoft Entra ID and Clarizen One](../app-provisioning/customize-application-attributes.md).
+1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
+1. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine what data to [map between Microsoft Entra ID and Clarizen One](~/identity/app-provisioning/customize-application-attributes.md).
 
 <a name='step-2-configure-clarizen-one-to-support-provisioning-with-azure-ad'></a>
 
@@ -64,10 +64,10 @@ Add Clarizen One from the Microsoft Entra application gallery to start managing 
 
 ## Step 4: Define who will be in scope for provisioning
 
-With the Microsoft Entra provisioning service, you can scope who will be provisioned based on assignment to the application or based on attributes of the user or group. If you choose to scope who will be provisioned to your app based on assignment, follow the steps in [Manage user assignment for an app in Microsoft Entra ID](~/identity/enterprise-apps/assign-user-or-group-access-portal.md) to assign users and groups to the application. If you choose to scope who will be provisioned based solely on attributes of the user or group, use a scoping filter as described in [Attribute-based application provisioning with scoping filters](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+With the Microsoft Entra provisioning service, you can scope who will be provisioned based on assignment to the application or based on attributes of the user or group. If you choose to scope who will be provisioned to your app based on assignment, follow the steps in [Manage user assignment for an app in Microsoft Entra ID](~/identity/enterprise-apps/assign-user-or-group-access-portal.md) to assign users and groups to the application. If you choose to scope who will be provisioned based solely on attributes of the user or group, use a scoping filter as described in [Attribute-based application provisioning with scoping filters](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 * When you assign users and groups to Clarizen One, you must select a role other than **Default Access**. Users with the default access role are excluded from provisioning and will be marked as not effectively entitled in the provisioning logs. If the only role available on the application is the default access role, you can [update the application manifest](~/identity-platform/howto-add-app-roles-in-azure-ad-apps.md) to add more roles.
-* Start small. Test with a small set of users and groups before you roll out to everyone. When scope for provisioning is set to assigned users and groups, you can maintain control by assigning one or two users or groups to the app. When scope is set to all users and groups, you can specify an [attribute-based scoping filter](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+* Start small. Test with a small set of users and groups before you roll out to everyone. When scope for provisioning is set to assigned users and groups, you can maintain control by assigning one or two users or groups to the app. When scope is set to all users and groups, you can specify an [attribute-based scoping filter](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 ## Step 5: Configure automatic user provisioning to Clarizen One
 
@@ -106,7 +106,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Clarizen One**.
 
-1. Review the user attributes that are synchronized from Microsoft Entra ID to Clarizen One in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Clarizen One for update operations. If you change the [matching target attribute](../app-provisioning/customize-application-attributes.md), you must ensure that the Clarizen One API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Clarizen One in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Clarizen One for update operations. If you change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you must ensure that the Clarizen One API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|
    |---|---|
@@ -160,7 +160,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
       |externalId|String|
       |members|Reference|
 
-1. To configure scoping filters, see the instructions in the  [Scoping filter tutorial](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, see the instructions in the  [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 1. To enable the Microsoft Entra provisioning service for Clarizen One, change **Provisioning Status** to **On** in the **Settings** section.
 
@@ -181,8 +181,8 @@ This operation starts the initial synchronization cycle of all users and groups 
 After you've configured provisioning, use the following resources to monitor your deployment.
 
 1. Use the [provisioning logs](../reports-monitoring/concept-provisioning-logs.md) to determine which users have been provisioned successfully or unsuccessfully.
-1. Check the [progress bar](../app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md) to see the status of the provisioning cycle and how close it is to completion.
-1. If the provisioning configuration seems to be in an unhealthy state, the application will go into quarantine. To learn more about quarantine states, see [Application provisioning in quarantine status](../app-provisioning/application-provisioning-quarantine-status.md).
+1. Check the [progress bar](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md) to see the status of the provisioning cycle and how close it is to completion.
+1. If the provisioning configuration seems to be in an unhealthy state, the application will go into quarantine. To learn more about quarantine states, see [Application provisioning in quarantine status](~/identity/app-provisioning/application-provisioning-quarantine-status.md).
 
 ## Troubleshooting tips
 
@@ -198,9 +198,9 @@ When you assign a user to the Clarizen One gallery app, select only the **User**
 
 ## Additional resources
 
-* [Managing user account provisioning for enterprise apps](../app-provisioning/configure-automatic-user-provisioning-portal.md)
+* [Managing user account provisioning for enterprise apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
 ## Next steps
 
-* [Learn how to review logs and get reports on provisioning activity](../app-provisioning/check-status-user-account-provisioning.md)
+* [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)

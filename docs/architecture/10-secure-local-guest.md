@@ -28,7 +28,7 @@ This article is number 10 in a series of 10 articles. We recommend you review th
 
 Before migrating local accounts to Microsoft Entra B2B, confirm the applications and workloads external users can access. For example, for applications hosted on-premises, validate the application is integrated with Microsoft Entra ID. On-premises applications are a good reason to create local accounts. 
 
-Learn more: [Grant B2B users in Microsoft Entra ID access to your on-premises applications](../external-identities/hybrid-cloud-to-on-premises.md)
+Learn more: [Grant B2B users in Microsoft Entra ID access to your on-premises applications](~/external-id/hybrid-cloud-to-on-premises.md)
 
 We recommend that external-facing applications have single-sign on (SSO) and provisioning integrated with Microsoft Entra ID for the best end user experience.
 
@@ -56,7 +56,7 @@ Notify external users about migration timing. Communicate expectations, for inst
 
 After local accounts have user.mail attributes populated with the external identity and email, convert local accounts to Microsoft Entra B2B by inviting the local account. You can use PowerShell or the Microsoft Graph API.
 
-Learn more: [Invite internal users to B2B collaboration](../external-identities/invite-internal-users.md)
+Learn more: [Invite internal users to B2B collaboration](~/external-id/invite-internal-users.md)
 
 ## Post-migration considerations
 

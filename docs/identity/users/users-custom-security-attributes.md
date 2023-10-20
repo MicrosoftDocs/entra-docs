@@ -21,7 +21,7 @@ ms.collection: M365-identity-device-management
 > Custom security attributes are currently in PREVIEW.
 > For more information about previews, see [Universal License Terms For Online Services](https://www.microsoft.com/licensing/terms/product/ForOnlineServices/all).
 
-[Custom security attributes](../fundamentals/custom-security-attributes-overview.md) in Microsoft Entra ID, part of Microsoft Entra, are business-specific attributes (key-value pairs) that you can define and assign to Microsoft Entra objects. For example, you can assign custom security attribute to filter your employees or to help determine who gets access to resources. This article describes how to assign, update, list, or remove custom security attributes for Microsoft Entra ID.
+[Custom security attributes](~/fundamentals/custom-security-attributes-overview.md) in Microsoft Entra ID, part of Microsoft Entra, are business-specific attributes (key-value pairs) that you can define and assign to Microsoft Entra objects. For example, you can assign custom security attribute to filter your employees or to help determine who gets access to resources. This article describes how to assign, update, list, or remove custom security attributes for Microsoft Entra ID.
 
 ## Prerequisites
 
@@ -41,7 +41,7 @@ To assign or remove custom security attributes for a user in your Microsoft Entr
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an [Attribute Assignment Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator).
 
-1. Make sure that you have defined custom security attributes. For more information, see [Add or deactivate custom security attribute definitions in Microsoft Entra ID](../fundamentals/custom-security-attributes-add.md).
+1. Make sure that you have defined custom security attributes. For more information, see [Add or deactivate custom security attribute definitions in Microsoft Entra ID](~/fundamentals/custom-security-attributes-add.md).
 
 1. Browse to **Identity**  > **Users** > **All users**.
 
@@ -1092,7 +1092,7 @@ No, custom security attributes are not supported in B2C tenants and are not rela
 
 ## Next steps
 
-- [Add or deactivate custom security attribute definitions in Microsoft Entra ID](../fundamentals/custom-security-attributes-add.md)
+- [Add or deactivate custom security attribute definitions in Microsoft Entra ID](~/fundamentals/custom-security-attributes-add.md)
 - [Assign, update, list, or remove custom security attributes for an application](~/identity/enterprise-apps/custom-security-attributes-apps.md)
 - [Examples: Assign, update, list, or remove custom security attribute assignments using the Microsoft Graph API](/graph/custom-security-attributes-examples)
-- [Troubleshoot custom security attributes in Microsoft Entra ID](../fundamentals/custom-security-attributes-troubleshoot.md)
+- [Troubleshoot custom security attributes in Microsoft Entra ID](~/fundamentals/custom-security-attributes-troubleshoot.md)

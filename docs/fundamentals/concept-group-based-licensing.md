@@ -39,7 +39,7 @@ For any groups assigned a license, you must also have a license for each unique 
 
 Here are the main features of group-based licensing:
 
-- Licenses can be assigned to any security group in Microsoft Entra ID. Security groups can be synced from on-premises, by using [Microsoft Entra Connect](../hybrid/connect/whatis-azure-ad-connect.md). You can also create security groups directly in Microsoft Entra ID (also called cloud-only groups), or automatically via the [Microsoft Entra dynamic group feature](../enterprise-users/groups-create-rule.md).
+- Licenses can be assigned to any security group in Microsoft Entra ID. Security groups can be synced from on-premises, by using [Microsoft Entra Connect](../hybrid/connect/whatis-azure-ad-connect.md). You can also create security groups directly in Microsoft Entra ID (also called cloud-only groups), or automatically via the [Microsoft Entra dynamic group feature](~/identity/users/groups-create-rule.md).
 
 - When a product license is assigned to a group, the administrator can disable one or more service plans in the product. Typically, this assignment is done when the organization is not yet ready to start using a service included in a product. For example, the administrator might assign Microsoft 365 to a department, but temporarily disable the Yammer service.
 
@@ -61,9 +61,9 @@ If you have feedback or feature requests, share them with us using [the Microsof
 
 To learn more about other scenarios for license management through group-based licensing, see:
 
-* [Assigning licenses to a group in Microsoft Entra ID](../enterprise-users/licensing-groups-assign.md)
-* [Identifying and resolving license problems for a group in Microsoft Entra ID](../enterprise-users/licensing-groups-resolve-problems.md)
-* [How to migrate individual licensed users to group-based licensing in Microsoft Entra ID](../enterprise-users/licensing-groups-migrate-users.md)
-* [How to migrate users between product licenses using group-based licensing in Microsoft Entra ID](../enterprise-users/licensing-groups-change-licenses.md)
-* [Microsoft Entra group-based licensing additional scenarios](../enterprise-users/licensing-group-advanced.md)
-* [PowerShell examples for group-based licensing in Microsoft Entra ID](../enterprise-users/licensing-ps-examples.md)
+* [Assigning licenses to a group in Microsoft Entra ID](~/identity/users/licensing-groups-assign.md)
+* [Identifying and resolving license problems for a group in Microsoft Entra ID](~/identity/users/licensing-groups-resolve-problems.md)
+* [How to migrate individual licensed users to group-based licensing in Microsoft Entra ID](~/identity/users/licensing-groups-migrate-users.md)
+* [How to migrate users between product licenses using group-based licensing in Microsoft Entra ID](~/identity/users/licensing-groups-change-licenses.md)
+* [Microsoft Entra group-based licensing additional scenarios](~/identity/users/licensing-group-advanced.md)
+* [PowerShell examples for group-based licensing in Microsoft Entra ID](~/identity/users/licensing-ps-examples.md)

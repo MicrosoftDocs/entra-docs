@@ -81,7 +81,7 @@ To configure an API Connector with client certificate authentication, follow the
 
 ### Perform authorization decisions 
 Your API must implement the authorization based on sent client certificates in order to protect the API endpoints. For Azure App Service and Azure Functions, see [configure TLS mutual authentication](/azure/app-service/app-service-web-configure-tls-mutual-auth) to learn how to enable and *validate the certificate from your API code*.  You can alternatively use Azure API Management as a layer in front of any API service to [check client certificate properties](
-../../api-management/api-management-howto-mutual-certificates-for-clients.md) against desired values.
+/azure/api-management/api-management-howto-mutual-certificates-for-clients.md) against desired values.
 
 ### Renewing certificates
 It's recommended you set reminder alerts for when your certificate expires. You'll need to generate a new certificate and repeat the steps above when used certificates are about to expire. To "roll" the use of a new certificate, your API service can continue to accept old and new certificates for a temporary amount of time while the new certificate is deployed. 

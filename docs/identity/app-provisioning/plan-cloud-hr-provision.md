@@ -17,7 +17,7 @@ ms.reviewer: arvinh
 
 Historically, IT staff has relied on manual methods to create, update, and delete employees. They've used methods such as uploading CSV files or custom scripts to sync employee data. These provisioning processes are error prone, insecure, and hard to manage.
 
-To manage the identity lifecycles of employees, vendors, or contingent workers, [Microsoft Entra user provisioning service](../app-provisioning/user-provisioning.md) offers integration with cloud-based human resources (HR) applications. Examples of applications include Workday or SuccessFactors.
+To manage the identity lifecycles of employees, vendors, or contingent workers, [Microsoft Entra user provisioning service](~/identity/app-provisioning/user-provisioning.md) offers integration with cloud-based human resources (HR) applications. Examples of applications include Workday or SuccessFactors.
 
 Microsoft Entra ID uses this integration to enable the following cloud HR application (app) workflows:
 
@@ -96,7 +96,7 @@ You also need a valid Microsoft Entra ID P1 or higher subscription license for e
 | Tutorials | [List of tutorials on how to integrate SaaS apps with Microsoft Entra ID](../saas-apps/tutorial-list.md) |
 | | [Tutorial: Configure automatic user provisioning with Workday](../saas-apps/workday-inbound-tutorial.md) |
 | | [Tutorial: Configure automatic user provisioning with SAP SuccessFactors](../saas-apps/sap-successfactors-inbound-provisioning-tutorial.md) |
-| FAQ | [Automated user provisioning](../app-provisioning/user-provisioning.md#what-applications-and-systems-can-i-use-with-azure-ad-automatic-user-provisioning) |
+| FAQ | [Automated user provisioning](~/identity/app-provisioning/user-provisioning.md#what-applications-and-systems-can-i-use-with-azure-ad-automatic-user-provisioning) |
 | | [Provisioning from Workday to Microsoft Entra ID](../saas-apps/workday-inbound-tutorial.md#frequently-asked-questions-faq) |
 
 ### Solution architecture
@@ -126,7 +126,7 @@ Consider your organizational needs while you determine the strategy for this dep
 
 ### Engage the right stakeholders
 
-When technology projects fail, they typically do so owing to mismatched expectations on impact, outcomes, and responsibilities. To avoid these pitfalls, [ensure that you're engaging the right stakeholders](../architecture/deployment-plans.md). Also make sure that stakeholder roles in the project are well understood. Document the stakeholders and their project input and accountabilities.
+When technology projects fail, they typically do so owing to mismatched expectations on impact, outcomes, and responsibilities. To avoid these pitfalls, [ensure that you're engaging the right stakeholders](~/architecture/deployment-plans.md). Also make sure that stakeholder roles in the project are well understood. Document the stakeholders and their project input and accountabilities.
 
 Include a representative from the HR organization who can provide inputs on existing HR business processes and worker identity plus job data-processing requirements.
 
@@ -138,7 +138,7 @@ Communication is critical to the success of any new service. Proactively communi
 
 Integrating HR business processes and identity workflows from the cloud HR app to target systems requires a considerable amount of data validation, data transformation, data cleansing, and end-to-end testing before you can deploy the solution into production.
 
-Run the initial configuration in a [pilot environment](../architecture/deployment-plans.md#best-practices-for-a-pilot) before you scale it to all users in production.
+Run the initial configuration in a [pilot environment](~/architecture/deployment-plans.md#best-practices-for-a-pilot) before you scale it to all users in production.
 
 ## Select cloud HR provisioning connector apps
 
@@ -335,7 +335,7 @@ When you enable provisioning from the cloud HR app to Active Directory or Micros
 
 ### Define scoping filters
 
-Use [scoping filters](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md) to define the attribute-based rules that determine which users should be provisioned from the cloud HR app to Active Directory or Microsoft Entra ID.
+Use [scoping filters](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md) to define the attribute-based rules that determine which users should be provisioned from the cloud HR app to Active Directory or Microsoft Entra ID.
 
 When you initiate the Joiners process, gather the following requirements:
 
@@ -347,7 +347,7 @@ Depending on your requirements, when you configure attribute mappings, you can s
 
 ### Determine matching attributes
 
-With provisioning, you get the ability to match existing accounts between the source and target system. When you integrate the cloud HR app with the Microsoft Entra provisioning service, you can [configure attribute mapping](../app-provisioning/configure-automatic-user-provisioning-portal.md#mappings) to determine what user data should flow from the cloud HR app to Active Directory or Microsoft Entra ID.
+With provisioning, you get the ability to match existing accounts between the source and target system. When you integrate the cloud HR app with the Microsoft Entra provisioning service, you can [configure attribute mapping](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md#mappings) to determine what user data should flow from the cloud HR app to Active Directory or Microsoft Entra ID.
 
 When you initiate the Joiners process, gather the following requirements:
 
@@ -357,13 +357,13 @@ When you initiate the Joiners process, gather the following requirements:
 - From an identity lifecycle perspective, how do you handle employee to contingent worker conversion, or otherwise?
 - Do converted users keep their old Active Directory accounts or do they get new ones?
 
-Depending on your requirements, Microsoft Entra ID supports direct attribute-to-attribute mapping by providing constant values or [writing expressions for attribute mappings](../app-provisioning/functions-for-customizing-application-data.md). This flexibility gives you ultimate control of what's populated in the targeted app attribute. You can use the [Microsoft Graph API](../app-provisioning/export-import-provisioning-configuration.md) and Graph Explorer to export your user provisioning attribute mappings and schema to a JSON file and import it back into Microsoft Entra ID.
+Depending on your requirements, Microsoft Entra ID supports direct attribute-to-attribute mapping by providing constant values or [writing expressions for attribute mappings](~/identity/app-provisioning/functions-for-customizing-application-data.md). This flexibility gives you ultimate control of what's populated in the targeted app attribute. You can use the [Microsoft Graph API](~/identity/app-provisioning/export-import-provisioning-configuration.md) and Graph Explorer to export your user provisioning attribute mappings and schema to a JSON file and import it back into Microsoft Entra ID.
 
 By default, the attribute in the cloud HR app that represents the unique employee ID is used as the matching attribute *mapped to the unique attribute in Active Directory.* For example, in the Workday app scenario, the **Workday** **WorkerID** attribute is mapped to the Active Directory **employeeID** attribute.
 
 You can set multiple matching attributes and assign matching precedence. They're evaluated on matching precedence. As soon as a match is found, no further matching attributes are evaluated.
 
-You can also [customize the default attribute mappings](../app-provisioning/customize-application-attributes.md#understanding-attribute-mapping-types), such as changing or deleting existing attribute mappings. You can also create new attribute mappings according to your business needs. For more information, see the cloud HR app tutorial (such as [Workday](../saas-apps/workday-inbound-tutorial.md#managing-your-configuration)) for a list of custom attributes to map.
+You can also [customize the default attribute mappings](~/identity/app-provisioning/customize-application-attributes.md#understanding-attribute-mapping-types), such as changing or deleting existing attribute mappings. You can also create new attribute mappings according to your business needs. For more information, see the cloud HR app tutorial (such as [Workday](../saas-apps/workday-inbound-tutorial.md#managing-your-configuration)) for a list of custom attributes to map.
 
 ### Determine user account status
 
@@ -382,7 +382,7 @@ When you initiate the Joiners-Leavers process, gather the following requirements
 | | How do employee and contingent worker conversions affect existing Active Directory accounts? |
 | | How do you process the Rescind operation in Active Directory? Rescind operations need to be handled if future dated hires are created in Active Directory as part of the Joiner process. |
 
-Depending on your requirements, you might customize the mapping logic by using [Microsoft Entra expressions](../app-provisioning/functions-for-customizing-application-data.md) so that the Active Directory account is enabled or disabled based on a combination of data points.
+Depending on your requirements, you might customize the mapping logic by using [Microsoft Entra expressions](~/identity/app-provisioning/functions-for-customizing-application-data.md) so that the Active Directory account is enabled or disabled based on a combination of data points.
 
 ### Map cloud HR app to Active Directory user attributes
 
@@ -406,7 +406,7 @@ Depending on your requirements, you can modify the mappings to meet your integra
 Attributes like CN, samAccountName, and the UPN have unique constraints. You may need to generate unique attribute values when you initiate the Joiners process.
 
 
-The Microsoft Entra ID function [SelectUniqueValues](../app-provisioning/functions-for-customizing-application-data.md#selectuniquevalue) evaluates each rule and then checks the value generated for uniqueness in the target system. For an example, see [Generate unique value for the userPrincipalName (UPN) attribute](../app-provisioning/functions-for-customizing-application-data.md#generate-unique-value-for-userprincipalname-upn-attribute).
+The Microsoft Entra ID function [SelectUniqueValues](~/identity/app-provisioning/functions-for-customizing-application-data.md#selectuniquevalue) evaluates each rule and then checks the value generated for uniqueness in the target system. For an example, see [Generate unique value for the userPrincipalName (UPN) attribute](~/identity/app-provisioning/functions-for-customizing-application-data.md#generate-unique-value-for-userprincipalname-upn-attribute).
 
 > [!NOTE]
 > This function is currently only supported for Workday to Active Directory and SAP SuccessFactors to Active Directory user provisioning. It can't be used with other provisioning apps.
@@ -415,7 +415,7 @@ The Microsoft Entra ID function [SelectUniqueValues](../app-provisioning/functio
 
 It's a common requirement to place Active Directory user accounts into containers based on business units, locations, and departments. When you initiate a Movers process, and if there's a supervisory organization change, you might need to move the user from one OU to another in Active Directory.
 
-Use the [Switch()](../app-provisioning/functions-for-customizing-application-data.md#switch) function to configure the business logic for the OU assignment, and map it to the Active Directory attribute **parentDistinguishedName**.
+Use the [Switch()](~/identity/app-provisioning/functions-for-customizing-application-data.md#switch) function to configure the business logic for the OU assignment, and map it to the Active Directory attribute **parentDistinguishedName**.
 
 For example, if you want to create users in OU based on the HR attribute **Municipality**, you can use the following expression:
 
@@ -433,14 +433,14 @@ SSPR is a simple means for IT administrators to enable users to reset their pass
 
 ## Plan for initial cycle
 
-When the Microsoft Entra provisioning service runs for the first time, it performs an [initial cycle](../app-provisioning/how-provisioning-works.md#initial-cycle) against the cloud HR app to create a snapshot of all user objects in the cloud HR app. The time taken for initial cycles is directly dependent on how many users are present in the source system. The initial cycle for some cloud HR app tenants with over 100,000 users can take a long time.
+When the Microsoft Entra provisioning service runs for the first time, it performs an [initial cycle](~/identity/app-provisioning/how-provisioning-works.md#initial-cycle) against the cloud HR app to create a snapshot of all user objects in the cloud HR app. The time taken for initial cycles is directly dependent on how many users are present in the source system. The initial cycle for some cloud HR app tenants with over 100,000 users can take a long time.
 
 **For large cloud HR app tenants (>30,000 users),** run the initial cycle in progressive stages. Start the incremental updates only after you validate that the correct attributes are set in Active Directory for different user provisioning scenarios. Follow the order here.
 
 1. Run the initial cycle only for a limited set of users by setting the [scoping filter](#plan-scoping-filters-and-attribute-mapping).
 2. Verify Active Directory account provisioning and the attribute values set for the users selected for the first run. If the result meets your expectations, expand the scoping filter to progressively include more users and verify the results for the second run.
 
-After you're satisfied with the results of the initial cycle for test users, start the [incremental updates](../app-provisioning/how-provisioning-works.md#incremental-cycles).
+After you're satisfied with the results of the initial cycle for test users, start the [incremental updates](~/identity/app-provisioning/how-provisioning-works.md#incremental-cycles).
 
 ## Plan testing and security
 A deployment consists of stages ranging from the initial pilot to enabling user provisioning. At each stage, ensure that you're testing for expected results. Also, audit the provisioning cycles.
@@ -471,7 +471,7 @@ It's common for a security review to be required as part of the deployment of a 
 
 The cloud HR user provisioning implementation might fail to work as desired in the production environment. If so, the following rollback steps can assist you in reverting to a previous known good state.
 
-1. Review the [provisioning logs](../app-provisioning/check-status-user-account-provisioning.md#provisioning-logs) to determine what incorrect operations were performed on the affected users or groups. For more information on the provisioning summary report and logs, see [Manage cloud HR app user provisioning](#manage-your-configuration).
+1. Review the [provisioning logs](~/identity/app-provisioning/check-status-user-account-provisioning.md#provisioning-logs) to determine what incorrect operations were performed on the affected users or groups. For more information on the provisioning summary report and logs, see [Manage cloud HR app user provisioning](#manage-your-configuration).
 2. The last known good state of the users or groups affected can be determined through the provisioning audit logs or by reviewing the target systems (Microsoft Entra ID or Active Directory).
 3. Work with the app owner to update the users or groups affected directly in the app by using the last known good state values.
 
@@ -489,13 +489,13 @@ Microsoft Entra ID can provide more insights into your organization's user provi
 
 ### Gain insights from reports and logs
 
-After a successful [initial cycle](../app-provisioning/how-provisioning-works.md#initial-cycle), the Microsoft Entra provisioning service continues to run back-to-back incremental updates indefinitely, at intervals defined in the tutorials specific to each app, until one of the following events occurs:
+After a successful [initial cycle](~/identity/app-provisioning/how-provisioning-works.md#initial-cycle), the Microsoft Entra provisioning service continues to run back-to-back incremental updates indefinitely, at intervals defined in the tutorials specific to each app, until one of the following events occurs:
 
 - The service is manually stopped. A new initial cycle is triggered by using the [Microsoft Entra admin center](https://entra.microsoft.com) or the appropriate [Microsoft Graph API](/graph/api/resources/synchronization-overview) command.
 - A new initial cycle is triggered owing to a change in attribute mappings or scoping filters.
 - The provisioning process goes into quarantine because of a high error rate. It stays in quarantine for more than four weeks, at which time it's automatically disabled.
 
-To review these events and all other activities performed by the provisioning service, [learn how to review logs and get reports on provisioning activity](../app-provisioning/check-status-user-account-provisioning.md).
+To review these events and all other activities performed by the provisioning service, [learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md).
 
 #### Azure Monitor logs
 

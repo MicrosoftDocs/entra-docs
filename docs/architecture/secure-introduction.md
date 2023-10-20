@@ -43,7 +43,7 @@ To distinguish between human and non-human identities, different terms are emerg
 
 * **Workload identity** - In Microsoft Entra ID, workload identities are applications, service principals, and managed identities. The workload identity is used to authenticate and access other services and resources.
 
-For more information on workload identities, see [What are workload identities](../workload-identities/workload-identities-overview.md).
+For more information on workload identities, see [What are workload identities](~/workload-id/workload-identities-overview.md).
 
 The Microsoft Entra tenant is an identity security boundary that is under the control of global administrators. Within this security boundary, administration of subscriptions, management groups, and resource groups can be delegated to segment administrative control of Azure resources. While not directly interacting, these groupings are dependent on tenant-wide configurations of policies and settings. And those settings and configurations are under the control of the Microsoft Entra Global Administrators.
 
@@ -95,14 +95,14 @@ As outlined in the previous diagram, identities, resources, and their relationsh
 
 Having a set of directory objects in the Microsoft Entra tenant boundary engenders the following Capabilities:
 
-* Visibility. Identities can discover or enumerate resources, users, groups, access usage reporting and audit logs based on their permissions. For example, a member of the directory can discover users in the directory per Microsoft Entra ID [default user permissions](../fundamentals/users-default-permissions.md).
+* Visibility. Identities can discover or enumerate resources, users, groups, access usage reporting and audit logs based on their permissions. For example, a member of the directory can discover users in the directory per Microsoft Entra ID [default user permissions](~/fundamentals/users-default-permissions.md).
 
 * Applications can affect objects. Applications can manipulate directory objects through Microsoft Graph as part of their business logic. Typical examples include reading/setting user attributes, updating user's calendar, sending emails on behalf of the user, etc. Consent is necessary to allow applications to affect the tenant. Administrators can consent for all users. For more information, see [Permissions and consent in the Microsoft identity platform](~/identity-platform/v2-admin-consent.md).
 
 >[!NOTE]
 >Use caution when using application permissions. For example, with Exchange Online, you should [scope application permissions to specific mailboxes and permissions](/graph/auth-limit-mailbox-access).
 
-* Throttling and service limits. Runtime behavior of a resource might trigger [throttling](/graph/throttling) in order to prevent overuse or service degradation. Throttling can occur at the application, tenant, or entire service level. Most commonly it occurs when an application has a large number of requests within or across tenants. Similarly, there are [Microsoft Entra service limits and restrictions](../enterprise-users/directory-service-limits-restrictions.md) that might affect the runtime behavior of applications.
+* Throttling and service limits. Runtime behavior of a resource might trigger [throttling](/graph/throttling) in order to prevent overuse or service degradation. Throttling can occur at the application, tenant, or entire service level. Most commonly it occurs when an application has a large number of requests within or across tenants. Similarly, there are [Microsoft Entra service limits and restrictions](~/identity/users/directory-service-limits-restrictions.md) that might affect the runtime behavior of applications.
 
 ## Administrative units for role management
 

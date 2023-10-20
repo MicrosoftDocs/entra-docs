@@ -337,7 +337,7 @@ Azure log integration enables you to integrate raw logs from your Azure resource
 
 #### Implement user provisioning for connected apps
 
-Microsoft Entra ID allows you to automate creating and maintaining user identities in cloud apps like Dropbox, Salesforce, and ServiceNow. For more information, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](../app-provisioning/user-provisioning.md).
+Microsoft Entra ID allows you to automate creating and maintaining user identities in cloud apps like Dropbox, Salesforce, and ServiceNow. For more information, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 
 #### Integrate information protection
 

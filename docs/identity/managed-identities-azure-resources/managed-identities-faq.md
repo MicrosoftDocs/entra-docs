@@ -137,7 +137,7 @@ Managed identities limits have dependencies on Azure service limits, Azure Insta
 
 - **Azure service limits** define the number of create operations that can be performed at the tenant and subscription levels. User assigned managed identities also have [limitations](/azure/azure-resource-manager/management/azure-subscription-service-limits#managed-identity-limits) around how they may be named.
 - **IMDS** In general, requests to IMDS are limited to five requests per second. Requests exceeding this threshold will be rejected with 429 responses. Requests to the Managed Identity category are limited to 20 requests per second and 5 concurrent requests. You can read more at the [Azure Instance Metadata Service (Windows)](/azure/virtual-machines/windows/instance-metadata-service?tabs=windows#managed-identity) article.
-- **Microsoft Entra service** Each managed identity counts towards the object quota limit in a Microsoft Entra tenant as described in [Microsoft Entra service limits and restrictions](../enterprise-users/directory-service-limits-restrictions.md).
+- **Microsoft Entra service** Each managed identity counts towards the object quota limit in a Microsoft Entra tenant as described in [Microsoft Entra service limits and restrictions](~/identity/users/directory-service-limits-restrictions.md).
 
 
 ### Is it possible to move a user-assigned managed identity to a different resource group/subscription?

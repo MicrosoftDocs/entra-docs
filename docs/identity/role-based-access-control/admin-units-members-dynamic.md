@@ -25,7 +25,7 @@ ms.collection: M365-identity-device-management
 You can add or remove users or devices for administrative units manually. With this preview, you can add or remove users or devices for administrative units dynamically using rules. This article describes how to create administrative units with dynamic membership rules using the Microsoft Entra admin center, PowerShell, or Microsoft Graph API.
 
 > [!NOTE]
-> Dynamic membership rules for administrative units can be created using the same attributes available for dynamic groups. For more information about the specific attributes available and examples on how to use them, see [Dynamic membership rules for groups in Microsoft Entra ID](../enterprise-users/groups-dynamic-membership.md).
+> Dynamic membership rules for administrative units can be created using the same attributes available for dynamic groups. For more information about the specific attributes available and examples on how to use them, see [Dynamic membership rules for groups in Microsoft Entra ID](~/identity/users/groups-dynamic-membership.md).
 
 Although administrative units with members assigned manually support multiple object types, such as user, group, and devices, it is currently not possible to create an administrative unit with dynamic membership rules that includes more than one object type. For example, you can create administrative units with dynamic membership rules for users or devices, but not both. Administrative units with dynamic membership rules for groups are currently not supported.
 
@@ -63,7 +63,7 @@ Follow these steps to create administrative units with dynamic membership rules 
     
 1. Select **Add dynamic query**.
 
-1. Use the rule builder to specify the dynamic membership rule. For more information, see [Rule builder in the Azure portal](../enterprise-users/groups-dynamic-membership.md#rule-builder-in-the-azure-portal).
+1. Use the rule builder to specify the dynamic membership rule. For more information, see [Rule builder in the Azure portal](~/identity/users/groups-dynamic-membership.md#rule-builder-in-the-azure-portal).
 
     ![Screenshot of Dynamic membership rules page showing rule builder with property, operator, and value.](./media/admin-units-members-dynamic/dynamic-membership-rules-builder.png)
 
@@ -81,7 +81,7 @@ For steps on how to edit your rule, see the following [Edit dynamic membership r
 
 ### PowerShell
 
-1. Create a dynamic membership rule. For more information, see [Dynamic membership rules for groups in Microsoft Entra ID](../enterprise-users/groups-dynamic-membership.md).
+1. Create a dynamic membership rule. For more information, see [Dynamic membership rules for groups in Microsoft Entra ID](~/identity/users/groups-dynamic-membership.md).
 
 1. Use the [Connect-AzureAD](/powershell/module/azuread/connect-azuread) command to connect with Microsoft Entra ID with a user that has been assigned the Privileged Role Administrator or Global Administrator role.
 
@@ -103,7 +103,7 @@ For steps on how to edit your rule, see the following [Edit dynamic membership r
 
 ### Microsoft Graph API
 
-1. Create a dynamic membership rule. For more information, see [Dynamic membership rules for groups in Microsoft Entra ID](../enterprise-users/groups-dynamic-membership.md).
+1. Create a dynamic membership rule. For more information, see [Dynamic membership rules for groups in Microsoft Entra ID](~/identity/users/groups-dynamic-membership.md).
 
 1. Use the [Create administrativeUnit](/graph/api/directory-post-administrativeunits?view=graph-rest-beta&preserve-view=true) API to create a new administrative unit with a dynamic membership rule.
     

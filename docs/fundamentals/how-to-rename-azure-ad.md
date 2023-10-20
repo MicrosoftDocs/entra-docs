@@ -38,7 +38,7 @@ Audit your experiences to find references to Azure AD and its icons.
 - Search for the following terms: `Azure Active Directory (Azure AD)`, `Azure Active Directory`, `Azure AD`, `AAD`
 - Search for graphics with the Azure AD icon (![Azure AD product icon](./media/new-name/azure-ad-icon-1.png)  ![Alternative Azure AD product icon](./media/new-name/azure-ad-icon-2.png)) to replace with the Microsoft Entra ID icon (![Microsoft Entra ID product icon](./media/new-name/microsoft-entra-id-icon.png))
 
-You can download the Microsoft Entra ID icon here: [Microsoft Entra architecture icons](../architecture/architecture-icons.md)
+You can download the Microsoft Entra ID icon here: [Microsoft Entra architecture icons](~/architecture/architecture-icons.md)
 
 **Identify exceptions in your list**:
 

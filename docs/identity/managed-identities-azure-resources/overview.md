@@ -104,4 +104,4 @@ Operations on managed identities can be performed by using an Azure Resource Man
 * [How to use managed identities for App Service and Azure Functions](/azure/app-service/overview-managed-identity)
 * [How to use managed identities with Azure Container Instances](/azure/container-instances/container-instances-managed-identity)
 * [Implementing managed identities for Microsoft Azure Resources](https://www.pluralsight.com/courses/microsoft-azure-resources-managed-identities-implementing)
-* Use [workload identity federation for managed identities](../workload-identities/workload-identity-federation.md) to access Microsoft Entra protected resources without managing secrets
+* Use [workload identity federation for managed identities](~/workload-id/workload-identity-federation.md) to access Microsoft Entra protected resources without managing secrets

@@ -15,9 +15,9 @@
       displayName: introduction, basics, overview
       items:
         - name: Identity fundamentals
-          href: ../fundamentals/identity-fundamental-concepts.md?toc=/azure/active-directory/develop/toc.json&bc=/azure/active-directory/develop/breadcrumb/toc.json
+          href: ~/fundamentals/identity-fundamental-concepts.md?toc=/azure/active-directory/develop/toc.json&bc=/azure/active-directory/develop/breadcrumb/toc.json
         - name: Introduction to identity and access management
-          href: ../fundamentals/introduction-identity-access-management.md?toc=/azure/active-directory/develop/toc.json&bc=/azure/active-directory/develop/breadcrumb/toc.json
+          href: ~/fundamentals/introduction-identity-access-management.md?toc=/azure/active-directory/develop/toc.json&bc=/azure/active-directory/develop/breadcrumb/toc.json
         - name: Authentication vs. authorization
           href: authentication-vs-authorization.md
         - name: OAuth 2.0 and OpenID Connect
@@ -74,7 +74,7 @@
         - name: Application model
           href: application-model.md
         - name: Workload identities
-          href: ../workload-identities/workload-identities-overview.md
+          href: ~/workload-id/workload-identities-overview.md
         - name: Applications and service principals
           href: app-objects-and-service-principals.md
         - name: How and why apps are added
@@ -534,21 +534,21 @@
         - name: Automatic user provisioning (SCIM)
           items:
             - name: Common provisioning scenarios
-              href: ../app-provisioning/scim-graph-scenarios.md?toc=/azure/active-directory/develop/toc.json&bc=/azure/active-directory/develop/breadcrumb/toc.json
+              href: ~/identity/app-provisioning/scim-graph-scenarios.md?toc=/azure/active-directory/develop/toc.json&bc=/azure/active-directory/develop/breadcrumb/toc.json
             - name: Automate configuration using MS Graph
-              href: ../app-provisioning/application-provisioning-configuration-api.md?bc=/azure/active-directory/develop/breadcrumb/toc.json&toc=/azure/active-directory/develop/toc.json
+              href: ~/identity/app-provisioning/application-provisioning-configuration-api.md?bc=/azure/active-directory/develop/breadcrumb/toc.json&toc=/azure/active-directory/develop/toc.json
             - name: Develop and integrate a SCIM endpoint
-              href: ../app-provisioning/use-scim-to-provision-users-and-groups.md?toc=/azure/active-directory/develop/toc.json&bc=/azure/active-directory/develop/breadcrumb/toc.json
+              href: ~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md?toc=/azure/active-directory/develop/toc.json&bc=/azure/active-directory/develop/breadcrumb/toc.json
     - name: Secure
       items:
         - name: Build for resilience
           items:
             - name: Development Overview
-              href: ../architecture/resilience-app-development-overview.md?toc=/azure/active-directory/develop/toc.json&bc=/azure/active-directory/develop/breadcrumb/toc.json
+              href: ~/architecture/resilience-app-development-overview.md?toc=/azure/active-directory/develop/toc.json&bc=/azure/active-directory/develop/breadcrumb/toc.json
             - name: Client applications
-              href: ../architecture/resilience-client-app.md?toc=/azure/active-directory/develop/toc.json&bc=/azure/active-directory/develop/breadcrumb/toc.json
+              href: ~/architecture/resilience-client-app.md?toc=/azure/active-directory/develop/toc.json&bc=/azure/active-directory/develop/breadcrumb/toc.json
             - name: Daemon applications
-              href: ../architecture/resilience-daemon-app.md?toc=/azure/active-directory/develop/toc.json&bc=/azure/active-directory/develop/breadcrumb/toc.json
+              href: ~/architecture/resilience-daemon-app.md?toc=/azure/active-directory/develop/toc.json&bc=/azure/active-directory/develop/breadcrumb/toc.json
             - name: OpenID Connect metadata refresh
               href: howto-build-services-resilient-to-metadata-refresh.md
         - name: Use Continuous Access Evaluation APIs

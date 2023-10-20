@@ -28,7 +28,7 @@ When using workbooks, you can either start with an empty workbook, or use an exi
 
 To use Azure Workbooks for Microsoft Entra ID, you need:
 
-- A Microsoft Entra tenant with a [Premium P1 license](../fundamentals/get-started-premium.md)
+- A Microsoft Entra tenant with a [Premium P1 license](~/fundamentals/get-started-premium.md)
 - A Log Analytics workspace *and* access to that workspace
 - The appropriate roles for Azure Monitor *and* Microsoft Entra ID
 

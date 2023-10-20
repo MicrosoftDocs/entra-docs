@@ -55,7 +55,7 @@ To check the versions of your Authentication Agents, on each server identified i
 
 Before upgrading, ensure that you have the following items in place:
 
-1. **Create cloud-only Global Administrator account**: Don’t upgrade without having a cloud-only Global Administrator account to use in emergency situations where your Pass-through Authentication Agents aren't working properly. Learn about [adding a cloud-only Global Administrator account](../../fundamentals/add-users.md). Doing this step is critical and ensures that you don't get locked out of your tenant.
+1. **Create cloud-only Global Administrator account**: Don’t upgrade without having a cloud-only Global Administrator account to use in emergency situations where your Pass-through Authentication Agents aren't working properly. Learn about [adding a cloud-only Global Administrator account](~/fundamentals/add-users.md). Doing this step is critical and ensures that you don't get locked out of your tenant.
 2. **Ensure high availability**: If not completed previously, install a second standalone Authentication Agent to provide high availability for sign-in requests, using these [instructions](how-to-connect-pta-quick-start.md#step-4-ensure-high-availability).
 
 <a name='upgrading-the-authentication-agent-on-your-azure-ad-connect-server'></a>

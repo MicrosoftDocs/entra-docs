@@ -56,7 +56,7 @@ If you can’t use connected organizations in entitlement management, create a M
 Learn more: 
 
 * [What is entitlement management?](../governance/entitlement-management-overview.md)
-* [Manage Microsoft Entra groups and group membership](../fundamentals/how-to-manage-groups.md)
+* [Manage Microsoft Entra groups and group membership](~/fundamentals/how-to-manage-groups.md)
 * [Overview of Microsoft 365 Groups for administrators](/microsoft-365/admin/create-groups/office-365-groups?view=o365-worldwide&preserve-view=true)
 
 ### Conditional Access policy creation
@@ -99,7 +99,7 @@ Learn more: [Manage emergency access accounts in Microsoft Entra ID](~/identity/
 
 There are scenarios when it's necessary to allow access for a small, specific group. 
 
-Before you begin, we recommend you create a security group, which contains external users who access resources. See, [Quickstart: Create a group with members and view all groups and members in Microsoft Entra ID](../fundamentals/groups-view-azure-portal.md).
+Before you begin, we recommend you create a security group, which contains external users who access resources. See, [Quickstart: Create a group with members and view all groups and members in Microsoft Entra ID](~/fundamentals/groups-view-azure-portal.md).
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Protection** > **Conditional Access**.

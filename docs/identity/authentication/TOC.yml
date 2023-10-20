@@ -329,7 +329,7 @@
   - name: Authentication methods policy - Microsoft Graph
     href: /graph/api/resources/authenticationmethodspolicies-overview
   - name: Service limits and restrictions
-    href: ../enterprise-users/directory-service-limits-restrictions.md
+    href: ~/identity/users/directory-service-limits-restrictions.md
   - name: FIDO2 compatibility
     href: fido2-compatibility.md
   - name: Become a FIDO2 provider
@@ -345,7 +345,7 @@
   - name: Feature availability
     href: feature-availability.md
   - name: Service updates
-    href: ../fundamentals/whats-new.md
+    href: ~/fundamentals/whats-new.md
   - name: Stack Overflow
     href: https://stackoverflow.com/questions/tagged/azure-active-directory
   - name: Videos

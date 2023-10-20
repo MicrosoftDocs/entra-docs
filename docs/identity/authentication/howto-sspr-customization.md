@@ -58,7 +58,7 @@ If your organization doesn't want to notify administrators about password reset 
 
 ## Customize the sign-in page and access panel
 
-You can customize the sign-in page, such as to add a logo that appears along with the image that fits your company branding. For more information on how to configure company branding, see [Add company branding to your sign-in page in Microsoft Entra ID](../fundamentals/how-to-customize-branding.md).
+You can customize the sign-in page, such as to add a logo that appears along with the image that fits your company branding. For more information on how to configure company branding, see [Add company branding to your sign-in page in Microsoft Entra ID](~/fundamentals/how-to-customize-branding.md).
 
 The graphics you choose are shown in the following circumstances:
 

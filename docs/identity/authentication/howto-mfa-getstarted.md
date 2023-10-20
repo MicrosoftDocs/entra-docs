@@ -270,4 +270,4 @@ For a guided walkthrough of many of the recommendations in this article, see the
 
 ## Next steps
 
-[Deploy other identity features](../architecture/deployment-plans.md)
+[Deploy other identity features](~/architecture/deployment-plans.md)

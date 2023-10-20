@@ -66,7 +66,7 @@ No, we block SAML/WS-Fed IdP federation for Microsoft Entra ID verified domains 
 
 **Can I set up SAML/WS-Fed IdP federation with a domain for which an unmanaged (email-verified) tenant exists?**
  
-Yes, you can set up SAML/WS-Fed IdP federation with domains that aren't DNS-verified in Microsoft Entra ID, including unmanaged (email-verified or "viral") Microsoft Entra tenants. Such tenants are created when a user redeems a B2B invitation or performs self-service sign-up for Microsoft Entra ID using a domain that doesn’t currently exist. If the domain hasn't been verified and the tenant hasn't undergone an [admin takeover](../enterprise-users/domains-admin-takeover.md), you can set up federation with that domain.
+Yes, you can set up SAML/WS-Fed IdP federation with domains that aren't DNS-verified in Microsoft Entra ID, including unmanaged (email-verified or "viral") Microsoft Entra tenants. Such tenants are created when a user redeems a B2B invitation or performs self-service sign-up for Microsoft Entra ID using a domain that doesn’t currently exist. If the domain hasn't been verified and the tenant hasn't undergone an [admin takeover](~/identity/users/domains-admin-takeover.md), you can set up federation with that domain.
 
 **How many federation relationships can I create?**
 

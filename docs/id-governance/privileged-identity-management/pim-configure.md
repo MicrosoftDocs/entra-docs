@@ -180,7 +180,7 @@ With the PIM for Groups preview, you can give workload-specific administrators q
 
 ## Invite guest users and assign Azure resource roles in Privileged Identity Management
 
-Microsoft Entra guest users are part of the business-to-business (B2B) collaboration capabilities within Microsoft Entra ID so that you can manage external guest users and vendors as guests in Microsoft Entra ID. For example, you can use these Privileged Identity Management features for Azure identity tasks with guests such as assigning access to specific Azure resources, specifying assignment duration and end date, or requiring two-step verification on active assignment or activation. For more information on how to invite a guest to your organization and manage their access, see [Add B2B collaboration users in the Azure portal](../external-identities/add-users-administrator.md).
+Microsoft Entra guest users are part of the business-to-business (B2B) collaboration capabilities within Microsoft Entra ID so that you can manage external guest users and vendors as guests in Microsoft Entra ID. For example, you can use these Privileged Identity Management features for Azure identity tasks with guests such as assigning access to specific Azure resources, specifying assignment duration and end date, or requiring two-step verification on active assignment or activation. For more information on how to invite a guest to your organization and manage their access, see [Add B2B collaboration users in the Azure portal](~/external-id/add-users-administrator.md).
 
 ### When would you invite guests?
 
@@ -192,7 +192,7 @@ Here are a couple examples of when you might invite guests to your organization:
 
 ### How does collaboration using B2B guests work?
 
-When you use B2B collaboration, you can invite an external user to your organization as a guest. The guest can be managed as a user in your organization, but a guest has to be authenticated in their home organization and not in your Microsoft Entra organization. This means that if the guest no longer has access to their home organization, they also lose access to your organization. For example, if the guest leaves their organization, they automatically lose access to any resources you shared with them in Microsoft Entra ID without you having to do anything. For more information about B2B collaboration, see [What is guest user access in Microsoft Entra B2B?](../external-identities/what-is-b2b.md).
+When you use B2B collaboration, you can invite an external user to your organization as a guest. The guest can be managed as a user in your organization, but a guest has to be authenticated in their home organization and not in your Microsoft Entra organization. This means that if the guest no longer has access to their home organization, they also lose access to your organization. For example, if the guest leaves their organization, they automatically lose access to any resources you shared with them in Microsoft Entra ID without you having to do anything. For more information about B2B collaboration, see [What is guest user access in Microsoft Entra B2B?](~/external-id/what-is-b2b.md).
 
 ![Diagram showing how a guest user is authenticated in their home directory](./media/pim-configure/b2b-external-user.png)
 

@@ -52,7 +52,7 @@ To assign the role to a service principal instead of a user, use the [Get-AzureA
 
 ## Role definitions
 
-Role definition objects contain the definition of the built-in or custom role, along with the permissions that are granted by that role assignment. This resource displays both custom role definitions and built-in directory roles (which are displayed in roleDefinition equivalent form). For information about the maximum number of custom roles that can be created in a Microsoft Entra organization, see [Microsoft Entra service limits and restrictions](../enterprise-users/directory-service-limits-restrictions.md).
+Role definition objects contain the definition of the built-in or custom role, along with the permissions that are granted by that role assignment. This resource displays both custom role definitions and built-in directory roles (which are displayed in roleDefinition equivalent form). For information about the maximum number of custom roles that can be created in a Microsoft Entra organization, see [Microsoft Entra service limits and restrictions](~/identity/users/directory-service-limits-restrictions.md).
 
 ### Create a role definition
 
@@ -143,4 +143,4 @@ Remove-AzureADMSRoleAssignment -Id 'qiho4WOb9UKKgng_LbPV7tvKaKRCD61PkJeKMh7Y458-
 
 - Share with us on the [Microsoft Entra administrative roles forum](https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789)
 - For more about roles and Microsoft Entra administrator role assignments, see [Assign administrator roles](permissions-reference.md)
-- For default user permissions, see a [comparison of default guest and member user permissions](../fundamentals/users-default-permissions.md)
+- For default user permissions, see a [comparison of default guest and member user permissions](~/fundamentals/users-default-permissions.md)

@@ -48,7 +48,7 @@ For more information see [What is cloud sync?](../cloud-sync/what-is-cloud-sync.
 - [Health Monitoring](whatis-azure-ad-connect.md#what-is-azure-ad-connect-health) - Microsoft Entra Connect Health can provide robust monitoring and provide a central location in the [Microsoft Entra admin center](https://entra.microsoft.com) to view this activity. 
 
 
-![What is Microsoft Entra Connect](../media/whatis-hybrid-identity/arch.png)
+![What is Microsoft Entra Connect](~/identity/hybrid/media/whatis-hybrid-identity/arch.png)
 
 > [!IMPORTANT]
 > Microsoft Entra Connect Health for Sync requires Microsoft Entra Connect Sync V2. If you are still using Azure AD Connect V1 you must upgrade to the latest version. 

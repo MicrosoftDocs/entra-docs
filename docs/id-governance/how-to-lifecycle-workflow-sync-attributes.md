@@ -50,7 +50,7 @@ The EmployeeHireDate and EmployeeLeaveDateTime contain dates and times that must
 |Workday to Microsoft Entra user provisioning|Can use a direct mapping.  No expression is needed but may be used to adjust the time portion of EmployeeHireDate and EmployeeLeaveDateTime|EmployeeHireDate and EmployeeLeaveDateTime||
 |SuccessFactors to Microsoft Entra user provisioning|Can use a direct mapping.  No expression is needed but may be used to adjust the time portion of EmployeeHireDate and EmployeeLeaveDateTime|EmployeeHireDate and EmployeeLeaveDateTime||
 
-For more information on expressions, see [Reference for writing expressions for attribute mappings in Microsoft Entra ID](../app-provisioning/functions-for-customizing-application-data.md)
+For more information on expressions, see [Reference for writing expressions for attribute mappings in Microsoft Entra ID](~/identity/app-provisioning/functions-for-customizing-application-data.md)
 
 The expression examples in the table use endDate for SAP and StatusHireDate for Workday.  However, you may opt to use different attributes.
 
@@ -76,7 +76,7 @@ StatusOriginalHireDate|Workday|Joiner|EmployeeHireDate|
 |lastDateWorked|SAP SF|Leaver|EmployeeLeaveDateTime|
 |endDate|SAP SF|Leaver|EmployeeLeaveDateTime|
 
-For more attributes, see the [Workday attribute reference](../app-provisioning/workday-attribute-reference.md) and [SAP SuccessFactors attribute reference](../app-provisioning/sap-successfactors-attribute-reference.md)
+For more attributes, see the [Workday attribute reference](~/identity/app-provisioning/workday-attribute-reference.md) and [SAP SuccessFactors attribute reference](~/identity/app-provisioning/sap-successfactors-attribute-reference.md)
 
 ## Importance of time
 To ensure timing accuracy of scheduled workflows it’s crucial to consider:
@@ -206,6 +206,6 @@ Get-MgUser -UserId "44198096-38ea-440d-9497-bb6b06bcaf9b" | Select-Object Displa
 ## Next steps
 - [What are lifecycle workflows?](what-are-lifecycle-workflows.md)
 - [Create a custom workflow using the Microsoft Entra admin center](tutorial-onboard-custom-workflow-portal.md)
-- [Configure API-driven inbound provisioning app (Public preview)](../app-provisioning/inbound-provisioning-api-configure-app.md)
+- [Configure API-driven inbound provisioning app (Public preview)](~/identity/app-provisioning/inbound-provisioning-api-configure-app.md)
 - [Create a Lifecycle workflow](create-lifecycle-workflow.md)
 

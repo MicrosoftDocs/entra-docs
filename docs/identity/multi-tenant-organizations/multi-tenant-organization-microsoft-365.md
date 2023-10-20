@@ -61,16 +61,16 @@ Alternatively, pair-wise configuration of inbound and outbound cross-tenant sync
 
 ## B2B member users
 
-To ensure a seamless collaboration experience across the multi-tenant organization in new Microsoft Teams, B2B identities are provisioned as B2B users of [Member userType](../external-identities/user-properties.md#user-type). 
+To ensure a seamless collaboration experience across the multi-tenant organization in new Microsoft Teams, B2B identities are provisioned as B2B users of [Member userType](~/external-id/user-properties.md#user-type). 
 
 | User synchronization method | Default userType property |
 | --- | --- |
 | [Synchronize users in multi-tenant organizations in Microsoft 365 (Preview)](/microsoft-365/enterprise/sync-users-multi-tenant-orgs) | **Member**<br/> Remains Guest, if the B2B identity already existed as Guest |
 | [Cross-tenant synchronization in Microsoft Entra ID](./cross-tenant-synchronization-overview.md) | **Member**<br/> Remains Guest, if the B2B identity already existed as Guest |
 
-From a security perspective, you should review the default permissions granted to B2B member users. For more information, see [Compare member and guest default permissions](../fundamentals/users-default-permissions.md#compare-member-and-guest-default-permissions).
+From a security perspective, you should review the default permissions granted to B2B member users. For more information, see [Compare member and guest default permissions](~/fundamentals/users-default-permissions.md#compare-member-and-guest-default-permissions).
 
-To change the userType from **Guest** to **Member** (or vice versa), a source tenant administrator can amend the [attribute mappings](cross-tenant-synchronization-configure.md#step-9-review-attribute-mappings), or a target tenant administrator can [change the userType](../fundamentals/how-to-manage-user-profile-info.md#add-or-change-profile-information) if the property is not recurringly synchronized.
+To change the userType from **Guest** to **Member** (or vice versa), a source tenant administrator can amend the [attribute mappings](cross-tenant-synchronization-configure.md#step-9-review-attribute-mappings), or a target tenant administrator can [change the userType](~/fundamentals/how-to-manage-user-profile-info.md#add-or-change-profile-information) if the property is not recurringly synchronized.
 
 ## Unsharing your users
 

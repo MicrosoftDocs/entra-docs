@@ -25,7 +25,7 @@ Provisioning connectors are set up and configured using the [Microsoft Entra adm
 
 - The [Microsoft Entra admin center](https://entra.microsoft.com)
 
-- Streaming the provisioning logs into [Azure Monitor](../app-provisioning/application-provisioning-log-analytics.md). This method allows for extended data retention and building custom dashboards, alerts, and queries.
+- Streaming the provisioning logs into [Azure Monitor](~/identity/app-provisioning/application-provisioning-log-analytics.md). This method allows for extended data retention and building custom dashboards, alerts, and queries.
 
 - Querying the [Microsoft Graph API](/graph/api/resources/provisioningobjectsummary) for the provisioning logs.
 
@@ -54,8 +54,8 @@ From the all applications area, you access both the provisioning progress bar an
 The [provisioning progress bar](application-provisioning-when-will-provisioning-finish-specific-user.md#view-the-provisioning-progress-bar) is visible in the **Provisioning** tab for a given application. It's located in the **Current Status** section and shows the status of the current initial or incremental cycle. This section also shows:
 
 * The total number of users and groups that are synchronized and currently in scope for provisioning between the source system and the target system.
-* The last time the synchronization was run. Synchronizations typically occur every 20-40 minutes, after an [initial cycle](../app-provisioning/how-provisioning-works.md#provisioning-cycles-initial-and-incremental) has completed.
-* The status of an [initial cycle](../app-provisioning/how-provisioning-works.md#provisioning-cycles-initial-and-incremental) and if the cycle has been completed.
+* The last time the synchronization was run. Synchronizations typically occur every 20-40 minutes, after an [initial cycle](~/identity/app-provisioning/how-provisioning-works.md#provisioning-cycles-initial-and-incremental) has completed.
+* The status of an [initial cycle](~/identity/app-provisioning/how-provisioning-works.md#provisioning-cycles-initial-and-incremental) and if the cycle has been completed.
 * The status of the provisioning process and if it's being placed in quarantine. The status also shows the reason for the quarantine. For example, a status might indicate a failure to communicate with the target system due to invalid admin credentials.
 
 The **Current Status** should be the first place admins look to check on the operational health of the provisioning job.
@@ -71,7 +71,7 @@ All activities performed by the provisioning service are recorded in the Microso
 
 The provisioning summary report and provisioning logs play a key role helping admins troubleshoot various user account provisioning issues.
 
-For scenario-based guidance on how to troubleshoot automatic user provisioning, see [Problems configuring and provisioning users to an application](../app-provisioning/application-provisioning-config-problem.md).
+For scenario-based guidance on how to troubleshoot automatic user provisioning, see [Problems configuring and provisioning users to an application](~/identity/app-provisioning/application-provisioning-config-problem.md).
 
 ## Next steps
 

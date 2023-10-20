@@ -15,7 +15,7 @@ ms.reviewer: arvinh, chmutali
 
 # How Microsoft Entra provisioning integrates with Workday
 
-[Microsoft Entra user provisioning service](../app-provisioning/user-provisioning.md) integrates with [Workday HCM](https://www.workday.com) to manage the identity life cycle of users. Microsoft Entra ID offers three prebuilt integrations: 
+[Microsoft Entra user provisioning service](~/identity/app-provisioning/user-provisioning.md) integrates with [Workday HCM](https://www.workday.com) to manage the identity life cycle of users. Microsoft Entra ID offers three prebuilt integrations: 
 
 * [Workday to on-premises Active Directory user provisioning](../saas-apps/workday-inbound-tutorial.md)
 * [Workday to Microsoft Entra user provisioning](../saas-apps/workday-inbound-cloud-only-tutorial.md)

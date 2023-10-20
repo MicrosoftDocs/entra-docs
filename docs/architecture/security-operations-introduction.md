@@ -173,7 +173,7 @@ As part of an Azure cloud-based environment, the following items should be basel
 
 * **Microsoft Entra multifactor authentication** - multifactor authentication requires a user to provide more than one form of proof for authentication. This approach can provide a proactive first step to securing your environment. For more information, see [Microsoft Entra multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md).
 
-* **Dynamic groups** - Dynamic configuration of security group membership for Microsoft Entra Administrators can set rules to populate groups that are created in Microsoft Entra ID based on user attributes. For more information, see [Dynamic groups and Microsoft Entra B2B collaboration](../external-identities/use-dynamic-groups.md).
+* **Dynamic groups** - Dynamic configuration of security group membership for Microsoft Entra Administrators can set rules to populate groups that are created in Microsoft Entra ID based on user attributes. For more information, see [Dynamic groups and Microsoft Entra B2B collaboration](~/external-id/use-dynamic-groups.md).
 
 * **Conditional Access** - Conditional Access is the tool used by Microsoft Entra ID to bring signals together, to make decisions, and enforce organizational policies. Conditional Access is at the heart of the new identity driven control plane. For more information, see [What is Conditional Access](../conditional-access/overview.md).
 
@@ -181,7 +181,7 @@ As part of an Azure cloud-based environment, the following items should be basel
 
 * **Group-based licensing** - Licenses can be assigned to groups rather than directly to users. Microsoft Entra ID stores information about license assignment states for users.
 
-* **Provisioning Service** - Provisioning refers to creating user identities and roles in the cloud applications that users need access to. In addition to creating user identities, automatic provisioning includes the maintenance and removal of user identities as status or roles change. For more information, see [How Application Provisioning works in Microsoft Entra ID](../app-provisioning/how-provisioning-works.md).
+* **Provisioning Service** - Provisioning refers to creating user identities and roles in the cloud applications that users need access to. In addition to creating user identities, automatic provisioning includes the maintenance and removal of user identities as status or roles change. For more information, see [How Application Provisioning works in Microsoft Entra ID](~/identity/app-provisioning/how-provisioning-works.md).
 
 * **Graph API** - The Microsoft Graph API is a RESTful web API that enables you to access Microsoft Cloud service resources. After you register your app and get authentication tokens for a user or service, you can make requests to the Microsoft Graph API. For more information, see [Overview of Microsoft Graph](/graph/overview).
 
@@ -203,7 +203,7 @@ As part of an Azure cloud-based environment, the following items should be basel
 
 * **Device services** - Device identity management is the foundation for [device-based Conditional Access](../conditional-access/concept-conditional-access-grant.md). With device-based Conditional Access policies, you can ensure that access to resources in your environment is only possible with managed devices. For more information, see [What is a device identity](../devices/overview.md).
 
-* **Self-service group management** - You can enable users to create and manage their own security groups or Microsoft 365 groups in Microsoft Entra ID. The owner of the group can approve or deny membership requests and can delegate control of group membership. Self-service group management features aren't available for mail-enabled security groups or distribution lists. For more information, see [Set up self-service group management in Microsoft Entra ID](../enterprise-users/groups-self-service-management.md).
+* **Self-service group management** - You can enable users to create and manage their own security groups or Microsoft 365 groups in Microsoft Entra ID. The owner of the group can approve or deny membership requests and can delegate control of group membership. Self-service group management features aren't available for mail-enabled security groups or distribution lists. For more information, see [Set up self-service group management in Microsoft Entra ID](~/identity/users/groups-self-service-management.md).
 
 * **Risk detections** - Contains information about other risks triggered when a risk is detected and other pertinent information such as sign-in location and any details from Microsoft Defender for Cloud Apps.
 

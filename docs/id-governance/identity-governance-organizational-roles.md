@@ -80,7 +80,7 @@ If the application only has a single role, then you should still [integrated the
 
 If your role definitions include statements of the form "all users with these attribute values get assigned to the role automatically" or "users with these attribute values are allowed to request", then you'll need to ensure those attributes are present in Microsoft Entra ID.
 
-You can [extend the Microsoft Entra schema](../app-provisioning/user-provisioning-sync-attributes-for-mapping.md) and then populate those attributes either from on-premises AD, via Microsoft Entra Connect, or from an HR system such as Workday or SuccessFactors.
+You can [extend the Microsoft Entra schema](~/identity/app-provisioning/user-provisioning-sync-attributes-for-mapping.md) and then populate those attributes either from on-premises AD, via Microsoft Entra Connect, or from an HR system such as Workday or SuccessFactors.
 
 ### Create catalogs for delegation
 

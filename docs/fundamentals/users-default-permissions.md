@@ -23,7 +23,7 @@ This article describes those default permissions and compares the member and gue
 
 ## Member and guest users
 
-The set of default permissions depends on whether the user is a native member of the tenant (member user) or whether the user is brought over from another directory as a business-to-business (B2B) collaboration guest (guest user). For more information about adding guest users, see [What is Microsoft Entra B2B collaboration?](../external-identities/what-is-b2b.md). Here are the capabilities of the default permissions:
+The set of default permissions depends on whether the user is a native member of the tenant (member user) or whether the user is brought over from another directory as a business-to-business (B2B) collaboration guest (guest user). For more information about adding guest users, see [What is Microsoft Entra B2B collaboration?](~/external-id/what-is-b2b.md). Here are the capabilities of the default permissions:
 
 * *Member users* can register applications, manage their own profile photo and mobile phone number, change their own password, and invite B2B guests. These users can also read all directory information (with a few exceptions). 
 * *Guest users* have restricted directory permissions. They can manage their own profile, change their own password, and retrieve some information about other users, groups, and apps. However, they can't read all directory information. 
@@ -55,9 +55,9 @@ You can restrict default permissions for member users in the following ways:
 | Permission | Setting explanation |
 | ---------- | ------------ |
 | **Register applications** | Setting this option to **No** prevents users from creating application registrations. You can then grant the ability back to specific individuals, by adding them to the application developer role. |
-| **Allow users to connect work or school account with LinkedIn** | Setting this option to **No** prevents users from connecting their work or school account with their LinkedIn account. For more information, see [LinkedIn account connections data sharing and consent](../enterprise-users/linkedin-user-consent.md). |
-| **Create security groups** | Setting this option to **No** prevents users from creating security groups. Global Administrators and User Administrators can still create security groups. To learn how, see [Microsoft Entra cmdlets for configuring group settings](../enterprise-users/groups-settings-cmdlets.md). |
-| **Create Microsoft 365 groups** | Setting this option to **No** prevents users from creating Microsoft 365 groups. Setting this option to **Some** allows a set of users to create Microsoft 365 groups. Global Administrators and User Administrators can still create Microsoft 365 groups. To learn how, see [Microsoft Entra cmdlets for configuring group settings](../enterprise-users/groups-settings-cmdlets.md). |
+| **Allow users to connect work or school account with LinkedIn** | Setting this option to **No** prevents users from connecting their work or school account with their LinkedIn account. For more information, see [LinkedIn account connections data sharing and consent](~/identity/users/linkedin-user-consent.md). |
+| **Create security groups** | Setting this option to **No** prevents users from creating security groups. Global Administrators and User Administrators can still create security groups. To learn how, see [Microsoft Entra cmdlets for configuring group settings](~/identity/users/groups-settings-cmdlets.md). |
+| **Create Microsoft 365 groups** | Setting this option to **No** prevents users from creating Microsoft 365 groups. Setting this option to **Some** allows a set of users to create Microsoft 365 groups. Global Administrators and User Administrators can still create Microsoft 365 groups. To learn how, see [Microsoft Entra cmdlets for configuring group settings](~/identity/users/groups-settings-cmdlets.md). |
 | **Restrict access to Microsoft Entra administration portal** | **What does this switch do?** <br>**No** lets non-administrators browse the Microsoft Entra administration portal. <br>**Yes** Restricts non-administrators from browsing the Microsoft Entra administration portal. Non-administrators who are owners of groups or applications are unable to use the Azure portal to manage their owned resources. </p><p></p><p>**What does it not do?** <br> It doesn't restrict access to Microsoft Entra data using PowerShell, Microsoft GraphAPI, or other clients such as Visual Studio. <br>It doesn't restrict access as long as a user is assigned a custom role (or any role). </p><p></p><p>**When should I use this switch?** <br>Use this option to prevent users from misconfiguring the resources that they own. </p><p></p><p>**When should I not use this switch?** <br>Don't use this switch as a security measure. Instead, create a Conditional Access policy that targets Microsoft Azure Management that blocks non-administrators access to [Microsoft Azure Management](../conditional-access/concept-conditional-access-cloud-apps.md#microsoft-azure-management). </p><p></p><p> **How do I grant only a specific non-administrator users the ability to use the Microsoft Entra administration portal?** <br> Set this option to **Yes**, then assign them a role like global reader. </p><p></p><p>**Restrict access to the Microsoft Entra administration portal** <br>A Conditional Access policy that targets Microsoft Azure Management targets access to all Azure management. |
 | **Restrict non-admin users from creating tenants** | Users can create tenants in the Microsoft Entra ID and Microsoft Entra administration portal under Manage tenant. The creation of a tenant is recorded in the Audit log as category DirectoryManagement and activity Create Company. Anyone who creates a tenant becomes the Global Administrator of that tenant. The newly created tenant doesn't inherit any settings or configurations. </p><p></p><p>**What does this switch do?** <br> Setting this option to **Yes** restricts creation of Microsoft Entra tenants to the Global Administrator or tenant creator roles. Setting this option to **No** allows non-admin users to create Microsoft Entra tenants. Tenant create will continue to be recorded in the Audit log. </p><p></p><p>**How do I grant only a specific non-administrator users the ability to create new tenants?** <br> Set this option to Yes, then assign them the tenant creator role.|
 | **Restrict users from recovering the BitLocker key(s) for their owned devices** | This setting can be found in the Microsoft Entra admin center in the Device Settings. Setting this option to **Yes** restricts users from being able to self-service recover BitLocker key(s) for their owned devices. Users will have to contact their organization's helpdesk to retrieve their BitLocker keys. Setting this option to **No** allows users to recover their BitLocker key(s). |
@@ -73,12 +73,12 @@ The **Restrict non-admin users from creating tenants** option is shown [below](h
 You can restrict default permissions for guest users in the following ways.
 
 >[!NOTE]
->The **Guest user access restrictions** setting replaced the **Guest users permissions are limited** setting. For guidance on using this feature, see [Restrict guest access permissions in Microsoft Entra ID](../enterprise-users/users-restrict-guest-permissions.md).
+>The **Guest user access restrictions** setting replaced the **Guest users permissions are limited** setting. For guidance on using this feature, see [Restrict guest access permissions in Microsoft Entra ID](~/identity/users/users-restrict-guest-permissions.md).
 
 Permission | Setting explanation
 ---------- | ------------
 **Guest user access restrictions** | Setting this option to **Guest users have the same access as members** grants all member user permissions to guest users by default.<p>Setting this option to **Guest user access is restricted to properties and memberships of their own directory objects** restricts guest access to only their own user profile by default. Access to other users is no longer allowed, even when they're searching by user principal name, object ID, or display name. Access to group information, including groups memberships, is also no longer allowed.<p>This setting doesn't prevent access to joined groups in some Microsoft 365 services like Microsoft Teams. To learn more, see [Microsoft Teams guest access](/MicrosoftTeams/guest-access).<p>Guest users can still be added to administrator roles regardless of this permission setting.
-**Guests can invite** | Setting this option to **Yes** allows guests to invite other guests. To learn more, see [Configure external collaboration settings](../external-identities/external-collaboration-settings-configure.md).
+**Guests can invite** | Setting this option to **Yes** allows guests to invite other guests. To learn more, see [Configure external collaboration settings](~/external-id/external-collaboration-settings-configure.md).
 
 ## Object ownership
 
@@ -162,7 +162,7 @@ Users can perform the following actions on owned devices:
 Users can perform the following actions on owned groups.
 
 > [!NOTE]
-> Owners of dynamic groups must have a Global Administrator, Group Administrator, Intune Administrator, or User Administrator role to edit group membership rules. For more information, see [Create or update a dynamic group in Microsoft Entra ID](../enterprise-users/groups-create-rule.md).
+> Owners of dynamic groups must have a Global Administrator, Group Administrator, Intune Administrator, or User Administrator role to edit group membership rules. For more information, see [Create or update a dynamic group in Microsoft Entra ID](~/identity/users/groups-create-rule.md).
 
 | **Action** | **Description** |
 | --- | --- |
@@ -176,7 +176,7 @@ Users can perform the following actions on owned groups.
 
 ## Next steps
 
-* To learn more about the **Guest user access restrictions** setting, see [Restrict guest access permissions in Microsoft Entra ID](../enterprise-users/users-restrict-guest-permissions.md).
+* To learn more about the **Guest user access restrictions** setting, see [Restrict guest access permissions in Microsoft Entra ID](~/identity/users/users-restrict-guest-permissions.md).
 * To learn more about how to assign Microsoft Entra administrator roles, see [Assign a user to administrator roles in Microsoft Entra ID](./how-subscriptions-associated-directory.md).
 * To learn more about how resource access is controlled in Microsoft Azure, see [Understanding resource access in Azure](/azure/role-based-access-control/rbac-and-directory-admin-roles).
 * For more information on how Microsoft Entra ID relates to your Azure subscription, see [How Azure subscriptions are associated with Microsoft Entra ID](./how-subscriptions-associated-directory.md).

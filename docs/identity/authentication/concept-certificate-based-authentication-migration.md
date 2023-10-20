@@ -60,7 +60,7 @@ Microsoft Entra Connect requires a special role named **Hybrid Identity Administ
 
 ### Can we have privileged accounts with a federated AD FS server?
         
-Although it's possible, Microsoft recommends privileged accounts be cloud-only accounts. Using cloud-only accounts for privileged access limits exposure in Microsoft Entra ID from a compromised on-premises environment. For more information, see [Protecting Microsoft 365 from on-premises attacks](../architecture/protect-m365-from-on-premises-attacks.md).
+Although it's possible, Microsoft recommends privileged accounts be cloud-only accounts. Using cloud-only accounts for privileged access limits exposure in Microsoft Entra ID from a compromised on-premises environment. For more information, see [Protecting Microsoft 365 from on-premises attacks](~/architecture/protect-m365-from-on-premises-attacks.md).
 
 ### If an organization is a hybrid running both AD FS and Azure CBA, are they still vulnerable to the AD FS compromise?
 

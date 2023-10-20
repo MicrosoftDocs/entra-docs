@@ -56,8 +56,8 @@ For more information on how to prepare your Active Directory for group Managed S
 
 ### In the Microsoft Entra admin center
 
-1. Create a cloud-only hybrid identity administrator account on your Microsoft Entra tenant. This way, you can manage the configuration of your tenant if your on-premises services fail or become unavailable. Learn about how to [add a cloud-only hybrid identity administrator account](../../fundamentals/add-users.md). Finishing this step is critical to ensure that you don't get locked out of your tenant.
-1. Add one or more [custom domain names](../../fundamentals/add-custom-domain.md) to your Microsoft Entra tenant. Your users can sign in with one of these domain names.
+1. Create a cloud-only hybrid identity administrator account on your Microsoft Entra tenant. This way, you can manage the configuration of your tenant if your on-premises services fail or become unavailable. Learn about how to [add a cloud-only hybrid identity administrator account](~/fundamentals/add-users.md). Finishing this step is critical to ensure that you don't get locked out of your tenant.
+1. Add one or more [custom domain names](~/fundamentals/add-custom-domain.md) to your Microsoft Entra tenant. Your users can sign in with one of these domain names.
 
 ### In your directory in Active Directory
 

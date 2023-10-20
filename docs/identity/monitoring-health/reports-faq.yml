@@ -24,7 +24,7 @@ sections:
       - question: |
           How do I get a premium license?
         answer: |
-          See [Getting started with Microsoft Entra ID P1 or P2](../fundamentals/get-started-premium.md) to upgrade your Microsoft Entra edition.
+          See [Getting started with Microsoft Entra ID P1 or P2](~/fundamentals/get-started-premium.md) to upgrade your Microsoft Entra edition.
           
       - question: |
           How soon should I see activities data after getting a premium license?

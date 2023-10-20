@@ -166,4 +166,4 @@ If users who will access the applications originate in on-premises Active Direct
 
 ## Next steps
 
-* [Define who is in scope for provisioning](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md)
+* [Define who is in scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md)

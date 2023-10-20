@@ -157,7 +157,7 @@ Azure MFA Server can provide MFA functionality for third-party solutions that us
 
 For RADIUS deployments that can't be upgraded, you'll need to deploy an NPS Server and install the [Microsoft Entra multifactor authentication NPS extension](howto-mfa-nps-extension.md). 
 
-For LDAP deployments that can't be upgraded or moved to RADIUS, [determine if Microsoft Entra Domain Services can be used](../architecture/auth-ldap.md). In most cases, LDAP was deployed to support in-line password changes for end users. Once migrated, end users can manage their passwords by using [self-service password reset in Microsoft Entra ID](tutorial-enable-sspr.md).
+For LDAP deployments that can't be upgraded or moved to RADIUS, [determine if Microsoft Entra Domain Services can be used](~/architecture/auth-ldap.md). In most cases, LDAP was deployed to support in-line password changes for end users. Once migrated, end users can manage their passwords by using [self-service password reset in Microsoft Entra ID](tutorial-enable-sspr.md).
 
 If you enabled the [MFA Server Authentication provider in AD FS 2.0](./howto-mfaserver-adfs-windows-server.md#secure-windows-server-ad-fs-with-azure-multi-factor-authentication-server) on any relying party trusts except for the Office 365 relying party trust, you'll need to upgrade to [AD FS 3.0](/windows-server/identity/ad-fs/deployment/upgrading-to-ad-fs-in-windows-server) or federate those relying parties directly to Microsoft Entra ID if they support modern authentication methods. Determine the best plan of action for each of the dependencies.
 

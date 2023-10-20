@@ -54,7 +54,7 @@ Ensure the following prerequisites are met.
 * An Azure subscription
   * If you don't have one, you can get an [Azure free account](https://azure.microsoft.com/free)
 * A Microsoft Entra tenant linked to the Azure subscription
-  * See, [Quickstart: Create a new tenant in Microsoft Entra ID](../fundamentals/create-new-tenant.md)
+  * See, [Quickstart: Create a new tenant in Microsoft Entra ID](~/fundamentals/create-new-tenant.md)
 * Docker and Docker Compose
   * Go to docs.docker.com to [Get Docker](https://docs.docker.com/get-docker) and [Install Docker Compose](https://docs.docker.com/compose/install)
 * User identities synchronized from an on-premises directory to Microsoft Entra ID, or created in Microsoft Entra ID and flowed back to an on-premises directory

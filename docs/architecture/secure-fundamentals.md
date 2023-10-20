@@ -59,7 +59,7 @@ Non-production environments are commonly referred to as sandbox environments.
 
 * Devices
 
-**Human identities** are user objects that generally represent people in an organization. These identities are either created and managed directly in Microsoft Entra ID or are synchronized from an on-premises Active Directory to Microsoft Entra ID for a given organization. These types of identities are referred to as **local identities**. There can also be user objects invited from a partner organization or a social identity provider using [Microsoft Entra B2B collaboration](../external-identities/what-is-b2b.md). In this content, we refer to these types of identity as **external identities**.
+**Human identities** are user objects that generally represent people in an organization. These identities are either created and managed directly in Microsoft Entra ID or are synchronized from an on-premises Active Directory to Microsoft Entra ID for a given organization. These types of identities are referred to as **local identities**. There can also be user objects invited from a partner organization or a social identity provider using [Microsoft Entra B2B collaboration](~/external-id/what-is-b2b.md). In this content, we refer to these types of identity as **external identities**.
 
 **Non-human identities** include any identity not associated with a human. This type of identity is an object such as an application that requires an identity to run. In this content, we refer to this type of identity as a **workload identity**. Various terms are used to describe this type of identity, including [application objects and service principals](/partner-center/marketplace/manage-aad-apps).
 
@@ -107,7 +107,7 @@ Some legacy scenarios required a human identity to be used in *non-human* scenar
 
 ## Microsoft Entra functional areas
 
-These are the functional areas provided by Microsoft Entra ID that are relevant to isolated environments. To learn more about the capabilities of Microsoft Entra ID, see [What is Microsoft Entra ID?](../fundamentals/whatis.md).
+These are the functional areas provided by Microsoft Entra ID that are relevant to isolated environments. To learn more about the capabilities of Microsoft Entra ID, see [What is Microsoft Entra ID?](~/fundamentals/whatis.md).
 
 ### Authentication
 
@@ -143,7 +143,7 @@ Microsoft Entra ID also provides a portal and the Microsoft Graph API to allow o
 
 ### Governance
 
-**Identity lifecycle**. Microsoft Entra ID provides capabilities to create, retrieve, delete, and update identities in the directory, including external identities. Microsoft Entra ID also [provides services to automate the identity lifecycle](../app-provisioning/how-provisioning-works.md) to ensure it's maintained in line with your organization's needs. For example, using Access Reviews to remove external users who haven't signed in for a specified period.
+**Identity lifecycle**. Microsoft Entra ID provides capabilities to create, retrieve, delete, and update identities in the directory, including external identities. Microsoft Entra ID also [provides services to automate the identity lifecycle](~/identity/app-provisioning/how-provisioning-works.md) to ensure it's maintained in line with your organization's needs. For example, using Access Reviews to remove external users who haven't signed in for a specified period.
 
 **Reporting and analytics**. An important aspect of identity governance is visibility into user actions. Microsoft Entra ID provides insights into your environment's security and usage patterns. These insights include detailed information on:
 

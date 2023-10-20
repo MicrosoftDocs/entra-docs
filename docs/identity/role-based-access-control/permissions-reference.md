@@ -251,7 +251,7 @@ Users with this role can assign and remove custom security attribute keys and va
 
 By default, [Global Administrator](#global-administrator) and other administrator roles do not have permissions to read, define, or assign custom security attributes. To work with custom security attributes, you must be assigned one of the custom security attribute roles.
 
-For more information, see [Manage access to custom security attributes in Microsoft Entra ID](../fundamentals/custom-security-attributes-manage.md).
+For more information, see [Manage access to custom security attributes in Microsoft Entra ID](~/fundamentals/custom-security-attributes-manage.md).
 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
@@ -271,7 +271,7 @@ Users with this role can read custom security attribute keys and values for supp
 
 By default, [Global Administrator](#global-administrator) and other administrator roles do not have permissions to read, define, or assign custom security attributes. To work with custom security attributes, you must be assigned one of the custom security attribute roles.
 
-For more information, see [Manage access to custom security attributes in Microsoft Entra ID](../fundamentals/custom-security-attributes-manage.md).
+For more information, see [Manage access to custom security attributes in Microsoft Entra ID](~/fundamentals/custom-security-attributes-manage.md).
 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
@@ -288,7 +288,7 @@ Users with this role can define a valid set of custom security attributes that c
 
 By default, [Global Administrator](#global-administrator) and other administrator roles do not have permissions to read, define, or assign custom security attributes. To work with custom security attributes, you must be assigned one of the custom security attribute roles.
 
-For more information, see [Manage access to custom security attributes in Microsoft Entra ID](../fundamentals/custom-security-attributes-manage.md).
+For more information, see [Manage access to custom security attributes in Microsoft Entra ID](~/fundamentals/custom-security-attributes-manage.md).
 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
@@ -302,7 +302,7 @@ Users with this role can read the definition of custom security attributes.
 
 By default, [Global Administrator](#global-administrator) and other administrator roles do not have permissions to read, define, or assign custom security attributes. To work with custom security attributes, you must be assigned one of the custom security attribute roles.
 
-For more information, see [Manage access to custom security attributes in Microsoft Entra ID](../fundamentals/custom-security-attributes-manage.md).
+For more information, see [Manage access to custom security attributes in Microsoft Entra ID](~/fundamentals/custom-security-attributes-manage.md).
 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
@@ -943,8 +943,8 @@ Users with this role add or delete custom attributes available to all user flows
 
 This administrator manages federation between Microsoft Entra organizations and external identity providers. With this role, users can add new identity providers and configure all available settings (e.g. authentication path, service ID, assigned key containers). This user can enable the Microsoft Entra organization to trust authentications from external identity providers. The resulting impact on end-user experiences depends on the type of organization:
 
-* Microsoft Entra organizations for employees and partners: The addition of a federation (e.g. with Gmail) will immediately impact all guest invitations not yet redeemed. See [Adding Google as an identity provider for B2B guest users](../external-identities/google-federation.md).
-* Azure Active Directory B2C organizations: The addition of a federation (for example, with Facebook, or with another Microsoft Entra organization) does not immediately impact end-user flows until the identity provider is added as an option in a user flow (also called a built-in policy). See [Configuring a Microsoft account as an identity provider](../../active-directory-b2c/identity-provider-microsoft-account.md) for an example. To change user flows, the limited role of "B2C User Flow Administrator" is required.
+* Microsoft Entra organizations for employees and partners: The addition of a federation (e.g. with Gmail) will immediately impact all guest invitations not yet redeemed. See [Adding Google as an identity provider for B2B guest users](~/external-id/google-federation.md).
+* Azure Active Directory B2C organizations: The addition of a federation (for example, with Facebook, or with another Microsoft Entra organization) does not immediately impact end-user flows until the identity provider is added as an option in a user flow (also called a built-in policy). See [Configuring a Microsoft account as an identity provider](/azure/active-directory-b2c/identity-provider-microsoft-account) for an example. To change user flows, the limited role of "B2C User Flow Administrator" is required.
 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
@@ -1349,7 +1349,7 @@ Users in this role can create/manage groups and its settings like naming and exp
 
 ## Guest Inviter
 
-Users in this role can manage Microsoft Entra B2B guest user invitations when the **Members can invite** user setting is set to No. More information about B2B collaboration at [About Microsoft Entra B2B collaboration](../external-identities/what-is-b2b.md). It does not include any other permissions.
+Users in this role can manage Microsoft Entra B2B guest user invitations when the **Members can invite** user setting is set to No. More information about B2B collaboration at [About Microsoft Entra B2B collaboration](~/external-id/what-is-b2b.md). It does not include any other permissions.
 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |

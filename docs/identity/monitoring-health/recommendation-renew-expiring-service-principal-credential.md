@@ -85,4 +85,4 @@ When renewing service principal credentials using Microsoft Graph, you need to r
 - [Review the Microsoft Entra recommendations overview](overview-recommendations.md)
 - [Learn how to use Microsoft Entra recommendations](howto-use-recommendations.md)
 - [Explore the Microsoft Graph API properties for recommendations](/graph/api/resources/recommendation)
-- [Learn about securing service principals](../architecture/service-accounts-principal.md)
+- [Learn about securing service principals](~/architecture/service-accounts-principal.md)

@@ -87,7 +87,7 @@ Admins can now restrict their users from self-service accessing their BitLocker 
 **Service category:** User Access Management                           
 **Product capability:** User Management               
 
-The ability for users to create tenants from the Manage Tenant overview has been present in Azure AD since almost the beginning of the Azure portal.  This new capability in the User Settings pane allows admins to restrict their users from being able to create new tenants. There's also a new [Tenant Creator](~/identity/role-based-access-control/permissions-reference.md#tenant-creator) role to allow specific users to create tenants. For more information, see [Default user permissions](../fundamentals/users-default-permissions.md#restrict-member-users-default-permissions).
+The ability for users to create tenants from the Manage Tenant overview has been present in Azure AD since almost the beginning of the Azure portal.  This new capability in the User Settings pane allows admins to restrict their users from being able to create new tenants. There's also a new [Tenant Creator](~/identity/role-based-access-control/permissions-reference.md#tenant-creator) role to allow specific users to create tenants. For more information, see [Default user permissions](~/fundamentals/users-default-permissions.md#restrict-member-users-default-permissions).
 
 ---
 
@@ -165,7 +165,7 @@ For more information, see: [How trust relationships work for forests in Active D
 **Service category:** Provisioning                             
 **Product capability:** Developer Experience               
 
-Azure Active Directory SCIM validator will enable you to test your server for compatibility with the Azure Active Directory SCIM client. For more information, see: [Tutorial: Validate a SCIM endpoint](../app-provisioning/scim-validator-tutorial.md).
+Azure Active Directory SCIM validator will enable you to test your server for compatibility with the Azure Active Directory SCIM client. For more information, see: [Tutorial: Validate a SCIM endpoint](~/identity/app-provisioning/scim-validator-tutorial.md).
 
 ---
 
@@ -229,7 +229,7 @@ Some key questions this workbook can help answer are:
 - What specific identities failed? And what step did they fail on?
 - For any given user, what tenants / applications were they provisioned or deprovisioned to?
 
-For more information, see: [Provisioning insights workbook](../app-provisioning/provisioning-workbook.md).
+For more information, see: [Provisioning insights workbook](~/identity/app-provisioning/provisioning-workbook.md).
 
 ---
 
@@ -339,7 +339,7 @@ Microsoft cloud settings let you collaborate with organizations from different M
 - Microsoft Azure commercial and Microsoft Azure Government
 - Microsoft Azure commercial and Microsoft Azure operated by 21Vianet
 
-For more information about Microsoft cloud settings for B2B collaboration, see: [Microsoft cloud settings](../external-identities/cross-tenant-access-overview.md#microsoft-cloud-settings).
+For more information about Microsoft cloud settings for B2B collaboration, see: [Microsoft cloud settings](~/external-id/cross-tenant-access-overview.md#microsoft-cloud-settings).
 
 ---
 
@@ -362,7 +362,7 @@ For more information on how to enable this feature, see [Directory extensions an
 **Service category:** Provisioning            
 **Product capability:** Outbound to On-premises Applications        
 
-Azure AD supports provisioning users into applications hosted on-premises or in a virtual machine, without having to open up any firewalls. If your application supports [SCIM](https://techcommunity.microsoft.com/t5/identity-standards-blog/provisioning-with-scim-getting-started/ba-p/880010), or you've built a SCIM gateway to connect to your legacy application, you can use the Azure AD Provisioning agent to [directly connect](../app-provisioning/on-premises-scim-provisioning.md) with your application and automate provisioning and deprovisioning. If you have legacy applications that don't support SCIM and rely on an [LDAP](../app-provisioning/on-premises-ldap-connector-configure.md) user store, or a [SQL](../app-provisioning/tutorial-ecma-sql-connector.md) database, Azure AD can support those as well.
+Azure AD supports provisioning users into applications hosted on-premises or in a virtual machine, without having to open up any firewalls. If your application supports [SCIM](https://techcommunity.microsoft.com/t5/identity-standards-blog/provisioning-with-scim-getting-started/ba-p/880010), or you've built a SCIM gateway to connect to your legacy application, you can use the Azure AD Provisioning agent to [directly connect](~/identity/app-provisioning/on-premises-scim-provisioning.md) with your application and automate provisioning and deprovisioning. If you have legacy applications that don't support SCIM and rely on an [LDAP](~/identity/app-provisioning/on-premises-ldap-connector-configure.md) user store, or a [SQL](~/identity/app-provisioning/tutorial-ecma-sql-connector.md) database, Azure AD can support those as well.
 
 ---
 
@@ -384,7 +384,7 @@ Now within the Azure portal you have access to view key data for your Azure AD-D
 **Service category:** B2B        
 **Product capability:** B2B/B2C   
 
-An IT admin can now add multiple domains to a single SAML/WS-Fed identity provider configuration to invite users from multiple domains to authenticate from the same identity provider endpoint. For more information, see: [Federation with SAML/WS-Fed identity providers for guest users](../external-identities/direct-federation.md).
+An IT admin can now add multiple domains to a single SAML/WS-Fed identity provider configuration to invite users from multiple domains to authenticate from the same identity provider endpoint. For more information, see: [Federation with SAML/WS-Fed identity providers for guest users](~/external-id/direct-federation.md).
 
 ---
 

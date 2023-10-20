@@ -84,7 +84,7 @@ This section guides you through connecting your Microsoft Entra ID to ThousandEy
 
 9. Under the Mappings section, select **Synchronize Microsoft Entra users to ThousandEyes**.
 
-10. Review the user attributes that are synchronized from Microsoft Entra ID to ThousandEyes in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Parsable for update operations. If you choose to change the [matching target attribute](../app-provisioning/customize-application-attributes.md), you will need to ensure that the Parsable API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+10. Review the user attributes that are synchronized from Microsoft Entra ID to ThousandEyes in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Parsable for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the Parsable API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
  	 |Attribute|Type|Supported for filtering|
   	 |---|---|---|
@@ -96,7 +96,7 @@ This section guides you through connecting your Microsoft Entra ID to ThousandEy
   	 |name.formatted|String|
 
 
-11. To configure scoping filters, refer to the following instructions provided in the [Scoping filter tutorial](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+11. To configure scoping filters, refer to the following instructions provided in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 12. To enable the Microsoft Entra provisioning service for ThousandEyes, change the **Provisioning Status** to **On** in the **Settings** section.
 
@@ -116,14 +116,14 @@ This operation starts the initial synchronization cycle of all users and groups 
 Once you've configured provisioning, use the following resources to monitor your deployment:
 
 1. Use the [provisioning logs](../reports-monitoring/concept-provisioning-logs.md) to determine which users have been provisioned successfully or unsuccessfully
-2. Check the [progress bar](../app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md) to see the status of the provisioning cycle and how close it is to completion
-3. If the provisioning configuration seems to be in an unhealthy state, the application will go into quarantine. Learn more about quarantine states [here](../app-provisioning/application-provisioning-quarantine-status.md).  
+2. Check the [progress bar](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md) to see the status of the provisioning cycle and how close it is to completion
+3. If the provisioning configuration seems to be in an unhealthy state, the application will go into quarantine. Learn more about quarantine states [here](~/identity/app-provisioning/application-provisioning-quarantine-status.md).  
 
 ## Additional resources
 
-* [Managing user account provisioning for Enterprise Apps](../app-provisioning/configure-automatic-user-provisioning-portal.md)
+* [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
 ## Next steps
 
-* [Learn how to review logs and get reports on provisioning activity](../app-provisioning/check-status-user-account-provisioning.md)
+* [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)

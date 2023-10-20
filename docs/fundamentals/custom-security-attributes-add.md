@@ -1139,5 +1139,5 @@ No, you can't delete custom security attribute definitions. You can only [deacti
 ## Next steps
 
 - [Manage access to custom security attributes in Microsoft Entra ID](custom-security-attributes-manage.md)
-- [Assign, update, list, or remove custom security attributes for a user](../enterprise-users/users-custom-security-attributes.md)
+- [Assign, update, list, or remove custom security attributes for a user](~/identity/users/users-custom-security-attributes.md)
 - [Assign, update, list, or remove custom security attributes for an application](~/identity/enterprise-apps/custom-security-attributes-apps.md)

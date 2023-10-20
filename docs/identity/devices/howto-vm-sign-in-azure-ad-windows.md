@@ -79,7 +79,7 @@ Microsoft Azure operated by 21Vianet:
 
 ### Authentication requirements
 
-[Microsoft Entra Guest accounts](../external-identities/what-is-b2b.md) can't connect to Azure VMs or Azure Bastion enabled VMs via Microsoft Entra authentication.
+[Microsoft Entra Guest accounts](~/external-id/what-is-b2b.md) can't connect to Azure VMs or Azure Bastion enabled VMs via Microsoft Entra authentication.
 
 <a name='enable-azure-ad-login-for-a-windows-vm-in-azure'></a>
 
@@ -498,4 +498,4 @@ Another way to verify it is via Graph PowerShell:
 
 ## Next steps
 
-For more information about Microsoft Entra ID, see [What is Microsoft Entra ID?](../fundamentals/whatis.md).
+For more information about Microsoft Entra ID, see [What is Microsoft Entra ID?](~/fundamentals/whatis.md).

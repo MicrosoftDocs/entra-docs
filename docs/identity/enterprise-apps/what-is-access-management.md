@@ -34,10 +34,10 @@ Microsoft Entra application assignment focuses on two primary assignment modes:
 
 * **Individual assignment** An IT admin with directory Global Administrator permissions can select individual user accounts and grant them access to the application.
 
-* **Group-based assignment (requires Microsoft Entra ID P1 or P2)** An IT admin with directory Global Administrator permissions can assign a group to the application. Specific users' access is determined by whether they are members of the group at the time they try to access the application. In other words, an administrator can effectively create an assignment rule stating "any current member of the assigned group has access to the application". Using this assignment option, administrators can benefit from any of Microsoft Entra group management options, including [attribute-based dynamic groups](../fundamentals/how-to-manage-groups.md), external system groups (for example, on-premises Active Directory or Workday), or Administrator-managed or self-service-managed groups. A single group can be easily assigned to multiple apps, making sure that applications with assignment affinity can share assignment rules, reducing the overall management complexity.
+* **Group-based assignment (requires Microsoft Entra ID P1 or P2)** An IT admin with directory Global Administrator permissions can assign a group to the application. Specific users' access is determined by whether they are members of the group at the time they try to access the application. In other words, an administrator can effectively create an assignment rule stating "any current member of the assigned group has access to the application". Using this assignment option, administrators can benefit from any of Microsoft Entra group management options, including [attribute-based dynamic groups](~/fundamentals/how-to-manage-groups.md), external system groups (for example, on-premises Active Directory or Workday), or Administrator-managed or self-service-managed groups. A single group can be easily assigned to multiple apps, making sure that applications with assignment affinity can share assignment rules, reducing the overall management complexity.
 
   >[!NOTE]
-  >[Nested group](../fundamentals/how-to-manage-groups.md) memberships aren't supported for group-based assignment to applications at this time.
+  >[Nested group](~/fundamentals/how-to-manage-groups.md) memberships aren't supported for group-based assignment to applications at this time.
 
 Using these two assignment modes, administrators can achieve any desirable assignment management approach.
 
@@ -79,7 +79,7 @@ Consider an application like Salesforce. In many organizations, Salesforce is pr
 
 With Microsoft Entra ID, applications like Salesforce can be pre-configured for single sign-on (SSO) and automated provisioning. Once the application is configured, an Administrator can take the one-time action to create and assign the appropriate groups. In this example, an administrator could execute the following assignments:
 
-* [Dynamic groups](../fundamentals/how-to-manage-groups.md) can be defined to automatically represent all members of the marketing and sales teams using attributes like department or role:
+* [Dynamic groups](~/fundamentals/how-to-manage-groups.md) can be defined to automatically represent all members of the marketing and sales teams using attributes like department or role:
   
   * All members of marketing groups would be assigned to the "marketing" role in Salesforce
   * All members of sales team groups would be assigned to the "sales" role in Salesforce. A further refinement could use multiple groups that represent regional sales teams assigned to different Salesforce roles.
@@ -110,4 +110,4 @@ As with enterprise apps, you can [assign users](assign-user-or-group-access-port
 ## Next steps
 
 * [Protecting apps with Conditional Access](../conditional-access/concept-conditional-access-cloud-apps.md)
-* [Self-service group management/SSAA](../enterprise-users/groups-self-service-management.md)
+* [Self-service group management/SSAA](~/identity/users/groups-self-service-management.md)
