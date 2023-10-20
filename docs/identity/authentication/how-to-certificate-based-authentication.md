@@ -59,7 +59,7 @@ You can configure CAs by using the Microsoft Entra admin center or PowerShell.
 
 ### Configure certification authorities using the Microsoft Entra admin center
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To enable the certificate-based authentication and configure user bindings in the Microsoft Entra admin center, complete the following steps:
 
@@ -87,21 +87,21 @@ To enable the certificate-based authentication and configure user bindings in th
 
 Only one CRL Distribution Point (CDP) for a trusted CA is supported. The CDP can only be HTTP URLs. Online Certificate Status Protocol (OCSP) or Lightweight Directory Access Protocol (LDAP) URLs aren't supported.
 
-[!INCLUDE [Configure certification authorities](../../../includes/active-directory-authentication-configure-certificate-authorities.md)]
+[!INCLUDE [Configure certification authorities](~/includes/entra-authentication-configure-certificate-authorities.md)]
 
 ### Connect
 
-[!INCLUDE [Connect-AzureAD](../../../includes/active-directory-authentication-connect-azuread.md)]
+[!INCLUDE [Connect-AzureAD](~/includes/entra-authentication-connect-azuread.md)]
 
 ### Retrieve
 
-[!INCLUDE [Get-AzureAD](../../../includes/active-directory-authentication-get-trusted-azuread.md)]
+[!INCLUDE [Get-AzureAD](~/includes/entra-authentication-get-trusted-azuread.md)]
 ### Add
 
 >[!NOTE]
 >Upload of new CAs will fail when any of the existing CAs are expired. Tenant Admin should delete the expired CAs and then upload the new CA.
 
-[!INCLUDE [New-AzureAD](../../../includes/active-directory-authentication-new-trusted-azuread.md)]
+[!INCLUDE [New-AzureAD](~/includes/entra-authentication-new-trusted-azuread.md)]
 
 **AuthorityType**
 - Use 0 to indicate a Root certification authority
@@ -135,11 +135,11 @@ For more information, see [Understanding the certificate revocation process](./c
 
 ### Remove
 
-[!INCLUDE [Remove-AzureAD](../../../includes/active-directory-authentication-remove-trusted-azuread.md)]
+[!INCLUDE [Remove-AzureAD](~/includes/entra-authentication-remove-trusted-azuread.md)]
 
 ### Modify
 
-[!INCLUDE [Set-AzureAD](../../../includes/active-directory-authentication-set-trusted-azuread.md)]
+[!INCLUDE [Set-AzureAD](~/includes/entra-authentication-set-trusted-azuread.md)]
 
 ## Step 2: Enable CBA on the tenant
 

@@ -19,7 +19,7 @@ ms.custom: mode-ui
 
 # Configure managed identities for Azure resources on a VM using the Azure portal
 
-[!INCLUDE [preview-notice](../../../includes/active-directory-msi-preview-notice.md)]
+[!INCLUDE [preview-notice](~/includes/entra-msi-preview-notice.md)]
 
 Managed identities for Azure resources provides Azure services with an automatically managed identity in Microsoft Entra ID. You can use this identity to authenticate to any service that supports Microsoft Entra authentication, without having credentials in your code. 
 
@@ -50,7 +50,7 @@ Refer to the following Quickstarts to create a VM:
 
 ### Enable system-assigned managed identity on an existing VM
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To enable system-assigned managed identity on a VM that was originally provisioned without it, your account needs the [Virtual Machine Contributor](/azure/role-based-access-control/built-in-roles#virtual-machine-contributor) role assignment.  No other Microsoft Entra directory role assignments are required.
 

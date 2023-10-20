@@ -19,7 +19,7 @@ ms.collection: M365-identity-device-management
 
 Microsoft Entra terms of use policies provide a simple method that organizations can use to present information to end users. This presentation ensures users see relevant disclaimers for legal or compliance requirements. This article describes how to get started with terms of use (ToU) policies.
 
-[!INCLUDE [GDPR-related guidance](../../../includes/gdpr-intro-sentence.md)]
+[!INCLUDE [GDPR-related guidance](~/../azure-docs-pr/includes/gdpr-intro-sentence.md)]
 
 ## Overview videos
 

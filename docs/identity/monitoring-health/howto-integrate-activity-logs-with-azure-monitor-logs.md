@@ -49,7 +49,7 @@ Looking for how to set up a Log Analytics workspace for Azure resources outside 
 
 Follow the steps below to send logs from Microsoft Entra ID to Azure Monitor logs. Looking for how to set up Log Analytics workspace for Azure resources outside of Microsoft Entra ID? Check out the [Collect and view resource logs for Azure Monitor](/azure/azure-monitor/essentials/diagnostic-settings) article.
 
-[!INCLUDE [diagnostic-settings-include](../includes/diagnostic-settings-include.md)]
+[!INCLUDE [diagnostic-settings-include](~/includes/diagnostic-settings-include.md)]
 
 6. Under **Destination Details** select the **Send to Log Analytics workspace** check box. 
 

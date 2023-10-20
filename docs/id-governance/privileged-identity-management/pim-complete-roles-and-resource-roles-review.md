@@ -26,7 +26,7 @@ Once the review has been created, follow the steps in this article to complete t
 
 ## Complete access reviews
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a user that is assigned to one of the prerequisite role(s).
 

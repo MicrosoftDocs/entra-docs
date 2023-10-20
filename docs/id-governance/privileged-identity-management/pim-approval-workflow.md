@@ -25,7 +25,7 @@ With Privileged Identity Management (PIM) in Microsoft Entra ID you can configur
 
 ## View pending requests
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 As a delegated approver, you receive an email notification when a Microsoft Entra role request is pending your approval. You can view these pending requests in Privileged Identity Management.
 

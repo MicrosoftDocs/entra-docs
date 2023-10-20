@@ -21,7 +21,7 @@ This article covers how to add user profile information, such as a profile pictu
 
 ## Add or change profile information
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 When new users are created, only a few details are added to their user profile. If your organization needs more details, they can be added after the user is created. 
 

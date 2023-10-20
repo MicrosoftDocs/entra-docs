@@ -71,7 +71,7 @@ You can use lifecycle workflows to address any of the following conditions:
 
 ## License requirements
 
-[!INCLUDE [Microsoft Entra ID Governance license](../../../includes/active-directory-entra-governance-license.md)]
+[!INCLUDE [Microsoft Entra ID Governance license](~/includes/entra-entra-governance-license.md)]
 
 With Lifecycle Workflows, you can:
 

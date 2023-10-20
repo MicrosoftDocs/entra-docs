@@ -138,7 +138,7 @@ To better understand entitlement management and its documentation, you can refer
 
 ## License requirements
 
-[!INCLUDE [active-directory-p2-governance-license.md](../../../includes/active-directory-p2-governance-license.md)]
+[!INCLUDE [active-directory-p2-governance-license.md](~/includes/entra-p2-governance-license.md)]
 
 
 ## Next steps

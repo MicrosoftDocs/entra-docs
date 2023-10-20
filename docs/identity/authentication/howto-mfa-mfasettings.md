@@ -36,7 +36,7 @@ The following Microsoft Entra multifactor authentication settings are available:
 
 ## Account lockout (MFA Server only)
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 >[!NOTE]
 >Account lockout only affects users who sign in by using MFA Server on-premises. 

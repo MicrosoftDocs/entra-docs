@@ -149,11 +149,11 @@ Same steps need to be followed for all object types (user, group and contact).
 
 If you're using the  [Basic AD and Azure environment](tutorial-basic-ad-azure.md) tutorial, it would be CP1. To install the agent, follow these steps: 
 
-[!INCLUDE [active-directory-cloud-sync-how-to-install](../../../../includes/active-directory-cloud-sync-how-to-install.md)]
+[!INCLUDE [active-directory-cloud-sync-how-to-install](~/includes/entra-cloud-sync-how-to-install.md)]
 
 ## Verify agent installation
 
-[!INCLUDE [active-directory-cloud-sync-how-to-verify-installation](../../../../includes/active-directory-cloud-sync-how-to-verify-installation.md)]
+[!INCLUDE [active-directory-cloud-sync-how-to-verify-installation](~/includes/entra-cloud-sync-how-to-verify-installation.md)]
 
 <a name='configure-azure-ad-connect-cloud-sync'></a>
 
@@ -161,7 +161,7 @@ If you're using the  [Basic AD and Azure environment](tutorial-basic-ad-azure.md
 
 Use the following steps to configure provisioning:
 
- [!INCLUDE [sign in](../../../../includes/cloud-sync-sign-in.md)] 
+ [!INCLUDE [sign in](~/includes/cloud-sync-sign-in.md)] 
  3. Select **New configuration**.
  :::image type="content" source="media/how-to-configure/new-ux-configure-1.png" alt-text="Screenshot of adding a configuration." lightbox="media/how-to-configure/new-ux-configure-1.png":::
  4. On the configuration screen, select your domain and whether to enable password hash sync.  Click **Create**.  

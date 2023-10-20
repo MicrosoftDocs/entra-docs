@@ -27,7 +27,7 @@ For additional information and an example see the following video.
 ## Validate a user
 To use on-demand provisioning, follow these steps:
 
- [!INCLUDE [sign in](../../../../includes/cloud-sync-sign-in.md)]
+ [!INCLUDE [sign in](~/includes/cloud-sync-sign-in.md)]
 
  3. Under **Configuration**, select your configuration.
  4. On the left, select **Provision on demand**.

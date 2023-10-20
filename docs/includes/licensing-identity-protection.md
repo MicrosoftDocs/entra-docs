@@ -11,7 +11,7 @@ ms.custom: include file,licensing
 ---
 
 
-[!INCLUDE [Active Directory P2 license](../../../includes/active-directory-p2-license.md)]
+[!INCLUDE [Active Directory P2 license](~/includes/entra-p2-license.md)]
 
 | Capability | Details | Azure AD Free / Microsoft 365 Apps | Azure AD Premium P1 | Azure AD Premium P2 |
 | --- | --- | --- | --- | --- |

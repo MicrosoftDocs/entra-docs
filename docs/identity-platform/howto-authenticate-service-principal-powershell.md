@@ -29,7 +29,7 @@ This article shows you how to create a service principal that authenticates with
 
 You must have the [latest version](/powershell/azure/install-azure-powershell) of PowerShell for this article.
 
-[!INCLUDE [az-powershell-update](../../../includes/updated-for-az.md)]
+[!INCLUDE [az-powershell-update](~/../azure-docs-pr/includes/updated-for-az.md)]
 
 ## Required permissions
 

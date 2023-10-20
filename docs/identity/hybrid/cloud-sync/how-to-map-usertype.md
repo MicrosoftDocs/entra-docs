@@ -30,7 +30,7 @@ Before you add a mapping for the **UserType** attribute, you must first decide h
 ## Add the UserType mapping
 To add the **UserType** mapping:
 
- [!INCLUDE [sign in](../../../../includes/cloud-sync-sign-in.md)]
+ [!INCLUDE [sign in](~/includes/cloud-sync-sign-in.md)]
  2. Under **Configuration**, select your configuration.
  3. Under **Manage attributes**, select **Click to edit mappings**.
  

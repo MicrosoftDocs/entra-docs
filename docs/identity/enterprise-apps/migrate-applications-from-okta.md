@@ -173,7 +173,7 @@ To migrate a SAML 2.0 application to Microsoft Entra ID, configure the applicati
 
 ## Migrate an OpenID Connect or OAuth 2.0 application to Microsoft Entra ID
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To migrate an OpenID Connect (OIDC) or OAuth 2.0 application to Microsoft Entra ID, in your Microsoft Entra tenant, configure the application for access. In this example, we convert a custom OIDC app.
 

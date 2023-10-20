@@ -35,7 +35,7 @@ However, users still need to carry out privileged operations in Microsoft Entra 
 
 ## License requirements
 
-[!INCLUDE [entra-id-license-pim.md](../../../includes/entra-id-license-pim.md)]
+[!INCLUDE [entra-id-license-pim.md](~/includes/entra-id-license-pim.md)]
 
 
 ## What does it do?

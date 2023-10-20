@@ -15,7 +15,7 @@ ms.date: 06/22/2022
 
 # Issue a Verifiable Credential for directory based claims 
 
-[!INCLUDE [Verifiable Credentials announcement](../../../includes/verifiable-credentials-brand.md)]
+[!INCLUDE [Verifiable Credentials announcement](~/../azure-docs-pr/includes/verifiable-credentials-brand.md)]
 
 In this guide, you'll create a credential where the claims come from a user profile in the directory of the Microsoft Entra tenant. With directory based claims you can create Verifiable Credentials of type VerifiedEmployee, if the users in the directory are employees.
 

@@ -265,7 +265,7 @@ Use the following instructions to create an access review on a team with shared 
 
 ## Allow group owners to create and manage access reviews of their groups
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 The prerequisite role is a Global or Identity Governance Administrator.
 

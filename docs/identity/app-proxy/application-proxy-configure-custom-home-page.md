@@ -43,7 +43,7 @@ You can set the home page URL either through the Microsoft Entra admin center or
 
 ## Change the home page in the Microsoft Entra admin center
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To change the home page URL of your app through the Microsoft Entra admin center, follow these steps:
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).

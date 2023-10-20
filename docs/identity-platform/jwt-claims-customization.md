@@ -22,7 +22,7 @@ These JSON Web tokens (JWT) used by OIDC and OAuth applications contain pieces o
 
 ## View or edit claims
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To view or edit the claims issued in the JWT to the application:
 

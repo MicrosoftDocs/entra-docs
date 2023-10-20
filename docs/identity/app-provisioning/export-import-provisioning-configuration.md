@@ -24,7 +24,7 @@ In this article, you learn how to:
 
 ### Export your provisioning configuration
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To export your configuration:
 

@@ -28,7 +28,7 @@ In order for the external user from another directory to use the My Access porta
 
 ## Share link to request an access package
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 **Prerequisite role:** Global Administrator, Identity Governance Administrator, Catalog owner, or Access package manager
 

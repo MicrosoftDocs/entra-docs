@@ -26,7 +26,7 @@ Using Microsoft Entra ID, part of Microsoft Entra, with a Microsoft Entra ID P1 
 
 ## To assign access for a user or group to a SaaS application
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 1. In the search box enter **Enterprise applications** and choose **Enterprise applications** from the search results.

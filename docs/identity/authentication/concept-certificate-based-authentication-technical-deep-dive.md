@@ -103,7 +103,7 @@ If the CBA-enabled user can't use an MF cert, such as on mobile device without s
 
 ## MFA with Single-factor certificate-based authentication
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Microsoft Entra CBA can be used as a second factor to meet MFA requirements with single-factor certificates. 
 Some of the supported combinations are
@@ -289,7 +289,7 @@ As of now, there's no way for the administrator to manually force or re-trigger 
 
 ### How to configure revocation
 
-[!INCLUDE [Configure revocation](../../../includes/active-directory-authentication-configure-revocation.md)]
+[!INCLUDE [Configure revocation](~/includes/entra-authentication-configure-revocation.md)]
 
 ## Understanding Sign-in logs
 

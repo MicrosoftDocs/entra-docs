@@ -26,7 +26,7 @@ Both admin and non-admin users can download user lists.
 
 ## To download a list of users
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 1. Select Microsoft Entra ID.
@@ -76,7 +76,7 @@ You can see the status of your pending bulk requests in the **Bulk operation res
 
 Each bulk activity to export a list of users can run for up to one hour. This pace enables export and download of a list of up to 500,000 users.
 
-[!INCLUDE [Bulk update warning](~/articles/active-directory/includes/bulk-export.md)]
+[!INCLUDE [Bulk update warning](~/includes/bulk-export.md)]
 
 ## Next steps
 

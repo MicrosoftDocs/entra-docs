@@ -16,7 +16,7 @@ ms.author: barclayn
 
 # What's new in Microsoft Entra Verified ID
 
-[!INCLUDE [Verifiable Credentials announcement](../../../includes/verifiable-credentials-brand.md)]
+[!INCLUDE [Verifiable Credentials announcement](~/../azure-docs-pr/includes/verifiable-credentials-brand.md)]
 
 This article lists the latest features, improvements, and changes in the Microsoft Entra Verified ID service.
 

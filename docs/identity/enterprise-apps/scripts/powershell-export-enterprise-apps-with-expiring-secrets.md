@@ -17,7 +17,7 @@ ms.reviewer: mifarca
 
 This PowerShell script example exports all enterprise applications with secrets and certificates expiring in the next X days (and already expired if you choose so), with their owners for the specified enterprise apps from your directory in a CSV file.
 
-[!INCLUDE [quickstarts-free-trial-note](../../../../includes/quickstarts-free-trial-note.md)]
+[!INCLUDE [quickstarts-free-trial-note](~/../azure-docs-pr/includes/quickstarts-free-trial-note.md)]
 
 This sample requires the [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation) SDK module.
 

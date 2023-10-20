@@ -19,7 +19,7 @@ ms.custom: mode-ui
 
 # Configure managed identities for Azure resources on a virtual machine scale set (virtual machine scale set) using the Azure portal
 
-[!INCLUDE [preview-notice](../../../includes/active-directory-msi-preview-notice.md)]
+[!INCLUDE [preview-notice](~/includes/entra-msi-preview-notice.md)]
 
 Managed identities for Azure resources provide Azure services with an automatically managed identity in Microsoft Entra ID. You can use this identity to authenticate to any service that supports Microsoft Entra authentication, without having credentials in your code. 
 
@@ -46,7 +46,7 @@ Currently, the Azure portal does not support enabling system-assigned managed id
 
 ### Enable system-assigned managed identity on an existing virtual machine scale set
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To enable the system-assigned managed identity on a virtual machine scale set that was originally provisioned without it:
 

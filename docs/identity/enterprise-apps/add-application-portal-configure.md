@@ -30,7 +30,7 @@ To configure the properties of an enterprise application, you need:
 
 ## Configure application properties
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Application properties control how the application is represented and how the application is accessed.
 

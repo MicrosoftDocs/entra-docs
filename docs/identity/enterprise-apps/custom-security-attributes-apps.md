@@ -40,7 +40,7 @@ To assign or remove custom security attributes for an application in your Micros
 Learn how to work with custom attributes for applications in Microsoft Entra ID.
 ### Assign custom security attributes to an application
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 
 :::zone pivot="portal"

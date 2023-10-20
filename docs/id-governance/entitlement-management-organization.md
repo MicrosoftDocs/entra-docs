@@ -72,7 +72,7 @@ For a demonstration of how to add a connected organization, watch the following 
 
 ## View the list of connected organizations
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 **Prerequisite role**: *Global Administrator* or  *Identity Governance Administrator*
 

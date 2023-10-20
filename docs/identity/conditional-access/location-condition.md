@@ -233,7 +233,7 @@ A policy that uses the location condition to block access is considered restrict
 
 ### User exclusions
 
-[!INCLUDE [active-directory-policy-exclusions](../../../includes/active-directory-policy-exclude-user.md)]
+[!INCLUDE [active-directory-policy-exclusions](~/includes/entra-policy-exclude-user.md)]
 
 ### Bulk uploading and downloading of named locations
 

@@ -43,7 +43,7 @@ To build an environment for either work and school accounts or personal Microsof
 
 ### Use an existing Microsoft Entra tenant
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Many developers already have tenants through services or subscriptions that are tied to Microsoft Entra tenants, such as Microsoft 365 or Azure subscriptions.
 

@@ -27,7 +27,7 @@ It is possible for Application Proxy to write personal data to the following log
 
 For information on how to configure data retention for the Windows event logs, see [Settings for event logs](https://technet.microsoft.com/library/cc952132.aspx). To learn about Windows event logs, see [Using Windows Event Log](/windows/win32/wes/using-windows-event-log).
 
-[!INCLUDE [GDPR-related guidance](../../../includes/gdpr-hybrid-note.md)]
+[!INCLUDE [GDPR-related guidance](~/../azure-docs-pr/includes/gdpr-hybrid-note.md)]
 
 ## Remove personal data from Connector event logs
 
@@ -38,7 +38,7 @@ To ensure the Application Proxy logs do not have personal data, you can either:
 
 Use the following sections to remove personal data from connector event logs. You must complete the removal process for all devices on which the connector is installed.
 
-[!INCLUDE [GDPR-related guidance](../../../includes/gdpr-intro-sentence.md)]
+[!INCLUDE [GDPR-related guidance](~/../azure-docs-pr/includes/gdpr-intro-sentence.md)]
 
 ### View or export specific data
 

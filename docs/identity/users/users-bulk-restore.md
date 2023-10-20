@@ -42,7 +42,7 @@ The rows in a downloaded CSV template are as follows:
 
 ## To bulk restore users
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Select Microsoft Entra ID.
@@ -62,7 +62,7 @@ The rows in a downloaded CSV template are as follows:
 
 If there are errors, you can download and view the results file on the **Bulk operation results** page. The file contains the reason for each error.
 
-[!INCLUDE [Bulk update warning](~/articles/active-directory/includes/bulk-export.md)]
+[!INCLUDE [Bulk update warning](~/includes/bulk-export.md)]
 
 ## Check status
 

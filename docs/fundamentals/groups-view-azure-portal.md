@@ -30,7 +30,7 @@ Before you begin, you’ll need to:
 
 Create a new group, named _MDM policy - West_. For more information about creating a group, see [How to create a basic group and add members](./how-to-manage-groups.md).
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Groups** > **All groups**.

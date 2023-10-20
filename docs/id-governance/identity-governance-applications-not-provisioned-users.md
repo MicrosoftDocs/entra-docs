@@ -34,7 +34,7 @@ For more information on those first two scenarios, where the application support
 This article covers the third scenario. For some legacy applications it might not be feasible to remove other identity providers or local credential authentication from the application, or enable support for provisioning protocols for those applications. For those applications, if you want to use Microsoft Entra ID to review who has access to that application, or remove someone's access from that application, you'll need to create assignments in Microsoft Entra ID that represent application users.  This article covers that scenario of an application that does not use Microsoft Entra ID as its identity provider and does not support provisioning.
 
 ## License requirements
-[!INCLUDE [active-directory-entra-governance-license.md](../../../includes/active-directory-entra-governance-license.md)]
+[!INCLUDE [active-directory-entra-governance-license.md](~/includes/entra-entra-governance-license.md)]
 
 ## Terminology
 
@@ -78,7 +78,7 @@ If this system doesn't have the Microsoft Graph PowerShell cmdlets installed or 
 
 Now that you have a list of all the users obtained from the application, you'll match those users from the application's data store with users in Microsoft Entra ID.  
 
-[!INCLUDE [active-directory-identity-governance-applications-retrieve-users.md](../../../includes/active-directory-identity-governance-applications-retrieve-users.md)]
+[!INCLUDE [active-directory-identity-governance-applications-retrieve-users.md](~/includes/entra-identity-governance-applications-retrieve-users.md)]
 
 ## Register the application
 
@@ -228,7 +228,7 @@ When an application role assignment is created in Microsoft Entra ID for a user 
 
 ## Select appropriate reviewers
 
-[!INCLUDE [active-directory-identity-governance-applications-select-reviewers.md](../../../includes/active-directory-identity-governance-applications-select-reviewers.md)]
+[!INCLUDE [active-directory-identity-governance-applications-select-reviewers.md](~/includes/entra-identity-governance-applications-select-reviewers.md)]
 
 ## Create the review of the application role assignments
 

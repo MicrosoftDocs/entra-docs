@@ -20,7 +20,7 @@ ms.custom: devx-track-azurecli
 
 # Assign a managed identity access to a resource using Azure CLI
 
-[!INCLUDE [preview-notice](../../../includes/active-directory-msi-preview-notice.md)]
+[!INCLUDE [preview-notice](~/includes/entra-msi-preview-notice.md)]
 
 Once you've configured an Azure resource with a managed identity, you can give the managed identity access to another resource, just like any security principal. This example shows you how to give an Azure virtual machine or virtual machine scale set's managed identity access to an Azure storage account using Azure CLI.
 

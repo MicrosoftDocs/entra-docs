@@ -53,7 +53,7 @@ All users start out *Disabled*. When you enroll users in per-user Microsoft Entr
 
 ## View the status for a user
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To view and manage user states, complete the following steps:
 

@@ -24,7 +24,7 @@ This prehire scenario generates a temporary access pass for our new employee and
 
 ## Prerequisites
 
-[!INCLUDE [Microsoft Entra ID Governance license](../../../includes/active-directory-entra-governance-license.md)]
+[!INCLUDE [Microsoft Entra ID Governance license](~/includes/entra-entra-governance-license.md)]
 
 
 ##  Before you begin

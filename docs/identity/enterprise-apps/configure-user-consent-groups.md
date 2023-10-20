@@ -27,7 +27,7 @@ Group owner consent can be managed in two separate ways: through Microsoft Entra
 
 Before creating the app consent policy to manage your group owner consent, you need to disable the group owner consent setting through the Microsoft Entra admin center. Disabling this setting allows for group owner consent subject to app consent policies. You can learn how to disable the group owner consent setting in various ways in this article. Learn more about [managing group owner consent by app consent policies](manage-group-owner-consent-policies.md) tailored to your needs. 
 
-[!INCLUDE [portal updates](../includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 ## Prerequisites
 
@@ -38,7 +38,7 @@ To configure group and team owner consent, you need:
 
 ## Manage group owner consent to apps by directory settings
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 You can configure which users are allowed to consent to apps accessing their groups' or teams' data, or you can disable the setting for all users.
 

@@ -42,7 +42,7 @@ To grant tenant-wide admin consent, you need:
 
 ## Grant tenant-wide admin consent in Enterprise apps
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 You can grant tenant-wide admin consent through the **Enterprise applications** panel if the application has already been provisioned in your tenant. For example, an app could be provisioned in your tenant if at least one user has already consented to the application. For more information, see [How and why applications are added to Microsoft Entra ID](~/identity-platform/how-applications-are-added.md).
 

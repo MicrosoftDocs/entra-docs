@@ -17,13 +17,13 @@ ms.custom: devx-track-azurepowershell, mode-api, has-azure-ad-ps-ref
 
 # Configure managed identities for Azure resources on an Azure VM using PowerShell
 
-[!INCLUDE [preview-notice](../../../includes/active-directory-msi-preview-notice.md)]
+[!INCLUDE [preview-notice](~/includes/entra-msi-preview-notice.md)]
 
 Managed identities for Azure resources provide Azure services with an automatically managed identity in Microsoft Entra ID. You can use this identity to authenticate to any service that supports Microsoft Entra authentication, without having credentials in your code.
 
 In this article, using PowerShell, you learn how to perform the following managed identities for Azure resources operations on an Azure VM.
 
-[!INCLUDE [az-powershell-update](../../../includes/updated-for-az.md)]
+[!INCLUDE [az-powershell-update](~/../azure-docs-pr/includes/updated-for-az.md)]
 
 ## Prerequisites
 

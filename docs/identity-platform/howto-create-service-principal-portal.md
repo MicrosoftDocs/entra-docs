@@ -38,7 +38,7 @@ You must have sufficient permissions to register an application with your Micros
 
 ## Register an application with Microsoft Entra ID and create a service principal
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 1. Browse to **Identity** > **Applications** > **App registrations** then select **New registration**.

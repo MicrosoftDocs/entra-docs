@@ -36,7 +36,7 @@ The following steps are for registering a demo [XRayClaims](https://adfshelp.mic
 
 ### Add a new SAML application
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Add a new, non-gallery SAML application in your tenant:
 

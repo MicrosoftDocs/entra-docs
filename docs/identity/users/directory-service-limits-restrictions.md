@@ -22,7 +22,7 @@ ms.collection: M365-identity-device-management
 
 This article contains the usage constraints and other service limits for the Microsoft Entra ID, part of Microsoft Entra, service. If you’re looking for the full set of Microsoft Azure service limits, see [Azure Subscription and Service Limits, Quotas, and Constraints](/azure/azure-resource-manager/management/azure-subscription-service-limits).
 
-[!INCLUDE [AAD-service-limits](../../../includes/active-directory-service-limits-include.md)]
+[!INCLUDE [AAD-service-limits](~/includes/entra-service-limits-include.md)]
 
 ## Next steps
 

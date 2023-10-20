@@ -44,7 +44,7 @@ You can create a new administrative unit by using either the Microsoft Entra adm
 
 ### Microsoft Entra admin center
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
@@ -104,7 +104,7 @@ $restrictedAU = New-MgDirectoryAdministrativeUnit -BodyParameter $params
 
 # [Azure AD PowerShell](#tab/aad-powershell)
 
-[!INCLUDE [Azure AD PowerShell migration](../includes/aad-powershell-migration-include.md)]
+[!INCLUDE [Azure AD PowerShell migration](~/includes/aad-powershell-migration-include.md)]
 
 Use the [New-AzureADMSAdministrativeUnit](/powershell/module/azuread/new-azureadmsadministrativeunit?branch=main) command to create a new administrative unit.
 
@@ -196,7 +196,7 @@ Remove-MgDirectoryAdministrativeUnit -AdministrativeUnitId $adminUnitObj.Id
 
 # [Azure AD PowerShell](#tab/aad-powershell)
 
-[!INCLUDE [Azure AD PowerShell migration](../includes/aad-powershell-migration-include.md)]
+[!INCLUDE [Azure AD PowerShell migration](~/includes/aad-powershell-migration-include.md)]
 
 Use the [Remove-AzureADMSAdministrativeUnit](/powershell/module/azuread/remove-azureadmsadministrativeunit?branch=main) command to delete an administrative unit.
 

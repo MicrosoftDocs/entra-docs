@@ -20,7 +20,7 @@ ms.collection: M365-identity-device-management
 
 # Tutorial: Use a Windows VM system-assigned managed identity to access Azure Storage
 
-[!INCLUDE [preview-notice](../../../includes/active-directory-msi-preview-notice.md)]
+[!INCLUDE [preview-notice](~/includes/entra-msi-preview-notice.md)]
 
 This tutorial shows you how to use a system-assigned managed identity for a Windows virtual machine (VM) to access Azure Storage. You learn how to:
 
@@ -34,13 +34,13 @@ This tutorial shows you how to use a system-assigned managed identity for a Wind
 
 ## Prerequisites
 
-[!INCLUDE [msi-tut-prereqs](../../../includes/active-directory-msi-tut-prereqs.md)]
+[!INCLUDE [msi-tut-prereqs](~/includes/entra-msi-tut-prereqs.md)]
 
 
 
 ## Enable
 
-[!INCLUDE [msi-tut-enable](../../../includes/active-directory-msi-tut-enable.md)]
+[!INCLUDE [msi-tut-enable](~/includes/entra-msi-tut-enable.md)]
 
 
 
@@ -92,7 +92,7 @@ This section shows how to grant your VM access to an Azure Storage container. Yo
     | System-assigned | Virtual Machine |
     | Select | &lt;your virtual machine&gt; |
 
-    ![Add role assignment page in Azure portal.](../../../includes/role-based-access-control/media/add-role-assignment-page.png)
+    ![Add role assignment page in Azure portal.](~/../azure-docs-pr/includes/role-based-access-control/media/add-role-assignment-page.png)
 
 ## Access data 
 
@@ -175,7 +175,7 @@ The response contains the contents of the file:
 
 ## Disable
 
-[!INCLUDE [msi-tut-disable](../../../includes/active-directory-msi-tut-disable.md)]
+[!INCLUDE [msi-tut-disable](~/includes/entra-msi-tut-disable.md)]
 
 
 

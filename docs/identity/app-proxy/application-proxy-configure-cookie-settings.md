@@ -42,7 +42,7 @@ Additionally, if your back-end application has cookies that need to be available
 
 ## Set the cookie settings - Microsoft Entra admin center
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To set the cookie settings using the Microsoft Entra admin center:
 

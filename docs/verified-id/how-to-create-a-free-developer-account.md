@@ -14,7 +14,7 @@ ms.author: barclayn
 
 # Microsoft Entra Verified ID developer information
 
-[!INCLUDE [Verifiable Credentials announcement](../../../includes/verifiable-credentials-brand.md)]
+[!INCLUDE [Verifiable Credentials announcement](~/../azure-docs-pr/includes/verifiable-credentials-brand.md)]
 
 > [!NOTE]
 > The requirement of a Microsoft Entra ID P2 license was removed in early May 2001. The Microsoft Entra ID Free tier is now supported. 

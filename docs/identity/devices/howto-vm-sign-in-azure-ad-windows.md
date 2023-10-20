@@ -207,7 +207,7 @@ To configure role assignments for your Microsoft Entra ID-enabled Windows Server
     | Role | **Virtual Machine Administrator Login** or **Virtual Machine User Login** |
     | Assign access to | User, group, service principal, or managed identity |
 
-    ![Screenshot that shows the page for adding a role assignment.](../../../includes/role-based-access-control/media/add-role-assignment-page.png)
+    ![Screenshot that shows the page for adding a role assignment.](~/../azure-docs-pr/includes/role-based-access-control/media/add-role-assignment-page.png)
 
 ### Azure Cloud Shell
 

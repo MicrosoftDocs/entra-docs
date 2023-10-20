@@ -52,7 +52,7 @@ Then once the access package is created, you can [change the hidden setting](ent
 
 ## Start the creation process
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To complete the following steps, you need a role of global Administrator, Identity Governance Administrator, catalog owner, or access package manager.
 
@@ -117,9 +117,9 @@ On the **Requests** tab, you create the first policy to specify who can request 
 
 Depending on which users you want to be able to request this access package, perform the steps in one of the following sections.
 
-[!INCLUDE [Entitlement management request policy](../../../includes/active-directory-entitlement-management-request-policy.md)]
+[!INCLUDE [Entitlement management request policy](~/includes/entra-entitlement-management-request-policy.md)]
 
-[!INCLUDE [Entitlement management lifecycle policy](../../../includes/active-directory-entitlement-management-lifecycle-policy.md)]
+[!INCLUDE [Entitlement management lifecycle policy](~/includes/entra-entitlement-management-lifecycle-policy.md)]
 
 ## Review and create the access package
 

@@ -44,7 +44,7 @@ User attributes are values collected from the user during self-service sign-up. 
 
 ## Enable self-service sign-up for your tenant
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Before you can add a self-service sign-up user flow to your applications, you need to enable the feature for your tenant. After it's enabled, controls become available in the user flow that let you associate the user flow with an application.
 

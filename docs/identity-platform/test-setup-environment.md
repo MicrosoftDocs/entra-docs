@@ -63,7 +63,7 @@ You can [manually create a tenant](quickstart-create-new-tenant.md), which will 
 
 ### Populate your tenant with users
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 For convenience, you may want to invite yourself and other members of your development team to be guest users in the tenant. This will create separate guest objects in the test tenant, but means you only have to manage one set of credentials for your corporate account and your test account.
 

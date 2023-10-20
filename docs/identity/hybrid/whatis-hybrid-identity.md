@@ -31,7 +31,7 @@ For more information see [What is provisioning?](what-is-provisioning.md) and [W
 
 ## License requirements for using Microsoft Entra Connect
 
-[!INCLUDE [active-directory-free-license.md](../../../includes/active-directory-free-license.md)]
+[!INCLUDE [active-directory-free-license.md](~/includes/entra-free-license.md)]
 
 ## Next Steps 
 

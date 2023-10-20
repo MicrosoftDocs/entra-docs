@@ -223,7 +223,7 @@ To choose one of these options, you must know what your current settings are.
 
 #### Verify current Microsoft Entra Connect settings
 
-[!INCLUDE [sign in](../../../../includes/cloud-sync-sign-in.md)]
+[!INCLUDE [sign in](~/includes/cloud-sync-sign-in.md)]
 
 3. Verify the **USER SIGN_IN** settings as shown in this diagram:
 

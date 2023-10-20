@@ -28,7 +28,7 @@ App protection policies apply [mobile application management (MAM)](/mem/intune/
 - Currently unsupported in sovereign clouds.
 
 ## User exclusions
-[!INCLUDE [active-directory-policy-exclusions](../../../includes/active-directory-policy-exclude-user.md)]
+[!INCLUDE [active-directory-policy-exclusions](~/includes/entra-policy-exclude-user.md)]
 
 ## Create a Conditional Access policy
 

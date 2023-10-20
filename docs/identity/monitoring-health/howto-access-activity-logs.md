@@ -28,7 +28,7 @@ You can access Microsoft Entra activity logs and reports using the following met
 
 Each of these methods provides you with capabilities that may align with certain scenarios. This article describes those scenarios, including recommendations and details about related reports that use the data in the activity logs. Explore the options in this article to learn about those scenarios so you can choose the right method.
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 ## Prerequisites
 

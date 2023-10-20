@@ -29,11 +29,11 @@ This tutorial shows you how to use a system-assigned identity for a Windows virt
 
 ## Prerequisites
 
-[!INCLUDE [msi-tut-prereqs](../../../includes/active-directory-msi-tut-prereqs.md)]
+[!INCLUDE [msi-tut-prereqs](~/includes/entra-msi-tut-prereqs.md)]
 
 ## Enable
 
-[!INCLUDE [msi-tut-enable](../../../includes/active-directory-msi-tut-enable.md)]
+[!INCLUDE [msi-tut-enable](~/includes/entra-msi-tut-enable.md)]
 
 ## Grant access
 
@@ -173,7 +173,7 @@ Examine the value of `$DataSet.Tables[0]` to view the results of the query.
 
 ## Disable
 
-[!INCLUDE [msi-tut-disable](../../../includes/active-directory-msi-tut-disable.md)]
+[!INCLUDE [msi-tut-disable](~/includes/entra-msi-tut-disable.md)]
 
 ## Next steps
 

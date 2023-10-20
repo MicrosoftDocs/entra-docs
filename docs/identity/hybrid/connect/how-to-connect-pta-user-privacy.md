@@ -21,7 +21,7 @@ ms.collection: M365-identity-device-management
 # User Privacy and Microsoft Entra pass-through authentication
 
 
-[!INCLUDE [Privacy](../../../../includes/gdpr-intro-sentence.md)]
+[!INCLUDE [Privacy](~/../azure-docs-pr/includes/gdpr-intro-sentence.md)]
 
 ## Overview
 

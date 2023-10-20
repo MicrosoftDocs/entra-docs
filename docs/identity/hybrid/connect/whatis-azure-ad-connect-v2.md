@@ -127,12 +127,12 @@ This is a known issue. Restart your PowerShell session after installing or upgra
 
 ## License requirements for using Microsoft Entra Connect V2
 
-[!INCLUDE [active-directory-free-license.md](../../../../includes/active-directory-free-license.md)]
+[!INCLUDE [active-directory-free-license.md](~/includes/entra-free-license.md)]
 
 <a name='license-requirements-for-using-azure-ad-connect-health'></a>
 
 ## License requirements for using Microsoft Entra Connect Health
-[!INCLUDE [active-directory-free-license.md](../../../../includes/active-directory-p1-license.md)]
+[!INCLUDE [active-directory-free-license.md](~/includes/entra-p1-license.md)]
 
 ## Next steps
 

@@ -33,7 +33,7 @@ The following diagram displays how the sample app works:
 
 ## Step 1: Register your application
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Follow these steps to register your application in the Microsoft Entra admin center:
 
@@ -89,7 +89,7 @@ You can also use an integrated development environment to open the folder.
 
 1. Create a virtual environment for the app:
 
-    [!INCLUDE [Virtual environment setup](../../app-service/includes/quickstart-python/virtual-environment-setup.md)]
+    [!INCLUDE [Virtual environment setup](~/../azure-docs-pr/includes/app-service/includes/quickstart-python/virtual-environment-setup.md)]
 
 1. Install the requirements using `pip`:
 

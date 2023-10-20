@@ -28,7 +28,7 @@ The following quickstart uses a ASP.NET Core web API code sample to demonstrate 
 
 ## Step 1: Register the application
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 First, register the web API in your Microsoft Entra tenant and add a scope by following these steps:
 

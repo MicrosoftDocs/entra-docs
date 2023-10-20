@@ -92,7 +92,7 @@ Conditional Access administrators can create policies that factor in user or sig
 
 ## License requirements
 
-[!INCLUDE [Active Directory P2 license](../../../includes/active-directory-p2-license.md)]
+[!INCLUDE [Active Directory P2 license](~/includes/entra-p2-license.md)]
 
 | Capability | Details | Microsoft Entra ID Free / Microsoft 365 Apps | Microsoft Entra ID P1 | Microsoft Entra ID P2 |
 | --- | --- | --- | --- | --- |

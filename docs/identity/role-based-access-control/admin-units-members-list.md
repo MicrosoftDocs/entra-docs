@@ -36,7 +36,7 @@ You can list the users, groups, or devices in administrative units using the Mic
 
 ### List the administrative units for a single user, group, or device
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 

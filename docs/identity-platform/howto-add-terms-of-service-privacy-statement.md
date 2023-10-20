@@ -53,7 +53,7 @@ When the terms of service and privacy statement are ready, you can add links to 
 
 ### <a name="entra-admin-center"></a>Using the Microsoft Entra admin center
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Follow these steps to add links:
 

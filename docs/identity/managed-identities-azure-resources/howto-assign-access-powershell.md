@@ -20,11 +20,11 @@ ms.custom: devx-track-azurepowershell
 
 # Assign a managed identity access to a resource using PowerShell
 
-[!INCLUDE [preview-notice](../../../includes/active-directory-msi-preview-notice.md)]
+[!INCLUDE [preview-notice](~/includes/entra-msi-preview-notice.md)]
 
 Once you've configured an Azure resource with a managed identity, you can give the managed identity access to another resource, just like any security principal. This example shows you how to give an Azure virtual machine's managed identity access to an Azure storage account using PowerShell.
 
-[!INCLUDE [az-powershell-update](../../../includes/updated-for-az.md)]
+[!INCLUDE [az-powershell-update](~/../azure-docs-pr/includes/updated-for-az.md)]
 
 ## Prerequisites
 

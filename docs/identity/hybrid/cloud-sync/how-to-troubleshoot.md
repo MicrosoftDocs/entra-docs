@@ -27,11 +27,11 @@ You can verify these items in the portal and on the local server that's running 
 
 ### Microsoft Entra admin center agent verification
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To verify that Azure detects the agent, and that the agent is healthy, follow these steps:
 
- [!INCLUDE [sign in](../../../../includes/cloud-sync-sign-in.md)]
+ [!INCLUDE [sign in](~/includes/cloud-sync-sign-in.md)]
  3. Select **cloud sync**.
  4. You should see the agents you've installed. Verify that the agent in question is there. If all is well, you will see the *active* (green) status for the agent.
 

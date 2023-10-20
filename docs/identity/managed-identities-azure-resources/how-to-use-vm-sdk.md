@@ -19,12 +19,12 @@ ms.collection: M365-identity-device-management
 
 # How to use managed identities for Azure resources on an Azure VM with Azure SDKs 
 
-[!INCLUDE [preview-notice](../../../includes/active-directory-msi-preview-notice.md)]  
+[!INCLUDE [preview-notice](~/includes/entra-msi-preview-notice.md)]  
 This article provides a list of SDK samples, which demonstrate use of their respective Azure SDK's support for managed identities for Azure resources.
 
 ## Prerequisites
 
-[!INCLUDE [msi-qs-configure-prereqs](../../../includes/active-directory-msi-qs-configure-prereqs.md)]
+[!INCLUDE [msi-qs-configure-prereqs](~/includes/entra-msi-qs-configure-prereqs.md)]
 
 > [!IMPORTANT]
 > - All sample code/script in this article assumes the client is running on a VM with managed identities for Azure resources enabled. Use the VM "Connect" feature in the Azure portal, to remotely connect to your VM. For details on enabling managed identities for Azure resources on a VM, see [Configure managed identities for Azure resources on a VM using the Azure portal](qs-configure-portal-windows-vm.md), or one of the variant articles (using PowerShell, CLI, a template, or an Azure SDK). 

@@ -21,7 +21,7 @@ ms.collection: M365-identity-device-management
  
 As an administrator, you [create an access review of groups or applications](create-access-review.md) and reviewers [perform the access review](perform-access-review.md). This article describes how to see the results of the access review and apply them.
  
-[!INCLUDE [GDPR-related guidance](../../../includes/gdpr-intro-sentence.md)]
+[!INCLUDE [GDPR-related guidance](~/../azure-docs-pr/includes/gdpr-intro-sentence.md)]
  
 ## Prerequisites
  
@@ -34,7 +34,7 @@ For more information, see [License requirements](access-reviews-overview.md#lice
  
 ## View the status of an access review
  
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 You can track the progress of access reviews as they're completed.
  

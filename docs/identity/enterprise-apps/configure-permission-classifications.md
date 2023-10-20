@@ -33,7 +33,7 @@ To configure permission classifications, you need:
 
 ## Manage permission classifications
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 :::zone pivot="portal"
 

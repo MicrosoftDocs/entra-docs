@@ -19,7 +19,7 @@ ms.collection: M365-identity-device-management
 
 # Tutorial: Use a Windows VM system-assigned managed identity to access Azure Data Lake Store
 
-[!INCLUDE [preview-notice](../../../includes/active-directory-msi-preview-notice.md)]
+[!INCLUDE [preview-notice](~/includes/entra-msi-preview-notice.md)]
 
 This tutorial shows you how to use a system-assigned managed identity for a Windows virtual machine (VM) to access an Azure Data Lake Store. Managed identities are automatically managed by Azure. They enable your application to authenticate to services that support Microsoft Entra authentication, without needing to insert credentials into your code.
 
@@ -42,7 +42,7 @@ In this article you learn how to:
 
 ## Enable
 
-[!INCLUDE [msi-tut-enable](../../../includes/active-directory-msi-tut-enable.md)]
+[!INCLUDE [msi-tut-enable](~/includes/entra-msi-tut-enable.md)]
 
 
 
@@ -187,7 +187,7 @@ Using other Data Lake Store filesystem APIs you can append to files, download fi
 
 ## Disable
 
-[!INCLUDE [msi-tut-disable](../../../includes/active-directory-msi-tut-disable.md)]
+[!INCLUDE [msi-tut-disable](~/includes/entra-msi-tut-disable.md)]
 
 
 ## Next steps

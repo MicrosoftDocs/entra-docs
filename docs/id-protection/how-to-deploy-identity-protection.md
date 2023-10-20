@@ -64,7 +64,7 @@ Identity Protection sends risk signals to Conditional Access, to make decisions 
 
 ### Policy exclusions
 
-[!INCLUDE [active-directory-policy-exclusions](../../../includes/active-directory-policy-exclude-user.md)]
+[!INCLUDE [active-directory-policy-exclusions](~/includes/entra-policy-exclude-user.md)]
 
 ### Multifactor authentication
 

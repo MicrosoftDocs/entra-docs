@@ -127,7 +127,7 @@ If you need to support one of these two scenarios, use the same internal and ext
 
 ## Enable link translation
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Getting started with link translation is as easy as clicking a button:
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).

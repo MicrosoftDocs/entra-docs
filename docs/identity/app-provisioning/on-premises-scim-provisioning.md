@@ -19,7 +19,7 @@ The Microsoft Entra provisioning service supports a [SCIM 2.0](https://techcommu
 ![Diagram that shows SCIM architecture.](./media/on-premises-scim-provisioning/scim-4.png)
 
 ## Prerequisites
-- A Microsoft Entra tenant with Microsoft Entra ID P1 or Premium P2 (or EMS E3 or E5). [!INCLUDE [active-directory-p1-license.md](../../../includes/active-directory-p1-license.md)]
+- A Microsoft Entra tenant with Microsoft Entra ID P1 or Premium P2 (or EMS E3 or E5). [!INCLUDE [active-directory-p1-license.md](~/includes/entra-p1-license.md)]
 - Administrator role for installing the agent. This task is a one-time effort and should be an Azure account that's either a Hybrid Identity Administrator or a global administrator. 
 - Administrator role for configuring the application in the cloud (application administrator, cloud application administrator, global administrator, or a custom role with permissions).
 - A computer with at least 3 GB of RAM, to host a provisioning agent. The computer should have Windows Server 2016 or a later version of Windows Server, with connectivity to the target application, and with outbound connectivity to login.microsoftonline.com, other Microsoft Online Services and Azure domains. An example is a Windows Server 2016 virtual machine hosted in Azure IaaS or behind a proxy.
@@ -33,7 +33,7 @@ If you have already downloaded the provisioning agent and configured it for anot
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
 1. Browse to **Identity** > **Hybrid management** > **Microsoft Entra Connect** > **Cloud sync** > **Agents**.
 
-   :::image type="content" source="../../../includes/media/active-directory-cloud-sync-how-to-install/new-ux-1.png" alt-text="Screenshot of new UX screen." lightbox="../../../includes/media/active-directory-cloud-sync-how-to-install/new-ux-1.png":::
+   :::image type="content" source="~/includes/media/entra-cloud-sync-how-to-install/new-ux-1.png" alt-text="Screenshot of new UX screen." lightbox="~/includes/media/entra-cloud-sync-how-to-install/new-ux-1.png":::
 
 1. Select **Download on-premises agent**, and select **Accept terms & download**.
 

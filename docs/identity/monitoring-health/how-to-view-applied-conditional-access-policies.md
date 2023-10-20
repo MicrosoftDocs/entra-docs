@@ -87,7 +87,7 @@ The Azure AD Graph PowerShell module doesn't support viewing applied Conditional
 
 ## View Conditional Access policies in Microsoft Entra sign-in logs
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 The activity details of sign-in logs contain several tabs. The **Conditional Access** tab lists the Conditional Access policies applied to that sign-in event. 
 

@@ -91,7 +91,7 @@ With the Easy Button, admins don't go between Microsoft Entra ID and a BIG-IP to
 
 ## Register the Easy Button
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Before a client or service accesses Microsoft Graph, the Microsoft identity platform must trust it.
 

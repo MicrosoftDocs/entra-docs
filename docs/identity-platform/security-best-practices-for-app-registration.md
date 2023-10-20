@@ -82,7 +82,7 @@ Consider the following guidance related to defining the Application ID URI:
 - Keep an inventory of the URIs in your organization to help maintain security.
 - Use the Application ID URI to expose the WebApi in the organization. Don't use the Application ID URI to identify the application, and instead use the Application (client) ID property.
 
-[!INCLUDE [active-directory-identifierUri](../../../includes/active-directory-identifier-uri-patterns.md)]
+[!INCLUDE [active-directory-identifierUri](~/includes/entra-identifier-uri-patterns.md)]
 
 ## App ownership configuration
 

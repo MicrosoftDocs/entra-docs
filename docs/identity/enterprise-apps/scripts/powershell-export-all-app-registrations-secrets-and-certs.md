@@ -18,7 +18,7 @@ ms.reviewer: mifarca
 
 This PowerShell script example exports all secrets and certificates for the specified app registrations from your directory into a CSV file.
 
-[!INCLUDE [quickstarts-free-trial-note](../../../../includes/quickstarts-free-trial-note.md)]
+[!INCLUDE [quickstarts-free-trial-note](~/../azure-docs-pr/includes/quickstarts-free-trial-note.md)]
 
 This sample requires the [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation) SDK module.
 

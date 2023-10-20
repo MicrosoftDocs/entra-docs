@@ -19,7 +19,7 @@ ms.collection: M365-identity-device-management
 
 # Use a Windows VM system-assigned managed identity to access Resource Manager
 
-[!INCLUDE [preview-notice](../../../includes/active-directory-msi-preview-notice.md)]
+[!INCLUDE [preview-notice](~/includes/entra-msi-preview-notice.md)]
 
 This tutorial shows you how to access the Azure Resource Manager API using a Windows virtual machine with system-assigned managed identity enabled. Managed identities for Azure resources are automatically managed by Azure and enable you to authenticate to services that support Microsoft Entra authentication without needing to insert credentials into your code. You learn how to:
 
@@ -37,11 +37,11 @@ This tutorial shows you how to access the Azure Resource Manager API using a Win
 
 ## Enable
 
-[!INCLUDE [msi-tut-enable](../../../includes/active-directory-msi-tut-enable.md)]
+[!INCLUDE [msi-tut-enable](~/includes/entra-msi-tut-enable.md)]
 
 ## Grant your VM access to a resource group in Resource Manager
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Using managed identities for Azure resources, your application can get access tokens to authenticate to resources that support Microsoft Entra authentication. The Azure Resource Manager API supports Microsoft Entra authentication. We grant this VM's identity access to a resource in Azure Resource Manager, in this case a Resource Group. We assign the [Reader](/azure/role-based-access-control/built-in-roles#reader) role to the managed-identity at the scope of the resource group. 
 

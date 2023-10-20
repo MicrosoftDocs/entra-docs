@@ -148,7 +148,7 @@ The Oracle PeopleSoft application needs to recognize the user. Using a name, the
 
 ## Enable Microsoft Entra multifactor authentication
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To provide more security for sign-ins, you can enforce Microsoft Entra multifactor authentication. 
 

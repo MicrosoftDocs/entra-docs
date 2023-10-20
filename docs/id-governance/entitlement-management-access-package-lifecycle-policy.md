@@ -31,7 +31,7 @@ To ensure users have the right access to an access package, custom questions can
 
 ## Open lifecycle settings
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To change the lifecycle settings for an access package, you need to open the corresponding policy. Follow these steps to open the lifecycle settings for an access package.
 
@@ -55,7 +55,7 @@ To change the lifecycle settings for an access package, you need to open the cor
 
 1. Select the **Lifecycle** tab to open the lifecycle settings.
 
-[!INCLUDE [Entitlement management lifecycle policy](../../../includes/active-directory-entitlement-management-lifecycle-policy.md)]
+[!INCLUDE [Entitlement management lifecycle policy](~/includes/entra-entitlement-management-lifecycle-policy.md)]
 
 ## Next steps
 

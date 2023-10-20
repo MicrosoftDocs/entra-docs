@@ -30,7 +30,7 @@ PIM for Groups is part of Microsoft Entra Privileged Identity Management – alo
 
 With PIM for Groups you can use policies similar to ones you use in PIM for Microsoft Entra roles and PIM for Azure Resources: you can require approval for membership or ownership activation, enforce multi-factor authentication (MFA), require justification, limit maximum activation time, and more. Each group in PIM for Groups has two policies: one for activation of membership and another for activation of ownership in the group. Up until January 2023, PIM for Groups feature was called “Privileged Access Groups”.
 
-[!INCLUDE [PIM for Groups note](../includes/pim-for-groups-include.md)]
+[!INCLUDE [PIM for Groups note](~/includes/pim-for-groups-include.md)]
 
 <a name='what-are-entra-id-role-assignable-groups'></a>
 

@@ -90,7 +90,7 @@ Create the application using the following steps:
 
 ## Register your application
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To register and configure your application, follow these steps:
 

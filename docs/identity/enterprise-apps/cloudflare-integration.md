@@ -67,7 +67,7 @@ Integrate Cloudflare Zero Trust account with an instance of Microsoft Entra ID.
 
 ## Register Cloudflare with Microsoft Entra ID
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Use the instructions in the following three sections to register Cloudflare with Microsoft Entra ID.
 

@@ -66,7 +66,7 @@ Now you'll set the Facebook client ID and client secret, either by entering it i
 
 ### To configure Facebook federation in the Microsoft Entra admin center
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [External Identity Provider administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
 1. Browse to **Identity** > **External Identities** > **All identity providers**, then select **Facebook**.

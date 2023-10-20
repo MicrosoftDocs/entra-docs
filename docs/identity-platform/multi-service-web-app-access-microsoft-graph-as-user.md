@@ -32,7 +32,7 @@ In this tutorial, you learn how to:
 > * Grant delegated permissions to a web app.
 > * Call Microsoft Graph from a web app for a signed-in user.
 
-[!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
+[!INCLUDE [quickstarts-free-trial-note](~/../azure-docs-pr/includes/quickstarts-free-trial-note.md)]
 
 ## Prerequisites
 
@@ -58,7 +58,8 @@ The web app now has the required permissions to access Microsoft Graph as the si
 > If you don't configure App Service to return a usable access token, you receive a ```CompactToken parsing failed with error code: 80049217``` error when you call Microsoft Graph APIs in your code.
 
 # [Azure Resource Explorer](#tab/azure-resource-explorer)
-Go to [Azure Resource Explorer](https://resources.azure.com/) and using the resource tree, locate your web app. The resource URL should be similar to `https://resources.azure.com/subscriptions/subscriptionId/resourceGroups/SecureWebApp/providers/Microsoft.Web/sites/SecureWebApp20200915115914`.
+Go to [Azure Resource Explorer](https://resources.azure.com/) and using the resource tree, locate your web app. The resource URL should be similar to `https://resources.azure.com/subscriptions/subscriptionId/resourceGroups/SecureWebApp/providers/Microsoft.Web/sites/SecureWebApp20200915115914`.
+
 [//]: # (BROKEN LINK HttpLinkUnauthorized ABOVE: https://resources.azure.com/)
 
 The Azure Resource Explorer is now opened with your web app selected in the resource tree. At the top of the page, select **Read/Write** to enable editing of your Azure resources.

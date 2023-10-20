@@ -23,7 +23,7 @@ Before you can add a custom domain name, create your domain name with a domain r
 
 ## Create your directory
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 After you get your domain name, you can create your first directory. Sign in to the [Azure portal](https://portal.azure.com) for your directory, using an account with the [Owner](/azure/role-based-access-control/built-in-roles#owner) role for the subscription.
 

@@ -29,7 +29,7 @@ For more information, see [License requirements](access-reviews-overview.md#lice
 
 ## Create a PIM for Groups access review
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 ### Scope
 

@@ -32,7 +32,7 @@ For more information, see [License requirements](entitlement-management-overview
 
 ## Step 1: Configure basics
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 **Prerequisite role:** Global administrator, Identity Governance administrator, User administrator, Catalog owner, or Access package manager
 

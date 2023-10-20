@@ -28,7 +28,7 @@ In the following sections, you learn how to modify your app's registration to ch
 
 ## Change the application registration to support different accounts
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To specify a different setting for the account types supported by an existing app registration:
 

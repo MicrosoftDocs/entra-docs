@@ -18,7 +18,7 @@ ms.collection: M365-identity-device-management
 
 # Configuring Microsoft Entra ID to provision users into a SQL database
 
-[!INCLUDE [app-provisioning-sql.md](../../../includes/app-provisioning-sql.md)]
+[!INCLUDE [app-provisioning-sql.md](~/includes/app-provisioning-sql.md)]
 
 
 ## Next steps

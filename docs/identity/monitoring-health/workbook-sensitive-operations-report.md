@@ -33,7 +33,7 @@ If your organization is new to Azure monitor workbooks, you need to integrate yo
  
 ## How to access the workbook
 
-[!INCLUDE [how to access workbooks](~/articles/active-directory/includes/how-to-access-workbooks.md)]
+[!INCLUDE [how to access workbooks](~/includes/how-to-access-workbooks.md)]
 3. Select the **Sensitive Operations Report** workbook from the **Troubleshoot** section.
 
 ## Sections

@@ -23,7 +23,7 @@ In this article, you learn how to restore a soft deleted enterprise application 
 >[!IMPORTANT]
 >If you deleted an [application registration](~/identity-platform/howto-remove-app.md) in its home tenant through app registrations in the Microsoft Entra admin center, the enterprise application, which is its corresponding service principal also got deleted. If you restore the deleted application registration through the Microsoft Entra admin center, its corresponding service principal, is also restored. You'll therefore be able to recover the service principal's previous configurations, except its previous policies such as Conditional Access policies, which aren't restored.
 
-[!INCLUDE [portal updates](../includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 ## Prerequisites
 
@@ -166,22 +166,22 @@ DELETE https://graph.microsoft.com/v1.0/directory/deletedItems/{object-id}
 ```
 
 # [C#](#tab/csharp)
-[!INCLUDE [sample-code](~/microsoft-graph/api-reference/v1.0/includes/snippets/csharp/delete-directory-deleteditem-csharp-snippets.md)]
+[!INCLUDE [sample-code](~/../microsoft-graph/api-reference/v1.0/includes/snippets/csharp/delete-directory-deleteditem-csharp-snippets.md)]
 
 # [JavaScript](#tab/javascript)
-[!INCLUDE [sample-code](~/microsoft-graph/api-reference/v1.0/includes/snippets/javascript/delete-directory-deleteditem-javascript-snippets.md)]
+[!INCLUDE [sample-code](~/../microsoft-graph/api-reference/v1.0/includes/snippets/javascript/delete-directory-deleteditem-javascript-snippets.md)]
 
 # [Java](#tab/java)
-[!INCLUDE [sample-code](~/microsoft-graph/api-reference/v1.0/includes/snippets/java/delete-directory-deleteditem-java-snippets.md)]
+[!INCLUDE [sample-code](~/../microsoft-graph/api-reference/v1.0/includes/snippets/java/delete-directory-deleteditem-java-snippets.md)]
 
 # [Go](#tab/go)
-[!INCLUDE [sample-code](~/microsoft-graph/api-reference/v1.0/includes/snippets/go/delete-directory-deleteditem-go-snippets.md)]
+[!INCLUDE [sample-code](~/../microsoft-graph/api-reference/v1.0/includes/snippets/go/delete-directory-deleteditem-go-snippets.md)]
 
 # [PowerShell](#tab/powershell)
-[!INCLUDE [sample-code](~/microsoft-graph/api-reference/v1.0/includes/snippets/powershell/delete-directory-deleteditem-powershell-snippets.md)]
+[!INCLUDE [sample-code](~/../microsoft-graph/api-reference/v1.0/includes/snippets/powershell/delete-directory-deleteditem-powershell-snippets.md)]
 
 # [PHP](#tab/php)
-[!INCLUDE [sample-code](~/microsoft-graph/api-reference/v1.0/includes/snippets/php/delete-directory-deleteditem-php-snippets.md)]
+[!INCLUDE [sample-code](~/../microsoft-graph/api-reference/v1.0/includes/snippets/php/delete-directory-deleteditem-php-snippets.md)]
 
 ---
 

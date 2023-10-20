@@ -32,7 +32,7 @@ Using MIM, you can provision users from your on-premises HR systems to Active Di
 
 For information on Microsoft Identity Manager and the systems it supports see the [Microsoft Identity Manager](/microsoft-identity-manager/microsoft-identity-manager-2016) documentation.
 
-[!INCLUDE [active-directory-hr-provisioning.md](../../../includes/active-directory-hr-provisioning.md)]
+[!INCLUDE [active-directory-hr-provisioning.md](~/includes/entra-hr-provisioning.md)]
 
 
 ## Next steps 

@@ -33,7 +33,7 @@ To run this sample, you need:
 
 #### Step 1: Register your application
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To register your application and add the app's registration information to your solution manually, follow these steps:
 

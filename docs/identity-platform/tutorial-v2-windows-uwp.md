@@ -383,7 +383,7 @@ private async Task DisplayMessageAsync(string message)
 
 ## Register your application
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Now, register your application:
 

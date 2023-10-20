@@ -377,7 +377,7 @@ time, effort, and errors.
 
 ## Optional: Enable Microsoft Entra multifactor authentication
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To provide more sign-in security, you can enforce Microsoft Entra multifactor authentication. The process starts in the Microsoft Entra admin center.
 

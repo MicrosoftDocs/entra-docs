@@ -113,7 +113,7 @@ To grant access to the appropriate people, follow these steps to assign one of t
 
 ### Assign roles at attribute set scope
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 The following examples show how to assign a custom security attribute role to a principal at an attribute set scope named Engineering.
 

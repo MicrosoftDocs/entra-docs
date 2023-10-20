@@ -32,7 +32,7 @@ For more information and an example, see the following video.
 To use the new feature, follow the steps below.
 
 
- [!INCLUDE [sign in](../../../../includes/cloud-sync-sign-in.md)]
+ [!INCLUDE [sign in](~/includes/cloud-sync-sign-in.md)]
  3. Under **Configuration**, select your configuration.
  4. Select **Properties**.
  5. Click the pencil next to **Basics**

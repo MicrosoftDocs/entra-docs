@@ -34,7 +34,7 @@ Make sure your organization's external collaboration settings are configured suc
 
 ## Add guest users to the directory
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To add B2B collaboration users to the directory, follow these steps:
 

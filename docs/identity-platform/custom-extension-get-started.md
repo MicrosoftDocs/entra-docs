@@ -33,7 +33,7 @@ This how-to guide demonstrates the token issuance start event with a REST API ru
 
 ## Step 1: Create an Azure Function app
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 In this step, you create an HTTP trigger function API in the Azure portal. The function API is the source of extra claims for your token. Follow these steps to create an Azure Function:
 
@@ -204,25 +204,25 @@ Register an application to authenticate your custom authentication extension to 
     ```
 
     # [C#](#tab/csharp)
-    [!INCLUDE [sample-code](~/microsoft-graph/includes/snippets/csharp/v1/tutorial-application-basics-create-app-csharp-snippets.md)]
+    [!INCLUDE [sample-code](~/../microsoft-graph/includes/snippets/csharp/v1/tutorial-application-basics-create-app-csharp-snippets.md)]
     
     # [Go](#tab/go)
-    [!INCLUDE [sample-code](~/microsoft-graph/includes/snippets/go/v1/tutorial-application-basics-create-app-go-snippets.md)]
+    [!INCLUDE [sample-code](~/../microsoft-graph/includes/snippets/go/v1/tutorial-application-basics-create-app-go-snippets.md)]
     
     # [Java](#tab/java)
-    [!INCLUDE [sample-code](~/microsoft-graph/includes/snippets/java/v1/tutorial-application-basics-create-app-java-snippets.md)]
+    [!INCLUDE [sample-code](~/../microsoft-graph/includes/snippets/java/v1/tutorial-application-basics-create-app-java-snippets.md)]
     
     # [JavaScript](#tab/javascript)
-    [!INCLUDE [sample-code](~/microsoft-graph/includes/snippets/javascript/v1/tutorial-application-basics-create-app-javascript-snippets.md)]
+    [!INCLUDE [sample-code](~/../microsoft-graph/includes/snippets/javascript/v1/tutorial-application-basics-create-app-javascript-snippets.md)]
     
     # [PHP](#tab/php)
     Snippet not available.
     
     # [PowerShell](#tab/powershell)
-    [!INCLUDE [sample-code](~/microsoft-graph/includes/snippets/powershell/v1/tutorial-application-basics-create-app-powershell-snippets.md)]
+    [!INCLUDE [sample-code](~/../microsoft-graph/includes/snippets/powershell/v1/tutorial-application-basics-create-app-powershell-snippets.md)]
     
     # [Python](#tab/python)
-    [!INCLUDE [sample-code](~/microsoft-graph/includes/snippets/python/v1/tutorial-application-basics-create-app-python-snippets.md)]
+    [!INCLUDE [sample-code](~/../microsoft-graph/includes/snippets/python/v1/tutorial-application-basics-create-app-python-snippets.md)]
     
     ---
 
@@ -314,25 +314,25 @@ Next, you register the custom authentication extension. You register the custom 
     }
     ```
     # [C#](#tab/csharp)
-    [!INCLUDE [sample-code](~/microsoft-graph/api-reference/beta/includes/snippets/csharp/create-customauthenticationextension-from--csharp-snippets.md)]
+    [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/beta/includes/snippets/csharp/create-customauthenticationextension-from--csharp-snippets.md)]
     
     # [Go](#tab/go)
-    [!INCLUDE [sample-code](~/microsoft-graph/api-reference/beta/includes/snippets/go/create-customauthenticationextension-from--go-snippets.md)]
+    [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/beta/includes/snippets/go/create-customauthenticationextension-from--go-snippets.md)]
     
     # [Java](#tab/java)
-    [!INCLUDE [sample-code](~/microsoft-graph/api-reference/beta/includes/snippets/java/create-customauthenticationextension-from--java-snippets.md)]
+    [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/beta/includes/snippets/java/create-customauthenticationextension-from--java-snippets.md)]
     
     # [JavaScript](#tab/javascript)
-    [!INCLUDE [sample-code](~/microsoft-graph/api-reference/beta/includes/snippets/javascript/create-customauthenticationextension-from--javascript-snippets.md)]
+    [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/beta/includes/snippets/javascript/create-customauthenticationextension-from--javascript-snippets.md)]
     
     # [PHP](#tab/php)
-    [!INCLUDE [sample-code](~/microsoft-graph/api-reference/beta/includes/snippets/php/create-customauthenticationextension-from--php-snippets.md)]
+    [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/beta/includes/snippets/php/create-customauthenticationextension-from--php-snippets.md)]
     
     # [PowerShell](#tab/powershell)
-    [!INCLUDE [sample-code](~/microsoft-graph/api-reference/beta/includes/snippets/powershell/create-customauthenticationextension-from--powershell-snippets.md)]
+    [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/beta/includes/snippets/powershell/create-customauthenticationextension-from--powershell-snippets.md)]
     
     # [Python](#tab/python)
-    [!INCLUDE [sample-code](~/microsoft-graph/api-reference/beta/includes/snippets/python/create-customauthenticationextension-from--python-snippets.md)]
+    [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/beta/includes/snippets/python/create-customauthenticationextension-from--python-snippets.md)]
 
     ---
 
@@ -475,25 +475,25 @@ First create an event listener to trigger a custom authentication extension for 
     ```
 
     # [C#](#tab/csharp)
-    [!INCLUDE [sample-code](~/microsoft-graph/api-reference/beta/includes/snippets/csharp/create-authenticationeventlistener-from--csharp-snippets.md)]
+    [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/beta/includes/snippets/csharp/create-authenticationeventlistener-from--csharp-snippets.md)]
     
     # [Go](#tab/go)
-    [!INCLUDE [sample-code](~/microsoft-graph/api-reference/beta/includes/snippets/go/create-authenticationeventlistener-from--go-snippets.md)]
+    [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/beta/includes/snippets/go/create-authenticationeventlistener-from--go-snippets.md)]
     
     # [Java](#tab/java)
-    [!INCLUDE [sample-code](~/microsoft-graph/api-reference/beta/includes/snippets/java/create-authenticationeventlistener-from--java-snippets.md)]
+    [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/beta/includes/snippets/java/create-authenticationeventlistener-from--java-snippets.md)]
     
     # [JavaScript](#tab/javascript)
-    [!INCLUDE [sample-code](~/microsoft-graph/api-reference/beta/includes/snippets/javascript/create-authenticationeventlistener-from--javascript-snippets.md)]
+    [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/beta/includes/snippets/javascript/create-authenticationeventlistener-from--javascript-snippets.md)]
     
     # [PHP](#tab/php)
-    [!INCLUDE [sample-code](~/microsoft-graph/api-reference/beta/includes/snippets/php/create-authenticationeventlistener-from--php-snippets.md)]
+    [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/beta/includes/snippets/php/create-authenticationeventlistener-from--php-snippets.md)]
     
     # [PowerShell](#tab/powershell)
-    [!INCLUDE [sample-code](~/microsoft-graph/api-reference/beta/includes/snippets/powershell/create-authenticationeventlistener-from--powershell-snippets.md)]
+    [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/beta/includes/snippets/powershell/create-authenticationeventlistener-from--powershell-snippets.md)]
     
     # [Python](#tab/python)
-    [!INCLUDE [sample-code](~/microsoft-graph/api-reference/beta/includes/snippets/python/create-authenticationeventlistener-from--python-snippets.md)]
+    [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/beta/includes/snippets/python/create-authenticationeventlistener-from--python-snippets.md)]
     
     ---
 
@@ -517,25 +517,25 @@ Next, create the claims mapping policy, which describes which claims can be issu
     }
     ```
     # [C#](#tab/csharp)
-    [!INCLUDE [sample-code](~/microsoft-graph/api-reference/v1.0/includes/snippets/csharp/create-claimsmappingpolicy-from-claimsmappingpolicies-csharp-snippets.md)]
+    [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/v1.0/includes/snippets/csharp/create-claimsmappingpolicy-from-claimsmappingpolicies-csharp-snippets.md)]
     
     # [Go](#tab/go)
-    [!INCLUDE [sample-code](~/microsoft-graph/api-reference/v1.0/includes/snippets/go/create-claimsmappingpolicy-from-claimsmappingpolicies-go-snippets.md)]
+    [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/v1.0/includes/snippets/go/create-claimsmappingpolicy-from-claimsmappingpolicies-go-snippets.md)]
     
     # [Java](#tab/java)
-    [!INCLUDE [sample-code](~/microsoft-graph/api-reference/v1.0/includes/snippets/java/create-claimsmappingpolicy-from-claimsmappingpolicies-java-snippets.md)]
+    [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/v1.0/includes/snippets/java/create-claimsmappingpolicy-from-claimsmappingpolicies-java-snippets.md)]
     
     # [JavaScript](#tab/javascript)
-    [!INCLUDE [sample-code](~/microsoft-graph/api-reference/v1.0/includes/snippets/javascript/create-claimsmappingpolicy-from-claimsmappingpolicies-javascript-snippets.md)]
+    [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/v1.0/includes/snippets/javascript/create-claimsmappingpolicy-from-claimsmappingpolicies-javascript-snippets.md)]
     
     # [PHP](#tab/php)
-    [!INCLUDE [sample-code](~/microsoft-graph/api-reference/v1.0/includes/snippets/php/create-claimsmappingpolicy-from-claimsmappingpolicies-php-snippets.md)]
+    [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/v1.0/includes/snippets/php/create-claimsmappingpolicy-from-claimsmappingpolicies-php-snippets.md)]
     
     # [PowerShell](#tab/powershell)
-    [!INCLUDE [sample-code](~/microsoft-graph/api-reference/v1.0/includes/snippets/powershell/create-claimsmappingpolicy-from-claimsmappingpolicies-powershell-snippets.md)]
+    [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/v1.0/includes/snippets/powershell/create-claimsmappingpolicy-from-claimsmappingpolicies-powershell-snippets.md)]
     
     # [Python](#tab/python)
-    [!INCLUDE [sample-code](~/microsoft-graph/api-reference/v1.0/includes/snippets/python/create-claimsmappingpolicy-from-claimsmappingpolicies-python-snippets.md)]
+    [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/v1.0/includes/snippets/python/create-claimsmappingpolicy-from-claimsmappingpolicies-python-snippets.md)]
     
     ---
 
@@ -566,25 +566,25 @@ Assign the claims mapping policy to the service principal of *My Test Applicatio
     ```
 
     # [C#](#tab/csharp)
-    [!INCLUDE [sample-code](~/microsoft-graph/api-reference/v1.0/includes/snippets/csharp/create-claimsmappingpolicy-from-serviceprincipal-csharp-snippets.md)]
+    [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/v1.0/includes/snippets/csharp/create-claimsmappingpolicy-from-serviceprincipal-csharp-snippets.md)]
     
     # [Go](#tab/go)
-    [!INCLUDE [sample-code](~/microsoft-graph/api-reference/v1.0/includes/snippets/go/create-claimsmappingpolicy-from-serviceprincipal-go-snippets.md)]
+    [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/v1.0/includes/snippets/go/create-claimsmappingpolicy-from-serviceprincipal-go-snippets.md)]
     
     # [Java](#tab/java)
-    [!INCLUDE [sample-code](~/microsoft-graph/api-reference/v1.0/includes/snippets/java/create-claimsmappingpolicy-from-serviceprincipal-java-snippets.md)]
+    [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/v1.0/includes/snippets/java/create-claimsmappingpolicy-from-serviceprincipal-java-snippets.md)]
     
     # [JavaScript](#tab/javascript)
-    [!INCLUDE [sample-code](~/microsoft-graph/api-reference/v1.0/includes/snippets/javascript/create-claimsmappingpolicy-from-serviceprincipal-javascript-snippets.md)]
+    [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/v1.0/includes/snippets/javascript/create-claimsmappingpolicy-from-serviceprincipal-javascript-snippets.md)]
     
     # [PHP](#tab/php)
-    [!INCLUDE [sample-code](~/microsoft-graph/api-reference/v1.0/includes/snippets/php/create-claimsmappingpolicy-from-serviceprincipal-php-snippets.md)]
+    [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/v1.0/includes/snippets/php/create-claimsmappingpolicy-from-serviceprincipal-php-snippets.md)]
     
     # [PowerShell](#tab/powershell)
-    [!INCLUDE [sample-code](~/microsoft-graph/api-reference/v1.0/includes/snippets/powershell/create-claimsmappingpolicy-from-serviceprincipal-powershell-snippets.md)]
+    [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/v1.0/includes/snippets/powershell/create-claimsmappingpolicy-from-serviceprincipal-powershell-snippets.md)]
     
     # [Python](#tab/python)
-    [!INCLUDE [sample-code](~/microsoft-graph/api-reference/v1.0/includes/snippets/python/create-claimsmappingpolicy-from-serviceprincipal-python-snippets.md)]
+    [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/v1.0/includes/snippets/python/create-claimsmappingpolicy-from-serviceprincipal-python-snippets.md)]
     
     ---
 

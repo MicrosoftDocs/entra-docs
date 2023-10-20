@@ -57,7 +57,7 @@ Conditional Access policies answer questions about who can access your resources
 
 ### User exclusions
 
-[!INCLUDE [active-directory-policy-exclusions](../../../includes/active-directory-policy-exclude-user.md)]
+[!INCLUDE [active-directory-policy-exclusions](~/includes/entra-policy-exclude-user.md)]
 
 ### Ask the right questions
 

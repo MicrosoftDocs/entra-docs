@@ -45,12 +45,12 @@ These triggers to Logic Apps are controlled in a tab within access package polic
 
 ## License requirements
 
-[!INCLUDE [active-directory-entra-governance-license.md](../../../includes/active-directory-entra-governance-license.md)]
+[!INCLUDE [active-directory-entra-governance-license.md](~/includes/entra-entra-governance-license.md)]
 
 
 ## Create and add a Logic App workflow to a catalog for use in entitlement management 
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 **Prerequisite roles:** Global administrator, Identity Governance administrator, Catalog owner or Resource Group Owner 
 

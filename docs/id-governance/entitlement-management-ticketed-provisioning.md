@@ -100,7 +100,7 @@ After setting up custom extensibility in the catalog, administrators can create 
 
 ## Register an application with secrets in the Microsoft Entra admin center
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 With Azure, you're able to use [Azure Key Vault](/azure/key-vault/secrets/about-secrets) to store application secrets such as passwords. To register an application with secrets within the Microsoft Entra admin center, follow these steps:
 

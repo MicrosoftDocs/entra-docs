@@ -34,7 +34,7 @@ As an IT administrator, you need to understand trends in identity risks and gaps
 
 ## How to access the workbook
 
-[!INCLUDE [how to access workbooks](~/articles/active-directory/includes/how-to-access-workbooks.md)]
+[!INCLUDE [how to access workbooks](~/includes/how-to-access-workbooks.md)]
 3. Select the **Identity Protection Risk Analysis** workbook from the **Usage** section.
 
 ## Sections

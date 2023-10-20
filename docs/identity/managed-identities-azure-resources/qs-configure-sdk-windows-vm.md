@@ -19,7 +19,7 @@ ms.custom: mode-api
 
 # Configure a VM with managed identities for Azure resources using an Azure SDK
 
-[!INCLUDE [preview-notice](../../../includes/active-directory-msi-preview-notice.md)]
+[!INCLUDE [preview-notice](~/includes/entra-msi-preview-notice.md)]
 
 Managed identities for Azure resources provide Azure services with an automatically managed identity in Microsoft Entra ID. You can use this identity to authenticate to any service that supports Microsoft Entra authentication, without having credentials in your code. 
 
@@ -27,7 +27,7 @@ In this article, you learn how to enable and remove managed identities for Azure
 
 ## Prerequisites
 
-[!INCLUDE [msi-qs-configure-prereqs](../../../includes/active-directory-msi-qs-configure-prereqs.md)]
+[!INCLUDE [msi-qs-configure-prereqs](~/includes/entra-msi-qs-configure-prereqs.md)]
 
 ## Azure SDKs with managed identities for Azure resources support 
 

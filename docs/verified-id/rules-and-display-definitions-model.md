@@ -15,7 +15,7 @@ ms.author: barclayn
 
 # Rules and Display Definition Reference
 
-[!INCLUDE [Verifiable Credentials announcement](../../../includes/verifiable-credentials-brand.md)]
+[!INCLUDE [Verifiable Credentials announcement](~/../azure-docs-pr/includes/verifiable-credentials-brand.md)]
 
 Rules and Display definitions are used to define a credential. You can read more about it in [How to customize your credentials](credential-design.md).
 

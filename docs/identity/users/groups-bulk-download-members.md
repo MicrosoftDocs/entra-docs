@@ -29,7 +29,7 @@ You can bulk download the members of a group in your organization to a comma-sep
 
    ![The Download Members command is on the profile page for the group](./media/groups-bulk-download-members/download-panel.png)
 
-[!INCLUDE [Bulk update warning](~/articles/active-directory/includes/bulk-export.md)]
+[!INCLUDE [Bulk update warning](~/includes/bulk-export.md)]
 
 ## Check download status
 

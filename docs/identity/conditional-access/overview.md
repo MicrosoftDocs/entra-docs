@@ -104,7 +104,7 @@ Conditional Access is found in the [Microsoft Entra admin center](https://entra.
 
 ## License requirements
 
-[!INCLUDE [Active Directory P1 license](../../../includes/active-directory-p1-license.md)]
+[!INCLUDE [Active Directory P1 license](~/includes/entra-p1-license.md)]
 
 Customers with [Microsoft 365 Business Premium licenses](/office365/servicedescriptions/office-365-service-descriptions-technet-library) also have access to Conditional Access features. 
 
@@ -116,7 +116,7 @@ When licenses required for Conditional Access expire, policies aren't automatica
 
 [Security defaults](../fundamentals/security-defaults.md) help protect against identity-related attacks and are available for all customers.  
 
-[!INCLUDE [active-directory-zero-trust](../../../includes/active-directory-zero-trust.md)]
+[!INCLUDE [active-directory-zero-trust](~/includes/entra-zero-trust.md)]
 
 ## Next steps
 

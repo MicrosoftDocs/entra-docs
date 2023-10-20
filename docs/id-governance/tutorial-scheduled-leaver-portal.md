@@ -25,7 +25,7 @@ This post off-boarding scenario runs a scheduled workflow and accomplishes the f
 
 ## Prerequisites
 
-[!INCLUDE [Microsoft Entra ID Governance license](../../../includes/active-directory-entra-governance-license.md)]
+[!INCLUDE [Microsoft Entra ID Governance license](~/includes/entra-entra-governance-license.md)]
 
 
 ##  Before you begin

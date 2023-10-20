@@ -180,7 +180,7 @@ def get(self):
 
 ## (Advanced) Accessing the signed-in user's token cache from background apps, APIs and services
 
-[!INCLUDE [advanced-token-caching](../../../includes/advanced-token-cache.md)]
+[!INCLUDE [advanced-token-caching](~/includes/advanced-token-cache.md)]
 
 ---
 

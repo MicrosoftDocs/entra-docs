@@ -30,7 +30,7 @@ See [How the sample works](#how-the-sample-works) for an illustration.
 
 ## Register and download the app
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 You have two options to start building your application: automatic or manual configuration.
 

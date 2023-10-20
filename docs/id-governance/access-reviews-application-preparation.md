@@ -118,7 +118,7 @@ Next, if the application integration also requires one or more groups to be revi
 
 ## Select appropriate reviewers
 
-[!INCLUDE [active-directory-identity-governance-applications-select-reviewers.md](../../../includes/active-directory-identity-governance-applications-select-reviewers.md)]
+[!INCLUDE [active-directory-identity-governance-applications-select-reviewers.md](~/includes/entra-identity-governance-applications-select-reviewers.md)]
 
 ## Create the reviews
 

@@ -20,7 +20,7 @@ To register a single-page application (SPA) in the Microsoft identity platform, 
 
 ## Create the app registration
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 For both MSAL.js 1.0- and 2.0-based applications, start by completing the following steps to create the initial app registration.
 

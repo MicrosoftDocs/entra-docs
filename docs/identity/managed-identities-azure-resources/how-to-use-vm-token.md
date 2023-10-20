@@ -20,7 +20,7 @@ ms.collection: M365-identity-device-management
 
 # How to use managed identities for Azure resources on an Azure VM to acquire an access token 
 
-[!INCLUDE [preview-notice](../../../includes/active-directory-msi-preview-notice.md)]  
+[!INCLUDE [preview-notice](~/includes/entra-msi-preview-notice.md)]  
 
 Managed identities for Azure resources provide Azure services with an automatically managed identity in Microsoft Entra ID. You can use this identity to authenticate to any service that supports Microsoft Entra authentication, without having credentials in your code. 
 
@@ -28,7 +28,7 @@ This article provides various code and script examples for token acquisition. It
 
 ## Prerequisites
 
-[!INCLUDE [msi-qs-configure-prereqs](../../../includes/active-directory-msi-qs-configure-prereqs.md)]
+[!INCLUDE [msi-qs-configure-prereqs](~/includes/entra-msi-qs-configure-prereqs.md)]
 
 If you plan to use the Azure PowerShell examples in this article, be sure to install the latest version of [Azure PowerShell](/powershell/azure/install-azure-powershell).
 

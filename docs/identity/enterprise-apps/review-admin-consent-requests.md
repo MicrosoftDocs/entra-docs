@@ -29,7 +29,7 @@ To review and take action on admin consent requests, you need:
 
 ## Review and take action on admin consent requests
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To review the admin consent requests and take action:
 

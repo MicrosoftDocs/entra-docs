@@ -54,21 +54,21 @@ You can use the environment you create in this tutorial for testing or for getti
 
 If you're using the  [Basic AD and Azure environment](tutorial-basic-ad-azure.md) tutorial, it would be DC1. To install the agent, follow these steps: 
 
-[!INCLUDE [active-directory-cloud-sync-how-to-install](../../../../includes/active-directory-cloud-sync-how-to-install.md)]
+[!INCLUDE [active-directory-cloud-sync-how-to-install](~/includes/entra-cloud-sync-how-to-install.md)]
 
 ## Verify agent installation
 
-[!INCLUDE [active-directory-cloud-sync-how-to-verify-installation](../../../../includes/active-directory-cloud-sync-how-to-verify-installation.md)]
+[!INCLUDE [active-directory-cloud-sync-how-to-verify-installation](~/includes/entra-cloud-sync-how-to-verify-installation.md)]
 
 <a name='configure-azure-ad-connect-cloud-sync'></a>
 
 ## Configure Microsoft Entra Cloud Sync
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Use the following steps to configure and start the provisioning:
 
-[!INCLUDE [sign in](../../../../includes/cloud-sync-sign-in.md)]
+[!INCLUDE [sign in](~/includes/cloud-sync-sign-in.md)]
  3. Select **New Configuration**
  4. On the configuration screen, enter a **Notification email**, move the selector to **Enable** and select **Save**.
  5. The configuration status should now be **Healthy**.

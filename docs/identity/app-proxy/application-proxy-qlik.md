@@ -26,7 +26,7 @@ To publish QlikSense, you will need to publish two applications in Azure.
 
 ### Application #1: 
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Follow these steps to publish your app. For a more detailed walkthrough of steps 1-8, see [Publish applications using Microsoft Entra application proxy](../app-proxy/application-proxy-add-on-premises-application.md). 
 

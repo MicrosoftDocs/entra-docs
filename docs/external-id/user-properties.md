@@ -30,7 +30,7 @@ The following table describes B2B collaboration users based on how they authenti
 
 The user type you choose has the following limitations for apps or services (but aren't limited to):
     
-[!INCLUDE [user-type-workload-limitations-include](../includes/user-type-workload-limitations-include.md)]
+[!INCLUDE [user-type-workload-limitations-include](~/includes/user-type-workload-limitations-include.md)]
 
 > [!IMPORTANT]
 > The [email one-time passcode](one-time-passcode.md) feature is now turned on by default for all new tenants and for any existing tenants where you haven't explicitly turned it off. When this feature is turned off, the fallback authentication method is to prompt invitees to create a Microsoft account.

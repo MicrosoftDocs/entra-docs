@@ -36,7 +36,7 @@ Use External Identities cross-tenant access settings to manage how you collabora
 
 ## Configure default settings
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
  Default cross-tenant access settings apply to all external tenants for which you haven't created organization-specific customized settings.  If you want to modify the Microsoft Entra ID-provided default settings, follow these steps.
 

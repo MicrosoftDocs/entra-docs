@@ -219,7 +219,7 @@ Example:
 User-defined URI(s) that uniquely identify a web app within its Microsoft Entra tenant or verified customer owned domain.
 When an application is used as a resource app, the identifierUri value is used to uniquely identify and access the resource.
 
-[!INCLUDE [active-directory-identifierUri](../../../includes/active-directory-identifier-uri-patterns.md)]
+[!INCLUDE [active-directory-identifierUri](~/includes/entra-identifier-uri-patterns.md)]
 
 Example:
 

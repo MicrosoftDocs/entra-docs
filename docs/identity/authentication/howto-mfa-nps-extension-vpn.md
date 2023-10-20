@@ -332,7 +332,7 @@ If the value is set to *TRUE* or is blank, all authentication requests are subje
 
 ### Obtain the directory tenant ID
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 As part of the configuration of the NPS extension, you must supply administrator credentials and the ID of your Microsoft Entra tenant. To get the tenant ID, complete the following steps:
 

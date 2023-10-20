@@ -19,7 +19,7 @@ ms.collection: M365-identity-device-management
 
 # Tutorial: Use a Linux VM system-assigned identity to access Azure Storage via a SAS credential
 
-[!INCLUDE [preview-notice](../../../includes/active-directory-msi-preview-notice.md)]
+[!INCLUDE [preview-notice](~/includes/entra-msi-preview-notice.md)]
 
 This tutorial shows you how to use a system-assigned managed identity for a Linux virtual machine (VM) to obtain a storage Shared Access Signature (SAS) credential. Specifically, a [Service SAS credential](/azure/storage/common/storage-sas-overview?toc=/azure/storage/blobs/toc.json#types-of-shared-access-signatures). 
 
@@ -37,7 +37,7 @@ A Service SAS grants limited access to objects in a storage account without expo
 
 ## Prerequisites
 
-[!INCLUDE [msi-tut-prereqs](../../../includes/active-directory-msi-tut-prereqs.md)]
+[!INCLUDE [msi-tut-prereqs](~/includes/entra-msi-tut-prereqs.md)]
 
 ## Create a storage account 
 

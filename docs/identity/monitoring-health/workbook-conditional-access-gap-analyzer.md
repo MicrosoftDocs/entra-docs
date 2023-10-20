@@ -38,7 +38,7 @@ The Conditional Access gap analyzer workbook helps you to verify that your Condi
 
 ## How to access the workbook
 
-[!INCLUDE [how to access workbooks](~/articles/active-directory/includes/how-to-access-workbooks.md)]
+[!INCLUDE [how to access workbooks](~/includes/how-to-access-workbooks.md)]
 3. Select the **Conditional Access Gap Analyzer** workbook from the **Conditional Access** section.
 
 ## Sections

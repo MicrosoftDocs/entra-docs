@@ -10,7 +10,7 @@ ms.author: barclayn
 ms.custom: include file,licensing
 ---
 
-[!INCLUDE [Active Directory P1 license](../../../includes/active-directory-p1-license.md)]
+[!INCLUDE [Active Directory P1 license](~/includes/entra-p1-license.md)]
 
 Customers with [Microsoft 365 Business Premium licenses](/office365/servicedescriptions/office-365-service-descriptions-technet-library) also have access to Conditional Access features. 
 

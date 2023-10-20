@@ -52,7 +52,7 @@ Alert | Severity | Trigger | Recommendation
 
 ## Configure security alert settings
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Follow these steps to configure security alerts for Azure roles in Privileged Identity Management:
 

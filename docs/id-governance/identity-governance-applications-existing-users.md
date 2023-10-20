@@ -26,7 +26,7 @@ ms.collection: M365-identity-device-management
 There are three common scenarios in which it's necessary to populate Microsoft Entra ID with existing users of an application before you use the application with a Microsoft Entra ID Governance feature such as [access reviews](access-reviews-application-preparation.md).
 
 ## License requirements
-[!INCLUDE [active-directory-entra-governance-license.md](../../../includes/active-directory-entra-governance-license.md)]
+[!INCLUDE [active-directory-entra-governance-license.md](~/includes/entra-entra-governance-license.md)]
 
 <a name='application-migrated-to-azure-ad-after-using-its-own-identity-provider'></a>
 
@@ -200,7 +200,7 @@ Now that you have a list of all the users obtained from the application, you'll 
 
 Before you proceed, review the information about [matching users in the source and target systems](../app-provisioning/customize-application-attributes.md#matching-users-in-the-source-and-target--systems). You'll configure Microsoft Entra provisioning with equivalent mappings afterward. That step will allow Microsoft Entra provisioning to query the application's data store with the same matching rules.
 
-[!INCLUDE [active-directory-identity-governance-applications-retrieve-users.md](../../../includes/active-directory-identity-governance-applications-retrieve-users.md)]
+[!INCLUDE [active-directory-identity-governance-applications-retrieve-users.md](~/includes/entra-identity-governance-applications-retrieve-users.md)]
 
 ## Register the application
 
@@ -362,7 +362,7 @@ After the Microsoft Entra provisioning service has matched the users based on th
 
 ## Select appropriate reviewers
 
-[!INCLUDE [active-directory-identity-governance-applications-select-reviewers.md](../../../includes/active-directory-identity-governance-applications-select-reviewers.md)]
+[!INCLUDE [active-directory-identity-governance-applications-select-reviewers.md](~/includes/entra-identity-governance-applications-select-reviewers.md)]
 
 ## Configure access reviews or entitlement management
 

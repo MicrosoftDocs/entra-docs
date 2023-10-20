@@ -18,7 +18,7 @@ This article explains how to create a new user, invite an external guest, and de
 
 Instructions for the legacy create user process can be found in the [Add or delete users](./add-users.md) article.
 
-[!INCLUDE [GDPR-related guidance](../../../includes/gdpr-hybrid-note.md)]
+[!INCLUDE [GDPR-related guidance](~/../azure-docs-pr/includes/gdpr-hybrid-note.md)]
 
 ## Before you begin
 
@@ -47,7 +47,7 @@ The required role of least privilege varies based on the type of user you're add
 
 ## Create a new user
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 

@@ -47,7 +47,7 @@ To use entitlement management and assign users to access packages, you must have
 
 ## Configure another access package or group membership as incompatible for requesting access to an access package
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 **Prerequisite role**: Global Administrator, Identity Governance Administrator, Catalog owner or Access package manager
 

@@ -21,14 +21,14 @@ ms.custom: devx-track-azurepowershell, devx-track-azurecli
 
 # How to use managed identities for Azure resources on an Azure VM for sign-in 
 
-[!INCLUDE [preview-notice](../../../includes/active-directory-msi-preview-notice.md)]  
+[!INCLUDE [preview-notice](~/includes/entra-msi-preview-notice.md)]  
 This article provides PowerShell and CLI script examples for sign-in using managed identities for Azure resources service principal, and guidance on important topics such as error handling.
 
-[!INCLUDE [az-powershell-update](../../../includes/updated-for-az.md)]
+[!INCLUDE [az-powershell-update](~/../azure-docs-pr/includes/updated-for-az.md)]
 
 ## Prerequisites
 
-[!INCLUDE [msi-qs-configure-prereqs](../../../includes/active-directory-msi-qs-configure-prereqs.md)]
+[!INCLUDE [msi-qs-configure-prereqs](~/includes/entra-msi-qs-configure-prereqs.md)]
 
 If you plan to use the Azure PowerShell or Azure CLI examples in this article, be sure to install the latest version of [Azure PowerShell](/powershell/azure/install-azure-powershell) or [Azure CLI](/cli/azure/install-azure-cli). 
 

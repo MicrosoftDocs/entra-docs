@@ -43,7 +43,7 @@ For more information on deployment plans, see [Microsoft Entra deployment plans]
 ## License requirements
 
 
-[!INCLUDE [Microsoft Entra ID Governance license](../../../includes/active-directory-entra-governance-license.md)]
+[!INCLUDE [Microsoft Entra ID Governance license](~/includes/entra-entra-governance-license.md)]
 
 >[!Note]
 >Be aware that if your license expires, any workflows that you have created will stop working.

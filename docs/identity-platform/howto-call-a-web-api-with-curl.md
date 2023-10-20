@@ -66,7 +66,7 @@ The Microsoft identity platform requires your application to be registered befor
 
 ### Register the web API 
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Follow these steps to create the web API registration:  
 

@@ -111,7 +111,7 @@ Organizations can select individual policy templates and:
 - [Block access except specific apps](howto-conditional-access-policy-block-access.md)
 
 ## User exclusions
-[!INCLUDE [active-directory-policy-exclusions](../../../includes/active-directory-policy-exclude-user.md)]
+[!INCLUDE [active-directory-policy-exclusions](~/includes/entra-policy-exclude-user.md)]
 
 ## Next steps
 

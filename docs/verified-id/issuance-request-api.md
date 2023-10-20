@@ -16,7 +16,7 @@ ms.author: barclayn
 
 # Request Service REST API issuance specification
 
-[!INCLUDE [Verifiable Credentials announcement](../../../includes/verifiable-credentials-brand.md)]
+[!INCLUDE [Verifiable Credentials announcement](~/../azure-docs-pr/includes/verifiable-credentials-brand.md)]
 
 Microsoft Entra Verified ID includes the Request Service REST API. This API allows you to issue and verify a credential. This article specifies the Request Service REST API for an issuance request. Another article describes [how to call the Request Service REST API](get-started-request-api.md). 
 

@@ -29,7 +29,7 @@ This article gives you an overview of the **Multifactor authentication caps** wo
 
 The **MFA gaps** workbook is currently not available as a template, but you can import it from the Microsoft Entra workbooks GitHub repository.
 
-[!INCLUDE [how to access workbooks](~/articles/active-directory/includes/how-to-access-workbooks.md)]
+[!INCLUDE [how to access workbooks](~/includes/how-to-access-workbooks.md)]
 1. Select **+ New**.
 1. Select the **Advanced Editor** button from the top of the page. A JSON editor opens.
 

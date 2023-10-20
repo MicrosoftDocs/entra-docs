@@ -324,7 +324,7 @@ For more information on what authentication methods can be managed in Microsoft 
 
 ### Rollback
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Though passwordless authentication is a lightweight feature with minimal impact on end users, it may be necessary to roll back.
 

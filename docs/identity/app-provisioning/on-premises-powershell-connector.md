@@ -40,7 +40,7 @@ The connector provides a bridge between the capabilities of the ECMA Connector H
 
 ### Cloud requirements
 
- - A Microsoft Entra tenant with Microsoft Entra ID P1 or Premium P2 (or EMS E3 or E5).   [!INCLUDE [active-directory-p1-license.md](../../../includes/active-directory-p1-license.md)]
+ - A Microsoft Entra tenant with Microsoft Entra ID P1 or Premium P2 (or EMS E3 or E5).   [!INCLUDE [active-directory-p1-license.md](~/includes/entra-p1-license.md)]
  - The Hybrid Identity Administrator role for configuring the provisioning agent and the Application Administrator or Cloud Application Administrator roles for configuring provisioning in the Azure portal.
  - The Microsoft Entra users, to be provisioned, must already be populated with any attributes required by the schema.
 
@@ -54,7 +54,7 @@ If you have already downloaded the provisioning agent and configured it for anot
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
 1. Browse to **Identity** > **Hybrid management** > **Microsoft Entra Connect** > **Cloud sync** > **Agents**.
  
- :::image type="content" source="../../../includes/media/active-directory-cloud-sync-how-to-install/new-ux-1.png" alt-text="Screenshot of new UX screen." lightbox="../../../includes/media/active-directory-cloud-sync-how-to-install/new-ux-1.png":::
+ :::image type="content" source="~/includes/media/entra-cloud-sync-how-to-install/new-ux-1.png" alt-text="Screenshot of new UX screen." lightbox="~/includes/media/entra-cloud-sync-how-to-install/new-ux-1.png":::
 
 1. Select **Download on-premises agent**, review the terms of service, then select **Accept terms & download**.
 
@@ -69,7 +69,7 @@ If you have already downloaded the provisioning agent and configured it for anot
 
 ## Configure the On-premises ECMA app
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications**. 

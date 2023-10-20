@@ -38,7 +38,7 @@ Before you update the license assignments, it's important to verify certain assu
 
 ## Change user license assignments
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 On the **Update license assignments** page, if you see that some checkboxes are unavailable, it indicates services that can't be changed because they're inherited from a group license.
 

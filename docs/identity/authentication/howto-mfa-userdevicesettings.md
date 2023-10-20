@@ -84,7 +84,7 @@ Authentication methods can also be managed using Microsoft Graph APIs. For more 
 
 ## Manage user authentication options
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 If you're assigned the *Authentication Administrator* role, you can require users to reset their password, re-register for MFA, or revoke existing MFA sessions from their user object. To manage user settings, complete the following steps:
 

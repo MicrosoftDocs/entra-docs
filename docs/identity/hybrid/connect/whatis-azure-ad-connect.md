@@ -99,12 +99,12 @@ Rich [usage metrics](how-to-connect-health-adfs.md#usage-analytics-for-ad-fs)|To
 
 ## License requirements for using Microsoft Entra Connect
 
-[!INCLUDE [active-directory-free-license.md](../../../../includes/active-directory-free-license.md)]
+[!INCLUDE [active-directory-free-license.md](~/includes/entra-free-license.md)]
 
 <a name='license-requirements-for-using-azure-ad-connect-health'></a>
 
 ## License requirements for using Microsoft Entra Connect Health
-[!INCLUDE [active-directory-free-license.md](../../../../includes/active-directory-p1-license.md)]
+[!INCLUDE [active-directory-free-license.md](~/includes/entra-p1-license.md)]
 
 ## Next steps
 

@@ -36,7 +36,7 @@ You can directly convert ungoverned users to be governed by using the **Mark Gue
 
 ## Manage guest user lifecycle in the Microsoft Entra admin center
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To manage user lifecycle, you'd follow these steps:
 

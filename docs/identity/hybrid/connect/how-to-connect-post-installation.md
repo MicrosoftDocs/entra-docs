@@ -32,7 +32,7 @@ Now that your users have been synchronized to the cloud, you need to assign them
 
 ### To assign a Microsoft Entra ID P1 or P2 or Enterprise Mobility Suite License
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
 2. On the left, select **Active Directory**.

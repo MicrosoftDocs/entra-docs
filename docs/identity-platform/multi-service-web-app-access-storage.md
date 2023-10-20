@@ -34,7 +34,7 @@ In this tutorial, you learn how to:
 > * Create a storage account and an Azure Blob Storage container.
 > * Access storage from a web app by using managed identities.
 
-[!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
+[!INCLUDE [quickstarts-free-trial-note](~/../azure-docs-pr/includes/quickstarts-free-trial-note.md)]
 
 ## Prerequisites
 

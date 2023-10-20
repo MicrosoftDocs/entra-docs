@@ -20,7 +20,7 @@ This article contains the currently available app consent permissions for custom
 
 ## License requirements
 
-[!INCLUDE [License requirement for using custom roles in Azure AD](../../../includes/active-directory-p1-license.md)]
+[!INCLUDE [License requirement for using custom roles in Azure AD](~/includes/entra-p1-license.md)]
 
 ## App consent permissions
 

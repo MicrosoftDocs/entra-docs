@@ -30,7 +30,7 @@ For more information, see [Prerequisites to use PowerShell or Graph Explorer](pr
 
 ## Microsoft Entra admin center
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 This procedure describes how to list role assignments with organization-wide scope.
 

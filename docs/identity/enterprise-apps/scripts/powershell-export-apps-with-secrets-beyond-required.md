@@ -18,7 +18,7 @@ ms.reviewer: mifarca
 
 This PowerShell script example exports all app registrations secrets and certificates expiring beyond a required period for the specified apps from your directory in a CSV file non-interactively.
 
-[!INCLUDE [quickstarts-free-trial-note](../../../../includes/quickstarts-free-trial-note.md)]
+[!INCLUDE [quickstarts-free-trial-note](~/../azure-docs-pr/includes/quickstarts-free-trial-note.md)]
 
 ## Sample script
 

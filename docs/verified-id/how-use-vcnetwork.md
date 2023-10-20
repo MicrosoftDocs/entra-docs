@@ -15,7 +15,7 @@ ms.author: barclayn
 
 # Verifying credentials using the Microsoft Entra Verified ID Network
 
-[!INCLUDE [Verifiable Credentials announcement](../../../includes/verifiable-credentials-brand.md)]
+[!INCLUDE [Verifiable Credentials announcement](~/../azure-docs-pr/includes/verifiable-credentials-brand.md)]
 
 
 ## Prerequisites

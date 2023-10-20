@@ -101,7 +101,7 @@ The first thing we need to do is to configure the AD FS claims. Create two claim
 
 ### Configure Microsoft Entra multifactor authentication Trusted IPs with federated users
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Now that the claims are in place, we can configure trusted IPs.
 

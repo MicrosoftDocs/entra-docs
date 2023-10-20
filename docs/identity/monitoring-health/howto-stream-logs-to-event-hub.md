@@ -26,7 +26,7 @@ Once you have an event hub that contains Microsoft Entra activity logs, you can 
 
 ## Stream logs to an event hub
 
-[!INCLUDE [diagnostic-settings-include](../includes/diagnostic-settings-include.md)]
+[!INCLUDE [diagnostic-settings-include](~/includes/diagnostic-settings-include.md)]
 
 6. Select the **Stream to an event hub** check box.
 

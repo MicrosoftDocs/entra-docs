@@ -21,7 +21,7 @@ Workflow scheduling will automatically process the workflow for users meeting th
 
 ## Check execution user scope of a workflow using the Microsoft Entra admin center
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To check the users who fall under the execution scope of a workflow, you'd follow these steps:
 

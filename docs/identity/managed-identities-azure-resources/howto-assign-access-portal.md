@@ -20,7 +20,7 @@ ms.collection: M365-identity-device-management
 
 # Assign a managed identity access to a resource by using the Azure portal
 
-[!INCLUDE [preview-notice](../../../includes/active-directory-msi-preview-notice.md)]
+[!INCLUDE [preview-notice](~/includes/entra-msi-preview-notice.md)]
 
 After you've configured an Azure resource with a managed identity, you can give the managed identity access to another resource, just like any security principal. This article shows you how to give an Azure virtual machine or virtual machine scale set's managed identity access to an Azure storage account, by using the Azure portal.
 
@@ -31,7 +31,7 @@ After you've configured an Azure resource with a managed identity, you can give 
 
 ## Use Azure RBAC to assign a managed identity access to another resource
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 >[!IMPORTANT]
 > The steps outlined below show is how you grant access to a service using Azure RBAC. Check specific service documentation on how to grant access - for example check Azure Data Explorer for instructions. Some Azure services are in the process of adopting Azure RBAC on the data plane
@@ -48,7 +48,7 @@ After you've enabled managed identity on an Azure resource, such as an [Azure VM
 
 1. Select the role and managed identity. For detailed steps, see [Assign Azure roles using the Azure portal](/azure/role-based-access-control/role-assignments-portal).
 
-    ![Add role assignment page in Azure portal.](../../../includes/role-based-access-control/media/add-role-assignment-page.png)
+    ![Add role assignment page in Azure portal.](~/../azure-docs-pr/includes/role-based-access-control/media/add-role-assignment-page.png)
      
 ## Next steps
 

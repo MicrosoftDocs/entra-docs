@@ -15,7 +15,7 @@ ms.author: barclayn
 
 # Verify domain ownership to your Decentralized Identifier (DID)
 
-[!INCLUDE [Verifiable Credentials announcement](../../../includes/verifiable-credentials-brand.md)]
+[!INCLUDE [Verifiable Credentials announcement](~/../azure-docs-pr/includes/verifiable-credentials-brand.md)]
 
 
 ## Prerequisites

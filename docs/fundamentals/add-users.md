@@ -17,11 +17,11 @@ ms.reviewer: krbain
 
 Add new users or delete existing users from your tenant. To add or delete users, you must be a User Administrator or Global Administrator. 
 
-[!INCLUDE [GDPR-related guidance](../../../includes/gdpr-hybrid-note.md)]
+[!INCLUDE [GDPR-related guidance](~/../azure-docs-pr/includes/gdpr-hybrid-note.md)]
 
 ## Add a new user
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 You can create a new user for your organization or invite an external user from the same starting point.
 

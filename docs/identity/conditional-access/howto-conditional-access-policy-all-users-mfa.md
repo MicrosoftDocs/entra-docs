@@ -24,7 +24,7 @@ As Alex Weinert, the Directory of Identity Security at Microsoft, mentions in hi
 The guidance in this article helps your organization create an MFA policy for your environment.
 
 ## User exclusions
-[!INCLUDE [active-directory-policy-exclusions](../../../includes/active-directory-policy-exclude-user.md)]
+[!INCLUDE [active-directory-policy-exclusions](~/includes/entra-policy-exclude-user.md)]
 
 ## Application exclusions
 
@@ -34,7 +34,7 @@ Organizations may have many cloud applications in use. Not all of those applicat
 
 Organizations that use [Subscription Activation](/windows/deployment/windows-10-subscription-activation) to enable users to “step-up” from one version of Windows to another, may want to exclude the Universal Store Service APIs and Web Application, AppID 45a330b1-b1ec-4cc1-9161-9f03992aa49f from their all users all cloud apps MFA policy.
 
-[!INCLUDE [active-directory-policy-deploy-template](../../../includes/active-directory-policy-deploy-template.md)]
+[!INCLUDE [active-directory-policy-deploy-template](~/includes/entra-policy-deploy-template.md)]
 
 ## Create a Conditional Access policy
 

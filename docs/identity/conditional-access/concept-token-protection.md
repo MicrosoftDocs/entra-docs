@@ -58,7 +58,7 @@ This preview supports the following configurations for access to resources with 
 
 ## Licensing requirements
 
-[!INCLUDE [Active Directory P2 license](../../../includes/active-directory-p2-license.md)]
+[!INCLUDE [Active Directory P2 license](~/includes/entra-p2-license.md)]
 
 > [!NOTE]
 > Token Protection enforcement is part of Microsoft Entra ID Protection and will be part of the P2 license at general availability. 

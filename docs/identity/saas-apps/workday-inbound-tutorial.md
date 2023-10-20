@@ -1066,7 +1066,7 @@ The Workday provisioning solution for Active Directory requires a provisioning a
 
 The Microsoft Entra provisioning service falls into the **data processor** category of GDPR classification. As a data processor pipeline, the service provides data processing services to key partners and end consumers. Microsoft Entra provisioning service does not generate user data and has no independent control over what personal data is collected and how it is used. Data retrieval, aggregation, analysis, and reporting in Microsoft Entra provisioning service are based on existing enterprise data.
 
-[!INCLUDE [GDPR-related guidance](../../../includes/gdpr-hybrid-note.md)]
+[!INCLUDE [GDPR-related guidance](~/../azure-docs-pr/includes/gdpr-hybrid-note.md)]
 
 With respect to data retention, the Microsoft Entra provisioning service does not generate reports, perform analytics, or provide insights beyond 30 days. Therefore, Microsoft Entra provisioning service does not store, process, or retain any data beyond 30 days. This design is compliant with the GDPR regulations, Microsoft privacy compliance regulations, and Microsoft Entra data retention policies.
 

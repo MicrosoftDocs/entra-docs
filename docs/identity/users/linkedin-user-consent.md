@@ -21,7 +21,7 @@ You can enable users in your organization in Microsoft Entra ID, part of Microso
 
 To see LinkedIn information in Microsoft apps and services, users must consent to connect their own Microsoft and LinkedIn accounts. Users are prompted to connect their accounts the first time they click to see someone's LinkedIn information on a profile card in Outlook, OneDrive or SharePoint Online. LinkedIn account connections are not fully enabled for your users until they consent to the experience and to connect their accounts.
 
-[!INCLUDE [active-directory-gdpr-note](../../../includes/gdpr-hybrid-note.md)]
+[!INCLUDE [active-directory-gdpr-note](~/../azure-docs-pr/includes/gdpr-hybrid-note.md)]
 
 ## Benefits of sharing LinkedIn information
 

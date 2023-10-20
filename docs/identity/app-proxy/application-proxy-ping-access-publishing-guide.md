@@ -40,7 +40,7 @@ This article is for people to publish an application with this scenario for the 
 
 ### Install an Application Proxy connector
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 If you've enabled Application Proxy and installed a connector already, you can skip this section and go to [Add your application to Microsoft Entra ID with Application Proxy](#add-your-application-to-azure-ad-with-application-proxy).
 

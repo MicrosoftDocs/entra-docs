@@ -98,7 +98,7 @@ The following are the attributes supported by an expression mapping:
 To use attribute mapping, follow these steps:
 
 
-[!INCLUDE [sign in](../../../../includes/cloud-sync-sign-in.md)]
+[!INCLUDE [sign in](~/includes/cloud-sync-sign-in.md)]
  3. Under **Configuration**, select your configuration.
  4. On the left, select **Attribute mapping**.
  5. At the top, ensure that you have the correct object type selected.  That is, user, group, or contact.
@@ -128,7 +128,7 @@ To use attribute mapping, follow these steps:
 
 To test your attribute mapping, you can use [on-demand provisioning](how-to-on-demand-provision.md): 
 
-[!INCLUDE [sign in](../../../../includes/cloud-sync-sign-in.md)]
+[!INCLUDE [sign in](~/includes/cloud-sync-sign-in.md)]
  3. Under **Configuration**, select your configuration.
  4. On the left, select **Provision on demand**.
  5. Enter the distinguished name of a user and select the **Provision** button.

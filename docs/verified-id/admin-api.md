@@ -16,7 +16,7 @@ ms.author: barclayn
 
 # Verifiable credentials admin API
 
-[!INCLUDE [Verifiable Credentials announcement](../../../includes/verifiable-credentials-brand.md)]
+[!INCLUDE [Verifiable Credentials announcement](~/../azure-docs-pr/includes/verifiable-credentials-brand.md)]
 
 The Microsoft Entra Verified ID Admin API enables you to manage all aspects of the Verifiable Credential service. It offers a way to set up a brand new service, manage and create Verifiable Credential contracts, revoke Verifiable Credentials and completely opt out the service as well.
 

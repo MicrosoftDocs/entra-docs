@@ -30,7 +30,7 @@ For additional information and an example of how to configure cloud sync, see th
 ## Configure provisioning
 To configure provisioning, follow these steps.
 
- [!INCLUDE [sign in](../../../../includes/cloud-sync-sign-in.md)]
+ [!INCLUDE [sign in](~/includes/cloud-sync-sign-in.md)]
  
  :::image type="content" source="media/how-to-on-demand-provision/new-ux-1.png" alt-text="Screenshot of new UX screen." lightbox="media/how-to-on-demand-provision/new-ux-1.png":::
  
@@ -149,7 +149,7 @@ Cloud sync monitors the health of your configuration and places unhealthy object
 
 ## Restart provisioning 
 If you don't want to wait for the next scheduled run, trigger the provisioning run by using the **Restart sync** button. 
- [!INCLUDE [sign in](../../../../includes/cloud-sync-sign-in.md)]
+ [!INCLUDE [sign in](~/includes/cloud-sync-sign-in.md)]
  4. Under **Configuration**, select your configuration.
 
  :::image type="content" source="media/how-to-configure/new-ux-configure-14.png" alt-text="Screenshot of restarting sync." lightbox="media/how-to-configure/new-ux-configure-14.png":::
@@ -159,7 +159,7 @@ If you don't want to wait for the next scheduled run, trigger the provisioning r
 ## Remove a configuration
 To delete a configuration, follow these steps.
 
- [!INCLUDE [sign in](../../../../includes/cloud-sync-sign-in.md)]
+ [!INCLUDE [sign in](~/includes/cloud-sync-sign-in.md)]
  3. Under **Configuration**, select your configuration.
 
  :::image type="content" source="media/how-to-configure/new-ux-configure-15.png" alt-text="Screenshot of deletion." lightbox="media/how-to-configure/new-ux-configure-15.png":::

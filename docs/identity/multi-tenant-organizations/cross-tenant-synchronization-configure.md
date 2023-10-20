@@ -55,7 +55,7 @@ By the end of this article, you'll be able to:
 
 ## Step 2: Enable user synchronization in the target tenant
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 ![Icon for the target tenant.](./media/common/icon-tenant-target.png)<br/>**Target tenant**
 
@@ -269,7 +269,7 @@ Attribute mappings allow you to define how data should flow between the source t
     
     The user type you choose has the following limitations for apps or services (but aren't limited to):
     
-    [!INCLUDE [user-type-workload-limitations-include](../includes/user-type-workload-limitations-include.md)]
+    [!INCLUDE [user-type-workload-limitations-include](~/includes/user-type-workload-limitations-include.md)]
 
     :::image type="content" source="./media/cross-tenant-synchronization-configure/provisioning-attribute-mapping-member.png" alt-text="Screenshot of the Edit Attribute page that shows the Member attribute." lightbox="./media/cross-tenant-synchronization-configure/provisioning-attribute-mapping-member.png":::
 

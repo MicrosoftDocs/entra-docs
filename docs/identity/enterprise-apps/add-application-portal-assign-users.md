@@ -31,7 +31,7 @@ To create a user account and assign it to an enterprise application, you need:
 
 ## Create a user account
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To create a user account in your Microsoft Entra tenant:
 

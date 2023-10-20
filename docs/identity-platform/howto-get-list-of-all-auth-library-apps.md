@@ -36,7 +36,7 @@ No sign-in event that occurred *before* you configure Microsoft Entra ID to send
 
 ## Step 2: Access sign-ins workbook in Azure portal
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Once you've integrated your Microsoft Entra sign-in and audit logs with Azure Monitor as specified in the Azure Monitor integration, access the sign-ins workbook:
 

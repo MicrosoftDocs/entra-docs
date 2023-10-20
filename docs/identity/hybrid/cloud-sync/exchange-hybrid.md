@@ -41,7 +41,7 @@ Before deploying Exchange Hybrid with cloud sync you must meet the following pre
 ## How to enable
 Exchange Hybrid Writeback is disabled by default.  
 
- [!INCLUDE [sign in](../../../../includes/cloud-sync-sign-in.md)]
+ [!INCLUDE [sign in](~/includes/cloud-sync-sign-in.md)]
  3.  Click on an existing configuration.
  4.  At the top, select **Properties**.  You should see Exchange hybrid writeback disabled.
  5.  Select the pencil next to **Basic**. 
@@ -77,7 +77,7 @@ Provisioning on-demand with Exchange hybrid writeback requires two steps.  You n
 Provisioning on-demand with Exchange hybrid use the following steps
 
 
- [!INCLUDE [sign in](../../../../includes/cloud-sync-sign-in.md)]
+ [!INCLUDE [sign in](~/includes/cloud-sync-sign-in.md)]
  3. Under **Configuration**, select your configuration.
  4. On the left, select **Provision on demand**.
  5. Enter the distinguished name of a user and select the **Provision** button.

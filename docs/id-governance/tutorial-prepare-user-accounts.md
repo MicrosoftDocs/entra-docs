@@ -25,7 +25,7 @@ The off-boarding tutorials only require one account that has group and Teams mem
 
 ## Prerequisites
 
-[!INCLUDE [Microsoft Entra ID Governance license](../../../includes/active-directory-entra-governance-license.md)]
+[!INCLUDE [Microsoft Entra ID Governance license](~/includes/entra-entra-governance-license.md)]
 - A Microsoft Entra tenant
 - A global administrator account for the Microsoft Entra tenant.  This account is used to create our users and workflows.
 
@@ -37,7 +37,7 @@ In most cases, users are going to be provisioned to Microsoft Entra ID either fr
 
 ## Create users in Microsoft Entra ID
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 We use the Graph Explorer to quickly create two users needed to execute the Lifecycle Workflows in the tutorials.  One user represents our new employee and the second represents the new employee's manager.
 

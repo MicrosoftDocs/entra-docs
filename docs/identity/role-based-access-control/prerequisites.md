@@ -35,7 +35,7 @@ You must have the Microsoft Graph PowerShell SDK installed:
 
 ## Azure AD PowerShell module
 
-[!INCLUDE [Azure AD PowerShell migration](../includes/aad-powershell-migration-include.md)]
+[!INCLUDE [Azure AD PowerShell migration](~/includes/aad-powershell-migration-include.md)]
 
 To use PowerShell commands to do the following:
 
@@ -119,7 +119,7 @@ To use Azure AD PowerShell, follow these steps to make sure it is imported into 
 
 ## AzureADPreview module
 
-[!INCLUDE [Azure AD PowerShell migration](../includes/aad-powershell-migration-include.md)]
+[!INCLUDE [Azure AD PowerShell migration](~/includes/aad-powershell-migration-include.md)]
 
 To use PowerShell commands to do the following:
 
@@ -197,7 +197,7 @@ To use AzureADPreview, follow these steps to make sure it is imported into the c
 
 ## Graph Explorer
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To manage Microsoft Entra roles using the [Microsoft Graph API](/graph/overview) and [Graph Explorer](/graph/graph-explorer/graph-explorer-overview), you must do the following:
 

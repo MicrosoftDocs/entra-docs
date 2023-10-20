@@ -24,7 +24,7 @@ To review and understand Microsoft Entra multifactor authentication events, you 
 
 ## View the Microsoft Entra sign-ins report
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 The sign-ins report provides you with information about the usage of managed applications and user sign-in activities, which includes information about multifactor authentication usage. The MFA data gives you insights into how MFA is working in your organization. It answers questions like:
 

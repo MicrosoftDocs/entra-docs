@@ -16,4 +16,4 @@ ms.date: 09/19/2023
 # Microsoft Entra ID preview program terms 
 
 
-[!INCLUDE [Entra preview terms](../includes/licensing-preview-terms.md)]
+[!INCLUDE [Entra preview terms](~/includes/licensing-preview-terms.md)]

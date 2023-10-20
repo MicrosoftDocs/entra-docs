@@ -14,14 +14,15 @@ ms.date: 06/28/2022
 
 # Using the Microsoft Entra Wallet Library with Verified ID
 
-[!INCLUDE [Verifiable Credentials announcement](../../../includes/verifiable-credentials-brand.md)]
+[!INCLUDE [Verifiable Credentials announcement](~/../azure-docs-pr/includes/verifiable-credentials-brand.md)]
 
 In this tutorial, you learn how a mobile app can use the Microsoft Entra Wallet Library with Verified ID to issue and present verifiable credentials.
 
 ## Prerequisites
 
 - [Android Studio](https://developer.android.com/studio) installed on Mac/Windows and an Android test device. You need to enable [developer mode](https://developer.android.com/studio/debug/dev-options) on your Android test device.
-- An [Apple developer account](https://developer.apple.com/account/), Mac with [Xcode](https://developer.apple.com/xcode/) and an iOS test device with [developer mode](https://developer.apple.com/documentation/xcode/enabling-developer-mode-on-a-device) enabled. The iOS version needs to be 16 and above.
+- An [Apple developer account](https://developer.apple.com/account/), Mac with [Xcode](https://developer.apple.com/xcode/) and an iOS test device with [developer mode](https://developer.apple.com/documentation/xcode/enabling-developer-mode-on-a-device) enabled. The iOS version needs to be 16 and above.
+
 [//]: # (BROKEN LINK HttpLinkUnauthorized ABOVE: https://developer.apple.com/account/)
 - Install the [QR Code Reader](https://apps.apple.com/us/app/qr-code-reader/id1200318119) app on your test device. The WalletLibraryDemo app doesn't come with the ability to scan QR codes, so you need the QR Code Reader app to scan the QR codes with.
 

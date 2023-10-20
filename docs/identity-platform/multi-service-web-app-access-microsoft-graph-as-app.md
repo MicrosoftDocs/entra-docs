@@ -33,7 +33,7 @@ In this tutorial, you learn how to:
 > * Add Microsoft Graph API permissions to a managed identity.
 > * Call Microsoft Graph from a web app by using managed identities.
 
-[!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
+[!INCLUDE [quickstarts-free-trial-note](~/../azure-docs-pr/includes/quickstarts-free-trial-note.md)]
 
 ## Prerequisites
 

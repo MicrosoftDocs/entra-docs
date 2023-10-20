@@ -31,9 +31,9 @@ The Windows server must have TLS 1.2 enabled before you install the Microsoft En
 
 ## Install the Microsoft Entra Provisioning Agent by using PowerShell cmdlets 
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-[!INCLUDE [sign in](../../../../includes/cloud-sync-sign-in.md)]
+[!INCLUDE [sign in](~/includes/cloud-sync-sign-in.md)]
  3. Select **Manage**.
  4. Click **Download provisioning agent**
  5. On the right, click **Accept terms and download**.

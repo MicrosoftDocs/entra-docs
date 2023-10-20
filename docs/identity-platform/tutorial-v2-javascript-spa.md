@@ -323,7 +323,7 @@ In the next steps, you'll create a new folder for the JavaScript SPA and set up 
 
 ## Register the application
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Before you proceed with authentication, register the application on Microsoft Entra ID:
 

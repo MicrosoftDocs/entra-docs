@@ -130,7 +130,7 @@ Here are some best practices for using protected actions.
 
 ## License requirements
 
-[!INCLUDE [Azure AD Premium P1 license](../../../includes/active-directory-p1-license.md)]
+[!INCLUDE [Azure AD Premium P1 license](~/includes/entra-p1-license.md)]
 
 ## Next steps
 

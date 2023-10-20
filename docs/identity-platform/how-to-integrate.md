@@ -18,7 +18,7 @@ ROBOTS: NOINDEX
 
 # Integrating with the Microsoft identity platform
 
-[!INCLUDE [active-directory-devguide](../../../includes/devguide.md)]
+[!INCLUDE [active-directory-devguide](~/includes/devguide.md)]
 
 In this article, you learn about the benefits of integrating your application with the Microsoft identity platform and get resources for integration. The Microsoft identity platform and Microsoft Entra ID provides organizations with enterprise-grade identity management for cloud applications. The Microsoft identity platform integration gives your users a streamlined sign-in experience, and helps your application conform to IT policy.
 

@@ -14,7 +14,7 @@ ms.date: 10/06/2023
 
 # Quick Microsoft Entra Verified ID setup
 
-[!INCLUDE [Verifiable Credentials announcement](../../../includes/verifiable-credentials-brand.md)]
+[!INCLUDE [Verifiable Credentials announcement](~/../azure-docs-pr/includes/verifiable-credentials-brand.md)]
 
 Quick Verified ID setup, available in preview, removes several configuration steps an admin needs to complete with a single click on a `Get started` button. The quick setup  takes care of signing keys, registering your decentralized ID and verify your domain ownership. It also creates a Verified Workplace Credential for you.
 

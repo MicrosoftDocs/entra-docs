@@ -46,7 +46,7 @@ Granting the update permission is done in two steps:
 
 ### Create a new custom role
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 >[!NOTE]
 > Custom roles are created and managed at an organization-wide level and are available only from the organization's Overview page.

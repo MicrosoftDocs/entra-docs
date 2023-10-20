@@ -134,7 +134,7 @@ The following table is intended to highlight the key actions for the following l
 | [Enable Privileged Identity Management](../privileged-identity-management/pim-configure.md) | Enables you to manage, control, and monitor access to important resources in your organization, ensuring admins have access only when needed and with approval. |
 | [Complete an access review for Microsoft Entra directory roles in PIM](../privileged-identity-management/pim-create-roles-and-resource-roles-review.md) | Work with your security and leadership teams to create an access review policy to review administrative access based on your organization's policies. |
 
-[!INCLUDE [active-directory-zero-trust](../../../includes/active-directory-zero-trust.md)]
+[!INCLUDE [active-directory-zero-trust](~/includes/entra-zero-trust.md)]
 
 ## Next steps
 

@@ -72,13 +72,13 @@ The following table shows the parts of cross-tenant synchronization and which te
 
 ## Cross-tenant synchronization setting
 
-[!INCLUDE [cross-tenant-synchronization-include](../includes/cross-tenant-synchronization-include.md)]
+[!INCLUDE [cross-tenant-synchronization-include](~/includes/cross-tenant-synchronization-include.md)]
 
 To configure this setting using Microsoft Graph, see the [Update crossTenantIdentitySyncPolicyPartner](/graph/api/crosstenantidentitysyncpolicypartner-update?branch=main) API. For more information, see [Configure cross-tenant synchronization](cross-tenant-synchronization-configure.md).
 
 ## Automatic redemption setting
 
-[!INCLUDE [automatic-redemption-include](../includes/automatic-redemption-include.md)]
+[!INCLUDE [automatic-redemption-include](~/includes/automatic-redemption-include.md)]
 
 To configure this setting using Microsoft Graph, see the [Update crossTenantAccessPolicyConfigurationPartner](/graph/api/crosstenantaccesspolicyconfigurationpartner-update?branch=main) API. For more information, see [Configure cross-tenant synchronization](cross-tenant-synchronization-configure.md).
 
@@ -217,7 +217,7 @@ Does cross-tenant synchronization resolve any present [B2B collaboration](../ext
 
 - Since cross-tenant synchronization is built on existing B2B collaboration technology, existing limitations apply. Examples include (but aren't limited to):
 
-    [!INCLUDE [user-type-workload-limitations-include](../includes/user-type-workload-limitations-include.md)]
+    [!INCLUDE [user-type-workload-limitations-include](~/includes/user-type-workload-limitations-include.md)]
 
 #### B2B direct connect
 

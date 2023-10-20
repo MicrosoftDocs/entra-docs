@@ -29,7 +29,7 @@ To use this feature, you need:
 
 ## Archive logs to an Azure storage account
 
-[!INCLUDE [diagnostic-settings-include](../includes/diagnostic-settings-include.md)]
+[!INCLUDE [diagnostic-settings-include](~/includes/diagnostic-settings-include.md)]
 
 6. Under **Destination Details** select the **Archive to a storage account** check box. 
 

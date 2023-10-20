@@ -35,7 +35,7 @@ This article lists the permissions you can use in your custom roles for differen
 
 ## License requirements
 
-[!INCLUDE [License requirement for using custom roles in Azure AD](../../../includes/active-directory-p1-license.md)]
+[!INCLUDE [License requirement for using custom roles in Azure AD](~/includes/entra-p1-license.md)]
 
 ## Read or update basic properties of users
 

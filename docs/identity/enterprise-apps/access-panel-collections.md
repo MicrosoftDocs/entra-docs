@@ -33,7 +33,7 @@ To create collections on the My Apps portal, you need:
 
 ## Create a collection
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To create a collection, you must have a Microsoft Entra ID P1 or P2 license.
 

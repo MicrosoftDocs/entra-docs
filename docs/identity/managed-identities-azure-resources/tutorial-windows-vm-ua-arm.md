@@ -30,11 +30,11 @@ You learn how to:
 > * Get an access token using the user-assigned identity and use it to call Azure Resource Manager
 > * Read the properties of a Resource Group
 
-[!INCLUDE [az-powershell-update](../../../includes/updated-for-az.md)]
+[!INCLUDE [az-powershell-update](~/../azure-docs-pr/includes/updated-for-az.md)]
 
 ## Prerequisites
 
-[!INCLUDE [msi-qs-configure-prereqs](../../../includes/active-directory-msi-qs-configure-prereqs.md)]
+[!INCLUDE [msi-qs-configure-prereqs](~/includes/entra-msi-qs-configure-prereqs.md)]
 
 - Sign in to the [Azure portal](https://portal.azure.com)
 
@@ -143,7 +143,7 @@ CanDelegate: False
 
 ### Get an access token
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 For the remainder of the tutorial, you will work from the VM we created earlier.
 

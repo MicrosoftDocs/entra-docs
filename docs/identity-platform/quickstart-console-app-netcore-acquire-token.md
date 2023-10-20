@@ -48,7 +48,7 @@ To manually configure your application and code sample, use the following proced
 
 #### Step 1: Register your application
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To register the application and add the registration information to the solution manually, follow these steps:
 

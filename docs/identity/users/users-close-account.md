@@ -23,7 +23,7 @@ If you are a user in an unmanaged organization (tenant) in Microsoft Entra ID, p
 
 Users in an unmanaged organization are often created during self-service sign-up. An example might be an information worker in an organization who signs up for a free service. For more information about self-service sign-up, see [What is self-service sign-up for Microsoft Entra ID?](directory-self-service-signup.md).
 
-[!INCLUDE [GDPR-related guidance](../../../includes/gdpr-intro-sentence.md)]
+[!INCLUDE [GDPR-related guidance](~/../azure-docs-pr/includes/gdpr-intro-sentence.md)]
 
 ## Before you begin
 

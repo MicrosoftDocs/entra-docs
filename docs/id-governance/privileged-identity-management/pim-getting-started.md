@@ -27,7 +27,7 @@ Use Privileged Identity Management (PIM) to manage, control, and monitor access 
 
 To use Privileged Identity Management, you must have one of the following licenses:
 
-- [!INCLUDE [entra-id-license-pim.md](../../../includes/entra-id-license-pim.md)]
+- [!INCLUDE [entra-id-license-pim.md](~/includes/entra-id-license-pim.md)]
 
 
 For more information, see [License requirements to use Privileged Identity Management](../governance/licensing-fundamentals.md).

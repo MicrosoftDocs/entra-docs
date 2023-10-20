@@ -22,7 +22,7 @@ The need for access to privileged Azure resource and Microsoft Entra roles by em
 
 ## Prerequisites
 
-[!INCLUDE [entra-id-license-pim.md](../../../includes/entra-id-license-pim.md)]
+[!INCLUDE [entra-id-license-pim.md](~/includes/entra-id-license-pim.md)]
 
 For more information about licenses for PIM, refer to [License requirements to use Privileged Identity Management](../governance/licensing-fundamentals.md).
 
@@ -35,7 +35,7 @@ Access Reviews for **Service Principals** requires a Microsoft Entra Workload ID
 
 ## Create access reviews
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a user that is assigned to one of the prerequisite role(s).
 

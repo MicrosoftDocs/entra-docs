@@ -19,7 +19,7 @@ The expression builder is a new function in Azure located under cloud sync. It h
 ## Use the expression builder
 To access the expression builder:
 
- [!INCLUDE [sign in](../../../../includes/cloud-sync-sign-in.md)]
+ [!INCLUDE [sign in](~/includes/cloud-sync-sign-in.md)]
  2. Under **Configuration**, select your configuration.
  3. Under **Manage attributes**, select **Click to edit mappings**.
  4. On the **Edit attribute mappings** pane, select **Add attribute mapping**.

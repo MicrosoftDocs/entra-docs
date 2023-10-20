@@ -114,7 +114,7 @@ If you aren't using the Event Confirmation feature, and your users aren't using 
 
 ## Download the MFA Server
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Follow these steps to download the Azure Multi-Factor Authentication Server:
 

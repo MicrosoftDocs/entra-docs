@@ -45,7 +45,7 @@ You can use this workbook in the following scenarios:
 
 ## How to access the workbook
 
-[!INCLUDE [how to access workbooks](~/articles/active-directory/includes/how-to-access-workbooks.md)]
+[!INCLUDE [how to access workbooks](~/includes/how-to-access-workbooks.md)]
 3. Select the **Authentication Prompts Analysis** workbook from the **Usage** section.
 
 ## Sections

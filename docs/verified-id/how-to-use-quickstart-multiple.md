@@ -15,7 +15,7 @@ ms.author: barclayn
 
 # Create verifiable credentials with multiple attestations
 
-[!INCLUDE [Verifiable Credentials announcement](../../../includes/verifiable-credentials-brand.md)]
+[!INCLUDE [Verifiable Credentials announcement](~/../azure-docs-pr/includes/verifiable-credentials-brand.md)]
 
 
 A [rules definition](rules-and-display-definitions-model.md#rulesmodel-type) that uses multiple attestations types produces an issuance flow where claims come from more than one source. For instance you may be required to present an existing credential and also manually enter values for claims in Microsoft Authenticator.  

@@ -68,7 +68,7 @@ You can configure organization-specific settings by adding an organization and m
 
 ### Automatic redemption setting
 
-[!INCLUDE [automatic-redemption-include](../includes/automatic-redemption-include.md)]
+[!INCLUDE [automatic-redemption-include](~/includes/automatic-redemption-include.md)]
 
 To configure this setting using Microsoft Graph, see the [Update crossTenantAccessPolicyConfigurationPartner](/graph/api/crosstenantaccesspolicyconfigurationpartner-update) API. For information about building your own onboarding experience, see [B2B collaboration invitation manager](external-identities-overview.md#azure-ad-microsoft-graph-api-for-b2b-collaboration).
 
@@ -76,7 +76,7 @@ For more information, see [Configure cross-tenant synchronization](../multi-tena
 
 ### Cross-tenant synchronization setting
 
-[!INCLUDE [cross-tenant-synchronization-include](../includes/cross-tenant-synchronization-include.md)]
+[!INCLUDE [cross-tenant-synchronization-include](~/includes/cross-tenant-synchronization-include.md)]
 
 To configure this setting using Microsoft Graph, see the [Update crossTenantIdentitySyncPolicyPartner](/graph/api/crosstenantidentitysyncpolicypartner-update) API. For more information, see [Configure cross-tenant synchronization](../multi-tenant-organizations/cross-tenant-synchronization-configure.md).
 

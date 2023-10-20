@@ -42,7 +42,7 @@ You must have the **Global Administrator** role to enable the 'Stay signed in?' 
 
 ## Enable the 'Stay signed in?' prompt
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 The KMSI setting is managed in **User settings**.
 

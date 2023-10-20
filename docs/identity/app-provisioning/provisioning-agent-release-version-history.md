@@ -15,4 +15,4 @@ ms.reviewer: arvinh
 
 # Microsoft Entra Connect Provisioning Agent: Version release history
 
-[!INCLUDE [cloud-sync-version-history.md](../../../includes/cloud-sync-version-history.md)]
+[!INCLUDE [cloud-sync-version-history.md](~/includes/cloud-sync-version-history.md)]

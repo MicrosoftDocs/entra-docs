@@ -28,7 +28,7 @@ Privileged Identity Management (PIM) generates alerts when there's suspicious or
 
 ## License requirements
 
-[!INCLUDE [entra-id-license-pim.md](../../../includes/entra-id-license-pim.md)]
+[!INCLUDE [entra-id-license-pim.md](~/includes/entra-id-license-pim.md)]
 
 ## Security alerts
 

@@ -22,7 +22,7 @@ This article describes the steps to verify the installed version of the provisio
 ## Verify the provisioning agent
 To see what version of the provisioning agent your using, use the following steps:
 
-[!INCLUDE [active-directory-cloud-sync-how-to-verify-installation](../../../includes/active-directory-cloud-sync-how-to-verify-installation.md)]
+[!INCLUDE [active-directory-cloud-sync-how-to-verify-installation](~/includes/entra-cloud-sync-how-to-verify-installation.md)]
 
 ## Verfiy connect sync
 To see what version of connect sync your using, use the following steps:

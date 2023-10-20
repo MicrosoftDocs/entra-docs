@@ -28,7 +28,7 @@ For greater control, certain types of enterprise applications can be configured 
 
 ## Prerequisites
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To assign users to an enterprise application, you need:
 

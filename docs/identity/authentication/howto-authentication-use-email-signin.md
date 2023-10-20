@@ -144,7 +144,7 @@ During preview, you currently need *Global Administrator* permissions to enable 
 
 ### Microsoft Entra admin center
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. From the navigation menu on the left-hand side of the Microsoft Entra window, select **Microsoft Entra Connect > Email as alternate login ID**.

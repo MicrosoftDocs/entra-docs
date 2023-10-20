@@ -28,7 +28,7 @@ This article explains how to migrate from running federated servers such as Acti
 
 ## Enable Staged Rollout for certificate-based authentication on your tenant
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To configure Staged Rollout, follow these steps:
 

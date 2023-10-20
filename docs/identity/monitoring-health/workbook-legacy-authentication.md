@@ -47,7 +47,7 @@ The **Sign-ins using legacy authentication** workbook lets you see all legacy au
 
 ## How to access the workbook
 
-[!INCLUDE [how to access workbooks](~/articles/active-directory/includes/how-to-access-workbooks.md)]
+[!INCLUDE [how to access workbooks](~/includes/how-to-access-workbooks.md)]
 3. Select the **Sign-ins using legacy authentication** workbook from the **Usage** section.
 
 ## Sections

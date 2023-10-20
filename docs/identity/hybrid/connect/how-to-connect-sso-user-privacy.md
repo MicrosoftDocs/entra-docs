@@ -18,7 +18,7 @@ ms.collection: M365-identity-device-management
 ---
 # User Privacy and Microsoft Entra seamless single sign-on
 
-[!INCLUDE [Privacy](../../../../includes/gdpr-intro-sentence.md)]
+[!INCLUDE [Privacy](~/../azure-docs-pr/includes/gdpr-intro-sentence.md)]
 
 ## Overview
 

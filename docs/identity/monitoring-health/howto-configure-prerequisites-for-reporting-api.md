@@ -42,7 +42,7 @@ To enable your application to access Microsoft Graph without user intervention, 
 
 ### Register a Microsoft Entra application
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Reader](~/identity/role-based-access-control/permissions-reference.md#security-reader).
 1. Browse to **Identity** > **Applications** > **App registrations**.

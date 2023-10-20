@@ -144,7 +144,7 @@ The change doesn't affect existing applications using unverified domains in thei
 
 If a request fails the validation check, the application API for create/update will return a `400 badrequest` to the client indicating HostNameNotOnVerifiedDomain.
 
-[!INCLUDE [active-directory-identifierUri](../../../includes/active-directory-identifier-uri-patterns.md)]
+[!INCLUDE [active-directory-identifierUri](~/includes/entra-identifier-uri-patterns.md)]
 
 >[!NOTE]
 > While it is safe to remove the identifierUris for app registrations within the current tenant, removing the identifierUris may cause clients to fail for other app registrations. 

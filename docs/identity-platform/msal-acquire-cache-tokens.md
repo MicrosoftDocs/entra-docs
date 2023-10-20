@@ -114,7 +114,7 @@ When your client requests an access token, Microsoft Entra ID also returns an au
 
 ## (Advanced) Accessing the user's cached tokens in background apps and services
 
-[!INCLUDE [advanced-token-caching](../../../includes/advanced-token-cache.md)]
+[!INCLUDE [advanced-token-caching](~/includes/advanced-token-cache.md)]
 
 ## Next steps
 

@@ -20,7 +20,7 @@ Lifecycle Workflows come with many pre-configured tasks that are designed to aut
 Lifecycle Workflow's built-in tasks each include an identifier, known as **taskDefinitionID**, and can be used to create either new workflows from scratch, or inserted into workflow templates so that they fit the needs of your organization. For more information on templates available for use with Lifecycle Workflows, see: [Lifecycle Workflow Templates](lifecycle-workflow-templates.md).
 
 
-[!INCLUDE [Lifecylce Workflows tasks table](../../../includes/lifecycle-workflows-tasks-table.md)]
+[!INCLUDE [Lifecylce Workflows tasks table](~/../azure-docs-pr/includes/lifecycle-workflows-tasks-table.md)]
 
 ## Common task parameters
 

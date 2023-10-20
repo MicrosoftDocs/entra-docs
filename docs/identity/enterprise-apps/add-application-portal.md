@@ -30,7 +30,7 @@ To add an enterprise application to your Microsoft Entra tenant, you need:
 
 ## Add an enterprise application
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To add an enterprise application to your tenant:
 

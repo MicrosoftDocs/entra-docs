@@ -20,7 +20,7 @@ ms.collection: M365-identity-device-management
 
 You may have received a notification email that says that your [Microsoft Entra Connect version is deprecated](whatis-azure-ad-connect-v2.md) and no longer supported.  Or, you may have read a portal recommendation about upgrading your Microsoft Entra Connect version. What is next?
 
-[!INCLUDE [Choose cloud sync](../../../../includes/choose-cloud-sync.md)]
+[!INCLUDE [Choose cloud sync](~/includes/choose-cloud-sync.md)]
 
 Using a deprecated and unsupported version of Microsoft Entra Connect isn't recommended and not supported. Deprecated and unsupported versions of Microsoft Entra Connect may **unexpectedly stop working**.  In these instances, you may need to install the latest version of Microsoft Entra Connect as your only remedy to restore your sync process. 
 

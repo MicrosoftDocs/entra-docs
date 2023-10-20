@@ -20,7 +20,7 @@ ms.collection: M365-identity-device-management
 ---
 # Microsoft Entra Connect: Upgrade from a previous version to the latest
 
-[!INCLUDE [Choose cloud sync](../../../../includes/choose-cloud-sync.md)]
+[!INCLUDE [Choose cloud sync](~/includes/choose-cloud-sync.md)]
 
 This topic describes the different methods that you can use to upgrade your Microsoft Entra Connect installation to the latest release. Microsoft recommends using the steps in the [Swing migration](#swing-migration) section when you make a substantial configuration change or upgrade from older 1.x versions.
 

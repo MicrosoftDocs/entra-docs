@@ -29,7 +29,7 @@ To complete the scenario in this quickstart, you need:
 
 ## Perform a failed sign-in
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 The goal of this step is to create a record of a failed sign-in in the Microsoft Entra sign-in log.
 

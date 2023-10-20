@@ -72,7 +72,7 @@ The rows in a downloaded CSV template are as follows:
 
 If there are errors, you can download and view the results file on the **Bulk operation results** page. The file contains the reason for each error. The file submission must match the provided template and include the exact column names.
 
-[!INCLUDE [Bulk update warning](~/articles/active-directory/includes/bulk-export.md)]
+[!INCLUDE [Bulk update warning](~/includes/bulk-export.md)]
 
 ## Check status
 

@@ -149,7 +149,7 @@ Public DNS records for Microsoft Entra application proxy endpoints are chained C
 
 ## Install and register a connector
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To use Application Proxy, install a connector on each Windows server you're using with the Application Proxy service. The connector is an agent that manages the outbound connection from the on-premises application servers to Application Proxy in Microsoft Entra ID. You can install a connector on servers that also have other authentication agents installed such as Microsoft Entra Connect.
 

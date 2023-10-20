@@ -18,7 +18,7 @@ ms.collection: M365-identity-device-management
 
 This article describes Microsoft Entra Connect Health and user privacy. For information about Microsoft Entra Connect and user privacy, see [User privacy and Microsoft Entra Connect](reference-connect-user-privacy.md).
 
-[!INCLUDE [Privacy](../../../../includes/gdpr-intro-sentence.md)]
+[!INCLUDE [Privacy](~/../azure-docs-pr/includes/gdpr-intro-sentence.md)]
 
 ## User privacy classification
 

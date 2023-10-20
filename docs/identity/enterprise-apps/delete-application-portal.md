@@ -33,7 +33,7 @@ To delete an enterprise application, you need:
 
 ## Delete an enterprise application
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 :::zone pivot="portal"
 
@@ -112,22 +112,22 @@ To delete an enterprise application using [Graph Explorer](https://developer.mic
    ```
 
    # [C#](#tab/csharp)
-   [!INCLUDE [sample-code](~/microsoft-graph/api-reference/v1.0/includes/snippets/csharp/list-serviceprincipal-csharp-snippets.md)]
+   [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/v1.0/includes/snippets/csharp/list-serviceprincipal-csharp-snippets.md)]
 
    # [JavaScript](#tab/javascript)
-   [!INCLUDE [sample-code](~/microsoft-graph/api-reference/v1.0/includes/snippets/javascript/list-serviceprincipal-javascript-snippets.md)]
+   [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/v1.0/includes/snippets/javascript/list-serviceprincipal-javascript-snippets.md)]
 
    # [Java](#tab/java)
-   [!INCLUDE [sample-code](~/microsoft-graph/api-reference/v1.0/includes/snippets/java/list-serviceprincipal-java-snippets.md)]
+   [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/v1.0/includes/snippets/java/list-serviceprincipal-java-snippets.md)]
 
    # [Go](#tab/go)
-   [!INCLUDE [sample-code](~/microsoft-graph/api-reference/v1.0/includes/snippets/go/list-serviceprincipal-go-snippets.md)]
+   [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/v1.0/includes/snippets/go/list-serviceprincipal-go-snippets.md)]
 
    # [PowerShell](#tab/powershell)
-   [!INCLUDE [sample-code](~/microsoft-graph/api-reference/v1.0/includes/snippets/powershell/list-serviceprincipal-powershell-snippets.md)]
+   [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/v1.0/includes/snippets/powershell/list-serviceprincipal-powershell-snippets.md)]
 
    # [PHP](#tab/php)
-   [!INCLUDE [sample-code](~/microsoft-graph/api-reference/v1.0/includes/snippets/php/list-serviceprincipal-php-snippets.md)]
+   [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/v1.0/includes/snippets/php/list-serviceprincipal-php-snippets.md)]
 
    ---
 
@@ -140,22 +140,22 @@ To delete an enterprise application using [Graph Explorer](https://developer.mic
    ```
 
    # [C#](#tab/csharp)
-   [!INCLUDE [sample-code](~/microsoft-graph/api-reference/v1.0/includes/snippets/csharp/delete-serviceprincipal-csharp-snippets.md)]
+   [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/v1.0/includes/snippets/csharp/delete-serviceprincipal-csharp-snippets.md)]
 
    # [JavaScript](#tab/javascript)
-   [!INCLUDE [sample-code](~/microsoft-graph/api-reference/v1.0/includes/snippets/javascript/delete-serviceprincipal-javascript-snippets.md)]
+   [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/v1.0/includes/snippets/javascript/delete-serviceprincipal-javascript-snippets.md)]
 
    # [Java](#tab/java)
-   [!INCLUDE [sample-code](~/microsoft-graph/api-reference/v1.0/includes/snippets/java/delete-serviceprincipal-java-snippets.md)]
+   [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/v1.0/includes/snippets/java/delete-serviceprincipal-java-snippets.md)]
 
    # [Go](#tab/go)
-   [!INCLUDE [sample-code](~/microsoft-graph/api-reference/v1.0/includes/snippets/go/delete-serviceprincipal-go-snippets.md)]
+   [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/v1.0/includes/snippets/go/delete-serviceprincipal-go-snippets.md)]
 
    # [PowerShell](#tab/powershell)
-   [!INCLUDE [sample-code](~/microsoft-graph/api-reference/v1.0/includes/snippets/powershell/delete-serviceprincipal-powershell-snippets.md)]
+   [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/v1.0/includes/snippets/powershell/delete-serviceprincipal-powershell-snippets.md)]
 
    # [PHP](#tab/php)
-   [!INCLUDE [sample-code](~/microsoft-graph/api-reference/v1.0/includes/snippets/php/delete-serviceprincipal-php-snippets.md)]
+   [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/v1.0/includes/snippets/php/delete-serviceprincipal-php-snippets.md)]
 
    ---
 

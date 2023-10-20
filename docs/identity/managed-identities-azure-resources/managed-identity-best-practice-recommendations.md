@@ -18,7 +18,7 @@ ms.author: barclayn
 
 # Managed identity best practice recommendations
 
-[!INCLUDE [preview-notice](../../../includes/active-directory-msi-preview-notice.md)]
+[!INCLUDE [preview-notice](~/includes/entra-msi-preview-notice.md)]
 
 ## Choosing system or user-assigned managed identities
 

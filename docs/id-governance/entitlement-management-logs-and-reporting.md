@@ -30,7 +30,7 @@ Microsoft Entra ID stores audit events for up to 30 days in the audit log. Howev
 
 ## Configure Microsoft Entra ID to use Azure Monitor
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Before you use the Azure Monitor workbooks, you must configure Microsoft Entra ID to send a copy of its audit logs to Azure Monitor.
 
