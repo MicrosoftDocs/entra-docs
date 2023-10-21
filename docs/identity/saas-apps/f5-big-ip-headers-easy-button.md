@@ -76,7 +76,7 @@ Prior BIG-IP experience isn’t necessary, but you’ll need:
 
   * 90-day BIG-IP full feature [trial license](https://www.f5.com/trial/big-ip-trial.php).
 
-* User identities [synchronized](~/identity/hybrid/how-to-connect-sync-whatis.md) from an on-premises directory to Microsoft Entra ID.
+* User identities [synchronized](~/identity/hybrid/connect/how-to-connect-sync-whatis.md) from an on-premises directory to Microsoft Entra ID.
 
 * An account with Microsoft Entra application admin [permissions](/azure/active-directory/users-groups-roles/directory-assign-admin-roles#application-administrator).
 
