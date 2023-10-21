@@ -19,7 +19,7 @@ ms.collection: M365-identity-device-management
 
 A [device identity](/graph/api/resources/device) is an object in Microsoft Entra ID. This device object is similar to users, groups, or applications. A device identity gives administrators information they can use when making access or configuration decisions.
 
-![Devices displayed in Microsoft Entra Devices blade](./media/overview/azure-entra-devices-all-devices)
+![Devices displayed in Microsoft Entra Devices blade](./media/overview/azure-entra-devices-all-devices.png)
 
 There are three ways to get a device identity:
 

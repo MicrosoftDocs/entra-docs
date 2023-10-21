@@ -26,11 +26,11 @@ Use the [application network portal](~/identity/enterprise-apps/v2-howto-app-gal
 
 | Logo | Application tutorial for single sign-on | Application tutorial for user provisioning |
 | :--- | :--- | :--- |
-| ![logo-Atlassian Cloud](./media/tutorial-list/entra-saas-atlassian-cloud-tutorial)| [Atlassian Cloud](atlassian-cloud-tutorial.md)| [Atlassian Cloud - User Provisioning](atlassian-cloud-provisioning-tutorial.md)|
-| ![logo-ServiceNow](./media/tutorial-list/entra-saas-servicenow-tutorial)| [ServiceNow](servicenow-tutorial.md)|[ServiceNow - User Provisioning](servicenow-provisioning-tutorial.md)|
-| ![logo-Slack](./media/tutorial-list/entra-saas-slack-tutorial)| [Slack](slack-tutorial.md)|[Slack - User Provisioning](slack-provisioning-tutorial.md)|
-| ![logo-SuccessFactors](./media/tutorial-list/entra-saas-successfactors-tutorial)| [SuccessFactors](successfactors-tutorial.md)| [SuccessFactors - User Provisioning](./sap-successfactors-inbound-provisioning-tutorial.md) |
-| ![logo-Workday](./media/tutorial-list/entra-saas-workday-tutorial)| [Workday](workday-tutorial.md)| [Workday - User Provisioning](workday-inbound-tutorial.md)|
+| ![logo-Atlassian Cloud](./media/tutorial-list/entra-saas-atlassian-cloud-tutorial.png)| [Atlassian Cloud](atlassian-cloud-tutorial.md)| [Atlassian Cloud - User Provisioning](atlassian-cloud-provisioning-tutorial.md)|
+| ![logo-ServiceNow](./media/tutorial-list/entra-saas-servicenow-tutorial.png)| [ServiceNow](servicenow-tutorial.md)|[ServiceNow - User Provisioning](servicenow-provisioning-tutorial.md)|
+| ![logo-Slack](./media/tutorial-list/entra-saas-slack-tutorial.png)| [Slack](slack-tutorial.md)|[Slack - User Provisioning](slack-provisioning-tutorial.md)|
+| ![logo-SuccessFactors](./media/tutorial-list/entra-saas-successfactors-tutorial.png)| [SuccessFactors](successfactors-tutorial.md)| [SuccessFactors - User Provisioning](./sap-successfactors-inbound-provisioning-tutorial.md) |
+| ![logo-Workday](./media/tutorial-list/entra-saas-workday-tutorial.png)| [Workday](workday-tutorial.md)| [Workday - User Provisioning](workday-inbound-tutorial.md)|
 
 To find more tutorials, use the table of contents on the left.
 
@@ -38,11 +38,11 @@ To find more tutorials, use the table of contents on the left.
 
 | Logo | Application tutorial for single sign-on | Application tutorial for user provisioning |
 | :--- | :--- | :--- |
-| ![logo-Amazon Web Services (AWS) Console](./media/tutorial-list/entra-saas-amazon-web-service-tutorial)| [Amazon Web Services (AWS) Console](amazon-web-service-tutorial.md)| [Amazon Web Services (AWS) Console - Role Provisioning](amazon-web-service-tutorial.md#configure-azure-ad-sso) |
-| ![logo-Alibaba Cloud Service (Role based SSO)](./media/tutorial-list/entra-saas-alibaba-tutorial)| [Alibaba Cloud Service (Role bases SSO)](alibaba-cloud-service-role-based-sso-tutorial.md)| |
-| ![logo-Google Cloud Platform](./media/tutorial-list/entra-saas-google-apps-tutorial)| [Google Cloud Platform](google-apps-tutorial.md)| [Google Cloud Platform - User Provisioning](g-suite-provisioning-tutorial.md) |
-| ![logo-Salesforce](./media/tutorial-list/entra-saas-salesforce-tutorial)| [Salesforce](salesforce-tutorial.md)| [Salesforce - User Provisioning](salesforce-provisioning-tutorial.md) |
-| ![logo-SAP Cloud Identity Platform](./media/tutorial-list/entra-saas-sapboc-tutorial)| [SAP Cloud Identity Platform](saphana-tutorial.md)|[SAP Cloud Identity Platform - Provisioning](./sap-cloud-platform-identity-authentication-provisioning-tutorial.md) |
+| ![logo-Amazon Web Services (AWS) Console](./media/tutorial-list/entra-saas-amazon-web-service-tutorial.png)| [Amazon Web Services (AWS) Console](amazon-web-service-tutorial.md)| [Amazon Web Services (AWS) Console - Role Provisioning](amazon-web-service-tutorial.md#configure-azure-ad-sso) |
+| ![logo-Alibaba Cloud Service (Role based SSO)](./media/tutorial-list/entra-saas-alibaba-tutorial.png)| [Alibaba Cloud Service (Role bases SSO)](alibaba-cloud-service-role-based-sso-tutorial.md)| |
+| ![logo-Google Cloud Platform](./media/tutorial-list/entra-saas-google-apps-tutorial.png)| [Google Cloud Platform](google-apps-tutorial.md)| [Google Cloud Platform - User Provisioning](g-suite-provisioning-tutorial.md) |
+| ![logo-Salesforce](./media/tutorial-list/entra-saas-salesforce-tutorial.png)| [Salesforce](salesforce-tutorial.md)| [Salesforce - User Provisioning](salesforce-provisioning-tutorial.md) |
+| ![logo-SAP Cloud Identity Platform](./media/tutorial-list/entra-saas-sapboc-tutorial.png)| [SAP Cloud Identity Platform](saphana-tutorial.md)|[SAP Cloud Identity Platform - Provisioning](./sap-cloud-platform-identity-authentication-provisioning-tutorial.md) |
 
 ## Next steps
 

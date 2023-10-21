@@ -36,7 +36,7 @@ For more information, see [Prerequisites to use PowerShell or Graph Explorer](pr
 
 1. Browse to **Identity** > **Roles & admins** > **Roles & admins**.
 
-    ![list of roles in Azure portal](./media/role-definitions-list/view-roles-in-azure-entra)
+    ![list of roles in Azure portal](./media/role-definitions-list/view-roles-in-azure-entra.png)
 
 1. On the right, select the ellipsis and then **Description** to see the complete list of permissions for a role.
 
