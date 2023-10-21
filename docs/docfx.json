@@ -201,8 +201,8 @@
     "rules": {
       "sensitive-language-wl": {
         "exclude": [
-          "docs/identity/app-provisioning/sap-successfactors-integration-reference.md",
-          "docs/identity/authentication/howto-mfa-nps-extension-advanced.md"
+          "identity/app-provisioning/sap-successfactors-integration-reference.md",
+          "identity/authentication/howto-mfa-nps-extension-advanced.md"
         ]
       }
     }
