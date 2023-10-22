@@ -27,7 +27,7 @@ The objective of this tutorial is to demonstrate the steps to be performed in Le
 The scenario outlined in this tutorial assumes that you already have the following prerequisites:
 
 * A Microsoft Entra tenant.
-* A [Leapsome](https://www.Leapsome.com/en/pricing) tenant.
+* A [Leapsome](https://www.Leapsome.com/pricing) tenant.
 * A user account in Leapsome with Admin permissions.
 
 ## Assigning users to Leapsome
