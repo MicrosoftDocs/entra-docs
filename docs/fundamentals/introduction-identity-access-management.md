@@ -67,7 +67,7 @@ These are the most well-known and commonly used authentication and authorization
 
 #### OAuth 2.0
 
-OAuth is an open-standards identity management protocol that provides secure access for websites, mobile apps, and Internet of Things and other devices. It uses tokens that are encrypted in transit and eliminates the need to share credentials. OAuth 2.0, the latest release of OAuth, is a popular framework used by major social media platforms and consumer services, from Facebook and LinkedIn to Google, PayPal, and Netflix. To learn more, read about [OAuth 2.0 protocol](/azure/active-directory/develop/active-directory-v2-protocols).
+OAuth is an open-standards identity management protocol that provides secure access for websites, mobile apps, and Internet of Things and other devices. It uses tokens that are encrypted in transit and eliminates the need to share credentials. OAuth 2.0, the latest release of OAuth, is a popular framework used by major social media platforms and consumer services, from Facebook and LinkedIn to Google, PayPal, and Netflix. To learn more, read about [OAuth 2.0 protocol](~/identity-platform/v2-protocols.md).
 #### OpenID Connect (OIDC)
 
 With the release of the OpenID Connect (which uses public-key encryption), OpenID became a widely adopted authentication layer for OAuth. Like SAML, OpenID Connect (OIDC) is widely used for single sign-on (SSO), but OIDC uses REST/JSON instead of XML. OIDC was designed to work with both native and mobile apps by using REST/JSON protocols. The primary use case for SAML, however, is web-based apps. To learn more, read about [OpenID Connect protocol](~/identity-platform/v2-protocols.md).
