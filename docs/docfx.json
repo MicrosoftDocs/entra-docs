@@ -33,7 +33,6 @@
         ],
         "exclude": [
           "**/obj/**",
-          "**/includes/**",
           "_themes/**",
           "_themes.pdf/**",
           "**/docfx.json",
@@ -198,6 +197,14 @@
       "verified-id/*.yml": "Microsoft Entra Verified ID",
       "workload-id/*.md": "Microsoft Entra Workload ID",
       "workload-id/*.yml": "Microsoft Entra Workload ID"
+    },
+    "rules": {
+      "sensitive-language-wl": {
+        "exclude": [
+          "identity/app-provisioning/sap-successfactors-integration-reference.md",
+          "identity/authentication/howto-mfa-nps-extension-advanced.md"
+        ]
+      }
     }
   }
 }

@@ -1,0 +1,210 @@
+### YamlMime:ZonePivotGroups
+groups:
+# Owner: barclayn, rolyon
+## Zone pivot with Azure portal, Azure AD PowerShell, Microsoft Graph PowerShell, Microsoft Graph
+- id: identity-pivot-portal-aadpowershell-mspowershell-msgraph
+  title: Manage identity
+  prompt: Choose an option
+  pivots:
+  - id: portal
+    title: Azure portal
+  - id: aad-powershell
+    title: Azure AD PowerShell
+  - id: ms-powershell
+    title: Microsoft Graph PowerShell
+  - id: ms-graph
+    title: Microsoft Graph
+# Owner: barclayn, rolyon
+## Zone pivot with Azure portal, Microsoft Graph PowerShell, Microsoft Graph
+- id: identity-pivot-portal-mspowershell-msgraph
+  title: Manage identity
+  prompt: Choose an option
+  pivots:
+  - id: portal
+    title: Azure portal
+  - id: ms-powershell
+    title: Microsoft Graph PowerShell
+  - id: ms-graph
+    title: Microsoft Graph
+# Owner: rolyon
+- id: multi-tenant-organizations-powershell-graph
+  title: Microsoft Graph PowerShell or Microsoft Graph
+  prompt: Choose an option
+  pivots:
+  - id: ms-powershell
+    title: Microsoft Graph PowerShell
+  - id: ms-graph
+    title: Microsoft Graph
+# Owner: rolyon
+- id: app-provisioning-cross-tenant-synchronization
+  title: Application provisioning or cross-tenant synchronization
+  prompt: Choose an option
+  pivots:
+  - id: app-provisioning
+    title: Application provisioning
+  - id: cross-tenant-synchronization
+    title: Cross-tenant synchronization
+########### BEGIN MICROSOFT IDENTITY PLATFORM
+# Referenced by: /entra/identity-platform/*
+# Owner(s):  dmwendia, celested, ryanwi, henrymbugua, owenrichards, cwerner
+## WEB API ##
+- id: web-api-howto-prereq
+  title: web-api-howto-prereq
+  prompt: Make a selection
+  pivots:
+  - id: no-api
+    title: I don't have an API
+  - id: api
+    title: I have an API
+############ END MICROSOFT IDENTITY PLATFORM
+########### BEGIN APPLICATION MANAGEMENT
+# Owner(s):      jomondi, celested
+## Home realm discovery ##
+- id: home-realm-discovery
+  title: hrd-policy
+  prompt: Choose an option
+  pivots:
+  - id: powershell-hrd
+    title: Azure AD PowerShell
+  - id: graph-hrd
+    title: Microsoft Graph
+## template with all
+- id: enterprise-apps-all
+  title: Manage Enterprise apps
+  prompt: Choose an option
+  pivots:
+  - id: portal
+    title: Azure portal
+  - id: aad-powershell
+    title: Azure AD PowerShell
+  - id: ms-powershell
+    title: Microsoft Graph PowerShell
+  - id: ms-graph
+    title: Microsoft Graph
+## Template without portal
+- id: enterprise-apps-minus-portal
+  title: Manage Enterprise apps
+  prompt: Choose an option
+  pivots:
+  - id: aad-powershell
+    title: Azure AD PowerShell
+  - id: ms-powershell
+    title: Microsoft Graph PowerShell
+  - id: ms-graph
+    title: Microsoft Graph
+## Template without portal and Azure AD Graph
+- id: enterprise-apps-minus-portal-aad
+  title: Manage Enterprise apps
+  prompt: Choose an option
+  pivots:
+  - id: ms-powershell
+    title: Microsoft Graph PowerShell
+  - id: ms-graph
+    title: Microsoft Graph
+## template without graph
+- id: enterprise-apps-minus-graph
+  title: Manage Enterprise apps
+  prompt: Choose an option
+  pivots:
+  - id: portal
+    title: Azure portal
+  - id: aad-powershell
+    title: Azure AD PowerShell
+  - id: ms-powershell
+    title: Microsoft Graph PowerShell
+## template without azure AD PowerShell
+- id: enterprise-apps-minus-former-powershell
+  title: Manage Enterprise apps
+  prompt: Choose an option
+  pivots:
+  - id: portal
+    title: Azure portal
+  - id: ms-powershell
+    title: Microsoft Graph PowerShell
+  - id: ms-graph
+    title: Microsoft Graph API
+## Create service principal with appId
+- id: enterprise-apps-cli
+  title: Enterprise apps
+  prompt: Choose an option
+  pivots:
+  - id: msgraph-powershell
+    title: Microsoft graph PowerShell
+  - id: ms-graph
+    title: Microsoft Graph
+  - id: azure-cli
+    title: Azure CLI
+  - id: admin-consent-url
+    title: Admin consent URL
+## Create service principal with appId
+- id: enterprise-apps-ms-graph-ms-powershell
+  title: Enterprise apps
+  prompt: Choose an option
+  pivots:
+  - id: msgraph-powershell
+    title: Microsoft graph PowerShell
+  - id: ms-graph
+    title: Microsoft Graph
+## revoke permissions
+- id: delegated-app-permissions
+  title: Permissions
+  prompt: Choose an option
+  pivots:
+  - id: delegated-perms
+    title: Delegated permissions
+  - id: app-perms
+    title: App-only permissions
+########### END APPLICATION MANAGEMENT
+# Owner: barclayn
+- id: identity-mi-methods
+  title: Managed identities methods
+  prompt: Choose an option
+  pivots:
+  - id: identity-mi-methods-azp
+    title: Azure portal
+  - id: identity-mi-methods-azcli
+    title: Azure CLI
+  - id: identity-mi-methods-powershell
+    title: PowerShell
+  - id: identity-mi-methods-arm
+    title: Resource Manager
+  - id: identity-mi-methods-rest
+    title: REST
+# Owner: ryanwi
+- id: identity-wif-mi-methods
+  title: Workload identity federation for managed identities methods
+  prompt: Choose an option
+  pivots:
+  - id: identity-wif-mi-methods-azp
+    title: Azure portal
+  - id: identity-wif-mi-methods-powershell
+    title: Azure PowerShell
+  - id: identity-wif-mi-methods-azcli
+    title: Azure CLI
+  - id: identity-wif-mi-methods-arm
+    title: Resource Manager
+  - id: identity-wif-mi-methods-rest
+    title: REST
+# Owner: ryanwi
+- id: identity-wif-apps-methods
+  title: Workload identity federation for apps methods
+  prompt: Choose an option
+  pivots:
+  - id: identity-wif-apps-methods-azp
+    title: Azure portal
+  - id: identity-wif-apps-methods-azcli
+    title: Azure CLI
+  - id: identity-wif-apps-methods-powershell
+    title: PowerShell
+  - id: identity-wif-apps-methods-rest
+    title: REST
+- id: identity-mi-method-sub
+  title: Managed identities method subset
+  prompt: Choose an option
+  pivots:
+  - id: identity-mi-methods-sub-azp
+    title: Azure portal
+  - id: identity-mi-methods-sub-azcli
+    title: Azure CLI
+  - id: identity-mi-methods-sub-powershell
+    title: PowerShell
