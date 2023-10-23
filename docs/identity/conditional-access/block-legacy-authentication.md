@@ -92,7 +92,7 @@ Filtering shows you sign-in attempts made by legacy authentication protocols. Cl
 
 These logs indicate where users are using clients that are still depending on legacy authentication. For users that don't appear in these logs and are confirmed to not be using legacy authentication, implement a Conditional Access policy for these users only.
 
-Additionally, to help triage legacy authentication within your tenant use the [Sign-ins using legacy authentication workbook](~/identity/monitoring-health/workbook-legacy%20authentication.md).
+Additionally, to help triage legacy authentication within your tenant use the [Sign-ins using legacy authentication workbook](~/identity/monitoring-health/workbook-legacy-authentication.md).
 
 #### Indicators from client
 

@@ -37,9 +37,9 @@ The scenario outlined in this tutorial assumes that you already have the followi
 * A [Freshservice account](https://www.freshservice.com) with the Organizational Admin permissions.
 
 ## Step 1: Plan your provisioning deployment
-1. Learn about [how the provisioning service works](~/identity/enterprise-apps/user-provisioning.md).
-2. Determine who will be in [scope for provisioning](~/identity/enterprise-apps/define-conditional-rules-for-provisioning-user-accounts.md).
-3. Determine what data to [map between Microsoft Entra ID and Freshservice Provisioning](~/identity/enterprise-apps/customize-application-attributes.md). 
+1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
+2. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+3. Determine what data to [map between Microsoft Entra ID and Freshservice Provisioning](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-freshservice-provisioning-to-support-provisioning-with-azure-ad'></a>
 
@@ -56,15 +56,15 @@ The scenario outlined in this tutorial assumes that you already have the followi
 
 ## Step 3: Add Freshservice Provisioning from the Microsoft Entra application gallery
 
-Add Freshservice Provisioning from the Microsoft Entra application gallery to start managing provisioning to Freshservice Provisioning. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-gallery-app.md). 
+Add Freshservice Provisioning from the Microsoft Entra application gallery to start managing provisioning to Freshservice Provisioning. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
 ## Step 4: Define who will be in scope for provisioning 
 
-The Microsoft Entra provisioning service allows you to scope who will be provisioned based on assignment to the application and or based on attributes of the user. If you choose to scope who will be provisioned to your app based on assignment, you can use the following [steps](~/identity/enterprise-apps/assign-user-or-group-access-portal.md) to assign users to the application. If you choose to scope who will be provisioned based solely on attributes of the user, you can use a scoping filter as described [here](~/identity/enterprise-apps/define-conditional-rules-for-provisioning-user-accounts.md). 
+The Microsoft Entra provisioning service allows you to scope who will be provisioned based on assignment to the application and or based on attributes of the user. If you choose to scope who will be provisioned to your app based on assignment, you can use the following [steps](~/identity/enterprise-apps/assign-user-or-group-access-portal.md) to assign users to the application. If you choose to scope who will be provisioned based solely on attributes of the user, you can use a scoping filter as described [here](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md). 
 
 * Start small. Test with a small set of users and groups before rolling out to everyone. When scope for provisioning is set to assigned users and groups, you can control this by assigning one or two users or groups to the app. When scope is set to all users and groups, you can specify an [attribute based scoping filter](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-* Start small. Test with a small set of users before rolling out to everyone. When scope for provisioning is set to assigned users, you can control this by assigning one or two users to the app. When scope is set to all users and groups, you can specify an [attribute based scoping filter](~/identity/enterprise-apps/define-conditional-rules-for-provisioning-user-accounts.md). 
+* Start small. Test with a small set of users before rolling out to everyone. When scope for provisioning is set to assigned users, you can control this by assigning one or two users to the app. When scope is set to all users and groups, you can specify an [attribute based scoping filter](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md). 
 
 
 ## Step 5: Configure automatic user provisioning to Freshservice Provisioning 
@@ -104,7 +104,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Freshservice Provisioning**.
 
-9. Review the user attributes that are synchronized from Microsoft Entra ID to Freshservice Provisioning in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Freshservice Provisioning for update operations. If you choose to change the [matching target attribute](~/identity/enterprise-apps/customize-application-attributes.md), you will need to ensure that the Freshservice Provisioning API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+9. Review the user attributes that are synchronized from Microsoft Entra ID to Freshservice Provisioning in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Freshservice Provisioning for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the Freshservice Provisioning API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported For Filtering|
    |---|---|---|
@@ -155,7 +155,7 @@ Once you've configured provisioning, use the following resources to monitor your
 
 1. Use the [provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md) to determine which users have been provisioned successfully or unsuccessfully
 2. Check the [progress bar](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md) to see the status of the provisioning cycle and how close it is to completion
-3. If the provisioning configuration seems to be in an unhealthy state, the application will go into quarantine. Learn more about quarantine states [here](~/identity/enterprise-apps/application-provisioning-quarantine-status.md).
+3. If the provisioning configuration seems to be in an unhealthy state, the application will go into quarantine. Learn more about quarantine states [here](~/identity/app-provisioning/application-provisioning-quarantine-status.md).
 
 ## Additional resources
 

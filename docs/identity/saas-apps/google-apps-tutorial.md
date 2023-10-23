@@ -61,7 +61,7 @@ To test the steps in this tutorial, you should follow these recommendations:
 
 5. **Q: If a user is signed in through Windows, are they automatically authenticate to Google Cloud / G Suite Connector by Microsoft without getting prompted for a password?**
 
-    A: There are two options for enabling this scenario. First, users could sign into Windows 10 devices via [Microsoft Entra join](~/identity/devices/overview.md). Alternatively, users could sign into Windows devices that are domain-joined to an on-premises Active Directory that has been enabled for single sign-on to Microsoft Entra ID via an [Active Directory Federation Services (AD FS)](~/identity/hybrid/plan-connect-user-signin.md) deployment. Both options require you to perform the steps in the following tutorial to enable single sign-on between Microsoft Entra ID and Google Cloud / G Suite Connector by Microsoft.
+    A: There are two options for enabling this scenario. First, users could sign into Windows 10 devices via [Microsoft Entra join](~/identity/devices/overview.md). Alternatively, users could sign into Windows devices that are domain-joined to an on-premises Active Directory that has been enabled for single sign-on to Microsoft Entra ID via an [Active Directory Federation Services (AD FS)](~/identity/hybrid/connect/plan-connect-user-signin.md) deployment. Both options require you to perform the steps in the following tutorial to enable single sign-on between Microsoft Entra ID and Google Cloud / G Suite Connector by Microsoft.
 
 6. **Q: What should I do when I get an "invalid email" error message?**
 

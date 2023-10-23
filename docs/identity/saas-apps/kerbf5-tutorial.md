@@ -86,7 +86,7 @@ In this tutorial, you configure and test Microsoft Entra SSO in a test environme
 
 - [Configure F5 single sign-on for Kerberos application](#configure-f5-single-sign-on-for-kerberos-application)
 
-- [Configure F5 single sign-on for Header Based application](headerf5-tutorial.md)
+- [Configure F5 single sign-on for Header Based application](f5-big-ip-headers-easy-button.md)
 
 - [Configure F5 single sign-on for Advanced Kerberos application](advance-kerbf5-tutorial.md)
 
@@ -208,7 +208,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 ## Configure F5 SSO
 
-- [Configure F5 single sign-on for Header Based application](headerf5-tutorial.md)
+- [Configure F5 single sign-on for Header Based application](f5-big-ip-headers-easy-button.md)
 
 - [Configure F5 single sign-on for Advanced Kerberos application](advance-kerbf5-tutorial.md)
 
@@ -501,7 +501,7 @@ When you click the F5 tile in the Access Panel, you should be automatically sign
 
 
 
-- [Configure F5 single sign-on for Header Based application](headerf5-tutorial.md)
+- [Configure F5 single sign-on for Header Based application](f5-big-ip-headers-easy-button.md)
 
 - [Configure F5 single sign-on for Advanced Kerberos application](advance-kerbf5-tutorial.md)
 

@@ -60,7 +60,7 @@ ms.custom: include file
 
  13. Sign in with your Active Directory domain administrator account.  The domain administrator account shouldn't have an expired password. In case the password is expired or changes during the agent installation, you'll need to reconfigure the agent with the new credentials. This operation will add your on-premises directory. Select **OK**, then select **Next** to continue. 
 
- :::image type="content" source="media/entra-cloud-sync-how-to-install/azure-ad-cloud-sync-sign-in-to-active-directory.png" alt-text="Screenshot that shows how to enter the domain admin credentials."  lightbox="media/entra-cloud-sync-how-to-install/azure-ad-cloud-sync-sign-in-to-active-directory.png":::
+ :::image type="content" source="media/entra-cloud-sync-how-to-install/azure-ad-cloud-sync-sign-in-to-entra.png" alt-text="Screenshot that shows how to enter the domain admin credentials."  lightbox="media/entra-cloud-sync-how-to-install/azure-ad-cloud-sync-sign-in-to-entra.png":::
 
  14. The following screenshot shows an example of contoso.com configured domain. Select **Next** to continue.
 

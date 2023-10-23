@@ -146,7 +146,7 @@ If users who will access the applications originate in on-premises Active Direct
 
 3. On the **Optional Features** page, select **Directory extension attribute sync**.
 
-   ![Microsoft Entra Connect wizard Optional features page](./media/user-provisioning-sync-attributes-for-mapping/entra-connect-directory-extension-attribute-syn.png)
+   ![Microsoft Entra Connect wizard Optional features page](./media/user-provisioning-sync-attributes-for-mapping/entra-connect-directory-extension-attribute-sync.png)
 
 4. Select the attribute(s) you want to extend to Microsoft Entra ID.
    > [!NOTE]

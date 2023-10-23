@@ -305,7 +305,7 @@ As a conclusion, to ensure that guest accounts are all identified with the same 
     
     1. The **User Attributes & Claims** should look like this:
     
-    ![User Attributes & Claims for Guests](./media/sharepoint-on-premises-tutorial/azure-entra-claims-guest.png)
+    ![User Attributes & Claims for Guests](./media/sharepoint-on-premises-tutorial/azure-entra-claims-guests.png)
 
 ### Invite guest users in SharePoint
 

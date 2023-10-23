@@ -28,7 +28,7 @@ This tutorial describes the steps you need to perform in both OpenText Directory
 > * Remove users in OpenText Directory Services when they do not require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and OpenText Directory Services
 > * Provision groups and group memberships in OpenText Directory Services
-> * [Single sign-on](./opentext-directory-services-tutorial.md) to OpenText Directory Services (recommended)
+> * [Single sign-on](./directory-services-tutorial.md) to OpenText Directory Services (recommended)
 
 ## Prerequisites
 
