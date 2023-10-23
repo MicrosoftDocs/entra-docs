@@ -34,7 +34,7 @@ To use Microsoft Entra ID for an access review of access to an application, you 
 * Microsoft Entra ID P2 or Microsoft Entra ID Governance
 * Enterprise Mobility + Security (EMS) E5 license
 
-While using the access reviews feature does not require users to have those licenses assigned to them to use the feature, you'll need to have at least as many licenses in your tenant as the number of member (non-guest) users who will be configured as reviewers.
+While using the access reviews feature does not require users to have those licenses assigned to them to use the feature, you'll need to have sufficient license seats. For more information, see [Example license scenarios for access reviews](licensing-fundamentals.md#access-reviews).
 
 Also, while not required for reviewing access to an application, we recommend also regularly reviewing the membership of privileged directory roles that have the ability to control other users' access to all applications. Administrators in the `Global Administrator`, `Identity Governance Administrator`, `User Administrator`, `Application Administrator`, `Cloud Application Administrator` and `Privileged Role Administrator` can make changes to users and their application role assignments, so ensure that [access review of these directory roles](~/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md) have been scheduled.
 
