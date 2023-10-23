@@ -92,7 +92,7 @@ Category definitions:
 
 - **Microsoft apps**: Apps such as Outlook and Microsoft Teams.
 
-- [**Managed Identities**](https://entra.microsoft.com/#home): An identity for
+- [**Managed Identities**](~/identity/managed-identities-azure-resources/overview.md): An identity for
 applications for connecting resources that support Microsoft Entra authentication.
 
 ## How many licenses do I need to purchase? Do I need to license all workload identities including Microsoft and Managed Service Identities? 
