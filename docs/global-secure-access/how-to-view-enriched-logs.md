@@ -18,12 +18,12 @@ This article describes the information in the logs and how to export them.
 
 ## Prerequisites
 
-To use the enriched logs, you need the following roles and subscriptions:
+To use the enriched logs, you need the following roles, configurations, and subscriptions:
 
 ### Roles and Permissions
-A **Global Administrator** role is required to enable the enriched Microsoft 365 logs.
-The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
-To use the Microsoft 365 traffic forwarding profile, a Microsoft 365 E3 license is recommended.
+- A **Global Administrator** role is required to enable the enriched Microsoft 365 logs.
+- The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
+- To use the Microsoft 365 traffic forwarding profile, a Microsoft 365 E3 license is recommended.
 
 ### Configurations
 - **Microsoft 365 Profile** - Ensure the Microsoft 365 profile is enabled. Microsoft Entra Internet Access is required to capture traffic directed to Microsoft 365 services, which is fundamental for log enrichment. 
