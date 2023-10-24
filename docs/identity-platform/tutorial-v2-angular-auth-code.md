@@ -9,7 +9,7 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: tutorial
 ms.workload: identity
-ms.date: 05/08/2023
+ms.date: 10/24/2023
 ms.author: henrymbugua
 ms.reviewer: joarroyo
 ms.custom: aaddev, devx-track-js
@@ -570,6 +570,7 @@ The `MsalGuard` class is one you can use to protect routes and require authentic
    ```javascript
    import { NgModule } from "@angular/core";
    import { Routes, RouterModule } from "@angular/router";
+   import { BrowserUtils } from "@azure/msal-browser";
    import { HomeComponent } from "./home/home.component";
    import { ProfileComponent } from "./profile/profile.component";
    import { MsalGuard } from "@azure/msal-angular";
@@ -1007,5 +1008,5 @@ As you add scopes, your users might be prompted to provide extra consent for the
 
 Delve deeper into single-page application (SPA) development on the Microsoft identity platform in our multi-part article series.
 
-> [!div class="nextstepaction"] 
+> [!div class="nextstepaction"]
 > [Scenario: Single-page application](scenario-spa-overview.md)
