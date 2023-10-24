@@ -2,7 +2,7 @@
 title: Directory extension attributes in claims
 description: Describes directory extension attributes that are used for sending user data to applications in token claims.
 services: active-directory
-author: davidmu1
+author: omondiatieno
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
@@ -10,7 +10,7 @@ ms.custom: aaddev, curation-claims
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 05/26/2023
-ms.author: davidmu
+ms.author: jomondi
 ms.reviewer: ludwignick, rahulnagraj, alamaral
 ---
 # Directory extension attributes in claims

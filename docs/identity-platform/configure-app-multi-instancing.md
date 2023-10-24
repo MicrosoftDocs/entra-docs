@@ -2,7 +2,7 @@
 title: Configure app multi-instancing
 description: Learn about multi-instancing, which is needed for configuring multiple instances of the same application within a tenant.
 services: active-directory
-author: davidmu1
+author: omondiatieno
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
@@ -10,7 +10,7 @@ ms.custom: aaddev, curation-claims
 ms.workload: identity
 ms.topic: how-to
 ms.date: 06/09/2023
-ms.author: davidmu
+ms.author: jomondi
 ms.reviewer: rahulnagraj, alamaral, jeedes
 ---
 
