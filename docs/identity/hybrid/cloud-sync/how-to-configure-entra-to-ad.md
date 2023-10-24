@@ -60,6 +60,9 @@ For this scenario, only the following is supported:
   - groups that are larger than 50,000 members are not supported.
   - each direct child nested group counts as one member in the referencing group
 
+## License requirements
+[!INCLUDE [entra-p1-license.md](~/includes/entra-p1-license.md)]
+
 
 
 ## Configure provisioning
