@@ -46,6 +46,16 @@ There are three ways to control auto-acceleration to a federated IdP:
 - Configure a HRD policy to [force auto-acceleration](configure-authentication-for-federated-users-portal.md)
 - Configure a HRD policy to [ignore domain hints](prevent-domain-hints-with-home-realm-discovery.md) from specific applications or for certain domains.
 
+### Domain Confirmation Dialog
+
+Starting April 2023, organizations who use auto-acceleration or smartlinks may begin to see a new screen added to the sign-in UI. This screen, termed the Domain Confirmation Dialog, is part of Microsoft's general commitment to security hardening and requires the user to confirm the domain of the tenant in which they are signing in to. If you see the Domain Confirmation Dialog and do not recognize the tenant domain listed, you should cancel the authentication flow and contact your IT Admin. Here's an example of what the domain confirmation dialog could look like for you:
+
+:::image type="content" source="media/home-realm-discovery-policy/domainConfDialog.png" alt-text="Screenshot of the domain confirmation dialog listing the sign-in identifier '<jane@contoso.com>' with a tenant domain of 'contoso.com'.":::
+
+The identifier at the top of the dialog, `jane@contoso.com`, represents the identifier used to sign-in. This is currently existing behavior across the Entra sign-in experience. The tenant domain field at the bottom of the dialog shows the domain of the tenant being signed-in to. The domain listed in the sign-in identifier (top of the dialog) and in the tenant domain field (bottom of the dialog) will be different if the user is attempting to sign-in to an external tenant.
+
+While the Domain Confirmation Dialog does not need to be shown for every instance of auto-acceleration or smartlinks, the presence of the Domain Confirmation Dialog means auto-acceleration and smartlinks can no longer proceed seamlessly when shown. If your organization clears cookies due to browser policies or otherwise, you may experience the domain confirmation dialog more frequently. Finally, given Microsoft identity platform manages the auto-acceleration sign-in flow end-to-end, the introduction of the Domain Confirmation Dialog should not result in any application breakages.
+
 ## Domain hints
 
 Domain hints are directives that are included in the authentication request from an application. They can be used to accelerate the user to their federated IdP sign-in page. Or they can be used by a multi-tenant application to accelerate the user straight to the branded Microsoft Entra sign-in page for their tenant.
