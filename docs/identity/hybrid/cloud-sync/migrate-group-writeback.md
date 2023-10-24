@@ -14,12 +14,16 @@ ms.collection: M365-identity-device-management
 ---
 
 # Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync
-The following document describes how to migrate group writeback using Microsoft Entra Connect Sync (formerly Azure AD Connect) to Microsoft Entra Cloud Sync.
+The following document describes how to migrate group writeback using Microsoft Entra Connect Sync (formerly Azure AD Connect) to Microsoft Entra Cloud Sync.  This scenario is **only** for customers who are currently using Microsoft Entra Connect group writeback v2.  The process outlined in this document pertains only to cloud-created security groups that are written back with a universal scope.  Mail-enabled groups and DLs written back using Microsoft Entra Connect group writeback V1 or V2 are not supported.
 
 >[!IMPORTANT]
->This scenario is only supported for:
+>This scenario is **only** for customers who are currently using Microsoft Entra Connect group writeback v2
+>
+>Also, this scenario is only supported for:
 >   - cloud created [Security groups](../../../fundamentals/concept-learn-about-groups.md#group-types)
 >   - these groups are written back with the AD groups scope of [universal](/windows-server/identity/ad-ds/manage/understand-security-groups#group-scope).
+>
+>Mail-enabled groups and DLs written back using Microsoft Entra Connect group writeback V1 or V2 are not supported.
 
 ## Prerequisites
 The following prerequisites are required to implement this scenario.
