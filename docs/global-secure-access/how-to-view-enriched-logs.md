@@ -26,14 +26,14 @@ The preview requires a Microsoft Entra ID P1 license. If needed, you can [purcha
 To use the Microsoft 365 traffic forwarding profile, a Microsoft 365 E3 license is recommended.
 
 ### Configurations
-- **Microsoft 365 Profile** Ensure the Microsoft 365 profile is enabled. Microsoft Entra Internet Access is required to capture traffic directed to Microsoft 365 services, which is fundamental for log enrichment. Manage the profile here. 
-- **Microsoft 365 Common and Office Online Traffic Policy** Required for log enrichment. Ensure it's enabled. 
-- **Tenant sending data** Confirms that traffic, as configured in forwarding profiles, is accurately tunneled to the Global Secure Access service. 
-- **Diagnostic Settings Configuration** Set up Microsoft Entra diagnostic settings to channel the logs to a designated endpoint, like a Log Analytics workspace. The requirements for each endpoint differ and are outlined in the Configure Diagnostic settings section of this article. 
+- **Microsoft 365 Profile** - Ensure the Microsoft 365 profile is enabled. Microsoft Entra Internet Access is required to capture traffic directed to Microsoft 365 services, which is fundamental for log enrichment. 
+- **Microsoft 365 Common and Office Online Traffic Policy** - Required for log enrichment. Ensure it's enabled. 
+- **Tenant sending data** - Confirms that traffic, as configured in forwarding profiles, is accurately tunneled to the Global Secure Access service. 
+- **Diagnostic Settings Configuration** - Set up Microsoft Entra diagnostic settings to channel the logs to a designated endpoint, like a Log Analytics workspace. The requirements for each endpoint differ and are outlined in the Configure Diagnostic settings section of this article. 
 
 ### Subscriptions 
-- **Microsoft Entra ID P1 License** Required for preview access. Purchasing or obtaining trial licenses is an option if needed. 
-- **Microsoft 365 E3 License** Recommended for employing the Microsoft 365 traffic forwarding profile. 
+- **Microsoft Entra ID P1 License** - Required for preview access. Purchasing or obtaining trial licenses is an option if needed. 
+- **Microsoft 365 E3 License** - Recommended for employing the Microsoft 365 traffic forwarding profile. 
 
 You must configure the endpoint for where you want to route the logs prior to configuring Diagnostic settings. The requirements for each endpoint vary and are described in the [Configure Diagnostic settings](#configure-diagnostic-settings) section.
  
