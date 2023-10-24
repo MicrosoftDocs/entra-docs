@@ -2,7 +2,7 @@
 title: "Increase application security using Zero Trust principles"
 description: Learn how using Zero Trust principles can help increase the security of your application and its data.
 services: active-directory
-author: davidmu1
+author: omondiatieno
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
@@ -10,7 +10,7 @@ ms.topic: conceptual
 ms.workload: identity
 ms.date: 01/06/2023
 ms.custom: template-concept
-ms.author: davidmu
+ms.author: jomondi
 ms.reviewer: nichola, arielsc
 
 # Customer intent: As a developer, I want to learn about the Zero Trust principles and the features of the Microsoft identity platform that I can use to build applications that are Zero Trust-ready.
