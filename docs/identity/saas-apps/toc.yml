@@ -3097,7 +3097,7 @@
       - name: Autodesk SSO
         href: autodesk-sso-provisioning-tutorial.md
       - name: Azure Databricks SCIM Connector
-        href: /azure/databricks/administration-guide/users-groups/scim/aad?bc=%2fazure%2factive-directory%2fsaas-apps%2fbreadcrumb%2ftoc.json&toc=%2fazure%2factive-directory%2fsaas-apps%2ftoc.json
+        href: /azure/databricks/administration-guide/users-groups/scim/aad?toc=/entra/identity/saas-apps/toc.json?bc=/entra/identity/saas-apps/breadcrumb/toc.json
       - name: Azure Databricks with Private Link Workspace
         href: azure-databricks-with-private-link-workspace-provisioning-tutorial.md
       - name: AWS IAM Identity Center

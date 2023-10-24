@@ -1,0 +1,11 @@
+- name: Entra
+  tocHref: /entra/
+  topicHref: /entra/index
+  items:
+  - name: Microsoft Entra ID
+    tocHref: /entra/identity/
+    topicHref: /entra/identity/index
+    items:
+    - name: Monitoring and health
+      tocHref: /graph/
+      topicHref: /entra/identity/monitoring-health/
