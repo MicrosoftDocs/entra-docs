@@ -3,7 +3,7 @@ title: Source claims from an external store (SAML app)
 titleSuffix: Microsoft identity platform
 description: Use a custom claims provider to augment tokens with claims from an external identity system. Configure a SAML app to receive tokens with external claims. 
 services: active-directory
-author: davidmu1
+author: omondiatieno
 manager: CelesteDG
 
 ms.service: active-directory
@@ -11,7 +11,7 @@ ms.subservice: develop
 ms.topic: how-to
 ms.workload: identity
 ms.date: 03/06/2023
-ms.author: davidmu
+ms.author: jomondi
 ms.custom: aaddev
 ms.reviewer: JasSuri
 #Customer intent: As an application developer, I want to source claims from a data store that is external to Microsoft Entra ID.

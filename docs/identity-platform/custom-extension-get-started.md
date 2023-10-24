@@ -3,7 +3,7 @@ title: Get started with custom claims providers (preview)
 titleSuffix: Microsoft identity platform
 description: Learn how to develop and register a Microsoft Entra custom authentication extensions REST API. The custom authentication extension allows you to source claims from a data store that is external to Microsoft Entra ID.  
 services: active-directory
-author: davidmu1
+author: omondiatieno
 manager: CelesteDG
 
 ms.service: active-directory
@@ -11,7 +11,7 @@ ms.subservice: develop
 ms.topic: how-to
 ms.workload: identity
 ms.date: 08/16/2023
-ms.author: davidmu
+ms.author: jomondi
 ms.custom: aaddev
 ms.reviewer: JasSuri
 #Customer intent: As an application developer, I want to create and register a custom authentication extensions API so I can source claims from a data store that is external to Microsoft Entra ID.

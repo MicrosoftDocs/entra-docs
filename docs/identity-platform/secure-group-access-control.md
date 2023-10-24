@@ -2,7 +2,7 @@
 title: Secure access control using groups in Microsoft Entra ID
 description: Learn about how groups are used to securely control access to resources in Microsoft Entra ID.
 services: active-directory
-author: davidmu1
+author: omondiatieno
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
@@ -10,7 +10,7 @@ ms.topic: conceptual
 ms.workload: identity 
 ms.date: 01/06/2023
 ms.custom: template-concept
-ms.author: davidmu
+ms.author: jomondi
 ms.reviewer: jodah
 # Customer intent: As a developer, I want to learn how to most securely use Microsoft Entra groups to control access to resources.
 ---

@@ -2,7 +2,7 @@
 title: Request custom claims (MSAL iOS/macOS)
 description: Learn how to request custom claims.
 services: active-directory
-author: davidmu1
+author: cilwerner
 manager: CelesteDG
 
 ms.service: active-directory
@@ -10,7 +10,7 @@ ms.subservice: develop
 ms.workload: identity
 ms.topic: how-to
 ms.date: 01/19/2023
-ms.author: davidmu
+ms.author: cwerner
 ms.custom: aaddev
 ---
 
