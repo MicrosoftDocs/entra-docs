@@ -93,12 +93,11 @@ The following are the attributes supported by an expression mapping:
   - **Always**: Apply this mapping on both user-creation and update actions.
   - **Only during creation**: Apply this mapping only on user-creation actions.
 
-## Add an attribute mapping
+## Add an attribute mapping - AD to Microsoft Entra ID
+Use the following steps for configuring attribute mapping with a [AD to Microsoft Entra ID configuruation](how-to-configure.md).
 
-To use attribute mapping, follow these steps:
 
-
-[!INCLUDE [sign in](~/includes/cloud-sync-sign-in.md)]
+[!INCLUDE [sign in](../../../../includes/cloud-sync-sign-in.md)]
  3. Under **Configuration**, select your configuration.
  4. On the left, select **Attribute mapping**.
  5. At the top, ensure that you have the correct object type selected.  That is, user, group, or contact.
@@ -124,11 +123,34 @@ To use attribute mapping, follow these steps:
 
  :::image type="content" source="media/how-to-attribute-mapping/new-ux-mapping-6.png" alt-text="Screenshot of successful schema save." lightbox="media/how-to-attribute-mapping/new-ux-mapping-6.png":::
 
+## Add an attribute mapping - Microsoft Entra ID to AD
+Use the following steps for configuring attribute mapping with a [Microsoft Entra ID to AD configuruation](how-to-configure-entra-to-ad.md).
+
+[!INCLUDE [sign in](../../../../includes/cloud-sync-sign-in.md)]
+ 3. Under **Configuration**, select your Microsoft Entra ID to AD configuration.
+ 4. On the left, select **Attribute mapping**.
+ 5. At the top, ensure that you have the correct object type selected.  That is, user, group, or contact.
+ 6. Click **Add attribute mapping**.
+
+ :::image type="content" source="media/how-to-attribute-mapping/entra-to-ad-1.png" alt-text="Screenshot of adding an attribute mapping for Microsoft Entra ID to AD." lightbox="media/how-to-attribute-mapping/entra-to-ad-1.png":::
+
+ 7. Select the mapping type. This can be one of the following:
+     - **Direct**: The target attribute is populated with the value of an attribute of the linked object in Active Directory.
+     - **Constant**: The target attribute is populated with a specific string that you specify.
+     - **Expression**: The target attribute is populated based on the result of a script-like expression. 
+     - **None**: The target attribute is left unmodified. 
+    
+ 8. Depending on what you have selected in the previous step, different options will be available for filling in.  
+ 9. Select when to apply this mapping, and then select **Apply**.
+ 10. Back on the **Attribute mappings** screen, you should see your new attribute mapping.
+ 11. Select **Save schema**.  You will be notified that once you save the schema, a synchronization will occur.  Click **OK**.
+ 12. Once the save is successful you will see a notification on the right.
+
 ## Test your attribute mapping
 
 To test your attribute mapping, you can use [on-demand provisioning](how-to-on-demand-provision.md): 
 
-[!INCLUDE [sign in](~/includes/cloud-sync-sign-in.md)]
+[!INCLUDE [sign in](../../../../includes/cloud-sync-sign-in.md)]
  3. Under **Configuration**, select your configuration.
  4. On the left, select **Provision on demand**.
  5. Enter the distinguished name of a user and select the **Provision** button.

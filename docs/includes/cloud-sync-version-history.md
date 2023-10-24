@@ -20,7 +20,7 @@ Release date:
 
 ### New or changed functionality
 
-- Added Public Preview feature:  [Group provisioning to Active Directory](../articles/active-directory/hybrid/cloud-sync/govern-on-premises-groups.md)
+- Added Public Preview feature:  [Group provisioning to Active Directory](../identity/hybrid/cloud-sync/govern-on-premises-groups.md)
 - Rebranded the agent for Microsoft Entra
 
 
@@ -63,7 +63,7 @@ Release date: December 16, 2022
 Release date: September 23, 2022
 
 ### New or changed functionality
- - We added support for [cloud sync Self Service Password Reset](../articles/active-directory/authentication/tutorial-enable-cloud-sync-sspr-writeback.md) General Availability.
+ - We added support for [cloud sync Self Service Password Reset](../identity/authentication/tutorial-enable-cloud-sync-sspr-writeback.md) General Availability.
  - We added support for password writeback in disconnected forests.
  
 ### Fixed issues
@@ -76,7 +76,7 @@ Release date: August 8, 2022
 
 ### New or changed functionality
 
- - We added a new cmdlet to enable and disable writeback of passwords. For more information about this cmdlet and its use, see [Enable password writeback in Azure AD Connect cloud sync](../articles/active-directory/authentication/tutorial-enable-cloud-sync-sspr-writeback.md#enable-password-writeback-in-sspr).
+ - We added a new cmdlet to enable and disable writeback of passwords. For more information about this cmdlet and its use, see [Enable password writeback in Azure AD Connect cloud sync](../identity/authentication/tutorial-enable-cloud-sync-sspr-writeback.md#enable-password-writeback-in-sspr).
  - We now return more info in the 'Get-AADCloudSyncDomains' cmdlet. 
  - We updated new cmdlets of CloudSync PowerShell module in the unattended agent install script. 
  - We have added support for the installation of the provisioning agent using the commandline. 
@@ -148,8 +148,8 @@ January 20, 2021: Released for download
 
 ### New features and improvements
 - Improvement to GMSA experience including support for pre-custom created GMSA Account
-- [PowerShell cmdlets](../articles/active-directory/cloud-sync/how-to-gmsa-cmdlets.md) support for GMSA setup
-- [CLI support](../articles/active-directory/cloud-sync/how-to-install-pshell.md) for agent install (silent installation)
+- [PowerShell cmdlets](../identity/cloud-sync/how-to-gmsa-cmdlets.md) support for GMSA setup
+- [CLI support](../identity/cloud-sync/how-to-install-pshell.md) for agent install (silent installation)
 - More diagnostics for agent source quarantine issues
 - Bug fixes that include reducing of memory usage of OU scoping filters, running PHS only for in-scope users, handling of nested objects in OU when using OU scoping etc. 
 
@@ -172,18 +172,18 @@ November 23, 2020: Released for download
 
 ### New features and improvements
 
-* Support for [gMSA](../articles/active-directory/cloud-sync/how-to-prerequisites.md#group-managed-service-accounts)
+* Support for [gMSA](../identity/cloud-sync/how-to-prerequisites.md#group-managed-service-accounts)
 * Support for groups up to size less than 1500 members during incremental or delta sync cycle. This change is applicable when using group scoping filter
 * Support for large groups with member size up to 15 K
 * Initial sync improvements
 * Advanced verbose logging
-* Introduction of [AADCloudSyncTools PowerShell module](../articles/active-directory/cloud-sync/reference-powershell.md)
+* Introduction of [AADCloudSyncTools PowerShell module](../identity/cloud-sync/reference-powershell.md)
 * Fixed limitations to allow agent to be installed in non-English server
 * Support for PHS filtering only for objects in scope (Originally, we were syncing password hashes for all objects)
 * Fixed the memory leak issue in the agent
 * Improved provisioning logs
-* Support for configuring [LDAP connection timeout](../articles/active-directory/cloud-sync/how-to-manage-registry-options.md#configure-ldap-connection-timeout) 
-* Support for configuring [referral chasing](../articles/active-directory/cloud-sync/how-to-manage-registry-options.md#configure-referral-chasing) 
+* Support for configuring [LDAP connection timeout](../identity/cloud-sync/how-to-manage-registry-options.md#configure-ldap-connection-timeout) 
+* Support for configuring [referral chasing](../identity/cloud-sync/how-to-manage-registry-options.md#configure-referral-chasing) 
 
 
 ## 1.1.96.0
@@ -194,7 +194,7 @@ December 4, 2019: Released for download
 
 ### New features and improvements
 
-* Includes support for [Azure AD Connect cloud sync](../articles/active-directory/cloud-sync/what-is-cloud-sync.md) to synchronize user, contact and group data from on-premises Active Directory to Azure AD
+* Includes support for [Azure AD Connect cloud sync](../identity/cloud-sync/what-is-cloud-sync.md) to synchronize user, contact and group data from on-premises Active Directory to Azure AD
 
 
 ## 1.1.67.0

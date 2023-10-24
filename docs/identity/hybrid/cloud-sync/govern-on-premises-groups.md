@@ -91,9 +91,9 @@ Use the following steps for applications to use new groups.
  ### Configure application to use new group
  1.  If the application uses AD via LDAP, configure the application with the distinguished name of the new AD group.  If the application users AD via Kerberos, configure the application with the SID, or the domain and account name, of the new AD group.
  2.	Create an [access package](../../../id-governance/entitlement-management-access-package-create.md).  Add the application from #1, the security group from #3, as resources in the Access Package.  Configure a direct assignment policy in the access package.
- 3.	In [Entitlement Management](../../governance/entitlement-management-overview.md), assign the synced users who need access to the AD based app to the access package.
+ 3.	In [Entitlement Management](../../../id-governance/entitlement-management-overview.md), assign the synced users who need access to the AD based app to the access package.
  4.  Wait for the new AD group to be updated with thew new members.  Using Active Directory Users and Computers, confirm that the correct users are present as members of the group.
- 5.  In your AD domain monitoring, allow only the [gMSA account](\how-to-prerequisites.md#group-managed-service-accounts) that runs the provisioning agent, [authorization to change the membership](/windows/security/threat-protection/auditing/audit-security-group-management) in the new AD group.
+ 5.  In your AD domain monitoring, allow only the [gMSA account](how-to-prerequisites.md#group-managed-service-accounts) that runs the provisioning agent, [authorization to change the membership](/windows/security/threat-protection/auditing/audit-security-group-management) in the new AD group.
 
 You'll then be able to govern access to the AD application through this new access package.
 
@@ -117,8 +117,8 @@ Nesting that group into the applications’ existing AD group will allow Entra I
 
 ### Configure application to use new group
  1.  Using Active Directory Users and Computers, add the new AD group as a member of the existing AD group.
- 2.	Create an [access package](../../governance/entitlement-management-access-package-create.md).  Add the application from #1, the security group from #3, as resources in the Access Package.  Configure a direct assignment policy in the access package.
- 3.	In [Entitlement Management](../../governance/entitlement-management-overview.md), assign the synced users who need access to the AD based app to the access package.  This includes any user members of the existing AD group who will continue to need access.
+ 2.	Create an [access package](../../../id-governance/entitlement-management-access-package-create.md).  Add the application from #1, the security group from #3, as resources in the Access Package.  Configure a direct assignment policy in the access package.
+ 3.	In [Entitlement Management](../../../id-governance/entitlement-management-overview.md), assign the synced users who need access to the AD based app to the access package.  This includes any user members of the existing AD group who will continue to need access.
  4. Wait for the new AD group to be updated with thew new members.  Using Active Directory Users and Computers, confirm that the correct users are present as members of the group.
  5. Using Active Directory Users and Computers, remove the existing members, apart from the new AD group, of the existing AD group.
  6. In your AD domain monitoring, allow only the [gMSA account](\how-to-prerequisites.md#group-managed-service-accounts) that runs the provisioning agent, [authorization to change the membership](/windows/security/threat-protection/auditing/audit-security-group-management) in the new AD group.
@@ -136,6 +136,6 @@ If you're using Azure AD Connect group writeback v2, you'll need to move to clou
 
 
 ## Next Steps
-- [What is Entra ID Governance?](../../governance/identity-governance-overview.md)
+- [What is Entra ID Governance?](../../../id-governance/identity-governance-overview.md)
 - [What is provisioning?](../what-is-provisioning.md)
 - [What is Microsoft Entra Cloud Sync?](what-is-cloud-sync.md)
