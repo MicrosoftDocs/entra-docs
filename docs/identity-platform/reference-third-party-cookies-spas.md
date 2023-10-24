@@ -15,7 +15,7 @@ ms.reviewer: ludwignick; emilylauber
 ms.custom: aaddev
 ---
 
-# Handle ITP in Safari and other browsers where third-party cookies are blocked
+# How to handle third-party cookie blocking in browsers
 
 Many browsers block _third-party cookies_, cookies on requests to domains other than the domain shown in the browser's address bar. These cookies are also known as _cross-domain cookies_. This block breaks the implicit flow and requires new authentication patterns to successfully sign in users. In the Microsoft identity platform, we use the authorization flow with Proof Key for Code Exchange (PKCE) and refresh tokens to keep users signed in when third-party cookies are blocked.
 
@@ -23,15 +23,15 @@ Many browsers block _third-party cookies_, cookies on requests to domains other 
 
 Apple Safari has an on-by-default privacy protection feature called [Intelligent Tracking Protection](https://webkit.org/tracking-prevention-policy/), or _ITP_. ITP blocks "third-party" cookies, cookies on requests that cross domains.
 
-A common form of user tracking is done by loading an iframe to third-party site in the background and using cookies to correlate the user across the Internet. Unfortunately, this pattern is also the standard way of implementing the [implicit flow](v2-oauth2-implicit-grant-flow.md) in single-page apps (SPAs). When a browser blocks third-party cookies to prevent user tracking, SPAs are also broken.
+A common form of user tracking is done by loading an iframe to third-party site in the background and using cookies to correlate the user across the Internet. Unfortunately, this pattern is also the standard way of implementing the [implicit flow](v2-oauth2-implicit-grant-flow.md) in single-page apps (SPAs). A browser that blocks third-party cookies to protect user privacy can also block the functionality of a SPA.
 
-Safari isn't alone in blocking third-party cookies to enhance user privacy. Brave blocks third-party cookies by default, and Chromium (the platform behind Google Chrome and Microsoft Edge) has announced that they as well will stop supporting third-party cookies [in the future](https://privacysandbox.com/open-web/#the-privacy-sandbox-timeline).
+Safari isn't alone in blocking third-party cookies to enhance user privacy. Brave blocks third-party cookies by default, and Google Chrome has announced that they will start blocking third-party cookies by default [in the future](https://privacysandbox.com/open-web/#the-privacy-sandbox-timeline).
 
 The solution outlined in this article works in all of these browsers, or anywhere third-party cookies are blocked.
 
 ## Overview of the solution
 
-To continue authenticating users in SPAs, app developers must use the [authorization code flow](v2-oauth2-auth-code-flow.md). In the auth code flow, the identity provider issues a code, and the SPA redeems the code for an access token and a refresh token. When the app requires new tokens, it can use the [refresh token flow](v2-oauth2-auth-code-flow.md#refresh-the-access-token) to get new tokens. Microsoft Authentication Library (MSAL) for JavaScript v2.0 and higher, implements the authorization code flow for SPAs and, with minor updates, is a drop-in replacement for MSAL.js 1.x. See the [migration guide](/azure/active-directory/develop/migrate-spa-implicit-to-auth-code) for moving a SPA from implicit to auth code flow.
+To continue authenticating users in SPAs, app developers must use the [authorization code flow](v2-oauth2-auth-code-flow.md). In the auth code flow, the identity provider issues a code, and the SPA redeems the code for an access token and a refresh token. When the app requires new tokens, it can use the [refresh token flow](v2-oauth2-auth-code-flow.md#refresh-the-access-token) to get new tokens. Microsoft Authentication Library (MSAL) for JavaScript v2.0 and higher, implements the authorization code flow for SPAs and, with minor updates, is a drop-in replacement for MSAL.js 1.x. See the [migration guide](migrate-spa-implicit-to-auth-code.md) for moving a SPA from implicit to auth code flow.
 
 For the Microsoft identity platform, SPAs and native clients follow similar protocol guidance:
 
@@ -79,13 +79,12 @@ Cross-site scripting (XSS) attacks or compromised JS packages can steal the refr
 
 This limited-lifetime refresh token pattern was chosen as a balance between security and degraded UX. Without refresh tokens or third-party cookies, the authorization code flow (as recommended by the [OAuth security best current practices draft](https://tools.ietf.org/html/draft-ietf-oauth-security-topics-14)) becomes onerous when new or additional tokens are required. A full page redirect or popup is needed for every single token, every time a token expires (every hour usually, for the Microsoft identity platform tokens).
 
-
 ## User type specific mitigations 
 Not all users and applications will be uniformly affected by third-party cookies. There are some scenarios where due to architecture or device management, the refreshing of tokens can be done without third-party cookies. 
 
 For *managed enterprise device* scenarios, certain browser and platform combinations have support for [device conditional access](/azure/active-directory/conditional-access/concept-conditional-access-conditions#supported-browsers). Leveraging device identity will minimize the need for third-party cookies as the authentication state can come from the device instead of the browser.  
 
-For *Azure AD B2C application* scenarios, customers can set up a [custom login domain](/azure/active-directory-b2c/custom-domain?pivots=b2c-user-flow) to match the application's domain. Browsers would not block third-party cookies in this scenario as the cookies remain in the same domain (ex: login.contoso.com to app.contoso.com).
+For *Azure AD B2C application* scenarios, customers can set up a [custom login domain](/azure/active-directory-b2c/custom-domain?pivots=b2c-user-flow) to match the application's domain. Browsers would not block third-party cookies in this scenario as the cookies remain in the same domain (e.g. login.contoso.com to app.contoso.com).
 
 ## Next steps
 
