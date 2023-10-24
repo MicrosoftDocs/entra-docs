@@ -19,7 +19,7 @@ ms.custom: aaddev
 
 # Custom authentication extensions (preview)
 
-This article provides an overview of custom authentication extensions for Microsoft Entra ID. Custom authentication extensions allow you to customize the Microsoft Entra authentication experience, by integrating with external systems.
+This article provides an overview of custom authentication extensions for Microsoft Entra ID. Custom authentication extensions allow you to customize the Microsoft Entra authentication experience by integrating with external systems.
 
 The following diagram depicts the sign-in flow integrated with a custom authentication extension.
 
@@ -27,7 +27,7 @@ The following diagram depicts the sign-in flow integrated with a custom authenti
 
 1. A user attempts to sign into an app and is redirected to the Microsoft Entra sign-in page.
 1. Once a user completes a certain step in the authentication, an **event listener** is triggered.
-1. The Microsoft Entra **event listener** service (custom authentication extension) sends an HTTP request to your **REST API endpoint**. The request contains information about the event, the user profile, session data, and other context information.
+1. Your **custom authentication extension** sends an HTTP request to your **REST API endpoint**. The request contains information about the event, the user profile, session data, and other context information.
 1. The **REST API** performs a custom workflow.
 1. The **REST API** returns an HTTP response to Microsoft Entra ID.
 1. The Microsoft Entra **custom authentication extension** processes the response and customizes the authentication based on the event type and the HTTP response payload.
@@ -62,6 +62,13 @@ To ensure the communications between the custom authentication  extension and yo
 A custom claims provider is a type of custom authentication extension that calls a REST API to fetch claims from external systems. A custom claims provider can be assigned to one or many applications in your directory and maps claims from external systems into tokens.
 
 Learn more about [custom claims providers](custom-claims-provider-overview.md).
+
+## Attribute collection start and submit events
+
+Attribute collection start and submit events can be used with custom authentication extensions to add logic before and after attributes are collected from a user. For example, you can add a workflow to validate the attributes a user enters during sign-up.  The **OnAttributeCollectionStart** event triggers before the user enters attributes and lets you add actions such as prefilling values and displaying a blocking error. The **OnAttributeCollectionSubmit** event triggers after the user enters attributes, allowing you to add actions like validating entries or modifying attributes.
+
+> [!NOTE]
+> Attribute collection start and submit events are currently available only for user flows in Microsoft Entra External ID for customers. For details, see [Add your own business logic](../external-identities/customers/concept-custom-extensions.md).
 
 ## Next steps
 

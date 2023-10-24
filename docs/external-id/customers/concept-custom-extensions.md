@@ -1,6 +1,6 @@
 ---
 title: Custom extensions in a customer tenant
-description: Learn about custom authentication extensions that let you enrich or customize application tokens with information from external systems.  
+description: Learn about custom authentication extensions that let you enrich or customize application tokens with information from external systems and add logic, such as validation, to attribute collection. 
 services: active-directory
 author: msmimart
 manager: celestedg
@@ -15,17 +15,43 @@ ms.custom: it-pro
 #Customer intent: As a dev, devops, or it admin, I want to know 
 
 ---
-# Add your own business logic
+# Extending authentication flows with your own business logic
 
-Microsoft Entra ID for customers is designed for flexibility. In addition to the built-in authentication events within a sign-up and sign-in user flow, you can define actions for events at various points within the authentication flow.
+Microsoft Entra ID for customers is designed for flexibility. In addition to the built-in authentication events within a sign-up and sign-in user flow, you can add custom authentication extensions at specific points within the authentication flow. A custom authentication extension is essentially an event listener that, when activated, makes an HTTP call to a REST API endpoint where you've defined a workflow action. For example, you could add a workflow to validate the attributes a user enters during sign-up, or you could use a custom claims provider to add external user data to the token before it's issued.
 
-Custom authentication extensions in Microsoft Entra ID let you interact with external systems during a user authentication. The custom authentication extension contains information about your REST API endpoint, the credentials to call the REST API, the attributes that it returns, and when the REST API should be called.
+There are two components you need to configure: a custom authentication extension and a REST API. The custom authentication extension specifies your REST API endpoint, when the REST API should be called, and the credentials to call the REST API. You can create custom authentication extensions at the following points in the authentication flow:
 
-You can create a custom authentication extension using the **OnTokenIssuanceStart** event, which is triggered just before a token is issued to the application:
+- During sign-up, before or after attribute collection:
+  - The **OnAttributeCollectionStart** event triggers before the attribute collection page renders.
+  - The **OnAttributeCollectionSubmit** event triggers after the user enters and submits attributes.
+- Upon token issuance using the **OnTokenIssuanceStart** event, which triggers just before a token is issued to the application.
 
 :::image type="content" source="media/concept-custom-extensions/authentication-flow-events-inline.png" alt-text="Diagram showing extensibility points in the authentication flow." lightbox="media/concept-custom-extensions/authentication-flow-events-expanded.png" border="false":::
 
+If you have a custom authentication extension configured at one of these points, Microsoft Entra ID makes a call to the REST API you've defined. The request to the REST API contains information about the event, the user profile, authentication request data, and other context information. In turn, the REST API performs the workflow actions.
+
 This article provides an overview of custom authentication extensions in Microsoft Entra ID for customers.
+
+## Attribute collection start and submit events
+
+You can use custom authentication extensions to add workflows to attribute collection in your self-service sign-up user flows. For example, you can prefill attribute fields with custom values, validate a user's entries, and modify attributes, and display errors. Two events are enabled:
+
+- **OnAttributeCollectionStart** - The OnAttributeCollectionStart event occurs at the beginning of the attribute collection process before the attribute collection page renders. This event can be used for scenarios like preventing the user from signing up based on their domain or adding attributes to be collected. The following scenarios are configurable for the OnAttributeCollectionStart event:
+
+  - **continueWithDefaultBehavior** - Render the attribute collection page as usual.
+  - **setPreFillValues** - Prefill attributes in the sign-up form.
+  - **showBlockPage** - Show an error message and block the user from signing up.
+
+- **OnAttributeCollectionSubmit** - The OnAttributeCollectionSubmit event occurs after the user enters and submits attributes. This event can be used for scenarios like validating or modifying the information provided by the user. For example, you can validate an invitation code or partner number, modify an address format, or return an error.
+
+  - **continueWithDefaultBehavior** - Continue with the sign-up flow.
+  - **modifyAttributeValues** - Overwrite the values the user submitted in the sign-up form.
+  - **showValidationError** - Return an error based on the submitted values.
+  - **showBlockPage** - Show an error message and block the user from signing up.
+
+To configure the attribute collection start and submit events, you create a custom authentication extension REST API. When an event fires, Microsoft Entra ID sends an HTTP request to your REST API endpoint. The REST API can be an Azure Function, Azure Logic App, or another publicly available API endpoint. Your REST API endpoint is responsible for defining the workflow actions to take.
+
+For details, see [Add attribute collection custom extensions to your user flow](../../develop/custom-extension-attribute-collection.md).
 
 ## Token issuance start event
 
@@ -45,11 +71,11 @@ A token issuance event extension involves the following components:
 
 For details, see:
 
-- [About custom authentication extensions](~/identity-platform/custom-extension-overview.md?context=/azure/active-directory/external-identities/customers/context/customers-context)  
-- [Configure a custom claims provider token issuance event](~/identity-platform/custom-extension-get-started.md?context=/azure/active-directory/external-identities/customers/context/customers-context) using a custom claims provider.
+- [About custom authentication extensions](../../develop/custom-extension-overview.md?context=/azure/active-directory/external-identities/customers/context/customers-context)  
+- [Configure a custom claims provider token issuance event](../../develop/custom-extension-get-started.md?context=/azure/active-directory/external-identities/customers/context/customers-context) using a custom claims provider.
 
 ## Next steps
 
-- To learn more about how custom extensions work, see [Custom authentication extensions](~/identity-platform/custom-extension-overview.md?context=/azure/active-directory/external-identities/customers/context/customers-context).
-- Configure a [custom claims provider token issuance event](~/identity-platform/custom-extension-get-started.md?context=/azure/active-directory/external-identities/customers/context/customers-context).
+- To learn more about how custom extensions work, see [Custom authentication extensions](../../develop/custom-extension-overview.md?context=/azure/active-directory/external-identities/customers/context/customers-context).
+- Configure a [custom claims provider token issuance event](../../develop/custom-extension-get-started.md?context=/azure/active-directory/external-identities/customers/context/customers-context).
 - See the [Microsoft Entra ID for customers Developer Center](https://aka.ms/ciam/dev) for the latest developer content and resources.

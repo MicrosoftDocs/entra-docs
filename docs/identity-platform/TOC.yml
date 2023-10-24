@@ -518,6 +518,14 @@
                   href: custom-extension-configure-saml-app.md
                 - name: Troubleshoot your custom claims provider API
                   href: custom-extension-troubleshoot.md
+        - name: Attribute collection custom extensions
+          items:
+            - name: Create attribute collection start and submit events
+              href: custom-extension-attribute-collection.md
+            - name: OnAttributeCollectionStart event reference
+              href: custom-extension-OnAttributeCollectionStart-reference.md
+            - name: OnAttributeCollectionSubmit event reference
+              href: custom-extension-OnAttributeCollectionSubmit-reference.md
         - name: Handle browser cookie restrictions
           items:
             - name: Handle ITP in Safari
@@ -841,6 +849,10 @@
       href: /graph/api/resources/azure-ad-overview
     - name: Custom claims provider reference
       href: custom-claims-provider-reference.md
+    - name: Attribute collection start custom extension reference
+      href: custom-extension-OnAttributeCollectionStart-reference.md
+    - name: Attribute collection submit custom extension reference
+      href: custom-extension-OnAttributeCollectionSubmit-reference.md
 - name: Resources
   items:
     - name: Help and support options
