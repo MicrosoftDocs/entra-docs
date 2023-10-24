@@ -81,7 +81,10 @@
       href:  connect/how-to-connect-sync-change-the-configuration.md
     - name:  Attributes synchronized to AD
       href:  connect/reference-connect-sync-attributes-synchronized.md
-
+  - name: Provision to AD using Microsoft Entra Cloud Sync
+    items: 
+    - name:  Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance
+      href:  cloud-sync/govern-on-premises-groups.md
 
 
 - name: Cloud sync reference
@@ -118,8 +121,10 @@
         href: cloud-sync/how-to-install.md
       - name: Install the provisioning agent using CLI and PowerShell
         href: cloud-sync/how-to-install-pshell.md
-      - name: Cloud sync configuration
+      - name: Configuration - AD to Microsoft Entra ID
         href: cloud-sync/how-to-configure.md
+      - name: Provision groups to AD using Microsoft Entra Cloud Sync
+        href: cloud-sync/how-to-configure-entra-to-ad.md
       - name: On-demand provisioning
         href: cloud-sync/how-to-on-demand-provision.md
       - name: Attribute mapping
