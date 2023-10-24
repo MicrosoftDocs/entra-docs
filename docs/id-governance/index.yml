@@ -24,6 +24,8 @@ landingContent:
         links:
           - text: What is ID Governance?
             url: identity-governance-overview.md
+          - text: What is the My Access portal?
+            url: my-access-portal-overview.md      
       - linkListType: video
         links:
           - text: Govern access to your resources
