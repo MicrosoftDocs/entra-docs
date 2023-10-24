@@ -1,24 +1,24 @@
 {
     "$schema": "https://whatsnewapi.azurewebsites.net/schema",
-    "docSetProductName": "Azure Active Directory application provisioning",
-    "rootDirectory": "articles/active-directory/app-provisioning/",
+    "docSetProductName": "Microsoft Entra ID application provisioning",
+    "rootDirectory": "docs/identity/app-provisioning/",
     "docLinkSettings": {
         "linkFormat": "relative",
-        "relativeLinkPrefix": "/azure/active-directory/app-provisioning"
+        "relativeLinkPrefix": "/entra/identity/app-provisioning"
     },
     "inclusionCriteria": {
         "excludePullRequestTitles": true,
         "minAdditionsToFile" : 10,
         "maxFilesChanged": 50,
         "labels": [
-            "label:active-directory/svc",
+            "label:entra-id/svc",
             "label:app-provisioning/subsvc"
         ]
     },
     "areas": [
         {
             "name": ".",
-            "heading": "Azure Active Directory application provisioning"
+            "heading": "Microsoft Entra ID application provisioning"
         }
     ]
 }

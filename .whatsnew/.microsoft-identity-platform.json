@@ -1,18 +1,18 @@
 {
     "$schema": "https://whatsnewapi.azurewebsites.net/schema",
     "docSetProductName": "Microsoft identity platform",
-    "rootDirectory": "articles/active-directory/develop/",
+    "rootDirectory": "docs/identity-platform/",
     "docLinkSettings": {
         "linkFormat": "relative",
-        "relativeLinkPrefix": "/azure/active-directory/develop"
+        "relativeLinkPrefix": "/entra/identity-platform"
     },
     "inclusionCriteria": {
         "omitPullRequestTitles" : false,
         "minAdditionsToFile" : 20,
         "maxFilesChanged": 50,
         "labels": [
-            "label:active-directory/svc",
-            "label:develop/subsvc"
+            "label:entra-id/svc",
+            "label:identity-platform/subsvc"
         ]
     },
     "areas": [

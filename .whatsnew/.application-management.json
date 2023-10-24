@@ -1,24 +1,24 @@
 {
     "$schema": "https://whatsnewapi.azurewebsites.net/schema",
-    "docSetProductName": "Azure Active Directory application management",
-    "rootDirectory": "articles/active-directory/manage-apps/",
+    "docSetProductName": "Microsoft Entra ID application management",
+    "rootDirectory": "docs/identity/enterprise-apps/",
     "docLinkSettings": {
         "linkFormat": "relative",
-        "relativeLinkPrefix": "/azure/active-directory/manage-apps"
+        "relativeLinkPrefix": "/entra/identity/enterprise-apps/"
     },
     "inclusionCriteria": {
         "omitPullRequestTitles": false,
         "minAdditionsToFile": 10,
         "maxFilesChanged": 50,
         "labels": [
-            "label:active-directory/svc",
-            "label:app-mgmt/subsvc"
+            "label:microsoft-entra-id/svc",
+            "label:enterprise-apps/subsvc"
         ]
     },
     "areas": [
         {
             "names": [ "."],
-            "heading": "Azure Active Directory application management"
+            "heading": "Microsoft Entra ID application management"
         }
     ]
 }

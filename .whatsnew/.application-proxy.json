@@ -1,24 +1,24 @@
 {
     "$schema": "https://whatsnewapi.azurewebsites.net/schema",
-    "docSetProductName": "Azure Active Directory application proxy",
-    "rootDirectory": "articles/active-directory/app-proxy/",
+    "docSetProductName": "Microsoft Entra ID application proxy",
+    "rootDirectory": "docs/identity/app-proxy/",
     "docLinkSettings": {
         "linkFormat": "relative",
-        "relativeLinkPrefix": "/azure/active-directory/app-proxy"
+        "relativeLinkPrefix": "/entra/identity/app-proxy"
     },
     "inclusionCriteria": {
         "excludePullRequestTitles": true,
         "minAdditionsToFile" : 2,
         "maxFilesChanged": 50,
         "labels": [
-            "label:active-directory/svc",
+            "label:entra-id/svc",
             "label:app-proxy/subsvc"
         ]
     },
     "areas": [
         {
             "name": ".",
-            "heading": "Azure Active Directory application proxy"
+            "heading": "Microsoft Entra ID application proxy"
         }
     ]
 }

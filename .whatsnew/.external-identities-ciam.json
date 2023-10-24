@@ -1,24 +1,24 @@
 {
     "$schema": "https://whatsnewapi.azurewebsites.net/schema",
-    "docSetProductName": "Azure Active Directory for customers (CIAM)",
-    "rootDirectory": "articles/active-directory/external-identities/customers/",
+    "docSetProductName": "Microsoft Entra ID for customers (CIAM)",
+    "rootDirectory": "docs/external-id/customers/",
     "docLinkSettings": {
         "linkFormat": "relative",
-        "relativeLinkPrefix": "/azure/active-directory/external-identities/customers"
+        "relativeLinkPrefix": "/entra/external-id/customers"
     },
     "inclusionCriteria": {
         "omitPullRequestTitles" : false,
         "minAdditionsToFile" : 10,
         "maxFilesChanged": 50,
         "labels": [
-            "label:active-directory/svc",
+            "label:external-id/svc",
             "label:ciam/subsvc"
         ]
     },
     "areas": [
         {
             "names": [ "."],
-            "heading": "Azure Active Directory for customers"
+            "heading": "Microsoft Entra ID for customers"
         }
     ]
 }
