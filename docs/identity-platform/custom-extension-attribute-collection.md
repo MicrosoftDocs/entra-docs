@@ -30,11 +30,11 @@ In addition to creating a custom authentication extension for the attribute coll
 ## Prerequisites
 
 - To use Azure services, including Azure Functions, you need an Azure subscription. If you don't have an existing Azure account, you can sign up for a [free trial](https://azure.microsoft.com/free/dotnet/) or use your [Visual Studio Subscription](https://visualstudio.microsoft.com/subscriptions/) benefits when you [create an account](https://account.windowsazure.com/Home/Index).
-- A [sign-up and sign-in user flow](~/external-id/customers/how-to-user-flow-sign-up-sign-in-customers).
+- A [sign-up and sign-in user flow](~/external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md).
 
 ## Step 1: Create a custom authentication extensions REST API (Azure Function app)
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 In this step, you create an HTTP trigger function API using Azure Functions. The function API is the source of the business logic for your user flows. Follow these steps to create an Azure Function:
 
@@ -683,7 +683,7 @@ In this step, you register a custom authentication extension that is used by Mic
 
 # [Microsoft Entra admin center](#tab/entra-admin-center)
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an  [Application Administrator](~/identity/role-based-access-control/permissions-reference#application-developer) and [Authentication Administrator](~/identity/role-based-access-control/permissions-reference#authentication-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an  [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-developer) and [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
 
 1. Browse to **Identity** > **External Identities** > **Custom authentication extensions**.
 
@@ -880,11 +880,11 @@ After your custom authentication extension is created, grant application consent
 Now you can associate the custom authentication extension with one or more of your user flows.
 
 > [!NOTE]
-> If you need to create a user flow, follow the steps in [Create a sign-up and sign-in user flow for customers](~/external-id/customers/how-to-user-flow-sign-up-sign-in-customers).
+> If you need to create a user flow, follow the steps in [Create a sign-up and sign-in user flow for customers](~/external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md).
 
 ### 3.1 Add the custom authentication extension to an existing user flow
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an  [Application Administrator](~/identity/role-based-access-control/permissions-reference#application-developer) and [Authentication Administrator](~/identity/role-based-access-control/permissions-reference#authentication-administrator)
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an  [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-developer) and [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator)
 
 1. If you have access to multiple tenants, use the **Directories + subscriptions** filter :::image type="icon" source="media/common/portal-directory-subscription-filter.png" border="false"::: in the top menu to switch to your customer tenant. 
 
@@ -911,7 +911,7 @@ Follow these steps to register the **jwt.ms** web application:
 
 ### 4.1 Register the jwt.ms web application
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference#application-developer).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-developer).
 1. Browse to **Identity** > **Applications** > **Application registrations**.
 1. Select **New registration**.
 1. Enter a **Name** for the application. For example, **My Test application**.
