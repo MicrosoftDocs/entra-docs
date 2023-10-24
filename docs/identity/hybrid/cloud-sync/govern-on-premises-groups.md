@@ -81,14 +81,14 @@ In this scenario option, you'll update the application to check for the SID, nam
 
 Use the following steps for applications to use new groups.
 
-### Create application and group
+#### Create application and group
  1.  Using the Entra Portal, create an application in Entra ID representing the AD-based application, and configure the application to require user assignment.
  2.  If application proxy will be used to enable users to connect to the application, then configure the application proxy.
  3.	Create a new security group in Entra ID.
  4.	Use [Group Provisioning to AD](how-to-configure-entra-to-ad.md) to provision this group to AD.  
  5.  Launch Active Directory Users and Computers, and wait for the resulting new AD group to be created in the AD domain.  When it's present, record the distinguished name, domain, account name and SID of the new AD group.
 
- ### Configure application to use new group
+ #### Configure application to use new group
  1.  If the application uses AD via LDAP, configure the application with the distinguished name of the new AD group.  If the application users AD via Kerberos, configure the application with the SID, or the domain and account name, of the new AD group.
  2.	Create an [access package](../../../id-governance/entitlement-management-access-package-create.md).  Add the application from #1, the security group from #3, as resources in the Access Package.  Configure a direct assignment policy in the access package.
  3.	In [Entitlement Management](../../../id-governance/entitlement-management-overview.md), assign the synced users who need access to the AD based app to the access package.
@@ -103,19 +103,19 @@ In this scenario option, you'll add a new AD security group as a nested group me
 
 Nesting that group into the applications’ existing AD group will allow Entra ID users who are assigned by a governance feature and subsequently  access the app to have an appropriate Kerberos ticket containing the existing group’s SID, as allowed by AD group nesting rules.  If the app uses LDAP and follows nested group membership, the app will see the Entra ID users as having the existing group as one of their memberships.
 
-### Determine eligibility of existing group
+#### Determine eligibility of existing group
  1.  Launch Active Directory Users and Computers, and record the distinguished name, type and scope of the existing AD group used by the application.  
  2.  If the existing group is `Domain Admins`, `Domain Guests`, `Domain Users`, `Enterprise Admins`, `Enterprise Key Admins`, `Group Policy Creation Owners`, `Key Admins`, `Protected Users` or `Schema Admins`, then you'll need to change the application to use a new group, as described above, as these groups can't be used by cloud sync.
  3.  If the group has Global scope, change the group to have Universal scope.  A global group can't have universal groups as members.
 
-### Create application and group
+#### Create application and group
  1.  Using the Entra Portal, create an application in Entra ID representing the AD-based application, and configure the application to require user assignment.
  2.  If application proxy will be used to enable users to connect to the application, then configure the application proxy.
  3.	Create a new security group in Entra ID.
  4.	Use [Group Provisioning to AD](how-to-configure-entra-to-ad.md) to provision this group to AD.  
  5.  Launch Active Directory Users and Computers, and wait for the resulting new AD group to be created in the AD domain, When it's present, record the distinguished name, domain, account name and SID of the new AD group.
 
-### Configure application to use new group
+#### Configure application to use new group
  1.  Using Active Directory Users and Computers, add the new AD group as a member of the existing AD group.
  2.	Create an [access package](../../../id-governance/entitlement-management-access-package-create.md).  Add the application from #1, the security group from #3, as resources in the Access Package.  Configure a direct assignment policy in the access package.
  3.	In [Entitlement Management](../../../id-governance/entitlement-management-overview.md), assign the synced users who need access to the AD based app to the access package.  This includes any user members of the existing AD group who will continue to need access.
