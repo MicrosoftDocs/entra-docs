@@ -16,6 +16,26 @@ ms.collection: M365-identity-device-management
 # Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync
 The following document describes how to migrate group writeback using Microsoft Entra Connect Sync (formely Azure AD Connect) to Microsoft Entra Cloud Sync.
 
+>[!IMPORTANT]
+>This scenario is only supported for:
+>   - cloud created [Security groups](../../../fundamentals/concept-learn-about-groups.md#group-types)
+>   - these groups are written back with the AD groups scope of [universal](/windows-server/identity/ad-ds/manage/understand-security-groups#group-scope).
+
+## Prerequisites
+The following prerequisites are required to implement this scenario.
+
+ - Azure AD account with at least a [Hybrid Administrator](../../role-based-access-control/permissions-reference.md#hybrid-identity-administrator) role.
+ - An on-premises AD account with at least domain administrator permissions - required to access the adminDescription attribute and copy it to the msDS-ExternalDirectoryObjectId attribute
+ - On-premises Active Directory Domain Services environment with Windows Server 2016 operating system or later. 
+     - Required for AD Schema attribute  - msDS-ExternalDirectoryObjectId 
+ - Provisioning agent with build version [1.1.1367.0](reference-version-history.md#) or later.
+ - The provisioning agent must be able to communicate with the domain controller(s) on ports TCP/389 (LDAP) and TCP/3268 (Global Catalog).
+     - Required for global catalog lookup to filter out invalid membership references
+ - Mircorosft Entra Connect with build version [2.2.8.0](../connect/reference-connect-version-history.md#2280) or later
+     - Required to support on-premises user membership synchronized using Microsoft Entra Connect 
+     - Required to synchronize AD:user:objectGUID to AAD:user:onPremisesObjectIdentifier
+
+
 ## Step 1 - Copy adminDescription to msDS-ExternalDirectoryObjectID
  1. In your on-premises environment, open ADSI Edit.
  2. Copy the value that it in the group's adminDescription attribute
