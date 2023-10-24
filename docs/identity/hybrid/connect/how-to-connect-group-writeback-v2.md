@@ -18,9 +18,8 @@ ms.collection: M365-identity-device-management
  
 Group writeback allows you to write cloud groups back to your on-premises Active Directory instance by using Microsoft Entra Connect Sync. You can use this feature to manage groups in the cloud, while controlling access to on-premises applications and resources.  
 
-> [!NOTE]
-> The group writeback functionality is currently in Public Preview as we are collecting customer feedback and telemetry. Please refer to [the limitations](#understand-limitations-of-public-preview) before you enable this functionality. You should not deploy the functionality to write back security groups in your production environment. We are planning to replace the AADConnect security group writeback functionality with the new cloud sync group writeback feature, and when this releases we will remove the AADConnect Group Writeback functionality. This does not impact M365 group writeback functionality, which will remain unchanged.
-
+> [!WARNING]
+> You should not deploy the functionality to write back security groups in your production environment using Microsoft Entra Connect Sync. Going forward, you should use Microsoft Entra Cloud Sync for this functionality.  See [Provision groups to Active Directory using Microsoft Entra Cloud Sync](../cloud-sync/how-to-configure-entra-to-ad.md) for information on how to configure group writeback with Microsoft Entra Cloud Sync.  See [Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance](../cloud-sync/govern-on-premises-groups.md) for information on how to manage on-premises applications with Active Directory groups that are provisioned from and managed in the cloud.
 
 There are two versions of group writeback. The original version is in general availability and is limited to writing back Microsoft 365 groups to your on-premises Active Directory instance as distribution groups. The new, expanded version of group writeback is in public preview and enables the following capabilities:  
 
