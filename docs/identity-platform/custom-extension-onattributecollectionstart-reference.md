@@ -17,7 +17,7 @@ ms.author: mimart
 
 ---
 
-# Custom Extension for OnAttributeCollectionStart event
+# Custom Extension for OnAttributeCollectionStart event (preview)
 
 **Applies to:** Microsoft Entra External ID customer configurations
 

@@ -16,7 +16,7 @@ ms.author: mimart
 #Customer intent: As a developer, I want to learn about the REST API schema so that I can add workflows to the attribute collection submit event in the sign-up flow.
 
 ---
-# Custom Extension for OnAttributeCollectionSubmit event
+# Custom Extension for OnAttributeCollectionSubmit event (preview)
 
 **Applies to:** Microsoft Entra External ID customer configurations
 
