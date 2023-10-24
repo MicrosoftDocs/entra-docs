@@ -148,8 +148,8 @@ January 20, 2021: Released for download
 
 ### New features and improvements
 - Improvement to GMSA experience including support for pre-custom created GMSA Account
-- [PowerShell cmdlets](../identity/cloud-sync/how-to-gmsa-cmdlets.md) support for GMSA setup
-- [CLI support](../identity/cloud-sync/how-to-install-pshell.md) for agent install (silent installation)
+- [PowerShell cmdlets](../identity/hybrid/cloud-sync/how-to-gmsa-cmdlets.md) support for GMSA setup
+- [CLI support](../identity/hybrid/cloud-sync/how-to-install-pshell.md) for agent install (silent installation)
 - More diagnostics for agent source quarantine issues
 - Bug fixes that include reducing of memory usage of OU scoping filters, running PHS only for in-scope users, handling of nested objects in OU when using OU scoping etc. 
 
@@ -172,18 +172,18 @@ November 23, 2020: Released for download
 
 ### New features and improvements
 
-* Support for [gMSA](../identity/cloud-sync/how-to-prerequisites.md#group-managed-service-accounts)
+* Support for [gMSA](../identity/hybrid/cloud-sync/how-to-prerequisites.md#group-managed-service-accounts)
 * Support for groups up to size less than 1500 members during incremental or delta sync cycle. This change is applicable when using group scoping filter
 * Support for large groups with member size up to 15 K
 * Initial sync improvements
 * Advanced verbose logging
-* Introduction of [AADCloudSyncTools PowerShell module](../identity/cloud-sync/reference-powershell.md)
+* Introduction of [AADCloudSyncTools PowerShell module](../identity/hybrid/cloud-sync/reference-powershell.md)
 * Fixed limitations to allow agent to be installed in non-English server
 * Support for PHS filtering only for objects in scope (Originally, we were syncing password hashes for all objects)
 * Fixed the memory leak issue in the agent
 * Improved provisioning logs
-* Support for configuring [LDAP connection timeout](../identity/cloud-sync/how-to-manage-registry-options.md#configure-ldap-connection-timeout) 
-* Support for configuring [referral chasing](../identity/cloud-sync/how-to-manage-registry-options.md#configure-referral-chasing) 
+* Support for configuring [LDAP connection timeout](../identity/hybrid/cloud-sync/how-to-manage-registry-options.md#configure-ldap-connection-timeout) 
+* Support for configuring [referral chasing](../identity/hybrid/cloud-sync/how-to-manage-registry-options.md#configure-referral-chasing) 
 
 
 ## 1.1.96.0
@@ -194,7 +194,7 @@ December 4, 2019: Released for download
 
 ### New features and improvements
 
-* Includes support for [Azure AD Connect cloud sync](../identity/cloud-sync/what-is-cloud-sync.md) to synchronize user, contact and group data from on-premises Active Directory to Azure AD
+* Includes support for [Azure AD Connect cloud sync](../identity/hybrid/cloud-sync/what-is-cloud-sync.md) to synchronize user, contact and group data from on-premises Active Directory to Azure AD
 
 
 ## 1.1.67.0

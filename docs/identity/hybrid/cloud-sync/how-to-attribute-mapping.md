@@ -97,7 +97,7 @@ The following are the attributes supported by an expression mapping:
 Use the following steps for configuring attribute mapping with a [AD to Microsoft Entra ID configuruation](how-to-configure.md).
 
 
-[!INCLUDE [sign in](../../../../includes/cloud-sync-sign-in.md)]
+[!INCLUDE [sign in](../../../includes/cloud-sync-sign-in.md)]
  3. Under **Configuration**, select your configuration.
  4. On the left, select **Attribute mapping**.
  5. At the top, ensure that you have the correct object type selected.  That is, user, group, or contact.
@@ -126,7 +126,7 @@ Use the following steps for configuring attribute mapping with a [AD to Microsof
 ## Add an attribute mapping - Microsoft Entra ID to AD
 Use the following steps for configuring attribute mapping with a [Microsoft Entra ID to AD configuruation](how-to-configure-entra-to-ad.md).
 
-[!INCLUDE [sign in](../../../../includes/cloud-sync-sign-in.md)]
+[!INCLUDE [sign in](../../../includes/cloud-sync-sign-in.md)]
  3. Under **Configuration**, select your Microsoft Entra ID to AD configuration.
  4. On the left, select **Attribute mapping**.
  5. At the top, ensure that you have the correct object type selected.  That is, user, group, or contact.
@@ -150,7 +150,7 @@ Use the following steps for configuring attribute mapping with a [Microsoft Entr
 
 To test your attribute mapping, you can use [on-demand provisioning](how-to-on-demand-provision.md): 
 
-[!INCLUDE [sign in](../../../../includes/cloud-sync-sign-in.md)]
+[!INCLUDE [sign in](../../../includes/cloud-sync-sign-in.md)]
  3. Under **Configuration**, select your configuration.
  4. On the left, select **Provision on demand**.
  5. Enter the distinguished name of a user and select the **Provision** button.

@@ -121,7 +121,7 @@ Nesting that group into the applications’ existing AD group will allow Entra I
  3.	In [Entitlement Management](../../../id-governance/entitlement-management-overview.md), assign the synced users who need access to the AD based app to the access package.  This includes any user members of the existing AD group who will continue to need access.
  4. Wait for the new AD group to be updated with thew new members.  Using Active Directory Users and Computers, confirm that the correct users are present as members of the group.
  5. Using Active Directory Users and Computers, remove the existing members, apart from the new AD group, of the existing AD group.
- 6. In your AD domain monitoring, allow only the [gMSA account](\how-to-prerequisites.md#group-managed-service-accounts) that runs the provisioning agent, [authorization to change the membership](/windows/security/threat-protection/auditing/audit-security-group-management) in the new AD group.
+ 6. In your AD domain monitoring, allow only the [gMSA account](how-to-prerequisites.md#group-managed-service-accounts) that runs the provisioning agent, [authorization to change the membership](/windows/security/threat-protection/auditing/audit-security-group-management) in the new AD group.
 
 
 You'll then be able to govern access to the AD application through this new access package.
