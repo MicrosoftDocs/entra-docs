@@ -19,39 +19,39 @@ productDirectory:
     - title: Microsoft Entra ID (Azure AD)
       imageSrc: ./media/index/microsoft-entra-id-color.png
       summary: "Manage user identities and control access to your apps, data, and resources."
-      url: /identity/
+      url: /entra/identity/
     - title: Microsoft Entra ID Protection
       imageSrc: ./media/index/id-protection-color.png
       summary: "Identify and address identity risks in your organization."
-      url: /id-protection/
+      url: /entra/id-protection/
     - title: Microsoft Entra ID Governance
       imageSrc: ./media/index/id-governance-color.png
       summary: "Protect, monitor, and audit access to critical assets while ensuring employee productivity."
-      url: /id-governance/
+      url: /entra/id-governance/
     - title: Microsoft Entra External ID
       imageSrc: ./media/index/placeholder-icon.png
       summary: "Secure and manage any external user, including customers and partners, in your organization."
-      url: /external-id/
+      url: /entra/external-id/
     - title: Microsoft Entra Internet Access
       imageSrc: ./media/index/internet-access-color.png
       summary: "Protect access to all internet, SaaS, and Microsoft 365 apps and resources with an identity-centric Secure Web Gateway."
-      url: /global-secure-access/
+      url: /entra/global-secure-access/
     - title: Microsoft Entra Private Access
       imageSrc: ./media/index/private-access-color.png
       summary: "Secure access to all private apps and resources with identity-centric Zero Trust Network Access (ZTNA)."
-      url: /global-secure-access/
+      url: /entra/global-secure-access/
     - title: Microsoft Entra Permissions Management
       imageSrc: ./media/index/permissions-management-color.png
       summary: "One unified model to manage permissions of any identity across any cloud."
-      url: /permissions-management/
+      url: /entra/permissions-management/
     - title: Microsoft Entra Verified ID
       imageSrc: ./media/index/verified-id-color.png
       summary: "Enable more secure interactions while respecting privacy with an industry-leading global platform."
-      url: /verified-id/
+      url: /entra/verified-id/
     - title: Microsoft Entra Workload ID
       imageSrc: ./media/index/workload-id-color.png
       summary: "Secure identities for apps and services and their access to cloud resources."
-      url: /workload-id/
+      url: /entra/workload-id/
           
 additionalContent:
   sections:
