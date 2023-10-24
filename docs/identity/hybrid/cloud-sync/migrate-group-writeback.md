@@ -24,7 +24,7 @@ The following document describes how to migrate group writeback using Microsoft 
  3. Paste this in to the msDS-ExternalDirectoryObjectID attribute
  :::image type="content" source="media/migrate-group-writeback/migrate-2.png" alt-text="Screenshot of the msDS-ExternalDirectoryObjectID attribute." lightbox="media/migrate-group-writeback/migrate-2.png":::
 
-## Step 2 - Place Entra Connect server in staging mode and disable the sync scheduler
+## Step 2 - Place the Microsoft Entra Connect Sync server in staging mode and disable the sync scheduler
  1. Start the Microsot Entra Connect Sync(Azure AD Connect) wizard 
  2. Click **Configure**
  3. Select **Configure staging mode** and click **Next**
@@ -46,7 +46,7 @@ The following document describes how to migrate group writeback using Microsoft 
    ``` 
 
 
-## Step 3 - Create custom group inbound rule
+## Step 3 - Create a custom group inbound rule
 In the Microsoft Entra Connect Synchronization Rules editor, you need to create an inbound sync rule that filters out groups that have NULL for the mail attribute.  The inbound sync rule is a join rule with a target attribute of cloudNoFlow.  This rule tells Microsoft Entra Connect not to synchronize attributes for these groups.  
 
  1. Launch the synchronization editor from the application menu in desktop as shown below:
@@ -79,7 +79,7 @@ In the Microsoft Entra Connect Synchronization Rules editor, you need to create 
     :::image type="content" source="media/migrate-group-writeback/migrate-7.png" alt-text="Screenshot of transformation." lightbox="media/migrate-group-writeback/migrate-7.png":::
 
 
-## Step 4 - Create custom group outbound rule
+## Step 4 - Create a custom group outbound rule
 You'll also need an outbound sync rule with a link type of JoinNoFlow and the scoping filter that has the cloudNoFlow attribute set to True.  This rule tells Microsoft Entra Connect not to synchronize attributes for these groups. 
 
  1. Select **Outbound** from the drop-down list for Direction and select **Add rule**.
@@ -132,7 +132,7 @@ You'll also need an outbound sync rule with a link type of JoinNoFlow and the sc
    ``` 
     :::image type="content" source="media/migrate-group-writeback/migrate-11.png" alt-text="Screenshot of PowerShell execution." lightbox="media/migrate-group-writeback/migrate-11.png":::
 
-## Step 6 - Remove the Microsoft Entra Connect server from staging mode
+## Step 6 - Remove the Microsoft Entra Connect Sync server from staging mode
 1.  Start the Entra Connect Sync wizard (Azure AD Connect)
 2.  Click **Configure**
 3.  Select **Configure staging mode** and click **Next**
