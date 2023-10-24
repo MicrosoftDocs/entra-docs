@@ -138,10 +138,10 @@ Currently, the AD Schema is not discoverable and there is fixed set of mappings.
 |member|members|Direct|CANNOT UPDATE IN UI - SHOULD NOT UPDATE|
 |msDS-ExternalDirectoryObjectId|Append("Group_",[objectId])|Expression|CANNOT UPDATE IN UI - SHOULD NOT UPDATE</br></br>Used for joining - matching in AD|
 |ObjectGUID|||CANNOT UPDATE IN UI - SHOULD NOT UPDATE</br></br>Read only - anchor in AD|
-|parentDistinguishedName|OU=Users,DC=contoso,DC=com|Constant|Default in the UI|
+|parentDistinguishedName|OU=Users,DC=<domain selected at configuration start>,DC=com|Constant|Default in the UI|
 |UniversalScope|True|Constant|CANNOT UPDATE IN UI - SHOULD NOT UPDATE|
 
-For more information on how to add an attribute mapping see, see [attribute mapping](how-to-attribute-mapping.md#add-an-attribute-mapping---microsoft-entra-id-to-ad).
+Be aware that not all of the above mappings are visible in the portal.  For more information on how to add an attribute mapping see, see [attribute mapping](how-to-attribute-mapping.md#add-an-attribute-mapping---microsoft-entra-id-to-ad).
 
 
 ### Attribute scope filtering

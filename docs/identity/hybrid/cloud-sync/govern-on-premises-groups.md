@@ -132,10 +132,10 @@ You'll then be able to govern access to the AD application through this new acce
 A user who is a member of the new AD group, and is on a Windows PC already logged into an AD domain, may have an existing ticket issued by an AD domain controller that doesn't include the new AD group membership.  This is because the ticket may have been issued prior to the cloud sync group provisioning adding them to the new AD group.  The user won't be able to present the ticket for access to the application, and so must wait for the ticket to expire and a new ticket issued, or purge their tickets, log out and log back into the domain.  See the [klist](/windows-server/administration/windows-commands/klist) command for more details.
 
 ## Existing Azure AD Connect group writeback v2 customers
-If you're using Azure AD Connect group writeback v2, you'll need to move to cloud sync provisioning to AD before you can take advantage of cloud sync group provisioning.
+If you're using Azure AD Connect group writeback v2, you'll need to move to cloud sync provisioning to AD before you can take advantage of cloud sync group provisioning.  See [Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync](migrate-group-writeback.md)
 
 
 ## Next Steps
-- [What is Entra ID Governance?](../../../id-governance/identity-governance-overview.md)
+- [What is Microsoft Entra ID Governance?](../../../id-governance/identity-governance-overview.md)
 - [What is provisioning?](../what-is-provisioning.md)
 - [What is Microsoft Entra Cloud Sync?](what-is-cloud-sync.md)
