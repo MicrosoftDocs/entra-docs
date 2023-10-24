@@ -23,7 +23,7 @@ With the release of provisioning agent [1.1.1367.0](reference-version-history.md
 ## Prerequisites
 The following prerequisites are required to implement this scenario.
 
- - Azure AD account with at least a [Hybrid Administrator](../../roles/permissions-reference.md#hybrid-identity-administrator) role.
+ - Azure AD account with at least a [Hybrid Administrator](../../role-based-access-control/permissions-reference.md#hybrid-identity-administrator) role.
  - On-premises Active Directory Domain Services environment with Windows Server 2016 operating system or later. 
      - Required for AD Schema attribute  - msDS-ExternalDirectoryObjectId 
  - Provisioning agent with build version [1.1.1367.0](reference-version-history.md#1113670) or later.
@@ -50,7 +50,7 @@ The following prerequisites are required to implement this scenario.
 
 ## Supported groups
 For this scenario, only the following is supported:
-  - only cloud created [Security groups](../../fundamentals/concept-learn-about-groups.md#group-types) are supported
+  - only cloud created [Security groups](../../../fundamentals/concept-learn-about-groups.md#group-types) are supported
   - these groups can have assigned or dynamic membership.
   - these groups can only contain on-premises synchronized users and / or additional cloud created security groups.
   - the on-premises user accounts, that are synchronized and are members of this cloud created security group, can be from the same domain or cross-domain, but they all must be from the same forest.
@@ -90,7 +90,7 @@ Use the following steps for applications to use new groups.
 
  ### Configure application to use new group
  1.  If the application uses AD via LDAP, configure the application with the distinguished name of the new AD group.  If the application users AD via Kerberos, configure the application with the SID, or the domain and account name, of the new AD group.
- 2.	Create an [access package](../../governance/entitlement-management-access-package-create.md).  Add the application from #1, the security group from #3, as resources in the Access Package.  Configure a direct assignment policy in the access package.
+ 2.	Create an [access package](../../../id-governance/entitlement-management-access-package-create.md).  Add the application from #1, the security group from #3, as resources in the Access Package.  Configure a direct assignment policy in the access package.
  3.	In [Entitlement Management](../../governance/entitlement-management-overview.md), assign the synced users who need access to the AD based app to the access package.
  4.  Wait for the new AD group to be updated with thew new members.  Using Active Directory Users and Computers, confirm that the correct users are present as members of the group.
  5.  In your AD domain monitoring, allow only the [gMSA account](\how-to-prerequisites.md#group-managed-service-accounts) that runs the provisioning agent, [authorization to change the membership](/windows/security/threat-protection/auditing/audit-security-group-management) in the new AD group.

@@ -25,10 +25,10 @@ For additional information on this scenario, see [Govern on-premises application
 ## Prerequisites
 The following prerequisites are required to implement this scenario.
 
- - Azure AD account with at least a [Hybrid Administrator](../../roles/permissions-reference.md#hybrid-identity-administrator) role.
+ - Azure AD account with at least a [Hybrid Administrator](../../role-based-access-control/permissions-reference.md#hybrid-identity-administrator) role.
  - On-premises Active Directory Domain Services environment with Windows Server 2016 operating system or later. 
      - Required for AD Schema attribute  - msDS-ExternalDirectoryObjectId 
- - Provisioning agent with build version [1.1.1367.0](reference-version-history.md#1113670) or later.
+ - Provisioning agent with build version [1.1.1367.0](reference-version-history.md#) or later.
 
  > [!NOTE]
  > The permissions to the service account are assigned during clean install only. In case you're upgrading from the previous version then permissions need to be assigned manually using PowerShell cmdlet: 
@@ -52,7 +52,7 @@ The following prerequisites are required to implement this scenario.
 
 ## Supported groups
 For this scenario, only the following is supported:
-  - only cloud created [Security groups](../../fundamentals/concept-learn-about-groups.md#group-types) are supported
+  - only cloud created [Security groups](../../../fundamentals/concept-learn-about-groups.md#group-types) are supported
   - these groups can have assigned or dynamic membership.
   - these groups can only contain on-premises synchronized users and / or additional cloud created security groups.
   - the on-premises user accounts, that are synchronized and are members of this cloud created security group, can be from the same domain or cross-domain, but they all must be from the same forest.
@@ -65,7 +65,7 @@ For this scenario, only the following is supported:
 ## Configure provisioning
 To configure provisioning, follow these steps.
 
- [!INCLUDE [sign in](../../../../includes/cloud-sync-sign-in.md)]
+ [!INCLUDE [sign in](../../../includes/cloud-sync-sign-in.md)]
  
  3. Select **New configuration**.
  4. Select **Microsoft Entra ID to AD sync**.
@@ -226,7 +226,7 @@ To use on-demand provisioning, follow these steps:
 >[!NOTE]
 >When using on-demand provisioning, members are not automatically provsisioned.  You need to select which members you wish to test on and there is a 5 member limit.
 
- [!INCLUDE [sign in](../../../../includes/cloud-sync-sign-in.md)]
+ [!INCLUDE [sign in](../../../includes/cloud-sync-sign-in.md)]
 
  3. Under **Configuration**, select your configuration.
  4. On the left, select **Provision on demand**.
