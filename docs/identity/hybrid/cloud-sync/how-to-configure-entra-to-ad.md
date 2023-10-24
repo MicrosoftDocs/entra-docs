@@ -130,16 +130,16 @@ Currently, the AD Schema is not discoverable and there is fixed set of mappings.
 
 |Target attribute|Source attribute|Mapping type|Notes|
 |-----|-----|-----|-----|
-|adminDescription|Append("Group_",[objectId])|Expression|CANNOT UPDATE IN UI - SHOULD NOT UPDATE</br></br>Used for filtering out AD to cloud sync|
+|adminDescription|Append("Group_",[objectId])|Expression|CANNOT UPDATE IN UI - SHOULD NOT UPDATE</br></br>Used for filtering out AD to cloud sync</br></br>Not visible in UI|
 |cn|Append(Append(Left(Trim([displayName]),51),"_"),Mid([objectId],25,12))|Expression||
 |description|Left(Trim([description]),448)|Expression||
 |dispalyName|displayName|Direct||
-|isSecurityGroup|True|Constant|CANNOT UPDATE IN UI - SHOULD NOT UPDATE|
+|isSecurityGroup|True|Constant|CANNOT UPDATE IN UI - SHOULD NOT UPDATE</br></br>Not visible in UI|
 |member|members|Direct|CANNOT UPDATE IN UI - SHOULD NOT UPDATE|
-|msDS-ExternalDirectoryObjectId|Append("Group_",[objectId])|Expression|CANNOT UPDATE IN UI - SHOULD NOT UPDATE</br></br>Used for joining - matching in AD|
-|ObjectGUID|||CANNOT UPDATE IN UI - SHOULD NOT UPDATE</br></br>Read only - anchor in AD|
-|parentDistinguishedName|OU=Users,DC=&lt;domain selected at configuration start&gt;,DC=com|Constant|Default in the UI|
-|UniversalScope|True|Constant|CANNOT UPDATE IN UI - SHOULD NOT UPDATE|
+|msDS-ExternalDirectoryObjectId|Append("Group_",[objectId])|Expression|CANNOT UPDATE IN UI - SHOULD NOT UPDATE</br></br>Used for joining - matching in AD</br></br>Not visible in UI|
+|ObjectGUID|||CANNOT UPDATE IN UI - SHOULD NOT UPDATE</br></br>Read only - anchor in AD</br></br>Not visible in UI|
+|parentDistinguishedName|OU=Users,DC=&lt;domain selected at configuration start&gt;,DC=com|Constant|Default in the UI</br></br>Not visible in UI|
+|UniversalScope|True|Constant|CANNOT UPDATE IN UI - SHOULD NOT UPDATE</br></br>Not visible in UI|
 
 Be aware that not all of the above mappings are visible in the portal.  For more information on how to add an attribute mapping see, see [attribute mapping](how-to-attribute-mapping.md#add-an-attribute-mapping---microsoft-entra-id-to-ad).
 
