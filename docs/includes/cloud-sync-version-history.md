@@ -16,7 +16,7 @@ Get notified about when to revisit this page for updates by copying and pasting 
 
 ## 1.1.1367.0
 
-Release date: 
+Release date: October 16th, 2023
 
 ### New or changed functionality
 
