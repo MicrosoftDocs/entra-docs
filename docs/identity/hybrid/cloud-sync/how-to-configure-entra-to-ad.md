@@ -55,7 +55,7 @@ For this scenario, only the following is supported:
   - only cloud created [Security groups](../../../fundamentals/concept-learn-about-groups.md#group-types) are supported
   - these groups can have assigned or dynamic membership.
   - these groups can only contain on-premises synchronized users and / or additional cloud created security groups.
-  - the on-premises user accounts, that are synchronized and are members of this cloud created security group, can be from the same domain or cross-domain, but they all must be from the same forest.
+  - the on-premises user accounts that are synchronized and are members of this cloud created security group, can be from the same domain or cross-domain, but they all must be from the same forest.
   - these groups are written back with the AD groups scope of [universal](/windows-server/identity/ad-ds/manage/understand-security-groups#group-scope).  Your on-premises environment must support the universal group scope.
   - groups that are larger than 50,000 members are not supported.
   - each direct child nested group counts as one member in the referencing group
@@ -138,7 +138,7 @@ Currently, the AD Schema is not discoverable and there is fixed set of mappings.
 |member|members|Direct|CANNOT UPDATE IN UI - SHOULD NOT UPDATE|
 |msDS-ExternalDirectoryObjectId|Append("Group_",[objectId])|Expression|CANNOT UPDATE IN UI - SHOULD NOT UPDATE</br></br>Used for joining - matching in AD|
 |ObjectGUID|||CANNOT UPDATE IN UI - SHOULD NOT UPDATE</br></br>Read only - anchor in AD|
-|parentDistinguishedName|OU=Users,DC=<domain selected at configuration start>,DC=com|Constant|Default in the UI|
+|parentDistinguishedName|OU=Users,DC=&lt;domain selected at configuration start&gt;,DC=com|Constant|Default in the UI|
 |UniversalScope|True|Constant|CANNOT UPDATE IN UI - SHOULD NOT UPDATE|
 
 Be aware that not all of the above mappings are visible in the portal.  For more information on how to add an attribute mapping see, see [attribute mapping](how-to-attribute-mapping.md#add-an-attribute-mapping---microsoft-entra-id-to-ad).
@@ -151,7 +151,7 @@ Attribute based scope filtering is supported.  This allows you to scope groups b
 
 #### Supported clauses
 
-A scoping filter consists of one or more clauses. Clauses determine which goups are allowed to pass through the scoping filter by evaluating each group's attributes. For example, you might have one clause that requires that a groups's "displayName" attribute equals "Marketing", so only Marketing groups are provisioned.
+A scoping filter consists of one or more clauses. Clauses determine which groups are allowed to pass through the scoping filter by evaluating each group's attributes. For example, you might have one clause that requires that a groups  "displayName" attribute equals "Marketing", so only Marketing groups are provisioned.
 
 #### The default security grouping
 The default security grouping is applied on top of every clause created and uses the "AND" logic. It contains the following conditions:

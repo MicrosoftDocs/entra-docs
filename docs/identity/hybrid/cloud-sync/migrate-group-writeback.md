@@ -1,6 +1,6 @@
 ---
 title: 'Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync'
-description: This article describes how to migrate groups that were initially setup of group writeback using Microsoft Entra Connect Sync to Microsoft Entra Cloud Sync
+description: This article describes how to migrate groups that were initially set up of group writeback using Microsoft Entra Connect Sync to Microsoft Entra Cloud Sync
 services: active-directory
 author: billmath
 manager: amycolannino
@@ -14,7 +14,7 @@ ms.collection: M365-identity-device-management
 ---
 
 # Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync
-The following document describes how to migrate group writeback using Microsoft Entra Connect Sync (formely Azure AD Connect) to Microsoft Entra Cloud Sync.
+The following document describes how to migrate group writeback using Microsoft Entra Connect Sync (formerly Azure AD Connect) to Microsoft Entra Cloud Sync.
 
 >[!IMPORTANT]
 >This scenario is only supported for:
@@ -43,11 +43,11 @@ The following prerequisites are required to implement this scenario.
  :::image type="content" source="media/migrate-group-writeback/migrate-2.png" alt-text="Screenshot of the msDS-ExternalDirectoryObjectID attribute." lightbox="media/migrate-group-writeback/migrate-2.png":::
 
 ## Step 2 - Place the Microsoft Entra Connect Sync server in staging mode and disable the sync scheduler
- 1. Start the Microsot Entra Connect Sync(Azure AD Connect) wizard 
+ 1. Start the Microsoft Entra Connect Sync(Azure AD Connect) wizard 
  2. Click **Configure**
  3. Select **Configure staging mode** and click **Next**
  4. Enter Entra ID credentials
- 5. Place a check in **Enable staging mode** and click **Next**
+ 5. Place a check in the **Enable staging mode** box and click **Next**
   
   :::image type="content" source="media/migrate-group-writeback/migrate-3.png" alt-text="Screenshot of enabling staging mode." lightbox="media/migrate-group-writeback/migrate-3.png":::
  
@@ -155,12 +155,12 @@ You'll also need an outbound sync rule with a link type of JoinNoFlow and the sc
 2.  Click **Configure**
 3.  Select **Configure staging mode** and click **Next**
 4.  Enter Entra ID credentials
-5.  Remove the check in **Enable staging mode** and click **Next**
+5.  Remove the check from the **Enable staging mode** box and click **Next**
 6.  Click **Configure**
 7.  Click **Exit**
 
 ## Step 7 - Configure Microsoft Entra Cloud Sync
-Now that you have successfully removed the groups from the scope of Microsoft Entra Connect Sync, you can seupt and configure Microsoft Entra Cloud Sync to take over syncrhonization.  To do this, see [Provision groups to Active Directory using Microsoft Entra Cloud Sync](how-to-configure-entra-to-ad.md)
+Now that you have successfully removed the groups from the scope of Microsoft Entra Connect Sync, you can seupt and configure Microsoft Entra Cloud Sync to take over synchronization.  To do this, see [Provision groups to Active Directory using Microsoft Entra Cloud Sync](how-to-configure-entra-to-ad.md)
 
 ## Next Steps
 - [Provision groups to Active Directory using Microsoft Entra Cloud Sync](how-to-configure-entra-to-ad.md)

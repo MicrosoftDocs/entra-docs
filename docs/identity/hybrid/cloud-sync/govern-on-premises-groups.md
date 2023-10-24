@@ -14,7 +14,7 @@ ms.author: billmath
 
 # Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance
 
-**Scenario:**  Manage on-premises applications with Active Directory groups that are provisioned from and managed in the cloud.  Microsoft Entra cloud sync, allows you to fully govern application assignments in AD while taking advantage of Microsoft Entra ID Governance features to control and remediate any access related requests.
+**Scenario:**  Manage on-premises applications with Active Directory groups that are provisioned from and managed in the cloud.  Microsoft Entra cloud sync allows you to fully govern application assignments in AD while taking advantage of Microsoft Entra ID Governance features to control and remediate any access related requests.
 
 With the release of provisioning agent [1.1.1367.0](reference-version-history.md#1113670), cloud sync now has the ability to provision groups directly to your on-premises Active Directory environment. 
 
@@ -53,7 +53,7 @@ For this scenario, only the following is supported:
   - only cloud created [Security groups](../../../fundamentals/concept-learn-about-groups.md#group-types) are supported
   - these groups can have assigned or dynamic membership.
   - these groups can only contain on-premises synchronized users and / or additional cloud created security groups.
-  - the on-premises user accounts, that are synchronized and are members of this cloud created security group, can be from the same domain or cross-domain, but they all must be from the same forest.
+  - the on-premises user accounts that are synchronized and are members of this cloud created security group, can be from the same domain or cross-domain, but they all must be from the same forest.
   - these groups are written back with the AD groups scope of [universal](/windows-server/identity/ad-ds/manage/understand-security-groups#group-scope).  Your on-premises environment must support the universal group scope.
   - groups that are larger than 50,000 members aren't supported.
   - each direct child nested group counts as one member in the referencing group
@@ -69,15 +69,15 @@ If you wish to control whether a user is able to connect to an AD application th
 If in addition, an application itself checks a user's AD group memberships, via Kerberos or LDAP, to determine whether the user is authorized in the application, then you can use cloud sync group provisioning to ensure an AD user has those group memberships prior to the user accessing the applications.  
 
 The following sections discuss two scenario options that are supported with cloud sync group provisioning, to ensure users assigned to the application have group memberships when they authenticate to the application.
- - Creating new groups, and updating the application, if it already exists, to check for the new group, or
- - Creating new groups, and updating the existing groups the application was checking for to include the new group as a member
+ - Creating a new group and updating the application, if it already exists, to check for the new group, or
+ - Creating a new group and updating the existing groups, the application was checking for, to include the new group as a member
 
 Before you begin, ensure that you're a domain administrator in the domain where the application is installed, and can sign into a domain controller, or have the [Remote Server Administration tools](/troubleshoot/windows-server/system-management-components/remote-server-administration-tools) for Active Directory Domain Services (AD DS) administration installed on your Windows PC.
 
 
 ### Configuring the new groups option
 
-In this scenario option, you'll update the application to check for the SID, name or distinguished name of new groups created by cloud sync group provisioning.  This scenario is applicable to deployments for new applications being connected to AD DS for the first time, new cohorts of users accessing the application, or for application modernization, to reduce the dependency on existing AD DS groups.  Applications which currently check for membership of the `Domain Admins` group will need to be updated to also check for a newly-created AD group as well.
+In this scenario option, you'll update the application to check for the SID, name or distinguished name of new groups created by cloud sync group provisioning.  This scenario is applicable to deployments for new applications being connected to AD DS for the first time, new cohorts of users accessing the application, or for application modernization, to reduce the dependency on existing AD DS groups.  Applications which currently check for membership of the `Domain Admins` group will need to be updated to also check for a newly created AD group as well.
 
 Use the following steps for applications to use new groups.
 
@@ -89,10 +89,10 @@ Use the following steps for applications to use new groups.
  5.  Launch Active Directory Users and Computers, and wait for the resulting new AD group to be created in the AD domain.  When it's present, record the distinguished name, domain, account name and SID of the new AD group.
 
  #### Configure application to use new group
- 1.  If the application uses AD via LDAP, configure the application with the distinguished name of the new AD group.  If the application users AD via Kerberos, configure the application with the SID, or the domain and account name, of the new AD group.
+ 1.  If the application uses AD via LDAP, configure the application with the distinguished name of the new AD group.  If the application uses AD via Kerberos, configure the application with the SID, or the domain and account name, of the new AD group.
  2.	Create an [access package](../../../id-governance/entitlement-management-access-package-create.md).  Add the application from #1, the security group from #3, as resources in the Access Package.  Configure a direct assignment policy in the access package.
  3.	In [Entitlement Management](../../../id-governance/entitlement-management-overview.md), assign the synced users who need access to the AD based app to the access package.
- 4.  Wait for the new AD group to be updated with thew new members.  Using Active Directory Users and Computers, confirm that the correct users are present as members of the group.
+ 4.  Wait for the new AD group to be updated with the new members.  Using Active Directory Users and Computers, confirm that the correct users are present as members of the group.
  5.  In your AD domain monitoring, allow only the [gMSA account](how-to-prerequisites.md#group-managed-service-accounts) that runs the provisioning agent, [authorization to change the membership](/windows/security/threat-protection/auditing/audit-security-group-management) in the new AD group.
 
 You'll then be able to govern access to the AD application through this new access package.
@@ -119,7 +119,7 @@ Nesting that group into the applications’ existing AD group will allow Entra I
  1.  Using Active Directory Users and Computers, add the new AD group as a member of the existing AD group.
  2.	Create an [access package](../../../id-governance/entitlement-management-access-package-create.md).  Add the application from #1, the security group from #3, as resources in the Access Package.  Configure a direct assignment policy in the access package.
  3.	In [Entitlement Management](../../../id-governance/entitlement-management-overview.md), assign the synced users who need access to the AD based app to the access package.  This includes any user members of the existing AD group who will continue to need access.
- 4. Wait for the new AD group to be updated with thew new members.  Using Active Directory Users and Computers, confirm that the correct users are present as members of the group.
+ 4. Wait for the new AD group to be updated with the new members.  Using Active Directory Users and Computers, confirm that the correct users are present as members of the group.
  5. Using Active Directory Users and Computers, remove the existing members, apart from the new AD group, of the existing AD group.
  6. In your AD domain monitoring, allow only the [gMSA account](how-to-prerequisites.md#group-managed-service-accounts) that runs the provisioning agent, [authorization to change the membership](/windows/security/threat-protection/auditing/audit-security-group-management) in the new AD group.
 
