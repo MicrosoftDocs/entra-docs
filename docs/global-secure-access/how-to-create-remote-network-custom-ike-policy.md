@@ -1,6 +1,6 @@
 ---
-title: How to create a remote network with a customer IKE policy for Global Secure Access (preview)
-description: Learn how to create a remote network with a customer IKE policy for Global Secure Access (preview).
+title: How to create a remote network with a custom IKE policy for Global Secure Access (preview)
+description: Learn how to create a remote network with a custom IKE policy for Global Secure Access (preview).
 author: shlipsey3
 ms.author: sarahlipsey
 manager: amycolannino
@@ -10,7 +10,7 @@ ms.service: network-access
 
 
 ---
-# Create a remote network with a customer IKE policy for Global Secure Access (preview)
+# Create a remote network with a custom IKE policy for Global Secure Access (preview)
 
 IPSec tunnel is a bidirectional communication. This article provides the steps to set up the communication channel in Microsoft Entra admin center and the Microsoft Graph API. The other side of the communication is configured on your customer premises equipment (CPE).
 

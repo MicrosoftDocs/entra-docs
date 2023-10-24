@@ -28,7 +28,7 @@ The following licenses are available for use with Microsoft Entra ID Governance 
 - **Microsoft Entra ID Governance** - Microsoft Entra ID Governance is an advanced set of identity governance capabilities available for Microsoft Entra ID P1 and P2 customers, as two products **Microsoft Entra ID Governance** and **Microsoft Entra ID Governance Step Up for Microsoft Entra ID P2**.  These products contain the basic identity governance capabilities that were in Microsoft Entra ID P2, and additional advanced identity governance capabilities. 
 
 >[!NOTE]
->Microsoft Entra ID Governance scenarios may depends upon other features that aren't covered by Microsoft Entra ID Governance.  These features may have additional licensing requirements.  See [Governance capabilities in other Microsoft Entra features](identity-governance-overview.md#governance-capabilities-in-other-microsoft-entra-features) for more information on governance scenarios that rely on additional features.
+>Microsoft Entra ID Governance scenarios might depend upon other features that aren't covered by Microsoft Entra ID Governance.  These features might have additional licensing requirements.  See [Governance capabilities in other Microsoft Entra features](identity-governance-overview.md#governance-capabilities-in-other-microsoft-entra-features) for more information on governance scenarios that rely on additional features.
 
 Microsoft Entra ID Governance products are not yet available in the US government or US national clouds.
 
@@ -42,7 +42,7 @@ The Microsoft Entra ID Governance capabilities are currently available in two pr
 The [product names and service plan identifiers for licensing](~/identity/users/licensing-service-plan-reference.md) lists additional products that include the prerequisite service plans.
 
 >[!NOTE]
->A subscription to a prerequisite for a Microsoft Entra ID Governance product must be active in the tenant. If a prerequisite is not present, or the subscription expires, then Microsoft Entra ID Governance scenarios may not function as expected.  
+>A subscription to a prerequisite for a Microsoft Entra ID Governance product must be active in the tenant. If a prerequisite is not present, or the subscription expires, then Microsoft Entra ID Governance scenarios might not function as expected.  
 
 To check if the prerequisite products for a Microsoft Entra ID Governance product are present in a tenant, you can use the Microsoft Entra admin center or the Microsoft 365 admin center to view the list of products.
 
@@ -73,34 +73,35 @@ A global administrator in a tenant that has an appropriate prerequisite product,
 The following table shows what features are available with each license.  Note that not all features are available in all clouds; see [Microsoft Entra feature availability](~/identity/authentication/feature-availability.md) for Azure Government.
 
 |Feature|Free|Microsoft Entra ID P1|Microsoft Entra ID P2|Microsoft Entra ID Governance|
-|-----|:-----:|:-----:|:-----:|:-----:| 
+|-----|:-----:|:-----:|:-----:|:-----:|
 |[HR-driven Provisioning](/azure/active-directory/app-provisioning/what-is-hr-driven-provisioning)||x|x|x|
-|Automated user provisioning to SaaS apps|x|x|x|x|	 
-|Automated group provisioning to SaaS apps||x|x|x|	 
+|Automated user provisioning to SaaS apps|x|x|x|x|
+|Automated group provisioning to SaaS apps||x|x|x|
 |Automated provisioning to on-premises apps||x|x|x|
 |[Conditional Access - Terms of use attestation](/azure/active-directory/conditional-access/terms-of-use)||x|x|x| 
 |Entitlement management - Basic entitlement management|||x|x|  
-|Entitlement management - Conditional Access Scoping|||x|x| 
+|Entitlement management - Conditional Access Scoping|||x|x|
 |Entitlement management MyAccess Search|||x|x|  
 |Entitlement management with Verified ID||||x|  
 |Entitlement management + Custom Extensions (Logic Apps)||||x|  
-|Entitlement management + Auto Assignment Policies||||x|   
-|Entitlement management - Invite+Assign Any||||x| 
-|Entitlement management - Guest Conversion API||||x| 
+|Entitlement management + Auto Assignment Policies||||x|
+|Entitlement management - Invite+Assign Any||||x|
+|Entitlement management - Guest Conversion API||||x|
 |Entitlement management - Grace Period - Public Preview|||x|x|  
-|Entitlement management - Sponsors Policy - Public Preview||||x| 
-|Privileged Identity Management (PIM)|||x|x| 
-|PIM For Groups|||x|x| 
-|PIM CA Controls|||x|x| 
+|My Access portal|||x|x|
+|Entitlement management - Sponsors Policy - Public Preview||||x|
+|Privileged Identity Management (PIM)|||x|x|
+|PIM For Groups|||x|x|
+|PIM CA Controls|||x|x|
 |Access Reviews - Basic access certifications and reviews|||x|x|
-|Access reviews - PIM For Groups - Public Preview||||x| 
+|Access reviews - PIM For Groups - Public Preview||||x|
 |Access reviews - Inactive Users reviews||||x|
 |Access Reviews - Inactive Users recommendations|||x|x|
-|Access reviews - Machine learning assisted access certifications and reviews||||x| 
+|Access reviews - Machine learning assisted access certifications and reviews||||x|
 |Lifecycle Workflows (LCW)||||x|
-|LCW + Custom Extensions (Logic Apps)||||x|   
+|LCW + Custom Extensions (Logic Apps)||||x|
 |Identity governance dashboard - Public Preview||x|x|x|
-|Insights and reporting - Inactive guest accounts (Preview)||||x| 
+|Insights and reporting - Inactive guest accounts (Preview)||||x|
 
 
 ## Entitlement Management

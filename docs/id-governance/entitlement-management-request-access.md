@@ -11,7 +11,7 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.subservice: compliance
-ms.date: 05/31/2023
+ms.date: 10/23/2023
 ms.author: owinfrey
 ms.reviewer: mamkumar
 ms.collection: M365-identity-device-management
@@ -32,7 +32,7 @@ The first step is to sign in to the My Access portal where you can request acces
 
 **Prerequisite role:** Requestor
 
-1. Look for an email or a message from the project or business manager you're working with. The email should include a link to the access package you need access to. The link starts with `myaccess`, includes a directory hint, and ends with an access package ID.  (For US Government, the domain may be `https://myaccess.microsoft.us` instead.)
+1. Look for an email or a message from the project or business manager you're working with. The email should include a link to the access package you need access to. The link starts with `myaccess`, includes a directory hint, and ends with an access package ID.  (For US Government, the domain might be `https://myaccess.microsoft.us` instead.)
  
     `https://myaccess.microsoft.com/@<directory_hint>#/access-packages/<access_package_id>`
     > [!NOTE]
@@ -50,15 +50,13 @@ Once you have found the access package in the My Access portal, you can submit a
 
 **Prerequisite role:** Requestor
 
-1. Find the access package in the list.  If necessary, you can search by typing a search string and then selecting the **Name** or **Resources** filter.
+1. Find the access package in the list. If necessary, you can search by typing a search string. You can search by name, description, or resources.
  
-1. To request access you can either:
+1. To request access, you can either select the row or select **Request**.
 
-    1. Select the row to see Access package details, and then select Request access.
+1. Review the details of the access package, then select **Continue**.
 
-    1. Or select **Request access** directly.
-
-1. You may have to answer questions and provide business justification for your request. If there are questions that you need to answer, type in your responses in the fields.
+1. You might have to answer questions and provide business justification for your request. If there are questions that you need to answer, type in your responses in the fields.
 
 1. If the **Business justification** box is displayed, type a justification for needing access.
 
@@ -70,7 +68,7 @@ Once you have found the access package in the My Access portal, you can submit a
 
         ![My Access portal - Request access](./media/entitlement-management-shared/my-access-request-access.png)
 
-1. When finished, select **Submit** to submit your request.
+1. When finished, select **Submit request** to submit your request.
 
 1. Select **Request history** to see a list of your requests and the status.
 
@@ -78,18 +76,18 @@ Once you have found the access package in the My Access portal, you can submit a
 
 ### Select a policy
 
-If you request access to an access package that has multiple policies that apply, you might be asked to select a policy. For example, an access package manager might configure an access package with two policies for two groups of internal employees. The first policy might allow access for 60 days and require approval. The second policy might allow access for 2 days and not require approval. If you encounter this scenario, you must select the policy you want to use.
+If you request access to an access package that has multiple policies that apply, you might be asked to select a policy. For example, an access package manager might configure an access package with two policies for two groups of internal employees. The first policy might allow access for 60 days and require approval. The second policy might allow access for two days and not require approval. If you encounter this scenario, you must select the policy you want to use.
 
 ![My Access portal - Request access - multiple policies](./media/entitlement-management-request-access/my-access-multiple-policies.png)
 
 ### Fill out requestor information
 
-You may request access to an access package that requires business justification and additional requestor information before granting you access to the access package. Fill out all the requestor information required to access the access package.
+You can request access to an access package that requires business justification and additional requestor information before granting you access to the access package. Fill out all the requestor information required to access the access package.
 
 ![My Access portal - Request access - Fill out requestor information](./media/entitlement-management-request-access/my-access-requestor-information.png)
 
 > [!NOTE]
-> You may notice that some of the additional requestor information has pre-populated values. This generally occurs if your account already has attribute information set, either from a previous request or other process. These values can be editable or not depending on the settings of the policy selected.
+> You might notice that some of the additional requestor information has pre-populated values. This generally occurs if your account already has attribute information set, either from a previous request or other process. These values can be editable or not depending on the settings of the policy selected.
 
 ## Resubmit a request
 
@@ -105,11 +103,11 @@ When you request access to an access package, your request might be denied or yo
 
 1. Select the check mark to select the access package.
 
-1. Select the blue **View** link to the right of the selected access package.
+1. Select the blue **View** link of the selected access package.
     
     ![Select access package and view link](./media/entitlement-management-request-access/resubmit-request-select-request-and-view.png)
 
-    A pane opens to the right with the request history for the access package.
+    A pane opens with the request history for the access package.
     
     ![Select resubmit button](./media/entitlement-management-request-access/resubmit-request-select-resubmit.png)
 
@@ -121,7 +119,7 @@ If you submit an access request and the request is still in the **pending approv
 
 **Prerequisite role:** Requestor
 
-1. In the My Access portal, on the left, select **Request history** to see a list of your requests and the status.
+1. In the My Access portal, select **Request history** to see a list of your requests and the status.
 
 1. Select the **View** link for the request you want to cancel.
 

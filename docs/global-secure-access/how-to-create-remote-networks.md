@@ -217,6 +217,10 @@ There are a few things to consider and verify when creating remote networks. You
 
 - **Verify Microsoft's public IP address**: When you delete a device link and/or create a new one, you may get another public IP endpoint of that link in **View configuration** for that remote network. This change can cause the IKE negotiation to fail. If you encounter this scenario, update the public IP address in the crypto profile of your CPE.
 
+- **Verify BGP connectivity setting on your CPE**: Suppose you create a device link for a remote network. Microsoft provides you the public IP address, say PIP1, and BGP address, say BGP1, of its gateway. This connectivity information is available under `localConfigurations` in the jSON blob you see when you click **View Configuration** for that remote network. On your CPE, make sure that you have a static route destined to BGP1 sent over the tunnel interface created with PIP1. This is necessary so that CPE can learn the BGP routes we publish over the IPsec tunnel you created with Microsoft.
+
+- **Verify firewall rules**: Allow UDP port 500 and 4500 and TCP port 179 for IPsec tunnel and BGP connectivity in your firewall.
+  
 - **Port forwarding**: In some situations, the ISP router can also be a network address translation (NAT) device. A NAT converts the private IP addresses of home devices to a public internet-routable device.
     - Generally, a NAT device changes both the IP address and the port. This port changing is the root of the problem.
     - For IPsec tunnels to work, Global Secure Access uses port 500. This port is where IKE negotiation happens.
