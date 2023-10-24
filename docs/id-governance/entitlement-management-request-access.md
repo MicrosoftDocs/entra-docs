@@ -87,7 +87,7 @@ You can request access to an access package that requires business justification
 ![My Access portal - Request access - Fill out requestor information](./media/entitlement-management-request-access/my-access-requestor-information.png)
 
 > [!NOTE]
-> You may notice that some of the additional requestor information has pre-populated values. This generally occurs if your account already has attribute information set, either from a previous request or other process. These values can be editable or not depending on the settings of the policy selected.
+> You might notice that some of the additional requestor information has pre-populated values. This generally occurs if your account already has attribute information set, either from a previous request or other process. These values can be editable or not depending on the settings of the policy selected.
 
 ## Resubmit a request
 
