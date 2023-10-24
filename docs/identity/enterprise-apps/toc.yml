@@ -241,7 +241,7 @@
               - name: SSL-VPN
                 href: f5-passwordless-vpn.md  
               - name: B2C
-                href: /azure/active-directory-b2c/partner-f5?toc=/entra/identity/enterprise-apps/toc.json?bc=/entra/identity/enterprise-apps/breadcrumb/toc.json
+                href: /azure/active-directory-b2c/partner-f5?toc=/entra/identity/enterprise-apps/toc.json?bc=/entra/identity/enterprise-apps/breadcrumb/toc.json?context=/entra/identity/enterprise-apps/context/manage-apps-context.json
       - name: Silverfort
         href: silverfort-integration.md
     - name: Single sign-on
@@ -283,11 +283,11 @@
   - name: Reference
     items:
     - name: Application API - Microsoft Graph
-      href: /graph/api/resources/application?toc=/entra/identity/enterprise-apps/toc.json?bc=/entra/identity/enterprise-apps/breadcrumb/toc.json
+      href: /graph/api/resources/application?toc=/entra/identity/enterprise-apps/toc.json?bc=/entra/identity/enterprise-apps/breadcrumb/toc.json?context=/entra/identity/enterprise-apps/context/manage-apps-context.json
     - name: Service principals API - Microsoft Graph
-      href: /graph/api/resources/serviceprincipal?toc=/entra/identity/enterprise-apps/toc.json?bc=/entra/identity/enterprise-apps/breadcrumb/toc.json
+      href: /graph/api/resources/serviceprincipal?toc=/entra/identity/enterprise-apps/toc.json?bc=/entra/identity/enterprise-apps/breadcrumb/toc.json?context=/entra/identity/enterprise-apps/context/manage-apps-context.json
     - name: Manage apps using Microsoft Graph
-      href: /graph/tutorial-applications-basics?toc=/entra/identity/enterprise-apps/toc.json?bc=/entra/identity/enterprise-apps/breadcrumb/toc.json
+      href: /graph/tutorial-applications-basics?toc=/entra/identity/enterprise-apps/toc.json?bc=/entra/identity/enterprise-apps/breadcrumb/toc.json?context=/entra/identity/enterprise-apps/context/manage-apps-context.json
     - name: Deletion and recovery FAQ
       href: delete-recover-faq.yml
     - name: Admin consent workflow FAQ

@@ -8,13 +8,6 @@
   - name: Global Secure Access
     tocHref: /entra/global-secure-access/
     topicHref: /entra/global-secure-access/
-    items:
-      - name: Microsoft Entra Internet Access
-        tocHref: /entra/global-secure-access/entra-internet-access/
-        topicHref: /entra/global-secure-access/entra-internet-access/
-      - name: Microsoft Entra Private Access
-        tocHref: /entra/global-secure-access/entra-private-access/
-        topicHref: /entra/global-secure-access/entra-private-access/
   - name: Microsoft Entra External ID
     tocHref: /entra/external-id/
     topicHref: /entra/external-id/
@@ -54,14 +47,14 @@
         tocHref: /entra/identity/hybrid/
         topicHref: /entra/identity/hybrid/
       - name: Managed identities
-        tocHref: /entra/identity/managed-identities/
-        topicHref: /entra/identity/managed-identities/
+        tocHref: /entra/identity/managed-identities-azure-resources/
+        topicHref: /entra/identity/managed-identities-azure-resources/
       - name: Monitoring and health
         tocHref: /entra/identity/monitoring-health/
         topicHref: /entra/identity/monitoring-health/
       - name: Multitenant organizations
-        tocHref: /entra/identity/multitenant-organizations/
-        topicHref: /entra/identity/multitenant-organizations/
+        tocHref: /entra/identity/multi-tenant-organizations/
+        topicHref: /entra/identity/multi-tenant-organizations/
       - name: Role-based access control
         tocHref: /entra/identity/role-based-access-control/
         topicHref: /entra/identity/role-based-access-control/
