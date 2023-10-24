@@ -1,14 +1,14 @@
 ---
 title: Configure optional claims
 description: Learn how to configure optional claims in tokens issued by Microsoft identity platform.
-author: davidmu1
+author: cilwerner
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: how-to
 ms.workload: identity
 ms.date: 06/07/2023
-ms.author: davidmu
+ms.author: cwerner
 ms.custom: aaddev, curation-claims
 ms.reviewer: ludwignick
 ---

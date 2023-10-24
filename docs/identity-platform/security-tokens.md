@@ -2,14 +2,14 @@
 title: Tokens and claims overview
 description: Learn about the basics of security tokens in the Microsoft identity platform.
 services: active-directory
-author: davidmu1
+author: cilwerner
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
 ms.workload: identity
 ms.date: 06/02/2023
-ms.author: davidmu
+ms.author: cwerner
 ms.custom: aaddev, curation-claims
 ms.reviewer: jmprieur, saeeda, ludwignick
 #Customer intent: As an application developer, I want to understand the basic concepts of security tokens in the Microsoft identity platform.
