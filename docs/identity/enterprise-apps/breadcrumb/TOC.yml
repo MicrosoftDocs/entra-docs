@@ -1,0 +1,17 @@
+- name: Entra
+  tocHref: /entra/
+  topicHref: /entra/index
+  items:
+  - name: Microsoft Entra ID
+    tocHref: /entra/identity/
+    topicHref: /entra/identity/index
+    items:
+    - name: Enterprise applications
+      tocHref: /azure/active-directory-b2c/
+      topicHref: /entra/identity/enterprise-apps/index
+    - name: Enterprise applications
+      tocHref: /graph/
+      topicHref: /entra/identity/enterprise-apps/index
+    - name: Enterprise applications
+      tocHref: /entra/identity-platform/
+      topicHref: /entra/identity/enterprise-apps/index

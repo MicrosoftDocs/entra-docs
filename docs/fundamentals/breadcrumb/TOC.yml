@@ -1,0 +1,17 @@
+items:
+- name: Entra
+  tocHref: /entra/
+  topicHref: /entra/index
+  items:
+  - name: Fundamentals
+    tocHref: /entra/identity/authentication/
+    topicHref: /entra/fundamentals
+  - name: Fundamentals
+    tocHref: /entra/identity/conditional-access/
+    topicHref: /entra/identity/authentication/
+  - name: Fundamentals
+    tocHref: /entra/identity/users/
+    topicHref: /entra/identity/authentication/
+  - name: Fundamentals
+    tocHref: /entra/identity/enterprise-apps/
+    topicHref: /entra/identity/authentication/
