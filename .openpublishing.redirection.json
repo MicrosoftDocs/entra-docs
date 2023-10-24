@@ -4,6 +4,11 @@
         "source_path_from_root": "/docs/identity/domain-services/delete-aadds.md",
         "redirect_url": "/entra/identity/domain-services/delete",
         "redirect_document_id": false  
+      },
+      {
+        "source_path_from_root": "/docs/identity/saas-apps/index.md",
+        "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+        "redirect_document_id": false  
       }
     ]
   }
