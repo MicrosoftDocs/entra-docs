@@ -14,6 +14,7 @@ ms.collection: M365-identity-device-management
 ---
 
 # Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync
+The following document describes how to migrate group writeback using Microsoft Entra Connect Sync (formely Azure AD Connect) to Microsoft Entra Cloud Sync.
 
 ## Step 1 - Copy adminDescription to msDS-ExternalDirectoryObjectID
  1. In your on-premises environment, open ADSI Edit.
@@ -24,15 +25,21 @@ ms.collection: M365-identity-device-management
  :::image type="content" source="media/migrate-group-writeback/migrate-2.png" alt-text="Screenshot of the msDS-ExternalDirectoryObjectID attribute." lightbox="media/migrate-group-writeback/migrate-2.png":::
 
 ## Step 2 - Place Entra Connect server in staging mode and disable the sync scheduler
-1. Start the Microsot Entra Connect Sync(Azure AD Connect) wizard 
-2. Click **Configure**
-3. Select **Configure staging mode** and click **Next**
-4. Enter Entra ID credentials
-5. Place a check in **Enable staging mode** and click **Next**
-6. Click **Configure**
-7. Click **Exit**
-8. On your Microsoft Entra Connect server, open a PowerShell prompt as an administrator. 
-9. Disable the sync scheduler: 
+ 1. Start the Microsot Entra Connect Sync(Azure AD Connect) wizard 
+ 2. Click **Configure**
+ 3. Select **Configure staging mode** and click **Next**
+ 4. Enter Entra ID credentials
+ 5. Place a check in **Enable staging mode** and click **Next**
+  
+  :::image type="content" source="media/migrate-group-writeback/migrate-3.png" alt-text="Screenshot of enabling staging mode." lightbox="media/migrate-group-writeback/migrate-3.png":::
+ 
+ 6. Click **Configure**
+ 7. Click **Exit**
+
+   :::image type="content" source="media/migrate-group-writeback/migrate-4.png" alt-text="Screenshot of staging mode success." lightbox="media/migrate-group-writeback/migrate-4.png":::
+ 
+ 8. On your Microsoft Entra Connect server, open a PowerShell prompt as an administrator. 
+ 9. Disable the sync scheduler: 
 
    ``` PowerShell 
    Set-ADSyncScheduler -SyncCycleEnabled $false  
@@ -40,16 +47,10 @@ ms.collection: M365-identity-device-management
 
 
 ## Step 3 - Create custom group inbound rule
-In the Microsoft Entra Connect Synchronization Rules editor, you need to create an inbound sync rule that filters out groups in the OU you identified previously.  The inbound sync rule is a join rule with a target attribute of cloudNoFlow.  This rule tells Microsoft Entra Connect not to synchronize attributes for these groups.  
+In the Microsoft Entra Connect Synchronization Rules editor, you need to create an inbound sync rule that filters out groups that have NULL for the mail attribute.  The inbound sync rule is a join rule with a target attribute of cloudNoFlow.  This rule tells Microsoft Entra Connect not to synchronize attributes for these groups.  
 
  1. Launch the synchronization editor from the application menu in desktop as shown below:
- 
-     ![Screenshot of the synchronization rule editor menu.](media/tutorial-migrate-aadc-aadccp/user-8.png)
-
  2. Select **Inbound** from the drop-down list for Direction and select **Add new rule**.
-
-     ![Screenshot that shows the "View and manage your synchronization rules" window with "Inbound" and the "Add new rule" button selected.](media/tutorial-migrate-aadc-aadccp/user-1.png)
-
  3. On the **Description** page, enter the following and select **Next**:
 
     - **Name:** Give the rule a meaningful name
@@ -61,31 +62,27 @@ In the Microsoft Entra Connect Synchronization Rules editor, you need to create 
     - **Precedence:** Provide a value that is unique in the system
     - **Tag:** Leave this empty
 
-    ![Screenshot that shows the "Create inbound synchronization rule - Description" page with values entered.](media/tutorial-migrate-aadc-aadccp/user-2.png)
+    :::image type="content" source="media/migrate-group-writeback/migrate-5.png" alt-text="Screenshot of inbound sync rule." lightbox="media/migrate-group-writeback/migrate-5.png":::
 
- 4. On the **Scoping filter** page, enter the OU or security group that you want the pilot based off.  To filter on OU, add the OU portion of the distinguished name. This rule will be applied to all users who are in that OU. So, if DN ends with "OU=CPUsers,DC=contoso,DC=com, you would add this filter.  Then select **Next**.
+ 4. On the **Scoping filter** page, **Add** the following and then select **Next**.
 
-    |Rule|Attribute|Operator|Value|
-    |-----|----|----|-----|
-    |Scoping OU|DN|ENDSWITH|Distinguished name of the OU.|
-    |Scoping group||ISMEMBEROF|Distinguished name of the security group.|
+    |Attribute|Operator|Value|
+    |-----|----|----|
+    |cloudMastered|EQUAL|true.|
+    |mail|ISNULL||
 
-    ![Screenshot that shows the **Create inbound synchronization rule - Scoping filter** page with a scoping filter value entered.](media/tutorial-migrate-aadc-aadccp/user-3.png)
+    :::image type="content" source="media/migrate-group-writeback/migrate-6.png" alt-text="Screenshot of scoping filter." lightbox="media/migrate-group-writeback/migrate-6.png":::
 
  5. On the **Join** rules page, select **Next**.
  6. On the **Transformations** page, add a Constant transformation: flow True to cloudNoFlow attribute. Select **Add**.
 
-     ![Screenshot that shows the **Create inbound synchronization rule - Transformations** page with a **Constant transformation** flow added.](media/tutorial-migrate-aadc-aadccp/user-4.png)
+    :::image type="content" source="media/migrate-group-writeback/migrate-7.png" alt-text="Screenshot of transformation." lightbox="media/migrate-group-writeback/migrate-7.png":::
 
-Same steps need to be followed for all object types (user, group and contact). Repeat steps per configured AD Connector / per AD forest.
 
 ## Step 4 - Create custom group outbound rule
 You'll also need an outbound sync rule with a link type of JoinNoFlow and the scoping filter that has the cloudNoFlow attribute set to True.  This rule tells Microsoft Entra Connect not to synchronize attributes for these groups. 
 
  1. Select **Outbound** from the drop-down list for Direction and select **Add rule**.
-
-     ![Screenshot that shows the **Outbound** Direction selected and the **Add new rule** button highlighted.](media/tutorial-migrate-aadc-aadccp/user-5.png)
-
  2. On the **Description** page, enter the following and select **Next**:
 
     - **Name:** Give the rule a meaningful name
@@ -97,12 +94,12 @@ You'll also need an outbound sync rule with a link type of JoinNoFlow and the sc
     - **Precedence:** Provide a value that is unique in the system<br>
     - **Tag:** Leave this empty
 
-    ![Screenshot that shows the **Description** page with properties entered.](media/tutorial-migrate-aadc-aadccp/user-6.png)
+    :::image type="content" source="media/migrate-group-writeback/migrate-8.png" alt-text="Screenshot of outbound sync rule." lightbox="media/migrate-group-writeback/migrate-8.png":::
 
  3. On the **Scoping filter** page, choose **cloudNoFlow** equal **True**. Then select **Next**.
-
-     ![Screenshot that shows a custom rule.](media/tutorial-migrate-aadc-aadccp/user-7.png)
-
+    
+    :::image type="content" source="media/migrate-group-writeback/migrate-9.png" alt-text="Screenshot of outbound scoping filter." lightbox="media/migrate-group-writeback/migrate-9.png":::
+ 
  4. On the **Join** rules page, select **Next**.
  5. On the **Transformations** page, select **Add**.
 
@@ -133,6 +130,8 @@ You'll also need an outbound sync rule with a link type of JoinNoFlow and the sc
    ``` PowerShell 
    Set-ADSyncScheduler -SyncCycleEnabled $true  
    ``` 
+    :::image type="content" source="media/migrate-group-writeback/migrate-11.png" alt-text="Screenshot of PowerShell execution." lightbox="media/migrate-group-writeback/migrate-11.png":::
+
 ## Step 6 - Remove the Microsoft Entra Connect server from staging mode
 1.  Start the Entra Connect Sync wizard (Azure AD Connect)
 2.  Click **Configure**
@@ -143,6 +142,7 @@ You'll also need an outbound sync rule with a link type of JoinNoFlow and the sc
 7.  Click **Exit**
 
 ## Step 7 - Configure Microsoft Entra Cloud Sync
+Now that you have successfully removed the groups from the scope of Microsoft Entra Connect Sync, you can seupt and configure Microsoft Entra Cloud Sync to take over syncrhonization.  To do this, see [Provision groups to Active Directory using Microsoft Entra Cloud Sync](how-to-configure-entra-to-ad.md)
 
 ## Next Steps
 - [Provision groups to Active Directory using Microsoft Entra Cloud Sync](how-to-configure-entra-to-ad.md)
