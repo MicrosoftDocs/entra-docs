@@ -47,7 +47,7 @@ These logs provide:
 - Additional information added to original logs
 - Accurate IP address
 
-These logs are a subset of the logs available in the [Microsoft 365 audit logs](/microsoft-365/compliance/search-the-audit-log-in-security-and-compliance?view=0365-worldwide&preserve-view=true). The logs are enriched with additional information, including the device ID, operating system, and original IP address. Enriched SharePoint logs provide information on files that were downloaded, uploaded, deleted, modified, or recycled. Deleted or recycled list items are also included in the enriched logs.
+These logs are a subset of the logs available in the [Microsoft 365 audit logs](/microsoft-365/compliance/search-the-audit-log-in-security-and-compliance?view=0365-worldwide&preserve-view=true). The logs are enriched with more information, including the device ID, operating system, and original IP address. Enriched SharePoint logs provide information on files that were downloaded, uploaded, deleted, modified, or recycled. Deleted or recycled list items are also included in the enriched logs.
 
 ## How to view the logs
 
@@ -60,14 +60,14 @@ Viewing the enriched Microsoft 365 logs is a two-step process. First, you need t
 
 To enable the Enriched Microsoft 365 logs:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](/azure/active-directory/roles/permissions-reference#global-administrator)..
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](/azure/active-directory/roles/permissions-reference#global-administrator).
 1. Browse to **Global Secure Access (preview)** > **Global settings** > **Logging**.
 1. Select the type of Microsoft 365 logs you want to enable.
 1. Select **Save**.
 
     :::image type="content" source="media/how-to-view-enriched-logs/enriched-logs-sharepoint.png" alt-text="Screenshot of the Logging area of Global Secure Access." lightbox="media/how-to-view-enriched-logs/enriched-logs-sharepoint-expanded.png":::
 
-The enriched logs may take up to 72 hours to fully integrate with the service.
+The enriched logs take up to 72 hours to fully integrate with the service.
 
 ### Configure Diagnostic settings
 
@@ -90,7 +90,7 @@ With your endpoint created, you can configure Diagnostic settings.
 1. Select **Add Diagnostic setting**.
 1. Give your diagnostic setting a name.
 1. Select `EnrichedOffice365AuditLogs`.
-1. Select the **Destination details** for where you'd like to send the logs. Choose any or all of the following destinations. Additional fields appear, depending on your selection.
+1. Select the **Destination details** for where you'd like to send the logs. Choose any or all of the following destinations. More fields appear, depending on your selection.
 
     * **Send to Log Analytics workspace:** Select the appropriate details from the menus that appear.
     * **Archive to a storage account:** Provide the number of days you'd like to retain the data in the **Retention days** boxes that appear next to the log categories. Select the appropriate details from the menus that appear.
