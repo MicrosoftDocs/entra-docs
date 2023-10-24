@@ -293,17 +293,17 @@ items:
             - name: Add logic to attribute collection
               items:
                 - name: Create attribute collection start and submit events
-                  href: ../../develop/custom-extension-attribute-collection.md?context=/entra/external-id/customers/context/customers-context
+                  href: ~/identity-platform/custom-extension-attribute-collection.md?context=/entra/external-id/customers/context/customers-context
                 - name: OnAttributeCollectionStart event reference
-                  href: ../../develop/custom-extension-OnAttributeCollectionStart-reference.md?context=/entra/external-id/customers/context/customers-context
+                  href: ~/identity-platform/custom-extension-OnAttributeCollectionStart-reference.md?context=/entra/external-id/customers/context/customers-context
                 - name: OnAttributeCollectionSubmit event reference
-                  href: ../../develop/custom-extension-OnAttributeCollectionSubmit-reference.md?context=/entra/external-id/customers/context/customers-context
+                  href: ~/identity-platform/custom-extension-OnAttributeCollectionSubmit-reference.md?context=/entra/external-id/customers/context/customers-context
             - name: Add claims from external systems
               items:
                  - name: Token issuance start event
-                   href: ../../develop/custom-extension-get-started.md?context=/entra/external-id/customers/context/customers-context
+                   href: ~/identity-platform/custom-extension-get-started.md?context=/entra/external-id/customers/context/customers-context
                  - name: Troubleshoot your custom claims provider API
-                   href: ../../develop/custom-extension-troubleshoot.md?context=/entra/external-id/customers/context/customers-context
+                   href: ~/identity-platform/custom-extension-troubleshoot.md?context=/entra/external-id/customers/context/customers-context
     - name: Secure
       items:
       - name: Multifactor authentication
