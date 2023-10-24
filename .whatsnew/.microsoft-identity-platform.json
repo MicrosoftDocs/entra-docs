@@ -11,8 +11,8 @@
         "minAdditionsToFile" : 20,
         "maxFilesChanged": 50,
         "labels": [
-            "label:entra-id/svc",
-            "label:identity-platform/subsvc"
+            "label:active-directory/svc",
+            "label:develop/subsvc"
         ]
     },
     "areas": [

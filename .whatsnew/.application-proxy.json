@@ -11,7 +11,7 @@
         "minAdditionsToFile" : 2,
         "maxFilesChanged": 50,
         "labels": [
-            "label:entra-id/svc",
+            "label:active-directory/svc",
             "label:app-proxy/subsvc"
         ]
     },

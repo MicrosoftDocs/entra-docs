@@ -11,7 +11,7 @@
         "minAdditionsToFile" : 10,
         "maxFilesChanged": 50,
         "labels": [
-            "label:external-id/svc",
+            "label:active-directory/svc",
             "label:ciam/subsvc"
         ]
     },
