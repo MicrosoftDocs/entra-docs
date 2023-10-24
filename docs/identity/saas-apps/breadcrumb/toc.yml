@@ -8,4 +8,4 @@
     items: 
       - name: Application tutorials
         tocHref: /azure/azure-databricks/administration-guide/users-groups/scim/
-        topicHref: /entra/identity/saas-apps/
+        topicHref: /entra/identity/saas-apps/tutorial-list/

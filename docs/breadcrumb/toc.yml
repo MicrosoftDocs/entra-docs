@@ -59,8 +59,8 @@
         tocHref: /entra/identity/role-based-access-control/
         topicHref: /entra/identity/role-based-access-control/
       - name: SaaS apps
-        tocHref: /entra/identity/saas-apps/
-        topicHref: /entra/identity/saas-apps/
+        tocHref: /entra/identity/saas-apps/tutorial-list/
+        topicHref: /entra/identity/saas-apps/tutorial-list/
       - name: Users
         tocHref: /entra/identity/users/
         topicHref: /entra/identity/users/
