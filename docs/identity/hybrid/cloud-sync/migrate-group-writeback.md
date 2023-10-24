@@ -31,9 +31,7 @@ The following prerequisites are required to implement this scenario.
  - Provisioning agent with build version [1.1.1367.0](reference-version-history.md#) or later.
  - The provisioning agent must be able to communicate with the domain controller(s) on ports TCP/389 (LDAP) and TCP/3268 (Global Catalog).
      - Required for global catalog lookup to filter out invalid membership references
- - Mircorosft Entra Connect with build version [2.2.8.0](../connect/reference-connect-version-history.md#2280) or later
-     - Required to support on-premises user membership synchronized using Microsoft Entra Connect 
-     - Required to synchronize AD:user:objectGUID to AAD:user:onPremisesObjectIdentifier
+
 
 
 ## Step 1 - Copy adminDescription to msDS-ExternalDirectoryObjectID
