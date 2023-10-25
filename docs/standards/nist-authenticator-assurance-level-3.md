@@ -33,7 +33,7 @@ Use Microsoft authentication methods to meet required NIST authenticator types.
 | Microsoft Entra authentication methods| NIST authenticator type |
 | - | -|
 | **Recommended methods**|    |
-| Hardware protected certificate (smartcard/security key/TPM) <br> FIDO 2 security key<br>Windows Hello for Business with hardware TPM| Multi-factor cryptographic hardware |
+| Hardware protected certificate (smartcard/security key/TPM) <br> FIDO 2 security key<br>Windows Hello for Business with hardware TPM <br> Platform credentials for macOS| Multi-factor cryptographic hardware |
 | **Additional methods**||
 |Password<br>**AND**<br>- Microsoft Entra joined with hardware TPM <br>- **OR**<br>- Microsoft Entra hybrid joined with hardware TPM|Memorized secret <br>**AND**<br>Single-factor cryptographic hardware|
 |Password<br>**AND**<br>OATH hardware tokens (Preview) <br>**AND**<br>- Single-factor software certificate<br>- **OR**<br>- Microsoft Entra hybrid joined or compliant device with software TPM |Memorized secret<br>**AND**<br>Single-factor OTP hardware <br>**AND**<br>Single-factor cryptographic software|
@@ -91,6 +91,10 @@ FIDO 2 security keys, smart cards, and Windows Hello for Business can help you m
 **Windows Hello for Business**
 
 FIPS 140 requires the cryptographic boundary, including software, firmware, and hardware, to be in scope for evaluation. Windows operating systems can be paired with thousands of these combinations. As such, it is not feasible for Microsoft to have Windows Hello for Business validated at FIPS 140 Security Level 2. Federal customers should conduct risk assessments and evaluate each of the following component certifications as part of their risk acceptance before accepting this service as AAL3:
+
+**MacOS Platform SSO**
+
+FIPS 140 Security Level 2 is implemented for macOS 13 at a minimum, with most new devices implementing Level 3. We recommend referring to the [Apple Platform Certifications](https://support.apple.com/guide/certifications/apc3a7433eb89/web). It is important for you to be aware the security level on your device.
 
 * **Windows 10 and Windows Server** use the [US Government Approved Protection Profile for General Purpose Operating Systems Version 4.2.1](https://www.niap-ccevs.org/Profile/Info.cfm?PPID=442&id=442) from the National Information Assurance Partnership (NIAP). This organization oversees a national program to evaluate commercial off-the-shelf (COTS) information technology products for conformance with the international Common Criteria.
 
