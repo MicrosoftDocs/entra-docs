@@ -8,7 +8,6 @@ tags: azuread
 ms.service: active-directory
 ms.topic: conceptual
 ms.workload: identity
-ms.subservice: architecture
 ms.date: 10/23/2023
 ms.author: jricketts  
 ---
@@ -78,7 +77,7 @@ For more information on how to create, view, save, and use custom queries:
 
 * [Create a custom query](~/permissions-management/how-to-create-custom-queries.md)
 * [Filter and query user activity](~/permissions-management/product-audit-trail.md)
-* [Use queries to see how users access information](~/permissions-management/ui-audit-trail)
+* [Use queries to see how users access information](~/permissions-management/ui-audit-trail.md)
 
 ### Configure alerts for Security Operations investigations
 
