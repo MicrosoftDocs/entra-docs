@@ -92,10 +92,10 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 1. In addition to above, bswift application expects few more attributes to be passed back in SAML response which are shown below. These attributes are also pre populated but you can review them as per your requirements.
 	
-	| Name   Source Attribute|
+	| Name   | Source Attribute|
 	| --------------- | --------- |
 	| workEmail | user.mail |
-	| abbrevName  | <companyURL> |
+	| abbrevName  | <company_URL> |
 	| clientSSOInboundID  | <custom_ID> |
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
