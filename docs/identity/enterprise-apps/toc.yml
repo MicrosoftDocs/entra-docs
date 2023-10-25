@@ -241,7 +241,7 @@
               - name: SSL-VPN
                 href: f5-passwordless-vpn.md  
               - name: B2C
-                href: /azure/active-directory-b2c/partner-f5?context=/azure/active-directory/manage-apps/context/manage-apps-context
+                href: /azure/active-directory-b2c/partner-f5?toc=/entra/identity/enterprise-apps/toc.json?bc=/entra/identity/enterprise-apps/breadcrumb/toc.json?context=/entra/identity/enterprise-apps/context/manage-apps-context.json
       - name: Silverfort
         href: silverfort-integration.md
     - name: Single sign-on
@@ -279,15 +279,15 @@
       - name: Delete an enterprise application
         href: delete-application-portal.md
       - name: Restore an enterprise application
-        href: restore-application.md   
+        href: restore-application.md
   - name: Reference
     items:
     - name: Application API - Microsoft Graph
-      href: /graph/api/resources/application?context=/azure/active-directory/manage-apps/context/manage-apps-context
+      href: /graph/api/resources/application?toc=/entra/identity/enterprise-apps/toc.json?bc=/entra/identity/enterprise-apps/breadcrumb/toc.json?context=/entra/identity/enterprise-apps/context/manage-apps-context.json
     - name: Service principals API - Microsoft Graph
-      href: /graph/api/resources/serviceprincipal?context=/azure/active-directory/manage-apps/context/manage-apps-context
+      href: /graph/api/resources/serviceprincipal?toc=/entra/identity/enterprise-apps/toc.json?bc=/entra/identity/enterprise-apps/breadcrumb/toc.json?context=/entra/identity/enterprise-apps/context/manage-apps-context.json
     - name: Manage apps using Microsoft Graph
-      href: /graph/tutorial-applications-basics?context=/azure/active-directory/manage-apps/context/manage-apps-context
+      href: /graph/tutorial-applications-basics?toc=/entra/identity/enterprise-apps/toc.json?bc=/entra/identity/enterprise-apps/breadcrumb/toc.json?context=/entra/identity/enterprise-apps/context/manage-apps-context.json
     - name: Deletion and recovery FAQ
       href: delete-recover-faq.yml
     - name: Admin consent workflow FAQ
@@ -307,7 +307,7 @@
         - name: Migration resources
           href: migration-resources.md
         - name: Support and help options for developers
-          href: ~/identity-platform/developer-support-help-options.md?context=/azure/active-directory/manage-apps/context/manage-apps-context
+          href: ~/identity-platform/developer-support-help-options.md?toc=/entra/identity/enterprise-apps/toc.json?bc=/entra/identity/enterprise-apps/breadcrumb/toc.json
         - name: Azure feedback forum
           href: https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789
         - name: Microsoft Q&A question page

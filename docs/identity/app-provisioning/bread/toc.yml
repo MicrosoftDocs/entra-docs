@@ -1,71 +1,12 @@
-- name: Azure
-  tocHref: /azure/
-  topicHref: /azure/index
+items:
+- name: Microsoft Entra
+  tocHref: /entra/
+  topicHref: /entra/index/
   items:
-  - name: Active Directory
-    tocHref: /azure/active-directory/saas-apps/
-    topicHref: /azure/active-directory/index
+  - name: Microsoft Entra ID
+    tocHref: /entra/identity/
+    topicHref: /entra/identity/index
     items:
     - name: Application provisioning
-      tocHref: /azure/active-directory/saas-apps/
-      topicHref: /azure/active-directory/app-provisioning/index
-  
-- name: Azure
-  tocHref: /azure/
-  topicHref: /azure/index
-  items:  
-  - name: Active Directory
-    tocHref: /azure/active-directory/fundamentals/
-    topicHref: /azure/active-directory/index
-    items:
-    - name: Application provisioning
-      tocHref: /azure/active-directory/fundamentals/
-      topicHref: /azure/active-directory/app-provisioning/index
-  
-- name: Azure
-  tocHref: /azure/
-  topicHref: /azure/index
-  items:  
-  - name: Active Directory
-    tocHref: /azure/active-directory/reports-monitoring/
-    topicHref: /azure/active-directory/index
-    items:
-    - name: Application provisioning
-      tocHref: /azure/active-directory/reports-monitoring/
-      topicHref: /azure/active-directory/app-provisioning/index
-
-- name: Azure
-  tocHref: /azure/
-  topicHref: /azure/index
-  items:  
-  - name: Active Directory
-    tocHref: /azure/active-directory/hybrid/
-    topicHref: /azure/active-directory/index
-    items:
-    - name: Application provisioning
-      tocHref: /azure/active-directory/hybrid/
-      topicHref: /azure/active-directory/app-provisioning/index
-  
-- name: Azure
-  tocHref: /azure/
-  topicHref: /azure/index
-  items:  
-  - name: Active Directory
-    tocHref: /azure/active-directory/develop/
-    topicHref: /azure/active-directory/index
-    items:
-    - name: Application provisioning
-      tocHref: /azure/active-directory/develop/
-      topicHref: /azure/active-directory/app-provisioning/index
-
-- name: Azure
-  tocHref: /azure/
-  topicHref: /azure/index
-  items:  
-  - name: Active Directory
-    tocHref: /azure/active-directory-domain-services/
-    topicHref: /azure/active-directory/index
-    items:
-    - name: Application provisioning
-      tocHref: /azure/active-directory-domain-services/
-      topicHref: /azure/active-directory/app-provisioning/index
+      tocHref: /entra/identity/monitoring-health/
+      topicHref: /entra/identity/app-provisioning/

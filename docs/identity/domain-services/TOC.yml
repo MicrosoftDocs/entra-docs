@@ -52,15 +52,15 @@
     - name: How Domain Services synchronization works
       href: synchronization.md
     - name: How password hash synchronization works
-      href: /azure/active-directory/hybrid/connect/how-to-connect-password-hash-synchronization?context=/azure/active-directory-domain-services/context/azure-ad-ds-context
+      href: /entra/identity/hybrid/connect/how-to-connect-password-hash-synchronization?toc=/entra/identity/domain-services/toc.json?bc=/entra/identity/domain-services/breadcrumb/toc.json
     - name: Custom attributes
       href: concepts-custom-attributes.md
     - name: Virtual network considerations
       href: network-considerations.md
     - name: What is Microsoft Entra ID?
-      href: /azure/active-directory/fundamentals/whatis?context=/azure/active-directory-domain-services/context/azure-ad-ds-context
+      href: /entra/fundamentals/whatis?toc=/entra/identity/domain-services/toc.json?bc=/entra/identity/domain-services/breadcrumb/toc.json
     - name: Microsoft Entra architecture
-      href: /azure/active-directory/architecture/architecture?context=/azure/active-directory-domain-services/context/azure-ad-ds-context
+      href: /entra/architecture/architecture?toc=/entra/identity/domain-services/toc.json?bc=/entra/identity/domain-services/breadcrumb/toc.json
 - name: How to
   items:
     - name: Configure common settings
@@ -104,7 +104,7 @@
         - name: Secure remote access to VMs
           href: secure-remote-vm-access.md
         - name: Security baseline
-          href: /security/benchmark/azure/baselines/azure-active-directory-domain-services-security-baseline?toc=/azure/active-directory-domain-services/TOC.json          
+          href: /security/benchmark/azure/baselines/azure-active-directory-domain-services-security-baseline?toc=/entra/identity/domain-services/toc.json?bc=/entra/identity/domain-services/breadcrumb/toc.json          
     - name: Domain-join VMs
       items:
         - name: Windows Server VM from template

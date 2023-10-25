@@ -15,9 +15,9 @@ ms.reviewer: lhuangnorth, jogro
 
 ms.collection: M365-identity-device-management
 ---
-# Require an app protection policy on Windows devices (preview)
+# Require an app protection policy on Windows devices
 
-App protection policies apply [mobile application management (MAM)](/mem/intune/apps/app-management#mobile-application-management-mam-basics) to specific applications on a device. These policies allow for securing data within an application in support of scenarios like bring your own device (BYOD). In the preview, we support applying policy to the Microsoft Edge browser on Windows 11 devices.
+App protection policies apply [mobile application management (MAM)](/mem/intune/apps/app-management#mobile-application-management-mam-basics) to specific applications on a device. These policies allow for securing data within an application in support of scenarios like bring your own device (BYOD). We support applying policy to the Microsoft Edge browser on Windows 11 devices.
 
 ![Screenshot of a browser requiring the user to sign in to their Microsoft Edge profile to access an application.](./media/how-to-app-protection-policy-windows/browser-sign-in-with-edge-profile.png)
 
@@ -71,17 +71,6 @@ After administrators confirm the settings using [report-only mode](howto-conditi
 
 > [!TIP]
 > Organizations should also deploy a policy that [blocks access from unsupported or unknown device platforms](howto-policy-unknown-unsupported-device.md) along with this policy.
-
-In organizations with existing Conditional Access policies that target: 
-
-- The **All cloud apps** resource.
-- The **Mobile apps and desktop clients** condition.
-- Use **Require app protection policy** or a **Block access** grant control.
-
-End users are unable to enroll their Windows device in MAM without the following policy changes.
-
-1. Register the **Microsoft Edge Auth** service principal in your tenant using the command `New-MgServicePrincipal -AppId f2d19332-a09d-48c8-a53b-c49ae5502dfc`.
-1. Add an exclusion for **Microsoft Edge Auth** to your existing policy targeting **All cloud apps**.
 
 ## Sign in to Windows devices
 

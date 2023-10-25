@@ -1,17 +1,23 @@
-- name: Azure
-  tocHref: /azure/
-  topicHref: /azure/index
+items:
+- name: Microsoft Entra
+  tocHref: /entra/
+  topicHref: /entra/index
   items:
-  - name: Active Directory
-    tocHref: /azure/active-directory/
-    topicHref: /azure/active-directory/index
-    items:
-    - name: Develop
-      tocHref: /azure/active-directory/app-provisioning/
-      topicHref: /azure/active-directory/develop/index
-    - name: Develop
-      tocHref: /azure/developer/java/spring-framework/
-      topicHref: /azure/active-directory/develop/index
-    - name: Develop
-      tocHref: /azure/active-directory/fundamentals/
-      topicHref: /azure/active-directory/develop/index
+  - name: Identity platform
+    tocHref: /entra/fundamentals/
+    topicHref: /entra/identity-platform/
+  - name: Identity platform
+    tocHref: /entra/identity/app-provisioning/
+    topicHref: /entra/identity-platform/
+  - name: Identity platform
+    tocHref: /entra/architecture/
+    topicHref: /entra/identity-platform/
+  - name: Identity platform
+    tocHref: /entra/identity/enterprise-apps/
+    topicHref: /entra/identity-platform/
+  - name: Identity platform
+    tocHref: /graph/
+    topicHref: /entra/identity-platform/
+  - name: Identity platform
+    tocHref: /azure/developer/java/spring-framework/ 
+    topicHref: /entra/identity-platform/

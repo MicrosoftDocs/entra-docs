@@ -8,7 +8,7 @@ ms.service: active-directory
 ms.subservice: app-provisioning
 ms.workload: identity
 ms.topic: troubleshooting
-ms.date: 09/28/2023
+ms.date: 10/25/2023
 ms.reviewer: arvinh
 zone_pivot_groups: app-provisioning-cross-tenant-synchronization
 ---
@@ -70,7 +70,7 @@ When two users in the source tenant have the same mail, and they both need to be
 
 - B2B users are unable to manage certain Microsoft 365 services in remote tenants (such as Exchange Online), as there's no directory picker.
 - To learn about Azure Virtual Desktop support for B2B users, see [Prerequisites for Azure Virtual Desktop](/azure/virtual-desktop/prerequisites?tabs=portal).
-- B2B users with UserType Member aren't currently supported in Power BI. For more information, see [Distribute Power BI content to external guest users using Microsoft Entra B2B](/power-bi/guidance/whitepaper-azure-b2b-power-bi)
+- For the latest status on Power BI support for external member users, see [Distribute Power BI content to external guest users with Microsoft Entra B2B](/power-bi/enterprise/service-admin-azure-ad-b2b#who-can-you-invite)
 - Converting a guest account into a Microsoft Entra member account or converting a Microsoft Entra member account into a guest isn't supported by Teams. For more information, see [Guest access in Microsoft Teams](/microsoftteams/guest-access).
 ::: zone-end
 
@@ -125,6 +125,11 @@ Multivalue directory extensions can't be used in attribute mappings or scoping f
 #### Automatic provisioning isn't available on my OIDC-based application
 
 If you create an app registration, the corresponding service principal in enterprise apps won't be enabled for automatic user provisioning. You'll need to either request the app be added to the gallery, if intended for use by multiple organizations, or create a second non-gallery app for provisioning.
+
+#### Manager isn't provisioned
+
+If a user and their manager are both in scope for provisioning, the service provisions the user and then updates the manager. If on day one the user is in scope and the manager is out of scope, we'll provision the user without the manager reference. When the manager comes into scope, the manager reference won't be updated until you restart provisioning and cause the service to reevaluate all the users again. 
+
 ::: zone-end
 
 #### The provisioning interval is fixed
@@ -148,10 +153,6 @@ When you set provisioning to `enabled = off` or select **Stop**, the current pro
 #### Member of group not provisioned
 
 When a group is in scope and a member is out of scope, the group will be provisioned. The out-of-scope user won't be provisioned. If the member comes back into scope, the service won't immediately detect the change. Restarting provisioning addresses the issue. Periodically restart the service to ensure that all users are properly provisioned.
-
-#### Manager isn't provisioned
-
-If a user and their manager are both in scope for provisioning, the service provisions the user and then updates the manager. If on day one the user is in scope and the manager is out of scope, we'll provision the user without the manager reference. When the manager comes into scope, the manager reference won't be updated until you restart provisioning and cause the service to reevaluate all the users again. 
 
 #### Global Reader
 
@@ -185,6 +186,7 @@ The following attributes and objects aren't supported:
    - Reference attributes (for example, manager).
    - Groups.
    - Complex anchors (for example, ObjectTypeName+UserName).
+   - Attributes that have characters such as "." or "["
    - Binary attributes.
    - On-premises applications are sometimes not federated with Microsoft Entra ID and require local passwords. The on-premises provisioning preview doesn't support password synchronization. Provisioning initial one-time passwords is supported. Ensure that you're using the [Redact](./functions-for-customizing-application-data.md#redact) function to redact the passwords from the logs. In the SQL and LDAP connectors, the passwords aren't exported on the initial call to the application, but rather a second call with set password.   
 
@@ -205,3 +207,4 @@ The following attributes and objects aren't supported:
 
 ## Next steps
 [How provisioning works](how-provisioning-works.md)
+

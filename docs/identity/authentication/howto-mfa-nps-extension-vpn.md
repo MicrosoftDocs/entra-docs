@@ -7,7 +7,7 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.custom: has-azure-ad-ps-ref
 ms.topic: how-to
-ms.date: 09/23/2023
+ms.date: 10/25/2023
 
 ms.author: justinha
 author: justinha
@@ -42,6 +42,18 @@ Network Policy and Access Services gives organizations the ability to:
   For more information, see [Network Policy Server](/windows-server/networking/technologies/nps/nps-top).
 
 To enhance security and provide a high level of compliance, organizations can integrate NPS with Microsoft Entra multifactor authentication to ensure that users use two-step verification to connect to the virtual port on the VPN server. For users to be granted access, they must provide their username and password combination and other information that they control. This information must be trusted and not easily duplicated. It can include a cell phone number, a landline number, or an application on a mobile device.
+
+If your organization uses a VPN and the user is registered for a TOTP code along with Authenticator push notifications, the user can't meet the MFA challenge and the remote sign-in fails. In that case, you can set OVERRIDE_NUMBER_MATCHING_WITH_OTP = FALSE to fallback to push notifications to Approve/Deny with Authenticator.
+
+In order for an NPS extension to continue working for VPN users, this registry key must be created on the NPS server. On the NPS server, open the registry editor. Navigate to:
+
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\AzureMfa
+
+Create the following String/Value pair:
+
+Name: OVERRIDE_NUMBER_MATCHING_WITH_OTP
+
+Value = FALSE
 
 Prior to the availability of the NPS extension for Azure, customers who wanted to implement two-step verification for integrated NPS and MFA environments had to configure and maintain a separate MFA server in an on-premises environment. This type of authentication is offered by Remote Desktop Gateway and Azure Multi-Factor Authentication Server using RADIUS.
 
@@ -95,10 +107,6 @@ Network Policy and Access Services provides the RADIUS server and client functio
 For information about installing the Network Policy and Access Services role service Windows Server 2012 or later, see [Install a NAP Health Policy Server](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd296890(v=ws.10)). NAP is deprecated in Windows Server 2016. For a description of best practices for NPS, including the recommendation to install NPS on a domain controller, see [Best practices for NPS](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771746(v=ws.10)).
 
 <a name='azure-ad-mfa-license'></a>
-
-### Microsoft Entra multifactor authentication License
-
-A license is required for Microsoft Entra multifactor authentication, and it is available through a Microsoft Entra ID P1 or P2, Enterprise Mobility + Security, or a multifactor authentication stand-alone license. Consumption-based licenses for Microsoft Entra multifactor authentication such as per user or per authentication licenses are not compatible with the NPS extension. For more information, see [How to get Microsoft Entra multifactor authentication](concept-mfa-licensing.md). For testing purposes, you can use a trial subscription.
 
 ### Windows Server software
 
