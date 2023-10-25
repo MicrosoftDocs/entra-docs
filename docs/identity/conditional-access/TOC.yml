@@ -108,6 +108,8 @@
       href: howto-conditional-access-policy-block-access.md
     - name: Require authentication strength for external users
       href: howto-conditional-access-policy-authentication-strength-external.md
+  - name: Microsoft managed policies
+    href: managed-policies.md
   - name: Configure resilience defaults
     href: resilience-defaults.md
   - name: Configure report only mode
