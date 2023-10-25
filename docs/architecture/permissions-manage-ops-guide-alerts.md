@@ -20,7 +20,8 @@ Use Microsoft Entra Permissions Management to configure alerts to continuously m
 
 Permissions Management alerts go to subscribed users by email and have summary views: the triggered alert, the authorization system in question, and the number of identities, tasks, and resources involved in the alert. View alerts in Permissions Management for more detailed information about triggers.
 
-   [!NOTE]Permissions Management alerts are not real-time; they’re based on the product’s activity log refreshes, so there might be a delay between activity and alert.
+>[!NOTE]
+>Permissions Management alerts are not real-time; they’re based on the product’s activity log refreshes, so there might be a delay between activity and alert.
 
 There are four types of alerts to configure in Microsoft Entra Permissions Management:
 
@@ -62,7 +63,8 @@ There are three pre-configured rule-based anomaly alerts:
 * **Identity Performs a Particular Task for the First Time**: Use this trigger to detect scope creep, or increased permissions from your users. For example, if a user performs different tasks for the first time, the account might be compromised, or maybe the user recently had a change in permissions that allows them to perform new tasks.
 * **Identity Performs a Task for the First Time**: Use this alert trigger for new active users in a subscription, or to detect compromised inactive accounts. For example, a new user is provisioned in an Azure subscription. This trigger alerts you when the new user performs their first task.
 
-   [!NOTE] **Identity Performs a Particular Task for the First Time** sends a notification when a user performs a unique task for the first time. **Identity Performs a Task for the First Time** sends a notification when an identity performs their first task within a specified time frame.
+>[!NOTE]
+> **Identity Performs a Particular Task for the First Time** sends a notification when a user performs a unique task for the first time. **Identity Performs a Task for the First Time** sends a notification when an identity performs their first task within a specified time frame.
 
 To learn more, see [create and view rule-based anomaly alerts and alert triggers](~/permissions-management/product-rule-based-anomalies.md).
 
@@ -231,12 +233,12 @@ To monitor your service keys for potential disruptions, create an activity alert
 
 In general, when you receive an activity alert, we recommend you investigate the activity to determine if action is needed. Use the **Audit** tab in Permissions Management or analyze recent logging information.
 
-   [!NOTE]Because activity alerts are customizable, responses vary based on implemented activity alert types.
+>[!NOTE]
+> Because activity alerts are customizable, responses vary based on implemented activity alert types.
 
 ## Next steps
 
-* Introduction 
-* Phase 1: Implement the framework to manage at scale 
-* Phase 2: Right-size permissions and automate the principle of least privilege 
-* Phase 3: Configure Microsoft Entra Permissions Management monitoring and alerting 
-* Microsoft Entra Permissions Management alerts guide (you are here)
+* [Introduction](permissions-manage-ops-guide-intro.md)
+* [Phase 1: Implement the framework to manage at scale](permissions-manage-ops-guide-one.md)
+* [Phase 2: Right-size permissions and automate the principle of least privilege](permissions-manage-ops-guide-two.md)
+* [Phase 3: Configure Microsoft Entra Permissions Management monitoring and alerting](permissions-manage-ops-guide-three.md)
