@@ -392,6 +392,8 @@
         href: browserstack-single-sign-on-tutorial.md
       - name: Brushup
         href: brushup-tutorial.md        
+      - name: bswift
+        href: bswift-tutorial.md
       - name: Bugsnag
         href: bugsnag-tutorial.md
       - name: BullseyeTDP
