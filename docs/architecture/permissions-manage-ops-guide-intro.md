@@ -22,7 +22,8 @@ In this operationalization guide, learn about the checks, actions, and best prac
 2. **Right-size** permissions and automate the principle of least privilege: remediate key findings and implement just-in-time (JIT) access with Permissions On-Demand.
 3. **Configure** Microsoft Entra Permissions Management monitoring and alerting: schedule recurring reports, configure alerts, and develop response strategy playbooks. 
 
-   [!NOTE] The recommendations in this guide are current as of the date of publication. We recommend organizations evaluate their identity practices continuously as Microsoft products and services evolve over time. Some recommendations might not be applicable to all customer environments.
+>[!NOTE]
+> The recommendations in this guide are current as of the date of publication. We recommend organizations evaluate their identity practices continuously as Microsoft products and services evolve over time. Some recommendations might not be applicable to all customer environments.
 
 ## Entry criteria
 
