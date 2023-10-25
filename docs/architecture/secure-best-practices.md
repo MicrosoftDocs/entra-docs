@@ -75,7 +75,7 @@ If managed identities aren't supported or not possible, consider [provisioning s
 
 ### Hybrid service accounts
 
-Some hybrid solutions might require access to both on-premises and cloud resources. An example of a use case would be an Identity Governance solution that uses a service account on premises for access to AD DS and requires access to Microsoft Entra ID.
+Some hybrid solutions might require access to both on-premises and cloud resources. An example of a use case would be an application that uses a service account in AD DS for access to on premises domain-joined servers and also has an account in Microsoft Entra ID as it requires access to Microsoft Online Services.
 
 On-premises service accounts typically don't have the ability to sign in interactively, which means that in cloud scenarios they can't fulfill strong credential requirements such as multifactor authentication. In this scenario, don't use a service account that has been synced from on-premises, but instead use a managed identity \ service principal. For service principal (SP), use a certificate as a credential, or [protect the SP with Conditional Access](~/identity/conditional-access/workload-identity.md).
 
@@ -85,11 +85,11 @@ If there are technical constraints that don't make this possible and the same ac
 
 An enterprise solution may be composed of multiple Azure resources and its access should be managed and governed as a logical unit of assignment - a resource group. In that scenario, Microsoft Entra security groups can be created and associated with the proper permissions and role assignment across all solution resources, so that adding or removing users from those groups results in allowing or denying access to the entire solution.
 
-We recommend you use security groups to grant access to Microsoft services that rely on licensing to provide access (for example, Dynamics 365, Power BI).
+We recommend you use group-based licensing and security groups for Microsoft services that rely on a user having a license seat assignment as a prerequisite before providing access (for example, Dynamics 365, Power BI).
 
-Microsoft Entra cloud native groups can be natively governed from the cloud when combined with [Microsoft Entra access reviews](~/id-governance/access-reviews-overview.md) and [Microsoft Entra entitlement management](~/id-governance/access-reviews-overview.md). Organizations who already have on-premises group governance tools can continue to use those tools and rely on identity synchronization with Microsoft Entra Connect to reflect group membership changes.
+Microsoft Entra cloud native groups can be natively governed from the cloud when combined with [Microsoft Entra access reviews](~/id-governance/access-reviews-overview.md) and [Microsoft Entra entitlement management](~/id-governance/access-reviews-overview.md).
 
-Microsoft Entra ID also supports direct user assignment to third-party SaaS services (for example, Salesforce, Service Now) for single sign-on and identity provisioning. Direct assignments to resources can be natively governed from the cloud when combined with [Microsoft Entra access reviews](~/id-governance/access-reviews-overview.md) and [Microsoft Entra entitlement management](./ops-guide-ops.md). Direct assignment might be a good fit for end-user facing assignment.
+Microsoft Entra ID also supports direct user assignment to third-party SaaS services (for example, Salesforce, Service Now) and on-premises applications for single sign-on and identity provisioning. Direct assignments to resources can be natively governed from the cloud when combined with [Microsoft Entra access reviews](~/id-governance/access-reviews-overview.md) and [Microsoft Entra entitlement management](./ops-guide-ops.md). Direct assignment might be a good fit for end-user facing assignment.
 
 Some scenarios might require granting access to on-premises resources through on-premises Active Directory security groups. For those cases, consider the synchronization cycle to Microsoft Entra ID when designing processes SLA.
 
@@ -184,29 +184,13 @@ Some approaches you can use for [using secure devices as part of your privileged
 
   * Whether direct user or groups assignments are preferred for which roles.
 
+* Monitoring IAM assignments outside Microsoft Entra PIM isn't automated through Azure Policies. The mitigation is to not grant Subscription Owner or User Access Administrator roles to engineering teams. Instead create groups assigned to least privileged roles such as Contributor and delegate the management of those groups to engineering teams.
+
 ### Resource access  
 
 * **Attestation** - Identities that hold privileged roles should be reviewed periodically to keep membership current and justified. [Microsoft Entra access reviews](~/id-governance/access-reviews-overview.md) integrate with Azure RBAC roles, group memberships and Microsoft Entra B2B external identities.
 
 * **Lifecycle** - Privileged operations might require access to multiple resources such as line of business applications, SaaS Applications, and Azure resource groups and subscriptions. [Microsoft Entra Entitlement Management](~/id-governance/entitlement-management-overview.md) allows defining access packages that represent a set resource that is assigned to users as a unit, establish a validity period, approval workflows, etc.
-
-### Governance challenges
-
-* The Azure Enterprise (Azure EA) Agreement portal doesn't integrate with Azure RBAC or Conditional Access. The mitigation for this is to use dedicated administration accounts that can be targeted with policies and additional monitoring.
-
-* The Azure EA Enterprise portal doesn't provide an audit log. To mitigate this, consider an automated governed process to provision subscriptions with the considerations described above and use dedicated EA accounts and audit the authentication logs.
-
-* [Microsoft Customer Agreement](/azure/cost-management-billing/understand/mca-overview) (MCA) roles don't integrate natively with PIM. To mitigate this, use dedicated MCA accounts and monitor usage of these accounts.
-
-* Monitoring IAM assignments outside Microsoft Entra PIM isn't automated through Azure Policies. The mitigation is to not grant Subscription Owner or User Access Administrator roles to engineering teams. Instead create groups assigned to least privileged roles such as Contributor and delegate the management of those groups to engineering teams.
-
-* Privileged roles in Azure AD B2C tenants aren't integrated with Microsoft Entra PIM. The mitigation is to create dedicated accounts in the organization's Microsoft Entra tenant, onboard them in the Azure AD B2C tenant and apply Conditional Access policies to these dedicated administration accounts.
-
-* Azure AD B2C tenant privileged roles aren't integrated with Microsoft Entra access reviews. The mitigation is to create dedicated accounts in the organization's Microsoft Entra tenant, add these accounts to a group and perform regular access reviews on this group.
-
-* There are no technical controls to subordinate the creation of tenants to an organization. However, the activity is recorded in the Audit log. The onboarding to the billing plane is a compensating control at the gate. This needs to be complemented with monitoring and alerts instead.
-
-* There's no out-of-the box product to implement the subscription provisioning workflow recommended above. Organizations need to implement their own workflow.
 
 ## Tenant and subscription lifecycle management
 
@@ -231,6 +215,8 @@ Some approaches you can use for [using secure devices as part of your privileged
 * Regular review of the Microsoft Entra tenants in the billing plane needs to be implemented to detect and discover tenant creation outside the governed process. Refer to the *Inventory and Visibility* section of this document for further details.
 
 * Azure AD B2C tenant creation can be controlled using Azure Policy. The policy executes when an Azure subscription is associated to the B2C tenant (a pre-requisite for billing). Customers can limit the creation of Azure AD B2C tenants to specific management groups.
+
+* There are no technical controls to subordinate the creation of tenants to an organization. However, the activity is recorded in the Audit log. The onboarding to the billing plane is a compensating control at the gate. This needs to be complemented with monitoring and alerts instead.
 
 ### Subscription lifecycle
 
@@ -264,9 +250,19 @@ Below are some considerations when designing a governed subscription lifecycle p
 
 * Given the tenant affinity to Azure Subscriptions, subscription provisioning should be aware of multiple identities for the same human actor (employee, partner, vendor, etc.) across multiple tenants and assign access accordingly.
 
+### EA and MCA roles
+
+* The Azure Enterprise (Azure EA) Agreement portal doesn't integrate with Azure RBAC or Conditional Access. The mitigation for this is to use dedicated administration accounts that can be targeted with policies and additional monitoring.
+
+* The Azure EA Enterprise portal doesn't provide an audit log. To mitigate this, consider an automated governed process to provision subscriptions with the considerations described above and use dedicated EA accounts and audit the authentication logs.
+
+* [Microsoft Customer Agreement](/azure/cost-management-billing/understand/mca-overview) (MCA) roles don't integrate natively with PIM. To mitigate this, use dedicated MCA accounts and monitor usage of these accounts.
+
 ### Azure AD B2C tenants
 
-* In an Azure AD B2C tenant, the built-in roles don't support PIM. To increase security, we recommend using Microsoft Entra B2B collaboration to onboard the engineering teams managing Customer Identity Access Management (CIAM) from your Azure tenant, and assign them to Azure AD B2C privileged roles.
+* In an Azure AD B2C tenant, the built-in roles don't support PIM. To increase security, we recommend using Microsoft Entra B2B collaboration to onboard the engineering teams managing Customer Identity Access Management (CIAM) from your Azure tenant, assign them to Azure AD B2C privileged roles and apply Conditional Access policies to these dedicated administration accounts.
+
+* Azure AD B2C tenant privileged roles aren't integrated with Microsoft Entra access reviews. The mitigation is to create dedicated accounts in the organization's Microsoft Entra tenant, add these accounts to a group and perform regular access reviews on this group.
 
 * Following the emergency access guidelines for Microsoft Entra ID above, consider creating equivalent [emergency access accounts](~/identity/role-based-access-control/security-emergency-access.md) in addition to the external administrators described above.
 
@@ -453,7 +449,7 @@ The following scenarios must be explicitly monitored and investigated:
 
   * New custom roles created
 
-* **Custom governance rules** - If your organizations established any separation of duties rules (for example, a holder of a Global Administrator tenant GA can't be owner/contributor of subscriptions), create alerts or configure periodic reviews to detect violations.
+* **Custom separation of duties rules** - If your organizations established any separation of duties rules (for example, a holder of a Global Administrator tenant GA can't be owner/contributor of subscriptions), use Microsoft Entra Entitlement Management incompatible access packages to enforce separation of duties, and create alerts or configure periodic reviews to detect violations by administrators.
 
 **Other monitoring considerations** - Azure subscriptions that contain resources used for Log Management should be considered as critical infrastructure (Tier 0) and locked down to the Security Operations team of the corresponding environment. Consider using tools such as Azure Policy to enforce additional controls to these subscriptions.
 
