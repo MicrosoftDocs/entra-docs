@@ -34,11 +34,11 @@ Microsoft Entra Permissions Management generates system reports for visibility a
 |PCI History|Information Security Operations, Cloud Infrastructure, Security Assurance and Audit|
 |All Permissions for Identity|IAM, Security Assurance and Audit, Incident Response, target authorization system technical owners|
 
-For detailed descriptions, see [system reports in the Reports Dashboard](../cloud-infrastructure-entitlement-management/product-reports.md)
+For detailed descriptions, see [system reports in the Reports Dashboard](~/permissions-management/product-reports.md)
 
 ### Schedule reports for key stakeholders
 
-For the key stakeholders who consume reports, set up a regular delivery cadence: hourly, daily, weekly, biweekly, or monthly. [Learn to create, view, and share a custom report](../cloud-infrastructure-entitlement-management/report-create-custom-report.md).
+For the key stakeholders who consume reports, set up a regular delivery cadence: hourly, daily, weekly, biweekly, or monthly. [Learn to create, view, and share a custom report](~/permissions-management/report-create-custom-report.md).
 
 ### Define custom audit queries to meet organizational requirements
 
@@ -76,9 +76,9 @@ Use Permissions Management to create and save custom audit queries that others v
 
 For more information on how to create, view, save, and use custom queries:
 
-* [Create a custom query](../cloud-infrastructure-entitlement-management/how-to-create-custom-queries.md)
-* [Filter and query user activity](../cloud-infrastructure-entitlement-management/product-audit-trail.md)
-* [Use queries to see how users access information](https://learn.microsoft.com/en-us/azure/active-directory/cloud-infrastructure-entitlement-management/ui-audit-trail)
+* [Create a custom query](~/permissions-management/how-to-create-custom-queries.md)
+* [Filter and query user activity](~/permissions-management/product-audit-trail.md)
+* [Use queries to see how users access information](~/permissions-management/ui-audit-trail)
 
 ### Configure alerts for Security Operations investigations
 
@@ -101,7 +101,7 @@ For example, review the following response strategy and playbook for an Inactive
 
 **Remediation**: When an Inactive User alert triggers, the alert recipient assigns the user read-only status, and applies the **ck_exclude_from_pci** and **ck_exclude_from_reports** tags to the user.
 
-In the manual response, use Microsoft Entra Permissions Management remediation tools and clarify that recipients of the Inactive User alerts perform remediation. The recipients use Permissions Management to [assign read-only status](../cloud-infrastructure-entitlement-management/how-to-revoke-task-readonly-status.md) to the user. This action revokes the user’s permissions and assigns them read only status with the click of a button.
+In the manual response, use Microsoft Entra Permissions Management remediation tools and clarify that recipients of the Inactive User alerts perform remediation. The recipients use Permissions Management to [assign read-only status](~/permissions-management/how-to-revoke-task-readonly-status.md) to the user. This action revokes the user’s permissions and assigns them read only status with the click of a button.
 
 A recipient applies the **ck_exclude_from_pci** and **ck_exclude_from_reports** tags to the user. Use of the first tag excludes the user from the authorization system’s PCI score calculation. The **ck_exclude_from_reports** tag removes the user from the Permissions Analytics Report, so it’s not called out as an inactive user.
 
