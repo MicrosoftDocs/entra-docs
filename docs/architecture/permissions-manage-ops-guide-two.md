@@ -141,7 +141,7 @@ To create Microsoft Entra ID security groups, see [manage groups and group membe
 
 ### Assign permissions to Approvers
 
-After Microsoft Entra ID security groups are created, a Permissions Management Administrator grants security groups their Approver permissions in Permissions Management. Ensure security groups are granted Approver permissions for the authorization systems they are responsible for. [Learn more about Microsoft Entra Permissions Management roles and permission levels](~/permissions-management/product-roles-permissions).
+After Microsoft Entra ID security groups are created, a Permissions Management Administrator grants security groups their Approver permissions in Permissions Management. Ensure security groups are granted Approver permissions for the authorization systems they are responsible for. [Learn more about Microsoft Entra Permissions Management roles and permission levels](~/permissions-management/product-roles-permissions.md).
 
 ### Determine and create a Requestor Administrator security group
 
@@ -153,7 +153,7 @@ To create Microsoft Entra ID security groups, see [manage groups and group membe
 
 ### Allow users to make Permissions On-Demand requests
 
-A Permissions Management Administrator adds Requestor identities to the Requester Administrator security group, for each authorization system. Adding a Requestor identity enables it to make Permissions On-Demand requests for any authorization system, for which it has permissions. Requestor Administrator security group members can request permissions on behalf of the identities for the specified authorization system. [Learn more about Microsoft Entra Permissions Management roles and permission levels](../cloud-infrastructure-entitlement-management/product-roles-permissions).
+A Permissions Management Administrator adds Requestor identities to the Requester Administrator security group, for each authorization system. Adding a Requestor identity enables it to make Permissions On-Demand requests for any authorization system, for which it has permissions. Requestor Administrator security group members can request permissions on behalf of the identities for the specified authorization system. [Learn more about Microsoft Entra Permissions Management roles and permission levels](~/permissions-management/product-roles-permissions.md).
 
 ### Determine organizational policies for Permissions On-Demand
 
