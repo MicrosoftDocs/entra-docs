@@ -7,7 +7,7 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.custom: has-azure-ad-ps-ref
 ms.topic: how-to
-ms.date: 09/13/2023
+ms.date: 10/25/2023
 
 ms.author: justinha
 author: justinha
@@ -36,6 +36,18 @@ The Network Policy and Access Services (NPS) gives organizations the ability to 
 Typically, organizations use NPS (RADIUS) to simplify and centralize the management of VPN policies. However, many organizations also use NPS to simplify and centralize the management of RD Desktop Connection Authorization Policies (RD CAPs).
 
 Organizations can also integrate NPS with Microsoft Entra multifactor authentication to enhance security and provide a high level of compliance. This helps ensure that users establish two-step verification to sign in to the Remote Desktop Gateway. For users to be granted access, they must provide their username/password combination along with information that the user has in their control. This information must be trusted and not easily duplicated, such as a cell phone number, landline number, application on a mobile device, and so on. RDG currently supports phone call and **Approve**/**Deny** push notifications from Microsoft authenticator app methods for 2FA. For more information about supported authentication methods see the section [Determine which authentication methods your users can use](howto-mfa-nps-extension.md#determine-which-authentication-methods-your-users-can-use).
+
+If your organization uses Remote Desktop Gateway and the user is registered for a TOTP code along with Authenticator push notifications, the user can't meet the MFA challenge and the Remote Desktop Gateway sign-in fails. In that case, you can set OVERRIDE_NUMBER_MATCHING_WITH_OTP = FALSE to fallback to push notifications to Approve/Deny with Authenticator.
+
+In order for an NPS extension to continue working for Remote Desktop Gateway users, this registry key must be created on the NPS server. On the NPS server, open the registry editor. Navigate to:
+
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\AzureMfa
+
+Create the following String/Value pair:
+
+Name: OVERRIDE_NUMBER_MATCHING_WITH_OTP
+
+Value = FALSE
 
 Prior to the availability of the NPS extension for Azure, customers who wished to implement two-step verification for integrated NPS and Microsoft Entra multifactor authentication environments had to configure and maintain a separate MFA Server in the on-premises environment as documented in [Remote Desktop Gateway and Azure Multi-Factor Authentication Server using RADIUS](howto-mfaserver-nps-rdg.md).
 
@@ -75,11 +87,6 @@ You must have a working Remote Desktop Services (RDS) infrastructure in place. I
 If you wish to manually create an on-premises RDS infrastructure quickly for testing purposes, follow the steps to deploy one.
 **Learn more**: [Deploy RDS with Azure quickstart](/windows-server/remote/remote-desktop-services/rds-in-azure) and [Basic RDS infrastructure deployment](/windows-server/remote/remote-desktop-services/rds-deploy-infrastructure).
 
-<a name='azure-ad-mfa-license'></a>
-
-### Microsoft Entra multifactor authentication License
-
-Required is a license for Microsoft Entra multifactor authentication, which is available through Microsoft Entra ID P1 or P2 or other bundles that include it. Consumption-based licenses for Microsoft Entra multifactor authentication, such as per user or per authentication licenses, are not compatible with the NPS extension. For more information, see [How to get Microsoft Entra multifactor authentication](concept-mfa-licensing.md). For testing purposes, you can use a trial subscription.
 
 ### Windows Server software
 
