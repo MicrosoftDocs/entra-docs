@@ -1,13 +1,14 @@
-- name: Entra
+items:
+- name: Microsoft Entra
   tocHref: /entra/
   topicHref: /entra/index
   items:
-  - name: ID Governance
+  - name: Microsoft Entra ID Governance
     tocHref: /graph/
-    topicHref: /entra/id-governance/index
-  - name: ID Governance
+    topicHref: /entra/id-governance
+  - name: Microsoft Entra ID Governance
     tocHref: /id-governance/privileged-identity-management
-    topicHref: /entra/id-governance/index
-  - name: ID Governance
+    topicHref: /entra/id-governance
+  - name: Microsoft Entra ID Governance
     tocHref: /powershell
-    topicHref: /entra/id-governance/index
+    topicHref: /entra/id-governance

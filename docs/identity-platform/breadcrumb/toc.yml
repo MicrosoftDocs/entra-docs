@@ -1,22 +1,23 @@
-- name: Entra
+items:
+- name: Microsoft Entra
   tocHref: /entra/
   topicHref: /entra/index
   items:
   - name: Identity platform
-    tocHref: /entra/identity-platform/
-    topicHref: /entra/fundamentals/
+    tocHref: /entra/fundamentals/
+    topicHref: /entra/identity-platform/
   - name: Identity platform
     tocHref: /entra/identity/app-provisioning/
-    topicHref: /entra/fundamentals/
+    topicHref: /entra/identity-platform/
   - name: Identity platform
-    tocHref: /entra/identity-platform/
-    topicHref: /entra/architecture/
+    tocHref: /entra/architecture/
+    topicHref: /entra/identity-platform/
   - name: Identity platform
     tocHref: /entra/identity/enterprise-apps/
-    topicHref: /entra/fundamentals/
+    topicHref: /entra/identity-platform/
   - name: Identity platform
-    tocHref: /entra/identity-platform/
-    topicHref: /graph/
+    tocHref: /graph/
+    topicHref: /entra/identity-platform/
   - name: Identity platform
-    tocHref: /entra/identity-platform/
-    topicHref: /azure/developer/java/spring-framework/
+    tocHref: /azure/developer/java/spring-framework/ 
+    topicHref: /entra/identity-platform/

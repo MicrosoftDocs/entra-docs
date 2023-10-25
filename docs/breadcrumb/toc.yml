@@ -1,27 +1,31 @@
+items:
 - name: Docs
   tocHref: /entra/
   topicHref: /entra/index
   items:
-  - name: Architecture
-    tocHref: /entra/architecture/
-    topicHref: /entra/architecture/
-  - name: Global Secure Access
-    tocHref: /entra/global-secure-access/
-    topicHref: /entra/global-secure-access/
-  - name: Microsoft Entra External ID
-    tocHref: /entra/external-id/
-    topicHref: /entra/external-id/
-    items:
+  - name: Microsoft Entra
+    tocHref: /entra/
+    topicHref: /entra/index
+    - name: Architecture
+      tocHref: /entra/architecture/
+      topicHref: /entra/architecture/
+    - name: Global Secure Access
+      tocHref: /entra/global-secure-access/
+      topicHref: /entra/global-secure-access/
+    - name: Microsoft Entra External ID
+      tocHref: /entra/external-id/
+      topicHref: /entra/external-id/
+      items:
       - name: Microsoft Entra External ID for customers
         tocHref: /entra/external-id/customers/
         topicHref: /entra/external-id/customers
-  - name: Microsoft Entra Fundamentals
-    tocHref: /entra/fundamentals/
-    topicHref: /entra/fundamentals/
-  - name: Microsoft Entra ID
-    tocHref: /entra/identity/
-    topicHref: /entra/identity/
-    items:
+    - name: Fundamentals
+      tocHref: /entra/fundamentals/
+      topicHref: /entra/fundamentals/
+    - name: Microsoft Entra ID
+      tocHref: /entra/identity/
+      topicHref: /entra/identity/
+      items:
       - name: App provisioning
         tocHref: /entra/identity/app-provisioning/
         topicHref: /entra/identity/app-provisioning/
@@ -64,25 +68,25 @@
       - name: Users
         tocHref: /entra/identity/users/
         topicHref: /entra/identity/users/
-  - name: Microsoft Entra ID governance
-    tocHref: /entra/id-governance/
-    topicHref: /entra/id-governance/
-    items:
+    - name: Microsoft Entra ID Governance
+      tocHref: /entra/id-governance/
+      topicHref: /entra/id-governance/
+      items:
       - name: Privileged Identity Management
         tocHref: /entra/id-governance/privileged-identity-management/
         topicHref: /entra/id-governance/privileged-identity-management/
-  - name: Microsoft Entra ID Protection
-    tocHref: /entra/id-protection/
-    topicHref: /entra/id-protection/
-  - name: Microsoft Entra Permissions Protection
-    tocHref: /entra/permissions-management/
-    topicHref: /entra/permissions-management/
-  - name: Microsoft Entra Verified ID
-    tocHref: /entra/verified-id/
-    topicHref: /entra/verified-id/
-  - name: Microsoft Entra Workload ID
-    tocHref: /entra/workload-id/
-    topicHref: /entra/workload-id/
-  - name: Microsoft identity platform
-    tocHref: /entra/identity-platform/
-    topicHref: /entra/identity-platform/
+    - name: Microsoft Entra ID Protection
+      tocHref: /entra/id-protection/
+      topicHref: /entra/id-protection/
+    - name: Microsoft Entra Permissions Protection
+      tocHref: /entra/permissions-management/
+      topicHref: /entra/permissions-management/
+    - name: Microsoft Entra Verified ID
+      tocHref: /entra/verified-id/
+      topicHref: /entra/verified-id/
+    - name: Microsoft Entra Workload ID
+      tocHref: /entra/workload-id/
+      topicHref: /entra/workload-id/
+    - name: Microsoft identity platform
+      tocHref: /entra/identity-platform/
+      topicHref: /entra/identity-platform/

@@ -1,4 +1,4 @@
-- name: Entra
+- name: Microsoft Entra
   tocHref: /entra/
   topicHref: /entra/index
   items:
@@ -8,10 +8,10 @@
     items:
     - name: Domain Services
       tocHref: /entra/identity/hybrid/
-      topicHref: /entra/identity/domain-services/index
+      topicHref: /entra/identity/domain-services/
     - name: Domain Services
       tocHref: /entra/fundamentals/
-      topicHref: /entra/identity/domain-services/index
+      topicHref: /entra/identity/domain-services/
     - name: Domain Services
       tocHref: /security/benchmark/
       topicHref: /entra/identity/domain-services/

@@ -1,4 +1,5 @@
-- name: Entra
+items:
+- name: Microsoft Entra
   tocHref: /entra/
   topicHref: /entra/index
   items:

@@ -1,5 +1,5 @@
 items:
-- name: Entra
+- name: Microsoft Entra
   tocHref: /entra/
   topicHref: /entra/index
   items:
@@ -8,10 +8,10 @@ items:
     topicHref: /entra/fundamentals
   - name: Fundamentals
     tocHref: /entra/identity/conditional-access/
-    topicHref: /entra/identity/authentication/
+    topicHref: /entra/fundamentals
   - name: Fundamentals
     tocHref: /entra/identity/users/
-    topicHref: /entra/identity/authentication/
+    topicHref: /entra/fundamentals
   - name: Fundamentals
     tocHref: /entra/identity/enterprise-apps/
-    topicHref: /entra/identity/authentication/
+    topicHref: /entra/fundamentals
