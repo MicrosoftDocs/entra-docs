@@ -33,32 +33,32 @@ Some organizations configure domains in their Microsoft Entra tenant to federate
 
 When a user signs into an application, they're first presented with a Microsoft Entra sign-in page. After they have typed their UPN, if they're in a federated domain they're then taken to the sign-in page of the IdP serving that domain. Under certain circumstances, administrators might want to direct users to the sign-in page when they're signing in to specific applications.
 
-As a result users can skip the initial Microsoft Entra ID page. This process is referred to as "sign-in auto-acceleration." Microsoft does not recommend configuring auto-acceleration any longer, as it can prevent the use of stronger authentication methods such as FIDO and hinders collaboration. See [Enable passwordless security key sign-in](~/identity/authentication/howto-authentication-passwordless-security-key.md) to learn the benefits of not configuring auto-acceleration. To learn how to prevent sign-in auto-acceleration, see [Disable auto-acceleration sign-in](prevent-domain-hints-with-home-realm-discovery.md).
+As a result users can skip the initial Microsoft Entra ID page. This process is referred to as "sign-in Auto-acceleration." Microsoft does not recommend configuring auto-acceleration any longer, as it can prevent the use of stronger authentication methods such as FIDO and hinders collaboration. See [Enable passwordless security key sign-in](~/identity/authentication/howto-authentication-passwordless-security-key.md) to learn the benefits of not configuring auto-acceleration. To learn how to prevent sign-in Auto-acceleration, see [Disable auto-acceleration sign-in](prevent-domain-hints-with-home-realm-discovery.md).
 
-In cases where the tenant is federated to another IdP for sign-in, auto-acceleration makes user sign-in more streamlined.  You can configure auto-acceleration for individual applications. See [Configure auto-acceleration](configure-authentication-for-federated-users-portal.md) to learn how to force auto-acceleration using HRD.
+In cases where the tenant is federated to another IdP for sign-in, Auto-acceleration makes user sign-in more streamlined.  You can configure Auto-acceleration for individual applications. See [Configure auto-acceleration](configure-authentication-for-federated-users-portal.md) to learn how to force Auto-acceleration using HRD.
 
 > [!NOTE]
-> If you configure an application for auto-acceleration, users can't use managed credentials (like FIDO) and guest users can't sign in. If you take a user straight to a federated IdP for authentication, there is no way for them to get back to the Microsoft Entra sign-in page. Guest users, who might need to be directed to other tenants or an external IdP such as a Microsoft account, can't sign in to that application because they're skipping the HRD step.
+> If you configure an application for Auto-acceleration, users can't use managed credentials (like FIDO) and guest users can't sign in. If you take a user straight to a federated IdP for authentication, there is no way for them to get back to the Microsoft Entra sign-in page. Guest users, who might need to be directed to other tenants or an external IdP such as a Microsoft account, can't sign in to that application because they're skipping the HRD step.
 
-There are three ways to control auto-acceleration to a federated IdP:
+There are three ways to control Auto-acceleration to a federated IdP:
 
 - Use a domain hint on authentication requests for an application.
-- Configure an HRD policy to [force auto-acceleration](configure-authentication-for-federated-users-portal.md)
+- Configure an HRD policy to [force Auto-acceleration](configure-authentication-for-federated-users-portal.md)
 - Configure an HRD policy to [ignore domain hints](prevent-domain-hints-with-home-realm-discovery.md) from specific applications or for certain domains.
 
 ### Domain Confirmation Dialog
 
-Starting April 2023, organizations who use auto-acceleration or smart links might begin to see a new screen added to the sign-in UI. This screen termed the Domain Confirmation Dialog, is part of Microsoft's general commitment to security hardening and requires the user to confirm the domain of the tenant in which they are signing in to. Please cancel the authentication flow and contact your IT admin if you see the Domain Confirmation Dialog and do not recognize the tenant domain listed. Here's an example of what the domain confirmation dialog could look like for you:
+Starting April 2023, organizations who use Auto-acceleration or smart links might begin to see a new screen added to the sign-in UI. This screen termed the Domain Confirmation Dialog, is part of Microsoft's general commitment to security hardening and requires the user to confirm the domain of the tenant in which they are signing in to. Cancel the authentication flow and contact your IT admin if you see the Domain Confirmation Dialog and do not recognize the tenant domain listed. Here's an example of what the domain confirmation dialog could look like for you:
 
 :::image type="content" source="media/home-realm-discovery-policy/domainConfDialog.png" alt-text="Screenshot of the domain confirmation dialog listing the sign-in identifier '<jane@contoso.com>' with a tenant domain of 'contoso.com'.":::
 
-The identifier at the top of the dialog, `jane@contoso.com`, represents the identifier used to sign-in. This behavior currently exists across the Microsoft Entra sign-in experience. The tenant domain field at the bottom of the dialog shows the domain of the tenant being signed-in to. The domain listed in the sign-in identifier (top of the dialog) and in the tenant domain field (bottom of the dialog) will be different if the user is attempting to sign-in to an external tenant.
+The identifier at the top of the dialog, `jane@contoso.com`, represents the identifier used to sign-in. This behavior currently exists across the Microsoft Entra sign-in experience. The tenant domain field at the bottom of the dialog shows the domain of the tenant being signed-in to. The domain listed in the sign-in identifier (top of the dialog) and in the tenant domain field (bottom of the dialog) are different if the user is attempting to sign-in to an external tenant.
 
-While the Domain Confirmation Dialog does not need to be shown for every instance of auto-acceleration or smart links, the Domain Confirmation Dialog means auto-acceleration, and smart links can no longer proceed seamlessly when shown. If your organization clears cookies due to browser policies or otherwise, you might experience the domain confirmation dialog more frequently. Finally, given Microsoft Entra manages the auto-acceleration sign-in flow end-to-end, the introduction of the Domain Confirmation Dialog should not result in any application breakages.
+While the Domain Confirmation Dialog does not need to be shown for every instance of Auto-acceleration or smart links, the Domain Confirmation Dialog means Auto-acceleration, and smart links can no longer proceed seamlessly when shown. If your organization clears cookies due to browser policies or otherwise, you might experience the domain confirmation dialog more frequently. Finally, given Microsoft Entra manages the Auto-acceleration sign-in flow end-to-end, the introduction of the Domain Confirmation Dialog should not result in any application breakages.
 
 ## Domain hints
 
-Domain hints are directives that are included in the authentication request from an application. They can be used to accelerate the user to their federated IdP sign-in page. Multitenant applications can also use them toa accelerate the user straight to the branded Microsoft Entra sign-in page for their tenant.
+Domain hints are directives that are included in the authentication request from an application. They can be used to accelerate the user to their federated IdP sign-in page. Multitenant applications can also use them to accelerate the user straight to the branded Microsoft Entra sign-in page for their tenant.
 
 For example, the application "largeapp.com" might enable their customers to access the application at a custom URL "contoso.largeapp.com." The app might also include a domain hint to contoso.com in the authentication request.
 
@@ -78,26 +78,26 @@ By default, Microsoft Entra ID attempts to redirect sign-in to the IDP that's co
 If the domain hint doesn't refer to a verified federated domain, it is ignored.
 
 > [!NOTE]
-> If a domain hint is included in an authentication request and should be respected, its presence overrides auto-acceleration that is set for the application in HRD policy.
+> If a domain hint is included in an authentication request and should be respected, its presence overrides Auto-acceleration that is set for the application in HRD policy.
 
-### HRD policy for auto-acceleration
+### HRD policy for Auto-acceleration
 
-Some applications do not provide a way to configure the authentication request they emit. In these cases, it's not possible to use domain hints to control auto-acceleration. Auto-acceleration can be [configured via Home Realm Discovery](configure-authentication-for-federated-users-portal.md) policy to achieve the same behavior.
+Some applications do not provide a way to configure the authentication request they emit. In these cases, it's not possible to use domain hints to control Auto-acceleration. Auto-acceleration can be [configured via Home Realm Discovery](configure-authentication-for-federated-users-portal.md) policy to achieve the same behavior.
 
-### HRD policy to prevent auto-acceleration
+### HRD policy to prevent Auto-acceleration
 
 Some Microsoft and SaaS applications automatically include domain_hints (for example, `https://outlook.com/contoso.com` results in a login request with `&domain_hint=contoso.com` appended), which can disrupt rollout of managed credentials like FIDO.  You can use [Home Realm Discovery policy to ignore domain hints](prevent-domain-hints-with-home-realm-discovery.md) from certain apps or for certain domains, during rollout of managed credentials.
 
 ## Enable direct ROPC authentication of federated users for legacy applications
 
-Best practice is for applications to use Microsoft Entra libraries and interactive sign-in to authenticate users. The libraries take care of the federated user flows.  Sometimes legacy applications, especially those that use Resource Owner Password Credentials (ROPC) grants, submit username and password directly to Microsoft Entra ID, and aren't written to understand federation. They don't perform HRD and don't interact with the correct federated endpoint to authenticate a user. If you choose to, you can use [Home Realm Discovery policy to enable specific legacy applications](configure-authentication-for-federated-users-portal.md) that submit username/password credentials using the ROPC grant to authenticate directly with Microsoft Entra ID, Password Hash Sync must be enabled.
+Best practice is for applications to use Microsoft Entra libraries and interactive sign-in to authenticate users. The libraries take care of the federated user flows.  Sometimes legacy applications, especially applications that use Resource Owner Password Credentials (ROPC) grants, submit username and password directly to Microsoft Entra ID, and aren't written to understand federation. They don't perform HRD and don't interact with the correct federated endpoint to authenticate a user. If you choose to, you can use [Home Realm Discovery policy to enable specific legacy applications](configure-authentication-for-federated-users-portal.md) that submit username/password credentials using the ROPC grant to authenticate directly with Microsoft Entra ID, Password Hash Sync must be enabled.
 
 > [!IMPORTANT]
 > Only enable direct authentication if you have Password Hash Sync turned on and you know it's okay to authenticate this application without any policies implemented by your on-premises IdP. If you turn off Password Hash Sync, or turn off Directory Synchronization with AD Connect for any reason, you should remove this policy to prevent the possibility of direct authentication using a stale password hash.
 
 ## Set HRD policy
 
-There are three steps to setting HRD policy on an application for federated sign-in auto-acceleration or direct cloud-based applications:
+There are three steps to setting HRD policy on an application for federated sign-in Auto-acceleration or direct cloud-based applications:
 
 1. Create an HRD policy.
 
@@ -155,5 +155,5 @@ HRD policies can be created and then assigned to specific organizations and serv
 ## Next steps
 
 - [Configure sign in behavior for an application by using a Home Realm Discovery policy](configure-authentication-for-federated-users-portal.md)
-- [Disable auto-acceleration to a federated IDP during user sign-in with Home Realm Discovery policy](prevent-domain-hints-with-home-realm-discovery.md)
+- [Disable Auto-acceleration to a federated IDP during user sign-in with Home Realm Discovery policy](prevent-domain-hints-with-home-realm-discovery.md)
 - For more information about how authentication works in Microsoft Entra ID, see [Authentication scenarios for Microsoft Entra ID](~/identity-platform/authentication-vs-authorization.md).
