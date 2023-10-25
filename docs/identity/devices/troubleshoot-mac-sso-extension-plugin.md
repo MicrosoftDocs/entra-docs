@@ -137,7 +137,7 @@ The sysdiagnose will be saved to your desktop as a .tar.gz archive. Extract the 
 
 :::image type="content" source="media/troubleshoot-mac-sso-extension-plugin/sysdiagnose_console.png" alt-text="Screenshot showing configuration profiles.":::
 
-Look for events stating that there are Associated Domain failures, especially related to Microsoft domains, such as login.microsoftonline.com. These events may indicate TLS inspection issues, which will prevent the SSO Extension from working properly. Apple domains may not always appear in the sysdiagnose log, even if they are impacted by an unsupported TLS inspection configuration.
+Look for events stating that there are Associated Domain failures, especially related to Microsoft domains, such as login.microsoftonline.com. These events may indicate TLS inspection issues, which will prevent the SSO Extension from working properly. Apple domains will not always appear in the sysdiagnose log, even if they are impacted by an unsupported TLS inspection configuration.
 
 ##### Validate TLS Inspection Configuration
 
