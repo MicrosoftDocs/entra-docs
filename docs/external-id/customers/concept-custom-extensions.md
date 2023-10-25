@@ -22,8 +22,8 @@ Microsoft Entra ID for customers is designed for flexibility. In addition to the
 There are two components you need to configure: a custom authentication extension and a REST API. The custom authentication extension specifies your REST API endpoint, when the REST API should be called, and the credentials to call the REST API. You can create custom authentication extensions at the following points in the authentication flow:
 
 - During sign-up, before or after attribute collection:
-  - The **OnAttributeCollectionStart** event triggers before the attribute collection page renders.
-  - The **OnAttributeCollectionSubmit** event triggers after the user enters and submits attributes.
+  - The **OnAttributeCollectionStart** event occurs occurs at the beginning of the attribute collection step, before the attribute collection page renders.
+  - The **OnAttributeCollectionSubmit** event occurs after the user enters and submits attributes.
 - Upon token issuance using the **OnTokenIssuanceStart** event, which triggers just before a token is issued to the application.
 
 :::image type="content" source="media/concept-custom-extensions/authentication-flow-events-inline.png" alt-text="Diagram showing extensibility points in the authentication flow." lightbox="media/concept-custom-extensions/authentication-flow-events-expanded.png" border="false":::

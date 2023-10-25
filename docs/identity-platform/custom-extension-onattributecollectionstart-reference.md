@@ -21,7 +21,7 @@ ms.author: mimart
 
 **Applies to:** Microsoft Entra External ID customer configurations
 
-To modify the sign-up experience for your customer self-service sign-up user flows, you can create a custom authentication extension and invoke it at specific points in the user flow. The OnAttributeCollectionStart event occurs at the beginning of the attribute collection step, before the attribute collection page is rendered. This event allows you to define actions before attributes are collected from the user. For example, you can block a user from continuing the sign-up flow based on their federated identity or email, or prefill attributes with specified values. The following actions can be configured:
+To modify the sign-up experience for your customer self-service sign-up user flows, you can create a custom authentication extension and invoke it at specific points in the user flow. The OnAttributeCollectionStart event occurs at the beginning of the attribute collection step, before the attribute collection page renders. This event allows you to define actions before attributes are collected from the user. For example, you can block a user from continuing the sign-up flow based on their federated identity or email, or prefill attributes with specified values. The following actions can be configured:
 
 - **continueWithDefaultBehavior** - Render the attribute collection page as usual.
 - **setPreFillValues** - Prefill attributes in the sign-up form.

@@ -20,7 +20,7 @@ ms.author: mimart
 
 **Applies to:** Microsoft Entra External ID customer configurations
 
-To modify the sign-up experience for your customer self-service sign-up user flows, you can create a custom authentication extension and invoke it at specific points in the user flow. The OnAttributeCollectionSubmit event occurs after the user enters attributes and can be used to validate the information provided by the user. For example, you can validate an invitation code or partner number, modify an address format, allow the user to continue, or show a validation or block page. The following actions can be configured:
+To modify the sign-up experience for your customer self-service sign-up user flows, you can create a custom authentication extension and invoke it at specific points in the user flow. The OnAttributeCollectionSubmit event occurs after the user enters and submits attributes and can be used to validate the information provided by the user. For example, you can validate an invitation code or partner number, modify an address format, allow the user to continue, or show a validation or block page. The following actions can be configured:
 
 - **continueWithDefaultBehavior** - Continue with the sign-up flow.
 - **modifyAttributeValues** - Overwrite the values the user submitted in the sign-up form.
