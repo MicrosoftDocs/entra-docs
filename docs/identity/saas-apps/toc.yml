@@ -1069,6 +1069,8 @@
         href: frontify-tutorial.md
       - name: Frontline Education
         href: frontline-education-tutorial.md
+      - name: FTAPI
+        href: ftapi-tutorial.md
       - name: Fulcrum
         href: fulcrum-tutorial.md
       - name: Fuse
