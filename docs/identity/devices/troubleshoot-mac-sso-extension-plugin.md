@@ -116,7 +116,46 @@ The following table provides specific MDM installation guidance depending on whi
 - [**macOS**: Deploy the Microsoft Enterprise SSO plug-in](/mem/intune/configuration/use-enterprise-sso-plug-in-macos-with-intune)
 
 > [!IMPORTANT]
-> Although, any MDM is supported for deploying the SSO Extension, many organizations implement [**device-based Conditional Access polices**](~/identity/conditional-access/concept-conditional-access-grant.md#require-device-to-be-marked-as-compliant) by way of evaluating MDM compliance policies. If a third-party MDM is being used, ensure that the MDM vendor supports [**Intune Partner Compliance**](/mem/intune/protect/device-compliance-partners) if you would like to use device-based Conditional Access policies. When the SSO Extension is deployed via Intune or an MDM provider that supports Intune Partner Compliance, the extension can pass the device certificate to Microsoft Entra ID so that device authentication can be completed.   
+> Although, any MDM is supported for deploying the SSO Extension, many organizations implement [**device-based Conditional Access polices**](~/identity/conditional-access/concept-conditional-access-grant.md#require-device-to-be-marked-as-compliant) by way of evaluating MDM compliance policies. If a third-party MDM is being used, ensure that the MDM vendor supports [**Intune Partner Compliance**](/mem/intune/protect/device-compliance-partners) if you would like to use device-based Conditional Access policies. When the SSO Extension is deployed via Intune or an MDM provider that supports Intune Partner Compliance, the extension can pass the device certificate to Microsoft Entra ID so that device authentication can be completed.
+
+#### Validate Networking Configuration on macOS device
+
+The SSO extension framework from Apple and the Microsoft Enterprise SSO Extension built on it require that certain domains are exempted from TLS interception/inspection (also known as break and inspect proxying). The following domains must **not** be subject to TLS inspection:
+
+- app-site-association.cdn-apple.com
+- app-site-association.networking.apple
+
+##### Check if the SSO configuration is broken due to TLS Inspection
+
+You can validate if TLS inspection is impacting your SSO configuration by running a sysdiagnose from the Terminal application on an impacted device:
+
+   ```zsh
+   sudo sysdiagnose -f ~/Desktop/
+   ```
+
+The sysdiagnose will be saved to your desktop as a .tar.gz archive. Extract the archive and open the **system_logs.logarchive** file. This will open in the Console application. Search for **com.apple.appsso** and change the filter to **SUBSYSTEM**:
+
+:::image type="content" source="media/troubleshoot-mac-sso-extension-plugin/sysdiagnose_console.png" alt-text="Screenshot showing configuration profiles.":::
+
+Look for events stating that there are Associated Domain failures, especially related to Microsoft domains, such as login.microsoftonline.com. These events may indicate TLS inspection issues, which will prevent the SSO Extension from working properly. Apple domains may not always appear in the sysdiagnose log, even if they are impacted by an unsupported TLS inspection configuration.
+
+##### Validate TLS Inspection Configuration
+
+Apple provides a macOS tool for checking a number of common configuration issues called the Mac Evaluation Utility. This tool can be downloaded from [AppleSeed for IT](https://beta.apple.com/programs/appleseed-for-it/resources). If you have access to AppleSeed for IT then download the Mac Evaluation Utility from the Resources area. After installing the application, run an evaluation. Once the evaluation is complete, navigate to **HTTPS Interception** --> **Additional Content** --> and check the two items below:
+
+:::image type="content" source="media/troubleshoot-mac-sso-extension-plugin/mac-evaluation-utility.png" alt-text="Screenshot showing configuration profiles.":::
+
+If these checks have a warning or error then there may be TLS inspection occurring on the device. Work with your network team to exempt ***.cdn-apple.com** and ***.networking.apple** from TLS inspection.
+
+##### Clear macOS TLS Inspection Cache
+
+If you had issues with associated domains and have allow listed domains in your on-device TLS inspection tool, you can run this command to reset the device's cache rather than waiting for the device to recover:
+
+    ```zsh
+    sudo swcutil reset
+    ```
+
+Re-test the SSO extension configuration after resetting the cache.
 
 #### Validate SSO configuration profile on macOS device
 
