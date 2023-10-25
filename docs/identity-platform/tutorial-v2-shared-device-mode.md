@@ -9,7 +9,7 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: tutorial
 ms.workload: identity
-ms.date: 11/03/2022
+ms.date: 10/24/2023
 ms.author: henrymbugua
 ms.reviewer: brandwe
 ms.custom: aaddev, identityplatformtop40
@@ -49,7 +49,7 @@ If you're not using the sample app, add the MSAL library as a dependency in your
 
 ```gradle
 dependencies{
-  implementation 'com.microsoft.identity.client.msal:1.0.+'
+  implementation 'com.microsoft.identity.client.msal:4.9.+'
 }
 ```
 
@@ -301,5 +301,5 @@ The Sample Application is a simple app that will call the Graph API of your orga
 
 Learn more about working with the Microsoft Authentication Library and shared device mode on Android devices:
 
-> [!div class="nextstepaction"]
+> [!div class="nextstepaction"] 
 > [Shared device mode for Android devices](msal-android-shared-devices.md)
