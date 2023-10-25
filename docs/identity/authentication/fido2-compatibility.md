@@ -1,12 +1,12 @@
 ---
-title: Browser support of FIDO2 passwordless authentication | Microsoft Entra ID
+title: Native app and browser support of FIDO2 passwordless authentication | Microsoft Entra ID
 description: Browsers and operating system combinations support FIDO2 passwordless authentication for apps using Microsoft Entra ID
 
 services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 10/09/2023
+ms.date: 10/25/2023
 
 author: justinha
 ms.author: justinha
@@ -15,13 +15,28 @@ ms.reviewer: calui
 
 ms.collection: M365-identity-device-management
 ---
-# Browser support of FIDO2 passwordless authentication
+# Native app and browser support of FIDO2 passwordless authentication
 
-Microsoft Entra ID allows [FIDO2 security keys](./concept-authentication-passwordless.md#fido2-security-keys) to be used as a passwordless device. The availability of FIDO2 authentication for Microsoft accounts was [announced in 2018](https://techcommunity.microsoft.com/t5/identity-standards-blog/all-about-fido2-ctap2-and-webauthn/ba-p/288910), and it became [generally available](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/passwordless-authentication-is-now-generally-available/ba-p/1994700) in March 2021. The following diagram shows which browsers and operating system combinations support passwordless authentication using FIDO2 authentication keys with Microsoft Entra ID. Microsoft Entra ID currently supports only hardware FIDO2 keys and doesn't support passkeys for any platform.
+Microsoft Entra ID allows [FIDO2 security keys](./concept-authentication-passwordless.md#fido2-security-keys) to be used as a passwordless device. The availability of FIDO2 authentication for Microsoft accounts was [announced in 2018](https://techcommunity.microsoft.com/t5/identity-standards-blog/all-about-fido2-ctap2-and-webauthn/ba-p/288910), and it became [generally available](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/passwordless-authentication-is-now-generally-available/ba-p/1994700) in March 2021. This topic covers which browsers, native apps, and operating systems support passwordless authentication using FIDO2 authentication keys with Microsoft Entra ID. Microsoft Entra ID currently supports only hardware FIDO2 keys and doesn't support passkeys for any platform.
 
-## Supported browsers
+## Native app support
 
-This table shows support for authenticating Microsoft Entra ID and Microsoft Accounts (MSA). Microsoft accounts are created by consumers for services such as Xbox, Skype, or Outlook.com. 
+Microsoft applications provide native support for FIDO2 authentication for all users who have an authentication broker installed for their operating system. The following tables lists which authentication brokers are supported for different operating systems.
+
+| Operating system | Authentication broker           |
+|------------------|---------------------------------|
+| iOS              | Microsoft Authenticator         |
+| macOS            | Company Portal                  |
+| Android          | Authenticator or Company Portal |
+
+If a user has an authentication broker installed, they can choose to sign in with a security key when they access an application such as Outlook. They're redirected to sign in with FIDO2, and redirected back to Outlook as a signed in user after successful authentication.
+
+If the user doesn't have an authentication broker installed,  
+
+
+## Browser support
+
+This table shows browser support for authenticating Microsoft Entra ID and Microsoft accounts by using FIDO2. Microsoft accounts are created by consumers for services such as Xbox, Skype, or Outlook.com. 
 
 | OS  | Chrome | Edge | Firefox | Safari |
 |:---:|:------:|:----:|:-------:|:------:|
@@ -32,8 +47,6 @@ This table shows support for authenticating Microsoft Entra ID and Microsoft Acc
 | **iOS**  | &#x2705; | &#x2705; | &#x2705; | &#x2705; |
 | **Android**  | &#10060; | &#10060; | &#10060; | N/A |
 
->[!NOTE]
->This is the view for web support. Authentication for native apps in iOS and Android isn't available yet.
 
 ## Browser support for each platform
 
