@@ -107,7 +107,7 @@ For more on the remediation tools available within Entra Permissions Management:
 * [Add and remove roles and tasks for Microsoft Azure and GCP identities](~/permissions-management/how-to-add-remove-role-task.md)
 * [Revoke access to high-risk and unused tasks or assign read-only status for Azure and GCP identities](~/permissions-management/how-to-revoke-task-readonly-status.md)
 
-### Track process and measure success
+### Track progress and measure success
 
 To meet organizational goals, enable processes to track and report on progress. Some built-in Microsoft Entra Permissions Management tools are:
 
