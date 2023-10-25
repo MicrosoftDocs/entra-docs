@@ -189,7 +189,7 @@ items:
       items:
       - name: Implement a reporting strategy
         href: permissions-manage-ops-guide-three.md
-      - name: Configure Alerts
+      - name: Configure alerts
         href: permissions-manage-ops-guide-alerts.md      
   - name: Security
     items: 
