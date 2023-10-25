@@ -2,7 +2,6 @@
 title: Secure your resources with Microsoft managed Conditional Access policies
 description: Microsoft managed policies take action to require multifactor authentication to reduce the risk of compromise.
 
-services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: conceptual
@@ -12,8 +11,6 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: swethar
-
-ms.collection: M365-identity-device-management
 ---
 # Microsoft managed policies
 
@@ -40,15 +37,6 @@ Administrators have the ability to **Edit** the **State** (On, Off, or Report-on
 
 Microsoft will enable these policies after no less than 60 days after they're introduced in your tenant if they are left in the **Report-only** state. Administrators might choose to enable these policies sooner if they wish.
 
-## What is Conditional Access?
-
-Conditional Access is a Microsoft Entra feature that allows organizations to enforce security requirements when accessing resources. Commonly it is used to enforce multifactor authentication, device configuration, or network location requirements.
-
-These policies can be thought of as logical if then statements.
-
-**If** the assignments (users, resources, and conditions) are true, **then** apply the access controls (grant and/or session) in the policy.
-**If** you are an administrator, who wants to access one of the Microsoft admin portals, **then** you must perform multifactor authentication to prove it is really you.
-
 ## Policies
 
 These Microsoft managed polices allow administrators to make simple modifications like excluding users or turning them fron report-only mode to on or off. As Administrators get more comfortable with Conditional Access policy they might choose to clone the policy and make completely custom versions.
@@ -57,21 +45,46 @@ As threats evolve over time Microsoft may change these policies in the future to
 
 ### Multifactor authentication for admins accessing Microsoft Admin Portals
 
-This policy covers 14 admin roles that we consider to be highly privileged, who are accessing the [Microsoft Admin Portals group](concept-conditional-access-cloud-apps.md#microsoft-admin-portals), and requires them to perform multifactor authentication. This policy targets Microsoft Entra ID P1 and P2 tenants where security defaults aren't enabled.
+This policy covers 14 admin roles that we consider to be highly privileged, who are accessing the [Microsoft Admin Portals group](concept-conditional-access-cloud-apps.md#microsoft-admin-portals), and requires them to perform multifactor authentication.
+
+This policy targets Microsoft Entra ID P1 and P2 tenants where security defaults aren't enabled.
 
 ### Multifactor authentication for per-user multifactor authentication users
 
-This policy covers users with [per-user MFA](/azure/active-directory/authentication/howto-mfa-userstates) and requires them to perform multifactor authentication for all cloud apps. This policy targets Microsoft Entra ID P1 and P2 tenants where security defaults aren't enabled and there are less than 500 per-user MFA enabled/enforced users. **Using per-user MFA is no longer a recommended configuration.**
+This policy covers users with [per-user MFA](/azure/active-directory/authentication/howto-mfa-userstates) a configuration that Microsoft no longer recommends. These users are targeted by Conditional Access and required to perform multifactor authentication for all cloud apps.
+
+This policy targets Microsoft Entra ID P1 and P2 tenants where security defaults aren't enabled and there are less than 500 per-user MFA enabled/enforced users.
 
 ### Multifactor authentication and reauthentication for risky sign-ins
 
-This policy covers all users and requires MFA and reauthentication for high-risk sign-ins. This policy targets Microsoft Entra ID P2 tenants where there are enough licenses for each user.
+This policy covers all users and requires MFA and reauthentication when we detect high-risk sign-in. This means something about the way the user is signing in is out of the ordinary  This policy targets Microsoft Entra ID P2 tenants where there are enough licenses for each user.
 
-## See how policies are applied
+## How do I see the effects?
 
 Administrators can look through their sign-in logs to see these policies in action in their organization.
 
-How to sign in logs see blocked or applied
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
+1. Browse to **Identity** > **Monitoring & health** > **Sign-in logs**.
+1. Find the event for the sign-in to review. Add or remove filters and columns to filter out unnecessary information.
+   1. Add filters to narrow the scope:
+      1. **Correlation ID** when you have a specific event to investigate.
+      1. **Conditional Access** to see policy failure and success. Scope your filter to show only failures to limit results.
+      1. **Username** to see information related to specific users.
+      1. **Date** scoped to the time frame in question.
+1. Once the sign-in event that corresponds to the user's sign-in is found, select the **Conditional Access** tab. The Conditional Access tab shows the specific policy or policies that resulted in the sign-in interruption.
+   1. Information in the **Troubleshooting and support** tab may provide a clear reason as to why a sign-in failed such as a device that didn't meet compliance requirements.
+   1. To investigate further, drill down into the configuration of the policies by clicking on the **Policy Name**. Clicking the **Policy Name** shows the policy configuration user interface for the selected policy for review and editing.
+   1. The **client user** and **device details** that were used for the Conditional Access policy assessment are also available in the **Basic Info**, **Location**, **Device Info**, **Authentication Details**, and **Additional Details** tabs of the sign-in event.
+
+
+## What is Conditional Access?
+
+Conditional Access is a Microsoft Entra feature that allows organizations to enforce security requirements when accessing resources. Commonly it is used to enforce multifactor authentication, device configuration, or network location requirements.
+
+These policies can be thought of as logical if then statements.
+
+**If** the assignments (users, resources, and conditions) are true, **then** apply the access controls (grant and/or session) in the policy.
+**If** you are an administrator, who wants to access one of the Microsoft admin portals, **then** you must perform multifactor authentication to prove it is really you.
 
 ## What if I want to make more changes?
 
