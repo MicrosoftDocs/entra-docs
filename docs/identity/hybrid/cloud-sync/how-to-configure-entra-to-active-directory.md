@@ -1,5 +1,5 @@
 ---
-title: 'Provision groups to AD using Microsoft Entra Cloud Sync'
+title: 'Provision groups to Active Directory using Microsoft Entra Cloud Sync'
 description: This article describes how to configure Microsoft Entra Cloud Sync's Group Provision to AD with cloud sync.
 services: active-directory
 author: billmath
@@ -73,7 +73,7 @@ To configure provisioning, follow these steps.
  3. Select **New configuration**.
  4. Select **Microsoft Entra ID to AD sync**.
 
-  :::image type="content" source="media/how-to-configure-entra-to-ad/entra-to-ad-1.png" alt-text="Screenshot of configuration selection." lightbox="media/how-to-configure-entra-to-ad/entra-to-ad-1.png":::
+  :::image type="content" source="media/how-to-configure-entra-to-active-directory/entra-to-ad-1.png" alt-text="Screenshot of configuration selection." lightbox="media/how-to-configure-entra-to-active-directory/entra-to-ad-1.png":::
 
  5. On the configuration screen, select your domain and whether to enable password hash sync.  Click **Create**.  
  
@@ -81,7 +81,7 @@ To configure provisioning, follow these steps.
 
  6.  The **Get started** screen will open.  From here, you can continue configuring cloud sync.
 
-  :::image type="content" source="media/how-to-configure-entra-to-ad/entra-to-ad-2.png" alt-text="Screenshot of the configuration sections." lightbox="media/how-to-configure-entra-to-ad/entra-to-ad-2.png":::
+  :::image type="content" source="media/how-to-configure-entra-to-active-directory/entra-to-ad-2.png" alt-text="Screenshot of the configuration sections." lightbox="media/how-to-configure-entra-to-active-directory/entra-to-ad-2.png":::
 
  7. The configuration is split in to the following 3 sections.
 
@@ -96,7 +96,7 @@ You can scope the agent to synchronize all or specific security groups. You can 
  
  1.  On the **Getting started** configuration screen.  Click either **Add scoping filters** next to the **Add scoping filters** icon or on the click **Scoping filters** on the left under **Manage**.
 
-  :::image type="content" source="media/how-to-configure-entra-to-ad/entra-to-ad-3.png" alt-text="Screenshot of the scoping filters sections." lightbox="media/how-to-configure-entra-to-ad/entra-to-ad-3.png":::
+  :::image type="content" source="media/how-to-configure-entra-to-active-directory/entra-to-ad-3.png" alt-text="Screenshot of the scoping filters sections." lightbox="media/how-to-configure-entra-to-active-directory/entra-to-ad-3.png":::
  
  2. Select the scoping filter. The filter can be one of the following:
      - **All security groups**: Scopes the configuration to apply to all cloud security groups.
@@ -115,7 +115,7 @@ You can scope the agent to synchronize all or specific security groups. You can 
 
   ```Switch([displayName],"OU=Default,OU=container,DC=contoso,DC=com","Marketing","OU=Marketing,OU=container,DC=contoso,DC=com","Sales","OU=Sales,OU=container,DC=contoso,DC=com")  ```
 
-  :::image type="content" source="media/how-to-configure-entra-to-ad/entra-to-ad-4.png" alt-text="Screenshot of the scoping filters expression." lightbox="media/how-to-configure-entra-to-ad/entra-to-ad-4.png":::
+  :::image type="content" source="media/how-to-configure-entra-to-active-directory/entra-to-ad-4.png" alt-text="Screenshot of the scoping filters expression." lightbox="media/how-to-configure-entra-to-active-directory/entra-to-ad-4.png":::
 
  5. Attribute based scope filtering is supported.  For more information see [Attribute based scope filtering](#attribute-scope-filtering)
  4. Once your scoping filters are configured, click **Save**.
@@ -126,7 +126,7 @@ You can scope the agent to synchronize all or specific security groups. You can 
 ## Attributes and attribute based scope filtering
 You can customize the default attribute-mappings according to your business needs. So, you can change or delete existing attribute-mappings, or create new attribute-mappings.  
 
-:::image type="content" source="media/how-to-configure-entra-to-ad/entra-to-ad-6.png" alt-text="Screenshot of the attribute based scoping." lightbox="media/how-to-configure-entra-to-ad/entra-to-ad-6.png":::
+:::image type="content" source="media/how-to-configure-entra-to-active-directory/entra-to-ad-6.png" alt-text="Screenshot of the attribute based scoping." lightbox="media/how-to-configure-entra-to-active-directory/entra-to-ad-6.png":::
 
 ### Schema for Entra ID to AD configurations
 Currently, the AD Schema is not discoverable and there is fixed set of mappings.  The following table provides the default mappings and schema for the Entra ID to AD configurations.
@@ -150,7 +150,7 @@ Be aware that not all of the above mappings are visible in the portal.  For more
 ### Attribute scope filtering
 Attribute based scope filtering is supported.  This allows you to scope groups based on certain attributes.  However, be aware that the attribute mapping section for a Microsoft Entra ID to AD configuration is slightly different than the traditional attribute mapping section.
 
-:::image type="content" source="media/how-to-configure-entra-to-ad/entra-to-ad-6.png" alt-text="Screenshot of the attribute based scoping." lightbox="media/how-to-configure-entra-to-ad/entra-to-ad-6.png":::
+:::image type="content" source="media/how-to-configure-entra-to-active-directory/entra-to-ad-6.png" alt-text="Screenshot of the attribute based scoping." lightbox="media/how-to-configure-entra-to-active-directory/entra-to-ad-6.png":::
 
 #### Supported clauses
 
@@ -166,11 +166,11 @@ The default security grouping is ALWAYS applied first and uses the AND logic whe
 
 A single clause defines a single condition for a single attribute value. If multiple clauses are created in a single scoping filter, they're evaluated together using "AND" logic. The "AND" logic means all clauses must evaluate to "true" in order for a user to be provisioned.
 
-:::image type="content" source="media/how-to-configure-entra-to-ad/entra-to-ad-8.png" alt-text="Screenshot of AND clause attribute based scoping." lightbox="media/how-to-configure-entra-to-ad/entra-to-ad-8.png":::
+:::image type="content" source="media/how-to-configure-entra-to-active-directory/entra-to-ad-8.png" alt-text="Screenshot of AND clause attribute based scoping." lightbox="media/how-to-configure-entra-to-active-directory/entra-to-ad-8.png":::
 
 Finally, multiple scoping filters can be created for a group. If multiple scoping filters are present, they're evaluated together by using "OR" logic. The "OR" logic means that if either of the clauses in any of the configured scoping filters evaluate to "true", the group is provisioned.
 
-:::image type="content" source="media/how-to-configure-entra-to-ad/entra-to-ad-9.png" alt-text="Screenshot of OR clause attribute based scoping." lightbox="media/how-to-configure-entra-to-ad/entra-to-ad-9.png":::
+:::image type="content" source="media/how-to-configure-entra-to-active-directory/entra-to-ad-9.png" alt-text="Screenshot of OR clause attribute based scoping." lightbox="media/how-to-configure-entra-to-active-directory/entra-to-ad-9.png":::
 
 
 #### Supported operators
@@ -206,7 +206,7 @@ To create an attribute based filter use the following steps:
 5.  Under **Value**, specify a value.
 6.  Click **Save**.
 
-:::image type="content" source="media/how-to-configure-entra-to-ad/entra-to-ad-7.png" alt-text="Screenshot of the setting up attribute based scoping." lightbox="media/how-to-configure-entra-to-ad/entra-to-ad-7.png":::
+:::image type="content" source="media/how-to-configure-entra-to-active-directory/entra-to-ad-7.png" alt-text="Screenshot of the setting up attribute based scoping." lightbox="media/how-to-configure-entra-to-active-directory/entra-to-ad-7.png":::
 
 For more information, see [attribute mapping](how-to-attribute-mapping.md#add-an-attribute-mapping---microsoft-entra-id-to-ad).
 
@@ -236,12 +236,12 @@ To use on-demand provisioning, follow these steps:
  5. Enter the name of the group in the **Selected group** box
  6. From the **Selected users** section, select some users to test.
  
-   :::image type="content" source="media/how-to-configure-entra-to-ad/entra-to-ad-10.png" alt-text="Screenshot of adding members." lightbox="media/how-to-configure-entra-to-ad/entra-to-ad-10.png":::
+   :::image type="content" source="media/how-to-configure-entra-to-active-directory/entra-to-ad-10.png" alt-text="Screenshot of adding members." lightbox="media/how-to-configure-entra-to-active-directory/entra-to-ad-10.png":::
 
  7. Click **Provision**.
  8. You should see the group provisioned.
  
-   :::image type="content" source="media/how-to-configure-entra-to-ad/entra-to-ad-11.png" alt-text="Screenshot of successful provisioning on demand." lightbox="media/how-to-configure-entra-to-ad/entra-to-ad-11.png":::
+   :::image type="content" source="media/how-to-configure-entra-to-active-directory/entra-to-ad-11.png" alt-text="Screenshot of successful provisioning on demand." lightbox="media/how-to-configure-entra-to-active-directory/entra-to-ad-11.png":::
 
 
 For more information, see [on-demand provisioning](how-to-on-demand-provision.md).
@@ -266,7 +266,7 @@ Cloud sync monitors the health of your configuration and places unhealthy object
 
 Provisioning logs are available and can be used to provide information and assist in troubleshooting.
 
-   :::image type="content" source="media/how-to-configure-entra-to-ad/entra-to-ad-11.png" alt-text="Screenshot of successful provisioning on demand." lightbox="media/how-to-configure-entra-to-ad/entra-to-ad-11.png":::
+   :::image type="content" source="media/how-to-configure-entra-to-active-directory/entra-to-ad-11.png" alt-text="Screenshot of successful provisioning on demand." lightbox="media/how-to-configure-entra-to-active-directory/entra-to-ad-11.png":::
 
 For more information on provisioning logs, see [Enabling provisioning logs](how-to-cloud-sync-workbook.md#enabling-provisioning-logs)
 

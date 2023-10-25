@@ -122,7 +122,7 @@
       - name: Configuration - AD to Microsoft Entra ID
         href: cloud-sync/how-to-configure.md
       - name: Provision groups to AD using Microsoft Entra Cloud Sync
-        href: cloud-sync/how-to-configure-entra-to-ad.md
+        href: cloud-sync/how-to-configure-entra-to-active-directory.md
       - name: On-demand provisioning
         href: cloud-sync/how-to-on-demand-provision.md
       - name: Attribute mapping

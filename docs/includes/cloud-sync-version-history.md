@@ -12,7 +12,7 @@ This article lists the versions and features of Azure Active Directory Connect P
 ## Download link
 Go to the [Azure AD Connect - Microsoft Entra admin center](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/GetStarted) click on the "Manage" tab to download the "Provisioning Agent".
 
-Get notified about when to revisit this page for updates by copying and pasting this URL: `https://aka.ms/cloudsyncrss` into your ![RSS feed reader icon](media/cloud-sync-version-history/feed-icon-16x16.png) feed reader.
+Get notified about when to revisit this page for updates by copying and pasting this URL: `https://aka.ms/cloudsyncrss` into your ![RSS feed reader icon](media/cloud-sync-version-history/feed-icon-16-x-16.png) feed reader.
 
 ## 1.1.1367.0
 

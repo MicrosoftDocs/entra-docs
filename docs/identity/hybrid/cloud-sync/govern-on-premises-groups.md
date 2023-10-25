@@ -85,7 +85,7 @@ Use the following steps for applications to use new groups.
  1.  Using the Entra Portal, create an application in Entra ID representing the AD-based application, and configure the application to require user assignment.
  2.  If application proxy will be used to enable users to connect to the application, then configure the application proxy.
  3.	Create a new security group in Entra ID.
- 4.	Use [Group Provisioning to AD](how-to-configure-entra-to-ad.md) to provision this group to AD.  
+ 4.	Use [Group Provisioning to AD](how-to-configure-entra-to-active-directory.md) to provision this group to AD.  
  5.  Launch Active Directory Users and Computers, and wait for the resulting new AD group to be created in the AD domain.  When it's present, record the distinguished name, domain, account name and SID of the new AD group.
 
  #### Configure application to use new group
@@ -112,7 +112,7 @@ Nesting that group into the applications’ existing AD group will allow Entra I
  1.  Using the Entra Portal, create an application in Entra ID representing the AD-based application, and configure the application to require user assignment.
  2.  If application proxy will be used to enable users to connect to the application, then configure the application proxy.
  3.	Create a new security group in Entra ID.
- 4.	Use [Group Provisioning to AD](how-to-configure-entra-to-ad.md) to provision this group to AD.  
+ 4.	Use [Group Provisioning to AD](how-to-configure-entra-to-active-directory.md) to provision this group to AD.  
  5.  Launch Active Directory Users and Computers, and wait for the resulting new AD group to be created in the AD domain, When it's present, record the distinguished name, domain, account name and SID of the new AD group.
 
 #### Configure application to use new group
@@ -129,7 +129,7 @@ You'll then be able to govern access to the AD application through this new acce
 
 ## Troubleshooting
 
-A user who is a member of the new AD group, and is on a Windows PC already logged into an AD domain, may have an existing ticket issued by an AD domain controller that doesn't include the new AD group membership.  This is because the ticket may have been issued prior to the cloud sync group provisioning adding them to the new AD group.  The user won't be able to present the ticket for access to the application, and so must wait for the ticket to expire and a new ticket issued, or purge their tickets, log out and log back into the domain.  See the [klist](/windows-server/administration/windows-commands/klist) command for more details.
+A user who is a member of the new AD group, and is on a Windows PC already logged into an AD domain, might have an existing ticket issued by an AD domain controller that doesn't include the new AD group membership.  This is because the ticket might have been issued prior to the cloud sync group provisioning adding them to the new AD group.  The user won't be able to present the ticket for access to the application, and so must wait for the ticket to expire and a new ticket issued, or purge their tickets, log out and log back into the domain.  See the [klist](/windows-server/administration/windows-commands/klist) command for more details.
 
 ## Existing Azure AD Connect group writeback v2 customers
 If you're using Azure AD Connect group writeback v2, you'll need to move to cloud sync provisioning to AD before you can take advantage of cloud sync group provisioning.  See [Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync](migrate-group-writeback.md)
