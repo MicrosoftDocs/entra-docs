@@ -8,7 +8,6 @@ tags: azuread
 ms.service: active-directory
 ms.topic: conceptual
 ms.workload: identity
-ms.subservice: architecture
 ms.date: 10/23/2023
 ms.author: jricketts  
 ---
@@ -43,7 +42,7 @@ Statistical anomaly alerts are useful for threat detection, because unusual acti
 * **Identity Performed Tasks with Unusual Timing**: This alert is for threat detection. Identities performing tasks outside their typical hours might indicate a compromised account, or a user accessing resources from an atypical location.
 * **Identity Performed Tasks with Unusual Types**: This alert is for threat detection. Identities suddenly performing tasks they don't usually perform might indicate a compromised account.
 
-For more on pre-configured alerts, see [create and view statistical anomaly alerts and alert triggers](../cloud-infrastructure-entitlement-management/product-statistical-anomalies.md).
+For more on pre-configured alerts, see [create and view statistical anomaly alerts and alert triggers](~/permissions-management/product-statistical-anomalies.md).
 
 ### Respond to statistical anomaly alerts
 
@@ -65,7 +64,7 @@ There are three pre-configured rule-based anomaly alerts:
 
    [!NOTE] **Identity Performs a Particular Task for the First Time** sends a notification when a user performs a unique task for the first time. **Identity Performs a Task for the First Time** sends a notification when an identity performs their first task within a specified time frame.
 
-To learn more, see [create and view rule-based anomaly alerts and alert triggers](../cloud-infrastructure-entitlement-management/product-rule-based-anomalies.md).
+To learn more, see [create and view rule-based anomaly alerts and alert triggers](~/permissions-management/product-rule-based-anomalies.md).
 
 ### Respond to rule-based anomaly alerts
 
@@ -85,7 +84,7 @@ Permissions analytics alerts play a key role in the recommended Discover-Remedia
 2. **Remediate**: Clean up the inactive users manually, or with remediation tools in Microsoft Entra Permissions Management.
 3. **Monitor**: Create a permissions analytics alert for new inactive users detected in your environment, thus enabling a proactive approach to cleaning up stale accounts.
 
-Learn more in the article, [create and view a permission analytics trigger](../cloud-infrastructure-entitlement-management/product-permission-analytics.md).
+Learn more in the article, [create and view a permission analytics trigger](~/permissions-management/product-permission-analytics.md).
 
 The following list of recommended permissions analytics alerts is for supported cloud environments. Add more permissions analytics alerts as needed. The recommendations for Microsoft Azure, Amazone Web Services (AWS), and Google Cloud Platform (GCP) don’t reflect a particular environment.
 
@@ -146,7 +145,7 @@ Remediation varies for each alert. There are valid use cases that trigger permis
 
 ## Activity alerts
 
-Activity alerts continuously monitor critical resources to help you stay aware of high-risk activities in your environment. These alerts notify you of activities such as an accessed resource in your environment, or a performed task. Activity alerts are customizable. You can create alert criteria with the easy-to-use, no code interface. Learn how to [create and view activity alerts and alert triggers](../cloud-infrastructure-entitlement-management/how-to-create-alert-trigger.md).
+Activity alerts continuously monitor critical resources to help you stay aware of high-risk activities in your environment. These alerts notify you of activities such as an accessed resource in your environment, or a performed task. Activity alerts are customizable. You can create alert criteria with the easy-to-use, no code interface. Learn how to [create and view activity alerts and alert triggers](~/permissions-management/how-to-create-alert-trigger.md).
 
 The following sections have example activity alerts that you can create. They’re organized by general ideas, then scenarios for Azure, AWS, and GCP.
 
