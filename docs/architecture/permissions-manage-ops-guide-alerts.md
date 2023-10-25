@@ -29,7 +29,7 @@ There are four types of alerts to configure in Microsoft Entra Permissions Manag
 * [Permission analytics](#permissions-analytics-alerts)
 * [Activity](#activity-alerts)
 
-## Statistical anomoly alerts
+## Statistical anomaly alerts
 
 Statistical anomaly alerts use Microsoft Entra Permissions Management artificial intelligence (AI) and machine learning (ML) capabilities. Based on prior activity log information, Permissions Management classifies and determines typical behavior for each identity. You select from pre-configured alerts for atypical or suspicious activity in your environment. For example, you can be notified when an identity performs a high number of tasks, or when an identity performs tasks at an unusual time of day.
 
