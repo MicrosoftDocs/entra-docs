@@ -1,7 +1,14 @@
-- name: Azure
-  tocHref: /azure/
-  topicHref: /azure/index
+items:
+- name: Microsoft Entra
+  tocHref: /entra/
+  topicHref: /entra/index
   items:
-  - name: Governance
+  - name: Microsoft Entra ID Governance
     tocHref: /graph/
-    topicHref: /azure/active-directory/governance/index
+    topicHref: /entra/id-governance
+  - name: Microsoft Entra ID Governance
+    tocHref: /id-governance/privileged-identity-management/
+    topicHref: /entra/id-governance
+  - name: Microsoft Entra ID Governance
+    tocHref: /powershell/
+    topicHref: /entra/id-governance

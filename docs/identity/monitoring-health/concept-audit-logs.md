@@ -8,7 +8,7 @@ ms.service: active-directory
 ms.topic: conceptual
 ms.workload: identity
 ms.subservice: report-monitor
-ms.date: 10/04/2023
+ms.date: 10/24/2023
 ms.author: sarahlipsey
 ms.reviewer: besiler
 

@@ -44,6 +44,7 @@
     "externalReference": [],
     "globalMetadata": {
       "breadcrumb_path": "/entra/breadcrumb/toc.json",
+      "brand": "entra",
       "extendBreadcrumb": true,
       "uhfHeaderId": "MSDocsHeader-Entra",
       "feedback_product_url": "https://feedback.azure.com/d365community/forum/79b1327d-d925-ec11-b6e6-000d3a4f06a4",

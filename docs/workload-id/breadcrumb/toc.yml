@@ -1,31 +1,33 @@
-- name: Azure
-  tocHref: /azure/
-  topicHref: /azure/index
+items:
+- name: Microsoft Entra
+  tocHref: /entra/
+  topicHref: /entra/index
   items:
-  - name: Active Directory
-    tocHref: /azure/active-directory/
-    topicHref: /azure/active-directory/index
-  - name: Active Directory
-    tocHref: /azure/active-directory/develop/
-    topicHref: /azure/active-directory/index
-  - name: Active Directory
-    tocHref: /azure/active-directory/managed-identities-azure-resources/
-    topicHref: /azure/active-directory/index
-  - name: Active Directory
-    tocHref: /azure/active-directory/identity-protection/
-    topicHref: /azure/active-directory/index
-  - name: Active Directory
-    tocHref: /azure/active-directory/conditional-access/
-    topicHref: /azure/active-directory/index
-  - name: Active Directory
-    tocHref: /azure/active-directory/privileged-identity-management/
-    topicHref: /azure/active-directory/index
-  - name: Active Directory
-    tocHref: /azure/active-directory/manage-apps/
-    topicHref: /azure/active-directory/index
-  - name: Active Directory
-    tocHref: /azure/active-directory/reports-monitoring/
-    topicHref: /azure/active-directory/index
-  - name: Active Directory
-    tocHref: /graph/api/resources/
-    topicHref: /azure/active-directory/index
+  - name: Microsoft Entra Workload ID
+    tocHref: /entra/workload-id/
+    topicHref: /entra/workload-id/
+    items:
+    - name: Microsoft Entra Workload ID
+      tocHref: /entra/identity-platform/
+      topicHref: /entra/workload-id/
+    - name: Microsoft Entra Workload ID
+      tocHref: /entra/identity/managed-identities-azure-resources/
+      topicHref: /entra/workload-id/
+    - name: Microsoft Entra Workload ID
+      tocHref: /entra/id/-protection/
+      topicHref: /entra/workload-id/
+    - name: Microsoft Entra Workload ID
+      tocHref: /entra/identity/conditional-access/
+      topicHref: /entra/workload-id/
+    - name: Microsoft Entra Workload ID
+      tocHref: /entra/identity/monitoring-health/
+      topicHref: /entra/workload-id/
+    - name: Microsoft Entra Workload ID
+      tocHref: /entra/id/-governance/
+      topicHref: /entra/workload-id/
+    - name: Microsoft Entra Workload ID
+      tocHref: /entra/identity/enterprise-apps/
+      topicHref: /entra/workload-id/
+    - name: Microsoft Entra Workload ID
+      tocHref: /graph/
+      topicHref: /entra/workload-id/
