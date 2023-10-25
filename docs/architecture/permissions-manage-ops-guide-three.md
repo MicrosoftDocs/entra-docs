@@ -45,7 +45,8 @@ Use custom audit queries to obtain activity log information the product ingests,
 
 Use Permissions Management to create and save custom audit queries that others view in your organization. We recommend you build audit queries that align with the information your organization regularly reviews. Use the following diagrams to get started. 
 
-   [!NOTE]The following diagrams are query examples. The exact structure depends on your query. When creating custom audit queries, select the authorization system type and the authorization system(s) and folder(s) you want to query.
+>[!NOTE]
+> The following diagrams are query examples. The exact structure depends on your query. When creating custom audit queries, select the authorization system type and the authorization system(s) and folder(s) you want to query.
 
 **Review access to critical resources**
 
@@ -69,7 +70,8 @@ Use Permissions Management to create and save custom audit queries that others v
 
 **Review Permissions Management remediation activity**
 
-   [!NOTE] To query Microsoft Entra Permissions Management logs, for the authorization system type, select **Platform**.
+>[!NOTE]
+> To query Microsoft Entra Permissions Management logs, for the authorization system type, select **Platform**.
 
    ![Diagram of a query to review Permissions Management remediation activity.](./media/permissions-manage-ops-guide/permissions-management-remediation-activity.png)
 
@@ -112,8 +114,7 @@ Use Power Automate for automated responses to Inactive User alerts. For instance
 
 ## Next steps
 
-* Introduction 
-* Phase 1: Implement the framework to manage at scale 
-* Phase 2: Right-size permissions and automate the principle of least privilege 
-* Phase 3: Configure Microsoft Entra Permissions Management monitoring and alerting (you are here)
-* Microsoft Entra Permissions Management alerts guide
+* [Introduction](permissions-manage-ops-guide-intro.md)
+* [Phase 1: Implement the framework to manage at scale](permissions-manage-ops-guide-one.md)
+* [Phase 2: Right-size permissions and automate the principle of least privilege](permissions-manage-ops-guide-two.md)
+* [Microsoft Entra Permissions Management alerts guide](permissions-manage-ops-guide-alerts.md)
