@@ -15,6 +15,7 @@ ms.reviewer: librown
 
 ms.collection: M365-identity-device-management
 ---
+
 # Passwordless authentication options for Microsoft Entra ID
 
 Features like multifactor authentication (MFA) are a great way to secure your organization, but users often get frustrated with the additional security layer on top of having to remember their passwords. Passwordless authentication methods are more convenient because the password is removed and replaced with something you have, plus something you are or something you know.
@@ -23,10 +24,11 @@ Features like multifactor authentication (MFA) are a great way to secure your or
 | --- | --- | --- |
 | Passwordless | Windows 10 Device, phone, or security key | Biometric or PIN |
 
-Each organization has different needs when it comes to authentication. Microsoft Global Azure and Azure Government offer the following three passwordless authentication options that integrate with Microsoft Entra ID:
+Each organization has different needs when it comes to authentication. Microsoft Global Azure and Azure Government offer the following four passwordless authentication options that integrate with Microsoft Entra ID:
 
 - Windows Hello for Business
-- Microsoft Authenticator 
+- Microsoft Authenticator
+- Platform Single Sign-On Extension for MacOS
 - FIDO2 security keys
 
 ![Authentication: Security versus convenience](./media/concept-authentication-passwordless/passwordless-convenience-security.png)
@@ -76,6 +78,31 @@ To get started with passwordless sign-in, complete the following how-to:
 
 > [!div class="nextstepaction"]
 > [Enable passwordless sign using the Authenticator app](howto-authentication-passwordless-phone.md)
+
+## Platform SSO Extension for macOS
+
+Platform SSO is a new capability on macOS that is enabled using the Enterprise Single Sign-on Extension (SSOe). The advantage of Platform SSO is that it allows users to log on to a Mac using their Microsoft Entra ID password, or benefit from SSO through a hardware-bound key. This both improves the end-user experience by not having to remember two separate passwords as well as diminishes the need for admins to manage the local account password. Mac customers in the enterprise have long wanted a solution to use their Microsoft Entra ID password to log on to Macs. 
+
+Platform SSO allows admins to configure the end-user authentication method in the redirect-type MDM configuration profile. The chosen authentication method determines the end-user experience as follows: 
+- **Password as authentication method:** This syncs the user’s Microsoft Entra ID password with the local account as well as enables SSO across apps that use Microsoft Entra ID for authentication. 
+- **Secure Enclave key as authentication method:** This provisions secure enclave backed cryptographic key that is used for SSO across apps that use Microsoft Entra ID for authentication. The user’s local account password is not affected and is required to log on to the Mac. 
+
+<!--ADD GENERIC IMAGE-->
+
+Enabled by Platform SSO and powered by the Microsoft Enterprise SSO plug in, macOS Platform SSO; 
+
+- Allows users to go password-less by using Touch ID. 
+- Uses phish resistant credentials, based on Windowns Hello for Business technology. 
+- Saves customer organizations money by removing the need for security keys. 
+- Advances Zero Trust objectives using integration with the Secure Enclave. 
+
+The following steps show how the sign-in process works with Microsoft Entra ID:
+
+<!--ADD IMAGE SHOWING FLOW [Diagram that outlines the steps involved for user sign-in with macOS Platform SSO]-->
+
+1. (Add flow steps here)
+
+To enable Platform SSO for macOS, an administrator needs to [configure Platform SSO through Microsoft Intune]. Depending on the setup, the end-user can [setup their device with Platform SSO] via either a secure enclave or password based authentication method.
 
 ## FIDO2 security keys
 

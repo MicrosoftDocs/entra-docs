@@ -20,7 +20,7 @@ ms.collection: M365-identity-device-management
 
 Passwords are a primary attack vector. Bad actors use social engineering, phishing, and spray attacks to compromise passwords. A passwordless authentication strategy mitigates the risk of these attacks.
 
-Microsoft offers the following [three passwordless authentication options](concept-authentication-passwordless.md) that integrate with Microsoft Entra ID:
+Microsoft offers the following [four passwordless authentication options](concept-authentication-passwordless.md) that integrate with Microsoft Entra ID:
 
 * [Microsoft Authenticator](./concept-authentication-passwordless.md#microsoft-authenticator) - turns any iOS or Android phone into a strong, passwordless credential by allowing users to sign into any platform or browser.
 
@@ -43,12 +43,12 @@ The following table lists the passwordless authentication methods by device type
 
 | Device types| Passwordless authentication method |
 | - | - |
-| Dedicated non-windows devices| <li> ***Microsoft Authenticator*** <li> Security keys |
+| Dedicated non-windows devices| <li> ***Microsoft Authenticator*** <li> Security keys <li> ***Platform Single Sign-On Extension for MacOS*** |
 | Dedicated Windows 10 computers (version 1703 and later)| <li> ***Windows Hello for Business*** <li> Security keys |
 | Dedicated Windows 10 computers (before version 1703)| <li> ***Windows Hello for Business*** <li> Microsoft Authenticator app |
 | Shared devices: tablets, and mobile devices| <li> ***Microsoft Authenticator*** <li> One-time password sign-in |
-| Kiosks (Legacy)| ***Microsoft Authenticator*** |
-| Kiosks and shared computers ‎(Windows 10)| <li> ***Security keys*** <li> Microsoft Authenticator app |
+| Kiosks (Legacy)| <li> ***Microsoft Authenticator*** |
+| Kiosks and shared computers (Windows 10)| <li> ***Security keys*** <li> Microsoft Authenticator app |
 
 
 ## Prerequisites 
@@ -93,6 +93,14 @@ Select Windows Hello for Business and [complete the wizard](https://aka.ms/passw
 
 The wizard will use your inputs to craft a step-by-step plan for you to follow.
 
+### Platform Single Sign-On (PSSO) extension for MacOS
+
+The prerequisites for enabling PSSO extension for MacOS include an operating system of MacOS 13+, and that the configuration steps are done through the [Microsoft Intune admin center](https://intune.microsoft.com/#home). Support for other Mobile Device Management (MDM) providers will be added in future releases.
+
+Before the PSSO extension can be enabled, the extension payload must be configured via MDM, the Mac device enrolled into MDM and the [Mac Company Portal](mem/intune/user-help/enroll-your-device-in-intune-macos-cp.md) app installed.
+
+Once the Mac has been configured, a user can setup their Mac device using either a password authentication method, or the new secure enclave key feature. This enables a user to use their Microsoft Entra ID to log into their Mac device.
+
 ## Plan the project
 
 When technology projects fail, it's typically because of mismatched expectations on impact, outcomes, and responsibilities. To avoid these pitfalls, [ensure that you're engaging the right stakeholders](~/architecture/deployment-plans.md) and that stakeholder roles in the project are well understood.
@@ -125,6 +133,10 @@ This method can also be used for easy recovery when the user has lost or forgott
 
 >[!NOTE] 
 > If you can't use the security key or the Authenticator app for some scenarios, multifactor authentication with a username and password along with another registered method can be used as a fallback option.
+
+## Plan for and deploy Windows Hello for Business
+
+## Plan for and deploy Platform Single Sign-On (PSSO) extension for MacOS
 
 ## Plan for and deploy Microsoft Authenticator
 
