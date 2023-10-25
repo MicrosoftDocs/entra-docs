@@ -5,7 +5,7 @@ author: shlipsey3
 ms.author: sarahlipsey
 manager: amycolannino
 ms.topic: how-to
-ms.date: 06/27/2023
+ms.date: 10/24/2023
 ms.service: network-access
 ms.custom: 
 ---
@@ -18,13 +18,25 @@ This article describes the information in the logs and how to export them.
 
 ## Prerequisites
 
-To use the enriched logs, you need the following roles and subscriptions:
+To use the enriched logs, you need the following roles, configurations, and subscriptions:
 
-* A **Global Administrator** role is required to enable the enriched Microsoft 365 logs.
-* The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
-* To use the Microsoft 365 traffic forwarding profile, a Microsoft 365 E3 license is recommended.
+### Roles and Permissions
+- A **Global Administrator** role is required to enable the enriched Microsoft 365 logs.
+- The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
+- To use the Microsoft 365 traffic forwarding profile, a Microsoft 365 E3 license is recommended.
+
+### Configurations
+- **Microsoft 365 Profile** - Ensure the Microsoft 365 profile is enabled. Microsoft Entra Internet Access is required to capture traffic directed to Microsoft 365 services, which is fundamental for log enrichment. 
+- **Microsoft 365 Common and Office Online Traffic Policy** - Required for log enrichment. Ensure it's enabled. 
+- **Tenant sending data** - Confirms that traffic, as configured in forwarding profiles, is accurately tunneled to the Global Secure Access service. 
+- **Diagnostic Settings Configuration** - Set up Microsoft Entra diagnostic settings to channel the logs to a designated endpoint, like a Log Analytics workspace. The requirements for each endpoint differ and are outlined in the Configure Diagnostic settings section of this article. 
+
+### Subscriptions 
+- **Microsoft Entra ID P1 License** - Required for preview access. Purchasing or obtaining trial licenses is an option if needed. 
+- **Microsoft 365 E3 License** - Recommended for employing the Microsoft 365 traffic forwarding profile. 
 
 You must configure the endpoint for where you want to route the logs prior to configuring Diagnostic settings. The requirements for each endpoint vary and are described in the [Configure Diagnostic settings](#configure-diagnostic-settings) section.
+ 
 
 ## What the logs provide
 
@@ -35,7 +47,7 @@ These logs provide:
 - Additional information added to original logs
 - Accurate IP address
 
-These logs are a subset of the logs available in the [Microsoft 365 audit logs](/microsoft-365/compliance/search-the-audit-log-in-security-and-compliance?view=0365-worldwide&preserve-view=true). The logs are enriched with additional information, including the device ID, operating system, and original IP address. Enriched SharePoint logs provide information on files that were downloaded, uploaded, deleted, modified, or recycled. Deleted or recycled list items are also included in the enriched logs.
+These logs are a subset of the logs available in the [Microsoft 365 audit logs](/microsoft-365/compliance/search-the-audit-log-in-security-and-compliance?view=0365-worldwide&preserve-view=true). The logs are enriched with more information, including the device ID, operating system, and original IP address. Enriched SharePoint logs provide information on files that were downloaded, uploaded, deleted, modified, or recycled. Deleted or recycled list items are also included in the enriched logs.
 
 ## How to view the logs
 
@@ -48,14 +60,14 @@ Viewing the enriched Microsoft 365 logs is a two-step process. First, you need t
 
 To enable the Enriched Microsoft 365 logs:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](/azure/active-directory/roles/permissions-reference#global-administrator)..
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](/azure/active-directory/roles/permissions-reference#global-administrator).
 1. Browse to **Global Secure Access (preview)** > **Global settings** > **Logging**.
 1. Select the type of Microsoft 365 logs you want to enable.
 1. Select **Save**.
 
     :::image type="content" source="media/how-to-view-enriched-logs/enriched-logs-sharepoint.png" alt-text="Screenshot of the Logging area of Global Secure Access." lightbox="media/how-to-view-enriched-logs/enriched-logs-sharepoint-expanded.png":::
 
-The enriched logs may take up to 72 hours to fully integrate with the service.
+The enriched logs take up to 72 hours to fully integrate with the service.
 
 ### Configure Diagnostic settings
 
@@ -78,7 +90,7 @@ With your endpoint created, you can configure Diagnostic settings.
 1. Select **Add Diagnostic setting**.
 1. Give your diagnostic setting a name.
 1. Select `EnrichedOffice365AuditLogs`.
-1. Select the **Destination details** for where you'd like to send the logs. Choose any or all of the following destinations. Additional fields appear, depending on your selection.
+1. Select the **Destination details** for where you'd like to send the logs. Choose any or all of the following destinations. More fields appear, depending on your selection.
 
     * **Send to Log Analytics workspace:** Select the appropriate details from the menus that appear.
     * **Archive to a storage account:** Provide the number of days you'd like to retain the data in the **Retention days** boxes that appear next to the log categories. Select the appropriate details from the menus that appear.

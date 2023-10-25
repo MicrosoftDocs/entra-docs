@@ -15,6 +15,7 @@ ms.reviewer: anandy
 ms.custom: oldportal;it-pro;
 ms.collection: M365-identity-device-management
 ---
+
 # Administrative units in Microsoft Entra ID
 
 This article describes administrative units in Microsoft Entra ID. An administrative unit is a Microsoft Entra resource that can be a container for other Microsoft Entra resources. An administrative unit can contain only users, groups, or devices.
@@ -51,8 +52,8 @@ For example, a [User Administrator](permissions-reference.md#user-administrator)
 
 | Permissions | Can do |
 | --- | --- |
-| Manage the name of the group | :heavy_check_mark: |
-| Manage the membership of the group | :heavy_check_mark: |
+| Manage the name of the group | :white_check_mark: |
+| Manage the membership of the group | :white_check_mark: |
 | Manage the user properties for individual **members** of the group | :x: |
 | Manage the user authentication methods of individual **members** of the group | :x: |
 | Reset the passwords of individual **members** of the group | :x: |
@@ -108,36 +109,36 @@ The following sections describe current support for administrative unit scenario
 
 | Permissions | Microsoft Graph/PowerShell | Microsoft Entra admin center | Microsoft 365 admin center |
 | --- | :---: | :---: | :---: |
-| Create or delete administrative units | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| Add or remove members | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| Assign administrative unit-scoped administrators | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| Add or remove users or devices dynamically based on rules (Preview) | :heavy_check_mark: | :heavy_check_mark: | :x: |
+| Create or delete administrative units | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| Add or remove members | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| Assign administrative unit-scoped administrators | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| Add or remove users or devices dynamically based on rules (Preview) | :white_check_mark: | :white_check_mark: | :x: |
 | Add or remove groups dynamically based on rules | :x: | :x: | :x: |
 
 ### User management
 
 | Permissions | Microsoft Graph/PowerShell | Microsoft Entra admin center | Microsoft 365 admin center |
 | --- | :---: | :---: | :---: |
-| Administrative unit-scoped management of user properties, passwords | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| Administrative unit-scoped management of user licenses | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| Administrative unit-scoped blocking and unblocking of user sign-ins | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| Administrative unit-scoped management of user multi-factor authentication credentials | :heavy_check_mark: | :heavy_check_mark: | :x: |
+| Administrative unit-scoped management of user properties, passwords | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| Administrative unit-scoped management of user licenses | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| Administrative unit-scoped blocking and unblocking of user sign-ins | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| Administrative unit-scoped management of user multi-factor authentication credentials | :white_check_mark: | :white_check_mark: | :x: |
 
 ### Group management
 
 | Permissions | Microsoft Graph/PowerShell | Microsoft Entra admin center | Microsoft 365 admin center |
 | --- | :---: | :---: | :---: |
-| Administrative unit-scoped creation and deletion of groups | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| Administrative unit-scoped management of group properties and membership for Microsoft 365 groups | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| Administrative unit-scoped management of group properties and membership for all other groups | :heavy_check_mark: | :heavy_check_mark: | :x: |
-| Administrative unit-scoped management of group licensing | :heavy_check_mark: | :heavy_check_mark: | :x: |
+| Administrative unit-scoped creation and deletion of groups | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| Administrative unit-scoped management of group properties and membership for Microsoft 365 groups | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| Administrative unit-scoped management of group properties and membership for all other groups | :white_check_mark: | :white_check_mark: | :x: |
+| Administrative unit-scoped management of group licensing | :white_check_mark: | :white_check_mark: | :x: |
 
 ### Device management
 
 | Permissions | Microsoft Graph/PowerShell | Microsoft Entra admin center | Microsoft 365 admin center |
 | --- | :---: | :---: | :---: |
-| Enable, disable, or delete devices | :heavy_check_mark: | :heavy_check_mark: | :x: |
-| Read BitLocker recovery keys | :heavy_check_mark: | :heavy_check_mark: | :x: |
+| Enable, disable, or delete devices | :white_check_mark: | :white_check_mark: | :x: |
+| Read BitLocker recovery keys | :white_check_mark: | :white_check_mark: | :x: |
 
 Managing devices in Intune is *not* supported at this time.
 
@@ -146,3 +147,4 @@ Managing devices in Intune is *not* supported at this time.
 - [Create or delete administrative units](admin-units-manage.md)
 - [Restricted management administrative units](admin-units-restricted-management.md)
 - [Administrative unit limits](~/identity/users/directory-service-limits-restrictions.md?context=/azure/active-directory/roles/context/ugr-context)
+
