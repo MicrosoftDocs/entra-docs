@@ -77,7 +77,10 @@ To enable a registration campaign in the Microsoft Entra admin center, complete 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) or [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 1. Browse to **Protection** > **Authentication methods** > **Registration campaign** and click **Edit**.
-1. For **State**, click **Microsoft managed** or **Enabled**. In the following screenshot, the registration campaign is **Microsoft managed**. That setting allows Microsoft to set the default value to be either Enabled or Disabled. The Microsoft managed value for the registration campaign is **Enabled** for voice call and text message users in all tenants. For more information, see [Protecting authentication methods in Microsoft Entra ID](concept-authentication-default-enablement.md).
+1. For **State**:
+
+   - Select **Enabled** to enable the registration campaign for all users.
+   - Select **Microsoft managed**  to enable the registration campaign only for voice call or text message users. The **Microsoft managed** setting allows Microsoft to set the default value. For more information, see [Protecting authentication methods in Microsoft Entra ID](concept-authentication-default-enablement.md).
 
    :::image type="content" border="true" source="media/how-to-mfa-registration-campaign/admin-experience.png" alt-text="Screenshot of enabling a registration campaign.":::
 
@@ -108,7 +111,7 @@ The following table lists **authenticationMethodsRegistrationCampaign** properti
 |Name|Possible values|Description|
 |------|-----------------|-------------|
 |snoozeDurationInDays|Range: 0 - 14|Defines the number of days before the user is nudged again.<br>If the value is 0, the user is nudged during every MFA attempt.<br>Default: 1 day|
-|enforceRegistrationAfterAllowedSnoozes|"true"<br>"false"|Dictates whether a user is required to perform setup after 3 snoozes.<br>If true, user is required to register.<br>If false, user can snooze indefinitely.<br>Default: true<br>Please note this property only comes into effect once the Microsoft managed value for the registration campaign will change to Enabled for text message and voice call for your organization.|
+|enforceRegistrationAfterAllowedSnoozes|"true"<br>"false"|Dictates whether a user is required to perform setup after 3 snoozes.<br>If true, user is required to register.<br>If false, user can snooze indefinitely.<br>Default: true|
 |state|"enabled"<br>"disabled"<br>"default"|Allows you to enable or disable the feature.<br>Default value is used when the configuration hasn't been explicitly set and will use Microsoft Entra ID default value for this setting. The default state is enabled for voice call and text message users in all tenants.<br>Change state to enabled (for all users) or disabled as needed.|
 |excludeTargets|N/A|Allows you to exclude different users and groups that you want omitted from the feature. If a user is in a group that is excluded and a group that is included, the user will be excluded from the feature.|
 |includeTargets|N/A|Allows you to include different users and groups that you want the feature to target.|
@@ -265,15 +268,15 @@ The nudge won't appear on mobile devices that run Android or iOS.
 
 **Is registration campaign available for MFA Server?** 
 
-No. This feature is available only for users using Microsoft Entra multifactor authentication. 
+No, the registration campaign is available only for users using Microsoft Entra multifactor authentication. 
 
 **Can users be nudged within an application?** 
 
-Nudge is available only on browsers and not on applications.
+T registration campaign is available only on browsers and not on applications.
 
 **Can users be nudged on a mobile device?** 
 
-Nudge is not available on mobile devices.
+The registration campaign isn't available on mobile devices.
 
 **How long does the campaign run for?** 
 
