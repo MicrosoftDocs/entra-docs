@@ -181,11 +181,11 @@ items:
     items:
     - name: Introduction
       href: permissions-manage-ops-guide-intro.md
-    - name: Phase 1: Implement the framework to manage at scale
+    - name: Phase 1- Implement the framework to manage at scale
       href: permissions-manage-ops-guide-one.md
-    - name: Phase 2: Right-size permissions and automate the principle of least privilege
+    - name: Phase 2- Right-size permissions and automate the principle of least privilege
       href: permissions-manage-ops-guide-two.md
-    - name: Phase 3: Configure Permissions Management monitoring and alerting
+    - name: Phase 3- Configure Permissions Management monitoring and alerting
       href: permissions-manage-ops-guide-three.md
       items:
       - name: Microsoft Entra Permissions Management Alerts Guide
