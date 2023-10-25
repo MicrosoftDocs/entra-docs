@@ -1,6 +1,6 @@
 ---
 title: 'Microsoft Entra Provisioning Agent gMSA PowerShell cmdlets'
-description: Learn how to use the Microsoft Entra Provisioning Agent gMSA powershell cmdlets.
+description: Learn how to use the Microsoft Entra Provisioning Agent gMSA PowerShell cmdlets.
 services: active-directory
 author: billmath
 manager: amycolannino
@@ -29,7 +29,7 @@ The following prerequisites are required to use these cmdlets.
 
 1. Install provisioning agent.
 
-2. Import Provisioning Agent PS module into a PowerShell session.
+2. Import Provisioning Agent PowerShell module into a PowerShell session.
 
    ```powershell
    Import-Module "C:\Program Files\Microsoft Azure AD Connect Provisioning Agent\Microsoft.CloudSync.Powershell.dll"
