@@ -151,9 +151,10 @@ If these checks have a warning or error then there may be TLS inspection occurri
 
 If you had issues with associated domains and have allow listed domains in your on-device TLS inspection tool, you can run this command to reset the device's cache rather than waiting for the device to recover:
 
-    ```zsh
-    sudo swcutil reset
-    ```
+
+   ```zsh
+   sudo swcutil reset
+   ```
 
 Re-test the SSO extension configuration after resetting the cache.
 
