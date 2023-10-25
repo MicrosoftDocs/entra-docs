@@ -17,7 +17,7 @@ ms.custom: enterprise-apps, has-azure-ad-ps-ref
 
 Home Realm Discovery (HRD) is the process that allows Microsoft Entra ID to determine which identity provider (IDP) a user needs to authenticate with at sign-in time.  When a user signs in to a Microsoft Entra tenant to access a resource, or to the Microsoft Entra common sign-in page, they type a user name (UPN). Microsoft Entra ID uses that to discover where the user needs to sign in.
 
-The user will be taken to one of the following identity providers to be authenticated:
+The user is taken to one of the following identity providers to be authenticated:
 
 - The home tenant of the user (might be the same tenant as the resource that the user is attempting to access).
 
@@ -48,17 +48,17 @@ There are three ways to control auto-acceleration to a federated IdP:
 
 ### Domain Confirmation Dialog
 
-Starting April 2023, organizations who use auto-acceleration or smart links might begin to see a new screen added to the sign-in UI. This screen termed the Domain Confirmation Dialog, is part of Microsoft's general commitment to security hardening and requires the user to confirm the domain of the tenant in which they are signing in to. If you see the Domain Confirmation Dialog and do not recognize the tenant domain listed, you should cancel the authentication flow and contact your IT Admin. Here's an example of what the domain confirmation dialog could look like for you:
+Starting April 2023, organizations who use auto-acceleration or smart links might begin to see a new screen added to the sign-in UI. This screen termed the Domain Confirmation Dialog, is part of Microsoft's general commitment to security hardening and requires the user to confirm the domain of the tenant in which they are signing in to. Please cancel the authentication flow and contact your IT admin if you see the Domain Confirmation Dialog and do not recognize the tenant domain listed. Here's an example of what the domain confirmation dialog could look like for you:
 
 :::image type="content" source="media/home-realm-discovery-policy/domainConfDialog.png" alt-text="Screenshot of the domain confirmation dialog listing the sign-in identifier '<jane@contoso.com>' with a tenant domain of 'contoso.com'.":::
 
-The identifier at the top of the dialog, `jane@contoso.com`, represents the identifier used to sign-in. This behavior currently exists across the Entra sign-in experience. The tenant domain field at the bottom of the dialog shows the domain of the tenant being signed-in to. The domain listed in the sign-in identifier (top of the dialog) and in the tenant domain field (bottom of the dialog) will be different if the user is attempting to sign-in to an external tenant.
+The identifier at the top of the dialog, `jane@contoso.com`, represents the identifier used to sign-in. This behavior currently exists across the Microsoft Entra sign-in experience. The tenant domain field at the bottom of the dialog shows the domain of the tenant being signed-in to. The domain listed in the sign-in identifier (top of the dialog) and in the tenant domain field (bottom of the dialog) will be different if the user is attempting to sign-in to an external tenant.
 
-While the Domain Confirmation Dialog does not need to be shown for every instance of auto-acceleration or smart links, the Domain Confirmation Dialog means auto-acceleration and smart links can no longer proceed seamlessly when shown. If your organization clears cookies due to browser policies or otherwise, you might experience the domain confirmation dialog more frequently. Finally, given Microsoft identity platform manages the auto-acceleration sign-in flow end-to-end, the introduction of the Domain Confirmation Dialog should not result in any application breakages.
+While the Domain Confirmation Dialog does not need to be shown for every instance of auto-acceleration or smart links, the Domain Confirmation Dialog means auto-acceleration, and smart links can no longer proceed seamlessly when shown. If your organization clears cookies due to browser policies or otherwise, you might experience the domain confirmation dialog more frequently. Finally, given Microsoft Entra manages the auto-acceleration sign-in flow end-to-end, the introduction of the Domain Confirmation Dialog should not result in any application breakages.
 
 ## Domain hints
 
-Domain hints are directives that are included in the authentication request from an application. They can be used to accelerate the user to their federated IdP sign-in page. Or they can be used by a multitenant application to accelerate the user straight to the branded Microsoft Entra sign-in page for their tenant.
+Domain hints are directives that are included in the authentication request from an application. They can be used to accelerate the user to their federated IdP sign-in page. Multitenant applications can also use them toa accelerate the user straight to the branded Microsoft Entra sign-in page for their tenant.
 
 For example, the application "largeapp.com" might enable their customers to access the application at a custom URL "contoso.largeapp.com." The app might also include a domain hint to contoso.com in the authentication request.
 
@@ -126,7 +126,7 @@ The json object is an example HRD policy definition:
 
 The policy type is "[HomeRealmDiscoveryPolicy](/graph/api/resources/homerealmdiscoverypolicy)".
 
-**AccelerateToFederatedDomain** is optional. If **AccelerateToFederatedDomain** is false, the policy has no effect on auto-acceleration. If **AccelerateToFederatedDomain** is true and there's only one verified and federated domain in the tenant, then users will be taken straight to the federated IdP for sign-in. If it's true and there's more than one verified domain in the tenant, **PreferredDomain** must be specified.
+**AccelerateToFederatedDomain** is optional. If **AccelerateToFederatedDomain** is false, the policy has no effect on auto-acceleration. If **AccelerateToFederatedDomain** is true and there's only one verified and federated domain in the tenant, then users are taken straight to the federated IdP for sign-in. If it's true and there's more than one verified domain in the tenant, **PreferredDomain** must be specified.
 
 **PreferredDomain** is optional. **PreferredDomain** should indicate a domain to which to accelerate. It can be omitted if the tenant has only one federated domain.  If it's omitted, and there's more than one verified federated domain, the policy has no effect.
 
@@ -136,7 +136,7 @@ The policy type is "[HomeRealmDiscoveryPolicy](/graph/api/resources/homerealmdis
 
 Additionally, two tenant-level HRD options exist, not shown above:
 
-- **AlternateIdLogin** is optional.  If enabled, this [allows users to sign in with their email addresses instead of their UPN](~/identity/authentication/howto-authentication-use-email-signin.md) at the Microsoft Entra sign-in page.  Alternate IDs rely on the user not being auto-accelerated to a federated IDP.
+- **AlternateIdLogin** is optional.  If enabled, **AlternateLoginID** [allows users to sign in with their email addresses instead of their UPN](~/identity/authentication/howto-authentication-use-email-signin.md) at the Microsoft Entra sign-in page.  Alternate IDs rely on the user not being auto-accelerated to a federated IDP.
 
 - **DomainHintPolicy** is an optional complex object that [*prevents* domain hints from auto-accelerating users to federated domains](prevent-domain-hints-with-home-realm-discovery.md). This tenant-wide setting is used to ensure that applications that send domain hints don't prevent users from signing in with cloud-managed credentials.
 
