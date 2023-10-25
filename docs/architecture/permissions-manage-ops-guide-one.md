@@ -8,8 +8,7 @@ tags: azuread
 ms.service: active-directory
 ms.topic: conceptual
 ms.workload: identity
-ms.subservice: architecture
-ms.date: 10/2023/2023
+ms.date: 10/23/2023
 ms.author: jricketts
 ---
 
@@ -25,7 +24,7 @@ To begin operationalizing Microsoft Entra Permissions Management, establish two 
 
    [!IMPORTANT] Microsoft Entra Permissions Management relies on users with valid email addresses. We recommend that your Permissions Management Administrators have mailbox enabled accounts.
 
-Assign designated administrators the Permissions Management Administrator role in Microsoft Entra ID to perform needed tasks. We recommend you use [Privileged Identity Management (PIM)](../privileged-identity-management/pim-configure.md) to provide your admins with just-in-time (JIT) access to the role, rather than permanently assigning it.
+Assign designated administrators the Permissions Management Administrator role in Microsoft Entra ID to perform needed tasks. We recommend you use [Privileged Identity Management (PIM)](~id-governance/privileged-identity-management/pim-configure.md) to provide your admins with just-in-time (JIT) access to the role, rather than permanently assigning it.
 
 ### Define and maintain folder structure
 
@@ -37,27 +36,27 @@ In Permissions Management, a folder is a group of authorization systems. We reco
 
 An effective folder structure makes it easier to delegate permissions at scale, and provides your authorization system owners with a positive product experience.
 
-To help streamline your environment, see [create folders to organize your authorization systems](../cloud-infrastructure-entitlement-management/how-to-create-folders.md).
+To help streamline your environment, see [create folders to organize your authorization systems](~/permissions-management/how-to-create-folders.md).
 
 ### Create Microsoft Entra ID security groups to delegate permissions
 
 Microsoft Entra Permissions Management has a group-based access system that uses Microsoft Entra ID security groups to grant permissions to different authorization systems. To delegate permissions, your IAM team creates Microsoft Entra ID security groups that map to authorization system owners, and Permissions Management responsibilities you define. Ensure users with shared ownership and responsibilities in the product are in the same security group.
 
-We recommend you use [PIM for Groups](../privileged-identity-management/concept-pim-for-groups.md). This provides JIT access to Permissions Management to users and aligns with Zero Trust JIT and just-enough-access (JEA) principles.
+We recommend you use [PIM for Groups](~id-governance/privileged-identity-management/concept-pim-for-groups.md). This provides JIT access to Permissions Management to users and aligns with Zero Trust JIT and just-enough-access (JEA) principles.
 
-To create Microsoft Entra ID security groups, see [manage groups and group membership](../fundamentals/how-to-manage-groups.md).
+To create Microsoft Entra ID security groups, see [manage groups and group membership](~/fundamentals/how-to-manage-groups.md).
 
 ### Assign permissions in Microsoft Entra Permissions Management
 
 After Microsoft Entra ID security groups are created, a Permissions Management Administrator grants security groups needed permissions.
 
-At a minimum, ensure security groups are granted Viewer permissions for the authorization systems they are responsible for. Use Controller permissions for security groups with members that perform remediation actions. [Learn more about Microsoft Entra Permissions Management roles and permission levels](../cloud-infrastructure-entitlement-management/product-roles-permissions.md).
+At a minimum, ensure security groups are granted Viewer permissions for the authorization systems they are responsible for. Use Controller permissions for security groups with members that perform remediation actions. [Learn more about Microsoft Entra Permissions Management roles and permission levels](~/permissions-management/product-roles-permissions.md).
 
 For more on managing users and groups in Permissions Management:
 
-* [Add or remove a user in Microsoft Entra Permissions Management](../cloud-infrastructure-entitlement-management/how-to-add-remove-user-to-group)
-* [Manage users and groups with the User Management Dashboard](../cloud-infrastructure-entitlement-management/ui-user-management)
-* [Select group-based permissions settings](../cloud-infrastructure-entitlement-management/how-to-create-group-based-permissions)
+* [Add or remove a user in Microsoft Entra Permissions Management](~/permissions-management/how-to-add-remove-user-to-group.md)
+* [Manage users and groups with the User Management Dashboard](~/permissions-management/ui-user-management.md)
+* [Select group-based permissions settings](~/permissions-management/how-to-create-group-based-permissions.md)
 
 ## Determine authorization system lifecycle management
 
