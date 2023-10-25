@@ -120,7 +120,7 @@ Here are some example license scenarios to help you determine the number of lice
 
 ## Access reviews
 
-Using this feature requires Microsoft Entra ID Governance subscriptions for your organization's users. Some capabilities within this feature may operate with a Microsoft Entra ID P2 subscription.
+Using this feature requires Microsoft Entra ID Governance subscriptions for your organization's users, including for all employees who are reviewing access or having their access reviewed. Some capabilities within this feature may operate with a Microsoft Entra ID P2 subscription.
 
 ### Example license scenarios
 
