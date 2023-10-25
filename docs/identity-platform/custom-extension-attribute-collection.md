@@ -106,15 +106,8 @@ public static async Task<object> Run(HttpRequest req, ILogger log)
     log.LogInformation("C# HTTP trigger function processed a request.");
 
     string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
-    dynamic request = JsonConvert.DeserializeObject(requestBody);
     
-    // Parse UserSignUpInfo
-    object userSignUpInfo = request?.data?.userSignUpInfo;
-    log.LogInformation("userSignUpInfo: " + userSignUpInfo);
-
-    // Parse specified attributes
-    string email = request?.data?.userSignUpInfo?.attributes?.email.value;
-    log.LogInformation("email: " + email);
+    dynamic request = JsonConvert.DeserializeObject(requestBody);       
 
     var actions = new List<BlockedActions>{
         new BlockedActions { 
@@ -122,8 +115,6 @@ public static async Task<object> Run(HttpRequest req, ILogger log)
             message = "AttributeCollectionStart Custom Extension message: Sorry, your access request has been blocked. Try reaching an admin at admin@contoso.com."
         }
     };
-
-    log.LogInformation("actions: " + actions);
 
     var dataObject = new Data {
         type = "microsoft.graph.onAttributeCollectionStartResponseData",
@@ -177,25 +168,18 @@ public static async Task<object> Run(HttpRequest req, ILogger log)
 
     string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
     dynamic request = JsonConvert.DeserializeObject(requestBody);
-    
-    // Parse UserSignUpInfo
-    object userSignUpInfo = request?.data?.userSignUpInfo;
-    log.LogInformation("userSignUpInfo: " + userSignUpInfo);
 
-    // Parse specified attributes
-    string email = request?.data?.userSignUpInfo?.attributes?.email.value;
-    log.LogInformation("email: " + email);
 
     var actions = new List<ContinueWithDefaultBehavior>{
         new ContinueWithDefaultBehavior { type = "microsoft.graph.attributeCollectionStart.continueWithDefaultBehavior"}
     };
-						
+
     var dataObject = new Data {
         type = "microsoft.graph.onAttributeCollectionStartResponseData",
         actions= actions
     };
-	    
-	dynamic response = new ResponseObject {
+
+    dynamic response = new ResponseObject {
         data = dataObject
     };
 
@@ -218,7 +202,7 @@ public class Data {
 [JsonObject]
 public class ContinueWithDefaultBehavior {
     [JsonProperty("@odata.type")]
-	public string type { get; set; }
+    public string type { get; set; }
 }
 ```
 
@@ -233,6 +217,7 @@ using System.Net;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Primitives;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System.Text;
 
 public static async Task<object> Run(HttpRequest req, ILogger log)
@@ -241,25 +226,13 @@ public static async Task<object> Run(HttpRequest req, ILogger log)
 
     string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
     dynamic request = JsonConvert.DeserializeObject(requestBody);
-    
-    // Parse UserSignUpInfo
-    object userSignUpInfo = request?.data?.userSignUpInfo;
-    log.LogInformation("userSignUpInfo: " + userSignUpInfo);
 
-    // Parse specified attributes
-    string email = request?.data?.userSignUpInfo?.attributes?.email.value;
-    log.LogInformation("email: " + email);
-    
+    //We should see all the attributes we expect to collect with their default values
     var inputs = new Dictionary<string, object>()
     {
-        { "postalCode", "12345-ThisWorks" },
-        { "streetAddress", "One Microsoft Way" },
-        { "city", "Tampa" },
-        { "identities", "123456" },
-        { "extension_52813c2327f0405a8486dcad658f4a8d_DummyEmail", new List<string>() {email} },
-        { "extension_52813c2327f0405a8486dcad658f4a8d_HouseholdSize", new List<string>() {email, email, "true"} },
-        { "extension_52813c2327f0405a8486dcad658f4a8d_SubscribedToMailingList",  "false" },
-        { "extension_52813c2327f0405a8486dcad658f4a8d_CustomMultiSelect", new List<string>() {"Math", "Biology"} }
+        { "postalCode", "12345-This is override Value" },
+        { "streetAddress", "One Microsoft Way-This is override Value" },
+        { "city", "Tampa-This is override Value" }
     };
 
     // ModifyAttributesToCollect
@@ -268,8 +241,6 @@ public static async Task<object> Run(HttpRequest req, ILogger log)
             type = "microsoft.graph.attributeCollectionStart.setPrefillValues", 
             inputs = inputs }
     };
-
-    log.LogInformation("actions: " + actions);
 
     var dataObject = new Data {
         type = "microsoft.graph.onAttributeCollectionStartResponseData",
@@ -333,14 +304,6 @@ public static async Task<object> Run(HttpRequest req, ILogger log)
     string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
     dynamic request = JsonConvert.DeserializeObject(requestBody);
     
-    // Parse UserSignUpInfo
-    object userSignUpInfo = request?.data?.userSignUpInfo;
-    log.LogInformation("userSignUpInfo: " + userSignUpInfo);
-
-    // Parse specified attributes
-    string email = request?.data?.userSignUpInfo?.attributes?.email.value;
-    log.LogInformation("email: " + email);
-
     var actions = new List<BlockedActions>{
         new BlockedActions { 
             type = "microsoft.graph.attributeCollectionSubmit.showBlockPage", 
@@ -348,14 +311,10 @@ public static async Task<object> Run(HttpRequest req, ILogger log)
         }
     };
 
-
-    log.LogInformation("actions: " + actions);
-
     var dataObject = new Data {
         type = "microsoft.graph.onAttributeCollectionSubmitResponseData",
         actions= actions
     };
-
 
     dynamic response = new ResponseObject {
         data = dataObject
@@ -405,14 +364,6 @@ public static async Task<object> Run(HttpRequest req, ILogger log)
     string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
     dynamic request = JsonConvert.DeserializeObject(requestBody);
     
-    // Parse UserSignUpInfo
-    object userSignUpInfo = request?.data?.userSignUpInfo;
-    log.LogInformation("userSignUpInfo: " + userSignUpInfo);
-
-    // Parse specified attributes
-    string email = request?.data?.userSignUpInfo?.attributes?.email.value;
-    log.LogInformation("email: " + email);
-
     var actions = new List<ContinueWithDefaultBehavior>{
         new ContinueWithDefaultBehavior { type = "microsoft.graph.attributeCollectionSubmit.continueWithDefaultBehavior"}
     };
@@ -439,9 +390,6 @@ public class ResponseObject
 public class Data {
     [JsonProperty("@odata.type")]
     public string type { get; set; }
-
-    [JsonProperty("userSignUpInfo")]
-    public string userSignUpInfo { get; set; }
     
     public List<ContinueWithDefaultBehavior> actions { get; set; }
 }
@@ -470,33 +418,13 @@ public static async Task<object> Run(HttpRequest req, ILogger log)
 {
     log.LogInformation("C# HTTP trigger function processed a request.");
 
-    string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
-    dynamic request = JsonConvert.DeserializeObject(requestBody);
-    
-    // Parse UserSignUpInfo
-    object userSignUpInfo = request?.data?.userSignUpInfo;
-    log.LogInformation("userSignUpInfo: " + userSignUpInfo);
-
-    // Parse specified attributes
-    string email = request?.data?.userSignUpInfo?.attributes?.email.value;
-    log.LogInformation("email: " + email);
-
     // Put UserSignUpInfo as override for one of the attributes
     var attributes = new Dictionary<string, object>()
     {
-        { "postalCode", "88888-8888" },
-        { "streetAddress", "222 Assigned Street" },
-        { "city", "Phoenix" },
+        { "postalCode", "98007" },
+        { "streetAddress", "222 Assigned St" },
+        { "city", "Bellevue" }
     };
-
-    // invalid attrs
-    /**
-            { "extension_52813c2327f0405a8486dcad658f4a8d_DummyEmail", new List<string>() {"VeryLuckyEmail@contoso.com"} },
-        { "extension_52813c2327f0405a8486dcad658f4a8d_HouseholdSize", new List<string>() {email, email, "false"} },
-        { "extension_52813c2327f0405a8486dcad658f4a8d_SubscribedToMailingList",  new List<bool>() { true } },
-        { "extension_52813c2327f0405a8486dcad658f4a8d_CustomMultiSelect", new List<string>() {"GARBAGE","BC","EBC", "Math", "Biology"} }
-    
-    **/    
 
     // ModifyAttributesToCollect
     var actions = new List<ModifiedAttributesAction>{
@@ -564,32 +492,26 @@ public static async Task<object> Run(HttpRequest req, ILogger log)
     string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
     dynamic request = JsonConvert.DeserializeObject(requestBody);
 
-    object requestobj = JsonConvert.SerializeObject(request);
-    string requeststr = requestobj.ToString();
-    log.LogInformation("requeststr:" + requeststr);
-
     // Parse specified attributes
     string cityValue = (JsonConvert.SerializeObject(request?.data?.userSignUpInfo?.attributes?.city?.value)).ToString();
-    log.LogInformation("cityValue:" + cityValue);
 
     string postalCodeValue = (JsonConvert.SerializeObject(request?.data?.userSignUpInfo?.attributes?.postalCode?.value)).ToString();
-    log.LogInformation("postalCodeValue:" + postalCodeValue);
 
     string streetAddressValue = (JsonConvert.SerializeObject(request?.data?.userSignUpInfo?.attributes?.streetAddress?.value)).ToString();
-    log.LogInformation("streetAddressValue:"+ streetAddressValue);
 
-    if(cityValue.Length < 5 || postalCodeValue.Length < 5 || streetAddressValue.Length < 5){
+    // JSON convert makes the length different, so we put 7 here
+    if(cityValue.Length < 7 || postalCodeValue.Length < 7 || streetAddressValue.Length < 7){
         var inputs = new Dictionary<string, string>();
 
-        if(cityValue.Length < 5){
+        if(cityValue.Length < 7){
             inputs.Add("city", "Length of city string should be of at 5 characters at least");
         }
 
-        if(postalCodeValue.Length < 5){
+        if(postalCodeValue.Length < 7){
             inputs.Add("postalCode", "Length of postalCodeValue string should be of at 5 characters at least");
         }
 
-        if(streetAddressValue.Length < 5){
+        if(streetAddressValue.Length < 7){
             inputs.Add("streetAddress", "Length of streetAddress string should be of at 5 characters at least");
         }
 
