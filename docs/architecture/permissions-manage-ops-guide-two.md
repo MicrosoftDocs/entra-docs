@@ -8,7 +8,6 @@ tags: azuread
 ms.service: active-directory
 ms.topic: conceptual
 ms.workload: identity
-ms.subservice: architecture
 ms.date: 10/23/2023
 ms.author: jricketts  
 ---
@@ -60,7 +59,7 @@ These identities haven't performed actions for 90 days.
 Review inactive identities to determine remediation:
 
 * If the inactive identity is needed, apply the **ck_exclude_from_reports** tag to remove the identity from the Permissions Analytics Report, so it’s not called out as an inactive identity.
-* If the inactive identity isn't needed in your environment, we recommend you revoke the identity’s unused permissions or assign it read-only status. Learn to [revoke access to high-risk and unused tasks or assign read-only status](../cloud-infrastructure-entitlement-management/how-to-revoke-task-readonly-status.md).
+* If the inactive identity isn't needed in your environment, we recommend you revoke the identity’s unused permissions or assign it read-only status. Learn to [revoke access to high-risk and unused tasks or assign read-only status](~/permissions-management/how-to-revoke-task-readonly-status.md).
 
 **Overprovisioned identities**
 
@@ -98,13 +97,13 @@ For right-sized custom roles, we recommend you remediate overprovisioned identit
 
 For more on the remediation tools available within Entra Permissions Management:
 
-* [Create a role/policy](../cloud-infrastructure-entitlement-management/how-to-create-role-policy.md)
-* [Clone a role/policy](../cloud-infrastructure-entitlement-management/how-to-clone-role-policy.md)
-* [Modify a role/policy](../cloud-infrastructure-entitlement-management/how-to-modify-role-policy.md)
-* [Delete a role/policy](../cloud-infrastructure-entitlement-management/how-to-delete-role-policy.md)
-* [Attach and detach policies for AWS identities](../cloud-infrastructure-entitlement-management/how-to-attach-detach-permissions.md)
-* [Add and remove roles and tasks for Microsoft Azure and GCP identities](../cloud-infrastructure-entitlement-management/how-to-add-remove-role-task.md)
-* [Revoke access to high-risk and unused tasks or assign read-only status for Azure and GCP identities](../cloud-infrastructure-entitlement-management/how-to-revoke-task-readonly-status.md)
+* [Create a role/policy](~/permissions-management/how-to-create-role-policy.md)
+* [Clone a role/policy](~/permissions-management/how-to-clone-role-policy.md)
+* [Modify a role/policy](~/permissions-management/how-to-modify-role-policy.md)
+* [Delete a role/policy](~/permissions-management/how-to-delete-role-policy.md)
+* [Attach and detach policies for AWS identities](~/permissions-management/how-to-attach-detach-permissions.md)
+* [Add and remove roles and tasks for Microsoft Azure and GCP identities](~/permissions-management/how-to-add-remove-role-task.md)
+* [Revoke access to high-risk and unused tasks or assign read-only status for Azure and GCP identities](~/permissions-management/how-to-revoke-task-readonly-status.md)
 
 ### Track process and measure success
 
@@ -136,21 +135,21 @@ Approvers review Permissions On-Demand requests and have authority to approve or
 
 To delegate permissions, your IAM team creates Microsoft Entra ID security groups that map to your Approvers. Ensure Approvers with shared ownership and responsibilities are in the same security group.
 
-We recommend you use [PIM for Groups](../privileged-identity-management/concept-pim-for-groups). This provides JIT access to Approver permissions to approve or deny Permissions On-Demand requests.
+We recommend you use [PIM for Groups](~/id-governance/privileged-identity-management/concept-pim-for-groups.md). This provides JIT access to Approver permissions to approve or deny Permissions On-Demand requests.
 
-To create Microsoft Entra ID security groups, see [manage groups and group membership](../fundamentals/how-to-manage-groups.md).
+To create Microsoft Entra ID security groups, see [manage groups and group membership](~/fundamentals/how-to-manage-groups.md).
 
 ### Assign permissions to Approvers
 
-After Microsoft Entra ID security groups are created, a Permissions Management Administrator grants security groups their Approver permissions in Permissions Management. Ensure security groups are granted Approver permissions for the authorization systems they are responsible for. [Learn more about Microsoft Entra Permissions Management roles and permission levels](../cloud-infrastructure-entitlement-management/product-roles-permissions).
+After Microsoft Entra ID security groups are created, a Permissions Management Administrator grants security groups their Approver permissions in Permissions Management. Ensure security groups are granted Approver permissions for the authorization systems they are responsible for. [Learn more about Microsoft Entra Permissions Management roles and permission levels](~/permissions-management/product-roles-permissions).
 
 ### Determine and create a Requestor Administrator security group
 
 Designate at least two Requestor Administrators who create Permissions On-Demand requests on behalf of identities in your environment. For example, for machine identities. Create a Microsoft Entra ID security group for these Requestor Administrators.
 
-We recommend you use [PIM for Groups](../privileged-identity-management/concept-pim-for-groups). This provides JIT access to the Requestor permissions needed to make Permissions On-Demand requests on behalf of other users.
+We recommend you use [PIM for Groups](~/id-governance/privileged-identity-management/concept-pim-for-groups.md). This provides JIT access to the Requestor permissions needed to make Permissions On-Demand requests on behalf of other users.
 
-To create Microsoft Entra ID security groups, see [manage groups and group membership](../fundamentals/how-to-manage-groups.md).
+To create Microsoft Entra ID security groups, see [manage groups and group membership](~/fundamentals/how-to-manage-groups.md).
 
 ### Allow users to make Permissions On-Demand requests
 
@@ -165,7 +164,7 @@ You can configure Permissions On-Demand settings to align with organizational ne
 * **One-Time Passcode (OTP) policy**: You can require email OTPs for Requestors to create requests. In addition, you can require email OTPs for Approvers to approve or reject requests. Use these configurations for one or both scenarios.
 * **Auto-approvals for AWS**: As an option for Permissions On-Demand for AWS, you can configure specific policy requests to be auto-approved. Adding common, low-risk policies to your auto-approval list helps save time for Requestors and Approvers. 
 
-Learn to [make setting selections for requests and auto-approvals](../cloud-infrastructure-entitlement-management/ui-remediation.md).
+Learn to [make setting selections for requests and auto-approvals](~/permissions-management/ui-remediation.md).
 
 ### Create custom role/policy templates for the organization
 
@@ -173,7 +172,7 @@ In Microsoft Entra Permissions Management, role/policy templates are permissions
 
 For example, if virtual machine (VM) creation is a common task, make a **Create a VM** template with required permissions. Users don’t have to know, or manually select, all the required permissions for the task.
 
-To learn to create role/policy templates, see [view roles/policies and requests for permission in the Remediation dashboard](../cloud-infrastructure-entitlement-management/ui-remediation.md).
+To learn to create role/policy templates, see [view roles/policies and requests for permission in the Remediation dashboard](~/permissions-management/ui-remediation.md).
 
 ## Next steps
 
