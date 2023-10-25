@@ -24,7 +24,7 @@ To begin operationalizing Microsoft Entra Permissions Management, establish two 
 
    [!IMPORTANT] Microsoft Entra Permissions Management relies on users with valid email addresses. We recommend that your Permissions Management Administrators have mailbox enabled accounts.
 
-Assign designated administrators the Permissions Management Administrator role in Microsoft Entra ID to perform needed tasks. We recommend you use [Privileged Identity Management (PIM)](~id-governance/privileged-identity-management/pim-configure.md) to provide your admins with just-in-time (JIT) access to the role, rather than permanently assigning it.
+Assign designated administrators the Permissions Management Administrator role in Microsoft Entra ID to perform needed tasks. We recommend you use [Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/pim-configure.md) to provide your admins with just-in-time (JIT) access to the role, rather than permanently assigning it.
 
 ### Define and maintain folder structure
 
@@ -42,7 +42,7 @@ To help streamline your environment, see [create folders to organize your author
 
 Microsoft Entra Permissions Management has a group-based access system that uses Microsoft Entra ID security groups to grant permissions to different authorization systems. To delegate permissions, your IAM team creates Microsoft Entra ID security groups that map to authorization system owners, and Permissions Management responsibilities you define. Ensure users with shared ownership and responsibilities in the product are in the same security group.
 
-We recommend you use [PIM for Groups](~id-governance/privileged-identity-management/concept-pim-for-groups.md). This provides JIT access to Permissions Management to users and aligns with Zero Trust JIT and just-enough-access (JEA) principles.
+We recommend you use [PIM for Groups](~/id-governance/privileged-identity-management/concept-pim-for-groups.md). This provides JIT access to Permissions Management to users and aligns with Zero Trust JIT and just-enough-access (JEA) principles.
 
 To create Microsoft Entra ID security groups, see [manage groups and group membership](~/fundamentals/how-to-manage-groups.md).
 
