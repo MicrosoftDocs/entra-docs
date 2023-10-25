@@ -48,8 +48,8 @@ Using group writeback, you can now sync security groups that are part of access 
     1. View the member property of the group in the on-premises OU OR 
     1. Review the member Of on the user object. 
 
-> [!NOTE]   
-> Microsoft Entra Cloud Sync's default sync cycle schedule is every 30 minutes. You may need to wait until the next cycle occurs to see results on-premises or choose to run the sync cycle manually to see results sooner.
+    > [!NOTE]   
+    > Microsoft Entra Cloud Sync's default sync cycle schedule is every 30 minutes. You may need to wait until the next cycle occurs to see results on-premises or choose to run the sync cycle manually to see results sooner.
 
 1. In your AD domain monitoring, allow only the gMSA account that runs the provisioning agent to have authorization to change the membership in the new AD group.
 
