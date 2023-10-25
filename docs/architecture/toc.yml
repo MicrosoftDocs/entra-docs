@@ -187,7 +187,7 @@ items:
       href: permissions-manage-ops-guide-two.md
     - name: Phase 3-Configure Permissions Management monitoring and alerting
       items:
-      - name: Implement a reporting strategy
+      - name: Implement reporting and alerting strategies
         href: permissions-manage-ops-guide-three.md
       - name: Configure alerts
         href: permissions-manage-ops-guide-alerts.md      
