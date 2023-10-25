@@ -71,7 +71,8 @@ Overprovisioned identities, or overpermissioned identities, don’t use many of 
 
 Remediate overprovisioned identities with least privileged built-in roles or with right-sized custom roles.
 
-   [!NOTE] Be aware of custom role limits. We recommend the least privileged built-in role approach if your organization is close to reaching these limits.
+>[!NOTE]
+> Be aware of custom role limits. We recommend the least privileged built-in role approach if your organization is close to reaching these limits.
 
 For least privileged built-in roles, we recommend you use Microsoft Entra Permissions Management to determine what permissions the identity uses and then assign the built-in role that aligns with this usage.
 
@@ -93,7 +94,8 @@ For right-sized custom roles, we recommend you remediate overprovisioned identit
 8. Revoke current team permissions.
 9. Assign team members the right-sized role/policy.
 
-   [!NOTE] We recommend you right-size non-human identities, like Service Principals and machine accounts. The activity of non-human identities is less likely to vary on a day-to-day basis, making the risk low for potential service disruptions caused by right-sizing.
+>[!NOTE]
+> We recommend you right-size non-human identities, like Service Principals and machine accounts. The activity of non-human identities is less likely to vary on a day-to-day basis, making the risk low for potential service disruptions caused by right-sizing.
 
 For more on the remediation tools available within Entra Permissions Management:
 
@@ -175,9 +177,7 @@ For example, if virtual machine (VM) creation is a common task, make a **Create 
 To learn to create role/policy templates, see [view roles/policies and requests for permission in the Remediation dashboard](~/permissions-management/ui-remediation.md).
 
 ## Next steps
-
-* Introduction 
-* Phase 1: Implement the framework to manage at scale 
-* Phase 2: Right-size permissions and automate the principle of least privilege (you are here)
-* Phase 3: Configure Microsoft Entra Permissions Management monitoring and alerting
-* Microsoft Entra Permissions Management alerts guide
+* [Introduction](permissions-manage-ops-guide-intro.md)
+* [Phase 1: Implement the framework to manage at scale](permissions-manage-ops-guide-one.md)
+* [Phase 3: Configure Microsoft Entra Permissions Management monitoring and alerting](permissions-manage-ops-guide-three.md)
+* [Microsoft Entra Permissions Management alerts guide](permissions-manage-ops-guide-alerts.md)
