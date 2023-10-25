@@ -44,7 +44,7 @@ There are three ways to control auto-acceleration to a federated IdP:
 
 - Use a domain hint on authentication requests for an application.
 - Configure an HRD policy to [force auto-acceleration](configure-authentication-for-federated-users-portal.md)
-- Configure a HRD policy to [ignore domain hints](prevent-domain-hints-with-home-realm-discovery.md) from specific applications or for certain domains.
+- Configure an HRD policy to [ignore domain hints](prevent-domain-hints-with-home-realm-discovery.md) from specific applications or for certain domains.
 
 ### Domain Confirmation Dialog
 
