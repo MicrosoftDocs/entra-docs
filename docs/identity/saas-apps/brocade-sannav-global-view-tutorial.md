@@ -97,7 +97,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 	| groups | user.groups |
 
 	> [!Note]
-	> Please refer [this](../hybrid/connect/how-to-connect-fed-group-claims#add-group-claims-to-tokens-for-saml-applications-using-sso-configuration) link on how to add the groups attribute in the Attributes & Claims section.
+	> Please refer [this](~identity/hybrid/connect/how-to-connect-fed-group-claims#add-group-claims-to-tokens-for-saml-applications-using-sso-configuration) link on how to add the groups attribute in the Attributes & Claims section.
 	
 1. On the **Set-up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 
