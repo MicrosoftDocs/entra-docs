@@ -8,7 +8,6 @@ tags: azuread
 ms.service: active-directory
 ms.topic: conceptual
 ms.workload: identity
-ms.subservice: architecture
 ms.date: 10/23/2023
 ms.author: jricketts
 ---
@@ -27,7 +26,7 @@ In this operationalization guide, learn about the checks, actions, and best prac
 
 ## Entry criteria
 
-This guide assumes you completed the [Quickstart guide to Microsoft Entra Permissions Management](../cloud-infrastructure-entitlement-management/permissions-management-quickstart-guide.md).
+This guide assumes you completed the [Quickstart guide to Microsoft Entra Permissions Management](~/permissions-management/permissions-management-quickstart-guide.md).
 
 ## Glossary
 
