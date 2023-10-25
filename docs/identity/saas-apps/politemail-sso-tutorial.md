@@ -40,7 +40,7 @@ In this tutorial, you configure and test Microsoft Entra SSO in a test environme
 
 To configure the integration of PoliteMail - SSO into Microsoft Entra ID, you need to add PoliteMail - SSO from the gallery to your list of managed SaaS apps.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
 1. In the **Add from the gallery** section, type **PoliteMail - SSO** in the search box.
 1. Select **PoliteMail - SSO** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
@@ -64,7 +64,7 @@ To configure and test Microsoft Entra SSO with PoliteMail - SSO, perform the fol
 
 Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin center.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **PoliteMail - SSO** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
@@ -100,7 +100,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 	| role | user.assignedroles |
 
     > [!NOTE]
-    > Please click [here](../develop/howto-add-app-roles-in-azure-ad-apps.md#app-roles-ui) to know how to configure Role in Microsoft Entra ID.
+    > Please click [here](~/identity-platform/howto-add-app-roles-in-azure-ad-apps.md#app-roles-ui) to know how to configure Role in Microsoft Entra ID.
 
 1. In the **SAML Signing Certificate** section, click **Edit** button to open **SAML Signing Certificate** dialog.
 
@@ -118,7 +118,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 In this section, you'll create a test user in the Microsoft Entra admin center called B.Simon.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](../roles/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
 1. Select **New user** > **Create new user**, at the top of the screen.
 1. In the **User** properties, follow these steps:
@@ -132,7 +132,7 @@ In this section, you'll create a test user in the Microsoft Entra admin center c
 
 In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by granting access to PoliteMail - SSO.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **PoliteMail - SSO**.
 1. In the app's overview page, select **Users and groups**.
 1. Select **Add user/group**, then select **Users and groups** in the **Add Assignment** dialog.
@@ -156,7 +156,7 @@ In this section, you test your Microsoft Entra single sign-on configuration with
  
 * Go to PoliteMail Sign-on URL directly and initiate the login flow from there.
  
-* You can use Microsoft My Apps. When you click the PoliteMail tile in the My Apps, this will redirect to PoliteMail Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](../user-help/my-apps-portal-end-user-access.md).
+* You can use Microsoft My Apps. When you click the PoliteMail tile in the My Apps, this will redirect to PoliteMail Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Next steps
 
