@@ -22,7 +22,8 @@ ms.author: jricketts
 
 To begin operationalizing Microsoft Entra Permissions Management, establish two to five Permissions Management Administrators who delegate permissions in the product, configure key settings, and create and manage your organization’s folder structure.
 
-   [!IMPORTANT] Microsoft Entra Permissions Management relies on users with valid email addresses. We recommend that your Permissions Management Administrators have mailbox enabled accounts.
+>[!IMPORTANT]
+> Microsoft Entra Permissions Management relies on users with valid email addresses. We recommend that your Permissions Management Administrators have mailbox enabled accounts.
 
 Assign designated administrators the Permissions Management Administrator role in Microsoft Entra ID to perform needed tasks. We recommend you use [Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/pim-configure.md) to provide your admins with just-in-time (JIT) access to the role, rather than permanently assigning it.
 
@@ -89,7 +90,8 @@ PCI thresholds guide operational behavior and serve as policies to determine whe
   * Guest
 * Non-human identities
 
-[!NOTE] Because non-human identity activity varies less than a human identity, apply stricter right-sizing to non-human identities: set a lower PCI threshold.
+>[!NOTE]
+> Because non-human identity activity varies less than a human identity, apply stricter right-sizing to non-human identities: set a lower PCI threshold.
 
 PCI thresholds vary based on the goals and use cases of your organization. We recommend you align with the built-in Permissions Management risk thresholds. See the following PCI ranges, by risk:
 
@@ -108,8 +110,6 @@ Using the previous list, review the following PCI threshold policy examples:
 
 ## Next steps
 
-* Introduction 
-* Phase 1: Implement the framework to manage at scale (you are here)
-* Phase 2: Right-size permissions and automate the principle of least privilege
-* Phase 3: Configure Microsoft Entra Permissions Management monitoring and alerting
-* Microsoft Entra Permissions Management alerts guide
+* [Phase 2: Right-size permissions and automate the principle of least privilege](permissions-manage-ops-guide-two.md)
+* [Phase 3: Configure Microsoft Entra Permissions Management monitoring and alerting](permissions-manage-ops-guide-three.md)
+* [Microsoft Entra Permissions Management alerts guide](permissions-manage-ops-guide-alerts.md)
