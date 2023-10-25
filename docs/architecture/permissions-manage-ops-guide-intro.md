@@ -63,8 +63,7 @@ When operationalizing the product, we recommend use of the Discover-Remediate-Mo
 
 ## Next steps
 
-* Introduction (you are here)
-* Phase 1: Implement the framework to manage at scale
-* Phase 2: Right-size permissions and automate the principle of least privilege
-* Phase 3: Configure Microsoft Entra Permissions Management monitoring and alerting
-* Microsoft Entra Permissions Management alerts guide
+* [Phase 1: Implement the framework to manage at scale](permissions-manage-ops-guide-one.md)
+* [Phase 2: Right-size permissions and automate the principle of least privilege](permissions-manage-ops-guide-two.md)
+* [Phase 3: Configure Microsoft Entra Permissions Management monitoring and alerting](permissions-manage-ops-guide-three.md)
+* [Microsoft Entra Permissions Management alerts guide](permissions-manage-ops-guide-alerts.md)
