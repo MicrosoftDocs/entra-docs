@@ -40,7 +40,7 @@ Using group writeback, you can now sync security groups that are part of access 
 
 1. Launch Active Directory Users and Computers, and wait for the resulting new AD group to be created in the AD domain. When it's present, record the distinguished name, domain, account name and SID of the new AD group.
 
-1. Configure the application to use the new group, either by updating the application or adding the group as a member of an existing group, as described in [Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance](../hybrid/cloud-sync/govern-on-premises-groups.md).
+1. Configure the application to use the new group, either by updating the application or adding the group as a member of an existing group, as described in [Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance](../identity/hybrid/cloud-sync/govern-on-premises-groups.md).
 
 1. Assign the user to the access package. See [View, add, and remove assignments for an access package](entitlement-management-access-package-assignments.md#directly-assign-a-user) for instructions to directly assign a user. 
 
