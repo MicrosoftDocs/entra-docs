@@ -6,6 +6,7 @@ items:
   - name: Microsoft Entra ID
     tocHref: /entra/identity/
     topicHref: /entra/identity/index
+    items:
     - name: Conditional Access
       tocHref: /entra/identity/authentication/
       topicHref: /entra/identity/conditional-access/
