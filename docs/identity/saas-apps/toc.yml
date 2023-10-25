@@ -2327,6 +2327,8 @@
         href: segment-tutorial.md
       - name: Seismic
         href: seismic-tutorial.md
+      - name: senhasegura SAML Authentication
+        href: senhasegura-saml-authentication-tutorial.md
       - name: Senomix Timesheets
         href: senomix-timesheets-tutorial.md
       - name: SendPro Enterprise
