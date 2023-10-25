@@ -14,7 +14,7 @@ ms.author: jricketts
 
 # Phase 1: Implement the framework to manage at scale
 
-## Define a delegate administration model
+## Define a delegated administration model
 
 **Suggested owner: Information Security Architecture**
 
