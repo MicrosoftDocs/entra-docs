@@ -110,6 +110,7 @@ Using the previous list, review the following PCI threshold policy examples:
 
 ## Next steps
 
+* [Introduction](permissions-manage-ops-guide-intro.md)
 * [Phase 2: Right-size permissions and automate the principle of least privilege](permissions-manage-ops-guide-two.md)
 * [Phase 3: Configure Microsoft Entra Permissions Management monitoring and alerting](permissions-manage-ops-guide-three.md)
 * [Microsoft Entra Permissions Management alerts guide](permissions-manage-ops-guide-alerts.md)
