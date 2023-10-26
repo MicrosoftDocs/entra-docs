@@ -35,7 +35,7 @@ Administrators with at least the [Conditional Access Administrator](../role-base
 
 Administrators have the ability to **Edit** the **State** (On, Off, or Report-only) and the **Excluded identities** (Users, Groups, and Roles) in the policy. Organizations should [exclude their break-glass or emergency access accounts](../role-based-access-control/security-emergency-access.md) from these policies the same as they would in other Conditional Access policies.
 
-Microsoft will enable these policies after no less than 60 days after they're introduced in your tenant if they're left in the **Report-only** state. Administrators might choose to enable these policies sooner if they wish.
+Microsoft will enable these policies after no less than 90 days after they're introduced in your tenant if they're left in the **Report-only** state. Administrators might choose to enable these policies sooner if they wish.
 
 ## Policies
 
