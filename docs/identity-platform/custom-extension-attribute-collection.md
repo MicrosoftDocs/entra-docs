@@ -531,6 +531,7 @@ public static async Task<object> Run(HttpRequest req, ILogger log)
 
         log.LogInformation($"Returning validation error");
         // Send the validation error response
+
         return response;
     }else{
         var actions = new List<ContinueWithDefaultBehavior>{

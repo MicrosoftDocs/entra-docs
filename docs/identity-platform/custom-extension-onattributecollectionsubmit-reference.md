@@ -86,7 +86,7 @@ POST https://exampleAzureFunction.azureWebsites.net/api/functionName
         },
         "extension_<appid>_universityGroups": {
           "@odata.Type": "microsoft.graph.stringDirectoryAttributeValue",
-          "value": ["Alumni,Faculty"],
+          "value": "Alumni,Faculty",
           "attributeType": "directorySchemaExtension"
         },
         "extension_<appid>_graduationYear": {
