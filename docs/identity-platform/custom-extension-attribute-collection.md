@@ -230,14 +230,18 @@ public static async Task<object> Run(HttpRequest req, ILogger log)
     //We should see all the attributes we expect to collect with their default values
     var inputs = new Dictionary<string, object>()
     {
-        { "postalCode", "12345-This is override Value" },
+        { "postalCode", "12345-This is a prefill value" },
+        { "streetAddress", "One Microsoft Way-This is a prefill value" },
+        { "city", "Tampa-This is a prefill value" },
+        { "extension_appId_mailingList", false },
+        { "extension_appId_memberSince", 2023 }      
+};
         { "streetAddress", "One Microsoft Way-This is override Value" },
         { "city", "Tampa-This is override Value" }
     };
 
-    // ModifyAttributesToCollect
-    var actions = new List<ModifiedAttributesAction>{
-        new ModifiedAttributesAction { 
+    var actions = new List<SetPrefillValuesAction>{
+        new SetPrefillValuesAction { 
             type = "microsoft.graph.attributeCollectionStart.setPrefillValues", 
             inputs = inputs }
     };
@@ -264,11 +268,11 @@ public class ResponseObject
 public class Data {
     [JsonProperty("@odata.type")]
     public string type { get; set; }
-    public List<ModifiedAttributesAction> actions { get; set; }
+    public List<SetPrefillValuesAction> actions { get; set; }
 }
 
 [JsonObject]
-public class ModifiedAttributesAction {
+public class SetPrefillValuesAction {
     [JsonProperty("@odata.type")]
     public string type { get; set; }
     public Dictionary<string, object> inputs { get; set; }
@@ -418,15 +422,18 @@ public static async Task<object> Run(HttpRequest req, ILogger log)
 {
     log.LogInformation("C# HTTP trigger function processed a request.");
 
-    // Put UserSignUpInfo as override for one of the attributes
     var attributes = new Dictionary<string, object>()
     {
         { "postalCode", "98007" },
         { "streetAddress", "222 Assigned St" },
+        { "city", "Bellevue" },
+        { "extension_appId_mailingList", false }
+        { "extension_appId_memberSince", 2010 }
+    };
+        { "streetAddress", "222 Assigned St" },
         { "city", "Bellevue" }
     };
 
-    // ModifyAttributesToCollect
     var actions = new List<ModifiedAttributesAction>{
         new ModifiedAttributesAction { 
             type = "microsoft.graph.attributeCollectionSubmit.modifyAttributeValues", 
@@ -441,7 +448,6 @@ public static async Task<object> Run(HttpRequest req, ILogger log)
         actions= actions
     };
 
-    //var dataCoverted = JsonConvert.SerializeObject(dataObject);
 
     dynamic response = new ResponseObject {
         data = dataObject

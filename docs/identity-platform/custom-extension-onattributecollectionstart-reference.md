@@ -60,7 +60,7 @@ POST https://exampleAzureFunction.azureWebsites.net/api/functionName
 
 {
   "type": "microsoft.graph.authenticationEvent.attributeCollectionStart",
-  "source": "/tenants/{tenantId}/applications/{resourceAppId}",
+  "source": "/tenants/30000000-0000-0000-0000-000000000003/applications/<resourceAppguid>",
   "data": {
     "@odata.type": "microsoft.graph.onAttributeCollectionStartCalloutData",
     "tenantId": "30000000-0000-0000-0000-000000000003",
