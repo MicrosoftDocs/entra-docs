@@ -269,14 +269,15 @@ The wizard doesn't provide any automated clean-up. In case you don't want to pro
 
 ### Can't see all my AD FS applications in the report
 
-   If you have installed Microsoft Entra Connect Health agents for AD FS but you still see the prompt to install it or you don't see all your AD FS applications in the report, it may be that you don't have active AD FS applications, or your AD FS applications are Microsoft application.
-    > [!NOTE]
-    > The AD FS application migration lists all the AD FS applications in your organization with active users sign-in in the last 30 days only.
-    > The report doesn't display Microsoft related relying parties in AD FS such as Office 365. For example, relying parties with name `urn:federation:MicrosoftOnline`, `microsoftonline`, `microsoft:winhello:cert:prov:server` don't show up in the list.
+If you have installed Microsoft Entra Connect Health agents for AD FS but you still see the prompt to install it or you don't see all your AD FS applications in the report, it may be that you don't have active AD FS applications, or your AD FS applications are Microsoft application.
+
+> [!NOTE]
+> The AD FS application migration lists all the AD FS applications in your organization with active users sign-in in the last 30 days only.
+> The report doesn't display Microsoft related relying parties in AD FS such as Office 365. For example, relying parties with name `urn:federation:MicrosoftOnline`, `microsoftonline`, `microsoft:winhello:cert:prov:server` don't show up in the list.
 
 ### Why I'm I seeing the validation error; application with same identifier already exists?
 
-    Each application within your tenant should have a unique application identifier. If you see this error message, it means you already have another application with the same identifier in your Microsoft Entra tenant. In this case, you either need to update the existing application identifier or update your AD FS relying party application identifier and wait for 24 hours to get updates reflected.
+Each application within your tenant should have a unique application identifier. If you see this error message, it means you already have another application with the same identifier in your Microsoft Entra tenant. In this case, you either need to update the existing application identifier or update your AD FS relying party application identifier and wait for 24 hours to get updates reflected.
 
 ## Next steps
 
