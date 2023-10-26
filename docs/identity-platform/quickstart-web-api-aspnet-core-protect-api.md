@@ -73,7 +73,7 @@ In this step, the sample code will be configured to work with the app registrati
 
 For this quickstart, don't change any other values in the *appsettings.json* file.
 
-### Step 4: Run the sample
+## Step 4: Run the sample
 
 1. Open a terminal and change directory to the project folder.
 
