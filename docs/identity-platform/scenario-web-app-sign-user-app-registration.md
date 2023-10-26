@@ -41,7 +41,7 @@ You can use these links to bootstrap the creation of your web application:
 > The portal to use is different depending on whether your application runs in the Microsoft Azure public cloud or in a national or sovereign cloud. For more information, see [National clouds](./authentication-national-cloud.md#app-registration-endpoints).
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
-1. If you have access to multiple tenants, use the **Directories + subscriptions** filter :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false"::: in the top menu to switch to the tenant in which you want to register the application.
+1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="./media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the tenant in which you want to register the application.
 1. Browse to **Identity** > **Applications** > **App registrations**, select **New registration**.
 
 # [ASP.NET Core](#tab/aspnetcore)

@@ -40,7 +40,7 @@ The number of roles you add counts toward application manifest limits enforced b
 To create an app role by using the Microsoft Entra admin center's user interface:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-1. If you have access to multiple tenants, use the **Directories + subscriptions** filter :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false"::: in the top menu to switch to the tenant that contains the app registration to which you want to add an app role.
+1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="./media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the tenant that contains the app registration to which you want to add an app role.
 1. Browse to **Identity** > **Applications** > **App registrations** and then select the application you want to define app roles in.
 1. Under manage select **App roles**, and then select **Create app role**.
 
@@ -132,7 +132,7 @@ Once you've added app roles in your application, you can assign users and groups
 To assign users and groups to roles by using the Microsoft Entra admin center:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-1. If you have access to multiple tenants, use the **Directories + subscriptions** filter :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false"::: in the top menu to switch to the tenant that contains the app registration to which you want to add an app role.
+1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="./media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the tenant that contains the app registration to which you want to add an app role.
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 1. Select **All applications** to view a list of all your applications. If your application doesn't appear in the list, use the filters at the top of the **All applications** list to restrict the list, or scroll down the list to locate your application.
 1. Select the application in which you want to assign users or security group to roles.

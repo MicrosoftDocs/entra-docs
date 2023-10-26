@@ -77,7 +77,7 @@ Our guide will walk you through the process of setting up a user and configuring
 > The guide won’t run automatically in customer tenants that you created with the steps above. If you want to run the guide, follow the steps below.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com). 
-1. If you have access to multiple tenants, use the **Directories + subscriptions** filter :::image type="icon" source="media/common/portal-directory-subscription-filter.png" border="false"::: in the top menu to switch to your customer tenant. 
+1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your customer tenant. 
 1. Browse to **Home** > **Go to Microsoft Entra ID** 
 1. On the Get started tab, select **Start the guide**.
 
@@ -90,7 +90,7 @@ This link will take you to the [guide](quickstart-get-started-guide.md), where y
 If you're not going to continue to use this tenant, you can delete it using the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com). 
-1. If you have access to multiple tenants, use the **Directories + subscriptions** filter :::image type="icon" source="media/common/portal-directory-subscription-filter.png" border="false"::: in the top menu to switch to your customer tenant. 
+1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your customer tenant. 
 1. Browse to **Identity** > **Overview** > **Manage tenants**.
 1. Select the tenant you want to delete, and then select **Delete**.
 
