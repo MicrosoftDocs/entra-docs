@@ -49,7 +49,7 @@ If you want to manually configure your application and code sample, use the foll
 #### Step 1: Register your application
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="./media/quickstart-configure-app-access-web-apis/portal-01-directory-subscription-filter.png" border="false"::: in the top menu to switch to the tenant to register the application from the **Directories + subscriptions** menu.
+1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="./media/quickstart-configure-app-access-web-apis/portal-01-directory-subscription-filter.png" border="false"::: in the top menu to switch to the tenant in which you want to register the application from the **Directories + subscriptions** menu.
 1. Browse to **Identity** > **Applications** > **App registrations** and select **New registration**.
 1. For **Name**, enter a name for your application. For example, enter **ASPNET-Quickstart**. Users of your app will see this name, and you can change it later.
 1. Set the **Redirect URI** type to **Web** and value to `https://localhost:44368/`.
