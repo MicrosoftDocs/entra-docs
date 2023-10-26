@@ -65,7 +65,7 @@ An administrator can choose to dismiss a user's risk in the Microsoft Entra admi
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
-1. Make sure you're using the directory that contains your Microsoft Entra customer tenant: Select the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the toolbar and find your customer tenant in the **Directories + subscriptions** setting. If it's not the current directory, select **Switch**.
+1. Make sure you're using the directory that contains your Microsoft Entra customer tenant: Select the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the toolbar and find your customer tenant from the **Directories + subscriptions** menu. If it's not the current directory, select **Switch**.
 
 1. Browse to **Identity** > **Protection** > **Security Center**.
 

@@ -37,7 +37,7 @@ To register and automatically configure the app and then download the code sampl
 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="./media/quickstart-configure-app-access-web-apis/portal-01-directory-subscription-filter.png" border="false"::: in the top menu to switch to the tenant to register the application in the **Directories + subscriptions** setting.
+1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="./media/quickstart-configure-app-access-web-apis/portal-01-directory-subscription-filter.png" border="false"::: in the top menu to switch to the tenant to register the application from the **Directories + subscriptions** menu.
 1. Browse to **Identity** > **Applications** > **App registrations** and select **New registration**.
 1. Enter a name for your application and select **Register**.
 1. Follow the instructions to download and automatically configure your new application in one click.
@@ -53,7 +53,7 @@ To manually configure your application and code sample, use the following proced
 To register the application and add the registration information to the solution manually, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="./media/quickstart-configure-app-access-web-apis/portal-01-directory-subscription-filter.png" border="false"::: in the top menu to switch to the tenant to register the application in the **Directories + subscriptions** setting.
+1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="./media/quickstart-configure-app-access-web-apis/portal-01-directory-subscription-filter.png" border="false"::: in the top menu to switch to the tenant to register the application from the **Directories + subscriptions** menu.
 1. Browse to **Identity** > **Applications** > **App registrations** and select **New registration**.
 1. For **Name**, enter a name for the application. For example, enter **Daemon-console**. Users of the app will see this name, and can be changed later.
 1. Select **Register** to create the application.

@@ -73,7 +73,7 @@ If your app was registered *before May 21, 2019*, your app's consent prompt show
 To set a publisher domain for your app by using the Microsoft Entra admin center:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
-1. If you have access to multiple tenants, use the **Directory + subscription** filter :::image type="icon" source="./media/common/admin-center-settings-icon.png" border="false"::: in the portal global menu to select the tenant where the app is registered.
+1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="./media/common/admin-center-settings-icon.png" border="false"::: in the top right and select the tenant where the app is registered from the **Directories + subscriptions** menu.
 1. In Azure Microsoft Entra admin center browse to **Identity** > **Applications** > **App registrations**. 
 1. Search for and select the app you want to configure.
 1. In **Overview**, in the resource menu under **Manage**, select **Branding**.

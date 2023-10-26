@@ -25,7 +25,7 @@ To register a single-page application (SPA) in the Microsoft identity platform, 
 For both MSAL.js 1.0- and 2.0-based applications, start by completing the following steps to create the initial app registration.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
-1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the tenant to register the application in the **Directories + subscriptions** setting.
+1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the tenant to register the application from the **Directories + subscriptions** menu.
 1. Browse to **Identity** > **Applications** > **App registrations**, select **New registration**.
 1. Enter a **Name** for your application. Users of your app might see this name, and you can change it later.
 1. Choose the **Supported account types** for the application. Do **NOT** enter a **Redirect URI**. For a description of the different account types, see the [Register an application](quickstart-register-app.md).
