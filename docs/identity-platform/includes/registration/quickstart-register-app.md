@@ -55,7 +55,7 @@ Follow these steps to create the app registration:
 1. Don't enter anything for **Redirect URI (optional)**. You'll configure a redirect URI in the next section.
 1. Select **Register** to complete the initial app registration.
 
-   :::image type="content" source="/azure/active-directory/develop/media/quickstart-register-app/portal-02-app-reg-01.png" alt-text="Screenshot of the Azure portal in a web browser, showing the Register an application pane.":::
+   :::image type="content" source="/media/common/admin-center-settings-icon.png" alt-text="Screenshot of the Azure portal in a web browser, showing the Register an application pane.":::
 
 When registration finishes, the Microsoft Entra admin center displays the app registration's **Overview** pane. You see the **Application (client) ID**. Also called the _client ID_, this value uniquely identifies your application in the Microsoft identity platform.
 
