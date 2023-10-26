@@ -27,7 +27,7 @@ In this quickstart, we'll guide you through customizing the look and feel of you
 When you set up a customer tenant free trial, the guide will start automatically as part of the configuration of your new customer tenant. If you created your customer tenant with an Azure subscription, you can start the guide manually by following the steps below.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com). 
-1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your customer tenant. 
+1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your customer tenant in the **Directories + subscriptions** setting.
 1. Browse to **Home** > **Go to Microsoft Entra ID** 
 1. On the **Get started** tab, select **Start the guide**.
 

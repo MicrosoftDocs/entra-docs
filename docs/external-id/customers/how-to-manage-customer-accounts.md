@@ -30,7 +30,7 @@ To add or delete users, your account must be assigned the *User administrator* o
 ## Create a customer account
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) with Global Administrator or Privileged Role Administrator permissions.
-1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your customer tenant.
+1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your customer tenant in the **Directories + subscriptions** setting.
 1. Browse to **Identity** > **Users** > **All users**.
 1. Select **New user** > **Create new user**. 
 1. Select **Create a customer**.
@@ -51,7 +51,7 @@ As an administrator, you can reset a user's password, if the user forgets their 
 To reset a customer's password:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) with Global Administrator or Privileged Role Administrator permissions.
-1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your customer tenant.
+1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your customer tenant in the **Directories + subscriptions** setting.
 1. Browse to **Identity** > **Users** > **All users**.
 1. Search for and select the user that needs the reset, and then select **Reset Password**.
 1. In the **Reset password** page, select **Reset password**.
@@ -60,7 +60,7 @@ To reset a customer's password:
 ## Delete a customer account
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) with Global Administrator or Privileged Role Administrator permissions.
-1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your customer tenant.
+1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your customer tenant in the **Directories + subscriptions** setting.
 1. Browse to **Identity** > **Users** > **All users**.
 1. Search for and select the user to delete.
 1. Select **Delete**, and then **Yes** to confirm the deletion.

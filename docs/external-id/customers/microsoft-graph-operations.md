@@ -30,7 +30,7 @@ The following steps show you how to register your app in the Microsoft Entra adm
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com). 
 
-1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your customer tenant. 
+1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your customer tenant in the **Directories + subscriptions** setting.
 
 1. Browse to **Identity** > **Applications** > **App registrations**.
 

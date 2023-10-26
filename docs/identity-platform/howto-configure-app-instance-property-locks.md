@@ -37,7 +37,7 @@ The following property usage scenarios are considered as sensitive:
 To configure an app instance lock:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the tenant in which you want to register the application.
+1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the tenant containing the app registration in the **Directories + subscriptions** setting.
 1. Browse to **Identity** > **Applications** > **App registrations**.
 1. Select the application you want to configure.
 1. Select **Authentication**, and then select **Configure** under the *App instance property lock* section.

@@ -28,7 +28,7 @@ You can create a personalized sign-in experience for users who sign in using a s
 ## Add browser language under Company branding
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
-1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the customer tenant you created earlier.
+1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the customer tenant you created earlier in the **Directories + subscriptions** setting.
 1. Browse to **Company branding** > **Browser language customizations** > **Add browser language**. 
 
    :::image type="content" source="media/how-to-customize-languages-customers/company-branding-add-browser-language.png" alt-text="Screenshot of the browser language customizations tab." lightbox="media/how-to-customize-languages-customers/company-branding-add-browser-language.png":::
@@ -87,7 +87,7 @@ The following languages are supported in the customer tenant:
 Language customization in the customer tenant allows your user flow to accommodate different languages to suit your customer's needs.  You can use languages to modify the strings displayed to your customers as part of the attribute collection process during sign-up.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).  
-2. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the customer tenant you created earlier.
+2. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the customer tenant you created earlier in the **Directories + subscriptions** setting.
 3. Browse to **Identity** > **External Identities** > **User flows**.
 4. Select the user flow that you want to enable for translations.
 5. Select **Languages**.

@@ -79,7 +79,7 @@ In this article, you learn how to:
 
 If you're not sure which directory contains your customer tenant, you can find the tenant name and ID both in the Microsoft Entra admin center and in the Azure portal.
 
-1. To make sure you're using the directory that contains your customer tenant, select the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the toolbar.
+1. If you have access to multiple tenants, select the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the customer tenant from the **Directories + subscriptions** setting.
 
     :::image type="content" source="media/how-to-create-customer-tenant-portal/directories-subscription.png" alt-text="Screenshot of the Directories + subscriptions icon.":::
 

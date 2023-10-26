@@ -68,7 +68,7 @@ The code in a client application requests permission to perform operations defin
 First, follow these steps to create an example scope named `Employees.Read.All`:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="./media/quickstart-configure-app-access-web-apis/portal-01-directory-subscription-filter.png" border="false"::: in the top menu to select the tenant containing your client app's registration.
+1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="./media/quickstart-configure-app-access-web-apis/portal-01-directory-subscription-filter.png" border="false"::: in the top menu to switch to the tenant containing the app registration in the **Directories + subscriptions** setting.
 1. Browse to **Identity** > **Applications** > **App registrations**, and then select your API's app registration.
 1. Select **Expose an API**
 1. Select **Add** next to **Application ID URI** if you haven't yet configured one.
