@@ -142,7 +142,7 @@ items:
         - name: Daemon applications
           href: resilience-daemon-app.md
         - name: OpenID Connect metadata refresh
-          href: ~/identity-platform/howto-build-services-resilient-to-metadata-refresh.md?toc=/azure/active-directory/architecture/toc.json
+          href: ~/identity-platform/howto-build-services-resilient-to-metadata-refresh.md?toc=/entra/architecture/toc.json?bc=/entra/architecture/breadcrumb.toc.json
       - name: Monitor application health for resilience
         href: monitor-sign-in-health-for-resilience.md
     - name: Secure with Microsoft Entra ID
@@ -180,7 +180,7 @@ items:
   - name: Security
     items: 
     - name: Security baseline
-      href: /security/benchmark/azure/baselines/aad-security-baseline?toc=/azure/active-directory/architecture/toc.json
+      href: /security/benchmark/azure/baselines/aad-security-baseline?toc=/entra/architecture/toc.json?bc=/entra/architecture/breadcrumb.toc.json?context=/entra/architecture/context/architecture-context.json
     - name: Security operations guide
       items: 
       - name: Security operations overview

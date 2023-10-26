@@ -1,0 +1,15 @@
+items:
+- name: Microsoft Entra
+  tocHref: /entra/
+  topicHref: /entra/index
+  items:
+  - name: External Identities
+    tocHref: /entra/external-id/
+    topicHref: /entra/externa-id/
+    items:
+    - name: External ID Customers
+      tocHref: /entra/identity-platform/
+      topicHref: /entra/externa-id/customers/
+    - name: External ID Customers
+      tocHref: /entra/fundamentals/
+      topicHref: /entra/externa-id/customers/
