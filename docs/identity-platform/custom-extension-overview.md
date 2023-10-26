@@ -72,6 +72,4 @@ Attribute collection start and submit events can be used with custom authenticat
 
 ## Next steps
 
-- Learn more about [custom claim providers](custom-claims-provider-overview.md).
-- Learn how to [create and register a custom claims provider](custom-extension-get-started.md) with a sample OpenID Connect application.
-- If you already have a custom claims provider registered, you can configure a [SAML application](custom-extension-configure-saml-app.md) to receive tokens with claims sourced from an external store.
+- Learn how to [create custom authentication extensions for attribute collection start and submit events](custom-extension-attribute-collection.md) with a sample OpenID Connect application.

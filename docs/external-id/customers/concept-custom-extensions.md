@@ -78,4 +78,5 @@ For details, see:
 
 - To learn more about how custom extensions work, see [Custom authentication extensions](~/identity-platform/custom-extension-overview.md?context=/azure/active-directory/external-identities/customers/context/customers-context).
 - Configure a [custom claims provider token issuance event](~/identity-platform/custom-extension-get-started.md?context=/azure/active-directory/external-identities/customers/context/customers-context).
+- Configure [custom authentication extensions for attribute collection start and submit events](custom-extension-attribute-collection.md) with a sample OpenID Connect application.
 - See the [Microsoft Entra ID for customers Developer Center](https://aka.ms/ciam/dev) for the latest developer content and resources.

@@ -1,5 +1,5 @@
 ---
-title: Get started with attribute collection events (preview)
+title: Create attribute collection events (preview)
 titleSuffix: Microsoft identity platform
 description: Learn how to develop and register a Microsoft Entra custom authentication extensions REST API. The custom authentication extension allows you to add logic to attribute collection.  
 services: active-directory
@@ -78,15 +78,13 @@ Now that you've created the Azure Function app, you create HTTP trigger function
 
 1. Select **Create**
 
-<!--The following screenshot demonstrates how to configure the Azure HTTP trigger function.
-
-:::image type="content" border="false"source="media/custom-extension-attribute-collection/create-http-trigger-function-attribute-collection.png" alt-text="Screenshot that shows how to choose the development environment, and template." lightbox="media/custom-extension-attribute-collection/create-http-trigger-function-attribute-collection.png":::-->
-
 ### 1.2 Configure the HTTP trigger for OnAttributeCollectionStart
 
 1. From the menu, select **Code + Test**
 
 1. Select the tab below for the scenario you want to implement: **Continue**, **Block**, or **SetPrefillValues**. Replace the code with the code snippet(s) provided.
+
+1. After you replace the code, from the top menu, select **Get Function Url**, and copy the URL. You use this URL in [Step 2: Create and register a custom authentication extension](#step-2-create-and-register-a-custom-authentication-extension) for **Target Url**.
 
 # [**Continue**](#tab/start-continue)
 
@@ -208,7 +206,7 @@ public class BlockedActions {
 
 # [**Prefill values**](#tab/start-set-prefill-values)
 
-Use this HTTP trigger to prefill the values associated with the user flow, for example from an external HR system or other data source. You can prefill values for built-in attributes (for example, address), custom user attributes (for example, loyalty number), and attributes that are not shown on the Attribute Collection page but are stored with the user object (for example, the security default setting).
+Use this HTTP trigger to prefill the values associated with the user flow, for example from an external HR system or other data source. You can prefill values for built-in attributes (for example, address), custom user attributes (for example, loyalty number), and attributes that aren't shown on the Attribute Collection page but are stored with the user object (for example, the security default setting).
 
 ```csharp
 #r "Newtonsoft.Json"
@@ -280,13 +278,13 @@ public class SetPrefillValuesAction {
 ```
 ---
 
-1. After you replace the code, from the top menu, select **Get Function Url**, and copy the URL. You use this URL in [Step 2: Create and register a custom authentication extension](#step-2-create-and-register-a-custom-authentication-extension) for **Target Url**.
-
 ### 1.3 Configure the HTTP trigger for OnAttributeCollectionSubmit
 
 1. From the menu, select **Code + Test**
 
 1. Select the tab below for the scenario you want to implement: **Continue**, **Block**, **Modify values**, or **Validation error**. Replace the code with the code snippet(s) provided.
+
+1. After you replace the code, from the top menu, select **Get Function Url**, and copy the URL. You use this URL in [Step 2: Create and register a custom authentication extension](#step-2-create-and-register-a-custom-authentication-extension) for **Target Url**.
 
 # [Continue](#tab/submit-continue)
 
@@ -479,7 +477,7 @@ public class ModifiedAttributesAction {
 
 # [Validation error](#tab/submit-show-validation-error)
 
-Use this HTTP trigger to validate attributes entered by the user. For example, you can validate attributes against an external data store. You can validate built-in attributes (for example, country), custom user attributes (for example, loyalty number), and attributes that are not shown on Attribute Collection page but are stored with the user object (for example, the “security default” setting).
+Use this HTTP trigger to validate attributes entered by the user. For example, you can validate attributes against an external data store. You can validate built-in attributes (for example, country), custom user attributes (for example, loyalty number), and attributes that aren't shown on Attribute Collection page but are stored with the user object (for example, the “security default” setting).
 
 ```csharp
 #r "Newtonsoft.Json"
@@ -603,13 +601,9 @@ public class ContinueWithDefaultBehavior {
 ```
 ---
 
-1. After you replace the code, from the top menu, select **Get Function Url**, and copy the URL. You'll use this URL in [Step 2: Create and register a custom authentication extension](#step-2-create-and-register-a-custom-authentication-extension) for **Target Url**.
-
 ## Step 2: Create and register a custom authentication extension
 
-In this step, you register a custom authentication extension that is used by Microsoft Entra ID to call your Azure function. The custom authentication extension contains information about your REST API endpoint, the attribute collection start and submit actions that it parses from your REST API, and how to authenticate to your REST API. Follow these steps to register a custom authentication extension:
-
-# [Microsoft Entra admin center](#tab/entra-admin-center)
+In this step, you register a custom authentication extension that is used by Microsoft Entra ID to call your Azure function. The custom authentication extension contains information about your REST API endpoint, the attribute collection start and submit actions that it parses from your REST API, and how to authenticate to your REST API.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an  [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-developer) and [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
 
@@ -634,160 +628,6 @@ In this step, you register a custom authentication extension that is used by Mic
 1. Select **Next**.
 
 1. Select **Create**, which creates the custom authentication extension and the associated application registration.
-<!--
-# [Microsoft Graph](#tab/microsoft-graph)
-
-Register an application to authenticate your custom authentication extension to your Azure Function.
-
-1. Sign in to [Graph Explorer](https://aka.ms/ge) using an account whose home tenant is the tenant you wish to manage your custom authentication extension in. The account must have the privileges to create and manage an application registration in the tenant.
-2. Run the following request.
-
-    # [HTTP](#tab/http)
-    ```http
-    POST https://graph.microsoft.com/v1.0/applications
-    Content-type: application/json
-    
-    {
-        "displayName": "authenticationeventsAPI"
-    }
-    ```
-
-    # [C#](#tab/csharp)
-    [!INCLUDE [sample-code](~/microsoft-graph/includes/snippets/csharp/v1/tutorial-application-basics-create-app-csharp-snippets.md)]
-    
-    # [Go](#tab/go)
-    [!INCLUDE [sample-code](~/microsoft-graph/includes/snippets/go/v1/tutorial-application-basics-create-app-go-snippets.md)]
-    
-    # [Java](#tab/java)
-    [!INCLUDE [sample-code](~/microsoft-graph/includes/snippets/java/v1/tutorial-application-basics-create-app-java-snippets.md)]
-    
-    # [JavaScript](#tab/javascript)
-    [!INCLUDE [sample-code](~/microsoft-graph/includes/snippets/javascript/v1/tutorial-application-basics-create-app-javascript-snippets.md)]
-    
-    # [PHP](#tab/php)
-    Snippet not available.
-    
-    # [PowerShell](#tab/powershell)
-    [!INCLUDE [sample-code](~/microsoft-graph/includes/snippets/powershell/v1/tutorial-application-basics-create-app-powershell-snippets.md)]
-    
-    # [Python](#tab/python)
-    [!INCLUDE [sample-code](~/microsoft-graph/includes/snippets/python/v1/tutorial-application-basics-create-app-python-snippets.md)]
-    
-    ---
-
-3. From the response, record the value of **id** and **appId** of the newly created app registration. These values will be referenced in this article as `{authenticationeventsAPI_ObjectId}` and `{authenticationeventsAPI_AppId}` respectively.
-
-Create a service principal in the tenant for the authenticationeventsAPI app registration.
-
-Still in Graph Explorer, run the following request. Replace `{authenticationeventsAPI_AppId}` with the value of **appId** that you recorded from the previous step.
-
-```http
-POST https://graph.microsoft.com/v1.0/servicePrincipals
-Content-type: application/json
-    
-{
-    "appId": "{authenticationeventsAPI_AppId}"
-}
-```
-
-### Set the App ID URI, access token version, and required resource access
-
-Update the newly created application to set the application ID URI value, the access token version, and the required resource access.
-
-In Graph Explorer, run the following request. 
-   - Set the application ID URI value in the *identifierUris* property. Replace `{Function_Url_Hostname}` with the hostname of the `{Function_Url}` you recorded earlier.
-   - Set the `{authenticationeventsAPI_AppId}` value with the **appId** that you recorded earlier.
-   - An example value is `api://authenticationeventsAPI.azurewebsites.net/f4a70782-3191-45b4-b7e5-dd415885dd80`. Take note of this value as you'll use it later in this article in place of `{functionApp_IdentifierUri}`.
-
-```http
-POST https://graph.microsoft.com/v1.0/applications/{authenticationeventsAPI_ObjectId}
-Content-type: application/json
-
-{
-"identifierUris": [
-    "api://{Function_Url_Hostname}/{authenticationeventsAPI_AppId}"
-],    
-"api": {
-    "requestedAccessTokenVersion": 2,
-    "acceptMappedClaims": null,
-    "knownClientApplications": [],
-    "oauth2PermissionScopes": [],
-    "preAuthorizedApplications": []
-},
-"requiredResourceAccess": [
-    {
-        "resourceAppId": "00000003-0000-0000-c000-000000000000",
-        "resourceAccess": [
-            {
-                "id": "214e810f-fda8-4fd7-a475-29461495eb00",
-                "type": "Role"
-            }
-        ]
-    }
-]
-}
-```
-
-### Register a custom authentication extension
-
-Next, you register the custom authentication extension. You register the custom authentication extension by associating it with the app registration for the Azure Function, and your Azure Function endpoint `{Function_Url}`.
-
-1. In Graph Explorer, run the following request. Replace `{Function_Url}` with the hostname of your Azure Function app. Replace `{functionApp_IdentifierUri}` with the identifierUri used in the previous step.
-   - You'll need the *CustomAuthenticationExtension.ReadWrite.All* delegated permission. 
-
-    # [HTTP](#tab/http)
-    ```http
-    POST https://graph.microsoft.com/beta/identity/customAuthenticationExtensions
-    Content-type: application/json
-    
-    {
-        "@odata.type": "#microsoft.graph.onTokenIssuanceStartCustomExtension",
-        "displayName": "onTokenIssuanceStartCustomExtension",
-        "description": "Fetch additional claims from custom user store",
-        "endpointConfiguration": {
-            "@odata.type": "#microsoft.graph.httpRequestEndpoint",
-            "targetUrl": "{Function_Url}"
-        },
-        "authenticationConfiguration": {
-            "@odata.type": "#microsoft.graph.azureAdTokenAuthentication",
-            "resourceId": "{functionApp_IdentifierUri}"
-        },
-        "claimsForTokenConfiguration": [
-            {
-                "claimIdInApiResponse": "DateOfBirth"
-            },
-            {
-                "claimIdInApiResponse": "CustomRoles"
-            }
-        ]
-    }
-    ```
-    # [C#](#tab/csharp)
-    [!INCLUDE [sample-code](~/microsoft-graph/api-reference/beta/includes/snippets/csharp/create-customauthenticationextension-from--csharp-snippets.md)]
-    
-    # [Go](#tab/go)
-    [!INCLUDE [sample-code](~/microsoft-graph/api-reference/beta/includes/snippets/go/create-customauthenticationextension-from--go-snippets.md)]
-    
-    # [Java](#tab/java)
-    [!INCLUDE [sample-code](~/microsoft-graph/api-reference/beta/includes/snippets/java/create-customauthenticationextension-from--java-snippets.md)]
-    
-    # [JavaScript](#tab/javascript)
-    [!INCLUDE [sample-code](~/microsoft-graph/api-reference/beta/includes/snippets/javascript/create-customauthenticationextension-from--javascript-snippets.md)]
-    
-    # [PHP](#tab/php)
-    [!INCLUDE [sample-code](~/microsoft-graph/api-reference/beta/includes/snippets/php/create-customauthenticationextension-from--php-snippets.md)]
-    
-    # [PowerShell](#tab/powershell)
-    [!INCLUDE [sample-code](~/microsoft-graph/api-reference/beta/includes/snippets/powershell/create-customauthenticationextension-from--powershell-snippets.md)]
-    
-    # [Python](#tab/python)
-    [!INCLUDE [sample-code](~/microsoft-graph/api-reference/beta/includes/snippets/python/create-customauthenticationextension-from--python-snippets.md)]
-
-    ---
-
-1. Record the **id** value of the created custom claims provider object. You'll use the value later in this tutorial in place of `{customExtensionObjectId}`.
--->
----
 
 ### 2.2 Grant admin consent
 
@@ -798,10 +638,6 @@ After your custom authentication extension is created, grant application consent
 1. Select your custom authentication extension from the list.
 
 1. On the **Overview** tab, select the **Grant permission** button to give admin consent to the registered app. The custom authentication extension uses `client_credentials` to authenticate to the Azure Function App using the `Receive custom authentication extension HTTP requests` permission.
-
-<!--The following screenshot shows how to grant permissions.
-
-:::image type="content" border="false"source="./media/custom-extension-attribute-collection/custom-extensions-overview.png" alt-text="Screenshot that shows how grant admin consent." lightbox="media/custom-extension-get-started/custom-extensions-overview.png":::-->
 
 ## Step 3: Add the custom authentication extension to a user flow
 
@@ -814,7 +650,7 @@ Now you can associate the custom authentication extension with one or more of yo
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an  [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-developer) and [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator)
 
-1. If you have access to multiple tenants, use the **Directories + subscriptions** filter :::image type="icon" source="media/common/portal-directory-subscription-filter.png" border="false"::: in the top menu to switch to your customer tenant. 
+1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/custom-extension-attribute-collection/settings-icon.png" border="false"::: in the top menu to switch to your customer tenant.
 
 1. Browse to **Identity** > **External Identities** > **User flows**.
 
@@ -847,15 +683,9 @@ Follow these steps to register the **jwt.ms** web application:
 1. In the **Select a platform** dropdown in **Redirect URI**, select **Web** and then enter `https://jwt.ms` in the URL text box.
 1. Select **Register** to complete the app registration.
 
-<!--The following screenshot shows how to register the *My Test application*.
-
-:::image type="content" border="false"source="media/custom-extension-get-started/register-test-web-application.png" alt-text="Screenshot that shows how to select the supported account type and redirect URI.":::-->
-
 ### 4.2 Get the application ID
 
 In your app registration, under **Overview**, copy the **Application (client) ID**. The app ID is referred to as the `{App_to_enrich_ID}` in later steps. In Microsoft Graph, it's referenced by the **appId** property.
-
-<!-->:::image type="content" border="false"source="media/custom-extension-get-started/get-the-test-application-id.png" alt-text="Screenshot that shows how to copy the application ID.":::-->
 
 ### 4.3 Enable implicit flow
 
@@ -930,3 +760,6 @@ If you configured [Step 5: Protect your Azure Function](#step-5-protect-your-azu
 1. Select **Add** to add the OpenID Connect identity provider.
 
 ## Next steps
+
+- [OnAttributeCollectionStart reference](custom-extension-onattributecollectionstart-reference.md)
+- [OnAttributeCollectionSubmit reference](custom-extension-onattributecollectionsubmit-reference.md)
