@@ -13,8 +13,11 @@ items:
 - name: How-to guides
   expanded: true
   items:
-  - name: Install the Windows client
-    href: how-to-install-windows-client.md
+  - name: Global Secure Access client
+    expanded: false
+    items:
+      - name: Install the Windows client
+        href: how-to-install-windows-client.md
   - name: Remote networks
     expanded: false
     items:
