@@ -93,7 +93,7 @@ Let's review each tab on the AD FS application migration dashboard in more detai
 
 The **All apps** tab shows all active AD FS relying party applications from selected date range. User can analyze the impact of each application by using the aggregated sign-in data. They can also navigate to the details pane by using the **Migration status** link.
 
-To view details about each validation rule, see [AD FS application migration validation rules](migrate-adfs-application-overview.md#ad-fs-application-migration-validation-tests).
+To view details about each validation rule, see [AD FS application migration validation rules](migrate-ad-fs-application-overview.md#ad-fs-application-migration-validation-tests).
 
 :::image type="content" source="media/migrate-ad-fs-application-howto/migration-details.png" alt-text="Screenshot of the AD FS application migration details pane.":::
 

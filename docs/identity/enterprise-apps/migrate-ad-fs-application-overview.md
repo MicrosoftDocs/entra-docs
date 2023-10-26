@@ -69,4 +69,4 @@ Application readiness is evaluated based on following predefined AD FS applicati
 
 ## Next steps
 
-- [Use AD FS application migration wizard to migrate apps from AD FS to Microsoft Entra ID](migrate-adfs-application-howto.md)
+- [Use AD FS application migration wizard to migrate apps from AD FS to Microsoft Entra ID](migrate-ad-fs-application-howto.md)

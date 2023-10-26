@@ -98,7 +98,7 @@
         - name: Represent ADFS security policies
           href: migrate-adfs-represent-security-policies.md
         - name: Overview of AD FS application migration wizard
-          href: migrate-adfs-application-overview.md
+          href: migrate-ad-fs-application-overview.md
       - name: ADFS migration guidelines
         items:
         - name: Migration phases
@@ -173,7 +173,7 @@
       - name: Migrate applications from Okta to Microsoft Entra ID 
         items:
         - name: Use the AD FS application migration wizard
-          href: migrate-adfs-application-howto.md
+          href: migrate-ad-fs-application-howto.md
         - name: Use the ADFS application activity report
           href: migrate-adfs-application-activity.md
         - name: Migrate applications from Okta to Microsoft Entra ID
