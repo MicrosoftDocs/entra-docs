@@ -86,11 +86,68 @@ Now that you've created the Azure Function app, you create HTTP trigger function
 
 1. From the menu, select **Code + Test**
 
-1. Select the tab below for the scenario you want to implement: **Start block**, **Start continue**, or **Start SetPrefillValues**. Replace the code with the code snippet(s) provided.
+1. Select the tab below for the scenario you want to implement: **Continue**, **Block**, or **SetPrefillValues**. Replace the code with the code snippet(s) provided.
 
-# [**Start block**](#tab/start-block)
+# [**Continue**](#tab/start-continue)
 
-Use this HTTP trigger to block the user from continuing the sign-up process until an action is completed. For example, you could use an identity verification service or external identity data source to verify the user's email address.
+Use this HTTP trigger to block the user from continuing the sign-up process. For example, you could use an identity verification service or external identity data source to verify the user's email address. You could also block sign ups based on various user conditions.
+
+```csharp
+#r "Newtonsoft.Json"
+
+using System.Net;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Primitives;
+using Newtonsoft.Json;
+using System.Text;
+
+public static async Task<object> Run(HttpRequest req, ILogger log)
+{
+    log.LogInformation("C# HTTP trigger function processed a request.");
+
+    string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
+    dynamic request = JsonConvert.DeserializeObject(requestBody);
+
+
+    var actions = new List<ContinueWithDefaultBehavior>{
+        new ContinueWithDefaultBehavior { type = "microsoft.graph.attributeCollectionStart.continueWithDefaultBehavior"}
+    };
+
+    var dataObject = new Data {
+        type = "microsoft.graph.onAttributeCollectionStartResponseData",
+        actions= actions
+    };
+
+    dynamic response = new ResponseObject {
+        data = dataObject
+    };
+
+    // Send the response
+    return response;
+}
+
+public class ResponseObject
+{
+    public Data data { get; set; }
+}
+
+[JsonObject]
+public class Data {
+    [JsonProperty("@odata.type")]
+    public string type { get; set; }
+    public List<ContinueWithDefaultBehavior> actions { get; set; }
+}
+
+[JsonObject]
+public class ContinueWithDefaultBehavior {
+    [JsonProperty("@odata.type")]
+    public string type { get; set; }
+}
+```
+
+# [**Block**](#tab/start-block)
+
+Use this HTTP trigger to block the user from continuing the sign-up process. For example, you could use an identity verification service or external identity data source to verify the user's email address.
 
 ```csharp
 #r "Newtonsoft.Json"
@@ -149,64 +206,7 @@ public class BlockedActions {
 }
 ```
 
-# [**Start continue**](#tab/start-continue)
-
-Use this HTTP trigger to allow the user to continue with the sign-up flow. For example, if you process the user's information and determine that no further action is needed, you can allow the user to continue.
-
-```csharp
-#r "Newtonsoft.Json"
-
-using System.Net;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Primitives;
-using Newtonsoft.Json;
-using System.Text;
-
-public static async Task<object> Run(HttpRequest req, ILogger log)
-{
-    log.LogInformation("C# HTTP trigger function processed a request.");
-
-    string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
-    dynamic request = JsonConvert.DeserializeObject(requestBody);
-
-
-    var actions = new List<ContinueWithDefaultBehavior>{
-        new ContinueWithDefaultBehavior { type = "microsoft.graph.attributeCollectionStart.continueWithDefaultBehavior"}
-    };
-
-    var dataObject = new Data {
-        type = "microsoft.graph.onAttributeCollectionStartResponseData",
-        actions= actions
-    };
-
-    dynamic response = new ResponseObject {
-        data = dataObject
-    };
-
-    // Send the response
-    return response;
-}
-
-public class ResponseObject
-{
-    public Data data { get; set; }
-}
-
-[JsonObject]
-public class Data {
-    [JsonProperty("@odata.type")]
-    public string type { get; set; }
-    public List<ContinueWithDefaultBehavior> actions { get; set; }
-}
-
-[JsonObject]
-public class ContinueWithDefaultBehavior {
-    [JsonProperty("@odata.type")]
-    public string type { get; set; }
-}
-```
-
-# [**Start SetPrefillValues**](#tab/start-set-prefill-values)
+# [**Prefill values**](#tab/start-set-prefill-values)
 
 Use this HTTP trigger to prefill the values associated with the user flow, for example from an external HR system or other data source. You can prefill values for built-in attributes (for example, address), custom user attributes (for example, loyalty number), and attributes that are not shown on the Attribute Collection page but are stored with the user object (for example, the security default setting).
 
@@ -282,9 +282,66 @@ public class ModifiedAttributesAction {
 
 1. From the menu, select **Code + Test**
 
-1. Find the scenario you want to implement below and replace the entire code with the code snippet(s) provided.
+1. Select the tab below for the scenario you want to implement: **Continue**, **Block**, **Modify values**, or **Validation error**. Replace the code with the code snippet(s) provided.
 
-# [Submit block](#tab/submit-block)
+# [Continue](#tab/submit-continue)
+
+Use this HTTP trigger to allow the user to continue with the sign-up flow if no further action is needed.
+
+```csharp
+#r "Newtonsoft.Json"
+
+using System.Net;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Primitives;
+using Newtonsoft.Json;
+using System.Text;
+
+public static async Task<object> Run(HttpRequest req, ILogger log)
+{
+    log.LogInformation("C# HTTP trigger function processed a request.");
+
+    string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
+    dynamic request = JsonConvert.DeserializeObject(requestBody);
+    
+    var actions = new List<ContinueWithDefaultBehavior>{
+        new ContinueWithDefaultBehavior { type = "microsoft.graph.attributeCollectionSubmit.continueWithDefaultBehavior"}
+    };
+						
+    var dataObject = new Data {
+        type = "microsoft.graph.onAttributeCollectionSubmitResponseData",
+        actions= actions
+    };
+	    
+	dynamic response = new ResponseObject {
+        data = dataObject
+    };
+
+    // Send the response
+    return response;
+}
+
+public class ResponseObject
+{
+    public Data data { get; set; }
+}
+
+[JsonObject]
+public class Data {
+    [JsonProperty("@odata.type")]
+    public string type { get; set; }
+    
+    public List<ContinueWithDefaultBehavior> actions { get; set; }
+}
+
+[JsonObject]
+public class ContinueWithDefaultBehavior {
+    [JsonProperty("@odata.type")]
+	public string type { get; set; }
+}
+```
+
+# [Block](#tab/submit-block)
 
 Use this HTTP trigger to block the user from continuing the sign-up process based on the attribute values they entered. For example, you can block sign-up based on a risky phone number. Or you can terminate the sign-up flow and send the user to a custom approval system for account creation.
 
@@ -344,64 +401,7 @@ public class BlockedActions {
 }
 ```
 
-# [Submit continue](#tab/submit-continue)
-
-Use this HTTP trigger to allow the user to continue with the sign-up flow if no further action is needed.
-
-```csharp
-#r "Newtonsoft.Json"
-
-using System.Net;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Primitives;
-using Newtonsoft.Json;
-using System.Text;
-
-public static async Task<object> Run(HttpRequest req, ILogger log)
-{
-    log.LogInformation("C# HTTP trigger function processed a request.");
-
-    string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
-    dynamic request = JsonConvert.DeserializeObject(requestBody);
-    
-    var actions = new List<ContinueWithDefaultBehavior>{
-        new ContinueWithDefaultBehavior { type = "microsoft.graph.attributeCollectionSubmit.continueWithDefaultBehavior"}
-    };
-						
-    var dataObject = new Data {
-        type = "microsoft.graph.onAttributeCollectionSubmitResponseData",
-        actions= actions
-    };
-	    
-	dynamic response = new ResponseObject {
-        data = dataObject
-    };
-
-    // Send the response
-    return response;
-}
-
-public class ResponseObject
-{
-    public Data data { get; set; }
-}
-
-[JsonObject]
-public class Data {
-    [JsonProperty("@odata.type")]
-    public string type { get; set; }
-    
-    public List<ContinueWithDefaultBehavior> actions { get; set; }
-}
-
-[JsonObject]
-public class ContinueWithDefaultBehavior {
-    [JsonProperty("@odata.type")]
-	public string type { get; set; }
-}
-```
-
-# [Submit ModifyCollectedValues](#tab/submit-modify-collected-values)
+# [Modify values](#tab/submit-modify-collected-values)
 
 Use this HTTP trigger to modify attributes collection from the user. For example, you can change the format of a user-provided attribute. Or you can use an attribute to set the value for a hidden security defaults custom attribute. After attributes are modified, sign-up continues without notification to user. If notification is required, use the validate action.
 
@@ -471,7 +471,7 @@ public class ModifiedAttributesAction {
 }
 ```
 
-# [Submit ShowValidationError](#tab/submit-show-validation-error)
+# [Validation error](#tab/submit-show-validation-error)
 
 Use this HTTP trigger to validate attributes entered by the user. For example, you can validate attributes against an external data store. You can validate built-in attributes (for example, country), custom user attributes (for example, loyalty number), and attributes that are not shown on Attribute Collection page but are stored with the user object (for example, the “security default” setting).
 

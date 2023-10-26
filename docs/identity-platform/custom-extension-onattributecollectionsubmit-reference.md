@@ -39,9 +39,10 @@ Your custom authentication extension in Microsoft Entra ID makes an HTTP call to
 
 The request to your REST API is in the format shown below. In this example, the request includes user identities information along with built-in attributes (givenName and companyName) and custom attributes (universityGroups, graduationYear, and onMailingList).
 
-The request contains the user attributes that are selected in the user flow for collection during self-service sign-up, including built-in attributes (for example, givenName and companyName) and [custom attributes](~/external-id/customers/how-to-define-custom-attributes.md) (for example, universityGroups, graduationYear, and onMailingList).
+The request contains the user attributes that are selected in the user flow for collection during self-service sign-up, including built-in attributes (for example, givenName and companyName) and [custom attributes that have already been defined](~/external-id/customers/how-to-define-custom-attributes.md) (for example, universityGroups, graduationYear, and onMailingList). Your REST API can't add new attributes.
 
 The request also contains user identities, including the user's email if it was used as a verified credential to sign up. The password is not sent. For attributes with multiple values, the values are sent as a comma-delimited string.
+
 #### Properties
 
 |Property |Type     |Description  |Key  |Required  |ReadOnly Value  |
@@ -85,7 +86,7 @@ POST https://exampleAzureFunction.azureWebsites.net/api/functionName
         },
         "extension_<appid>_universityGroups": {
           "@odata.Type": "microsoft.graph.stringDirectoryAttributeValue",
-          "value": ["Alumni", "Faculty"],
+          "value": ["Alumni,Faculty"],
           "attributeType": "directorySchemaExtension"
         },
         "extension_<appid>_graduationYear": {
@@ -123,22 +124,12 @@ POST https://exampleAzureFunction.azureWebsites.net/api/functionName
 
 ### Response from the customer-defined external REST API
 
-Microsoft Entra ID expects a REST API response in the following format. The response value types should match the request value types, for example:
+Microsoft Entra ID expects a REST API response in the following format. The response value types match the request value types, for example:
 
-- If the request contains an attribute `graduationYear` with an `@odata.type` of `int64DirectoryAttributeValue`, the response should include a `graduationYear` attribute with an integer value, such as `2010`. 
+- If the request contains an attribute `graduationYear` with an `@odata.type` of `int64DirectoryAttributeValue`, the response should include a `graduationYear` attribute with an integer value, such as `2010`.
 - If the request contains an attribute with multiple values specified as a comma-delimited string, the response should contain the values in a comma-delimited string.
 
-### onAttributeCollectionSubmitResponseData
-
-The event specific response data expected by Microsoft Entra ID from the user-defined external API.
-
-#### Properties
-
-|Property |Type     |Description  |Key  |Required  |ReadOnly Value  |
-|---------|---------|-------------|-----|----------|----------------|
-| `actions` | `Collection(microsoft.graph.attributeCollectionSubmit.responseAction)` | The actions sent back to Azure AD by the custom extension for the AttributeCollectionSubmit event. | No  | Yes      | Yes      |
-
-#### JSON
+The **continueWithDefaultBehavior** action specifies that the customer-defined external REST API is returning a continuation response.
 
 ```json
 HTTP/1.1 200 OK
@@ -155,38 +146,8 @@ HTTP/1.1 200 OK
 }
 ```
 
-### continueWithDefaultBehavior action
+The **modifyAttributeValues** action specifies that the customer-defined external REST API returns a response to modify and override attributes with default values after the attributes are collected. Your REST API can't add new attributes. Any extra attributes that are returned but that aren't part of the attribute collection are ignored.
 
-This action specifies that the customer-defined external REST API is returning a continuation response.
-
-#### JSON
-
-```json
-HTTP/1.1 200 OK
-
-{
-  "data": {
-    "@odata.type": "microsoft.graph.onAttributeCollectionSubmitResponseData",
-    "actions": [
-      {
-        "@odata.type": "microsoft.graph.attributeCollectionSubmit.continueWithDefaultBehavior"
-      }
-    ]
-  }
-}
-```
-
-### modifyAttributeValues action
-
-This action specifies that the customer-defined external REST API returns a response to modify and override attributes with default values after the attributes are collected.
-
-#### Properties
-
-| Property  | Type         | Description              | Required | ReadOnly Value |
-| --------- | ------------ | ------------------------ | -------- | -------------- |
-| `attributes` | `Core.Dictionary` | A dictionary of attributes to override the collected values. | `Yes`    | `N/A`          |
-
-#### JSON
 
 ```json
 HTTP/1.1 200 OK
@@ -198,7 +159,7 @@ HTTP/1.1 200 OK
       {
         "@odata.type": "microsoft.graph.attributeCollectionSubmit.modifyAttributeValues",
         "attributes": {
-          "key1": ["value1", "false", "false"],
+          "key1": ["value1,value2,value3"],
           "key2": true
         }
       }
@@ -207,17 +168,7 @@ HTTP/1.1 200 OK
 }
 ```
 
-### showBlockPage action
-
-This action specifies that the customer-defined external REST API is returning a blocking response.
-
-#### Properties
-
-| Property  | Type         | Description              | Required | ReadOnly Value |
-| --------- | ------------ | ------------------------ | -------- | -------------- |
-| `message` | `Edm.String` | Description for the block page. If not provided the default is "You are not permitted to sign up. Please contact the owner of the application/website." | `No`     | `N/A`          |
-
-#### JSON
+The **showBlockPage** action specifies that the customer-defined external REST API is returning a blocking response.
 
 ```json
 HTTP/1.1 200 OK
@@ -235,18 +186,7 @@ HTTP/1.1 200 OK
 }
 ```
 
-### showValidationError response from the customer-defined external API
-
-This action specifies that the customer-defined external REST API is returning a validation error and an appropriate message and status code.
-
-#### Properties
-
-| Property  | Type         | Description              | Required | ReadOnly Value |
-| --------- | ------------ | ------------------------ | -------- | -------------- |
-| `message`         | `Edm.String`      | Description for the validation error message page. If a string isn't provided in the response, the default is "There was a validation error with the provided input." | `No`     | `N/A`          |
-| `attributeErrors` | `Core.Dictionary` | Dictionary of attributes and the in-line error messages to show under each form field.                                                                    | `No`     | `N/A`          |
-
-#### JSON
+The **showValidationError** action specifies that the customer-defined external REST API is returning a validation error and an appropriate message and status code.
 
 ```json
 HTTP/1.1 200 OK
