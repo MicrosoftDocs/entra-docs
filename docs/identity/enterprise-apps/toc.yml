@@ -97,7 +97,7 @@
           href: migrate-adfs-saml-based-sso.md
         - name: Represent ADFS security policies
           href: migrate-adfs-represent-security-policies.md
-        - name: Overview of application migration wizard
+        - name: Overview of AD FS application migration wizard
           href: migrate-adfs-application-overview.md
       - name: ADFS migration guidelines
         items:
