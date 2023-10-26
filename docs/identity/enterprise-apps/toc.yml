@@ -97,8 +97,8 @@
           href: migrate-adfs-saml-based-sso.md
         - name: Represent ADFS security policies
           href: migrate-adfs-represent-security-policies.md
-        - name: Use the ADFS application activity report
-          href: migrate-adfs-application-activity.md
+        - name: Overview of application migration wizard
+          href: migrate-adfs-application-overview.md
       - name: ADFS migration guidelines
         items:
         - name: Migration phases
@@ -172,6 +172,10 @@
       items:
       - name: Migrate applications from Okta to Microsoft Entra ID 
         items:
+        - name: Use the AD FS application migration wizard
+          href: migrate-adfs-application-howto.md
+        - name: Use the ADFS application activity report
+          href: migrate-adfs-application-activity.md
         - name: Migrate applications from Okta to Microsoft Entra ID
           href: migrate-applications-from-okta.md
         - name: Migrate Okta sign on policies to Microsoft Entra Conditional Access
