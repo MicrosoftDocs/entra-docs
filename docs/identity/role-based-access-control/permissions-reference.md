@@ -325,7 +325,7 @@ Users with this role **cannot** read audit logs for other events.
 
 By default, Global Administrator and other administrator roles do not have permissions to read audit logs for custom security attributes. To read audit logs for custom security attributes, you must be assigned this role or the Attribute Log Reader role.
 
-For more information, see [Manage access to custom security attributes in Azure AD](../fundamentals/custom-security-attributes-manage.md).
+For more information, see [Manage access to custom security attributes in Azure AD](~/fundamentals/custom-security-attributes-manage.md).
 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
@@ -347,7 +347,7 @@ Users with this role **cannot** do the following tasks:
 
 By default, Global Administrator and other administrator roles do not have permissions to read audit logs for custom security attributes. To read audit logs for custom security attributes, you must be assigned this role or the Attribute Log Administrator role.
 
-For more information, see [Manage access to custom security attributes in Azure AD](../fundamentals/custom-security-attributes-manage.md).
+For more information, see [Manage access to custom security attributes in Azure AD](~/fundamentals/custom-security-attributes-manage.md).
 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
