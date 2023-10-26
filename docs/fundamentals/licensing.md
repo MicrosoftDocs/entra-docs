@@ -55,7 +55,7 @@ This article discusses Microsoft Entra services' licensing. It is intended for I
 
 [!INCLUDE [Managed identities](../includes/licensing-managed-identities.md)]
 
-## Multi-tenant organizations
+## Multitenant organizations
 
 [!INCLUDE [Multi-tenant organizations](../includes/licensing-multi-tenant-organizations.md)]
 
