@@ -23,7 +23,6 @@ jobs:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         days-before-pr-stale: 90
         days-before-pr-close: 91
-        stale-issue-label: 'no-issue-activity'
         stale-pr-label: 'no-pr-activity'
         close-pr-label: 'auto-close'
         stale-pr-message: > 
