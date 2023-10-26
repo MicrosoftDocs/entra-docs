@@ -225,17 +225,14 @@ public static async Task<object> Run(HttpRequest req, ILogger log)
     string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
     dynamic request = JsonConvert.DeserializeObject(requestBody);
 
-    //We should see all the attributes we expect to collect with their default values
+    //The form fields will load with these default values
     var inputs = new Dictionary<string, object>()
     {
-        { "postalCode", "12345-This is a prefill value" },
-        { "streetAddress", "One Microsoft Way-This is a prefill value" },
-        { "city", "Tampa-This is a prefill value" },
+        { "postalCode", "12345-<your-prefill-value>" },
+        { "streetAddress", "One Microsoft Way-<your-prefill-value>" },
+        { "city", "Tampa-<your-prefill-value>" },
         { "extension_appId_mailingList", false },
         { "extension_appId_memberSince", 2023 }      
-};
-        { "streetAddress", "One Microsoft Way-This is override Value" },
-        { "city", "Tampa-This is override Value" }
     };
 
     var actions = new List<SetPrefillValuesAction>{
@@ -427,9 +424,6 @@ public static async Task<object> Run(HttpRequest req, ILogger log)
         { "city", "Bellevue" },
         { "extension_appId_mailingList", false }
         { "extension_appId_memberSince", 2010 }
-    };
-        { "streetAddress", "222 Assigned St" },
-        { "city", "Bellevue" }
     };
 
     var actions = new List<ModifiedAttributesAction>{
