@@ -45,7 +45,7 @@ As threats evolve over time Microsoft may change these policies in the future to
 
 ### Multifactor authentication for admins accessing Microsoft Admin Portals
 
-This policy covers 14 admin roles that we consider to be highly privileged, who are accessing the [Microsoft Admin Portals group](concept-conditional-access-cloud-apps.md#microsoft-admin-portals), and requires them to perform multifactor authentication.
+This policy covers 14 admin roles that we consider to be highly privileged, who are accessing the [Microsoft Admin Portals group](how-to-policy-mfa-admin-portals.md), and requires them to perform multifactor authentication.
 
 This policy targets Microsoft Entra ID P1 and P2 tenants where security defaults aren't enabled.
 
@@ -76,7 +76,6 @@ Administrators can look through their sign-in logs to see these policies in acti
    1. To investigate further, drill down into the configuration of the policies by clicking on the **Policy Name**. Clicking the **Policy Name** shows the policy configuration user interface for the selected policy for review and editing.
    1. The **client user** and **device details** that were used for the Conditional Access policy assessment are also available in the **Basic Info**, **Location**, **Device Info**, **Authentication Details**, and **Additional Details** tabs of the sign-in event.
 
-
 ## What is Conditional Access?
 
 Conditional Access is a Microsoft Entra feature that allows organizations to enforce security requirements when accessing resources. Commonly it is used to enforce multifactor authentication, device configuration, or network location requirements.
@@ -91,3 +90,6 @@ These policies can be thought of as logical if then statements.
 Administrators might choose to make further changes to these policies by duplicating them using the **Duplicate** button in the policy list view. This new policy can be configured in the same way as any other Conditional Access policy with starting from a Microsoft recommended position.
 
 ## Next steps
+
+- [Deploy other commonly used policies from templates](concept-conditional-access-policy-common.md)
+- 
