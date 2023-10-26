@@ -43,7 +43,7 @@ This page updates monthly, so revisit it regularly. If you're looking for items 
 **Service category:** My Profile/Account                     
 **Product capability:** End User Experiences            
 
-Now available in public preview, under the Security Information section, end users can now view passwords alongside all other authentication methods in My Security Information and change the password. Administrators are able to use Conditional Access registration policies with authentication strengths targeting My Security Info to control the end user experience for changing passwords. Based on the Conditional Access policy, users are able to change their password by entering their existing password, or if they authenticate with MFA and satisfy the Conditional Access policy, can change the password without entering the existing password.
+My Sign Ins ([My Sign-Ins (microsoft.com)](https://mysignins.microsoft.com/)) now supports end users managing and changing their passwords. Administrators are able to use Conditional Access registration policies with authentication strengths targeting My Security Info to control the end user experience for changing passwords. Based on the Conditional Access policy, users are able to change their password by entering their existing password, or if they authenticate with MFA and satisfy the Conditional Access policy, can change the password without entering the existing password.
 
 For more information, see: [Combined security information registration for Microsoft Entra overview](~/identity/authentication/concept-registration-mfa-sspr-combined.md).
 
@@ -81,13 +81,11 @@ The PAR PDF has been redesigned to enhance usability, align with the product UX 
 
 Several changes have been made to the **All Devices** list since announcing public preview, including:
 
-- Prioritized consistency across the different settings and **accessibility**
-    - Moved from Knockout to React and used common components to align with Project Athena
-    - Accessibility score went from D to C
-- **Modernized** the list and **addressed top OCV feedback**
+- Prioritized consistency and accessibility across the different components
+- Modernized the list and addressed top customer feedback
     - Added infinite scrolling, column reordering, and the ability to select all devices
     - Added filters for OS Version and Autopilot devices
-- Created **more connections** between Microsoft Entra and Intune
+- Created more connections between Microsoft Entra and Intune
     - Added links to Intune in Compliant and MDM columns
     - Added Security Settings Management column
 
