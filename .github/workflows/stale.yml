@@ -1,0 +1,40 @@
+# This workflow warns and then closes issues and PRs that have had no activity for a specified amount of time.
+#
+# You can adjust the behavior by modifying this file.
+# For more information, see:
+# https://github.com/actions/stale
+name: Mark stale issues and pull requests
+
+on:
+  schedule:
+  - cron: '0 */6 * * *'
+
+jobs:
+  stale:
+
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+
+    steps:
+    - uses: actions/stale@v5
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        days-before-pr-stale: 7
+        days-before-pr-close: 91
+        stale-pr-label: 'no-pr-activity'
+        close-pr-label: 'auto-close'
+        stale-pr-message: > 
+           THIS IS A TEST - This pull request has been inactive for 7 days.
+           <br/>If you are finished with your changes, don't forget to sign off. See the [contributor guide](https://review.learn.microsoft.com/help/contribute/contribute-how-to-write-pull-request-automation) for instructions.
+           <br/>If this PR is inactive for 1 more days, it will be closed automatically. Thank you!
+               <br/>
+               <br/>Microsoft Entra Content Team
+           <br/>[Contact Us](mailto:apexidcontent@microsoft.com)      
+        close-pr-message: >
+           <br/>This pull request has been inactive for 91 days. At this time, we're closing the PR. 
+           <br/>If you decide to continue working on your change, you can reopen the PR and continue working. Thank you!
+           <br/>
+           <br/>Microsoft Entra Content Team
+           <br/>[Contact Us](mailto:apexidcontent@microsoft.com)
