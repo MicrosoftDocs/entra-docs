@@ -181,6 +181,8 @@ Microsoft Entra ID provides built-in roles to work with custom security attribut
 > | [Attribute Definition Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-definition-administrator) | Manage all aspects of attribute sets<br/>Manage all aspects of custom security attribute definitions |
 > | [Attribute Assignment Reader](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-reader) | Read attribute sets<br/>Read custom security attribute definitions<br/>Read custom security attribute keys and values for users and service principals |
 > | [Attribute Assignment Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator) | Read attribute sets<br/>Read custom security attribute definitions<br/>Read and update custom security attribute keys and values for users and service principals |
+> | [Attribute Log Reader](~/identity/role-based-access-control/permissions-reference.md#attribute-log-reader) | Read custom security attribute audit logs |
+> | [Attribute Log Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-log-administrator) | Read custom security attribute audit logs<br/>Configure diagnostic settings for custom security attributes |
 
 > [!IMPORTANT]
 > By default, [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) and other administrator roles do not have permissions to read, define, or assign custom security attributes.

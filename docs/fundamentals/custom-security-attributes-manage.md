@@ -35,7 +35,7 @@ To manage access to custom security attributes, you must have:
 
 ## Step 1: Figure out how to organize your attributes
 
-Every custom security attribute definition must be part of an attribute set. An attribute set is a way to group and manage related custom security attributes. You'll need to figure out how you want to add attributes sets for your organization. For example, you might want to add attribute sets based on departments, teams, or projects. Your ability to grant access to custom security attributes will depend on how you organize your attribute sets.
+Every custom security attribute definition must be part of an attribute set. An attribute set is a way to group and manage related custom security attributes. You'll need to figure out how you want to add attributes sets for your organization. For example, you might want to add attribute sets based on departments, teams, or projects. Your ability to grant access to custom security attributes depends on how you organize your attribute sets.
 
 ![Diagram showing an attribute set by department.](./media/custom-security-attributes-manage/attribute-set-department.png)
 
@@ -49,7 +49,7 @@ Microsoft Entra role assignments are an additive model, so your effective permis
 
 ## Step 3: Review the available roles
 
-You need to determine who needs access to work with custom security attributes in your organization. To help you manage access to custom security attributes, there are four Microsoft Entra built-in roles. By default, [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) and other administrator roles do not have permissions to read, define, or assign custom security attributes. If necessary, a Global Administrator can assign these roles to themselves.
+You need to determine who needs access to work with custom security attributes in your organization. To help you manage access to custom security attributes, there are four Microsoft Entra built-in roles. By default, [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) and other administrator roles don't have permissions to read, define, or assign custom security attributes. If necessary, a Global Administrator can assign these roles to themselves.
 
 - [Attribute Definition Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-definition-administrator)
 - [Attribute Assignment Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator)
@@ -123,16 +123,16 @@ The following examples show how to assign a custom security attribute role to a 
 
 1. Browse to **Protection** > **Custom security attributes**.
 
-1. Click the attribute set you want grant access to.
+1. Select the attribute set you want grant access to.
 
-1. Click **Roles and administrators**.
+1. Select **Roles and administrators**.
 
     ![Screenshot of assigning attribute roles at attribute set scope.](./media/custom-security-attributes-manage/manage-attribute-set.png)
 
 1. Add assignments for the custom security attribute roles.
 
     > [!NOTE]
-    > If you are using Microsoft Entra Privileged Identity Management (PIM), eligible role assignments at attribute set scope currently aren't supported. Permanent role assignments at attribute set scope are supported, but the **Assigned roles** page for a user doesn't list the role assignments.
+    > If you are using Microsoft Entra Privileged Identity Management (PIM), eligible role assignments at attribute set scope currently aren't supported. Permanent role assignments at attribute set scope are supported.
 
 # [PowerShell](#tab/ms-powershell)
 
@@ -230,20 +230,44 @@ $roleAssignment = New-AzureADMSRoleAssignment -RoleDefinitionId $roleDefinitionI
 
 ## View audit logs for attribute changes
 
-Sometimes you need information about custom security attribute changes, such as for auditing or troubleshooting purposes. Anytime someone makes changes to definitions or assignments, the changes get logged in the [Microsoft Entra audit logs](~/identity/monitoring-health/concept-audit-logs.md).
+Sometimes you need information about custom security attribute changes for auditing or troubleshooting purposes. Anytime someone makes changes to definitions or assignments, the activities get logged.
 
-Here are the custom security attribute-related activities that are logged:
+Custom security attribute audit logs provide you with the history of activities related to custom security attributes, such as adding a new definition or assigning an attribute value to a user. Here are the custom security attribute-related activities that are logged:
 
-- Add attribute set
-- Update attribute set
-- Add custom security attribute definition
-- Update custom security attribute definition
-- Assign custom security attribute
-- Remove custom security attribute
+- Add an attribute set
+- Add custom security attribute definition in an attribute set
+- Update an attribute set
+- Update attribute values assigned to a servicePrincipal
+- Update attribute values assigned to a user
+- Update custom security attribute definition in an attribute set
 
-The following screenshot shows an example of the audit log. To filter the logs for custom security attribute-related activities, select the **Category** filter and then select **AttributeManagement**.
+Custom security attribute audit logs are separate from directory audit logs and have a different endpoint. To view custom security attribute audit logs, you must be assigned one of the following roles. By default, a Global Administrator does not have access to these audit logs.
 
-![Screenshot of audit logs with AttributeManagement category filter.](./media/custom-security-attributes-manage/audit-logs-attributemanagement.png)
+- [Attribute Log Reader](../roles/permissions-reference.md#attribute-log-reader)
+- [Attribute Log Administrator](../roles/permissions-reference.md#attribute-log-administrator)
+
+The following screenshot shows an example of the custom security attribute audit logs. For more information, see [Microsoft Entra audit logs](../reports-monitoring/concept-audit-logs.md).
+
+:::image type="content" source="media/custom-security-attributes-manage/audit-logs-attributemanagement.png" alt-text="Screenshot of audit logs with Custom Security tab selected." lightbox="media/custom-security-attributes-manage/audit-logs-attributemanagement.png":::
+
+To export custom security attribute audit logs to different destinations for additional processing, you use diagnostic settings. To create and configure diagnostic settings for custom security attributes, you must be assigned the [Attribute Log Administrator](../roles/permissions-reference.md#attribute-log-administrator) role. The following screenshot shows the diagnostic settings for custom security attributes. For more information, see [Diagnostic settings in Azure Monitor](../../azure-monitor/essentials/diagnostic-settings.md).
+
+:::image type="content" source="media/custom-security-attributes-manage/diagnostic-settings-attributes.png" alt-text="Screenshot of diagnostic settings with Custom security attributes tab selected." lightbox="media/custom-security-attributes-manage/diagnostic-settings-attributes.png":::
+
+For information about how to get the custom security attribute audit logs using the Microsoft Graph API, see the [customSecurityAttributeAudit resource type](/graph/api/resources/customsecurityattributeaudit?view=graph-rest-beta&branch=pr-en-us-21345).
+
+### Audit log location
+
+Where you find custom security attribute audit logs has changed from the original preview of custom security attributes. Originally, custom security attribute audit logs were written to the directory audit logs. In October 2023, a new endpoint was added exclusively for custom security attribute audit logs. There is a transition period where custom security audit logs are written to both the directory and custom security attributes audit log endpoints. Going forward, you should use the custom security attributes audit log endpoint to find custom security attribute audit logs.
+
+To view the audit logs at the custom security attributes endpoint, you must be assigned either the [Attribute Log Reader](../roles/permissions-reference.md#attribute-log-reader) or [Attribute Log Administrator](../roles/permissions-reference.md#attribute-log-administrator) role.
+
+The following table lists the endpoint where you can find custom security attributes audit logs.
+
+| Event date | Directory endpoint | Custom security attributes endpoint |
+| --- | :---: | :---: |
+| Oct 2023 | :white_check_mark: | :white_check_mark: |
+| Feb 2024 |  | :white_check_mark: |
 
 ## Next steps
 

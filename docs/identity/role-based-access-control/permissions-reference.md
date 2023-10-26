@@ -35,6 +35,8 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [Attribute Assignment Reader](#attribute-assignment-reader) | Read custom security attribute keys and values for supported Microsoft Entra objects. | ffd52fa5-98dc-465c-991d-fc073eb59f8f |
 > | [Attribute Definition Administrator](#attribute-definition-administrator) | Define and manage the definition of custom security attributes. | 8424c6f0-a189-499e-bbd0-26c1753c96d4 |
 > | [Attribute Definition Reader](#attribute-definition-reader) | Read the definition of custom security attributes. | 1d336d2c-4ae8-42ef-9711-b3604ce3fc2c |
+> | [Attribute Log Administrator](#attribute-log-administrator) | Read audit logs and configure diagnostic settings for events related to custom security attributes. | 5b784334-f94b-471a-a387-e7219fc49ca2 |
+> | [Attribute Log Reader](#attribute-log-reader) | Read audit logs related to custom security attributes. | 9c99539d-8186-4804-835f-fd51ef9e2dcd |
 > | [Authentication Administrator](#authentication-administrator) | Can access to view, set and reset authentication method information for any non-admin user.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | c4e39bd9-1100-46d3-8c65-fb160da0071f |
 > | [Authentication Policy Administrator](#authentication-policy-administrator) | Can create and manage the authentication methods policy, tenant-wide MFA settings, password protection policy, and verifiable credentials. | 0526716b-113d-4c15-b2c8-68e3c22b9f80 |
 > | [Azure AD Joined Device Local Administrator](#azure-ad-joined-device-local-administrator) | Users assigned to this role are added to the local administrators group on Microsoft Entra joined devices. | 9f06204d-73c1-4d4c-880a-6edb90606fd8 |
@@ -309,6 +311,48 @@ For more information, see [Manage access to custom security attributes in Micros
 > | --- | --- |
 > | microsoft.directory/attributeSets/allProperties/read | Read all properties of attribute sets |
 > | microsoft.directory/customSecurityAttributeDefinitions/allProperties/read | Read all properties of custom security attribute definitions |
+
+## Attribute Log Administrator
+
+Assign the Attribute Log Reader role to users who need to do the following tasks:
+
+- Read audit logs for attribute set changes
+- Read audit logs for custom security attribute definition changes
+- Read audit logs for custom security attribute assignment changes
+- Configure diagnostic settings for custom security attributes
+
+Users with this role **cannot** read audit logs for other events.
+
+By default, Global Administrator and other administrator roles do not have permissions to read audit logs for custom security attributes. To read audit logs for custom security attributes, you must be assigned this role or the Attribute Log Reader role.
+
+For more information, see [Manage access to custom security attributes in Azure AD](../fundamentals/custom-security-attributes-manage.md).
+
+> [!div class="mx-tableFixed"]
+> | Actions | Description |
+> | --- | --- |
+> | microsoft.directory/customSecurityAttributeAuditLogs/allProperties/read | Read audit logs related to custom security attributes |
+> | microsoft.azure.customSecurityAttributeDiagnosticSettings/allEntities/allProperties/allTasks | Configure all aspects of custom security attributes diagnostic settings |
+## Attribute Log Reader
+
+Assign the Attribute Log Reader role to users who need to do the following tasks:
+
+- Read audit logs for attribute set changes
+- Read audit logs for custom security attribute definition changes
+- Read audit logs for custom security attribute assignment changes
+
+Users with this role **cannot** do the following tasks:
+
+- Configure diagnostic settings for custom security attributes
+- Read audit logs for other events
+
+By default, Global Administrator and other administrator roles do not have permissions to read audit logs for custom security attributes. To read audit logs for custom security attributes, you must be assigned this role or the Attribute Log Administrator role.
+
+For more information, see [Manage access to custom security attributes in Azure AD](../fundamentals/custom-security-attributes-manage.md).
+
+> [!div class="mx-tableFixed"]
+> | Actions | Description |
+> | --- | --- |
+> | microsoft.directory/customSecurityAttributeAuditLogs/allProperties/read | Read audit logs related to custom security attributes |
 
 ## Authentication Administrator
 
