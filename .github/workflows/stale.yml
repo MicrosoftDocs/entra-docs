@@ -28,11 +28,10 @@ jobs:
         stale-pr-message: > 
            This pull request has been inactive for 90 days.
            <br/>If you are finished with your changes, don't forget to sign off. See the [contributor guide](https://review.learn.microsoft.com/help/contribute/contribute-how-to-write-pull-request-automation) for instructions.
-           <br/>If this PR is inactive for 14 more days, it will be closed automatically. Thank you!
+           <br/>If this PR is inactive for 1 more days, it will be closed automatically. Thank you!
                <br/>
-               <br/>SQL Docs Team
-           <br/>[Contact Us](mailto:rogue1@microsoft.com)      
-           <br/>[contributor guide](https://review.learn.microsoft.com/help/contribute/sql-server-docs-contribute)
+               <br/>Microsoft Entra Content Team
+           <br/>[Contact Us](mailto:apexidcontent@microsoft.com)      
         close-pr-message: >
            <br/>This pull request has been inactive for 91 days. At this time, we're closing the PR. 
            <br/>If you decide to continue working on your change, you can reopen the PR and continue working. Thank you!
