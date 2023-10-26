@@ -10,7 +10,7 @@ ms.service: active-directory
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 09/21/2023
+ms.date: 10/26/2023
 ms.subservice: hybrid
 ms.author: barclayn
 ---
@@ -25,63 +25,63 @@ This article discusses Microsoft Entra services' licensing. It is intended for I
 
 ## App provisioning
 
-[!INCLUDE [App provisioning](~/includes/licensing-app-provisioning.md)]
+[!INCLUDE [App provisioning](../includes/licensing-app-provisioning.md)]
 
 ## Authentication
 
-[!INCLUDE [Authentication](~/includes/licensing-authentication.md)]
+[!INCLUDE [Authentication](../includes/licensing-authentication.md)]
 
 ## Microsoft Entra Connect
 
-[!INCLUDE [Information about free tier services](~/includes/licensing-free-license.md)]
+[!INCLUDE [Information about free tier services](../includes/licensing-free-license.md)]
 
 ## Microsoft Entra Connect health
 
-[!INCLUDE [Services available in the P1](~/includes/licensing-p1-license.md)]
+[!INCLUDE [Services available in the P1](../includes/licensing-p1-license.md)]
 
 ## Microsoft Entra Conditional Access
 
-[!INCLUDE [Microsoft Entra Conditional access](~/includes/licensing-conditional-access.md)]
+[!INCLUDE [Microsoft Entra Conditional access](../includes/licensing-conditional-access.md)]
 
 ## Microsoft Entra ID Governance
 
-[!INCLUDE [Microsoft Entra ID Governance](~/includes/licensing-governance.md)]
+[!INCLUDE [Microsoft Entra ID Governance](../includes/licensing-governance.md)]
 
 ## Microsoft Entra ID Protection
 
-[!INCLUDE [Microsoft Entra ID Protection](~/includes/licensing-identity-protection.md)]
+[!INCLUDE [Microsoft Entra ID Protection](../includes/licensing-identity-protection.md)]
 
 ## Managed identities
 
-[!INCLUDE [Managed identities](~/includes/licensing-managed-identities.md)]
+[!INCLUDE [Managed identities](../includes/licensing-managed-identities.md)]
 
 ## Multi-tenant organizations
 
-[!INCLUDE [Multi-tenant organizations](~/includes/licensing-multi-tenant-organizations.md)]
+[!INCLUDE [Multi-tenant organizations](../includes/licensing-multi-tenant-organizations.md)]
 
 ## Microsoft Entra Privileged Identity management
 
-[!INCLUDE [Microsoft Entra Privileged Identity](~/includes/licensing-pim.md)]
+[!INCLUDE [Microsoft Entra Privileged Identity](../includes/licensing-pim.md)]
 
 ## Role based access control
 
-[!INCLUDE [Roles based access control](~/includes/licensing-role-based-access-control.md)]
+[!INCLUDE [Roles based access control](../includes/licensing-role-based-access-control.md)]
 
 ### Roles
 
-[!INCLUDE [licensing-roles](~/includes/licensing-roles.md)]
+[!INCLUDE [licensing-roles](../includes/licensing-roles.md)]
 
 ## Microsoft Entra reporting and monitoring
 
-[!INCLUDE [Microsoft Entra reporting and monitoring](~/includes/licensing-reports-monitoring.md)]
+[!INCLUDE [Microsoft Entra reporting and monitoring](../includes/licensing-reports-monitoring.md)]
 
 ## Microsoft Entra Verified ID
 
-[!INCLUDE [Microsoft Entra Verified ID](~/includes/licensing-verified-id.md)]
+[!INCLUDE [Microsoft Entra Verified ID](../includes/licensing-verified-id.md)]
 
 ## Features in preview
 
-[!INCLUDE [features-preview](~/includes/licensing-features-preview.md)]
+[!INCLUDE [features-preview](../includes/licensing-features-preview.md)]
 
 ## Next steps
 
