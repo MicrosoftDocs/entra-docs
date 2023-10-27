@@ -43,14 +43,6 @@ The request contains the user attributes that are selected in the user flow for 
 
 The request also contains user identities, including the user's email if it was used as a verified credential to sign up. The password is not sent. For attributes with multiple values, the values are sent as a comma-delimited string.
 
-#### Properties
-
-|Property |Type     |Description  |Key  |Required  |ReadOnly Value  |
-|---------|---------|-------------|-----|----------|----------------|
-| `attributes` | `Core.Dictionary`                            | A dictionary of name/attribute pairs sent in the pipeline data, after the attribute collection is done.          | No  | Yes      | Yes      |
-| `identities` | `Collection(microsoft.graph.objectIdentity)` | Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft, and tied to a user account. May contain multiple items with the same signInType value. | No  | Yes      | Yes      |
-| `userSignUpInfo` | `microsoft.graph.userSignUpInfo` | The UserSignUpInfo object that is sent to the user-defined external API when a custom extension is configured for the OnAttributeCollection Events only. | No  | Yes      | Yes      |
-
 #### JSON
 
 ```json
@@ -70,7 +62,20 @@ POST https://exampleAzureFunction.azureWebsites.net/api/functionName
             "ip": "30.51.176.110",
             "locale": "en-us",
             "market": "en-us"
-      //
+        },
+        "protocol": "OAUTH2.0",
+        "clientServicePrincipal": {
+            "id": "<Your Test Applications servicePrincipal objectId>",
+            "appId": "<Your Test Application App Id>",
+            "appDisplayName": "My Test application",
+            "displayName": "My Test application"
+        },
+        "resourceServicePrincipal": {
+            "id": "<Your Test Applications servicePrincipal objectId>",
+            "appId": "<Your Test Application App Id>",
+            "appDisplayName": "My Test application",
+            "displayName": "My Test application"
+        },
     },
     "userSignUpInfo": {
       "attributes": {
@@ -159,7 +164,7 @@ HTTP/1.1 200 OK
       {
         "@odata.type": "microsoft.graph.attributeCollectionSubmit.modifyAttributeValues",
         "attributes": {
-          "key1": ["value1,value2,value3"],
+          "key1": "value1,value2,value3",
           "key2": true
         }
       }

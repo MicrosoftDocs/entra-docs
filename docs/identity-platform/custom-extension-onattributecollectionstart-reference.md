@@ -155,7 +155,7 @@ HTTP/1.1 200 OK
       {
         "@odata.type": "microsoft.graph.attributeCollectionStart.setPrefillValues",
         "inputs": {
-          "key1": ["value1,value2,value3"],
+          "key1": "value1,value2,value3",
           "key2": true
         }
       }
