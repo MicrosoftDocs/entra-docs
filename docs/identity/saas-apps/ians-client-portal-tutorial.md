@@ -78,7 +78,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     |--------------|
     |`https://www.iansresearch.com/account/saml/<Customer_ID>`|
     |`https://beta.iansresearch.com/account/saml/<Customer_ID>`|
-    |`https://dev.iansresearch.com/account/saml/<Customer_ID>`|`
+    |`https://dev.iansresearch.com/account/saml/<Customer_ID>`|
 
     b. In the **Reply URL** text box, type a URL using one of the following patterns:
 
