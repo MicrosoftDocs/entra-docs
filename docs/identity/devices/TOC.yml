@@ -53,7 +53,7 @@
       - name: Troubleshoot Microsoft Entra hybrid joined Windows current version
         href: troubleshoot-hybrid-join-windows-current.md
       - name: Troubleshoot pending device state
-        href: /troubleshoot/azure/active-directory/pending-devices?toc=/entra/fundamentals/toc.json?bc=/entra/identity/devices/breadcrumb/toc.json?context=/entra/identity/devices/context/devices-context.yml
+        href: /troubleshoot/azure/active-directory/pending-devices?toc=/entra/fundamentals/toc.json&bc=/entra/identity/devices/breadcrumb/toc.json&context=/entra/identity/devices/context/devices-context.yml
       - name: Troubleshoot using dsregcmd
         href: troubleshoot-device-dsregcmd.md
       - name: Troubleshoot Microsoft Entra hybrid joined down level Windows devices

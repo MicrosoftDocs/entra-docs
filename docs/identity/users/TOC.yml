@@ -9,9 +9,9 @@
 - name: Quickstarts
   items:
   - name: Add users to Microsoft Entra ID
-    href: ~/fundamentals/add-users.md?toc=/entra/identity/users/toc.json?bc=/entra/identity/users/breadcrumb/toc.json
+    href: ~/fundamentals/add-users.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
   - name: Assign licenses to users    
-    href: ~/fundamentals/license-users-groups.md?toc=/entra/identity/users/toc.json?bc=/entra/identity/users/breadcrumb/toc.json
+    href: ~/fundamentals/license-users-groups.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
   - name: Set groups expiration    
     href: groups-quickstart-expiration.md
   - name: Set groups naming policy    
@@ -24,22 +24,22 @@
   expanded: true
   items:
   - name: Compare default user permissions    
-    href: ~/fundamentals/users-default-permissions.md?toc=/entra/identity/users/toc.json?bc=/entra/identity/users/breadcrumb/toc.json
+    href: ~/fundamentals/users-default-permissions.md?toc=/entra/identity/users/toc.json7bc=/entra/identity/users/breadcrumb/toc.json
   - name: Group-based licensing basics    
-    href: ~/fundamentals/concept-group-based-licensing.md?toc=/entra/identity/users/toc.json?bc=/entra/identity/users/breadcrumb/toc.json
+    href: ~/fundamentals/concept-group-based-licensing.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
   - name: Manage access with groups    
-    href: ~/fundamentals/concept-learn-about-groups.md?toc=/entra/identity/users/toc.json?bc=/entra/identity/users/breadcrumb/toc.json
+    href: ~/fundamentals/concept-learn-about-groups.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
 - name: How-to guides
   expanded: true
   items:
   - name: Users
     items: 
     - name: Create a user 
-      href: ~/fundamentals/add-users.md?toc=/entra/identity/users/toc.json?bc=/entra/identity/users/breadcrumb/toc.json
+      href: ~/fundamentals/add-users.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
     - name: Create users in bulk
       href: users-bulk-add.md    
     - name: Manage user profiles
-      href: ~/fundamentals/how-to-manage-user-profile-info.md?toc=/entra/identity/users/toc.json?bc=/entra/identity/users/breadcrumb/toc.json
+      href: ~/fundamentals/how-to-manage-user-profile-info.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
     - name: Add custom data using extensions - Microsoft Graph
       href: /graph/extensibility-overview?toc=/entra/identity/users/toc.json?bc=/entra/identity/users/breadcrumb/toc.json?context=/entra/identity/users/context/ugr-context.yml
     - name: Assign custom security attributes
@@ -55,7 +55,7 @@
     - name: Delete users in bulk
       href: users-bulk-delete.md
     - name: Restore a deleted user    
-      href: ~/fundamentals/users-restore.md?toc=/entra/identity/users/toc.json?bc=/entra/identity/users/breadcrumb/toc.json
+      href: ~/fundamentals/users-restore.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
     - name: Restore users in bulk
       href: users-bulk-restore.md
     - name: Revoke a user's access
@@ -63,7 +63,7 @@
     - name: Close an account in an unmanaged directory
       href: users-close-account.md
     - name: Add guest users  
-      href: ~/external-id/what-is-b2b.md?toc=/entra/identity/users/toc.json?bc=/entra/identity/users/breadcrumb/toc.json
+      href: ~/external-id/what-is-b2b.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
     - name: Restrict guest user access
       href: users-restrict-guest-permissions.md
     - name: Clean up unmanaged accounts
@@ -71,11 +71,11 @@
     - name: Clean up stale guest accounts
       href: clean-up-stale-guest-accounts.md
     - name: Dynamic groups and guests   
-      href: ~/external-id/use-dynamic-groups.md?toc=/entra/identity/users/toc.json?bc=/entra/identity/users/breadcrumb/toc.json
+      href: ~/external-id/use-dynamic-groups.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
   - name: Organization (tenant)
     items:
     - name: Microsoft Entra tenant organizations    
-      href: ~/fundamentals/whatis.md?toc=/entra/identity/users/toc.json?bc=/entra/identity/users/breadcrumb/toc.json
+      href: ~/fundamentals/whatis.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
     - name: Delete a tenant    
       href: directory-delete-howto.md
     - name: Multiple tenants    
@@ -89,13 +89,13 @@
     - name: Self-service sign-up    
       href: directory-self-service-signup.md
     - name: Microsoft Entra Connect    
-      href: ~/identity/hybrid/whatis-hybrid-identity.md?toc=/entra/identity/users/toc.json?bc=/entra/identity/users/breadcrumb/toc.json
+      href: ~/identity/hybrid/whatis-hybrid-identity.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
   - name: Groups
     items: 
     - name: Learn about groups and access rights  
-      href: ~/fundamentals/concept-learn-about-groups.md?toc=/entra/identity/users/toc.json?bc=/entra/identity/users/breadcrumb/toc.json
+      href: ~/fundamentals/concept-learn-about-groups.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
     - name: Manage access with groups
-      href: ~/fundamentals/how-to-manage-groups.md?toc=/entra/identity/users/toc.json?bc=/entra/identity/users/breadcrumb/toc.json  
+      href: ~/fundamentals/how-to-manage-groups.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json  
     - name: Manage groups PowerShell for Graph (v2)   
       href: groups-settings-v2-cmdlets.md
     - name: Manage groups with PowerShell MSOnline    
@@ -141,7 +141,7 @@
   - name: Licenses
     items:
     - name: Assign licenses to users    
-      href: ~/fundamentals/license-users-groups.md?toc=/entra/identity/users/toc.json?bc=/entra/identity/users/breadcrumb/toc.json
+      href: ~/fundamentals/license-users-groups.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
     - name: Use Admin center to assign licenses to groups
       href: licensing-admin-center.md
     - name: Assign licenses to a group
@@ -163,7 +163,7 @@
   - name: Sign-in
     items:    
     - name: Customize company branding    
-      href: ~/fundamentals/how-to-customize-branding.md?toc=/entra/identity/users/toc.json?bc=/entra/identity/users/breadcrumb/toc.json
+      href: ~/fundamentals/how-to-customize-branding.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
     - name: Sign-in options
       href: signin-account-support.md
     - name: Home Realm Discovery
@@ -177,7 +177,7 @@
   - name: Troubleshoot
     items:
     - name: Get support for Microsoft Entra ID    
-      href: ~/fundamentals/how-to-get-support.md?toc=/entra/identity/users/toc.json?bc=/entra/identity/users/breadcrumb/toc.json
+      href: ~/fundamentals/how-to-get-support.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
     - name: Troubleshoot groups   
       href: groups-troubleshooting.md
     - name: Troubleshoot group licensing    

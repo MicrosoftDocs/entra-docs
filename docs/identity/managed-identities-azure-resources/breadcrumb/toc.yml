@@ -1,47 +1,24 @@
-- name: Azure
-  tocHref: /azure/
-  topicHref: /azure/index
+items:
+- name: Entra
+  tocHref: /entra/
+  topicHref: /entra/index
   items:
-  - name: Active Directory
-    tocHref: /azure/event-hubs/
-    topicHref: /azure/active-directory/index
+  - name: Microsoft Entra ID
+    tocHref: /entra/identity/
+    topicHref: /entra/identity/index
     items:
-    - name: Managed identities for Azure resources
-      tocHref: /azure/event-hubs/
-      topicHref: /azure/active-directory/managed-identities-azure-resources/index
-  
-- name: Azure
-  tocHref: /azure/
-  topicHref: /azure/index
-  items:  
-  - name: Active Directory
-    tocHref: /azure/service-bus-messaging/
-    topicHref: /azure/active-directory/index
-    items:
-    - name: Managed identities for Azure resources
-      tocHref: /azure/service-bus-messaging/
-      topicHref: /azure/active-directory/managed-identities-azure-resources/index
-  
-- name: Azure
-  tocHref: /azure/
-  topicHref: /azure/index
-  items:  
-  - name: Active Directory       
-    tocHref: /azure/app-service/
-    topicHref: /azure/active-directory/index
-    items:
-    - name: Managed identities for Azure resources
+    - name: Managed Identities
+      tocHref: /azure/container-registry/
+      topicHref: /entra/identity/managed-identities-azure-resources/
+    - name: Managed Identities
+      tocHref: /azure/service-bus-messaging
+      topicHref: /entra/identity/managed-identities-azure-resources/
+    - name: Managed Identities
       tocHref: /azure/app-service/
-      topicHref: /azure/active-directory/managed-identities-azure-resources/index
-
-- name: Azure
-  tocHref: /azure/
-  topicHref: /azure/index
-  items:  
-  - name: Active Directory       
-    tocHref: /azure/container-instances/
-    topicHref: /azure/active-directory/index
-    items:
-    - name: Managed identities for Azure resources
-      tocHref: /azure/container-instances/
-      topicHref: /azure/active-directory/managed-identities-azure-resources/index
+      topicHref: /entra/identity/managed-identities-azure-resources/
+    - name: Managed Identities
+      tocHref: /azure/event-hubs/
+      topicHref: /entra/identity/managed-identities-azure-resources/
+    - name: Managed Identities
+      tocHref: /azure/container-instances
+      topicHref: /entra/identity/managed-identities-azure-resources/

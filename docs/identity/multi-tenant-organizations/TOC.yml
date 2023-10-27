@@ -53,4 +53,4 @@
   expanded: true
   items:
   - name: Function reference for writing expressions for attribute mappings
-    href: ~/identity/app-provisioning/functions-for-customizing-application-data.md?toc/entra/identity/multi-tenant-organizations/toc.json?bc=/entra/identity/multi-tenant-organizations/breadcrumb/toc.json?
+    href: ~/identity/app-provisioning/functions-for-customizing-application-data.md?toc/entra/identity/multi-tenant-organizations/toc.json&bc=/entra/identity/multi-tenant-organizations/breadcrumb/toc.json

@@ -291,11 +291,11 @@ items:
         - name: Add claims from external systems
           items:
            - name: About custom authentication extensions
-             href: ~/identity-platform/custom-extension-overview.md?toc=/entra/external-id/customers/toc.json?bc=/entra/external-id/customers/breadcrumb/toc.json
+             href: ~/identity-platform/custom-extension-overview.md?toc=/entra/external-id/customers/toc.json&bc=/entra/external-id/customers/breadcrumb/toc.json
            - name: Configure a custom claims provider token issuance event
-             href: ~/identity-platform/custom-extension-get-started.md?toc=/entra/external-id/customers/toc.json?bc=/entra/external-id/customers/breadcrumb/toc.json
+             href: ~/identity-platform/custom-extension-get-started.md?toc=/entra/external-id/customers/toc.json&bc=/entra/external-id/customers/breadcrumb/toc.json
            - name: Troubleshoot your custom claims provider API
-             href: ~/identity-platform/custom-extension-troubleshoot.md?toc=/entra/external-id/customers/toc.json?bc=/entra/external-id/customers/breadcrumb/toc.json
+             href: ~/identity-platform/custom-extension-troubleshoot.md?toc=/entra/external-id/customers/toc.json&bc=/entra/external-id/customers/breadcrumb/toc.json
     - name: Secure
       items:
       - name: Multifactor authentication
@@ -325,9 +325,9 @@ items:
     - name: Group and application roles support
       href: reference-group-app-roles-support.md
     - name: Company branding CSS template reference guide
-      href: /entra/fundamentals/reference-company-branding-css-template?toc=/entra/external-id/customers/toc.json?bc=/entra/external-id/customers/breadcrumb/toc.json
+      href: /entra/fundamentals/reference-company-branding-css-template?toc=/entra/external-id/customers/toc.json&bc=/entra/external-id/customers/breadcrumb/toc.json
     - name: Help and support options
-      href: ~/identity-platform/developer-support-help-options.md?toc=/entra/external-id/customers/toc.json?bc=/entra/external-id/customers/breadcrumb/toc.json
+      href: ~/identity-platform/developer-support-help-options.md?toc=/entra/external-id/customers/toc.json&bc=/entra/external-id/customers/breadcrumb/toc.json
     - name: MSAL references 
       items:
         - name: MSAL.NET
