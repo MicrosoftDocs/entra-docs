@@ -225,12 +225,12 @@ public static async Task<object> Run(HttpRequest req, ILogger log)
     string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
     dynamic request = JsonConvert.DeserializeObject(requestBody);
 
-    //The form fields will load with these default values
+    // The form fields will load with these default values
     var inputs = new Dictionary<string, object>()
     {
-        { "postalCode", "12345-<your-prefill-value>" },
-        { "streetAddress", "One Microsoft Way-<your-prefill-value>" },
-        { "city", "Tampa-<your-prefill-value>" },
+        { "postalCode", "<your-prefill-value>" },
+        { "streetAddress", "<your-prefill-value>" },
+        { "city", "<your-prefill-value>" },
         { "extension_appId_mailingList", false },
         { "extension_appId_memberSince", 2023 }      
     };
@@ -363,7 +363,7 @@ public static async Task<object> Run(HttpRequest req, ILogger log)
     var actions = new List<BlockedActions>{
         new BlockedActions { 
             type = "microsoft.graph.attributeCollectionSubmit.showBlockPage", 
-            message = "AttributeCollectionSubmit Custom Extension Message: Thank you so much for your response! Your access request is processing. You'll be notified when your request has been approved."
+            message = "AttributeCollectionSubmit Custom Extension Message: Thank you for your response. Your access request is processing. You'll be notified when your request has been approved."
         }
     };
 
@@ -417,11 +417,12 @@ public static async Task<object> Run(HttpRequest req, ILogger log)
 {
     log.LogInformation("C# HTTP trigger function processed a request.");
 
+    // User attributes will be saved with these override values
     var attributes = new Dictionary<string, object>()
     {
-        { "postalCode", "98007" },
-        { "streetAddress", "222 Assigned St" },
-        { "city", "Bellevue" },
+        { "postalCode", "<your-override-value>" },
+        { "streetAddress", "<your-override-value>" },
+        { "city", "<your-override-value>" },
         { "extension_appId_mailingList", false }
         { "extension_appId_memberSince", 2010 }
     };
@@ -530,9 +531,10 @@ public static async Task<object> Run(HttpRequest req, ILogger log)
         };
 
         log.LogInformation($"Returning validation error");
-        // Send the validation error response
 
+        // Send the validation error response
         return response;
+
     }else{
         var actions = new List<ContinueWithDefaultBehavior>{
             new ContinueWithDefaultBehavior { type = "microsoft.graph.attributeCollectionSubmit.ContinueWithDefaultBehavior"}
