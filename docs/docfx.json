@@ -135,10 +135,10 @@
       },
     "feedback_system": "Standard",
     "feedback_product_url": {
-      "docs/identity/**/*.md": "https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789",
-      "docs/external-id/*.md": "/entra/identity-platform/developer-support-help-options",
-      "docs/identity-platform/*.md": "/entra/identity-platform/developer-support-help-options",
-      "docs/workload-id/*.md": "https://aka.ms/microsoftentraexternalid"
+      "/identity/**/*.md": "https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789",
+      "/external-id/*.md": "/entra/identity-platform/developer-support-help-options",
+      "/identity-platform/*.md": "/entra/identity-platform/developer-support-help-options",
+      "/workload-id/*.md": "https://aka.ms/microsoftentraexternalid"
     },
     "manager": {
       "architecture/*.md": "martincoetzer",
