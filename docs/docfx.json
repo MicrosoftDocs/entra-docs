@@ -133,9 +133,11 @@
         "entra"
         ]
       },
+    "feedback_system": "Standard",
     "feedback_product_url": {
       "docs/identity/**/*.md": "https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789",
-      "docs/identity-platform/*.md": "https://docs.microsoft.com/azure/active-directory/develop/developer-support-help-options",
+      "docs/external-id/*.md": "/entra/identity-platform/developer-support-help-options",
+      "docs/identity-platform/*.md": "/entra/identity-platform/developer-support-help-options",
       "docs/workload-id/*.md": "https://aka.ms/microsoftentraexternalid"
     },
     "manager": {
