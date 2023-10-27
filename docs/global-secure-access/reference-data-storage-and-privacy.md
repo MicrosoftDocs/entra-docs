@@ -1,0 +1,38 @@
+---
+title: Global Secure Access data storage and privacy
+description: Global Secure Access data storage and privacy information.
+author: kenwith
+ms.author: kenwith
+manager: amycolannino
+ms.topic: reference
+ms.date: 10/27/2023
+ms.service: network-access
+ms.custom: 
+---
+
+# Global Secure Access data storage and privacy
+
+Frequently asked questions regarding privacy and data handling for Microsoft 365 enriched logs.
+
+We prioritize the protection of your data and understand the importance of transparency, especially when it comes to data processing and privacy. This article outlines the stringent standards that give you a comprehensive understanding of how your data is handled and the measures put in place to ensure its security.
+
+## What Data Does Global Secure Access Process?
+
+**Microsoft 365 Audit Logs Subset** - By integrating Global Secure Access with Microsoft 365 workloads, a subset of your Microsoft 365 audit logs will be copied and sent to the Global Secure Access service for processing.
+
+## Data Retention and Storage
+
+**Azure EventHub Disk Storage** - Enriched logs are stored on the Azure EventHub disk.
+
+**Retention Period** - The data is retained for a duration of 24 hours. Once the data is in the customer repository, it remains there, and Global Secure Access retains its copy for the aforementioned 24-hour period.
+
+## Data Isolation and Access
+
+**Access Authentication** - Robust access authentication mechanisms have been implemented to ensure only authorized individuals can access the data.
+
+## Data Processing Locations
+
+**Geographical Processing** - All data processing strictly occurs within the US or Europe, based on the following criteria:
+
+- **Europe** - Data from the European customers are processed in the Global Secure Access Europe datacenters. 
+- **All Other Locations** - Data from any other customers are processed in the Global Secure Access U.S. datacenters.
