@@ -2121,6 +2121,8 @@
         href: quarem-tutorial.md
       - name: Quantum Workplace
         href: quantum-workplace-tutorial.md
+      - name: QueryLayer
+        href: querylayer-tutorial.md
       - name: Questetra BPM Suite
         href: questetra-bpm-suite-tutorial.md
       - name: QuickHelp
