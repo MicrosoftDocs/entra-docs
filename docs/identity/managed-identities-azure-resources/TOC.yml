@@ -39,7 +39,7 @@
     - name: Access Azure Key Vault
       href: tutorial-linux-vm-access-nonaad.md
     - name: Access Azure Container Registry
-      href: /azure/container-registry/container-registry-authentication-managed-identity?context=/azure/active-directory/managed-identities-azure-resources/context/msi-context
+      href: /azure/container-registry/container-registry-authentication-managed-identity
     - name: Access Azure Resource Manager with a user-assigned managed identity
       href: msi-tutorial-linux-vm-access-arm.md
   - name: Access Azure Cosmos DB
