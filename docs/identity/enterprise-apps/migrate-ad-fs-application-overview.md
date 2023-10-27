@@ -1,5 +1,5 @@
 ---
-title: Overview of Microsoft Entra AD FS application migration (preview)
+title: Overview of AD FS application migration (preview)
 description: Learn about the capabilities of the AD FS application migration wizard and the migration status available on its dashboard. Learn the various validation tests that the  application migration generates and how to resolve the validation issues.
 services: active-directory
 author: omondiatieno
@@ -14,7 +14,7 @@ ms.reviewer: smriti3
 ms.custom: not-enterprise-apps
 ---
 
-# Overview of Microsoft Entra AD FS application migration (preview)
+# Overview of AD FS application migration (preview)
 
 In this article, you learn about the capabilities of the AD FS application migration wizard and the migration status available on its dashboard. You also learn the various validation tests that the application migration generates for each of the applications that you want to migrate from AD FS to Microsoft Entra ID.
 
