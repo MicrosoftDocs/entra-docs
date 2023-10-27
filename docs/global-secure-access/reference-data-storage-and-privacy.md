@@ -18,11 +18,11 @@ We prioritize the protection of your data and understand the importance of trans
 
 ## What Data Does Global Secure Access Process?
 
-**Microsoft 365 Audit Logs Subset** - By integrating Global Secure Access with Microsoft 365 workloads, a subset of your Microsoft 365 audit logs will be copied and sent to the Global Secure Access service for processing.
+**Microsoft 365 Audit Logs Subset** - By integrating Global Secure Access with Microsoft 365 workloads, a subset of your Microsoft 365 audit logs are copied and sent to the Global Secure Access service for processing.
 
 ## Data Retention and Storage
 
-**Azure EventHub Disk Storage** - Enriched logs are stored on the Azure EventHub disk.
+**Azure Event Hubs Disk Storage** - Enriched logs are stored on the Azure Event Hubs disk.
 
 **Retention Period** - The data is retained for a duration of 24 hours. Once the data is in the customer repository, it remains there, and Global Secure Access retains its copy for the aforementioned 24-hour period.
 
