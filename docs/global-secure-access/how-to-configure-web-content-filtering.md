@@ -15,7 +15,7 @@ ms.reviewer: frankgomulka
 
 Filtering web content is a critical component when implementing Internet access controls for a modern Security Service Edge (SSE) solution. 
 
-Microsoft Entra Internet Access includes Web Content Filtering (WCF) as part of the Secure Web Gateway feature. Microsoft integrates filtering with Microsoft Entra ID and Microsoft Entra Conditional Access, which results in filter policies that are user-aware and easy to manage.
+Microsoft Entra Internet Access includes web content filtering as part of the Secure Web Gateway feature. Microsoft integrates filtering with Microsoft Entra ID and Microsoft Entra Conditional Access, which results in filter policies that are user-aware and easy to manage.
 
 ## Prerequisites
 
@@ -39,11 +39,11 @@ Create a web filtering policy that contains a grouping of rules.
 1. Enter a name, select a [web category](reference-web-content-filtering-categories.md), and then select **Add**.
 1. Select **Next** to review the policy and then select **Create policy**.
 
-## Create a policy profile to assign / link policies to a profile
-Create a policy profile to assign, or link, policies with a profile.
+## Create a security profile to assign / link policies to a profile
+Create a security profile to assign, or link, policies with a profile.
 
 > [!NOTE]
-> To learn more about Microsoft Entra Conditional Access policy profiles, see [Building a Conditional Access policy](/azure/active-directory/conditional-access/concept-conditional-access-policies).
+> To learn more about Microsoft Entra Conditional Access security profiles, see [Building a Conditional Access policy](/azure/active-directory/conditional-access/concept-conditional-access-policies).
 
 1. In the Microsoft Entra admin center, navigate to **Global Secure Access** > **Security profiles**.
 1. Select **Create profile**.
@@ -61,7 +61,7 @@ Create a Conditional Access policy and set session controls for end users or gro
 1. Enter a name and assign a user or group.
 1. Select **Target resources** and then select **Global Secure Access (Preview)** from the drop-down menu to set what the policy applies to.
 1. Select **Internet traffic** from the drop-down menu to set the traffic profile this policy applies to.
-1. Select **Sessions**, select **Use Global Secure Access policy profile**, and then choose a web filtering profile.
+1. Select **Sessions**, select **Use Global Secure Access security profile**, and then choose a web filtering profile.
 1. Select **Select**.
 1. In the **Enable policy** section, **Report-only** is the default.
 1. Select **Create**.
@@ -84,6 +84,19 @@ View Internet Access traffic logs in the Microsoft Entra admin center. Navigate 
 - Only FQDN-based filtering is currently supported. URL based filtering isn't yet supported.
 - "Remote Network" or "Branch" connectivity scenarios aren't supported.
 - Users aren't allowed to block access to all websites by default.
+- Internet Access Limitations for Public Preview
+- No end user notifications.
+- No admin configurable traffic acquisition profile.
+- Traffic acquisition profile only acquires HTTP/S TCP over ports 80/443 via FQDN. In other words, no IP-based acquisition.
+- Assume standard ports 80/443.
+- No captive portal support.
+- No support for UDP traffic acquisition.
+- No "remote network" / "branch" connectivity model.
+- No support for L3/4 filtering.
+- No TLS termination (it is in EAP).
+- No URL filtering or URL categorization.
+- Must disable QUIC in the browser.
+
 
 ## Next steps
 - [Learn about the traffic dashboard](concept-traffic-dashboard.md)

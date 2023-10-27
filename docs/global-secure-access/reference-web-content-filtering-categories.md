@@ -105,3 +105,18 @@ When you set up rules to filter web content, you can select based on a category.
 |Travel    | Sites that provide travel and tourism information or online booking or travel services such as airlines, accommodations, car rentals. Includes regional or city information sites.         |
 |Uncategorized     |Sites that have not been categorized, such as new websites, personal sites, and so on.          |
 |    |         |
+
+## Security
+
+|Category   |Description  |
+|---------|---------|
+|Remote Desktop / Control     | Sites that....   |
+|Keyloggers + Mobile Malware + BOT Phone Home + Malware + Spyware  | Sites that.. |
+|Cryptocurrency | Sites that.. |
+|Remote Proxies | Sites that.. |
+|Internet Telephony | Sites that.. |
+|Web Conferencing | Sites that.. |
+|Phishing Sites | Sites that.. |
+|Parked Domains | Sites that.. |
+|Botnets | Sites that.. |
+|SPAM | Sites that.. |
