@@ -68,7 +68,7 @@ The following table lists common attributes and how they're synchronized to Micr
 > [!WARNING]
 > The cloud sync configuration creates a service principal. The service principal is visible in the Microsoft Entra admin center. You should not modify the attribute mappings using the service principal experience in the Microsoft Entra admin center.  This is not supported.
 
-To view the cloud sync schema and verify it, follow these steps.
+To view the cloud sync configuration synchronization schema and verify it, follow these steps.
 
 1.  Go to [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer).
 1.  Sign in with your global administrator account.
