@@ -85,7 +85,7 @@ For more information on how to create, view, save, and use custom queries:
 
 You can configure alerts to continuously monitor your environment. Get notifications for overprivileged accounts, anomalous permissions usage, potential threats, and service disruptions.
 
-Determine the alerts that serve your environment and who receives them. This action provides better visibility into your environment, and enables a more proactive approach to manage identities and their access to resources.
+Determine the alerts that serve your environment and who receives them. This action provides better visibility into your environment, and enables a more proactive approach to managing identities and their access to resources.
 
 To learn about alert types and usage scenarios, see the [Microsoft Entra Permissions Management alerts guide]().
 
@@ -100,11 +100,11 @@ For example, review the following response strategy and playbook for an Inactive
 
 **Example manual response strategy**
 
-**Remediation**: When an Inactive User alert triggers, the alert recipient assigns the user read-only status, and applies the **ck_exclude_from_pci** and **ck_exclude_from_reports** tags to the user.
+**Remediation**: When an Inactive User alert triggers, the alert recipient assigns the user read-only status, and applies the **ck_exclude_from_reports** tags to the user.
 
 In the manual response, use Microsoft Entra Permissions Management remediation tools and clarify that recipients of the Inactive User alerts perform remediation. The recipients use Permissions Management to [assign read-only status](~/permissions-management/how-to-revoke-task-readonly-status.md) to the user. This action revokes the user’s permissions and assigns them read only status with the click of a button.
 
-A recipient applies the **ck_exclude_from_pci** and **ck_exclude_from_reports** tags to the user. Use of the first tag excludes the user from the authorization system’s PCI score calculation. The **ck_exclude_from_reports** tag removes the user from the Permissions Analytics Report, so it’s not called out as an inactive user.
+A recipient applies the **ck_exclude_from_reports** tags to the user. This tag removes the user from the Permissions Analytics Report, so it’s not called out as an inactive user.
 
 **Example automated response strategy**
 
