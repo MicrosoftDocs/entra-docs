@@ -22,7 +22,7 @@ We prioritize the protection of your data and understand the importance of trans
 
 ## Data Retention and Storage
 
-**Azure Event Hubs disk storage** - Enriched logs are stored on the Azure Event Hubs disk.
+**Azure storage** - Enriched logs are stored on Azure storage.
 
 **Retention Period** - The data is retained for a duration of 24 hours. Once the data is in the customer repository, it remains there, and Global Secure Access retains its copy for the aforementioned 24-hour period.
 
