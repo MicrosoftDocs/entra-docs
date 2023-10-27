@@ -10,11 +10,19 @@ items:
     href: how-to-get-started-with-global-secure-access.md
   - name: Network traffic dashboard
     href: concept-traffic-dashboard.md
+- name: Concepts
+  expanded: true
+  items: 
+  - name: Global Secure Access clients
+    href: concept-clients.md
 - name: How-to guides
   expanded: true
   items:
-  - name: Install the Windows client
-    href: how-to-install-windows-client.md
+  - name: Global Secure Access client
+    expanded: true
+    items:
+      - name: Install the Windows client
+        href: how-to-install-windows-client.md
   - name: Remote networks
     expanded: false
     items:
