@@ -45,7 +45,7 @@ Super identities have the highest privilege permissions in an authorization syst
 * For expected super identities, such as infrastructure admins, use the **ck_exclude_from_pci** and **ck_exclude_from_reports** tags.
   * **ck_exclude_from_pci** tag removes the identity from the authorization system’s PCI score calculation
   * **ck_exclude_from_reports** tag removes the identity from the Permissions Analytics Report, so it isn't called out as a super identity
-* Right-size other super identities permissions and use a JIT access model
+* Right-size other super identities' permissions and use a JIT access model
   * Use Permissions Management remediation tools to right-size
   * Configure Permission On-Demand to achieve the JIT access model
 
@@ -56,6 +56,7 @@ These identities haven't performed actions for 90 days.
 **Best practice**: Regularly right-size the permissions of inactive identities, which can be potential attack vectors for bad actors.
 
 **Remediation guidance**
+
 Review inactive identities to determine remediation:
 
 * If the inactive identity is needed, apply the **ck_exclude_from_reports** tag to remove the identity from the Permissions Analytics Report, so it’s not called out as an inactive identity.
@@ -85,7 +86,7 @@ For right-sized custom roles, we recommend you remediate overprovisioned identit
 
    ![Screenshot of Selected Search Users](./media/permissions-manage-ops-guide/selected-search-users.png)
 
-5. Under **Selected Search Users**, validate the permissions in the new role.
+5. Click **Next** and under **Selected Tasks**, validate the permissions in the new role. These will auto-populate based on the historical activity of the users/groups you selected.
 
    ![Screenshot of Selected Tasks on the Actions tab.](./media/permissions-manage-ops-guide/selected-tasks.png)
 
@@ -95,7 +96,7 @@ For right-sized custom roles, we recommend you remediate overprovisioned identit
 9. Assign team members the right-sized role/policy.
 
 >[!NOTE]
-> We recommend you right-size non-human identities, like Service Principals and machine accounts. The activity of non-human identities is less likely to vary on a day-to-day basis, making the risk low for potential service disruptions caused by right-sizing.
+> We recommend you start by right-sizing non-human identities, like Service Principals and machine accounts. The activity of non-human identities is less likely to vary on a day-to-day basis, making the risk low for potential service disruptions caused by right-sizing.
 
 For more on the remediation tools available within Entra Permissions Management:
 
@@ -112,7 +113,7 @@ For more on the remediation tools available within Entra Permissions Management:
 To meet organizational goals, enable processes to track and report on progress. Some built-in Microsoft Entra Permissions Management tools are:
 
 * **PCI History Report**: Receive a regular, detailed overview of how PCI scores in authorization systems and folders change over time. Measure how well your organization is meeting and maintaining PCI goals. We recommend you schedule a recurring PCI History Report for key stakeholders. Ensure the cadence matches internal progress reviews.
-* **Permissions Analytics Report**: Measure remediation progress and schedule the report to go regularly to key stakeholders and/or export a PDF version of the report for your authorization systems on a regular basis. This practice enables your organization to measure remediation progress over time. For example, with this approach you can see how many inactive identities are cleaned up each week and what impact that had on your PCI scores.
+* **Permissions Analytics Report**: Measure remediation progress and schedule the report to be sent to key stakeholders and/or export a PDF version of the report for your authorization systems on a regular basis. This practice enables your organization to measure remediation progress over time. For example, with this approach you can see how many inactive identities are cleaned up each week and what impact that had on your PCI scores.
 * **Permissions Management Dashboard**: Get an overview of your authorization systems and their PCI scores. Use the **Highest PCI Change List** section to sort authorization systems by PCI score to prioritize remediation activity. See also **PCI Change** for the past seven days to see which authorization systems had the most progress and which might need more review. Select authorization systems in the **PCI Heat Map** section to access the **PCI Trend Chart** for that authorization system. Note how PCI changes over a 90-day period.
 
 ## Operationalize Permissions On-Demand
@@ -162,7 +163,7 @@ A Permissions Management Administrator adds Requestor identities to the Requeste
 You can configure Permissions On-Demand settings to align with organizational needs. We recommend you establish policies for:
 
 * **Available roles and policies for users to request**: Use role and policy filters to specify what users can request. Prevent unqualified users from requesting high-risk, highly privileged roles such as Subscription Owner.
-* **Request duration limits**: Specify the maximum allowable duration for permissions acquired via Permissions On-Demand. Agree on a duration limit that aligns with how users request and get access to permissions
+* **Request duration limits**: Specify the maximum allowable duration for permissions acquired via Permissions On-Demand. Agree on a duration limit that aligns with how users request and get access to permissions.
 * **One-Time Passcode (OTP) policy**: You can require email OTPs for Requestors to create requests. In addition, you can require email OTPs for Approvers to approve or reject requests. Use these configurations for one or both scenarios.
 * **Auto-approvals for AWS**: As an option for Permissions On-Demand for AWS, you can configure specific policy requests to be auto-approved. Adding common, low-risk policies to your auto-approval list helps save time for Requestors and Approvers. 
 
