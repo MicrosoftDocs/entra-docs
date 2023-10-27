@@ -52,7 +52,7 @@ Before you customize any settings, the neutral default branding will appear in y
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the customer tenant you created earlier from the **Directories + subscriptions** menu.
-1. Browse to **Company Branding** either using the search bar, or on the left-hand side go to **Home** > **Go to Microsoft Entra ID** > **Customize branding**.
+1. Browse to **Company Branding** either by using the search bar or by navigating to **Home** > **Go to Microsoft Entra ID** > **Customize branding**.
 
    :::image type="content" source="media/how-to-customize-branding-customers/browse-to-company-branding.png" alt-text="Screenshot of the company branding option.":::
 
