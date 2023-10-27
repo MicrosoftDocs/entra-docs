@@ -110,13 +110,13 @@ When you set up rules to filter web content, you can select based on a category.
 
 |Category   |Description  |
 |---------|---------|
-|Remote Desktop / Control     | Sites that....   |
-|Keyloggers + Mobile Malware + BOT Phone Home + Malware + Spyware  | Sites that.. |
-|Cryptocurrency | Sites that.. |
-|Remote Proxies | Sites that.. |
-|Internet Telephony | Sites that.. |
-|Web Conferencing | Sites that.. |
-|Phishing Sites | Sites that.. |
-|Parked Domains | Sites that.. |
-|Botnets | Sites that.. |
-|SPAM | Sites that.. |
+|Remote Desktop / Control     | Sites used for remote computer control.  |
+|Keyloggers + Mobile Malware + BOT Phone Home + Malware + Spyware  | Sites used by keyloggers, mobile malware, bots, malware, and spyware.  |
+|Cryptocurrency | Sites that relate to crypto currency. |
+|Remote Proxies | Sites that are used for remote proxy connections. |
+|Internet Telephony | Sites that can be used for Internet voice communications. |
+|Web Conferencing | Sites for conducting web conferences. |
+|Phishing Sites | Sites that are used to steal information through phishing attacks. |
+|Parked Domains | Sites that are not in active use. |
+|Botnets | Sites used by botnets. |
+|SPAM | Sites known to product SPAM email. |
