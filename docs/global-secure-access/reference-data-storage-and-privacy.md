@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra Private Access and Microsoft Entra Global Access data storage and privacy
+title: Microsoft Entra Private Access and Microsoft Entra Internet Access data storage and privacy
 description: Global Secure Access includes Microsoft Entra Private Access and Microsoft Entra Internet Access. This article outlines data storage and privacy information.
 author: kenwith
 ms.author: kenwith
