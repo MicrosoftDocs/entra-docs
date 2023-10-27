@@ -3498,6 +3498,8 @@
         href: robin-provisioning-tutorial.md
       - name: Rollbar
         href: rollbar-provisioning-tutorial.md
+      - name: Rootly
+        href: rootly-provisioning-tutorial.md
       - name: Rouse Sales
         href: rouse-sales-provisioning-tutorial.md
       - name: SafeGuard Cyber
@@ -3542,6 +3544,8 @@
         href: signagelive-provisioning-tutorial.md
       - name: Sign In Enterprise Host Provisioning
         href: sign-in-enterprise-host-provisioning-tutorial.md
+      - name: Simple In/Out
+        href: simple-in-out-provisioning-tutorial.md
       - name: Slack
         href: slack-provisioning-tutorial.md
       - name: Smartfile
@@ -3670,6 +3674,8 @@
         href: xledger-provisioning-tutorial.md
       - name: XM Fax and XM SendSecure
         href: xm-fax-and-xm-send-secure-provisioning-tutorial.md
+      - name: YardiOne
+        href: yardione-provisioning-tutorial.md
       - name: Yellowbox
         href: yellowbox-provisioning-tutorial.md
       - name: Zapier
