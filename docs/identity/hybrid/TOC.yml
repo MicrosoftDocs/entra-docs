@@ -82,7 +82,7 @@
   - name: Provision to AD using Microsoft Entra Cloud Sync
     items: 
     - name:  Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance
-      href:  cloud-sync/govern-on-premises-groups.
+      href:  cloud-sync/govern-on-premises-groups.md
     - name:  Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync
       href:  cloud-sync/migrate-group-writeback.md
 
