@@ -5,11 +5,11 @@ items:
   items:
   - name: External Identities
     tocHref: /entra/external-id/
-    topicHref: /entra/externa-id/
+    topicHref: /entra/external-id/
     items:
     - name: External ID Customers
       tocHref: /entra/identity-platform/
-      topicHref: /entra/externa-id/customers/
+      topicHref: /entra/external-id/customers/
     - name: External ID Customers
       tocHref: /entra/fundamentals/
-      topicHref: /entra/externa-id/customers/
+      topicHref: /entra/external-id/customers/
