@@ -624,6 +624,8 @@
         href: contentkalender-tutorial.md
       - name: Contentsquare SSO
         href: contentsquare-sso-tutorial.md
+      - name: Contentstack
+        href: contentstack-tutorial.md
       - name: ContractSafe Saml2 SSO
         href: contractsafe-saml2-sso-tutorial.md
       - name: ContractS CLM
