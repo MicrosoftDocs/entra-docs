@@ -99,4 +99,5 @@ All the required code snippets have been added, so the application can now be ca
 
 ## Next steps
 
-Learn how to use the Microsoft Authentication Library (MSAL) for JavaScript to sign in users and acquire tokens to call Microsoft Graph.
+> [!div class="nextstepaction"]
+> [Enable self-service password reset](./how-to-enable-password-reset-customers.md)
