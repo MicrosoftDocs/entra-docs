@@ -18,9 +18,9 @@ ms.author: jricketts
 
 In this operationalization guide, learn about the checks, actions, and best practices to operate Microsoft Entra Permissions Management in an enterprise environment. The guidance has three phases: 
 
-1. **Implement** the framework to manage at scale: delegate permissions and develop processes to guide operational behavior.
-2. **Right-size** permissions and automate the principle of least privilege: remediate key findings and implement just-in-time (JIT) access with Permissions On-Demand.
-3. **Configure** Microsoft Entra Permissions Management monitoring and alerting: schedule recurring reports, configure alerts, and develop response strategy playbooks. 
+1. **Implement the framework to manage at scale**: delegate permissions and develop processes to guide operational behavior.
+2. **Right-size permissions and automate the principle of least privilege**: remediate key findings and implement just-in-time (JIT) access with Permissions On-Demand.
+3. **Configure Microsoft Entra Permissions Management monitoring and alerting**: schedule recurring reports, configure alerts, and develop response strategy playbooks. 
 
 >[!NOTE]
 > The recommendations in this guide are current as of the date of publication. We recommend organizations evaluate their identity practices continuously as Microsoft products and services evolve over time. Some recommendations might not be applicable to all customer environments.
@@ -36,9 +36,9 @@ Use the following glossary to understand terms used in this guide.
 |Term|Definition|
 |---|---|
 |Authorization system|A system that grants access to identities. For example, an Azure subscription, an AWS account, or a GCP project.|
-|Permission|An identity with the ability to perform an action on a resource|
+|Permission|An identity with the ability to perform an action on a resource.|
 |Permission Creep Index (PCI)|An aggregated metric to measure the number of unused or excessive permissions across identities and resources. It's measured periodically for all identities. PCI ranges from 0 to 100. Higher scores represent greater risk.|
-|Permissions On-Demand|A Microsoft Entra Permissions Management feature that enables identities to request and grant permissions on-demand for a time limited period, or as needed|
+|Permissions On-Demand|A Microsoft Entra Permissions Management feature that enables identities to request and grant permissions on-demand for a time limited period, or as needed.|
 
 ## Customer stakeholder teams
 
@@ -52,7 +52,7 @@ We recommend you assign stakeholders to plan and implement key tasks. The follow
 |Information Security Operations|Runs and monitors information security practices for Information Security Architecture|
 |Incident Response|Identifies and resolves security incidents|
 |Security Assurance and Audit|Helps ensure IT processes are secure and compliant. They conduct regular audits, assess risks, and recommend security measures to mitigate identified vulnerabilities and enhance the overall security posture.|
-|Targe authorization system technical owners|Owns individual authorization systems: Azure subscriptions, AWS accounts, GCP projects onboarded to Microsoft Entra Permissions Management|
+|Target authorization system technical owners|Own individual authorization systems: Azure subscriptions, AWS accounts, GCP projects onboarded to Microsoft Entra Permissions Management|
 
 ## Discover-remediate-monitor flow
 
