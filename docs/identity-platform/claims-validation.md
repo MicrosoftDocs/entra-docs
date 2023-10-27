@@ -2,7 +2,7 @@
 title: Secure applications and APIs by validating claims
 description: Learn about securing the business logic of your applications and APIs by validating claims in tokens.
 services: active-directory
-author: davidmu1
+author: cilwerner
 manager: CelesteDG
 
 ms.service: active-directory
@@ -10,7 +10,7 @@ ms.subservice: develop
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 04/21/2023
-ms.author: davidmu
+ms.author: cwerner
 ms.custom: aaddev, curation-claims
 ---
 

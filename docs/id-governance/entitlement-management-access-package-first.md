@@ -11,7 +11,7 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.subservice: compliance
-ms.date: 05/31/2023
+ms.date: 10/25/2023
 ms.author: owinfrey
 ms.reviewer: markwahl-msft
 ms.collection: M365-identity-device-management
@@ -107,7 +107,7 @@ An *access package* is a bundle of resources that a team or project needs and is
 
 1. In the **Select groups** pane, find and select the **Marketing resources** group you created earlier.
 
-     By default, you see groups inside the General catalog. When you select a group outside of the General catalog, which you can see if you check the **See all** check box, it will be added to the General catalog.
+     By default, you see groups inside the General catalog. When you select a group outside of the General catalog, which you can see if you check the **See all** check box, it's added to the General catalog.
 
     ![Screenshot that shows how to select the groups"](./media/entitlement-management-access-package-first/resource-roles-select-groups.png)
 
@@ -146,7 +146,7 @@ An *access package* is a bundle of resources that a team or project needs and is
 
 1. For **Enable requests**, select **Yes** to enable this access package to be requested as soon as it's created.
 
-1. If your organization is set up to receive verified IDs, there is an option to configure an access package to require requestors to provide a verified ID.  To learn more, see: [Configure verified ID settings for an access package in entitlement management (Preview)](entitlement-management-verified-id-settings.md)
+1. If your organization is set up to receive verified IDs, there's an option to configure an access package to require requestors to provide a verified ID.  To learn more, see: [Configure verified ID settings for an access package in entitlement management (Preview)](entitlement-management-verified-id-settings.md)
 
     :::image type="content" source="media/entitlement-management-access-package-first/verified-id-picker.png" alt-text="Screenshot of the Verified ID picker selection.":::
 
@@ -181,7 +181,7 @@ An *access package* is a bundle of resources that a team or project needs and is
 
 ## Step 3: Request access
 
-In this step, you perform the steps as the **internal requestor** and request access to the access package. Requestors submit their requests using a site called the My Access portal. The My Access portal enables requestors to submit requests for access packages, see the access packages they already have access to, and view their request history.
+In this step, you perform the steps as the **internal requestor** and request access to the access package. Requestors submit their requests using a site called the My Access portal. The My Access portal enables requestors to submit requests for access packages, see the access packages they already have access to, and view their request history. When a new guest requests an access package in MyAccess, their preferred language is stamped based on the MyAccess browser language at request time. This enables new guests to receive email communication in a language they understand.
 
 **Prerequisite role:** Internal requestor
 

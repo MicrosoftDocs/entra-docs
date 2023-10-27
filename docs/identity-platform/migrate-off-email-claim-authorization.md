@@ -2,14 +2,14 @@
 title: Migrate away from using email claims for user identification or authorization
 description: Learn how to migrate your application away from using insecure claims, such as email, for authorization purposes. 
 services: active-directory
-author: davidmu1
+author: cilwerner
 
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
 ms.workload: identity
 ms.date: 05/11/2023
-ms.author: davidmu
+ms.author: cwerner
 ms.reviewer: medbhargava
 ms.custom: curation-claims
 

@@ -2,7 +2,7 @@
 title: Claims challenges, claims requests, and client capabilities
 description: Explanation of claims challenges, claims requests, and client capabilities in the Microsoft identity platform.
 services: active-directory
-author: davidmu1
+author: cilwerner
 manager: CelesteDG
 
 ms.service: active-directory
@@ -10,7 +10,7 @@ ms.subservice: develop
 ms.topic: reference
 ms.workload: identity
 ms.date: 01/19/2023
-ms.author: davidmu
+ms.author: cwerner
 ms.reviewer: kkrishna, kylemar
 # Customer intent: As an application developer, I want to learn how to handle claims challenges returned from APIs protected by the Microsoft identity platform. 
 ---

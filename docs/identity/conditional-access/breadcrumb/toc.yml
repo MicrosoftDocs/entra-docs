@@ -1,11 +1,15 @@
-- name: Azure
-  tocHref: /azure/
-  topicHref: /azure/index
+items:
+- name: Microsoft Entra
+  tocHref: /entra/
+  topicHref: /entra/index
   items:
-  - name: Active Directory
-    tocHref: /azure/active-directory/
-    topicHref: /azure/active-directory/index
+  - name: Microsoft Entra ID
+    tocHref: /entra/identity/
+    topicHref: /entra/identity/index
     items:
     - name: Conditional Access
-      tocHref: /azure/active-directory/conditional-access/
-      topicHref: /azure/active-directory/authentication/index
+      tocHref: /entra/identity/authentication/
+      topicHref: /entra/identity/conditional-access/
+    - name: Conditional Access
+      tocHref: /mem/intune/enrollment/
+      topicHref: /entra/identity/conditional-access/

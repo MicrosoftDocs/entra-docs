@@ -1,6 +1,6 @@
 ---
-title: 'Microsoft Entra Connect cloud provisioning agent gMSA PowerShell cmdlets'
-description: Learn how to use the Microsoft Entra Connect cloud provisioning agent gMSA powershell cmdlets.
+title: 'Microsoft Entra Provisioning Agent gMSA PowerShell cmdlets'
+description: Learn how to use the Microsoft Entra Provisioning Agent gMSA PowerShell cmdlets.
 services: active-directory
 author: billmath
 manager: amycolannino
@@ -13,7 +13,7 @@ ms.author: billmath
 ms.collection: M365-identity-device-management
 ---
 
-# Microsoft Entra Connect cloud provisioning agent gMSA PowerShell cmdlets
+# Microsoft Entra Provisioning Agent gMSA PowerShell cmdlets
 
 The purpose of this document is to describe the Microsoft Entra Connect cloud provisioning agent gMSA PowerShell cmdlets. These cmdlets allow you to have more granularity on the permissions that are applied on the service account (gMSA). By default, Microsoft Entra Cloud Sync applies all permissions similar to Microsoft Entra Connect on the default gMSA or a custom gMSA, during cloud provisioning agent install.
 
@@ -29,7 +29,7 @@ The following prerequisites are required to use these cmdlets.
 
 1. Install provisioning agent.
 
-2. Import Provisioning Agent PS module into a PowerShell session.
+2. Import Provisioning Agent PowerShell module into a PowerShell session.
 
    ```powershell
    Import-Module "C:\Program Files\Microsoft Azure AD Connect Provisioning Agent\Microsoft.CloudSync.Powershell.dll"
@@ -60,7 +60,7 @@ The following prerequisites are required to use these cmdlets.
 |PasswordWriteBack|See [PasswordWriteBack](../connect/how-to-connect-configure-ad-ds-connector-account.md#permissions-for-password-writeback) permissions for Microsoft Entra Connect|
 |HybridExchangePermissions|See [HybridExchangePermissions](../connect/how-to-connect-configure-ad-ds-connector-account.md#permissions-for-exchange-hybrid-deployment) permissions for Microsoft Entra Connect|
 |ExchangeMailPublicFolderPermissions| See [ExchangeMailPublicFolderPermissions](../connect/how-to-connect-configure-ad-ds-connector-account.md#permissions-for-exchange-mail-public-folders) permissions for Microsoft Entra Connect|
-|CloudHR| Applies 'Create/delete User objects' on 'This object and all descendant objects'|
+|UserGroupCreateDelete|Permissions for Microsoft Entra Cloud Sync's Group Provision to AD.  Applies 'Create/delete User objects' on 'This object and all descendant objects' and Applies 'Create/delete group objects' on 'This object and all descendant objects'|
 |All| Applies all the above permissions|
 
 You can use AADCloudSyncPermissions in one of two ways:

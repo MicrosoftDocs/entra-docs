@@ -2,7 +2,7 @@
 title: Security best practices for application properties
 description: Learn about the best practices and general guidance for security related application properties in Microsoft Entra ID.
 services: active-directory
-author: davidmu1
+author: omondiatieno
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
@@ -10,7 +10,7 @@ ms.topic: conceptual
 ms.workload: identity
 ms.date: 01/06/2023
 ms.custom: template-concept
-ms.author: davidmu
+ms.author: jomondi
 ms.reviewer: saumadan
 ---
 

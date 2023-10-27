@@ -171,7 +171,7 @@ At this point it's time to configure ServiceNow for resuming the entitlement man
     1. Select Http Request and then select "*New*". Enter a name, and select "POST" as the Http method.
     1. In the Http request, add the content for the Http query parameters using the following API Schema:
         ``` http
-        API Schema: {
+        {
         "data": {
             "@odata.type": "#microsoft.graph.accessPackageAssignmentRequestCallbackData",
             "customExtensionStageInstanceDetail": "Resuming-Assignment for user",
