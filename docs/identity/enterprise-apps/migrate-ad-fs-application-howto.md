@@ -14,7 +14,7 @@ ms.reviewer: smriti3
 ms.custom: not-enterprise-apps
 ---
 
-# Use the AD FS application migration (preview) to move AD FS apps to Microsoft Entra ID
+# Use AD FS application migration (preview) to move AD FS apps to Microsoft Entra ID
 
 In this article, you learn how to migrate your Active Directory Federation Services (AD FS) applications to Microsoft Entra ID using the AD FS application migration.
 
