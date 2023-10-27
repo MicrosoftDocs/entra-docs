@@ -207,6 +207,16 @@ The MicrosoftGraphActivityLogs provides administrators full visibility into all 
 
 ---
 
+### Public Preview - Microsoft Entra Verified ID quick setup
+
+**Type:** New feature   
+**Service category:** Other                     
+**Product capability:** Identity Governance            
+
+Quick Microsoft Entra Verified ID setup, available in preview, removes several configuration steps an admin needs to complete with a single click on a Get started button. The quick setup takes care of signing keys, registering your decentralized ID, and verifying your domain ownership. It also creates a Verified Workplace Credential for you. For more information, see: [Quick Microsoft Entra Verified ID setup](~/verified-id/verifiable-credentials-configure-tenant-quick.md).
+
+---
+
 ## September 2023
 
 ### Public Preview - Device-bound passkeys as an authentication method
