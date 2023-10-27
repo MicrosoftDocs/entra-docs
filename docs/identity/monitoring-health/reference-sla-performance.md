@@ -14,7 +14,7 @@ ms.reviewer: egreenberg14
 
 # SLA performance for Microsoft Entra ID
 
-As an identity admin, you may need to track the Microsoft Entra service-level agreement (SLA) performance to make sure Microsoft Entra ID can support your vital apps. This article shows how the Microsoft Entra service has performed according to the [SLA for Microsoft Entra ID](https://azure.microsoft.com/support/legal/sla/active-directory/v1_1/). 
+As an identity admin, you might need to track the Microsoft Entra service-level agreement (SLA) performance to make sure Microsoft Entra ID can support your vital apps. This article shows how the Microsoft Entra service has performed according to the [SLA for Microsoft Entra ID](https://azure.microsoft.com/support/legal/sla/active-directory/v1_1/). 
 
 You can use this article in discussions with app or business owners to help them understand the performance they can expect from Microsoft Entra ID. 
 
