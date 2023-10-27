@@ -10,7 +10,7 @@ ms.service: active-directory
 ms.subservice: develop
 ms.workload: identity
 ms.topic: reference
-ms.date: 10/15/2023
+ms.date: 10/27/2023
 ms.author: mimart
 
 #Customer intent: As a developer, I want to learn about the REST API schema so that I can add workflows to the attribute collection start event in the sign-up flow.
@@ -41,7 +41,7 @@ The request to your REST API is in the format shown below. In this example, the 
 
 The request contains the user attributes that are selected in the user flow for collection during self-service sign-up, including built-in attributes (for example, givenName and companyName) and [custom attributes that have already been defined](~/external-id/customers/how-to-define-custom-attributes.md) (for example, universityGroups, graduationYear, and onMailingList). Your REST API can't add new attributes.
 
-The request also contains user identities, including the user's email if it was used as a verified credential to sign up. The password is not sent.
+The request also contains user identities, including the user's email if it was used as a verified credential to sign up. The password isn't sent.
 
 Attributes in the start request contain their default values. For attributes with multiple values, the values are sent as a comma-delimited string. Because attributes haven't been collected from the user yet, most attributes won't have values assigned.
 
@@ -143,7 +143,7 @@ HTTP/1.1 200 OK
 }
 ```
 
-The **setPrefillValues** action specifies that the your external REST API is returning a response to prefill attributes with default values. Your REST API can't add new attributes. Any extra attributes that are returned but that aren't part of the attribute collection are ignored.
+The **setPrefillValues** action specifies that the external REST API is returning a response to prefill attributes with default values. Your REST API can't add new attributes. Any extra attributes that are returned but that aren't part of the attribute collection are ignored.
 
 ```json
 HTTP/1.1 200 OK

@@ -10,7 +10,7 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: how-to
 ms.workload: identity
-ms.date: 10/09/2023
+ms.date: 10/27/2023
 ms.author: mimart
 
 #Customer intent: As an application developer, I want to create and register a custom authentication extensions API so I can add logic to the authentication flow before or after attribute collection.
@@ -206,7 +206,7 @@ public class BlockedActions {
 
 # [**Prefill values**](#tab/start-set-prefill-values)
 
-Use this HTTP trigger to prefill the values associated with the user flow, for example from an external HR system or other data source. You can prefill values for built-in attributes (for example, address), custom user attributes (for example, loyalty number), and attributes that aren't shown on the Attribute Collection page but are stored with the user object (for example, the security default setting).
+Use this HTTP trigger to prefill the values associated with the user flow, for example from an external HR system or other data source. You can prefill values for built-in attributes (for example, address), custom user attributes (for example, loyalty number).
 
 ```csharp
 #r "Newtonsoft.Json"
@@ -402,7 +402,7 @@ public class BlockedActions {
 
 # [Modify values](#tab/submit-modify-collected-values)
 
-Use this HTTP trigger to modify attributes collection from the user. For example, you can change the format of a user-provided attribute. Or you can use an attribute to set the value for a hidden security defaults custom attribute. After attributes are modified, sign-up continues without notification to user. If notification is required, use the validate action.
+Use this HTTP trigger to modify attributes collection from the user. For example, you can change the format of a user-provided attribute. After attributes are modified, sign-up continues without notification to user. If notification is required, use the validate action.
 
 ```csharp
 #r "Newtonsoft.Json"
@@ -472,7 +472,7 @@ public class ModifiedAttributesAction {
 
 # [Validation error](#tab/submit-show-validation-error)
 
-Use this HTTP trigger to validate attributes entered by the user. For example, you can validate attributes against an external data store. You can validate built-in attributes (for example, country), custom user attributes (for example, loyalty number), and attributes that aren't shown on Attribute Collection page but are stored with the user object (for example, the “security default” setting).
+Use this HTTP trigger to validate attributes entered by the user. For example, you can validate attributes against an external data store. You can validate built-in attributes (for example, country), custom user attributes (for example, loyalty number).
 
 ```csharp
 #r "Newtonsoft.Json"

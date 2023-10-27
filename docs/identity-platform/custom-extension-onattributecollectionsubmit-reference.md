@@ -10,7 +10,7 @@ ms.service: active-directory
 ms.subservice: develop
 ms.workload: identity
 ms.topic: reference
-ms.date: 10/15/2023
+ms.date: 10/27/2023
 ms.author: mimart 
 
 #Customer intent: As a developer, I want to learn about the REST API schema so that I can add workflows to the attribute collection submit event in the sign-up flow.
