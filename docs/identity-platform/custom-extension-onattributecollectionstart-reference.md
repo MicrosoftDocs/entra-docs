@@ -121,7 +121,7 @@ POST https://exampleAzureFunction.azureWebsites.net/api/functionName
 
 ### Response from the external REST API
 
-Microsoft Entra ID expects a REST API response in the following format. The response value types should match the request value types, for example:
+Microsoft Entra ID expects a REST API response in the following format. The response value types match the request value types, for example:
 
 - If the request contains an attribute `graduationYear` with an `@odata.type` of `int64DirectoryAttributeValue`, the response should include a `graduationYear` attribute with an integer value, such as `2010`.
 - If the request contains an attribute with multiple values specified as a comma-delimited string, the response should contain the values in a comma-delimited string.

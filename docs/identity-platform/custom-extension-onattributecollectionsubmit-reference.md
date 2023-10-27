@@ -35,7 +35,7 @@ To develop your own REST API for the attribute collection submit event, use the 
 
 Your custom authentication extension in Microsoft Entra ID makes an HTTP call to your REST API with a JSON payload. The JSON payload contains user profile data, authentication context attributes, and information about the application the user wants to sign in to. The JSON attributes can be used to perform extra logic by your API.
 
-### Request to the customer-defined external API
+### Request to the external REST API
 
 The request to your REST API is in the format shown below. In this example, the request includes user identities information along with built-in attributes (givenName and companyName) and custom attributes (universityGroups, graduationYear, and onMailingList).
 
@@ -50,7 +50,7 @@ POST https://exampleAzureFunction.azureWebsites.net/api/functionName
 
 {
   "type": "microsoft.graph.authenticationEvent.attributeCollectionSubmit",
-  "source": "/tenants/{tenantId}/applications/{resourceAppId}",
+  "source": "/tenants/30000000-0000-0000-0000-000000000003/applications/<resourceAppguid>",
   "data": {
     "@odata.type": "microsoft.graph.onAttributeCollectionSubmitCalloutData",
     "tenantId": "30000000-0000-0000-0000-000000000003",
@@ -107,19 +107,9 @@ POST https://exampleAzureFunction.azureWebsites.net/api/functionName
       },
       "identities": [
         {
-          "signInType": "userPrincipalName",
+          "signInType": "email",
           "issuer": "contoso.onmicrosoft.com",
           "issuerAssignedId": "larissa.price@contoso.onmicrosoft.com"
-        },
-        {
-          "signInType": "userName",
-          "issuer": "contoso.onmicrosoft.com",
-          "issuerAssignedId": "larissa_price"
-        },
-        {
-          "signInType": "federated",
-          "issuer": "facebook.com",
-          "issuerAssignedId": "0000000000"
         }
       ]
     }
@@ -127,14 +117,14 @@ POST https://exampleAzureFunction.azureWebsites.net/api/functionName
 }
 ```
 
-### Response from the customer-defined external REST API
+### Response from the external REST API
 
 Microsoft Entra ID expects a REST API response in the following format. The response value types match the request value types, for example:
 
 - If the request contains an attribute `graduationYear` with an `@odata.type` of `int64DirectoryAttributeValue`, the response should include a `graduationYear` attribute with an integer value, such as `2010`.
 - If the request contains an attribute with multiple values specified as a comma-delimited string, the response should contain the values in a comma-delimited string.
 
-The **continueWithDefaultBehavior** action specifies that the customer-defined external REST API is returning a continuation response.
+The **continueWithDefaultBehavior** action specifies that your external REST API is returning a continuation response.
 
 ```json
 HTTP/1.1 200 OK
@@ -151,7 +141,7 @@ HTTP/1.1 200 OK
 }
 ```
 
-The **modifyAttributeValues** action specifies that the customer-defined external REST API returns a response to modify and override attributes with default values after the attributes are collected. Your REST API can't add new attributes. Any extra attributes that are returned but that aren't part of the attribute collection are ignored.
+The **modifyAttributeValues** action specifies that your external REST API returns a response to modify and override attributes with default values after the attributes are collected. Your REST API can't add new attributes. Any extra attributes that are returned but that aren't part of the attribute collection are ignored.
 
 
 ```json
@@ -173,7 +163,7 @@ HTTP/1.1 200 OK
 }
 ```
 
-The **showBlockPage** action specifies that the customer-defined external REST API is returning a blocking response.
+The **showBlockPage** action specifies that your external REST API is returning a blocking response.
 
 ```json
 HTTP/1.1 200 OK
@@ -191,7 +181,7 @@ HTTP/1.1 200 OK
 }
 ```
 
-The **showValidationError** action specifies that the customer-defined external REST API is returning a validation error and an appropriate message and status code.
+The **showValidationError** action specifies that your REST API is returning a validation error and an appropriate message and status code.
 
 ```json
 HTTP/1.1 200 OK
