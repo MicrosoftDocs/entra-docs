@@ -57,9 +57,9 @@ The SLA attainment is truncated at three places after the decimal. Numbers aren'
 
 <a name='how-is-azure-ad-sla-measured-'></a>
 
-### How is Microsoft Entra SLA measured?
+### How is SLA measured for Microsoft Entra ID?
 
-The Microsoft Entra SLA is measured in a way that reflects customer authentication experience, rather than simply reporting on whether the system is available to outside connections. This distinction means that the calculation is based on if:
+SLA for Microsoft Entra ID is measured in a way that reflects customer authentication experience, rather than simply reporting on whether the system is available to outside connections. This distinction means that the calculation is based on if:
 
 - Users can authenticate
 - Microsoft Entra ID successfully issues tokens for target apps after authentication
