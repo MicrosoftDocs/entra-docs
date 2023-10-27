@@ -26,3 +26,4 @@ You install the client on a device, such as computer or phone, and then use Glob
 ## Related content
 
 - [Global Secure Access Client for Windows (preview)](how-to-install-windows-client.md)
+- [Global Secure Access Client for Android (preview)](how-to-install-android-client.md)
