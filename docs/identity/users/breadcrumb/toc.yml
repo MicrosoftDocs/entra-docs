@@ -1,0 +1,12 @@
+items:
+- name: Entra
+  tocHref: /entra/
+  topicHref: /entra/index
+  items:
+  - name: Microsoft Entra ID
+    tocHref: /entra/identity/
+    topicHref: /entra/identity/index
+    items:
+    - name: Users
+      tocHref: /graph/
+      topicHref: /entra/identity/users/
