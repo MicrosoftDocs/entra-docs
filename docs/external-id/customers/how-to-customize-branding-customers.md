@@ -8,7 +8,7 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: ciam
 ms.topic: how-to
-ms.date: 07/12/2023
+ms.date: 10/27/2023
 ms.author: cmulligan
 ms.custom: it-pro
 
@@ -54,7 +54,7 @@ Before you customize any settings, the neutral default branding will appear in y
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the customer tenant you created earlier from the **Directories + subscriptions** menu.
 1. Browse to **Company Branding** > **Default sign-in** > **Edit**.
 
-   :::image type="content" source="media/how-to-customize-branding-customers/company-branding-default-edit-button.png" alt-text="Screenshot of the company branding edit button.":::
+   :::image type="content" source="media/how-to-customize-branding-customers/browse-to-company-branding.png" alt-text="Screenshot of the company branding option.":::
 
 ### To customize the sign-in page background and layout
 
