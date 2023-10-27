@@ -7,9 +7,9 @@ items:
     tocHref: /entra/external-id/
     topicHref: /entra/external-id/
     items:
-    - name: External ID Customers
+    - name: External ID for customers
       tocHref: /entra/identity-platform/
       topicHref: /entra/external-id/customers/
-    - name: External ID Customers
+    - name: External ID for customers
       tocHref: /entra/fundamentals/
       topicHref: /entra/external-id/customers/

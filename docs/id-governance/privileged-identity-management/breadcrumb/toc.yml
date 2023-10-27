@@ -4,8 +4,8 @@ items:
   topicHref: /entra/index
   items:
   - name: Microsoft Entra ID Governance
-    tocHref: /graph/
-    topicHref: /entra/id-governance
+    tocHref: /entra/id-governance/
+    topicHref: /entra/id-governance/index
     items:
     - name: Privileged Identity Management
       tocHref: /entra/identity/role-based-access-control/

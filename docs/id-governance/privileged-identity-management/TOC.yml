@@ -13,7 +13,7 @@
   - name: Roles you can't manage with PIM 
     href: pim-roles.md
   - name: Secure privileged access in Microsoft Entra ID
-    href: ~/identity/role-based-access-control/security-planning.md?toc=/entra/identity//privileged-identity-management/toc.json?bc=/entra/identity/id-governance/privileged-identity-management/breadcrumb/toc.json
+    href: ~/identity/role-based-access-control/security-planning.md?toc=/entra/identity/privileged-identity-management/toc.json?bc=/entra/identity/id-governance/privileged-identity-management/breadcrumb/toc.json
   - name: Overview dashboards
     href: pim-resource-roles-overview-dashboards.md
   - name: Email notifications
@@ -72,9 +72,9 @@
     - name: Microsoft Entra roles - Microsoft Graph
       items:
       - name: Rules in PIM
-        href: /graph/identity-governance-pim-rules-overview??toc=/entra/identity//privileged-identity-management/toc.json?bc=/entra/identity/id-governance/privileged-identity-management/breadcrumb/toc.json
+        href: /graph/identity-governance-pim-rules-overview??toc=/entra/identity/privileged-identity-management/toc.json?bc=/entra/identity/id-governance/privileged-identity-management/breadcrumb/toc.json
       - name: Customize and update rules
-        href: /graph/identity-governance-pim-rules-overview??toc=/entra/identity//privileged-identity-management/toc.json?bc=/entra/identity/id-governance/privileged-identity-management/breadcrumb/toc.json
+        href: /graph/identity-governance-pim-rules-overview??toc=/entra/identity/privileged-identity-management/toc.json?bc=/entra/identity/id-governance/privileged-identity-management/breadcrumb/toc.json
     - name: Azure roles
       href: pim-resource-roles-configure-role-settings.md
     - name: Groups
@@ -84,7 +84,7 @@
     - name: Microsoft Entra roles
       href: pim-how-to-configure-security-alerts.md
     - name: Microsoft Entra roles - Microsoft Graph
-      href: /graph/how-to-pim-alerts??toc=/entra/identity//privileged-identity-management/toc.json?bc=/entra/identity/id-governance/privileged-identity-management/breadcrumb/toc.json
+      href: /graph/how-to-pim-alerts??toc=/entra/identity/privileged-identity-management/toc.json?bc=/entra/identity/id-governance/privileged-identity-management/breadcrumb/toc.json
     - name: Azure roles
       href: pim-resource-roles-configure-alerts.md
   - name: Audits 
@@ -106,11 +106,11 @@
       - name: Complete an access review
         href: pim-complete-roles-and-resource-roles-review.md
       - name: Review access to privileged roles - Microsoft Graph
-        href: /graph/tutorial-accessreviews-roleassignments??toc=/entra/identity//privileged-identity-management/toc.json?bc=/entra/identity/id-governance/privileged-identity-management/breadcrumb/toc.json
+        href: /graph/tutorial-accessreviews-roleassignments??toc=/entra/identity/privileged-identity-management/toc.json?bc=/entra/identity/id-governance/privileged-identity-management/breadcrumb/toc.json
   - name: Discovery & Insights for Microsoft Entra roles
     href: pim-security-wizard.md
   - name: Elevate access to manage Azure subscriptions
-    href: /azure/role-based-access-control/elevate-access-global-admin??toc=/entra/identity//privileged-identity-management/toc.json?bc=/entra/identity/id-governance/privileged-identity-management/breadcrumb/toc.json
+    href: /azure/role-based-access-control/elevate-access-global-admin??toc=/entra/identity/privileged-identity-management/toc.json?bc=/entra/identity/id-governance/privileged-identity-management/breadcrumb/toc.json
   - name: Troubleshoot resource access denied
     href: pim-troubleshoot.md
 - name: Reference

@@ -4,8 +4,5 @@ items:
   topicHref: /entra/index
   items:
   - name: Architecture
-    tocHref: /entra/architecture/
-    topicHref: /entra/architecture/
-  - name: Architecture
     tocHref: /security/benchmark/azure/baselines/
     topicHref: /entra/architecture/
