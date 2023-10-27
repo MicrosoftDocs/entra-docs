@@ -8,7 +8,7 @@ manager: celestedg
 ms.service: active-directory
 ms.subservice: ciam
 ms.topic: tutorial
-ms.date: 27/10/2023
+ms.date: 10/27/2023
 ms.author: godonnell
 
 #Customer intent: As a developer I want to add sign-in and sign-out functionality to my Angular single-page app
@@ -198,7 +198,7 @@ In this tutorial;
 
 1. In your browser, enter `http://localhost:4200` to open the application.
 
-       :::image type="content" source="media/tutorial-single-page-app-angular-sign-in-sign-out/angular-01-not-signed-in.png" alt-text="Web browser displaying sign-in dialog":::
+    :::image type="content" source="media/tutorial-single-page-app-angular-sign-in-sign-out/angular-01-not-signed-in.png" alt-text="Web browser displaying sign-in dialog":::
     
 1. Click the **Login** button in the top right corner of the screen.
 1. Select **Accept** to grant the application access to your profile information.
