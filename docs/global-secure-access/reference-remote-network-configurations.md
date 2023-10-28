@@ -5,27 +5,28 @@ author: shlipsey3
 ms.author: sarahlipsey
 manager: amycolannino
 ms.topic: reference
-ms.date: 09/13/2023
+ms.date: 10/05/2023
 ms.service: network-access
 ms.custom: 
 ---
 
 # Global Secure Access remote network configurations
 
-Device links are the physical routers that connect your remote networks, such as branch locations, to Global Secure Access (preview). There's a specific set of combinations you must use if you choose the **Custom** option when adding device links. If you choose the **Default** option, you must enter a specific combination of properties on the customer premises equipment (CPE) device.
+Device links are the physical routers that connect your remote networks, such as branch locations, to Global Secure Access (preview). There's a specific set of combinations you must use if you choose the **Custom** option when adding device links. If you choose the **Default** option, you must enter a specific combination of properties on the customer premises equipment (CPE).
 
 ## Default IPSec/IKE configurations
 
-When you select **Default** as your IPsec/IKE policy when configuring remote network device links in the Microsoft Entra admin center, we expect the following combinations in the tunnel handshake.
+When you select **Default** as your IPsec/IKE policy when configuring remote network device links in the Microsoft Entra admin center, we expect the following combinations in the tunnel handshake. Each value in the combination is entered on your CPE.
 
-*You must specify one of these combinations on your customer premise equipment (CPE).*
+> [!IMPORTANT]
+> You must specify both a Phase 1 *and* Phase 2 combination on your CPE.
 
 ### IKE Phase 1 combinations
 
 | Properties | Combination 1 | Combination 2 | Combination 3 | Combination 4 | Combination 5 |
 | --- | --- | --- | --- | --- | --- |
 | IKE encryption | GCMAES256 | GCMAES128 | AES256 | AES128 | AES256 |
-| IKEv2 integrity | SHA384 | SHA256 | SHA384 | SHA256 | SHA256 |
+| IKE integrity | SHA384 | SHA256 | SHA384 | SHA256 | SHA256 |
 | DH group | DHGroup24 | DHGroup24 | DHGroup24 | DHGroup24 | DHGroup2 |
 
 ### IKE Phase 2 combinations
@@ -53,14 +54,14 @@ The IPSec encryption and integrity configurations are provided in the following 
 | GCMAES128  | GCMAES128  |
 | GCMAES192 | GCMAES192 |
 | GCMAES256 | GCMAES256 |
-| None | SHA24 |
+| None | SHA256 |
 
 - PFS group - No limitation.
 - SA lifetime - must be >300 seconds.
 
 ### Valid autonomous system number (ASN)
 
-You can use any values *except* for the following reserved ASNs:
+You can use any 2 byte values (between 1 to 65534) *except* for the following reserved ASNs:
 
 - Azure reserved ASNs: 12076, 65517,65518, 65519, 65520, 8076, 8075
 - IANA reserved ASNs: 23456, >= 64496 && <= 64511, >= 65535 && <= 65551, 4294967295

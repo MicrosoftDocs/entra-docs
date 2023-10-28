@@ -1,0 +1,24 @@
+{
+    "$schema": "https://whatsnewapi.azurewebsites.net/schema",
+    "docSetProductName": "Microsoft Entra ID application provisioning",
+    "rootDirectory": "docs/identity/app-provisioning/",
+    "docLinkSettings": {
+        "linkFormat": "relative",
+        "relativeLinkPrefix": "/entra/identity/app-provisioning"
+    },
+    "inclusionCriteria": {
+        "excludePullRequestTitles": true,
+        "minAdditionsToFile" : 10,
+        "maxFilesChanged": 50,
+        "labels": [
+            "label:active-directory/svc",
+            "label:app-provisioning/subsvc"
+        ]
+    },
+    "areas": [
+        {
+            "name": ".",
+            "heading": "Microsoft Entra ID application provisioning"
+        }
+    ]
+}
