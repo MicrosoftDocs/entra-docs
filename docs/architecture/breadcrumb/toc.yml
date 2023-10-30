@@ -1,0 +1,8 @@
+items:
+- name: Microsoft Entra
+  tocHref: /entra/
+  topicHref: /entra/index
+  items:
+  - name: Architecture
+    tocHref: /security/benchmark/azure/baselines/
+    topicHref: /entra/architecture/

@@ -36,4 +36,3 @@ We prioritize the protection of your data and understand the importance of trans
 
 - **Europe** - Data from the European customers are processed in the Global Secure Access Europe datacenters. 
 - **All Other Locations** - Data from any other customers are processed in the Global Secure Access U.S. datacenters.
-- 

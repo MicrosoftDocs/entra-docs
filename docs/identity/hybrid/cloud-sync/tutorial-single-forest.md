@@ -75,7 +75,7 @@ Use the following steps to configure and start the provisioning:
 
 ## Verify users are created and synchronization is occurring
 
-You'll now verify that the users that you had in your on-premises directory have been synchronized and now exist in your Microsoft Entra tenant. The sync operation may take a few hours to complete. To verify users are synchronized, follow these steps:
+You'll now verify that the users that you had in your on-premises directory that are in scope of synchronization have been synchronized and now exist in your Microsoft Entra tenant. The sync operation may take a few hours to complete. To verify users are synchronized, follow these steps:
 
 
  1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).

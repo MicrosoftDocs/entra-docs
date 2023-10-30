@@ -40,8 +40,8 @@ To use the AD FS application migration:
   - Application Administrator
   - Global Reader (read-only access)
   - Report Reader (read-only access)
-- Microsoft Entra Connect health should be installed on the on-premises environments, alongside Microsoft Entra Connect health AD FS health agents.
-  - [Microsoft Entra Connect Heath](https://www.microsoft.com/download/details.aspx?id=47594)
+- Microsoft Entra Connect should be installed on the on-premises environments, alongside Microsoft Entra Connect health AD FS health agents.
+  - [Microsoft Entra Connect](https://www.microsoft.com/download/details.aspx?id=47594)
   - [Microsoft Entra Connect Heath AD FS agents](https://go.microsoft.com/fwlink/?LinkID=518973)
 
 There are couple reasons why you won't see all the applications that you're expecting after you have installed Microsoft Entra Connect Health agents for AD FS:

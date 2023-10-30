@@ -1,3 +1,4 @@
+items:
   - name: Application Proxy documentation
     href: index.yml
   - name: Overview
@@ -13,7 +14,7 @@
     - name: Add an on-premises app with Application Proxy
       href: application-proxy-add-on-premises-application.md
     - name: Configure Application Proxy - Microsoft Graph
-      href: /graph/application-proxy-configure-api?toc=/entra/identity/app-proxy/toc.json&bc=/entra/identity/app-proxy/breadcrumb/toc.json
+      href: /graph/application-proxy-configure-api?context=/entra/identity/app-proxy/context/app-proxy-context.json
   - name: Samples
     expanded: false
     items: 
