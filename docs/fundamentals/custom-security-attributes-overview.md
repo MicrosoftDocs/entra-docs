@@ -188,30 +188,12 @@ Microsoft Entra ID provides built-in roles to work with custom security attribut
 > By default, [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) and other administrator roles do not have permissions to read, define, or assign custom security attributes.
 
 ## Microsoft Graph APIs
-    
+
 You can manage custom security attributes programmatically using Microsoft Graph APIs. For more information, see [Overview of custom security attributes using the Microsoft Graph API](/graph/api/resources/custom-security-attributes-overview).
 
 You can use an API client such as [Graph Explorer](/graph/graph-explorer/graph-explorer-overview) or Postman to more easily try the Microsoft Graph APIs for custom security attributes. 
 
 ![Screenshot that shows a Microsoft Graph API call for custom security attributes.](./media/custom-security-attributes-overview/graph-explorer-success.png)
-
-## Known issues
-
-Here are some of the known issues with custom security attributes:
-
-- Global Administrators can read audit logs for custom security attribute definitions and assignments.
-- If you have a Microsoft Entra ID P2 license, you can't add eligible role assignments at attribute set scope.
-- If you have a Microsoft Entra ID P2 license, the **Assigned roles** page for a user does not list permanent role assignments at attribute set scope. The role assignments exist, but aren't listed.
-
-Depending on whether you have a Microsoft Entra ID P1 or P2 license, here are the role assignment tasks that are currently supported for custom security attribute roles:
-
-| Role assignment task | Premium P1 | Premium P2 |
-| --- | :---: | :---: |
-| Permanent role assignments | :white_check_mark: | :white_check_mark: |
-| Eligible role assignments | n/a | :white_check_mark: |
-| Permanent role assignments at attribute set scope | :white_check_mark: | :white_check_mark: |
-| Eligible role assignments at attribute set scope | n/a | :x: |
-| **Assigned roles** page lists permanent role assignments at attribute set scope | :white_check_mark: | :warning:<br/>Role assignments exist, but aren't listed  |
 
 ## License requirements
 
