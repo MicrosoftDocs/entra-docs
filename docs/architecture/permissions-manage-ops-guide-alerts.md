@@ -235,8 +235,8 @@ In general, when you receive an activity alert, we recommend you investigate the
 > Because activity alerts are customizable, responses vary based on implemented activity alert types.
 
 ## Next steps
+Configuring alerts is an important operational component of Microsoft Entra Permissions Management. These alerts enable you to continuously monitor your environment for scenarios such as overprivileged accounts and inactive identities as well as notify you of potential threats, service disruptions, and anomalous permissions usage. For additional guidance about Microsoft Entra Permissions Management operations, see the following resources:
 
-* [Introduction](permissions-manage-ops-guide-intro.md)
 * [Phase 1: Implement the framework to manage at scale](permissions-manage-ops-guide-one.md)
 * [Phase 2: Right-size permissions and automate the principle of least privilege](permissions-manage-ops-guide-two.md)
 * [Phase 3: Configure Microsoft Entra Permissions Management monitoring and alerting](permissions-manage-ops-guide-three.md)
