@@ -20,7 +20,7 @@ ms.author: jricketts
 
 ### Define Microsoft Entra Permissions Management administrators
 
-To begin operationalizing Microsoft Entra Permissions Management, establish two to five Permissions Management Administrators who delegate permissions in the product, configure key settings, and create and manage your organization’s folder structure.
+To begin operationalizing Microsoft Entra Permissions Management, establish two to five Permissions Management Administrators who delegate permissions in the product, configure key settings, and create and manage your organization’s configuration.
 
 >[!IMPORTANT]
 > Microsoft Entra Permissions Management relies on users with valid email addresses. We recommend that your Permissions Management Administrators have mailbox enabled accounts.
@@ -43,7 +43,7 @@ To help streamline your environment, see [create folders to organize your author
 
 Microsoft Entra Permissions Management has a group-based access system that uses Microsoft Entra ID security groups to grant permissions to different authorization systems. To delegate permissions, your IAM team creates Microsoft Entra ID security groups that map to authorization system owners, and Permissions Management responsibilities you define. Ensure users with shared ownership and responsibilities in the product are in the same security group.
 
-We recommend you use [PIM for Groups](~/id-governance/privileged-identity-management/concept-pim-for-groups.md). This provides JIT access to Permissions Management to users and aligns with Zero Trust JIT and just-enough-access (JEA) principles.
+We recommend you use [PIM for Groups](~/id-governance/privileged-identity-management/concept-pim-for-groups.md). This provides JIT access to Permissions Management to users and aligns with Zero Trust JIT and just-enough-access principles.
 
 To create Microsoft Entra ID security groups, see [manage groups and group membership](~/fundamentals/how-to-manage-groups.md).
 
@@ -51,7 +51,7 @@ To create Microsoft Entra ID security groups, see [manage groups and group membe
 
 After Microsoft Entra ID security groups are created, a Permissions Management Administrator grants security groups needed permissions.
 
-At a minimum, ensure security groups are granted Viewer permissions for the authorization systems they are responsible for. Use Controller permissions for security groups with members that perform remediation actions. [Learn more about Microsoft Entra Permissions Management roles and permission levels](~/permissions-management/product-roles-permissions.md).
+At a minimum, ensure security groups are granted **Viewer** permissions for the authorization systems they are responsible for. Use **Controller** permissions for security groups with members that perform remediation actions. [Learn more about Microsoft Entra Permissions Management roles and permission levels](~/permissions-management/product-roles-permissions.md).
 
 For more on managing users and groups in Permissions Management:
 
