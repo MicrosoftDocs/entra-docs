@@ -177,7 +177,7 @@ items:
       href: ops-guide-govern.md
     - name: Operations
       href: ops-guide-ops.md
-  - name: Microsoft Entra Permissions Management Operationalization Guide
+  - name: Microsoft Entra Permissions Management Operations reference
     items:
     - name: Introduction
       href: permissions-manage-ops-guide-intro.md
