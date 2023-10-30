@@ -6,7 +6,7 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: identity-protection
 ms.topic: conceptual
-ms.date: 10/02/2023
+ms.date: 10/30/2023
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -50,7 +50,7 @@ Real-time detections may not show up in reporting for 5 to 10 minutes. Offline d
 | --- | --- | --- |
 | [Atypical travel](#atypical-travel) | Offline | Premium |
 | [Anomalous Token](#anomalous-token) | Offline | Premium |
-| [Token Issuer Anomaly](#token-issuer-anomaly) | Offline | Premium |
+| [Anomalous Token](#anomalous-token) | Real-time or Offline | Premium |
 | [Malware linked IP address](#malware-linked-ip-address-deprecated) | Offline | Premium **This detection has been deprecated.** |
 | [Suspicious browser](#suspicious-browser) | Offline | Premium |
 | [Unfamiliar sign-in properties](#unfamiliar-sign-in-properties) | Real-time | Premium |
@@ -104,7 +104,7 @@ The algorithm ignores obvious "false positives" contributing to the impossible t
 
 #### Anomalous token 
 
-**Calculated offline**. This detection indicates that there are abnormal characteristics in the token such as an unusual token lifetime or a token that is played from an unfamiliar location. This detection covers Session Tokens and Refresh Tokens. 
+**Calculated in real-time or offline**. This detection indicates that there are abnormal characteristics in the token such as an unusual token lifetime or a token that is played from an unfamiliar location. This detection covers Session Tokens and Refresh Tokens.
 
 > [!NOTE] 
 > Anomalous token is tuned to incur more noise than other detections at the same risk level. This tradeoff is chosen to increase the likelihood of detecting replayed tokens that may otherwise go unnoticed. Because this is a high noise detection, there's a higher than normal chance that some of the sessions flagged by this detection are false positives. We recommend investigating the sessions flagged by this detection in the context of other sign-ins from the user. If the location, application, IP address, User Agent, or other characteristics are unexpected for the user, the tenant admin should consider this risk as an indicator of potential token replay.
