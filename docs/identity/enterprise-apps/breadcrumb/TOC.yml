@@ -8,10 +8,10 @@
     items:
     - name: Enterprise applications
       tocHref: /azure/active-directory-b2c/
-      topicHref: /entra/identity/enterprise-apps/index
+      topicHref: /entra/identity/enterprise-apps/
     - name: Enterprise applications
       tocHref: /graph/
-      topicHref: /entra/identity/enterprise-apps/index
+      topicHref: /entra/identity/enterprise-apps/
     - name: Enterprise applications
       tocHref: /entra/identity-platform/
-      topicHref: /entra/identity/enterprise-apps/index
+      topicHref: /entra/identity/enterprise-apps/
