@@ -1,5 +1,5 @@
 ---
-title: Manage access to custom security attributes in Microsoft Entra ID (Preview)
+title: Manage access to custom security attributes in Microsoft Entra ID
 description: Learn how to manage access to custom security attributes in Microsoft Entra ID.
 services: active-directory
 author: rolyon
@@ -14,11 +14,7 @@ ms.date: 10/01/2023
 ms.collection: M365-identity-device-management
 ---
 
-# Manage access to custom security attributes in Microsoft Entra ID (Preview)
-
-> [!IMPORTANT]
-> Custom security attributes are currently in PREVIEW.
-> For more information about previews, see [Universal License Terms For Online Services](https://www.microsoft.com/licensing/terms/product/ForOnlineServices/all).
+# Manage access to custom security attributes in Microsoft Entra ID
 
 For people in your organization to effectively work with [custom security attributes](custom-security-attributes-overview.md), you must grant the appropriate access. Depending on the information you plan to include in custom security attributes, you might want to restrict custom security attributes or you might want to make them broadly accessible in your organization. This article describes how to manage access to custom security attributes.
 

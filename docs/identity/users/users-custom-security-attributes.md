@@ -1,5 +1,5 @@
 ---
-title: Assign, update, list, or remove custom security attributes for a user (Preview)
+title: Assign, update, list, or remove custom security attributes for a user
 description: Assign, update, list, or remove custom security attributes for a user in Microsoft Entra ID. 
 services: active-directory 
 author: rolyon
@@ -15,11 +15,7 @@ ms.reviewer:
 ms.collection: M365-identity-device-management
 ---
 
-# Assign, update, list, or remove custom security attributes for a user (Preview)
-
-> [!IMPORTANT]
-> Custom security attributes are currently in PREVIEW.
-> For more information about previews, see [Universal License Terms For Online Services](https://www.microsoft.com/licensing/terms/product/ForOnlineServices/all).
+# Assign, update, list, or remove custom security attributes for a user
 
 [Custom security attributes](~/fundamentals/custom-security-attributes-overview.md) in Microsoft Entra ID, part of Microsoft Entra, are business-specific attributes (key-value pairs) that you can define and assign to Microsoft Entra objects. For example, you can assign custom security attribute to filter your employees or to help determine who gets access to resources. This article describes how to assign, update, list, or remove custom security attributes for Microsoft Entra ID.
 

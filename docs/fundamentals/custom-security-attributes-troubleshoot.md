@@ -1,5 +1,5 @@
 ---
-title: Troubleshoot custom security attributes in Microsoft Entra ID (Preview)
+title: Troubleshoot custom security attributes in Microsoft Entra ID
 description: Learn how to troubleshoot custom security attributes in Microsoft Entra ID.
 services: active-directory
 author: rolyon
@@ -13,11 +13,7 @@ ms.date: 06/29/2023
 ms.collection: M365-identity-device-management
 ---
 
-# Troubleshoot custom security attributes in Microsoft Entra ID (Preview)
-
-> [!IMPORTANT]
-> Custom security attributes are currently in PREVIEW.
-> For more information about previews, see [Universal License Terms For Online Services](https://www.microsoft.com/licensing/terms/product/ForOnlineServices/all).
+# Troubleshoot custom security attributes in Microsoft Entra ID
 
 ## Symptom - Custom security attributes page is disabled
 

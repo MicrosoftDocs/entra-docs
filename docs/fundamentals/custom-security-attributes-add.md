@@ -1,5 +1,5 @@
 ---
-title: Add or deactivate custom security attribute definitions in Microsoft Entra ID (Preview)
+title: Add or deactivate custom security attribute definitions in Microsoft Entra ID
 description: Learn how to add new custom security attribute definitions or deactivate custom security attribute definitions in Microsoft Entra ID.
 services: active-directory
 author: rolyon
@@ -14,11 +14,7 @@ ms.date: 10/01/2023
 ms.collection: M365-identity-device-management
 ---
 
-# Add or deactivate custom security attribute definitions in Microsoft Entra ID (Preview)
-
-> [!IMPORTANT]
-> Custom security attributes are currently in PREVIEW.
-> For more information about previews, see [Universal License Terms For Online Services](https://www.microsoft.com/licensing/terms/product/ForOnlineServices/all).
+# Add or deactivate custom security attribute definitions in Microsoft Entra ID
 
 [Custom security attributes](custom-security-attributes-overview.md) in Microsoft Entra ID are business-specific attributes (key-value pairs) that you can define and assign to Microsoft Entra objects. This article describes how to add, edit, or deactivate custom security attribute definitions.
 

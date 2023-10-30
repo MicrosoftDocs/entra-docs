@@ -1,5 +1,5 @@
 ---
-title: What are custom security attributes in Microsoft Entra ID? (Preview)
+title: What are custom security attributes in Microsoft Entra ID?
 description: Learn about custom security attributes in Microsoft Entra ID.
 services: active-directory
 author: rolyon
@@ -13,11 +13,7 @@ ms.date: 10/01/2023
 ms.collection: M365-identity-device-management
 ---
 
-# What are custom security attributes in Microsoft Entra ID? (Preview)
-
-> [!IMPORTANT]
-> Custom security attributes are currently in PREVIEW.
-> For more information about previews, see [Universal License Terms For Online Services](https://www.microsoft.com/licensing/terms/product/ForOnlineServices/all).
+# What are custom security attributes in Microsoft Entra ID?
 
 Custom security attributes in Microsoft Entra ID are business-specific attributes (key-value pairs) that you can define and assign to Microsoft Entra objects. These attributes can be used to store information, categorize objects, or enforce fine-grained access control over specific Azure resources. Custom security attributes can be used with [Azure attribute-based access control (Azure ABAC)](/azure/role-based-access-control/conditions-overview).
 
