@@ -16,7 +16,7 @@ ms.author: jricketts
 
 ## Define a delegated administration model
 
-**Suggested owner: Information Security Architecture**
+**recommended owner: Information Security Architecture**
 
 ### Define Microsoft Entra Permissions Management administrators
 
@@ -61,11 +61,11 @@ For more on managing users and groups in Permissions Management:
 
 ## Determine authorization system lifecycle management
 
-**Suggested owners: Information Security Architecture and Cloud Infrastructure**
+**Recommended owners: Information Security Architecture and Cloud Infrastructure**
 
-As new authorization systems are created, and current authorization systems evolve, create and maintain a well-defined process for changes in Microsoft Entra Permissions Management. The following table outlines tasks and suggested owners.
+As new authorization systems are created, and current authorization systems evolve, create and maintain a well-defined process for changes in Microsoft Entra Permissions Management. The following table outlines tasks and recommended owners.
 
-|Task|Suggested owner|
+|Task|Recommended owner|
 |---|---|
 |Define the discovery process for new authorization systems created in your environment|Information Security Architecture|
 |Define triage and onboarding processes for new authorization systems to Permissions Management|Information Security Architecture|
@@ -74,7 +74,7 @@ As new authorization systems are created, and current authorization systems evol
 
 ## Define a Permissions Creep Index strategy
 
-**Suggested owner: Information Security Architecture**
+**Recommended owner: Information Security Architecture**
 
 We recommend you define goals and use cases for how Permissions Creep Index (PCI) drives Information Security Architecture activity and reporting. This team can define, and help others meet, target PCI thresholds for your organization.
 
