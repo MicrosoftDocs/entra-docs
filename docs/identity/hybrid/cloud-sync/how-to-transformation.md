@@ -20,7 +20,7 @@ For more information on cloud sync attributes, see [Understanding the Microsoft 
 
 
 ## Retrieve the schema
-To retrieve the schema, follow the steps in [View the schema](concept-attributes.md#view-the-schema). 
+To retrieve the schema, follow the steps in [View the synchronization schema](concept-attributes.md#view-the-synchronization-schema). 
 
 ## Custom attribute mapping
 To add a custom attribute mapping, follow these steps.
