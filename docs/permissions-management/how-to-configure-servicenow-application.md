@@ -23,12 +23,14 @@ Permissions Management integrates with ServiceNow to simplify Permissions on Dem
 The ServiceNow app for Microsoft Entra Permissions Management offers the following capabilities:
 
 - Request, approve, and reject permissions on demand: You can request permissions for yourself or workload identities using a simple form in ServiceNow. You can also approve or reject requests from team members using ServiceNow notifications and approvals.
+
 :::image type="content" source="media/configure-servicenow-application/servicenow-permissions-management-dashboard.png" alt-text="ServiceNow Microsoft Entra Permissions Management dashboard." lightbox="media/configure-servicenow-application/servicenow-permissions-management-dashboard.png":::
 
-- Audit permissions requests and limit access to users/groups: You can view and track your permissions and access requests in a dashboard in ServiceNow and generate reports and audit logs to monitor and verify your permissions and compliance. Configure Manage users and groups by assigning them access only to specific authorization systems, policies, and roles. 
+- Audit permissions requests and limit access to users/groups: You can view and track your permissions and access requests in a dashboard in ServiceNow and generate reports and audit logs to monitor and verify your permissions and compliance. Configure Manage users and groups by assigning them access only to specific authorization systems, policies, and roles.
+
 :::image type="content" source="media/configure-servicenow-application/servicenow-portal.png" alt-text="ServiceNow Microsoft Entra Permissions Management portal." lightbox="media/configure-servicenow-application/servicenow-portal.png":::
 
-- Notify users when their privileges are assigned or revoked: You can send notifications to users when they have new permissions that are assigned, or if current permissions are modified. 
+- Notify users when their privileges are assigned or revoked: You can send notifications to users when they have new permissions that are assigned, or if current permissions are modified. [Do they get notified by email or text, both?]
 
 
 ## How to configure ServiceNow with Microsoft Entra Permissions Management
