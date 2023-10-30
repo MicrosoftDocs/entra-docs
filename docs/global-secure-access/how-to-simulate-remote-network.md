@@ -20,8 +20,8 @@ Building this functionality out in Azure provides organizations the ability to u
 | Azure resource | Traditional on-premises component |
 | --- | --- |
 | **[Virtual network](#virtual-network)** | Your on-premises IP address space. |
-| **[Virtual network gateway](#virtual-network-gateway)** | Your on-premises router, sometimes referred to as customer premises equipment (CPE). |
-| **[Local network gateway](#3-create-local-network-gateway)** | The Microsoft gateway that your router (Azure virtual network gateway) creates an IPsec tunnel to. |
+| **[Virtual network gateway](#create-a-virtual-network-gateway)** | Your on-premises router, sometimes referred to as customer premises equipment (CPE). |
+| **[Local network gateway](#create-local-network-gateway)** | The Microsoft gateway that your router (Azure virtual network gateway) creates an IPsec tunnel to. |
 | **[Connection](#4-create-site-to-site-s2s-vpn-connection)** | IPsec VPN tunnel created between the virtual network gateway and local network gateway. |
 | **[Virtual machine](#virtual-machine)** | Client devices on your on-premises network. |
 
