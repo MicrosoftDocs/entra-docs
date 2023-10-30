@@ -45,7 +45,7 @@ To enable SSO for an application:
 1. Select **SAML** to open the SSO configuration page. After the application is configured, users can sign in to it by using their credentials from the Microsoft Entra tenant.
 1. The process of configuring an application to use Microsoft Entra ID for SAML-based SSO varies depending on the application. For any of the enterprise applications in the gallery, use the **configuration guide** link to find information about the steps needed to configure the application. The steps for the **Microsoft Entra SAML Toolkit 1** are listed in this article.
 
-    :::image type="content" source="media/add-application-portal-setup-sso/saml-configuration.png" alt-text="Configure single sign-on for an enterprise application.":::
+    :::image type="content" source="media/add-application-portal-setup-sso/saml-configuration.png" alt-text="Screenshot showing how to configure single sign-on for an enterprise application.":::
 
 1. In the **Set up Microsoft Entra SAML Toolkit 1** section, record the values of the **Login URL**, **Microsoft Entra Identifier**, and **Logout URL** properties to be used later.
 
@@ -72,7 +72,7 @@ To register a user account with the application:
 1. Open a new browser window and browse to the sign-in URL for the application. For the **Microsoft Entra SAML Toolkit** application, the address is `https://samltoolkit.azurewebsites.net`.
 1. Select **Register** in the upper right corner of the page.
 
-    :::image type="content" source="media/add-application-portal-setup-sso/toolkit-register.png" alt-text="Register a user account in the Microsoft Entra SAML Toolkit application.":::
+    :::image type="content" source="media/add-application-portal-setup-sso/toolkit-register.png" alt-text="Screenshot showing where to register a user account in the Microsoft Entra SAML Toolkit application.":::
 
 1. For **Email**, enter the email address of the user that can access the application. Ensure that the user account is already assigned to the application.
 1. Enter a **Password** and confirm it.
