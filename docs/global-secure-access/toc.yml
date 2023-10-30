@@ -92,6 +92,8 @@ items:
     href: reference-remote-network-configurations.md
   - name: Points of presence
     href: reference-points-of-presence.md
+  - name: Data storage and privacy
+    href: reference-data-storage-and-privacy.md
   - name: Microsoft Graph APIs
     href: /graph/api/resources/networkaccess-global-secure-access-api-overview
   - name: FAQs
