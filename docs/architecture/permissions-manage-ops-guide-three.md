@@ -16,13 +16,13 @@ ms.author: jricketts
 
 ## Implement a reporting system for key stakeholders
 
-**Suggested owner: Information Security Architecture**
+**Recommended owner: Information Security Architecture**
 
 ### Identify key stakeholders who consume reports
 
-Microsoft Entra Permissions Management generates system reports for visibility and insights into cloud environments. To help define who consumes reports in your organization, note the following suggested audiences:
+Microsoft Entra Permissions Management generates system reports for visibility and insights into cloud environments. To help define who consumes reports in your organization, note the following recommended audiences:
 
-|Report|Suggested audience|
+|Report|Recommended audience|
 |---|---|
 |Access Key Entitlements and Usage|Information Security Operations, target authorization system technical owners|
 |User Entitlements and Usage|IAM, Security Assurance and Audit, target authorization system technical owners|
