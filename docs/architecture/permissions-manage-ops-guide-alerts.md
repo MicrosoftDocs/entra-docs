@@ -43,7 +43,7 @@ Statistical anomaly alerts are useful for threat detection, because unusual acti
 * **Identity Performed Tasks with Unusual Timing**: This alert is for threat detection. Identities performing tasks outside their typical hours might indicate a compromised account, or a user accessing resources from an atypical location.
 * **Identity Performed Tasks with Unusual Types**: This alert is for threat detection. Identities suddenly performing tasks they don't usually perform might indicate a compromised account.
 
-For more on pre-configured alerts, see [create and view statistical anomaly alerts and alert triggers](~/permissions-management/product-statistical-anomalies.md).
+For more on these pre-configured alerts, see [create and view statistical anomaly alerts and alert triggers](~/permissions-management/product-statistical-anomalies.md).
 
 ### Respond to statistical anomaly alerts
 
@@ -143,11 +143,11 @@ The following list of recommended permissions analytics alerts is for supported 
 Remediation varies for each alert. There are valid use cases that trigger permissions analytics alerts. For example, your admin accounts or emergency access accounts might trigger alerts for overprovisioned active users. If no remediation is needed, you can apply the **ck_exclude_from_pci** and **ck_exclude_from_reports** tags to the identity. 
 
 * **ck_exclude_from_pci** removes the identity from the authorization system PCI score 
-* **ck_exclude_from_reports** removes identity from permissions analytics report findings
+* **ck_exclude_from_reports** removes the identity from Permissions Analytics Report findings
 
 ## Activity alerts
 
-Activity alerts continuously monitor critical resources to help you stay aware of high-risk activities in your environment. These alerts notify you of activities such as an accessed resource in your environment, or a performed task. Activity alerts are customizable. You can create alert criteria with the easy-to-use, no code interface. Learn how to [create and view activity alerts and alert triggers](~/permissions-management/how-to-create-alert-trigger.md).
+Activity alerts continuously monitor critical identities and resources to help you stay aware of high-risk activities in your environment. For example, these alerts can notify you of accessed resources in your environment, or performed tasks. Activity alerts are customizable. You can create alert criteria with the easy-to-use, no code interface. Learn how to [create and view activity alerts and alert triggers](~/permissions-management/how-to-create-alert-trigger.md).
 
 The following sections have example activity alerts that you can create. They’re organized by general ideas, then scenarios for Azure, AWS, and GCP.
 
@@ -156,8 +156,6 @@ The following sections have example activity alerts that you can create. They’
 Apply the following activity alerts across supported cloud environments: Azure, AWS, and GCP.
 
 **Alert trigger to monitor emergency-access account activity**
-
-Emergency access accounts are for scenarios when regular administrative accounts can’t be used. Create an alert to monitor the activity of these accounts to detect compromise and potential misuse.
 
 Emergency access accounts are for scenarios when regular administrative accounts can’t be used. Create an alert to monitor the activity of these accounts to detect compromise and potential misuse.
 
@@ -219,7 +217,7 @@ To monitor specific access keys, create activity alerts for authorization failur
 
 **Alert trigger to monitor creation of Cloud SQL Databases**
 
-To monitor new resource created in your environment, establish alerts for specific resource type creation. The following example is an alert for Cloud SQL Database creation.
+To monitor new resources created in your environment, establish alerts for specific resource type creation. The following example is an alert for Cloud SQL Database creation.
 
    ![Diagram of an alert to monitor Cloud SQL Database creation.](./media/permissions-manage-ops-guide/create-cloud-sql-database.png)
 
