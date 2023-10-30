@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra Permissions Management operationalization guide introduction
+title: Microsoft Entra Permissions Management operations reference introduction
 description: Learn the checks, actions, and best practices to operate Microsoft Entra Permissions Management in an enterprise environment
 services: active-directory
 author: jricketts
@@ -12,7 +12,7 @@ ms.date: 10/23/2023
 ms.author: jricketts
 ---
 
-# Microsoft Entra Permissions Management operationalization guide
+# Microsoft Entra Permissions Management operations reference
 
 ## Introduction
 
