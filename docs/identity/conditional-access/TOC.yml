@@ -101,7 +101,7 @@
     - name: Use application enforced restrictions
       href: howto-policy-app-enforced-restriction.md
     - name: Require MFA for Intune enrollment
-      href: /mem/intune/enrollment/multi-factor-authentication?toc=/entra/identity/conditional-access/TOC.json&bc=/entra/identity/breadcrumb/toc.json&context=/entra/identity/conditional-access/context/conditional-access-context.json
+      href: /mem/intune/enrollment/multi-factor-authentication?context=/entra/identity/conditional-access/context/conditional-access-context.json
     - name: Block access by location
       href: howto-conditional-access-policy-location.md
     - name: Block access

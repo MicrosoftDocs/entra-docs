@@ -41,7 +41,7 @@
     - name: Manage user profiles
       href: ~/fundamentals/how-to-manage-user-profile-info.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
     - name: Add custom data using extensions - Microsoft Graph
-      href: /graph/extensibility-overview?toc=/entra/identity/users/toc.json?bc=/entra/identity/users/breadcrumb/toc.json?context=/entra/identity/users/context/ugr-context.yml
+      href: /graph/extensibility-overview?context=/entra/identity/users/context/ugr-context.json
     - name: Assign custom security attributes
       href: users-custom-security-attributes.md
     - name: Download user info
@@ -49,7 +49,7 @@
     - name: Share user accounts
       href: users-sharing-accounts.md
     - name: Assign users to admin roles    
-      href: ~/fundamentals/how-subscriptions-associated-directory.md?context=/azure/active-directory/enterprise-users/context/ugr-context
+      href: ~/fundamentals/how-subscriptions-associated-directory.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
     - name: User management enhancements
       href: users-search-enhanced.md
     - name: Delete users in bulk
