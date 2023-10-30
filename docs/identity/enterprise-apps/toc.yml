@@ -123,6 +123,16 @@ items:
       href: add-application-portal-configure.md
     - name: Add enterprise app for multi-tenant app
       href: create-service-principal-cross-tenant.md
+    - name: Single sign-on
+      items:
+      - name: Enable Single sign-on with SAML
+        href: add-application-portal-setup-sso.md
+      - name: Enable Linked single sign-on
+        href: configure-linked-sign-on.md
+      - name: Enable OpenID Connect based single sign-on
+        href: add-application-portal-setup-oidc-sso.md
+      - name: Enable Password based single sign-on
+        href: configure-password-single-sign-on-non-gallery-applications.md
     - name: Manage access
       items:
       - name: Manage consent and permissions
@@ -251,16 +261,6 @@ items:
                 href: /azure/active-directory-b2c/partner-f5?context=/entra/identity/enterprise-apps/context/manage-apps-context.json
       - name: Silverfort
         href: silverfort-integration.md
-    - name: Single sign-on
-      items:
-      - name: Enable Single sign-on with SAML
-        href: add-application-portal-setup-sso.md
-      - name: Enable Linked single sign-on
-        href: configure-linked-sign-on.md
-      - name: Enable OpenID Connect based single sign-on
-        href: add-application-portal-setup-oidc-sso.md
-      - name: Enable Password based single sign-on
-        href: configure-password-single-sign-on-non-gallery-applications.md
     - name: Troubleshoot
       items:
       - name: Troubleshoot password-based single sign-on
