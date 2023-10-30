@@ -5,7 +5,7 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: how-to
-ms.date: 10/04/2023
+ms.date: 10/27/2023
 
 ms.author: mimart
 author: msmimart
@@ -36,11 +36,11 @@ For example, suppose a user in your organization has created a separate account 
 
 Tenant restrictions v2 provides options for both authentication plane protection and data plane protection. 
 
-- *Authentication plane protection* refers to using a tenant restrictions v2 policy to block sign-ins using external identities. For example, you can prevent a malicious insider from leaking data over external email by preventing the attacker from signing in to their malicious tenant. Tenant restrictions v2 authentication plane protection is generally available.
+- *Authentication plane protection* refers to using a tenant restrictions v2 policy to block sign-ins using external identities. For example, you can prevent a malicious insider from leaking data over external email by preventing the attacker from signing in to their malicious tenant. Tenant restrictions v2 authentication plane protection is generally available. 
 
 - *Data Plane protection* refers to preventing attacks that bypass authentication. For example, an attacker might try to allow access to malicious tenant apps by using Teams anonymous meeting join or SharePoint anonymous file access. Or the attacker might copy an access token from a device in a malicious tenant and import it to your organizational device. Tenant restrictions v2 data plane protection forces the user to authenticate when attempting to access a resource and blocks access if authentication fails.
 
-While [tenant restrictions v1](~/identity/enterprise-apps/tenant-restrictions.md) provide authentication plane protection through a tenant allowlist configured on your corporate proxy, tenant restrictions v2 give you options for granular authentication and data plane protection, with or without a corporate proxy.
+While [tenant restrictions v1](~/identity/enterprise-apps/tenant-restrictions.md) provide authentication plane protection through a tenant allowlist configured on your corporate proxy, tenant restrictions v2 give you options for granular authentication and data plane protection, with or without a corporate proxy. If you’re using a corporate proxy for header injection, options include only authentication plane protection. 
 
 ## Tenant restrictions v2 overview
 
@@ -55,7 +55,7 @@ In your organization's [cross-tenant access settings](cross-tenant-access-overvi
 
 ### Supported scenarios
 
-Tenant restrictions v2 can be scoped to specific users, groups, organizations, or external apps. Apps built on the Windows operating system networking stack are protected, including:
+Tenant restrictions v2 can be scoped to specific users, groups, organizations, or external apps. Apps built on the Windows operating system networking stack are protected. The following scenarios are supported:
 
 - All Office apps (all versions/release channels).
 - Universal Windows Platform (UWP) .NET applications.
@@ -82,7 +82,7 @@ The following table compares the features in each version.
 |**Policy enforcement**    | The corporate proxy enforces the tenant restriction policy in the Microsoft Entra ID control plane.         |     Options: <br></br>- Universal tenant restrictions in Global Secure Access (preview), which uses policy signaling to tag all traffic, providing both authentication and data plane support on all platforms. <br></br>- Authentication plane-only protection, where the corporate proxy sets tenant restrictions v2 signals on all traffic. <br></br>- Windows device management, where devices are configured to point Microsoft traffic to the tenant restriction policy, and the policy is enforced in the cloud.     |
 |**Policy enforcement limitation**    | Manage corporate proxies by adding tenants to the Microsoft Entra traffic allowlist. The character limit of the header value in Restrict-Access-To-Tenants: `<allowed-tenant-list>` limits the number of tenants that can be added. |     Managed by a cloud policy in the cross-tenant access policy. A partner policy is created for each external tenant. Currently, the configuration for all external tenants is contained in one policy with a 25KB size limit.  |
 |**Malicious tenant requests** | Microsoft Entra ID blocks malicious tenant authentication requests to provide authentication plane protection.         |    Microsoft Entra ID blocks malicious tenant authentication requests to provide authentication plane protection.     |
-|**Granularity**           | Limited.        |   Tenant, user, group, and application granularity. (User-level granularity isn't supported with Microsoft Accounts.)      |
+|**Granularity**           | Limited to tenant and all Microsoft Accounts.        |   Tenant, user, group, and application granularity. (User-level granularity isn't supported with Microsoft Accounts.)      |
 |**Anonymous access**      | Anonymous access to Teams meetings and file sharing is allowed.         |   Anonymous access to Teams meetings is blocked. Access to anonymously shared resources (“Anyone with the link”) is blocked.      |
 |**Microsoft Accounts**          |Uses a Restrict-MSA header to block access to consumer accounts.         |  Allows control of Microsoft Accounts (MSA and Live ID) authentication on both the identity and data planes.<br></br>For example, if you enforce tenant restrictions by default, you can create a Microsoft Accounts-specific policy that allows users to access specific apps with their Microsoft Accounts, for example: <br> Microsoft Learn (app ID `18fbca16-2224-45f6-85b0-f7bf2b39b3f3`), or <br> Microsoft Enterprise Skills Initiative (app ID `195e7f27-02f9-4045-9a91-cd2fa1c2af2f`).       |
 |**Proxy management**      | Manage corporate proxies by adding tenants to the Microsoft Entra traffic allowlist.         |   For corporate proxy authentication plane protection, configure the proxy to set tenant restrictions v2 signals on all traffic.      |
