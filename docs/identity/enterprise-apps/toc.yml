@@ -170,11 +170,13 @@
         href: hide-application-from-user-portal.md
     - name: Migrate applications
       items:
-      - name: Use the AD FS application migration wizard
-        href: migrate-ad-fs-application-howto.md
-      - name: Use the ADFS application activity report
-        href: migrate-adfs-application-activity.md
-      - name: Migrate applications from Okta to Microsoft Entra ID 
+      - name: Migrate applications from AD FS to Microsoft Entra ID 
+        items:
+        - name: Use the AD FS application migration wizard
+          href: migrate-ad-fs-application-howto.md
+        - name: Use the ADFS application activity report
+          href: migrate-adfs-application-activity.md
+        - name: Migrate applications from Okta to Microsoft Entra ID 
         items:
         - name: Migrate applications from Okta to Microsoft Entra ID
           href: migrate-applications-from-okta.md
