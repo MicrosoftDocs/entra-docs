@@ -16,7 +16,7 @@ ms.author: jricketts
 
 ## Continuously remediate and right-size permissions
 
-**Suggested owner: Information Security Operations**
+**Recommended owner: Information Security Operations**
 
 ### Determine remediation and monitoring responsibilities
 
@@ -118,13 +118,13 @@ To meet organizational goals, enable processes to track and report on progress. 
 
 ## Operationalize Permissions On-Demand
 
-**Suggested owner: Information Security Architecture**
+**Recommended owner: Information Security Architecture**
 
 Permissions On-Demand completes the JIT and just-enough-access (JEA) picture by enabling organizations to grant users time-bound permissions, when needed.
 
-To operationalize Permissions On-Demand, create and maintain a well-defined process to implement Permissions On-Demand in your environment. The following table outlines tasks and suggested owners.
+To operationalize Permissions On-Demand, create and maintain a well-defined process to implement Permissions On-Demand in your environment. The following table outlines tasks and recommended owners.
 
-|Task|Suggested owner|
+|Task|Recommended owner|
 |---|---|
 |Determine which authorization systems to use with Permissions On-Demand|Information Security Architecture|
 |Define administration processes to onboard new authorization systems to the Permissions On-Demand model. Select and train Approvers and Requestors and then delegate permissions. See the following section for more details.|Information Security Architecture|
