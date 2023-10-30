@@ -120,7 +120,7 @@ To meet organizational goals, enable processes to track and report on progress. 
 
 **Recommended owner: Information Security Architecture**
 
-Permissions On-Demand completes the JIT and just-enough-access (JEA) picture by enabling organizations to grant users time-bound permissions, when needed.
+Permissions On-Demand completes the JIT and just-enough-access picture by enabling organizations to grant users time-bound permissions, when needed.
 
 To operationalize Permissions On-Demand, create and maintain a well-defined process to implement Permissions On-Demand in your environment. The following table outlines tasks and recommended owners.
 
@@ -132,11 +132,11 @@ To operationalize Permissions On-Demand, create and maintain a well-defined proc
 
 ## Determine Approvers
 
-Approvers review Permissions On-Demand requests and have authority to approve or deny requests. Select Approvers for the authorization systems you want to use with Permissions On-Demand. We recommend at least two Approvers for each authorization system.
+**Approvers** review Permissions On-Demand requests and have authority to approve or deny requests. Select **Approvers** for the authorization systems you want to use with Permissions On-Demand. We recommend at least two **Approvers** for each authorization system.
 
 ## Create Microsoft Entra ID security groups for Approvers
 
-To delegate permissions, your IAM team creates Microsoft Entra ID security groups that map to your Approvers. Ensure Approvers with shared ownership and responsibilities are in the same security group.
+To delegate permissions, your IAM team creates Microsoft Entra ID security groups that map to your **Approvers**. Ensure **Approvers** with shared ownership and responsibilities are in the same security group.
 
 We recommend you use [PIM for Groups](~/id-governance/privileged-identity-management/concept-pim-for-groups.md). This provides JIT access to Approver permissions to approve or deny Permissions On-Demand requests.
 
@@ -164,8 +164,8 @@ You can configure Permissions On-Demand settings to align with organizational ne
 
 * **Available roles and policies for users to request**: Use role and policy filters to specify what users can request. Prevent unqualified users from requesting high-risk, highly privileged roles such as Subscription Owner.
 * **Request duration limits**: Specify the maximum allowable duration for permissions acquired via Permissions On-Demand. Agree on a duration limit that aligns with how users request and get access to permissions.
-* **One-Time Passcode (OTP) policy**: You can require email OTPs for Requestors to create requests. In addition, you can require email OTPs for Approvers to approve or reject requests. Use these configurations for one or both scenarios.
-* **Auto-approvals for AWS**: As an option for Permissions On-Demand for AWS, you can configure specific policy requests to be auto-approved. Adding common, low-risk policies to your auto-approval list helps save time for Requestors and Approvers. 
+* **One-Time Passcode (OTP) policy**: You can require email OTPs for Requestors to create requests. In addition, you can require email OTPs for **Approvers** to approve or reject requests. Use these configurations for one or both scenarios.
+* **Auto-approvals for AWS**: As an option for Permissions On-Demand for AWS, you can configure specific policy requests to be auto-approved. Adding common, low-risk policies to your auto-approval list helps save time for Requestors and **Approvers**. 
 
 Learn to [make setting selections for requests and auto-approvals](~/permissions-management/ui-remediation.md).
 
