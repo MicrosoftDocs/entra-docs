@@ -16,7 +16,7 @@ ms.author: jricketts
 
 ## Define a delegated administration model
 
-**recommended owner: Information Security Architecture**
+**Recommended owner: Information Security Architecture**
 
 ### Define Microsoft Entra Permissions Management administrators
 
