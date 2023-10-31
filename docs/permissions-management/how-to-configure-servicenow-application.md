@@ -53,6 +53,7 @@ To integration the ServiceNow app with Microsoft Entra Permissions Management:
 The installation process begins and the application is installed in your instance.
 :::image type="content" source="media/configure-servicenow-application/servicenow_microsoft-entra-permissions-management-installation.png" alt-text="ServiceNow Microsoft Entra Permissions Management installation." lightbox="media/configure-servicenow-application/servicenow_microsoft-entra-permissions-management-installation.png":::
 
+
 ## Next steps
 
-- For information on roles and permissions see [Microsoft Entra Permissions Management roles and permissions](product-roles-permissions.md).
+- For information on creating users, understanding use cases, and troubleshooting, see [Microsoft Entra Permissions Management ServiceNow Integration and Configuration Guide](https://store.servicenow.com/appStoreAttachments.do?sys_id=2f17e5841bbd3d50e0190d48624bcb2c).
