@@ -170,7 +170,7 @@ Use the following instructions to enable SSO in the Oracle Hyperion environment.
 1. Sign in to the Hyperion Shared Service Console with administrator permissions. For example, `http://{your-hyperion-fqdn}:19000/workspace/index.jsp`.
 2. Select **Navigate**, then **Shared Services Console**.
 
-   ![Screenshot shows the Shared Service Console option.](./media/datawiza-mfa-sso-oracle-hyperion-epm/shared-services-console.png)
+   ![Screenshot shows the Shared Service Console option.](./media/datawiza-mfa-sso-oracle-hyperion-epm/shared-service-console.png)
 
 3. Select **Administration** and then **Configure User Directories**.
 4. Select the **Security Options** tab.
