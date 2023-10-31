@@ -860,6 +860,8 @@
         href: ekincare-tutorial.md
       - name: eLearnPOSH
         href: elearnposh-tutorial.md  
+      - name: elia
+        href: elia-tutorial.md
       - name: Eli Onboarding
         href: elionboarding-tutorial.md
       - name: Elium
@@ -2121,6 +2123,8 @@
         href: quarem-tutorial.md
       - name: Quantum Workplace
         href: quantum-workplace-tutorial.md
+      - name: QueryLayer
+        href: querylayer-tutorial.md
       - name: Questetra BPM Suite
         href: questetra-bpm-suite-tutorial.md
       - name: QuickHelp
@@ -2199,6 +2203,8 @@
         href: riskware-tutorial.md
       - name: Riva
         href: riva-tutorial.md
+      - name: Rivial Data Security
+        href: rivial-data-security-tutorial.md
       - name: Roadmunk
         href: roadmunk-tutorial.md
       - name: Robin
@@ -3174,8 +3180,8 @@
         href: checkproof-provisioning-tutorial.md
       - name: Cinode
         href: cinode-provisioning-tutorial.md
-      - name: Cisco Umbrella User Management
-        href: cisco-umbrella-user-management-provisioning-tutorial.md
+      - name: Cisco User Management for Secure Access
+        href: cisco-user-management-for-secure-access-provisioning-tutorial.md
       - name: Cisco Webex
         href: cisco-webex-provisioning-tutorial.md
       - name: Clarizen One
