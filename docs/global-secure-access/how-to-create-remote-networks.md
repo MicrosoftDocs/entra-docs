@@ -40,29 +40,6 @@ To configure remote networks, you must have:
 - Microsoft 365 traffic can be accessed through remote network connectivity without the Global Secure Access Client; however the Conditional Access policy isn't enforced. In other words, Conditional Access policies for the Global Secure Access Microsoft 365 traffic are only enforced when a user has the Global Secure Access Client.
 - For Entra Private Access, you must use Global Secure Access Client. Remote network connectivity only supports Entra Internet Access.
 
-## Onboard your tenant for remote networks
-
-Before you can set up remote networks, you need to onboard your tenant information with Microsoft. This one-time process enables your tenant to use remote network connectivity.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
-1. Browse to **Global Secure Access (preview)** > **Devices** > **Remote network**.
-1. Select the link to the **Onboarding form** in the message at the top of the page.
-
-    ![Screenshot of the onboarding form link.](media/how-to-create-remote-networks/create-remote-network-onboarding-form-link.png)
-
-1. In the window that opens, review the Tenant ID and remote network region details.
-1. Select the **Next** button.
-    
-    ![Screenshot of the first tab of the onboarding form.](media/how-to-create-remote-networks/onboard-tenant-info.png)
-
-1. Select the email address link. It sends a pre-drafted email in your default mail client on your device. Send that email to the Global Secure Access team. Once your tenant is processed, we'll send IPsec tunnel and BGP connectivity details to the email you used.
-
-    ![Screenshot of the send email steps for the onboard tenant process.](media/how-to-create-remote-networks/onboard-tenant-send-email.png)
-
-1. Once the email step is complete, return to this form, select the acknowledgment checkbox, and select the **Submit** button.
-
-You MUST complete the email step before selecting the checkbox. 
-
 ## High-level steps
 
 You can create a remote network in the Microsoft Entra admin center or through the Microsoft Graph API.

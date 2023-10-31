@@ -85,6 +85,8 @@ items:
         href: how-to-view-traffic-logs.md
       - name: Enriched Microsoft 365 audit logs
         href: how-to-view-enriched-logs.md
+      - name: Remote network health logs
+        href: concept-remote-network-health-logs.md
 - name: Reference
   expanded: false
   items:
