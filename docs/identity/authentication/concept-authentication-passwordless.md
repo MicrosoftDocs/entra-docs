@@ -171,6 +171,8 @@ To get started with FIDO2 security keys, complete the following how-to:
 
 Microsoft Entra certificate-based authentication (CBA) enables customers to allow or require users to authenticate directly with X.509 certificates against their Microsoft Entra ID for applications and browser sign-in. CBA enables customers to adopt phishing-resistant authentication and sign in with an X.509 certificate against their Public Key Infrastructure (PKI).
 
+:::image type="content" border="false" source="./media/concept-certificate-based-authentication/cloud-native-cert.png" alt-text="Diagram of Microsoft Entra certificate-based authentication.":::
+
 ### Key benefits of using Microsoft Entra CBA
 
 | Benefits | Description |
