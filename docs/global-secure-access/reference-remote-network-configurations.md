@@ -69,6 +69,8 @@ You can use any 2 byte values (between 1 to 65534) *except* for the following re
 
 ### Valid enums
 
+The following values can be used for the IKE, IPSec, DH group, and PFS group properties.
+
 #### IKE encryption
 
 | Value | Enum |
