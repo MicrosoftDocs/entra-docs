@@ -265,7 +265,7 @@ Changes have been made to custom security attribute audit logs for general avail
 
 - Use new audit logs location
 - Assign Attribute Log roles to view audit logs
-- Update any diagnostic settings to export audit logs
+- Create new diagnostic settings to export audit logs
 
 ### Use new audit logs location
 
@@ -286,9 +286,9 @@ The following table lists the endpoint where you can find custom security attrib
 
 During the preview, custom security attribute audit logs could be viewed using the [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator) or [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) roles in the directory audit logs. You are no longer able to use these roles to view custom security attribute audit logs using the new endpoint. To view the custom security attribute audit logs, you must be assigned either the [Attribute Log Reader](../identity/role-based-access-control/permissions-reference.md#attribute-log-reader) or [Attribute Log Administrator](../identity/role-based-access-control/permissions-reference.md#attribute-log-administrator) role.
 
-### Update any diagnostic settings to export audit logs
+### Create new diagnostic settings to export audit logs
 
-During the preview, if you configured diagnostic settings to export custom security attribute audit logs to different destinations for additional processing, you must update those diagnostic settings.
+During the preview, if you configured to export audit logs, custom security audit attribute audit logs were sent to your current diagnostic settings. To continue to receive custom security audit attribute audit logs, you must create new diagnostic settings as described in the previous [Diagnostic settings](#diagnostic-settings) section.
 
 ## Next steps
 
