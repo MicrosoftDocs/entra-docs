@@ -32,17 +32,34 @@ The scenario outlined in this tutorial assumes that you already have the followi
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md) 
 * A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (for example, Application Administrator, Cloud Application administrator, Application Owner, or Global Administrator).
-* A user account in M-Files with Admin permissions.
+* M-Files Cloud Subscription (Classic Cloud is not supported).
+* A user account in M-Files with the Subscription admin or Access admin access to [M-Files Manage](https://manage.m-files.com/).
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
 1. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 1. Determine what data to [map between Microsoft Entra ID and M-Files](~/identity/app-provisioning/customize-application-attributes.md).
+1. The necessary mappings are predefined but you can map two additional data fields to M-Files.
 
 <a name='step-2-configure-M-Files-to-support-provisioning-with-azure-ad'></a>
 
 ## Step 2: Configure M-Files to support provisioning with Microsoft Entra ID
-Contact M-Files support to configure M-Files to support provisioning with Microsoft Entra ID.
+
+Before you set up user provisioning in M-Files, make sure that all vaults in your subscription have user synchronization disabled in M-Files Admin.
+
+If you have previously configured user provisioning in M-Files Manage with your own Entra ID application, you cannot change the configuration to use the M-Files application from the  Microsoft Entra application gallery. If you want to use the M-Files application instead, delete the existing configuration from M-Files Manage and disable or delete the related Entra ID application. Then, follow these instructions to create the new configuration.
+
+1. Log in to M-Files Manage at [https://manage.m-files.com](https://manage.m-files.com).
+1. In the left-side page navigation, click **Provisioning**.
+1. Go to the **Configuration** tab.
+1. In **Create configuration for user provisioning**, click **Azure AD gallery app**.
+1. Enter the necessary information.
+   * In **Configuration name**, enter a unique name for the configuration.
+   * Select **Default license type** for the provisioned users. All the provisioned users first get this license. You can change a user group's license type to a higher one after user groups have been provisioned. If there are not enough available licenses of the default license type in the subscription, all the users do not get the license.
+1. Click the copy icon (![Sreenshot of the Copy icon.](media/m-files-provisioning-tutorial/copy_icon.png) ) for each piece of data, that M-Files Manage created, and note down the values.
+
+> [!NOTE]
+> The client secret is not shown anywhere else when you close the dialog.
 
 <a name='step-3-add-M-Files-from-the-azure-ad-application-gallery'></a>
 
@@ -67,7 +84,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 ### To configure automatic user provisioning for M-Files in Microsoft Entra ID:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**
+1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 
 	![Screenshot of Enterprise applications blade.](common/enterprise-applications.png)
 
@@ -83,7 +100,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
 
-1. Under the **Admin Credentials** section, input your M-Files Tenant URL, Token Endpoint, Client Identifier and Client Secret. Click **Test Connection** to ensure Microsoft Entra ID can connect to M-Files. If the connection fails, ensure your M-Files account has Admin permissions and try again.
+1. Under the **Admin Credentials** section, enter your M-Files Tenant URL, Token Endpoint, Client Identifier and Client Secret. Click **Test Connection** to ensure Microsoft Entra ID can connect to M-Files. If the connection fails, make sure that the values you entered are correct and try again.
 
  	![Screenshot of Token.](media/m-files-provisioning-tutorial/test-connection.png)
 
@@ -93,33 +110,22 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Select **Save**.
 
-1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to M-Files**.
+1. **Optional**: If you want to synchronize additional user information, you can define two additional fields to be synchronized to M-Files Manage. The information is shown in **Additional information 1** and **Additional information 2** on the **User information** page.
+   1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to M-Files**.
+   1. In the **Attribute-Mapping** section, click **Add new mapping**.
+   1. Use these values:
+         * **Mapping type**: **Direct**
+         * **Source attribute**: Enter the Entra ID attribute
+         * **Target attribute**: Select **urn:ietf:params:scim:schemas:extension:info:2.0:User:info1** or **urn:ietf:params:scim:schemas:extension:info:2.0:User:info2**
+         * **Match objects using this attribute**: **No**
+         * **Apply this mapping**: **Always**
+   1. Click **Ok**.
+   1. **Optional**: To synchronize two additional data fields to M-Files Manage, add a second mapping with the other available target attribute.
 
-1. Review the user attributes that are synchronized from Microsoft Entra ID to M-Files in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in M-Files for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you'll need to ensure that the M-Files API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+  > [!NOTE]
+  > It is not recommended to make changes to the default attribute mappings.
 
-   |Attribute|Type|Supported for filtering|Required by M-Files|
-   |---|---|---|---|
-   |userName|String|&check;|&check;
-   |active|Boolean||
-   |emails[type eq "work"].value|String|
-   |name.givenName|String||
-   |name.familyName|String||
-   |name.formatted|String||
-   |externalId|String||
-   |urn:ietf:params:scim:schemas:extension:info:2.0:User:info1|String||
-   |urn:ietf:params:scim:schemas:extension:info:2.0:User:info2|String||
-
-1. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to M-Files**.
-
-1. Review the group attributes that are synchronized from Microsoft Entra ID to M-Files in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in M-Files for update operations. Select the **Save** button to commit any changes.
-
-   |Attribute|Type|Supported for filtering|Required by M-Files|
-   |---|---|---|---|
-   |displayName|String|&check;|&check;
-   |members|Reference||
-   |externalId|String||
-   
-1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter tutorial](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 1. To enable the Microsoft Entra provisioning service for M-Files, change the **Provisioning Status** to **On** in the **Settings** section.
 
@@ -149,4 +155,5 @@ Once you've configured provisioning, use the following resources to monitor your
 
 ## Next steps
 
+* When the user provisioning is complete, create links between the provisioned user groups and M-Files user groups in M-Files Manage. For instructions, refer to [M-Files Manage - User guide](https://m-files.my.site.com/s/article/mfiles-ka-385842). 
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md).
