@@ -16,7 +16,7 @@ ms.date: 10/27/2023
 
 # Tutorial: Handle authentication flows in an Angular single-page app 
 
-In the [previous article](./tutorial-single-page-app-angular-sign-in-prepare-app.md), you created an Angular single-page app (SPA) and prepared it for authentication with your Microsoft Entra External ID for customers tenant. In this article, you'll learn how to handle authentication flows in your app by adding components.
+In the previous article, [Prepare an Angular single-page app for authentication](./tutorial-single-page-app-angular-sign-in-prepare-app.md), you created an Angular single-page app (SPA) and prepared it for authentication with your Microsoft Entra External ID for customers tenant. In this article, you'll learn how to handle authentication flows in your app by adding components.
 
 In this tutorial;
 
@@ -28,7 +28,7 @@ In this tutorial;
 ## Prerequisites
 
 * Completion of the prerequisites and steps in [Prepare your customer tenant to authenticate users in an Angular single-page app (SPA)](./tutorial-single-page-app-angular-sign-in-prepare-tenant.md).
-* Although any integrated development environment (IDE) that supports Angular applications can be used, this tutorial uses **Visual Studio Code**. You can download it [here](https://visualstudio.microsoft.com/downloads/).
+* Although you can use any integrated development environment (IDE) that supports Angular applications, this tutorial uses **Visual Studio Code**. You can download VS Code [here](https://visualstudio.microsoft.com/downloads/).
 * [Node.js](https://nodejs.org/en/download/).
 
 

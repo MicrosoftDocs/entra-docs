@@ -14,7 +14,7 @@ ms.author: godonnell
 
 # Tutorial: Prepare an Angular single-page app (SPA) for authentication in a customer tenant
 
-In the [previous article](./tutorial-single-page-app-angular-sign-in-prepare-tenant.md), you registered an application and configured user flows in your Microsoft Entra External ID for customers tenant. This tutorial demonstrates how to create an Angular single-page app using `npm` and configure the user interface.
+In the previous article, [Prepare an Angular single-page app for authentication](./tutorial-single-page-app-angular-sign-in-prepare-tenant.md), you registered an application and configured user flows in your Microsoft Entra External ID for customers tenant. This tutorial demonstrates how to create an Angular single-page app using `npm` and configure the user interface.
 
 In this tutorial;
 
@@ -25,14 +25,14 @@ In this tutorial;
 ## Prerequisites
 
 * Completion of the prerequisites and steps in [Prepare your customer tenant to authenticate users in an Angular single-page app (SPA)](./tutorial-single-page-app-angular-sign-in-prepare-tenant.md).
-* Although any integrated development environment (IDE) that supports Angular applications can be used, this tutorial uses **Visual Studio Code**. You can download it [here](https://visualstudio.microsoft.com/downloads/).
+* Although any integrated development environment (IDE) that supports Angular applications can be used, this tutorial uses **Visual Studio Code**. You can download VS Code [here](https://visualstudio.microsoft.com/downloads/).
 * [Node.js](https://nodejs.org/en/download/).
 
 ## Create an Angular project
 
 1. Open Visual Studio Code, select **File** > **Open Folder...**. Navigate to and select the location in which to create your project.
 1. Open a new terminal by selecting **Terminal** > **New Terminal**.
-1. Run the following commands to create a new Angular project with the name angularspalocal, install Angular Material component libraries, MSAL Browser, MSAL Angular and generate home and profile components.
+1. Run the following commands to create a new Angular project with the name `angularspalocal`, install Angular Material component libraries, MSAL Browser, MSAL Angular and generate home and profile components.
 
     ```powershell
     npm install -g @angular/cli
@@ -108,8 +108,8 @@ In this tutorial;
     ```HTML
     <mat-card class="card-section" *ngIf="!loginDisplay">
       <mat-card-title>Angular single-page application built with MSAL Angular</mat-card-title>
-      <mat-card-subtitle>Sign-in with Microsoft Entra External ID for customers</mat-card-subtitle>
-      <mat-card-content>This sample demonstrates how to configure MSAL Angular to sign-up, sign-in and sign-out with Microsoft Entra External ID for customers</mat-card-content>
+      <mat-card-subtitle>Sign in with Microsoft Entra External ID for customers</mat-card-subtitle>
+      <mat-card-content>This sample demonstrates how to configure MSAL Angular to sign up, sign in and sign out with Microsoft Entra External ID for customers</mat-card-content>
       <button mat-raised-button color="primary" (click)="signUp()">Sign up</button>
     </mat-card>
     <br>

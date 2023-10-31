@@ -16,7 +16,7 @@ ms.author: godonnell
 
 # Tutorial: Add sign-in and sign-out to an Angular single-page app (SPA) for a customer tenant
 
-In the [previous article](./tutorial-single-page-app-angular-sign-in-configure-authentication.md), you added authentication flows to your Angular single page application and configured them to work with your Microsoft Entra External ID for customers tenant. In this article, you'll learn how to add sign-in and sign-out functionality to the application. Finally, you'll test the application.
+In the previous article, [Handle authentication flows in an Angular single-page app](./tutorial-single-page-app-angular-sign-in-configure-authentication.md), you added authentication flows to your Angular single-page application and configured the flows to work with your Microsoft Entra External ID for customers tenant. In this article, you'll learn how to add sign in and sign out functionality to the application. Finally, you'll test the application.
 
 In this tutorial;
 
@@ -200,7 +200,7 @@ In this tutorial;
 
     :::image type="content" source="media/tutorial-single-page-app-angular-sign-in-sign-out/angular-01-not-signed-in.png" alt-text="Web browser displaying sign-in dialog":::
     
-1. Click the **Login** button in the top right corner of the screen.
+1. Select the **Login** button in the top right corner of the screen.
 1. Select **Accept** to grant the application access to your profile information.
 1. After you're signed in, you'll see your profile information displayed on the page.
 1. Select the **Logout** button in the top right corner of the screen to sign out.
