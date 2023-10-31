@@ -1,6 +1,6 @@
 ---
 title: Configure how users consent to applications
-description: Learn how to manage how and when users can consent to applications that will have access to your organization's data.
+description: Learn how to manage how and when users can consent to applications that request access to your organization's data.
 services: active-directory
 author: omondiatieno
 manager: CelesteDG
@@ -82,7 +82,7 @@ Update-MgPolicyAuthorizationPolicy -AuthorizationPolicyId authorizationPolicy -B
 
 ### Allow user consent subject to an app consent policy using PowerShell
 
-To allow user consent, choose which app consent policy should govern users' authorization to grant consent to apps. Please ensure that the consent policies (`PermissionGrantPoliciesAssigned`) include other current `ManagePermissionGrantsForOwnedResource.*` policies if any while updating the collection. This way, you can maintain your current configuration for user consent settings and other resource consent settings.
+To allow user consent, choose which app consent policy should govern users' authorization to grant consent to apps. Ensure that the consent policies (`PermissionGrantPoliciesAssigned`) include other current `ManagePermissionGrantsForOwnedResource.*` policies if any while updating the collection. This way, you can maintain your current configuration for user consent settings and other resource consent settings.
 
 ```powershell
 $body = @{
@@ -118,7 +118,7 @@ $body = @{
 
 Use the [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) to choose which app consent policy governs user consent for applications.
 
-To disable user consent, please ensure that the consent policies (`PermissionGrantPoliciesAssigned`) include other current `ManagePermissionGrantsForOwnedResource.*` policies if any while updating the collection. This way, you can maintain your current configuration for user consent settings and other resource consent settings.
+To disable user consent, ensure that the consent policies (`PermissionGrantPoliciesAssigned`) include other current `ManagePermissionGrantsForOwnedResource.*` policies if any while updating the collection. This way, you can maintain your current configuration for user consent settings and other resource consent settings.
 
 ```http
 PATCH https://graph.microsoft.com/v1.0/policies/authorizationPolicy
