@@ -52,6 +52,12 @@ items:
       href: overview-assign-app-owners.md
     - name: Application properties
       href: application-properties.md
+    - name: Single sign-on
+      items:
+      - name: What is single sign-on?
+        href: what-is-single-sign-on.md
+      - name: Plan for deployment
+        href: plan-sso-deployment.md
     - name: Application security
       items:
       - name: App access options
@@ -72,12 +78,6 @@ items:
       href: home-realm-discovery-policy.md
     - name: My Apps overview
       href: myapps-overview.md
-    - name: Single sign-on
-      items:
-      - name: What is single sign-on?
-        href: what-is-single-sign-on.md
-      - name: Plan for deployment
-        href: plan-sso-deployment.md
     - name: Consent and permissions
       items:
       - name: User and admin consent overview

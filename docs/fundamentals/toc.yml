@@ -63,7 +63,7 @@ items:
     items: 
     - name: Group-based licensing
       href: ./concept-group-based-licensing.md
-    - name: Microsoft Entra ID preview program terms
+    - name: Microsoft Entra ID preview program
       href: licensing-preview-terms.md
     - name: Microsoft Entra ID licensing
       href: licensing.md
