@@ -14,7 +14,7 @@ ms.date: 10/30/2023
 
 # Microsoft Entra ID Governance service limits
 
-This article contains the usage constraints and other service limits for the Microsoft Entra ID Governance, part of Microsoft Entra, service. If you’re looking for the full set of non-governance specific Microsoft Entra service limits, see: [Microsoft Entra service limits and restrictions](/docs/identity/users/directory-service-limits-restrictions.md).
+This article contains the usage constraints and other service limits for the Microsoft Entra ID Governance, part of Microsoft Entra, service. If you’re looking for the full set of non-governance specific Microsoft Entra service limits, see: [Microsoft Entra service limits and restrictions](~/identity/users/directory-service-limits-restrictions.md).
 
 ## Entitlement Management
 
