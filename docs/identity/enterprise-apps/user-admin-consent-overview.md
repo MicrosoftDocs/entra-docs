@@ -45,7 +45,7 @@ By choosing which application consent policies apply for all users, you can set 
 
 - *Users can consent to all applications*. This option allows all users to consent to any permissions that don't require admin consent, for any application.
 
-For most organizations, one of the built-in options will be appropriate. Some advanced customers might want more control over the conditions that govern when users are allowed to consent. These customers can [create custom app consent policy](manage-app-consent-policies.md#create-a-custom-app-consent-policy) and configure those policies to apply to user consent.
+For most organizations, one of the built-in options will be appropriate. Some advanced customers might want more control over the conditions that govern when users are allowed to consent. These customers can [create custom app consent policy](manage-app-consent-policies.md#create-a-custom-app-consent-policy-using-powershell) and configure those policies to apply to user consent.
 
 ## Admin consent
 
