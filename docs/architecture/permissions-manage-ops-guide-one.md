@@ -1,5 +1,5 @@
 ---
-title: Phase 1 Implement the framework to manage at scale
+title: Phase 1 Implement the Microsoft Entra Permissions Management framework to manage at scale
 description: Learn about folder structure, security groups, delegated permissions, lifecycle management, and Permissions Creep Index thresholds
 services: active-directory
 author: jricketts
