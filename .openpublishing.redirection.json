@@ -12,7 +12,7 @@
       "redirect_document_id": false
     },
     {
-      "source_path_from_root": "/docs/identity/hybrid/cloud-sync/index.yml",
+      "source_path_from_root": "/docs/identity/hybrid/connect/index.yml",
       "redirect_url": "/entra/identity/hybrid/index",
       "redirect_document_id": false
     },
