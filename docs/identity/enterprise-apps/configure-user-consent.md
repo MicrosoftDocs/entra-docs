@@ -8,7 +8,7 @@ ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
 ms.topic: how-to
-ms.date: 1o/31/2023
+ms.date: 10/31/2023
 ms.author: jomondi
 ms.reviewer: phsignor, yuhko
 ms.custom: contperf-fy21q2, contperf-fy22q2, enterprise-apps

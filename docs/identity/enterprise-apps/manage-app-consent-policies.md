@@ -23,7 +23,6 @@ App consent policies are a way to manage the permissions that apps have to acces
 
 In this article, you learn how to manage built-in and custom app consent policies to control when consent can be granted.
 
-
 With [Microsoft Graph](/graph/overview) and [Microsoft Graph PowerShell](/powershell/microsoftgraph/get-started?view=graph-powershell-1.0&preserve-view=true), you can view and manage app consent policies.
 
 An app consent policy consists of one or more "include" condition sets and zero or more "exclude" condition sets. For an event to be considered in an app consent policy, it must match *at least* one "include" condition set, and must not match *any* "exclude" condition set.
@@ -35,14 +34,15 @@ App consent policies where the ID begins with "microsoft-" are built-in policies
 ## Prerequisites
 
 - A user or service with one of the following roles:
-   - Global Administrator directory role
-   - Privileged Role Administrator directory role
-   - A custom directory role with the necessary [permissions to manage app consent policies](~/identity/role-based-access-control/custom-consent-permissions.md#managing-app-consent-policies)
-   - The Microsoft Graph app role (application permission) Policy.ReadWrite.PermissionGrant (when connecting as an app or a service)
- 
+  - Global Administrator directory role
+  - Privileged Role Administrator directory role
+  - A custom directory role with the necessary [permissions to manage app consent policies](~/identity/role-based-access-control/custom-consent-permissions.md#managing-app-consent-policies)
+  - The Microsoft Graph app role (application permission) Policy.ReadWrite.PermissionGrant (when connecting as an app or a service)
+
 :::zone pivot="ms-powershell"
- 
+
 To manage app consent policies for applications with Microsoft Graph PowerShell, connect to [Microsoft Graph PowerShell](/powershell/microsoftgraph/get-started?view=graph-powershell-1.0&preserve-view=true).
+
    ```powershell
    Connect-MgGraph -Scopes "Policy.ReadWrite.PermissionGrant"
    ```
@@ -69,7 +69,7 @@ It's a good idea to start by getting familiar with the existing app consent poli
     Get-MgPolicyPermissionGrantPolicyExclude -PermissionGrantPolicyId "microsoft-application-admin" | fl
     ```
 
-## Create a custom app consent policy
+## Create a custom app consent policy using PowerShell
 
 Follow these steps to create a custom app consent policy:
 
@@ -110,12 +110,12 @@ Follow these steps to create a custom app consent policy:
 
    Repeat this step to add more "exclude" condition sets.
 
-Once the app consent policy has been created, you can [allow user consent](configure-user-consent.md?tabs=azure-powershell#allow-user-consent-subject-to-an-app-consent-policy) subject to this policy.
+Once the app consent policy has been created, you can [allow user consent](configure-user-consent.md?tabs=azure-powershell#allow-user-consent-subject-to-an-app-consent-policy-using-powerShell) subject to this policy.
 
-## Delete a custom app consent policy
+## Delete a custom app consent policy using PowerShell
 
 The following cmdlet shows how you can delete a custom app consent policy.
-   
+
 ```powershell
    Remove-MgPolicyPermissionGrantPolicy -PermissionGrantPolicyId "my-custom-policy"
 ```
@@ -127,7 +127,8 @@ The following cmdlet shows how you can delete a custom app consent policy.
 To manage app consent policies, sign in to [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) with one of the roles listed in the prerequisite section.
 
 You need to consent to the `Policy.ReadWrite.PermissionGrant` permission.
-## List existing app consent policies
+
+## List existing app consent policies using Microsoft Graph
 
 It's a good idea to start by getting familiar with the existing app consent policies in your organization:
 
@@ -149,7 +150,7 @@ It's a good idea to start by getting familiar with the existing app consent poli
    GET /policies/permissionGrantPolicies/{ microsoft-application-admin }/excludes
    ```
 
-## Create a custom app consent policy
+## Create a custom app consent policy Microsoft Graph
 
 Follow these steps to create a custom app consent policy:
 
@@ -185,6 +186,7 @@ Follow these steps to create a custom app consent policy:
 
 1. Optionally, add "exclude" condition sets.
      Exclude delegated permissions for the Azure Management API (appId 46e6adf4-a9cf-4b60-9390-0ba6fb00bf6b)
+
    ```http
    POST https://graph.microsoft.com/v1.0/policies/permissionGrantPolicies/my-custom-policy /excludes
    Content-Type: application/json
@@ -197,11 +199,11 @@ Follow these steps to create a custom app consent policy:
 
    Repeat this step to add more "exclude" condition sets.
 
-Once the app consent policy has been created, you can [allow user consent](configure-user-consent.md?tabs=azure-powershell#allow-user-consent-subject-to-an-app-consent-policy) subject to this policy.
+Once the app consent policy has been created, you can [allow user consent](configure-user-consent.md?tabs=azure-powershell#allow-user-consent-subject-to-an-app-consent-policy-using-powerShell) subject to this policy.
 
-## Delete a custom app consent policy
+## Delete a custom app consent policy Microsoft Graph
 
-1. The following shows how you can delete a custom app consent policy. 
+1. The following shows how you can delete a custom app consent policy.
 
    ```http
    DELETE https://graph.microsoft.com/v1.0/policies/permissionGrantPolicies/ my-custom-policy
@@ -235,4 +237,4 @@ The following table provides the list of supported conditions for app consent po
 
 To get help or find answers to your questions:
 
-* [Microsoft Entra ID on Microsoft Q&A](/answers/)
+- [Microsoft Entra ID on Microsoft Q&A](/answers/)
