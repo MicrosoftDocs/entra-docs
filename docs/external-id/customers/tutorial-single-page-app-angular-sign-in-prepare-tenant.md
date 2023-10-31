@@ -17,7 +17,7 @@ ms.author: godonnell
 
 This tutorial series demonstrates how to build an Angular single-page application (SPA) and prepare it for authentication using the Microsoft Entra admin center. You'll use the [Microsoft Authentication Library for JavaScript](/javascript/api/overview/msal-overview) library to authenticate your app with your Microsoft Entra External ID for customers tenant. 
 
-In this tutorial;
+In this tutorial:
 
 > [!div class="checklist"]
 > * Register a SPA in the Microsoft Entra admin center, and record its identifiers
@@ -31,9 +31,9 @@ In this tutorial;
 - An Azure subscription. If you don't have one, [create a free account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) before you begin.
 - This Azure account must have permissions to manage applications. Any of the following Azure roles include the required permissions:
 
-    * Application administrator
-    * Application developer
-    * Cloud application administrator
+    * Application Administrator
+    * Application Developer
+    * Cloud Application Administrator
 
 - A Microsoft Entra External ID for customers tenant. If you haven't already got one, [create one now](https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl). You can use an existing customer tenant if you have one.
 
