@@ -83,14 +83,14 @@ Next we need to create a virtual network gateway inside of our resource group.
 1. Select the appropriate region.
 1. Select the **Virtual network** created in the previous section.
 1. Create a **Public IP address** and provide it with descriptive name.
-   1. **OPTIONAL**: If you want a secondary IPsec tunnel, under **SECOND PUBLIC IP ADDRESS** section, create another public IP address and give it a name. In this case, you need to create two device links in the Microsoft Entra admin center.
+   - **OPTIONAL**: If you want a secondary IPsec tunnel, under **SECOND PUBLIC IP ADDRESS** section, create another public IP address and give it a name. In this case, you need to create two device links in the Microsoft Entra admin center.
 1. Set **Configure BGP** to **Enabled**
-   1. Set the **Autonomous system number (ASN)** to an appropriate value.
-      1. Don't use any reserved ASN numbers. For more information, see the article [Global Secure Access remote network configurations](reference-remote-network-configurations.md#valid-autonomous-system-number-asn).
+   - Set the **Autonomous system number (ASN)** to an appropriate value.
+      - Don't use any reserved ASN numbers. For more information, see the article [Global Secure Access remote network configurations](reference-remote-network-configurations.md#valid-autonomous-system-number-asn).
 1. Leave all other settings to their defaults or blank.
 1. Select **Review + create**, confirm your settings.
 1. Select **Create**.
-   1. You can continue to the following sections while the gateway is created.
+   - You can continue to the following sections while the gateway is created.
 
 :::image type="content" source="media/how-to-simulate-remote-network/create-virtual-network-gateway.png" alt-text="Screenshot of the Azure portal showing configuration settings for a virtual network gateway." lightbox="media/how-to-simulate-remote-network/create-virtual-network-gateway.png":::
 
@@ -127,7 +127,7 @@ In this article, we choose the zone redundancy path.
       1. Leave the defaults selected unless you made a different selection previously.
       1. Select Next to continue to the **Security** tab.
    1. On the **Security** tab:
-      1. Enter the **Pre-shared key (PSK)**.
+      - Enter the **Pre-shared key (PSK)**.
    1. Select **Add link**.
    1. Select **Next: Traffic profiles**.
 1. On the **Traffic profiles** tab:
@@ -141,7 +141,7 @@ For more information about remote networks, see the article [How to create a rem
 
 1. Browse to **Global Secure Access (Preview)** > **Devices** > **Remote network**.
 1. Select **View configuration** button for the remote network you created.
-   1. The configuration is shown as a JSON blob.
+   - The configuration is shown as a JSON blob.
 1. Locate and save Microsoft's public IP address `endpoint`, `asn` and `bgpAddress` from the pane that opens.
 
 Use this information to set up your connectivity in next step. For more information about configuration, see the article [Configure customer premises equipment](how-to-configure-customer-premises-equipment.md).
