@@ -114,18 +114,18 @@ In the example, the resource enterprise application is Microsoft Graph of object
 
 1. Grant the delegated permissions to the client enterprise application by running the following request.
 
-```powershell
-$params = @{
-  
-  "ClientId" = "b0d9b9e3-0ecf-4bfd-8dab-9273dd055a94"
-  "ConsentType" = "AllPrincipals"
-  "ResourceId" = "7ea9e944-71ce-443d-811c-71e8047b557a"
-  "Scope" = "User.Read.All Group.Read.All"
-}
+   ```powershell
+   $params = @{
+   
+   "ClientId" = "b0d9b9e3-0ecf-4bfd-8dab-9273dd055a94"
+   "ConsentType" = "AllPrincipals"
+   "ResourceId" = "7ea9e944-71ce-443d-811c-71e8047b557a"
+   "Scope" = "User.Read.All Group.Read.All"
+   }
 
-New-MgOauth2PermissionGrant -BodyParameter $params | 
-  Format-List Id, ClientId, ConsentType, ResourceId, Scope
-```
+   New-MgOauth2PermissionGrant -BodyParameter $params | 
+   Format-List Id, ClientId, ConsentType, ResourceId, Scope
+   ```
 
 1. Confirm that you've granted tenant wide admin consent by running the following request.
 
