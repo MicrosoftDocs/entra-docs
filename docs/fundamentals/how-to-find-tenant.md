@@ -67,9 +67,6 @@ For Microsoft 365 CLI, use the cmdlet **tenant id** as shown in the following ex
 m365 tenant id get
 ```
 
-For more information, see the Microsoft 365 [tenant ID get](https://pnp.github.io/cli-microsoft365/cmd/tenant/id/id-get/) command reference.
-
-
 ## Next steps
 
 - To create a new Microsoft Entra tenant, see [Quickstart: Create a new tenant in Microsoft Entra ID](./create-new-tenant.md).
