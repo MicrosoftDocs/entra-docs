@@ -237,33 +237,47 @@ Custom security attribute audit logs provide you with the history of activities 
 - Update attribute values assigned to a user
 - Update custom security attribute definition in an attribute set
 
-Custom security attribute audit logs are separate from directory audit logs and have a different endpoint. To view custom security attribute audit logs, you must be assigned one of the following roles. By default, a Global Administrator does not have access to these audit logs.
-
-- [Attribute Log Reader](~/identity/role-based-access-control/permissions-reference.md#attribute-log-reader)
-- [Attribute Log Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-log-administrator)
-
-The following screenshot shows an example of the custom security attribute audit logs. For more information, see [Microsoft Entra audit logs](~/identity/monitoring-health/concept-audit-logs.md).
+To view the custom security attribute audit logs, sign in to the Microsoft Entra admin center, browse to **Audit Logs**, and select **Custom Security**. To view the audit logs, you must be assigned either the [Attribute Log Reader](../identity/role-based-access-control/permissions-reference.md#attribute-log-reader) or [Attribute Log Administrator](../identity/role-based-access-control/permissions-reference.md#attribute-log-administrator) role.
 
 :::image type="content" source="media/custom-security-attributes-manage/audit-logs-attributemanagement.png" alt-text="Screenshot of audit logs with Custom Security tab selected." lightbox="media/custom-security-attributes-manage/audit-logs-attributemanagement.png":::
 
-To export custom security attribute audit logs to different destinations for additional processing, you use diagnostic settings. To create and configure diagnostic settings for custom security attributes, you must be assigned the [Attribute Log Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-log-administrator) role. The following screenshot shows the diagnostic settings for custom security attributes. For more information, see [Diagnostic settings in Azure Monitor](/azure/azure-monitor/essentials/diagnostic-settings).
+For information about how to get the custom security attribute audit logs using the Microsoft Graph API, see the [customSecurityAttributeAudit resource type](/graph/api/resources/customsecurityattributeaudit?view=graph-rest-beta&branch=pr-en-us-21345). For more information, see [Microsoft Entra audit logs](../identity/monitoring-health/concept-audit-logs.md).
 
-:::image type="content" source="media/custom-security-attributes-manage/diagnostic-settings-attributes.png" alt-text="Screenshot of diagnostic settings with Custom security attributes tab selected." lightbox="media/custom-security-attributes-manage/diagnostic-settings-attributes.png":::
+## Changes to audit logs behavior
 
-For information about how to get the custom security attribute audit logs using the Microsoft Graph API, see the [customSecurityAttributeAudit resource type](/graph/api/resources/customsecurityattributeaudit?view=graph-rest-beta&branch=pr-en-us-21345).
+Changes have been made to custom security attribute audit logs for general availability that might impact your daily operations. If you have been using custom security attribute audit logs during preview, here are the actions you must take to ensure your audit log operations aren't disrupted.
 
-### Audit log location
+- Use new audit logs location
+- Assign Attribute Log roles to view audit logs
+- Update any diagnostic settings to export audit logs
 
-Where you find custom security attribute audit logs has changed from the original preview of custom security attributes. Originally, custom security attribute audit logs were written to the directory audit logs. In October 2023, a new endpoint was added exclusively for custom security attribute audit logs. There is a transition period where custom security audit logs are written to both the directory and custom security attributes audit log endpoints. Going forward, you should use the custom security attributes audit log endpoint to find custom security attribute audit logs.
+### Use new audit logs location
 
-To view the audit logs at the custom security attributes endpoint, you must be assigned either the [Attribute Log Reader](~/identity/role-based-access-control/permissions-reference.md#attribute-log-reader) or [Attribute Log Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-log-administrator) role.
+During the preview, custom security attribute audit logs were written to the directory audit logs endpoint. In October 2023, a new endpoint was added exclusively for custom security attribute audit logs. The following screenshot shows the directory audit logs and the new custom security attribute audit logs location.
 
-The following table lists the endpoint where you can find custom security attributes audit logs.
+:::image type="content" source="media/custom-security-attributes-manage/audit-logs-attributemanagement.png" alt-text="Screenshot of audit logs with Custom Security tab selected." lightbox="media/custom-security-attributes-manage/audit-logs-attributemanagement.png":::
+
+There is a transition period where custom security audit logs are written to both the directory and custom security attributes audit log endpoints. Going forward, you must use the custom security attributes audit log endpoint to find custom security attribute audit logs.
+
+The following table lists the endpoint where you can find custom security attributes audit logs during the transition period.
 
 | Event date | Directory endpoint | Custom security attributes endpoint |
 | --- | :---: | :---: |
 | Oct 2023 | :white_check_mark: | :white_check_mark: |
 | Feb 2024 |  | :white_check_mark: |
+
+### Assign Attribute Log roles to view audit logs
+
+During the preview, custom security attribute audit logs could be viewed using the [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator) or [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) roles in the directory audit logs. You are no longer able to use these roles to view custom security attribute audit logs using the new endpoint. To view custom security attribute audit logs, you must be assigned one of the following roles. By default, a Global Administrator does not have access to these audit logs.
+
+- [Attribute Log Reader](../identity/role-based-access-control/permissions-reference.md#attribute-log-reader)
+- [Attribute Log Administrator](../identity/role-based-access-control/permissions-reference.md#attribute-log-administrator)
+
+### Update any diagnostic settings to export audit logs
+
+During the preview, if you configured diagnostic settings to export custom security attribute audit logs to different destinations for additional processing, you must update those diagnostic settings. To create and configure diagnostic settings for custom security attributes, you must be assigned the [Attribute Log Administrator](../identity/role-based-access-control/permissions-reference.md#attribute-log-administrator) role. The following screenshot shows the diagnostic settings for custom security attributes. For more information, see [Diagnostic settings in Azure Monitor](/azure/azure-monitor/essentials/diagnostic-settings).
+
+:::image type="content" source="media/custom-security-attributes-manage/diagnostic-settings-attributes.png" alt-text="Screenshot of diagnostic settings with Custom security attributes tab selected." lightbox="media/custom-security-attributes-manage/diagnostic-settings-attributes.png":::
 
 ## Next steps
 
