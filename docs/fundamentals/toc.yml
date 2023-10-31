@@ -73,7 +73,7 @@ items:
   expanded: false
   items:
   - name: Enable MFA
-    href: ~/identity/authentication/concept-mfa-licensing.md?toc=/azure/active-directory/fundamentals/toc.json
+    href: ~/identity/authentication/concept-mfa-licensing.md?toc=/entra/identity/fundamentals/toc.json&bc=/entra/fundamentals/breadcrumb/toc.json
   - name: Identity secure score
     href: ~/identity/monitoring-health/concept-identity-secure-score.md
   - name: Improve your security posture
@@ -83,7 +83,7 @@ items:
   - name: Security defaults
     href: security-defaults.md
   - name: Block less secure authentications
-    href: ~/identity/conditional-access/block-legacy-authentication.md?toc=/azure/active-directory/fundamentals/toc.json
+    href: ~/identity/conditional-access/block-legacy-authentication.md?toc=/entra/fundamentals/toc.json&bc=/entra/fundamentals/breadcrumb/toc.json
 - name: Support and help
   expanded: false
   items:
@@ -151,9 +151,9 @@ items:
     - name: Manage access to attributes
       href: custom-security-attributes-manage.md
     - name: Assign attributes to users
-      href: ~/identity/users/users-custom-security-attributes.md?toc=/azure/active-directory/fundamentals/toc.json
+      href: ~/identity/users/users-custom-security-attributes.md?toc=/entra/fundamentals/toc.json&bc=/entra/fundamentals/breadcrumb/toc.json
     - name: Assign attributes to applications
-      href: ~/identity/enterprise-apps/custom-security-attributes-apps.md?toc=/azure/active-directory/fundamentals/toc.json
+      href: ~/identity/enterprise-apps/custom-security-attributes-apps.md?toc=/entra/fundamentals/toc.json&bc=/entra/fundamentals/breadcrumb/toc.json
     - name: Troubleshoot attributes
       href: custom-security-attributes-troubleshoot.md
   - name: Frontline worker management

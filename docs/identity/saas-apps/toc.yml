@@ -382,6 +382,8 @@
         href: britive-tutorial.md
       - name: Broadcom DX SaaS
         href: broadcom-dx-saas-tutorial.md  
+      - name: Brocade SANnav Global View
+        href: brocade-sannav-global-view-tutorial.md
       - name: Brocade SANnav Management Portal
         href: brocade-sannav-management-portal-tutorial.md
       - name: Broker groupe Achat Solutions
@@ -390,6 +392,8 @@
         href: browserstack-single-sign-on-tutorial.md
       - name: Brushup
         href: brushup-tutorial.md        
+      - name: bswift
+        href: bswift-tutorial.md
       - name: Bugsnag
         href: bugsnag-tutorial.md
       - name: BullseyeTDP
@@ -1069,6 +1073,8 @@
         href: frontify-tutorial.md
       - name: Frontline Education
         href: frontline-education-tutorial.md
+      - name: FTAPI
+        href: ftapi-tutorial.md
       - name: Fulcrum
         href: fulcrum-tutorial.md
       - name: Fuse
@@ -1411,8 +1417,6 @@
         href: jiramicrosoft-tutorial.md
       - name: JIRA SAML SSO by Microsoft (V5.2)
         href: jira52microsoft-tutorial.md
-      - name: Jisc Student Voter Registration
-        href: jisc-student-voter-registration-tutorial.md
       - name: Jitbit Helpdesk
         href: jitbit-helpdesk-tutorial.md
       - name: Jive
@@ -1589,6 +1593,8 @@
         href: linkedinsalesnavigator-tutorial.md
       - name: LiquidFiles
         href: liquidfiles-tutorial.md
+      - name: LKTransfer
+        href: lktransfer-tutorial.md
       - name: SAP Litmos
         href: litmos-tutorial.md
       - name: LMS and Education Management System Leaf
@@ -2009,6 +2015,8 @@
         href: podbean-tutorial.md
       - name: PolicyStat
         href: policystat-tutorial.md
+      - name: PoliteMail - SSO
+        href: politemail-sso-tutorial.md
       - name: PoolParty Semantic Suite
         href: poolparty-semantic-suite-tutorial.md
       - name: PostBeyond
@@ -2325,6 +2333,8 @@
         href: segment-tutorial.md
       - name: Seismic
         href: seismic-tutorial.md
+      - name: senhasegura SAML Authentication
+        href: senhasegura-saml-authentication-tutorial.md
       - name: Senomix Timesheets
         href: senomix-timesheets-tutorial.md
       - name: SendPro Enterprise
@@ -3005,6 +3015,8 @@
         href: zoho-one-china-tutorial.md        
       - name: Zola
         href: zola-tutorial.md
+      - name: Zonka Feedback
+        href: zonka-feedback-tutorial.md
       - name: Zoom
         href: zoom-tutorial.md
       - name: Zscaler
@@ -3097,7 +3109,7 @@
       - name: Autodesk SSO
         href: autodesk-sso-provisioning-tutorial.md
       - name: Azure Databricks SCIM Connector
-        href: /azure/databricks/administration-guide/users-groups/scim/aad?bc=%2fazure%2factive-directory%2fsaas-apps%2fbreadcrumb%2ftoc.json&toc=%2fazure%2factive-directory%2fsaas-apps%2ftoc.json
+        href: /azure/databricks/administration-guide/users-groups/scim/aad?toc=/entra/identity/saas-apps/toc.json?bc=/entra/identity/saas-apps/breadcrumb/toc.json
       - name: Azure Databricks with Private Link Workspace
         href: azure-databricks-with-private-link-workspace-provisioning-tutorial.md
       - name: AWS IAM Identity Center
@@ -3486,6 +3498,8 @@
         href: robin-provisioning-tutorial.md
       - name: Rollbar
         href: rollbar-provisioning-tutorial.md
+      - name: Rootly
+        href: rootly-provisioning-tutorial.md
       - name: Rouse Sales
         href: rouse-sales-provisioning-tutorial.md
       - name: SafeGuard Cyber
@@ -3530,6 +3544,8 @@
         href: signagelive-provisioning-tutorial.md
       - name: Sign In Enterprise Host Provisioning
         href: sign-in-enterprise-host-provisioning-tutorial.md
+      - name: Simple In/Out
+        href: simple-in-out-provisioning-tutorial.md
       - name: Slack
         href: slack-provisioning-tutorial.md
       - name: Smartfile
@@ -3658,6 +3674,8 @@
         href: xledger-provisioning-tutorial.md
       - name: XM Fax and XM SendSecure
         href: xm-fax-and-xm-send-secure-provisioning-tutorial.md
+      - name: YardiOne
+        href: yardione-provisioning-tutorial.md
       - name: Yellowbox
         href: yellowbox-provisioning-tutorial.md
       - name: Zapier

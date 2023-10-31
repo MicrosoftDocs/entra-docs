@@ -10,7 +10,7 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: pim
 ms.topic: overview
-ms.date: 09/12/2023
+ms.date: 10/26/2023
 ms.author: barclayn
 ms.reviewer: ilyal
 ms.custom: pim,azuread-video-2020,contperf-fy21q3-portal, content-engagement
@@ -160,41 +160,6 @@ Privileged Identity Management supports the following scenarios:
 - Request activation of a role that requires approval
 - View the status of your request to activate
 - Complete your task in Microsoft Entra ID if activation was approved
-
-<a name='managing-privileged-access-azure-ad-groups-preview'></a>
-
-## Managing privileged access Microsoft Entra groups (preview)
-
-In Privileged Identity Management (PIM), you can now assign eligibility for membership or ownership of PIM for Groups. Starting with this preview, you can assign Microsoft Entra built-in roles to cloud groups and use PIM to manage group member and owner eligibility and activation. For more information about role-assignable groups in Microsoft Entra ID, see [Use Microsoft Entra groups to manage role assignments](~/identity/role-based-access-control/groups-concept.md).
-
->[!Important]
-> To assign a PIM for Groups to a role for administrative access to Exchange, Security & Compliance Center, or SharePoint, use the Azure portal **Roles and Administrators** experience and not in the PIM for Groups experience to make the user or group eligible for activation into the group.
-
-### Different just-in-time policies for each group
-
-Some organizations use tools like Microsoft Entra business-to-business (B2B) collaboration to invite their partners as guests to their Microsoft Entra organization. Instead of a single just-in-time policy for all assignments to a privileged role, you can create two different PIM for Groups with their own policies. You can enforce less strict requirements for your trusted employees, and stricter requirements like approval workflow for your partners when they request activation into their assigned group.
-
-### Activate multiple role assignments in one request
-
-With the PIM for Groups preview, you can give workload-specific administrators quick access to multiple roles with a single just-in-time request. For example, your Tier 3 Office Admins might need just-in-time access to the Exchange Admin, Office Apps Admin, Teams Admin, and Search Admin roles to thoroughly investigate incidents daily. Before today it would require four consecutive requests, which are a process that takes some time. Instead, you can create a role assignable group called “Tier 3 Office Admins”, assign it to each of the four roles previously mentioned (or any Microsoft Entra built-in roles) and enable it for Privileged Access in the group’s Activity section. Once enabled for privileged access, you can configure the just-in-time settings for members of the group and assign your admins and owners as eligible. When an admin elevates into the group, they become members of all four Microsoft Entra roles.
-
-## Invite guest users and assign Azure resource roles in Privileged Identity Management
-
-Microsoft Entra guest users are part of the business-to-business (B2B) collaboration capabilities within Microsoft Entra ID so that you can manage external guest users and vendors as guests in Microsoft Entra ID. For example, you can use these Privileged Identity Management features for Azure identity tasks with guests such as assigning access to specific Azure resources, specifying assignment duration and end date, or requiring two-step verification on active assignment or activation. For more information on how to invite a guest to your organization and manage their access, see [Add B2B collaboration users in the Azure portal](~/external-id/add-users-administrator.md).
-
-### When would you invite guests?
-
-Here are a couple examples of when you might invite guests to your organization:
-
-- Allow an external self-employed vendor that only has an email account to access your Azure resources for a project.
-- Allow an external partner in a large organization that uses on-premises Active Directory Federation Services to access your expense application.
-- Allow support engineers not in your organization (such as Microsoft support) to temporarily access your Azure resource to troubleshoot issues.
-
-### How does collaboration using B2B guests work?
-
-When you use B2B collaboration, you can invite an external user to your organization as a guest. The guest can be managed as a user in your organization, but a guest has to be authenticated in their home organization and not in your Microsoft Entra organization. This means that if the guest no longer has access to their home organization, they also lose access to your organization. For example, if the guest leaves their organization, they automatically lose access to any resources you shared with them in Microsoft Entra ID without you having to do anything. For more information about B2B collaboration, see [What is guest user access in Microsoft Entra B2B?](~/external-id/what-is-b2b.md).
-
-![Diagram showing how a guest user is authenticated in their home directory](./media/pim-configure/b2b-external-user.png)
 
 ## Next steps
 

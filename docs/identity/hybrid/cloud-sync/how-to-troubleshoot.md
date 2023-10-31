@@ -152,11 +152,24 @@ Provisioning logs provide a wealth of information on the state of the objects be
 
 ![Screenshot that shows information about provisioning logs.](media/how-to-troubleshoot/log-2.png)
 
-You can filter the view to focus on specific problems, such as dates. Double-click an individual event to see additional information.
+You can filter the view to focus on specific problems, such as dates. You can also search the logs for activities relating to an Active Directory object using its Active Directory `ObjectGuid`. Double-click an individual event to see additional information.
 
 ![Screenshot that shows the provisioning logs dropdown list information.](media/how-to-troubleshoot/log-3.png)
 
 This information provides detailed steps and where the synchronization problem is occurring. In this way, you can pinpoint the exact spot of the problem.
+
+#### Skipped objects
+
+If you have been synchronizing users and groups from Active Directory, you may be unable to locate one or more groups in Microsoft Entra ID.  This could be due to synchronization having not yet completed or not yet caught up with the creation of the object in Active Directory, a sync error that is blocking the object being created in Microsoft Entra ID, or a synchronization rule scoping rule might be applied that is excluding the object.
+
+If you restart sync, and then when the provisioning cycle completes, search the provisioning log for activities relating to an object using that object's Active Directory `ObjectGuid`. If an event with an Identity containing only a Source ID and a Status of `Skipped` is present in the log, this can indicate that the agent filtered the Active Directory object because it was out of scope.
+
+By default, the scoping rules exclude the following objects from being synchronized to Microsoft Entra ID:
+
+ * users, groups and contacts with `IsCriticalSystemObject` set to TRUE, including many of the built-in users and groups in Active Directory
+ * replication victim objects
+
+Additional restrictions can be present in the [synchronization schema](concept-attributes.md).
 
 #### Microsoft Entra ID object deletion threshold
 

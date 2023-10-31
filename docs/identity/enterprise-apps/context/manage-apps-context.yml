@@ -1,5 +1,5 @@
 ### YamlMime:ContextObject
-brand: azure
-uhfHeaderId: azure
-breadcrumb_path: ../bread/toc.yml
+brand: entra
+uhfHeaderId: entra
+breadcrumb_path: ../breadcrumb/toc.yml
 toc_rel: ../toc.yml

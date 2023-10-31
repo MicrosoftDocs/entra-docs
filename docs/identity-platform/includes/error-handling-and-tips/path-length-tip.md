@@ -1,6 +1,6 @@
 ---
-author: davidmu1
-ms.author: davidmu
+author: rwike77
+ms.author: ryanwi
 ms.date: 03/04/2021
 ms.service: active-directory
 ms.subservice: develop

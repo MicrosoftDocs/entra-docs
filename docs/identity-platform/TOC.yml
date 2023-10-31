@@ -15,9 +15,9 @@
       displayName: introduction, basics, overview
       items:
         - name: Identity fundamentals
-          href: ~/fundamentals/identity-fundamental-concepts.md?toc=/azure/active-directory/develop/toc.json&bc=/azure/active-directory/develop/breadcrumb/toc.json
+          href: ~/fundamentals/identity-fundamental-concepts.md?toc=/entra/identity-platform/toc.json&bc=/entra/identity-platform/breadcrumb/toc.json
         - name: Introduction to identity and access management
-          href: ~/fundamentals/introduction-identity-access-management.md?toc=/azure/active-directory/develop/toc.json&bc=/azure/active-directory/develop/breadcrumb/toc.json
+          href: ~/fundamentals/introduction-identity-access-management.md?toc=/entra/identity-platform/toc.json&bc=/entra/identity-platform/breadcrumb/toc.json
         - name: Authentication vs. authorization
           href: authentication-vs-authorization.md
         - name: OAuth 2.0 and OpenID Connect
@@ -32,7 +32,7 @@
         - name: Auth flows supported by MSAL
           href: msal-authentication-flows.md
         - name: Microsoft Graph
-          href: /graph/overview?toc=/azure/active-directory/develop/toc.json&bc=/azure/active-directory/develop/breadcrumb/toc.json
+          href: /graph/overview?toc=/entra/identity-platform/toc.json&bc=/entra/identity-platform/breadcrumb/toc.json
         - name: Glossary of terms
           displayName: dictionary, terminology
           href: developer-glossary.md
@@ -199,7 +199,7 @@
         - name: Node.js
           href: tutorial-v2-nodejs-webapp-msal.md
         - name: Spring
-          href: /azure/developer/java/spring-framework/configure-spring-boot-starter-java-app-with-azure-active-directory?toc=/azure/active-directory/develop/toc.json&bc=/azure/active-directory/develop/breadcrumb/toc.json
+          href: /azure/developer/java/spring-framework/configure-spring-boot-starter-java-app-with-azure-active-directory?toc=/entra/identity-platform/toc.json&bc=/entra/identity-platform/breadcrumb/toc.json
         - name: Secure web app accesses storage and Microsoft Graph
           items:
             - name: Overview
@@ -518,6 +518,14 @@
                   href: custom-extension-configure-saml-app.md
                 - name: Troubleshoot your custom claims provider API
                   href: custom-extension-troubleshoot.md
+        - name: Attribute collection custom extensions
+          items:
+            - name: Create attribute collection start and submit events
+              href: custom-extension-attribute-collection.md
+            - name: OnAttributeCollectionStart event reference
+              href: custom-extension-OnAttributeCollectionStart-reference.md
+            - name: OnAttributeCollectionSubmit event reference
+              href: custom-extension-OnAttributeCollectionSubmit-reference.md
         - name: Handle browser cookie restrictions
           items:
             - name: Handle ITP in Safari
@@ -534,21 +542,21 @@
         - name: Automatic user provisioning (SCIM)
           items:
             - name: Common provisioning scenarios
-              href: ~/identity/app-provisioning/scim-graph-scenarios.md?toc=/azure/active-directory/develop/toc.json&bc=/azure/active-directory/develop/breadcrumb/toc.json
+              href: ~/identity/app-provisioning/scim-graph-scenarios.md?toc=/entra/identity-platform/toc.json&bc=/entra/identity-platform/breadcrumb/toc.json
             - name: Automate configuration using MS Graph
-              href: ~/identity/app-provisioning/application-provisioning-configuration-api.md?bc=/azure/active-directory/develop/breadcrumb/toc.json&toc=/azure/active-directory/develop/toc.json
+              href: ~/identity/app-provisioning/application-provisioning-configuration-api.md?toc=/entra/identity-platform/toc.json&bc=/entra/identity-platform/breadcrumb/toc.json
             - name: Develop and integrate a SCIM endpoint
-              href: ~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md?toc=/azure/active-directory/develop/toc.json&bc=/azure/active-directory/develop/breadcrumb/toc.json
+              href: ~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md?toc=/entra/identity-platform/toc.json&bc=/entra/identity-platform/breadcrumb/toc.json
     - name: Secure
       items:
         - name: Build for resilience
           items:
             - name: Development Overview
-              href: ~/architecture/resilience-app-development-overview.md?toc=/azure/active-directory/develop/toc.json&bc=/azure/active-directory/develop/breadcrumb/toc.json
+              href: ~/architecture/resilience-app-development-overview.md?toc=/entra/identity-platform/toc.json&bc=/entra/identity-platform/breadcrumb/toc.json
             - name: Client applications
-              href: ~/architecture/resilience-client-app.md?toc=/azure/active-directory/develop/toc.json&bc=/azure/active-directory/develop/breadcrumb/toc.json
+              href: ~/architecture/resilience-client-app.md?toc=/entra/identity-platform/toc.json&bc=/entra/identity-platform/breadcrumb/toc.json
             - name: Daemon applications
-              href: ~/architecture/resilience-daemon-app.md?toc=/azure/active-directory/develop/toc.json&bc=/azure/active-directory/develop/breadcrumb/toc.json
+              href: ~/architecture/resilience-daemon-app.md?toc=/entra/identity-platform/toc.json&bc=/entra/identity-platform/breadcrumb/toc.json
             - name: OpenID Connect metadata refresh
               href: howto-build-services-resilient-to-metadata-refresh.md
         - name: Use Continuous Access Evaluation APIs
@@ -601,7 +609,7 @@
             - name: Publish to App Source
               href: v2-howto-get-appsource-certified.md
             - name: Publish to Microsoft Entra App Gallery
-              href: ~/identity/enterprise-apps/v2-howto-app-gallery-listing.md?toc=/azure/active-directory/develop/toc.json&bc=/azure/active-directory/develop/breadcrumb/toc.json
+              href: ~/identity/enterprise-apps/v2-howto-app-gallery-listing.md?toc=/entra/identity-platform/toc.json&bc=/entra/identity-platform/breadcrumb/toc.json
             - name: Publish to Microsoft 365 App Stores
               href: /partner-center/marketplace/add-in-submission-guide
     - name: Migrate
@@ -824,7 +832,7 @@
     - name: Scopes for web API accepting v1.0 tokens
       href: msal-v1-app-scopes.md
     - name: Spring Cloud Azure
-      href: /azure/developer/java/spring-framework/developer-guide-overview?toc=/azure/active-directory/develop/toc.json#spring-security-support    
+      href: /azure/developer/java/spring-framework/developer-guide-overview?toc=/entra/identity-platform/toc.json&bc=/entra/identity-platform/breadcrumb/toc.json   
     - name: Configured permissions limits troubleshooting
       href: troubleshoot-required-resource-access-limits.md
     - name: Microsoft auth libraries by app type
@@ -841,6 +849,10 @@
       href: /graph/api/resources/azure-ad-overview
     - name: Custom claims provider reference
       href: custom-claims-provider-reference.md
+    - name: Attribute collection start custom extension reference
+      href: custom-extension-OnAttributeCollectionStart-reference.md
+    - name: Attribute collection submit custom extension reference
+      href: custom-extension-OnAttributeCollectionSubmit-reference.md
 - name: Resources
   items:
     - name: Help and support options

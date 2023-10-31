@@ -6,7 +6,7 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 09/29/2023
+ms.date: 10/25/2023
 
 ms.author: justinha
 author: ChristianCB83
@@ -55,12 +55,12 @@ The following table lists each setting that can be set to Microsoft managed and 
 
 | Setting                                                                                         | Configuration |
 |-------------------------------------------------------------------------------------------------|---------------|
-| [Registration campaign](how-to-mfa-registration-campaign.md)                                    | From Sept. 25 to Oct. 20, 2023, the Microsoft managed value for the registration campaign will change to Enabled for text message and voice call users across all tenants. |
+| [Registration campaign](how-to-mfa-registration-campaign.md)                                    | Enabled for text message and voice call users |
 | [Location in Microsoft Authenticator notifications](how-to-mfa-additional-context.md)           | Disabled      |
 | [Application name in Microsoft Authenticator notifications](how-to-mfa-additional-context.md)   | Disabled      |
 | [System-preferred MFA](concept-system-preferred-multifactor-authentication.md)                  | Enabled       |
 | [Authenticator Lite](how-to-mfa-authenticator-lite.md)                                          | Enabled       |  
-| [Report suspicious activity](howto-mfa-mfasettings.md#report-suspicious-activity)                  | Disabled      |
+| [Report suspicious activity](howto-mfa-mfasettings.md#report-suspicious-activity)               | Disabled      |
 
 As threat vectors change, Microsoft Entra ID may announce default protection for a **Microsoft managed** setting in [release notes](~/fundamentals/whats-new.md) and on commonly read forums like [Tech Community](https://techcommunity.microsoft.com/). For example, see our blog post [It's Time to Hang Up on Phone Transports for Authentication](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/it-s-time-to-hang-up-on-phone-transports-for-authentication/ba-p/1751752) for more information about the need to move away from using text message and voice calls, which led to default enablement for the registration campaign to help users to set up Authenticator for modern authentication.
 

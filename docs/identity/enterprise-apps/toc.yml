@@ -1,3 +1,4 @@
+items:
   - name: Application management documentation
     href: index.yml
   - name: Overview
@@ -97,8 +98,8 @@
           href: migrate-adfs-saml-based-sso.md
         - name: Represent ADFS security policies
           href: migrate-adfs-represent-security-policies.md
-        - name: Use the ADFS application activity report
-          href: migrate-adfs-application-activity.md
+        - name: Overview of AD FS application migration wizard
+          href: migrate-ad-fs-application-overview.md
       - name: ADFS migration guidelines
         items:
         - name: Migration phases
@@ -122,6 +123,16 @@
       href: add-application-portal-configure.md
     - name: Add enterprise app for multi-tenant app
       href: create-service-principal-cross-tenant.md
+    - name: Single sign-on
+      items:
+      - name: Enable Single sign-on with SAML
+        href: add-application-portal-setup-sso.md
+      - name: Enable Linked single sign-on
+        href: configure-linked-sign-on.md
+      - name: Enable OpenID Connect based single sign-on
+        href: add-application-portal-setup-oidc-sso.md
+      - name: Enable Password based single sign-on
+        href: configure-password-single-sign-on-non-gallery-applications.md
     - name: Manage access
       items:
       - name: Manage consent and permissions
@@ -170,7 +181,13 @@
         href: hide-application-from-user-portal.md
     - name: Migrate applications
       items:
-      - name: Migrate applications from Okta to Microsoft Entra ID 
+      - name: Migrate applications from AD FS to Microsoft Entra ID 
+        items:
+        - name: Use the AD FS application migration wizard
+          href: migrate-ad-fs-application-howto.md
+        - name: Use the ADFS application activity report
+          href: migrate-adfs-application-activity.md
+      - name: Migrate applications from Okta to Microsoft Entra ID
         items:
         - name: Migrate applications from Okta to Microsoft Entra ID
           href: migrate-applications-from-okta.md
@@ -241,19 +258,9 @@
               - name: SSL-VPN
                 href: f5-passwordless-vpn.md  
               - name: B2C
-                href: /azure/active-directory-b2c/partner-f5?context=/azure/active-directory/manage-apps/context/manage-apps-context
+                href: /azure/active-directory-b2c/partner-f5?context=/entra/identity/enterprise-apps/context/manage-apps-context.json
       - name: Silverfort
         href: silverfort-integration.md
-    - name: Single sign-on
-      items:
-      - name: Enable Single sign-on with SAML
-        href: add-application-portal-setup-sso.md
-      - name: Enable Linked single sign-on
-        href: configure-linked-sign-on.md
-      - name: Enable OpenID Connect based single sign-on
-        href: add-application-portal-setup-oidc-sso.md
-      - name: Enable Password based single sign-on
-        href: configure-password-single-sign-on-non-gallery-applications.md
     - name: Troubleshoot
       items:
       - name: Troubleshoot password-based single sign-on
@@ -279,15 +286,15 @@
       - name: Delete an enterprise application
         href: delete-application-portal.md
       - name: Restore an enterprise application
-        href: restore-application.md   
+        href: restore-application.md
   - name: Reference
     items:
     - name: Application API - Microsoft Graph
-      href: /graph/api/resources/application?context=/azure/active-directory/manage-apps/context/manage-apps-context
+      href: /graph/api/resources/application?context=/entra/identity/enterprise-apps/context/manage-apps-context.json
     - name: Service principals API - Microsoft Graph
-      href: /graph/api/resources/serviceprincipal?context=/azure/active-directory/manage-apps/context/manage-apps-context
+      href: /graph/api/resources/serviceprincipal?context=/entra/identity/enterprise-apps/context/manage-apps-context.json
     - name: Manage apps using Microsoft Graph
-      href: /graph/tutorial-applications-basics?context=/azure/active-directory/manage-apps/context/manage-apps-context
+      href: /graph/tutorial-applications-basics?context=/entra/identity/enterprise-apps/context/manage-apps-context.json
     - name: Deletion and recovery FAQ
       href: delete-recover-faq.yml
     - name: Admin consent workflow FAQ
@@ -307,7 +314,7 @@
         - name: Migration resources
           href: migration-resources.md
         - name: Support and help options for developers
-          href: ~/identity-platform/developer-support-help-options.md?context=/azure/active-directory/manage-apps/context/manage-apps-context
+          href: ~/identity-platform/developer-support-help-options.md?toc=/entra/identity/enterprise-apps/toc.json&bc=/entra/identity/enterprise-apps/breadcrumb/toc.json
         - name: Azure feedback forum
           href: https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789
         - name: Microsoft Q&A question page

@@ -7,7 +7,7 @@ manager: CelesteDG
 ms.service: active-directory
 ms.subservice: fundamentals
 ms.topic: how-to
-ms.date: 09/27/2023
+ms.date: 10/26/2023
 ms.author: celested
 ms.reviewer: nicholepet
 
@@ -104,7 +104,7 @@ $terminology = @(
     @{ Key = 'Azure AD Domain Services'; Value = 'Microsoft Entra Domain Services' },
     @{ Key = 'Azure AD access token authentication'; Value = 'Microsoft Entra access token authentication' },
     @{ Key = 'Azure AD admin center'; Value = 'Microsoft Entra admin center' },
-    @{ Key = 'Azure AD portal'; Value = 'Microsoft Entra portal' },
+    @{ Key = 'Azure AD portal'; Value = 'Microsoft Entra admin center' },
     @{ Key = 'Azure AD application proxy'; Value = 'Microsoft Entra application proxy' },
     @{ Key = 'Azure AD authentication'; Value = 'Microsoft Entra authentication' },
     @{ Key = 'Azure AD Conditional Access'; Value = 'Microsoft Entra Conditional Access' },
@@ -163,7 +163,7 @@ $terminology = @(
     @{ Key = 'Azure Active Directory Domain Services'; Value = 'Microsoft Entra Domain Services' },
     @{ Key = 'Azure Active Directory access token authentication'; Value = 'Microsoft Entra access token authentication' },
     @{ Key = 'Azure Active Directory admin center'; Value = 'Microsoft Entra admin center' },
-    @{ Key = 'Azure Active Directory portal'; Value = 'Microsoft Entra portal' },
+    @{ Key = 'Azure Active Directory portal'; Value = 'Microsoft Entra admin center' },
     @{ Key = 'Azure Active Directory application proxy'; Value = 'Microsoft Entra application proxy' },
     @{ Key = 'Azure Active Directory authentication'; Value = 'Microsoft Entra authentication' },
     @{ Key = 'Azure Active Directory Conditional Access'; Value = 'Microsoft Entra Conditional Access' },
@@ -217,7 +217,7 @@ $terminology = @(
     @{ Key = 'AAD Domain Services'; Value = 'Microsoft Entra Domain Services' },
     @{ Key = 'AAD access token authentication'; Value = 'Microsoft Entra access token authentication' },
     @{ Key = 'AAD admin center'; Value = 'Microsoft Entra admin center' },
-    @{ Key = 'AAD portal'; Value = 'Microsoft Entra portal' },
+    @{ Key = 'AAD portal'; Value = 'Microsoft Entra admin center' },
     @{ Key = 'AAD application proxy'; Value = 'Microsoft Entra application proxy' },
     @{ Key = 'AAD authentication'; Value = 'Microsoft Entra authentication' },
     @{ Key = 'AAD Conditional Access'; Value = 'Microsoft Entra Conditional Access' },

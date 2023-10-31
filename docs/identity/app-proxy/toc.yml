@@ -1,3 +1,4 @@
+items:
   - name: Application Proxy documentation
     href: index.yml
   - name: Overview
@@ -13,7 +14,7 @@
     - name: Add an on-premises app with Application Proxy
       href: application-proxy-add-on-premises-application.md
     - name: Configure Application Proxy - Microsoft Graph
-      href: /graph/application-proxy-configure-api?toc=/azure/active-directory/app-proxy/toc.json&bc=/azure/active-directory/app-proxy/breadcrumb/toc.json
+      href: /graph/application-proxy-configure-api?context=/entra/identity/app-proxy/context/app-proxy-context.json
   - name: Samples
     expanded: false
     items: 
@@ -116,7 +117,7 @@
       - name: Integrate with Application Proxy using PingAccess
         href: application-proxy-ping-access-publishing-guide.md
       - name: Integrate with Microsoft Entra Domain Services
-        href: /entra/identity/domain-services/deploy-azure-app-proxy?context=/azure/active-directory/app-proxy/context/app-proxy-context
+        href: /entra/identity/domain-services/deploy-azure-app-proxy?toc=/entra/identity/app-proxy/toc.json&bc=/entra/identity/app-proxy/breadcrumb/toc.json
       - name: Integrate with Power BI
         href: application-proxy-integrate-with-power-bi.md
       - name: Integrate with Defender for Cloud Apps
@@ -174,7 +175,7 @@
   - name: Resources
     items:
     - name: Support and help options for developers
-      href: ~/identity-platform/developer-support-help-options.md?context=/azure/active-directory/manage-apps/context/manage-apps-context
+      href: ~/identity-platform/developer-support-help-options.md?toc=/entra/identity/app-proxy/toc.json&bc=/entra/identity/app-proxy/breadcrumb/toc.json
     - name: Azure feedback forum
       href: https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789
     - name: Microsoft Q&A question page

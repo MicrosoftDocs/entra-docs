@@ -1,13 +1,20 @@
-- name: Azure
-  tocHref: /azure/
-  topicHref: /azure/index
+- name: Microsoft Entra
+  tocHref: /entra/
+  topicHref: /entra/index
   items:
-  - name: Microsoft Entra Domain Services Documentation
-    tocHref: /azure/active-directory/fundamentals
-    topicHref: /azure/active-directory-domain-services/index
-  - name: Microsoft Entra Domain Services Documentation
-    tocHref: /azure/active-directory/hybrid/
-    topicHref: /azure/active-directory-domain-services/index
-  - name: Microsoft Entra Domain Services Documentation
-    tocHref: /windows-server/identity/ad-ds/
-    topicHref: /azure/active-directory-domain-services/index
+  - name: Microsoft Entra ID
+    tocHref: /entra/identity/
+    topicHref: /entra/identity/index
+    items:
+    - name: Domain Services
+      tocHref: /entra/identity/hybrid/
+      topicHref: /entra/identity/domain-services/
+    - name: Domain Services
+      tocHref: /entra/fundamentals/
+      topicHref: /entra/identity/domain-services/
+    - name: Domain Services
+      tocHref: /security/benchmark/
+      topicHref: /entra/identity/domain-services/
+    - name: Domain Services
+      tocHref: /entra/architecture/
+      topicHref: /entra/identity/domain-services/

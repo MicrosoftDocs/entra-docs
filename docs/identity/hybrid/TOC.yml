@@ -37,8 +37,6 @@
       href:  accounts.md
     - name:  Monitor your environment
       href:  connect/how-to-connect-health-operations.md
-    - name:  Migrate your sync tool
-      href:  cloud-sync/migrate-azure-ad-connect-to-cloud-sync.md
     - name:  Exchange hybrid writeback
       href:  exchange-hybrid-writeback.md
     - name:  Decommission connect sync V1
@@ -81,7 +79,12 @@
       href:  connect/how-to-connect-sync-change-the-configuration.md
     - name:  Attributes synchronized to AD
       href:  connect/reference-connect-sync-attributes-synchronized.md
-
+  - name: Provision to AD using Microsoft Entra Cloud Sync
+    items: 
+    - name:  Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance
+      href:  cloud-sync/govern-on-premises-groups.md
+    - name:  Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync
+      href:  cloud-sync/migrate-group-writeback.md
 
 
 - name: Cloud sync reference
@@ -98,6 +101,8 @@
       href: cloud-sync/tutorial-existing-forest.md
     - name: Pilot cloud sync for an existing synced AD forest 
       href: cloud-sync/tutorial-pilot-aadc-aadccp.md
+    - name:  Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance
+      href:  cloud-sync/govern-on-premises-groups.md
   - name: Concepts
     items:
     - name: How it works
@@ -118,8 +123,10 @@
         href: cloud-sync/how-to-install.md
       - name: Install the provisioning agent using CLI and PowerShell
         href: cloud-sync/how-to-install-pshell.md
-      - name: Cloud sync configuration
+      - name: Configuration - AD to Microsoft Entra ID
         href: cloud-sync/how-to-configure.md
+      - name: Provision groups to AD using Microsoft Entra Cloud Sync
+        href: cloud-sync/how-to-configure-entra-to-active-directory.md
       - name: On-demand provisioning
         href: cloud-sync/how-to-on-demand-provision.md
       - name: Attribute mapping
@@ -130,6 +137,12 @@
         href: cloud-sync/custom-attribute-mapping.md
       - name: Exchange hybrid
         href: cloud-sync/exchange-hybrid.md
+    - name: Migration
+      items:
+      - name:  Migrate your sync tool
+        href:  cloud-sync/migrate-azure-ad-connect-to-cloud-sync.md
+      - name:  Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync
+        href:  cloud-sync/migrate-group-writeback.md
     - name: Plan and design
       items:
       - name: Topologies and scenarios for cloud sync

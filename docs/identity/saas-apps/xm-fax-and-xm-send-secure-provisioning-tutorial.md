@@ -16,7 +16,7 @@ ms.author: thwimmer
 
 # Tutorial: Configure XM Fax and XM SendSecure for automatic user provisioning
 
-This tutorial describes the steps you need to perform in both XM Fax and XM SendSecure and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users to [XM Fax and XM SendSecure](https://www.opentext.com/pro) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
+This tutorial describes the steps you need to perform in both XM Fax and XM SendSecure and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users to [XM Fax and XM SendSecure](https://www.opentext.com/pro) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 
 
 ## Supported capabilities
@@ -40,21 +40,40 @@ The scenario outlined in this tutorial assumes that you already have the followi
 * Determine what data to [map between Microsoft Entra ID and XM Fax and XM SendSecure](~/identity/app-provisioning/customize-application-attributes.md).
 
 ## Step 2: Configure XM Fax and XM SendSecure to support provisioning with Microsoft Entra ID
-Contact XM Fax and XM SendSecure support to configure XM Fax and XM SendSecure to support provisioning with Microsoft Entra ID.
+
+
+### Create an access token
+1. In your XM Cloud enterprise account, click **Enterprise name** > **Access tokens**.
+1. Create a new access token with the permission **User provisioning (using SCIM)**.
+1. Copy the access token. You will need it as the **Secret Token** in Microsoft Entra ID.
+
+### Tenant URL
+
+* To configure the Microsoft Entra provisioning service, you will need your tenant URL.
+
+* The tenant URL depends on the region, the name of your enterprise account and has the following scheme:
+`https://<domain>/api/scim/v2/enterprises/<enterprise_name>/`
+
+Examples:
+
+* `https://portal.xmedius.com/api/scim/v2/enterprises/acme/`
+* `https://portal.xmedius.eu/api/scim/v2/enterprises/my_corporation/`
+* `https://portal.xmedius.ca/api/scim/v2/enterprises/another_company/`
+
 
 ## Step 3: Add XM Fax and XM SendSecure from the Microsoft Entra application gallery
 
-Add XM Fax and XM SendSecure from the Microsoft Entra application gallery to start managing provisioning to XM Fax and XM SendSecure. If you have previously setup XM Fax and XM SendSecure for SSO, you can use the same application. However it's recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add XM Fax and XM SendSecure from the Microsoft Entra application gallery to start managing provisioning to XM Fax and XM SendSecure. If you have previously setup XM Fax and XM SendSecure for SSO, you can use the same application. However it's recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md).
 
-## Step 4: Define who will be in scope for provisioning 
+## Step 4: Define who will be in scope for provisioning
 
-The Microsoft Entra provisioning service allows you to scope who will be provisioned based on assignment to the application and or based on attributes of the user. If you choose to scope who will be provisioned to your app based on assignment, you can use the following [steps](~/identity/enterprise-apps/assign-user-or-group-access-portal.md) to assign users to the application. If you choose to scope who will be provisioned based solely on attributes of the user, you can use a scoping filter as described [here](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md). 
+The Microsoft Entra provisioning service allows you to scope who will be provisioned based on assignment to the application and or based on attributes of the user. If you choose to scope who will be provisioned to your app based on assignment, you can use the following [steps](~/identity/enterprise-apps/assign-user-or-group-access-portal.md) to assign users to the application. If you choose to scope who will be provisioned based solely on attributes of the user, you can use a scoping filter as described [here](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 * Start small. Test with a small set of users before rolling out to everyone. When scope for provisioning is set to assigned users, you can control this by assigning one or two users to the app. When scope is set to all users, you can specify an [attribute based scoping filter](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 * If you need more roles, you can [update the application manifest](~/identity-platform/howto-add-app-roles-in-apps.md) to add new roles.
 
-## Step 5: Configure automatic user provisioning to XM Fax and XM SendSecure 
+## Step 5: Configure automatic user provisioning to XM Fax and XM SendSecure
 
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users in TestApp based on user assignments in Microsoft Entra ID.
 
@@ -79,7 +98,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
 
-1. Under the **Admin Credentials** section, input your XM Fax and XM SendSecure Tenant URL and Secret Token. Click **Test Connection** to ensure Microsoft Entra ID can connect to XM Fax and XM SendSecure. If the connection fails, ensure your XM Fax and XM SendSecure account has Admin permissions and try again.
+1. Under the **Admin Credentials** section, input your XM Fax and XM SendSecure Tenant URL and Secret Token from Step 2. Click **Test Connection** to ensure Microsoft Entra ID can connect to XM Fax and XM SendSecure. If the connection fails, check the URL and access token are correct.
 
  	![Screenshot of Token.](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -96,7 +115,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |Attribute|Type|Supported for filtering|Required by XM Fax and XM SendSecure|
    |---|---|---|---|
    |userName|String|&check;|&check;
-   |emails[type eq "work"].value|String|&check;|&check;
+   |emails[type eq "work"].value|String||&check;
    |active|Boolean||
    |title|String||
    |name.givenName|String||
@@ -112,7 +131,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |externalId|String||&check;
    |roles[primary eq "True"].value|String||
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:organization|String||
-   
+
 1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 1. To enable the Microsoft Entra provisioning service for XM Fax and XM SendSecure, change the **Provisioning Status** to **On** in the **Settings** section.
@@ -127,9 +146,10 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
 
-This operation starts the initial synchronization cycle of all users defined in **Scope** in the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. 
+This operation starts the initial synchronization cycle of all users defined in **Scope** in the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running.
 
 ## Step 6: Monitor your deployment
+
 Once you've configured provisioning, use the following resources to monitor your deployment:
 
 * Use the [provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md) to determine which users have been provisioned successfully or unsuccessfully
