@@ -32,7 +32,7 @@ The experiences and issues described in this article have the following scope.
 | In scope | - Microsoft Entra administrator experiences and issues related to multitenant organizations to support seamless collaboration experiences in new Teams, with reciprocally provisioned B2B members |
 | Related scope | - Microsoft 365 admin center experiences and issues related to multitenant organizations<br/>- Microsoft 365 multitenant organization people search experiences and issues<br/>- Cross-tenant synchronization issues related to Microsoft 365 |
 | Out of scope | - Cross-tenant synchronization unrelated to Microsoft 365<br/>- End user experiences in new Teams<br/>- End user experiences in Power BI<br/>- Tenant migration or consolidation |
-| Unsupported scenarios | - Seamless collaboration experience across multitenant organizations in classic Teams<br/>- Self-service for multitenant organizations larger than 5 tenants or 100,000 internal users per tenant<br/>- Using provisioning or synchronization engines other than Microsoft Entra cross-tenant synchronization<br/>- Multitenant organizations in Azure Government or Microsoft Azure operated by 21Vianet<br/>- Cross-cloud multitenant organizations |
+| Unsupported scenarios | - Seamless collaboration experience across multitenant organizations in classic Teams<br/>- Self-service for multitenant organizations larger than five tenants or 100,000 internal users per tenant<br/>- Using provisioning or synchronization engines other than Microsoft Entra cross-tenant synchronization<br/>- Multitenant organizations in Azure Government or Microsoft Azure operated by 21Vianet<br/>- Cross-cloud multitenant organizations |
 
 ## Multitenant organization related issues
 
@@ -40,9 +40,9 @@ The experiences and issues described in this article have the following scope.
 
 - Allow for up to 4 hours between submission of a multitenant organization join request and the same join request to succeed and finish.
 
-- Self-service of multitenant organization functionality is limited to a maximum of 5 tenants and 100,000 internal users per tenant. To request a raise in these limits, submit a Microsoft Entra ID or Microsoft 365 admin center support request.
+- Self-service of multitenant organization functionality is limited to a maximum of five tenants and 100,000 internal users per tenant. To request a raise in these limits, submit a Microsoft Entra ID or Microsoft 365 admin center support request.
 
-- In the Microsoft Graph APIs, the default limits of 5 tenants and 100,000 internal users per tenant are only enforced at the time of joining. In Microsoft 365 admin center, the default limits are enforced at multitenant organization creation time and at time of joining. 
+- In the Microsoft Graph APIs, the default limits of five tenants and 100,000 internal users per tenant are only enforced at the time of joining. In Microsoft 365 admin center, the default limits are enforced at multitenant organization creation time and at time of joining. 
 
 - There are multiple reasons why a join request might fail. If Microsoft 365 admin center doesn't indicate why a join request isn't succeeding, try examining the join request response by using the Microsoft Graph APIs or Microsoft Graph Explorer.
 
@@ -59,28 +59,28 @@ The experiences and issues described in this article have the following scope.
 - To promote B2B guests to B2B members, a source tenant administrator can amend the [attribute mappings](cross-tenant-synchronization-configure.md#step-9-review-attribute-mappings), or a target tenant administrator can [change the userType](~/fundamentals/how-to-manage-user-profile-info.md#add-or-change-profile-information) if the property is not recurringly synchronized.
 
 
-- In [SharePoint OneDrive](/sharepoint/), the promotion of B2B guests to B2B members may not happen automatically. If faced with a user type mismatch between Microsoft Entra ID and SharePoint OneDrive, try [Set-SPUser [-SyncFromAD]](/powershell/module/sharepoint-server/set-spuser).
+- In [SharePoint OneDrive](/sharepoint/), the promotion of B2B guests to B2B members might not happen automatically. If faced with a user type mismatch between Microsoft Entra ID and SharePoint OneDrive, try [Set-SPUser [-SyncFromAD]](/powershell/module/sharepoint-server/set-spuser).
 
 - In [SharePoint OneDrive](/sharepoint/) user interfaces, when sharing a file with *People in Fabrikam*, the current user interfaces might be counterintuitive, because B2B members in Fabrikam from Contoso count towards *People in Fabrikam*.
 
-- In [Microsoft Forms](/office365/servicedescriptions/microsoft-forms-service-description), B2B member users may not be able to access forms.
+- In [Microsoft Forms](/office365/servicedescriptions/microsoft-forms-service-description), B2B member users might not be able to access forms.
 
-- In [Microsoft Power BI](/power-bi/enterprise/service-admin-azure-ad-b2b#who-can-you-invite), B2B member users may require license assignment in addition to having an untested experience. Power BI preview for B2B members as part of a multitenant organization is expected.
+- In [Microsoft Power BI](/power-bi/enterprise/service-admin-azure-ad-b2b#who-can-you-invite), B2B member users might require license assignment in addition to having an untested experience. Power BI preview for B2B members as part of a multitenant organization is expected.
 
-- In [Microsoft Power Apps](/power-platform/), [Microsoft Dynamics 365](/dynamics365/), and other workloads, B2B member users may require license assignment. Experiences for B2B members are untested.
+- In [Microsoft Power Apps](/power-platform/), [Microsoft Dynamics 365](/dynamics365/), and other workloads, B2B member users might require license assignment. Experiences for B2B members are untested.
 
 ## User synchronization issues
 
-- When to use Microsoft 365 admin center to share users: If you haven't previously used Microsoft Entra cross-tenant synchronization, and you intend to establish a [collaborating user set](multi-tenant-organization-microsoft-365.md#collaborating-user-set) topology where the same set of users is shared to all multitenant organization tenants, you may want to use the Microsoft 365 admin center share users functionality.
+- When to use Microsoft 365 admin center to share users: If you haven't previously used Microsoft Entra cross-tenant synchronization, and you intend to establish a [collaborating user set](multi-tenant-organization-microsoft-365.md#collaborating-user-set) topology where the same set of users is shared to all multitenant organization tenants, you might want to use the Microsoft 365 admin center share users functionality.
 
-- When to use Microsoft Entra cross-tenant synchronization: If you're already using Microsoft Entra cross-tenant synchronization, for various [multi-hub multi-spoke topologies](cross-tenant-synchronization-topology.md), you don't need to use the Microsoft 365 admin center share users functionality. Instead, you may want to continue using your existing Microsoft Entra cross-tenant synchronization jobs.
+- When to use Microsoft Entra cross-tenant synchronization: If you're already using Microsoft Entra cross-tenant synchronization, for various [multi-hub multi-spoke topologies](cross-tenant-synchronization-topology.md), you don't need to use the Microsoft 365 admin center share users functionality. Instead, you might want to continue using your existing Microsoft Entra cross-tenant synchronization jobs.
 
-- Contact objects: The at-scale provisioning of B2B users may collide with contact objects. The handling or conversion of contact objects is currently not supported.
+- Contact objects: The at-scale provisioning of B2B users might collide with contact objects. The handling or conversion of contact objects is currently not supported.
 
 - Microsoft 365 admin center / Microsoft Entra ID: Whether you use the Microsoft 365 admin center share users functionality or Microsoft Entra cross-tenant synchronization, the following items apply:
 
     - In the identity platform, both methods are represented as Microsoft Entra cross-tenant synchronization jobs.
-    - You may adjust the attribute mappings to match your organizations' needs.
+    - You might adjust the attribute mappings to match your organizations' needs.
     - By default, new B2B users are provisioned as B2B members, while existing B2B guests remain B2B guests.
     - You can opt to convert B2B guests into B2B members by setting [**Apply this mapping** to **Always**](cross-tenant-synchronization-configure.md#step-9-review-attribute-mappings).
 
@@ -94,7 +94,7 @@ The experiences and issues described in this article have the following scope.
 
 - Source of Authority Conflict: Using Microsoft Entra cross-tenant synchronization to target hybrid identities that have been converted to B2B users has not been tested and is not supported.
 
-- Syncing B2B guests versus B2B members: As your organization rolls out the multitenant organization functionality including provisioning of B2B users across multitenant organization tenants, you might want to provision some users as B2B guests, while provision others users as B2B members. To achieve this, you may want to establish two Microsoft Entra cross-tenant synchronization configurations in the source tenant, one with userType attribute mappings configured to B2B guest, and another with userType attribute mappings configured to B2B member, each with [**Apply this mapping** set to **Always**](cross-tenant-synchronization-configure.md#step-9-review-attribute-mappings). By moving a user from one configuration's scope to the other, you can easily control who will be a B2B guest or a B2B member in the target tenant.
+- Syncing B2B guests versus B2B members: As your organization rolls out the multitenant organization functionality including provisioning of B2B users across multitenant organization tenants, you might want to provision some users as B2B guests, while provision others users as B2B members. To achieve this, you might want to establish two Microsoft Entra cross-tenant synchronization configurations in the source tenant, one with userType attribute mappings configured to B2B guest, and another with userType attribute mappings configured to B2B member, each with [**Apply this mapping** set to **Always**](cross-tenant-synchronization-configure.md#step-9-review-attribute-mappings). By moving a user from one configuration's scope to the other, you can easily control who will be a B2B guest or a B2B member in the target tenant.
 
 - Cross-tenant synchronization deprovisioning: By default, when provisioning scope is reduced while a synchronization job is running, users fall out of scope and are soft deleted, unless Target Object Actions for Delete is disabled. For more information, see [Deprovisioning](cross-tenant-synchronization-overview.md#deprovisioning) and [Define who is in scope for provisioning](cross-tenant-synchronization-configure.md#step-8-optional-define-who-is-in-scope-for-provisioning-with-scoping-filters).
 
