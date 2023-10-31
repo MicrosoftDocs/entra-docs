@@ -26,7 +26,7 @@ Benefits of integrating applications with Microsoft Entra ID by using DAP:
 * [Microsoft Entra single sign-on](https://azure.microsoft.com/solutions/active-directory-sso/#overview) - secure and seamless access for users and apps, from any location, using a device
 * [How it works: Microsoft Entra multifactor authentication](../authentication/concept-mfa-howitworks.md) - users are prompted during sign-in for forms of identification, such as a code on their cellphone, or a fingerprint scan
 * [What is Conditional Access?](../conditional-access/overview.md) - policies are if-then statements, if a user wants to access a resource, then they must complete an action
-* [Easy authentication and authorization in Microsoft Entra ID with no-code Datawiza](https://www.microsoft.com/security/blog/2022/05/17/easy-authentication-and-authorization-in-azure-active-directory-with-no-code-datawiza/) - use web applications such as: [Oracle JDE](./datawiza-sso-oracle-jde), [Oracle E-Business Suite](./datawiza-sso-oracle-peoplesoft), [Oracle Siebel](https://www.datawiza.com/enable-sso-mfa-for-oracle-siebel-crm-in-minutes/), and home-grown apps
+* [Easy authentication and authorization in Microsoft Entra ID with no-code Datawiza](https://www.microsoft.com/security/blog/2022/05/17/easy-authentication-and-authorization-in-azure-active-directory-with-no-code-datawiza/) - use web applications such as: [Oracle JDE](./datawiza-sso-oracle-jde.md), [Oracle E-Business Suite](./datawiza-sso-oracle-peoplesoft.md), [Oracle Siebel](https://www.datawiza.com/enable-sso-mfa-for-oracle-siebel-crm-in-minutes/), and home-grown apps
 * Use the [Datawiza Cloud Management Console](https://console.datawiza.com) (DCMC) - manage access to applications in public clouds and on-premises
 
 ## Scenario description
@@ -44,7 +44,7 @@ The solution has the following components:
 * **Datawiza Cloud Management Console (DCMC)** - administrators manage DAP with UI and RESTful APIs to configure DAP and access control policies
 * **Oracle Hyperion EPM** - legacy application to be protected by Microsoft Entra ID and DAP
 
-Learn about the service provider-initiated flow in [Datawiza with Microsoft Entra authentication architecture.](./datawiza-with-azure-ad#datawiza-with-azure-ad-authentication-architecture)
+Learn about the service provider-initiated flow in [Datawiza with Microsoft Entra authentication architecture.](./datawiza-with-azure-ad.md#datawiza-with-azure-ad-authentication-architecture)
 
 ## Prerequisites
 
@@ -53,13 +53,13 @@ Ensure the following prerequisites are met:
 * An Azure subscription
   * If you don't have one, you can get an [Azure free account](https://azure.microsoft.com/free)
 * A Microsoft Entra ID tenant linked to the Azure subscription
-  * See, [Quickstart: Create a new tenant in Microsoft Entra ID](../fundamentals/create-new-tenant.md)
+  * See, [Quickstart: Create a new tenant in Microsoft Entra ID](../,,/fundamentals/create-new-tenant.md)
 * Docker and Docker Compose
   * Go to docs.docker.com to [Get Docker](https://docs.docker.com/get-docker) and [Install Docker Compose](https://docs.docker.com/compose/install)
 * User identities synchronized from an on-premises directory to Microsoft Entra ID, or created in Microsoft Entra ID and flowed back to an on-premises directory
   * See, [Microsoft Entra Connect Sync: Understand and customize synchronization](../hybrid/connect/how-to-connect-sync-whatis.md)
 * An account with Microsoft Entra ID and the Application Administrator role
-  * See, [Microsoft Entra built-in roles, all roles](../roles/permissions-reference.md#all-roles)
+  * See, [Microsoft Entra built-in roles, all roles](../../roles/permissions-reference.md#all-roles.md)
 * An Oracle Hyperion EMP environment
   * (Optional) An SSL web certificate to publish services over HTTPS. You can use default Datawiza self-signed certs for testing.
 
@@ -157,7 +157,7 @@ To provide more security for sign-ins, you can enforce Microsoft Entra multifact
 
 Learn more in the [Tutorial: Secure user sign-in events with Microsoft Entra Multi-Factor Authentication](../authentication/tutorial-enable-azure-mfa.md)
 
-1. Sign in to the [Azure portal](https://portal.azure.com) as a [Global Administrator](../roles/permissions-reference.md#global-administrator).
+1. Sign in to the [Azure portal](https://portal.azure.com) as a [Global Administrator](../../roles/permissions-reference.md#global-administrator).
 2. Select **Microsoft Entra ID** > **Manage** > **Properties**.
 3. Under **Properties** select **Manage security defaults**.
 4. Under **Enable Security Defaults**, select **Yes**.
