@@ -239,7 +239,7 @@ Custom security attribute audit logs provide you with the history of activities 
 
 To view the custom security attribute audit logs, sign in to the Microsoft Entra admin center, browse to **Audit Logs**, and select **Custom Security**. To view the audit logs, you must be assigned either the [Attribute Log Reader](../identity/role-based-access-control/permissions-reference.md#attribute-log-reader) or [Attribute Log Administrator](../identity/role-based-access-control/permissions-reference.md#attribute-log-administrator) role.
 
-:::image type="content" source="media/custom-security-attributes-manage/audit-logs-attributemanagement.png" alt-text="Screenshot of audit logs with Custom Security tab selected." lightbox="media/custom-security-attributes-manage/audit-logs-attributemanagement.png":::
+:::image type="content" source="media/custom-security-attributes-manage/audit-logs-custom-security.png" alt-text="Screenshot of audit logs with Custom Security tab selected." lightbox="media/custom-security-attributes-manage/audit-logs-custom-security.png":::
 
 For information about how to get the custom security attribute audit logs using the Microsoft Graph API, see the [customSecurityAttributeAudit resource type](/graph/api/resources/customsecurityattributeaudit?view=graph-rest-beta&branch=pr-en-us-21345). For more information, see [Microsoft Entra audit logs](../identity/monitoring-health/concept-audit-logs.md).
 
@@ -255,7 +255,7 @@ Changes have been made to custom security attribute audit logs for general avail
 
 During the preview, custom security attribute audit logs were written to the directory audit logs endpoint. In October 2023, a new endpoint was added exclusively for custom security attribute audit logs. The following screenshot shows the directory audit logs and the new custom security attribute audit logs location.
 
-:::image type="content" source="media/custom-security-attributes-manage/audit-logs-attributemanagement.png" alt-text="Screenshot of audit logs with Custom Security tab selected." lightbox="media/custom-security-attributes-manage/audit-logs-attributemanagement.png":::
+:::image type="content" source="media/custom-security-attributes-manage/audit-logs-directory-custom-security.png" alt-text="Screenshot of audit logs that shows Directory and Custom Security tabs." lightbox="media/custom-security-attributes-manage/audit-logs-directory-custom-security.png":::
 
 There is a transition period where custom security audit logs are written to both the directory and custom security attributes audit log endpoints. Going forward, you must use the custom security attributes audit log endpoint to find custom security attribute audit logs.
 
