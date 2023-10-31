@@ -9,7 +9,7 @@ ms.workload: identity
 ms.topic: concept-article
 ms.date: 10/30/2023
 
-#CustomerIntent: As a customer, I want become educated of service limits for offerings within Microsoft Entra ID Governance so that limits are understood and met.
+#CustomerIntent: As a customer, I want to become informed on service limits for offerings within Microsoft Entra ID Governance so that restraints are understood and can be accounted for.
 ---
 
 # Microsoft Entra ID Governance service limits
