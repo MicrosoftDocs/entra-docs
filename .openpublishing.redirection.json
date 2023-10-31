@@ -18,8 +18,8 @@
     },
 
       {
-        "source_path_from_root": "docs/fundamentals/licensing-preview-terms.md",
-        "redirect_url": "docs/fundamentals/licensing-preview-info",
+        "source_path_from_root": "/docs/fundamentals/licensing-preview-terms.md",
+        "redirect_url": "/docs/fundamentals/licensing-preview-info",
         "redirect_document_id": false
       },
       {
