@@ -185,7 +185,7 @@ Use activity alerts to monitor resource types and to detect potential service di
 
 To monitor certain identity or resource types, create an alert for activity performed by a specific identity or resource type. The following example is an alert to monitor the activity of managed identities in an Azure subscription.
 
-   ![Diagram of an alert to monitor managed identities in an Azure subscription.](./media/permissions-manage-ops-guide/vmmanaged-identities.png)
+   ![Diagram of an alert to monitor managed identities in an Azure subscription.](./media/permissions-manage-ops-guide/vm-managed-identities.png)
 
 ### AWS activity alert ideas
 
