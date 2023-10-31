@@ -75,6 +75,6 @@ landingContent:
           - text: PowerShell or Microsoft Graph API
             url: cross-tenant-synchronization-configure-graph.md
           - text: Scoping users or groups to be provisioned
-            url: ~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md?toc=/azure/active-directory/multi-tenant-organizations/toc.json&pivots=cross-tenant-synchronization
+            url: ~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md?toc=/entra/identity/multi-tenant-organizations/toc.json&pivots=cross-tenant-synchronization
           - text: Synchronize users in multi-tenant organizations in Microsoft 365
             url: /microsoft-365/enterprise/sync-users-multi-tenant-orgs
