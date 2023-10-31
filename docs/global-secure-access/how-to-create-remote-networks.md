@@ -19,7 +19,7 @@ This article explains how to create a remote network for Global Secure Access (p
 
 ## Prerequisites
 
-To configure remote networks, you must have: 
+To configure remote networks, you must have:
 
 - A **Global Secure Access Administrator** role in Microsoft Entra ID.
 - Completed the [onboarding process](#onboard-your-tenant-for-remote-networks) for remote networks.
