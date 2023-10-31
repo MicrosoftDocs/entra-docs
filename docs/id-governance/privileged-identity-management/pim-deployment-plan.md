@@ -298,7 +298,7 @@ The following table shows example settings:
 
 | Role| Require MFA| Notification| Require Conditional Access| Require approval| Approver| Activation duration| Active admin| Active expiration| Eligible expiration |
 | --- | --- | --- |--- |--- |--- |--- |---|---|
-| Owner| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | Other owners of the resource| One Hour| None| n/a| Three months |
+| Owner| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | Other owners of the resource| One Hour| None| n/a| 3 months |
 | Member| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | None| Five Hours| None| n/a| 3 months |
 
 ### Assign eligibility for PIM for Groups
