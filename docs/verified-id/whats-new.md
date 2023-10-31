@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: decentralized-identity
 ms.subservice: verifiable-credentials
 ms.topic: reference
-ms.date: 08/16/2022
+ms.date: 10/31/2023
 ms.custom: references_regions
 ms.author: barclayn
 
@@ -78,7 +78,7 @@ Instructions for setting up place of work verification on LinkedIn available [he
 
 - *Public preview* - Entitlement Management customers can now create access packages that leverage Microsoft Entra Verified ID [learn more](~/id-governance/entitlement-management-verified-id-settings.md)
 
-- The Request Service API can now do revocation check for verifiable credentials presented that was issued with [StatusList2021](https://w3c.github.io/vc-status-list-2021/) or the [RevocationList2020](https://w3c-ccg.github.io/vc-status-rl-2020/) status list types.
+- The Request Service API can now do revocation check for verifiable credentials presented that was issued with [StatusList2021](https://www.w3.org/TR/vc-status-list/) or the [RevocationList2020](https://w3c-ccg.github.io/vc-status-rl-2020/) status list types.
 
 ## January 2023
 

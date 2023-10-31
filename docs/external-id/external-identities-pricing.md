@@ -49,7 +49,7 @@ A Microsoft Entra tenant must be linked to a resource group within an Azure subs
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) with an account that's been assigned at least the Contributor role within the subscription or a resource group within the subscription.
 
-2. Select the directory you want to link: In the Microsoft Entra admin center toolbar, select the **Directories + subscriptions** icon in the portal toolbar. Then on the **Portal settings | Directories + subscriptions** page, find your directory in the **Directory name** list, and then select **Switch**.
+2. Select the directory you want to link: In the Microsoft Entra admin center toolbar, select the **Settings** icon in the portal toolbar. Then on the **Portal settings | Directories + subscriptions** page, find your directory in the **Directory name** list, and then select **Switch**.
 
 3. Browse to **Identity** > **External identities** > **Overview**.
 
