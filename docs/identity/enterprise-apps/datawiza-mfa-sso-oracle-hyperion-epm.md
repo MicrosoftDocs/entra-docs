@@ -44,7 +44,7 @@ The solution has the following components:
 * **Datawiza Cloud Management Console (DCMC)** - administrators manage DAP with UI and RESTful APIs to configure DAP and access control policies
 * **Oracle Hyperion EPM** - legacy application to be protected by Microsoft Entra ID and DAP
 
-Learn about the service provider-initiated flow in [Datawiza with Microsoft Entra authentication architecture.](./datawiza-with-azure-ad.md#datawiza-with-azure-ad-authentication-architecture)
+Learn about the service provider-initiated flow in [Datawiza with Microsoft Entra authentication architecture.](datawiza-configure-sha.md#datawiza-with-microsoft-entra-authentication-architecture)
 
 ## Prerequisites
 
