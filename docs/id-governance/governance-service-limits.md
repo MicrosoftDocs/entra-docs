@@ -14,7 +14,7 @@ ms.date: 10/30/2023
 
 # Microsoft Entra ID Governance service limits
 
-This article contains the usage constraints and other service limits for the Microsoft Entra ID Governance, part of Microsoft Entra, service. If you’re looking for the full set of Microsoft Azure service limits, see [Azure Subscription and Service Limits, Quotas, and Constraints](/azure/azure-resource-manager/management/azure-subscription-service-limits).
+This article contains the usage constraints and other service limits for the Microsoft Entra ID Governance, part of Microsoft Entra, service. If you’re looking for the full set of non-governance specific Microsoft Entra service limits, see: [Microsoft Entra service limits and restrictions](/docs/identity/users/directory-service-limits-restrictions.md).
 
 ## Entitlement Management
 
@@ -30,7 +30,6 @@ This article contains the usage constraints and other service limits for the Mic
 |Lifetime of Requests     |  Three months after completion       |
 |Policies     |  5,000       |
 |Requests (Within 3 months)     |  50,000       |
-
 
 ### Per Catalog
 
@@ -50,7 +49,6 @@ This article contains the usage constraints and other service limits for the Mic
 |Assignments    | 10,000        |
 |Policies  |  10      |
 
-
 ## Lifecycle Workflows
 
 ### Per tenant
@@ -58,20 +56,14 @@ This article contains the usage constraints and other service limits for the Mic
 |Category  |Limit  |
 |---------|---------|
 |Custom Task Extensions     |  100     |
-|Schedule interval in hours     |   1-24      |
 |Workflows     |   50    |
-
 
 ### Per workflow
 
 |Category  |Limit  |
 |---------|---------|
-|Custom Task Extensions     |  100(tenant restriction)     |
-|durationBeforeTimeout range of custom task extensions     |   5 minutes-3 hours      |
 |Number of users per on-demand selection   |  10       |
-|offsetInDays range of triggerAndScopeBasedConditions executionConditions     |  180 days       |
 |Tasks     |  25 per workflow       |
-
 
 ## Related content
 
