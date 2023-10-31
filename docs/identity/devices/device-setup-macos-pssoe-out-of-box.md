@@ -82,31 +82,16 @@ If your company has the Microsoft Enterprise SSO plugin already installed, you c
 
 The steps outlined in [Registration with Automated Device Enrollment](#registration-with-automated-device-enrollment) is the recommended use, however the Device Enrollment method is another alternative.
 
-1. Open Outlook and an **Add Account** window appears. Enter your email address and select **Continue**. 
-
-    :::image type="content" source="media/device-setup-macos-pssoe-out-of-box/p24-outlook-signin.png" alt-text="Screenshot of Microsoft Outlook sign in window.":::
-
+1. Open Outlook and an **Add Account** window appears. Enter your email address and select **Continue**.
 1. Follow the steps in the MFA flow to complete sign-in.
 1. You're prompted to set up your device to get access to company resources. Select **Continue**.
 1. Select **Get started**, and allow the system to download a configuration profile. Close the window when prompted.
-
-    :::image type="content" source="media/device-setup-macos-pssoe-out-of-box/p29-system-prompt-management-profile-download.png" alt-text="Screenshot of popup for downloading management profile.":::
-
-1. Navigate to **Settings** > **Privacy and Security** > **Profiles** and select **Management Profile**. <!--Check this-->
-
-    :::image type="content" source="media/device-setup-macos-pssoe-out-of-box/p90-management-profile-setup.png" alt-text="Screenshot of Management Profile in Privacy and Security Settings.":::
-
-1. Select **Install** to install the profile, and enter your local account password when prompted. 
-1. Navigate to the **Registration Required** popup at the top right of the screen. Hover over the popup and select **Register**. 
+1. Navigate to **Settings** > **Privacy and Security** > **Profiles** and select **Management Profile**.
+1. Select **Install** to install the profile, and enter your local account password when prompted.
+1. Navigate to the **Registration Required** popup at the top right of the screen. Hover over the popup and select **Register**.
 1. You're prompted to sign in to Company Portal. Enter your Microsoft Entra ID credentials and select **Next**.
-
-    :::image type="content" source="media/device-setup-macos-pssoe-out-of-box/p36-company-portal-signin.png" alt-text="Screenshot of the sign in window of the Company portal app.":::
-
 1. Follow the steps in the MFA flow to finish registration. The Company Portal app registers your device.
 1. Once your device has finished registering, a Platform SSO window appears. Enter your Microsoft Entra ID password and select **Sign in**.
-
-    :::image type="content" source="media/device-setup-macos-pssoe-out-of-box/p39-psso-sign-in-window.png" alt-text="Screenshot of the Platform SSO window.":::
-
 1. Open the **Outlook** app and you're prompted to add an email account. Select **Add "Your email"**.
 1. The **Company Portal** app checks that your device is registered. Once the window closes, you have access to your emails.
 
