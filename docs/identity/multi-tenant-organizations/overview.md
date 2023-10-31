@@ -27,6 +27,8 @@ From a Microsoft Entra perspective, a tenant forms an identity and access manage
 
 Tenants contain privileged organizational data and are securely isolated from other tenants. In addition, tenants can be configured to have data persisted and processed in a specific region or cloud, which enables organizations to use tenants as a mechanism to meet data residency and handling compliance requirements.
 
+<a name='what-is-a-multi-tenant-organization'></a>
+
 ## What is a multitenant organization?
 
 A *multitenant organization* is an organization that has more than one instance of Microsoft Entra ID. Here are the primary reasons why an organization might have multiple tenants:
@@ -112,6 +114,8 @@ Here are the primary benefits of a multitenant organization:
 :::image type="content" source="./media/common/multi-tenant-organization-topology.png" alt-text="Diagram that shows a multitenant organization topology and cross-tenant access settings." lightbox="./media/common/multi-tenant-organization-topology.png":::
 
 For more information, see [What is a multitenant organization in Microsoft Entra ID?](./multi-tenant-organization-overview.md).
+
+<a name='compare-multi-tenant-capabilities'></a>
 
 ## Compare multitenant capabilities
 
