@@ -63,7 +63,7 @@ This article contains the usage constraints and other service limits for the Mic
 |Category  |Limit  |
 |---------|---------|
 |Number of users per on-demand selection   |  10       |
-|Tasks     |  25 per workflow       |
+|Tasks     |  25       |
 
 ## Related content
 
