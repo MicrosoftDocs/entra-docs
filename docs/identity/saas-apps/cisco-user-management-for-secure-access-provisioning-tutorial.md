@@ -110,7 +110,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. In the applications list, select **Cisco User Management for Secure Access**.
 
-	![The Cisco User Management for Secure Access link in the Applications list](common/all-applications.png)
+	![Screenshot showing the Cisco User Management for Secure Access link in the Applications list.](common/all-applications.png)
 
 1. Select the **Provisioning** tab.
 
@@ -181,7 +181,7 @@ Once you've configured provisioning, use the following resources to monitor your
 * If the provisioning configuration seems to be in an unhealthy state, the application will go into quarantine. Learn more about quarantine states [here](~/identity/app-provisioning/application-provisioning-quarantine-status.md).
 
 ## Connector Limitations
-* Cisco User Management for Secure Access supports provisioning a maximum of 200 groups. Any groups beyond this number that are in scope may not be provisioned to Cisco Umbrella.
+* Cisco User Management for Secure Access supports provisioning a maximum of 200 groups. Any groups beyond this number that are in scope can't be provisioned to Cisco Umbrella.
 
 ## Additional resources
 
