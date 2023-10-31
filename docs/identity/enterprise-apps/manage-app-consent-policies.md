@@ -110,7 +110,7 @@ Follow these steps to create a custom app consent policy:
 
    Repeat this step to add more "exclude" condition sets.
 
-Once the app consent policy has been created, you can [allow user consent](configure-user-consent.md?tabs=azure-powershell#allow-user-consent-subject-to-an-app-consent-policy-using-powerShell) subject to this policy.
+Once the app consent policy has been created, you can [allow user consent](configure-user-consent.md?tabs=azure-powershell#allow-user-consent-subject-to-an-app-consent-policy-using-powershell) subject to this policy.
 
 ## Delete a custom app consent policy using PowerShell
 
@@ -150,7 +150,7 @@ It's a good idea to start by getting familiar with the existing app consent poli
    GET /policies/permissionGrantPolicies/{ microsoft-application-admin }/excludes
    ```
 
-## Create a custom app consent policy Microsoft Graph
+## Create a custom app consent policy using Microsoft Graph
 
 Follow these steps to create a custom app consent policy:
 
@@ -199,7 +199,7 @@ Follow these steps to create a custom app consent policy:
 
    Repeat this step to add more "exclude" condition sets.
 
-Once the app consent policy has been created, you can [allow user consent](configure-user-consent.md?tabs=azure-powershell#allow-user-consent-subject-to-an-app-consent-policy-using-powerShell) subject to this policy.
+Once the app consent policy has been created, you can [allow user consent](configure-user-consent.md?tabs=azure-powershell#allow-user-consent-subject-to-an-app-consent-policy-using-powershell) subject to this policy.
 
 ## Delete a custom app consent policy Microsoft Graph
 
