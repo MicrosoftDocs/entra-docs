@@ -5,7 +5,7 @@ description: Learn how to require known compliant network locations in order to 
 ms.service: network-access
 ms.subservice: 
 ms.topic: how-to
-ms.date: 08/09/2023
+ms.date: 10/31/2023
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -19,6 +19,9 @@ Organizations who use Conditional Access along with the Global Secure Access pre
 The Global Secure Access Client installed on devices or configured remote network allows administrators to secure resources behind a compliant network with advanced Conditional Access controls. This compliant network makes it easier for administrators to manage and maintain, without having to maintain a list of all of an organization's locations IP addresses. Administrators don't need to hairpin traffic through their organization's VPN egress points to ensure security.
 
 This compliant network check is specific to each tenant. 
+
+- The compliant network check also applies to Microsoft Entra ID federated third party apps. The check provides you with protection for your third party Software as a Service (SaaS) apps using the Global Secure Access compliant network.
+   - Caution: When configuring a check for a third party app, do not select `AllCloudApps`. Instead, select specific apps that you want to protect with the compliant network check. Do not include Private Access applications. 
 
 - Using this check you can ensure that other organizations using Microsoft's Global Secure Access services can't access your resources. 
    - For example: Contoso can protect their services like Exchange Online and SharePoint Online behind their compliant network check to ensure only Contoso users can access these resources. 
