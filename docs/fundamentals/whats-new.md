@@ -139,7 +139,7 @@ For more information, see: [Discover applications](~/identity/enterprise-apps/my
 ### General Availability - Restrict Microsoft Entra ID Tenant Creation To Only Paid Subscription  
 
 **Type:** Changed feature   
-**Service category:** Privileged Identity Management                     
+**Service category:** Managed identities for Azure resources                    
 **Product capability:** End User Experiences            
 
 The ability to create new tenants from the Microsoft Entra admin center allows users in your organization to create test and demo tenants from your Microsoft Entra ID tenant, [Learn more about creating tenants](/microsoft-365/education/deploy/intro-azure-active-directory). When used incorrectly this feature can allow the creation of tenants that aren't managed or viewable by your organization. We recommend that you restrict this capability so that only trusted admins can use this feature, [Learn more about restricting member users' default permissions](users-default-permissions.md#restrict-member-users-default-permissions). We also recommend you use the Microsoft Entra audit log to monitor for the Directory Management: Create Company event that signals a new tenant has been created by a user in your organization.  
