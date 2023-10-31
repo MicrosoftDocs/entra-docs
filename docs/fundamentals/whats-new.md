@@ -146,8 +146,6 @@ The ability to create new tenants from the Microsoft Entra admin center allows u
 
 To further protect your organization, Microsoft is now limiting this functionality to only paid customers. Customers on trial subscriptions won't be able to create additional tenants from the Microsoft Entra admin center. Customers in this situation who need a new trial tenant can sign up for a [Free Azure Account](https://azure.microsoft.com/free/).
 
-For more information, see: [Assign Azure resource roles in Privileged Identity Management](~/id-governance/privileged-identity-management/pim-resource-roles-assign-roles.md).
-
 ---
 
 ### General Availability - Users can't modify GPS location when using location based access control
