@@ -93,11 +93,11 @@ Select Windows Hello for Business and [complete the wizard](https://aka.ms/passw
 
 The wizard will use your inputs to craft a step-by-step plan for you to follow.
 
-### Platform Single Sign-On (PSSO) extension for MacOS
+### MacOS Platform Single Sign-On
 
-The prerequisites for enabling PSSO extension for MacOS include an operating system of MacOS 13+, and that the configuration steps are done through the [Microsoft Intune admin center](https://intune.microsoft.com/#home). Support for other Mobile Device Management (MDM) providers will be added in future releases.
+To enable macOS Platform Single Sign-On (SSO), your Mac must have an operating system of macOS 13+, and that the configuration steps are done through the [Microsoft InTune admin center](https://intune.microsoft.com/#home). Support for other Mobile Device Management (MDM) providers will be added in future releases.
 
-Before the PSSO extension can be enabled, the extension payload must be configured via MDM, the Mac device enrolled into MDM and the [Mac Company Portal](mem/intune/user-help/enroll-your-device-in-intune-macos-cp.md) app installed.
+Before macOS Platform SSO can be enabled, the extension payload must be configured via MDM, with the Mac device enrolled into MDM and the [Mac Company Portal](mem/intune/user-help/enroll-your-device-in-intune-macos-cp) app installed.
 
 Once the Mac has been configured, a user can setup their Mac device using either a password authentication method, or the new secure enclave key feature. This enables a user to use their Microsoft Entra ID to log into their Mac device.
 
@@ -129,14 +129,10 @@ Users register their passwordless method as a part of the **combined security in
 
 For the first-time user who doesn't have a password, admins can provide a [Temporary Access Passcode](howto-authentication-temporary-access-pass.md) to register their security information in [https://aka.ms/mysecurityinfo](https://aka.ms/mysecurityinfo) . This is a time-limited passcode and satisfies strong authentication requirements. **Temporary Access Pass is a per-user process**.
 
-This method can also be used for easy recovery when the user has lost or forgotten their authentication factor such as security key or the Authenticator app but needs to sign in to **register a new strong authentication method**. 
+This method can also be used for easy recovery when the user has lost or forgotten their authentication factor such as security key or the Authenticator app but needs to sign in to **register a new strong authentication method**.
 
->[!NOTE] 
+>[!NOTE]
 > If you can't use the security key or the Authenticator app for some scenarios, multifactor authentication with a username and password along with another registered method can be used as a fallback option.
-
-## Plan for and deploy Windows Hello for Business
-
-## Plan for and deploy Platform Single Sign-On (PSSO) extension for MacOS
 
 ## Plan for and deploy Microsoft Authenticator
 
@@ -216,11 +212,11 @@ There are three types of passwordless sign-in deployments available with securit
 
 * Windows 10 version 1809 supports FIDO2 sign-in and may require software from the FIDO2 key manufacturer to be deployed. We recommend you use version 1903 or later.
 
-**For hybrid Microsoft Entra domain joined devices**, use: 
+**For hybrid Microsoft Entra domain joined devices**, use:
 
-* Windows 10 version 2004 or later. 
+* Windows 10 version 2004 or later.
 
-* Fully patched domain servers running Windows Server 2016 or 2019. 
+* Fully patched domain servers running Windows Server 2016 or 2019.
 
 * Latest version of Microsoft Entra Connect.
 
