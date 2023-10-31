@@ -1,5 +1,5 @@
 ---
-title: Phase 2 Right-size permissions and automate the principle of least privilege
+title: Phase 2 Right-size permissions and automate the principle of least privilege by using Microsoft Entra Permissions Management
 description: Learn about remediation, monitoring, PCI targets for identities, Permissions On-Demand, Approvers, Requestors, also custom role and policy templates
 services: active-directory
 author: jricketts
