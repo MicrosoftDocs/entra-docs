@@ -3174,8 +3174,8 @@
         href: checkproof-provisioning-tutorial.md
       - name: Cinode
         href: cinode-provisioning-tutorial.md
-      - name: Cisco Umbrella User Management
-        href: cisco-umbrella-user-management-provisioning-tutorial.md
+      - name: Cisco User Management for Secure Access
+        href: cisco-user-management-for-secure-access-provisioning-tutorial.md
       - name: Cisco Webex
         href: cisco-webex-provisioning-tutorial.md
       - name: Clarizen One
