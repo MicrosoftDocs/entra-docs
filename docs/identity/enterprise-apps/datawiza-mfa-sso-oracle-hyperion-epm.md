@@ -59,7 +59,7 @@ Ensure the following prerequisites are met:
 * User identities synchronized from an on-premises directory to Microsoft Entra ID, or created in Microsoft Entra ID and flowed back to an on-premises directory
   * See, [Microsoft Entra Connect Sync: Understand and customize synchronization](../hybrid/connect/how-to-connect-sync-whatis.md)
 * An account with Microsoft Entra ID and the Application Administrator role
-  * See, [Microsoft Entra built-in roles, all roles](../../roles/permissions-reference.md#all-roles)
+  * See, [Microsoft Entra built-in roles, all roles](~/identity/role-based-access-control/permissions-reference.md)
 * An Oracle Hyperion EMP environment
   * (Optional) An SSL web certificate to publish services over HTTPS. You can use default Datawiza self-signed certs for testing.
 
@@ -157,7 +157,7 @@ To provide more security for sign-ins, you can enforce Microsoft Entra multifact
 
 Learn more in the [Tutorial: Secure user sign-in events with Microsoft Entra Multi-Factor Authentication](../authentication/tutorial-enable-azure-mfa.md)
 
-1. Sign in to the [Azure portal](https://portal.azure.com) as a [Global Administrator](../../roles/permissions-reference.md#global-administrator).
+1. Sign in to the [Azure portal](https://portal.azure.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md).
 2. Select **Microsoft Entra ID** > **Manage** > **Properties**.
 3. Under **Properties** select **Manage security defaults**.
 4. Under **Enable Security Defaults**, select **Yes**.
