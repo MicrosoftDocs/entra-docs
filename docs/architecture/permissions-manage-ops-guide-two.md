@@ -1,5 +1,5 @@
 ---
-title: Phase 2 Right-size permisssions and automate the principle of least privelege
+title: Phase 2 Right-size permissions and automate the principle of least privilege
 description: Learn about remediation, monitoring, PCI targets for identities, Permissions On-Demand, Approvers, Requestors, also custom role and policy templates
 services: active-directory
 author: jricketts
@@ -12,7 +12,7 @@ ms.date: 10/23/2023
 ms.author: jricketts  
 ---
 
-# Phase 2: Right-size permissions and automate the principle of least privelege
+# Phase 2: Right-size permissions and automate the principle of least privilege
 
 ## Continuously remediate and right-size permissions
 
@@ -165,7 +165,7 @@ You can configure Permissions On-Demand settings to align with organizational ne
 * **Available roles and policies for users to request**: Use role and policy filters to specify what users can request. Prevent unqualified users from requesting high-risk, highly privileged roles such as Subscription Owner.
 * **Request duration limits**: Specify the maximum allowable duration for permissions acquired via Permissions On-Demand. Agree on a duration limit that aligns with how users request and get access to permissions.
 * **One-Time Passcode (OTP) policy**: You can require email OTPs for Requestors to create requests. In addition, you can require email OTPs for **Approvers** to approve or reject requests. Use these configurations for one or both scenarios.
-* **Auto-approvals for AWS**: As an option for Permissions On-Demand for AWS, you can configure specific policy requests to be auto-approved. Adding common, low-risk policies to your auto-approval list helps save time for Requestors and **Approvers**. 
+* **Auto-approvals for AWS**: As an option for Permissions On-Demand for AWS, you can configure specific policy requests to be auto-approved. For example, you can add common, low-risk policies to your auto-approval list and help save time for Requestors and **Approvers**. 
 
 Learn to [make setting selections for requests and auto-approvals](~/permissions-management/ui-remediation.md).
 
