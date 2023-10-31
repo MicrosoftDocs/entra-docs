@@ -45,11 +45,11 @@ By choosing which application consent policies apply for all users, you can set 
 
 - *Users can consent to all applications*. This option allows all users to consent to any permissions that don't require admin consent, for any application.
 
-For most organizations, one of the built-in options will be appropriate. Some advanced customers might want more control over the conditions that govern when users are allowed to consent. These customers can [create custom app consent policy](manage-app-consent-policies.md#create-a-custom-app-consent-policy) and configure those policies to apply to user consent.
+For most organizations, one of the built-in options will be appropriate. Some advanced customers might want more control over the conditions that govern when users are allowed to consent. These customers can [create custom app consent policy](manage-app-consent-policies.md#create-a-custom-app-consent-policy-using-powershell) and configure those policies to apply to user consent.
 
 ## Admin consent
 
-During admin consent, a Privileged Administrator may grant an application access on behalf of other users (usually, on behalf of the entire organization). Also during admin consent, applications or services provide direct access to an API, which can be used by the application if there's no signed-in user. The specific role needed to grant admin consent differs based on the permissions requested, which are outlined [here.](grant-admin-consent.md#prerequisites)
+During admin consent, a Privileged Administrator may grant an application access on behalf of other users (usually, on behalf of the entire organization). Also during admin consent, applications or services provide direct access to an API, which can be used by the application if there's no signed-in user. The specific role needed to grant admin consent differs based on the permissions requested, which are outlined in the [grant admin consent](grant-admin-consent.md#prerequisites) article.
 
 When your organization purchases a license or subscription for a new application, you might proactively want to set up the application so that all users in the organization can use it. To avoid the need for user consent, an administrator can grant consent for the application on behalf of all users in the organization.
 
