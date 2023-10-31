@@ -59,7 +59,7 @@ Ensure the following prerequisites are met:
 * User identities synchronized from an on-premises directory to Microsoft Entra ID, or created in Microsoft Entra ID and flowed back to an on-premises directory
   * See, [Microsoft Entra Connect Sync: Understand and customize synchronization](../hybrid/connect/how-to-connect-sync-whatis.md)
 * An account with Microsoft Entra ID and the Application Administrator role
-  * See, [Microsoft Entra built-in roles, all roles](../../roles/permissions-reference.md#all-roles.md)
+  * See, [Microsoft Entra built-in roles, all roles](../../roles/permissions-reference.md#all-roles)
 * An Oracle Hyperion EMP environment
   * (Optional) An SSL web certificate to publish services over HTTPS. You can use default Datawiza self-signed certs for testing.
 
