@@ -62,7 +62,7 @@ This article contains the usage constraints and other service limits for the Mic
 |Workflows     |   50    |
 
 
-### Per Workflow
+### Per workflow
 
 |Category  |Limit  |
 |---------|---------|
