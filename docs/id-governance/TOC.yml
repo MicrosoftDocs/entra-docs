@@ -271,6 +271,8 @@
   items:
   - name: Identity Governance Dashboard
     href: governance-dashboard.md
+  - name: Identity Governance Service Limits
+    href: governance-service-limits.md  
   - name: Licensing fundamentals
     href: licensing-fundamentals.md
   - name: Services and integration partners
