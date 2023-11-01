@@ -14,8 +14,6 @@ ms.author: jricketts
 
 # Microsoft Entra Permissions Management operations reference
 
-## Introduction
-
 In this operationalization guide, learn about the checks, actions, and best practices to operate Microsoft Entra Permissions Management in an enterprise environment. The guidance has three phases: 
 
 1. **Implement the framework to manage at scale**: delegate permissions and develop processes to guide operational behavior.
