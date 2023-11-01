@@ -8,7 +8,7 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: multi-tenant-organizations
 ms.topic: overview
-ms.date: 09/14/2023
+ms.date: 11/01/2023
 ms.author: rolyon
 ms.custom: it-pro
 
@@ -178,6 +178,7 @@ Depending on your use case, you may want to synchronize users using one of the f
 Multitenant organizations have the following limits:
 
 - A maximum of five active tenants per multitenant organization
+  - This limit is specific to the number of tenants in a multitenant organization. It does not apply to cross-tenant synchronization by itself. 
 - A maximum of 100,000 internal users per active tenant at the time of joining
 
 If you want to add more than five tenants or 100,000 internal users per tenant, contact Microsoft support.
