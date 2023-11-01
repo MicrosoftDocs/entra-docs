@@ -38,6 +38,8 @@ To view Remote network health logs in Microsoft Entra admin Center:
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Reader](/azure/active-directory/roles/permissions-reference#global-reader).
 1. Browse to **Global Secure Access (preview)** > **Monitor** > **Remote network health logs**.
 
+    ![Screenshot of the Remote network health logs.](media/how-to-remote-network-health-logs/remote-network-health-logs.png)
+
 ### [Microsoft Graph API](#tab/microsoft-graph-api)
 
 Global Secure Access remote network health logs can be viewed and managed using Microsoft Graph on the `/beta` endpoint.
