@@ -38,7 +38,7 @@ Use the information below to make a decision between using the AWS Single Sign-O
 |:--- |:---:|:---:|
 |Conditional Access| Supports a single Conditional Access policy for all AWS accounts. | Supports a single Conditional Access policy for all accounts or custom policies per account|
 | CLI access | Supported | Supported|
-| Privileged  Identity Management | [Public preview](aws-single-sign-on-provisioning-tutorial#just-in-time-jit-application-access-with-pim-for-groups-preview.md) | Not yet supported |
+| Privileged  Identity Management | [Public preview](./aws-single-sign-on-provisioning-tutorial#just-in-time-jit-application-access-with-pim-for-groups-preview.md) | Not yet supported |
 | Centralize account management | Centralize account management in AWS. | Centralize account management in Microsoft Entra ID (will likely require a Microsoft Entra enterprise application per account). |
 | SAML certificate| Single certificate| Separate certificates per app / account | 
 
