@@ -37,7 +37,7 @@ The compliant network is different than [IPv4, IPv6, or geographic locations](/a
 ### Known limitations
 
 - Continuous access evaluation is not currently supported for compliant network check.
-- Organizations can protect other Microsoft Entra integrated apps with Conditional Access policies requiring a compliant network check. During the preview, administrators must choose the individual applications from the app picker instead of choosing *All* client apps.
+- Organizations can protect other Microsoft Entra integrated apps with Conditional Access policies requiring a compliant network check. During the preview, administrators must choose the individual applications from the app picker instead of choosing *All* client apps. **Do not choose `AllCloudApps`.**
 
 ## Enable Global Secure Access signaling for Conditional Access
 
