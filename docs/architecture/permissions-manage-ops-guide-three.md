@@ -14,6 +14,8 @@ ms.author: jricketts
 
 # Phase 3: Configure Microsoft Entra Permissions Management monitoring and alerting
 
+This section of the Microsoft Entra Permissions Management operations reference guide describes the checks and actions you should take to implement an effective alerting and reporting strategy.
+
 ## Implement a reporting system for key stakeholders
 
 **Recommended owner: Information Security Architecture**
