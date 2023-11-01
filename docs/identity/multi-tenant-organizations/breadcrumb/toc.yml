@@ -6,6 +6,6 @@
     tocHref: /entra/identity/
     topicHref: /entra/identity/index
     items:
-    - name: Multi-tenant organizations
+    - name: Multitenant organizations
       tocHref: /graph/
       topicHref: /entra/identity/multi-tenant-organizations/
