@@ -82,6 +82,7 @@ Cross-site scripting (XSS) attacks or compromised JS packages can steal the refr
 This limited-lifetime refresh token pattern was chosen as a balance between security and degraded UX. Without refresh tokens or third-party cookies, the authorization code flow (as recommended by the [OAuth security best current practices draft](https://tools.ietf.org/html/draft-ietf-oauth-security-topics-14)) becomes onerous when new or additional tokens are required. A full page redirect or popup is needed for every single token, every time a token expires (every hour usually, for the Microsoft identity platform tokens).
 
 ## User type specific mitigations 
+
 Not all users and applications will be uniformly affected by third-party cookies. There are some scenarios where due to architecture or device management, silent calls to renew tokens can be done without third-party cookies. 
 
 For *managed enterprise device* scenarios, certain browser and platform combinations have support for [device conditional access](/azure/active-directory/conditional-access/concept-conditional-access-conditions#supported-browsers). Leveraging device identity will minimize the need for third-party cookies as the authentication state can come from the device instead of the browser.  
