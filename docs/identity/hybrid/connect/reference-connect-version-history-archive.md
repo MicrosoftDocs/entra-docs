@@ -12,7 +12,7 @@ ms.date: 01/19/2023
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.custom: has-adal-ref, has-azure-ad-ps-ref
+ms.custom: has-adal-ref, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
 # Microsoft Entra Connect: Version release history archive
 
@@ -128,7 +128,7 @@ This hotfix build fixes an issue in build 1.5.20.0 if you've cloned the **In fro
 11/08/2019: Released for download. Not available through auto-upgrade.
 
 >[!IMPORTANT]
->Due to an internal schema change in this release of Microsoft Entra Connect, if you manage AD FS trust relationship configuration settings using MSOnline PowerShell then you must update your MSOnline PowerShell module to version 1.1.183.57 or higher
+>Due to an internal schema change in this release of Microsoft Entra Connect, if you manage AD FS trust relationship configuration settings using [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview) then you must update your Microsoft Graph PowerShell module to version 1.1.183.57 or higher.
 
 ### Fixed issues
 
@@ -250,7 +250,7 @@ We fixed a bug in the sync errors compression utility that wasn't handling surro
 - Fix PS Permissions script to refine GWB permissions 
 - Fix VSS Errors with LocalDB  
 - Fix misleading error message when object type is not in scope 
-- Corrected an issue where installation of Azure AD PowerShell on a server could potentially cause an assembly conflict with Microsoft Entra Connect. 
+- Corrected an issue where installation of Microsoft Graph PowerShell on a server could potentially cause an assembly conflict with Microsoft Entra Connect. 
 - Fixed PHS bug on Staging Server when Connector Credentials are updated in the Synchronization Service Manager UI. 
 - Fixed some memory leaks 
 - Miscellaneous Autoupgrade fixes 
@@ -292,7 +292,7 @@ If any build containing the updated Device Options functionality was deployed to
 
 ### Fixed issues
 
-This hotfix build fixes a conflict where an authentication error might occur due to the independent presence of the MSOnline PowerShell Gallery module on the synchronization server.
+This hotfix build fixes a conflict where an authentication error might occur due to the independent presence of the Microsoft Graph PowerShell Gallery module on the synchronization server.
 
 
 
@@ -515,7 +515,7 @@ Status: Released to select customers
 
 * Restrict permissions available to privileged accounts on AD Connector account
 
-  * For new installations, the wizard will restrict the permissions that privileged accounts have on the MSOL account after creating the MSOL account.
+  * For new installations, the wizard will restrict the permissions that privileged accounts have on the Microsoft Graph PowerShell account after creating the Microsoft Graph PowerShell account.
 
 The changes will take care of following:
 1. Express Installations
@@ -768,7 +768,7 @@ Status: July 23 2017
   * The installation is not an Express settings or a DirSync upgrade.
   * You've more than 100,000 objects in the metaverse.
   * You are connecting to more than one forest. Express setup only connects to one forest.
-  * The AD Connector account is not the default MSOL_ account anymore.
+  * The AD Connector account is not the default Microsoft Graph PowerShell account anymore.
   * The server is set to be in staging mode.
   * You've enabled the user writeback feature.
 
@@ -797,7 +797,7 @@ Status: Will not be released. Changes in this build are included in version 1.1.
   * The installation is not an Express settings or a DirSync upgrade.
   * You've more than 100,000 objects in the metaverse.
   * You are connecting to more than one forest. Express setup only connects to one forest.
-  * The AD Connector account is not the default MSOL_ account anymore.
+  * The AD Connector account is not the default Microsoft Graph PowerShell account anymore.
   * The server is set to be in staging mode.
   * You've enabled the user writeback feature.
 

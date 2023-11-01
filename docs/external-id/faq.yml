@@ -11,7 +11,7 @@ metadata:
   ms.author: mimart
   author: msmimart
   manager: celestedg
-  ms.custom: it-pro, seo-update-azuread-jan, has-azure-ad-ps-ref
+  ms.custom: it-pro, seo-update-azuread-jan, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
   ms.collection: M365-identity-device-management
 title: Microsoft Entra B2B collaboration FAQs
 summary: |
@@ -77,7 +77,7 @@ sections:
       - question: |
           Can I make guest users visible in the Exchange Global Address List?
         answer: |
-          Yes. By default, guest objects aren't visible in your organization's global address list, but you can use Azure Active Directory PowerShell to make them visible. For details, see "Add guests to the global address list" in the [Microsoft 365 per-group guest access article](/microsoft-365/solutions/per-group-guest-access).
+          Yes. By default, guest objects aren't visible in your organization's global address list, but you can use [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview) to make them visible. For details, see "Add guests to the global address list" in the [Microsoft 365 per-group guest access article](/microsoft-365/solutions/per-group-guest-access).
           
       - question: |
           Can I make a guest user a limited administrator?

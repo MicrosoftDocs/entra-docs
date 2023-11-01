@@ -6,7 +6,7 @@ author: billmath
 manager: amycolannino
 ms.service: active-directory
 ms.workload: identity
-ms.custom: has-azure-ad-ps-ref
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: how-to
 ms.date: 01/17/2023
 ms.subservice: hybrid
@@ -25,7 +25,7 @@ You can automatically install all the prerequisites for the AADCloudSyncTools mo
 Here are some details about what you need:
 
 - The AADCloudSyncTools module uses Microsoft Authentication Library (MSAL) authentication, so it requires installation of the MSAL.PS module. To verify the installation, in a PowerShell window, run `Get-module MSAL.PS -ListAvailable`. If the module is installed correctly, you'll get a response. If necessary, you can use `Install-AADCloudSyncToolsPrerequisites` to install the latest version of MSAL.PS.
-- Although the Azure AD PowerShell module is not required for any functionality of the AADCloudSyncTools module, it is useful. So it's automatically installed when you use `Install-AADCloudSyncToolsPrerequisites`. 
+- Although the [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview) module is not required for any functionality of the AADCloudSyncTools module, it is useful. So it's automatically installed when you use `Install-AADCloudSyncToolsPrerequisites`. 
 - Installing modules from the PowerShell Gallery requires Transport Layer Security (TLS) 1.2 enforcement. The cmdlet `Install-AADCloudSyncToolsPrerequisites` sets TLS 1.2 enforcement before installing all the prerequisites. To ensure that you can manually install modules, set the following in the PowerShell session before using the cmdlet:
 
   ```
@@ -43,7 +43,7 @@ Here are some details about what you need:
 4. To install the AADCloudSyncTools module prerequisites, run `Install-AADCloudSyncToolsPrerequisites`.
 5. On the first run, the PowerShellGet module will be installed if it's not present. To load the new PowerShellGet module, close the PowerShell window and open a new PowerShell session with administrative privileges. 
 6. Import the module again by running `Import-module -Name "C:\Program Files\Microsoft Azure AD Connect Provisioning Agent\Utility\AADCloudSyncTools"`.
-7. Run `Install-AADCloudSyncToolsPrerequisites` again to install the MSAL and Azure AD PowerShell modules.
+7. Run `Install-AADCloudSyncToolsPrerequisites` again to install the MSAL and Microsoft Graph PowerShell modules.
 
    All prerequisites should now be installed.
 
@@ -112,7 +112,7 @@ This cmdlet uses Microsoft Graph to get the service principals for Microsoft Ent
 
 ### Install-AADCloudSyncToolsPrerequisites
 
-This cmdlet checks for the presence of PowerShellGet v2.2.4.1 or later, the Azure AD PowerShell module, and the MSAL.PS module. It installs these items if they're missing.
+This cmdlet checks for the presence of PowerShellGet v2.2.4.1 or later, the Microsoft Graph PowerShell module, and the MSAL.PS module. It installs these items if they're missing.
 
 ### Invoke-AADCloudSyncToolsGraphQuery
 
@@ -120,7 +120,7 @@ This cmdlet invokes a web request for the URI, method, and body specified as par
 
 ### Repair-AADCloudSyncToolsAccount
 
-This cmdlet uses Azure AD PowerShell to delete the current account (if present). It then resets the sync account authentication with a new sync account in Microsoft Entra ID.
+This cmdlet uses Microsoft Graph PowerShell to delete the current account (if present). It then resets the sync account authentication with a new sync account in Microsoft Entra ID.
 
 ### Restart-AADCloudSyncToolsJob
 
