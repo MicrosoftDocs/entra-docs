@@ -14,6 +14,8 @@ ms.author: jricketts
 
 # Phase 2: Right-size permissions and automate the principle of least privilege
 
+This section of the Microsoft Entra Permissions Management operations reference guide describes the checks and actions you should take to remediate key findings in your environment and implement just-in-time (JIT) access with Permissions On-Demand.
+
 ## Continuously remediate and right-size permissions
 
 **Recommended owner: Information Security Operations**
