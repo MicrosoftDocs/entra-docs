@@ -18,6 +18,12 @@ ms.custom: has-adal-ref
 
 Welcome to what's new in the Microsoft identity platform documentation. This article lists new docs that have been added and those that have had significant updates in the last three months.
 
+## October 2023
+
+### Updated articles
+
+- [Tutorial: Access Microsoft Graph from a secured app as the user](multi-service-web-app-access-microsoft-graph-as-user.md) - Updating URLs
+
 ## September 2023
 
 ### New articles
@@ -49,17 +55,3 @@ Welcome to what's new in the Microsoft identity platform documentation. This art
 - [Configure a custom claim provider token issuance event (preview)](custom-extension-get-started.md) - Updated MS Graph sections - custom claim provider token issuance event tutorial and custom authentication extensions references
 - [Customize claims issued in the JSON web token (JWT) for enterprise applications](jwt-claims-customization.md) - Updated sign-in steps for admin center
 - [Access tokens in the Microsoft identity platform](access-tokens.md) - Updated details about issuer validation
-
-## July 2023
-
-### New articles
-
-- [Deploy a web app in a pipeline and configure App Service authentication](deploy-web-app-authentication-pipeline.md) - Deploy a webapp and configure auth in a pipeline
-
-### Updated articles
-
-- [Access tokens in the Microsoft identity platform](access-tokens.md) - Improve the explanations on how to validate a token
-- [Claims mapping policy type](reference-claims-mapping-policy-type.md) - Updates to Restricted Claims Set
-- [Migrate confidential client applications from ADAL.NET to MSAL.NET](/entra/msal/dotnet/how-to/migrate-confidential-client) - Improving clarity in the content
-- [Single sign-on with MSAL.js](msal-js-sso.md) - Add guidance on using the loginHint claim for SSO
-- [Tutorial: Create a Blazor Server app that uses the Microsoft identity platform for authentication](tutorial-blazor-server.md) - Simplified and leverage the Microsoft Identity App Sync .NET tool
