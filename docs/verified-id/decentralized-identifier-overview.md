@@ -61,7 +61,7 @@ We need a new form of identity. We need an identity that brings together technol
 
 To deliver on these promises, we need a technical foundation made up of seven key innovations. One key innovation is identifiers that are owned by the user, a user agent to manage keys associated with such identifiers, and encrypted, user-controlled datastores.
 
-![overview of Microsoft's verifiable credential environment](media/decentralized-identifier-overview/decentralized-identity-solution-overview.png)
+![overview of Microsoft's verifiable credential environment](media/decentralized-identifier-overview/microsoft-did-system.png)
 
 **1. W3C Decentralized Identifiers (DIDs)**.
 IDs users create, own, and control independently of any organization or government. DIDs are globally unique identifiers linked to Decentralized Public Key Infrastructure (DPKI) metadata composed of JSON documents that contain public key material, authentication descriptors, and service endpoints.
