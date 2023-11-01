@@ -53,14 +53,14 @@ This article contains the usage constraints and other service limits for the Mic
 
 ### Per Tenant
 
-|Category  |Limit  |
+|Feature  |Limit  |
 |---------|---------|
 |Custom Task Extensions     |  100     |
 |Workflows     |   50    |
 
 ### Per workflow
 
-|Category  |Limit  |
+|Feature  |Limit  |
 |---------|---------|
 |Number of users per on-demand selection   |  10       |
 |Tasks     |  25       |
