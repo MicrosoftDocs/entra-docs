@@ -8,7 +8,7 @@ ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: how-to
 ms.workload: identity
-ms.date: 10/31/2023
+ms.date: 11/01/2023
 ms.author: gasinh
 ms.collection: M365-identity-device-management
 ms.custom: not-enterprise-apps
@@ -93,7 +93,7 @@ To integrate Oracle Hyperion EMP with Microsoft Entra ID:
 
 16. Select **Create**.
 17. The DAP deployment page appears.
-18. Make a note of the deployment Docker Compose file. The file includes the DAP image, also the Provisioning Key and Provisio ning Secret, which pull the latest configuration and policies from DCMC.
+18. Make a note of the deployment Docker Compose file. The file includes the DAP image, also the Provisioning Key and Provisioning Secret, which pull the latest configuration and policies from DCMC.
 
     ![Screenshot shows the DAP deployment page.](./media/datawiza-mfa-sso-oracle-hyperion-epm/dap-deployment-page.png)
 
@@ -154,7 +154,7 @@ Use the following instructions to indicate Login Redirect URI and Logout Redirec
 
 To provide more security for sign-ins, you can enforce Microsoft Entra multifactor authentication. 
 
-Learn more in the [Tutorial: Secure user sign-in events with Microsoft Entra Multi-Factor Authentication](../authentication/tutorial-enable-azure-mfa.md)
+Learn more in the [Tutorial: Secure user sign-in events with Microsoft Entra multifactor authentication](../authentication/tutorial-enable-azure-mfa.md)
 
 1. Sign in to the [Azure portal](https://portal.azure.com) as a [Global Administrator role.](../role-based-access-control/permissions-reference.md)
 2. Select **Microsoft Entra ID** > **Manage** > **Properties**.
@@ -181,7 +181,7 @@ Use the following instructions to enable SSO in the Oracle Hyperion environment.
 
    ![Screenshot shows the Configure User Directories option and the Security Options tab.](./media/datawiza-mfa-sso-oracle-hyperion-epm/configure-user-directories.png)
 
-## Update Post Logoff URL settings in EMP Workspace
+## Update Post Log off URL settings in EMP Workspace
 
 1. Select **Navigate**.
 2. In **Administer**, select **Workspace Settings** then **Server Settings**.
