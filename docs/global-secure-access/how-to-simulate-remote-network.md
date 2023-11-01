@@ -20,9 +20,8 @@ Organizations may want to extend the capabilities of Microsoft Entra Internet Ac
 In order to complete the following steps, you must have these prerequisites in place.
 
 - An Azure subscription and permission to create resources in the [Azure portal](https://portal.azure.com).
-   - A basic understanding of [site-to-site VPN connections](/azure/vpn-gateway/tutorial-site-to-site-portal).
+  - A basic understanding of [site-to-site VPN connections](/azure/vpn-gateway/tutorial-site-to-site-portal).
 - A Microsoft Entra tenant with the [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator) role assigned.
-- Completed the [remote network onboarding steps](how-to-create-remote-networks.md#onboard-your-tenant-for-remote-networks).
 
 ## Infrastructure creation
 
@@ -30,7 +29,7 @@ Building this functionality out in Azure provides organizations the ability to u
 
 - The **[virtual network](#virtual-network)** corresponds to your on-premises IP address space.
 - The **[virtual network gateway](#virtual-network-gateway)** corresponds to an on-premises virtual private network (VPN) router. This device is sometimes referred to as customer premises equipment (CPE).
-- The **[local network gateway](#local-network-gateway)** corresponds to the Microsoft side of the connection where traffic would flow to from your on-premises VPN router. The information provided by Microsoft as part of the [remote network onboarding steps](how-to-create-remote-networks.md#onboard-your-tenant-for-remote-networks) is used here.
+- The **[local network gateway](#local-network-gateway)** corresponds to the Microsoft side of the connection where traffic would flow to from your on-premises VPN router.
 - The **[connection](#create-site-to-site-vpn-connection)** links the two network gateways and contains the settings required to establish and maintain connectivity.
 - The **[virtual machine](#virtual-machine)** corresponds to client devices on your on-premises network.
 
