@@ -56,7 +56,7 @@ If you have previously configured user provisioning in M-Files Manage with your 
 1. Enter the necessary information.
    * In **Configuration name**, enter a unique name for the configuration.
    * Select **Default license type** for the provisioned users. All the provisioned users first get this license. You can change a user group's license type to a higher one after user groups have been provisioned. If there are not enough available licenses of the default license type in the subscription, all the users do not get the license.
-1. Click the copy icon (![Sreenshot of the Copy icon.](media/m-files-provisioning-tutorial/copy_icon.png) ) for each piece of data, that M-Files Manage created, and note down the values.
+1. Click the copy icon (![Sreenshot of the Copy icon.](media/m-files-provisioning-tutorial/icon.png) ) for each piece of data, that M-Files Manage created, and note down the values.
 
 > [!NOTE]
 > The client secret is not shown anywhere else when you close the dialog.
