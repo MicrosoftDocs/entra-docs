@@ -54,24 +54,28 @@ Create a security profile to assign, or link, policies with a profile.
 1. Select **Create a profile**.
 1. Select **Refresh** to refresh the profiles page and view the new profile.
 
-## Create a Conditional Access policy
-Create a Conditional Access policy and set session controls for end users or groups and link it to the filtering profile. To learn more about sessions controls, see [Conditional Access: Session](/azure/active-directory/conditional-access/concept-conditional-access-session). 
+## Link your security profile to a Conditional Access policy
+Create a Conditional Access policy and set session controls for end users or groups and link it to the filtering profile. To learn more about session controls, see [Conditional Access: Session](/azure/active-directory/conditional-access/concept-conditional-access-session). 
 1. In the Microsoft Entra admin center, navigate to **Identity** > **Protection** > **Conditional Access**.
 1. Select **Create new policy**.
 1. Enter a name and assign a user or group.
-1. Select **Target resources** and then select **Global Secure Access (Preview)** from the drop-down menu to set what the policy applies to.
+1. Select **Target resources** and then select **Global Secure Access (Preview)** from the drop-down menu to set the target resources the policy applies to.
 1. Select **Internet traffic** from the drop-down menu to set the traffic profile this policy applies to.
 1. Select **Sessions**, select **Use Global Secure Access security profile**, and then choose a web filtering profile.
 1. Select **Select**.
 1. In the **Enable policy** section, **Report-only** is the default.
 1. Select **Create**.
 
-## Test policy enforcement
-Use a Windows device with the Global Secure Access client installed. Sign in as a user that is assigned the Internet traffic acquisition profile. Test that navigating to websites is allowed or restricted as expected.
+## End user policy enforcement
 
 To check if the client is acquiring Internet traffic, right-click on the Global Secure Access client icon in the task manager tray and open **Connection Diagnostics** > **Channels**. Ensure that the Internet channel is Present and Green. Also, check if the hostname acquisition and flows for the users Internet traffic are being acquired while browsing.
 
+Use a Windows device with the Global Secure Access client installed. Sign in as a user that is assigned the Internet traffic acquisition profile. Test that navigating to websites is allowed or restricted as expected.
+
 Navigate to an approved site and check if it loads properly. Next, navigate to a restricted site and confirm the site is blocked.
+
+> [!NOTE]
+> The current block experience includes a "Connection Reset" browser error for HTTPS traffic and a "DeniedTraffic" browser error for HTTP traffic.
 
 View Internet Access traffic logs in the Microsoft Entra admin center. Navigate to **Global Secure Access** > **Monitor** > **traffic logs**. It takes approximately 15 minutes for new entries to appear.
 
