@@ -51,7 +51,7 @@ This article contains the usage constraints and other service limits for the Mic
 
 ## Lifecycle Workflows
 
-### Per tenant
+### Per Tenant
 
 |Category  |Limit  |
 |---------|---------|
