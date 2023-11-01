@@ -13,7 +13,6 @@ ms.author: jricketts
 ms.custom: "it-pro"
 ms.collection: M365-identity-device-management
 ---
-
 # Solution 2: Microsoft Entra ID with Shibboleth as a SAML proxy
 
 In Solution 2, Microsoft Entra ID acts as the primary identity provider (IdP). The federation provider acts as a Security Assertion Markup Language (SAML) proxy to the Central Authentication Service (CAS) apps and the multilateral federation apps. In this example, [Shibboleth acts as the SAML proxy](https://shibboleth.atlassian.net/wiki/spaces/KB/pages/1467056889/Using+SAML+Proxying+in+the+Shibboleth+IdP+to+connect+with+Azure+AD) to provide a reference link.

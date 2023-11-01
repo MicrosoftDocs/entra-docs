@@ -49,7 +49,7 @@ By the end of this article, you'll be able to:
 
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/how-provisioning-works.md).
 
-1. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md?toc=/azure/active-directory/multi-tenant-organizations/toc.json&pivots=cross-tenant-synchronization).
+1. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md?toc=/entra/identity/multi-tenant-organizations/toc.json&pivots=cross-tenant-synchronization).
 
 1. Determine what data to [map between tenants](~/identity/app-provisioning/customize-application-attributes.md).
 
@@ -227,7 +227,7 @@ Regardless of the value you selected for **Scope** in the previous step, you can
 
 1. Add any scoping filters to define which users are in scope for provisioning. 
 
-    To configure scoping filters, refer to the instructions provided in [Scoping users or groups to be provisioned with scoping filters](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md?toc=/azure/active-directory/multi-tenant-organizations/toc.json&pivots=cross-tenant-synchronization).
+    To configure scoping filters, refer to the instructions provided in [Scoping users or groups to be provisioned with scoping filters](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md?toc=/entra/identity/multi-tenant-organizations/toc.json&pivots=cross-tenant-synchronization).
 
     :::image type="content" source="./media/cross-tenant-synchronization-configure/provisioning-attribute-mapping-scoping-filter.png" alt-text="Screenshot that shows the Add Scoping Filter page with sample filter." lightbox="./media/cross-tenant-synchronization-configure/provisioning-attribute-mapping-scoping-filter.png":::
 
@@ -290,7 +290,7 @@ Attribute mappings allow you to define how data should flow between the source t
     - Flip the first name and last name and add a comma in between.
     - Add the domain name in parentheses at the end of the display name.
 
-    For examples, see [Reference for writing expressions for attribute mappings in Microsoft Entra ID](~/identity/app-provisioning/functions-for-customizing-application-data.md?toc=/azure/active-directory/multi-tenant-organizations/toc.json#examples).
+    For examples, see [Reference for writing expressions for attribute mappings in Microsoft Entra ID](~/identity/app-provisioning/functions-for-customizing-application-data.md?toc=/entra/identity/multi-tenant-organizations/toc.json#examples).
 
     :::image type="content" source="./media/cross-tenant-synchronization-configure/provisioning-attribute-mapping-displayname-expression.png" alt-text="Screenshot of the Edit Attribute page that shows the displayName attribute with the Expression box." lightbox="./media/cross-tenant-synchronization-configure/provisioning-attribute-mapping-displayname-expression.png":::
 
@@ -310,7 +310,7 @@ Attribute mappings allow you to define how data should flow between the source t
 
 1. To prevent accidental deletion, select **Prevent accidental deletion** and specify a threshold value.
 
-    For more information, see [Enable accidental deletions prevention in the Microsoft Entra provisioning service](~/identity/app-provisioning/accidental-deletions.md?toc=/azure/active-directory/multi-tenant-organizations/toc.json&pivots=cross-tenant-synchronization).
+    For more information, see [Enable accidental deletions prevention in the Microsoft Entra provisioning service](~/identity/app-provisioning/accidental-deletions.md?toc=/entra/identity/multi-tenant-organizations/toc.json&pivots=cross-tenant-synchronization).
 
 1. Select **Save** to save any changes.
 
@@ -350,7 +350,7 @@ Now that you have a configuration, you can test on-demand provisioning with one 
 
 1. If all is working as expected, assign additional users to the configuration.
 
-    For more information, see [On-demand provisioning in Microsoft Entra ID](~/identity/app-provisioning/provision-on-demand.md?toc=/azure/active-directory/multi-tenant-organizations/toc.json&pivots=cross-tenant-synchronization).
+    For more information, see [On-demand provisioning in Microsoft Entra ID](~/identity/app-provisioning/provision-on-demand.md?toc=/entra/identity/multi-tenant-organizations/toc.json&pivots=cross-tenant-synchronization).
 
 ## Step 12: Start the provisioning job
 
@@ -380,7 +380,7 @@ Once you've started a provisioning job, you can monitor the status.
 
     :::image type="content" source="./media/cross-tenant-synchronization-configure/provisioning-job-start.png" alt-text="Screenshot of the Configurations Overview page that shows the status of the provisioning cycle." lightbox="./media/cross-tenant-synchronization-configure/provisioning-job-start.png":::
 
-1. Select **Provisioning logs** to determine which users have been provisioned successfully or unsuccessfully. By default, the logs are filtered by the service principal ID of the configuration. For more information, see [Provisioning logs in Microsoft Entra ID](~/identity/monitoring-health/concept-provisioning-logs.md?toc=/azure/active-directory/multi-tenant-organizations/toc.json).
+1. Select **Provisioning logs** to determine which users have been provisioned successfully or unsuccessfully. By default, the logs are filtered by the service principal ID of the configuration. For more information, see [Provisioning logs in Microsoft Entra ID](~/identity/monitoring-health/concept-provisioning-logs.md?toc=/entra/identity/multi-tenant-organizations/toc.json).
 
     :::image type="content" source="./media/cross-tenant-synchronization-configure/provisioning-logs.png" alt-text="Screenshot of the Provisioning logs page that lists the log entries and their status." lightbox="./media/cross-tenant-synchronization-configure/provisioning-logs.png":::
 
