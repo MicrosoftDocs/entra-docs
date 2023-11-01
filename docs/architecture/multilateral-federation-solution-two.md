@@ -13,6 +13,7 @@ ms.author: jricketts
 ms.custom: "it-pro"
 ms.collection: M365-identity-device-management
 ---
+This section of the Microsoft Entra Permissions Management operations reference guide describes the checks and actions you should take to remediate key findings in your environment and implement just-in-time (JIT) access with Permissions On-Demand.
 
 # Solution 2: Microsoft Entra ID with Shibboleth as a SAML proxy
 
