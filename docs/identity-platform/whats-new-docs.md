@@ -35,7 +35,7 @@ Welcome to what's new in the Microsoft identity platform documentation. This art
 - [Access tokens in the Microsoft identity platform](access-tokens.md) - Rebranding of Azure Active Directory to Microsoft Entra
 - [Add app roles to your application and receive them in the token](howto-add-app-roles-in-apps.md) - Add clarity to distinguish between app and user roles
 - [How and why applications are added to Microsoft Entra ID](how-applications-are-added.md) - Rebranding of Azure Active Directory to Microsoft Entra
-- [Making your application multi-tenant](howto-convert-app-to-be-multi-tenant.md) - Rebranding of Azure Active Directory to Microsoft Entra
+- [Making your application multitenant](howto-convert-app-to-be-multi-tenant.md) - Rebranding of Azure Active Directory to Microsoft Entra
 - [Microsoft Entra app manifest](reference-app-manifest.md) - Rebranding of Azure Active Directory to Microsoft Entra
 - [Microsoft Entra authentication and authorization error codes](reference-error-codes.md) - Rebranding of Azure Active Directory to Microsoft Entra
 - [Quickstart: Sign in users in a single-page app (SPA) and call the Microsoft Graph API using Angular](quickstart-single-page-app-angular-sign-in.md) - Update SPA quickstarts to use new code sample
