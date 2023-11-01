@@ -47,7 +47,7 @@ In the future, our coverage of events is set to broaden, increasing the scope of
 | 7 | Teams | `TeamsAdminAction` |
 
 
-## Exchange (Private Preview)
+## Exchange (Limited Preview)
 
 | #   | Workload   | Operation |
 |----------|-----------|------------|
