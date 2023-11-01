@@ -8,7 +8,7 @@ ms.service: active-directory
 ms.subservice: ciem
 ms.workload: identity
 ms.topic: how-to
-ms.date: 1101/2023
+ms.date: 11/01/2023
 ms.author: jfields
 ---
 
