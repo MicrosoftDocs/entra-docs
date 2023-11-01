@@ -103,7 +103,7 @@ Content-Type: application/json
 
 ## Known issue
 
-A fix for [FIDO2 security keys](~/identity-platform/support-fido2-authentication.md#mobile) is being rolled out with the change of the Microsoft managed setting to **Enabled**. As part of the rollout, we adjusted the preferred methods list, which moved certificate-based authentication (CBA) lower on the list of preferred methods. This change is necessary due to a known issue where users within the scope of CBA can't use any other available authentication method. We are actively working to address this issue, and once the fix is rolled out, CBA will return to its appropriate position on the list of preferred methods. However, tenants that use a Conditional Access policy that mandates CBA will have the ability to bypass this downgrade and be unaffected by the change.
+A fix for [FIDO2 security keys](~/identity-platform/support-fido2-authentication.md#mobile) is being rolled out with the change of the Microsoft managed setting to **Enabled**.
 
 ## FAQ
 
@@ -112,11 +112,11 @@ A fix for [FIDO2 security keys](~/identity-platform/support-fido2-authentication
 When a user signs in, the authentication process checks which authentication methods are registered for the user. The user is prompted to sign-in with the most secure method according to the following order. The order of authentication methods is dynamic. It's updated as the security landscape changes, and as better authentication methods emerge. Click the link for information about each method.
 
 1. [Temporary Access Pass](howto-authentication-temporary-access-pass.md)
+1. [Certificate-based authentication](concept-certificate-based-authentication.md)
 1. [FIDO2 security key](concept-authentication-passwordless.md#fido2-security-keys)
 1. [Microsoft Authenticator notifications](concept-authentication-authenticator-app.md)
 1. [Time-based one-time password (TOTP)](concept-authentication-oath-tokens.md)<sup>1</sup>
 1. [Telephony](concept-authentication-phone-options.md)<sup>2</sup>
-1. [Certificate-based authentication](concept-certificate-based-authentication.md)
 
 <sup>1</sup> Includes hardware or software TOTP from Microsoft Authenticator, Authenticator Lite, or third-party applications.
 

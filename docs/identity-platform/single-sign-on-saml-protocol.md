@@ -98,7 +98,7 @@ If provided, don't include the `ProxyCount` attribute, `IDPListOption` or `Reque
 
 ### Signature
 
-A `Signature` element in `AuthnRequest` elements is optional. Microsoft Entra ID can be configured (Preview) to enforce the requirement of signed authentication requests. If enabled, only signed authentication requests are accepted, otherwise the requestor verification is provided for by only responding to registered Assertion Consumer Service URLs.
+A `Signature` element in `AuthnRequest` elements is optional. Microsoft Entra ID can be configured to enforce the requirement of signed authentication requests. If enabled, only signed authentication requests are accepted, otherwise the requestor verification is provided for by only responding to registered Assertion Consumer Service URLs.
 
 ### Subject
 
