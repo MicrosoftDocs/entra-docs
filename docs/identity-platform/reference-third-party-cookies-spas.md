@@ -25,7 +25,7 @@ Apple Safari has an on-by-default privacy protection feature called [Intelligent
 
 A common form of user tracking is done by loading an iframe to third-party site in the background and using cookies to correlate the user across the Internet. Unfortunately, this pattern is also the standard way of implementing the [implicit flow](v2-oauth2-implicit-grant-flow.md) in single-page apps (SPAs). A browser that blocks third-party cookies to protect user privacy can also block the functionality of a SPA.
 
-Safari isn't alone in blocking third-party cookies to enhance user privacy. Brave blocks third-party cookies by default, and Google Chrome has announced that they will start blocking third-party cookies by default [in the future](https://privacysandbox.com/open-web/#the-privacy-sandbox-timeline).
+Safari isn't alone in blocking third-party cookies to enhance user privacy. Brave blocks third-party cookies by default, and Chrome announced that they will start blocking third-party cookies by default [in the future](https://privacysandbox.com/open-web/#the-privacy-sandbox-timeline).
 
 The solution outlined in this article works in all of these browsers, or anywhere third-party cookies are blocked.
 
