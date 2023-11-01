@@ -16,7 +16,7 @@ ms.reviewer: madansr7
 
 # How to configure app instance property lock for your applications
 
-Application instance lock is a feature in Microsoft Entra ID that allows sensitive properties of a multi-tenant application object to be locked for modification after the application is provisioned in another tenant.
+Application instance lock is a feature in Microsoft Entra ID that allows sensitive properties of a multitenant application object to be locked for modification after the application is provisioned in another tenant.
 This feature provides application developers with the ability to lock certain properties if the application doesn't support scenarios that require configuring those properties.
 
 ## What are sensitive properties?
@@ -60,4 +60,4 @@ To configure an app instance lock:
 
 ## Configure app instance lock using Microsoft Graph
 
-You manage the app instance lock feature through the **servicePrincipalLockConfiguration** property of the [application](/graph/api/resources/application) object of the multi-tenant app. For more information, see [Lock sensitive properties for service principals](/graph/tutorial-applications-basics#lock-sensitive-properties-for-service-principals).
+You manage the app instance lock feature through the **servicePrincipalLockConfiguration** property of the [application](/graph/api/resources/application) object of the multitenant app. For more information, see [Lock sensitive properties for service principals](/graph/tutorial-applications-basics#lock-sensitive-properties-for-service-principals).
