@@ -11,9 +11,9 @@ author: csmulligan
 manager: CelesteDG
 ---
 
-# Microsoft Entra External ID for partners (B2B): What's new
+# Microsoft Entra External ID: What's new
 
-Welcome to what's new in Microsoft Entra External ID for partners documentation. This article lists new docs that have been added and those that have had significant updates in the last three months. To learn what's new with the External Identities service, see [What's new in Microsoft Entra ID](~/fundamentals/whats-new.md).
+Welcome to what's new in Microsoft Entra External ID documentation. This article lists new docs that have been added and those that have had significant updates in the last three months. To learn what's new with the Microsoft Entra ID service, see [What's new in Microsoft Entra ID](~/fundamentals/whats-new.md).
 
 ## October 2023
 
