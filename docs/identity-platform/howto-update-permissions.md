@@ -22,7 +22,7 @@ As an application's functionality evolves, the resources it requires access to a
 
 Updating permissions for your app isn't only a security best practice, but also a way to enhance your app's user experience and adoption. The following section outlines some of the benefits of updating permissions for your app:  
 
-- If your app has a new functionality, you can request more permissions that enable the app to access the additional resources it needs.
+- If your app has a new functionality, you can request more permissions that enable the app to access the extra resources it needs.
 - Customers are more likely to adopt your application if it requests only the least privileged permissions necessary to function. It shows that your app respects the customer's privacy and data protection and doesn't access more resources than it needs.
 - Additionally, if your app is compromised, there's less blast radius if it has fewer or lesser-privileged permissions. It means that the attacker has less access to the customer's data and resources, and thus the potential damage is reduced.
 - By updating permissions for your app, you can improve your app's security, usability, and compliance, and build trust with your customers.
@@ -54,20 +54,20 @@ For example, adding an email notification feature to your application needs to a
 
 ### Add permissions into static consent
 
-Static consent is a way of requesting permissions from users or administrators at the time of an application's registration, rather than at runtime. Static consent requires the app to declare all the permissions it needs in the **app registrations** pane in the Microsoft Entra admin center. With The Microsoft Entra admin center, you can only update permissions for static consent. To learn more about the different types of consent, see [Types of consent](./develop/consent-types-developer.md). To learn how to update permissions for dynamic consent, refer to the Microsoft Graph section in this article.
+Static consent is a way of requesting permissions from users or administrators at the time of an application's registration, rather than at runtime. Static consent requires the app to declare all the permissions it needs in the **app registrations** pane in the Microsoft Entra admin center. With The Microsoft Entra admin center, you can only update permissions for static consent. To learn more about the different types of consent, see [Types of consent](consent-types-developer.md). To learn how to update permissions for dynamic consent, refer to the Microsoft Graph section in this article.
 
 :::zone pivot="portal"
 
 In this section, you learn how to add permissions into static consent using the Microsoft Entra admin center.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator) or application owner.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator) or application owner.
 1. Browse to **Identity** > **Applications** > **App registrations** > **All applications**.
 1. Find the app registration that you want to add permissions to and select it. You can add permissions in two different ways:
 1. Add permissions in **API permission** pane.
    1. Locate the **API permissions** pane and select **Add a permission**.
    1. Select the API that you want to access and the permission that you want to request from the list of available options and select **Add permissions**.
 
-      :::image type="content" source="media/manage-permissions/api-permissions.png" alt-text="Screenshot of API permissions pane.":::
+      :::image type="content" source="media/howto-update-permissions/api-permissions.png" alt-text="Screenshot of API permissions pane.":::
 
 1. Add permissions to the application manifest.
 
@@ -152,7 +152,7 @@ After permissions are added to your application, users or administrators need to
 
 When the added permissions require admin consent, the required actions vary based on app type:
 
-- **Single Tenant App and Multi-Tenant App in Home Tenant**: The user must sign in as a Global Administrator and [grant tenant-wide consent](../manage-apps/grant-admin-consent.md).
+- **Single Tenant App and Multi-Tenant App in Home Tenant**: The user must sign in as a Global Administrator and [grant tenant-wide consent](~/enterprise-apps/grant-admin-consent.md).
 - **Multi-Tenant Apps in Customer's Tenants**: User sees new consent prompts that require admin consent.
 
 ### Remove an unused permission
@@ -163,16 +163,16 @@ Removing permissions can reduce the risk of exposing sensitive data or compromis
 
 :::zone pivot="portal"
 
-To remove permissions that require static consent, you need to remove the permission from the app registration's side. An admin of the tenant also needs to revoke the permission on the Enterprise application side. For more information on how to revoke permissions granted to an enterprise application, see [Revoke permissions for an enterprise application](../manage-apps/manage-application-permissions.md#review-and-revoke-permissions).
+To remove permissions that require static consent, you need to remove the permission from the app registration's side. An admin of the tenant also needs to revoke the permission on the Enterprise application side. For more information on how to revoke permissions granted to an enterprise application, see [Revoke permissions for an enterprise application](~/enterprise-apps/manage-application-permissions.md#review-and-revoke-permissions).
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../roles/permissions-reference.md#cloud-application-administrator) or application owner.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator) or application owner.
 1. Browse to **Identity** > **Applications** > **App registrations** > **All applications**.
 1. Find the app registration that you want to remove permissions from and select it.
 1. Remove the permissions from the **API permission** pane:
    1. Locate the **API permissions** pane and find the permissions you want to remove.
    1. Select the API that you want to remove and select **Revoke admin consent** first and **remove permission** next. It ensures that the granted permission is removed from your tenant.
 
-      :::image type="content" source="media/manage-permissions/remove-permissions.png" alt-text="Screenshot shows how to remove permissions via the API permissions pane.":::
+      :::image type="content" source="media/howto-update-permissions/remove-permissions.png" alt-text="Screenshot shows how to remove permissions via the API permissions pane.":::
 
 1. Remove permissions from the application manifest:
    1. From the left navigation pane, under the **Manage** menu group, select **Manifest**. An editor opens that allows you to directly edit the attributes of the app registration object.
@@ -252,7 +252,7 @@ When you need to remove delegated permission from dynamic consent request, speci
 
 After the permissions are removed from the app registration, an admin in the tenant also needs to revoke consent to protect your organization's data. When the removed permission requires admin consent, the required actions vary based on app type:
 
-- **Single tenant app and multi-tenant app in home tenant**: Contact the admins of all the tenants where instances of your application reside to [revoke permissions granted to the enterprise application](../manage-apps/manage-application-permissions.md). This ensures that the application doesn't maintain access through the removed permission.
+- **Single tenant app and multi-tenant app in home tenant**: Contact the admins of all the tenants where instances of your application reside to [revoke permissions granted to the enterprise application](~/enterprise-apps/manage-application-permissions.md). It ensures that the application doesn't maintain access through the removed permission.
 - **multi-tenant apps in customers' tenants**: Ensure that you communicate with your customers to revoke permissions through announcements, blogs and any other communication channels.
 
 ### Replace a permission
