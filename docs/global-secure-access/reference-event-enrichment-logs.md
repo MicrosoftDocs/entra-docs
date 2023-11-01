@@ -12,7 +12,7 @@ ms.custom:
 
 # Event enrichment in Microsoft 365 enriched logs
 
-Using Microsoft 365 enriched logs, a variety of events across different workloads can now be brought into sharper focus, providing nuanced insights essential for improved security and improved efficiency. In order to select the events, which are meticulously curated, several factors are taken into consideration, including priority ranking, relevance to security landscapes, and how useful these events are for Sentinel or Defender. 
+Event enrichment uses Microsoft 365 enriched logs to bring events across different workloads into sharper focus. The result is nuanced insights that are essential for improved security and improved efficiency. Events are carefully chosen and several factors are used to select them. These factors include priority ranking, relevance to security landscapes, and how useful these events are for Sentinel or Defender.
 
 In the future, our coverage of events is set to broaden, increasing the scope of the security narrative.
 
