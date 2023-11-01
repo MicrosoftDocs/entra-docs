@@ -58,12 +58,14 @@ Without third-party cookies, there are two ways of accomplishing sign-in:
   - Consider having a pre-load sequence in the app that checks for a login session and redirects to the login page before the app fully unpacks and executes the JavaScript payload.
 - **Popups**
   - If the user experience (UX) of a full page redirect doesn't work for the application, consider using a popup to handle authentication.
-  - When the popup finishes redirecting to the application after authentication, code in the redirect handler will store the code, and tokens in local storage for the application to use. MSAL.js supports popups for authentication, as do most libraries.
+  - When the popup finishes redirecting to the application after authentication, code in the redirect handler will store the auth code, and tokens in local storage for the application to use. MSAL.js supports popups for authentication, as do most libraries.
   - Browsers are decreasing support for popups, so they may not be the most reliable option. User interaction with the SPA before creating the popup may be needed to satisfy browser requirements.
 
      Apple [describes a popup method](https://webkit.org/blog/8311/intelligent-tracking-prevention-2-0/) as a temporary compatibility fix to give the original window access to third-party cookies. While Apple may remove this transferal of permissions in the future, it will not impact the guidance here.
      
      Here, the popup is being used as a first party navigation to the login page so that a session is found and an auth code can be provided. This should continue working into the future.
+
+Developers can continue to use `prompt=none` with the expectation that they will see a higher rate of *interacion_required* errors when third-party cookies are blocked. The recommendation is to always have an [interactive method fallback](entra/identity-platform/msal-js-prompt-behavior#interactive-requests-with-promptnone.md) in case of failures during silent token acquisition. 
 
 ### Using iframes
 
@@ -80,11 +82,16 @@ Cross-site scripting (XSS) attacks or compromised JS packages can steal the refr
 This limited-lifetime refresh token pattern was chosen as a balance between security and degraded UX. Without refresh tokens or third-party cookies, the authorization code flow (as recommended by the [OAuth security best current practices draft](https://tools.ietf.org/html/draft-ietf-oauth-security-topics-14)) becomes onerous when new or additional tokens are required. A full page redirect or popup is needed for every single token, every time a token expires (every hour usually, for the Microsoft identity platform tokens).
 
 ## User type specific mitigations 
-Not all users and applications will be uniformly affected by third-party cookies. There are some scenarios where due to architecture or device management, the refreshing of tokens can be done without third-party cookies. 
+Not all users and applications will be uniformly affected by third-party cookies. There are some scenarios where due to architecture or device management, silent calls to renew tokens can be done without third-party cookies. 
 
 For *managed enterprise device* scenarios, certain browser and platform combinations have support for [device conditional access](/azure/active-directory/conditional-access/concept-conditional-access-conditions#supported-browsers). Leveraging device identity will minimize the need for third-party cookies as the authentication state can come from the device instead of the browser.  
 
 For *Azure AD B2C application* scenarios, customers can set up a [custom login domain](/azure/active-directory-b2c/custom-domain?pivots=b2c-user-flow) to match the application's domain. Browsers would not block third-party cookies in this scenario as the cookies remain in the same domain (e.g. login.contoso.com to app.contoso.com).
+
+## Limitations on Front-Channel Logout without third-party cookies
+When signing a user out from a SPA, MSAL.js recommends using the [popup or redirect logout method](entra/identity-platform/scenario-spa-sign-in?tabs=javascript2#sign-out-with-a-pop-up-window.md). While this will clear the authentication session on the server and in browser storage, there is a risk that without access to third-party cookies, not all federated applications will see a sign-out at the same time. Existing access tokens for other applications for the same user will continue to be valid before their expiration time. This means a user could log out of application A in tab A, but application B in tab B will still appear as logged in for the access token's remaining valid time. When application B's token expires and a call is made to the server to get a new token, the application will receive a response from the server that the session is expired and prompt for the user to authenticate.
+
+Microsoft's sign-out page and [internet privacy best practices](https://support.microsoft.com/en-us/windows/protect-your-privacy-on-the-internet-ffe36513-e208-7532-6f95-a3b1c8760dfa) recommend that users close all browser windows after logging out of an application. 
 
 ## Next steps
 
