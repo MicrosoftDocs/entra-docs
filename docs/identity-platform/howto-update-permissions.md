@@ -152,7 +152,7 @@ After permissions are added to your application, users or administrators need to
 
 When the added permissions require admin consent, the required actions vary based on app type:
 
-- **Single Tenant App and Multi-Tenant App in Home Tenant**: The user must sign in as a Global Administrator and [grant tenant-wide consent](~/enterprise-apps/grant-admin-consent.md).
+- **Single Tenant App and Multi-Tenant App in Home Tenant**: The user must sign in as a Global Administrator and [grant tenant-wide consent](~/identity/enterprise-apps/grant-admin-consent.md).
 - **Multi-Tenant Apps in Customer's Tenants**: User sees new consent prompts that require admin consent.
 
 ### Remove an unused permission
@@ -163,7 +163,7 @@ Removing permissions can reduce the risk of exposing sensitive data or compromis
 
 :::zone pivot="portal"
 
-To remove permissions that require static consent, you need to remove the permission from the app registration's side. An admin of the tenant also needs to revoke the permission on the Enterprise application side. For more information on how to revoke permissions granted to an enterprise application, see [Revoke permissions for an enterprise application](~/enterprise-apps/manage-application-permissions.md#review-and-revoke-permissions).
+To remove permissions that require static consent, you need to remove the permission from the app registration's side. An admin of the tenant also needs to revoke the permission on the Enterprise application side. For more information on how to revoke permissions granted to an enterprise application, see [Revoke permissions for an enterprise application](~/identity/enterprise-apps/manage-application-permissions.md#review-and-revoke-permissions).
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator) or application owner.
 1. Browse to **Identity** > **Applications** > **App registrations** > **All applications**.
@@ -252,7 +252,7 @@ When you need to remove delegated permission from dynamic consent request, speci
 
 After the permissions are removed from the app registration, an admin in the tenant also needs to revoke consent to protect your organization's data. When the removed permission requires admin consent, the required actions vary based on app type:
 
-- **Single tenant app and multi-tenant app in home tenant**: Contact the admins of all the tenants where instances of your application reside to [revoke permissions granted to the enterprise application](~/enterprise-apps/manage-application-permissions.md). It ensures that the application doesn't maintain access through the removed permission.
+- **Single tenant app and multi-tenant app in home tenant**: Contact the admins of all the tenants where instances of your application reside to [revoke permissions granted to the enterprise application](~/identity/enterprise-apps/manage-application-permissions.md). It ensures that the application doesn't maintain access through the removed permission.
 - **multi-tenant apps in customers' tenants**: Ensure that you communicate with your customers to revoke permissions through announcements, blogs and any other communication channels.
 
 ### Replace a permission

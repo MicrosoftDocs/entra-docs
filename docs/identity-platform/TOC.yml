@@ -489,7 +489,7 @@
             - name: Restrict your app to a set of users
               href: howto-restrict-your-app-to-a-set-of-users.md
             - name: Update your app's requested permissions
-              href: howto-update-app-permissions.md
+              href: howto-update-permissions.md
             - name: Add app roles in your application
               href: howto-add-app-roles-in-apps.md
             - name: Implement RBAC in your application
