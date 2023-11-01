@@ -68,7 +68,7 @@ To disable Authenticator Lite in the Microsoft Entra admin center, complete the 
    <img width="664" alt="Authenticator Lite configuration settings" src="https://user-images.githubusercontent.com/108090297/228603364-53f2581f-a4e0-42ee-8016-79b23e5eff6c.png">
 
    >[!NOTE]
-   > If your organization still manages authentication methods in the per-user MFA policy, you need to disable *Notification through mobile app* as a verification option there in addition to the preceding steps. We recommend doing this only after you enable Microsoft Authenticator in the Authentication methods policy. You can contine to manage the remainder of your authentication methods in the per-user MFA policy while Microsoft Authenticator is managed in the modern Authentication methods policy. However, we recommend [migrating](how-to-authentication-methods-manage.md) management of all authentication methods to the modern Authentication methods policy. The ability to manage authentication methods in the per-user MFA policy will be retired September 30, 2024.
+   > If your organization still manages authentication methods in the per-user MFA policy, you need to disable *Notification through mobile app* as a verification option there in addition to the preceding steps. We recommend doing this only after you enable Microsoft Authenticator in the Authentication methods policy. You can contine to manage the remainder of your authentication methods in the per-user MFA policy while Microsoft Authenticator is managed in the modern Authentication methods policy. However, we recommend [migrating](how-to-authentication-methods-manage.md) management of all authentication methods to the modern Authentication methods policy. The ability to manage authentication methods in the per-user MFA policy will be retired September 30, 2025.
 
 ### Enable Authenticator Lite via Graph APIs
 
@@ -149,7 +149,7 @@ If the sign-in was done by phone app notification, under **authenticationAppDevi
 If a user has registered Authenticator Lite, the user’s registered authentication methods include **Microsoft Authenticator (in Outlook)**. 
 
 ## Push notifications in Authenticator Lite
-Push notifications sent by Authenticator Lite aren't configurable and don't depend on the Authenticator feature settings. Authenticator Lite doesn't support passwordless authentication mode. The settings for features included in the Authenticator Lite experience are listed in the following table. Every authentication includes a number matching prompt and does not include app and location context, regardless of Microsoft Authentiator feature settings.
+Push notifications sent by Authenticator Lite aren't configurable and don't depend on the Authenticator feature settings. Authenticator Lite doesn't support passwordless authentication mode. The settings for features included in the Authenticator Lite experience are listed in the following table. Every authentication includes a number matching prompt and does not include app and location context, regardless of Microsoft Authenticator feature settings.
 
 | Authenticator Feature    | Authenticator Lite Experience|
 |:------------------------:|:----------------------------:|
