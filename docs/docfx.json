@@ -47,8 +47,10 @@
       "uhfHeaderId": "MSDocsHeader-Entra",
       "breadcrumb_path": "/entra/breadcrumb/toc.json",
       "extendBreadcrumb": false,
-      "feedback_github_repo": "MicrosoftDocs/entra-docs",
+      "feedback_system": "Standard",
       "feedback_product_url": "https://feedback.azure.com/d365community/forum/79b1327d-d925-ec11-b6e6-000d3a4f06a4",
+      "feedback_help_link_url": "https://learn.microsoft.com/answers/products/446/entra/",
+      "feedback_help_link_type": "get-help-at-qna",
       "searchScope": "Microsoft Entra"
     },
     "no-loc": {
@@ -133,13 +135,12 @@
         "entra"
         ]
       },
-    "feedback_system": "Standard",
     "feedback_product_url": {
-      "/identity/**/*.md": "https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789",
-      "/external-id/*.md": "/entra/identity-platform/developer-support-help-options",
-      "/identity-platform/*.md": "/entra/identity-platform/developer-support-help-options",
-      "/workload-id/*.md": "https://aka.ms/microsoftentraexternalid"
-    },
+        "/identity/**/*.md": "https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789",
+        "/external-id/*.md": "/entra/identity-platform/developer-support-help-options",
+        "/identity-platform/*.md": "/entra/identity-platform/developer-support-help-options",
+        "/workload-id/*.md": "https://aka.ms/microsoftentraexternalid"
+      },
     "manager": {
       "architecture/*.md": "martincoetzer",
       "architecture/*.yml": "martincoetzer",

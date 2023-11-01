@@ -87,6 +87,9 @@ items:
         href: how-to-remote-network-health-logs.md
       - name: Traffic logs
         href: how-to-view-traffic-logs.md
+      - name: Event enrichment in Microsoft 365 enriched logs
+        href: reference-event-enrichment-logs.md
+
 - name: Reference
   expanded: false
   items:
