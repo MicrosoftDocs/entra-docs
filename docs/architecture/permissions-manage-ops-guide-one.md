@@ -14,6 +14,8 @@ ms.author: jricketts
 
 # Phase 1: Implement the framework to manage at scale
 
+This section of the Microsoft Entra Permissions Management operations reference guide describes the checks and actions you should consider taking to effectively delegate permissions and manage at scale.
+
 ## Define a delegated administration model
 
 **Recommended owner: Information Security Architecture**
