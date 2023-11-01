@@ -5,7 +5,7 @@ description: Learn how to require known compliant network locations in order to 
 ms.service: network-access
 ms.subservice: 
 ms.topic: how-to
-ms.date: 08/09/2023
+ms.date: 10/31/2023
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -37,6 +37,7 @@ The compliant network is different than [IPv4, IPv6, or geographic locations](/a
 ### Known limitations
 
 - Continuous access evaluation is not currently supported for compliant network check.
+- Organizations can protect other Microsoft Entra integrated apps with Conditional Access policies requiring a compliant network check. During the preview, administrators must choose the individual applications from the app picker instead of choosing *All cloud apps*. **Do not choose *All cloud apps*.**
 
 ## Enable Global Secure Access signaling for Conditional Access
 
