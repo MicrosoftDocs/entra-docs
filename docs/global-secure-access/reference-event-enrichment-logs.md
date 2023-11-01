@@ -20,46 +20,46 @@ In the future, our coverage of events is set to broaden, increasing the scope of
 
 | #   | Workload   | Operation |
 |----------|-----------|------------|
-| 1 | OneDrive | FileDeleted |
-| 2 | SharePoint | FileDeleted |
-| 3 | SharePoint  | FileDeletedFirstStageRecycleBin |
-| 4 | OneDrive | FileDeletedFirstStageRecycleBin |
-| 5 | OneDrive | FileDownloaded |
-| 6 | SharePoint | FileDownloaded |
-| 7 | SharePoint | FileRecycled |
-| 8 | OneDrive | FileRecycled |
-| 9 | OneDrive | FileUploaded |
-| 10 | SharePoint | FileUploaded |
-| 11 | OneDrive | ListItemDeleted |
-| 12 | SharePoint | ListItemRecycled |
+| 1 | OneDrive | `FileDeleted` |
+| 2 | SharePoint | `FileDeleted` |
+| 3 | SharePoint  | `FileDeletedFirstStageRecycleBin` |
+| 4 | OneDrive | `FileDeletedFirstStageRecycleBin` |
+| 5 | OneDrive | `FileDownloaded` |
+| 6 | SharePoint | `FileDownloaded` |
+| 7 | SharePoint | `FileRecycled` |
+| 8 | OneDrive | `FileRecycled` |
+| 9 | OneDrive | `FileUploaded` |
+| 10 | SharePoint | `FileUploaded` |
+| 11 | OneDrive | `ListItemDeleted` |
+| 12 | SharePoint | `ListItemRecycled` |
 
 
 ## Teams (Public Preview)
 
 | #   | Workload   | Operation |
 |----------|-----------|------------|
-| 1 | Teams | AppInstalled |
-| 2 | Teams | BotAddedToTeam |
-| 3 | Teams | MemberAdded |
-| 4 | Teams | MemberRemoved |
-| 5 | Teams | MemberRoleChanged |
-| 6 | Teams | TeamDeleted |
-| 7 | Teams | TeamsAdminAction |
+| 1 | Teams | `AppInstalled` |
+| 2 | Teams | `BotAddedToTeam` |
+| 3 | Teams | `MemberAdded` |
+| 4 | Teams | `MemberRemoved` |
+| 5 | Teams | `MemberRoleChanged` |
+| 6 | Teams | `TeamDeleted` |
+| 7 | Teams | `TeamsAdminAction` |
 
 
 ## Exchange (Private Preview)
 
 | #   | Workload   | Operation |
 |----------|-----------|------------|
-| 1 | Exchange | New-InboxRule |
-| 2 | Exchange | New-ManagementRoleAssignment |
-| 3 | Exchange | New-TransportRule |
-| 4 | Exchange | Set-AdminAuditLogConfig |
-| 5 | Exchange | Set-AtpPolicyForO365 |
-| 6 | Exchange | Set-CrossTenantAccessPolicy |
-| 7 | Exchange | Set-OrganizationConfig |
-| 8 | Exchange | Set-SharingPolicy |
-| 9 | Exchange | Set-TransportRule |
+| 1 | Exchange | `New-InboxRule` |
+| 2 | Exchange | `New-ManagementRoleAssignment` |
+| 3 | Exchange | `New-TransportRule` |
+| 4 | Exchange | `Set-AdminAuditLogConfig` |
+| 5 | Exchange | `Set-AtpPolicyForO365` |
+| 6 | Exchange | `Set-CrossTenantAccessPolicy` |
+| 7 | Exchange | `Set-OrganizationConfig` |
+| 8 | Exchange | `Set-SharingPolicy` |
+| 9 | Exchange | `Set-TransportRule` |
 
 
 > [!NOTE]
