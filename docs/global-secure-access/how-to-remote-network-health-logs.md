@@ -1,5 +1,5 @@
 ---
-title: About remote network health logs
+title: How to use the remote network health logs
 description: Learn how to check the health of your remote networks with the Global Secure Access remote network health logs.
 author: shlipsey3
 ms.author: sarahlipsey
@@ -67,7 +67,7 @@ GET https://graph.microsoft.com/beta/networkAccess/logs/remotenetworks
 
 ## How to analyze the logs
 
-Logs can be downloaded for long-term storage. You can download logs as a JSON or CSV file. For more information, see [How to download logs](/identity/monitoring-health/howto-download-logs.md).
+Logs can be downloaded for long-term storage. You can download logs as a JSON or CSV file. For more information, see [How to download logs](~/identity/monitoring-health/howto-download-logs.md).
 
 To narrow down the results of the logs, select **Add filter**. You can filter by:
 
@@ -88,7 +88,7 @@ The following table describes each of the fields in the Remote network health lo
 | Description | Optional description of the event. |
 | BGP Routes Advertised Count | Optional count of BGP routes advertised over the IPsec tunnel.</br> This value is 0 for TunnelConnect, TunnelDisconnect, BGPConnect and BGPDisconnect events. |
 | Sent Bytes | Optional number of bytes sent from source to destination over a tunnel during the last 15 minutes.</br> This value is 0 for TunnelConnect, TunnelDisconnect, BGPConnect and BGPDisconnect events. |
-| Received Bytes | Optional number of bytes received by source from destination over a tunnel during the last 15 minutes. | This value is 0 for TunnelConnect, TunnelDisconnect, BGPConnect and BGPDisconnect events. |
+| Received Bytes | Optional number of bytes received by source from destination over a tunnel during the last 15 minutes.</br> This value is 0 for TunnelConnect, TunnelDisconnect, BGPConnect and BGPDisconnect events. |
 | Remote network ID | ID of the remote network the tunnel is associated with. |
 
 ## Next steps
