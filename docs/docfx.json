@@ -56,7 +56,14 @@
     "no-loc": {
       "includes/policy/**/*.md": "[audit, deny, modify, disabled, auditifnotexists, deployifnotexists]"
     },
-    "fileMetadata": {}, 
+    "fileMetadata": {
+      "feedback_product_url": {
+        "/identity/**/*.md": "https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789",
+        "/external-id/*.md": "/entra/identity-platform/developer-support-help-options",
+        "/identity-platform/*.md": "/entra/identity-platform/developer-support-help-options",
+        "/workload-id/*.md": "https://aka.ms/microsoftentraexternalid"
+      },
+    }, 
     "template": [
       "docs.html",
       "default","DocFx.Plugins.PlantUml/template"
@@ -134,12 +141,6 @@
       "docs/**/*.md": [
         "entra"
         ]
-      },
-    "feedback_product_url": {
-        "/identity/**/*.md": "https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789",
-        "/external-id/*.md": "/entra/identity-platform/developer-support-help-options",
-        "/identity-platform/*.md": "/entra/identity-platform/developer-support-help-options",
-        "/workload-id/*.md": "https://aka.ms/microsoftentraexternalid"
       },
     "manager": {
       "architecture/*.md": "martincoetzer",
