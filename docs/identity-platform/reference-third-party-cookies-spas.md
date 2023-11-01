@@ -65,7 +65,7 @@ Without third-party cookies, there are two ways of accomplishing sign-in:
      
      Here, the popup is being used as a first party navigation to the login page so that a session is found and an auth code can be provided. This should continue working into the future.
 
-Developers can continue to use `prompt=none` with the expectation that they will see a higher rate of *interacion_required* errors when third-party cookies are blocked. The recommendation is to always have an [interactive method fallback](entra/identity-platform/msal-js-prompt-behavior#interactive-requests-with-promptnone.md) in case of failures during silent token acquisition. 
+Developers can continue to use `prompt=none` with the expectation that they will see a higher rate of *interacion_required* errors when third-party cookies are blocked. The recommendation is to always have an [interactive method fallback](msal-js-prompt-behavior#interactive-requests-with-promptnone.md) in case of failures during silent token acquisition. 
 
 ### Using iframes
 
