@@ -1,6 +1,6 @@
 ---
-title: Secure your resources with Microsoft managed Conditional Access policies
-description: Microsoft managed policies take action to require multifactor authentication to reduce the risk of compromise.
+title: Secure your resources with Microsoft-managed Conditional Access policies
+description: Microsoft-managed policies take action to require multifactor authentication to reduce the risk of compromise.
 
 ms.service: active-directory
 ms.subservice: conditional-access
@@ -12,7 +12,7 @@ author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: swethar
 ---
-# Microsoft managed policies
+# Microsoft-managed policies
 
 As mentioned in the [Microsoft Digital Defense Report in October 2023](https://www.microsoft.com/security/security-insider/microsoft-digital-defense-report-2023)
 
@@ -21,7 +21,7 @@ As mentioned in the [Microsoft Digital Defense Report in October 2023](https://w
 > ...at Microsoft, our more than 10,000 security experts analyze over 65 trillion signals each day... driving some of the most influential insights in
 cybersecurity. Together, we can build cyber resilience through innovative action and collective defense.
 
-As part this work we're making Microsoft managed policies available in Microsoft Entra tenants around the world. These [simplified Conditional Access policies](#what-is-conditional-access) take action to require multifactor authentication, which a [recent study](https://arxiv.org/abs/2305.00945) finds can reduce the risk of compromise by 99.22%.
+As part this work we're making Microsoft-managed policies available in Microsoft Entra tenants around the world. These [simplified Conditional Access policies](#what-is-conditional-access) take action to require multifactor authentication, which a [recent study](https://arxiv.org/abs/2305.00945) finds can reduce the risk of compromise by 99.22%.
 
 At launch Microsoft is deploying the following three policies where our data tells us they would increase an organization's security posture:
 
@@ -29,7 +29,7 @@ At launch Microsoft is deploying the following three policies where our data tel
 - Multifactor authentication for per-user multifactor authentication users
 - Multifactor authentication and reauthentication for risky sign-ins
 
-:::image type="content" source="media/managed-policies/microsoft-managed-policy.png" alt-text="Screenshot showing an example of a Microsoft managed policy in the Microsoft Entra admin center." lightbox="media/managed-policies/microsoft-managed-policy-expanded-full.png":::
+:::image type="content" source="media/managed-policies/microsoft-managed-policy.png" alt-text="Screenshot showing an example of a Microsoft-managed policy in the Microsoft Entra admin center." lightbox="media/managed-policies/microsoft-managed-policy-expanded-full.png":::
 
 Administrators with at least the [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator) role assigned find these policies in the [Microsoft Entra admin center](https://entra.microsoft.com) under **Protection** > **Conditional Access** > **Policies**.
 
@@ -39,7 +39,7 @@ Microsoft will enable these policies after no less than 90 days after they're in
 
 ## Policies
 
-These Microsoft managed policies allow administrators to make simple modifications like excluding users or turning them from report-only mode to on or off. As Administrators get more comfortable with Conditional Access policy, they might choose to clone the policy and make custom versions.
+These Microsoft-managed policies allow administrators to make simple modifications like excluding users or turning them from report-only mode to on or off. As Administrators get more comfortable with Conditional Access policy, they might choose to clone the policy and make custom versions.
 
 As threats evolve over time, Microsoft might change these policies in the future to take advantage of new features and functionality to improve their function.
 
