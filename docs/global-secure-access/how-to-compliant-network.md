@@ -20,9 +20,6 @@ The Global Secure Access Client installed on devices or configured remote networ
 
 This compliant network check is specific to each tenant. 
 
-- The compliant network check also applies to Microsoft Entra ID federated third party apps. The check provides you with protection for your third party Software as a Service (SaaS) apps using the Global Secure Access compliant network.
-   - Caution: When configuring a check for a third party app, do not select `AllCloudApps`. Instead, select specific apps that you want to protect with the compliant network check. Do not include Private Access applications. 
-
 - Using this check you can ensure that other organizations using Microsoft's Global Secure Access services can't access your resources. 
    - For example: Contoso can protect their services like Exchange Online and SharePoint Online behind their compliant network check to ensure only Contoso users can access these resources. 
    - If another organization like Fabrikam was using a compliant network check, they wouldn't pass Contoso's compliant network check. 
@@ -40,6 +37,7 @@ The compliant network is different than [IPv4, IPv6, or geographic locations](/a
 ### Known limitations
 
 - Continuous access evaluation is not currently supported for compliant network check.
+- Organizations can protect other Microsoft Entra integrated apps with Conditional Access policies requiring a compliant network check. During the preview administrators must choose the individual applications from the app picker instead of choosing All client apps.
 
 ## Enable Global Secure Access signaling for Conditional Access
 
