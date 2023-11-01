@@ -1,6 +1,6 @@
 ---
-title: Configure a multi-tenant organization using the Microsoft Graph API (Preview)
-description: Learn how to configure a multi-tenant organization in Microsoft Entra ID using the Microsoft Graph API.
+title: Configure a multitenant organization using the Microsoft Graph API (Preview)
+description: Learn how to configure a multitenant organization in Microsoft Entra ID using the Microsoft Graph API.
 services: active-directory
 author: rolyon
 manager: amycolannino
@@ -15,28 +15,28 @@ ms.custom: it-pro
 #Customer intent: As a dev, devops, or it admin, I want to
 ---
 
-# Configure a multi-tenant organization using the Microsoft Graph API (Preview)
+# Configure a multitenant organization using the Microsoft Graph API (Preview)
 
 > [!IMPORTANT]
-> Multi-tenant organization is currently in PREVIEW.
+> Multitenant organization is currently in PREVIEW.
 > See the [Product Terms](https://aka.ms/EntraPreviewsTermsOfUse) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
 
-This article describes the key steps to configure a multi-tenant organization using the Microsoft Graph API. This article uses an example owner tenant named *Cairo* and two member tenants named *Berlin* and *Athens*.
+This article describes the key steps to configure a multitenant organization using the Microsoft Graph API. This article uses an example owner tenant named *Cairo* and two member tenants named *Berlin* and *Athens*.
 
-If you instead want to use the Microsoft 365 admin center to configure a multi-tenant organization, see [Set up a multi-tenant org in Microsoft 365 (Preview)](/microsoft-365/enterprise/set-up-multi-tenant-org) and [Join or leave a multi-tenant organization in Microsoft 365 (Preview)](/microsoft-365/enterprise/join-leave-multi-tenant-org). To learn how to configure Microsoft Teams for your multi-tenant organization, see [The new Microsoft Teams desktop client](/microsoftteams/new-teams-desktop-admin).
+If you instead want to use the Microsoft 365 admin center to configure a multitenant organization, see [Set up a multitenant org in Microsoft 365 (Preview)](/microsoft-365/enterprise/set-up-multi-tenant-org) and [Join or leave a multitenant organization in Microsoft 365 (Preview)](/microsoft-365/enterprise/join-leave-multi-tenant-org). To learn how to configure Microsoft Teams for your multitenant organization, see [The new Microsoft Teams desktop client](/microsoftteams/new-teams-desktop-admin).
 
 ## Prerequisites
 
 ![Icon for the owner tenant.](./media/common/icon-tenant-owner.png)<br/>**Owner tenant**
 
 - For license information, see [License requirements](./multi-tenant-organization-overview.md#license-requirements).
-- [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator) role to configure cross-tenant access settings and templates for the multi-tenant organization.
+- [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator) role to configure cross-tenant access settings and templates for the multitenant organization.
 - [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) role to consent to required permissions.
 
 ![Icon for the member tenant.](./media/common/icon-tenant-member.png)<br/>**Member tenant**
 
 - For license information, see [License requirements](./multi-tenant-organization-overview.md#license-requirements).
-- [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator) role to configure cross-tenant access settings and templates for the multi-tenant organization.
+- [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator) role to configure cross-tenant access settings and templates for the multitenant organization.
 - [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) role to consent to required permissions.
 
 ## Step 1: Sign in to the owner tenant
@@ -59,11 +59,11 @@ These steps describe how to use Microsoft Graph Explorer (recommended), but you 
     - `Application.ReadWrite.All`
     - `Directory.ReadWrite.All`
 
-## Step 2: Create a multi-tenant organization
+## Step 2: Create a multitenant organization
 
 ![Icon for the owner tenant.](./media/common/icon-tenant-owner.png)<br/>**Owner tenant**
 
-1. In the owner tenant, use the [Create multiTenantOrganization](/graph/api/tenantrelationship-put-multitenantorganization) API to create your multi-tenant organization. This operation can take a few minutes.
+1. In the owner tenant, use the [Create multiTenantOrganization](/graph/api/tenantrelationship-put-multitenantorganization) API to create your multitenant organization. This operation can take a few minutes.
 
     **Request**
 
@@ -98,7 +98,7 @@ These steps describe how to use Microsoft Graph Explorer (recommended), but you 
 
 ![Icon for the owner tenant.](./media/common/icon-tenant-owner.png)<br/>**Owner tenant**
 
-1. In the owner tenant, use the [Add multiTenantOrganizationMember](/graph/api/multitenantorganization-post-tenants) API to add tenants to your multi-tenant organization.
+1. In the owner tenant, use the [Add multiTenantOrganizationMember](/graph/api/multitenantorganization-post-tenants) API to add tenants to your multitenant organization.
 
     **Request**
 
@@ -182,7 +182,7 @@ These steps describe how to use Microsoft Graph Explorer (recommended), but you 
 
 ![Icon for the owner tenant.](./media/common/icon-tenant-owner.png)<br/>**Owner tenant**
 
-By default, tenants added to the multi-tenant organization are member tenants. Optionally, you can change them to owner tenants, which allow them to add other tenants to the multi-tenant organization. You can also change an owner tenant to a member tenant.
+By default, tenants added to the multitenant organization are member tenants. Optionally, you can change them to owner tenants, which allow them to add other tenants to the multitenant organization. You can also change an owner tenant to a member tenant.
 
 1. In the owner tenant, use the [Update multiTenantOrganizationMember](/graph/api/multitenantorganizationmember-update) API to change a member tenant to an owner tenant.
 
@@ -280,7 +280,7 @@ You can remove any member tenant, including your own. You can't remove owner ten
     }
     ```
 
-    After the remove operation completes, the response is similar to the following. This is an expected error message. It indicates that the tenant has been removed from the multi-tenant organization.
+    After the remove operation completes, the response is similar to the following. This is an expected error message. It indicates that the tenant has been removed from the multitenant organization.
 
     **Response**
 
@@ -301,13 +301,13 @@ You can remove any member tenant, including your own. You can't remove owner ten
 
 ![Icon for the member tenant.](./media/common/icon-tenant-member.png)<br/>**Member tenant**
 
-- To allow for asynchronous processing, wait a **minimum of 2 hours** between creation and joining a multi-tenant organization.
+- To allow for asynchronous processing, wait a **minimum of 2 hours** between creation and joining a multitenant organization.
 
 ## Step 7: Sign in to a member tenant
 
 ![Icon for the member tenant.](./media/common/icon-tenant-member.png)<br/>**Member tenant**
 
-The Cairo tenant created a multi-tenant organization and added the Berlin and Athens tenants. In these steps you sign in to the Berlin tenant and join the multi-tenant organization created by Cairo.
+The Cairo tenant created a multitenant organization and added the Berlin and Athens tenants. In these steps you sign in to the Berlin tenant and join the multitenant organization created by Cairo.
 
 1. Start [Microsoft Graph Explorer tool](https://aka.ms/ge).
 
@@ -323,11 +323,11 @@ The Cairo tenant created a multi-tenant organization and added the Berlin and At
     - `Application.ReadWrite.All`
     - `Directory.ReadWrite.All`
 
-## Step 8: Join the multi-tenant organization
+## Step 8: Join the multitenant organization
 
 ![Icon for the member tenant.](./media/common/icon-tenant-member.png)<br/>**Member tenant**
 
-1. In the member tenant, use the [Update multiTenantOrganizationJoinRequestRecord](/graph/api/multitenantorganizationjoinrequestrecord-update) API to join the multi-tenant organization.
+1. In the member tenant, use the [Update multiTenantOrganizationJoinRequestRecord](/graph/api/multitenantorganizationjoinrequestrecord-update) API to join the multitenant organization.
 
     **Request**
 
@@ -380,7 +380,7 @@ The Cairo tenant created a multi-tenant organization and added the Berlin and At
     }
     ```
 
-1. Use the [List multiTenantOrganizationMembers](/graph/api/multitenantorganization-list-tenants) API to check the multi-tenant organization itself. It should reflect the join operation.
+1. Use the [List multiTenantOrganizationMembers](/graph/api/multitenantorganization-list-tenants) API to check the multitenant organization itself. It should reflect the join operation.
 
     **Request**
 
@@ -428,15 +428,15 @@ The Cairo tenant created a multi-tenant organization and added the Berlin and At
     }
     ```
 
-1. To allow for asynchronous processing, wait **up to 4 hours** before joining a multi-tenant organization is completed.
+1. To allow for asynchronous processing, wait **up to 4 hours** before joining a multitenant organization is completed.
 
-## Step 9: (Optional) Leave the multi-tenant organization
+## Step 9: (Optional) Leave the multitenant organization
 
 ![Icon for the member tenant.](./media/common/icon-tenant-member.png)<br/>**Member tenant**
 
-You can leave a multi-tenant organization that you have joined. The process for removing your own tenant from the multi-tenant organization is the same as the process for removing another tenant from the multi-tenant organization.
+You can leave a multitenant organization that you have joined. The process for removing your own tenant from the multitenant organization is the same as the process for removing another tenant from the multitenant organization.
 
-If your tenant is the only multi-tenant organization owner, you must designate a new tenant to be the multi-tenant organization owner. For steps, see [Step 4: (Optional) Change the role of a tenant](#step-4-optional-change-the-role-of-a-tenant) 
+If your tenant is the only multitenant organization owner, you must designate a new tenant to be the multitenant organization owner. For steps, see [Step 4: (Optional) Change the role of a tenant](#step-4-optional-change-the-role-of-a-tenant) 
 
 - In the tenant, use the [Remove multiTenantOrganizationMember](/graph/api/multitenantorganization-delete-tenants) API to remove the tenant. This operation takes a few minutes.
 
@@ -446,11 +446,11 @@ If your tenant is the only multi-tenant organization owner, you must designate a
     DELETE https://graph.microsoft.com/beta/tenantRelationships/multiTenantOrganization/tenants/{memberTenantIdD}
     ```
 
-## Step 10: (Optional) Delete the multi-tenant organization
+## Step 10: (Optional) Delete the multitenant organization
 
 ![Icon for the owner tenant.](./media/common/icon-tenant-owner.png)<br/>**Owner tenant**
 
-You delete a multi-tenant organization by removing all tenants. The process for removing the final owner tenant is the same as the process for removing all other member tenants.
+You delete a multitenant organization by removing all tenants. The process for removing the final owner tenant is the same as the process for removing all other member tenants.
 
 - In the final owner tenant, use the [Remove multiTenantOrganizationMember](/graph/api/multitenantorganization-delete-tenants) API to remove the tenant. This operation takes a few minutes.
 
@@ -462,7 +462,7 @@ You delete a multi-tenant organization by removing all tenants. The process for 
 
 ## Next steps
 
-- [Set up a multi-tenant org in Microsoft 365 (Preview)](/microsoft-365/enterprise/set-up-multi-tenant-org)
-- [Synchronize users in multi-tenant organizations in Microsoft 365 (Preview)](/microsoft-365/enterprise/sync-users-multi-tenant-orgs)
+- [Set up a multitenant org in Microsoft 365 (Preview)](/microsoft-365/enterprise/set-up-multi-tenant-org)
+- [Synchronize users in multitenant organizations in Microsoft 365 (Preview)](/microsoft-365/enterprise/sync-users-multi-tenant-orgs)
 - [The new Microsoft Teams desktop client](/microsoftteams/new-teams-desktop-admin)
-- [Configure multi-tenant organization templates using the Microsoft Graph API (Preview)](./multi-tenant-organization-configure-templates.md)
+- [Configure multitenant organization templates using the Microsoft Graph API (Preview)](./multi-tenant-organization-configure-templates.md)
