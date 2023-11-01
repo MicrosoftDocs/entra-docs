@@ -21,9 +21,9 @@ App protection policies apply [mobile application management (MAM)](/mem/intune/
 ## Prerequisites
 
 - [Windows 11 Version 22H2 (OS build 22621)](/windows/release-health/windows11-release-information#windows-11-current-versions) with KB 5031455.
-- Windows 11 Version 21H2 OS build 22000 with KB 5032192.
-- Windows Server 2022 OS build 20348 with KB 5032198.
-- Windows 10 Version 2004 OS build 19045 with KB 5031445.
+- Windows 11 Version 21H2 (OS build 22000) with KB 5032192.
+- Windows Server 2022 (OS build 20348) with KB 5032198.
+- Windows 10 Version 2004 (OS build 19045) with KB 5031445.
 - [Configured app protection policy targeting Windows devices](/mem/intune/apps/app-protection-policy-settings-windows).
 - Currently unsupported in sovereign clouds.
 
