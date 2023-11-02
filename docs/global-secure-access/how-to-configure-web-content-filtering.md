@@ -88,17 +88,9 @@ View Internet Access traffic logs in the Microsoft Entra admin center. Navigate 
 - Only FQDN-based filtering is currently supported. URL based filtering isn't yet supported.
 - "Remote Network" or "Branch" connectivity scenarios aren't supported.
 - Users aren't allowed to block access to all websites by default.
-- Internet Access Limitations for Public Preview
-- No end user notifications.
-- No admin configurable traffic acquisition profile.
 - Traffic acquisition profile only acquires HTTP/S TCP over ports 80/443 via FQDN. In other words, no IP-based acquisition.
-- Assume standard ports 80/443.
 - No captive portal support.
-- No support for UDP traffic acquisition.
-- No "remote network" / "branch" connectivity model.
-- No support for L3/4 filtering.
 - No TLS termination (it is in EAP).
-- No URL filtering or URL categorization.
 - Must disable QUIC in the browser.
 
 
