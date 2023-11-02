@@ -16,7 +16,7 @@ ms.reviewer: joroja
 ---
 # Configure token lifetime policies (preview)
 
-In the following steps, you'll implement a common policy scenario that imposes new rules for token lifetime. It's possible to specify the lifetime of an access, SAML, or ID token issued by the Microsoft identity platform. This can be set for all apps in your organization or for a specific app or principal. They can also be set for multi-organizations (multi-tenant application).
+In the following steps, you'll implement a common policy scenario that imposes new rules for token lifetime. It's possible to specify the lifetime of an access, SAML, or ID token issued by the Microsoft identity platform. This can be set for all apps in your organization or for a specific app or principal. They can also be set for multi-organizations (multitenant application).
 
 For more information, see [configurable token lifetimes](configurable-token-lifetimes.md).
 
