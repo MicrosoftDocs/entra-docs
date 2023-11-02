@@ -29,7 +29,7 @@ The web filtering feature is currently limited to user- and context-aware Fully 
 ## Enable internet traffic forwarding
 Enable the Microsoft Entra Internet Access forwarding profile to forward user traffic. 
 1. In the Microsoft Entra admin center, navigate to **Global Secure Access** > **Connect** > **Traffic forwarding**.
-1. Enable the **Internet access  profile**. Note that enabling the setting begins forwarding internet traffic from all client devices.
+1. Enable the **Internet access  profile**. Enabling the setting begins forwarding internet traffic from all client devices.
 
 
 ## Create a web content filtering policy
