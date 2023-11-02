@@ -16,14 +16,14 @@ ms.reviewer: brianmel
 
 # Use Company Portal to setup a Mac device with macOS Platform Single Sign-On (preview)
 
-You can set up a new Mac device with the macOS Platform Single Sign-On Extension, using Company Portal. There are two workflows that are supported with Company Portal, Intune MDM enrollment with Microsoft Entra Join and Just In Time Rendering.
+You can set up a new Mac device with the macOS Platform Single Sign-On (PSSO) using Company Portal. There are two workflows that are supported with Company Portal, Intune MDM enrollment with Microsoft Entra Join and Just In Time Rendering.
 
 ## Prerequisites
 
 - A minimum requirement of macOS 13 Ventura
 - Microsoft Intune [Company Portal app](/mem/intune/apps/apps-company-portal-macos) <!--TODO: version-->
-- An admin has configured the SSO extension MDM payload with Platform SSO settings in Intune
-- Completion of the prerequisites and steps in Configure Platform Single Sign-On Extension
+- An admin has configured the SSO extension MDM payload with PSSO settings in Intune
+<!--TODO: Link to other article-->
 - [Microsoft Authenticator](https://support.microsoft.com/account-billing/how-to-use-the-microsoft-authenticator-app-9783c865-0308-42fb-a519-8cf666fe0acc) (recommended), the user must be registered for some form of Microsoft Entra ID multifactor authentication (MFA) to complete device registration.
 
 ## Intune MDM enrollment with Microsoft Entra Join using Company Portal
