@@ -135,21 +135,21 @@ You can validate if TLS inspection is impacting your SSO configuration by runnin
 
 The sysdiagnose will be saved to your desktop as a .tar.gz archive. Extract the archive and open the **system_logs.logarchive** file. This will open in the Console application. Search for **com.apple.appsso** and change the filter to **SUBSYSTEM**:
 
-:::image type="content" source="media/troubleshoot-mac-sso-extension-plugin/sysdiagnose_console.png" alt-text="Screenshot showing sysdiagnose.":::
+:::image type="content" source="media/troubleshoot-mac-sso-extension-plugin/sysdiagnose-console.png" alt-text="Screenshot showing sysdiagnose." lightbox="media/troubleshoot-mac-sso-extension-plugin/sysdiagnose-console.png":::
 
-Look for events stating that there are Associated Domain failures, especially related to Microsoft domains, such as login.microsoftonline.com. These events may indicate TLS inspection issues, which will prevent the SSO Extension from working properly. Apple domains will not appear in the sysdiagnose log, even if they are impacted by an unsupported TLS inspection configuration.
+Look for events stating that there are Associated Domain failures, especially related to Microsoft domains, such as login.microsoftonline.com. These events might indicate TLS inspection issues, which will prevent the SSO Extension from working properly. Apple domains will not appear in the sysdiagnose log, even if they are impacted by an unsupported TLS inspection configuration.
 
 ##### Validate TLS Inspection Configuration
 
 Apple provides a macOS tool for checking a number of common configuration issues called the Mac Evaluation Utility. This tool can be downloaded from [AppleSeed for IT](https://beta.apple.com/programs/appleseed-for-it/resources). If you have access to AppleSeed for IT then download the Mac Evaluation Utility from the Resources area. After installing the application, run an evaluation. Once the evaluation is complete, navigate to **HTTPS Interception** --> **Additional Content** --> and check the two items below:
 
-:::image type="content" source="media/troubleshoot-mac-sso-extension-plugin/mac-evaluation-utility.png" alt-text="Screenshot showing the Mac Evaluation Utility.":::
+:::image type="content" source="media/troubleshoot-mac-sso-extension-plugin/mac-evaluation-utility.png" alt-text="Screenshot showing the Mac Evaluation Utility." lightbox="media/troubleshoot-mac-sso-extension-plugin/mac-evaluation-utility.png":::
 
-If these checks have a warning or error then there may be TLS inspection occurring on the device. Work with your network team to exempt ***.cdn-apple.com** and ***.networking.apple** from TLS inspection.
+If these checks have a warning or error then there might be TLS inspection occurring on the device. Work with your network team to exempt ***.cdn-apple.com** and ***.networking.apple** from TLS inspection.
 
 ##### Clear macOS TLS Inspection Cache
 
-If you had issues with associated domains and have allow listed domains in your on-device TLS inspection tool, you can run this command to reset the device's cache rather than waiting for the device to recover:
+If you had issues with associated domains and have allow-listed domains in your on-device TLS inspection tool, you can run this command to reset the device's cache rather than waiting for the device to recover:
 
 
    ```zsh
@@ -173,7 +173,7 @@ Assuming the MDM administrator has followed the steps in the previous section [M
    | Screenshot callout | Description |
    |:---------:|---------|
    |**1**| Indicates that the device is under **MDM** Management. |
-   |**2**| There may be multiple profiles to choose from. In this example, the Microsoft Enterprise SSO Extension Profile is called **Extensible Single Sign On Profile-32f37be3-302e-4549-a3e3-854d300e117a**. |
+   |**2**| There might be multiple profiles to choose from. In this example, the Microsoft Enterprise SSO Extension Profile is called **Extensible Single Sign On Profile-32f37be3-302e-4549-a3e3-854d300e117a**. |
 
    > [!NOTE] 
    > Depending on the type of MDM being used, there could be several profiles listed and their naming scheme is arbitrary depending on the MDM configuration. Select each one and inspect that the **Settings** row indicates that it is a **Single Sign On Extension**.
@@ -347,7 +347,7 @@ One of the most useful tools to troubleshoot various issues with the SSO extensi
 
 #### Tailing SSO extension logs on macOS with terminal
 
-During troubleshooting it may be useful to reproduce a problem while tailing the SSOExtension logs in real time:
+During troubleshooting it might be useful to reproduce a problem while tailing the SSOExtension logs in real time:
 
 1. From the macOS device, double-click on the **Applications** folder, then double-click on the **Utilities** folder.
 1. Double-click on the **Terminal** application.
