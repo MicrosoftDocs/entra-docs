@@ -40,8 +40,8 @@ Enable the Microsoft Entra Internet Access forwarding profile to forward user tr
 1. Enter a name, select a [web category](reference-web-content-filtering-categories.md), and then select **Add**.
 1. Select **Next** to review the policy and then select **Create policy**.
 
-## Create a security profile to assign / link policies to a profile
-Create a security profile to assign, or link, policies with a profile.
+## Create a security profile
+Create a security profile to group filtering policies. Assign, or link, security profiles with a CA policy to make them user or context aware.
 
 > [!NOTE]
 > To learn more about Microsoft Entra Conditional Access security profiles, see [Building a Conditional Access policy](/azure/active-directory/conditional-access/concept-conditional-access-policies).
