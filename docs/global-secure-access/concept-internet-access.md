@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: how-to
-ms.date: 10/19/2023
+ms.date: 11/02/2023
 ms.service: network-access
 ms.custom: 
 ms.reviewer: frankgomulka
@@ -14,7 +14,7 @@ ms.reviewer: frankgomulka
 
 # Learn about Microsoft Entra Internet Access for all apps
 
-Microsoft Entra Internet Access is an identity-centric Secure Web Gateway (SWG) for SaaS apps and other internet traffic. It protects users, devices, and data from the Internet's wide threat landscape with best-in-class security controls and visibility through Traffic Logs.
+Microsoft Entra Internet Access is an identity-centric Secure Web Gateway (SWG) for Software as a Service (SaaS) applications and other Internet traffic. It protects users, devices, and data from the Internet's wide threat landscape with best-in-class security controls and visibility through Traffic Logs.
 
 ## Web Content Filtering
 
