@@ -76,7 +76,7 @@ You can bulk dismiss risky users in Identity Protection.
 ```powershell
 # Get a list of high risky users which are more than 90 days old
 $riskyUsers= Get-MgRiskyUser -Filter "RiskLevel eq 'high'" | where RiskLastUpdatedDateTime -LT (Get-Date).AddDays(-90)
-# bulk dimmiss the risky users
+# bulk dismiss the risky users
 Invoke-MgDismissRiskyUser -UserIds $riskyUsers.Id
 ```
 
