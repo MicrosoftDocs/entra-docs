@@ -24,7 +24,7 @@ Features like multifactor authentication (MFA) are a great way to secure your or
 | --- | --- | --- |
 | Passwordless | Windows 10 Device, phone, or security key | Biometric or PIN |
 
-Each organization has different needs when it comes to authentication. Microsoft Global Azure and Azure Government offer the following four passwordless authentication options that integrate with Microsoft Entra ID:
+Each organization has different needs when it comes to authentication. Microsoft Azure and Azure Government offer the following four passwordless authentication options that integrate with Microsoft Entra ID:
 
 - Windows Hello for Business
 - Microsoft Authenticator
