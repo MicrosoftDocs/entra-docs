@@ -89,7 +89,7 @@ You can add fully qualified domain names (FQDN), IP addresses, and IP address ra
 
     ![Screenshot of the Add Quick Access application segment button.](media/how-to-configure-quick-access/add-quick-access-application-segment.png)
 
-1. In the **Create application segment** panel that opens, select a **Destination type**. Choose from one of the following options. 
+1. In the **Create application segment** panel that opens, select a **Destination type**.
 
     ![Screenshot of the create app segment panel.](media/how-to-configure-quick-access/app-segment-destination-type.png)
 
