@@ -16,7 +16,7 @@ ms.author: billmath
 
 **Scenario:**  Manage on-premises applications with Active Directory groups that are provisioned from and managed in the cloud.  Microsoft Entra cloud sync allows you to fully govern application assignments in AD while taking advantage of Microsoft Entra ID Governance features to control and remediate any access related requests.
 
-With the release of provisioning agent [1.1.1367.0](reference-version-history.md#1113670), cloud sync now has the ability to provision groups directly to your on-premises Active Directory environment.  With this, you can use identity governance features to govern access to AD-based applications, such as by including a [group in an entitlement management access package](../../../id-governance/entitlement-management-group-writeback.md).
+With the release of provisioning agent [1.1.1370.0](reference-version-history.md#1113700), cloud sync now has the ability to provision groups directly to your on-premises Active Directory environment.  With this, you can use identity governance features to govern access to AD-based applications, such as by including a [group in an entitlement management access package](../../../id-governance/entitlement-management-group-writeback.md).
 
  :::image type="content" source="media/govern-on-premises-groups/on-premises-group-writeback.png" alt-text="Conceptual drawing of Microsoft Entra Cloud Sync's Group Provision to AD." lightbox="media/govern-on-premises-groups/on-premises-group-writeback.png":::
 
@@ -26,7 +26,7 @@ The following prerequisites are required to implement this scenario.
  - Azure AD account with at least a [Hybrid Administrator](../../role-based-access-control/permissions-reference.md#hybrid-identity-administrator) role.
  - On-premises Active Directory Domain Services environment with Windows Server 2016 operating system or later. 
      - Required for AD Schema attribute  - msDS-ExternalDirectoryObjectId 
- - Provisioning agent with build version [1.1.1367.0](reference-version-history.md#1113670) or later.
+ - Provisioning agent with build version [1.1.1367.0](reference-version-history.md#1113700) or later.
 
  > [!NOTE]
  > The permissions to the service account are assigned during clean install only. In case you're upgrading from the previous version then permissions need to be assigned manually using PowerShell cmdlet: 
