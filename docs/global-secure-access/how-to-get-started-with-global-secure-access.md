@@ -17,13 +17,13 @@ This guide helps you get started configuring both services for the first time.
 
 ## Prerequisites
 
-Administrators who interact with **Global Secure Access preview** features must have the [Global Secure Access Administrator role](/azure/active-directory/roles/permissions-reference). Some features may also require other roles.
+Administrators who interact with **Global Secure Access preview** features must have the [Global Secure Access Administrator role](/azure/active-directory/roles/permissions-reference). Some features might also require other roles.
 
 To follow the [Zero Trust principle of least privilege](/security/zero-trust/), consider using [Privileged Identity Management (PIM)](/azure/active-directory/privileged-identity-management/pim-configure) to activate just-in-time privileged role assignments.
 
-The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense). To use the Microsoft 365 traffic forwarding profile, a Microsoft 365 E3 license is recommended. After general availability, Microsoft Entra Private Access and Microsoft Entra Internet Access may require different licenses.
+The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense). To use the Microsoft 365 traffic forwarding profile, a Microsoft 365 E3 license is recommended. After general availability, Microsoft Entra Private Access and Microsoft Entra Internet Access might require different licenses.
 
-There may be limitations with some features of the Global Secure Access preview, which are defined in the associated articles.
+There might be limitations with some features of the Global Secure Access preview, which are defined in the associated articles.
 
 ## Access the Microsoft Entra admin center
 
