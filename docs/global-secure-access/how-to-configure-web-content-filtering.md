@@ -33,11 +33,6 @@ Enable the Microsoft Entra Internet Access forwarding profile to forward user tr
 
 
 ## Create a web content filtering policy
-Create a web filtering policy that contains a grouping of rules.
-1. In the Microsoft Entra admin center, navigate to **Global Secure Access** > **Web content filtering policy**.
-1. Select **Create policy**.
-
-Create a web filtering policy that contains a grouping of rules.
 1. In the Microsoft Entra admin center, navigate to **Global Secure Access** > **Web content filtering policy**.
 1. Select **Create policy**.
 1. Enter a name and description for the policy and select **Next**.
