@@ -10,7 +10,7 @@ ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: how-to
-ms.date: 09/15/2023
+ms.date: 11/01/2023
 ms.author: justinha
 
 ---
@@ -98,7 +98,7 @@ To restore the health of a managed domain that's in the *Suspended* state, compl
 1. Select the alert, such as *AADDS503* or *AADDS504*, depending on the cause of suspension.
 1. Choose the resolution link that's provided in the alert and follow the steps to resolve it.
 
-A managed domain can only be restored to the date of the last backup. The date of your last backup is displayed on the **Health** page of the managed domain. Any changes that occurred after the last backup won't be restored. Backups for a managed domain are stored for up to 30 days. Backups that are older than 30 days are deleted.
+You can restore a managed domain from any backup. Any changes that occurred after the backup won't be restored. The date of your last backup is displayed on the **Health** page of the managed domain. Backups for a managed domain are stored for up to 30 days. Backups that are older than 30 days are deleted.
 
 After you resolve alerts when the managed domain is in the *Suspended* state, [open an Azure support request][azure-support] to return to a healthy state. If there's a backup less than 30 days old, Azure support can restore the managed domain.
 
