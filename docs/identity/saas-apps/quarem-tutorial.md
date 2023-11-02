@@ -33,7 +33,7 @@ To integrate Microsoft Entra ID with Quarem, you need:
 
 In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
 
-* Quarem supports **IDP** initiated SSO.
+* Quarem supports both **SP** and **IDP** initiated SSO.
 
 ## Add Quarem from the gallery
 
@@ -71,6 +71,11 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
    ![Screenshot shows how to edit Basic SAML Configuration.](common/edit-urls.png "Basic Configuration")
 
 1. On the **Basic SAML Configuration** section, the user does not have to perform any step as the app is already pre-integrated with Microsoft Entra.
+
+1. Perform the following step, if you wish to configure the application in **SP** initiated mode:
+
+   In the **Sign-on URL** text box, type the URL:
+   `https://na.quarem.net`
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
 
@@ -114,9 +119,17 @@ In this section, you create a user called B.Simon in Quarem. Work with [Quarem 
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
  
-* Click on Test this application in Microsoft Entra admin center and you should be automatically signed in to the Quarem for which you set up the SSO.
+#### SP initiated:
  
-* You can use Microsoft My Apps. When you click the Quarem tile in the My Apps, you should be automatically signed in to the Quarem for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* Click on **Test this application** in Microsoft Entra admin center. This will redirect to Quarem Sign on URL where you can initiate the login flow.  
+ 
+* Go to Quarem Sign-on URL directly and initiate the login flow from there.
+ 
+#### IDP initiated:
+ 
+* Click on **Test this application** in Microsoft Entra admin center and you should be automatically signed in to the Quarem for which you set up the SSO.
+ 
+You can also use Microsoft My Apps to test the application in any mode. When you click the Quarem tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Quarem for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Next steps
 

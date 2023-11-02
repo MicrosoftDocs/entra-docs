@@ -1,6 +1,6 @@
 ---
-title: Microsoft Entra ID preview program terms
-description: In this article we go over the terms in effect when participating in Microsoft Entra ID preview programs.
+title: Microsoft Entra ID preview program information
+description: In this article we go over the information in effect when participating in Microsoft Entra ID preview programs.
 ms.service: active-directory
 author: barclayn
 manager: amycolannino
@@ -13,7 +13,7 @@ ms.date: 09/19/2023
 
 
 
-# Microsoft Entra ID preview program terms 
+# Microsoft Entra ID preview program information 
 
 
 [!INCLUDE [Entra preview terms](~/includes/licensing-preview-terms.md)]

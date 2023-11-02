@@ -6,7 +6,7 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 10/18/2023
+ms.date: 10/31/2023
 
 ms.author: justinha
 author: justinha
@@ -30,6 +30,7 @@ Each organization has different needs when it comes to authentication. Microsoft
 - Microsoft Authenticator
 - MacOS Platform Single Sign-On (SSO)
 - FIDO2 security keys
+- Certificate-based authentication
 
 ![Authentication: Security versus convenience](./media/concept-authentication-passwordless/passwordless-convenience-security.png)
 
@@ -186,22 +187,48 @@ To get started with FIDO2 security keys, complete the following how-to:
 > [!div class="nextstepaction"]
 > [Enable passwordless sign using FIDO2 security keys](howto-authentication-passwordless-security-key.md)
 
+## Certificate-based authentication
+
+Microsoft Entra certificate-based authentication (CBA) enables customers to allow or require users to authenticate directly with X.509 certificates against their Microsoft Entra ID for applications and browser sign-in. CBA enables customers to adopt phishing-resistant authentication and sign in with an X.509 certificate against their Public Key Infrastructure (PKI).
+
+:::image type="content" border="false" source="./media/concept-certificate-based-authentication/cloud-native-cert.png" alt-text="Diagram of Microsoft Entra certificate-based authentication.":::
+
+### Key benefits of using Microsoft Entra CBA
+
+| Benefits | Description |
+|---------|---------|
+| Great user experience |- Users who need certificate-based authentication can now directly authenticate against Microsoft Entra ID and not have to invest in federated AD FS.<br>- Portal UI enables users to easily configure how to map certificate fields to a user object attribute to look up the user in the tenant ([certificate username bindings](concept-certificate-based-authentication-technical-deep-dive.md#understanding-the-username-binding-policy))<br>- Portal UI to [configure authentication policies](concept-certificate-based-authentication-technical-deep-dive.md#understanding-the-authentication-binding-policy) to help determine which certificates are single-factor versus multifactor. |
+| Easy to deploy and administer |- Microsoft Entra CBA is a free feature, and you don't need any paid editions of Microsoft Entra ID to use it. <br>- No need for complex on-premises deployments or network configuration.<br>- Directly authenticate against Microsoft Entra ID. |
+| Secure |- On-premises passwords don't need to be stored in the cloud in any form.<br>- Protects your user accounts by working seamlessly with Microsoft Entra Conditional Access policies, including Phishing-Resistant [multifactor authentication](concept-mfa-howitworks.md) (MFA requires [licensed edition](concept-mfa-licensing.md)) and blocking legacy authentication.<br>- Strong authentication support where users can define authentication policies through the certificate fields, such as issuer or policy OID (object identifiers), to determine which certificates qualify as single-factor versus multifactor.<br>- The feature works seamlessly with [Conditional Access features](~/identity/conditional-access/overview.md) and authentication strength capability to enforce MFA to help secure your users. |
+
+
+### Supported scenarios
+
+The following scenarios are supported:
+
+- User sign-ins to web browser-based applications on all platforms.
+- User sign-ins to Office mobile apps on iOS/Android platforms as well as Office native apps in Windows, including Outlook, OneDrive, and so on.
+- User sign-ins on mobile native browsers.
+- Support for granular authentication rules for multifactor authentication by using the certificate issuer **Subject** and **policy OIDs**.
+- Configuring certificate-to-user account bindings by using any of the certificate fields:
+  - Subject Alternate Name (SAN) PrincipalName and SAN RFC822Name
+  - Subject Key Identifier (SKI) and SHA1PublicKey
+- Configuring certificate-to-user account bindings by using any of the user object attributes:
+  - User Principal Name
+  - onPremisesUserPrincipalName
+  - CertificateUserIds
+
 ## Supported scenarios
 
 The following considerations apply:
 
 - Administrators can enable passwordless authentication methods for their tenant.
-
 - Administrators can target all users or select users/Security groups within their tenant for each method.
-
 - Users can register and manage these passwordless authentication methods in their account portal.
-
 - Users can sign in with these passwordless authentication methods:
    - Authenticator app: Works in scenarios where Microsoft Entra authentication is used, including across all browsers, during Windows 10 setup, and with integrated mobile apps on any operating system.
    - Security keys: Work on lock screen for Windows 10 and the web in supported browsers like Microsoft Edge (both legacy and new Edge).
-
 - Users can use passwordless credentials to access resources in tenants where they are a guest, but they may still be required to perform MFA in that resource tenant. For more information, see [Possible double multi-factor authentication](~/external-id/current-limitations.md#possible-double-multi-factor-authentication).  
-
 - Users may not register passwordless credentials within a tenant where they are a guest, the same way that they do not have a password managed in that tenant.  
 
 ## Unsupported scenarios
