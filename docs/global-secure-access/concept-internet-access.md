@@ -35,7 +35,7 @@ You would then take the security profile and link it to a Conditional Access pol
 ## Policy processing logic
 Within a security profile, policies are enforced according to priority ordering with 100 being the highest priority and 65,000 being the lowest priority. Similar to traditional firewall logic. As a best practice, add spacing of about 100 between priorities to allow for flexibility in the future.
 
-Once you link a security profile to a Conditional Access policy if there is any conflict then the priorty ordering in the security profile is used.
+Once you link a security profile to a Conditional Access policy if there is any conflict then the priority ordering in the security profile is used.
 
 > [!IMPORTANT]
 > If you create a security profile with priority 65,000 then it will apply to all traffic even without linking it to a Conditional Access policy.
