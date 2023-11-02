@@ -113,6 +113,7 @@ You can add fully qualified domain names (FQDN), IP addresses, and IP address ra
         - Provide the IP address start, end, and ports.
 
 1. Enter the port. The following table provides the most commonly used ports and their associated networking protocols:
+
     | Port | Protocol |
     | --- | --- |
     | 22 | Secure Shell (SSH) |
@@ -120,6 +121,7 @@ You can add fully qualified domain names (FQDN), IP addresses, and IP address ra
     | 443 | Hypertext Transfer Protocol Secure (HTTPS) |
     | 445 | Server Message Block (SMB) file sharing |
     | 3389 | Remote Desktop Protocol (RDP) |
+
 1. Select the **Save** button when you're finished.
 
 > [!NOTE]
@@ -127,7 +129,7 @@ You can add fully qualified domain names (FQDN), IP addresses, and IP address ra
 >
 > Do not overlap FQDNs, IP addresses, and IP ranges between your Quick Access app and any Private Access apps.
 
-### Assign users and groups
+## Assign users and groups
 
 You need to grant access to the app you created by assigning users and/or groups to the app. For more information, see [Assign users and groups to an application.](/azure/active-directory/manage-apps/assign-user-or-group-access-portal)
 
