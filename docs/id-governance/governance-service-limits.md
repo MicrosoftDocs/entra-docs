@@ -17,7 +17,7 @@ ms.date: 10/30/2023
 This article contains the default usage constraints for the Microsoft Entra ID Governance, part of Microsoft Entra, service. If you’re looking for the full set of non-governance specific Microsoft Entra service limits, see: [Microsoft Entra service limits and restrictions](~/identity/users/directory-service-limits-restrictions.md).
 
 > [!NOTE]
-> Limits can be increased if your usage will exceed these listed default constraints.
+> Limits can be increased if your usage will exceed these listed default constraints. To go beyond the default quota, you must contact Microsoft Support.
 
 ## Entitlement Management
 
