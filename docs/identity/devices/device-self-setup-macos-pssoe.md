@@ -1,6 +1,6 @@
 ---
-title: Self setup a Mac device with macOS Platform Single Sign-On with Company Portal
-description: How users can set up a new macOS with the macOS Platform Single Sign-On Extension, using Company Portal.
+title: Use Company Portal to setup a Mac device with macOS Platform Single Sign-On
+description: How users can setup a new macOS with macOS Platform Single Sign-On Extension, using Company Portal.
 
 services: active-directory
 ms.service: active-directory
@@ -14,19 +14,19 @@ manager: CelesteDG
 ms.reviewer: brianmel
 ---
 
-# Self setup a Mac device with macOS Platform Single Sign-On with Company Portal
+# Use Company Portal to setup a Mac device with macOS Platform Single Sign-On (preview)
 
-You can set up a new Mac device with the macOS Platform Single Sign-On Extension, using Company Portal.
+You can set up a new Mac device with the macOS Platform Single Sign-On Extension, using Company Portal. There are two workflows that are supported with Company Portal, Intune MDM enrollment with Microsoft Entra Join and Just In Time Rendering.
 
 ## Prerequisites
 
 - A minimum requirement of macOS 13 Ventura
-- Microsoft Intune [Company Portal app](/mem/intune/apps/apps-company-portal-macos) (version 5.2307.99.2235 only)
+- Microsoft Intune [Company Portal app](/mem/intune/apps/apps-company-portal-macos) <!--TODO: version-->
 - An admin has configured the SSO extension MDM payload with Platform SSO settings in Intune
 - Completion of the prerequisites and steps in Configure Platform Single Sign-On Extension
-- [Microsoft Authenticator](https://support.microsoft.com/account-billing/how-to-use-the-microsoft-authenticator-app-9783c865-0308-42fb-a519-8cf666fe0acc) (recommended), the user must be registered for some form of Microsoft Entra ID multifactor authentication (MFA) to complete device registration
+- [Microsoft Authenticator](https://support.microsoft.com/account-billing/how-to-use-the-microsoft-authenticator-app-9783c865-0308-42fb-a519-8cf666fe0acc) (recommended), the user must be registered for some form of Microsoft Entra ID multifactor authentication (MFA) to complete device registration.
 
-## Intune MDM enrollment and Microsoft Entra Join using Company Portal
+## Intune MDM enrollment with Microsoft Entra Join using Company Portal
 
 1. Open the **Company Portal** app and select **Sign in**.
 1. Enter your Microsoft Entra ID credentials and select **Next**.
@@ -49,11 +49,23 @@ You can set up a new Mac device with the macOS Platform Single Sign-On Extension
 > [!NOTE]
 > If you miss the notification, it will reappear after a short time.
 
-### Deregister a device with macOS 13 Ventura <!--TODO: macOS 14 tab-->
+## Enabling PSSO from an existing Microsoft Enterprise SSO plug-in
 
-1. Open the **Company Portal** app and navigate to **Preferences**.
-1. To unregister the device, select **Unregister**.
-1. Alternatively, to sign out your work account on the device, select **Sign out**. <!--TODO: Insert slide 107 screenshot-->
+If your company has the Microsoft Enterprise SSO plugin already installed, there are a few ways that you can successfully migrate to the new feature. You can initiate the registration yourself, or your administrator will start the process, and you'll be prompted to complete the registration.
+
+### Initiate PSSO registration
+
+1. Open **Settings** and navigate to **Users & Groups**.
+1. Open **Info menu**.
+<!--TODO: Clarify steps-->
+
+### Device falls out of compliance
+
+When a user is targeted for PSSO and the management policy is downloaded, the device falls out of compliance. To fix this, navigate to Company Portal, and follow the steps for compliance mediation. This will trigger the **Authentication Required** notification to start the PSSO setup. Enter your email address and go through the MFA flow to allow your device to be registered. When prompted, enter your Microsoft Entra password to sign in.
+
+### User blocked by management policy
+
+When a user is targeted for PSSO and is blocked by policy while trying to access some resource, the Intune JIT workflow starts and prompts the user to register the device. The user downloads the updated policy, and completes the setup, and access is unblocked.
 
 ## See also
 
