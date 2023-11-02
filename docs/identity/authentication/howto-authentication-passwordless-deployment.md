@@ -95,11 +95,11 @@ The wizard will use your inputs to craft a step-by-step plan for you to follow.
 
 ### MacOS Platform Single Sign-On
 
-To enable macOS Platform Single Sign-On (SSO), your Mac must have an operating system of macOS 13+, and that the configuration steps are done through the [Microsoft InTune admin center](https://intune.microsoft.com/#home). Support for other Mobile Device Management (MDM) providers will be added in future releases.
+To enable macOS Platform Single Sign-On (PSSO), your Mac must have an operating system of at least macOS 13 Ventura, and that the configuration steps are done through the [Microsoft InTune admin center](https://intune.microsoft.com/#home). Support for other Mobile Device Management (MDM) providers will be added in future releases.
 
-Before macOS Platform SSO can be enabled, the extension payload must be configured via MDM, with the Mac device enrolled into MDM and the [Mac Company Portal](mem/intune/user-help/enroll-your-device-in-intune-macos-cp) app installed.
+Before PSSO can be enabled, the extension payload must be configured via MDM, with the Mac device enrolled into MDM and the [Mac Company Portal](mem/intune/user-help/enroll-your-device-in-intune-macos-cp) app installed.
 
-Once the Mac has been configured, a user can setup their Mac device using either a password authentication method, or the new secure enclave key feature. This enables a user to use their Microsoft Entra ID to log into their Mac device.
+Once the Mac has been configured, a user can setup their Mac device using the new secure enclave key feature, smartcard or a password authentication method. This enables a user to use their Microsoft Entra ID to log into their Mac device and grant SSO across apps that use Microsoft Entra ID for authentication.
 
 ## Plan the project
 
