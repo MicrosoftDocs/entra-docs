@@ -52,9 +52,9 @@ App-only access uses app roles instead of delegated scopes. When granted through
 
 **Delegated permissions** are used in the delegated access scenario. They're permissions that allow the application to act on a user's behalf. The application will never be able to access anything the signed in user themselves couldn't access.
 
-For example, imagine an application that has been granted the Files.Read.All delegated permission on behalf of Tom, the user. The application will only be able to read files that Tom can personally access.
+For example, imagine an application that has been granted the *Files.Read.All* delegated permission on behalf of Tom, the user. The application will only be able to read files that Tom can personally access.
 
-**Application permissions**, sometimes called app roles are used in the app-only access scenario, without a signed-in user present. The application will be able to access any data that the permission is associated with. For example, an application granted the Files.Read.All application permission will be able to read any file in the tenant.  Only an administrator or owner of the service principal can consent to application permissions.
+**Application permissions**, sometimes called app roles are used in the app-only access scenario, without a signed-in user present. The application will be able to access any data that the permission is associated with. For example, an application granted the Microsoft Graph API's application permission *Files.Read.All* will be able to read any file in the tenant using Microsoft Graph. In general, only an administrator or owner of an API's service principal can consent to application permissions exposed by that API.
 
 There are other ways in which applications can be granted authorization for app-only access. For example, an application can be assigned a Microsoft Entra RBAC role.
 
