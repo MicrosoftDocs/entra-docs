@@ -19,8 +19,8 @@ Welcome to what's new in Azure Active Directory (Azure AD) application managemen
 
 ### New articles
 
-- [AD FS application migration (preview) overview](migrate-adfs-apps-overview.md) - New overview article for AD FS application migration.
-- [AD FS application migration (preview) guide](migrate-adfs-howto.md) - New how-to guide for AD FS application migration.
+- [AD FS application migration (preview) overview](migrate-ad-fs-application-overview.md) - New overview article for AD FS application migration.
+- [AD FS application migration (preview) guide](migrate-ad-fs-application-howto.md) - New how-to guide for AD FS application migration.
 
 ### Updated articles
 
