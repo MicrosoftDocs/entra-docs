@@ -13,15 +13,16 @@ ms.reviewer: frankgomulka
 
 # How to configure Global Secure Access (preview) web content filtering
 
-Filtering web content is a critical component when implementing Internet access controls for a modern Security Service Edge (SSE) solution. 
+Web content filtering empowers you to implement granular Internet access controls for your organization based on website categorization.
 
-Microsoft Entra Internet Access includes web content filtering as part of the Secure Web Gateway feature. Microsoft integrates filtering with Microsoft Entra ID and Microsoft Entra Conditional Access, which results in filter policies that are user-aware and easy to manage.
+Microsoft Entra Internet Access's first Secure Web Gateway (SWG) features include web content filtering based on domain names. Microsoft integrates granular filtering policies with Microsoft Entra ID and Microsoft Entra Conditional Access, which results in filtering policies that are user-aware, context-aware, and easy to manage.
+
+The web filtering feature is currently limited to user- and context-aware Fully Qualified Domain Name (FQDN)-based web category filtering and FQDN filtering.
 
 ## Prerequisites
 
 - Ensure your tenant is signed up for Microsoft Entra Internet Access (preview).
 - Install the Global Secure Access client on end user devices.
-- Disable the Quick UDP Internet Connections (QUIC) protocol (443 UDP) on device as UDP traffic isn't supported. When you disable this protocol, the fallback is usually HTTPS (443 TCP).
 - Check/Disable secure DNS. To tunnel network traffic based on rules of Fully Qualified Domain Name (FQDN) in the forwarding profile, DNS over HTTPS needs to be disabled. To learn more about disabling DNS over HTTPS in Windows, see [Configure the DNS client to support DoH](/windows-server/networking/dns/doh-client-support#configure-the-dns-client-to-support-doh).
 - Disable built-in DNS client on Chrome and Edge.
 
@@ -82,17 +83,15 @@ View Internet Access traffic logs in the Microsoft Entra admin center. Navigate 
 
 ## Limitations
 - There's currently no end-user notification on blocks, either from the client or the browser.
-- Admins aren't allowed to configure their own Internet traffic acquisition profiles for the client.
-    - The client traffic acquisition policy includes TCP ports 80/443 for all valid FQDNs only.
-    - There's no support for UDP, no L3/4 filtering support, and standard ports are assumed for HTTP/S traffic.
+- No admin configurable traffic acquisition profile.
+    - The client traffic acquisition policy includes TCP over IPv4 for ports 80/443 for all valid FQDNs only.
 - Only FQDN-based filtering is currently supported. URL based filtering isn't yet supported.
 - "Remote Network" or "Branch" connectivity scenarios aren't supported.
-- Users aren't allowed to block access to all websites by default.
 - Traffic acquisition profile only acquires HTTP/S TCP over ports 80/443 via FQDN. In other words, no IP-based acquisition.
+- No support for UDP traffic acquisition / handling (including QUIC).
+- No support for L3/4 filtering.
 - No captive portal support.
 - No TLS termination (it is in EAP).
-- Must disable QUIC in the browser.
-
 
 ## Next steps
 - [Learn about the traffic dashboard](concept-traffic-dashboard.md)
