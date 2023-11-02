@@ -5,13 +5,13 @@ author: shlipsey3
 ms.author: sarahlipsey
 manager: amycolannino
 ms.topic: how-to
-ms.date: 07/27/2023
+ms.date: 11/02/2023
 ms.service: network-access
-ms.custom: 
+
 ---
 # Get started with Global Secure Access
 
-Global Secure Access (preview) is the centralized location in the Microsoft Entra admin center where you can configure and manage Microsoft Entra Private Access and Microsoft Entra Internet Access. Many features and settings apply to both services, but some are specific to one or the other.
+Global Secure Access (preview), Microsoft's Security Service Edge, is the centralized location in the Microsoft Entra admin center where you can configure and manage the features. Many features and settings apply to both Microsoft Entra Private Access and Microsoft Entra Internet Access. Some features are specific to one or the other.
 
 This guide helps you get started configuring both services for the first time.
 
@@ -23,7 +23,7 @@ To follow the [Zero Trust principle of least privilege](/security/zero-trust/), 
 
 The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense). To use the Microsoft 365 traffic forwarding profile, a Microsoft 365 E3 license is recommended. After general availability, Microsoft Entra Private Access and Microsoft Entra Internet Access may require different licenses.
 
-There may be limitations with some features of the Global Secure Access preview, which are defined in the associated articles. 
+There may be limitations with some features of the Global Secure Access preview, which are defined in the associated articles.
 
 ## Access the Microsoft Entra admin center
 
@@ -48,7 +48,7 @@ Microsoft Entra Internet Access isolates the traffic for Microsoft 365 applicati
 
 After you complete these four steps, users with the Global Secure Access client installed on their Windows device can securely access Microsoft 365 resources from anywhere. Conditional Access policy requires users to use the Global Secure Access client or a configured remote network, when they access Exchange Online and SharePoint Online.
 
-###  Create a remote network, apply Conditional Access, and review the logs
+### Create a remote network, apply Conditional Access, and review the logs
 
 ![Diagram of the Microsoft Entra Internet Access traffic flow with remote networks and Conditional Access.](media/how-to-get-started-with-global-secure-access/internet-access-remote-networks-option.png)
 
