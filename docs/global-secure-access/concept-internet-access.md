@@ -24,13 +24,15 @@ Web content filtering introduces filtering policies which are grouped into secur
 
 ## Security profiles
 
-Security profiles are objects that you can use to group together your SSE policies and link them to Conditional Access to make them user aware. For instance, if you wanted to block all News websites with the exception of `msn.com` for `angie@contoso.com`. For example, you could create a Security profile with the following configuration:
+Security profiles are objects you use to group together security policies and link them to Conditional Access to make them user aware. For instance, to block all **News** websites with the exception of `msn.com` for user `angie@contoso.com` you create a security profile with the following configuration:
  
 "Security Profile for Angie"       <---- the security profile
+
 ->Allow msn.com at priority 100    <---- higher priority filtering policies
+
 ->Block News at priority 200       <---- lower priority filtering policy
 
-You would then take the security profile and link it to a Conditional Access policy assigned to `angie@contoso.com`.
+You then take the security profile and link it to a Conditional Access policy assigned to `angie@contoso.com`.
 
 ## Policy processing logic
 Within a security profile, policies are enforced according to priority ordering with 100 being the highest priority and 65,000 being the lowest priority. Similar to traditional firewall logic. As a best practice, add spacing of about 100 between priorities to allow for flexibility in the future.
