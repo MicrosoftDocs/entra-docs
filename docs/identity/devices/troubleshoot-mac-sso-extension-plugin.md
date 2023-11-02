@@ -21,7 +21,7 @@ ms.collection: M365-identity-device-management
 
 This article provides troubleshooting guidance used by administrators to resolve issues with deploying and using the [Enterprise SSO plugin](~/identity-platform/apple-sso-plugin.md). The Apple SSO extension can be deployed to iOS/iPadOS and macOS.
 
-Organizations may opt to deploy SSO to their corporate devices to provide a better experience for their end users. On Apple platforms, this process involves implementing Single Sign On (SSO) via [Primary Refresh Tokens](concept-primary-refresh-token.md).  SSO relieves end users of the burden of excessive authentication prompts.
+Organizations can opt to deploy SSO to their corporate devices to provide a better experience for their end users. On Apple platforms, this process involves implementing Single Sign On (SSO) via [Primary Refresh Tokens](concept-primary-refresh-token.md).  SSO relieves end users of the burden of excessive authentication prompts.
 
 Microsoft has implemented a plugin built on top of Apple's SSO framework, which provides brokered authentication for applications integrated with Microsoft Entra ID. For more information, see the article [Microsoft Enterprise SSO plug-in for Apple devices](~/identity-platform/apple-sso-plugin.md).
 
@@ -198,7 +198,7 @@ Assuming the MDM administrator has followed the steps in the previous section [M
    |**Extension Identifier**| Includes both the Bundle Identifier and Team Identifier of the application on the macOS device, running the Extension. Note: The Microsoft Enterprise SSO Extension should always be set to: **com.microsoft.CompanyPortalMac.ssoextension (UBF8T346G9)** to inform the macOS operating system that the extension client code is part of the **Intune Company Portal application**. |
    |**Type**| Must be set to **Redirect** to indicate a **Redirect Extension** type. |
    |**URLs**| Endpoint URLs of the identity provider (Microsoft Entra ID), where the operating system routes authentication requests to the extension. |
-   |**Optional Extension Specific Configuration**| Dictionary values that may act as configuration parameters. In the context of Microsoft Enterprise SSO Extension, these configuration parameters are called feature flags. See [feature flag definitions](~/identity-platform/apple-sso-plugin.md#more-configuration-options). |
+   |**Optional Extension Specific Configuration**| Dictionary values that can act as configuration parameters. In the context of Microsoft Enterprise SSO Extension, these configuration parameters are called feature flags. See [feature flag definitions](~/identity-platform/apple-sso-plugin.md#more-configuration-options). |
 
    > [!NOTE] 
    > The MDM definitions for Apple's SSO Extension profile can be referenced in the article [Extensible Single Sign-on MDM payload settings for Apple devices](https://support.apple.com/guide/deployment/depfd9cdf845/web) Microsoft has implemented our extension based on this schema. See [Microsoft Enterprise SSO plug-in for Apple devices](~/identity-platform/apple-sso-plugin.md#manual-configuration-for-other-mdm-services)
