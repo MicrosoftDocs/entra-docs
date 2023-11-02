@@ -9,7 +9,7 @@ ms.custom: devx-track-linux
 ms.topic: troubleshooting
 ms.date: 07/05/2023
 
-ms.author: ryschwa
+ms.author: miepping
 author: ryschwa-msft
 manager: 
 ms.reviewer: 
@@ -135,7 +135,7 @@ You can validate if TLS inspection is impacting your SSO configuration by runnin
 
 The sysdiagnose will be saved to your desktop as a .tar.gz archive. Extract the archive and open the **system_logs.logarchive** file. This will open in the Console application. Search for **com.apple.appsso** and change the filter to **SUBSYSTEM**:
 
-:::image type="content" source="media/troubleshoot-mac-sso-extension-plugin/sysdiagnose_console.png" alt-text="Screenshot showing configuration profiles.":::
+:::image type="content" source="media/troubleshoot-mac-sso-extension-plugin/sysdiagnose_console.png" alt-text="Screenshot showing sysdiagnose.":::
 
 Look for events stating that there are Associated Domain failures, especially related to Microsoft domains, such as login.microsoftonline.com. These events may indicate TLS inspection issues, which will prevent the SSO Extension from working properly. Apple domains will not appear in the sysdiagnose log, even if they are impacted by an unsupported TLS inspection configuration.
 
@@ -143,7 +143,7 @@ Look for events stating that there are Associated Domain failures, especially re
 
 Apple provides a macOS tool for checking a number of common configuration issues called the Mac Evaluation Utility. This tool can be downloaded from [AppleSeed for IT](https://beta.apple.com/programs/appleseed-for-it/resources). If you have access to AppleSeed for IT then download the Mac Evaluation Utility from the Resources area. After installing the application, run an evaluation. Once the evaluation is complete, navigate to **HTTPS Interception** --> **Additional Content** --> and check the two items below:
 
-:::image type="content" source="media/troubleshoot-mac-sso-extension-plugin/mac-evaluation-utility.png" alt-text="Screenshot showing configuration profiles.":::
+:::image type="content" source="media/troubleshoot-mac-sso-extension-plugin/mac-evaluation-utility.png" alt-text="Screenshot showing the Mac Evaluation Utility.":::
 
 If these checks have a warning or error then there may be TLS inspection occurring on the device. Work with your network team to exempt ***.cdn-apple.com** and ***.networking.apple** from TLS inspection.
 
