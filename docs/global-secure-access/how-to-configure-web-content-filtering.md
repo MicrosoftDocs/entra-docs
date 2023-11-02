@@ -13,7 +13,7 @@ ms.reviewer: frankgomulka
 
 # How to configure Global Secure Access (preview) web content filtering
 
-Web content filtering empowers you to implement granular Internet access controls for your organization based on website categorization. 
+Web content filtering empowers you to implement granular Internet access controls for your organization based on website categorization.
 
 Microsoft Entra Internet Access's first Secure Web Gateway (SWG) features include web content filtering based on domain names. Microsoft integrates granular filtering policies with Microsoft Entra ID and Microsoft Entra Conditional Access, which results in filtering policies that are user-aware, context-aware, and easy to manage. 
 
@@ -25,6 +25,7 @@ The web filtering feature is currently limited to user- and context-aware Fully 
 - Install the Global Secure Access client on end user devices.
 - Check/Disable secure DNS. To tunnel network traffic based on rules of Fully Qualified Domain Name (FQDN) in the forwarding profile, DNS over HTTPS needs to be disabled. To learn more about disabling DNS over HTTPS in Windows, see [Configure the DNS client to support DoH](/windows-server/networking/dns/doh-client-support#configure-the-dns-client-to-support-doh).
 - Disable built-in DNS client on Chrome and Edge.
+- Review web content filtering concepts, see [Web content filtering](concept-internet-access.md).
 
 ## Enable internet traffic forwarding
 Enable the Microsoft Entra Internet Access forwarding profile to forward user traffic. 
@@ -42,6 +43,8 @@ Enable the Microsoft Entra Internet Access forwarding profile to forward user tr
 
 ## Create a security profile
 Create a security profile to group filtering policies. Assign, or link, security profiles with a CA policy to make them user or context aware.
+
+Security profiles are a grouping of filtering policies. You can assign, or link, security profiles with Microsoft Entra Conditional Access policies. One security profile can contain multiple filtering policies. And one security profile can be associated with multiple Conditional Access policies.
 
 > [!NOTE]
 > To learn more about Microsoft Entra Conditional Access security profiles, see [Building a Conditional Access policy](/azure/active-directory/conditional-access/concept-conditional-access-policies).
