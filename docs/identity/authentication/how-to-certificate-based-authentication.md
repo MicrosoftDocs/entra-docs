@@ -5,7 +5,7 @@ description: Topic that shows how to configure Microsoft Entra certificate-based
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 10/04/2023
+ms.date: 11/02/2023
 
 ms.author: justinha
 author: justinha
