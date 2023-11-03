@@ -41,7 +41,7 @@ During mergers and acquisitions, the ability to quickly enable collaboration is 
 
 ## Separate collaboration and resource tenants (user hub)
 
-As organizations scale their usage of Azure, they often create dedicated tenants for managing critical Azure resources. Meanwhile, they rely on a central hub tenant for user provisioning. This model empowers administrators in the hub tenant to establish central security and governance policies while granting development teams greater autonomy to deploy required Azure resources. Cross-tenant synchronization supports this topology by enabling administrators to provision a subset of users into the spoke tenants and manage the lifecycle of those users.
+As organizations scale their usage of Azure, they often create dedicated tenants for managing critical Azure resources. Meanwhile, they rely on a central hub tenant for user provisioning. This model empowers administrators in the hub tenant to establish central security and governance policies while granting development teams greater autonomy and agility to deploy required Azure resources. Cross-tenant synchronization supports this topology by enabling administrators to provision a subset of users into the spoke tenants and manage the lifecycle of those users.
 
 :::image type="content" source="./media/cross-tenant-synchronization-topology/hub-2.png" alt-text="Diagram that shows a source tenant synchronizing with multiple target tenants.":::
 
@@ -74,3 +74,4 @@ The following diagram shows how two organizations can just-in-time collaborate b
 
 - [What is cross-tenant synchronization?](cross-tenant-synchronization-overview.md)
 - [Configure cross-tenant synchronization](cross-tenant-synchronization-configure.md)
+
