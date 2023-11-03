@@ -176,4 +176,4 @@ In this tutorial;
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Configure SPA for authentication](./tutorial-single-page-app-react-sign-in-configure-authentication.md)
+> [Configure SPA for authentication](./tutorial-single-page-app-angular-sign-in-configure-authentication.md)

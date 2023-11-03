@@ -45,11 +45,11 @@ In this tutorial:
 
 [!INCLUDE [add-platform-redirect-url-react](./includes/register-app/add-platform-redirect-url-react.md)]
 
-## Grant sign-in permissions
+## Grant API permissions
 
 [!INCLUDE [grant-api-permission-sign-in](./includes/register-app/grant-api-permission-sign-in.md)]
 
-## Create a sign-in and sign-up user flow
+## Create a user flow
 
 [!INCLUDE [register-client-app-common](./includes/configure-user-flow/create-sign-in-sign-out-user-flow.md)]
 

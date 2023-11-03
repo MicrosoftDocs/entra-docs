@@ -28,12 +28,10 @@ In this tutorial;
 ## Prerequisites
 
 * Completion of the prerequisites and steps in [Prepare your customer tenant to authenticate users in an Angular single-page app (SPA)](./tutorial-single-page-app-angular-sign-in-prepare-tenant.md).
-* Although you can use any integrated development environment (IDE) that supports Angular applications, this tutorial uses **Visual Studio Code**. You can download VS Code [here](https://visualstudio.microsoft.com/downloads/).
-* [Node.js](https://nodejs.org/en/download/).
 
 
 
-## Create the authentication configuration file, authConfig.js
+## Create the authentication configuration file, authConfig.ts
 
 1. Open _src/app/auth-config.ts_ and add the following code snippet.
 
@@ -244,7 +242,7 @@ In this tutorial;
 
     ```
 
-## See also
+## Next steps
 
 > [!div class="nextstepaction"]
-> [Prepare Angular SPA](./tutorial-single-page-app-angular-sign-in-sign-out.md)
+> [Add sign-in and sign-out](./tutorial-single-page-app-angular-sign-in-sign-out.md)
