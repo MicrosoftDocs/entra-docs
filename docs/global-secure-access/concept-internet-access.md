@@ -18,9 +18,10 @@ Microsoft Entra Internet Access is an identity-centric Secure Web Gateway (SWG) 
 
 ## Web content filtering
 
-The key introductory feature for Microsoft Entra Internet Access for all apps is Web content filtering. This feature provides granular access control for web categories and FQDNs. By explicitly blocking known inappropriate, evil, or unsafe sites, you secure your users and their devices from any Internet connection whether they're remote or within the corporate network. Web content filtering makes use of Microsoft Entra Conditional Access. To learn more about Conditional Access, see [Microsoft Entra Conditional Access](/azure/active-directory/conditional-access/).
+The key introductory feature for Microsoft Entra Internet Access for all apps is Web content filtering. This feature provides granular access control for web categories and FQDNs. By explicitly blocking known inappropriate, evil, or unsafe sites, you secure your users and their devices from any Internet connection whether they're remote or within the corporate network.
 
-Web content filtering introduces filtering policies, which are grouped into security profiles, which are linked to Conditional Access policies.
+Web content filtering is implemented using filtering policies, which are grouped into security profiles, which can be linked to Conditional Access policies. To learn more about Conditional Access, see [Microsoft Entra Conditional Access](/azure/active-directory/conditional-access/).
+
 
 ## Security profiles
 
