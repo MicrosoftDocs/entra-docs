@@ -23,8 +23,8 @@ Users in Microsoft Entra ID can have a multivalued attribute named **certificate
  
 ## Supported patterns for certificate user IDs
  
-The values stored in **certificateUserIds** should be in the format described in the following table.
- 
+The values stored in **certificateUserIds** should be in the format described in the following table. The X509:<Mapping> prefixes are case-sensitive.
+
 |Certificate mapping Field | Examples of values in CertificateUserIds |
 |--------------------------|--------------------------------------|
 |PrincipalName | “X509:\<PN>bob@woodgrove.com” |
@@ -39,7 +39,7 @@ For cloud-only users, only users with roles **Global Administrators**, **Privile
 
 >[!NOTE]
 >Active Directory Administrators (including accounts with delegated administrative privilege over synched user accounts as well as administrative rights over the Azure >AD Connect Servers) can make changes that impact the certificateUserIds value in Microsoft Entra ID for any synched accounts.
- 
+
 ## Update certificate user IDs
  
 Tenant admins can use the following steps to update certificate user IDs for a user account:
@@ -86,8 +86,9 @@ ConsistencyLevel: eventual
 ```
 To retrieve the user object with a specific value in certificateUserIds:
 
+
 ```msgraph-interactive
-GET https://graph.microsoft.com/v1.0/users?$select=authorizationinfo&$filter=authorizationInfo/certificateUserIds/any(x:x eq 'x509:<PN>user@contoso.com')&$count=true
+GET https://graph.microsoft.com/v1.0/users?$select=authorizationinfo&$filter=authorizationInfo/certificateUserIds/any(x:x eq 'X509:<PN>user@contoso.com')&$count=true
 ConsistencyLevel: eventual
 ```
 
@@ -260,7 +261,6 @@ alt-security-identity-add.
    |Connected System Object Type | user |
    |Metaverse Object Type | person |
    |Precedence | Choose a random high number not currently used |
-    
    Then proceed to the Transformations tab and change your FlowType option to *Expression*, the target attribute to **certificateUserIds** and then input the below expression in to the Source field.
 
    :::image type="content" border="true" source="./media/concept-certificate-based-authentication-certificateuserids/alt-security-identity-outbound.png" alt-text="Screenshot of outbound synchronization rule to transform from alternateSecurityId attribute to certificateUserIds":::
@@ -269,9 +269,10 @@ To map the pattern supported by certificateUserIds, administrators must use expr
 
 You can use the following expression for mapping to SKI and SHA1-PUKEY:
 
+
 ```
 IIF(IsPresent([alternativeSecurityId]),
-                Where($item,[alternativeSecurityId],BitOr(InStr($item, "x509:<SKI>"),InStr($item, "x509:<SHA1-PUKEY>"))>0),[alternativeSecurityId]
+                Where($item,[alternativeSecurityId],BitOr(InStr($item, "X509:<SKI>"),InStr($item, "X509:<SHA1-PUKEY>"))>0),[alternativeSecurityId]
 )
 ```
 
@@ -285,3 +286,4 @@ IIF(IsPresent([alternativeSecurityId]),
 - [Windows smart card logon using Microsoft Entra CBA](concept-certificate-based-authentication-smartcard.md)
 - [How to migrate federated users](concept-certificate-based-authentication-migration.md)
 - [FAQ](certificate-based-authentication-faq.yml)
+
