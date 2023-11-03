@@ -66,26 +66,26 @@ The related information exists for the following device platforms:
 
 ### Connect
 
-[!INCLUDE [Connect-AzureAD](../../includes/entra-authentication-connect-azuread.md)]
+[!INCLUDE [Connect-AzureAD](../../includes/entra-authentication-connect.md)]
 
 
 ### Retrieve
 
-[!INCLUDE [Get-AzureAD](../../includes/entra-authentication-get-trusted-azuread.md)]
+[!INCLUDE [Get-AzureAD](../../includes/entra-authentication-get-trusted.md)]
 
 
 ### Add
 
-[!INCLUDE [New-AzureAD](../../includes/entra-authentication-new-trusted-azuread.md)]
+[!INCLUDE [New-AzureAD](../../includes/entra-authentication-new-trusted.md)]
 
 ### Remove
 
-[!INCLUDE [Remove-AzureAD](../../includes/entra-authentication-remove-trusted-azuread.md)]
+[!INCLUDE [Remove-AzureAD](../../includes/entra-authentication-remove-trusted.md)]
 
 
 ### Modify
 
-[!INCLUDE [Set-AzureAD](../../includes/entra-authentication-set-trusted-azuread.md)]
+[!INCLUDE [Set-AzureAD](../../includes/entra-authentication-set-trusted.md)]
 
 ## Step 3: Configure revocation
 
