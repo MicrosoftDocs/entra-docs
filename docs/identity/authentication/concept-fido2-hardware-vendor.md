@@ -53,7 +53,7 @@ The following table lists partners who are Microsoft-compatible FIDO2 security k
 | [Identiv](https://www.identiv.com/products/logical-access-control/utrust-fido2-security-keys/nfc) | ![n] | ![y]| ![y]| ![n]|
 | [IDmelon Technologies Inc.](https://www.idmelon.com/#idmelon) | ![y] | ![y]| ![y]| ![y]|
 | [Kensington](https://www.kensington.com/solutions/product-category/why-biometrics/) | ![y] | ![y]| ![n]| ![n]|
-| [KONA I](https://konai.com/business/security/fido) | ![y] | ![n]| ![y]| ![y]|
+| [KONA I](https://www.konai.com/main) | ![y] | ![n]| ![y]| ![y]|
 | [NeoWave](https://neowave.fr/en/products/fido-range/) | ![n] | ![y]| ![y]| ![n]|
 | [Nymi](https://www.nymi.com/nymi-band) | ![y] | ![n]| ![y]| ![n]|
 | [Octatco](https://octatco.com/) | ![y] | ![y]| ![n]| ![n]|
