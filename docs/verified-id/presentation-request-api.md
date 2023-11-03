@@ -165,12 +165,12 @@ The `Configuration.Validation` provides information about how the presented cred
 
 ### Constraints type
 
-The `constraints` type type contains a collection of claims constraints that must be met when a wallet selects the candidate credentials. This enables requesting a credential with specific claim values. Constraints specified will use the AND logic, ie if you specify three constraints, all of them have to be met. For each constraint in the collection, you must select one operand of values, contains or startsWith. Values can not be regular expressions. All comparison are done case-insensitive.
+The `constraints` type contains a collection of claims constraints that must be met when a wallet selects the candidate credentials. This enables requesting a credential with specific claim value. Constraints specified will use the AND logic, ie if you specify three constraints, all of them have to be met. For each constraint in the collection, you must select one operand of values, contains or startsWith. Values can not be regular expressions. All comparison are done case-insensitive.
 
 |Property |Type |Description |
 |---------|---------|---------|
 | `claimName` |  string | Optional. Mandatory. Name of the claim for the constraint. |
-| `values` |  string collection | Set of values that should match the claim value. If you specify multiple values, like ["red", "green", "blue"] it is a match is the claim value in the credential is any of the values in the collection.|
+| `values` |  string collection | Set of values that should match the claim value. If you specify multiple values, like ["red", "green", "blue"] it is a match if the claim value in the credential has any of the values in the collection.|
 | `contains` | string |	The constraint evaluates to true if the claim value contains the specified value.|
 | `startsWith` | string |	The constraint evaluates to true if the claim value starts with the specified value.|
 

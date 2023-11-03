@@ -1,6 +1,6 @@
 ---
 title: How to Revoke a Verifiable Credential as an Issuer - Microsoft Entra Verified ID
-description: Learn how to revoke a Verifiable Credential that you've issued
+description: Learn how to revoke an issued Verifiable Credential 
 documentationCenter: ''
 author: barclayn
 manager: amycolannino
@@ -17,11 +17,11 @@ ms.author: barclayn
 
 [!INCLUDE [Verifiable Credentials announcement](~/../azure-docs-pr/includes/verifiable-credentials-brand.md)]
 
-As part of the process of working with verifiable credentials (VCs), you not only have to issue credentials, but sometimes you also have to revoke them. In this article, we go over the **Status** property part of the VC specification and take a closer look at the revocation process, why we may want to revoke credentials and some data and privacy implications.
+As part of the process of working with verifiable credentials, you not only have to issue credentials, but sometimes you also have to revoke them. In this article, we go over the **Status** property part of the verifiable credential specification and take a closer look at the revocation process, why we want to revoke credentials and some data and privacy implications.
 
-## Why you may want to revoke a verifiable credential?
+## Why you want to revoke a verifiable credential?
 
-Each customer will have their own unique reason's for wanting to revoke a verifiable credential, but here are some of the common themes we've heard thus far. 
+Each customer has their own unique reason's for wanting to revoke a verifiable credential. Here are some of the common themes:
 
 - Student ID: the student is no longer an active student at the University.
 - Employee ID: the employee is no longer an active employee.
@@ -35,7 +35,7 @@ Using the indexed claim in verifiable credentials, you can search for issued ver
 1. Select the verifiable credential type
 1. On the left-hand menu, choose **Revoke a credential**
    ![Revoke a credential](media/how-to-issuer-revoke/settings-revoke.png) 
-1. Search for the index claim of the user you want to revoke. If you haven't indexed a claim, search will not work, and you will not be able to revoke the verifiable credential.
+1. Search for the index claim of the user you want to revoke. Indexing a claim is a requirement for being able to search for a credential.
 
    ![Screenshot of the credential to revoke](media/how-to-issuer-revoke/revoke-search.png)
 
@@ -53,11 +53,11 @@ Using the indexed claim in verifiable credentials, you can search for issued ver
    
    ![screenshot of a successfully revoked verifiable credential message](media/how-to-issuer-revoke/revoke-successful.png) 
 
-Now whenever a presentation is sent to the Request Service API it will check if the VC has been revoked.
+Request Service API will indicate a revoked credential in the `presentation_verified` [callback](presentation-request-api.md#callback-events) as `REVOKED`. Depending if the presentation request specified that it [allows revoked credentials](presentation-request-api.md#configurationvalidation-type) to be presented, the presentation of a revoked credential either succeeds or fails.
 
 ## How to set up a verifiable credential with the ability to revoke
 
-Verifiable credential data isn't stored by Microsoft. Therefore, the issuer needs to make one claim, the indexed claim, before the VC is searchable. There can be only one claim that is indexed and if there is none, you won't be able to revoke credentials. The selected claim to index is then salted and hashed and isn't stored as its original value.
+Microsoft Entra Verified ID do not store Verifiable credential data. Therefore, the issuer needs to index one claim in order to make the credential searchable. There can be only one claim that is indexed and if there is none, you can't revoke credentials. The selected claim to index is then salted and hashed and isn't stored as its original value.
 
 >[!NOTE]
 >Hashing is a one way cryptographic operation that turns an input, called a ```preimage```, and produces an output called a hash that has a fixed length. It is not computationally feasible at this time to reverse a hash operation.
@@ -112,14 +112,14 @@ Verifiable credential data isn't stored by Microsoft. Therefore, the issuer need
 
 ## How does revocation work?
 
-Microsoft Entra Verified ID implements the [W3C StatusList2021](https://github.com/w3c/vc-status-list-2021/tree/343b8b59cddba4525e1ef355356ae760fc75904e). When presentation to the Request Service API happens, the API will do the revocation check for you. The revocation check happens over an anonymous API call to Identity Hub and does not contain any data who is checking if the verifiable credential is still valid or revoked. With the **statusList2021**, Microsoft Entra Verified ID just keeps a flag by the hashed value of the indexed claim to keep track of the revocation status. 
+Microsoft Entra Verified ID implements the [W3C StatusList2021](https://github.com/w3c/vc-status-list-2021/tree/343b8b59cddba4525e1ef355356ae760fc75904e). When presentation to the Request Service API happens, the API checks the revocation status. The revocation check happens over an anonymous API call to Identity Hub and doesn't contain any data who is checking if the verifiable credential is still valid or revoked. With the **statusList2021**, Microsoft Entra Verified ID just keeps a flag by the hashed value of the indexed claim to keep track of the revocation status. 
 
-### Verifiable credential data 
+### Verifiable credential data
 
-In every Microsoft issued verifiable credential, there is a claim called `credentialStatus`. This data is a navigational map to where in a block of data this VC has its revocation flag.
+In every Microsoft issued verifiable credential, there's a claim called `credentialStatus`. This data is a navigational map to where in a block of data this VC has its revocation flag.
 
 >[!NOTE]
->If the verifiable credential is old and was issued during the preview period, this claim may not exist. Revocation will not work for this credential and you have to reissue it.
+>If the verifiable credential is old and was issued during the preview period, this claim does not exist. Revocation will not work for this credential and you have to reissue it.
 
 ```json
 ...
