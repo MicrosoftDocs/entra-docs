@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: how-to
-ms.date: 11/02/2023
+ms.date: 11/03/2023
 ms.service: network-access
 ms.custom: 
 ms.reviewer: frankgomulka
@@ -31,6 +31,15 @@ The web filtering feature is currently limited to user- and context-aware Fully 
 - UDP traffic isn't supported in the current preview. If you plan to tunnel Exchange Online traffic, disable the QUIC protocol (443 UDP). For more information, see [Block QUIC when tunneling Exchange Online traffic](how-to-install-windows-client.md#block-quic-when-tunneling-exchange-online-traffic).
 - Review Web content filtering concepts, see [Web content filtering](concept-internet-access.md).
 
+## High level steps
+
+There are several steps to configuring web content filtering. Take note of where you need to configure a Conditional Access policy.
+
+1. [Enable internet traffic forwarding.](#enable-internet-traffic-forwarding)
+1. [Create a Web content filtering policy.](#create-a-web-content-filtering-policy)
+1. [Create a security profile.](#create-a-security-profile)
+1. [Link the security profile to a Conditional Access policy.](#create-and-link-conditional-access-policy)
+
 ## Enable internet traffic forwarding
 
 To enable the Microsoft Entra Internet Access forwarding profile to forward user traffic:
@@ -50,12 +59,12 @@ To enable the Microsoft Entra Internet Access forwarding profile to forward user
 
 ## Create a security profile
 
-Create a security profile to group filtering policies. Assign, or link, security profiles with a CA policy to make them user or context aware.
-
 Security profiles are a grouping of filtering policies. You can assign, or link, security profiles with Microsoft Entra Conditional Access policies. One security profile can contain multiple filtering policies. And one security profile can be associated with multiple Conditional Access policies.
 
+In this step, you create a security profile to group filtering policies. Then you assign, or link, the security profiles with a Conditional Access policy to make them user or context aware.
+
 > [!NOTE]
-> To learn more about Microsoft Entra Conditional Access security profiles, see [Building a Conditional Access policy](/azure/active-directory/conditional-access/concept-conditional-access-policies).
+> To learn more about Microsoft Entra Conditional Access policies, see [Building a Conditional Access policy](/azure/active-directory/conditional-access/concept-conditional-access-policies).
 
 1. Browse to **Global Secure Access** > **Secure** > **Security profiles**.
 1. Select **Create profile**.
