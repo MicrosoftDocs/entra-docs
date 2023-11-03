@@ -74,7 +74,7 @@ groups:
   prompt: Choose an option
   pivots:
   - id: portal
-    title: Azure portal
+    title: Microsoft Entra admin center
   - id: aad-powershell
     title: Azure AD PowerShell
   - id: ms-powershell
@@ -107,7 +107,7 @@ groups:
   prompt: Choose an option
   pivots:
   - id: portal
-    title: Azure portal
+    title: Microsoft Entra admin center
   - id: aad-powershell
     title: Azure AD PowerShell
   - id: ms-powershell
@@ -118,7 +118,7 @@ groups:
   prompt: Choose an option
   pivots:
   - id: portal
-    title: Azure portal
+    title: Microsoft Entra admin center
   - id: ms-powershell
     title: Microsoft Graph PowerShell
   - id: ms-graph
