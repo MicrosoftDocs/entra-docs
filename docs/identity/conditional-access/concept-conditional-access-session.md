@@ -91,7 +91,7 @@ The preview works for specific scenarios only. For more information, see the art
 
 ## Use Global Secure Access security profile (preview)
 
-Using a security profile with Conditional Access unifies identity controls with network security in Microsoft's Security Service Edge (SSE) product, Microsoft Entra Internet Access. Selecting this Session control will allow you to bring identity and context awareness to security profiles, which are groupings of various policies created and managed in Global Secure Access. 
+Using a security profile with Conditional Access unifies identity controls with network security in Microsoft's Security Service Edge (SSE) product, [Microsoft Entra Internet Access](global-secure-access/concept-internet-access.md). Selecting this Session control will allows you to bring identity and context awareness to security profiles, which are groupings of various policies created and managed in Global Secure Access. 
 
 ## Next steps
 
