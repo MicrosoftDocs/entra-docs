@@ -39,7 +39,7 @@ Within a security profile, policies are enforced according to priority ordering 
 Once you link a security profile to a Conditional Access (CA) policy, if multiple CA policies match, both security profiles will be processed in priority ordering of the matching security profiles.
 
 > [!IMPORTANT]
-> If you create a security profile with priority 65,000 then it will apply to all traffic even without linking it to a Conditional Access policy.
+> If you create a security profile with priority 65,000 then it will apply to all traffic even without linking it to a Conditional Access policy. This can be used to create a baseline policy applying to all Internet Access traffic routed through the service.
 
 ## Next steps
 
