@@ -59,7 +59,6 @@ You can configure CAs by using the Microsoft Entra admin center or PowerShell.
 
 ### Configure certification authorities using the Microsoft Entra admin center
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
 
 To enable the certificate-based authentication and configure user bindings in the Microsoft Entra admin center, complete the following steps:
 

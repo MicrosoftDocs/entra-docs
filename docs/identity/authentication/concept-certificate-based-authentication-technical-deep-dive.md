@@ -105,8 +105,6 @@ If the CBA-enabled user can't use an MF cert, such as on mobile device without s
 
 ## MFA with Single-factor certificate-based authentication
 
-[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
-
 Microsoft Entra CBA can be used as a second factor to meet MFA requirements with single-factor certificates. 
 Some of the supported combinations are:
 
@@ -123,7 +121,7 @@ Users need to have another way to get MFA and register passwordless sign-in or F
 
 For passwordless sign-in to work, users should disable legacy notification through mobile app.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](../roles/permissions-reference.md#authentication-policy-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 
 1. Follow the steps at [Enable passwordless phone sign-in authentication](../authentication/howto-authentication-passwordless-phone.md#enable-passwordless-phone-sign-in-authentication-methods).
 
@@ -303,11 +301,11 @@ As of now, there's no way for the administrator to manually force or re-trigger 
 
 ### How to configure revocation
 
-[!INCLUDE [Configure revocation](../../../includes/active-directory-authentication-configure-revocation.md)]
+[!INCLUDE [Configure revocation](../../includes/entra-authentication-configure-revocation.md)]
 
 ## Understanding Sign-in logs
 
-Sign-in logs provide information about sign-ins and how your resources are used by your users. For more information about sign-in logs, see [Sign-in logs in Microsoft Entra ID](../reports-monitoring/concept-all-sign-ins.md).
+Sign-in logs provide information about sign-ins and how your resources are used by your users. For more information about sign-in logs, see [Sign-in logs in Microsoft Entra ID](../monitoring-health/concept-sign-ins.md).
 
 Let's walk through two scenarios, one where the certificate satisfies single-factor authentication and another where the certificate satisfies MFA.
 
@@ -405,7 +403,7 @@ To reset the MRU method, the user needs to cancel the certificate picker, click 
 
 An external identity can't perform multifactor authentication to the resource tenant with Microsoft Entra CBA. Instead, have the user perform MFA using CBA in the home tenant, and set up cross tenant settings for the resource tenant to trust MFA from the home tenant.
 
-For more information about how to enable **Trust multifactor authentication from Microsoft Entra tenants**, see [Configure B2B collaboration cross-tenant access](../external-identities/cross-tenant-access-settings-b2b-collaboration.md#to-change-inbound-trust-settings-for-mfa-and-device-claims).
+For more information about how to enable **Trust multifactor authentication from Microsoft Entra tenants**, see [Configure B2B collaboration cross-tenant access](../../external-id/cross-tenant-access-settings-b2b-collaboration.md#to-change-inbound-trust-settings-for-mfa-and-device-claims).
 
 ## Known issues
 
