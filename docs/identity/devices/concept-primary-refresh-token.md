@@ -100,13 +100,16 @@ Windows transport endpoints are required for password authentication only when a
 > Microsoft Entra Conditional Access policies are not evaluated when PRTs are renewed.
 
 
-### Android Platfrom: 
+
+### Key considerations 
+* In Microsoft Entra joined and Microsoft Entra hybrid joined devices, the CloudAP plugin is the primary authority for a PRT. If a PRT is renewed during a WAM-based token request, the PRT is sent back to CloudAP plugin, which verifies the validity of the PRT with Microsoft Entra ID before accepting it.
+
+#### Android Platfrom: 
 * A PRT is valid for 90 days and is continuously renwed as long as device is in use. However, it is only valid for 14 days if device is not in use.
 * A PRT is only issued and renewed during native app authentication. A PRT isn't renewed or issued during a browser session.
-* A PRT can be device bound or device unbound.
+* it's possible to obtain a PRT without the need for device registration ([Workplace Join](https://learn.microsoft.com/en-us/windows-server/identity/ad-fs/operations/walkthrough--workplace-join-to-an-android-device)) and enable SSO.
+> [!NOTE] PRTs obtained without device registration cannot satisfy the authorization criteria for Conditional Access that relies on the device's status or compliance.
 
- ### Key considerations 
-* In Microsoft Entra joined and Microsoft Entra hybrid joined devices, the CloudAP plugin is the primary authority for a PRT. If a PRT is renewed during a WAM-based token request, the PRT is sent back to CloudAP plugin, which verifies the validity of the PRT with Microsoft Entra ID before accepting it.
 
 ## How is the PRT protected?
 
