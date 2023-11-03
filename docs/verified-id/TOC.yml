@@ -10,10 +10,10 @@
 - name: Tutorials
   expanded: true
   items:
-  - name: Manual Verified ID setup
-    href: verifiable-credentials-configure-tenant.md
-  - name: Quick Verified ID setup
+  - name: Quick setup
     href: verifiable-credentials-configure-tenant-quick.md
+  - name: Manual setup
+    href: verifiable-credentials-configure-tenant.md
   - name: Issue a verifiable credential
     href: verifiable-credentials-configure-issuer.md
   - name: Verify a verifiable credential
@@ -22,6 +22,8 @@
     href: using-authenticator.md
   - name: Using the Wallet Library
     href: using-wallet-library.md
+  - name: LinkedIn employment verification
+    href: linkedin-employment-verification.md
 - name: Concepts
   expanded: true
   items:
@@ -35,12 +37,14 @@
       href: plan-issuance-solution.md
     - name: Plan your verification solution
       href: plan-verification-solution.md
+  - name: Remote onboarding
+    href: remote-onboarding-new-employees-id-verification.md
 - name: How-to guides
   expanded: true
   items:
   - name: How to customize your credentials
     href: credential-design.md
-  - name: Create credentials using Quickstart
+  - name: Create verifiable credentials
     items:
     - name: Directory based - Employee
       href: how-to-use-quickstart-verifiedemployee.md
@@ -54,18 +58,18 @@
       href: how-to-use-quickstart-selfissued.md
     - name: Multiple attestations
       href: how-to-use-quickstart-multiple.md
-  - name: Use the Verified ID Network
+  - name: Find credentials in the Verified ID Network
     href: how-use-vcnetwork.md
-  - name: Using the Request Service REST API
-    href: get-started-request-api.md
+  - name: Revoking a credential
+    href: how-to-issuer-revoke.md
   - name: Register decentralized ID
     href: how-to-register-didwebsite.md
   - name: Verify domain ownership
     href: how-to-dnsbind.md
-  - name: Revoke a verifiable credential
-    href: how-to-issuer-revoke.md
   - name: Opt out of Verified ID service
     href: how-to-opt-out.md
+  - name: Using the Request Service REST API
+    href: get-started-request-api.md
   - name: Partner gallery
     items:
     - name: IDV partners
@@ -89,13 +93,6 @@
     href: https://github.com/Azure-Samples/active-directory-verifiable-credentials
   - name: End to End Demo
     href: https://woodgroveemployee.azurewebsites.net/
-- name: Architecture and Deployment
-  expanded: true
-  items:
-  - name: Remote onboarding
-    href: remote-onboarding-new-employees-id-verification.md
-  - name: LinkedIn employment verification
-    href: linkedin-employment-verification.md
 - name: Reference
   expanded: true
   items:
