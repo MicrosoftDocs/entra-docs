@@ -93,7 +93,7 @@ View Internet Access traffic logs in the Microsoft Entra admin center. Navigate 
 - "Remote Network" or "Branch" connectivity scenarios aren't supported.
 - No captive portal support.
 - No TLS termination.
-- No URL filtering or URL categorization.
+- No URL path based filtering or URL categorization.
 
 
 
