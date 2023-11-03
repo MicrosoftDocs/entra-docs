@@ -1,15 +1,15 @@
 ---
-title: Global Secure Access web content filtering categories
-description: Global Secure Access web content filtering categories
+title: Global Secure Access Web content filtering categories
+description: Global Secure Access Web content filtering categories
 author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: reference
-ms.date: 10/19/2023
+ms.date: 11/03/2023
 ms.service: network-access
 ms.custom:
 ---
-# Global Secure Access (preview) web content filtering categories
+# Global Secure Access (preview) Web content filtering categories
 
 When you set up rules to filter web content, you can select based on a category. This article provides a list of categories along with explanations.
 
@@ -119,4 +119,4 @@ When you set up rules to filter web content, you can select based on a category.
 |Phishing Sites | Sites that are used to steal information through phishing attacks. |
 |Parked Domains | Sites that are not in active use. |
 |Botnets | Sites used by botnets. |
-|SPAM | Sites known to product SPAM email. |
+|SPAM | Sites known to produce SPAM email. |
