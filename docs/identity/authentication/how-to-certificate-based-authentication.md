@@ -10,7 +10,7 @@ ms.date: 11/02/2023
 ms.author: justinha
 author: justinha
 manager: amycolannino
-ms.reviewer: vimrang
+ms.reviewer: vraganathan
 
 ms.collection: M365-identity-device-management
 ms.custom: has-adal-ref, has-azure-ad-ps-ref
@@ -134,11 +134,11 @@ For more information, see [Understanding the certificate revocation process](./c
 
 ### Remove
 
-[!INCLUDE [Remove-AzureAD](../../../includes/active-directory-authentication-remove-trusted-azuread.md)]
+[!INCLUDE [Remove-AzureAD](../../includes/entra-authentication-remove-trusted.md)]
 
 ### Modify
 
-[!INCLUDE [Set-AzureAD](../../../includes/active-directory-authentication-set-trusted-azuread.md)]
+[!INCLUDE [Set-AzureAD](../../includes/entra-authentication-set-trusted.md)]
 
 ## Step 2: Enable CBA on the tenant
 
