@@ -89,9 +89,9 @@ View Internet Access traffic logs in the Microsoft Entra admin center. Navigate 
 - Currently assuming standard ports for HTTP/S traffic.
 - There's no support for UDP acquisition/handling.
 - No support for L3/4 filtering.
-- "Remote Network" or "Branch" connectivity scenarios aren't supported (it is in EAP).
+- "Remote Network" or "Branch" connectivity scenarios aren't supported.
 - No captive portal support.
-- No TLS termination (it is in EAP).
+- No TLS termination.
 - No URL filtering or URL categorization.
 
 
