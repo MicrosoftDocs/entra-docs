@@ -10,7 +10,7 @@ ms.subservice: develop
 ms.workload: identity
 ms.topic: reference
 ms.date: 11/02/2023
-ms.author: rahul-nagraj
+ms.author: rahul.nagraj
 ms.reviewer: jeedes
 ms.custom: aaddev
 ---
@@ -29,17 +29,17 @@ Claims customization supports configuring claim-mapping policies for the SAML, O
 This feature replaces and supersedes the [claims customization](saml-claims-customization.md) offered through the Entra Id portal. On the same application, if you customize claims using the portal in addition to the Microsoft Graph/PowerShell method detailed in this document, tokens issued for that application will ignore the configuration in the portal. Configurations made through the methods detailed in this document will not be reflected in the portal.
 In this article, we walk through a few common scenarios that can help you understand how to use the [claims-mapping policy type](reference-claims-mapping-policy-type.md).
 
-# Get started
+## Get started
 
 In the following examples, you create, update, link, and delete policies for service principals. Claims-mapping policies can only be assigned to service principal objects. If you are new to Entra Id, we recommend that you [learn about how to get an Entra Id tenant](~/external-id/customers/quickstart-tenant-setup.md) before you proceed with these examples.
 When creating a claims-mapping policy, you can also emit a claim from a directory extension attribute in tokens. Use `ExtensionID` for the extension attribute instead of ID in the `ClaimsSchema` element. For more info on extension attributes, see [Using directory extension attributes](~/identity-platform/schema-extensions.md).
 
 > [!Note]
-> The [Microsoft Graph PowerShell SDK](https://learn.microsoft.com/en-us/PowerShell/microsoftgraph/installation?view=graph-PowerShell-1.0) is required to configure claims-mapping policies.
+> The [Microsoft Graph PowerShell SDK](https://learn.microsoft.com/PowerShell/microsoftgraph/installation) is required to configure claims-mapping policies.
 
 To get started, do the following steps:
 
-1. Download the latest [Microsoft Graph PowerShell SDK](https://learn.microsoft.com/en-us/PowerShell/microsoftgraph/installation?view=graph-PowerShell-1.0).
+1. Download the latest [Microsoft Graph PowerShell SDK](https://learn.microsoft.com/PowerShell/microsoftgraph/installation).
 2. Run the ‘Connect-MgGraph -Scopes’ command to sign in to your Entra Id admin account. Run this command each time you start a new session.
 
 ```PowerShell
@@ -54,7 +54,7 @@ Next, create a claims mapping policy and assign it to a service principal. See t
 
 After creating a claims mapping policy, configure your application to acknowledge that tokens will contain customized claims. For more information, read [security considerations](jwt-claims-customization.md#security-considerations).
 
-# Omit the basic claims from tokens
+## Omit the basic claims from tokens
 
 In this example, you create a policy that removes the [basic claim set](reference-claims-mapping-policy-type.md#claim-sets) from tokens issued to linked service principals.
 
@@ -81,7 +81,7 @@ In this example, you create a policy that removes the [basic claim set](referenc
     New-MgServicePrincipalClaimMappingPolicyByRef -ServicePrincipalId <servicePrincipalId> -BodyParameter @{"@odata.id" = "https://graph.microsoft.com/v1.0/policies/claimsMappingPolicies/<claimsMappingPolicyId>"}
     ```
 
-# Include the EmployeeID and TenantCountry as claims in tokens
+## Include the EmployeeID and TenantCountry as claims in tokens
 
 In this example, you create a policy that adds the EmployeeID and TenantCountry to tokens issued to linked service principals. The EmployeeID is emitted as the name claim type in both SAML tokens and JWTs. The TenantCountry is emitted as the country/region claim type in both SAML tokens and JWTs. In this example, we continue to include the basic claims set in the tokens.
 
@@ -102,14 +102,14 @@ In this example, you create a policy that adds the EmployeeID and TenantCountry 
     ```
 
 1. Assign the policy to your service principal. You also need to get the ObjectId of your service principal.
-    1. To see all your organization's service principals, you can [query the Microsoft Graph API](https://learn.microsoft.com/graph/traverse-the-graph?tabs=http). Or, in [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer), sign in to your Entra Id account.
+    1. To see all your organization's service principals, you can [query the Microsoft Graph API](https://learn.microsoft.com/graph/traverse-the-graph). Or, in [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer), sign in to your Entra Id account.
     1. When you have the ObjectId of your service principal, run the following
 
     ```PowerShell
     New-MgServicePrincipalClaimMappingPolicyByRef -ServicePrincipalId <servicePrincipalId> -BodyParameter @{"@odata.id" = "https://graph.microsoft.com/v1.0/policies/claimsMappingPolicies/<claimsMappingPolicyId>"}
     ```
 
-# Use a claims transformation in tokens
+## Use a claims transformation in tokens
 
 In this example, you create a policy that emits a custom claim "JoinedData" to JWTs issued to linked service principals. This claim contains a value created by joining the data stored in the extensionattribute1 attribute on the user object with ".sandbox". In this example, we exclude the basic claims set in the tokens.
 
@@ -127,7 +127,7 @@ In this example, you create a policy that emits a custom claim "JoinedData" to J
     ```
 
 2. Assign the policy to your service principal. You also need to get the ObjectId of your service principal.
-    1. To see all your organization's service principals, you can [query the Microsoft Graph API](https://learn.microsoft.com/graph/traverse-the-graph?tabs=http). Or, in [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer), sign in to your Entra Id account.
+    1. To see all your organization's service principals, you can [query the Microsoft Graph API](https://learn.microsoft.com/graph/traverse-the-graph). Or, in [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer), sign in to your Entra Id account.
     1. When you have the ObjectId of your service principal, run the following command:
 
     ```PowerShell
