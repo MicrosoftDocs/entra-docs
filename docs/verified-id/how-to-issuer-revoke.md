@@ -127,7 +127,7 @@ In every Microsoft issued verifiable credential, there is a claim called `creden
     "id": "urn:uuid:625dfcad-0000-1111-2222-333444445555?bit-index=31", 
     "type": "RevocationList2021Status", 
     "statusListIndex": 31, 
-    "statusListCredential": "did:ion:EiDR0Y6zfvnUy2NjO293XNfe9AOL...<SNIP>...?service=IdentityHub&queries=...data..." 
+    "statusListCredential": "did:web:verifiedid.contoso.com?service=IdentityHub&queries=...data..." 
 ...
 ```
 
@@ -137,11 +137,11 @@ In the issuing party's DID document, the Identity Hub's endpoint is available in
 
 ```json
 didDocument": {
-    "id": "did:ion:EiD...<SNIP>",
+    "id": "did:web:verifiedid.contoso.com",
     "@context": [
         "https://www.w3.org/ns/did/v1",
         {
-            "@base": "did:ion:EiD...<SNIP>..."
+            "@base": "did:web:verifiedid.contoso.com"
         }
      ],
      "service": [
@@ -150,7 +150,7 @@ didDocument": {
              "type": "LinkedDomains",
              "serviceEndpoint": {
              "origins": [
-                "https://contoso.com/"
+                "https://verifiedid.contoso.com/"
                 ]
              }
          },

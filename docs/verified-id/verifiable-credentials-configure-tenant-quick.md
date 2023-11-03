@@ -29,7 +29,7 @@ Specifically, you learn how to:
 ## Prerequisites
 
 - Ensure that you have the [global administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) or the [authentication policy administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) permission for the directory you want to configure. If you're not the global administrator, you need the [application administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) permission to complete the app registration including granting admin consent.
-- Ensure that you have a custom domain registered for the Microsoft Entra tenant. If you don't have one registered, the setup defaults to the manual setup experience.
+- Ensure that you have a [custom domain registered](~/identity/users/domains-manage.md) for the Microsoft Entra tenant. If you don't have one registered, the setup defaults to the manual setup experience.
 
 ## Set up Verified ID
 
@@ -66,9 +66,10 @@ As an admin, you can either remove the option in MyAccount and create your custo
 
 ## How Quick Verified ID setup works
 
-- A shared signing key is used across multiple tenants within a given region. It's no longer required to deploy Azure Key Vault. Since it's a shared key, the validityInterval of issued credentials is limited to six months.
-- The custom domain registered for your Microsoft Entra tenant is used for domain verification. It's no longer required to upload your DID configuration JSON to verify your domain.
-- The Decentralized identifier (DID) gets a name like `did:web:verifiedid.entra.microsoft.com:tenantid:authority-id`
+- A shared signing key, managed by Microsoft, is used across multiple tenants within a given region. It's no longer required to deploy Azure Key Vault. Since it's a shared key, the validityInterval of issued credentials is limited to six months.
+- The [custom domain registered](~/identity/users/domains-manage.md) for your Microsoft Entra tenant is used for domain verification. It's no longer required to upload your DID configuration JSON to verify your domain. If you don't have a custom domain registered for your tenant, you can't set up Verified ID using the quick setup method.
+- If you have customized your [tenant's branding](~/fundamentals/how-to-customize-branding#before-you-begin), the VerifiedEmployee default credential will pick up logo and background color from there. If you haven't or prefer other values, you can edit this after setup is complete.
+- The Decentralized identifier (DID) gets a name like `did:web:verifiedid.entra.microsoft.com:tenantid:authority-id` and the DID document is discoverable following [did:web specification](https://w3c-ccg.github.io/did-method-web/#create-register).
 
 ## Register an application in Microsoft Entra ID
 

@@ -19,6 +19,10 @@ ms.date: 06/22/2022
 
 In this guide, you'll create a credential where the claims come from a user profile in the directory of the Microsoft Entra tenant. With directory based claims you can create Verifiable Credentials of type VerifiedEmployee, if the users in the directory are employees.
 
+Using the [Quick setup](verifiable-credentials-configure-tenant-quick.md), the VerifiedEmployee credential is automatically created for you. If you use the [Manual setup](verifiable-credentials-configure-tenant.md), then you need to manually create the VerifiedEmployee credential as explained in this guide.
+
+Issuing a VerifiedEmployee credential is now supported in [MyAccount](https://myaccount.microsoft.com) and it is explained [here](verifiable-credentials-configure-tenant-quick.md#myaccount-available-now-to-simplify-issuance-of-workplace-credentials) how to enable it in Verified ID. Configuring a sample to issue VerifiedEmployee credentials is only necessary if you would like to handle issuance in your own app. 
+
 In this article, you learn how to:
 
 > [!div class="checklist"]
