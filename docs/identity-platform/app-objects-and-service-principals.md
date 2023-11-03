@@ -86,10 +86,10 @@ In the Microsoft Entra admin center, navigate to the application registration ov
 
 # [PowerShell](#tab/azure-powershell)
 
-Using PowerShell:
+Using Microsoft Graph PowerShell:
 
 ```azurepowershell
-Get-AzureADServicePrincipal -Filter "appId eq '{AppId}'"
+Get-MgServicePrincipal -Filter "appId eq '{AppId}'"
 ```
 
 # [Azure CLI](#tab/azure-cli)
