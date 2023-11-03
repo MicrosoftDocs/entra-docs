@@ -65,7 +65,7 @@ Create a Conditional Access policy and set session controls for end users or gro
 1. Enter a name and assign a user or group.
 1. Select **Target resources** and then select **Global Secure Access (Preview)** from the drop-down menu to set what the policy applies to.
 1. Select **Internet traffic** from the drop-down menu to set the traffic profile this policy applies to.
-1. Select **Sessions**, select **Use Global Secure Access security profile**, and then choose a web filtering profile.
+1. Select **Session**, select **Use Global Secure Access security profile**, and then choose a web filtering profile.
 1. Select **Select**.
 1. In the **Enable policy** section, **Report-only** is the default.
 1. Select **Create**.
@@ -93,6 +93,7 @@ View Internet Access traffic logs in the Microsoft Entra admin center. Navigate 
 - No captive portal support.
 - No TLS termination.
 - No URL filtering or URL categorization.
+
 
 
 ## Next steps
