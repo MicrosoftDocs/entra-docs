@@ -22,12 +22,13 @@ The web filtering feature is currently limited to user- and context-aware Fully 
 ## Prerequisites
 
 - Administrators who interact with **Global Secure Access preview** features must have one or more of the following role assignments depending on the tasks they're performing.
-  - The **Global Secure Access Administrator** role to manage the Global Secure Access preview features
+  - The **Global Secure Access Administrator** role to manage the Global Secure Access preview features.
   - [Conditional Access Administrator](/azure/active-directory/roles/permissions-reference#conditional-access-administrator) or [Security Administrator](/azure/active-directory/roles/permissions-reference#security-administrator) to create and interact with Conditional Access policies and named locations.
-- Ensure your tenant is onboarded to Microsoft Entra Internet Access (preview).
-- Install the Global Secure Access client on end user devices.
-- Check/Disable secure DNS. To tunnel network traffic based on rules of Fully Qualified Domain Name (FQDN) in the forwarding profile, DNS over HTTPS needs to be disabled. To learn more about disabling DNS over HTTPS in Windows, see [Configure the DNS client to support DoH](/windows-server/networking/dns/doh-client-support#configure-the-dns-client-to-support-doh).
+- Complete the [Get started with Global Secure Access](how-to-get-started-with-global-secure-access.md) guide.
+- [Install the Global Secure Access client](how-to-install-windows-client.md) on end user devices.
+- You must disable DNS over HTTPS (Secure DNS) to tunnel network traffic based on the rules of the fully qualified domain names (FQDNs) in the traffic forwarding profile. For more information, see [Configure the DNS client to support DoH](/windows-server/networking/dns/doh-client-support#configure-the-dns-client-to-support-doh).
 - Disable built-in DNS client on Chrome and Edge.
+- UDP traffic isn't supported in the current preview. If you plan to tunnel Exchange Online traffic, disable the QUIC protocol (443 UDP). For more information, see [Block QUIC when tunneling Exchange Online traffic](how-to-install-windows-client.md#block-quic-when-tunneling-exchange-online-traffic).
 - Review Web content filtering concepts, see [Web content filtering](concept-internet-access.md).
 
 ## High level steps
@@ -105,14 +106,13 @@ To verify that you've configured the end user policy correctly:
 > [!NOTE]
 > The current block experience includes a "Connection Reset" browser error for HTTPS traffic and a "DeniedTraffic" browser error for HTTP traffic.
 
-## Limitations
+## Known limitations
 
-- There's currently no end-user notification on blocks, either from the client or the browser.
-- Admins aren't able to configure their own Internet traffic acquisition profiles for the client.
+- Currently, end-user notification on blocks, either from the client or the browser, are not provided.
+- Admins can't configure their own Internet traffic acquisition profiles for the client.
 - Currently assuming standard ports for HTTP/S traffic (ports 80 and 443).
-- There's no support for UDP acquisition/handling.
+- Remote network connectivity for branch offices are currently not supported.
 - No support for L3/4 filtering.
-- "Remote Network" or "Branch" connectivity scenarios aren't supported.
 - No captive portal support.
 - No TLS termination.
 - No URL path based filtering or URL categorization.
