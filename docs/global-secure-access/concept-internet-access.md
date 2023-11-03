@@ -25,7 +25,7 @@ Web content filtering is implemented using filtering policies, which are grouped
 
 ## Security profiles
 
-Security profiles are objects you use to group together filtering policies and link them to Conditional Access to make them user aware. For instance, to block all **News** websites except for `msn.com` for user `angie@contoso.com` you create two web filtering policies and add them to a security profile. You then take the security profile and link it to a Conditional Access policy assigned to `angie@contoso.com`.
+Security profiles are objects you use to group filtering policies and deliver them through user aware Conditional Access policies. For instance, to block all **News** websites except for `msn.com` for user `angie@contoso.com` you create two web filtering policies and add them to a security profile. You then take the security profile and link it to a Conditional Access policy assigned to `angie@contoso.com`.
 
 ```
 "Security Profile for Angie"       <---- the security profile
