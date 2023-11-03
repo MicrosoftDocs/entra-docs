@@ -500,10 +500,12 @@
               href: optional-claims.md
             - name: Configure role claim
               href: enterprise-app-role-management.md
-            - name: Customize JWT claims
+            - name: Customize JWT claims using portal
               href: jwt-claims-customization.md
-            - name: Customize SAML claims
+            - name: Customize SAML claims using portal
               href: saml-claims-customization.md
+            - name: Customize claims using PowerShell
+              href: claims-customization-powershell.md
             - name: Set an access token lifetime policy
               href: configure-token-lifetimes.md    
             - name: Configure app multi-instancing
