@@ -34,7 +34,7 @@ Mac users can join their new device to Microsoft Entra ID during the first-run o
 
 ## Registration with Automated Device Enrollment
 
-There are two authentication methods for PSSO registration, **Secure Enclave** and **Password**. It's recommended for your system administrator to have the Mac enrolled using secure enclave. This new password-less features is supported only by PSSO. Choose the method that your company administrator has configured for you.
+There are two authentication methods for PSSO registration, **Secure Enclave** and **Password**. It's recommended for your system administrator to have the Mac enrolled using secure enclave. This new password-less feature is supported only by PSSO. Choose the method that your company administrator has configured for you.
 
 ### [Secure Enclave](#tab/secure-enclave)
 
@@ -47,7 +47,7 @@ There are two authentication methods for PSSO registration, **Secure Enclave** a
     app-sso platform -s
     ```
 
-1. Check the bottom of the output, and confirm that information similar to the following snippet is shown, which signifies that SSO tokens have been retrieved.
+1. Check the bottom of the output, and confirm that information similar to the following snippet is shown, which signifies that SSO tokens are retrieved.
 
     ```console
     SSO Tokens:
@@ -57,7 +57,7 @@ There are two authentication methods for PSSO registration, **Secure Enclave** a
     YYYY-MM-DD T HH:MM:SS (Not Expired)
     ```
 
-1. Now that the Mac has been correctly set up, you can now use PSSO to access Microsoft app resources.
+1. Now that the Mac is correctly set up, you can now use PSSO to access Microsoft app resources.
 
 ### [Password](#tab/password)
 
@@ -67,13 +67,13 @@ There are two authentication methods for PSSO registration, **Secure Enclave** a
 1. When a **Single Sign-On** window appears, enter your local account password and select **OK**. <!--TODO: Insert recording vid 1m09sec screenshot-->
 1. If your local password differs to your Microsoft Entra ID password, an **Authentication Required** popup appears on the top right of the screen. Hover over the banner and select **Sign-in**.
 1. When a **Microsoft Entra** window appears, enter your Microsoft Entra ID password and select **Sign In**. <!--TODO: Insert recording vid 1m21sec screenshot-->
-1. After unlocking the Mac, you can now use PSSO to access Microsoft app resources. From this point on, your local password won't work because you have enabled PSSO for your device.
+1. After unlocking the Mac, you can now use PSSO to access Microsoft app resources. From this point on, your old password doesn't work because PSSO is enabled for your device.
 
 ---
 
 ## Web Enrollment
 
-The steps outlined in [Registration with Automated Device Enrollment](#registration-with-automated-device-enrollment) is the recommended use, however you can also use the Web Enrollment method.
+Although [Registration with Automated Device Enrollment](#registration-with-automated-device-enrollment) is the recommended use, you can also use the Web Enrollment method to register your device with PSSO.
 
 1. Once the Home screen appears, open Outlook and an **Add Account** window appears. Enter your email address and select **Continue**. <!--TODO: Insert slide 24 screenshot-->
 1. Follow the steps in the MFA flow to complete sign-in.
@@ -84,12 +84,12 @@ The steps outlined in [Registration with Automated Device Enrollment](#registrat
 1. Navigate to the **Registration Required** popup at the top right of the screen. Hover over the popup and select **Register**.
 1. You're prompted to sign in to Company Portal. Enter your Microsoft Entra ID credentials and select **Next**. <!--TODO: Insert slide 35 screenshot-->
 1. Follow the steps in the MFA flow to finish registration. The Company Portal app registers your device.
-1. Once your device has finished registering, a Platform SSO window appears. Enter your Microsoft Entra ID password and select **Sign in**. <!--TODO: Insert slide 39 screenshot-->
+1. Once your device finishes registering, a Platform SSO window appears. Enter your Microsoft Entra ID password and select **Sign in**. <!--TODO: Insert slide 39 screenshot-->
 1. Open the **Outlook** app and you're prompted to add an email account. Select **Add "Your email"**.
 1. The **Company Portal** app checks that your device is registered. Once the window closes, you have access to your emails.
 
 > [!NOTE]
-> If you ignore or dismiss the **Registration Required** popup, when attempting to log into Outlook or another app, you will be prompted to register your device through an action item to register your device. A new popup will appear that says **Registration Required**. This popup will appear every few minutes until you register your device.
+> If you ignore or dismiss the **Registration Required** popup, when attempting to log into Outlook or another app, you're prompted to register your device through an action item to register your device. A new popup appears that says **Registration Required**. This popup reappears every few minutes until you register your device.
 
 ## Enable macOS Platform Credentials for use as a passkey (secure enclave only)
 

@@ -1,6 +1,6 @@
 ---
-title: Use Company Portal to setup a Mac device with macOS Platform Single Sign-On
-description: How users can setup a new macOS with macOS Platform Single Sign-On Extension, using Company Portal.
+title: Use Company Portal to set up a Mac device with macOS Platform Single Sign-On
+description: How users can set up a new macOS with macOS Platform Single Sign-On Extension, using Company Portal.
 
 services: active-directory
 ms.service: active-directory
@@ -14,7 +14,7 @@ manager: CelesteDG
 ms.reviewer: brianmel
 ---
 
-# Use Company Portal to setup a Mac device with macOS Platform Single Sign-On (preview)
+# Use Company Portal to set up a Mac device with macOS Platform Single Sign-On (preview)
 
 You can set up a new Mac device with the macOS Platform Single Sign-On (PSSO) using Company Portal. There are two workflows that are supported with Company Portal, Intune MDM enrollment with Microsoft Entra Join and Just In Time Rendering.
 
@@ -22,7 +22,7 @@ You can set up a new Mac device with the macOS Platform Single Sign-On (PSSO) us
 
 - A minimum requirement of macOS 13 Ventura
 - Microsoft Intune [Company Portal app](/mem/intune/apps/apps-company-portal-macos) <!--TODO: version-->
-- An admin has configured the SSO extension MDM payload with PSSO settings in Intune
+- A configured the SSO extension MDM payload with PSSO settings in Intune by an administrator
 <!--TODO: Link to other article-->
 - [Microsoft Authenticator](https://support.microsoft.com/account-billing/how-to-use-the-microsoft-authenticator-app-9783c865-0308-42fb-a519-8cf666fe0acc) (recommended), the user must be registered for some form of Microsoft Entra ID multifactor authentication (MFA) to complete device registration.
 
@@ -31,7 +31,7 @@ You can set up a new Mac device with the macOS Platform Single Sign-On (PSSO) us
 1. Open the **Company Portal** app and select **Sign in**.
 1. Enter your Microsoft Entra ID credentials and select **Next**.
 1. You're prompted to **Set up Contoso Labs access**. Select **Begin**, then on the next screen, select **Continue**. <!--TODO: Insert slide 84 screenshot-->
-1. You're presented with steps to install the management profile. This has been set up by an administrator using Microsoft Intune. Select **Download profile**. <!--TODO: Insert slide 87 screenshot-->
+1. You're presented with steps to install the management profile, which has already been set up by an administrator using Microsoft Intune. Select **Download profile**. <!--TODO: Insert slide 87 screenshot-->
 1. Hover over the popup that appears in the top right corner of the screen and select **Install**, which opens **Profiles** in the Mac's **Settings**. <!--TODO: Insert slide 89 screenshot-->
 1. Select **Management Profile**, and in the new window, select **Install**. <!--TODO: Insert slide 90 screenshot-->
 1. Enter your local device password in the **Profiles** window that appears and select **Enroll**. Upon completion, you see that the Mac is supervised and managed by **Contoso Labs**.
@@ -42,16 +42,16 @@ You can set up a new Mac device with the macOS Platform Single Sign-On (PSSO) us
 ## Just In Time Rendering (JITR) workflow when a user is enrolled using Company Portal
 
 1. Open the **Company Portal** app and navigate to the **Devices** tab.
-1. The Company Portal app window will raise an action item to register your Mac. This triggers a notification in the top right corner of the screen to register your device using your identity provider. <!--TODO: Insert slide 71 screenshot-->
+1. The Company Portal app window raises an action item to register your Mac. This triggers a notification in the top right corner of the screen to register your device using your identity provider. <!--TODO: Insert slide 71 screenshot-->
 1. Enter your Microsoft Entra ID credentials and wait for your device to register. The window closes automatically.
-1. Return to the **Company Portal** app which will display a confirmation message upon successful device registration. The application can now be closed. <!--TODO: Insert slide 77 screenshot-->
+1. Return to the **Company Portal** app, which displays a confirmation message upon successful device registration. The application can now be closed. <!--TODO: Insert slide 77 screenshot-->
 
 > [!NOTE]
-> If you miss the notification, it will reappear after a short time.
+> The notification reappears after a short time if missed.
 
 ## Enabling PSSO from an existing Microsoft Enterprise SSO plug-in
 
-If your company has the Microsoft Enterprise SSO plugin already installed, there are a few ways that you can successfully migrate to the new feature. You can initiate the registration yourself, or your administrator will start the process, and you'll be prompted to complete the registration.
+If your company has the Microsoft Enterprise SSO plugin already installed, there are a few ways that you can successfully migrate to the new feature. You can initiate the registration yourself, or your administrator can start the process. 
 
 ### Initiate PSSO registration
 
@@ -61,7 +61,7 @@ If your company has the Microsoft Enterprise SSO plugin already installed, there
 
 ### Device falls out of compliance
 
-When a user is targeted for PSSO and the management policy is downloaded, the device falls out of compliance. To fix this, navigate to Company Portal, and follow the steps for compliance mediation. This will trigger the **Authentication Required** notification to start the PSSO setup. Enter your email address and go through the MFA flow to allow your device to be registered. When prompted, enter your Microsoft Entra password to sign in.
+When a user is targeted for PSSO and the management policy is downloaded, the device falls out of compliance. To fix this, navigate to Company Portal, and follow the steps for compliance mediation. This triggers the **Authentication Required** notification to start the PSSO setup. Enter your email address and go through the MFA flow to allow your device to be registered. When prompted, enter your Microsoft Entra password to sign in.
 
 ### User blocked by management policy
 
