@@ -86,21 +86,21 @@ To enable the certificate-based authentication and configure user bindings in th
 
 Only one CRL Distribution Point (CDP) for a trusted CA is supported. The CDP can only be HTTP URLs. Online Certificate Status Protocol (OCSP) or Lightweight Directory Access Protocol (LDAP) URLs aren't supported.
 
-[!INCLUDE [Configure certification authorities](../../../includes/active-directory-authentication-configure-certificate-authorities.md)]
+[!INCLUDE [Configure certification authorities](../../includes/entra-authentication-configure-certificate-authorities.md)]
 
 ### Connect
 
-[!INCLUDE [Connect-AzureAD](../../../includes/active-directory-authentication-connect-azuread.md)]
+[!INCLUDE [Connect-AzureAD](../../includes/entra-authentication-connect.md)]
 
 ### Retrieve
 
-[!INCLUDE [Get-AzureAD](../../../includes/active-directory-authentication-get-trusted-azuread.md)]
+[!INCLUDE [Get-AzureAD](../../includes/entra-authentication-get-trusted.md)]
 ### Add
 
 >[!NOTE]
 >Upload of new CAs will fail when any of the existing CAs are expired. Tenant Admin should delete the expired CAs and then upload the new CA.
 
-[!INCLUDE [New-AzureAD](../../../includes/active-directory-authentication-new-trusted-azuread.md)]
+[!INCLUDE [New-AzureAD](../../includes/entra-authentication-new-trusted.md)]
 
 **AuthorityType**
 - Use 0 to indicate a Root certification authority
