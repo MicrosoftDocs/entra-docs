@@ -57,7 +57,7 @@ Request Service API will indicate a revoked credential in the `presentation_veri
 
 ## How to set up a verifiable credential with the ability to revoke
 
-Microsoft Entra Verified ID do not store Verifiable credential data. Therefore, the issuer needs to index one claim in order to make the credential searchable. There can be only one claim that is indexed and if there is none, you can't revoke credentials. The selected claim to index is then salted and hashed and isn't stored as its original value.
+Microsoft Entra Verified ID doesn't store Verifiable credential data. Therefore, the issuer needs to index one claim in order to make the credential searchable. There can be only one claim that is indexed and if there is none, you can't revoke credentials. The selected claim to index is then salted and hashed and isn't stored as its original value.
 
 >[!NOTE]
 >Hashing is a one way cryptographic operation that turns an input, called a ```preimage```, and produces an output called a hash that has a fixed length. It is not computationally feasible at this time to reverse a hash operation.

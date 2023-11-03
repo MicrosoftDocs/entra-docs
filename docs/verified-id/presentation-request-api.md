@@ -165,7 +165,7 @@ The `Configuration.Validation` provides information about how the presented cred
 
 ### Constraints type
 
-The `constraints` type contains a collection of claims constraints that must be met when a wallet selects the candidate credentials. This enables requesting a credential with specific claim value. Constraints specified will use the AND logic, ie if you specify three constraints, all of them have to be met. For each constraint in the collection, you must select one operand of values, contains or startsWith. Values can not be regular expressions. All comparison are done case-insensitive.
+The `constraints` type contains a collection of claims constraints that must be met when a wallet selects the candidate credentials. This enables requesting a credential with specific claim value. Constraints specified will use the AND logic, ie if you specify three constraints, all of them have to be met. For each constraint in the collection, you must select one operand of values, contains or startsWith. Values cannot be regular expressions. All comparisons are case-insensitive.
 
 |Property |Type |Description |
 |---------|---------|---------|
