@@ -28,13 +28,16 @@ The web filtering feature is currently limited to user- and context-aware Fully 
 - Review Web content filtering concepts, see [Web content filtering](concept-internet-access.md).
 
 ## Enable internet traffic forwarding
-Enable the Microsoft Entra Internet Access forwarding profile to forward user traffic. 
-1. In the Microsoft Entra admin center, navigate to **Global Secure Access** > **Connect** > **Traffic forwarding**.
-1. Enable the **Internet access  profile**. Enabling the setting begins forwarding internet traffic from all client devices.
 
+To enable the Microsoft Entra Internet Access forwarding profile to forward user traffic:
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
+1. Browse to **Global Secure Access** > **Connect** > **Traffic forwarding**.
+1. Enable the **Internet access profile**. Enabling the setting begins forwarding internet traffic from all client devices.
 
 ## Create a Web content filtering policy
-1. In the Microsoft Entra admin center, navigate to **Global Secure Access** > **Web content filtering policy**.
+
+1. Browse to **Global Secure Access** > **Secure** **Web content filtering policy**.
 1. Select **Create policy**.
 1. Enter a name and description for the policy and select **Next**.
 1. Select **Add rule**.
