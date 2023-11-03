@@ -70,7 +70,8 @@ Create a Conditional Access policy and set session controls for end users or gro
 1. In the **Enable policy** section, **Report-only** is the default.
 1. Select **Create**.
 
-## End user policy enforcement
+## Verify end user policy enforcement
+
 Use a Windows device with the Global Secure Access client installed. Sign in as a user that is assigned the Internet traffic acquisition profile. Test that navigating to websites is allowed or restricted as expected.
 
 To check if the client is acquiring Internet traffic, right-click on the Global Secure Access client icon in the task manager tray and open **Connection Diagnostics** > **Channels**. Ensure that the Internet channel is Present and Connected (Green in color). Also, check if the hostname acquisition and flows for the users Internet traffic are being acquired while browsing.
