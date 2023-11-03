@@ -53,7 +53,7 @@ Security profiles are a grouping of filtering policies. You can assign, or link,
 1. Select **Create profile**.
 1. Enter a name and description for the policy and select **Next**.
 1. Select **Link a policy** and then select **Existing policy**.
-1. Select the policy you already created and select **Add**.
+1. Select the Web content filtering policy you already created and select **Add**.
 1. Select **Next** to review the security profile and associated policy.
 1. Select **Create a profile**.
 1. Select **Refresh** to refresh the profiles page and view the new profile.
