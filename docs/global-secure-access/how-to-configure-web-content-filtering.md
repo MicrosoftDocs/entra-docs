@@ -1,6 +1,6 @@
 ---
-title: How to configure Global Secure Access (preview) web content filtering
-description: Learn how to configure web content filtering in Microsoft Entra Internet Access (preview).
+title: How to configure Global Secure Access (preview) Web content filtering
+description: Learn how to configure Web content filtering in Microsoft Entra Internet Access (preview).
 author: kenwith    
 ms.author: kenwith
 manager: amycolannino
@@ -11,11 +11,11 @@ ms.custom:
 ms.reviewer: frankgomulka
 ---
 
-# How to configure Global Secure Access (preview) web content filtering
+# How to configure Global Secure Access (preview) Web content filtering
 
 Web content filtering empowers you to implement granular Internet access controls for your organization based on website categorization.
 
-Microsoft Entra Internet Access's first Secure Web Gateway (SWG) features include web content filtering based on domain names. Microsoft integrates granular filtering policies with Microsoft Entra ID and Microsoft Entra Conditional Access, which results in filtering policies that are user-aware, context-aware, and easy to manage. 
+Microsoft Entra Internet Access's first Secure Web Gateway (SWG) features include Web content filtering based on domain names. Microsoft integrates granular filtering policies with Microsoft Entra ID and Microsoft Entra Conditional Access, which results in filtering policies that are user-aware, context-aware, and easy to manage. 
 
 The web filtering feature is currently limited to user- and context-aware Fully Qualified Domain Name (FQDN)-based web category filtering and FQDN filtering.
 
@@ -25,7 +25,7 @@ The web filtering feature is currently limited to user- and context-aware Fully 
 - Install the Global Secure Access client on end user devices.
 - Check/Disable secure DNS. To tunnel network traffic based on rules of Fully Qualified Domain Name (FQDN) in the forwarding profile, DNS over HTTPS needs to be disabled. To learn more about disabling DNS over HTTPS in Windows, see [Configure the DNS client to support DoH](/windows-server/networking/dns/doh-client-support#configure-the-dns-client-to-support-doh).
 - Disable built-in DNS client on Chrome and Edge.
-- Review web content filtering concepts, see [Web content filtering](concept-internet-access.md).
+- Review Web content filtering concepts, see [Web content filtering](concept-internet-access.md).
 
 ## Enable internet traffic forwarding
 Enable the Microsoft Entra Internet Access forwarding profile to forward user traffic. 
@@ -33,7 +33,7 @@ Enable the Microsoft Entra Internet Access forwarding profile to forward user tr
 1. Enable the **Internet access  profile**. Enabling the setting begins forwarding internet traffic from all client devices.
 
 
-## Create a web content filtering policy
+## Create a Web content filtering policy
 1. In the Microsoft Entra admin center, navigate to **Global Secure Access** > **Web content filtering policy**.
 1. Select **Create policy**.
 1. Enter a name and description for the policy and select **Next**.
