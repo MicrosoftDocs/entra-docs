@@ -76,7 +76,7 @@ Instructions for setting up place of work verification on LinkedIn available [he
 - Admin API now supports [application access tokens](admin-api.md#authentication) and in addition to user bearer tokens.
 - Introducing the Microsoft Entra Verified ID [Services partner gallery](services-partners.md) listing trusted partners that can help accelerate your Microsoft Entra Verified ID implementation.
 - Improvements to our Administrator onboarding experience in the [Admin portal](verifiable-credentials-configure-tenant.md#register-decentralized-id-and-verify-domain-ownership) based on customer feedback.
-- Updates to our samples in [Github](https://github.com/Azure-Samples/active-directory-verifiable-credentials) showcasing how to dynamically display VC claims.
+- Updates to our samples in [GitHub](https://github.com/Azure-Samples/active-directory-verifiable-credentials) showcasing how to dynamically display VC claims.
 
 ## February 2023
 
