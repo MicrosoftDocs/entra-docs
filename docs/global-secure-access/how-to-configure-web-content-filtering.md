@@ -21,6 +21,9 @@ The web filtering feature is currently limited to user- and context-aware Fully 
 
 ## Prerequisites
 
+- Administrators who interact with **Global Secure Access preview** features must have one or more of the following role assignments depending on the tasks they're performing.
+  - The **Global Secure Access Administrator** role to manage the Global Secure Access preview features
+  - [Conditional Access Administrator](/azure/active-directory/roles/permissions-reference#conditional-access-administrator) or [Security Administrator](/azure/active-directory/roles/permissions-reference#security-administrator) to create and interact with Conditional Access policies and named locations.
 - Ensure your tenant is onboarded to Microsoft Entra Internet Access (preview).
 - Install the Global Secure Access client on end user devices.
 - Check/Disable secure DNS. To tunnel network traffic based on rules of Fully Qualified Domain Name (FQDN) in the forwarding profile, DNS over HTTPS needs to be disabled. To learn more about disabling DNS over HTTPS in Windows, see [Configure the DNS client to support DoH](/windows-server/networking/dns/doh-client-support#configure-the-dns-client-to-support-doh).
@@ -63,32 +66,38 @@ Security profiles are a grouping of filtering policies. You can assign, or link,
 1. Select **Refresh** to refresh the profiles page and view the new profile.
 
 ## Create and link Conditional Access policy
-Create a Conditional Access policy and set session controls for end users or groups and link it to the filtering profile. Conditional Access is the delivery mechanism for user and context awareness for Internet Access policies. To learn more about sessions controls, see [Conditional Access: Session](/azure/active-directory/conditional-access/concept-conditional-access-session). 
+
+Create a Conditional Access policy and set session controls for end users or groups and link it to the filtering profile. Conditional Access is the delivery mechanism for user and context awareness for Internet Access policies. To learn more about sessions controls, see [Conditional Access: Session](/azure/active-directory/conditional-access/concept-conditional-access-session).
+
 1. Browse to **Identity** > **Protection** > **Conditional Access**.
 1. Select **Create new policy**.
 1. Enter a name and assign a user or group.
-1. Select **Target resources** and then select **Global Secure Access (Preview)** from the drop-down menu to set what the policy applies to.
+1. Select **Target resources** and **Global Secure Access (Preview)** from the drop-down menu to set what the policy applies to.
 1. Select **Internet traffic** from the drop-down menu to set the traffic profile this policy applies to.
-1. Select **Session**, select **Use Global Secure Access security profile**, and then choose a web filtering profile.
+1. Select **Session** > **Use Global Secure Access security profile** and choose a web filtering profile.
 1. Select **Select**.
-1. In the **Enable policy** section, **Report-only** is the default.
+1. In the **Enable policy** section, ensure **Report-only** is selected.
 1. Select **Create**.
 
 ## Verify end user policy enforcement
+
+To verify that you've configured the end user policy correctly:
 
 1. Sign in to a Windows device with the Global Secure Access client installed as a user that is assigned the Internet traffic acquisition profile. Test that navigating to websites is allowed or restricted as expected.
 
 1. Right-click on the Global Secure Access client icon in the task manager tray and open **Connection Diagnostics** > **Channels**. Ensure that the Internet channel is Present and Connected (Green in color). Also, check if the hostname acquisition and flows for the users Internet traffic are being acquired while browsing.
 
 1. Navigate to an approved site and check if it loads properly.
+
 1. Navigate to a restricted site and confirm the site is blocked.
 
-View Internet Access traffic logs in the Microsoft Entra admin center. Navigate to **Global Secure Access** > **Monitor** > **traffic logs**. It takes approximately 15 minutes for new entries to appear.
+1. Browse to **Global Secure Access** > **Monitor** > **Traffic logs** to confirm traffic if blocked or allowed appropriately. It takes approximately 15 minutes for new entries to appear.
 
 > [!NOTE]
 > The current block experience includes a "Connection Reset" browser error for HTTPS traffic and a "DeniedTraffic" browser error for HTTP traffic.
 
 ## Limitations
+
 - There's currently no end-user notification on blocks, either from the client or the browser.
 - Admins aren't able to configure their own Internet traffic acquisition profiles for the client.
 - Currently assuming standard ports for HTTP/S traffic (ports 80 and 443).
@@ -99,7 +108,6 @@ View Internet Access traffic logs in the Microsoft Entra admin center. Navigate 
 - No TLS termination.
 - No URL path based filtering or URL categorization.
 
-
-
 ## Next steps
+
 - [Learn about the traffic dashboard](concept-traffic-dashboard.md)
