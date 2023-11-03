@@ -45,6 +45,7 @@ To enable the Microsoft Entra Internet Access forwarding profile to forward user
 1. Select **Next** to review the policy and then select **Create policy**.
 
 ## Create a security profile
+
 Create a security profile to group filtering policies. Assign, or link, security profiles with a CA policy to make them user or context aware.
 
 Security profiles are a grouping of filtering policies. You can assign, or link, security profiles with Microsoft Entra Conditional Access policies. One security profile can contain multiple filtering policies. And one security profile can be associated with multiple Conditional Access policies.
@@ -52,7 +53,7 @@ Security profiles are a grouping of filtering policies. You can assign, or link,
 > [!NOTE]
 > To learn more about Microsoft Entra Conditional Access security profiles, see [Building a Conditional Access policy](/azure/active-directory/conditional-access/concept-conditional-access-policies).
 
-1. In the Microsoft Entra admin center, navigate to **Global Secure Access** > **Security profiles**.
+1. Browse to **Global Secure Access** > **Secure** > **Security profiles**.
 1. Select **Create profile**.
 1. Enter a name and description for the policy and select **Next**.
 1. Select **Link a policy** and then select **Existing policy**.
@@ -63,7 +64,7 @@ Security profiles are a grouping of filtering policies. You can assign, or link,
 
 ## Create and link Conditional Access policy
 Create a Conditional Access policy and set session controls for end users or groups and link it to the filtering profile. Conditional Access is the delivery mechanism for user and context awareness for Internet Access policies. To learn more about sessions controls, see [Conditional Access: Session](/azure/active-directory/conditional-access/concept-conditional-access-session). 
-1. In the Microsoft Entra admin center, navigate to **Identity** > **Protection** > **Conditional Access**.
+1. Browse to **Identity** > **Protection** > **Conditional Access**.
 1. Select **Create new policy**.
 1. Enter a name and assign a user or group.
 1. Select **Target resources** and then select **Global Secure Access (Preview)** from the drop-down menu to set what the policy applies to.
@@ -75,11 +76,12 @@ Create a Conditional Access policy and set session controls for end users or gro
 
 ## Verify end user policy enforcement
 
-Use a Windows device with the Global Secure Access client installed. Sign in as a user that is assigned the Internet traffic acquisition profile. Test that navigating to websites is allowed or restricted as expected.
+1. Sign in to a Windows device with the Global Secure Access client installed as a user that is assigned the Internet traffic acquisition profile. Test that navigating to websites is allowed or restricted as expected.
 
-To check if the client is acquiring Internet traffic, right-click on the Global Secure Access client icon in the task manager tray and open **Connection Diagnostics** > **Channels**. Ensure that the Internet channel is Present and Connected (Green in color). Also, check if the hostname acquisition and flows for the users Internet traffic are being acquired while browsing.
+1. Right-click on the Global Secure Access client icon in the task manager tray and open **Connection Diagnostics** > **Channels**. Ensure that the Internet channel is Present and Connected (Green in color). Also, check if the hostname acquisition and flows for the users Internet traffic are being acquired while browsing.
 
-Navigate to an approved site and check if it loads properly. Next, navigate to a restricted site and confirm the site is blocked.
+1. Navigate to an approved site and check if it loads properly.
+1. Navigate to a restricted site and confirm the site is blocked.
 
 View Internet Access traffic logs in the Microsoft Entra admin center. Navigate to **Global Secure Access** > **Monitor** > **traffic logs**. It takes approximately 15 minutes for new entries to appear.
 
