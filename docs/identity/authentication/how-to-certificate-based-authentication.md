@@ -47,9 +47,9 @@ Make sure that the following prerequisites are in place:
 
 ## Steps to configure and test Microsoft Entra CBA
 
-Some configuration steps to be done before you enable Microsoft Entra CBA. First, an admin must configure the trusted CAs that issue user certificates. As seen in the following diagram, we use role-based access control to make sure only least-privileged administrators are needed to make changes. Only the [Global Administrator](../roles/permissions-reference.md#global-administrator) role can configure the CA.
+Some configuration steps to be done before you enable Microsoft Entra CBA. First, an admin must configure the trusted CAs that issue user certificates. As seen in the following diagram, we use role-based access control to make sure only least-privileged administrators are needed to make changes. Only the [Global Administrator](../role-based-access-control/permissions-reference.md#global-administrator) role can configure the CA.
 
-Optionally, you can also configure authentication bindings to map certificates to single-factor or multifactor authentication, and configure username bindings to map the certificate field to an attribute of the user object. [Authentication Policy Administrators](../roles/permissions-reference.md#authentication-policy-administrator) can configure user-related settings. Once all the configurations are complete, enable Microsoft Entra CBA on the tenant. 
+Optionally, you can also configure authentication bindings to map certificates to single-factor or multifactor authentication, and configure username bindings to map the certificate field to an attribute of the user object. [Authentication Policy Administrators](../role-based-access-control/permissions-reference.md#authentication-policy-administrator) can configure user-related settings. Once all the configurations are complete, enable Microsoft Entra CBA on the tenant. 
 
 :::image type="content" border="false" source="./media/how-to-certificate-based-authentication/steps.png" alt-text="Diagram of the steps required to enable Microsoft Entra certificate-based authentication.":::
 
@@ -62,7 +62,7 @@ You can configure CAs by using the Microsoft Entra admin center or PowerShell.
 
 To enable the certificate-based authentication and configure user bindings in the Microsoft Entra admin center, complete the following steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](../roles/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](../role-based-access-control/permissions-reference.md#global-administrator).
 1. Browse to **Protection** > **Authentication methods** > **Certifacte-based authentication**.
 
    :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/certificate-authorities.png" alt-text="Screenshot of certification authorities.":::
@@ -147,7 +147,7 @@ For more information, see [Understanding the certificate revocation process](./c
 
 To enable the certificate-based authentication in the Microsoft Entra admin center, complete the following steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](../roles/permissions-reference.md#authentication-policy-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Protection** > **Authentication methods** > **Certificate-based Authentication**.
 1. Under **Enable and Target**, click **Enable**.
 1. Click **All users**, or click **Add groups** to select specific groups.
@@ -168,7 +168,7 @@ Authentication binding rules map certificate attributes, such as Issuer, or Poli
 
 To enable CBA and configure user bindings in the Microsoft Entra admin center, complete the following steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](../roles/permissions-reference.md#authentication-policy-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Protection** > **Authentication methods** > **Policies**.
 1. Under **Manage**, select **Authentication methods** > **Certificate-based Authentication**.
 
@@ -211,11 +211,11 @@ To enable CBA and configure user bindings in the Microsoft Entra admin center, c
    1. For Authentication strength, select **Single-factor authentication** or **Multifactor authentication**.
    1. For Affinity binding, select **Low**.
  
-      :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/issuer-and-policy-oid.png" alt-text="Screenshot of Issuer and Policy OID.":::
+      :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/issuer-and-policy-oid.png" alt-text="Screenshot of how to select a low affinity binding.":::
 
    1. Click **Add**.
  
-      :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/add-issuer-and-policy-oid.png" alt-text="Screenshot of Issuer and Policy OID.":::
+      :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/add-issuer-and-policy-oid.png" alt-text="Screenshot of how to add a low affinity binding.":::
 
    1. Authenticate with a certificate that has policy OID of 3.4.5.6 and Issued by CN=CBATestRootProd. Authentication should pass and get a multifactor claim.
 
@@ -435,26 +435,26 @@ X509:<S>DC=com,DC=contoso,DC=corp,OU=UserAccounts,CN=FirstUserATCSession
 
 ### Test affinity binding
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](../roles/permissions-reference.md#authentication-policy-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Protection** > **Authentication methods** > **Policies**.
 1. Under **Manage**, select **Authentication methods** > **Certificate-based Authentication**.
 1. Click **Configure**.
-1. Set **Required Affinity Binding** at tenant level
+1. Set **Required Affinity Binding** at the tenant level.
 
    >[!Important]
    > Be careful with the tenant-wide affinity setting. You can lock out the entire tenant if you change the **Required Affinity Binding** for the tenant and you don't have proper values in the user object. Similarly, if you create a custom rule that applies to all users and requires high affinity binding, users in the tenant can get locked out.
 
-   :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/affinity-binding.png" alt-text="Screenshot of affinity binding.":::
+   :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/affinity-binding.png" alt-text="Screenshot of how to set required affinity binding.":::
 
 1. To test, select **Required Affinity Binding** to be **Low**.
 1. Add a high affinity binding like SKI. Click **Add rule** under **Username binding**.
 1. Select **SKI** and click **Add**.
 
-   :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/add-ski.png" alt-text="Screenshot of affinity binding.":::
+   :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/add-ski.png" alt-text="Screenshot of how to add an affinity binding.":::
 
    When finished, the rule looks like this screenshot:
 
-   :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/add-ski-done.png" alt-text="Screenshot of affinity binding.":::
+   :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/add-ski-done.png" alt-text="Screenshot of a completed affinity binding.":::
 
 1. Update all user objects CertificateUserIds attribute to have the correct value of SKI from the user certificate. For more information, see [Supported patterns for CertificateUserIDs](/azure/active-directory/authentication/concept-certificate-based-authentication-certificateuserids#supported-patterns-for-certificate-user-ids).
 1. Create a custom rule for Authentication binding. 
@@ -464,7 +464,7 @@ X509:<S>DC=com,DC=contoso,DC=corp,OU=UserAccounts,CN=FirstUserATCSession
 
    When finished, the rule looks like this screenshot:
 
-   :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/add-custom-done.png" alt-text="Screenshot of affinity binding.":::
+   :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/add-custom-done.png" alt-text="Screenshot of a custom rule.":::
 
 1. Update the user CertificateUserIds with correct SKI value from the certificate with policy OID 9.8.7.5.
 1. Test with a certificate with policy OID 9.8.7.5 and the user should be authenticated with SKI binding and get MFA with only the certificate.
