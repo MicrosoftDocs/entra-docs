@@ -64,10 +64,7 @@ You can configure CAs by using the Microsoft Entra admin center or PowerShell.
 To enable the certificate-based authentication and configure user bindings in the Microsoft Entra admin center, complete the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
-1. Browse to **Protection** > **Show more** > **Identity Secure Score** (or **Risky activities**) > **Certifacte authorities**.
-
-   :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/certificate-authorities.png" alt-text="Screenshot of certification authorities.":::
-
+1. Browse to **Protection** > **Show more** > **Security Center** (or **Identity Secure Score**) > **Certifacte authorities**.
 1. To upload a CA, click **Upload**: 
    1. Select the CA file.
    1. Select **Yes** if the CA is a root certificate, otherwise select **No**.
