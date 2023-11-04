@@ -67,8 +67,8 @@ To enable the certificate-based authentication and configure user bindings in th
 1. To upload a CA, click **Upload**: 
    1. Select the CA file.
    1. Select **Yes** if the CA is a root certificate, otherwise select **No**.
-   1. Set the http internet-facing URL for the CA base CRL that contains all revoked certificates. If the URL isn't set, authentication with revoked certificates won't fail.
-   1. Set **Delta CRL URL** - the http internet-facing URL for the CRL that contains all revoked certificates since the last base CRL was published.
+   1. For **Certificate Revocation List URL**, set the internet-facing URL for the CA base CRL that contains all revoked certificates. If the URL isn't set, authentication with revoked certificates won't fail.
+   1. For **Delta Certificate Revocation List URL**, set the internet-facing URL for the CRL that contains all revoked certificates since the last base CRL was published.
    1. Click **Add**.
 
       :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/upload-certificate-authority.png" alt-text="Screenshot of how to upload certification authority file.":::
@@ -77,7 +77,7 @@ To enable the certificate-based authentication and configure user bindings in th
 1. Click **Columns** to add or delete columns.
 
 >[!NOTE]
->Upload of new CAs will fail when any of the existing CAs are expired. Tenant Admin should delete the expired CAs and then upload the new CA.
+>Upload of a new CA fails if any existing CA expired. A Global Administrator should delete any expired CA, and retry to upload the new CA.
 
 ### Configure certification authorities(CA) using PowerShell
 
