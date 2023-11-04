@@ -137,19 +137,15 @@ Content-type: application/json
     "name": "ExampleAuthorityName",
     "status": "Enabled",
     "didModel": {
-        "did": "did:ion:EiAVvtjqr_Ji8pXGNtherrMW2FPl5Ays9mII2vP_QTgUWA:eyJkZWx...<SNIP>",
+        "did": "did:web:verifiedid.contoso.com",
         "signingKeys": [
-            "https://vccontosokv.vault.azure.net/keys/issuerSigningKeyIon-ffea7eb3-0000-1111-2222-000000000000/5257c49db8164e198b4c5997e8a31ad4"
+            "https://vccontosokv.vault.azure.net/keys/vcSigningKey-ffea7eb3-0000-1111-2222-000000000000/5257c49db8164e198b4c5997e8a31ad4"
         ],
-        "recoveryKeys": [
-            "https://vccontosokv.vault.azure.net/keys/issuerRecoveryKeyIon-ffea7eb3-0000-1111-2222-000000000000/5cfb5458af524da88897522690e01a7e"
-        ],
-        "updateKeys": [
-            "https://vccontosokv.vault.azure.net/keys/issuerUpdateKeyIon-ffea7eb3-0000-1111-2222-000000000000/24494dbbbace4a079422dde943e1b6f0"
-        ],
+        "recoveryKeys": [],
+        "updateKeys": [],
         "encryptionKeys": [],
         "linkedDomainUrls": [
-            "https://www.contoso.com/"
+            "https://verifiedid.contoso.com/"
         ],
         "didDocumentStatus": "published"
     },
@@ -231,22 +227,18 @@ Content-type: application/json
     [
         {
             "id": "ffea7eb3-0000-1111-2222-000000000000",
-            "name": "ContractName",
+            "name": "AuthorityName",
             "status": "Enabled",
             "didModel": {
-                "did": "did:ion:EiAVvtjqr_Ji8pXGNtherrMW2FPl5Ays9mII2vP_QTgUWA:eyJkZWx<SNIP>...",
+                "did": "did:web:verifiedid.contoso.com",
                 "signingKeys": [
-                    "https://vccontosokv.vault.azure.net/keys/issuerSigningKeyIon-ffea7eb3-0000-1111-2222-000000000000/5257c49db8164e198b4c5997e8a31ad4"
+                    "https://vccontosokv.vault.azure.net/keys/vcSigningKey-ffea7eb3-0000-1111-2222-000000000000/5257c49db8164e198b4c5997e8a31ad4"
                 ],
-                "recoveryKeys": [
-                    "https://vccontosokv.vault.azure.net/keys/issuerRecoveryKeyIon-ffea7eb3-0000-1111-2222-000000000000/5cfb5458af524da88897522690e01a7e"
-                ],
-                "updateKeys": [
-                    "https://vccontosokv.vault.azure.net/keys/issuerUpdateKeyIon-ffea7eb3-0000-1111-2222-000000000000/24494dbbbace4a079422dde943e1b6f0"
-                ],
+                "recoveryKeys": [],
+                "updateKeys": [],
                 "encryptionKeys": [],
                 "linkedDomainUrls": [
-                    "https://www.contoso.com/"
+                    "https://verifiedid.contoso.com/"
                 ],
                 "didDocumentStatus": "published"
             },
@@ -259,23 +251,19 @@ Content-type: application/json
         },
         {
             "id": "cc55ba22-0000-1111-2222-000000000000",
-            "name": "APItest6",
+            "name": "AuthorityName2",
             "keyVaultUrl": "https://vccontosokv.vault.azure.net/",
             "status": "Enabled",
             "didModel": {
-                "did": "did:ion:EiD_mGdhdAXOS1BV6c7r-CCjetaoRKuAENEwsRM1_QEHMg:eyJkZWx0YSI<SNIP>....",
+                "did": "did:web:verifiedid2.contoso.com",
                 "signingKeys": [
-                    "https://vccontosokv.vault.azure.net/keys/issuerSigningKeyIon-cc55ba22-0000-1111-2222-000000000000/f8f149eaee194beb83dfca14714ef62a"
+                    "https://vccontosokv.vault.azure.net/keys/vcSigningKey-cc55ba22-0000-1111-2222-000000000000/f8f149eaee194beb83dfca14714ef62a"
                 ],
-                "recoveryKeys": [
-                    "https://vccontosokv.vault.azure.net/keys/issuerRecoveryKeyIon-cc55ba22-0000-1111-2222-000000000000/68f976cc44014eafb354a6fe305b7d4d"
-                ],
-                "updateKeys": [
-                    "https://vccontosokv.vault.azure.net/keys/issuerUpdateKeyIon-cc55ba22-0000-1111-2222-000000000000/b85328af0c1f460ea026fbdda9cd6652"
-                ],
+                "recoveryKeys": [],
+                "updateKeys": [],
                 "encryptionKeys": [],
                 "linkedDomainUrls": [
-                    "https://www.contoso.com/"
+                    "https://verifiedid2.contoso.com/"
                 ],
                 "didDocumentStatus": "published"
             },
@@ -320,7 +308,7 @@ Example message:
 ```
 {
   "name":"ExampleName",
-  "linkedDomainUrl":"https://www.contoso.com/",
+  "linkedDomainUrl":"https://verifiedid.contoso.com/",
   "didMethod": "web",
   "keyVaultMetadata":
   {
@@ -343,7 +331,7 @@ Example message for did:web:
     "name": "APItesta",
     "status": "Enabled",
     "didModel": {
-        "did": "did:web:www.contoso.com",
+        "did": "did:web:verifiedid.contoso.com",
         "signingKeys": [
             "https://vcwingtipskv.vault.azure.net/keys/vcSigningKey-bacf5333-d68c-01c5-152b-8c9039fbd88d/5255b9f2d9b94dc19a369ff0d36e3407"
         ],
@@ -351,7 +339,7 @@ Example message for did:web:
         "updateKeys": [],
         "encryptionKeys": [],
         "linkedDomainUrls": [
-            "https://www.contoso.com/"
+            "https://verifiedid.contoso.com/"
         ],
         "didDocumentStatus": "published"
     },
@@ -377,19 +365,15 @@ Content-type: application/json
     "name": "APItest6",
     "status": "Enabled",
     "didModel": {
-        "did": "did:ion:EiD_mGdhdAXOS1BV6c7r-CCjetaoRKuAENEwsRM1_QEHMg",
+        "did": "did:web:verifiedid.contoso.com",
         "signingKeys": [
-            "https://vccontosokv.vault.azure.net/keys/issuerSigningKeyIon-cc55ba22-0000-1111-2222-000000000000/f8f149eaee194beb83dfca14714ef62a"
+            "https://vccontosokv.vault.azure.net/keys/vcSigningKey-cc55ba22-0000-1111-2222-000000000000/f8f149eaee194beb83dfca14714ef62a"
         ],
-        "recoveryKeys": [
-            "https://vccontosokv.vault.azure.net/keys/issuerRecoveryKeyIon-cc55ba22-0000-1111-2222-000000000000/68f976cc44014eafb354a6fe305b7d4d"
-        ],
-        "updateKeys": [
-            "https://vccontosokv.vault.azure.net/keys/issuerUpdateKeyIon-cc55ba22-0000-1111-2222-000000000000/b85328af0c1f460ea026fbdda9cd6652"
-        ],
+        "recoveryKeys": [],
+        "updateKeys": [],
         "encryptionKeys": [],
         "linkedDomainUrls": [
-            "https://www.contoso.com/"
+            "https://verifiedid.contoso.com/"
         ],
         "didDocumentStatus": "submitted"
     },
@@ -541,11 +525,11 @@ HTTP/1.1 200 OK
 Content-type: application/json
 
 {
-    "id": "did:web:www.contoso.com",
+    "id": "did:web:verifiedid.contoso.com",
     "@context": [
         "https://www.w3.org/ns/did/v1",
         {
-            "@base": "did:web:www.contoso.com"
+            "@base": "did:web:verifiedid.contoso.com"
         }
     ],
     "service": [
@@ -554,7 +538,7 @@ Content-type: application/json
             "type": "LinkedDomains",
             "serviceEndpoint": {
                 "origins": [
-                    "https://www.contoso.com/"
+                    "https://verifiedid.contoso.com/"
                 ]
             }
         },
@@ -571,7 +555,7 @@ Content-type: application/json
     "verificationMethod": [
         {
             "id": "#a2518db3b6b44332b3b667928a51b0cavcSigningKey-f0a5b",
-            "controller": "did:web:www.contoso.com",
+            "controller": "did:web:verifiedid.contoso.com",
             "type": "EcdsaSecp256k1VerificationKey2019",
             "publicKeyJwk": {
                 "crv": "secp256k1",

@@ -221,6 +221,8 @@ items:
             href: datawiza-sso-oracle-peoplesoft.md
           - name: Oracle EBS
             href: datawiza-sso-mfa-oracle-ebs.md
+          - name: Oracle Hyperion EPM
+            href: datawiza-mfa-sso-oracle-hyperion-epm.md
           - name: Outlook Web Access
             href: datawiza-sso-mfa-to-owa.md
       - name: F5

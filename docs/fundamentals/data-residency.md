@@ -8,7 +8,7 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: fundamentals
 ms.topic: conceptual
-ms.date: 03/21/2023
+ms.date: 11/03/2023
 ms.author: jricketts
 ms.reviewer: jricketts
 ms.custom: "it-pro"
@@ -67,7 +67,6 @@ Use the following table to see Microsoft Entra cloud solution models based on in
 Learn more: 
 
 * [Customer data storage and processing for European customers in Microsoft Entra ID](./data-storage-eu.md)
-* Power BI: [Microsoft Entra ID – Where is your data located?](https://aka.ms/aaddatamap)
 * [What is the Microsoft Entra architecture?](https://aka.ms/aadarch)
 * [Find the Azure geography that meets your needs](https://azure.microsoft.com/overview/datacenters/how-to-choose/)
 * [Microsoft Trust Center](https://www.microsoft.com/trustcenter/cloudservices/nationalcloud)
@@ -106,7 +105,6 @@ Learn more: [Microsoft Entra product overview](https://www.microsoft.com/cloud-p
 
 For more information on data residency in Microsoft Cloud offerings, see the following articles:
 
-* [Microsoft Entra ID – Where is your data located?](https://aka.ms/aaddatamap)
 * [Data Residency in Azure | Microsoft Azure](https://azure.microsoft.com/explore/global-infrastructure/data-residency/#overview)
 * [Microsoft 365 data locations - Microsoft 365 Enterprise](/microsoft-365/enterprise/o365-data-locations?view=o365-worldwide&preserve-view=true)
 * [Microsoft Privacy - Where is Your Data Located?](https://www.microsoft.com/trust-center/privacy/data-location?rtc=1)
