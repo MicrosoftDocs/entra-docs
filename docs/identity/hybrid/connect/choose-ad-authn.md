@@ -4,7 +4,7 @@ description: This guide helps CEOs, CIOs, CISOs, Chief Identity Architects, Ente
 keywords:
 author: billmath
 ms.author: billmath
-ms.date: 03/11/2023
+ms.date: 11/06/2023
 manager: amycolannino
 ms.topic: article
 ms.service: active-directory
