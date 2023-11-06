@@ -5,7 +5,7 @@ author: barclayn
 manager: amycolannino
 ms.service: active-directory
 ms.topic: include
-ms.date: 10/17/2023
+ms.date: 11/06/2023
 ms.author: barclayn
 ms.custom: include file,licensing
 ---
@@ -40,3 +40,5 @@ The following table shows what features are available with each license.  Note t
 |LCW + Custom Extensions (Logic Apps)|||| :white_check_mark: |   
 |Identity governance dashboard - Public Preview|| :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |Insights and reporting - Inactive guest accounts (Preview)|||| :white_check_mark: | 
+
+Review [Microsoft Entra ID Governance licensing fundamentals](../id-governance/licensing-fundamentals.md) for a closer view of governance licensing scenarios.
