@@ -40,7 +40,7 @@ Global Secure Access Client for Android supports deployment of the app for the l
 
 ## Install the client
 
-With the client downloaded, you can deploy the app to your Android devices. You can deploy the app on Device Administrator enrolled devices and Android Enterprise enrolled devices.
+You can deploy the app using both the Device Administrator enrolled devices and Android Enterprise modes.
 
 ### Device Administrator enrolled devices
 
