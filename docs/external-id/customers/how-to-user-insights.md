@@ -15,59 +15,74 @@ ms.custom: it-pro
 
 #Customer intent: As a dev, devops, or it admin, I want to learn about data analytics into user activity and engagement for  registered applications.
 ---
-# "[verb] * [noun]"
+# Gain insights into your app users’ activity
 
-The Usage & Insights feature provides data analytics on user activity and engagement for registered applications in your tenant. You can view, query, and analyze user activity data in Microsoft Graph and the Microsoft Entra admin center to uncover valuable insights that help strategic decisions and drive business growth.
+The Application user activity (Preview) feature under Usage & insights provides data analytics on user activity and engagement for registered applications in your tenant. You can view, query, and analyze user activity data in the Microsoft Entra admin center to uncover valuable insights that help strategic decisions and drive business growth.
+
+## Supported scenarios
+
+You can use the user insights feature for the following scenarios:
+- **Tracking active users** - You want to determine the total number of active users in your tenant. This can help you assess the overall user engagement with your applications.
+- **Monitoring new users added** - You want to track and identify how many users have been added to your tenant in the last month. This data is valuable for monitoring the growth of your user base.
+- **Analyzing daily and monthly application sign-ins** - You want to gather data on the number of users who sign in to your applications on a daily and monthly basis. This can help you gauge user engagement over time and spot trends.
+- **Assessing MFA usage success and failure** - You want to compare the multifactor authentication (MFA) usage success and failure rates for your applications. This can provide insights into the security and user experience of your authentication processes.
 
 ## Prerequisites
 
-<!-- Required: Prerequisites - H2
+To access and view data from application user activity, you must have:
+- An Entra ID for [customers tenant](quickstart-tenant-setup.md).
+- A [registered application(s)](how-to-register-ciam-app.md) with some sign-in and sign-up data.
+- A [user](how-to-manage-admin-accounts.md#add-a-role-assignment) that's been assigned at least the [Reports Reader](/entra/identity/role-based-access-control/permissions-reference#reports-reader) role.
 
-"Prerequisites" must be the first H2 in the article.
+<!-- Link here later how to access the application user activity reports in two ways. -->
 
-List any items that are needed for the integration,
-such as permissions or software.
+## How to access the Application user activity dashboards
 
-Provide free trial account information if it's available.
+The Application user activity dashboards provide insights into how users interact with your apps. You can access them from the **Application user activity (Preview)** menu.
 
-If you need to sign in to a portal to do the quickstart, 
-provide instructions and a link.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](/entra/identity/role-based-access-control/permissions-reference#reports-reader).
+1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the customer tenant you created earlier from the **Directories + subscriptions** menu.
+1. Browse to **Identity** > **Monitoring & health** > **Usage & insights**
+1. Select **Application user activity (Preview)** to view the dashboards.
 
-If there aren't any prerequisites, in a new paragraph
-under the "Prerequisites" H2, enter "None" in plain text
-(not as a bulleted list item).
+    :::image type="content" source="media/how-to-user-insights/app-user-activity-dashboard.png" alt-text="Screenshot of the Application user activity dashboards under the Usage & insights menu.":::
 
--->
+## Browse the available dashboards
 
-## "[verb] * [noun]"
+There are three dashboards available with data centered around users, requests, and authentications. Each dashboard provides a summary of activities in applications with one or more sign-in attempts. The dashboards display activity data during the selected time range.
 
-[Introduce the procedure.]
+### Users dashboard
 
-1. Procedure step
-1. Procedure step
-1. Procedure step
+The **Users** dashboard gives you a summary of daily and monthly active users, and new users that have been added to your tenant. For this dataset, you'll be able to view the following trends:
 
-<!-- Required: Steps to complete the task - H2
+- Daily active and inactive users over a period of 30 days.
+- Monthly active users over a period of 12 months 
+- Monthly active users comparison by application.
+- New users added over a period of 12 months.
+- New users breakdown by operating system.
 
-In one or more H2 sections, organize procedures. A section
-contains a major grouping of steps that help the user complete
-a task.
+:::image type="content" source="media/how-to-user-insights/users-dashboard.png" alt-text="Screenshot of the Users dashboard.":::
 
-Begin each section with a brief explanation for context, and
-provide an ordered list of steps to complete the procedure.
+### Requests dashboard
 
-If it applies, provide sections that describe alternative tasks or
-procedures.
+The **Requests** dashboard gives you a summary of monthly requests for all your applications. For this dataset, you'll be able to view the following trends:
 
--->
+- Monthly requests over a period of 12 months.
+- Types of MFA usage with a summary of success vs failure count over a period of 12 months
 
-## Next step -or- Related content
+:::image type="content" source="media/how-to-user-insights/requests-dashboard.png" alt-text="Screenshot of the Requests dashboard.":::
 
-> [!div class="nextstepaction"]
-> [Next sequential article title](link.md)
+### Authentications dashboard
 
--or-
+The **Authentications** dashboard gives you a summary of daily and monthly authentications in your tenant. For this dataset, you'll be able to view the following trends
 
-* [Related article title](link.md)
-* [Related article title](link.md)
-* [Related article title](link.md)
+- Daily authentications over a period of 30 days.
+- Daily authentications breakdown by operating system.
+- Monthly authentications over a period of 12 months summarized by location.
+
+:::image type="content" source="media/how-to-user-insights/authentications-dashboard.png" alt-text="Screenshot of the Authentications dashboard.":::
+
+## Related content
+
+* [Manage admin accounts](how-to-manage-admin-accounts.md)
+* [Manage customer accounts](how-to-manage-customer-accounts.md)
