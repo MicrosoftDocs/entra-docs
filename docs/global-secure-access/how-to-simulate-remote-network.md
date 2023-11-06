@@ -39,9 +39,8 @@ In this document, we use the following default values. Feel free to configure th
 In order to complete the following steps, you must have these prerequisites in place.
 
 - An Azure subscription and permission to create resources in the [Azure portal](https://portal.azure.com).
-   - A basic understanding of [site-to-site VPN connections](/azure/vpn-gateway/tutorial-site-to-site-portal).
+  - A basic understanding of [site-to-site VPN connections](/azure/vpn-gateway/tutorial-site-to-site-portal).
 - A Microsoft Entra tenant with the [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator) role assigned.
-- Completed the [remote network onboarding steps](how-to-create-remote-networks.md#onboard-your-tenant-for-remote-networks).
 
 ### Prerequisite infrastructure
 
