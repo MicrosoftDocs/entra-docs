@@ -9,29 +9,32 @@ ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 09/15/2023
+ms.date: 11/05/2023
 ms.author: justinha
 
 #Customer intent: As an identity administrator, I want to create a one-way outbound forest from a Microsoft Entra Domain Services forest to an on-premises Active Directory Domain Services forest to provide authentication and resource access between forests.
 ---
 
-# Tutorial: Create an outbound forest trust to an on-premises domain in Microsoft Entra Domain Services
+# Tutorial: Create a two-way forest trust in Microsoft Entra Domain Services with an on-premises domain 
 
-You can create a one-way outbound trust from Microsoft Entra Domain Services to one or more on-premises AD DS environments. This trust relationship lets users, applications, and computers authenticate against an on-premises domain from the Domain Services managed domain. A forest trust can help users access resources in scenarios such as:
+You can create a trust between Microsoft Entra Domain Services and on-premises AD DS environments. This trust relationship lets users, applications, and computers authenticate against an on-premises domain from the Domain Services managed domain. A forest trust can help users access resources in scenarios such as:
 
 - Environments where you can't synchronize password hashes, or where users exclusively sign in using smart cards and don't know their password.
-- Hybrid scenarios that still require access to on-premises domains.
+- Hybrid scenarios that require access to on-premises domains.
 
-Trusts can be created in any domain. The domain will automatically block synchronization from an on-premises domain for any user accounts that were synchronized to Domain Services. This prevents UPN collisions when users authenticate. 
+There are three possible directions when you create a trust in Domain Services: 
+
+- **Two-way**: This is a bidirectional trust that allows users in both the managed domain and the on-premises domain to access resources in either domain. 
+- **One-way outgoing**: This option allows users in the on-premises domain to access resources in the managed domain, but not vice versa. 
+- **One-way incoming**: This is option allows users in the managed domain to access resources in the on-premises domain. 
 
 ![Diagram of forest trust from Domain Services to on-premises AD DS](./media/tutorial-create-forest-trust/forest-trust-relationship.png)
 
 In this tutorial, you learn how to:
 
 > [!div class="checklist"]
-> * Configure DNS in an on-premises AD DS environment to support Domain Services connectivity
-> * Create a one-way inbound forest trust in an on-premises AD DS environment
-> * Create a one-way outbound forest trust in Domain Services
+> * Configure DNS in an on-premises AD DS domain to support Domain Services connectivity
+> * Create a two-way forest trust in Domain Services between the managed domain and the on-premises domain
 > * Test and validate the trust relationship for authentication and resource access
 
 If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) before you begin.
@@ -44,19 +47,22 @@ To complete this tutorial, you need the following resources and privileges:
     * If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * A Microsoft Entra tenant associated with your subscription, either synchronized with an on-premises directory or a cloud-only directory.
     * If needed, [create a Microsoft Entra tenant][create-azure-ad-tenant] or [associate an Azure subscription with your account][associate-azure-ad-tenant].
-* A Microsoft Entra Domain Services managed domain.
+* A Domain Services managed domain that is configured with a custom DNS domain name and a valid SSL certificate.
     * If needed, [create and configure a Microsoft Entra Domain Services managed domain][create-azure-ad-ds-instance-advanced].
-    
-    > [!IMPORTANT]
-    > You need to use a minimum of *Enterprise* SKU for your managed domain. If needed, [change the SKU for a managed domain][howto-change-sku].
+* An on-premises Active Directory domain that is reachable from the managed domain over a VPN or ExpressRoute connection. 
+* [Application Administrator](/azure/active-directory/roles/permissions-reference#application-administrator) and [Groups Administrator](/azure/active-directory/roles/permissions-reference#groups-administrator) Microsoft Entra roles in your tenant to modify a Domain Services instance.
+* A Domain Admin account in the on-premises domain that has the permissions to create and verify trust relationships.     
+
+> [!IMPORTANT]
+> You need to use a minimum of *Enterprise* SKU for your managed domain. If needed, [change the SKU for a managed domain][howto-change-sku].
 
 ## Sign in to the Microsoft Entra admin center
 
-In this tutorial, you create and configure the outbound forest trust from Domain Services using the Microsoft Entra admin center. To get started, first sign in to the [Microsoft Entra admin center](https://entra.microsoft.com). You need [Application Administrator](/azure/active-directory/roles/permissions-reference#application-administrator) and [Groups Administrator](/azure/active-directory/roles/permissions-reference#groups-administrator) Microsoft Entra roles in your tenant to modify a Domain Services instance. 
+In this tutorial, you create and configure the outbound forest trust from Domain Services using the Microsoft Entra admin center. To get started, first sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).  
 
 ## Networking considerations
 
-The virtual network that hosts the Domain Services forest needs network connectivity to your on-premises Active Directory. Applications and services also need network connectivity to the virtual network hosting the Domain Services forest. Network connectivity to the Domain Services forest must be always on and stable otherwise users may fail to authenticate or access resources.
+The virtual network that hosts the Domain Services forest needs a VPN or ExpressRoute connection to your on-premises Active Directory. Applications and services also need network connectivity to the virtual network hosting the Domain Services forest. Network connectivity to the Domain Services forest must be always on and stable otherwise users may fail to authenticate or access resources.
 
 Before you configure a forest trust in Domain Services, make sure your networking between Azure and on-premises environment meets the following requirements:
 
@@ -68,7 +74,7 @@ Before you configure a forest trust in Domain Services, make sure your networkin
 * Peered virtual networks are NOT transitive.
     * Azure virtual network peerings must be created between all virtual networks you want to use the Domain Services forest trust to the on-premises AD DS environment.
 * Provide continuous network connectivity to your on-premises Active Directory forest. Don't use on-demand connections.
-* Make sure there's continuous name resolution (DNS) between your Domain Services forest name and your on-premises Active Directory forest name.
+* Make sure there's continuous DNS name resolution between your Domain Services forest name and your on-premises Active Directory forest name.
 
 ## Configure DNS in the on-premises domain
 
@@ -90,23 +96,23 @@ To correctly resolve the managed domain from the on-premises environment, you ma
 
 1. To create the conditional forwarder, select **OK**.
 
-## Create inbound forest trust in the on-premises domain
+## Create a two-way forest trust in the on-premises domain
 
-The on-premises AD DS domain needs an incoming forest trust for the managed domain. This trust must be manually created in the on-premises AD DS domain, it can't be created from the Microsoft Entra admin center.
+The on-premises AD DS domain needs a two-way forest trust for the managed domain. This trust must be manually created in the on-premises AD DS domain; it can't be created from the Microsoft Entra admin center.
 
-To configure inbound trust on the on-premises AD DS domain, complete the following steps from a management workstation for the on-premises AD DS domain:
+To configure a two-way trust in the on-premises AD DS domain, complete the following steps as a Domain Admin from a management workstation for the on-premises AD DS domain:
 
 1. Select **Start** > **Administrative Tools** > **Active Directory Domains and Trusts**.
 1. Right-click the domain, such as *onprem.contoso.com*, then select **Properties**.
 1. Choose **Trusts** tab, then **New Trust**.
 1. Enter the name for Domain Services domain name, such as *aaddscontoso.com*, then select **Next**.
-1. Select the option to create a **Forest trust**, then to create a **One way: incoming** trust.
+1. Select the option to create a **Forest trust**, then to create a **Two-way** trust.
 1. Choose to create the trust for **This domain only**. In the next step, you create the trust in the Microsoft Entra admin center for the managed domain.
 1. Choose to use **Forest-wide authentication**, then enter and confirm a trust password. This same password is also entered in the Microsoft Entra admin center in the next section.
 1. Step through the next few windows with default options, then choose the option for **No, do not confirm the outgoing trust**.
 1. Select **Finish**.
 
-If the forest trust is no longer needed for an environment, complete the following steps to remove it from the on-premises domain:
+If the forest trust is no longer needed for an environment, complete the following steps as a Domain Admin to remove it from the on-premises domain:
 
 1. Select **Start** > **Administrative Tools** > **Active Directory Domains and Trusts**.
 1. Right-click the domain, such as *onprem.contoso.com*, then select **Properties**.
@@ -116,20 +122,19 @@ If the forest trust is no longer needed for an environment, complete the followi
 
 <a name='create-outbound-forest-trust-in-azure-ad-ds'></a>
 
-## Create outbound forest trust in Domain Services
+## Create a two-way forest trust in Domain Services
 
-With the on-premises AD DS domain configured to resolve the managed domain and an inbound forest trust created, now create the outbound forest trust. This outbound forest trust completes the trust relationship between the on-premises AD DS domain and the managed domain.
-
-To create the outbound trust for the managed domain in the Microsoft Entra admin center, complete the following steps:
+To create the two-way trust for the managed domain in the Microsoft Entra admin center, complete the following steps:
 
 1. In the Microsoft Entra admin center, search for and select **Microsoft Entra Domain Services**, then select your managed domain, such as *aaddscontoso.com*.
 1. From the menu on the left-hand side of the managed domain, select **Trusts**, then choose to **+ Add** a trust.
+1. Select **Two-way** as the trust direction.
 1. Enter a display name that identifies your trust, then the on-premises trusted forest DNS name, such as *onprem.contoso.com*.
 1. Provide the same trust password that was used to configure the inbound forest trust for the on-premises AD DS domain in the previous section.
 1. Provide at least two DNS servers for the on-premises AD DS domain, such as *10.1.1.4* and *10.1.1.5*.
 1. When ready, **Save** the outbound forest trust.
 
-    ![Create outbound forest trust in the Microsoft Entra admin center](./media/tutorial-create-forest-trust/portal-create-outbound-trust.png)
+    ![Create outbound forest trust in the Microsoft Entra admin center](./media/tutorial-create-forest-trust/two-way-trust.png)
 
 If the forest trust is no longer needed for an environment, complete the following steps to remove it from Domain Services:
 
