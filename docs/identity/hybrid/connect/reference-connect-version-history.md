@@ -7,7 +7,7 @@ ms.service: active-directory
 manager: amycolannino
 ms.topic: reference
 ms.workload: identity
-ms.date: 7/6/2022
+ms.date: 11/06/2023
 ms.subservice: hybrid
 ms.author: billmath
 ms.custom: has-adal-ref, has-azure-ad-ps-ref

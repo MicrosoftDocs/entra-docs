@@ -9,7 +9,7 @@ ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: troubleshooting
-ms.date: 01/19/2023
+ms.date: 11/06/2023
 ms.subservice: hybrid
 ms.author: billmath
 
