@@ -15,8 +15,9 @@ Learn how to install the Global Secure Access Client for Android.
 
 ## Prerequisites
 
-- Device installation permissions are required for installation.
+- Device installation permissions on the device are required for installation.
 - The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
+- The Microsoft Defender for Endpoint on Android firewall/proxy must be configured to [enable access to the Microsoft Defender for Endpoint service URLs](/microsoft-365/security/defender-endpoint/configure-environment?view=o365-worldwide#enable-access-to-microsoft-defender-for-endpoint-service-urls-in-the-proxy-server).
 
 ## Download the client
 
