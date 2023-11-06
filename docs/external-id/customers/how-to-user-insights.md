@@ -17,7 +17,7 @@ ms.custom: it-pro
 ---
 # Gain insights into your app users’ activity
 
-The Application user activity (Preview) feature under Usage & insights provides data analytics on user activity and engagement for registered applications in your tenant. You can view, query, and analyze user activity data in the Microsoft Entra admin center to uncover valuable insights that help strategic decisions and drive business growth.
+The Application user activity (Preview) feature under Usage & insights provides data analytics on user activity and engagement for registered applications in your tenant. You can use this feature to view, query, and analyze user activity data in the Microsoft Entra admin center. This can help you uncover valuable insights that can aid strategic decisions and drive business growth.
 
 ## Supported scenarios
 
@@ -32,7 +32,6 @@ You can use the user insights feature for the following scenarios:
 To access and view data from application user activity, you must have:
 - An Entra ID for [customers tenant](quickstart-tenant-setup.md).
 - A [registered application(s)](how-to-register-ciam-app.md) with some sign-in and sign-up data.
-- A [user](how-to-manage-admin-accounts.md#add-a-role-assignment) that's been assigned at least the [Reports Reader](/entra/identity/role-based-access-control/permissions-reference#reports-reader) role.
 
 <!-- Link here later how to access the application user activity reports in two ways. -->
 
@@ -45,7 +44,7 @@ The Application user activity dashboards provide insights into how users interac
 1. Browse to **Identity** > **Monitoring & health** > **Usage & insights**
 1. Select **Application user activity (Preview)** to view the dashboards.
 
-    :::image type="content" source="media/how-to-user-insights/app-user-activity-dashboard.png" alt-text="Screenshot of the Application user activity dashboards under the Usage & insights menu.":::
+    :::image type="content" source="media/how-to-user-insights/app-user-activity-dashboard.png" alt-text="Screenshot of the Application user activity dashboards under the Usage & insights menu." lightbox="media/how-to-user-insights/app-user-activity-dashboard.png":::
 
 ## Browse the available dashboards
 
@@ -61,7 +60,7 @@ The **Users** dashboard gives you a summary of daily and monthly active users, a
 - New users added over a period of 12 months.
 - New users breakdown by operating system.
 
-:::image type="content" source="media/how-to-user-insights/users-dashboard.png" alt-text="Screenshot of the Users dashboard.":::
+    :::image type="content" source="media/how-to-user-insights/users-dashboard.png" alt-text="Screenshot of the Users dashboard.":::
 
 ### Requests dashboard
 
@@ -70,7 +69,7 @@ The **Requests** dashboard gives you a summary of monthly requests for all your 
 - Monthly requests over a period of 12 months.
 - Types of MFA usage with a summary of success vs failure count over a period of 12 months
 
-:::image type="content" source="media/how-to-user-insights/requests-dashboard.png" alt-text="Screenshot of the Requests dashboard.":::
+    :::image type="content" source="media/how-to-user-insights/requests-dashboard.png" alt-text="Screenshot of the Requests dashboard.":::
 
 ### Authentications dashboard
 
@@ -80,7 +79,7 @@ The **Authentications** dashboard gives you a summary of daily and monthly authe
 - Daily authentications breakdown by operating system.
 - Monthly authentications over a period of 12 months summarized by location.
 
-:::image type="content" source="media/how-to-user-insights/authentications-dashboard.png" alt-text="Screenshot of the Authentications dashboard.":::
+    :::image type="content" source="media/how-to-user-insights/authentications-dashboard.png" alt-text="Screenshot of the Authentications dashboard.":::
 
 ## Related content
 
