@@ -11,7 +11,7 @@ ms.reviewer: ashishj
 ---
 # Global Secure Access Client for Android (preview)
 
-The Global Secure Access Client for Android is built into the Microsoft Defender for Endpoint Android app. Learn about important pre-requisites and how to install the client.
+The Global Secure Access Client for Android is built into the Microsoft Defender for Endpoint Android app. Learn about important prerequisites and how to install the client.
 
 ## Prerequisites
 
@@ -30,17 +30,17 @@ The Global Secure Access Client for Android is built into the Microsoft Defender
 - Tunneling IPv6 traffic isn't currently supported.
 - Private DNS must be disabled on the device. This setting is usually found in the System > Network and Internet options.
 
-## Download the client
+## Supported scenarios
 
-The current version of the Global Secure Access Client can be downloaded from the Microsoft Entra admin center.
+Global Secure Access Client for Android supports deployment of the app for the legacy Device Administrator and Android Enterprise scenarios. The following android Enterprise scenarios are supported:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
-1. Browse to **Global Secure Access (Preview)** > **Devices** > **Clients**.
-1. In the **Android** section, select **Get the app**.
+- Personally-owned devices with a work profile
+- Corporate-owned devices with a work profile
+- Corporate-owned, fully managed user devices
 
 ## Install the client
 
-With the client downloaded, you can deploy the app to your Android devices. You can deploy the app on Device Administrator enrolled devices and Android Enterprise enrolled devices.
+You can deploy the app using both the Device Administrator enrolled devices and Android Enterprise modes.
 
 ### Device Administrator enrolled devices
 
