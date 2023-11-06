@@ -171,5 +171,18 @@ Here are some example license scenarios to help you determine the number of lice
 
 Users do not need to be assigned an Identity Governance license, but there needs to be as many license seats to include all users in scope of, or who configures, the Identity Governance features.
 
+
+### What happens when a PIM license expires?
+
+If a Microsoft Azure AD Premium P2, Microsoft Entra ID Governance, or trial license expires, Privileged Identity Management features will no longer be available in your directory:
+
+- Permanent role assignments to Azure AD roles will be unaffected.
+- The Privileged Identity Management service in the Azure portal, as well as the Graph API cmdlets and PowerShell interfaces of Privileged Identity Management, will no longer be available for users to activate privileged roles, manage privileged access, or perform access reviews of privileged roles.
+- Eligible role assignments of Azure AD roles will be removed, as users will no longer be able to activate privileged roles.
+- Any ongoing access reviews of Azure AD roles will end, and Privileged Identity Management configuration settings will be removed.
+- Privileged Identity Management will no longer send emails on role assignment changes.
+
+
 ## Next steps
+
 - [What is Microsoft Entra ID Governance?](identity-governance-overview.md)
