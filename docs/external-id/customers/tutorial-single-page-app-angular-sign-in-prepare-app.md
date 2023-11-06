@@ -41,20 +41,19 @@ In this tutorial;
     npm install @angular/material @angular/cdk
     npm install @azure/msal-browser @azure/msal-angular
     ng generate component home
-    ng generate component profile
     ng generate component guarded
     ```
 
 ## Configure the application UI
 
-1. Open _src/styles.css_ to define the CSS. Replace the existing code with the following code snippet.
+1. Open _src/styles.css_ to define the CSS. Replace the existing code with the following code snippet. This is used to define colors and fonts for the application.
 
     ```html
     @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
     html, body { height: 100%; }
     body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     ```
-1. Open _src/app/app.component.html_ and replace the existing code with the following code snippet.
+1. Open _src/app/app.component.html_ and replace the existing code with the following code snippet. This code defines the application header and footer.
     
     ```HTML
         <mat-toolbar color="primary">
@@ -77,7 +76,7 @@ In this tutorial;
       </mat-toolbar>
     </footer>
     ```
-1. Open _src/app/app.component.css_ to add CSS styling to the application. Replace any existing code with the following code snippet.
+1. Open _src/app/app.component.css_ to add CSS styling to the application. Replace any existing code with the following code snippet which defines the application header and footer.
     
     ```css
     .toolbar-spacer {
@@ -103,7 +102,7 @@ In this tutorial;
       flex: 1 1 auto;
     }
     ```
-1. Open _src/app/home/home.component.html_ and replace the existing code with the following code snippet.
+1. Open _src/app/home/home.component.html_ and replace the existing code with the following code snippet to define the home page of the application using HTML.
     
     ```HTML
     <mat-card class="card-section" *ngIf="!loginDisplay">
@@ -141,7 +140,7 @@ In this tutorial;
       </table>
     </div>
     ```
-1. Open _src/app/home/home.component.css_ to add CSS styling to the application. Replace any existing code with the following code snippet.
+1. Open _src/app/home/home.component.css_. Replace any existing code with the following code snippet. This will add CSS styling to the home page of the application.
     
     ```css
     #table-container {

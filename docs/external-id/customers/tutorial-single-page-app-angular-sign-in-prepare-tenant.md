@@ -28,8 +28,7 @@ In this tutorial:
 
 ## Prerequisites
 
-- An Azure subscription. If you don't have one, [create a free account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) before you begin.
-- This Azure account must have permissions to manage applications. Any of the following Azure roles include the required permissions:
+- An Azure subscription. If you don't have one, [create a free account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) before you begin. This Azure account must have permissions to manage applications. Any of the following Azure roles include the required permissions:
 
     * Application Administrator
     * Application Developer
@@ -51,7 +50,27 @@ In this tutorial:
 
 ## Create a user flow
 
-[!INCLUDE [register-client-app-common](./includes/configure-user-flow/create-sign-in-sign-out-user-flow.md)]
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [External ID User Flow Administrator](~/identity/role-based-access-control/permissions-reference.md#external-id-user-flow-administrator).  
+1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="~/external-id/customers/media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your customer tenant from the **Directories + subscriptions** menu. 
+1. Browse to **Identity** > **External Identities** > **User flows**.
+1. Select **+ New user flow**.
+1. On the **Create** page:
+
+   1. Enter a **Name** for the user flow, such as *SignInSignUpSample*.
+   1. In the **Identity providers** list, select **Email Accounts**. This identity provider allows users to sign-in or sign-up using their email address.
+   
+         > [!NOTE]
+         > Additional identity providers will be listed here only after you set up federation with them. For example, if you set up federation with [Google](../../how-to-google-federation-customers.md) or [Facebook](../../how-to-facebook-federation-customers.md), you'll be able to select those additional identity providers here.  
+
+   1. Under **Email accounts**, you can select one of the two options. For this tutorial, select **Email with password**.
+
+      - **Email with password**: Allows new users to sign up and sign in using an email address as the sign-in name and a password as their first factor credential.  
+      - **Email one-time-passcode**: Allows new users to sign up and sign in using an email address as the sign-in name and email one-time passcode as their first factor credential.
+
+         > [!NOTE]
+         > Email one-time passcode must be enabled at the tenant level (**All Identity Providers** > **Email One-time-passcode**) for this option to be available at the user flow level. 
+
+1. Select **Create**. The new user flow appears in the **User flows** list. If necessary, refresh the page.
 
 ## Associate the application with your user flow
 
