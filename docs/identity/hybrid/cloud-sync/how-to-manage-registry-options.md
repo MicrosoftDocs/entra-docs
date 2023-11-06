@@ -10,7 +10,7 @@ ms.service: active-directory
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 04/03/2023
+ms.date: 11/06/2023
 ms.subservice: hybrid
 ms.reviewer: chmutali
 ms.author: billmath
