@@ -28,7 +28,7 @@ Learn how to install the Global Secure Access Client for Android.
 
 ## Download the client
 
-The most current version of the Global Secure Access Client can be downloaded from the Microsoft Entra admin center.
+The current version of the Global Secure Access Client can be downloaded from the Microsoft Entra admin center.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
 1. Browse to **Global Secure Access (Preview)** > **Devices** > **Clients**.
