@@ -205,7 +205,7 @@ For tasks that certain people or roles perform in your environment, create alert
 
 It’s useful to create alerts for failed activity, for threat detection, and service disruption detection. The following example activity alert is for an Amazon Simple Storage Service (S3) bucket object download failure, which might indicate a compromised account trying to access unauthorized resources.
 
-   ![Diagram of an alert to monitor unauthorized S3 bucket downloads.](./media/permissions-manage-ops-guide/unauthorized-s3-download.png)
+   ![Diagram of an alert to monitor unauthorized S3 bucket downloads.](./media/permissions-manage-ops-guide/unauthorized-s3-downloads.png)
 
 **Alert trigger to monitor authorization failure activity for an access key**
 
