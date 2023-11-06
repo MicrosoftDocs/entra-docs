@@ -11,7 +11,7 @@ ms.reviewer: ashishj
 ---
 # Global Secure Access Client for Android (preview)
 
-Learn how to install the Global Secure Access Client for Android.
+The Global Secure Access Client for Android is built into the Microsoft Defender for Endpoint Android app. Learn about important pre-requisites and how to install the client.
 
 ## Prerequisites
 
