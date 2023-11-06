@@ -19,7 +19,8 @@ Learn how to install the Global Secure Access Client for Android.
 - The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 - The Microsoft Defender for Endpoint on Android firewall/proxy must be configured to [enable access to the Microsoft Defender for Endpoint service URLs](/microsoft-365/security/defender-endpoint/configure-environment).
 - Android devices must be running Android 8.0 or later.
-- Microsoft Authenticator must be installed on the device.
+- The Microsoft Authenticator *and* Intune Company Portal apps must be installed on the device.
+- Device enrollment is required for Intune device compliance policies to be enforced.
 
 ### Known limitations
 
