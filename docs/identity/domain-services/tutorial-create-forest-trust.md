@@ -62,7 +62,7 @@ In this tutorial, you create and configure the outbound forest trust from Domain
 
 ## Networking considerations
 
-The virtual network that hosts the Domain Services forest needs a VPN or ExpressRoute connection to your on-premises Active Directory. Applications and services also need network connectivity to the virtual network hosting the Domain Services forest. Network connectivity to the Domain Services forest must be always on and stable otherwise users may fail to authenticate or access resources.
+The virtual network that hosts the Domain Services forest needs a VPN or ExpressRoute connection to your on-premises Active Directory. Applications and services also need network connectivity to the virtual network hosting the Domain Services forest. Network connectivity to the Domain Services forest must be always on and stable otherwise users might fail to authenticate or access resources.
 
 Before you configure a forest trust in Domain Services, make sure your networking between Azure and on-premises environment meets the following requirements:
 
@@ -78,7 +78,7 @@ Before you configure a forest trust in Domain Services, make sure your networkin
 
 ## Configure DNS in the on-premises domain
 
-To correctly resolve the managed domain from the on-premises environment, you may need to add forwarders to the existing DNS servers. To configure the on-premises environment to communicate with the managed domain, complete the following steps from a management workstation for the on-premises AD DS domain:
+To correctly resolve the managed domain from the on-premises environment, you might need to add forwarders to the existing DNS servers. To configure the on-premises environment to communicate with the managed domain, complete the following steps from a management workstation for the on-premises AD DS domain:
 
 1. Select **Start** > **Administrative Tools** > **DNS**.
 1. Select your DNS zone, such as *aaddscontoso.com*.
@@ -116,9 +116,9 @@ If the forest trust is no longer needed for an environment, complete the followi
 
 1. Select **Start** > **Administrative Tools** > **Active Directory Domains and Trusts**.
 1. Right-click the domain, such as *onprem.contoso.com*, then select **Properties**.
-1. Choose **Trusts** tab, then **Domains that trust this domain (incoming trusts)**, click the trust to be removed, and then click **Remove**.
-1. On the Trusts tab, under **Domains trusted by this domain (outgoing trusts)**, click the trust to be removed, and then click Remove.
-1. Click **No, remove the trust from the local domain only**.
+1. Choose **Trusts** tab, then **Domains that trust this domain (incoming trusts)**, select the trust to be removed, and then select **Remove**.
+1. On the Trusts tab, under **Domains trusted by this domain (outgoing trusts)**, select the trust to be removed, and then select **Remove**.
+1. Select **No, remove the trust from the local domain only**.
 
 <a name='create-outbound-forest-trust-in-azure-ad-ds'></a>
 
@@ -139,8 +139,8 @@ To create the two-way trust for the managed domain in the Microsoft Entra admin 
 If the forest trust is no longer needed for an environment, complete the following steps to remove it from Domain Services:
 
 1. In the Microsoft Entra admin center, search for and select **Microsoft Entra Domain Services**, then select your managed domain, such as *aaddscontoso.com*.
-1. From the menu on the left-hand side of the managed domain, select **Trusts**, choose the trust, and click **Remove**.
-1. Provide the same trust password that was used to configure the forest trust and click **OK**.
+1. From the menu on the left-hand side of the managed domain, select **Trusts**, choose the trust, and select **Remove**.
+1. Provide the same trust password that was used to configure the forest trust and select **OK**.
 
 ## Validate resource authentication
 
