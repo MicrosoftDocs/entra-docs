@@ -44,7 +44,7 @@ With the client downloaded, you can deploy the app to your Android devices. You 
 
 ### Device Administrator enrolled devices
 
-This process is covered in detail in the [Deploy Microsoft Defender for Endpoint on Android with Microsoft Intune](/microsoft-365/defender-endpoint/android-intune#deploy-on-device-administrator-enrolled-devices) article.
+This process is covered in detail in the [Deploy Microsoft Defender for Endpoint on Android with Microsoft Intune](/microsoft-365/security/defender-endpoint/android-intune) article.
 
 ## Related content
 
