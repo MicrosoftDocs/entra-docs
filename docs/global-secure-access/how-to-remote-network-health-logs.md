@@ -33,7 +33,7 @@ To view the **Remote network health logs**, you can use either the Microsoft Ent
 
 ### [Microsoft Entra admin center](#tab/microsoft-entra-admin-center) 
 
-To view Remote network health logs in Microsoft Entra admin Center:
+To view Remote network health logs in Microsoft Entra admin center:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Reader](/azure/active-directory/roles/permissions-reference#global-reader).
 1. Browse to **Global Secure Access (preview)** > **Monitor** > **Remote network health logs**.
@@ -84,9 +84,9 @@ The following table describes each of the fields in the Remote network health lo
 | Name | Description |
 | -- | -- |
 | Created date time | Time of original event generation |
-| Source IP Address | The IP address of the CPE.</br> The Source IP/Destination IP address pair will be unique for each IPsec tunnel. |
-| Destination IP Address | The IP address of the Microsoft Entra gateway.</br> The Source IP/Destination IP address pair will be unique for each IPsec tunnel. |
-| Status | 5 possible values:</br> **TunnelConnect:** This event is generated when an IPsec tunnel is successfully established.</br> **TunnelDisconnect:** This event is generated when an IPsec tunnel is disconnected.</br> **BGPConnect:** This event is generated when an BGP connectivity is successfully established.</br> **BGPDisconnect:** This event is generated when an BGP connectivity goes down.</br> **Alive:** This is a periodic statistics generated every 15 minutes for all the active tunnels. |
+| Source IP Address | The IP address of the CPE.</br> The Source IP/Destination IP address pair is unique for each IPsec tunnel. |
+| Destination IP Address | The IP address of the Microsoft Entra gateway.</br> The Source IP/Destination IP address pair is unique for each IPsec tunnel. |
+| Status | five possible values:</br> **TunnelConnect:** This event is generated when an IPsec tunnel is successfully established.</br> **TunnelDisconnect:** This event is generated when an IPsec tunnel is disconnected.</br> **BGPConnect:** This event is generated when a BGP connectivity is successfully established.</br> **BGPDisconnect:** This event is generated when a BGP connectivity goes down.</br> **Alive:** This periodic statistic is generated every 15 minutes for all the active tunnels. |
 | Description | Optional description of the event. |
 | BGP Routes Advertised Count | Optional count of BGP routes advertised over the IPsec tunnel.</br> This value is 0 for TunnelConnect, TunnelDisconnect, BGPConnect and BGPDisconnect events. |
 | Sent Bytes | Optional number of bytes sent from source to destination over a tunnel during the last 15 minutes.</br> This value is 0 for TunnelConnect, TunnelDisconnect, BGPConnect and BGPDisconnect events. |
