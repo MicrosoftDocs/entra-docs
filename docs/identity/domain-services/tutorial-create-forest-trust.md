@@ -22,11 +22,11 @@ You can create a trust between Microsoft Entra Domain Services and on-premises A
 - Environments where you can't synchronize password hashes, or where users exclusively sign in using smart cards and don't know their password.
 - Hybrid scenarios that require access to on-premises domains.
 
-There are three possible directions when you create a trust in Domain Services: 
+You can choose from three possible directions when you create a trust in Domain Services: 
 
-- **Two-way**: This is a bidirectional trust that allows users in both the managed domain and the on-premises domain to access resources in either domain. 
-- **One-way outgoing**: This option allows users in the on-premises domain to access resources in the managed domain, but not vice versa. 
-- **One-way incoming**: This is option allows users in the managed domain to access resources in the on-premises domain. 
+- **Two-way**: Allows users in both the managed domain and the on-premises domain to access resources in either domain. 
+- **One-way outgoing**: Allows users in the on-premises domain to access resources in the managed domain, but not vice versa. 
+- **One-way incoming**: Allows users in the managed domain to access resources in the on-premises domain. 
 
 ![Diagram of forest trust from Domain Services to on-premises AD DS](./media/tutorial-create-forest-trust/forest-trust-relationship.png)
 
@@ -34,7 +34,7 @@ In this tutorial, you learn how to:
 
 > [!div class="checklist"]
 > * Configure DNS in an on-premises AD DS domain to support Domain Services connectivity
-> * Create a two-way forest trust in Domain Services between the managed domain and the on-premises domain
+> * Create a two-way forest trust between the managed domain and the on-premises domain
 > * Test and validate the trust relationship for authentication and resource access
 
 If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) before you begin.
@@ -78,7 +78,7 @@ Before you configure a forest trust in Domain Services, make sure your networkin
 
 ## Configure DNS in the on-premises domain
 
-To correctly resolve the managed domain from the on-premises environment, you may need to add forwarders to the existing DNS servers. If you haven't configured the on-premises environment to communicate with the managed domain, complete the following steps from a management workstation for the on-premises AD DS domain:
+To correctly resolve the managed domain from the on-premises environment, you may need to add forwarders to the existing DNS servers. To configure the on-premises environment to communicate with the managed domain, complete the following steps from a management workstation for the on-premises AD DS domain:
 
 1. Select **Start** > **Administrative Tools** > **DNS**.
 1. Select your DNS zone, such as *aaddscontoso.com*.
@@ -179,13 +179,14 @@ You should have Windows Server virtual machine joined to the managed domain. Use
 
 ### Access resources in the Domain Services forest using on-premises user
 
-Using the Windows Server VM joined to the Domain Services forest, you can test the scenario where users can access resources hosted in the forest when they authenticate from computers in the on-premises domain with users from the on-premises domain. The following examples show you how to create and test various common scenarios.
+From the Windows Server VM joined to the Domain Services forest, you can test scenarios. For example, you can test if a user who signs in to the on-premises domain can access resources in the managed domain. The following examples cover common test scenarios.
 
 #### Enable file and printer sharing
 
 1. Connect to the Windows Server VM joined to the Domain Services forest using [Azure Bastion](/azure/bastion/bastion-overview) and your Domain Services administrator credentials.
 
-1. Open **Windows Settings**, then search for and select **Network and Sharing Center**.
+1. Open **Windows Settings**.
+1. Search for and select **Network and Sharing Center**.
 1. Choose the option for **Change advanced sharing** settings.
 1. Under the **Domain Profile**, select **Turn on file and printer sharing** and then **Save changes**.
 1. Close **Network and Sharing Center**.
@@ -225,7 +226,7 @@ Using the Windows Server VM joined to the Domain Services forest, you can test t
 1. Using **Windows Explorer**, connect to the share you created using the fully qualified host name and the share such as `\\fs1.aaddscontoso.com\CrossforestShare`.
 1. To validate the write permission, right-select in the folder, choose **New**, then select **Text Document**. Use the default name **New Text Document**.
 
-    If the write permissions are set correctly, a new text document is created. The following steps will then open, edit, and delete the file as appropriate.
+    If the write permissions are set correctly, a new text document is created. Complete the following steps to open, edit, and delete the file as appropriate.
 1. To validate the read permission, open **New Text Document**.
 1. To validate the modify permission, add text to the file and close **Notepad**. When prompted to save changes, choose **Save**.
 1. To validate the delete permission, right-select **New Text Document** and choose **Delete**. Choose **Yes** to confirm file deletion.
