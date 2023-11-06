@@ -8,7 +8,7 @@ ms.service: active-directory
 ms.subservice: fundamentals
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 7/18/2023
+ms.date: 11/06/2023
 ms.author: owinfrey
 ms.reviewer: dhanyahk
 ms.custom: it-pro, seo-update-azuread-jan, has-adal-ref, has-azure-ad-ps-ref
@@ -2022,16 +2022,3 @@ The public preview of dynamic administrative units now supports the **onPremises
 ---
  
 
-### General Availability - Improvements to Azure AD Smart Lockout
-
-**Type:** Changed feature  
-**Service category:** Other  
-**Product capability:** User Management  
-
- 
-
-Smart Lockout now synchronizes the lockout state across Azure AD data centers, so the total number of failed sign-in attempts allowed before an account is locked out will match the configured lockout threshold. For more information, see: [Protect user accounts from attacks with Azure Active Directory smart lockout](~/identity/authentication/howto-password-smart-lockout.md).
- 
-
----
- 
