@@ -59,7 +59,6 @@ You can configure CAs by using the Microsoft Entra admin center or PowerShell.
 
 ### Configure certification authorities using the Microsoft Entra admin center
 
-
 To enable the certificate-based authentication and configure user bindings in the Microsoft Entra admin center, complete the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
@@ -131,11 +130,11 @@ For more information, see [Understanding the certificate revocation process](./c
 
 ### Remove
 
-[!INCLUDE [Remove-AzureAD](../../includes/entra-authentication-remove-trusted.md)]
+[!INCLUDE [Remove-Entra-ID](~/includes/entra-authentication-remove-trusted.md)]
 
 ### Modify
 
-[!INCLUDE [Set-AzureAD](../../includes/entra-authentication-set-trusted.md)]
+[!INCLUDE [Set-Entra-ID](~/includes/entra-authentication-set-trusted.md)]
 
 ## Step 2: Enable CBA on the tenant
 
@@ -472,7 +471,7 @@ To enable CBA and configure username bindings using Graph API, complete the foll
 
 
 >[!NOTE]
->The following steps use Graph Explorer which is not available in the US Government cloud. US Government cloud tenants can use Postman to test the Microsoft Graph queries.
+>The following steps use Graph Explorer, which isn't available in the US Government cloud. US Government cloud tenants can use Postman to test the Microsoft Graph queries.
 
 1. Go to [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer).
 1. Click **Sign into Graph Explorer** and sign in to your tenant.
@@ -543,7 +542,7 @@ To enable CBA and configure username bindings using Graph API, complete the foll
     }
     ```
 
-1. You'll get a `204 No content` response code. Re-run the GET request to make sure the policies are updated correctly.
+1. You get a `204 No content` response code. Rerun the GET request to make sure the policies are updated correctly.
 1. Test the configuration by signing in with a certificate that satisfies the policy.
  
 ## Next steps 
