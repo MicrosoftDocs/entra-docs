@@ -1,6 +1,6 @@
 ---
-title: "What's new in Azure Active Directory application management"
-description: "New and updated documentation for the Azure Active Directory application management."
+title: "What's new in Microsoft Entra application management"
+description: "New and updated documentation for the Microsoft Entra application management."
 ms.date: 11/02/2023
 ms.service: active-directory
 ms.subservice: app-mgmt
@@ -11,9 +11,9 @@ author: omondiatieno
 manager: CelesteDG
 ---
 
-# Azure Active Directory application management: What's new
+# Microsoft Entra application management: What's new
 
-Welcome to what's new in Azure Active Directory (Azure AD) application management documentation. This article lists new docs that have been added and those that have had significant updates in the last three months. To learn what's new with the application management service, see [What's new in Azure AD](~/fundamentals/whats-new.md).
+Welcome to what's new in Microsoft Entra application management documentation. This article lists new docs that have been added and those that have had significant updates in the last three months. To learn what's new with the application management service, see [What's new in Azure AD](~/fundamentals/whats-new.md).
 
 ## October
 
