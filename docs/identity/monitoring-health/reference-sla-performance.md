@@ -7,7 +7,7 @@ ms.service: active-directory
 ms.topic: reference
 ms.workload: identity
 ms.subservice: report-monitor
-ms.date: 10/27/2023
+ms.date: 11/07/2023
 ms.author: sarahlipsey
 ms.reviewer: egreenberg14
 ---
@@ -68,20 +68,7 @@ The numbers in the table are a global total of Microsoft Entra authentications a
   
 ## Incident history
 
-All incidents that seriously impact Microsoft Entra performance are documented in the [Azure status history](https://azure.status.microsoft/status/history/). Not all events documented in Azure status history are serious enough to cause Microsoft Entra ID to go below its SLA. You can view information about the impact of incidents, and a root cause analysis of what caused the incident and what steps Microsoft took to prevent future incidents. 
-
-## Tenant-level SLA (preview)
-
-In addition to providing global SLA performance, Microsoft Entra ID now provides tenant-level SLA performance. This feature is currently in preview.
-
-To access your tenant-level SLA performance:
-
-1. Navigate to the [Microsoft Entra admin center](https://entra.microsoft.com) using the Reports Reader role (or higher).
-1. Browse to **Identity** > **Monitoring & health** > **Scenario Health** from the side menu.
-1. Select the **SLA Monitoring** tab.
-1. Hover over the graph to see the SLA performance for that month.
-
-![Screenshot of the tenant-level SLA results.](media/reference-azure-ad-sla-performance/tenent-level-sla.png)
+All incidents that seriously impact Microsoft Entra performance are documented in the [Azure status history](https://azure.status.microsoft/status/history/). Not all events documented in Azure status history are serious enough to cause Microsoft Entra ID to go below its SLA. You can view information about the impact of incidents, and a root cause analysis of what caused the incident and what steps Microsoft took to prevent future incidents.
 
 ## Next steps
 
