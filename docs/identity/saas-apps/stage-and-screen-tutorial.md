@@ -33,8 +33,8 @@ To integrate Microsoft Entra ID with Stage and Screen, you need:
 
 In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
 
-* Stage and Screen supports both **SP and IDP** initiated SSO.
-* Stage and Screen supports **Just In Time** user provisioning.
+* Stage and Screen support both **SP and IDP** initiated SSO.
+* Stage and Screen support **Just In Time** user provisioning.
 
 ## Add Stage and Screen from the gallery
 
@@ -127,7 +127,7 @@ To configure single sign-on on **Stage and Screen** side, you need to send the *
 
 ### Create Stage and Screen test user
 
-In this section, a user called Britta Simon is created in Stage and Screen. Stage and Screen supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in Stage and Screen, a new one is created after authentication.
+In this section, a user called Britta Simon is created in Stage and Screen. Stage and Screen support just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in Stage and Screen, a new one is created after authentication.
 
 ## Test SSO 
 
@@ -143,7 +143,7 @@ In this section, you test your Microsoft Entra single sign-on configuration with
  
 * Click on **Test this application** in Microsoft Entra admin center and you should be automatically signed in to the Stage and Screen for which you set up the SSO.
  
-You can also use Microsoft My Apps to test the application in any mode. When you click the Stage and Screen tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Stage and Screen for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+You can also use Microsoft My Apps to test the application in any mode. When you click the Stage and Screen tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Stage and Screen for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Next steps
 
