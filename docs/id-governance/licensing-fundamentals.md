@@ -90,9 +90,9 @@ The following table shows what features are available with each license.  Note t
 |[Entitlement management - Grace Period - Public Preview](entitlement-management-external-users.md#manage-the-lifecycle-of-external-users)|||x|x|  
 |[My Access portal](my-access-portal-overview.md)|||x|x|
 |[Entitlement management - Sponsors Policy(Public Preview)](entitlement-management-access-package-approval-policy.md)||||x|
-|[Privileged Identity Management (PIM)](https://learn.microsoft.com/entra/id-governance/privileged-identity-management/pim-configure)|||x|x|
-|[PIM For Groups](https://learn.microsoft.com/entra/id-governance/privileged-identity-management/concept-pim-for-groups)|||x|x|
-|[PIM CA Controls](https://learn.microsoft.com/entra/id-governance/privileged-identity-management/pim-configure)|||x|x|
+|[Privileged Identity Management (PIM)](/privileged-identity-management/pim-configure.md)|||x|x|
+|[PIM For Groups](/privileged-identity-management/concept-pim-for-groups.md)|||x|x|
+|[PIM CA Controls](/privileged-identity-management/pim-configure.md)|||x|x|
 |[Access Reviews - Basic access certifications and reviews](access-reviews-overview.md)|||x|x|
 |[Access reviews - PIM For Groups - Public Preview](create-access-review-pim-for-groups.md)||||x|
 |[Access reviews - Inactive Users reviews](create-access-review.md)||||x|
