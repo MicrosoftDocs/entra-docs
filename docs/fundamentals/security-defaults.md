@@ -7,7 +7,7 @@ ms.service: active-directory
 ms.subservice: conditional-access
 ms.custom: has-azure-ad-ps-ref
 ms.topic: conceptual
-ms.date: 10/11/2023
+ms.date: 11/07/2023
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -36,7 +36,7 @@ These basic controls include:
 ### Who should use Conditional Access?
 
 - If you're an organization with Microsoft Entra ID P1 or P2 licenses, security defaults are probably not right for you.
-- If your organization has complex security requirements, you should consider [Conditional Access](~/identity/conditional-access/concept-conditional-access-policy-common.md#template-categories).
+- If your organization has complex security requirements, you should consider [Conditional Access](/entra/identity/role-based-access-control/permissions-reference#template-categories).
 
 ## Enabling security defaults
 
@@ -54,7 +54,7 @@ To configure security defaults in your directory, you must be assigned at least 
 
 To enable security defaults:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as least a [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator).
 1. Browse to **Identity** > **Overview** > **Properties**.
 1. Select **Manage security defaults**.
 1. Set **Security defaults** to **Enabled**.
@@ -188,7 +188,7 @@ Organizations that choose to implement Conditional Access policies that replace 
 
 To disable security defaults in your directory:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as least a [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator).
 1. Browse to **Identity** > **Overview** > **Properties**.
 1. Select **Manage security defaults**.
 1. Set **Security defaults** to **Disabled (not recommended)**.
