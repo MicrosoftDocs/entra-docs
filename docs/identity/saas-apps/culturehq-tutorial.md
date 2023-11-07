@@ -70,7 +70,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
    ![Screenshot shows how to edit Basic SAML Configuration.](common/edit-urls.png "Basic Configuration")
 
-1. On the **Basic SAML Configuration** section, the user does not have to perform any step as the app is already pre-integrated with Azure.
+1. On the **Basic SAML Configuration** section, the user does not have to perform any step as the app is already preintegrated with Azure.
 
 1. Perform the following step, if you wish to configure the application in **SP** initiated mode:
 
@@ -85,7 +85,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 	![Screenshot shows the image of attributes configuration.](common/default-attributes.png "Image")
 
-1. In addition to above, CultureHQ application expects few more attributes to be passed back in SAML response which are shown below. These attributes are also pre populated but you can review them as per your requirements.
+1. In addition to above, CultureHQ application expects few more attributes to be passed back in SAML response, which are shown below. These attributes are also pre populated but you can review them as per your requirements.
 	
 	| Name |   Source Attribute|
 	| ---- | --------- |
@@ -149,7 +149,7 @@ In this section, you test your Microsoft Entra single sign-on configuration with
  
 * Click on **Test this application** in Microsoft Entra admin center and you should be automatically signed in to the CultureHQ for which you set up the SSO.
  
-You can also use Microsoft My Apps to test the application in any mode. When you click the CultureHQ tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the CultureHQ for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+You can also use Microsoft My Apps to test the application in any mode. When you click the CultureHQ tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the CultureHQ for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Next steps
 
