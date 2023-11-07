@@ -73,7 +73,7 @@ To enable the certificate-based authentication and configure user bindings in th
       :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/upload-certificate-authority.png" alt-text="Screenshot of how to upload certification authority file.":::
 
 1. To delete a CA certificate, select the certificate and click **Delete**.
-1. Click **Columns** to add or delete columns.
+1. Select **Columns** to add or delete columns.
 
 >[!NOTE]
 >Upload of a new CA fails if any existing CA expired. A Global Administrator should delete any expired CA, and retry to upload the new CA.
