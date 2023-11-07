@@ -140,7 +140,7 @@ For passwordless sign-in to work, users should disable legacy notification throu
 
 Let's look at an example of a user who has single-factor certificate, and is configured for passwordless sign-in. 
 
-1. Enter your user principal name (UPN) and click **Next**.
+1. Enter your user principal name (UPN) and select **Next**.
 
    :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/user-principal-name.png" alt-text="Screenshot of how to enter a user principal name.":::
 
