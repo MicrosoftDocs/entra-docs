@@ -328,7 +328,7 @@ Let's walk through a scenario where we validate strong authentication. We'll cre
 1. The certificate appears, and you can verify the issuer and policy OID values. 
    :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/issuer.png" alt-text="Screenshot of the issuer.":::
 
-1. To see Policy OID values, click **Details**.
+1. To see Policy OID values, select **Details**.
 
    :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/authentication-details.png" alt-text="Screenshot of the authentication details.":::
 
