@@ -247,8 +247,8 @@ For iOS, your app requires a background permission to remain active in the backg
 
 These Microsoft applications support Microsoft Entra shared device mode:
 
-- [Microsoft Teams](/microsoftteams/platform/) (in Public Preview)
-- [Microsoft Viva Engage (previously Yammer)](/viva/engage/overview)
+- [Microsoft Teams](/microsoftteams/platform/)
+- [Microsoft Viva Engage](/viva/engage/overview) (previously [Yammer](/viva/engage/overview))
 - [Outlook](/mem/intune/apps/app-configuration-policies-outlook) (in Public Preview)
 - [Microsoft Power Apps](/power-apps/) (in Public Preview)
 - Unified M365 App (in Public Preview)
