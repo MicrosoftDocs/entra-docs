@@ -235,7 +235,7 @@ To enable CBA and configure user bindings in the Microsoft Entra admin center, c
 
    :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/sign-in-logs.png" alt-text="Screenshot of Sign-ins log.":::
 
-1. Click **Ok** to save any custom rule.
+1. Select **Ok** to save any custom rule.
 
 >[!IMPORTANT]
 >PolicyOID should be in object identifier format as per https://www.rfc-editor.org/rfc/rfc5280#section-4.2.1.4. For ex: If the certificate policies says "All Issuance Policies" you should enter the OID as 2.5.29.32.0 in the add rules editor. Entering the string "All Issuance Policies" in rules editor is invalid and will not take effect.
