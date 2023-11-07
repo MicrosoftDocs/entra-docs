@@ -78,6 +78,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     b. In the **Reply URL** text box, type one of the following URLs:
 
     |**Reply URL**|
+    |--------------|
     |`https://*.netsfere.com`|
     |`https://*.netsferetest.com`|
     |`https://*.netsferedev.com`|
@@ -87,6 +88,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     In the **Sign-on URL** text box, type one of the following URLs:
 
     |**Sign-on URL**|
+    |---------------|
     |`https://*.netsfere.com`|
     |`https://*.netsferetest.com`|
     |`https://*.netsferedev.com`|
