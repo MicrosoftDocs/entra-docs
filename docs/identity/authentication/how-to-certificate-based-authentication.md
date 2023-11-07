@@ -443,7 +443,7 @@ X509:<S>DC=com,DC=contoso,DC=corp,OU=UserAccounts,CN=FirstUserATCSession
    :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/affinity-binding.png" alt-text="Screenshot of how to set required affinity binding.":::
 
 1. To test, select **Required Affinity Binding** to be **Low**.
-1. Add a high affinity binding like SKI. Click **Add rule** under **Username binding**.
+1. Add a high affinity binding like SKI. Select **Add rule** under **Username binding**.
 1. Select **SKI** and select **Add**.
 
    :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/add-ski.png" alt-text="Screenshot of how to add an affinity binding.":::
