@@ -317,7 +317,7 @@ Let's walk through a scenario where we validate strong authentication. We'll cre
 
    :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/certificate.png" alt-text="Screenshot of sign-in with certificate.":::
 
-   If you enabled other authentication methods like Phone sign-in or security keys, users may see a different sign-in screen.
+   If you enabled other authentication methods like Phone sign-in or security keys, users might see a different sign-in screen.
 
    :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/alternative.png" alt-text="Screenshot of the alternative sign-in.":::
 
