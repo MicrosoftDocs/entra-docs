@@ -85,9 +85,9 @@ The following table shows what features are available with each license.  Not al
 |[Entitlement management with Verified ID](entitlement-management-verified-id-settings.md)||||x|  
 |[Entitlement management + Custom Extensions (Logic Apps)](entitlement-management-logic-apps-integration.md)||||x|  
 |[Entitlement management + Auto Assignment Policies](entitlement-management-access-package-auto-assignment-policy.md)||||x|
-|[Entitlement management - Invite+Assign Any](entitlement-management-access-package-assignments.md#directly-assign-any-user-preview)||||x|
+|[Entitlement management - Directly Assign Any User(Public Preview)](entitlement-management-access-package-assignments.md#directly-assign-any-user-preview)||||x|
 |[Entitlement management - Guest Conversion API](entitlement-management-access-package-manage-lifecycle.md)||||x|
-|[Entitlement management - Grace Period - Public Preview](entitlement-management-external-users.md#manage-the-lifecycle-of-external-users)|||x|x|  
+|[Entitlement management - Grace Period(Public Preview)](entitlement-management-external-users.md#manage-the-lifecycle-of-external-users)|||x|x|  
 |[My Access portal](my-access-portal-overview.md)|||x|x|
 |[Entitlement management - Sponsors Policy(Public Preview)](entitlement-management-access-package-approval-policy.md)||||x|
 |[Privileged Identity Management (PIM)](./privileged-identity-management/pim-configure.md)|||x|x|
@@ -100,7 +100,7 @@ The following table shows what features are available with each license.  Not al
 |[Access reviews - Machine learning assisted access certifications and reviews](review-recommendations-access-reviews.md#user-to-group-affiliation)||||x|
 |[Lifecycle Workflows (LCW)](what-are-lifecycle-workflows.md)||||x|
 |[LCW + Custom Extensions (Logic Apps)](lifecycle-workflow-extensibility.md)||||x|
-|[Identity governance dashboard - Public Preview](governance-dashboard.md)||x|x|x|
+|[Identity governance dashboard (Public Preview)](governance-dashboard.md)||x|x|x|
 |[Insights and reporting - Inactive guest accounts (Preview)](~/identity/users/clean-up-stale-guest-accounts.md)||||x|
 
 
