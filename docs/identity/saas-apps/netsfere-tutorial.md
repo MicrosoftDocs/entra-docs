@@ -91,7 +91,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 1. Perform the following step, if you wish to configure the application in **SP** initiated mode:
 
-    In the **Sign-on URL** text box, type a URL using one of the following pattens:
+    In the **Sign-on URL** text box, type a URL using one of the following patterns:
 
     |**Sign on URL**|
     |---------------|
