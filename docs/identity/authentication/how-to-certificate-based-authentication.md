@@ -68,7 +68,7 @@ To enable the certificate-based authentication and configure user bindings in th
    1. Select **Yes** if the CA is a root certificate, otherwise select **No**.
    1. For **Certificate Revocation List URL**, set the internet-facing URL for the CA base CRL that contains all revoked certificates. If the URL isn't set, authentication with revoked certificates won't fail.
    1. For **Delta Certificate Revocation List URL**, set the internet-facing URL for the CRL that contains all revoked certificates since the last base CRL was published.
-   1. Click **Add**.
+   1. Select **Add**.
 
       :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/upload-certificate-authority.png" alt-text="Screenshot of how to upload certification authority file.":::
 
