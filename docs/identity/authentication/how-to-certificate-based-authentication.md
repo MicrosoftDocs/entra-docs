@@ -454,7 +454,7 @@ X509:<S>DC=com,DC=contoso,DC=corp,OU=UserAccounts,CN=FirstUserATCSession
 
 1. Update all user objects CertificateUserIds attribute to have the correct value of SKI from the user certificate. For more information, see [Supported patterns for CertificateUserIDs](/azure/active-directory/authentication/concept-certificate-based-authentication-certificateuserids#supported-patterns-for-certificate-user-ids).
 1. Create a custom rule for Authentication binding. 
-1. Click **Add**.
+1. Select **Add**.
 
    :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/custom-authentication-binding.png" alt-text="Screenshot of a custom authentication binding.":::
 
