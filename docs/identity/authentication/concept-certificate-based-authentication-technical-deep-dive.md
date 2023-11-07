@@ -35,7 +35,7 @@ Now we'll walk through each step:
 
 1. The user tries to access an application, such as [MyApps portal](https://myapps.microsoft.com/).
 1. If the user isn't already signed in, the user is redirected to the Microsoft Entra ID **User Sign-in** page at [https://login.microsoftonline.com/](https://login.microsoftonline.com/).
-1. The user enters their username into the Microsoft Entra sign-in page, and then clicks **Next**. Microsoft Entra ID does home realm discovery using the tenant name and the username is used to look up the user in the tenant.
+1. The user enters their username into the Microsoft Entra sign-in page, and then selects **Next**. Microsoft Entra ID does home realm discovery using the tenant name and the username is used to look up the user in the tenant.
    
    :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/sign-in.png" alt-text="Screenshot of the Sign-in for MyApps portal.":::
   
