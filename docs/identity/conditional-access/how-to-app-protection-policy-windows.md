@@ -79,7 +79,7 @@ Clicking on **Switch Edge profile** opens a window listing their Work or school 
 This process opens a window offering to allow Windows to remember your account and automatically sign you in to your apps and websites. 
 
 > [!CAUTION]
-> You must *CLEAR THE CHECKBOX* **Allow my organization to manage my device**. Leaving this checked enrolls your device in mobile device maangment (MDM) not mobile application management (MAM). 
+> You must *CLEAR THE CHECKBOX* **Allow my organization to manage my device**. Leaving this checked enrolls your device in mobile device management (MDM) not mobile application management (MAM). 
 >
 > Don't select **No, sign in to this app only**.
 
