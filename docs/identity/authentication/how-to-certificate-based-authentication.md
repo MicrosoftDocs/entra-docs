@@ -332,7 +332,7 @@ Let's walk through a scenario where we validate strong authentication. We'll cre
 
    :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/authentication-details.png" alt-text="Screenshot of the authentication details.":::
 
-1. Select the client certificate and click **OK**.
+1. Select the client certificate and select **OK**.
 
 1. The policy OID in the certificate matches the configured value of **1.2.3.4**, and satisfies multifactor authentication. Similarly, the issuer in the certificate matches the configured value of **CN=WoodgroveCA**, and satisfies single-factor authentication.
 1. Because the policy OID rule takes precedence over the issuer rule, the certificate satisfies multifactor authentication.
