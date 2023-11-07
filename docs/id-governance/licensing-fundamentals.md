@@ -94,14 +94,14 @@ The following table shows what features are available with each license.  Not al
 |[PIM For Groups](./privileged-identity-management/concept-pim-for-groups.md)|||x|x|
 |[PIM CA Controls](./privileged-identity-management/pim-configure.md)|||x|x|
 |[Access Reviews - Basic access certifications and reviews](access-reviews-overview.md)|||x|x|
-|[Access reviews - PIM For Groups - Public Preview](create-access-review-pim-for-groups.md)||||x|
+|[Access reviews - PIM For Groups(Public Preview)](create-access-review-pim-for-groups.md)||||x|
 |[Access reviews - Inactive Users reviews](create-access-review.md)||||x|
 |[Access Reviews - Inactive Users recommendations](review-recommendations-access-reviews.md#inactive-user-recommendations)|||x|x|
 |[Access reviews - Machine learning assisted access certifications and reviews](review-recommendations-access-reviews.md#user-to-group-affiliation)||||x|
 |[Lifecycle Workflows (LCW)](what-are-lifecycle-workflows.md)||||x|
 |[LCW + Custom Extensions (Logic Apps)](lifecycle-workflow-extensibility.md)||||x|
 |[Identity governance dashboard (Public Preview)](governance-dashboard.md)||x|x|x|
-|[Insights and reporting - Inactive guest accounts (Preview)](~/identity/users/clean-up-stale-guest-accounts.md)||||x|
+|[Insights and reporting - Inactive guest accounts (Public Preview)](~/identity/users/clean-up-stale-guest-accounts.md)||||x|
 
 
 ## Entitlement Management
