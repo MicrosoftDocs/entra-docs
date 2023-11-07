@@ -474,7 +474,7 @@ To enable CBA and configure username bindings using Graph API, complete the foll
 >The following steps use Graph Explorer, which isn't available in the US Government cloud. US Government cloud tenants can use Postman to test the Microsoft Graph queries.
 
 1. Go to [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer).
-1. Click **Sign into Graph Explorer** and sign in to your tenant.
+1. Select **Sign into Graph Explorer** and sign in to your tenant.
 1. Follow the steps to [consent to the _Policy.ReadWrite.AuthenticationMethod_ delegated permission](/graph/graph-explorer/graph-explorer-features#consent-to-permissions).
 1. GET all authentication methods:
 
