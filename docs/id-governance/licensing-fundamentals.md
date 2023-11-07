@@ -74,34 +74,34 @@ The following table shows what features are available with each license.  Note t
 
 |Feature|Free|Microsoft Entra ID P1|Microsoft Entra ID P2|Microsoft Entra ID Governance|
 |-----|:-----:|:-----:|:-----:|:-----:|
-|[HR-driven Provisioning](/azure/active-directory/app-provisioning/what-is-hr-driven-provisioning)||x|x|x|
-|Automated user provisioning to SaaS apps|x|x|x|x|
-|Automated group provisioning to SaaS apps||x|x|x|
-|Automated provisioning to on-premises apps||x|x|x|
-|[Conditional Access - Terms of use attestation](/azure/active-directory/conditional-access/terms-of-use)||x|x|x| 
-|Entitlement management - Basic entitlement management|||x|x|  
-|Entitlement management - Conditional Access Scoping|||x|x|
-|Entitlement management MyAccess Search|||x|x|  
-|Entitlement management with Verified ID||||x|  
-|Entitlement management + Custom Extensions (Logic Apps)||||x|  
-|Entitlement management + Auto Assignment Policies||||x|
-|Entitlement management - Invite+Assign Any||||x|
-|Entitlement management - Guest Conversion API||||x|
-|Entitlement management - Grace Period - Public Preview|||x|x|  
-|My Access portal|||x|x|
-|Entitlement management - Sponsors Policy - Public Preview||||x|
-|Privileged Identity Management (PIM)|||x|x|
-|PIM For Groups|||x|x|
-|PIM CA Controls|||x|x|
-|Access Reviews - Basic access certifications and reviews|||x|x|
-|Access reviews - PIM For Groups - Public Preview||||x|
-|Access reviews - Inactive Users reviews||||x|
-|Access Reviews - Inactive Users recommendations|||x|x|
-|Access reviews - Machine learning assisted access certifications and reviews||||x|
-|Lifecycle Workflows (LCW)||||x|
-|LCW + Custom Extensions (Logic Apps)||||x|
-|Identity governance dashboard - Public Preview||x|x|x|
-|Insights and reporting - Inactive guest accounts (Preview)||||x|
+|[HR-driven Provisioning](~/identity/app-provisioning/what-is-hr-driven-provisioning.md)||x|x|x|
+|[Automated user provisioning to SaaS apps](~/identity/saas-apps/tutorial-list.md)|x|x|x|x|
+|[Automated group provisioning to SaaS apps](~/identity/saas-apps/tutorial-list.md)||x|x|x|
+|[Automated provisioning to on-premises apps](~/identity/app-provisioning/on-premises-application-provisioning-architecture.md)||x|x|x|
+|[Conditional Access - Terms of use attestation](~/identity/conditional-access/terms-of-use.md)||x|x|x|
+|[Entitlement management - Basic entitlement management](entitlement-management-overview.md)|||x|x|  
+|[Entitlement management - Conditional Access Scoping](entitlement-management-external-users.md#review-your-conditional-access-policies)|||x|x|
+|[Entitlement management MyAccess Search](my-access-portal-overview.md)|||x|x|  
+|[Entitlement management with Verified ID](entitlement-management-verified-id-settings.md)||||x|  
+|[Entitlement management + Custom Extensions (Logic Apps)](entitlement-management-logic-apps-integration.md)||||x|  
+|[Entitlement management + Auto Assignment Policies](entitlement-management-access-package-auto-assignment-policy.md)||||x|
+|[Entitlement management - Invite+Assign Any](entitlement-management-access-package-assignments.md#directly-assign-any-user-preview)||||x|
+|[Entitlement management - Guest Conversion API](entitlement-management-access-package-manage-lifecycle.md)||||x|
+|[Entitlement management - Grace Period - Public Preview](entitlement-management-external-users.md#manage-the-lifecycle-of-external-users)|||x|x|  
+|[My Access portal](my-access-portal-overview.md)|||x|x|
+|[Entitlement management - Sponsors Policy(Public Preview)](entitlement-management-access-package-approval-policy.md)||||x|
+|[Privileged Identity Management (PIM)](https://learn.microsoft.com/entra/id-governance/privileged-identity-management/pim-configure)|||x|x|
+|[PIM For Groups](https://learn.microsoft.com/entra/id-governance/privileged-identity-management/concept-pim-for-groups)|||x|x|
+|[PIM CA Controls](https://learn.microsoft.com/entra/id-governance/privileged-identity-management/pim-configure)|||x|x|
+|[Access Reviews - Basic access certifications and reviews](access-reviews-overview.md)|||x|x|
+|[Access reviews - PIM For Groups - Public Preview](create-access-review-pim-for-groups.md)||||x|
+|[Access reviews - Inactive Users reviews](create-access-review.md)||||x|
+|[Access Reviews - Inactive Users recommendations](review-recommendations-access-reviews.md#inactive-user-recommendations)|||x|x|
+|[Access reviews - Machine learning assisted access certifications and reviews](review-recommendations-access-reviews.md#user-to-group-affiliation)||||x|
+|[Lifecycle Workflows (LCW)](what-are-lifecycle-workflows.md)||||x|
+|[LCW + Custom Extensions (Logic Apps)](lifecycle-workflow-extensibility.md)||||x|
+|[Identity governance dashboard - Public Preview](governance-dashboard.md)||x|x|x|
+|[Insights and reporting - Inactive guest accounts (Preview)](~/identity/users/clean-up-stale-guest-accounts.md)||||x|
 
 
 ## Entitlement Management
