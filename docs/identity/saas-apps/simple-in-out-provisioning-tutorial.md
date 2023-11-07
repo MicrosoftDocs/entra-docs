@@ -16,7 +16,7 @@ ms.author: thwimmer
 
 # Tutorial: Configure Simple In/Out for automatic user provisioning
 
-This tutorial describes the steps you need to perform in both Simple In/Out and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users to [Simple In/Out](https://www.simpleinout.com) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
+This tutorial describes the steps you need to perform in both Simple In/Out and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users to [Simple In/Out](https://www.simpleinout.com) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 
 
 ## Supported capabilities
@@ -30,7 +30,7 @@ This tutorial describes the steps you need to perform in both Simple In/Out and 
 
 The scenario outlined in this tutorial assumes that you already have the following prerequisites:
 
-* [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md) 
+* [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md)
 * A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (for example, Application Administrator, Cloud Application administrator, Application Owner, or Global Administrator).
 * A user account in Simple In/Out with Admin permissions.
 
@@ -42,21 +42,41 @@ The scenario outlined in this tutorial assumes that you already have the followi
 
 ## Step 2: Configure Simple In/Out to support provisioning with Microsoft Entra ID
 
-Contact Simple In/Out support to configure Simple In/Out to support provisioning with Microsoft Entra ID.
+Any one of your Simple In/Out administrator-level users can configure Single Sign On.
+
+1. In a web browser, head to [simpleinout.com](https://www.simpleinout.com) and sign in with a Simple In/Out administrator's credentials.
+1. Click **Settings** in the upper-right.
+1. Click **Single Sign On** under the **ENTERPRISE** menu on the left.
+1. If you are not yet on an Enterprise level plan, this settings page will alert you that you need to upgrade your plan in order to use Single Sign On. Follow the link to upgrade your plan if necessary and return to this page.
+1. Be sure your provider is set to **Microsoft** and click the **Connect Single Sign On** button.
+1. You will be asked to confirm that you wish to enable Single Sign On. Click **OK** to confirm.
+1. Click **Reveal** on your Recovery Key and store this entire key in a safe place. **IMPORTANT!** If you are ever locked out of your Microsoft accounts and need to disconnect SSO without access, you'll be required to relay the Recovery Key to Simple In/Out technical support.
+1. Click **Reveal** on your Bearer Token and make note of it. You'll need this for Step 5.6.
+
+* When a new user is provisioned from Azure Entra to Simple In/Out, Simple In/Out will set that user's role to the default role for your organization. This role will govern the user's permissions inside Simple In/Out. For existing users that may be converted to SSO, Simple In/Out will maintain their existing role.
+
+* After users are provisioned to Simple In/Out, any administrator-level user can edit a user's role. This is done by clicking on a user on the Simple In/Out board, then clicking the **Edit User** button that appears in the user's profile dialog.
+
+* You can change the default role in Simple In/Out as well as customize the permissions in the role on Simple In/Out's website.
+
+1. Within Simple In/Out's website, click **Settings** in the upper-right
+1. Click **Roles** under the **USERS** menu on the left.
+1. Click the **Edit** button associated with your default role as designated by the green checkmark.
+1. Any settings can be changed from here and will immediately take effect.
 
 ## Step 3: Add Simple In/Out from the Microsoft Entra application gallery
 
-Add Simple In/Out from the Microsoft Entra application gallery to start managing provisioning to Simple In/Out. If you have previously setup Simple In/Out for SSO, you can use the same application. However it's recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add Simple In/Out from the Microsoft Entra application gallery to start managing provisioning to Simple In/Out. If you have previously setup Simple In/Out for SSO, you can use the same application. However it's recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md).
 
-## Step 4: Define who will be in scope for provisioning 
+## Step 4: Define who will be in scope for provisioning
 
-The Microsoft Entra provisioning service allows you to scope who will be provisioned based on assignment to the application and or based on attributes of the user. If you choose to scope who will be provisioned to your app based on assignment, you can use the following [steps](~/identity/enterprise-apps/assign-user-or-group-access-portal.md) to assign users to the application. If you choose to scope who will be provisioned based solely on attributes of the user, you can use a scoping filter as described [here](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md). 
+The Microsoft Entra provisioning service allows you to scope who will be provisioned based on assignment to the application and or based on attributes of the user. If you choose to scope who will be provisioned to your app based on assignment, you can use the following [steps](~/identity/enterprise-apps/assign-user-or-group-access-portal.md) to assign users to the application. If you choose to scope who will be provisioned based solely on attributes of the user, you can use a scoping filter as described [here](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 * Start small. Test with a small set of users before rolling out to everyone. When scope for provisioning is set to assigned users, you can control this by assigning one or two users to the app. When scope is set to all users, you can specify an [attribute based scoping filter](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 * If you need more roles, you can [update the application manifest](~/identity-platform/howto-add-app-roles-in-apps.md) to add new roles.
 
-## Step 5: Configure automatic user provisioning to Simple In/Out 
+## Step 5: Configure automatic user provisioning to Simple In/Out
 
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users in Simple In/Out based on user assignments in Microsoft Entra ID.
 
@@ -99,7 +119,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |---|---|---|---|
    |userName|String|&check;|&check;
    |active|Boolean||
-   |displayName|String||&check;
+   |displayName|String|&check;|&check;
    |title|String||
    |phoneNumbers[type eq "work"].value|String||
    |phoneNumbers[type eq "mobile"].value|String||
@@ -129,7 +149,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
 
-This operation starts the initial synchronization cycle of all users defined in **Scope** in the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. 
+This operation starts the initial synchronization cycle of all users defined in **Scope** in the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running.
 
 ## Step 6: Monitor your deployment
 Once you've configured provisioning, use the following resources to monitor your deployment:

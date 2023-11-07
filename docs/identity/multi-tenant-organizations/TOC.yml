@@ -1,30 +1,30 @@
-- name: Multi-tenant organizations documentation
+- name: Multitenant organizations documentation
   href: index.yml
 - name: Overview
   expanded: true
   items:
-  - name: Multi-tenant organization scenario
+  - name: Multitenant organization scenario
     href: overview.md
-  - name: What is a multi-tenant organization?
+  - name: What is a multitenant organization?
     href: multi-tenant-organization-overview.md
   - name: What is cross-tenant synchronization?
     href: cross-tenant-synchronization-overview.md
 - name: Concepts
   expanded: true
   items:
-  - name: Multi-tenant organizations and Microsoft 365
+  - name: Multitenant organizations and Microsoft 365
     href: multi-tenant-organization-microsoft-365.md
-  - name: Multi-tenant organization templates
+  - name: Multitenant organization templates
     href: multi-tenant-organization-templates.md
   - name: Topologies for cross-tenant synchronization
     href: cross-tenant-synchronization-topology.md
 - name: How-to guides
   expanded: true
   items:
-  - name: Multi-tenant organizations
+  - name: Multitenant organizations
     expanded: true
     items:
-    - name: Configure a multi-tenant organization
+    - name: Configure a multitenant organization
       href: multi-tenant-organization-configure-graph.md
     - name: Configure templates
       href: multi-tenant-organization-configure-templates.md

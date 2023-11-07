@@ -7,7 +7,7 @@ ms.service: active-directory
 ms.subservice: hybrid
 ms.custom: has-azure-ad-ps-ref
 ms.topic: conceptual
-ms.date: 04/04/2023
+ms.date: 11/06/2023
 ms.author: billmath
 author: gargi-sinha
 manager: amycolannino

@@ -81,10 +81,14 @@ items:
         href: concept-global-secure-access-logs-monitoring.md
       - name: Global Secure Access Audit logs
         href: how-to-access-audit-logs.md
-      - name: Traffic logs
-        href: how-to-view-traffic-logs.md
       - name: Enriched Microsoft 365 audit logs
         href: how-to-view-enriched-logs.md
+      - name: Remote network health logs
+        href: how-to-remote-network-health-logs.md
+      - name: Traffic logs
+        href: how-to-view-traffic-logs.md
+      - name: Event enrichment in Microsoft 365 enriched logs
+        href: reference-event-enrichment-logs.md
 - name: Reference
   expanded: false
   items:

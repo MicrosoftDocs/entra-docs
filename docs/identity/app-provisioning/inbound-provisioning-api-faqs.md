@@ -149,10 +149,6 @@ If the attribute is set to **true**, the default mapping rule enables the accoun
 
 <a name='can-we-soft-delete-a-user-in-azure-ad-using-bulkupload-provisioning-api'></a>
 
-## Can we soft-delete a user in Microsoft Entra ID using /bulkUpload provisioning API?
-
-Yes, you can soft-delete a user by using the **DELETE** method in the bulk request operation. Refer to the [bulkUpload](/graph/api/synchronization-synchronizationjob-post-bulkupload) API spec doc for an example request. 
-
 ## How can we prevent accidental disabling/deletion of users?
 
 To prevent and recover from accidental deletions, we recommend [configuring accidental deletion threshold](accidental-deletions.md) in the provisioning app and [enabling the on-premises Active Directory recycle bin](~/identity/hybrid/connect/how-to-connect-sync-recycle-bin.md). In your provisioning app's **Attribute Mapping** blade, under **Target object actions** disable the **Delete** operation.  
