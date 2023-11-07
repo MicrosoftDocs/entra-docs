@@ -9,7 +9,7 @@ ms.service: active-directory
 ms.subservice: enterprise-users
 ms.workload: identity
 ms.topic: overview
-ms.date: 06/23/2022
+ms.date: 11/07/2023
 ms.author: barclayn
 ms.reviewer: jordandahl
 ms.custom: it-pro
@@ -31,7 +31,6 @@ Minimize the usage of the `match` operator in rules as much as possible. Instead
 
 It's better to use rules like:
 
-- `user.city -contains "ago"`
 - `user.city -startswith "Lag"` 
 
 Or, best of all:

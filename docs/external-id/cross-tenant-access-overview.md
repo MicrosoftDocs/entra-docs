@@ -5,7 +5,7 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: how-to
-ms.date: 05/17/2023
+ms.date: 11/06/2023
 
 ms.author: cmulligan
 author: csmulligan
@@ -18,7 +18,7 @@ ms.collection: M365-identity-device-management
 
 Microsoft Entra organizations can use External ID cross-tenant access settings to manage how they collaborate with other Microsoft Entra organizations and other Microsoft Azure clouds through B2B collaboration and [B2B direct connect](cross-tenant-access-settings-b2b-direct-connect.md). [Cross-tenant access settings](cross-tenant-access-settings-b2b-collaboration.md) give you granular control over how external Microsoft Entra organizations collaborate with you (inbound access) and how your users collaborate with external Microsoft Entra organizations (outbound access). These settings also let you trust multi-factor authentication (MFA) and device claims ([compliant claims and Microsoft Entra hybrid joined claims](~/identity/conditional-access/howto-conditional-access-policy-compliant-device.md)) from other Microsoft Entra organizations.
 
-This article describes cross-tenant access settings, which are used to manage B2B collaboration and B2B direct connect with external Microsoft Entra organizations, including across Microsoft clouds. More settings are available for B2B collaboration with non-Azure AD identities (for example, social identities or non-IT managed external accounts). These [external collaboration settings](external-collaboration-settings-configure.md) include options for restricting guest user access, specifying who can invite guests, and allowing or blocking domains.
+This article describes cross-tenant access settings, which are used to manage B2B collaboration and B2B direct connect with external Microsoft Entra organizations, including across Microsoft clouds. More settings are available for B2B collaboration with non-Entra ID identities (for example, social identities or non-IT managed external accounts). These [external collaboration settings](external-collaboration-settings-configure.md) include options for restricting guest user access, specifying who can invite guests, and allowing or blocking domains.
 
 > [!IMPORTANT]
 > Microsoft started to move customers using cross-tenant access settings to a new storage model on August 30, 2023. You may notice an entry in your audit logs informing you that your cross-tenant access settings were updated as our automated task migrates your settings. For a brief window while the migration processes, you'll be unable to make changes to your settings. If you're unable to make a change, wait a few moments and try the change again. Once the migration completes, [you'll no longer be capped with 25kb of storage space](./faq.yml#how-many-organizations-can-i-add-in-cross-tenant-access-settings-) and there will be no more limits on the number of partners you can add.
@@ -73,6 +73,41 @@ You can configure organization-specific settings by adding an organization and m
 To configure this setting using Microsoft Graph, see the [Update crossTenantAccessPolicyConfigurationPartner](/graph/api/crosstenantaccesspolicyconfigurationpartner-update) API. For information about building your own onboarding experience, see [B2B collaboration invitation manager](external-identities-overview.md#azure-ad-microsoft-graph-api-for-b2b-collaboration).
 
 For more information, see [Configure cross-tenant synchronization](~/identity/multi-tenant-organizations/cross-tenant-synchronization-configure.md), [Configure cross-tenant access settings for B2B collaboration](cross-tenant-access-settings-b2b-collaboration.md), and [Configure cross-tenant access settings for B2B direct connect](cross-tenant-access-settings-b2b-direct-connect.md).
+
+### Configurable redemption (Preview)
+
+With configurable redemption, you can customize the order of identity providers that your guest users can sign in with when they accept your invitation. You can enable the feature and specify the redemption order under the **Redemption order** tab.
+
+:::image type="content" source="media/cross-tenant-access-overview/redemption-order-tab-entra.png" alt-text="Screenshot of the Redemption order tab." lightbox="media/cross-tenant-access-overview/redemption-order-tab-entra.png":::
+
+When a guest user selects the **Accept invitation** link in an invitation email, Microsoft Entra ID automatically redeems the invitation based on the [default redemption order](redemption-experience.md#invitation-redemption-flow). When you change the identity provider order under the new Redemption order tab, the new order overrides the default redemption order.
+
+You find both primary identity providers and fallback identity providers under the **Redemption order** tab.
+
+Primary identity providers are the ones that have federations with other sources of authentication. Fallback identity providers are the ones that are used, when a user doesn't match a primary identity provider. 
+
+Fallback identity providers can be either Microsoft account (MSA), email one-time passcode, or both. You can't disable both fallback identity providers, but you can disable all primary identity providers and only use fallback identity providers for redemption options. 
+
+### Direct federation for Microsoft Entra ID verified domains (Preview)
+
+SAML/WS-Fed identity provider federation (Direct federation) is now supported for Microsoft Entra ID verified domains. This feature allows you to set up a Direct federation with an external identity provider for a domain that is verified in Microsoft Entra. This feature is currently in public preview.
+
+> [!NOTE]
+> Ensure that the domain is not verified in the same tenant in which you are trying to set up the Direct federation configuration.
+Once you have set up a Direct federation, you can configure the tenant’s redemption preference and move SAML/WS-Fed identity provider over Microsoft Entra ID through the new configurable redemption cross-tenant access settings. 
+
+When the guest user redeems the invite, they'll see a traditional consent screen and will then be redirected to the My Apps page. If you go into the user profile of this Direct federation user in the resource tenant, you'll notice that the user is now redeemed with external federation being the issuer.
+
+:::image type="content" source="media/cross-tenant-access-overview/external-federation-provider.png" alt-text="Screenshot of the direct federation provider under user identities." lightbox="media/cross-tenant-access-overview/external-federation-provider.png":::
+
+### Prevent your B2B users from redeeming an invite using Microsoft accounts (Preview)
+
+You can now prevent your B2B guest users from redeeming their invite using Microsoft accounts. This means that any new B2B guest user will use email one-time passcode as their fallback identity provider, and won't be able to redeem an invitation using their existing Microsoft accounts or be asked to create a new Microsoft account. 
+You can do this by disabling Microsoft accounts in the fallback identity providers of your redemption order setting. 
+
+:::image type="content" source="media/cross-tenant-access-overview/fallback-idp.png" alt-text="Screenshot of the fallback identity providers option." lightbox="media/cross-tenant-access-overview/fallback-idp.png":::
+
+Note that at any given time, there needs to be one fallback identity provider enabled. This means that if you want to disable Microsoft accounts, you'll have to enable email one-time passcode. Any existing guest users signed in with Microsoft accounts will continue using it during subsequent sign-ins. You'll need to [reset their redemption status](reset-redemption-status.md) for this setting to apply.
 
 ### Cross-tenant synchronization setting
 
@@ -130,7 +165,7 @@ To collaborate with a partner tenant in a different Microsoft Azure cloud, both 
 
 - To configure trust settings or apply access settings to specific users, groups, or applications, you'll need a Microsoft Entra ID P1 license. The license is required on the tenant that you configure. For B2B direct connect, where mutual trust relationship with another Microsoft Entra organization is required, you'll need a Microsoft Entra ID P1 license in both tenants. 
 
-- Cross-tenant access settings are used to manage B2B collaboration and B2B direct connect with other Microsoft Entra organizations. For B2B collaboration with non-Azure AD identities (for example, social identities or non-IT managed external accounts), use [external collaboration settings](external-collaboration-settings-configure.md). External collaboration settings include B2B collaboration options for restricting guest user access, specifying who can invite guests, and allowing or blocking domains.
+- Cross-tenant access settings are used to manage B2B collaboration and B2B direct connect with other Microsoft Entra organizations. For B2B collaboration with non-Entra ID identities (for example, social identities or non-IT managed external accounts), use [external collaboration settings](external-collaboration-settings-configure.md). External collaboration settings include B2B collaboration options for restricting guest user access, specifying who can invite guests, and allowing or blocking domains.
 
 - If you want to apply access settings to specific users, groups, or applications in an external organization, you'll need to contact the organization for information before configuring your settings. Obtain their user object IDs, group object IDs, or application IDs (*client app IDs* or *resource app IDs*) so you can target your settings correctly.
 

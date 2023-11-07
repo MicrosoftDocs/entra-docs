@@ -143,7 +143,7 @@ Before you customize any settings, the neutral default branding will appear in y
  
       :::image type="content" source="media/how-to-customize-branding-customers/company-branding-self-service-password-reset.png" alt-text="Screenshot of the company branding Self-service password reset. " lightbox="media/how-to-customize-branding-customers/company-branding-self-service-password-reset.png":::
 
-1. Select **Next: Review** and review all your modifications. Then select **Save** if you would like to save your changes or **Previous** if you would like to continue customizing.
+1. Select **Next: Text** if you would like to continue customizing or **Review + save** if you would like to save your changes.
 
 ### To customize user attributes
 
@@ -159,21 +159,21 @@ For your tenant, you might have different requirements for the information you w
       - Select **Sign-in/up one time code (SISU OTC)** to add a custom title.
 
       :::image type="content" source="media/how-to-customize-branding-customers/custom-text.png" alt-text="Screenshot of the company branding text tab." lightbox="media/how-to-customize-branding-customers/custom-text.png":::
-
-1. Select **Add** once you finished with your changes. You can edit the existing custom text by selecting the **Text name** and select Save. 
+ 
+1. Select **Next: Review** to review all your modifications. Then select **Save** if you'd like to save your changes or **Previous** if you want to continue customizing.
 
 > [!IMPORTANT] 
 > In the customer tenant, we have two options to add custom text to the sign-up and sign-in experience.  The function is available under each user flow during language customization and also under Company branding. Although we have two ways to customize strings (via Company Branding and via User Flows), both ways modify the same JSON file. The most recent change made either via User flows or via Company branding  will always override the previous one.
 
 ## How to customize the tenant name
 
-Your tenant name replaces the Microsoft banner logo in the neutral default sign-in experience. You can customize your tenant's name in the Properties area.
+You can customize your tenant name in the Microsoft Entra admin center to replace the Microsoft banner logo in the neutral default sign-in experience. The new tenant name also appears in the verification email sent to the user.
 
 :::image type="content" source="media/how-to-customize-branding-customers/tenant-name.png" alt-text="Screenshot of the tenant name." lightbox="media/how-to-customize-branding-customers/tenant-name.png":::
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the customer tenant you created earlier from the **Directories + subscriptions** menu.
-1. In the search bar, type and select **Properties**.
+1. In the search bar, type and select **Tenant properties**.
 1. Edit the **Name** field. 
 
    :::image type="content" source="media/how-to-customize-branding-customers/tenant-name-edit.png" alt-text="Screenshot of editing the tenant name.":::
