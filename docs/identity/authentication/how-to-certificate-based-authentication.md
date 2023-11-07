@@ -72,7 +72,7 @@ To enable the certificate-based authentication and configure user bindings in th
 
       :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/upload-certificate-authority.png" alt-text="Screenshot of how to upload certification authority file.":::
 
-1. To delete a CA certificate, select the certificate and click **Delete**.
+1. To delete a CA certificate, select the certificate and select **Delete**.
 1. Select **Columns** to add or delete columns.
 
 >[!NOTE]
@@ -146,7 +146,7 @@ To enable the certificate-based authentication in the Microsoft Entra admin cent
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Protection** > **Authentication methods** > **Certificate-based Authentication**.
 1. Under **Enable and Target**, select **Enable**.
-1. Click **All users**, or click **Add groups** to select specific groups.
+1. Select **All users**, or select **Add groups** to select specific groups.
 
    :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/enable.png" alt-text="Screenshot of how to enable CBA.":::
  
@@ -170,7 +170,7 @@ To enable CBA and configure user bindings in the Microsoft Entra admin center, c
 
    :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/policy.png" alt-text="Screenshot of Authentication policy.":::
 
-1. Click **Configure** to set up authentication binding and username binding.
+1. Select **Configure** to set up authentication binding and username binding.
 1. The protection level attribute has a default value of **Single-factor authentication**. Select **Multifactor authentication** to change the default value to MFA.
 
    >[!NOTE] 
@@ -182,21 +182,21 @@ To enable CBA and configure user bindings in the Microsoft Entra admin center, c
 
    Authentication binding rules will map the certificate attributes (issuer or Policy OID) to a value, and select default protection level for that rule. Multiple rules can be created.
 
-   To add custom rules, click on **Add rule**.
+   To add custom rules, select on **Add rule**.
 
    :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/add-rule.png" alt-text="Screenshot of how to add a rule.":::
 
-   To create a rule by certificate issuer, click **Certificate issuer**.
+   To create a rule by certificate issuer, select **Certificate issuer**.
 
    1. Select a **Certificate issuer identifier** from the list box.
-   1. Click **Multifactor authentication**.
+   1. Select **Multifactor authentication**.
 
       :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/multifactor-issuer.png" alt-text="Screenshot of multifactor authentication policy.":::
 
-   To create a rule by Policy OID, click **Policy OID**.
+   To create a rule by Policy OID, select **Policy OID**.
 
    1. Enter a value for **Policy OID**.
-   1. Click **Multifactor authentication**.
+   1. Select **Multifactor authentication**.
 
       :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/multifactor-policy-oid.png" alt-text="Screenshot of mapping to Policy OID.":::
 
@@ -274,17 +274,17 @@ As a first configuration test, you should try to sign in to the [MyApps portal](
 
    :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/name.png" alt-text="Screenshot of the User Principal Name.":::
 
-1. Click **Next**.
+1. Select **Next**.
 
    :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/certificate.png" alt-text="Screenshot of sign-in with certificate.":::
 
-   If you enabled other authentication methods like Phone sign-in or FIDO2, users may see a different sign-in screen.
+   If you enabled other authentication methods like Phone sign-in or FIDO2, users might see a different sign-in screen.
 
    :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/alternative.png" alt-text="Screenshot of the alternative sign-in.":::
 
 1. Select **Sign in with a certificate**.
 
-1. Pick the correct user certificate in the client certificate picker UI and click **OK**.
+1. Pick the correct user certificate in the client certificate picker UI and select **OK**.
 
    :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/picker.png" alt-text="Screenshot of the certificate picker UI.":::
 
@@ -304,7 +304,7 @@ Let's walk through a scenario where we validate strong authentication. We'll cre
 
    `CN = WoodgroveCA`
 
-1. Create a policy OID rule, with protection level as multifactor authentication and value set to one of the policy OID’s in your certificate. For example, 1.2.3.4.
+1. Create a policy OID rule, with protection level as multifactor authentication and value set to one of the policy OIDs in your certificate. For example, 1.2.3.4.
 
    :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/policy-oid-rule.png" alt-text="Screenshot of the Policy OID rule.":::
 
