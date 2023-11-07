@@ -24,11 +24,11 @@ The following diagram shows an overview of how on-premises application provision
 There are three primary components to provisioning users into an on-premises application:
 
 - The provisioning agent provides connectivity between Microsoft Entra ID and your on-premises environment.
-- The ECMA host converts provisioning requests from Microsoft Entra ID to requests made to your target application. It serves as a gateway between Microsoft Entra ID and your application. You can use it to import existing ECMA2 connectors used with Microsoft Identity Manager. The ECMA host isn't required if you've built a SCIM application or SCIM gateway.
+- The Extensible Connectivity(ECMA) Connector host converts provisioning requests from Microsoft Entra ID to requests made to your target application. It serves as a gateway between Microsoft Entra ID and your application. You can use it to import existing ECMA2 connectors used with Microsoft Identity Manager. The ECMA host isn't required if you've built a SCIM application or SCIM gateway.
 - The Microsoft Entra provisioning service serves as the synchronization engine.
 
 >[!NOTE]
-> Microsoft Identity Manager Synchronization isn't required. But you can use it to build and test your ECMA connector before you import it into the ECMA host.
+> Microsoft Identity Manager Synchronization isn't required. But you can use it to build and test your ECMA2 connector before you import it into the ECMA host.  The ECMA2 connector is specific to MIM, where the ECMA host is specific for use with the provisioning agent.
 
 
 > [!VIDEO https://www.youtube.com/embed/QdfdpaFolys]
@@ -56,9 +56,9 @@ The ECMA Connector Host has several areas it uses to achieve on-premises provisi
 ### About anchor attributes and distinguished names
 The following information is provided to better explain the anchor attributes and the distinguished names, particularly used by the genericSQL connector.
 
-The anchor attribute is a unique attribute of an object type that does not change and represents that object in the ECMA Connector Host in-memory cache.
+The anchor attribute is a unique attribute of an object type that doesn't change and represents that object in the ECMA Connector Host in-memory cache.
 
-The distinguished name (DN) is a name that uniquely identifies an object by indicating its current location in the directory hierarchy.  Or in the case of SQL, in the partition. The name is formed by concatenating the anchor attribute at the root of the directory partition. 
+The distinguished name (DN) is a name that uniquely identifies an object by indicating its current location in the directory hierarchy.  Or with SQL, in the partition. The name is formed by concatenating the anchor attribute at the root of the directory partition. 
 
 When we think of traditional DNs in a traditional format, for say, Active Directory or LDAP, we think of something similar to:
 
@@ -79,23 +79,23 @@ Since ECMA Connector Host currently only supports the USER object type, the OBJE
 
 ### User creation workflow
 
-1.  The Microsoft Entra provisioning service queries the ECMA Connector Host to see if the user exists.  It uses the **matching attribute** as the filter.  This attribute is defined in the Azure portal under Enterprise applications -> On-premises provisioning -> provisioning -> attribute matching.  It is denoted by the 1 for matching precedence.
+1.  The Microsoft Entra provisioning service queries the ECMA Connector Host to see if the user exists.  It uses the **matching attribute** as the filter.  This attribute is defined in the Azure portal under Enterprise applications -> On-premises provisioning -> provisioning -> attribute matching.  It's denoted by the 1 for matching precedence.
 You can define one or more matching attribute(s) and prioritize them based on the precedence.  Should you want to change the matching attribute you can also do so.
  [![Matching attribute](./media/on-premises-application-provisioning-architecture/match-1.png)](./media/on-premises-application-provisioning-architecture/match-1.png#lightbox)
 
 2.  ECMA Connector Host receives the GET request and queries its internal cache to see if the user exists and has based imported.  This is done using the matching attribute(s) above. If you define multiple matching attributes, the Microsoft Entra provisioning service will send a GET request for each attribute and the ECMA host will check its cache for a match until it finds one.   
 
-3. If the user does not exist, Microsoft Entra ID will make a POST request to create the user.  The ECMA Connector Host will respond back to Microsoft Entra ID with the HTTP 201 and provide an ID for the user. This ID is derived from the anchor value defined in the object types page. This anchor will be used by Microsoft Entra ID to query the ECMA Connector Host for future and subsequent requests. 
+3. If the user doesn't exist, Microsoft Entra ID will make a POST request to create the user.  The ECMA Connector Host will respond back to Microsoft Entra ID with the HTTP 201 and provide an ID for the user. This ID is derived from the anchor value defined in the object types page. This anchor will be used by Microsoft Entra ID to query the ECMA Connector Host for future and subsequent requests. 
 4. If a change happens to the user in Microsoft Entra ID, then Microsoft Entra ID will make a GET request to retrieve the user using the anchor from the previous step, rather than the matching attribute in step 1. This allows, for example, the UPN to change without breaking the link between the user in Microsoft Entra ID and in the app.  
 
 
 ## Agent best practices
-- Using the same agent for the on-premises provisioning feature along with Workday / SuccessFactors / Microsoft Entra Connect cloud sync is currently unsupported. We are actively working to support on-premises provisioning on the same agent as the other provisioning scenarios.
+- Using the same agent for the on-premises provisioning feature along with Workday / SuccessFactors / Microsoft Entra Connect cloud sync is currently unsupported. We're actively working to support on-premises provisioning on the same agent as the other provisioning scenarios.
 - - Avoid all forms of inline inspection on outbound TLS communications between agents and Azure. This type of inline inspection causes degradation to the communication flow.
 - The agent must communicate with both Azure and your application, so the placement of the agent affects the latency of those two connections. You can minimize the latency of the end-to-end traffic by optimizing each network connection. Each connection can be optimized by:
   - Reducing the distance between the two ends of the hop.
   - Choosing the right network to traverse. For example, traversing a private network rather than the public internet might be faster because of dedicated links.
-- The agent and ECMA Host rely on a certificate for communication. The self-signed certificate generated by the ECMA host should only be used for testing purposes. The self-signed certificate expires in two years by default and cannot be revoked. Microsoft recommends using a certificate from a trusted CA for production use cases.  
+- The agent and ECMA Host rely on a certificate for communication. The self-signed certificate generated by the ECMA host should only be used for testing purposes. The self-signed certificate expires in two years by default and can't be revoked. Microsoft recommends using a certificate from a trusted CA for production use cases.  
 
 
 ## Provisioning agent questions
@@ -143,7 +143,7 @@ You can also check whether all the required ports are open.
      - Microsoft Entra Connect Provisioning Agent Package
 
 ## Provisioning agent history
-This article lists the versions and features of Microsoft Entra Connect Provisioning Agent that have been released. The Microsoft Entra team regularly updates the Provisioning Agent with new features and functionality. Please ensure that you do not use the same agent for on-premises provisioning and cloud sync / HR-driven provisioning.
+This article lists the versions and features of Microsoft Entra Connect Provisioning Agent that have been released. The Microsoft Entra team regularly updates the Provisioning Agent with new features and functionality. Please ensure that you don't use the same agent for on-premises provisioning and cloud sync / HR-driven provisioning.
 
 Microsoft provides direct support for the latest agent version and one version before.
 
