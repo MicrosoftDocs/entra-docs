@@ -8,8 +8,8 @@ ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 11/06/2023
 
-ms.author: inbarckms
-author: justinha
+ms.author: justinha
+author: inbarckms
 manager: amycolannino
 ms.reviewer: inbarc
 
