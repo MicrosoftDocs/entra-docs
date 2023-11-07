@@ -11,7 +11,7 @@ ms.workload: identity
 ms.date: 01/02/2023
 ms.author: jomondi
 ms.reviewer: sreyanth, ludwignick
-ms.custom: enterprise-apps, has-azure-ad-ps-ref
+ms.custom: enterprise-apps, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
 # Home Realm Discovery for an application
 
@@ -109,7 +109,7 @@ Policies only take effect for a specific application when they are attached to a
 
 Only one HRD policy can be active on a service principal at any one time.
 
-You can use the Azure AD PowerShell cmdlets to create and manage HRD policy.
+You can use the [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview) cmdlets to create and manage HRD policy.
 
 The json object is an example HRD policy definition:
 
