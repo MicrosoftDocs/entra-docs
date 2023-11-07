@@ -175,7 +175,7 @@ Users do not need to be assigned an Identity Governance license, but there needs
 
 All users who are in scope of Microsoft Entra ID Governance features, including business guests such as contractors, partners, and external collaborators, need a license.  We're creating a new Microsoft Entra ID Governance license for business guests. This license will operate on a monthly active usage (MAU) model. Customers will be able to acquire licenses matching their anticipated business guest MAU.
 
-We anticipate making these licenses available in spring 2024. In the interim, organizations that govern the identities of their employees with Microsoft Entra ID Governance licensed features can govern the identities of their business guests for no additional cost or licensing requirements. Existing Azure AD External ID customers are grandfathered to continue using the subset of identity governance features that are included in Entra ID P1 and P2.
+We anticipate making these licenses available in spring 2024. In the interim, organizations that govern the identities of their employees with Microsoft Entra ID Governance licensed features can govern the identities of their business guests for no additional cost or licensing requirements. Existing Microsoft Entra External ID customers are grandfathered to continue using the subset of identity governance features that are included in Entra ID P1 and P2.
 
 For more details and updates, see: [Microsoft Entra ID Governance licensing for business guests](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/microsoft-entra-id-governance-licensing-for-business-guests/ba-p/3575579).
 
