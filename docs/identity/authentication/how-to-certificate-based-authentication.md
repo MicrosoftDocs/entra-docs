@@ -225,7 +225,7 @@ To enable CBA and configure user bindings in the Microsoft Entra admin center, c
 
       :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/select-issuer-and-serial-number.png" alt-text="Screenshot of how to select Issuer and Serial Number.":::
 
-   1. The only user attribute supported is **CertificateUserIds**. Click **Add**.
+   1. The only user attribute supported is **CertificateUserIds**. Select **Add**.
 
       :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/add-issuer-and-serial-number.png" alt-text="Screenshot of how to add Issuer and Serial Number.":::
 
