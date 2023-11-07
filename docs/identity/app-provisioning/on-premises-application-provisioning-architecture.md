@@ -24,11 +24,11 @@ The following diagram shows an overview of how on-premises application provision
 There are three primary components to provisioning users into an on-premises application:
 
 - The provisioning agent provides connectivity between Microsoft Entra ID and your on-premises environment.
-- The ECMA host converts provisioning requests from Microsoft Entra ID to requests made to your target application. It serves as a gateway between Microsoft Entra ID and your application. You can use it to import existing ECMA2 connectors used with Microsoft Identity Manager. The ECMA host isn't required if you've built a SCIM application or SCIM gateway.
+- The Extensible Connectivity(ECMA) Connector host converts provisioning requests from Microsoft Entra ID to requests made to your target application. It serves as a gateway between Microsoft Entra ID and your application. You can use it to import existing ECMA2 connectors used with Microsoft Identity Manager. The ECMA host isn't required if you've built a SCIM application or SCIM gateway.
 - The Microsoft Entra provisioning service serves as the synchronization engine.
 
 >[!NOTE]
-> Microsoft Identity Manager Synchronization isn't required. But you can use it to build and test your ECMA connector before you import it into the ECMA host.
+> Microsoft Identity Manager Synchronization isn't required. But you can use it to build and test your ECMA2 connector before you import it into the ECMA host.  The ECMA2 connector is specific to MIM, where the ECMA host is specific for use with the provisioning agent.
 
 
 > [!VIDEO https://www.youtube.com/embed/QdfdpaFolys]
