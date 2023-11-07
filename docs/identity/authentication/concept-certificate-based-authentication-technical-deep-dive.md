@@ -67,7 +67,7 @@ Now we'll walk through each step:
 
    :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/sign-in-log.png" alt-text="Screenshot of the sign-in log in Microsoft Entra ID." lightbox="./media/concept-certificate-based-authentication-technical-deep-dive/sign-in-log.png":::
    
-   Click the log entry to bring up **Activity Details** and click **Authentication Details**. You can see an entry for the X.509 certificate.
+   Select the log entry to bring up **Activity Details** and select **Authentication Details**. You can see an entry for the X.509 certificate.
 
    :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/entry.png" alt-text="Screenshot of the entry for X.509 certificate.":::
 
