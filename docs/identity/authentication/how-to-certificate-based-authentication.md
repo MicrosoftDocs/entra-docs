@@ -321,7 +321,7 @@ Let's walk through a scenario where we validate strong authentication. We'll cre
 
    :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/alternative.png" alt-text="Screenshot of the alternative sign-in.":::
 
-1. Select the client certificate and click **Certificate Information**.
+1. Select the client certificate and select **Certificate Information**.
 
    :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/client-picker.png" alt-text="Screenshot of the client picker.":::
 
