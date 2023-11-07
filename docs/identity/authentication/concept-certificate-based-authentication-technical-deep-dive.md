@@ -85,7 +85,7 @@ Now we'll walk through each step:
 
 ## Certificate-based authentication is MFA capable
 
-Microsoft Entra CBA is capable of multifactor authentication (MFA) method. Microsoft Entra CBA can be either single-factor (SF) or multifactor (MF) depending on the tenant configuration. Enabling CBA makes a user potentially capable to complete MFA. A user may need more configuration to complete MFA, and proof up to register other authentication methods when the user is in scope for CBA.
+Microsoft Entra CBA is capable of multifactor authentication (MFA) method. Microsoft Entra CBA can be either single-factor (SF) or multifactor (MF) depending on the tenant configuration. Enabling CBA makes a user potentially capable to complete MFA. A user might need more configuration to complete MFA, and proof up to register other authentication methods when the user is in scope for CBA.
 
 If the CBA-enabled user only has a Single Factor (SF) certificate and needs to complete MFA:
    1. Use a password and SF certificate.
@@ -148,11 +148,11 @@ Let's look at an example of a user who has single-factor certificate, and is con
 
    :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/sign-in-cert.png" alt-text="Screenshot of how to sign in with a certificate.":::
 
-   If you enabled other authentication methods like Phone sign-in or FIDO2 security keys, users may see a different sign-in screen.
+   If you enabled other authentication methods like Phone sign-in or FIDO2 security keys, users might see a different sign-in screen.
 
    :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/sign-in-alt.png" alt-text="Screenshot of alternate way to sign in with a certificate.":::
 
-1. Pick the correct user certificate in the client certificate picker and click **OK**.
+1. Pick the correct user certificate in the client certificate picker and select **OK**.
 
    :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/cert-picker.png" alt-text="Screenshot of how to select a certificate.":::
 
@@ -386,7 +386,7 @@ Select **More details** to get logging information that can be sent to an admini
 
 :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/details.png" alt-text="Screenshot of error details." :::  
 
-Click **Other ways to sign in** to try other methods available to the user to sign in. 
+Select **Other ways to sign in** to try other methods available to the user to sign in. 
  
 >[!NOTE]
 >If you retry CBA in a browser, it'll keep failing due to the browser caching issue. Users need to open a new browser session and sign in again.
@@ -395,9 +395,9 @@ Click **Other ways to sign in** to try other methods available to the user to si
 
 ## Certificate-based authentication in MostRecentlyUsed (MRU) methods
  
-Once a user authenticates successfully using CBA, the user's MostRecentlyUsed (MRU) authentication method is set to CBA. Next time, when the user enters their UPN and clicks **Next**, the user is taken to the CBA method directly, and need not select **Use the certificate or smart card**.
+Once a user authenticates successfully using CBA, the user's MostRecentlyUsed (MRU) authentication method is set to CBA. Next time, when the user enters their UPN and selects **Next**, the user is taken to the CBA method directly, and need not select **Use the certificate or smart card**.
 
-To reset the MRU method, the user needs to cancel the certificate picker, click **Other ways to sign in**, and select another method available to the user and authenticate successfully.
+To reset the MRU method, the user needs to cancel the certificate picker, select **Other ways to sign in**, and select another method available to the user and authenticate successfully.
 
 ## External identity support
 
@@ -407,7 +407,7 @@ For more information about how to enable **Trust multifactor authentication from
 
 ## Known issues
 
-- On iOS clients, there's a double prompt issue as part of the Microsoft Entra CBA flow where the user needs to click **Use the certificate or smart card** twice. We're aware of the UX experience issue and working on fixing this for a seamless UX experience.
+- On iOS clients, there's a double prompt issue as part of the Microsoft Entra CBA flow where the user needs to select **Use the certificate or smart card** twice. We're aware of the UX experience issue and working on fixing this for a seamless UX experience.
 
 ## Next steps
 
