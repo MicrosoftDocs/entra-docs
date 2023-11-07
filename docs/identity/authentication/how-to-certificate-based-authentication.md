@@ -182,7 +182,7 @@ To enable CBA and configure user bindings in the Microsoft Entra admin center, c
 
    Authentication binding rules will map the certificate attributes (issuer or Policy OID) to a value, and select default protection level for that rule. Multiple rules can be created.
 
-   To add custom rules, select on **Add rule**.
+   To add custom rules, select **Add rule**.
 
    :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/add-rule.png" alt-text="Screenshot of how to add a rule.":::
 
