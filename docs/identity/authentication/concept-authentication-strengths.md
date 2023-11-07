@@ -6,12 +6,12 @@ services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 09/27/2023
+ms.date: 11/06/2023
 
-ms.author: justinha
+ms.author: inbarckms
 author: justinha
 manager: amycolannino
-ms.reviewer: inbarckms
+ms.reviewer: inbarc
 
 ms.collection: M365-identity-device-management
 ---
@@ -235,11 +235,7 @@ An authentication strength Conditional Access policy works together with [MFA tr
 - **Windows Hello for Business** – If the user signed in with Windows Hello for Business as their primary authentication method, it can be used to satisfy an authentication strength requirement that includes Windows Hello for Business. However, if the user signed in with another method like password as their primary authenticating method, and the authentication strength requires Windows Hello for Business, they aren't prompted to sign in with Windows Hello for Business. The user needs to restart the session, choose **Sign-in options**, and select a method required by the authentication strength.
 
 
-## Known isssues
-
-The following known issues are currently being addressed:
-
-- **Sign-in frequency** - If both sign-in frequency and authentication strength requirements apply to a sign-in, and the user has previously signed in using a method that meets the authentication strength requirements, the sign-in frequency requirement doesn't apply. [Sign-in frequency](concepts-azure-multi-factor-authentication-prompts-session-lifetime.md) allows you to set the time interval for re-authentication of users based on their credentials, but it isn't fully integrated with authentication strength yet. It works independently and doesn't currently impact the actual sign-in procedure. Therefore, you may notice that some sign-ins using expired credentials don't prompt re-authentication and the sign-in process proceeds successfully.
+## Known isssue
 
 - **FIDO2 security key Advanced options** - Advanced options aren't supported for external users with a home tenant that is located in a different Microsoft cloud than the resource tenant.
 
