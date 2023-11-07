@@ -99,14 +99,6 @@ If you've set up your device using the secure enclave method, you can use the re
 1. Under **Password options**, find **Use passwords and passkeys from** and enable **Company Portal** through the toggle switch.
 <!--TODO: New screenshot-->
 
-## Deregister a device with macOS 13 Ventura <!--TODO: macOS 14 tab-->
-
-Once you've registered your device with PSSO, you can deregister it at any time, and remove the device from your organization. You can do this by using the **Company Portal** app.
-
-1. Open the **Company Portal** app and navigate to **Preferences**.
-1. To unregister the device, select **Unregister**.
-1. Alternatively, to sign out your work account on the device, select **Sign out**. <!--TODO: Insert slide 107 screenshot-->
-
 ## See also
 
 - [Passwordless authentication options for Microsoft Entra ID](../authentication/concept-authentication-passwordless.md)
