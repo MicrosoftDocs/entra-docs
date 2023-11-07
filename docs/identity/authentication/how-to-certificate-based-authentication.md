@@ -256,7 +256,7 @@ To determine how to configure username binding, see [How username binding works]
    If the specified X.509 certificate field is found on the certificate, but Microsoft Entra ID doesn't find a user object using that value, the authentication fails. Microsoft Entra ID tries the next binding in the list.
 
 
-1. Click **Save** to save the changes. 
+1. Select **Save** to save the changes. 
 
 The final configuration will look like this image:
 
