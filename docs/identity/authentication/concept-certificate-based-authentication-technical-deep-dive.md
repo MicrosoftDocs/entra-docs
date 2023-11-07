@@ -132,7 +132,7 @@ For passwordless sign-in to work, users should disable legacy notification throu
 
    :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/configure.png" alt-text="Screenshot of how to configure multifactor authentication settings.":::
 
-1. Under **Verification options**, clear **Notification through mobile app**, and click **Save**.
+1. Under **Verification options**, clear **Notification through mobile app**, and select **Save**.
 
    :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/clear-notification.png" alt-text="Screenshot of how to remove notification through mobile app.":::
 
