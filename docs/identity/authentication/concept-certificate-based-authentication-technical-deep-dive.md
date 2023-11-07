@@ -46,7 +46,7 @@ Now we'll walk through each step:
 
    :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/sign-in-cert.png" alt-text="Screenshot of the Use a certificate or smart card.":::
 
-   If you enabled other authentication methods like **Phone sign-in** or **Security keys**, users may see a different sign-in screen.
+   If you enabled other authentication methods like **Phone sign-in** or **Security keys**, users might see a different sign-in screen.
 
    :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/sign-in-alt.png" alt-text="Screenshot of the Sign-in if FIDO2 is also enabled.":::
 
