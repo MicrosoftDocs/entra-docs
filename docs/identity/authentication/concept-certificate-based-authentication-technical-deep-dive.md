@@ -71,7 +71,7 @@ Now we'll walk through each step:
 
    :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/entry.png" alt-text="Screenshot of the entry for X.509 certificate.":::
 
-1. Microsoft Entra ID requests a client certificate. The user picks the client certificate, and clicks **Ok**.
+1. Microsoft Entra ID requests a client certificate. The user picks the client certificate, and selects **Ok**.
 
    >[!NOTE] 
    >Trusted CA hints aren't supported, so the list of certificates can't be further scoped. We're looking into adding this functionality in the future.
