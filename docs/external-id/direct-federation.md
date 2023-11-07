@@ -25,7 +25,7 @@ This article describes how to set up federation with any organization whose iden
 
 > [!IMPORTANT]
 >
->- You can now set up SAML/WS-Fed IdP federation with Microsoft Entra ID verified domains and [configure the invitation redemption order (preview)](cross-tenant-access-overview.md) to make sure that when invited users sign in, they redeem their invitations using the federated IdP instead of Microsoft Entra ID. **Redemption order** settings (preview) are available in your cross-tenant access settings for inbound B2B collaboration.
+>- You can now set up SAML/WS-Fed IdP federation with Microsoft Entra ID verified domains and [configure the invitation redemption order (preview)](cross-tenant-access-overview.md#configurable-redemption-preview) to make sure that when invited users sign in, they redeem their invitations using the federated IdP instead of Microsoft Entra ID. **Redemption order** settings (preview) are available in your cross-tenant access settings for inbound B2B collaboration.
 >- We no longer support an allowlist of IdPs for new SAML/WS-Fed IdP federations. When you're setting up a new external federation, refer to [Step 1: Determine if the partner needs to update their DNS text records](#step-1-determine-if-the-partner-needs-to-update-their-dns-text-records).
 >- In the SAML request sent by Microsoft Entra ID for external federations, the Issuer URL is a tenanted endpoint. For any new federations, we recommend that all our partners set the audience of the SAML or WS-Fed based IdP to a tenanted endpoint. Refer to the [SAML 2.0](#required-saml-20-attributes-and-claims) and [WS-Fed](#required-ws-fed-attributes-and-claims) required attributes and claims sections. Any existing federations configured with the global endpoint will continue to work, but new federations will stop working if your external IdP is expecting a global issuer URL in the SAML request.
 > - We've removed the single domain limitation. You can now associate multiple domains with an individual federation configuration.
@@ -249,7 +249,7 @@ You can use the Microsoft Graph API [samlOrWsFedExternalDomainFederation](/graph
 
 ## Step 4: Configure the redemption order (preview) for Microsoft Entra ID verified domains
 
-If the domain is Microsoft Entra ID verified, [configure the **Redemption order** settings](cross-tenant-access-settings-b2b-collaboration.md) in your cross-tenant access settings for inbound B2B collaboration. Move **SAML/WS-Fed identity providers** to the top of the **Primary identity providers** list to prioritize redemption with the federated IdP.
+If the domain is Microsoft Entra ID verified, [configure the **Redemption order** settings](cross-tenant-access-settings-b2b-collaboration.md#configure-redemption-order-preview) in your cross-tenant access settings for inbound B2B collaboration. Move **SAML/WS-Fed identity providers** to the top of the **Primary identity providers** list to prioritize redemption with the federated IdP.
 
 ## Step 5: Test SAML/WS-Fed IdP federation in Microsoft Entra ID
 
