@@ -482,7 +482,7 @@ To enable CBA and configure username bindings using Graph API, complete the foll
    GET  https://graph.microsoft.com/v1.0/policies/authenticationmethodspolicy
    ```
 
-1. GET the configuration for the x509Certificate authentication method:
+1. GET the configuration for the x509 Certificate authentication method:
 
    ```http
    GET https://graph.microsoft.com/v1.0/policies/authenticationmethodspolicy/authenticationMethodConfigurations/X509Certificate
