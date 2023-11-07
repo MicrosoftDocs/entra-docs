@@ -72,35 +72,41 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 1. On the **Basic SAML Configuration** section, perform the following steps:
 
-    a. In the **Identifier** text box, type a value using the following pattern:
-    `spn:NetSfere_ID`
+    a. In the **Identifier** text box, type a URL using one of the following pattens:
 
-    b. In the **Reply URL** text box, type one of the following URLs:
+    |**Identifier**|
+    |--------------|
+    |`spn:<NetSfere_ID>`|
+    |`https://<SUBDOMAIN>.netsfere.com/saml/module.php/saml/sp/metadata.php/default-sp`|
+    |`https://<SUBDOMAIN>.netsferetest.com/saml/module.php/saml/sp/metadata.php/default-sp`|
+    |`https://<SUBDOMAIN>.netsferedev.com/saml/module.php/saml/sp/metadata.php/default-sp`|
+
+    b. In the **Reply URL** text box, type a URL using one of the following pattens:
 
     |**Reply URL**|
     |--------------|
-    |`https://*.netsfere.com`|
-    |`https://*.netsferetest.com`|
-    |`https://*.netsferedev.com`|
+    |`https://<SUBDOMAIN>.netsfere.com/saml/module.php/saml/sp/saml2-acs.php/default-sp`|
+    |`https://<SUBDOMAIN>.netsferetest.com/saml/module.php/saml/sp/saml2-acs.php/default-sp`|
+    |`https://<SUBDOMAIN>.netsferedev.com/saml/module.php/saml/sp/saml2-acs.php/default-sp`|
 
 1. Perform the following step, if you wish to configure the application in **SP** initiated mode:
 
-    In the **Sign-on URL** text box, type one of the following URLs:
+    In the **Sign-on URL** text box, type a URL using one of the following pattens:
 
-    |**Sign-on URL**|
+    |**Sign on URL**|
     |---------------|
-    |`https://*.netsfere.com`|
-    |`https://*.netsferetest.com`|
-    |`https://*.netsferedev.com`|
+    |`https://<SUBDOMAIN>.netsfere.com`|
+    |`https://<SUBDOMAIN>.netsferetest.com`|
+    |`https://<SUBDOMAIN>.netsferedev.com`|
 
 	> [!NOTE]
-	> The Identifier value is not real. Update the value with the actual Identifier. Contact [NetSfere support team](mailto:support@netsfere.com) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
+	> These value are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [NetSfere support team](mailto:support@netsfere.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
 
-1. NetSfere - SSO application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
+1. NetSfere application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
 	![Screenshot shows the image of attributes configuration.](common/default-attributes.png "Image")
 
-1. In addition to above, NetSfere - SSO application expects few more attributes to be passed back in SAML response which are shown below. These attributes are also pre populated but you can review them as per your requirements.
+1. In addition to above, NetSfere application expects few more attributes to be passed back in SAML response which are shown below. These attributes are also pre populated but you can review them as per your requirements.
 	
 	| Name |   Source Attribute|
 	| ---- | --------- |
