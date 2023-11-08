@@ -125,7 +125,6 @@ In this tutorial;
     :::image type="content" source="media/tutorial-single-page-app-angular-sign-in-sign-out/angular-01-not-signed-in.png" alt-text="Web browser displaying sign-in dialog":::
     
 1. Select the **Login** button in the top right corner of the screen. 
-1. Select **Accept** to grant the application access to your profile information.
 1. After you're signed in, you'll see your profile information displayed on the page.
 1. Select the **Logout** button in the top right corner of the screen to sign out.
 
