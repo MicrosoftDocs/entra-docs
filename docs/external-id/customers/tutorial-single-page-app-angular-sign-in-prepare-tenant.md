@@ -60,7 +60,7 @@ In this tutorial:
    1. In the **Identity providers** list, select **Email Accounts**. This identity provider allows users to sign-in or sign-up using their email address.
    
          > [!NOTE]
-         > Additional identity providers will be listed here only after you set up federation with them. For example, if you set up federation with [Google](../../how-to-google-federation-customers.md) or [Facebook](../../how-to-facebook-federation-customers.md), you'll be able to select those additional identity providers here.  
+         > Additional identity providers will be listed here only after you set up federation with them. For example, if you set up federation with [Google](./how-to-google-federation-customers.md) or [Facebook](./how-to-facebook-federation-customers.md), you'll be able to select those additional identity providers here.  
 
    1. Under **Email accounts**, you can select one of the two options. For this tutorial, select **Email with password**.
 
