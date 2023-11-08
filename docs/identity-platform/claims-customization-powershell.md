@@ -66,7 +66,7 @@ In this example, you create a policy that removes the [basic claim set](referenc
     New-MgPolicyClaimMappingPolicy -Definition @('{"ClaimsMappingPolicy":{"Version":1,"IncludeBasicClaimSet":"false"}}') -DisplayName "OmitBasicClaims" -Type "ClaimsMappingPolicy"
     ```
 
-    2. To see your new policy, and to get the policy ObjectId, run the following command:
+2. To see your new policy, and to get the policy `ObjectId`, run the following command:
 
     ```PowerShell
     Get-MgPolicyClaimMappingPolicy
