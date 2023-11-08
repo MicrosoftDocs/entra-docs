@@ -85,23 +85,23 @@ The following table shows what features are available with each license.  Not al
 |[Entitlement management with Verified ID](entitlement-management-verified-id-settings.md)||||x|  
 |[Entitlement management + Custom Extensions (Logic Apps)](entitlement-management-logic-apps-integration.md)||||x|  
 |[Entitlement management + Auto Assignment Policies](entitlement-management-access-package-auto-assignment-policy.md)||||x|
-|[Entitlement management - Invite+Assign Any](entitlement-management-access-package-assignments.md#directly-assign-any-user-preview)||||x|
+|[Entitlement management - Directly Assign Any User(Preview)](entitlement-management-access-package-assignments.md#directly-assign-any-user-preview)||||x|
 |[Entitlement management - Guest Conversion API](entitlement-management-access-package-manage-lifecycle.md)||||x|
-|[Entitlement management - Grace Period - Public Preview](entitlement-management-external-users.md#manage-the-lifecycle-of-external-users)|||x|x|  
+|[Entitlement management - Grace Period(Preview)](entitlement-management-external-users.md#manage-the-lifecycle-of-external-users)|||x|x|  
 |[My Access portal](my-access-portal-overview.md)|||x|x|
-|[Entitlement management - Sponsors Policy(Public Preview)](entitlement-management-access-package-approval-policy.md)||||x|
+|[Entitlement management - Sponsors Policy(Preview)](entitlement-management-access-package-approval-policy.md)||||x|
 |[Privileged Identity Management (PIM)](./privileged-identity-management/pim-configure.md)|||x|x|
 |[PIM For Groups](./privileged-identity-management/concept-pim-for-groups.md)|||x|x|
 |[PIM CA Controls](./privileged-identity-management/pim-configure.md)|||x|x|
 |[Access Reviews - Basic access certifications and reviews](access-reviews-overview.md)|||x|x|
-|[Access reviews - PIM For Groups - Public Preview](create-access-review-pim-for-groups.md)||||x|
+|[Access reviews - PIM For Groups(Preview)](create-access-review-pim-for-groups.md)||||x|
 |[Access reviews - Inactive Users reviews](create-access-review.md)||||x|
 |[Access Reviews - Inactive Users recommendations](review-recommendations-access-reviews.md#inactive-user-recommendations)|||x|x|
 |[Access reviews - Machine learning assisted access certifications and reviews](review-recommendations-access-reviews.md#user-to-group-affiliation)||||x|
 |[Lifecycle Workflows (LCW)](what-are-lifecycle-workflows.md)||||x|
 |[LCW + Custom Extensions (Logic Apps)](lifecycle-workflow-extensibility.md)||||x|
-|[Identity governance dashboard - Public Preview](governance-dashboard.md)||x|x|x|
-|[Insights and reporting - Inactive guest accounts (Preview)](~/identity/users/clean-up-stale-guest-accounts.md)||||x|
+|[Identity governance dashboard (Preview)](governance-dashboard.md)||x|x|x|
+|[Insights and reporting - Inactive guest accounts(Preview)](~/identity/users/clean-up-stale-guest-accounts.md)||||x|
 
 
 ## Entitlement Management
@@ -169,20 +169,20 @@ Here are some example license scenarios to help you determine the number of lice
 
 ### Do licenses need to be assigned to users to use Identity Governance features?
 
-Users do not need to be assigned an Identity Governance license, but there needs to be as many license seats to include all users in scope of, or who configures, the Identity Governance features.
+Users do not need to be assigned a Microsoft Entra ID Governance license, but there needs to be as many license seats to include all users in scope of, or who configures, the Identity Governance features.
 
-### How can I license usage of Entra ID Governance features for business guests?
+### How can I license usage of Microsoft Entra ID Governance features for business guests?
 
-All users who are in scope of Entra ID Governance features, including business guests such as contractors, partners, and external collaborators, need a license.  We're creating a new Microsoft Entra ID Governance license for business guests. This license will operate on a monthly active usage (MAU) model. Customers will be able to acquire licenses matching their anticipated business guest MAU.
+All users who are in scope of Microsoft Entra ID Governance features, including business guests such as contractors, partners, and external collaborators, need a license.  We're creating a new Microsoft Entra ID Governance license for business guests. This license will operate on a monthly active usage (MAU) model. Customers will be able to acquire licenses matching their anticipated business guest MAU.
 
-We anticipate making these licenses available in spring 2024. In the interim, organizations that govern the identities of their employees with ID Governance can govern the identities of their business guests for no additional cost. Existing Azure AD External ID customers are grandfathered to continue using the subset of identity governance features that are included in Entra ID P1 and P2.
+We anticipate making these licenses available in spring 2024. In the interim, organizations that govern the identities of their employees with Microsoft Entra ID Governance can govern the identities of their business guests for no additional cost. At this time, existing customers of Microsoft Entra ID P1 or P2 with Microsoft Entra External ID can continue using the subset of features that are included in P1 or P2 with their business guests through their Microsoft Entra External ID license.
 
-For more details and updates, see: [Microsoft Entra ID Governance licensing for business guests](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/microsoft-entra-id-governance-licensing-for-business-guests/ba-p/3575579).
+For more details, see: [Microsoft Entra ID Governance licensing for business guests](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/microsoft-entra-id-governance-licensing-for-business-guests/ba-p/3575579).
 
 
 ### What happens when a PIM license expires?
 
-If a Microsoft Azure AD Premium P2, Microsoft Entra ID Governance, or trial license expires, Privileged Identity Management features will no longer be available in your directory:
+If a Microsoft Entra ID P2, Microsoft Entra ID Governance, or trial license expires, Privileged Identity Management features will no longer be available in your directory:
 
 - Permanent role assignments to Azure AD roles are unaffected.
 - The Privileged Identity Management service in the Azure portal, and the Graph API cmdlets and PowerShell interfaces of Privileged Identity Management, will no longer be available for users to activate privileged roles, manage privileged access, or perform access reviews of privileged roles.
