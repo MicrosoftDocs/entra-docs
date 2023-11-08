@@ -28,7 +28,7 @@ You can also optionally pass the scopes of the APIs for which you need the user 
 
 If your application already has access to an authenticated user context or ID token, you can skip the login step, and directly acquire tokens. For details, see [SSO with user hint](msal-js-sso.md#with-user-hint).
 
-## Choosing between a pop-up or redirect experience
+## Choosing between a pop-up or redirect sign-in experience
 
 The choice between a pop-up or redirect experience depends on your application flow:
 
@@ -462,10 +462,19 @@ function App() {
 ```
 
 ---
+## Sign-out behavior on browsers
+
+The more apps a user has signed into and wants to sign-out of, the more chance of problems given the limited ways of implementing such functionality in browsers.  Microsoft's (internet privacy best practices)[https://support.microsoft.com/en-us/windows/protect-your-privacy-on-the-internet-ffe36513-e208-7532-6f95-a3b1c8760dfa] recommends that on a shared device where a user might want to sign-out of apps, the recommended approach is to use a browser's private/incognito mode and close all browser windows before stepping away from the device.  On devices that are not shared, users should leverage an operating system lockscreen so they can lock or sign-out of their entire operating system session on the device.  Microsoft uses its sign-out page to try to remind users of these best practices to help improve their privacy and security.
+
+For users who do not follow this more secure approach, the app can attempt to prepare both for (1) the user having initiated the sign-out from the app directly, or (2) from another app that shares sign-in state with the new app but manages its own session tokens/cookies.  The following sections describe options for how to sign-out the user in the first case for local app sign-out using pop-up or redirect.
+
+For the second case where signout is initiated from another app, Microsoft users the OpenID Connect's (Front Channel Logout)[https://openid.net/specs/openid-connect-frontchannel-1_0.html] for federated sign-out. There are some limitations to this implementation when third-party content is blocked, such as when browsers block third-party cookies by default. The following pop-up and redirect methods will end the user's session at the endpoint and for the local app, but it may not immediately clear session for other federated applications if front-channel communication is blocked. For a guarenteed federated sign-out regardless of browser behavior, we recommend the best practices to users about either private browsing or lockscreens.
+
 
 ## Sign-out with a pop-up window
 
-MSAL.js v2 provides a `logoutPopup` method that clears the cache in browser storage and opens a pop-up window to the Microsoft Entra sign-out page. After sign-out, Microsoft Entra ID redirects the pop-up back to your application and MSAL.js will close the pop-up.
+This mode is supported, but has the same limitiations of sign-in with a pop-up window that browsers constraints or policies can disable pop-up windows. MSAL.js v2 and higher provides a `logoutPopup` method that clears the cache in browser storage and opens a pop-up window to the Microsoft Entra sign-out page. After sign-out, Microsoft Entra ID redirects the pop-up back to your application and MSAL.js will close the pop-up. 
+
 
 You can configure the URI to which Microsoft Entra ID should redirect after sign-out by setting `postLogoutRedirectUri`. This URI should be registered as a redirect URI in your application registration.
 
@@ -572,7 +581,7 @@ function App() {
 
 ## Sign-out with a redirect
 
-MSAL.js provides a `logout` method in v1, and `logoutRedirect` method in v2 that clears the cache in browser storage and redirects the window to the Microsoft Entra sign-out page. After sign-out, Microsoft Entra ID redirects back to the page that invoked logout by default.
+MSAL.js provides a `logout` method in v1, and introduced `logoutRedirect` method in v2 that clears the cache in browser storage and redirects the window to the Microsoft Entra sign-out page. After sign-out, by default Microsoft Entra ID redirects back to the page that invoked logout.  Since that user will not see Microsoft's reminder of (internet privacy best practices)[https://support.microsoft.com/en-us/windows/protect-your-privacy-on-the-internet-ffe36513-e208-7532-6f95-a3b1c8760dfa] to users about private browser and lockscreen, the SPA app may want to also describe those best practices and remind users to close the browser window for best practice.
 
 You can configure the URI to which it should redirect after sign-out by setting `postLogoutRedirectUri`. This URI should be registered as a redirect URI in your application registration.
 
