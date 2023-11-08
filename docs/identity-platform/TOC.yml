@@ -502,7 +502,7 @@
               href: enterprise-app-role-management.md
             - name: Customize JWT claims using admin center
               href: jwt-claims-customization.md
-            - name: Customize SAML claims using portal
+            - name: Customize SAML claims using admin center
               href: saml-claims-customization.md
             - name: Customize claims using PowerShell
               href: claims-customization-powershell.md
