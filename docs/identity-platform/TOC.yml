@@ -500,7 +500,7 @@
               href: optional-claims.md
             - name: Configure role claim
               href: enterprise-app-role-management.md
-            - name: Customize JWT claims using portal
+            - name: Customize JWT claims using admin center
               href: jwt-claims-customization.md
             - name: Customize SAML claims using portal
               href: saml-claims-customization.md
