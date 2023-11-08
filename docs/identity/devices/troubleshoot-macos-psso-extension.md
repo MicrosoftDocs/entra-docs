@@ -80,7 +80,7 @@ If a user has insufficient permissions to complete Microsoft Entra ID join and r
 
 ### Per user MFA causes password sync failure
 
-If a user has per user MFA enabled on the account where PSSO is being set up, you won't be able to enter Microsoft Entra ID credentials in the next steps, causing an error. To avoid this, admins should ensure they have Conditional Access MFA enabled in accordance with [Microsoft Entra ID recommendations](../identity/monitoring-health/recommendation-turn-off-per-user-mfa). This suppresses MFA during enrollment so that password synchronization can be completed successfully.
+If a user has per user MFA enabled on the account where PSSO is being set up, you won't be able to enter Microsoft Entra ID credentials in the next steps, causing an error. To avoid this, admins should ensure they have Conditional Access MFA enabled in accordance with [Microsoft Entra ID recommendations](../monitoring-health/recommendation-turn-off-per-user-mfa.md). This suppresses MFA during enrollment so that password synchronization can be completed successfully.
 
 ## Report an issue
 

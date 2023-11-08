@@ -104,4 +104,3 @@ If you've set up your device using the secure enclave method, you can use the re
 - [Passwordless authentication options for Microsoft Entra ID](../authentication/concept-authentication-passwordless.md)
 - [Plan a passwordless authentication deployment in Microsoft Entra ID](../authentication/howto-authentication-passwordless-deployment.md)
 - [Microsoft Enterprise SSO plug-in for Apple devices](../../identity-platform/apple-sso-plugin.md)
-- [Self setup a Mac device with macOS Platform Single Sign-On with Company Portal](./device-self-setup-macos-pssoe.md)
