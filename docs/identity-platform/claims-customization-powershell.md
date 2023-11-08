@@ -8,7 +8,7 @@ manager:
 ms.service: active-directory
 ms.subservice: develop
 ms.workload: identity
-ms.topic: reference
+ms.topic: how-to
 ms.date: 11/02/2023
 ms.author: rahulnagraj
 ms.reviewer: jeedes
