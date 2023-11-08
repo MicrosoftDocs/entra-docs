@@ -2,7 +2,6 @@
 title: Join a Mac device with Microsoft Entra ID during the out of box experience
 description: How users can set up a Microsoft Entra with a new Mac device with macOS Platform Single Sign On
 
-services: active-directory
 ms.service: active-directory
 ms.subservice: devices
 ms.topic: tutorial

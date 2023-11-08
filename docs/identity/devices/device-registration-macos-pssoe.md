@@ -2,7 +2,6 @@
 title: Register a Mac device with macOS Platform Single Sign-On using Company Portal
 description: How users can set up a new macOS with macOS Platform Single Sign-On Extension, using Company Portal.
 
-services: active-directory
 ms.service: active-directory
 ms.subservice: devices
 ms.topic: tutorial

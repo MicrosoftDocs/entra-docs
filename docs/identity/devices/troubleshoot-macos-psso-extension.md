@@ -1,8 +1,7 @@
 ---
 title: MacOS Platform single sign-on known issues and troubleshooting
-description: How users can set up a Microsoft Entra with a new Mac device with macOS Platform Single Sign On
+description: Identify and resolve known issues with MacOS Platform single sign-on (PSSO).
 
-services: active-directory
 ms.service: active-directory
 ms.subservice: devices
 ms.topic: troubleshooting
