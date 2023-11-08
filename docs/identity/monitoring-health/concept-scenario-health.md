@@ -13,9 +13,9 @@ ms.reviewer: sarbar
 
 ---
 
-# Microsoft Entra ID Health
+# Microsoft Entra Health
 
-Microsoft Entra ID Health (preview) provides you with the ability to monitor and diagnose the health of your Microsoft Entra tenant through the following capabilities:
+Microsoft Entra Health (preview) provides you with the ability to monitor and diagnose the health of your Microsoft Entra tenant through the following capabilities:
 
 **Service level agreement (SLA) attainment**:
 
@@ -72,7 +72,7 @@ To access your tenant-level SLA performance:
 
 The landing page displays the overall health of the available scenarios for your tenant. When all monitored scenarios are in a healthy state, a green checkmark appears at the top of the page with a "No alerts" message. Otherwise any alerts appear for you to investigate.
 
-![Screenshot of the Health landing page with an alert highlighted.](media/concept-tenant-health/landing-page-alert.png)
+![Screenshot of the Health landing page with an alert highlighted.](media/concept-scenario-health/landing-page-alert.png)
 
 You can navigate to scenario-specific pages to view additional information about current health signal data and trends over 30 days. All scenarios - with or without an alert - appear in the bottom half of the page. Select a link for a scenario to view the details and diagnostic guidance for troubleshooting and resolving the issue.
 
