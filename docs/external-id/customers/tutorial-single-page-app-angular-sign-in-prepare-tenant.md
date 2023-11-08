@@ -42,7 +42,7 @@ In this tutorial:
 
 ## Add a platform redirect URL
 
-[!INCLUDE [add-platform-redirect-url-react](./includes/register-app/add-platform-redirect-url-react.md)]
+[!INCLUDE [add-platform-redirect-url-react](./includes/register-app/add-platform-redirect-url-angular.md)]
 
 ## Grant API permissions
 
