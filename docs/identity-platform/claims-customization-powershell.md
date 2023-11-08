@@ -31,7 +31,7 @@ In this how-to guide, we'll cover a few common scenarios that can help you under
 
 ## Get started
 
-In the following examples, you create, update, link, and delete policies for service principals. Claims-mapping policies can only be assigned to service principal objects. If you are new to Entra Id, we recommend that you [learn about how to get an Entra Id tenant](~/external-id/customers/quickstart-tenant-setup.md) before you proceed with these examples.
+In the following examples, you create, update, link, and delete policies for service principals. Claims-mapping policies can only be assigned to service principal objects. If you are new to Microsoft Entra ID, we recommend that you [learn about how to get an Microsoft Entra tenant](~/external-id/customers/quickstart-tenant-setup.md) before you proceed with these examples.
 When creating a claims-mapping policy, you can also emit a claim from a directory extension attribute in tokens. Use `ExtensionID` for the extension attribute instead of ID in the `ClaimsSchema` element. For more info on extension attributes, see [Using directory extension attributes](~/identity-platform/schema-extensions.md).
 
 > [!Note]
