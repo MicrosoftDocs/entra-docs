@@ -8,7 +8,7 @@ ms.service: active-directory
 ms.subservice: ciem
 ms.workload: identity
 ms.topic: how-to
-ms.date: 11/03/2023
+ms.date: 11/15/2023
 ms.author: jfields
 ---
 
@@ -24,11 +24,11 @@ The ServiceNow app for Microsoft Entra Permissions Management offers the followi
 
 - Request, approve, and reject permissions on demand: You can request permissions for yourself or workload identities using a simple form in ServiceNow. You can also approve or reject requests from team members using ServiceNow notifications and approvals.
 
-:::image type="content" source="media/configure-servicenow-application/servicenow-permissions-management-dashboard.png" alt-text="ServiceNow Microsoft Entra Permissions Management dashboard." lightbox="media/configure-servicenow-application/servicenow-permissions-management-dashboard.png":::
+:::image type="content" source="media/configure-servicenow-application/servicenow-permissions-management-dashboard.png" alt-text="Screenshot of ServiceNow Microsoft Entra Permissions Management dashboard." lightbox="media/configure-servicenow-application/servicenow-permissions-management-dashboard.png":::
 
 - Audit permissions requests and limit access to users/groups: You can view and track your permissions and access requests in a dashboard in ServiceNow and generate reports and audit logs to monitor and verify your permissions and compliance. 
 
-:::image type="content" source="media/configure-servicenow-application/servicenow-portal.png" alt-text="ServiceNow Microsoft Entra Permissions Management portal." lightbox="media/configure-servicenow-application/servicenow-portal.png":::
+:::image type="content" source="media/configure-servicenow-application/servicenow-portal.png" alt-text="Screenshot of ServiceNow Microsoft Entra Permissions Management portal." lightbox="media/configure-servicenow-application/servicenow-portal.png":::
 
 - Configure Manage users and groups by assigning them access only to specific authorization systems, policies, and roles.
 
@@ -37,7 +37,7 @@ The ServiceNow app for Microsoft Entra Permissions Management offers the followi
 
 ## How to configure ServiceNow with Microsoft Entra Permissions Management
 
-To proceed with these steps, make sure that the these permissions are available and configured in your environment for the configuration process.
+To proceed with these steps, make sure these permissions are available and configured in your environment for the configuration process.
 
 ### Prerequisites
 
@@ -53,7 +53,7 @@ To integration the ServiceNow app with Microsoft Entra Permissions Management:
 4.	Select the app, then click **Install**. 
 The installation process begins and the application is installed in your instance.
 5. Configure the app by following the instructions.
-:::image type="content" source="media/configure-servicenow-application/servicenow_microsoft-entra-permissions-management-installation.png" alt-text="ServiceNow Microsoft Entra Permissions Management installation." lightbox="media/configure-servicenow-application/servicenow_microsoft-entra-permissions-management-installation.png":::
+:::image type="content" source="media/configure-servicenow-application/servicenow_microsoft-entra-permissions-management-installation.png" alt-text="Screenshot of ServiceNow Microsoft Entra Permissions Management installation." lightbox="media/configure-servicenow-application/servicenow_microsoft-entra-permissions-management-installation.png":::
 
 
 ## Next steps
