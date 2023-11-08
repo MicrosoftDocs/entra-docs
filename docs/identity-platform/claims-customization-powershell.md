@@ -60,7 +60,7 @@ In this example, you create a policy that removes the [basic claim set](referenc
 
 1. Create a claims-mapping policy. This policy, linked to specific service principals, removes the basic claim set from tokens.
 
-    1. To create the policy, run this command:
+1. Using the terminal you have open, run the following command to create the policy:
 
     ```PowerShell
     New-MgPolicyClaimMappingPolicy -Definition @('{"ClaimsMappingPolicy":{"Version":1,"IncludeBasicClaimSet":"false"}}') -DisplayName "OmitBasicClaims" -Type "ClaimsMappingPolicy"
