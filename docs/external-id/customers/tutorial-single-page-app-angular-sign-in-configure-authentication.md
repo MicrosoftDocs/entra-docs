@@ -37,7 +37,6 @@ In this tutorial;
 
     ```JavaScript
 
-    ```JavaScript
     /**
      * This file contains authentication parameters. Contents of this file
      * is roughly the same across other MSAL.js libraries. These parameters
@@ -59,7 +58,7 @@ In this tutorial;
     export const msalConfig: Configuration = {
       auth: {
         clientId: 'Enter_the_Application_Id_Here', // This is the ONLY mandatory field that you need to supply.
-        authority: 'https://login.microsoftonline.com/Enter_the_Tenant_Info_Here', // Defaults to "https://login.microsoftonline.com/common"
+        authority: 'https://Enter_the_Tenant_Subdomain_Here.ciamlogin.com/', // Replace the placeholder with your tenant subdomain
         redirectUri: '/', // Points to window.location.origin by default. You must register this URI on Azure portal/App Registration.
         postLogoutRedirectUri: '/', // Points to window.location.origin by default.
       },
@@ -85,7 +84,7 @@ In this tutorial;
      */
     export const loginRequest = {
       scopes: [],
-    }; 
+    };
     ```
 
 1. Replace the following values with the values from the Microsoft Entra admin center:
