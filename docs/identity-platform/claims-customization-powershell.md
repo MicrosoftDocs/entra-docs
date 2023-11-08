@@ -26,7 +26,7 @@ A claim is information that an identity provider states about a user inside the 
 Claims customization supports configuring claim-mapping policies for the SAML, OAuth, and OpenID Connect protocols.
 
 > [!NOTE]
-This feature replaces and supersedes the [claims customization](saml-claims-customization.md) offered through the Entra Id portal. On the same application, if you customize claims using the portal in addition to the Microsoft Graph/PowerShell method detailed in this document, tokens issued for that application will ignore the configuration in the portal. Configurations made through the methods detailed in this document will not be reflected in the portal.
+> This feature replaces and supersedes the [claims customization](saml-claims-customization.md) offered through the Microsoft Entra admin center. Customizing claims for an application using the Microsoft Graph/PowerShell method detailed in this document means that tokens issued for that application will ignore the configuration in the Microsoft Entra admin center.
 In this article, we walk through a few common scenarios that can help you understand how to use the [claims-mapping policy type](reference-claims-mapping-policy-type.md).
 
 ## Get started
