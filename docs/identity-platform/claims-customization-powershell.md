@@ -46,7 +46,7 @@ To get started, do the following steps:
 Connect-MgGraph -Scopes
 ```
 
-Next, create a claims mapping policy and assign it to a service principal. See these examples for common scenarios:
+1. Now you can create a claims mapping policy and assign it to a service principal. Refer to the following examples for common scenarios:
 
 - [Omit the basic claims from tokens](#omit-the-basic-claims-from-tokens)
 - [Include the EmployeeID and TenantCountry as claims in tokens](#include-the-employeeid-and-tenantcountry-as-claims-in-tokens)
