@@ -6,11 +6,11 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: how-to
-ms.date: 09/27/2023
+ms.date: 11/08/2023
 ms.author: cmulligan
 author: csmulligan
 manager: celestedg
-ms.custom: it-pro, seo-update-azuread-jan, seoapril2019, has-azure-ad-ps-ref
+ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done 
 ms.collection: M365-identity-device-management
 # Customer intent: As a tenant administrator, I want to learn about B2B collaboration guest user properties and states before and after invitation redemption.
 ---
@@ -41,7 +41,7 @@ Now, let's see what a Microsoft Entra B2B collaboration user looks like in Micro
 
 ### Before invitation redemption
 
-B2B collaboration user accounts are the result of inviting guest users to collaborate by using the guest users' own credentials. When the invitation is initially sent to the guest user, an account is created in your tenant. This account doesn’t have any credentials associated with it because authentication is performed by the guest user's identity provider. The **Identities** property for the guest user account in your directory is set to the host's organization domain until the guest redeems their invitation. The user sending the invitation is added as a default value for the **Sponsor** (preview) attribute on the guest user account. In the portal, the invited user’s profile will show an **External user state** of **PendingAcceptance**. Querying for `externalUserState` using the Microsoft Graph API will return `Pending Acceptance`.
+B2B collaboration user accounts are the result of inviting guest users to collaborate by using the guest users' own credentials. When the invitation is initially sent to the guest user, an account is created in your tenant. This account doesn’t have any credentials associated with it because authentication is performed by the guest user's identity provider. The **Identities** property for the guest user account in your directory is set to the host's organization domain until the guest redeems their invitation. The user sending the invitation is added as a default value for the **Sponsor** (preview) attribute on the guest user account. In the admin center, the invited user’s profile will show an **External user state** of **PendingAcceptance**. Querying for `externalUserState` using the Microsoft Graph API will return `Pending Acceptance`.
 
 ![Screenshot of user profile before redemption.](media/user-properties/before-redemption.png)
 
@@ -116,7 +116,7 @@ In the **Users** list, you can use **Add filter** to display only the guest user
 
 ## Convert UserType
 
-It's possible to convert UserType from Member to Guest and vice-versa by editing the user's profile in the Azure portal or by using PowerShell. However, the UserType property represents the user's relationship to the organization. Therefore, you should change this property only if the relationship of the user to the organization changes. If the relationship of the user changes, should the user principal name (UPN) change? Should the user continue to have access to the same resources? Should a mailbox be assigned?
+It's possible to convert UserType from Member to Guest and vice-versa by editing the user's profile in the Microsoft Entra admin center or by using PowerShell. However, the UserType property represents the user's relationship to the organization. Therefore, you should change this property only if the relationship of the user to the organization changes. If the relationship of the user changes, should the user principal name (UPN) change? Should the user continue to have access to the same resources? Should a mailbox be assigned?
 
 ## Guest user permissions
 
@@ -130,7 +130,7 @@ There may be cases where you want to give your guest users higher privileges. Yo
 
 ## Can I make guest users visible in the Exchange Global Address List?
 
-Yes. By default, guest objects aren't visible in your organization's global address list, but you can use Azure Active Directory PowerShell to make them visible. For details, see "Add guests to the global address list" in the [Microsoft 365 per-group guest access article](/microsoft-365/solutions/per-group-guest-access).
+Yes. By default, guest objects aren't visible in your organization's global address list, but you can use Microsoft Graph PowerShell to make them visible. For details, see "Add guests to the global address list" in the [Microsoft 365 per-group guest access article](/microsoft-365/solutions/per-group-guest-access).
 
 ## Can I update a guest user's email address?
 
