@@ -82,6 +82,12 @@ To enable a registration campaign in the Microsoft Entra admin center, complete 
    - Select **Enabled** to enable the registration campaign for all users.
    - Select **Microsoft managed**  to enable the registration campaign only for voice call or text message users. The **Microsoft managed** setting allows Microsoft to set the default value. For more information, see [Protecting authentication methods in Microsoft Entra ID](concept-authentication-default-enablement.md).
 
+   If the registration campaign state is set to **Enabled** or **Microsoft managed**, you can configure the experience for end users by using **Limited number of snoozes**:
+   - If **Limited number of snoozes** is Enabled, users can skip the interrupt prompt 3 times, after which they're forced to register Authenticator.
+   - If **Limited number of snoozes** is Disabled, users can snooze an unlimited number of times and avoid registering Authenticator.
+ 
+   **Days allowed to snooze** sets the period between two successive interrupt prompts. For example, if it's set to 3 days, users who skipped registration don't get prompted again until after 3 days.
+
    :::image type="content" border="true" source="media/how-to-mfa-registration-campaign/admin-experience.png" alt-text="Screenshot of enabling a registration campaign.":::
 
 1. Select any users or groups to exclude from the registration campaign, and then click **Save**. 

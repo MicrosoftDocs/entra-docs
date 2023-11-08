@@ -13,7 +13,7 @@ ms.author: billmath
 ms.reviewer: arvinh
 ---
 # Provisioning users into applications using PowerShell
-The following documentation provides configuration and tutorial information demonstrating how the generic PowerShell connector and the ECMA Connector Host can be used to integrate Microsoft Entra ID with external systems that offer Windows PowerShell based APIs.
+The following documentation provides configuration and tutorial information demonstrating how the generic PowerShell connector and the Extensible Connectivity(ECMA) Connector host can be used to integrate Microsoft Entra ID with external systems that offer Windows PowerShell based APIs.
 
 For additional information see [Windows PowerShell Connector technical reference](/microsoft-identity-manager/reference/microsoft-identity-manager-2016-connector-powershell)
 

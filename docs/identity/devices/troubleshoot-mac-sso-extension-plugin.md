@@ -9,7 +9,7 @@ ms.custom: devx-track-linux
 ms.topic: troubleshooting
 ms.date: 07/05/2023
 
-ms.author: ryschwa
+ms.author: miepping
 author: ryschwa-msft
 manager: 
 ms.reviewer: 
@@ -21,7 +21,7 @@ ms.collection: M365-identity-device-management
 
 This article provides troubleshooting guidance used by administrators to resolve issues with deploying and using the [Enterprise SSO plugin](~/identity-platform/apple-sso-plugin.md). The Apple SSO extension can be deployed to iOS/iPadOS and macOS.
 
-Organizations may opt to deploy SSO to their corporate devices to provide a better experience for their end users. On Apple platforms, this process involves implementing Single Sign On (SSO) via [Primary Refresh Tokens](concept-primary-refresh-token.md).  SSO relieves end users of the burden of excessive authentication prompts.
+Organizations can opt to deploy SSO to their corporate devices to provide a better experience for their end users. On Apple platforms, this process involves implementing Single Sign On (SSO) via [Primary Refresh Tokens](concept-primary-refresh-token.md).  SSO relieves end users of the burden of excessive authentication prompts.
 
 Microsoft has implemented a plugin built on top of Apple's SSO framework, which provides brokered authentication for applications integrated with Microsoft Entra ID. For more information, see the article [Microsoft Enterprise SSO plug-in for Apple devices](~/identity-platform/apple-sso-plugin.md).
 
@@ -116,7 +116,47 @@ The following table provides specific MDM installation guidance depending on whi
 - [**macOS**: Deploy the Microsoft Enterprise SSO plug-in](/mem/intune/configuration/use-enterprise-sso-plug-in-macos-with-intune)
 
 > [!IMPORTANT]
-> Although, any MDM is supported for deploying the SSO Extension, many organizations implement [**device-based Conditional Access polices**](~/identity/conditional-access/concept-conditional-access-grant.md#require-device-to-be-marked-as-compliant) by way of evaluating MDM compliance policies. If a third-party MDM is being used, ensure that the MDM vendor supports [**Intune Partner Compliance**](/mem/intune/protect/device-compliance-partners) if you would like to use device-based Conditional Access policies. When the SSO Extension is deployed via Intune or an MDM provider that supports Intune Partner Compliance, the extension can pass the device certificate to Microsoft Entra ID so that device authentication can be completed.   
+> Although, any MDM is supported for deploying the SSO Extension, many organizations implement [**device-based Conditional Access polices**](~/identity/conditional-access/concept-conditional-access-grant.md#require-device-to-be-marked-as-compliant) by way of evaluating MDM compliance policies. If a third-party MDM is being used, ensure that the MDM vendor supports [**Intune Partner Compliance**](/mem/intune/protect/device-compliance-partners) if you would like to use device-based Conditional Access policies. When the SSO Extension is deployed via Intune or an MDM provider that supports Intune Partner Compliance, the extension can pass the device certificate to Microsoft Entra ID so that device authentication can be completed.
+
+#### Validate Networking Configuration on macOS device
+
+The SSO extension framework from Apple and the Microsoft Enterprise SSO Extension built on it require that certain domains are exempted from TLS interception/inspection (also known as break and inspect proxying). The following domains must **not** be subject to TLS inspection:
+
+- app-site-association.cdn-apple.com
+- app-site-association.networking.apple
+
+##### Check if the SSO configuration is broken due to TLS Inspection
+
+You can validate if TLS inspection is impacting your SSO configuration by running a sysdiagnose from the Terminal application on an impacted device:
+
+   ```zsh
+   sudo sysdiagnose -f ~/Desktop/
+   ```
+
+The sysdiagnose will be saved to your desktop as a .tar.gz archive. Extract the archive and open the **system_logs.logarchive** file. This will open in the Console application. Search for **com.apple.appsso** and change the filter to **SUBSYSTEM**:
+
+:::image type="content" source="media/troubleshoot-mac-sso-extension-plugin/sysdiagnose-console.png" alt-text="Screenshot showing sysdiagnose." lightbox="media/troubleshoot-mac-sso-extension-plugin/sysdiagnose-console.png":::
+
+Look for events stating that there are Associated Domain failures, especially related to Microsoft domains, such as login.microsoftonline.com. These events might indicate TLS inspection issues, which will prevent the SSO Extension from working properly. Apple domains will not appear in the sysdiagnose log, even if they are impacted by an unsupported TLS inspection configuration.
+
+##### Validate TLS Inspection Configuration
+
+Apple provides a macOS tool for checking a number of common configuration issues called the Mac Evaluation Utility. This tool can be downloaded from [AppleSeed for IT](https://beta.apple.com/programs/appleseed-for-it/resources). If you have access to AppleSeed for IT then download the Mac Evaluation Utility from the Resources area. After installing the application, run an evaluation. Once the evaluation is complete, navigate to **HTTPS Interception** --> **Additional Content** --> and check the two items below:
+
+:::image type="content" source="media/troubleshoot-mac-sso-extension-plugin/mac-evaluation-utility.png" alt-text="Screenshot showing the Mac Evaluation Utility." lightbox="media/troubleshoot-mac-sso-extension-plugin/mac-evaluation-utility.png":::
+
+If these checks have a warning or error then there might be TLS inspection occurring on the device. Work with your network team to exempt ***.cdn-apple.com** and ***.networking.apple** from TLS inspection.
+
+##### Clear macOS TLS Inspection Cache
+
+If you had issues with associated domains and have allow-listed domains in your on-device TLS inspection tool, you can run this command to reset the device's cache rather than waiting for the device to recover:
+
+
+   ```zsh
+   sudo swcutil reset
+   ```
+
+Re-test the SSO extension configuration after resetting the cache.
 
 #### Validate SSO configuration profile on macOS device
 
@@ -133,7 +173,7 @@ Assuming the MDM administrator has followed the steps in the previous section [M
    | Screenshot callout | Description |
    |:---------:|---------|
    |**1**| Indicates that the device is under **MDM** Management. |
-   |**2**| There may be multiple profiles to choose from. In this example, the Microsoft Enterprise SSO Extension Profile is called **Extensible Single Sign On Profile-32f37be3-302e-4549-a3e3-854d300e117a**. |
+   |**2**| There might be multiple profiles to choose from. In this example, the Microsoft Enterprise SSO Extension Profile is called **Extensible Single Sign On Profile-32f37be3-302e-4549-a3e3-854d300e117a**. |
 
    > [!NOTE] 
    > Depending on the type of MDM being used, there could be several profiles listed and their naming scheme is arbitrary depending on the MDM configuration. Select each one and inspect that the **Settings** row indicates that it is a **Single Sign On Extension**.
@@ -158,7 +198,7 @@ Assuming the MDM administrator has followed the steps in the previous section [M
    |**Extension Identifier**| Includes both the Bundle Identifier and Team Identifier of the application on the macOS device, running the Extension. Note: The Microsoft Enterprise SSO Extension should always be set to: **com.microsoft.CompanyPortalMac.ssoextension (UBF8T346G9)** to inform the macOS operating system that the extension client code is part of the **Intune Company Portal application**. |
    |**Type**| Must be set to **Redirect** to indicate a **Redirect Extension** type. |
    |**URLs**| Endpoint URLs of the identity provider (Microsoft Entra ID), where the operating system routes authentication requests to the extension. |
-   |**Optional Extension Specific Configuration**| Dictionary values that may act as configuration parameters. In the context of Microsoft Enterprise SSO Extension, these configuration parameters are called feature flags. See [feature flag definitions](~/identity-platform/apple-sso-plugin.md#more-configuration-options). |
+   |**Optional Extension Specific Configuration**| Dictionary values that can act as configuration parameters. In the context of Microsoft Enterprise SSO Extension, these configuration parameters are called feature flags. See [feature flag definitions](~/identity-platform/apple-sso-plugin.md#more-configuration-options). |
 
    > [!NOTE] 
    > The MDM definitions for Apple's SSO Extension profile can be referenced in the article [Extensible Single Sign-on MDM payload settings for Apple devices](https://support.apple.com/guide/deployment/depfd9cdf845/web) Microsoft has implemented our extension based on this schema. See [Microsoft Enterprise SSO plug-in for Apple devices](~/identity-platform/apple-sso-plugin.md#manual-configuration-for-other-mdm-services)
@@ -307,7 +347,7 @@ One of the most useful tools to troubleshoot various issues with the SSO extensi
 
 #### Tailing SSO extension logs on macOS with terminal
 
-During troubleshooting it may be useful to reproduce a problem while tailing the SSOExtension logs in real time:
+During troubleshooting it might be useful to reproduce a problem while tailing the SSOExtension logs in real time:
 
 1. From the macOS device, double-click on the **Applications** folder, then double-click on the **Utilities** folder.
 1. Double-click on the **Terminal** application.

@@ -146,8 +146,8 @@ items:
 - name: Reference
   expanded: false
   items:
-  - name: Microsoft Entra SLA performance
-    href: ./reference-sla-performance.md
+  - name: SLA performance for Microsoft Entra ID
+    href: reference-sla-performance.md
   - name: Azure AD PowerShell cmdlets for reporting
     href: reference-powershell-reporting.md
   - name: Audit logs API reference

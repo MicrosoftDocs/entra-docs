@@ -100,7 +100,15 @@ landingContent:
           - text: Attributes synchronized to AD
             url: connect/reference-connect-sync-attributes-synchronized.md
 
-  
+    # Card
+  - title: Provision to Active Directory using Microsoft Entra Cloud Sync
+    linkLists:
+      - linkListType: get-started
+        links:
+          - text: Provision groups to Active Directory using Microsoft Entra Cloud Sync
+            url: cloud-sync/how-to-configure-entra-to-active-directory.md
+          - text: Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance
+            url: cloud-sync/govern-on-premises-groups.md
   
   
   # Card

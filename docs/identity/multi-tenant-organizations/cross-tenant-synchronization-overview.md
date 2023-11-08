@@ -150,7 +150,7 @@ How often does cross-tenant synchronization run?
 
 How do I control what is synchronized into the target tenant?
 
-- In the source tenant, you can control which users are provisioned with the configuration or attribute-based filters. You can also control what attributes on the user object are synchronized. For more information, see [Scoping users or groups to be provisioned with scoping filters](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md?toc=/azure/active-directory/multi-tenant-organizations/toc.json&pivots=cross-tenant-synchronization).
+- In the source tenant, you can control which users are provisioned with the configuration or attribute-based filters. You can also control what attributes on the user object are synchronized. For more information, see [Scoping users or groups to be provisioned with scoping filters](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md?toc=/entra/identity/multi-tenant-organizations/toc.json&pivots=cross-tenant-synchronization).
 
 If a user is removed from the scope of sync in a source tenant, will cross-tenant synchronization soft delete them in the target?
 

@@ -1,6 +1,6 @@
 ---
 title: Configure how users consent to applications
-description: Learn how to manage how and when users can consent to applications that will have access to your organization's data.
+description: Learn how to manage how and when users can consent to applications that request access to your organization's data.
 services: active-directory
 author: omondiatieno
 manager: CelesteDG
@@ -8,7 +8,7 @@ ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
 ms.topic: how-to
-ms.date: 08/25/2023
+ms.date: 10/31/2023
 ms.author: jomondi
 ms.reviewer: phsignor, yuhko
 ms.custom: contperf-fy21q2, contperf-fy22q2, enterprise-apps
@@ -41,7 +41,7 @@ To configure user consent, you need:
 
 To configure user consent settings through the Microsoft Entra admin center:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Consent and permissions** > **User consent settings**.
 
@@ -80,9 +80,9 @@ Update-MgPolicyAuthorizationPolicy -AuthorizationPolicyId authorizationPolicy -B
 
 ```
 
-### Allow user consent subject to an app consent policy
+### Allow user consent subject to an app consent policy using PowerShell
 
-To allow user consent, choose which app consent policy should govern users' authorization to grant consent to apps. Please ensure that the consent policies (`PermissionGrantPoliciesAssigned`) include other current `ManagePermissionGrantsForOwnedResource.*` policies if any while updating the collection. This way, you can maintain your current configuration for user consent settings and other resource consent settings.
+To allow user consent, choose which app consent policy should govern users' authorization to grant consent to apps. Ensure that the consent policies (`PermissionGrantPoliciesAssigned`) include other current `ManagePermissionGrantsForOwnedResource.*` policies if any while updating the collection. This way, you can maintain your current configuration for user consent settings and other resource consent settings.
 
 ```powershell
 $body = @{
@@ -94,12 +94,12 @@ $body = @{
 Update-MgPolicyAuthorizationPolicy -AuthorizationPolicyId authorizationPolicy -BodyParameter $body
 ```
 
-Replace `{consent-policy-id}` with the ID of the policy you want to apply. You can choose a [custom app consent policy](manage-app-consent-policies.md#create-a-custom-app-consent-policy) that you've created, or you can choose from the following built-in policies:
+Replace `{consent-policy-id}` with the ID of the policy you want to apply. You can choose a [custom app consent policy](manage-app-consent-policies.md#create-a-custom-app-consent-policy-using-powershell) that you've created, or you can choose from the following built-in policies:
 
 | ID | Description |
 |:---|:------------|
-| microsoft-user-default-low | **Allow user consent for apps from verified publishers, for selected permissions**<br/> Allow limited user consent only for apps from verified publishers and apps that are registered in your tenant, and only for permissions that you classify as *low impact*. (Remember to [classify permissions](configure-permission-classifications.md) to select which permissions users are allowed to consent to.) |
-| microsoft-user-default-legacy | **Allow user consent for apps**<br /> This option allows all users to consent to any permission that doesn't require admin consent, for any application |
+| microsoft-user-default-low | **Allow user consent for apps from verified publishers, for selected permissions** <br> Allow limited user consent only for apps from verified publishers and apps that are registered in your tenant, and only for permissions that you classify as *low impact*. (Remember to [classify permissions](configure-permission-classifications.md) to select which permissions users are allowed to consent to.) |
+| microsoft-user-default-legacy | **Allow user consent for apps** <br> This option allows all users to consent to any permission that doesn't require admin consent, for any application |
 
 For example, to enable user consent subject to the built-in policy `microsoft-user-default-low`, run the following commands:
 
@@ -118,7 +118,7 @@ $body = @{
 
 Use the [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) to choose which app consent policy governs user consent for applications.
 
-To disable user consent, please ensure that the consent policies (`PermissionGrantPoliciesAssigned`) include other current `ManagePermissionGrantsForOwnedResource.*` policies if any while updating the collection. This way, you can maintain your current configuration for user consent settings and other resource consent settings.
+To disable user consent, ensure that the consent policies (`PermissionGrantPoliciesAssigned`) include other current `ManagePermissionGrantsForOwnedResource.*` policies if any while updating the collection. This way, you can maintain your current configuration for user consent settings and other resource consent settings.
 
 ```http
 PATCH https://graph.microsoft.com/v1.0/policies/authorizationPolicy
@@ -131,7 +131,7 @@ PATCH https://graph.microsoft.com/v1.0/policies/authorizationPolicy
 }
 ```
 
-### Allow user consent subject to an app consent policy
+### Allow user consent subject to an app consent policy using Microsoft Graph
 
 To allow user consent, choose which app consent policy should govern users' authorization to grant consent to apps. Ensure that the consent policies (`PermissionGrantPoliciesAssigned`) include other current `ManagePermissionGrantsForOwnedResource.*` policies if any while updating the collection. This way, you can maintain your current configuration for user consent settings and other resource consent settings.
 
@@ -146,12 +146,12 @@ PATCH https://graph.microsoft.com/v1.0/policies/authorizationPolicy
 }
 ```
 
-Replace `{consent-policy-id}` with the ID of the policy you want to apply. You can choose a [custom app consent policy](manage-app-consent-policies.md#create-a-custom-app-consent-policy) that you've created, or you can choose from the following built-in policies:
+Replace `{consent-policy-id}` with the ID of the policy you want to apply. You can choose a [custom app consent policy](manage-app-consent-policies.md#create-a-custom-app-consent-policy-using-microsoft-graph) that you've created, or you can choose from the following built-in policies:
 
 | ID | Description |
 |:---|:------------|
-| microsoft-user-default-low | **Allow user consent for apps from verified publishers, for selected permissions**<br/> Allow limited user consent only for apps from verified publishers and apps that are registered in your tenant, and only for permissions that you classify as *low impact*. (Remember to [classify permissions](configure-permission-classifications.md) to select which permissions users are allowed to consent to.) |
-| microsoft-user-default-legacy | **Allow user consent for apps**<br/> This option allows all users to consent to any permission that doesn't require admin consent, for any application |
+| microsoft-user-default-low | **Allow user consent for apps from verified publishers, for selected permissions** <br> Allow limited user consent only for apps from verified publishers and apps that are registered in your tenant, and only for permissions that you classify as *low impact*. (Remember to [classify permissions](configure-permission-classifications.md) to select which permissions users are allowed to consent to.) |
+| microsoft-user-default-legacy | **Allow user consent for apps** <br> This option allows all users to consent to any permission that doesn't require admin consent, for any application |
 
 For example, to enable user consent subject to the built-in policy `microsoft-user-default-low`, use the following PATCH command:
 

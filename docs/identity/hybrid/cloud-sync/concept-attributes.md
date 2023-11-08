@@ -10,7 +10,7 @@ ms.service: active-directory
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 01/11/2023
+ms.date: 11/06/2023
 ms.subservice: hybrid
 ms.author: billmath
 
@@ -28,6 +28,8 @@ The Microsoft Entra schema defines the rules for which properties might be used 
 Microsoft Entra ID has two types of properties:
 - **Built-in properties**: Properties that are predefined by the Microsoft Entra schema. These properties provide different uses and might or might not be accessible.
 - **Directory extensions**: Properties that are provided so that you can customize Microsoft Entra ID for your own use. For example, if you've extended your on-premises Active Directory with a certain attribute and want to flow that attribute, you can use one of the custom properties that's provided. 
+
+Each cloud sync configuration includes a [synchronization schema](/graph/api/resources/synchronization-synchronizationschema). This synchronization schema defines what objects will be synchronized and how they are synchronized.
 
 ## Attributes and expressions
 When an object such as a user is provisioned to Microsoft Entra ID, a new instance of the user object is created. This creation includes the properties of that object, which are also known as attributes. Initially, the newly created object has its attributes set to values that are determined by the synchronization rules. These attributes are then kept up to date via the cloud provisioning agent.
@@ -59,14 +61,14 @@ The following table lists common attributes and how they're synchronized to Micr
 |displayName|Direct|displayName|
 |givenName|Expression|givenName|
 |objectGUID|Direct|sourceAnchorBinary|	
-|userprincipalName|Direct|userPrincipalName|
-|ProxyAdress|Direct|ProxyAddress|
+|userPrincipalName|Direct|userPrincipalName|
+|proxyAddress|Direct|ProxyAddress|
 
-## View the schema
+## View the synchronization schema
 > [!WARNING]
 > The cloud sync configuration creates a service principal. The service principal is visible in the Microsoft Entra admin center. You should not modify the attribute mappings using the service principal experience in the Microsoft Entra admin center.  This is not supported.
 
-To view the schema and verify it, follow these steps.
+To view the cloud sync configuration synchronization schema and verify it, follow these steps.
 
 1.  Go to [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer).
 1.  Sign in with your global administrator account.
@@ -243,7 +245,7 @@ To view the schema and verify it, follow these steps.
 
    Replace `{Service Principal Id}` and `{AD2ADD Provisioning Id}` with your values.
 
-1. This query returns the schema.
+1. This query returns the [synchronization schema](/graph/api/resources/synchronization-synchronizationschema).
 
    ![Returned schema](media/concept-attributes/schema-1.png)
  

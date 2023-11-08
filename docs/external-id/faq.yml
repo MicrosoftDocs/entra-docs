@@ -27,7 +27,7 @@ sections:
       - question: |
           Can we customize our sign-in page so it's more intuitive for our B2B collaboration guest users?
         answer: |
-          Absolutely, see our [blog post about this feature](https://blogs.technet.microsoft.com/enterprisemobility/2017/04/07/improving-the-branding-logic-of-azure-ad-login-pages/). For more information about how to customize your organization's sign-in page, see [Add company branding to sign in and Access Panel pages](~/fundamentals/how-to-customize-branding.md).
+          Absolutely, for information about how to customize your organization's sign-in page, see [Add company branding to sign in and Access Panel pages](~/fundamentals/how-to-customize-branding.md).
           
       - question: |
           Can B2B collaboration users access SharePoint Online and OneDrive?

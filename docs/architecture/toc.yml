@@ -142,7 +142,7 @@ items:
         - name: Daemon applications
           href: resilience-daemon-app.md
         - name: OpenID Connect metadata refresh
-          href: ~/identity-platform/howto-build-services-resilient-to-metadata-refresh.md?toc=/azure/active-directory/architecture/toc.json
+          href: ~/identity-platform/howto-build-services-resilient-to-metadata-refresh.md?toc=/entra/architecture/toc.json&bc=/entra/architecture/breadcrumb.toc.json
       - name: Monitor application health for resilience
         href: monitor-sign-in-health-for-resilience.md
     - name: Secure with Microsoft Entra ID
@@ -177,10 +177,24 @@ items:
       href: ops-guide-govern.md
     - name: Operations
       href: ops-guide-ops.md
+  - name: Microsoft Entra Permissions Management Operations reference
+    items:
+    - name: Introduction
+      href: permissions-manage-ops-guide-intro.md
+    - name: Phase 1 - Implement the framework to manage at scale
+      href: permissions-manage-ops-guide-one.md
+    - name: Phase 2 - Right-size permissions and automate the principle of least privilege
+      href: permissions-manage-ops-guide-two.md
+    - name: Phase 3 - Configure Permissions Management monitoring and alerting
+      items:
+      - name: Implement reporting and alerting strategies
+        href: permissions-manage-ops-guide-three.md
+      - name: Configure alerts
+        href: permissions-manage-ops-guide-alerts.md      
   - name: Security
     items: 
     - name: Security baseline
-      href: /security/benchmark/azure/baselines/aad-security-baseline?toc=/azure/active-directory/architecture/toc.json
+      href: /security/benchmark/azure/baselines/aad-security-baseline?context=/entra/architecture/context/architecture-context.json
     - name: Security operations guide
       items: 
       - name: Security operations overview

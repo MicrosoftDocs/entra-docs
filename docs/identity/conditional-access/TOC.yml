@@ -11,7 +11,7 @@
 - name: Tutorials
   items:
   - name: Require multifactor Authentication
-    href: ~/identity/authentication/tutorial-enable-azure-mfa.md?toc=/azure/active-directory/conditional-access/toc.json&bc=/azure/active-directory/conditional-access/breadcrumb/toc.json
+    href: ~/identity/authentication/tutorial-enable-azure-mfa.md?toc=/entra/identity/conditional-access/toc.json&bc=/entra/identity/conditional-access/breadcrumb/toc.json
 - name: Concepts
   expanded: false
   items:
@@ -101,13 +101,15 @@
     - name: Use application enforced restrictions
       href: howto-policy-app-enforced-restriction.md
     - name: Require MFA for Intune enrollment
-      href: /mem/intune/enrollment/multi-factor-authentication?toc=/azure/active-directory/conditional-access/TOC.json
+      href: /mem/intune/enrollment/multi-factor-authentication?context=/entra/identity/conditional-access/context/conditional-access-context.json
     - name: Block access by location
       href: howto-conditional-access-policy-location.md
     - name: Block access
       href: howto-conditional-access-policy-block-access.md
     - name: Require authentication strength for external users
       href: howto-conditional-access-policy-authentication-strength-external.md
+  - name: Microsoft managed policies
+    href: managed-policies.md
   - name: Configure resilience defaults
     href: resilience-defaults.md
   - name: Configure report only mode

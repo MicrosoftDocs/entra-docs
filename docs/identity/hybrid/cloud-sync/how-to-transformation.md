@@ -4,7 +4,7 @@ description: This article describes how to use transformations to alter the defa
 author: billmath
 ms.author: billmath
 manager: amycolannino
-ms.date: 01/11/2023
+ms.date: 11/06/2023
 ms.topic: how-to
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
@@ -20,7 +20,7 @@ For more information on cloud sync attributes, see [Understanding the Microsoft 
 
 
 ## Retrieve the schema
-To retrieve the schema, follow the steps in [View the schema](concept-attributes.md#view-the-schema). 
+To retrieve the schema, follow the steps in [View the synchronization schema](concept-attributes.md#view-the-synchronization-schema). 
 
 ## Custom attribute mapping
 To add a custom attribute mapping, follow these steps.
