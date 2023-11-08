@@ -1,5 +1,5 @@
 ---
-title: Use Company Portal to set up a Mac device with macOS Platform Single Sign-On
+title: Register a Mac device with macOS Platform Single Sign-On using Company Portal
 description: How users can set up a new macOS with macOS Platform Single Sign-On Extension, using Company Portal.
 
 services: active-directory
@@ -14,9 +14,9 @@ manager: CelesteDG
 ms.reviewer: brianmel
 ---
 
-# Use Company Portal to set up a Mac device with macOS Platform Single Sign-On (preview)
+# Register a Mac device with macOS Platform Single Sign-On using Company Portal (preview)
 
-You can set up a new Mac device with the macOS Platform Single Sign-On (PSSO) using Company Portal. There are two workflows that are supported with Company Portal, Intune MDM enrollment with Microsoft Entra Join and Just In Time Rendering.
+You can register a Mac device with the macOS Platform Single Sign-On (PSSO) using Company Portal. There are two workflows that are supported with Company Portal, Intune MDM enrollment with Microsoft Entra Join and Just In Time Rendering.
 
 ## Prerequisites
 
@@ -51,7 +51,7 @@ You can set up a new Mac device with the macOS Platform Single Sign-On (PSSO) us
 
 ## Enabling PSSO from an existing Microsoft Enterprise SSO plug-in
 
-If your company has the Microsoft Enterprise SSO plugin already installed, there are a few ways that you can successfully migrate to the new feature. You can initiate the registration yourself, or your administrator can start the process. 
+If your company has the Microsoft Enterprise SSO plugin already installed, you can successfully migrate to the new feature. You can initiate the registration yourself, or your administrator can start the process.
 
 ### Initiate PSSO registration
 
@@ -69,6 +69,7 @@ When a user is targeted for PSSO and is blocked by policy while trying to access
 
 ## See also
 
+- [Join a Mac device with Microsoft Entra ID during the out of box experience](./device-join-macos-pssoe-out-of-box.md)
 - [Passwordless authentication options for Microsoft Entra ID](../authentication/concept-authentication-passwordless.md)
 - [Plan a passwordless authentication deployment in Microsoft Entra ID](../authentication/howto-authentication-passwordless-deployment.md)
 - [Microsoft Enterprise SSO plug-in for Apple devices](../../identity-platform/apple-sso-plugin.md)
