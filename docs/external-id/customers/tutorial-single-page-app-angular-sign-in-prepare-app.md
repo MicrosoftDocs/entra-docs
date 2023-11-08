@@ -12,7 +12,7 @@ ms.author: godonnell
 #Customer intent: As a dev, devops, or IT admin, I want to learn how to enable authentication in my own Angular single-page app
 ---
 
-# Tutorial: Prepare an Angular single-page app (SPA) for authentication in a customer tenant
+# Tutorial: Prepare an Angular single-page app for authentication in a customer tenant
 
 In the previous article, [Prepare an Angular single-page app for authentication](./tutorial-single-page-app-angular-sign-in-prepare-tenant.md), you registered an application and configured user flows in your Microsoft Entra External ID for customers tenant. This tutorial demonstrates how to create an Angular single-page app using `npm` and configure the user interface.
 
