@@ -167,15 +167,15 @@ Here are some example license scenarios to help you determine the number of lice
 
 ## Licensing FAQs
 
-### Do licenses need to be assigned to users to use Microsoft Entra ID Governance features?
+### Do licenses need to be assigned to users to use Identity Governance features?
 
-Users do not need to be assigned a Microsoft Entra ID Governance license, but there needs to be as many license seats to include all users in scope of, or who configures, the Microsoft Entra ID Governance features.
+Users do not need to be assigned a Microsoft Entra ID Governance license, but there needs to be as many license seats to include all users in scope of, or who configures, the Identity Governance features.
 
 ### How can I license usage of Microsoft Entra ID Governance features for business guests?
 
 All users who are in scope of Microsoft Entra ID Governance features, including business guests such as contractors, partners, and external collaborators, need a license.  We're creating a new Microsoft Entra ID Governance license for business guests. This license will operate on a monthly active usage (MAU) model. Customers will be able to acquire licenses matching their anticipated business guest MAU.
 
-We anticipate making these licenses available in spring 2024. In the interim, organizations that govern the identities of their employees with Microsoft Entra ID Governance licensed features can govern the identities of their business guests for no additional cost or licensing requirements. At this time, existing customers of Microsoft Entra ID P1 or P2 with Microsoft Entra External ID can continue using the subset of features that are included in P1 or P2 with their business guests through their Microsoft Entra External ID license.
+We anticipate making these licenses available in spring 2024. In the interim, organizations that govern the identities of their employees with Microsoft Entra ID Governance can govern the identities of their business guests for no additional cost. At this time, existing customers of Microsoft Entra ID P1 or P2 with Microsoft Entra External ID can continue using the subset of features that are included in P1 or P2 with their business guests through their Microsoft Entra External ID license.
 
 For more details, see: [Microsoft Entra ID Governance licensing for business guests](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/microsoft-entra-id-governance-licensing-for-business-guests/ba-p/3575579).
 
