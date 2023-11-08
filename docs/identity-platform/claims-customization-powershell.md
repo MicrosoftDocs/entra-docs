@@ -40,7 +40,7 @@ When creating a claims-mapping policy, you can also emit a claim from a director
 To get started, do the following steps:
 
 1. Download the latest [Microsoft Graph PowerShell SDK](https://learn.microsoft.com/PowerShell/microsoftgraph/installation).
-2. Run the ‘Connect-MgGraph -Scopes’ command to sign in to your Entra Id admin account. Run this command each time you start a new session.
+2. Open a terminal and run the following command to sign in to your Microsoft Entra ID admin account. Run this command each time you start a new session.
 
 ```PowerShell
 Connect-MgGraph -Scopes
