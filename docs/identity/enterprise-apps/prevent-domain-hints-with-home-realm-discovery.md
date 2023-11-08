@@ -53,7 +53,7 @@ To disable auto-acceleration sign-in for an application in Microsoft Entra ID, y
 - An Azure account with an active subscription. If you don't already have one, you can [create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 - One of the following roles: Global Administrator, or owner of the service principal.
 ::: zone pivot="powershell-hrd"
-- The latest [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview) cmdlet preview.
+- [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview) module.
 ::: zone-end
 
 ## Suggested use within a tenant
