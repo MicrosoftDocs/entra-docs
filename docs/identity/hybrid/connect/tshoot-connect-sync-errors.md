@@ -13,7 +13,7 @@ ms.topic: troubleshooting
 ms.date: 11/06/2023
 ms.subservice: hybrid
 ms.author: billmath
-ms.custom: contperf-fy21q3-portal, has-azure-ad-ps-ref
+ms.custom: contperf-fy21q3-portal, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 
 ms.collection: M365-identity-device-management
 ---
@@ -300,6 +300,6 @@ To resolve this issue:
 ## Related links
 
 * [Locate Active Directory objects in Active Directory Administrative Center](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd560661(v=ws.10))
-* [Query Microsoft Entra ID for an object by using Azure AD PowerShell](/previous-versions/azure/jj151815(v=azure.100))
+* [Query Microsoft Entra ID for an object by using Microsoft Graph PowerShell](/powershell/microsoftgraph/overview)
 * [End-to-end troubleshooting of Microsoft Entra Connect objects and attributes](/troubleshoot/azure/active-directory/troubleshoot-aad-connect-objects-attributes)
 * [Microsoft Entra Troubleshooting](/troubleshoot/azure/active-directory/welcome-azure-ad)
