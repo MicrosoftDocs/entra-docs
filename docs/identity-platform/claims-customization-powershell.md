@@ -75,7 +75,7 @@ In this example, you create a policy that removes the [basic claim set](referenc
 1. Assign the policy to your service principal. You also need to get the ObjectId of your service principal.
     1. To see all your organization's service principals, you can query the Microsoft Graph API. Or, in Microsoft Graph Explorer, sign in to your Microsoft Entra account.
 
-    1. When you have the ObjectId of your service principal, run the following command:
+1. When you have the `ObjectId` of your service principal, run the following command:
 
     ```PowerShell
     New-MgServicePrincipalClaimMappingPolicyByRef -ServicePrincipalId <servicePrincipalId> -BodyParameter @{"@odata.id" = "https://graph.microsoft.com/v1.0/policies/claimsMappingPolicies/<claimsMappingPolicyId>"}
