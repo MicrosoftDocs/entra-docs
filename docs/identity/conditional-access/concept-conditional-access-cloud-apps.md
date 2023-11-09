@@ -189,7 +189,7 @@ Authentication context can be used to further secure data and actions in applica
 
 For example, an organization might keep files in SharePoint sites like the lunch menu or their secret BBQ sauce recipe. Everyone might have access to the lunch menu site, but users who have access to the secret BBQ sauce recipe site might need to access from a managed device and agree to specific terms of use.
 
-Authentication context works with users or workload identities, but not in the same Conditional Access policy.
+Authentication context works with users or [workload identities](workload-identity.md), but not in the same Conditional Access policy.
 
 ### Configure authentication contexts
 
