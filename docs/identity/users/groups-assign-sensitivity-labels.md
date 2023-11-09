@@ -9,7 +9,7 @@ ms.service: active-directory
 ms.subservice: enterprise-users
 ms.workload: identity
 ms.topic: how-to
-ms.date: 09/08/2023
+ms.date: 11/08/2023
 ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro, has-azure-ad-ps-ref
@@ -84,11 +84,11 @@ You will also need to synchronize your sensitivity labels to Microsoft Entra ID.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 1. Select Microsoft Entra ID.
 1. Choose **Groups** > **All groups** > **New group**.
-1. On the **New Group** page, select **Office 365**, and then fill out the required information for the new group and select a sensitivity label from the list.
+1. On the **New Group** page, select **Microsoft 365**, and then fill out the required information for the new group and select a sensitivity label from the list.
 
-   ![Assign a sensitivity label in the New groups page](./media/groups-assign-sensitivity-labels/new-group-page.png)
+   :::image type="content" source="./media/groups-assign-sensitivity-labels/new-group-page.png" alt-text="Assign a sensitivity label in the New groups page.":::
 
-1. Save your changes and select **Create**.
+1. Select **Create** to save your changes.
 
 Your group is created and the site and group settings associated with the selected label are then automatically enforced.
 
@@ -100,7 +100,7 @@ Your group is created and the site and group settings associated with the select
 1. From the **All groups** page, select the group that you want to label.
 1. On the selected group's page, select **Properties** and select a sensitivity label from the list.
 
-   ![Assign a sensitivity label on the overview page for a group](./media/groups-assign-sensitivity-labels/assign-to-existing.png)
+   :::image type="content" source="./media/groups-assign-sensitivity-labels/assign-to-existing.png" alt-text="Assign a sensitivity label on the overview page for a group.":::
 
 1. Select **Save** to save your changes.
 
@@ -119,6 +119,8 @@ Your group is created and the site and group settings associated with the select
 ## Using classic Microsoft Entra classifications
 
 After you enable this feature, the “classic” classifications for groups will appear only existing groups and sites, and you should use them for new groups only if creating groups in apps that don’t support sensitivity labels. Your admin can convert them to sensitivity labels later if needed. Classic classifications are the old classifications you set up by defining values for the `ClassificationList` setting in Azure AD PowerShell. When this feature is enabled, those classifications will not be applied to groups.
+
+[!INCLUDE [Azure AD PowerShell migration](../../includes/aad-powershell-migration-include.md)]
 
 ## Troubleshooting issues
 
