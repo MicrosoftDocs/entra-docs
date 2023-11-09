@@ -17,9 +17,9 @@ ms.reviewer: saeeda, dmwendia
 
 # What is the Microsoft identity platform?
 
-The Microsoft identity platform is a cloud identity service that allows you to build applications your users and customers can sign in to using their Microsoft identities or social accounts. It authorizes access to your own APIs or Microsoft APIs like Microsoft Graph.The identity platform supports developers building single-tenant, line-of-business (LOB) applications, as well as multi-tenant software-as-a-service (SaaS) applications.
+The Microsoft identity platform is a cloud identity service that allows you to build applications your users and customers can sign in to using their Microsoft identities or social accounts. It authorizes access to your own APIs or Microsoft APIs like Microsoft Graph. The identity platform supports developers building single-tenant, line-of-business (LOB) applications, as well as multi-tenant software-as-a-service (SaaS) applications.
 
-The following diagram shows the Microsoft identity platform experience at a high level, including the app registration experience, SDKs, endpoints, and supported account types.
+The following diagram shows the Microsoft identity platform at a high level, including the application registration experience, SDKs, endpoints, and supported identities or account types.
 
 ![Diagram showing the components of the Microsoft identity platform](./media/v2-overview/about-microsoft-identity-platform.svg)
 
@@ -31,7 +31,7 @@ There are several components that make up the Microsoft identity platform:
   - Social or local accounts, by using Azure AD B2C
   - Social or local customer accounts, by using Microsoft Entra External ID
   
-- **Open-source libraries**: Microsoft Authentication Library (MSAL) and support for other standards-compliant libraries.
+- **Open-source libraries**: Microsoft Authentication Library (MSAL) and support for other standards-compliant libraries. The open source MSAL libraries are recommended as they provide built-in support for conditional access scenarios, single sign-on (SSO) experiences for your users, built-in token caching support, and more. MSAL supports the different authorization grants and token flows used in different application types and scenarios.
 - **Microsoft identity platform endpoint** - The Microsoft identity platform endpoint is OIDC certified. It works with the Microsoft Authentication Libraries (MSAL) or any other standards-compliant library. It implements human readable scopes, in accordance with industry standards.
 - **Application management portal**: A registration and configuration experience in the Microsoft Entra admin center, along with the other application management capabilities.
 - **Application configuration API and PowerShell**: Programmatic configuration of your applications through the Microsoft Graph API and PowerShell so you can automate your DevOps tasks.
