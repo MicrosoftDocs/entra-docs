@@ -19,7 +19,9 @@ You can do all of your administrative tasks using the Microsoft Entra admin cent
 
 In this quickstart article, you'll learn how to get to the Azure portal and Microsoft Entra ID, and you'll learn how to create a basic tenant for your organization.
 
-If you don't have an Azure subscription, create a [free account](https://azure.microsoft.com/free/) before you begin.
+>[!Note]
+>Only paid customers can create a new Workforce tenant in Microsoft Entra ID. Customers on free tenant or on trial subscriptions won't be able to create additional tenants from the Microsoft Entra admin center. Customers in this situation who need a new trial tenant can sign up for a
+[free account](https://azure.microsoft.com/free/).
 
 ## Create a new tenant for your organization
 
