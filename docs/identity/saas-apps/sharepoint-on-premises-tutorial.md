@@ -98,11 +98,11 @@ In this section, you configure the SAML authentication and define the claims tha
 In this step, you create a SPTrustedLoginProvider to store the configuration that SharePoint needs to trust Microsoft Entra ID. For that, you need the information from Microsoft Entra ID that you copied above. Start the SharePoint Management Shell and run the following script to create it:
 
 ```powershell
-# Path to the public key of the Microsoft Entra ID SAML signing certificate (self-signed), downloaded from the Enterprise application in the Azure portal
+# Path to the public key of the Microsoft Entra SAML signing certificate (self-signed), downloaded from the Enterprise application in the Azure portal
 $signingCert = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2("C:\AAD app\SharePoint corporate farm.cer")
-# Unique realm (corresponds to the "Identifier (Entity ID)" in the Microsoft Entra ID Enterprise application)
+# Unique realm (corresponds to the "Identifier (Entity ID)" in the Microsoft Entra enterprise application)
 $realm = "urn:sharepoint:federation"
-# Login URL copied from the Microsoft Entra ID enterprise application. Make sure to replace "saml2" with "wsfed" at the end of the URL:
+# Login URL copied from the Microsoft Entra enterprise application. Make sure to replace "saml2" with "wsfed" at the end of the URL:
 $loginUrl = "https://login.microsoftonline.com/dc38a67a-f981-4e24-ba16-4443ada44484/wsfed"
 
 # Define the claim types used for the authorization
@@ -128,7 +128,7 @@ In this step, you configure a web application in SharePoint to trust the Microso
 
         1. Start the **SharePoint Management Shell** and run the following script:
             ```powershell
-            # This script creates a new web application and sets Windows and Microsoft Entra ID authentication on the Default zone
+            # This script creates a new web application and sets Windows and Microsoft Entra authentication on the Default zone
             # URL of the SharePoint site federated with Microsoft Entra ID
             $trustedSharePointSiteUrl = "https://spsites.contoso.local/"
             $applicationPoolManagedAccount = "Contoso\spapppool"
@@ -150,7 +150,7 @@ In this step, you configure a web application in SharePoint to trust the Microso
         1. Start the SharePoint Management Shell and run the following script:
 
             ```powershell
-            # This script extends an existing web application to set Microsoft Entra ID authentication on a new zone
+            # This script extends an existing web application to set Microsoft Entra authentication on a new zone
             # URL of the default zone of the web application
             $webAppDefaultZoneUrl = "http://spsites/"
             # URL of the SharePoint site federated with ADFS
