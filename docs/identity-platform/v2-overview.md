@@ -84,7 +84,7 @@ Learn how core authentication and Microsoft Entra concepts apply to the Microsof
 
 [Microsoft Entra B2B](~/external-id/what-is-b2b.md) - Invite external users into your Microsoft Entra tenant as "guest" users, and assign permissions for authorization while they use their existing credentials for authentication.
 
-[Microsoft Entra External ID](./external-id/customers/overview-customers-ciam.md) - A customer identity and access management (CIAM) solution that lets you create secure, customized sign-in experiences for your customer-facing apps and services.
+[Microsoft Entra External ID](~/external-id/customers/overview-customers-ciam.md) - A customer identity and access management (CIAM) solution that lets you create secure, customized sign-in experiences for your customer-facing apps and services.
 
 ## Next steps
 
