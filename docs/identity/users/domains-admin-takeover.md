@@ -20,6 +20,7 @@ ms.collection: M365-identity-device-management
 
 This article describes two ways to take over a DNS domain name in an unmanaged directory in Microsoft Entra ID. When a self-service user signs up for a cloud service that uses Microsoft Entra ID, they're added to an unmanaged Microsoft Entra directory based on their email domain. For more about self-service or "viral" sign-up for a service, see [What is self-service sign-up for Microsoft Entra ID?](directory-self-service-signup.md)
 
+ <! -- The video mentions Azure AD --> 
 
 > [!VIDEO https://www.youtube.com/embed/GOSpjHtrRsg]
 
@@ -41,13 +42,17 @@ Some products that include SharePoint and OneDrive, such as Microsoft 365, don't
 
 3. In the confirmation email from Power BI, select **Yes, that's me**.
 
-4. Sign in to the [Microsoft 365 admin center](https://portal.office.com/admintakeover) with the Power BI user account. You receive a message that instructs you to **Become the Admin** of the domain name that was already verified in the unmanaged organization. select **Yes, I want to be the admin**.
+4. Sign in to the [Microsoft 365 admin center](https://portal.office.com/admintakeover) with the Power BI user account. 
+
+   :::image type="content" source="./media/domains-admin-takeover/m365-weclome-screen" alt-text="Screenshot of the Microsoft 365 Welcome page.":::
+
+5. You receive a message that instructs you to **Become the Admin** of the domain name that was already verified in the unmanaged organization. select **Yes, I want to be the admin**.
+
+   :::image type="content" source="./media/domains-admin-takeover/become-admin-first.png" alt-text="Screenshot for Become the Admin.":::
   
-   ![first screenshot for Become the Admin](./media/domains-admin-takeover/become-admin-first.png)
-  
-5. Add the TXT record to prove that you own the domain name **fourthcoffee.xyz** at your domain name registrar. In this example, it's GoDaddy.com.
-  
-   ![Add a txt record for the domain name](./media/domains-admin-takeover/become-admin-txt-record.png)
+6. Add the TXT record to prove that you own the domain name **fourthcoffee.xyz** at your domain name registrar. In this example, it's GoDaddy.com.
+
+   :::image type="content" source="./media/domains-admin-takeover/become-admin-txt-record.png" alt-text="Screenshot of Add a TXT record for the domain name.":::
 
 When the DNS TXT records are verified at your domain name registrar, you can manage the Microsoft Entra organization.
 
@@ -119,7 +124,7 @@ Although RMS for individuals is designed to support Microsoft Entra authenticati
 
 ### Azure AD PowerShell cmdlets for the ForceTakeover option
 
-You can see these cmdlets used in [PowerShell example](#powershell-example).
+You can see these cmdlets used in [PowerShell example](#powershell-example). For more information, see [Azure Active Directory PowerShell](/powershell/azure/active-directory/overview?view=azureadps-2.0)
 
 cmdlet | Usage
 ------- | -------
