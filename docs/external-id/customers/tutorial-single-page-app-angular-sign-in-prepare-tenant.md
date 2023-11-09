@@ -34,7 +34,7 @@ In this tutorial:
     * Application Developer
     * Cloud Application Administrator
 
-- A Microsoft Entra External ID for customers tenant. If you haven't already got one, [create one now](./quickstart-tenant-setup). You can use an existing customer tenant if you have one.
+- A Microsoft Entra External ID for customers tenant. If you haven't already got one, [create one now](./quickstart-tenant-setup.md). You can use an existing customer tenant if you have one.
 
 ## Register the SPA and record identifiers
 
