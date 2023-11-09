@@ -16,7 +16,7 @@ ms.date: 10/27/2023
 
 # Tutorial: Handle authentication flows in an Angular single-page app 
 
-In the previous article, [Prepare an Angular single-page app for authentication](./tutorial-single-page-app-angular-sign-in-prepare-app.md), you created an Angular single-page app (SPA) and prepared it for authentication with your Microsoft Entra External ID for customers tenant. In this article, you'll learn how to handle authentication flows in your app by adding components.
+In the previous article, [Prepare an Angular single-page app for authentication](./tutorial-single-page-app-angular-sign-in-prepare-app.md), you created an Angular single-page app (SPA) and prepared it for authentication with your Microsoft Entra External ID for customers tenant. In this article, you'll learn how to handle authentication flows in your app by adding MSAL components and creating authentication configuration files.
 
 In this tutorial;
 
@@ -24,12 +24,6 @@ In this tutorial;
 > * Add authentication flows to your application
 > * Import MSAL components
 > * Add routes to home and guarded components of the application.
-
-## Prerequisites
-
-* Completion of the prerequisites and steps in [Prepare your customer tenant to authenticate users in an Angular single-page app (SPA)](./tutorial-single-page-app-angular-sign-in-prepare-tenant.md).
-
-
 
 ## Create the authentication configuration file, auth-config.ts
 
@@ -89,12 +83,12 @@ In this tutorial;
 
 1. Replace the following values with the values from the Microsoft Entra admin center:
     - Find the `Enter_the_Application_Id_Here` value and replace it with the **Application ID (clientId)** of the app you registered in the Microsoft Entra admin center.
-    - In **Authority**, find `Enter_the_Tenant_Subdomain_Here` and replace it with the subdomain of your tenant. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, [learn how to read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
+    - In **authority**, find `Enter_the_Tenant_Subdomain_Here` and replace it with the subdomain of your tenant. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, [learn how to read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
 1. Save the file.
 
 ## Import MSAL components
 
-1. Open _src/app/app.module.ts_. MSAL components need to be added to `imports`. You will also add the material modules. Replace the entire contents of the file with the following snippet. This snippet imports the MSAL components and material modules.
+1. Open _src/app/app.module.ts_. MSAL components need to be added to `imports`. Replace the entire contents of the file with the following snippet. This snippet imports the MSAL components and material modules.
 
     ```JavaScript
     import { NgModule } from '@angular/core';
@@ -197,7 +191,7 @@ In this tutorial;
     })
     export class AppModule { }
     ```
-1. Open _src/app/app-routing.module.ts_ and add routes to the `home` and `guarded` components. Replace the entire contents of the file with the following snippet. 
+1. Open _src/app/app-routing.module.ts_ and replace the entire contents of the file with the following snippet. This will add routes to the `home` and `guarded` components. 
 
     ```JavaScript	
     import { NgModule } from '@angular/core';
@@ -240,7 +234,6 @@ In this tutorial;
         exports: [RouterModule],
     })
     export class AppRoutingModule { }
-
     ```
 
 ## Next steps
