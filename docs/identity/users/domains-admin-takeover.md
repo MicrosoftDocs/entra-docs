@@ -124,7 +124,7 @@ Although RMS for individuals is designed to support Microsoft Entra authenticati
 
 ### Azure AD PowerShell cmdlets for the ForceTakeover option
 
-You can see these cmdlets used in [PowerShell example](#powershell-example). For more information, see [Azure Active Directory PowerShell](/powershell/azure/active-directory/overview?view=azureadps-2.0)
+You can see these cmdlets used in [PowerShell example](#powershell-example).
 
 cmdlet | Usage
 ------- | -------
