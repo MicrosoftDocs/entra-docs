@@ -6,7 +6,7 @@ services: active-directory
 author: barclayn
 ms.author: barclayn
 manager: amycolannino
-ms.date: 03/24/2022
+ms.date: 11/08/2023
 ms.topic: how-to
 ms.service: active-directory
 ms.subservice: enterprise-users
