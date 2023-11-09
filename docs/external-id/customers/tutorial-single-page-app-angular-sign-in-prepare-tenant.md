@@ -10,12 +10,12 @@ ms.topic: tutorial
 ms.date: 10/27/2023
 ms.author: godonnell
 
-#Customer intent: As a dev I want to prepare my customer tenant for building a single-page app (SPA) with Angular
+#Customer intent: As a dev I want to prepare my customer tenant for building a single-page app with Angular.
 ---
 
-# Tutorial: Prepare your customer tenant to authenticate users in an Angular single-page app (SPA)
+# Tutorial: Prepare your customer tenant to authenticate users in an Angular single-page app
 
-This tutorial series demonstrates how to build an Angular single-page application (SPA) and prepare it for authentication using the Microsoft Entra admin center. You'll use the [Microsoft Authentication Library for JavaScript](/javascript/api/overview/msal-overview) library to authenticate your app with your Microsoft Entra External ID for customers tenant. 
+This tutorial series demonstrates how to build an Angular single-page application (SPA) and prepare it for authentication using the Microsoft Entra admin center. You'll use the [Microsoft Authentication Library for JavaScript](/javascript/api/overview/msal-overview) to authenticate your app with your Microsoft Entra External ID for customers tenant. 
 
 In this tutorial:
 
@@ -34,7 +34,7 @@ In this tutorial:
     * Application Developer
     * Cloud Application Administrator
 
-- A Microsoft Entra External ID for customers tenant. If you haven't already got one, [create one now](https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl). You can use an existing customer tenant if you have one.
+- A Microsoft Entra External ID for customers tenant. If you haven't already got one, [create one now](./quickstart-tenant-setup). You can use an existing customer tenant if you have one.
 
 ## Register the SPA and record identifiers
 
