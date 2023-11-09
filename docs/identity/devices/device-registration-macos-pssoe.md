@@ -34,9 +34,9 @@ You can register a Mac device with the macOS Platform Single Sign-On (PSSO) usin
 1. Hover over the popup that appears in the top right corner of the screen and select **Install**, which opens **Profiles** in the Mac's **Settings**. <!--TODO: Insert slide 89 screenshot-->
 1. Select **Management Profile**, and in the new window, select **Install**. <!--TODO: Insert slide 90 screenshot-->
 1. Enter your local device password in the **Profiles** window that appears and select **Enroll**. Upon completion, you see that the Mac is supervised and managed by **Contoso Labs**.
-1. Return to the **Company Portal** app, and wait to be prompted. Select **Register** in the Company Portal popup that appears.<!--TODO: Insert slide 97 screenshot-->
-1. You're prompted to register your Mac. Sign in to Company Portal, enter your Microsoft Entra ID credentials and wait for your device to register.
-1. Return to the **Company Portal** app, and select **Done** to complete the process. <!--TODO: Insert slide 103 screenshot-->
+1. Return to the **Company Portal** app, and wait for enrollment to finish. Wait for the **Registration Required** notification to appear Select **Register** in the Company Portal popup that appears.<!--TODO: Insert slide 97 screenshot-->
+1. You're prompted to register your Mac device with Microsoft Entra ID. Enter your Microsoft Entra ID credentials and wait for your device to register.
+1. Return to the **Company Portal** app, and you should see that your device is now in compliance. <!--TODO: Insert slide 103 screenshot-->
 
 ## Just In Time Rendering (JITR) workflow when a user is enrolled using Company Portal
 

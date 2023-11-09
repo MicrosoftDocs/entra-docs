@@ -22,7 +22,7 @@ Mac users can join their new device to Microsoft Entra ID during the first-run o
 - A minimum requirement of macOS 13 Ventura
 - [Microsoft Intune Company Portal](/mem/intune/apps/apps-company-portal-macos) <!--TODO: version-->
 - A Mac device enrolled in mobile device management (MDM) with Microsoft Intune
-- [Microsoft Authenticator](https://support.microsoft.com/account-billing/how-to-use-the-microsoft-authenticator-app-9783c865-0308-42fb-a519-8cf666fe0acc) (recommended): The user must be registered for some form of Microsoft Entra ID multifactor authentication (MFA) to complete device registration.
+- [Microsoft Authenticator](https://support.microsoft.com/account-billing/how-to-use-the-microsoft-authenticator-app-9783c865-0308-42fb-a519-8cf666fe0acc) (recommended): The user must be registered for some form of Microsoft Entra ID multifactor authentication (MFA) on their mobile device to complete device registration.
 
 ## Set up your macOS device
 
@@ -33,7 +33,7 @@ Mac users can join their new device to Microsoft Entra ID during the first-run o
 
 ## Registration with Automated Device Enrollment
 
-There are two authentication methods for PSSO registration, **Secure Enclave** and **Password**. It's recommended for your system administrator to have the Mac enrolled using secure enclave. This new password-less feature is supported only by PSSO. Choose the method that your company administrator has configured for you.
+There are three authentication methods for PSSO registration, **Secure Enclave**, **Smartcard** and **Password**. It's recommended for your system administrator to have the Mac enrolled using secure enclave or smartcard. This new password-less feature is supported only by PSSO. Check which authentication method has been set up by your administrator before continuing.
 
 ### [Secure Enclave](#tab/secure-enclave)
 
@@ -58,11 +58,19 @@ There are two authentication methods for PSSO registration, **Secure Enclave** a
 
 1. Now that the Mac is correctly set up, you can now use PSSO to access Microsoft app resources.
 
+>[NOTE!]
+>
+> On macOS 14 Somona, you can check the PSSO registration status by navigating to **Settings** > **Users and Groups** > **Select user**. To see your device registration status, navigate to **Settings** > **Users and Groups** > **Network account server**. Select **Edit** to see your device status.
+
+### [Smartcard](#tab/smartcard)
+
+TODO: Add steps
+
 ### [Password](#tab/password)
 
 1. Navigate to the **Registration Required** popup at the top right of the screen. Hover over the popup and select **Register**. <!--TODO: Insert recording vid 50sec screenshot-->
 1. You're prompted to register your device with Microsoft Entra ID. Enter your sign-in credentials and select **Next**. <!--TODO: Insert recording vid 53sec screenshot-->
-1. MFA is required as part of this sign in flow. Open your **Authenticator** app and enter the number displayed on the screen to finish registration.
+    1. Your administrator may have configured MFA for the device registration flow. If so, open your **Authenticator** app on your mobile device and complete the MFA flow.
 1. When a **Single Sign-On** window appears, enter your local account password and select **OK**. <!--TODO: Insert recording vid 1m09sec screenshot-->
 1. If your local password differs to your Microsoft Entra ID password, an **Authentication Required** popup appears on the top right of the screen. Hover over the banner and select **Sign-in**.
 1. When a **Microsoft Entra** window appears, enter your Microsoft Entra ID password and select **Sign In**. <!--TODO: Insert recording vid 1m21sec screenshot-->
@@ -88,7 +96,7 @@ Although [Registration with Automated Device Enrollment](#registration-with-auto
 1. The **Company Portal** app checks that your device is registered. Once the window closes, you have access to your emails.
 
 > [!NOTE]
-> If you ignore or dismiss the **Registration Required** popup, when attempting to log into Outlook or another app, you're prompted to register your device through an action item to register your device. A new popup appears that says **Registration Required**. This popup reappears every few minutes until you register your device.
+> If you ignore or dismiss the **Registration Required** popup, when attempting to log into Outlook or another app, you're prompted to register your device through an action item to register your device. A new popup appears that says **Registration Required**. This popup reappears every 10 minutes until you register your device.
 
 ## Enable macOS Platform Credentials for use as a passkey (secure enclave only)
 
