@@ -44,7 +44,7 @@ Some products that include SharePoint and OneDrive, such as Microsoft 365, don't
 
 4. Sign in to the [Microsoft 365 admin center](https://portal.office.com/admintakeover) with the Power BI user account. 
 
-   :::image type="content" source="./media/domains-admin-takeover/m365-weclome-screen" alt-text="Screenshot of the Microsoft 365 Welcome page.":::
+   :::image type="content" source="./media/domains-admin-takeover/m365-welcome-screen.png" alt-text="Screenshot of the Microsoft 365 Welcome page.":::
 
 5. You receive a message that instructs you to **Become the Admin** of the domain name that was already verified in the unmanaged organization. select **Yes, I want to be the admin**.
 
