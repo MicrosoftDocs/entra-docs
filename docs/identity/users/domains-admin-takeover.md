@@ -126,7 +126,7 @@ Although RMS for individuals is designed to support Microsoft Entra authenticati
 
 You can see these cmdlets used in [PowerShell example](#powershell-example).
 
-[!INCLUDE [Azure AD PowerShell migration](../includes/aad-powershell-migration-include.md)]
+[!INCLUDE [Azure AD PowerShell migration](../../includes/aad-powershell-migration-include.md)]
 
 cmdlet | Usage
 ------- | -------
