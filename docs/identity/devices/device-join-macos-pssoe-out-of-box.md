@@ -37,8 +37,14 @@ There are three authentication methods for PSSO registration, **Secure Enclave**
 
 ### [Secure Enclave](#tab/secure-enclave)
 
-1. Navigate to the **Registration Required** popup at the top right of the screen. Hover over the popup and select **Register**. <!--TODO: Insert recording vid 50sec screenshot-->
-1. You're prompted to register your device with Microsoft Entra ID. Enter your sign-in credentials and select **Next**. Wait for a moment for the system to log you in. <!--TODO: Insert recording vid 53sec screenshot-->
+1. Navigate to the **Registration Required** popup at the top right of the screen. Hover over the popup and select **Register**. {***Insert recording vid 50sec screenshot***}
+
+:::image type="content" source="media/device-join-macos-pssoe-oobe/password-sync-0-50-registration-required-popup.png" alt-text="Screenshot of registration required popup on home screen.":::
+
+1. You're prompted to register your device with Microsoft Entra ID. Enter your sign-in credentials and select **Next**. Wait for a moment for the system to log you in. {***Insert recording vid 53sec screenshot***}
+
+:::image type="content" source="media/device-join-macos-pssoe-oobe/password-sync-0-53-register-with-microsoft-entra.png" alt-text="Screenshot of Microsoft Entra credentials window.":::
+
 1. MFA is required as part of this sign in flow. Open your **Authenticator app** (recommended) or use your other MFA methods you have registered, and enter the number displayed on the screen to finish registration.
 1. To check that the PSSO registration has completed successfully, open the **Terminal** app and run the following command:
 
@@ -68,12 +74,25 @@ TODO: Add steps
 
 ### [Password](#tab/password)
 
-1. Navigate to the **Registration Required** popup at the top right of the screen. Hover over the popup and select **Register**. <!--TODO: Insert recording vid 50sec screenshot-->
-1. You're prompted to register your device with Microsoft Entra ID. Enter your sign-in credentials and select **Next**. <!--TODO: Insert recording vid 53sec screenshot-->
+1. Navigate to the **Registration Required** popup at the top right of the screen. Hover over the popup and select **Register**. {***Insert recording vid 50sec screenshot***}
+
+:::image type="content" source="media/device-join-macos-pssoe-oobe/password-sync-0-50-registration-required-popup.png" alt-text="Screenshot of registration required popup on home screen.":::
+
+1. You're prompted to register your device with Microsoft Entra ID. Enter your sign-in credentials and select **Next**. {***Insert recording vid 53sec screenshot***}
+
+:::image type="content" source="media/device-join-macos-pssoe-oobe/password-sync-0-53-register-with-microsoft-entra.png" alt-text="Screenshot of Microsoft Entra credentials window.":::
+
     1. Your administrator may have configured MFA for the device registration flow. If so, open your **Authenticator** app on your mobile device and complete the MFA flow.
-1. When a **Single Sign-On** window appears, enter your local account password and select **OK**. <!--TODO: Insert recording vid 1m09sec screenshot-->
+    
+1. When a **Single Sign-On** window appears, enter your local account password and select **OK**. {***Insert recording vid 1m09sec screenshot***}
+
+:::image type="content" source="media/device-join-macos-pssoe-oobe/password-sync-1-09-sso-window.png" alt-text="Screenshot of Microsoft Entra credentials window.":::
+
 1. If your local password differs to your Microsoft Entra ID password, an **Authentication Required** popup appears on the top right of the screen. Hover over the banner and select **Sign-in**.
-1. When a **Microsoft Entra** window appears, enter your Microsoft Entra ID password and select **Sign In**. <!--TODO: Insert recording vid 1m21sec screenshot-->
+1. When a **Microsoft Entra** window appears, enter your Microsoft Entra ID password and select **Sign In**. {***Insert recording vid 1m21sec screenshot***}
+
+:::image type="content" source="media/device-join-macos-pssoe-oobe/password-sync-1-21-mac-microsoft-entra-window.png" alt-text="Screenshot of Microsoft Entra credentials window.":::
+
 1. After unlocking the Mac, you can now use PSSO to access Microsoft app resources. From this point on, your old password doesn't work because PSSO is enabled for your device.
 
 ---
