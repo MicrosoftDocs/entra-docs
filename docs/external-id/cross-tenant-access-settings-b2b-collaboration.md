@@ -5,7 +5,7 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: how-to
-ms.date: 08/04/2023
+ms.date: 11/06/2023
 
 ms.author: mimart
 author: msmimart
@@ -32,7 +32,7 @@ Use External Identities cross-tenant access settings to manage how you collabora
 - Identify any Microsoft Entra organizations that will need customized settings so you can configure **Organizational settings** for them.
 - If you want to apply access settings to specific users, groups, or applications in an external organization, you'll need to contact the organization for information before configuring your settings. Obtain their user object IDs, group object IDs, or application IDs (*client app IDs* or *resource app IDs*) so you can target your settings correctly.
 - If you want to set up B2B collaboration with a partner organization in an external Microsoft Azure cloud, follow the steps in [Configure Microsoft cloud settings](cross-cloud-settings.md). An admin in the partner organization will need to do the same for your tenant.
-- Both allow/block list and cross-tenant access settings are checked at the time of invitation. If a user's domain is on the allow list, they can be invited, unless the domain is explicitly blocked in the cross-tenant access settings. If a user's domain is on the deny list, they can't be invited regardless of the cross-tenant access settings. If a user is not on either list, we check the cross-tenant access settings to determine whether they can be invited. 
+- Both allow/block list and cross-tenant access settings are checked at the time of invitation. If a user's domain is on the allowlist, they can be invited, unless the domain is explicitly blocked in the cross-tenant access settings. If a user's domain is on the blocklist, they can't be invited regardless of the cross-tenant access settings. If a user isn't on either list, we check the cross-tenant access settings to determine whether they can be invited.  
 
 ## Configure default settings
 
@@ -172,6 +172,90 @@ With inbound settings, you select which external users and groups will be able t
     ![Screenshot showing selecting applications.](media/cross-tenant-access-settings-b2b-collaboration/generic-inbound-applications-add.png)
 
 1. Select **Save**.
+
+### Configure redemption order (Preview)
+
+To customize the order of identity providers that your guest users can sign in when they accept your invitation, follow the steps below.
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) using a Global administrator or Security administrator account. Then open the **Identity** service on the left hand side.
+
+1. Select **External Identities** > **Cross-tenant access settings**.
+
+1. Under **Organizational settings** select the link in the **Inbound access** column and the **B2B collaboration** tab.
+
+1. Select the **Redemption order** tab.
+
+1. Move the identity providers up or down to change the order in which your guest users can sign in when they accept your invitation. You can also reset the redemption order to the default settings here.
+
+   :::image type="content" source="media/cross-tenant-access-overview/redemption-order-tab-entra.png" alt-text="Screenshot showing the redemption order tab." lightbox="media/cross-tenant-access-overview/redemption-order-tab-entra.png":::
+
+1. Select **Save**.
+
+You can also customize the redemption order via the Microsoft Graph API.
+
+1. Open the [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer).
+
+1. Sign in with a Global administrator or Security administrator account to your resource tenant.
+
+1. Run the following query to get the current redemption order:
+
+   ```http
+   GET https://graph.microsoft.com/beta/policies/crossTenantAccessPolicy/default
+   ```
+
+1. In this example, we'll move the SAML/WS-Fed IdP federation to the top of the redemption order above Azure AD identity provider. Patch the same URI with this request body:
+
+   ```http
+   {
+     "invitationRedemptionIdentityProviderConfiguration":
+     {
+     "primaryIdentityProviderPrecedenceOrder": ["ExternalFederation ","AzureActiveDirectory"],
+     "fallbackIdentityProvider": "defaultConfiguredIdp "
+     }
+   }
+   ```
+
+1. To verify the changes run the GET query again.
+
+1. To reset the redemption order to the default settings, run the following query:
+
+   ```http
+      {
+      "invitationRedemptionIdentityProviderConfiguration": {
+      "primaryIdentityProviderPrecedenceOrder": [
+      "azureActiveDirectory",
+      "externalFederation",
+      "socialIdentityProviders"
+      ],
+      "fallbackIdentityProvider": "defaultConfiguredIdp"
+      }
+      }
+   ```
+
+### SAML/WS-Fed federation (Direct federation) for Azure AD verified domains (Preview)
+
+You can now add your enlisted Azure AD verified domain to set up the direct federation relationship. First you need to set up the Direct federation configuration in the [admin center](direct-federation.md) or via the [API](/graph/api/resources/samlorwsfedexternaldomainfederation). Make sure that the domain isn't verified in the same tenant. 
+Once the configuration is set up, you can customize the redemption order. The SAML/WS-Fed IdP will be added to the redemption order as the last entry. You can move it up in the redemption order to set it above Azure Active Directory identity provider.
+
+### Prevent your B2B users from redeeming an invite using Microsoft accounts (Preview)
+
+To prevent your B2B guest users from redeeming their invite using their existing Microsoft accounts or creating a new one to accept the invitation, follow the steps below.
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) using a Global administrator or Security administrator account. Then open the **Identity** service on the left hand side.
+
+1. Select **External Identities** > **Cross-tenant access settings**.
+
+1. Under **Organizational settings** select the link in the **Inbound access** column and the **B2B collaboration** tab.
+
+1. Select the **Redemption order** tab.
+
+1. Under **Fallback identity providers** disable Microsoft service account (MSA).
+
+   :::image type="content" source="media/cross-tenant-access-overview/fallback-idp.png" alt-text="Screenshot of the fallback identity providers option." lightbox="media/cross-tenant-access-overview/fallback-idp.png":::
+
+1. Select **Save**.
+
+You need to have at least one fallback identity provider enabled at any given time. If you want to disable Microsoft accounts, you'll have to enable email one-time passcode. You can't disable both fallback identity providers. Any existing guest users signed in with Microsoft accounts will continue using it during subsequent sign-ins. You'll need to [reset their redemption status](reset-redemption-status.md) for this setting to apply.
 
 ### To change inbound trust settings for MFA and device claims
 

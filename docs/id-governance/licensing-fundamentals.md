@@ -30,7 +30,7 @@ The following licenses are available for use with Microsoft Entra ID Governance 
 >[!NOTE]
 >Microsoft Entra ID Governance scenarios might depend upon other features that aren't covered by Microsoft Entra ID Governance.  These features might have additional licensing requirements.  See [Governance capabilities in other Microsoft Entra features](identity-governance-overview.md#governance-capabilities-in-other-microsoft-entra-features) for more information on governance scenarios that rely on additional features.
 
-Microsoft Entra ID Governance products are not yet available in the US government or US national clouds.
+Microsoft Entra ID Governance products aren't yet available in the US government or US national clouds.
 
 ### Governance products and prerequisites
 
@@ -50,13 +50,13 @@ To check if the prerequisite products for a Microsoft Entra ID Governance produc
 
 1. In the **Identity** menu, expand **Billing** and select **Licenses**.
 
-1. In the **Manage** menu, select **Licensed features**.  The information bar will indicate the current Microsoft Entra ID license plan.
+1. In the **Manage** menu, select **Licensed features**.  The information bar indicates the current Microsoft Entra ID license plan.
 
 1. To view the existing products in the tenant, in the **Manage** menu, select **All products**.
 
 ## Starting a trial
 
-A global administrator in a tenant that has an appropriate prerequisite product, such as Microsoft Entra ID P1, already purchased, and is not already using or has previously trialed Microsoft Entra ID Governance, may request a trial of Microsoft Entra ID Governance in their tenant.
+A global administrator in a tenant that has an appropriate prerequisite product, such as Microsoft Entra ID P1, already purchased, and isn't already using or has previously trialed Microsoft Entra ID Governance, may request a trial of Microsoft Entra ID Governance in their tenant.
 
 1. Sign in to the [Microsoft 365 admin center](https://admin.microsoft.com/AdminPortal/Home) as a global administrator.
 
@@ -66,42 +66,42 @@ A global administrator in a tenant that has an appropriate prerequisite product,
 
 1. Select **Details** below **Microsoft Entra ID Governance** to view the trial and purchase information for the product.  If your tenant has Microsoft Entra ID P2, then select  **Details** below **Microsoft Entra ID Governance Step-Up for Microsoft Entra ID P2**.
 
-1. In the product details page, click **Start free trial**.
+1. In the product details page, select **Start free trial**.
 
 
 ## Features by license
-The following table shows what features are available with each license.  Note that not all features are available in all clouds; see [Microsoft Entra feature availability](~/identity/authentication/feature-availability.md) for Azure Government.
+The following table shows what features are available with each license.  Not all features are available in all clouds; see [Microsoft Entra feature availability](~/identity/authentication/feature-availability.md) for Azure Government.
 
 |Feature|Free|Microsoft Entra ID P1|Microsoft Entra ID P2|Microsoft Entra ID Governance|
 |-----|:-----:|:-----:|:-----:|:-----:|
-|[HR-driven Provisioning](/azure/active-directory/app-provisioning/what-is-hr-driven-provisioning)||x|x|x|
-|Automated user provisioning to SaaS apps|x|x|x|x|
-|Automated group provisioning to SaaS apps||x|x|x|
-|Automated provisioning to on-premises apps||x|x|x|
-|[Conditional Access - Terms of use attestation](/azure/active-directory/conditional-access/terms-of-use)||x|x|x| 
-|Entitlement management - Basic entitlement management|||x|x|  
-|Entitlement management - Conditional Access Scoping|||x|x|
-|Entitlement management MyAccess Search|||x|x|  
-|Entitlement management with Verified ID||||x|  
-|Entitlement management + Custom Extensions (Logic Apps)||||x|  
-|Entitlement management + Auto Assignment Policies||||x|
-|Entitlement management - Invite+Assign Any||||x|
-|Entitlement management - Guest Conversion API||||x|
-|Entitlement management - Grace Period - Public Preview|||x|x|  
-|My Access portal|||x|x|
-|Entitlement management - Sponsors Policy - Public Preview||||x|
-|Privileged Identity Management (PIM)|||x|x|
-|PIM For Groups|||x|x|
-|PIM CA Controls|||x|x|
-|Access Reviews - Basic access certifications and reviews|||x|x|
-|Access reviews - PIM For Groups - Public Preview||||x|
-|Access reviews - Inactive Users reviews||||x|
-|Access Reviews - Inactive Users recommendations|||x|x|
-|Access reviews - Machine learning assisted access certifications and reviews||||x|
-|Lifecycle Workflows (LCW)||||x|
-|LCW + Custom Extensions (Logic Apps)||||x|
-|Identity governance dashboard - Public Preview||x|x|x|
-|Insights and reporting - Inactive guest accounts (Preview)||||x|
+|[HR-driven Provisioning](~/identity/app-provisioning/what-is-hr-driven-provisioning.md)||x|x|x|
+|[Automated user provisioning to SaaS apps](~/identity/saas-apps/tutorial-list.md)|x|x|x|x|
+|[Automated group provisioning to SaaS apps](~/identity/saas-apps/tutorial-list.md)||x|x|x|
+|[Automated provisioning to on-premises apps](~/identity/app-provisioning/on-premises-application-provisioning-architecture.md)||x|x|x|
+|[Conditional Access - Terms of use attestation](~/identity/conditional-access/terms-of-use.md)||x|x|x|
+|[Entitlement management - Basic entitlement management](entitlement-management-overview.md)|||x|x|  
+|[Entitlement management - Conditional Access Scoping](entitlement-management-external-users.md#review-your-conditional-access-policies)|||x|x|
+|[Entitlement management MyAccess Search](my-access-portal-overview.md)|||x|x|  
+|[Entitlement management with Verified ID](entitlement-management-verified-id-settings.md)||||x|  
+|[Entitlement management + Custom Extensions (Logic Apps)](entitlement-management-logic-apps-integration.md)||||x|  
+|[Entitlement management + Auto Assignment Policies](entitlement-management-access-package-auto-assignment-policy.md)||||x|
+|[Entitlement management - Directly Assign Any User(Preview)](entitlement-management-access-package-assignments.md#directly-assign-any-user-preview)||||x|
+|[Entitlement management - Guest Conversion API](entitlement-management-access-package-manage-lifecycle.md)||||x|
+|[Entitlement management - Grace Period(Preview)](entitlement-management-external-users.md#manage-the-lifecycle-of-external-users)|||x|x|  
+|[My Access portal](my-access-portal-overview.md)|||x|x|
+|[Entitlement management - Sponsors Policy(Preview)](entitlement-management-access-package-approval-policy.md)||||x|
+|[Privileged Identity Management (PIM)](./privileged-identity-management/pim-configure.md)|||x|x|
+|[PIM For Groups](./privileged-identity-management/concept-pim-for-groups.md)|||x|x|
+|[PIM CA Controls](./privileged-identity-management/pim-configure.md)|||x|x|
+|[Access Reviews - Basic access certifications and reviews](access-reviews-overview.md)|||x|x|
+|[Access reviews - PIM For Groups(Preview)](create-access-review-pim-for-groups.md)||||x|
+|[Access reviews - Inactive Users reviews](create-access-review.md)||||x|
+|[Access Reviews - Inactive Users recommendations](review-recommendations-access-reviews.md#inactive-user-recommendations)|||x|x|
+|[Access reviews - Machine learning assisted access certifications and reviews](review-recommendations-access-reviews.md#user-to-group-affiliation)||||x|
+|[Lifecycle Workflows (LCW)](what-are-lifecycle-workflows.md)||||x|
+|[LCW + Custom Extensions (Logic Apps)](lifecycle-workflow-extensibility.md)||||x|
+|[Identity governance dashboard (Preview)](governance-dashboard.md)||x|x|x|
+|[Insights and reporting - Inactive guest accounts(Preview)](~/identity/users/clean-up-stale-guest-accounts.md)||||x|
 
 
 ## Entitlement Management
@@ -169,17 +169,25 @@ Here are some example license scenarios to help you determine the number of lice
 
 ### Do licenses need to be assigned to users to use Identity Governance features?
 
-Users do not need to be assigned an Identity Governance license, but there needs to be as many license seats to include all users in scope of, or who configures, the Identity Governance features.
+Users do not need to be assigned a Microsoft Entra ID Governance license, but there needs to be as many license seats to include all users in scope of, or who configures, the Identity Governance features.
+
+### How can I license usage of Microsoft Entra ID Governance features for business guests?
+
+All users who are in scope of Microsoft Entra ID Governance features, including business guests such as contractors, partners, and external collaborators, need a license.  We're creating a new Microsoft Entra ID Governance license for business guests. This license will operate on a monthly active usage (MAU) model. Customers will be able to acquire licenses matching their anticipated business guest MAU.
+
+We anticipate making these licenses available in spring 2024. In the interim, organizations that govern the identities of their employees with Microsoft Entra ID Governance can govern the identities of their business guests for no additional cost. At this time, existing customers of Microsoft Entra ID P1 or P2 with Microsoft Entra External ID can continue using the subset of features that are included in P1 or P2 with their business guests through their Microsoft Entra External ID license.
+
+For more details, see: [Microsoft Entra ID Governance licensing for business guests](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/microsoft-entra-id-governance-licensing-for-business-guests/ba-p/3575579).
 
 
 ### What happens when a PIM license expires?
 
-If a Microsoft Azure AD Premium P2, Microsoft Entra ID Governance, or trial license expires, Privileged Identity Management features will no longer be available in your directory:
+If a Microsoft Entra ID P2, Microsoft Entra ID Governance, or trial license expires, Privileged Identity Management features will no longer be available in your directory:
 
-- Permanent role assignments to Azure AD roles will be unaffected.
-- The Privileged Identity Management service in the Azure portal, as well as the Graph API cmdlets and PowerShell interfaces of Privileged Identity Management, will no longer be available for users to activate privileged roles, manage privileged access, or perform access reviews of privileged roles.
+- Permanent role assignments to Azure AD roles are unaffected.
+- The Privileged Identity Management service in the Azure portal, and the Graph API cmdlets and PowerShell interfaces of Privileged Identity Management, will no longer be available for users to activate privileged roles, manage privileged access, or perform access reviews of privileged roles.
 - Eligible role assignments of Azure AD roles will be removed, as users will no longer be able to activate privileged roles.
-- Any ongoing access reviews of Azure AD roles will end, and Privileged Identity Management configuration settings will be removed.
+- Any ongoing access reviews of Azure AD roles will end, and Privileged Identity Management configuration settings are removed.
 - Privileged Identity Management will no longer send emails on role assignment changes.
 
 

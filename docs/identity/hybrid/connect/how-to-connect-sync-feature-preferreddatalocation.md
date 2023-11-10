@@ -4,7 +4,7 @@ description: Describes how to put your Microsoft 365 user resources close to the
 author: billmath
 ms.service: active-directory
 ms.workload: identity
-ms.custom: has-azure-ad-ps-ref
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 manager: amycolannino
 ms.topic: how-to
 ms.date: 11/06/2023
@@ -45,12 +45,12 @@ Microsoft Entra Connect supports synchronization of the **preferredDataLocation*
 By default, **preferredDataLocation** is not enabled for synchronization. This feature is intended for larger organizations. The Active Directory schema in Windows Server 2019 has an attribute **msDS-preferredDataLocation** you should use for this purpose. If you have not updated the Active Directory schema and cannot do so, then you must identify an attribute to hold the Microsoft 365 geo for your users. This is going to be different for each organization.
 
 > [!IMPORTANT]
-> Microsoft Entra ID allows the **preferredDataLocation** attribute on **cloud User objects** to be directly configured by using Azure AD PowerShell. To configure this attribute on **synchronized User objects**, you must use Microsoft Entra Connect.
+> Microsoft Entra ID allows the **preferredDataLocation** attribute on **cloud User objects** to be directly configured by using [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview). To configure this attribute on **synchronized User objects**, you must use Microsoft Entra Connect.
 
 Before enabling synchronization:
 
 * If you have not upgraded the Active Directory schema to 2019, then decide which on-premises Active Directory attribute to be used as the source attribute. It should be of the type, **single-valued string**.
-* If you have previously configured the **preferredDataLocation** attribute on existing **synchronized User objects** in Microsoft Entra ID by using Azure AD PowerShell, you must backport the attribute values to the corresponding **User** objects in on-premises Active Directory.
+* If you have previously configured the **preferredDataLocation** attribute on existing **synchronized User objects** in Microsoft Entra ID by using Microsoft Graph PowerShell, you must backport the attribute values to the corresponding **User** objects in on-premises Active Directory.
 
     > [!IMPORTANT]
     > If you do not backport these values, Microsoft Entra Connect removes the existing attribute values in Microsoft Entra ID when synchronization for the **preferredDataLocation** attribute is enabled.
