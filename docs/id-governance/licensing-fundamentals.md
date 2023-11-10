@@ -173,8 +173,8 @@ Here are some example license scenarios to help you determine the number of lice
 
 |Customer License  |Usage limits enforced at tenant level for API-driven provisioning  |
 |---------|---------|
-|Microsoft Entra ID P1 or P2      |   • Daily usage quota (number of user records that can be uploaded over 24-hour period): 100K user records (2000 API calls with each API request containing max of 50 records).<br><br>• Max number of API-driven provisioning jobs for each flow: 2<br>o Max 2 apps for API-driven provisioning to on-premises Active Directory.<br>o Max 2 apps for API-driven provisioning to Microsoft Entra ID.      |
-|Microsoft Entra ID Governance alongside Microsoft Entra ID P1 or P2     | • Daily usage quota (number of user records that can be uploaded over 24-hour period): 300K user records  (6000 API calls with each API request containing max of 50 records).<br><br>• Max number of API-driven provisioning jobs for each flow: 20<br>o Max 20 apps for API-driven provisioning to on-premises Active Directory.<br>o Max 20 apps for API-driven provisioning to Microsoft Entra ID.        |
+|Microsoft Entra ID P1 or P2      |   • Daily usage quota (number of user records that can be uploaded over 24-hour period): **100K user records (2000 API calls with each API request containing max of 50 records)**.<br><br>• Max number of API-driven provisioning jobs for each flow: 2<br>o Max 2 apps for API-driven provisioning to on-premises Active Directory.<br>o Max 2 apps for API-driven provisioning to Microsoft Entra ID.      |
+|Microsoft Entra ID Governance alongside Microsoft Entra ID P1 or P2     | • Daily usage quota (number of user records that can be uploaded over 24-hour period): **300K user records  (6000 API calls with each API request containing max of 50 records)**.<br><br>• Max number of API-driven provisioning jobs for each flow: 20<br>o Max 20 apps for API-driven provisioning to on-premises Active Directory.<br>o Max 20 apps for API-driven provisioning to Microsoft Entra ID.        |
 
 
 
