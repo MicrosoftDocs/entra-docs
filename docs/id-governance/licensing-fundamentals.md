@@ -10,7 +10,7 @@ ms.service: active-directory
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 08/03/2023
+ms.date: 11/10/2023
 ms.subservice: hybrid
 ms.author: billmath
 ---
@@ -20,6 +20,7 @@ ms.author: billmath
 The following tables show the licensing requirements for Microsoft Entra ID Governance features.
 
 ## Types of licenses
+
 The following licenses are available for use with Microsoft Entra ID Governance in the commercial cloud.  The choice of licenses you need in a tenant depends on the features you're using in that tenant.
 
 - **Free** - Included with Microsoft cloud subscriptions such as Microsoft Azure, Microsoft 365, and others.
@@ -70,38 +71,39 @@ A global administrator in a tenant that has an appropriate prerequisite product,
 
 
 ## Features by license
-The following table shows what features are available with each license.  Not all features are available in all clouds; see [Microsoft Entra feature availability](~/identity/authentication/feature-availability.md) for Azure Government.
 
-|Feature|Free|Microsoft Entra ID P1|Microsoft Entra ID P2|Microsoft Entra ID Governance|
+The following table shows what features are availab|Feature|Free|Microsoft Entra ID P1|Microsoft Entra ID P2|Microsoft Entra ID Governance|
 |-----|:-----:|:-----:|:-----:|:-----:|
-|[HR-driven Provisioning](~/identity/app-provisioning/what-is-hr-driven-provisioning.md)||x|x|x|
-|[Automated user provisioning to SaaS apps](~/identity/saas-apps/tutorial-list.md)|x|x|x|x|
-|[Automated group provisioning to SaaS apps](~/identity/saas-apps/tutorial-list.md)||x|x|x|
-|[Automated provisioning to on-premises apps](~/identity/app-provisioning/on-premises-application-provisioning-architecture.md)||x|x|x|
-|[Conditional Access - Terms of use attestation](~/identity/conditional-access/terms-of-use.md)||x|x|x|
-|[Entitlement management - Basic entitlement management](entitlement-management-overview.md)|||x|x|  
-|[Entitlement management - Conditional Access Scoping](entitlement-management-external-users.md#review-your-conditional-access-policies)|||x|x|
-|[Entitlement management MyAccess Search](my-access-portal-overview.md)|||x|x|  
-|[Entitlement management with Verified ID](entitlement-management-verified-id-settings.md)||||x|  
-|[Entitlement management + Custom Extensions (Logic Apps)](entitlement-management-logic-apps-integration.md)||||x|  
-|[Entitlement management + Auto Assignment Policies](entitlement-management-access-package-auto-assignment-policy.md)||||x|
-|[Entitlement management - Directly Assign Any User(Preview)](entitlement-management-access-package-assignments.md#directly-assign-any-user-preview)||||x|
-|[Entitlement management - Guest Conversion API](entitlement-management-access-package-manage-lifecycle.md)||||x|
-|[Entitlement management - Grace Period(Preview)](entitlement-management-external-users.md#manage-the-lifecycle-of-external-users)|||x|x|  
-|[My Access portal](my-access-portal-overview.md)|||x|x|
-|[Entitlement management - Sponsors Policy(Preview)](entitlement-management-access-package-approval-policy.md)||||x|
-|[Privileged Identity Management (PIM)](./privileged-identity-management/pim-configure.md)|||x|x|
-|[PIM For Groups](./privileged-identity-management/concept-pim-for-groups.md)|||x|x|
-|[PIM CA Controls](./privileged-identity-management/pim-configure.md)|||x|x|
-|[Access Reviews - Basic access certifications and reviews](access-reviews-overview.md)|||x|x|
-|[Access reviews - PIM For Groups(Preview)](create-access-review-pim-for-groups.md)||||x|
-|[Access reviews - Inactive Users reviews](create-access-review.md)||||x|
-|[Access Reviews - Inactive Users recommendations](review-recommendations-access-reviews.md#inactive-user-recommendations)|||x|x|
-|[Access reviews - Machine learning assisted access certifications and reviews](review-recommendations-access-reviews.md#user-to-group-affiliation)||||x|
-|[Lifecycle Workflows (LCW)](what-are-lifecycle-workflows.md)||||x|
-|[LCW + Custom Extensions (Logic Apps)](lifecycle-workflow-extensibility.md)||||x|
-|[Identity governance dashboard (Preview)](governance-dashboard.md)||x|x|x|
-|[Insights and reporting - Inactive guest accounts(Preview)](~/identity/users/clean-up-stale-guest-accounts.md)||||x|
+|[HR-driven Provisioning](~/identity/app-provisioning/what-is-hr-driven-provisioning.md)||| :white_check_mark: | :white_check_mark: |
+|[Automated user provisioning to SaaS apps](~/identity/saas-apps/tutorial-list.md)| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+|[Automated group provisioning to SaaS apps](~/identity/saas-apps/tutorial-list.md)|| :white_check_mark: | :white_check_mark: | :white_check_mark: |
+|[Automated provisioning to on-premises apps](~/identity/app-provisioning/on-premises-application-provisioning-architecture.md)|| :white_check_mark: | :white_check_mark: | :white_check_mark: |
+|[Conditional Access - Terms of use attestation](~/identity/conditional-access/terms-of-use.md)|| :white_check_mark: | :white_check_mark: | :white_check_mark: |
+|[Entitlement management - Basic entitlement management](entitlement-management-overview.md)|||| :white_check_mark: |  
+|[Entitlement management - Conditional Access Scoping](entitlement-management-external-users.md#review-your-conditional-access-policies)|||| :white_check_mark: |
+|[Entitlement management MyAccess Search](my-access-portal-overview.md)|||| :white_check_mark: |  
+|[Entitlement management with Verified ID](entitlement-management-verified-id-settings.md)|||| :white_check_mark: |  
+|[Entitlement management + Custom Extensions (Logic Apps)](entitlement-management-logic-apps-integration.md)|||| :white_check_mark: |  
+|[Entitlement management + Auto Assignment Policies](entitlement-management-access-package-auto-assignment-policy.md)|||| :white_check_mark: |
+|[Entitlement management - Directly Assign Any User(Preview)](entitlement-management-access-package-assignments.md#directly-assign-any-user-preview)|||| :white_check_mark: |
+|[Entitlement management - Guest Conversion API](entitlement-management-access-package-manage-lifecycle.md)|||| :white_check_mark: |
+|[Entitlement management - Grace Period(Preview)](entitlement-management-external-users.md#manage-the-lifecycle-of-external-users)||| :white_check_mark: | :white_check_mark: |  
+|[My Access portal](my-access-portal-overview.md)||| :white_check_mark: | :white_check_mark: |
+|[Entitlement management - Sponsors Policy(Preview)](entitlement-management-access-package-approval-policy.md)|||| :white_check_mark: |
+|[Privileged Identity Management (PIM)](./privileged-identity-management/pim-configure.md)||| :white_check_mark: | :white_check_mark: |
+|[PIM For Groups](./privileged-identity-management/concept-pim-for-groups.md)||| :white_check_mark: | :white_check_mark: |
+|[PIM CA Controls](./privileged-identity-management/pim-configure.md)||| :white_check_mark: | :white_check_mark: |
+|[Access Reviews - Basic access certifications and reviews](access-reviews-overview.md)||| :white_check_mark: | :white_check_mark: |
+|[Access reviews - PIM For Groups(Preview)](create-access-review-pim-for-groups.md)|||| :white_check_mark: |
+|[Access reviews - Inactive Users reviews](create-access-review.md)|||| :white_check_mark: |
+|[Access Reviews - Inactive Users recommendations](review-recommendations-access-reviews.md#inactive-user-recommendations)||| :white_check_mark: | :white_check_mark: |
+|[Access reviews - Machine learning assisted access certifications and reviews](review-recommendations-access-reviews.md#user-to-group-affiliation)|||| :white_check_mark: |
+|[Lifecycle Workflows (LCW)](what-are-lifecycle-workflows.md)|||| :white_check_mark: |
+|[LCW + Custom Extensions (Logic Apps)](lifecycle-workflow-extensibility.md)|||| :white_check_mark: |
+|[Identity governance dashboard (Preview)](governance-dashboard.md)| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+|[Insights and reporting - Inactive guest accounts(Preview)](~/identity/users/clean-up-stale-guest-accounts.md)|||| :white_check_mark: |
+le with each license.  Not all features are available in all clouds; see [Microsoft Entra feature availability](~/identity/authentication/feature-availability.md) for Azure Government.
+
 
 
 ## Entitlement Management
