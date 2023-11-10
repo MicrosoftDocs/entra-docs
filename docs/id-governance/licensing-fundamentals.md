@@ -72,7 +72,9 @@ A global administrator in a tenant that has an appropriate prerequisite product,
 
 ## Features by license
 
-The following table shows what features are availab|Feature|Free|Microsoft Entra ID P1|Microsoft Entra ID P2|Microsoft Entra ID Governance|
+The following table shows what features are available with each license.  Not all features are available in all clouds; see [Microsoft Entra feature availability](~/identity/authentication/feature-availability.md) for Azure Government.
+
+|Feature|Free|Microsoft Entra ID P1|Microsoft Entra ID P2|Microsoft Entra ID Governance|
 |-----|:-----:|:-----:|:-----:|:-----:|
 |[HR-driven Provisioning](~/identity/app-provisioning/what-is-hr-driven-provisioning.md)||| :white_check_mark: | :white_check_mark: |
 |[Automated user provisioning to SaaS apps](~/identity/saas-apps/tutorial-list.md)| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
@@ -102,8 +104,6 @@ The following table shows what features are availab|Feature|Free|Microsoft Entra
 |[LCW + Custom Extensions (Logic Apps)](lifecycle-workflow-extensibility.md)|||| :white_check_mark: |
 |[Identity governance dashboard (Preview)](governance-dashboard.md)| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[Insights and reporting - Inactive guest accounts(Preview)](~/identity/users/clean-up-stale-guest-accounts.md)|||| :white_check_mark: |
-le with each license.  Not all features are available in all clouds; see [Microsoft Entra feature availability](~/identity/authentication/feature-availability.md) for Azure Government.
-
 
 
 ## Entitlement Management
