@@ -9,7 +9,7 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
 ms.workload: identity
-ms.date: 10/17/2022
+ms.date: 11/10/2023
 ms.author: henrymbugua
 ms.reviewer: jmprieur, saeeda, sureshja, ludwignick
 ms.custom: scenarios:getting-started, engagement-fy23
@@ -23,24 +23,23 @@ Microsoft Entra ID supports two types of authentication for service principals: 
 For testing, you can use a self-signed public certificate instead of a Certificate Authority (CA)-signed certificate. In this how-to, you'll use PowerShell to create and export a self-signed certificate.
 
 > [!CAUTION]
-> Self-signed certificates are not trusted by default and they can be difficult to maintain. Also, they may use outdated hash and cipher suites that may not be strong. For better security, purchase a certificate signed by a well-known certificate authority.
+> Self-signed certificates are digital certificates that are not signed by a trusted third-party CA. Self-signed certificates are created, issued, and signed by the company or developer who is responsible for the website or software being signed. This is why self-signed certificates are considered unsafe for public-facing websites and applications.
 
-While creating the certificate using PowerShell, you can specify parameters like cryptographic and hash algorithms, certificate validity period, and domain name. The certificate can then be exported with or without its private key depending on your application needs. 
+While creating the certificate using PowerShell, you can specify parameters like cryptographic and hash algorithms, certificate validity period, and domain name. The certificate can then be exported with or without its private key depending on your application needs.
 
-The application that initiates the authentication session requires the private key while the application that confirms the authentication requires the public key. So, if you're authenticating from your PowerShell desktop app to Microsoft Entra ID, you only export the public key (*.cer* file) and upload it to the Azure portal. The PowerShell app uses the private key from your local certificate store to initiate authentication and obtain access tokens for calling Microsoft APIs like Microsoft Graph.
+The application that initiates the authentication session requires the private key while the application that confirms the authentication requires the public key. So, if you're authenticating from your PowerShell desktop app to Microsoft Entra ID, you only export the public key (_.cer_ file) and upload it to the Azure portal. The PowerShell app uses the private key from your local certificate store to initiate authentication and obtain access tokens for calling Microsoft APIs like Microsoft Graph.
 
-Your application may also be running from another machine, such as Azure Automation. In this scenario, you export the public and private key pair from your local certificate store, upload the public key to the Azure portal, and the private key (a *.pfx* file) to Azure Automation. Your application running in Azure Automation will use the private key to initiate authentication and obtain access tokens for calling Microsoft APIs like Microsoft Graph.
+Your application may also be running from another machine, such as Azure Automation. In this scenario, you export the public and private key pair from your local certificate store, upload the public key to the Azure portal, and the private key (a _.pfx_ file) to Azure Automation. Your application running in Azure Automation will use the private key to initiate authentication and obtain access tokens for calling Microsoft APIs like Microsoft Graph.
 
 This article uses the `New-SelfSignedCertificate` PowerShell cmdlet to create the self-signed certificate and the `Export-Certificate` cmdlet to export it to a location that is easily accessible. These cmdlets are built-in to modern versions of Windows (Windows 8.1 and greater, and Windows Server 2012R2 and greater). The self-signed certificate will have the following configuration:
 
-+ A 2048-bit key length. While longer values are supported, the 2048-bit size is highly recommended for the best combination of security and performance.
-+ Uses the RSA cryptographic algorithm. Microsoft Entra ID currently supports only RSA.
-+ The certificate is signed with the SHA256 hash algorithm. Microsoft Entra ID also supports certificates signed with SHA384 and SHA512 hash algorithms.
-+ The certificate is valid for only one year.
-+ The certificate is supported for use for both client and server authentication.
+- A 2048-bit key length. While longer values are supported, the 2048-bit size is highly recommended for the best combination of security and performance.
+- Uses the RSA cryptographic algorithm. Microsoft Entra ID currently supports only RSA.
+- The certificate is signed with the SHA256 hash algorithm. Microsoft Entra ID also supports certificates signed with SHA384 and SHA512 hash algorithms.
+- The certificate is valid for only one year.
+- The certificate is supported for use for both client and server authentication.
 
 To customize the start and expiry date and other properties of the certificate, refer to [New-SelfSignedCertificate](/powershell/module/pki/new-selfsignedcertificate?view=windowsserver2019-ps&preserve-view=true).
-
 
 ## Create and export your public certificate
 
@@ -56,7 +55,7 @@ $cert = New-SelfSignedCertificate -Subject "CN=$certname" -CertStoreLocation "Ce
 
 The `$cert` variable in the previous command stores your certificate in the current session and allows you to export it.
 
-The command below exports the certificate in *.cer* format. You can also export it in other formats supported on the Azure portal including *.pem* and *.crt*.
+The command below exports the certificate in _.cer_ format. You can also export it in other formats supported on the Azure portal including _.pem_ and _.crt_.
 
 ```powershell
 
@@ -86,8 +85,7 @@ Export-PfxCertificate -Cert $cert -FilePath "C:\Users\admin\Desktop\$certname.pf
 
 ```
 
-Your certificate (*.cer* file) is now ready to upload to the Azure portal. The private key (*.pfx* file) is encrypted and can't be read by other parties. Once uploaded, retrieve the certificate thumbprint, which you can use to authenticate your application.
-
+Your certificate (_.cer_ file) is now ready to upload to the Azure portal. The private key (_.pfx_ file) is encrypted and can't be read by other parties. Once uploaded, retrieve the certificate thumbprint, which you can use to authenticate your application.
 
 ## Optional task: Delete the certificate from the keystore.
 
