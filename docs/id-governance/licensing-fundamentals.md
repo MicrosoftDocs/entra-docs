@@ -56,7 +56,7 @@ To check if the prerequisite products for a Microsoft Entra ID Governance produc
 
 ## Starting a trial
 
-A global administrator in a tenant that has an appropriate prerequisite product, such as Microsoft Entra ID P1, already purchased, and isn't already using or has previously trialed Microsoft Entra ID Governance, may request a trial of Microsoft Entra ID Governance in their tenant.
+A global administrator in a tenant that has an appropriate prerequisite product, such as Microsoft Entra ID P1, already purchased, and isn't already using or has previously trialed Microsoft Entra ID Governance, can request a trial of Microsoft Entra ID Governance in their tenant.
 
 1. Sign in to the [Microsoft 365 admin center](https://admin.microsoft.com/AdminPortal/Home) as a global administrator.
 
@@ -74,6 +74,7 @@ The following table shows what features are available with each license.  Not al
 
 |Feature|Free|Microsoft Entra ID P1|Microsoft Entra ID P2|Microsoft Entra ID Governance|
 |-----|:-----:|:-----:|:-----:|:-----:|
+|[API-driven Provisioning](../identity/app-provisioning/inbound-provisioning-api-concepts.md)||x|x|x|
 |[HR-driven Provisioning](~/identity/app-provisioning/what-is-hr-driven-provisioning.md)||x|x|x|
 |[Automated user provisioning to SaaS apps](~/identity/saas-apps/tutorial-list.md)|x|x|x|x|
 |[Automated group provisioning to SaaS apps](~/identity/saas-apps/tutorial-list.md)||x|x|x|
@@ -106,7 +107,7 @@ The following table shows what features are available with each license.  Not al
 
 ## Entitlement Management
 
-Using this feature requires Microsoft Entra ID Governance subscriptions for your organization's users. Some capabilities within this feature may operate with a Microsoft Entra ID P2 subscription.
+Using this feature requires Microsoft Entra ID Governance subscriptions for your organization's users. Some capabilities within this feature can operate with a Microsoft Entra ID P2 subscription.
 
 ### Example license scenarios
 
@@ -165,11 +166,23 @@ Here are some example license scenarios to help you determine the number of lice
 | Graphic Design Institute has 25 administrators of which 14 are managed through PIM. Role activation requires approval and there are three different users in the organization who can approve activations. | 14 licenses for the eligible roles + three approvers | 17 |
 | Contoso has 50 administrators of which 42 are managed through PIM. Role activation requires approval and there are five different users in the organization who can approve activations. Contoso also does monthly reviews of users assigned to administrator roles and reviewers are the users’ managers of which six aren't in administrator roles managed by PIM. | 42 licenses for the eligible roles + five approvers + six reviewers | 53 |
 
+## API-driven Provisioning
+
+### License scenarios
+
+
+|Customer License  |Usage limits enforced at tenant level for API-driven provisioning  |
+|---------|---------|
+|Microsoft Entra ID P1 or P2      |   • Daily usage quota (number of user records that can be uploaded over 24-hour period): 100K user records (2000 API calls with each API request containing max of 50 records).<br><br>• Max number of API-driven provisioning jobs for each flow: 2<br>o Max 2 apps for API-driven provisioning to on-premises Active Directory.<br>o Max 2 apps for API-driven provisioning to Microsoft Entra ID.      |
+|Microsoft Entra ID Governance alongside Microsoft Entra ID P1 or P2     | • Daily usage quota (number of user records that can be uploaded over 24-hour period): 300K user records  (6000 API calls with each API request containing max of 50 records).<br><br>• Max number of API-driven provisioning jobs for each flow: 20<br>o Max 20 apps for API-driven provisioning to on-premises Active Directory.<br>o Max 20 apps for API-driven provisioning to Microsoft Entra ID.        |
+
+
+
 ## Licensing FAQs
 
 ### Do licenses need to be assigned to users to use Identity Governance features?
 
-Users do not need to be assigned a Microsoft Entra ID Governance license, but there needs to be as many license seats to include all users in scope of, or who configures, the Identity Governance features.
+Users don't need to be assigned a Microsoft Entra ID Governance license, but there needs to be as many license seats to include all users in scope of, or who configures, the Identity Governance features.
 
 ### How can I license usage of Microsoft Entra ID Governance features for business guests?
 
