@@ -25,7 +25,7 @@ Permissions Management capabilities are available to integrate into the Defender
 
 ## Permissions Management and Defender for Cloud capabilies
 
-:::image type="content" source="media/permissions-management-for-defender-for-cloud/permissions-management-defender-for-cloud-comparison.png" alt-text="A table showing the difference in capabilities of Permissions Management and Defender for Cloud." lightbox="media/permissions-management-for-defender-for-cloud/permissions-nagement-defender-for-cloud-comparison.png":::
+:::image type="content" source="media/permissions-management-for-defender-for-cloud/permissions-management-defender-for-cloud-comparison.png" alt-text="A table showing the difference in capabilities of Permissions Management and Defender for Cloud." lightbox="media/permissions-management-for-defender-for-cloud/permissions-management-defender-for-cloud-comparison.png":::
 
 ## Common use cases and scenarios
 
