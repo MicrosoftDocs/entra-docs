@@ -93,7 +93,7 @@ Add and assign custom security attributes to users or enterprise applications. F
 
 **Cause**
 
-Currently, you can only activate and deactivate custom security attribute definitions. Deletion of custom security attributes isn't supported. Deactivated definitions don't count towards the tenant wide 500 definition limit.
+You can only activate and deactivate custom security attribute definitions. Deletion of custom security attributes isn't supported. Deactivated definitions don't count towards the tenant wide 500 definition limit.
 
 **Solution**
 
