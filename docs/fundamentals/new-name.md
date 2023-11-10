@@ -213,12 +213,12 @@ You're not required to use the Microsoft Entra attribution with features. Only u
 
 Only official product names are capitalized, plus Conditional Access and My * apps.
 
-|  Category           | Old terminology | Correct name as of July 2023 |
-|---------------------|-----------------|------------------------------|
-| Microsoft Entra product family | Microsoft Azure Active Directory<br> Azure Active Directory<br> Azure Active Directory (Azure AD)<br> Azure AD | Microsoft Entra ID<br> (Second use: Microsoft Entra ID is preferred, ID is acceptable in product/UI experiences, ME-ID if abbreviation is necessary) |
-|       | Azure Active Directory External Identities<br> Azure AD External Identities | Microsoft Entra External ID<br> (Second use: External ID) |
-|       | Azure Active Directory Identity Governance<br> Azure AD Identity Governance<br> Microsoft Entra Identity Governance | Microsoft Entra ID Governance<br> (Second use: ID Governance) |
-|       | *New* | Microsoft Entra Internet Access<br> (Second use: Internet Access) |
+|  **Category**           | **Old terminology** | **Correct name as of July 2023** |
+|-------------------------|---------------------|----------------------------------|
+| **Microsoft Entra product family** | Microsoft Azure Active Directory<br/> Azure Active Directory<br/> Azure Active Directory (Azure AD)<br/> Azure AD<br/> AAD | Microsoft Entra ID<br/> (Second use: Microsoft Entra ID is preferred, ID is acceptable in product/UI experiences, ME-ID if abbreviation is necessary) |
+|       | Azure Active Directory External Identities<br/> Azure AD External Identities | Microsoft Entra External ID<br/> (Second use: External ID) |
+|       | Azure Active Directory Identity Governance<br/> Azure AD Identity Governance<br/> Microsoft Entra Identity Governance | Microsoft Entra ID Governance<br/> (Second use: ID Governance) |
+|       | *New* | Microsoft Entra Internet Access<br/> (Second use: Internet Access) |
 |       | Cloud Knox | Microsoft Entra Permissions Management<br/> (Second use: Permissions Management) |
 |       | *New* | Microsoft Entra Private Access<br/> (Second use: Private Access) |
 |       | Azure Active Directory Verifiable Credentials<br/> Azure AD Verifiable Credentials | Microsoft Entra Verified ID<br/> (Second use: Verified ID) |
@@ -264,7 +264,8 @@ Only official product names are capitalized, plus Conditional Access and My * ap
 |            | Azure AD join<br/> Azure AD joined<br/> Azure Active Directory join<br/> Azure Active Directory joined | Microsoft Entra join<br/> Microsoft Entra joined  |
 |            | Azure AD license<br/> Azure Active Directory license | Microsoft Entra ID license or license for Microsoft Entra ID |
 |            | Azure AD login<br/> Azure Active Directory login | Microsoft Entra login |
-|            |            | Azure AD multifactor authentication (MFA)<br/> Azure Active Directory multifactor authentication (MFA) | Microsoft Entra multifactor authentication (MFA)<br/> (Second use: MFA) |
+|            | Azure AD managed identities<br/> Azure Active Directory managed identities | Managed identities for Azure resources |
+|            | Azure AD multifactor authentication (MFA)<br/> Azure Active Directory multifactor authentication (MFA) | Microsoft Entra multifactor authentication (MFA)<br/> (Second use: MFA) |
 |            | Azure AD OAuth and OpenID Connect<br/> Azure Active Directory OAuth and OpenID Connect | Microsoft Entra ID OAuth and OpenID Connect |
 |            | Azure AD object<br/> Azure Active Directory object | Microsoft Entra object |
 |            | Azure Active Directory-only authentication<br/> Azure AD-only authentication | Microsoft Entra-only authentication |
