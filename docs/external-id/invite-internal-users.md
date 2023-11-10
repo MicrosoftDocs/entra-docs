@@ -5,9 +5,9 @@ description: If you have internal user accounts for partners, distributors, supp
 services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
-ms.custom: has-azure-ad-ps-ref
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: how-to
-ms.date: 07/27/2023
+ms.date: 11/10/2023
 
 ms.author: cmulligan
 author: csmulligan
@@ -73,14 +73,14 @@ You can use the Microsoft Entra admin center, PowerShell, or the invitation API 
 
 ## Use PowerShell to send a B2B invitation
 
-You'll need Azure AD PowerShell module version 2.0.2.130 or later. Use the following command to update to the latest module and invite the internal user to B2B collaboration:
+You'll need the latest Microsoft Graph PowerShell module. Use the following command to update to the latest module and invite the internal user to B2B collaboration:
 
 ```powershell
-Uninstall-Module AzureAD
-Install-Module AzureAD
-$ADGraphUser = Get-AzureADUser -objectID "UPN of Internal User"
+Uninstall-Module Microsoft.Graph
+Install-Module Microsoft.Graph
+$ADGraphUser = Get-MgUser -UserId "UPN of Internal User"
 $msGraphUser = New-Object Microsoft.Open.MSGraph.Model.User -ArgumentList $ADGraphUser.ObjectId
-New-AzureADMSInvitation -InvitedUserEmailAddress <<external email>> -SendInvitationMessage $True -InviteRedirectUrl "http://myapps.microsoft.com" -InvitedUser $msGraphUser
+New-MgInvitation -InvitedUserEmailAddress <<external email>> -SendInvitationMessage $True -InviteRedirectUrl "http://myapps.microsoft.com" -InvitedUser $msGraphUser
 ```
 
 ## Use the invitation API to send a B2B invitation
