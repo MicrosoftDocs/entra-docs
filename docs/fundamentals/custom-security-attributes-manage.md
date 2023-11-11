@@ -71,7 +71,7 @@ This step describes two ways you can manage access to custom security attributes
 
 An administrator that has been assigned the Attribute Definition Administrator and Attribute Assignment Administrator roles at tenant scope can manage all aspects of custom security attributes. The following diagram shows how custom security attributes are defined and assigned by a single administrator.
 
-![Diagram showing attributes managed centrally.](./media/custom-security-attributes-manage/central-manage-attributes.png)
+:::image type="content" source="./media/custom-security-attributes-manage/central-manage-attributes.png" alt-text="Diagram of custom security attributes managed centrally." lightbox="./media/custom-security-attributes-manage/central-manage-attributes.png":::
 
 1. The administrator (Xia) has both the Attribute Definition Administrator and Attribute Assignment Administrator roles assigned at tenant scope. The administrator adds attribute sets and defines attributes.
 1. The administrator assigns attributes to Microsoft Entra objects.
@@ -82,7 +82,7 @@ Managing attributes centrally has the advantage that it can be managed by one or
 
 An administrator may not know all the situations of how custom security attributes should be defined and assigned. Typically it's users within the respective departments, teams, or projects who know the most about their area. Instead of assigning one or two administrators to manage all custom security attributes, you can instead delegate the management at attribute set scope. This also follows the best practice of least privilege to grant just the permissions other administrators need to do their job and avoid unnecessary access. The following diagram shows how the management of custom security attributes can be delegated to multiple administrators.
 
-![Diagram showing attributes managed with delegation.](./media/custom-security-attributes-manage/delegate-manage-attributes.png)
+:::image type="content" source="./media/custom-security-attributes-manage/delegate-manage-attributes.png" alt-text="Diagram of custom security attributes managed with delegation." lightbox="./media/custom-security-attributes-manage/delegate-manage-attributes.png":::
 
 1. The administrator (Xia) with the Attribute Definition Administrator role assigned at tenant scope adds attribute sets. The administrator also has permissions to assign roles to others (Privileged Role Administrator) and delegates who can read, define, or assign custom security attributes for each attribute set.
 1. The delegated Attribute Definition Administrators (Alice and Bob) define attributes in the attribute sets they have been granted access to.
