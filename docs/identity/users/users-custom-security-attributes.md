@@ -5,7 +5,7 @@ services: active-directory
 author: rolyon
 manager: amycolannino
 ms.author: rolyon
-ms.date: 10/30/2023
+ms.date: 11/15/2023
 ms.topic: how-to
 ms.service: active-directory
 ms.subservice: enterprise-users
@@ -126,7 +126,7 @@ The following example assigns a custom security attribute with a string value to
 - Attribute set: `Engineering`
 - Attribute: `ProjectDate`
 - Attribute data type: String
-- Attribute value: `"2023-10-01"`
+- Attribute value: `"2024-11-15"`
 
 # [PowerShell](#tab/ms-powershell)
 
@@ -136,7 +136,7 @@ The following example assigns a custom security attribute with a string value to
 $customSecurityAttributes = @{
     "Engineering" = @{
         "@odata.type" = "#Microsoft.DirectoryServices.CustomSecurityAttributeValue"
-        "ProjectDate" = "2023-10-01"
+        "ProjectDate" = "2024-11-15"
     }
 }
 Update-MgUser -UserId $userId -CustomSecurityAttributes $customSecurityAttributes
@@ -154,7 +154,7 @@ PATCH https://graph.microsoft.com/v1.0/users/{id}
         "Engineering":
         {
             "@odata.type":"#Microsoft.DirectoryServices.CustomSecurityAttributeValue",
-            "ProjectDate":"2023-10-01"
+            "ProjectDate":"2024-11-15"
         }
     }
 }
@@ -545,7 +545,7 @@ $userAttributes.CustomSecurityAttributes.AdditionalProperties.Marketing
 ```Output
 Key   : Engineering
 Value : {[@odata.type, #microsoft.graph.customSecurityAttributeValue], [Project@odata.type, #Collection(String)], [Project, System.Object[]],
-        [ProjectDate, 2023-10-01]…}
+        [ProjectDate, 2024-11-15]…}
 
 Key   : Marketing
 Value : {[@odata.type, #microsoft.graph.customSecurityAttributeValue], [EmployeeId, GS45897]}
@@ -556,7 +556,7 @@ Key                   Value
 @odata.type           #microsoft.graph.customSecurityAttributeValue
 Project@odata.type    #Collection(String)
 Project               {Baker, Alpine}
-ProjectDate           2023-10-01
+ProjectDate           2024-11-15
 NumVendors            8
 CostCenter@odata.type #Collection(Int32)
 CostCenter            {1001, 1003}
@@ -591,7 +591,7 @@ GET https://graph.microsoft.com/v1.0/users/{id}?$select=customSecurityAttributes
                 "Baker",
                 "Alpine"
             ],
-            "ProjectDate": "2023-10-01",
+            "ProjectDate": "2024-11-15",
             "NumVendors": 8,
             "CostCenter@odata.type": "#Collection(Int32)",
             "CostCenter": [
@@ -758,7 +758,7 @@ Value : {[@odata.type, #microsoft.graph.customSecurityAttributeValue], [AppCount
 
 Key   : Engineering
 Value : {[@odata.type, #microsoft.graph.customSecurityAttributeValue], [Project@odata.type, #Collection(String)], [Project, System.Object[]],
-        [ProjectDate, 2023-10-01]…}
+        [ProjectDate, 2024-11-15]…}
 
 Key   : Marketing
 Value : {[@odata.type, #microsoft.graph.customSecurityAttributeValue], [EmployeeId, GS45897]}
@@ -814,7 +814,7 @@ ConsistencyLevel: eventual
                         "Baker",
                         "Alpine"
                     ],
-                    "ProjectDate": "2023-10-01",
+                    "ProjectDate": "2024-11-15",
                     "NumVendors": 8,
                     "CostCenter@odata.type": "#Collection(Int32)",
                     "CostCenter": [
@@ -928,7 +928,7 @@ ConsistencyLevel: eventual
                         "Baker",
                         "Alpine"
                     ],
-                    "ProjectDate": "2023-10-01",
+                    "ProjectDate": "2024-11-15",
                     "NumVendors": 8,
                     "CostCenter@odata.type": "#Collection(Int32)",
                     "CostCenter": [
