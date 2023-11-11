@@ -9,7 +9,7 @@ ms.service: active-directory
 ms.subservice: fundamentals
 ms.workload: identity
 ms.topic: how-to
-ms.date: 10/30/2023
+ms.date: 11/15/2023
 ms.collection: M365-identity-device-management
 ---
 
@@ -107,7 +107,7 @@ When you try to add an eligible Microsoft Entra role assignment using [Microsoft
 
 PIM currently doesn't support adding an eligible Microsoft Entra role assignment at an attribute set scope.
 
-## Symptom - Insufficient privileges when using Graph Explorer
+## Symptom - Insufficient privileges to complete the operation
 
 When you try to use [Graph Explorer](/graph/graph-explorer/graph-explorer-overview) to call Microsoft Graph APIs for custom security attributes, you see a message similar to the following:
 
@@ -119,9 +119,17 @@ Insufficient privileges to complete the operation.
 
 ![Screenshot of Graph Explorer displaying an insufficient privileges error message.](./media/custom-security-attributes-troubleshoot/graph-explorer-insufficient-privileges.png)
 
+Or when you try to use a PowerShell command, you see a message similar to the following:
+
+```
+Insufficient privileges to complete the operation.
+Status: 403 (Forbidden)
+ErrorCode: Authorization_RequestDenied
+```
+
 **Cause 1**
 
-You haven't consented to the required custom security attribute permissions to make the API call.
+You are using Graph Explorer and you haven't consented to the required custom security attribute permissions to make the API call.
 
 **Solution 1**
 
@@ -136,6 +144,14 @@ You aren't assigned the required custom security attribute role to make the API 
 **Solution 2**
 
 Make sure that you're assigned the required custom security attribute role. For more information, see [Manage access to custom security attributes in Microsoft Entra ID](custom-security-attributes-manage.md).
+
+**Cause 3**
+
+You are trying to remove a single-valued custom security attribute assignment by setting it to `null` using the [Update-MgUser](/powershell/module/microsoft.graph.users/update-mguser) or [Update-MgServicePrincipal](/powershell/module/microsoft.graph.applications/update-mgserviceprincipal) command.
+
+**Solution 3**
+
+Use the [Invoke-MgGraphRequest](/powershell/microsoftgraph/authentication-commands#using-invoke-mggraphrequest) command instead. For more information, see [Remove a single-valued custom security attribute assignment from a user](../identity/users/users-custom-security-attributes.md#remove-a-single-valued-custom-security-attribute-assignment-from-a-user) or [Remove custom security attribute assignments from applications](../identity/enterprise-apps/custom-security-attributes-apps.md#remove-custom-security-attribute-assignments-from-applications-1).
 
 ## Symptom - Request_UnsupportedQuery error
 
