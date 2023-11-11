@@ -19,8 +19,6 @@ ms.collection: M365-identity-device-management
 
 When signed in to the [Microsoft Entra admin center](https://entra.microsoft.com) and you try to access the **Custom security attributes** page, it's disabled.
 
-![Custom security attributes page disabled in Azure portal.](./media/custom-security-attributes-troubleshoot/attributes-disabled.png)
-
 **Cause**
 
 Custom security attributes require a Microsoft Entra ID P1 or P2 license.
@@ -33,7 +31,7 @@ Browse to **Identity** > **Overview** and check the license for your tenant.
 
 When signed in to the [Microsoft Entra admin center](https://entra.microsoft.com) and you try to select the **Custom security attributes** > **Add attribute set** option, it's disabled.
 
-![Add attribute set option disabled in Azure portal.](./media/custom-security-attributes-troubleshoot/attribute-set-add-disabled.png)
+:::image type="content" source="./media/custom-security-attributes-troubleshoot/attribute-set-add-disabled.png" alt-text="Screenshot of Add attribute set option disabled in Microsoft Entra admin center." lightbox="./media/custom-security-attributes-troubleshoot/attribute-set-add-disabled.png":::
 
 **Cause**
 
@@ -117,7 +115,7 @@ Authorization_RequestDenied
 Insufficient privileges to complete the operation.
 ```
 
-![Screenshot of Graph Explorer displaying an insufficient privileges error message.](./media/custom-security-attributes-troubleshoot/graph-explorer-insufficient-privileges.png)
+:::image type="content" source="./media/custom-security-attributes-troubleshoot/graph-explorer-insufficient-privileges.png" alt-text="Screenshot of Graph Explorer displaying an insufficient privileges error message." lightbox="./media/custom-security-attributes-troubleshoot/graph-explorer-insufficient-privileges.png":::
 
 Or when you try to use a PowerShell command, you see a message similar to the following:
 
@@ -135,7 +133,7 @@ You are using Graph Explorer and you haven't consented to the required custom se
 
 Open the Permissions panel, select the appropriate custom security attribute permission, and select **Consent**. In the Permissions requested window that appears, review the requested permissions.
 
-![Screenshot of Graph Explorer Permissions panel with CustomSecAttributeDefinition selected.](./media/custom-security-attributes-troubleshoot/graph-explorer-permissions-consent.png)
+:::image type="content" source="./media/custom-security-attributes-troubleshoot/graph-explorer-permissions-consent.png" alt-text="Screenshot of Graph Explorer Permissions panel with CustomSecAttributeDefinition selected." lightbox="./media/custom-security-attributes-troubleshoot/graph-explorer-permissions-consent.png":::
 
 **Cause 2**
 
@@ -171,7 +169,7 @@ The request isn't formatted correctly.
 
 If required, add `ConsistencyLevel=eventual` in the request or the header. You might also need to include `$count=true` to ensure the request is routed correctly. For more information, see [Examples: Assign, update, list, or remove custom security attribute assignments using the Microsoft Graph API](/graph/custom-security-attributes-examples).
 
-![Screenshot of Graph Explorer with ConsistencyLevel header added.](./media/custom-security-attributes-troubleshoot/graph-explorer-consistency-level-header.png)
+:::image type="content" source="./media/custom-security-attributes-troubleshoot/graph-explorer-consistency-level-header.png" alt-text="Screenshot of Graph Explorer with ConsistencyLevel header added." lightbox="./media/custom-security-attributes-troubleshoot/graph-explorer-consistency-level-header.png":::
 
 ## Next steps
 

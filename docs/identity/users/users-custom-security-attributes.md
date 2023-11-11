@@ -57,7 +57,7 @@ To assign or remove custom security attributes for a user in your Microsoft Entr
     - For predefined custom security attribute values, select a value from the **Assigned values** list.
     - For multi-valued custom security attributes, select **Add values** to open the **Attribute values** pane and add your values. When finished adding values, select **Done**.
 
-    ![Screenshot showing assigning a custom security attribute to a user.](./media/users-custom-security-attributes/users-attributes-assign.png)
+    :::image type="content" source="./media/users-custom-security-attributes/users-attributes-assign.png" alt-text="Screenshot showing assigning a custom security attribute to a user." lightbox="./media/users-custom-security-attributes/users-attributes-assign.png":::
 
 1. When finished, select **Save** to assign the custom security attributes to the user.
 
@@ -97,7 +97,7 @@ You can filter the list of custom security attributes assigned to users on the A
 
 1. For **Value**, enter or select a value.
 
-    ![Screenshot showing a custom security attribute filter for users.](./media/users-custom-security-attributes/users-attributes-filter.png)
+    :::image type="content" source="./media/users-custom-security-attributes/users-attributes-filter.png" alt-text="Screenshot showing a custom security attribute filter for users." lightbox="./media/users-custom-security-attributes/users-attributes-filter.png":::
 
 1. To apply the filter, select **Apply**.
 

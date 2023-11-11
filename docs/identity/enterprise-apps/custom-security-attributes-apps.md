@@ -64,7 +64,7 @@ Undertake the following steps to assign custom security attributes through the M
     - For predefined custom security attribute values, select a value from the **Assigned values** list.
     - For multi-valued custom security attributes, select **Add values** to open the **Attribute values** pane and add your values. When finished adding values, select **Done**.
 
-    ![Screenshot shows how to assign a custom security attribute to an application.](./media/custom-security-attributes-apps/apps-attributes-assign.png)
+    :::image type="content" source="./media/custom-security-attributes-apps/apps-attributes-assign.png" alt-text="Screenshot shows how to assign a custom security attribute to an application." lightbox="./media/custom-security-attributes-apps/apps-attributes-assign.png":::
 
 1. When finished, select **Save** to assign the custom security attributes to the application.
 
@@ -106,7 +106,7 @@ You can filter the list of custom security attributes assigned to applications o
 
 1. For **Value**, enter or select a value.
 
-    ![Screenshot showing a custom security attribute filter for applications.](./media/custom-security-attributes-apps/apps-attributes-filter.png)
+    :::image type="content" source="./media/custom-security-attributes-apps/apps-attributes-filter.png" alt-text="Screenshot showing a custom security attribute filter for applications." lightbox="./media/custom-security-attributes-apps/apps-attributes-filter.png":::
 
 1. To apply the filter, select **Apply**.
 

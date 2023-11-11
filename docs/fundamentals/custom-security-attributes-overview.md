@@ -51,9 +51,9 @@ Custom security attributes include these features:
 - Support user-defined free-form values​ or predefined values
 - Assign custom security attributes to directory synced users from an on-premises Active Directory
 
-The following example shows how you can specify custom security attribute values that are single, multiple, free-form, or predefined.
+The following example shows several custom security attributes assigned to a user. The custom security attributes are different data types and have values that are single, multiple, free-form, or predefined.
 
-![Custom security attribute examples assigned to a user.](./media/custom-security-attributes-overview/attribute-values-examples.png)
+:::image type="content" source="./media/custom-security-attributes-overview/attribute-values-examples.png" alt-text="Screenshot of custom security attribute examples assigned to a user." lightbox="./media/custom-security-attributes-overview/attribute-values-examples.png":::
 
 ## Objects that support custom security attributes
 

@@ -123,7 +123,7 @@ The following examples show how to assign a custom security attribute role to a 
 
 1. Select **Roles and administrators**.
 
-    ![Screenshot of assigning attribute roles at attribute set scope.](./media/custom-security-attributes-manage/manage-attribute-set.png)
+    :::image type="content" source="./media/custom-security-attributes-manage/manage-attribute-set.png" alt-text="Screenshot of assigning attribute roles at attribute set scope." lightbox="./media/custom-security-attributes-manage/manage-attribute-set.png":::
 
 1. Add assignments for the custom security attribute roles.
 
@@ -180,7 +180,7 @@ The following examples show how to assign a custom security attribute role to a 
 
 1. Browse to **Identity** > **Roles & admins** > **Roles & admins**.
 
-    ![Screenshot of assigning attribute roles at tenant scope.](./media/custom-security-attributes-manage/manage-tenant.png)
+    :::image type="content" source="./media/custom-security-attributes-manage/manage-tenant.png" alt-text="Screenshot of assigning attribute roles at tenant scope." lightbox="./media/custom-security-attributes-manage/manage-tenant.png":::
 
 1. Add assignments for the custom security attribute roles.
 
