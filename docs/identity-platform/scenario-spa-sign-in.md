@@ -475,7 +475,9 @@ For users who do not choose to follow the secure approach, the app can attempt t
 
 For the first case, the following sections describe options on how to sign out the user from a local app by using a pop-up or redirect.
 
-For the second case where signout is initiated from another app, Microsoft users the OpenID Connect's (Front Channel Logout)[https://openid.net/specs/openid-connect-frontchannel-1_0.html] for federated sign-out. There are some limitations to this implementation when third-party content is blocked, such as when browsers block third-party cookies by default. The following pop-up and redirect methods will end the user's session at the endpoint and for the local app, but it may not immediately clear session for other federated applications if front-channel communication is blocked. For a guarenteed federated sign-out regardless of browser behavior, we recommend the best practices to users about either private browsing or lockscreens.
+For the second case where signout is initiated from another app, Microsoft uses the OpenID Connect's [Front Channel Logout](https://openid.net/specs/openid-connect-frontchannel-1_0.html) for federated sign-out. There are some limitations to this implementation where third-party content is blocked, such as when browsers block third-party cookies by default. 
+
+The following pop-up and redirect methods will end the user's session at the endpoint and for the local app, but may not immediately clear the session for other federated applications, if front-channel communication is blocked. For a guaranteed federated sign-out regardless of browser behavior, we recommend the best practices to users of using either private browsing or lockscreens.
 
 
 ## Sign-out with a pop-up window
