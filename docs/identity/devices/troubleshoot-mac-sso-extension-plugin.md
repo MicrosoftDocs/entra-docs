@@ -147,16 +147,40 @@ Apple provides a macOS tool for checking a number of common configuration issues
 
 If these checks have a warning or error then there might be TLS inspection occurring on the device. Work with your network team to exempt ***.cdn-apple.com** and ***.networking.apple** from TLS inspection.
 
-##### Clear macOS TLS Inspection Cache
+##### Output detailed swcd logs
 
-If you had issues with associated domains and have allow-listed domains in your on-device TLS inspection tool, you can run this command to reset the device's cache rather than waiting for the device to recover:
-
+Apple provides a command line utility called swcutil that allows monitoring the progress of the associated domain validation. You can monitor for any associated domain errors using the following command:
 
    ```zsh
+   sudo swcutil watch --verbose
+   ```
+
+Look for the following entry in the logs and check if it is marked approved, or if there're any errors:
+
+```
+Entry s = authsrv, a = UBF8T346G9.com.microsoft.CompanyPortalMac, d = login.microsoftonline.com
+```
+
+##### Clear macOS TLS Inspection Cache
+
+If you had issues with associated domains and have allow-listed domains in your on-device TLS inspection tool, then it might take some time for Apple's associated domain validation cache to be invalidated. Unfortunately, there're no deterministic steps that re-trigger associated domain re-validation on all machines, but there're a few things that can be attempted.
+
+You can run following commands to reset the device's cache:
+
+   ```zsh
+   pkill -9 swcd
    sudo swcutil reset
+   pkill -9 AppSSOAgent
    ```
 
 Re-test the SSO extension configuration after resetting the cache.
+
+Sometimes, above command is insufficient and doesn't fully reset the cache. In those cases, attempt the following:
+
+* Remove or move Intune Company Portal app to the Trash, then restart your device, then re-install Intune Company Portal app after restart. 
+* Re-enroll your device.
+
+If none of above methods resolve your issue, there might be something else in your environment that could be blocking associated domain validation. If that happens, please reach out to Apple support for further troubleshooting. 
 
 #### Validate SSO configuration profile on macOS device
 
