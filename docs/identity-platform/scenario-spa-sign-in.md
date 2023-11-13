@@ -464,7 +464,9 @@ function App() {
 ---
 ## Sign-out behavior on browsers
 
-The more apps a user has signed into and wants to sign-out of, the more chance of problems given the limited ways of implementing such functionality in browsers.  Microsoft's (internet privacy best practices)[https://support.microsoft.com/en-us/windows/protect-your-privacy-on-the-internet-ffe36513-e208-7532-6f95-a3b1c8760dfa] recommends that on a shared device where a user might want to sign-out of apps, the recommended approach is to use a browser's private/incognito mode and close all browser windows before stepping away from the device.  On devices that are not shared, users should leverage an operating system lockscreen so they can lock or sign-out of their entire operating system session on the device.  Microsoft uses its sign-out page to try to remind users of these best practices to help improve their privacy and security.
+The more apps a user has signed into and wants to sign out of, the more chance of problems occurring given the limited ways of implementing such functionality in browsers. Microsoft's [internet privacy best practices](https://support.microsoft.com/en-us/windows/protect-your-privacy-on-the-internet-ffe36513-e208-7532-6f95-a3b1c8760dfa) recommends that on a shared device where a user may want to sign out of an app, is to use a browser's private/incognito mode and close all browser windows before stepping away from the device.  
+
+On devices that are not shared, users should leverage an operating system lockscreen so they can lock or sign out of their entire operating system session on the device. Microsoft uses its sign-out page to remind users of these best practices to help improve their privacy and security.
 
 For users who do not follow this more secure approach, the app can attempt to prepare both for (1) the user having initiated the sign-out from the app directly, or (2) from another app that shares sign-in state with the new app but manages its own session tokens/cookies.  The following sections describe options for how to sign-out the user in the first case for local app sign-out using pop-up or redirect.
 
