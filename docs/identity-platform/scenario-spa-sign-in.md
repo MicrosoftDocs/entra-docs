@@ -588,7 +588,9 @@ function App() {
 
 ## Sign-out with a redirect
 
-MSAL.js provides a `logout` method in v1, and introduced `logoutRedirect` method in v2 that clears the cache in browser storage and redirects the window to the Microsoft Entra sign-out page. After sign-out, by default Microsoft Entra ID redirects back to the page that invoked logout.  Since that user will not see Microsoft's reminder of (internet privacy best practices)[https://support.microsoft.com/en-us/windows/protect-your-privacy-on-the-internet-ffe36513-e208-7532-6f95-a3b1c8760dfa] to users about private browser and lockscreen, the SPA app may want to also describe those best practices and remind users to close the browser window for best practice.
+MSAL.js provides a `logout` method in v1, and introduced `logoutRedirect` method in v2 that clears the cache in browser storage and redirects the window to the Microsoft Entra sign-out page. After sign-out, by default Microsoft Entra ID redirects back to the page that invoked logout. 
+
+Since the user will not see Microsoft's reminder of [internet privacy best practices](https://support.microsoft.com/en-us/windows/protect-your-privacy-on-the-internet-ffe36513-e208-7532-6f95-a3b1c8760dfa) about using a private browser and lockscreen, the SPA app may also want to describe best practices and remind users to close all browser windows.
 
 You can configure the URI to which it should redirect after sign-out by setting `postLogoutRedirectUri`. This URI should be registered as a redirect URI in your application registration.
 
