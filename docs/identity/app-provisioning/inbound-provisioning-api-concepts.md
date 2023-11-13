@@ -17,9 +17,6 @@ ms.reviewer: chmutali
 
 This document provides a conceptual overview of the Microsoft Entra API-driven inbound user provisioning.
 
-> [!IMPORTANT]
-> API-driven inbound provisioning is currently in public preview. For more information about previews, see [Universal License Terms For Online Services](https://www.microsoft.com/licensing/terms/product/ForOnlineServices/all).
-
 ## Introduction
 
 Today enterprises have a variety of authoritative systems of record. To establish end-to-end identity lifecycle, strengthen security posture and stay compliant with regulations, identity data in Microsoft Entra ID must be kept in sync with workforce data managed in these systems of record. The *system of record* could be an HR app, a payroll app, a spreadsheet or SQL tables in a database hosted either on-premises or in the cloud. 
