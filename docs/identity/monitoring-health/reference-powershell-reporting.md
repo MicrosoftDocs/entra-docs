@@ -1,79 +1,52 @@
 ---
-title: Azure AD PowerShell cmdlets for reporting
-description: Reference of the Azure AD PowerShell cmdlets for reporting.
-services: active-directory
+title: Microsoft Graph PowerShell monitoring and health cmdlets
+description: Reference information for Microsoft Graph PowerShell cmdlets for Microsoft Entra monitoring and health.
 author: shlipsey3
 manager: amycolannino
 ms.service: active-directory
 ms.topic: reference
 ms.workload: identity
 ms.subservice: report-monitor
-ms.date: 10/31/2022
+ms.date: 11/13/2023
 ms.author: sarahlipsey
 ms.reviewer: dhanyahk
-
-ms.collection: M365-identity-device-management 
 ms.custom: has-azure-ad-ps-ref
 ---
-# Azure AD PowerShell cmdlets for reporting
 
-> [!NOTE] 
-> These PowerShell cmdlets currently only work with the [Azure Active Directory PowerShell for Graph Preview](/powershell/module/azuread/?view=azureadps-2.0-preview&preserve-view=true#directory_auditing) module. Please note that the preview module is not suggested for production use. 
+# Microsoft Graph PowerShell cmdlets for Microsoft Entra monitoring and health
 
-To install the public preview release, use the following: 
+With Microsoft Entra monitoring and health, you can get details on activities around all the write operations in your directory (audit logs) and authentication data (sign-in logs). Although the information is available by using the Microsoft Graph API, now you can retrieve the same data by using the Microsoft Graph PowerShell cmdlets for Identity monitoring and health.
 
-```powershell
-Install-module AzureADPreview
-```
+This article gives you an overview of the Microsoft Graph PowerShell cmdlets to use for audit logs and sign-in logs.
 
-For more information on how to connect to Microsoft Entra ID using PowerShell, see the article [Azure AD PowerShell for Graph](/powershell/azure/active-directory/install-adv2).  
-
-With Microsoft Entra reports, you can get details on activities around all the write operations in your direction (audit logs) and authentication data (sign-in logs). Although the information is available by using the MS Graph API, now you can retrieve the same data by using the Azure AD PowerShell cmdlets for reporting.
-
-This article gives you an overview of the PowerShell cmdlets to use for audit logs and sign-in logs.
+[Get started with Microsoft Graph PowerShell](/powershell/microsoftgraph/get-started).
 
 ## Audit logs
 
 [Audit logs](concept-audit-logs.md) provide traceability through logs for all changes done by various features within Microsoft Entra ID. Examples of audit logs include changes made to any resources within Microsoft Entra ID like adding or removing users, apps, groups, roles, and policies.
 
-You get access to the audit logs using the `Get-AzureADAuditDirectoryLogs` cmdlet.
-
+You get access to the audit logs using the `Get-MgAuditLogDirectoryAudit` cmdlet.
 
 | Scenario                      | PowerShell command |
 | :--                           | :--                |
-| Application Display Name      | `Get-AzureADAuditDirectoryLogs -Filter "initiatedBy/app/displayName eq 'Azure AD Cloud Sync'"` |
-| Category                      | `Get-AzureADAuditDirectoryLogs -Filter "category eq 'ApplicationManagement'"` |
-| Activity Date Time            | `Get-AzureADAuditDirectoryLogs -Filter "activityDateTime gt 2019-04-18"` |
-| All of the above              | `Get-AzureADAuditDirectoryLogs -Filter "initiatedBy/app/displayName eq 'Azure AD Cloud Sync' and category eq 'ApplicationManagement' and activityDateTime gt 2019-04-18"` |
-
-
-The following image shows an example for this command. 
-
-![Screenshot shows the result of the `Get Azure AD Audit Directory Logs` command.](./media/reference-powershell-reporting/get-azureadauditdirectorylogs.png)
-
-
+| Application Display Name      | `Get-MgAuditLogDirectoryAudit -Filter "initiatedBy/app/displayName eq 'Azure AD Cloud Sync'"` |
+| Category                      | `Get-MgAuditLogDirectoryAudit -Filter "category eq 'ApplicationManagement'"` |
+| Activity Date Time            | `Get-MgAuditLogDirectoryAudit -Filter "activityDateTime gt 2019-04-18"` |
+| All of the above              | `Get-MgAuditLogDirectoryAudit -Filter "initiatedBy/app/displayName eq 'Azure AD Cloud Sync' and category eq 'ApplicationManagement' and activityDateTime gt 2019-04-18"` |
 
 ## Sign-in logs
 
 The [sign-ins](concept-sign-ins.md) logs provide information about the usage of managed applications and user sign-in activities.
 
-You get access to the sign-in logs using the `Get-AzureADAuditSignInLogs` cmdlet.
+You get access to the sign-in logs using the `Get-MgAuditLogSignIn` cmdlet. Use the following table for more scenarios.
 
-
-| Scenario                      | PowerShell command |
+| Scenario                      | Microsoft Graph PowerShell command |
 | :--                           | :--                |
-| User Display Name             | `Get-AzureADAuditSignInLogs -Filter "userDisplayName eq 'Timothy Perkins'"` |
-| Create Date Time              | `Get-AzureADAuditSignInLogs -Filter "createdDateTime gt 2019-04-18T17:30:00.0Z"` (Everything since 5:30 pm on 4/18) |
-| Status                        | `Get-AzureADAuditSignInLogs -Filter "status/errorCode eq 50105"` |
-| Application Display Name      | `Get-AzureADAuditSignInLogs -Filter "appDisplayName eq 'StoreFrontStudio [wsfed enabled]'"` |
-| All of the above              | `Get-AzureADAuditSignInLogs -Filter "userDisplayName eq 'Timothy Perkins' and status/errorCode ne 0 and appDisplayName eq 'StoreFrontStudio [wsfed enabled]'"` |
-
-
-The following image shows an example for this command. 
-
-![Screenshot shows the result of the `Get Azure A D Audit Sign In Logs` command.](./media/reference-powershell-reporting/get-azureadauditsigninlogs.png)
-
-
+| User Display Name             | `Get-MgAuditLogSignIn -Filter "userDisplayName eq 'Timothy Perkins'"` |
+| Create Date Time              | `Get-MgAuditLogSignIn -Filter "createdDateTime gt 2023-04-18T17:30:00.0Z"` (Everything since 5:30 pm on 4/18) |
+| Status                        | `Get-MgAuditLogSignIn -Filter "status/errorCode eq 50105"` |
+| Application Display Name      | `Get-MgAuditLogSignIn -Filter "appDisplayName eq 'StoreFrontStudio [wsfed enabled]'"` |
+| All of the above              | `Get-MgAuditLogSignIn -Filter "userDisplayName eq 'Timothy Perkins' and status/errorCode ne 0 and appDisplayName eq 'StoreFrontStudio [wsfed enabled]'"` |
 
 ## Next steps
 
