@@ -484,7 +484,6 @@ The following pop-up and redirect methods will end the user's session at the end
 
 This mode is supported, but has the same limitiations of sign-in with a pop-up window that browsers constraints or policies can disable pop-up windows. MSAL.js v2 and higher provides a `logoutPopup` method that clears the cache in browser storage and opens a pop-up window to the Microsoft Entra sign-out page. After sign-out, Microsoft Entra ID redirects the pop-up back to your application and MSAL.js will close the pop-up. 
 
-
 You can configure the URI to which Microsoft Entra ID should redirect after sign-out by setting `postLogoutRedirectUri`. This URI should be registered as a redirect URI in your application registration.
 
 You can also configure `logoutPopup` to redirect the main window to a different page, such as the home page or sign-in page, after logout is complete by passing `mainWindowRedirectUri` as part of the request.
