@@ -27,6 +27,8 @@ Permissions Management capabilities are available to integrate into the Defender
 
 :::image type="content" source="media/permissions-management-for-defender-for-cloud/permissions-management-defender-for-cloud-comparison.png" alt-text="A table showing the difference in capabilities of Permissions Management and Defender for Cloud." lightbox="media/permissions-management-for-defender-for-cloud/permissions-management-defender-for-cloud-comparison.png":::
 
+
+
 ## Common use cases and scenarios
 
 With the added capabilities of Permissions Management, you can track permissions analytics, unused permissions for active identities, and over-permissioned identities then act to mitigate them to support the best practice of least privilege in Defender for Cloud. 
