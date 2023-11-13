@@ -8,12 +8,12 @@ ms.service: active-directory
 ms.subservice: app-provisioning
 ms.workload: identity
 ms.topic: how-to
-ms.date: 09/15/2023
+ms.date: 11/15/2023
 ms.author: kenwith
 ms.reviewer: cmmdesai
 ---
 
-# Grant access to the inbound provisioning API (Public preview)
+# Grant access to the inbound provisioning API
 
 ## Introduction
 
