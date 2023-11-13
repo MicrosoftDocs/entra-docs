@@ -468,7 +468,12 @@ The more apps a user has signed into and wants to sign out of, the more chance o
 
 On devices that are not shared, users should leverage an operating system lockscreen so they can lock or sign out of their entire operating system session on the device. Microsoft uses its sign-out page to remind users of these best practices to help improve their privacy and security.
 
-For users who do not follow this more secure approach, the app can attempt to prepare both for (1) the user having initiated the sign-out from the app directly, or (2) from another app that shares sign-in state with the new app but manages its own session tokens/cookies.  The following sections describe options for how to sign-out the user in the first case for local app sign-out using pop-up or redirect.
+For users who do not choose to follow the secure approach, the app can attempt to prepare for both of the following cases:
+
+1. The user having initiated the sign-out from the app directly.
+1. From another app that shares sign-in state with the new app, but manages its own session tokens/cookies.  
+
+For the first case, the following sections describe options on how to sign out the user from a local app by using a pop-up or redirect.
 
 For the second case where signout is initiated from another app, Microsoft users the OpenID Connect's (Front Channel Logout)[https://openid.net/specs/openid-connect-frontchannel-1_0.html] for federated sign-out. There are some limitations to this implementation when third-party content is blocked, such as when browsers block third-party cookies by default. The following pop-up and redirect methods will end the user's session at the endpoint and for the local app, but it may not immediately clear session for other federated applications if front-channel communication is blocked. For a guarenteed federated sign-out regardless of browser behavior, we recommend the best practices to users about either private browsing or lockscreens.
 
