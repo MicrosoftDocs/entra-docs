@@ -25,23 +25,30 @@ After deploying PSSO on your device, there are a few validation scenarios that y
 
 Confirm that changes to Microsoft Entra ID password made through self-service password reset (SSPR) are successfully synchronized to the local machine. If a user's Microsoft Entra ID password changes after syncing it to the Mac, the user is prompted to enter their new password within 4 hours.
 
-### Deregister a device
+### Repair or remove PSSO registration from a device
 
-After registering your device with PSSO, you can deregister it at any time using Company Portal, and remove the device from your organization.
+### [macOS 14](#tab/macOS14)
+
+On macOS 14 Sonoma, if there are problems with your device registration, you can repair the existing PSSO registration.
+
+1. Open the **Settings** app and navigate to **Users & Groups** > **Network Account Server**.
+1. Select **Edit**, then **Repair**. You'll be taken through the same device registration flow as when during your initial registration.
+
+You can also deregister the device completely;
+
+1. Open the **Company Portal** app and navigate to **Preferences**.
+1. To unregister the device, select **Unregister**.
+1. Alternatively, to sign out your work account on the device, select **Sign out**. <!--TODO: Insert slide 107 screenshot--> This is done silently and there's no confirmation that your device is deregistered.
+
+### [macOS 13](#tab/macOS13)
+
+On macOS 13 Venture, if there are problems with your device PSSO registration, or you need to deregister your device, you need to use Company Portal and remove the device from your organization.
 
 1. Open the **Company Portal** app and navigate to **Preferences**.
 1. To unregister the device, select **Unregister**.
 1. Alternatively, to sign out your work account on the device, select **Sign out**. <!--TODO: Insert slide 107 screenshot--> This is done silently and there's no confirmation that your device is deregistered.
 
->[!NOTE]
-> On macOS 14 Sonoma, 
-
-<!--TODO: Confirm if the same-->
-After registering your device with PSSO, you can deregister it at any time using Company Portal, and remove the device from your organization.
-
-1. Open the **Company Portal** app and navigate to **Preferences**.
-1. To unregister the device, select **Unregister**.
-1. Alternatively, to sign out your work account on the device, select **Sign out**. <!--TODO: Insert slide 107 screenshot--> This is done silently and there's no confirmation that your device is deregistered.
+If you deregistered your device as a result of an error, and need to re-register it, refer to [Join a Mac device with Microsoft Entra ID during the out of box experience](./device-join-macos-pssoe-out-of-box.md) or [Register a Mac device with macOS Platform Single Sign-On using Company Portal](./device-registration-macos-pssoe.md).
 
 ---
 
@@ -59,13 +66,13 @@ Ensure during the MDM configuration that the password complexity requirements ar
 
 ### Long running operations
 
-### [macOS 13](#tab/macOS13)
-
-The device registration can take a few minutes to complete. If the device registration fails, wait a few minutes and try again if prompted.
-
 ### [macOS 14](#tab/macOS14)
 
 If the device registration fails through the Settings application, the Device Registration popup will reappear after about 10 minutes, and you can try again.
+
+### [macOS 13](#tab/macOS13)
+
+The device registration can take a few minutes to complete. If the device registration fails, wait a few minutes and try again if prompted.
 
 ---
 
