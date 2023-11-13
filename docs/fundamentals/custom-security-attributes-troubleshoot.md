@@ -15,18 +15,6 @@ ms.collection: M365-identity-device-management
 
 # Troubleshoot custom security attributes in Microsoft Entra ID
 
-## Symptom - Custom security attributes page is disabled
-
-When signed in to the [Microsoft Entra admin center](https://entra.microsoft.com) and you try to access the **Custom security attributes** page, it's disabled.
-
-**Cause**
-
-Custom security attributes require a Microsoft Entra ID P1 or P2 license.
-
-**Solution**
-
-Browse to **Identity** > **Overview** and check the license for your tenant.
-
 ## Symptom - Add attribute set is disabled
 
 When signed in to the [Microsoft Entra admin center](https://entra.microsoft.com) and you try to select the **Custom security attributes** > **Add attribute set** option, it's disabled.

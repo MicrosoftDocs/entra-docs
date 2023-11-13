@@ -22,7 +22,6 @@ For people in your organization to effectively work with [custom security attrib
 
 To manage access to custom security attributes, you must have:
 
-- Microsoft Entra ID P1 or P2 license
 - [Attribute Assignment Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator)
 - Microsoft.Graph module when using [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation)
 

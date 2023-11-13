@@ -23,7 +23,6 @@ ms.collection: M365-identity-device-management
 
 To assign or remove custom security attributes for a user in your Microsoft Entra tenant, you need:
 
-- Microsoft Entra ID P1 or P2 license
 - [Attribute Assignment Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator)
 - Microsoft.Graph module when using [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation)
 - [AzureADPreview](https://www.powershellgallery.com/packages/AzureADPreview) version 2.0.2.138 or later when using Azure AD PowerShell

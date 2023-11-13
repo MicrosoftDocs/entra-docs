@@ -23,7 +23,6 @@ ms.custom: not-enterprise-apps
 
 To assign or remove custom security attributes for an application in your Microsoft Entra tenant, you need:
 
-- Microsoft Entra ID P1 or P2 license
 - [Attribute Assignment Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator)
 - Make sure you have existing custom security attributes. To learn how to create a security attribute, see [Add or deactivate custom security attributes in Microsoft Entra ID](~/fundamentals/custom-security-attributes-add.md).
 

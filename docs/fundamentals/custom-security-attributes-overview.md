@@ -72,7 +72,7 @@ While both extensions and custom security attributes can be used to extend objec
 | Supported objects | Depends on the extension type | Users and service principals |
 | Restricted access | No. Anyone with permissions to read the object can read the extension data. | Yes. Read and write access is restricted through a separate set of permissions and RBAC. |
 | When to use | Store data to be used by an application <br/> Store non-sensitive data | Store sensitive data <br/> Use for authorization scenarios |
-| License requirements | Available in all editions of Microsoft Entra ID | Requires a Microsoft Entra ID P1 or P2 license |
+| License requirements | Available in all editions of Microsoft Entra ID | Available in all editions of Microsoft Entra ID |
 
 For more information about working with extensions, see [Add custom data to resources using extensions](/graph/extensibility-overview).
 
@@ -193,7 +193,7 @@ You can use an API client such as [Graph Explorer](/graph/graph-explorer/graph-e
 
 ## License requirements
 
-[!INCLUDE [Microsoft Entra ID Premium P1 license](~/includes/entra-p1-license.md)]
+[!INCLUDE [Microsoft Entra ID Premium P1 license](../includes/entra-free-license.md)]
 
 ## Next steps
 

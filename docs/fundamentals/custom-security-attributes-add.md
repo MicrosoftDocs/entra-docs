@@ -22,7 +22,6 @@ ms.collection: M365-identity-device-management
 
 To add or deactivate custom security attributes definitions, you must have:
 
-- Microsoft Entra ID P1 or P2 license
 - [Attribute Definition Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-definition-administrator)
 - Microsoft.Graph module when using [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation)
 - [AzureADPreview](https://www.powershellgallery.com/packages/AzureADPreview) version 2.0.2.138 or later when using Azure AD PowerShell
