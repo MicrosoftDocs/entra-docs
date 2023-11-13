@@ -1,5 +1,5 @@
 ---
-title: API-driven inbound provisioning with Azure Logic Apps (Public preview)
+title: API-driven inbound provisioning with Azure Logic Apps
 description: Learn how to implement API-driven inbound provisioning with Azure Logic Apps.
 services: active-directory
 author: kenwith

@@ -1,5 +1,5 @@
 ---
-title: API-driven inbound provisioning with PowerShell script (Public preview)
+title: API-driven inbound provisioning with PowerShell script 
 description: Learn how to implement API-driven inbound provisioning with a PowerShell script.
 services: active-directory
 author: kenwith
