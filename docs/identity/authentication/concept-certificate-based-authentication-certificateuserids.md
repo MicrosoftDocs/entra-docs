@@ -23,7 +23,7 @@ Users in Microsoft Entra ID can have a multivalued attribute named **certificate
  
 ## Supported patterns for certificate user IDs
  
-The values stored in **certificateUserIds** should be in the format described in the following table. The X509:<Mapping> prefixes are case-sensitive.
+The values stored in **certificateUserIds** should be in the format described in the following table. The X509:\<Mapping> prefixes are case-sensitive.
 
 |Certificate mapping Field | Examples of values in CertificateUserIds |
 |--------------------------|--------------------------------------|
@@ -261,6 +261,7 @@ alt-security-identity-add.
    |Connected System Object Type | user |
    |Metaverse Object Type | person |
    |Precedence | Choose a random high number not currently used |
+   
    Then proceed to the Transformations tab and change your FlowType option to *Expression*, the target attribute to **certificateUserIds** and then input the below expression in to the Source field.
 
    :::image type="content" border="true" source="./media/concept-certificate-based-authentication-certificateuserids/alt-security-identity-outbound.png" alt-text="Screenshot of outbound synchronization rule to transform from alternateSecurityId attribute to certificateUserIds":::
