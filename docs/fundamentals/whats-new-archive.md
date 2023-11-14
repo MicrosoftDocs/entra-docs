@@ -2007,18 +2007,5 @@ Groups Administrators assigned over the scope of an administrative unit can now 
 
 ---
  
-
-### Public Preview - Dynamic administrative unit support for onPremisesDistinguishedName property
-
-**Type:** Changed feature  
-**Service category:** Directory Management  
-**Product capability:** AuthZ/Access Delegation  
-
- 
-
-The public preview of dynamic administrative units now supports the **onPremisesDistinguishedName** property for users. This makes it possible to create dynamic rules that incorporate the organizational unit of the user from on-premises AD. For more information, see: [Manage users or devices for an administrative unit with dynamic membership rules (Preview)](~/identity/role-based-access-control/admin-units-members-dynamic.md).
- 
-
----
  
 
