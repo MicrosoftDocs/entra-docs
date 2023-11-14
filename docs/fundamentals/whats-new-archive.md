@@ -1904,25 +1904,6 @@ When editing a collection using the My Apps portal, users can now add their own 
 ---
  
 
-### Public preview - New provisioning connectors in the Azure AD Application Gallery - May 2022
-
-**Type:** New feature  
-**Service category:** App Provisioning  
-**Product capability:** 3rd Party Integration  
- 
-
-You can now automate creating, updating, and deleting user accounts for these newly integrated apps:
-
-- [Alinto Protect](~/identity/saas-apps/alinto-protect-provisioning-tutorial.md)
-- [Blinq](~/identity/saas-apps/blinq-provisioning-tutorial.md)
-- [Cerby](~/identity/saas-apps/cerby-provisioning-tutorial.md)
-
-For more information about how to better secure your organization by using automated user account provisioning, see: [Automate user provisioning to SaaS applications with Azure AD](~/identity/app-provisioning/user-provisioning.md).
- 
-
----
- 
-
 ### Public Preview: Confirm safe and compromised in sign-ins API beta
 
 **Type:** New feature  
