@@ -7,16 +7,16 @@ manager: amycolannino
 ms.service: decentralized-identity
 ms.subservice: verifiable-credentials
 ms.topic: overview
-ms.date: 01/26/2023
+ms.date: 10/24/2023
 ms.author: barclayn
 ms.reviewer: 
 ---
 
 # Introduction to Microsoft Entra Verified ID
 
-Our digital and physical lives are increasingly linked to the apps, services, and devices we use to access a rich set of experiences. This digital transformation allows us to interact with hundreds of companies and thousands of other users in ways that were previously unimaginable.
+In today's world, our digital and physical lives are becoming increasingly intertwined with the apps, services, and devices we use. This digital revolution has opened up a world of possibilities, allowing us to connect with countless companies and individuals in ways that were once unimaginable. 
 
-But identity data has too often been exposed in security breaches. These breaches affect our social, professional, and financial lives. Microsoft believes that there’s a better way. Every person has a right to an identity that they own and control, one that securely stores elements of their digital identity and preserves privacy. This primer explains how we are joining hands with a diverse community to build an open, trustworthy, interoperable, and standards-based Decentralized Identity solution for individuals and organizations.
+This increased connectivity introduces a greater risk of identity theft and data breaches. These breaches can have a devastating impact on our personal and professional lives. But there is hope. Microsoft is working with a diverse community to create a Decentralized Identity solution that puts individuals in control of their own digital identities, providing a secure and private way to manage identity data without relying on centralized authorities or intermediaries.
 
 ## Why we need Decentralized Identity
 
@@ -42,7 +42,7 @@ Microsoft is actively collaborating with members of the Decentralized Identity F
 
 ## What are DIDs?
 
-Before we can understand DIDs, it helps to compare them with current identity systems. Email addresses and social network IDs are human-friendly aliases for collaboration but are now overloaded to serve as the control points for data access across many scenarios beyond collaboration. This creates a potential problem, because access to these IDs can be removed at any time by external parties.
+Before we can understand DIDs, it helps to compare them with other identity systems. Email addresses and social network IDs are human-friendly aliases that  for collaboration but are now overloaded to serve as the control points for data access across many scenarios beyond collaboration. This creates a potential problem, because access to these IDs could be removed at any time.
 
 Decentralized Identifiers (DIDs) are different. DIDs are user-generated, self-owned, globally unique identifiers rooted in decentralized systems trust systems. They possess unique characteristics, like greater assurance of immutability, censorship resistance, and tamper evasiveness. These attributes are critical for any ID system intended to provide self-ownership and user control.
 

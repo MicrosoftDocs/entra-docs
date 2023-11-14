@@ -345,7 +345,7 @@ To enable trusted IPs by using Conditional Access policies, complete the followi
       `c:[Type== "https://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork"] => issue(claim = c);`
 
      >[!NOTE]
-     >The **Skip multi-factor authentication for requests from federated users on my intranet** option will affect the Conditional Access evaluation for locations.
+     >The **Skip multi-factor authentication for requests from federated users on my intranet** option will affect the Conditional Access evaluation for locations. Any request with the **insidecorporatenetwork** claim would be treated as coming from a Trusted location if that option is selected.
 
    * **For requests from a specific range of public IPs**: To choose this option, enter the IP addresses in the text box, in CIDR notation.
       * For IP addresses that are in the range *xxx.xxx.xxx*.1 through *xxx.xxx.xxx*.254, use notation like ***xxx.xxx.xxx*.0/24**.

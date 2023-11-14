@@ -1,0 +1,24 @@
+items:
+- name: Entra
+  tocHref: /entra/
+  topicHref: /entra/index
+  items:
+  - name: Microsoft Entra ID
+    tocHref: /entra/identity/
+    topicHref: /entra/identity/index
+    items:
+    - name: Managed Identities
+      tocHref: /azure/container-registry/
+      topicHref: /entra/identity/managed-identities-azure-resources/
+    - name: Managed Identities
+      tocHref: /azure/service-bus-messaging
+      topicHref: /entra/identity/managed-identities-azure-resources/
+    - name: Managed Identities
+      tocHref: /azure/app-service/
+      topicHref: /entra/identity/managed-identities-azure-resources/
+    - name: Managed Identities
+      tocHref: /azure/event-hubs/
+      topicHref: /entra/identity/managed-identities-azure-resources/
+    - name: Managed Identities
+      tocHref: /azure/container-instances
+      topicHref: /entra/identity/managed-identities-azure-resources/

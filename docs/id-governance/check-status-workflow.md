@@ -30,7 +30,7 @@ You're able to retrieve run information of a workflow using Lifecycle Workflows.
 
 1. Select the workflow you want to run history of. 
 
-1. On the workflow overview screen, select **Audit logs**.
+1. On the workflow overview screen, select **Workflow history**.
 
 1. On the history page, select the **Runs** button.  
 

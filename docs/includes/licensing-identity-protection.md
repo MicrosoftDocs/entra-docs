@@ -5,15 +5,15 @@ author: barclayn
 manager: amycolannino
 ms.service: active-directory
 ms.topic: include
-ms.date: 08/30/2023
+ms.date: 10/26/2023
 ms.author: barclayn
 ms.custom: include file,licensing
 ---
 
 
-[!INCLUDE [Active Directory P2 license](~/includes/entra-p2-license.md)]
+[!INCLUDE [Microsoft Entra ID P2 license](~/includes/entra-p2-license.md)]
 
-| Capability | Details | Azure AD Free / Microsoft 365 Apps | Azure AD Premium P1 | Azure AD Premium P2 |
+| Capability | Details | Microsoft Entra ID Free / Microsoft 365 Apps | Microsoft Entra ID P1 | Microsoft Entra ID P2 |
 | --- | --- | --- | --- | --- |
 | Risk policies | Sign-in and user risk policies (via Identity Protection or Conditional Access) | No | No | Yes |
 | Security reports | Overview | No | No | Yes |

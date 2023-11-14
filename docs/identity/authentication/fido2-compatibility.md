@@ -48,7 +48,6 @@ This table shows browser support for authenticating Microsoft Entra ID and Micro
 | **iOS**  | &#x2705; | &#x2705; | &#x2705; | &#x2705; |
 | **Android**  | &#10060; | &#10060; | &#10060; | N/A |
 
-
 ## Browser support for each platform
 
 The following tables show which transports are supported for each platform. Supported device types include **USB**, near-field communication (**NFC**), and bluetooth low energy (**BLE**).

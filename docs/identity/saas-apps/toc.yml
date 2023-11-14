@@ -860,6 +860,8 @@
         href: ekincare-tutorial.md
       - name: eLearnPOSH
         href: elearnposh-tutorial.md  
+      - name: elia
+        href: elia-tutorial.md
       - name: Eli Onboarding
         href: elionboarding-tutorial.md
       - name: Elium
@@ -1417,8 +1419,6 @@
         href: jiramicrosoft-tutorial.md
       - name: JIRA SAML SSO by Microsoft (V5.2)
         href: jira52microsoft-tutorial.md
-      - name: Jisc Student Voter Registration
-        href: jisc-student-voter-registration-tutorial.md
       - name: Jitbit Helpdesk
         href: jitbit-helpdesk-tutorial.md
       - name: Jive
@@ -2123,6 +2123,8 @@
         href: quarem-tutorial.md
       - name: Quantum Workplace
         href: quantum-workplace-tutorial.md
+      - name: QueryLayer
+        href: querylayer-tutorial.md
       - name: Questetra BPM Suite
         href: questetra-bpm-suite-tutorial.md
       - name: QuickHelp
@@ -2201,6 +2203,8 @@
         href: riskware-tutorial.md
       - name: Riva
         href: riva-tutorial.md
+      - name: Rivial Data Security
+        href: rivial-data-security-tutorial.md
       - name: Roadmunk
         href: roadmunk-tutorial.md
       - name: Robin
@@ -3176,8 +3180,8 @@
         href: checkproof-provisioning-tutorial.md
       - name: Cinode
         href: cinode-provisioning-tutorial.md
-      - name: Cisco Umbrella User Management
-        href: cisco-umbrella-user-management-provisioning-tutorial.md
+      - name: Cisco User Management for Secure Access
+        href: cisco-user-management-for-secure-access-provisioning-tutorial.md
       - name: Cisco Webex
         href: cisco-webex-provisioning-tutorial.md
       - name: Clarizen One
@@ -3500,6 +3504,8 @@
         href: robin-provisioning-tutorial.md
       - name: Rollbar
         href: rollbar-provisioning-tutorial.md
+      - name: Rootly
+        href: rootly-provisioning-tutorial.md
       - name: Rouse Sales
         href: rouse-sales-provisioning-tutorial.md
       - name: SafeGuard Cyber
@@ -3544,6 +3550,8 @@
         href: signagelive-provisioning-tutorial.md
       - name: Sign In Enterprise Host Provisioning
         href: sign-in-enterprise-host-provisioning-tutorial.md
+      - name: Simple In/Out
+        href: simple-in-out-provisioning-tutorial.md
       - name: Slack
         href: slack-provisioning-tutorial.md
       - name: Smartfile
@@ -3672,6 +3680,8 @@
         href: xledger-provisioning-tutorial.md
       - name: XM Fax and XM SendSecure
         href: xm-fax-and-xm-send-secure-provisioning-tutorial.md
+      - name: YardiOne
+        href: yardione-provisioning-tutorial.md
       - name: Yellowbox
         href: yellowbox-provisioning-tutorial.md
       - name: Zapier

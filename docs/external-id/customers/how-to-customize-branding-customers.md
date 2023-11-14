@@ -8,7 +8,7 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: ciam
 ms.topic: how-to
-ms.date: 07/12/2023
+ms.date: 10/27/2023
 ms.author: cmulligan
 ms.custom: it-pro
 
@@ -33,7 +33,7 @@ You can also create user flows programmatically using the Company Branding Graph
 
 ## Branding elements
 
-By default, Microsoft offers a neutral branding for your tenant that can be personalized to suit your company's specific requirements. This default branding doesn't include any pre-existing Microsoft branding. In the event that the custom company branding fails to load, the sign-in page will automatically switch back to this neutral branding. Additionally, each custom branding property can be manually added to the custom sign-in page.  
+By default, Microsoft offers a neutral branding for your tenant that can be personalized to suit your company's specific requirements. This default branding doesn't include any pre-existing Microsoft branding. If the custom company branding fails to load, the sign-in page will automatically switch back to this neutral branding. Additionally, each custom branding property can be manually added to the custom sign-in page.  
 
 You can customize this neutral branding with a custom background image or color, favicon, layout, header, and footer. You can also customize the sign-in form and add custom text to different instances or upload [custom CSS](~/fundamentals/reference-company-branding-css-template.md). 
 The following image displays the neutral default branding of the tenant. You can find the numbered branding elements and their corresponding descriptions after the image.
@@ -51,8 +51,12 @@ The following image displays the neutral default branding of the tenant. You can
 Before you customize any settings, the neutral default branding will appear in your sign-in and sign-up pages. You can customize this default experience with a custom background image or color, favicon, layout, header, and footer. You can also upload a [custom CSS](~/fundamentals/reference-company-branding-css-template.md). 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
-1. If you have access to multiple tenants, use the **Directories + subscriptions** filter :::image type="icon" source="media/common/portal-directory-subscription-filter.png" border="false"::: in the top menu to switch to the customer tenant you created earlier.
-1. Browse to **Company Branding** > **Default sign-in** > **Edit**.
+1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the customer tenant you created earlier from the **Directories + subscriptions** menu.
+1. Browse to **Company Branding** either by using the search bar or by navigating to **Home** > **Go to Microsoft Entra ID** > **Customize branding**.
+
+   :::image type="content" source="media/how-to-customize-branding-customers/browse-to-company-branding.png" alt-text="Screenshot of the company branding option.":::
+
+1. On the **Default sign-in** tab select **Edit**.
 
    :::image type="content" source="media/how-to-customize-branding-customers/company-branding-default-edit-button.png" alt-text="Screenshot of the company branding edit button.":::
 
@@ -139,7 +143,7 @@ Before you customize any settings, the neutral default branding will appear in y
  
       :::image type="content" source="media/how-to-customize-branding-customers/company-branding-self-service-password-reset.png" alt-text="Screenshot of the company branding Self-service password reset. " lightbox="media/how-to-customize-branding-customers/company-branding-self-service-password-reset.png":::
 
-1. Select **Next: Review** and review all your modifications. Then select **Save** if you would like to save your changes or **Previous** if you would like to continue customizing.
+1. Select **Next: Text** if you would like to continue customizing or **Review + save** if you would like to save your changes.
 
 ### To customize user attributes
 
@@ -155,21 +159,21 @@ For your tenant, you might have different requirements for the information you w
       - Select **Sign-in/up one time code (SISU OTC)** to add a custom title.
 
       :::image type="content" source="media/how-to-customize-branding-customers/custom-text.png" alt-text="Screenshot of the company branding text tab." lightbox="media/how-to-customize-branding-customers/custom-text.png":::
-
-1. Select **Add** once you finished with your changes. You can edit the existing custom text by selecting the **Text name** and select Save. 
+ 
+1. Select **Next: Review** to review all your modifications. Then select **Save** if you'd like to save your changes or **Previous** if you want to continue customizing.
 
 > [!IMPORTANT] 
 > In the customer tenant, we have two options to add custom text to the sign-up and sign-in experience.  The function is available under each user flow during language customization and also under Company branding. Although we have two ways to customize strings (via Company Branding and via User Flows), both ways modify the same JSON file. The most recent change made either via User flows or via Company branding  will always override the previous one.
 
 ## How to customize the tenant name
 
-Your tenant name replaces the Microsoft banner logo in the neutral default sign-in experience. You can customize your tenant's name in the Properties area.
+You can customize your tenant name in the Microsoft Entra admin center to replace the Microsoft banner logo in the neutral default sign-in experience. The new tenant name also appears in the verification email sent to the user.
 
 :::image type="content" source="media/how-to-customize-branding-customers/tenant-name.png" alt-text="Screenshot of the tenant name." lightbox="media/how-to-customize-branding-customers/tenant-name.png":::
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
-1. If you have access to multiple tenants, use the **Directories + subscriptions** filter :::image type="icon" source="media/common/portal-directory-subscription-filter.png" border="false"::: in the top menu to switch to the customer tenant you created earlier.
-1. In the search bar, type and select **Properties**.
+1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the customer tenant you created earlier from the **Directories + subscriptions** menu.
+1. In the search bar, type and select **Tenant properties**.
 1. Edit the **Name** field. 
 
    :::image type="content" source="media/how-to-customize-branding-customers/tenant-name-edit.png" alt-text="Screenshot of editing the tenant name.":::

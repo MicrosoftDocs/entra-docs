@@ -1,7 +1,7 @@
 ---
 title: "What's new in Microsoft Entra ID for customers"
 description: "New and updated documentation for the Microsoft Entra ID for customers documentation."
-ms.date: 09/29/2023
+ms.date: 11/01/2023
 ms.service: active-directory
 ms.subservice: ciam
 ms.topic: reference
@@ -15,9 +15,16 @@ manager: CelesteDG
 
 Welcome to what's new in Microsoft Entra ID for customers documentation. This article lists new docs that have been added and those that have had significant updates in the last three months. 
 
+## October 2023
+
+### Updated articles
+
+- [Customize the neutral branding in your customer tenant (preview)](how-to-customize-branding-customers.md) - Editorial updates
+- [Customize the language of the authentication experience](how-to-customize-languages-customers.md) - Editorial updates
+
 ## September 2023
 
-This month, we renamed Microsoft Entra ID to Microsoft Entra ID. For more information about the rebranding, see the [New name for Microsoft Entra ID](~/fundamentals/new-name.md) article.
+This month, we renamed Azure Active Directory (Azure AD) to Microsoft Entra ID. For more information about the rebranding, see the [New name for Azure Active Directory](~/fundamentals/new-name.md) article.
 
 ### Updated articles
 
@@ -48,29 +55,3 @@ This month, we renamed Microsoft Entra ID to Microsoft Entra ID. For more inform
 - [Microsoft Entra ID for customers documentation](index.yml) - Editorial review
 - [Tutorial: Sign in users in .NET MAUI app](tutorial-desktop-app-maui-sign-in-sign-out.md) - Add app roles to .NET MAUI app and receive them in the ID token
 - [Tutorial: Sign in users in .NET MAUI shell app](tutorial-mobile-app-maui-sign-in-sign-out.md) - Add app roles to .NET MAUI app and receive them in the ID token 
-
-## July 2023
-
-### New articles
-
-- [Tutorial: Prepare your customer tenant to authorize a .NET daemon application](tutorial-daemon-dotnet-call-api-prepare-tenant.md)
-- [Tutorial: Secure an ASP.NET web API registered in the Microsoft Entra ID for customer's tenant](tutorial-protect-web-api-dotnet-core-build-app.md)
-- [Tutorial: Prepare your customer tenant to authorize a Node.js daemon application](tutorial-daemon-node-call-api-prepare-tenant.md)
-- [Tutorial: Register and configure .NET browserless app authentication details in a customer tenant](tutorial-browserless-app-dotnet-sign-in-prepare-tenant.md)
-- [Sign in users in a sample WPF desktop application](sample-desktop-wpf-dotnet-sign-in.md)
-- [Tutorial: Authenticate users to your WPF desktop application](tutorial-desktop-wpf-dotnet-sign-in-build-app.md)
-- [Tutorial: Prepare your customer tenant to sign in user in .NET WPF application](tutorial-desktop-wpf-dotnet-sign-in-prepare-tenant.md)
-- [Call an API in a sample .NET daemon application](sample-daemon-dotnet-call-api.md)
-- [Tutorial: Call a protected web API from your .NET daemon application](tutorial-daemon-dotnet-call-api-build-app.md)
-
-### Updated articles
-
-- [Enable self-service password reset](how-to-enable-password-reset-customers.md) - New section about the password reset link
-- [Tutorial: Prepare your customer tenant to authorize a .NET daemon application](tutorial-daemon-dotnet-call-api-prepare-tenant.md) - .NET daemon browserless app update
-- [Test your protected API](tutorial-protect-web-api-dotnet-core-test-api.md) - Editorial review
-- [Register your app in the customer tenant](how-to-register-ciam-app.md) - Editorial review 
-- [Tutorial: Prepare a Node.js web application for authentication](tutorial-web-app-node-sign-in-prepare-app.md) - Editorial review
-- [Tutorial: Prepare your customer tenant to sign in users in a Node.js web app](tutorial-web-app-node-sign-in-prepare-tenant.md) - Editorial review 
-- [Tutorial: Add add sign-in and sign-out in your Node.js web application](tutorial-web-app-node-sign-in-sign-out.md) - Editorial review
-- [Tutorial: Call a web API from your Node.js daemon application](tutorial-daemon-node-call-api-build-app.md) - Editorial review
-- [Tutorial: Sign in users to your .NET browserless application](tutorial-browserless-app-dotnet-sign-in-build-app.md) - Editorial review
