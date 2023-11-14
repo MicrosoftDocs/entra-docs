@@ -82,7 +82,7 @@ To get started with passwordless sign-in, complete the following how-to:
 
 ## MacOS Platform SSO
 
-MacOS Platform SSO (PSSO) is a new capability on macOS that is enabled using the Microsoft Enterprise Single Sign-on Extension (SSOe). The advantage of PSSO is that it allows users to log on to a Mac using their Microsoft Entra ID password, or benefit from SSO through a hardware-bound key. This both improves the end-user experience by not having to remember two separate passwords as well as diminishes the need for admins to manage the local account password. Mac customers in the enterprise have long wanted a solution to use their Microsoft Entra ID password to log on to Macs.
+MacOS Platform SSO (PSSO) is a new capability on macOS that is enabled using the Microsoft Enterprise Single Sign-on Extension (SSOe). The advantage of PSSO is that it allows users to authenticate with Microsoft Entra ID with smartcard, hardware-bound key or their Microsoft Entra ID password. This both improves the end-user experience by not having to remember two separate passwords as well as diminishes the need for admins to manage the local account password. Mac customers in the enterprise have long wanted a solution to use their Microsoft Entra ID password to log on to Macs.
 
 PSSO allows admins to configure the end-user authentication method in the redirect-type MDM configuration profile. There are three different authentication methods which determines the end-user experience as follows:
 

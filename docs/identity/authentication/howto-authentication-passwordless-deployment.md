@@ -99,7 +99,7 @@ To enable macOS Platform Single Sign-On (PSSO), your Mac must have an operating 
 
 Before PSSO can be enabled, the extension payload must be configured via MDM, with the Mac device enrolled into MDM and the [Mac Company Portal](/mem/intune/user-help/enroll-your-device-in-intune-macos-cp) app installed.
 
-Once the Mac has been configured, a user can setup their Mac device using the new secure enclave key feature, smartcard or a password authentication method. This enables a user to use their Microsoft Entra ID to log into their Mac device and grant SSO across apps that use Microsoft Entra ID for authentication.
+Once the Mac has been configured, a user can setup their Mac device using the new secure enclave key feature, smartcard (macOS 14 Sonoma only) or a password authentication method. This enables a user to use their Microsoft Entra ID to log into their Mac device and grant SSO across apps that use Microsoft Entra ID for authentication.
 
 ## Plan the project
 
