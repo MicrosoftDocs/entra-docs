@@ -27,7 +27,7 @@ In this tutorial;
 
 ## Create the authentication configuration file, auth-config.ts
 
-1. Open _src/app/auth-config.ts_ and add the following code snippet. This file contains authentication parameters. These parameters are used to initialize Angular and MSAL Angular configurations.
+1. Create a new file called _auth-config.ts_ in the folder _src/app/_ and add the following code snippet. This file contains authentication parameters. These parameters are used to initialize Angular and MSAL Angular configurations.
 
     ```JavaScript
 
@@ -88,7 +88,7 @@ In this tutorial;
 
 ## Import MSAL components
 
-1. Open _src/app/app.module.ts_. MSAL components need to be added to `imports`. Replace the entire contents of the file with the following snippet. This snippet imports the MSAL components and material modules.
+1. Create a file _app.module.ts_ in the folder _src/app/_. MSAL components need to be added to `imports`. Add the following code snippet. This snippet imports the MSAL components and material modules.
 
     ```JavaScript
     import { NgModule } from '@angular/core';
