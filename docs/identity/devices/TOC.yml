@@ -24,6 +24,8 @@
     href: device-sso-to-on-premises-resources.md
   - name: Primary Refresh Tokens
     href: concept-primary-refresh-token.md
+  - name: Enroll macOS Platform SSO as an admin
+    href: enroll-macos-admin.md
 - name: How-to guides
   expanded: false
   items:
