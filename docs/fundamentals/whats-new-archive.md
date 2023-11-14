@@ -1873,10 +1873,6 @@ For more information on how to use this feature, see: [Dynamic membership rule f
  
 
 ---
- 
-
- 
-
 
 ## May 2022
  
@@ -1890,30 +1886,4 @@ For more information on how to use this feature, see: [Dynamic membership rule f
 Azure Service Health will soon support service outage notifications to Tenant Admins for Azure Active Directory issues soon. These outages will also appear on the Azure portal overview page with appropriate links to Azure Service Health. Outage events are able to be seen by built-in Tenant Administrator Roles. We continue to send outage notifications to subscriptions within a tenant for transition. More information is available when this capability is released. The expected release is for June 2022.
  
 ---
- 
-### General Availability – My Apps users can make apps from URLs (add sites)
-
-**Type:** New feature  
-**Service category:** My Apps  
-**Product capability:** End User Experiences  
- 
-
-When editing a collection using the My Apps portal, users can now add their own sites, in addition to adding apps that have been assigned to them by an admin. To add a site, users must provide a name and URL. For more information on how to use this feature, see: [Customize app collections in the My Apps portal](https://support.microsoft.com/account-billing/customize-app-collections-in-the-my-apps-portal-2dae6b8a-d8b0-4a16-9a5d-71ed4d6a6c1d).
- 
-
----
- 
-
-### Public Preview: Confirm safe and compromised in sign-ins API beta
-
-**Type:** New feature  
-**Service category:** Identity Protection  
-**Product capability:** Identity Security & Protection  
- 
-
-The sign-ins Microsoft Graph API now supports confirming safe and compromised on risky sign-ins. This public preview functionality is available at the beta endpoint. For more information, please check out the Microsoft Graph documentation: [signIn: confirmSafe - Microsoft Graph beta](/graph/api/signin-confirmsafe?view=graph-rest-beta&preserve-view=true)
- 
-
----
- 
  
