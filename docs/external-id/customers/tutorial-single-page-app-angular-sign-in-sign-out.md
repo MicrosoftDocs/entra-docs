@@ -24,7 +24,7 @@ In this tutorial;
 > * Add sign-in and sign-out functionality to your app.
 > * Test the application
 
-## Sign in and sign out users using pop-ups
+## Sign in and sign out users
       
 1. Open _src/app/app.component.ts_ and replace the code with the following to sign in a user using a pop-up. This code uses the MSAL Angular library to sign in a user. The `login()` method is called when the **Login** button is selected. The `logout()` method is called when the **Logout** button is selected.
 
