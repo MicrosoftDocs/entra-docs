@@ -155,7 +155,7 @@ Apple provides a command line utility called `swcutil` that allows for monitorin
    sudo swcutil watch --verbose
    ```
 
-Look for the following entry in the logs and check if it is marked approved, or if there're any errors:
+Locate the following entry in the logs and check if it is marked approved, or if there're any errors:
 
 ```
 Entry s = authsrv, a = UBF8T346G9.com.microsoft.CompanyPortalMac, d = login.microsoftonline.com
