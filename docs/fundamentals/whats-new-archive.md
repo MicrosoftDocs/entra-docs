@@ -1936,20 +1936,6 @@ To learn more about Microsoft cloud settings for B2B collaboration, see: [Cross-
 ---
  
 
-### General Availability of SAML and WS-Fed federation in External Identities
-
-**Type:** Changed feature  
-**Service category:** B2B  
-**Product capability:** B2B/B2C  
-
- 
-
-When setting up federation with a partner's IdP, new guest users from that domain can use their own IdP-managed organizational account to sign in to your Azure AD tenant and start collaborating with you. There's no need for the guest user to create a separate Azure AD account. To learn more about federating with SAML or WS-Fed identity providers in External Identities, see: [Federation with a SAML/WS-Fed identity provider (IdP) for B2B - Azure AD](~/external-id/direct-federation.md).
- 
-
----
- 
-
 ### Public Preview - Create Group in Administrative Unit
 
 **Type:** Changed feature  
@@ -1963,5 +1949,3 @@ Groups Administrators assigned over the scope of an administrative unit can now 
 
 ---
  
- 
-
