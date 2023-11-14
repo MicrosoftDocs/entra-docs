@@ -1916,23 +1916,4 @@ The sign-ins Microsoft Graph API now supports confirming safe and compromised on
 
 ---
  
-
-### Public Preview of Microsoft cloud settings for Azure AD B2B
-
-**Type:** New feature  
-**Service category:** B2B  
-**Product capability:** B2B/B2C  
-
- 
-
-Microsoft cloud settings let you collaborate with organizations from different Microsoft Azure clouds. With Microsoft cloud settings, you can establish mutual B2B collaboration between the following clouds:
-
--Microsoft Azure global cloud and Microsoft Azure Government
--Microsoft Azure global cloud and Microsoft Azure operated by 21Vianet
-
-To learn more about Microsoft cloud settings for B2B collaboration, see: [Cross-tenant access overview - Azure AD](~/external-id/cross-tenant-access-overview.md#microsoft-cloud-settings).
- 
-
----
- 
  
