@@ -37,4 +37,4 @@ With the added capabilities of Permissions Management, you can track permissions
 
 ## Next steps
 
-- For instructions on how to enable Permissions Management in your Defender for Cloud environment, see [Enable Permissions Management with Defender for Cloud](../../articles/defender-for-cloud/enable-permissions-management.md).
+- For instructions on how to enable Permissions Management in your Defender for Cloud environment, see Enable Permissions Management with Defender for Cloud.
