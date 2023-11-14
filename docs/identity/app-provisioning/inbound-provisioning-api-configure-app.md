@@ -18,9 +18,6 @@ ms.reviewer: cmmdesai
 ## Introduction
 This tutorial describes how to configure [API-driven inbound user provisioning](inbound-provisioning-api-concepts.md). 
 
-> [!IMPORTANT]
-> API-driven inbound provisioning is currently in public preview. For more information about previews, see [Universal License Terms For Online Services](https://www.microsoft.com/licensing/terms/product/ForOnlineServices/all).
-
 This feature is available only when you configure the following Enterprise Gallery apps: 
 * API-driven inbound user provisioning to Microsoft Entra ID
 * API-driven inbound user provisioning to on-premises AD
