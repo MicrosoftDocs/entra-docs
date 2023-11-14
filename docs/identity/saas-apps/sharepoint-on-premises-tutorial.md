@@ -31,7 +31,7 @@ This article uses the following values:
 - loginUrl (to Microsoft Entra ID): `https://login.microsoftonline.com/dc38a67a-f981-4e24-ba16-4443ada44484/wsfed`
 - SharePoint site URL: `https://spsites.contoso.local/`
 - SharePoint site reply URL: `https://spsites.contoso.local/_trust/`
-- SharePoint trust configuration name: `MicrosoftEntraIDTrust`
+- SharePoint trust configuration name: `AzureADTrust`
 - UserPrincipalName of the Microsoft Entra test user: `AzureUser1@demo1984.onmicrosoft.com`
 
 <a name='configure-an-enterprise-application-in-azure-active-directory'></a>
@@ -98,22 +98,22 @@ In this section, you configure the SAML authentication and define the claims tha
 In this step, you create a SPTrustedLoginProvider to store the configuration that SharePoint needs to trust Microsoft Entra ID. For that, you need the information from Microsoft Entra ID that you copied above. Start the SharePoint Management Shell and run the following script to create it:
 
 ```powershell
-# Path to the public key of the Microsoft Entra SAML signing certificate (self-signed), downloaded from the Enterprise application in the Azure portal
+# Path to the public key of the Azure AD SAML signing certificate (self-signed), downloaded from the Enterprise application in the Azure portal
 $signingCert = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2("C:\AAD app\SharePoint corporate farm.cer")
-# Unique realm (corresponds to the "Identifier (Entity ID)" in the Microsoft Entra enterprise application)
+# Unique realm (corresponds to the "Identifier (Entity ID)" in the Azure AD Enterprise application)
 $realm = "urn:sharepoint:federation"
-# Login URL copied from the Microsoft Entra enterprise application. Make sure to replace "saml2" with "wsfed" at the end of the URL:
+# Login URL copied from the Azure AD enterprise application. Make sure to replace "saml2" with "wsfed" at the end of the URL:
 $loginUrl = "https://login.microsoftonline.com/dc38a67a-f981-4e24-ba16-4443ada44484/wsfed"
 
 # Define the claim types used for the authorization
 $userIdentifier = New-SPClaimTypeMapping -IncomingClaimType "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name" -IncomingClaimTypeDisplayName "name" -LocalClaimType "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/upn"
 $role = New-SPClaimTypeMapping "http://schemas.microsoft.com/ws/2008/06/identity/claims/role" -IncomingClaimTypeDisplayName "Role" -SameAsIncoming
 
-# Let SharePoint trust the Microsoft Entra ID signing certificate
-New-SPTrustedRootAuthority -Name "Microsoft Entra ID signing certificate" -Certificate $signingCert
+# Let SharePoint trust the Azure AD signing certificate
+New-SPTrustedRootAuthority -Name "Azure AD signing certificate" -Certificate $signingCert
 
 # Create a new SPTrustedIdentityTokenIssuer in SharePoint
-$trust = New-SPTrustedIdentityTokenIssuer -Name "MicrosoftEntraIDTrust" -Description "Microsoft Entra ID" -Realm $realm -ImportTrustCertificate $signingCert -ClaimsMappings $userIdentifier, $role -SignInUrl $loginUrl -IdentifierClaim $userIdentifier.InputClaimType
+$trust = New-SPTrustedIdentityTokenIssuer -Name "AzureADTrust" -Description "Azure AD" -Realm $realm -ImportTrustCertificate $signingCert -ClaimsMappings $userIdentifier, $role -SignInUrl $loginUrl -IdentifierClaim $userIdentifier.InputClaimType
 ```
 
 ### Configure the SharePoint web application
@@ -128,16 +128,16 @@ In this step, you configure a web application in SharePoint to trust the Microso
 
         1. Start the **SharePoint Management Shell** and run the following script:
             ```powershell
-            # This script creates a new web application and sets Windows and Microsoft Entra authentication on the Default zone
-            # URL of the SharePoint site federated with Microsoft Entra ID
+            # This script creates a new web application and sets Windows and Azure AD authentication on the Default zone
+            # URL of the SharePoint site federated with Azure AD
             $trustedSharePointSiteUrl = "https://spsites.contoso.local/"
             $applicationPoolManagedAccount = "Contoso\spapppool"
 
             $winAp = New-SPAuthenticationProvider -UseWindowsIntegratedAuthentication -DisableKerberos:$true
-            $sptrust = Get-SPTrustedIdentityTokenIssuer "MicrosoftEntraIDTrust"
+            $sptrust = Get-SPTrustedIdentityTokenIssuer "AzureADTrust"
             $trustedAp = New-SPAuthenticationProvider -TrustedIdentityTokenIssuer $sptrust    
             
-            New-SPWebApplication -Name "SharePoint - Microsoft Entra ID" -Port 443 -SecureSocketsLayer -URL $trustedSharePointSiteUrl -ApplicationPool "SharePoint - Microsoft Entra ID" -ApplicationPoolAccount (Get-SPManagedAccount $applicationPoolManagedAccount) -AuthenticationProvider $winAp, $trustedAp
+            New-SPWebApplication -Name "SharePoint - Azure AD" -Port 443 -SecureSocketsLayer -URL $trustedSharePointSiteUrl -ApplicationPool "SharePoint - Azure AD" -ApplicationPoolAccount (Get-SPManagedAccount $applicationPoolManagedAccount) -AuthenticationProvider $winAp, $trustedAp
             ```
         1. Open the **SharePoint Central Administration** site.
         1. Under **System Settings**, select **Configure Alternate Access Mappings**. The **Alternate Access Mapping Collection** box opens.
@@ -150,16 +150,16 @@ In this step, you configure a web application in SharePoint to trust the Microso
         1. Start the SharePoint Management Shell and run the following script:
 
             ```powershell
-            # This script extends an existing web application to set Microsoft Entra authentication on a new zone
+            # This script extends an existing web application to set Azure AD authentication on a new zone
             # URL of the default zone of the web application
             $webAppDefaultZoneUrl = "http://spsites/"
             # URL of the SharePoint site federated with ADFS
             $trustedSharePointSiteUrl = "https://spsites.contoso.local/"
-            $sptrust = Get-SPTrustedIdentityTokenIssuer "MicrosoftEntraIDTrust"
+            $sptrust = Get-SPTrustedIdentityTokenIssuer "AzureADTrust"
             $ap = New-SPAuthenticationProvider -TrustedIdentityTokenIssuer $sptrust
             $wa = Get-SPWebApplication $webAppDefaultZoneUrl
             
-            New-SPWebApplicationExtension -Name "SharePoint - Microsoft Entra ID" -Identity $wa -SecureSocketsLayer -Zone Internet -Url $trustedSharePointSiteUrl -AuthenticationProvider $ap
+            New-SPWebApplicationExtension -Name "SharePoint - Azure AD" -Identity $wa -SecureSocketsLayer -Zone Internet -Url $trustedSharePointSiteUrl -AuthenticationProvider $ap
             ```
         
         1. Open the **SharePoint Central Administration** site.
@@ -227,14 +227,14 @@ In the dialog, you need to type the exact value of the userprincipalname, for ex
 ![People picker results without AzureCP](./media/sharepoint-on-premises-tutorial/sp-people-picker-search-no-azurecp.png)
 
 This limitation is because SharePoint does not validate the input from the people picker, which can be confusing and lead to misspellings or users accidentally choosing the wrong claim type.  
-To fix this scenario, an open-source solution called [AzureCP](https://entracp.yvand.net/) can be used to connect SharePoint 2019 / 2016 / 2013 with Microsoft Entra ID and resolve the input against your Microsoft Entra tenant. For more information, see [AzureCP](https://entracp.yvand.net/).
+To fix this scenario, an open-source solution called [AzureCP](https://yvand.github.io/AzureCP/) can be used to connect SharePoint 2019 / 2016 / 2013 with Microsoft Entra ID and resolve the input against your Microsoft Entra tenant. For more information, see [AzureCP](https://yvand.github.io/AzureCP/).
 
 Below is the same search with AzureCP configured: SharePoint returns actual users based on the input:
 
 ![People picker results with AzureCP](./media/sharepoint-on-premises-tutorial/sp-people-picker-search-with-azurecp.png)
 
 > [!IMPORTANT]
-> AzureCP isn't a Microsoft product and isn't supported by Microsoft Support. To download, install, and configure AzureCP on the on-premises SharePoint farm, see the [AzureCP](https://entracp.yvand.net/) website. 
+> AzureCP isn't a Microsoft product and isn't supported by Microsoft Support. To download, install, and configure AzureCP on the on-premises SharePoint farm, see the [AzureCP](https://yvand.github.io/AzureCP/) website. 
 
 Microsoft Entra user `AzureUser1@demo1984.onmicrosoft.com` can now use his/her identity to sign in to the SharePoint site `https://spsites.contoso.local/`.
 
@@ -270,7 +270,7 @@ Let's create a security group.
 
 Microsoft Entra security groups are identified with their attribute `Id`, which is a GUID (for example, `E89EF0A3-46CC-45BF-93A4-E078FCEBFC45`).  
 Without a custom claims provider, users need to type the exact value (`Id`) of the group in the people picker, and select the corresponding claim type. This is not user-friendly nor reliable.  
-To avoid this, this article uses third-party claims provider [AzureCP](https://entracp.yvand.net/) to find the group in a friendly way in SharePoint:
+To avoid this, this article uses third-party claims provider [AzureCP](https://yvand.github.io/AzureCP/) to find the group in a friendly way in SharePoint:
 
 ![People picker search Microsoft Entra group](./media/sharepoint-on-premises-tutorial/sp-people-picker-search-azure-entra-group.png)
 
@@ -333,7 +333,7 @@ The configuration works for a single web application, but additional configurati
 1. On the SharePoint server, open the SharePoint 201x Management Shell and run the following commands. Use the same name for the trusted identity token issuer as you used previously.
 
 ```powershell
-$t = Get-SPTrustedIdentityTokenIssuer "MicrosoftEntraIDTrust"
+$t = Get-SPTrustedIdentityTokenIssuer "AzureADTrust"
 $t.UseWReplyParameter = $true
 $t.Update()
 ```
@@ -353,29 +353,29 @@ $t.Update()
 
 By default, Microsoft Entra ID creates a SAML token that is valid for 1 hour.  
 This lifetime cannot be customized in the Azure portal, or using a Conditional Access policy, but it can be done by creating a [custom token lifetime policy](~/identity-platform/configurable-token-lifetimes.md) and apply it to the enterprise application created for SharePoint.  
-To do this, complete the steps below using PowerShell:
+To do this, complete the steps below using Windows PowerShell (at the time of this writing, AzureADPreview v2.0.2.149 does not work with PowerShell Core):
 
-1. Install the [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview):
+1. Install the module [AzureADPreview](https://www.powershellgallery.com/packages/AzureADPreview/):
 
     ```powershell
-    Install-Module -Name Microsoft.Graph -Scope CurrentUser
+    Install-Module -Name AzureADPreview -Scope CurrentUser
     ```
 
-1. Run `Connect-MgGraph` to sign-in as a tenant administrator.
+1. Run `Connect-AzureAD` to sign-in as a tenant administrator.
 
 1. Run the sample script below to update the application `SharePoint corporate farm` to issue a SAML token valid for 6h (value `06:00:00` of property `AccessTokenLifetime`):
 
     ```powershell
     $appDisplayName = "SharePoint corporate farm"
     
-    $sp = Get-MgServicePrincipal -Filter "DisplayName eq '$appDisplayName'"
+    $sp = Get-AzureADServicePrincipal -Filter "DisplayName eq '$appDisplayName'"
     $oldPolicy = Get-AzureADServicePrincipalPolicy -Id $sp.ObjectId | ?{$_.Type -eq "TokenLifetimePolicy"}
     if ($null -ne $oldPolicy) {
         # There can be only 1 TokenLifetimePolicy associated to the service principal (or 0, as by default)
         Remove-AzureADServicePrincipalPolicy -Id $sp.ObjectId -PolicyId $oldPolicy.Id
     }
     
-    # Create a custom TokenLifetimePolicy in Microsoft Entra ID and add it to the service principal
+    # Create a custom TokenLifetimePolicy in Azure AD and add it to the service principal
     $policy = New-AzureADPolicy -Definition @('{"TokenLifetimePolicy":{"Version":1,"AccessTokenLifetime":"06:00:00"}}') -DisplayName "Custom token lifetime policy" -IsOrganizationDefault $false -Type "TokenLifetimePolicy"
     Add-AzureADServicePrincipalPolicy -Id $sp.ObjectId -RefObjectId $policy.Id
     ```
