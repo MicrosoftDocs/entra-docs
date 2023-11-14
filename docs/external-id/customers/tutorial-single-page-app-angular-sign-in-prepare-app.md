@@ -33,14 +33,14 @@ In this section we will create a new Angular project using the Angular CLI in Vi
 
 1. Open Visual Studio Code, select **File** > **Open Folder...**. Navigate to and select the location in which you want to create your project.
 1. Open a new terminal by selecting **Terminal** > **New Terminal**.
-1. Run the following commands to create a new Angular project with the name `angularspalocal`, install Angular Material component libraries, MSAL Browser, MSAL Angular and generate home and guarded components.
+1. Run the following commands to create a new Angular project with the name `angularspalocal`, install Angular Material component libraries, MSAL Browser, MSAL Angular and generate home and guarded components. 
 
     ```powershell
     npm install -g @angular/cli@14.2.0
     ng new angularspalocal --routing=true --style=css --strict=false
     cd angularspalocal
-    npm install @angular/material@14.2.0 @angular/cdk@14.2.0
-    npm install @azure/msal-browser @azure/msal-angular
+    npm install @angular/material@13.0.0 @angular/cdk@13.0.0
+    npm install @azure/msal-browser@2.37.0 @azure/msal-angular@2.5.7
     ng generate component home
     ng generate component guarded
     ```
