@@ -49,7 +49,7 @@ In this section we will create a new Angular project using the Angular CLI in Vi
 
 The following steps configure the UI elements of the application. CSS styling is added to the application to define the colors and fonts. The application header and footer are defined in the HTML file and CSS styling is added to the home page of the application.
 
-1. Open _src/styles.css_ to define the CSS. Replace the existing code with the following code snippet. This is used to define colors and fonts for the application.
+1. Open _src/styles.css_ to define the CSS. Replace the existing code with the following code snippet. This is used to define the theme, body height, margins and fonts for the application.
 
     ```css
     @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
