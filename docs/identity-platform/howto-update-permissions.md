@@ -75,10 +75,10 @@ You can add permissions to static consent in two different ways in the Microsoft
 
 ### Option 2: Add permissions to the application manifest
 
-    1. From the left navigation pane, under the **Manage** menu group, select **Manifest**. The selection opens an editor that allows you to directly edit the attributes of the app registration object.
-    1. Carefully edit the `requiredResourceAccess` property in the application's manifest file.
-    1. Add the `resourceAppId` property and `resourceAccess` property and assign the required permissions.
-    1. Save your changes.
+1. From the left navigation pane, under the **Manage** menu group, select **Manifest**. The selection opens an editor that allows you to directly edit the attributes of the app registration object.
+1. Carefully edit the `requiredResourceAccess` property in the application's manifest file.
+1. Add the `resourceAppId` property and `resourceAccess` property and assign the required permissions.
+1. Save your changes.
 
 :::zone-end
 
@@ -150,9 +150,9 @@ To add permissions into dynamic consent:
 
 :::zone-end
 
-## Grant consent for the added permissions on the enterprise application pane
+## Grant consent for the added permissions for the enterprise application
 
-After permissions are added to your application, users or administrators need to grant consent to the new permissions. Nonadmin users see a consent prompt when they sign into your app. Admin users can grant consent to the new permissions on behalf of all users in their organization.
+After permissions are added to your application, users or administrators need to grant consent to the new permissions. Nonadmin users see a consent prompt when they sign into your app while admin users can grant consent to the new permissions on behalf of all users in their organization.
 
 When the added permissions require admin consent, the required actions vary based on app type:
 
@@ -259,12 +259,14 @@ When you need to remove delegated permission from dynamic consent request, speci
 
 :::zone-end
 
-## Revoke consent for the removed permissions on the enterprise application pane
+## Revoke consent for the removed permissions for the enterprise application
 
 After the permissions are removed from the app registration, an admin in the tenant also needs to revoke consent to protect your organization's data. When the removed permission requires admin consent, the required actions vary based on app type:
 
 - **Single tenant app and multitenant app in home tenant**: For a single tenant app, contact the admin of the tenant to revoke the permissions already granted to the app. For a multitenant app, contact the admins of all the tenants where instances of your application reside to [revoke permissions granted to the enterprise application](~/identity/enterprise-apps/manage-application-permissions.md). It ensures that the application doesn't maintain access through the removed permission.
 - **Multi-tenant apps in customers' tenants**: Ensure that you communicate with your customers to revoke permissions through announcements, blogs and any other communication channels.
+
+For both single tenant and multitenant apps, nonadmin users in tenants where user consent is enabled can revoke permissions through the [My Apps portal](https://myapplications.microsoft.com).
 
 ### Replace a permission
 
