@@ -5,7 +5,7 @@ summary: Microsoft Entra Permissions Management is a cloud infrastructure entitl
 
 metadata:
   title: Microsoft Entra Permissions Management
-  description: Learn how to use Permissions Management and Cloud Infrastructure Entitlement Management (CIEM)
+  description: Strengthen your cloud environment with the key features and best practices of Permissions Management
   services: active-directory
   author: jenniferf-skc
   manager: amycolannino
@@ -13,7 +13,7 @@ metadata:
   ms.subservice: ciem
   ms.workload: identity
   ms.topic: landing-page
-  ms.date: 06/16/2023
+  ms.date: 11/15/2023
   ms.author: jfields
 
 
@@ -31,95 +31,75 @@ landingContent:
           - text: Overview
             url: overview.md
   # Card
-  - title: Onboard Permissions Management
+  - title: Learn
     linkLists:
-      - linkListType: overview
+      - linkListType: tutorial
         links:
-          - text: Enable Permissions Management
-            url: onboard-enable-tenant.md
+          - text: Intro to Microsoft Entra Permissions Management
+            url: https://go.microsoft.com/fwlink/?linkid=2245157
+          - text: Explore the features of Permissions Management
+            url: https://go.microsoft.com/fwlink/?linkid=2252361
   # Card
-  - title: View risk metrics in your authorization system
+  - title: Get Started
     linkLists:
-      - linkListType: overview
+      - linkListType: get-started
         links:
-          - text: View key statistics and data about your authorization system
-            url: ui-dashboard.md
+          - text: Quickstart guide
+            url: permissions-management-quickstart-guide.md
+          - text: Operation guide with best practices
+            url: https://go.microsoft.com/fwlink/?linkid=2252608
   # Card
-  - title: Configure settings for data collection
+  - title: Manage identities and resources
     linkLists:
-      - linkListType: overview
+      - linkListType: how-to-guide
         links:
-          - text: View and configure settings for data collection
-            url: product-data-sources.md
+          - text: Manage users and groups
+            url: ui-user-management.md
+          - text: Set group-based permissions 
+            url: how-to-create-group-based-permissions.md
+          - text: Manage permissions requests       
+            url: how-to-create-approve-privilege-request.md  
+          - text: Add or remove a user     
+            url: how-to-add-remove-user-to-a-group.md 
   # Card
-  # - title: Manage organizational and personal information
-  #  linkLists:
-  #    - linkListType: overview
-  #      links:
-  #        - text: Set personal information and preferences
-  #          url: product-account-settings.md
-  # Card
-  - title: View information about identities
+  - title: Monitor your cloud environment
     linkLists:
-      - linkListType: overview
+      - linkListType: how-to-guide
         links:
-          - text: View information about identities
-            url: usage-analytics-home.md
-          - text: View how users access information
-            url: ui-audit-trail.md
-  # Card
-  - title: Manage roles/policies and permission requests
-    linkLists:
-      - linkListType: overview
-        links:
-          - text: View existing roles/policies and requests for permission
-            url: ui-remediation.md
-  # Card
-  # - title: View how users access information
-    # linkLists:
-      # - linkListType: overview
-        # links:
-          # - text: View how users access information
-            # url: ui-audit-trail.md
-  # Card
-  - title: Set activity alerts and triggers
-    linkLists:
-      - linkListType: overview
-        links:
-          - text: View information about activity triggers
+          - text: Set alerts and triggers
             url: ui-triggers.md
-  # Card
-  - title: Manage rules for authorization systems
-    linkLists:
-      - linkListType: overview
-        links:
-          - text: Create and view rules in the Autopilot dashboard
+          - text: Manage rules for authorization systems
             url: ui-autopilot.md
-  # Card
-  - title: Generate reports
-    linkLists:
-      - linkListType: overview
-        links:
-          - text: Generate and view a system report
+          - text: View analytics   
+            url: usage-analytics-home.md   
+          - text: Generate and view reports    
             url: report-view-system-report.md
   # Card
-  # - title: Learn with Permissions Management videos
-    # linkLists:
-      # - linkListType: overview
-        # links:
-          # - text: Permissions Management training videos
-            # url: training-videos.md
-  # Card
-  - title: FAQs
+  - title: Configure third-party integrations
     linkLists:
-      - linkListType: overview
+      - linkListType: how-to-guide
+        links:
+          - text: AWS IAM Identity Center
+            url: how-to-configure-aws-iam.md 
+          - text: Okta identity provider   
+            url: how-to-configure-okta-as-an-identity-provider.md
+          - text: Defender for Cloud  
+            url: permissions-management-for-defender-for-cloud.md
+  # Card
+  - title: Reference 
+    linkLists:
+      - linkListType: reference
         links:
           - text: FAQs
             url: faqs.md
-  # Card
+          - text: Glossary  
+            url: multi-cloud-glossary.md
+# Card
   - title: Troubleshoot
     linkLists:
-      - linkListType: overview
+      - linkListType: reference
         links:
           - text: Troubleshoot
             url: troubleshoot.md
+          - text: Error codes   
+            url: error-codes-onboarding.md
