@@ -67,7 +67,7 @@ If you want to use an allowlist, make sure that you spend time to fully evaluate
 
 To add an allowlist:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as  a [Global administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 1. Browse to **Identity** > **Users** > **User settings**.
 3. Under **External users**, select **Manage external collaboration settings**.
 4. Under **Collaboration restrictions**, select **Allow invitations only to the specified domains (most restrictive)**.
