@@ -184,7 +184,7 @@ Sometimes, this command is insufficient and doesn't fully reset the cache. In th
 * Remove or move the Intune Company Portal app to the Trash, then restart your device. After the restart is complete, you can try re-install the Company Portal app. 
 * Re-enroll your device.
 
-If none of above methods resolve your issue, there might be something else in your environment that could be blocking associated domain validation. If that happens, please reach out to Apple support for further troubleshooting. 
+If none of above methods resolve your issue, there may be something else in your environment that could be blocking the associated domain validation. If this happens, please reach out to Apple support for further troubleshooting. 
 
 #### Validate SSO configuration profile on macOS device
 
