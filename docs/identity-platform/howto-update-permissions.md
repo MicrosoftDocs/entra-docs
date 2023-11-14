@@ -266,7 +266,7 @@ After the permissions are removed from the app registration, an admin in the ten
 - **Single tenant app and multitenant app in home tenant**: For a single tenant app, contact the admin of the tenant to revoke the permissions already granted to the app. For a multitenant app, contact the admins of all the tenants where instances of your application reside to [revoke permissions granted to the enterprise application](~/identity/enterprise-apps/manage-application-permissions.md). It ensures that the application doesn't maintain access through the removed permission.
 - **Multi-tenant apps in customers' tenants**: Ensure that you communicate with your customers to revoke permissions through announcements, blogs and any other communication channels.
 
-For both single tenant and multitenant apps, nonadmin users in tenants where user consent is enabled can revoke permissions through the [My Apps portal](https://myapplications.microsoft.com).
+For both single tenant and multitenant apps, nonadmin users in tenants where user consent is enabled can revoke permissions on their own behalf through the [My Apps portal](https://myapplications.microsoft.com).
 
 ### Replace a permission
 
