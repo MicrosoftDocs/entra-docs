@@ -89,7 +89,7 @@ After starting to use Microsoft Entra Privileged Identity Management, view the u
 * Exchange Administrator
 * SharePoint Administrator
 
-If you don't have Microsoft Entra Privileged Identity Management in your organization, you can use the [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview). Start with the Global Administrator role because a Global Administrator has the same permissions across all cloud services for which your organization has subscribed. These permissions are granted no matter where they were assigned: in the Microsoft 365 admin center, the Microsoft Entra admin center, or by using Microsoft Graph PowerShell.
+If you don't have Microsoft Entra Privileged Identity Management in your organization, you can use [Microsoft Graph PowerShell](/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdirectoryrolemember). Start with the Global Administrator role because a Global Administrator has the same permissions across all cloud services for which your organization has subscribed. These permissions are granted no matter where they were assigned: in the Microsoft 365 admin center, the Microsoft Entra admin center, or by using Microsoft Graph PowerShell.
 
 Remove any accounts that are no longer needed in those roles. Then, categorize the remaining accounts that are assigned to administrator roles:
 
