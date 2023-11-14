@@ -179,7 +179,7 @@ You can run following commands to reset the device's cache:
 
 Re-test the SSO extension configuration after resetting the cache.
 
-Sometimes, above command is insufficient and doesn't fully reset the cache. In those cases, attempt the following:
+Sometimes, this command is insufficient and doesn't fully reset the cache. In these cases, you can attempt the following:
 
 * Remove or move Intune Company Portal app to the Trash, then restart your device, then re-install Intune Company Portal app after restart. 
 * Re-enroll your device.
