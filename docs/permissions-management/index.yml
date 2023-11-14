@@ -60,7 +60,7 @@ landingContent:
           - text: Manage permissions requests       
             url: how-to-create-approve-privilege-request.md  
           - text: Add or remove a user     
-            url: how-to-add-remove-user-to-a-group.md 
+            url: how-to-add-remove-user-to-group.md 
   # Card
   - title: Monitor your cloud environment
     linkLists:
