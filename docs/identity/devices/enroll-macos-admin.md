@@ -81,7 +81,7 @@ A payload is a set of instructions or settings that can be delivered to a device
         - **Extension Identifier**- `com.microsoft.CompanyPortalMac.ssoextension`
         - **Type** -  **Redirect**
 
-[Screenshot of adding setting from the settings picker](./media/enroll-macos-admin/add-settings-from-setting-picker.png)
+    :::image type="content" source="./media/enroll-macos-admin/add-settings-from-setting-picker.png" alt-text="Screenshot of adding setting from the settings picker.":::
 
 1. Select **Next**.
 1. In the **Scope tags** tab, the default scope tags will be used. Select **Next**.
