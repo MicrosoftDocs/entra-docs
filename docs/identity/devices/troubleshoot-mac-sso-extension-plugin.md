@@ -149,7 +149,7 @@ If these checks have a warning or error then there might be TLS inspection occur
 
 ##### Output detailed swcd logs
 
-Apple provides a command line utility called swcutil that allows monitoring the progress of the associated domain validation. You can monitor for any associated domain errors using the following command:
+Apple provides a command line utility called `swcutil` that allows for monitoring the progress of the associated domain validation. You can monitor for any associated domain errors using the following command:
 
    ```zsh
    sudo swcutil watch --verbose
