@@ -46,7 +46,7 @@ landingContent:
         links:
           - text: Quickstart guide
             url: permissions-management-quickstart-guide.md
-          - text: Operation guide with best practices
+          - text: Operations and best practices
             url: https://go.microsoft.com/fwlink/?linkid=2252608
   # Card
   - title: Manage identities and resources
