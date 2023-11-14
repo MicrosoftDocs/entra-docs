@@ -1935,17 +1935,4 @@ To learn more about Microsoft cloud settings for B2B collaboration, see: [Cross-
 
 ---
  
-
-### Public Preview - Create Group in Administrative Unit
-
-**Type:** Changed feature  
-**Service category:** Directory Management  
-**Product capability:** Access Control  
-
- 
-
-Groups Administrators assigned over the scope of an administrative unit can now create groups within the administrative unit.  This enables scoped Group Administrators to create groups that they can manage directly, without needing to elevate to Global Administrator or Privileged Role Administrator. For more information, see: [Administrative units in Azure Active Directory](~/identity/role-based-access-control/administrative-units.md).
- 
-
----
  
