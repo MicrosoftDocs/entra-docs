@@ -64,7 +64,7 @@ It's recommended for your system administrator to have the Mac enrolled using se
 
 1. Now that the Mac is correctly set up, you can now use PSSO to access Microsoft app resources.
 
->[NOTE!]
+>[!NOTE]
 > On macOS 14 Somona, you can check the PSSO registration status by navigating to **Settings** > **Users and Groups** > **Select user**. To see your device registration status, navigate to **Settings** > **Users and Groups** > **Network account server**. Select **Edit** to see your device status.
 
 ### [Smartcard](#tab/smartcard)
