@@ -1,11 +1,11 @@
 ---
 title: Bulk remove group members by uploading a CSV file
-description: Remove group members in bulk operations in the Azure admin center. 
+description: Remove group members in bulk operations by using a comma-separated values (CSV) file. 
 services: active-directory 
 author: barclayn
 ms.author: barclayn
 manager: amycolannino
-ms.date: 09/08/2023
+ms.date: 11/10/2023
 ms.topic: how-to
 ms.service: active-directory
 ms.subservice: enterprise-users
@@ -23,7 +23,7 @@ You can remove a large number of members from a group by using a comma-separated
 
 Download and fill in the bulk upload CSV template to successfully add Microsoft Entra group members in bulk. Your CSV template might look like this example:
 
-![Spreadsheet for upload and call-outs explaining the purpose and values for each row and column](./media/groups-bulk-remove-members/template-example.png)
+:::image type="content" source="./media/groups-bulk-remove-members/template-example.png" alt-text="Spreadsheet for upload and call-outs explaining the purpose and values for each row and column.":::
 
 ### CSV template structure
 
@@ -51,7 +51,7 @@ The rows in a downloaded CSV template are as follows:
 1. On the **Members** page, select **Remove members**.
 1. On the **Bulk remove group members** page, select **Download** to get the CSV file template with required group member properties.
 
-   ![The Remove Members command is on the profile page for the group](./media/groups-bulk-remove-members/remove-panel.png)
+   :::image type="content" source="./media/groups-bulk-remove-members/remove-panel.png" alt-text="The Remove Members command is on the profile page for the group.":::
 
 1. Open the CSV file and add a line for each group member you want to remove from the group (required values are Member object ID or User principal name). Then save the file.
 
@@ -59,14 +59,14 @@ The rows in a downloaded CSV template are as follows:
 
 1. On the **Bulk remove group members** page, under **Upload your csv file**, browse to the file. When you select the file, validation of the CSV file starts.
 1. When the file contents are validated, the bulk import page displays **File uploaded successfully**. If there are errors, you must fix them before you can submit the job.
-1. When your file passes validation, select **Submit** to start the Azure bulk operation that removes the group members from the group.
+1. When your file passes validation, select **Submit** to start the bulk operation that removes the group members from the group.
 1. When the removal operation completes, you'll see a notification that the bulk operation succeeded.
 
 ## Check removal status
 
 You can see the status of all of your pending bulk requests in the **Bulk operation results** page.
 
-[![Check status in the Bulk Operations Results page](./media/groups-bulk-remove-members/bulk-center.png)](./media/groups-bulk-remove-members/bulk-center.png#lightbox)
+:::image type="content" source="./media/groups-bulk-remove-members/bulk-center.png" alt-text="Check status in the Bulk Operations Results page.":::
 
 For details about each line item within the bulk operation, select the values under the **# Success**, **# Failure**, or **Total Requests** columns. If failures occurred, the reasons for failure will be listed.
 

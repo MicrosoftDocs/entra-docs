@@ -1,6 +1,6 @@
 ---
 title: Change static group membership to dynamic
-description: Learn how to convert existing groups from static to dynamic membership using either Azure portal or PowerShell cmdlets.
+description: Learn how to convert existing groups from static to dynamic membership using either the portal or PowerShell cmdlets.
 services: active-directory
 documentationcenter: ''
 author: barclayn
@@ -9,7 +9,7 @@ ms.service: active-directory
 ms.subservice: enterprise-users
 ms.workload: identity
 ms.topic: how-to
-ms.date: 09/06/2023
+ms.date: 11/10/2023
 ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro, has-azure-ad-ps-ref
@@ -18,7 +18,7 @@ ms.collection: M365-identity-device-management
 
 # Change static group membership to dynamic in Microsoft Entra ID
 
-You can change a group's membership from static to dynamic (or vice-versa) In Microsoft Entra ID, part of Microsoft Entra. Microsoft Entra ID keeps the same group name and ID in the system, so all existing references to the group are still valid. If you create a new group instead, you would need to update those references. Dynamic group membership eliminates management overhead adding and removing users. This article tells you how to convert existing groups from static to dynamic membership using either Azure portal or PowerShell cmdlets.
+You can change a group's membership from static to dynamic (or vice-versa) In Microsoft Entra ID, part of Microsoft Entra. Microsoft Entra ID keeps the same group name and ID in the system, so all existing references to the group are still valid. If you create a new group instead, you would need to update those references. Dynamic group membership eliminates management overhead adding and removing users. This article tells you how to convert existing groups from static to dynamic membership using either the portal or PowerShell cmdlets.
 
 > [!WARNING]
 > When changing an existing static group to a dynamic group, all existing members are removed from the group, and then the membership rule is processed to add new members. If the group is used to control access to apps or resources, be aware that the original members might lose access until the membership rule is fully processed.
@@ -39,12 +39,12 @@ The following steps can be performed using an account that has either the Global
 The following steps are an example of changing a group from static to dynamic membership for a group of users.
 
 1. On the **Properties** page for your selected group, select a **Membership type** of **Dynamic User**, then select Yes on the dialog explaining the changes to the group membership to continue. 
-  
-   ![select membership type of dynamic user](./media/groups-change-type/select-group-to-convert.png)
+
+   :::image type="content" source="./media/groups-change-type/select-group-to-convert.png" alt-text="select membership type of dynamic user.":::
   
 2. Select **Add dynamic query**, and then provide the rule.
   
-   ![enter the rule for the dynamic group](./media/groups-change-type/enter-rule.png)
+   :::image type="content" source="./media/groups-change-type/enter-rule.png" alt-text="Enter the rule for the dynamic group.":::
   
 3. After creating the rule, select **Add query** at the bottom of the page.
 4. Select **Save** on the **Properties** page for the group to save your changes. The **Membership type** of the group is immediately updated in the group list.
@@ -55,7 +55,7 @@ The following steps are an example of changing a group from static to dynamic me
 ## Change membership type for a group (PowerShell)
 
 > [!NOTE]
-> To change dynamic group properties you will need to use cmdlets from **the preview version of** [Azure AD PowerShell Version 2](/powershell/azure/active-directory/install-adv2). You can install the preview from the [PowerShell Gallery](https://www.powershellgallery.com/packages/AzureADPreview).
+> To change dynamic group properties you will need to use cmdlets from **the preview version of** [PowerShell Version 2](/powershell/azure/active-directory/install-adv2). You can install the preview from the [PowerShell Gallery](https://www.powershellgallery.com/packages/AzureADPreview).
 
 Here is an example of functions that switch membership management on an existing group. In this example, care is taken to correctly manipulate the GroupTypes property and preserve any values that are unrelated to dynamic membership.
 

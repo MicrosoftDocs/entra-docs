@@ -10,7 +10,7 @@ ms.service: active-directory
 ms.subservice: enterprise-users
 ms.workload: identity
 ms.topic: how-to
-ms.date: 09/08/2023
+ms.date: 11/10/2023
 ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro
@@ -19,7 +19,11 @@ ms.collection: M365-identity-device-management
 
 # Create or update a dynamic group in Microsoft Entra ID
 
-You can use rules to determine group membership based on user or device properties In Microsoft Entra ID, part of Microsoft Entra. This article tells how to set up a rule for a dynamic group in the Azure portal. Dynamic membership is supported for security groups and Microsoft 365 Groups. When a group membership rule is applied, user and device attributes are evaluated for matches with the membership rule. When an attribute changes for a user or device, all dynamic group rules in the organization are processed for membership changes. Users and devices are added or removed if they meet the conditions for a group. Security groups can be used for either devices or users, but Microsoft 365 Groups can be only user groups. Using Dynamic groups requires Microsoft Entra ID P1 license or Intune for Education license. See [Dynamic membership rules for groups](./groups-dynamic-membership.md) for more details. 
+You can use rules to determine group membership based on user or device properties In Microsoft Entra ID, part of Microsoft Entra. This article tells how to set up a rule for a dynamic group in the Azure portal. 
+
+Dynamic membership is supported for security groups and Microsoft 365 Groups. When a group membership rule is applied, user and device attributes are evaluated for matches with the membership rule. When an attribute changes for a user or device, all dynamic group rules in the organization are processed for membership changes. Users and devices are added or removed if they meet the conditions for a group. 
+
+Security groups can be used for either devices or users, but Microsoft 365 Groups can be only user groups. Using Dynamic groups requires Microsoft Entra ID P1 license or Intune for Education license. See [Dynamic membership rules for groups](./groups-dynamic-membership.md) for more details. 
 
 ## Rule builder in the Azure portal
 
@@ -35,7 +39,7 @@ Here are some examples of advanced rules or syntax for which we recommend that y
 > [!NOTE]
 > The rule builder might not be able to display some rules constructed in the text box. You might see a message when the rule builder is not able to display the rule. The rule builder doesn't change the supported syntax, validation, or processing of dynamic group rules in any way.
 
-![Screenshot that shows the "Dynamic membership rules" page with the "Add expression" action on the "Configure rules" tab selected.](./media/groups-create-rule/update-dynamic-group-rule.png)
+:::image type="content" source="./media/groups-create-rule/update-dynamic-group-rule.png" alt-text="Screenshot that shows the "Dynamic membership rules" page with the "Add expression" action on the "Configure rules" tab selected.":::
 
 For examples of syntax, supported properties, operators, and values for a membership rule, see [Dynamic membership rules for groups in Microsoft Entra ID](groups-dynamic-membership.md).
 
@@ -47,11 +51,11 @@ For examples of syntax, supported properties, operators, and values for a member
 1. Select Microsoft Entra ID.> **Groups**.
 1. Select **All groups**, and select **New group**.
 
-   ![Screenshot showing how to select the "add new group" action](./media/groups-create-rule/create-new-group.png)
+   :::image type="content" source="./media/groups-create-rule/create-new-group.png" alt-text="Screenshot showing how to select the "add new group" action.":::
 
 1. On the **Group** page, enter a name and description for the new group. Select a **Membership type** for either users or devices, and then select **Add dynamic query**. The rule builder supports up to five expressions. To add more than five expressions, you must use the text box.
 
-   ![Screenshot that shows the "All groups" page with the "New group" action selected.](./media/groups-create-rule/add-dynamic-group-rule.png)
+   :::image type="content" source="./media/groups-create-rule/add-dynamic-group-rule.png" alt-text="Screenshot that shows the "All groups" page with the "New group" action selected.":::
 
 1. To see the custom extension properties available for your membership query:
    1. Select **Get custom extension properties**
@@ -59,7 +63,7 @@ For examples of syntax, supported properties, operators, and values for a member
 1. After creating the rule, select **Save**.
 1. Select **Create** on the **New group** page to create the group.
 
-If the rule you entered isn't valid, an explanation of why the rule couldn't be processed is displayed in an Azure notification in the portal. Read it carefully to understand how to fix the rule.
+If the rule you entered isn't valid, an explanation of why the rule couldn't be processed is displayed in a notification in the portal. Read it carefully to understand how to fix the rule.
 
 ## To update an existing rule
 
@@ -69,7 +73,7 @@ If the rule you entered isn't valid, an explanation of why the rule couldn't be 
 1. Select a group to open its profile.
 1. On the profile page for the group, select **Dynamic membership rules**. The rule builder supports up to five expressions. To add more than five expressions, you must use the text box.
 
-   ![Screenshot showing how to add a membership rule for a dynamic group](./media/groups-create-rule/update-dynamic-group-rule.png)
+   :::image type="content" source="./media/groups-create-rule/update-dynamic-group-rule.png" alt-text="Screenshot showing how to add a membership rule for a dynamic group.":::
 
 1. To see the custom extension properties available for your membership rule:
    1. Select **Get custom extension properties**
@@ -84,7 +88,7 @@ When a new Microsoft 365 group is created, a welcome email notification is sent 
 
 You can see the dynamic rule processing status and the last membership change date on the **Overview** page for the group.
   
-  ![Diagram of dynamic group status](./media/groups-create-rule/group-status.png)
+  :::image type="content" source="./media/groups-create-rule/group-status.png" alt-text="Diagram of dynamic group status.":::
 
 The following status messages can be shown for **Dynamic rule processing** status:
 
@@ -105,7 +109,7 @@ The following status messages can be shown for **Last membership change** status
 
 If an error occurs while processing the membership rule for a specific group, an alert is shown on the top of the **Overview page** for the group. If no pending dynamic membership updates can be processed for all the groups within the organization for more than 24 hours, an alert is shown on the top of **All groups**.
 
-![Screenshot showing how to process error message alerts](./media/groups-create-rule/processing-error.png)
+:::image type="content" source="./media/groups-create-rule/processing-error.png" alt-text="Screenshot showing how to process error message alerts.":::
 
 ## Next steps
 
