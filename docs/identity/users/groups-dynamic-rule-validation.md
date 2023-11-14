@@ -9,7 +9,7 @@ ms.service: active-directory
 ms.subservice: enterprise-users
 ms.workload: identity
 ms.topic: how-to
-ms.date: 06/24/2022
+ms.date: 11/14/2023
 ms.author: barclayn
 ms.reviewer: yukarppa
 ms.custom: it-pro
@@ -26,27 +26,28 @@ To evaluate the dynamic group rule membership feature, the administrator must ha
 > [!TIP]
 > Assigning one of required roles via indirect group membership is not yet supported.
 
-## Step-by-step walk-through
+## To validate a dynamic group membership rule
 
 To get started, sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
 
-Browse to **Identity** > **Groups** > **All groups**. Select an existing dynamic group or create a new dynamic group and select **Dynamic membership rules**. You can then see the **Validate Rules** tab.
+1. Browse to **Identity** > **Groups** > **All groups**. 
+2. Select an existing dynamic group or create a new dynamic group and select **Dynamic membership rules**. You can then see the **Validate Rules** tab.
 
-![Find the Validate rules tab and start with an existing rule](./media/groups-dynamic-rule-validation/validate-tab.png)
+   :::image type="content" source="./media/groups-dynamic-rule-validation/validate-tab.png" alt-text="Find the Validate rules tab and start with an existing rule.":::
 
-On **Validate rules** tab, you can select users to validate their memberships. 20 users or devices can be selected at one time.
+3. On the **Validate rules** tab, select users to validate their memberships. 20 users or devices can be selected at one time.
 
-![Add users to validate the existing rule against](./media/groups-dynamic-rule-validation/validate-tab-add-users.png)
+   :::image type="content" source="./media/groups-dynamic-rule-validation/validate-tab-add-users.png" alt-text="Add users to validate the existing rule against.":::
 
-After you select users or devices from the picker, and **Select**, validation will automatically start and validation results will appear.
+4. After you select users or devices from the picker, and then **Select**, validation automatically starts and validation results appear.
 
-![View the results of the rule validation](./media/groups-dynamic-rule-validation/validate-tab-results.png)
+   :::image type="content" source="./media/groups-dynamic-rule-validation/validate-tab-results.png" alt-text="View the results of the rule validation.":::
 
-The results tell whether a user is a member of the group or not. If the rule isn't valid or there's a network issue, the result will show as **Unknown**. If the value is **Unknown**, the detailed error message will describe the issue and actions needed.
+5. The results show whether a user is a member of the group or not. If the rule isn't valid or if there's a network issue, the results show as **Unknown**. If the value is **Unknown**, the detailed error message describes the issue and actions needed.
 
-![View the details of the results of the rule validation](./media/groups-dynamic-rule-validation/validate-tab-view-details.png)
+   :::image type="content" source="./media/groups-dynamic-rule-validation/validate-tab-view-details.png" alt-text="View the details of the results of the rule validation.":::
 
-You can modify the rule and validation of memberships will be triggered. To see why user isn't a member of the group, select **View details** and verification details will show the result of each expression composing the rule. Select **OK** to exit.
+6. You can modify the rule to trigger a new validation of memberships. To see why user isn't a member of the group, select **View details** and verification details show the result of each expression composing the rule. Then select **OK** to exit.
 
 ## Next steps
 

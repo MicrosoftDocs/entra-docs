@@ -11,7 +11,7 @@ ms.service: active-directory
 ms.subservice: enterprise-users
 ms.workload: identity
 ms.topic: how-to
-ms.date: 09/08/2023
+ms.date: 11/14/2023
 ms.author: barclayn                   
 ms.reviewer: jodah
 ms.custom: it-pro, has-azure-ad-ps-ref
@@ -37,6 +37,8 @@ Currently, only one expiration policy can be configured for all Microsoft 365 gr
 
 For information on how to download and install the Azure AD PowerShell cmdlets, see [Azure Active Directory PowerShell for Graph 2.0.0.137](https://www.powershellgallery.com/packages/AzureADPreview/2.0.0.137).
 
+[!INCLUDE [Azure AD PowerShell migration](../../includes/aad-powershell-migration-include.md)]
+
 ## Activity-based automatic renewal
 
 With Microsoft Entra intelligence, groups are now automatically renewed based on whether they have been recently used. This feature eliminates the need for manual action by group owners, because it's based on user activity in groups across Microsoft 365 services like Outlook, SharePoint, Teams, or Yammer. For example, if an owner or a group member does something like upload a document to SharePoint, visit a Teams channel, send an email to the group in Outlook, or view a post in Yammer, the group is automatically renewed around 35 days before the group expires and the owner does not get any renewal notifications. 
@@ -56,7 +58,7 @@ The following user actions cause automatic group renewal:
 
 Administrators can get a list of automatically renewed groups from the activity audit logs in Microsoft Entra ID.
 
-![Automatic renewal of groups based on activity](./media/groups-lifecycle/audit-logs-autorenew-group.png)
+:::image type="content" source="./media/groups-lifecycle/audit-logs-autorenew-group.png" alt-text="Screenshot of automatic renewal of groups based on activity.":::
 
 ## Roles and permissions
 
@@ -75,7 +77,7 @@ For more information on permissions to restore a deleted group, see [Restore a d
 1. Select Microsoft Entra ID.
 1. Select **Groups**, **All groups** then select **Expiration** to open the expiration settings.
   
-   ![Expiration settings for groups](./media/groups-lifecycle/expiration-settings.png)
+   :::image type="content" source="./media/groups-lifecycle/expiration-settings.png" alt-text="Screenshot of expiration settings for groups.":::
 
 3. On the **Expiration** page, you can:
 
@@ -98,7 +100,7 @@ For more information on permissions to restore a deleted group, see [Restore a d
 
 If groups are not automatically renewed, email notifications such as this one are sent to the Microsoft 365 group owners 30 days, 15 days, and 1 day prior to expiration of the group. The language of the email is determined by groups owner's preferred language or Microsoft Entra language setting. If the group owner has defined a preferred language, or multiple owners have the same preferred language, then that language is used. For all other cases, Microsoft Entra language setting is used.
 
-![Expiration email notifications](./media/groups-lifecycle/expiration-notification.png)
+:::image type="content" source="./media/groups-lifecycle/expiration-notification.png" alt-text="Screenshot of expiration email notifications.":::
 
 From the **Renew group** notification email, group owners can directly access the group details page in the [Access Panel](https://account.activedirectory.windowsazure.com/r#/applications). There, the users can get more information about the group such as its description, when it was last renewed, when it will expire, and also the ability to renew the group. The group details page now also includes links to the Microsoft 365 group resources, so that the group owner can conveniently view the content and activity in their group.
 
@@ -107,7 +109,7 @@ From the **Renew group** notification email, group owners can directly access th
 
 When a group expires, the group is deleted one day after the expiration date. An email notification such as this one is sent to the Microsoft 365 group owners informing them about the expiration and subsequent deletion of their Microsoft 365 group.
 
-![Group deletion email notifications](./media/groups-lifecycle/deletion-notification.png)
+:::image type="content" source="./media/groups-lifecycle/deletion-notification.png" alt-text="Screenshot of group deletion email notifications.":::
 
 The group can be restored within 30 days of its deletion by selecting **Restore group** or by using PowerShell cmdlets, as described in [Restore a deleted Microsoft 365 group in Microsoft Entra ID](groups-restore-deleted.md). Please note that the 30-day group restoration period is not customizable.
 
