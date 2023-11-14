@@ -1873,17 +1873,3 @@ For more information on how to use this feature, see: [Dynamic membership rule f
  
 
 ---
-
-## May 2022
- 
-### General Availability: Tenant-based service outage notifications
-
-**Type:** Plan for change  
-**Service category:** Other  
-**Product capability:** Platform  
-
- 
-Azure Service Health will soon support service outage notifications to Tenant Admins for Azure Active Directory issues soon. These outages will also appear on the Azure portal overview page with appropriate links to Azure Service Health. Outage events are able to be seen by built-in Tenant Administrator Roles. We continue to send outage notifications to subscriptions within a tenant for transition. More information is available when this capability is released. The expected release is for June 2022.
- 
----
- 
