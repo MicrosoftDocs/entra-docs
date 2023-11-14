@@ -51,8 +51,8 @@ Use the following instructions to learn how to enhance monitoring of inactive gu
 
 1. The inactive days are calculated based on last sign in date if the user has signed in atleast once. For users who have never signed in, the inactive days are calculated based on creation date.
 
-   Note: The report with guest insights can be downloaded using "Download all data". Each action to download may take some time depending on the count of guest users and enables the download for upto 1 Million guest users.
-
+> [!NOTE]
+> The report with guest insights can be downloaded using "Download all data". Each action to download may take some time depending on the count of guest users and enables the download for upto 1 Million guest users.
 
 ## Create a multi-stage review for guests to self-attest continued access
 
