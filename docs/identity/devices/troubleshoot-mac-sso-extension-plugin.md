@@ -167,7 +167,7 @@ Locate the following entry in the logs and check if it is marked approved, or if
 
 ##### Clear macOS TLS Inspection Cache
 
-If you had issues with associated domains and have allow-listed domains in your on-device TLS inspection tool, then it might take some time for Apple's associated domain validation cache to be invalidated. Unfortunately, there're no deterministic steps that re-trigger associated domain re-validation on all machines, but there're a few things that can be attempted.
+If you have issues with associated domains and have allow-listed domains in your on-device TLS inspection tool, then it may take some time for Apple's associated domain validation cache to be invalidated. Unfortunately, there're no deterministic steps that re-trigger associated domain re-validation on all machines, but there're a few things that can be attempted.
 
 You can run following commands to reset the device's cache:
 
