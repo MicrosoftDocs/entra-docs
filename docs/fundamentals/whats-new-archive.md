@@ -1890,32 +1890,7 @@ For more information on how to use this feature, see: [Dynamic membership rule f
 Azure Service Health will soon support service outage notifications to Tenant Admins for Azure Active Directory issues soon. These outages will also appear on the Azure portal overview page with appropriate links to Azure Service Health. Outage events are able to be seen by built-in Tenant Administrator Roles. We continue to send outage notifications to subscriptions within a tenant for transition. More information is available when this capability is released. The expected release is for June 2022.
  
 ---
-
-
-
-### New Federated Apps available in Azure AD Application gallery - May 2022
-
-**Type:** New feature  
-**Service category:** Enterprise Apps  
-**Product capability:** 3rd Party Integration  
  
-
-
-In May 2022 we've added the following 25 new applications in our App gallery with Federation support:
-
-[UserZoom](~/identity/saas-apps/userzoom-tutorial.md), [AMX Mobile](https://www.amxsolutions.co.uk/), [i-Sight](~/identity/saas-apps/isight-tutorial.md), Method InSight, [Chronus SAML](~/identity/saas-apps/chronus-saml-tutorial.md), [Attendant Console for Microsoft Teams](https://attendant.anywhere365.io/), [Skopenow](~/identity/saas-apps/skopenow-tutorial.md), [Fidelity PlanViewer](~/identity/saas-apps/fidelity-planviewer-tutorial.md), [Lyve Cloud](~/identity/saas-apps/lyve-cloud-tutorial.md), [Framer](~/identity/saas-apps/framer-tutorial.md), [Authomize](~/identity/saas-apps/authomize-tutorial.md), [gamba!](~/identity/saas-apps/gamba-tutorial.md), [Datto File Protection Single Sign On](~/identity/saas-apps/datto-file-protection-tutorial.md), [LONEALERT](https://portal.lonealert.co.uk/auth/azure/saml/signin), [Payfactors](https://pf.payfactors.com/client/auth/login), [deBroome Brand Portal](~/identity/saas-apps/debroome-brand-portal-tutorial.md), [TeamSlide](~/identity/saas-apps/teamslide-tutorial.md), [Sensera Systems](https://sitecloud.senserasystems.com/), [YEAP](https://prismaonline.propay.be/logon/login.aspx), [Monaca Education](https://monaca.education/ja/signup), [Personify Inc](https://personifyinc.com/login), [Phenom TXM](~/identity/saas-apps/phenom-txm-tutorial.md), [Forcepoint Cloud Security Gateway - User Authentication](~/identity/saas-apps/forcepoint-cloud-security-gateway-tutorial.md), [GoalQuest](~/identity/saas-apps/goalquest-tutorial.md), [OpenForms](https://login.openforms.com/Login).
-
-You can also find the documentation of all the applications from here https://aka.ms/AppsTutorial,
-
-For listing your application in the Azure AD app gallery, please read the details here https://aka.ms/AzureADAppRequest
-
-
-
- 
-
----
- 
-
 ### General Availability – My Apps users can make apps from URLs (add sites)
 
 **Type:** New feature  
