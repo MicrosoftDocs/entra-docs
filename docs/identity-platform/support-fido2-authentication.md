@@ -8,7 +8,7 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: reference
 ms.workload: identity
-ms.date: 1/29/2021
+ms.date: 11/14/2023
 ms.author: henrymbugua
 ms.reviewer: knicholasa
 ms.custom: aaddev
@@ -49,11 +49,13 @@ The recommended options for implementing authentication are, in order:
 
 ### Mobile
 
-As of February 2021, FIDO2 is not currently supported for native iOS or Android apps, but it is in development.
+FIDO2 is supported for native iOS and macOS apps that use MSAL with either ASWebAuthenticationSession or broker integration. Broker is shipped in Microsoft Authenticator on iOS, and Microsoft Intune Company Portal on macOS.
 
-To prepare applications for its availability, and as a general best practice, iOS and Android applications should use MSAL with its default configuration of using the system web browser.
+Make sure that your network proxy doesn't block the associated domain validation by Apple. FIDO2 authentication requires Apple's associated domain validation to succeed, which requires certain Apple domains to be excluded from network proxies. For more information, see [Use Apple products on enterprise networks](https://support.apple.com/HT210060).
 
-If you are not using MSAL, you should still use the system web browser for authentication. Features such as single sign-on and Conditional Access rely on a shared web surface provided by the system web browser. This means using [Chrome Custom Tabs](https://developer.chrome.com/docs/multidevice/android/customtabs/) (Android) or [Authenticating a User Through a Web Service | Apple Developer Documentation](https://developer.apple.com/documentation/authenticationservices/authenticating_a_user_through_a_web_service) (iOS).
+FIDO2 support for native Android apps is currently in development.
+
+If you aren't using MSAL, you should still use the system web browser for authentication. Features such as single sign-on and Conditional Access rely on a shared web surface provided by the system web browser. This means using [Chrome Custom Tabs](https://developer.chrome.com/docs/multidevice/android/customtabs/) (Android) or [Authenticating a User Through a Web Service | Apple Developer Documentation](https://developer.apple.com/documentation/authenticationservices/authenticating_a_user_through_a_web_service) (iOS).
 
 ### Web and single-page apps
 
