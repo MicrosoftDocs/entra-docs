@@ -181,7 +181,7 @@ Re-test the SSO extension configuration after resetting the cache.
 
 Sometimes, this command is insufficient and doesn't fully reset the cache. In these cases, you can attempt the following:
 
-* Remove or move Intune Company Portal app to the Trash, then restart your device, then re-install Intune Company Portal app after restart. 
+* Remove or move the Intune Company Portal app to the Trash, then restart your device. After the restart is complete, you can try re-install the Company Portal app. 
 * Re-enroll your device.
 
 If none of above methods resolve your issue, there might be something else in your environment that could be blocking associated domain validation. If that happens, please reach out to Apple support for further troubleshooting. 
