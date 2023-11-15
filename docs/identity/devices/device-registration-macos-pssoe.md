@@ -79,6 +79,8 @@ Although registration with Automated Device Enrollment during an out-of-the-box 
     - **Touch ID**: Use your device's touch ID capability. The device selects your secure enclave key and wait for your device to confirm it is in compliance.
     - **Use Password**: You're prompted to register your device with Microsoft Entra ID. Enter your sign-in credentials and select **Sign in**. As MFA is required as part of this sign in flow, open your **Authenticator app** (recommended) or use another verification method to complete the sign in flow.
 
+    :::image type="content" source="media/device-registration-macos-pssoe/pssoe-register-window.png" alt-text="Screenshot of the profiles window":::
+
 1. You can now use PSSO to access Microsoft app resources.
 
 ### [Smartcard](#tab/smartcard)
