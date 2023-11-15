@@ -75,7 +75,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 1. Perform the following step, if you wish to configure the application in **SP** initiated mode:
 
-	In the **Sign-on URL** text box, type a URL using the following pattern:
+	In the **Sign-on URL** text box, type the URL:
     `https://login.controlpay.com/saml2/authenticate/microsoft`
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
