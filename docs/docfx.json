@@ -44,7 +44,7 @@
     "externalReference": [],
     "globalMetadata": {
       "brand": "entra",
-      "uhfHeaderId": "MSDocsHeader-Entra",
+      "uhfHeaderId": "entra",
       "breadcrumb_path": "/entra/breadcrumb/toc.json",
       "extendBreadcrumb": false,
       "feedback_system": "Standard",
@@ -53,15 +53,87 @@
       "feedback_help_link_type": "get-help-at-qna",
       "searchScope": "Microsoft Entra"
     },
-    "no-loc": {
-      "includes/policy/**/*.md": "[audit, deny, modify, disabled, auditifnotexists, deployifnotexists]"
-    },
     "fileMetadata": {
       "feedback_product_url": {
         "docs/identity/**/*.md": "https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789",
         "/external-id/*.md": "/entra/identity-platform/developer-support-help-options",
         "/identity-platform/*.md": "/entra/identity-platform/developer-support-help-options",
         "/workload-id/*.md": "https://aka.ms/microsoftentraexternalid"
+      },
+      "learn_banner_products": {
+        "docs/**/*.md": [
+          "entra"
+        ]
+      },
+      "featureFlags": {
+        "docs/**/*.md": [
+          "show_learn_banner"
+        ]
+      },
+      "manager": {
+        "architecture/*.md": "martincoetzer",
+        "architecture/*.yml": "martincoetzer",
+        "external-id/**/*.md": "CelesteDG",
+        "external-id/**/*.yml": "CelesteDG",
+        "fundamentals/*.md": "amycolannino",
+        "fundamentals/*.yml": "amycolannino",
+        "global-secure-access/*.md": "amycolannino",
+        "global-secure-access/*.yml": "amycolannino",
+        "id-governance/**/*.md": "amycolannino",
+        "id-governance/**/*.yml": "amycolannino",
+        "id-protection/*.md": "amycolannino",
+        "id-protection/*.yml": "amycolannino",
+        "identity/**/*.md": "amycolannino",
+        "identity/**/*.yml": "amycolannino",
+        "identity/saas-apps/*.md": "CelesteDG",
+        "identity/saas-apps/*.yml": "CelesteDG",
+        "identity/enterprise-apps/*.md": "CelesteDG",
+        "identity/enterprise-apps/*.yml": "CelesteDG",
+        "identity-platform/**/*.md": "CelesteDG",
+        "identity-platform/**/*.yml": "CelesteDG",
+        "permissions-management/*.md": "amycolannino",
+        "permissions-management/*.yml": "amycolannino",
+        "standards/**/*.md": "martincoetzer",
+        "standards/**/*.yml": "martincoetzer",
+        "verified-id/*.md": "amycolannino",
+        "verified-id/*.yml": "amycolannino",
+        "workload-id/**/*.md": "CelesteDG",
+        "workload-id/**/*.yml": "CelesteDG"
+      },
+      "titleSuffix": {
+        "*.md": "Microsoft Entra",
+        "architecture/*.md": "Microsoft Entra",
+        "architecture/*.yml": "Microsoft Entra",
+        "external-id/*.md": "Microsoft Entra External ID",
+        "external-id/*.yml": "Microsoft Entra External ID",
+        "external-id/customers/*.md": "Microsoft Entra External ID",
+        "external-id/customers/*.yml": "Microsoft Entra External ID",
+        "fundamentals/*.md": "Microsoft Entra",
+        "fundamentals/*.yml": "Microsoft Entra",
+        "global-secure-access/*.md": "Global Secure Access",
+        "global-secure-access/*.yml": "Global Secure Access",
+        "id-governance/*.md": "Microsoft Entra ID Governance",
+        "id-governance/*.yml": "Microsoft Entra ID Governance",
+        "id-governance/privileged-identity-management/*.md": "Microsoft Entra ID Governance",
+        "id-governance/privileged-identity-management/*.yml": "Microsoft Entra ID Governance",
+        "id-protection/*.md": "Microsoft Entra ID Protection",
+        "id-protection/*.yml": "Microsoft Entra ID Protection",
+        "entra/identity/*.yml": "Microsoft Entra ID",
+        "entra/identity/**/*.md": "Microsoft Entra ID",
+        "entra/identity/**/*.yml": "Microsoft Entra ID",
+        "identity-platform/*.md": "Microsoft identity platform",
+        "identity-platform/*.yml": "Microsoft identity platform",
+        "permissions-management/*.md": "Microsoft Entra Permissions Management",
+        "permissions-management/*.yml": "Microsoft Entra Permissions Management",
+        "standards/*.md": "Microsoft Entra",
+        "standards/*.yml": "Microsoft Entra",
+        "verified-id/*.md": "Microsoft Entra Verified ID",
+        "verified-id/*.yml": "Microsoft Entra Verified ID",
+        "workload-id/*.md": "Microsoft Entra Workload ID",
+        "workload-id/*.yml": "Microsoft Entra Workload ID"
+      },
+      "no-loc": {
+        "includes/policy/**/*.md": "[audit, deny, modify, disabled, auditifnotexists, deployifnotexists]"
       }
     }, 
     "template": [
@@ -71,7 +143,6 @@
     "dest": "entra",
     "recommendations": true,
     "recommendation_types": ["Training", "Certification"],
-    "uhfHeaderId": "entra",
     "contributors_to_exclude": [
       "alexbuckgit",
       "atookey",
@@ -131,78 +202,7 @@
       "v-shils",
       "v-shmck",
       "v-thepet"
-    ],
-    "featureFlags": {
-      "docs/**/*.md": [
-        "show_learn_banner"
-        ]
-    },
-    "learn_banner_products": {
-      "docs/**/*.md": [
-        "entra"
-        ]
-      },
-    "manager": {
-      "architecture/*.md": "martincoetzer",
-      "architecture/*.yml": "martincoetzer",
-      "external-id/**/*.md": "CelesteDG",
-      "external-id/**/*.yml": "CelesteDG",
-      "fundamentals/*.md": "amycolannino",
-      "fundamentals/*.yml": "amycolannino",
-      "global-secure-access/*.md": "amycolannino",
-      "global-secure-access/*.yml": "amycolannino",
-      "id-governance/**/*.md": "amycolannino",
-      "id-governance/**/*.yml": "amycolannino",
-      "id-protection/*.md": "amycolannino",
-      "id-protection/*.yml": "amycolannino",
-      "identity/**/*.md": "amycolannino",
-      "identity/**/*.yml": "amycolannino",
-      "identity/saas-apps/*.md": "CelesteDG",
-      "identity/saas-apps/*.yml": "CelesteDG",
-      "identity/enterprise-apps/*.md": "CelesteDG",
-      "identity/enterprise-apps/*.yml": "CelesteDG",
-      "identity-platform/**/*.md": "CelesteDG",
-      "identity-platform/**/*.yml": "CelesteDG",
-      "permissions-management/*.md": "amycolannino",
-      "permissions-management/*.yml": "amycolannino",
-      "standards/**/*.md": "martincoetzer",
-      "standards/**/*.yml": "martincoetzer",
-      "verified-id/*.md": "amycolannino",
-      "verified-id/*.yml": "amycolannino",
-      "workload-id/**/*.md": "CelesteDG",
-      "workload-id/**/*.yml": "CelesteDG"
-    },
-    "titleSuffix": {
-      "*.md": "Microsoft Entra",
-      "architecture/*.md": "Microsoft Entra",
-      "architecture/*.yml": "Microsoft Entra",
-      "external-id/*.md": "Microsoft Entra External ID",
-      "external-id/*.yml": "Microsoft Entra External ID",
-      "external-id/customers/*.md": "Microsoft Entra External ID",
-      "external-id/customers/*.yml": "Microsoft Entra External ID",
-      "fundamentals/*.md": "Microsoft Entra",
-      "fundamentals/*.yml": "Microsoft Entra",
-      "docs/global-secure-access/*.md": "Global Secure Access",
-      "docs/global-secure-access/*.yml": "Global Secure Access",
-      "id-governance/*.md": "Microsoft Entra ID Governance",
-      "id-governance/*.yml": "Microsoft Entra ID Governance",
-      "id-governance/privileged-identity-management/*.md": "Microsoft Entra ID Governance",
-      "id-governance/privileged-identity-management/*.yml": "Microsoft Entra ID Governance",
-      "id-protection/*.md": "Microsoft Entra ID Protection",
-      "id-protection/*.yml": "Microsoft Entra ID Protection",
-      "entra/identity/*.yml": "Microsoft Entra ID",
-      "entra/identity/**/*.md": "Microsoft Entra ID",
-      "entra/identity/**/*.yml": "Microsoft Entra ID",
-      "identity-platform/*.md": "Microsoft identity platform",
-      "identity-platform/*.yml": "Microsoft identity platform",
-      "permissions-management/*.md": "Microsoft Entra Permissions Management",
-      "permissions-management/*.yml": "Microsoft Entra Permissions Management",
-      "standards/*.md": "Microsoft Entra",
-      "standards/*.yml": "Microsoft Entra",
-      "verified-id/*.md": "Microsoft Entra Verified ID",
-      "verified-id/*.yml": "Microsoft Entra Verified ID",
-      "workload-id/*.md": "Microsoft Entra Workload ID",
-      "workload-id/*.yml": "Microsoft Entra Workload ID"
+    ]
     },
     "rules": {
       "sensitive-language-wl": {
@@ -213,4 +213,4 @@
       }
     }
   }
-}
+
