@@ -34,6 +34,18 @@ Microsoft Entra ID (previously known as Azure AD) receives improvements on an on
 
 This page updates monthly, so revisit it regularly. If you're looking for items older than six months, you can find them in [Archive for What's new in Azure Active Directory](whats-new-archive.md).
 
+## November 2023
+
+### Public Preview - Blank Slate 
+
+**Type:** New feature   
+**Service category:**                      
+**Product capability:**             
+
+
+
+---
+
 
 ## October 2023
 
