@@ -40,7 +40,7 @@ landingContent:
           - text: Explore the features of Permissions Management
             url: https://go.microsoft.com/fwlink/?linkid=2252361
   # Card
-  - title: Get Started
+  - title: Get started
     linkLists:
       - linkListType: get-started
         links:
