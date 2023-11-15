@@ -157,6 +157,11 @@
         href: report-create-custom-report.md
       - name: View and download the Permissions analytics report
         href: product-permissions-analytics-reports.md
+  - name: APIs      
+    expanded: false
+    items:
+    - name: Discover, remediate, and monitor
+      href: https://go.microsoft.com/fwlink/?linkid=2252615
   - name: Troubleshoot
     expanded: false
     items:
