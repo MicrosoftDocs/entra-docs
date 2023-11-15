@@ -25,7 +25,7 @@ Depending on how your API client authenticates with Microsoft Entra ID, you can 
 * [Configure a managed identity](#configure-a-managed-identity): Follow these instructions if your API client plans to use a Microsoft Entra [managed identity](~/identity/managed-identities-azure-resources/overview.md).
 
 ## Configure a service principal 
-This configuration registers an app in Microsoft Entra ID that represents the external API client and grants it permission to invoke the inbound provisioning API. The service principal client id and client secret can be used in the OAuth client credentials grant flow. 
+This configuration registers an app in Microsoft Entra ID that represents the external API client and grants it permission to invoke the inbound provisioning API. The service principal client ID and client secret can be used in the OAuth client credentials grant flow. 
 
 1. Log in to Microsoft Entra admin center (https://entra.microsoft.com) with at least [Application Administrator](https://go.microsoft.com/fwlink/?linkid=2247823) login credentials. 
 1. Browse to **Microsoft Entra ID** -> **Applications** -> **App registrations**.
