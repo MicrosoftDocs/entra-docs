@@ -36,6 +36,8 @@
         href: how-to-configure-okta-as-an-identity-provider.md 
       - name: Configure the ServiceNow app for Microsoft Entra Permissions Management 
         href: how-to-configure-servicenow-application.md
+      - name: Permissions Management for Defender for Cloud
+        href: permissions-management-for-defender-for-cloud.md
     - name: View information about your Authorization Systems
       expanded: false
       items:

@@ -8,8 +8,9 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: ciam
 ms.topic: how-to
-ms.date: 09/04/2023
+ms.date: 11/07/2023
 ms.author: mimart
+ms.reviewer: kengaderdus
 ms.custom: it-pro
 
 #Customer intent: As a dev, devops, or it admin, I want to
@@ -71,7 +72,9 @@ Follow these steps to create a user flow a customer can use to sign in or sign u
 
 1. Select **Create** to create the user flow.
 
-##  Disable sign-up in a sign-up and sign-in user flow
+[//]: # (For Disable sign-up in a sign-up and sign-in user flow, ask kengaderdus)
+
+## Disable sign-up in a sign-up and sign-in user flow
 
 If you want your customer users to only sign in and not sign up, you can disable sign-up experience in your user flow by using [Microsoft Graph API](microsoft-graph-operations.md). You need to know the ID of the user flow that you want whose sign-up you want to disable. You can't read the user flow ID from the Microsoft Entra Admin center, but you can retrieve it via Microsoft Graph API if you know the app associated with it.
 
@@ -87,15 +90,20 @@ If you want your customer users to only sign in and not sign up, you can disable
 
     **Example**:
     
-    ```http
-    PATCH https://graph.microsoft.com/beta/identity/authenticationEventsFlows/{user-flow-id}    
-    {    
-        "@odata.type": "#microsoft.graph.externalUsersSelfServiceSignUpEventsFlow",    
-        "onInteractiveAuthFlowStart": {    
-            "@odata.type": "#microsoft.graph.onInteractiveAuthFlowStartExternalUsersSelfServiceSignUp",    
-            "isSignUpAllowed": "false"    
-      }    
-    }
+   ```http
+   PATCH https://graph.microsoft.com/beta/identity/authenticationEventsFlows/{user-flow-id} 
+   ```   
+
+    **Request body**
+
+    ```json
+        {    
+            "@odata.type": "#microsoft.graph.externalUsersSelfServiceSignUpEventsFlow",    
+            "onInteractiveAuthFlowStart": {    
+                "@odata.type": "#microsoft.graph.onInteractiveAuthFlowStartExternalUsersSelfServiceSignUp",    
+                "isSignUpAllowed": "false"    
+          }    
+        }
     ```
 
     Replace `{user-flow-id}` with the user flow ID that you obtained in the previous step. Notice the `isSignUpAllowed` parameter is set to *false*. To re-enable sign-up, make a call to the Microsoft Graph API endpoint, but set the `isSignUpAllowed` parameter to *true*.   
