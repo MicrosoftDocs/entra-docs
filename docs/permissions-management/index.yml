@@ -83,6 +83,8 @@ landingContent:
             url: how-to-configure-aws-iam.md 
           - text: Okta identity provider   
             url: how-to-configure-okta-as-an-identity-provider.md
+          - text: ServiceNow app
+            url: how-to-configure-servicenow-application.md
   # Card
   - title: Reference 
     linkLists:
