@@ -103,7 +103,7 @@ TODO: Add steps
 1. If your local password differs to your Microsoft Entra ID password, an **Authentication Required** popup appears on the top right of the screen. Hover over the banner and select **Sign-in**.
 1. When a **Microsoft Entra** window appears, enter your Microsoft Entra ID password and select **Sign In**. <!--Insert recording vid 1m21sec screenshot-->
 
-    :::image type="content" source="media/device-join-macos-pssoe-out-of-box/psso-entra-acct-password-prompt.png" alt-text="Screenshot of sign in into a node web app.":::
+    :::image type="content" source="media/device-join-macos-pssoe-out-of-box/psso-entra-acct-password-prompt.png" alt-text="Screenshot of a Microsoft Entra sign in window.":::
 
 1. After unlocking the Mac, you can now use PSSO to access Microsoft app resources. From this point on, your old password doesn't work because PSSO is enabled for your device.
 
