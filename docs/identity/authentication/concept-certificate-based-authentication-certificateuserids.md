@@ -6,7 +6,7 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 01/29/2023
+ms.date: 11/15/2023
 
 ms.author: justinha
 author: justinha
@@ -19,7 +19,7 @@ ms.custom: has-adal-ref, has-azure-ad-ps-ref
 
 # Certificate user IDs 
 
-Users in Microsoft Entra ID can have a multivalued attribute named **certificateUserIds**. The attribute allows up to four values, and each value can be of 120-character length. It can store any value and doesn't require email ID format. It can store non-routable User Principal Names (UPNs) like _bob@woodgrove_ or _bob@local_.
+Users in Microsoft Entra ID can have a multivalued attribute named **certificateUserIds**. The attribute allows up to five values, and each value can be of 1o24-character length. It can store any value and doesn't require email ID format. It can store non-routable User Principal Names (UPNs) like _bob@woodgrove_ or _bob@local_.
  
 ## Supported patterns for certificate user IDs
  
@@ -27,11 +27,14 @@ The values stored in **certificateUserIds** should be in the format described in
 
 |Certificate mapping Field | Examples of values in CertificateUserIds |
 |--------------------------|--------------------------------------|
-|PrincipalName | “X509:\<PN>bob@woodgrove.com” |
-|PrincipalName | “X509:\<PN>bob@woodgrove”     | 
-|RFC822Name	| “X509:\<RFC822>user@woodgrove.com” |
-|X509SKI | “X509:\<SKI>123456789abcdef”|
-|X509SHA1PublicKey |“X509:\<SHA1-PUKEY>123456789abcdef” |
+|PrincipalName | `X509:\<PN>bob@woodgrove.com` |
+|PrincipalName | `X509:\<PN>bob@woodgrove`   | 
+|RFC822Name	| `X509:\<RFC822>user@woodgrove.com` |
+|IssuerAndSubject | `X509:\<I> DC=com,DC=contoso,CN=CONTOSO-DC-CA\<S> DC=com,DC=contoso,OU=UserAccounts,CN=mfatest` |
+|Subject | `X509:\<S> DC=com,DC=contoso,OU=UserAccounts,CN=mfatest`  |
+|X509SKI | `X509:\<SKI>123456789abcdef` |
+|X509SHA1PublicKey |`X509:\<SHA1-PUKEY>123456789abcdef` |
+|IssuerAndSerialNumber | `X509:\<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA\<SR> b24134139f069b49997212a86ba0ef48` <br> To get the correct value for serial number, run this command and store the value shown in CertificateUserIds:<br> **Syntax**:<br> `Certutil –dump –v [~certificate path~] >> [~dumpFile path~]` <br> **Example**: <br> `certutil -dump -v firstusercert.cer >> firstCertDump.txt` |
 
 ## Roles to update certificateUserIds
 
