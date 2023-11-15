@@ -29,7 +29,7 @@ We understand that implementing Identity Governance is a journey, and you may be
 ## Data displayed on the dashboard 
 You can access the dashboard by logging into the Microsoft Entra admin center and selecting the "Dashboard" blade under "Identity Governance". 
 The dashboard experience is made up of the following main components:
-* **Glanceable cards**: These cards provide high level insights into what’s happening in your tenant from the perspective of employee, guest, privileged identities, and application access governance. The navigation links in the glanceable cards point to Identity Governance quick start guides and tutorials.
+* **Glanceable cards**: These cards provide high level insights into what’s happening in your tenant from the perspective of workforce users, guest users, privileged identities, and application access governance. The navigation links in the glanceable cards point to Identity Governance quick start guides and tutorials.
 * **Identity Governance status**: This visual shows your identity landscape in terms of number of employees, guests, business apps, groups, and privileged roles. It then highlights the various Microsoft Identity Governance feature sets configured to better govern these entities. If a feature is not configured, you can use the "Configure Now" option to open the configuration landing blade for that feature. 
 * **Tutorials**: This section contains tutorials of popular Identity governance use cases for quick access.
 * **Highlights**: Use the content in this section to stay informed about the latest Identity Governance features and learn how customers are using Identity Governance to improve their security and compliance posture. 

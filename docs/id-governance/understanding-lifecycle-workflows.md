@@ -137,9 +137,9 @@ The trigger of a workflow defines when a scheduled workflow runs for users in sc
 
 The time-based attribute can be either one of two values, which are automatically chosen based on the template in which you select during the creation of your workflow. The three values can be:
 
-- employeeHireDate: If the template is a joiner workflow
+- employeeHireDate: If the template is a joiner workflow for an employee
 - createdDateTime: if the template is a joiner workflow designed to run either on hire or post onboarding
-- employeeLeaveDateTime: If the template is a leaver workflow
+- employeeLeaveDateTime: If the template is a leaver workflow for an employee
 
 The values employeeHireDate and employeeLeaveDateTime must be set within Microsoft Entra ID for users. For more information on this process, see [How to synchronize attributes for Lifecycle workflows](how-to-lifecycle-workflow-sync-attributes.md)
 

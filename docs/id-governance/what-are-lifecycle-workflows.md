@@ -42,7 +42,7 @@ Anyone who wants to modernize an identity lifecycle management process
 - That when users join the organization, they're ready to go on day one. They have the correct access to information, group memberships, and applications that they need.
 - That users who are no longer tied to the company for various reasons (termination, separation, leave of absence, or retirement) have their access revoked in a timely way.
 - That the process for providing or revoking access isn't overly burdensome or time consuming for administrators.
-- That administrators and employees can easily troubleshoot problems, and that logging is sufficient to help with troubleshooting, auditing, and compliance.
+- That administrators and other authorized users can easily troubleshoot problems, and that logging is sufficient to help with troubleshooting, auditing, and compliance.
 
 Key reasons to use lifecycle workflows include:
 

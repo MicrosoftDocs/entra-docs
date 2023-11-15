@@ -320,7 +320,7 @@ For example, to access results for a Windows AD-managed group, use this [PowerSh
 
 ## Plan access reviews for applications
 
-When you review access to an application, you're reviewing the access for employees and external identities to the information and data within the application. Choose to review an application when you need to know who has access to a specific application, instead of an access package or a group.
+When you review everyone assigned to application, you're reviewing the users, including employees and external identities, who can authenticate to that application using their Entra ID identity. Choose to review an application when you need to know who has access to a specific application, instead of an access package or a group.
 
 Plan reviews for applications in the following scenarios when:
 
@@ -329,7 +329,7 @@ Plan reviews for applications in the following scenarios when:
 * The application has specific compliance requirements to which you must attest.
 * You suspect inappropriate access.
 
-To create access reviews for an application, set the **User assignment required?** option to **Yes**. If it's set to **No**, all users in your directory, including external identities, can access the application and you can't review access to the application.
+Before you create access reviews for an application, set the **User assignment required?** option to **Yes**. If it's set to **No**, all users in your directory, including external identities, can access the application and you can't review access to the application.
 
  ![Screenshot that shows planning app assignments.](./media/deploy-access-review/6-plan-applications-assignment-required.png)
 
@@ -360,7 +360,7 @@ Review the following role assignments regularly:
 
 Roles that are reviewed include permanent and eligible assignments.
 
-In the **Reviewers** section, select one or more people to review all the users. Or you can select **Manager**, to have a manager review their employees’ access, or **Members (self)** to have the members review their own access.
+In the **Reviewers** section, select one or more people to review all the users. Or you can select **Manager**, to have a manager review the access of people they manage, or **Members (self)** to have the members review their own access.
 
  ![Screenshot that shows selecting reviewers.](./media/deploy-access-review/7-plan-azure-resources-reviewers-selection.png)
 
