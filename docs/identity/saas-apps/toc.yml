@@ -1259,6 +1259,8 @@
         href: hyperanna-tutorial.md
       - name: IamIP Platform
         href: iamip-patent-platform-tutorial.md
+      - name: IANS Client Portal
+        href: ians-client-portal-tutorial.md
       - name: SafetyCulture
         href: safety-culture-tutorial.md  
       - name: IBM Digital Business Automation on Cloud
