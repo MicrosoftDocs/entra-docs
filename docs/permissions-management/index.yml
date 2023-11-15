@@ -88,6 +88,13 @@ landingContent:
           - text: Permissions Management for Defender for Cloud    
             url: permissions-management-for-defender-for-cloud.md
   # Card
+  - title: APIs 
+    linkLists:
+      - linkListType: reference
+        links:
+          - text: Discover, remediate, and monitor
+            url: https://go.microsoft.com/fwlink/?linkid=2252615
+  # Card
   - title: Reference 
     linkLists:
       - linkListType: reference
