@@ -31,7 +31,7 @@ Some Microsoft services aren't available in all locations. For group license ass
 1. Select Microsoft Entra ID.
 1. Go to **Users** > **All users** and select a user.
 
-   :::image type="content" source="licensing-group-advanced/all-users.png" alt-text="Screenshot of the All users pane.":::
+   :::image type="content" source="./media/licensing-group-advanced/all-users.png" alt-text="Screenshot of the All users pane.":::
 
 1. Select **Edit properties**. 
 1. Select the **Settings** tab and enter a location for the user.

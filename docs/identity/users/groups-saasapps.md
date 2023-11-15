@@ -33,7 +33,7 @@ With Entra ID, you can save time by managing the membership of the marketing dep
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 1. Navigate to **Applications** > **Enterprise applications**. This opens **All applications** in the Application Gallery.
 
-   :::image type="content" source="media/overview-application-gallery/enterprise-apps.png" alt-text="Screenshot of the Application Gallery.":::
+   :::image type="content" source="./media/domains-manage/enterprise-apps.png" alt-text="Screenshot of the Application Gallery.":::
 
 1. Select an application that you added from the Application Gallery to open it.
 1. On the left navigation bar, select **Users and groups**, and then select **Add user/group**.
