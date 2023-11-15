@@ -9,7 +9,7 @@ ms.service: active-directory
 ms.subservice: enterprise-users
 ms.workload: identity
 ms.topic: quickstart
-ms.date: 09/08/2023
+ms.date: 11/15/2023
 ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro, mode-other
@@ -43,9 +43,9 @@ If you don't have an Azure subscription, [create a free account](https://azure.m
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 1. Browse to **Identity** > **Groups** > **All groups** and then select **General**.
   
-   ![Self-service group settings page](./media/groups-quickstart-expiration/self-service-settings.png)
+   :::image type="content" source="./media/groups-quickstart-expiration/self-service-settings.png" alt-text="Screenshot of the Self-service group settings page.":::
 
-3. Set  **Users can create Microsoft 365 groups** to **Yes**.
+3. Set  **Users can create Microsoft 365 groups in Azure portals, API or PowerShell** to **Yes**.
 
 4. Select **Save** to save the groups settings when you're done.
 
@@ -54,7 +54,7 @@ If you don't have an Azure subscription, [create a free account](https://azure.m
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
 1. Browse to **Identity** > **Groups** > **All groups** > **Expiration** to open the expiration settings.
   
-   ![Expiration settings page for group](./media/groups-quickstart-expiration/expiration-settings.png)
+   :::image type="content" source="./media/groups-quickstart-expiration/expiration-settings.png" alt-text="Screenshot of the Expiration settings page for group.":::
 
 2. Set the expiration interval. Select a preset value or enter a custom value over 31 days. 
 

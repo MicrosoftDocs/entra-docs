@@ -9,7 +9,7 @@ ms.service: active-directory
 ms.subservice: enterprise-users
 ms.workload: identity
 ms.topic: how-to
-ms.date: 09/08/2023
+ms.date: 11/15/2023
 ms.author: barclayn                   
 ms.reviewer: krbain
 ms.custom: it-pro, seo-update-azuread-jan, has-azure-ad-ps-ref
@@ -75,14 +75,14 @@ Some administrator roles are exempted from these policies, across all group work
 - Global Administrator
 - User Administrator
 
-## Configure naming policy in Azure portal
+## Configure naming policy
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
 1. Select Microsoft Entra ID.
 
 1. Select **All groups** > **Groups**, then select **Naming policy** to open the Naming policy page.
 
-    ![open the Naming policy page in the admin center](./media/groups-naming-policy/policy.png)
+   :::image type="content" source="./media/groups-naming-policy/policy.png" alt-text="Screenshot of opening the Naming policy page in the admin center.":::
 
 ### View or edit the prefix-suffix naming policy
 
@@ -95,7 +95,7 @@ Some administrator roles are exempted from these policies, across all group work
 
 1. On the **Naming policy** page, select **Blocked words**.
 
-    ![edit and upload blocked words list for naming policy](./media/groups-naming-policy/blockedwords.png)
+   :::image type="content" source="./media/groups-naming-policy/blockedwords.png" alt-text="Screenshot of editing and uploading blocked words list for naming policy.":::
 
 1. View or edit the current list of custom blocked words by selecting **Download**. New entries must be added to the existing entries.
 1. Upload the new list of custom blocked words by selecting the file icon.
@@ -104,6 +104,8 @@ Some administrator roles are exempted from these policies, across all group work
 ## Install PowerShell cmdlets
 
 Be sure to uninstall any older version of the Azure Active Directory PowerShell for Graph module and install [Azure Active Directory PowerShell for Graph - Public Preview Release 2.0.0.137](https://www.powershellgallery.com/packages/AzureADPreview/2.0.0.137) before you run the PowerShell commands.
+
+[!INCLUDE [Azure AD PowerShell migration](../../includes/aad-powershell-migration-include.md)]
 
 1. Open the Windows PowerShell app as an administrator.
 2. Uninstall any previous version of AzureADPreview.

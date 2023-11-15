@@ -9,7 +9,7 @@ ms.service: active-directory
 ms.subservice: enterprise-users
 ms.workload: identity
 ms.topic: quickstart
-ms.date: 09/08/2023
+ms.date: 11/15/2023
 ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro, mode-other
@@ -27,13 +27,13 @@ In this quickstart, in Microsoft Entra ID, part of Microsoft Entra, you will set
 
 If you don't have an Azure subscription, [create a free account](https://azure.microsoft.com/free/) before you begin.
 
-## Configure the group naming policy in the Azure portal
+## Configure the group naming policy
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 1. Select Microsoft Entra ID.
 1. Select **Groups** > **All groups**  then select **Naming policy** to open the Naming policy page.
 
-    ![open the Naming policy page in the admin center](./media/groups-quickstart-naming-policy/policy.png)
+    :::image type="content" source="./media/groups-quickstart-naming-policy/policy.png" alt-text="Screenshot of the Naming policy page in the admin center.":::
 
 ### View or edit the Prefix-suffix naming policy
 
@@ -46,7 +46,7 @@ If you don't have an Azure subscription, [create a free account](https://azure.m
 
 1. On the **Naming policy** page, select **Blocked words**.
 
-    ![edit and upload blocked words list for naming policy](./media/groups-quickstart-naming-policy/blockedwords.png)
+   :::image type="content" source="./media/groups-quickstart-naming-policy/blockedwords.png" alt-text="Screenshot of editing and uploading blocked words list for naming policy.":::
 
 1. View or edit the current list of custom blocked words by selecting **Download**.
 1. Upload the new list of custom blocked words by selecting the file icon.
@@ -56,14 +56,12 @@ That's it. You've set your naming policy and added your custom blocked words.
 
 ## Clean up resources
 
-### Remove the naming policy using Azure portal
+### Remove the naming policy
 
 1. On the **Naming policy** page, select **Delete policy**.
 1. After you confirm the deletion, the naming policy is removed, including all prefix-suffix naming policy and any custom blocked words.
 
 ## Next steps
-
-In this quickstart, you’ve learned how to set the naming policy for your Microsoft Entra organization through the Azure portal.
 
 Advance to the next article for more information including the PowerShell cmdlets for naming policy, technical constraints, adding a list of custom blocked words, and the end user experiences across Microsoft 365 apps.
 > [!div class="nextstepaction"]

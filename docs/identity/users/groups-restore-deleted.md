@@ -8,7 +8,7 @@ ms.service: active-directory
 ms.subservice: enterprise-users
 ms.workload: identity
 ms.topic: quickstart
-ms.date: 09/08/2023
+ms.date: 11/15/2023
 ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro, seo-update-azuread-jan, mode-other, has-azure-ad-ps-ref
@@ -35,7 +35,7 @@ User | Can restore any deleted Microsoft 365 group that they own
 1. Select Microsoft Entra ID.
 1. Select **Groups** > **All groups** and then select **Deleted groups** to view the deleted groups that are available to restore.
 
-    ![view groups that are available to restore](./media/groups-restore-deleted/deleted-groups3.png)
+   :::image type="content" source="./media/groups-restore-deleted/deleted-groups3.png" alt-text="Screenshot of viewing groups that are available to restore.":::
 
 1. On the **Deleted groups** blade, you can:
 
