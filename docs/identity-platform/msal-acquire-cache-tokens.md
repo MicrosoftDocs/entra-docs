@@ -30,8 +30,6 @@ You can also clear the token cache, which is achieved by removing the accounts f
 
 Several of MSAL's token acquisition methods require a `scopes` parameter. The `scopes` parameter is a list of strings that declare the desired permissions and the resources requested. Well-known scopes are the [Microsoft Graph permissions](/graph/permissions-reference).
 
-It's also possible in MSAL to access v1.0 resources. For more information, see [Scopes for a v1.0 application](msal-v1-app-scopes.md).
-
 ### Request scopes for a web API
 
 When your application needs to request an access token with specific permissions for a resource API, pass the scopes containing the app ID URI of the API in the format `<app ID URI>/<scope>`.
@@ -99,7 +97,7 @@ For confidential client applications (web app, web API, or a daemon application 
 
 - Acquire tokens **for the application itself** and not for a user, using the [client credentials flow](msal-authentication-flows.md#client-credentials). This technique can be used for syncing tools, or tools that process users in general and not a specific user.
 - Use the [on-behalf-of (OBO) flow](msal-authentication-flows.md#on-behalf-of-obo) for a web API to call an API on behalf of the user. The application is identified with client credentials in order to acquire a token based on a user assertion (SAML, for example, or a JWT token). This flow is used by applications that need to access resources of a particular user in service-to-service calls. Tokens should be cached on a session basis, not on a user basis.
-- Acquire tokens using the [authorization code flow](msal-authentication-flows.md#authorization-code) in web apps after the user signs in through the authorization request URL. OpenID Connect application typically use this mechanism, which lets the user sign in using OpenID Connect and then access web APIs on behalf of the user. Tokens may be cached on a user or on a session basis. If caching tokens on a user basis, we recommend to limit the session lifetime, so that Microsoft Entra ID may check the state of the Conditional Access policies frequently.
+- Acquire tokens using the [authorization code flow](msal-authentication-flows.md#authorization-code) in web apps after the user signs in through the authorization request URL. OpenID Connect application typically use this mechanism, which lets the user sign in using OpenID Connect and then access web APIs on behalf of the user. Tokens can be cached on a user or on a session basis. If caching tokens on a user basis, we recommend to limit the session lifetime, so that Microsoft Entra ID can check the state of the Conditional Access policies frequently.
 
 ## Authentication results
 

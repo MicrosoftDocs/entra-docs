@@ -42,7 +42,8 @@ The scenario outlined in this tutorial assumes that you already have the followi
 
 ## Step 2: Configure Rootly to support provisioning with Microsoft Entra ID
 
-Contact Rootly support to configure Rootly to support provisioning with Microsoft Entra ID.
+1. Create a free [Rootly](https://rootly.com) account.
+1. Contact Rootly support to enabled SCIM if your plan doesn't allow it.
 
 ## Step 3: Add Rootly from the Microsoft Entra application gallery
 

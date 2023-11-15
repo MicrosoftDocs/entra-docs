@@ -20,11 +20,15 @@ ms.author: barclayn
 
 This article lists the latest features, improvements, and changes in the Microsoft Entra Verified ID service.
 
+## November 2023
+
+[Request Service API](presentation-request-api.md#constraints-type) now supports claims constraints when making presentation requests. Claims constraints can be used to specify constraints on the Verified ID credential that the verifier is asking to be presented. Available constraints are direct match, contains and startsWith.
+
 ## October 2023
 
-- [Quick Verified ID setup](verifiable-credentials-configure-tenant-quick.md) introduced as preview which enables an admin to onboard a Microsoft Entra tenant with just one click of a button.
+- [Quick setup](verifiable-credentials-configure-tenant-quick.md) introduced as preview which enables an admin to onboard a Microsoft Entra tenant with just one click of a button.
 - [MyAccount available now to simplify issuance of Workplace Credentials](verifiable-credentials-configure-tenant-quick.md#myaccount-available-now-to-simplify-issuance-of-workplace-credentials)
-- [Manual Verified ID setup](verifiable-credentials-configure-tenant.md) still available as an option to `Quick Verified ID setup`.
+- [Manual setup](verifiable-credentials-configure-tenant.md) still available as an option to `Quick setup`.
 
 ## September 2023
 
@@ -72,7 +76,7 @@ Instructions for setting up place of work verification on LinkedIn available [he
 - Admin API now supports [application access tokens](admin-api.md#authentication) and in addition to user bearer tokens.
 - Introducing the Microsoft Entra Verified ID [Services partner gallery](services-partners.md) listing trusted partners that can help accelerate your Microsoft Entra Verified ID implementation.
 - Improvements to our Administrator onboarding experience in the [Admin portal](verifiable-credentials-configure-tenant.md#register-decentralized-id-and-verify-domain-ownership) based on customer feedback.
-- Updates to our samples in [Github](https://github.com/Azure-Samples/active-directory-verifiable-credentials) showcasing how to dynamically display VC claims.
+- Updates to our samples in [GitHub](https://github.com/Azure-Samples/active-directory-verifiable-credentials) showcasing how to dynamically display VC claims.
 
 ## February 2023
 
