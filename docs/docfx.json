@@ -58,11 +58,11 @@
     },
     "fileMetadata": {
       "feedback_product_url": {
-        "/identity/**/*.md": "https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789",
+        "docs/identity/**/*.md": "https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789",
         "/external-id/*.md": "/entra/identity-platform/developer-support-help-options",
         "/identity-platform/*.md": "/entra/identity-platform/developer-support-help-options",
         "/workload-id/*.md": "https://aka.ms/microsoftentraexternalid"
-      },
+      }
     }, 
     "template": [
       "docs.html",
@@ -182,8 +182,8 @@
       "external-id/customers/*.yml": "Microsoft Entra External ID",
       "fundamentals/*.md": "Microsoft Entra",
       "fundamentals/*.yml": "Microsoft Entra",
-      "global-secure-access/*.md": "Global Secure Access",
-      "global-secure-access/*.yml": "Global Secure Access",
+      "docs/global-secure-access/*.md": "Global Secure Access",
+      "docs/global-secure-access/*.yml": "Global Secure Access",
       "id-governance/*.md": "Microsoft Entra ID Governance",
       "id-governance/*.yml": "Microsoft Entra ID Governance",
       "id-governance/privileged-identity-management/*.md": "Microsoft Entra ID Governance",
