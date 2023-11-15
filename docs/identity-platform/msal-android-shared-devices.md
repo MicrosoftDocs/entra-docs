@@ -101,7 +101,7 @@ These Microsoft applications support Microsoft Entra shared device mode:
 - [Microsoft Power Apps](/power-apps/)
 - [Microsoft Power BI Mobile](/power-bi/consumer/mobile/mobile-app-shared-device-mode) (preview)
 - [Microsoft Viva Engage](/viva/engage/overview) (previously [Yammer](/viva/engage/overview))
-- Unified M365 App (in public preview)
+- [Microsoft 365](https://apps.apple.com/us/app-bundle/microsoft-365/id1450038993?mt=12) (in Public Preview)
 
 ## Third-party MDMs that support shared device mode
 
