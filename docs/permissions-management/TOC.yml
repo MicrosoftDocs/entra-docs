@@ -34,6 +34,8 @@
         href: how-to-configure-aws-iam.md
       - name: Configure Okta as an identity provider
         href: how-to-configure-okta-as-an-identity-provider.md 
+      - name: Configure the ServiceNow app for Microsoft Entra Permissions Management 
+        href: how-to-configure-servicenow-application.md
     - name: View information about your Authorization Systems
       expanded: false
       items:
