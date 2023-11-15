@@ -1997,7 +1997,7 @@ This is a [privileged role](privileged-roles-permissions.md). Assign the Privile
 
 Users with this role **cannot** do the following:
 
-- Cannot manage per-user MFA in the legacy MFA management portal. The same functions can be accomplished using the [Update-MgUser](/powershell/module/microsoft.graph.users/update-mguser) cmdlet Microsoft Graph PowerShell module.
+- Cannot manage per-user MFA in the legacy MFA management portal. The same functions can be accomplished using the [Update-MgUser](/powershell/module/microsoft.graph.users/update-mguser) cmdlet in the Microsoft Graph PowerShell module.
 
 [!INCLUDE [authentication-table-include](./includes/authentication-table-include.md)]
 
