@@ -18,7 +18,7 @@ ms.collection: M365-identity-device-management
 
 # Microsoft Entra built-in roles
 
-In Microsoft Entra ID, if another administrator or non-administrator needs to manage Microsoft Entra resources, you assign them an Microsoft Entra role that provides the permissions they need. For example, you can assign roles to allow adding or changing users, resetting user passwords, managing user licenses, or managing domain names.
+In Microsoft Entra ID, if another administrator or non-administrator needs to manage Microsoft Entra resources, you assign them a Microsoft Entra role that provides the permissions they need. For example, you can assign roles to allow adding or changing users, resetting user passwords, managing user licenses, or managing domain names.
 
 This article lists the Microsoft Entra built-in roles you can assign to allow management of Microsoft Entra resources. For information about how to assign roles, see [Assign Microsoft Entra roles to users](manage-roles-portal.md). If you are looking for roles to manage Azure resources, see [Azure built-in roles](/azure/role-based-access-control/built-in-roles).
 
@@ -2530,7 +2530,7 @@ Assign the Usage Summary Reports Reader role to users who need to do the followi
 This role only allows users to view organizational-level data with the following exceptions:
 
 - Member users can view user management data and settings.
-- Guest users assigned this role can not view user management data and settings.
+- Guest users assigned this role cannot view user management data and settings.
 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
