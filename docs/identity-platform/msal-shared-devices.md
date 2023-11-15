@@ -19,9 +19,6 @@ ms.custom: aaddev
 
 Shared device mode is a feature of Microsoft Entra ID that allows you to build and deploy applications that support frontline workers and educational scenarios that require shared Android and iOS devices.
 
-> [!IMPORTANT]
-> Shared device mode for iOS [!INCLUDE [PREVIEW BOILERPLATE](./includes/develop-preview.md)]
-
 ### Supporting multiple users on devices designed for one user
 
 Because mobile devices running iOS or Android were designed for single users, most applications optimize their experience for use by a single user. Part of this optimized experience means enabling single sign-on (SSO) across applications and keeping users signed in on their device. When a user removes their account from an application, the app typically doesn't consider it a security-related event. Many apps even keep a user's credentials around for quick sign-in. You may even have experienced this yourself when you've deleted an application from your mobile device and then reinstalled it, only to discover you're still signed in.
