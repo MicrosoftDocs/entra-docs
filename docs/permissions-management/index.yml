@@ -85,6 +85,8 @@ landingContent:
             url: how-to-configure-okta-as-an-identity-provider.md
           - text: ServiceNow app
             url: how-to-configure-servicenow-application.md
+          - text: Permissions Management for Defender for Cloud    
+            url: permissions-management-for-defender-for-cloud.md
   # Card
   - title: Reference 
     linkLists:
