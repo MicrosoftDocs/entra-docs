@@ -10,7 +10,7 @@ ms.service: active-directory
 ms.subservice: enterprise-users
 ms.topic: how-to
 ms.workload: identity
-ms.date: 09/08/2023
+ms.date: 11/15/2023
 ms.author: barclayn
 ms.reviewer: sumitp
 ms.custom: it-pro, has-azure-ad-ps-ref
@@ -30,6 +30,9 @@ Some Microsoft services aren't available in all locations. For group license ass
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Select Microsoft Entra ID.
 1. Go to **Users** > **All users** and select a user.
+
+   :::image type="content" source="licensing-group-advanced/all-users.png" alt-text="Screenshot of the All users pane.":::
+
 1. Select **Edit properties**. 
 1. Select the **Settings** tab and enter a location for the user.
 1. Select the **Save** button.
@@ -93,7 +96,7 @@ Here's an example of what this process may look like:
    > [!NOTE]
    > The *Microsoft Stream* service has been automatically added and enabled in this group, in addition to the *Exchange Online* service:
 
-   ![Screenshot of new service added to a group license](./media/licensing-group-advanced/manage-new-services.png)
+   :::image type="content" source="./media/licensing-group-advanced/manage-new-services.png" alt-text="Screenshot of new service added to a group license.":::
 
 1. If you want to disable the new service in this group, select the On/Off toggle next to the service, and select the **Save** button to confirm the change. Microsoft Entra ID will now process all users in the group to apply the change; any new users added to the group won't have the *Microsoft Stream* service enabled.
 
@@ -109,7 +112,7 @@ You can use a PowerShell script to check if users have a license assigned direct
 
 2. `Get-MgSubscribedSku -All | Select-Object skuid -ExpandProperty serviceplans | select serviceplanid, serviceplanname` can be used to discover all provisioned product licenses in the Microsoft Entra organization.
 
-   ![Screenshot of the Get-Msolaccountsku cmdlet](./media/licensing-group-advanced/get-mgsubscribedsku-cmdlet.png)
+   :::image type="content" source="./media/licensing-group-advanced/get-mgsubscribedsku-cmdlet.png" alt-text="Screenshot of the Get-Msolaccountsku cmdlet.":::
 
 3. Use the *ServicePlanId* value for the license you're interested in with [this PowerShell script](licensing-ps-examples.md#check-if-user-license-is-assigned-directly-or-inherited-from-a-group). A list populates the users who have this license and information about how the license is assigned.
 
@@ -125,7 +128,7 @@ Audit logs related to group-based licensing can be accessed from the Audit logs 
 - **Service**: Core Directory
 - **Category**: GroupManagement or UserManagement
 
-![Screenshot of the Microsoft Entra audit logs with Core Directory and GroupManagement filter options highlighted.](media/licensing-group-advanced/audit-logs-group-licensing-filters.png)
+:::image type="content" source="media/licensing-group-advanced/audit-logs-group-licensing-filters.png" alt-text="Screenshot of the Microsoft Entra audit logs with Core Directory and GroupManagement filter options highlighted.":::
 
 ### Find out who modified a license
 
@@ -138,7 +141,7 @@ Audit logs related to group-based licensing can be accessed from the Audit logs 
 
 The following example shows the filter settings listed above, plus the *Target* filter set to all groups that start with "EMS." 
 
-![Screenshot of the Microsoft Entra audit logs including a Target filter.](media/licensing-group-advanced/audit-log-group-licensing-target-filter.png)
+:::image type="content" source="media/licensing-group-advanced/audit-log-group-licensing-target-filter.png" alt-text="Screenshot of the Microsoft Entra audit logs including a Target filter.":::
 
 To see license changes for a specific user, use the following filters:
 - **Service**: Core Directory
@@ -174,14 +177,15 @@ To see the complete log for how a group was processed, including all user change
 
 This sample output shows the start and finish of processing the license change.
 
-![Screenshot of the Microsoft Entra audit log filters and start and end times of license changes.](./media/licensing-group-advanced/audit-log-license-start-finish.png)
+:::image type="content" source="./media/licensing-group-advanced/audit-log-license-start-finish.png" alt-text="Screenshot of the Microsoft Entra audit log filters and start and end times of license changes.":::
 
 ## Deleting a group with an assigned license
 
 It isn't possible to delete a group with an active license assigned. An administrator could delete a group not realizing that it will cause licenses to be removed from users. For this reason we require any licenses to be removed from the group first, before it can be deleted.
 
-When trying to delete a group in the Azure portal, you may see an error notification like this:
-![Screenshot group deletion failed](./media/licensing-group-advanced/groupdeletionfailed.png)
+When trying to delete a group in the portal, you may see an error notification like this:
+
+:::image type="content" source="./media/licensing-group-advanced/groupdeletionfailed.png" alt-text="Screenshot group deletion failed.":::
 
 Go to the **Licenses** tab on the group and see if there are any licenses assigned. If yes, remove those licenses and try to delete the group again.
 

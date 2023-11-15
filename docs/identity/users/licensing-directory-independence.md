@@ -9,7 +9,7 @@ ms.service: active-directory
 ms.subservice: enterprise-users
 ms.topic: overview
 ms.workload: identity
-ms.date: 09/08/2023
+ms.date: 11/15/2023
 ms.author: barclayn
 ms.custom: it-pro
 ms.reviewer: sumitp
@@ -50,6 +50,8 @@ You can configure each Microsoft Entra organization independently to get data sy
 > [!NOTE]
 > Unlike other Azure resources, your Microsoft Entra organizations are not child resources of an Azure subscription. If your Azure subscription is canceled or expired, you can still access your Microsoft Entra organization's data using Azure PowerShell, the Microsoft Graph API, or the Microsoft 365 admin center. You can also [associate another subscription with the organization](~/fundamentals/how-subscriptions-associated-directory.md).
 >
+
+[!INCLUDE [Azure AD PowerShell migration](../../includes/aad-powershell-migration-include.md)]
 
 ## Next steps
 

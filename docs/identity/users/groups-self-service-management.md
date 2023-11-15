@@ -10,7 +10,7 @@ ms.service: active-directory
 ms.subservice: enterprise-users
 ms.workload: identity
 ms.topic: how-to
-ms.date: 09/26/2023
+ms.date: 11/16/2023
 ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro, seo-update-azuread-jan, has-azure-ad-ps-ref
@@ -24,7 +24,11 @@ You can enable users to create and manage their own security groups or Microsoft
 
 ## Self-service group membership
 
-You can allow users to create security groups, which are used to manage access to shared resources. Security groups can be created by users in Azure portals, using Azure AD PowerShell, or from the [MyApps Groups Access panel](https://account.activedirectory.windowsazure.com/r#/groups). Only the group's owners can update membership, but you can provide group owners the ability to approve or deny membership requests from the MyApps Groups Access panel. Security groups created by self-service through the MyApps Groups Access panel are available to join for all users, whether owner-approved or auto-approved. In the MyApps Groups Access panel, you can change membership options when you create the group.
+You can allow users to create security groups, which are used to manage access to shared resources. Security groups can be created by users in Azure portals, using Azure AD PowerShell, or from the [MyApps Groups Access panel](https://account.activedirectory.windowsazure.com/r#/groups).  
+
+[!INCLUDE [Azure AD PowerShell migration](../../includes/aad-powershell-migration-include.md)]
+
+Only the group's owners can update membership, but you can provide group owners the ability to approve or deny membership requests from the MyApps Groups Access panel. Security groups created by self-service through the MyApps Groups Access panel are available to join for all users, whether owner-approved or auto-approved. In the MyApps Groups Access panel, you can change membership options when you create the group.
 
 Microsoft 365 groups, which provide collaboration opportunities for your users, can be created in any of the Microsoft 365 applications, such as SharePoint, Microsoft Teams, and Planner. Microsoft 365 groups can also be created in Azure portals, using Azure AD PowerShell, or from the MyApps Groups Access panel. For more information on the difference between security groups and Microsoft 365 groups, see [Learn about groups](~/fundamentals/concept-learn-about-groups.md#what-to-know-before-creating-a-group)
 
@@ -51,15 +55,13 @@ Groups created in | Security group default behavior | Microsoft 365 group defaul
  > [!NOTE]
  > This setting only restricts access of group information in **My Groups**. It does not restrict access to group information via other methods like Microsoft Graph API calls or the Microsoft Entra admin center.
 
- ![Microsoft Entra groups general settings.](./media/groups-self-service-management/groups-settings-general.png)
+:::image type="content" source="./media/groups-self-service-management/groups-settings-general.png" alt-text="Screenshot of Microsoft Entra groups general settings..":::
+
    > [!NOTE]
    > In June 2024, the setting **Restrict users access to My Groups** will change to **Restrict users ability to see and edit security groups in My Groups.** If the setting is currently set to ‘Yes,’ end users will be able to access My Groups in June 2024, but will not be able to see security groups.
 
 3. Set **Owners can manage group membership requests in the Access Panel** to **Yes**.
-
-
 4. Set **Restrict user ability to access groups features in the Access Panel** to **No**.
-
 5. Set **Users can create security groups in Azure portals, API or PowerShell** to **Yes** or **No**.
 
     For more information about this setting, see the next section [Group settings](#group-settings).
@@ -79,7 +81,7 @@ When users can create groups, all users in your organization are allowed to crea
 
 The group settings enable you to control who can create security and Microsoft 365 groups.
 
-![Microsoft Entra security groups setting change.](./media/groups-self-service-management/security-groups-setting.png)
+:::image type="content" source="./media/groups-self-service-management/security-groups-setting.png" alt-text="Screenshot of Microsoft Entra security groups setting change.":::
 
  The following table helps you decide which values to choose.
 
