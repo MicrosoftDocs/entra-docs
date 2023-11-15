@@ -11,7 +11,7 @@ ms.date: 01/29/2023
 ms.author: justinha
 author: justinha
 manager: amycolannino
-ms.reviewer: vimrang
+ms.reviewer: vranganathan
 
 ms.collection: M365-identity-device-management
 ms.custom: has-adal-ref
@@ -73,7 +73,7 @@ The following scenarios aren't supported:
 - Certificate Authority hints aren't supported, so the list of certificates that appears for users in the certificate picker UI isn't scoped.
 - Only one CRL Distribution Point (CDP) for a trusted CA is supported.
 - The CDP can be only HTTP URLs. We don't support Online Certificate Status Protocol (OCSP), or Lightweight Directory Access Protocol (LDAP) URLs.
-- Configuring other certificate-to-user account bindings, such as using the **Subject**, **Subject + Issuer** or **Issuer + Serial Number**, aren’t available in this release.
+- Configuring other certificate-to-user account bindings, such as using the **Subject**, **Subject + Issuer**, or **Issuer + Serial Number**, aren’t available in this release.
 - Password as an authentication method cannot be disabled and the option to sign in using a password is displayed even with Microsoft Entra CBA method available to the user.
 
 ## Known Limitation with Windows Hello For Business certificates
