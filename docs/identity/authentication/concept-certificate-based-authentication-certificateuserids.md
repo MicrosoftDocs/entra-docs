@@ -6,12 +6,12 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 01/29/2023
+ms.date: 11/15/2023
 
 ms.author: justinha
-author: justinha
+author: vimrang
 manager: amycolannino
-ms.reviewer: vimrang
+ms.reviewer: vranganathan
 
 ms.collection: M365-identity-device-management
 ms.custom: has-adal-ref, has-azure-ad-ps-ref
@@ -19,7 +19,7 @@ ms.custom: has-adal-ref, has-azure-ad-ps-ref
 
 # Certificate user IDs 
 
-Users in Microsoft Entra ID can have a multivalued attribute named **certificateUserIds**. The attribute allows up to four values, and each value can be of 120-character length. It can store any value and doesn't require email ID format. It can store non-routable User Principal Names (UPNs) like _bob@woodgrove_ or _bob@local_.
+Users in Microsoft Entra ID can have a multivalued attribute named **certificateUserIds**. The attribute allows up to five values, and each value can be of 1o24-character length. It can store any value and doesn't require email ID format. It can store nonroutable User Principal Names (UPNs) like _bob@woodgrove_ or _bob@local_.
  
 ## Supported patterns for certificate user IDs
  
@@ -27,15 +27,18 @@ The values stored in **certificateUserIds** should be in the format described in
 
 |Certificate mapping Field | Examples of values in CertificateUserIds |
 |--------------------------|--------------------------------------|
-|PrincipalName | “X509:\<PN>bob@woodgrove.com” |
-|PrincipalName | “X509:\<PN>bob@woodgrove”     | 
-|RFC822Name	| “X509:\<RFC822>user@woodgrove.com” |
-|X509SKI | “X509:\<SKI>123456789abcdef”|
-|X509SHA1PublicKey |“X509:\<SHA1-PUKEY>123456789abcdef” |
+|PrincipalName | `X509:\<PN>bob@woodgrove.com` |
+|PrincipalName | `X509:\<PN>bob@woodgrove`   | 
+|RFC822Name	| `X509:\<RFC822>user@woodgrove.com` |
+|IssuerAndSubject | `X509:\<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA\<S>DC=com,DC=contoso,OU=UserAccounts,CN=mfatest` |
+|Subject | `X509:\<S>DC=com,DC=contoso,OU=UserAccounts,CN=mfatest`  |
+|SKI | `X509:\<SKI>123456789abcdef` |
+|SHA1PublicKey |`X509:\<SHA1-PUKEY>123456789abcdef` |
+|IssuerAndSerialNumber | `X509:\<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA\<SR>b24134139f069b49997212a86ba0ef48` <br> To get the correct value for serial number, run this command and store the value shown in CertificateUserIds:<br> **Syntax**:<br> `Certutil –dump –v [~certificate path~] >> [~dumpFile path~]` <br> **Example**: <br> `certutil -dump -v firstusercert.cer >> firstCertDump.txt` |
 
 ## Roles to update certificateUserIds
 
-For cloud-only users, only users with roles **Global Administrators**, **Privileged Authentication Administrator** can write into certificateUserIds. Cloud-only users can use both UX and MSGraph to write into certificateUserIds. For synched users, AD users with role **Hybrid Identity Administrator** can write into the attribute. Only Microsoft Entra Connect can be used to update CertificateUserIds by syncing the value from on-prem for synched users. 
+For cloud-only users, only users with roles **Global Administrators**, **Privileged Authentication Administrator** can write into certificateUserIds. Cloud-only users can use both UX and MSGraph to write into certificateUserIds. For synched users, AD users with role **Hybrid Identity Administrator** can write into the attribute. Only Microsoft Entra Connect can be used to update CertificateUserIds by syncing the value from on-premises for synched users. 
 
 >[!NOTE]
 >Active Directory Administrators (including accounts with delegated administrative privilege over synched user accounts as well as administrative rights over the Azure >AD Connect Servers) can make changes that impact the certificateUserIds value in Microsoft Entra ID for any synched accounts.
@@ -116,26 +119,26 @@ Content-Type: application/json
 For the configuration, you can use the [Azure Active Directory PowerShell Version 2](/powershell/microsoftgraph/installation):
 
 1. Start PowerShell with administrator privileges.
-1. Install and Import the Microsoft Graph PowerShell SDK
+1. Install and import the Microsoft Graph PowerShell SDK.
 
    ```powershell
        Install-Module Microsoft.Graph -Scope AllUsers
        Import-Module Microsoft.Graph.Authentication
        Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
    ```
-1. Connect to the tenant and accept all
+1. Connect to the tenant and accept all.
 
    ```powershell
       Connect-MGGraph -Scopes "Directory.ReadWrite.All", "User.ReadWrite.All" -TenantId <tenantId>
    ```
-1. List CertificateUserIds attribute of a given user
+1. List CertificateUserIds attribute of a given user.
 
    ```powershell
      $results = Invoke-MGGraphRequest -Method get -Uri 'https://graph.microsoft.com/v1.0/users/<userId>?$select=authorizationinfo' -OutputType PSObject -Headers @{'ConsistencyLevel' = 'eventual' }
      #list certificateUserIds
      $results.authorizationInfo
    ```
-1. Create a variable with CertificateUserIds values
+1. Create a variable with CertificateUserIds values.
    
    ```powershell
      #Create a new variable to prepare the change. Ensure that you list any existing values you want to keep as this operation will overwrite the existing value
@@ -148,7 +151,7 @@ For the configuration, you can use the [Azure Active Directory PowerShell Versio
            }
      }
    ```
-1. Update CertificateUserIds attribute
+1. Update the CertificateUserIds attribute.
 
    ```powershell
       $results = Invoke-MGGraphRequest -Method patch -Uri 'https://graph.microsoft.com/v1.0/users/<UserId>/?$select=authorizationinfo' -OutputType PSObject -Headers @{'ConsistencyLevel' = 'eventual' } -Body $params
@@ -156,14 +159,14 @@ For the configuration, you can use the [Azure Active Directory PowerShell Versio
 
 **Update CertificateUserIds using user object**
 
-1. Get the user object
+1. Get the user object.
 
    ```powershell
      $userObjectId = "6b2d3bd3-b078-4f46-ac53-f862f35e10b6"
      $user = get-mguser -UserId $userObjectId -Property AuthorizationInfo
    ```
 
-1. Update the CertificateUserIds attribute of the user object
+1. Update the CertificateUserIds attribute of the user object.
 
    ```powershell
       $user.AuthorizationInfo.certificateUserIds = @("X509:<SKI>eec6b88788d2770a01e01775ce71f1125cd6ad0f", "X509:<PN>user1@contoso.com") 
@@ -233,7 +236,7 @@ AlternativeSecurityId isn't part of the default attributes. An administrator nee
 
 1. Open Metaverse Designer, and select alternativeSecurityId to add it to the person object.
 
-   :::image type="content" border="true" source="./media/concept-certificate-based-authentication-certificateuserids/alt-security-identity-add.png" alt-text="Screenshot of how to add alternativeSecurityId to the person object":::
+   :::image type="content" border="true" source="./media/concept-certificate-based-authentication-certificateuserids/alt-security-identity-add.png" alt-text="Screenshot of how to add alternativeSecurityId to the person object.":::
 
 1. Create an inbound synchronization rule to transform from altSecurityIdentities to alternateSecurityId attribute.
 
@@ -247,12 +250,11 @@ AlternativeSecurityId isn't part of the default attributes. An administrator nee
    |Metaverse Object Type | person |
    |Precedence | Choose a random high number not currently used |
   
-   Then proceed to the Transformations tab and do a direct mapping of the target attribute of **alternativeSecurityId** to **altSecurityIdentities** as shown below.
+   Then click **Transformations** and create a direct mapping from the target attribute **alternativeSecurityId** to **altSecurityIdentities**, as shown in the following screenshot.
 
-   :::image type="content" border="true" source="./media/concept-certificate-based-authentication-certificateuserids/alt-security-identity-inbound.png" alt-text="Screenshot of how to transform from altSecurityIdentities to alternateSecurityId attribute":::
+   :::image type="content" border="true" source="./media/concept-certificate-based-authentication-certificateuserids/alt-security-identity-inbound.png" alt-text="Screenshot of how to transform from altSecurityIdentities to alternateSecurityId attribute.":::
 
-1. Create an outbound synchronization rule to transform from alternateSecurityId attribute to certificateUserIds
-alt-security-identity-add.
+1. Create an outbound synchronization rule to transform from alternateSecurityId attribute to certificateUserIds alt-security-identity-add.
 
    |Option | Value |
    |-------|-------|
@@ -262,9 +264,9 @@ alt-security-identity-add.
    |Metaverse Object Type | person |
    |Precedence | Choose a random high number not currently used |
    
-   Then proceed to the Transformations tab and change your FlowType option to *Expression*, the target attribute to **certificateUserIds** and then input the below expression in to the Source field.
+   Then proceed to the Transformations tab and change your FlowType option to *Expression*, the target attribute to **certificateUserIds** and then input the following expression in to the Source field.
 
-   :::image type="content" border="true" source="./media/concept-certificate-based-authentication-certificateuserids/alt-security-identity-outbound.png" alt-text="Screenshot of outbound synchronization rule to transform from alternateSecurityId attribute to certificateUserIds":::
+   :::image type="content" border="true" source="./media/concept-certificate-based-authentication-certificateuserids/alt-security-identity-outbound.png" alt-text="Screenshot of outbound synchronization rule to transform from alternateSecurityId attribute to certificateUserIds.":::
 
 To map the pattern supported by certificateUserIds, administrators must use expressions to set the correct value.
 
