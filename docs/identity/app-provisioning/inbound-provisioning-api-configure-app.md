@@ -8,18 +8,15 @@ ms.service: active-directory
 ms.subservice: app-provisioning
 ms.workload: identity
 ms.topic: how-to
-ms.date: 09/15/2023
+ms.date: 11/15/2023
 ms.author: kenwith
 ms.reviewer: cmmdesai
 ---
 
-# Configure API-driven inbound provisioning app (Public preview)
+# Configure API-driven inbound provisioning app
 
 ## Introduction
 This tutorial describes how to configure [API-driven inbound user provisioning](inbound-provisioning-api-concepts.md). 
-
-> [!IMPORTANT]
-> API-driven inbound provisioning is currently in public preview. For more information about previews, see [Universal License Terms For Online Services](https://www.microsoft.com/licensing/terms/product/ForOnlineServices/all).
 
 This feature is available only when you configure the following Enterprise Gallery apps: 
 * API-driven inbound user provisioning to Microsoft Entra ID
@@ -88,7 +85,7 @@ Depending on the app you selected, use one of the following sections to complete
  
 
 1. After setting the Provisioning Mode to **Automatic**, click on **Save** to create the initial configuration of the provisioning job. 
-1. Once the save operation is successful, you will see two more expansion panels – one for **Mappings** and one for **Settings**. Before proceeding to the next step, make sure you provide a valid notification email id and Save the configuration once more. 
+1. Once the save operation is successful, you will see two more expansion panels – one for **Mappings** and one for **Settings**. Before proceeding to the next step, make sure you provide a valid notification email ID and Save the configuration once more. 
 
      [![Screenshot of the notification email box.](media/inbound-provisioning-api-configure-app/provisioning-notification-email.png)](media/inbound-provisioning-api-configure-app/provisioning-notification-email.png#lightbox)
 
