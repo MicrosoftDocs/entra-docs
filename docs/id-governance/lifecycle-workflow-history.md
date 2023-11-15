@@ -8,14 +8,12 @@ ms.service: active-directory
 ms.subservice: compliance
 ms.workload: identity
 ms.topic: conceptual 
-ms.date: 05/31/2023
+ms.date: 11/15/2023
 ms.custom: template-concept 
 ---
 
 
 # Lifecycle Workflows history
-
-
 
 Workflows created using Lifecycle Workflows allow for the automation of lifecycle task for users no matter where they fall in the Joiner-Mover-Leaver (JML) model of their identity lifecycle in your organization. Making sure workflows are processed correctly is an important part of an organization's lifecycle management process. Workflows that aren't processed correctly can lead to many issues in terms of security and compliance. With Lifecycle Workflow's history features, you can specify which workflow events you want to view a history of based on users, runs, or task summaries. This reporting feature allows you to quickly see what ran for who, and rather or not it was successful. Along with the summaries in these specific areas, you're also able to view detailed information about each specific event recorded in their respective summary section. In this article, you'll learn the difference between the three different type of history summaries, and details, you can query with Lifecycle Workflows. You'll also learn when you would use each when getting more information about how your workflows were utilized for users in your organization. For detailed information about every action Lifecycle Workflows takes, see: [Auditing Lifecycle Workflows](lifecycle-workflow-audits.md).
 
@@ -58,7 +56,7 @@ User detailed history information allows you to filter for specific information 
 
 ### User history status details
 
-When viewing the status of user processing history, the status values correspond to the following information:
+When you view the status of user processing history, the status values correspond to the following information:
 
 |Status  |Details  |
 |---------|---------|
@@ -100,7 +98,7 @@ Runs detailed history information allows you to filter for specific information 
 
 ### Runs history status details
 
-When viewing the status of run history, the status values correspond to the following information:
+When you view the status of run history, the status values correspond to the following information:
 
 
 |Status  |Details  |
@@ -144,7 +142,7 @@ Task detailed history information allows you to filter for specific information 
 
 ### Task history status details
 
-When viewing the status of task history, the status values correspond to the following information:
+When you view the status of task history, the status values correspond to the following information:
 
 
 |Status  |Details  |
