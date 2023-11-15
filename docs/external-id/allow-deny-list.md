@@ -1,5 +1,4 @@
 ---
-
 title: Allow or block invites to specific organizations
 description: Shows how an administrator can use the Microsoft Entra admin center or PowerShell to set an access or blocklist to allow or block B2B users from certain domains.
 
@@ -46,7 +45,7 @@ This is the most typical scenario, where your organization wants to work with al
 
 To add a blocklist:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 1. Browse to **Identity** > **Users** > **User settings**.
 3. Under **External users**, select **Manage external collaboration settings**.
 4. Under **Collaboration restrictions**, select **Deny invitations to the specified domains**.
@@ -67,7 +66,7 @@ If you want to use an allowlist, make sure that you spend time to fully evaluate
 
 To add an allowlist:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 1. Browse to **Identity** > **Users** > **User settings**.
 3. Under **External users**, select **Manage external collaboration settings**.
 4. Under **Collaboration restrictions**, select **Allow invitations only to the specified domains (most restrictive)**.
@@ -167,3 +166,5 @@ Remove-AzureADPolicy -Id $currentpolicy.Id
 
 - [Cross-tenant access settings](cross-tenant-access-settings-b2b-collaboration.md)
 - [External collaboration settings](external-collaboration-settings-configure.md).
+
+
