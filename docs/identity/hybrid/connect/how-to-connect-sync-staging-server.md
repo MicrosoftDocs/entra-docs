@@ -114,11 +114,11 @@ You may need to perform a failover of the Sync Servers for several reasons, such
 
 - One currently active Microsoft Entra Connect Sync Server
 - One staging Microsoft Entra Connect Sync Server
-- The staging server have synchronization scheduler enabled and has synchronized with Entra ID recently
+- The staging server have synchronization scheduler enabled and has synchronized with Microsoft Entra ID recently
 - In case of any updates in synchronization rules or in sync scope, run an initial sync cycle
 - Confirm that your Microsoft Entra Connect Sync Server is configured to [prevent accidental deletes](how-to-connect-sync-feature-prevent-accidental-deletes.md) 
 - [Verify ](#verify)the pending exports and confirm that there aren't significant updates, and such updates are expected
-- Check if [Microsoft Entra Connect Health](whatis-azure-ad-connect.md#what-is-microsoft-entra-connect-health) agent is updated by checking the server in [Entra ID Connect Health](https://aka.ms/aadconnecthealth) portal
+- Check if [Microsoft Entra Connect Health](whatis-azure-ad-connect.md#what-is-microsoft-entra-connect-health) agent is updated by checking the server in [Microsoft Entra ID Connect Health](https://aka.ms/aadconnecthealth) portal
 - Switch the current active server to staging mode, before switching the staging server to active
 
 #### Change currently Active Sync Server to staging mode
