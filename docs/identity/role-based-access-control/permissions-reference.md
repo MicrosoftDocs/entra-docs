@@ -400,6 +400,8 @@ Users with this role **cannot** do the following:
 > | microsoft.directory/verifiableCredentials/configuration/allProperties/update | Update configuration required to create and manage verifiable credentials |
 > | microsoft.azure.supportTickets/allEntities/allTasks | Create and manage Azure support tickets |
 
+<a id="azure-ad-joined-device-local-administrator"></a>
+
 ## Microsoft Entra Joined Device Local Administrator
 
 This role is available for assignment only as an additional local administrator in [Device settings](~/identity/devices/assign-local-admin.md). Users with this role become local machine administrators on all Windows 10 devices that are joined to Microsoft Entra ID. They do not have the ability to manage devices objects in Microsoft Entra ID.
