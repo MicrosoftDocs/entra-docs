@@ -61,15 +61,9 @@ Now we'll walk through each step:
    >[!NOTE]
    >The network administrator should allow access to the User sign-in page and certauth endpoint `*.certauth.login.microsoftonline.com` for the customer's cloud environment. Disable TLS inspection on the certauth endpoint to make sure the client certificate request succeeds as part of the TLS handshake.
 
-  Make sure your TLS inspection disablement also works for the new url with issuer hints. We recommend that you don't hardcode the url with tenantId because the tenantId might change for B2B users. Use a regular expression to allow both the old and new URL to work for TLS inspection disablement. For example, use `*.certauth.login.microsoftonline.com` or `*certauth.login.microsoftonline.com` for public Entra ID tenants, and `*.certauth.login.microsoftonline.us` or `*certauth.login.microsoftonline.us` for Azure Government tenants, depending on the proxy used.
+   Make sure your TLS inspection disablement also works for the new url with issuer hints. Don't hardcode the url with tenantId because it might change for B2B users. Use a regular expression to allow both the old and new URL to work for TLS inspection disablement. For example, depending on the proxy, use `*.certauth.login.microsoftonline.com` or `*certauth.login.microsoftonline.com`. In Azure Government, use `*.certauth.login.microsoftonline.us` or `*certauth.login.microsoftonline.us`.
 
-   Without this change, certificate-based authentication fails when you enable the Issuer Hints feature.
-
-   :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/sign-in-log.png" alt-text="Screenshot of the sign-in log in Microsoft Entra ID." lightbox="./media/concept-certificate-based-authentication-technical-deep-dive/sign-in-log.png":::
-   
-   Select the log entry to bring up **Activity Details** and select **Authentication Details**. You can see an entry for the X.509 certificate.
-
-   :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/entry.png" alt-text="Screenshot of the entry for X.509 certificate.":::
+   Unless access is allowed, certificate-based authentication fails if you enable the upcoming Trusted CA hints feature.
 
 1. Microsoft Entra ID requests a client certificate. The user picks the client certificate, and selects **Ok**.
 
