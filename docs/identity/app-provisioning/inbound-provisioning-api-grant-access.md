@@ -13,7 +13,7 @@ ms.author: kenwith
 ms.reviewer: cmmdesai
 ---
 
-# Grant access to the inbound provisioning API
+# Grant access to the inbound provisioning API (Public preview)
 
 ## Introduction
 
