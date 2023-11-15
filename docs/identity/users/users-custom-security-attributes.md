@@ -1,11 +1,11 @@
 ---
-title: Assign, update, list, or remove custom security attributes for a user (Preview)
+title: Assign, update, list, or remove custom security attributes for a user
 description: Assign, update, list, or remove custom security attributes for a user in Microsoft Entra ID. 
 services: active-directory 
 author: rolyon
 manager: amycolannino
 ms.author: rolyon
-ms.date: 10/01/2023
+ms.date: 11/15/2023
 ms.topic: how-to
 ms.service: active-directory
 ms.subservice: enterprise-users
@@ -15,11 +15,7 @@ ms.reviewer:
 ms.collection: M365-identity-device-management
 ---
 
-# Assign, update, list, or remove custom security attributes for a user (Preview)
-
-> [!IMPORTANT]
-> Custom security attributes are currently in PREVIEW.
-> For more information about previews, see [Universal License Terms For Online Services](https://www.microsoft.com/licensing/terms/product/ForOnlineServices/all).
+# Assign, update, list, or remove custom security attributes for a user
 
 [Custom security attributes](~/fundamentals/custom-security-attributes-overview.md) in Microsoft Entra ID, part of Microsoft Entra, are business-specific attributes (key-value pairs) that you can define and assign to Microsoft Entra objects. For example, you can assign custom security attribute to filter your employees or to help determine who gets access to resources. This article describes how to assign, update, list, or remove custom security attributes for Microsoft Entra ID.
 
@@ -27,7 +23,6 @@ ms.collection: M365-identity-device-management
 
 To assign or remove custom security attributes for a user in your Microsoft Entra tenant, you need:
 
-- Microsoft Entra ID P1 or P2 license
 - [Attribute Assignment Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator)
 - Microsoft.Graph module when using [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation)
 - [AzureADPreview](https://www.powershellgallery.com/packages/AzureADPreview) version 2.0.2.138 or later when using Azure AD PowerShell
@@ -61,7 +56,7 @@ To assign or remove custom security attributes for a user in your Microsoft Entr
     - For predefined custom security attribute values, select a value from the **Assigned values** list.
     - For multi-valued custom security attributes, select **Add values** to open the **Attribute values** pane and add your values. When finished adding values, select **Done**.
 
-    ![Screenshot showing assigning a custom security attribute to a user.](./media/users-custom-security-attributes/users-attributes-assign.png)
+    :::image type="content" source="./media/users-custom-security-attributes/users-attributes-assign.png" alt-text="Screenshot showing assigning a custom security attribute to a user." lightbox="./media/users-custom-security-attributes/users-attributes-assign.png":::
 
 1. When finished, select **Save** to assign the custom security attributes to the user.
 
@@ -101,7 +96,7 @@ You can filter the list of custom security attributes assigned to users on the A
 
 1. For **Value**, enter or select a value.
 
-    ![Screenshot showing a custom security attribute filter for users.](./media/users-custom-security-attributes/users-attributes-filter.png)
+    :::image type="content" source="./media/users-custom-security-attributes/users-attributes-filter.png" alt-text="Screenshot showing a custom security attribute filter for users." lightbox="./media/users-custom-security-attributes/users-attributes-filter.png":::
 
 1. To apply the filter, select **Apply**.
 
@@ -130,7 +125,7 @@ The following example assigns a custom security attribute with a string value to
 - Attribute set: `Engineering`
 - Attribute: `ProjectDate`
 - Attribute data type: String
-- Attribute value: `"2023-10-01"`
+- Attribute value: `"2024-11-15"`
 
 # [PowerShell](#tab/ms-powershell)
 
@@ -140,7 +135,7 @@ The following example assigns a custom security attribute with a string value to
 $customSecurityAttributes = @{
     "Engineering" = @{
         "@odata.type" = "#Microsoft.DirectoryServices.CustomSecurityAttributeValue"
-        "ProjectDate" = "2023-10-01"
+        "ProjectDate" = "2024-11-15"
     }
 }
 Update-MgUser -UserId $userId -CustomSecurityAttributes $customSecurityAttributes
@@ -158,7 +153,7 @@ PATCH https://graph.microsoft.com/v1.0/users/{id}
         "Engineering":
         {
             "@odata.type":"#Microsoft.DirectoryServices.CustomSecurityAttributeValue",
-            "ProjectDate":"2023-10-01"
+            "ProjectDate":"2024-11-15"
         }
     }
 }
@@ -549,7 +544,7 @@ $userAttributes.CustomSecurityAttributes.AdditionalProperties.Marketing
 ```Output
 Key   : Engineering
 Value : {[@odata.type, #microsoft.graph.customSecurityAttributeValue], [Project@odata.type, #Collection(String)], [Project, System.Object[]],
-        [ProjectDate, 2023-10-01]…}
+        [ProjectDate, 2024-11-15]…}
 
 Key   : Marketing
 Value : {[@odata.type, #microsoft.graph.customSecurityAttributeValue], [EmployeeId, GS45897]}
@@ -560,7 +555,7 @@ Key                   Value
 @odata.type           #microsoft.graph.customSecurityAttributeValue
 Project@odata.type    #Collection(String)
 Project               {Baker, Alpine}
-ProjectDate           2023-10-01
+ProjectDate           2024-11-15
 NumVendors            8
 CostCenter@odata.type #Collection(Int32)
 CostCenter            {1001, 1003}
@@ -595,7 +590,7 @@ GET https://graph.microsoft.com/v1.0/users/{id}?$select=customSecurityAttributes
                 "Baker",
                 "Alpine"
             ],
-            "ProjectDate": "2023-10-01",
+            "ProjectDate": "2024-11-15",
             "NumVendors": 8,
             "CostCenter@odata.type": "#Collection(Int32)",
             "CostCenter": [
@@ -762,7 +757,7 @@ Value : {[@odata.type, #microsoft.graph.customSecurityAttributeValue], [AppCount
 
 Key   : Engineering
 Value : {[@odata.type, #microsoft.graph.customSecurityAttributeValue], [Project@odata.type, #Collection(String)], [Project, System.Object[]],
-        [ProjectDate, 2023-10-01]…}
+        [ProjectDate, 2024-11-15]…}
 
 Key   : Marketing
 Value : {[@odata.type, #microsoft.graph.customSecurityAttributeValue], [EmployeeId, GS45897]}
@@ -818,7 +813,7 @@ ConsistencyLevel: eventual
                         "Baker",
                         "Alpine"
                     ],
-                    "ProjectDate": "2023-10-01",
+                    "ProjectDate": "2024-11-15",
                     "NumVendors": 8,
                     "CostCenter@odata.type": "#Collection(Int32)",
                     "CostCenter": [
@@ -932,7 +927,7 @@ ConsistencyLevel: eventual
                         "Baker",
                         "Alpine"
                     ],
-                    "ProjectDate": "2023-10-01",
+                    "ProjectDate": "2024-11-15",
                     "NumVendors": 8,
                     "CostCenter@odata.type": "#Collection(Int32)",
                     "CostCenter": [
