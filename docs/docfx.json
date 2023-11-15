@@ -202,8 +202,7 @@
       "v-shils",
       "v-shmck",
       "v-thepet"
-    ]
-    },
+    ],
     "rules": {
       "sensitive-language-wl": {
         "exclude": [
@@ -212,5 +211,5 @@
         ]
       }
     }
-  }
-
+  } 
+}
