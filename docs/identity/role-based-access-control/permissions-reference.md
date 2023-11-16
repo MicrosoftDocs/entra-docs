@@ -12,7 +12,7 @@ ms.topic: reference
 ms.date: 11/03/2023
 ms.author: rolyon
 ms.reviewer: abhijeetsinha
-ms.custom: generated, it-pro, fasttrack-edit
+ms.custom: generated, it-pro, fasttrack-edit, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.collection: M365-identity-device-management
 ---
 
