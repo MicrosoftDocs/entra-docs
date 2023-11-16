@@ -44,7 +44,7 @@
     "externalReference": [],
     "globalMetadata": {
       "brand": "entra",
-      "uhfHeaderId": "entra",
+      "uhfHeaderId": "MSDocsHeader-Entra",
       "breadcrumb_path": "/entra/breadcrumb/toc.json",
       "extendBreadcrumb": false,
       "feedback_system": "Standard",
