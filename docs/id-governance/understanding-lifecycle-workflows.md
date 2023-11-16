@@ -127,7 +127,7 @@ Actions taken from the overview of a workflow allow you to quickly complete task
 
 After selecting a template, on the basics screen:
  - Provide the information that is used in the description portion of the workflow.
- - Select the trigger which defines when the execution condition will occur.
+ - Select the trigger that defines when the execution condition will occur.
 
  [![Basics of a workflow.](media/understanding-lifecycle-workflows/workflow-4.png)](media/understanding-lifecycle-workflows/workflow-4.png#lightbox)
 
