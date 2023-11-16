@@ -7,7 +7,7 @@ ms.service: active-directory
 ms.topic: conceptual
 ms.workload: identity
 ms.subservice: report-monitor
-ms.date: 11/07/2023
+ms.date: 11/16/2023
 ms.author: sarahlipsey
 ms.reviewer: sarbar
 
@@ -19,10 +19,11 @@ Microsoft Entra Health (preview) provides you with the ability to monitor and di
 
 **Service level agreement (SLA) attainment**:
 
-- Tenant-level monitoring and diagnostics for key Microsoft Entra ID scenarios.
+- Tenant-level user authentication availability for Microsoft Entra ID.
 
 **Scenario monitoring (preview)**:
 
+- Monitoring and diagnostics for key Microsoft Entra ID scenarios.
 - Proactive alerts when a potential issue or failure condition is detected.
 - Reduce time to detection and support issue resolution.
 - Actionable and prescriptive guidance for every alert.
@@ -33,17 +34,16 @@ Microsoft Entra Health consists of multiple layers, which allows you to navigate
 
 The SLA Attainment report is available for all Microsoft Entra tenants. Scenario Monitoring is currently in preview, but can be enabled for your view of the tenant.
 
-1. Sign into the [Microsoft Entra admin center] using the **Reports Reader** role.
-1. Browse to **Identity** > **Monitoring** > **Health (preview)**.
+1. Sign into the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](~/identity/role-based-access-control/permissions-reference.md#reports-reader).
+1. Browse to **Identity** > **Monitoring and health** > **Health (preview)**.
 
 ### Enable the Scenario monitoring preview
 
 If you'd like to view the **Scenario monitoring (preview)**:
 
-1. Sign into the [Microsoft Entra admin center] using the **Reports Reader** role.
-1. Browse to **Identity** > **Monitoring** > **Health (preview)**.
-1. Select **Preview features**.
-1. Set the **Scenario Monitoring** toggle to **On** and select **Apply**.
+1. Sign into the [Microsoft Entra admin center] as at least a [Reports Reader](~/identity/role-based-access-control/permissions-reference.md#reports-reader).
+1. Browse to **Identity** > **Settings** > **Preview hub**.
+1. Enable **Scenario monitoring**.
 
 Enabling preview feature might take up to 24 hours to populate. Enabling the preview only changes your view, not the entire tenant. You can disable the preview at any time.
 
@@ -69,9 +69,9 @@ Hover your mouse over the bar for a month to view the percentage for that month.
 
 ![Screenshot of the SLA attainment report.](media/concept-scenario-health/sla-attainment.png)
 
-## Scenario monitoring
+## Scenario monitoring (preview)
 
-Microsoft Entra Scenario monitoring provides insights into important events within your scenario, such as sign-ins that require a compliant or managed device. Each scenario detail page provides trends and totals for that scenario for the last 30 days.
+Microsoft Entra Scenario monitoring (preview) provides insights into important events within a scenario, such as sign-ins that require a compliant or managed device. Each scenario detail page provides trends and totals for that scenario for the last 30 days. The graph aggregates data every 15 minutes. You can set the date range to 24 hours, 7 days, or 1 month.
 
 Select **View details** on a tile to view the metrics for that scenario.
 
@@ -79,7 +79,7 @@ Select **View details** on a tile to view the metrics for that scenario.
 
 ### Sign-ins requiring a compliant device
 
-This scenario captures each user authentication that satisfies a Conditional Access policy requiring sign-in from a compliant device. The graph aggregates data every 15 minutes. You can set the date range to 24 hours, 7 days, or 1 month.
+This scenario captures each user authentication that satisfies a Conditional Access policy requiring sign-in from a compliant device. 
 
 - [Create a compliance policy in Microsoft Intune](/mem/intune/protect/create-compliance-policy).
 - [Learn about Conditional Access and Intune](/mem/intune/protect/conditional-access).
@@ -109,7 +109,7 @@ This scenario also provides an aggregated look at failures of interactive MFA si
 
 ### Sign-ins to applications using SAML authentication
 
-This scenario looks at SAML 2.0 authentication attempts that were successfully processed by the Microsoft Entra cloud service for your tenant. This metric currently excludes WS-FED/SAML 1.1 apps integrated with Microsoft Entra ID.
+This scenario looks at SAML 2.0 authentication attempts that the Microsoft Entra cloud service for your tenant successfully processed. This metric currently excludes WS-FED/SAML 1.1 apps integrated with Microsoft Entra ID.
 
 - [Learn how the Microsoft Identity platform uses the SAML protocol](/identity/identity-platform/saml-protocol-reference)
 - [Use a SAML 2.0 IdP for single sign on](/identity/hybrid/connect/how-to-connect-fed-saml-ldp).
