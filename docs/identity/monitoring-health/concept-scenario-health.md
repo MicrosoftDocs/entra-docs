@@ -83,7 +83,7 @@ This scenario captures each user authentication that satisfies a Conditional Acc
 
 - [Create a compliance policy in Microsoft Intune](/mem/intune/protect/create-compliance-policy).
 - [Learn about Conditional Access and Intune](/mem/intune/protect/conditional-access).
-- [Learn about Microsoft Entra joined devices](/identity/devices/concept-directory-join)
+- [Learn about Microsoft Entra joined devices](~/identity/devices/concept-directory-join)
 
 ![Screenshot of the compliant device scenario.](media/concept-scenario-health/scenario-monitoring-compliant-device.png)
 
@@ -92,7 +92,7 @@ This scenario captures each user authentication that satisfies a Conditional Acc
 This scenario captures each user authentication that satisfies a Conditional Access policy requiring sign-in from a managed device. The graph aggregates data every 15 minutes. You can set the date range to 24 hours, 7 days, or 1 month.
 
 - [What is device management](/mem/intune/fundamentals/what-is-device-management)?
-- [Learn about Microsoft Entra hybrid joined devices](/identity/devices/concept-hyrid-join)
+- [Learn about Microsoft Entra hybrid joined devices](~/identity/devices/concept-hyrid-join)
 
 ![Screenshot of the managed device scenario.](media/concept-scenario-health/scenario-monitoring-managed-device.png)
 
@@ -102,8 +102,8 @@ This scenario provides two aggregated data graphs. The first displays the number
 
 This scenario also provides an aggregated look at failures of interactive MFA sign-in attempts. The same type of refreshed sessions and passwordless methods are excluded from this metric.
 
-- [Configure Conditional Access for MFA for all users](/identity/conditional-access/howto-conditional-access-policy-all-users-mfa).
-- [Troubleshoot common sign-in errors](/identity/monitoring-health/howto-troubleshoot-sign-in-errors).
+- [Configure Conditional Access for MFA for all users](~/identity/conditional-access/howto-conditional-access-policy-all-users-mfa).
+- [Troubleshoot common sign-in errors](~/identity/monitoring-health/howto-troubleshoot-sign-in-errors).
 
 ![Screenshot of the MFA scenario.](media/concept-scenario-health/scenario-monitoring-MFA.png)
 
@@ -111,7 +111,7 @@ This scenario also provides an aggregated look at failures of interactive MFA si
 
 This scenario looks at SAML 2.0 authentication attempts that the Microsoft Entra cloud service for your tenant successfully processed. This metric currently excludes WS-FED/SAML 1.1 apps integrated with Microsoft Entra ID.
 
-- [Learn how the Microsoft Identity platform uses the SAML protocol](/identity/identity-platform/saml-protocol-reference)
-- [Use a SAML 2.0 IdP for single sign on](/identity/hybrid/connect/how-to-connect-fed-saml-ldp).
+- [Learn how the Microsoft Identity platform uses the SAML protocol](~/identity/identity-platform/saml-protocol-reference)
+- [Use a SAML 2.0 IdP for single sign on](~/identity/hybrid/connect/how-to-connect-fed-saml-ldp).
 
 ![Screenshot of the SAML scenario.](media/concept-scenario-health/scenario-monitoring-SAML.png)
