@@ -528,7 +528,7 @@
               href: custom-extension-OnAttributeCollectionSubmit-reference.md
         - name: Handle browser cookie restrictions
           items:
-            - name: Handle ITP in Safari
+            - name: How to handle third-party cookie blocking in browsers
               href: reference-third-party-cookies-spas.md
             - name: Handle SameSite cookie changes in Chrome
               href: howto-handle-samesite-cookie-changes-chrome-browser.md

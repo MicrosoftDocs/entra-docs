@@ -34,6 +34,10 @@
         href: how-to-configure-aws-iam.md
       - name: Configure Okta as an identity provider
         href: how-to-configure-okta-as-an-identity-provider.md 
+      - name: Configure the ServiceNow app
+        href: how-to-configure-servicenow-application.md
+      - name: Permissions Management for Defender for Cloud
+        href: permissions-management-for-defender-for-cloud.md
     - name: View information about your Authorization Systems
       expanded: false
       items:
@@ -155,6 +159,11 @@
         href: report-create-custom-report.md
       - name: View and download the Permissions analytics report
         href: product-permissions-analytics-reports.md
+  - name: APIs      
+    expanded: false
+    items:
+    - name: Discover, remediate, and monitor
+      href: https://go.microsoft.com/fwlink/?linkid=2252615
   - name: Troubleshoot
     expanded: false
     items:
