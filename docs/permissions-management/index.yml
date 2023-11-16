@@ -92,7 +92,7 @@ landingContent:
     linkLists:
       - linkListType: reference
         links:
-          - text: Discover, remediate, and monitor
+          - text: Discover, remediate, and monitor permissions in your multicloud environment
             url: https://go.microsoft.com/fwlink/?linkid=2252615
   # Card
   - title: Reference 
