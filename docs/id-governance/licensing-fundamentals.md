@@ -81,7 +81,7 @@ The following table shows what features are available with each license.  Not al
 |[Automated group provisioning to SaaS apps](~/identity/saas-apps/tutorial-list.md)|| :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[Automated provisioning to on-premises apps](~/identity/app-provisioning/on-premises-application-provisioning-architecture.md)|| :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[Conditional Access - Terms of use attestation](~/identity/conditional-access/terms-of-use.md)|| :white_check_mark: | :white_check_mark: | :white_check_mark: |
-|[Entitlement management - Basic entitlement management](entitlement-management-overview.md)|||| :white_check_mark: |  
+|[Entitlement management - Basic entitlement management](entitlement-management-overview.md)|||:white_check_mark: | :white_check_mark: |  
 |[Entitlement management - Conditional Access Scoping](entitlement-management-external-users.md#review-your-conditional-access-policies)|||| :white_check_mark: |
 |[Entitlement management MyAccess Search](my-access-portal-overview.md)|||| :white_check_mark: |  
 |[Entitlement management with Verified ID](entitlement-management-verified-id-settings.md)|||| :white_check_mark: |  
