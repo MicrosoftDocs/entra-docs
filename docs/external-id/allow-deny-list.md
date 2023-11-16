@@ -1,5 +1,4 @@
 ---
-
 title: Allow or block invites to specific organizations
 description: Shows how an administrator can use the Microsoft Entra admin center or PowerShell to set an access or blocklist to allow or block B2B users from certain domains.
 
@@ -46,8 +45,9 @@ This is the most typical scenario, where your organization wants to work with al
 
 To add a blocklist:
 
+
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
-1. Browse to **Identity** > **Users** > **User settings**.
+2. Browse to **Identity** > **Users** > **User settings**.
 3. Under **External users**, select **Manage external collaboration settings**.
 4. Under **Collaboration restrictions**, select **Deny invitations to the specified domains**.
 5. Under **Target domains**, enter the name of one of the domains that you want to block. For multiple domains, enter each domain on a new line. For example:
@@ -67,8 +67,9 @@ If you want to use an allowlist, make sure that you spend time to fully evaluate
 
 To add an allowlist:
 
+
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
-1. Browse to **Identity** > **Users** > **User settings**.
+2. Browse to **Identity** > **Users** > **User settings**.
 3. Under **External users**, select **Manage external collaboration settings**.
 4. Under **Collaboration restrictions**, select **Allow invitations only to the specified domains (most restrictive)**.
 5. Under **Target domains**, enter the name of one of the domains that you want to allow. For multiple domains, enter each domain on a new line. For example:
@@ -167,4 +168,8 @@ Remove-AzureADPolicy -Id $currentpolicy.Id
 
 - [Cross-tenant access settings](cross-tenant-access-settings-b2b-collaboration.md)
 - [External collaboration settings](external-collaboration-settings-configure.md).
+
+
+=======
+
 

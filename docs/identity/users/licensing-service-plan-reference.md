@@ -32,7 +32,7 @@ When [managing licenses in the Azure portal](https://portal.azure.com/#blade/Mic
 - **Service plans included (friendly names)**: A list of service plans (friendly names) in the product that correspond to the string ID and GUID
 
 >[!NOTE]
->This information last updated on October 10th, 2023.<br/>You can also download a CSV version of this table [here](https://download.microsoft.com/download/e/3/e/e3e9faf2-f28b-490a-9ada-c6089a1fc5b0/Product%20names%20and%20service%20plan%20identifiers%20for%20licensing.csv).
+>This information last updated on October 10th 2023.<br/>You can also download a CSV version of this table [here](https://download.microsoft.com/download/e/3/e/e3e9faf2-f28b-490a-9ada-c6089a1fc5b0/Product%20names%20and%20service%20plan%20identifiers%20for%20licensing.csv).
 ><br/>
 
 | Product name | String ID | GUID | Service plans included | Service plans included (friendly names) |

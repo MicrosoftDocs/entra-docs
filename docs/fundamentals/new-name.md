@@ -264,7 +264,7 @@ Only official product names are capitalized, plus Conditional Access and My * ap
 |            | Azure AD join<br/> Azure AD joined<br/> Azure Active Directory join<br/> Azure Active Directory joined | Microsoft Entra join<br/> Microsoft Entra joined  |
 |            | Azure AD license<br/> Azure Active Directory license | Microsoft Entra ID license or license for Microsoft Entra ID |
 |            | Azure AD login<br/> Azure Active Directory login | Microsoft Entra login |
-|            | Azure AD managed identities<br/> Azure Active Directory managed identities | Microsoft Entra managed identities |
+|            | Azure AD managed identities<br/> Azure Active Directory managed identities | Managed identities for Azure resources |
 |            | Azure AD multifactor authentication (MFA)<br/> Azure Active Directory multifactor authentication (MFA) | Microsoft Entra multifactor authentication (MFA)<br/> (Second use: MFA) |
 |            | Azure AD OAuth and OpenID Connect<br/> Azure Active Directory OAuth and OpenID Connect | Microsoft Entra ID OAuth and OpenID Connect |
 |            | Azure AD object<br/> Azure Active Directory object | Microsoft Entra object |

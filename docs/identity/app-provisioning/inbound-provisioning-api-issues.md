@@ -7,12 +7,12 @@ ms.service: active-directory
 ms.subservice: app-provisioning
 ms.topic: troubleshooting
 ms.workload: identity
-ms.date: 09/15/2023
+ms.date: 11/15/2023
 ms.author: kenwith
 ms.reviewer: chmutali
 ---
 
-# Troubleshoot inbound provisioning API issues (Public preview)
+# Troubleshoot inbound provisioning API issues
 
 ## Introduction
 
@@ -46,7 +46,7 @@ This document covers commonly encountered errors and issues with inbound provisi
 
 **Resolution:**
 1. Verify that your provisioning app is running. If it isn't running, select the menu option **Start provisioning** to process the data.
-2. Turn your On-premises provisioning agent status to active by restarting the On-premise agent.
+2. Turn your On-premises provisioning agent status to active by restarting the On-premises agent.
 1. Expect 5 to 10-minute delay between processing the request and writing to the provisioning logs. If your API client is sending data to the provisioning /bulkUpload API endpoint, then introduce a time delay between the request invocation and provisioning logs query. 
 
 ### Forbidden 403 response code 

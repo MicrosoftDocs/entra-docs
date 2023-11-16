@@ -8,12 +8,12 @@ ms.service: active-directory
 ms.subservice: app-provisioning
 ms.workload: identity
 ms.topic: how-to
-ms.date: 09/15/2023
+ms.date: 11/15/2023
 ms.author: kenwith
 ms.reviewer: cmmdesai
 ---
 
-# Quickstart API-driven inbound provisioning with Postman (Public preview)
+# Quickstart API-driven inbound provisioning with Postman
 
 This tutorial describes how you can quickly test [API-driven inbound provisioning](inbound-provisioning-api-concepts.md) with Postman.
 
