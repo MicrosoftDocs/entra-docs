@@ -76,10 +76,10 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     `urn:amazon:cognito:sp:us-west-2_<Rivial_ID>`
 
     b. In the **Reply URL** text box, type the URL:
-    `https://rivialsecurity-beta.auth.us-west-2.amazoncognito.com/saml2/idpresponse`
+    `https://rivialsecurity.auth.us-west-2.amazoncognito.com`
 
     c. In the **Sign on URL** text box, type the URL:
-    `https://d1sq84a9l17lxv.cloudfront.net`
+    `https://platform.rivialsecurity.com`
 
 	> [!NOTE]
 	> The Identifier is not real. Update the value with the actual Identifier. Contact [Rivial Data Security support team](mailto:support@rivialsecurity.com) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.

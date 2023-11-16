@@ -17,6 +17,7 @@ ms.author: billmath
 
 ms.collection: M365-identity-device-management
 ---
+
 # Microsoft Entra Connect: Staging server and disaster recovery
 
 With a server in staging mode, you can make changes to the configuration and preview the changes before you make the server active. It also allows you to run full import and full synchronization to verify that all changes are expected before you make these changes into your production environment.
@@ -106,10 +107,19 @@ For more information on setting up a Microsoft Entra Connect Sync server in Stag
 
 You may need to perform a failover of the Sync Servers for several reasons, such as upgrading the version of Microsoft Entra Connect, or receiving an alert that the health service of the Sync Service is not receiving up to date information. In these events you can attempt a failover of the Sync Servers by following the below steps.
 
+> [!IMPORTANT]
+> Switching a staging server to active mode can have a severe impact in the synchronization, if the following conditions are not met. As a precaution, always run an initial sync cycle and [Verify](#verify) the pending exports, before doing this operation.
+
 #### Prerequisites
 
 - One currently active Microsoft Entra Connect Sync Server
 - One staging Microsoft Entra Connect Sync Server
+- The staging server have synchronization scheduler enabled and has synchronized with Microsoft Entra ID recently
+- In case of any updates in synchronization rules or in sync scope, run an initial sync cycle
+- Confirm that your Microsoft Entra Connect Sync Server is configured to [prevent accidental deletes](how-to-connect-sync-feature-prevent-accidental-deletes.md) 
+- [Verify ](#verify)the pending exports and confirm that there aren't significant updates, and such updates are expected
+- Check if [Microsoft Entra Connect Health](whatis-azure-ad-connect.md#what-is-microsoft-entra-connect-health) agent is updated by checking the server in [Microsoft Entra ID Connect Health](https://aka.ms/aadconnecthealth) portal
+- Switch the current active server to staging mode, before switching the staging server to active
 
 #### Change currently Active Sync Server to staging mode
 
@@ -151,8 +161,8 @@ Get-ADSyncScheduler
   
 From the results, verify the value of the "StagingModeEnabled" setting. If the server was successfully switched to staging mode the value of this setting should be _**True**_ like in the example below:  
 
-   > [!div class="mx-imgBorder"]
-   > ![Screenshot shows Sync Service console on the Active Microsoft Entra Connect dialog box.](media/how-to-connect-sync-staging-server/staging-server-verification.png)
+> [!div class="mx-imgBorder"]
+> ![Screenshot shows Sync Service console on the Active Microsoft Entra Connect dialog box.](media/how-to-connect-sync-staging-server/staging-server-verification.png)
 
 #### Change current Staging Sync server to active mode
 
@@ -388,3 +398,4 @@ else
 
 * [Microsoft Entra Connect Sync: Understand and customize synchronization](how-to-connect-sync-whatis.md)  
 * [Integrating your on-premises identities with Microsoft Entra ID](../whatis-hybrid-identity.md)  
+
