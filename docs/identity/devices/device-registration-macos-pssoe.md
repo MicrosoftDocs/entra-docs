@@ -15,7 +15,7 @@ ms.reviewer: brianmel
 
 # Register a Mac device with macOS Platform Single Sign-On using Company Portal (preview)
 
-You can register a Mac device with the macOS Platform Single Sign-On (PSSO) using Company Portal. There are two workflows that are supported with Company Portal, [Web Enrollment](#web-enrollment) and [Intune MDM enrollment with Microsoft Entra Join](#intune-mdm-enrollment-with-microsoft-entra-join).
+You can register a Mac device with the macOS Platform Single Sign-On (PSSO) using Company Portal. There are two workflows that are supported with Company Portal, [Web Enrollment](#web-enrollment) and [Intune MDM enrollment with Microsoft Entra Join](#intune-mdm-and-microsoft-entra-join-using-company-portal).
 
 ## Prerequisites
 
@@ -61,11 +61,11 @@ Although registration with Automated Device Enrollment during an out-of-the-box 
 
 1. Open **Settings** > **Privacy & Security** > **Profiles** if it doesn't automatically appear. Select **Management Profile**.
 
-    :::image type="content" source="media/device-registration-macos-pssoe/pssoe-settings-profiles-management-prof.png" alt-text="Screenshot of the Settings app Profiles showing a downloaded management profile.":::
+    :::image type="content" source="media/device-registration-macos-pssoe/pssoe-settings-profiles-management-prof.png" alt-text="Screenshot of the Settings app Profiles showing a downloaded management profile." width="200px":::
 
 1. Select **Install** to get access to company resources.
 
-    :::image type="content" source="media/device-registration-macos-pssoe/pssoe-settings-profiles-install-management-prof.png" alt-text="Screenshot the prompt to install the management profile in settings.":::
+    :::image type="content" source="media/device-registration-macos-pssoe/pssoe-settings-profiles-install-management-prof.png" alt-text="Screenshot the prompt to install the management profile in settings." width="300px":::
 
 1. Enter your local device password in the **Profiles** window that appears and select **Enroll**.
 
@@ -73,7 +73,7 @@ Although registration with Automated Device Enrollment during an out-of-the-box 
 
 1. You'll see a notification in **Company Portal** that the installation is complete. Select **Done**. A **Registration Required** notification appears in the top right of the screen. Hover over the notification and select **Register**.
 
-    :::image type="content" source="media/device-registration-macos-pssoe/pssoe-registration-req-notification.png" alt-text="Screenshot of the Registration Required notification.":::
+    :::image type="content" source="media/device-registration-macos-pssoe/pssoe-registration-req-notification.png" alt-text="Screenshot of the Registration Required notification." width="400px":::
 
 1. The Platform SSO window appears to enable your macOS account to be registered with your identity provider. There are two ways you can do this:
     - **Touch ID**: Use your device's touch ID capability. The device selects your secure enclave key and wait for your device to confirm it is in compliance.
