@@ -56,7 +56,6 @@ To configure and test Microsoft Entra SSO with elia, perform the following steps
     1. **[Create a Microsoft Entra ID test user](#create-a-microsoft-entra-id-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
     1. **[Assign the Microsoft Entra ID test user](#assign-the-microsoft-entra-id-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure elia SSO](#configure-elia-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create elia test user](#create-elia-test-user)** - to have a counterpart of B.Simon in elia that is linked to the Microsoft Entra ID representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 ## Configure Microsoft Entra SSO
@@ -73,20 +72,24 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 1. On the **Basic SAML Configuration** section, perform the following steps:
 
     a. In the **Identifier (Entity ID)** text box, type a value using the following pattern:
-    `urn:auth0:dev-p0tbk3x9:<ORGANIZATION-ID>`
+    `urn:auth0:dev-p0tbk3x9:<CONNECTION-NAME>`
 
     b. In the **Reply URL** text box, type a URL using the following pattern:
     `https://dev-p0tbk3x9.us.auth0.com/login/callback?connection=<CONNECTION-NAME>&organization=<ORGANIZATION-ID>`
 
-    c. In the **Sign on URL** text box, type the URL:
-    `https://elia.one`
+    c. In the **Sign on URL** text box, type a URL using the following pattern:
+    `https://elia.one/?organization=<ORGANIZATION-ID>`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier and Reply URL. Contact [elia support team](mailto:support@gphy.ca) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
+	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [elia support team](mailto:support@gphy.ca) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Certificate (PEM)** and select **PEM certificate download** to download the certificate and save it on your computer.
 
 	[ ![Screenshot of a certificate showing the Certificate download link.](common/certificate-base64-download.png) ](common/certificate-base64-download.png#lightbox)
+
+1. On the **Set up elia** section, copy the appropriate URL(s) based on your requirement.
+
+	![Screenshot shows to copy configuration URLs.](media/elia-tutorial/copy-configuration-urls.png "Metadata")
 
 ### Create a Microsoft Entra ID test user
 
@@ -116,11 +119,7 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
 
 ## Configure elia SSO
 
-To configure single sign-on on **elia** side, you need to send the downloaded **Certificate (PEM)** and appropriate copied URLs from Microsoft Entra admin center to [elia support team](mailto:support@gphy.ca). They set this setting to have the SAML SSO connection set properly on both sides.
-
-### Create elia test user
-
-In this section, you create a user called B.Simon in elia. Work with [elia support team](mailto:support@gphy.ca) to add the users in the elia platform. Users must be created and activated before you use single sign-on.
+To configure single sign-on on **elia** side, you need to send the downloaded **Certificate (PEM)** and Login URL from Microsoft Entra admin center to [elia support team](mailto:support@gphy.ca). They set this setting to have the SAML SSO connection set properly on both sides.
 
 ## Test SSO 
 
