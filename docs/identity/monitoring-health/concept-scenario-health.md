@@ -79,11 +79,11 @@ Select **View details** on a tile to view the metrics for that scenario.
 
 ### Sign-ins requiring a compliant device
 
-This scenario captures each user authentication that satisfies a Conditional Access policy requiring sign-in from a compliant device. 
+This scenario captures each user authentication that satisfies a Conditional Access policy requiring sign-in from a compliant device.
 
 - [Create a compliance policy in Microsoft Intune](/mem/intune/protect/create-compliance-policy).
 - [Learn about Conditional Access and Intune](/mem/intune/protect/conditional-access).
-- [Learn about Microsoft Entra joined devices](~/identity/devices/concept-directory-join.md)
+- [Learn about Microsoft Entra joined devices](~/identity/devices/concept-directory-join.md).
 
 ![Screenshot of the compliant device scenario.](media/concept-scenario-health/scenario-monitoring-compliant-device.png)
 
@@ -92,7 +92,7 @@ This scenario captures each user authentication that satisfies a Conditional Acc
 This scenario captures each user authentication that satisfies a Conditional Access policy requiring sign-in from a managed device. The graph aggregates data every 15 minutes. You can set the date range to 24 hours, 7 days, or 1 month.
 
 - [What is device management](/mem/intune/fundamentals/what-is-device-management)?
-- [Learn about Microsoft Entra hybrid joined devices](~/identity/devices/concept-hyrid-join.md)
+- [Learn about Microsoft Entra hybrid joined devices](~/identity/devices/concept-hybrid-join.md).
 
 ![Screenshot of the managed device scenario.](media/concept-scenario-health/scenario-monitoring-managed-device.png)
 
