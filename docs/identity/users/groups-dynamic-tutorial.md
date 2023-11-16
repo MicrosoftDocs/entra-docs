@@ -45,7 +45,7 @@ First, you'll create a group for your guest users who all are from a single part
 1. Select Microsoft Entra ID.
 2. Select **Groups** > **All groups** > **New group**.
 
-   :::image type="content" source="./media/groups-dynamic-tutorial/new-group.png" alt-text="Select command to start a new group.":::
+   :::image type="content" source="./media/groups-dynamic-tutorial/new-group.png" alt-text="Screenshot of using the Select command to start a new group.":::
 
 3. On the **New Group** pane:
   
@@ -88,7 +88,7 @@ Now that you have your new group, you can apply the licenses that these partner 
 
 Perhaps your ultimate administrative plan is to assign all of your guest users to their own groups by company. You can also now change the **All users** group so that it is reserved for only members users in your organization. Then you can use it to assign apps and licenses that are specific to your home organization.
 
-:::image type="content" source="./media/groups-dynamic-tutorial/all-users-edit.png" alt-text="Change All users group to members only.":::
+:::image type="content" source="./media/groups-dynamic-tutorial/all-users-edit.png" alt-text="Screenshot of using the Change all users group to members only.":::
 
 ## Clean up resources
 

@@ -44,7 +44,7 @@ Here are some examples of advanced rules or syntax for which we recommend that y
 
 For more step-by-step instructions, see [Create or update a dynamic group](groups-create-rule.md).
 
-:::image type="content" source="./media/groups-dynamic-membership/update-dynamic-group-rule.png" alt-text="Add membership rule for a dynamic group.":::
+:::image type="content" source="./media/groups-dynamic-membership/update-dynamic-group-rule.png" alt-text="Screenshot of the add membership rule for a dynamic group.":::
 
 ### Rule syntax for a single expression
 
