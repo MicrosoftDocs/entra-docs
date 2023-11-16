@@ -23,7 +23,7 @@ You can remove a large number of members from a group by using a comma-separated
 
 Download and fill in the bulk upload CSV template to successfully add Microsoft Entra group members in bulk. Your CSV template might look like this example:
 
-:::image type="content" source="./media/groups-bulk-remove-members/template-example.png" alt-text="Spreadsheet for upload and call-outs explaining the purpose and values for each row and column.":::
+:::image type="content" source="./media/groups-bulk-remove-members/template-example.png" alt-text="Screenshot of the spreadsheet for upload and call-outs explaining the purpose and values for each row and column.":::
 
 ### CSV template structure
 
@@ -51,11 +51,11 @@ The rows in a downloaded CSV template are as follows:
 1. On the **Members** page, select **Remove members**.
 1. On the **Bulk remove group members** page, select **Download** to get the CSV file template with required group member properties.
 
-   :::image type="content" source="./media/groups-bulk-remove-members/remove-panel.png" alt-text="The Remove Members command is on the profile page for the group.":::
+   :::image type="content" source="./media/groups-bulk-remove-members/remove-panel.png" alt-text="Screenshot of the Remove Members command is on the profile page for the group.":::
 
 1. Open the CSV file and add a line for each group member you want to remove from the group (required values are Member object ID or User principal name). Then save the file.
 
-    :::image type="content" source="./media/groups-bulk-remove-members/csv-file.png" alt-text="The CSV file contains names and IDs of the group members to remove":::
+    :::image type="content" source="./media/groups-bulk-remove-members/csv-file.png" alt-text="Screenshot of the CSV file contains names and IDs of the group members to remove":::
 
 1. On the **Bulk remove group members** page, under **Upload your csv file**, browse to the file. When you select the file, validation of the CSV file starts.
 1. When the file contents are validated, the bulk import page displays **File uploaded successfully**. If there are errors, you must fix them before you can submit the job.
@@ -66,7 +66,7 @@ The rows in a downloaded CSV template are as follows:
 
 You can see the status of all of your pending bulk requests in the **Bulk operation results** page.
 
-:::image type="content" source="./media/groups-bulk-remove-members/bulk-center.png" alt-text="Check status in the Bulk Operations Results page.":::
+:::image type="content" source="./media/groups-bulk-remove-members/bulk-center.png" alt-text="Screenshot of the Check status option in the Bulk Operations Results page.":::
 
 For details about each line item within the bulk operation, select the values under the **# Success**, **# Failure**, or **Total Requests** columns. If failures occurred, the reasons for failure will be listed.
 

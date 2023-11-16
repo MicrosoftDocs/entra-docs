@@ -88,7 +88,7 @@ When a new Microsoft 365 group is created, a welcome email notification is sent 
 
 You can see the dynamic rule processing status and the last membership change date on the **Overview** page for the group.
   
-  :::image type="content" source="./media/groups-create-rule/group-status.png" alt-text="Diagram of dynamic group status.":::
+  :::image type="content" source="./media/groups-create-rule/group-status.png" alt-text="Screenshot of a diagram of the dynamic group status.":::
 
 The following status messages can be shown for **Dynamic rule processing** status:
 

@@ -40,11 +40,11 @@ The following steps are an example of changing a group from static to dynamic me
 
 1. On the **Properties** page for your selected group, select a **Membership type** of **Dynamic User**, then select Yes on the dialog explaining the changes to the group membership to continue. 
 
-   :::image type="content" source="./media/groups-change-type/select-group-to-convert.png" alt-text="select membership type of dynamic user.":::
+   :::image type="content" source="./media/groups-change-type/select-group-to-convert.png" alt-text="Screenshot of selecting membership type of dynamic user.":::
   
 2. Select **Add dynamic query**, and then provide the rule.
   
-   :::image type="content" source="./media/groups-change-type/enter-rule.png" alt-text="Enter the rule for the dynamic group.":::
+   :::image type="content" source="./media/groups-change-type/enter-rule.png" alt-text="Screenshot of entering the rule for the dynamic group.":::
   
 3. After creating the rule, select **Add query** at the bottom of the page.
 4. Select **Save** on the **Properties** page for the group to save your changes. The **Membership type** of the group is immediately updated in the group list.
