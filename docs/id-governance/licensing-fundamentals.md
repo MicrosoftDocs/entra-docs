@@ -76,14 +76,15 @@ The following table shows what features are available with each license.  Not al
 
 |Feature|Free|Microsoft Entra ID P1|Microsoft Entra ID P2|Microsoft Entra ID Governance|
 |-----|:-----:|:-----:|:-----:|:-----:|
-|[HR-driven Provisioning](~/identity/app-provisioning/what-is-hr-driven-provisioning.md)||| :white_check_mark: | :white_check_mark: |
+|[API-driven provisioning](../identity/app-provisioning/inbound-provisioning-api-concepts.md)|| :white_check_mark:  | :white_check_mark: | :white_check_mark: |
+|[HR-driven provisioning](~/identity/app-provisioning/what-is-hr-driven-provisioning.md)|| :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[Automated user provisioning to SaaS apps](~/identity/saas-apps/tutorial-list.md)| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[Automated group provisioning to SaaS apps](~/identity/saas-apps/tutorial-list.md)|| :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[Automated provisioning to on-premises apps](~/identity/app-provisioning/on-premises-application-provisioning-architecture.md)|| :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[Conditional Access - Terms of use attestation](~/identity/conditional-access/terms-of-use.md)|| :white_check_mark: | :white_check_mark: | :white_check_mark: |
-|[Entitlement management - Basic entitlement management](entitlement-management-overview.md)|||| :white_check_mark: |  
-|[Entitlement management - Conditional Access Scoping](entitlement-management-external-users.md#review-your-conditional-access-policies)|||| :white_check_mark: |
-|[Entitlement management MyAccess Search](my-access-portal-overview.md)|||| :white_check_mark: |  
+|[Entitlement management - Basic entitlement management](entitlement-management-overview.md)||| :white_check_mark: | :white_check_mark: |  
+|[Entitlement management - Conditional Access Scoping](entitlement-management-external-users.md#review-your-conditional-access-policies)||| :white_check_mark: | :white_check_mark: |
+|[Entitlement management MyAccess Search](my-access-portal-overview.md)||| :white_check_mark: | :white_check_mark: |  
 |[Entitlement management with Verified ID](entitlement-management-verified-id-settings.md)|||| :white_check_mark: |  
 |[Entitlement management + Custom Extensions (Logic Apps)](entitlement-management-logic-apps-integration.md)|||| :white_check_mark: |  
 |[Entitlement management + Auto Assignment Policies](entitlement-management-access-package-auto-assignment-policy.md)|||| :white_check_mark: |
@@ -102,7 +103,7 @@ The following table shows what features are available with each license.  Not al
 |[Access reviews - Machine learning assisted access certifications and reviews](review-recommendations-access-reviews.md#user-to-group-affiliation)|||| :white_check_mark: |
 |[Lifecycle Workflows (LCW)](what-are-lifecycle-workflows.md)|||| :white_check_mark: |
 |[LCW + Custom Extensions (Logic Apps)](lifecycle-workflow-extensibility.md)|||| :white_check_mark: |
-|[Identity governance dashboard (Preview)](governance-dashboard.md)| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+|[Identity governance dashboard (Preview)](governance-dashboard.md)| | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[Insights and reporting - Inactive guest accounts(Preview)](~/identity/users/clean-up-stale-guest-accounts.md)|||| :white_check_mark: |
 
 ## Entitlement Management
