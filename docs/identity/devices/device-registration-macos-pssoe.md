@@ -51,35 +51,35 @@ Although registration with Automated Device Enrollment during an out-of-the-box 
 
 1. Open the **Company Portal** app and select **Sign in**.
 1. Enter your Microsoft Entra ID credentials and select **Next**.
-1. You're prompted to **Set up {Company} access**. The placeholder "Company" will be different depending on your setup. Select **Begin**, then on the next screen, select **Continue**.
+1. You're prompted to **Set up {Company} access**. The placeholder "Company" is different depending on your setup. Select **Begin**, then on the next screen, select **Continue**.
 
-    :::image type="content" source="media/device-registration-macos-pssoe/pssoe-company-portal-setup-access.png" alt-text="Screenshot of a Microsoft Entra sign in window.":::
+    :::image type="content" source="media/device-registration-macos-pssoe/pssoe-company-portal-setup-access.png" alt-text="Screenshot of the Company portal access setup window.":::
 
-1. You're presented with steps to install the management profile, which has already been set up by an administrator using Microsoft Intune. Select **Download profile**.
+1. You're presented with steps to install the management profile, which should be set up by an administrator using Microsoft Intune. Select **Download profile**.
 
-    :::image type="content" source="media/device-registration-macos-pssoe/pssoe-company-portal-install-management-prof.png" alt-text="Screenshot of a Microsoft Entra sign in window.":::
+    :::image type="content" source="media/device-registration-macos-pssoe/pssoe-company-portal-install-management-prof.png" alt-text="Screenshot of a Company Portal window requesting the user to download the management profile.":::
 
 1. Open **Settings** > **Privacy & Security** > **Profiles** if it doesn't automatically appear. Select **Management Profile**.
 
-    :::image type="content" source="media/device-registration-macos-pssoe/pssoe-settings-profiles-management-prof.png" alt-text="Screenshot of a Microsoft Entra sign in window.":::
+    :::image type="content" source="media/device-registration-macos-pssoe/pssoe-settings-profiles-management-prof.png" alt-text="Screenshot of the Settings app Profiles showing a downloaded management profile.":::
 
 1. Select **Install** to get access to company resources.
 
-    :::image type="content" source="media/device-registration-macos-pssoe/pssoe-settings-profiles-install-management-prof.png" alt-text="Screenshot of a Microsoft Entra sign in window.":::
+    :::image type="content" source="media/device-registration-macos-pssoe/pssoe-settings-profiles-install-management-prof.png" alt-text="Screenshot the prompt to install the management profile in settings.":::
 
 1. Enter your local device password in the **Profiles** window that appears and select **Enroll**.
 
-    :::image type="content" source="media/device-registration-macos-pssoe/pssoe-profiles-enroll.png" alt-text="Screenshot of the profiles window":::
+    :::image type="content" source="media/device-registration-macos-pssoe/pssoe-profiles-enroll.png" alt-text="Screenshot of the profiles window requesting a password to enroll you into an MDM service.":::
 
 1. You'll see a notification in **Company Portal** that the installation is complete. Select **Done**. A **Registration Required** notification appears in the top right of the screen. Hover over the notification and select **Register**.
 
-    :::image type="content" source="media/device-registration-macos-pssoe/pssoe-registration-req-notification.png" alt-text="Screenshot of the profiles window":::
+    :::image type="content" source="media/device-registration-macos-pssoe/pssoe-registration-req-notification.png" alt-text="Screenshot of the Registration Required notification.":::
 
 1. The Platform SSO window appears to enable your macOS account to be registered with your identity provider. There are two ways you can do this:
     - **Touch ID**: Use your device's touch ID capability. The device selects your secure enclave key and wait for your device to confirm it is in compliance.
     - **Use Password**: You're prompted to register your device with Microsoft Entra ID. Enter your sign-in credentials and select **Sign in**. As MFA is required as part of this sign in flow, open your **Authenticator app** (recommended) or use another verification method to complete the sign in flow.
 
-    :::image type="content" source="media/device-registration-macos-pssoe/pssoe-register-window.png" alt-text="Screenshot of the profiles window":::
+    :::image type="content" source="media/device-registration-macos-pssoe/pssoe-register-window.png" alt-text="Screenshot of the Platform SSO notification requesting to use password or Touch ID.":::
 
 1. You can now use PSSO to access Microsoft app resources.
 
@@ -91,25 +91,25 @@ Although registration with Automated Device Enrollment during an out-of-the-box 
 1. Enter your Microsoft Entra ID credentials and select **Next**.
 1. You're prompted to **Set up {Company} access**. The placeholder "Company" will be different depending on your setup. Select **Begin**, then on the next screen, select **Continue**.
 
-    :::image type="content" source="media/device-registration-macos-pssoe/pssoe-company-portal-setup-access.png" alt-text="Screenshot of a Microsoft Entra sign in window.":::
+    :::image type="content" source="media/device-registration-macos-pssoe/pssoe-company-portal-setup-access.png" alt-text="Screenshot of the Company portal access setup window.":::
 
 1. You're presented with steps to install the management profile, which has already been set up by an administrator using Microsoft Intune. Select **Download profile**.
 
-    :::image type="content" source="media/device-registration-macos-pssoe/pssoe-company-portal-install-management-prof.png" alt-text="Screenshot of a Microsoft Entra sign in window.":::
+    :::image type="content" source="media/device-registration-macos-pssoe/pssoe-company-portal-install-management-prof.png" alt-text="Screenshot of a Company Portal window requesting the user to download the management profile.":::
 
 1. A **Registration Required** notification appears in the top right of the screen. Hover over the notification and select **Register**.
 
-    :::image type="content" source="media/device-registration-macos-pssoe/pssoe-registration-required-popup-password-flow.png" alt-text="Screenshot of the profiles window":::
+    :::image type="content" source="media/device-registration-macos-pssoe/pssoe-registration-required-popup-password-flow.png" alt-text="Screenshot of the Registration Required notification.":::
 
 1. The Platform SSO window appears to enable your macOS account to be registered with your identity provider. Enter your local account password and select **OK**.
 
-    :::image type="content" source="media/device-registration-macos-pssoe/pssoe-registration-local-password-prompt.png" alt-text="Screenshot of the profiles window":::
+    :::image type="content" source="media/device-registration-macos-pssoe/pssoe-registration-local-password-prompt.png" alt-text="Screenshot of the Platform SSO password prompt":::
 
 1. You're prompted to register your device with Microsoft Entra ID. Enter your sign-in credentials and select **Sign in**.
 1. An **Authentication Required** notification appears in the top right of the screen. Hover over the notification and select **Sign in**.
 1. In the **Microsoft Entra** window, enter your Microsoft Entra ID password and select **Sign in**. Once entered, there's a notification that your password has been successfully synced with your Microsoft Entra account.
 
-    :::image type="content" source="media/device-registration-macos-pssoe/pssoe-entra-password-entry.png" alt-text="Screenshot of the profiles window":::
+    :::image type="content" source="media/device-registration-macos-pssoe/pssoe-entra-password-entry.png" alt-text="Screenshot of the Microsoft Entra sign in window":::
 
 1. Your device will now show as being in compliance in Company Portal. You can now use PSSO to access Microsoft app resources.
 
