@@ -77,7 +77,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     b. In the **Reply URL** text box, type a URL using the following pattern:
     `https://dev-p0tbk3x9.us.auth0.com/login/callback?connection=<CONNECTION-NAME>&organization=<ORGANIZATION-ID>`
 
-    c. In the **Sign on URL** text box, type the URL:
+    c. In the **Sign on URL** text box, type a URL using the following pattern:
     `https://elia.one/?organization=<ORGANIZATION-ID>`
 
 	> [!NOTE]
