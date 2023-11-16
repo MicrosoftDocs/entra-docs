@@ -27,7 +27,7 @@ You can bulk download the members of a group in your organization to a comma-sep
 1. Open the group whose membership you want to download, and then select **Members**.
 1. On the **Members** page, select **Bulk operations** and choose, **Download members** to download a CSV file listing the group members.
 
-   :::image type="content" source="./media/groups-bulk-download-members/download-panel.png" alt-text="The Download Members command is on the profile page for the group.":::
+   :::image type="content" source="./media/groups-bulk-download-members/download-panel.png" alt-text="Screenshot of the Download Members command is on the profile page for the group.":::
 
 [!INCLUDE [Bulk update warning](~/includes/bulk-export.md)]
 
@@ -35,7 +35,7 @@ You can bulk download the members of a group in your organization to a comma-sep
 
 You can see the status of all of your pending bulk requests in the **Bulk operation results** page.
 
-:::image type="content" source="./media/groups-bulk-download-members/bulk-center.png" alt-text="Check status in the Bulk Operations Results page." lightbox="./media/groups-bulk-download-members/bulk-center.png":::
+:::image type="content" source="./media/groups-bulk-download-members/bulk-center.png" alt-text="Screenshot of the Check status option in the Bulk Operations Results page." lightbox="./media/groups-bulk-download-members/bulk-center.png":::
 
 ## Bulk download service limits
 

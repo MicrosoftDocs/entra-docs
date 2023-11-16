@@ -86,7 +86,7 @@ You will also need to synchronize your sensitivity labels to Microsoft Entra ID.
 1. Choose **Groups** > **All groups** > **New group**.
 1. On the **New Group** page, select **Microsoft 365**, and then fill out the required information for the new group and select a sensitivity label from the list.
 
-   :::image type="content" source="./media/groups-assign-sensitivity-labels/new-group-page.png" alt-text="Assign a sensitivity label in the New groups page.":::
+   :::image type="content" source="./media/groups-assign-sensitivity-labels/new-group-page.png" alt-text="Screenshot of assigning a sensitivity label in the New groups page.":::
 
 1. Select **Create** to save your changes.
 
@@ -100,7 +100,7 @@ Your group is created and the site and group settings associated with the select
 1. From the **All groups** page, select the group that you want to label.
 1. On the selected group's page, select **Properties** and select a sensitivity label from the list.
 
-   :::image type="content" source="./media/groups-assign-sensitivity-labels/assign-to-existing.png" alt-text="Assign a sensitivity label on the overview page for a group.":::
+   :::image type="content" source="./media/groups-assign-sensitivity-labels/assign-to-existing.png" alt-text="Screenshot of  assigning a sensitivity label on the overview page for a group.":::
 
 1. Select **Save** to save your changes.
 

@@ -32,13 +32,13 @@ You can download a list of all the groups in your organization to a comma-separa
 1. Select **Groups** > **Download groups**.
 1. On the **Groups download** page, select **Start** to receive a CSV file listing your groups.
 
-   :::image type="content" source="./media/groups-bulk-download/bulk-download.png" alt-text="The download groups command is on the All groups page.":::
+   :::image type="content" source="./media/groups-bulk-download/bulk-download.png" alt-text="Screenshot of the download groups command is on the All groups page.":::
 
 ## Check download status
 
 You can see the status of all of your pending bulk requests in the **Bulk operation results** page.
 
-:::image type="content" source="./media/groups-bulk-download/bulk-center.png" alt-text="Check status in the Bulk Operations Results page." lightbox="./media/groups-bulk-download/bulk-center.png":::
+:::image type="content" source="./media/groups-bulk-download/bulk-center.png" alt-text="Screenshot of the Check status option in the Bulk Operations Results page." lightbox="./media/groups-bulk-download/bulk-center.png":::
 
 ## Bulk download service limits
 
