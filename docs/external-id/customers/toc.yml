@@ -13,9 +13,9 @@ items:
 - name: Quickstarts
   expanded: true
   items: 
-    - name: Start a free trial without a subscription
+    - name: Start a free trial without an Azure subscription
       href: quickstart-trial-setup.md 
-    - name: Create a tenant with a subscription
+    - name: Create a tenant with an Azure subscription
       href: quickstart-tenant-setup.md
     - name: Get started guide walkthrough
       href: quickstart-get-started-guide.md
@@ -81,7 +81,7 @@ items:
           items:
             - name: Node.js - sign in users
               href: sample-cli-app-node-sign-in-users.md
-- name: Tutorials
+- name: Tutorial Series
   expanded: true
   items: 
   - name: Build and integrate your app
@@ -104,9 +104,9 @@ items:
             items:
               - name: Sign in users
                 items:
-                  - name: Prepare tenant
+                  - name: Prepare customer tenant
                     href: tutorial-single-page-app-react-sign-in-prepare-tenant.md
-                  - name: Prepare app
+                  - name: Create a React project
                     href: tutorial-single-page-app-react-sign-in-prepare-app.md
                   - name: Configure app for authentication
                     href: tutorial-single-page-app-react-sign-in-configure-authentication.md 
@@ -245,7 +245,7 @@ items:
       href: concept-authentication-methods-customers.md
     - name: Customizing the sign-in look and feel
       href: concept-branding-customers.md
-    - name: Extending auth flows with business logic
+    - name: Add your own business logic
       href: concept-custom-extensions.md
     - name: Security and governance
       href: concept-security-customers.md
@@ -288,22 +288,14 @@ items:
               href: how-to-define-custom-attributes.md
             - name: Add attributes to the token
               href: how-to-add-attributes-to-token.md
-        - name: Advanced extensions
+        - name: Add claims from external systems
           items:
-            - name: Add logic to attribute collection
-              items:
-                - name: Create attribute collection start and submit events
-                  href: ~/identity-platform/custom-extension-attribute-collection.md?context=/entra/external-id/customers/context/customers-context
-                - name: OnAttributeCollectionStart event reference
-                  href: ~/identity-platform/custom-extension-OnAttributeCollectionStart-reference.md?context=/entra/external-id/customers/context/customers-context
-                - name: OnAttributeCollectionSubmit event reference
-                  href: ~/identity-platform/custom-extension-OnAttributeCollectionSubmit-reference.md?context=/entra/external-id/customers/context/customers-context
-            - name: Add claims from external systems
-              items:
-                 - name: Token issuance start event
-                   href: ~/identity-platform/custom-extension-get-started.md?context=/entra/external-id/customers/context/customers-context
-                 - name: Troubleshoot your custom claims provider API
-                   href: ~/identity-platform/custom-extension-troubleshoot.md?context=/entra/external-id/customers/context/customers-context
+           - name: About custom authentication extensions
+             href: ~/identity-platform/custom-extension-overview.md?context=/azure/active-directory/external-identities/customers/context/customers-context
+           - name: Configure a custom claims provider token issuance event
+             href: ~/identity-platform/custom-extension-get-started.md?context=/azure/active-directory/external-identities/customers/context/customers-context
+           - name: Troubleshoot your custom claims provider API
+             href: ~/identity-platform/custom-extension-troubleshoot.md?context=/azure/active-directory/external-identities/customers/context/customers-context
     - name: Secure
       items:
       - name: Multifactor authentication
@@ -316,8 +308,6 @@ items:
           href: how-to-manage-admin-accounts.md
         - name: Manage customer accounts
           href: how-to-manage-customer-accounts.md
-        - name: User activity insights
-          href: how-to-user-insights.md
     - name: Troubleshoot
       items:
         - name: Known issues
@@ -335,9 +325,9 @@ items:
     - name: Group and application roles support
       href: reference-group-app-roles-support.md
     - name: Company branding CSS template reference guide
-      href: /entra/fundamentals/reference-company-branding-css-template
+      href: /azure/active-directory/fundamentals/reference-company-branding-css-template
     - name: Help and support options
-      href: ~/identity-platform/developer-support-help-options.md?context=/entra/external-id/customers/context/customers-context
+      href: ~/identity-platform/developer-support-help-options.md?context=/azure/active-directory/external-identities/customers/context/customers-context
     - name: MSAL references 
       items:
         - name: MSAL.NET

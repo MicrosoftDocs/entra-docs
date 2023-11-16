@@ -1,5 +1,5 @@
 ---
-title: Tutorial - Add sign-in and sign-out to a React single-page app (SPA) for a customer tenant
+title: "Tutorial 4 of 4: Add sign-in and sign-out to a React SPA for a customer tenant"
 description: Learn how to configure a React single-page app (SPA) to sign in and sign out users with your Microsoft Entra ID for customers tenant.
 services: active-directory
 author: godonnell
@@ -14,9 +14,8 @@ ms.author: godonnell
 #Customer intent: As a developer I want to add sign-in and sign-out functionality to my React single-page app
 ---
 
-# Tutorial: Add sign-in and sign-out to a React single-page app (SPA) for a customer tenant
-
-In the [previous article](./tutorial-single-page-app-react-sign-in-configure-authentication.md), you created a React single-page app (SPA) in Visual Studio Code and configured it for authentication. This tutorial shows you how to add sign-in and sign-out functionality to the app.
+# Tutorial 4 of 4: Add sign-in and sign-out to a React SPA for a customer tenant
+This tutorial is the final part of a series that demonstrates building a React single-page application (SPA) and preparing it for authentication using the Microsoft Entra admin center. In [part 3 of this series](./tutorial-single-page-app-react-sign-in-configure-authentication.md), you created a React SPA in Visual Studio Code and configured it for authentication. This final step shows you how to add sign-in and sign-out functionality to the app.
 
 In this tutorial;
 
@@ -27,7 +26,9 @@ In this tutorial;
 
 ## Prerequisites
 
-* Completion of the prerequisites and steps in [Prepare an single-page app for authentication](./tutorial-single-page-app-react-sign-in-prepare-app.md).
+* [Tutorial 1 of 4: Prepare your customer tenant to authenticate users in a React single-page app (SPA)](./tutorial-single-page-app-react-sign-in-prepare-tenant.md).
+* [Tutorial 2 of 4: Create a React SPA project for authentication in a customer tenant](./tutorial-single-page-app-react-sign-in-prepare-app.md).
+* [Tutorial 3 of 4: Handle authentication flows in a React SPA](./tutorial-single-page-app-react-sign-in-configure-authentication.md).
 
 
 ## Change filename and add function to render authenticated information
