@@ -1415,6 +1415,8 @@
       items:
       - name: Jamf Pro
         href: jamfprosamlconnector-tutorial.md
+      - name: Jasper AI
+        href: jasper-ai-tutorial.md
       - name: Javelo
         href: javelo-tutorial.md
       - name: JDA Cloud
