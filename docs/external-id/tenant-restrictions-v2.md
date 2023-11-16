@@ -117,6 +117,9 @@ Teams by default has open federation, which means we don't block anyone joining 
 - Teams currently allows users to join <i>any</i> externally hosted meeting using their corporate/home provided identity. You can use outbound cross-tenant access settings to control users with corporate/home provided identity to join externally hosted Teams meetings.
 - Tenant restrictions prevent users from using an externally issued identity to join Teams meetings.
 
+> [!NOTE]
+> Microsoft Teams app has dependency on SharePoint Online and Exchange Online apps. We recommend setting the TRv2 policy on the Office 365 app instead of Microsoft Teams Services or SharePoint Online or Exchange Online separately. If you allow/block one of the applications(SPO or EXO etc.) that is part of Office 365 it will also affect apps like Microsoft Teams. Similarly, if Microsoft Teams app is allowed/blocked, SPO and EXO with in Teams app will be impacted.
+
 #### Pure Anonymous Meeting join
 
 Tenant restrictions v2 automatically block all unauthenticated and externally issued identity access to externally hosted Teams meetings.

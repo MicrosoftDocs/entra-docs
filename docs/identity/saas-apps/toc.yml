@@ -1415,6 +1415,8 @@
       items:
       - name: Jamf Pro
         href: jamfprosamlconnector-tutorial.md
+      - name: Jasper AI
+        href: jasper-ai-tutorial.md
       - name: Javelo
         href: javelo-tutorial.md
       - name: JDA Cloud
@@ -1743,6 +1745,8 @@
         href: motus-tutorial.md
       - name: MOVEit Transfer - Microsoft Entra integration
         href: moveittransfer-tutorial.md
+      - name: Movement by project44
+        href: movement-by-project44-tutorial.md
       - name: Moxi Engage
         href: moxiengage-tutorial.md
       - name: Moxtra

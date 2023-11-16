@@ -245,7 +245,7 @@ To view the custom security attribute audit logs, sign in to the Microsoft Entra
 
 :::image type="content" source="media/custom-security-attributes-manage/audit-logs-custom-security.png" alt-text="Screenshot of audit logs with Custom Security tab selected." lightbox="media/custom-security-attributes-manage/audit-logs-custom-security.png":::
 
-For more information, see [Microsoft Entra audit logs](../identity/monitoring-health/concept-audit-logs.md).
+For information about how to get the custom security attribute audit logs using the Microsoft Graph API, see the [customSecurityAttributeAudit resource type](/graph/api/resources/customsecurityattributeaudit). For more information, see [Microsoft Entra audit logs](../identity/monitoring-health/concept-audit-logs.md).
 
 ### Diagnostic settings
 
