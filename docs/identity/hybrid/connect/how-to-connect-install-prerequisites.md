@@ -100,7 +100,7 @@ We recommend that you harden your Microsoft Entra Connect server to decrease the
 ### SQL Server used by Microsoft Entra Connect
 * Microsoft Entra Connect requires a SQL Server database to store identity data. By default, a SQL Server 2019 Express LocalDB (a light version of SQL Server Express) is installed. SQL Server Express has a 10-GB size limit that enables you to manage approximately 100,000 objects. If you need to manage a higher volume of directory objects, point the installation wizard to a different installation of SQL Server. The type of SQL Server installation can impact the [performance of Microsoft Entra Connect](./plan-connect-performance-factors.md#sql-database-factors).
 * If you use a different installation of SQL Server, these requirements apply:
-  * Microsoft Entra Connect support all mainstream supported SQL Server versions up to SQL Server 2019 running on Windows. Please refer to the [SQL Server lifecycle article](/lifecycle/products/?products=sql-server) to verify the support status of your SQL Server version. SQL Server 2012 is no longer supported. Azure SQL Database *isn't supported* as a database.  This includes both Azure SQL Database and Azure SQL Managed Instance.
+  * Microsoft Entra Connect support all mainstream supported SQL Server versions up to SQL Server 2022 running on Windows. Please refer to the [SQL Server lifecycle article](/lifecycle/products/?products=sql-server) to verify the support status of your SQL Server version. SQL Server 2012 is no longer supported. Azure SQL Database *isn't supported* as a database.  This includes both Azure SQL Database and Azure SQL Managed Instance.
   * You must use a case-insensitive SQL collation. These collations are identified with a \_CI_ in their name. Using a case-sensitive collation identified by \_CS_ in their name *isn't supported*.
   * You can have only one sync engine per SQL instance. Sharing a SQL instance with FIM/MIM Sync, DirSync, or Azure AD Sync *isn't supported*.
 
@@ -224,9 +224,9 @@ When you use Microsoft Entra Connect to deploy AD FS or the Web Application Prox
 Microsoft Entra Connect installs the following components on the server where Microsoft Entra Connect is installed. This list is for a basic Express installation. If you choose to use a different SQL Server on the **Install synchronization services** page, SQL Express LocalDB isn't installed locally.
 
 * Microsoft Entra Connect Health
-* Microsoft SQL Server 2019 Command Line Utilities
-* Microsoft SQL Server 2019 Express LocalDB
-* Microsoft SQL Server 2019 Native Client
+* Microsoft SQL Server 2022 Command Line Utilities
+* Microsoft SQL Server 2022 Express LocalDB
+* Microsoft SQL Server 2022 Native Client
 * Microsoft Visual C++ 14 Redistribution Package
 
 <a name='hardware-requirements-for-azure-ad-connect'></a>
