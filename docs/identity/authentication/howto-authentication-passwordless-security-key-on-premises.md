@@ -246,6 +246,7 @@ Follow the instructions in [Create a Kerberos Server object](#create-a-kerberos-
 ## Known behavior
 
 If your password has expired, signing in with FIDO is blocked. The expectation is that users reset their passwords before they can log in by using FIDO.
+This is applicable for hybrid on-prem synced user sign-in with WHFB Cloud kerberos trust as well.
 
 ## Troubleshooting and feedback
 
