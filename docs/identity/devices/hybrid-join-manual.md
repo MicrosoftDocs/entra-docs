@@ -255,7 +255,7 @@ In the preceding claim, `<verified-domain-name>` is a placeholder. Replace it wi
 
 For more information about verified domain names, see [Add a custom domain name to Microsoft Entra ID](~/fundamentals/add-custom-domain.md).  
 
-To get a list of your verified company domains, you can use the [Get-MsolDomain](/powershell/module/msonline/get-msoldomain) cmdlet.
+To get a list of your verified company domains, you can use the [Get-MgDomain](/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdomain) cmdlet.
 
 ![List of company domains](./media/hybrid-join-manual/01.png)
 
