@@ -92,7 +92,7 @@ The following actions are performed as part of the **ForceDelete** operation:
 An error is returned when:
 
 * The number of objects to be renamed is greater than 1000
-* One of the applications to be renamed is a multi-tenant app
+* One of the applications to be renamed is a multitenant app
 
 ## Best Practices for Domain Hygiene
 

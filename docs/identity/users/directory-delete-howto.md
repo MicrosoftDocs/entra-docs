@@ -133,7 +133,7 @@ A few enterprise applications can't be deleted in the Microsoft Entra admin cent
     >
     > Before you proceed, verify that you're connected to the tenant that you want to delete with the MSOnline module. We recommend that you run the `Get-MsolDomain` command to confirm that you're connected to the correct tenant ID and `onmicrosoft.com` domain.
 
-5. Run the following commands to set the tenant context.  DO NOT skip these steps or you run the risk of deleting enterprise apps from the wrong teant.
+5. Run the following commands to set the tenant context.  DO NOT skip these steps or you run the risk of deleting enterprise apps from the wrong tenant.
 
    `Clear-AzContext -Scope CurrentUser`
 

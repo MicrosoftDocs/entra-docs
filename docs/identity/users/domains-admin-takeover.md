@@ -20,8 +20,6 @@ ms.collection: M365-identity-device-management
 
 This article describes two ways to take over a DNS domain name in an unmanaged directory in Microsoft Entra ID. When a self-service user signs up for a cloud service that uses Microsoft Entra ID, they're added to an unmanaged Microsoft Entra directory based on their email domain. For more about self-service or "viral" sign-up for a service, see [What is self-service sign-up for Microsoft Entra ID?](directory-self-service-signup.md)
 
- <! -- The video mentions Azure AD --> 
-
 > [!VIDEO https://www.youtube.com/embed/GOSpjHtrRsg]
 
 ## Decide how you want to take over an unmanaged directory
