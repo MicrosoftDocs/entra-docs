@@ -10,7 +10,9 @@ ms.assetid: 91b88fda-bca6-49a8-898f-8d906a661f07
 ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
-ms.custom: has-azure-ad-ps-ref
+ms.custom:
+  - has-azure-ad-ps-ref
+  - azure-ad-ref-level-one-done
 ms.topic: how-to
 ms.date: 11/06/2023
 ms.subservice: hybrid
@@ -93,7 +95,7 @@ We recommend that you harden your Microsoft Entra Connect server to decrease the
 - Follow the [Monitor changes to federation configuration](how-to-connect-monitor-federation-changes.md) to set up alerts to monitor changes to the trust established between your Idp and Microsoft Entra ID. 
 - Enable Multi Factor Authentication (MFA) for all users that have privileged access in Microsoft Entra ID or in AD. One security issue with using Microsoft Entra Connect is that if an attacker can get control over the Microsoft Entra Connect server they can manipulate users in Microsoft Entra ID. To prevent an attacker from using these capabilities to take over Microsoft Entra accounts, MFA offers protections so that even if an attacker manages to e.g. reset a user's password using Microsoft Entra Connect they still cannot bypass the second factor.
 - Disable Soft Matching on your tenant. Soft Matching is a great feature to help transferring source of authority for existing cloud managed objects to Microsoft Entra Connect, but it comes with certain security risks. If you do not require it, you should [disable Soft Matching](how-to-connect-syncservice-features.md#blocksoftmatch).
-- Disable Hard Match Takeover. Hard match takeover allows Microsoft Entra Connect to take control of a cloud managed object and changing the source of authority for the object to Active Directory. Once the source of authority of an object is taken over by Microsoft Entra Connect, changes made to the Active Directory object that is linked to the Microsoft Entra object will overwrite the original Microsoft Entra data - including the password hash, if Password Hash Sync is enabled. An attacker could use this capability to take over control of cloud managed objects. To mitigate this risk, [disable hard match takeover](/powershell/module/msonline/set-msoldirsyncfeature?view=azureadps-1.0&preserve-view=true#example-3-block-cloud-object-takeover-through-hard-matching-for-the-tenant).
+- Disable Hard Match Takeover. Hard match takeover allows Microsoft Entra Connect to take control of a cloud managed object and changing the source of authority for the object to Active Directory. Once the source of authority of an object is taken over by Microsoft Entra Connect, changes made to the Active Directory object that is linked to the Microsoft Entra object will overwrite the original Microsoft Entra data - including the password hash, if Password Hash Sync is enabled. An attacker could use this capability to take over control of cloud managed objects. To mitigate this risk, [disable hard match takeover](/powershell/module/microsoft.graph.identity.directorymanagement/update-mgdirectoryonpremisesynchronization).
 
 <a name='sql-server-used-by-azure-ad-connect'></a>
 
