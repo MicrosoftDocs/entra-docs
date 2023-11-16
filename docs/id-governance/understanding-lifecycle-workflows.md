@@ -84,7 +84,7 @@ In this section you learn what each section tells you, and what actions you're a
 
 ### Basic Information
 
-When selecting a workflow, the overview provides you with a list of basic details in the **Basic Information** section. These basic details provide you with information such as the workflow category, its ID, when it was modified, and when it's scheduled to run again. This information is important in providing quick details surrounding its current usage for administrative purposes. Basic information is also live data, meaning any quick change action that you take place on the overview page, is shown immediately within this section.
+When you select a workflow, the overview provides you with a list of basic details in the **Basic Information** section. These basic details provide you with information such as the workflow category, its ID, when it was modified, and when it's scheduled to run again. This information is important in providing quick details surrounding its current usage for administrative purposes. Basic information is also live data, meaning any quick change action that you take place on the overview page, is shown immediately within this section.
 
 Within the **Basic Information** you can view the following information:
 
@@ -127,7 +127,7 @@ Actions taken from the overview of a workflow allow you to quickly complete task
 
 After selecting a template, on the basics screen:
  - Provide the information that is used in the description portion of the workflow.
- - The trigger, defines when of the execution condition.
+ - Select the trigger which defines when the execution condition will occur.
 
  [![Basics of a workflow.](media/understanding-lifecycle-workflows/workflow-4.png)](media/understanding-lifecycle-workflows/workflow-4.png#lightbox)
 

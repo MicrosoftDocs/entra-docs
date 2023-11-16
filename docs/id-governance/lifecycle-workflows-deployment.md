@@ -110,7 +110,7 @@ The following information is important information about your organization and t
 
 Before you begin planning a Lifecycle Workflow deployment, you should become familiar with the parts of workflow and the terminology around Lifecycle Workflows.
 
-The [Understanding Lifecycle Workflows](understanding-lifecycle-workflows.md) document, uses the portal to explain the parts of a workflow. The [Developer API reference Lifecycle Workflows](/graph/api/resources/identitygovernance-workflow) document, uses a GRAPH example to explain the parts of a workflow. 
+The [Understanding Lifecycle Workflows](understanding-lifecycle-workflows.md) document uses the portal to explain the parts of a workflow. The [Developer API reference Lifecycle Workflows](/graph/api/resources/identitygovernance-workflow) document uses a Graph example to explain the parts of a workflow. 
 
 You can use this document to become familiar with the parts of workflow prior to deploying them.
 
@@ -237,7 +237,7 @@ By clicking on the task, you are presented with a navigation bar to add or remov
 ### Custom task extensions
 Lifecycle Workflows allow you to create workflows that can be triggered based on joiner, mover, or leaver scenarios. While Lifecycle Workflows provide several built-in tasks to automate common scenarios throughout the lifecycle of users, eventually you may reach the limits of these built-in tasks. With the extensibility feature, you are able to utilize the concept of custom task extensions to call-out to external systems as part of a Lifecycle Workflow. 
 
-When creating custom task extensions, the scenarios for how it interacts with Lifecycle Workflows can be one of three ways:
+The scenarios for how a custom task extension interacts with Lifecycle Workflows can be one of three ways:
 
 - **Fire-and-forget scenario**- The Logic App is started, and the sequential task execution immediately continues with no response expected from the Logic App. 
 - **Sequential task execution waiting for response from the Logic App** - The Logic app is started, and the sequential task execution waits on the response from the Logic App.

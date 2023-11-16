@@ -28,7 +28,7 @@ For more information about licenses for PIM, refer to [License requirements to u
 
 To create access reviews for Azure resources, you must be assigned to the [Owner](/azure/role-based-access-control/built-in-roles#owner) or the [User Access Administrator](/azure/role-based-access-control/built-in-roles#user-access-administrator) role for the Azure resources. To create access reviews for Microsoft Entra roles, you must be assigned to the [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) or the [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator) role.
 
-Access Reviews for **Service Principals** requires a Microsoft Entra Workload ID Premium plan in addition to Microsoft Entra ID P2 or Microsoft Entra ID Governance licenses. 
+Using Access Reviews for **Service Principals** requires a Microsoft Entra Workload ID Premium plan in addition to a Microsoft Entra ID P2 or Microsoft Entra ID Governance license. 
 
 - Workload Identities Premium licensing: You can view and acquire licenses on the [Workload Identities blade](https://portal.azure.com/#view/Microsoft_Azure_ManagedServiceIdentity/WorkloadIdentitiesBlade) in the Microsoft Entra admin center.
 
@@ -94,7 +94,7 @@ Access Reviews for **Service Principals** requires a Microsoft Entra Workload ID
 
 1. To specify what happens after a review completes, expand the **Upon completion settings** section.
 
-    :::image type="content" source="./media/pim-create-azure-ad-roles-and-resource-roles-review/upon-completion-settings.png" alt-text="Upon completion settings to auto apply and should review not respond screenshot.":::
+    :::image type="content" source="./media/pim-create-azure-ad-roles-and-resource-roles-review/upon-completion-settings.png" alt-text="Screenshot showing the upon completion settings to auto apply, and choices should reviewer not respond.":::
 
 2. If you want to automatically remove access for users that were denied, set **Auto apply results to resource** to **Enable**. If you want to manually apply the results when the review completes, set the switch to **Disable**.
 
@@ -119,7 +119,7 @@ Access Reviews for **Service Principals** requires a Microsoft Entra Workload ID
 
     :::image type="content" source="./media/pim-create-azure-ad-roles-and-resource-roles-review/advanced-settings.png" alt-text="Advanced settings for show recommendations, require reason on approval, mail notifications, and reminders screenshot.":::
 
-1. Set **Show recommendations** to **Enable** to show the reviewers the system recommendations based the user's access information. Recommendations are based on a 30-day interval period where users who have logged in the past 30 days are recommended access, while users who have not are recommended denial of access. These sign-ins are irrespective of whether they were interactive. The last sign-in of the user is also displayed along with the recommendation. 
+1. Set **Show recommendations** to **Enable** to show the reviewers the system recommendations based the user's access information. Recommendations are based on a 30-day interval period. Users who have logged in the past 30 days are shown with recommended approval of access, while users who have not logged in are shown with recommended denial of access. These sign-ins are irrespective of whether they were interactive. The last sign-in of the user is also displayed along with the recommendation. 
 
 1. Set **Require reason on approval** to **Enable** to require the reviewer to supply a reason for approval.
 
@@ -148,7 +148,7 @@ Based on your selections in **Upon completion settings**, auto-apply will be exe
 
 •	For **Microsoft Entra roles**, role-assignable groups can be assigned to the role using [role-assignable groups](~/identity/role-based-access-control/groups-concept.md). When a review is created on a Microsoft Entra role with role-assignable groups assigned, the group name shows up in the review without expanding the group membership. The reviewer can approve or deny access of the entire group to the role. Denied groups will lose their assignment to the role when review results are applied.
 
-•	For **Azure resource roles**, any security group can be assigned to the role. When a review is created on an Azure resource role with a security group assigned, the users assigned to that security group will be fully expanded and shown to the reviewer of the role. When a reviewer denies a user that was assigned to the role via the security group, the user will not be removed from the group, and therefore the apply of the deny result will be unsuccessful.
+•	For **Azure resource roles**, any security group can be assigned to the role. When a review is created on an Azure resource role with a security group assigned, the users assigned to that security group will be fully expanded and shown to the reviewer of the role. When a reviewer denies a user that was assigned to the role via the security group, the user will not be removed from the group.  This is because a group might have been shared with other Azure or non-Azure resources. Therefore the changes resulting from the denied access must be done by the administrator.
 
 > [!NOTE]
 > It is possible for a security group to have other groups assigned to it. In this case, only the users assigned directly to the security group assigned to the role will appear in the review of the role.
