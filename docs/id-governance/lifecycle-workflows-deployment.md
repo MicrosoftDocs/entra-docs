@@ -217,10 +217,10 @@ Now that we've determined the scenario and the who and when, you should consider
 |Send email on user's last day| Send offboarding email to user's manager on the last day of work| Leaver|
 |Send Welcome Email| Send welcome email to new hire| Joiner|
 |Send onboarding reminder email|Send onboarding reminder email to user’s manager| Joiner|
-|Request user access package assignment|Request user assignement to selected access packages|Joiner-Mover|
-|Remove access package assignement for user|Remove user assignment from selected access packages| Leaver=Mover|
+|Request user access package assignment|Request user assignment to selected access packages|Joiner-Mover|
+|Remove access package assignment for user|Remove user assignment from selected access packages| Leaver=Mover|
 |Remove all access package assignments for user|Remove all access packages assigned to the user|Leaver|
-|Cancel all pending access package assignement requests for users|Cancel all pending access package assignement requests for users|Leaver|
+|Cancel all pending access package assignment requests for users|Cancel all pending access package assignment requests for users|Leaver|
 
 
 For more information on tasks, see [Lifecycle Workflow tasks](lifecycle-workflow-tasks.md).

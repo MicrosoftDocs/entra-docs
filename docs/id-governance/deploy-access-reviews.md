@@ -320,7 +320,7 @@ For example, to access results for a Windows AD-managed group, use this [PowerSh
 
 ## Plan access reviews for applications
 
-When you review everyone assigned to application, you're reviewing the users, including employees and external identities, who can authenticate to that application using their Entra ID identity. Choose to review an application when you need to know who has access to a specific application, instead of an access package or a group.
+When you review everyone assigned to application, you're reviewing the users, including employees and external identities, who can authenticate to that application using their Microsoft Entra ID identity. Choose to review an application when you need to know who has access to a specific application, instead of an access package or a group.
 
 Plan reviews for applications in the following scenarios when:
 

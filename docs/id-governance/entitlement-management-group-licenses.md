@@ -92,7 +92,7 @@ For more information, see [License requirements](entitlement-management-overview
 	
 1. In **Assignments expire after**, enter **365**. This box specifies when members who have access to the access package needs to renew their access. 
 
-1. You can also configure access reviews, which allow periodic checks of whether the users still needs access to the access package. A review can be a self-review performed by the user themselves. Or you can set a user's manager or another person as the reviewer. For more information, see [Access reviews](entitlement-management-access-reviews-create.md). 
+1. You can also configure access reviews, which allow periodic checks of whether the users still need access to the access package. A review can be a self-review performed by the user themselves. Or you can set a user's manager or another person as the reviewer. For more information, see [Access reviews](entitlement-management-access-reviews-create.md). 
  
     In this scenario, you want all employees to review whether they still need a license for Office each year.
 
