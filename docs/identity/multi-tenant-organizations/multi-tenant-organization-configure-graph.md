@@ -8,7 +8,7 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: multi-tenant-organizations
 ms.topic: how-to
-ms.date: 09/22/2023
+ms.date: 11/15/2023
 ms.author: rolyon
 ms.custom: it-pro
 
@@ -43,7 +43,7 @@ If you instead want to use the Microsoft 365 admin center to configure a multite
 
 ![Icon for the owner tenant.](./media/common/icon-tenant-owner.png)<br/>**Owner tenant**
 
-These steps describe how to use Microsoft Graph Explorer (recommended), but you can also use Postman, or another REST API client.
+These steps describe how to use Microsoft Graph Explorer, but you can also use Postman, or another REST API client.
 
 1. Start [Microsoft Graph Explorer tool](https://aka.ms/ge).
 

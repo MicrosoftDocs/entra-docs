@@ -9,7 +9,7 @@ ms.service: active-directory
 ms.subservice: develop
 ms.workload: identity
 ms.topic: reference
-ms.date: 10/18/2023
+ms.date: 11/08/2023
 ms.author: ryanwi
 ms.reviewer: ludwignick
 ms.custom: aaddev
@@ -74,7 +74,6 @@ http://localhost/myapp/permissions
 ```none
 http://localhost/myapp/permissions
         ?admin_consent=True
-        &tenant=fa15d692-e9c7-4460-a743-29f2956fd429
         &error=consent_required
         &error_description=AADSTS65004%3a+The+resource+owner+or+authorization+server+denied+the+request.%0d%0aTrace+ID%3a+d320620c-3d56-42bc-bc45-4cdd85c41f00%0d%0aCorrelation+ID%3a+8478d534-5b2c-4325-8c2c-51395c342c89%0d%0aTimestamp%3a+2019-09-24+18%3a34%3a26Z
         &state=12345
@@ -86,7 +85,6 @@ Adding to the parameters seen in a successful response, error parameters are see
 |:-------------------|:-------------------------------------------------------------------------------------------------|
 | `error` | An error code string that can be used to classify types of errors that occur, and can be used to react to errors.|
 | `error_description` | A specific error message that can help a developer identify the root cause of an error.|
-| `tenant`| The directory tenant that granted your application the permissions it requested, in GUID format.|
 | `state` | A value included in the request that also will be returned in the token response. It can be a string of any content you want. The state is used to encode information about the user's state in the app before the authentication request occurred, such as the page or view they were on.|
 | `admin_consent` | Will be set to `True` to indicate that this response occurred on an admin consent flow.|
 
