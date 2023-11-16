@@ -167,13 +167,13 @@ CBA support for YubiKey is available in the latest Microsoft Authentication Libr
 
 ### Supported operating systems
 
-|Operating system | Certificate on-device/Derived PIV |    Smart cards        |
+|Operating system | Certificate on-device/Derived PIV |    Smart cards/Security keys |
 |:----------------|:---------------------------------:|:---------------------:|
 | iOS             | &#x2705;                          | Supported vendors only|
 
 ### Supported browsers
 
-|Operating system | Chrome certificate on-device | Chrome smart card | Safari certificate on-device | Safari smart card | Edge certificate on-device | Edge smart card |
+|Operating system | Chrome certificate on-device | Chrome smart card/security key | Safari certificate on-device | Safari smart card/security key | Edge certificate on-device | Edge smart card/security key |
 |:----------------|:---------------------------------:|:---------------------:|:---------------------------------:|:---------------------:|:---------------------------------:|:---------------------:|
 | iOS             |  &#10060;                          | &#10060;|&#x2705;                          | &#x2705; |  &#10060;                          | &#10060;|
 
@@ -185,7 +185,7 @@ CBA support for YubiKey is available in the latest Microsoft Authentication Libr
 
 ## Known issue
 
-On iOS, users see a "double prompt", where they must click the option to use certificate-based authentication twice. We're working to create a seamless user experience.
+On iOS, users with certificate-based authentication will see a "double prompt", where they must click the option to use certificate-based authentication twice. We're working to fix the issue to create a seamless user experience.
 
 ## Next steps
 
