@@ -118,7 +118,7 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
 
 ## Configure Jasper AI SSO
 
-To configure single sign-on on **Jasper AI** side, you need to send the **App Federation Metadata Url** to [Jasper AI support team](mailto:hey@jasper.ai). They set this setting to have the SAML SSO connection set properly on both sides. For more information, please refer [this](https://jasper7631.zendesk.com/hc/articles/20020759202843-Configuring-Azure-Single-Sign-On-SSO-for-Jasper) link.
+To configure single sign-on on **Jasper AI** side, you need to send the **App Federation Metadata Url** to [Jasper AI support team](mailto:hey@jasper.ai). They set this setting to have the SAML SSO connection set properly on both sides. For more information, please refer to [this](https://jasper7631.zendesk.com/hc/articles/20020759202843-Configuring-Azure-Single-Sign-On-SSO-for-Jasper) link.
 
 ### Create Jasper AI test user
 
