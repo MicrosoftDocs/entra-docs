@@ -41,8 +41,12 @@
         "source_path_from_root": "/docs/identity-platform/msal-v1-app-scopes.md",
         "redirect_url": "/entra/identity-platform/msal-acquire-cache-tokens",
         "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/identity/domain-services/context/azure-ad-ds-context.yml",
+        "redirect_url": "/entra/identity/domain-services/context/domain-services-context",
+        "redirect_document_id": false
       }
-
     ]
   }
 
