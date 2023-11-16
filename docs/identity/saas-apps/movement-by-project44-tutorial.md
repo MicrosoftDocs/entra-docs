@@ -83,7 +83,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     |`https://project44-americas.okta.com/sso/saml2/<IdP-ID>`|
     |`https://project44-europe.okta.com/sso/saml2/<IdP-ID>`|
 
-    b. In the **Sign on URL** text box, type a URL using one of the following patterns:
+    c. In the **Sign on URL** text box, type a URL using one of the following patterns:
 
     |**Sign on URL**|
     |---------------|
@@ -96,6 +96,9 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 1. Movement by project44 application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
 	![Screenshot shows the image of attributes configuration.](common/default-attributes.png "Image")
+    
+    > [!Note]
+    > Please delete namespace manually for the above default attributes.
 
 1. In addition to above, Movement by project44 application expects few more attributes to be passed back in SAML response which are shown below. These attributes are also pre populated but you can review them as per your requirements.
 	
@@ -103,9 +106,6 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 	| --------------- | --------- |
 	| firstName | user.givenname |
 	| lastName  | user.surname|
-
-    > [!Note]
-    > Please remove namespace manually for the above default attributes, if not required.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 
