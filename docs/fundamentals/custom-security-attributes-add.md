@@ -1,5 +1,5 @@
 ---
-title: Add or deactivate custom security attribute definitions in Microsoft Entra ID (Preview)
+title: Add or deactivate custom security attribute definitions in Microsoft Entra ID
 description: Learn how to add new custom security attribute definitions or deactivate custom security attribute definitions in Microsoft Entra ID.
 services: active-directory
 author: rolyon
@@ -10,15 +10,11 @@ ms.subservice: fundamentals
 ms.workload: identity
 ms.custom: has-azure-ad-ps-ref
 ms.topic: how-to
-ms.date: 10/01/2023
+ms.date: 11/15/2023
 ms.collection: M365-identity-device-management
 ---
 
-# Add or deactivate custom security attribute definitions in Microsoft Entra ID (Preview)
-
-> [!IMPORTANT]
-> Custom security attributes are currently in PREVIEW.
-> For more information about previews, see [Universal License Terms For Online Services](https://www.microsoft.com/licensing/terms/product/ForOnlineServices/all).
+# Add or deactivate custom security attribute definitions in Microsoft Entra ID
 
 [Custom security attributes](custom-security-attributes-overview.md) in Microsoft Entra ID are business-specific attributes (key-value pairs) that you can define and assign to Microsoft Entra objects. This article describes how to add, edit, or deactivate custom security attribute definitions.
 
@@ -26,7 +22,6 @@ ms.collection: M365-identity-device-management
 
 To add or deactivate custom security attributes definitions, you must have:
 
-- Microsoft Entra ID P1 or P2 license
 - [Attribute Definition Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-definition-administrator)
 - Microsoft.Graph module when using [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation)
 - [AzureADPreview](https://www.powershellgallery.com/packages/AzureADPreview) version 2.0.2.138 or later when using Azure AD PowerShell
@@ -52,7 +47,7 @@ An attribute set is a collection of related attributes. All custom security attr
 
     An attribute set name can be 32 characters with no spaces or special characters. Once you've specified a name, you can't rename it. For more information, see [Limits and constraints](custom-security-attributes-overview.md#limits-and-constraints).
 
-    ![Screenshot of New attribute set pane in Azure portal.](./media/custom-security-attributes-add/attribute-set-add.png)
+    :::image type="content" source="./media/custom-security-attributes-add/attribute-set-add.png" alt-text="Screenshot of New attribute set pane in Microsoft Entra admin center." lightbox="./media/custom-security-attributes-add/attribute-set-add.png":::
 
 1. When finished, click **Add**.
 
@@ -72,7 +67,7 @@ An attribute set is a collection of related attributes. All custom security attr
  
 1. Click **Add attribute** to add a new custom security attribute to the attribute set.
 
-    ![Screenshot of New attribute pane in Azure portal.](./media/custom-security-attributes-add/attribute-new.png)
+    :::image type="content" source="./media/custom-security-attributes-add/attribute-new.png" alt-text="Screenshot of New attribute pane in Microsoft Entra admin center." lightbox="./media/custom-security-attributes-add/attribute-new.png":::
 
 1. In the **Attribute name** box, enter a custom security attribute name.
 
@@ -102,7 +97,7 @@ An attribute set is a collection of related attributes. All custom security attr
 
     An active value is available for assignment to objects. A value that is not active is defined, but not yet available for assignment.
 
-    ![Screenshot of New attribute pane with Add predefined value pane in Azure portal.](./media/custom-security-attributes-add/attribute-new-value-add.png)
+    :::image type="content" source="./media/custom-security-attributes-add/attribute-new-value-add.png" alt-text="Screenshot of New attribute pane with Add predefined value pane in Microsoft Entra admin center." lightbox="./media/custom-security-attributes-add/attribute-new-value-add.png":::
 
 1. When finished, click **Save**.
 
@@ -126,7 +121,7 @@ Once you add a new custom security attribute definition, you can later edit some
   
 1. If **Only allow predefined values to be assigned** is **Yes**, click **Add value** to add predefined values. Click an existing predefined value to change the **Is active?** setting.
 
-    ![Screenshot of Add predefined value pane in Azure portal.](./media/custom-security-attributes-add/attribute-predefined-value-add.png)
+    :::image type="content" source="./media/custom-security-attributes-add/attribute-predefined-value-add.png" alt-text="Screenshot of Add predefined value pane in Microsoft Entra admin center." lightbox="./media/custom-security-attributes-add/attribute-predefined-value-add.png":::
 
 ## Deactivate a custom security attribute definition
 

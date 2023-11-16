@@ -13,7 +13,7 @@ ms.topic: how-to
 ms.date: 09/26/2023
 ms.author: barclayn
 ms.reviewer: krbain
-ms.custom: it-pro, seo-update-azuread-jan, has-azure-ad-ps-ref
+ms.custom: it-pro, seo-update-azuread-jan, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 
 ms.collection: M365-identity-device-management
 ---
@@ -24,13 +24,13 @@ You can enable users to create and manage their own security groups or Microsoft
 
 ## Self-service group membership
 
-You can allow users to create security groups, which are used to manage access to shared resources. Security groups can be created by users in Azure portals, using Azure AD PowerShell, or from the [MyApps Groups Access panel](https://account.activedirectory.windowsazure.com/r#/groups). Only the group's owners can update membership, but you can provide group owners the ability to approve or deny membership requests from the MyApps Groups Access panel. Security groups created by self-service through the MyApps Groups Access panel are available to join for all users, whether owner-approved or auto-approved. In the MyApps Groups Access panel, you can change membership options when you create the group.
+You can allow users to create security groups, which are used to manage access to shared resources. Security groups can be created by users in Azure portals, using [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview), or from the [MyApps Groups Access panel](https://account.activedirectory.windowsazure.com/r#/groups). Only the group's owners can update membership, but you can provide group owners the ability to approve or deny membership requests from the MyApps Groups Access panel. Security groups created by self-service through the MyApps Groups Access panel are available to join for all users, whether owner-approved or auto-approved. In the MyApps Groups Access panel, you can change membership options when you create the group.
 
-Microsoft 365 groups, which provide collaboration opportunities for your users, can be created in any of the Microsoft 365 applications, such as SharePoint, Microsoft Teams, and Planner. Microsoft 365 groups can also be created in Azure portals, using Azure AD PowerShell, or from the MyApps Groups Access panel. For more information on the difference between security groups and Microsoft 365 groups, see [Learn about groups](~/fundamentals/concept-learn-about-groups.md#what-to-know-before-creating-a-group)
+Microsoft 365 groups, which provide collaboration opportunities for your users, can be created in any of the Microsoft 365 applications, such as SharePoint, Microsoft Teams, and Planner. Microsoft 365 groups can also be created in Azure portals, using Microsoft Graph PowerShell, or from the MyApps Groups Access panel. For more information on the difference between security groups and Microsoft 365 groups, see [Learn about groups](~/fundamentals/concept-learn-about-groups.md#what-to-know-before-creating-a-group)
 
 Groups created in | Security group default behavior | Microsoft 365 group default behavior
 ------------------ | ------------------------------- | ---------------------------------
-[Azure AD PowerShell](~/identity/users/groups-settings-cmdlets.md) | Only owners can add members<br>Visible but not available to join in MyApp Groups Access panel | Open to join for all users
+[Microsoft Graph PowerShell](/entra/identity/users/groups-settings-v2-cmdlets) | Only owners can add members<br>Visible but not available to join in MyApp Groups Access panel | Open to join for all users
 [Azure portal](https://portal.azure.com) | Only owners can add members<br>Visible but not available to join in MyApps Groups Access panel<br>Owner is not assigned automatically at group creation | Open to join for all users
 [MyApps Groups Access panel](https://account.activedirectory.windowsazure.com/r#/joinGroups) | Open to join for all users<br>Membership options can be changed when the group is created | Open to join for all users<br>Membership options can be changed when the group is created
 

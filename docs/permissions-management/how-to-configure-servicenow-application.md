@@ -12,7 +12,7 @@ ms.date: 11/15/2023
 ms.author: jfields
 ---
 
-# Configure the ServiceNow app for Microsoft Entra Permissions Management (Preview)
+# Configure the ServiceNow app for Microsoft Entra Permissions Management
 
 Manage your multicloud permissions by integrating ServiceNow with Microsoft Entra Permissions Management. 
 
