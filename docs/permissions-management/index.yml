@@ -92,7 +92,7 @@ landingContent:
     linkLists:
       - linkListType: reference
         links:
-          - text: Discover, remediate, and monitor permissions in your multicloud environment
+          - text: Discover, remediate, and monitor with Permissions Management APIs
             url: https://go.microsoft.com/fwlink/?linkid=2252615
   # Card
   - title: Reference 

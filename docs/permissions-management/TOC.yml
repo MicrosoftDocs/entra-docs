@@ -162,7 +162,7 @@
   - name: APIs      
     expanded: false
     items:
-    - name: Discover, remediate, and monitor permissions in your multicloud environment
+    - name: Discover, remediate, and monitor with Permissions Management APIs
       href: https://go.microsoft.com/fwlink/?linkid=2252615
   - name: Troubleshoot
     expanded: false
