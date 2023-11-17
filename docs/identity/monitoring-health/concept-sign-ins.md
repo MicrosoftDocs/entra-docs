@@ -1,14 +1,13 @@
 ---
 title: Sign-in logs in Microsoft Entra ID
-description: Learn about the four types of sign-in logs available in Microsoft Entra monitoring and health.
-services: active-directory
+description: Learn about the different types of sign-in logs that are available in Microsoft Entra monitoring and health.
 author: shlipsey3
 manager: amycolannino
 ms.service: active-directory
 ms.topic: conceptual
 ms.workload: identity
 ms.subservice: report-monitor
-ms.date: 10/04/2023
+ms.date: 11/13/2023
 ms.author: sarahlipsey
 ms.reviewer: egreenberg14
 ---
@@ -72,7 +71,7 @@ In addition to the default fields, the interactive sign-in log also shows:
 - The sign-in location
 - Whether Conditional Access has been applied
 
-#### Known limitations
+#### Special considerations
 
 **Non-interactive sign-ins on the interactive sign-in logs**
 
@@ -82,11 +81,11 @@ Previously, some non-interactive sign-ins from Microsoft Exchange clients were i
 
 Microsoft Entra ID issues tokens for authentication and authorization. In some situations, a user who is signed in to the Contoso tenant may try to access resources in the Fabrikam tenant, where they don't have access. A no-authorization token called a passthrough token, is issued to the Fabrikam tenant. The passthrough token doesn't allow the user to access any resources.
 
-When reviewing the logs for this situation, the sign-in logs for the home tenant (in this scenario, Contoso) don't show a sign-in attempt because the token wasn't evaluated against the home tenant's policies. The sign-in token was only used to display the appropriate failure message. You won't see a sign-in attempt in the logs for the home tenant.
+Previously, when reviewing the logs for this situation, the sign-in logs for the home tenant (in this scenario, Contoso) didn't show a sign-in attempt because the token wasn't evaluated against the home tenant's policies. The sign-in token was only used to display the appropriate failure message. Passthrough sign-in attempts now appear in the home tenant sign-in logs, providing more visibility into your tenant restriction policies. The `crossTenantAccessType` property now shows `passthrough` to differentiate passthrough sign-ins and is available in the Microsoft Entra admin center and Microsoft Graph.
 
 **First-party, app-only service principal sign-ins**
 
-The service principal sign-in logs don't include first-party, app-only sign-in activity. This type of activity happens when first-party apps get tokens for an internal Microsoft job where there's no direction or context from a user. We exclude these logs so you're not paying for logs related to internal Microsoft tokens within your tenant. 
+The service principal sign-in logs don't include first-party, app-only sign-in activity. This type of activity happens when first-party apps get tokens for an internal Microsoft job where there's no direction or context from a user. We exclude these logs so you're not paying for logs related to internal Microsoft tokens within your tenant.
 
 You may identify Microsoft Graph events that don't correlate to a service principal sign-in if you're routing `MicrosoftGraphActivityLogs` with `SignInLogs` to the same Log Analytics workspace. This integration allows you to cross reference the token issued for the Microsoft Graph API call with the sign-in activity. The `UniqueTokenIdentifier` for sign-in logs and the `SignInActivityId` in the Microsoft Graph activity logs would be missing from the service principal sign-in logs.
 
