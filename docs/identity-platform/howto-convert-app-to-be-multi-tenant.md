@@ -31,7 +31,7 @@ If you want to try using one of our samples, refer to [Build a multi-tenant SaaS
 
 ## Prerequisites
 
-- A Microsoft Entra ID tenant. If you don't have one, you can create one in our [Quickstart: Create a new tenant in Microsoft Entra ID](entra/fundamentals/create-new-tenant)
+- A Microsoft Entra ID tenant. If you don't have one, you can create one in our [Quickstart: Create a new tenant in Microsoft Entra ID](/entra/fundamentals/create-new-tenant)
 - An application registered in the Microsoft identity platform. If you don't have one, you can create one in our [Quickstart: Register an application with the Microsoft identity platform](quickstart-register-app.md).
 - Familiarity with [Tenancy in Microsoft Entra ID](./single-and-multi-tenant-apps.md).
 - An integrated development environment (IDE) that enables you to edit your application code.
@@ -81,7 +81,7 @@ This consent experience is affected by the permissions requested by the applicat
 
 Some permissions can be consented to by a regular user, while others require a tenant administrator’s consent.
 
-To learn more about user and admin consent, see [Configure the admin consent workflow](/entra/identity/enterprise-apps/configure-admin-consent-workflow.md).
+To learn more about user and admin consent, see [Configure the admin consent workflow](/entra/identity/enterprise-apps/configure-admin-consent-workflow).
 
 ### Admin consent
 

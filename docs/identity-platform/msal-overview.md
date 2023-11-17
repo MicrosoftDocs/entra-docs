@@ -51,7 +51,7 @@ You can refer to the following documentation to learn more about the different M
 
 [MSAL.NET](/entra/msal/dotnet/)
 [MSAL for Android](https://github.com/AzureAD/microsoft-authentication-library-for-android/tree/dev/docs)
-[MSAL Angular](/javascript/api/@azure/msal-angular/?view=msal-js-latest)
+[MSAL Angular](/javascript/api/@azure/msal-angular/)
 [MSAL for iOS and macOS](https://github.com/AzureAD/microsoft-authentication-library-for-objc/tree/dev/docs)
 [MSAL Java](/entra/msal/java/)
 [MSAL.js](/javascript/api/overview/msal-overview)

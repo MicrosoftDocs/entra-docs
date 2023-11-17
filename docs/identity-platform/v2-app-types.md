@@ -22,7 +22,7 @@ The Microsoft identity platform supports authentication for various modern app a
 
 ## The basics
 
-You must register each app that uses the Microsoft identity platform in the Azure portal [App registrations](https://go.microsoft.com/fwlink/?linkid=2083908). The app registration process collects and assigns these values for your app:
+You must register each app that uses the Microsoft identity platform in the Microsoft Entra admin center [App registrations](https://entra.microsoft.com/#view/Microsoft_AAD_RegisteredApps/ApplicationsListBlade/quickStartType~/null/sourceType/Microsoft_AAD_IAM). The app registration process collects and assigns these values for your app:
 
 * An **Application (client) ID** that uniquely identifies your app
 * A **Redirect URI** that you can use to direct responses back to your app
@@ -37,19 +37,27 @@ https://login.microsoftonline.com/common/oauth2/v2.0/authorize
 https://login.microsoftonline.com/common/oauth2/v2.0/token
 ```
 
-## Single-page apps (JavaScript)
+The app types supported by the Microsoft identity platform are;
 
-Many modern apps have a single-page app front end written primarily in JavaScript, often with a framework like Angular, React, or Vue. The Microsoft identity platform supports these apps by using the [OpenID Connect](v2-protocols-oidc.md) protocol for authentication and one of two types of authorization grants defined by OAuth 2.0. The supported grant types are either the [OAuth 2.0 implicit grant flow](v2-oauth2-implicit-grant-flow.md) or the more recent [OAuth 2.0 authorization code + PKCE flow](v2-oauth2-auth-code-flow.md) (see below).
+- Single-page app (SPA)
+- Web app
+- Web API
+- Mobile and native apps
+- Daemon or server-side app
 
-The flow diagram below demonstrates the OAuth 2.0 authorization code grant (with details around PKCE omitted), where the app receives a code from the Microsoft identity platform `authorize` endpoint, and redeems it for an access token and a refresh token using cross-site web requests. For single-page apps (SPAs), the access token is valid for 1 hour, and once expired, must request another code using the refresh token. In addition to the access token, an `id_token` that represents the signed-in user to the client application is typically also requested through the same flow and/or a separate OpenID Connect request (not shown here).
+## Single-page apps
 
-:::image type="content" source="media/v2-oauth-auth-code-spa/oauth-code-spa.svg" alt-text="Diagram showing the OAuth 2 authorization code flow between a single-page app and the security token service endpoint." border="false":::
+Many modern apps have a single-page app (SPA) front end written primarily in JavaScript, often with a framework like Angular, React, or Vue. The Microsoft identity platform supports these apps by using the [OpenID Connect](v2-protocols-oidc.md) protocol for authentication and one of two types of authorization grants defined by OAuth 2.0. The supported grant types are either the [OAuth 2.0 implicit grant flow](v2-oauth2-implicit-grant-flow.md) or the more recent [OAuth 2.0 authorization code + PKCE flow](v2-oauth2-auth-code-flow.md) (see below).
 
-To see this scenario in action, check out the [Tutorial: Sign in users and call the Microsoft Graph API from a JavaScript SPA using auth code flow](tutorial-v2-javascript-auth-code.md).
+The flow diagram demonstrates the OAuth 2.0 authorization code grant flow (with details around PKCE omitted), where the app receives a code from the Microsoft identity platform `authorize` endpoint, and redeems it for an access token and a refresh token using cross-site web requests. For SPAs, the access token is valid for 1 hour, and once expired, must request another code using the refresh token. In addition to the access token, an `id_token` that represents the signed-in user to the client application is typically also requested through the same flow and/or a separate OpenID Connect request (not shown here).
+
+:::image type="content" source="media/v2-oauth-auth-code-spa/oauth-code-spa.svg" alt-text="Diagram showing the OAuth 2.0 authorization code flow between a single-page app and the security token service endpoint." border="false":::
+
+To see this in action, check out the [Quickstart: Sign in users in a single-page app (SPA) and call the Microsoft Graph API using JavaScript](./quickstart-single-page-app-javascript-sign-in.md).
 
 ### Authorization code flow vs. implicit flow
 
-For most of the history of OAuth 2.0, the [implicit flow](v2-oauth2-implicit-grant-flow.md) was the recommended way to build single-page apps. With the removal of [third-party cookies](reference-third-party-cookies-spas.md) and [greater attention](https://tools.ietf.org/html/draft-ietf-oauth-security-topics-14) paid to security concerns around the implicit flow, the authorization code flow for single-page apps should now be implemented to ensure compatibility of your app in Safari and other privacy-conscious browsers. The continued use of the implicit flow is not recommended.
+The OAuth 2.0 authorization code flow is now the recommended way to build SPAs to ensure compatibility of your app in Safari and other privacy-conscious browsers. This has come about following the removal of [third-party cookies](reference-third-party-cookies-spas.md) and [greater attention](https://tools.ietf.org/html/draft-ietf-oauth-security-topics-14). The continued use of the implicit flow is not recommended.
 
 ## Web apps
 
@@ -57,13 +65,13 @@ For web apps (.NET, PHP, Java, Ruby, Python, Node) that the user accesses throug
 
 ```JSON
 // Partial raw ID token
-eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6ImtyaU1QZG1Cd...
+abC1dEf2Ghi3jkL4mNo5Pqr6stU7vWx8Yza9...
 
 // Partial content of a decoded ID token
 {
-    "name": "John Smith",
-    "email": "john.smith@gmail.com",
-    "oid": "d9674823-dffc-4e3f-a6eb-62fe4bd48a58"
+    "name": "Casey Jensen",
+    "email": "casey.jensen@onmicrosoft.com",
+    "oid": "ab12cd34-effe-5678-9012-abcdef012345"
     ...
 }
 ```
@@ -82,17 +90,17 @@ In addition to simple sign-in, a web server app might need to access another web
 
 ## Web APIs
 
-You can use the Microsoft identity platform to secure web services, such as your app's RESTful web API. Web APIs can be implemented in numerous platforms and languages. They can also be implemented using HTTP Triggers in Azure Functions. Instead of ID tokens and session cookies, a web API uses an OAuth 2.0 access token to secure its data and to authenticate incoming requests. The caller of a web API appends an access token in the authorization header of an HTTP request, like this:
+An application programming interface (API) is a set of rules that enable different apps to communicate with each other and exchange data. You can use the Microsoft identity platform to secure web services, such as your app's RESTful web API. Web APIs can be implemented in numerous platforms and languages. They can also be implemented using HTTP Triggers in Azure Functions. Instead of ID tokens and session cookies, a web API uses an OAuth 2.0 access token to secure its data and to authenticate incoming requests. The caller of a web API appends an access token in the authorization header of an HTTP request, like this:
 
 ```HTTP
 GET /api/items HTTP/1.1
 Host: www.mywebapi.com
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6...
+Authorization: Bearer abC1dEf2Ghi3jkL4mNo5Pqr6stU7vWx8Yza9...
 Accept: application/json
 ...
 ```
 
-The web API uses the access token to verify the API caller's identity and to extract information about the caller from claims that are encoded in the access token. Further details of different types of tokens used in the Microsoft identity platform are available in the [access token](access-tokens.md) reference and [id_token](id-tokens.md) reference.
+The web API uses the access token to verify the API caller's identity and to extract information about the caller from claims that are encoded in the access token. Further details of different types of tokens used in the Microsoft identity platform are available in the [access token](access-tokens.md) reference and [ID token](id-tokens.md) reference.
 
 A web API can give users the power to opt in or opt out of specific functionality or data by exposing permissions, also known as [scopes](./permissions-consent-overview.md). For a calling app to acquire permission to a scope, the user must consent to the scope during a flow. The Microsoft identity platform asks the user for permission, and then records permissions in all access tokens that the web API receives. The web API validates the access tokens it receives on each call and performs authorization checks.
 
@@ -102,7 +110,7 @@ A web API can receive access tokens from all types of apps, including web server
 
 To learn how to secure a web API by using OAuth2 access tokens, check out the web API code samples in the [protected web API scenario](scenario-protected-web-api-overview.md).
 
-In many cases, web APIs also need to make outbound requests to other downstream web APIs secured by Microsoft identity platform. To do so, web APIs can take advantage of the **On-Behalf-Of** flow, which allows the web API to exchange an incoming access token for another access token to be used in outbound requests. For more info, see the [Microsoft identity platform and OAuth 2.0 On-Behalf-Of flow](v2-oauth2-on-behalf-of-flow.md).
+In many cases, web APIs also need to make outbound requests to other downstream web APIs secured by Microsoft identity platform. To do so, web APIs can take advantage of the **On-Behalf-Of (OBO)** flow, which allows the web API to exchange an incoming access token for another access token to be used in outbound requests. For more info, see the [Microsoft identity platform and OAuth 2.0 On-Behalf-Of flow](v2-oauth2-on-behalf-of-flow.md).
 
 ## Mobile and native apps
 
@@ -113,7 +121,7 @@ In this flow, the app receives an authorization code from the Microsoft identity
 ![Shows the native app authentication flow](./media/v2-app-types/convergence-scenarios-native.svg)
 
 > [!NOTE]
-> If the application uses the default system webview, check the information about "Confirm My Sign-In" functionality and error code AADSTS50199 in [Microsoft Entra authentication and authorization error codes](reference-error-codes.md).
+> If the application uses the default system webview, check the information about "Confirm My Sign-In" functionality and error code `AADSTS50199` in [Microsoft Entra authentication and authorization error codes](reference-error-codes.md).
 
 ## Daemons and server-side apps
 
@@ -125,6 +133,6 @@ In this flow, the app interacts directly with the `/token` endpoint to obtain ac
 
 To build a daemon app, see the [client credentials documentation](v2-oauth2-client-creds-grant-flow.md), or try a [.NET sample app](https://github.com/Azure-Samples/active-directory-dotnet-daemon-v2).
 
-## Next steps
+## See also
 
 Now that you're familiar with the types of applications supported by the Microsoft identity platform, learn more about [OAuth 2.0 and OpenID Connect](./v2-protocols.md) to gain an understanding of the protocol components used by the different scenarios.
