@@ -7,7 +7,7 @@ ms.service: active-directory
 ms.topic: reference
 ms.workload: identity
 ms.subservice: report-monitor
-ms.date: 11/13/2023
+ms.date: 11/17/2023
 ms.author: sarahlipsey
 ms.reviewer: dhanyahk
 ms.custom: has-azure-ad-ps-ref
@@ -50,6 +50,7 @@ You get access to the sign-in logs using the `Get-MgAuditLogSignIn` cmdlet. Use 
 
 ## Next steps
 
-- [Microsoft Entra reports overview](./overview-monitoring-health.md).
-- [Audit logs report](concept-audit-logs.md). 
-- [Programmatic access to Microsoft Entra reports](./howto-configure-prerequisites-for-reporting-api.md)
+- [Microsoft Entra monitoring and health overview](overview-monitoring-health.md)
+- [Audit logs](concept-audit-logs.md)
+- [Sign-in logs](concept-signs.md)
+- [Programmatic access to Microsoft Entra reports](howto-configure-prerequisites-for-reporting-api.md)
