@@ -1,5 +1,5 @@
 ---
-title: Download workflow history reports
+title: Download workflow history reports (Preview)
 description: This article guides a user on downloading the history of a Lifecycle workflow
 author: owinfreyATL
 ms.author: owinfrey
@@ -11,132 +11,37 @@ ms.date: 11/15/2023
 #CustomerIntent: As a < type of user >, I want < what? > so that < why? >.
 ---
 
-<!--
-Remove all the comments in this template before you sign-off or merge to the main branch.
+# Download workflow history reports (Preview)
 
-This template provides the basic structure of a How-to article pattern. See the
-[instructions - How-to](../level4/article-how-to-guide.md) in the pattern library.
+Lifecycle workflow history allows you to view details about the actions of a workflow such as when it runs, processes a task, or processes a user. In the Microsoft Entra admin center you're able to filter this information up to 30 days from when the action was taken. For a step guide on viewing this information in the Microsoft Entra admin center, see: [Check the status of a workflow](check-status-workflow.md). To store this information for a longer period of time, you can save the filtered history as a CSV report. This article walks you through how you can download these reports.
 
-You can provide feedback about this template at: https://aka.ms/patterns-feedback
+## Download the history report of a workflow using the Microsoft Entra admin center
 
-How-to is a procedure-based article pattern that show the user how to complete a task in their own environment. A task is a work activity that has a definite beginning and ending, is observable, consist of two or more definite steps, and leads to a product, service, or decision.
+To download the history report of a workflow using the Microsoft Entra admin center, you'd follow these steps:
 
--->
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](~/identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
 
-<!-- 1. H1 -----------------------------------------------------------------------------
+1. Browse to **Identity governance** > **Lifecycle workflows** > **Workflows**.
 
-Required: Use a "<verb> * <noun>" format for your H1. Pick an H1 that clearly conveys the task the user will complete.
+1. Select the workflow you want to download the history of.
 
-For example: "Migrate data from regular tables to ledger tables" or "Create a new Azure SQL Database".
+1. On the workflow overview screen, select **Workflow history**.
 
-* Include only a single H1 in the article.
-* Don't start with a gerund.
-* Don't include "Tutorial" in the H1.
+1. On the Workflow history screen you're able to see a summary and total count of users, runs, or tasks processed by the workflow in the time frame of the filter.
+    :::image type="content" source="media/download-workflow-history/workflow-history-screen.png" alt-text="Screenshot of the workflow history screen.":::
+1. The default history screen shows **Users**, but you're able to select **Runs**, or **Tasks** to see their information on this screen.
+    :::image type="content" source="media/download-workflow-history/task-workflow-history-screen.png" alt-text="Screenshot of the workflow history screen with tasks selected.":::
+1. On the page workflow history page that you wish to download a report of set your filters to what you want included in your report and select **Download (Preview)**.
+    :::image type="content" source="media/download-workflow-history/workflow-history-screen-download.png" alt-text="Screenshot of download location on workflow history screen.":::
+1. On the download pane you see the type of report you're downloading at the top, and it's also present in the default name of the CSV report.
+    :::image type="content" source="media/download-workflow-history/history-download-pane.png" alt-text="Screenshot of the workflow history download pane.":::
+1. Select **Download**.
+ 
+> [!NOTE]
+> You can download up to 100,000 records. If you want to download more use the [Lifecycle Workflow reporting API](/graph/api/resources/identitygovernance-lifecycleworkflows-reporting-overview).
 
--->
+## Next steps
 
-# Download workflow history reports
 
-<!-- 2. Introductory paragraph ----------------------------------------------------------
-
-Required: Lead with a light intro that describes, in customer-friendly language, what the customer will do. Answer the fundamental “why would I want to do this?” question. Keep it short.
-
-Readers should have a clear idea of what they will do in this article after reading the introduction.
-
-* Introduction immediately follows the H1 text.
-* Introduction section should be between 1-3 paragraphs.
-* Don't use a bulleted list of article H2 sections.
-
-Example: In this article, you will migrate your user databases from IBM Db2 to SQL Server by using SQL Server Migration Assistant (SSMA) for Db2.
-
--->
-
-Every time a workflow runs, processes a user, or processes a task an entry is added to its history reports.
-<!---Avoid notes, tips, and important boxes. Readers tend to skip over them. Better to put that info directly into the article text.
-
--->
-
-<!-- 3. Prerequisites --------------------------------------------------------------------
-
-Required: Make Prerequisites the first H2 after the H1. 
-
-* Provide a bulleted list of items that the user needs.
-* Omit any preliminary text to the list.
-* If there aren't any prerequisites, list "None" in plain text, not as a bulleted item.
-
--->
-
-## Prerequisites
-
-TODO: List the prerequisites
-
-<!-- 4. Task H2s ------------------------------------------------------------------------------
-
-Required: Multiple procedures should be organized in H2 level sections. A section contains a major grouping of steps that help users complete a task. Each section is represented as an H2 in the article.
-
-For portal-based procedures, minimize bullets and numbering.
-
-* Each H2 should be a major step in the task.
-* Phrase each H2 title as "<verb> * <noun>" to describe what they'll do in the step.
-* Don't start with a gerund.
-* Don't number the H2s.
-* Begin each H2 with a brief explanation for context.
-* Provide a ordered list of procedural steps.
-* Provide a code block, diagram, or screenshot if appropriate
-* An image, code block, or other graphical element comes after numbered step it illustrates.
-* If necessary, optional groups of steps can be added into a section.
-* If necessary, alternative groups of steps can be added into a section.
-
--->
-
-## "\<verb\> * \<noun\>"
-TODO: Add introduction sentence(s)
-[Include a sentence or two to explain only what is needed to complete the procedure.]
-TODO: Add ordered list of procedure steps
-1. Step 1
-1. Step 2
-1. Step 3
-
-## "\<verb\> * \<noun\>"
-TODO: Add introduction sentence(s)
-[Include a sentence or two to explain only what is needed to complete the procedure.]
-TODO: Add ordered list of procedure steps
-1. Step 1
-1. Step 2
-1. Step 3
-
-## "\<verb\> * \<noun\>"
-TODO: Add introduction sentence(s)
-[Include a sentence or two to explain only what is needed to complete the procedure.]
-TODO: Add ordered list of procedure steps
-1. Step 1
-1. Step 2
-1. Step 3
-
-<!-- 5. Next step/Related content------------------------------------------------------------------------
-
-Optional: You have two options for manually curated links in this pattern: Next step and Related content. You don't have to use either, but don't use both.
-  - For Next step, provide one link to the next step in a sequence. Use the blue box format
-  - For Related content provide 1-3 links. Include some context so the customer can determine why they would click the link. Add a context sentence for the following links.
-
--->
-
-## Next step
-
-TODO: Add your next step link(s)
-
-> [!div class="nextstepaction"]
-> [Write concepts](article-concept.md)
-
-<!-- OR -->
-
-## Related content
-
-TODO: Add your next step link(s)
-
-- [Write concepts](article-concept.md)
-
-<!--
-Remove all the comments in this template before you sign-off or merge to the main branch.
--->
-
+> [Check the status of a workflow](check-status-workflow.md)
+> [Lifecycle Workflows history](lifecycle-workflow-history.md)
