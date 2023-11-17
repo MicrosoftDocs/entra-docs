@@ -21,7 +21,7 @@ The Microsoft identity platform is a cloud identity service that allows you to b
 
 The following diagram shows the Microsoft identity platform at a high level, including the application registration experience, SDKs, endpoints, and supported identities or account types.
 
-![Diagram showing the components of the Microsoft identity platform](./media/v2-overview/about-microsoft-identity-platform.svg)
+![Diagram showing the components of the Microsoft identity platform.](./media/v2-overview/about-microsoft-identity-platform.svg)
 
 There are several components that make up the Microsoft identity platform:
 
