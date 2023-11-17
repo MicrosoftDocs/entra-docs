@@ -53,11 +53,11 @@ During the free trial period, you'll have access to all product features with fe
 
 ## Get started guide
 
-Once your customer tenant free trial is ready, the next step is to personalize your customer's sign-in and sign-up experience, set up a user in your tenant, and configure a sample app. The get started guide will walk you through all of these steps in just a few minutes. For more information about the next steps see the [get started guide](quickstart-get-started-guide.md) article. 
+Once your customer tenant free trial is ready, the next step is to personalize your customer's sign-in and sign-up experience, set up a user in your tenant, and configure a sample app. The get started guide will walk you through all of these steps in just a few minutes. For more information about the next steps, see the [get started guide](quickstart-get-started-guide.md) article. 
 
-## Upgrade your free trial with an new Azure subscription
+## Upgrade your free trial with a new Azure subscription
 
-You can upgrade your 30 days free trial of a tenant with customer configurations to unlock the full set of features. I you don't have any Azure subscriptions, follow the steps below.
+You can upgrade your 30 days free trial of a tenant with customer configurations to unlock the full set of features. If you don't have any Azure subscriptions, follow the steps below.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com). <!-- Should we add a role here? The user who signs up is a Global Administrator by default.-->
 1. Browse to **Home** > **Microsoft Entra ID (Azure AD)**
@@ -65,7 +65,7 @@ You can upgrade your 30 days free trial of a tenant with customer configurations
 
     :::image type="content" source="media/quickstart-trial-setup/upgrade-trial-button.jpg" alt-text="Screenshot of the upgrade trial button."::: 
 
-1. On the https://signup.azure.com/ page fill in the required information to complete you Azure account setup and select **Sign up** and **Submit**. You'll be redirected to the Azure portal.
+1. On the https://signup.azure.com/ page fill in the required information to complete your Azure account setup and select **Sign up** and **Submit**. You'll be redirected to the Azure portal.
 1. To link your new Azure subscription to your tenant, select **Add subscription**.
 
     :::image type="content" source="media/quickstart-trial-setup/add-subsription.png" alt-text="Screenshot of adding a subscription to the tenant"::: 
@@ -79,7 +79,7 @@ You can upgrade your 30 days free trial of a tenant with customer configurations
     :::image type="content" source="media/quickstart-trial-setup/create-resource-group.png" alt-text="Screenshot of creating a resource group."::: 
 
 1. Select **Add**. 
-1. After a few seconds you'll see a notification that you successfully linked your subscription to the tenant. From here you can switch to your upgraded tenant. 
+1. After a few seconds, you'll see a notification that you successfully linked your subscription to the tenant. From here you can switch to your upgraded tenant. 
 
     :::image type="content" source="media/quickstart-trial-setup/switch-to-tenant.png" alt-text="Screenshot of the switch to tenant link.":::
 
