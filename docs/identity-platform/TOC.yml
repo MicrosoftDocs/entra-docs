@@ -829,7 +829,7 @@
           href: reference-app-manifest.md
         - name: Microsoft Graph application manifest
           displayName: Microsoft Graph app manifest
-          href: reference-app-manifest.md
+          href: reference-microsoft-graph-app-manifest.md
         - name: Redirect URI/reply URL restrictions and limitations
           href: reply-url.md
         - name: Validation differences by supported account types
