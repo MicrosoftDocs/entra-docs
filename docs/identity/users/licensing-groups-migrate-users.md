@@ -13,7 +13,7 @@ ms.service: active-directory
 ms.subservice: enterprise-users
 ms.topic: how-to
 ms.workload: identity
-ms.date: 06/24/2022
+ms.date: 11/16/2023
 ms.author: barclayn
 ms.reviewer: sumitp
 ms.custom: "seohack1;it-pro"
@@ -64,7 +64,7 @@ Here is what the migration process could look like:
 
    - This is the expected user state during migration:
 
-      ![the expected user state during migration](./media/licensing-groups-migrate-users/expected-user-state.png)
+      :::image type="content" source="./media/licensing-groups-migrate-users/expected-user-state.png" alt-text="Screenshot of the expected user state during migration.":::
 
      This confirms that the user has both direct and inherited licenses. We see that Office 365 E3 is assigned.
 
