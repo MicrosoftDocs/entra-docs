@@ -22,6 +22,7 @@ This PowerShell script example exports all app registrations secrets and certifi
 
 ## Sample script
 
+```powershell
 <#################################################################################
 DISCLAIMER:
 
@@ -179,6 +180,7 @@ do {
 } while ($AppsSecrets -ne $null)
 
 $Logs | Export-Csv $Path -NoTypeInformation -Encoding UTF8
+```
 
 ## Script explanation
 

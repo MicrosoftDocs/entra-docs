@@ -24,6 +24,7 @@ This sample requires the [Microsoft Graph PowerShell](/powershell/microsoftgraph
 
 ## Sample script
 
+```powershell
 <#################################################################################
 DISCLAIMER:
 
@@ -211,6 +212,7 @@ foreach ($App in $Applications) {
 Write-Host $Messages.Export.Info -ForegroundColor Green
 $Path = Read-Host -Prompt $Messages.Export.Prompt
 $Logs | Export-Csv $Path -NoTypeInformation -Encoding UTF8
+```
 
 ## Script explanation
 

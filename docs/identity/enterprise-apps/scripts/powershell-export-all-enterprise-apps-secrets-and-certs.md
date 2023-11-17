@@ -23,6 +23,7 @@ This sample requires the [Microsoft Graph PowerShell](/powershell/microsoftgraph
 
 ## Sample script
 
+```powershell
 <#################################################################################
 DISCLAIMER:
 
@@ -51,6 +52,7 @@ delivery of the script be liable for any damages whatsoever (including, without 
 for loss of business profits, business interruption, loss of business information, or other
 pecuniary loss) arising out of the use of or inability to use the sample or documentation, even if
 Microsoft has been advised of the possibility of such damages.
+
 #################################################################################>
 
 Connect-MgGraph -Scopes 'Application.ReadWrite.All'
@@ -166,6 +168,7 @@ foreach ($EnterpriseApp in $EnterpriseApps) {
 Write-Host $Messages.Export.Info -ForegroundColor Green
 $Path = Read-Host -Prompt $Messages.Export.Prompt
 $Logs | Export-Csv $Path -NoTypeInformation -Encoding UTF8
+```
 
 ## Script explanation
 
