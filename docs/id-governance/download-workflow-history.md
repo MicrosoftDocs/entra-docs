@@ -13,7 +13,7 @@ ms.date: 11/17/2023
 
 # Download workflow history reports (Preview)
 
-Lifecycle Workflow's history feature allows you to view details about the actions of a workflow such as when it runs, processes a task, or processes a user. From the Microsoft Entra admin center, you're able to filter this information up to 30 days from when the action was taken. For a step guide on viewing this information in the Microsoft Entra admin center, see: [Check the status of a workflow](check-status-workflow.md). To store this information for a longer period of time, you can save the filtered history as a CSV report. This article walks you through how you can download these reports.
+Lifecycle Workflow's history feature allows you to view details about the actions of a workflow such as when it runs, processes a task, or processes a user. From the Microsoft Entra admin center, you're able to filter this information up to 30 days from when the action was taken. To store this information for a longer period of time, you can save the history as a CSV report. This article walks you through how you can download these reports.
 
 ## Download the history report of a workflow using the Microsoft Entra admin center
 
