@@ -152,7 +152,7 @@ To add permissions into dynamic consent:
 
 ## Grant consent for the added permissions for the enterprise application
 
-After permissions are added to your application, users or administrators need to grant consent to the new permissions. Nonadmin users see a consent prompt when they sign into your app while admin users can grant consent to the new permissions on behalf of all users in their organization.
+After permissions are added to your application, users or administrators need to grant consent to the new permissions. Nonadmin users see a consent prompt when they sign into your app. Admin users on the other hand can grant consent to the new permissions on behalf of all users in their organization when they first sign in to your app or in the Microsoft Entra admin center.
 
 When the added permissions require admin consent, the required actions vary based on app type:
 
@@ -162,6 +162,9 @@ When the added permissions require admin consent, the required actions vary base
 ### Remove an unused permission
 
 Removing permissions can reduce the risk of exposing sensitive data or compromising security and simplify the consent process for your users or administrators. If your app no longer needs permission, you should remove it from your app registration’s required resource access and code. For example, an application that no longer sends email notifications can remove the Mail.ReadWrite permission.
+
+> [!IMPORTANT]
+> Removing a permission from your app registration doesn't automatically revoke the permissions already granted to the app. You need to revoke the permissions manually. For more information, see the [Revoke consent for the removed permissions for the enterprise application](#revoke-consent-for-the-removed-permissions-for-the-enterprise-application) section of this article.
 
 ## Remove permissions from static consent
 
@@ -266,7 +269,7 @@ After the permissions are removed from the app registration, an admin in the ten
 - **Single tenant app and multitenant app in home tenant**: For a single tenant app, contact the admin of the tenant to revoke the permissions already granted to the app. For a multitenant app, contact the admins of all the tenants where instances of your application reside to [revoke permissions granted to the enterprise application](~/identity/enterprise-apps/manage-application-permissions.md). It ensures that the application doesn't maintain access through the removed permission.
 - **Multi-tenant apps in customers' tenants**: Ensure that you communicate with your customers to revoke permissions through announcements, blogs and any other communication channels.
 
-For both single tenant and multitenant apps, nonadmin users in tenants where user consent is enabled can use the MyApps portal to revoke permissions they have granted. For more information on how end users can revoke permissions in the MyApps portal, see [Revoke end user consent](https://support.microsoft.com/account-billing/edit-or-revoke-application-permissions-in-the-my-apps-portal-169be2b4-ee26-4338-aea8-d19bb2f329ee)
+For both single tenant and multitenant apps, nonadmin users in tenants where user consent is enabled can use the MyApps portal to revoke permissions they previously granted. For more information on how end users can revoke permissions in the MyApps portal, see [Revoke end user consent](https://support.microsoft.com/account-billing/edit-or-revoke-application-permissions-in-the-my-apps-portal-169be2b4-ee26-4338-aea8-d19bb2f329ee)
 
 ### Replace a permission
 
