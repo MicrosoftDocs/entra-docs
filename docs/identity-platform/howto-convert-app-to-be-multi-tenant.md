@@ -10,7 +10,8 @@ ms.date: 11/17/2023
 ms.author: cwerner
 ms.reviewer: jmprieur, lenalepa, sureshja, kkrishna
 ms.custom: aaddev, engagement-fy23
-#Customer intent: As an Azure user, I want to convert a single tenant app to a Microsoft Entra multi-tenant app so any Microsoft Entra user can sign in,
+
+#Customer intent: As an Azure user, I want to convert a single tenant app to a Microsoft Entra multi-tenant app so my app can sign in users from any Microsoft Entra tenant.
 ---
 
 # Convert single-tenant app to multi-tenant on Microsoft Entra ID

@@ -12,16 +12,10 @@ ms.date: 11/17/2023
 ms.author: jomondi
 ms.reviewer: jawoods, ludwignick, phsignor
 
-#Customer intent: As and a developer or admin in the Microsoft identity platform, I want to understand the basic concept about managing how applications access resources through the permissions and consent framework.
+#Customer intent: As a developer or admin in the Microsoft identity platform, I want to understand the basic concept about managing how applications access resources through the permissions and consent framework.
 ---
-# Introduction to permissions and consent
 
-<a id ='requesting-consent-for-an-entire-tenant'></a>
-<a id ='using-the-admin-consent-endpoint'></a>
-<a id ='openid-connect-scopes'></a>
-<a id ='admin-restricted-permissions'></a>
-<a id ='the-default-scope'></a>
-<a id ='scopes-and-permissions'></a>
+# Overview of permissions and consent in the Microsoft identity platform
 
 To *access* a protected resource like email or calendar data, your application needs the resource owner's *authorization*. The resource owner can *consent* to or deny your app's request. Understanding these foundational concepts will help you build more secure and trustworthy applications that request only the access they need, when they need it, from users and administrators.
 
@@ -45,15 +39,15 @@ In this access scenario, the application acts on its own with no user signed in.
 
 App-only access uses app roles instead of delegated scopes. When granted through consent, app roles may also be called applications permissions. For app-only access, the client app must be granted appropriate app roles of the resource app it's calling in order to access the requested data. For more information about assigning app roles to client applications, see [Assigning app roles to applications](./howto-add-app-roles-in-apps.md#assign-app-roles-to-applications).
 
-<a id='permission-types'></a>
-
 ## Types of permissions
 
 **Delegated permissions** are used in the delegated access scenario. They're permissions that allow the application to act on a user's behalf. The application will never be able to access anything the signed in user themselves couldn't access.
 
-For example, imagine an application that has been granted the *Files.Read.All* delegated permission on behalf of Tom, the user. The application will only be able to read files that Tom can personally access.
+For example, imagine an application that has been granted the `Files.Read.All` delegated permission on behalf of the user. The application will only be able to read files that the user can personally access.
 
-**Application permissions**, sometimes called app roles are used in the app-only access scenario, without a signed-in user present. The application will be able to access any data that the permission is associated with. For example, an application granted the Microsoft Graph API's application permission *Files.Read.All* will be able to read any file in the tenant using Microsoft Graph. In general, only an administrator or owner of an API's service principal can consent to application permissions exposed by that API.
+**Application permissions**, sometimes called app roles are used in the app-only access scenario, without a signed-in user present. The application will be able to access any data that the permission is associated with.
+
+For example, an application granted the Microsoft Graph API's application permission `Files.Read.All` will be able to read any file in the tenant using Microsoft Graph. In general, only an administrator or owner of an API's service principal can consent to application permissions exposed by that API.
 
 There are other ways in which applications can be granted authorization for app-only access. For example, an application can be assigned a Microsoft Entra RBAC role.
 
@@ -74,15 +68,13 @@ One way that applications are granted permissions is through consent. Consent is
 
 - When previously granted consent is revoked.
 - When the application is coded to specifically prompt for consent during sign-in.
-- When the application uses dynamic consent to ask for new permissions as needed at run time. 
+- When the application uses dynamic consent to ask for new permissions as needed at run time.
 
 The key details of a consent prompt are the list of permissions the application requires and the publisher information. For more information about the consent prompt and the consent experience for both admins and end-users, see [application consent experience](application-consent-experience.md).
 
-<a id='requesting-individual-user-consent'></a>
-
 ### User consent
 
-User consent happens when a user attempts to sign into an application. The user provides their sign-in credentials. These credentials are checked to determine whether consent has already been granted. If no previous record of user or admin consent for the required permissions exists, the user is shown a consent prompt, and asked to grant the application the requested permissions. In many cases, an admin may be required to grant consent on behalf of the user.
+User consent happens when a user attempts to sign into an application. The user provides their sign-in credentials, which are checked to determine whether consent has already been granted. If no previous record of user or admin consent for the required permissions exists, the user is shown a consent prompt, and asked to grant the application the requested permissions. In many cases, an admin may be required to grant consent on behalf of the user.
 
 ### Administrator consent
 
@@ -94,8 +86,8 @@ Preauthorization allows a resource application owner to grant permissions withou
 
 ## See also
 
-- [Delegated access scenario](delegated-access-primer.md)
-- [User and admin consent overview](~/identity/enterprise-apps/user-admin-consent-overview.md)
-- [OpenID connect scopes](scopes-oidc.md)
--- [Making your application multi-tenant](./howto-convert-app-to-be-multi-tenant.md)
+- [Microsoft identity platform delegated access scenario](delegated-access-primer.md)
+- [User and admin consent in Microsoft Entra ID](~/identity/enterprise-apps/user-admin-consent-overview.md)
+- [Scopes and permissions in the Microsoft identity platform](scopes-oidc.md)
+- [Convert single-tenant app to multi-tenant on Microsoft Entra ID](./howto-convert-app-to-be-multi-tenant.md)
 - [Microsoft Entra Microsoft Q&A](/answers/tags/455/entra-id)

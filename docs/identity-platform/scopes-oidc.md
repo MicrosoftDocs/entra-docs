@@ -9,6 +9,8 @@ ms.topic: conceptual
 ms.date: 11/17/2023
 ms.author: jomondi
 ms.reviewer: jawoods, ludwignick, phsignor
+
+# Customer intent: As a developer or admin in the Microsoft identity platform, I want to understand the basic concept about managing how applications access resources through the permissions and consent framework.
 ---
 
 # Scopes and permissions in the Microsoft identity platform
