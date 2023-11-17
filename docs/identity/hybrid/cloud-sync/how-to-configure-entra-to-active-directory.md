@@ -19,8 +19,7 @@ The following document will guide you through configuring cloud sync to synchron
 
  :::image type="content" source="media/how-to-configure/new-ux-configure-19.png" alt-text="Screenshot of enable preview features." lightbox="media/how-to-configure/new-ux-configure-19.png":::
 
-For additional information on this scenario, see [Govern on-premises application access with groups from the cloud]
-(govern-on-premises-groups.md)
+For additional information on this scenario, see [Govern on-premises application access with groups from the cloud](govern-on-premises-groups.md).
 
 ## Prerequisites
 The following prerequisites are required to implement this scenario.
@@ -274,5 +273,8 @@ For more information on provisioning logs, see [Enabling provisioning logs](how-
 
 ## Next steps 
 
+- [Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance](govern-on-premises-groups.md)
+- [Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync](migrate-group-writeback.md)
+- [Set up group writeback in entitlement management](~/id-governance/entitlement-management-group-writeback.md)
 - [What is provisioning?](../what-is-provisioning.md)
 - [What is Microsoft Entra Connect cloud sync?](what-is-cloud-sync.md)
