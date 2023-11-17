@@ -10,7 +10,7 @@ ms.service: active-directory
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 11/10/2023
+ms.date: 11/17/2023
 ms.subservice: hybrid
 ms.author: billmath
 ---
@@ -198,13 +198,15 @@ For more information, see: [Microsoft Entra ID Governance licensing for business
 
 ### What happens when a PIM license expires?
 
-If a Microsoft Entra ID P2, Microsoft Entra ID Governance, or trial license expires, Privileged Identity Management features will no longer be available in your directory:
+If a Microsoft Entra ID P2 or Microsoft Entra ID Governance license expires or trial ends, Privileged Identity Management features will no longer be available in your directory:
 
-- Permanent role assignments to Azure AD roles are unaffected.
-- The Privileged Identity Management service in the Azure portal, and the Graph API cmdlets and PowerShell interfaces of Privileged Identity Management, will no longer be available for users to activate privileged roles, manage privileged access, or perform access reviews of privileged roles.
-- Eligible role assignments of Azure AD roles will be removed, as users will no longer be able to activate privileged roles.
-- Any ongoing access reviews of Azure AD roles will end, and Privileged Identity Management configuration settings are removed.
-- Privileged Identity Management will no longer send emails on role assignment changes.
+- Active permanent assignments are not affected.
+- Active time-bound assignments become active permanent which means they will no longer expire at a designated time.
+- Eligible role assignments will be removed, as users will no longer be able to activate privileged roles.
+- Privileged Identity Management blades on Microsoft Entra portal or Azure portal, API and PowerShell interfaces of Privileged Identity Management, will no longer be available for users to activate roles, manage assignments, or perform access reviews of privileged roles.
+- Any ongoing access reviews of Azure AD roles will end, and Privileged Identity Management configuration settings will be removed.
+- Privileged Identity Management will no longer send emails on role assignment changes and PIM Alerts.
+- Changes are applicable to all three providers (PIM for Microsoft Entra roles, PIM for Azure resources, PIM for Groups).
 
 
 ## Next steps
