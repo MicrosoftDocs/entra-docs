@@ -1,13 +1,11 @@
 ---
 title: "Increase application security using Zero Trust principles"
 description: Learn how using Zero Trust principles can help increase the security of your application and its data.
-services: active-directory
 author: omondiatieno
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-ms.workload: identity
 ms.date: 01/06/2023
 ms.custom: template-concept
 ms.author: jomondi
@@ -47,7 +45,7 @@ The Microsoft identity platform offers authentication mechanisms for verifying t
 A developer uses the Microsoft identity platform to grant permissions (scopes) and verify that a caller has been granted proper permission before allowing access. Enforce least privileged access in applications by enabling fine-grained permissions that allow the smallest amount of access necessary to be granted. Consider the following practices to make sure of adherence to the [principle of least privilege](./secure-least-privileged-access.md):
 
 - Evaluate the permissions that are requested to make sure that the absolute least privileged is set to get the job done. Don't create "catch-all" permissions with access to the entire API surface.
-- When designing APIs, provide granular permissions to allow least-privileged access. Start with dividing the functionality and data access into sections that can be controlled by using [scopes](./permissions-consent-overview.md#scopes-and-permissions) and [App roles](./howto-add-app-roles-in-apps.md). Don't add APIs to existing permissions in a way that changes the semantics of the permission.
+- When designing APIs, provide granular permissions to allow least-privileged access. Start with dividing the functionality and data access into sections that can be controlled by using [scopes](./scopes-oidc.md) and [App roles](./howto-add-app-roles-in-apps.md). Don't add APIs to existing permissions in a way that changes the semantics of the permission.
 - Offer **read-only** permissions. `Write` access, includes privileges for create, update, and delete operations. A client should never require write access to only read data.
 - Offer both [delegated and application](/graph/auth/auth-concepts#delegated-and-application-permissions) permissions. Skipping application permissions can create hard requirement for clients to achieve common scenarios like automation, microservices and more.
 - Consider "standard" and "full" access permissions if working with sensitive data. Restrict the sensitive properties so that they can't be accessed using a "standard" access permission, for example `Resource.Read`. And then implement a "full" access permission, for example `Resource.ReadFull` that returns all available properties including sensitive information.
@@ -62,7 +60,7 @@ Consider the following actions prevent breaches in security:
 - Verify redirect URIs used in the application registration for ownership and to avoid domain takeovers. Don't create the application as a multi-tenant unless it's intended to be. |
 - Make sure application and service principal owners are always defined and maintained for the applications registered in the tenant.
 
-## Next steps
+## See also
 
 - Zero Trust [Guidance Center](/security/zero-trust/)
 - Microsoft identity platform [best practices and recommendations](./identity-platform-integration-checklist.md).

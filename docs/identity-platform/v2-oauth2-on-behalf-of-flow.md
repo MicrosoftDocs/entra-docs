@@ -248,7 +248,7 @@ The goal of the OBO flow is to ensure proper consent is given so that the client
 
 ### .default and combined consent
 
-The middle tier application adds the client to the [known client applications list](reference-app-manifest.md#knownclientapplications-attribute) (`knownClientApplications`) in its manifest. If a consent prompt is triggered by the client, the consent flow will be both for itself and the middle tier application. On the Microsoft identity platform, this is done using the [`.default` scope](./permissions-consent-overview.md#the-default-scope). The `.default` scope is a special scope that is used to request consent to access all the scopes that the application has permissions for. This is useful when the application needs to access multiple resources, but the user should only be prompted for consent once.
+The middle tier application adds the client to the [known client applications list](reference-app-manifest.md#knownclientapplications-attribute) (`knownClientApplications`) in its manifest. If a consent prompt is triggered by the client, the consent flow will be both for itself and the middle tier application. On the Microsoft identity platform, this is done using the [`.default` scope](./scopes-oidc.md#the-default-scope). The `.default` scope is a special scope that is used to request consent to access all the scopes that the application has permissions for. This is useful when the application needs to access multiple resources, but the user should only be prompted for consent once.
 
 When triggering a consent screen using known client applications and `.default`, the consent screen will show permissions for **both** the client to the middle tier API, and also request whatever permissions are required by the middle-tier API. The user provides consent for both applications, and then the OBO flow works. 
 
@@ -268,10 +268,10 @@ A tenant admin can guarantee that applications have permission to call their req
 
 In some scenarios, you may only have a single pairing of middle-tier and front-end client. In this scenario, you may find it easier to make this a single application, negating the need for a middle-tier application altogether. To authenticate between the front-end and the web API, you can use cookies, an id_token, or an access token requested for the application itself. Then, request consent from this single application to the back-end resource.
 
-## Next steps
+## See also
 
 Learn more about the OAuth 2.0 protocol and another way to perform service to service auth using client credentials.
 
 * [OAuth 2.0 client credentials grant in Microsoft identity platform](v2-oauth2-client-creds-grant-flow.md)
 * [OAuth 2.0 code flow in Microsoft identity platform](v2-oauth2-auth-code-flow.md)
-* [Using the `/.default` scope](./permissions-consent-overview.md#the-default-scope)
+* [Using the `/.default` scope](./scopes-oidc.md#the-default-scope)

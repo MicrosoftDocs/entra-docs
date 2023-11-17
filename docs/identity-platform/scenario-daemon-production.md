@@ -1,14 +1,12 @@
 ---
 title: Move a daemon app that calls web APIs to production
 description: Learn how to move a daemon app that calls web APIs to production
-services: active-directory
 author: Dickson-Mwendia
 manager: CelesteDG
 
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-ms.workload: identity
 ms.date: 10/30/2019
 ms.author: dmwendia
 ms.reviewer: jmprieur
@@ -29,7 +27,7 @@ If you're an ISV creating a daemon application that can run in several tenants, 
 - Provisions a service principal for the application.
 - Grants consent to the application.
 
-You'll need to explain to your customers how to perform these operations. For more info, see [Requesting consent for an entire tenant](./permissions-consent-overview.md#requesting-consent-for-an-entire-tenant).
+You'll need to explain to your customers how to perform these operations. For more info, see [admin consent](./permissions-consent-overview.md#administrator-consent).
 
 [!INCLUDE [Pre-requisites](./includes/scenarios/scenarios-production.md)]
 
