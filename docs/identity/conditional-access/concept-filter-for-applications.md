@@ -1,10 +1,10 @@
 ---
-title: Filter for applications in Conditional Access policy (Preview)
+title: Filter for applications in Conditional Access policy
 description: Use filter for applications in Conditional Access to manage conditions.
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 07/18/2023
+ms.date: 11/17/2023
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -15,7 +15,7 @@ ms.custom: subject-rbac-steps
 
 ms.collection: M365-identity-device-management
 ---
-# Conditional Access: Filter for applications (Preview)
+# Conditional Access: Filter for applications
 
 Currently Conditional Access policies can be applied to all apps or to individual apps. Organizations with a large number of apps may find this process difficult to manage across multiple Conditional Access policies. 
  
@@ -23,19 +23,16 @@ Application filters are a new feature for Conditional Access that allows organiz
  
 In this document, you create a custom attribute set, assign a custom security attribute to your application, and create a Conditional Access policy to secure the application. 
 
-> [!IMPORTANT]
-> Filter for applications is currently in public preview. For more information about previews, see [Universal License Terms For Online Services](https://www.microsoft.com/licensing/terms/product/ForOnlineServices/all).
-
 ## Assign roles
 
 Custom security attributes are security sensitive and can only be managed by delegated users. Even global administrators don't have default permissions for custom security attributes. One or more of the following roles should be assigned to the users who manage or report on these attributes.
 
 | Role name | Description |
 | --- | --- |
-| Attribute assignment administrator | Assign custom security attribute keys and values to supported Microsoft Entra objects. |
-| Attribute assignment reader | Read custom security attribute keys and values for supported Microsoft Entra objects. |
-| Attribute definition administrator | Define and manage the definition of custom security attributes. |
-| Attribute definition reader | Read the definition of custom security attributes. |
+| Attribute Assignment Administrator | Assign custom security attribute keys and values to supported Microsoft Entra objects. |
+| Attribute Assignment Reader | Read custom security attribute keys and values for supported Microsoft Entra objects. |
+| Attribute Definition Administrator | Define and manage the definition of custom security attributes. |
+| Attribute Definition Reader | Read the definition of custom security attributes. |
 
 1. Assign the appropriate role to the users who will manage or report on these attributes at the directory scope.
 
@@ -43,7 +40,7 @@ Custom security attributes are security sensitive and can only be managed by del
 
 ## Create custom security attributes
 
-Follow the instructions in the article, [Add or deactivate custom security attributes in Microsoft Entra ID (Preview)](~/fundamentals/custom-security-attributes-add.md) to add the following **Attribute set** and **New attributes**. 
+Follow the instructions in the article, [Add or deactivate custom security attributes in Microsoft Entra ID](~/fundamentals/custom-security-attributes-add.md) to add the following **Attribute set** and **New attributes**. 
 
 - Create an **Attribute set** named *ConditionalAccessTest*.
 - Create **New attributes** named *policyRequirement* that **Allow multiple values to be assigned** and **Only allow predefined values to be assigned**. We add the following predefined values:
@@ -101,7 +98,7 @@ When you don't have a service principal listed in your tenant, it can't be targe
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 1. Select the service principal you want to apply a custom security attribute to.
-1. Under **Manage** > **Custom security attributes (preview)**, select **Add assignment**.
+1. Under **Manage** > **Custom security attributes**, select **Add assignment**.
 1. Under **Attribute set**, select **ConditionalAccessTest**.
 1. Under **Attribute name**, select **policyRequirement**.
 1. Under **Assigned values**, select **Add values**, select **requireMFA** from the list, then select **Done**.
