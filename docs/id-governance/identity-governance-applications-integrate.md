@@ -77,7 +77,7 @@ Next, if the application implements a provisioning protocol, then you should con
 
      |Application supports| Next steps|
      |----|-----|
-     | Kerberos | Configure Microsoft Entra Connect [group writeback to AD](~/identity/hybrid/connect/how-to-connect-group-writeback-v2.md), create groups in Microsoft Entra ID and [write those groups to AD](~/identity/users/groups-write-back-portal.md) |
+     | Kerberos | Configure Microsoft Entra Cloud Sync [group writeback to AD](~/identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md), create groups in Microsoft Entra ID and [write those groups to AD](entitlement-management-group-writeback.md) |
 
    * Otherwise, if this is an on-premises or IaaS hosted application, and isn't integrated with AD, then configure provisioning to that application, either via SCIM or to the underlying database or directory of the application.
 
@@ -105,7 +105,7 @@ However, if the application already existed in your environment, then it's possi
 1. If the application wasn't using Microsoft Entra ID or AD, and doesn't support a provisioning protocol, then [obtain a list of users from the application and create application role assignments for each of them](identity-governance-applications-not-provisioned-users.md).
 1. If the application was using AD security groups, then you need to review the membership of those security groups.
 1. If the application had its own directory or database and wasn't integrated for provisioning, then once the review is complete, you may need to manually update the application's internal database or directory to remove those users who were denied.
-1. If the application was using AD security groups, and those groups were created in AD, then once the review is complete, you need to manually update the AD groups to remove memberships of those users who were denied.  Subsequently, to have denied access rights removed automatically, you can either update the application to use an AD group that was created in Microsoft Entra ID and [written back to Microsoft Entra ID](~/identity/users/groups-write-back-portal.md), or move the membership from the AD group to the Microsoft Entra group, and nest the written back group as the only member of the AD group.
+1. If the application was using AD security groups, and those groups were created in AD, then once the review is complete, you need to manually update the AD groups to remove memberships of those users who were denied.  Subsequently, to have denied access rights removed automatically, you can either update the application to use an AD group that was created in Microsoft Entra ID and [written back to Microsoft Entra ID](~/identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md), or move the membership from the AD group to the Microsoft Entra group, and [nest the written back group as the only member of the AD group](~/identity/hybrid/cloud-sync/govern-on-premises-groups.md).
 1. Once the review has been completed and the application access updated, or if no users have access, then continue on to the next steps to deploy Conditional Access and entitlement management policies for the application.
 
 Now that you have a baseline that ensures existing access has been reviewed, then you can [deploy the organization's policies](identity-governance-applications-deploy.md) for ongoing access and any new access requests.
