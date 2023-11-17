@@ -52,5 +52,5 @@ You get access to the sign-in logs using the `Get-MgAuditLogSignIn` cmdlet. Use 
 
 - [Microsoft Entra monitoring and health overview](overview-monitoring-health.md)
 - [Audit logs](concept-audit-logs.md)
-- [Sign-in logs](concept-signs.md)
+- [Sign-in logs](concept-sign-ins.md)
 - [Programmatic access to Microsoft Entra reports](howto-configure-prerequisites-for-reporting-api.md)
