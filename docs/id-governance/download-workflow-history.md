@@ -1,6 +1,6 @@
 ---
 title: Download workflow history reports (Preview)
-description: This article guides a user on downloading the history of a Lifecycle workflow
+description: This article guides a user on downloading the history of a Lifecycle workflow.
 author: owinfreyATL
 ms.author: owinfrey
 ms.service: active-directory
