@@ -34,6 +34,7 @@ In this tutorial, you configure and test Microsoft Entra SSO in a test environme
 
 * SAP Litmos supports **SP** and **IDP** initiated SSO.
 * SAP Litmos supports **Just In Time** user provisioning.
+* SAP Litmos supports [Automated user provisioning](litmos-provisioning-tutorial.md).
 
 ## Add SAP Litmos from the gallery
 

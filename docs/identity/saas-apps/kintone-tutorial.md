@@ -32,6 +32,7 @@ To configure Microsoft Entra integration with Kintone, you need the following it
 In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Kintone supports **SP** initiated SSO.
+* Kintone supports [Automated user provisioning](kintone-provisioning-tutorial.md).
 
 ## Add Kintone from the gallery
 
