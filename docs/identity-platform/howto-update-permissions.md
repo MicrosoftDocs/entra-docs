@@ -273,7 +273,11 @@ You should replace a highly privileged permission when a less privileged permiss
 
 Replacing permissions can also reduce the risk of exposing sensitive data or compromising security and thus improve the user experience and trust. If your app is using a highly privileged permission, such as Directory.ReadWrite.All, you should consider if a less-privileged permission, such as User.ReadWrite.All, would be sufficient for your app’s functionality.
 
-To replace a permission, you need to remove the unnecessary permission and add the alternative one. The steps are like the ones described in the remove permissions and add permissions sections of this article.
+> [!NOTE]
+> When you modify an app's requested permissions for static consent, the customer will need to reconsent. The act of reconsenting revokes all previously granted permissions and grant consent to the new ones.
+> When you modify an app's requested permissions for dynamic consent, the previously granted permissions aren't revoked. The customer has to revoke the permissions manually.
+
+To replace a permission, you need to remove the unnecessary permission and add the alternative one. The steps are like the ones described in the remove permissions and add permissions sections of this article:
 
 - Remove the unnecessary permissions and revoke them in either way described in the [remove permissions](#remove-an-unused-permission) section.
 - Add the new permission in either way described in the [add permissions](#add-permissions-to-an-application) section.
