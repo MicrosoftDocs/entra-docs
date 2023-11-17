@@ -18,13 +18,13 @@ ms.reviewer: sureshja
 
 A Microsoft Graph App Manifest is a JSON object that represents an App Registration. It is also called
 
-- [Microsoft Graph Application resource type](/graph/api/resources/application?view=graph-rest-1.0)
+- [Microsoft Graph Application resource type](/graph/api/resources/application)
 
 - Or Microsoft Graph app object (application object)
 
 It contains all the attributes and their values of an app registration. Each app registration is stored as a Microsoft Graph app object in Entra identity platform.
 
-The application object you receive using [Microsoft Graph Get Application method](/graph/api/application-get?view=graph-rest-1.0&tabs=http) is the same JSON object you see in App Registration portal manifest page.
+The application object you receive using [Microsoft Graph Get Application method](/graph/api/application-get&tabs=http) is the same JSON object you see in App Registration portal manifest page.
 
 ## Configure the Microsoft Graph app manifest
 
@@ -393,7 +393,7 @@ Example:
 
 | Key | Value type |
 | :--- | :--- |
-| info | [informationalUrl](/graph/api/resources/informationalurl?view=graph-rest-1.0) |
+| info | [informationalUrl](/graph/api/resources/informationalurl) |
 
 Specifies basic profile information of the application including the app's marketing, support, terms of service, privacy statement and logo URLs.
 
@@ -419,7 +419,7 @@ Info: {
 
 | Key | Value type |
 | :--- | :--- |
-|api  |   [apiApplication resource type](/graph/api/resources/apiapplication?view=graph-rest-1.0)|
+|api  |   [apiApplication resource type](/graph/api/resources/apiapplication)|
 
 Specifies settings for an application that implements a web API. It includes 5 properties:
 
@@ -464,14 +464,14 @@ Api:{
 
 | Key | Value type |
 | :--- | :--- |
-|web  | [webApplication resource type](/graph/api/resources/webapplication?view=graph-rest-1.0) |
+|web  | [webApplication resource type](/graph/api/resources/webapplication) |
 
 Specifies settings for a web application. It includes 4 properties.
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
 | homePageUrl | String |Home page or landing page of the application.|
-| implicitGrantSettings  | [implicitGrantSettings](/graph/api/resources/implicitgrantsettings?view=graph-rest-1.0)  | Specifies whether this web application can request tokens using the OAuth 2.0 implicit flow. |
+| implicitGrantSettings  | [implicitGrantSettings](/graph/api/resources/implicitgrantsettings)  | Specifies whether this web application can request tokens using the OAuth 2.0 implicit flow. |
 | logoutUrl | String |Specifies the URL that is used by Microsoft's authorization service to log out a  user using [front-channel](https://openid.net/specs/openid-connect-frontchannel-1_0.html), [back-channel](https://openid.net/specs/openid-connect-backchannel-1_0.html) or  SAML logout protocols. |
 | redirectUris |String collection |Specifies the URLs where user tokens are sent for sign-in, or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent in the web platform.|
 
@@ -492,7 +492,7 @@ web: {
 
 | Key | Value type |
 | :--- | :--- |
-|spa   | [spaApplication resource type](/graph/api/resources/spaapplication?view=graph-rest-1.0) |
+|spa   | [spaApplication resource type](/graph/api/resources/spaapplication) |
 
 Specifies settings for a single-page application, including sign out URLs and redirect URIs for authorization codes and access tokens.
 
@@ -512,7 +512,7 @@ spa: {
 
 | Key | Value type |
 | :--- | :--- |
-| publicClient  | [publicClientApplication resource type](/graph/api/resources/publicclientapplication?view=graph-rest-1.0) |
+| publicClient  | [publicClientApplication resource type](/graph/api/resources/publicclientapplication) |
 
 Specifies settings for nonweb app or nonweb API (for example, iOS,
 Android, mobile or other public clients such as an installed application
