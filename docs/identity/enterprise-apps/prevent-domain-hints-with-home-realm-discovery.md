@@ -12,7 +12,7 @@ ms.date: 03/16/2023
 ms.author: jomondi
 ms.reviewer: ludwignick
 zone_pivot_groups: home-realm-discovery
-ms.custom: enterprise-apps, has-azure-ad-ps-ref
+ms.custom: enterprise-apps, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 #customer intent: As an admin, I want to disable auto-acceleration to federated IDP during sign in using Home Realm Discovery policy
 ---
 # Disable auto-acceleration sign-in
@@ -53,7 +53,7 @@ To disable auto-acceleration sign-in for an application in Microsoft Entra ID, y
 - An Azure account with an active subscription. If you don't already have one, you can [create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 - One of the following roles: Global Administrator, or owner of the service principal.
 ::: zone pivot="powershell-hrd"
-- The latest Azure AD PowerShell cmdlet preview.
+- [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview) module.
 ::: zone-end
 
 ## Suggested use within a tenant

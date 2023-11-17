@@ -6,7 +6,7 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: workload-identities
 ms.topic: how-to
-ms.date: 07/18/2023
+ms.date: 11/09/2023
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -15,9 +15,9 @@ ms.reviewer: swethar
 
 ms.collection: M365-identity-device-management
 ---
-# Conditional Access for workload identities 
+# Conditional Access for workload identities
 
-Conditional Access policies have historically applied only to users when they access apps and services like SharePoint Online. We're now extending support for Conditional Access policies to be applied to service principals owned by the organization. We call this capability Conditional Access for workload identities. 
+Conditional Access policies historically applied only to users when they access apps and services like SharePoint Online. We're now extending support for Conditional Access policies to be applied to service principals owned by the organization. We call this capability Conditional Access for workload identities.
 
 A [workload identity](~/workload-id/workload-identities-overview.md) is an identity that allows an application or service principal access to resources, sometimes in the context of a user. These workload identities differ from traditional user accounts as they:
 
@@ -28,13 +28,13 @@ A [workload identity](~/workload-id/workload-identities-overview.md) is an ident
 These differences make workload identities harder to manage and put them at higher risk for compromise.
 
 > [!IMPORTANT]
-> Workload Identities Premium licenses are required to create or modify Conditional Access policies scoped to service principals. 
+> Workload Identities Premium licenses are required to create or modify Conditional Access policies scoped to service principals.
 > In directories without appropriate licenses, existing Conditional Access policies for workload identities will continue to function, but can't be modified. For more information, see [Microsoft Entra Workload ID](https://www.microsoft.com/security/business/identity-access/microsoft-entra-workload-identities#office-StandaloneSKU-k3hubfz).  
 
 > [!NOTE]
-> Policy can be applied to single tenant service principals that have been registered in your tenant. Third party SaaS and multi-tenanted apps are out of scope. Managed identities are not covered by policy. 
+> Policy can be applied to single tenant service principals that have been registered in your tenant. Third party SaaS and multi-tenanted apps are out of scope. Managed identities are not covered by policy.
 
-Conditional Access for workload identities enables blocking service principals from outside of trusted public IP ranges, or based on risk detected by Microsoft Entra ID Protection.
+Conditional Access for workload identities enables blocking service principals from outside of trusted public IP ranges, based on risk detected by Microsoft Entra ID Protection, or in combination with [authentication contexts](concept-conditional-access-cloud-apps.md#authentication-context).
 
 ## Implementation
 
@@ -88,11 +88,11 @@ The sign-in logs are used to review how policy is enforced for service principal
 1. Browse to **Identity** > **Monitoring & health** > **Sign-in logs** > **Service principal sign-ins**.
 1. Select a log entry and choose the **Conditional Access** tab to view evaluation information.
 
-Failure reason when Service Principal is blocked by Conditional Access: “Access has been blocked due to Conditional Access policies.” 
+Failure reason when Conditional Access blocks a Service Principal: “Access has been blocked due to Conditional Access policies.”
 
-#### Report-only mode
+### Report-only mode
 
-To view results of a location-based policy, refer to the **Report-only** tab of events in the **Sign-in report**, or use the **Conditional Access Insights and Reporting** workbook. 
+To view results of a location-based policy, refer to the **Report-only** tab of events in the **Sign-in report**, or use the **Conditional Access Insights and Reporting** workbook.
 
 To view results of a risk-based policy, refer to the **Report-only** tab of events in the **Sign-in report**.
 
@@ -150,4 +150,3 @@ Sample JSON for location-based configuration using the Microsoft Graph beta endp
 - [Using the location condition in a Conditional Access policy](location-condition.md)
 - [Conditional Access: Programmatic access](howto-conditional-access-apis.md)
 - [What is Conditional Access report-only mode?](concept-conditional-access-report-only.md)
- 

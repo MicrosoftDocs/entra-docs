@@ -23,8 +23,8 @@ ms.collection: M365-identity-device-management
  
 With Microsoft Entra ID, you can use groups to manage the [licenses for your applications](~/identity/users/licensing-groups-assign.md). You can make the management of these groups even easier by using entitlement management: 
 
-* Configure periodic access reviews to ensure only employees that need the licenses are in the group. 
-* Allow other employees to request membership to the group.
+* Configure periodic access reviews to ensure only authorized users that need the licenses are in the group. 
+* Allow other users to request membership to the group.
 
 In this tutorial, you play the role of an IT administrator for Woodgrove Bank. You're asked to create an access package so employees in your organization can easily gain access to Office licenses. (You should already have a group that manages your [Office licenses](~/identity/users/licensing-groups-assign.md).) You want to be able to review these group members every year. You also want to allow new employees to request Office licenses, pending manager approval.
  
@@ -60,7 +60,7 @@ For more information, see [License requirements](entitlement-management-overview
 
 1. Select **Next: Requests** to go to the **Requests** tab.
 
-   On this tab, you create a request policy. A *policy* defines the rules for access to an access package. You create a policy that allows employees in the resource directory to request the access package.
+   On this tab, you create a request policy. A *policy* defines the rules for access to an access package. You create a policy that allows non-guest users in the resource directory to request the access package.
 
 1. In the **Users who can request access** section, select **For users in your directory** and then select **All members (excluding guests)**. These settings make it so that only members of your directory can request Office licenses.
 
@@ -76,7 +76,7 @@ For more information, see [License requirements](entitlement-management-overview
 
 1. Leave **Require approver justification** set to **Yes**.
 
-1. Under **Enable new requests and assignments**, select **Yes** to enable employees to request the access package as soon as it's created.
+1. Under **Enable new requests and assignments**, select **Yes** to enable new users to request the access package as soon as it's created.
 
 ## Step 4: Configure requestor information for your access package
 
@@ -92,7 +92,7 @@ For more information, see [License requirements](entitlement-management-overview
 	
 1. In **Assignments expire after**, enter **365**. This box specifies when members who have access to the access package needs to renew their access. 
 
-1. You can also configure access reviews, which allow periodic checks of whether the employee still needs access to the access package. A review can be a self-review performed by the employee. Or you can set the employee's manager or another person as the reviewer. For more information, see [Access reviews](entitlement-management-access-reviews-create.md). 
+1. You can also configure access reviews, which allow periodic checks of whether the users still need access to the access package. A review can be a self-review performed by the user themselves. Or you can set a user's manager or another person as the reviewer. For more information, see [Access reviews](entitlement-management-access-reviews-create.md). 
  
     In this scenario, you want all employees to review whether they still need a license for Office each year.
 

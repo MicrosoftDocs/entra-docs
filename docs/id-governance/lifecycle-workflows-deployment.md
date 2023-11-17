@@ -103,14 +103,14 @@ The following information is important information about your organization and t
 
 |Item|Description|Documentation|
 |-----|-----|-----|
-|Inbound Provisioning|You have a process to create user accounts for employees in Microsoft Entra such as HR inbound, SuccessFactors, or MIM.<br><br> Alternatively you have a process to create user accounts in Active Directory and those accounts are provisioned to Microsoft Entra ID.|[Workday to Active Directory](~/identity/saas-apps/workday-inbound-tutorial.md)<br><br>[Workday to Microsoft Entra ID](~/identity/saas-apps/workday-inbound-tutorial.md)<br><br>[SuccessFactors to Active Directory](~/identity/saas-apps/sap-successfactors-inbound-provisioning-tutorial.md)</br></br>[SuccessFactors to Microsoft Entra ID](~/identity/saas-apps/sap-successfactors-inbound-provisioning-cloud-only-tutorial.md)<br><br>[Microsoft Entra Connect](~/identity/hybrid/connect/whatis-azure-ad-connect-v2.md)<br><br>[Microsoft Entra Connect cloud sync](~/identity/hybrid/cloud-sync/what-is-cloud-sync.md)<br><br>[API-driven inbound provisioning (Public preview)](~/identity/app-provisioning/inbound-provisioning-api-configure-app.md)|
+|Inbound Provisioning|You have a process to create user accounts for employees in Microsoft Entra such as HR inbound from Workday or SuccessFactors, or MIM.<br><br> Alternatively you have a process to create user accounts in Active Directory and those accounts are provisioned to Microsoft Entra ID.|[Workday to Active Directory](~/identity/saas-apps/workday-inbound-tutorial.md)<br><br>[Workday to Microsoft Entra ID](~/identity/saas-apps/workday-inbound-tutorial.md)<br><br>[SuccessFactors to Active Directory](~/identity/saas-apps/sap-successfactors-inbound-provisioning-tutorial.md)</br></br>[SuccessFactors to Microsoft Entra ID](~/identity/saas-apps/sap-successfactors-inbound-provisioning-cloud-only-tutorial.md)<br><br>[Microsoft Entra Connect](~/identity/hybrid/connect/whatis-azure-ad-connect-v2.md)<br><br>[Microsoft Entra Connect cloud sync](~/identity/hybrid/cloud-sync/what-is-cloud-sync.md)<br><br>[API-driven inbound provisioning (Public preview)](~/identity/app-provisioning/inbound-provisioning-api-configure-app.md)|
 |Attribute synchronization|The accounts in Microsoft Entra ID have the employeeHireDate and employeeLeaveDateTime attributes populated.  The values may be populated when the accounts are created from an HR system or synchronized from AD using Microsoft Entra Connect or cloud sync. You have extra attributes that are used to determine the scope such as department, populated or the ability to populate, with data.|[How to synchronize attributes for Lifecycle Workflows](how-to-lifecycle-workflow-sync-attributes.md)
 
 ## Understanding parts of a workflow
 
 Before you begin planning a Lifecycle Workflow deployment, you should become familiar with the parts of workflow and the terminology around Lifecycle Workflows.
 
-The [Understanding Lifecycle Workflows](understanding-lifecycle-workflows.md) document, uses the portal to explain the parts of a workflow. The [Developer API reference Lifecycle Workflows](/graph/api/resources/identitygovernance-workflow) document, uses a GRAPH example to explain the parts of a workflow. 
+The [Understanding Lifecycle Workflows](understanding-lifecycle-workflows.md) document uses the portal to explain the parts of a workflow. The [Developer API reference Lifecycle Workflows](/graph/api/resources/identitygovernance-workflow) document uses a Graph example to explain the parts of a workflow. 
 
 You can use this document to become familiar with the parts of workflow prior to deploying them.
 
@@ -217,10 +217,10 @@ Now that we've determined the scenario and the who and when, you should consider
 |Send email on user's last day| Send offboarding email to user's manager on the last day of work| Leaver|
 |Send Welcome Email| Send welcome email to new hire| Joiner|
 |Send onboarding reminder email|Send onboarding reminder email to user’s manager| Joiner|
-|Request user access package assignment|Request user assignement to selected access packages|Joiner-Mover|
-|Remove access package assignement for user|Remove user assignment from selected access packages| Leaver=Mover|
+|Request user access package assignment|Request user assignment to selected access packages|Joiner-Mover|
+|Remove access package assignment for user|Remove user assignment from selected access packages| Leaver=Mover|
 |Remove all access package assignments for user|Remove all access packages assigned to the user|Leaver|
-|Cancel all pending access package assignement requests for users|Cancel all pending access package assignement requests for users|Leaver|
+|Cancel all pending access package assignment requests for users|Cancel all pending access package assignment requests for users|Leaver|
 
 
 For more information on tasks, see [Lifecycle Workflow tasks](lifecycle-workflow-tasks.md).
@@ -237,7 +237,7 @@ By clicking on the task, you are presented with a navigation bar to add or remov
 ### Custom task extensions
 Lifecycle Workflows allow you to create workflows that can be triggered based on joiner, mover, or leaver scenarios. While Lifecycle Workflows provide several built-in tasks to automate common scenarios throughout the lifecycle of users, eventually you may reach the limits of these built-in tasks. With the extensibility feature, you are able to utilize the concept of custom task extensions to call-out to external systems as part of a Lifecycle Workflow. 
 
-When creating custom task extensions, the scenarios for how it interacts with Lifecycle Workflows can be one of three ways:
+The scenarios for how a custom task extension interacts with Lifecycle Workflows can be one of three ways:
 
 - **Fire-and-forget scenario**- The Logic App is started, and the sequential task execution immediately continues with no response expected from the Logic App. 
 - **Sequential task execution waiting for response from the Logic App** - The Logic app is started, and the sequential task execution waits on the response from the Logic App.

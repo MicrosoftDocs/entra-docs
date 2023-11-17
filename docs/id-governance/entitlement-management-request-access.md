@@ -76,7 +76,7 @@ Once you have found the access package in the My Access portal, you can submit a
 
 ### Select a policy
 
-If you request access to an access package that has multiple policies that apply, you might be asked to select a policy. For example, an access package manager might configure an access package with two policies for two groups of internal employees. The first policy might allow access for 60 days and require approval. The second policy might allow access for two days and not require approval. If you encounter this scenario, you must select the policy you want to use.
+If you request access to an access package that has multiple policies that apply, you might be asked to select a policy. For example, an access package manager might configure an access package with two policies for two groups of employees. The first policy might allow access for 60 days and require approval. The second policy might allow access for two days and not require approval. If you encounter this scenario, you must select the policy you want to use.
 
 ![My Access portal - Request access - multiple policies](./media/entitlement-management-request-access/my-access-multiple-policies.png)
 
