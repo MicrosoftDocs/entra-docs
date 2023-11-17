@@ -34,7 +34,7 @@ Using group writeback, you can now sync security groups that are part of access 
 
 1. Create a Microsoft Entra security group.
 
-1. Set the group to be written back to on-premises Active Directory. For instructions, see [Group writeback in the Microsoft Entra admin center](~/identity/users/groups-write-back-portal.md). 
+1. Set the group to be written back to on-premises Active Directory. For instructions, see [Group writeback in the Microsoft Entra admin center](~/identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory). 
 
 1. Add the group to an access package as a resource role. See [Create a new access package](entitlement-management-access-package-create.md#select-resource-roles) for guidance. 
 

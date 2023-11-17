@@ -307,7 +307,7 @@ To learn how to review guest users' access to group memberships, see [Manage gue
 
 ### Review access to on-premises groups
 
-Access reviews can't change the group membership of groups that you synchronize from on-premises with [Microsoft Entra Connect](~/identity/hybrid/connect/whatis-azure-ad-connect.md). This restriction is because the source of authority is on-premises.
+Access reviews can't change the group membership of groups that you synchronize from on-premises AD with [Microsoft Entra Connect](~/identity/hybrid/connect/whatis-azure-ad-connect.md). This restriction is because the source of authority is on-premises.  To control access to AD group-based apps, use [Microsoft Entra Cloud Sync group writeback](~/identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md).
 
 You can still use access reviews to schedule and maintain regular reviews of on-premises groups. Reviewers will then take action in the on-premises group. This strategy keeps access reviews as the tool for all reviews.
 
