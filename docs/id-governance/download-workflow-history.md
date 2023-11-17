@@ -42,5 +42,5 @@ To download the history report of a workflow using the Microsoft Entra admin cen
 
 ## Next steps
 
-> [Check the status of a workflow](check-status-workflow.md)
-> [Lifecycle Workflows history](lifecycle-workflow-history.md)
+- [Check the status of a workflow](check-status-workflow.md)
+- [Lifecycle Workflows history](lifecycle-workflow-history.md)
