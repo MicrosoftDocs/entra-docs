@@ -95,8 +95,7 @@ To list task processing results for a user processing result via API using Micro
 > [!NOTE]
 > A workflow must have activity in the past 7 days to get **userProcessingResults ID**. If there has not been any activity in that time-frame, the **userProcessingResults** call will not return a value.
 
-
 ## Next steps
 
 - [Manage workflow versions](manage-workflow-tasks.md)
-- [Delete Lifecycle Workflows](delete-lifecycle-workflow.md)
+- [Download workflow history reports (Preview)](download-workflow-history.md)
