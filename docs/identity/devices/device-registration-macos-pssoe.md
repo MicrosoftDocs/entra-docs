@@ -61,11 +61,11 @@ Although registration with Automated Device Enrollment during an out-of-the-box 
 
 1. Open **Settings** > **Privacy & Security** > **Profiles** if it doesn't automatically appear. Select **Management Profile**.
 
-    :::image type="content" source="media/device-registration-macos-pssoe/pssoe-settings-profiles-management-prof.png" alt-text="Screenshot of the Settings app Profiles showing a downloaded management profile." width="200px":::
+    :::image type="content" source="media/device-registration-macos-pssoe/pssoe-settings-profiles-management-prof.png" alt-text="Screenshot of the Settings app Profiles showing a downloaded management profile.":::
 
 1. Select **Install** to get access to company resources.
 
-    :::image type="content" source="media/device-registration-macos-pssoe/pssoe-settings-profiles-install-management-prof.png" alt-text="Screenshot the prompt to install the management profile in settings." width="300px":::
+    :::image type="content" source="media/device-registration-macos-pssoe/pssoe-settings-profiles-install-management-prof.png" alt-text="Screenshot the prompt to install the management profile in settings.":::
 
 1. Enter your local device password in the **Profiles** window that appears and select **Enroll**.
 
@@ -73,7 +73,7 @@ Although registration with Automated Device Enrollment during an out-of-the-box 
 
 1. You'll see a notification in **Company Portal** that the installation is complete. Select **Done**. A **Registration Required** notification appears in the top right of the screen. Hover over the notification and select **Register**.
 
-    :::image type="content" source="media/device-registration-macos-pssoe/pssoe-registration-req-notification.png" alt-text="Screenshot of the Registration Required notification." width="400px":::
+    :::image type="content" source="media/device-registration-macos-pssoe/pssoe-registration-req-notification.png" alt-text="Screenshot of the Registration Required notification.":::
 
 1. The Platform SSO window appears to enable your macOS account to be registered with your identity provider. There are two ways you can do this:
     - **Touch ID**: Use your device's touch ID capability. The device selects your secure enclave key and wait for your device to confirm it is in compliance.
