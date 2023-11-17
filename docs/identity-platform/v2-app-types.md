@@ -7,12 +7,11 @@ manager: CelesteDG
 
 ms.service: active-directory
 ms.subservice: develop
-ms.workload: identity
 ms.topic: conceptual
-ms.date: 09/09/2022
+ms.date: 11/17/2023
 ms.author: cwerner
 ms.reviewer: saeeda, jmprieur
-ms.custom: aaddev, fasttrack-edit, contperf-fy21q2, devx-track-js
+ms.custom: aaddev, fasttrack-edit, devx-track-js
 ---
 
 # Application types for the Microsoft identity platform

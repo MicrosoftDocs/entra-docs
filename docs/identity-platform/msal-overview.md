@@ -1,15 +1,13 @@
 ---
 title: Learn about MSAL
 description: The Microsoft Authentication Library (MSAL) enables application developers to acquire tokens in order to call secured web APIs. These web APIs can be the Microsoft Graph, other Microsoft APIs, third-party web APIs, or your own web API. MSAL supports multiple application architectures and platforms.
-services: active-directory
 author: cilwerner
 manager: CelesteDG
 
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-ms.workload: identity
-ms.date: 09/20/2022
+ms.date: 11/17/2023
 ms.author: cwerner
 ms.reviewer: saeeda
 ms.custom: aaddev, identityplatformtop40, has-adal-ref
