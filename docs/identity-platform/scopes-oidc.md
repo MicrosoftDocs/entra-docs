@@ -6,7 +6,7 @@ manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-ms.date: 11/01/2022
+ms.date: 11/17/2023
 ms.author: jomondi
 ms.reviewer: jawoods, ludwignick, phsignor
 ---
