@@ -14,23 +14,21 @@ ms.custom: aaddev
 ms.reviewer: sureshja
 ---
 
-# Migrate to Microsoft Graph app manifest
+# Migrate your app manifest to Microsoft Graph
 
-This migration is due to the fact that Azure Active Directory (Azure AD) Graph is deprecated. Microsoft Graph is our latest offering and represents our best-in-breed API surface. To learn more about Azure AD Graph
-deprecation, please read [Migrate your apps from Azure AD Graph to Microsoft
-Graph](/graph/migrate-azure-ad-graph-overview)
+Azure Active Directory (Azure AD) Graph is deprecated and you must migrate your app and app manifest from Azure AD Graph to Microsoft Graph.  Microsoft Graph is our latest offering and represents our best-in-breed API surface. To learn more about Azure AD Graph deprecation, please read [Migrate your apps to Microsoft Graph](/graph/migrate-azure-ad-graph-overview).
 
 ## Migration date
 
-On [date], Entra App Registration manifest page launched a new tabbed experience that allows you to view, edit, upload, download both  Azure AD Graph app manifest and Microsoft Graph app manifest.
+On [date], the **App registrations** manifest page in the Microsoft Entra Admin center launched a new tabbed experience that allows you to view, edit, upload, download both the Azure AD Graph app manifest and Microsoft Graph app manifest.
 
 [Screenshot]
 
-Starting [date], you won't be able to view, save, upload or download Azure AD Graph app manifest in Entra App Registration.
+Starting [date], you won't be able to view, save, upload or download the Azure AD Graph app manifest in the **App registrations** manifest page in the Microsoft Entra Admin center.
 
 ## How does manifest migration impact the user experience?
 
-If you do not view, edit or save app manifests, then this migration doesn't impact your workflow.
+If you do not view, edit or save app manifests, this migration doesn't impact your workflow.
 
 If you view or edit app manifests, you will notice the [attribute differences between Azure AD Graph manifest and Microsoft Graph app manifests](link). You recommend that you start viewing and editing Microsoft Graph app manifests following the [manifest reference](link) of Microsoft Graph App Registration manifest.
 
@@ -38,7 +36,7 @@ If your workflow requires you to save the manifests in your source repository fo
 
 ## Attribute differences between Azure AD Graph manifest and Microsoft Graph app manifest
 
-Most Azure AD Graph app manifest attributes stay the same. However, the following Azure AD Graph app manifest attributes have been deprecated, renamed, or relocated in Microsoft Graph manifest.
+Most Azure AD Graph app manifest attributes stay the same. However, the following Azure AD Graph app manifest attributes have been deprecated, renamed, or relocated in the Microsoft Graph manifest.
 
 | Azure AD manifest attribute | Microsoft Graph manifest |
 | --- | --- |

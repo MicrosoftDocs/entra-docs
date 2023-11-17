@@ -16,27 +16,25 @@ ms.reviewer: sureshja
 
 # Microsoft Graph app manifest
 
-A Microsoft Graph App Manifest is a JSON object that represents an App Registration. It is also called
+The application manifest contains all the attributes and their values of an app registration in the Microsoft identity platform. Each app registration is stored as a Microsoft Graph app object.
 
-- [Microsoft Graph Application resource type](/graph/api/resources/application)
-
-- Or Microsoft Graph app object (application object)
+A Microsoft Graph app manifest is a JSON object that represents an app registration. It is also called the [Microsoft Graph Application resource type](/graph/api/resources/application) or Microsoft Graph app object (application object).
 
 It contains all the attributes and their values of an app registration. Each app registration is stored as a Microsoft Graph app object in Entra identity platform.
 
-The application object you receive using [Microsoft Graph Get Application method](/graph/api/application-get&tabs=http) is the same JSON object you see in App Registration portal manifest page.
+The application object you receive using [Microsoft Graph Get Application method](/graph/api/application-get&tabs=http) is the same JSON object you see in App Registration manifest page in the Microsoft Entra admin center.
 
 ## Configure the Microsoft Graph app manifest
 
 If you would like to configure Microsoft Graph App Manifest programmatically, you can either use [Microsoft Graph API](/graph/api/resources/application) or [Microsoft Graph PowerShell SDK](/powershell/module/microsoft.graph.applications/?view=graph-powershell-1.0&preserve-view=true).
 
-If you would like to configure it using a portal interface, you can configure Microsoft Graph App Manifest through the Microsoft Entra admin center. Most attributes can be configured using a UI element in the App Registration portal. However, some attributes need to be configured by editing the app manifest directly in Manifest blade. These scenarios include:
+You can also configure the Microsoft Graph app manifest through the Microsoft Entra admin center. Most attributes can be configured using a UI element in the app registration blade. However, some attributes need to be configured by editing the app manifest directly in Manifest blade. These scenarios include:
 
 - If you registered the app as Microsoft Entra multi-tenant and personal Microsoft accounts, you can't change the supported Microsoft accounts in the UI. Instead, you must use the application manifest editor to change the supported account type.
 
 - To define permissions and roles that your app supports, you must modify the application manifest.
 
-## Configure the app manifest in the Microsoft Entra admin center
+### Configure the app manifest in the Microsoft Entra admin center
 
 To configure the Microsoft Graph app manifest:
 
@@ -67,7 +65,7 @@ It is a not nullable and Read-only attribute.
 Example:
 
 ```json
-"id": "f7f9acfc-ae0c-4d6c-b489-0a81dc1652dd",
+    "id": "f7f9acfc-ae0c-4d6c-b489-0a81dc1652dd",
 ```
 
 ### appId attribute
