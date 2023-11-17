@@ -33,6 +33,7 @@ To get started, you need the following items:
 In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
 
 * Datadog supports **SP and IDP** initiated SSO.
+* Datadog supports [Automated user provisioning](datadog-provisioning-tutorial.md).
 
 ## Add Datadog from the gallery
 

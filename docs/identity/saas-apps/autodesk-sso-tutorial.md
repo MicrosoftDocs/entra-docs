@@ -34,9 +34,8 @@ To get started, you need the following items:
 In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
 
 * Autodesk SSO supports **SP** initiated SSO.
-
 * Autodesk SSO supports **Just In Time** user provisioning.
-
+* Autodesk SSO supports [Automated user provisioning](autodesk-sso-provisioning-tutorial.md).
 
 ## Adding Autodesk SSO from the gallery
 

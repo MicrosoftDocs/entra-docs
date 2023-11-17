@@ -33,6 +33,7 @@ To get started, you need the following items:
 In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
 
 * Axiad Cloud supports **SP** initiated SSO.
+* Axiad Cloud supports [Automated user provisioning](axiad-cloud-provisioning-tutorial.md).
 
 ## Add Axiad Cloud from the gallery
 

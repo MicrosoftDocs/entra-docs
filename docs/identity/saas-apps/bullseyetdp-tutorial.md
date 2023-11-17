@@ -33,6 +33,7 @@ To get started, you need the following items:
 In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
 
 * BullseyeTDP supports **IDP** initiated SSO.
+* BullseyeTDP supports [Automated user provisioning](bullseyetdp-provisioning-tutorial.md).
 
 ## Add BullseyeTDP from the gallery
 
