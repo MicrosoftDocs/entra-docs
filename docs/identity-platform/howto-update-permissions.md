@@ -24,14 +24,14 @@ Updating permissions for your app isn't only a security best practice, but also 
 
 - If your app has a new functionality, you can request more permissions that enable the app to access the extra resources it needs.
 - Customers are more likely to adopt your application if it requests only the least privileged permissions necessary to function. It shows that your app respects the customer's privacy and data protection and doesn't access more resources than it needs.
-- Additionally, if your app is compromised, there's less blast radius if it has fewer or lesser-privileged permissions. It means that the attacker has less access to the customer's data and resources, and thus the potential damage is reduced.
+- Additionally, if your app is compromised, there's a smaller blast radius if it has fewer or lesser-privileged permissions. It means that the attacker has less access to the customer's data and resources, and thus the potential damage is reduced.
 - By updating permissions for your app, you can improve your app's security, usability, and compliance, and build trust with your customers.
 
 ## Prerequisites
 
 To update an app's requested permissions, you need:
 
-- A Microsoft Entra user account. If you don't already have one, [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- A Microsoft Entra user account. If you don't already have one, [create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 - One of the following roles: Global Administrator, Application Administrator, Cloud Application Administrator. An application owner who isn't an administrator is able to update an app's requested permissions.
 
 ## Scenarios for updating permissions
@@ -93,7 +93,7 @@ To complete the following steps of adding permissions, you need the following re
 1. Identify the permission IDs for the [Microsoft Graph permissions](/graph/permissions-reference#permission-scenarios) your app requires.
 1. Identify the Microsoft Graph permissions your app requires, their permission IDs, and whether they're app roles (application permissions) or delegated permissions.
 1. Add required Microsoft Graph permissions to your app.
-   The following example calls the [Update application](/graph/api/application-update) API to add the required Microsoft Graph permissions to an app registration identified by object ID `581088ba-83c5-4975-b8af-11d2d7a76e98`. This example uses `Analytics.Read` and `Application.Read.All` delegated permission and application permission. Microsoft Graph is identified as a ServicePrincipal object with `00000003-0000-0000-c000-000000000000` as its globally unique `AppId` and Microsoft Graph as its `DisplayName` and `AppDisplayName`.
+   The following example calls the [Update application](/graph/api/application-update) API to add the required Microsoft Graph permissions to an app registration identified by object ID `581088ba-83c5-4975-b8af-11d2d7a76e98`. This example uses `Analytics.Read` and `Application.Read.All` delegated permission and application permission. Microsoft Graph is identified as a ServicePrincipal object with `00000003-0000-0000-c000-000000000000` as its globally unique `AppId`.
 
    ```http
    PATCH https://graph.microsoft.com/v1.0/applications/581088ba-83c5-4975-b8af-11d2d7a76e98
@@ -166,7 +166,7 @@ Removing permissions can reduce the risk of exposing sensitive data or compromis
 > [!IMPORTANT]
 > Removing a permission from your app registration doesn't automatically revoke the permissions already granted to the app. You need to revoke the permissions manually. For more information, see the [Revoke consent for the removed permissions for the enterprise application](#revoke-consent-for-the-removed-permissions-for-the-enterprise-application) section of this article.
 
-## Remove permissions from static consent
+## Stop requesting permissions with static consent
 
 :::zone pivot="portal"
 
@@ -176,7 +176,7 @@ In this section, you learn how to remove permissions from static consent.
 
 You can remove permissions from static consent in two different ways in the Microsoft Entra admin center:
 
-### Option 1: Remove permissions from the **API permissions** pane
+### Option 1: From the **API permissions** pane
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator) or application owner.
 1. Browse to **Identity** > **Applications** > **App registrations** > **All applications**.
@@ -187,7 +187,7 @@ You can remove permissions from static consent in two different ways in the Micr
 
       :::image type="content" source="media/howto-update-permissions/remove-permissions.png" alt-text="Screenshot shows how to remove permissions via the API permissions pane.":::
 
-### Option 2: Remove permissions from the application manifest
+### Option 2: From the application manifest
 
    1. From the left navigation pane, under the **Manage** menu group, select **Manifest**. An editor opens that allows you to directly edit the attributes of the app registration object.
    1. Carefully edit the `requiredResourceAccess` property in the application's manifest file.
@@ -201,7 +201,7 @@ You can remove permissions from static consent in two different ways in the Micr
 To complete the following steps of removing permissions, you need the following resources and privileges:
 
 - Run the HTTP requests in a tool of your choice, for example in your app, through Graph Explorer, or Postman.
-- Run the APIs as a user in as at least a Cloud Application Administrator, or as owner of the target app registration.
+- Call the APIs with at least a Cloud Application Administrator, or as owner of the target app registration.
 - The app used to make these changes must be granted the `Application.ReadWrite.All` permission.
 
 1. Identify the permission IDs for the [Microsoft Graph permissions](/graph/permissions-reference#permission-scenarios) for your application.
@@ -227,13 +227,11 @@ To complete the following steps of removing permissions, you need the following 
     }
     ```
 
-### Remove permissions from dynamic consent
+### Stop requesting permissions with dynamic consent
 
-When you need to remove delegated permissions from dynamic consent request, specify the scope parameter with the permissions that you want to remove. Removing the permissions ensures the app doesn't call the corresponding API.
+When you need to remove delegated permissions from dynamic consent request, specify the scope parameter while leaving out the permissions that you want to remove. Removing the permissions ensures the app doesn't call the corresponding API.
 
-- **Using Microsoft Graph**: Add the required Microsoft Graph permissions to an app registration identified by object ID 581088ba-83c5-4975-b8af-11d2d7a76e98. This example uses `Analytics.Read` and `Application.Read.All` delegated permission and application permission. Replace the values in \`scopes\` with values of any Microsoft Graph delegated permissions you want to configure for the app.
-
-Remove the values in \`scopes\` with values of any Microsoft Graph delegated permissions. In this example, you configure three permissions - `Analytics.Read`, `User.Read` and `Application.Read.All`. `Analytics.Read` and `Application.Read.All` delegated permission and application permission are no longer required for this app. It only requires `User.Read`. app.
+- **Using Microsoft Graph**: Remove the unwanted Microsoft Graph delegated permissions from the \`scopes\` parameter. In this example, you configure three permissions - `Analytics.Read`, `User.Read` and `Application.Read.All`. `Analytics.Read` and `Application.Read.All` delegated permission and application permission are no longer required for this app. It only requires `User.Read`.
 
 The request should be similar to the following example:
 
@@ -257,8 +255,6 @@ The request should be similar to the following example:
                 }
         });
     ```
-
-When you need to remove delegated permission from dynamic consent request, specify the scope parameter with the permissions that you want to remove. It ensures the app doesn't call the corresponding API.
 
 :::zone-end
 
