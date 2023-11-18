@@ -36,13 +36,13 @@ This page updates monthly, so revisit it regularly. If you're looking for items 
 
 ## November 2023
 
-### Public Preview - Blank Slate 
+### General Availability - Microsoft Entra Cloud Sync now supports ability to enable Exchange Hybrid configuration for Exchange customers
 
 **Type:** New feature   
-**Service category:**                      
-**Product capability:**             
+**Service category:** Provisioning                     
+**Product capability:**  AAD Connect Cloud Sync             
 
-
+Exchange hybrid capability allows for the coexistence of Exchange mailboxes both on-premises and in Microsoft 365. Microsoft Entra Cloud Sync will synchronize a specific set of Exchange-related attributes from Microsoft Entra ID back into your on-premises directory and to any forests that's disconnected (no network trust needed between them). With this capability, existing customers who have this feature enabled in Microsoft Entra Connect sync can now migrate, and leverage, this feature with Microsoft Entra cloud sync. For more information, see: [Exchange hybrid writeback with cloud sync](../identity/hybrid/exchange-hybrid-writeback.md).
 
 ---
 
