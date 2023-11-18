@@ -198,7 +198,10 @@ For more information, see: [Microsoft Entra ID Governance licensing for business
 
 ### What happens when a PIM license expires?
 
-If a Microsoft Entra ID P2 or Microsoft Entra ID Governance license expires or trial ends, Privileged Identity Management features will no longer be available in your directory:
+If a Microsoft Entra ID P2 or Microsoft Entra ID Governance license expires or trial ends, Privileged Identity Management features will no longer be available in your directory. 
+
+>[!IMPORTANT]
+> The changes listed below are applicable to PIM for Microsoft Entra roles, PIM for Azure resources, PIM for Groups.
 
 - Active permanent assignments are not affected.
 - Active time-bound assignments become active permanent which means they will no longer expire at a designated time.
@@ -206,7 +209,7 @@ If a Microsoft Entra ID P2 or Microsoft Entra ID Governance license expires or t
 - Privileged Identity Management blades on Microsoft Entra portal or Azure portal, API and PowerShell interfaces of Privileged Identity Management, will no longer be available for users to activate roles, manage assignments, or perform access reviews of privileged roles.
 - Any ongoing access reviews of Azure AD roles will end, and Privileged Identity Management configuration settings will be removed.
 - Privileged Identity Management will no longer send emails on role assignment changes and PIM Alerts.
-- Changes are applicable to all three providers (PIM for Microsoft Entra roles, PIM for Azure resources, PIM for Groups).
+
 
 
 ## Next steps
