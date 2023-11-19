@@ -6,7 +6,7 @@ services: active-directory
 author: barclayn
 ms.author: barclayn
 manager: amycolannino
-ms.date: 03/24/2022
+ms.date: 11/08/2023
 ms.topic: how-to
 ms.service: active-directory
 ms.subservice: enterprise-users
@@ -32,13 +32,13 @@ You can download a list of all the groups in your organization to a comma-separa
 1. Select **Groups** > **Download groups**.
 1. On the **Groups download** page, select **Start** to receive a CSV file listing your groups.
 
-   ![The download groups command is on the All groups page](./media/groups-bulk-download/bulk-download.png)
+   :::image type="content" source="./media/groups-bulk-download/bulk-download.png" alt-text="Screenshot of the download groups command is on the All groups page.":::
 
 ## Check download status
 
 You can see the status of all of your pending bulk requests in the **Bulk operation results** page.
 
-[![Check status in the Bulk Operations Results page.](./media/groups-bulk-download/bulk-center.png)](./media/groups-bulk-download/bulk-center.png#lightbox)
+:::image type="content" source="./media/groups-bulk-download/bulk-center.png" alt-text="Screenshot of the Check status option in the Bulk Operations Results page." lightbox="./media/groups-bulk-download/bulk-center.png":::
 
 ## Bulk download service limits
 
