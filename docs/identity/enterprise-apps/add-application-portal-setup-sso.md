@@ -11,7 +11,7 @@ ms.topic: how-to
 ms.date: 10/30/2023
 ms.author: jomondi
 ms.reviewer: ergleenl
-ms.custom: contperf-fy22q2, mode-other, enterprise-apps
+ms.custom: mode-other, enterprise-apps
 
 #Customer intent: As an administrator of a Microsoft Entra tenant, I want to enable single sign-on for an enterprise application.
 ---

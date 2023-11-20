@@ -11,7 +11,7 @@ ms.topic: how-to
 ms.date: 08/25/2023
 ms.author: jomondi
 ms.reviewer: phsignor, yuhko
-ms.custom: contperf-fy21q2
+ms.custom: 
 zone_pivot_groups: enterprise-apps-minus-portal-aad
 
 #customer intent: As an admin, I want to manage app consent policies for group owner for enterprise applications in Microsoft Entra ID

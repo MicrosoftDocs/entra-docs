@@ -11,7 +11,7 @@ ms.topic: troubleshooting
 ms.date: 09/05/2023
 ms.author: jomondi
 ms.reviewer: lenalepa
-ms.custom: contperf-fy21q2, enterprise-apps
+ms.custom: enterprise-apps
 ---
 
 # Troubleshoot application sign-in

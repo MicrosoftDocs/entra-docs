@@ -11,7 +11,7 @@ ms.topic: how-to
 ms.date: 10/31/2023
 ms.author: jomondi
 ms.reviewer: phsignor, yuhko
-ms.custom: contperf-fy21q2, contperf-fy22q2, enterprise-apps
+ms.custom: enterprise-apps
 zone_pivot_groups: enterprise-apps-minus-former-powershell
 
 

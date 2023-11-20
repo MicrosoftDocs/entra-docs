@@ -11,7 +11,7 @@ ms.topic: how-to
 ms.date: 09/22/2023
 ms.author: jomondi
 ms.reviewer: ergreenl
-ms.custom: kr2b-contr-experiment, contperf-fy22q4, enterprise-apps-article
+ms.custom: kr2b-contr-experiment, enterprise-apps-article
 ---
 
 # Submit a request to publish your application in Microsoft Entra application gallery

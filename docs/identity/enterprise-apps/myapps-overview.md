@@ -11,7 +11,7 @@ ms.topic: conceptual
 ms.date: 10/18/2023
 ms.author: jomondi
 ms.reviewer: saibandaru
-ms.custom: contperf-fy23q1, enterprise-apps
+ms.custom: enterprise-apps
 #Customer intent: As a Microsoft Entra administrator, I want to make applications available to users in the My Apps portal.
 
 ---
