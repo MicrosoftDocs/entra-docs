@@ -11,7 +11,7 @@ ms.topic: conceptual
 ms.date: 11/22/2021
 ROBOTS: NOINDEX
 ms.author: cwerner
-ms.custom: aaddev, "scenarios:getting-started", "languages:js", devx-track-js, mode-api
+ms.custom:  "scenarios:getting-started", "languages:js", devx-track-js, mode-api
 #Customer intent: As an application developer, I want to know how to set up authentication in a web application built using Node.js and MSAL Node.
 ---
 

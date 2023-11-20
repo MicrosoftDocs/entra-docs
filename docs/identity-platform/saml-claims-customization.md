@@ -10,7 +10,7 @@ ms.subservice: develop
 ms.topic: how-to
 ms.date: 05/01/2023
 ms.author: cwerner
-ms.custom: aaddev, curation-claims
+ms.custom:  curation-claims
 ms.reviewer: rahulnagraj, alamaral, jeedes
 ---
 

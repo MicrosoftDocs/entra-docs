@@ -12,7 +12,7 @@ ms.topic: conceptual
 ms.date: 02/06/2023
 ms.author: henrymbugua
 ms.reviewer: negoe
-ms.custom: aaddev,references_regions
+ms.custom: references_regions
 ---
 
 # National clouds

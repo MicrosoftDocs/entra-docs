@@ -6,7 +6,7 @@ author: cilwerner
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
-ms.custom: aaddev, curation-claims
+ms.custom:  curation-claims
 
 ms.topic: reference
 ms.date: 06/02/2023

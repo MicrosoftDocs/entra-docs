@@ -12,7 +12,7 @@ ms.topic: how-to
 ms.date: 03/07/2023
 ms.author: ryanwi
 ms.reviewer: sureshja
-ms.custom: aaddev
+ms.custom: 
 ---
 
 # Configure terms of service and privacy statement for an app

@@ -11,7 +11,7 @@ ms.topic: conceptual
 ms.devlang: java
 ms.date: 09/14/2019
 ms.author: cwerner
-ms.custom: aaddev, devx-track-java, has-adal-ref
+ms.custom:  devx-track-java, has-adal-ref
 ms.reviewer: shoatman
 ---
 

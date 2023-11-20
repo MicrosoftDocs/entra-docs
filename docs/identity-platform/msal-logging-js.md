@@ -12,7 +12,7 @@ ms.topic: conceptual
 ms.date: 12/21/2021
 ms.author: dmwendia
 ms.reviewer: saeeda, jmprieur
-ms.custom: aaddev, devx-track-js
+ms.custom:  devx-track-js
 ---
 # Logging in MSAL.js
 

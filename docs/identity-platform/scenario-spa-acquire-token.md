@@ -12,7 +12,7 @@ ms.topic: conceptual
 ms.date: 05/18/2023
 ms.author: henrymbugua
 s.reviewer: negoe
-ms.custom: aaddev
+ms.custom: 
 #Customer intent: As an application developer, I want to know how to write a single-page application by using the Microsoft identity platform.
 ---
 

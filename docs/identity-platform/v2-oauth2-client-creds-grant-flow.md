@@ -12,7 +12,7 @@ ms.topic: conceptual
 ms.date: 02/13/2023
 ms.author: owenrichards
 ms.reviewer: ludwignick
-ms.custom: aaddev, identityplatformtop40
+ms.custom:  identityplatformtop40
 ---
 
 # Microsoft identity platform and the OAuth 2.0 client credentials flow

@@ -12,7 +12,7 @@ ms.topic: conceptual
 ms.date: 05/09/2023
 ms.author: cwerner
 ms.reviewer: oldalton
-ms.custom: aaddev
+ms.custom: 
 ---
 
 # Configure MSAL for iOS and macOS to use different identity providers

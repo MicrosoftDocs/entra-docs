@@ -12,7 +12,7 @@ ms.topic: conceptual
 ms.date: 01/25/2021
 ms.author: henrymbugua
 ms.reviewer: saeeda, jmprieur
-ms.custom: aaddev, devx-track-extended-java
+ms.custom:  devx-track-extended-java
 ---
 # Logging in MSAL for Android
 

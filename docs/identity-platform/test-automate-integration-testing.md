@@ -12,7 +12,7 @@ ms.topic: how-to
 ms.date: 11/30/2021
 ms.author: cwerner
 ms.reviewer: sahmalik, arcrowe
-ms.custom: aaddev
+ms.custom: 
 # Customer intent: As a developer, I want to use ROPC in automated integration tests against APIs protected by Microsoft identity platform so I don't have to automate the interactive sign-in prompts.
 ---
 

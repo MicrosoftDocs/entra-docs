@@ -12,7 +12,7 @@ ms.topic: conceptual
 ms.date: 02/07/2023
 ms.author: henrymbugua
 ms.reviewer: kkrishna, jmprieur
-ms.custom: aaddev
+ms.custom: 
 ---
 
 # Handle SameSite cookie changes in Chrome browser

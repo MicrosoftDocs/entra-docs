@@ -12,7 +12,7 @@ ms.topic: conceptual
 ms.date: 09/09/2020
 ms.author: dmwendia
 ms.reviewer: saeeda
-ms.custom: devx-track-csharp, aaddev, has-adal-ref, devx-track-dotnet
+ms.custom: devx-track-csharp,  has-adal-ref, devx-track-dotnet
 #Customer intent: As an application developer, I want to learn about considerations for using Xamarin iOS and MSAL.NET.
 ---
 

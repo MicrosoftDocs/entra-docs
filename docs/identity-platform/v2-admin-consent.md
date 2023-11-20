@@ -12,7 +12,7 @@ ms.topic: reference
 ms.date: 11/08/2023
 ms.author: ryanwi
 ms.reviewer: ludwignick
-ms.custom: aaddev
+ms.custom: 
 ---
 
 # Admin consent on the Microsoft identity platform

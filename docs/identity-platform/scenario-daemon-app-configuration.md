@@ -12,7 +12,7 @@ ms.topic: conceptual
 ms.date: 09/19/2020
 ms.author: dmwendia
 ms.reviewer: jmprieur
-ms.custom: aaddev
+ms.custom: 
 # Customer intent: As an application developer, I want to know how to write a daemon app that can call web APIs by using the Microsoft identity platform.
 ---
 

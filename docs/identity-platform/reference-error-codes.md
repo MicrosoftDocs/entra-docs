@@ -12,7 +12,7 @@ ms.topic: reference
 ms.date: 10/17/2023
 ms.author: ryanwi
 ms.reviewer: ludwignick
-ms.custom: aaddev
+ms.custom: 
 ---
 
 # Microsoft Entra authentication and authorization error codes

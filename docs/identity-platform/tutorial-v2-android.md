@@ -12,7 +12,7 @@ ms.topic: tutorial
 ms.date: 04/04/2023
 ms.author: henrymbugua
 ms.reviewer: brandwe
-ms.custom: aaddev, identityplatformtop40, has-adal-ref
+ms.custom:  identityplatformtop40, has-adal-ref
 ---
 
 # Tutorial: Sign in users and call the Microsoft Graph API from an Android application

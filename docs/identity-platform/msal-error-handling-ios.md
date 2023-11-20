@@ -12,7 +12,7 @@ ms.topic: conceptual
 ms.date: 11/26/2020
 ms.author: henrymbugua
 ms.reviewer: saeeda, oldalton
-ms.custom: aaddev
+ms.custom: 
 ---
 # Handle errors and exceptions in MSAL for iOS/macOS
 

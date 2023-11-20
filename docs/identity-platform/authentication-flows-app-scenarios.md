@@ -12,7 +12,7 @@ ms.topic: conceptual
 ms.date: 08/11/2023
 ms.author: cwerner
 ms.reviewer: jmprieur
-ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, has-adal-ref
+ms.custom:  identityplatformtop40, scenarios:getting-started, has-adal-ref
 # Customer intent: As an app developer, I want to learn about authentication flows and application scenarios so I can create applications protected by the Microsoft identity platform.
 ---
 

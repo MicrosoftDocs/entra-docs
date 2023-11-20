@@ -10,7 +10,7 @@ ms.topic: quickstart
 
 ms.date: 06/29/2023
 ms.author: cwerner
-ms.custom: aaddev, identityplatformtop40, contperf-fy21q1, contperf-fy21q2, contperf-fy21q4, mode-other
+ms.custom:  identityplatformtop40, contperf-fy21q1, contperf-fy21q2, contperf-fy21q4, mode-other
 
 #Customer intent: As developer, I want to know how to register my application with the Microsoft identity platform so that the security token service can issue ID and/or access tokens to client applications that request them.
 ---

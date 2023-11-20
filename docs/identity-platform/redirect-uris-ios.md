@@ -12,7 +12,7 @@ ms.topic: how-to
 ms.date: 01/18/2023
 ms.author: henrymbugua
 ms.reviewer: jak
-ms.custom: aaddev, has-adal-ref
+ms.custom:  has-adal-ref
 #Customer intent: As an application developer, I want to learn about how to use redirect URIs.
 ---
 

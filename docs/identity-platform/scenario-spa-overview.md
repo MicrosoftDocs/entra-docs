@@ -11,7 +11,7 @@ ms.topic: conceptual
 
 ms.date: 11/4/2022
 ms.author: owenrichards
-ms.custom: aaddev, identityplatformtop40, devx-track-js, 
+ms.custom:  identityplatformtop40, devx-track-js, 
 # Customer intent: As an application developer, I want to know how to write a single-page application by using the Microsoft identity platform.
 ---
 

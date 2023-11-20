@@ -12,7 +12,7 @@ ms.topic: tutorial
 ms.date: 12/10/2019
 ms.author: henrymbugua
 ms.reviewer: jmprieur
-ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:ASP.NET, has-adal-ref
+ms.custom:  identityplatformtop40, scenarios:getting-started, languages:ASP.NET, has-adal-ref
 #Customer intent: As an application developer, I want to know how to set up OpenId Connect authentication in a web application built using Node.js with Express.
 ---
 

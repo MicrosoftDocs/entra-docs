@@ -12,7 +12,7 @@ ms.topic: conceptual
 ms.date: 08/28/2019
 ms.author: owenrichards
 ms.reviewer: oldalton
-ms.custom: aaddev, has-adal-ref
+ms.custom:  has-adal-ref
 #Customer intent: As an application developer, I want to learn about the differences between the Objective-C ADAL and MSAL for iOS and macOS libraries so I can migrate my applications to MSAL for iOS and macOS.
 ---
 

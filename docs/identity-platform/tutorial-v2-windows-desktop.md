@@ -12,7 +12,7 @@ ms.topic: tutorial
 ms.date: 02/21/2023
 ms.author: henrymbugua
 ms.reviewer: jmprieur
-ms.custom: aaddev, identityplatformtop40
+ms.custom:  identityplatformtop40
 ---
 
 # Tutorial: Sign in users and call Microsoft Graph in Windows Presentation Foundation (WPF) desktop app

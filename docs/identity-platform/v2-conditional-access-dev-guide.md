@@ -11,7 +11,7 @@ ms.reviewer: jmprieur, saeeda
 ms.date: 05/18/2020
 ms.service: active-directory
 ms.subservice: develop
-ms.custom: aaddev
+ms.custom: 
 ms.topic: conceptual
 
 ---

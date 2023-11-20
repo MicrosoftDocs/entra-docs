@@ -12,7 +12,7 @@ ms.topic: conceptual
 ms.date: 02/06/2023
 ms.author: henrymbugua
 ms.reviewer: brandwe
-ms.custom: aaddev, identitypla | Azuretformtop40
+ms.custom:  identitypla | Azuretformtop40
 ---
 
 # Shared device mode for Android devices

@@ -10,7 +10,7 @@ ms.topic: quickstart
 
 ms.date: 06/29/2023
 ms.author: cwerner
-ms.custom: aaddev, contperf-fy21q1, mode-api
+ms.custom:  contperf-fy21q1, mode-api
 ms.reviewer: lenalepa, aragra, sureshja
 #Customer intent: As an application developer, I want to know how to configure my web API's app registration with permissions client applications can use to obtain scoped access to the API.
 ---

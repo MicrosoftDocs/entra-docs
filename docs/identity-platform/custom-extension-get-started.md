@@ -12,7 +12,7 @@ ms.topic: how-to
 
 ms.date: 08/16/2023
 ms.author: jomondi
-ms.custom: aaddev
+ms.custom: 
 ms.reviewer: JasSuri
 #Customer intent: As an application developer, I want to create and register a custom authentication extensions API so I can source claims from a data store that is external to Microsoft Entra ID.
 ---

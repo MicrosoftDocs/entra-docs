@@ -11,7 +11,7 @@ ms.topic: how-to
 ms.date: 09/08/2019
 ms.author: dmwendia
 ms.reviewer: jmprieur, saeeda
-ms.custom: devx-track-csharp, aaddev, has-adal-ref, devx-track-dotnet
+ms.custom: devx-track-csharp,  has-adal-ref, devx-track-dotnet
 #Customer intent: As an application developer, I want to learn how to use brokers with my Xamarin iOS or Android application and MSAL.NET.
 ---
 

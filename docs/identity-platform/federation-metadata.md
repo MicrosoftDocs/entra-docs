@@ -11,7 +11,7 @@ ms.topic: conceptual
 ms.date: 09/07/2023
 ms.author: ryanwi
 ms.reviewer: ludwignick
-ms.custom: aaddev
+ms.custom: 
 ---
 
 # Federation metadata

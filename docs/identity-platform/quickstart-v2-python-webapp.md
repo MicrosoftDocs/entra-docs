@@ -11,7 +11,7 @@ ms.topic: conceptual
 ms.date: 01/24/2023
 ROBOTS: NOINDEX
 ms.author: henrymbugua
-ms.custom: aaddev, devx-track-python, "scenarios:getting-started", "languages:Python", mode-api
+ms.custom:  devx-track-python, "scenarios:getting-started", "languages:Python", mode-api
 ---
 
 # Quickstart: Add sign-in with Microsoft to a Python web app

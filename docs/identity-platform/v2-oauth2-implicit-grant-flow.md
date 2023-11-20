@@ -13,7 +13,7 @@ ms.topic: conceptual
 ms.date: 08/11/2023
 ms.author: owenrichards
 ms.reviewer: ludwignick
-ms.custom: aaddev
+ms.custom: 
 ---
 
 # Microsoft identity platform and OAuth 2.0 implicit grant flow

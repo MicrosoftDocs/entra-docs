@@ -11,7 +11,7 @@ ms.topic: conceptual
 ms.date: 08/16/2022
 ROBOTS: NOINDEX
 ms.author: dmwendia
-ms.custom: devx-track-csharp, aaddev, identityplatformtop40, "scenarios:getting-started", "languages:ASP.NET", mode-api
+ms.custom: devx-track-csharp,  identityplatformtop40, "scenarios:getting-started", "languages:ASP.NET", mode-api
 #Customer intent: As an application developer, I want to know how to set up OpenId Connect authentication in a web application that's built by using Node.js with Express.
 ---
 

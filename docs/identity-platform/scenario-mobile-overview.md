@@ -12,7 +12,7 @@ ms.topic: conceptual
 ms.date: 02/07/2023
 ms.author: henrymbugua
 ms.reviewer: brandwe, jmprieur
-ms.custom: aaddev, identityplatformtop40
+ms.custom:  identityplatformtop40
 #Customer intent: As an application developer, I want to know how to write a mobile app that calls web APIs by using the Microsoft identity platform.
 ---
 

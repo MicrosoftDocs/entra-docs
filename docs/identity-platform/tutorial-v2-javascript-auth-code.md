@@ -10,7 +10,7 @@ ms.topic: tutorial
 
 ms.date: 10/12/2021
 ms.author: owenrichards
-ms.custom: aaddev, devx-track-js
+ms.custom:  devx-track-js
 ---
 
 # Tutorial: Sign in users and call the Microsoft Graph API from a JavaScript single-page app (SPA) using auth code flow

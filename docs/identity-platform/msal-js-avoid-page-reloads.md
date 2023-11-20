@@ -12,7 +12,7 @@ ms.topic: how-to
 ms.date: 05/29/2019
 ms.author: owenrichards
 ms.reviewer: saeeda
-ms.custom: aaddev, devx-track-js
+ms.custom:  devx-track-js
 #Customer intent: As an application developer, I want to learn about avoiding page reloads so I can create more robust applications.
 ---
 

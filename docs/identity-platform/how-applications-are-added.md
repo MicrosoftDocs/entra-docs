@@ -11,7 +11,7 @@ ms.topic: conceptual
 
 ms.date: 10/26/2022
 ms.author: cwerner
-ms.custom: aaddev, , has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom:  , has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.reviewer: lenalepa, sureshja
 ---
 

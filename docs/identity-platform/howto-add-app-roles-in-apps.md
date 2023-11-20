@@ -12,7 +12,7 @@ ms.topic: how-to
 ms.date: 09/25/2023
 ms.author: cwerner
 ms.reviewer: kkrishna, jmprieur
-ms.custom: aaddev
+ms.custom: 
 ---
 
 # Add app roles to your application and receive them in the token

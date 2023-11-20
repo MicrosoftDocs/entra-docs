@@ -12,7 +12,7 @@ ms.topic: how-to
 
 ms.date: 03/06/2023
 ms.author: jomondi
-ms.custom: aaddev
+ms.custom: 
 ms.reviewer: JasSuri
 #Customer intent: As an application developer, I want to find errors and issues in my custom claims provider API.
 ---

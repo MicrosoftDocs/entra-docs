@@ -10,7 +10,7 @@ ms.subservice: develop
 ms.topic: how-to
 ms.date: 05/01/2023
 ms.author: cwerner
-ms.custom: aaddev, curation-claims, devx-track-dotnet
+ms.custom:  curation-claims, devx-track-dotnet
 ms.reviewer: rahulnagraj, alamaral
 ---
 

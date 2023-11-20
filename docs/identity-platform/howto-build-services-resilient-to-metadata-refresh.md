@@ -12,7 +12,7 @@ ms.topic: how-to
 ms.date: 04/21/2021
 ms.author: henrymbugua
 ms.reviewer: jmprieur, shermanouko
-ms.custom: aaddev
+ms.custom: 
 # Customer intent: As a web app or web API developer, I want to learn how to ensure that my app is resilient to outages due to Microsoft Entra ID OpenID Connect metadata refresh.
 ---
 

@@ -12,7 +12,7 @@ ms.topic: conceptual
 ms.date: 05/07/2019
 ms.author: cwerner
 ms.reviewer: jmprieur
-ms.custom: aaddev
+ms.custom: 
 #Customer intent: As an application developer, I want to know how to write a web app that calls web APIs by using the Microsoft identity platform.
 ---
 

@@ -10,7 +10,7 @@ ms.topic: conceptual
 
 ms.date: 09/26/2019
 ms.author: cwerner
-ms.custom: aaddev, has-adal-ref
+ms.custom:  has-adal-ref
 ms.reviewer: shoatman
 ---
 

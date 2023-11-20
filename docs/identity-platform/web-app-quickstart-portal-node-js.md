@@ -11,7 +11,7 @@ ms.topic: conceptual
 ms.date: 08/16/2022
 ROBOTS: NOINDEX
 ms.author: dmwendia
-ms.custom: aaddev, "scenarios:getting-started", "languages:js", devx-track-js, mode-api
+ms.custom:  "scenarios:getting-started", "languages:js", devx-track-js, mode-api
 #Customer intent: As an application developer, I want to know how to set up authentication in a web application built using Node.js and MSAL Node.
 ---
 # Quickstart: Sign in users and get an access token in a Node.js web app using the authorization code flow

@@ -10,7 +10,7 @@ ms.subservice: develop
 ms.topic: how-to
 ms.date: 05/12/2023
 ms.author: cwerner
-ms.custom: aaddev, identityplatformtop40, subject-rbac-steps, devx-track-arm-template
+ms.custom:  identityplatformtop40, subject-rbac-steps, devx-track-arm-template
 ---
 
 # Create a Microsoft Entra application and service principal that can access resources

@@ -11,7 +11,7 @@ ms.topic: reference
 ms.date: 05/30/2023
 ms.author: owenrichards
 ms.reviewer: kenwith
-ms.custom: aaddev, 
+ms.custom:  
 ---
 
 # Single Sign-Out SAML Protocol

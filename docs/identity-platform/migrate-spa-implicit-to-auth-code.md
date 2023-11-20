@@ -10,7 +10,7 @@ ms.topic: how-to
 
 ms.date: 07/17/2020
 ms.author: owenrichards
-ms.custom: aaddev, devx-track-js
+ms.custom:  devx-track-js
 ---
 
 # Migrate a JavaScript single-page app from implicit grant to auth code flow

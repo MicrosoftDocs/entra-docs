@@ -12,7 +12,7 @@ ms.topic: conceptual
 ms.date: 05/16/2023
 ms.author: henrymbugua
 ms.reviewer: brandwe, akgoel23
-ms.custom: aaddev
+ms.custom: 
 ---
 
 # Shared device mode for iOS devices

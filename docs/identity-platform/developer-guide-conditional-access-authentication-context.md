@@ -14,7 +14,7 @@ ms.date: 11/15/2022
 ms.author: cwerner
 ms.reviewer: joflore, kkrishna
 
-ms.custom: aaddev
+ms.custom: 
 ---
 
 # Developer guide to Conditional Access authentication context

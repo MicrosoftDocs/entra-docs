@@ -12,7 +12,7 @@ ms.topic: how-to
 ms.date: 06/16/2020
 ms.author: henrymbugua
 ms.reviewer: jmprieur
-ms.custom: aaddev
+ms.custom: 
 #Customer intent: As an application developer, I want to know how to write a mobile app that calls web APIs using the Microsoft identity platform.
 ---
 

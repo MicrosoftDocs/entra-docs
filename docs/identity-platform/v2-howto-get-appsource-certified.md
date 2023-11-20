@@ -12,7 +12,7 @@ ms.topic: how-to
 ms.date: 07/23/2020
 ms.author: ryanwi
 ms.reviewer: jeedes
-ms.custom: aaddev
+ms.custom: 
 ---
 
 # Get AppSource certified for Microsoft Entra ID

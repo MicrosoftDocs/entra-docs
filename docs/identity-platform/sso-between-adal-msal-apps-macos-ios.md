@@ -12,7 +12,7 @@ ms.topic: conceptual
 ms.date: 08/28/2019
 ms.author: henrymbugua
 ms.reviewer: 
-ms.custom: aaddev, has-adal-ref
+ms.custom:  has-adal-ref
 ---
 
 # How to: SSO between ADAL and MSAL apps on macOS and iOS

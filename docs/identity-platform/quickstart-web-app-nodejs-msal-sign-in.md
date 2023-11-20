@@ -12,7 +12,7 @@ ms.topic: quickstart
 ms.date: 07/27/2023
 ms.author: cwerner
 ms.reviewer: jmprieur
-ms.custom: aaddev, scenarios:getting-started, languages:js, devx-track-js
+ms.custom:  scenarios:getting-started, languages:js, devx-track-js
 # Customer intent: As an application developer, I want to know how to set up authentication in a web application built using Node.js and MSAL Node.
 ---
 

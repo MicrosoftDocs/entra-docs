@@ -12,7 +12,7 @@ ms.topic: conceptual
 ms.date: 11/26/2020
 ms.author: dmwendia
 ms.reviewer: saeeda, hahamil
-ms.custom: aaddev, devx-track-js
+ms.custom:  devx-track-js
 ---
 # Handle errors and exceptions in MSAL.js
 

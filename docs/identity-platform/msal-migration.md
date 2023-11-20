@@ -11,7 +11,7 @@ ms.topic: conceptual
 ms.date: 07/17/2023
 ms.author: dmwendia
 ms.reviewer: saeeda, jmprieur, localden
-ms.custom: aaddev, has-adal-ref
+ms.custom:  has-adal-ref
 # Customer intent: As an application developer, I want to learn about MSAL so I can migrate my ADAL applications to MSAL.
 ---
 

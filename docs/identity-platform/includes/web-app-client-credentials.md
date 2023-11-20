@@ -12,7 +12,7 @@ ms.topic: include
 ms.date: 05/08/2023
 ms.author: jmprieur
 ms.reviewer: jmprieur
-ms.custom: aaddev
+ms.custom: 
 ---
 
 Given that your web app now calls a downstream web API, provide a client secret or client certificate in the *appsettings.json* file. You can also add a section that specifies:

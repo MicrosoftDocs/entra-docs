@@ -10,7 +10,7 @@ ms.subservice: develop
 ms.topic: conceptual
 ms.date: 8/1/2023
 ms.author: cwerner
-ms.custom: aaddev, curation-claims
+ms.custom:  curation-claims
 ---
 
 # Access tokens in the Microsoft identity platform

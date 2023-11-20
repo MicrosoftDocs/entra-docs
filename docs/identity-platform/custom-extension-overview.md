@@ -13,7 +13,7 @@ ms.topic: conceptual
 ms.date: 10/27/2023
 ms.author: jomondi
 ms.reviewer: JasSuri
-ms.custom: aaddev 
+ms.custom:  
 #Customer intent: As a developer, I want to learn about custom authentication extensions so that I can augment tokens with claims from an external identity system or role management system.
 ---
 

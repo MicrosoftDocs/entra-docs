@@ -11,7 +11,7 @@ ms.topic: conceptual
 ms.date: 06/02/2023
 ms.author: cwerner
 ms.reviewer: ludwignick
-ms.custom: aaddev, curation-claims
+ms.custom:  curation-claims
 ---
 
 # Refresh tokens in the Microsoft identity platform

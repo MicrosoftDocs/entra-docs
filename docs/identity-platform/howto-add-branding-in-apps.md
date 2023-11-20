@@ -12,7 +12,7 @@ ms.topic: conceptual
 ms.date: 07/26/2023
 ms.author: ryanwi
 ms.reviewer: arielgo
-ms.custom: aaddev, signin_art
+ms.custom:  signin_art
 ---
 
 # Sign in with Microsoft: Branding guidelines for applications

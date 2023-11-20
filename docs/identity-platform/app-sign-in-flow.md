@@ -12,7 +12,7 @@ ms.topic: conceptual
 ms.date: 08/11/2023
 ms.author: ryanwi
 ms.reviewer: jmprieur, saeeda, sureshja, ludwignick
-ms.custom: aaddev, identityplatformtop40, scenarios:getting-started
+ms.custom:  identityplatformtop40, scenarios:getting-started
 #Customer intent: As an application developer, I want to understand the sign-in flow of web, desktop, and mobile apps in Microsoft identity platform
 ---
 

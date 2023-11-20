@@ -12,7 +12,7 @@ ms.topic: reference
 ms.date: 02/27/2023
 ms.author: owenrichards
 ms.reviewer: kenwith
-ms.custom: aaddev, has-adal-ref, 
+ms.custom:  has-adal-ref, 
 ---
 
 # Microsoft identity platform application authentication certificate credentials

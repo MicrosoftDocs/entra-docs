@@ -9,7 +9,7 @@ ms.topic: conceptual
 ms.date: 04/17/2023
 ms.author: owenrichards
 ms.reviewer: ludwignick
-ms.custom: aaddev, identityplatformtop40
+ms.custom:  identityplatformtop40
 ---
 
 # Microsoft identity platform and OAuth 2.0 authorization code flow

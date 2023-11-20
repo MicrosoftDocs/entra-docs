@@ -12,7 +12,7 @@ ms.topic: how-to
 ms.date: 06/21/2023
 ms.author: cwerner
 ms.reviewer: arcrowe
-ms.custom: aaddev
+ms.custom: 
 #Customer intent: As an application developer, I want to know how to restore or permanently delete my recently deleted application from the Microsoft identity platform.
 ---
 

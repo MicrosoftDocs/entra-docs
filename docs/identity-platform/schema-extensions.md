@@ -6,7 +6,7 @@ author: omondiatieno
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
-ms.custom: aaddev, curation-claims
+ms.custom:  curation-claims
 
 ms.topic: conceptual
 ms.date: 05/26/2023

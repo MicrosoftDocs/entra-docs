@@ -12,7 +12,7 @@ ms.topic: conceptual
 ms.date: 02/06/2023
 ms.author: henrymbugua
 ms.reviewer: saeeda, jmprieur
-ms.custom: aaddev, identityplatformtop40
+ms.custom:  identityplatformtop40
 ---
 
 # Supported account types

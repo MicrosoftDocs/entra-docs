@@ -12,7 +12,7 @@ ms.topic: include
 ms.date: 06/25/2021
 ms.author: henrymbugua
 ms.reviewer: ludwignick
-ms.custom: aaddev
+ms.custom: 
 ---
 > [!TIP]
 > [![Try running this request in Postman](../media/v2-oauth2-auth-code-flow/runInPostman.png)](https://app.getpostman.com/run-collection/f77994d794bab767596d)<br/>

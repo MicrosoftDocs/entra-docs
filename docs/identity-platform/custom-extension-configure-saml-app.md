@@ -12,7 +12,7 @@ ms.topic: how-to
 
 ms.date: 03/06/2023
 ms.author: jomondi
-ms.custom: aaddev
+ms.custom: 
 ms.reviewer: JasSuri
 #Customer intent: As an application developer, I want to source claims from a data store that is external to Microsoft Entra ID.
 ---

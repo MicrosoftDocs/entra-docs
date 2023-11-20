@@ -12,7 +12,7 @@ ms.topic: how-to
 ms.date: 04/27/2023
 ms.author: owenrichards
 ms.reviewer: xurobert
-ms.custom: contperf-fy21q4, aaddev
+ms.custom: contperf-fy21q4, 
 ---
 
 # Configure an app's publisher domain

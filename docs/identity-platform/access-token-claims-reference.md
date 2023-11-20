@@ -10,7 +10,7 @@ ms.subservice: develop
 ms.topic: reference
 ms.date: 05/26/2023
 ms.author: cwerner
-ms.custom: aaddev, curation-claims
+ms.custom:  curation-claims
 ---
 
 # Access token claims reference

@@ -12,7 +12,7 @@ ms.topic: conceptual
 ms.date: 03/16/2023
 ms.author: ryanwi
 ms.reviewer: paulgarn, ludwignick
-ms.custom: aaddev
+ms.custom: 
 ---
 
 # Signing key rollover in the Microsoft identity platform

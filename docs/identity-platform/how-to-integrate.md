@@ -12,7 +12,7 @@ ms.topic: conceptual
 ms.date: 10/01/2020
 ms.author: cwerner
 ms.reviewer: jmprieur
-ms.custom: aaddev, seoapril2019
+ms.custom:  seoapril2019
 ROBOTS: NOINDEX
 ---
 

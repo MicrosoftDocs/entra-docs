@@ -11,7 +11,7 @@ ms.topic: how-to
 ms.date: 03/28/2023
 ms.author: cwerner
 ms.reviewer: jmprieur, kkrishna
-ms.custom: aaddev, 
+ms.custom:  
 
 #Customer intent: As a tenant administrator, I want to restrict an application that I have registered in Azuren-e AD to a select set of users available in my Microsoft Entra tenant
 ---

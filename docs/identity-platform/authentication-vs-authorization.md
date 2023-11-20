@@ -12,7 +12,7 @@ ms.topic: conceptual
 ms.date: 06/29/2023
 ms.author: cwerner
 ms.reviewer: jmprieur, saeeda, sureshja, ludwignick
-ms.custom: aaddev, identityplatformtop40, microsoft-identity-platform, scenarios:getting-started
+ms.custom:  identityplatformtop40, microsoft-identity-platform, scenarios:getting-started
 #Customer intent: As an application developer, I want to understand the basic concepts of authentication and authorization in the Microsoft identity platform.
 ---
 

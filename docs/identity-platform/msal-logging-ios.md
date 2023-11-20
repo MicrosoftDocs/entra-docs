@@ -12,7 +12,7 @@ ms.topic: conceptual
 ms.date: 01/25/2021
 ms.author: henrymbugua
 ms.reviewer: saeeda, jmprieur
-ms.custom: aaddev
+ms.custom: 
 ---
 
 # Logging in MSAL for iOS/macOS

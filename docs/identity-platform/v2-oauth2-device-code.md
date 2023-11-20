@@ -12,7 +12,7 @@ ms.topic: conceptual
 ms.date: 11/15/2022
 ms.author: owenrichards
 ms.reviewer: ludwignick
-ms.custom: aaddev, 
+ms.custom:  
 ---
 
 # Microsoft identity platform and the OAuth 2.0 device authorization grant flow

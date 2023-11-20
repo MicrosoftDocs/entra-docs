@@ -11,7 +11,7 @@ ms.topic: how-to
 
 ms.date: 06/21/2023
 ms.author: cwerner
-ms.custom: aaddev
+ms.custom: 
 ms.reviewer: marsma, aragra, lenalepa, sureshja
 
 #Customer intent: As an application developer, I want to know how to remove my application from the Microsoft identity registered.

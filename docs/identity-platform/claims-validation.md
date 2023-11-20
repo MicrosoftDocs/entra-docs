@@ -11,7 +11,7 @@ ms.subservice: develop
 ms.topic: conceptual
 ms.date: 04/21/2023
 ms.author: cwerner
-ms.custom: aaddev, curation-claims
+ms.custom:  curation-claims
 ---
 
 # Secure applications and APIs by validating claims

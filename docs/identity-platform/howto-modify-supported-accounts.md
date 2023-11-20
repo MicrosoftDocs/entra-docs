@@ -11,7 +11,7 @@ ms.topic: how-to
 
 ms.date: 09/15/2023
 ms.author: ryanwi
-ms.custom: aaddev
+ms.custom: 
 ms.reviewer: aragra, sureshja
 # Customer intent: As an application developer, I need to know how to modify which account types can sign in to or access my application or API.
 ---

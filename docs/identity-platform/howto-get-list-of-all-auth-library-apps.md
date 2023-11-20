@@ -11,7 +11,7 @@ ms.topic: how-to
 
 ms.date: 03/03/2022
 ms.author: shermanouko
-ms.custom: aaddev, has-adal-ref
+ms.custom:  has-adal-ref
 ms.reviewer: aiwang, dmwendia
 # Customer intent: As an application developer / IT admin, I need to know / identify which of my apps are using ADAL.
 ---

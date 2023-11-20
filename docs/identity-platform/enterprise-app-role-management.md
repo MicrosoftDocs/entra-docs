@@ -6,7 +6,7 @@ author: omondiatieno
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
-ms.custom: aaddev 
+ms.custom:  
 
 ms.topic: how-to
 ms.date: 06/09/2023

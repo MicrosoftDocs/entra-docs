@@ -12,7 +12,7 @@ ms.topic: tutorial
 ms.date: 03/03/2023
 ms.author: henrymbugua
 ms.reviewer: jmprieur
-ms.custom: "devx-track-csharp, aaddev, identityplatformtop40"
+ms.custom: "devx-track-csharp,  identityplatformtop40"
 ---
 
 # Tutorial: Call the Microsoft Graph API from a Universal Windows Platform (UWP) application

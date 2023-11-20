@@ -10,7 +10,7 @@ ms.topic: tutorial
 ms.date: 06/27/2023
 ms.author: henrymbugua
 ms.reviewer: oldalton
-ms.custom: aaddev, identityplatformtop40, has-adal-ref
+ms.custom:  identityplatformtop40, has-adal-ref
 ---
 
 # Tutorial: Sign in users and call Microsoft Graph from an iOS or macOS app

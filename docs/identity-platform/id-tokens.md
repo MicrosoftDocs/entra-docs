@@ -11,7 +11,7 @@ ms.topic: conceptual
 ms.date: 06/01/2023
 ms.author: cwerner
 ms.reviewer: ludwignick
-ms.custom: aaddev, curation-claims
+ms.custom:  curation-claims
 ---
 
 # ID tokens in the Microsoft identity platform

@@ -12,7 +12,7 @@ ms.topic: conceptual
 ms.date: 03/14/2022
 ms.author: owenrichards
 ms.reviewer: ludwignick; emilylauber
-ms.custom: aaddev
+ms.custom: 
 ---
 
 # How to handle third-party cookie blocking in browsers

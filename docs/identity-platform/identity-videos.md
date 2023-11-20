@@ -10,7 +10,7 @@ ms.topic: conceptual
 
 ms.date: 01/06/2023
 ms.author: owenrichards
-ms.custom: aaddev, has-adal-ref
+ms.custom:  has-adal-ref
 ms.reviewer: celested
 ---
 

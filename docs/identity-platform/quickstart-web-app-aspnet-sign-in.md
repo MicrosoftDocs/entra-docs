@@ -12,7 +12,7 @@ ms.date: 07/28/2023
 ms.author: cwerner
 
 ms.reviewer: jmprieur
-ms.custom: "devx-track-csharp, aaddev, identityplatformtop40, scenarios:getting-started, languages:ASP.NET, contperf-fy21q1"
+ms.custom: "devx-track-csharp,  identityplatformtop40, scenarios:getting-started, languages:ASP.NET, contperf-fy21q1"
 # Customer intent: As an application developer, I want to see a sample ASP.NET web app that can sign in Microsoft Entra users.
 ---
 

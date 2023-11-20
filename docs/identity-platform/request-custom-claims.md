@@ -11,7 +11,7 @@ ms.subservice: develop
 ms.topic: how-to
 ms.date: 01/19/2023
 ms.author: cwerner
-ms.custom: aaddev
+ms.custom: 
 ---
 
 # Request custom claims using MSAL for iOS and macOS

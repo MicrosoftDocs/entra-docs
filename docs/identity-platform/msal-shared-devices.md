@@ -12,7 +12,7 @@ ms.topic: conceptual
 ms.date: 02/08/2023
 ms.author: henrymbugua
 ms.reviewer: brandwe
-ms.custom: aaddev
+ms.custom: 
 ---
 
 # Overview of shared device mode

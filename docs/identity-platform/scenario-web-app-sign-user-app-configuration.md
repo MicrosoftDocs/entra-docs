@@ -12,7 +12,7 @@ ms.topic: conceptual
 ms.date: 04/20/2023
 ms.author: cwerner
 ms.reviewer: jmprieur
-ms.custom: aaddev
+ms.custom: 
 #Customer intent: As an application developer, I want to know how to write a web app that signs in users by using the Microsoft identity platform.
 ---
 

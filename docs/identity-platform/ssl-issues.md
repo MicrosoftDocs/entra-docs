@@ -11,7 +11,7 @@ ms.subservice: develop
 ms.topic: conceptual
 ms.date: 08/28/2019
 ms.author: owenrichards
-ms.custom: aaddev
+ms.custom: 
 ---
 
 # Troubleshoot MSAL for iOS and macOS TLS/SSL issues

@@ -11,7 +11,7 @@ ms.topic: conceptual
 ms.date: 01/14/2022
 ROBOTS: NOINDEX
 ms.author: henrymbugua
-ms.custom: aaddev, identityplatformtop40, "scenarios:getting-started", "languages:Android", has-adal-ref, mode-api
+ms.custom:  identityplatformtop40, "scenarios:getting-started", "languages:Android", has-adal-ref, mode-api
 #Customer intent: As an application developer, I want to learn how Android native apps can call protected APIs that require login and access tokens using the Microsoft identity platform.
 ---
 

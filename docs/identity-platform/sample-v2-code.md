@@ -12,7 +12,7 @@ ms.topic: sample
 ms.date: 04/19/2023
 ms.author: owenrichards
 ms.reviewer: jmprieur
-ms.custom: aaddev, identityplatformtop40
+ms.custom:  identityplatformtop40
 ---
 
 # Microsoft identity platform code samples

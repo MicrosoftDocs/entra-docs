@@ -12,7 +12,7 @@ ms.topic: conceptual
 ms.date: 09/05/2023
 ms.author: henrymbugua
 ms.reviewer: brandwe
-ms.custom: aaddev
+ms.custom: 
 ---
 # Microsoft Enterprise SSO plug-in for Apple devices
 

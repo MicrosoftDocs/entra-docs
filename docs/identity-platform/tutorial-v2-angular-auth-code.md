@@ -12,7 +12,7 @@ ms.topic: tutorial
 ms.date: 10/24/2023
 ms.author: henrymbugua
 ms.reviewer: joarroyo
-ms.custom: aaddev, devx-track-js
+ms.custom:  devx-track-js
 ---
 
 # Tutorial: Sign in users and call the Microsoft Graph API from an Angular single-page application (SPA) using auth code flow

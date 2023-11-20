@@ -12,7 +12,7 @@ ms.topic: include
 ms.date: 09/08/2021
 ms.author: cwerner
 ms.reviewer: jmprieur, sahmalik
-ms.custom: aaddev
+ms.custom: 
 ---
 
 The following steps for updating code apply across all the confidential client scenarios:

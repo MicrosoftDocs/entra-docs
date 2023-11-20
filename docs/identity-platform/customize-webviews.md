@@ -12,7 +12,7 @@ ms.topic: conceptual
 ms.date: 01/24/2023
 ms.author: henrymbugua
 ms.reviewer: oldalton
-ms.custom: aaddev, has-adal-ref
+ms.custom:  has-adal-ref
 ---
 
 # Customize browsers and WebViews for iOS/macOS

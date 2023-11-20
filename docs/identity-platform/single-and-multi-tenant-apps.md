@@ -12,7 +12,7 @@ ms.topic: conceptual
 ms.date: 10/17/2023
 ms.author: ryanwi
 ms.reviewer: justhu
-ms.custom: aaddev
+ms.custom: 
 ---
 
 # Tenancy in Microsoft Entra ID

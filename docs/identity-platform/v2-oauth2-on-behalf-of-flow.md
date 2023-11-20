@@ -12,7 +12,7 @@ ms.topic: conceptual
 ms.date: 09/30/2022
 ms.author: owenrichards
 ms.reviewer: ludwignick
-ms.custom: aaddev, 
+ms.custom:  
 ---
 
 # Microsoft identity platform and OAuth 2.0 On-Behalf-Of flow

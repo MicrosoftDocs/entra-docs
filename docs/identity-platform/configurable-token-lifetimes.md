@@ -11,7 +11,7 @@ ms.subservice: develop
 ms.topic: conceptual
 ms.date: 10/31/2023
 ms.author: ryanwi
-ms.custom: aaddev
+ms.custom: 
 ms.reviewer: joroja
 ---
 # Configurable token lifetimes in the Microsoft identity platform (preview)
