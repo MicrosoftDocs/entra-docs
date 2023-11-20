@@ -12,7 +12,7 @@ ms.topic: how-to
 ms.date: 12/19/2022
 ms.author: owenrichards
 ms.reviewer: oldalton
-ms.custom: aaddev, has-adal-ref, engagement-fy23
+ms.custom: aaddev, has-adal-ref, 
 ---
 
 # Configure keychain

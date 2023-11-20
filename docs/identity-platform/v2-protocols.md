@@ -11,7 +11,7 @@ ms.topic: conceptual
 ms.date: 02/27/2023
 ms.author: henrymbugua
 ms.reviewer: nickludwig
-ms.custom: aaddev, has-adal-ref, engagement-fy23
+ms.custom: aaddev, has-adal-ref, 
 ---
 
 # OAuth 2.0 and OpenID Connect (OIDC) in the Microsoft identity platform

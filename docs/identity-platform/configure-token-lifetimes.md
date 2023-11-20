@@ -11,7 +11,7 @@ ms.subservice: develop
 ms.topic: how-to
 ms.date: 11/02/2023
 ms.author: ryanwi
-ms.custom:  engagement-fy23
+ms.custom:  
 ms.reviewer: joroja
 ---
 # Configure token lifetime policies (preview)

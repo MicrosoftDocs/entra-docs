@@ -12,7 +12,7 @@ ms.topic: reference
 ms.date: 11/4/2022
 ms.author: owenrichards
 ms.reviewer: kenwith
-ms.custom: aaddev, engagement-fy23
+ms.custom: aaddev, 
 ---
 
 # How the Microsoft identity platform uses the SAML protocol

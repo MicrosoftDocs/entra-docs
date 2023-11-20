@@ -12,7 +12,7 @@ ms.topic: conceptual
 ms.date: 05/03/2023
 ms.author: henrymbugua
 ms.reviewer:
-ms.custom: aaddev, engagement-fy23
+ms.custom: aaddev, 
 ---
 
 # Configure SSO on macOS and iOS

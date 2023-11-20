@@ -11,7 +11,7 @@ ms.topic: conceptual
 
 ms.date: 11/25/2022
 ms.author: owenrichards
-ms.custom: aaddev, engagement-fy23
+ms.custom: aaddev, 
 #Customer intent: As an application developer, I want to know how to write a single-page application by using the Microsoft identity platform.
 ---
 

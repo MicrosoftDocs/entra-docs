@@ -11,7 +11,7 @@ ms.topic: quickstart
 ms.date: 04/16/2023
 ms.author: cwerner
 ms.reviewer: jmprieur
-ms.custom: devx-track-csharp, "scenarios:getting-started", "languages:aspnet-core", mode-api, engagement-fy23
+ms.custom: devx-track-csharp, "scenarios:getting-started", "languages:aspnet-core", mode-api, 
 #Customer intent: As an application developer, I want to know how to write an ASP.NET Core web API that uses the Microsoft identity platform to authorize API requests from clients.
 ---
 

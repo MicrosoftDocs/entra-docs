@@ -12,7 +12,7 @@ ms.topic: conceptual
 ms.date: 04/03/2023
 ms.author: cwerner
 ms.reviewer: saeeda
-ms.custom: engagement-fy23
+ms.custom: 
 # Customer intent: As an application developer, I want to learn about the authentication flows supported by MSAL.
 ---
 

@@ -12,7 +12,7 @@ ms.topic: conceptual
 ms.date: 11/10/2023
 ms.author: henrymbugua
 ms.reviewer: jmprieur, saeeda, sureshja, ludwignick
-ms.custom: scenarios:getting-started, engagement-fy23
+ms.custom: scenarios:getting-started, 
 #Customer intent: As an application developer, I want to understand the basic concepts of authentication and authorization in the Microsoft identity platform.
 ---
 
