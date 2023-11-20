@@ -7,7 +7,7 @@ manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
 
-ms.custom: event-tier1-build-2022
+ms.custom:
 ms.topic: overview
 ms.date: 11/01/2022
 ms.author: jomondi
