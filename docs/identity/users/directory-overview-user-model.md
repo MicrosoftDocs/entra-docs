@@ -19,7 +19,7 @@ ms.collection: M365-identity-device-management
 ---
 # What is enterprise user management?
 
-This article introduces and administrator for Microsoft Entra ID, part of Microsoft Entra, to the relationship between top [identity management](~/fundamentals/whatis.md?context=azure/active-directory/users-groups-roles/context/ugr-context) tasks for users in terms of their groups, licenses, deployed enterprise apps, and administrator roles. As your organization grows, you can use Microsoft Entra groups and administrator roles to:
+This article introduces an administrator for Microsoft Entra ID, part of Microsoft Entra, to the relationship between top [identity management](~/fundamentals/whatis.md?context=azure/active-directory/users-groups-roles/context/ugr-context) tasks for users in terms of their groups, licenses, deployed enterprise apps, and administrator roles. As your organization grows, you can use Microsoft Entra groups and administrator roles to:
 
 * Assign licenses to groups instead of assigning licenses to individual users.
 * Grant permissions to delegate Microsoft Entra management work to personnel in less-privileged roles.
@@ -29,7 +29,10 @@ This article introduces and administrator for Microsoft Entra ID, part of Micros
 
 You can use groups in Microsoft Entra ID to assign licenses, or deployed enterprise apps, to large numbers of users. You can also use groups to assign all administrator roles except for Microsoft Entra Global Administrator, or you can grant access to external resources, such as SaaS applications or SharePoint sites.
 
-You can use [dynamic groups](groups-create-rule.md) in Microsoft Entra ID to expand and contract group membership automatically. Dynamic groups give you greater flexibility and they reduce group membership management work. You'll need a Microsoft Entra ID P1 license for each unique user that is a member of one or more dynamic groups.
+You can use [dynamic groups](groups-create-rule.md) in Microsoft Entra ID to expand and contract group membership automatically. Dynamic groups give you greater flexibility and they reduce group membership management work. 
+
+> [!NOTE]
+> You need a Microsoft Entra ID P1 license for each unique user that is a member of one or more dynamic groups.
 
 ## Assign licenses to groups
 
@@ -41,7 +44,7 @@ If there aren't enough licenses available, or an issue occurs like service plans
 
 ## Delegate administrator roles
 
-Many large organizations want options for their users to obtain sufficient permissions for their work tasks without assigning the powerful Global Administrator role to, for example, users who must register applications. Here's an example of new Microsoft Entra administrator roles to help you distribute the work of application management with more granularity:
+Many large organizations want options for their users to obtain sufficient permissions for their work tasks without assigning the powerful Global Administrator role to, for example, users who must register applications. Here's an example of new Microsoft Entra administrator roles to help you distribute the work of application management with more specificity:
 
  Role name | Permissions summary
  --------- | -------------------
@@ -55,7 +58,7 @@ New Microsoft Entra administrator roles are being added. Check the Azure portal 
 
 You can use Microsoft Entra ID to assign group access to [enterprise apps deployed in your Microsoft Entra organization](~/identity/enterprise-apps/assign-user-or-group-access-portal.md?context=azure/active-directory/users-groups-roles/context/ugr-context). If you combine dynamic groups with group assignment to apps, you can automate user app access assignments as your organization grows. You'll need a Microsoft Entra ID P1 or Premium P2 license to assign access to enterprise apps.
 
-Microsoft Entra ID also gives you granular control of the data that flows between the app and the groups to whom you assign access. In [Enterprise Applications](https://portal.azure.com/#blade/Microsoft_AAD_IAM/StartboardApplicationsMenuBlade/AllApps), open an app and select **Provisioning** to:
+Microsoft Entra ID also gives you specific control of the data that flows between the app and the groups to whom you assign access. In [Enterprise Applications](https://portal.azure.com/#blade/Microsoft_AAD_IAM/StartboardApplicationsMenuBlade/AllApps), open an app and select **Provisioning** to:
 
 * Set up automatic provisioning for apps that support it
 * Provide credentials to connect to the app's user management API

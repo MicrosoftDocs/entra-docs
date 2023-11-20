@@ -11,7 +11,7 @@ ms.service: active-directory
 ms.subservice: enterprise-users
 ms.topic: how-to
 ms.workload: identity
-ms.date: 08/31/2023
+ms.date: 11/16/2023
 ms.author: barclayn
 ms.reviewer: sumitp
 ms.custom: it-pro
@@ -24,27 +24,31 @@ Group-based licensing in Microsoft Entra ID, part of Microsoft Entra, introduces
 
 When you assign licenses directly to individual users, without using group-based licensing, the assignment operation might fail for reasons that are related to business logic. For example, there might be an insufficient number of licenses or a conflict between two service plans that can't be assigned at the same time. The problem is immediately reported back to you.
 
-When you're using group-based licensing, the same errors can occur, but they happen in the background while the Microsoft Entra service is assigning licenses. For this reason, the errors can't be communicated to you immediately. Instead, they're recorded on the user object and then reported via the administrative portal. The original intent to license the user is never lost, but it's recorded in an error state for future investigation and resolution.
-
 ## Find license assignment errors
+
+When you're using group-based licensing, the same errors can occur, but they happen in the background while the Microsoft Entra service is assigning licenses. For this reason, the errors can't be communicated to you immediately. Instead, they're recorded on the user object and then reported via the administrative portal. The original intent to license the user is never lost, but it's recorded in an error state for future investigation and resolution.
 
 ### To find users in an error state in a group
 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [License Administrator](~/identity/role-based-access-control/permissions-reference.md#license-administrator).
+1. Select Microsoft Entra ID.
+1. Browse to **Billing** > **Licenses** to open a page where you can see and manage all licensable products in the organization.
+
 1. Open the group to its overview page and select **Licenses**. A notification appears if there are any users in an error state.
 
-   ![Group and error notifications message](./media/licensing-groups-resolve-problems/group-error-notification.png)
+   :::image type="content" source="./media/licensing-groups-resolve-problems/group-error-notification.png" alt-text="Screenshot of group and error notifications messages.":::
 
 1. Select the notification to open a list of all affected users. You can select each user individually to see more details.
 
-   ![list of users in group licensing error state](./media/licensing-groups-resolve-problems/list-of-users-with-errors.png)
+   :::image type="content" source="./media/licensing-groups-resolve-problems/list-of-users-with-errors.png" alt-text="Screenshot of list of users in group licensing error state.":::
 
 1. To find all groups that contain at least one error, on the **Microsoft Entra ID** blade select **Licenses**, and then select **Overview**. An information box is displayed when groups require your attention.
 
-   ![Overview and information about groups in error state](./media/licensing-groups-resolve-problems/group-errors-widget.png)
+   :::image type="content" source="./media/licensing-groups-resolve-problems/group-errors-widget.png" alt-text="Screenshot of information about groups in error state.":::
 
 1. Select the box to see a list of all groups with errors. You can select each group for more details.
 
-   ![Overview and list of groups with errors](./media/licensing-groups-resolve-problems/list-of-groups-with-errors.png)
+   :::image type="content" source="./media/licensing-groups-resolve-problems/list-of-groups-with-errors.png" alt-text="Screenshot of list of groups with errors.":::
 
 The following sections give a description of each potential problem and the way to resolve it.
 
@@ -80,7 +84,7 @@ To solve this problem, you need to make sure that the required plan is still ass
 
 ## Usage location isn't allowed
 
-**Problem:** Some Microsoft services aren't available in all locations because of local laws and regulations. Before you can assign a license to a user, you must specify the **Usage location** property for the user. You can specify the location under the **User** > **Profile** > **Edit** section in the Azure portal.
+**Problem:** Some Microsoft services aren't available in all locations because of local laws and regulations. Before you can assign a license to a user, you must specify the **Usage location** property for the user. You can specify the location under the **User** > **Profile** > **Edit** section in the portal.
 
 When Microsoft Entra ID attempts to assign a group license to a user whose usage location isn't supported, it fails and records an error on the user.
 
