@@ -2,37 +2,58 @@
 title: Public and confidential client apps (MSAL)
 description: Learn about public client and confidential client applications in the Microsoft Authentication Library (MSAL).
 services: active-directory
-author: cilwerner
+author: OwenRichards1
 manager: CelesteDG
 
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
 ms.workload: identity
-ms.date: 01/16/2023
-ms.author: cwerner
-ms.reviewer: saeeda
-ms.custom: aaddev, has-adal-ref, engagement-fy23
+ms.date: 11/20/2023
+ms.author: owenrichards
+ms.reviewer: iambmelt
 #Customer intent: As an application developer, I want to learn about the types of client apps so I can decide if this platform meets my app development requirements.
 ---
 
-# Public client and confidential client applications
+# Public and confidential client applications
 
-The Microsoft Authentication Library (MSAL) defines two types of clients; public clients and confidential clients. The two client types are distinguished by the ability to authenticate securely with the authorization server and maintain the confidentiality of client credentials. 
+The Microsoft Authentication Library (MSAL) defines two types of clients; public clients and confidential clients. A client is a software entity that has a unique identifier assigned by an identity provider. The client types are distinguished by their ability to authenticate securely with the authorization server and to hold sensitive, identity proving information in such a way that it can't be accessed or known to a user (or adversary) within the scope of its access and threat model.
 
-- **Confidential client applications** are apps that run on servers, such as web apps, web API apps, or service/daemon apps. They're considered difficult to access, and for that reason can keep an application secret. Confidential clients can hold configuration-time secrets. Each instance of the client has a distinct configuration (including client ID and client secret). These values are difficult for end users to extract. A web app is the most common confidential client. The client ID is exposed through the web browser, but the secret is passed only in the back channel and never directly exposed.
+  | Public client apps | Confidential client apps |
+  | --- | --- | --- |
+  | ![Desktop app](./media/hub/app-type-desktop.svg) Desktop app | ![Web app](./media/hub/app-type-web.svg) Web app |
+  | ![Browserless API](./media/hub/app-type-daemon-console.svg) Browserless API | ![Web API](./media/hub/app-type-api.svg) Web API |
+  | ![Mobile app](./media/hub/app-type-mobile.svg) Mobile app | ![Daemon/service](./media/hub/app-type-daemon-console.svg) Service/daemon |
 
-  Confidential client apps: 
+> [!NOTE]
+> In MSAL.js, there's no separation of public and confidential client apps. MSAL.js represents client apps as user agent-based apps, public clients in which the client code is executed in a user agent like a web browser. These clients don't store secrets because the browser context is openly accessible.
 
-  ![Web app](media/msal-client-applications/web-app.png) ![Web API](media/msal-client-applications/web-api.png) ![Daemon/service](media/msal-client-applications/daemon-service.png)
+## Public and confidential client apps keep secrets differently
 
-- **Public client applications** are apps that run on devices, desktop computers or in a web browser. They're not trusted to safely keep application secrets, so they only access web APIs on behalf of the user. They also only support public client flows. Public clients can't hold configuration-time secrets, so they cannot have client secrets.
+When examining the public or confidential nature of a given client, we're evaluating the ability of that client to prove its identity to the authorization server. This is important because the authorization server must be able to trust the identity of the client in order to issue access tokens.
 
-  Public client apps: 
+- **Public client applications** are apps that run on devices, such as desktop, browserless APIs, mobile or client-side browser apps. They can't be trusted to safely keep application secrets, as they can only access web APIs on behalf of the user. Anytime the source or compiled bytecode of a given app is transmitted anywhere it can be read, disassembled, or otherwise inspected by untrusted parties, it's a public client. As they also only support public client flows and can't hold configuration-time secrets, they can't have client secrets.
 
-  ![Desktop app](media/msal-client-applications/desktop-app.png) ![Browserless API](media/msal-client-applications/browserless-app.png) ![Mobile app](media/msal-client-applications/mobile-app.png)
+- **Confidential client applications** are apps that run on servers, such as web apps, web API apps, or service/daemon apps. They're considered difficult to access by users or attackers, and therefore can adequately hold configuration-time secrets to assert proof of its identity. The client ID is exposed through the web browser, but the secret is passed only in the back channel and never directly exposed.
 
-In MSAL.js, there's no separation of public and confidential client apps. MSAL.js represents client apps as user agent-based apps, public clients in which the client code is executed in a user agent like a web browser. These clients don't store secrets because the browser context is openly accessible.
+### Secrets and their importance in proving identity
+
+The following are some examples of how a client can prove its identity to the authorization server:
+
+- **Client ID and secret** – In this pattern, a pair of values is generated by the authorization server when registering a client. The client ID is a public value that identifies the application, while the client secret is a confidential value used to prove the identity of the application.
+- **Proving possession of a certificate** – Public Key Infrastructure (PKI), which includes standards such as X.509, is the fundamental technology that enables secure communication over the internet and forms the backbone of internet privacy. PKI is used to issue digital certificates that verify the identity of parties involved in online communication and is the underlying technology that powers protocols such as HTTPS, which is widely used to secure web traffic. Similarly, certificates can be used to secure service-to-service (S2S) communication in Azure by enabling mutual authentication between the services. This involves each service presenting a certificate to the other as a means of proving its identity.
+- **Presentation of a signed assertion** – Used in workload identity federation, signed assertions enable the exchange of a trusted third party identity provider token with the Microsoft Entra ID platform to obtain access tokens to call Microsoft Entra ID protected resources. Workload identity federation can be used to enable various federation scenarios, including Azure Kubernetes Service, Amazon Web Services EKS, GitHub Actions, and more.
+- **Managed identities for Azure resources** – For app-only authentication scenarios, application and service developers building on Azure have the option to offload secret management, rotation, and protection to the platform itself. With managed identities, identities are provided and deleted with Azure resources and no one, including the Global Administrator, can access the underlying credentials. The best way to prevent leaking secrets? Let managed identities handle it for you.
+
+## When does proving client identity matter?
+
+Proving client identity matters when there's a need to verify both the authenticity and authorization of a client application before granting access to sensitive data or resources. Some examples include:
+
+- **Controlling API access** – If you have an API that is metered (e.g., for billing), or exposes sensitive data or resources, you'll want to verify the identity of the client before granting access. This can be especially important, for example, when ensuring that only authorized applications have access to the API, and that the proper customer is billed for their metered API usage.
+- **Protecting users from app impersonation** – If you have a service-deployed, user-facing application (e.g., a backend-driven web app) that accesses sensitive data or services, using client secrets to protect the resources used by that application may prevent bad actors from impersonating a legitimate client to phish users and exfiltrate data or abuse access.
+- **Service-to-service communication** – If you have multiple backend services (e.g., downstream APIs) that need to communicate with each other, you may want to verify the identity of each service to ensure they're authorized to access only necessary resources to perform their function.
+
+In general, proving client identity matters when there's a need to authenticate and authorize a client independent of or in addition to a user.
 
 ## Comparing the client types
 

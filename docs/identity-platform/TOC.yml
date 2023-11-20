@@ -29,6 +29,8 @@
           href: security-tokens.md
         - name: Microsoft Authentication Library (MSAL)
           href: msal-overview.md
+        - name: Public and confidential client apps
+          href: msal-client-applications.md
         - name: Auth flows supported by MSAL
           href: msal-authentication-flows.md
         - name: Microsoft Graph
@@ -528,7 +530,7 @@
               href: custom-extension-OnAttributeCollectionSubmit-reference.md
         - name: Handle browser cookie restrictions
           items:
-            - name: How to handle third-party cookie blocking in browsers
+            - name: Handle ITP in Safari
               href: reference-third-party-cookies-spas.md
             - name: Handle SameSite cookie changes in Chrome
               href: howto-handle-samesite-cookie-changes-chrome-browser.md
@@ -646,8 +648,6 @@
       items:
         - name: Request and cache tokens
           href: msal-acquire-cache-tokens.md
-        - name: Public and confidential client apps
-          href: msal-client-applications.md
         - name: National clouds and MSAL
           displayName: china, germany, gov, 21vianet
           href: msal-national-cloud.md
@@ -829,6 +829,8 @@
           href: reply-url.md
         - name: Validation differences by supported account types
           href: supported-accounts-validation.md
+    - name: Scopes for web API accepting v1.0 tokens
+      href: msal-v1-app-scopes.md
     - name: Spring Cloud Azure
       href: /azure/developer/java/spring-framework/developer-guide-overview?toc=/entra/identity-platform/toc.json&bc=/entra/identity-platform/breadcrumb/toc.json   
     - name: Configured permissions limits troubleshooting
