@@ -51,7 +51,7 @@ POST {tenant}/oauth2/v2.0/token
 Host: login.microsoftonline.com
 Content-Type: application/x-www-form-urlencoded
 
-client_id=6731de76-14a6-49ae-97bc-6eba6914391e
+client_id=535fb089-9ff3-47b6-9bfb-4f1264799865
 &scope=user.read%20openid%20profile%20offline_access
 &username=MyUsername@myTenant.com
 &password=SuperS3cret
