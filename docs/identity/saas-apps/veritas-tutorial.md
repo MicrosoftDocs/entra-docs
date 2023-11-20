@@ -32,6 +32,7 @@ To configure Microsoft Entra integration with Veritas Enterprise Vault.cloud SSO
 In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Veritas Enterprise Vault.cloud SSO supports **SP** initiated SSO.
+* Veritas Enterprise Vault.cloud SSO supports [Automated user provisioning](veritas-provisioning-tutorial.md).
 
 > [!NOTE]
 > Identifier of this application is a fixed string value so only one instance can be configured in one tenant.

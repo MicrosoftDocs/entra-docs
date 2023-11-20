@@ -32,8 +32,8 @@ To configure Microsoft Entra integration with YardiOne, you need the following i
 In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
 
 * YardiOne supports **SP** initiated SSO.
-
 * YardiOne supports **Just In Time** user provisioning.
+* YardiOne supports [Automated user provisioning](yardione-provisioning-tutorial.md).
 
 ## Add YardiOne from the gallery
 
