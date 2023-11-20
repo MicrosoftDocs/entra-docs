@@ -2,7 +2,7 @@
 title: Invite internal users to B2B collaboration
 description: If you have internal user accounts for partners, distributors, suppliers, vendors, and other guests, you can change to Microsoft Entra B2B collaboration by inviting them to sign in with their own external credentials or sign-in. Use either PowerShell or the Microsoft Graph invitation API.
 
-services: active-directory
+ 
 ms.service: active-directory
 ms.subservice: B2B
 ms.custom: has-azure-ad-ps-ref

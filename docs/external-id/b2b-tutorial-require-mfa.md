@@ -2,7 +2,7 @@
 title: 'Tutorial - multifactor authentication for B2B'
 description: In this tutorial, learn how to require multifactor authentication when you use Microsoft Entra B2B to collaborate with external users and partner organizations.
 
-services: active-directory
+ 
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: tutorial

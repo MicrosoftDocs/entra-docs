@@ -1,11 +1,11 @@
 ---
 title: Groups and app roles support in customer tenants
 description: Find out which core Microsoft Entra features related to the user and group management model and application assignment are available in customer tenants.
-services: active-directory
+ 
 author: msmimart
 manager: celestedg
 ms.service: active-directory
-ms.workload: identity
+ 
 ms.subservice: ciam
 ms.topic: reference
 ms.date: 05/01/2023

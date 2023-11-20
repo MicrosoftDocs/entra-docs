@@ -3,7 +3,7 @@
 title: Add Microsoft Entra account as an identity provider
 description: Use Microsoft Entra ID to enable an external user (guest) to sign in to your Microsoft Entra apps with their Microsoft Entra work or school account.
 
-services: active-directory
+ 
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: how-to

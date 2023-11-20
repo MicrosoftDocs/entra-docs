@@ -3,7 +3,7 @@
 title: One-time passcode authentication for B2B guest users
 description: How to use Email one-time passcode to authenticate B2B guest users without the need for a Microsoft account.
 
-services: active-directory
+ 
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: how-to

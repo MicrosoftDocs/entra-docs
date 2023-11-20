@@ -1,7 +1,7 @@
 ---
 title: API connector code samples for user flows
 description: Code samples for API connectors in self-service sign-up flows for Microsoft Entra External ID.
-services: active-directory
+ 
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: sample

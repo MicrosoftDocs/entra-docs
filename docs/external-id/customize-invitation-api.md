@@ -2,7 +2,7 @@
 title: B2B collaboration API and customization
 description: Microsoft Entra B2B collaboration supports your cross-company relationships by enabling business partners to selectively access your corporate applications.
 
-services: active-directory
+ 
 ms.service: active-directory
 ms.subservice: B2B
 ms.custom: has-azure-ad-ps-ref

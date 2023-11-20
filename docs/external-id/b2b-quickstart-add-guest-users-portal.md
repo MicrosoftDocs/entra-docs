@@ -1,7 +1,7 @@
 ---
 title: 'Quickstart: Add a guest user and send an invitation'
 description: Use this quickstart to learn how Microsoft Entra admins can add B2B guest users in the Microsoft Entra admin center and walk through the B2B invitation workflow.
-services: active-directory
+ 
 ms.author: cmulligan
 author: csmulligan
 manager: celestedg

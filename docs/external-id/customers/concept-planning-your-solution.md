@@ -1,11 +1,11 @@
 ---
 title: Plan CIAM deployment
 description: Learn how to plan your CIAM deployment.
-services: active-directory
+ 
 author: msmimart
 manager: celestedg
 ms.service: active-directory
-ms.workload: identity
+ 
 ms.subservice: ciam
 ms.topic: conceptual
 ms.date: 05/31/2023

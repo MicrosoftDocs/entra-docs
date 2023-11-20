@@ -1,7 +1,7 @@
 ---
 title: Call an API in a sample .NET daemon application
 description: Learn how to configure a sample .NET daemon application that calls an API protected with Microsoft Entra ID for customers
-services: active-directory
+ 
 author: SHERMANOUKO
 manager: mwongerapk
 

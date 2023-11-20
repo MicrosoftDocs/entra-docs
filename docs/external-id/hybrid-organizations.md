@@ -2,7 +2,7 @@
 title: B2B collaboration for hybrid organizations
 description: Give partners access to both on-premises and cloud resources with Microsoft Entra B2B collaboration.
 
-services: active-directory
+ 
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: conceptual

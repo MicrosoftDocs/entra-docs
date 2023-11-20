@@ -1,7 +1,7 @@
 ---
 title: Add custom attributes to self-service sign-up flows
 description: Learn about customizing the attributes for your self-service sign-up user flows.
-services: active-directory
+ 
 author: msmimart
 manager: celestedg
 

@@ -1,11 +1,11 @@
 ---
 title: Identity Protection for a customer app
 description: Learn how to add Identity Protection to your customer-facing (CIAM) application to provide ongoing risk detection.
-services: active-directory
+ 
 author: msmimart
 manager: celestedg
 ms.service: active-directory
-ms.workload: identity
+ 
 ms.subservice: ciam
 ms.topic: how-to
 ms.date: 07/12/2023

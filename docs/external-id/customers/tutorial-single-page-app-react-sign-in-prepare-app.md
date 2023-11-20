@@ -1,7 +1,7 @@
 ---
 title: Tutorial - Prepare a React single-page app (SPA) for authentication in a customer tenant
 description: Learn how to prepare a React single-page app (SPA) for authentication with your Microsoft Entra ID for customers tenant.
-services: active-directory
+ 
 author: garrodonnell
 manager: celestedg
 ms.service: active-directory

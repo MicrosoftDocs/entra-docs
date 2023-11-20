@@ -1,7 +1,7 @@
 ---
 title: Language customization in Microsoft Entra user flows
 description: Learn about customizing the language experience in your user flows in Microsoft Entra External ID.
-services: active-directory
+ 
 author: msmimart
 manager: celestedg
 

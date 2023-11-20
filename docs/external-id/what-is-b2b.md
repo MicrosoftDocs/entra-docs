@@ -2,7 +2,7 @@
 title: Microsoft Entra B2B collaboration overview
 description: Microsoft Entra B2B collaboration supports guest user access so you can securely share resources and collaborate with external partners.
 
-services: active-directory
+ 
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: overview

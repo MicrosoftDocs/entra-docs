@@ -1,11 +1,11 @@
 ---
 title: CIAM security and governance
 description: Learn about CIAM security and governance features.
-services: active-directory
+ 
 author: msmimart
 manager: celestedg
 ms.service: active-directory
-ms.workload: identity
+ 
 ms.subservice: ciam
 ms.topic: conceptual
 ms.date: 04/28/2023
