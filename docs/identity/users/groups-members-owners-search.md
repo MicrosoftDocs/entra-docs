@@ -1,6 +1,6 @@
 ---
 title: Search and filter groups members and owners (preview)
-description: Search and filter groups members and owners in the Microsoft Entra portal.
+description: Search and filter groups members and owners in Microsoft Entra.
 services: active-directory
 documentationcenter: ''
 author: barclayn
@@ -20,7 +20,7 @@ ms.collection: M365-identity-device-management
 
 # Search groups and members in Microsoft Entra ID
 
-This article tells you how to search for members and owners of a group and how to use search filters in the portal for Microsoft Entra ID, part of Microsoft Entra. Search functions for groups include:
+This article tells you how to search for members and owners of a group and how to use search filters in Microsoft Entra ID, part of Microsoft Entra. Search functions for groups include:
 
 - Groups search capabilities, such as substring search in group names
 - Filtering and sorting options on member and owner lists
