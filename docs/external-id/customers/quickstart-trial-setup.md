@@ -60,7 +60,7 @@ Once your customer tenant free trial is ready, the next step is to personalize y
 You can upgrade your 30 days free trial of a tenant with customer configurations to unlock the full set of features. If you don't have any Azure subscriptions, follow the steps below.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com). <!-- Should we add a role here? The user who signs up is a Global Administrator by default.-->
-1. Browse to **Home** > **Microsoft Entra ID (Azure AD)**
+1. Browse to **Home** > **Microsoft Entra ID (Azure AD)**.
 1. Select **Upgrade**.
 
     :::image type="content" source="media/quickstart-trial-setup/upgrade-trial-button.jpg" alt-text="Screenshot of the upgrade trial button."::: 
@@ -85,3 +85,17 @@ You can upgrade your 30 days free trial of a tenant with customer configurations
 
 
 ## Upgrade your free trial with an existing tenant subscription
+
+If your free trial belongs to an account with an existing Azure subscription, you can upgrade your free trial with the existing subscription. To associate your free trial with an existing tenant to unlock the full set of features follow the steps below.
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com). <!-- Should we add a role here? The user who signs up is a Global Administrator by default.-->
+1. Browse to **Home** > **Microsoft Entra ID (Azure AD)** > **Add Subscription**.
+1. Select a tenant from the menu and select **Switch**.
+
+    :::image type="content" source="media/quickstart-trial-setup/add-existing-subscription.png" alt-text="Screenshot of the existing subscription screen."::: 
+
+1. Select the subscription and resource group you want to associate with your tenant and select **Add**. Upgrading the trial tenant can take a few seconds.
+1. After a few seconds, you'll see a notification that you successfully linked your subscription to the tenant. From here you can switch to your upgraded tenant. 
+
+    :::image type="content" source="media/quickstart-trial-setup/switch-to-tenant.png" alt-text="Screenshot of the switch to tenant link.":::
+
