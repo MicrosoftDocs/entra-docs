@@ -13,7 +13,7 @@ author: csmulligan
 manager: celestedg
 
 
-ms.collection:  , M365-identity-device-management
+ms.collection: M365-identity-device-management
 ---
 
 # B2B collaboration user claims mapping in Microsoft Entra External ID

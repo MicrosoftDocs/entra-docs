@@ -11,7 +11,7 @@ ms.date: 07/28/2023
 ms.author: cmulligan
 author: csmulligan
 manager: CelesteDG
-ms.custom: " , it-pro, seo-update-azuread-jan"
+ms.custom: "it-pro, seo-update-azuread-jan"
 ms.collection: M365-identity-device-management
 
 # Customer intent: As a tenant administrator, I want to set up MFA requirement for B2B guest users to protect my apps and resources. 

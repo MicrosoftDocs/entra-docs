@@ -12,7 +12,7 @@ ms.author: cmulligan
 author: csmulligan
 manager: celestedg
 
-ms.collection:  , M365-identity-device-management
+ms.collection: M365-identity-device-management
 
 # Customer intent: As a tenant administrator, I want to make sure that guest users can access resources and the consent process.
 ---

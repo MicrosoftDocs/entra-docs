@@ -11,7 +11,7 @@ ms.author: mimart
 author: msmimart
 manager: celestedg
 
-ms.collection:  , M365-identity-device-management
+ms.collection: M365-identity-device-management
 ---
 
 # Self-service for Microsoft Entra B2B collaboration sign-up

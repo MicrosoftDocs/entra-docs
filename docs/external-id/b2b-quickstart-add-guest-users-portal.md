@@ -9,7 +9,7 @@ ms.date: 09/22/2023
 ms.topic: quickstart
 ms.service: active-directory
 ms.subservice: B2B
-ms.custom:  , it-pro, seo-update-azuread-jan, mode-ui
+ms.custom: it-pro, seo-update-azuread-jan, mode-ui
 ms.collection: M365-identity-device-management
 #Customer intent: As a tenant admin, I want to walk through the B2B invitation workflow so that I can understand how to add a guest user in the Microsoft Entra admin center, and understand the end user experience.
 ---

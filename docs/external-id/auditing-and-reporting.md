@@ -12,7 +12,7 @@ ms.author: cmulligan
 author: csmulligan
 manager: celestedg
 ms.custom: "it-pro, seo-update-azuread-jan"
-ms.collection:  , M365-identity-device-management
+ms.collection: M365-identity-device-management
 
 # Customer intent: As a tenant administrator, I want to see access reviews, and system and user activities in my tenant.
 ---

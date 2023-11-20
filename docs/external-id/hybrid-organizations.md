@@ -10,7 +10,7 @@ ms.date: 11/23/2022
 ms.author: cmulligan
 author: csmulligan
 manager: celestedg
-ms.collection:  , M365-identity-device-management
+ms.collection: M365-identity-device-management
 
 # Customer intent: As a tenant administrator, I want to give partners access to both on-premises and cloud resources with Microsoft Entra B2B collaboration. 
 ---

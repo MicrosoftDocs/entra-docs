@@ -11,7 +11,7 @@ ms.date: 02/20/2023
 ms.author: cmulligan
 author: csmulligan
 manager: celestedg
-ms.collection:  , M365-identity-device-management
+ms.collection: M365-identity-device-management
 ---
 
 # B2B direct connect overview

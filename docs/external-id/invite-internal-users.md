@@ -13,7 +13,7 @@ ms.author: cmulligan
 author: csmulligan
 manager: CelesteDG
 
-ms.collection:  , M365-identity-device-management
+ms.collection: M365-identity-device-management
 # Customer intent: As a tenant administrator, I want to know how to invite internal users to B2B collaboration.
 ---
 
