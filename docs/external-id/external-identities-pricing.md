@@ -12,7 +12,7 @@ ms.author: mimart
 author: msmimart
 manager: celestedg
  
-ms.collection: engagement-fy23, M365-identity-device-management
+ms.collection:  , M365-identity-device-management
 ---
 
 # Billing model for Microsoft Entra External ID

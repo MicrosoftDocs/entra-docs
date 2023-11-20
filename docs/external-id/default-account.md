@@ -12,7 +12,7 @@ ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.collection: M365-identity-device-management
-ms.custom: engagement-fy23
+ms.custom:  
 # Customer intent: As a tenant administrator, I want to add Microsoft Entra ID as an identity provider for external guest users.
 ---
 

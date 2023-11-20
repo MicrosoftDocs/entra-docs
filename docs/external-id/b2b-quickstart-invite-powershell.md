@@ -10,7 +10,7 @@ ms.topic: quickstart
 ms.service: active-directory
 ms.subservice: B2B
 ms.custom: it-pro, seo-update-azuread-jan, mode-api, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
-ms.collection: engagement-fy23, M365-identity-device-management
+ms.collection:  , M365-identity-device-management
 
 #Customer intent: As a tenant admin, I want to walk through the B2B invitation workflow so that I can understand how to add a user via  PowerShell.
 ---

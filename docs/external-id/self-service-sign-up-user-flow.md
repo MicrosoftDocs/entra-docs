@@ -11,7 +11,7 @@ ms.author: mimart
 author: msmimart
 manager: CelesteDG
 ms.custom: "it-pro"
-ms.collection: engagement-fy23, M365-identity-device-management
+ms.collection:  , M365-identity-device-management
 
 # Customer intent: As a tenant administrator, I want to set up user flows that allow a user to sign up for an app and create a new guest account. 
 

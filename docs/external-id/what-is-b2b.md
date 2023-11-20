@@ -10,8 +10,8 @@ ms.date: 02/20/2023
 ms.author: cmulligan
 author: csmulligan
 manager: celestedg
-ms.custom: "engagement-fy23, it-pro, seo-update-azuread-jan"
-ms.collection: engagement-fy23, M365-identity-device-management
+ms.custom: " , it-pro, seo-update-azuread-jan"
+ms.collection:  , M365-identity-device-management
 ---
 
 # B2B collaboration overview

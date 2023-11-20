@@ -12,7 +12,7 @@ ms.author: mimart
 author: msmimart
 manager: CelesteDG
 ms.custom: "it-pro, seo-update-azuread-jan, seoapril2019, contperf-fy21q4-portal"
-ms.collection: engagement-fy23, M365-identity-device-management
+ms.collection:  , M365-identity-device-management
 
 # Customer intent: As a tenant administrator, I want to make sure that my users can authenticate themselves with one-time passcode.
 ---

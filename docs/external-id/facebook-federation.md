@@ -13,7 +13,7 @@ ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.custom: it-pro, seo-update-azuread-jan, has-azure-ad-ps-ref
-ms.collection: engagement-fy23, M365-identity-device-management
+ms.collection:  , M365-identity-device-management
 # Customer intent: As a tenant administrator, I want to set up Facebook as an identity provider for guest user login.
 ---
 

@@ -11,7 +11,7 @@ ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.custom: "it-pro"                 
-ms.collection: engagement-fy23, M365-identity-device-management
+ms.collection:  , M365-identity-device-management
 ---
 
 # Use API connectors to customize and extend self-service sign-up 
