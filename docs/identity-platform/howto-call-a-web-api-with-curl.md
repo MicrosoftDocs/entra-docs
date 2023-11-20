@@ -1,7 +1,7 @@
 ---
 title: Call an ASP.NET Core web API with cURL
 description: Learn how to call a protected ASP.NET Core Web API using the Microsoft identity platform with cURL
-services: active-directory
+
 author: henrymbuguakiarie
 
 ms.service: active-directory

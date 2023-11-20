@@ -1,7 +1,7 @@
 ---
 title: Create a Microsoft Entra app and service principal in the portal
 description: Create a new Microsoft Entra app and service principal to manage access to resources with role-based access control in Azure Resource Manager.
-services: active-directory
+
 author: cilwerner
 manager: CelesteDG
 

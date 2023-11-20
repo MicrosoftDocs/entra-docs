@@ -1,13 +1,13 @@
 ---
 title: "Increase application security using Zero Trust principles"
 description: Learn how using Zero Trust principles can help increase the security of your application and its data.
-services: active-directory
+
 author: omondiatieno
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-ms.workload: identity
+
 ms.date: 01/06/2023
 ms.custom: template-concept
 ms.author: jomondi

@@ -1,7 +1,7 @@
 ---
 title: Acquire tokens to call a web API (daemon app) - The Microsoft identity platform
 description: Learn how to build a daemon app that calls web APIs (acquiring tokens)
-services: active-directory
+
 author: Dickson-Mwendia
 manager: CelesteDG
 

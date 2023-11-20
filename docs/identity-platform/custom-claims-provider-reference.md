@@ -2,13 +2,13 @@
 title: Custom claims provider reference
 titleSuffix: Microsoft identity platform
 description: Reference documentation for custom claims providers
-services: active-directory
+
 author: cilwerner
 manager: CelesteDG
 
 ms.service: active-directory
 ms.subservice: develop
-ms.workload: identity
+
 ms.topic: reference
 ms.date: 03/06/2023
 ms.author: cwerner

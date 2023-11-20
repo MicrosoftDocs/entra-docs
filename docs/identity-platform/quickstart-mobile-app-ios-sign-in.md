@@ -1,13 +1,13 @@
 ---
 title: "Quickstart: Sign in users and call Microsoft Graph from an iOS or macOS app"
 description: In this quickstart, learn how an iOS or macOS app can sign in users, get an access token from the Microsoft identity platform, and call the Microsoft Graph API.
-services: active-directory
+
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: quickstart
-ms.workload: identity
+
 ms.date: 01/14/2022
 ms.author: henrymbugua
 ms.reviewer: jmprieur, saeeda

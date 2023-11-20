@@ -1,14 +1,14 @@
 ---
 title: Configure single-page app
 description: Learn how to build a single-page application (app's code configuration)
-services: active-directory
+
 author: OwenRichards1
 manager: CelesteDG
 
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-ms.workload: identity
+
 ms.date: 02/11/2020
 ms.author: owenrichards
 ms.custom: aaddev

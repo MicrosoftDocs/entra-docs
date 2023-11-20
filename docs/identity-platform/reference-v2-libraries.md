@@ -1,14 +1,14 @@
 ---
 title: Microsoft identity platform authentication libraries
 description: List of client libraries and middleware compatible with the Microsoft identity platform. Use these libraries to add support for user sign-in (authentication) and protected web API access (authorization) to your applications.
-services: active-directory
+
 author: cilwerner
 manager: CelesteDG
 
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: reference
-ms.workload: identity
+
 ms.date: 10/28/2022
 ms.author: cwerner
 ms.reviewer: jmprieur, saeeda

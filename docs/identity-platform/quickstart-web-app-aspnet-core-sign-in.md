@@ -1,14 +1,14 @@
 ---
 title: "Quickstart: Sign in users and call the Microsoft Graph API from an ASP.NET Core web app"
 description: Learn how an ASP.NET Core web app uses Microsoft.Identity.Web to implement Microsoft sign-in using OpenID Connect and call Microsoft Graph
-services: active-directory
+
 author: cilwerner
 manager: CelesteDG
 
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: quickstart
-ms.workload: identity
+
 
 ms.date: 08/28/2023
 ms.author: cwerner

@@ -1,14 +1,14 @@
 ---
 title: Application model
 description: Learn about the process of registering your application so it can integrate with the Microsoft identity platform.
-services: active-directory
+
 author: rwike77
 manager: CelesteDG
 
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-ms.workload: identity
+
 ms.date: 08/17/2023
 ms.author: ryanwi
 ms.reviewer: jmprieur, saeeda, sureshja, ludwignick

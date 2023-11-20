@@ -1,13 +1,13 @@
 ---
 title: "Quickstart: Acquire a token and call Microsoft Graph from a Python daemon app"
 description: In this quickstart, you learn how a Python process can get an access token and call an API protected by Microsoft identity platform, using the app's own identity
-services: active-directory
+
 author: OwenRichards1
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: quickstart
-ms.workload: identity
+
 ms.date: 03/28/2023
 ms.author: owenrichards
 ms.reviewer: jmprieur

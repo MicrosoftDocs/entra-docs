@@ -1,14 +1,14 @@
 ---
 title: How and why apps are added to Microsoft Entra ID
 description: What does it mean for an application to be added to Microsoft Entra ID and how do they get there?
-services: active-directory
+
 author: cilwerner
 manager: CelesteDG
 
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-ms.workload: identity
+
 ms.date: 10/26/2022
 ms.author: cwerner
 ms.custom: aaddev, engagement-fy23, has-azure-ad-ps-ref, azure-ad-ref-level-one-done

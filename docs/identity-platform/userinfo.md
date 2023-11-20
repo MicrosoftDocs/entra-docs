@@ -1,13 +1,13 @@
 ---
 title: Microsoft identity platform UserInfo endpoint
 description: Learn about the UserInfo endpoint on the Microsoft identity platform.
-services: active-directory
+
 author: Dickson-Mwendia
 manager: CelesteDG
 
 ms.service: active-directory
 ms.subservice: develop
-ms.workload: identity
+
 ms.topic: reference
 ms.date: 08/26/2022
 ms.author: dmwendia

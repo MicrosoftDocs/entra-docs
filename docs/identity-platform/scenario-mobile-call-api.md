@@ -1,14 +1,14 @@
 ---
 title: Call a web API from a mobile app
 description: Learn how to build a mobile app that calls web APIs. (Call a web API.)
-services: active-directory
+
 author: henrymbuguakiarie
 manager: CelesteDG
 
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-ms.workload: identity
+
 ms.date: 05/18/2020
 ms.author: henrymbugua
 ms.reviewer: brandwe, jmprieur

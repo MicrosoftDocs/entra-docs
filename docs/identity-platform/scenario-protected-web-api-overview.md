@@ -1,14 +1,14 @@
 ---
 title: Protected web API - overview
 description: Learn how to build a protected web API (overview).
-services: active-directory
+
 author: cilwerner
 manager: CelesteDG
 
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-ms.workload: identity
+
 ms.date: 12/19/2022
 ms.author: cwerner
 ms.reviewer: jmprieur

@@ -1,13 +1,13 @@
 ---
 title: Microsoft Entra authentication & authorization error codes
 description: Learn about the AADSTS error codes that are returned from the Microsoft Entra security token service (STS).
-services: active-directory
+
 author: rwike77
 manager: CelesteDG
 
 ms.service: active-directory
 ms.subservice: develop
-ms.workload: identity
+
 ms.topic: reference
 ms.date: 10/17/2023
 ms.author: ryanwi

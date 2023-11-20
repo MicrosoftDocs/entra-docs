@@ -1,14 +1,14 @@
 ---
 title: Register mobile apps that call web APIs
 description: Learn how to build a mobile app that calls web APIs (app's registration)
-services: active-directory
+
 author: henrymbuguakiarie
 manager: CelesteDG
 
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: how-to
-ms.workload: identity
+
 ms.date: 08/18/2021
 ms.author: henrymbugua
 ms.reviewer: brandwe, jmprieur

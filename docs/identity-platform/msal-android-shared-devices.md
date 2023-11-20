@@ -1,14 +1,14 @@
 ---
 title: Shared device mode for Android devices
 description: Learn how to enable shared device mode to allow frontline workers to share an Android device
-services: active-directory
+
 author: henrymbuguakiarie
 manager: CelesteDG
 
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-ms.workload: identity
+
 ms.date: 02/06/2023
 ms.author: henrymbugua
 ms.reviewer: brandwe

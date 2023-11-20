@@ -1,13 +1,13 @@
 ---
 title: Add app roles and get them from a token
 description: Learn how to add app roles to an application registered in Microsoft Entra ID. Assign users and groups to these roles, and receive them in the 'roles' claim in the token.
-services: active-directory
+
 author: cilwerner
 manager: CelesteDG
 
 ms.service: active-directory
 ms.subservice: develop
-ms.workload: identity
+
 ms.topic: how-to
 ms.date: 09/25/2023
 ms.author: cwerner

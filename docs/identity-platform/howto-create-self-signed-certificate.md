@@ -1,14 +1,14 @@
 ---
 title: Create a self-signed public certificate to authenticate your application
 description: Create a self-signed public certificate to authenticate your application.
-services: active-directory
+
 author: henrymbuguakiarie
 manager: CelesteDG
 
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-ms.workload: identity
+
 ms.date: 11/10/2023
 ms.author: henrymbugua
 ms.reviewer: jmprieur, saeeda, sureshja, ludwignick

@@ -1,13 +1,13 @@
 ---
 title: Configure keychain 
 description: Learn how to configure keychain so that your app can cache tokens in the keychain.
-services: active-directory
+
 author: OwenRichards1
 manager: CelesteDG
 
 ms.service: active-directory
 ms.subservice: develop
-ms.workload: identity
+
 ms.topic: how-to
 ms.date: 12/19/2022
 ms.author: owenrichards

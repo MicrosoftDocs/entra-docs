@@ -1,14 +1,14 @@
 ---
 title: Prompt behavior with MSAL.js
 description: Learn to customize prompt behavior using the Microsoft Authentication Library for JavaScript (MSAL.js).
-services: active-directory
+
 author: OwenRichards1
 manager: CelesteDG
 
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: how-to
-ms.workload: identity
+
 ms.date: 04/24/2019
 ms.author: owenrichards
 ms.reviewer: saeeda

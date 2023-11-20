@@ -1,14 +1,14 @@
 ---
 title: Move web app that signs in users to production
 description: Learn how to build a web app that signs in users (move to production)
-services: active-directory
+
 author: cilwerner
 manager: CelesteDG
 
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-ms.workload: identity
+
 ms.date: 09/17/2019
 ms.author: cwerner
 ms.reviewer: jmprieur

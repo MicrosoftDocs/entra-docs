@@ -1,14 +1,14 @@
 ---
 title: Register daemon apps that call web APIs
 description: Learn how to build a daemon app that calls web APIs - app registration
-services: active-directory
+
 author: Dickson-Mwendia
 manager: CelesteDG
 
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-ms.workload: identity
+
 ms.date: 12/01/2021
 ms.author: dmwendia
 ms.reviewer: jmprieur

@@ -1,13 +1,13 @@
 ---
 title: How the Microsoft identity platform uses the SAML protocol
 description: This article provides an overview of the single sign-on and Single Sign-Out SAML profiles in Microsoft Entra ID.
-services: active-directory
+
 author: OwenRichards1
 manager: CelesteDG
 
 ms.service: active-directory
 ms.subservice: develop
-ms.workload: identity
+
 ms.topic: reference
 ms.date: 11/4/2022
 ms.author: owenrichards

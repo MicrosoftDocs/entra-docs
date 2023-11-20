@@ -1,14 +1,14 @@
 ---
 title: Shared device mode for iOS devices
 description: Learn how to enable shared device mode to allow frontline workers to share an iOS device
-services: active-directory
+
 author: henrymbuguakiarie
 manager: CelesteDG
 
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-ms.workload: identity
+
 ms.date: 05/16/2023
 ms.author: henrymbugua
 ms.reviewer: brandwe, akgoel23

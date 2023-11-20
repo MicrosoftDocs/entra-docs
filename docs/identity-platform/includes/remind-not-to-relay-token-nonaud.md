@@ -1,13 +1,13 @@
 ---
 title: Don't send your middle-tier OBO token to any non-audience party
 description: Include file warning that access tokens acquired by the middle-tier shouldn't be sent to any party except that which is identified by the audience claim.
-services: active-directory
+
 author: iambmelt
 manager: CelesteDG
 
 ms.service: active-directory
 ms.subservice: develop
-ms.workload: identity
+
 ms.topic: include
 ms.date: 12/7/2021
 ms.author: brianmel

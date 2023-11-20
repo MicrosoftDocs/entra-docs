@@ -1,7 +1,7 @@
 ---
 title: "Quickstart: Sign in users in a single-page app (SPA) and call the Microsoft Graph API using Angular"
 description: In this quickstart, learn how a JavaScript Angular single-page application (SPA) can sign in users of personal accounts, work accounts, and school accounts by using the authorization code flow and call Microsoft Graph.
-services: active-directory
+
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.service: active-directory

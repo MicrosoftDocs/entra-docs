@@ -7,7 +7,7 @@ manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: how-to
-ms.workload: identity
+
 ms.date: 09/08/2019
 ms.author: dmwendia
 ms.reviewer: jmprieur, saeeda

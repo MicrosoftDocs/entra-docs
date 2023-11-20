@@ -1,13 +1,13 @@
 ---
 title: "Quickstart: Add sign in with Microsoft to an Android app"
 description: In this quickstart, learn how Android applications can call an API that requires access tokens issued by the Microsoft identity platform.
-services: active-directory
+
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-ms.workload: identity
+
 ms.date: 01/14/2022
 ROBOTS: NOINDEX
 ms.author: henrymbugua

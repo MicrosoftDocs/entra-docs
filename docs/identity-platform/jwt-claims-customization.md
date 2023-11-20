@@ -1,12 +1,12 @@
 ---
 title: Customize app JSON Web Token (JWT) claims (Preview)
 description: Learn how to customize the claims issued by Microsoft identity platform in the JSON web token (JWT) token for enterprise applications.
-services: active-directory
+
 author: cilwerner
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
-ms.workload: identity
+
 ms.topic: how-to
 ms.date: 05/01/2023
 ms.author: cwerner

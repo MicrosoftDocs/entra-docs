@@ -2,13 +2,13 @@
 title: Custom authentication extension 
 titleSuffix: Microsoft identity platform
 description: Use Microsoft Entra custom authentication extensions to customize your user's sign-in experience by using REST APIs or outbound webhooks.
-services: active-directory
+
 author: omondiatieno
 manager: CelesteDG
 
 ms.service: active-directory
 ms.subservice: develop
-ms.workload: identity
+
 ms.topic: conceptual
 ms.date: 10/27/2023
 ms.author: jomondi

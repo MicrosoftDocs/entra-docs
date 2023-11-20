@@ -1,14 +1,14 @@
 ---
 title: Xamarin iOS considerations (MSAL.NET)
 description: Learn about considerations for using Xamarin iOS with the Microsoft Authentication Library for .NET (MSAL.NET).
-services: active-directory
+
 author: Dickson-Mwendia
 manager: CelesteDG
 
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-ms.workload: identity
+
 ms.date: 09/09/2020
 ms.author: dmwendia
 ms.reviewer: saeeda

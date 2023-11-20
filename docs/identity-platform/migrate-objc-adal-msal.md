@@ -1,14 +1,14 @@
 ---
 title: ADAL to MSAL migration guide (MSAL iOS/macOS)
 description: Learn the differences between MSAL for iOS/macOS and the Azure AD Authentication Library for Objective-C (ADAL.ObjC) and how to migrate to MSAL for iOS/macOS.
-services: active-directory
+
 author: OwenRichards1
 manager: CelesteDG
 
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-ms.workload: identity
+
 ms.date: 08/28/2019
 ms.author: owenrichards
 ms.reviewer: oldalton

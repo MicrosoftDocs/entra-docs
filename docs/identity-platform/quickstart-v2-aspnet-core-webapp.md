@@ -1,13 +1,13 @@
 ---
 title: "Quickstart: Add sign-in with Microsoft Identity to an ASP.NET Core web app"
 description: In this quickstart, you learn how an app implements Microsoft sign-in on an ASP.NET Core web app by using OpenID Connect
-services: active-directory
+
 author: OwenRichards1
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-ms.workload: identity
+
 ms.date: 11/22/2021
 ROBOTS: NOINDEX
 ms.author: owenrichards

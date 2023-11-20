@@ -1,14 +1,14 @@
 ---
 title: "Tutorial: Create an Angular app that uses the Microsoft identity platform for authentication using auth code flow"
 description: In this tutorial, you build an Angular single-page app (SPA) using auth code flow that uses the Microsoft identity platform to sign in users and get an access token to call the Microsoft Graph API on their behalf.
-services: active-directory
+
 author: henrymbuguakiarie
 manager: CelesteDG
 
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: tutorial
-ms.workload: identity
+
 ms.date: 10/24/2023
 ms.author: henrymbugua
 ms.reviewer: joarroyo

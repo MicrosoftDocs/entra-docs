@@ -1,14 +1,14 @@
 ---
 title: Xamarin Android system browser considerations (MSAL.NET)
 description: Learn about considerations for using system browsers on Xamarin Android with the Microsoft Authentication Library for .NET (MSAL.NET).
-services: active-directory
+
 author: henrymbuguakiarie
 manager: CelesteDG
 
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-ms.workload: identity
+
 ms.date: 10/30/2019
 ms.author: henrymbugua
 ms.reviewer: saeeda, Dickson-Mwendia

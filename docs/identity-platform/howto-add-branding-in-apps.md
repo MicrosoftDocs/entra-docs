@@ -1,14 +1,14 @@
 ---
 title: Sign in with Microsoft branding guidelines | Microsoft Entra ID
 description: Learn about application branding guidelines for Microsoft identity platform.
-services: active-directory
+
 author: rwike77
 manager: CelesteDG
 
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-ms.workload: identity
+
 ms.date: 07/26/2023
 ms.author: ryanwi
 ms.reviewer: arielgo

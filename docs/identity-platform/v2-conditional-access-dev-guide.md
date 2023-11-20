@@ -1,7 +1,7 @@
 ---
 title: Developer guidance for Microsoft Entra Conditional Access
 description: Developer guidance and scenarios for Microsoft Entra Conditional Access and Microsoft identity platform.
-services: active-directory
+
 keywords:
 author: rwike77
 manager: CelesteDG
@@ -13,7 +13,7 @@ ms.service: active-directory
 ms.subservice: develop
 ms.custom: aaddev
 ms.topic: conceptual
-ms.workload: identity
+
 ---
 
 # Developer guidance for Microsoft Entra Conditional Access

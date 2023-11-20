@@ -1,7 +1,7 @@
 ---
 title: "Quickstart: Sign in users and call the Microsoft Graph API from an ASP.NET web app"
 description: Download and run a code sample that shows how an ASP.NET web app can sign in Microsoft Entra users.
-services: active-directory
+
 author: cilwerner
 manager: CelesteDG
 

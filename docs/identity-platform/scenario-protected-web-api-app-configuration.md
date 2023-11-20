@@ -1,7 +1,7 @@
 ---
 title: Configure protected web API apps
 description: Learn how to build a protected web API and configure your application's code.
-services: active-directory
+
 author: cilwerner
 manager: CelesteDG
 

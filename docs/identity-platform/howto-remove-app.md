@@ -1,14 +1,14 @@
 ---
 title: "How to: Remove a registered app from the Microsoft identity platform"
 description: Learn how to remove an application registered with the Microsoft identity platform.
-services: active-directory
+
 author: cilwerner
 manager: CelesteDG
 
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: how-to
-ms.workload: identity
+
 ms.date: 06/21/2023
 ms.author: cwerner
 ms.custom: aaddev

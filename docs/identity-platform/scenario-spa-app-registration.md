@@ -1,13 +1,13 @@
 ---
 title: Register single-page applications (SPA)
 description: Learn how to build a single-page application (app registration)
-services: active-directory
+
 author: OwenRichards1
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: how-to
-ms.workload: identity
+
 ms.date: 05/10/2022
 ms.author: owenrichards
 ms.custom: aaddev, devx-track-js

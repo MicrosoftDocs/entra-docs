@@ -1,14 +1,14 @@
 ---
 title: Configure a web app that signs in users
 description: Learn how to build a web app that signs in users (code configuration)
-services: active-directory
+
 author: cilwerner
 manager: CelesteDG
 
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-ms.workload: identity
+
 ms.date: 04/20/2023
 ms.author: cwerner
 ms.reviewer: jmprieur

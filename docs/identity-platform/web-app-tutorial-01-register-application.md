@@ -1,7 +1,7 @@
 ---
 title: "Tutorial: Register an application with the Microsoft identity platform"
 description: In this tutorial, you learn how to register a web application with the Microsoft identity platform.
-services: active-directory
+
 author: cilwerner
 
 ms.service: active-directory

@@ -1,14 +1,14 @@
 ---
 title: Shared device mode overview
 description: Learn about shared device mode to enable device sharing for your frontline workers.
-services: active-directory
+
 author: henrymbuguakiarie
 manager: CelesteDG
 
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-ms.workload: identity
+
 ms.date: 02/08/2023
 ms.author: henrymbugua
 ms.reviewer: brandwe

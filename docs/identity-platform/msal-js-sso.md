@@ -1,14 +1,14 @@
 ---
 title: Single sign-on (MSAL.js)
 description: Learn about building single sign-on experiences using the Microsoft Authentication Library for JavaScript (MSAL.js).
-services: active-directory
+
 author: OwenRichards1
 manager: CelesteDG
 
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-ms.workload: identity
+
 ms.date: 01/16/2023
 ms.author: owenrichards
 ms.reviewer: saeeda

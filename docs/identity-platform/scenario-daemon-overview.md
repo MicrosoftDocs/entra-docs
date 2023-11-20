@@ -1,14 +1,14 @@
 ---
 title: Build a daemon app that calls web APIs
 description: Learn how to build a daemon app that calls web APIs
-services: active-directory
+
 author: Dickson-Mwendia
 manager: CelesteDG
 
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-ms.workload: identity
+
 ms.date: 12/19/2022
 ms.author: dmwendia
 ms.reviewer: jmprieur

@@ -1,14 +1,14 @@
 ---
 title: Handle errors and exceptions in MSAL for iOS/macOS
 description: Learn how to handle errors and exceptions, Conditional Access claims challenges, and retries in MSAL for iOS/macOS applications.
-services: active-directory
+
 author: henrymbuguakiarie
 manager: CelesteDG
 
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-ms.workload: identity
+
 ms.date: 11/26/2020
 ms.author: henrymbugua
 ms.reviewer: saeeda, oldalton

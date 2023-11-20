@@ -1,13 +1,13 @@
 ---
 title: "Quickstart: Get token & call Microsoft Graph in a console app"
 description: In this quickstart, you learn how a .NET Core sample app can use the client credentials flow to get a token and call Microsoft Graph.
-services: active-directory
+
 author: OwenRichards1
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-ms.workload: identity
+
 ms.date: 04/13/2023
 ROBOTS: NOINDEX
 ms.author: owenrichards

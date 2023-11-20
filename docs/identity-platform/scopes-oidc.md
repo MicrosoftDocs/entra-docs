@@ -1,12 +1,12 @@
 ---
 title: Microsoft identity platform scopes and permissions
 description: Learn about openID connect scopes and permissions in the Microsoft identity platform endpoint.
-services: active-directory
+
 author: omondiatieno
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
-ms.workload: identity
+
 ms.topic: conceptual
 ms.date: 11/01/2022
 ms.author: jomondi

@@ -1,14 +1,14 @@
 ---
 title: Build a desktop app that calls web APIs
 description: Learn how to build a desktop app that calls web APIs (overview)
-services: active-directory
+
 author: OwenRichards1
 manager: CelesteDG
 
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-ms.workload: identity
+
 ms.date: 11/22/2021
 ms.author: owenrichards
 ms.reviewer: jmprieur

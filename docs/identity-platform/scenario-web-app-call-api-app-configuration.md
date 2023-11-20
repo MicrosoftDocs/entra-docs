@@ -1,14 +1,14 @@
 ---
 title: Configure a web app that calls web APIs
 description: Learn how to configure the code of a web app that calls web APIs
-services: active-directory
+
 author: cilwerner
 manager: CelesteDG
 
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-ms.workload: identity
+
 ms.date: 05/08/2023
 ms.author: cwerner
 ms.reviewer: jmprieur

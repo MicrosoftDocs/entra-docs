@@ -1,13 +1,13 @@
 ---
 title: Publisher verification overview
 description: Learn about benefits, program requirements, and frequently asked questions in the publisher verification program for the Microsoft identity platform.
-services: active-directory
+
 author: rwike77
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-ms.workload: identity
+
 ms.date: 08/17/2023
 ms.author: ryanwi
 ms.custom: aaddev

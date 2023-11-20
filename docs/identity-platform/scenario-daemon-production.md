@@ -1,14 +1,14 @@
 ---
 title: Move a daemon app that calls web APIs to production
 description: Learn how to move a daemon app that calls web APIs to production
-services: active-directory
+
 author: Dickson-Mwendia
 manager: CelesteDG
 
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-ms.workload: identity
+
 ms.date: 10/30/2019
 ms.author: dmwendia
 ms.reviewer: jmprieur

@@ -1,13 +1,13 @@
 ---
 title: "Quickstart: ASP.NET web app that signs in users"
 description: Download and run a code sample that shows how an ASP.NET web app can sign in Microsoft Entra users.
-services: active-directory
+
 author: Dickson-Mwendia
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-ms.workload: identity
+
 ms.date: 08/16/2022
 ROBOTS: NOINDEX
 ms.author: dmwendia

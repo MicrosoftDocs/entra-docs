@@ -1,13 +1,13 @@
 ---
 title: Prefer MSAL
 description: Include file indicating that it's best to use MSAL. 
-services: active-directory
+
 author: henrymbuguakiarie
 manager: CelesteDG
 
 ms.service: active-directory
 ms.subservice: develop
-ms.workload: identity
+
 ms.topic: include
 ms.date: 11/17/2020
 ms.author: henrymbugua

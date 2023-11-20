@@ -1,7 +1,7 @@
 ---
 title: "Tutorial: Call an API and display the results"
 description: Call an API and display the results.
-services: active-directory
+
 author: cilwerner
 
 ms.service: active-directory

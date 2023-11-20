@@ -1,12 +1,12 @@
 ---
 title: Restrict Microsoft Entra app to a set of users
 description: Learn how to restrict access to your apps registered in Microsoft Entra ID to a selected set of users.
-services: active-directory
+
 author: cilwerner
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
-ms.workload: identity
+
 ms.topic: how-to
 ms.date: 03/28/2023
 ms.author: cwerner

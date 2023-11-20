@@ -1,7 +1,7 @@
 ---
 title: Create an Azure app identity (PowerShell)
 description: Describes how to use Azure PowerShell to create a Microsoft Entra application and service principal, and grant it access to resources through role-based access control. It shows how to authenticate application with a certificate.
-services: active-directory
+
 author: rwike77
 manager: CelesteDG
 

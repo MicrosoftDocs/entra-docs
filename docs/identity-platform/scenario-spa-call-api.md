@@ -1,14 +1,14 @@
 ---
 title: Build single-page app calling a web API
 description: Learn how to build a single-page application that calls a web API
-services: active-directory
+
 author: OwenRichards1
 manager: CelesteDG
 
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-ms.workload: identity
+
 ms.date: 11/25/2022
 ms.author: owenrichards
 ms.custom: aaddev, engagement-fy23

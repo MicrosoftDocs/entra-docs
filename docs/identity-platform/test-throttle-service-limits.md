@@ -1,14 +1,14 @@
 ---
 title: Test environments, throttling, and service limits
 description: Learn about the throttling and service limits to consider while deploying a Microsoft Entra test environment and testing an app integrated with the Microsoft identity platform.
-services: active-directory
+
 author: rwike77
 manager: CelesteDG
 
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-ms.workload: identity
+
 ms.date: 03/07/2023
 ms.author: ryanwi
 ms.reviewer: arcrowe

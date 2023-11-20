@@ -1,14 +1,14 @@
 ---
 title: Logging errors and exceptions in MSAL for iOS/macOS
 description: Learn how to log errors and exceptions in MSAL for iOS/macOS
-services: active-directory
+
 author: henrymbuguakiarie
 manager: CelesteDG
 
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-ms.workload: identity
+
 ms.date: 01/25/2021
 ms.author: henrymbugua
 ms.reviewer: saeeda, jmprieur

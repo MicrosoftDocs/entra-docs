@@ -1,13 +1,13 @@
 ---
 title: Set lifetimes for tokens
 description: Learn how to set lifetimes for access tokens issued by Microsoft identity platform. 
-services: active-directory
+
 author: rwike77
 manager: CelesteDG
 
 ms.service: active-directory
 ms.subservice: develop
-ms.workload: identity
+
 ms.topic: how-to
 ms.date: 11/02/2023
 ms.author: ryanwi

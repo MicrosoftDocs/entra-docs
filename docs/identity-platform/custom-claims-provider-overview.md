@@ -2,13 +2,13 @@
 title: Custom claims provider overview
 titleSuffix: Microsoft identity platform
 description: Conceptual article describing the custom claims provider as part of the custom authentication extension framework.
-services: active-directory
+
 author: cilwerner
 manager: CelesteDG
 
 ms.service: active-directory
 ms.subservice: develop
-ms.workload: identity
+
 ms.topic: conceptual
 ms.date: 04/10/2023
 ms.author: cwerner

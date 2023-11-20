@@ -1,14 +1,14 @@
 ---
 title: Authentication vs. authorization
 description: Learn about the basics of authentication and authorization in the Microsoft identity platform.
-services: active-directory
+
 author: cilwerner
 manager: CelesteDG
 
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-ms.workload: identity
+
 ms.date: 06/29/2023
 ms.author: cwerner
 ms.reviewer: jmprieur, saeeda, sureshja, ludwignick

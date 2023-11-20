@@ -1,12 +1,12 @@
 ---
 title: Overview of permissions and consent in the Microsoft identity platform
 description: Learn the foundational concepts and scenarios around consent and permissions in the Microsoft identity platform
-services: active-directory
+
 author: omondiatieno
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
-ms.workload: identity
+
 ms.custom: event-tier1-build-2022
 ms.topic: overview
 ms.date: 11/01/2022
