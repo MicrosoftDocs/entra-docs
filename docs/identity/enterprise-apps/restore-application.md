@@ -1,13 +1,13 @@
 ---
 title: 'Restore a soft deleted enterprise application'
 description: Restore a soft deleted enterprise application in Microsoft Entra ID.
-services: active-directory
+
 author: omondiatieno
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: how-to
-ms.workload: identity
+
 ms.date: 06/21/2023
 ms.author: jomondi
 ms.reviewer: sureshja

@@ -1,12 +1,12 @@
 ---
 title: Manage users and groups assignment to an application
 description: Learn how to assign and unassign users, and groups, for an app using Microsoft Entra ID for identity management.
-services: active-directory
+
 author: omondiatieno
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
-ms.workload: identity
+
 ms.topic: how-to
 ms.date: 11/22/2022
 ms.author: jomondi

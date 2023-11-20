@@ -1,13 +1,13 @@
 ---
 title: Submit a request to publish your application
 description: Learn how to publish your application in Microsoft Entra application gallery.
-services: active-directory
+
 author: omondiatieno
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: how-to
-ms.workload: identity
+
 ms.date: 09/22/2023
 ms.author: jomondi
 ms.reviewer: ergreenl

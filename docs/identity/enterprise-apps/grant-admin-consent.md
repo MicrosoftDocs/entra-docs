@@ -1,12 +1,12 @@
 ---
 title: Grant tenant-wide admin consent to an application 
 description: Learn how to grant tenant-wide consent to an application so that end-users aren't prompted for consent when signing in to an application.
-services: active-directory
+
 author: omondiatieno
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
-ms.workload: identity
+
 ms.topic: how-to
 ms.date: 10/31/2023
 ms.author: jomondi

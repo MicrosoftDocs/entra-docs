@@ -1,12 +1,12 @@
 ---
 title: Configure permission classifications
 description: Learn how to manage delegated permission classifications.
-services: active-directory
+
 author: omondiatieno
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
-ms.workload: identity
+
 ms.topic: how-to
 ms.date: 3/28/2023
 ms.author: jomondi

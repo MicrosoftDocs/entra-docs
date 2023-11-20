@@ -1,12 +1,12 @@
 ---
 title: Manage app consent policies for group owners  
 description: Learn how to manage built-in and custom app consent policies for group owner to control when consent can be granted.
-services: active-directory
+
 manager: CelesteDG
 author: omondiatieno
 ms.service: active-directory
 ms.subservice: app-mgmt
-ms.workload: identity
+
 ms.topic: how-to
 ms.date: 08/25/2023
 ms.author: jomondi

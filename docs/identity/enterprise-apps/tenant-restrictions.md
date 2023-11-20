@@ -5,7 +5,7 @@ author: omondiatieno
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
-ms.workload: identity
+
 ms.topic: conceptual
 ms.date: 3/16/2023
 ms.author: jomondi

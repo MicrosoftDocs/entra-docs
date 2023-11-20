@@ -1,12 +1,12 @@
 ---
 title: Configure how users consent to applications
 description: Learn how to manage how and when users can consent to applications that request access to your organization's data.
-services: active-directory
+
 author: omondiatieno
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
-ms.workload: identity
+
 ms.topic: how-to
 ms.date: 10/31/2023
 ms.author: jomondi

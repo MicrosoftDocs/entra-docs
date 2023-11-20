@@ -1,7 +1,7 @@
 ---
 title: Configure sign-in auto-acceleration using Home Realm Discovery
 description: Learn how to force federated IdP acceleration for an application using Home Realm Discovery policy.
-services: active-directory
+
 author: omondiatieno
 manager: CelesteDG
 ms.service: active-directory

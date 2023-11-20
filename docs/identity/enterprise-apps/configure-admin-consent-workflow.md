@@ -1,12 +1,12 @@
 ---
 title: Configure the admin consent workflow
 description: Learn how to configure a way for end users to request access to applications that require admin consent. 
-services: active-directory
+
 author: omondiatieno
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
-ms.workload: identity
+
 ms.topic: how-to
 ms.date: 06/14/2023
 ms.author: jomondi

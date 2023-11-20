@@ -1,12 +1,12 @@
 ---
 title: Configure group owner consent to apps accessing group data
 description: Manage group and team owners consent to applications that should be granted access to the group or team's data.
-services: active-directory
+
 author: omondiatieno
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
-ms.workload: identity
+
 ms.topic: how-to
 ms.date: 08/25/2023
 ms.author: jomondi

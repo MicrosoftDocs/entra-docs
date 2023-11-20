@@ -1,13 +1,13 @@
 ---
 title: Enable single sign-on for an enterprise application
 description: Enable single sign-on for an enterprise application in Microsoft Entra ID.
-services: active-directory
+
 author: omondiatieno
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: how-to
-ms.workload: identity
+
 ms.date: 10/30/2023
 ms.author: jomondi
 ms.reviewer: ergleenl
