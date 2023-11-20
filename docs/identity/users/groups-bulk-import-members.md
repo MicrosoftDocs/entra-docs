@@ -59,7 +59,7 @@ The rows in a downloaded CSV template are as follows:
 
 1. Open the CSV file and add a line for each group member you want to import into the group (required values are either **Member object ID** or **User principal name**). Then save the file.
 
-    :::image type="content" source="./media/groups-bulk-import-members/csv-file.png" alt-text="Screenshot of the CSV file contains names and IDs of the members to import":::
+    :::image type="content" source="./media/groups-bulk-import-members/csv-file.png" alt-text="Screenshot of the CSV file contains names and IDs of the members to import.":::
 
 1. On the **Bulk import group members** page, under **Upload your csv file**, browse to the file. When you select the file, validation of the CSV file starts.
 1. When the file contents are validated, the bulk import page displays **File uploaded successfully**. If there are errors, you must fix them before you can submit the job.
