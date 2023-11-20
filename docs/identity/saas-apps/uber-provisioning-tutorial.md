@@ -1,7 +1,7 @@
 ---
 title: 'Tutorial: Configure Uber for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Uber.
-services: active-directory
+
 documentationcenter: ''
 author: twimmers
 writer: Thwimmer
@@ -10,7 +10,7 @@ manager: jeedes
 ms.assetid: f16047ee-8ed6-4f8f-86e4-d9bc2cbd9016
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.devlang: na
 ms.topic: tutorial
 ms.date: 11/21/2022

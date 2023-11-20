@@ -1,7 +1,7 @@
 ---
 title: 'Tutorial: Configure Zoom for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Zoom.
-services: active-directory
+
 documentationcenter: ''
 author: twimmers
 writer: Thwimmer
@@ -9,7 +9,7 @@ manager: jeedes
 ms.assetid: d9bd44ed-2e9a-4a1b-b33c-cb9e9fe8ff47
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.devlang: na
 ms.topic: tutorial
 ms.date: 11/21/2022

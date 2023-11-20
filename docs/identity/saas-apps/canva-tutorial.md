@@ -1,13 +1,13 @@
 ---
 title: Microsoft Entra SSO integration with Canva
 description: Learn how to configure single sign-on between Microsoft Entra ID and Canva.
-services: active-directory
+
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.topic: how-to
 ms.date: 02/09/2023
 ms.author: jeedes

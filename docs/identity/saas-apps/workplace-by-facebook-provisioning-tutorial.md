@@ -1,12 +1,12 @@
 ---
 title: 'Tutorial: Configure Workplace by Facebook for automatic user provisioning with Microsoft Entra ID'
 description: Learn the steps you need to do in both Workplace by Facebook and Microsoft Entra ID to configure automatic user provisioning.
-services: active-directory
+
 author: twimmers
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: thwimmer

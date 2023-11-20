@@ -1,13 +1,13 @@
 ---
 title: 'Tutorial: Microsoft Entra integration with SharePoint on-premises'
 description: Learn how to implement federated authentication between Microsoft Entra ID and SharePoint on-premises.
-services: active-directory
+
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.custom: has-azure-ad-ps-ref
 ms.topic: tutorial
 ms.date: 11/21/2022

@@ -1,13 +1,13 @@
 ---
 title: App Integration Tutorials for use with Microsoft Entra ID
 description: Configure Microsoft Entra single sign-on integration with a variety of third-party software as a service applications.
-services: active-directory
+
 author: jeevansd
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.topic: landing-page
-ms.workload: identity
+
 ms.date: 11/21/2022
 ms.author: jeedes
 ms.custom: contperf-fy21q3-portal

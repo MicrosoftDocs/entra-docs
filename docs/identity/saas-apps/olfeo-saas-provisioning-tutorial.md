@@ -1,14 +1,14 @@
 ---
 title: 'Tutorial: Configure Olfeo SAAS for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Olfeo SAAS.
-services: active-directory
+
 author: twimmers
 writer: twimmers
 manager: jeedes
 ms.assetid: 5f6b0320-dfe7-451c-8cd8-6ba7f2e40434
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: thwimmer

@@ -1,7 +1,7 @@
 ---
 title: 'Tutorial: Configure AWS IAM Identity Center(successor to AWS single sign-On) for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to AWS IAM Identity Center.
-services: active-directory
+
 documentationcenter: ''
 author: twimmers
 writer: twimmers
@@ -10,7 +10,7 @@ manager: jeedes
 ms.assetid: 54a9f704-7877-4ade-81af-b8d3f7fb9255
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 08/22/2023
