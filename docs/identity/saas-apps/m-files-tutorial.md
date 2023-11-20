@@ -32,6 +32,7 @@ To get started, you need the following items:
 In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
 
 * M-Files supports **SP** initiated SSO.
+* M-Files supports [Automated user provisioning](m-files-provisioning-tutorial.md).
 
 ## Add M-Files from the gallery
 

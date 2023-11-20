@@ -35,6 +35,7 @@ In this tutorial, you configure and test Microsoft Entra SSO in a test environme
 
 * Mural Identity supports **SP and IDP** initiated SSO.
 * Mural Identity supports **Just In Time** user provisioning.
+* Mural Identity supports [Automated user provisioning](mural-identity-provisioning-tutorial.md).
 
 > [!NOTE]
 > Identifier of this application is a fixed string value so only one instance can be configured in one tenant.

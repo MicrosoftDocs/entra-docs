@@ -32,6 +32,7 @@ To configure Microsoft Entra integration with Real Links, you need the following
 In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Real Links supports **SP** initiated SSO.
+* Real Links supports [Automated user provisioning](real-links-provisioning-tutorial.md).
 
 ## Add Real Links from the gallery
 

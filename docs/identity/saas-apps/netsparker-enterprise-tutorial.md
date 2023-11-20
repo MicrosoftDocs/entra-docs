@@ -37,6 +37,7 @@ In this tutorial, you configure and test Microsoft Entra SSO in a test environme
 
 * Invicti supports **SP and IDP** initiated SSO.
 * Invicti supports **Just In Time** user provisioning.
+* Invicti supports [Automated user provisioning](netsparker-enterprise-provisioning-tutorial.md).
 
 > [!NOTE]
 > Identifier of this application is a fixed string value so only one instance can be configured in one tenant.

@@ -32,8 +32,9 @@ To get started, you need the following items:
 
 In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
 
-- ProdPad supports **SP and IDP** initiated SSO
-- ProdPad supports **Just In Time** user provisioning
+* ProdPad supports **SP and IDP** initiated SSO.
+* ProdPad supports **Just In Time** user provisioning.
+* ProdPad supports [Automated user provisioning](prodpad-provisioning-tutorial.md).
 
 ## Adding ProdPad from the gallery
 
