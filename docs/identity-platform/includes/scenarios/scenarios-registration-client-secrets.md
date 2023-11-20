@@ -2,7 +2,6 @@
 title: include file
 description: include file for confidential client scenario landing pages (daemon, web app, web API)
 
-documentationcenter: dev-center-name
 author: OwenRichards1
 manager: CelesteDG
 

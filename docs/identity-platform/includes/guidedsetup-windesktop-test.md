@@ -2,7 +2,6 @@
 title: include file
 description: include file
 
-documentationcenter: dev-center-name
 author: OwenRichards1
 manager: CelesteDG
 editor: ''
