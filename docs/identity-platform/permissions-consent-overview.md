@@ -37,15 +37,15 @@ For the user, the authorization relies on the privileges that the user has been 
 
 In this access scenario, the application acts on its own with no user signed in. Application access is used in scenarios such as automation, and backup. This scenario includes apps that run as background services or daemons. It's appropriate when it's undesirable to have a specific user signed in, or when the data required can't be scoped to a single user. For more information about the app-only access scenario, see [App-only-access](app-only-access-primer.md).
 
-App-only access uses app roles instead of delegated scopes. When granted through consent, app roles may also be called applications permissions. For app-only access, the client app must be granted appropriate app roles of the resource app it's calling in order to access the requested data. For more information about assigning app roles to client applications, see [Assigning app roles to applications](./howto-add-app-roles-in-apps.md#assign-app-roles-to-applications).
+App-only access uses app roles instead of delegated scopes. When granted through consent, app roles may also be called applications permissions. The client app must be granted appropriate application permissions of the resource app it's calling. Once granted, the client app can access the requested data. For more information about assigning app roles to client applications, see [Assigning app roles to applications](./howto-add-app-roles-in-apps.md#assign-app-roles-to-applications).
 
 ## Types of permissions
 
 **Delegated permissions** are used in the delegated access scenario. They're permissions that allow the application to act on a user's behalf. The application will never be able to access anything the signed in user themselves couldn't access.
 
-For example, imagine an application that has been granted the `Files.Read.All` delegated permission on behalf of the user. The application will only be able to read files that the user can personally access.
+For example, take an application that has been granted the `Files.Read.All` delegated permission on behalf of the user. The application will only be able to read files that the user can personally access.
 
-**Application permissions**, sometimes called app roles are used in the app-only access scenario, without a signed-in user present. The application will be able to access any data that the permission is associated with.
+**Application permissions**, also known as app roles, are used in the app-only access scenario, without a signed-in user present. The application will be able to access any data that the permission is associated with.
 
 For example, an application granted the Microsoft Graph API's application permission `Files.Read.All` will be able to read any file in the tenant using Microsoft Graph. In general, only an administrator or owner of an API's service principal can consent to application permissions exposed by that API.
 
@@ -60,7 +60,7 @@ There are other ways in which applications can be granted authorization for app-
 | Who can consent | - Users can consent for their data <br> - Admins can consent for all users | Only admin can consent |
 | Consent methods | - Static: configured list on app registration <br> - Dynamic: request individual permissions at login | - Static ONLY: configured list on app registration |
 | Other names | - Scopes <br> - OAuth2 permission scopes | - App roles <br> - App-only permissions |
-| Result of consent (specific to Microsoft Graph)  | [oAuth2PermissionGrant](/graph/api/resources/oauth2permissiongrant) | [appRoleAssignment](/graph/api/resources/approleassignment) |
+| Result of consent (specific to Microsoft Graph)  | [OAuth2PermissionGrant](/graph/api/resources/oauth2permissiongrant) | [appRoleAssignment](/graph/api/resources/approleassignment) |
 
 ## Consent
 
@@ -74,11 +74,13 @@ The key details of a consent prompt are the list of permissions the application 
 
 ### User consent
 
-User consent happens when a user attempts to sign into an application. The user provides their sign-in credentials, which are checked to determine whether consent has already been granted. If no previous record of user or admin consent for the required permissions exists, the user is shown a consent prompt, and asked to grant the application the requested permissions. In many cases, an admin may be required to grant consent on behalf of the user.
+User consent happens when a user attempts to sign into an application. The user provides their sign-in credentials, which are checked to determine if  consent has already been granted. If no previous record of user or admin consent for the required permissions exists, the user is shown a consent prompt, and asked to grant the application the requested permissions. An admin may be required to grant consent on behalf of the user.
 
 ### Administrator consent
 
-Depending on the permissions they require, some applications might require an administrator to be the one who grants consent. For example, application permissions and many high-privilege delegated permissions can only be consented to by an administrator. Administrators can grant consent for themselves or for the entire organization. For more information about user and admin consent, see [user and admin consent overview](~/identity/enterprise-apps/user-admin-consent-overview.md).
+Depending on the permissions they require, some applications might require an administrator to be the one who grants consent. For example, application permissions and many high-privilege delegated permissions can only be consented to by an administrator. 
+
+Administrators can grant consent for themselves or for the entire organization. For more information about user and admin consent, see [user and admin consent overview](~/identity/enterprise-apps/user-admin-consent-overview.md).
 
 ### Preauthorization
 
