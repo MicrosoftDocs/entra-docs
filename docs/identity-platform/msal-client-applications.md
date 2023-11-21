@@ -86,7 +86,9 @@ The following are some similarities and differences between public and confident
 - Public client apps have four ways to acquire a token, through separate authentication flows. Confidential client apps only have three ways to acquire a token and one way to compute the URL of the identity provider authorize endpoint. For more information, see [acquiring tokens](msal-acquire-cache-tokens.md).
 - In MSAL, the client ID, also called the *application ID* or *app ID*, is passed once at the construction of the application. It doesn't need to be passed again when the app acquires a token. This is true for both public and confidential client apps.
 
-Public clients are useful for enabling user-delegated access to protected resources but are unable to prove their own application identity. Confidential clients, on the other hand, can perform both user and application authentication and authorization and must be built with security in mind to ensure that their secrets are not shared with public clients or other third parties.
+Public clients are useful for enabling user-delegated access to protected resources but are unable to prove their own application identity. Confidential clients, on the other hand, can perform both user and application authentication and authorization and must be built with security in mind to ensure that their secrets aren't shared with public clients or other third parties.
+
+In some cases, such as S2S communication, infrastructure like managed identities greatly helps to simplify the development and deployment of services and removes much of the complexity typically associated with secret management. When managed identities can't be used, it’s important to have policies, preventive measures, and contingencies in place for securing secrets and responding with security incidents related to them.
 
 ## See also
 
