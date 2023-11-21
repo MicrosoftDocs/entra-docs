@@ -1,18 +1,18 @@
 ---
 title: Microsoft identity platform admin consent protocols
 description: A description of authorization in the Microsoft identity platform, including scopes, permissions, and consent.
-services: active-directory
+
 author: rwike77
 manager: CelesteDG
 
 ms.service: active-directory
 ms.subservice: develop
-ms.workload: identity
+
 ms.topic: reference
 ms.date: 11/08/2023
 ms.author: ryanwi
 ms.reviewer: ludwignick
-ms.custom: aaddev
+ms.custom: 
 ---
 
 # Admin consent on the Microsoft identity platform
@@ -31,7 +31,7 @@ When you're ready to request permissions from your organization's admin, you can
 
 ```none
 https://login.microsoftonline.com/{tenant}/v2.0/adminconsent
-        ?client_id=6731de76-14a6-49ae-97bc-6eba6914391e
+        ?client_id=535fb089-9ff3-47b6-9bfb-4f1264799865
         &scope=https://graph.microsoft.com/Calendars.Read https://graph.microsoft.com/Mail.Send
         &redirect_uri=http://localhost/myapp/permissions
         &state=12345

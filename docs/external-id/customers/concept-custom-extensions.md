@@ -1,11 +1,11 @@
 ---
 title: Custom extensions in a customer tenant
 description: Learn about custom authentication extensions that let you enrich or customize application tokens with information from external systems and add logic, such as validation, to attribute collection. 
-services: active-directory
+ 
 author: msmimart
 manager: celestedg
 ms.service: active-directory
-ms.workload: identity
+ 
 ms.subservice: ciam
 ms.topic: conceptual
 ms.date: 10/27/2023

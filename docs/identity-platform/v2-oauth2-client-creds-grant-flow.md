@@ -1,18 +1,18 @@
 ---
 title: OAuth 2.0 client credentials flow on the Microsoft identity platform
 description: Build web applications by using the Microsoft identity platform implementation of the OAuth 2.0 authentication protocol.
-services: active-directory
+
 author: OwenRichards1
 manager: CelesteDG
 
 ms.service: active-directory
 ms.subservice: develop
-ms.workload: identity
+
 ms.topic: conceptual
 ms.date: 02/13/2023
 ms.author: owenrichards
 ms.reviewer: ludwignick
-ms.custom: aaddev, identityplatformtop40
+ms.custom:  
 ---
 
 # Microsoft identity platform and the OAuth 2.0 client credentials flow
@@ -88,7 +88,7 @@ When you're ready to request permissions from the organization's admin, you can 
 // Line breaks are for legibility only.
 
 GET https://login.microsoftonline.com/{tenant}/adminconsent?
-client_id=6731de76-14a6-49ae-97bc-6eba6914391e
+client_id=535fb089-9ff3-47b6-9bfb-4f1264799865
 &state=12345
 &redirect_uri=http://localhost/myapp/permissions
 ```
@@ -96,7 +96,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 Pro tip: Try pasting the following request in a browser.
 
 ```
-https://login.microsoftonline.com/common/adminconsent?client_id=6731de76-14a6-49ae-97bc-6eba6914391e&state=12345&redirect_uri=http://localhost/myapp/permissions
+https://login.microsoftonline.com/common/adminconsent?client_id=535fb089-9ff3-47b6-9bfb-4f1264799865&state=12345&redirect_uri=http://localhost/myapp/permissions
 ```
 
 |    Parameter   |  Condition  | Description |

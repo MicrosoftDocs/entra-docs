@@ -5,13 +5,13 @@ author: omondiatieno
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
-ms.workload: identity
+
 ms.topic: conceptual
 ms.date: 3/16/2023
 ms.author: jomondi
 ms.reviewer: vranganathan
 ms.collection: M365-identity-device-management
-ms.custom: contperf-fy22q3, enterprise-apps-article
+ms.custom: enterprise-apps-article
 ---
 
 # Restrict access to a tenant

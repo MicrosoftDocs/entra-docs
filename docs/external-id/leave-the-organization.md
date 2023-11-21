@@ -4,7 +4,7 @@ title: Leave an organization as a guest user
 titleSuffix: Microsoft Entra External ID
 description: Shows how a Microsoft Entra B2B guest user can leave an organization by using the Access Panel.
 
-services: active-directory
+ 
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: how-to
@@ -14,7 +14,7 @@ ms.author: cmulligan
 author: csmulligan 
 manager: celestedg
 
-ms.collection: engagement-fy23, M365-identity-device-management
+ms.collection: M365-identity-device-management
 adobe-target: true
 
 # Customer intent: As a tenant administrator, I want to make sure that guest users can leave the organization.

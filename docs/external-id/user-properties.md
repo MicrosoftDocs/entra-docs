@@ -2,7 +2,7 @@
 title: Properties of a B2B guest user
 description: Microsoft Entra B2B collaboration guest user properties and states before and after invitation redemption. 
 
-services: active-directory
+ 
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: how-to

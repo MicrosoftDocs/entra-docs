@@ -1,14 +1,14 @@
 ---
 title: 'Tutorial: Configure Vbrick Rev Cloud for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Vbrick Rev Cloud.
-services: active-directory
+
 author: twimmers
 writer: twimmers
 manager: jeedes
 ms.assetid: 4e8d8508-10c8-4b23-9699-af010030f9c3
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.topic: tutorial
 ms.date: 08/03/2023
 ms.author: thwimmer

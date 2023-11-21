@@ -1,13 +1,13 @@
 ---
 title: "Tutorial: Register and configure .NET browserless app authentication details in a customer tenant"
 description: Learn how to register and configure .NET browserless app authentication details in a customer tenant so as to sign in users using Device Code flow.
-services: active-directory
+ 
 author: SHERMANOUKO
 manager: mwongerapk
 
 ms.author: shermanouko
 ms.service: active-directory
-ms.workload: identity
+ 
 ms.custom: devx-track-dotnet
 ms.subservice: ciam
 ms.topic: tutorial

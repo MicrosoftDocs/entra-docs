@@ -1,13 +1,13 @@
 ---
 title: 'Tutorial: Add add sign-in and sign-out in your Node.js web application'
 description: Learn how to add sign-in, sign-up and sign-out in your Node.js web application.
-services: active-directory
+ 
 author: kengaderdus
 manager: mwongerapk
 
 ms.author: kengaderdus
 ms.service: active-directory
-ms.workload: identity
+ 
 ms.subservice: ciam
 ms.topic: tutorial
 ms.date: 07/27/2023

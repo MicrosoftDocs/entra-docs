@@ -2,7 +2,7 @@
 title: Grant B2B users access to your on-premises apps
 description: Shows how to give cloud B2B users access to on premises apps with Microsoft Entra B2B collaboration.
 
-services: active-directory
+ 
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: how-to

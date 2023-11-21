@@ -1,7 +1,7 @@
 ---
 title: Add custom approvals to self-service sign-up flows
 description: Add API connectors for custom approval workflows in External Identities self-service sign-up
-services: active-directory
+ 
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: how-to
@@ -11,7 +11,7 @@ ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.custom: "it-pro"
-ms.collection: engagement-fy23, M365-identity-device-management
+ms.collection: M365-identity-device-management
 
 # Customer intent: As a tenant administrator, I want to add API connectors for custom approval workflows in self-service sign-up.
 ---

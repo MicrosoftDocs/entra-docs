@@ -1,7 +1,7 @@
 ---
 title: Verify scopes and app roles protected web API
 description: Verify that the API is only called by applications on behalf of users who have the right scopes and by daemon apps that have the right application roles.
-services: active-directory
+
 author: cilwerner
 manager: CelesteDG
 

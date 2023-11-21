@@ -1,18 +1,18 @@
 ---
 title: Initialize MSAL.js client apps
 description: Learn about initializing client applications using the Microsoft Authentication Library for JavaScript (MSAL.js).
-services: active-directory
+
 author: OwenRichards1
 manager: CelesteDG
 
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-ms.workload: identity
+
 ms.date: 01/16/2023
 ms.author: owenrichards
 ms.reviewer: saeeda
-ms.custom: aaddev, devx-track-js, engagement-fy23
+ms.custom:  devx-track-js, 
 # Customer intent: As an application developer, I want to learn about initializing a client application in MSAL.js to enable support for authentication and authorization in a JavaScript single-page application (SPA).
 ---
 

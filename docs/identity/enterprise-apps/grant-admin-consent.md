@@ -1,18 +1,18 @@
 ---
 title: Grant tenant-wide admin consent to an application 
 description: Learn how to grant tenant-wide consent to an application so that end-users aren't prompted for consent when signing in to an application.
-services: active-directory
+
 author: omondiatieno
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
-ms.workload: identity
+
 ms.topic: how-to
 ms.date: 10/31/2023
 ms.author: jomondi
 ms.reviewer: ergreenl
 ms.collection: M365-identity-device-management
-ms.custom: contperf-fy22q2, enterprise-apps
+ms.custom:  enterprise-apps
 zone_pivot_groups: enterprise-apps-minus-former-powershell
 
 #customer intent: As an admin, I want to grant tenant-wide admin consent to an application in Microsoft Entra ID.
