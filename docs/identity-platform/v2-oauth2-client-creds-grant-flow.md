@@ -88,7 +88,7 @@ When you're ready to request permissions from the organization's admin, you can 
 // Line breaks are for legibility only.
 
 GET https://login.microsoftonline.com/{tenant}/adminconsent?
-client_id=6731de76-14a6-49ae-97bc-6eba6914391e
+client_id=535fb089-9ff3-47b6-9bfb-4f1264799865
 &state=12345
 &redirect_uri=http://localhost/myapp/permissions
 ```
@@ -96,7 +96,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 Pro tip: Try pasting the following request in a browser.
 
 ```
-https://login.microsoftonline.com/common/adminconsent?client_id=6731de76-14a6-49ae-97bc-6eba6914391e&state=12345&redirect_uri=http://localhost/myapp/permissions
+https://login.microsoftonline.com/common/adminconsent?client_id=535fb089-9ff3-47b6-9bfb-4f1264799865&state=12345&redirect_uri=http://localhost/myapp/permissions
 ```
 
 |    Parameter   |  Condition  | Description |
