@@ -7,7 +7,7 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
 ms.workload: identity
-ms.date: 10/14/2020
+ms.date: 11/20/2023
 author: janicericketts
 ms.author: henrymbugua
 ms.reviewer: janicericketts
@@ -28,7 +28,7 @@ This article explains why SSO and APP are important and provides the high-level 
 
 [Single sign-on (SSO)](~/identity/enterprise-apps/plan-sso-deployment.md) allows a user to sign in once and get access to other applications without re-entering credentials. This makes accessing apps easier and eliminates the need for users to remember long lists of usernames and passwords. Implementing it in your app makes accessing and using your app easier.
 
-In addition, enabling single sign-on in your app unlocks new authentication mechanisms that come with modern authentication, like [passwordless logins](~/identity/authentication/concept-authentication-passwordless.md). Usernames and passwords are one of the most popular attack vectors against applications, and enabling SSO allows you to mitigate this risk by enforcing Conditional Access or passwordless logins that add additional security or rely on more secure authentication mechanisms. Finally, enabling single sign-on also enables [single sign-out](v2-protocols-oidc.md#single-sign-out). This is useful in situations like work applications that will be used on shared devices.
+In addition, enabling single sign-on in your app unlocks new authentication mechanisms that come with modern authentication, like [passwordless logins](~/identity/authentication/concept-authentication-passwordless.md). Usernames and passwords are one of the most popular attack vectors against applications, and enabling SSO allows you to mitigate this risk by enforcing Conditional Access or passwordless logins that add extra security or rely on more secure authentication mechanisms. Finally, enabling single sign-on also enables [single sign-out](v2-protocols-oidc.md#single-sign-out). This is useful in situations like work applications that will be used on shared devices.
 
 [App protection policies (APP)](/mem/intune/apps/app-protection-policy) ensure that an organization's data remains safe and contained. They allow companies to manage and protect their data within an app and allow control over who can access the app and its data. Implementing app protection policies enables your app to connect users to resources protected by Conditional Access policies and securely transfer data to and from other protected apps. Scenarios unlocked by app protection policies include requiring a PIN to open an app, controlling the sharing of data between apps, and preventing company app data from being saved to personal storage locations.
 
@@ -43,9 +43,7 @@ The best choice for implementing single sign-on in your application is to use [t
 > [!NOTE]
 > It is possible to configure MSAL to use an embedded web view. This will prevent single sign-on. Use the default behavior (that is, the system web browser) to ensure that SSO will work.
 
-Azure Active Directory Authentication Library (ADAL) has been deprecated. Please use the [Microsoft Authentication Library (MSAL)](/entra/msal/). If you have existing applications that use ADAL, be sure to [migrate them to MSAL](~/identity-platform/msal-migration.md).
-
-For iOS applications, we have a [quickstart](quickstart-v2-ios.md) that shows you how to set up sign-ins using MSAL, as well as [guidance for configuring MSAL for various SSO scenarios](single-sign-on-macos-ios.md).
+For iOS applications, we have a [quickstart](quickstart-v2-ios.md) that shows you how to set up sign-ins using MSAL, and [guidance for configuring MSAL for various SSO scenarios](single-sign-on-macos-ios.md).
 
 For Android applications, we have a [quickstart](quickstart-v2-android.md) that shows you how to set up sign-ins using MSAL, and guidance for [how to enable cross-app SSO on Android using MSAL](msal-android-single-sign-on.md).
 
@@ -68,13 +66,8 @@ In addition, you must use a broker app for authentication. The broker requires t
 
 Finally, [add the Intune SDK](/mem/intune/developer/app-sdk-get-started) to your app to enable app protection policies. The SDK for the most part follows an intercept model and will automatically apply app protection policies to determine if actions the app is taking are allowed or not. There are also APIs you can call manually to tell the app if there are restrictions on certain actions.
 
-## Additional resources
+## Related content
 
 - [Plan a Microsoft Entra single sign-on deployment](~/identity/enterprise-apps/plan-sso-deployment.md)
 - [How to: Configure SSO on macOS and iOS](single-sign-on-macos-ios.md)
-- [Microsoft Enterprise SSO plug-in for Apple devices (Preview)](apple-sso-plugin.md)
-- [Brokered authentication in Android](./msal-android-single-sign-on.md)
-- [Authorization agents and how to enable them](./msal-android-single-sign-on.md)
 - [Get started with the Microsoft Intune App SDK](/mem/intune/developer/app-sdk-get-started)
-- [Configure settings for the Intune App SDK](/mem/intune/developer/app-sdk-ios#configure-settings-for-the-intune-app-sdk)
-- [Microsoft Intune protected apps](/mem/intune/apps/apps-supported-intune-apps)
