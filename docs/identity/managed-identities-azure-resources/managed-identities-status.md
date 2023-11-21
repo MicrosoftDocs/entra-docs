@@ -81,7 +81,7 @@ The following Azure services support managed identities for Azure resources:
 | Azure Virtual Machine Scale Sets      | [Configure managed identities on virtual machine scale set - Azure CLI](qs-configure-cli-windows-vmss.md)                                                                  |
 | Azure Virtual Machines                | [Secure and use policies on virtual machines in Azure](/azure/virtual-machines/windows/security-policy#managed-identities-for-azure-resources)                                                                  |
 | Azure Web PubSub Service           | [Managed identities for Azure Web PubSub Service](/azure/azure-web-pubsub/howto-use-managed-identity)     |
-| Test Base for Microsoft 365| [Grant Test Base managed identities to your Key Vault account](/microsoft-365/test-base/managed-identity?view=o365-worldwide)|
+| Test Base for Microsoft 365| [Grant Test Base managed identities to your Key Vault account](/microsoft-365/test-base/managed-identity)|
 
 ## Next steps
 
