@@ -1,13 +1,13 @@
 ---
 title: 'Tutorial: Tutorial: Microsoft Entra Single sign-on (SSO) integration with SAP NetWeaver'
 description: Learn how to configure single sign-on between Microsoft Entra ID and SAP NetWeaver.
-services: active-directory
+
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.custom: has-azure-ad-ps-ref
 ms.topic: tutorial
 ms.date: 11/21/2022

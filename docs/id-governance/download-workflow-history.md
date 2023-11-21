@@ -29,9 +29,9 @@ To download the history report of a workflow using the Microsoft Entra admin cen
 
 1. On the Workflow history screen, you're able to see a summary and total count of users, runs, or tasks processed by the workflow in the time frame of the filter.
     :::image type="content" source="media/download-workflow-history/workflow-history-screen.png" alt-text="Screenshot of the workflow history screen.":::
-1. The default history screen shows **Users**, but you're able to select **Runs**, or **Tasks** to see their information on this screen.
+1. The default history screen shows **Users**, but you're able to select **Runs** or **Tasks**, to see their information on this screen.
     :::image type="content" source="media/download-workflow-history/task-workflow-history-screen.png" alt-text="Screenshot of the workflow history screen with tasks selected.":::
-1. On the page workflow history page that you wish to download a report of set your filters to what you want included in your report and select **Download (Preview)**.
+1. On the page workflow history page that you wish to download a report of, set your filters to what you want included in your report and select **Download (Preview)**.
     :::image type="content" source="media/download-workflow-history/workflow-history-screen-download.png" alt-text="Screenshot of download location on workflow history screen.":::
 1. On the download pane, you see the type of report you're downloading at the top, and it's also present in the default name of the CSV report.
     :::image type="content" source="media/download-workflow-history/history-download-pane.png" alt-text="Screenshot of the workflow history download pane.":::

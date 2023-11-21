@@ -11,7 +11,7 @@ ms.date: 11/07/2023
 ms.author: mimart
 author: msmimart
 manager: celestedg
-ms.custom: it-pro, has-azure-ad-ps-ref
+ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.collection: M365-identity-device-management
 ---
 
@@ -78,7 +78,7 @@ Yes, you can set up SAML/WS-Fed IdP federation with domains that aren't DNS-veri
 
 **How many federation relationships can I create?**
 
-Currently, a maximum of 1,000 federation relationships is supported. This limit includes both [internal federations](/powershell/module/msonline/set-msoldomainfederationsettings) and SAML/WS-Fed IdP federations.
+Currently, a maximum of 1,000 federation relationships is supported. This limit includes both [internal federations](/powershell/module/microsoft.graph.identity.directorymanagement/new-mgdomainfederationconfiguration) and SAML/WS-Fed IdP federations.
 
 **Can I set up federation with multiple domains from the same tenant?**
 

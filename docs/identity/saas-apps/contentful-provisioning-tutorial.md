@@ -1,7 +1,7 @@
 ---
 title: 'Tutorial: Configure Contentful for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Contentful.
-services: active-directory
+
 documentationcenter: ''
 author: twimmers
 manager: jeedes
@@ -9,7 +9,7 @@ manager: jeedes
 ms.assetid: 3b761984-a9a0-4519-b23e-563438978de5
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 11/21/2022

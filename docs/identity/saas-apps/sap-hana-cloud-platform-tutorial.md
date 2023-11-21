@@ -1,13 +1,13 @@
 ---
 title: 'Tutorial: Microsoft Entra SSO integration with SAP Business Technology Platform'
 description: Learn how to configure single sign-on between Microsoft Entra ID and SAP Business Technology Platform.
-services: active-directory
+
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.topic: tutorial
 ms.date: 05/23/2023
 ms.author: jeedes

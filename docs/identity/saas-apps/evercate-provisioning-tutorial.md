@@ -1,7 +1,7 @@
 ---
 title: 'Tutorial: Configure Evercate for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Evercate.
-services: active-directory
+
 author: twimmers
 writer: twimmers
 manager: jeedes
@@ -9,7 +9,7 @@ manager: jeedes
 ms.assetid: df77d462-071a-4889-b6e1-0554adaa2445
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: thwimmer
