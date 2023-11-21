@@ -15,9 +15,9 @@ ms.reviewer: iambmelt
 #Customer intent: As an application developer, I want to learn about the types of client apps so I can decide if this platform meets my app development requirements.
 ---
 
-# Public and confidential client applications
+# Public client and confidential client applications
 
-The Microsoft Authentication Library (MSAL) defines two types of clients; public clients and confidential clients. A client is a software entity that has a unique identifier assigned by an identity provider. The client types are distinguished by their ability to authenticate securely with the authorization server and to hold sensitive, identity proving information so that it can't be accessed or known to a user (or adversary) within the scope of its access and threat model.
+The Microsoft Authentication Library (MSAL) defines two types of clients; public clients and confidential clients. A client is a software entity that has a unique identifier assigned by an identity provider. The client types are distinguished by their ability to authenticate securely with the authorization server and to hold sensitive, identity proving information so that it can't be accessed or known to a user within the scope of its access.
 
   | Public client apps | Confidential client apps |
   | --- | --- | --- |
@@ -28,7 +28,7 @@ The Microsoft Authentication Library (MSAL) defines two types of clients; public
 > [!NOTE]
 > In [MSAL.js](/javascript/api/overview/msal-overview), there's no separation of public and confidential client apps. MSAL.js represents client apps as user agent-based apps, public clients in which the client code is executed in a user agent like a web browser. These clients don't store secrets because the browser context is openly accessible.
 
-## Public and confidential client apps keep secrets differently
+## Public and client applications authorization
 
 When examining the public or confidential nature of a given client, we're evaluating the ability of that client to prove its identity to the authorization server. This is important because the authorization server must be able to trust the identity of the client in order to issue access tokens.
 
@@ -63,7 +63,7 @@ In general, proving client identity matters when there's a need to authenticate 
 
 **Limit access** - Limit access to client secrets to only authorized personnel. Use [role-based access control](/azure/role-based-access-control/overview) to restrict access to client secrets to only those who need it to perform their operational duties.
 
-**Rotate client secrets** – [Rotation of client secrets](/azure/key-vault/keys/how-to-configure-key-rotation) on an as-needed or scheduled basis, can minimize the risk of a compromised secret being used to gain unauthorized access. When applied to cryptographic artifacts, the time span during which a key is suggested to remain in use, is called its *cryptoperiod* and is influenced by the strength of the cryptographic algorithm used and/or the adherence to standards or regulatory compliance practices.
+**Rotate client secrets** – [Rotation of client secrets](/azure/key-vault/keys/how-to-configure-key-rotation) on an as-needed or scheduled basis, can minimize the risk of a compromised secret being used to gain unauthorized access. When applied, the time span during which a key is suggested to remain in use is influenced by the strength of the cryptographic algorithm used and/or the adherence to standards or regulatory compliance practices.
 
 **Use long secrets and strong encryption** – Closely related to the previous point, using strong encryption algorithms for data both in-transit (on the wire) and at-rest (on disk) helps ensure that high-entropy secrets remain unlikely to be brute-forced. Algorithms such as AES-128 (or higher) can help protect data at rest, while RSA-2048 (or higher) can help efficiently protect data in transit. Due to the ever-evolving nature of cybersecurity, it's always best practice to consult your security experts and periodically review your algorithm selection.
 
