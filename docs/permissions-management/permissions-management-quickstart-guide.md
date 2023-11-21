@@ -9,7 +9,7 @@ ms.service: active-directory
 ms.subservice: ciem
 ms.workload: identity
 ms.topic: quickstart
-ms.date: 09/13/2023
+ms.date: 11/21/2023
 ms.author: jfields
 ---
 
@@ -92,9 +92,12 @@ To configure data collection:
 ### Onboard Amazon Web Services (AWS)
 Since Permissions Management is hosted on Microsoft Entra, there are more steps to take to onboard your AWS environment.  
 
-To connect AWS to Permissions Management, you must create a Microsoft Entra application in the Microsoft Entra admin center tenant where Permissions Management is enabled. This Microsoft Entra application is used to set up an OIDC connection to your AWS environment.   
+To connect AWS to Permissions Management, you must create a Microsoft Entra application in the Microsoft Entra admin center tenant where Permissions Management is enabled. This Microsoft Entra application is used to set up an OIDC connection to your AWS environment.
 
 *OpenID Connect (OIDC) is an interoperable authentication protocol based on the OAuth 2.0 family of specifications.*
+
+:::image type="content" source="media/permissions-management-quickstart-guide/entra-id-tenant-amazon-web-service-connection.png" alt-text="A diagram showing the connection between Entra ID and an AWS cloud environment." lightbox="media/permissions-management-quickstart-guide/entra-id-tenant-amazon-web-service-connection.png":::
+
 
 ### Prerequisites 
 
@@ -119,6 +122,10 @@ When you enabled Permissions Management in the Microsoft Entra tenant, an enterp
 
 2. Assign the *Reader* role to the CIEM application to allow Permissions management to read the Microsoft Entra subscriptions in your environment. 
 
+:::image type="content" source="media/permissions-management-quickstart-guide/entra-id-tenant-role-connection-azure-subscriptions.png" alt-text="A diagram showing the connection between the Entra ID role connections to an Azure subscription." lightbox="media/permissions-management-quickstart-guide/entra-id-role-connection-azure-subscriptions.png":::
+
+:::image type="content" source="media/permissions-management-quickstart-guide/entra-id-roles-sync-azure-environment.png" alt-text="A diagram showing where Entra ID intersect with Azure roles in the Entra ID tenant." lightbox="media/permissions-management-quickstart-guide/entra-id-roles-sync-azure-environment.png":::
+
 ### Prerequisites 
 - A user with ```Microsoft.Authorization/roleAssignments/write``` permissions at the subscription or management group scope to assign roles to the CIEM application.
 
@@ -136,7 +143,8 @@ To connect GCP to Permissions Management, you must create a Microsoft Entra admi
 
 *OpenID Connect (OIDC) is an interoperable authentication protocol based on the OAuth 2.0 family of specifications.* 
 
- 
+:::image type="content" source="media/permissions-management-quickstart-guide/google-cloud-platform-oidc-application.png" alt-text="A diagram showing the connection between the Entra ID OIDC application and a GCP cloud environment." lightbox="media/permissions-management-quickstart-guide/google-cloud-platform-oidc-application.png":::
+
 ### Prerequisites 
 A user with the ability to create a new app registration in Microsoft Entra (needed to facilitate the OIDC connection) is needed for AWS and GCP onboarding. 
  
