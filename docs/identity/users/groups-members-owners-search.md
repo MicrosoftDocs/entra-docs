@@ -1,6 +1,6 @@
 ---
 title: Search and filter groups members and owners (preview)
-description: Search and filter groups members and owners in the Azure portal.
+description: Search and filter groups members and owners in Microsoft Entra.
 services: active-directory
 documentationcenter: ''
 author: barclayn
@@ -10,7 +10,7 @@ ms.service: active-directory
 ms.subservice: enterprise-users
 ms.workload: identity
 ms.topic: how-to
-ms.date: 06/24/2022
+ms.date: 11/15/2023
 ms.author: barclayn
 ms.reviewer: jodah
 
@@ -20,7 +20,7 @@ ms.collection: M365-identity-device-management
 
 # Search groups and members in Microsoft Entra ID
 
-This article tells you how to search for members and owners of a group and how to use search filters in the portal for Microsoft Entra ID, part of Microsoft Entra. Search functions for groups include:
+This article tells you how to search for members and owners of a group and how to use search filters in Microsoft Entra ID, part of Microsoft Entra. Search functions for groups include:
 
 - Groups search capabilities, such as substring search in group names
 - Filtering and sorting options on member and owner lists
@@ -28,9 +28,11 @@ This article tells you how to search for members and owners of a group and how t
 
 ## Group search and sort
 
-On the **All groups** page, when you enter a search string, you can now toggle between "contains" and "starts with" searches on the **All groups** page only. The substring search is done only on whole words, and any special characters are searched for also as an ANDed search. For example, searching for -Name starts a search for the substring "Name" and a search for "-". Substring search is case-sensitive. Object ID or mailNickname properties are also searched.
+On the **All groups** page, when you enter a search string, you can now toggle between "contains" and "starts with" searches on the **All groups** page only. 
 
-![new substring searches on the All Groups page](./media/groups-members-owners-search/members-list.png)
+The substring search is done using whole words only, and any special characters are searched for also as an ANDed search. For example, searching for -Name starts a search for the substring "Name" and a search for "-". Substring search is case-sensitive. Object ID or mailNickname properties are also searched.
+
+:::image type="content" source="./media/groups-members-owners-search/members-list.png" alt-text="Screenshot of new substring searches on the All Groups page.":::
 
 For example, a search for “policy” returns both "MDM policy – West" and "Policy group." A group named "New_policy" wouldn't be returned. You can sort the **All groups** list by name in ascending or descending order.
 
@@ -40,7 +42,7 @@ For example, a search for “policy” returns both "MDM policy – West" and "P
 
 You can search the members or owners of a specific group by name, and when you enter a search string, a `contains` search is automatically done. For example, a search for “Scott” returns both Scott Wilkinson and Maya Scott.
 
-![new substring searches on the group members and owners lists](./media/groups-members-owners-search/groups-search-preview.png)
+:::image type="content" source="./media/groups-members-owners-search/groups-search-preview.png" alt-text="Screenshot of new substring searches on the group members and owners lists.":::
 
 ### Filter member and owner lists
 
@@ -58,7 +60,7 @@ You can also view group memberships for a group on the **Group memberships** pag
 
 The group **Overview** page provides member counts for groups. You can see the total number of direct members for a group and the total membership count (all the unique members of group including inherited memberships) on the **Overview** page.
 
-![Higher accuracy in group membership counts](./media/groups-members-owners-search/member-numbers.png)
+:::image type="content" source="./media/groups-members-owners-search/member-numbers.png" alt-text="Screenshot of higher accuracy in group membership counts.":::
 
 ## Next steps
 
