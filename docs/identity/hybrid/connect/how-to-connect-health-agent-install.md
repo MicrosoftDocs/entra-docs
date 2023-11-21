@@ -88,7 +88,7 @@ Before you install the agent, make sure your AD FS server host name is unique an
 
 To start the agent installation, double-click the *.exe* file you downloaded. In the first dialog, select **Install**.
 
-:::image type="content" source="media/how-to-connect-health-agent-install/install1a.png" alt-text="Screenshot that shows the installation window for the Microsoft Entra Connect Health AD FS agent.":::
+:::image type="content" source="media/how-to-connect-health-agent-install/install-1.png" alt-text="Screenshot that shows the installation window for the Microsoft Entra Connect Health AD FS agent.":::
 
 When you're prompted, sign in by using a Microsoft Entra account that has permissions to register the agent. By default, the Hybrid Identity Administrator account has permissions.
 
