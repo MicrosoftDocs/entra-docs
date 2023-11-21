@@ -49,8 +49,6 @@ For example, take an application that has been granted the `Files.Read.All` dele
 
 For example, an application granted the Microsoft Graph API's application permission `Files.Read.All` will be able to read any file in the tenant using Microsoft Graph. In general, only an administrator or owner of an API's service principal can consent to application permissions exposed by that API.
 
-There are other ways in which applications can be granted authorization for app-only access. For example, an application can be assigned a Microsoft Entra RBAC role.
-
 ### Comparison of delegated and application permissions
 
 | Permission types | Delegated permissions | Application permissions |
@@ -74,7 +72,7 @@ The key details of a consent prompt are the list of permissions the application 
 
 ### User consent
 
-User consent happens when a user attempts to sign into an application. The user provides their sign-in credentials, which are checked to determine if  consent has already been granted. If no previous record of user or admin consent for the required permissions exists, the user is shown a consent prompt, and asked to grant the application the requested permissions. An admin may be required to grant consent on behalf of the user.
+User consent happens when a user attempts to sign into an application. The user provides their sign-in credentials, which are checked to determine if consent has already been granted. If no previous record of user or admin consent for the required permissions exists, the user is shown a consent prompt, and asked to grant the application the requested permissions. An admin may be required to grant consent on behalf of the user.
 
 ### Administrator consent
 

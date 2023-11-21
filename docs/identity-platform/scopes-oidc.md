@@ -91,9 +91,9 @@ When a user approves the `offline_access` scope, your app can receive refresh to
 
 On the Microsoft identity platform (requests made to the v2.0 endpoint), your app must explicitly request the `offline_access` scope, to receive refresh tokens. So when you redeem an authorization code in the [OAuth 2.0 authorization code flow](./v2-protocols.md), you'll only receive an access token from the `/token` endpoint.
 
-The access token is valid for a short time, usually around one hour. At that point, your app needs to redirect the user back to the `/authorize` endpoint to get a new authorization code. During this redirect, depending on the type of app, the user might need to enter their credentials again or consent again to permissions.
+The access token is usually valid for around one hour. At that point, your app needs to redirect the user back to the `/authorize` endpoint to request a new authorization code. During this redirect and depending on app type, the user may need to enter their credentials again or consent to permissions again.
 
-The refresh token has a longer expiry than the access token, usually a whole day. For more information about how to get and use refresh tokens, see the [Microsoft identity platform protocol reference](./v2-protocols.md).
+The refresh token has a longer expiry than the access token, and is usually valid for a day. For more information about how to get and use refresh tokens, see the [Microsoft identity platform protocol reference](./v2-protocols.md).
 
 ## The `.default` scope
 
@@ -164,7 +164,11 @@ To grant access to the app roles you define, including granting admin consent fo
 
 ### Trailing slash and `.default`
 
-Some resource URIs have a trailing forward slash, for example, `https://contoso.com/` as opposed to `https://contoso.com`. The trailing slash can cause problems with token validation. Problems occur primarily when a token is requested for Azure Resource Manager (`https://management.azure.com/`). In this case, a trailing slash on the resource URI means the slash must be present when the token is requested.  So when you request a token for `https://management.azure.com/` and use `.default`, you must request `https://management.azure.com//.default` (notice the double slash!). In general, if you verify that the token is being issued, and if the token is being rejected by the API that should accept it, consider adding a second forward slash and trying again.
+Some resource URIs have a trailing forward slash, for example, `https://contoso.com/` as opposed to `https://contoso.com`. The trailing slash can cause problems with token validation. Problems occur primarily when a token is requested for Azure Resource Manager (`https://management.azure.com/`).
+
+In this case, a trailing slash on the resource URI means the slash must be present when the token is requested.  So when you request a token for `https://management.azure.com/` and use `.default`, you must request `https://management.azure.com//.default` (notice the double slash!).
+
+In general, if you verify that the token is being issued, and if the token is being rejected by the API that should accept it, consider adding a second forward slash and trying again.
 
 ## See also
 

@@ -37,15 +37,15 @@ MSAL.js 2.0 improves on MSAL.js 1.0 by supporting the authorization code flow in
 
 The application you create in this tutorial enables a JavaScript SPA to query the Microsoft Graph API by acquiring security tokens from the the Microsoft identity platform. In this scenario, after a user signs in, an access token is requested and added to HTTP requests in the authorization header. Token acquisition and renewal are handled by the Microsoft Authentication Library for JavaScript (MSAL.js).
 
-This tutorial uses the following library:
-
-[MSAL.js](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-browser) the Microsoft Authentication Library for JavaScript v2.0 browser package
+This tutorial uses [MSAL.js](/javascript/api/@azure/msal-browser/), the Microsoft Authentication Library for JavaScript v2.0 browser package.
 
 ## Get the completed code sample
 
-Prefer to download this tutorial's completed sample project instead? Clone the [ms-identity-javascript-v2](https://github.com/Azure-Samples/ms-identity-javascript-v2) repository. 
+You can download this tutorial's completed sample project instead by cloning the [ms-identity-javascript-v2](https://github.com/Azure-Samples/ms-identity-javascript-v2) repository.
 
-`git clone https://github.com/Azure-Samples/ms-identity-javascript-v2`
+```console
+git clone https://github.com/Azure-Samples/ms-identity-javascript-v2.git
+```
 
 To run the downloaded project on your local development environment, start by creating a localhost server for your application as described in step 1 of [create your project](#create-your-project). Once done, you can configure the code sample by skipping to the [configuration step](#register-your-application).
 
@@ -58,6 +58,7 @@ Once you have [Node.js](https://nodejs.org/en/download/) installed, create a fol
 Next, implement a small [Express](https://expressjs.com/) web server to serve your *index.html* file.
 
 1. First, change to your project directory in your terminal and then run the following `npm` commands:
+
     ```console
     npm init -y
     npm install @azure/msal-browser
@@ -65,7 +66,8 @@ Next, implement a small [Express](https://expressjs.com/) web server to serve yo
     npm install morgan
     npm install yargs
     ```
-2. Next, create file named *server.js* and add the following code:
+
+1. Next, create file named *server.js* and add the following code:
  
    :::code language="js" source="~/../ms-identity-javascript-v2/server.js":::
 

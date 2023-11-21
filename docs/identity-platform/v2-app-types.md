@@ -43,7 +43,7 @@ The app types supported by the Microsoft identity platform are;
 - Web app
 - Web API
 - Mobile and native apps
-- Daemon or server-side app
+- Service, daemon, script
 
 ## Single-page apps
 
@@ -53,11 +53,11 @@ The flow diagram demonstrates the OAuth 2.0 authorization code grant flow (with 
 
 :::image type="content" source="media/v2-oauth-auth-code-spa/oauth-code-spa.svg" alt-text="Diagram showing the OAuth 2.0 authorization code flow between a single-page app and the security token service endpoint." border="false":::
 
-To see this in action, check out the [Quickstart: Sign in users in a single-page app (SPA) and call the Microsoft Graph API using JavaScript](./quickstart-single-page-app-javascript-sign-in.md).
+To see this in action, refer to the [Quickstart: Sign in users in a single-page app (SPA) and call the Microsoft Graph API using JavaScript](./quickstart-single-page-app-javascript-sign-in.md).
 
 ### Authorization code flow vs. implicit flow
 
-The OAuth 2.0 authorization code flow is now the recommended way to build SPAs to ensure compatibility of your app in Safari and other privacy-conscious browsers. This has come about following the removal of [third-party cookies](reference-third-party-cookies-spas.md) and [greater attention](https://tools.ietf.org/html/draft-ietf-oauth-security-topics-14). The continued use of the implicit flow is not recommended.
+The OAuth 2.0 authorization code flow is now the recommended way to build SPAs to ensure compatibility of your app in Safari and other privacy-conscious browsers. Following the removal of [third-party cookies](reference-third-party-cookies-spas.md) and [greater attention](https://tools.ietf.org/html/draft-ietf-oauth-security-topics-14), the continued use of the implicit flow is not recommended.
 
 ## Web apps
 
@@ -90,7 +90,9 @@ In addition to simple sign-in, a web server app might need to access another web
 
 ## Web APIs
 
-An application programming interface (API) is a set of rules that enable different apps to communicate with each other and exchange data. You can use the Microsoft identity platform to secure web services, such as your app's RESTful web API. Web APIs can be implemented in numerous platforms and languages. They can also be implemented using HTTP Triggers in Azure Functions. Instead of ID tokens and session cookies, a web API uses an OAuth 2.0 access token to secure its data and to authenticate incoming requests. The caller of a web API appends an access token in the authorization header of an HTTP request, like this:
+You can use the Microsoft identity platform to secure web services, such as your app's RESTful web API. Web APIs can be implemented in numerous platforms and languages. They can also be implemented using HTTP Triggers in Azure Functions. Instead of ID tokens and session cookies, a web API uses an OAuth 2.0 access token to secure its data and to authenticate incoming requests. 
+
+The caller of a web API appends an access token in the authorization header of an HTTP request, like this:
 
 ```HTTP
 GET /api/items HTTP/1.1
@@ -123,7 +125,7 @@ In this flow, the app receives an authorization code from the Microsoft identity
 > [!NOTE]
 > If the application uses the default system webview, check the information about "Confirm My Sign-In" functionality and error code `AADSTS50199` in [Microsoft Entra authentication and authorization error codes](reference-error-codes.md).
 
-## Daemons and server-side apps
+## Server, daemons and scripts
 
 Apps that have long-running processes or that operate without interaction with a user also need a way to access secured resources, such as web APIs. These apps can authenticate and get tokens by using the app's identity, rather than a user's delegated identity, with the OAuth 2.0 client credentials flow. You can prove the app's identity using a client secret or certificate. For more info, see [.NET Core daemon console application using Microsoft identity platform](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2).
 
