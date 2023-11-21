@@ -1,13 +1,13 @@
 ---
 title: Use role-based access control in your Node.js web application
 description: Learn how to configure groups and user roles in your customer's tenant, so you can receive them as claims in a security token for your Node.js application
-services: active-directory
+ 
 author: kengaderdus
 manager: mwongerapk
 
 ms.author: kengaderdus
 ms.service: active-directory
-ms.workload: identity
+ 
 ms.subservice: ciam
 ms.topic: how-to
 ms.date: 06/16/2023

@@ -1,11 +1,11 @@
 ---
 title: Overview of the Woodgrove Groceries demo
 description: Learn about the customer identity and access management solutions for your customer-facing apps that are provided by Microsoft Entra ID for customers.
-services: active-directory
+ 
 author: msmimart
 manager: celestedg
 ms.service: active-directory
-ms.workload: identity
+ 
 ms.subservice: ciam
 ms.topic: conceptual
 ms.date: 05/10/2023

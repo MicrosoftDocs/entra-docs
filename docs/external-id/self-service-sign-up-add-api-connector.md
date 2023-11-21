@@ -1,7 +1,7 @@
 ---
 title: Add API connectors to self-service sign-up flows
 description: Configure a web API to be used in a user flow.
-services: active-directory
+ 
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: how-to
