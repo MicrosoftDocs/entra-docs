@@ -1,18 +1,18 @@
 ---
 title: Get a token in a web app that calls web APIs
 description: Learn how to acquire a token for a web app that calls web APIs
-services: active-directory
+
 author: cilwerner
 manager: CelesteDG
 
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-ms.workload: identity
+
 ms.date: 08/11/2023
 ms.author: cwerner
 ms.reviewer: jmprieur
-ms.custom: aaddev
+ms.custom: 
 #Customer intent: As an application developer, I want to know how to write a web app that calls web APIs by using the Microsoft identity platform.
 ---
 

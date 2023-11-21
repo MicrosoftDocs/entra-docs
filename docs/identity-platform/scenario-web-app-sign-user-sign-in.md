@@ -1,18 +1,18 @@
 ---
 title: Write a web app that signs in/out users
 description: Learn how to build a web app that signs in/out users
-services: active-directory
+
 author: cilwerner
 manager: CelesteDG
 
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-ms.workload: identity
+
 ms.date: 07/14/2020
 ms.author: cwerner
 ms.reviewer: jmprieur
-ms.custom: aaddev
+ms.custom: 
 #Customer intent: As an application developer, I want to know how to write a web app that signs in users by using the Microsoft identity platform.
 ---
 

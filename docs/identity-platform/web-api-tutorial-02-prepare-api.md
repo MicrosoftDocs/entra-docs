@@ -1,7 +1,7 @@
 ---
 title: "Tutorial: Create and configure an ASP.NET Core project for authentication"
 description: "Create and configure the API in an IDE, add configuration for authentication and install required packages"
-services: active-directory
+
 author: cilwerner
 
 ms.service: active-directory

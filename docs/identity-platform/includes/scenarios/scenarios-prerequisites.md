@@ -1,13 +1,13 @@
 ---
 title: include file
 description: include file
-services: active-directory
+
 author: OwenRichards1
 manager: CelesteDG
 
 ms.service: active-directory
 ms.topic: include
-ms.workload: identity
+
 ms.date: 09/25/2020
 ms.author: owenrichards
 ms.reviewer: jmprieur

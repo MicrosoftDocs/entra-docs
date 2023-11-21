@@ -1,16 +1,16 @@
 ---
 title: Access tokens in the Microsoft identity platform
 description: Learn about access tokens used in the Microsoft identity platform.
-services: active-directory
+
 author: cilwerner
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
-ms.workload: identity
+
 ms.topic: conceptual
 ms.date: 8/1/2023
 ms.author: cwerner
-ms.custom: aaddev, curation-claims
+ms.custom:  curation-claims
 ---
 
 # Access tokens in the Microsoft identity platform

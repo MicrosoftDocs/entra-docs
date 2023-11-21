@@ -1,17 +1,17 @@
 ---
 title: "How to: Get a complete list of all apps using Active Directory Authentication Library (ADAL) in your tenant"
 description: In this how-to guide, you get a complete list of all apps that are using ADAL in your tenant.
-services: active-directory
+
 author: SHERMANOUKO
 manager: CelesteDG
 
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: how-to 
-ms.workload: identity
+
 ms.date: 03/03/2022
 ms.author: shermanouko
-ms.custom: aaddev, has-adal-ref
+ms.custom:  has-adal-ref
 ms.reviewer: aiwang, dmwendia
 # Customer intent: As an application developer / IT admin, I need to know / identify which of my apps are using ADAL.
 ---

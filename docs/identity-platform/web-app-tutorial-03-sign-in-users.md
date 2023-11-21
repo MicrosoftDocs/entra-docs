@@ -1,7 +1,7 @@
 ---
 title: "Tutorial: Add sign in to an application"
 description: Add sign in to an ASP.NET Core application using Visual Studio.
-services: active-directory
+
 author: cilwerner
 
 ms.service: active-directory
