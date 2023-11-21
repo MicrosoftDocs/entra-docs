@@ -5,7 +5,6 @@ services: active-directory
 author: OwenRichards1
 manager: CelesteDG
 
-ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
 ms.date: 11/20/2023
