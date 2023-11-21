@@ -78,7 +78,7 @@ User consent happens when a user attempts to sign into an application. The user 
 
 ### Administrator consent
 
-Depending on the permissions they require, some applications might require an administrator to be the one who grants consent. For example, application permissions and many high-privilege delegated permissions can only be consented to by an administrator. 
+Depending on the permissions they require, some applications might require an administrator to be the one who grants consent. For example, application permissions and many high-privilege delegated permissions can only be consented to by an administrator.
 
 Administrators can grant consent for themselves or for the entire organization. For more information about user and admin consent, see [user and admin consent overview](~/identity/enterprise-apps/user-admin-consent-overview.md).
 
