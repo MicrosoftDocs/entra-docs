@@ -9,7 +9,7 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: how-to
-ms.date: 04/06/2023
+ms.date: 11/21/2023
 ms.author: jeedes
 
 ---
@@ -22,7 +22,8 @@ In this article, you learn how to integrate O'Reilly learning platform with Micr
 * Enable your users to be automatically signed-in to O'Reilly learning platform with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
-You need to configure and test Microsoft Entra single sign-on for O'Reilly learning platform in a test environment. O'Reilly learning platform supports both **SP** and **IDP** initiated single sign-on and **Just In Time** user provisioning.
+You need to configure and test Microsoft Entra single sign-on for O'Reilly learning platform in a test environment. O'Reilly learning platform supports both **SP** and **IDP** initiated single sign-on and **Just In Time** user provisioning. O'Reilly learning platform also supports [Automated user provisioning](oreilly-learning-platform-provisioning-tutorial.md).
+
 
 ## Prerequisites
 
