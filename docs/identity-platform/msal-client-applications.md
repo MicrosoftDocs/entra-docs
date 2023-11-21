@@ -8,7 +8,6 @@ manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-ms.workload: identity
 ms.date: 11/20/2023
 ms.author: owenrichards
 ms.reviewer: iambmelt
@@ -83,8 +82,7 @@ The following are some similarities and differences between public and confident
 
 - Both app types maintain a user token cache and can acquire a token silently (when the token is present in the cache). Confidential client apps also have an app token cache for tokens acquired by the app itself.
 - Both app types can manage user accounts and get an account from the user token cache, get an account from its identifier, or remove an account.
-- Public client apps have four ways to acquire a token, through separate authentication flows. Confidential client apps only have three ways to acquire a token and one way to compute the URL of the identity provider authorize endpoint. For more information, see [acquiring tokens](msal-acquire-cache-tokens.md).
-- In MSAL, the client ID, also called the *application ID* or *app ID*, is passed once at the construction of the application. It doesn't need to be passed again when the app acquires a token. This is true for both public and confidential client apps.
+- In MSAL, public client apps have four ways to acquire a token, through separate authentication flows. Confidential client apps only have three ways to acquire a token and one way to compute the URL of the identity provider authorize endpoint. For more information, see [acquiring tokens](msal-acquire-cache-tokens.md). The *client ID* is passed once at the construction of the application and doesn't need to be passed again when the app acquires a token.
 
 Public clients are useful for enabling user-delegated access to protected resources but are unable to prove their own application identity. Confidential clients, on the other hand, can perform both user and application authentication and authorization and must be built with security in mind to ensure that their secrets aren't shared with public clients or other third parties.
 
