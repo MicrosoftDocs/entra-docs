@@ -77,15 +77,16 @@ In general, proving client identity matters when there's a need to authenticate 
 
 **Use up-to-date libraries and SDKs from trusted sources** – The Microsoft identity platform provides various client and server SDKs and middlewares designed to boost your productivity while keeping your applications secure. Libraries such as [Microsoft.Identity.Web](/entra/msal/dotnet/microsoft-identity-web) simplify adding authentication and authorization to web apps and APIs on the Microsoft identity platform. Keeping dependencies updated helps ensure your applications and services benefit from the latest security innovations and updates.
 
-## Comparing the client types
+## Comparing the client types and their capabilities
 
 The following are some similarities and differences between public and confidential client apps:
 
-- Both types of app maintain a user token cache and can acquire a token silently (when the token is already in the token cache). Confidential client apps also have an app token cache for tokens that are for the app itself.
-- Both types of app manage user accounts and can get an account from the user token cache, get an account from its identifier, or remove an account.
-- Public client apps have four ways to acquire a token, through four separate authentication flows. Confidential client apps have three ways to acquire a token and one way to compute the URL of the identity provider authorize endpoint. For more information, see [Acquiring tokens](msal-acquire-cache-tokens.md).
+- Both app types maintain a user token cache and can acquire a token silently (when the token is present in the cache). Confidential client apps also have an app token cache for tokens acquired by the app itself.
+- Both app types can manage user accounts and get an account from the user token cache, get an account from its identifier, or remove an account.
+- Public client apps have four ways to acquire a token, through separate authentication flows. Confidential client apps only have three ways to acquire a token and one way to compute the URL of the identity provider authorize endpoint. For more information, see [acquiring tokens](msal-acquire-cache-tokens.md).
+- In MSAL, the client ID, also called the *application ID* or *app ID*, is passed once at the construction of the application. It doesn't need to be passed again when the app acquires a token. This is true for both public and confidential client apps.
 
-In MSAL, the client ID, also called the *application ID* or *app ID*, is passed once at the construction of the application. It doesn't need to be passed again when the app acquires a token. This is true for both public and confidential client apps. Constructors of confidential client apps are also passed client credentials: the secret they share with the identity provider.
+Public clients are useful for enabling user-delegated access to protected resources but are unable to prove their own application identity. Confidential clients, on the other hand, can perform both user and application authentication and authorization and must be built with security in mind to ensure that their secrets are not shared with public clients or other third parties.
 
 ## See also
 
