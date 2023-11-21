@@ -88,7 +88,7 @@ To solve this problem, you need to make sure that the required plan is still ass
 
 When Microsoft Entra ID attempts to assign a group license to a user whose usage location isn't supported, it fails and records an error on the user.
 
-To solve this problem, remove users from unsupported locations from the licensed group. Alternatively, if the current usage location values don't represent the actual user location, you can modify them so that the licenses are correctly assigned next time (if the new location is supported).
+To solve this problem, remove users from unsupported locations from the licensed group. Or, if the current usage location values don't represent the actual user location, you can modify them so that the licenses are correctly assigned next time (if the new location is supported).
 
 **PowerShell:** PowerShell cmdlets report this error as _ProhibitedInUsageLocationViolation_.
 
@@ -120,7 +120,7 @@ Updating license assignment on a user causes the proxy address calculation to be
 ## LicenseAssignmentAttributeConcurrencyException in audit logs
 
 **Problem:** User has LicenseAssignmentAttributeConcurrencyException for license assignment in audit logs.
-When group-based licensing tries to process concurrent license assignment of same license to a user, this exception is recorded on the user. This usually happens when a user is a member of more than one group with same assigned license. Microsoft Entra ID retries processing the user license until the issue is resolved. There is no action required from the customer to fix this issue.
+When group-based licensing tries to process concurrent license assignment of the same license to a user, this exception is recorded on the user. This usually happens when a user is a member of more than one group with same assigned license. Microsoft Entra ID retries processing the user license until the issue is resolved. There's no action required from the customer to fix this issue.
 
 ## More than one product license assigned to a group
 
@@ -151,7 +151,7 @@ If we try to assign this product on its own to a group, the portal returns a not
 
 To assign this add-on license to a group, we must ensure that the group also contains the prerequisite service plan. For example, we might update an existing group that already contains the full Office 365 E3 product, and then add the add-on product to it.
 
-It is also possible to create a standalone group that contains only the minimum required products to make the add-on work. It can the be used to license only selected users for the add-on product. Based on the previous example, you would assign the following products to the same group:
+It's also possible to create a standalone group that contains only the minimum required products to make the add-on work. It can be used to license only selected users for the add-on product. Based on the previous example, you would assign the following products to the same group:
 
 - Office 365 Enterprise E3 with only the Exchange Online (Plan 2) service plan enabled
 - Microsoft Workplace Analytics
