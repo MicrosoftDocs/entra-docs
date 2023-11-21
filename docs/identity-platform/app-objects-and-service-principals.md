@@ -11,7 +11,7 @@ ms.topic: conceptual
 
 ms.date: 05/22/2023
 ms.author: ryanwi
-ms.custom: identityplatformtop40, has-azure-ad-ps-ref
+ms.custom: has-azure-ad-ps-ref
 ms.reviewer: sureshja
 ---
 

@@ -12,7 +12,7 @@ ms.topic: conceptual
 ms.date: 11/22/2021
 ms.author: owenrichards
 ms.reviewer: jmprieur
-ms.custom:  identityplatformtop40
+ms.custom:  
 #Customer intent: As an application developer, I want to know how to write a desktop app that calls web APIs by using the Microsoft identity platform.
 ---
 

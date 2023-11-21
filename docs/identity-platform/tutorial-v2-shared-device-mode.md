@@ -12,7 +12,7 @@ ms.topic: tutorial
 ms.date: 10/24/2023
 ms.author: henrymbugua
 ms.reviewer: brandwe
-ms.custom:  identityplatformtop40
+ms.custom:  
 ---
 
 # Tutorial: Use shared-device mode in your Android application

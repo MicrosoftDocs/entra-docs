@@ -10,7 +10,7 @@ ms.topic: quickstart
 
 ms.date: 06/29/2023
 ms.author: cwerner
-ms.custom:  identityplatformtop40, mode-other
+ms.custom:  mode-other
 
 #Customer intent: As developer, I want to know how to register my application with the Microsoft identity platform so that the security token service can issue ID and/or access tokens to client applications that request them.
 ---

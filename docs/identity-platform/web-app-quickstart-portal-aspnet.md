@@ -11,7 +11,7 @@ ms.topic: conceptual
 ms.date: 08/16/2022
 ROBOTS: NOINDEX
 ms.author: dmwendia
-ms.custom: devx-track-csharp,  identityplatformtop40, scenarios:getting-started, "languages:ASP.NET", mode-other
+ms.custom: devx-track-csharp,  scenarios:getting-started, "languages:ASP.NET", mode-other
 #Customer intent: As an application developer, I want to see a sample ASP.NET web app that can sign in Microsoft Entra users.
 ---
 

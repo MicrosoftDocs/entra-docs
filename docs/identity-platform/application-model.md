@@ -12,7 +12,7 @@ ms.topic: conceptual
 ms.date: 08/17/2023
 ms.author: ryanwi
 ms.reviewer: jmprieur, saeeda, sureshja, ludwignick
-ms.custom:  identityplatformtop40, scenarios:getting-started
+ms.custom:  scenarios:getting-started
 #Customer intent: As an application developer, I want to understand how to register an application so it can integrate with the Microsoft identity platform.
 ---
 

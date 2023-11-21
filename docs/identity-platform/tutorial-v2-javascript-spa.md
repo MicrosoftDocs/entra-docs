@@ -11,7 +11,7 @@ ms.topic: tutorial
 
 ms.date: 09/26/2022
 ms.author: owenrichards
-ms.custom:  identityplatformtop40, devx-track-js
+ms.custom:  devx-track-js
 ---
 
 # Tutorial: Sign in users and call the Microsoft Graph API from a JavaScript single-page application
