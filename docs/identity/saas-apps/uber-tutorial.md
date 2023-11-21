@@ -9,7 +9,7 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: how-to
-ms.date: 07/07/2023
+ms.date: 11/21/2023
 ms.author: jeedes
 
 ---
@@ -22,7 +22,7 @@ In this article, you'll learn how to integrate Uber with Microsoft Entra ID. Thi
 * Enable your users to be automatically signed-in to Uber with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
-You'll configure and test Microsoft Entra single sign-on for Uber in a test environment. Uber supports **IDP** initiated single sign-on and **Automated user provisioning**.
+You'll configure and test Microsoft Entra single sign-on for Uber in a test environment. Uber supports **IDP** initiated single sign-on and [Automated user provisioning](uber-provisioning-tutorial.md).
 
 ## Prerequisites
 

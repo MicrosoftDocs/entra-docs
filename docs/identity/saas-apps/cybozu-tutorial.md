@@ -9,7 +9,7 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: how-to
-ms.date: 12/15/2022
+ms.date: 11/21/2023
 ms.author: jeedes
 
 ---
@@ -22,7 +22,7 @@ In this article, you'll learn how to integrate Cybozu(cybozu.com) with Microsoft
 * Enable your users to be automatically signed-in to Cybozu(cybozu.com) with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
-You'll configure and test Microsoft Entra single sign-on for Cybozu(cybozu.com) in a test environment. Cybozu(cybozu.com) supports only **SP** initiated single sign-on.
+You'll configure and test Microsoft Entra single sign-on for Cybozu(cybozu.com) in a test environment. Cybozu(cybozu.com) supports only **SP** initiated single sign-on. Cybozu also supports [Automated user provisioning](cybozu-provisioning-tutorial.md).
 
 ## Prerequisites
 

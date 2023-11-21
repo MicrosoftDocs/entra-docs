@@ -9,7 +9,7 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: how-to
-ms.date: 07/11/2023
+ms.date: 11/21/2023
 ms.author: jeedes
 
 ---
@@ -23,6 +23,7 @@ In this article, you'll learn how to integrate Airbase with Microsoft Entra ID. 
 * Manage your accounts in one central location.
 
 You'll configure and test Microsoft Entra single sign-on for Airbase in a test environment. Airbase supports both **SP** and **IDP** initiated single sign-on.
+Airbase also supports [Automated user provisioning](airbase-provisioning-tutorial.md).
 
 ## Prerequisites
 
