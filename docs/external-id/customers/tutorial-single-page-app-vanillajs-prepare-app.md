@@ -1,7 +1,7 @@
 ---
 title: Tutorial - Prepare a Vanilla JavaScript single-page app (SPA) for authentication in a customer tenant 
 description: Learn how to prepare a Vanilla JavaScript single-page app (SPA) for authentication and authorization with your Microsoft Entra ID for customers tenant.
-services: active-directory
+ 
 author: OwenRichards1
 manager: CelesteDG
 

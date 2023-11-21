@@ -1,11 +1,11 @@
 ---
 title: Customize your branding for your customers
 description: Learn how to customize the look and feel of your customers' sign-in experiences.
-services: active-directory
+ 
 author: csmulligan
 manager: celestedg
 ms.service: active-directory
-ms.workload: identity
+ 
 ms.subservice: ciam
 ms.topic: how-to
 ms.date: 10/27/2023

@@ -1,14 +1,14 @@
 ---
 title: Claims challenges, claims requests, and client capabilities
 description: Explanation of claims challenges, claims requests, and client capabilities in the Microsoft identity platform.
-services: active-directory
+
 author: cilwerner
 manager: CelesteDG
 
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: reference
-ms.workload: identity
+
 ms.date: 01/19/2023
 ms.author: cwerner
 ms.reviewer: kkrishna, kylemar

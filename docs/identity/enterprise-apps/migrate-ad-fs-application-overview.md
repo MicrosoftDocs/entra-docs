@@ -1,13 +1,13 @@
 ---
 title: Overview of AD FS application migration (preview)
 description: Learn about the capabilities of the AD FS application migration wizard and the migration status available on its dashboard. Learn the various validation tests that the  application migration generates and how to resolve the validation issues.
-services: active-directory
+
 author: omondiatieno
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: conceptual
-ms.workload: identity
+
 ms.date: 10/25/2023
 ms.author: jomondi
 ms.reviewer: smriti3

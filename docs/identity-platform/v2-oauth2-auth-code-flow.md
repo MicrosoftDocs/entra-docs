@@ -9,7 +9,7 @@ ms.topic: conceptual
 ms.date: 04/17/2023
 ms.author: owenrichards
 ms.reviewer: ludwignick
-ms.custom: aaddev, identityplatformtop40
+ms.custom:  
 ---
 
 # Microsoft identity platform and OAuth 2.0 authorization code flow
@@ -67,7 +67,7 @@ Unless specified otherwise, there are no default values for optional parameters.
 // Line breaks for legibility only
 
 https://login.microsoftonline.com/{tenant}/oauth2/v2.0/authorize?
-client_id=6731de76-14a6-49ae-97bc-6eba6914391e
+client_id=535fb089-9ff3-47b6-9bfb-4f1264799865
 &response_type=code
 &redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
 &response_mode=query
@@ -156,7 +156,7 @@ The hybrid flow is the same as the authorization code flow described earlier but
 // Line breaks for legibility only
 
 https://login.microsoftonline.com/{tenant}/oauth2/v2.0/authorize?
-client_id=6731de76-14a6-49ae-97bc-6eba6914391e
+client_id=535fb089-9ff3-47b6-9bfb-4f1264799865
 &response_type=code%20id_token
 &redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
 &response_mode=fragment
@@ -210,13 +210,13 @@ POST /{tenant}/oauth2/v2.0/token HTTP/1.1
 Host: https://login.microsoftonline.com
 Content-Type: application/x-www-form-urlencoded
 
-client_id=6731de76-14a6-49ae-97bc-6eba6914391e
+client_id=204196ef-b7fd-461f-89b7-f778e1568c41
 &scope=https%3A%2F%2Fgraph.microsoft.com%2Fmail.read
 &code=OAAABAAAAiL9Kn2Z27UubvWFPbm0gLWQJVzCTE9UkP3pSx1aXxUjq3n8b2JRLk4OxVXr...
 &redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
 &grant_type=authorization_code
 &code_verifier=ThisIsntRandomButItNeedsToBe43CharactersLong 
-&client_secret=JqQX2PNo9bpM0uEihUPzyrh    // NOTE: Only required for web apps. This secret needs to be URL-Encoded.
+&client_secret=sampleCredentia1s    // NOTE: Only required for web apps. This secret needs to be URL-Encoded.
 ```
 
 | Parameter  | Required/optional | Description     |
@@ -237,7 +237,7 @@ POST /{tenant}/oauth2/v2.0/token HTTP/1.1               // Line breaks for clari
 Host: login.microsoftonline.com
 Content-Type: application/x-www-form-urlencoded
 
-client_id=6731de76-14a6-49ae-97bc-6eba6914391e
+client_id=535fb089-9ff3-47b6-9bfb-4f1264799865
 &scope=https%3A%2F%2Fgraph.microsoft.com%2Fmail.read
 &code=OAAABAAAAiL9Kn2Z27UubvWFPbm0gLWQJVzCTE9UkP3pSx1aXxUjq3n8b2JRLk4OxVXr...
 &redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F

@@ -1,14 +1,14 @@
 ---
 title: 'Tutorial: Configure Oneflow for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Oneflow.
-services: active-directory
+
 author: twimmers
 writer: twimmers
 manager: jeedes
 ms.assetid: 6af89cdd-956c-4cc2-9a61-98afe7814470
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.topic: tutorial
 ms.date: 08/16/2023
 ms.author: thwimmer

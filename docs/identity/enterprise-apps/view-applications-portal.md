@@ -1,12 +1,12 @@
 ---
 title: 'Quickstart: View enterprise applications'
 description: View the enterprise applications that are registered to use your Microsoft Entra tenant.
-services: active-directory
+
 author: omondiatieno
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
-ms.workload: identity
+
 ms.topic: quickstart
 ms.date: 03/23/2023
 ms.author: jomondi

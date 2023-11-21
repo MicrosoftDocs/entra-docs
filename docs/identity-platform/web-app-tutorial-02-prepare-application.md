@@ -1,7 +1,7 @@
 ---
 title: "Tutorial: Prepare a web application for authentication"
 description: Prepare an ASP.NET Core application for authentication using Visual Studio.
-services: active-directory
+
 author: cilwerner
 
 ms.service: active-directory

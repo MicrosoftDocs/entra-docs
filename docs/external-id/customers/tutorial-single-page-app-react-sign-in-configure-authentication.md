@@ -1,7 +1,7 @@
 ---
 title: Tutorial - Handle authentication flows in a React single-page app
 description: Learn how to configure authentication for a React single-page app (SPA) with your Microsoft Entra ID for customers tenant.
-services: active-directory
+ 
 author: garrodonnell
 manager: CelesteDG
 

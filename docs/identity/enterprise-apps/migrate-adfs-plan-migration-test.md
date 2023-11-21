@@ -1,13 +1,13 @@
 ---
 title: 'Phase 3: Plan migration and testing'
 description: This article describes phase 3 of planning migration of applications from AD FS to Microsoft Entra ID
-services: active-directory
+
 author: omondiatieno
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: conceptual
-ms.workload: identity
+
 ms.date: 05/30/2023
 ms.author: jomondi
 ms.reviewer: gasinh

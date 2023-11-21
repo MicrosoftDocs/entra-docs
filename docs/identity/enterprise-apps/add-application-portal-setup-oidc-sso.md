@@ -1,13 +1,13 @@
 ---
 title: 'Add an OpenID Connect-based single sign-on application'
 description: Learn how to add OpenID Connect-based single sign-on application in Microsoft Entra ID.
-services: active-directory
+
 author: omondiatieno
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: conceptual
-ms.workload: identity
+
 ms.date: 04/14/2023
 ms.author: jomondi
 ms.reviewer: ergreenl

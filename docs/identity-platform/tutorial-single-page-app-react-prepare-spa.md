@@ -1,7 +1,7 @@
 ---
 title: "Tutorial: Prepare an application for authentication"
 description: Register a tenant application and configure it for a React SPA.
-services: active-directory
+
 author: OwenRichards1
 manager: CelesteDG
 

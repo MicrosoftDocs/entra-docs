@@ -1,18 +1,18 @@
 ---
 title: "How to: Build services that are resilient to Microsoft Entra ID OpenID Connect metadata refresh"
 description: Learn how to ensure that your web app or web api is resilient to Microsoft Entra ID OpenID Connect metadata refresh.
-services: active-directory
+
 author: henrymbuguakiarie
 manager: CelesteDG
 
 ms.service: active-directory
 ms.subservice: develop
-ms.workload: identity
+
 ms.topic: how-to
 ms.date: 04/21/2021
 ms.author: henrymbugua
 ms.reviewer: jmprieur, shermanouko
-ms.custom: aaddev
+ms.custom: 
 # Customer intent: As a web app or web API developer, I want to learn how to ensure that my app is resilient to outages due to Microsoft Entra ID OpenID Connect metadata refresh.
 ---
 

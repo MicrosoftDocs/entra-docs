@@ -1,13 +1,13 @@
 ---
 title: Sign in users in a sample ASP.NET browserless app
 description: Use a sample to learn how to configure a sample ASP.NET browserless app.
-services: active-directory
+ 
 author: SHERMANOUKO
 manager: mwongerapk
 
 ms.author: shermanouko
 ms.service: active-directory
-ms.workload: identity
+ 
 ms.subservice: ciam
 ms.topic: sample
 ms.date: 06/23/2023

@@ -2,7 +2,7 @@
 title: Developer guidance for Microsoft Entra Conditional Access authentication context
 description: Developer guidance and scenarios for Microsoft Entra Conditional Access authentication context
 
-services: active-directory
+
 author: cilwerner
 manager: CelesteDG
 
@@ -13,8 +13,8 @@ ms.date: 11/15/2022
 
 ms.author: cwerner
 ms.reviewer: joflore, kkrishna
-ms.workload: identity
-ms.custom: aaddev
+
+ms.custom: 
 ---
 
 # Developer guide to Conditional Access authentication context

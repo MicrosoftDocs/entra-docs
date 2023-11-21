@@ -1,7 +1,7 @@
 ---
 title: "Tutorial: Register a Single-page application with the Microsoft identity platform"
 description: Register an application in a Microsoft Entra tenant.
-services: active-directory
+
 author: OwenRichards1
 manager: CelesteDG
 

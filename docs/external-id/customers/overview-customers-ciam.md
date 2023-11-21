@@ -1,11 +1,11 @@
 ---
 title: Overview - Customer identity access management (CIAM)
 description: Learn about customer identity access management (CIAM), a solution that lets you create secure, customized sign-in experiences for your customer-facing apps and services.
-services: active-directory
+ 
 author: msmimart
 manager: celestedg
 ms.service: active-directory
-ms.workload: identity
+ 
 ms.subservice: ciam
 ms.topic: overview
 ms.date: 06/27/2023

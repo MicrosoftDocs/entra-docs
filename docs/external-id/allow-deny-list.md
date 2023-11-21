@@ -2,7 +2,7 @@
 title: Allow or block invites to specific organizations
 description: Shows how an administrator can use the Microsoft Entra admin center or PowerShell to set an access or blocklist to allow or block B2B users from certain domains.
 
-services: active-directory
+ 
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: how-to

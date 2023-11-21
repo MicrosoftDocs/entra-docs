@@ -1,7 +1,7 @@
 ---
 title: "Tutorial: Call a protected web API from your .NET daemon application"
 description: Learn about how to call a protected web API from your .NET client daemon app. 
-services: active-directory
+ 
 author: SHERMANOUKO
 manager: mwongerapk
 

@@ -1,11 +1,11 @@
 ---
 title: Enable self-service password reset
 description: Learn how to enable self-service password reset so your customers can reset their own passwords without admin assistance.
-services: active-directory
+ 
 author: csmulligan
 manager: CelesteDG
 ms.service: active-directory
-ms.workload: identity
+ 
 ms.subservice: ciam
 ms.topic: how-to
 ms.date: 07/28/2023

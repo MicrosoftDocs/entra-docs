@@ -2,13 +2,13 @@
 title: OnAttributeCollectionStart reference
 titleSuffix: Microsoft identity platform
 description: Reference documentation for a custom authentication extension that invokes the OnAttributeCollectionStart event for External ID customer configurations.
-services: active-directory
+
 author: msmimart
 manager: CelesteDG
 
 ms.service: active-directory
 ms.subservice: develop
-ms.workload: identity
+
 ms.topic: reference
 ms.date: 10/27/2023
 ms.author: mimart
