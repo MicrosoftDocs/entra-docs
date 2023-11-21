@@ -70,7 +70,7 @@ The following user attributes are included:
 
 You can see the status of your pending bulk requests in the **Bulk operation results** page.
 
-:::image type="content" source="./media/users-bulk-download/bulk-center.png" alt-text="Screenshot of checking the status in the Bulk Operations Results page." lightbox="./media/users-bulk-download/bulk-center.png:::
+:::image type="content" source="./media/users-bulk-download/bulk-center.png" alt-text="Screenshot of checking the status in the Bulk Operations Results page." lightbox="./media/users-bulk-download/bulk-center.png":::
 
 ## Bulk download service limits
 
