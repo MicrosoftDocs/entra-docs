@@ -8,7 +8,7 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: enterprise-users
 ms.topic: overview
-ms.date: 06/24/2022
+ms.date: 11/21/2023
 ms.author: barclayn
 ms.reviewer: kexia
 ms.custom: it-pro
@@ -29,19 +29,19 @@ An additional benefit of this work is improved error messaging. Here are some ex
 
 - The username is mistyped or the username has not yet been synced to Microsoft Entra ID:
   
-    ![the username is mistyped or not found](./media/signin-realm-discovery/typo-username.png)
+   :::image type="content" source="./media/signin-realm-discovery/typo-username.png" alt-text="Screenshot of the username is mistyped or not found.":::
   
 - The domain name is mistyped:
-  
-    ![the domain name is mistyped or not found](./media/signin-realm-discovery/typo-domain.png)
+
+   :::image type="content" source="./media/signin-realm-discovery/typo-domain.png" alt-text="Screenshot of the domain name is mistyped or not found.":::
   
 - User tries to sign in with a known consumer domain:
   
-    ![sign-in with a known consumer domain](./media/signin-realm-discovery/consumer-domain.png)
+   :::image type="content" source="./media/signin-realm-discovery/consumer-domain.png" alt-text="Screenshot of sign-in with a known consumer domain.":::
   
 - The password is mistyped but the username is accurate:  
-  
-    ![password is mistyped with good username](./media/signin-realm-discovery/incorrect-password.png)
+
+   :::image type="content" source="media/./media/signin-realm-discovery/incorrect-password.png" alt-text="Screenshot of password is mistyped with good username.":::
   
 > [!IMPORTANT]
 > This feature might have an impact on federated domains relying on the old domain-level Home Realm Discovery to force federation. For updates on when federated domain support will be added, see [Home realm discovery during sign-in for Microsoft 365 services](https://azure.microsoft.com/updates/signin-hrd/). In the meantime, some organizations have trained their employees to sign in with a username that doesn’t exist in Microsoft Entra ID but contains the proper domain name, because the domain names routes users currently to their organization's domain endpoint. The new sign-in behavior doesn't allow this. The user is notified to correct the user name, and they aren't allowed to sign in with a username that does not exist in Microsoft Entra ID.
