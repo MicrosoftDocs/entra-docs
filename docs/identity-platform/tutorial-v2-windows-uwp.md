@@ -8,8 +8,7 @@ manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: tutorial
-
-ms.date: 03/03/2023
+ms.date: 11/10/2023
 ms.author: henrymbugua
 ms.reviewer: jmprieur
 ms.custom: "devx-track-csharp"
