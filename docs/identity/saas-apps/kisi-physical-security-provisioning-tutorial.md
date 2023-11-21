@@ -1,7 +1,7 @@
 ---
 title: 'Tutorial: Configure Kisi Physical Security for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Kisi Physical Security.
-services: active-directory
+
 author: twimmers
 writer: twimmers
 manager: jeedes
@@ -9,7 +9,7 @@ manager: jeedes
 ms.assetid: 2d4840ae-146d-4649-aaf1-5efe35abbd51
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: thwimmer

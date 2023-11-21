@@ -1,13 +1,13 @@
 ---
 title: 'Tutorial: Microsoft Entra integration with Beeline'
 description: Learn how to configure single sign-on between Microsoft Entra ID and Beeline.
-services: active-directory
+
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.topic: tutorial
 ms.date: 02/15/2023
 ms.author: jeedes

@@ -1,14 +1,14 @@
 ---
 title: 'Tutorial: Configure Rootly for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Rootly.
-services: active-directory
+
 author: twimmers
 writer: twimmers
 manager: jeedes
 ms.assetid: ad1c104c-39cb-47cc-bc77-a5ae3e285eba
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.topic: tutorial
 ms.date: 10/27/2023
 ms.author: thwimmer
