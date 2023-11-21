@@ -1,13 +1,13 @@
 ---
 title: Configure Datawiza for Microsoft Entra multifactor authentication and single sign-on to Oracle EBS
 description: Learn how to enable Microsoft Entra multifactor authentication and SSO for an Oracle E-Business Suite application via Datawiza.
-services: active-directory
+
 author: gargi-sinha
 manager: martinco
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: how-to
-ms.workload: identity
+
 ms.date: 01/26/2023
 ms.author: gasinh
 ms.collection: M365-identity-device-management
