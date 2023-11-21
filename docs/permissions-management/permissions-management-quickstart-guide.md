@@ -122,9 +122,9 @@ When you enabled Permissions Management in the Microsoft Entra tenant, an enterp
 
 2. Assign the *Reader* role to the CIEM application to allow Permissions management to read the Microsoft Entra subscriptions in your environment. 
 
-:::image type="content" source="media/permissions-management-quickstart-guide/entra-id-tenant-role-connection-azure-subscriptions.png" alt-text="A diagram showing the connection between the Entra ID role connections to an Azure subscription." lightbox="media/permissions-management-quickstart-guide/entra-id-tenant-role-connection-azure-subscriptions.png":::
-
 :::image type="content" source="media/permissions-management-quickstart-guide/entra-id-roles-sync-azure-environment.png" alt-text="A diagram showing where Entra ID intersect with Azure roles in the Entra ID tenant." lightbox="media/permissions-management-quickstart-guide/entra-id-roles-sync-azure-environment.png":::
+
+:::image type="content" source="media/permissions-management-quickstart-guide/entra-id-tenant-role-connection-azure-subscriptions.png" alt-text="A diagram showing the connection between the Entra ID role connections to an Azure subscription." lightbox="media/permissions-management-quickstart-guide/entra-id-tenant-role-connection-azure-subscriptions.png":::
 
 ### Prerequisites 
 - A user with ```Microsoft.Authorization/roleAssignments/write``` permissions at the subscription or management group scope to assign roles to the CIEM application.
