@@ -71,7 +71,7 @@ You can add permissions to static consent in two different ways in the Microsoft
    1. Locate the **API permissions** pane and select **Add a permission**.
    1. Select the API that you want to access and the permission that you want to request from the list of available options and select **Add permissions**.
 
-      :::image type="content" source="media/howto-update-permissions/add-permissions.png" alt-text="Screenshot of API permissions pane.":::
+      :::image type="content" source="media/howto-update-permissions/add-permissions.png" alt-text="Screenshot of API permissions pane." lightbox="media/howto-update-permissions/add-permissions.png"::
 
 ### Option 2: Add permissions to the application manifest
 
@@ -184,7 +184,7 @@ You can remove permissions from static consent in two different ways in the Micr
    1. Locate the **API permissions** pane and find the permissions you want to remove.
    1. Select the API that you want to remove and select **Revoke admin consent** first and **remove permission** next. It ensures that the granted permission is removed from your tenant.
 
-      :::image type="content" source="media/howto-update-permissions/remove-permissions.png" alt-text="Screenshot shows how to remove permissions via the API permissions pane.":::
+      :::image type="content" source="media/howto-update-permissions/remove-permissions.png" alt-text="Screenshot shows how to remove permissions via the API permissions pane." lightbox="media/howto-update-permissions/remove-permissions.png":::
 
 ### Option 2: From the application manifest
 
