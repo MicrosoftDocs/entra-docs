@@ -23,7 +23,7 @@ For existing apps with its own account system (or other sign-ins from other clou
 
 In this how-to guide, you'll undertake the four steps needed to convert a single tenant app into a Microsoft Entra multitenant app:
 
-1. [Update your application registration to be multitenant](#update-registration-to-be-multi-tenant)
+1. [Update your application registration to be multitenant](#update-registration-to-be-multitenant)
 2. [Update your code to send requests to the `/common` endpoint](#update-your-code-to-send-requests-to-common)
 3. [Update your code to handle multiple issuer values](#update-your-code-to-handle-multiple-issuer-values)
 4. [Understand user and admin consent and make appropriate code changes](#understand-user-and-admin-consent-and-make-appropriate-code-changes)
