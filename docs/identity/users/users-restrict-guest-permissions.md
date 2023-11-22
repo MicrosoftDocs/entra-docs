@@ -42,7 +42,7 @@ We’ve made changes to the existing Azure portal controls for guest user permis
 1. Under **External users**, select **Manage external collaboration settings**.
 1. On the **External collaboration settings** page, select **Guest user access is restricted to properties and memberships of their own directory objects** option.
 
-    ![Microsoft Entra external collaboration settings page](./media/users-restrict-guest-permissions/external-collaboration-settings.png)
+   :::image type="content" source="./media/users-restrict-guest-permissions/external-collaboration-settings.png" alt-text="Screenshot of Microsoft Entra external collaboration settings page.":::
 
 1. Select **Save**. The changes can take up to 15 minutes to take effect for guest users.
 
@@ -61,6 +61,9 @@ POST https://graph.microsoft.com/beta/policies/authorizationPolicy/authorization
 ````
 
 Response should be Success 204.
+
+
+[!INCLUDE [Azure AD PowerShell migration](../../includes/aad-powershell-migration-include.md)]
 
 ### Updating the existing value
 

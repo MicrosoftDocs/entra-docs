@@ -9,7 +9,7 @@ ms.service: active-directory
 ms.subservice: enterprise-users
 ms.topic: how-to
 ms.workload: identity
-ms.date: 05/04/2021
+ms.date: 11/21/2023
 ms.author: rolyon
 ms.reviewer: 
 ms.custom: it-pro
@@ -44,11 +44,11 @@ To close an unmanaged work or school account, follow these steps:
 
 1. On **My data requests**, select **Close account**.
 
-    ![My data requests - Close account](./media/users-close-account/close-account.png)
+   :::image type="content" source="./media/users-close-account/close-account.png" alt-text="Screenshot of My data requests - Close account.":::
 
 1. Review the confirmation message and then select **Yes**.
 
-    ![My data requests - Confirm close](./media/users-close-account/confirm-close.png)
+   :::image type="content" source="./media/users-close-account/confirm-close.png" alt-text="Screenshot of My data requests - Confirm close.":::
 
 ## Next steps
 
