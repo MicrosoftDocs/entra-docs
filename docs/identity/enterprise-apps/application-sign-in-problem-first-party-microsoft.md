@@ -363,7 +363,7 @@ Application access can be blocked because the proper permissions consent operati
 
 - [Perform administrator-level consent for a single-tenant application](#perform-administrator-level-consent-for-a-single-tenant-application)
 
-- [Perform administrator-level consent for a multitenant application](#perform-administrator-level-consent-for-a-multitenant-application)
+- [Perform administrator-level consent for a multitenant application](#perform-administrator-level-consent-for-a-multi-tenant-application)
 
 ### Perform a user-level consent operation
 
