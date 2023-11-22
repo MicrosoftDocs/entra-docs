@@ -192,7 +192,7 @@ The first time you sign in to your application, you're prompted to grant it acce
 
 :::image type="content" source="media/tutorial-v2-javascript-auth-code/spa-02-consent-dialog.png" alt-text="Content dialog displayed in web browser":::
 
-If you consent to the requested permissions, the web applications displays your user name, signifying a successful login:
+If you consent to the requested permissions, the web application displays your user name, signifying a successful login:
 
 :::image type="content" source="media/tutorial-v2-javascript-auth-code/spa-03-signed-in.png" alt-text="Results of a successful sign-in in the web browser":::
 
