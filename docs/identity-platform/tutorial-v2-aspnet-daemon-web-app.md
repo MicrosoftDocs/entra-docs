@@ -1,5 +1,5 @@
 ---
-title: "Tutorial: Build a multi-tenant daemon that accesses Microsoft Graph business data"
+title: "Tutorial: Build a multitenant daemon that accesses Microsoft Graph business data"
 description: In this tutorial, learn how to call an ASP.NET web API protected by Microsoft Entra ID from a Windows desktop (WPF) application. The WPF client authenticates a user, requests an access token, and calls the web API.
 
 author: henrymbuguakiarie
@@ -16,7 +16,7 @@ ms.custom:  scenarios:getting-started, languages:ASP.NET, has-adal-ref
 #Customer intent: As an application developer, I want to know how to set up OpenId Connect authentication in a web application built using Node.js with Express.
 ---
 
-# Tutorial: Build a multi-tenant daemon that uses the Microsoft identity platform
+# Tutorial: Build a multitenant daemon that uses the Microsoft identity platform
 
 In this tutorial, you download and run an ASP.NET daemon web app that demonstrates using the OAuth 2.0 client credentials grant to get an access token to call the Microsoft Graph API.
 
@@ -42,7 +42,7 @@ The app is built as an ASP.NET MVC application. It uses the OWIN OpenID Connect 
 
 The "daemon" component in this sample is an API controller, `SyncController.cs`. When the controller is called, it pulls in a list of users in the customer's Microsoft Entra tenant from Microsoft Graph. `SyncController.cs` is triggered by an AJAX call in the web application. It uses the [Microsoft Authentication Library (MSAL) for .NET](msal-overview.md) to acquire an access token for Microsoft Graph.
 
-Because the app is a multi-tenant app for Microsoft business customers, it must provide a way for customers to "sign up" or "connect" the application to their company data. During the connection flow, a Global Administrator first grants *application permissions* directly to the app so that it can access company data in a non-interactive fashion, without the presence of a signed-in user. The majority of the logic in this sample shows how to achieve this connection flow by using the identity platform's [admin consent](./permissions-consent-overview.md#administrator-consent) endpoint.
+Because the app is a multitenant app for Microsoft business customers, it must provide a way for customers to "sign up" or "connect" the application to their company data. During the connection flow, a Global Administrator first grants *application permissions* directly to the app so that it can access company data in a non-interactive fashion, without the presence of a signed-in user. The majority of the logic in this sample shows how to achieve this connection flow by using the identity platform's [admin consent](./permissions-consent-overview.md#administrator-consent) endpoint.
 
 ![Diagram shows UserSync App with three local items connecting to Azure, with Start dot Auth acquiring a token interactively to connect to Microsoft Entra ID, AccountController getting admin consent to connect to Microsoft Entra ID, and SyncController reading user to connect to Microsoft Graph.](./media/tutorial-v2-aspnet-daemon-webapp/topology.png)
 
