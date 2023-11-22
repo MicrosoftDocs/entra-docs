@@ -11,7 +11,7 @@ ms.service: active-directory
 ms.subservice: enterprise-users
 ms.topic: how-to
 ms.workload: identity
-ms.date: 09/08/2023
+ms.date: 11/16/2023
 ms.author: barclayn
 ms.reviewer: sumitp
 ms.custom: it-pro
@@ -36,11 +36,11 @@ In this example, the Microsoft Entra organization contains a security group call
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [License Administrator](~/identity/role-based-access-control/permissions-reference.md#license-administrator).
 1. Select Microsoft Entra ID.
 
-1. Browse to **Billing** > **Licenses** to open a page where you can see and manage all licensable products in the organization.
+1. Browse to **Identity** > **Billing** > **Licenses** to open a page where you can see and manage all licensable products in the organization.
 
 1. Under **All products**, select both Office 365 Enterprise E5 and Enterprise Mobility + Security E3 by selecting the product names. To start the assignment, select **Assign** at the top of the page.
 
-   ![Select products to assign licenses](./media/licensing-groups-assign/licenses-all-products-assign.png)
+   :::image type="content" source="./media/licensing-groups-assign/licenses-all-products-assign.png" alt-text="Screenshot of selecting products to assign licenses.":::
   
 1. On the **Assign license** page, select **Users and groups** to open a list of users and groups.
 
@@ -51,7 +51,7 @@ In this example, the Microsoft Entra organization contains a security group call
 
 1. On the **Assign license** page, click **Assignment options**, which displays all service plans included in the two products that we selected previously. Find **Yammer Enterprise** and turn it **Off** to disable that service from the product license. Confirm by clicking **OK** at the bottom of **License options**.
 
-   ![select service plans for licenses](./media/licensing-groups-assign/assignment-options.png)
+   :::image type="content" source="./media/licensing-groups-assign/assignment-options.png" alt-text="Screenshot of select service plans for licenses.":::
   
 1. To complete the assignment, on the **Assign license** page, click **Assign** at the bottom of the page.
 
@@ -71,7 +71,7 @@ When assign licenses to a group, Microsoft Entra ID processes all existing membe
 
    - Information about user license assignments that are in an error state.
 
-   ![licensing errors and license status](./media/licensing-groups-assign/assignment-errors.png)
+   :::image type="content" source="./media/licensing-groups-assign/assignment-errors.png" alt-text="Screenshot of licensing errors and license status.":::
 
 1. See more detailed information about license processing under **Microsoft Entra ID** >  **Groups** > **All groups** > *group name* > **Audit logs**. Check the following activities:
 
@@ -87,11 +87,11 @@ When assign licenses to a group, Microsoft Entra ID processes all existing membe
 1. On the group page, select **Licenses**. The notification on top of the page shows that there are 10 users that licenses couldn't be assigned to. Open it to see a list of all users in a licensing error state for this group.
 1. The **Failed assignments** column tells us that both product licenses couldn't be assigned to the users. The **Top reason for failure** column contains the cause of the failure. In this case, it's **Conflicting service plans**.
 
-   ![licenses that couldn't be assigned](./media/licensing-groups-assign/failed-assignments.png)
+   :::image type="content" source="./media/licensing-groups-assign/failed-assignments.png" alt-text="Screenshot of licenses that couldn't be assigned.":::
 
 1. Select a user to open the user's **Licenses** page. This page shows all licenses that are currently assigned to the user. In this example, the user has the Office 365 Enterprise E1 license that was inherited from the **Kiosk users** group. This conflicts with the E3 license that the system tried to apply from the **HR Department** group. As a result, none of the licenses from that group has been assigned to the user.
 
-   ![View all license conflicts for a user](./media/licensing-groups-assign/user-licence-conflicting-service-plans.png)
+   :::image type="content" source="./media/licensing-groups-assign/user-licence-conflicting-service-plans.png" alt-text="Screenshot of the view of all license conflicts for a user.":::
 
 1. To solve this conflict, remove the user from the **Kiosk users** group. After Microsoft Entra ID processes the change, the **HR Department** licenses are correctly assigned.
 

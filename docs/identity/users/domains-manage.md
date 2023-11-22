@@ -33,12 +33,13 @@ When your organization is created, the initial domain name, such as ‘contoso.o
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 1. Select Microsoft Entra ID.
 3. Select **Custom domain names**.
-  
-   ![Opening the user management page](./media/domains-manage/add-custom-domain.png)
+
+   :::image type="content" source="./media/domains-manage/add-custom-domain.png" alt-text="Screenshot of opening the user management page.":::
+
 4. Select the name of the domain that you want to be the primary domain.
 5. Select the **Make primary** command. Confirm your choice when prompted.
-  
-   ![Make a domain name the primary](./media/domains-manage/make-primary-domain.png)
+
+   :::image type="content" source="./media/domains-manage/make-primary-domain.png" alt-text="Screenshot of making a domain name the primary.":::
 
 You can change the primary domain name for your organization to be any verified custom domain that isn't federated. Changing the primary domain for your organization won't change the user name for any existing users.
 
@@ -91,7 +92,7 @@ The following actions are performed as part of the **ForceDelete** operation:
 An error is returned when:
 
 * The number of objects to be renamed is greater than 1000
-* One of the applications to be renamed is a multi-tenant app
+* One of the applications to be renamed is a multitenant app
 
 ## Best Practices for Domain Hygiene
 

@@ -1,11 +1,11 @@
 ---
 title: Add an application to a user flow
 description: Learn how to add an application to a user flow to associate the application with a sign-up and sign-in user experience. Get guidance for updating the application configuration with application registration and tenant information.
-services: active-directory
+ 
 author: msmimart
 manager: celestedg
 ms.service: active-directory
-ms.workload: identity
+ 
 ms.subservice: ciam
 ms.topic: how-to
 ms.date: 07/24/2023

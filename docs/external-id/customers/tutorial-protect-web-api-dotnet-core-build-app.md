@@ -1,13 +1,13 @@
 ---
 title: "Tutorial: Secure an ASP.NET web API registered in a customer tenant"
 description: Learn how to secure a ASP.NET web API registered in the Microsoft Entra External ID for customer's tenant
-services: active-directory
+ 
 author: SHERMANOUKO
 manager: mwongerapk
 
 ms.author: shermanouko
 ms.service: active-directory
-ms.workload: identity
+ 
 ms.subservice: ciam
 ms.topic: tutorial
 ms.date: 07/27/2023

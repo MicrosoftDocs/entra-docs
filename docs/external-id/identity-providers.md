@@ -1,7 +1,7 @@
 ---
 title: Identity providers for External Identities
 description: Learn how to use Microsoft Entra ID as your default identity provider for sharing with external users.
-services: active-directory
+ 
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: conceptual

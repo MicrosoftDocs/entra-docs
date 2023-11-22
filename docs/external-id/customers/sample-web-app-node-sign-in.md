@@ -1,13 +1,13 @@
 ---
 title: Sign in users in a sample Node.js web application 
 description: Learn how to configure a sample web app to sign in and sign out users.
-services: active-directory
+ 
 author: kengaderdus
 manager: mwongerapk
 
 ms.author: kengaderdus
 ms.service: active-directory
-ms.workload: identity
+ 
 ms.subservice: ciam
 ms.topic: sample
 ms.date: 06/23/2023

@@ -1,13 +1,13 @@
 ---
 title: Tutorial to configure Secure Hybrid Access with Microsoft Entra ID and Datawiza
 description: Learn to use Datawiza and Microsoft Entra ID to authenticate users and give them access to on-premises and cloud apps.
-services: active-directory
+
 author: gargi-sinha
 manager: martinco
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: how-to
-ms.workload: identity
+
 ms.date: 01/23/2023
 ms.author: gasinh
 ms.collection: M365-identity-device-management

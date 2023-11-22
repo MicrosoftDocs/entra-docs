@@ -1,16 +1,16 @@
 ---
 title: Access tokens in the Microsoft identity platform
 description: Learn about access tokens used in the Microsoft identity platform.
-services: active-directory
+
 author: cilwerner
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
-ms.workload: identity
+
 ms.topic: conceptual
 ms.date: 8/1/2023
 ms.author: cwerner
-ms.custom: aaddev, curation-claims
+ms.custom:  curation-claims
 ---
 
 # Access tokens in the Microsoft identity platform
@@ -163,7 +163,7 @@ The following information describes the metadata document:
 
 Doing signature validation is outside the scope of this document. There are many open-source libraries available for helping with signature validation if necessary.  However, the Microsoft identity platform has one token signing extension to the standards, which are custom signing keys.
 
-If the application has custom signing keys as a result of using the [claims-mapping](./saml-claims-customization.md) feature, append an `appid` query parameter that contains the application ID. For validation, use `jwks_uri` that points to the signing key information of the application. For example: `https://login.microsoftonline.com/{tenant}/.well-known/openid-configuration?appid=6731de76-14a6-49ae-97bc-6eba6914391e` contains a `jwks_uri` of `https://login.microsoftonline.com/{tenant}/discovery/keys?appid=6731de76-14a6-49ae-97bc-6eba6914391e`.
+If the application has custom signing keys as a result of using the [claims-mapping](./saml-claims-customization.md) feature, append an `appid` query parameter that contains the application ID. For validation, use `jwks_uri` that points to the signing key information of the application. For example: `https://login.microsoftonline.com/{tenant}/.well-known/openid-configuration?appid=535fb089-9ff3-47b6-9bfb-4f1264799865` contains a `jwks_uri` of `https://login.microsoftonline.com/{tenant}/discovery/keys?appid=535fb089-9ff3-47b6-9bfb-4f1264799865`.
 
 ### Validate the issuer
 

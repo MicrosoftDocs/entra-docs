@@ -1,11 +1,11 @@
 ---
 title: Define custom attributes
 description: Learn how to create and define new custom attributes to be collected from users during sign-up and sign-in.
-services: active-directory
+ 
 author: msmimart
 manager: celestedg
 ms.service: active-directory
-ms.workload: identity
+ 
 ms.subservice: ciam
 ms.topic: how-to
 ms.date: 08/31/2023

@@ -1,18 +1,18 @@
 ---
 title: Build a daemon app that calls web APIs
 description: Learn how to build a daemon app that calls web APIs
-services: active-directory
+
 author: Dickson-Mwendia
 manager: CelesteDG
 
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-ms.workload: identity
+
 ms.date: 12/19/2022
 ms.author: dmwendia
 ms.reviewer: jmprieur
-ms.custom: aaddev, identityplatformtop40, engagement-fy23
+ms.custom:  
 #Customer intent: As an application developer, I want to know how to write a daemon app that can call web APIs by using the Microsoft identity platform.
 ---
 

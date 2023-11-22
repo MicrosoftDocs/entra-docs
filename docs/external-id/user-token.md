@@ -2,7 +2,7 @@
 title: Understand user tokens in B2B collaboration
 description: User token reference for Microsoft Entra B2B collaboration.
 
-services: active-directory
+ 
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: conceptual
@@ -12,7 +12,7 @@ ms.author: cmulligan
 author: csmulligan
 manager: celestedg
 
-ms.collection: engagement-fy23, M365-identity-device-management
+ms.collection: M365-identity-device-management
 
 # Customer intent: As a tenant administrator, I want to know what the token looks like for a B2B collaboration user in the resource tenant.
 ---

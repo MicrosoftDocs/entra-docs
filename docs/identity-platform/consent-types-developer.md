@@ -1,12 +1,12 @@
 ---
 title: Microsoft identity platform developers' guide to requesting permissions through consent
 description: Learn how developers can request for permissions through consent in the Microsoft identity platform endpoint.
-services: active-directory
+
 author: omondiatieno
 manager: celesteDG
 ms.service: active-directory
 ms.subservice: develop
-ms.workload: identity
+
 ms.topic: conceptual
 ms.date: 11/01/2022
 ms.author: jomondi
@@ -42,7 +42,7 @@ In an [OpenID Connect or OAuth 2.0](./v2-protocols.md) authorization request, an
 
 ```HTTP
 GET https://login.microsoftonline.com/common/oauth2/v2.0/authorize?
-client_id=6731de76-14a6-49ae-97bc-6eba6914391e
+client_id=535fb089-9ff3-47b6-9bfb-4f1264799865
 &response_type=code
 &redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
 &response_mode=query
@@ -168,7 +168,7 @@ Content-Type: application/json
 
 {
     "grant_type": "authorization_code",
-    "client_id": "6731de76-14a6-49ae-97bc-6eba6914391e",
+    "client_id": "535fb089-9ff3-47b6-9bfb-4f1264799865",
     "scope": "https://microsoft.graph.com/Mail.Read https://microsoft.graph.com/mail.send",
     "code": "AwABAAAAvPM1KaPlrEqdFSBzjqfTGBCmLdgfSTLEMPGYuNHSUYBrq...",
     "redirect_uri": "https://localhost/myapp",

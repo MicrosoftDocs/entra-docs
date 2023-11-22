@@ -6,7 +6,7 @@ author: omondiatieno
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
-ms.custom: 
+ms.custom:
 ms.topic: overview
 ms.date: 11/17/2023
 ms.author: jomondi

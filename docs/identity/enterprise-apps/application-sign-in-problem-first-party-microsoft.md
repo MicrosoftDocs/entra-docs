@@ -1,12 +1,12 @@
 ---
 title: Problems signing in to a Microsoft application
 description: Troubleshoot common problems faced when signing in to first-party Microsoft Applications using Microsoft Entra ID (like Microsoft 365).
-services: active-directory
+
 author: omondiatieno
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
-ms.workload: identity
+
 ms.topic: troubleshooting
 ms.date: 09/07/2023
 ms.author: jomondi

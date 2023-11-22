@@ -7,7 +7,7 @@ manager: CelesteDG
 ms.date: 12/08/2022
 ms.topic: reference
 ms.subservice: develop
-ms.custom: aaddev
+ms.custom: 
 ms.service: active-directory
 ms.reviewer: phsignor, jawoods
 ---

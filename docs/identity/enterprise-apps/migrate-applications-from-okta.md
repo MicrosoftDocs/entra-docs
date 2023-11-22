@@ -2,11 +2,11 @@
 
 title: Tutorial to migrate your applications from Okta to Microsoft Entra ID
 description: Learn how to migrate your applications from Okta to Microsoft Entra ID.
-services: active-directory
+
 author: gargi-sinha
 manager: martinco
 ms.service: active-directory
-ms.workload: identity
+
 ms.topic: how-to
 ms.date: 12/14/2022
 ms.author: gasinh

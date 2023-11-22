@@ -1,17 +1,18 @@
 ---
 title: Application types for the Microsoft identity platform
 description: The types of apps and scenarios supported by the Microsoft identity platform.
-services: active-directory
+
 author: cilwerner
 manager: CelesteDG
 
 ms.service: active-directory
 ms.subservice: develop
+
 ms.topic: conceptual
 ms.date: 11/17/2023
 ms.author: cwerner
 ms.reviewer: saeeda, jmprieur
-ms.custom: aaddev, fasttrack-edit, devx-track-js
+ms.custom: fasttrack-edit, devx-track-js
 
 # Customer intent: As a developer or admin in the Microsoft identity platform, I want to understand the different types of applications supported by the Microsoft identity platform, so that I can choose the right type of application for my scenario.
 ---

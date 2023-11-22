@@ -1,13 +1,13 @@
 ---
 title: Microsoft Entra SSO integration with Movement by project44
 description: Learn how to configure single sign-on between Microsoft Entra ID and Movement by project44.
-services: active-directory
+
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.topic: how-to
 ms.date: 11/08/2023
 ms.author: jeedes
