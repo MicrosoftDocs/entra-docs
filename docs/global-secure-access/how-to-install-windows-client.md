@@ -18,6 +18,9 @@ The Global Secure Access Client acquires traffic using a lightweight filter (LWF
 ## Prerequisites
 
 - The Global Secure Access Client is supported on 64-bit versions of Windows 11 or Windows 10.
+   - Azure Virtual Desktop single-session is supported.
+   - Azure Virtual Desktop multi-session is not supported.
+   - Windows 365 is supported.
 - Devices must be either Microsoft Entra joined or Microsoft Entra hybrid joined. 
    - Microsoft Entra registered devices aren't supported.
 - Local administrator credentials are required for installation.
