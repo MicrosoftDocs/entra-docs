@@ -6,6 +6,7 @@ ms.topic: include
 ms.date: 11/22/2023
 ms.author: kengaderdus
 ---
+
 To specify your app type to your app registration, follow these steps:
 
 1. Under **Manage**, select **Authentication**.

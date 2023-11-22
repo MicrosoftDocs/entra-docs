@@ -7,8 +7,6 @@ ms.date: 06/09/2023
 ms.author: kengaderdus
 ---
 
-## Add a redirect URI
-
 To specify your app type to your app registration, follow these steps:
 
 1. Under **Manage**, select **Authentication**.
