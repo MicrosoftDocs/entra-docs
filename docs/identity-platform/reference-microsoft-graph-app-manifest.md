@@ -14,7 +14,7 @@ ms.custom: aaddev
 ms.reviewer: sureshja
 ---
 
-# Microsoft Graph app manifest
+# App manifest
 
 The application manifest contains all the attributes and their values of an app registration in the Microsoft identity platform. Each app registration is stored as a Microsoft Graph app object.
 

@@ -14,7 +14,10 @@ ms.custom: aaddev
 ms.reviewer: sureshja
 ---
 
-# Microsoft Entra app manifest
+# Microsoft Entra app manifest (Azure AD Graph format)
+
+> [!WARNING] On [date], the app manifest in Azure Active Directory (Azure AD) Graph format is deprecated. You must [migrate your app and app manifest](/entra/identity-platform/migrate-app-manifest) from Azure AD Graph format to Microsoft Graph format.  
+
 
 The application manifest contains a definition of all the attributes of an application object in the Microsoft identity platform. It also serves as a mechanism for updating the application object. For more info on the Application entity and its schema, see the [Graph API Application entity documentation](/graph/api/resources/application).
 
