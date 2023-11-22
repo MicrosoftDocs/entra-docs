@@ -71,7 +71,7 @@ You can add permissions to static consent in two different ways in the Microsoft
    1. Locate the **API permissions** pane and select **Add a permission**.
    1. Select the API that you want to access and the permission that you want to request from the list of available options and select **Add permissions**.
 
-      :::image type="content" source="media/howto-update-permissions/api-permissions.png" alt-text="Screenshot of API permissions pane.":::
+      :::image type="content" source="media/howto-update-permissions/add-permissions.png" alt-text="Screenshot of API permissions pane.":::
 
 ### Option 2: Add permissions to the application manifest
 
