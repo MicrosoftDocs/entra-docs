@@ -1,7 +1,7 @@
 ---
 title: "Tutorial: Implement a protected endpoint to your API"
 description: Protect the endpoint of an API, then run it to ensure it's listening for HTTP requests.
-services: active-directory
+
 author: cilwerner
 
 ms.service: active-directory

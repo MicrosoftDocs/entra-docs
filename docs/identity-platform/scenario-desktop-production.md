@@ -1,18 +1,18 @@
 ---
 title: Move desktop app calling web APIs to production
 description: Learn how to move a desktop app that calls web APIs to production
-services: active-directory
+
 author: OwenRichards1
 manager: CelesteDG
 
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-ms.workload: identity
+
 ms.date: 10/30/2019
 ms.author: owenrichards
 ms.reviewer: jmprieur
-ms.custom: aaddev
+ms.custom: 
 #Customer intent: As an application developer, I want to know how to write a desktop app that calls web APIs by using the Microsoft identity platform.
 ---
 

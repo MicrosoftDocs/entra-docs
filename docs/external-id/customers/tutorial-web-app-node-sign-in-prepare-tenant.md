@@ -1,13 +1,13 @@
 ---
 title: 'Tutorial: Prepare your customer tenant to sign in users in a Node.js web app'
 description: Learn how to prepare your Microsoft Entra ID for customers tenant to sign in users in your Node.js web application.
-services: active-directory
+ 
 author: kengaderdus
 manager: mwongerapk
 
 ms.author: kengaderdus
 ms.service: active-directory
-ms.workload: identity
+ 
 ms.subservice: ciam
 ms.topic: tutorial
 ms.date: 07/27/2023

@@ -2,7 +2,7 @@
 title: B2B collaboration API and customization
 description: Microsoft Entra B2B collaboration supports your cross-company relationships by enabling business partners to selectively access your corporate applications.
 
-services: active-directory
+ 
 ms.service: active-directory
 ms.subservice: B2B
 ms.custom: has-azure-ad-ps-ref
@@ -13,7 +13,7 @@ ms.author: cmulligan
 author: csmulligan
 manager: celestedg
 
-ms.collection: engagement-fy23, M365-identity-device-management
+ms.collection: M365-identity-device-management
 # Customer intent: As a tenant administrator, I want to customize the invitation process with the API.
 ---
 # Microsoft Entra B2B collaboration API and customization

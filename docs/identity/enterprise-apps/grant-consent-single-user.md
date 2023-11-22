@@ -1,12 +1,12 @@
 ---
 title: Grant consent on behalf of a single user
 description: Learn how to grant consent on behalf of a single user when user consent is disabled or restricted.
-services: active-directory
+
 author: omondiatieno
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
-ms.workload: identity
+
 ms.topic: how-to
 ms.date: 12/09/2022
 ms.author: jomondi

@@ -1,13 +1,13 @@
 ---
 title: Microsoft Entra SSO integration with Island
 description: Learn how to configure single sign-on between Microsoft Entra ID and Island.
-services: active-directory
+
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.topic: how-to
 ms.date: 03/09/2023
 ms.author: jeedes

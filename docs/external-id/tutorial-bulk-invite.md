@@ -3,7 +3,7 @@
 title: Bulk invite guest users for B2B collaboration tutorial
 description: In this tutorial, you learn how to send bulk invitations using a CSV file to external Microsoft Entra B2B collaboration users. 
 
-services: active-directory
+ 
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: tutorial
@@ -15,8 +15,8 @@ manager: CelesteDG
 
 # Customer intent: As a tenant administrator, I want to send B2B invitations to multiple external users at the same time so that I can avoid having to send individual invitations to each user.
 
-ms.collection: engagement-fy23, M365-identity-device-management
-ms.custom: engagement-fy23
+ms.collection: M365-identity-device-management
+ms.custom:  
 ---
 
 # Tutorial: Bulk invite Microsoft Entra B2B collaboration users

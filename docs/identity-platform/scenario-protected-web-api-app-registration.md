@@ -10,7 +10,7 @@ ms.topic: conceptual
 ms.date: 01/27/2022
 ms.author: cwerner
 ms.reviewer: jmprieur
-ms.custom: aaddev
+ms.custom: 
 # Customer intent: As an application developer, I want to know how to write a protected web API using the Microsoft identity platform for developers.
 ---
 

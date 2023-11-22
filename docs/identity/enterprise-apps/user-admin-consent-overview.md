@@ -1,12 +1,12 @@
 ---
 title: Overview of user and admin consent
 description: Learn about the fundamental concepts of user and admin consent in Microsoft Entra ID
-services: active-directory
+
 author: omondiatieno
 manager: celesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
-ms.workload: identity
+
 ms.topic: overview
 ms.date: 04/04/2023
 ms.author: jomondi

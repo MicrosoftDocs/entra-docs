@@ -1,17 +1,17 @@
 ---
 title: Azure Single Sign Out SAML Protocol
 description: This article describes the Single Sign-Out SAML Protocol in Microsoft Entra ID
-services: active-directory
+
 author: OwenRichards1
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
-ms.workload: identity
+
 ms.topic: reference
 ms.date: 05/30/2023
 ms.author: owenrichards
 ms.reviewer: kenwith
-ms.custom: aaddev, engagement-fy23
+ms.custom:  
 ---
 
 # Single Sign-Out SAML Protocol

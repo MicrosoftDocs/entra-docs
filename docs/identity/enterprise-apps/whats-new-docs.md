@@ -5,7 +5,7 @@ ms.date: 11/02/2023
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: reference
-ms.workload: identity
+
 ms.author: jomondi
 author: omondiatieno
 manager: CelesteDG

@@ -1,12 +1,12 @@
 ---
 title: Manage resources with Microsoft Graph
 description: Learn how to manage user resources in a Microsoft Entra ID for customers tenant by calling the Microsoft Graph API and using an application identity to automate the process.
-services: active-directory
+ 
 author: garrodonnell
 manager: celested
 ms.author: godonnell
 ms.service: active-directory
-ms.workload: identity
+ 
 ms.subservice: ciam
 ms.topic: how-to
 ms.date: 09/04/2023

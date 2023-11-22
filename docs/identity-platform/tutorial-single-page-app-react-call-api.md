@@ -1,7 +1,7 @@
 ---
 title: "Tutorial: Call an API from a React single-page app"
 description: Call an API from a React single-page app.
-services: active-directory
+
 author: OwenRichards1
 
 ms.service: active-directory

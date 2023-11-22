@@ -2,7 +2,7 @@
 title: Sync local partner accounts to cloud as B2B users
 description: Give locally managed external partners access to both local and cloud resources using the same credentials with Microsoft Entra B2B collaboration.
 
-services: active-directory
+ 
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: how-to
