@@ -89,5 +89,5 @@ Preauthorization allows a resource application owner to grant permissions withou
 - [Microsoft identity platform delegated access scenario](delegated-access-primer.md)
 - [User and admin consent in Microsoft Entra ID](~/identity/enterprise-apps/user-admin-consent-overview.md)
 - [Scopes and permissions in the Microsoft identity platform](scopes-oidc.md)
-- [Convert single-tenant app to multi-tenant on Microsoft Entra ID](./howto-convert-app-to-be-multi-tenant.md)
+- [Convert single-tenant app to multitenant on Microsoft Entra ID](./howto-convert-app-to-be-multi-tenant.md)
 - [Microsoft Entra Microsoft Q&A](/answers/tags/455/entra-id)
