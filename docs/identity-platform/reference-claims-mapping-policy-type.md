@@ -275,7 +275,7 @@ Restricted Claim type (URI):
 - `http://schemas.xmlsoap.org/ws/2009/09/identity/claims/actor`
 
 
-These claims are restricted by default, but aren't restricted if you [set the AcceptMappedClaims property](saml-claims-customization.md) to `true` in your app manifest *or* have a [custom signing key](saml-claims-customization.md):
+These claims are restricted by default, but aren't restricted if you have a [custom signing key](jwt-claims-customization.md#configure-a-custom-signing-key). Avoid setting `acceptMappedClaims` in the app manifest.
 
 - `http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname`
 - `http://schemas.microsoft.com/ws/2008/06/identity/claims/primarysid`
@@ -283,7 +283,7 @@ These claims are restricted by default, but aren't restricted if you [set the Ac
 - `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/sid`
 - `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/x500distinguishedname`
 
-These claims are restricted by default, but aren't restricted if you have a [custom signing key](saml-claims-customization.md):
+These claims are restricted by default, but aren't restricted if you have a [custom signing key](jwt-claims-customization.md#configure-a-custom-signing-key):
 
  - `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/upn`
  - `http://schemas.microsoft.com/ws/2008/06/identity/claims/role`
