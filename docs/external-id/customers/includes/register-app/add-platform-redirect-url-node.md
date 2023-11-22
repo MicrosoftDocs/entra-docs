@@ -13,5 +13,3 @@ To specify your app type to your app registration, follow these steps:
 1. On the **Platform configurations** page, select **Add a platform**, and then select **Web** option.
 1. For the **Redirect URIs** enter `http://localhost:3000/auth/redirect`.
 1. Select **Configure** to save your changes.
-1. On the **Platform configurations** page, under **Web**, select **Add URI**, then enter `http://localhost:3000/`.
-1. Select **Configure** to save your changes.
