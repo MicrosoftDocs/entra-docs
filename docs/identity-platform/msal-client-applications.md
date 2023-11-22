@@ -27,7 +27,7 @@ The Microsoft Authentication Library (MSAL) defines two types of clients; public
   | ![Browserless API](./media/hub/app-type-daemon-console.svg) Browserless API | ![Web API](./media/hub/app-type-api.svg) Web API |
   | ![Mobile app](./media/hub/app-type-mobile.svg) Mobile app | ![Daemon/service](./media/hub/app-type-daemon-console.svg) Service/daemon |
 
-## Public and client applications authorization
+## Public client and confidential client authorization
 
 When examining the public or confidential nature of a given client, we're evaluating the ability of that client to prove its identity to the authorization server. This is important because the authorization server must be able to trust the identity of the client in order to issue access tokens.
 
@@ -82,7 +82,7 @@ The following are some similarities and differences between public and confident
 
 - Both app types maintain a user token cache and can acquire a token silently (when the token is present in the cache). Confidential client apps also have an app token cache for tokens acquired by the app itself.
 - Both app types can manage user accounts and get an account from the user token cache, get an account from its identifier, or remove an account.
-- In MSAL, public client apps have four ways to acquire a token, through separate authentication flows. Confidential client apps only have three ways to acquire a token and one way to compute the URL of the identity provider authorize endpoint. For more information, see [acquiring tokens](msal-acquire-cache-tokens.md). The *client ID* is passed once at the construction of the application and doesn't need to be passed again when the app acquires a token.
+- In MSAL, public client apps have four ways to acquire a token, through separate authentication flows. Confidential client apps only have three ways to acquire a token and one way to compute the URL of the identity provider authorize endpoint. The *client ID* is passed once at the construction of the application and doesn't need to be passed again when the app acquires a token. For more information, see [acquiring tokens](msal-acquire-cache-tokens.md).
 
 Public clients are useful for enabling user-delegated access to protected resources but are unable to prove their own application identity. Confidential clients, on the other hand, can perform both user and application authentication and authorization and must be built with security in mind to ensure that their secrets aren't shared with public clients or other third parties.
 
