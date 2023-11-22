@@ -11,6 +11,7 @@ manager: amycolannino
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
 ---
+
 # Conditional Access: Filter for devices
 
 When creating Conditional Access policies, administrators have asked for the ability to target or exclude specific devices in their environment. The condition filter for devices gives administrators this capability. Now you can target specific devices using [supported operators and properties for device filters](#supported-operators-and-device-properties-for-filters) and the other available assignment conditions in your Conditional Access policies.
@@ -133,6 +134,9 @@ The following device attributes can be used with the filter for devices conditio
 
 > [!NOTE] 
 > The `Contains` and the `NotContains` operators work differently depending on attribute types. For string attributes such as `operatingSystem` and `model`, the `Contains` operator indicates whether a specified substring occurs within the attribute. For string collection attributes such as `physicalIds` and `systemLabels`, the `Contains` operator indicates whether a specified string matches one of the whole strings in the collection.
+
+> [!NOTE] 
+> In order for a custom value to be available on the extensionAttributes1-15 at the time of the Conditional Access Policy evaluation, the device used to sign-in needs to be either Microsoft Intune managed, Compliant or Microsoft Entra hybrid joined.
 
 ## Policy behavior with filter for devices
 
