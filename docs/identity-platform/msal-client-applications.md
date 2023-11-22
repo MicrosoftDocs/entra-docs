@@ -13,7 +13,7 @@ ms.topic: conceptual
 ms.date: 11/20/2023
 ms.author: owenrichards
 ms.reviewer: iambmelt
-ms.custom:  has-adal-ref, 
+ms.custom:  has-adal-ref,
 #Customer intent: As an application developer, I want to learn about the types of client apps so I can decide if this platform meets my app development requirements.
 ---
 
