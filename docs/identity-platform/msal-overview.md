@@ -10,8 +10,6 @@ ms.subservice: develop
 ms.topic: conceptual
 ms.date: 11/17/2023
 ms.author: cwerner
-
-ms.author: cwerner
 ms.reviewer: saeeda
 ms.custom:  has-adal-ref
 
