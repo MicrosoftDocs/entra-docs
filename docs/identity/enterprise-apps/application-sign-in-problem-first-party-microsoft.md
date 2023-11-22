@@ -57,11 +57,11 @@ Following are some common issues folks run into when their users can't sign in t
 
   - Make sure the user’s **password is not expired or forgotten.** [Reset a user’s password](#reset-a-users-password) or [Enable self-service password reset](~/identity/authentication/tutorial-enable-sspr.md)
 
-  - Make sure **multifactor authentication** isn't blocking user access. [Check a user’s multifactor authentication status](#check-a-users-multi-factor-authentication-status) or [Check a user’s authentication contact info](#check-a-users-authentication-contact-info)
+  - Make sure **multifactor authentication** isn't blocking user access. [Check a user’s multifactor authentication status](#check-a-users-multifactor-authentication-status) or [Check a user’s authentication contact info](#check-a-users-authentication-contact-info)
 
   - Make sure a **Conditional Access policy** or **Identity Protection** policy isn't blocking user access. [Check a specific Conditional Access policy](#problems-with-conditional-access-policies) or [Check a specific application’s Conditional Access policy](#check-a-specific-applications-conditional-access-policy) or [Disable a specific Conditional Access policy](#disable-a-specific-conditional-access-policy)
 
-  - Make sure that a user’s **authentication contact info** is up to date to allow multifactor authentication or Conditional Access policies to be enforced. [Check a user’s multifactor authentication status](#check-a-users-multi-factor-authentication-status) or [Check a user’s authentication contact info](#check-a-users-authentication-contact-info)
+  - Make sure that a user’s **authentication contact info** is up to date to allow multifactor authentication or Conditional Access policies to be enforced. [Check a user’s multifactor authentication status](#check-a-users-multifactor-authentication-status) or [Check a user’s authentication contact info](#check-a-users-authentication-contact-info)
 
 - For **Microsoft** **applications that require a license** (like Office365), here are some specific issues to check once you've ruled out the general issues above:
 
@@ -95,7 +95,7 @@ Application access can be blocked due to a problem with a user that is assigned 
 
 - [Enable self-service password reset](#enable-self-service-password-reset)
 
-- [Check a user’s multifactor authentication status](#check-a-users-multi-factor-authentication-status)
+- [Check a user’s multifactor authentication status](#check-a-users-multifactor-authentication-status)
 
 - [Check a user’s authentication contact info](#check-a-users-authentication-contact-info)
 
@@ -363,7 +363,7 @@ Application access can be blocked because the proper permissions consent operati
 
 - [Perform administrator-level consent for a single-tenant application](#perform-administrator-level-consent-for-a-single-tenant-application)
 
-- [Perform administrator-level consent for a multitenant application](#perform-administrator-level-consent-for-a-multi-tenant-application)
+- [Perform administrator-level consent for a multitenant application](#perform-administrator-level-consent-for-a-multitenant-application)
 
 ### Perform a user-level consent operation
 
