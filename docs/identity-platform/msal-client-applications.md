@@ -74,7 +74,7 @@ In general, proving client identity matters when there's a need to authenticate 
 
 **Architect your applications with client secrecy in mind** – Your security model is only as strong as the weakest link in the chain. [Do not forward security credentials or tokens from confidential to public clients](v2-oauth2-on-behalf-of-flow.md#protocol-diagram), as this could move client secret data to a public client, allowing impersonation of the confidential client.
 
-**Use up-to-date libraries and SDKs from trusted sources** – The Microsoft identity platform provides various client and server SDKs and middlewares designed to boost your productivity while keeping your applications secure. Libraries such as [Microsoft.Identity.Web](/entra/msal/dotnet/microsoft-identity-web) simplify adding authentication and authorization to web apps and APIs on the Microsoft identity platform. Keeping dependencies updated helps ensure your applications and services benefit from the latest security innovations and updates.
+**Use up-to-date libraries and SDKs from trusted sources** – The Microsoft identity platform provides various client and server SDKs and middleware designed to boost your productivity while keeping your applications secure. Libraries such as [Microsoft.Identity.Web](/entra/msal/dotnet/microsoft-identity-web) simplify adding authentication and authorization to web apps and APIs on the Microsoft identity platform. Keeping dependencies updated helps ensure your applications and services benefit from the latest security innovations and updates.
 
 ## Comparing the client types and their capabilities
 
