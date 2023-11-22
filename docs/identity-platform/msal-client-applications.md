@@ -27,9 +27,6 @@ The Microsoft Authentication Library (MSAL) defines two types of clients; public
   | ![Browserless API](./media/hub/app-type-daemon-console.svg) Browserless API | ![Web API](./media/hub/app-type-api.svg) Web API |
   | ![Mobile app](./media/hub/app-type-mobile.svg) Mobile app | ![Daemon/service](./media/hub/app-type-daemon-console.svg) Service/daemon |
 
-> [!NOTE]
-> In [MSAL.js](/javascript/api/overview/msal-overview), there's no separation of public and confidential client apps. MSAL.js represents client apps as user agent-based apps, public clients in which the client code is executed in a user agent like a web browser. These clients don't store secrets because the browser context is openly accessible.
-
 ## Public and client applications authorization
 
 When examining the public or confidential nature of a given client, we're evaluating the ability of that client to prove its identity to the authorization server. This is important because the authorization server must be able to trust the identity of the client in order to issue access tokens.
