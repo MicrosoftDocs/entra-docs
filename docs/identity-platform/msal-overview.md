@@ -57,15 +57,15 @@ MSAL can be used in several application scenarios, such as the following:
 
 You can refer to the following documentation to learn more about the different MSAL libraries.
 
-[MSAL.NET](/entra/msal/dotnet/)
-[MSAL for Android](https://github.com/AzureAD/microsoft-authentication-library-for-android/tree/dev/docs)
-[MSAL Angular](/javascript/api/@azure/msal-angular/)
-[MSAL for iOS and macOS](https://github.com/AzureAD/microsoft-authentication-library-for-objc/tree/dev/docs)
-[MSAL Java](/entra/msal/java/)
-[MSAL.js](/javascript/api/overview/msal-overview)
-[MSAL Node](/javascript/api/%40azure/msal-node/)
-[MSAL Python](/entra/msal/python/)
-[MSAL React](/javascript/api/%40azure/msal-react/)
+- [MSAL.NET](/entra/msal/dotnet/)
+- [MSAL for Android](https://github.com/AzureAD/microsoft-authentication-library-for-android/tree/dev/docs)
+- [MSAL Angular](/javascript/api/@azure/msal-angular/)
+- [MSAL for iOS and macOS](https://github.com/AzureAD/microsoft-authentication-library-for-objc/tree/dev/docs)
+- [MSAL Java](/entra/msal/java/)
+- [MSAL.js](/javascript/api/overview/msal-overview)
+- [MSAL Node](/javascript/api/%40azure/msal-node/)
+- [MSAL Python](/entra/msal/python/)
+- [MSAL React](/javascript/api/%40azure/msal-react/)
 
 ## Languages and frameworks
 

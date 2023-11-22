@@ -39,7 +39,7 @@ If you want to try using one of our samples, refer to [Build a multitenant SaaS 
 
 ## Update registration to be multitenant
 
-By default, web app/API registrations in Microsoft Entra ID are single-tenant upon creation. To make the registration multitenant, log in to the[Microsoft Entra admin center](https://entra.microsoft.com) and select the app registration which you want to update. With the app registration open, select the **Authentication** pane and navigate to the **Supported account types** section. Change the setting to **Accounts in any organizational directory**.
+By default, web app/API registrations in Microsoft Entra ID are single-tenant upon creation. To make the registration multitenant, log in to the [Microsoft Entra admin center](https://entra.microsoft.com) and select the app registration that you want to update. With the app registration open, select the **Authentication** pane and navigate to the **Supported account types** section. Change the setting to **Accounts in any organizational directory**.
 
 When a single-tenant application is created in the Microsoft Entra admin center, one of the items listed on the **Overview** page is the **Application ID URI**. This is one of the ways an application is identified in protocol messages, and can be added at any time. The App ID URI for single tenant apps can be globally unique within that tenant. In contrast, for multitenant apps it must be globally unique across all tenants, which ensures that Microsoft Entra ID can find the app across all tenants.
 
