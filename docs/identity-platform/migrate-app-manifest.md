@@ -30,7 +30,7 @@ Starting [date], you won't be able to view, save, upload or download the Azure A
 
 If you do not view, edit or save app manifests, this migration doesn't impact your workflow.
 
-If you view or edit app manifests, you will notice the [attribute differences between Azure AD Graph format and Microsoft Graph format](#attribute-differences-between-azure-ad-graph-and-microsoft-graph-formats). We recommend that you start viewing and editing app manifests following the [Microsoft Graph format reference](/entra/identity-platform/reference-microsoft-graph-app-manifest).
+If you view or edit app manifests, you will notice the [attribute differences between Azure AD Graph format and Microsoft Graph format](#attribute-differences-between-azure-ad-graph-and-microsoft-graph-formats). We recommend that you start viewing and editing app manifests following the [Microsoft Graph format reference](reference-microsoft-graph-app-manifest.md).
 
 If your workflow requires you to save the manifests in your source repository for use later, you will need to [convert an app manifest in Azure AD Graph format to Microsoft Graph format](#convert-an-app-manifest-in-azure-ad-graph-format-to-microsoft-graph-format).
 
