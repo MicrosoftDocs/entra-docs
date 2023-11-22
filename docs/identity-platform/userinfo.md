@@ -37,7 +37,7 @@ UserInfo is a standard OAuth bearer token API hosted by Microsoft Graph. Call th
 
 ### Permissions
 
-Use the following [OIDC permissions](./permissions-consent-overview.md#openid-connect-scopes) to call the UserInfo API. The `openid` claim is required, and the `profile` and `email` scopes ensure that additional information is provided in the response.
+Use the following [OIDC permissions](./scopes-oidc.md#openid-connect-scopes) to call the UserInfo API. The `openid` claim is required, and the `profile` and `email` scopes ensure that additional information is provided in the response.
 
 | Permission type                        | Permissions                       |
 |:---------------------------------------|:----------------------------------|

@@ -57,11 +57,11 @@ Following are some common issues folks run into when their users can't sign in t
 
   - Make sure the user’s **password is not expired or forgotten.** [Reset a user’s password](#reset-a-users-password) or [Enable self-service password reset](~/identity/authentication/tutorial-enable-sspr.md)
 
-  - Make sure **Multi-Factor Authentication** isn't blocking user access. [Check a user’s multi-factor authentication status](#check-a-users-multi-factor-authentication-status) or [Check a user’s authentication contact info](#check-a-users-authentication-contact-info)
+  - Make sure **multifactor authentication** isn't blocking user access. [Check a user’s multifactor authentication status](#check-a-users-multifactor-authentication-status) or [Check a user’s authentication contact info](#check-a-users-authentication-contact-info)
 
   - Make sure a **Conditional Access policy** or **Identity Protection** policy isn't blocking user access. [Check a specific Conditional Access policy](#problems-with-conditional-access-policies) or [Check a specific application’s Conditional Access policy](#check-a-specific-applications-conditional-access-policy) or [Disable a specific Conditional Access policy](#disable-a-specific-conditional-access-policy)
 
-  - Make sure that a user’s **authentication contact info** is up to date to allow Multi-Factor Authentication or Conditional Access policies to be enforced. [Check a user’s multi-factor authentication status](#check-a-users-multi-factor-authentication-status) or [Check a user’s authentication contact info](#check-a-users-authentication-contact-info)
+  - Make sure that a user’s **authentication contact info** is up to date to allow multifactor authentication or Conditional Access policies to be enforced. [Check a user’s multifactor authentication status](#check-a-users-multifactor-authentication-status) or [Check a user’s authentication contact info](#check-a-users-authentication-contact-info)
 
 - For **Microsoft** **applications that require a license** (like Office365), here are some specific issues to check once you've ruled out the general issues above:
 
@@ -95,7 +95,7 @@ Application access can be blocked due to a problem with a user that is assigned 
 
 - [Enable self-service password reset](#enable-self-service-password-reset)
 
-- [Check a user’s multi-factor authentication status](#check-a-users-multi-factor-authentication-status)
+- [Check a user’s multifactor authentication status](#check-a-users-multifactor-authentication-status)
 
 - [Check a user’s authentication contact info](#check-a-users-authentication-contact-info)
 
@@ -150,26 +150,26 @@ To enable self-service password reset, follow the deployment steps in the follow
 
 - [Enable users to reset or change their Active Directory on-premises passwords](~/identity/authentication/tutorial-enable-sspr.md)
 
-### Check a user’s multi-factor authentication status
+### Check a user’s multifactor authentication status
 
-To check a user’s multi-factor authentication status, follow these steps:
+To check a user’s multifactor authentication status, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
 
-1. Select the **Multi-Factor Authentication** button at the top of the pane.
+1. Select the **multifactor authentication** button at the top of the pane.
 
-1. Once the **Multi-Factor Authentication Administration portal** loads, ensure you are on the **Users** tab.
+1. Once the **multifactor authentication Administration portal** loads, ensure you are on the **Users** tab.
 
 1. Find the user in the list of users by searching, filtering, or sorting.
 
-1. Select the user from the list of users and **Enable**, **Disable**, or **Enforce** multi-factor authentication as desired.
+1. Select the user from the list of users and **Enable**, **Disable**, or **Enforce** multifactor authentication as desired.
 
    * **Note**: If a user is in an **Enforced** state, you may set them to **Disabled** temporarily to let them back into their account. Once they're back in, you can then change their state to **Enabled** again to require them to re-register their contact information during their next sign-in. Alternatively, you can follow the steps in the [Check a user’s authentication contact info](#check-a-users-authentication-contact-info) to verify or set this data for them.
 
 ### Check a user’s authentication contact info
 
-To check a user’s authentication contact info used for Multi-factor authentication, Conditional Access, Identity Protection, and Password Reset, follow these steps:
+To check a user’s authentication contact info used for multifactor authentication, Conditional Access, Identity Protection, and Password Reset, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
@@ -363,32 +363,32 @@ Application access can be blocked because the proper permissions consent operati
 
 - [Perform administrator-level consent for a single-tenant application](#perform-administrator-level-consent-for-a-single-tenant-application)
 
-- [Perform administrator-level consent for a multi-tenant application](#perform-administrator-level-consent-for-a-multi-tenant-application)
+- [Perform administrator-level consent for a multitenant application](#perform-administrator-level-consent-for-a-multitenant-application)
 
 ### Perform a user-level consent operation
 
 - For any OpenID Connect-enabled application that requests permissions, navigating to the application’s sign-in screen performs a user level consent to the application for the signed-in user.
 
-- If you wish to do this programmatically, see [Requesting individual user consent](~/identity-platform/permissions-consent-overview.md#requesting-individual-user-consent).
+- If you wish to do this programmatically, see [Requesting individual user consent](~/identity-platform/permissions-consent-overview.md#user-consent).
 
 ### Perform administrator-level consent operation for any application
 
 - For **only applications developed using the V1 application model**, you can force this administrator level consent to occur by adding “**?prompt=admin\_consent**” to the end of an application’s sign-in URL.
 
-- For **any application developed using the V2 application model**, you can enforce this administrator-level consent to occur by following the instructions under the **Request the permissions from a directory admin** section of [Using the admin consent endpoint](~/identity-platform/permissions-consent-overview.md#using-the-admin-consent-endpoint).
+- For **any application developed using the V2 application model**, you can enforce this administrator-level consent to occur by following the instructions under the **Request the permissions from a directory admin** section of [Using the admin consent endpoint](~/identity-platform/permissions-consent-overview.md#administrator-consent).
 
 ### Perform administrator-level consent for a single-tenant application
 
 - For **single-tenant applications** that request permissions (like those you're developing or own in your organization), you can perform an **administrative-level consent** operation on behalf of all users by signing in as a Global Administrator and clicking on the **Grant permissions** button at the top of the **Application Registry -&gt; All Applications -&gt; Select an App -&gt; Required Permissions** pane.
 
-- For **any application developed using the V1 or V2 application model**, you can enforce this administrator-level consent to occur by following the instructions under the **Request the permissions from a directory admin** section of [Using the admin consent endpoint](~/identity-platform/permissions-consent-overview.md#using-the-admin-consent-endpoint).
+- For **any application developed using the V1 or V2 application model**, you can enforce this administrator-level consent to occur by following the instructions under the **Request the permissions from a directory admin** section of [Using the admin consent endpoint](~/identity-platform/permissions-consent-overview.md#administrator-consent).
 
-### Perform administrator-level consent for a multi-tenant application
+### Perform administrator-level consent for a multitenant application
 
-- For **multi-tenant applications** that request permissions (like an application a third party, or Microsoft, develops), you can perform an **administrative-level consent** operation. Sign in as a Global Administrator and clicking on the **Grant permissions** button under the **Enterprise Applications -&gt; All Applications -&gt; Select an App -&gt; Permissions** pane (available soon).
+- For **multitenant applications** that request permissions (like an application a third party, or Microsoft, develops), you can perform an **administrative-level consent** operation. Sign in as a Global Administrator and clicking on the **Grant permissions** button under the **Enterprise Applications -&gt; All Applications -&gt; Select an App -&gt; Permissions** pane (available soon).
 
-- You can also enforce this administrator-level consent to occur by following the instructions under the **Request the permissions from a directory admin** section of [Using the admin consent endpoint](~/identity-platform/permissions-consent-overview.md#using-the-admin-consent-endpoint).
+- You can also enforce this administrator-level consent to occur by following the instructions under the **Request the permissions from a directory admin** section of [Using the admin consent endpoint](~/identity-platform/permissions-consent-overview.md#administrator-consent).
 
 ## Next steps
 
-[Using the admin consent endpoint](~/identity-platform/permissions-consent-overview.md#using-the-admin-consent-endpoint)
+[Using the admin consent endpoint](~/identity-platform/permissions-consent-overview.md#administrator-consent)
