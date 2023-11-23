@@ -4,15 +4,13 @@ description: Learn how to restrict access to your apps registered in Microsoft E
 
 author: cilwerner
 manager: CelesteDG
+ms.author: cwerner
+ms.custom:  
+ms.date: 03/28/2023
+ms.reviewer: jmprieur, kkrishna
 ms.service: active-directory
 ms.subservice: develop
-
 ms.topic: how-to
-ms.date: 03/28/2023
-ms.author: cwerner
-ms.reviewer: jmprieur, kkrishna
-ms.custom:  
-
 #Customer intent: As a tenant administrator, I want to restrict an application that I have registered in Azuren-e AD to a select set of users available in my Microsoft Entra tenant
 ---
 

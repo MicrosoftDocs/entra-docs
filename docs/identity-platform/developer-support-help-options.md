@@ -1,16 +1,15 @@
 ---
 title: Support and help options for Microsoft identity platform developers
 description: Learn where to get help and find answers to your questions as you build identity and access management (IAM) solutions that integrate with Microsoft Entra ID and other components of the Microsoft identity platform.
-
 author: OwenRichards1
 manager: CelesteDG
+ms.author: owenrichards
+ms.custom: has-adal-ref
+ms.date: 05/31/2023
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-
-ms.date: 05/31/2023
-ms.author: owenrichards
-ms.custom: has-adal-ref
+#Customer intent:
 ---
 
 # Support and help options for developers

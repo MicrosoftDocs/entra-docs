@@ -1,17 +1,15 @@
 ---
 title: Convert single-tenant app to multitenant on Microsoft Entra ID
 description: Shows how to convert an existing single-tenant app to a multitenant app that can sign in a user from any Microsoft Entra tenant.
-
 author: cilwerner
 manager: CelesteDG
+ms.author: cwerner
+ms.custom:
+ms.date: 11/17/2023
+ms.reviewer: jmprieur, lenalepa, sureshja, kkrishna
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: how-to
-ms.date: 11/17/2023
-ms.author: cwerner
-ms.reviewer: jmprieur, lenalepa, sureshja, kkrishna
-ms.custom:  
-
 #Customer intent: As an Azure user, I want to convert a single tenant app to a Microsoft Entra multitenant app so any Microsoft Entra user can sign in,
 ---
 

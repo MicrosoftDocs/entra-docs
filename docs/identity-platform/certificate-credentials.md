@@ -1,18 +1,16 @@
 ---
 title: Microsoft identity platform certificate credentials
 description: This article discusses the registration and use of certificate credentials for application authentication.
-
 author: OwenRichards1
 manager: CelesteDG
-
+ms.author: owenrichards
+ms.custom:  has-adal-ref,
+ms.date: 02/27/2023
+ms.reviewer: kenwith
 ms.service: active-directory
 ms.subservice: develop
-
 ms.topic: reference
-ms.date: 02/27/2023
-ms.author: owenrichards
-ms.reviewer: kenwith
-ms.custom:  has-adal-ref, 
+#Customer intent:
 ---
 
 # Microsoft identity platform application authentication certificate credentials

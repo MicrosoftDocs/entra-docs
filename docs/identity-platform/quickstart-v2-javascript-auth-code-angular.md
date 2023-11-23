@@ -1,18 +1,16 @@
 ---
 title: "Quickstart: Sign in users in JavaScript Angular single-page apps (SPA) with auth code and call Microsoft Graph"
 description: In this quickstart, learn how a JavaScript Angular single-page application (SPA) can sign in users of personal accounts, work accounts, and school accounts by using the authorization code flow and call Microsoft Graph.
-
+ROBOTS: NOINDEX
 author: henrymbuguakiarie
 manager: CelesteDG
+ms.author: henrymbugua
+ms.custom:  scenarios:getting-started, languages:JavaScript, devx-track-js, mode-other
+ms.date: 11/12/2021
+ms.reviewer: jamesmantu
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-
-ms.date: 11/12/2021
-ROBOTS: NOINDEX
-ms.author: henrymbugua
-ms.reviewer: jamesmantu
-ms.custom:  scenarios:getting-started, languages:JavaScript, devx-track-js, mode-other
 #Customer intent: As an app developer, I want to learn how to get access tokens and refresh tokens by using the Microsoft identity platform so that my JavaScript Angular app can sign in users of personal accounts, work accounts, and school accounts.
 ---
 

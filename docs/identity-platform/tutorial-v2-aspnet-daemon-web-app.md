@@ -1,18 +1,15 @@
 ---
 title: "Tutorial: Build a multitenant daemon that accesses Microsoft Graph business data"
 description: In this tutorial, learn how to call an ASP.NET web API protected by Microsoft Entra ID from a Windows desktop (WPF) application. The WPF client authenticates a user, requests an access token, and calls the web API.
-
 author: henrymbuguakiarie
 manager: CelesteDG
-
+ms.author: henrymbugua
+ms.custom:  scenarios:getting-started, languages:ASP.NET, has-adal-ref
+ms.date: 12/10/2019
+ms.reviewer: jmprieur
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: tutorial
-
-ms.date: 12/10/2019
-ms.author: henrymbugua
-ms.reviewer: jmprieur
-ms.custom:  scenarios:getting-started, languages:ASP.NET, has-adal-ref
 #Customer intent: As an application developer, I want to know how to set up OpenId Connect authentication in a web application built using Node.js with Express.
 ---
 

@@ -1,18 +1,16 @@
 ---
 title: Supported account types
 description: Conceptual documentation about audiences and supported account types in applications
-
 author: henrymbuguakiarie
 manager: CelesteDG
-
+ms.author: henrymbugua
+ms.custom:
+ms.date: 02/06/2023
+ms.reviewer: saeeda, jmprieur
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-
-ms.date: 02/06/2023
-ms.author: henrymbugua
-ms.reviewer: saeeda, jmprieur
-ms.custom:  
+#Customer intent:
 ---
 
 # Supported account types

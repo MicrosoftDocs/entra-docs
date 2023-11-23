@@ -1,17 +1,15 @@
 ---
 title: "What's new in the Microsoft identity platform docs"
 description: "New and updated documentation for the Microsoft identity platform."
-
 author: henrymbuguakiarie
 manager: CelesteDG
-
+ms.author: henrymbugua
+ms.custom: has-adal-ref
 ms.date: 10/04/2023
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: reference
-
-ms.author: henrymbugua
-ms.custom: has-adal-ref
+#Customer intent:
 ---
 
 # Microsoft identity platform docs: What's new

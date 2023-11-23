@@ -1,18 +1,15 @@
 ---
 title: JavaScript single-page app scenario
 description: Learn how to build a single-page application (scenario overview) by using the Microsoft identity platform.
-
 author: OwenRichards1
 manager: CelesteDG
-
+ms.author: owenrichards
+ms.custom:  devx-track-js, 
+ms.date: 11/4/2022
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-
-ms.date: 11/4/2022
-ms.author: owenrichards
-ms.custom:  devx-track-js, 
-# Customer intent: As an application developer, I want to know how to write a single-page application by using the Microsoft identity platform.
+#Customer intent: As an application developer, I want to know how to write a single-page application by using the Microsoft identity platform.
 ---
 
 # Scenario: Single-page application

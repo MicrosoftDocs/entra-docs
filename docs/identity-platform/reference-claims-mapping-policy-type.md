@@ -1,17 +1,16 @@
 ---
 title: Claims mapping policy type
 description: Learn about the claims mapping policy type, which is used to modify the claims emitted in tokens in the Microsoft identity platform.
-
 author: cilwerner
 manager: CelesteDG
+ms.author: cwerner
+ms.custom:  curation-claims
+ms.date: 06/02/2023
+ms.reviewer: ludwignick, jeedes
 ms.service: active-directory
 ms.subservice: develop
-ms.custom:  curation-claims
-
 ms.topic: reference
-ms.date: 06/02/2023
-ms.author: cwerner
-ms.reviewer: ludwignick, jeedes
+#Customer intent:
 ---
 
 # Claims mapping policy type

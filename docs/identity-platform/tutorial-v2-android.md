@@ -1,18 +1,16 @@
 ---
 title: "Tutorial: Create an Android app that uses the Microsoft identity platform for authentication"
 description: In this tutorial, you build an Android app that uses the Microsoft identity platform to sign in users and get an access token to call the Microsoft Graph API on their behalf.
-
 author: henrymbuguakiarie
 manager: CelesteDG
-
+ms.author: henrymbugua
+ms.custom:  has-adal-ref
+ms.date: 04/04/2023
+ms.reviewer: brandwe
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: tutorial
-
-ms.date: 04/04/2023
-ms.author: henrymbugua
-ms.reviewer: brandwe
-ms.custom:  has-adal-ref
+#Customer intent:
 ---
 
 # Tutorial: Sign in users and call the Microsoft Graph API from an Android application

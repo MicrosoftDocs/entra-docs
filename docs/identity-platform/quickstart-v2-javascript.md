@@ -1,16 +1,14 @@
 ---
 title: "Quickstart: Sign in users in JavaScript single-page apps"
 description: In this quickstart, you learn how a JavaScript app can call an API that requires access tokens issued by the Microsoft identity platform.
-
 author: OwenRichards1
 manager: CelesteDG
+ms.author: owenrichards
+ms.custom:  scenarios:getting-started, languages:JavaScript, devx-track-js, mode-api
+ms.date: 04/11/2019
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-
-ms.date: 04/11/2019
-ms.author: owenrichards
-ms.custom:  scenarios:getting-started, languages:JavaScript, devx-track-js, mode-api
 #Customer intent: As an app developer, I want to learn how to get access tokens by using the Microsoft identity platform so that my JavaScript app can sign in users of personal accounts, work accounts, and school accounts.
 ---
 

@@ -1,18 +1,15 @@
 ---
 title: Build a mobile app that calls web APIs
 description: Learn how to build a mobile app that calls web APIs (overview)
-
 author: henrymbuguakiarie
 manager: CelesteDG
-
+ms.author: henrymbugua
+ms.custom:  
+ms.date: 02/07/2023
+ms.reviewer: brandwe, jmprieur
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-
-ms.date: 02/07/2023
-ms.author: henrymbugua
-ms.reviewer: brandwe, jmprieur
-ms.custom:  
 #Customer intent: As an application developer, I want to know how to write a mobile app that calls web APIs by using the Microsoft identity platform.
 ---
 

@@ -1,17 +1,15 @@
 ---
 title: "Quickstart: Add sign in with Microsoft to an Android app"
 description: In this quickstart, learn how Android applications can call an API that requires access tokens issued by the Microsoft identity platform.
-
+ROBOTS: NOINDEX
 author: henrymbuguakiarie
 manager: CelesteDG
+ms.author: henrymbugua
+ms.custom:  scenarios:getting-started, "languages:Android", has-adal-ref, mode-api
+ms.date: 01/14/2022
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-
-ms.date: 01/14/2022
-ROBOTS: NOINDEX
-ms.author: henrymbugua
-ms.custom:  scenarios:getting-started, "languages:Android", has-adal-ref, mode-api
 #Customer intent: As an application developer, I want to learn how Android native apps can call protected APIs that require login and access tokens using the Microsoft identity platform.
 ---
 

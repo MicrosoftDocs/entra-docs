@@ -1,18 +1,16 @@
 ---
 title: "Quickstart: Call Microsoft Graph from a Python daemon"
 description: In this quickstart, you learn how a Python process can get an access token and call an API protected by Microsoft identity platform, using the app's own identity
-
+ROBOTS: NOINDEX
 author: OwenRichards1
 manager: CelesteDG
+ms.author: owenrichards
+ms.custom:  devx-track-python, scenarios:getting-started, "languages:Python", mode-api
+ms.date: 01/10/2022
+ms.reviewer: jmprieur
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-
-ms.date: 01/10/2022
-ROBOTS: NOINDEX
-ms.author: owenrichards
-ms.reviewer: jmprieur
-ms.custom:  devx-track-python, scenarios:getting-started, "languages:Python", mode-api
 #Customer intent: As an application developer, I want to learn how my Python app can get an access token and call an API that's protected by the Microsoft identity platform using client credentials flow.
 ---
 

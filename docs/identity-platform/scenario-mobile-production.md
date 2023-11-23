@@ -1,18 +1,15 @@
 ---
 title: Prepare mobile app-calling web APIs for production
 description: Learn how to build a mobile app that calls web APIs. (Prepare apps for production.)
-
 author: henrymbuguakiarie
 manager: CelesteDG
-
+ms.author: henrymbugua
+ms.custom:  
+ms.date: 05/07/2019
+ms.reviewer: jmprieur
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-
-ms.date: 05/07/2019
-ms.author: henrymbugua
-ms.reviewer: jmprieur
-ms.custom:  
 #Customer intent: As an application developer, I want to know how to write a mobile app that calls web APIs by using the Microsoft identity platform for developers.
 ---
 

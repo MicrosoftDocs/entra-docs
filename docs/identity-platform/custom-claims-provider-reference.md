@@ -1,19 +1,16 @@
 ---
 title: Custom claims provider reference
-titleSuffix: Microsoft identity platform
 description: Reference documentation for custom claims providers
-
 author: cilwerner
 manager: CelesteDG
-
+ms.author: cwerner
+ms.custom:  
+ms.date: 03/06/2023
+ms.reviewer: jassuri
 ms.service: active-directory
 ms.subservice: develop
-
 ms.topic: reference
-ms.date: 03/06/2023
-ms.author: cwerner
-ms.reviewer: jassuri
-ms.custom:  
+titleSuffix: Microsoft identity platform
 #Customer intent: As a developer, I want to learn about custom authentication extensions so that I can augment tokens with claims from an external identity system or role management system.
 ---
 

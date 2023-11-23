@@ -1,19 +1,16 @@
 ---
 title: Custom claims provider overview
-titleSuffix: Microsoft identity platform
 description: Conceptual article describing the custom claims provider as part of the custom authentication extension framework.
-
 author: cilwerner
 manager: CelesteDG
-
+ms.author: cwerner
+ms.custom:  
+ms.date: 04/10/2023
+ms.reviewer: JasSuri
 ms.service: active-directory
 ms.subservice: develop
-
 ms.topic: conceptual
-ms.date: 04/10/2023
-ms.author: cwerner
-ms.reviewer: JasSuri
-ms.custom:  
+titleSuffix: Microsoft identity platform
 #Customer intent: As a developer, I want to learn about custom claims provider so that I can augment tokens with claims from an external identity system or role management system.
 ---
 

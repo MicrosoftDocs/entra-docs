@@ -1,18 +1,16 @@
 ---
 title: Shared device mode for Android devices
 description: Learn how to enable shared device mode to allow frontline workers to share an Android device
-
 author: henrymbuguakiarie
 manager: CelesteDG
-
+ms.author: henrymbugua
+ms.custom:  identitypla | Azuretformtop40
+ms.date: 02/06/2023
+ms.reviewer: brandwe
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-
-ms.date: 02/06/2023
-ms.author: henrymbugua
-ms.reviewer: brandwe
-ms.custom:  identitypla | Azuretformtop40
+#Customer intent:
 ---
 
 # Shared device mode for Android devices

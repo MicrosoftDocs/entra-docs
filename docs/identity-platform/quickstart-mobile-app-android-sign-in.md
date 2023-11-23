@@ -1,16 +1,14 @@
 ---
 title: "Quickstart: Sign in users and call Microsoft Graph from an Android app"
 description: In this quickstart, learn how Android applications can call an API that requires access tokens issued by the Microsoft identity platform.
-
 author: henrymbuguakiarie
 manager: CelesteDG
+ms.author: henrymbugua
+ms.custom:  scenarios:getting-started, "languages:Android", has-adal-ref, mode-api
+ms.date: 05/24/2023
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: quickstart
-
-ms.date: 05/24/2023
-ms.author: henrymbugua
-ms.custom:  scenarios:getting-started, "languages:Android", has-adal-ref, mode-api
 #Customer intent: As an application developer, I want to learn how Android native apps can call protected APIs that require login and access tokens using the Microsoft identity platform.
 ---
 

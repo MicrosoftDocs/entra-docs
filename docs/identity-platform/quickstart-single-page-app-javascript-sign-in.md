@@ -1,18 +1,15 @@
 ---
 title: "Quickstart: Sign in users in a single-page app (SPA) and call the Microsoft Graph API using JavaScript"
 description: In this quickstart, learn how a JavaScript single-page application (SPA) can sign in users of personal accounts, work accounts, and school accounts by using the authorization code flow.
-
 author: henrymbuguakiarie
 manager: CelesteDG
-
+ms.author: henrymbugua
+ms.custom:  scenarios:getting-started, languages:JavaScript, devx-track-js
+ms.date: 10/06/2023
+ms.reviewer: OwenRichards1
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: quickstart
-
-ms.date: 10/06/2023
-ms.author: henrymbugua
-ms.reviewer: OwenRichards1
-ms.custom:  scenarios:getting-started, languages:JavaScript, devx-track-js
 #Customer intent: As an app developer, I want to learn how to get access tokens and refresh tokens by using the Microsoft identity platform so that my JavaScript app can sign in users of personal accounts, work accounts, and school accounts.
 ---
 
