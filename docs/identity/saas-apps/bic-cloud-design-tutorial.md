@@ -36,6 +36,7 @@ To get started, you need the following items:
 In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
 
 * BIC Process Design supports **SP** initiated SSO.
+* BIC Process Design supports [Automated user provisioning](bic-cloud-design-provisioning-tutorial.md).
 
 ## Add BIC Process Design from the gallery
 

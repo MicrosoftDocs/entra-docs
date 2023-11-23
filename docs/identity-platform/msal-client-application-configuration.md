@@ -1,18 +1,15 @@
 ---
 title: Client application configuration (MSAL)
 description: Learn about configuration options for public client and confidential client applications using the Microsoft Authentication Library (MSAL).
-
 author: cilwerner
 manager: CelesteDG
-
+ms.author: cwerner
+ms.custom: has-adal-ref
+ms.date: 08/11/2023
+ms.reviewer: saeeda
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-
-ms.date: 08/11/2023
-ms.author: cwerner
-ms.reviewer: saeeda
-ms.custom:  has-adal-ref
 #Customer intent: As an application developer, I want to learn about the types of client applications so I can decide if this platform meets my app development needs.
 ---
 

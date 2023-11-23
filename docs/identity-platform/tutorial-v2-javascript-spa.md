@@ -1,17 +1,15 @@
 ---
 title: "Tutorial: Create a JavaScript single-page application that uses the Microsoft identity platform for authentication"
 description: In this tutorial, you build a JavaScript single-page application (SPA) that uses the Microsoft identity platform to sign in users and get an access token to call the Microsoft Graph API on their behalf.
-
 author: OwenRichards1
 manager: CelesteDG
-
+ms.author: owenrichards
+ms.custom: devx-track-js
+ms.date: 09/26/2022
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: tutorial
-
-ms.date: 09/26/2022
-ms.author: owenrichards
-ms.custom:  devx-track-js
+#Customer intent:
 ---
 
 # Tutorial: Sign in users and call the Microsoft Graph API from a JavaScript single-page application

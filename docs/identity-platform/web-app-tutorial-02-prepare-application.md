@@ -1,15 +1,13 @@
 ---
 title: "Tutorial: Prepare a web application for authentication"
 description: Prepare an ASP.NET Core application for authentication using Visual Studio.
-
 author: cilwerner
-
+manager: CelesteDG
+ms.author: cwerner
+ms.date: 02/09/2023
 ms.service: active-directory
 ms.subservice: develop
-ms.author: cwerner
-manager: CelesteDG
 ms.topic: tutorial
-ms.date: 02/09/2023
 #Customer intent: As an application developer, I want to use an IDE to set up an ASP.NET Core project, set up and upload a self signed certificate to the Azure portal and configure the application for authentication.
 ---
 

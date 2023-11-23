@@ -1,19 +1,16 @@
 ---
 title: Use MSAL.js with Azure AD B2C
 description: The Microsoft Authentication Library for JavaScript (MSAL.js) enables applications to work with Azure AD B2C and acquire tokens to call secured web APIs. These web APIs can be Microsoft Graph, other Microsoft APIs, web APIs from others, or your own web API.
-
 author: henrymbuguakiarie
 manager: CelesteDG
-
+ms.author: henrymbugua
+ms.custom: devx-track-js
+ms.date: 03/07/2023
+ms.reviewer: nacanuma, negoe
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-
-ms.date: 03/07/2023
-ms.author: henrymbugua
-ms.reviewer: nacanuma, negoe
-ms.custom:  devx-track-js
-# Customer intent: As an application developer, I want to learn how MSAL.js can be used with Azure AD B2C for authentication and authorization in my organization's web apps and web APIs that my customers log in to and use.
+#Customer intent: As an application developer, I want to learn how MSAL.js can be used with Azure AD B2C for authentication and authorization in my organization's web apps and web APIs that my customers log in to and use.
 ---
 
 # Use the Microsoft Authentication Library for JavaScript to work with Azure AD B2C

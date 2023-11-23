@@ -32,8 +32,9 @@ To get started, you need the following items:
 
 In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
 
-* Whimsical supports **SP and IDP** initiated SSO
-* Whimsical supports **Just In Time** user provisioning
+* Whimsical supports **SP and IDP** initiated SSO.
+* Whimsical supports **Just In Time** user provisioning.
+* Whimsical supports [Automated user provisioning](whimsical-provisioning-tutorial.md).
 
 > [!NOTE]
 > Identifier of this application is a fixed string value so only one instance can be configured in one tenant.

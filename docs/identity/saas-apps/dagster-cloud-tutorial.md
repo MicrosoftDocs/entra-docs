@@ -35,6 +35,7 @@ In this tutorial, you configure and test Microsoft Entra SSO in a test environme
 
 * Dagster Cloud supports **SP and IDP** initiated SSO.
 * Dagster Cloud supports **Just In Time** user provisioning.
+* Dagster Cloud supports [Automated user provisioning](dagster-cloud-provisioning-tutorial.md).
 
 ## Add Dagster Cloud from the gallery
 

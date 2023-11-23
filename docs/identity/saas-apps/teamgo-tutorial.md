@@ -35,6 +35,7 @@ In this tutorial, you configure and test Microsoft Entra SSO in a test environme
 
 * Teamgo supports **SP and IDP** initiated SSO.
 * Teamgo supports **Just In Time** user provisioning.
+* Teamgo supports [Automated user provisioning](teamgo-provisioning-tutorial.md).
 
 ## Adding Teamgo from the gallery
 

@@ -1,18 +1,15 @@
 ---
 title: Create a self-signed public certificate to authenticate your application
 description: Create a self-signed public certificate to authenticate your application.
-
 author: henrymbuguakiarie
 manager: CelesteDG
-
+ms.author: henrymbugua
+ms.custom: scenarios:getting-started, 
+ms.date: 11/10/2023
+ms.reviewer: jmprieur, saeeda, sureshja, ludwignick
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-
-ms.date: 11/10/2023
-ms.author: henrymbugua
-ms.reviewer: jmprieur, saeeda, sureshja, ludwignick
-ms.custom: scenarios:getting-started, 
 #Customer intent: As an application developer, I want to understand the basic concepts of authentication and authorization in the Microsoft identity platform.
 ---
 

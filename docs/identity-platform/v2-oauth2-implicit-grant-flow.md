@@ -1,19 +1,16 @@
 ---
 title: Microsoft identity platform and OAuth 2.0 implicit grant flow
 description: Secure single-page apps using Microsoft identity platform implicit flow.
-
 author: OwenRichards1
 manager: CelesteDG
-
+ms.author: owenrichards
+ms.custom:
+ms.date: 08/11/2023
+ms.reviewer: ludwignick
 ms.service: active-directory
 ms.subservice: develop
-
 ms.topic: conceptual
-
-ms.date: 08/11/2023
-ms.author: owenrichards
-ms.reviewer: ludwignick
-ms.custom: 
+#Customer intent:
 ---
 
 # Microsoft identity platform and OAuth 2.0 implicit grant flow

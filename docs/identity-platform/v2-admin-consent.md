@@ -1,18 +1,16 @@
 ---
 title: Microsoft identity platform admin consent protocols
 description: A description of authorization in the Microsoft identity platform, including scopes, permissions, and consent.
-
 author: rwike77
 manager: CelesteDG
-
+ms.author: ryanwi
+ms.custom:
+ms.date: 11/08/2023
+ms.reviewer: ludwignick
 ms.service: active-directory
 ms.subservice: develop
-
 ms.topic: reference
-ms.date: 11/08/2023
-ms.author: ryanwi
-ms.reviewer: ludwignick
-ms.custom: 
+#Customer intent:
 ---
 
 # Admin consent on the Microsoft identity platform

@@ -1,18 +1,15 @@
 ---
 title: Move web app that signs in users to production
 description: Learn how to build a web app that signs in users (move to production)
-
 author: cilwerner
 manager: CelesteDG
-
+ms.author: cwerner
+ms.custom: devx-track-extended-java, devx-track-js
+ms.date: 09/17/2019
+ms.reviewer: jmprieur
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-
-ms.date: 09/17/2019
-ms.author: cwerner
-ms.reviewer: jmprieur
-ms.custom:  devx-track-extended-java, devx-track-js
 #Customer intent: As an application developer, I want to know how to write a web app that signs in users by using the Microsoft identity platform.
 ---
 

@@ -3692,8 +3692,8 @@
         href: workday-writeback-tutorial.md
       - name: Workteam
         href: workteam-provisioning-tutorial.md
-      - name: Workplace by Facebook
-        href: workplace-by-facebook-provisioning-tutorial.md
+      - name: Workplace from Meta 
+        href: workplace-from-meta-provisioning-tutorial.md
       - name: Workgrid
         href: workgrid-provisioning-tutorial.md
       - name: Wrike

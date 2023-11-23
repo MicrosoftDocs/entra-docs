@@ -1,23 +1,21 @@
 ---
 title: Microsoft identity platform UserInfo endpoint
 description: Learn about the UserInfo endpoint on the Microsoft identity platform.
-
 author: Dickson-Mwendia
 manager: CelesteDG
-
+ms.author: dmwendia
+ms.custom: 
+ms.date: 08/26/2022
+ms.reviewer: ludwignick
 ms.service: active-directory
 ms.subservice: develop
-
 ms.topic: reference
-ms.date: 08/26/2022
-ms.author: dmwendia
-ms.reviewer: ludwignick
-ms.custom: 
+#Customer intent:
 ---
 
 # Microsoft identity platform UserInfo endpoint
 
-As part of the OpenID Connect (OIDC) standard, the [UserInfo endpoint](https://openid.net/specs/openid-connect-core-1_0.html#UserInfo) returns information about an authenticated user. 
+As part of the OpenID Connect (OIDC) standard, the [UserInfo endpoint](https://openid.net/specs/openid-connect-core-1_0.html#UserInfo) returns information about an authenticated user.
 
 ## Find the .well-known configuration endpoint
 

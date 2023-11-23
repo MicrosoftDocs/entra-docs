@@ -3,13 +3,14 @@ title: OpenID Connect (OIDC) on the Microsoft identity platform
 description: Sign in Microsoft Entra users by using the Microsoft identity platform's implementation of the OpenID Connect extension to OAuth 2.0.
 author: OwenRichards1
 manager: CelesteDG
-ms.custom:  
-ms.date: 09/13/2023
 ms.author: owenrichards
+ms.custom: 
+ms.date: 09/13/2023
 ms.reviewer: ludwignick
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: reference
+#Customer intent:
 ---
 
 # OpenID Connect on the Microsoft identity platform

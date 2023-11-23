@@ -3,13 +3,14 @@ title: Microsoft identity platform and OAuth 2.0 authorization code flow
 description: Protocol reference for the Microsoft identity platform's implementation of the OAuth 2.0 authorization code grant 
 author: OwenRichards1
 manager: CelesteDG
+ms.author: owenrichards
+ms.custom:
+ms.date: 04/17/2023
+ms.reviewer: ludwignick
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-ms.date: 04/17/2023
-ms.author: owenrichards
-ms.reviewer: ludwignick
-ms.custom:  
+#Customer intent:
 ---
 
 # Microsoft identity platform and OAuth 2.0 authorization code flow

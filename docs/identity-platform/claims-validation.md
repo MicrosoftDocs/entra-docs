@@ -1,17 +1,15 @@
 ---
 title: Secure applications and APIs by validating claims
 description: Learn about securing the business logic of your applications and APIs by validating claims in tokens.
-
 author: cilwerner
 manager: CelesteDG
-
+ms.author: cwerner
+ms.custom: curation-claims
+ms.date: 04/21/2023
 ms.service: active-directory
 ms.subservice: develop
-
 ms.topic: conceptual
-ms.date: 04/21/2023
-ms.author: cwerner
-ms.custom:  curation-claims
+#Customer intent:
 ---
 
 # Secure applications and APIs by validating claims

@@ -9,6 +9,7 @@ ms.reviewer: madansr7
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: reference
+#Customer intent:
 ---
 
 # Redirect URI (reply URL) restrictions and limitations
