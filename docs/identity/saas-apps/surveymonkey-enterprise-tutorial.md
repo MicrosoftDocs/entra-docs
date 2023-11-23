@@ -36,6 +36,7 @@ To get started, you need the following items:
 In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
 
 * SurveyMonkey Enterprise supports **IDP** initiated SSO.
+* SurveyMonkey Enterprise supports [Automated user provisioning](surveymonkey-enterprise-provisioning-tutorial.md).
 
 > [!NOTE]
 > Identifier of this application is a fixed string value so only one instance can be configured in one tenant.
