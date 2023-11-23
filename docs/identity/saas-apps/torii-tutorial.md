@@ -36,6 +36,7 @@ In this tutorial, you configure and test Microsoft Entra SSO in a test environme
 
 * Torii supports **SP and IDP** initiated SSO.
 * Torii supports **Just In Time** user provisioning.
+* Torii supports [Automated user provisioning](torii-provisioning-tutorial.md).
 
 ## Add Torii from the gallery
 
