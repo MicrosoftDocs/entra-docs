@@ -1,17 +1,16 @@
 ---
 title: Configure app multi-instancing
 description: Learn about multi-instancing, which is needed for configuring multiple instances of the same application within a tenant.
-
 author: omondiatieno
 manager: CelesteDG
+ms.author: jomondi
+ms.custom: curation-claims
+ms.date: 06/09/2023
+ms.reviewer: rahulnagraj, alamaral, jeedes
 ms.service: active-directory
 ms.subservice: develop
-ms.custom:  curation-claims
-
 ms.topic: how-to
-ms.date: 06/09/2023
-ms.author: jomondi
-ms.reviewer: rahulnagraj, alamaral, jeedes
+#Customer intent:
 ---
 
 # Configure app multi-instancing

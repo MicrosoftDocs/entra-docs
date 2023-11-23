@@ -1,15 +1,13 @@
 ---
 title: "Tutorial: Call an API and display the results"
 description: Call an API and display the results.
-
 author: cilwerner
-
+manager: CelesteDG
+ms.author: cwerner
+ms.date: 02/09/2023
 ms.service: active-directory
 ms.subservice: develop
-ms.author: cwerner
-manager: CelesteDG
 ms.topic: tutorial
-ms.date: 02/09/2023
 #Customer intent: As an application developer, I want to use my app to call a web API, in this case Microsoft Graph. I need to know how to modify my code so the API can be called successfully.
 ---
 

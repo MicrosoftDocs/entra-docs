@@ -1,18 +1,16 @@
 ---
 title: Configure keychain 
 description: Learn how to configure keychain so that your app can cache tokens in the keychain.
-
 author: OwenRichards1
 manager: CelesteDG
-
+ms.author: owenrichards
+ms.custom: has-adal-ref
+ms.date: 12/19/2022
+ms.reviewer: oldalton
 ms.service: active-directory
 ms.subservice: develop
-
 ms.topic: how-to
-ms.date: 12/19/2022
-ms.author: owenrichards
-ms.reviewer: oldalton
-ms.custom:  has-adal-ref, 
+#Customer intent:
 ---
 
 # Configure keychain

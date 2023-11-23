@@ -3,14 +3,14 @@ title: Updates and breaking changes
 description: Learn about changes to the Microsoft identity platform that can impact your application.
 author: rwike77
 manager: CelesteDG
-
+ms.author: ryanwi
+ms.custom: has-adal-ref
+ms.date: 06/03/2023
+ms.reviewer: ludwignick
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: reference
-ms.date: 06/03/2023
-ms.author: ryanwi
-ms.reviewer: ludwignick
-ms.custom: has-adal-ref
+#Customer intent:
 ---
 
 # What's new for authentication?

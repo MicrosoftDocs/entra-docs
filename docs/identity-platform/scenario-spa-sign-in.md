@@ -1,17 +1,14 @@
 ---
 title: Single-page app sign-in & sign-out
 description: Learn how to build a single-page application (sign-in)
-
 author: OwenRichards1
 manager: CelesteDG
-
+ms.author: owenrichards
+ms.custom: 
+ms.date: 07/19/2022
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-
-ms.date: 07/19/2022
-ms.author: owenrichards
-ms.custom: 
 #Customer intent: As an application developer, I want to know how to write a single-page application by using the Microsoft identity platform.
 ---
 

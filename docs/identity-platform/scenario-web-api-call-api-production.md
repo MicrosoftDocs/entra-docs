@@ -1,18 +1,15 @@
 ---
 title: Move web API calling web APIs to production
 description: Learn how to move a web API that calls web APIs to production.
-
 author: cilwerner
 manager: CelesteDG
-
+ms.author: cwerner
+ms.custom: 
+ms.date: 05/07/2019
+ms.reviewer: jmprieur
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-
-ms.date: 05/07/2019
-ms.author: cwerner
-ms.reviewer: jmprieur
-ms.custom: 
 #Customer intent: As an application developer, I want to know how to write a web API that calls web APIs using the Microsoft identity platform.
 ---
 

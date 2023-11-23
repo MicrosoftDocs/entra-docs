@@ -1,17 +1,15 @@
 ---
 title: Errors and exceptions (MSAL Android)
 description: Learn how to handle errors and exceptions, Conditional Access, and claims challenges in MSAL Android applications.
-
 author: henrymbuguakiarie
 manager: CelesteDG
-
+ms.author: henrymbugua
+ms.date: 01/27/2023
+ms.reviewer: negoe
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: troubleshooting
-
-ms.date: 01/27/2023
-ms.author: henrymbugua
-ms.reviewer: negoe
+#Customer intent:
 ---
 
 # Handle exceptions and errors in MSAL for Android

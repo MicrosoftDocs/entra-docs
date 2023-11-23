@@ -1,19 +1,16 @@
 ---
 title: Single sign-on SAML protocol
 description: This article describes the single sign-on (SSO) SAML protocol in Microsoft Entra ID
-
 author: OwenRichards1
 manager: CelesteDG
-
+ms.author: owenrichards
+ms.custom:
+ms.date: 08/11/2023
+ms.reviewer: kenwith
 ms.service: active-directory
 ms.subservice: develop
-
 ms.topic: reference
-ms.date: 08/11/2023
-ms.author: owenrichards
-ms.reviewer: kenwith
-ms.custom: 
-
+#Customer intent:
 ---
 
 # Single sign-on SAML protocol

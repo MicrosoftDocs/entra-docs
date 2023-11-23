@@ -1,17 +1,16 @@
 ---
 title: Customize SAML token claims
 description: Learn how to customize the claims issued by Microsoft identity platform in the SAML token for enterprise applications.
-
 author: cilwerner
 manager: CelesteDG
+ms.author: cwerner
+ms.custom: curation-claims
+ms.date: 05/01/2023
+ms.reviewer: rahulnagraj, alamaral, jeedes
 ms.service: active-directory
 ms.subservice: develop
-
 ms.topic: how-to
-ms.date: 05/01/2023
-ms.author: cwerner
-ms.custom:  curation-claims
-ms.reviewer: rahulnagraj, alamaral, jeedes
+#Customer intent:
 ---
 
 # Customize SAML token claims
