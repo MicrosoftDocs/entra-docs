@@ -4,7 +4,7 @@ description: In this quickstart, you learn how a Python process can get an acces
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom:  devx-track-python, scenarios:getting-started, "languages:Python", mode-other
+ms.custom: devx-track-python, scenarios:getting-started, "languages:Python", mode-other
 ms.date: 03/28/2023
 ms.reviewer: jmprieur
 ms.service: active-directory

@@ -5,7 +5,7 @@ ROBOTS: NOINDEX
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom:  scenarios:getting-started, "languages:UWP", mode-api
+ms.custom: scenarios:getting-started, "languages:UWP", mode-api
 ms.date: 01/14/2022
 ms.reviewer: jmprieur
 ms.service: active-directory

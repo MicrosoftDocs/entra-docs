@@ -4,7 +4,7 @@ description: Learn about best practices, recommendations, and common oversights 
 author: rwike77
 manager: CelesteDG
 ms.author: ryanwi
-ms.custom:  scenarios:getting-started, has-adal-ref
+ms.custom: scenarios:getting-started, has-adal-ref
 ms.date: 11/22/2023
 ms.reviewer: lenalepa, sureshja, jesakowi
 ms.service: active-directory

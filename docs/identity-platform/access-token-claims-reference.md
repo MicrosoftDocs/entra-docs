@@ -4,7 +4,7 @@ description: Claims reference with details on the claims included in access toke
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.custom:  curation-claims
+ms.custom: curation-claims
 ms.date: 05/26/2023
 ms.service: active-directory
 ms.subservice: develop

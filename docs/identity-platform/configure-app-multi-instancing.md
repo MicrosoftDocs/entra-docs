@@ -4,7 +4,7 @@ description: Learn about multi-instancing, which is needed for configuring multi
 author: omondiatieno
 manager: CelesteDG
 ms.author: jomondi
-ms.custom:  curation-claims
+ms.custom: curation-claims
 ms.date: 06/09/2023
 ms.reviewer: rahulnagraj, alamaral, jeedes
 ms.service: active-directory

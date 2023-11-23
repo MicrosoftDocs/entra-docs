@@ -5,7 +5,7 @@ description: Learn how to restrict access to your apps registered in Microsoft E
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.custom:  
+ms.custom: 
 ms.date: 03/28/2023
 ms.reviewer: jmprieur, kkrishna
 ms.service: active-directory

@@ -4,7 +4,7 @@ description: Learn how to enable shared device mode to allow frontline workers t
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.custom:  identitypla | Azuretformtop40
+ms.custom: identitypla | Azuretformtop40
 ms.date: 02/06/2023
 ms.reviewer: brandwe
 ms.service: active-directory

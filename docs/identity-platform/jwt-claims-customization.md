@@ -4,7 +4,7 @@ description: Learn how to customize the claims issued by Microsoft identity plat
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.custom:  curation-claims, devx-track-dotnet
+ms.custom: curation-claims, devx-track-dotnet
 ms.date: 05/01/2023
 ms.reviewer: rahulnagraj, alamaral
 ms.service: active-directory

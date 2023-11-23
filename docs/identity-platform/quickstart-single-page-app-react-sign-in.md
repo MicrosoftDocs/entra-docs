@@ -4,7 +4,7 @@ description: In this quickstart, learn how a JavaScript React single-page applic
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.custom:  scenarios:getting-started, languages:JavaScript, devx-track-js
+ms.custom: scenarios:getting-started, languages:JavaScript, devx-track-js
 ms.date: 10/06/2023
 ms.reviewer: j-mantu
 ms.service: active-directory

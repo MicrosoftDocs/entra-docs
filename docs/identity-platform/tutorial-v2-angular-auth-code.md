@@ -4,7 +4,7 @@ description: In this tutorial, you build an Angular single-page app (SPA) using 
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.custom:  devx-track-js
+ms.custom: devx-track-js
 ms.date: 10/24/2023
 ms.reviewer: joarroyo
 ms.service: active-directory

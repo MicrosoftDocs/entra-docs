@@ -4,7 +4,7 @@ description: Learn how to configure keychain so that your app can cache tokens i
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom:  has-adal-ref,
+ms.custom: has-adal-ref
 ms.date: 12/19/2022
 ms.reviewer: oldalton
 ms.service: active-directory

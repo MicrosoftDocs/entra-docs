@@ -5,7 +5,7 @@ ROBOTS: NOINDEX
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.custom:  scenarios:getting-started, languages:JavaScript, devx-track-js, mode-other
+ms.custom: scenarios:getting-started, languages:JavaScript, devx-track-js, mode-other
 ms.date: 09/25/2023
 ms.reviewer: jamesmantu
 ms.service: active-directory

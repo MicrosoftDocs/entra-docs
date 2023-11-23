@@ -4,7 +4,7 @@ description: A list of videos about modern authentication and the Microsoft iden
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom:  has-adal-ref
+ms.custom: has-adal-ref
 ms.date: 01/06/2023
 ms.reviewer: celested
 ms.service: active-directory

@@ -5,7 +5,7 @@ ROBOTS: NOINDEX
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.custom:  seoapril2019
+ms.custom: seoapril2019
 ms.date: 10/01/2020
 ms.reviewer: jmprieur
 ms.service: active-directory

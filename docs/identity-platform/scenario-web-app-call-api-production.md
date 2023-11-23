@@ -4,7 +4,7 @@ description: Learn how to move to production a web app that calls web APIs.
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.custom:  
+ms.custom: 
 ms.date: 05/07/2019
 ms.reviewer: jmprieur
 ms.service: active-directory

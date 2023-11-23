@@ -4,7 +4,7 @@ description: In this tutorial, you create a JavaScript SPA that can sign in user
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom:  devx-track-js
+ms.custom: devx-track-js
 ms.date: 10/12/2021
 ms.service: active-directory
 ms.subservice: develop

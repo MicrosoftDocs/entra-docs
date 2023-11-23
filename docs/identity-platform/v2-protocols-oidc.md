@@ -4,7 +4,7 @@ description: Sign in Microsoft Entra users by using the Microsoft identity platf
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom:  
+ms.custom: 
 ms.date: 09/13/2023
 ms.reviewer: ludwignick
 ms.service: active-directory

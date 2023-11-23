@@ -4,7 +4,7 @@ description: Learn about public client and confidential client applications in t
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom:  has-adal-ref,
+ms.custom: has-adal-ref
 ms.date: 11/20/2023
 ms.reviewer: iambmelt
 ms.service: active-directory

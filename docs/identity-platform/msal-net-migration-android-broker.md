@@ -4,7 +4,7 @@ description: Learn how to migrate Xamarin Android apps that use the Microsoft Au
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.custom:  has-adal-ref
+ms.custom: has-adal-ref
 ms.date: 08/31/2020
 ms.reviewer: saeeda
 ms.service: active-directory

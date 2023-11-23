@@ -4,7 +4,7 @@ description: Learn about the differences between the Microsoft Authentication Li
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.custom:  has-adal-ref
+ms.custom: has-adal-ref
 ms.date: 01/18/2023
 ms.reviewer: jak
 ms.service: active-directory

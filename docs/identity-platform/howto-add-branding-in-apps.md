@@ -4,7 +4,7 @@ description: Learn about application branding guidelines for Microsoft identity 
 author: rwike77
 manager: CelesteDG
 ms.author: ryanwi
-ms.custom:  signin_art
+ms.custom: signin_art
 ms.date: 07/26/2023
 ms.reviewer: arielgo
 ms.service: active-directory

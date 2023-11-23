@@ -4,7 +4,7 @@ description: An overview of single and multiple account public client apps.
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.custom:  has-adal-ref
+ms.custom: has-adal-ref
 ms.date: 09/26/2019
 ms.reviewer: shoatman
 ms.service: active-directory

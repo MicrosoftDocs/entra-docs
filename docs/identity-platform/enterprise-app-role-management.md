@@ -4,7 +4,7 @@ description: Learn how to configure the role claim issued in the SAML token for 
 author: omondiatieno
 manager: CelesteDG
 ms.author: jomondi
-ms.custom:  
+ms.custom: 
 ms.date: 06/09/2023
 ms.reviewer: jeedes
 ms.service: active-directory

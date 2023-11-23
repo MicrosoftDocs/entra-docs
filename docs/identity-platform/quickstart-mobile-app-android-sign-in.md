@@ -4,7 +4,7 @@ description: In this quickstart, learn how Android applications can call an API 
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.custom:  scenarios:getting-started, "languages:Android", has-adal-ref, mode-api
+ms.custom: scenarios:getting-started, "languages:Android", has-adal-ref, mode-api
 ms.date: 05/24/2023
 ms.service: active-directory
 ms.subservice: develop

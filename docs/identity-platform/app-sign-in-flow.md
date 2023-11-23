@@ -4,7 +4,7 @@ description: Learn about the sign-in flow of web, desktop, and mobile apps in Mi
 author: rwike77
 manager: CelesteDG
 ms.author: ryanwi
-ms.custom:  scenarios:getting-started
+ms.custom: scenarios:getting-started
 ms.date: 08/11/2023
 ms.reviewer: jmprieur, saeeda, sureshja, ludwignick
 ms.service: active-directory

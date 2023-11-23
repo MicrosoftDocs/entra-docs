@@ -4,7 +4,7 @@ description: In this quickstart, you learn how to create a Microsoft Entra tenan
 author: OwenRichards1
 manager: CelesteDG
 ms.author: ryanwi
-ms.custom:  fasttrack-edit, mode-other
+ms.custom: fasttrack-edit, mode-other
 ms.date: 07/11/2023
 ms.reviewer: jmprieur
 ms.service: active-directory

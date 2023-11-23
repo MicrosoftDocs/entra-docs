@@ -4,7 +4,7 @@ description: Learn about securing the business logic of your applications and AP
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.custom:  curation-claims
+ms.custom: curation-claims
 ms.date: 04/21/2023
 ms.service: active-directory
 ms.subservice: develop

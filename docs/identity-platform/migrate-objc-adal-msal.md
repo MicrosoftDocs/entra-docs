@@ -4,7 +4,7 @@ description: Learn the differences between MSAL for iOS/macOS and the Azure AD A
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom:  has-adal-ref
+ms.custom: has-adal-ref
 ms.date: 08/28/2019
 ms.reviewer: oldalton
 ms.service: active-directory

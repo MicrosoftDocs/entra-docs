@@ -4,7 +4,7 @@ description: Learn about acquiring and caching tokens using MSAL.
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.custom:  has-adal-ref, 
+ms.custom: has-adal-ref 
 ms.date: 02/27/2023
 ms.reviewer: saeeda
 ms.service: active-directory

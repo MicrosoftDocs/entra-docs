@@ -4,7 +4,7 @@ description: Learn about the basics of authentication and authorization in the M
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.custom:   scenarios:getting-started
+ms.custom:  scenarios:getting-started
 ms.date: 06/29/2023
 ms.reviewer: jmprieur, saeeda, sureshja, ludwignick
 ms.service: active-directory

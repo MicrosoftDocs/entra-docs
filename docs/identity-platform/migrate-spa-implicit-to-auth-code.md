@@ -4,7 +4,7 @@ description: How to update a JavaScript SPA using MSAL.js 1.x and the implicit g
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom:  devx-track-js
+ms.custom: devx-track-js
 ms.date: 07/17/2020
 ms.service: active-directory
 ms.subservice: develop

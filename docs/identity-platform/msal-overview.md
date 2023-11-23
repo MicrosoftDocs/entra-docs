@@ -4,7 +4,7 @@ description: The Microsoft Authentication Library (MSAL) enables application dev
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.custom:  has-adal-ref
+ms.custom: has-adal-ref
 ms.date: 11/17/2023
 ms.reviewer: saeeda
 ms.service: active-directory

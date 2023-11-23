@@ -4,7 +4,7 @@ description: Learn how to build a desktop app that calls web APIs to acquire a t
 author: Dickson-Mwendia
 manager: CelesteDG
 ms.author: dmwendia
-ms.custom:  has-adal-ref
+ms.custom: has-adal-ref
 ms.date: 08/25/2021
 ms.service: active-directory
 ms.subservice: develop

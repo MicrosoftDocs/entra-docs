@@ -4,7 +4,7 @@ description: Describes how to use Azure PowerShell to create a Microsoft Entra a
 author: rwike77
 manager: CelesteDG
 ms.author: ryanwi
-ms.custom:  devx-track-azurepowershell
+ms.custom: devx-track-azurepowershell
 ms.date: 03/07/2023
 ms.reviewer: tomfitz
 ms.service: active-directory

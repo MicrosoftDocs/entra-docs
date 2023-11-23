@@ -4,7 +4,7 @@ description: In this tutorial, learn how to call an ASP.NET web API protected by
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.custom:  scenarios:getting-started, languages:ASP.NET, has-adal-ref
+ms.custom: scenarios:getting-started, languages:ASP.NET, has-adal-ref
 ms.date: 12/10/2019
 ms.reviewer: jmprieur
 ms.service: active-directory

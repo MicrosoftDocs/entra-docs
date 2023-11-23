@@ -4,7 +4,7 @@ description: This article discusses the registration and use of certificate cred
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom:  has-adal-ref,
+ms.custom: has-adal-ref
 ms.date: 02/27/2023
 ms.reviewer: kenwith
 ms.service: active-directory

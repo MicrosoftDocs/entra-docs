@@ -4,7 +4,7 @@ description: A guide to OAuth 2.0 and OpenID Connect protocols as supported by t
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.custom:  has-adal-ref,
+ms.custom: has-adal-ref
 ms.date: 02/27/2023
 ms.reviewer: nickludwig
 ms.service: active-directory

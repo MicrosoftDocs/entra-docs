@@ -4,7 +4,7 @@ description: Learn how to migrate your Azure Active Directory Authentication Lib
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.custom:  has-adal-ref
+ms.custom: has-adal-ref
 ms.date: 10/14/2020
 ms.reviewer: shoatman
 ms.service: active-directory

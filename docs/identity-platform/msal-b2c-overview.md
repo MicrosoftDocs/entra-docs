@@ -4,7 +4,7 @@ description: The Microsoft Authentication Library for JavaScript (MSAL.js) enabl
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.custom:  devx-track-js
+ms.custom: devx-track-js
 ms.date: 03/07/2023
 ms.reviewer: nacanuma, negoe
 ms.service: active-directory

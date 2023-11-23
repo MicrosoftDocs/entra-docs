@@ -4,7 +4,7 @@ description: In this quickstart, you learn how a Java app can get an access toke
 author: Dickson-Mwendia
 manager: CelesteDG
 ms.author: dmwendia
-ms.custom:  scenarios:getting-started, languages:Java, devx-track-java, mode-other, devx-track-extended-java
+ms.custom: scenarios:getting-started, languages:Java, devx-track-java, mode-other, devx-track-extended-java
 ms.date: 01/10/2022
 ms.service: active-directory
 ms.subservice: develop

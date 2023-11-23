@@ -4,7 +4,7 @@ description: In this quickstart, learn how a Universal Windows Platform (UWP) ap
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom:  scenarios:getting-started, "languages:UWP", mode-api
+ms.custom: scenarios:getting-started, "languages:UWP", mode-api
 ms.date: 05/19/2022
 ms.reviewer: jmprieur
 ms.service: active-directory

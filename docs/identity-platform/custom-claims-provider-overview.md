@@ -4,7 +4,7 @@ description: Conceptual article describing the custom claims provider as part of
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.custom:  
+ms.custom: 
 ms.date: 04/10/2023
 ms.reviewer: JasSuri
 ms.service: active-directory

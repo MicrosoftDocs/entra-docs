@@ -4,7 +4,7 @@ description: In this quickstart, learn how a Python web app can sign in users, g
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.custom:  devx-track-python, scenarios:getting-started, languages:Python
+ms.custom: devx-track-python, scenarios:getting-started, languages:Python
 ms.date: 07/28/2023
 ms.service: active-directory
 ms.subservice: develop

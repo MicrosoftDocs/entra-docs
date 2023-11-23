@@ -4,7 +4,7 @@ description: An overview of the Microsoft identity platform accounts for Android
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.custom:  devx-track-java, has-adal-ref
+ms.custom: devx-track-java, has-adal-ref
 ms.date: 09/14/2019
 ms.devlang: java
 ms.reviewer: shoatman

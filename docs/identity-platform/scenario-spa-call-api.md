@@ -4,7 +4,7 @@ description: Learn how to build a single-page application that calls a web API
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom:  
+ms.custom: 
 ms.date: 11/25/2022
 ms.service: active-directory
 ms.subservice: develop

@@ -4,7 +4,7 @@ description: Learn how to log errors and exceptions in MSAL.js
 author: Dickson-Mwendia
 manager: CelesteDG
 ms.author: dmwendia
-ms.custom:  devx-track-js
+ms.custom: devx-track-js
 ms.date: 12/21/2021
 ms.reviewer: saeeda, jmprieur
 ms.service: active-directory

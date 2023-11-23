@@ -4,7 +4,7 @@ description: Learn how to handle errors and exceptions, Conditional Access claim
 author: Dickson-Mwendia
 manager: CelesteDG
 ms.author: dmwendia
-ms.custom:  devx-track-js
+ms.custom: devx-track-js
 ms.date: 11/26/2020
 ms.reviewer: saeeda, hahamil
 ms.service: active-directory

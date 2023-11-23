@@ -4,7 +4,7 @@ description: Learn how to build a web app that authenticates users and calls web
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.custom:  
+ms.custom: 
 ms.date: 11/4/2022
 ms.reviewer: jmprieur
 ms.service: active-directory

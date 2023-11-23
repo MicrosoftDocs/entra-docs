@@ -4,7 +4,7 @@ description: Learn how to build a web app that signs in users (move to productio
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.custom:  devx-track-extended-java, devx-track-js
+ms.custom: devx-track-extended-java, devx-track-js
 ms.date: 09/17/2019
 ms.reviewer: jmprieur
 ms.service: active-directory

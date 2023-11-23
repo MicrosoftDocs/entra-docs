@@ -4,7 +4,7 @@ description: Learn how to share SSO between ADAL and MSAL apps
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.custom:  has-adal-ref
+ms.custom: has-adal-ref
 ms.date: 08/28/2019
 ms.reviewer: 
 ms.service: active-directory

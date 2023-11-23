@@ -4,7 +4,7 @@ description: Learn how a Windows Presentation Foundation (WPF) application can g
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom:  mode-api
+ms.custom: mode-api
 ms.date: 09/09/2022
 ms.reviewer: jmprieur
 ms.service: active-directory

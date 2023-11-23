@@ -5,7 +5,7 @@ ROBOTS: NOINDEX
 author: Dickson-Mwendia
 manager: CelesteDG
 ms.author: dmwendia
-ms.custom:  scenarios:getting-started, languages:JavaScript, devx-track-js, mode-other
+ms.custom: scenarios:getting-started, languages:JavaScript, devx-track-js, mode-other
 ms.date: 08/16/2022
 ms.service: active-directory
 ms.subservice: develop

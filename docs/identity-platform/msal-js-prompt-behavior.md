@@ -4,7 +4,7 @@ description: Learn to customize prompt behavior using the Microsoft Authenticati
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom:  devx-track-js
+ms.custom: devx-track-js
 ms.date: 04/24/2019
 ms.reviewer: saeeda
 ms.service: active-directory

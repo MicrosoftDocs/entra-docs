@@ -4,7 +4,7 @@ description: Learn about the process of registering your application so it can i
 author: rwike77
 manager: CelesteDG
 ms.author: ryanwi
-ms.custom:  scenarios:getting-started
+ms.custom: scenarios:getting-started
 ms.date: 08/17/2023
 ms.reviewer: jmprieur, saeeda, sureshja, ludwignick
 ms.service: active-directory

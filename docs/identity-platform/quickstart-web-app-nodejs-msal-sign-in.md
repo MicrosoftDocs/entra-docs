@@ -4,7 +4,7 @@ description: In this quickstart, you learn how to implement authentication with 
 author: cilwerner
 manager: celested
 ms.author: cwerner
-ms.custom:  scenarios:getting-started, languages:js, devx-track-js
+ms.custom: scenarios:getting-started, languages:js, devx-track-js
 ms.date: 07/27/2023
 ms.reviewer: jmprieur
 ms.service: active-directory

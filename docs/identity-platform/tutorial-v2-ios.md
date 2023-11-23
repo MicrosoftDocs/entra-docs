@@ -4,7 +4,7 @@ description: Build an iOS or macOS app that uses the Microsoft identity platform
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.custom:  has-adal-ref
+ms.custom: has-adal-ref
 ms.date: 06/27/2023
 ms.reviewer: oldalton
 ms.service: active-directory

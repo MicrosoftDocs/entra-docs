@@ -4,7 +4,7 @@ description: Learn how to configure optional claims in tokens issued by Microsof
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.custom:  curation-claims
+ms.custom: curation-claims
 ms.date: 06/07/2023
 ms.reviewer: ludwignick
 ms.service: active-directory

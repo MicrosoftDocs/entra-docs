@@ -4,7 +4,7 @@ description: Reference documentation for custom claims providers
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.custom:  
+ms.custom: 
 ms.date: 03/06/2023
 ms.reviewer: jassuri
 ms.service: active-directory

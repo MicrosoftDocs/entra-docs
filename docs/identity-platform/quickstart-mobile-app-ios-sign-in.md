@@ -4,7 +4,7 @@ description: In this quickstart, learn how an iOS or macOS app can sign in users
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.custom:  scenarios:getting-started, "languages:iOS", mode-api
+ms.custom: scenarios:getting-started, "languages:iOS", mode-api
 ms.date: 01/14/2022
 ms.reviewer: jmprieur, saeeda
 ms.service: active-directory

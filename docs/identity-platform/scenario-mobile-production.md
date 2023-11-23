@@ -4,7 +4,7 @@ description: Learn how to build a mobile app that calls web APIs. (Prepare apps 
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.custom:  
+ms.custom: 
 ms.date: 05/07/2019
 ms.reviewer: jmprieur
 ms.service: active-directory

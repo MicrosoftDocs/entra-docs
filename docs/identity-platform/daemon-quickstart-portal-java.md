@@ -5,7 +5,7 @@ ROBOTS: NOINDEX
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom:  scenarios:getting-started, languages:java, devx-track-java, mode-api, devx-track-extended-java
+ms.custom: scenarios:getting-started, languages:java, devx-track-java, mode-api, devx-track-extended-java
 ms.date: 08/22/2022
 ms.service: active-directory
 ms.subservice: develop

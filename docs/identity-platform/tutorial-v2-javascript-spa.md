@@ -4,7 +4,7 @@ description: In this tutorial, you build a JavaScript single-page application (S
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom:  devx-track-js
+ms.custom: devx-track-js
 ms.date: 09/26/2022
 ms.service: active-directory
 ms.subservice: develop

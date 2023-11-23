@@ -4,7 +4,7 @@ description: Learn how to build a daemon app that calls web APIs
 author: Dickson-Mwendia
 manager: CelesteDG
 ms.author: dmwendia
-ms.custom:  
+ms.custom: 
 ms.date: 12/19/2022
 ms.reviewer: jmprieur
 ms.service: active-directory

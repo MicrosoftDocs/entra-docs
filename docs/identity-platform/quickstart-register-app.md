@@ -4,7 +4,7 @@ description: In this quickstart, you learn how to register an application with t
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.custom:  mode-other
+ms.custom: mode-other
 ms.date: 06/29/2023
 ms.service: active-directory
 ms.subservice: develop

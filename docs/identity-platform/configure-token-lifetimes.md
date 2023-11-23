@@ -4,7 +4,7 @@ description: Learn how to set lifetimes for access tokens issued by Microsoft id
 author: rwike77
 manager: CelesteDG
 ms.author: ryanwi
-ms.custom:  
+ms.custom: 
 ms.date: 11/02/2023
 ms.reviewer: joroja
 ms.service: active-directory

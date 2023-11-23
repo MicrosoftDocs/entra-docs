@@ -4,7 +4,7 @@ description: Learn how to pass a custom state parameter value in authentication 
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom:  devx-track-js
+ms.custom: devx-track-js
 ms.date: 01/16/2020
 ms.reviewer: saeeda
 ms.service: active-directory

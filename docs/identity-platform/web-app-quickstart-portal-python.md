@@ -5,7 +5,7 @@ ROBOTS: NOINDEX
 author: Dickson-Mwendia
 manager: CelesteDG
 ms.author: dmwendia
-ms.custom:  devx-track-python, scenarios:getting-started, "languages:Python", mode-api
+ms.custom: devx-track-python, scenarios:getting-started, "languages:Python", mode-api
 ms.date: 08/16/2022
 ms.service: active-directory
 ms.subservice: develop

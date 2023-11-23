@@ -15,7 +15,7 @@ ms.topic: reference
 
 # Microsoft identity platform UserInfo endpoint
 
-As part of the OpenID Connect (OIDC) standard, the [UserInfo endpoint](https://openid.net/specs/openid-connect-core-1_0.html#UserInfo) returns information about an authenticated user. 
+As part of the OpenID Connect (OIDC) standard, the [UserInfo endpoint](https://openid.net/specs/openid-connect-core-1_0.html#UserInfo) returns information about an authenticated user.
 
 ## Find the .well-known configuration endpoint
 

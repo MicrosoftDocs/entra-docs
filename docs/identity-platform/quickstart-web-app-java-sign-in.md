@@ -4,7 +4,7 @@ description: In this quickstart, you'll learn how to add sign-in with Microsoft 
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner 
-ms.custom:  scenarios:getting-started, languages:Java, devx-track-java, devx-track-extended-java
+ms.custom: scenarios:getting-started, languages:Java, devx-track-java, devx-track-extended-java
 ms.date: 01/18/2023
 ms.service: active-directory
 ms.subservice: develop

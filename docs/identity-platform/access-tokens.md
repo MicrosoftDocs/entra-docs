@@ -4,7 +4,7 @@ description: Learn about access tokens used in the Microsoft identity platform.
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.custom:  curation-claims
+ms.custom: curation-claims
 ms.date: 8/1/2023
 ms.service: active-directory
 ms.subservice: develop

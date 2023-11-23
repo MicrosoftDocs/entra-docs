@@ -4,7 +4,7 @@ description: Create a new Microsoft Entra app and service principal to manage ac
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.custom:  subject-rbac-steps, devx-track-arm-template
+ms.custom: subject-rbac-steps, devx-track-arm-template
 ms.date: 05/12/2023
 ms.service: active-directory
 ms.subservice: develop

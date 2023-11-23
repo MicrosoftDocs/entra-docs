@@ -4,7 +4,7 @@ description: Learn the details of the claims included in ID tokens issued by the
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.custom:  curation-claims
+ms.custom: curation-claims
 ms.date: 05/30/2023
 ms.service: active-directory
 ms.subservice: develop

@@ -4,7 +4,7 @@ description: Describes directory extension attributes that are used for sending 
 author: omondiatieno
 manager: CelesteDG
 ms.author: jomondi
-ms.custom:  curation-claims
+ms.custom: curation-claims
 ms.date: 05/26/2023
 ms.reviewer: ludwignick, rahulnagraj, alamaral
 ms.service: active-directory

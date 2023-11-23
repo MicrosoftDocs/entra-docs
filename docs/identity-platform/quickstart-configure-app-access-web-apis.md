@@ -4,7 +4,7 @@ description: In this quickstart, you configure an app registration representing 
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.custom:  mode-api
+ms.custom: mode-api
 ms.date: 06/29/2023
 ms.reviewer: lenalepa, aragra, sureshja
 ms.service: active-directory

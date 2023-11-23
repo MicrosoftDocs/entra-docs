@@ -4,7 +4,7 @@ description: Learn how to avoid page reloads when acquiring and renewing tokens 
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom:  devx-track-js
+ms.custom: devx-track-js
 ms.date: 05/29/2019
 ms.reviewer: saeeda
 ms.service: active-directory

@@ -4,7 +4,7 @@ description: In this tutorial, you build an Android app that uses the Microsoft 
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.custom:  has-adal-ref
+ms.custom: has-adal-ref
 ms.date: 04/04/2023
 ms.reviewer: brandwe
 ms.service: active-directory

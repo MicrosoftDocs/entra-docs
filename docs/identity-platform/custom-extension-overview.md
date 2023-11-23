@@ -4,7 +4,7 @@ description: Use Microsoft Entra custom authentication extensions to customize y
 author: omondiatieno
 manager: CelesteDG
 ms.author: jomondi
-ms.custom:  
+ms.custom: 
 ms.date: 10/27/2023
 ms.reviewer: JasSuri
 ms.service: active-directory

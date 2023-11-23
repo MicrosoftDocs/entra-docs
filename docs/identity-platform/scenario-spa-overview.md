@@ -4,7 +4,7 @@ description: Learn how to build a single-page application (scenario overview) by
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom:  devx-track-js, 
+ms.custom: devx-track-js, 
 ms.date: 11/4/2022
 ms.service: active-directory
 ms.subservice: develop

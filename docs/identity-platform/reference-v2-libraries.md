@@ -4,7 +4,7 @@ description: List of client libraries and middleware compatible with the Microso
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.custom:  
+ms.custom: 
 ms.date: 10/28/2022
 ms.reviewer: jmprieur, saeeda
 ms.service: active-directory

@@ -4,7 +4,7 @@ description: Learn about the claims mapping policy type, which is used to modify
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.custom:  curation-claims
+ms.custom: curation-claims
 ms.date: 06/02/2023
 ms.reviewer: ludwignick, jeedes
 ms.service: active-directory

@@ -4,7 +4,7 @@ description: Learn how to customize the MSAL iOS/macOS browser experience to sig
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.custom:  has-adal-ref
+ms.custom: has-adal-ref
 ms.date: 01/24/2023
 ms.reviewer: oldalton
 ms.service: active-directory

@@ -4,7 +4,7 @@ description: In this quickstart, learn how a Windows Presentation Foundation (WP
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom:  mode-api
+ms.custom: mode-api
 ms.date: 01/14/2022
 ms.reviewer: jmprieur
 ms.service: active-directory

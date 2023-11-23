@@ -4,7 +4,7 @@ description: In this quickstart, your register a web API with the Microsoft iden
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.custom:  has-adal-ref, 
+ms.custom: has-adal-ref 
 ms.date: 06/29/2023
 ms.reviewer: aragra, lenalepa, sureshja
 ms.service: active-directory
