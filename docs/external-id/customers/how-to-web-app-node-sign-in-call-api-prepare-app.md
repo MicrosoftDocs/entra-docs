@@ -23,32 +23,32 @@ In this article, you prepare the app project you created in [Tutorial: Prepare y
 
 Create more files, `fetch.js`, `todolistController.js`, `todos.js`, `todos.hbs`, `.env` to achieve the following project structure:
 
-    ```console
-        ciam-sign-in-call-api-node-express-web-app/
-        ├── .env
-        └── server.js
-        └── app.js
-        └── authConfig.js
-        └── fetch.js
-        └── package.json
-        └── auth/
-            └── AuthProvider.js
-        └── controller/
-            └── authController.js
-            └── todolistController.js
-        └── routes/
-            └── auth.js
-            └── index.js
-            └── todos.js
-            └── users.js
-        └── views/
-            └── layouts.hbs
-            └── error.hbs
-            └── id.hbs
-            └── index.hbs   
-            └── todos.hbs 
-        └── public/stylesheets/
-            └── style.css
+    ```
+    ciam-sign-in-call-api-node-express-web-app/
+    ├── .env
+    └── server.js
+    └── app.js
+    └── authConfig.js
+    └── fetch.js
+    └── package.json
+    └── auth/
+        └── AuthProvider.js
+    └── controller/
+        └── authController.js
+        └── todolistController.js
+    └── routes/
+        └── auth.js
+        └── index.js
+        └── todos.js
+        └── users.js
+    └── views/
+        └── layouts.hbs
+        └── error.hbs
+        └── id.hbs
+        └── index.hbs   
+        └── todos.hbs 
+    └── public/stylesheets/
+        └── style.css
     ```
 
 ## Install app dependencies
