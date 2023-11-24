@@ -59,12 +59,12 @@ Once your customer tenant free trial is ready, the next step is to personalize y
 
 You can upgrade your 30 days free trial of a tenant with customer configurations to unlock the full set of features. 
 
+   > [!NOTE]
+   > During the preview period, linking a subscription to your trial tenant will not result in any charges. However, prices will apply once this product is generally available (GA).
+
 ### Upgrade your free trial with a new Azure subscription
 
 If you don't have any Azure subscriptions, follow the steps below.
-
-   > [!NOTE]
-   > During the preview period, linking a subscription to your trial tenant will not result in any charges. However, prices will apply once this product is generally available (GA).
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com). <!-- Should we add a role here? The user who signs up is a Global Administrator by default.-->
 1. Browse to **Home** > **Microsoft Entra ID (Azure AD)**.
