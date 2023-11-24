@@ -41,6 +41,8 @@ In your code editor, open *authConfig.js* file, then update the code by adding t
     };
 ```
 
+In your *authConfig.js* file, replace `Enter_the_Web_Api_Application_Id_Here` with the Application (client) ID of the web API app that you registered in your customers tenant.
+
 The `todolistReadScope` and `todolistReadWriteScope` variables hold the web API full scope URLs that you set in your customer tenant. Make sure you export the `protectedResources` object.
 
 ## Acquire access token

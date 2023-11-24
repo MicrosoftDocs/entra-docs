@@ -50,7 +50,7 @@ In this article, you learn how to call the ASP.NET API from your Node.js client 
         module.exports = router;
     ```
 
-    This file contains express routes for create, read and delete resource in the protected API. Each route uses three middleware functions, which execute in that sequence: 
+    This file contains express routes for create, read and delete resource in the protected API. Each route uses three middleware functions, which execute in that sequence:
 
     - `isAuthenticated`, checks whether the user is authenticated.
     
