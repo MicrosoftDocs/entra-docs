@@ -18,7 +18,7 @@ ms.custom: it-pro
 
 Get started with Microsoft Entra ID for customers (Preview) that lets you create secure, customized sign-in experiences for your customer-facing apps and services. With these built-in customer configuration features, Microsoft Entra ID for customers can serve as the identity provider and access management service for your customers. 
 
-In this quickstart, you'll learn how to set up a customer tenant free trial. If you already have an Azure subscription, you can create a tenant with customer configurations in the Microsoft Entra admin center. For more information about how to create a tenant see [Set up a tenant](quickstart-tenant-setup.md). 
+In this quickstart, you'll learn how to set up a customer tenant free trial. If you already have an Azure subscription, you can create a tenant with customer configurations in the Microsoft Entra admin center. For more information about how to create a tenant, see [Set up a tenant](quickstart-tenant-setup.md). 
 
 Your free trial of a tenant with customer configurations provides you with the opportunity to try new features and build applications and processes during the free trial period. Organization (tenant) admins can invite other users. Each user account can only have one active free trial tenant at a time. The free trial isn't designed for scale testing. Trial tenant will support up to 10K resources, learn more about Microsoft Entra service limits [here](~/identity/users/directory-service-limits-restrictions.md). During your free trial, you'll have the option to unlock the full set of features by upgrading to [Azure free account](https://azure.microsoft.com/free/).
 
@@ -55,9 +55,16 @@ During the free trial period, you'll have access to all product features with fe
 
 Once your customer tenant free trial is ready, the next step is to personalize your customer's sign-in and sign-up experience, set up a user in your tenant, and configure a sample app. The get started guide will walk you through all of these steps in just a few minutes. For more information about the next steps, see the [get started guide](quickstart-get-started-guide.md) article. 
 
-## Upgrade your free trial with a new Azure subscription
+## Upgrade your free trial by adding an Azure subscription
 
-You can upgrade your 30 days free trial of a tenant with customer configurations to unlock the full set of features. If you don't have any Azure subscriptions, follow the steps below.
+You can upgrade your 30 days free trial of a tenant with customer configurations to unlock the full set of features. 
+
+### Upgrade your free trial with a new Azure subscription
+
+If you don't have any Azure subscriptions, follow the steps below.
+
+   > [!NOTE]
+   > During the preview period, linking a subscription to your trial tenant will not result in any charges. However, prices will apply once this product is generally available (GA).
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com). <!-- Should we add a role here? The user who signs up is a Global Administrator by default.-->
 1. Browse to **Home** > **Microsoft Entra ID (Azure AD)**.
@@ -84,12 +91,13 @@ You can upgrade your 30 days free trial of a tenant with customer configurations
     :::image type="content" source="media/quickstart-trial-setup/switch-to-tenant.png" alt-text="Screenshot of the switch to tenant link.":::
 
 
-## Upgrade your free trial with an existing tenant subscription
+### Upgrade your free trial with an existing tenant subscription
 
 If your free trial belongs to an account with an existing Azure subscription, you can upgrade your free trial with the existing subscription. To associate your free trial with an existing tenant to unlock the full set of features follow the steps below.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com). <!-- Should we add a role here? The user who signs up is a Global Administrator by default.-->
-1. Browse to **Home** > **Microsoft Entra ID (Azure AD)** > **Add Subscription**.
+1. Browse to **Home** > **Microsoft Entra ID (Azure AD)**.
+1. Select **Add Subscription**.
 1. Select a tenant from the menu and select **Switch**.
 
     :::image type="content" source="media/quickstart-trial-setup/add-existing-subscription.png" alt-text="Screenshot of the existing subscription screen."::: 
