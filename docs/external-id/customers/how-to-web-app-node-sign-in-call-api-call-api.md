@@ -164,6 +164,8 @@ In this article, you learn how to call the ASP.NET API from your Node.js client 
 1. In your code editor, open *.env* file, then add the following configuration:
 
     ```text
+        # Use this variable only in the development environment. 
+        # Please remove the variable when you move the app to the production environment.
         NODE_TLS_REJECT_UNAUTHORIZED='0'
     ```
 
