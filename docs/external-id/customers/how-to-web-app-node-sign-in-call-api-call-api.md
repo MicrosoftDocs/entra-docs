@@ -1,25 +1,24 @@
 ---
-title: Sign in users and call an API in a Node.js web application - call an API
+title: Call an API in a Node.js web application
 description: Learn how to call a protected API in your own Node.js web application.
  
 author: kengaderdus
 manager: mwongerapk
-
 ms.author: kengaderdus
-ms.service: active-directory
- 
+ms.service: active-directory 
 ms.subservice: ciam
 ms.topic: how-to
-ms.date: 05/22/2023
+ms.date: 11/26/2023
 ms.custom: developer, devx-track-js
 ---
 
-# Sign in users and call an API in a Node.js web application - call an API
+# Call an API in a Node.js web application
 
-In this article, you learn how to call the ASP.NET API from your Node.js client web app using the access token you've acquired in [Acquire access token](how-to-web-app-node-sign-in-call-api-sign-in-acquire-access-token.md#acquire-access-token).
+In this article, you learn how to call the ASP.NET API from your Node.js client web app using the access token you acquire in [Acquire access token](how-to-web-app-node-sign-in-call-api-sign-in-acquire-access-token.md#acquire-access-token).
 
-You add code in *routes/todos.js*, *controller/todolistController.js* and  *fetch.js* files to show how the app uses the access token to call an API. 
+## Prerequisite
 
+- Complete the steps in [Acquire an access token in your Node.js web app](how-to-web-app-node-sign-in-call-api-sign-in-acquire-access-token.md) article. 
 
 ## Update code
 
@@ -152,9 +151,7 @@ You add code in *routes/todos.js*, *controller/todolistController.js* and  *fetc
         };
     ```
 
-    This function makes the actual API call. It makes any HTTP request as long as you specify the HTTP method.
-
-    Notice how you include the access token as a bearer token in the HTTP request header:
+    This function makes the actual API call. Notice how you include the access token as a the value of bearer token in the HTTP request header:
     
     ```javascript
         //...        
@@ -164,25 +161,33 @@ You add code in *routes/todos.js*, *controller/todolistController.js* and  *fetc
         //...
     ```
 
-## Finalize your web app
+1. In your code editor, open *.env* file, then add the following configuration:
 
-1. In your code editor, open *app.js* file, then add the code from [app.js](https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial/blob/main/2-Authorization/4-call-api-express/App/app.js) to it.
-
-1. In your code editor, open *server.js* file, then add the code from [server.js](https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial/blob/main/2-Authorization/4-call-api-express/App/server.js) to it.
-
-1. In your code editor, open *package.json* file, then update the `scripts` property to:
-    
-    ```json
-      "scripts": {
-        "start": "node server.js"
-      }
+    ```text
+        NODE_TLS_REJECT_UNAUTHORIZED='0'
     ```
+
+    The `NODE_TLS_REJECT_UNAUTHORIZED='0'` setting in your .env file instructs Node.js to ignore any SSL certificate errors, such as the self-signed certificate error.
+
+1. In your code editor, open the `app.js` file, then:
+
+    1. Add the todo router by using the following code:
+
+    ```javascript
+        var todosRouter = require('./routes/todos');
+    ```
+
+    1. Use the todo router by using the following code:
     
+        ```javascript
+            app.use('/todos', todosRouter); 
+        ```
+
 ## Run and test web app and API
 
-At this point, you're ready to test your client web app and web API. 
+At this point, you're ready to call the web API from the client web app:  
 
-1. Use the steps you learned in [Secure an ASP.NET web API](./tutorial-protect-web-api-dotnet-core-build-app.md) article to start your web API. Your web API is now ready to serve client requests.
+1. Use the steps in [Secure an ASP.NET web API](./tutorial-protect-web-api-dotnet-core-build-app.md) article to start your web API app. Your web API is now ready to serve client requests.
 
 1. In your terminal, make sure you're in the project folder that contains your client web app such as `ciam-sign-in-call-api-node-express-web-app`, then run the following command:
 
@@ -200,5 +205,3 @@ You may want to:
 - [Customize the default branding](how-to-customize-branding-customers.md)
 
 - [Configure sign-in with Google](how-to-google-federation-customers.md)
-
-- [Sign in users in your own Node.js web application](tutorial-web-app-node-sign-in-prepare-tenant.md)
