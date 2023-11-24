@@ -127,6 +127,9 @@ In your code editor, open *auth/AuthProvider.js* file, then update then add the 
 
 - If you fail to acquire the token silently (such as with `InteractionRequiredAuthError` exception), request an access token afresh.
 
+> [!NOTE]
+> Once your client application receives an access token, it should treat it as an opaque string. The access token is intended for the API, not for the client application. Therefore, the client application should not attempt to read or process the access token. Instead, it should include the access token as-is in the Authorization header of its requests to the API. The API is responsible for interpreting the access token and using it to authenticate and authorize the client application’s requests.
+
 ## Next step
 
 > [!div class="nextstepaction"]
