@@ -23,7 +23,7 @@ In this article, you prepare the app project you created in [Tutorial: Prepare y
 
 Create more files, *fetch.js*, *todolistController.js*, *todos.js*, *todos.hbs* and *.env*, then organize them to achieve the following project structure:
 
-    ```
+```text
     ciam-sign-in-call-api-node-express-web-app/
     ├── .env
     └── server.js
@@ -49,7 +49,7 @@ Create more files, *fetch.js*, *todolistController.js*, *todos.js*, *todos.hbs* 
         └── todos.hbs 
     └── public/stylesheets/
         └── style.css
-    ```
+```
 
 ## Install app dependencies
 
