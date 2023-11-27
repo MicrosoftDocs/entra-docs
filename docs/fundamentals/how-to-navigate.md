@@ -51,6 +51,6 @@ This approach helps administrators new to a feature understand how to find what 
 
 ## Next steps
 
-- [Improve your security posture](concept-secure-remote-workers)
+- [Improve your security posture](concept-secure-remote-workers.md)
 - [What is Zero Trust?](/security/zero-trust/zero-trust-overview)
 - [Security resources](/security/ciso-workshop/adoption)
