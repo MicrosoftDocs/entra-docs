@@ -26,7 +26,7 @@ ms.author: barclayn
 
 ## Steps to rotate signing keys
 
-The public keys are available in the DID document for anyone in need of verifying signatures produced by an issuer. For an authority using the did:web method, the did document is available at https://contoso.com/.well-known/did.json, where contoso.com is just an example. This means that Verified ID shouldn’t  start signing using the new key until an updated version is publicly available on the webserver. If you're using a multi-region deployment, perhaps with CDN, it may take some time for your deployment process to get the new  did.json in place. To help admins perform rotation of signing keys without any service disruption, the process of rotation follows these steps:
+The public keys are available in the DID document for anyone in need of verifying signatures produced by an issuer. For an authority using the did:web method, the did document is available at https://contoso.com/.well-known/did.json, where contoso.com is just an example. This means that Verified ID shouldn’t  start signing using the new key until an updated version is publicly available on the webserver. If you're using a multi-region deployment, perhaps with CDN, it may take some time for your deployment process to get the updated did.json in place. To help admins perform rotation of signing keys without any service disruption, the process of rotation follows these steps:
 
 1.	Call the [signingKeys/rotate](admin-api.md#rotate-signing-key) API to create a new signing key in Azure Key Vault. The access token in the call must be for an admin user with access to keys in the Azure Key Vault. This sets a new Current key in Key Vault and the previous key moved to older keys but still be enabled. The response is the authority JSON object with the attribute `didDocumentStatus` having a value `outOfSync` indicating that there's a discrepancy between Key Vault and the publicly available did.json document.
    ![Screenshot of new key in Key Vault.](media/how-to-rotate-keys/new-key-in-kv.png)
@@ -39,7 +39,7 @@ The public keys are available in the DID document for anyone in need of verifyin
 Technically you don’t need to rotate signing keys in Verified ID if you're using your own Azure Key Vault. The current signing key does not expire. However, as with any public/private key solution, it's best practice to rotate keys periodically.
 
 ## What happens when I rotate the signing key?
-After successfully performing step 1-5, Verified ID has a new signing key and any JWT tokens signed from that moment is signed using the new key. This means issuance and presentation requests and issued credentials are be signed using the new key.
+After successfully performing step 1-4, Verified ID has a new signing key and any JWT tokens signed from that moment is signed using the new key. This means issuance and presentation requests and issued credentials are be signed using the new key.
 
 ## What happens to credentials signed by the old key(s)?
 Issued Verified ID credentials signed by a key that is no longer current continues to work as long as the public key is available in the public did.json document and the key is not disabled or deleted in Key Vault.
