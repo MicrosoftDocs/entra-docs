@@ -13,7 +13,7 @@ ms.author: kenwith
 ms.reviewer: cmmdesai
 ---
 
-# Quickstart API-driven inbound provisioning with Postman
+# Quickstart API-driven inbound provisioning with Postman (Public preview)
 
 This tutorial describes how you can quickly test [API-driven inbound provisioning](inbound-provisioning-api-concepts.md) with Postman.
 
