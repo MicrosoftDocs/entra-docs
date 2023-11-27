@@ -30,7 +30,12 @@ You see this concept surfaced in the first step of content called out like the f
 
 :::image type="content" source="media/how-to-navigate/least-privilge-steps.png" alt-text="Sreenshot of a document showing how to complete a step using the principle of least privilege.":::
 
-There's still a need for the highly privileged Global Administrator role in certain edge cases and we call them out as such. Microsoft doesn't recommend that administrators work day to day with an active privileged role assignment. Organizations can use features like [Privileged Identity Management](/entra/id-governance/privileged-identity-management/pim-configure) to elevate their accounts on a time limited basis to these highly privileged administrator roles. Organizations can use features like [Microsoft Entra Permissions Management](/entra/permissions-management/overview) to identify and remediate over-privileged users across multicloud infrastructures in Microsoft Azure, Amazon Web Services (AWS), and Google Cloud Platform (GCP).
+There's still a need for the highly privileged Global Administrator role in certain edge cases and we call them out as such.
+
+Microsoft doesn't recommend that administrators work day to day with an active privileged role assignment. To combat these bad habits organizations can use features like:
+
+- [Privileged Identity Management](/entra/id-governance/privileged-identity-management/pim-configure) to elevate their accounts on a time limited basis to these highly privileged administrator roles.
+- [Microsoft Entra Permissions Management](/entra/permissions-management/overview) to identify and remediate over-privileged users across multicloud infrastructures in Microsoft Azure, Amazon Web Services (AWS), and Google Cloud Platform (GCP).
 
 ## Portal navigation
 
