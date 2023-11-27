@@ -8,12 +8,12 @@ ms.service: active-directory
 ms.subservice: app-provisioning
 ms.workload: identity
 ms.topic: reference
-ms.date: 11/15/2023
+ms.date: 09/15/2023
 ms.author: kenwith
 ms.reviewer: chmutali
 ---
 
-# Frequently asked questions about API-driven inbound provisioning
+# Frequently asked questions about API-driven inbound provisioning (Pubic preview)
 
 This article answers frequently asked questions (FAQs) about API-driven inbound provisioning.
 

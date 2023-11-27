@@ -8,14 +8,15 @@ ms.service: active-directory
 ms.subservice: app-provisioning
 ms.workload: identity
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 09/15/2023
 ms.author: kenwith
 ms.reviewer: cmmdesai
 ---
 
-# Configure API-driven inbound provisioning app
+# Configure API-driven inbound provisioning app (Public preview)
 
 ## Introduction
+
 This tutorial describes how to configure [API-driven inbound user provisioning](inbound-provisioning-api-concepts.md). 
 
 This feature is available only when you configure the following Enterprise Gallery apps: 
