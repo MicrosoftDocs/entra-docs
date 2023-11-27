@@ -5,7 +5,7 @@ author: shlipsey3
 ms.author: sarahlipsey
 manager: amycolannino
 ms.topic: reference
-ms.date: 10/05/2023
+ms.date: 11/27/2023
 ms.service: network-access
 ms.custom: references_regions
 ---
@@ -15,16 +15,17 @@ During the preview, Global Secure Access (preview) is available in limited point
 
 ## Microsoft Entra Internet Access and Microsoft Entra Private Access
 
-| Europe | North America | South America | Africa | Asia |
-|---|---|---|---|---|
-| Amsterdam, Netherlands | Cheyenne, Wyoming, USA | Rio de Janeiro, Brazil | Johannesburg, South Africa | Dubai, UAE|
-| Berlin, Germany | Chicago, Illinois, USA | | Cape Town, South Africa | Chennai, India |
-| Dublin, Ireland | Des Moines, Iowa, USA |  | | Pune, India |
-| Frankfurt, Germany | Manassas, Virginia, USA | | | Singapore, Singapore |
-| Gavle, Sweden | Montreal, Quebec, Canada | | | Sydney, Australia |
-| London, UK | Phoenix, Arizona, USA | | | |
-| Milan, Italy | Quincy, Washington, USA  | | | |
-| Paris, France | San Antonio, Texas, USA | | | |
-| | San Jose, California, USA | | | |
-| | Toronto, Ontario, Canada | | | |
-| |  | | | |
+| Europe Middle East Africa (EMEA) | Asia Pacific (APAC)    | Latin America (LATAM)   | North America (NA) |
+|         ---                      |      ---               |         ---             |       ---          |
+| Amsterdam, Netherlands           | Busan, South Korea     | Rio de Janeiro, Brazil  | Boydton, Virginia, USA |
+| Berlin, Germany                  | Chennai, India         |                         | Cheyenne, Wyoming, USA |
+| Dublin, Ireland                  | Melbourne, Australia   |                         | Chicago, Illinois, USA |
+| Frankfurt, Germany               | Osaka, Japan           |                         | Des Moines, Iowa, USA |
+| Gavle, Sweden                    | Pune, India            |                         | Manassas, Virginia, USA |
+| London, UK                       | Seoul, South Korea     |                         | Montreal, Quebec, Canada |
+| Milan, Italy                     | Singapore, Singapore   |                         | Phoenix, Arizona, USA |
+| Paris, France                    | Sydney, Australia      |                         | Queretaro, Mexico |
+| Warsaw, Poland                   | Taipei, Taiwan         |                         | Quincy, Washington, USA |
+| Zurich, Switzerland              | Tel Aviv, Israel       |                         | San Antonio, Texas, USA |
+|                                  | Tokyo, Japan           |                         | San Jose, California, USA |
+|                                  |                        |                         | Toronto, Ontario, Canada |
