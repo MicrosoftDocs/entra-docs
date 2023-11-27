@@ -42,7 +42,136 @@ This page updates monthly, so revisit it regularly. If you're looking for items 
 **Service category:** Provisioning                     
 **Product capability:**  AAD Connect Cloud Sync             
 
-Exchange hybrid capability allows for the coexistence of Exchange mailboxes both on-premises and in Microsoft 365. Microsoft Entra Cloud Sync will synchronize a specific set of Exchange-related attributes from Microsoft Entra ID back into your on-premises directory and to any forests that's disconnected (no network trust needed between them). With this capability, existing customers who have this feature enabled in Microsoft Entra Connect sync can now migrate, and leverage, this feature with Microsoft Entra cloud sync. For more information, see: [Exchange hybrid writeback with cloud sync](../identity/hybrid/exchange-hybrid-writeback.md).
+Exchange hybrid capability allows for the coexistence of Exchange mailboxes both on-premises and in Microsoft 365. Microsoft Entra Cloud Sync synchronizes a specific set of Exchange-related attributes from Microsoft Entra ID back into your on-premises directory and to any forests that's disconnected (no network trust needed between them). With this capability, existing customers who have this feature enabled in Microsoft Entra Connect sync can now migrate, and apply, this feature with Microsoft Entra cloud sync. For more information, see: [Exchange hybrid writeback with cloud sync](../identity/hybrid/exchange-hybrid-writeback.md).
+
+---
+
+### General Availability - Guest Governance: Inactive Guest Insights
+
+**Type:** New feature   
+**Service category:** Reporting                     
+**Product capability:**  Identity Governance             
+
+Monitor guest accounts at scale with intelligent insights into inactive guest users in your organization. Customize the inactivity threshold depending on your organization’s needs, narrow down the scope of guest users you want to monitor, and identify the guest users that might be inactive. For more information, see: [Monitor and clean up stale guest accounts using access reviews](../identity/users/clean-up-stale-guest-accounts.md).
+
+---
+
+### General Availability - Soft Delete capability for Managed Service Identity
+
+**Type:** New feature   
+**Service category:** Managed identities for Azure resources                     
+**Product capability:** AuthZ/Access Delegation             
+
+Managed identities are a way of securely accessing cloud resources without having to store or manage any credentials. 
+
+Sometimes, a customer might accidentally or intentionally delete a managed identity. In the past, there was no way to restore a deleted managed identity, and the customer had to create a new one and reconfigure all the permissions and dependencies. This could be time-consuming and error-prone, especially if the identity was used by multiple resources or applications.
+
+To address this issue, Microsoft is releasing the capability to recover a deleted managed identity. This feature allows customers to restore a managed identity within a certain retention period. The recovery process preserves the original identity ID, name, and attributes, and restores the access to the resources and applications that the identity had before deletion. The customer won't need to update any configuration or code that references the identity, as it is the same as before. This reduces the impact and downtime caused by identity deletion, and improves the customer experience and satisfaction.
+
+To recover a deleted managed identity, the customer needs to contact Microsoft support, or open a support ticket specifying which managed identities need to be recovered. The support team validates the request and performs the recovery operation. The customer is notified when the recovery is completed, is able to verify that the identity is functional, and that it has the correct permissions and dependencies.
+
+For more information, see:
+
+- [Deletion and recovery of applications FAQ](../identity/enterprise-apps/delete-recover-faq.yml)
+- [Restore an enterprise application in Microsoft Entra ID](../identity/enterprise-apps/restore-application.md)
+- [Managed identities for Azure resources frequently asked questions](../identity/managed-identities-azure-resources/managed-identities-faq.md)
+
+---
+
+### Public Preview - Move AD FS apps to Microsoft Entra ID using AD FS application migration
+
+**Type:** New feature   
+**Service category:** Enterprise Apps                     
+**Product capability:**  End User Experiences             
+
+You're now able to scan an AD FS environment, identify the applications that can be migrated to Microsoft Entra ID, and be guided through the migration process. For more information, see: [Use AD FS application migration (preview) to move AD FS apps to Microsoft Entra ID](../identity/enterprise-apps/migrate-ad-fs-application-howto.md).
+
+---
+
+### Public Preview - lastSuccessfulSignIn property in signInActivity API
+
+**Type:** New feature   
+**Service category:** MS Graph                     
+**Product capability:**  End User Experiences             
+
+An extra property has been added to signInActivity API to display the last **successful** signIn time for a specific user, regardless if the signIn was interactive or non-interactive. Note that the data will not be backfilled for this property, so you should expect to be returned only successful signIn data starting on 12/1/2023. For more information, see: 
+
+---
+
+### General Availability - Auto-rollout of Conditional Access policies
+
+**Type:** New feature   
+**Service category:** Conditional Access                     
+**Product capability:**  Access Control             
+
+Starting in November 2023, Microsoft will begin automatically protecting customers with Microsoft managed Conditional Access policies. These are policies that Microsoft creates and enables in customer tenants. The following policies will be rolled out to all eligible tenants:
+
+1. Multifactor Authentication for admin portals: This policy covers privileged admin roles and requires multifactor Authentication when an admin signs into a Microsoft admin portal.
+1. Multifactor Authentication for per-user Multifactor Authentication users: This policy covers users with per-user multifactor Authentication and requires multifactor Authentication for all cloud apps multifactor Authentication for high-risk sign-ins: This policy covers all users and requires multifactor Authentication and reauthentication for high-risk sign-ins.
+
+For more information, see:
+
+- [Microsoft-managed policies](../identity/conditional-access/managed-policies.md)
+- [Automatic Conditional Access policies in Microsoft Entra streamline identity protection](https://www.microsoft.com/security/blog/2023/11/06/automatic-conditional-access-policies-in-microsoft-entra-streamline-identity-protection/)
+
+---
+
+### General Availability -  Chrome's CloudAPAuthEnabled available for device-based conditional access
+
+**Type:** New feature   
+**Service category:** Conditional Access                     
+**Product capability:**  3rd Party Integration             
+
+Enterprises can enable Chrome's CloudAPAuthEnabled on Windows 10+ devices to meet Microsoft Entra ID device-based conditional access policies. When enabled, it configures automatic user sign-in to web properties accessed via Chrome for accounts signed into the Windows 10+ computer. Automatic sign-in from the device also improves single sign-on experience for end users if third-party cookies are disabled in the browser. For more information, see: [CloudAPAuthEnabled](https://chromeenterprise.google/policies/#CloudAPAuthEnabled).
+
+---
+
+### General Availability - Custom security attributes in Microsoft Entra ID
+
+**Type:** New feature   
+**Service category:** Directory Management                     
+**Product capability:**  Directory             
+
+Custom security attributes in Microsoft Entra ID are business-specific attributes (key-value pairs) that you can define and assign to Microsoft Entra objects. These attributes can be used to store information, categorize objects, or enforce fine-grained access control over specific Azure resources. Custom security attributes can be used with [Azure attribute-based access control (Azure ABAC)](/azure/role-based-access-control/conditions-overview). For more information, see: [What are custom security attributes in Microsoft Entra ID?](./custom-security-attributes-overview.md).
+
+Changes were made to custom security attribute audit logs for general availability that might impact your daily operations. If you have been using custom security attribute audit logs during the preview, there are the actions you must take before February 2024 to ensure your audit log operations aren't disrupted. For more information, see: [Custom security attribute audit logs](./custom-security-attributes-manage.md#step-6-assign-roles).
+
+---
+
+### Public Preview - New provisioning connectors in the Azure AD Application Gallery - November 2023
+
+**Type:** New feature   
+**Service category:** App Provisioning               
+**Product capability:** 3rd Party Integration    
+
+We've added the following new applications in our App gallery with Provisioning support. You can now automate creating, updating, and deleting of user accounts for these newly integrated apps:
+
+- [Colloquial](../identity/saas-apps/colloquial-provisioning-tutorial.md)
+- [Diffchecker](../identity/saas-apps/diffchecker-provisioning-tutorial.md)
+- [M-Files](../identity/saas-apps/m-files-provisioning-tutorial.md)
+- [XM Fax and XM SendSecure](../identity/saas-apps/xm-fax-and-xm-send-secure-provisioning-tutorial.md)
+- [Rootly](../identity/saas-apps/rootly-provisioning-tutorial.md)
+- [Simple In/Out](../identity/saas-apps/simple-in-out-provisioning-tutorial.md)
+- [Team Today](../identity/saas-apps/team-today-provisioning-tutorial.md)
+- [YardiOne](../identity/saas-apps/yardione-provisioning-tutorial.md)
+
+For more information about how to better secure your organization by using automated user account provisioning, see: [Automate user provisioning to SaaS applications with Azure AD](~/identity/app-provisioning/user-provisioning.md).
+
+---
+
+### General Availability - New Federated Apps available in Azure AD Application gallery - November 2023
+
+**Type:** New feature   
+**Service category:** Enterprise Apps                
+**Product capability:** 3rd Party Integration          
+
+In November 2023 we've added the following 10 new applications in our App gallery with Federation support:
+
+[Citrix Cloud](https://www.citrix.com/), [Freight Audit](/entra/identity/saas-apps/freight-audit-tutorial), [Movement by project44](/entra/identity/saas-apps/movement-by-project44-tutorial), [Alohi](/entra/identity/saas-apps/alohi-tutorial), [AMCS Fleet Maintenance](https://www.amcsgroup.com/solutions/fleet-maintenance/), [Real Links Campaign App](https://reallinks.io/), [Propely](https://www.propely.io/), [Contentstack](/entra/identity/saas-apps/contentstack-tutorial), [Jasper AI](/entra/identity/saas-apps/jasper-ai-tutorial), [IANS Client Portal](/entra/identity/saas-apps/ians-client-portal-tutorial), [Avionic Interface Technologies LSMA](https://aviftech.com/), [CultureHQ](/entra/identity/saas-apps/culturehq-tutorial), [Hone](/entra/identity/saas-apps/hone-tutorial), [Collector Systems](/entra/identity/saas-apps/collector-systems-tutorial), [NetSfere](/entra/identity/saas-apps/netsfere-tutorial), [Spendwise], [Stage and Screen](/entra/identity/saas-apps/stage-and-screen-tutorial)
+
+You can also find the documentation of all the applications from here https://aka.ms/AppsTutorial.
+
+For listing your application in the Azure AD app gallery, read the details here https://aka.ms/AzureADAppRequest
 
 ---
 
