@@ -14,7 +14,7 @@ ms.reviewer:
 ---
 # How to get the most from Microsoft Entra documentation
 
-Within the Microsoft Entra documentation, you might notice some changes in how we explain things.
+Within the Microsoft Entra documentation, you might notice some changes in how we explain things. These changes are intended to help you be more secure and make navigation easier.
 
 ## Least privilege
 
