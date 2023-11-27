@@ -41,9 +41,9 @@ Microsoft doesn't recommend that administrators work day to day with an active p
 
 There are many ways to find features and several portals you can use, including the following examples:
 
+- [Microsoft Entra admin center](https://entra.microsoft.com/)
 - [Azure portal](https://portal.azure.com/)
 - [Microsoft Intune admin center](https://intune.microsoft.com/)
-- [Microsoft Entra admin center](https://entra.microsoft.com/)
 - [Microsoft 365 admin center](https://admin.microsoft.com/)
 
 In our documentation, we primarily focus on the Microsoft Entra admin center and the shortest route to features. We guide users to features using a left to right navigation method like the following example:
