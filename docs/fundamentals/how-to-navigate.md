@@ -4,7 +4,7 @@ description: What is least privilege and how to navigate using Microsoft Entra d
 
 ms.service: active-directory
 ms.subservice: fundamentals
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 11/27/2023
 
 ms.author: joflore
