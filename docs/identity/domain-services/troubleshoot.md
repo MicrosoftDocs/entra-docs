@@ -163,11 +163,9 @@ To see if there are any active alerts, [check the health status of a managed dom
 
 ## Users removed from your Microsoft Entra tenant are not removed from your managed domain
 
-Microsoft Entra ID protects against accidental deletion of user objects. 
+Microsoft Entra ID protects against accidental deletion of user objects. When you delete a user account from a Microsoft Entra tenant, the corresponding user object is moved to the recycle bin. When this delete operation is synchronized to your managed domain, the corresponding user account is deleted because Domain Services doesn't have a recycle bin.
 
-When you delete a user account from a Microsoft Entra tenant, the corresponding user object is moved to the recycle bin. When this delete operation is synchronized to your managed domain, the corresponding user account is deleted in the managed domain because there is no recycle bin for Domain Services.
-
-If the user account is restored in the tenant, the operation is synchronized to your managed domain. Domain Services fetches all links and creates a new globally unique identifier (GUID) and security ID (SID) for the user. 
+If the user account is restored in the tenant, Domain Services fetches all links for the account when it synchronizes the change to the managed domain. The user account in the managed domain gets a new globally unique identifier (GUID) and security ID (SID). 
 
 ## Next steps
 
