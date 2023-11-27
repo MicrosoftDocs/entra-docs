@@ -36,9 +36,12 @@ You can also define how many days a user can postpone, or "snooze," the nudge. I
 
 ## User experience
 
-1. User successfully authenticates using Microsoft Entra multifactor authentication. 
+1. First, the user needs to successfully authenticate by using Microsoft Entra multifactor authentication (MFA). 
 
-1. User sees prompt to set up the Authenticator app to improve their sign-in experience. Only users who are enabled for Authenticator push notifications and don't have it currently set up are prompted. Note that users might also be prompted to set up other security features, such self-service password reset or security defaults. 
+1. If the user is enabled for Authenticator push notifications and doesn't have Authenticator already set up, they get prompted to set up Authenticator to improve their sign-in experience. Note that users might also be prompted to set up other security features, such as . 
+
+   >[!NOTE]
+   >Other security features, such as self-service password reset or security defaults, might also prompt users for set up.  
 
    ![Screenshot of multifactor authentication.](./media/how-to-mfa-registration-campaign/user-prompt.png)
 
