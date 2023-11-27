@@ -66,7 +66,7 @@ Managed identities are a way of securely accessing cloud resources without havin
 
 Sometimes, a customer might accidentally or intentionally delete a managed identity. In the past, there was no way to restore a deleted managed identity, and the customer had to create a new one and reconfigure all the permissions and dependencies. This could be time-consuming and error-prone, especially if the identity was used by multiple resources or applications.
 
-To address this issue, Microsoft is releasing the capability to recover a deleted managed identity. This feature allows customers to restore a managed identity within a certain retention period. The recovery process preserves the original identity ID, name, and attributes, and restores the access to the resources and applications that the identity had before deletion. The customer won't need to update any configuration or code that references the identity, as it is the same as before. This reduces the impact and downtime caused by identity deletion, and improves the customer experience and satisfaction.
+To address this issue, Microsoft is releasing the capability to recover a deleted managed identity. This feature allows customers to restore a managed identity within a certain retention period. The recovery process preserves the original identity ID, name, and attributes, and restores the access to the resources and applications that the identity had before deletion. The customer won't need to update any configuration or code that references the identity, as it's the same as before. This reduces the impact and downtime caused by identity deletion, and improves the customer experience and satisfaction.
 
 To recover a deleted managed identity, the customer needs to contact Microsoft support, or open a support ticket specifying which managed identities need to be recovered. The support team validates the request and performs the recovery operation. The customer is notified when the recovery is completed, is able to verify that the identity is functional, and that it has the correct permissions and dependencies.
 
@@ -172,6 +172,16 @@ In November 2023 we've added the following 10 new applications in our App galler
 You can also find the documentation of all the applications from here https://aka.ms/AppsTutorial.
 
 For listing your application in the Azure AD app gallery, read the details here https://aka.ms/AzureADAppRequest
+
+---
+
+### General Availability - Authenticator on Android is FIPS 140 compliant
+
+**Type:** New feature   
+**Service category:** Microsoft Authenticator App                     
+**Product capability:**  User Authentication             
+
+Beginning with version 6.2310.7174, Microsoft Authenticator for Android is compliant with Federal Information Processing Standard (FIPS 140-3) for all Microsoft Entra authentications using phishing-resistant device-bound passkeys, push multi-factor authentication (MFA), passwordless phone sign-in (PSI) and time-based one-time passcodes (TOTP). For organizations using Intune Company Portal, install version 5.0.6043.0 in addition to the latest version of the Authenticator for FIPS compliance. Microsoft Authenticator on iOS is already FIPS 140 compliant, as announced last year. For more information, see: [Authentication methods in Microsoft Entra ID - Microsoft Authenticator app](../identity/authentication/concept-authentication-authenticator-app.md).
 
 ---
 
