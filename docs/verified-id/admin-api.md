@@ -102,7 +102,8 @@ This endpoint can be used to create or update a Verifiable Credential service in
 | [Generate Well known DID Configuration](#well-known-did-configuration) | | |
 | [Generate DID Document](#generate-did-document) | | |
 | [Validate Well-known DID config](#validate-well-known-did-configuration) | | |
-| [Rotate Signing Key](#rotate-signing-keys) | | |
+| [Rotate Signing Key](#rotate-signing-key) | Authority | Rotate signing key |
+| [Synchronize with DID Document](#synchronize-with-did-document) | Authority | Synchronize DID document with new signing key |
 
 
 ### Get authority
@@ -605,13 +606,13 @@ HTTP/1.1 204 No Content
 Content-type: application/json
 ```
 
-### Rotate signing keys
+### Rotate signing key
 
-The rotate signing keys update the private key for the did:web authority.
+The rotate signing key creates a new private key for the did:web authority. After the new the signing key is created, the DID document should be re-registered to reflect the update. When this is done, the [synchronizeWithDidDocument](#synchronize-with-did-document) tells the system to start using the new key for signing.
 
 #### HTTP request
 
-`POST /v1.0/verifiableCredentials/authorities/:authorityId/rotateSigningKey`
+`POST /v1.0/verifiableCredentials/authorities/:authorityId/didInfo/signingKeys/rotate`
 
 #### Request headers
 
@@ -626,11 +627,92 @@ Don't supply a request body for this method.
 
 #### Response message
 
+The `didDocumentStatus` will change to `outOfSync`.
+
 ```
-HTTP/1.1 202 Accepted
+HTTP/1.1 200 OK
 Content-type: application/json
+
+{
+    "id": "bacf5333-d68c-01c5-152b-8c9039fbd88d",
+    "name": "APItesta",
+    "status": "Enabled",
+    "didModel": {
+        "did": "did:web:verifiedid.contoso.com",
+        "signingKeys": [
+            "https://vcwingtipskv.vault.azure.net/keys/vcSigningKey-bacf5333-d68c-01c5-152b-8c9039fbd88d/5255b9f2d9b94dc19a369ff0d36e3407"
+        ],
+        "recoveryKeys": [],
+        "updateKeys": [],
+        "encryptionKeys": [],
+        "linkedDomainUrls": [
+            "https://verifiedid.contoso.com/"
+        ],
+        "didDocumentStatus": "outOfSync"
+    },
+    "keyVaultMetadata": {
+        "subscriptionId": "1853e356-bc86-4e54-8bb8-6db4e5eacdbd",
+        "resourceGroup": "verifiablecredentials",
+        "resourceName": "vcwingtipskv",
+        "resourceUrl": "https://vcwingtipskv.vault.azure.net/"
+    },
+    "linkedDomainsVerified": false
+}
 ```
 
+### Synchronize with DID Document
+
+After [rotating](#rotate-signing-key) the signing key, the DID document should be [re-registered](how-to-register-didwebsite.md#how-do-i-register-my-decentralized-id) to reflect the update. When this is done, the synchronizeWithDidDocument tells the system to start using the new key for signing.
+
+#### HTTP request
+
+`POST /v1.0/verifiableCredentials/authorities/:authorityId/didInfo/synchronizeWithDidDocument`
+
+#### Request headers
+
+| Header | Value |
+| -------- | -------- |
+| Authorization | Bearer (token). Required |
+| Content-Type | application/json |
+
+#### Request Body
+
+Don't supply a request body for this method.
+
+#### Response message
+
+The `didDocumentStatus` will change from `outOfSync` to `published` on a successful call.
+
+```
+HTTP/1.1 200 OK
+Content-type: application/json
+
+{
+    "id": "bacf5333-d68c-01c5-152b-8c9039fbd88d",
+    "name": "APItesta",
+    "status": "Enabled",
+    "didModel": {
+        "did": "did:web:verifiedid.contoso.com",
+        "signingKeys": [
+            "https://vcwingtipskv.vault.azure.net/keys/vcSigningKey-bacf5333-d68c-01c5-152b-8c9039fbd88d/5255b9f2d9b94dc19a369ff0d36e3407"
+        ],
+        "recoveryKeys": [],
+        "updateKeys": [],
+        "encryptionKeys": [],
+        "linkedDomainUrls": [
+            "https://verifiedid.contoso.com/"
+        ],
+        "didDocumentStatus": "published"
+    },
+    "keyVaultMetadata": {
+        "subscriptionId": "1853e356-bc86-4e54-8bb8-6db4e5eacdbd",
+        "resourceGroup": "verifiablecredentials",
+        "resourceName": "vcwingtipskv",
+        "resourceUrl": "https://vcwingtipskv.vault.azure.net/"
+    },
+    "linkedDomainsVerified": false
+}
+```
 
 ## Contracts
 
