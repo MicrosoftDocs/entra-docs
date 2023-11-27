@@ -19,13 +19,16 @@ During the preview, Global Secure Access (preview) is available in limited point
 |         ---                      |      ---               |         ---             |       ---          |
 | Amsterdam, Netherlands           | Busan, South Korea     | Rio de Janeiro, Brazil  | Boydton, Virginia, USA |
 | Berlin, Germany                  | Chennai, India         |                         | Cheyenne, Wyoming, USA |
-| Dublin, Ireland                  | Melbourne, Australia   |                         | Chicago, Illinois, USA |
-| Frankfurt, Germany               | Osaka, Japan           |                         | Des Moines, Iowa, USA |
-| Gavle, Sweden                    | Pune, India            |                         | Manassas, Virginia, USA |
-| London, UK                       | Seoul, South Korea     |                         | Montreal, Quebec, Canada |
-| Milan, Italy                     | Singapore, Singapore   |                         | Phoenix, Arizona, USA |
-| Paris, France                    | Sydney, Australia      |                         | Queretaro, Mexico |
-| Warsaw, Poland                   | Taipei, Taiwan         |                         | Quincy, Washington, USA |
-| Zurich, Switzerland              | Tel Aviv, Israel       |                         | San Antonio, Texas, USA |
-|                                  | Tokyo, Japan           |                         | San Jose, California, USA |
-|                                  |                        |                         | Toronto, Ontario, Canada |
+| Cape Town, South Africa          | Melbourne, Australia   |                         | Chicago, Illinois, USA |
+| Dubai, UAE                       | Osaka, Japan           |                         | Des Moines, Iowa, USA |
+| Dublin, Ireland                  | Pune, India            |                         | Manassas, Virginia, USA |
+| Frankfurt, Germany               | Seoul, South Korea     |                         | Montreal, Quebec, Canada |
+| Gavle, Sweden                    | Singapore, Singapore   |                         | Phoenix, Arizona, USA |
+| Johannesburg, South Africa       | Sydney, Australia      |                         | Queretaro, Mexico |
+| London, UK                       | Taipei, Taiwan         |                         | Quincy, Washington, USA |
+| Milan, Italy                     | Tokyo, Japan           |                         | San Antonio, Texas, USA |
+| Paris, France                    |                        |                         | San Jose, California, USA |
+| Tel Aviv, Israel                 |                        |                         | Toronto, Ontario, Canada |
+| Warsaw, Poland                   |                        |                         |                          |
+| Zurich, Switzerland              |                        |                         |                          |
+ 
