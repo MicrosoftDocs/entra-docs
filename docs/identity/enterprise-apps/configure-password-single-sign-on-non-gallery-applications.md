@@ -1,13 +1,13 @@
 ---
 title: Add password-based single sign-on to an application
 description: Add password-based single sign-on to an application in Microsoft Entra ID.
-services: active-directory
+
 author: omondiatieno
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: conceptual
-ms.workload: identity
+
 ms.date: 04/25/2023
 ms.author: jomondi
 ms.reviewer: alamaral

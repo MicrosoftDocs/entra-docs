@@ -1,14 +1,14 @@
 ---
 title: "Learn about Microsoft Authentication Extensions for Node"
 description: The Microsoft Authentication Extensions for Node enables application developers to perform cross-platform token cache serialization and persistence. It gives extra support to the Microsoft Authentication Library for Node (MSAL Node).
-services: active-directory
+
 author: henrymbuguakiarie
 manager: CelesteDG
 
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-ms.workload: identity
+
 ms.date: 02/04/2022
 ms.reviewer: j-mantu, samuelkubai, Dickson-Mwendia
 ms.author: henrymbugua

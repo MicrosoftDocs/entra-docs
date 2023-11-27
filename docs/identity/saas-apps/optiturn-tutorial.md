@@ -1,13 +1,13 @@
 ---
 title: Microsoft Entra SSO integration with OptiTurn
 description: Learn how to configure single sign-on between Microsoft Entra ID and OptiTurn.
-services: active-directory
+
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.topic: how-to
 ms.date: 09/04/2023
 ms.author: jeedes

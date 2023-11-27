@@ -42,7 +42,7 @@ Anyone who wants to modernize an identity lifecycle management process
 - That when users join the organization, they're ready to go on day one. They have the correct access to information, group memberships, and applications that they need.
 - That users who are no longer tied to the company for various reasons (termination, separation, leave of absence, or retirement) have their access revoked in a timely way.
 - That the process for providing or revoking access isn't overly burdensome or time consuming for administrators.
-- That administrators and employees can easily troubleshoot problems, and that logging is sufficient to help with troubleshooting, auditing, and compliance.
+- That administrators and other authorized users can easily troubleshoot problems, and that logging is sufficient to help with troubleshooting, auditing, and compliance.
 
 Key reasons to use lifecycle workflows include:
 
@@ -65,7 +65,7 @@ You can use lifecycle workflows to address any of the following conditions:
   - There's no need to have one rule per group. Lifecycle workflow rules determine the scope of users to execute workflows against, not which group.
   - Lifecycle workflows help manage users' lifecycle beyond attributes supported in dynamic groups--for example, a certain number of days before the `employeeHireDate` attribute value.
   - Lifecycle workflows can perform actions on the group, not just the membership.
-- **Workflow history and auditing**: Use lifecycle workflows when you need to create an audit trail of user lifecycle processes. By using the Microsoft Entra admin Center, you can view history and audits for orientation and departure scenarios.
+- **Workflow history and auditing**: Use lifecycle workflows when you need to create an audit trail of user lifecycle processes. By using the Microsoft Entra admin center, you can view history and audits for orientation and departure scenarios.
 - **Automating user account management**: A key part of the identity lifecycle process is making sure that users who are leaving have their access to resources revoked. You can use lifecycle workflows to automate the disabling and removal of user accounts.
 - **Integrating with logic apps**: You can apply logic apps to extend workflows for more complex scenarios.
 

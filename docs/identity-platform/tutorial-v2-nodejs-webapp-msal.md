@@ -1,7 +1,7 @@
 ---
 title: "Tutorial: Sign in users in a Node.js & Express web app"
 description: In this tutorial, you add support for signing-in users in a web app.
-services: active-directory
+
 author: cilwerner
 manager: CelesteDG
 
@@ -10,7 +10,7 @@ ms.subservice: develop
 ms.topic: tutorial
 ms.date: 11/09/2022
 ms.author: cwerner
-ms.custom: engagement-fy23, devx-track-js
+ms.custom: devx-track-js
 ---
 
 # Tutorial: Sign in users and acquire a token for Microsoft Graph in a Node.js & Express web app

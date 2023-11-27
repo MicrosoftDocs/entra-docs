@@ -1,7 +1,7 @@
 ---
 title: 'Tutorial: Configure InVision for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to InVision.
-services: active-directory
+
 documentationcenter: ''
 author: twimmers
 writer: twimmers
@@ -10,7 +10,7 @@ manager: jeedes
 ms.assetid: 72518dda-d485-45c8-849e-6b27ee09d9a8
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 11/21/2022

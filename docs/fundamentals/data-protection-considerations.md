@@ -75,7 +75,7 @@ For more information about Secret encryption at rest, see the following table.
 |SSL certificates for Microsoft Entra application</br>Proxy published applications |AES-GCM 256-bit |
 |Disk-level encryption|XTS-AES 128|
 |[Seamless single sign-on (SSO)](~/identity/hybrid/connect/how-to-connect-sso-how-it-works.md) service account password</br>SaaS application provisioning credentials|AES-CBC 128-bit |
-|Microsoft Entra managed identities|AES-GCM 256-bit|
+|Managed identities for Azure resources|AES-GCM 256-bit|
 |Microsoft Authenticator app: Passwordless sign-in to Microsoft Entra ID |Asymmetric RSA Key 2048-bit|
 |Microsoft Authenticator app: Backup and restore of enterprise account metadata |AES-256  |
 

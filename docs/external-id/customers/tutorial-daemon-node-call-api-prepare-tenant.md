@@ -1,13 +1,13 @@
 ---
 title: 'Tutorial: Prepare your customer tenant to authorize a Node.js daemon application'
 description: Learn how to prepare your customer tenant to authorize your Node.js daemon application
-services: active-directory
+ 
 author: kengaderdus
 manager: mwongerapk
 
 ms.author: kengaderdus
 ms.service: active-directory
-ms.workload: identity
+ 
 ms.subservice: ciam
 ms.topic: tutorial
 ms.date: 07/26/2023

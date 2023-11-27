@@ -1,11 +1,11 @@
 ---
 title: Authentication methods and identity providers for CIAM
 description: Learn how to use different authentication methods for your customer sign-in and sign-up in CIAM. 
-services: active-directory
+ 
 author: msmimart
 manager: celestedg
 ms.service: active-directory
-ms.workload: identity
+ 
 ms.subservice: ciam
 ms.topic: conceptual
 ms.date: 05/31/2023

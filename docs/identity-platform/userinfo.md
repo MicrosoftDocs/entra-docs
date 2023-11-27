@@ -1,18 +1,18 @@
 ---
 title: Microsoft identity platform UserInfo endpoint
 description: Learn about the UserInfo endpoint on the Microsoft identity platform.
-services: active-directory
+
 author: Dickson-Mwendia
 manager: CelesteDG
 
 ms.service: active-directory
 ms.subservice: develop
-ms.workload: identity
+
 ms.topic: reference
 ms.date: 08/26/2022
 ms.author: dmwendia
 ms.reviewer: ludwignick
-ms.custom: aaddev
+ms.custom: 
 ---
 
 # Microsoft identity platform UserInfo endpoint
@@ -37,7 +37,7 @@ UserInfo is a standard OAuth bearer token API hosted by Microsoft Graph. Call th
 
 ### Permissions
 
-Use the following [OIDC permissions](./permissions-consent-overview.md#openid-connect-scopes) to call the UserInfo API. The `openid` claim is required, and the `profile` and `email` scopes ensure that additional information is provided in the response.
+Use the following [OIDC permissions](./scopes-oidc.md#openid-connect-scopes) to call the UserInfo API. The `openid` claim is required, and the `profile` and `email` scopes ensure that additional information is provided in the response.
 
 | Permission type                        | Permissions                       |
 |:---------------------------------------|:----------------------------------|

@@ -1,14 +1,14 @@
 ---
 title: 'Tutorial: Configure Cleanmail Swiss for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Cleanmail Swiss.
-services: active-directory
+
 author: twimmers
 writer: twimmers
 manager: jeedes
 ms.assetid: 1281f790-7f6d-4558-bb31-015f92ae579d
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.topic: tutorial
 ms.date: 07/10/2023
 ms.author: thwimmer

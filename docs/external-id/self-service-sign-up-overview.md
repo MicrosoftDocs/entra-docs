@@ -2,7 +2,7 @@
 title: Self-service sign-up for External Identities
 description: Learn how to allow external users to sign up for your applications themselves by enabling self-service sign-up. Create a personalized sign-up experience by customizing the self-service sign-up user flow. 
 
-services: active-directory
+ 
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: conceptual

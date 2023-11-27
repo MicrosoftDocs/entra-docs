@@ -1,13 +1,13 @@
 ---
 title: Sign in users in your own Node.js browserless application using the Device Code flow - Overview
 description: Learn how to build a Node.js browserless application that signs in users using the Device Code flow - Overview.
-services: active-directory
+ 
 author: Dickson-Mwendia
 manager: mwongerapk
 
 ms.author: dmwendia
 ms.service: active-directory
-ms.workload: identity
+ 
 ms.subservice: ciam
 ms.topic: how-to
 ms.date: 05/09/2023

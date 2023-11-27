@@ -1,7 +1,7 @@
 ---
 title: 'Tutorial: Configure MX3 Diagnostics Connector for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to MX3 Diagnostics Connector.
-services: active-directory
+
 documentationcenter: ''
 author: twimmers
 writer: Thwimmer
@@ -10,7 +10,7 @@ manager: jeedes
 ms.assetid: 6d54ea28-0208-45bc-8e29-c6cf9a912f00
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 11/21/2022

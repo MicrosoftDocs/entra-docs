@@ -1,7 +1,7 @@
 ---
 title: 'Tutorial: User provisioning for Slack'
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Slack.
-services: active-directory
+
 documentationcenter: ''
 author: twimmers
 writer: Thwimmer
@@ -9,7 +9,7 @@ manager: jeedes
 ms.assetid: 7fa2a1b1-7ed3-4c51-ae17-f5d4ee88488c
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.devlang: na
 ms.topic: tutorial
 ms.date: 11/21/2022

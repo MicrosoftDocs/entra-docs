@@ -8,12 +8,12 @@ ms.service: active-directory
 ms.subservice: app-provisioning
 ms.workload: identity
 ms.topic: how-to
-ms.date: 09/15/2023
+ms.date: 11/15/2023
 ms.author: kenwith
 ms.reviewer: cmmdesai
 ---
 
-# Extend API-driven provisioning to sync custom attributes (Public preview)
+# Extend API-driven provisioning to sync custom attributes
 
 By default, API-driven provisioning apps support processing attributes that are part of the standard SCIM Core User and Enterprise User schema. Your system of record may have custom attributes that you may want to include as part of API-driven provisioning. This advanced tutorial describes how to extend your API-driven provisioning app to process additional custom attributes. 
 

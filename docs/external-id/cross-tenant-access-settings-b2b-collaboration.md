@@ -1,7 +1,7 @@
 ---
 title: Configure B2B collaboration cross-tenant access
 description: Use cross-tenant collaboration settings to manage how you collaborate with other Microsoft Entra organizations. Learn how to configure  outbound access to external organizations and inbound access from external Microsoft Entra organizations for B2B collaboration.
-services: active-directory
+ 
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: how-to
@@ -10,7 +10,7 @@ ms.date: 11/06/2023
 ms.author: mimart
 author: msmimart
 manager: celestedg
-ms.custom: engagement-fy23, "it-pro"
+ms.custom: "it-pro"
 ms.collection: M365-identity-device-management
 ---
 
@@ -176,6 +176,9 @@ With inbound settings, you select which external users and groups will be able t
 ### Configure redemption order (Preview)
 
 To customize the order of identity providers that your guest users can sign in when they accept your invitation, follow the steps below.
+
+> [!NOTE]
+> The Microsoft Entra admin center settings for the configurable redemption feature are currently rolling out to customers. Until the settings are available in the admin center, you can configure the invitation redemption order using the Microsoft Graph REST API (beta version). See [Example 2: Update default invitation redemption configuration](/graph/api/crosstenantaccesspolicyconfigurationdefault-update?view=graph-rest-beta&tabs=http#example-2-update-default-invitation-redemption-configuration&preserve-view=true) in the Microsoft Graph reference documentation or below in this section.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) using a Global administrator or Security administrator account. Then open the **Identity** service on the left hand side.
 

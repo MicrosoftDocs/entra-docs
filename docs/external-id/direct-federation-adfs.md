@@ -2,7 +2,7 @@
 title: Set up SAML/WS-Fed IdP federation with an AD FS for B2B
 description: Learn how to set up AD FS as an identity provider (IdP) for SAML/WS-Fed IdP federation so guests can sign in to your Microsoft Entra apps
 
-services: active-directory
+ 
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: how-to

@@ -2,7 +2,7 @@
 title: Federation with a SAML/WS-Fed identity provider (IdP) for B2B
 description: Directly federate with a SAML or WS-Fed identity provider so guests can sign in to your Microsoft Entra apps
 
-services: active-directory
+ 
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: how-to
@@ -11,7 +11,7 @@ ms.date: 11/07/2023
 ms.author: mimart
 author: msmimart
 manager: celestedg
-ms.custom: it-pro, has-azure-ad-ps-ref
+ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.collection: M365-identity-device-management
 ---
 
@@ -78,7 +78,7 @@ Yes, you can set up SAML/WS-Fed IdP federation with domains that aren't DNS-veri
 
 **How many federation relationships can I create?**
 
-Currently, a maximum of 1,000 federation relationships is supported. This limit includes both [internal federations](/powershell/module/msonline/set-msoldomainfederationsettings) and SAML/WS-Fed IdP federations.
+Currently, a maximum of 1,000 federation relationships is supported. This limit includes both [internal federations](/powershell/module/microsoft.graph.identity.directorymanagement/new-mgdomainfederationconfiguration) and SAML/WS-Fed IdP federations.
 
 **Can I set up federation with multiple domains from the same tenant?**
 
@@ -250,6 +250,9 @@ You can use the Microsoft Graph API [samlOrWsFedExternalDomainFederation](/graph
 ## Step 4: Configure the redemption order (preview) for Microsoft Entra ID verified domains
 
 If the domain is Microsoft Entra ID verified, [configure the **Redemption order** settings](cross-tenant-access-settings-b2b-collaboration.md#configure-redemption-order-preview) in your cross-tenant access settings for inbound B2B collaboration. Move **SAML/WS-Fed identity providers** to the top of the **Primary identity providers** list to prioritize redemption with the federated IdP.
+
+> [!NOTE]
+> The Microsoft Entra admin center settings for the configurable redemption feature are currently rolling out to customers. Until the settings are available in the admin center, you can configure the invitation redemption order using the Microsoft Graph REST API (beta version). See [Example 2: Update default invitation redemption configuration](/graph/api/crosstenantaccesspolicyconfigurationdefault-update?view=graph-rest-beta&tabs=http#example-2-update-default-invitation-redemption-configuration&preserve-view=true) in the Microsoft Graph reference documentation.
 
 ## Step 5: Test SAML/WS-Fed IdP federation in Microsoft Entra ID
 

@@ -1,11 +1,11 @@
 ---
 title: Quickstart - Set up a customer tenant free trial
 description: Use our quickstart to set up the customer tenant free trial.
-services: active-directory
+ 
 author: csmulligan
 manager: CelesteDG
 ms.service: active-directory
-ms.workload: identity
+ 
 ms.subservice: ciam
 ms.topic: quickstart
 ms.date: 05/31/2023

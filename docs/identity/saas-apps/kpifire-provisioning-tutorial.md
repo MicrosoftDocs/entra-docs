@@ -1,14 +1,14 @@
 ---
 title: 'Tutorial: Configure kpifire for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to kpifire.
-services: active-directory
+
 author: twimmers
 writer: twimmers
 manager: jeedes
 ms.assetid: 8c5dd093-20da-4ff6-a9b2-8071f44accd6
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: thwimmer

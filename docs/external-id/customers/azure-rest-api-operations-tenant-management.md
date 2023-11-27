@@ -1,12 +1,12 @@
 ---
 title: Tenant management with Azure REST API
 description: Learn how to manage your Microsoft Entra ID for customers tenant by calling the Azure REST API.
-services: active-directory
+ 
 author: garrodonnell
 manager: celested
 ms.author: godonnell
 ms.service: active-directory
-ms.workload: identity
+ 
 ms.subservice: ciam
 ms.topic: how-to
 ms.date: 05/23/2023

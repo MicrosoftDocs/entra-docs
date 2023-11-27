@@ -8,17 +8,14 @@ ms.service: active-directory
 ms.subservice: app-provisioning
 ms.workload: identity
 ms.topic: reference
-ms.date: 09/15/2023
+ms.date: 11/15/2023
 ms.author: kenwith
 ms.reviewer: chmutali
 ---
 
-# API-driven inbound provisioning concepts (Public preview)
+# API-driven inbound provisioning concepts
 
 This document provides a conceptual overview of the Microsoft Entra API-driven inbound user provisioning.
-
-> [!IMPORTANT]
-> API-driven inbound provisioning is currently in public preview. For more information about previews, see [Universal License Terms For Online Services](https://www.microsoft.com/licensing/terms/product/ForOnlineServices/all).
 
 ## Introduction
 
@@ -30,7 +27,7 @@ With API-driven inbound provisioning, the Microsoft Entra provisioning service n
 
 Several inbound user provisioning scenarios are enabled using API-driven inbound provisioning. This diagram demonstrates the most common scenarios.
 
-:::image type="content" source="media/inbound-provisioning-api-concepts/api-workflow-scenarios.png" alt-text="Diagram that shows API scenarios." lightbox="media/inbound-provisioning-api-concepts/api-workflow-scenarios.png":::
+:::image type="content" source="media/inbound-provisioning-api-concepts/api-workflow-scenarios.png" alt-text="Diagram showing API workflow scenarios." lightbox="media/inbound-provisioning-api-concepts/api-workflow-scenarios.png":::
 
 ### Scenario 1: Enable IT teams to import HR data extracts using any automation tool
 Flat files, CSV files and SQL staging tables are commonly used in enterprise integration scenarios. Employee, contractor and vendor information are periodically exported into one of these formats and an automation tool is used to sync this data with enterprise identity directories. With API-driven inbound provisioning, IT teams can use any automation tool of their choice (example: PowerShell scripts or Azure Logic Apps) to modernize and simplify this integration.   

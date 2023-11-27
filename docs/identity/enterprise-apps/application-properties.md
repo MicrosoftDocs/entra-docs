@@ -1,13 +1,13 @@
 ---
 title: 'Properties of an enterprise application'
 description: Learn about the properties of an enterprise application in Microsoft Entra ID.
-services: active-directory
+
 author: omondiatieno
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: conceptual
-ms.workload: identity
+
 ms.date: 08/29/2023
 ms.author: jomondi
 ms.reviewer: ergreenl

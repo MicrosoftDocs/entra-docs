@@ -5,7 +5,7 @@ author: gargi-sinha
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: how-to
-ms.workload: identity
+
 ms.date: 07/14/2023
 ms.author: gasinh
 ms.collection: M365-identity-device-management

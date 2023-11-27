@@ -128,6 +128,8 @@
         href: allocadia-tutorial.md
       - name: Ally.io
         href: ally-tutorial.md
+      - name: Alohi
+        href: alohi-tutorial.md
       - name: Altamira HRM
         href: altamira-hrm-tutorial.md
       - name: Altoura
@@ -584,6 +586,8 @@
         href: colab-tutorial.md
       - name: Collaborative Innovation
         href: collaborativeinnovation-tutorial.md
+      - name: Collector Systems
+        href: collector-systems-tutorial.md
       - name: Colloquial
         href: colloquial-tutorial.md
       - name: ColorTokens ZTNA
@@ -624,6 +628,8 @@
         href: contentkalender-tutorial.md
       - name: Contentsquare SSO
         href: contentsquare-sso-tutorial.md
+      - name: Contentstack
+        href: contentstack-tutorial.md
       - name: ContractSafe Saml2 SSO
         href: contractsafe-saml2-sso-tutorial.md
       - name: ContractS CLM
@@ -682,6 +688,8 @@
         href: crowdstrike-falcon-platform-tutorial.md
       - name: CS Stars
         href: cs-stars-tutorial.md
+      - name: CultureHQ
+        href: culturehq-tutorial.md
       - name: Culture Shift
         href: culture-shift-tutorial.md  
       - name: Curator
@@ -1059,6 +1067,8 @@
         href: framer-tutorial.md
       - name: Freedcamp
         href: freedcamp-tutorial.md
+      - name: Freight Audit
+        href: freight-audit-tutorial.md
       - name: FreshDesk
         href: freshdesk-tutorial.md
       - name: FreshGrade
@@ -1209,6 +1219,8 @@
         href: hirevue-tutorial.md
       - name: Hive
         href: hive-tutorial.md
+      - name: Hone
+        href: hone-tutorial.md
       - name: Honestly
         href: honestly-tutorial.md
       - name: Hootsuite
@@ -1253,6 +1265,8 @@
         href: hyperanna-tutorial.md
       - name: IamIP Platform
         href: iamip-patent-platform-tutorial.md
+      - name: IANS Client Portal
+        href: ians-client-portal-tutorial.md
       - name: SafetyCulture
         href: safety-culture-tutorial.md  
       - name: IBM Digital Business Automation on Cloud
@@ -1405,6 +1419,8 @@
       items:
       - name: Jamf Pro
         href: jamfprosamlconnector-tutorial.md
+      - name: Jasper AI
+        href: jasper-ai-tutorial.md
       - name: Javelo
         href: javelo-tutorial.md
       - name: JDA Cloud
@@ -1733,6 +1749,8 @@
         href: motus-tutorial.md
       - name: MOVEit Transfer - Microsoft Entra integration
         href: moveittransfer-tutorial.md
+      - name: Movement by project44
+        href: movement-by-project44-tutorial.md
       - name: Moxi Engage
         href: moxiengage-tutorial.md
       - name: Moxtra
@@ -1787,6 +1805,8 @@
         href: netmotion-mobility-tutorial.md
       - name: Netop Portal
         href: netop-portal-tutorial.md
+      - name: NetSfere
+        href: netsfere-tutorial.md
       - name: Netskope Cloud Security
         href: netskope-cloud-security-tutorial.md
       - name: Netskope Cloud Exchange Administration Console
@@ -2521,6 +2541,8 @@
         href: sso-for-jama-connect-tutorial.md
       - name: Stackby
         href: stackby-tutorial.md
+      - name: Stage and Screen
+        href: stage-and-screen-tutorial.md
       - name: Standard for Success Accreditation
         href: standard-for-success-accreditation-tutorial.md
       - name: Standard for Success K-12

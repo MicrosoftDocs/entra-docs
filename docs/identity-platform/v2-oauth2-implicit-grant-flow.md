@@ -1,19 +1,19 @@
 ---
 title: Microsoft identity platform and OAuth 2.0 implicit grant flow
 description: Secure single-page apps using Microsoft identity platform implicit flow.
-services: active-directory
+
 author: OwenRichards1
 manager: CelesteDG
 
 ms.service: active-directory
 ms.subservice: develop
-ms.workload: identity
+
 ms.topic: conceptual
 
 ms.date: 08/11/2023
 ms.author: owenrichards
 ms.reviewer: ludwignick
-ms.custom: aaddev
+ms.custom: 
 ---
 
 # Microsoft identity platform and OAuth 2.0 implicit grant flow
@@ -51,7 +51,7 @@ To initially sign the user into your app, you can send an [OpenID Connect](v2-pr
 // Line breaks for legibility only
 
 https://login.microsoftonline.com/{tenant}/oauth2/v2.0/authorize?
-client_id=6731de76-14a6-49ae-97bc-6eba6914391e
+client_id=535fb089-9ff3-47b6-9bfb-4f1264799865
 &response_type=id_token
 &redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
 &scope=openid
@@ -129,7 +129,7 @@ In the normal OpenID Connect/OAuth flow, you would do this by making a request t
 // Line breaks for legibility only
 
 https://login.microsoftonline.com/{tenant}/oauth2/v2.0/authorize?
-client_id=6731de76-14a6-49ae-97bc-6eba6914391e
+client_id=535fb089-9ff3-47b6-9bfb-4f1264799865
 &response_type=token
 &redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
 &scope=https%3A%2F%2Fgraph.microsoft.com%2Fuser.read
@@ -146,7 +146,7 @@ For details on the query parameters in the URL, see [send the sign in request](#
 > Try copy & pasting the request below into a browser tab! (Don't forget to replace the `login_hint` values with the correct value for your user)
 >
 > ```
-> https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=6731de76-14a6-49ae-97bc-6eba6914391e&response_type=token&redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F&scope=https%3A%2F%2Fgraph.microsoft.com%2Fuser.read&response_mode=fragment&state=12345&nonce=678910&prompt=none&login_hint={your-username}
+> https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=535fb089-9ff3-47b6-9bfb-4f1264799865&response_type=token&redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F&scope=https%3A%2F%2Fgraph.microsoft.com%2Fuser.read&response_mode=fragment&state=12345&nonce=678910&prompt=none&login_hint={your-username}
 > ```
 >
 > Note that this will work even in browsers without third party cookie support, since you're entering this directly into a browser bar as opposed to opening it within an iframe. 

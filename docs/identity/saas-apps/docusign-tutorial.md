@@ -1,13 +1,13 @@
 ---
 title: 'Tutorial: Microsoft Entra SSO integration with DocuSign'
 description: Learn how to configure single sign-on (SSO) between Microsoft Entra ID and DocuSign.
-services: active-directory
+
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: jeedes

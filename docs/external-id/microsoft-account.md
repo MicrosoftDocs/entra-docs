@@ -3,7 +3,7 @@
 title: Add Microsoft account (MSA) as an identity provider
 description: Use Microsoft Entra External ID to enable an external user (guest) to sign in to your Microsoft Entra apps with their Microsoft account (MSA).
 
-services: active-directory
+ 
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: how-to
@@ -12,7 +12,7 @@ ms.date: 01/12/2023
 ms.author: mimart
 author: msmimart
 manager: celestedg
-ms.collection: engagement-fy23, M365-identity-device-management
+ms.collection: M365-identity-device-management
 
 #Customer intent: As a Microsoft Entra administrator user, I want to set up an invitation flow or a self-service sign-up user flow for guest users, so they can sign into my Microsoft Entra apps with their Microsoft account (MSA).
 ---

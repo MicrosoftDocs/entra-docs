@@ -1,16 +1,16 @@
 ---
 title: "Quickstart: Register and expose a web API"
 description: In this quickstart, your register a web API with the Microsoft identity platform and configure its scopes, exposing it to clients for permissions-based access to the API's resources.
-services: active-directory
+
 author: cilwerner
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: quickstart
-ms.workload: identity
+
 ms.date: 06/29/2023
 ms.author: cwerner
-ms.custom: aaddev, has-adal-ref, engagement-fy23
+ms.custom:  has-adal-ref, 
 ms.reviewer: aragra, lenalepa, sureshja
 #Customer intent: As an application developer, I need learn to how to register my web API with the Microsoft identity platform and expose permissions (scopes) to make the API's resources available to users of my client application.
 ---
