@@ -253,7 +253,7 @@ items:
                     items:
                       - name: Prepare tenant 
                         href: how-to-web-app-node-sign-in-call-api-prepare-tenant.md
-                      - name: Prepare app and API 
+                      - name: Prepare client app 
                         href: how-to-web-app-node-sign-in-call-api-prepare-app.md
                       - name: Acquire access token
                         href: how-to-web-app-node-sign-in-call-api-sign-in-acquire-access-token.md
