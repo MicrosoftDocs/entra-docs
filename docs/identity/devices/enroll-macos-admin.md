@@ -91,7 +91,7 @@ A payload is a set of instructions or settings that can be delivered to a device
 
 ## Enroll a Mac into MDM
 
-Platform SSO is supported on Macs enrolled using both Automated Device Enrollment and Device Enrollment, running macOS 13 Ventura or later. To enrole a mac, follow the steps outlined in the following sections.
+Platform SSO is supported on Macs enrolled using both Automated Device Enrollment and Device Enrollment, running macOS 13 Ventura or later. To enroll a mac, follow the steps outlined in the following sections.
 
 ### Enrolling a Mac using Automated Device Enrollment
 
