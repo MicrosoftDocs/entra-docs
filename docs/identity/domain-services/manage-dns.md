@@ -21,9 +21,9 @@ As you run your own applications and services, you may need to create DNS record
 
 In a hybrid environment, DNS zones and records configured in other DNS namespaces, such as an on-premises AD DS environment, aren't synchronized to the managed domain. To resolve named resources in other DNS namespaces, create and use conditional forwarders that point to existing DNS servers in your environment.
 
-Domain Services communicates with multiple Azure endpoints during normal operations. Redirecting zones such as *file.core.windows.net* or *blob.core.windows.net* puts Domain Services in an unsupportable state. 
+Domain Services communicates with multiple Azure endpoints during normal operations. Redirecting zones such as file.core.windows.net or blob.core.windows.net puts Domain Services in an unsupportable state. 
 
-Refrain from redirecting DNS zones related to *windowsazure.com* or *core.windows.net*. If DNS redirection is required, limit the redirection to induvial host names instead of zones. For example, use *server1.file.core.windows.net* instead of *file.core.windows.net*.
+Refrain from redirecting DNS zones related to windowsazure.com or core.windows.net. If DNS redirection is required, limit the redirection to induvial host names instead of zones. For example, use server1.file.core.windows.net instead of file.core.windows.net.
 
 >[!NOTE]
 >Creating or changing root hints or server-level DNS forwarders isn't supported and causes issues for the Domain Services managed domain. 
