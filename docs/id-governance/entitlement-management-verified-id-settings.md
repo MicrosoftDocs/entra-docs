@@ -18,7 +18,7 @@ ms.collection: M365-identity-device-management
 
 ---
 
-# Configure verified ID settings for an access package in entitlement management
+# Configure Verified ID settings for an access package in entitlement management
 
 When setting up an access package policy, admins can specify whether it’s for users in the directory, connected organizations, or any external user. Entitlement Management determines if the person requesting the access package is within the scope of the policy. 
 
