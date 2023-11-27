@@ -1,18 +1,18 @@
 ---
-title: 
-description: 
+title: How to get the most from Microsoft Entra documentation
+description: What is least privilege and how to navigate using Microsoft Entra documentation?
 
 ms.service: active-directory
-ms.subservice: conditional-access
+ms.subservice: fundamentals
 ms.topic: conceptual
-ms.date: 11/07/2023
+ms.date: 11/27/2023
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer:
 ---
-# How to read our docs
+# How to get the most from Microsoft Entra documentation
 
 Within the Microsoft Entra documentation, you might notice some changes in how we explain things.
 
@@ -51,3 +51,6 @@ This approach helps administrators new to a feature understand how to find what 
 
 ## Next steps
 
+- [Improve your security posture](concept-secure-remote-workers)
+- [What is Zero Trust?](/security/zero-trust/zero-trust-overview)
+- [Security resources](/security/ciso-workshop/adoption)
