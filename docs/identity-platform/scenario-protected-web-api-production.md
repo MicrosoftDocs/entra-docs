@@ -1,18 +1,15 @@
 ---
 title: Move a protected web API to production
 description: Learn how to build a protected web API (move to production).
-
 author: cilwerner
 manager: CelesteDG
-
+ms.author: cwerner
+ms.custom: 
+ms.date: 07/15/2020
+ms.reviewer: jmprieur
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-
-ms.date: 07/15/2020
-ms.author: cwerner
-ms.reviewer: jmprieur
-ms.custom: 
 #Customer intent: As an application developer, I want to know how to write a protected web API using the Microsoft identity platform for developers.
 ---
 

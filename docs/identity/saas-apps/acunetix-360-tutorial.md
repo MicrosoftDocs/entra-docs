@@ -36,8 +36,9 @@ To get started, you need the following items:
 
 In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
 
-* Acunetix 360 supports **SP and IDP** initiated SSO
-* Acunetix 360 supports **Just In Time** user provisioning
+* Acunetix 360 supports **SP and IDP** initiated SSO.
+* Acunetix 360 supports **Just In Time** user provisioning.
+* Acunetix 360 supports [Automated user provisioning](acunetix-360-provisioning-tutorial.md).
 
 > [!NOTE]
 > Identifier of this application is a fixed string value so only one instance can be configured in one tenant.
@@ -105,7 +106,7 @@ Follow these steps to enable Microsoft Entra SSO.
 	| FirstName | user.givenName |
 	| LastName | user.surName |
 
-1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
+1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 
 	![The Certificate download link](common/certificatebase64.png)
 

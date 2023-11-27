@@ -33,6 +33,7 @@ To get started, you need the following items:
 In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
 
 * uniFLOW Online supports **SP** initiated SSO.
+* uniFLOW Online supports [Automated user provisioning](uniflow-online-provisioning-tutorial.md).
 
 ## Add uniFLOW Online from the gallery
 

@@ -1,19 +1,16 @@
 ---
 title: Microsoft identity platform authentication libraries
 description: List of client libraries and middleware compatible with the Microsoft identity platform. Use these libraries to add support for user sign-in (authentication) and protected web API access (authorization) to your applications.
-
 author: cilwerner
 manager: CelesteDG
-
+ms.author: cwerner
+ms.custom: 
+ms.date: 10/28/2022
+ms.reviewer: jmprieur, saeeda
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: reference
-
-ms.date: 10/28/2022
-ms.author: cwerner
-ms.reviewer: jmprieur, saeeda
-ms.custom:  
-# Customer intent: As a developer, I want to know whether there's a Microsoft Authentication Library (MSAL) available for the language/framework I'm using to build my application, and whether the library is GA or in preview.
+#Customer intent: As a developer, I want to know whether there's a Microsoft Authentication Library (MSAL) available for the language/framework I'm using to build my application, and whether the library is GA or in preview.
 ---
 
 # Microsoft identity platform authentication libraries

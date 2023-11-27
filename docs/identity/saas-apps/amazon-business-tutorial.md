@@ -36,6 +36,7 @@ In this tutorial, you configure and test Microsoft Entra SSO in an existing Amaz
 
 * Amazon Business supports **SP and IDP** initiated SSO.
 * Amazon Business supports **Just In Time** user provisioning.
+* Amazon Business supports [Automated user provisioning](amazon-business-provisioning-tutorial.md).
 
 > [!NOTE]
 > Identifier of this application is a fixed string value so only one instance can be configured in one tenant.

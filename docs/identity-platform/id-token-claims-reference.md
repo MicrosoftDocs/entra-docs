@@ -1,16 +1,15 @@
 ---
 title: ID token claims reference
 description: Learn the details of the claims included in ID tokens issued by the Microsoft identity platform.
-
 author: cilwerner
 manager: CelesteDG
+ms.author: cwerner
+ms.custom: curation-claims
+ms.date: 05/30/2023
 ms.service: active-directory
 ms.subservice: develop
-
 ms.topic: reference
-ms.date: 05/30/2023
-ms.author: cwerner
-ms.custom:  curation-claims
+#Customer intent:
 ---
 
 # ID token claims reference

@@ -1,10 +1,10 @@
 {
-    "redirections": [
-      {
-        "source_path_from_root": "/docs/identity/domain-services/delete-aadds.md",
-        "redirect_url": "/entra/identity/domain-services/delete",
-        "redirect_document_id": false  
-      },
+  "redirections": [
+    {
+      "source_path_from_root": "/docs/identity/domain-services/delete-aadds.md",
+      "redirect_url": "/entra/identity/domain-services/delete",
+      "redirect_document_id": false
+    },
 
     {
       "source_path_from_root": "/docs/identity/hybrid/cloud-sync/index.yml",
@@ -17,32 +17,37 @@
       "redirect_document_id": false
     },
 
-      {
-        "source_path_from_root": "/docs/fundamentals/licensing-preview-terms.md",
-        "redirect_url": "/entra/fundamentals/licensing-preview-info",
-        "redirect_document_id": false
-      },
-      {
-        "source_path_from_root": "/docs/identity/saas-apps/index.md",
-        "redirect_url": "/entra/identity/saas-apps/tutorial-list",
-        "redirect_document_id": false
-      },
-      {
-        "source_path_from_root": "/docs/identity/saas-apps/jisc-student-voter-registration-tutorial.md",
-        "redirect_url": "/entra/identity/saas-apps/tutorial-list",
-        "redirect_document_id": false
-      },
-      {
-        "source_path_from_root": "/docs/identity/saas-apps/cisco-umbrella-user-management-provisioning-tutorial.md",
-        "redirect_url": "/entra/identity/saas-apps/cisco-user-management-for-secure-access-provisioning-tutorial",
-        "redirect_document_id": false
-      },
-      {
-        "source_path_from_root": "/docs/identity-platform/msal-v1-app-scopes.md",
-        "redirect_url": "/entra/identity-platform/msal-acquire-cache-tokens",
-        "redirect_document_id": false
-      }
+    {
+      "source_path_from_root": "/docs/fundamentals/licensing-preview-terms.md",
+      "redirect_url": "/entra/fundamentals/licensing-preview-info",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/index.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/jisc-student-voter-registration-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/cisco-umbrella-user-management-provisioning-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/cisco-user-management-for-secure-access-provisioning-tutorial",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/workplace-by-facebook-provisioning-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/workplace-from-meta-provisioning-tutorial",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/msal-v1-app-scopes.md",
+      "redirect_url": "/entra/identity-platform/msal-acquire-cache-tokens",
+      "redirect_document_id": false
+    }
 
-    ]
+  ]
   }
 

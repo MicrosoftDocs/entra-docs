@@ -34,6 +34,7 @@ To get started, you need the following items:
 In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
 
 * LanSchool Air supports **SP and IDP** initiated SSO.
+* LanSchool Air supports [Automated user provisioning](lanschool-air-provisioning-tutorial.md).
 
 ## Adding LanSchool Air from the gallery
 

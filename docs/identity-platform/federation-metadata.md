@@ -1,17 +1,16 @@
 ---
 title: Microsoft Entra federation metadata
 description: This article describes the federation metadata document that Microsoft Entra ID publishes for services that accept Microsoft Entra tokens.
-
 author: rwike77
 manager: CelesteDG
+ms.author: ryanwi
+ms.custom:
+ms.date: 09/07/2023
+ms.reviewer: ludwignick
 ms.service: active-directory
 ms.subservice: azuread-dev
-
 ms.topic: conceptual
-ms.date: 09/07/2023
-ms.author: ryanwi
-ms.reviewer: ludwignick
-ms.custom: 
+#Customer intent:
 ---
 
 # Federation metadata

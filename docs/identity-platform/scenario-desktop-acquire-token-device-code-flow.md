@@ -1,17 +1,14 @@
 ---
 title: Acquire a token to call a web API using device code flow (desktop app)
 description: Learn how to build a desktop app that calls web APIs to acquire a token for the app using device code flow
-
 author: Dickson-Mwendia
 manager: CelesteDG
-
+ms.author: dmwendia
+ms.custom: 
+ms.date: 10/07/2022
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-
-ms.date: 10/07/2022
-ms.author: dmwendia
-ms.custom: 
 #Customer intent: As an application developer, I want to know how to write a desktop app that calls web APIs by using the Microsoft identity platform.
 ---
 

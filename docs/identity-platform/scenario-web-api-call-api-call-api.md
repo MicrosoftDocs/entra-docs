@@ -1,18 +1,15 @@
 ---
 title: Web API that calls web APIs
 description: Learn how to build a web API that calls web APIs.
-
 author: cilwerner
 manager: CelesteDG
-
+ms.author: cwerner
+ms.custom: 
+ms.date: 09/26/2020
+ms.reviewer: jmprieur
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-
-ms.date: 09/26/2020
-ms.author: cwerner
-ms.reviewer: jmprieur
-ms.custom: 
 #Customer intent: As an application developer, I want to know how to write a web API that calls web APIs by using the Microsoft identity platform.
 ---
 

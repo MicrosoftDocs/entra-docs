@@ -11,7 +11,7 @@ ms.subservice: domain-services
 ms.workload: identity
 ms.custom: has-azure-ad-ps-ref
 ms.topic: troubleshooting
-ms.date: 10/05/2023
+ms.date: 11/26/2023
 ms.author: justinha
 ---
 # Common errors and troubleshooting steps for Microsoft Entra Domain Services
@@ -33,7 +33,7 @@ If you have problems enabling Domain Services, review the following common error
 | *Domain Services could not be enabled in this Microsoft Entra tenant. The Domain Services application in your Microsoft Entra tenant does not have the required permissions to enable Domain Services. Delete the application with the application identifier d87dcbc6-a371-462e-88e3-28ad15ec4e64 and then try to enable Domain Services for your Microsoft Entra tenant.* |[The Domain Services application isn't configured properly in your Microsoft Entra tenant](troubleshoot.md#invalid-configuration) |
 | *Domain Services could not be enabled in this Microsoft Entra tenant. The Microsoft Entra application is disabled in your Microsoft Entra tenant. Enable the application with the application identifier 00000002-0000-0000-c000-000000000000 and then try to enable Domain Services for your Microsoft Entra tenant.* |[The Microsoft Graph application is disabled in your Microsoft Entra tenant](troubleshoot.md#microsoft-graph-disabled) |
 
-### Domain Name conflict
+### Domain name conflict
 
 **Error message**
 
@@ -163,11 +163,9 @@ To see if there are any active alerts, [check the health status of a managed dom
 
 ## Users removed from your Microsoft Entra tenant are not removed from your managed domain
 
-Microsoft Entra ID protects against accidental deletion of user objects. When you delete a user account from a Microsoft Entra tenant, the corresponding user object is moved to the recycle bin. When this delete operation is synchronized to your managed domain, the corresponding user account is marked as disabled. This feature helps you recover, or undelete, the user account.
+Microsoft Entra ID protects against accidental deletion of user objects. When you delete a user account from a Microsoft Entra tenant, the corresponding user object is moved to the recycle bin. When this delete operation is synchronized to your managed domain, the corresponding user account is deleted because Domain Services doesn't have a recycle bin.
 
-The user account remains in the disabled state in the managed domain, even if you re-create a user account with the same UPN in the Microsoft Entra directory. To remove the user account from the managed domain, you need to forcibly delete it from the Microsoft Entra tenant.
-
-To fully remove a user account from a managed domain, delete the user permanently from your Microsoft Entra tenant using the [Remove-MsolUser][Remove-MsolUser] PowerShell cmdlet with the `-RemoveFromRecycleBin` parameter.
+If the user account is restored in the tenant, Domain Services fetches all links for the account when it synchronizes the change to the managed domain. The user account in the managed domain gets a new globally unique identifier (GUID) and security ID (SID). 
 
 ## Next steps
 

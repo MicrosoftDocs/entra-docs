@@ -1,19 +1,17 @@
 ---
 title: Tutorial - Web app accesses Microsoft Graph as the app
 description: In this tutorial, you learn how to access data in Microsoft Graph by using managed identities.
-services: microsoft-graph, app-service-web
 author: rwike77
 manager: CelesteDG
-
-ms.service: app-service
-ms.topic: tutorial
-
-ms.date: 04/05/2023
 ms.author: ryanwi
-ms.reviewer: stsoneff
-ms.devlang: csharp, javascript
 ms.custom: azureday1
+ms.date: 04/05/2023
+ms.devlang: csharp, javascript
+ms.reviewer: stsoneff
+ms.service: app-service
 ms.subservice: web-apps
+ms.topic: tutorial
+services: microsoft-graph, app-service-web
 #Customer intent: As an application developer, I want to learn how to access data in Microsoft Graph by using managed identities.
 ---
 
