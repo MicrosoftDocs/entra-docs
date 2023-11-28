@@ -9,7 +9,7 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: roles
 ms.topic: reference
-ms.date: 11/15/2023
+ms.date: 11/28/2023
 ms.author: rolyon
 ms.reviewer: abhijeetsinha
 ms.custom: generated, it-pro, fasttrack-edit
@@ -39,7 +39,6 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [Attribute Log Reader](#attribute-log-reader) | Read audit logs related to custom security attributes. | 9c99539d-8186-4804-835f-fd51ef9e2dcd |
 > | [Authentication Administrator](#authentication-administrator) | Can access to view, set and reset authentication method information for any non-admin user.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | c4e39bd9-1100-46d3-8c65-fb160da0071f |
 > | [Authentication Policy Administrator](#authentication-policy-administrator) | Can create and manage the authentication methods policy, tenant-wide MFA settings, password protection policy, and verifiable credentials. | 0526716b-113d-4c15-b2c8-68e3c22b9f80 |
-> | [Azure AD Joined Device Local Administrator](#azure-ad-joined-device-local-administrator) | Users assigned to this role are added to the local administrators group on Microsoft Entra joined devices. | 9f06204d-73c1-4d4c-880a-6edb90606fd8 |
 > | [Azure DevOps Administrator](#azure-devops-administrator) | Can manage Azure DevOps policies and settings. | e3973bdf-4987-49ae-837a-ba8e231c7286 |
 > | [Azure Information Protection Administrator](#azure-information-protection-administrator) | Can manage all aspects of the Azure Information Protection product. | 7495fdc4-34c4-4d15-a289-98788ce399fd |
 > | [B2C IEF Keyset Administrator](#b2c-ief-keyset-administrator) | Can manage secrets for federation and encryption in the Identity Experience Framework (IEF).<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | aaf43236-0c0d-4d5f-883a-6955382ac081 |
@@ -85,6 +84,7 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [Message Center Privacy Reader](#message-center-privacy-reader) | Can read security messages and updates in Office 365 Message Center only. | ac16e43d-7b2d-40e0-ac05-243ff356ab5b |
 > | [Message Center Reader](#message-center-reader) | Can read messages and updates for their organization in Office 365 Message Center only. | 790c1fb9-7f7d-4f88-86a1-ef1f95c05c1b |
 > | [Microsoft 365 Migration Administrator](#microsoft-365-migration-administrator) | Perform all migration functionality to migrate content to Microsoft 365 using Migration Manager. | 8c8b803f-96e1-4129-9349-20738d9f9652 |
+> | [Microsoft Entra Joined Device Local Administrator](#microsoft-entra-joined-device-local-administrator) | Users assigned to this role are added to the local administrators group on Microsoft Entra joined devices. | 9f06204d-73c1-4d4c-880a-6edb90606fd8 |
 > | [Microsoft Hardware Warranty Administrator](#microsoft-hardware-warranty-administrator) | Create and manage all aspects warranty claims and entitlements for Microsoft manufactured hardware, like Surface and HoloLens. | 1501b917-7653-4ff9-a4b5-203eaf33784f |
 > | [Microsoft Hardware Warranty Specialist](#microsoft-hardware-warranty-specialist) | Create and read warranty claims for Microsoft manufactured hardware, like Surface and HoloLens. | 281fe777-fb20-4fbb-b7a3-ccebce5b0d96 |
 > | [Modern Commerce User](#modern-commerce-user) | Can manage commercial purchases for a company, department or team. | d24aef57-1500-4070-84db-2666f29cf966 |
@@ -443,16 +443,6 @@ Users with this role **cannot** do the following:
 > | microsoft.directory/verifiableCredentials/configuration/allProperties/read | Read configuration required to create and manage verifiable credentials |
 > | microsoft.directory/verifiableCredentials/configuration/allProperties/update | Update configuration required to create and manage verifiable credentials |
 > | microsoft.azure.supportTickets/allEntities/allTasks | Create and manage Azure support tickets |
-
-## Azure AD Joined Device Local Administrator
-
-This role is available for assignment only as an additional local administrator in [Device settings](~/identity/devices/assign-local-admin.md). Users with this role become local machine administrators on all Windows 10 devices that are joined to Microsoft Entra ID. They do not have the ability to manage devices objects in Microsoft Entra ID.
-
-> [!div class="mx-tableFixed"]
-> | Actions | Description |
-> | --- | --- |
-> | microsoft.directory/groupSettings/standard/read | Read basic properties on group settings |
-> | microsoft.directory/groupSettingTemplates/standard/read | Read basic properties on group setting templates |
 
 ## Azure DevOps Administrator
 
@@ -1739,15 +1729,14 @@ Users in this role can monitor notifications and advisory health updates in [Mes
 
 Assign the Microsoft 365 Migration Administrator role to users who need to do the following tasks:
 
-- Use Migration Manager in the Microsoft 365 admin center to manage content migration to Microsoft 365, including Teams, OneDrive for Business, and SharePoint sites, from various sources such as file shares, Google Workspace, Dropbox, and Box
-- Access Migration Manager to migrate from Google Drive, Dropbox, Box, and Egnyte
+- Use Migration Manager in the Microsoft 365 admin center to manage content migration to Microsoft 365, including Teams, OneDrive for Business, and SharePoint sites, from Google Drive, Dropbox, Box, and Egnyte
 - Select migration sources, create migration inventories (such as Google Drive user lists), schedule and execute migrations, and download reports
 - Create new SharePoint sites if the destination sites don't already exist, create SharePoint lists under the SharePoint admin sites, and create and update items in SharePoint lists
 - Manage migration project settings and migration lifecycle for tasks
 - Manage permission mappings from source to destination
 
 > [!NOTE]
-> This role doesn't allow you to access Migration Manager from the SharePoint admin center. You can use the SharePoint Administrator role to migrate from network file shares.
+> This role doesn't allow you to migrate from file share sources using the SharePoint admin center. You can use the SharePoint Administrator role to migrate from file share sources.
 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
@@ -1755,6 +1744,16 @@ Assign the Microsoft 365 Migration Administrator role to users who need to do th
 > | microsoft.office365.migrations/allEntities/allProperties/allTasks | Manage all aspects of Microsoft 365 migrations |
 > | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
 > | microsoft.office365.supportTickets/allEntities/allTasks | Create and manage Microsoft 365 service requests |
+
+## Microsoft Entra Joined Device Local Administrator
+
+This role is available for assignment only as an additional local administrator in [Device settings](~/identity/devices/assign-local-admin.md). Users with this role become local machine administrators on all Windows 10 devices that are joined to Microsoft Entra ID. They do not have the ability to manage devices objects in Microsoft Entra ID.
+
+> [!div class="mx-tableFixed"]
+> | Actions | Description |
+> | --- | --- |
+> | microsoft.directory/groupSettings/standard/read | Read basic properties on group settings |
+> | microsoft.directory/groupSettingTemplates/standard/read | Read basic properties on group setting templates |
 
 ## Microsoft Hardware Warranty Administrator
 
