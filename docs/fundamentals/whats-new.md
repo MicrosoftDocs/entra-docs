@@ -62,7 +62,7 @@ Monitor guest accounts at scale with intelligent insights into inactive guest us
 **Service category:** MS Graph                     
 **Product capability:**  End User Experiences             
 
-An extra property has been added to signInActivity API to display the last **successful** signIn time for a specific user, regardless if the signIn was interactive or non-interactive. Note that the data will not be backfilled for this property, so you should expect to be returned only successful signIn data starting on 12/1/2023. For more information, see: 
+An extra property has been added to signInActivity API to display the last **successful** sign in time for a specific user, regardless if the sign in was interactive or non-interactive. The data won't be backfilled for this property, so you should expect to be returned only successful signIn data starting on 12/1/2023. For more information, see: 
 
 ---
 
@@ -72,15 +72,16 @@ An extra property has been added to signInActivity API to display the last **suc
 **Service category:** Conditional Access                     
 **Product capability:**  Access Control             
 
-Starting in November 2023, Microsoft will begin automatically protecting customers with Microsoft managed Conditional Access policies. These are policies that Microsoft creates and enables in customer tenants. The following policies will be rolled out to all eligible tenants:
+Starting in November 2023, Microsoft will begin automatically protecting customers with Microsoft managed Conditional Access policies. These are policies that Microsoft creates and enables in customer tenants. The following policies are rolled out to all eligible tenants, who will be notified prior to policy creation :
 
 1. Multi-factor Authentication for admin portals: This policy covers privileged admin roles and requires multi-factor authentication when an admin signs into a Microsoft admin portal.
-1. Multi-factor Authentication for per-user multi-factor authentication users: This policy covers users with per-user multi-factor authentication and requires multi-factor authentication for all cloud apps multi-factor authentication for high-risk sign-ins: This policy covers all users and requires multi-factor authentication and reauthentication for high-risk sign-ins.
+1. Multi-factor Authentication for per-user multi-factor authentication users: This policy covers users with per-user multi-factor authentication and requires multi-factor authentication for all cloud apps.
+1. Multi-factor authentication for high-risk sign-ins: This policy covers all users and requires multi-factor authentication and reauthentication for high-risk sign-ins.
 
 For more information, see:
 
-- [Microsoft-managed policies](../identity/conditional-access/managed-policies.md)
 - [Automatic Conditional Access policies in Microsoft Entra streamline identity protection](https://www.microsoft.com/security/blog/2023/11/06/automatic-conditional-access-policies-in-microsoft-entra-streamline-identity-protection/)
+- [Microsoft-managed policies](../identity/conditional-access/managed-policies.md)
 
 ---
 
@@ -143,13 +144,13 @@ For listing your application in the Azure AD app gallery, read the details here 
 
 ---
 
-### General Availability - Authenticator on Android is FIPS 140 compliant
+### General Availability - Microsoft Authenticator on Android is FIPS 140-3 compliant
 
 **Type:** New feature   
 **Service category:** Microsoft Authenticator App                     
 **Product capability:**  User Authentication             
 
-Beginning with version 6.2310.7174, Microsoft Authenticator for Android is compliant with Federal Information Processing Standard (FIPS 140-3) for all Microsoft Entra authentications using phishing-resistant device-bound passkeys, push multi-factor authentication (MFA), passwordless phone sign-in (PSI) and time-based one-time passcodes (TOTP). For organizations using Intune Company Portal, install version 5.0.6043.0 in addition to the latest version of the Authenticator for FIPS compliance. Microsoft Authenticator on iOS is already FIPS 140 compliant, as announced last year. For more information, see: [Authentication methods in Microsoft Entra ID - Microsoft Authenticator app](../identity/authentication/concept-authentication-authenticator-app.md).
+Beginning with version 6.2310.7174, Microsoft Authenticator for Android is compliant with Federal Information Processing Standard (FIPS 140-3) for all Microsoft Entra authentications, including phishing-resistant device-bound passkeys, push multi-factor authentication (MFA), passwordless phone sign-in (PSI) and time-based one-time passcodes (TOTP). For organizations using Intune Company Portal, it is required to have minimum CP version 5.0.6043.0 in addition to Microsoft Authenticator version 6.2310.7174. install version 5.0.6043.0 in addition to the latest version of the Authenticator for FIPS compliance. Microsoft Authenticator on iOS is already FIPS 140 compliant, as announced last year. For more information, see: [Authentication methods in Microsoft Entra ID - Microsoft Authenticator app](../identity/authentication/concept-authentication-authenticator-app.md).
 
 ---
 
