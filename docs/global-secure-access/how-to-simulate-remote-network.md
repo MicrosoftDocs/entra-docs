@@ -138,7 +138,7 @@ The process for creating a remote network is completed in the Microsoft Entra ad
 
 The following steps provide the basic information needed to create a remote network with Global Secure Access. This process is covered in greater detail in two separate articles. There are several details that can be easily mixed up, so review the following articles for more information:
 
-- [How to create a remote network](how-to-create-remote-network.md)
+- [How to create a remote network](how-to-create-remote-networks.md)
 - [How to manage remote network device links](how-to-manage-remote-network-device-links.md)
 
 For this article, we choose the zone redundancy path.
@@ -160,6 +160,8 @@ For this article, we choose the zone redundancy path.
     - **Redundancy**: Set to **Zone redundancy**.
     - **Zone redundancy local BGP address**: Private IP address that is *outside* the address space of the virtual network associated with your virtual network gateway. This address must be different from **Local BGP address**.
     - **Bandwidth capacity (Mbps)**: Specify tunnel bandwidth. Available options are 250, 500, 750, and 1000 Mbps.
+
+    ![Screenshot of the device link general details.](media/how-to-simulate-remote-network/virtual-network-device-link-details.png)
 1. On the **Add a link - Details** tab leave the default values selected, unless you made a different selection previously, and select the **Next** button.
 1. On the **Add a link - Security** tab, enter the Pre-shared key (PSK) and select the **Save** button. You return to the main **Create a remote network** set of tabs.
 1. On the **Traffic profiles** tab, select the appropriate traffic forwarding profile.
