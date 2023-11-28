@@ -63,11 +63,10 @@ Remote networks are configured on three tabs. You must complete each tab in orde
 The first step is to provide the name and location of your remote network. Completing this tab is required.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
-1. Browse to **Global Secure Access (preview)** > **Devices** > **Remote network**.
+1. Browse to **Global Secure Access (preview)** > **Connect** > **Remote networks**.
 1. Select the **Create remote network** button and provide the following details:
     - **Name**
     - **Region**
-1. Select the **Next: Connectivity** button. You can also select the **Connectivity** tab.
 
     ![Screenshot of the basics tab of the create device link process.](media/how-to-create-remote-networks/create-basics-tab.png)
 
