@@ -36,7 +36,7 @@ User attributes are values collected from a user during self-service sign-up. In
   - String text box
   - Numeric text box
   - Single-select checkbox
-  - Multi-select checkboxes or radio buttons with a heading and the option to include hyperlinks (for example, to your Terms of Use or Privacy Policy)
+  - Multiselect checkboxes or radio buttons with a heading and the option to include hyperlinks (for example, to your Terms of Use or Privacy Policy)
 
 The following attribute collection page example combines built-in attributes and custom attributes, including a checkbox with hyperlinks to more content.
 
