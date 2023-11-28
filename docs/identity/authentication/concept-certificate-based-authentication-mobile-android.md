@@ -63,15 +63,17 @@ Because Microsoft Entra CBA with YubiKey on Android mobile is enabled by using t
 
 Steps to test YubiKey on Microsoft apps on Android: 
 
-1. Install the latest Microsoft Authenticator app.
-1. If you're using a USB-C Yubikey, open Outlook, and plug in your YubiKey. 
-   1. Select **Add account** and enter your user principal name (UPN).
-   1. Click **Continue**. A dialog should immediately pop up asking for permission to access your YubiKey. Click **OK**. 
-   1. Select **Use Certificate or smart card**. 
-   1. Enter the PIN to access YubiKey and select **Unlock**.
-1. If you're using an NFC-enabled Yubikey, hold the Yubikey to the back of the phone again to validate the PIN.
-   1. When the custom certificate picker appears, select the certificate associated with the user’s account, and click **Continue**. 
-1. If authentication succeeds, the user can access Outlook.
+1. Install Microsoft Authenticator.
+1. If your YubiKey has USB-C, open Outlook and plug in your YubiKey. 
+1. Select **Add account** and enter your user principal name (UPN).
+1. Click **Continue**, and when asked for permission to access your YubiKey, click **OK**. 
+1. Select **Use Certificate or smart card**.
+1. If you're using an NFC-enabled Yubikey, hold the Yubikey to the back of the device.
+1. A custom certificate picker appeara.
+1. Select the certificate associated with the user’s account, and click **Continue**. 
+1. Enter the PIN to access YubiKey and select **Unlock**.
+1. If you're using a Yubikey with NFC, hold the Yubikey to the back of the phone again to validate the PIN.
+1. After authentucation succeeds, you can access Outlook.
 
 >[!NOTE]
 >For a smooth CBA flow, plug in YubiKey as soon as the application is opened and accept the consent dialog from YubiKey before selecting the link **Use Certificate or smart card**. If you want to experience only a single connection, consider having users plug in the YubiKey by using USB instead of NFC, which only needs to be done once at the beginning of login.
