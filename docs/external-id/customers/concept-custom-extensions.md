@@ -17,7 +17,7 @@ ms.custom: it-pro
 ---
 # Extending authentication flows with your own business logic
 
-Microsoft Entra ID for customers is designed for flexibility. In addition to the built-in authentication events within a sign-up and sign-in user flow, you can add custom authentication extensions at specific points within the authentication flow. A custom authentication extension is essentially an event listener that, when activated, makes an HTTP call to a REST API endpoint where you've defined a workflow action. For example, you could add a workflow to validate the attributes a user enters during sign-up, or you could use a custom claims provider to add external user data to the token before it's issued.
+Microsoft Entra ID for customers is designed for flexibility. In addition to the built-in authentication events within a sign-up and sign-in user flow, you can add custom authentication extensions at specific points within the authentication flow. A custom authentication extension is essentially an event listener that, when activated, makes an HTTP call to a REST API endpoint where you've defined a workflow action. For example, you could add an [attribute collection](#attribute-collection-start-and-submit-events) workflow to validate the attributes a user enters during sign-up, or you could use a [custom claims provider](#token-issuance-start-event) to add external user data to the token before it's issued.
 
 There are two components you need to configure: a custom authentication extension and a REST API. The custom authentication extension specifies your REST API endpoint, when the REST API should be called, and the credentials to call the REST API. You can create custom authentication extensions at the following points in the authentication flow:
 
@@ -63,11 +63,11 @@ In some cases, key data might be stored in systems external to Microsoft Entra, 
 
 A token issuance event extension involves the following components:
 
-- **Custom claims provider**. To customize the token return to your applications, enterprise applications in your Microsoft Entra tenant can configure custom claims provider to fetch data from external systems. The custom claims provider points to a custom extension and specifies the attributes to be added to the security token. Multiple claims provider can share the same custom extension. So, each application can choose its own set of attributes to be added to the security token.
+- **Custom claims provider**. To customize the token returned to your application, enterprise applications in your Microsoft Entra tenant can configure a custom claims provider to fetch data from external systems. The custom claims provider points to a custom extension and specifies the attributes to be added to the security token. Multiple claims providers can share the same custom extension. So, each application can choose its own set of attributes to be added to the security token.
 
-- **REST API endpoint**. When an event fires, Microsoft Entra ID sends an HTTP request, to your REST API endpoint. The REST API can be an Azure Function, Azure Logic App, or some other publicly available API endpoint. Your REST API endpoint is responsible for interfacing with downstream databases, existing APIs, LDAP directories, or any other stores that contain the attributes you'd like to add to the token configuration.
+- **REST API endpoint**. When an event fires, Microsoft Entra ID sends an HTTP request to your REST API endpoint. The REST API can be an Azure Function, Azure Logic App, or some other publicly available API endpoint. Your REST API endpoint is responsible for interfacing with downstream databases, existing APIs, LDAP directories, or any other stores that contain the attributes you'd like to add to the token configuration.
 
-   The REST API returns an HTTP response, or action, back to Microsoft Entra ID containing the attributes. Attributes that return by your REST API aren't automatically added to a token. Instead, an application's claims mapping policy must be configured for any attribute to be included in the token.
+   The REST API returns an HTTP response, or action, back to Microsoft Entra ID containing the attributes. Attributes that are returned by your REST API aren't automatically added to a token. Instead, an application's claims mapping policy must be configured for any attribute to be included in the token.
 
 For details, see:
 
