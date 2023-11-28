@@ -16,7 +16,7 @@ titleSuffix: Microsoft identity platform
 
 # Custom authentication extensions (preview)
 
-This article provides an overview of custom authentication extensions for Microsoft Entra ID. Custom authentication extensions allow you to customize the Microsoft Entra authentication experience by integrating with external systems.
+This article provides a high-level, technical overview of [custom authentication extensions](~/external-id/customers/concept-custom-extensions.md) for Microsoft Entra ID. Custom authentication extensions allow you to customize the Microsoft Entra authentication experience by integrating with external systems.
 
 The following diagram depicts the sign-in flow integrated with a custom authentication extension.
 
@@ -56,7 +56,7 @@ To ensure the communications between the custom authentication  extension and yo
 
 ## Custom claims provider
 
-A custom claims provider is a type of custom authentication extension that calls a REST API to fetch claims from external systems. A custom claims provider can be assigned to one or many applications in your directory and maps claims from external systems into tokens.
+A custom claims provider is a type of custom authentication extension that calls a REST API to fetch claims from external systems. A custom claims provider maps claims from external systems into tokens and can be assigned to one or many applications in your directory.
 
 Learn more about [custom claims providers](custom-claims-provider-overview.md).
 
