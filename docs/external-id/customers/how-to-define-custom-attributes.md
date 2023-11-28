@@ -141,7 +141,7 @@ On the **Page layout** page, you can indicate which attributes are required and 
 
 1. Under **Customize**, select **Page layouts**. The attributes you chose to collect appear.
 
-1. To configure radio buttons or multi-select checkboxes, find the attribute with a data type of **String** that you want to configure. Select the value in the **User Input Type** column. Then in the editor pane, choose the appropriate user input type and enter the values. For details, see the following sections:
+1. To configure radio buttons or multiselect checkboxes, find the attribute with a data type of **String** that you want to configure. Select the value in the **User Input Type** column. Then in the editor pane, choose the appropriate user input type and enter the values. For details, see the following sections:
 
    - [To configure multiple checkboxes (CheckboxMultiSelect)](#to-configure-multiple-checkboxes-checkboxmultiselect)
    - [To configure radio buttons (RadioSingleSelect)](#to-configure-radio-buttons-radiosingleselect)
