@@ -37,7 +37,7 @@ Microsoft doesn't recommend that administrators work day to day with an active p
 - [Privileged Identity Management](/entra/id-governance/privileged-identity-management/pim-configure) to elevate their accounts on a time limited basis to these highly privileged administrator roles.
 - [Microsoft Entra Permissions Management](/entra/permissions-management/overview) to identify and remediate over-privileged users across multicloud infrastructures in Microsoft Azure, Amazon Web Services (AWS), and Google Cloud Platform (GCP).
 
-### Find the the right role
+### Find the right role
 
 Use the following resources to find the right role for your administrators.
 
