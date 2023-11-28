@@ -40,7 +40,7 @@ User attributes are values collected from a user during self-service sign-up. In
 
 The following attribute collection page example combines built-in attributes and custom attributes, including a checkbox with hyperlinks to more content.
 
-   :::image type="content" source="media/how-to-define-custom-attributes/attribute-collection-page-types.png" border="false" alt-text="Screenshot of a sign-up page with terms of use and privacy policy checkboxes." lightbox="media/how-to-define-custom-attributes/attribute-collection-page-types.png":::
+   :::image type="content" source="media/how-to-define-custom-attributes/attribute-collection-page-types-reduced.png" border="false" alt-text="Screenshot of a sign-up page with terms of use and privacy policy checkboxes." lightbox="media/how-to-define-custom-attributes/attribute-collection-page-types.png":::
 
 In this example:
 
