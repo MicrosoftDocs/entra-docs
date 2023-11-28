@@ -106,8 +106,8 @@ An extra property has been added to signInActivity API to display the last **suc
 
 Starting in November 2023, Microsoft will begin automatically protecting customers with Microsoft managed Conditional Access policies. These are policies that Microsoft creates and enables in customer tenants. The following policies will be rolled out to all eligible tenants:
 
-1. Multifactor Authentication for admin portals: This policy covers privileged admin roles and requires multifactor Authentication when an admin signs into a Microsoft admin portal.
-1. Multifactor Authentication for per-user Multifactor Authentication users: This policy covers users with per-user multifactor Authentication and requires multifactor Authentication for all cloud apps multifactor Authentication for high-risk sign-ins: This policy covers all users and requires multifactor Authentication and reauthentication for high-risk sign-ins.
+1. Multi-factor Authentication for admin portals: This policy covers privileged admin roles and requires multi-factor authentication when an admin signs into a Microsoft admin portal.
+1. Multi-factor Authentication for per-user multi-factor authentication users: This policy covers users with per-user multi-factor authentication and requires multi-factor authentication for all cloud apps multi-factor authentication for high-risk sign-ins: This policy covers all users and requires multi-factor authentication and reauthentication for high-risk sign-ins.
 
 For more information, see:
 
