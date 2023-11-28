@@ -119,7 +119,7 @@ These IP addresses can be found by browsing to the **Configuration** page of you
 
 :::image type="content" source="media/how-to-simulate-remote-network/virtual-network-gateway-public-ip-addresses.png" alt-text="Screenshot showing how to find the public IP addresses of a virtual network gateway." lightbox="media/how-to-simulate-remote-network/virtual-network-gateway-public-ip-addresses-expanded.png":::
 
-## Create a remote network
+## Zone redundancy
 
 Before you create your remote network for Global Secure Access, take a moment to review the two options about redundancy. Remote networks can be created with or without redundancy. You can add redundancy in two ways:
 
@@ -131,79 +131,44 @@ Before you create your remote network for Global Secure Access, take a moment to
     - You can choose **No redundancy** then when creating device links in the Microsoft Entra admin center.
     - In this case, you need primary and secondary public IP addresses on your virtual network gateway.
 
-In this article, we choose the zone redundancy path. The steps to create a remote network are divided on three tabs. You can complete the first tab right away, then return to the second two tabs when the remote network gateway is created.
-
-### Basics
-
-This step is completed in the Microsoft Entra admin center and is where you provide the name and location of your remote network. Completing this tab is required.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
-1. Browse to **Global Secure Access (preview)** > **Connect** > **Remote networks**.
-1. Select the **Create remote network** button and provide the following details:
-    - **Name**
-    - **Region**
-
-   ![Screenshot of the basics tab of the create device link process.](media/how-to-simulate-remote-network/create-basics-tab.png)
-
-### Connectivity
-
-This tab is where you add the device links for the remote network. In a branch office scenario, this step connects your physical router to your Global Secure Access network. In the remote network simulation scenario, you're connecting your virtual network to the Global Secure Access network.
-
-You need to provide the device type, public IP address of your virtual network gateway, border gateway protocol (BGP) address, and autonomous system number (ASN) for each device link. To complete this step, you need the public IP address of the virtual network gateway you created in the previous section.
-
-The process to add a device link is completed on a different set of tabs. When you finish adding the device link, you return to the **Create a remote network** process, where you still have two more tabs to complete.
+## Create a remote network
+The process for creating a remote network is completed in the Microsoft Entra admin center. There are two sets of tabs where you enter the information.
 
 ![Screenshot of the two sets of tabs used in the process.](media/how-to-simulate-remote-network/remote-network-tabs.png)
 
-This process is covered in detail in the [How to manage remote network device links](how-to-manage-remote-network-device-links.md).
+The following steps provide the basic information needed to create a remote network with Global Secure Access. This process is covered in greater detail in two separate articles. There are several details that can be easily mixed up, so review the following articles for more information:
 
-1. In the Microsoft Entra admin center, browse to **Global Secure Access (preview)** > **Connect** > **Remote networks**.
-1. On the **Connectivity** tab, select **Add a link**.
+- [How to create a remote network](how-to-create-remote-network.md)
+- [How to manage remote network device links](how-to-manage-remote-network-device-links.md)
 
-    ![Screenshot of the Add a link button on the remote network page.](media/how-to-simulate-remote-network/add-device-link-button.png)
+For this article, we choose the zone redundancy path.
 
-#### General tab
-
-Each of the following details are required to create a device link. The IP address comes from your virtual network gateway. For more information, see [How to manage remote network device links](how-to-manage-remote-network-device-links.md#add-a-link---general-tab).
-
-- **Link name**: Name of your device link.
-- **Device type**: Set to **Other**.
-- **IP address**: Public IP address of your virtual network gateway.
-- **Local BGP address**: Private IP address that is *outside* the address space of the virtual network associated with your virtual network gateway.
-  - For example, if the address space of your virtual network is 10.1.0.0/16, then you can use 10.2.0.0 as your Local BGP address.
-- **Peer BGP address**: BGP IP address of your virtual network gateway.
-- **Link ASN**: ASN of your virtual network gateway.
-- **Redundancy**: Set to **Zone redundancy**.
-- **Zone redundancy local BGP address**: Private IP address that is *outside* the address space of the virtual network associated with your virtual network gateway. This address must be different from **Local BGP address**.
-- **Bandwidth capacity (Mbps)**: Specify tunnel bandwidth. Available options are 250, 500, 750, and 1000 Mbps.
-
-![Screenshot of the device link details for the virtual network gateway.](media/how-to-simulate-remote-network/virtual-network-device-link-details.png)
-
-#### Details tab
-
-The **Details** tab is where you establish the bidirectional communication channel between Global Secure Access and your CPE. Configure your IPSec/IKE policy and select the **Next** button.
-
-![Screenshot of the default device link details.](./media/how-to-manage-remote-network-device-links/default-device-link-details.png)
-
-Leave the default values selected, unless you made a different selection previously. For more information, see [How to manage remote network device links](how-to-manage-remote-network-device-links.md#add-a-link---security-tab).
-
-#### Security tab
-
-1. Enter the Pre-shared key (PSK).
-1. Select the **Save** button.
-
-After you create the device link, you return to the **Create a remote network** page. Select the **Traffic profiles** tab to continue the process.
-
-### Traffic profiles
-
-You can assign the remote network to a traffic forwarding profile when you create the remote network. You can also assign the remote network at a later time. For more information, see [Traffic forwarding profiles](concept-traffic-forwarding.md).
-
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
+1. Browse to **Global Secure Access (preview)** > **Connect** > **Remote networks**.
+1. Select the **Create remote network** button and provide the following details on the **Basics** tab:
+    - **Name**
+    - **Region**
+1. On the the **Connectivity** tab select **Add a link**.
+1. On the **Add a link - General** tab enter the following details:
+    - **Link name**: Name of your device link.
+    - **Device type**: Set to **Other**.
+    - **IP address**: Public IP address of your virtual network gateway.
+    - **Local BGP address**: Private IP address that is *outside* the address space of the virtual network associated with your virtual network gateway.
+      - For example, if the address space of your virtual network is 10.1.0.0/16, then you can use 10.2.0.0 as your Local BGP address.
+    - **Peer BGP address**: BGP IP address of your virtual network gateway.
+    - **Link ASN**: ASN of your virtual network gateway.
+    - **Redundancy**: Set to **Zone redundancy**.
+    - **Zone redundancy local BGP address**: Private IP address that is *outside* the address space of the virtual network associated with your virtual network gateway. This address must be different from **Local BGP address**.
+    - **Bandwidth capacity (Mbps)**: Specify tunnel bandwidth. Available options are 250, 500, 750, and 1000 Mbps.
+1. On the **Add a link - Details** tab leave the default values selected, unless you made a different selection previously, and select the **Next** button.
+1. On the **Add a link - Security** tab, enter the Pre-shared key (PSK) and select the **Save** button. You return to the main **Create a remote network** set of tabs.
 1. On the **Traffic profiles** tab, select the appropriate traffic forwarding profile.
 1. Select the **Review + Create** button.
-
-The final tab in the process is to review all of the settings that you provided. Review the details provided here and select the **Create remote network** button.
+1. If everything looks correct, select the **Create remote network** button.
 
 ### View connectivity configuration
+
+After you create a remote network and add a device link, the configuration details are available in the Microsoft Entra admin center. You need several details from this configuration to complete the next step.
 
 1. Browse to **Global Secure Access (Preview)** > **Connect** > **Remote networks**.
 1. Select **View configuration** button for the remote network you created.
@@ -261,6 +226,8 @@ Repeat these steps to create another connection with second local network gatewa
 :::image type="content" source="media/how-to-simulate-remote-network/create-site-to-site-connection.png" alt-text="Screenshot of the Azure portal showing configuration settings for a site-to-site connection." lightbox="media/how-to-simulate-remote-network/create-site-to-site-connection.png":::
 
 ## Verify connectivity
+
+To verify connectivity, you need to simulate the traffic flow.
 
 ### Virtual machine
 
