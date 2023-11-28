@@ -55,7 +55,7 @@ For details, see [Add attribute collection custom extensions to your user flow](
 
 ## Token issuance start event
 
-The token issuance start event is triggered once a user completes all of their authentication challenges, and a security token is about to be issued.
+The token issuance start event is triggered once a user completes all of their authentication challenges and a security token is about to be issued.
 
 When users authenticate to your application with Microsoft Entra ID, a security token is returned to your application. The security token contains claims that are statements about the user, such as name, unique identifier, or application roles.  Beyond the default set of claims that are contained in the security token, you can define your own custom claims from external systems using a REST API you develop.  
 
@@ -63,7 +63,7 @@ In some cases, key data might be stored in systems external to Microsoft Entra, 
 
 A token issuance event extension involves the following components:
 
-- **Custom claims provider**. To customize the token returned to your application, enterprise applications in your Microsoft Entra tenant can configure a custom claims provider to fetch data from external systems. The custom claims provider points to a custom extension and specifies the attributes to be added to the security token. Multiple claims providers can share the same custom extension. So, each application can choose its own set of attributes to be added to the security token.
+- **Custom claims provider**. A custom claims provider is a type of custom authentication extension that fetches data from external systems. The custom claims provider specifies the attributes to be added to the security token that is returned to your application. Multiple claims providers can share the same custom extension, so a different set of attributes can be added to the security token for each application.
 
 - **REST API endpoint**. When an event fires, Microsoft Entra ID sends an HTTP request to your REST API endpoint. The REST API can be an Azure Function, Azure Logic App, or some other publicly available API endpoint. Your REST API endpoint is responsible for interfacing with downstream databases, existing APIs, LDAP directories, or any other stores that contain the attributes you'd like to add to the token configuration.
 
