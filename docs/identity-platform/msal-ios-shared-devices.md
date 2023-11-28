@@ -5,7 +5,7 @@ author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms.custom:
-ms.date: 05/16/2023
+ms.date: 11/28/2023
 ms.reviewer: brandwe, akgoel23
 ms.service: active-directory
 ms.subservice: develop
@@ -14,9 +14,6 @@ ms.topic: conceptual
 ---
 
 # Shared device mode for iOS devices
-
-> [!IMPORTANT]
-> This feature [!INCLUDE [PREVIEW BOILERPLATE](./includes/develop-preview.md)]
 
 Frontline workers such as retail associates, flight crew members, and field service workers often use a shared mobile device to perform their work. These shared devices can present security risks if your users share their passwords or PINs, intentionally or not, to access customer and business data on the shared device.
 
