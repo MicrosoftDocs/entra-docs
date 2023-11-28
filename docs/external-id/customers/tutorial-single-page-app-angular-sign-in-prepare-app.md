@@ -479,6 +479,28 @@ In this section we will configure the home and guarded components of the applica
       return `${date} - [${dateObj.toString()}]`;
     };
     ```
+
+1. Open _src/index.html_ and replace the code with the following snippet. 
+
+    ```HTML
+    <!doctype html>
+    <html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <title>Microsoft identity platform</title>
+      <base href="/">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="icon" type="image/x-icon" href="favicon.svg">
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+    <body class="mat-typography">
+      <app-root></app-root>
+      <app-redirect></app-redirect>
+    </body>
+    </html>
+    ``` 
     
 ## Next step
 
