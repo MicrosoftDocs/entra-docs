@@ -147,6 +147,20 @@ To automatically enable the CloudAPAuthEnabled policy in Chrome, create the foll
  - Value 0x00000001
  - PropertyType DWORD
 
+To automatically deploy the Windows Account extension to Chrome browsers, create the following registry key:
+
+- Path HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome\ExtensionInstallForcelist
+- Name 1
+- Type REG_SZ (String)
+- Data ppnbnpeolgkicgegkbkbjmhlideopiji;https\://clients2.google.com/service/update2/crx
+
+For Chrome support in **Windows 8.1 and 7**, create the following registry key:
+
+- Path HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\AutoSelectCertificateForUrls
+- Name 1
+- Type REG_SZ (String)
+- Data {"pattern":"https://device.login.microsoftonline.com","filter":{"ISSUER":{"CN":"MS-Organization-Access"}}}
+
 ### Supported mobile applications and desktop clients
 
 Administrators can select **Mobile apps and desktop clients** as client app.
