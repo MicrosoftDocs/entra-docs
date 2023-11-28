@@ -69,7 +69,7 @@ Steps to test YubiKey on Microsoft apps on Android:
 1. Click **Continue**, and when asked for permission to access your YubiKey, click **OK**. 
 1. Select **Use Certificate or smart card**.
 1. If you're using an NFC-enabled Yubikey, hold the Yubikey to the back of the device.
-1. A custom certificate picker appeara.
+1. A custom certificate picker appears.
 1. Select the certificate associated with the user’s account, and click **Continue**. 
 1. Enter the PIN to access YubiKey and select **Unlock**.
 1. If you're using a Yubikey with NFC, hold the Yubikey to the back of the phone again to validate the PIN.
