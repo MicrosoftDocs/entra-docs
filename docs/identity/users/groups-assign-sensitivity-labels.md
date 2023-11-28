@@ -25,24 +25,26 @@ Microsoft Entra ID, part of Microsoft Entra, supports applying sensitivity label
 
 ## Enable sensitivity label support in PowerShell
 
-To apply published labels to groups, you must first enable the feature. These steps enable the feature in Microsoft Entra ID.
+To apply published labels to groups, you must first enable the feature. These steps enable the feature in Microsoft Entra ID. The Microsoft Graph PowerShell SDK comes in 2 modules, `Microsoft.Graph` and `Microsoft.Graph.Beta`.
 
-1. Open a PowerShell prompt on your computer. You can open it without elevated privileges.
+1. Open a PowerShell prompt on your computer with administrative privileges.
 1. Run the following commands to prepare to run the cmdlets.
 
     ```powershell
-    Install-Module AzureADPreview
-    Import-Module AzureADPreview
-    AzureADPreview\Connect-AzureAD
+    Install-Module Microsoft.Graph
+    Install-Module Microsoft.Graph.Beta
     ```
 
-    In the **Sign in to your account** page, enter your admin account and password to connect you to your service, and select **Sign in**.
+1. Connect to your tenant.
+
+    ```powershell
+    Connect-MgGraph -Scopes "Directory.ReadWrite.All"
+    ```
+
 1. Fetch the current group settings for the Microsoft Entra organization and display the current group settings.
 
     ```powershell
-    $grpUnifiedSetting = (Get-AzureADDirectorySetting | where -Property DisplayName -Value "Group.Unified" -EQ)
-    $Setting = $grpUnifiedSetting
-    $grpUnifiedSetting.Values
+    $grpUnifiedSetting = Get-MgBetaDirectorySetting -Search DisplayName:"Group.Unified"
     ```
 
     > [!NOTE]
@@ -51,31 +53,33 @@ To apply published labels to groups, you must first enable the feature. These st
     > [!NOTE]
     > If the sensitivity label has been enabled previously, you will see **EnableMIPLabels** =  **True**. In this case, you do not need to do anything.
 
-1. Enable the feature:
+1. Apply the new settings:
 
     ```powershell
-    $Setting["EnableMIPLabels"] = "True"
+    $params = @{
+	    Values = @(
+		    @{
+			    Name = "EnableMIPLabels"
+			    Value = "True"
+		    }
+	    )
+    }
+
+    Update-MgBetaDirectorySetting -DirectorySettingId $grpUnifiedSetting.Id -BodyParameter $params
     ```
- 
-1. Check the new applied value:
+
+1. Verify that the new value is present.
 
     ```powershell
+    $Setting = Get-MgBetaDirectorySetting -DirectorySettingId $grpUnifiedSetting.Id
     $Setting.Values
-    ```
-    
-1. Save the changes and apply the settings:
-
-    ```powershell
-    Set-AzureADDirectorySetting -Id $grpUnifiedSetting.Id -DirectorySetting $Setting
     ```
 
 If you’re receiving a Request_BadRequest error, it's because the settings already exist in the tenant, so when you try to create a new property:value pair, the result is an error. In this case, take the following steps:
 
 1. Repeat steps 1-4 from [Enable sensitivity label support in PowerShell](#enable-sensitivity-label-support-in-powershell).
-1. Issue a `Get-AzureADDirectorySetting | FL` cmdlet and check the ID. If several ID values are present, use the one where you see the EnableMIPLabels property on the Values settings. You will need the ID in step 4.
-1. Set the EnableMIPLabels property variable: `$Setting["EnableMIPLabels"] = "True"`
-1. Issue the `Set-AzureADDirectorySetting -DirectorySetting $Setting -ID` cmdlet, using the ID that you retrieved in step 2.
-1. Ensure that the value is now correctly updated by issuing `$Setting.Values` again.
+1. Issue a `Get-MgBetaDirectorySetting | FL` cmdlet and check the ID. If several ID values are present, use the one where you see the EnableMIPLabels property on the Values settings. You will need the ID in step 4.
+1. Issue the `Update-MgBetaDirectorySetting` cmdlet, using the ID that you retrieved in step 2.
 
 You will also need to synchronize your sensitivity labels to Microsoft Entra ID. For instructions, see [How to enable sensitivity labels for containers and synchronize labels](/purview/sensitivity-labels-teams-groups-sites#how-to-enable-sensitivity-labels-for-containers-and-synchronize-labels).
 
@@ -129,7 +133,7 @@ After you enable this feature, the “classic” classifications for groups will
 The sensitivity label option is only displayed for groups when all of the following conditions are met:
 
 1. The organization has an active Microsoft Entra ID P1 license.
-1. The feature is enabled, EnableMIPLabels is set to True in from the Azure AD PowerShell module.
+1. The feature is enabled, EnableMIPLabels is set to True in from the Microsoft Graph PowerShell module.
 1. In addition, the sensitivity labels are published in the Microsoft Purview compliance portal for this Microsoft Entra organization.
 1. Labels are synchronized to Microsoft Entra ID with the Execute-AzureAdLabelSync cmdlet in the Security & Compliance PowerShell module. It can take up to 24 hours after synchronization for the label to be available to Microsoft Entra ID.
 1. The [sensitivity label scope](/purview/sensitivity-labels?preserve-view=true&view=o365-worldwide#label-scopes) must be configured for Groups & Sites.
@@ -162,7 +166,7 @@ Labels can be swapped at any time using the same steps as assigning a label to a
 
 When you make changes to group settings for a published label in the [Microsoft Purview compliance portal](https://compliance.microsoft.com), those policy changes aren't automatically applied on the labeled groups. Once the sensitivity label is published and applied to groups, Microsoft recommend that you not change the group settings for the label in the Microsoft Purview compliance portal.
 
-If you must make a change, use an [Azure AD PowerShell script](https://github.com/microsoftgraph/powershell-aad-samples/blob/master/ReassignSensitivityLabelToO365Groups.ps1) to manually apply updates to the impacted groups. This method makes sure that all existing groups enforce the new setting.
+If you must make a change, use a [PowerShell script](https://github.com/microsoftgraph/powershell-aad-samples/blob/master/ReassignSensitivityLabelToO365Groups.ps1) to manually apply updates to the impacted groups. This method makes sure that all existing groups enforce the new setting.
 
 ## Next steps
 
