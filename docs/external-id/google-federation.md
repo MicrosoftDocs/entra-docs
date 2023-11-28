@@ -7,7 +7,7 @@ description: Federate with Google to enable guest users to sign in to your Micro
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: how-to
-ms.date: 01/20/2023
+ms.date: 11/28/2023
 
 ms.author: mimart
 author: msmimart
@@ -213,6 +213,20 @@ You'll now set the Google client ID and client secret. You can use the Microsoft
  
    > [!NOTE]
    > Use the client ID and client secret from the app you created in "Step 1: Configure a Google developer project." For more information, see [New-AzureADMSIdentityProvider](/powershell/module/azuread/new-azureadmsidentityprovider?view=azureadps-2.0-preview&preserve-view=true). 
+
+## Add Google identity provider to a user flow
+
+At this point, the Google identity provider is set up in your Microsoft Entra ID. Users who redeem invitations from you can use Google to sign in. However, if you've created self-service sign-up user flows, you'll you'll also need to add Google to your user flow sign-in pages. To add the Google identity provider to a user flow:
+
+1. Browse to **Identity** > **External Identities** > **User flows**.
+
+1. Select the user flow where you want to add the Google identity provider.
+
+1. Under Settings, select **Identity providers.**
+
+1. In the identity providers list, select **Google**.
+
+1. Select **Save**.
 
 ## How do I remove Google federation?
 
