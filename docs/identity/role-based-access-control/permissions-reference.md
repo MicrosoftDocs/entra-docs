@@ -1739,13 +1739,15 @@ Users in this role can monitor notifications and advisory health updates in [Mes
 
 Assign the Microsoft 365 Migration Administrator role to users who need to do the following tasks:
 
-- Use Migration Manager in the SharePoint admin center or Microsoft 365 admin center to manage content migration to Microsoft 365, including Teams, OneDrive for Business, and SharePoint sites, from various sources such as file shares, Google Workspace, Dropbox, and Box
+- Use Migration Manager in the Microsoft 365 admin center to manage content migration to Microsoft 365, including Teams, OneDrive for Business, and SharePoint sites, from various sources such as file shares, Google Workspace, Dropbox, and Box
+- Access Migration Manager to migrate from Google Drive, Dropbox, Box, and Egnyte
 - Select migration sources, create migration inventories (such as Google Drive user lists), schedule and execute migrations, and download reports
+- Create new SharePoint sites if the destination sites don't already exist, create SharePoint lists under the SharePoint admin sites, and create and update items in SharePoint lists
 - Manage migration project settings and migration lifecycle for tasks
 - Manage permission mappings from source to destination
 
 > [!NOTE]
-> This role also lets users create new SharePoint sites if the destination sites don't already exist, create SharePoint lists under the SharePoint admin sites, and create and update items in SharePoint lists.
+> This role doesn't allow you to access Migration Manager from the SharePoint admin center. You can use the SharePoint Administrator role to migrate from network file shares.
 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
