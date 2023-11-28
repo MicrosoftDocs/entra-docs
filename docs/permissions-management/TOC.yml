@@ -164,6 +164,12 @@
     items:
     - name: Discover, remediate, and monitor with Permissions Management APIs
       href: https://go.microsoft.com/fwlink/?linkid=2252615
+    - name: API operations for AWS authorization systems
+      href: /graph/permissions-management-how-to-authorization-system-aws
+    - name: API operations for Azure authorization systems
+      href: /graph/permissions-management-how-to-authorization-system-azure
+    - name: API operations for GCP authorization systems
+      href: /graph/permissions-management-how-to-authorization-system-gcp
   - name: Troubleshoot
     expanded: false
     items:
