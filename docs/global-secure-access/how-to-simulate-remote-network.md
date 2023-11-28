@@ -45,7 +45,7 @@ To complete the steps in this process, you must have the following prerequisites
 
 The steps to simulate remote network connectivity with Azure virtual networks are completed in the Azure portal and the Microsoft Entra admin center. It might be helpful to have multiple tabs open you can switch between them easily.
 
-Before creating your virtual resources, you need a resource group and virtual network to use throughout the following sections. If you don't have a test resource group or virtual network you can use, start with the *Configure prerequisite infrastructure* section. Otherwise, you can skip to the *Configure the virtual network* section.
+Before creating your virtual resources, you need a resource group and virtual network to use throughout the following sections. If you don't have a test resource group or virtual network you can use, start with the *Configure prerequisite infrastructure* steps. Otherwise, you can skip to the *Configure the virtual network* steps.
 
 ### Configure the prerequisite infrastructure
 
@@ -55,8 +55,7 @@ Before creating your virtual resources, you need a resource group and virtual ne
 ### Configure the virtual network
 
 1. [Create a virtual network gateway](#create-a-virtual-network-gateway) (Azure portal)
-1. [Create a remote network](#create-a-remote-network) (Microsoft Entra admin center)
-1. [Add device links](#add-device-links) (Microsoft Entra admin center)
+1. [Create a remote network with device links](#create-a-remote-network) (Microsoft Entra admin center)
 1. [Create local network gateway](#create-local-network-gateway) (Azure portal)
 1. [Create site-to-site (S2S) VPN connection](#create-site-to-site-s2s-vpn-connection) (Azure portal)
 1. [Verify connectivity](#verify-connectivity) (Both)
@@ -97,8 +96,7 @@ Create a virtual network gateway inside your new resource group.
 
 1. From the Azure portal, browse to **Virtual network gateways**.
 1. Select **Create**.
-1. Provide your virtual network gateway with a **Name**.
-1. Select the appropriate region.
+1. Provide your virtual network gateway with a **Name** and select the appropriate region.
 1. Select the **Virtual network** created in the previous section.
 1. Create a **Public IP address** and provide it with descriptive name.
    - **OPTIONAL**: If you want a secondary IPsec tunnel, under the **SECOND PUBLIC IP ADDRESS** section, create another public IP address and give it a name. In this case, you need to create two device links in the Microsoft Entra admin center.
@@ -149,7 +147,13 @@ This step is completed in the Microsoft Entra admin center and is where you prov
 
 ### Connectivity
 
-The connectivity tab is where you add the device links for the remote network. You need to provide the device type, public IP address of your CPE, border gateway protocol (BGP) address, and autonomous system number (ASN) for each device link. You need the public IP address of the virtual network gateway you created in the previous section.
+This tab is where you add the device links for the remote network. In a branch office scenario, this step connects your physical router to your Global Secure Access network. In the remote network simulation scenario, you're connecting your virtual network to the Global Secure Access network.
+
+You need to provide the device type, public IP address of your virtual network gateway, border gateway protocol (BGP) address, and autonomous system number (ASN) for each device link. To complete this step, you need the public IP address of the virtual network gateway you created in the previous section.
+
+The process to add a device link is completed on a different set of tabs. When you finish adding the device link, you return to the **Create a remote network** process, where you still have two more tabs to complete.
+
+![Screenshot of the two sets of tabs used in the process.](media/how-to-simulate-remote-network/remote-network-tabs.png)
 
 This process is covered in detail in the [How to manage remote network device links](how-to-manage-remote-network-device-links.md).
 
@@ -162,8 +166,8 @@ This process is covered in detail in the [How to manage remote network device li
 
 Each of the following details are required to create a device link. The IP address comes from your virtual network gateway. For more information, see [How to manage remote network device links](how-to-manage-remote-network-device-links.md#add-a-link---general-tab).
 
-- **Link name**: Name of your CPE.
-- **Device type**: Choose a device option from the dropdown list.
+- **Link name**: Name of your device link.
+- **Device type**: Set to **Other**.
 - **IP address**: Public IP address of your virtual network gateway.
 - **Local BGP address**: Private IP address that is *outside* the address space of the virtual network associated with your virtual network gateway.
   - For example, if the address space of your virtual network is 10.1.0.0/16, then you can use 10.2.0.0 as your Local BGP address.
