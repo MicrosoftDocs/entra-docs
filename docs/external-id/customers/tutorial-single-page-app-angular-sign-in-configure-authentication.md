@@ -88,7 +88,7 @@ In this tutorial;
 
 ## Import MSAL components
 
-1. Open _src/app/app.module.ts_. MSAL components need to be added to `imports`. Add the following code snippet. This snippet imports the MSAL components and material modules.
+1. Open _src/app/app.module.ts_ and add the following code snippet.
 
     ```JavaScript
     import { NgModule } from '@angular/core';

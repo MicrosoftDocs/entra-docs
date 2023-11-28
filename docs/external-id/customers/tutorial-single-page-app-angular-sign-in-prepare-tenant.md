@@ -15,14 +15,14 @@ ms.author: godonnell
 
 # Tutorial: Prepare your customer tenant to authenticate users in an Angular single-page app
 
-This tutorial series demonstrates how to build an Angular single-page application (SPA) and prepare it for authentication using the Microsoft Entra admin center. You'll use the [Microsoft Authentication Library for JavaScript](/javascript/api/overview/msal-overview) to authenticate your app with your Microsoft Entra External ID for customers tenant. 
+This tutorial series demonstrates how to build an Angular single-page application (SPA) and prepare it for authentication using the Microsoft Entra admin center. You'll use the [Microsoft Authentication Library for JavaScript](/javascript/api/%40azure/msal-angular/) to authenticate your app with your Microsoft Entra External ID for customers tenant. Finally, you'll run the application and test the sign-in and sign-out experiences.
 
 In this tutorial:
 
 > [!div class="checklist"]
 > * Register a SPA in the Microsoft Entra admin center, and record its identifiers
 > * Define the platform and URLs
-> * Grant permissions to the web application to access the Microsoft Graph API
+> * Grant permissions to the SPA to access the Microsoft Graph API
 > * Create a sign-in and sign-out user flow in the Microsoft Entra admin center
 > * Associate your SPA with the user flow
 
@@ -79,4 +79,4 @@ In this tutorial:
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Prepare Angular SPA](./tutorial-single-page-app-angular-sign-in-prepare-app.md)
+> [Prepare Angular SPA](tutorial-single-page-app-angular-sign-in-prepare-app.md)

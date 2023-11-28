@@ -49,17 +49,17 @@ In this section we will create a new Angular project using the Angular CLI in Vi
 
 The following steps configure the UI elements of the application. CSS styling is added to the application to define the colors and fonts. The application header and footer are defined in the HTML file and CSS styling is added to the home page of the application.
 
-1. Open _src/styles.css_ and replace the existing code with the following code snippet. This is used to define the theme, body height, margins and fonts for the application.
+1. Open _src/styles.css_ and replace the existing code with the following code snippet. 
 
     ```css
     @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
     html, body { height: 100%; }
     body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     ```
-1. Open _src/app/app.component.html_ and replace the existing code with the following code snippet. This code defines the application header and footer.
+1. Open _src/app/app.component.html_ and replace the existing code with the following code snippet.
     
     ```HTML
-        <mat-toolbar color="primary">
+  <mat-toolbar color="primary">
       <a class="title" href="/">{{ title }}</a>
       <div class="toolbar-spacer"></div>
       <a mat-button [routerLink]="['guarded']">Guarded Component</a>
@@ -79,7 +79,7 @@ The following steps configure the UI elements of the application. CSS styling is
       </mat-toolbar>
     </footer>
     ```
-1. Open _src/app/app.component.css_ and replace the code with the following snippet. This code adds CSS styling to the application header and footer.
+1. Open _src/app/app.component.css_ and replace the code with the following snippet.
     
     ```css
     .toolbar-spacer {
@@ -108,9 +108,9 @@ The following steps configure the UI elements of the application. CSS styling is
 
 ## Configure application components
 
-In this section we will configure the home and guarded components of the application. The home component is the landing page of the application and the guarded component is the page that is only accessible to authenticated users.
+In this section you'll configure the home and guarded components of the application. The home component is the landing page of the application and the guarded component is the page that is only accessible to authenticated users.
 
-1. Open _src/app/home/home.component.ts_ and replace the existing code with the following code snippet. This code defines the functionality of the home page of the application.
+1. Open _src/app/home/home.component.ts_ and replace the existing code with the following code snippet.
     
     ```JavaScript
     import { Component, Inject, OnInit } from '@angular/core';
@@ -230,7 +230,7 @@ In this section we will configure the home and guarded components of the applica
       </table>
     </div>
     ```
-1. Open _src/app/home/home.component.css_. Replace any existing code with the following code snippet. This will add CSS styling to the home page of the application to define table and card elements.
+1. Open _src/app/home/home.component.css_. Replace any existing code with the following code snippet.
     
     ```css
     #table-container {
@@ -261,7 +261,7 @@ In this section we will configure the home and guarded components of the applica
     }
     ```
 
-1. Open _src/app/guarded/guarded.component.ts_ and replace the existing code with the following code snippet. This code defines the functionality of the guarded page of the application.
+1. Open _src/app/guarded/guarded.component.ts_ and replace the existing code with the following code snippet.
     
     ```JavaScript
     import { Component, OnInit } from '@angular/core';
@@ -281,7 +281,7 @@ In this section we will configure the home and guarded components of the applica
     }
     ```
 
-1. Create a file called _claim-utils.ts_ in the _src/app/_ folder and paste the following code snippet into it. This code defines the claims table displayed when the user logs in.
+1. Create a file called _claim-utils.ts_ in the _src/app/_ folder and paste the following code snippet into it.
 
     ```JavaScript
     /**
@@ -505,4 +505,4 @@ In this section we will configure the home and guarded components of the applica
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Configure SPA for authentication](./tutorial-single-page-app-angular-sign-in-configure-authentication.md)
+> [Configure SPA for authentication](tutorial-single-page-app-angular-sign-in-configure-authentication.md)
