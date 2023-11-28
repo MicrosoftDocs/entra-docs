@@ -27,12 +27,11 @@ Microsoft Entra ID, part of Microsoft Entra, supports applying sensitivity label
 
 To apply published labels to groups, you must first enable the feature. These steps enable the feature in Microsoft Entra ID. The Microsoft Graph PowerShell SDK comes in 2 modules, `Microsoft.Graph` and `Microsoft.Graph.Beta`.
 
-1. Open a PowerShell prompt on your computer with administrative privileges.
-1. Run the following commands to prepare to run the cmdlets.
+1. Open a PowerShell prompt on your computer and run the following commands to prepare to run the cmdlets.
 
     ```powershell
-    Install-Module Microsoft.Graph
-    Install-Module Microsoft.Graph.Beta
+    Install-Module Microsoft.Graph -Scope CurrentUser
+    Install-Module Microsoft.Graph.Beta -Scope CurrentUser
     ```
 
 1. Connect to your tenant.
@@ -77,9 +76,8 @@ To apply published labels to groups, you must first enable the feature. These st
 
 If you’re receiving a Request_BadRequest error, it's because the settings already exist in the tenant, so when you try to create a new property:value pair, the result is an error. In this case, take the following steps:
 
-1. Repeat steps 1-4 from [Enable sensitivity label support in PowerShell](#enable-sensitivity-label-support-in-powershell).
-1. Issue a `Get-MgBetaDirectorySetting | FL` cmdlet and check the ID. If several ID values are present, use the one where you see the EnableMIPLabels property on the Values settings. You will need the ID in step 4.
-1. Issue the `Update-MgBetaDirectorySetting` cmdlet, using the ID that you retrieved in step 2.
+1. Issue a `Get-MgBetaDirectorySetting | FL` cmdlet and check the ID. If several ID values are present, use the one where you see the EnableMIPLabels property on the Values settings.
+1. Issue the `Update-MgBetaDirectorySetting` cmdlet, using the ID that you retrieved.
 
 You will also need to synchronize your sensitivity labels to Microsoft Entra ID. For instructions, see [How to enable sensitivity labels for containers and synchronize labels](/purview/sensitivity-labels-teams-groups-sites#how-to-enable-sensitivity-labels-for-containers-and-synchronize-labels).
 
