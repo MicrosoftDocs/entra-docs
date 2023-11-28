@@ -608,7 +608,7 @@ Content-type: application/json
 
 ### Rotate signing key
 
-The rotate signing key creates a new private key for the did:web authority. After the new the signing key is created, the DID document should be re-registered to reflect the update. When this is done, the [synchronizeWithDidDocument](#synchronize-with-did-document) tells the system to start using the new key for signing.
+The rotate signing key creates a new private key for the did:web authority. The DID document should be re-registered to reflect the update. When this is done, the [synchronizeWithDidDocument](#synchronize-with-did-document) tells the system to start using the new key for signing.
 
 #### HTTP request
 
