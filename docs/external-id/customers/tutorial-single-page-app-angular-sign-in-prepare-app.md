@@ -57,8 +57,8 @@ The following steps configure the UI elements of the application. CSS styling is
     body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     ```
 1. Open _src/app/app.component.html_ and replace the existing code with the following code snippet.
-    
-    ```HTML
+
+```HTML
   <mat-toolbar color="primary">
       <a class="title" href="/">{{ title }}</a>
       <div class="toolbar-spacer"></div>
@@ -78,7 +78,7 @@ The following steps configure the UI elements of the application. CSS styling is
         </div>
       </mat-toolbar>
     </footer>
-    ```
+```
 1. Open _src/app/app.component.css_ and replace the code with the following snippet.
     
     ```css
