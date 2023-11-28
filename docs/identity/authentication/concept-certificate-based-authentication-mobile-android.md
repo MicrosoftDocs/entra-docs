@@ -73,7 +73,7 @@ Steps to test YubiKey on Microsoft apps on Android:
 1. Select the certificate associated with the user’s account, and click **Continue**. 
 1. Enter the PIN to access YubiKey and select **Unlock**.
 1. If you're using a Yubikey with NFC, hold the Yubikey to the back of the phone again to validate the PIN.
-1. After authentucation succeeds, you can access Outlook.
+1. After authentication succeeds, you can access Outlook.
 
 >[!NOTE]
 >For a smooth CBA flow, plug in YubiKey as soon as the application is opened and accept the consent dialog from YubiKey before selecting the link **Use Certificate or smart card**. If you want to experience only a single connection, consider having users plug in the YubiKey by using USB instead of NFC, which only needs to be done once at the beginning of login.
