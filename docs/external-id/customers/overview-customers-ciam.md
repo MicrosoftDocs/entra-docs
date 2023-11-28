@@ -66,7 +66,7 @@ Microsoft Entra ID for customers is intended for businesses that want to make ap
 
 - **Provide self-service account management.** Customers can register for your online services by themselves, manage their profile, delete their account, enroll in a multifactor authentication (MFA) method, or reset their password with no admin or help desk assistance.
 
-- **Require consent to your terms of use and privacy policies.** You can require users to accept your terms and conditions during sign-up by adding consent checkboxes to the sign-up form and including links to your published terms of use or privacy policies.
+- **Consent to your terms of use and privacy policies.** You can prompt users to accept your terms and conditions during sign-up. By using customer user attributes, you can add checkboxes to your sign-up form and include links to your terms of use and privacy policies.
 
 Learn more about [adding sign-in and sign-up to your app](concept-planning-your-solution.md) and [customizing the sign-in look and feel](concept-branding-customers.md).
 

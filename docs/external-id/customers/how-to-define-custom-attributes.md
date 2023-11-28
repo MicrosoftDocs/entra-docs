@@ -36,10 +36,9 @@ User attributes are values collected from a user during self-service sign-up. In
   - String text box
   - Numeric text box
   - Single-select checkbox
-  - Multi-select checkboxes with a heading and the option to include hyperlinks (for example, to your Terms of Use or Privacy Policy)
-  - Multi-select radio buttons with a heading and the option to include hyperlinks (for example, to your Terms of Use or Privacy Policy)
+  - Multi-select checkboxes or radio buttons with a heading and the option to include hyperlinks (for example, to your Terms of Use or Privacy Policy)
 
-The following attribute collection page example combines built-in attributes and custom attributes, including checkboxes with hyperlinks to more content.
+The following attribute collection page example combines built-in attributes and custom attributes, including a checkbox with hyperlinks to more content.
 
    :::image type="content" source="media/how-to-define-custom-attributes/attribute-collection-page-types.png" border="false" alt-text="Screenshot of a sign-up page with terms of use and privacy policy checkboxes." lightbox="media/how-to-define-custom-attributes/attribute-collection-page-types.png":::
 
@@ -48,7 +47,7 @@ In this example:
 - The **Display Name** field is a built-in attribute.
 - The **Loyalty Number** is a custom attribute with a free-form entry field that accepts a numeric integer. You can configure this format using the **Int** data type and **NumericTextBox** user input type.
 - The **Add me to the Woodgrove mailing list** value is a single-select checkbox. You can configure this format using the **Boolean** data type, which defaults to the **CheckboxSingleSelect** user input type.
-- The **Terms and conditions** custom attributes consist of a series of checkboxes that allow for multiple selections. The checkbox text supports Markdown language so you can add hyperlinks to more content, such as your terms of use and privacy policy. You can configure this format using a **String** data type and **CheckboxMultiSelect** user input type.
+- The **Terms and conditions** custom attribute consists of a series of one or more checkboxes that allow for multiple selections. The checkbox text supports Markdown language so you can add hyperlinks to more content, such as your terms of use and privacy policy. You can configure this format using a **String** data type and **CheckboxMultiSelect** user input type.
 
 Other input types are available, including radio buttons and free-form text entry fields. Learn how to [create custom user attributes](#create-custom-user-attributes) in this article.
 
@@ -86,7 +85,7 @@ Before you begin, determine which types of user input controls would work best f
 |-----------|--------------------|-------------|
 |String     |TextBox             |Free-form text entry field.         |
 |String     |RadioSingleSelect   |Series of radio buttons with only one selection allowed. Radio button text supports Markdown language for hyperlinks to other content.           |
-|String     |CheckboxMultiSelect |Series of checkboxes with multiple selections allowed. Checkbox text supports Markdown language for hyperlinks to other content (for example, Terms of Use, Privacy Policy).        |
+|String     |CheckboxMultiSelect |Series of one or more checkboxes with multiple selections allowed. Checkbox text supports Markdown language for hyperlinks to other content (for example, Terms of Use, Privacy Policy).        |
 |Boolean    |CheckboxSingleSelect|Single boolean checkbox with label.        |
 |Int        |NumericTextBox      |Free-form integer entry.         |
 
@@ -159,7 +158,7 @@ On the **Page layout** page, you can indicate which attributes are required and 
 
 ### To configure multiple checkboxes (CheckboxMultiSelect)
 
-An attribute with a String data type can be configured as a CheckboxMultiSelect user input type, which is a series of checkboxes that appear under the attribute label. The text for individual checkboxes can include hyperlinks to other content. The user can select one or more checkboxes.
+An attribute with a String data type can be configured as a CheckboxMultiSelect user input type, which is a series of one or more checkboxes that appear under the attribute label. The text for individual checkboxes can include hyperlinks to other content. The user can select one or more checkboxes.
 
 1. On the **Page layouts** page, find the attribute with data type of **String** that you want to configure as a series of checkboxes.
 
@@ -173,8 +172,7 @@ An attribute with a String data type can be configured as a CheckboxMultiSelect 
 
    - Under **Text**, enter the text you want to display next to the checkbox. Use Markdown language to add hyperlinks. For example:
 
-     - `I have read and agree to the [Terms of use](https://woodgrove.com/terms-of-use).`
-     - `I have read and agree to the [Privacy Policy](https://woodgrove.com/privacy).`
+     - `I have read and agree to the [terms of use](https://woodgrove.com/terms-of-use) and the [privacy policy](https://woodgrove.com/privacy).`
 
    - Under **Values**, enter a value to be written on the user object and returned as the claim if the user selects the checkbox.
 
