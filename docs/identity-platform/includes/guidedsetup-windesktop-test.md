@@ -1,8 +1,7 @@
 ---
 title: include file
 description: include file
-services: active-directory
-documentationcenter: dev-center-name
+
 author: OwenRichards1
 manager: CelesteDG
 editor: ''
@@ -11,7 +10,7 @@ ms.service: active-directory
 ms.devlang: na
 ms.topic: include
 ms.tgt_pltfrm: na
-ms.workload: identity
+
 ms.date: 04/10/2019
 ms.author: owenrichards
 ms.reviewer: jmprieur

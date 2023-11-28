@@ -1,13 +1,13 @@
 ---
 title: Microsoft Entra SSO integration with Parkable
 description: Learn how to configure single sign-on between Microsoft Entra ID and Parkable.
-services: active-directory
+
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.topic: how-to
 ms.date: 12/06/2022
 ms.author: jeedes

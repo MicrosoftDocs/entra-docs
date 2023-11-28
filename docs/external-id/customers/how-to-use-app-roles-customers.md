@@ -1,11 +1,11 @@
 ---
 title: Using role-based access control for apps
 description: Learn how to define application roles for your customer-facing application and assign those roles to users and groups in customer tenants.
-services: active-directory
+ 
 author: msmimart
 manager: celestedg
 ms.service: active-directory
-ms.workload: identity
+ 
 ms.subservice: ciam
 ms.topic: how-to
 ms.date: 06/13/2023

@@ -3,7 +3,7 @@
 title: Add Google as an identity provider for B2B
 description: Federate with Google to enable guest users to sign in to your Microsoft Entra apps with their own Gmail accounts.
 
-services: active-directory
+ 
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: how-to

@@ -16,6 +16,7 @@ ms.reviewer: cmmdesai
 # Quickstart API-driven inbound provisioning with cURL (Public preview)
 
 ## Introduction
+
 [cURL](https://curl.se/) is a popular, free, open-source, command-line tool used by API developers, and it's [available by default on Windows 10/11](https://curl.se/windows/microsoft.html). This tutorial describes how you can quickly test [API-driven inbound provisioning](inbound-provisioning-api-concepts.md) with cURL. 
 
 ## Pre-requisites
@@ -59,8 +60,10 @@ ms.reviewer: cmmdesai
 
 ## Appendix
 
+View this section for information on the bulk request with SCIM Enterprise User Schema. 
+
 ### Bulk request with SCIM Enterprise User Schema
-The bulk request shown below uses the SCIM standard Core User and Enterprise User schema. 
+The bulk request shown below uses the SCIM standard Core User and Enterprise User Schema. 
 
 **Request body**
 

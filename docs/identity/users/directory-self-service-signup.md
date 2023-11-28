@@ -11,7 +11,7 @@ ms.service: active-directory
 ms.subservice: enterprise-users
 ms.topic: overview
 ms.workload: identity
-ms.date: 03/02/2022
+ms.date: 11/08/2023
 ms.author: barclayn
 ms.reviewer: elkuzmen
 ms.custom: it-pro, has-azure-ad-ps-ref
@@ -80,7 +80,7 @@ Update-MgPolicyAuthorizationPolicy -BodyParameter $param
 
 The following flowchart explains the different combinations for these parameters and the resulting conditions for the tenant and self-service sign-up.
 
-![flowchart of self-service sign-up controls](./media/directory-self-service-signup/SelfServiceSignUpControls.png)
+:::image type="content" source="./media/directory-self-service-signup/SelfServiceSignUpControls.png" alt-text="flowchart of self-service sign-up controls.":::
 
 This setting's details may be retrieved using the PowerShell cmdlet Get-MsolCompanyInformation. For more information on this, see [Get-MsolCompanyInformation](/powershell/module/msonline/get-msolcompanyinformation).
 

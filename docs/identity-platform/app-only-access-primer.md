@@ -1,17 +1,15 @@
 ---
 title: Microsoft identity platform app-only access scenario
 description: Learn about when and how to use app-only access in the Microsoft identity platform endpoint.
-services: active-directory
 author: omondiatieno
 manager: celesteDG
+ms.author: jomondi
+ms.date: 03/15/2023
+ms.reviewer: jawoods, ludwignick, phsignor
 ms.service: active-directory
 ms.subservice: develop
-ms.workload: identity
 ms.topic: conceptual
-ms.date: 03/15/2023
-ms.author: jomondi
-ms.reviewer: jawoods, ludwignick, phsignor
-
+#Customer intent:
 ---
 
 # Understanding application-only access

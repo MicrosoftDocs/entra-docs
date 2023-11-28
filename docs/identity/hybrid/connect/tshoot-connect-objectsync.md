@@ -67,7 +67,7 @@ Check for the UPN mismatch issues that are described in the next sections.
 
 ### UPN suffix is not verified with the Microsoft Entra tenant
 
-When the UPN or alternate login ID suffix isn't verified with the Microsoft Entra tenant, Microsoft Entra ID replaces the UPN suffixes with the default domain name `onmicrosoft.com`.
+When the UPN or alternate login ID suffix isn't verified with the Microsoft Entra tenant, Microsoft Entra ID replaces the UPN suffixes with the default domain name `onmicrosoft.com`. To resolve this issue, add the UPN suffix as a verified domain on your tenant. For more information visit [Managing custom domain names in your Microsoft Entra ID](../../users/domains-manage.md).
 
 :::image type="content" source="media/tshoot-connect-objectsync/objsynch2.png" alt-text="Screenshot that shows an example of an unverified UPN suffix error in PowerShell.":::
 
@@ -75,7 +75,7 @@ When the UPN or alternate login ID suffix isn't verified with the Microsoft Entr
 
 ### Microsoft Entra tenant DirSync feature SynchronizeUpnForManagedUsers is disabled
 
-When the Microsoft Entra tenant DirSync feature SynchronizeUpnForManagedUsers is disabled, Microsoft Entra ID doesn't allow sync updates to the UPN or alternate login ID for licensed user accounts that use managed authentication.
+When the Microsoft Entra tenant DirSync feature SynchronizeUpnForManagedUsers is disabled, Microsoft Entra ID doesn't allow sync updates to the UPN or alternate login ID for licensed user accounts that use managed authentication. To learn how to enable SynchronizeUpnForManagedUsers feature, visit [Microsoft Entra Connect Sync service features](./how-to-connect-syncservice-features.md).
 
 :::image type="content" source="media/tshoot-connect-objectsync/objsynch4.png" alt-text="Screenshot that shows an example of a UPN sync for managed users error in PowerShell.":::
 
@@ -122,3 +122,4 @@ In addition to analyzing the object, the troubleshooting task generates an HTML 
 ## Next steps
 
 Learn more about [integrating your on-premises identities with Microsoft Entra ID](../whatis-hybrid-identity.md).
+

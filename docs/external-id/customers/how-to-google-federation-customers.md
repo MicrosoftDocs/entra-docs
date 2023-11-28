@@ -1,11 +1,11 @@
 ---
 title: Add Google as an identity provider
 description: Learn how to add Google as an identity provider for your customer tenant.
-services: active-directory
+ 
 author: msmimart
 manager: celestedg
 ms.service: active-directory
-ms.workload: identity
+ 
 ms.subservice: ciam
 ms.topic: how-to
 ms.date: 05/24/2023

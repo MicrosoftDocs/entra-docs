@@ -1,18 +1,16 @@
 ---
 title: Get AppSource certified for Microsoft Entra ID| Microsoft Docs
 description: Learn details about how to get your application AppSource certified for Microsoft Entra ID.
-services: active-directory
 author: rwike77
 manager: CelesteDG
-
+ms.author: ryanwi
+ms.custom:
+ms.date: 07/23/2020
+ms.reviewer: jeedes
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: how-to
-ms.workload: identity
-ms.date: 07/23/2020
-ms.author: ryanwi
-ms.reviewer: jeedes
-ms.custom: aaddev
+#Customer intent:
 ---
 
 # Get AppSource certified for Microsoft Entra ID

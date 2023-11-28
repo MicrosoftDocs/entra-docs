@@ -18,6 +18,7 @@ ms.author: billmath
 
 ms.collection: M365-identity-device-management
 ---
+
 # Microsoft Entra Connect Sync: Directory extensions
 You can use directory extensions to extend the schema in Microsoft Entra ID with your own attributes from on-premises Active Directory. This feature enables you to build LOB apps by consuming attributes that you continue to manage on-premises. These attributes can be consumed through [extensions](/graph/extensibility-overview). You can see the available attributes by using [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer). You can also use this feature to create dynamic groups in Microsoft Entra ID.
 
@@ -32,10 +33,10 @@ At present, no Microsoft 365 workload consumes these attributes.
 
 You configure which additional attributes you want to synchronize in the custom settings path in the installation wizard.
 
-> [!NOTE]
-> In Microsoft Entra Connect versions earlier than 1.2.65.0, the search box for **Available Attributes** is case-sensitive.
-
 ![Schema extension wizard](./media/how-to-connect-sync-feature-directory-extensions/extension2.png)  
+
+>[!NOTE]
+> Manually editing or cloning the sync rules for Directory Extensions can cause synchronization issues. It is not supported to manage Directory Extensions outside of this wizard page.
 
 The installation shows the following attributes, which are valid candidates:
 
@@ -45,6 +46,7 @@ The installation shows the following attributes, which are valid candidates:
 
 > [!NOTE]
 > Not all features in Microsoft Entra ID support multi valued extension attributes. Please refer to the documentation of the feature in which you plan to use these attributes to confirm they are supported.
+
 The list of attributes is read from the schema cache that's created during installation of Microsoft Entra Connect. If you have extended the Active Directory schema with additional attributes, you must [refresh the schema](how-to-connect-installation-wizard.md#refresh-directory-schema) before these new attributes are visible.
 
 An object in Microsoft Entra ID can have up to 100 attributes for directory extensions. The maximum length is 250 characters. If an attribute value is longer, the sync engine truncates it.

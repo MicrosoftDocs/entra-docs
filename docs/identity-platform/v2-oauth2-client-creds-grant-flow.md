@@ -1,18 +1,16 @@
 ---
 title: OAuth 2.0 client credentials flow on the Microsoft identity platform
 description: Build web applications by using the Microsoft identity platform implementation of the OAuth 2.0 authentication protocol.
-services: active-directory
 author: OwenRichards1
 manager: CelesteDG
-
+ms.author: owenrichards
+ms.custom:
+ms.date: 02/13/2023
+ms.reviewer: ludwignick
 ms.service: active-directory
 ms.subservice: develop
-ms.workload: identity
 ms.topic: conceptual
-ms.date: 02/13/2023
-ms.author: owenrichards
-ms.reviewer: ludwignick
-ms.custom: aaddev, identityplatformtop40
+#Customer intent:
 ---
 
 # Microsoft identity platform and the OAuth 2.0 client credentials flow
@@ -72,7 +70,7 @@ To use app roles (application permissions) with your own API (as opposed to Micr
 
 When authenticating as an application (as opposed to with a user), you can't use *delegated permissions* because there is no user for your app to act on behalf of. You must use application permissions, also known as app roles, that are granted by an admin or by the API's owner.
 
-For more information about application permissions, see [Permissions and consent](./permissions-consent-overview.md#permission-types).
+For more information about application permissions, see [Permissions and consent](./permissions-consent-overview.md#types-of-permissions).
 
 #### Recommended: Sign the admin into your app to have app roles assigned
 
@@ -88,7 +86,7 @@ When you're ready to request permissions from the organization's admin, you can 
 // Line breaks are for legibility only.
 
 GET https://login.microsoftonline.com/{tenant}/adminconsent?
-client_id=6731de76-14a6-49ae-97bc-6eba6914391e
+client_id=535fb089-9ff3-47b6-9bfb-4f1264799865
 &state=12345
 &redirect_uri=http://localhost/myapp/permissions
 ```
@@ -96,7 +94,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 Pro tip: Try pasting the following request in a browser.
 
 ```
-https://login.microsoftonline.com/common/adminconsent?client_id=6731de76-14a6-49ae-97bc-6eba6914391e&state=12345&redirect_uri=http://localhost/myapp/permissions
+https://login.microsoftonline.com/common/adminconsent?client_id=535fb089-9ff3-47b6-9bfb-4f1264799865&state=12345&redirect_uri=http://localhost/myapp/permissions
 ```
 
 |    Parameter   |  Condition  | Description |
@@ -167,7 +165,7 @@ curl -X POST -H "Content-Type: application/x-www-form-urlencoded" -d 'client_id=
 | --------------- | --------- | ----------- |
 |     `tenant`    |  Required | The directory tenant the application plans to operate against, in GUID or domain-name format. |
 |    `client_id`  |  Required | The application ID that's assigned to your app. You can find this information in the portal where you registered your app. |
-|     `scope`     |  Required | The value passed for the `scope` parameter in this request should be the resource identifier (application ID URI) of the resource you want, affixed with the `.default` suffix. All scopes included must be for a single resource. Including scopes for multiple resources will result in an error. <br/>For the Microsoft Graph example, the value is `https://graph.microsoft.com/.default`. This value tells the Microsoft identity platform that of all the direct application permissions you have configured for your app, the endpoint should issue a token for the ones associated with the resource you want to use. To learn more about the `/.default` scope, see the [consent documentation](./permissions-consent-overview.md#the-default-scope). |
+|     `scope`     |  Required | The value passed for the `scope` parameter in this request should be the resource identifier (application ID URI) of the resource you want, affixed with the `.default` suffix. All scopes included must be for a single resource. Including scopes for multiple resources will result in an error. <br/>For the Microsoft Graph example, the value is `https://graph.microsoft.com/.default`. This value tells the Microsoft identity platform that of all the direct application permissions you have configured for your app, the endpoint should issue a token for the ones associated with the resource you want to use. To learn more about the `/.default` scope, see the [consent documentation](./scopes-oidc.md#the-default-scope). |
 | `client_secret` |  Required | The client secret that you generated for your app in the app registration portal. The client secret must be URL-encoded before being sent. The Basic auth pattern of instead providing credentials in the Authorization header, per [RFC 6749](https://datatracker.ietf.org/doc/html/rfc6749#section-2.3.1) is also supported. |
 |  `grant_type`   |  Required | Must be set to `client_credentials`. |
 
@@ -189,7 +187,7 @@ scope=https%3A%2F%2Fgraph.microsoft.com%2F.default
 | ----------------------- | --------- | ----------- |
 |         `tenant`        |  Required | The directory tenant the application plans to operate against, in GUID or domain-name format. |
 |       `client_id`       |  Required | The application (client) ID that's assigned to your app. |
-|         `scope`         |  Required | The value passed for the `scope` parameter in this request should be the resource identifier (application ID URI) of the resource you want, affixed with the `.default` suffix. All scopes included must be for a single resource. Including scopes for multiple resources will result in an error. <br/>For the Microsoft Graph example, the value is `https://graph.microsoft.com/.default`. This value tells the Microsoft identity platform that of all the direct application permissions you have configured for your app, the endpoint should issue a token for the ones associated with the resource you want to use. To learn more about the `/.default` scope, see the [consent documentation](./permissions-consent-overview.md#the-default-scope). |
+|         `scope`         |  Required | The value passed for the `scope` parameter in this request should be the resource identifier (application ID URI) of the resource you want, affixed with the `.default` suffix. All scopes included must be for a single resource. Including scopes for multiple resources will result in an error. <br/>For the Microsoft Graph example, the value is `https://graph.microsoft.com/.default`. This value tells the Microsoft identity platform that of all the direct application permissions you have configured for your app, the endpoint should issue a token for the ones associated with the resource you want to use. To learn more about the `/.default` scope, see the [consent documentation](./scopes-oidc.md#the-default-scope). |
 | `client_assertion_type` |  Required | The value must be set to `urn:ietf:params:oauth:client-assertion-type:jwt-bearer`. |
 |    `client_assertion`   |  Required | An assertion (a JSON web token) that you need to create and sign with the certificate you registered as credentials for your application. Read about [certificate credentials](./certificate-credentials.md) to learn how to register your certificate and the format of the assertion.|
 |      `grant_type`       |  Required | Must be set to `client_credentials`. |

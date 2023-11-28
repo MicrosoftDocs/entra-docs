@@ -1,13 +1,13 @@
 ---
 title: "Tutorial: Sign in users in a Node.js CLI application- Prepare app"
 description: Learn how to build a Node.js CLI application that signs in users in a Microsoft Entra ID for customers tenant
-services: active-directory
+ 
 author: Dickson-Mwendia
 manager: mwongerapk
 
 ms.author: dmwendia
 ms.service: active-directory
-ms.workload: identity
+ 
 ms.subservice: ciam
 ms.topic: tutorial
 ms.date: 08/04/2023

@@ -1,18 +1,16 @@
 ---
 title: Microsoft identity platform admin consent protocols
 description: A description of authorization in the Microsoft identity platform, including scopes, permissions, and consent.
-services: active-directory
 author: rwike77
 manager: CelesteDG
-
+ms.author: ryanwi
+ms.custom:
+ms.date: 11/08/2023
+ms.reviewer: ludwignick
 ms.service: active-directory
 ms.subservice: develop
-ms.workload: identity
 ms.topic: reference
-ms.date: 10/18/2023
-ms.author: ryanwi
-ms.reviewer: ludwignick
-ms.custom: aaddev
+#Customer intent:
 ---
 
 # Admin consent on the Microsoft identity platform
@@ -31,7 +29,7 @@ When you're ready to request permissions from your organization's admin, you can
 
 ```none
 https://login.microsoftonline.com/{tenant}/v2.0/adminconsent
-        ?client_id=6731de76-14a6-49ae-97bc-6eba6914391e
+        ?client_id=535fb089-9ff3-47b6-9bfb-4f1264799865
         &scope=https://graph.microsoft.com/Calendars.Read https://graph.microsoft.com/Mail.Send
         &redirect_uri=http://localhost/myapp/permissions
         &state=12345
@@ -74,7 +72,6 @@ http://localhost/myapp/permissions
 ```none
 http://localhost/myapp/permissions
         ?admin_consent=True
-        &tenant=fa15d692-e9c7-4460-a743-29f2956fd429
         &error=consent_required
         &error_description=AADSTS65004%3a+The+resource+owner+or+authorization+server+denied+the+request.%0d%0aTrace+ID%3a+d320620c-3d56-42bc-bc45-4cdd85c41f00%0d%0aCorrelation+ID%3a+8478d534-5b2c-4325-8c2c-51395c342c89%0d%0aTimestamp%3a+2019-09-24+18%3a34%3a26Z
         &state=12345
@@ -86,7 +83,6 @@ Adding to the parameters seen in a successful response, error parameters are see
 |:-------------------|:-------------------------------------------------------------------------------------------------|
 | `error` | An error code string that can be used to classify types of errors that occur, and can be used to react to errors.|
 | `error_description` | A specific error message that can help a developer identify the root cause of an error.|
-| `tenant`| The directory tenant that granted your application the permissions it requested, in GUID format.|
 | `state` | A value included in the request that also will be returned in the token response. It can be a string of any content you want. The state is used to encode information about the user's state in the app before the authentication request occurred, such as the page or view they were on.|
 | `admin_consent` | Will be set to `True` to indicate that this response occurred on an admin consent flow.|
 

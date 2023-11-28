@@ -1,18 +1,16 @@
 ---
 title: SSO between ADAL & MSAL apps (iOS/macOS)
 description: Learn how to share SSO between ADAL and MSAL apps
-services: active-directory
 author: henrymbuguakiarie
 manager: CelesteDG
-
+ms.author: henrymbugua
+ms.custom: has-adal-ref
+ms.date: 08/28/2019
+ms.reviewer: 
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-ms.workload: identity
-ms.date: 08/28/2019
-ms.author: henrymbugua
-ms.reviewer: 
-ms.custom: aaddev, has-adal-ref
+#Customer intent:
 ---
 
 # How to: SSO between ADAL and MSAL apps on macOS and iOS

@@ -101,7 +101,7 @@ Certain Exchange ActiveSync applications on Android 5.0 (Lollipop) or later are 
 
 ### Browsers
 
-|Operating system | Chrome certificate on-device | Chrome smart card | Safari certificate on-device | Safari smart card | Edge certificate on-device | Edge smart card |
+|Operating system | Chrome certificate on-device | Chrome smart card/security key | Safari certificate on-device | Safari smart card/security key | Edge certificate on-device | Edge smart card/security key |
 |:----------------|:---------------------------------:|:---------------------:|:---------------------------------:|:---------------------:|:---------------------------------:|:---------------------:|
 | Android             |  &#x2705;                          | &#10060;|N/A                          | N/A |  &#x2705;                          | &#10060;|
 
@@ -111,7 +111,7 @@ Certain Exchange ActiveSync applications on Android 5.0 (Lollipop) or later are 
 
 ### Operating systems
 
-|Operating system | Certificate on-device/Derived PIV |    Smart cards        |
+|Operating system | Certificate on-device/Derived PIV |    Smart cards/Security keys |
 |:----------------|:---------------------------------:|:---------------------:|
 | Android         | &#x2705;                          | Supported vendors only|
 

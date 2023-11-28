@@ -1,14 +1,14 @@
 ---
 title: 'Tutorial: Configure BIS for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to BIS.
-services: active-directory
+
 author: twimmers
 writer: twimmers
 manager: jeedes
 ms.assetid: d76e2482-4228-4907-8b4c-c75aa495a2ae
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.topic: tutorial
 ms.date: 03/24/2023
 ms.author: thwimmer

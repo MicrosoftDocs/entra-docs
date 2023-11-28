@@ -1,14 +1,14 @@
 ---
 title: 'Tutorial: Configure M-Files for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to M-Files.
-services: active-directory
+
 author: twimmers
 writer: twimmers
 manager: jeedes
 ms.assetid: 52b0484b-2a13-403b-9d2e-e99d2da5880f
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.topic: tutorial
 ms.date: 09/27/2023
 ms.author: thwimmer

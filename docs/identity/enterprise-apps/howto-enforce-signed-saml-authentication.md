@@ -1,12 +1,12 @@
 --- 
 title: Enforce signed SAML authentication requests 
 description: Learn how to enforce signed SAML authentication requests. 
-services: active-directory 
+ 
 author: omondiatieno
 manager: CelesteDG 
 ms.service: active-directory 
 ms.subservice: app-mgmt 
-ms.workload: identity 
+ 
 ms.topic: conceptual 
 ms.date: 07/18/2023
 ms.author: jomondi

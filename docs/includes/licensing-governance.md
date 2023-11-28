@@ -29,14 +29,14 @@ The following table shows what features are available with each license.  Note t
 |Entitlement management - Guest Conversion API|||| :white_check_mark: | 
 |Entitlement management - Grace Period - Public Preview||| :white_check_mark: | :white_check_mark: |  
 |Entitlement management - Sponsors Policy - Public Preview|||| :white_check_mark: | 
-|Privileged Identity Management (PIM)||| :white_check_mark: |:white_check_mark:| 
+|Privileged Identity Management (PIM)||| :white_check_mark: | :white_check_mark: | 
 |PIM For Groups||| :white_check_mark: | :white_check_mark: | 
 |PIM CA Controls||| :white_check_mark: | :white_check_mark: | 
 |Access Reviews - Basic access certifications and reviews||| :white_check_mark: | :white_check_mark: | 
 |Access reviews - PIM For Groups - Public Preview|||| :white_check_mark: | 
 |Access reviews - Inactive Users|||| :white_check_mark: | 
 |Access reviews - Machine learning assisted access certifications and reviews|||| :white_check_mark: | 
-|Lifecycle Workflows (LCW) J/M/L||||:white_check_mark:|
+|Lifecycle Workflows (LCW) J/M/L|||| :white_check_mark: |
 |LCW + Custom Extensions (Logic Apps)|||| :white_check_mark: |   
 |Identity governance dashboard - Public Preview|| :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |Insights and reporting - Inactive guest accounts (Preview)|||| :white_check_mark: | 

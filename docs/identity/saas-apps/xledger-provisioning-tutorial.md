@@ -1,14 +1,14 @@
 ---
 title: 'Tutorial: Configure Xledger for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Xledger.
-services: active-directory
+
 author: twimmers
 writer: twimmers
 manager: jeedes
 ms.assetid: 6c3b93cc-a858-4c21-b4df-b35dbd9e0116
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.topic: tutorial
 ms.date: 06/05/2023
 ms.author: thwimmer

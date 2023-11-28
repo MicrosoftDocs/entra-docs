@@ -5,7 +5,7 @@ services: active-directory
 author: barclayn
 ms.author: barclayn
 manager: amycolannino
-ms.date: 06/24/2022
+ms.date: 11/18/2023
 ms.topic: how-to
 ms.service: active-directory
 ms.subservice: enterprise-users
@@ -139,13 +139,15 @@ By supported we mean that the experience is as expected; specifically, that it's
 - Planner in Teams
 - Planner mobile app
 - Planner web app
+- Project for the web
+- Project Operations
 
 ### Services currently not supported
 
 Service without current support might have compatibility issues with the new guest restriction setting.
 
 - Forms
-- Project
+- Project Online
 - Yammer
 - Planner in SharePoint
 

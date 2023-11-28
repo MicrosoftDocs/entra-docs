@@ -1,17 +1,16 @@
 ---
 title: Claims mapping policy type
 description: Learn about the claims mapping policy type, which is used to modify the claims emitted in tokens in the Microsoft identity platform.
-services: active-directory
 author: cilwerner
 manager: CelesteDG
+ms.author: cwerner
+ms.custom: curation-claims
+ms.date: 06/02/2023
+ms.reviewer: ludwignick, jeedes
 ms.service: active-directory
 ms.subservice: develop
-ms.custom: aaddev, curation-claims
-ms.workload: identity
 ms.topic: reference
-ms.date: 06/02/2023
-ms.author: cwerner
-ms.reviewer: ludwignick, jeedes
+#Customer intent:
 ---
 
 # Claims mapping policy type
@@ -275,7 +274,7 @@ Restricted Claim type (URI):
 - `http://schemas.xmlsoap.org/ws/2009/09/identity/claims/actor`
 
 
-These claims are restricted by default, but aren't restricted if you [set the AcceptMappedClaims property](saml-claims-customization.md) to `true` in your app manifest *or* have a [custom signing key](saml-claims-customization.md):
+These claims are restricted by default, but aren't restricted if you have a [custom signing key](jwt-claims-customization.md#configure-a-custom-signing-key). Avoid setting `acceptMappedClaims` in the app manifest.
 
 - `http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname`
 - `http://schemas.microsoft.com/ws/2008/06/identity/claims/primarysid`
@@ -283,7 +282,7 @@ These claims are restricted by default, but aren't restricted if you [set the Ac
 - `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/sid`
 - `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/x500distinguishedname`
 
-These claims are restricted by default, but aren't restricted if you have a [custom signing key](saml-claims-customization.md):
+These claims are restricted by default, but aren't restricted if you have a [custom signing key](jwt-claims-customization.md#configure-a-custom-signing-key):
 
  - `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/upn`
  - `http://schemas.microsoft.com/ws/2008/06/identity/claims/role`

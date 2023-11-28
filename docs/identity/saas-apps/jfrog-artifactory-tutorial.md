@@ -1,13 +1,13 @@
 ---
 title: 'Tutorial: Microsoft Entra SSO integration with JFrog Artifactory'
 description: Learn how to configure single sign-on between Microsoft Entra ID and JFrog Artifactory.
-services: active-directory
+
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.topic: tutorial
 ms.date: 01/06/2023
 ms.author: jeedes

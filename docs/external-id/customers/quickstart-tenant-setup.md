@@ -1,11 +1,11 @@
 ---
 title: Quickstart - Set up a tenant
 description: In this quickstart, you learn how to create a tenant with customer configurations.
-services: active-directory
+ 
 author: csmulligan
 manager: CelesteDG
 ms.service: active-directory
-ms.workload: identity
+ 
 ms.subservice: ciam
 ms.topic: quickstart
 ms.date: 06/19/2023

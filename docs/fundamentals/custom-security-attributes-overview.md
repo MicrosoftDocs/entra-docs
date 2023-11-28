@@ -1,5 +1,5 @@
 ---
-title: What are custom security attributes in Microsoft Entra ID? (Preview)
+title: What are custom security attributes in Microsoft Entra ID?
 description: Learn about custom security attributes in Microsoft Entra ID.
 services: active-directory
 author: rolyon
@@ -9,15 +9,11 @@ ms.service: active-directory
 ms.subservice: fundamentals
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 10/01/2023
+ms.date: 11/15/2023
 ms.collection: M365-identity-device-management
 ---
 
-# What are custom security attributes in Microsoft Entra ID? (Preview)
-
-> [!IMPORTANT]
-> Custom security attributes are currently in PREVIEW.
-> For more information about previews, see [Universal License Terms For Online Services](https://www.microsoft.com/licensing/terms/product/ForOnlineServices/all).
+# What are custom security attributes in Microsoft Entra ID?
 
 Custom security attributes in Microsoft Entra ID are business-specific attributes (key-value pairs) that you can define and assign to Microsoft Entra objects. These attributes can be used to store information, categorize objects, or enforce fine-grained access control over specific Azure resources. Custom security attributes can be used with [Azure attribute-based access control (Azure ABAC)](/azure/role-based-access-control/conditions-overview).
 
@@ -55,9 +51,9 @@ Custom security attributes include these features:
 - Support user-defined free-form values​ or predefined values
 - Assign custom security attributes to directory synced users from an on-premises Active Directory
 
-The following example shows how you can specify custom security attribute values that are single, multiple, free-form, or predefined.
+The following example shows several custom security attributes assigned to a user. The custom security attributes are different data types and have values that are single, multiple, free-form, or predefined.
 
-![Custom security attribute examples assigned to a user.](./media/custom-security-attributes-overview/attribute-values-examples.png)
+:::image type="content" source="./media/custom-security-attributes-overview/attribute-values-examples.png" alt-text="Screenshot of custom security attribute examples assigned to a user." lightbox="./media/custom-security-attributes-overview/attribute-values-examples.png":::
 
 ## Objects that support custom security attributes
 
@@ -76,7 +72,7 @@ While both extensions and custom security attributes can be used to extend objec
 | Supported objects | Depends on the extension type | Users and service principals |
 | Restricted access | No. Anyone with permissions to read the object can read the extension data. | Yes. Read and write access is restricted through a separate set of permissions and RBAC. |
 | When to use | Store data to be used by an application <br/> Store non-sensitive data | Store sensitive data <br/> Use for authorization scenarios |
-| License requirements | Available in all editions of Microsoft Entra ID | Requires a Microsoft Entra ID P1 or P2 license |
+| License requirements | Available in all editions of Microsoft Entra ID | Available in all editions of Microsoft Entra ID |
 
 For more information about working with extensions, see [Add custom data to resources using extensions](/graph/extensibility-overview).
 
@@ -181,39 +177,23 @@ Microsoft Entra ID provides built-in roles to work with custom security attribut
 > | [Attribute Definition Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-definition-administrator) | Manage all aspects of attribute sets<br/>Manage all aspects of custom security attribute definitions |
 > | [Attribute Assignment Reader](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-reader) | Read attribute sets<br/>Read custom security attribute definitions<br/>Read custom security attribute keys and values for users and service principals |
 > | [Attribute Assignment Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator) | Read attribute sets<br/>Read custom security attribute definitions<br/>Read and update custom security attribute keys and values for users and service principals |
+> | [Attribute Log Reader](~/identity/role-based-access-control/permissions-reference.md#attribute-log-reader) | Read audit logs for custom security attributes |
+> | [Attribute Log Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-log-administrator) | Read audit logs for custom security attributes<br/>Configure diagnostic settings for custom security attributes |
 
 > [!IMPORTANT]
 > By default, [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) and other administrator roles do not have permissions to read, define, or assign custom security attributes.
 
 ## Microsoft Graph APIs
-    
+
 You can manage custom security attributes programmatically using Microsoft Graph APIs. For more information, see [Overview of custom security attributes using the Microsoft Graph API](/graph/api/resources/custom-security-attributes-overview).
 
 You can use an API client such as [Graph Explorer](/graph/graph-explorer/graph-explorer-overview) or Postman to more easily try the Microsoft Graph APIs for custom security attributes. 
 
 ![Screenshot that shows a Microsoft Graph API call for custom security attributes.](./media/custom-security-attributes-overview/graph-explorer-success.png)
 
-## Known issues
-
-Here are some of the known issues with custom security attributes:
-
-- Global Administrators can read audit logs for custom security attribute definitions and assignments.
-- If you have a Microsoft Entra ID P2 license, you can't add eligible role assignments at attribute set scope.
-- If you have a Microsoft Entra ID P2 license, the **Assigned roles** page for a user does not list permanent role assignments at attribute set scope. The role assignments exist, but aren't listed.
-
-Depending on whether you have a Microsoft Entra ID P1 or P2 license, here are the role assignment tasks that are currently supported for custom security attribute roles:
-
-| Role assignment task | Premium P1 | Premium P2 |
-| --- | :---: | :---: |
-| Permanent role assignments | :white_check_mark: | :white_check_mark: |
-| Eligible role assignments | n/a | :white_check_mark: |
-| Permanent role assignments at attribute set scope | :white_check_mark: | :white_check_mark: |
-| Eligible role assignments at attribute set scope | n/a | :x: |
-| **Assigned roles** page lists permanent role assignments at attribute set scope | :white_check_mark: | :warning:<br/>Role assignments exist, but aren't listed  |
-
 ## License requirements
 
-[!INCLUDE [Microsoft Entra ID Premium P1 license](~/includes/entra-p1-license.md)]
+[!INCLUDE [Microsoft Entra ID Premium P1 license](../includes/entra-free-license.md)]
 
 ## Next steps
 

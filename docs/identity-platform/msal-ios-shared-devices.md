@@ -1,18 +1,16 @@
 ---
 title: Shared device mode for iOS devices
 description: Learn how to enable shared device mode to allow frontline workers to share an iOS device
-services: active-directory
 author: henrymbuguakiarie
 manager: CelesteDG
-
+ms.author: henrymbugua
+ms.custom:
+ms.date: 05/16/2023
+ms.reviewer: brandwe, akgoel23
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-ms.workload: identity
-ms.date: 05/16/2023
-ms.author: henrymbugua
-ms.reviewer: brandwe, akgoel23
-ms.custom: aaddev
+#Customer intent:
 ---
 
 # Shared device mode for iOS devices
@@ -247,7 +245,11 @@ For iOS, your app requires a background permission to remain active in the backg
 
 These Microsoft applications support Microsoft Entra shared device mode:
 
-- [Microsoft Teams](/microsoftteams/platform/) (in Public Preview)
+- [Microsoft Teams](/microsoftteams/platform/)
+- [Microsoft Viva Engage](/viva/engage/overview) (previously [Yammer](/viva/engage/overview))
+- [Outlook](/mem/intune/apps/app-configuration-policies-outlook) (in Public Preview)
+- [Microsoft Power Apps](/power-apps/) (in Public Preview)
+- [Microsoft 365](https://apps.apple.com/us/app-bundle/microsoft-365/id1450038993?mt=12) (in Public Preview)
 - [Microsoft Power BI Mobile](/power-bi/consumer/mobile/mobile-app-shared-device-mode) (in Public Preview)
 
 > [!IMPORTANT]

@@ -1,17 +1,16 @@
 ---
 title: Understanding the Microsoft Entra app manifest
 description: Detailed coverage of the Microsoft Entra app manifest, which represents an application's identity configuration in a Microsoft Entra tenant, and is used to facilitate OAuth authorization, consent experience, and more.
-services: active-directory
 author: rwike77
 manager: CelesteDG
+ms.author: ryanwi
+ms.custom: 
+ms.date: 04/13/2023
+ms.reviewer: sureshja
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: reference
-ms.workload: identity
-ms.date: 04/13/2023
-ms.author: ryanwi
-ms.custom: aaddev
-ms.reviewer: sureshja
+#Customer intent:
 ---
 
 # Microsoft Entra app manifest
