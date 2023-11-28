@@ -16,6 +16,8 @@ ms.collection: M365-identity-device-management
 
 # Enable Microsoft Entra Connect group writeback 
 
+[!INCLUDE [deprecation](~/includes/gwb-v2-deprecation.md)]
+
 Group writeback is a feature that allows you to write cloud groups back to your on-premises Active Directory instance by using Microsoft Entra Connect Sync. 
 
 This article walks you through enabling group writeback. 
