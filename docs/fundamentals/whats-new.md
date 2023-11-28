@@ -56,38 +56,6 @@ Monitor guest accounts at scale with intelligent insights into inactive guest us
 
 ---
 
-### General Availability - Soft Delete capability for Managed Service Identity
-
-**Type:** New feature   
-**Service category:** Managed identities for Azure resources                     
-**Product capability:** AuthZ/Access Delegation             
-
-Managed identities are a way of securely accessing cloud resources without having to store or manage any credentials. 
-
-Sometimes, a customer might accidentally or intentionally delete a managed identity. In the past, there was no way to restore a deleted managed identity, and the customer had to create a new one and reconfigure all the permissions and dependencies. This could be time-consuming and error-prone, especially if the identity was used by multiple resources or applications.
-
-To address this issue, Microsoft is releasing the capability to recover a deleted managed identity. This feature allows customers to restore a managed identity within a certain retention period. The recovery process preserves the original identity ID, name, and attributes, and restores the access to the resources and applications that the identity had before deletion. The customer won't need to update any configuration or code that references the identity, as it's the same as before. This reduces the impact and downtime caused by identity deletion, and improves the customer experience and satisfaction.
-
-To recover a deleted managed identity, the customer needs to contact Microsoft support, or open a support ticket specifying which managed identities need to be recovered. The support team validates the request and performs the recovery operation. The customer is notified when the recovery is completed, is able to verify that the identity is functional, and that it has the correct permissions and dependencies.
-
-For more information, see:
-
-- [Deletion and recovery of applications FAQ](../identity/enterprise-apps/delete-recover-faq.yml)
-- [Restore an enterprise application in Microsoft Entra ID](../identity/enterprise-apps/restore-application.md)
-- [Managed identities for Azure resources frequently asked questions](../identity/managed-identities-azure-resources/managed-identities-faq.md)
-
----
-
-### Public Preview - Move AD FS apps to Microsoft Entra ID using AD FS application migration
-
-**Type:** New feature   
-**Service category:** Enterprise Apps                     
-**Product capability:**  End User Experiences             
-
-You're now able to scan an AD FS environment, identify the applications that can be migrated to Microsoft Entra ID, and be guided through the migration process. For more information, see: [Use AD FS application migration (preview) to move AD FS apps to Microsoft Entra ID](../identity/enterprise-apps/migrate-ad-fs-application-howto.md).
-
----
-
 ### Public Preview - lastSuccessfulSignIn property in signInActivity API
 
 **Type:** New feature   
