@@ -34,7 +34,7 @@ Microsoft Entra Health consists of multiple layers, which allows you to navigate
 
 Microsoft Entra Health currently includes SLA attainment and Scenario monitoring (preview). The SLA Attainment report is available for all Microsoft Entra tenants. Scenario Monitoring is currently in preview, but can be enabled for your view of the tenant.
 
-1. Sign into the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](~/identity/role-based-access-control/permissions-reference.md#reports-reader).
+1. Sign into the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
 1. Browse to **Identity** > **Monitoring and health** > **Health (preview)**.
 
 ![Screenshot of the Microsoft Entra Health landing page.](media/concept-scenario-health/identity-health-landing-page.png)
@@ -43,7 +43,7 @@ Microsoft Entra Health currently includes SLA attainment and Scenario monitoring
 
 If you'd like to view the **Scenario monitoring (preview)**:
 
-1. Sign into the [Microsoft Entra admin center] as at least a [Reports Reader](~/identity/role-based-access-control/permissions-reference.md#reports-reader).
+1. Sign into the [Microsoft Entra admin center] as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
 1. Browse to **Identity** > **Settings** > **Preview hub**.
 1. Enable **Scenario monitoring**.
 
@@ -73,7 +73,7 @@ This scenario captures each user authentication that satisfies a Conditional Acc
 
 - [Create a compliance policy in Microsoft Intune](/mem/intune/protect/create-compliance-policy).
 - [Learn about Conditional Access and Intune](/mem/intune/protect/conditional-access).
-- [Learn about Microsoft Entra joined devices](~/identity/devices/concept-directory-join.md).
+- [Learn about Microsoft Entra joined devices](../devices/concept-directory-join.md).
 
 ![Screenshot of the compliant device scenario.](media/concept-scenario-health/scenario-monitoring-compliant-device.png)
 
@@ -82,7 +82,7 @@ This scenario captures each user authentication that satisfies a Conditional Acc
 This scenario captures each user authentication that satisfies a Conditional Access policy requiring sign-in from a managed device. The graph aggregates data every 15 minutes. You can set the date range to 24 hours, 7 days, or 1 month.
 
 - [What is device management](/mem/intune/fundamentals/what-is-device-management)?
-- [Learn about Microsoft Entra hybrid joined devices](~/identity/devices/concept-hybrid-join.md).
+- [Learn about Microsoft Entra hybrid joined devices](../devices/concept-hybrid-join.md).
 
 ![Screenshot of the managed device scenario.](media/concept-scenario-health/scenario-monitoring-managed-device.png)
 
@@ -92,8 +92,8 @@ This scenario provides two aggregated data graphs. The first displays the number
 
 This scenario also provides an aggregated look at failures of interactive MFA sign-in attempts. The same type of refreshed sessions and passwordless methods are excluded from this metric.
 
-- [Configure Conditional Access for MFA for all users](~/identity/conditional-access/howto-conditional-access-policy-all-users-mfa.md).
-- [Troubleshoot common sign-in errors](~/identity/monitoring-health/howto-troubleshoot-sign-in-errors.md).
+- [Configure Conditional Access for MFA for all users](../conditional-access/howto-conditional-access-policy-all-users-mfa.md).
+- [Troubleshoot common sign-in errors](howto-troubleshoot-sign-in-errors.md).
 
 ![Screenshot of the MFA scenario.](media/concept-scenario-health/scenario-monitoring-MFA.png)
 
@@ -101,8 +101,8 @@ This scenario also provides an aggregated look at failures of interactive MFA si
 
 This scenario looks at SAML 2.0 authentication attempts that the Microsoft Entra cloud service for your tenant successfully processed. This metric currently excludes WS-FED/SAML 1.1 apps integrated with Microsoft Entra ID.
 
-- [Learn how the Microsoft Identity platform uses the SAML protocol](~/identity/identity-platform/saml-protocol-reference.md)
-- [Use a SAML 2.0 IdP for single sign on](~/identity/hybrid/connect/how-to-connect-fed-saml-ldp.md).
+- [Learn how the Microsoft Identity platform uses the SAML protocol](../identity-platform/saml-protocol-reference.md)
+- [Use a SAML 2.0 IdP for single sign on](../hybrid/connect/how-to-connect-fed-saml-ldp.md).
 
 ![Screenshot of the SAML scenario.](media/concept-scenario-health/scenario-monitoring-SAML.png)
 
