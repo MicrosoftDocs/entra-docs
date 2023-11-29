@@ -108,6 +108,9 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 	| Name | Source Attribute|
 	| ----- | --------------- |
 	| roles | user.assignedroles|
+    | first_name | user.givenname |
+    | last_name | user.surname |
+    | email | user.userprincipalname |
 
     > [!NOTE]
     > Please click [here](~/identity-platform/howto-add-app-roles-in-apps.md#app-roles-ui) to know how to configure Role in Microsoft Entra ID.
