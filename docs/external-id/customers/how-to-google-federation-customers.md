@@ -16,12 +16,12 @@ ms.custom: it-pro, has-azure-ad-ps-ref
 
 # Add Google as an identity provider
 
-By setting up federation with Google, you can allow customers to sign in to your applications with their own Google accounts. After configuring Google federation, you can select Google as a sign-in option for your application so that it appears on your application's sign-in page. (Learn more about [authentication methods and identity providers for customers](concept-authentication-methods-customers.md).)
+By setting up federation with Google, you allow customers to sign in to your applications with their own Google accounts. After you add Google as one of your user flow's sign-in options, customers can sign up and sign in to your application with a Google account. (Learn more about [authentication methods and identity providers for customers](concept-authentication-methods-customers.md).)
 
 ## Prerequisites
 
-- Azure AD for customers tenant. If you don't already have one, [sign up for a free trial](https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl).
-- [A sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md).
+- A [Microsoft Entra ID for customers tenant](how-to-create-customer-tenant-portal.md).
+- A [sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md).
 
 ## Create a Google application
 
@@ -46,8 +46,8 @@ To enable sign-in for customers with a Google account, you need to create an app
    1. Enter a suitable **Name** for your application, such as "Microsoft Entra ID for customers."
    1. In **Valid OAuth redirect URIs**, enter the following URIs. Replace `<tenant-ID>` with your customer Directory (tenant) ID and `<tenant-subdomain>` with your customer Directory (tenant) subdomain. If you don't have your tenant name, [learn how to read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).  
     - `https://login.microsoftonline.com`
+    - `https://login.microsoftonline.com/te/<tenant-ID>/oauth2/authresp`
     - `https://login.microsoftonline.com/te/<tenant-subdomain>.onmicrosoft.com/oauth2/authresp`
-    - `https://login.microsoftonline.com/te/<tenant-name>.onmicrosoft.com/oauth2/authresp`
     - `https://<tenant-ID>.ciamlogin.com/<tenant-ID>/federation/oidc/accounts.google.com`
     - `https://<tenant-ID>.ciamlogin.com/<tenant-subdomain>.onmicrosoft.com/federation/oidc/accounts.google.com`
     - `https://<tenant-ID>.ciamlogin.com/<tenant-ID>/federation/oauth2`
