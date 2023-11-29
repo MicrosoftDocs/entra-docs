@@ -16,7 +16,6 @@
       "redirect_url": "/entra/identity/hybrid/index",
       "redirect_document_id": false
     },
-
     {
       "source_path_from_root": "/docs/fundamentals/licensing-preview-terms.md",
       "redirect_url": "/entra/fundamentals/licensing-preview-info",
