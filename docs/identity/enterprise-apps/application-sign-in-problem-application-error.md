@@ -1,12 +1,12 @@
 ---
 title: Error message appears on app page after you sign in
 description: How to resolve issues with Microsoft Entra sign-in when the app returns an error message.
-services: active-directory
+
 author: omondiatieno
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
-ms.workload: identity
+
 ms.topic: troubleshooting
 ms.date: 09/06/2022
 ms.author: jomondi

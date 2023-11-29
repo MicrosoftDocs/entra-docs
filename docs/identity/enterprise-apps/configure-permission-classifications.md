@@ -1,17 +1,17 @@
 ---
 title: Configure permission classifications
 description: Learn how to manage delegated permission classifications.
-services: active-directory
+
 author: omondiatieno
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
-ms.workload: identity
+
 ms.topic: how-to
 ms.date: 3/28/2023
 ms.author: jomondi
 ms.reviewer: phsignor, jawoods
-ms.custom: contperf-fy21q2, has-azure-ad-ps-ref
+ms.custom: has-azure-ad-ps-ref
 zone_pivot_groups: enterprise-apps-all
 #customer intent: As an admin, I want configure permission classifications for applications in Microsoft Entra ID
 ---

@@ -1,12 +1,12 @@
 ---
 title: "Tutorial: Manage federation certificates"
 description: In this tutorial, you'll learn how to customize the expiration date for your federation certificates, and how to renew certificates that will soon expire.
-services: active-directory
+
 author: omondiatieno
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
-ms.workload: identity
+
 ms.topic: tutorial
 ms.date: 02/02/2023
 ms.author: jomondi

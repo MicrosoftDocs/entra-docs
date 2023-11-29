@@ -1,13 +1,13 @@
 ---
 title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Notion'
 description: Learn how to configure single sign-on between Microsoft Entra ID and Notion.
-services: active-directory
+
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: jeedes
@@ -33,11 +33,12 @@ To get started, you need the following items:
 
 In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
 
-* Notion supports **SP and IDP** initiated SSO
-* Notion supports **Just In Time** user provisioning
+* Notion supports **SP and IDP** initiated SSO.
+* Notion supports **Just In Time** user provisioning.
+* Notion supports [Automated user provisioning](notion-provisioning-tutorial.md).
+
 > [!NOTE]
 > Identifier of this application is a fixed string value so one Notion workspace can be configured in one tenant.
-
 
 ## Adding Notion from the gallery
 

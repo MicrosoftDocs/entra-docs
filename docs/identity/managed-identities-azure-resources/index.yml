@@ -1,6 +1,6 @@
 ### YamlMime:Landing
 
-title: Microsoft Entra managed identities for Azure resources documentation
+title: Managed identities for Azure resources documentation
 summary: Learn how to use managed identities in Microsoft Entra ID.
 
 metadata:
@@ -13,7 +13,7 @@ metadata:
   author: barclayn
   ms.author: barclayn
   manager: amycolannino
-  ms.date: 08/29/2019
+  ms.date: 11/09/2023
   ms.collection: M365-identity-device-management
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | whats-new

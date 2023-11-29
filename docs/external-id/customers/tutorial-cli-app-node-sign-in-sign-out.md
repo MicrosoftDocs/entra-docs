@@ -1,13 +1,13 @@
 ---
 title: "Tutorial: Authenticate users in your Node.js CLI application - Build app"
 description: Learn how to authenticate users in a Node.js CLI application registered in a Microsoft Entra ID for customers tenant
-services: active-directory
+ 
 author: Dickson-Mwendia
 manager: mwongerapk
 
 ms.author: dmwendia
 ms.service: active-directory
-ms.workload: identity
+ 
 ms.subservice: ciam
 ms.topic: tutorial
 ms.date: 08/04/2023

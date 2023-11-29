@@ -1,13 +1,13 @@
 ---
 title: Use the activity report to move AD FS apps to Microsoft Entra ID
 description: The Active Directory Federation Services (AD FS) application activity report lets you quickly migrate applications from AD FS to Microsoft Entra ID. This migration tool for AD FS identifies compatibility with Microsoft Entra ID and gives migration guidance.
-services: active-directory
+
 author: omondiatieno
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: conceptual
-ms.workload: identity
+
 ms.date: 03/23/2023
 ms.author: jomondi
 ms.collection: M365-identity-device-management

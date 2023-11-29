@@ -1,13 +1,13 @@
 ---
 title: Microsoft Entra SSO integration with IBM TRIRIGA on Cloud
 description: Learn how to configure single sign-on between Microsoft Entra ID and IBM TRIRIGA on Cloud.
-services: active-directory
+
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.topic: how-to
 ms.date: 05/16/2023
 ms.author: jeedes

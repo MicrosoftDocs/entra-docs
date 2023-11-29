@@ -1,11 +1,11 @@
 ---
 title: Supported features in customer tenants
 description: Learn about supported features in customer tenants.
-services: active-directory
+ 
 author: msmimart
 manager: celestedg
 ms.service: active-directory
-ms.workload: identity
+ 
 ms.subservice: ciam
 ms.topic: conceptual
 ms.date: 05/31/2023

@@ -1,17 +1,15 @@
 ---
 title: Troubleshoot publisher verification
 description: Describes how to troubleshoot publisher verification for the Microsoft identity platform by calling Microsoft Graph APIs.
-services: active-directory
 author: rwike77
 manager: CelesteDG
+ms.author: ryanwi
+ms.custom: 
+ms.date: 08/17/2023
+ms.reviewer: xurobert
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: troubleshooting
-ms.workload: identity
-ms.date: 08/17/2023
-ms.author: ryanwi
-ms.custom: aaddev
-ms.reviewer: xurobert
 ---
 
 # Troubleshoot publisher verification

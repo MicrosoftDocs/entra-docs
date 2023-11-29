@@ -1,17 +1,16 @@
 ---
 title: Microsoft Entra app consent experiences
 description: Learn more about the Microsoft Entra consent experiences to see how you can use it when managing and developing applications on Microsoft Entra ID
-services: active-directory
 author: omondiatieno
 manager: CelesteDG
+ms.author: jomondi
+ms.custom: 
+ms.date: 11/01/2022
+ms.reviewer: jesakowi, asteen, jawoods
 ms.service: active-directory
 ms.subservice: develop
-ms.custom: aaddev 
-ms.workload: identity
 ms.topic: conceptual
-ms.date: 11/01/2022
-ms.author: jomondi
-ms.reviewer: jesakowi, asteen, jawoods
+#Customer intent:
 ---
 
 # Consent experience for applications in Microsoft Entra ID
