@@ -26,11 +26,13 @@ To address this issue, we've bundled as many of these newer components into a ne
 
 ## Consider moving to Microsoft Entra Connect cloud sync
 
-Microsoft Entra Connect cloud sync is the future of synchronization for Microsoft.  It replaces Microsoft Entra Connect.
+Before moving to Microsoft Entra Connect V2, you should consider moving to Microsoft Entra Connect cloud sync instead.
+
+You may ask, why would I move to cloud sync when connect sync is already working?  The reason is that Microsoft Entra Connect cloud sync is the future of synchronization for Microsoft.  Although both are currently supported,  cloud sync will eventually replace Microsoft Entra Connect V2.  It is in the cloud sync area that Microsoft will be making future investments in features and functionality.  Serveral customers have already migrated to cloud sync in order to better align with where Microsoft synchronization is going in the future.  
 
 > [!VIDEO https://www.youtube.com/embed/9T6lKEloq0Q]
 
-Before moving to Microsoft Entra Connect V2, you should consider moving to Microsoft Entra Connect cloud sync. You can see if cloud sync is right for you by accessing the [Check sync tool](https://aka.ms/EvaluateSyncOptions) from the portal or via the link provided.
+You can see if cloud sync is right for you by accessing the [Check sync tool](https://aka.ms/EvaluateSyncOptions) from the portal or via the link provided.
 
 For more information, see [What is cloud sync?](/azure/active-directory/cloud-sync/what-is-cloud-sync)
 
