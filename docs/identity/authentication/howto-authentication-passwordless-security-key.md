@@ -110,7 +110,7 @@ There are two ways to get your AAGUID. You can either ask your security key prov
 
    - On Windows 10, the browser may show the QR pairing screen to register a cross-device passkey. Click **Try another way** (or **Use a different device**) to reach the browser-based security key dialog.  
 
-     :::image type="content" border="true" source="./media/howto-authentication-passwordless-security-key/try-another-way.png" alt-text="Screenshot of option to choose security key on Windows 11."::: 
+     :::image type="content" border="true" source="./media/howto-authentication-passwordless-security-key/try-another-way.png" alt-text="Screenshot of option to choose security key on Windows 10."::: 
 
 1. You're prompted to create or enter a PIN for your security key, then perform the required gesture for the key.
 1. You return to the combined registration experience, where you can provide a meaningful name for the key to identify it easily. Click **Next**.
