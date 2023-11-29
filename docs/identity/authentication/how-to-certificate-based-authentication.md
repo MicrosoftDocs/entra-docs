@@ -398,7 +398,7 @@ The SerialNumber value to be added in CertificateUserId is:
 CertificateUserId: 
 
 ```
-X509:<I> C=US,O=U.SGovernment,OU=DoD,OU=PKI,OU=CONTRACTOR,CN=CRL.BALA.SelfSignedCertificate<SR> b24134139f069b49997212a86ba0ef48 
+X509:<I>C=US,O=U.SGovernment,OU=DoD,OU=PKI,OU=CONTRACTOR,CN=CRL.BALA.SelfSignedCertificate<SR> b24134139f069b49997212a86ba0ef48 
 ```
 
 #### Issue and Subject manual mapping
