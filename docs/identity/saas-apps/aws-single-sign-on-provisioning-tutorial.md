@@ -13,7 +13,7 @@ ms.subservice: saas-app-tutorial
 
 ms.tgt_pltfrm: na
 ms.topic: tutorial
-ms.date: 08/22/2023
+ms.date: 11/28/2023
 ms.author: thwimmer
 ---
 
@@ -193,9 +193,11 @@ With PIM for Groups, you can provide just-in-time access to groups in Amazon Web
 
 Now any end user that was made eligible for the group in PIM can get JIT access to the group in AWS by [activating their group membership](/azure/active-directory/privileged-identity-management/groups-activate-roles#activate-a-role).
 
-> [!IMPORTANT]
-> The group membership is generally updated within 2 - 10 minutes of requesting access to the group. Please wait before attempting to sign-in to AWS. If the user is unable to access the necessary group in AWS, please review the troubleshooting tips below, PIM logs, and provisioning logs to ensure that the group membership was updated successfully. Depending on how the target application has been architected, it may take additional time for the group membership to take effect in the application. 
-
+**Key considerations**
+* The group membership is generally updated within 2 - 10 minutes of requesting access to the group. Please wait before attempting to sign-in to AWS. If the user is unable to access the necessary group in AWS, please review the troubleshooting tips below, PIM logs, and provisioning logs to ensure that the group membership was updated successfully. Depending on how the target application has been architected, it may take additional time for the group membership to take effect in the application.
+* Deactivation is done during the refular incremantal cycle. It is not processed immediately through on-demand provisioning.
+* The just-in-time integration between PIM and on-demand provisioning supports 5 activation requests every 10 seconds per AWS application.
+  
 >[!VIDEO https://www.youtube.com/embed/aXp2CUFe7vk]
 
 ## Troubleshooting Tips
