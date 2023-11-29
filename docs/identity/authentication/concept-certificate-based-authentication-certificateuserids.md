@@ -6,7 +6,7 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 11/29/2023
 
 ms.author: justinha
 author: vimrang
@@ -27,14 +27,14 @@ The values stored in **certificateUserIds** should be in the format described in
 
 |Certificate mapping Field | Examples of values in CertificateUserIds |
 |--------------------------|--------------------------------------|
-|PrincipalName | `X509:\<PN>bob@woodgrove.com` |
-|PrincipalName | `X509:\<PN>bob@woodgrove`   | 
-|RFC822Name	| `X509:\<RFC822>user@woodgrove.com` |
-|IssuerAndSubject | `X509:\<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA\<S>DC=com,DC=contoso,OU=UserAccounts,CN=mfatest` |
-|Subject | `X509:\<S>DC=com,DC=contoso,OU=UserAccounts,CN=mfatest`  |
-|SKI | `X509:\<SKI>123456789abcdef` |
-|SHA1PublicKey |`X509:\<SHA1-PUKEY>123456789abcdef` |
-|IssuerAndSerialNumber | `X509:\<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA\<SR>b24134139f069b49997212a86ba0ef48` <br> To get the correct value for serial number, run this command and store the value shown in CertificateUserIds:<br> **Syntax**:<br> `Certutil –dump –v [~certificate path~] >> [~dumpFile path~]` <br> **Example**: <br> `certutil -dump -v firstusercert.cer >> firstCertDump.txt` |
+|PrincipalName | `X509:<PN>bob@woodgrove.com` |
+|PrincipalName | `X509:<PN>bob@woodgrove`   | 
+|RFC822Name	| `X509:<RFC822>user@woodgrove.com` |
+|IssuerAndSubject | `X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<S>DC=com,DC=contoso,OU=UserAccounts,CN=mfatest` |
+|Subject | `X509:<S>DC=com,DC=contoso,OU=UserAccounts,CN=mfatest`  |
+|SKI | `X509:<SKI>123456789abcdef` |
+|SHA1PublicKey |`X509:<SHA1-PUKEY>123456789abcdef` |
+|IssuerAndSerialNumber | `X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<SR>b24134139f069b49997212a86ba0ef48` <br> To get the correct value for serial number, run this command and store the value shown in CertificateUserIds:<br> **Syntax**:<br> `Certutil –dump –v [~certificate path~] >> [~dumpFile path~]` <br> **Example**: <br> `certutil -dump -v firstusercert.cer >> firstCertDump.txt` |
 
 ## Roles to update certificateUserIds
 
