@@ -101,8 +101,8 @@ This scenario also provides an aggregated look at failures of interactive MFA si
 
 This scenario looks at SAML 2.0 authentication attempts that the Microsoft Entra cloud service for your tenant successfully processed. This metric currently excludes WS-FED/SAML 1.1 apps integrated with Microsoft Entra ID.
 
-- [Learn how the Microsoft Identity platform uses the SAML protocol](../identity-platform/saml-protocol-reference.md)
-- [Use a SAML 2.0 IdP for single sign on](../hybrid/connect/how-to-connect-fed-saml-ldp.md).
+- [Learn how the Microsoft Identity platform uses the SAML protocol](../../identity-platform/saml-protocol-reference.md)
+- [Use a SAML 2.0 IdP for single sign on](../hybrid/connect/how-to-connect-fed-saml-idp.md).
 
 ![Screenshot of the SAML scenario.](media/concept-scenario-health/scenario-monitoring-SAML.png)
 
