@@ -5,7 +5,7 @@ author: omondiatieno
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
-ms.workload: identity
+
 ms.topic: troubleshooting
 ms.date: 09/07/2023
 ms.author: jomondi

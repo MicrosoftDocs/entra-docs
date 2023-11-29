@@ -1,7 +1,7 @@
 ---
 title: Tutorial - Prepare your customer tenant to authenticate users in an ASP.NET web app
 description: Learn how to configure your Microsoft Entra ID for customers tenant for authentication with an ASP.NET web application
-services: active-directory
+ 
 author: cilwerner
 manager: celestedg
 

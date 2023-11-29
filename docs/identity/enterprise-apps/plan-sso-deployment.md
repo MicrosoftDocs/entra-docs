@@ -1,13 +1,13 @@
 ---
 title: Plan a single sign-on deployment
 description: Plan the deployment of single sign-on in Microsoft Entra ID.
-services: active-directory
+
 author: omondiatieno
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: conceptual
-ms.workload: identity
+
 ms.date: 03/20/2023
 ms.author: jomondi
 ms.reviewer: alamaral

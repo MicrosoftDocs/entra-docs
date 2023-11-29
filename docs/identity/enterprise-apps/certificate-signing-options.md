@@ -1,17 +1,17 @@
 ---
 title: Advanced certificate signing options in a SAML token
 description: Learn how to use advanced certificate signing options in the SAML token for preintegrated apps in Microsoft Entra ID
-services: active-directory
+
 author: omondiatieno
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
-ms.workload: identity
+
 ms.topic: conceptual
 ms.date: 07/18/2023
 ms.author: jomondi
 ms.reviewer: saumadan
-ms.custom: aaddev, enterprise-apps
+ms.custom: enterprise-apps
 ms.collection: M365-identity-device-management
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: 'Tutorial: Configure Asana for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Asana.
-services: active-directory
+
 author: twimmers
 writer: twimmers
 manager: jeedes
@@ -9,7 +9,7 @@ manager: jeedes
 ms.assetid: 274810a2-bd74-4500-95f1-c720abf23541
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.topic: tutorial
 ms.date: 04/04/2023
 ms.author: thwimmer

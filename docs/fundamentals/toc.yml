@@ -27,6 +27,8 @@ items:
     href: how-to-customize-branding.md
   - name: Rename Microsoft Entra ID
     href: how-to-rename-azure-ad.md
+  - name: Get the most out of documentation
+    href: how-to-navigate.md
 - name: Users, groups, and licenses
   expanded: false
   items:

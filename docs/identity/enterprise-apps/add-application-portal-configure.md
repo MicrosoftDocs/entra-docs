@@ -1,13 +1,13 @@
 ---
 title: 'Configure enterprise application properties'
 description: Configure the properties of an enterprise application in Microsoft Entra ID.
-services: active-directory
+
 author: omondiatieno
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: how-to
-ms.workload: identity
+
 ms.date: 01/26/2023
 ms.author: jomondi
 ms.reviewer: ergreenl

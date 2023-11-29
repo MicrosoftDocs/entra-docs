@@ -1,15 +1,13 @@
 ---
 title: "Tutorial: Prepare an application for authentication"
 description: Register a tenant application and configure it for a React SPA.
-services: active-directory
 author: OwenRichards1
 manager: CelesteDG
-
+ms.author: owenrichards
+ms.date: 09/25/2023
 ms.service: active-directory
 ms.subservice: develop
-ms.author: owenrichards
 ms.topic: tutorial
-ms.date: 09/25/2023
 #Customer intent: As a React developer, I want to know how to create a new React project in an IDE and add authentication.
 ---
 

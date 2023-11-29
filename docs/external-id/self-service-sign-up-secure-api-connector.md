@@ -1,7 +1,7 @@
 ---
 title: Secure APIs used as API connectors in Microsoft Entra External ID self-service sign-up user flows
 description: Secure your custom RESTful APIs used as API connectors in self-service sign-up user flows.
-services: active-directory
+ 
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: how-to
@@ -11,7 +11,7 @@ ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.custom: "it-pro"
-ms.collection: engagement-fy23, M365-identity-device-management
+ms.collection: M365-identity-device-management
 
 # Customer intent: As a tenant administrator, I want to make sure that I protect my API endpoint with proper authentication. 
 ---

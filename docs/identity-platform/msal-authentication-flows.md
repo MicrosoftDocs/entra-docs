@@ -1,19 +1,16 @@
 ---
 title: Authentication flow support in the Microsoft Authentication Library (MSAL)
 description: Learn about the authorization grants and authentication flows supported by MSAL.
-services: active-directory
 author: cilwerner
 manager: CelesteDG
-
+ms.author: cwerner
+ms.custom: 
+ms.date: 04/03/2023
+ms.reviewer: saeeda
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-ms.workload: identity
-ms.date: 04/03/2023
-ms.author: cwerner
-ms.reviewer: saeeda
-ms.custom: engagement-fy23
-# Customer intent: As an application developer, I want to learn about the authentication flows supported by MSAL.
+#Customer intent: As an application developer, I want to learn about the authentication flows supported by MSAL.
 ---
 
 # Authentication flow support in MSAL

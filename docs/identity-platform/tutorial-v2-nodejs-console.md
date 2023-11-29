@@ -1,16 +1,15 @@
 ---
 title: "Tutorial: Call Microsoft Graph in a Node.js console daemon app"
 description: In this tutorial, you build a console daemon app for calling Microsoft Graph.
-services: active-directory
 author: cilwerner
 manager: CelesteDG
-
+ms.author: cwerner
+ms.custom: devx-track-js
+ms.date: 12/12/2021
 ms.service: active-directory
 ms.subservice: develop
-ms.custom: devx-track-js
 ms.topic: tutorial
-ms.date: 12/12/2021
-ms.author: cwerner
+#Customer intent:
 ---
 
 # Tutorial: Call the Microsoft Graph API in a Node.js console daemon app

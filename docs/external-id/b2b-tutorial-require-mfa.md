@@ -2,7 +2,7 @@
 title: 'Tutorial - multifactor authentication for B2B'
 description: In this tutorial, learn how to require multifactor authentication when you use Microsoft Entra B2B to collaborate with external users and partner organizations.
 
-services: active-directory
+ 
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: tutorial
@@ -11,7 +11,7 @@ ms.date: 07/28/2023
 ms.author: cmulligan
 author: csmulligan
 manager: CelesteDG
-ms.custom: "engagement-fy23, it-pro, seo-update-azuread-jan"
+ms.custom: "it-pro, seo-update-azuread-jan"
 ms.collection: M365-identity-device-management
 
 # Customer intent: As a tenant administrator, I want to set up MFA requirement for B2B guest users to protect my apps and resources. 

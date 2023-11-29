@@ -3,14 +3,14 @@ title: Updates and breaking changes
 description: Learn about changes to the Microsoft identity platform that can impact your application.
 author: rwike77
 manager: CelesteDG
-
+ms.author: ryanwi
+ms.custom: has-adal-ref
+ms.date: 06/03/2023
+ms.reviewer: ludwignick
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: reference
-ms.date: 06/03/2023
-ms.author: ryanwi
-ms.reviewer: ludwignick
-ms.custom: has-adal-ref
+#Customer intent:
 ---
 
 # What's new for authentication?
@@ -157,7 +157,7 @@ If a request fails the validation check, the application API for create/update w
 
 **Endpoints impacted**: v2.0
 
-**Protocol impacted**: All flows using [dynamic consent](./permissions-consent-overview.md#requesting-individual-user-consent)
+**Protocol impacted**: All flows using [dynamic consent](./permissions-consent-overview.md#user-consent)
 
 Applications using dynamic consent today are given all the permissions they have consent for, even if they weren't requested by name in the `scope` parameter. An app requesting only `user.read` but with consent to `files.read` can be forced to pass the Conditional Access requirement assigned for `files.read`, for example.
 
@@ -232,7 +232,7 @@ For more details, please see the [Azure Government blog post on this migration](
 
 **Protocol impacted**: All user flows.
 
-Users with passwords longer than 256 characters who sign in directly to Azure AD (not a federated IDP, like AD FS) will be asked to change their passwords before they can sign in. Admins may receive requests to help reset the users password.
+Users with passwords longer than 256 characters who sign in directly to Azure AD (not a federated IDP, like AD FS) will be asked to change their passwords before they can sign in. Admins may receive requests to help reset the user's password.
 
 The error in the sign-in logs will be similar to _AADSTS 50052: InvalidPasswordExceedsMaxLength_.
 
@@ -295,7 +295,7 @@ To remedy this issue, use the Admin Consent experience to create the client appl
 `https://login.microsoftonline.com/contoso.com/oauth2/authorize?resource=https://gateway.contoso.com/api&response_type=token&client_id=14c88eee-b3e2-4bb0-9233-f5e3053b3a28&...`
 In this example, the resource tenant (authority) is contoso.com, the resource app is a single-tenant app called `gateway.contoso.com/api` for the Contoso tenant, and the client app is `14c88eee-b3e2-4bb0-9233-f5e3053b3a28`. If the client app has a service principal within Contoso.com, this request can continue. If it doesn't, however, then the request will fail with the error above.
 
-If the Contoso gateway app were a multi-tenant application, however, then the request would continue regardless of the client app having a service principal within Contoso.com.
+If the Contoso gateway app were a multitenant application, however, then the request would continue regardless of the client app having a service principal within Contoso.com.
 
 ### Redirect URIs can now contain query string parameters
 

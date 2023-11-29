@@ -3,7 +3,7 @@
 title: Add B2B collaboration users in the Microsoft Entra admin center
 description: Shows how an admin can add guest users to their directory from a partner organization using Microsoft Entra B2B collaboration.
 
-services: active-directory
+ 
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: how-to

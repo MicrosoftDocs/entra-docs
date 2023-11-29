@@ -3,13 +3,14 @@ title: OpenID Connect (OIDC) on the Microsoft identity platform
 description: Sign in Microsoft Entra users by using the Microsoft identity platform's implementation of the OpenID Connect extension to OAuth 2.0.
 author: OwenRichards1
 manager: CelesteDG
-ms.custom: aaddev, identityplatformtop40
-ms.date: 09/13/2023
 ms.author: owenrichards
+ms.custom: 
+ms.date: 09/13/2023
 ms.reviewer: ludwignick
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: reference
+#Customer intent:
 ---
 
 # OpenID Connect on the Microsoft identity platform
@@ -124,7 +125,7 @@ Example sign-in request (line breaks included only for readability):
 
 ```HTTP
 GET https://login.microsoftonline.com/{tenant}/oauth2/v2.0/authorize?
-client_id=6731de76-14a6-49ae-97bc-6eba6914391e
+client_id=535fb089-9ff3-47b6-9bfb-4f1264799865
 &response_type=id_token
 &redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
 &response_mode=form_post
@@ -242,7 +243,7 @@ To get an access token for the OIDC UserInfo endpoint, modify the sign-in reques
 // Line breaks are for legibility only.
 
 GET https://login.microsoftonline.com/{tenant}/oauth2/v2.0/authorize?
-client_id=6731de76-14a6-49ae-97bc-6eba6914391e        // Your app registration's Application (client) ID
+client_id=535fb089-9ff3-47b6-9bfb-4f1264799865        // Your app registration's Application (client) ID
 &response_type=id_token%20token                       // Requests both an ID token and access token
 &redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F       // Your application's redirect URI (URL-encoded)
 &response_mode=form_post                              // 'form_post' or 'fragment'
@@ -257,7 +258,7 @@ You can use the [authorization code flow](v2-oauth2-auth-code-flow.md), the [dev
 <!--
 > [!TIP]
 > Click the following link to execute this request. After you sign in, your browser is redirected to `https://localhost/myapp/`, with an ID token and a token in the address bar. Note that this request uses `response_mode=fragment` for demonstration purposes only - for a webapp we recommend using `form_post` for additional security where possible. 
-> <a href="https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=6731de76-14a6-49ae-97bc-6eba6914391e&response_type=id_token%20token&redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F&response_mode=fragment&scope=openid+profile+email&state=12345&nonce=678910" target="_blank">https://login.microsoftonline.com/common/oauth2/v2.0/authorize...</a>
+> <a href="https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=535fb089-9ff3-47b6-9bfb-4f1264799865&response_type=id_token%20token&redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F&response_mode=fragment&scope=openid+profile+email&state=12345&nonce=678910" target="_blank">https://login.microsoftonline.com/common/oauth2/v2.0/authorize...</a>
 -->
 
 ### Successful token response

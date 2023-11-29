@@ -1,17 +1,16 @@
 ---
 title: ID tokens in the Microsoft identity platform
 description: Learn about ID tokens used in the Microsoft identity platform.
-services: active-directory
 author: cilwerner
 manager: CelesteDG
+ms.author: cwerner
+ms.custom: curation-claims
+ms.date: 06/01/2023
+ms.reviewer: ludwignick
 ms.service: active-directory
 ms.subservice: develop
-ms.workload: identity
 ms.topic: conceptual
-ms.date: 06/01/2023
-ms.author: cwerner
-ms.reviewer: ludwignick
-ms.custom: aaddev, curation-claims
+#Customer intent:
 ---
 
 # ID tokens in the Microsoft identity platform

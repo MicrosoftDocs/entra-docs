@@ -3,7 +3,7 @@
 title: Add B2B collaboration users as an information worker
 description: B2B collaboration allows information workers and app owners to add guest users to Microsoft Entra ID for access
 
-services: active-directory
+ 
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: how-to

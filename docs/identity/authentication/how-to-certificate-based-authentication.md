@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.date: 11/04/2023
 
 ms.author: justinha
-author: justinha
+author: vimrang
 manager: amycolannino
 ms.reviewer: vraganathan
 
@@ -82,21 +82,21 @@ To enable the certificate-based authentication and configure user bindings in th
 
 Only one CRL Distribution Point (CDP) for a trusted CA is supported. The CDP can only be HTTP URLs. Online Certificate Status Protocol (OCSP) or Lightweight Directory Access Protocol (LDAP) URLs aren't supported.
 
-[!INCLUDE [Configure certification authorities](../../includes/entra-authentication-configure-certificate-authorities.md)]
+[!INCLUDE [Configure certification authorities](~/includes/entra-authentication-configure-certificate-authorities.md)]
 
 ### Connect
 
-[!INCLUDE [Connect-AzureAD](../../includes/entra-authentication-connect.md)]
+[!INCLUDE [Connect-AzureAD](~/includes/entra-authentication-connect.md)]
 
 ### Retrieve
 
-[!INCLUDE [Get-AzureAD](../../includes/entra-authentication-get-trusted.md)]
+[!INCLUDE [Get-AzureAD](~/includes/entra-authentication-get-trusted.md)]
 ### Add
 
 >[!NOTE]
 >Upload of new CAs will fail when any of the existing CAs are expired. Tenant Admin should delete the expired CAs and then upload the new CA.
 
-[!INCLUDE [New-AzureAD](../../includes/entra-authentication-new-trusted.md)]
+[!INCLUDE [New-AzureAD](~/includes/entra-authentication-new-trusted.md)]
 
 **AuthorityType**
 - Use 0 to indicate a Root certification authority
@@ -398,7 +398,7 @@ The SerialNumber value to be added in CertificateUserId is:
 CertificateUserId: 
 
 ```
-X509:<I> C=US,O=U.SGovernment,OU=DoD,OU=PKI,OU=CONTRACTOR,CN=CRL.BALA.SelfSignedCertificate<SR> b24134139f069b49997212a86ba0ef48 
+X509:<I>C=US,O=U.SGovernment,OU=DoD,OU=PKI,OU=CONTRACTOR,CN=CRL.BALA.SelfSignedCertificate<SR> b24134139f069b49997212a86ba0ef48 
 ```
 
 #### Issue and Subject manual mapping

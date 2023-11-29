@@ -1,7 +1,7 @@
 ---
 title: Language customization in Microsoft Entra user flows
 description: Learn about customizing the language experience in your user flows in Microsoft Entra External ID.
-services: active-directory
+ 
 author: msmimart
 manager: celestedg
 
@@ -12,7 +12,7 @@ ms.date: 11/02/2022
 ms.author: mimart
 
 ms.collection: M365-identity-device-management
-ms.custom: engagement-fy23
+ms.custom:  
 # Customer intent: As a tenant administrator, I want to modify the user flow language, when the users are signing up via the self-service sign-up user flow.
 ---
 

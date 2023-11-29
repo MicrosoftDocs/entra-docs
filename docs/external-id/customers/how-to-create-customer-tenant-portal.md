@@ -1,11 +1,11 @@
 ---
 title: Create a customer tenant
 description: Learn how to create a customer tenant in the  Microsoft Entra admin center. 
-services: active-directory
+ 
 author: csmulligan
 manager: celestedg
 ms.service: active-directory
-ms.workload: identity
+ 
 ms.subservice: ciam
 ms.topic: how-to
 ms.date: 07/12/2023

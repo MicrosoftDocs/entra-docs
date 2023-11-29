@@ -84,7 +84,7 @@ In this section you learn what each section tells you, and what actions you're a
 
 ### Basic Information
 
-When selecting a workflow, the overview provides you with a list of basic details in the **Basic Information** section. These basic details provide you with information such as the workflow category, its ID, when it was modified, and when it's scheduled to run again. This information is important in providing quick details surrounding its current usage for administrative purposes. Basic information is also live data, meaning any quick change action that you take place on the overview page, is shown immediately within this section.
+When you select a workflow, the overview provides you with a list of basic details in the **Basic Information** section. These basic details provide you with information such as the workflow category, its ID, when it was modified, and when it's scheduled to run again. This information is important in providing quick details surrounding its current usage for administrative purposes. Basic information is also live data, meaning any quick change action that you take place on the overview page, is shown immediately within this section.
 
 Within the **Basic Information** you can view the following information:
 
@@ -127,7 +127,7 @@ Actions taken from the overview of a workflow allow you to quickly complete task
 
 After selecting a template, on the basics screen:
  - Provide the information that is used in the description portion of the workflow.
- - The trigger, defines when of the execution condition.
+ - Select the trigger that defines when the execution condition will occur.
 
  [![Basics of a workflow.](media/understanding-lifecycle-workflows/workflow-4.png)](media/understanding-lifecycle-workflows/workflow-4.png#lightbox)
 
@@ -137,9 +137,9 @@ The trigger of a workflow defines when a scheduled workflow runs for users in sc
 
 The time-based attribute can be either one of two values, which are automatically chosen based on the template in which you select during the creation of your workflow. The three values can be:
 
-- employeeHireDate: If the template is a joiner workflow
+- employeeHireDate: If the template is a joiner workflow for an employee
 - createdDateTime: if the template is a joiner workflow designed to run either on hire or post onboarding
-- employeeLeaveDateTime: If the template is a leaver workflow
+- employeeLeaveDateTime: If the template is a leaver workflow for an employee
 
 The values employeeHireDate and employeeLeaveDateTime must be set within Microsoft Entra ID for users. For more information on this process, see [How to synchronize attributes for Lifecycle workflows](how-to-lifecycle-workflow-sync-attributes.md)
 

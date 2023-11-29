@@ -1,12 +1,12 @@
 ---
 title: Manage access to apps
 description: Describes how Microsoft Entra ID enables organizations to specify the apps to which each user has access.
-services: active-directory
+
 author: omondiatieno
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
-ms.workload: identity
+
 ms.topic: conceptual
 ms.date: 07/18/2023
 ms.author: jomondi

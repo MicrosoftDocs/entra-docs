@@ -1,11 +1,11 @@
 ---
 title: Overview of enterprise application ownership
 description: Learn about enterprise application ownership in Microsoft Entra ID
-services: active-directory
+
 author: omondiatieno
 manager: celesteDG
 ms.service: active-directory
-ms.workload: identity
+
 ms.subservice: app-mgmt
 ms.topic: conceptual
 ms.date: 12/05/2022

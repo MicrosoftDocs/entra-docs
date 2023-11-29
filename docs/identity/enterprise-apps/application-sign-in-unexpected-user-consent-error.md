@@ -1,12 +1,12 @@
 ---
 title:  Unexpected error when performing consent to an application
 description: Discusses errors that can occur during the process of consenting to an application and what you can do about them
-services: active-directory
+
 author: omondiatieno
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
-ms.workload: identity
+
 ms.topic: troubleshooting
 ms.date: 09/06/2022
 ms.author: jomondi

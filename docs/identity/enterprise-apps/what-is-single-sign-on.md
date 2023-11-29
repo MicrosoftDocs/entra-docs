@@ -1,17 +1,17 @@
 ---
 title: What is single sign-on?
 description: Learn about single sign-on for enterprise applications in Microsoft Entra ID.
-services: active-directory
+
 author: omondiatieno
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
-ms.workload: identity
+
 ms.topic: overview
 ms.date: 10/30/2023
 ms.author: jomondi
 ms.reviewer: alamaral
-ms.custom: contperf-fy21q1, contperf-fy22q2, contperf-fy22q3, enterprise-apps-article
+ms.custom: enterprise-apps-article
 # Customer intent: As an IT admin, I need to learn about single sign-on and my applications in Microsoft Entra ID.
 ---
 
