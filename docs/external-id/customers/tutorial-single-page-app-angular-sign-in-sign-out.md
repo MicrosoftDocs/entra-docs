@@ -190,7 +190,7 @@ In this tutorial;
 
 1. In your browser, enter `http://localhost:4200` to open the application.
 
-    :::image type="content" source="media/tutorial-single-page-app-angular-sign-in-sign-out/angular-01-not-signed-in.png" alt-text="Web browser displaying sign-in dialog":::
+    :::image type="content" source="media/tutorial-single-page-app-angular-sign-in-sign-out/angular-01-not-signed-in.png" alt-text="Screenshot of a web browser displaying sign-in dialog":::
     
 1. Select the **Login** button in the top right corner of the screen. 
 1. After you're signed in, you'll see your profile information displayed on the page.
@@ -201,7 +201,7 @@ In this tutorial;
 
 ## See also
 
-After completing this tutorial, you can may want to learn more about how to:
+After completing this tutorial, you may want to learn more about how to:
 
 - [Customize the default branding](how-to-customize-branding-customers.md)
 
