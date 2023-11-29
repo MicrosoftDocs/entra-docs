@@ -58,27 +58,27 @@ The following steps configure the UI elements of the application. CSS styling is
     ```
 1. Open _src/app/app.component.html_ and replace the existing code with the following code snippet.
 
-```HTML
-  <mat-toolbar color="primary">
-      <a class="title" href="/">{{ title }}</a>
-      <div class="toolbar-spacer"></div>
-      <a mat-button [routerLink]="['guarded']">Guarded Component</a>
-      <button mat-raised-button *ngIf="!loginDisplay" (click)="login()">Login</button>
-      <button mat-raised-button color="accent" *ngIf="loginDisplay" (click)="logout()">Logout</button>
-    </mat-toolbar>
-    <div class="container">
-      <!--This is to avoid reload during acquireTokenSilent() because of hidden iframe -->
-      <router-outlet *ngIf="!isIframe"></router-outlet>
-    </div>
-    <footer *ngIf="loginDisplay">
-      <mat-toolbar>
-        <div class="footer-text"> How did we do? <a
-            href="https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR_ivMYEeUKlEq8CxnMPgdNZUNDlUTTk2NVNYQkZSSjdaTk5KT1o4V1VVNS4u"
-            target="_blank"> Share your experience with us!</a>
+    ```HTML
+      <mat-toolbar color="primary">
+          <a class="title" href="/">{{ title }}</a>
+          <div class="toolbar-spacer"></div>
+          <a mat-button [routerLink]="['guarded']">Guarded Component</a>
+          <button mat-raised-button *ngIf="!loginDisplay" (click)="login()">Login</button>
+          <button mat-raised-button color="accent" *ngIf="loginDisplay" (click)="logout()">Logout</button>
+        </mat-toolbar>
+        <div class="container">
+          <!--This is to avoid reload during acquireTokenSilent() because of hidden iframe -->
+          <router-outlet *ngIf="!isIframe"></router-outlet>
         </div>
-      </mat-toolbar>
-    </footer>
-```
+        <footer *ngIf="loginDisplay">
+          <mat-toolbar>
+            <div class="footer-text"> How did we do? <a
+                href="https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR_ivMYEeUKlEq8CxnMPgdNZUNDlUTTk2NVNYQkZSSjdaTk5KT1o4V1VVNS4u"
+                target="_blank"> Share your experience with us!</a>
+            </div>
+          </mat-toolbar>
+        </footer>
+    ```
 1. Open _src/app/app.component.css_ and replace the code with the following snippet.
     
     ```css
