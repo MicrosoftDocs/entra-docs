@@ -7,11 +7,10 @@ author: henrymbuguakiarie
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: reference
-ms.workload: identity
-ms.date: 11/14/2023
+ms.date: 1/29/2021
 ms.author: henrymbugua
 ms.reviewer: knicholasa
-ms.custom: aaddev
+ms.custom: 
 # Customer intent: As a developer, I want to know how to support FIDO2 authentication in my apps
 ---
 
