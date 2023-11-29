@@ -1,13 +1,13 @@
 ---
 title: Microsoft Entra SSO integration with Oracle Access Manager for Oracle Retail Merchandising
 description: Learn how to configure single sign-on between Microsoft Entra ID and Oracle Access Manager for Oracle Retail Merchandising.
-services: active-directory
+
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.topic: how-to
 ms.date: 02/07/2023
 ms.author: jeedes

@@ -1,14 +1,14 @@
 ---
 title: 'Tutorial: Configure Zoho One for automatic user provisioning with Microsoft Entra ID | Microsoft Docs'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Zoho One.
-services: active-directory
+
 author: twimmers
 writer: twimmers
 manager: jeedes
 ms.assetid: 691f20c5-4d88-407c-a882-94b4864547a8
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.topic: tutorial
 ms.date: 03/07/2023
 ms.author: thwimmer

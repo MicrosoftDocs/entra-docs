@@ -1,15 +1,15 @@
 ---
 title: Microsoft Entra SSO integration with Canva
 description: Learn how to configure single sign-on between Microsoft Entra ID and Canva.
-services: active-directory
+
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.topic: how-to
-ms.date: 02/09/2023
+ms.date: 11/21/2023
 ms.author: jeedes
 
 ---
@@ -22,7 +22,7 @@ In this article, you'll learn how to integrate Canva with Microsoft Entra ID. Ca
 * Enable your users to be automatically signed-in to Canva with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
-You'll configure and test Microsoft Entra single sign-on for Canva in a test environment. Canva supports **IDP** initiated single sign-on and **Just In Time** user provisioning.
+You'll configure and test Microsoft Entra single sign-on for Canva in a test environment. Canva supports **IDP** initiated single sign-on and **Just In Time** user provisioning. Canva also supports [Automated user provisioning](canva-provisioning-tutorial.md).
 
 ## Prerequisites
 

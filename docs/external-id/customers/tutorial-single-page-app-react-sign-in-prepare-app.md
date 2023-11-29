@@ -1,20 +1,20 @@
 ---
 title: Tutorial - Prepare a React single-page app (SPA) for authentication in a customer tenant
 description: Learn how to prepare a React single-page app (SPA) for authentication with your Microsoft Entra ID for customers tenant.
-services: active-directory
+ 
 author: garrodonnell
 manager: celestedg
 ms.service: active-directory
 ms.subservice: ciam
 ms.topic: tutorial
-ms.date: 05/23/2023
+ms.date: 11/27/2023
 ms.author: godonnell
 #Customer intent: As a dev, devops, or IT admin, I want to learn how to enable authentication in my own React single-page app
 ---
 
 # Tutorial: Prepare a React single-page app (SPA) for authentication in a customer tenant
 
-In the [previous article](./tutorial-single-page-app-react-sign-in-prepare-tenant.md), you registered an application and configured user flows in your Microsoft Entra ID for customers tenant. This tutorial demonstrates how to create a React single-page app using `npm` and create files needed for authentication and authorization.
+In the [previous article](./tutorial-single-page-app-react-sign-in-prepare-tenant.md), you registered an application and configured user flows in your Microsoft Entra ID for customers tenant. This tutorial demonstrates how to create a React single-page app using `npx` and create files needed for authentication and authorization.
 
 In this tutorial;
 
@@ -40,6 +40,7 @@ In this tutorial;
     cd reactspalocal
     npm start
     ```
+
 1. Create additional folders and files to achieve the following folder structure:
 
     ```text

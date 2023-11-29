@@ -1,13 +1,13 @@
 ---
 title: "Tutorial: Microsoft Entra single sign-on (SSO) integration with ProdPad"
 description: Learn how to configure single sign-on between Microsoft Entra ID and ProdPad.
-services: active-directory
+
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: jeedes
@@ -32,8 +32,9 @@ To get started, you need the following items:
 
 In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
 
-- ProdPad supports **SP and IDP** initiated SSO
-- ProdPad supports **Just In Time** user provisioning
+* ProdPad supports **SP and IDP** initiated SSO.
+* ProdPad supports **Just In Time** user provisioning.
+* ProdPad supports [Automated user provisioning](prodpad-provisioning-tutorial.md).
 
 ## Adding ProdPad from the gallery
 

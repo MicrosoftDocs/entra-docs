@@ -1,13 +1,13 @@
 ---
 title: 'Tutorial: Microsoft Entra SSO integration with XM Fax and XM SendSecure'
 description: Learn how to configure single sign-on between Microsoft Entra ID and XM Fax and XM SendSecure.
-services: active-directory
+
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.topic: tutorial
 ms.date: 07/10/2023
 ms.author: jeedes
@@ -37,6 +37,7 @@ For more information, see [Azure built-in roles](~/identity/role-based-access-co
 In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
 
 * XM Fax and XM SendSecure supports **SP-initiated** SSO.
+* XM Fax and XM SendSecure supports [Automated user provisioning](xm-fax-and-xm-send-secure-provisioning-tutorial.md).
 
 > [!NOTE]
 > Identifier of this application is a fixed string value so only one instance can be configured in one tenant.

@@ -1,13 +1,13 @@
 ---
 title: 'Tutorial: Microsoft Entra SSO integration with F5’s BIG-IP Easy Button for header-based SSO'
 description: Learn how to Configure SSO between Microsoft Entra ID and F5’s BIG-IP Easy Button for header-based SSO.
-services: active-directory
+
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: jeedes

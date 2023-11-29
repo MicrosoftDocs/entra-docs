@@ -1,13 +1,13 @@
 ---
 title: 'Tutorial: Prepare a Node.js web application for authentication'
 description: Learn how to create a Node web app project, then prepare it for authentication
-services: active-directory
+ 
 author: kengaderdus
 manager: mwongerapk
 
 ms.author: kengaderdus
 ms.service: active-directory
-ms.workload: identity
+ 
 ms.subservice: ciam
 ms.topic: tutorial
 ms.date: 07/27/2023

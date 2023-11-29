@@ -3,7 +3,7 @@
 title: Invitation redemption in B2B collaboration
 description: Describes the Microsoft Entra B2B collaboration invitation redemption experience for end users, including the agreement to privacy terms.
 
-services: active-directory
+ 
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: conceptual
@@ -12,7 +12,7 @@ ms.author: cmulligan
 author: csmulligan
 manager: celestedg
 
-ms.collection: engagement-fy23, M365-identity-device-management
+ms.collection: M365-identity-device-management
 
 # Customer intent: As a tenant administrator, I want to make sure that guest users can access resources and the consent process.
 ---

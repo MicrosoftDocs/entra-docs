@@ -3,7 +3,7 @@ metadata:
   title: B2B collaboration FAQs
   description: Get answers to frequently asked questions about Microsoft Entra B2B collaboration.
   
-  services: active-directory
+   
   ms.service: active-directory
   ms.subservice: B2B
   ms.topic: faq

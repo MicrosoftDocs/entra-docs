@@ -1,13 +1,13 @@
 ---
 title: 'Tutorial: Microsoft Entra SSO integration with Forcepoint Cloud Security Gateway - User Authentication'
 description: Learn how to configure single sign-on between Microsoft Entra ID and Forcepoint Cloud Security Gateway - User Authentication.
-services: active-directory
+
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: jeedes
@@ -36,6 +36,7 @@ For more information, see [Azure built-in roles](~/identity/role-based-access-co
 In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
 
 * Forcepoint Cloud Security Gateway - User Authentication supports **SP** initiated SSO.
+* Forcepoint Cloud Security Gateway - User Authentication supports [Automated user provisioning](forcepoint-cloud-security-gateway-provisioning-tutorial.md).
 
 > [!NOTE]
 > Identifier of this application is a fixed string value so only one instance can be configured in one tenant.

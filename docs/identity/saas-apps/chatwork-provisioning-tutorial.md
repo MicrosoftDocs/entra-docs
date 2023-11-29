@@ -9,7 +9,7 @@ manager: jeedes
 ms.assetid: 586bcb81-1c00-4b46-9da0-4aa86c6c8fd5
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 
 
 ms.topic: tutorial

@@ -1,13 +1,13 @@
 ---
 title: 'Tutorial: Configure Workday inbound provisioning in Microsoft Entra ID'
 description: Learn how to configure inbound provisioning from Workday to Microsoft Entra ID
-services: active-directory
+
 author: cmmdesai
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.topic: tutorial
-ms.workload: identity
+
 ms.date: 11/21/2022
 ms.author: chmutali
 ---

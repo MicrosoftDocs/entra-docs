@@ -1,13 +1,13 @@
 ---
 title: Overview of the Microsoft Entra application gallery
 description: An overview of using the Microsoft Entra application gallery.
-services: active-directory
+
 author: omondiatieno
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: overview
-ms.workload: identity
+
 ms.date: 01/22/2022
 ms.author: jomondi
 ms.reviewer: ergreenl

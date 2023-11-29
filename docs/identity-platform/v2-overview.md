@@ -1,27 +1,24 @@
 ---
 title: Microsoft identity platform overview
 description: Learn about the components of the Microsoft identity platform and how they can help you build identity and access management (IAM) support into your applications.
-services: active-directory
 author: OwenRichards1
 manager: CelesteDG
-
+ms.author: owenrichards
+ms.date: 11/10/2023
+ms.reviewer: saeeda, dmwendia
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: overview
-ms.workload: identity
-ms.date: 11/10/2023
-ms.author: owenrichards
-ms.reviewer: saeeda, dmwendia
-# Customer intent: As an application developer, I want a quick introduction to the Microsoft identity platform so I can decide if this platform meets my application development requirements.
+#Customer intent: As an application developer, I want a quick introduction to the Microsoft identity platform so I can decide if this platform meets my application development requirements.
 ---
 
 # What is the Microsoft identity platform?
 
-The Microsoft identity platform is a cloud identity service that allows you to build applications your users and customers can sign in to using their Microsoft identities or social accounts. It authorizes access to your own APIs or Microsoft APIs like Microsoft Graph.The identity platform supports developers building single-tenant, line-of-business (LOB) applications, as well as multi-tenant software-as-a-service (SaaS) applications.
+The Microsoft identity platform is a cloud identity service that allows you to build applications your users and customers can sign in to using their Microsoft identities or social accounts. It authorizes access to your own APIs or Microsoft APIs like Microsoft Graph. The identity platform supports developers building single-tenant, line-of-business (LOB) applications, as well as multi-tenant software-as-a-service (SaaS) applications.
 
-The following diagram shows the Microsoft identity platform experience at a high level, including the app registration experience, SDKs, endpoints, and supported account types.
+The following diagram shows the Microsoft identity platform at a high level, including the application registration experience, SDKs, endpoints, and supported identities or account types.
 
-![Diagram showing the components of the Microsoft identity platform](./media/v2-overview/about-microsoft-identity-platform.svg)
+![Diagram showing the components of the Microsoft identity platform.](./media/v2-overview/about-microsoft-identity-platform.svg)
 
 There are several components that make up the Microsoft identity platform:
 
@@ -31,7 +28,7 @@ There are several components that make up the Microsoft identity platform:
   - Social or local accounts, by using Azure AD B2C
   - Social or local customer accounts, by using Microsoft Entra External ID
   
-- **Open-source libraries**: Microsoft Authentication Library (MSAL) and support for other standards-compliant libraries.
+- **Open-source libraries**: Microsoft Authentication Library (MSAL) and support for other standards-compliant libraries. The open source MSAL libraries are recommended as they provide built-in support for conditional access scenarios, single sign-on (SSO) experiences for your users, built-in token caching support, and more. MSAL supports the different authorization grants and token flows used in different application types and scenarios.
 - **Microsoft identity platform endpoint** - The Microsoft identity platform endpoint is OIDC certified. It works with the Microsoft Authentication Libraries (MSAL) or any other standards-compliant library. It implements human readable scopes, in accordance with industry standards.
 - **Application management portal**: A registration and configuration experience in the Microsoft Entra admin center, along with the other application management capabilities.
 - **Application configuration API and PowerShell**: Programmatic configuration of your applications through the Microsoft Graph API and PowerShell so you can automate your DevOps tasks.
@@ -84,7 +81,7 @@ Learn how core authentication and Microsoft Entra concepts apply to the Microsof
 
 [Microsoft Entra B2B](~/external-id/what-is-b2b.md) - Invite external users into your Microsoft Entra tenant as "guest" users, and assign permissions for authorization while they use their existing credentials for authentication.
 
-[Microsoft Entra External ID](./external-id/customers/overview-customers-ciam.md) - A customer identity and access management (CIAM) solution that lets you create secure, customized sign-in experiences for your customer-facing apps and services.
+[Microsoft Entra External ID](~/external-id/customers/overview-customers-ciam.md) - A customer identity and access management (CIAM) solution that lets you create secure, customized sign-in experiences for your customer-facing apps and services.
 
 ## Next steps
 

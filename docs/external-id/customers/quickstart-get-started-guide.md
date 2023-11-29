@@ -1,11 +1,11 @@
 ---
 title: Quickstart - Get started guide
 description: Use our quickstart guide to customize your tenant in just a few steps.
-services: active-directory
+ 
 author: csmulligan
 manager: CelesteDG
 ms.service: active-directory
-ms.workload: identity
+ 
 ms.subservice: ciam
 ms.topic: quickstart
 ms.date: 09/26/2023

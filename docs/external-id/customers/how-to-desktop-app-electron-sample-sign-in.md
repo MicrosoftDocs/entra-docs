@@ -1,13 +1,13 @@
 ---
 title: Sign in users in a sample Electron desktop application.
 description: Learn how to configure a sample Electron desktop to sign in and sign out users.
-services: active-directory
+ 
 author: kengaderdus
 manager: mwongerapk
 
 ms.author: kengaderdus
 ms.service: active-directory
-ms.workload: identity
+ 
 ms.subservice: ciam
 ms.topic: how-to
 ms.date: 05/22/2023

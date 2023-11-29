@@ -1,18 +1,16 @@
 ---
 title: Configure SSO on macOS and iOS
 description: Learn how to configure single sign on (SSO) on macOS and iOS.
-services: active-directory
 author: henrymbuguakiarie
 manager: CelesteDG
-
+ms.author: henrymbugua
+ms.custom:
+ms.date: 05/03/2023
+ms.reviewer:
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-ms.workload: identity
-ms.date: 05/03/2023
-ms.author: henrymbugua
-ms.reviewer:
-ms.custom: aaddev, engagement-fy23
+#Customer intent:
 ---
 
 # Configure SSO on macOS and iOS

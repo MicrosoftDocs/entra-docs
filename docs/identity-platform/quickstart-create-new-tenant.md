@@ -1,17 +1,15 @@
 ---
 title: "Quickstart: Create a Microsoft Entra tenant"
 description: In this quickstart, you learn how to create a Microsoft Entra tenant for use in developing applications that use the Microsoft identity platform for authentication and authorization.
-services: active-directory
 author: OwenRichards1
 manager: CelesteDG
+ms.author: ryanwi
+ms.custom: fasttrack-edit, mode-other
+ms.date: 07/11/2023
+ms.reviewer: jmprieur
 ms.service: active-directory
 ms.subservice: develop
-ms.workload: identity
 ms.topic: quickstart
-ms.date: 07/11/2023
-ms.author: ryanwi
-ms.reviewer: jmprieur
-ms.custom: aaddev, identityplatformtop40, fasttrack-edit, mode-other
 #Customer intent: As an application developer, I need to create a Microsoft identity environment so I can use it to register applications.
 ---
 

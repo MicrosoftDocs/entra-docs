@@ -1,17 +1,17 @@
 ---
 title: My Apps portal overview
 description: Learn about how to manage applications in the My Apps portal.
-services: active-directory
+
 author: omondiatieno
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: conceptual
-ms.workload: identity
+
 ms.date: 10/18/2023
 ms.author: jomondi
 ms.reviewer: saibandaru
-ms.custom: contperf-fy23q1, enterprise-apps
+ms.custom: enterprise-apps
 #Customer intent: As a Microsoft Entra administrator, I want to make applications available to users in the My Apps portal.
 
 ---

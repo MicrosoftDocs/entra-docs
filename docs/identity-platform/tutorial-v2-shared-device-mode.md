@@ -1,18 +1,16 @@
 ---
 title: "Tutorial: Use shared-device mode with the Microsoft Authentication Library (MSAL) for Android"
 description: In this tutorial, you learn how to prepare an Android device to run in shared mode and run a first-line worker app.
-services: active-directory
 author: henrymbuguakiarie
 manager: CelesteDG
-
+ms.author: henrymbugua
+ms.custom:
+ms.date: 10/24/2023
+ms.reviewer: brandwe
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: tutorial
-ms.workload: identity
-ms.date: 10/24/2023
-ms.author: henrymbugua
-ms.reviewer: brandwe
-ms.custom: aaddev, identityplatformtop40
+#Customer intent:
 ---
 
 # Tutorial: Use shared-device mode in your Android application

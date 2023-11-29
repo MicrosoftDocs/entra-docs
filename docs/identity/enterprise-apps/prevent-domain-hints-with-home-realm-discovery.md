@@ -1,7 +1,7 @@
 ---
 title: Prevent sign-in auto-acceleration using Home Realm Discovery policy
 description: Learn how to prevent domain_hint auto-acceleration to federated IDPs.
-services: active-directory
+
 author: omondiatieno
 manager: CelesteDG
 ms.service: active-directory

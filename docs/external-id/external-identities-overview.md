@@ -3,7 +3,7 @@
 title: Microsoft Entra External ID overview
 description: Microsoft Entra External ID allow you to collaborate with or publish apps to people outside your organization. Compare solutions for External Identities, including Microsoft Entra B2B collaboration, Microsoft Entra B2B collaboration, and Azure AD B2C.
 
-services: active-directory
+ 
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: overview

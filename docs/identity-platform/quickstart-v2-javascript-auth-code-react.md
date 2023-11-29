@@ -1,18 +1,16 @@
 ---
 title: "Quickstart: Sign in users in JavaScript React single-page apps (SPA) with auth code and call Microsoft Graph"
 description: In this quickstart, learn how a JavaScript React single-page application (SPA) can sign in users of personal accounts, work accounts, and school accounts by using the authorization code flow and call Microsoft Graph.
-services: active-directory
+ROBOTS: NOINDEX
 author: henrymbuguakiarie
 manager: CelesteDG
+ms.author: henrymbugua
+ms.custom: scenarios:getting-started, languages:JavaScript, devx-track-js, mode-other
+ms.date: 09/25/2023
+ms.reviewer: jamesmantu
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-ms.workload: identity
-ms.date: 09/25/2023
-ROBOTS: NOINDEX
-ms.author: henrymbugua
-ms.reviewer: jamesmantu
-ms.custom: aaddev, "scenarios:getting-started", "languages:JavaScript", devx-track-js, mode-other
 #Customer intent: As an app developer, I want to learn how to login, logout, conditionally render components to authenticated users, and acquire an access token for a protected resource such as Microsoft Graph by using the Microsoft identity platform so that my JavaScript React app can sign in users of personal accounts, work accounts, and school accounts.
 ---
 > # Quickstart: Sign in and get an access token in a React SPA using the auth code flow
