@@ -7,7 +7,7 @@ ms.service: active-directory
 ms.topic: conceptual
 ms.workload: identity
 ms.subservice: report-monitor
-ms.date: 11/16/2023
+ms.date: 11/29/2023
 ms.author: sarahlipsey
 ms.reviewer: sarbar
 
@@ -32,10 +32,12 @@ Microsoft Entra Health consists of multiple layers, which allows you to navigate
 
 ## How to access Microsoft Entra Health
 
-The SLA Attainment report is available for all Microsoft Entra tenants. Scenario Monitoring is currently in preview, but can be enabled for your view of the tenant.
+Microsoft Entra Health currently includes SLA attainment and Scenario monitoring (preview). The SLA Attainment report is available for all Microsoft Entra tenants. Scenario Monitoring is currently in preview, but can be enabled for your view of the tenant.
 
 1. Sign into the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](~/identity/role-based-access-control/permissions-reference.md#reports-reader).
 1. Browse to **Identity** > **Monitoring and health** > **Health (preview)**.
+
+![Screenshot of the Microsoft Entra Health landing page.](media/concept-scenario-health/identity-health-landing-page.png)
 
 ### Enable the Scenario monitoring preview
 
@@ -47,7 +49,7 @@ If you'd like to view the **Scenario monitoring (preview)**:
 
 Enabling preview feature might take up to 24 hours to populate. Enabling the preview only changes your view, not the entire tenant. You can disable the preview at any time.
 
-## How it works
+## Scenario monitoring (preview)
 
 Many IT administrators spend a considerable amount of time investigating the following key scenarios:
 
@@ -59,19 +61,7 @@ The data associated with each of these scenarios is aggregated into a view that'
 
 At this time, data is aggregated every 15 minutes, so you're getting near real-time insights into your tenant's health. If there's an anomaly detected, an alert is generated. The alert provides you with diagnostic information and action steps to resolve the issue.
 
-The scenarios available in Microsoft Entra ID Health are always available, even if there are no alerts.
-
-## SLA attainment
-
-In addition to providing global SLA performance, Microsoft Entra ID now provides tenant-level SLA performance. The Service Level Agreement (SLA) attainment is the user authentication availability for Microsoft Entra ID. The target SLA threshold is 99.99%.
-
-Hover your mouse over the bar for a month to view the percentage for that month. A table with the same details appears below the graph.
-
-![Screenshot of the SLA attainment report.](media/concept-scenario-health/sla-attainment.png)
-
-## Scenario monitoring (preview)
-
-Microsoft Entra Scenario monitoring (preview) provides insights into important events within a scenario, such as sign-ins that require a compliant or managed device. Each scenario detail page provides trends and totals for that scenario for the last 30 days. The graph aggregates data every 15 minutes. You can set the date range to 24 hours, 7 days, or 1 month.
+The scenarios available in Microsoft Entra ID Health are always available, even if there are no alerts. Each scenario detail page provides trends and totals for that scenario for the last 30 days. You can set the date range to 24 hours, 7 days, or 1 month.
 
 Select **View details** on a tile to view the metrics for that scenario.
 
@@ -115,3 +105,11 @@ This scenario looks at SAML 2.0 authentication attempts that the Microsoft Entra
 - [Use a SAML 2.0 IdP for single sign on](~/identity/hybrid/connect/how-to-connect-fed-saml-ldp.md).
 
 ![Screenshot of the SAML scenario.](media/concept-scenario-health/scenario-monitoring-SAML.png)
+
+## SLA attainment
+
+In addition to providing global SLA performance, Microsoft Entra ID now provides tenant-level SLA performance. The Service Level Agreement (SLA) attainment is the user authentication availability for Microsoft Entra ID. The target SLA threshold is 99.99%.
+
+Hover your mouse over the bar for a month to view the percentage for that month. A table with the same details appears below the graph.
+
+![Screenshot of the SLA attainment report.](media/concept-scenario-health/sla-attainment.png)
