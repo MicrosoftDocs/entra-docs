@@ -35,8 +35,8 @@ User attributes are values collected from a user during self-service sign-up. In
 
   - String text box
   - Numeric text box
-  - Single-select checkbox
-  - Multiselect checkboxes or radio buttons with a heading and the option to include hyperlinks (for example, to your Terms of Use or Privacy Policy)
+  - Single-select checkbox, with the option to include hyperlinks (for example, to your Terms of Use or Privacy Policy).
+  - Multiselect checkboxes or radio buttons with a heading and the option to include hyperlinks.
 
 The following attribute collection page example combines built-in attributes and custom attributes, including a checkbox with hyperlinks to more content.
 
@@ -46,10 +46,9 @@ In this example:
 
 - The **Display Name** field is a built-in attribute.
 - The **Loyalty Number** is a custom attribute with a free-form entry field that accepts a numeric integer. You can configure this format using the **Int** data type and **NumericTextBox** user input type.
-- The **Add me to the Woodgrove mailing list** value is a single-select checkbox. You can configure this format using the **Boolean** data type, which defaults to the **CheckboxSingleSelect** user input type.
-- The **Terms and conditions** custom attribute consists of a series of one or more checkboxes that allow for multiple selections. The checkbox text supports Markdown language so you can add hyperlinks to more content, such as your terms of use and privacy policy. You can configure this format using a **String** data type and **CheckboxMultiSelect** user input type.
+- The **terms of use** and **privacy policy** custom attributes are single-select checkboxes. You can configure a single checkbox using the **Boolean** data type, which defaults to the **CheckboxSingleSelect** user input type. You can also add links to the checkbox labels using Markdown language. In this example, the checkbox labels link to your terms of use and privacy policy.
 
-Other input types are available, including radio buttons and free-form text entry fields. Learn how to [create custom user attributes](#create-custom-user-attributes) in this article.
+Other input types are available, including multiselect checkboxes, radio buttons, and free-form text entry fields. Learn how to [create custom user attributes](#create-custom-user-attributes) in this article.
 
 ### Where custom user attributes are stored
 
@@ -85,8 +84,8 @@ Before you begin, determine which types of user input controls would work best f
 |-----------|--------------------|-------------|
 |String     |TextBox             |Free-form text entry field.         |
 |String     |RadioSingleSelect   |Series of radio buttons with only one selection allowed. Radio button text supports Markdown language for hyperlinks to other content.           |
-|String     |CheckboxMultiSelect |Series of one or more checkboxes with multiple selections allowed. Checkbox text supports Markdown language for hyperlinks to other content (for example, Terms of Use, Privacy Policy).        |
-|Boolean    |CheckboxSingleSelect|Single boolean checkbox with label.        |
+|String     |CheckboxMultiSelect |Series of one or more checkboxes with multiple selections allowed. Checkbox text supports Markdown language for hyperlinks to other content.        |
+|Boolean    |CheckboxSingleSelect|Single boolean checkbox with label. Label text supports Markdown language for hyperlinks to other content (for example, Terms of Use, Privacy Policy).      |
 |Int        |NumericTextBox      |Free-form integer entry.         |
 
 To define a custom user attribute, you first create the attribute at the tenant level so it can be used in any user flow in the tenant. Then you assign the attribute to your sign-up user flow and configure how you want it to appear on the sign-up page.
@@ -141,20 +140,36 @@ On the **Page layout** page, you can indicate which attributes are required and 
 
 1. Under **Customize**, select **Page layouts**. The attributes you chose to collect appear.
 
-1. To configure radio buttons or multiselect checkboxes, find the attribute with a data type of **String** that you want to configure. Select the value in the **User Input Type** column. Then in the editor pane, choose the appropriate user input type and enter the values. For details, see the following sections:
+1. Configure checkboxes or radio buttons:
 
-   - [To configure multiple checkboxes (CheckboxMultiSelect)](#to-configure-multiple-checkboxes-checkboxmultiselect)
-   - [To configure radio buttons (RadioSingleSelect)](#to-configure-radio-buttons-radiosingleselect)
+   - **Single-select checkbox**: A Boolean attribute type renders as a single-select checkbox on the sign-up page. To configure the text that displays next to the checkbox, select and edit the value in the **Label** column. Use Markdown language to add hyperlinks. For details, see [To configure a single-select checkbox (CheckboxSingleSelect)](#to-configure-a-single-select-checkbox-checkboxsingleselect)
+   - **Multiselect checkboxes**: Find the **String** data type attribute you want to configure, and select the value in the **User Input Type** column. In the editor pane, choose the appropriate user input type and enter the values. For details, see [To configure multiple checkboxes (CheckboxMultiSelect)](#to-configure-multiple-checkboxes-checkboxmultiselect).
+   - **Radio buttons**: Find the **String** data type attribute you want to configure, and select the value in the **User Input Type** column. In the editor pane, choose the appropriate user input type and enter the values. For details, see [To configure radio buttons (RadioSingleSelect)](#to-configure-radio-buttons-radiosingleselect)
 
-1. A Boolean attribute type renders as a single-select checkbox on the sign-up page. To configure the text you want to display next to the checkbox, select the value in the **Label** column and enter the text.
+1. Configure how the attributes appear on the sign-up page:
 
-1. To change how the attributes appear on the sign-up page:
-
-   - Select the value under the **Label** column to edit the attribute's label.
-   - Select the checkbox in the **Required** column for an attribute to require the user's input during sign-up.
+   - Select the value under the **Label** column to edit any attribute's label.
+   - Select the checkbox in the **Required** column to require a user's input during sign-up.
    - Select an attribute, and then select **Move up**, **Move down**, **Move to the top**, or **Move to the bottom** to change the order of display.
 
 1. When all your changes are complete, select **Save**.
+
+### To configure a single-select checkbox (CheckboxSingleSelect)
+
+An attribute with a Boolean data type has a user input type of CheckboxSingleSelect. You can edit the **Label** value to change the text that appears next to the checkbox. You can also use Markdown language to add hyperlinks.
+
+1. On the **Page layouts** page, find the attribute with data type of **String** that you want to configure as a series of checkboxes.
+
+1. Select the value in the **Label** column and enter the text you want to display next to the checkbox. Use Markdown language to add hyperlinks. For example, if you want to combine your terms of use and privacy policy into a single required checkbox, you can enter:
+
+   `I have read and agree to the [terms of use](https://woodgrove.com/terms-of-use) and the [privacy policy](https://woodgrove.com/privacy)`.
+
+1. Select **Ok**.
+
+   :::image type="content" source="media/how-to-define-custom-attributes/page-layout-single-checkbox.png" alt-text="Screenshot of adding a checkbox to a string attribute in the page layout options." lightbox="media/how-to-define-custom-attributes/page-layout-single-checkbox.png":::
+
+1. On the **Page layouts** page, select **Save**.
+
 
 ### To configure multiple checkboxes (CheckboxMultiSelect)
 
@@ -170,9 +185,7 @@ An attribute with a String data type can be configured as a CheckboxMultiSelect 
 
 1. For each checkbox you want to add, create a new line and enter the following information:
 
-   - Under **Text**, enter the text you want to display next to the checkbox. Use Markdown language to add hyperlinks. For example:
-
-     - `I have read and agree to the [terms of use](https://woodgrove.com/terms-of-use) and the [privacy policy](https://woodgrove.com/privacy).`
+   - Under **Text**, enter the text you want to display next to the checkbox. Use Markdown language to add hyperlinks.
 
    - Under **Values**, enter a value to be written on the user object and returned as the claim if the user selects the checkbox.
 
