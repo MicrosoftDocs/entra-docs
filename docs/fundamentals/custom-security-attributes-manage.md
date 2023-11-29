@@ -10,7 +10,7 @@ ms.subservice: fundamentals
 ms.workload: identity
 ms.custom: has-azure-ad-ps-ref
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 11/28/2023
 ms.collection: M365-identity-device-management
 ---
 
@@ -268,7 +268,7 @@ Changes have been made to custom security attribute audit logs for general avail
 
 ### Use new audit logs location
 
-During the preview, custom security attribute audit logs were written to the directory audit logs endpoint. In October 2023, a new endpoint was added exclusively for custom security attribute audit logs. The following screenshot shows the directory audit logs and the new custom security attribute audit logs location.
+During the preview, custom security attribute audit logs were written to the directory audit logs endpoint. In October 2023, a new endpoint was added exclusively for custom security attribute audit logs. The following screenshot shows the directory audit logs and the new custom security attribute audit logs location. To get the custom security attribute audit logs using the Microsoft Graph API, see the [customSecurityAttributeAudit resource type](/graph/api/resources/customsecurityattributeaudit).
 
 :::image type="content" source="media/custom-security-attributes-manage/audit-logs-directory-custom-security.png" alt-text="Screenshot of audit logs that shows Directory and Custom Security tabs." lightbox="media/custom-security-attributes-manage/audit-logs-directory-custom-security.png":::
 
