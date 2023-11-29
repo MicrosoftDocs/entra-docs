@@ -12,7 +12,7 @@ ms.topic: how-to
 ms.date: 11/08/2023
 ms.author: barclayn
 ms.reviewer: addimitu
-ms.custom: it-pro, has-azure-ad-ps-ref
+ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 
 ms.collection: M365-identity-device-management
 ---
@@ -116,45 +116,55 @@ A few enterprise applications can't be deleted in the Microsoft Entra admin cent
 
 1. Install the MSOnline module for PowerShell by running the following command:
 
-   `Install-Module -Name MSOnline`
+   ```powershell
+   Install-Module Microsoft.Graph
+   ```
 
 2. Install the Az PowerShell module by running the following command:
 
-   `Install-Module -Name Az`
+   ```powershell
+   Install-Module -Name Az
+   ```
 
 3. Create or use a managed administrative account from the tenant that you want to delete. For example: `newAdmin@tenanttodelete.onmicrosoft.com`.
 
-4. Open PowerShell and connect to Microsoft Entra ID by using admin credentials with the following command:
+4. Open PowerShell and connect to Microsoft Entra ID by using admin credentials with the following command: `Connect-MgGraph`
 
-    `connect-msolservice`
-
-    >[!WARNING]
-    > You must run PowerShell by using admin credentials for the tenant that you're trying to delete. Only homed-in admins have access to manage the directory via Powershell. You can't use guest user admins, Microsoft accounts, or multiple directories. 
-    >
-    > Before you proceed, verify that you're connected to the tenant that you want to delete with the MSOnline module. We recommend that you run the `Get-MsolDomain` command to confirm that you're connected to the correct tenant ID and `onmicrosoft.com` domain.
+   >[!WARNING]
+   > You must run PowerShell by using admin credentials for the tenant that you're trying to delete. Only homed-in admins have access to manage the directory via Powershell. You can't use guest user admins, Microsoft accounts, or multiple directories. 
+   >
+   > Before you proceed, verify that you're connected to the tenant that you want to delete with the MSOnline module. We recommend that you run the `Get-MgDomain` command to confirm that you're connected to the correct tenant ID and `onmicrosoft.com` domain.
 
 5. Run the following commands to set the tenant context.  DO NOT skip these steps or you run the risk of deleting enterprise apps from the wrong tenant.
 
-   `Clear-AzContext -Scope CurrentUser`
+   ```powershell
+   Clear-AzContext -Scope CurrentUser
+   Connect-AzAccount -Tenant <object id of the tenant you are attempting to delete>
+   Get-AzContext
+   ```
 
-   `Connect-AzAccount -Tenant \<object id of the tenant you are attempting to delete\>`
-   
-   `Get-AzContext`
-
-    >[!WARNING]
-    > Before you proceed, verify that you're connected to the tenant that you want to delete with the Az PowerShell module. We recommend that you run the `Get-AzContext` command to check the connected tenant ID and `onmicrosoft.com` domain.  Do NOT skip the above steps or you run the risk of deleting enterprise apps from the wrong tenant.
+   >[!WARNING]
+   > Before you proceed, verify that you're connected to the tenant that you want to delete with the Az PowerShell module. We recommend that you run the `Get-AzContext` command to check the connected tenant ID and `onmicrosoft.com` domain.  Do NOT skip the above steps or you run the risk of deleting enterprise apps from the wrong tenant.
 
 6. Run the following command to remove any enterprise apps that you can't delete:
 
-    `Get-AzADServicePrincipal | ForEach-Object { Remove-AzADServicePrincipal -ObjectId $_.Id }`
+   ```powershell
+   Get-AzADServicePrincipal | ForEach-Object { Remove-AzADServicePrincipal -ObjectId $_.Id }
+   ```
 
 7. Run the following command to remove applications and service principals:
 
-   `Get-MsolServicePrincipal | Remove-MsolServicePrincipal`
+   ```powershell
+   Get-MgServicePrincipal | ForEach-Object { Remove-MgServicePrincipal -ServicePrincipalId $_.Id }
+   ```
 
 8. Run the following command to disable any blocking service principals:
 
-    `Get-MsolServicePrincipal | Set-MsolServicePrincipal -AccountEnabled $false`
+   ```powershell
+   $ServicePrincipalUpdate =@{ "accountEnabled" = "false" }
+
+   Get-MgServicePrincipal | ForEach-Object { Update-MgServicePrincipal -ServicePrincipalId $_.Id -BodyParameter $ServicePrincipalUpdate }
+   ```
 
 9. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator)., and remove any new admin account that you created in step 3.
 
