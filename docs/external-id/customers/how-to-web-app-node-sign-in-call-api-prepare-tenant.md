@@ -27,7 +27,7 @@ In this article, you prepare your Microsoft Entra ID for customers tenant for au
 
 ### Grant API permissions to the web app
 
-From the prerequisites, you registered a client app in your customers tenant. You also registered a web API app in your customers  
+From the prerequisites, you registered a client app in your customers tenant. You also registered a web API app in your customers. Now, you need to grant API permissions to your client app: 
 
 [!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/register-app/grant-api-permission-call-api-common.md)]
 
