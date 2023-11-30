@@ -21,7 +21,7 @@ In this article, you prepare your Microsoft Entra ID for customers tenant for au
 
 - Complete the steps in [Tutorial: Secure an ASP.NET web API registered in a customer tenant](tutorial-protect-web-api-dotnet-core-build-app.md). After you complete this tutorial, you've registered a web API in your customers tenant, which exposes API permissions and publishes application roles. You also have a secured web API. You call this web API from the client web application.
 
-## Configure idtyp token claim
+## Configure idtyp token claim [optional]
 
 [!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/register-app/add-optional-claims-access.md)]
 
