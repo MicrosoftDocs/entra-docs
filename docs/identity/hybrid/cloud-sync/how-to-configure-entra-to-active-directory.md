@@ -143,7 +143,7 @@ Currently, the AD Schema is not discoverable and there is fixed set of mappings.
 |parentDistinguishedName|OU=Users,DC=&lt;domain selected at configuration start&gt;,DC=com|Constant|Default in the UI</br></br>Not visible in UI|
 |UniversalScope|True|Constant|CANNOT UPDATE IN UI - SHOULD NOT UPDATE</br></br>Not visible in UI|
 
-Be aware that not all of the above mappings are visible in the portal.  For more information on how to add an attribute mapping see, see [attribute mapping](how-to-attribute-mapping.md#add-an-attribute-mapping---microsoft-entra-id-to-ad).
+Be aware that not all of the above mappings are visible in the portal.  For more information on how to add an attribute mapping see, see [attribute mapping](how-to-attribute-mapping.md#add-an-attribute-mapping---microsoft-entra-id-to-ad-preview).
 
 
 ### Attribute scope filtering
@@ -207,7 +207,7 @@ To create an attribute based filter use the following steps:
 
 :::image type="content" source="media/how-to-configure-entra-to-active-directory/entra-to-ad-7.png" alt-text="Screenshot of the setting up attribute based scoping." lightbox="media/how-to-configure-entra-to-active-directory/entra-to-ad-7.png":::
 
-For more information, see [attribute mapping](how-to-attribute-mapping.md#add-an-attribute-mapping---microsoft-entra-id-to-ad).
+For more information, see [attribute mapping](how-to-attribute-mapping.md#add-an-attribute-mapping---microsoft-entra-id-to-ad-preview).
 
 
 ## On-demand provisioning
