@@ -199,13 +199,13 @@ Mapping types based on user names and email addresses are considered low-affinit
 
 | Certificate mapping field | Examples of values in certificateUserIds | User object attributes | Type | 
 |:--------------------------|:----------------------------------------:|:----------------------:|:----:|
-|PrincipalName | `X509:\<PN>bob@woodgrove.com` | userPrincipalName <br> onPremisesUserPrincipalName <br> certificateUserIds | low-affinity |
-|RFC822Name	| `X509:\<RFC822>user@woodgrove.com` | userPrincipalName <br> onPremisesUserPrincipalName <br> certificateUserIds | low-affinity |
-|IssuerAndSubject | `X509:\<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA\<S>DC=com,DC=contoso,OU=UserAccounts,CN=mfatest` | certificateUserIds | low-affinity |
-|Subject | `X509:\<S>DC=com,DC=contoso,OU=UserAccounts,CN=mfatest`  | certificateUserIds | low-affinity |
-|SKI | `X509:\<SKI>123456789abcdef` | certificateUserIds | high-affinity |
-|SHA1PublicKey | `X509:\<SHA1-PUKEY>123456789abcdef` | certificateUserIds | high-affinity |
-|IssuerAndSerialNumber | `X509:\<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA\<SR>b24134139f069b49997212a86ba0ef48` <br> To get the correct value for serial number, run this command and store the value shown in CertificateUserIds:<br> **Syntax**:<br> `Certutil –dump –v [~certificate path~] >> [~dumpFile path~]` <br> **Example**: <br> `certutil -dump -v firstusercert.cer >> firstCertDump.txt` | certificateUserIds | high-affinity |
+|PrincipalName | `X509:<PN>bob@woodgrove.com` | userPrincipalName <br> onPremisesUserPrincipalName <br> certificateUserIds | low-affinity |
+|RFC822Name	| `X509:<RFC822>user@woodgrove.com` | userPrincipalName <br> onPremisesUserPrincipalName <br> certificateUserIds | low-affinity |
+|IssuerAndSubject | `X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<S>DC=com,DC=contoso,OU=UserAccounts,CN=mfatest` | certificateUserIds | low-affinity |
+|Subject | `X509:<S>DC=com,DC=contoso,OU=UserAccounts,CN=mfatest`  | certificateUserIds | low-affinity |
+|SKI | `X509:<SKI>123456789abcdef` | certificateUserIds | high-affinity |
+|SHA1PublicKey | `X509:<SHA1-PUKEY>123456789abcdef` | certificateUserIds | high-affinity |
+|IssuerAndSerialNumber | `X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<SR>b24134139f069b49997212a86ba0ef48` <br> To get the correct value for serial number, run this command and store the value shown in CertificateUserIds:<br> **Syntax**:<br> `Certutil –dump –v [~certificate path~] >> [~dumpFile path~]` <br> **Example**: <br> `certutil -dump -v firstusercert.cer >> firstCertDump.txt` | certificateUserIds | high-affinity |
 
 ### Define Affinity binding at the tenant level and override with custom rules
 
