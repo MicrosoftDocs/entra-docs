@@ -96,8 +96,7 @@ In the following example, the company branding for Woodgrove Groceries appears o
 1. Browse to **Identity** > **User experiences** > **Company branding**.
     - If you currently have a customized sign-in experience, the **Edit** button is available.
 
-   :::image type="content" source="media/xxx.png" alt-text="Screenshot of Custom branding landing page with Company branding highlighted in the side menu and Configure button.":::
-    ![](media/how-to-customize-branding/customize-branding-getting-started.png)
+   :::image type="content" source="media/how-to-customize-branding/customize-branding-getting-started.png" alt-text="Screenshot of Custom branding landing page with Company branding highlighted in the side menu and Configure button.":::
 
 The sign-in experience process is grouped into sections. At the end of each section, select the **Review + create** button to review what you have selected and submit your changes or the **Next** button to move to the next section.
 
