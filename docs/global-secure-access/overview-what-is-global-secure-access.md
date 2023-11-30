@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: overview
-ms.date: 07/27/2023
+ms.date: 11/30/2023
 ms.service: network-access
 ms.custom: references_regions
 ---
@@ -36,11 +36,6 @@ Microsoft Entra Internet Access secures access to Microsoft 365, SaaS, and publi
 - Improve the precision of risk assessments on users, locations, and devices.
 - Deploy side-by-side with third party SSE solutions.
 - Acquire network traffic from the desktop client or from a remote network, such as a branch location.
-
-#### Private preview features
-
-The following new capabilities are available in the private preview of Microsoft Entra Internet Access. To request access to the private preview, complete [the private preview interest form](https://aka.ms/entra-ia-preview).
-
 - Dedicated public internet traffic forwarding profile.
 - Protect user access to the public internet while leveraging Microsoft's cloud-delivered, identity-aware SWG solution.
 - Enable web content filtering to regulate access to websites based on their content categories through secure web gateway.
@@ -50,7 +45,7 @@ The following new capabilities are available in the private preview of Microsoft
 
 Microsoft Entra Private Access provides your users - whether in an office or working remotely - secured access to your private, corporate resources. Microsoft Entra Private Access builds on the capabilities of Microsoft Entra application proxy and extends access to any private resource, port, and protocol.
 
-Remote users can connect to private apps across hybrid and multicloud environments, private networks, and data centers from any device and network without requiring a VPN. The service offers per-app adaptive access based on Conditional Access policies, for more granular security than a VPN. 
+Remote users can connect to private apps across hybrid and multicloud environments, private networks, and data centers from any device and network without requiring a VPN. The service offers per-app adaptive access based on Conditional Access policies, for more granular security than a VPN.
 
 ### Key features
 
@@ -59,7 +54,7 @@ Remote users can connect to private apps across hybrid and multicloud environmen
 - Modernize legacy app authentication with deep Conditional Access integration.
 - Provide a seamless end-user experience by acquiring network traffic from the desktop client and deploying side-by-side with your existing third-party SSE solutions.
 
-[!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)] 
+[!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
 
 ## Next steps
 
