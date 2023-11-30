@@ -10,13 +10,13 @@ ms.service: active-directory
 ms.topic: troubleshooting
 ms.subservice: fundamentals
 ms.workload: identity
-ms.date: 09/12/2023
+ms.date: 11/29/2023
 ---
 # Approving Microsoft Support access requests (preview)
 
 In many situations, enabling the collection of **Advanced diagnostic information** during the creation of a support access request is sufficient for Microsoft Support to troubleshoot your issue. In some situations though, a separate approval may be needed to allow Microsoft Support to access your identity diagnostic data.
 
-Microsoft Support access requests (preview) enable you to [give Microsoft Support engineers access to diagnostic data](concept-support-access-requests.md) in your identity service to help solve support requests you submitted to Microsoft. You can use the Microsoft Entra admin center and the Azure portal to manage Microsoft Support access requests (preview).
+Microsoft Support access requests (preview) enable you to [give Microsoft Support engineers access to diagnostic data](concept-support-access-requests.md) in your identity service to help solve support requests you submitted to Microsoft. You can use the Microsoft Entra admin center and the Azure portal to manage Microsoft Support access requests.
 
 This article describes how the process works and how to approve Microsoft Support access requests.
 
@@ -48,7 +48,7 @@ When you have a pending support access request, you can view and approve that re
 
 1. Select the link from the banner message at the top of the page.
 
-    ![Screenshot of the Diagnose and solve problems page with the banner notification highlighted.](media/how-to-approve-support-access-requests/diagnose-solve-problems-banner.png)
+    :::image type="content" source="media/how-to-approve-support-access-requests/diagnose-solve-problems-banner.png" alt-text="Screenshot of the Diagnose and solve problems page with the banner notification highlighted.":::
 
     Or scroll to the bottom of the page and select **Manage pending requests** from the **Microsoft Support Access Requests** section.
 
@@ -56,7 +56,7 @@ When you have a pending support access request, you can view and approve that re
 
 1. Select either the **Support request ID** link or **Review for approval** link for the request you need to approve.
 
-    ![Screenshot of the pending request with links to view details highlighted.](media/how-to-approve-support-access-requests/pending-request-view-details-links.png)
+   :::image type="content" source="media/how-to-approve-support-access-requests/pending-request-view-details-links.png" alt-text="Screenshot of the pending request with links to view details highlighted.":::
 
 ## Approve or reject a support request
 
@@ -69,7 +69,7 @@ When viewing the details of a pending support access request, you can approve or
     - A message appears, indicating this choice may result in slower resolution of your support request.
     - Your support engineer may ask you for data needed to diagnose the issue, and you must collect and provide that information to your support engineer. 
 
-![Screenshot of the Support Access requests details page with the Reject and Approve buttons highlighted.](media/how-to-approve-support-access-requests/pending-request-details.png)
+:::image type="content" source="media/how-to-approve-support-access-requests/pending-request-details.png" alt-text="Screenshot of the Support Access requests details page with the Reject and Approve buttons highlighted.":::
 
 ## Next steps
 
