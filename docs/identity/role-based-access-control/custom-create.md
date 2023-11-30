@@ -11,7 +11,7 @@ ms.topic: how-to
 ms.date: 12/09/2022
 ms.author: rolyon
 ms.reviewer: vincesm
-ms.custom: it-pro, has-azure-ad-ps-ref
+ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.collection: M365-identity-device-management
 ---
 # Create and assign a custom role in Microsoft Entra ID
@@ -24,7 +24,7 @@ Custom roles can be created in the **Roles and administrators** page of the Micr
 
 - Microsoft Entra ID P1 or P2 license
 - Privileged Role Administrator or Global Administrator
-- AzureADPreview module when using PowerShell
+- Microsoft.Graph.Beta module when using PowerShell
 - Admin consent when using Graph explorer for Microsoft Graph API
 
 For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
