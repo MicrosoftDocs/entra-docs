@@ -13,7 +13,7 @@ ms.author: billmath
 ms.collection: M365-identity-device-management
 ---
 
-# Provision groups to Active Directory using Microsoft Entra Cloud Sync
+# Provision groups to Active Directory using Microsoft Entra Cloud Sync (Preview)
 
 The following document will guide you through configuring cloud sync to synchronize groups to on-premises Active Directory.  This configuration document is specific to on-premises Microsoft Entra Cloud Sync's Group Provision to AD.  For information on a traditional on-premises to cloud configuration see [Configure and new installation - AD to Microsoft Entra ID](how-to-configure.md).
 
