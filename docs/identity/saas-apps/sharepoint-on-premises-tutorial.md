@@ -380,7 +380,7 @@ To do this, complete the steps below using Windows PowerShell:
 
     # Create a custom TokenLifetimePolicy in Microsoft Entra ID and add it to the service principal
     $policy = New-MgBetaPolicyActivityBasedTimeoutPolicy -Definition @('{"TokenLifetimePolicy":{"Version":1,"AccessTokenLifetime":"06:00:00"}}') -DisplayName "Custom token lifetime policy"
-    $params = @{TokenLifetimePolicyId:$policy.Id}
+    $params = @{TokenLifetimePolicyId=$policy.Id}
     New-MgBetaServicePrincipalClaimMappingPolicyByRef -ServicePrincipalId $sp.Id -BodyParameter $params
     ```
 
