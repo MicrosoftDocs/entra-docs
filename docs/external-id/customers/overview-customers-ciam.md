@@ -99,6 +99,12 @@ Microsoft Entra ID for customers represents the convergence of business-to-consu
 
 Learn more about the [security and governance](concept-security-customers.md) features that are available in a customer tenant.
 
+## Analyze user activity and engagement
+
+The Application user activity (Preview) feature under Usage & insights provides data analytics on user activity and engagement for registered applications in your tenant. You can use this feature to view, query, and analyze user activity data in the Microsoft Entra admin center. This can help you uncover valuable insights that can aid strategic decisions and drive business growth.
+
+Learn more about the [application user activity dashboards](how-to-user-insights.md) that are available in a customer tenant.
+
 ## About Azure AD B2C
 
 If you're a new customer, you might be wondering which solution is a better fit, [Azure AD B2C](/azure/active-directory-b2c/) or Microsoft Entra External ID (preview). Opt for the current Azure AD B2C product if:
