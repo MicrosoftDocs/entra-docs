@@ -11,7 +11,7 @@ ms.author: jricketts
 ---
 # Microsoft Security Service Edge Solution Deployment Guide for Microsoft Entra Internet Access for M365 Proof of Concept
 
-This Proof of Concept (PoC) Deployment Guide helps you to deploy Microsoft's Security Service Edge (SSE) solution that features [Microsoft Entra Internet Access for M365](../global-secure-access/how-to-manage-microsoft-365-profile.md) and [Microsoft Entra Private Access](../global-secure-access/concept-private-access.md).
+This Proof of Concept (PoC) Deployment Guide helps you to deploy Microsoft's Security Service Edge (SSE) solution that features [Microsoft Entra Internet Access for M365](../global-secure-access/how-to-manage-microsoft-365-profile.md) and Microsoft Entra Private Access.
 
 ## Overview
 
@@ -116,5 +116,4 @@ To test source IP address restoration, Global Secure Access signaling for Condit
 :::image type="content" source="media/sse-deployment-guide-m365/screenshot-sign-in-logs-location-tab.png" alt-text="Screenshot of sign-in logs showing Location tab for an item.":::
 :::image type="content" source="media/sse-deployment-guide-m365/screenshot-sign-in-logs-report-only-failure.png" alt-text="Screenshot of sign-in logs showing Report-only tab for an item with Report-only: Failure in the Result column.":::
 
-##Next Steps
-[Deploy and verify Microsoft Entra Private Access](sse-deployment-guide-private-access.md)
+
