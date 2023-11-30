@@ -5,7 +5,7 @@ author: shlipsey3
 ms.author: sarahlipsey
 manager: amycolannino
 ms.topic: conceptual
-ms.date: 06/11/2023
+ms.date: 11/30/2023
 ms.service: network-access
 ms.custom: 
 ---
@@ -40,7 +40,23 @@ Customers use existing *Office Audit logs* for monitoring, detection, investigat
 
 For more information, see [Enriched Office 365 logs](how-to-view-enriched-logs.md).
 
+## Log Retention and Storage
+
+**Traffic Logs and Remote Network Health Logs:** These logs are retained within the system for 30 days. This duration allows for ample time to review and analyze recent activities and network health status.
+
+**Audit Logs:** The retention period for Audit Logs varies depending on your Microsoft Entra ID license. The table provides e breakdown:
+
+|Report Type	| Microsoft Entra ID Free	| Microsoft Entra ID P1	| Microsoft Entra ID P2 |
+|----------|-----------|------------|------------|
+|Audit Logs |	Seven days | 30 days | 30 days |
+
+**Office Logs:** Office Logs are maintained for a shorter duration, up to only 24 hours. 
+
+**Exporting and Storing Logs for Longer Durations:** As a customer, you have the flexibility to export these logs through the diagnostic settings feature. Exporting logs allows you to maintain records for more extended periods beyond the default retention times. This can be crucial for compliance, auditing, and in-depth analysis purposes. 
+
+
 [!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
+
 
 ## Next steps
 
