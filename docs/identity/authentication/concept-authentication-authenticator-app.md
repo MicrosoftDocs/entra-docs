@@ -6,7 +6,7 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 10/17/2023
+ms.date: 11/30/2023
 
 ms.author: justinha
 author: justinha
@@ -72,7 +72,7 @@ No changes in configurations are required in Microsoft Authenticator or the Micr
 
 Authenticator leverages the native Apple cryptography to achieve FIPS 140, Security Level 1 compliance on Apple iOS devices beginning with Microsoft Authenticator version 6.6.8. For more information about the certifications being used, see the [Apple CoreCrypto module](https://support.apple.com/guide/sccc/security-certifications-for-ios-scccfa917cb49/web?azure-portal=true). 
 
-FIPS 140 compliance for Microsoft Authenticator on Android is in progress and will follow soon.
+Beginning with version 6.2310.7174, Microsoft Authenticator for Android is compliant with FIPS 140-3 for all Microsoft Entra authentications using phishing-resistant device-bound passkeys, push multifactor authentications (MFA), passwordless phone sign-in (PSI), and time-based one-time passcodes (TOTP). For organizations using Intune Company Portal, install version 5.0.6043.0 in addition to the latest version of Authenticator for FIPS compliance. 
 
 ## Determining Microsoft Authenticator registration type in My Security-Info 
 Managining and adding additional Microsoft Authenticator registrations can be performed by users by accessing https://aka.ms/mysecurityinfo or by selecting Security info from  from My Account. Specific icons are used to differentiate whether the Microsoft Authenticator registration is capable of passwordless phone sign-in or MFA. 
