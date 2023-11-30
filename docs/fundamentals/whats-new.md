@@ -85,16 +85,6 @@ For more information, see:
 
 ---
 
-### General Availability -  Chrome's CloudAPAuthEnabled available for device-based conditional access
-
-**Type:** New feature   
-**Service category:** Conditional Access                     
-**Product capability:**  3rd Party Integration             
-
-Enterprises can enable Chrome's CloudAPAuthEnabled on Windows 10+ devices to meet Microsoft Entra ID device-based conditional access policies. When enabled, it configures automatic user sign-in to web properties accessed via Chrome for accounts signed into the Windows 10+ computer. Automatic sign-in from the device also improves single sign-on experience for end users if third-party cookies are disabled in the browser. For more information, see: [CloudAPAuthEnabled](https://chromeenterprise.google/policies/#CloudAPAuthEnabled).
-
----
-
 ### General Availability - Custom security attributes in Microsoft Entra ID
 
 **Type:** New feature   
@@ -140,7 +130,7 @@ In November 2023 we've added the following 10 new applications in our App galler
 
 You can also find the documentation of all the applications from here https://aka.ms/AppsTutorial.
 
-For listing your application in the Azure AD app gallery, read the details here https://aka.ms/AzureADAppRequest
+For listing your application in the Azure AD app gallery, read the details here https://aka.ms/AzureADAppRequest.
 
 ---
 
