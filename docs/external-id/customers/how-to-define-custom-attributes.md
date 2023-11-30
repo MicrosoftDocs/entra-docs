@@ -167,7 +167,7 @@ An attribute with a Boolean data type has a user input type of CheckboxSingleSel
 
 1. Select **Ok**.
 
-   :::image type="content" source="media/how-to-define-custom-attributes/page-layout-single-checkbox.png" alt-text="Screenshot of adding a checkbox to a string attribute in the page layout options." lightbox="media/how-to-define-custom-attributes/page-layout-single-checkbox.png":::
+   :::image type="content" source="media/how-to-define-custom-attributes/page-layout-single-checkbox.png" alt-text="Screenshot of updating the checkbox label in the page layout options." lightbox="media/how-to-define-custom-attributes/page-layout-single-checkbox.png":::
 
 1. On the **Page layouts** page, select **Save**.
 
@@ -192,7 +192,7 @@ An attribute with a String data type can be configured as a CheckboxMultiSelect 
 
 1. Select **Ok**.
 
-   :::image type="content" source="media/how-to-define-custom-attributes/page-layout-multicheckbox.png" alt-text="Screenshot of adding a checkbox to a string attribute in the page layout options." lightbox="media/how-to-define-custom-attributes/page-layout-multicheckbox.png":::
+   :::image type="content" source="media/how-to-define-custom-attributes/page-layout-multicheckbox.png" alt-text="Screenshot of adding a multiselect checkbox to a string attribute in the page layout options." lightbox="media/how-to-define-custom-attributes/page-layout-multicheckbox.png":::
 
 1. On the **Page layouts** page, select **Save**.
 
