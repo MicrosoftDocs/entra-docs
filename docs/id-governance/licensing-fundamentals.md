@@ -202,7 +202,7 @@ If a Microsoft Entra ID P2, Microsoft Entra ID Governance, or trial license expi
 
 ### Will any IGA features and capabilities be added under the Entra ID P2 License?
 
-All currently Generally Available features in P2 will remain, but no new features or capabilities will be added to the Entra ID P2 SKU.
+All currently Generally Available features in Entra ID P2 will remain, but no new features or capabilities will be added to the Entra ID P2 SKU.
 
 ## Next steps
 
