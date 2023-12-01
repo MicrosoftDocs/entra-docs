@@ -41,7 +41,7 @@ To complete the steps in this process, you must have the following prerequisites
 - A basic understanding of [site-to-site VPN connections](/azure/vpn-gateway/tutorial-site-to-site-portal).
 - A Microsoft Entra tenant with the [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator) role assigned.
 
-## High level steps
+## High-level steps
 
 The steps to simulate remote network connectivity with Azure virtual networks are completed in the Azure portal and the Microsoft Entra admin center. It might be helpful to have multiple tabs open so you can switch between them easily.
 
@@ -135,11 +135,11 @@ The following steps provide the basic information needed to create a remote netw
 
 Before you create your remote network for Global Secure Access, take a moment to review the two options about redundancy. Remote networks can be created with or without redundancy. You can add redundancy in two ways:
 
-1. Choose **Zone redundancy** while creating a device link in the Microsoft Entra admin center.
+- Choose **Zone redundancy** while creating a device link in the Microsoft Entra admin center.
     - In this scenario, we create another gateway for you in a different availability zone within the same datacenter **Region** you picked while creating your remote network.
     - In this scenario, you need just one public IP address on your virtual network gateway.
     - Two IPSec tunnels are created from the same public IP address of your router to different Microsoft gateways in different availability zones.
-1. Create a secondary public IP address in the Azure portal and create two device links with different public IP addresses in the Microsoft Entra admin center.
+- Create a secondary public IP address in the Azure portal and create two device links with different public IP addresses in the Microsoft Entra admin center.
     - You can choose **No redundancy** then when adding device links to your remote network in the Microsoft Entra admin center.
     - In this scenario, you need primary and secondary public IP addresses on your virtual network gateway.
 
@@ -155,7 +155,7 @@ For this article, we choose the zone redundancy path.
 
     :::image type="content" source="media/how-to-simulate-remote-network/create-basics-tab.png" alt-text="Screenshot of the basics tab for creating a remote network.":::
 
-1. On the the **Connectivity** tab select **Add a link**.
+1. On the **Connectivity** tab select **Add a link**.
 1. On the **Add a link - General** tab enter the following details:
     - **Link name**: Name of your device link.
     - **Device type**: Set to **Other**.
@@ -220,7 +220,7 @@ Navigate to the **Configurations** to review the details of your local network g
 
 ## Create Site-to-site (S2S) VPN connection
 
-This step is comleted in the Azure portal. You create two connections here if you created a second gateway, one for your primary and secondary gateways. For this step, keep all settings set to the default value unless noted.
+This step is completed in the Azure portal. You create two connections here if you created a second gateway, one for your primary and secondary gateways. For this step, keep all settings set to the default value unless noted.
 
 1. From the Azure portal, browse to **Connections**.
 1. Select **Create**.
@@ -253,7 +253,7 @@ This step creates a VM and initiates traffic to Microsoft 365 services. Leave al
 1. Select the Image you want to use, for this example we choose **Windows 11 Pro, version 22H2 - x64 Gen2**
 1. Select **Run with Azure Spot discount** for this test.
 1. Provide a **Username** and **Password** for your VM.
-1. Confirm that you have an eligible Windows 10/11 license with multi-tenant hosting rights at the bottom of the page.
+1. Confirm that you have an eligible Windows 10/11 license with multitenant hosting rights at the bottom of the page.
 1. Move to the **Networking** tab.
 1. Select the **Virtual network** created previously.
 1. Move to the **Management** tab
