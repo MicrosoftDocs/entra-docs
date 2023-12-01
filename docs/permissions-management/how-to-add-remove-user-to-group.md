@@ -21,7 +21,7 @@ This article describes how you can add or remove a new user for a group in Permi
 
 ## Add a user
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/#home) as at least a [Billing Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#billing-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/#home) as at least a [Billing Administrator](https://go.microsoft.com/fwlink/?linkid=2254515).
 1. Browse to **Microsoft Entra ID**, then select **Go to Microsoft Entra ID**. 
 1. From the navigation pane, go to **Identity** > **Groups** > **All groups**.
 1. Select the group name for the group you want to add the user to.
@@ -37,7 +37,7 @@ This article describes how you can add or remove a new user for a group in Permi
 
 ## Remove a user
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/#home) as at least a [Billing Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#billing-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/#home) as at least a [Billing Administrator](https://go.microsoft.com/fwlink/?linkid=2254515).
 1. Browse to **Microsoft Entra ID**, then select **Go to Microsoft Entra ID**. 
 1. From the navigation pane, go to **Identity** > **Groups** > **All groups**.
 1. Select the group name for the group you want to remove the user from.
