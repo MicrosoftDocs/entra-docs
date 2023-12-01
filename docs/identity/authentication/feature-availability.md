@@ -111,3 +111,8 @@ This following tables list Microsoft Entra feature availability in Azure Governm
 |SuccessFactors to Microsoft Entra user provisioning | &#x2705; | 
 |SuccessFactors to Writeback | &#x2705; |
 |Provisioning agent configuration and registration with Gov cloud tenant| Works with special undocumented command-line invocation:<br> `AADConnectProvisioningAgent.Installer.exe ENVIRONMENTNAME=AzureUSGovernment` |
+
+## Other Microsoft Entra products
+
+[Microsoft Entra Workload Identities Premium edition](~/workload-id/workload-identities-faqs.md#is-the-workload-identities-premium-edition-available-on-government-clouds) is available in the US government clouds.
+[Microsoft Entra ID Governance](~/id-governance/licensing-fundamentals.md) and [Microsoft Entra Permissions Management](~/permissions-management/faqs.md#is-permissions-management-available-in-government-cloud) products aren't yet available in the US government or US national clouds.

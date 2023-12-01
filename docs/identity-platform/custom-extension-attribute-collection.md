@@ -678,7 +678,7 @@ Follow these steps to register the **jwt.ms** web application:
 
 ### 4.2 Get the application ID
 
-In your app registration, under **Overview**, copy the **Application (client) ID**. The app ID is referred to as the `{App_to_enrich_ID}` in later steps. In Microsoft Graph, it's referenced by the **appId** property.
+In your app registration, under **Overview**, copy the **Application (client) ID**. The app ID is referred to as the `<client_id>` in later steps. In Microsoft Graph, it's referenced by the **appId** property.
 
 ### 4.3 Enable implicit flow
 
@@ -698,7 +698,7 @@ To test your custom authentication extension, follow these steps:
     https://<domainName>.ciamlogin.com/<tenant_id>/oauth2/v2.0/authorize?client_id=<client_id>&response_type=code+id_token&redirect_uri=https://jwt.ms&scope=openid&state=12345&nonce=12345
     ```
 
-   - Replace `domainName>` with your customer tenant name, and replace `<tenant-id>` with your customer tenant ID.
+   - Replace `<domainName>` with your customer tenant name, and replace `<tenant-id>` with your customer tenant ID.
    - Replace `<client_id>` with the ID for the application you added to the user flow.
 
 1. After signing in, you'll be presented with your decoded token at `https://jwt.ms`.
@@ -713,7 +713,7 @@ To protect your Azure function, follow these steps to integrate Microsoft Entra 
 > If the Azure function app is hosted in a different Azure tenant than the tenant in which your custom authentication extension is registered, skip to [5.1 Using OpenID Connect identity provider](#51-using-openid-connect-identity-provider) step.
 
 1. Sign in to the [Azure portal](https://portal.azure.com).
-1. Navigate and select the function app you previously published.
+1. In the Function App service, navigate to and select the function app you previously published.
 1. Select **Authentication** in the menu on the left.
 1. Select **Add Identity provider**.  
 1. Select **Microsoft** as the identity provider.
