@@ -129,7 +129,7 @@ To create the outbound trust for the managed domain in the Microsoft Entra admin
 1. Provide at least two DNS servers for the on-premises AD DS domain, such as *10.1.1.4* and *10.1.1.5*.
 1. When ready, **Save** the outbound forest trust.
 
-    ![Screenshot that show how to create an outbound forest trust in the Microsoft Entra admin center.](./media/tutorial-create-forest-trust/portal-create-outbound-trust.png)
+    ![Screenshot that shows how to create an outbound forest trust in the Microsoft Entra admin center.](./media/tutorial-create-forest-trust/portal-create-outbound-trust.png)
 
 If the forest trust is no longer needed for an environment, complete the following steps to remove it from Domain Services:
 
