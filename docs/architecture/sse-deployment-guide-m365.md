@@ -63,7 +63,7 @@ This section describes how to enforce compliant network on access to M365 traffi
         :::image type="content" source="media/sse-deployment-guide-m365/screenshot-conditional-access-policy-options.png" alt-text="Screenshot of Conditional Access policy options.":::
 6. **Access controls** > **Grant** > Select the controls that you want to enforce such as requiring multifactor authentication.
 7. Attempt to sign-in to SharePoint Online or Exchange Online and verify that you are prompted to authenticate to Global Secure Access.
-:::image type="content" source="<media/sse-deployment-guide-m365/screenshot-global-secure-access-credentials-prompt.png>" alt-text="<Screenshot of the Global Secure Access credentials prompt window.>":::
+:::image type="content" source="media/sse-deployment-guide-m365/screenshot-global-secure-access-credentials-prompt.png" alt-text="<Screenshot of the Global Secure Access credentials prompt window.>":::
      > [!NOTE]
      > The Global Secure Access Client uses access tokens and refresh tokens to connect to Microsoft Security Service Edge Solution. If you have previously connected the Global Secure Access Client, then you may need to wait for the access token to expire (up to one hour) before the Conditional Access policy that you created is applied.
 8. To verify that your Conditional Access policy was successfully applied, view the sign-in logs for your test user for the **ZTNA Network Access Client - M365** application.
