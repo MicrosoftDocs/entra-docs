@@ -10,7 +10,7 @@ ms.service: active-directory
 ms.topic: troubleshooting
 ms.subservice: fundamentals
 ms.workload: identity
-ms.date: 09/12/2023
+ms.date: 12/01/2023
 ---
 # Manage Microsoft Support access requests (preview)
 
@@ -32,7 +32,7 @@ Only certain Microsoft Entra roles are authorized to manage Microsoft Support ac
 
 1. Select the **Support request ID** link for the request you need to approve.
 
-    ![Screenshot of the pending request with links to view details highlighted.](media/how-to-manage-support-access-requests/approved-access.png)
+   :::image type="content" source="media/how-to-manage-support-access-requests/approved-access.png" alt-text="Screenshot of the pending request with links to view details highlighted..":::
 
 ## Revoke access to an approved support access request
 
@@ -40,7 +40,7 @@ Closing a support request automatically revokes the support engineer's access to
 
 Select the **Remove access** button to revoke access to an approved support access request. 
 
-![Screenshot of the Support access requests history with the Revoke button highlighted.](media/how-to-manage-support-access-requests/remove-approved-access.png)
+:::image type="content" source="media/how-to-manage-support-access-requests/remove-approved-access.png" alt-text="Screenshot of the Support access requests history with the Revoke button highlighted..":::
 
 When your support request is closed, the status of an approved Microsoft Support access request is automatically set to **Completed.** Microsoft Support access requests remain in the **Approved access** list for 30 days.
 

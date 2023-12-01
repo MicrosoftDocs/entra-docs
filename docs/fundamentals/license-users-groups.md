@@ -9,12 +9,12 @@ ms.service: active-directory
 ms.subservice: fundamentals
 ms.workload: identity
 ms.topic: how-to
-ms.date: 09/12/2023
+ms.date: 12/01/2023
 ms.author: barclayn
 ms.reviewer: jeffsta
 ---
 
-# Assign or remove licenses in the Azure portal
+# Assign or remove licenses
 
 Many Microsoft Entra services require you to license each of your users or groups (and associated members) for that service. Only users with active licenses will be able to access and use the licensed Microsoft Entra services for which that's true. Licenses are applied per tenant and don't transfer to other tenants. 
 
@@ -44,9 +44,11 @@ You can view your available service plans, including the individual licenses, ch
 
 1. Browse to **Identity** > **Billing** > **Licenses**.
 
+   :::image type="content" source="media/license-users-groups/billing-licenses-page.png" alt-text="Screenshot of Licenses page.":::
+
 1. Select **All products** to view the All Products page and to see the **Total**, **Assigned**, **Available**, and **Expiring soon** numbers for your license plans.
 
-    :::image type="content" source="media/license-users-groups/license-products-blade-with-products.png" alt-text="services page - with service license plans - associated license info":::
+    :::image type="content" source="media/license-users-groups/license-products-blade-with-products.png" alt-text="Screenshot of services page - with service license plans - associated license info":::
 
     > [!NOTE]
     > The numbers are defined as: 
@@ -71,15 +73,15 @@ Anyone who has a business need to use a licensed Microsoft Entra service must ha
 
 1. After you select the license plan, select **Assign**.
 
-    ![services page, with highlighted license plan selection and Assign options](media/license-users-groups/license-products-blade-with-assign-option-highlight.png)
+   :::image type="content" source="media/license-users-groups/license-products-blade-with-assign-option-highlight.png" alt-text="Screenshot of services page, with highlighted license plan selection and Assign options.":::
 
 1. On the **Assign** page, select **Users and groups**, and then search for and select the user you're assigning the license.
 
-    ![Assign license page, with highlighted search and Select options](media/license-users-groups/assign-license-blade-with-highlight.png)
+   :::image type="content" source="(media/license-users-groups/assign-license-blade-with-highlight.png" alt-text="Screenshot of the Assign license page, with highlighted search and Select options.":::
 
 1. Select **Assignment options**, make sure you have the appropriate license options turned on, and then select **OK**.
 
-    ![License option page, with all options available in the license plan](media/license-users-groups/license-option-blade-assignments.png)
+   :::image type="content" source="media/license-users-groups/license-option-blade-assignments.png" alt-text="Screenshot of the License option page, with all options available in the license plan.":::
 
     The **Assign license** page updates to show that a user is selected and that the assignments are configured.
 
@@ -100,19 +102,19 @@ Anyone who has a business need to use a licensed Microsoft Entra service must ha
 
 1. Select the name of the license plan you want to assign to the group.
 
-    ![Products blade, with highlighted product license plan](media/license-users-groups/license-products-blade-with-product-highlight.png)
+   :::image type="content" source="media/license-users-groups/license-products-blade-with-product-highlight.png" alt-text="Screenshot of the Products page, with highlighted product license plan.":::
 
 1. On the **Product** page, select **Assign**.
 
-    ![Products page, with highlighted Assign option](media/license-users-groups/license-products-blade-with-assign-option-highlight.png)
+   :::image type="content" source="media/license-users-groups/license-products-blade-with-assign-option-highlight.png" alt-text="Screenshot of Products page, with highlighted Assign option.":::
 
 1. On the **Assign** page, select **Users and groups**, and then search for and select the group you're assigning the license.
 
-    ![Assign license page, with highlighted search and Select options 2](media/license-users-groups/assign-group-license-blade-with-highlight.png)
+   :::image type="content" source="media/media/license-users-groups/assign-group-license-blade-with-highlight.png" alt-text="Screenshot of the Assign license page, with highlighted search and Select options 2.":::
 
 1. Select **Assignment options**, make sure you have the appropriate license options turned on, and then select **OK**.
 
-    ![License option page, with all options available in the license plan 2](media/license-users-groups/license-option-blade-group-assignments.png)
+   :::image type="content" source="media/license-users-groups/license-option-blade-group-assignments.png" alt-text="Screenshot of the License option page, with all options available in the license plan 2.":::
 
     The **Assign license** page updates to show that a user is selected and that the assignments are configured.
 
@@ -130,7 +132,7 @@ You can remove a license from a user's Microsoft Entra user page, from the group
 
 1. Select **Remove license**.
 
-    ![Licensed users page with Remove license option highlighted](media/license-users-groups/license-products-user-blade-with-remove-option-highlight.png)
+   :::image type="content" source="media/license-users-groups/license-products-user-blade-with-remove-option-highlight.png" alt-text="Screenshot of the Licensed users page with Remove license option highlighted.":::
 
 > [!IMPORTANT]
 > Licenses that a user inherits from a group can't be removed directly. Instead, you have to remove the user from the group from which they're inheriting the license.
@@ -141,7 +143,7 @@ You can remove a license from a user's Microsoft Entra user page, from the group
 
 1. Select **Remove license**.
 
-    ![Licensed groups page with Remove license option highlighted 2](media/license-users-groups/license-products-group-blade-with-remove-option-highlight.png)
+   :::image type="content" source="media/license-users-groups/license-products-group-blade-with-remove-option-highlight.png" alt-text="Screenshot of Licensed groups page with Remove license option 2 highlighted .":::
     
     > [!NOTE]
     > When an on-premises user account synced to Microsoft Entra falls out of scope for the sync or when the sync is removed, the user is soft-deleted in Microsoft Entra ID. When this occurs, licenses assigned to the user directly or via group-based licensing will be marked as **suspended** rather than **deleted**.
