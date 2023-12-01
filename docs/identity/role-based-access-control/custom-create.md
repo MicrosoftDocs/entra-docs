@@ -24,7 +24,7 @@ Custom roles can be created in the **Roles and administrators** page of the Micr
 
 - Microsoft Entra ID P1 or P2 license
 - Privileged Role Administrator or Global Administrator
-- Microsoft.Graph.Beta module when using PowerShell
+- Microsoft.Graph module when using PowerShell
 - Admin consent when using Graph explorer for Microsoft Graph API
 
 For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
