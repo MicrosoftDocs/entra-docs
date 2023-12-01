@@ -253,7 +253,7 @@ This step creates a VM and initiates traffic to Microsoft 365 services. Leave al
 1. Select the Image you want to use, for this example we choose **Windows 11 Pro, version 22H2 - x64 Gen2**
 1. Select **Run with Azure Spot discount** for this test.
 1. Provide a **Username** and **Password** for your VM.
-1. Select the 
+1. Confirm that you have an eligible Windows 10/11 license with multi-tenant hosting rights at the bottom of the page.
 1. Move to the **Networking** tab.
 1. Select the **Virtual network** created previously.
 1. Move to the **Management** tab
@@ -265,11 +265,11 @@ You might choose to lock down remote access to the network security group to onl
 
 ### Verify connectivity status
 
-After you create the remote networks and connections in the previous steps, it might take a few minutes for the connection to be established. From the Azure portal, we can validate that the VPN tunnel is connected and that BGP peering is successful.
+After you create the remote networks and connections in the previous steps, it might take a few minutes for the connection to be established. From the Azure portal, you can validate that the VPN tunnel is connected and that BGP peering is successful.
 
 1. In the Azure portal, browse to the **virtual network gateway** created earlier and select **Connections**.
 1. Each of the connections should show a **Status** of **Connected** once the configuration is applied and successful.
-1. Browsing to **BGP peers** under the **Monitoring** section allows you to confirm that BGP peering is successful. Look for the peer addresses provided by Microsoft. Once configuration is applied and successful, the **Status** should show **Connected**.
+1. Browse to **BGP peers** under the **Monitoring** section to confirm that BGP peering is successful. Look for the peer addresses provided by Microsoft. Once configuration is applied and successful, the **Status** should show **Connected**.
 
 :::image type="content" source="media/how-to-simulate-remote-network/verify-connectivity.png" alt-text="Screenshot showing how to find the connection status for your virtual network gateway." lightbox="media/how-to-simulate-remote-network/verify-connectivity.png" :::
 
