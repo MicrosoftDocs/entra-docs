@@ -5,7 +5,7 @@ author: barclayn
 manager: amycolannino
 ms.service: active-directory
 ms.topic: include
-ms.date: 04/10/2023
+ms.date: 12/01/2023
 ms.author: barclayn
 ms.custom: include file,licensing
 ---
@@ -19,5 +19,6 @@ The required roles and licenses might vary based on the report. Global Administr
 | Provisioning | Same as audit and sign-ins, plus<br>Security Operator<br>Application Administrator<br>Cloud App Administrator<br>A custom role with `ProvisioningLogsRead` permission | Premium P1/P2 |
 | Usage and insights | Security Reader<br>Reports Reader<br> Security Administrator  | Premium P1/P2 |
 | Identity Protection* | Security Administrator<br>Security Operator<br>Security Reader<br>Global Reader<br>A custom role with `IdentityRiskEventReadWrite` permission | Azure AD Free<br>Microsoft 365 Apps<br>Azure AD Premium P1/P2 |
+| Microsoft Graph activity logs | Security Administrator<br>A custom role with `ListKeys` permission  | Premium P1/P2
 
 *The level of access and capabilities for Identity Protection varies with the role and license. For more information, see the [license requirements for Identity Protection](~/id-protection/overview-identity-protection.md#license-requirements).
