@@ -22,6 +22,9 @@ Azure subscriptions have a trust relationship with Microsoft Entra ID. Microsoft
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Reader](~/identity/role-based-access-control/permissions-reference.md#global-reader).
 1. Browse to **Identity** > **Overview** > **Properties**.
+
+   :::image type="content" source="media/how-to-find-tenant/identity-overview-properties.png" alt-text="Microsoft Entra ID - Properties - Tenant ID - Tenant ID field":::
+
 1. Scroll down to the **Tenant ID** section and you can find your tenant ID in the box.
 
 <!-- docutune:disable -->
@@ -31,7 +34,7 @@ Azure subscriptions have a trust relationship with Microsoft Entra ID. Microsoft
 1. Browse to **Microsoft Entra ID** > **Properties**.
 1. Scroll down to the **Tenant ID** section and you can find your tenant ID in the box.
 
-:::image type="content" source="media/how-to-find-tenant/portal-tenant-id.png" alt-text="Microsoft Entra ID - Properties - Tenant ID - Tenant ID field":::
+   :::image type="content" source="media/how-to-find-tenant/portal-tenant-id.png" alt-text="Microsoft Entra ID - Properties - Tenant ID - Tenant ID field":::
 <!-- docutune:enable -->
 
 ## Find tenant ID with PowerShell
