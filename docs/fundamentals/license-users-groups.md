@@ -77,7 +77,7 @@ Anyone who has a business need to use a licensed Microsoft Entra service must ha
 
 1. On the **Assign** page, select **Users and groups**, and then search for and select the user you're assigning the license.
 
-   :::image type="content" source="(media/license-users-groups/assign-license-blade-with-highlight.png" alt-text="Screenshot of the Assign license page, with highlighted search and Select options.":::
+   :::image type="content" source="media/license-users-groups/assign-license-blade-with-highlight.png" alt-text="Screenshot of the Assign license page, with highlighted search and Select options.":::
 
 1. Select **Assignment options**, make sure you have the appropriate license options turned on, and then select **OK**.
 
@@ -110,7 +110,7 @@ Anyone who has a business need to use a licensed Microsoft Entra service must ha
 
 1. On the **Assign** page, select **Users and groups**, and then search for and select the group you're assigning the license.
 
-   :::image type="content" source="media/media/license-users-groups/assign-group-license-blade-with-highlight.png" alt-text="Screenshot of the Assign license page, with highlighted search and Select options 2.":::
+   :::image type="content" source="media/license-users-groups/assign-group-license-blade-with-highlight.png" alt-text="Screenshot of the Assign license page, with highlighted search and Select options 2.":::
 
 1. Select **Assignment options**, make sure you have the appropriate license options turned on, and then select **OK**.
 
