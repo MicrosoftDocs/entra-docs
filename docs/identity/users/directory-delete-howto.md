@@ -9,7 +9,7 @@ ms.service: active-directory
 ms.subservice: enterprise-users
 ms.workload: identity
 ms.topic: how-to
-ms.date: 11/08/2023
+ms.date: 12/02/2023
 ms.author: barclayn
 ms.reviewer: addimitu
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
@@ -114,7 +114,7 @@ After you have all the Azure, Office 365, and Microsoft 365 subscriptions cancel
 
 A few enterprise applications can't be deleted in the Microsoft Entra admin center and might block you from deleting the tenant. Use the following PowerShell procedure to remove those applications:
 
-1. Install the MSOnline module for PowerShell by running the following command:
+1. [Install](/powershell/microsoftgraph/installation) the Microsoft Graph PowerShell module by running the following command:
 
    ```powershell
    Install-Module Microsoft.Graph
@@ -133,7 +133,7 @@ A few enterprise applications can't be deleted in the Microsoft Entra admin cent
    >[!WARNING]
    > You must run PowerShell by using admin credentials for the tenant that you're trying to delete. Only homed-in admins have access to manage the directory via Powershell. You can't use guest user admins, Microsoft accounts, or multiple directories. 
    >
-   > Before you proceed, verify that you're connected to the tenant that you want to delete with the MSOnline module. We recommend that you run the `Get-MgDomain` command to confirm that you're connected to the correct tenant ID and `onmicrosoft.com` domain.
+   > Before you proceed, verify that you're connected to the tenant that you want to delete with the Microsoft Graph PowerShell module. We recommend that you run the `Get-MgDomain` command to confirm that you're connected to the correct tenant ID and `onmicrosoft.com` domain.
 
 5. Run the following commands to set the tenant context.  DO NOT skip these steps or you run the risk of deleting enterprise apps from the wrong tenant.
 
