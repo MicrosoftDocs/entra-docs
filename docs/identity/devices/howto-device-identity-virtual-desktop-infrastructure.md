@@ -66,7 +66,7 @@ Before configuring device identities in Microsoft Entra ID for your VDI environm
 
 <sup>5</sup> **Non-Persistence support for Windows current** requires other consideration as documented in the guidance section. This scenario requires Windows 10 1803 or newer, Windows Server 2019, or Windows Server (Semi-annual channel) starting version 1803
 
-<sup>6</sup> **Non-Persistence support for Windows current** in a Managed identity infrastructure environment is only available with Citrix [on-premises customer managed](https://docs.citrix.com/citrix-virtual-apps-desktops/install-configure/machine-identities/hybrid-azure-active-directory-joined) and [Cloud service managed](https://docs.citrix.com/citrix-daas/install-configure/machine-identities/hybrid-azure-active-directory-joined). For any support related queries, contact [Citrix support](https://www.citrix.com/support/) directly.
+<sup>6</sup> **Non-Persistence support for Windows current** in a Managed identity infrastructure environment is only available with Citrix [on-premises customer managed](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/install-configure/machine-identities/hybrid-azure-active-directory-joined) and [Cloud service managed](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-identities/hybrid-azure-active-directory-joined). For any support related queries, contact [Citrix support](https://www.citrix.com/support/) directly.
 
 <sup>7</sup> **Non-Persistence support for Windows down-level** requires other consideration as documented in the guidance section.
 
