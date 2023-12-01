@@ -24,7 +24,7 @@ You can create a one-way outbound trust from Microsoft Entra Domain Services to 
 
 Trusts can be created in any domain. The domain will automatically block synchronization from an on-premises domain for any user accounts that were synchronized to Domain Services. This prevents UPN collisions when users authenticate. 
 
-![Diagram of forest trust from Domain Services to on-premises AD DS](./media/tutorial-create-forest-trust/forest-trust-relationship.png)
+![Diagram of forest trust from Domain Services to on-premises AD DS](./media/tutorial-create-forest-trust/one-way-trust.png)
 
 In this tutorial, you learn how to:
 
