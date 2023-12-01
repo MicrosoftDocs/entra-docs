@@ -23,6 +23,7 @@ Mac users can join their new device to Microsoft Entra ID during the first-run o
 - [Microsoft Intune Company Portal](/mem/intune/apps/apps-company-portal-macos) <!--TODO: version-->
 - A Mac device enrolled in mobile device management (MDM) with Microsoft Intune
 - [Microsoft Authenticator](https://support.microsoft.com/account-billing/how-to-use-the-microsoft-authenticator-app-9783c865-0308-42fb-a519-8cf666fe0acc) (recommended): The user must be registered for some form of Microsoft Entra ID multifactor authentication (MFA) on their mobile device to complete device registration.
+- A smart card loaded with a certificate for authentication with Microsoft Entra (smart card setup on )
 
 ## Set up your macOS device
 
@@ -41,10 +42,10 @@ Mac users can join their new device to Microsoft Entra ID during the first-run o
 There are three authentication methods for PSSO registration:
 
 - **Secure Enclave**: User logs on to their device which has a secure enclave backed cryptographic key used for SSO across apps that use Microsoft Entra ID for authentication
-- **Smartcard**: User logs into the machine using an external smartcard or smartcard compatible hard token
+- **Smart card**: User logs into the machine using an external smart card or smart card compatible hard token
 - **Password**: User logs on to their local device with a local account, updated to used their Microsoft Entra ID password
 
-It's recommended for your system administrator to have the Mac enrolled using secure enclave or smartcard. These new password-less feature is supported only by PSSO. Check which authentication method has been set up by your administrator before continuing.
+It's recommended for your system administrator to have the Mac enrolled using secure enclave or smart card. These new password-less feature is supported only by PSSO. Check which authentication method has been set up by your administrator before continuing.
 
 ### [Secure Enclave](#tab/secure-enclave)
 
@@ -66,6 +67,9 @@ It's recommended for your system administrator to have the Mac enrolled using se
     app-sso platform -s
     ```
 
+    >[!NOTE]
+    > On macOS 14 Somona, you can check the PSSO registration status by navigating to **Settings** > **Users and Groups** > **Select user**. To see your device registration status, navigate to **Settings** > **Users and Groups** > **Network account server**. Select **Edit** to see your device status.
+
 1. Check the bottom of the output, and confirm that information similar to the following snippet is shown, which signifies that SSO tokens are retrieved.
 
     ```console
@@ -81,9 +85,35 @@ It's recommended for your system administrator to have the Mac enrolled using se
 >[!NOTE]
 > On macOS 14 Somona, you can check the PSSO registration status by navigating to **Settings** > **Users and Groups** > **Select user**. To see your device registration status, navigate to **Settings** > **Users and Groups** > **Network account server**. Select **Edit** to see your device status.
 
-### [Smartcard](#tab/smartcard)
+### [Smart card](#tab/smart-card)
 
-TODO: Add steps
+1. You're prompted to register your device with Microsoft Entra ID. Enter your sign-in credentials and select **Next**.
+    1. Your administrator may have configured MFA for the device registration flow. If so, open your **Authenticator** app on your mobile device and complete the MFA flow.
+
+    :::image type="content" source="media/device-join-macos-pssoe-out-of-box/psso-register-device-prompt.png" alt-text="Screenshot of the registration window prompting sign in with Microsoft.":::
+
+1. If the certificate is not already paired with the local account, the user will see a prompt to use the smart card. Select **Smart card**.
+1. You're prompted to enter the pin for your smart card. Enter your pin and select **OK**. Upon entering the correct pin, PSSO registration with smart card authentication is complete.
+1. To check that registration has completed successfully, open the **Terminal** app and run the following command:
+
+    ```console
+    app-sso platform -s
+    ```
+
+    >[!NOTE]
+    > On macOS 14 Somona, you can check the PSSO registration status by navigating to **Settings** > **Users and Groups** > **Select user**. To see your device registration status, navigate to **Settings** > **Users and Groups** > **Network account server**. Select **Edit** to see your device status.
+
+1. Check the bottom of the output, and confirm that information similar to the following snippet is shown, which signifies that SSO tokens are retrieved.
+
+    ```console
+    SSO Tokens:
+    Received:
+    YYYY-MM-DD T HH:MM:SS
+    Expiration:
+    YYYY-MM-DD T HH:MM:SS (Not Expired)
+    ```
+
+1. Now that the Mac is correctly set up, you can now use PSSO to access Microsoft app resources, and unlock the device with the smart card pin. You'll need to use the local password to log in after a reboot to unlock the keychain access.
 
 ### [Password](#tab/password)
 
@@ -93,15 +123,15 @@ TODO: Add steps
 
 1. You're prompted to register your device with Microsoft Entra ID. Enter your sign-in credentials and select **Next**.
     1. Your administrator may have configured MFA for the device registration flow. If so, open your **Authenticator** app on your mobile device and complete the MFA flow.
-    
+
     :::image type="content" source="media/device-join-macos-pssoe-out-of-box/psso-register-device-prompt.png" alt-text="Screenshot of the registration window prompting sign in with Microsoft.":::
 
-1. When a **Single Sign-On** window appears, enter your local account password and select **OK**. <!--Insert recording vid 1m09sec screenshot-->
+1. When a **Single Sign-On** window appears, enter your local account password and select **OK**.
 
     :::image type="content" source="media/device-join-macos-pssoe-out-of-box/psso-enter-local-password.png" alt-text="Screenshot of a single sign-on window prompting the user to enter their local account password.":::
 
 1. If your local password differs to your Microsoft Entra ID password, an **Authentication Required** popup appears on the top right of the screen. Hover over the banner and select **Sign-in**.
-1. When a **Microsoft Entra** window appears, enter your Microsoft Entra ID password and select **Sign In**. <!--Insert recording vid 1m21sec screenshot-->
+1. When a **Microsoft Entra** window appears, enter your Microsoft Entra ID password and select **Sign In**. 
 
     :::image type="content" source="media/device-join-macos-pssoe-out-of-box/psso-entra-acct-password-prompt.png" alt-text="Screenshot of a Microsoft Entra sign in window.":::
 
@@ -115,7 +145,6 @@ If you've set up your device using the secure enclave method, you can use the re
 
 1. Open the **Settings** app, and navigate to **Passwords** > **Password options**.
 1. Under **Password options**, find **Use passwords and passkeys from** and enable **Company Portal** through the toggle switch.
-<!--TODO: New screenshot-->
 
 ## See also
 

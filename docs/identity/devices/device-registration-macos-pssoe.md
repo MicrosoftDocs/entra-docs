@@ -15,7 +15,7 @@ ms.reviewer: brianmel
 
 # Register a Mac device with macOS Platform Single Sign-On using Company Portal (preview)
 
-You can register a Mac device with the macOS Platform Single Sign-On (PSSO) using Company Portal. There are two workflows that are supported with Company Portal, [Web Enrollment](#web-enrollment) and [Intune MDM enrollment with Microsoft Entra Join](#intune-mdm-and-microsoft-entra-join-using-company-portal).
+You can register a Mac device with the macOS Platform Single Sign-On (PSSO) using Company Portal and the Intune MDM enrollment with Microsoft Entra Join.
 
 ## Prerequisites
 
@@ -24,26 +24,6 @@ You can register a Mac device with the macOS Platform Single Sign-On (PSSO) usin
 - A configured the SSO extension MDM payload with PSSO settings in Intune by an administrator
 <!--TODO: Link to other article-->
 - [Microsoft Authenticator](https://support.microsoft.com/account-billing/how-to-use-the-microsoft-authenticator-app-9783c865-0308-42fb-a519-8cf666fe0acc) (recommended), the user must be registered for some form of Microsoft Entra ID multifactor authentication (MFA) to complete device registration.
-
-## Web Enrollment
-
-Although registration with Automated Device Enrollment during an out-of-the-box experience is the recommended use, you can also use the Web Enrollment method to register your device with PSSO.
-
-1. Once the Home screen appears, open Outlook and an **Add Account** window appears. Enter your email address and select **Continue**. <!--TODO: Insert slide 24 screenshot-->
-1. Follow the steps in the MFA flow to complete sign-in.
-1. You're prompted to set up your device to get access to company resources. Select **Continue**.
-1. Select **Get started**, and allow the system to download a configuration profile. Close the window when prompted. <!--TODO: Insert slide 29 screenshot-->
-1. Navigate to **Settings** > **Privacy and Security** > **Profiles** and select **Management Profile**. <!--TODO: Insert slide 90 screenshot-->
-1. Select **Install** to install the profile, and enter your local account password when prompted.
-1. Navigate to the **Registration Required** popup at the top right of the screen. Hover over the popup and select **Register**.
-1. You're prompted to sign in to Company Portal. Enter your Microsoft Entra ID credentials and select **Next**. <!--TODO: Insert slide 35 screenshot-->
-1. Follow the steps in the MFA flow to finish registration. The Company Portal app registers your device.
-1. Once your device finishes registering, a Platform SSO window appears. Enter your Microsoft Entra ID password and select **Sign in**. <!--TODO: Insert slide 39 screenshot-->
-1. Open the **Outlook** app and you're prompted to add an email account. Select **Add "Your email"**.
-1. The **Company Portal** app checks that your device is registered. Once the window closes, you have access to your emails.
-
-> [!NOTE]
-> If you ignore or dismiss the **Registration Required** popup, when attempting to log into Outlook or another app, you're prompted to register your device through an action item to register your device. A new popup appears that says **Registration Required**. This popup reappears every 10 minutes until you register your device.
 
 ## Intune MDM and Microsoft Entra Join using Company Portal
 
@@ -83,7 +63,36 @@ Although registration with Automated Device Enrollment during an out-of-the-box 
 
 1. You can now use PSSO to access Microsoft app resources.
 
-### [Smartcard](#tab/smartcard)
+### [Smart card](#tab/smart-card)
+
+1. Open the **Company Portal** app and select **Sign in**.
+1. Enter your Microsoft Entra ID credentials and select **Next**.
+    1. Your administrator may have configured MFA for the device registration flow. If so, open your **Authenticator** app on your mobile device and complete the MFA flow.
+
+    :::image type="content" source="media/device-join-macos-pssoe-out-of-box/psso-register-device-prompt.png" alt-text="Screenshot of the registration window prompting sign in with Microsoft.":::
+
+1. If the certificate is not already paired with the local account, the user will see a prompt to use the smart card. Select **Smart card**.
+1. You're prompted to enter the pin for your smart card. Enter your pin and select **OK**. Upon entering the correct pin, PSSO registration with smart card authentication is complete.
+1. To check that registration has completed successfully, open the **Terminal** app and run the following command:
+
+    ```console
+    app-sso platform -s
+    ```
+
+    >[!NOTE]
+    > On macOS 14 Somona, you can check the PSSO registration status by navigating to **Settings** > **Users and Groups** > **Select user**. To see your device registration status, navigate to **Settings** > **Users and Groups** > **Network account server**. Select **Edit** to see your device status.
+
+1. Check the bottom of the output, and confirm that information similar to the following snippet is shown, which signifies that SSO tokens are retrieved.
+
+    ```console
+    SSO Tokens:
+    Received:
+    YYYY-MM-DD T HH:MM:SS
+    Expiration:
+    YYYY-MM-DD T HH:MM:SS (Not Expired)
+    ```
+
+1. Now that the Mac is correctly set up, you can now use PSSO to access Microsoft app resources, and unlock the device with the smart card pin. You'll need to use the local password to log in after a reboot to unlock the keychain access.
 
 ### [Password](#tab/password)
 
