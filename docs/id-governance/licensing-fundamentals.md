@@ -69,7 +69,6 @@ A global administrator in a tenant that has an appropriate prerequisite product,
 
 1. In the product details page, select **Start free trial**.
 
-
 ## Features by license
 
 The following table shows what features are available with each license.  Not all features are available in all clouds; see [Microsoft Entra feature availability](~/identity/authentication/feature-availability.md) for Azure Government.
@@ -138,7 +137,6 @@ Here are some example license scenarios to help you determine the number of lice
 
 ## Lifecycle Workflows
 
-
 With Microsoft Entra ID Governance licenses for Lifecycle Workflows, you can:
 
 - Create, manage, and delete workflows up to the total limit of 50 workflows.
@@ -173,13 +171,10 @@ This feature is available with Microsoft Entra ID P1, P2 and Microsoft Entra ID 
 
 ### License scenarios
 
-
 |Customer License  |Usage limits enforced at tenant level for API-driven provisioning  |
 |---------|---------|
 |Microsoft Entra ID P1 or P2      |   Daily usage quota (number of user records that can be uploaded over 24-hour period): **100K user records (2000 /bulkUpload API calls with each request containing max of 50 records)**.<br><br>Max number of API-driven provisioning jobs for each flow: 2<br>o Max 2 apps for API-driven provisioning to on-premises Active Directory.<br>o Max 2 apps for API-driven provisioning to Microsoft Entra ID.      |
 |Microsoft Entra ID Governance alongside Microsoft Entra ID P1 or P2     | Daily usage quota (number of user records that can be uploaded over 24-hour period): **300K user records  (6000 /bulkUpload API calls with each request containing max of 50 records)**.<br><br>Max number of API-driven provisioning jobs for each flow: 20<br>o Max 20 apps for API-driven provisioning to on-premises Active Directory.<br>o Max 20 apps for API-driven provisioning to Microsoft Entra ID.        |
-
-
 
 ## Licensing FAQs
 
@@ -194,7 +189,6 @@ All users who are in scope of Microsoft Entra ID Governance features, including 
 We anticipate making these licenses available in spring 2024. In the interim, organizations that govern the identities of their employees with Microsoft Entra ID Governance can govern the identities of their business guests for no additional cost. At this time, existing customers of Microsoft Entra ID P1 or P2 with Microsoft Entra External ID can continue using the subset of features that are included in P1 or P2 with their business guests through their Microsoft Entra External ID license.
 
 For more information, see: [Microsoft Entra ID Governance licensing for business guests](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/microsoft-entra-id-governance-licensing-for-business-guests/ba-p/3575579).
-
 
 ### What happens when a PIM license expires?
 
