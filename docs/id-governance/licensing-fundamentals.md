@@ -207,7 +207,7 @@ If a Microsoft Entra ID P2, Microsoft Entra ID Governance, or trial license expi
 - Privileged Identity Management will no longer send emails on role assignment changes.
 
 
-### Will any new IGA features and capabilities be added under the Entra ID P2 License?
+### Will any IGA features and capabilities be added under the Entra ID P2 License?
 
 All currently Generally Available features in P2 will remain, but no new features or capabilities will be added to the Entra ID P2 SKU.
 
