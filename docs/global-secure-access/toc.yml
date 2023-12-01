@@ -34,7 +34,7 @@ items:
         href: how-to-manage-remote-networks.md
       - name: Assign a traffic forwarding profile to remote networks
         href: how-to-assign-traffic-profile-to-remote-network.md
-      - name: Simulate remote network connectivity
+      - name: Simulate remote network connectivity in Azure
         href: how-to-simulate-remote-network.md
   - name: Access controls
     expanded: false
