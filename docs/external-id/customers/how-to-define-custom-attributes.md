@@ -101,9 +101,9 @@ To define a custom user attribute, you first create the attribute at the tenant 
 
 1. Select **Custom user attributes**. The list contains all user attributes available in the tenant, including any custom user attributes that have been created. The **Attribute type** column indicates whether an attribute is built-in or custom.
 
-1. Select **Add**. In the **Add an attribute** pane, enter a **Name** for the custom attribute (for example, "Terms and conditions").
+1. Select **Add**. In the **Add an attribute** pane, enter a **Name** for the custom attribute (for example, "Terms of use").
 
-1. In **Data Type**, choose **String**, **Boolean**, or **Int** depending on the [type of data and user input control](#custom-user-attribute-data-and-input-types) you want to create. **String** attributes have a default user input type value of **TextBox**, but you'll be able to change this in a later step (for example if you want to configure radio buttons or checkboxes).
+1. In **Data Type**, choose **String**, **Boolean**, or **Int** depending on the [type of data and user input control](#custom-user-attribute-data-and-input-types) you want to create. **String** attributes have a default user input type value of **TextBox**, but you'll be able to change this in a later step (for example if you want to configure radio buttons or multiselect checkboxes).
 
 1. (Optional) In **Description**, enter a description of the custom attribute for internal use. This description isn't visible to the user.
 
@@ -123,7 +123,7 @@ Follow these steps to add custom user attributes to a user flow you've already c
 
 1. Select the user flow from the list.
 
-1. Select **User attributes**. The list includes any custom user attributes you defined as described in the previous section. For example, the new **Terms and conditions** attribute now appears in the list. Choose all the attributes you want to collect from the user during sign-up.
+1. Select **User attributes**. The list includes any custom user attributes you defined as described in the previous section. For example, the new **Terms of use** attribute now appears in the list. Choose all the attributes you want to collect from the user during sign-up.
 
    :::image type="content" source="media/how-to-define-custom-attributes/user-attributes.png" alt-text="Screenshot of the user attribute options on the Create a user flow page." lightbox="media/how-to-define-custom-attributes/user-attributes.png":::
 
@@ -146,8 +146,8 @@ On the **Page layout** page, you can indicate which attributes are required and 
 1. Configure checkboxes or radio buttons:
 
    - **Single-select checkbox**: A Boolean attribute type renders as a single-select checkbox on the sign-up page. To configure the text that displays next to the checkbox, select and edit the value in the **Label** column. Use Markdown language to add hyperlinks. For details, see [To configure a single-select checkbox (CheckboxSingleSelect)](#to-configure-a-single-select-checkbox-checkboxsingleselect)
-   - **Multiselect checkboxes**: Find the **String** data type attribute you want to configure, and select the value in the **User Input Type** column. In the editor pane, choose the appropriate user input type and enter the values. For details, see [To configure multiselect checkboxes (CheckboxMultiSelect)](#to-configure-multiselect-checkboxes-checkboxmultiselect).
-   - **Radio buttons**: Find the **String** data type attribute you want to configure, and select the value in the **User Input Type** column. In the editor pane, choose the appropriate user input type and enter the values. For details, see [To configure radio buttons (RadioSingleSelect)](#to-configure-radio-buttons-radiosingleselect)
+   - **Multiselect checkboxes**: Find the **String** data type attribute you want to configure, and select the value in the **User Input Type** column to open the editor pane. Choose the appropriate user input type and enter the values. For details, see [To configure multiselect checkboxes (CheckboxMultiSelect)](#to-configure-multiselect-checkboxes-checkboxmultiselect).
+   - **Radio buttons**: Find the **String** data type attribute you want to configure, and select the value in the **User Input Type** column to open the editor pane. Choose the appropriate user input type and enter the values. For details, see [To configure radio buttons (RadioSingleSelect)](#to-configure-radio-buttons-radiosingleselect)
 
 1. Change the order of display by selecting an attribute and choosing **Move up**, **Move down**, **Move to the top**, or **Move to the bottom**.
 
@@ -159,11 +159,17 @@ On the **Page layout** page, you can indicate which attributes are required and 
 
 An attribute with a Boolean data type has a user input type of CheckboxSingleSelect. You can modify the text that displays next to the checkbox and include hyperlinks.
 
-1. On the **Page layouts** page, find the attribute with data type of **String** that you want to configure as a series of checkboxes.
+1. On the **Page layouts** page, find the attribute with data type of **Boolean** that you want to configure.
 
-1. Select the value in the **Label** column and enter the text you want to display next to the checkbox. Use Markdown language to add hyperlinks. For example, if you want to combine your terms of use and privacy policy into a single required checkbox, you can enter:
+1. Select the value in the **Label** column and enter the text you want to display next to the checkbox. Use Markdown language to add hyperlinks. For example:
+   
+   - To configure the label for the **Terms of use** attribute, you can enter:
 
-   `I have read and agree to the [terms of use](https://woodgrove.com/terms-of-use) and the [privacy policy](https://woodgrove.com/privacy)`.
+      `I have read and agree to the [terms of use](https://woodgrove.com/terms-of-use)`.
+
+   - Or, if you want to combine your terms of use and privacy policy into a single required checkbox, you can enter:
+
+      `I have read and agree to the [terms of use](https://woodgrove.com/terms-of-use) and the [privacy policy](https://woodgrove.com/privacy)`.
 
 1. Select **Ok**.
 
@@ -178,7 +184,7 @@ An attribute with a String data type can be configured as a CheckboxMultiSelect 
 
 1. On the **Page layouts** page, find the attribute with data type of **String** that you want to configure as a series of checkboxes.
 
-1. Select the value in the **Label** column and enter the heading you want to display above the series of checkboxes, for example `Terms and conditions`.
+1. Select the value in the **Label** column and enter the heading you want to display above the series of checkboxes, for example `How did you hear about us?`.
 
 1. Select the value in the **User Input Type** column to open the editor pane.
 
