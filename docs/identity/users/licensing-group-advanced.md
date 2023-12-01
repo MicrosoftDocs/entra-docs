@@ -114,7 +114,7 @@ You can use a PowerShell script to check if users have a license assigned direct
 
    :::image type="content" source="./media/licensing-group-advanced/get-mgsubscribedsku-cmdlet.png" alt-text="Screenshot of the Get-MgSubscribedSku cmdlet.":::
 
-3. Use the *ServicePlanId* value for the license you're interested in with [this PowerShell script](licensing-powershell-graph-examples#check-if-user-license-is-assigned-directly-or-inherited-from-a-group). A list populates the users who have this license and information about how the license is assigned.
+3. Use the *ServicePlanId* value for the license you're interested in with [this PowerShell script](licensing-powershell-graph-examples.md#check-if-user-license-is-assigned-directly-or-inherited-from-a-group). A list populates the users who have this license and information about how the license is assigned.
 
 ## Use Audit logs to monitor group-based licensing activity
 
