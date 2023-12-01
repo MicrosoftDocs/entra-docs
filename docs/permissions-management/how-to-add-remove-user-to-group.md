@@ -8,7 +8,7 @@ ms.service: active-directory
 ms.subservice: ciem
 ms.workload: identity
 ms.topic: how-to
-ms.date: 09/14/2023
+ms.date: 11/30/2023
 ms.author: jfields
 ---
 
@@ -21,9 +21,9 @@ This article describes how you can add or remove a new user for a group in Permi
 
 ## Add a user
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/#home) as a Global Administrator.
-1. Browse to **Microsoft Entra ID** > **Go to Microsoft Entra ID**. 
-1. From the navigation pane, select the **Groups** drop-down menu, then **All groups**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/#home) as at least a [Billing Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#billing-administrator).
+1. Browse to **Microsoft Entra ID**, then select **Go to Microsoft Entra ID**. 
+1. From the navigation pane, go to **Identity** > **Groups** > **All groups**.
 1. Select the group name for the group you want to add the user to.
 1. From the group's **Manage** menu, click **Members**.
 1. Click **+ Add members**, then search for the user you want to add from the list.
@@ -37,9 +37,9 @@ This article describes how you can add or remove a new user for a group in Permi
 
 ## Remove a user
 
-1. Sign in to the Microsoft [Microsoft Entra admin center](https://entra.microsoft.com/#home) as a Global Administrator. 
-1. Browse to **Microsoft Entra ID** > **Go to Microsoft Entra ID**. 
-1. From the navigation pane, select the **Groups** drop-down menu, then **All groups**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/#home) as at least a [Billing Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#billing-administrator).
+1. Browse to **Microsoft Entra ID**, then select **Go to Microsoft Entra ID**. 
+1. From the navigation pane, go to **Identity** > **Groups** > **All groups**.
 1. Select the group name for the group you want to remove the user from.
 1. From the groups **Manage** menu, click **Members**.
 1. Search for the user you want to remove from the list, then check the box next to their name.
