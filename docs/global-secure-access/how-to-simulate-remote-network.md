@@ -25,7 +25,7 @@ Building this functionality out in Azure provides organizations the ability to u
 | **[Virtual network gateway](#create-a-virtual-network-gateway)** | Your on-premises router, sometimes referred to as customer premises equipment (CPE) |
 | **[Local network gateway](#create-local-network-gateway)** | The Microsoft gateway that your router (Azure virtual network gateway) creates an IPsec tunnel to |
 | **[Connection](#create-site-to-site-s2s-vpn-connection)** | IPsec VPN tunnel created between the virtual network gateway and local network gateway |
-| **[Virtual machine](#virtual-machine)** | Client devices on your on-premises network |
+| **[Virtual machine](#verify-connectivity)** | Client devices on your on-premises network |
 
 In this document, we use the following default values. Feel free to configure these settings according to your own requirements.
 
