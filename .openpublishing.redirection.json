@@ -50,6 +50,11 @@
       "source_path_from_root": "/docs/identity/authentication/multi-factor-authentication-wizard.md",
       "redirect_url": "/entra/identity/conditional-access/howto-conditional-access-policy-all-users-mfa",
       "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/authentication/concept-authentication-operator-assistance.md",
+      "redirect_url": "/entra/identity/authentication/concept-mfa-howitworks",
+      "redirect_document_id": false
     }
 
   ]

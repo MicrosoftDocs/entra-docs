@@ -69,7 +69,6 @@ A global administrator in a tenant that has an appropriate prerequisite product,
 
 1. In the product details page, select **Start free trial**.
 
-
 ## Features by license
 
 The following table shows what features are available with each license.  Not all features are available in all clouds; see [Microsoft Entra feature availability](~/identity/authentication/feature-availability.md) for Azure Government.
@@ -122,7 +121,7 @@ Here are some example license scenarios to help you determine the number of lice
 
 ## Access reviews
 
-Using this feature requires Microsoft Entra ID Governance subscriptions for your organization's users, including for all employees who are reviewing access or having their access reviewed. Some capabilities within this feature may operate with a Microsoft Entra ID P2 subscription.
+Using this feature requires Microsoft Entra ID Governance subscriptions for your organization's users, including for all employees who are reviewing access or having their access reviewed. Some capabilities within this feature might operate with a Microsoft Entra ID P2 subscription.
 
 ### Example license scenarios
 
@@ -137,7 +136,6 @@ Here are some example license scenarios to help you determine the number of lice
 | An administrator creates an access review of Group D with 6 member users. Makes it a self-review. | 6 licenses for each user as self-reviewers. No additional licenses are required.  | 6 |
 
 ## Lifecycle Workflows
-
 
 With Microsoft Entra ID Governance licenses for Lifecycle Workflows, you can:
 
@@ -173,13 +171,10 @@ This feature is available with Microsoft Entra ID P1, P2 and Microsoft Entra ID 
 
 ### License scenarios
 
-
 |Customer License  |Usage limits enforced at tenant level for API-driven provisioning  |
 |---------|---------|
 |Microsoft Entra ID P1 or P2      |   Daily usage quota (number of user records that can be uploaded over 24-hour period): **100K user records (2000 /bulkUpload API calls with each request containing max of 50 records)**.<br><br>Max number of API-driven provisioning jobs for each flow: 2<br>o Max 2 apps for API-driven provisioning to on-premises Active Directory.<br>o Max 2 apps for API-driven provisioning to Microsoft Entra ID.      |
 |Microsoft Entra ID Governance alongside Microsoft Entra ID P1 or P2     | Daily usage quota (number of user records that can be uploaded over 24-hour period): **300K user records  (6000 /bulkUpload API calls with each request containing max of 50 records)**.<br><br>Max number of API-driven provisioning jobs for each flow: 20<br>o Max 20 apps for API-driven provisioning to on-premises Active Directory.<br>o Max 20 apps for API-driven provisioning to Microsoft Entra ID.        |
-
-
 
 ## Licensing FAQs
 
@@ -195,7 +190,6 @@ We anticipate making these licenses available in spring 2024. In the interim, or
 
 For more information, see: [Microsoft Entra ID Governance licensing for business guests](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/microsoft-entra-id-governance-licensing-for-business-guests/ba-p/3575579).
 
-
 ### What happens when a PIM license expires?
 
 If a Microsoft Entra ID P2, Microsoft Entra ID Governance, or trial license expires, Privileged Identity Management features will no longer be available in your directory:
@@ -206,6 +200,9 @@ If a Microsoft Entra ID P2, Microsoft Entra ID Governance, or trial license expi
 - Any ongoing access reviews of Azure AD roles will end, and Privileged Identity Management configuration settings are removed.
 - Privileged Identity Management will no longer send emails on role assignment changes.
 
+### Will any IGA features and capabilities be added under the Entra ID P2 License?
+
+All currently Generally Available features in Entra ID P2 will remain, but no new features or capabilities will be added to the Entra ID P2 SKU.
 
 ## Next steps
 
