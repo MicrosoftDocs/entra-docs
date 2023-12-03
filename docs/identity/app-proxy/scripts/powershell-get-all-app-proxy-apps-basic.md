@@ -24,7 +24,7 @@ This PowerShell script example lists information about all Microsoft Entra appli
 
 [!INCLUDE [cloud-shell-try-it.md](~/../azure-docs-pr/includes/cloud-shell-try-it.md)]
 
-This sample requires the [Microsoft Graph Beta PowerShell module](/powershell/installation) 2.10 or newer.
+This sample requires the [Microsoft Graph Beta PowerShell module](/powershell/microsoftgraph/installation) 2.10 or newer.
 
 ## Sample script
 
@@ -35,8 +35,8 @@ This sample requires the [Microsoft Graph Beta PowerShell module](/powershell/in
 | Command | Notes |
 |---|---|
 |[Connect-MgGraph](/powershell/module/microsoft.graph.authentication/connect-mggraph)| Connects to Microsoft Graph|
-|[Get-MgBetaServicePrincipal](/powershell/module/microsoft.graph.authentication/get-mgserviceprincipal)| Gets a service principal|
-|[Get-MgBetaApplication](/powershell/module/microsoft.graph.authentication/get-mgbetaapplication)| Gets an Enterprise Application|
+|[Get-MgBetaServicePrincipal](/powershell/module/microsoft.graph.applications/get-mgserviceprincipal)| Gets a service principal|
+|[Get-MgBetaApplication](/powershell/module/microsoft.graph.applications/get-mgbetaapplication)| Gets an Enterprise Application|
 
 ## Next steps
 
