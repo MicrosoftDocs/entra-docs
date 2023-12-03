@@ -24,7 +24,8 @@ This PowerShell script example lists information about all Microsoft Entra appli
 
 [!INCLUDE [cloud-shell-try-it.md](~/../azure-docs-pr/includes/cloud-shell-try-it.md)]
 
-This sample requires the [Azure Active Directory PowerShell 2.0 for Graph module](/powershell/azure/active-directory/install-adv2) or the [Azure Active Directory PowerShell 2.0 for Graph module preview version](/powershell/azure/active-directory/install-adv2?view=azureadps-2.0-preview&preserve-view=true) (AzureADPreview).
+This sample requires the [Microsoft Graph Beta PowerShell module](/powershell/installation) 2.10 or newer.
+
 ## Sample script
 
 [!code-azurepowershell[main](~/../powershell_scripts/application-proxy/get-all-appproxy-apps-basic.ps1 "Get all Application Proxy apps")]
@@ -33,10 +34,12 @@ This sample requires the [Azure Active Directory PowerShell 2.0 for Graph module
 
 | Command | Notes |
 |---|---|
-|[Get-AzureADServicePrincipal](/powershell/module/azuread/get-azureadserviceprincipal) | Gets a service principal. |
+|[Connect-MgGraph](/powershell/module/microsoft.graph.authentication/connect-mggraph)| Connects to Microsoft Graph|
+|[Get-MgBetaServicePrincipal](/powershell/module/microsoft.graph.authentication/get-mgserviceprincipal)| Gets a service principal|
+|[Get-MgBetaApplication](/powershell/module/microsoft.graph.authentication/get-mgbetaapplication)| Gets an Enterprise Application|
 
 ## Next steps
 
-For more information on the Azure AD PowerShell module, see [Azure AD PowerShell module overview](/powershell/azure/active-directory/overview).
+For more information on the Microsoft Graph PowerShell module, see [Microsoft Graph PowerShell overview](/powershell/microsoftgraph/overview).
 
-For other PowerShell examples for Application Proxy, see [Azure AD PowerShell examples for Microsoft Entra application proxy](../application-proxy-powershell-samples.md).
+For other PowerShell examples for Application Proxy, see [Microsoft Entra application proxy PowerShell examples](../application-proxy-powershell-samples.md).
