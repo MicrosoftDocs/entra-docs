@@ -15,7 +15,7 @@ ms.reviewer: ashishj
 
 # Microsoft Entra application proxy PowerShell examples
 
-The following table includes links to PowerShell script examples for Microsoft Entra application proxy. These samples require either the [Azure Active Directory PowerShell 2.0 for Graph module](/powershell/azure/active-directory/install-adv2) or the [Azure Active Directory PowerShell 2.0 for Graph module preview version](/powershell/azure/active-directory/install-adv2?view=azureadps-2.0-preview&preserve-view=true), unless otherwise noted.
+The following table includes links to PowerShell script examples for Microsoft Entra application proxy. These samples require the [Microsoft Graph Beta PowerShell module](/powershell/microsoftgraph/installation) 2.10 or newer, unless otherwise noted.
 
 
 For more information about the cmdlets used in these samples, see [Application Proxy Application Management](/powershell/module/azuread/#application_proxy_application_management) and [Application Proxy Connector Management](/powershell/module/azuread/#application_proxy_connector_management).
