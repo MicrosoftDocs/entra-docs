@@ -35,7 +35,7 @@ There are two main steps to the role assignment process. First you'll select the
 
 1. Browse to **Identity** > **Users** > **All users**.
 
-   :::image type="content" source="media/all-users-page.png" alt-text="Screenshot of the All users page.":::
+   :::image type="content" source="media/entra-users-assign-role-azure-portal/all-users-page.png" alt-text="Screenshot of the All users page.":::
 
 1. Search for and select the user getting the role assignment.
 
