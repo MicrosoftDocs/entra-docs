@@ -36,7 +36,7 @@ This sample requires the [Microsoft Graph Beta PowerShell module](/powershell/mi
 |---|---|
 |[Connect-MgGraph](/powershell/module/microsoft.graph.authentication/connect-mggraph)| Connects to Microsoft Graph|
 |[Get-MgBetaServicePrincipal](/powershell/module/microsoft.graph.applications/get-mgserviceprincipal)| Gets a service principal|
-|[Get-MgBetaApplication](/powershell/module/microsoft.graph.beta,applications/get-mgbetaapplication)| Gets an Enterprise Application|
+|[Get-MgBetaApplication](/powershell/module/microsoft.graph.beta.applications/get-mgbetaapplication)| Gets an Enterprise Application|
 
 ## Next steps
 
