@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
 
-* Pendo supports **IDP** initiated SSO.
+* Pendo supports both **IDP** initiated and **SP** initiated SSO.
 
 ## Add Pendo from the gallery
 
@@ -75,7 +75,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. On the **Set-up single sign-on with SAML** page, perform the following steps:
 
-    a. In the **Identifier** text box, enter `PingConnect`. (If this identifier is already used by another application, contact the [Pendo support team](mailto:support@pendo.io).)
+    a. In the **Identifier** text box, enter `PingConnect`. (If this identifier is already used by another application, contact the [Pendo support team](https://support.pendo.io/hc/en-us/articles/360034163971-Get-help-with-Pendo-from-Technical-Support).)
     
 
     b. In the **Relay State** text box, type a URL using the following pattern:
@@ -88,7 +88,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	![image](common/edit-attribute.png)
 
-1. On the **Set-up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
+1. On the **Set-up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **App Federation Metadata Url** (preferred) OR plain XML under **Federation Metadata XML** and select **Download** to download the metadata and save it on your computer.
 
 	![The Certificate download link](common/metadataxml.png)
 
@@ -128,11 +128,11 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 ## Configure Pendo SSO
 
-To configure single sign-on on **Pendo** side, you need to send the downloaded **Federation Metadata XML** and appropriate copied URLs from the application configuration to [Pendo support team](mailto:support@pendo.io). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **Pendo** side, you need to send the **App Federation Metadata Url** (preferred) or downloaded **Federation Metadata XML** and appropriate copied URLs from the application configuration to [Pendo support team](https://support.pendo.io/hc/en-us/articles/360034163971-Get-help-with-Pendo-from-Technical-Support). They set this setting to have the SAML SSO connection set properly on both sides.
 
 ### Create Pendo test user
 
-In this section, you create a user called Britta Simon in Pendo. Work with [Pendo support team](mailto:support@pendo.io) to add the users in the Pendo platform. Users must be created and activated before you use single sign-on.
+In this section, you create a user called Britta Simon in Pendo. Work with [Pendo support team](https://support.pendo.io/hc/en-us/articles/360034163971-Get-help-with-Pendo-from-Technical-Support) to add the users in the Pendo platform. Users must be created and activated before you use single sign-on.
 
 ## Test SSO 
 
