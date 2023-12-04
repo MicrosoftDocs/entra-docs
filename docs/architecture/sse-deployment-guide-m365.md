@@ -19,7 +19,7 @@ This Proof of Concept (PoC) Deployment Guide helps you to deploy Microsoft's Sec
 
 ### Microsoft Entra Internet Access for Microsoft 365 deployment
 
-Complete the [Configure initial product](sse-deployment-guide-intro.md#configure-initial-product) steps. This includes configuration of Microsoft Entra Internet Access for Microsoft 365, enabling the Microsoft 365 traffic forwarding profile, and installing the Global Secure Access client. You should scope your configuration to specific test users and groups.
+Complete the [Configure initial product](./sse-deployment-guide-intro.md#configure-initial-product) steps. This includes configuration of Microsoft Entra Internet Access for Microsoft 365, enabling the Microsoft 365 traffic forwarding profile, and installing the Global Secure Access client. You should scope your configuration to specific test users and groups.
 
 ### Sample PoC scenario: protect against data exfiltration
 
