@@ -205,7 +205,7 @@ You'll now set the Google client ID and client secret. You can use the Microsoft
 **To configure Google federation by using PowerShell**
 
 1. Install the latest version of the [Microsoft Graph PowerShell module](powershell/microsoftgraph/installation).
-2. Connect to your tenant by using command: [Connect-MgGraph](/powershell/microsoftgraph/authentication-commands#using-connect-mggraph).
+2. Connect to your tenant by using the [Connect-MgGraph](/powershell/microsoftgraph/authentication-commands#using-connect-mggraph) command.
 3. At the sign-in prompt, sign in with the managed Global Administrator account.  
 4. Run the following commands:
 
@@ -215,14 +215,14 @@ You'll now set the Google client ID and client secret. You can use the Microsoft
       displayName = "Login with Google"
       identityProviderType = "Google"
       clientId = "<client ID>"
-      clientSecret = "<client secret"
+      clientSecret = "<client secret>"
    }
 
    New-MgIdentityProvider -BodyParameter $params
-   ```   
+   ```
 
    > [!NOTE]
-   > Use the client ID and client secret from the app you created in "Step 1: Configure a Google developer project." For more information, see [New-MgIdentityProvider](powershell/module/microsoft.graph.identity.signins/new-mgidentityprovider).
+   > Use the client ID and client secret from the app you created in "Step 1: Configure a Google developer project." For more information, see [New-MgIdentityProvider](/powershell/module/microsoft.graph.identity.signins/new-mgidentityprovider).
 
 ## Add Google identity provider to a user flow
 
@@ -252,12 +252,15 @@ You can delete your Google federation setup. If you do so, Google guest users wh
 1. Select **Yes** to confirm the deletion. 
 
 **To delete Google federation by using PowerShell** 
+
 1. Install the latest version of the [Microsoft Graph PowerShell module](powershell/microsoftgraph/installation).
-2. Connect to your tenant by using command: [Connect-MgGraph](/powershell/microsoftgraph/authentication-commands#using-connect-mggraph).
+2. Connect to your tenant by using the [Connect-MgGraph](/powershell/microsoftgraph/authentication-commands#using-connect-mggraph) command.
 3. In the sign-in prompt, sign in with the managed Global Administrator account.  
 4. Enter the following command:
 
-    `Remove-AzureADMSIdentityProvider -Id Google-OAUTH`
+   ```powershell
+   Remove-MgIdentityProvider -IdentityProviderBaseId Google-OAUTH
+   ```
 
    > [!NOTE]
-   > For more information, see [Remove-AzureADMSIdentityProvider](/powershell/module/azuread/Remove-AzureADMSIdentityProvider?view=azureadps-2.0-preview&preserve-view=true).
+   > For more information, see [Remove-MgIdentityProvider](/powershell/module/microsoft.graph.identity.signins/remove-mgidentityprovider).
