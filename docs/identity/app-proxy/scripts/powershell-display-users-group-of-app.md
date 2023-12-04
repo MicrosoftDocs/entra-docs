@@ -24,7 +24,7 @@ This PowerShell script example lists the users and groups assigned to a specific
 
 [!INCLUDE [cloud-shell-try-it.md](~/../azure-docs-pr/includes/cloud-shell-try-it.md)]
 
-This sample requires the [Azure Active Directory PowerShell 2.0 for Graph module](/powershell/azure/active-directory/install-adv2) or the [Azure Active Directory PowerShell 2.0 for Graph module preview version](/powershell/azure/active-directory/install-adv2?view=azureadps-2.0-preview&preserve-view=true) (AzureADPreview).
+This sample requires the [Microsoft Graph Beta PowerShell module](/powershell/microsoftgraph/installation) 2.10 or newer.
 
 ## Sample script
 
@@ -34,14 +34,14 @@ This sample requires the [Azure Active Directory PowerShell 2.0 for Graph module
 
 | Command | Notes |
 |---|---|
-| [Get-AzureADUser](/powershell/module/azuread/get-azureaduser)| Gets a user. |
-| [Get-AzureADGroup](/powershell/module/azuread/get-azureadgroup)| Gets a group. |
-| [Get-AzureADServicePrincipal](/powershell/module/azuread/get-azureadserviceprincipal) | Gets a service principal. |
-| [Get-AzureADUserAppRoleAssignment](/powershell/module/azuread/get-azureaduserapproleassignment) | Get a user application role assignment. |
-| [Get-AzureADGroupAppRoleAssignment](/powershell/module/azuread/get-azureadgroupapproleassignment) | Get a group application role assignment. |
+|[Connect-MgGraph](/powershell/module/microsoft.graph.authentication/connect-mggraph)| Connects to Microsoft Graph|
+|[Get-MgBetaServicePrincipalById](/powershell/module/microsoft.graph.beta.applications/get-mgbetaserviceprincipalbyid)| Gets a service principal by id|
+|[Get-MgBetaUser](/powershell/module/microsoft.graph.beta.applications/get-mgbetauser)| Gets a user|
+|[Get-MgBetaGroup](/powershell/module/microsoft.graph.beta.applications/get-mgbetagroup)| Gets a group|
+|[Get-MgBetaUserAppRoleAssignment](/powershell/module/microsoft.graph.beta.applications/get-mgbetaapproleassignment)| Gets the application role assignment|
 
 ## Next steps
 
-For more information on the Azure AD PowerShell module, see [Azure AD PowerShell module overview](/powershell/azure/active-directory/overview).
+For more information on the Microsoft Graph PowerShell module, see [Microsoft Graph PowerShell overview](/powershell/microsoftgraph/overview).
 
-For other PowerShell examples for Application Proxy, see [Azure AD PowerShell examples for Microsoft Entra application proxy](../application-proxy-powershell-samples.md).
+For other PowerShell examples for Application Proxy, see [Microsoft Entra application proxy PowerShell examples](../application-proxy-powershell-samples.md).
