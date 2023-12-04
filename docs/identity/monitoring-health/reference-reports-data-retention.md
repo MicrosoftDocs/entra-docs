@@ -26,14 +26,14 @@ In this article, you learn about the data retention policies for the different a
 
 If you already have activities data with your free license, then you can see it immediately on upgrade. If you don’t have any data, then it will take up to three days for the data to show up in the reports after you upgrade to a premium license.
 
-- For security signals, the collection process starts when you opt-in to use the **Identity Protection Center**.
+- For security signals, the collection process starts when you opt in to use the **Identity Protection Center**.
 - For Microsoft Graph activity logs, the collection process starts when the [log category is enabled in diagnostic settings](howto-integrate-activity-logs-with-azure-monitor-logs.md#send-logs-to-azure-monitor).
 
 <a name='how-long-does-azure-ad-store-the-data'></a>
 
 ## How long does Microsoft Entra ID store the data?
 
-Log storage within Microsof Entra varies by report type and license type. You can retain the audit and sign-in activity data for longer than the default retention period outlined in the previous table by routing it to an Azure storage account using Azure Monitor. For more information, see [Archive Microsoft Entra logs to an Azure storage account](./howto-archive-logs-to-storage-account.md).
+Log storage within Microsoft Entra varies by report type and license type. You can retain the audit and sign-in activity data for longer than the default retention period outlined in the previous table by routing it to an Azure storage account using Azure Monitor. For more information, see [Archive Microsoft Entra logs to an Azure storage account](./howto-archive-logs-to-storage-account.md).
 
 ### Activity reports
 
