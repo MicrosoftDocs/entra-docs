@@ -109,22 +109,19 @@ Get-MgPolicyAuthorizationPolicy | Format-List
 ```
 
 ```output
-AllowEmailVerifiedUsersToJoinOrganization         : True
-AllowInvitesFrom                                  : everyone
-AllowUserConsentForRiskyApps                      :
-AllowedToSignUpEmailBasedSubscriptions            : True
-AllowedToUseSspr                                  : True
-BlockMsolPowerShell                               : False
-DefaultUserRoleOverrides                          :
-DefaultUserRolePermissions                        : Microsoft.Graph.Beta.PowerShell.Models.MicrosoftGraphDefaultUserRolePermissions
-DeletedDateTime                                   :
-Description                                       : Used to manage authorization related settings across the company.
-DisplayName                                       : Authorization Policy
-EnabledPreviewFeatures                            : {}
-GuestUserRoleId                                   : 10dae51f-b6af-4016-8d66-8c2a99b929b3
-Id                                                : authorizationPolicy
-PermissionGrantPolicyIdsAssignedToDefaultUserRole : {ManagePermissionGrantsForSelf.microsoft-user-default-legacy}
-AdditionalProperties                              : {}
+AllowEmailVerifiedUsersToJoinOrganization : True
+AllowInvitesFrom                          : everyone
+AllowUserConsentForRiskyApps              :
+AllowedToSignUpEmailBasedSubscriptions    : True
+AllowedToUseSspr                          : True
+BlockMsolPowerShell                       : False
+DefaultUserRolePermissions                : Microsoft.Graph.PowerShell.Models.MicrosoftGraphDefaultUserRolePermissions
+DeletedDateTime                           :
+Description                               : Used to manage authorization related settings across the company.
+DisplayName                               : Authorization Policy
+GuestUserRoleId                           : 10dae51f-b6af-4016-8d66-8c2a99b929b3
+Id                                        : authorizationPolicy
+AdditionalProperties                      : {[@odata.context, https://graph.microsoft.com/v1.0/$metadata#policies/authorizationPolicy/$entity]}
 ```
 
 ### Update command: Update-MgPolicyAuthorizationPolicy
