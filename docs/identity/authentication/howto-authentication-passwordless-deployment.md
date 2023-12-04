@@ -95,7 +95,7 @@ The wizard will use your inputs to craft a step-by-step plan for you to follow.
 
 ### MacOS Platform Single Sign-On
 
-To enable macOS Platform Single Sign-On (PSSO), your Mac must have an operating system of at least macOS 13 Ventura, and that the configuration steps are done through the [Microsoft InTune admin center](https://intune.microsoft.com/#home). Support for other Mobile Device Management (MDM) providers will be added in future releases.
+To enable macOS Platform Single Sign-On (PSSO), your Mac must have an operating system of at least macOS 13 Ventura, and that the configuration steps are done through the [Microsoft InTune admin center](https://intune.microsoft.com/#home). Note that the smart card authentication method is only supported for macOS 14 Sonoma. Support for other Mobile Device Management (MDM) providers will be added in future releases.
 
 Before PSSO can be enabled, the extension payload must be configured via MDM, with the Mac device enrolled into MDM and the [Mac Company Portal](/mem/intune/user-help/enroll-your-device-in-intune-macos-cp) app installed.
 
