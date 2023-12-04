@@ -5,34 +5,20 @@ author: shlipsey3
 manager: amycolannino
 ms.service: active-directory
 ms.topic: conceptual
-ms.workload: identity
 ms.subservice: report-monitor
-ms.date: 11/29/2023
+ms.date: 12/04/2023
 ms.author: sarahlipsey
 ms.reviewer: sarbar
 
 ---
 
-# Microsoft Entra Health
+# What is Microsoft Entra Health?
 
-Microsoft Entra Health (preview) provides you with the ability to monitor and diagnose the health of your Microsoft Entra tenant through the following capabilities:
-
-**Service level agreement (SLA) attainment**:
-
-- Tenant-level user authentication availability for Microsoft Entra ID.
-
-**Scenario monitoring (preview)**:
-
-- Monitoring and diagnostics for key Microsoft Entra ID scenarios.
-- Proactive alerts when a potential issue or failure condition is detected.
-- Reduce time to detection and support issue resolution.
-- Actionable and prescriptive guidance for every alert.
-
-Microsoft Entra Health consists of multiple layers, which allows you to navigate from a high-level overview to a deep dive into specific health data. This article describes how Microsoft Entra Health works, along with details about each scenario.
+Microsoft Entra Health (preview) provides you with the ability to view the health of your Microsoft Entra tenant through a report of service level agreement (SLA) attainment and a set of health metrics you can monitor for key Microsoft Entra ID scenarios. All the data is provided at the tenant level. The scenario monitoring solution is currently in public preview and can be enabled or disabled in the Preview Hub; the SLA Attainment report is generally available.
 
 ## How to access Microsoft Entra Health
 
-Microsoft Entra Health currently includes SLA attainment and Scenario monitoring (preview). The SLA Attainment report is available for all Microsoft Entra tenants. Scenario Monitoring is currently in preview, but can be enabled for your view of the tenant.
+You can view the Microsoft Entra Health SLA attainment and Scenario monitoring (preview) from the Microsoft Entra admin center.
 
 1. Sign into the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
 1. Browse to **Identity** > **Monitoring and health** > **Health (preview)**.
@@ -49,23 +35,35 @@ If you'd like to view the **Scenario monitoring (preview)**:
 
 Enabling preview feature might take up to 24 hours to populate. Enabling the preview only changes your view, not the entire tenant. You can disable the preview at any time.
 
+## SLA attainment
+
+In addition to providing global SLA performance, Microsoft Entra ID now provides tenant-level SLA performance. The Service Level Agreement (SLA) attainment is the user authentication availability for Microsoft Entra ID. The target SLA threshold is 99.99%.
+
+Hover your mouse over the bar for a month to view the percentage for that month. A table with the same details appears below the graph.
+
+![Screenshot of the SLA attainment report.](media/concept-scenario-health/sla-attainment.png)
+
 ## Scenario monitoring (preview)
 
-Many IT administrators spend a considerable amount of time investigating the following key scenarios:
+Many IT administrators spend a considerable amount of time investigating the health of the following key scenarios:
 
 - Interactive user sign-in requests that require Microsoft Entra multifactor authentication.
-- User sign-in requests that require a managed or compliant device through a Conditional Access policy.
+- User sign-in requests that require a managed through a Conditional Access policy
+- User sign-in requests that require a compliant device through a Conditional Access policy.
 - User sign-in requests to applications using SAML authentication.
 
 The data associated with each of these scenarios is aggregated into a view that's specific to that scenario. If you're only interested in sign-ins from compliant devices, you can dive into that scenario without noise from other sign-in activities.
 
-At this time, data is aggregated every 15 minutes, so you're getting near real-time insights into your tenant's health. If there's an anomaly detected, an alert is generated. The alert provides you with diagnostic information and action steps to resolve the issue.
-
-The scenarios available in Microsoft Entra ID Health are always available, even if there are no alerts. Each scenario detail page provides trends and totals for that scenario for the last 30 days. You can set the date range to 24 hours, 7 days, or 1 month.
+Data is aggregated every 15 minutes, for low latency insights into your tenant's health. Each scenario detail page provides trends and totals for that scenario for the last 30 days. You can set the date range to 24 hours, 7 days, or 1 month.
 
 Select **View details** on a tile to view the metrics for that scenario.
 
 ![Screenshot of the the scenario monitoring landing page.](media/concept-scenario-health/scenario-monitoring.png)
+
+You can also view these metric streams using Microsoft Graph:
+
+- Scenario Monitoring: [Microsoft Entra service activity](/graph/api//resources/serviceactivity?view=graph-rest-beta&preserve-view=true)
+- SLA attainment: [Microsoft Entra authentication](/graph/api/resources/serviceactivity?view=graph-rest-beta&preserve-view=true)
 
 ### Sign-ins requiring a compliant device
 
@@ -79,7 +77,7 @@ This scenario captures each user authentication that satisfies a Conditional Acc
 
 ### Sign-ins requiring a managed device
 
-This scenario captures each user authentication that satisfies a Conditional Access policy requiring sign-in from a managed device. The graph aggregates data every 15 minutes. You can set the date range to 24 hours, 7 days, or 1 month.
+This scenario captures each user authentication that satisfies a Conditional Access policy requiring sign-in from a managed device.
 
 - [What is device management](/mem/intune/fundamentals/what-is-device-management)?
 - [Learn about Microsoft Entra hybrid joined devices](../devices/concept-hybrid-join.md).
@@ -106,10 +104,3 @@ This scenario looks at SAML 2.0 authentication attempts that the Microsoft Entra
 
 ![Screenshot of the SAML scenario.](media/concept-scenario-health/scenario-monitoring-SAML.png)
 
-## SLA attainment
-
-In addition to providing global SLA performance, Microsoft Entra ID now provides tenant-level SLA performance. The Service Level Agreement (SLA) attainment is the user authentication availability for Microsoft Entra ID. The target SLA threshold is 99.99%.
-
-Hover your mouse over the bar for a month to view the percentage for that month. A table with the same details appears below the graph.
-
-![Screenshot of the SLA attainment report.](media/concept-scenario-health/sla-attainment.png)
