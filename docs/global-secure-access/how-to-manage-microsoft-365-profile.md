@@ -58,7 +58,7 @@ The policy groups include the following details:
 
 You can choose to bypass certain traffic. Users can still access the site; however, the service doesn't process the traffic. You can bypass traffic to a specific FQDN or IP address, an entire policy group within the profile, or the entire Microsoft 365 profile itself. If you only need to forward some of the Microsoft 365 resources within a policy group, enable the group then change the **Action** in the details accordingly.
 
-The following example shows setting the `*.sharepoint.com` FQDN to **Bypass** so the traffic isn't be forwarded to the service.
+The following example shows setting the `*.sharepoint.com` FQDN to **Bypass** so the traffic isn't forwarded to the service.
 
 ![Screenshot of the Action dropdown menu.](media/how-to-manage-microsoft-365-profile/microsoft-365-policies-forward-bypass.png)
 
