@@ -70,7 +70,7 @@ The following table outlines when an authentication method can be used during a 
 | Microsoft Authenticator (Passwordless) | Yes            | No                        |
 | Authenticator Lite             | No                     | MFA                       |
 | FIDO2 security key             | Yes                    | MFA                       |
-| Certificate-based authentication | Yes                  | No                        |
+| Certificate-based authentication | Yes                  | MFA                        |
 | OATH hardware tokens (preview) | No                     | MFA and SSPR              |
 | OATH software tokens           | No                     | MFA and SSPR              |
 | Temporary Access Pass (TAP)    | Yes                    | MFA                       |

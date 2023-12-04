@@ -6,7 +6,7 @@ items:
   items:
   - name: What is Microsoft Entra ID?
     href: whatis.md
-  - name: New name for Microsoft Entra ID
+  - name: New name for Azure AD
     href: new-name.md
   - name: Identity fundamentals
     href: identity-fundamental-concepts.md
@@ -25,7 +25,7 @@ items:
     href: properties-area.md
   - name: Add company branding
     href: how-to-customize-branding.md
-  - name: Rename Microsoft Entra ID
+  - name: Rename Azure AD
     href: how-to-rename-azure-ad.md
   - name: Get the most out of documentation
     href: how-to-navigate.md
