@@ -48,7 +48,7 @@ Required permissions | For permissions required to apply an update, see [Microso
 > We will begin retiring past versions of Microsoft Entra Connect Sync 2.x 12 months from the date they are superseded by a newer version. 
 > This policy will go into effect on 15 March 2023, when we will retire all versions that are superseded by a newer version on 15 March 2022.
 > 
-> Currently only builds 2.1.16.0 (release August 8th 2022) or later are supported.
+> Currently only builds version 2.1.20.0 (release November 9th 2022) or later are supported.
 > 
 > If you are not already using the latest release version of Microsoft Entra Connect Sync, you should upgrade your Microsoft Entra Connect Sync software before that date. 
 
