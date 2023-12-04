@@ -96,21 +96,29 @@ There are two ways to get your AAGUID. You can either ask your security key prov
 
 1. Browse to [https://myprofile.microsoft.com](https://myprofile.microsoft.com).
 1. Sign in if not already.
-1. Click **Security Info**.
-   1. If the user already has at least one Microsoft Entra multifactor authentication method registered, they can immediately register a FIDO2 security key.
-   1. If they don't have at least one Microsoft Entra multifactor authentication method registered, they must add one.
-   1. An Administrator can issue a [Temporary Access Pass](howto-authentication-temporary-access-pass.md) to allow the user to register a Passwordless authentication method.
-1. Add a FIDO2 Security key by clicking **Add method** and choosing **Security key**.
+1. Click **Security info**.
+   1. If you already have at least one MFA method registered, you can immediately register a FIDO2 security key.
+   1. If you don't have at least one MFA method registered, you must add one.
+   1. An Authentication Policy Administrator can also issue a [Temporary Access Pass](howto-authentication-temporary-access-pass.md) to allow a user to register a passwordless authentication method.
+1. To add a FIDO2 security key, click **Add method**, and choose **Security key**.
 1. Choose **USB device** or **NFC device**.
-1. Have your key ready and choose **Next**.
-1. A box will appear and ask the user to create/enter a PIN for your security key, then perform the required gesture for the key, either biometric or touch.
-1. The user will be returned to the combined registration experience and asked to provide a meaningful name for the key to identify it easily. Click **Next**.
+1. Have your key ready and choose **Next**. If you're using Chrome or Edge, the browser might prioritize registration of a cross-device passkey over a device-bound passkey such as a security key. 
+
+   - On Windows 11, you can sign in with your work or school account and click **Next**. Below **More choices**, choose Security key and click Next.
+
+     :::image type="content" border="true" source="./media/howto-authentication-passwordless-security-key/security-key.png" alt-text="Screenshot of option to choose security key on Windows 11."::: 
+
+   - On Windows 10, the browser may show the QR pairing screen to register a cross-device passkey. Click **Try another way** (or **Use a different device**) to reach the browser-based security key dialog.  
+
+     :::image type="content" border="true" source="./media/howto-authentication-passwordless-security-key/try-another-way.png" alt-text="Screenshot of option to choose security key on Windows 10."::: 
+
+1. You're prompted to create or enter a PIN for your security key, then perform the required gesture for the key.
+1. You return to the combined registration experience, where you can provide a meaningful name for the key to identify it easily. Click **Next**.
 1. Click **Done** to complete the process.
 
 ## Sign in with passwordless credential
 
-In the example below a user has already provisioned their FIDO2 security key. The user can choose to sign in on the web with their FIDO2 security key inside of a supported browser on Windows 10 version 1903 or higher.
-
+In the following example, a user has already provisioned their FIDO2 security key. The user can choose to sign in on the web with their FIDO2 security key inside of a supported browser on Windows 10 version 1903 or higher.
 ![Security key sign-in Microsoft Edge](./media/howto-authentication-passwordless-security-key/fido2-windows-10-1903-edge-sign-in.png)
 
 ## Troubleshooting and feedback
