@@ -15,15 +15,16 @@ ms.reviewer: brianmel
 
 # Join a Mac device with Microsoft Entra ID during the out of box experience (preview)
 
-Mac users can join their new device to Microsoft Entra ID during the first-run out-of-box experience (OOBE). MacOS Platform Single Sign-On (PSSO) is a capability on macOS that is enabled using the [Microsoft Enterprise Single Sign-on Extension](../../identity-platform/apple-sso-plugin.md). PSSO allows users to sign in to a Mac device using a hardware-bound key, smart card or their Microsoft Entra ID password. This tutorial shows you how to set up a Mac device during the OOBE to use PSSO using Automated Device Enrollment or Web Enrollment.
+Mac users can join their new device to Microsoft Entra ID during the first-run out-of-box experience (OOBE). MacOS Platform Single Sign-On (PSSO) is a capability on macOS that is enabled using the [Microsoft Enterprise Single Sign-on Extension](../../identity-platform/apple-sso-plugin.md). PSSO allows users to sign in to a Mac device using a hardware-bound key, smart card or their Microsoft Entra ID password. This tutorial shows you how to set up a Mac device during the OOBE to use PSSO using Automated Device Enrollment.
 
 ## Prerequisites
 
 - A minimum requirement of macOS 13 Ventura
-- [Microsoft Intune Company Portal](/mem/intune/apps/apps-company-portal-macos) <!--TODO: version-->
-- A Mac device enrolled in mobile device management (MDM) with Microsoft Intune
+- [Automated Device Enrollment (ADE)](https://support.apple.com/en-us/HT204142) enrolled device. Check with your administrator if you're unsure if your device is enrolled with this requirement.
+- [Microsoft Intune Company Portal](/mem/intune/apps/apps-company-portal-macos)
+- A Mac device enrolled in mobile device management (MDM) with Microsoft Intune.
 - [Microsoft Authenticator](https://support.microsoft.com/account-billing/how-to-use-the-microsoft-authenticator-app-9783c865-0308-42fb-a519-8cf666fe0acc) (recommended): The user must be registered for some form of Microsoft Entra ID multifactor authentication (MFA) on their mobile device to complete device registration.
-- A smart card loaded with a certificate for authentication with Microsoft Entra (smart card setup on )
+- A smart card loaded with a certificate for authentication with Microsoft Entra (smart card setup only).
 
 ## Set up your macOS device
 
@@ -45,7 +46,7 @@ There are three authentication methods for PSSO registration:
 - **Smart card**: User logs into the machine using an external smart card or smart card compatible hard token
 - **Password**: User logs on to their local device with a local account, updated to used their Microsoft Entra ID password
 
-It's recommended for your system administrator to have the Mac enrolled using secure enclave or smart card. These new password-less feature is supported only by PSSO. Check which authentication method has been set up by your administrator before continuing.
+It's recommended for your system administrator to have the Mac enrolled using secure enclave or smart card. These new password-less features are supported only by PSSO. Check which authentication method has been set up by your administrator before continuing.
 
 ### [Secure Enclave](#tab/secure-enclave)
 
@@ -82,8 +83,12 @@ It's recommended for your system administrator to have the Mac enrolled using se
 
 1. Now that the Mac is correctly set up, you can now use PSSO to access Microsoft app resources.
 
->[!NOTE]
-> On macOS 14 Somona, you can check the PSSO registration status by navigating to **Settings** > **Users and Groups** > **Select user**. To see your device registration status, navigate to **Settings** > **Users and Groups** > **Network account server**. Select **Edit** to see your device status.
+### Enable macOS Platform Credentials for use as a passkey
+
+Setting up your device using secure enclave method enables you to use the resulting credential saved to the Mac as a passkey in the browser. To enable it;
+
+1. Open the **Settings** app, and navigate to **Passwords** > **Password options**.
+1. Under **Password options**, find **Use passwords and passkeys from** and enable **Company Portal** through the toggle switch.
 
 ### [Smart card](#tab/smart-card)
 
@@ -138,13 +143,6 @@ It's recommended for your system administrator to have the Mac enrolled using se
 1. After unlocking the Mac, you can now use PSSO to access Microsoft app resources. From this point on, your old password doesn't work because PSSO is enabled for your device.
 
 ---
-
-## Enable macOS Platform Credentials for use as a passkey (secure enclave only)
-
-If you've set up your device using the secure enclave method, you can use the resulting credential saved to the Mac as a passkey in the browser. To enable it;
-
-1. Open the **Settings** app, and navigate to **Passwords** > **Password options**.
-1. Under **Password options**, find **Use passwords and passkeys from** and enable **Company Portal** through the toggle switch.
 
 ## See also
 
