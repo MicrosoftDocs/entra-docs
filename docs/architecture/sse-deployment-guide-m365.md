@@ -60,26 +60,26 @@ This section describes how to enforce compliant network on access to Microsoft 3
    1. **Target resources**:
       1. For **Select what this policy applies to**, select **Global Secure Access (Preview)**.
       1. For **Select the traffic profiles this policy applies to**, select **Microsoft 365 traffic**.
-        :::image type="content" source="media/sse-deployment-guide-m365/screenshot-conditional-access-policy-options.png" alt-text="Screenshot of Conditional Access policy options.":::
+        :::image type="content" source="media/sse-deployment-guide-m365/conditional-access-policy-options.png" alt-text="Screenshot of Conditional Access policy options.":::
 6. **Access controls** > **Grant** > Select the controls that you want to enforce such as requiring multifactor authentication.
 7. Attempt to sign-in to SharePoint Online or Exchange Online and verify that you are prompted to authenticate to Global Secure Access.
 :::image type="content" source="media/sse-deployment-guide-m365/global-secure-access-credentials-prompt.png" alt-text="Screenshot of the Global Secure Access credentials prompt window.":::
      > [!NOTE]
      > The Global Secure Access Client uses access tokens and refresh tokens to connect to Microsoft Security Service Edge Solution. If you have previously connected the Global Secure Access Client, then you may need to wait for the access token to expire (up to one hour) before the Conditional Access policy that you created is applied.
 8. To verify that your Conditional Access policy was successfully applied, view the sign-in logs for your test user for the **ZTNA Network Access Client - M365** application.
-:::image type="content" source="media/sse-deployment-guide-m365/sign-in-logs-user-sign-ins-inline.png" alt-text="Screenshot of list of sign-in logs window showing User sign-ins interactive tab." lightbox="media/sse-deployment-guide-m365/sign-in-logs-user-sign-ins-expanded.png":::
+:::image type="content" source="media/sse-deployment-guide-m365/sign-in-logs-user-sign-ins-interactive-inline.png" alt-text="Screenshot of list of sign-in logs window showing User sign-ins interactive tab." lightbox="media/sse-deployment-guide-m365/sign-in-logs-user-sign-ins-interactive-expanded.png":::
 :::image type="content" source="media/sse-deployment-guide-m365/sign-in-logs-conditional-access-inline.png" alt-text="Screenshot of sign-in logs window showing Conditional Access tab." lightbox="media/sse-deployment-guide-m365/sign-in-logs-conditional-access-expanded.png":::
 9. Validate that the Global Secure Access Client is connected by opening the tray in the bottom right corner and verifying that there's a green check on the icon.
-:::image type="content" source="media/sse-deployment-guide-m365/global-secure-access-client-connected.png" alt-text="Screenshot of the Global Secure Access Client icon showing Connected status indicator.":::
+:::image type="content" source="media/sse-deployment-guide-m365/global-secure-access-client-connected.png" alt-text="Screenshot of the Global Secure Access Client icon showing successful Connected status.":::
 10. Use your test user to sign in to SharePoint Online or Exchange Online by using your test device.
    1. Confirm that the user can successfully access the resource.
    1. In the sign-in logs, confirm that the Conditional Access policy that blocks access outside compliant networks indicates **Not Applied**.
     :::image type="content" source="media/sse-deployment-guide-m365/sign-in-logs-success-inline.png" alt-text="Screenshot of a line in the sign-in logs window showing success indicator." lightbox="media/sse-deployment-guide-m365/sign-in-logs-success-expanded.png":::
-    :::image type="content" source="media/sse-deployment-guide-m365/logs-conditional-access-not-applied.png" alt-text="Screenshot of sign-in logs-window showing Conditional Access tab highlighting a line where Result column is Not Applied.":::
+    :::image type="content" source="media/sse-deployment-guide-m365/logs-conditional-access-not-applied-inline.png" alt-text="Screenshot of sign-in logs-window showing that Conditional Access policy is Not Applied.":::
 11. From a different device without the Global Secure Access Client, use your test user identity to attempt to sign in to SharePoint Online or Exchange Online. Alternatively, you can right-click the Global Secure Access Client in your system tray and click **Pause**, and then use your test user identity to attempt to sign in to SharePoint Online or Exchange Online on the same device.
    1. Confirm that access is blocked.
    1. In the sign-in logs, confirm the Conditional Access policy that blocks access outside compliant networks was applied.
-    :::image type="content" source="media/sse-deployment-guide-m365/log-in-you-cannot-access.png" alt-text="Screenshot of log-in window after submitting credentials showing You cannot access this right now message.":::
+    :::image type="content" source="media/sse-deployment-guide-m365/log-in-access-is-blocked.png" alt-text="Screenshot of log-in window after submitting credentials showing You cannot access this right now message.":::
     :::image type="content" source="media/sse-deployment-guide-m365/sign-in-logs-failure-inline.png" alt-text="Screenshot of a line in the sign-in logs window showing failure indicator." lightbox="media/sse-deployment-guide-m365/sign-in-logs-failure-expanded.png":::
     :::image type="content" source="media/sse-deployment-guide-m365/logs-conditional-access-failure-inline.png" alt-text="Screenshot of sign-in logs window showing Conditional Access tab highlighting a line where Result column is Failure." lightbox="media/sse-deployment-guide-m365/logs-conditional-access-failure-expanded.png":::
 12. From your test device with the Global Secure Access Client enabled, attempt to sign in to a different Microsoft Entra ID tenant with an external identity. Confirm that tenant restrictions block access.
@@ -101,7 +101,7 @@ This section demonstrates how Microsoft Entra Internet Access for Microsoft 365 
 To test source IP address restoration, Global Secure Access signaling for Conditional Access must be enabled. You need a Conditional Access policy that requires a compliant network as described earlier in this article.
 
 1. Validate that the Global Secure Access Client is connected by opening the tray in the bottom right corner and verifying that there's a green check on the icon. Using your test identity, sign in to either SharePoint Online or Exchange Online.
-:::image type="content" source="media/sse-deployment-guide-m365/creenshot-global-secure-access-client-connected.png" alt-text="Screenshot of the Global Secure Access Client icon showing Connected status indicator.":::
+:::image type="content" source="media/sse-deployment-guide-m365/global-secure-access-client-connected.png" alt-text="Screenshot of the Global Secure Access Client icon showing Connected status indicator.":::
 2. View the sign-in log for this sign-in and make note of the IP address and location. Confirm that the compliant network Conditional Access policy wasn't applied.
 :::image type="content" source="media/sse-deployment-guide-m365/sign-in-logs-location-tab-inline.png" alt-text="Screenshot of sign-in logs showing Location tab for an item." lightbox="media/sse-deployment-guide-m365/sign-in-logs-location-tab-expanded.png":::
 :::image type="content" source="media/sse-deployment-guide-m365/logs-conditional-access-not-applied-inline.png" alt-text="Screenshot of sign-in logs-window showing Conditional Access tab highlighting a line where Result column is Not Applied." lightbox="media/sse-deployment-guide-m365/logs-conditional-access-not-applied-expanded.png":::
