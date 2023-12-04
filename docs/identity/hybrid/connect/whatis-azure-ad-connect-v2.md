@@ -26,7 +26,8 @@ To address this issue, we've bundled as many of these newer components into a ne
 
 ## Consider moving to Microsoft Entra Cloud Sync
 
-Before moving to Microsoft Entra Connect V2, you should consider moving to Microsoft Entra Cloud Sync instead.
+ >[!IMPORTANT]
+ >Before moving to Microsoft Entra Connect V2, you should consider moving to Microsoft Entra Cloud Sync instead.
 
 You may ask, why would I move to cloud sync when connect sync is already working?  The reason is that Microsoft Entra Cloud Sync is the future of synchronization for Microsoft and replaces Microsoft Entra Connect. It is in the cloud sync area that Microsoft will be making future investments in features and functionality. 
 
