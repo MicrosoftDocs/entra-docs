@@ -36,8 +36,8 @@ This sample requires the [Microsoft Graph Beta PowerShell module](/powershell/mi
 |---|---|
 |[Connect-MgGraph](/powershell/module/microsoft.graph.authentication/connect-mggraph)| Connects to Microsoft Graph|
 |[Get-MgBetaServicePrincipalById](/powershell/module/microsoft.graph.beta.applications/get-mgbetaserviceprincipalbyid)| Gets a service principal by id|
-|[Get-MgBetaUser](/powershell/module/microsoft.graph.beta.applications/get-mgbetauser)| Gets a user|
-|[Get-MgBetaGroup](/powershell/module/microsoft.graph.beta.applications/get-mgbetagroup)| Gets a group|
+|[Get-MgBetaUser](/powershell/module/microsoft.graph.beta.users/get-mgbetauser)| Gets a user|
+|[Get-MgBetaGroup](/powershell/module/microsoft.graph.beta.groups/get-mgbetagroup)| Gets a group|
 |[Get-MgBetaUserAppRoleAssignment](/powershell/module/microsoft.graph.beta.applications/get-mgbetaapproleassignment)| Gets the application role assignment|
 
 ## Next steps
