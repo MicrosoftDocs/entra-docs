@@ -84,21 +84,21 @@ As an administrator in Microsoft Entra ID, open PowerShell, run `Connect-MgGraph
 1. Disable the user in Microsoft Entra ID. Refer to [Update-MgUser](/powershell/module/microsoft.graph.users/update-mguser).
 
     ```PowerShell
-    $User = Get-MgBetaUser -Search UserPrincipalName:'johndoe@contoso.com' -ConsistencyLevel eventual
+    $User = Get-MgUser -Search UserPrincipalName:'johndoe@contoso.com' -ConsistencyLevel eventual
     $Params = @{AccountEnabled="false"}
-    Update-MgUser -UserID $User.ID -BodyParameter $Params
+    Update-MgUser -UserId $User.Id -BodyParameter $Params
     ```
 
 2. Revoke the user's Microsoft Entra ID refresh tokens. Refer to [Revoke-MgUserSignInSession](/powershell/module/microsoft.graph.users.actions/revoke-mgusersigninsession).
 
     ```PowerShell
-    Revoke-MgUserSignInSession -UserID $User.Id
+    Revoke-MgUserSignInSession -UserId $User.Id
     ```
 
 3. Disable the user's devices. Refer to [Get-MgUserRegisteredDevice](/powershell/module/microsoft.graph.users/get-mguserregistereddevice).
 
     ```PowerShell
-    $Device = Get-MgUserRegisteredDevice -UserID $User.ID 
+    $Device = Get-MgUserRegisteredDevice -UserId $User.Id 
     Update-MgDevice -DeviceId $Device.Id -BodyParameter $Params
     ```
 
