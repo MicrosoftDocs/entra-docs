@@ -42,7 +42,9 @@ Log storage within Microsof Entra varies by report type and license type. You ca
 | Audit logs | Seven days | 30 days | 30 days |
 | Sign-ins | Seven days | 30 days | 30 days |
 | Microsoft Entra multifactor authentication usage | 30 days | 30 days | 30 days |
-| Microsoft Graph activity logs | -- | 30 days | 30 days |
+| Microsoft Graph activity logs* | NA | Must be integrated with storage or analytics tools | Must be integrated with storage or analytics tools |
+
+*Microsoft Graph activity logs are only available for Microsoft Entra ID P1 and P2 licenses. Data is not retained unless it's archived to a storage account or integrated with analytics tools.
 
 ### Security signals
 
@@ -53,6 +55,7 @@ Log storage within Microsof Entra varies by report type and license type. You ca
 
 > [!NOTE]
 > Risky users and workload identities are not deleted until the risk has been remediated.
+
 ## Can I see last month's data after getting a premium license?
 
 **No**, you can't. Azure stores up to seven days of activity data for a free version. When you switch from a free to a premium version, you can only see up to 7 days of data.
