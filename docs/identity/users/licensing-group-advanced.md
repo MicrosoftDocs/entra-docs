@@ -13,7 +13,7 @@ ms.workload: identity
 ms.date: 11/15/2023
 ms.author: barclayn
 ms.reviewer: sumitp
-ms.custom: it-pro, has-azure-ad-ps-ref
+ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.collection: M365-identity-device-management
 ---
 
@@ -112,9 +112,9 @@ You can use a PowerShell script to check if users have a license assigned direct
 
 2. `Get-MgSubscribedSku -All | Select-Object skuid -ExpandProperty serviceplans | select serviceplanid, serviceplanname` can be used to discover all provisioned product licenses in the Microsoft Entra organization.
 
-   :::image type="content" source="./media/licensing-group-advanced/get-mgsubscribedsku-cmdlet.png" alt-text="Screenshot of the Get-Msolaccountsku cmdlet.":::
+   :::image type="content" source="./media/licensing-group-advanced/get-mgsubscribedsku-cmdlet.png" alt-text="Screenshot of the Get-MgSubscribedSku cmdlet.":::
 
-3. Use the *ServicePlanId* value for the license you're interested in with [this PowerShell script](licensing-ps-examples.md#check-if-user-license-is-assigned-directly-or-inherited-from-a-group). A list populates the users who have this license and information about how the license is assigned.
+3. Use the *ServicePlanId* value for the license you're interested in with [this PowerShell script](licensing-powershell-graph-examples.md#check-if-user-license-is-assigned-directly-or-inherited-from-a-group). A list populates the users who have this license and information about how the license is assigned.
 
 ## Use Audit logs to monitor group-based licensing activity
 
