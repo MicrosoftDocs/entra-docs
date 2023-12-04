@@ -129,7 +129,7 @@ To successfully deploy and test Microsoft Security Service Edge, configure the f
 
 The following diagram illustrates the minimum architecture requirements to deploy and test Microsoft Entra Private Access.
 
-:::image type="complex" source="../media/sse-deployment-guide-intro/diagram-private-access-architecture.png" alt-text="Diagram that shows minimum required architecture components for Entra ID tenant." lightbox="../media/sse-deployment-guide-intro/diagram-private-access-architecture-expanded.png"::: Diagram title: Microsoft Security Service Edge Solution Architecture Requirements. Diagram shows minimum required architecture for Microsoft Security Service Edge Solution. :::image-end:::
+:::image type="complex" source="../media/sse-deployment-guide-intro/diagram-private-access-architecture-inline.png" alt-text="Diagram that shows minimum required architecture components for Entra ID tenant." lightbox="../media/sse-deployment-guide-intro/diagram-private-access-architecture-expanded.png"::: Diagram title: Microsoft Security Service Edge Solution Architecture Requirements. Diagram shows minimum required architecture for Microsoft Security Service Edge Solution. :::image-end:::
 
 ## Configure initial product
 
@@ -142,15 +142,15 @@ Activate Microsoft SSE through the Microsoft Entra admin center and make initial
 1. Open the [Microsoft Entra admin center](https://entra.microsoft.com) using an identity assigned Global Administrator role.
 1. Go to **Global Secure Access (preview)** > **Get started** > **Activate Global Secure Access in your tenant**. Select **Activate** to enable SSE features in your tenant.
 
-   :::image type="complex" source="../media/sse-deployment-guide-intro/global-secure-access-main.png" alt-text="Diagram that shows initial activation page for Microsoft Security Service Edge Solution." lightbox="../media/sse-deployment-guide-intro/global-secure-access-main-expanded.png"::: Diagram title: Microsoft Security Service Edge Solution Activation. Diagram shows how to activate Microsoft Security Service Edge Solution. :::image-end:::
+   :::image type="complex" source="../media/sse-deployment-guide-intro/global-secure-access-main-inline.png" alt-text="Diagram that shows initial activation page for Microsoft Security Service Edge Solution." lightbox="../media/sse-deployment-guide-intro/global-secure-access-main-expanded.png"::: Diagram title: Microsoft Security Service Edge Solution Activation. Diagram shows how to activate Microsoft Security Service Edge Solution. :::image-end:::
 1. Go to **Global Secure Access (preview)** > **Connect** > **Traffic forwarding**. Turn on **Microsoft 365 profile** and **Private access profile**.
 
-   :::image type="complex" source="../media/sse-deployment-guide-intro/traffic-forwarding-profiles.png" alt-text="Diagram that shows how to enable Microsoft 365 and Private access profiles." lightbox="../media/sse-deployment-guide-intro/traffic-forwarding-profiles.png"::: Diagram title: Microsoft Security Service Edge Solution Traffic Forwarding Profiles. Diagram shows how to enable Microsoft Security Service Edge Solution traffic forwarding profiles. :::image-end:::
+   :::image type="complex" source="../media/sse-deployment-guide-intro/traffic-forwarding-profiles-inline.png" alt-text="Diagram that shows how to enable Microsoft 365 and Private access profiles." lightbox="../media/sse-deployment-guide-intro/traffic-forwarding-profiles-expanded.png"::: Diagram title: Microsoft Security Service Edge Solution Traffic Forwarding Profiles. Diagram shows how to enable Microsoft Security Service Edge Solution traffic forwarding profiles. :::image-end:::
 
 Traffic forwarding enables you to configure the type of network traffic to tunnel through the Microsoft Entra Private Access and Microsoft Entra Internet Access for M365 services. You set up [traffic forwarding profiles](../global-secure-access/concept-traffic-forwarding.md) to manage types of traffic. The **Microsoft 365 profile** is for Microsoft Entra Private Access for M365. The **Private access profile** is for Microsoft Entra Private Access. Microsoft Security Service Edge solution only captures traffic on client devices that have Global Secure Access Client installed.
 1. To enable source IP restoration, go to **Global Secure Access (preview)** > **Connect** > **Global settings** > **Session management** > **Adaptive Access** and turn on **Enable Global Secure Access signaling in Conditional Access**. Source IP restoration is required to for Conditional Access policies that you will configure as part of this proof of concept.
 
-   :::image type="complex" source="../media/sse-deployment-guide-intro/session-management-adaptive-access.png" alt-text="Diagram that shows how to enable conditional access policies for Microsoft Security Service Edge Solution." lightbox="../media/sse-deployment-guide-intro/session-management-adaptive-access.png"::: Diagram title: Enable Conditional Access for Microsoft Security Service Edge Solution. Diagram shows how to enable conditional access policies for Microsoft Security Service Edge Solution. :::image-end:::
+   :::image type="complex" source="../media/sse-deployment-guide-intro/session-management-adaptive-access-inline.png" alt-text="Diagram that shows how to enable conditional access policies for Microsoft Security Service Edge Solution." lightbox="../media/sse-deployment-guide-intro/session-management-adaptive-access-expanded.png"::: Diagram title: Enable Conditional Access for Microsoft Security Service Edge Solution. Diagram shows how to enable conditional access policies for Microsoft Security Service Edge Solution. :::image-end:::
 
 ### Install Global Secure Access Client on your Windows 10/11 client device
 
@@ -161,7 +161,7 @@ Microsoft Entra Internet Access for M365 and Microsoft Entra Private Access use 
 1. Open the [Microsoft Entra admin center](https://entra.microsoft.com) using an identity assigned Global Administrator role.
 1. Go to **Global Secure Access (preview)** > **Connect** > **Client Download**. Select **Download client** and complete the installation.
 
-   :::image type="complex" source="../media/sse-deployment-guide-intro/global-secure-access-clients.png" alt-text="Diagram that shows where to download the Global Secure Access client software." lightbox="../media/sse-deployment-guide-intro/global-secure-access-clients-expanded.png"::: Diagram title: Client Download for Microsoft Security Service Edge Solution. Diagram shows where to download the required client agent for Microsoft Security Service Edge Solution. :::image-end:::
+   :::image type="complex" source="../media/sse-deployment-guide-intro/global-secure-access-clients-inline.png" alt-text="Diagram that shows where to download the Global Secure Access client software." lightbox="../media/sse-deployment-guide-intro/global-secure-access-clients-expanded.png"::: Diagram title: Client Download for Microsoft Security Service Edge Solution. Diagram shows where to download the required client agent for Microsoft Security Service Edge Solution. :::image-end:::
 
 1. In the Window taskbar, the Global Secure Access Client first appears as disconnected. After few seconds, you'll be prompted for credentials. Enter your test user's credentials.
 
