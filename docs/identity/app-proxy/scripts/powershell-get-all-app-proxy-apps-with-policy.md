@@ -24,7 +24,7 @@ This PowerShell script example lists all the Microsoft Entra application proxy a
 
 [!INCLUDE [cloud-shell-try-it.md](~/../azure-docs-pr/includes/cloud-shell-try-it.md)]
 
-This sample requires the [Azure Active Directory PowerShell 2.0 for Graph module preview version](/powershell/azure/active-directory/install-adv2?view=azureadps-2.0-preview&preserve-view=true) (AzureADPreview).
+This sample requires the [Microsoft Graph Beta PowerShell module](/powershell/microsoftgraph/installation) 2.10 or newer.
 
 ## Sample script
 
@@ -34,14 +34,13 @@ This sample requires the [Azure Active Directory PowerShell 2.0 for Graph module
 
 | Command | Notes |
 |---|---|
-|[Get-AzureADServicePrincipal](/powershell/module/azuread/get-azureadserviceprincipal) | Gets a service principal. |
-|[Get-AzureADApplication](/powershell/module/azuread/get-azureadapplication) | Gets a Microsoft Entra application. |
-|[Get-AzureADPolicy](/powershell/module/azuread/get-azureadpolicy?view=azureadps-2.0-preview&preserve-view=true) | Gets a policy in Microsoft Entra ID. |
-|[Get-AzureADServicePrincipalPolicy](/powershell/module/azuread/get-azureadserviceprincipalpolicy?view=azureadps-2.0-preview&preserve-view=true) | Gets the policy of a service principal in Microsoft Entra ID. |
-
+|[Connect-MgGraph](/powershell/module/microsoft.graph.authentication/connect-mggraph)| Connects to Microsoft Graph|
+|[Get-MgBetaServicePrincipal](/powershell/module/microsoft.graph.applications/get-mgserviceprincipal)| Gets a service principal|
+|[Get-MgBetaApplication](/powershell/module/microsoft.graph.beta.applications/get-mgbetaapplication)| Gets an Enterprise Application|
+|[Get-MgBetaApplicationTokenLifetimePolicy](/powershell/module/microsoft.graph.beta.applications/get-mgbetaapplicationtokenlifetimepolicy)| Lists policies assigned to application or service principal|
 
 ## Next steps
 
-For more information on the Azure AD PowerShell module, see [Azure AD PowerShell module overview](/powershell/azure/active-directory/overview).
+For more information on the Microsoft Graph PowerShell module, see [Microsoft Graph PowerShell overview](/powershell/microsoftgraph/overview).
 
-For other PowerShell examples for Application Proxy, see [Azure AD PowerShell examples for Microsoft Entra application proxy](../application-proxy-powershell-samples.md).
+For other PowerShell examples for Application Proxy, see [Microsoft Entra application proxy PowerShell examples](../application-proxy-powershell-samples.md).
