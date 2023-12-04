@@ -35,8 +35,8 @@ This sample requires the [Microsoft Graph Beta PowerShell module](/powershell/mi
 | Command | Notes |
 |---|---|
 |[Connect-MgGraph](/powershell/module/microsoft.graph.authentication/connect-mggraph)| Connects to Microsoft Graph |
-|Get-MgBetaOnPremisePublishingProfileConnectorGroup(/powershell/module/microsoft.graph.beta.applications/get-mgbetaonpremisepublishingprofileconnectorgroup)| Gets a connector group |
-|Get-MgBetaOnPremisePublishingProfileConnectorGroupMember(/powershell/module/microsoft.graph.beta.applications/get-mgbetaonpremisespublishingprofileconnectorgroupmember)|Gets the members of a connector group |
+|[Get-MgBetaOnPremisePublishingProfileConnectorGroup](/powershell/module/microsoft.graph.beta.applications/get-mgbetaonpremisepublishingprofileconnectorgroup)| Gets a connector group |
+|[Get-MgBetaOnPremisePublishingProfileConnectorGroupMember](/powershell/module/microsoft.graph.beta.applications/get-mgbetaonpremisespublishingprofileconnectorgroupmember)|Gets the members of a connector group |
 
 ## Next steps
 
