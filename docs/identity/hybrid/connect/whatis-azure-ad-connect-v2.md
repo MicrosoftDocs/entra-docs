@@ -20,20 +20,15 @@ Azure AD Connect V1 was released several years ago. Since this time, several of 
 To address this issue, we've bundled as many of these newer components into a new single release, so you only have to update once. This release is Microsoft Entra Connect V2. This release is a new version of the same software used to accomplish your hybrid identity goals, built using the latest foundational components.
 
  >[!NOTE]
- >Azure AD Connect V1 has been retired as of August 31, 2022 and is no longer supported. Azure AD Connect V1 installations may **stop working unexpectedly**. If you are still using Azure AD Connect V1, you need to upgrade to Microsoft Entra Connect V2 immediately.
+ >Azure AD Connect V1 has been retired as of August 31, 2022 and is no longer supported. Azure AD Connect V1 installations may **stop working unexpectedly**. If you are still using Azure AD Connect V1, you need to upgrade or [consider moving to Microsoft Entra Cloud Sync](#consider-moving-to-microsoft-entra-cloud-sync).
 
 <a name='consider-moving-to-azure-ad-connect-cloud-sync'></a>
 
 ## Consider moving to Microsoft Entra Cloud Sync
 
- >[!IMPORTANT]
- >Before moving to Microsoft Entra Connect V2, you should consider moving to Microsoft Entra Cloud Sync instead.
-
-You may ask, why would I move to cloud sync when connect sync is already working?  The reason is that Microsoft Entra Cloud Sync is the future of synchronization for Microsoft and replaces Microsoft Entra Connect. It is in the cloud sync area that Microsoft will be making future investments in features and functionality. 
+Microsoft Entra Cloud Sync is the new sync client that works from the cloud and allows customers to set up and manage their sync preferences online. We recommend that you use Cloud Sync because we will be introducing new features that will improve the sync experiences through Cloud Sync. Also, when Microsoft shifts from Connect Sync to Cloud Sync, you can reduce costs by avoiding the migration required to switch to Cloud Sync. Please use the https://aka.ms/EvaluateSyncOptions to see if Cloud Sync is the right sync client for you. For better understanding of Cloud Sync, see the video below. 
 
 > [!VIDEO https://www.youtube.com/embed/9T6lKEloq0Q]
-
-You can see if cloud sync is right for you by accessing the [Check sync tool](https://aka.ms/EvaluateSyncOptions) from the portal or via the link provided.
 
 For more information, see [What is cloud sync?](/azure/active-directory/cloud-sync/what-is-cloud-sync)
 
@@ -87,10 +82,10 @@ Next year several of the components in your current Microsoft Entra Connect serv
 This upgrade is especially important since we've had to update our prerequisites for Microsoft Entra Connect and you may need additional time to plan and update your servers to the newer versions of these prerequisites 
 
 **Is there any new functionality I need to know about?** </br>
-No – the V2.0 release doesn't contain any new functionality. This release only contains updates of some of the foundational components on Microsoft Entra Connect. However, later releases of Microsoft Entra Connect V2 may contain new functionality.
+No – the V2.0 release doesn't contain any new functionality. This release only contains updates of some of the foundational components on Microsoft Entra Connect.
 
 **Can I upgrade from any previous version to V2?** </br>
-Yes – upgrades from any previous version of Microsoft Entra Connect to Microsoft Entra Connect V2 is supported. Follow the guidance in [this article](how-to-upgrade-previous-version.md) to determine what is the best upgrade strategy for you. 
+Yes – upgrades from any previous version of Microsoft Entra Connect to Microsoft Entra Connect V2 is supported. Follow the guidance in [this article](how-to-upgrade-previous-version.md) to determine what is the best upgrade strategy for you.   Before upgrading, you should [consider moving to Microsoft Entra Cloud Sync](#consider-moving-to-microsoft-entra-cloud-sync).
 
 **Can I export the configuration of my current server and import it in Microsoft Entra Connect V2?** </br>
 Yes, you can do that, and it's a great way to migrate to Microsoft Entra Connect V2 – especially if you're also upgrading to a new operating system version. You can read more about the Import/export configuration feature and how you can use it in this [article](how-to-connect-import-export-config.md). 
