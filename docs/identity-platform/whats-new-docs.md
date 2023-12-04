@@ -16,6 +16,23 @@ ms.topic: reference
 
 Welcome to what's new in the Microsoft identity platform documentation. This article lists new docs that have been added and those that have had significant updates in the last three months.
 
+## November 2023
+
+### New articles
+
+- [Update an app's requested permissions in Microsoft Entra ID](howto-update-permissions.md)
+
+### Updated articles
+
+- [Public client and confidential client applications](msal-client-applications.md) - Update to enhance the article's technical accuracy
+- [Convert single-tenant app to multitenant on Microsoft Entra ID](howto-convert-app-to-be-multi-tenant.md) - Update to enhance the article's technical accuracy
+- [Overview of the Microsoft Authentication Library (MSAL)](msal-overview.md) - Update to enhance the article's technical accuracy
+- [Scopes and permissions in the Microsoft identity platform](scopes-oidc.md) - Update to enhance the article's technical accuracy
+- [Application types for the Microsoft identity platform](v2-app-types.md) - Update to enhance the article's technical accuracy
+- [Single-page application: Sign-in and Sign-out](scenario-spa-sign-in.md) - Update to enhance the article's technical accuracy
+- [Configure token lifetime policies (preview)](configure-token-lifetimes.md) - Update on how to add policies to service principals
+- [How to handle third-party cookie blocking in browsers](reference-third-party-cookies-spas.md) - Update to enhance the article's technical accuracy
+
 ## October 2023
 
 ### Updated articles
@@ -44,12 +61,3 @@ Welcome to what's new in the Microsoft identity platform documentation. This art
 - [Single sign-on SAML protocol](single-sign-on-saml-protocol.md) - Rebranding of Azure Active Directory to Microsoft Entra
 - [Tutorial: Prepare a Single-page application for authentication](tutorial-single-page-app-react-prepare-spa.md) - Add clarity to the content
 
-## August 2023
-
-### Updated articles
-
-- [Call an ASP.NET Core web API with cURL](howto-call-a-web-api-with-curl.md) - Updated sign-in steps for admin center
-- [Troubleshoot publisher verification](troubleshoot-publisher-verification.md) - Removed references to aad.portal.azure.com and terminology updates for partner program updates
-- [Configure a custom claim provider token issuance event (preview)](custom-extension-get-started.md) - Updated MS Graph sections - custom claim provider token issuance event tutorial and custom authentication extensions references
-- [Customize claims issued in the JSON web token (JWT) for enterprise applications](jwt-claims-customization.md) - Updated sign-in steps for admin center
-- [Access tokens in the Microsoft identity platform](access-tokens.md) - Updated details about issuer validation
