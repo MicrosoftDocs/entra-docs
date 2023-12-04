@@ -1,13 +1,13 @@
 ---
 title: Authenticate users in a Microsoft Entra ID for customers tenant using a sample Node.js CLI application. 
 description: Learn how to authenticate users in a Microsoft Entra ID for customers tenant using a sample Node.js CLI application
-services: active-directory
+ 
 author: Dickson-Mwendia
 manager: mwongerapk
 
 ms.author: dmwendia
 ms.service: active-directory
-ms.workload: identity
+ 
 ms.subservice: ciam
 ms.topic: sample
 ms.date: 08/04/2023

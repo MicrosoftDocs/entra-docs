@@ -1,13 +1,13 @@
 ---
 title: 'Tutorial: Configure MerchLogix for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to MerchLogix.
-services: active-directory
+
 author: zhchia
 writer: zhchia
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: thwimmer

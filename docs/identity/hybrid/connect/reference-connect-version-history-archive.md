@@ -8,7 +8,7 @@ ms.assetid:
 ms.service: active-directory
 ms.topic: reference
 ms.workload: identity
-ms.date: 01/19/2023
+ms.date: 11/06/2023
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management

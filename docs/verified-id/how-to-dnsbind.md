@@ -74,7 +74,7 @@ VerifiedID follows the [Well-Known DID configuration](https://identity.foundatio
         "type": "LinkedDomains",
         "serviceEndpoint": {
           "origins": [
-            "https://www.contoso.com/"
+            "https://verifiedid.contoso.com/"
           ]
         }
       }

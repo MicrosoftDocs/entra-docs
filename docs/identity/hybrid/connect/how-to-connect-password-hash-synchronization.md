@@ -10,7 +10,7 @@ ms.service: active-directory
 ms.workload: identity
 ms.custom: has-azure-ad-ps-ref
 ms.topic: how-to
-ms.date: 05/18/2023
+ms.date: 11/06/2023
 ms.subservice: hybrid
 ms.author: billmath
 search.appverid:

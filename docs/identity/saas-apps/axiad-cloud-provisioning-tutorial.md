@@ -1,14 +1,14 @@
 ---
 title: 'Tutorial: Configure Axiad Cloud for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Axiad Cloud.
-services: active-directory
+
 author: twimmers
 writer: twimmers
 manager: jeedes
 ms.assetid: 44c617ff-c33f-493a-9d81-ac7a3a97e7b7
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.topic: tutorial
 ms.date: 06/05/2023
 ms.author: thwimmer

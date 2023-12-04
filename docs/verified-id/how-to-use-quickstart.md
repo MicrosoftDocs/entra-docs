@@ -86,7 +86,7 @@ The expected JSON for the rules definitions is the inner content of the rules at
                 "outputClaim": "lastName",
                 "required": true,
                 "inputClaim": "$.family_name",
-                "indexed": false
+                "indexed": true
               }
             ],
             "required": false

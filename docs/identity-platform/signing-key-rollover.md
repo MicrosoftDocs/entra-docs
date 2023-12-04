@@ -1,18 +1,16 @@
 ---
 title: Signing Key Rollover in Microsoft identity platform
 description: This article discusses the signing key rollover best practices for Microsoft Entra ID
-services: active-directory
 author: rwike77
 manager: CelesteDG
-
+ms.author: ryanwi
+ms.custom:
+ms.date: 03/16/2023
+ms.reviewer: paulgarn, ludwignick
 ms.service: active-directory
 ms.subservice: develop
-ms.workload: identity
 ms.topic: conceptual
-ms.date: 03/16/2023
-ms.author: ryanwi
-ms.reviewer: paulgarn, ludwignick
-ms.custom: aaddev
+#Customer intent:
 ---
 
 # Signing key rollover in the Microsoft identity platform

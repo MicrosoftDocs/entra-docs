@@ -1,18 +1,16 @@
 ---
 title: OAuth 2.0 device authorization grant 
 description: Sign in users without a browser. Build embedded and browser-less authentication flows using the device authorization grant.
-services: active-directory
 author: OwenRichards1
 manager: CelesteDG
-
+ms.author: owenrichards
+ms.custom:
+ms.date: 11/15/2022
+ms.reviewer: ludwignick
 ms.service: active-directory
 ms.subservice: develop
-ms.workload: identity
 ms.topic: conceptual
-ms.date: 11/15/2022
-ms.author: owenrichards
-ms.reviewer: ludwignick
-ms.custom: aaddev, engagement-fy23
+#Customer intent:
 ---
 
 # Microsoft identity platform and the OAuth 2.0 device authorization grant flow
@@ -41,7 +39,7 @@ From the moment the request is sent, the user has 15 minutes to sign in. This is
 POST https://login.microsoftonline.com/{tenant}/oauth2/v2.0/devicecode
 Content-Type: application/x-www-form-urlencoded
 
-client_id=6731de76-14a6-49ae-97bc-6eba6914391e
+client_id=535fb089-9ff3-47b6-9bfb-4f1264799865
 &scope=user.read%20openid%20profile
 
 ```
@@ -80,7 +78,7 @@ While the user is authenticating at the `verification_uri`, the client should be
 POST https://login.microsoftonline.com/{tenant}/oauth2/v2.0/token
 Content-Type: application/x-www-form-urlencoded
 
-grant_type=urn:ietf:params:oauth:grant-type:device_code&client_id=6731de76-14a6-49ae-97bc-6eba6914391e&device_code=GMMhmHCXhWEzkobqIHGG_EnNYYsAkukHspeYUk9E8...
+grant_type=urn:ietf:params:oauth:grant-type:device_code&client_id=535fb089-9ff3-47b6-9bfb-4f1264799865&device_code=GMMhmHCXhWEzkobqIHGG_EnNYYsAkukHspeYUk9E8...
 ```
 
 | Parameter | Required | Description|

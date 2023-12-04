@@ -33,11 +33,12 @@ Microsoft Entra Internet Access secures access to Microsoft 365, SaaS, and publi
 - Prevent stolen tokens from being replayed with the compliant network check in Conditional Access.
 - Apply universal tenant restrictions to prevent data exfiltration to other tenants or personal accounts including anonymous access.
 - Enriched logs with network and device signals currently supported for SharePoint Online traffic.
-- Improve the precision of risk assessments on users, locations, and devices. 
+- Improve the precision of risk assessments on users, locations, and devices.
 - Deploy side-by-side with third party SSE solutions.
 - Acquire network traffic from the desktop client or from a remote network, such as a branch location.
 
 #### Private preview features
+
 The following new capabilities are available in the private preview of Microsoft Entra Internet Access. To request access to the private preview, complete [the private preview interest form](https://aka.ms/entra-ia-preview).
 
 - Dedicated public internet traffic forwarding profile.

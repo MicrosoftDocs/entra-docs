@@ -13,7 +13,7 @@ ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 01/26/2023
+ms.date: 11/06/2023
 ms.subservice: hybrid
 ms.author: billmath
 ms.custom: seohack1

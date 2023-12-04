@@ -1,5 +1,5 @@
 ---
-title: Configure verified ID settings for an access package in entitlement management
+title: Configure Verified ID settings for an access package in entitlement management
 description: Learn how to configure verified ID settings for an access package in entitlement management.
 services: active-directory
 documentationCenter: ''
@@ -18,7 +18,7 @@ ms.collection: M365-identity-device-management
 
 ---
 
-# Configure verified ID settings for an access package in entitlement management
+# Configure Verified ID settings for an access package in entitlement management
 
 When setting up an access package policy, admins can specify whether it’s for users in the directory, connected organizations, or any external user. Entitlement Management determines if the person requesting the access package is within the scope of the policy. 
 
@@ -30,7 +30,7 @@ This article describes how to configure the verified ID requirement settings for
 
 ## Prerequisites
 
-Before you begin, you must set up your tenant to use the [Microsoft Entra Verified ID service](~/verified-id/decentralized-identifier-overview.md). You can find detailed instructions on how to do that here: [Configure your tenant for Microsoft Entra Verified ID](~/verified-id/verifiable-credentials-configure-tenant.md). 
+Before you begin, you must set up your tenant to use the [Microsoft Entra Verified ID service](~/verified-id/decentralized-identifier-overview.md). You can find detailed instructions on how to do that here: [Configure your tenant for Microsoft Entra Verified ID](~/verified-id/verifiable-credentials-configure-tenant-quick.md). 
 
 
 ## License requirements

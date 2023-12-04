@@ -1,11 +1,11 @@
 ---
 title: CIAM security and governance
 description: Learn about CIAM security and governance features.
-services: active-directory
+ 
 author: msmimart
 manager: celestedg
 ms.service: active-directory
-ms.workload: identity
+ 
 ms.subservice: ciam
 ms.topic: conceptual
 ms.date: 04/28/2023
@@ -42,6 +42,12 @@ Microsoft Entra [Identity Protection](~/id-protection/overview-identity-protecti
 - Export risk detection data to other tools.
 
 Identity Protection comes with risk reports that can be used to investigate identity risks in customer tenants. For details, see [Investigate risk with Identity Protection in Microsoft Entra ID for customers](how-to-identity-protection-customers.md).
+
+## Analyze user authentication trends for your apps
+
+The Application user activity (Preview) feature under Usage & insights provides data analytics on user activity for registered applications in your tenant. You can use this feature to view, query, and analyze user requests and authentication trends. It can help you track changes, access patterns, and potential security breaches.
+
+For details see [application user activity dashboards](how-to-user-insights.md). 
 
 ## Next steps
 

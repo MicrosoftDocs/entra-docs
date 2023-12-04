@@ -3,12 +3,12 @@ title: Tutorial - Create a Blazor Server app that uses the Microsoft identity pl
 description: In this tutorial, you set up authentication using the Microsoft identity platform in a Blazor Server app.
 author: henrymbuguakiarie
 ms.author: henrymbugua
+ms.custom: devx-track-dotnet
+ms.date: 02/09/2023
+ms.reviewer: janicericketts
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: tutorial
-ms.date: 02/09/2023
-ms.custom: engagement-fy23, devx-track-dotnet
-ms.reviewer: janicericketts
 #Customer intent: As a developer, I want to add authentication to a Blazor app.
 ---
 

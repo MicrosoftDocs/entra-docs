@@ -1,13 +1,13 @@
 ---
 title: Sign in users in a Node.js browserless application using the Device Code flow - Prepare tenant
 description: Learn how to build a browserless application to sign in and sign out users - Prepare tenant
-services: active-directory
+ 
 author: Dickson-Mwendia
 manager: mwongerapk
 
 ms.author: dmwendia
 ms.service: active-directory
-ms.workload: identity
+ 
 ms.subservice: ciam
 ms.topic: how-to
 ms.date: 05/09/2023

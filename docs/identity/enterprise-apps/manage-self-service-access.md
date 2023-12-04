@@ -1,12 +1,12 @@
 ---
 title: How to enable self-service application assignment
 description: Enable self-service application access to allow users to find their own applications from their My Apps portal
-services: active-directory
+
 author: omondiatieno
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
-ms.workload: identity
+
 ms.topic: how-to
 ms.date: 03/29/2023
 ms.author: jomondi

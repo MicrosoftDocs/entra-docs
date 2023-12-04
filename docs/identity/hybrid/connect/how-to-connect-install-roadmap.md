@@ -8,7 +8,7 @@ ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 01/26/2023
+ms.date: 11/06/2023
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
@@ -184,7 +184,7 @@ The Microsoft Entra Connect Health portal shows views of alerts, performance mon
 - [Hardware and prerequisites](how-to-connect-install-prerequisites.md) 
 - [Express settings](how-to-connect-install-express.md)
 - [Customized settings](how-to-connect-install-custom.md)
-- [Password hash synchronization](how-to-connect-password-hash-synchronization.md)|
+- [Password hash synchronization](how-to-connect-password-hash-synchronization.md)
 - [Pass-through authentication](how-to-connect-pta.md)
 - [Microsoft Entra Connect and federation](how-to-connect-fed-whatis.md)
 - [Install Microsoft Entra Connect Health agents](how-to-connect-health-agent-install.md) 

@@ -14,7 +14,7 @@ ms.reviewer: arvinh
 ---
 
 # Provisioning users into SQL based applications
-The following documentation provides configuration and tutorial information demonstrating how the generic SQL connector and the ECMA Connector Host can be used with a SQL Server.
+The following documentation provides configuration and tutorial information demonstrating how the generic SQL connector and the Extensible Connectivity(ECMA) host can be used with a SQL Server.
 
 
 [!INCLUDE [app-provisioning-sql.md](~/includes/app-provisioning-sql.md)]

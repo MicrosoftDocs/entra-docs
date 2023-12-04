@@ -1,18 +1,15 @@
 ---
 title: Register mobile apps that call web APIs
 description: Learn how to build a mobile app that calls web APIs (app's registration)
-services: active-directory
 author: henrymbuguakiarie
 manager: CelesteDG
-
+ms.author: henrymbugua
+ms.custom: 
+ms.date: 08/18/2021
+ms.reviewer: brandwe, jmprieur
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: how-to
-ms.workload: identity
-ms.date: 08/18/2021
-ms.author: henrymbugua
-ms.reviewer: brandwe, jmprieur
-ms.custom: aaddev
 #Customer intent: As an application developer, I want to know how to write a mobile app that calls web APIs by using the Microsoft identity platform for developers.
 ---
 

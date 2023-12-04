@@ -35,7 +35,9 @@ landingContent:
           - text: Microsoft Entra ID Governance licensing fundamentals
             url: licensing-fundamentals.md
           - text: Identity Governance dashboard (Preview)
-            url: governance-dashboard.md            
+            url: governance-dashboard.md 
+          - text: Identity Governance service limits
+            url: governance-service-limits.md                 
   
   # Card
   - title: Govern the lifecycle of access to groups, apps, and sites

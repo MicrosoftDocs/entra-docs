@@ -3,11 +3,11 @@ metadata:
   title: Deletion and recovery of applications FAQ
   description: Find answers to frequently asked questions (FAQs) about recovering deleted apps and service principals.
   
-  services: active-directory
+  
   ms.service: active-directory
   ms.subservice: app-mgmt
   ms.topic: faq
-  ms.workload: identity
+  
   ms.date: 06/21/2023
   ms.author: jomondi
   author: omondiatieno

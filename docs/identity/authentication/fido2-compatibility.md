@@ -33,7 +33,7 @@ This table shows support for authenticating Microsoft Entra ID and Microsoft Acc
 | **Android**  | &#10060; | &#10060; | &#10060; | N/A |
 
 >[!NOTE]
->This is the view for web support. Authentication for native apps in iOS and Android isn't available yet.
+>This is the view for web support. Authentication for native apps in macOS, iOS and Android isn't available yet.
 
 ## Browser support for each platform
 

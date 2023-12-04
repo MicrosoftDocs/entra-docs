@@ -1,13 +1,13 @@
 ---
 title: 'Create an enterprise application from a multi-tenant application'
 description: Create an enterprise application using the client ID for a multi-tenant application.
-services: active-directory
+
 author: omondiatieno
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: how-to
-ms.workload: identity
+
 ms.date: 07/26/2022
 ms.author: jomondi
 ms.reviewer: karavar

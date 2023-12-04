@@ -25,8 +25,7 @@ Microsoft Entra ID supports preintegrated connectors for applications that suppo
 > - [REST](on-premises-ldap-connector-configure.md)
 > - [SOAP](on-premises-ldap-connector-configure.md)
 
-For connectivity to applications that don't support the aforementioned protocols and standards, customers and [partners](https://social.technet.microsoft.com/wiki/contents/articles/1589.fim-2010-mim-2016-management-agents-from-partners.aspx) have built custom [ECMA 2.0](/previous-versions/windows/desktop/forefront-2010/hh859557(v=vs.100)) connectors for Microsoft Identity Manager (MIM) 2016. You can now use those ECMA 2.0 connectors with the lightweight Microsoft Entra provisioning agent, without needing MIM sync deployed.
-
+For connectivity to applications that don't support the aforementioned protocols and standards, customers and [partners](https://social.technet.microsoft.com/wiki/contents/articles/1589.fim-2010-mim-2016-management-agents-from-partners.aspx) have built custom [ECMA 2.0](/previous-versions/windows/desktop/forefront-2010/hh859557(v=vs.100)) connectors for Microsoft Identity Manager (MIM) 2016. These same ECMA2 connectors can now be used with the Extensible Connectivity(ECMA) Connector host and the lightweight Microsoft Entra provisioning agent, without needing MIM sync deployed.
 
 
 ## Exporting and importing a MIM connector

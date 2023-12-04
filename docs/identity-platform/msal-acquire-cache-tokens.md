@@ -1,18 +1,15 @@
 ---
 title: Acquire and cache tokens with Microsoft Authentication Library (MSAL)
 description: Learn about acquiring and caching tokens using MSAL.
-services: active-directory
 author: cilwerner
 manager: CelesteDG
-
+ms.author: cwerner
+ms.custom: has-adal-ref 
+ms.date: 02/27/2023
+ms.reviewer: saeeda
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-ms.workload: identity
-ms.date: 02/27/2023
-ms.author: cwerner
-ms.reviewer: saeeda
-ms.custom: aaddev, has-adal-ref, engagement-fy23
 #Customer intent: As an application developer, I want to learn about acquiring and caching tokens so my app can support authentication and authorization.
 ---
 
@@ -29,8 +26,6 @@ You can also clear the token cache, which is achieved by removing the accounts f
 [Scopes](./permissions-consent-overview.md) are the permissions that a web API exposes that client applications can request access to. Client applications request the user's consent for these scopes when making authentication requests to get tokens to access the web APIs. MSAL allows you to get tokens to access Azure Active Directory (Azure AD) for developers (v1.0) and the Microsoft identity platform APIs. The v2.0 protocol uses scopes instead of resource in the requests. Based on the web API's configuration of the token version it accepts, the v2.0 endpoint returns the access token to MSAL.
 
 Several of MSAL's token acquisition methods require a `scopes` parameter. The `scopes` parameter is a list of strings that declare the desired permissions and the resources requested. Well-known scopes are the [Microsoft Graph permissions](/graph/permissions-reference).
-
-It's also possible in MSAL to access v1.0 resources. For more information, see [Scopes for a v1.0 application](msal-v1-app-scopes.md).
 
 ### Request scopes for a web API
 
@@ -99,7 +94,7 @@ For confidential client applications (web app, web API, or a daemon application 
 
 - Acquire tokens **for the application itself** and not for a user, using the [client credentials flow](msal-authentication-flows.md#client-credentials). This technique can be used for syncing tools, or tools that process users in general and not a specific user.
 - Use the [on-behalf-of (OBO) flow](msal-authentication-flows.md#on-behalf-of-obo) for a web API to call an API on behalf of the user. The application is identified with client credentials in order to acquire a token based on a user assertion (SAML, for example, or a JWT token). This flow is used by applications that need to access resources of a particular user in service-to-service calls. Tokens should be cached on a session basis, not on a user basis.
-- Acquire tokens using the [authorization code flow](msal-authentication-flows.md#authorization-code) in web apps after the user signs in through the authorization request URL. OpenID Connect application typically use this mechanism, which lets the user sign in using OpenID Connect and then access web APIs on behalf of the user. Tokens may be cached on a user or on a session basis. If caching tokens on a user basis, we recommend to limit the session lifetime, so that Microsoft Entra ID may check the state of the Conditional Access policies frequently.
+- Acquire tokens using the [authorization code flow](msal-authentication-flows.md#authorization-code) in web apps after the user signs in through the authorization request URL. OpenID Connect application typically use this mechanism, which lets the user sign in using OpenID Connect and then access web APIs on behalf of the user. Tokens can be cached on a user or on a session basis. If caching tokens on a user basis, we recommend to limit the session lifetime, so that Microsoft Entra ID can check the state of the Conditional Access policies frequently.
 
 ## Authentication results
 

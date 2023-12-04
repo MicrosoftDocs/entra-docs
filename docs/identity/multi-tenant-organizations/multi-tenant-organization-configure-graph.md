@@ -8,7 +8,7 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: multi-tenant-organizations
 ms.topic: how-to
-ms.date: 09/22/2023
+ms.date: 11/22/2023
 ms.author: rolyon
 ms.custom: it-pro
 
@@ -27,13 +27,13 @@ If you instead want to use the Microsoft 365 admin center to configure a multite
 
 ## Prerequisites
 
-![Icon for the owner tenant.](./media/common/icon-tenant-owner.png)<br/>**Owner tenant**
+![Icon for the owner tenant.](../../media/common/icons/entra-id.png)<br/>**Owner tenant**
 
 - For license information, see [License requirements](./multi-tenant-organization-overview.md#license-requirements).
 - [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator) role to configure cross-tenant access settings and templates for the multitenant organization.
 - [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) role to consent to required permissions.
 
-![Icon for the member tenant.](./media/common/icon-tenant-member.png)<br/>**Member tenant**
+![Icon for the member tenant.](../../media/common/icons/entra-id-purple.png)<br/>**Member tenant**
 
 - For license information, see [License requirements](./multi-tenant-organization-overview.md#license-requirements).
 - [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator) role to configure cross-tenant access settings and templates for the multitenant organization.
@@ -41,9 +41,9 @@ If you instead want to use the Microsoft 365 admin center to configure a multite
 
 ## Step 1: Sign in to the owner tenant
 
-![Icon for the owner tenant.](./media/common/icon-tenant-owner.png)<br/>**Owner tenant**
+![Icon for the owner tenant.](../../media/common/icons/entra-id.png)<br/>**Owner tenant**
 
-These steps describe how to use Microsoft Graph Explorer (recommended), but you can also use Postman, or another REST API client.
+These steps describe how to use Microsoft Graph Explorer, but you can also use Postman, or another REST API client.
 
 1. Start [Microsoft Graph Explorer tool](https://aka.ms/ge).
 
@@ -61,7 +61,7 @@ These steps describe how to use Microsoft Graph Explorer (recommended), but you 
 
 ## Step 2: Create a multitenant organization
 
-![Icon for the owner tenant.](./media/common/icon-tenant-owner.png)<br/>**Owner tenant**
+![Icon for the owner tenant.](../../media/common/icons/entra-id.png)<br/>**Owner tenant**
 
 1. In the owner tenant, use the [Create multiTenantOrganization](/graph/api/tenantrelationship-put-multitenantorganization) API to create your multitenant organization. This operation can take a few minutes.
 
@@ -88,7 +88,8 @@ These steps describe how to use Microsoft Graph Explorer (recommended), but you 
     {
         "@odata.context": "https://graph.microsoft.com/beta/$metadata#tenantRelationships/multiTenantOrganization/$entity",
         "id": "{mtoId}",
-        "createdDateTime": "2023-04-05T08:27:10Z",
+        "createdDateTime": "2023-11-20T20:38:20Z",
+        "state": "active",
         "displayName": "Cairo",
         "description": null
     }
@@ -96,7 +97,7 @@ These steps describe how to use Microsoft Graph Explorer (recommended), but you 
 
 ## Step 3: Add tenants
 
-![Icon for the owner tenant.](./media/common/icon-tenant-owner.png)<br/>**Owner tenant**
+![Icon for the owner tenant.](../../media/common/icons/entra-id.png)<br/>**Owner tenant**
 
 1. In the owner tenant, use the [Add multiTenantOrganizationMember](/graph/api/multitenantorganization-post-tenants) API to add tenants to your multitenant organization.
 
@@ -137,7 +138,7 @@ These steps describe how to use Microsoft Graph Explorer (recommended), but you 
             {
                 "tenantId": "{ownerTenantId}",
                 "displayName": "Cairo",
-                "addedDateTime": "2023-04-05T08:27:10Z",
+                "addedDateTime": "2023-11-20T20:38:20Z",
                 "joinedDateTime": null,
                 "addedByTenantId": "{ownerTenantId}",
                 "role": "owner",
@@ -147,7 +148,7 @@ These steps describe how to use Microsoft Graph Explorer (recommended), but you 
             {
                 "tenantId": "{memberTenantIdB}",
                 "displayName": "Berlin",
-                "addedDateTime": "2023-04-05T08:30:44Z",
+                "addedDateTime": "2023-11-20T21:22:35Z",
                 "joinedDateTime": null,
                 "addedByTenantId": "{ownerTenantId}",
                 "role": "member",
@@ -162,7 +163,7 @@ These steps describe how to use Microsoft Graph Explorer (recommended), but you 
             {
                 "tenantId": "{memberTenantIdA}",
                 "displayName": "Athens",
-                "addedDateTime": "2023-04-05T08:31:03Z",
+                "addedDateTime": "2023-11-20T21:24:59Z",
                 "joinedDateTime": null,
                 "addedByTenantId": "{ownerTenantId}",
                 "role": "member",
@@ -180,7 +181,7 @@ These steps describe how to use Microsoft Graph Explorer (recommended), but you 
 
 ## Step 4: (Optional) Change the role of a tenant
 
-![Icon for the owner tenant.](./media/common/icon-tenant-owner.png)<br/>**Owner tenant**
+![Icon for the owner tenant.](../../media/common/icons/entra-id.png)<br/>**Owner tenant**
 
 By default, tenants added to the multitenant organization are member tenants. Optionally, you can change them to owner tenants, which allow them to add other tenants to the multitenant organization. You can also change an owner tenant to a member tenant.
 
@@ -210,7 +211,7 @@ By default, tenants added to the multitenant organization are member tenants. Op
         "@odata.context": "https://graph.microsoft.com/beta/$metadata#tenantRelationships/multiTenantOrganization/tenants/$entity",
         "tenantId": "{memberTenantIdB}",
         "displayName": "Berlin",
-        "addedDateTime": "2023-04-05T08:30:44Z",
+        "addedDateTime": "2023-11-20T21:22:35Z",
         "joinedDateTime": null,
         "addedByTenantId": "{ownerTenantId}",
         "role": "member",
@@ -237,7 +238,7 @@ By default, tenants added to the multitenant organization are member tenants. Op
 
 ## Step 5: (Optional) Remove a member tenant
 
-![Icon for the owner tenant.](./media/common/icon-tenant-owner.png)<br/>**Owner tenant**
+![Icon for the owner tenant.](../../media/common/icons/entra-id.png)<br/>**Owner tenant**
 
 You can remove any member tenant, including your own. You can't remove owner tenants. Also, you can't remove the original creator tenant, even if it has been changed from owner to member.
 
@@ -254,7 +255,7 @@ You can remove any member tenant, including your own. You can't remove owner ten
     **Request**
 
     ```http
-    GET beta https://graph.microsoft.com/beta/tenantRelationships/multiTenantOrganization/tenants/{memberTenantIdD}
+    GET https://graph.microsoft.com/beta/tenantRelationships/multiTenantOrganization/tenants/{memberTenantIdD}
     ```
     
     If you check immediately after calling the remove API, it will show a response similar to the following.
@@ -266,7 +267,7 @@ You can remove any member tenant, including your own. You can't remove owner ten
         "@odata.context": "https://graph.microsoft.com/beta/$metadata#tenantRelationships/multiTenantOrganization/tenants/$entity",
         "tenantId": "{memberTenantIdD}",
         "displayName": "Denver",
-        "addedDateTime": "2023-04-05T08:40:52Z",
+        "addedDateTime": "2023-11-20T20:56:05Z",
         "joinedDateTime": null,
         "addedByTenantId": "{ownerTenantId}",
         "role": "member",
@@ -290,7 +291,7 @@ You can remove any member tenant, including your own. You can't remove owner ten
             "code": "Directory_ObjectNotFound",
             "message": "Unable to read the company information from the directory.",
             "innerError": {
-                "date": "2023-04-05T08:44:07",
+                "date": "2023-11-20T21:09:53",
                 "request-id": "75216961-c21d-49ed-8c1f-2cfe51f920f1",
                 "client-request-id": "30129b19-51e8-41ed-8ba0-1501bac03802"
             }
@@ -299,13 +300,13 @@ You can remove any member tenant, including your own. You can't remove owner ten
     ```
 ## Step 6: Wait
 
-![Icon for the member tenant.](./media/common/icon-tenant-member.png)<br/>**Member tenant**
+![Icon for the member tenant.](../../media/common/icons/entra-id-purple.png)<br/>**Member tenant**
 
 - To allow for asynchronous processing, wait a **minimum of 2 hours** between creation and joining a multitenant organization.
 
 ## Step 7: Sign in to a member tenant
 
-![Icon for the member tenant.](./media/common/icon-tenant-member.png)<br/>**Member tenant**
+![Icon for the member tenant.](../../media/common/icons/entra-id-purple.png)<br/>**Member tenant**
 
 The Cairo tenant created a multitenant organization and added the Berlin and Athens tenants. In these steps you sign in to the Berlin tenant and join the multitenant organization created by Cairo.
 
@@ -325,20 +326,20 @@ The Cairo tenant created a multitenant organization and added the Berlin and Ath
 
 ## Step 8: Join the multitenant organization
 
-![Icon for the member tenant.](./media/common/icon-tenant-member.png)<br/>**Member tenant**
+![Icon for the member tenant.](../../media/common/icons/entra-id-purple.png)<br/>**Member tenant**
 
 1. In the member tenant, use the [Update multiTenantOrganizationJoinRequestRecord](/graph/api/multitenantorganizationjoinrequestrecord-update) API to join the multitenant organization.
 
     **Request**
 
     ```http
-    PATCH beta https://graph.microsoft.com/beta/tenantRelationships/multiTenantOrganization/joinRequest
+    PATCH https://graph.microsoft.com/beta/tenantRelationships/multiTenantOrganization/joinRequest
     {
         "addedByTenantId": "{ownerTenantId}"
     }
     ```
 
-1. Use the [Get multiTenantOrganizationJoinRequestRecord](/graph/api/multitenantorganizationjoinrequestrecord-get) API to verify the join. 
+1. Use the [Get multiTenantOrganizationJoinRequestRecord](/graph/api/multitenantorganizationjoinrequestrecord-get) API to verify the join.
 
     **Request**
 
@@ -355,8 +356,8 @@ The Cairo tenant created a multitenant organization and added the Berlin and Ath
         "@odata.context": "https://graph.microsoft.com/beta/$metadata#tenantRelationships/multiTenantOrganization/joinRequest/$entity",
         "id": "aa87e8a4-9c88-4e67-971d-79c9e43319a3",
         "addedByTenantId": "{ownerTenantId}",
-        "memberState": "active",
-        "role": "member",
+        "memberState": "pending",
+        "role": null,
         "transitionDetails": {
             "desiredMemberState": "active",
             "status": "notStarted",
@@ -397,8 +398,8 @@ The Cairo tenant created a multitenant organization and added the Berlin and Ath
             {
                 "tenantId": "{memberTenantIdA}",
                 "displayName": "Athens",
-                "addedDateTime": "2023-04-05T10:14:35Z",
-                "joinedDateTime": null,
+                "addedDateTime": "2023-11-20T21:24:59Z",
+                "joinedDateTime": "2023-11-21T22:09:18Z",
                 "addedByTenantId": "{ownerTenantId}",
                 "role": "member",
                 "state": "active",
@@ -407,8 +408,8 @@ The Cairo tenant created a multitenant organization and added the Berlin and Ath
             {
                 "tenantId": "{memberTenantIdB}",
                 "displayName": "Berlin",
-                "addedDateTime": "2023-04-05T08:30:44Z",
-                "joinedDateTime": null,
+                "addedDateTime": "2023-11-20T21:22:35Z",
+                "joinedDateTime": "2023-11-21T21:55:34Z",
                 "addedByTenantId": "{ownerTenantId}",
                 "role": "member",
                 "state": "active",
@@ -417,7 +418,7 @@ The Cairo tenant created a multitenant organization and added the Berlin and Ath
             {
                 "tenantId": "{ownerTenantId}",
                 "displayName": "Cairo",
-                "addedDateTime": "2023-04-05T08:27:10Z",
+                "addedDateTime": "2023-11-20T20:38:20Z",
                 "joinedDateTime": null,
                 "addedByTenantId": "{ownerTenantId}",
                 "role": "owner",
@@ -432,23 +433,23 @@ The Cairo tenant created a multitenant organization and added the Berlin and Ath
 
 ## Step 9: (Optional) Leave the multitenant organization
 
-![Icon for the member tenant.](./media/common/icon-tenant-member.png)<br/>**Member tenant**
+![Icon for the member tenant.](../../media/common/icons/entra-id-purple.png)<br/>**Member tenant**
 
 You can leave a multitenant organization that you have joined. The process for removing your own tenant from the multitenant organization is the same as the process for removing another tenant from the multitenant organization.
 
-If your tenant is the only multitenant organization owner, you must designate a new tenant to be the multitenant organization owner. For steps, see [Step 4: (Optional) Change the role of a tenant](#step-4-optional-change-the-role-of-a-tenant) 
+If your tenant is the only multitenant organization owner, you must designate a new tenant to be the multitenant organization owner. For steps, see [Step 4: (Optional) Change the role of a tenant](#step-4-optional-change-the-role-of-a-tenant).
 
 - In the tenant, use the [Remove multiTenantOrganizationMember](/graph/api/multitenantorganization-delete-tenants) API to remove the tenant. This operation takes a few minutes.
 
     **Request**
 
     ```http
-    DELETE https://graph.microsoft.com/beta/tenantRelationships/multiTenantOrganization/tenants/{memberTenantIdD}
+    DELETE https://graph.microsoft.com/beta/tenantRelationships/multiTenantOrganization/tenants/{memberTenantId}
     ```
 
 ## Step 10: (Optional) Delete the multitenant organization
 
-![Icon for the owner tenant.](./media/common/icon-tenant-owner.png)<br/>**Owner tenant**
+![Icon for the owner tenant.](../../media/common/icons/entra-id.png)<br/>**Owner tenant**
 
 You delete a multitenant organization by removing all tenants. The process for removing the final owner tenant is the same as the process for removing all other member tenants.
 
@@ -457,7 +458,7 @@ You delete a multitenant organization by removing all tenants. The process for r
     **Request**
 
     ```http
-    DELETE https://graph.microsoft.com/beta/tenantRelationships/multiTenantOrganization/tenants/{memberTenantIdD}
+    DELETE https://graph.microsoft.com/beta/tenantRelationships/multiTenantOrganization/tenants/{ownerTenantId}
     ```
 
 ## Next steps

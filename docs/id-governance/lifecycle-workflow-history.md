@@ -8,16 +8,14 @@ ms.service: active-directory
 ms.subservice: compliance
 ms.workload: identity
 ms.topic: conceptual 
-ms.date: 05/31/2023
+ms.date: 11/15/2023
 ms.custom: template-concept 
 ---
 
 
 # Lifecycle Workflows history
 
-
-
-Workflows created using Lifecycle Workflows allow for the automation of lifecycle task for users no matter where they fall in the Joiner-Mover-Leaver (JML) model of their identity lifecycle in your organization. Making sure workflows are processed correctly is an important part of an organization's lifecycle management process. Workflows that aren't processed correctly can lead to many issues in terms of security and compliance. With Lifecycle Workflow's history features, you can specify which workflow events you want to view a history of based on users, runs, or task summaries. This reporting feature allows you to quickly see what ran for who, and rather or not it was successful. Along with the summaries in these specific areas, you're also able to view detailed information about each specific event recorded in their respective summary section. In this article, you'll learn the difference between the three different type of history summaries, and details, you can query with Lifecycle Workflows. You'll also learn when you would use each when getting more information about how your workflows were utilized for users in your organization. For detailed information about every action Lifecycle Workflows takes, see: [Auditing Lifecycle Workflows](lifecycle-workflow-audits.md).
+Workflows created using Lifecycle Workflows allow for the automation of lifecycle task for users no matter where they fall in the Joiner-Mover-Leaver (JML) model of their identity lifecycle in your organization. Making sure workflows are processed correctly is an important part of an organization's lifecycle management process. Workflows that aren't processed correctly can lead to many issues in terms of security and compliance. With Lifecycle Workflow's history features, you can specify which workflow events you want to view a history of based on users, runs, or task summaries. This reporting feature allows you to quickly see what ran for who, and rather or not it was successful. Along with the summaries in these specific areas, you're also able to view detailed information about each specific event recorded in their respective section. You are also able to [download these reports as CSV files](download-workflow-history.md). In this article, you'll learn the difference between the three different type of history summaries, and details, you can query with Lifecycle Workflows. You'll also learn when you would use each when getting more information about how your workflows were utilized for users in your organization. For detailed information about every action Lifecycle Workflows takes, see: [Auditing Lifecycle Workflows](lifecycle-workflow-audits.md).
 
 ## Lifecycle Workflow History Summaries
 
@@ -28,6 +26,7 @@ Lifecycle Workflows introduce a history feature based on summaries and details. 
 - **Tasks summary**: Shows a summary of tasks processed by a workflow, and which tasks failed, successfully, and totally ran in the workflow.
 
 Summaries allow you to quickly gain details about how a workflow ran for itself, or users, without going into further details in logs.  For a step by step guide on getting this information, see [Check the status of a workflow](check-status-workflow.md).
+
 
 ## Users Summary information
 
@@ -58,12 +57,12 @@ User detailed history information allows you to filter for specific information 
 
 ### User history status details
 
-When viewing the status of user processing history, the status values correspond to the following information:
+When you view the status of user processing history, the status values correspond to the following information:
 
 |Status  |Details  |
 |---------|---------|
 |Completed     | This state is reported if all of the workflow's tasks processes successfully for a user.       |
-|In Progress     | This state is reported when a workflow begins running tasks for a user.. The status remains in this state until all the workflow's tasks are processed for the user, or it fails.        |
+|In Progress     | This state is reported when a workflow begins running tasks for a user. The status remains in this state until all the workflow's tasks are processed for the user, or it fails.        |
 |Queued     | This state is reported when a user is identified by the Lifecycle Workflow engine that meets the execution conditions of a workflow. From here a user either enters a state of *In progress* if the workflow begins running for them, or canceled if the admin manually cancels the workflow.       |
 |Canceled     |  This state is reported for the following reasons: <br><br>**1.** If the workflow was deleted, all scheduled users it's set to run for are canceled.<br>**2.** If the workflow was disabled, all scheduled users it's set to run for are canceled.<br>**3**. If the workflow's schedule was disabled, all scheduled users it's set to run for are canceled.<br>**4.** If the workflow had a new version created and all tasks were disabled, all scheduled users it's set to run for are canceled.<br>**5.** If users don't meet the current execution conditions of the workflow's new version, the scheduled runs are canceled.<br>**6.**  If the user was queued to have the workflow run for them, but has a profile change and no longer meet the current execution conditions of the workflow immediately before it runs, the processing is canceled.      |
 |Completed with errors     | This state is reported if the workflow completed, but one or more tasks that are set have **continueOnError** set as *true* have failed.       |
@@ -100,7 +99,7 @@ Runs detailed history information allows you to filter for specific information 
 
 ### Runs history status details
 
-When viewing the status of run history, the status values correspond to the following information:
+When you view the status of run history, the status values correspond to the following information:
 
 
 |Status  |Details  |
@@ -144,7 +143,7 @@ Task detailed history information allows you to filter for specific information 
 
 ### Task history status details
 
-When viewing the status of task history, the status values correspond to the following information:
+When you view the status of task history, the status values correspond to the following information:
 
 
 |Status  |Details  |

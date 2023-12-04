@@ -80,7 +80,7 @@ The JSON attestation definition should contain the **selfIssued** name and the c
           "outputClaim": "displayName",
           "required": true,
           "inputClaim": "displayName",
-          "indexed": false
+          "indexed": true
         },
         {
           "outputClaim": "companyName",

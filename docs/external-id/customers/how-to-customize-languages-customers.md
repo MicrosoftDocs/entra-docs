@@ -1,12 +1,12 @@
 ---
 title: Customize the browser language for authentication
 description: Learn about how to customize the browser language of your app's authentication experience.
-services: active-directory
+ 
 author: csmulligan
 ms.author: cmulligan
 manager: celestedg
 ms.service: active-directory
-ms.workload: identity
+ 
 ms.subservice: ciam
 ms.topic: how-to
 ms.date: 09/25/2023

@@ -1,12 +1,12 @@
 ---
 title: 'Tutorial: User provisioning for GitHub'
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user organization membership in GitHub Enterprise Cloud.
-services: active-directory
+
 author: twimmers
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: thwimmer

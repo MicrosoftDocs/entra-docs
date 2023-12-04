@@ -98,7 +98,7 @@ The claims mapping in the following example requires that you configure the toke
             "outputClaim": "userName",
             "required": true,
             "inputClaim": "$.upn",
-            "indexed": false
+            "indexed": true
           },
           {
             "outputClaim": "displayName",
@@ -116,7 +116,7 @@ The claims mapping in the following example requires that you configure the toke
             "outputClaim": "lastName",
             "required": true,
             "inputClaim": "$.family_name",
-            "indexed": true
+            "indexed": false
           }
         ],
         "required": false

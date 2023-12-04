@@ -51,7 +51,7 @@ Authorization: Bearer <token>
 {
     "includeQRCode": true,
     "callback": {
-        "url": "https://wwww.contoso.com/vc/callback",
+        "url": "https://contoso.com/api/issuer/issuanceCallback",
         "state": "Aaaabbbb11112222",
         "headers": {
             "api-key": "an-api-key-can-go-here"
@@ -75,13 +75,13 @@ The issuance request payload contains information about your verifiable credenti
 {
   "includeQRCode": true,
   "callback": {
-    "url": "https://www.contoso.com/api/issuer/issuanceCallback",
+    "url": "https://contoso.com/api/issuer/issuanceCallback",
     "state": "de19cb6b-36c1-45fe-9409-909a51292a9c",
     "headers": {
       "api-key": "OPTIONAL API-KEY for CALLBACK EVENTS"
     }
   },
-  "authority": "did:ion:EiCLL8lzCqlGLYTGbjwgR6SN6OkIjO6uUKyF5zM7fQZ8Jg:eyJkZWx0YSI6eyJwYXRjaGVzIjpbeyJhY3Rpb24iOiJyZXBsYWNlIiwiZG9jdW1lbnQiOnsicHVibGljS2V5cyI6W3siaWQiOiJzaWdfOTAyZmM2NmUiLCJwdWJsaWNLZXlKd2siOnsiY3J2Ijoic2VjcDI1NmsxIiwia3R5IjoiRUMiLCJ4IjoiTEdUOWk3aFYzN1dUcFhHcUg5c1VDek...",
+  "authority": "did:web:verifiedid.contoso.com",
   "registration": {
     "clientName": "Verifiable Credential Expert Sample"
   },

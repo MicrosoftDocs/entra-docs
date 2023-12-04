@@ -26,7 +26,7 @@ For customers who provided an address in Australia or New Zealand, Microsoft Ent
 - Microsoft Entra Directory Management 
 - Authentication
 
-All other Microsoft Entra services store customer data in global datacenters. To locate the datacenter for a service, see [Microsoft Entra ID – Where is your data located?](https://aka.ms/AADDataMap)
+All other Microsoft Entra services store customer data in global datacenters.
 
 <a name='microsoft-azure-ad-multi-factor-authentication-mfa'></a>
 

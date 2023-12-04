@@ -299,13 +299,13 @@ Authorization: Bearer  <token>
 {
     "includeQRCode": true,
     "callback": {
-        "url": "https://www.contoso.com/api/issuer/issuanceCallback",
+        "url": "https://contoso.com/api/issuer/issuanceCallback",
         "state": "de19cb6b-36c1-45fe-9409-909a51292a9c",
         "headers": {
             "api-key": "OPTIONAL API-KEY for CALLBACK EVENTS"
         }
     },
-    "authority": "did:ion:EiCLL8lzCqlGLYTGbjwgR6SN6OkIjO6uUKyF5zM7fQZ8Jg:eyJkZWx0YSI6eyJwYXRjaGVzIjpbeyJhY3Rpb24iOiJyZXBsYWNlIiwiZG9jdW1lbnQiOnsicHVibGljS2V5cyI6W3siaWQiOiJzaWdfOTAyZmM2NmUiLCJwdWJsaWNLZXlKd2siOnsiY3J2Ijoic2VjcDI1NmsxIiwia3R5IjoiRUMiLCJ4IjoiTEdUOWk3aFYzN1dUcFhHcUg5c1VDek...",
+    "authority": "did:web:verifiedid.contoso.com",
     "registration": {
         "clientName": "Verifiable Credential Expert Sample"
     },
@@ -338,16 +338,24 @@ POST https://verifiedid.did.msidentity.com/v1.0/verifiableCredentials/createPres
 Content-Type: application/json
 Authorization: Bearer  <token>
 
+{...JSON payload...}
+```
+
+# [Presentation request](#tab/request)
+
+Presentation request for a credential with certain type and issuer.
+
+```JSON
 {
   "includeQRCode": true,
   "callback": {
-    "url": "https://www.contoso.com/api/verifier/presentationCallback",
+    "url": "https://contoso.com/api/verifier/presentationCallback",
     "state": "92d076dd-450a-4247-aa5b-d2e75a1a5d58",
     "headers": {
       "api-key": "OPTIONAL API-KEY for CALLBACK EVENTS"
     }
   },
-  "authority": "did:ion:EiCLL8lzCqlGLYTGbjwgR6SN6OkIjO6uUKyF5zM7fQZ8Jg:eyJkZWx0YSI6eyJwYXRjaGVzIjpbeyJhY3Rpb24iOiJyZXBsYWNlIiwiZG9jdW1lbnQiOnsicHVibGljS2V5cyI6W3siaWQiOiJzaWdfOTAyZmM2NmUiLCJwdWJsaWNLZXlKd2siOnsiY3J2Ijoic2VjcDI1NmsxIiwia3R5IjoiRUMiLCJ4IjoiTEdUOWk3aFYzN1dUcFhHcUg5c1VDekxTVlFWcVl3S2JNY1Fsc0RILUZJUSIsInkiOiJiRWo5MDY...",
+  "authority": "did:web:verifiedid.contoso.com",
   "registration": {
     "clientName": "Veritable Credential Expert Verifier"
   },
@@ -357,7 +365,7 @@ Authorization: Bearer  <token>
       "type": "VerifiedCredentialExpert",
       "purpose": "So we can see that you a veritable credentials expert",
       "acceptedIssuers": [
-        "did:ion:EiCLL8lzCqlGLYTGbjwgR6SN6OkIjO6uUKyF5zM7fQZ8Jg:eyJkZWx0YSI6eyJwYXRjaGVzIjpbeyJhY3Rpb24iOiJyZXBsYWNlIiwiZG9jdW1lbnQiOnsicHVibGljS2V5cyI6W3siaWQiOiJzaWdfOTAyZmM2NmUiLCJwdWJsaWNLZXlKd2siOnsiY3J2Ijoic2VjcDI1NmsxIiwia3R5IjoiRUMiLCJ4IjoiTEdUOWk3aFYzN1dUcFhHcUg5c1VDekxTVlFWcVl3S2JNY1Fsc0RILUZJUSIsInkiO..."
+        "did:web:verifiedid.contoso.com"
       ],
       "configuration": {
         "validation": {
@@ -369,6 +377,52 @@ Authorization: Bearer  <token>
   ]
 }
 ```
+
+# [claims constraints](#tab/constraints)
+
+Presentation request with [claims constraints](presentation-request-api.md#constraints-type)
+
+```JSON
+{
+  "authority": "did:web:verifiedid.contoso.com",
+  "includeQRCode": false,
+  "includeReceipt": false,
+  "registration": {
+    "clientName": "Contoso Job Application Center",
+    "purpose": "Provide proof of attended courses"
+  },
+  "callback": {
+    "url": "https://contoso.com/api/verifier/presentationCallback",
+    "state": "92d076dd-450a-4247-aa5b-d2e75a1a5d58",
+    "headers": {
+      "api-key": "OPTIONAL API-KEY for CALLBACK EVENTS"
+    }
+  },
+  "requestedCredentials": [
+    {
+      "type": "FabrikamCourseCertification",
+      "acceptedIssuers": [ "did:web:learn.fabrikam.com" ],
+      "constraints": [ 
+        {  
+          "claimName": "courseCode",
+          "values": ["FC100", "FC110", "FC150"], 
+        }, 
+        {  
+          "claimName": "courseTitle",
+          "contains": "network", 
+        } 
+      ],
+      "configuration": {
+        "validation": {
+          "allowRevoked": false,
+          "validateLinkedDomain": true
+        }
+      }
+    }
+  ]
+}
+```
+---
 
 For the complete code, see one of the following code samples:
 

@@ -1,12 +1,12 @@
 ---
 title: Viewing apps using your tenant for identity management
 description: Understand how to view all applications using your Microsoft Entra tenant for identity management.
-services: active-directory
+
 author: omondiatieno
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
-ms.workload: identity
+
 ms.topic: reference
 ms.date: 07/14/2023
 ms.author: jomondi

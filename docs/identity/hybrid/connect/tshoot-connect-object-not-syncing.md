@@ -11,9 +11,9 @@ ms.assetid:
 ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
-ms.custom: has-azure-ad-ps-ref
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: troubleshooting
-ms.date: 01/19/2023
+ms.date: 11/06/2023
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
@@ -111,7 +111,7 @@ You can perform another useful search by selecting the Microsoft Entra Connector
 
 ![Screenshot of orphans in a connector space search](./media/tshoot-connect-object-not-syncing/cssearchorphan.png) 
  
-Those objects were created by another synchronization engine or a synchronization engine with a different filtering configuration. These orphan objects are no longer managed. Review this list and consider removing these objects by using the [Azure AD PowerShell](/previous-versions/azure/jj151815(v=azure.100)) cmdlets.
+Those objects were created by another synchronization engine or a synchronization engine with a different filtering configuration. These orphan objects are no longer managed. Review this list and consider removing these objects by using the [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview) cmdlets.
 
 ### CS import
 When you open a CS object, there are several tabs at the top. The **Import** tab shows the data that is staged after an import.  

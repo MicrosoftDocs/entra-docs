@@ -74,7 +74,7 @@ groups:
   prompt: Choose an option
   pivots:
   - id: portal
-    title: Azure portal
+    title: Microsoft Entra admin center
   - id: aad-powershell
     title: Azure AD PowerShell
   - id: ms-powershell
@@ -107,7 +107,7 @@ groups:
   prompt: Choose an option
   pivots:
   - id: portal
-    title: Azure portal
+    title: Microsoft Entra admin center
   - id: aad-powershell
     title: Azure AD PowerShell
   - id: ms-powershell
@@ -118,9 +118,18 @@ groups:
   prompt: Choose an option
   pivots:
   - id: portal
-    title: Azure portal
+    title: Microsoft Entra admin center
   - id: ms-powershell
     title: Microsoft Graph PowerShell
+  - id: ms-graph
+    title: Microsoft Graph API
+## template with Graph API and portal
+- id: enterprise-apps-with-ms-graph
+  title: Manage Enterprise apps
+  prompt: Choose an option
+  pivots:
+  - id: portal
+    title: Azure portal
   - id: ms-graph
     title: Microsoft Graph API
 ## Create service principal with appId

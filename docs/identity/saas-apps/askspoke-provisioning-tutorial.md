@@ -1,7 +1,7 @@
 ---
 title: "Tutorial: Configure askSpoke for automatic user provisioning with Microsoft Entra ID"
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to askSpoke.
-services: active-directory
+
 documentationcenter: ""
 author: twimmers
 writer: twimmers
@@ -10,7 +10,7 @@ manager: jeedes
 ms.assetid: f9458aac-f576-49ce-aba4-fc8302ed6360
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 04/04/2023

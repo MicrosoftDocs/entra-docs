@@ -52,7 +52,7 @@ Authorization: Bearer  <token>
 {
     "includeQRCode": true,
     "callback": {
-      "url": "https://www.contoso.com/api/verifier/presentationCallback",
+      "url": "https://contoso.com/api/verifier/presentationCallback",
       "state": "11111111-2222-2222-2222-333333333333",
       "headers": {
         "api-key": "an-api-key-can-go-here"
@@ -76,12 +76,12 @@ The presentation request payload contains information about your verifiable cred
 {
   "includeQRCode": true,
   "includeReceipt": true,
-  "authority": "did:ion:EiCLL8lzCqlGLYTGbjwgR6SN6OABCO6uUKyF5zM7fQZ8Jg:eyJ...<SNIP>...",
+  "authority": "did:web:verifiedid.contoso.com",
   "registration": {
     "clientName": "Veritable Credential Expert Verifier"
   },
   "callback": {
-    "url": "https://www.contoso.com/api/verifier/presentationCallback",
+    "url": "https://contoso.com/api/verifier/presentationCallback",
     "state": "92d076dd-450a-4247-aa5b-d2e75a1a5d58",
     "headers": {
       "api-key": "OPTIONAL API-KEY for CALLBACK EVENTS"
@@ -92,7 +92,7 @@ The presentation request payload contains information about your verifiable cred
       "type": "VerifiedCredentialExpert",
       "purpose": "So we can see that you a veritable credentials expert",
       "acceptedIssuers": [
-        "did:ion:EiCLL8lzCqlGLYTGbjwgR6SN6OABCO6uUKyF5zM7fQZ8Jg:eyJ...<SNIP>..."
+        "did:web:verifiedid.contoso.com"
       ],
       "configuration": {
         "validation": {
@@ -152,6 +152,7 @@ The `RequestCredential` provides information about the requested credentials the
 | `purpose`| string | Optional. Provide information about the purpose of requesting this verifiable credential. This is not used by the Authenticator app. |
 | `acceptedIssuers`| string collection | Optional. A collection of issuers' DIDs that could issue the type of verifiable credential that subjects can present. To get your issuer DID, see [Gather credentials and environment details to set up your sample application](verifiable-credentials-configure-issuer.md), and copy the value of the **Decentralized identifier (DID)**. If the `acceptedIssuers` collection is empty or not present, then the presentation request will accept a credential type issued by any issuer. |
 | `configuration.validation` | [Configuration.Validation](#configurationvalidation-type) | Optional settings for presentation validation.|
+| `constraints` | [Constraints](#constraints-type) | Optional. Collection of claims constraints.|
 
 ### Configuration.Validation type
 
@@ -161,6 +162,17 @@ The `Configuration.Validation` provides information about how the presented cred
 |---------|---------|---------|
 | `allowRevoked` |  Boolean | Optional. Determines if a revoked credential should be accepted. Default is `false` (it shouldn't be accepted). |
 | `validateLinkedDomain` |  Boolean | Optional. Determines if the linked domain should be validated. Default is `false`. Setting this flag to `false` means you as a Relying Party application accept credentials from an unverified linked domain. Setting this flag to `true` means the linked domain will be validated and only verified domains will be accepted. |
+
+### Constraints type
+
+The `constraints` type contains a collection of claims constraints that must be met when a wallet selects the candidate credentials. This enables requesting a credential with specific claim value. Constraints specified will use the AND logic, ie if you specify three constraints, all of them have to be met. For each constraint in the collection, you must select one operand of values, contains or startsWith. Values cannot be regular expressions. All comparisons are case-insensitive.
+
+|Property |Type |Description |
+|---------|---------|---------|
+| `claimName` |  string | Optional. Mandatory. Name of the claim for the constraint. |
+| `values` |  string collection | Set of values that should match the claim value. If you specify multiple values, like ["red", "green", "blue"] it is a match if the claim value in the credential has any of the values in the collection.|
+| `contains` | string |	The constraint evaluates to true if the claim value contains the specified value.|
+| `startsWith` | string |	The constraint evaluates to true if the claim value starts with the specified value.|
 
 ## Successful response
 
@@ -220,10 +232,10 @@ The following example demonstrates a callback payload after the verifiable crede
   "requestId": "e4ef27ca-eb8c-4b63-823b-3b95140eac11",
   "requestStatus": "presentation_verified",
   "state": "92d076dd-450a-4247-aa5b-d2e75a1a5d58",
-  "subject": "did:ion:EiAlrenrtD3Lsw0GlbzS1O2YFdy3Xtu8yo35W<SNIP>…",
+  "subject": "did:web:verifiedid.contoso.com",
   "verifiedCredentialsData": [
     {
-      "issuer": "did:ion:issuer",
+      "issuer": "did:ion:issuer...",
       "type": [
         "VerifiableCredential",
         "VerifiedCredentialExpert"

@@ -23,7 +23,7 @@ sections:
       - question: I registered the device recently. Why can't I see the device under my user info? Or why is the device owner marked as N/A for Microsoft Entra hybrid joined devices?
         answer: |
           Windows 10 or newer devices that are Microsoft Entra hybrid joined don't show up under **USER devices**.
-          Use the **All devices** view. You can also use a PowerShell [Get-MsolDevice](/powershell/module/msonline/get-msoldevice) cmdlet.
+          Use the **All devices** view. You can also use a PowerShell [Get-MgDevice](/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdevice) cmdlet.
           
           Only the following devices are listed under **USER devices**:
           
