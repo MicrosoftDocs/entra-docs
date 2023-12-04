@@ -13,7 +13,7 @@ ms.subservice: saas-app-tutorial
 
 ms.tgt_pltfrm: na
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 12/04/2023
 ms.author: thwimmer
 ---
 
@@ -53,27 +53,27 @@ The scenario outlined in this tutorial assumes that you already have the followi
 1. Sign in to getAbstract.
 1. Select the person icon located in the upper-right corner, and select the **My Central Admin** option.
 
-	![Screenshot that shows the getAbstract My Central Admin.](media/getabstract-provisioning-tutorial/my-account.png)
+	![Screenshot that shows the getAbstract My Central Admin.](media/getabstract-provisioning-tutorial/my_account.png)
 
 1. At the left side menu, click on **User Management** and click on the **configure scim** button.
 
-	![Screenshot that shows the getAbstract SCIM Admin.](media/getabstract-provisioning-tutorial/scim-admin.png)
+	![Screenshot that shows the getAbstract SCIM Admin.](media/getabstract-provisioning-tutorial/scim_admin.png)
 
 1. Select **Go**.
 
-	![Screenshot that shows the getAbstract SCIM Client Id.](media/getabstract-provisioning-tutorial/scim-client-go.png)
+	![Screenshot that shows the getAbstract SCIM Client Id.](media/getabstract-provisioning-tutorial/scim_client_go.png)
 
 1. Click on the **Generate new token** button.
 
-	![Screenshot that shows the getAbstract SCIM Token 1.](media/getabstract-provisioning-tutorial/scim-generate-token-step-2.png)
+	![Screenshot that shows the getAbstract SCIM Token 1.](media/getabstract-provisioning-tutorial/scim_generatetoken_step2.png)
 
 1. If you're sure, then select **Generate new token** button. Otherwise, select **Cancel**.
 
-	![Screenshot that shows the getAbstract SCIM Token 2.](media/getabstract-provisioning-tutorial/scim-generate-token-step-1.png)
+	![Screenshot that shows the getAbstract SCIM Token 2.](media/getabstract-provisioning-tutorial/scim_generatetoken_step1.png)
 
 1. Lastly, you can either click on the copy-to-clipboard icon or select the whole token and copy it. Also make a note that the Tenant/Base URL is `https://www.getabstract.com/api/scim/v2`. These values will be entered in the **Secret Token** and **Tenant URL** boxes on the **Provisioning** tab of your getAbstract application.
 
-	![Screenshot that shows the getAbstract SCIM Token 3.](media/getabstract-provisioning-tutorial/scim-generate-token-step-3.png)
+	![Screenshot that shows the getAbstract SCIM Token 3.](media/getabstract-provisioning-tutorial/scim_generatetoken_step3.png)
 
 <a name='step-3-add-getabstract-from-the-azure-ad-application-gallery'></a>
 
