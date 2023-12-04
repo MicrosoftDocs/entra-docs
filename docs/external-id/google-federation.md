@@ -204,7 +204,7 @@ You'll now set the Google client ID and client secret. You can use the Microsoft
 
 **To configure Google federation by using PowerShell**
 
-1. Install the latest version of the [Microsoft Graph PowerShell module](powershell/microsoftgraph/installation).
+1. Install the latest version of the [Microsoft Graph PowerShell module](/powershell/microsoftgraph/installation).
 2. Connect to your tenant by using the [Connect-MgGraph](/powershell/microsoftgraph/authentication-commands#using-connect-mggraph) command.
 3. At the sign-in prompt, sign in with the managed Global Administrator account.  
 4. Run the following commands:
@@ -253,7 +253,7 @@ You can delete your Google federation setup. If you do so, Google guest users wh
 
 **To delete Google federation by using PowerShell** 
 
-1. Install the latest version of the [Microsoft Graph PowerShell module](powershell/microsoftgraph/installation).
+1. Install the latest version of the [Microsoft Graph PowerShell module](/powershell/microsoftgraph/installation).
 2. Connect to your tenant by using the [Connect-MgGraph](/powershell/microsoftgraph/authentication-commands#using-connect-mggraph) command.
 3. In the sign-in prompt, sign in with the managed Global Administrator account.  
 4. Enter the following command:
