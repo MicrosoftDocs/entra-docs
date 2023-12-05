@@ -125,7 +125,7 @@ If a user has insufficient permissions to complete Microsoft Entra ID join and r
 
 ## See also
 
-- [Join a Mac device with Microsoft Entra ID during the out of box experience](./device-join-macos-pssoe-out-of-box.md)
-- [Register a Mac device with macOS Platform Single Sign-On using Company Portal](./device-registration-macos-pssoe.md)
+- [Join a Mac device with Microsoft Entra ID during the out of box experience](./device-join-macos-platform-single-sign-on.md)
+- [Register a Mac device with macOS Platform Single Sign-On using Company Portal](./device-registration-macos-platform-single-sign-on.md)
 - [Microsoft Enterprise SSO plug-in for Apple devices](~/identity-platform/apple-sso-plugin.md)
 - [Troubleshooting the Microsoft Enterprise SSO Extension plugin on Apple devices](./troubleshoot-mac-sso-extension-plugin.md)
