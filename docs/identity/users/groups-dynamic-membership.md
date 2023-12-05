@@ -9,7 +9,7 @@ ms.service: active-directory
 ms.subservice: enterprise-users
 ms.workload: identity
 ms.topic: overview
-ms.date: 11/14/2023
+ms.date: 12/04/2023
 ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro
@@ -73,8 +73,10 @@ The order of the parts within an expression is important to avoid syntax errors.
 There are three types of properties that can be used to construct a membership rule.
 
 - Boolean
+- DateTime
 - String
 - String collection
+
 
 The following are the user properties that you can use to create a single expression.
 
@@ -84,6 +86,12 @@ Properties | Allowed values | Usage
 --- | --- | ---
 accountEnabled |true false |user.accountEnabled -eq true
 dirSyncEnabled |true false |user.dirSyncEnabled -eq true
+
+### Properties of type dateTime
+
+| Properties | Allowed values | Usage |
+| --- | --- | --- |
+| employeeHireDate (Preview) |Any DateTimeOffset value or keyword system.now | user.employeeHireDate -eq "value" |
 
 ### Properties of type string
 
@@ -95,7 +103,6 @@ dirSyncEnabled |true false |user.dirSyncEnabled -eq true
 | department |Any string value or *null* | user.department -eq "value" |
 | displayName |Any string value | user.displayName -eq "value" |
 | employeeId |Any string value | user.employeeId -eq "value"<br>user.employeeId -ne *null* |
-| employeeHireDate (Preview) |Any DateTimeOffset value or keyword system.now | user.employeeHireDate -eq "value" |
 | facsimileTelephoneNumber |Any string value or *null* | user.facsimileTelephoneNumber -eq "value" |
 | givenName |Any string value or *null* | user.givenName -eq "value" |
 | jobTitle |Any string value or *null* | user.jobTitle -eq "value" |
