@@ -129,8 +129,6 @@ To successfully deploy and test Microsoft Security Service Edge, configure the f
 
 The following diagram illustrates the minimum architecture requirements to deploy and test Microsoft Entra Private Access.
 
-:::image type="complex" source="media/sse-deployment-guide-intro/diagram-private-access-architecture-inline.png" alt-text="Diagram that shows minimum required architecture components for Entra ID tenant." lightbox="media/sse-deployment-guide-intro/diagram-private-access-architecture-expanded.png"::: Diagram title: Microsoft Security Service Edge Solution Architecture Requirements. Diagram shows minimum required architecture for Microsoft Security Service Edge Solution. :::image-end:::
-
 ## Configure initial product
 
 Follow the steps in this section to configure SSE through the Microsoft Entra admin center and install the Global Secure Access Client on your Windows 10/11 client device.
