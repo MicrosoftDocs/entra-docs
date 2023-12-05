@@ -26,7 +26,7 @@ We have added a new attribute on user objects in Microsoft Entra ID called Certi
   - The value need not be in email ID format. It can store nonroutable User Principal Names (UPNs) like _bob@woodgrove_ or _bob@local_.
 
 > [!NOTE]
-> While each value must be unique in Entra ID, customers can map a single certificate to multiple accounts by implementing multiple username bindings. For more information visit [Multiple username bindings](~/identity/authentication/concept-certificate-based-authentication-technical-deep-dive#securing-microsoft-entra-configuration-with-multiple-username-bindings).
+> While each value must be unique in Entra ID, customers can map a single certificate to multiple accounts by implementing multiple username bindings. For more information visit [Multiple username bindings](~/identity/authentication/concept-certificate-based-authentication-technical-deep-dive#securing-microsoft-entra-configuration-with-multiple-username-bindings.md).
  
 ## Supported patterns for certificate user IDs
  
@@ -196,7 +196,7 @@ In order to prevent synchronization errors when syncing values to certificateUse
 
 - Check all user accounts being synchronized from on-premises Active Directory for user objects with more then 5 values in their altSecurityIdentities attributes. Reduce the number of values to 5 or less.
 - Check all user accounts being synchronized from on-premises Active Directory for user objects with values populated in altSecurityIdentities attribute. Check each value to ensure they do not contain more then 1024 characters.
-- Check all user accounts being synchronized from on-premises Active Directory for user objects with duplicate values. Remove duplicate values. Carefully consider if this configuration is intentional in order to facilitate a single certificate being used to map to multiple on-premises Active Directory accounts. For more information visit [Multiple username bindings](~/identity/authentication/concept-certificate-based-authentication-technical-deep-dive#securing-microsoft-entra-configuration-with-multiple-username-bindings).
+- Check all user accounts being synchronized from on-premises Active Directory for user objects with duplicate values. Remove duplicate values. Carefully consider if this configuration is intentional in order to facilitate a single certificate being used to map to multiple on-premises Active Directory accounts. For more information visit [Multiple username bindings](~/identity/authentication/concept-certificate-based-authentication-technical-deep-dive#securing-microsoft-entra-configuration-with-multiple-username-bindings.md).
 
 >[!NOTE]
 > Some customers will have a valid business justification for mapping a single certificate to more than 1 on-premises Active Directory account. This is usually not the case for all users, but for a subset of users for very specific scenarios. It is recommended to carefully review these scenarios and where possible to only map a certificate to a single user. If a single certificate is needed to map to more then one account in both the on-premise Active Directory and the Entra ID, tenant administrators must implement separate mapping methods.
