@@ -5,7 +5,7 @@ author: shlipsey3
 ms.author: sarahlipsey
 manager: amycolannino
 ms.topic: how-to
-ms.date: 08/09/2023
+ms.date: 12/05/2023
 ms.service: network-access
 ms.custom: 
 ms.reviewer: katabish
@@ -96,8 +96,6 @@ To use Private Access, install a connector on each Windows server you're using f
 If you've previously installed a connector, reinstall it to get the latest version. When upgrading, uninstall the existing connector and delete any related folders. To see information about previously released versions and what changes they include, see [Application Proxy: Version Release History](/azure/active-directory/app-proxy/application-proxy-release-version-history).
 
 If you choose to have more than one Windows server for your on-premises applications, you need to install and register the connector on each server. You can organize the connectors into connector groups. For more information, see [Connector groups](/azure/active-directory/app-proxy/application-proxy-connector-groups).
-
-If you have installed connectors in different regions, you can optimize traffic by selecting the closest Application Proxy cloud service region to use with each connector group, see [Optimize traffic flow with Microsoft Entra application proxy](/azure/active-directory/app-proxy/application-proxy-network-topology).
 
 ## Verify the installation and registration
 
