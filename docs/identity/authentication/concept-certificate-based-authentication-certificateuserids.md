@@ -19,7 +19,14 @@ ms.custom: has-adal-ref, has-azure-ad-ps-ref
 
 # Certificate user IDs 
 
-Users in Microsoft Entra ID can have a multivalued attribute named **certificateUserIds**. The attribute allows up to five values, and each value can be of 1024-character length. It can store any value and doesn't require email ID format. It can store nonroutable User Principal Names (UPNs) like _bob@woodgrove_ or _bob@local_.
+We have added a new attribute on user objects in Microsoft Entra ID called CertificateUserIds.
+  - **certificateUserIds** attribute are multivalued and can hold up to 5 values.
+  - Each value can be no larger the 1024 characters.
+  - Each value must be unique. Once a value is present on one user account it cannot be written to any other user account in the same Entra Tenant.
+  - The value need not be in email ID format. It can store nonroutable User Principal Names (UPNs) like _bob@woodgrove_ or _bob@local_.
+
+> [!NOTE]
+> While each value must be unique in Entra ID, customers can map a single certificate to multiple accounts by implementing multiple username bindings. For more information visit [Multiple username bindings](~/identity/authentication/concept-certificate-based-authentication-technical-deep-dive.md#securing-microsoft-entra-configuration-with-multiple-username-bindings).
  
 ## Supported patterns for certificate user IDs
  
@@ -177,6 +184,32 @@ For the configuration, you can use [Microsoft Graph PowerShell](/powershell/micr
 
 ## Update certificate user IDs using Microsoft Entra Connect
 
+Microsoft Entra connect supports syncing values into the certificateUserIds from an on-premises Active Directory environment. On-premises Active Directory supports certificate-based authentication and multiple username bindings. 
+Support for the use of these mapping methods involves populating the Alt-Security-Identities (altSecurityIdentities) attribute on user objects in the on-premises Active Directory. 
+Additionally with [KB5014754](https://support.microsoft.com/en-us/topic/kb5014754-certificate-based-authentication-changes-on-windows-domain-controllers-ad2c23b0-15d8-4340-a468-4d4f3b188f16)—Certificate-based authentication changes on Windows domain controllers many customers may have implemented some of the non-reusable mapping methods (Type=strong) mapping methods to meet the on-premise Active Directory strong certificate binding enforcement requirements. 
+
+### Considerations when using Microsoft Entra Connect to sync certificate user IDs 
+
+In order to prevent synchronization errors when syncing values to certificateUserIds from on-premises Active Directory, administrators need to make sure the values being synchronized meet the certificateUserIds prerequisite requirements discussed above.  
+
+**Pre-requisite tasks for initial synchronization of certificate user IDs**
+
+- Check all user accounts being synchronized from on-premises Active Directory for user objects with more then 5 values in their altSecurityIdentities attributes. Reduce the number of values to 5 or less.
+- Check all user accounts being synchronized from on-premises Active Directory for user objects with values populated in altSecurityIdentities attribute. Check each value to ensure they do not contain more then 1024 characters.
+- Check all user accounts being synchronized from on-premises Active Directory for user objects with duplicate values. Remove duplicate values. Carefully consider if this configuration is intentional in order to facilitate a single certificate being used to map to multiple on-premises Active Directory accounts. For more information visit [Multiple username bindings](~/identity/authentication/concept-certificate-based-authentication-technical-deep-dive.md#securing-microsoft-entra-configuration-with-multiple-username-bindings).
+
+>[!NOTE]
+> Some customers will have a valid business justification for mapping a single certificate to more than 1 on-premises Active Directory account. This is usually not the case for all users, but for a subset of users for very specific scenarios. It is recommended to carefully review these scenarios and where possible to only map a certificate to a single user. If a single certificate is needed to map to more then one account in both the on-premise Active Directory and the Entra ID, tenant administrators must implement separate mapping methods.
+
+**Considerations for ongoing synchronization of certificate user IDs **
+
+- Ensure that the provisioning process for populating the values in on-premises Active Directory implements proper hygiene. Only values associated with current valid certificates are populated
+- Values are removed when the corresponding certificate is expired or revoked.
+- Values larger then 1024 characters are not populated
+- Duplicate values are not provisioned.
+- Monitor Entra Connect synchronization health with Entra Connect Health 
+
+**Steps to update certificate user IDs using Microsoft Entra Connect**
 To update certificate user IDs for federated users, configure Microsoft Entra Connect to sync userPrincipalName to certificateUserIds. 
 
 1. On the Microsoft Entra Connect server, find and start the **Synchronization Rules Editor**.
@@ -230,7 +263,7 @@ For more information about declarative provisioning expressions, see [Microsoft 
 
 <a name='synchronize-alternativesecurityid-attribute-from-ad-to-azure-ad-cba-certificateuserids'></a>
 
-## Synchronize alternativeSecurityId attribute from AD to Microsoft Entra CBA CertificateUserIds
+## Synchronize altSecurityIdentities attribute from AD to Microsoft Entra CBA CertificateUserIds
 
 The altSecurityIdentities attribute isn't part of the default attributes set. An administrator needs to add a new attribute to the person object in the Metaverse, and then create the appropriate synchronization rules to relay this data to CertificateUserIds in Entra ID.
 
