@@ -36,7 +36,7 @@ You can register a Mac device with the macOS Platform Single Sign-On (PSSO) usin
 
 1. You're presented with steps to install the management profile, which should be set up by an administrator using Microsoft Intune. Select **Download profile**.
 
-    :::image type="content" source="media/device-registration-macos-platform-single-sign-on/pssoe-company-portal-install-management-prof.png" alt-text="Screenshot of a Company Portal window requesting the user to download the management profile.":::
+    :::image type="content" source="media/device-registration-macos-platform-single-sign-on/pssoe-company-portal-install-management-profile.png" alt-text="Screenshot of a Company Portal window requesting the user to download the management profile.":::
 
 1. Open **Settings** > **Privacy & Security** > **Profiles** if it doesn't automatically appear. Select **Management Profile**.
 
@@ -99,11 +99,11 @@ You can register a Mac device with the macOS Platform Single Sign-On (PSSO) usin
 1. Enter your Microsoft Entra ID credentials and select **Next**.
 1. You're prompted to **Set up {Company} access**. The placeholder "Company" will be different depending on your setup. Select **Begin**, then on the next screen, select **Continue**.
 
-    :::image type="content" source="media/device-registration-macos-platform-single-sign-on/pssoe-company-portal-setup-access.png" alt-text="Screenshot of the Company portal access setup window.":::
+    :::image type="content" source="media/device-registration-macos-platform-single-sign-on/pssoe-company-portal-set-up-access.png" alt-text="Screenshot of the Company portal access setup window.":::
 
 1. You're presented with steps to install the management profile, which has already been set up by an administrator using Microsoft Intune. Select **Download profile**.
 
-    :::image type="content" source="media/device-registration-macos-pssoe/pssoe-company-portal-install-management-prof.png" alt-text="Screenshot of a Company Portal window requesting the user to download the management profile.":::
+    :::image type="content" source="media/device-registration-macos-pssoe/pssoe-company-portal-install-management-profile.png" alt-text="Screenshot of a Company Portal window requesting the user to download the management profile.":::
 
 1. A **Registration Required** notification appears in the top right of the screen. Hover over the notification and select **Register**.
 

@@ -48,7 +48,7 @@ On macOS 13 Ventura, if there are problems with your device PSSO registration, o
 1. To unregister the device, select **Unregister**.
 1. Alternatively, to sign out your work account on the device, select **Sign out**. This is done silently and there's no confirmation that your device is deregistered.
 
-If you deregistered your device as a result of an error, and need to re-register it, refer to [Join a Mac device with Microsoft Entra ID during the out of box experience](./device-join-macos-pssoe-out-of-box.md) or [Register a Mac device with macOS Platform Single Sign-On using Company Portal](./device-registration-macos-pssoe.md).
+If you deregistered your device as a result of an error, and need to re-register it, refer to [Join a Mac device with Microsoft Entra ID during the out of box experience](./device-join-macos-platform-single-sign-on.md) or [Register a Mac device with macOS Platform Single Sign-On using Company Portal](./device-registration-macos-platform-single-sign-on.md).
 
 ---
 
