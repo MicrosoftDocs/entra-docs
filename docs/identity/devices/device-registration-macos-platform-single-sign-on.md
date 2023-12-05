@@ -1,6 +1,6 @@
 ---
-title: Register a Mac device with macOS Platform Single Sign-On using Company Portal
-description: How users can set up a new macOS with macOS Platform Single Sign-On Extension, using Company Portal.
+title: Register a Mac device with macOS Platform single sign-on using Company Portal
+description: How users can set up a new macOS with macOS Platform single sign-on extension, using Company Portal.
 
 ms.service: active-directory
 ms.subservice: devices
@@ -111,13 +111,13 @@ You can register a Mac device with the macOS Platform Single Sign-On (PSSO) usin
 
 1. The Platform SSO window appears to enable your macOS account to be registered with your identity provider. Enter your local account password and select **OK**.
 
-    :::image type="content" source="media/device-registration-macos-pssoe/pssoe-registration-local-password-prompt.png" alt-text="Screenshot of the Platform SSO password prompt":::
+    :::image type="content" source="media/device-registration-macos-pssoe/pssoe-registration-local-password-prompt.png" alt-text="Screenshot of the Platform SSO password prompt.":::
 
 1. You're prompted to register your device with Microsoft Entra ID. Enter your sign-in credentials and select **Sign in**.
 1. An **Authentication Required** notification appears in the top right of the screen. Hover over the notification and select **Sign in**.
 1. In the **Microsoft Entra** window, enter your Microsoft Entra ID password and select **Sign in**. Once entered, there's a notification that your password has been successfully synced with your Microsoft Entra account.
 
-    :::image type="content" source="media/device-registration-macos-pssoe/pssoe-entra-password-entry.png" alt-text="Screenshot of the Microsoft Entra sign in window":::
+    :::image type="content" source="media/device-registration-macos-pssoe/pssoe-entra-password-entry.png" alt-text="Screenshot of the Microsoft Entra sign in window.":::
 
 1. Your device will now show as being in compliance in Company Portal. You can now use PSSO to access Microsoft app resources.
 

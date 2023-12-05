@@ -15,12 +15,12 @@ ms.reviewer: brianmel
 
 # Join a Mac device with Microsoft Entra ID during the out of box experience (preview)
 
-Mac users can join their new device to Microsoft Entra ID during the first-run out-of-box experience (OOBE). MacOS Platform Single Sign-On (PSSO) is a capability on macOS that is enabled using the [Microsoft Enterprise Single Sign-on Extension](../../identity-platform/apple-sso-plugin.md). PSSO allows users to sign in to a Mac device using a hardware-bound key, smart card or their Microsoft Entra ID password. This tutorial shows you how to set up a Mac device during the OOBE to use PSSO using Automated Device Enrollment.
+Mac users can join their new device to Microsoft Entra ID during the first-run out-of-box experience (OOBE). The macOS Platform single sign-on (PSSO) is a capability on macOS that is enabled using the [Microsoft Enterprise Single Sign-on Extension](../../identity-platform/apple-sso-plugin.md). PSSO allows users to sign in to a Mac device using a hardware-bound key, smart card or their Microsoft Entra ID password. This tutorial shows you how to set up a Mac device during the OOBE to use PSSO using Automated Device Enrollment.
 
 ## Prerequisites
 
 - A minimum requirement of macOS 13 Ventura
-- [Automated Device Enrollment (ADE)](https://support.apple.com/en-us/HT204142) enrolled device. Check with your administrator if you're unsure if your device is enrolled with this requirement.
+- [Automated Device Enrollment (ADE)](https://support.apple.com/HT204142) enrolled device. Check with your administrator if you're unsure if your device is enrolled with this requirement.
 - [Microsoft Intune Company Portal](/mem/intune/apps/apps-company-portal-macos)
 - A Mac device enrolled in mobile device management (MDM) with Microsoft Intune.
 - [Microsoft Authenticator](https://support.microsoft.com/account-billing/how-to-use-the-microsoft-authenticator-app-9783c865-0308-42fb-a519-8cf666fe0acc) (recommended): The user must be registered for some form of Microsoft Entra ID multifactor authentication (MFA) on their mobile device to complete device registration.
@@ -36,7 +36,7 @@ Mac users can join their new device to Microsoft Entra ID during the first-run o
 1. Enter the code sent to your **Authenticator app** (recommended) or use another MFA method.
 1. To create a user account, fill in your full name, account name, and create a local account password. Select **Continue** and your home screen appears.
 
-    :::image type="content" source="media/device-join-macos-pssoe-out-of-box/psso-local-account.png" alt-text="Screenshot of the create a computer account window, where the user enters their name, account name and local password.":::
+    :::image type="content" source="media/device-join-macos-pssoe-out-of-box/psso-local-account.png" alt-text="Screenshot of the window used to create a computer account, where the user enters their name, account name and local password.":::
 
 ## Registration with Automated Device Enrollment
 
@@ -44,7 +44,7 @@ There are three authentication methods for PSSO registration:
 
 - **Secure Enclave**: User logs on to their device which has a secure enclave backed cryptographic key used for SSO across apps that use Microsoft Entra ID for authentication
 - **Smart card**: User logs into the machine using an external smart card or smart card compatible hard token
-- **Password**: User logs on to their local device with a local account, updated to used their Microsoft Entra ID password
+- **Password**: User logs on to their local device with a local account, updated to use their Microsoft Entra ID password
 
 It's recommended for your system administrator to have the Mac enrolled using secure enclave or smart card. These new password-less features are supported only by PSSO. Check which authentication method has been set up by your administrator before continuing.
 
@@ -98,7 +98,7 @@ Setting up your device using secure enclave method enables you to use the result
     :::image type="content" source="media/device-join-macos-pssoe-out-of-box/psso-register-device-prompt.png" alt-text="Screenshot of the registration window prompting sign in with Microsoft.":::
 
 1. If the certificate is not already paired with the local account, the user will see a prompt to use the smart card. Select **Smart card**.
-1. You're prompted to enter the pin for your smart card. Enter your pin and select **OK**. Upon entering the correct pin, PSSO registration with smart card authentication is complete.
+1. You're prompted to enter the pin for your smart card. Enter your pin and select **OK**. When the correct pin is entered, PSSO registration with smart card authentication is complete.
 1. To check that registration has completed successfully, open the **Terminal** app and run the following command:
 
     ```console
@@ -146,7 +146,7 @@ Setting up your device using secure enclave method enables you to use the result
 
 ## See also
 
-- [Register a Mac device with macOS Platform Single Sign-On using Company Portal](./device-registration-macos-pssoe.md)
+- [Register a Mac device with macOS Platform single sign-sn using Company Portal](./device-registration-macos-platform-single-sign-on.md)
 - [Passwordless authentication options for Microsoft Entra ID](../authentication/concept-authentication-passwordless.md)
 - [Plan a passwordless authentication deployment in Microsoft Entra ID](../authentication/howto-authentication-passwordless-deployment.md)
 - [Microsoft Enterprise SSO plug-in for Apple devices](../../identity-platform/apple-sso-plugin.md)

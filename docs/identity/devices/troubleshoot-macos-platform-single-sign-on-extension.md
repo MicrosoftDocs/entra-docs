@@ -32,21 +32,21 @@ Confirm that changes to Microsoft Entra ID password made through self-service pa
 On macOS 14 Sonoma, if there are problems with your device registration, you can repair the existing PSSO registration.
 
 1. Open the **Settings** app and navigate to **Users & Groups** > **Network Account Server**.
-1. Select **Edit**, then **Repair**. You'll be taken through the same device registration flow as when during your initial registration.
+1. Select **Edit**, then **Repair**. You're taken through the same device registration flow as when during your initial registration.
 
-You can also deregister the device completely;
+You can also deregister the device completely by doing the following steps.
 
 1. Open the **Company Portal** app and navigate to **Preferences**.
 1. To unregister the device, select **Unregister**.
-1. Alternatively, to sign out your work account on the device, select **Sign out**. <!--TODO: Insert slide 107 screenshot--> This is done silently and there's no confirmation that your device is deregistered.
+1. Alternatively, to sign out your work account on the device, select **Sign out**. This is done silently and there's no confirmation that your device is deregistered.
 
 ### [macOS 13](#tab/macOS13)
 
-On macOS 13 Venture, if there are problems with your device PSSO registration, or you need to deregister your device, you need to use Company Portal and remove the device from your organization.
+On macOS 13 Ventura, if there are problems with your device PSSO registration, or you need to deregister your device, use Company Portal and remove the device from your organization.
 
 1. Open the **Company Portal** app and navigate to **Preferences**.
 1. To unregister the device, select **Unregister**.
-1. Alternatively, to sign out your work account on the device, select **Sign out**. <!--TODO: Insert slide 107 screenshot--> This is done silently and there's no confirmation that your device is deregistered.
+1. Alternatively, to sign out your work account on the device, select **Sign out**. This is done silently and there's no confirmation that your device is deregistered.
 
 If you deregistered your device as a result of an error, and need to re-register it, refer to [Join a Mac device with Microsoft Entra ID during the out of box experience](./device-join-macos-pssoe-out-of-box.md) or [Register a Mac device with macOS Platform Single Sign-On using Company Portal](./device-registration-macos-pssoe.md).
 
@@ -60,7 +60,7 @@ Confirm that a previously registered device (with a Workplace Join key in Keycha
 
 ### Passcode policy complexity mismatches
 
-If the applied MDM configuration specifies a local password policy with a higher degree of complexity than the Microsoft Entra account used to sign-in to the machine, the password synchronization operation between Microsoft Entra ID and the local machine will fail.
+There's a known issue where an applied MDM configuration specifies a local password policy with a higher degree of complexity than the Microsoft Entra account used to sign-in to the machine. In this case, the password synchronization operation between Microsoft Entra ID and the local machine fails.
 
 Ensure during the MDM configuration that the password complexity requirements are identical between the local machine and Microsoft Entra ID.
 
@@ -78,15 +78,11 @@ The device registration can take a few minutes to complete. If the device regist
 
 ### SSO auth prompt dialog closed while the registration is in progress
 
-If you cancel the registration process by closing the SSO auth prompt dialog, you need to sign out from your Mac device and sign in again. Upon a successful sign in, the registration notification reappears and will work correctly.
-
-### No error message if user has insufficient permissions
-
-If a user has insufficient permissions to complete Microsoft Entra ID join and registration, there's no error message. For the device join and registration to complete successfully.
+If you cancel the registration process by closing the SSO auth prompt dialog, you need to sign out from your Mac device and sign in again. Upon a successful sign in, the registration notification reappears and works correctly.
 
 ### Per user MFA causes password sync failure
 
-If a user has per user MFA enabled on the account where PSSO is being set up, you won't be able to enter Microsoft Entra ID credentials in the next steps, causing an error. To avoid this, admins should ensure they have Conditional Access MFA enabled in accordance with [Microsoft Entra ID recommendations](../monitoring-health/recommendation-turn-off-per-user-mfa.md). This suppresses MFA during enrollment so that password synchronization can be completed successfully.
+If a user has per user MFA enabled on the account where PSSO is being set up, you won't be able to enter Microsoft Entra ID credentials in the next steps, causing an error. To avoid this error, admins should ensure they have Conditional Access MFA enabled in accordance with [Microsoft Entra ID recommendations](../monitoring-health/recommendation-turn-off-per-user-mfa.md). This suppresses MFA during enrollment so that password synchronization can be completed successfully.
 
 ## Report an issue
 
@@ -100,7 +96,7 @@ You can check the current PSSO state on your machine at any time by opening the 
 
 ### Contact us
 
-We'd love to hear your feedback. You can contact us at [Platform SSO Feedback @ Microsoft](mailto:macos-sso-feedback@microsoft.com). Include;
+We'd love to hear your feedback. You should include the following information:
 
 - Apple logs
 
