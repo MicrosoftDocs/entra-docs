@@ -55,7 +55,7 @@ You have two options to retrieve the value of the activity timestamp:
 
     :::image type="content" source="./media/manage-stale-devices/01.png" alt-text="Screenshot listing the name, owner, and other information of devices. One column lists the activity time stamp." border="false":::
 
-- The [Get-AzureADDevice](/powershell/module/azuread/get-azureaddevice) cmdlet.
+- The [Get-MgDevice](/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdevice) cmdlet.
 
     :::image type="content" source="./media/manage-stale-devices/02.png" alt-text="Screenshot showing command-line output. One line is highlighted and lists a time stamp for the ApproximateLastLogonTimeStamp value." border="false":::
 
@@ -135,25 +135,31 @@ While you can clean up stale devices in the Microsoft Entra admin center, it's m
 
 A typical routine consists of the following steps:
 
-1. Connect to Microsoft Entra ID using the [Connect-AzureAD](/powershell/module/azuread/connect-azuread) cmdlet
-1. Get the list of devices
-1. Disable the device using the [Set-AzureADDevice](/powershell/module/azuread/set-azureaddevice) cmdlet (disable by using -AccountEnabled option). 
+1. Connect to Microsoft Entra ID using the [Connect-MgGraph](/powershell/microsoftgraph/authentication-commands) cmdlet
+1. Get the list of devices.
+1. Disable the device using the [Update-MgDevice](/powershell/module/microsoft.graph.identity.directorymanagement/update-mgdevice) cmdlet (disable by using -AccountEnabled option).
 1. Wait for the grace period of however many days you choose before deleting the device.
-1. Remove the device using the [Remove-AzureADDevice](/powershell/module/azuread/remove-azureaddevice) cmdlet.
+1. Remove the device using the [Remove-MgDevice](/powershell/module/microsoft.graph.identity.directorymanagement/remove-mgdevice) cmdlet.
 
 ### Get the list of devices
 
 To get all devices and store the returned data in a CSV file:
 
 ```PowerShell
-Get-AzureADDevice -All:$true | select-object -Property AccountEnabled, DeviceId, DeviceOSType, DeviceOSVersion, DisplayName, DeviceTrustType, ApproximateLastLogonTimestamp | export-csv devicelist-summary.csv -NoTypeInformation
+Get-MgDevice -All:$true | `
+   select-object -Property AccountEnabled, DeviceId, DeviceOSType, DeviceOSVersion, `
+   DisplayName, DeviceTrustType, ApproximateLastLogonTimestamp | `
+   export-csv devicelist-summary.csv -NoTypeInformation
 ```
 
 If you have a large number of devices in your directory, use the timestamp filter to narrow down the number of returned devices. To get all devices that haven't logged on in 90 days and store the returned data in a CSV file: 
 
 ```PowerShell
 $dt = (Get-Date).AddDays(-90)
-Get-AzureADDevice -All:$true | Where {$_.ApproximateLastLogonTimeStamp -le $dt} | select-object -Property AccountEnabled, DeviceId, DeviceOSType, DeviceOSVersion, DisplayName, DeviceTrustType, ApproximateLastLogonTimestamp | export-csv devicelist-olderthan-90days-summary.csv -NoTypeInformation
+Get-MgDevice -All:$true | Where {$_.ApproximateLastLogonTimeStamp -le $dt} | `
+   select-object -Property AccountEnabled, DeviceId, DeviceOSType, DeviceOSVersion, `
+   DisplayName, DeviceTrustType, ApproximateLastLogonTimestamp | `
+   export-csv devicelist-olderthan-90days-summary.csv -NoTypeInformation
 ```
 
 > [!WARNING]
@@ -165,27 +171,28 @@ Using the same commands we can pipe the output to the set command to disable the
 
 ```powershell
 $dt = (Get-Date).AddDays(-90)
-$Devices = Get-AzureADDevice -All:$true | Where {$_.ApproximateLastLogonTimeStamp -le $dt}
-foreach ($Device in $Devices) {
-Set-AzureADDevice -ObjectId $Device.ObjectId -AccountEnabled $false
-}
+$Devices = Get-MgDevice -All:$true | Where {$_.ApproximateLastLogonTimeStamp -le $dt}
+foreach ($Device in $Devices) { 
+   Update-MgDevice -DeviceId $Device.Id -AccountEnabled:$false 
+   }
 ```
 
 ### Delete devices
 
 > [!CAUTION]
-> The `Remove-AzureADDevice` cmdlet does not provide a warning. Running this command will delete devices without prompting. **There is no way to recover deleted devices**.
+> The `Remove-MgDevice` cmdlet does not provide a warning. Running this command will delete devices without prompting. **There is no way to recover deleted devices**.
 
 Before deleting any devices, back up any BitLocker recovery keys you may need in the future. There's no way to recover BitLocker recovery keys after deleting the associated device.
 
-Building on the [disable devices example](#disable-devices) we look for disabled devices, now inactive for 120 days, and pipe the output to `Remove-AzureADDevice` to delete those devices.
+Building on the [disable devices example](#disable-devices) we look for disabled devices, now inactive for 120 days, and pipe the output to `Remove-MgDevice` to delete those devices.
 
 ```powershell
 $dt = (Get-Date).AddDays(-120)
-$Devices = Get-AzureADDevice -All:$true | Where {($_.ApproximateLastLogonTimeStamp -le $dt) -and ($_.AccountEnabled -eq $false)}
+$Devices = Get-MgDevice -All:$true | `
+   Where {($_.ApproximateLastLogonTimeStamp -le $dt) -and ($_.AccountEnabled -eq $false)}
 foreach ($Device in $Devices) {
-Remove-AzureADDevice -ObjectId $Device.ObjectId
-}
+   Remove-MgDevice -DeviceId $Device.Id
+   }
 ```
 
 ## What you should know
