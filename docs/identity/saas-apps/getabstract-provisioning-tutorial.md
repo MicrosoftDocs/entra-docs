@@ -21,7 +21,7 @@ ms.author: thwimmer
 
 This tutorial describes the steps you need to perform in both getAbstract and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users and groups to [getAbstract](https://www.getabstract.com) by using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to software as a service (SaaS) applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 
-## Capabilities Supported
+## Capabilities supported
 
 > [!div class="checklist"]
 > * Create users in getAbstract.
@@ -53,27 +53,27 @@ The scenario outlined in this tutorial assumes that you already have the followi
 1. Sign in to getAbstract.
 1. Select the person icon located in the upper-right corner, and select the **My Central Admin** option.
 
-	![Screenshot that shows the getAbstract My Central Admin.](media/getabstract-provisioning-tutorial/my_account.png)
+	![Screenshot that shows the getAbstract My Central Admin.](media/getabstract-provisioning-tutorial/my-account.png)
 
 1. At the left side menu, click on **User Management** and click on the **configure scim** button.
 
-	![Screenshot that shows the getAbstract SCIM Admin.](media/getabstract-provisioning-tutorial/scim_admin.png)
+	![Screenshot that shows the getAbstract SCIM Admin.](media/getabstract-provisioning-tutorial/scim-admin.png)
 
 1. Select **Go**.
 
-	![Screenshot that shows the getAbstract SCIM Client Id.](media/getabstract-provisioning-tutorial/scim_client_go.png)
+	![Screenshot that shows the getAbstract SCIM Client Id.](media/getabstract-provisioning-tutorial/scim-client-go.png)
 
 1. Click on the **Generate new token** button.
 
-	![Screenshot that shows the getAbstract SCIM Token 1.](media/getabstract-provisioning-tutorial/scim_generatetoken_step2.png)
+	![Screenshot that shows the getAbstract SCIM Token 1.](media/getabstract-provisioning-tutorial/scim-generate-token-step-2.png)
 
 1. If you're sure, then select **Generate new token** button. Otherwise, select **Cancel**.
 
-	![Screenshot that shows the getAbstract SCIM Token 2.](media/getabstract-provisioning-tutorial/scim_generatetoken_step1.png)
+	![Screenshot that shows the getAbstract SCIM Token 2.](media/getabstract-provisioning-tutorial/scim-generate-token-step-1.png)
 
 1. Lastly, you can either click on the copy-to-clipboard icon or select the whole token and copy it. Also make a note that the Tenant/Base URL is `https://www.getabstract.com/api/scim/v2`. These values will be entered in the **Secret Token** and **Tenant URL** boxes on the **Provisioning** tab of your getAbstract application.
 
-	![Screenshot that shows the getAbstract SCIM Token 3.](media/getabstract-provisioning-tutorial/scim_generatetoken_step3.png)
+	![Screenshot that shows the getAbstract SCIM Token 3.](media/getabstract-provisioning-tutorial/scim-generate-token-step-3.png)
 
 <a name='step-3-add-getabstract-from-the-azure-ad-application-gallery'></a>
 
