@@ -83,7 +83,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. On the **Basic SAML Configuration** section, the user does not have to perform any step as the app is already pre-integrated with Azure.
 
-1. Click **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:    
+1. (Optional) Perform the following step if you wish to configure the application in **SP** initiated mode:    
 
     In the **Sign-on URL** text box, type the URL:
     `https://rootly.com/sso`
