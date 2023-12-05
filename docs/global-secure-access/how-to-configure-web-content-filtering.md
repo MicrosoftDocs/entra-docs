@@ -21,10 +21,10 @@ The web filtering feature is currently limited to user- and context-aware Fully 
 
 ## Prerequisites
 
-- Administrators who interact with **Global Secure Access preview** features must have one or more of the following role assignments depending on the tasks they're performing.
+- Administrators who interact with **Global Secure Access (preview)** features must have one or more of the following role assignments depending on the tasks they're performing.
   - The **Global Secure Access Administrator** role to manage the Global Secure Access preview features.
-  - [Conditional Access Administrator](/azure/active-directory/roles/permissions-reference#conditional-access-administrator) or [Security Administrator](/azure/active-directory/roles/permissions-reference#security-administrator) to create and interact with Conditional Access policies and named locations.
-- Complete the [Get started with Global Secure Access](how-to-get-started-with-global-secure-access.md) guide.
+  - [Conditional Access Administrator](/azure/active-directory/roles/permissions-reference#conditional-access-administrator) or [Security Administrator](/azure/active-directory/roles/permissions-reference#security-administrator) to create and interact with Conditional Access policies. 
+- Complete the [Get started with Global Secure Access](how-to-get-started-with-global-secure-access.md) guide. 
 - [Install the Global Secure Access client](how-to-install-windows-client.md) on end user devices.
 - You must disable DNS over HTTPS (Secure DNS) to tunnel network traffic based on the rules of the fully qualified domain names (FQDNs) in the traffic forwarding profile. For more information, see [Configure the DNS client to support DoH](/windows-server/networking/dns/doh-client-support#configure-the-dns-client-to-support-doh).
 - Disable built-in DNS client on Chrome and Edge.
@@ -46,7 +46,7 @@ To enable the Microsoft Entra Internet Access forwarding profile to forward user
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
 1. Browse to **Global Secure Access** > **Connect** > **Traffic forwarding**.
-1. Enable the **Internet access profile**. Enabling the setting begins forwarding internet traffic from all client devices.
+1. Enable the **Internet access profile**. Enabling the setting begins forwarding internet traffic from all client devices to Microsoft's Security Service Edge (SSE) proxy, where you can configure granular security policies.
 
 ## Create a Web content filtering policy
 
@@ -77,45 +77,48 @@ In this step, you create a security profile to group filtering policies. Then yo
 
 ## Create and link Conditional Access policy
 
-Create a Conditional Access policy and set session controls for end users or groups and link it to the filtering profile. Conditional Access is the delivery mechanism for user and context awareness for Internet Access policies. To learn more about sessions controls, see [Conditional Access: Session](/azure/active-directory/conditional-access/concept-conditional-access-session).
+Create a Conditional Access policy for end users or groups and deliver your security profile through Conditional Access Session controls. Conditional Access is the delivery mechanism for user and context awareness for Internet Access policies. To learn more about session controls, see [Conditional Access: Session](/azure/active-directory/conditional-access/concept-conditional-access-session).
 
 1. Browse to **Identity** > **Protection** > **Conditional Access**.
 1. Select **Create new policy**.
 1. Enter a name and assign a user or group.
 1. Select **Target resources** and **Global Secure Access (Preview)** from the drop-down menu to set what the policy applies to.
 1. Select **Internet traffic** from the drop-down menu to set the traffic profile this policy applies to.
-1. Select **Session** > **Use Global Secure Access security profile** and choose a web filtering profile.
+1. Select **Session** > **Use Global Secure Access security profile** and choose a security profile.
 1. Select **Select**.
-1. In the **Enable policy** section, ensure **Report-only** is selected.
+1. In the **Enable policy** section, ensure **On** is selected.
 1. Select **Create**.
 
 ## Verify end user policy enforcement
 
-To verify that you've configured the end user policy correctly:
+Use a Windows device with the Global Secure Access client installed. Sign in as a user that is assigned the Internet traffic acquisition profile. Test that navigating to websites is allowed or restricted as expected.
 
-1. Sign in to a Windows device with the Global Secure Access client installed as a user that is assigned the Internet traffic acquisition profile. Test that navigating to websites is allowed or restricted as expected.
+1. Right-click on the Global Secure Access client icon in the task manager tray and open **Advanced Diagnostics** > **Forwarding profile**. Ensure that the Internet access acquisition rules are present. Also, check if the hostname acquisition and flows for the users Internet traffic are being acquired while browsing.
 
-1. Right-click on the Global Secure Access client icon in the task manager tray and open **Connection Diagnostics** > **Channels**. Ensure that the Internet channel is Present and Connected (Green in color). Also, check if the hostname acquisition and flows for the users Internet traffic are being acquired while browsing.
+1. Navigate to an allowed site and check if it loads properly.
 
-1. Navigate to an approved site and check if it loads properly.
-
-1. Navigate to a restricted site and confirm the site is blocked.
+1. Navigate to a blocked site and confirm the site is blocked.
 
 1. Browse to **Global Secure Access** > **Monitor** > **Traffic logs** to confirm traffic if blocked or allowed appropriately. It takes approximately 15 minutes for new entries to appear.
 
 > [!NOTE]
-> The current block experience includes a "Connection Reset" browser error for HTTPS traffic and a "DeniedTraffic" browser error for HTTP traffic.
+> The current blocking experience for all browsers and processes includes a "Connection Reset" browser error for HTTPS traffic and a "DeniedTraffic" browser error for HTTP traffic.
 
 ## Known limitations
 
 - Currently, end-user notification on blocks, either from the client or the browser, are not provided.
 - Admins can't configure their own Internet traffic acquisition profiles for the client.
+- The client traffic acquisition policy includes TCP ports 80/443
 - Currently assuming standard ports for HTTP/S traffic (ports 80 and 443).
-- Remote network connectivity for branch offices are currently not supported.
-- No support for L3/4 filtering.
-- No captive portal support.
-- No TLS termination.
-- No URL path based filtering or URL categorization.
+- *microsoft.com is currently acquired by the Microsoft 365 access profile.
+- IPv6 is not supported on this platform yet.
+- Remote network connectivity for branch offices are currently not supported. 
+- OSI Layer 3/4 (i.e., network layer) filtering is not supported yet.
+- No captive portal support yet. This means that when the Windows Client is running with Internet Access captive portals (for connecting to public WiFi) may fail because it is currently acquired.
+- TLS Termination is in development.
+- No URL path based filtering or URL categorization for HTTP and HTTPS traffic.
+- Currently, an admin can create up to 100 web content filtering policies and up to 1,000 rules based on up to 8,000 total FQDNs. Admins can also create up to 256 security profiles.
+  - These initial limits are placeholders until more features are added to this platform.
 
 ## Next steps
 
