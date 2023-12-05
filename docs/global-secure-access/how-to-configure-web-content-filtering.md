@@ -106,15 +106,15 @@ Use a Windows device with the Global Secure Access client installed. Sign in as 
 
 ## Known limitations
 
-- Currently, end-user notification on blocks, either from the client or the browser, are not provided.
+- Currently, end-user notification on blocks, either from the client or the browser, aren't provided.
 - Admins can't configure their own Internet traffic acquisition profiles for the client.
 - The client traffic acquisition policy includes TCP ports 80/443
 - Currently assuming standard ports for HTTP/S traffic (ports 80 and 443).
 - *microsoft.com is currently acquired by the Microsoft 365 access profile.
-- IPv6 is not supported on this platform yet.
-- Remote network connectivity for branch offices are currently not supported. 
-- OSI Layer 3/4 (i.e., network layer) filtering is not supported yet.
-- No captive portal support yet. This means that when the Windows Client is running with Internet Access captive portals (for connecting to public WiFi) may fail because it is currently acquired.
+- IPv6 isn't supported on this platform yet.
+- Remote network connectivity for branch offices is currently not supported. 
+- OSI Layer 3/4 (that is, network layer) filtering isn't supported yet.
+- No captive portal support yet. This means that connecting to public WiFi via captive portal access may fail because these endpoints are currently acquired by the client.
 - TLS Termination is in development.
 - No URL path based filtering or URL categorization for HTTP and HTTPS traffic.
 - Currently, an admin can create up to 100 web content filtering policies and up to 1,000 rules based on up to 8,000 total FQDNs. Admins can also create up to 256 security profiles.
