@@ -67,7 +67,7 @@ Follow these steps to configure security alerts for Azure roles in Privileged Id
     ![Screenshot of the alert setting.](media/pim-resource-roles-configure-alerts/rbac-alert-settings.png)
 
 >[!NOTE]
-> This alert for "Roles are being assigned outside of Privileged Identity Management" will not fire for role assignments that are scoped at the Management Group, Resource Group or Individual Resource level.
+>"Roles are being assigned outside of Privileged Identity Management" alert is triggered for role assignments created for Azure subscriptions and is not triggered for role assignments on Management Groups, Resource Groups or Resource scope."
 
 ## Next steps
 
