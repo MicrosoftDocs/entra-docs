@@ -1,6 +1,6 @@
 ---
 title: MacOS Platform single sign-on known issues and troubleshooting
-description: Identify and resolve known issues with MacOS Platform single sign-on (PSSO).
+description: Identify and resolve known issues with macOS Platform single sign-on (PSSO).
 
 ms.service: active-directory
 ms.subservice: devices

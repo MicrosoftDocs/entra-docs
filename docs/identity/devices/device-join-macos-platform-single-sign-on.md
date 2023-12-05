@@ -146,7 +146,7 @@ Setting up your device using secure enclave method enables you to use the result
 
 ## See also
 
-- [Register a Mac device with macOS Platform single sign-sn using Company Portal](./device-registration-macos-platform-single-sign-on.md)
+- [Register a Mac device with macOS Platform single sign-in using Company Portal](./device-registration-macos-platform-single-sign-on.md)
 - [Passwordless authentication options for Microsoft Entra ID](../authentication/concept-authentication-passwordless.md)
 - [Plan a passwordless authentication deployment in Microsoft Entra ID](../authentication/howto-authentication-passwordless-deployment.md)
 - [Microsoft Enterprise SSO plug-in for Apple devices](../../identity-platform/apple-sso-plugin.md)
