@@ -108,7 +108,7 @@ Use a Windows device with the Global Secure Access client installed. Sign in as 
 
 - Currently, end-user notification on blocks, either from the client or the browser, aren't provided.
 - Admins can't configure their own Internet traffic acquisition profiles for the client.
-- The client traffic acquisition policy includes TCP ports 80/443
+- The client traffic acquisition policy includes TCP ports 80/443.
 - Currently assuming standard ports for HTTP/S traffic (ports 80 and 443).
 - *microsoft.com is currently acquired by the Microsoft 365 access profile.
 - IPv6 isn't supported on this platform yet.
