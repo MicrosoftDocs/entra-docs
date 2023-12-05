@@ -236,7 +236,7 @@ The altSecurityIdentities attribute isn't part of the default attributes set. An
 
 1. Open Metaverse Designer and select the person object. To create the alternativeSecurityId attribute, click **New attribute**. Select **String (non-indexable)** to create an attribute size up to 1024 characters, which is the maximum supported length for CertificateUserIds. If you select **String (indexable)**, the maximum size of an attribute value is 448 characters. Make sure you select **Multi-valued**.
  
-   :::image type="content" border="true" source="./media/concept-certificate-based-authentication-certificateuserids/new-attribute.png" alt-text="Screenshot of how to create a new atttribute.":::
+   :::image type="content" border="true" source="./media/concept-certificate-based-authentication-certificateuserids/new-attribute.png" alt-text="Screenshot of how to create a new attribute.":::
 
 1. Open Metaverse Designer, and select alternativeSecurityId to add it to the person object.
 
