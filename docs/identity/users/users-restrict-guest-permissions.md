@@ -132,9 +132,6 @@ Example:
 Update-MgPolicyAuthorizationPolicy -GuestUserRoleId '2af84b1e-32c8-42b7-82bc-daa82404023b'
 ````
 
-> [!NOTE]
-> You must enter `authorizationPolicy` as the ID when requested.
-
 ## Supported Microsoft 365 services
 
 ### Supported services
