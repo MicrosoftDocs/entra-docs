@@ -38,7 +38,7 @@ For downlevel devices, see the article [Troubleshooting Microsoft Entra hybrid j
 
 ## Using PowerShell
 
-Verify the device registration state in your Azure tenant by using [Get-MgDevice](/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdevice). This cmdlet is in the [Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/overview?view=graph-powershell-1.0&branch=main).
+Verify the device registration state in your Azure tenant by using [Get-MgDevice](/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdevice). This cmdlet is in the [Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/overview).
 
 When you use the **Get-MgDevice** cmdlet to check the service details:
 
@@ -86,7 +86,7 @@ Get-MgDevice -All | where {($_.DeviceTrustType -eq 'Domain Joined') -and (-not([
 1. Enter the following command. Obtain the device ID locally on the device.
 
    ```azurepowershell
-   Get-MgDevice -DeviceId <deviceId>
+   $Device = Get-MgDevice -DeviceId <deviceId>
    ```
   
 1. Verify that `AccountEnabled` is set to `True`.
