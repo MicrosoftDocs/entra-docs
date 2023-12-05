@@ -26,7 +26,7 @@ To address this issue, we've bundled as many of these newer components into a ne
 
 ## Consider moving to Microsoft Entra Cloud Sync
 
-Microsoft Entra Cloud Sync is the new sync client that works from the cloud and allows customers to set up and manage their sync preferences online. We recommend that you use Cloud Sync because we will be introducing new features that will improve the sync experiences through Cloud Sync. Also, when Microsoft shifts from Connect Sync to Cloud Sync, you can reduce costs by avoiding the migration required to switch to Cloud Sync. Please use the https://aka.ms/EvaluateSyncOptions to see if Cloud Sync is the right sync client for you. 
+Microsoft Entra Cloud Sync is the new sync client that works from the cloud and allows customers to set up and manage their sync preferences online. We recommend that you use Cloud Sync because we will be introducing new features that will improve the sync experiences through Cloud Sync. You can avoid future migration costs by choosing Cloud Sync if that's the right option for you. Please use the https://aka.ms/EvaluateSyncOptions to see if Cloud Sync is the right sync client for you. 
 
 Please see the video below to understand how Cloud sync provides value to your business.
 
