@@ -15,8 +15,7 @@ ms.author: barclayn
 
 # Opt out of Verified ID service
 
-[!INCLUDE [Verifiable Credentials announcement](~/../azure-docs-pr/includes/verifiable-credentials-brand.md)]
-
+  
 In this article:
 
 - The reason why you may need to opt out.

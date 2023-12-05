@@ -14,8 +14,7 @@ ms.author: barclayn
 
 # Microsoft Entra Verified ID-supported standards
 
-[!INCLUDE [Verifiable Credentials announcement](~/../azure-docs-pr/includes/verifiable-credentials-brand.md)]
-
+  
 Microsoft is actively collaborating with members of the Decentralized Identity Foundation (DIF), the W3C Credentials Community Group, and the wider identity community. We’re working with these groups to identify and develop critical standards, and we've implemented the open standards in our services. 
 
 In this article, you'll find the currently supported open standards for Microsoft Entra Verified ID.

@@ -15,8 +15,7 @@ ms.author: barclayn
 
 # How to register your decentralized ID for did:web
 
-[!INCLUDE [Verifiable Credentials announcement](~/../azure-docs-pr/includes/verifiable-credentials-brand.md)]
-
+  
 
 ## Prerequisites
 

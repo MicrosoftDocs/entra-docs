@@ -15,8 +15,7 @@ ms.author: barclayn
 
 # How to rotate signing keys
 
-[!INCLUDE [Verifiable Credentials announcement](~/../azure-docs-pr/includes/verifiable-credentials-brand.md)]
-
+  
 
 ## Prerequisites
 
