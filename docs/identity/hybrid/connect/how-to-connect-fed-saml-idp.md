@@ -4,7 +4,7 @@ description: This document describes using a SAML 2.0 compliant Idp for single s
 services: active-directory
 author: billmath
 manager: amycolannino
-ms.custom: it-pro, has-azure-ad-ps-ref
+ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
@@ -199,9 +199,9 @@ You must enable communication between your SAML 2.0 identity provider and Micros
 
 ## Install PowerShell for sign-on with SAML 2.0 identity provider
 
-After you have configured your SAML 2.0 identity provider for use with Microsoft Entra sign-on, the next step is to download and install the Azure AD PowerShell module. Once installed, you will use these cmdlets to configure your Microsoft Entra domains as federated domains.
+After you have configured your SAML 2.0 identity provider for use with Microsoft Entra sign-on, the next step is to download and install the [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview) module. Once installed, you will use these cmdlets to configure your Microsoft Entra domains as federated domains.
 
-The Azure AD PowerShell module is a download for managing your organizations data in Microsoft Entra ID. This module installs a set of cmdlets to PowerShell; you run those cmdlets to set up single sign-on access to Microsoft Entra ID and in turn to all of the cloud services you are subscribed to. For instructions about how to download and install the cmdlets, see [/previous-versions/azure/jj151815(v=azure.100)](/previous-versions/azure/jj151815(v=azure.100))
+The Microsoft Graph PowerShell module is a download for managing your organizations data in Microsoft Entra ID. This module installs a set of cmdlets to PowerShell; you run those cmdlets to set up single sign-on access to Microsoft Entra ID and in turn to all of the cloud services you are subscribed to. For instructions about how to download and install the cmdlets, see [Install the Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/installation).
 
 <a name='set-up-a-trust-between-your-saml-identity-provider-and-azure-ad'></a>
 
@@ -220,52 +220,48 @@ The following procedure walks you through converting an existing standard domain
 
 ## Configuring a domain in your Microsoft Entra Directory for federation
 
-
 1. Connect to your Microsoft Entra Directory as a tenant administrator:
 
-  ```powershell
-  Connect-MsolService
-  ```
+   ```powershell
+   Connect-MgGraph -Scopes "Domain.ReadWrite.All"
+   ```
   
 2. Configure your desired Microsoft 365 domain to use federation with SAML 2.0:
 
-  ```powershell
-  $dom = "contoso.com" 
-  $BrandName = "Sample SAML 2.0 IDP" 
-  $LogOnUrl = "https://WS2012R2-0.contoso.com/passiveLogon" 
-  $LogOffUrl = "https://WS2012R2-0.contoso.com/passiveLogOff" 
-  $ecpUrl = "https://WS2012R2-0.contoso.com/PAOS" 
-  $MyURI = "urn:uri:MySamlp2IDP" 
-  $MySigningCert = "MIIC7jCCAdagAwIBAgIQRrjsbFPaXIlOG3GTv50fkjANBgkqhkiG9w0BAQsFADAzMTEwLwYDVQQDEyh BREZTIFNpZ25pbmcgLSBXUzIwMTJSMi0wLnN3aW5mb3JtZXIuY29tMB4XDTE0MDEyMDE1MTY0MFoXDT E1MDEyMDE1MTY0MFowMzExMC8GA1UEAxMoQURGUyBTaWduaW5nIC0gV1MyMDEyUjItMC5zd2luZm9yb WVyLmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKe+rLVmXy1QwCwZwqgbbp1/kupQ VcjKuKLitVDbssFyqbDTjP7WRjlVMWAHBI3kgNT7oE362Gf2WMJFf1b0HcrsgLin7daRXpq4Qi6OA57 sW1YFMj3sqyuTP0eZV3S4+ZbDVob6amsZIdIwxaLP9Zfywg2bLsGnVldB0+XKedZwDbCLCVg+3ZWxd9 T/jV0hpLIIWr+LCOHqq8n8beJvlivgLmDJo8f+EITnAxWcsJUvVai/35AhHCUq9tc9sqMp5PWtabAEM b2AU72/QlX/72D2/NbGQq1BWYbqUpgpCZ2nSgvlWDHlCiUo//UGsvfox01kjTFlmqQInsJVfRxF5AcC AwEAATANBgkqhkiG9w0BAQsFAAOCAQEAi8c6C4zaTEc7aQiUgvnGQgCbMZbhUXXLGRpjvFLKaQzkwa9 eq7WLJibcSNyGXBa/SfT5wJgsm3TPKgSehGAOTirhcqHheZyvBObAScY7GOT+u9pVYp6raFrc7ez3c+ CGHeV/tNvy1hJNs12FYH4X+ZCNFIT9tprieR25NCdi5SWUbPZL0tVzJsHc1y92b2M2FxqRDohxQgJvy JOpcg2mSBzZZIkvDg7gfPSUXHVS1MQs0RHSbwq/XdQocUUhl9/e/YWCbNNxlM84BxFsBUok1dH/gzBy Sx+Fc8zYi7cOq9yaBT3RLT6cGmFGVYZJW4FyhPZOCLVNsLlnPQcX3dDg9A==" 
-  $uri = "http://WS2012R2-0.contoso.com/adfs/services/trust" 
-  $Protocol = "SAMLP" 
-  Set-MsolDomainAuthentication `
-    -DomainName $dom `
-    -FederationBrandName $BrandName `
-    -Authentication Federated `
-    -PassiveLogOnUri $LogOnUrl `
-    -ActiveLogOnUri $ecpUrl `
-    -SigningCertificate $MySigningCert `
-    -IssuerUri $MyURI `
-    -LogOffUri $LogOffUrl `
-    -PreferredAuthenticationProtocol $Protocol
-  ``` 
+   ```powershell
+   $Domain = "contoso.com"  
+   $LogOnUrl = "https://WS2012R2-0.contoso.com/passiveLogon" 
+   $LogOffUrl = "https://WS2012R2-0.contoso.com/passiveLogOff" 
+   $ecpUrl = "https://WS2012R2-0.contoso.com/PAOS" 
+   $MyUri = "urn:uri:MySamlp2IDP" 
+   $MySigningCert = "MIIC7jCCAdagAwIBAgIQRrjsbFPaXIlOG3GTv50fkjANBgkqhkiG9w0BAQsFADAzMTEwLwYDVQQDEyh BREZTIFNpZ25pbmcgLSBXUzIwMTJSMi0wLnN3aW5mb3JtZXIuY29tMB4XDTE0MDEyMDE1MTY0MFoXDT E1MDEyMDE1MTY0MFowMzExMC8GA1UEAxMoQURGUyBTaWduaW5nIC0gV1MyMDEyUjItMC5zd2luZm9yb WVyLmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKe+rLVmXy1QwCwZwqgbbp1/kupQ VcjKuKLitVDbssFyqbDTjP7WRjlVMWAHBI3kgNT7oE362Gf2WMJFf1b0HcrsgLin7daRXpq4Qi6OA57 sW1YFMj3sqyuTP0eZV3S4+ZbDVob6amsZIdIwxaLP9Zfywg2bLsGnVldB0+XKedZwDbCLCVg+3ZWxd9 T/jV0hpLIIWr+LCOHqq8n8beJvlivgLmDJo8f+EITnAxWcsJUvVai/35AhHCUq9tc9sqMp5PWtabAEM b2AU72/QlX/72D2/NbGQq1BWYbqUpgpCZ2nSgvlWDHlCiUo//UGsvfox01kjTFlmqQInsJVfRxF5AcC AwEAATANBgkqhkiG9w0BAQsFAAOCAQEAi8c6C4zaTEc7aQiUgvnGQgCbMZbhUXXLGRpjvFLKaQzkwa9 eq7WLJibcSNyGXBa/SfT5wJgsm3TPKgSehGAOTirhcqHheZyvBObAScY7GOT+u9pVYp6raFrc7ez3c+ CGHeV/tNvy1hJNs12FYH4X+ZCNFIT9tprieR25NCdi5SWUbPZL0tVzJsHc1y92b2M2FxqRDohxQgJvy JOpcg2mSBzZZIkvDg7gfPSUXHVS1MQs0RHSbwq/XdQocUUhl9/e/YWCbNNxlM84BxFsBUok1dH/gzBy Sx+Fc8zYi7cOq9yaBT3RLT6cGmFGVYZJW4FyhPZOCLVNsLlnPQcX3dDg9A==" 
+   $Protocol = "wsFed"
 
-3.  You can obtain the signing certificate base64 encoded string from your IDP metadata file. An example of this location has been provided but may differ slightly based on your implementation.
+   New-MgDomainFederationConfiguration `
+     -DomainId $Domain `
+     -ActiveSignInUri $ecpUrl `
+     -IssuerUri $MyUri `
+     -PassiveSignInUri $LogOnUrl `
+     -PreferredAuthenticationProtocol $Protocol `
+     -SignOutUri $LogOffUrl `
+     -SigningCertificate $MySigningCert
+   ```
 
-  ```xml
-  <IDPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
-    <KeyDescriptor use="signing">
-      <KeyInfo xmlns="https://www.w3.org/2000/09/xmldsig#">
-       <X509Data>
-         <X509Certificate> MIIC5jCCAc6gAwIBAgIQLnaxUPzay6ZJsC8HVv/QfTANBgkqhkiG9w0BAQsFADAvMS0wKwYDVQQDEyRBREZTIFNpZ25pbmcgLSBmcy50ZWNobGFiY2VudHJhbC5vcmcwHhcNMTMxMTA0MTgxMzMyWhcNMTQxMTA0MTgxMzMyWjAvMS0wKwYDVQQDEyRBREZTIFNpZ25pbmcgLSBmcy50ZWNobGFiY2VudHJhbC5vcmcwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCwMdVLTr5YTSRp+ccbSpuuFeXMfABD9mVCi2wtkRwC30TIyPdORz642MkurdxdPCWjwgJ0HW6TvXwcO9afH3OC5V//wEGDoNcI8PV4enCzTYFe/h//w51uqyv48Fbb3lEXs+aVl8155OAj2sO9IX64OJWKey82GQWK3g7LfhWWpp17j5bKpSd9DBH5pvrV+Q1ESU3mx71TEOvikHGCZYitEPywNeVMLRKrevdWI3FAhFjcCSO6nWDiMqCqiTDYOURXIcHVYTSof1YotkJ4tG6mP5Kpjzd4VQvnR7Pjb47nhIYG6iZ3mR1F85Ns9+hBWukQWNN2hcD/uGdPXhpdMVpBAgMBAAEwDQYJKoZIhvcNAQELBQADggEBAK7h7jF7wPzhZ1dPl4e+XMAr8I7TNbhgEU3+oxKyW/IioQbvZVw1mYVCbGq9Rsw4KE06eSMybqHln3w5EeBbLS0MEkApqHY+p68iRpguqa+W7UHKXXQVgPMCpqxMFKonX6VlSQOR64FgpBme2uG+LJ8reTgypEKspQIN0WvtPWmiq4zAwBp08hAacgv868c0MM4WbOYU0rzMIR6Q+ceGVRImlCwZ5b7XKp4mJZ9hlaRjeuyVrDuzBkzROSurX1OXoci08yJvhbtiBJLf3uPOJHrhjKRwIt2TnzS9ElgFZlJiDIA26Athe73n43CT0af2IG6yC7e6sK4L3NEXJrwwUZk=</X509Certificate>
-        </X509Data>
-      </KeyInfo>
-    </KeyDescriptor>
-  </IDPSSODescriptor>
-  ``` 
+3. You can obtain the signing certificate base64 encoded string from your IDP metadata file. An example of this location has been provided but may differ slightly based on your implementation.
 
-For more information about “Set-MsolDomainAuthentication”, see: [/previous-versions/azure/dn194112(v=azure.100)](/previous-versions/azure/dn194112(v=azure.100)).
+   ```xml
+   <IDPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+     <KeyDescriptor use="signing">
+       <KeyInfo xmlns="https://www.w3.org/2000/09/xmldsig#">
+        <X509Data>
+          <X509Certificate> MIIC5jCCAc6gAwIBAgIQLnaxUPzay6ZJsC8HVv/QfTANBgkqhkiG9w0BAQsFADAvMS0wKwYDVQQDEyRBREZTIFNpZ25pbmcgLSBmcy50ZWNobGFiY2VudHJhbC5vcmcwHhcNMTMxMTA0MTgxMzMyWhcNMTQxMTA0MTgxMzMyWjAvMS0wKwYDVQQDEyRBREZTIFNpZ25pbmcgLSBmcy50ZWNobGFiY2VudHJhbC5vcmcwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCwMdVLTr5YTSRp+ccbSpuuFeXMfABD9mVCi2wtkRwC30TIyPdORz642MkurdxdPCWjwgJ0HW6TvXwcO9afH3OC5V//wEGDoNcI8PV4enCzTYFe/h//w51uqyv48Fbb3lEXs+aVl8155OAj2sO9IX64OJWKey82GQWK3g7LfhWWpp17j5bKpSd9DBH5pvrV+Q1ESU3mx71TEOvikHGCZYitEPywNeVMLRKrevdWI3FAhFjcCSO6nWDiMqCqiTDYOURXIcHVYTSof1YotkJ4tG6mP5Kpjzd4VQvnR7Pjb47nhIYG6iZ3mR1F85Ns9+hBWukQWNN2hcD/uGdPXhpdMVpBAgMBAAEwDQYJKoZIhvcNAQELBQADggEBAK7h7jF7wPzhZ1dPl4e+XMAr8I7TNbhgEU3+oxKyW/IioQbvZVw1mYVCbGq9Rsw4KE06eSMybqHln3w5EeBbLS0MEkApqHY+p68iRpguqa+W7UHKXXQVgPMCpqxMFKonX6VlSQOR64FgpBme2uG+LJ8reTgypEKspQIN0WvtPWmiq4zAwBp08hAacgv868c0MM4WbOYU0rzMIR6Q+ceGVRImlCwZ5b7XKp4mJZ9hlaRjeuyVrDuzBkzROSurX1OXoci08yJvhbtiBJLf3uPOJHrhjKRwIt2TnzS9ElgFZlJiDIA26Athe73n43CT0af2IG6yC7e6sK4L3NEXJrwwUZk=</X509Certificate>
+         </X509Data>
+       </KeyInfo>
+     </KeyDescriptor>
+   </IDPSSODescriptor>
+   ```
+
+For more information, see [New-MgDomainFederationConfiguration](/powershell/module/microsoft.graph.identity.directorymanagement/new-mgdomainfederationconfiguration).
 
 >[!NOTE]
 >You must use `$ecpUrl = "https://WS2012R2-0.contoso.com/PAOS"` only if you set up an ECP extension for your identity provider. Exchange Online clients, excluding Outlook Web Application (OWA), rely on a POST based active end point. If your SAML 2.0 STS implements an active end point similar to Shibboleth’s ECP implementation of an active end point it may be possible for these rich clients to interact with the Exchange Online service.
@@ -279,29 +275,34 @@ Before you can authenticate your users to Microsoft 365, you must provision Micr
 
 Microsoft Entra Connect can be used to provision principals to your domains in your Microsoft Entra Directory from the on-premises Active Directory. For more detailed information, see [Integrate your on-premises directories with Microsoft Entra ID](../whatis-hybrid-identity.md).
 
-PowerShell can also be used to automate adding new users to Microsoft Entra ID and to synchronize changes from the on-premises directory. To use the PowerShell cmdlets, you must download the [Azure Active Directory PowerShell module](/powershell/azure/active-directory/install-adv2).
+PowerShell can also be used to automate adding new users to Microsoft Entra ID and to synchronize changes from the on-premises directory. To use the PowerShell cmdlets, you must download the [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview) module.
 
 This procedure shows how to add a single user to Microsoft Entra ID.
 
+1. Connect to your Microsoft Entra Directory as a tenant administrator by using [Connect-MgGraph](/powershell/microsoftgraph/authentication-commands#using-connect-mggraph).
 
-1. Connect to your Microsoft Entra Directory as a tenant administrator: Connect-MsolService.
-2. Create a new user principal:
+1. Create a new user principal:
 
-    ```powershell
-    New-MsolUser `
-      -UserPrincipalName elwoodf1@contoso.com `
-      -ImmutableId ABCDEFG1234567890 `
-      -DisplayName "Elwood Folk" `
-      -FirstName Elwood `
-      -LastName Folk `
-      -AlternateEmailAddresses "Elwood.Folk@contoso.com" `
-      -UsageLocation "US" 
-    ```
+   ```powershell
+   $PasswordProfile = @{ Password = 'xWwvJ]6NMw+bWH-d' }
 
-For more information about “New-MsolUser” checkout, [/previous-versions/azure/dn194096(v=azure.100)](/previous-versions/azure/dn194096(v=azure.100))
+   New-MgUser `
+     -UserPrincipalName "elwoodf1@contoso.com" `
+     -DisplayName "Elwood Folk" `
+     -GivenName "Elwood" `
+     -Surname "Folk" `
+     -AccountEnabled `
+     -MailNickName 'ElwoodFolk' `
+     -OnPremisesImmutableId ABCDEFG1234567890 `
+     -OtherMails "Elwood.Folk@contoso.com" `
+     -PasswordProfile $PasswordProfile `
+     -UsageLocation "US"
+   ```
+
+For more information, see [New-MgUser](/powershell/module/microsoft.graph.users/new-mguser).
 
 >[!NOTE]
->The “UserPrincipalName” value must match the value that you will send for “IDPEmail” in your SAML 2.0 claim and the “ImmutableID” value must match the value sent in your “NameID” assertion.
+>The “UserPrincipalName” value must match the value that you will send for “IDPEmail” in your SAML 2.0 claim and the “OnPremisesImmutableId” value must match the value sent in your “NameID” assertion.
 
 ## Verify single sign-on with your SAML 2.0 IDP
 As the administrator, before you verify and manage single sign-on (also called identity federation), review the information and perform the steps in the following articles to set up single sign-on with your SAML 2.0 SP-Lite based identity provider:
