@@ -54,7 +54,8 @@ When you use the **Get-MgDevice** cmdlet to check the service details:
 ### Count all Microsoft Entra hybrid joined devices (excluding **Pending** state)
 
 ```azurepowershell
-(Get-MgDevice -All | where {($_.DeviceTrustType -eq 'Domain Joined') -and (([string]($_.AlternativeSecurityIds)).StartsWith("X509:"))}).count
+(Get-MgDevice -All | where {($_.DeviceTrustType -eq 'Domain Joined') `
+   -and (([string]($_.AlternativeSecurityIds)).StartsWith("X509:"))}).count
 ```
 
 <a name='count-all-hybrid-azure-ad-joined-devices-with-pending-state'></a>
@@ -62,7 +63,8 @@ When you use the **Get-MgDevice** cmdlet to check the service details:
 ### Count all Microsoft Entra hybrid joined devices with **Pending** state
 
 ```azurepowershell
-(Get-MgDevice -All  | where {($_.DeviceTrustType -eq 'Domain Joined') -and (-not([string]($_.AlternativeSecurityIds)).StartsWith("X509:"))}).count
+(Get-MgDevice -All  | where {($_.DeviceTrustType -eq 'Domain Joined') `
+   -and (-not([string]($_.AlternativeSecurityIds)).StartsWith("X509:"))}).count
 ```
 
 <a name='list-all-hybrid-azure-ad-joined-devices'></a>
@@ -70,7 +72,8 @@ When you use the **Get-MgDevice** cmdlet to check the service details:
 ### List all Microsoft Entra hybrid joined devices
 
 ```azurepowershell
-Get-MgDevice -All | where {($_.DeviceTrustType -eq 'Domain Joined') -and (([string]($_.AlternativeSecurityIds)).StartsWith("X509:"))}
+Get-MgDevice -All | where {($_.DeviceTrustType -eq 'Domain Joined') `
+   -and (([string]($_.AlternativeSecurityIds)).StartsWith("X509:"))}
 ```
 
 <a name='list-all-hybrid-azure-ad-joined-devices-with-pending-state'></a>
@@ -78,7 +81,8 @@ Get-MgDevice -All | where {($_.DeviceTrustType -eq 'Domain Joined') -and (([stri
 ### List all Microsoft Entra hybrid joined devices with **Pending** state
 
 ```azurepowershell
-Get-MgDevice -All | where {($_.DeviceTrustType -eq 'Domain Joined') -and (-not([string]($_.AlternativeSecurityIds)).StartsWith("X509:"))}
+Get-MgDevice -All | where {($_.DeviceTrustType -eq 'Domain Joined') `
+   -and (-not([string]($_.AlternativeSecurityIds)).StartsWith("X509:"))}
 ```
 
 ### List details of a single device:
