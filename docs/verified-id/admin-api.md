@@ -98,6 +98,7 @@ This endpoint can be used to create or update a Verifiable Credential service in
 | [List Authority](#list-authorities)     | Authority array     | Get a list of all configured Authorities/verifiable credential services     |
 | [Create Authority](#create-authority) | Authority | Create a new authority |
 | [Update authority](#update-authority) | Authority | Update authority |
+| [Delete authority](#delete-authority) | Authority | Delete authority |
 | [Generate Well known DID Configuration](#well-known-did-configuration) | | |
 | [Generate DID Document](#generate-did-document) | | |
 | [Validate Well-known DID config](#validate-well-known-did-configuration) | | |
@@ -423,6 +424,67 @@ Example message
 }
 ```
 
+### Delete authority
+
+This method can be used to delete an authority. Currently only `did:ion` authorities can be deleted. When you delete an authority, any issued Verified ID credentials becomes invalid and cannot be verified anymore as the issuing authority is gone.
+
+#### HTTP request
+
+`DELETE /beta/verifiableCredentials/authorities/:authorityId`
+
+Replace the value of `:authorityId` with the value of the authority ID you want to delete.
+
+#### Request headers
+
+| Header | Value |
+| -------- | -------- |
+| Authorization     | Bearer (token). Required |
+| Content-Type | application/json |
+
+#### Request body
+
+No request body
+
+#### Response message
+
+Example response message:
+
+Successful delete authority response.
+
+```
+HTTP/1.1 200 OK
+```
+
+If delete of authority was successful but cleanup of Azure Key Vault keys had failed, you get the below response.
+
+```
+HTTP/1.1 400 Bad Request
+Content-type: application/json
+
+{
+"error": {
+        "code": "deleteIssuerSuccessfulButKeyDeletionFailed",
+        "message": "The organization has been opted out of the Verifiable Credentials, but the following keys could not be deleted. To keep your organization secure, delete keys that are not in use. https://kxxxxxx.vault.azure.net/keys/vcSigningKey-9daeexxxxx-0575-23dc-81be-5f6axxxxx/0dcc532adb9a4fcf9902f90xxxxx"
+    }
+}
+
+```
+
+Response message if trying to delete a did:web authority
+
+```
+HTTP/1.1 400 Bad Request
+Content-type: application/json
+
+{
+"error": {
+        "code": "didMethodNotSupported",
+        "message": "The specified DID method is not supported: web"
+    }
+}
+
+```
+
 ### Well-known DID configuration
 
 The `generateWellknownDidConfiguration` method generates the signed did-configuration.json file. The file must be uploaded to the `.well-known` folder in the root of the website hosted for the domain in the linked domain of this verifiable credential instance. Instructions can be found [here](how-to-dnsbind.md#verify-domain-ownership-and-distribute-did-configurationjson-file).
@@ -430,7 +492,6 @@ The `generateWellknownDidConfiguration` method generates the signed did-configur
 #### HTTP request
 
 `POST /v1.0/verifiableCredentials/authorities/:authorityId/generateWellknownDidConfiguration`
-
 
 #### Request headers
 
