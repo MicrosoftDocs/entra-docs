@@ -29,7 +29,7 @@ The connector server communicates with Microsoft Security Service Edge Solution 
      :::image type="content" source="media/sse-deployment-guide-private-access/app-proxy-connector-download-inline.png" alt-text="Screenshot of Global Secure Access, Connectors, Application proxy, Application Proxy Connector Download window." lightbox="media/sse-deployment-guide-private-access/app-proxy-connector-download-extended.png"::: 
 1. Follow the installation wizard to install the connector service on your connector server. When prompted, enter your tenant credentials to complete installation.
 1. Confirm that the connector server is installed by ensuring that it appears in the Connectors list.                            
- :::image type="content" source="media/sse-deployment-guide-private-access/sse-app-proxy-inline.png" alt-text="Screenshot of Global Secure Access, Connectors, Application proxy window." lightbox="media/sse-deployment-guide-private-access/sse-app-proxy-extended.png"::: 
+ :::image type="content" source="media/sse-deployment-guide-private-access/app-proxy-inline.png" alt-text="Screenshot of Global Secure Access, Connectors, Application proxy window." lightbox="media/sse-deployment-guide-private-access/app-proxy-extended.png"::: 
 
 In this guide, we use the default connector group with one connector server. In a production environment, you should create connector groups with multiple connector servers. [See detailed guidance for publishing apps on separate networks by using connector groups](../identity/app-proxy/application-proxy-connector-groups.md).
 
@@ -39,18 +39,18 @@ Microsoft Entra Private Access supports transmission control protocol (TCP) appl
 1. From the connector server, verify that you can remote desktop into the application server.
 1. Open the [Microsoft Entra admin center](https://entra.microsoft.com) and then go to **Global Secure Access (preview)** > **Applications** > **Enterprise applications** > **+ New Application**.
                                            
-     :::image type="content" source="media/sse-deployment-guide-private-access/sse-enterprise-applications-inline.png" alt-text="Screenshot of Global Secure Access, Applications, Enterprise applications window." lightbox="media/sse-deployment-guide-private-access/sse-enterprise-applications-extended.png":::
+     :::image type="content" source="media/sse-deployment-guide-private-access/enterprise-applications-inline.png" alt-text="Screenshot of Global Secure Access, Applications, Enterprise applications window." lightbox="media/sse-deployment-guide-private-access/enterprise-applications-extended.png":::
 1. Enter a **Name** (such as Server1) and select the default connector group. Click **+Add application segment**. Enter the **IP address** of the application server and port 3389.
 
-     :::image type="content" source="media/sse-deployment-guide-private-access/sse-create-application-segment-inline.png" alt-text="Screenshot of Create Global Secure Access Application, Create application segment window." lightbox="media/sse-deployment-guide-private-access/sse-create-application-segment-extended.png":::
+     :::image type="content" source="media/sse-deployment-guide-private-access/create-application-segment-inline.png" alt-text="Screenshot of Create Global Secure Access Application, Create application segment window." lightbox="media/sse-deployment-guide-private-access/create-application-segment-extended.png":::
 1. Click **Apply** > **Save**. Verify that the application is added to the Enterprise applications list.
 
 1. Go to **Identity** > **Applications** > **Enterprise applications** and click the newly created application.
 
-     :::image type="content" source="media/sse-deployment-guide-private-access/sse-all-applications-inline.png" alt-text="Screenshot of Global Secure Access, Applications, Enterprise applications, All applications window." lightbox="media/sse-deployment-guide-private-access/sse-all-applications-extended.png":::
+     :::image type="content" source="media/sse-deployment-guide-private-access/all-applications-inline.png" alt-text="Screenshot of Global Secure Access, Applications, Enterprise applications, All applications window." lightbox="media/sse-deployment-guide-private-access/all-applications-extended.png":::
 1. Click **Users and groups**. Add your test user that that will access this application from the internet.
 
-     :::image type="content" source="media/sse-deployment-guide-private-access/sse-application-users-groups-inline.png" alt-text="Screenshot of Global Secure Access, Applications, Enterprise applications, Manage, Users and groups window." lightbox="media/sse-deployment-guide-private-access/sse-application-users-groups-extended.png":::
+     :::image type="content" source="media/sse-deployment-guide-private-access/application-users-groups-inline.png" alt-text="Screenshot of Global Secure Access, Applications, Enterprise applications, Manage, Users and groups window." lightbox="media/sse-deployment-guide-private-access/application-users-groups-extended.png":::
 1. Sign in to your test client device and open a remote desktop connection to the application server.
 
 ## Sample PoC scenario: apply Conditional Access
@@ -60,7 +60,7 @@ You can apply Conditional Access policies to applications published with Microso
 1. Open the [Microsoft Entra admin center](https://entra.microsoft.com). Go to **Identity** > **Protection** > **Conditional Access** > **Authentication strengths**. Select **+New authentication strength**.
 1. Create **New authentication strength** to require **Microsoft Authenticator (Phone Sign-in)**.
 
-     :::image type="content" source="media/sse-deployment-guide-private-access/new-authentication-strength-inline.png" alt-text="Screenshot of Identity, Protection, Conditional Access, Authentication strengths, New authentication strength window." lightbox="media/sse-deployment-guide-private-access/new-authentication-strength-extended.png":::
+     :::image type="content" source="media/sse-deployment-guide-private-access/new-authentication-strength-inline.png" alt-text="Screenshot of Identity, Protection, Conditional Access, Authentication strengths, New authentication strength window." lightbox="media/deployment-guide-private-access/new-authentication-strength-extended.png":::
 1. Go to **Policies**.
 1. Create a new Conditional Access Policy as follows:
    1. **Users**: select a specific user
