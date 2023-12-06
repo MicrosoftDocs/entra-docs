@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: decentralized-identity
 ms.topic: how-to
 ms.subservice: verifiable-credentials
-ms.date: 07/28/2022
+ms.date: 12/06/2023
 ms.author: barclayn
 
 #Customer intent: As a verifiable credentials administrator, I want to configure verifying credentials from another party 
@@ -15,7 +15,7 @@ ms.author: barclayn
 
 # Verifying credentials using the Microsoft Entra Verified ID Network
 
-  
+The Microsoft Entra Verified ID network simplifies the verification of credentials by streamlining the discovery of issuers' decentralized identifiers (DID) and credential types. In this article we go over the steps required to use the network.
 
 ## Prerequisites
 
@@ -27,7 +27,7 @@ To use the Microsoft Entra Verified ID Network, you need to have completed the f
 
 ## What is the Microsoft Entra Verified ID Network?
 
-In our scenario, Proseware is a verifier. Woodgrove is the issuer. The verifier needs to know Woodgrove's issuer DID and the verifiable credential (VC) type that represents Woodgrove employees before it can create a presentation request for a verified credential for Woodgrove employees. The necessary information may come from some kind of manual exchange between the companies, but this approach would be both manual and complex. The Microsoft Entra Verified ID Network makes this process much easier. Woodgrove, as an issuer, can publish credential types to the Microsoft Entra Verified ID Network and Proseware, as the verifier, can search for published credential types and schemas in the Microsoft Entra Verified ID Network. Using this information, Woodgrove can create a [presentation request](presentation-request-api.md#presentation-request-payload) and easily invoke the Request Service API.
+In our scenario, Proseware is a verifier. Woodgrove is the issuer. The verifier needs to know Woodgrove's issuer DID and the verifiable credential (VC) type that represents Woodgrove employees before it can create a presentation request for a verified credential for Woodgrove employees. The necessary information may come from some kind of manual exchange between the companies, but this approach would be both manual and complex. The Microsoft Entra Verified ID Network makes this process easier. Woodgrove, as an issuer, can publish credential types to the Microsoft Entra Verified ID Network and Proseware, as the verifier, can search for published credential types and schemas in the Microsoft Entra Verified ID Network. Using this information, Woodgrove can create a [presentation request](presentation-request-api.md#presentation-request-payload) and easily invoke the Request Service API.
   
 :::image type="content" source="media/decentralized-identifier-overview/did-overview.png" alt-text="Diagram of Microsoft DID implementation overview.":::
 
@@ -40,7 +40,7 @@ In our scenario, Proseware is a verifier. Woodgrove is the issuer. The verifier 
 
     :::image type="content" source="media/how-use-vcnetwork/vcnetwork-quickstart.png" alt-text="Screenshot of the Verified ID Network Quickstart.":::
 
-1. When you select on the **Select first issuer**, a panel opens on the right side of the screen where you can search for issuers by their linked domains. So if you are looking for something from Woodgrove, you just type `woodgrove` in the search textbox. When you select an issuer in the list, the available credential types will show in the lower part labeled Step 2. Check the type you want to use and select the Add button to get back to the first screen. If the expected linked domain isn't in the list it means that the linked domain isn't verified yet. If the list of credentials is empty, it means that the issuer has verified the linked domain but haven't published any credential types yet.
+1. When you select on the **Select first issuer**, a panel opens on the right side of the screen where you can search for issuers by their linked domains. So if you are looking for something from Woodgrove, you just type `woodgrove` in the search textbox. When you select an issuer in the list, the available credential types will show in the lower part labeled Step 2. Check the type you want to use and select the Add button to get back to the first screen. If the expected linked domain isn't in the list, it means that the linked domain isn't verified yet. If the list of credentials is empty, it means that the issuer has verified the linked domain but haven't published any credential types yet.
 
     :::image type="content" source="media/how-use-vcnetwork/vcnetwork-search-select.png" alt-text="Screenshot of Verified ID Network Search and select.":::
 

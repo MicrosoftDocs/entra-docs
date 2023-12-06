@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: decentralized-identity
 ms.topic: how-to
 ms.subservice: verifiable-credentials
-ms.date: 06/22/2022
+ms.date: 12/06/2023
 ms.author: barclayn
 
 #Customer intent: Why are we doing this?
@@ -15,7 +15,7 @@ ms.author: barclayn
 
 # Verify domain ownership to your Decentralized Identifier (DID)
 
-  
+In this article we go over the steps needed to verify your ownership of the domain name you are using for your decentralized identifier (DID)
 
 ## Prerequisites
 
