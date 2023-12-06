@@ -108,7 +108,7 @@ Resetting requires that you opt out and opt back into the Microsoft Entra Verifi
 
 ### How do I move to did:web from did:ion?
 
-If you want to move from `did:web` to `did:ion`, you can follow these steps via the [Admin API](admin-api.md). Note that changing authority requires reissuance of all credentials:
+If you want to move to `did:web` from `did:ion`, you can follow these steps via the [Admin API](admin-api.md). Note that changing authority requires reissuance of all credentials:
 
 #### Export existing did:ion credential definitions
 
@@ -131,9 +131,7 @@ After you have created your new `did:web` authority, you need to recreate your c
 
 #### Delete did:ion authority
 
-If you didn't opt out and reonboarded, you need to remove your old `did:ion` authority.
-
-1. Use the following [delete authority](admin-api.md#delete-authority) API to delete the did:ion authority.  
+If you didn't opt out and reonboarded, you need to remove your old `did:ion` authority. Use the [delete authority](admin-api.md#delete-authority) API to delete the did:ion authority. 
 
 ### If I reconfigure the Microsoft Entra Verified ID service, do I need to relink my DID to my domain?
 

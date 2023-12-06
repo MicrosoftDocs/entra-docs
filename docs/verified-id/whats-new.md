@@ -23,7 +23,7 @@ This article lists the latest features, improvements, and changes in the Microso
 ## December 2023
 
 - [Request Service API](issuance-request-api.md#issuance-request-payload) now supports the issuing application to set the expiry date of the credential during and issuance request when the attestation is using the [idTokenHint flow](how-to-use-quickstart.md).
-- The option of selecting `did:ion` as a trust system is removed. The only trust system available is `did:web`. Please see the FAQ for [help on how move to did:web from did:ion](whats-new.md).
+- The option of selecting `did:ion` as a trust system is removed. The only trust system available is `did:web`. Please see the FAQ for [help on how move to did:web from did:ion](verifiable-credentials-faq.md#how-do-i-move-to-didweb-from-didion).
 
 ## November 2023
 

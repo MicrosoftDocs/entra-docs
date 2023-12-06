@@ -330,7 +330,7 @@ Issuance request using idTokenHint attestation flow.
 }
 ```
 
-# [set expiry date](#tab/constraints)
+# [with expiry date](#tab/constraints)
 
 Issuance request using idTokenHint attestation flow that [set the expiry date](issuance-request-api.md#issuance-request-payload).
 
