@@ -76,10 +76,14 @@ Follow these steps to enable Microsoft Entra SSO.
 
    ![Screenshot shows to edit Basic S A M L Configuration.](common/edit-urls.png "Basic Configuration")
 
-1. On the **Basic SAML Configuration** section, perform the following step:
+1. On the **Basic SAML Configuration** section, perform the following steps:
 
+    In the **Identifier (Entity ID)** text box, type the URL:
+     `https://auth.timetabling.education`
+    In the **Reply URL (Assertion Consumer Service URL)** text box, type the URL:
+     `https://auth.timetabling.education`
     In the **Sign-on URL** text box, type the URL:
-    `https://auth.timetabling.education/login`
+     `https://auth.timetabling.education`
 
 1. In the **SAML Signing Certificate** section, click **Edit** button to open **SAML Signing Certificate** dialog.
 
