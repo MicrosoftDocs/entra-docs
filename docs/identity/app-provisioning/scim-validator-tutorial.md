@@ -86,6 +86,7 @@ The SCIM Validator supports using expressions to generate desired values for att
 
 ### Available Expressions
 The table below lists the available expressions
+
 |**Expression**|**Meaning**|**Example**|**Result**|
    |-|-|-|-|
    |generateRandomString {Count of String Characters}|Generate a random string with the specified count of alphabet characters|{%generateRandomString 6%}@contoso.com|CXJHYP@contoso.com|
