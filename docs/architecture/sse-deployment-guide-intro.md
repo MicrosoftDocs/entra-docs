@@ -180,5 +180,6 @@ Microsoft Entra Internet Access for M365 and Microsoft Entra Private Access use 
 1. If desired, use the **Client Checker** tool to confirm network connection and traffic routing status.
 
 ## Next steps
-[Deploy and verify Microsoft Entra Internet Access for M365](sse-deployment-guide-m365.md)
+Deploy and verify [Microsoft Entra Internet Access for M365](sse-deployment-guide-m365.md)
+Deploy and verify [Microsoft Entra Private Access](sse-deployment-guide-private-access.md)
 
