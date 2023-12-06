@@ -5,7 +5,7 @@ author: henrymbuguakiarie
 ms.author: henrymbugua
 ms.custom: 
 ms.date: 1/29/2021
-ms.reviewer: knicholasa
+ms.reviewer: calui
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: reference

@@ -6,12 +6,12 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 10/09/2023
+ms.date: 12/06/2023
 
 ms.author: justinha
 author: justinha
 manager: amycolannino
-ms.reviewer: librown, aakapo
+ms.reviewer: calui
 
 ms.collection: M365-identity-device-management
 ---
@@ -104,11 +104,11 @@ There are two ways to get your AAGUID. You can either ask your security key prov
 1. Choose **USB device** or **NFC device**.
 1. Have your key ready and choose **Next**. If you're using Chrome or Edge, the browser might prioritize registration of a cross-device passkey over a device-bound passkey such as a security key. 
 
-   - On Windows 11, you can sign in with your work or school account and click **Next**. Below **More choices**, choose Security key and click Next.
+   - Beginning with Windows 11 version 23H2, you can sign in with your work or school account and click **Next**. Below **More choices**, choose **Security key** and click **Next**.
 
-     :::image type="content" border="true" source="./media/howto-authentication-passwordless-security-key/security-key.png" alt-text="Screenshot of option to choose security key on Windows 11."::: 
+     :::image type="content" border="true" source="./media/howto-authentication-passwordless-security-key/save-security-key.png" alt-text="Screenshot of option to save a security key on Windows 11 version 23 H2."::: 
 
-   - On Windows 10, the browser may show the QR pairing screen to register a cross-device passkey. Click **Try another way** (or **Use a different device**) to reach the browser-based security key dialog.  
+   - On earlier versions of Windows, the browser may show the QR pairing screen to register a cross-device passkey. To register a device-bound passkey instead, insert your security key and touch it to continue. 
 
      :::image type="content" border="true" source="./media/howto-authentication-passwordless-security-key/try-another-way.png" alt-text="Screenshot of option to choose security key on Windows 10."::: 
 
