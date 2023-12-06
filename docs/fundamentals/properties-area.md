@@ -32,7 +32,7 @@ Your privacy and technical information is located in the **Properties** area of 
 
 1. Browse to **Identity** > **Overview** > **Properties**.
 
-   :::image type="content" source="media/properties-area/properties-area.png" alt-text="Screenshot showing the properties area highlighting the privacy info area.":::
+   :::image type="content" source="media/properties-area/properties-area.png" alt-text="Screenshot showing the properties area highlighting the privacy info area." lightbox="media/properties-area/properties-area.png":::
  
 1. Add your privacy info for your users:
 
