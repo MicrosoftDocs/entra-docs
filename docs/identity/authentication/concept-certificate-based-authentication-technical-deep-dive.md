@@ -221,14 +221,15 @@ With this feature an Authentication Policy Administrator can configure whether a
 Use the highest priority (lowest number) binding.
 
 1. Look up the user object by using the username or User Principal Name.
-1. Go through each of the username bindings setup by the tenant admin in the CBA auth method configuration.
-1. If the X.509 certificate field is on the presented certificate, Microsoft Entra ID matches the value in the certificate field to the user object attribute value.
+1. Get the list of all username bindings setup by the tenant admin in the CBA auth method configuration ordered by the 'priority' attribute. Today the concept of priority is not exposed in Portal UX. Graph will return you the priority attribute for each binding and they are used in the evaluation process.
+1. If the tenant has high affinity binding enabled or if the certificate values matches a custom rule that required high affinity binding, remove all the low affinity bindings from the list.
+1. Evaluate each binding in the list until a successful authentication occurs.
+1. If the X.509 certificate field of the configured binding is on the presented certificate, Microsoft Entra ID matches the value in the certificate field to the user object attribute value.
    1. If a match is found, user authentication is successful.
    1. If a match isn't found, move to the next priority binding.
 1. If the X.509 certificate field isn't on the presented certificate, move to the next priority binding.
 1. Validate all the configured username bindings until one of them results in a match and user authentication is successful.
 1. If a match isn't found on any of the configured username bindings, user authentication fails.
-1. If the tenant has high affinity binding enabled or if the certificate values matches a custom rule that required high affinity binding, authentication will be successful only when a high affinity username binding evaluation was successful else authentication will fail.
 
 <a name='securing-microsoft-entra-configuration-with-multiple-username-bindings'></a>
 
