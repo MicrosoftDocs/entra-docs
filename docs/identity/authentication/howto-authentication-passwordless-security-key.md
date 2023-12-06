@@ -118,8 +118,7 @@ There are two ways to get your AAGUID. You can either ask your security key prov
 
 ## Sign in with passwordless credential
 
-In the following example, a user has already provisioned their FIDO2 security key. The user can choose to sign in on the web with their FIDO2 security key inside of a supported browser on Windows 10 version 1903 or higher.
-![Security key sign-in Microsoft Edge](./media/howto-authentication-passwordless-security-key/fido2-windows-10-1903-edge-sign-in.png)
+For more information about browsers and operating systems that support sign in to Microsoft Entra ID with FIDO2 security keys, see [Browser support of FIDO2 passwordless authentication](fido2-compatibility.md).
 
 ## Troubleshooting and feedback
 

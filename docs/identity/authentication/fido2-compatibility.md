@@ -114,13 +114,13 @@ The following are the minimum browser version requirements.
 
 ## Known issues
 
-If you're using Chrome or Edge, the browser might prioritize registration of a cross-device passkey over a device-bound passkey such as a security key. 
+If you're using Chrome or Edge, the browser might prioritize usage of a cross-device passkey over a device-bound passkey such as a security key. 
 
 - Beginning with Windows 11 version 23H2, you can sign in with your work or school account and click **Next**. Below **More choices**, choose **Security key** and click **Next**.
 
   :::image type="content" border="true" source="./media/howto-authentication-passwordless-security-key/security-key.png" alt-text="Screenshot of option to choose security key on Windows 11."::: 
 
-- On earlier versions of Windows, the browser may show the QR pairing screen to register a cross-device passkey. Click **Try another way** (or **Use a different device**) to reach the browser-based security key dialog.  
+- On earlier versions of Windows, the browser may show the QR pairing screen to continue with using a cross-device passkey. To use a device-bound passkey instead, insert your security key and touch it to continue. 
 
   :::image type="content" border="true" source="./media/howto-authentication-passwordless-security-key/insert-device-bound-passkey.png" alt-text="Screenshot of option to insert a device-bound passkey on Windows 10."::: 
 
