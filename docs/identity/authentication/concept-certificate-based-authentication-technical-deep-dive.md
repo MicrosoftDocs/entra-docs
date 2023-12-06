@@ -250,16 +250,16 @@ There are scenarios where an organization issues multiple certificates for a sin
 **Cloud only accounts**
 For cloud-only accounts you can map multiple certificates (up to 5) for use by populating the certificateUserIds field (Authorization info in the User Portal) with unique values identifying each certificate. If the organization is using high affinity bindings say Issuer + SerialNumber, values ithin CertificateUserIds may look like the following: 
  
-“X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<SR>b24134139f069b49997212a86ba0ef48” 
-“X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<SR>c11154138u089b48767212a86cd0ef76” 
+`X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<SR>b24134139f069b49997212a86ba0ef48`
+`X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<SR>c11154138u089b48767212a86cd0ef76`
  
 In this example the first value represents X509Certificate1 and the second value represents X509Certificate2. The user may present either certificate at sign-in and as long as the CBA Username Binding is set to point to the certificateUserIds field to look for the particular binding type (i.e. Issuer+SerialNumber in this example), then the user will successfully sign-in. 
 
 **Hybrid Synchronized accounts**
 For synchronized accounts you can map multiple certificates for use by populating the altSecurityIdentities field in AD the values identifying each certificate. If the organization is using high affinity (i.e. strong authentication) bindings say Issuer + SerialNumber, this could look like the following: 
  
-“X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<SR>b24134139f069b49997212a86ba0ef48” 
-“X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<SR>c11154138u089b48767212a86cd0ef76” 
+`X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<SR>b24134139f069b49997212a86ba0ef48`
+`X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<SR>c11154138u089b48767212a86cd0ef76`
  
 In this example the first value represents X509Certificate1 and the second value represents X509Certificate2. These values must then be synchronized to the certificateUserIds field in Azure AD.  
 
@@ -279,8 +279,8 @@ Username bindings:
 - SKI -> CertificateUserIds
 
 User account CertificateUserIds values:
-“X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<SR>b24134139f069b49997212a86ba0ef48” 
-“X509:<SKI>82b287a25c48af0918ea088d5293712324dfd523”
+`X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<SR>b24134139f069b49997212a86ba0ef48`
+`X509:<SKI>82b287a25c48af0918ea088d5293712324dfd523`
 
 Now when either user presents the same certificate at sign-in then the user will successfully sign-in because their account matches a unique value on that certificate. One account will be authenticated into using Issuer+SerialNumber and the other using SKI binding.
 
@@ -295,19 +295,19 @@ Populate the altSecurityIdentities field in AD with the values identifying the d
 The accounts could look like the following: 
  
 Forest 1 - Account1 (bob@woodgrove.com): 
-“X509:<SKI>82b287a25c48af0918ea088d5293712324dfd523” 
-“X509:<SHA1-PUKEY>123456789abcdef” 
-“X509:<PN>bob@woodgrove.com” 
+`X509:<SKI>82b287a25c48af0918ea088d5293712324dfd523`
+`X509:<SHA1-PUKEY>123456789abcdef`
+`X509:<PN>bob@woodgrove.com`
  
 Forest 1 - Account2 (bob-admin@woodgrove.com): 
-“X509:<SKI>82b287a25c48af0918ea088d5293712324dfd523” 
-“X509:<SHA1-PUKEY>123456789abcdef” 
-“X509:<PN>bob@woodgrove.com” 
+`X509:<SKI>82b287a25c48af0918ea088d5293712324dfd523`
+`X509:<SHA1-PUKEY>123456789abcdef`
+`X509:<PN>bob@woodgrove.com`
  
 Forest 2 – ADAccount1 (bob-tdy@woodgrove.com): 
-“X509:<SKI>82b287a25c48af0918ea088d5293712324dfd523” 
-“X509:<SHA1-PUKEY>123456789abcdef” 
-“X509:<PN>bob@woodgrove.com” 
+`X509:<SKI>82b287a25c48af0918ea088d5293712324dfd523`
+`X509:<SHA1-PUKEY>123456789abcdef`
+`X509:<PN>bob@woodgrove.com`
  
 These values must then be synchronized to the certificateUserIds field in Entra ID.
 
