@@ -276,7 +276,7 @@ The request formats in the PATCH and POST differ. To ensure that POST and PATCH 
     - AppRoleAssignmentsComplex isn't compatible with setting scope to "Sync All users and groups."
     - The AppRoleAssignmentsComplex only supports the PATCH add function. For multi-role SCIM applications, roles deleted in Microsoft Entra ID will therefore not be deleted from the application. We're working to support additional PATCH functions and address the limitation. 
     
-  - **Example output**
+  - **Example Request (POST)**
   
     ```json
     {
@@ -294,17 +294,36 @@ The request formats in the PATCH and POST differ. To ensure that POST and PATCH 
          {
                "primary": false,
                "type": "WindowsAzureActiveDirectoryRole",
-               "display": "Admin",
+               "displayName": "Admin",
                "value": "Admin"
          },
          {
                "primary": false,
                "type": "WindowsAzureActiveDirectoryRole",
-               "display": "User",
+               "displayName": "User",
              "value": "User"
          }
       ]
     }
+    ```
+
+ - **Example output (PATCH)** 
+
+    ```json
+    "Operations": [
+      {
+        "op": "Add",
+        "path": "roles",
+        "value": [
+          {
+            "value": "{"id":"06b07648-ecfe-589f-9d2f-6325724a46ee","value":"Admin","displayName":"Admin"}
+          },
+    {
+            "value": "{"id":"06b07648-ecfe-599f-9d2f-6325724a46ee","value":"User","displayName":"User"}
+          }
+        ]
+      }
+    ]
     ```
 
 ## Provisioning a multi-value attribute
