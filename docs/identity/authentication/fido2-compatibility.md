@@ -6,7 +6,7 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 12/03/2023
+ms.date: 12/06/2023
 
 author: justinha
 ms.author: justinha
@@ -98,7 +98,7 @@ The following tables show which transports are supported for each platform. Supp
 | Chrome  | &#10060;  | &#10060; | &#10060; |
 | Firefox | &#10060;  | &#10060; | &#10060; |
 
-<sup>1</sup>Security key biometrics or PIN for user verficiation are currently supported on Android by Google. Microsoft Entra ID requires user verification for all FIDO2 authentications.
+<sup>1</sup>Security key biometrics or PIN for user verification are currently supported on Android by Google. Microsoft Entra ID requires user verification for all FIDO2 authentications.
 
 ## Minimum browser version
 
