@@ -153,7 +153,7 @@ Using this feature requires Microsoft Entra ID Governance subscriptions for your
 | Scenario | Calculation | Number of licenses |
 | --- | --- | --- |
 | A Lifecycle Workflows Administrator creates a workflow to add new hires in the Marketing department to the Marketing teams group. 250 new hires are assigned to the Marketing teams group via this workflow. | 1 license for the Lifecycle Workflows Administrator, and 250 licenses for the users. | 251 |
-| A Lifecycle Workflows Administrator creates a workflow to pre-offboard a group of employees before their last day of employment. The scope of users who will be pre-offboarded are 40 users. | 40 licenses for users, and 1 license for the Lifecycle Workflows Administrator. | 41 |
+| A Lifecycle Workflows Administrator creates a workflow to pre-offboard a group of employees before their last day of employment. The scope of users who are pre-offboarded is 40 users. | 40 licenses for users, and 1 license for the Lifecycle Workflows Administrator. | 41 |
 
 ## Privileged Identity Management
 
@@ -180,7 +180,6 @@ This feature is available with Microsoft Entra ID P1, P2 and Microsoft Entra ID 
 |Microsoft Entra ID Governance alongside Microsoft Entra ID P1 or P2     | Daily usage quota (number of user records that can be uploaded over 24-hour period): **300K user records  (6000 /bulkUpload API calls with each request containing max of 50 records)**.<br><br>Max number of API-driven provisioning jobs for each flow: 20<br>o Max 20 apps for API-driven provisioning to on-premises Active Directory.<br>o Max 20 apps for API-driven provisioning to Microsoft Entra ID.        |
 
 
-
 ## Licensing FAQs
 
 ### Do licenses need to be assigned to users to use Identity Governance features?
@@ -198,10 +197,7 @@ For more information, see: [Microsoft Entra ID Governance licensing for business
 
 ### What happens when a PIM license expires?
 
-If a Microsoft Entra ID P2 or Microsoft Entra ID Governance license expires or trial ends, Privileged Identity Management features will no longer be available in your directory. 
-
->[!IMPORTANT]
-> The changes listed below are applicable to PIM for Microsoft Entra roles, PIM for Azure resources, and PIM for Groups.
+If a Microsoft Entra ID P2 or Microsoft Entra ID Governance license expires or trial ends, Privileged Identity Management features will no longer be available in your directory. The changes discussed below are applicable to PIM for Microsoft Entra roles, PIM for Azure resources, and PIM for Groups.
 
 - Active permanent assignments are not affected.
 - Active time-bound assignments become active permanent which means they will no longer expire at a designated time.
@@ -209,8 +205,6 @@ If a Microsoft Entra ID P2 or Microsoft Entra ID Governance license expires or t
 - Privileged Identity Management blades on Microsoft Entra portal or Azure portal, API and PowerShell interfaces of Privileged Identity Management, will no longer be available for users to activate roles, manage assignments, or perform access reviews of privileged roles.
 - Any ongoing access reviews of Azure AD roles will end, and Privileged Identity Management configuration settings will be removed.
 - Privileged Identity Management will no longer send emails on role assignment changes and PIM Alerts.
-
-
 
 ## Next steps
 
