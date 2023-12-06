@@ -107,6 +107,9 @@ The following status messages can be shown for **Last membership change** status
 - **In Progress**: Updates are currently in progress.
 - **Unknown**: The last update time can't be retrieved. The group might be new.
 
+> [!IMPORTANT]
+> After pausing and unpausing the dynamic group membership, the "Last membership change" date will show a placeholder value. This value will be updated once the processing completes.
+
 If an error occurs while processing the membership rule for a specific group, an alert is shown on the top of the **Overview page** for the group. If no pending dynamic membership updates can be processed for all the groups within the organization for more than 24 hours, an alert is shown on the top of **All groups**.
 
 :::image type="content" source="./media/groups-create-rule/processing-error.png" alt-text="Screenshot showing how to process error message alerts.":::
