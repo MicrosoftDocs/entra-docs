@@ -60,7 +60,7 @@ You can apply Conditional Access policies to applications published with Microso
 1. Open the [Microsoft Entra admin center](https://entra.microsoft.com). Go to **Identity** > **Protection** > **Conditional Access** > **Authentication strengths**. Select **+New authentication strength**.
 1. Create **New authentication strength** to require **Microsoft Authenticator (Phone Sign-in)**.
 
-     :::image type="content" source="media/sse-deployment-guide-private-access/new-authentication-strength-inline.png" alt-text="Screenshot of Identity, Protection, Conditional Access, Authentication strengths, New authentication strength window." lightbox="media/deployment-guide-private-access/new-authentication-strength-extended.png":::
+     :::image type="content" source="media/sse-deployment-guide-private-access/new-authentication-strength-inline.png" alt-text="Screenshot of Identity, Protection, Conditional Access, Authentication strengths, New authentication strength window." lightbox="media/sse-deployment-guide-private-access/new-authentication-strength-extended.png":::
 1. Go to **Policies**.
 1. Create a new Conditional Access Policy as follows:
    1. **Users**: select a specific user
