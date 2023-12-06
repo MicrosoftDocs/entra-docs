@@ -73,7 +73,7 @@ The issuance request payload contains information about your verifiable credenti
 
 ```json
 {
-  "includeQRCode": true,
+  "includeQRCode": false,
   "callback": {
     "url": "https://contoso.com/api/issuer/issuanceCallback",
     "state": "de19cb6b-36c1-45fe-9409-909a51292a9c",
@@ -87,14 +87,15 @@ The issuance request payload contains information about your verifiable credenti
   },
   "type": "VerifiedCredentialExpert",
   "manifest": "https://verifiedid.did.msidentity.com/v1.0/tenants/12345678-0000-0000-0000-000000000000/verifiableCredentials/contracts/MTIzNDU2NzgtMDAwMC0wMDAwLTAwMDAtMDAwMDAwMDAwMDAwdmVyaWZpZWRjcmVkZW50aWFsZXhwZXJ0/manifest",
+  "pin": {
+    "value": "3539",
+    "length": 4
+  },
   "claims": {
     "given_name": "Megan",
     "family_name": "Bowen"
   },
-  "pin": {
-    "value": "3539",
-    "length": 4
-  }
+  "expirationDate": "2024-12-31T23:59:59.000Z"
 }
 ```
 
@@ -110,6 +111,7 @@ The payload contains the following properties:
 | `manifest` | string| The URL of the verifiable credential manifest document. For more information, see [Gather credentials and environment details to set up your sample application](verifiable-credentials-configure-issuer.md).|
 | `claims` | string| Optional. Can only be used for the [ID token hint](rules-and-display-definitions-model.md#idtokenhintattestation-type) attestation flow to include a collection of assertions made about the subject in the verifiable credential. |
 | `pin` | [PIN](#pin-type)| Optional. PIN code can only be used with the [ID token hint](rules-and-display-definitions-model.md#idtokenhintattestation-type) attestation flow. A PIN number to provide extra security during issuance. You generate a PIN code, and present it to the user in your app. The user must provide the PIN code that you generated. |
+| `expirationDate` | string| Optional. The expirationDate can only be used with the [ID token hint](rules-and-display-definitions-model.md#idtokenhintattestation-type) attestation flow. If specified, the value needs to be a date expressed in the [ISO8601](https://en.wikipedia.org/wiki/ISO_8601) format. The date will override the [validityInterval](rules-and-display-definitions-model.md#rulesmodel-type) in the credentials rules definition for this issuance request. Use this setting to explicitly control when a credential expires, like end-of-day, end-of-month or end-of-year, regardless of when it is issued. Please note that the date is expressed in UTC format. If you specify end-of-year, with time set to `23:59:59`, that is 1 second to midnight in UTC time. Any user in a different timezone will get the expiration date presented in local timezone in the Microsoft Authenticator. This means that if you are in the CET timezone, it will be presented as January 1 1am. |
 
 There are currently four claims attestation types that you can send in the payload. Microsoft Entra Verified ID uses four ways to insert claims into a verifiable credential and attest to that information with the issuer's DID. The following are the four types:
 
