@@ -85,13 +85,13 @@ In this scenario, a Marketing department user needs to use RDP to open a remote 
      :::image type="content" source="media/sse-deployment-guide-private-access/all-groups-inline.png" alt-text="Screenshot of Identity, Groups, All groups window." lightbox="media/sse-deployment-guide-private-access/all-groups-extended.png":::
 1. Go to **Global Secure Access** > **Applications** > **Enterprise applications**. Select your test application from the [Publish application](#publish-application) section. Remove your earlier test user from **Users and groups** and replace it with the Marketing group.
 
-     :::image type="content" source="media/sse-deployment-guide-private-access/sse-users-and-groups-inline.png" alt-text="Screenshot of Global Secure Access, Applications, Enterprise applications, Users and groups window." lightbox="media/sse-deployment-guide-private-access/sse-users-and-groups-extended.png":::
+     :::image type="content" source="media/sse-deployment-guide-private-access/users-and-groups-inline.png" alt-text="Screenshot of Global Secure Access, Applications, Enterprise applications, Users and groups window." lightbox="media/sse-deployment-guide-private-access/users-and-groups-extended.png":::
 1. Create a second application to connect to your application server using SMB protocol over port 445.
 
-     :::image type="content" source="media/sse-deployment-guide-private-access/sse-create-app-segment-smb-protocol-inline.png" alt-text="Screenshot of Create Global Secure Access Application, Create SMB application segment window." lightbox="media/sse-deployment-guide-private-access/sse-create-app-segment-smb-protocol-extended.png":::
+     :::image type="content" source="media/sse-deployment-guide-private-access/create-app-segment-smb-protocol-inline.png" alt-text="Screenshot of Create Global Secure Access Application, Create SMB application segment window." lightbox="media/sse-deployment-guide-private-access/create-app-segment-smb-protocol-extended.png":::
 1. In **Users and groups** of the new SMB application, add the Developers group.
 
-     :::image type="content" source="media/sse-deployment-guide-private-access/sse-app-users-groups-smb-inline.png" alt-text="Screenshot of Global Secure Access, Applications, Enterprise applications, Manage, Users and groups window for SMB app." lightbox="media/sse-deployment-guide-private-access/sse-app-users-groups-smb-extended.png":::
+     :::image type="content" source="media/sse-deployment-guide-private-access/app-users-groups-smb-inline.png" alt-text="Screenshot of Global Secure Access, Applications, Enterprise applications, Manage, Users and groups window for SMB app." lightbox="media/sse-deployment-guide-private-access/app-users-groups-smb-extended.png":::
 1. Sign in to your test client device with the Marketing user identity *FirstUser*. Verify that *FirstUser* can successfully open a remote desktop connection to Server1 and that Developer group user *SecondUser* is blocked from opening a remote desktop connection to Server1.
 2. Sign in to your test client device with the Developers user *SecondUser* and confirm that you can successfully connect to file shares on Server1. Confirm that Marketing user *FirstUser* can't connect to the same file share.
 1. Create Conditional Access policies to add additional controls.
