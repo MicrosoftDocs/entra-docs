@@ -299,7 +299,7 @@ Authorization: Bearer  <token>
 {...JSON payload...}
 ```
 
-# [Issuance request](#tab/request)
+# [Issuance request](#tab/issuancerequest)
 
 Issuance request using idTokenHint attestation flow.
 
@@ -330,7 +330,7 @@ Issuance request using idTokenHint attestation flow.
 }
 ```
 
-# [with expiry date](#tab/constraints)
+# [with expiry date](#tab/expirydate)
 
 Issuance request using idTokenHint attestation flow that [set the expiry date](issuance-request-api.md#issuance-request-payload).
 
@@ -381,7 +381,7 @@ Authorization: Bearer  <token>
 {...JSON payload...}
 ```
 
-# [Presentation request](#tab/request)
+# [Presentation request](#tab/presentationrequest)
 
 Presentation request for a credential with certain type and issuer.
 
@@ -463,7 +463,7 @@ Presentation request with [claims constraints](presentation-request-api.md#const
 }
 ```
 
-# [with FaceCheck](#tab/constraints)
+# [with FaceCheck](#tab/facecheck)
 
 Presentation request with FaceCheck
 
