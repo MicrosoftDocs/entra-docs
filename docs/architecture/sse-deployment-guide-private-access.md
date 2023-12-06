@@ -18,7 +18,7 @@ This guidance helps you deploy [Microsoft Entra Private Access](../global-secure
 
 ## Deploy and test Microsoft Entra Private Access
 
-Complete the [Configure initial product](sse-deployment-guide-intro.md#configure-initial-product) steps. This includes enabling the Microsoft Entra Private Access traffic forwarding profile and installing the Global Secure Access Client on a test device. Use this guideance to set up your connector server and publish your application to Microsoft Entra Private Access.
+Complete the [Configure initial product](sse-deployment-guide-intro.md#configure-initial-product) steps. This includes enabling the Microsoft Entra Private Access traffic forwarding profile and installing the Global Secure Access Client on a test device. Use this guidance to set up your connector server and publish your application to Microsoft Entra Private Access.
 
 ### Set up connector server
 
@@ -67,7 +67,7 @@ You can apply Conditional Access policies to applications published with Microso
    1. **Target resources**: select a specific published app
    1. **Grant** > **Grant Access -- Require Authentication Strengths** (choose authentication strength created above)
    
-     :::image type="content" source="media/sse-deployment-guide-private-access/grant-conditional-access-inline.png" alt-text="Screenshot of Conditional Access, Policies, Grant window>" lightbox="media/sse-deployment-guide-private-access/grant-conditional-access-extended.png":::
+     :::image type="content" source="media/sse-deployment-guide-private-access/grant-conditional-access-inline.png" alt-text="Screenshot of Conditional Access, Policies, Grant window." lightbox="media/sse-deployment-guide-private-access/grant-conditional-access-extended.png":::
 1. To accelerate the enforcement of Conditional Access policies, right-click the Global Secure Access client in the Windows taskbar. Select **Switch user**. Wait for several seconds until prompted for authentication.
 1. Open a remote desktop connection to the application server. Verify enforcement of Conditional Access by checking sign-in logs or confirming that expected authentication strength is prompted.
 
@@ -85,7 +85,7 @@ In this scenario, a Marketing department user needs to use RDP to open a remote 
      :::image type="content" source="media/sse-deployment-guide-private-access/all-groups-inline.png" alt-text="Screenshot of Identity, Groups, All groups window." lightbox="media/sse-deployment-guide-private-access/all-groups-extended.png":::
 1. Go to **Global Secure Access** > **Applications** > **Enterprise applications**. Select your test application from the [Publish application](#publish-application) section. Remove your earlier test user from **Users and groups** and replace it with the Marketing group.
 
-     :::image type="content" source="media/sse-deployment-guide-private-access/sse-users-and-groups-inline.png" alt-text="Screenshot of Global Secure Access, Applications, Enterprise applications, Users and groups window>" lightbox="media/sse-deployment-guide-private-access/sse-users-and-groups-extended.png":::
+     :::image type="content" source="media/sse-deployment-guide-private-access/sse-users-and-groups-inline.png" alt-text="Screenshot of Global Secure Access, Applications, Enterprise applications, Users and groups window." lightbox="media/sse-deployment-guide-private-access/sse-users-and-groups-extended.png":::
 1. Create a second application to connect to your application server using SMB protocol over port 445.
 
      :::image type="content" source="media/sse-deployment-guide-private-access/sse-create-app-segment-smb-protocol-inline.png" alt-text="Screenshot of Create Global Secure Access Application, Create SMB application segment window." lightbox="media/sse-deployment-guide-private-access/sse-create-app-segment-smb-protocol-extended.png":::
