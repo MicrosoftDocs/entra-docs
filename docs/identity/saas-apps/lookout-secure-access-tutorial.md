@@ -137,7 +137,7 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
 
 1. On the **SSO Groups** tab, click on the download icon of the **SP Metadata** from the Default group. A pop-up appears with SP Metadata details. Click on SP Metadata File button to download the file and upload in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
 
-    ![Screenshot shows settings of the configuration.](./media/lookout-secure-access-tutorial/metadata.png "Metadata")
+    ![Screenshot shows to download metadata file.](./media/lookout-secure-access-tutorial/metadata.png "Metadata")
 
 1. Navigate to **SSO Providers** tab and perform the following steps.
 
