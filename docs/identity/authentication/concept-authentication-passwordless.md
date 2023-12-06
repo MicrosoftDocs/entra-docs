@@ -102,13 +102,13 @@ To enable it, an administrator needs to configure PSSO through Microsoft Intune.
 
 The following steps show how the sign-in process works with Microsoft Entra ID:
 
-1. A user unlocks macOS using fingerprint or password gesture. The gesture unlocks the key bag to provide access to UserSecureEnclaveKey .
+1. A user unlocks macOS using fingerprint or password gesture.
+1. The gesture unlocks the key bag to provide access to UserSecureEnclaveKey.
 1. The macOS requests a nonce (a random arbitrary number that can be used just once) from Microsoft Entra ID.
 1. Microsoft Entra ID returns a nonce that's valid for 5 minutes.
 1. The operating system (OS) sends a login request to Microsoft Entra ID with an embedded assertion signed with the UserSecureEnclaveKey that resides in the Secure Enclave.
-1. Microsoft Entra ID validates the signed assertion using the user's securely registered public key of UserSecureEnclave key. Microsoft Entra ID  validates the signature and nonce. Once the assertion is validated, Microsoft Entra ID creates a [primary refresh token (PRT)](../devices/concept-primary-refresh-token.md) encrypted with the public key of the UserDeviceEncryptionKey that is exchanged during registration and sends the response back to OS.
-1. The OS decrypts and validates the response, retrieves the SSO tokens, stores and and shares it with the SSO extension for providing SSO.
-1. The user is able to access macOS, cloud and on-premises applications without the need to authenticate again (SSO).
+1. Microsoft Entra ID validates the signed assertion using the user's securely registered public key of UserSecureEnclave key. Microsoft Entra ID validates the signature and nonce. Once the assertion is validated, Microsoft Entra ID creates a [primary refresh token (PRT)](../devices/concept-primary-refresh-token.md) encrypted with the public key of the UserDeviceEncryptionKey that is exchanged during registration and sends the response back to OS.
+1. The OS decrypts and validates the response, retrieves the SSO tokens, stores and and shares it with the SSO extension for providing SSO. The user is able to access macOS, cloud and on-premises applications without the need to authenticate again (SSO).
 
 ## FIDO2 security keys
 
