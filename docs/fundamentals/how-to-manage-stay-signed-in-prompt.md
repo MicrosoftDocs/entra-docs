@@ -9,7 +9,7 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: fundamentals
 ms.topic: how-to
-ms.date: 08/09/2023
+ms.date: 11/30/2023
 ms.author: sarahlipsey
 ms.reviewer: almars
 
@@ -28,7 +28,7 @@ The following diagram shows the user sign-in flow for a managed tenant and feder
 
 Some features of SharePoint Online and Office 2010 depend on users being able to choose to remain signed in. If you uncheck the **Show option to remain signed in** option, your users may see other unexpected prompts during the sign-in process.
 
-![Diagram showing the user sign-in flow for a managed vs. federated tenant.](media/how-to-manage-stay-signed-in-prompt/kmsi-workflow.png)
+:::image type="content" source="media/how-to-manage-stay-signed-in-prompt/kmsi-workflow.png" alt-text="Screenshot of a diagram showing the user sign-in flow for a managed vs. federated tenant.":::
 
 ## License and role requirements
 
@@ -48,15 +48,18 @@ The KMSI setting is managed in **User settings**.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 1. Browse to **Identity** > **Users** > **User settings**.
+
+   :::image type="content" source="media/how-to-manage-stay-signed-in-prompt/user-settings-page.png" alt-text="Screenshot of the User settings page.":::
+
 1. Set the **Show keep user signed in** toggle to **Yes**.
 
-    ![Screenshot of the Show keep user signed in prompt.](media/how-to-manage-stay-signed-in-prompt/show-keep-user-signed-in.png)
+   :::image type="content" source="media/how-to-manage-stay-signed-in-prompt/show-keep-user-signed-in.png" alt-text="Screenshot of the Show keep user signed in prompt.":::
 
 ## Troubleshoot 'Stay signed in?' issues
 
 If a user doesn't act on the **Stay signed in?** prompt but abandons the sign-in attempt, a sign-in log entry appears in the Microsoft Entra sign-in logs. The prompt the user sees is called an "interrupt."
 
-![Sample 'Stay signed in?' prompt](media/how-to-manage-stay-signed-in-prompt/kmsi-stay-signed-in-prompt.png)
+:::image type="content" source="media/how-to-manage-stay-signed-in-prompt/kmsi-stay-signed-in-prompt.png" alt-text="Screenshot of the Sample Stay signed in? prompt.":::
 
 Details about the sign-in error are found in the **Sign-in logs**. Select the impacted user from the list and locate the following details in the **Basic info** section.
 
