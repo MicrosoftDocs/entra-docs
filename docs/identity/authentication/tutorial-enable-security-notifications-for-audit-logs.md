@@ -30,7 +30,7 @@ To use this feature, you need:
 - An Entra ID tenant.
 - A user who's a Global Administrator or Security Administrator for the Entra ID tenant.
 - An Event Hubs namespace and an event hub in your Azure subscription. Learn how to [create an event hub](/azure/event-hubs/event-hubs-create).
-- Enable logs to be streamed to the event hub. Learn how to [stream logs to an event hub](../reports-monitoring/tutorial-azure-monitor-stream-logs-to-event-hub.md). Only select the logs that you want the security notification to be sent for. For this tutorial, we'll stream Audit Logs.
+- Enable logs to be streamed to the event hub. Learn how to [stream logs to an event hub](/azure/azure-monitor/essentials/stream-monitoring-data-event-hubs). Only select the logs that you want the security notification to be sent for. For this tutorial, we'll stream Audit Logs.
 - An email account from a service that works with Azure Logic Apps, such as Office 365 Outlook or Outlook.com. For other supported email providers, review [Connectors for Azure Logic Apps](/connectors/connector-reference/connector-reference-logicapps-connectors).
 
 ## Create a logic app
