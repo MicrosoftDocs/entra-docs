@@ -7,7 +7,7 @@ ms.service: active-directory
 ms.subservice: app-provisioning
 ms.workload: identity
 ms.topic: reference
-ms.date: 09/15/2023
+ms.date: 12/05/2023
 ms.author: kenwith
 ms.reviewer: arvinh
 ---
@@ -1253,6 +1253,16 @@ Add a comma between last name and first name.
 * **INPUT** (surname): "Doe"
 * **OUTPUT**:  "Doe, John"
 
+### Generate an ID for a user based on their Microsoft Entra ID object ID. Remove any letters from the ID and add 1000 at the beginning.  
+This expression allows you to generate an identifier for a user that starts with 1000 and is likely to be unique.  
+
+**Expression:** 
+Join("", 1000, Replace(ConvertToUTF8Hex([objectId]), , "[a-zA-Z_]*", , "", , ))
+
+**Sample input/output:** 
+
+* **INPUT**: "d05e47b1-3909-445a-ba5e-ca60cbc0e4b4"
+* **OUTPUT**:  "100064303565343762312333930392343435612626135652636136306362633065346234"
 
 ## Related Articles
 * [Automate User Provisioning/Deprovisioning to SaaS Apps](~/identity/app-provisioning/user-provisioning.md)
