@@ -37,6 +37,7 @@ In this tutorial, you configure and test Microsoft Entra SSO in a test environme
 
 * Headspace supports **SP** initiated SSO.
 * Headspace supports **Just In Time** user provisioning.
+* Headspace supports [Automated user provisioning](headspace-provisioning-tutorial.md).
 
 ## Add Headspace from the gallery
 

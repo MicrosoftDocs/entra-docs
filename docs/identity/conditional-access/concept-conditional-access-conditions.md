@@ -138,7 +138,7 @@ On Windows 7, iOS, Android, and macOS devices are identified using a client cert
 
 #### Chrome support
 
-For Chrome support in **Windows 10 Creators Update (version 1703)** or later, install the [Windows Accounts](https://chrome.google.com/webstore/detail/windows-accounts/ppnbnpeolgkicgegkbkbjmhlideopiji) extension, the [Microsoft 365](https://chrome.google.com/webstore/detail/office/ndjpnladcallmjemlbaebfadecfhkepb) extensions, or enable Chrome's [CloudAPAuthEnabled](https://chromeenterprise.google/policies/#CloudAPAuthEnabled). These configurations are required when a Conditional Access policy requires device-specific details for Windows platforms specifically.
+For Chrome support in **Windows 10 Creators Update (version 1703)** or later, install the [Windows Accounts](https://chrome.google.com/webstore/detail/windows-accounts/ppnbnpeolgkicgegkbkbjmhlideopiji) extension or enable Chrome's [CloudAPAuthEnabled](https://chromeenterprise.google/policies/#CloudAPAuthEnabled). These configurations are required when a Conditional Access policy requires device-specific details for Windows platforms specifically.
 
 To automatically enable the CloudAPAuthEnabled policy in Chrome, create the following registry key:
 

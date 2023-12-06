@@ -1,18 +1,15 @@
 ---
 title: Best practices for the Microsoft identity platform
 description: Learn about best practices, recommendations, and common oversights when integrating with the Microsoft identity platform.
-
 author: rwike77
 manager: CelesteDG
-
+ms.author: ryanwi
+ms.custom: scenarios:getting-started, has-adal-ref
+ms.date: 11/22/2023
+ms.reviewer: lenalepa, sureshja, jesakowi
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-
-ms.date: 05/08/2020
-ms.author: ryanwi
-ms.reviewer: lenalepa, sureshja, jesakowi
-ms.custom:  scenarios:getting-started, has-adal-ref
 #Customer intent: As an application developer, I want to learn about best practices so I can integrate my application with the Microsoft identity platform.
 ---
 
@@ -57,7 +54,7 @@ Use the following checklist to ensure that your application is effectively integ
 
 ![checkbox](./media/integration-checklist/checkbox-two.svg) Protect and manage your confidential app credentials for web apps, web APIs and daemon apps. Use [certificate credentials](./certificate-credentials.md), not password credentials (client secrets). If you must use a password credential, don't set it manually. Don't store credentials in code or config, and never allow them to be handled by humans. If possible, use [managed identities for Azure resources](~/identity/managed-identities-azure-resources/overview.md) or [Azure Key Vault](/azure/key-vault/general/basic-concepts) to store and regularly rotate your credentials.
 
-![checkbox](./media/integration-checklist/checkbox-two.svg) Make sure your application requests the least privilege permissions. Only ask for permissions that your application absolutely needs, and only when you need them. Understand the different [types of permissions](./permissions-consent-overview.md#permission-types). Only use application permissions if necessary; use delegated permissions where possible. For a full list of Microsoft Graph permissions, see this [permissions reference](/graph/permissions-reference).
+![checkbox](./media/integration-checklist/checkbox-two.svg) Make sure your application requests the least privilege permissions. Only ask for permissions that your application absolutely needs, and only when you need them. Understand the different [types of permissions](./permissions-consent-overview.md#types-of-permissions). Only use application permissions if necessary; use delegated permissions where possible. For a full list of Microsoft Graph permissions, see this [permissions reference](/graph/permissions-reference).
 
 ![checkbox](./media/integration-checklist/checkbox-two.svg) If you're securing an API using the Microsoft identity platform, carefully think through the permissions it should expose. Consider what's the right granularity for your solution and which permission(s) require admin consent. Check for expected permissions in the incoming tokens before making any authorization decisions.
 

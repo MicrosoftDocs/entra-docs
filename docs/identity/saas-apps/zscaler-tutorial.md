@@ -32,8 +32,9 @@ To get started, you need the following items:
 
 In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
 
-- Zscaler supports **SP** initiated SSO
-- Zscaler supports **Just In Time** user provisioning
+* Zscaler supports **SP** initiated SSO.
+* Zscaler supports **Just In Time** user provisioning.
+* Zscaler supports [Automated user provisioning](zscaler-provisioning-tutorial.md).
 
 ## Adding Zscaler from the gallery
 

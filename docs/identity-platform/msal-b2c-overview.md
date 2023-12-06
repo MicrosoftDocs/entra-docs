@@ -1,19 +1,16 @@
 ---
 title: Use MSAL.js with Azure AD B2C
 description: The Microsoft Authentication Library for JavaScript (MSAL.js) enables applications to work with Azure AD B2C and acquire tokens to call secured web APIs. These web APIs can be Microsoft Graph, other Microsoft APIs, web APIs from others, or your own web API.
-
 author: henrymbuguakiarie
 manager: CelesteDG
-
+ms.author: henrymbugua
+ms.custom: devx-track-js
+ms.date: 03/07/2023
+ms.reviewer: nacanuma, negoe
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-
-ms.date: 03/07/2023
-ms.author: henrymbugua
-ms.reviewer: nacanuma, negoe
-ms.custom:  devx-track-js
-# Customer intent: As an application developer, I want to learn how MSAL.js can be used with Azure AD B2C for authentication and authorization in my organization's web apps and web APIs that my customers log in to and use.
+#Customer intent: As an application developer, I want to learn how MSAL.js can be used with Azure AD B2C for authentication and authorization in my organization's web apps and web APIs that my customers log in to and use.
 ---
 
 # Use the Microsoft Authentication Library for JavaScript to work with Azure AD B2C
@@ -30,8 +27,8 @@ MSAL.js enables [single-page applications](/azure/active-directory-b2c/applicati
 
 - Users **can** authenticate with their social and local identities.
 - Users **can** be authorized to access Azure AD B2C protected resources (but not Microsoft Entra protected resources).
-- Users **cannot** obtain tokens for Microsoft APIs (for example, MS Graph API) using [delegated permissions](./permissions-consent-overview.md#permission-types).
-- Users with administrator privileges **can** obtain tokens for Microsoft APIs (for example, MS Graph API) using [delegated permissions](./permissions-consent-overview.md#permission-types).
+- Users **cannot** obtain tokens for Microsoft APIs (for example, MS Graph API) using [delegated permissions](./permissions-consent-overview.md#types-of-permissions).
+- Users with administrator privileges **can** obtain tokens for Microsoft APIs (for example, MS Graph API) using [delegated permissions](./permissions-consent-overview.md#types-of-permissions).
 
 For more information, see: [Working with Azure AD B2C](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/working-with-b2c.md)
 

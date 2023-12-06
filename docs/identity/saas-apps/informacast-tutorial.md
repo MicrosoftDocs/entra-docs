@@ -37,6 +37,7 @@ To get started, you need the following items:
 In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
 
 * InformaCast supports **SP and IDP** initiated SSO.
+* InformaCast supports [Automated user provisioning](informacast-provisioning-tutorial.md).
 
 ## Add InformaCast from the gallery
 

@@ -1,18 +1,15 @@
 ---
 title: Configure a web app that signs in users
 description: Learn how to build a web app that signs in users (code configuration)
-
 author: cilwerner
 manager: CelesteDG
-
+ms.author: cwerner
+ms.custom: 
+ms.date: 04/20/2023
+ms.reviewer: jmprieur
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-
-ms.date: 04/20/2023
-ms.author: cwerner
-ms.reviewer: jmprieur
-ms.custom: 
 #Customer intent: As an application developer, I want to know how to write a web app that signs in users by using the Microsoft identity platform.
 ---
 

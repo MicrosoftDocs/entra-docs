@@ -1,18 +1,16 @@
 ---
 title: How to enable cross-app SSO on Android using MSAL
 description: How to use the Microsoft Authentication Library (MSAL) for Android to enable single sign-on across your applications.
-
 author: henrymbuguakiarie
 manager: CelesteDG
-
+ms.author: henrymbugua
+ms.date: 01/18/2023
+ms.devlang: java
 ms.service: active-directory
 ms.subservice: develop
-
 ms.tgt_pltfrm: android
-ms.devlang: java
 ms.topic: how-to
-ms.date: 01/18/2023
-ms.author: henrymbugua
+#Customer intent:
 ---
 
 # Enable cross-app SSO on Android using MSAL

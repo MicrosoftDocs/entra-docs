@@ -37,6 +37,7 @@ For more information, see [Azure built-in roles](~/identity/role-based-access-co
 In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
 
 * XM Fax and XM SendSecure supports **SP-initiated** SSO.
+* XM Fax and XM SendSecure supports [Automated user provisioning](xm-fax-and-xm-send-secure-provisioning-tutorial.md).
 
 > [!NOTE]
 > Identifier of this application is a fixed string value so only one instance can be configured in one tenant.

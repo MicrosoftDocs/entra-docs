@@ -1,26 +1,21 @@
 ---
 title: Shared device mode overview
 description: Learn about shared device mode to enable device sharing for your frontline workers.
-
 author: henrymbuguakiarie
 manager: CelesteDG
-
+ms.author: henrymbugua
+ms.custom:
+ms.date: 02/08/2023
+ms.reviewer: brandwe
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-
-ms.date: 02/08/2023
-ms.author: henrymbugua
-ms.reviewer: brandwe
-ms.custom: 
+#Customer intent:
 ---
 
 # Overview of shared device mode
 
 Shared device mode is a feature of Microsoft Entra ID that allows you to build and deploy applications that support frontline workers and educational scenarios that require shared Android and iOS devices.
-
-> [!IMPORTANT]
-> Shared device mode for iOS [!INCLUDE [PREVIEW BOILERPLATE](./includes/develop-preview.md)]
 
 ### Supporting multiple users on devices designed for one user
 

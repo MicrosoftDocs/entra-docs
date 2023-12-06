@@ -1,18 +1,16 @@
 ---
 title: OAuth 2.0 device authorization grant 
 description: Sign in users without a browser. Build embedded and browser-less authentication flows using the device authorization grant.
-
 author: OwenRichards1
 manager: CelesteDG
-
+ms.author: owenrichards
+ms.custom:
+ms.date: 11/15/2022
+ms.reviewer: ludwignick
 ms.service: active-directory
 ms.subservice: develop
-
 ms.topic: conceptual
-ms.date: 11/15/2022
-ms.author: owenrichards
-ms.reviewer: ludwignick
-ms.custom:  
+#Customer intent:
 ---
 
 # Microsoft identity platform and the OAuth 2.0 device authorization grant flow

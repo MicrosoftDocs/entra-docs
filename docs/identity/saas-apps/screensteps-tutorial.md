@@ -32,6 +32,7 @@ To get started, you need the following items:
 In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
 
 * ScreenSteps supports **SP** initiated SSO.
+* ScreenSteps supports [Automated user provisioning](screensteps-provisioning-tutorial.md).
 
 > [!NOTE]
 > Identifier of this application is a fixed string value so only one instance can be configured in one tenant.
