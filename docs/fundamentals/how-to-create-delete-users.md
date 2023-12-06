@@ -26,7 +26,7 @@ Before you create or invite a new user, take some time to review the types of us
 
 - **Internal member**: These users are most likely full-time employees in your organization.
 - **Internal guest**: These users have an account in your tenant, but have guest-level privileges. It's possible they were created within your tenant prior to the availability of B2B collaboration.
-- **External member**: These users authenticate using an external account, but have member access to your tenant. These types of users are common in [multi-tenant organizations](~/identity/multi-tenant-organizations/overview.md#what-is-a-multi-tenant-organization).
+- **External member**: These users authenticate using an external account, but have member access to your tenant. These types of users are common in [multitenant organizations](~/identity/multi-tenant-organizations/overview.md#what-is-a-multi-tenant-organization).
 - **External guest**: These users are true guests of your tenant who authenticate using an external method and who have guest-level privileges. 
 
 For more information abut the differences between internal and external guests and members, see [B2B collaboration properties](~/external-id/user-properties.md).
