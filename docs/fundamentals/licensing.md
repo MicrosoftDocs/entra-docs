@@ -10,7 +10,7 @@ ms.service: active-directory
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 10/26/2023
+ms.date: 12/01/2023
 ms.subservice: hybrid
 ms.author: barclayn
 ---
@@ -20,7 +20,7 @@ ms.author: barclayn
 This article discusses Microsoft Entra services' licensing. It is intended for IT decision makers, IT administrators, and IT professionals who are considering Microsoft Entra services for their organizations. This article isn't intended for end users.
 
 >[!IMPORTANT]
-> For licensing information on services not listed here, refer to the service's documentation or the [Azure Active Directory pricing page.](https://azure.microsoft.com/pricing/details/active-directory/)
+> For licensing information on services not listed here, refer to the service's documentation or the [Microsoft Entra ID pricing page.](https://azure.microsoft.com/pricing/details/active-directory/)
 
 
 ## App provisioning
@@ -85,7 +85,6 @@ This article discusses Microsoft Entra services' licensing. It is intended for I
 
 ## Next steps
 
-- [Azure AD pricing](https://azure.microsoft.com/pricing/details/active-directory/)
+- [Microsoft Entra pricing](https://azure.microsoft.com/pricing/details/active-directory/)
 - [Azure AD B2C pricing](https://azure.microsoft.com/pricing/details/active-directory-b2c/)
-- [Microsoft Entra Plans & Pricing](https://www.microsoft.com/en-us/security/business/microsoft-entra-pricing?rtc=1)
 
