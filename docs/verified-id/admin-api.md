@@ -427,7 +427,7 @@ Example message
 
 ### Delete authority
 
-This method can be used to delete an authority. Currently only `did:ion` authorities can be deleted. When you delete an authority, any issued Verified ID credentials becomes invalid and can not be verified anymore as the issuing authority is gone.
+This method can be used to delete an authority. Currently only `did:ion` authorities can be deleted. When you delete an authority, any issued Verified ID credentials becomes invalid and cannot be verified anymore as the issuing authority is gone.
 
 #### HTTP request
 
