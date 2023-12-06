@@ -26,13 +26,13 @@ The connector server communicates with Microsoft Security Service Edge Solution 
 
 1. On the connector server, open the [Microsoft Entra admin center](https://entra.microsoft.com). Go to **Global Secure Access (Preview)** > **Connectors**  and then click **Download connector service**.
 
- :::image type="content" source="media/sse-deployment-guide-private-access/app-proxy-connector-download-inline.png" alt-text="Screenshot of Global Secure Access, Connectors, Application proxy, Application Proxy Connector Download window." lightbox="media/sse-deployment-guide-private-access/app-proxy-connector-download-expanded.png"::: 
+ :::image type="content" source="media/sse-deployment-guide-private-access/app-proxy-connector-download-inline.png" alt-text="Screenshot of Global Secure Access, Connectors, Application proxy, Application Proxy Connector Download window." lightbox="media/sse-deployment-guide-private-access/app-proxy-connector-download-extended.png"::: 
 
 
 1. Follow the installation wizard to install the connector service on your connector server. When prompted, enter your tenant credentials to complete installation.
 1. Confirm that the connector server is installed by ensuring that it appears in the Connectors list.
                             
- :::image type="content" source="media/sse-deployment-guide-private-access/sse-app-proxy-inline.png" alt-text="Screenshot of Global Secure Access, Connectors, Application proxy window." lightbox="media/sse-deployment-guide-private-access/sse-app-proxy-expanded.png"::: 
+ :::image type="content" source="media/sse-deployment-guide-private-access/sse-app-proxy-inline.png" alt-text="Screenshot of Global Secure Access, Connectors, Application proxy window." lightbox="media/sse-deployment-guide-private-access/sse-app-proxy-extended.png"::: 
 
 In this guide, we use the default connector group with one connector server. In a production environment, you should create connector groups with multiple connector servers. [See detailed guidance for publishing apps on separate networks by using connector groups](../identity/app-proxy/application-proxy-connector-groups.md).
 
@@ -42,18 +42,18 @@ Microsoft Entra Private Access supports transmission control protocol (TCP) appl
 1. From the connector server, verify that you can remote desktop into the application server.
 1. Open the [Microsoft Entra admin center](https://entra.microsoft.com) and then go to **Global Secure Access (preview)** > **Applications** > **Enterprise applications** > **+ New Application**.
                                            
- :::image type="content" source="media/sse-deployment-guide-private-access/sse-enterprise-applications-inline.png" alt-text="Screenshot of Global Secure Access, Applications, Enterprise applications window." lightbox="media/sse-deployment-guide-private-access/sse-enterprise-applications-expanded.png":::
+ :::image type="content" source="media/sse-deployment-guide-private-access/sse-enterprise-applications-inline.png" alt-text="Screenshot of Global Secure Access, Applications, Enterprise applications window." lightbox="media/sse-deployment-guide-private-access/sse-enterprise-applications-extended.png":::
 1. Enter a **Name** (such as Server1) and select the default connector group. Click **+Add application segment**. Enter the **IP address** of the application server and port 3389.
 
- :::image type="content" source="media/sse-deployment-guide-private-access/sse-create-application-segment-inline.png" alt-text="Screenshot of Create Global Secure Access Application, Create application segment window." lightbox="media/sse-deployment-guide-private-access/sse-create-application-segment-expanded.png":::
+ :::image type="content" source="media/sse-deployment-guide-private-access/sse-create-application-segment-inline.png" alt-text="Screenshot of Create Global Secure Access Application, Create application segment window." lightbox="media/sse-deployment-guide-private-access/sse-create-application-segment-extended.png":::
 1. Click **Apply** > **Save**. Verify that the application is added to the Enterprise applications list.
 
 1. Go to **Identity** > **Applications** > **Enterprise applications** and click the newly created application.
 
- :::image type="content" source="media/sse-deployment-guide-private-access/sse-all-applications-inline.png" alt-text="Screenshot of Global Secure Access, Applications, Enterprise applications, All applications window." lightbox="media/sse-deployment-guide-private-access/sse-all-applications-expanded.png":::
+ :::image type="content" source="media/sse-deployment-guide-private-access/sse-all-applications-inline.png" alt-text="Screenshot of Global Secure Access, Applications, Enterprise applications, All applications window." lightbox="media/sse-deployment-guide-private-access/sse-all-applications-extended.png":::
 1. Click **Users and groups**. Add your test user that that will access this application from the internet.
 
- :::image type="content" source="media/sse-deployment-guide-private-access/sse-application-users-groups-inline.png" alt-text="Screenshot of Global Secure Access, Applications, Enterprise applications, Manage, Users and groups window." lightbox="media/sse-deployment-guide-private-access/sse-application-users-groups-expanded.png":::
+ :::image type="content" source="media/sse-deployment-guide-private-access/sse-application-users-groups-inline.png" alt-text="Screenshot of Global Secure Access, Applications, Enterprise applications, Manage, Users and groups window." lightbox="media/sse-deployment-guide-private-access/sse-application-users-groups-extended.png":::
 1. Sign in to your test client device and open a remote desktop connection to the application server.
 
 ## Sample PoC scenario: apply Conditional Access
@@ -63,14 +63,14 @@ You can apply Conditional Access policies to applications published with Microso
 1. Open the [Microsoft Entra admin center](https://entra.microsoft.com). Go to **Identity** > **Protection** > **Conditional Access** > **Authentication strengths**. Select **+New authentication strength**.
 1. Create **New authentication strength** to require **Microsoft Authenticator (Phone Sign-in)**.
 
- :::image type="content" source="media/sse-deployment-guide-private-access/new-authentication-strength-inline.png" alt-text="Screenshot of Identity, Protection, Conditional Access, Authentication strengths, New authentication strength window." lightbox="media/sse-deployment-guide-private-access/new-authentication-strength-expanded.png":::
+ :::image type="content" source="media/sse-deployment-guide-private-access/new-authentication-strength-inline.png" alt-text="Screenshot of Identity, Protection, Conditional Access, Authentication strengths, New authentication strength window." lightbox="media/sse-deployment-guide-private-access/new-authentication-strength-extended.png":::
 1. Go to **Policies**.
 1. Create a new Conditional Access Policy as follows:
    1. **Users**: select a specific user
    1. **Target resources**: select a specific published app
    1. **Grant** > **Grant Access -- Require Authentication Strengths** (choose authentication strength created above)
    
- :::image type="content" source="media/sse-deployment-guide-private-access/grant-conditional-access-inline.png" alt-text="Screenshot of Conditional Access, Policies, Grant window>" lightbox="media/sse-deployment-guide-private-access/grant-conditional-access-expanded.png":::
+ :::image type="content" source="media/sse-deployment-guide-private-access/grant-conditional-access-inline.png" alt-text="Screenshot of Conditional Access, Policies, Grant window>" lightbox="media/sse-deployment-guide-private-access/grant-conditional-access-extended.png":::
 1. To accelerate the enforcement of Conditional Access policies, right-click the Global Secure Access client in the Windows taskbar. Select **Switch user**. Wait for several seconds until prompted for authentication.
 1. Open a remote desktop connection to the application server. Verify enforcement of Conditional Access by checking sign-in logs or confirming that expected authentication strength is prompted.
 
@@ -82,19 +82,19 @@ In this scenario, a Marketing department user needs to use RDP to open a remote 
 
 1. Open the [Microsoft Entra admin center](https://entra.microsoft.com) and create two test users, such as *FirstUser* and *SecondUser*.
 
- :::image type="content" source="media/sse-deployment-guide-private-access/new-user-inline.png" alt-text="Screenshot of Identity, Users, All users, New user window." lightbox="media/sse-deployment-guide-private-access/new-user-expanded.png":::
+ :::image type="content" source="media/sse-deployment-guide-private-access/new-user-inline.png" alt-text="Screenshot of Identity, Users, All users, New user window." lightbox="media/sse-deployment-guide-private-access/new-user-extended.png":::
 1. Create a group each for Marketing and Developers. Add *FirstUser* to the Marketing group and add *SecondUser* to the Developers group.
 
- :::image type="content" source="media/sse-deployment-guide-private-access/all-groups-inline.png" alt-text="Screenshot of Identity, Groups, All groups window." lightbox="media/sse-deployment-guide-private-access/all-groups-expanded.png":::
+ :::image type="content" source="media/sse-deployment-guide-private-access/all-groups-inline.png" alt-text="Screenshot of Identity, Groups, All groups window." lightbox="media/sse-deployment-guide-private-access/all-groups-extended.png":::
 1. Go to **Global Secure Access** > **Applications** > **Enterprise applications**. Select your test application from the [Publish application](#publish-application) section. Remove your earlier test user from **Users and groups** and replace it with the Marketing group.
 
- :::image type="content" source="media/sse-deployment-guide-private-access/sse-users-and-groups-inline.png" alt-text="Screenshot of Global Secure Access, Applications, Enterprise applications, Users and groups window>" lightbox="media/sse-deployment-guide-private-access/sse-users-and-groups-expanded.png":::
+ :::image type="content" source="media/sse-deployment-guide-private-access/sse-users-and-groups-inline.png" alt-text="Screenshot of Global Secure Access, Applications, Enterprise applications, Users and groups window>" lightbox="media/sse-deployment-guide-private-access/sse-users-and-groups-extended.png":::
 1. Create a second application to connect to your application server using SMB protocol over port 445.
 
- :::image type="content" source="media/sse-deployment-guide-private-access/sse-create-app-segment-smb-protocol-inline.png" alt-text="Screenshot of Create Global Secure Access Application, Create SMB application segment window." lightbox="media/sse-deployment-guide-private-access/sse-create-app-segment-smb-protocol-expanded.png":::
+ :::image type="content" source="media/sse-deployment-guide-private-access/sse-create-app-segment-smb-protocol-inline.png" alt-text="Screenshot of Create Global Secure Access Application, Create SMB application segment window." lightbox="media/sse-deployment-guide-private-access/sse-create-app-segment-smb-protocol-extended.png":::
 1. In **Users and groups** of the new SMB application, add the Developers group.
 
- :::image type="content" source="media/sse-deployment-guide-private-access/sse-app-users-groups-smb-inline.png" alt-text="Screenshot of Global Secure Access, Applications, Enterprise applications, Manage, Users and groups window for SMB app." lightbox="media/sse-deployment-guide-private-access/sse-app-users-groups-smb-expanded.png":::
+ :::image type="content" source="media/sse-deployment-guide-private-access/sse-app-users-groups-smb-inline.png" alt-text="Screenshot of Global Secure Access, Applications, Enterprise applications, Manage, Users and groups window for SMB app." lightbox="media/sse-deployment-guide-private-access/sse-app-users-groups-smb-extended.png":::
 1. Sign in to your test client device with the Marketing user identity *FirstUser*. Verify that *FirstUser* can successfully open a remote desktop connection to Server1 and that Developer group user *SecondUser* is blocked from opening a remote desktop connection to Server1.
 2. Sign in to your test client device with the Developers user *SecondUser* and confirm that you can successfully connect to file shares on Server1. Confirm that Marketing user *FirstUser* can't connect to the same file share.
 1. Create Conditional Access policies to add additional controls.
