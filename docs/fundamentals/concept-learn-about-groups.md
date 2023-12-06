@@ -9,7 +9,7 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: fundamentals
 ms.topic: how-to
-ms.date: 08/29/2022
+ms.date: 11/28/2023
 ms.author: sarahlipsey
 ms.reviewer: krbain
 ms.custom: "it-pro, seodec18"                      
@@ -67,7 +67,7 @@ After creating a Microsoft Entra group, you need to grant it the appropriate acc
 
 Microsoft Entra ID helps you give access to your organization's resources by providing access rights to a single user or to an entire Microsoft Entra group. Using groups lets the resource owner or Microsoft Entra directory owner assign a set of access permissions to all the members of the group. The resource or directory owner can also give management rights to someone such as a department manager or a help desk administrator, letting that person add and remove members. For more information about how to manage group owners, see the [Manage groups](how-to-manage-groups.md) article.
 
-![Diagram of Microsoft Entra ID access management.](./media/concept-learn-about-groups/access-management-overview.png)
+:::image type="content" source="./media/concept-learn-about-groups/access-management-overview.png" alt-text="Screenshot of a diagram of Microsoft Entra ID access management..":::
 
 ### Ways to assign access rights
 
@@ -81,7 +81,7 @@ After creating a group, you need to decide how to assign access rights. Explore 
 
 - **External authority assignment.** Access comes from an external source, such as an on-premises directory or a SaaS app. In this situation, the resource owner assigns a group to provide access to the resource and then the external source manages the group members.
 
-   ![Diagram of access management overview.](./media/concept-learn-about-groups/access-management-process.png)
+   :::image type="content" source="./media/concept-learn-about-groups/access-management-process.png" alt-text="Screenshot of a diagram of access management overview..":::
 
 ### Can users join groups without being assigned?
 The group owner can let users find their own groups to join, instead of assigning them. The owner can also set up the group to automatically accept all users that join or to require approval.
