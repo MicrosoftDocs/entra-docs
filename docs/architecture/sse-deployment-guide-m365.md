@@ -121,3 +121,6 @@ To test source IP address restoration, Global Secure Access signaling for Condit
 
 :::image type="content" source="media/sse-deployment-guide-m365/sign-in-logs-location-tab-inline.png" alt-text="Screenshot of sign-in logs showing Location tab for an item." lightbox="media/sse-deployment-guide-m365/sign-in-logs-location-tab-expanded.png":::
 :::image type="content" source="media/sse-deployment-guide-m365/sign-in-logs-report-only-failure-inline.png" alt-text="Screenshot of sign-in logs showing Report-only tab for an item with Report-only: Failure in the Result column." lightbox="media/sse-deployment-guide-m365/sign-in-logs-report-only-failure-expanded.png":::
+
+# Next Steps
+Configure and test [Microsoft Security Service Edge Solution Deployment Guide for Microsoft Entra Private Access](sse-deployment-guide-private-access.md)
