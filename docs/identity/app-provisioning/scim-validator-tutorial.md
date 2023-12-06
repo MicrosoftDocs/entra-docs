@@ -73,7 +73,29 @@ Finally, you need to test and validate your endpoint.
 
     :::image type="content" source="./media/scim-validator-tutorial/scim-validator-results.png" alt-text="Screenshot of SCIM Validator results page." lightbox="./media/scim-validator-tutorial/scim-validator-results.png":::
 
-### Use Postman to test endpoints (optional)
+## Using Expressions on SCIM Validator
+The SCIM Validator supports using expressions to generate desired values for attributes.
+
+### How to use expressions
+1.	Go to the Attributes page.
+2.	Enter your desired expression in the **value** column of the attribute you want to customize.
+3.	Run your test
+   
+> [!NOTE]
+>These expressions work for both User and Group attributes.
+
+### Available Expressions
+The table below lists the available expressions
+|**Expression**|**Meaning**|**Example**|**Result**|
+   |-|-|-|-|
+   |generateRandomString {Count of String Characters}|Generate a random string with the specified count of alphabet characters|{%generateRandomString 6%}@contoso.com|CXJHYP@contoso.com|
+   |generateRandomNumber {Count of Numbers}|Generate a random number with the specified count of digits|{%generateRandomNumber 4%}|8821|
+   |generateAlphaNumeric {Count of Characters}|Generate a random string with a mixture of alphabets and numbers, with the specified count of characters|{%generateAlphaNumeric 7%}|59Q2M9W|
+   |generateAlphaNumericWithSpecialCharacters {Count of Characters}|Generate a random string with a mix of alphabets, numbers, and a special character, based on the specified count of characters|{%generateAlphaNumericWithSpecialCharacters 8%}TEST|D385N05’TEST|
+
+You can add values before or after the expressions to achieve the desired outcome for example, when you add **{% generateRandomString 6 %}@contoso.com** into a value field of the userName attribute, it will generate a new userName value with every test while retaining the contoso.com domain. 
+   
+## Use Postman to test endpoints (optional)
 
 In addition to using the SCIM Validator tool, you can also use Postman to validate an endpoint. This example provides a set of tests in Postman. The example validates create, read, update, and delete (CRUD) operations. The operations are validated on users and groups, filtering, updates to group membership, and disabling users.
 
@@ -123,7 +145,6 @@ If you created any Azure resources in your testing that are no longer needed, do
 
 - Soft deletes (disables) aren’t yet supported.
 - The time zone format is randomly generated and fails for systems that try to validate it.
-- The preferred language format is randomly generated and fails for systems that try to validate it.
 - The patch user remove attributes may attempt to remove mandatory/required attributes for certain systems. Such failures should be ignored.
 
 
