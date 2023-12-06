@@ -35,7 +35,7 @@ There are two main steps to the role assignment process. First you'll select the
 
 1. Browse to **Identity** > **Users** > **All users**.
 
-   :::image type="content" source="media/entra-users-assign-role-azure-portal/all-users-page.png" alt-text="Screenshot of the All users page.":::
+   :::image type="content" source="media/entra-users-assign-role-azure-portal/all-users-page.png" alt-text="Screenshot of the All users page." lightbox="media/entra-users-assign-role-azure-portal/all-users-page.png":::
 
 1. Search for and select the user getting the role assignment.
 
@@ -77,7 +77,7 @@ You can change the settings of a role assignment, for example to change an activ
 
 1. Change the settings as needed and select the **Save** button.
 
-   :::image type="content" source="media/entra-users-assign-role-azure-portal/remove-update-role-assignment.png" alt-text="Screenshot of assigned roles page with the Remove and Update options highlighted.":::
+   :::image type="content" source="media/entra-users-assign-role-azure-portal/remove-update-role-assignment.png" alt-text="Screenshot of assigned roles page with the Remove and Update options highlighted." lightbox="media/entra-users-assign-role-azure-portal/remove-update-role-assignment.png":::
 
 ## Remove roles
 

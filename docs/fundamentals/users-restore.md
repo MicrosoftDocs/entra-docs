@@ -47,14 +47,14 @@ You can see all the users that were deleted less than 30 days ago. These users c
 
 1. Review the list of users that are available to restore.
 
-   :::image type="content" source="media/users-restore/users-deleted-users-view-restorable.png" alt-text="Screenshot of the Users - Deleted users page, with users that can still be restored.":::
+   :::image type="content" source="media/users-restore/users-deleted-users-view-restorable.png" alt-text="Screenshot of the Users - Deleted users page, with users that can still be restored." lightbox="media/users-restore/users-deleted-users-view-restorable.png":::
 
 ## Restore a recently deleted user
 
 When a user account is deleted from the organization, the account is in a suspended state. All of the account's organization information is preserved. When you restore a user, this organization information is also restored.
 
 > [!NOTE]
-> Once a user is restored, licenses that were assigned to the user at the time of deletion are also restored even if there are no seats available for those licenses. If you are then consuming more licenses more than you purchased, your organization could be temporarily out of compliance for license usage.
+> Once a user is restored, licenses that were assigned to the user at the time of deletion are also restored even if there are no seats available for those licenses. If you are then consuming more licenses than you purchased, your organization could be temporarily out of compliance for license usage.
 
 ### To restore a user
 
@@ -62,7 +62,7 @@ When a user account is deleted from the organization, the account is in a suspen
 
 2. Select **Restore user**.
 
-   :::image type="content" source="media/users-restore/users-deleted-users-restore-user.png" alt-text="Screenshot of the Users - Deleted users page, with Restore user option highlighted.":::
+   :::image type="content" source="media/users-restore/users-deleted-users-restore-user.png" alt-text="Screenshot of the Users - Deleted users page, with Restore user option highlighted." lightbox="media/users-restore/users-deleted-users-restore-user.png":::
 
 ## Permanently delete a user
 
@@ -77,7 +77,7 @@ You can permanently delete a user from your organization without waiting the 30 
 
 2. Select **Delete permanently**.
 
-   :::image type="content" source="media/users-restore/users-deleted-users-permanent-delete-user.png" alt-text="Screenshot of the Users - Deleted users page, with Delete user option highlighted.":::
+   :::image type="content" source="media/users-restore/users-deleted-users-permanent-delete-user.png" alt-text="Screenshot of the Users - Deleted users page, with Delete user option highlighted." lightbox="media/users-restore/users-deleted-users-permanent-delete-user.png":::
 
 ## Next steps
 
