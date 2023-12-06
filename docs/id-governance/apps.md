@@ -295,6 +295,7 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Ring Central](~/identity/saas-apps/ringcentral-provisioning-tutorial.md) | ● | ● |
 | [Robin](~/identity/saas-apps/robin-provisioning-tutorial.md) | ● | ● |
 | [Rollbar](~/identity/saas-apps/rollbar-provisioning-tutorial.md) | ● | ● |
+| [Rootly](~/identity/saas-apps/rootly-provisioning-tutorial.md) | ● | ● |
 | [Rouse Sales](~/identity/saas-apps/rouse-sales-provisioning-tutorial.md) | ● |  |
 | [Salesforce](~/identity/saas-apps/salesforce-provisioning-tutorial.md) | ● | ● |
 | [SafeGuard Cyber](~/identity/saas-apps/safeguard-cyber-provisioning-tutorial.md) | ● | ● |
@@ -320,6 +321,7 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Shopify Plus](~/identity/saas-apps/shopify-plus-provisioning-tutorial.md) | ● | ● |
 | [Sigma Computing](~/identity/saas-apps/sigma-computing-provisioning-tutorial.md) | ● | ● |
 | [Signagelive](~/identity/saas-apps/signagelive-provisioning-tutorial.md) | ● | ● |
+| [Simple In/Out](~/identity/saas-apps/simple-in-out-provisioning-tutorial.md) | ● |  |
 | [Slack](~/identity/saas-apps/slack-provisioning-tutorial.md) | ● | ● |
 | [Smartfile](~/identity/saas-apps/smartfile-provisioning-tutorial.md) | ● | ● |
 | [Smartsheet](~/identity/saas-apps/smartsheet-provisioning-tutorial.md) | ● |  |
@@ -340,6 +342,7 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Tanium SSO](~/identity/saas-apps/tanium-sso-provisioning-tutorial.md) | ● | ● |
 | [Tap App Security](~/identity/saas-apps/tap-app-security-provisioning-tutorial.md) | ● | ● |
 | [Taskize Connect](~/identity/saas-apps/taskize-connect-provisioning-tutorial.md) | ● | ● |
+| [Team Today](~/identity/saas-apps/team-today-provisioning-tutorial.md) | ● |  |
 | [Teamgo](~/identity/saas-apps/teamgo-provisioning-tutorial.md) | ● | ● |
 | [TeamViewer](~/identity/saas-apps/teamviewer-provisioning-tutorial.md) | ● | ● |
 | [TerraTrue](~/identity/saas-apps/terratrue-provisioning-tutorial.md) | ● | ● |
@@ -380,6 +383,7 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Wrike](~/identity/saas-apps/wrike-provisioning-tutorial.md) | ● | ● |
 | [Xledger](~/identity/saas-apps/xledger-provisioning-tutorial.md) | ● |  |
 | [XM Fax and XM SendSecure](~/identity/saas-apps/xm-fax-and-xm-send-secure-provisioning-tutorial.md) | ● | ● |
+| [YardiOne](~/identity/saas-apps/yardione-provisioning-tutorial.md) | ● | ● |
 | [Yellowbox](~/identity/saas-apps/yellowbox-provisioning-tutorial.md) | ● |  |
 | [Zapier](~/identity/saas-apps/zapier-provisioning-tutorial.md) | ● |  |
 | [Zendesk](~/identity/saas-apps/zendesk-provisioning-tutorial.md) | ● | ● |

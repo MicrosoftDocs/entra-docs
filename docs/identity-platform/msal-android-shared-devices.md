@@ -5,7 +5,7 @@ author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms.custom: identitypla | Azuretformtop40
-ms.date: 02/06/2023
+ms.date: 12/05/2023
 ms.reviewer: brandwe
 ms.service: active-directory
 ms.subservice: develop
@@ -97,7 +97,7 @@ These Microsoft applications support Microsoft Entra shared device mode:
 - [Microsoft Edge](/microsoft-edge/)
 - [Outlook](/mem/intune/apps/app-configuration-policies-outlook)
 - [Microsoft Power Apps](/power-apps/)
-- [Microsoft Power BI Mobile](/power-bi/consumer/mobile/mobile-app-shared-device-mode) (preview)
+- [Microsoft Power BI Mobile](/power-bi/consumer/mobile/mobile-app-shared-device-mode)
 - [Microsoft Viva Engage](/viva/engage/overview) (previously [Yammer](/viva/engage/overview))
 - [Microsoft 365](https://apps.apple.com/us/app-bundle/microsoft-365/id1450038993?mt=12) (in Public Preview)
 
