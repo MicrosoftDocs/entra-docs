@@ -127,4 +127,4 @@ You can monitor applications accessed via Microsoft Entra Private Access via the
 
 ## Next steps
 
-[Deploy and verify Microsoft Entra Internet Access for M365](sse-deployment-guide-m365.md)
+[Deploy and verify Microsoft Entra Internet Access for Microsoft 365](sse-deployment-guide-m365.md)
