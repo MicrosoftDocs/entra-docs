@@ -1253,7 +1253,7 @@ Add a comma between last name and first name.
 * **INPUT** (surname): "Doe"
 * **OUTPUT**:  "Doe, John"
 
-### Generate an ID for a user based on their Microsoft Entra ID obejct ID. Remove any letters from the ID and add 1000 at the beginning.  
+### Generate an ID for a user based on their Microsoft Entra ID object ID. Remove any letters from the ID and add 1000 at the beginning.  
 This expression allows you to generate an identifier for a user that starts with 1000 and is likely to be unique.  
 
 **Expression:** 
