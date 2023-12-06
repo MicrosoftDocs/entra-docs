@@ -58,7 +58,7 @@ This flow uses the ID Token Hint, which is provided as payload through the Reque
 | Property | Type | Description |
 | -------- | -------- | -------- |
 | `mapping` | [claimMapping](#claimmapping-type) (optional) | rules to map input claims into output claims in the verifiable credential |
-| `required` | boolean (default false) | indicating whether this attestation is required or not |
+| `required` | boolean (default false) | indicating whether this attestation is required or not. [Request Service API](presentation-request-api.md#http-request) will fail the call if required claims are not set in the createPresentationRequest payload. |
 | `trustedIssuers` | optional string (array) | a list of DIDs allowed to issue the verifiable credential for this contract. This property is only used for specific scenarios where the `id_token_hint` can come from another issuer |
 
 ### verifiablePresentationAttestation type

@@ -20,6 +20,11 @@ ms.author: barclayn
 
 This article lists the latest features, improvements, and changes in the Microsoft Entra Verified ID service.
 
+## December 2023
+
+- [Request Service API](issuance-request-api.md#issuance-request-payload) now supports the issuing application to set the expiry date of the credential during and issuance request when the attestation is using the [idTokenHint flow](how-to-use-quickstart.md).
+- The option of selecting `did:ion` as a trust system is removed. The only trust system available is `did:web`. Please see the FAQ for [help on how move to did:web from did:ion](whats-new.md).
+
 ## November 2023
 
 [Request Service API](presentation-request-api.md#constraints-type) now supports claims constraints when making presentation requests. Claims constraints can be used to specify constraints on the Verified ID credential that the verifier is asking to be presented. Available constraints are direct match, contains and startsWith.

@@ -296,8 +296,16 @@ POST https://verifiedid.did.msidentity.com/v1.0/verifiableCredentials/createIssu
 Content-Type: application/json
 Authorization: Bearer  <token>
 
+{...JSON payload...}
+```
+
+# [Issuance request](#tab/request)
+
+Issuance request using idTokenHint attestation flow.
+
+```JSON
 {
-    "includeQRCode": true,
+    "includeQRCode": false,
     "callback": {
         "url": "https://contoso.com/api/issuer/issuanceCallback",
         "state": "de19cb6b-36c1-45fe-9409-909a51292a9c",
@@ -320,7 +328,39 @@ Authorization: Bearer  <token>
         "family_name": "Bowen"
     }
 }
-```  
+```
+
+# [set expiry date](#tab/constraints)
+
+Issuance request using idTokenHint attestation flow that [set the expiry date](issuance-request-api.md#issuance-request-payload).
+
+```JSON
+    "includeQRCode": false,
+    "callback": {
+        "url": "https://contoso.com/api/issuer/issuanceCallback",
+        "state": "de19cb6b-36c1-45fe-9409-909a51292a9c",
+        "headers": {
+            "api-key": "OPTIONAL API-KEY for CALLBACK EVENTS"
+        }
+    },
+    "authority": "did:web:verifiedid.contoso.com",
+    "registration": {
+        "clientName": "Verifiable Credential Expert Sample"
+    },
+    "type": "VerifiedCredentialExpert",
+    "manifestUrl": "https://verifiedid.did.msidentity.com/v1.0/12345678-0000-0000-0000-000000000000/verifiableCredentials/contracts/VerifiedCredentialExpert1",
+    "pin": {
+        "value": "3539",
+        "length": 4
+    },
+    "claims": {
+        "given_name": "Megan",
+        "family_name": "Bowen"
+    },
+    "expirationDate": "2024-12-31T23:59:59.000Z"
+}
+```
+---
 
 For the complete code, see one of the following code samples:
 
