@@ -125,6 +125,6 @@ You can monitor applications accessed via Microsoft Entra Private Access via the
  > The IP Address listed in the **sourceIp** section is the public IP address of the client and not the IP Address of the Microsoft Security Service Edge Solution Network.
 
 
-# Next Steps
+## Next Steps
 
 [Deploy and verify Microsoft Entra Internet Access for M365](sse-deployment-guide-m365.md)
