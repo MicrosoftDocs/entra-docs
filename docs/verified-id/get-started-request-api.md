@@ -418,7 +418,7 @@ Presentation request for a credential with certain type and issuer.
 }
 ```
 
-# [claims constraints](#tab/constraints)
+# [with claims constraints](#tab/constraints)
 
 Presentation request with [claims constraints](presentation-request-api.md#constraints-type)
 
@@ -456,6 +456,45 @@ Presentation request with [claims constraints](presentation-request-api.md#const
         "validation": {
           "allowRevoked": false,
           "validateLinkedDomain": true
+        }
+      }
+    }
+  ]
+}
+```
+
+# [with FaceCheck](#tab/constraints)
+
+Presentation request with FaceCheck
+
+```JSON
+{
+  "authority": "did:web:verifiedid.contoso.com",
+  "includeQRCode": false,
+  "includeReceipt": false,
+  "registration": {
+    "clientName": "Contoso Job Application Center",
+    "purpose": "Provide proof of attended courses"
+  },
+  "callback": {
+    "url": "https://contoso.com/api/verifier/presentationCallback",
+    "state": "92d076dd-450a-4247-aa5b-d2e75a1a5d58",
+    "headers": {
+      "api-key": "OPTIONAL API-KEY for CALLBACK EVENTS"
+    }
+  },
+  "requestedCredentials": [
+    {
+      "type": "VerifiedEmployee",
+      "acceptedIssuers": [ "did:web:learn.contoso.com" ],
+      "configuration": {
+        "validation": {
+          "allowRevoked": false,
+          "validateLinkedDomain": true,
+          "faceCheck": {
+            "sourcePhotoClaimName": "photo",
+            "matchConfidenceThreshold": 70
+          }
         }
       }
     }
