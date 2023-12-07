@@ -10,7 +10,7 @@ ms.assetid: 213aab20-0a61-434a-9545-c4637628da81
 ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
-ms.custom: has-azure-ad-ps-ref
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: how-to
 ms.date: 11/06/2023
 ms.subservice: hybrid
@@ -27,19 +27,18 @@ The synchronization feature of Microsoft Entra Connect has two components:
 
 This topic explains how the following features of the **Microsoft Entra Connect Sync service** work and how you can configure them using PowerShell.
 
-These settings are configured by the [Azure AD PowerShell module](/previous-versions/azure/jj151815(v=azure.100)). Download and install it separately from Microsoft Entra Connect. The cmdlets documented in this topic were introduced in the [2016 March release (build 9031.1)](https://social.technet.microsoft.com/wiki/contents/articles/28552.microsoft-azure-active-directory-powershell-module-version-release-history.aspx#Version_9031_1). If you don't have the cmdlets documented in this topic or they don't produce the same result, then make sure you run the latest version.
-
-To see the configuration in your Microsoft Entra directory, run `Get-MsolDirSyncFeatures`.
-![Get-MsolDirSyncFeatures result](./media/how-to-connect-syncservice-features/getmsoldirsyncfeatures.png)
+These settings are configured by the [Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/overview). Download and install it separately from Microsoft Entra Connect. The cmdlets documented in this topic were introduced in the [2016 March release (build 9031.1)](https://social.technet.microsoft.com/wiki/contents/articles/28552.microsoft-azure-active-directory-powershell-module-version-release-history.aspx#Version_9031_1). If you don't have the cmdlets documented in this topic or they don't produce the same result, then make sure you run the latest version.
 
 To see the configuration in your Microsoft Entra directory using the Graph PowerShell, use the following commands:
+
 ```powershell
-Connect-MgGraph -Scopes OnPremDirectorySynchronization.Read.All, OnPremDirectorySynchronization.ReadWrite.All
+Connect-MgGraph -Scopes "OnPremDirectorySynchronization.Read.All"
 
 Get-MgDirectoryOnPremiseSynchronization | Select-Object -ExpandProperty Features | Format-List
 ```
 
-The output looks similar to `Get-MsolDirSyncFeatures`:
+The result looks like this output:
+
 ```powershell
 BlockCloudObjectTakeoverThroughHardMatchEnabled  : False
 BlockSoftMatchEnabled                            : False
@@ -63,15 +62,6 @@ UserWritebackEnabled                             : True
 AdditionalProperties                             : {}
 ```
 
-Many of these settings can only be changed by Microsoft Entra Connect.
-
-The following settings can be configured by `Set-MsolDirSyncFeature`:
-
-| DirSyncFeature | Comment |
-| --- | --- |
-| [EnableSoftMatchOnUpn](#userprincipalname-soft-match) |Allows objects to join on userPrincipalName in addition to primary SMTP address. |
-| [SynchronizeUpnForManagedUsers](#synchronize-userprincipalname-updates) |Allows the sync engine to update the userPrincipalName attribute for managed/licensed (non-federated) users. |
-
 After you have enabled a feature, it can't be disabled again.
 
 > [!NOTE]
@@ -79,10 +69,12 @@ After you have enabled a feature, it can't be disabled again.
 > 
 > 
 
-The following settings are configured by Microsoft Entra Connect and can't be modified by `Set-MsolDirSyncFeature`:
+The following settings are configured by Microsoft Entra Connect:
 
 | DirSyncFeature | Comment |
 | --- | --- |
+| SoftMatchOnUpn |Allows objects to join on userPrincipalName in addition to primary SMTP address. |
+| SynchronizeUpnForManagedUsers |Allows the sync engine to update the userPrincipalName attribute for managed/licensed (non-federated) users. |
 | DeviceWriteback |[Microsoft Entra Connect: Enabling device writeback](how-to-connect-device-writeback.md) |
 | DirectoryExtensions |[Microsoft Entra Connect Sync: Directory extensions](how-to-connect-sync-feature-directory-extensions.md) |
 | [DuplicateProxyAddressResiliency<br/>DuplicateUPNResiliency](#duplicate-attribute-resiliency) |Allows an attribute to be quarantined when its a duplicate of another object rather than failing the entire object during export. |
@@ -104,27 +96,34 @@ If you need to match on-premises AD accounts with existing accounts created in t
 This feature is on by default for newly created Microsoft Entra directories. You can see if this feature is enabled for you by running:  
 
 ```powershell
-## Using the MSOnline module
-Get-MsolDirSyncFeatures -Feature EnableSoftMatchOnUpn
+Connect-MgGraph -Scopes "OnPremDirectorySynchronization.Read.All"
 
-## Using the Graph PowerShell module
-$Config = Get-MgDirectoryOnPremisSynchronization
-$Config.Features.SoftMatchOnUpnEnabled
+$DirectorySync = Get-MgDirectoryOnPremiseSynchronization
+$DirectorySync.Features.SoftMatchOnUpnEnabled
 ```
 
 If this feature isn't enabled for your Microsoft Entra directory, then you can enable it by running:  
 
 ```powershell
-Set-MsolDirSyncFeature -Feature EnableSoftMatchOnUpn -Enable $true
+Connect-MgGraph -Scopes "OnPremDirectorySynchronization.ReadWrite.All"
+
+$SoftMatchOnUpn = @{ SoftMatchOnUpnEnabled = "true" }
+Update-MgDirectoryOnPremiseSynchronization -Features $SoftMatchOnUpn `
+   -OnPremisesDirectorySynchronizationId $DirectorySync.Id
 ```
 
 ## BlockSoftMatch
+
 When this feature is enabled, it blocks the Soft Match feature. Customers are encouraged to enable this feature and keep it at enabled until Soft Matching is required again for their tenancy. This flag should be enabled again after any soft matching has completed and is no longer needed.
 
 Example - to block soft matching in your tenant, run this cmdlet:
 
-```
-PS C:\> Set-MsolDirSyncFeature -Feature BlockSoftMatch -Enable $True
+```powershell
+Connect-MgGraph -Scopes "OnPremDirectorySynchronization.ReadWrite.All"
+
+$SoftBlock = @{ BlockSoftMatchEnabled = "true" }
+Update-MgDirectoryOnPremiseSynchronization -Features $SoftBlock `
+   -OnPremisesDirectorySynchronizationId $DirectorySync.Id
 ```
 
 ## Synchronize userPrincipalName updates
@@ -143,18 +142,20 @@ Enabling this feature allows the sync engine to update the userPrincipalName whe
 This feature is on by default for newly created Microsoft Entra directories. You can see if this feature is enabled for you by running:  
 
 ```powershell
-## Using the MSOnline module
-Get-MsolDirSyncFeatures -Feature SynchronizeUpnForManagedUsers
+Connect-MgGraph -Scopes "OnPremDirectorySynchronization.Read.All"
 
-## Using the Graph PowerShell module
-$config = Get-MgDirectoryOnPremisSynchronization
-$config.Features.SynchronizeUpnForManagedUsersEnabled
+$DirectorySync = Get-MgDirectoryOnPremiseSynchronization
+$DirectorySync.Features.SynchronizeUpnForManagedUsersEnabled
 ```
 
 If this feature isn't enabled for your Microsoft Entra directory, then you can enable it by running:  
 
 ```powershell
-Set-MsolDirSyncFeature -Feature SynchronizeUpnForManagedUsers -Enable $true
+Connect-MgGraph -Scopes "OnPremDirectorySynchronization.ReadWrite.All"
+
+$SyncUpnManagedUsers = @{ SynchronizeUpnForManagedUsersEnabled = "true" }
+Update-MgDirectoryOnPremiseSynchronization -Features $SyncUpnManagedUsers `
+   -OnPremisesDirectorySynchronizationId $DirectorySync.Id
 ```
 
 After enabling this feature, existing userPrincipalName values will remain as-is. On next change of the userPrincipalName attribute on-premises, the normal delta sync on users will update the UPN.  
