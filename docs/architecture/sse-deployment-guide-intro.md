@@ -179,7 +179,7 @@ Microsoft Entra Internet Access for M365 and Microsoft Entra Private Access use 
    :::image type="content" source="media/sse-deployment-guide-intro/global-secure-access-client-connection-diagnostics-channels.png" alt-text="Screenshot of the Global Secure Access Client Connection Diagnostics window showing Channels tab.":::
 1. If desired, use the **Client Checker** tool to confirm network connection and traffic routing status.
 
-[!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
+[!INCLUDE [Public preview important note](~/global-secure-access/includes/public-preview-important-note.md)]
 
 ## Next steps
 Deploy and verify [Microsoft Entra Internet Access for M365](sse-deployment-guide-m365.md)
