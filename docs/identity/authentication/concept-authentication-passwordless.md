@@ -85,6 +85,8 @@ To enable it, an administrator needs to configure PSSO through Microsoft Intune.
 1. Microsoft Entra ID validates the signed assertion using the user's securely registered public key of UserSecureEnclave key. Microsoft Entra ID validates the signature and nonce. Once the assertion is validated, Microsoft Entra ID creates a [primary refresh token (PRT)](../devices/concept-primary-refresh-token.md) encrypted with the public key of the UserDeviceEncryptionKey that is exchanged during registration and sends the response back to OS.
 1. The OS decrypts and validates the response, retrieves the SSO tokens, stores and and shares it with the SSO extension for providing SSO. The user is able to access macOS, cloud and on-premises applications without the need to authenticate again (SSO).
 
+Refer to the macOS Platform SSO landing page for more information on how to configure and deploy PSSO.
+
 ## Microsoft Authenticator
 
 You can also allow your employee's phone to become a passwordless authentication method. You may already be using the Authenticator app as a convenient multi-factor authentication option in addition to a password. You can also use the Authenticator App as a passwordless option.
