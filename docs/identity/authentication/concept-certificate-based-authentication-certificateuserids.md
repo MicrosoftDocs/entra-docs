@@ -186,7 +186,7 @@ For the configuration, you can use [Microsoft Graph PowerShell](/powershell/micr
 
 Microsoft Entra connect supports syncing values into the certificateUserIds from an on-premises Active Directory environment. On-premises Active Directory supports certificate-based authentication and multiple username bindings. 
 Support for the use of these mapping methods involves populating the Alt-Security-Identities (altSecurityIdentities) attribute on user objects in the on-premises Active Directory. 
-Additionally with [KB5014754](https://support.microsoft.com/en-us/topic/kb5014754-certificate-based-authentication-changes-on-windows-domain-controllers-ad2c23b0-15d8-4340-a468-4d4f3b188f16)—Certificate-based authentication changes on Windows domain controllers many customers may have implemented some of the non-reusable mapping methods (Type=strong) mapping methods to meet the on-premise Active Directory strong certificate binding enforcement requirements. 
+Additionally with [KB5014754](https://support.microsoft.com/en-us/topic/kb5014754-certificate-based-authentication-changes-on-windows-domain-controllers-ad2c23b0-15d8-4340-a468-4d4f3b188f16), certificate-based authentication changes on Windows domain controllers many customers may have implemented some of the non-reusable mapping methods (Type=strong) mapping methods to meet the on-premise Active Directory strong certificate binding enforcement requirements. 
 
 ### Considerations when using Microsoft Entra Connect to sync certificate user IDs 
 
@@ -201,7 +201,7 @@ In order to prevent synchronization errors when syncing values to certificateUse
 >[!NOTE]
 > Some customers will have a valid business justification for mapping a single certificate to more than 1 on-premises Active Directory account. This is usually not the case for all users, but for a subset of users for very specific scenarios. It is recommended to carefully review these scenarios and where possible to only map a certificate to a single user. If a single certificate is needed to map to more then one account in both the on-premise Active Directory and the Entra ID, tenant administrators must implement separate mapping methods.
 
-**Considerations for ongoing synchronization of certificate user IDs **
+**Considerations for ongoing synchronization of certificate user IDs**
 
 - Ensure that the provisioning process for populating the values in on-premises Active Directory implements proper hygiene. Only values associated with current valid certificates are populated
 - Values are removed when the corresponding certificate is expired or revoked.
