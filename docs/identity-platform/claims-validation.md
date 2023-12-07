@@ -44,6 +44,8 @@ For more information about the appID URI of an application, see [Application ID 
 
 Always check that the `tid` in a token matches the tenant ID used to store data with the application. When information is stored for an application in the context of a tenant, it should only be accessed again later in the same tenant. Never allow data in one tenant to be accessed from another tenant.
 
+You should ensure that when validating tenant you also need to validate the subject or actor authorization, ideally both. If your intention is to authorize all users in a tenant, it is strongly recommended to explicitly add these users into a group and authorize based on the group. A check for tenant ID and the presence of the `oid` claim could potentially authorize thousands of service principals in a tenant in addition to users which should be avoided.
+
 ## Validate the subject
 
 Determine if the token subject, such as the user (or application itself for an app-only token), is authorized. 
@@ -63,10 +65,10 @@ The `roles`, `groups` or `wids` claims can also be used to determine if the subj
 
 A client application that's acting on behalf of a user (referred to as the *actor*), must also be authorized. Use the `scp` claim (scope) to validate that the application has permission to perform an operation. The permissions in `scp` should be limited to what the user actually needs and follows the principles of [least privilege](secure-least-privileged-access.md). 
 
-However, there are known scenarios where `scp` isn't present in the token: 
+However, there are occasions where `scp` isn't present in the token. You should check for the absence of the `scp` claim for the following scenarios:
 
-* Daemon apps / app only permission - validate the role claims instead of the `scp` claim.
-* A separate role-based access control system is used - validate roles instead of `scp`.
+* Daemon apps / app only permission
+* ID tokens
 
 For more information about scopes and permissions, see [Scopes and permissions in the Microsoft identity platform](scopes-oidc.md).
 
