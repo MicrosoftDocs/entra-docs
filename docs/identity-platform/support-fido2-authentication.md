@@ -4,7 +4,7 @@ description: This deployment guide explains how to support passwordless authenti
 author: henrymbuguakiarie
 ms.author: henrymbugua
 ms.date: 1/29/2021
-ms.reviewer: knicholasa
+ms.reviewer: calui
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: reference
@@ -25,7 +25,7 @@ Don't use a domain hint to bypass [home-realm discovery](~/identity/enterprise-a
 
 If you are using SAML, do not specify that a password is required [using the RequestedAuthnContext element](single-sign-on-saml-protocol.md#requestedauthncontext).
 
-The RequestedAuthnContext element is optional, so to resolve this you can remove it from your SAML authentication requests. This is a general best practice, as using this element can also prevent other authentication options like multi-factor authentication from working correctly.
+The RequestedAuthnContext element is optional, so to resolve this issue you can remove it from your SAML authentication requests. This is a general best practice, as using this element can also prevent other authentication options like multifactor authentication from working correctly.
 
 ### Using the most recently used authentication method
 

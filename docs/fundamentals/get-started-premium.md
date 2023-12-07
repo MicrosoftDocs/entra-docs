@@ -9,7 +9,7 @@ ms.service: active-directory
 ms.subservice: fundamentals
 ms.workload: identity
 ms.topic: how-to
-ms.date: 11/28/2023
+ms.date: 11/30/2023
 ms.author: barclayn
 ms.reviewer: piotrci
 ms.custom: "it-pro, seodec18"
@@ -93,11 +93,7 @@ After your purchased licenses are provisioned in your directory, you'll receive 
 
 1. Open the **Welcome email**, and then select **Sign In**.
    
-   :::image type="content" source="media/get-started-premium/AADEmail.png" alt-text="Screenshot of welcome email, with highlighted sign in link.":::
-
 2. After successfully signing in, you'll go through two-step verification using a mobile device.
-   
-   :::image type="content" source="media/get-started-premium/SignUppage.png" alt-text="Screenshot of two-step verification page with mobile verification.":::
 
 The activation process typically takes only a few minutes and then you can use your Microsoft Entra tenant. 
 

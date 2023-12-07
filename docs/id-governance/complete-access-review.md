@@ -110,9 +110,10 @@ Manually or automatically applying results doesn't have an effect on a group tha
 
 > [!NOTE]
 > Some denied users are unable to have results applied to them. Scenarios where this could happen include:
-> - Reviewing members of a synced on-premises Windows AD group: If the group is synced from on-premises  Windows AD, the group cannot be managed in Microsoft Entra ID and therefore membership cannot be changed.
+> - Reviewing members of a synced on-premises Windows AD group: If the group is synced from on-premises Windows AD, the group cannot be managed in Microsoft Entra ID and therefore membership cannot be changed.
 > - Reviewing a resource (role, group, application) with nested groups assigned: For users who have membership through a nested group, we will not remove their membership to the nested group and therefore they will retain access to the resource being reviewed.
 > - User not found / other errors can also result in an apply result not being supported.
+> - Reviewing the members of mail enabled group: The group cannot be managed in Microsoft Entra ID, so membership cannot be changed.
  
 ## Actions taken on denied guest users in an access review
  

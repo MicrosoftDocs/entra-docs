@@ -15,6 +15,9 @@ ms.collection: M365-identity-device-management
 ---
 
 # Disable group writeback 
+
+[!INCLUDE [deprecation](~/includes/gwb-v2-deprecation.md)]
+
 This article walks you through disabling group writeback in Microsoft Entra Connect. 
 
 ## Disable group writeback by using the wizard
