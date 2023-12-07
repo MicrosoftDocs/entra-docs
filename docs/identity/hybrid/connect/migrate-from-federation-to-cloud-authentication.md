@@ -5,7 +5,7 @@ description: This article has information about moving your hybrid identity envi
 services: active-directory
 ms.service: active-directory
 ms.subservice: hybrid
-ms.custom: has-azure-ad-ps-ref
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: conceptual
 ms.date: 11/06/2023
 ms.author: billmath
@@ -138,8 +138,12 @@ The following table explains the behavior for each option. For more information,
 | enforceMfaByFederatedIdp | Microsoft Entra ID accepts MFA that federated identity provider performs.  If the federated identity provider didn't perform MFA, it redirects the request to federated identity provider to perform MFA. |
 | rejectMfaByFederatedIdp | Microsoft Entra ID always performs MFA and rejects MFA that federated identity provider performs. |
 
->[!NOTE]
-> The **federatedIdpMfaBehavior** setting is an evolved version of the **SupportsMfa** property of the [Set-MsolDomainFederationSettings MSOnline v1 PowerShell cmdlet](/powershell/module/microsoft.graph.identity.directorymanagement/new-mgdomainfederationconfiguration?view=graph-powershell-1.0&preserve-view=true). 
+The **federatedIdpMfaBehavior** setting is an evolved version of the **SupportsMfa** property of the [Set-MsolDomainFederationSettings MSOnline v1 PowerShell cmdlet](/powershell/module/microsoft.graph.identity.directorymanagement/new-mgdomainfederationconfiguration?view=graph-powershell-1.0&preserve-view=true).
+
+>[!NOTE] 
+>Microsoft MFA Server is nearing the end of support life, and if you're using it you must move to Microsoft Entra multifactor authentication. 
+For more information, see **[Migrate from Microsoft MFA Server to Azure multifactor authentication documentation](~/identity/authentication/how-to-migrate-mfa-server-to-azure-mfa.md)**.
+>If you plan to use Microsoft Entra multifactor authentication, we recommend that you use **[combined registration for self-service password reset (SSPR) and multifactor authentication](~/identity/authentication/concept-registration-mfa-sspr-combined.md)** to have your users register their authentication methods once. 
 
 For domains that have already set the **SupportsMfa** property, these rules determine how **federatedIdpMfaBehavior** and **SupportsMfa** work together:
 
@@ -152,18 +156,7 @@ You can check the status of protection by running [Get-MgDomainFederationConfigu
 
 ```powershell
 Get-MgDomainFederationConfiguration -DomainId yourdomain.com
-``` 
-
-You can also check the status of your SupportsMfa flag with [Get-MsolDomainFederationSettings](/powershell/module/msonline/get-msoldomainfederationsettings):
-
-```powershell
-Get-MsolDomainFederationSettings –DomainName yourdomain.com
 ```
-
->[!NOTE] 
->Microsoft MFA Server is nearing the end of support life, and if you're using it you must move to Microsoft Entra multifactor authentication. 
-For more information, see **[Migrate from Microsoft MFA Server to Azure multifactor authentication documentation](~/identity/authentication/how-to-migrate-mfa-server-to-azure-mfa.md)**.
->If you plan to use Microsoft Entra multifactor authentication, we recommend that you use **[combined registration for self-service password reset (SSPR) and multifactor authentication](~/identity/authentication/concept-registration-mfa-sspr-combined.md)** to have your users register their authentication methods once. 
 
 ## Plan for implementation
 
