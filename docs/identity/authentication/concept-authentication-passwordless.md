@@ -54,32 +54,6 @@ The following steps show how the sign-in process works with Microsoft Entra ID:
 
 The Windows Hello for Business [planning guide](/windows/security/identity-protection/hello-for-business/hello-planning-guide) can be used to help you make decisions on the type of Windows Hello for Business deployment and the options you'll need to consider.
 
-## Microsoft Authenticator
-
-You can also allow your employee's phone to become a passwordless authentication method. You may already be using the Authenticator app as a convenient multi-factor authentication option in addition to a password. You can also use the Authenticator App as a passwordless option.
-
-![Sign in to Microsoft Edge with the Microsoft Authenticator](./media/concept-authentication-passwordless/concept-web-sign-in-microsoft-authenticator-app.png)
-
-The Authenticator App turns any iOS or Android phone into a strong, passwordless credential. Users can sign in to any platform or browser by getting a notification to their phone, matching a number displayed on the screen to the one on their phone, and then using their biometric (touch or face) or PIN to confirm. Refer to [Download and install the Microsoft Authenticator](https://support.microsoft.com/account-billing/download-and-install-the-microsoft-authenticator-app-351498fc-850a-45da-b7b6-27e523b8702a) for installation details.
-
-Passwordless authentication using the Authenticator app follows the same basic pattern as Windows Hello for Business. It's a little more complicated as the user needs to be identified so that Microsoft Entra ID can find the Authenticator app version being used:
-
-![Diagram that outlines the steps involved for user sign-in with the Microsoft Authenticator App](./media/concept-authentication-passwordless/authenticator-app-flow.png)
-
-1. The user enters their username.
-1. Microsoft Entra ID detects that the user has a strong credential and starts the Strong Credential flow.
-1. A notification is sent to the app via Apple Push Notification Service (APNS) on iOS devices, or via Firebase Cloud Messaging (FCM) on Android devices.
-1. The user receives the push notification and opens the app.
-1. The app calls Microsoft Entra ID and receives a proof-of-presence challenge and nonce.
-1. The user completes the challenge by entering their biometric or PIN to unlock private key.
-1. The nonce is signed with the private key and sent back to Microsoft Entra ID.
-1. Microsoft Entra ID performs public/private key validation and returns a token.
-
-To get started with passwordless sign-in, complete the following how-to:
-
-> [!div class="nextstepaction"]
-> [Enable passwordless sign using the Authenticator app](howto-authentication-passwordless-phone.md)
-
 ## MacOS Platform SSO
 
 MacOS Platform SSO (PSSO) is a new capability on macOS that is enabled using the Microsoft Enterprise Single Sign-on Extension (SSOe). The advantage of PSSO is that it allows users to authenticate with Microsoft Entra ID with smart card, hardware-bound key or their Microsoft Entra ID password. This both improves the end-user experience by not having to remember two separate passwords as well as diminishes the need for admins to manage the local account password. Mac customers in the enterprise have long wanted a solution to use their Microsoft Entra ID password to log on to Macs.
@@ -110,6 +84,32 @@ To enable it, an administrator needs to configure PSSO through Microsoft Intune.
 1. The operating system (OS) sends a login request to Microsoft Entra ID with an embedded assertion signed with the UserSecureEnclaveKey that resides in the Secure Enclave.
 1. Microsoft Entra ID validates the signed assertion using the user's securely registered public key of UserSecureEnclave key. Microsoft Entra ID validates the signature and nonce. Once the assertion is validated, Microsoft Entra ID creates a [primary refresh token (PRT)](../devices/concept-primary-refresh-token.md) encrypted with the public key of the UserDeviceEncryptionKey that is exchanged during registration and sends the response back to OS.
 1. The OS decrypts and validates the response, retrieves the SSO tokens, stores and and shares it with the SSO extension for providing SSO. The user is able to access macOS, cloud and on-premises applications without the need to authenticate again (SSO).
+
+## Microsoft Authenticator
+
+You can also allow your employee's phone to become a passwordless authentication method. You may already be using the Authenticator app as a convenient multi-factor authentication option in addition to a password. You can also use the Authenticator App as a passwordless option.
+
+![Sign in to Microsoft Edge with the Microsoft Authenticator](./media/concept-authentication-passwordless/concept-web-sign-in-microsoft-authenticator-app.png)
+
+The Authenticator App turns any iOS or Android phone into a strong, passwordless credential. Users can sign in to any platform or browser by getting a notification to their phone, matching a number displayed on the screen to the one on their phone, and then using their biometric (touch or face) or PIN to confirm. Refer to [Download and install the Microsoft Authenticator](https://support.microsoft.com/account-billing/download-and-install-the-microsoft-authenticator-app-351498fc-850a-45da-b7b6-27e523b8702a) for installation details.
+
+Passwordless authentication using the Authenticator app follows the same basic pattern as Windows Hello for Business. It's a little more complicated as the user needs to be identified so that Microsoft Entra ID can find the Authenticator app version being used:
+
+![Diagram that outlines the steps involved for user sign-in with the Microsoft Authenticator App](./media/concept-authentication-passwordless/authenticator-app-flow.png)
+
+1. The user enters their username.
+1. Microsoft Entra ID detects that the user has a strong credential and starts the Strong Credential flow.
+1. A notification is sent to the app via Apple Push Notification Service (APNS) on iOS devices, or via Firebase Cloud Messaging (FCM) on Android devices.
+1. The user receives the push notification and opens the app.
+1. The app calls Microsoft Entra ID and receives a proof-of-presence challenge and nonce.
+1. The user completes the challenge by entering their biometric or PIN to unlock private key.
+1. The nonce is signed with the private key and sent back to Microsoft Entra ID.
+1. Microsoft Entra ID performs public/private key validation and returns a token.
+
+To get started with passwordless sign-in, complete the following how-to:
+
+> [!div class="nextstepaction"]
+> [Enable passwordless sign using the Authenticator app](howto-authentication-passwordless-phone.md)
 
 ## FIDO2 security keys
 
