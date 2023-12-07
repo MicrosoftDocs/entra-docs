@@ -15,8 +15,7 @@ ms.date: 09/15/2023
 
 # Issue Microsoft Entra Verified ID credentials from an application
 
-[!INCLUDE [Verifiable Credentials announcement](~/../azure-docs-pr/includes/verifiable-credentials-brand.md)]
-
+  
 In this tutorial, you run a sample application from your local computer that connects to your Microsoft Entra tenant. Using the application, you're going to issue and verify a verified credential expert card.
 
 In this article, you learn how to:
@@ -38,12 +37,12 @@ The following diagram illustrates the Microsoft Entra Verified ID architecture a
 
 - [Set up a tenant for Microsoft Entra Verified ID](./verifiable-credentials-configure-tenant.md).
 - To clone the repository that hosts the sample app, install [GIT](https://git-scm.com/downloads).
-- [Visual Studio Code](https://code.visualstudio.com/Download), or similar code editor.
-- [.NET 5.0](https://dotnet.microsoft.com/download/dotnet/5.0).
+- [Visual Studio Code](https://code.visualstudio.com/Download), [Visual Studio](https://visualstudio.microsoft.com/downloads/) or similar code editor.
+- [.NET 7.0](https://dotnet.microsoft.com/download/dotnet/6.0).
 - Download [ngrok](https://ngrok.com/) and sign up for a free account. If you can't use `ngrok` in your organization, read this [FAQ](verifiable-credentials-faq.md#i-cannot-use-ngrok-what-do-i-do).
 - A mobile device with Microsoft Authenticator:
-  - Android version 6.2206.3973 or later installed.
-  - iOS version 6.6.2 or later installed.
+  - Android version 6.2310.7174 or later installed.
+  - iOS version 6.7.17 or later installed.
 
 ## Create the verified credential expert card in Azure
 
@@ -213,8 +212,8 @@ The following JSON demonstrates a complete *appsettings.json* file:
     "ClientId": "33333333-0000-0000-0000-000000000000",
     "ClientSecret": "123456789012345678901234567890",
     "CertificateName": "[Or instead of client secret: Enter here the name of a certificate (from the user cert store) as registered with your application]",
-    "IssuerAuthority": "did:web:example.com...",
-    "VerifierAuthority": "did:web:example.com...",
+    "IssuerAuthority": "did:web:...your-decentralized-identifier...",
+    "VerifierAuthority": "did:web:...your-decentralized-identifier...",
     "CredentialManifest":  "https://verifiedid.did.msidentity.com/v1.0/12345678-0000-0000-0000-000000000000/verifiableCredentials/contracts/VerifiedCredentialExpert"
   }
 }

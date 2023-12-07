@@ -11,7 +11,7 @@ ms.service: active-directory
 ms.subservice: enterprise-users
 ms.topic: how-to
 ms.workload: identity
-ms.date: 09/08/2023
+ms.date: 11/16/2023
 ms.author: barclayn
 ms.reviewer: sumitp
 ms.custom: "it-pro;seo-update-azuread-jan"
@@ -50,7 +50,7 @@ On the **Update license assignments** page, if you see that some checkboxes are 
 1. Select the check box for Office 365 E3 and ensure that at minimum the all of the E1 services that are assigned to the user are selected.
 1. Clear the check box for Office 365 E1.
 
-    ![license assignments page for a user showing Office 365 E1 cleared and Office 365 E3 selected](./media/licensing-groups-change-licenses/update-user-license-assignments.png)
+   :::image type="content" source="./media/licensing-groups-change-licenses/update-user-license-assignments.png" alt-text="Screenshot of the license assignments page for a user showing Office 365 E1 cleared and Office 365 E3 selected.":::
 
 1. Select **Save**.
 
@@ -66,7 +66,7 @@ Microsoft Entra ID applies the new licenses and removes the old licenses simulta
 1. Select the check box for Office 365 E3. To maintain continuity of service, ensure that you select all of the E1 services that are already assigned to the user.
 1. Clear the check box for Office 365 E1.
 
-    ![Select the Assignments command on a user or group Licenses page](./media/licensing-groups-change-licenses/update-group-license-assignments.png)
+   :::image type="content" source="./media/licensing-groups-change-licenses/update-group-license-assignments.png" alt-text="Screenshot of selecting the Assignments command on a user or group Licenses page.":::
 
 1. Select **Save**.
 

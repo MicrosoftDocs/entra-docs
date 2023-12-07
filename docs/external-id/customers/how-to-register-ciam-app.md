@@ -1,12 +1,12 @@
 ---
 title: Register an app in Microsoft Entra ID for customers
 description: Learn about how to register an app in the customer tenant.
-services: active-directory
+ 
 author: csmulligan
 ms.author: cmulligan
 manager: CelesteDG
 ms.service: active-directory
-ms.workload: identity
+ 
 ms.subservice: ciam
 ms.topic: how-to
 ms.date: 07/12/2023

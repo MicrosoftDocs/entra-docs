@@ -14,7 +14,7 @@ Go to the [Azure AD Connect - Microsoft Entra admin center](https://entra.micros
 
 Get notified about when to revisit this page for updates by copying and pasting this URL: `https://aka.ms/cloudsyncrss` into your ![RSS feed reader icon](media/cloud-sync-version-history/feed-icon-16-x-16.png) feed reader.
 
-## 1.1.1367.0
+## 1.1.1370.0
 
 Release date: October 16th, 2023
 

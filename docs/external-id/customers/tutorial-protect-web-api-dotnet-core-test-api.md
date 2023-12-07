@@ -1,13 +1,13 @@
 ---
 title: Test a protected web API
 description: Learn how to test a protected web API registered in a customer tenant
-services: active-directory
+ 
 author: SHERMANOUKO
 manager: mwongerapk
 
 ms.author: shermanouko
 ms.service: active-directory
-ms.workload: identity
+ 
 ms.custom: devx-track-dotnet
 ms.subservice: ciam
 ms.topic: tutorial

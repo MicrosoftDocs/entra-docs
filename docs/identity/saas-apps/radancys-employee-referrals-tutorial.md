@@ -1,13 +1,13 @@
 ---
 title: Microsoft Entra SSO integration with Radancy's Employee Referrals
 description: Learn how to configure single sign-on between Microsoft Entra ID and Radancy's Employee Referrals.
-services: active-directory
+
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.topic: tutorial
 ms.date: 01/19/2023
 ms.author: jeedes

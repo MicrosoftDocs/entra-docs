@@ -79,7 +79,7 @@ items:
     - name: Microsoft Entra ID Protection
       tocHref: /entra/id-protection/
       topicHref: /entra/id-protection/
-    - name: Microsoft Entra Permissions Protection
+    - name: Microsoft Entra Permissions Management
       tocHref: /entra/permissions-management/
       topicHref: /entra/permissions-management/
     - name: Microsoft Entra Verified ID

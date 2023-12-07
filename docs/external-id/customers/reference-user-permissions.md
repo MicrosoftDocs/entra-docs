@@ -1,11 +1,11 @@
 ---
 title: User default permissions in customer tenants
 description: Learn about the default permissions for users in a customer tenant.
-services: active-directory
+ 
 author: msmimart
 manager: celestedg
 ms.service: active-directory
-ms.workload: identity
+ 
 ms.subservice: ciam
 ms.topic: reference
 ms.date: 05/01/2023

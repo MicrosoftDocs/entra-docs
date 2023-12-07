@@ -15,20 +15,22 @@ ms.author: barclayn
 
 If your organization wants its employees to get their place of work verified on LinkedIn, you need to follow these few steps:
 
-1. Setup your Microsoft Entra Verified ID service by following these [instructions](verifiable-credentials-configure-tenant.md).
-1. [Create](how-to-use-quickstart-verifiedemployee.md#create-a-verified-employee-credential) a Verified ID Employee credential.
-1. Deploy the custom webapp from [GitHub](https://github.com/Azure-Samples/VerifiedEmployeeIssuance).
+1. Setup your Microsoft Entra Verified ID service by following the [quick setup instructions](verifiable-credentials-configure-tenant-quick.md).
+1. The quick setup creates the VerifiedEmployee credential type automatically. But if you did setup Verified ID using the [manual setup instructions](verifiable-credentials-configure-tenant.md), then you need to manually [create](how-to-use-quickstart-verifiedemployee.md#create-a-verified-employee-credential) a Verified ID Employee credential.
+1. Use [MyAccount](verifiable-credentials-configure-tenant-quick.md#myaccount-available-now-to-simplify-issuance-of-workplace-credentials) to issue your VerifiedEmployee credentials.
 1. Configure the LinkedIn company page  with your organization DID (decentralized identity) and URL of the custom Webapp. You cannot self-service the LinkedIn company page.
 1. Today, you need to fill in [this form](https://aka.ms/enablelinkedin) and we can enable your organization.
 1. Once you deploy the updated LinkedIn mobile app your employees can get verified.
 
 >[!IMPORTANT]
-> The form requires that you provide your account manager as the Microsoft contact. The app version required is Android **4.1.813** or newer, or IOS we require **9.27.2173** or newer. Keep in mind that inside the app, the version number shows **9.27.2336**, but in the App store the version number would be **9.1.312** or higher.
+> The form requires that you provide your Microsoft account manager as the contact. The app version required is Android **4.1.813** or newer, or iOS we require **9.27.2173** or newer. Keep in mind that inside the app, the version number shows **9.27.2336**, but in the App store the version number would be **9.1.312** or higher.
 
 >[!NOTE]
 > Review LinkedIn's documentation for information on [verifications on LinkedIn profiles.](https://www.linkedin.com/help/linkedin/answer/a1359065).
 
 ## Deploying custom Webapp
+
+If you prefer to deploy your own app to issue VerifiedEmployee credentials instead of using [MyAccount](https://myaccount.microsoft.com), then follow these instructions.
 
 Deploying this custom webapp from [GitHub](https://github.com/Azure-Samples/VerifiedEmployeeIssuance) allows an administrator to have control over who can get verified and change which information is shared with LinkedIn.
 There are two reasons to deploy the custom webapp for LinkedIn Employment verification.
@@ -55,19 +57,18 @@ Once the administrator configures the company page on LinkedIn, employees can ge
 
 1. User starts the LinkedIn mobile app. 
 1. The mobile app retrieves information from the LinkedIn backend and checks if the company is enabled for employment verification and it retrieves a URL to the custom Webapp.
-1. If the company is enabled, the user can tap on the verify employment link, and the user is sent to the Webapp in a web view.
+1. If the company is enabled, the user can tap on the verify employment link, and the user is sent to either [MyAccount](https://myaccount.microsoft.com) or the custom webapp in a web view.
 1. The user needs to provide their corporate credentials to sign in.
-1. The Webapp retrieves the user profile from Microsoft Graph including, ```firstname```, ```lastname```, ```displayname```, ```jobtitle```, ```upn```, ```email``` and ```photo``` and call the Microsoft Entra Verified ID service with the profile information.
+1. MyAccount or the custom webapp retrieves the user profile from Microsoft Graph including, ```firstname```, ```lastname```, ```displayname```, ```jobtitle```, ```upn```, ```email``` and ```photo``` and call the Microsoft Entra Verified ID service with the profile information.
 1. The Microsoft Entra Verified ID service creates a verifiable credentials issuance request and returns the URL of that specific request.
-1. The Webapp redirects back to the LinkedIn app with this specific URL.
+1. MyAccount or the custom webapp redirects back to the LinkedIn app with this specific URL.
 1. LinkedIn app wallet communicates with the Microsoft Entra Verified ID services to get the Verified Employment VC issued in their wallet, which is part of the LinkedIn mobile app.
 1. The LinkedIn app then verifies the received verifiable credential.
 1. If the verification is completed, they change the status to ‘verified’ in their backend system and is visible to other users of LinkedIn.
- 
+
 The diagram below shows the dataflow of the entire solution.
 
    ![Diagram showing a high-level flow.](media/linkedin-employment-verification/linkedin-employee-verification.png)
-
 
 ## Frequently asked questions
 
@@ -77,7 +78,7 @@ Currently the solution works through the embedded webview. In the future LinkedI
 
 ### How do users sign-in?
 
-The Webapp is protected using Microsoft Entra ID. Users sign-in according to the administrator's policy, either with passwordless, regular username and password, with or without MFA, etc. This is proof a user is allowed to get issued a verified employee ID.
+[MyAccount](https://myaccount.microsoft.com) or the custom webapp is protected using Microsoft Entra ID. Users sign-in according to the administrator's policy, either with passwordless, regular username and password, with or without MFA, etc. This is proof a user is allowed to get issued a verified employee ID.
 
 ### What happens when an employee leaves the organization?
 

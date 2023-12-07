@@ -15,8 +15,7 @@ ms.author: barclayn
 
 # Create verifiable credentials for ID tokens
 
-[!INCLUDE [Verifiable Credentials announcement](~/../azure-docs-pr/includes/verifiable-credentials-brand.md)]
-
+  
 
 A [rules definition](rules-and-display-definitions-model.md#rulesmodel-type) that uses the [idTokens attestation](rules-and-display-definitions-model.md#idtokenattestation-type) produces an issuance flow where you're required to do an interactive sign-in to an OpenID Connect (OIDC) identity provider in Microsoft Authenticator. Claims in the ID token that the identity provider returns can be used to populate the issued verifiable credential. The claims mapping section in the rules definition specifies which claims are used. 
 
@@ -98,7 +97,7 @@ The claims mapping in the following example requires that you configure the toke
             "outputClaim": "userName",
             "required": true,
             "inputClaim": "$.upn",
-            "indexed": false
+            "indexed": true
           },
           {
             "outputClaim": "displayName",
@@ -116,7 +115,7 @@ The claims mapping in the following example requires that you configure the toke
             "outputClaim": "lastName",
             "required": true,
             "inputClaim": "$.family_name",
-            "indexed": true
+            "indexed": false
           }
         ],
         "required": false

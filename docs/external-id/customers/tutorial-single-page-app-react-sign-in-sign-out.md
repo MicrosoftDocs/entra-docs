@@ -1,7 +1,7 @@
 ---
 title: Tutorial - Add sign-in and sign-out to a React single-page app (SPA) for a customer tenant
 description: Learn how to configure a React single-page app (SPA) to sign in and sign out users with your Microsoft Entra ID for customers tenant.
-services: active-directory
+ 
 author: godonnell
 manager: celestedg
 
@@ -29,12 +29,11 @@ In this tutorial;
 
 * Completion of the prerequisites and steps in [Prepare an single-page app for authentication](./tutorial-single-page-app-react-sign-in-prepare-app.md).
 
-
 ## Change filename and add function to render authenticated information
 
 By default, the application runs via a JavaScript file called *App.js*. It needs to be changed to a *.jsx* file, which is an extension that allows a developer to write HTML in React.
 
-1. Rename *App.js* to *App.jsx*.
+1. Ensure *App.js* has been renamed to *App.jsx*.
 1. Replace the existing code with the following snippet:
 
    ```javascript

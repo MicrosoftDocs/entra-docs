@@ -30,7 +30,7 @@ In the context of your identity infrastructure, resilience is the ability to end
 
 ## Why worry about disruption?
 
-Every call to the authentication system is subject to disruption if any component of the call fails. When authentication is disrupted, because of the underlying component failures, your users won't access their applications. Therefore, reducing the number of authentication calls and number of dependencies in those calls is important to your resilience. Application developers can assert some control over how often tokens are requested. For example, work with your developers to ensure they're using Microsoft Entra managed identities for their applications wherever possible. 
+Every call to the authentication system is subject to disruption if any component of the call fails. When authentication is disrupted, because of the underlying component failures, your users won't access their applications. Therefore, reducing the number of authentication calls and number of dependencies in those calls is important to your resilience. Application developers can assert some control over how often tokens are requested. For example, work with your developers to ensure they're using managed identities for Azure resources for their applications wherever possible. 
 
 In a token-based authentication system like Microsoft Entra ID, a user's application (client) must acquire a security token from the identity system before it can access an application or other resource. During the validity period, a client can present the same token multiple times to access the application.
 

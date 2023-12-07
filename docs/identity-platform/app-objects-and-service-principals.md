@@ -3,16 +3,14 @@ title: Apps & service principals in Microsoft Entra ID
 description: Learn about the relationship between application and service principal objects in Microsoft Entra ID.
 author: rwike77
 manager: CelesteDG
-services: active-directory
-
+ms.author: ryanwi
+ms.custom: has-azure-ad-ps-ref
+ms.date: 05/22/2023
+ms.reviewer: sureshja
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-ms.workload: identity
-ms.date: 05/22/2023
-ms.author: ryanwi
-ms.custom: contperf-fy21q4-portal, aaddev, identityplatformtop40, has-azure-ad-ps-ref
-ms.reviewer: sureshja
+#Customer intent:
 ---
 
 # Application and service principal objects in Microsoft Entra ID
@@ -86,10 +84,10 @@ In the Microsoft Entra admin center, navigate to the application registration ov
 
 # [PowerShell](#tab/azure-powershell)
 
-Using PowerShell:
+Using Microsoft Graph PowerShell:
 
 ```azurepowershell
-Get-AzureADServicePrincipal -Filter "appId eq '{AppId}'"
+Get-MgServicePrincipal -Filter "appId eq '{AppId}'"
 ```
 
 # [Azure CLI](#tab/azure-cli)

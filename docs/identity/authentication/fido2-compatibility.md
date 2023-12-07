@@ -6,7 +6,7 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 10/09/2023
+ms.date: 12/06/2023
 
 author: justinha
 ms.author: justinha
@@ -33,7 +33,7 @@ This table shows support for authenticating Microsoft Entra ID and Microsoft Acc
 | **Android**  | &#10060; | &#10060; | &#10060; | N/A |
 
 >[!NOTE]
->This is the view for web support. Authentication for native apps in iOS and Android isn't available yet.
+>This is the view for web support. Authentication for native apps in macOS, iOS and Android isn't available yet.
 
 ## Browser support for each platform
 
@@ -98,7 +98,7 @@ The following tables show which transports are supported for each platform. Supp
 | Chrome  | &#10060;  | &#10060; | &#10060; |
 | Firefox | &#10060;  | &#10060; | &#10060; |
 
-<sup>1</sup>Security key biometrics or PIN for user verficiation are currently supported on Android by Google. Microsoft Entra ID requires user verification for all FIDO2 authentications.
+<sup>1</sup>Security key biometrics or PIN for user verification are currently supported on Android by Google. Microsoft Entra ID requires user verification for all FIDO2 authentications.
 
 ## Minimum browser version
 
@@ -111,6 +111,18 @@ The following are the minimum browser version requirements.
 | Firefox | 66 |
 
 <sup>1</sup>All versions of the new Chromium-based Microsoft Edge support FIDO2. Support on Microsoft Edge legacy was added in 1903.
+
+## Known issues
+
+If you're using Chrome or Edge, the browser might prioritize usage of a passkey that's stored on a mobile device over a passkey that's stored on a security key. 
+
+- Beginning with Windows 11 version 23H2, you can sign in with your work or school account and click **Next**. Below **More choices**, choose **Security key** and click **Next**.
+
+  :::image type="content" border="true" source="./media/howto-authentication-passwordless-security-key/security-key.png" alt-text="Screenshot of option to choose security key on Windows 11."::: 
+
+- On earlier versions of Windows, the browser may show the QR pairing screen to continue with using a passkey that's stored on a mobile device. To use a passkey that's stored on a security key instead, insert your security key and touch it to continue. 
+
+  :::image type="content" border="true" source="./media/howto-authentication-passwordless-security-key/insert-device-bound-passkey.png" alt-text="Screenshot of option to insert a device-bound passkey on Windows 10."::: 
 
 ## Next steps
 [Enable passwordless security key sign-in](./howto-authentication-passwordless-security-key.md)

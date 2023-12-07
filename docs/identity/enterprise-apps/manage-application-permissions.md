@@ -1,12 +1,12 @@
 ---
 title: Review permissions granted to applications
 description: Learn how to review and revoke permissions, and invalidate refresh tokens for an application in Microsoft Entra ID.
-services: active-directory
+
 author: Jackson-Woods
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
-ms.workload: identity
+
 ms.topic: how-to
 ms.date: 09/04/2023
 ms.author: jawoods

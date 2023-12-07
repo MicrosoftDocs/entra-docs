@@ -11,7 +11,7 @@ ms.topic: overview
 ms.date: 01/31/2023
 ms.author: rolyon
 ms.reviewer: vincesm
-ms.custom: it-pro, has-azure-ad-ps-ref
+ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
 
 # Enterprise application permissions for custom roles in Microsoft Entra ID

@@ -1,14 +1,14 @@
 ---
 title: 'Tutorial: Configure Humbol for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Humbol.
-services: active-directory
+
 author: twimmers
 writer: twimmers
 manager: jeedes
 ms.assetid: a34b8778-3a56-4a39-835d-54044079350d
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.topic: tutorial
 ms.date: 06/02/2023
 ms.author: thwimmer

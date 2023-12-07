@@ -1,18 +1,16 @@
 ---
 title: How and why apps are added to Microsoft Entra ID
 description: What does it mean for an application to be added to Microsoft Entra ID and how do they get there?
-services: active-directory
 author: cilwerner
 manager: CelesteDG
-
+ms.author: cwerner
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.date: 10/26/2022
+ms.reviewer: lenalepa, sureshja
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-ms.workload: identity
-ms.date: 10/26/2022
-ms.author: cwerner
-ms.custom: aaddev, engagement-fy23, has-azure-ad-ps-ref
-ms.reviewer: lenalepa, sureshja
+#Customer intent:
 ---
 
 # How and why applications are added to Microsoft Entra ID
@@ -95,7 +93,7 @@ Applications that you add yourself (represented as **App (yours)** in the diagra
 
 ### Notes and exceptions
 
-- Not all service principals point back to an application object. When Microsoft Entra ID was originally built the services provided to applications were more limited, and the service principal was sufficient for establishing an application identity. The original service principal was closer in shape to the Windows Server Active Directory service account. For this reason, it's still possible to create service principals through different pathways, such as using Azure AD PowerShell, without first creating an application object. The Microsoft Graph API requires an application object before creating a service principal.
+- Not all service principals point back to an application object. When Microsoft Entra ID was originally built the services provided to applications were more limited, and the service principal was sufficient for establishing an application identity. The original service principal was closer in shape to the Windows Server Active Directory service account. For this reason, it's still possible to create service principals through different pathways, such as using [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview), without first creating an application object. The Microsoft Graph API requires an application object before creating a service principal.
 - Not all of the information described above is currently exposed programmatically. The following are only available in the UI:
   - Claims transformation rules
   - Attribute mappings (User provisioning)

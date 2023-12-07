@@ -9,7 +9,7 @@ ms.service: active-directory
 ms.subservice: enterprise-users
 ms.workload: identity
 ms.topic: overview
-ms.date: 06/07/2023
+ms.date: 12/04/2023
 ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro
@@ -19,7 +19,6 @@ ms.collection: M365-identity-device-management
 # Dynamic membership rules for groups in Microsoft Entra ID
 
 You can create attribute-based rules to enable dynamic membership for a group in Microsoft Entra ID, part of Microsoft Entra. Dynamic group membership adds and removes group members automatically using membership rules based on member attributes. This article details the properties and syntax to create dynamic membership rules for users or devices. You can set up a rule for dynamic membership on security groups or Microsoft 365 groups.
-
 
 When the attributes of a user or a device change, the system evaluates all dynamic group rules in a directory to see if the change would trigger any group adds or removes. If a user or device satisfies a rule on a group, they're added as a member of that group. If they no longer satisfy the rule, they're removed. You can't manually add or remove a member of a dynamic group.
 - You can create a dynamic group for devices or for users, but you can't create a rule that contains both users and devices.
@@ -45,7 +44,7 @@ Here are some examples of advanced rules or syntax for which we recommend that y
 
 For more step-by-step instructions, see [Create or update a dynamic group](groups-create-rule.md).
 
-![Add membership rule for a dynamic group](./media/groups-dynamic-membership/update-dynamic-group-rule.png)
+:::image type="content" source="./media/groups-dynamic-membership/update-dynamic-group-rule.png" alt-text="Screenshot of the add membership rule for a dynamic group.":::
 
 ### Rule syntax for a single expression
 
@@ -74,8 +73,10 @@ The order of the parts within an expression is important to avoid syntax errors.
 There are three types of properties that can be used to construct a membership rule.
 
 - Boolean
+- DateTime
 - String
 - String collection
+
 
 The following are the user properties that you can use to create a single expression.
 
@@ -85,6 +86,12 @@ Properties | Allowed values | Usage
 --- | --- | ---
 accountEnabled |true false |user.accountEnabled -eq true
 dirSyncEnabled |true false |user.dirSyncEnabled -eq true
+
+### Properties of type dateTime
+
+| Properties | Allowed values | Usage |
+| --- | --- | --- |
+| employeeHireDate (Preview) |Any DateTimeOffset value or keyword system.now | user.employeeHireDate -eq "value" |
 
 ### Properties of type string
 
@@ -96,7 +103,6 @@ dirSyncEnabled |true false |user.dirSyncEnabled -eq true
 | department |Any string value or *null* | user.department -eq "value" |
 | displayName |Any string value | user.displayName -eq "value" |
 | employeeId |Any string value | user.employeeId -eq "value"<br>user.employeeId -ne *null* |
-| employeeHireDate (Preview) |Any DateTimeOffset value or keyword system.now | user.employeeHireDate -eq "value" |
 | facsimileTelephoneNumber |Any string value or *null* | user.facsimileTelephoneNumber -eq "value" |
 | givenName |Any string value or *null* | user.givenName -eq "value" |
 | jobTitle |Any string value or *null* | user.jobTitle -eq "value" |

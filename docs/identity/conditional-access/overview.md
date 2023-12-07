@@ -2,19 +2,15 @@
 title: What is Conditional Access in Microsoft Entra ID?
 description: Conditional Access is the Zero Trust policy engine at the heart of the new identity-driven control plane.
 
-services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: overview
-ms.date: 08/24/2023
+ms.date: 11/09/2023
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: kvenkit
-
-ms.collection: M365-identity-device-management
-ms.custom: zt-include
 ---
 # What is Conditional Access?
 
@@ -92,27 +88,29 @@ Administrators can create policies from scratch or start from a template policy 
 
 ## Administrator experience
 
-Administrators with the [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) role can manage policies. 
+Administrators with the [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) role can manage policies.
 
 Conditional Access is found in the [Microsoft Entra admin center](https://entra.microsoft.com) under **Protection** > **Conditional Access**.
 
 :::image type="content" source="media/overview/conditional-access-overview.png" alt-text="Screenshot of the Conditional Access overview page." lightbox="media/overview/conditional-access-overview.png":::
 
-- The **Overview** page provides a summary of policy state, users, devices, and applications as well as general and security alerts with suggestions. 
-- The **Coverage** page provides a synopsis of applications with and without Conditional Access policy coverage over the last seven days. 
+- The **Overview** page provides a summary of policy state, users, devices, and applications as well as general and security alerts with suggestions.
+- The **Coverage** page provides a synopsis of applications with and without Conditional Access policy coverage over the last seven days.
 - The **Monitoring** page allows administrators to see a graph of sign-ins that can be filtered to see potential gaps in policy coverage.
+
+Conditional Access policies on the **Policies** page can be filtered by administrators based on items like the actor, target resource, condition, control applied, state, or date. This filtering ability allows administrators to find specific policies based on their configuration quickly.
 
 ## License requirements
 
 [!INCLUDE [Active Directory P1 license](~/includes/entra-p1-license.md)]
 
-Customers with [Microsoft 365 Business Premium licenses](/office365/servicedescriptions/office-365-service-descriptions-technet-library) also have access to Conditional Access features. 
+Customers with [Microsoft 365 Business Premium licenses](/office365/servicedescriptions/office-365-service-descriptions-technet-library) also have access to Conditional Access features.
 
 Risk-based policies require access to [Identity Protection](~/id-protection/overview-identity-protection.md), which requires P2 licenses.
 
-Other products and features that may interact with Conditional Access policies require appropriate licensing for those products and features.
+Other products and features that interact with Conditional Access policies require appropriate licensing for those products and features.
 
-When licenses required for Conditional Access expire, policies aren't automatically disabled or deleted. This grants customers the ability to migrate away from Conditional Access policies without a sudden change in their security posture. Remaining policies can be viewed and deleted, but no longer updated. 
+When licenses required for Conditional Access expire, policies aren't automatically disabled or deleted. This grants customers the ability to migrate away from Conditional Access policies without a sudden change in their security posture. Remaining policies can be viewed and deleted, but no longer updated.
 
 [Security defaults](~/fundamentals/security-defaults.md) help protect against identity-related attacks and are available for all customers.  
 

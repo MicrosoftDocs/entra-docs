@@ -1,13 +1,13 @@
 ---
 title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Kisi Physical Security'
 description: Learn how to configure single sign-on between Microsoft Entra ID and Kisi Physical Security.
-services: active-directory
+
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: jeedes
@@ -34,6 +34,7 @@ In this tutorial, you configure and test Microsoft Entra SSO in a test environme
 
 * Kisi Physical Security supports **SP and IDP** initiated SSO.
 * Kisi Physical Security supports **Just In Time** user provisioning.
+* Kisi Physical Security supports [Automated user provisioning](kisi-physical-security-provisioning-tutorial.md).
 
 > [!NOTE]
 > Identifier of this application is a fixed string value so only one instance can be configured in one tenant.

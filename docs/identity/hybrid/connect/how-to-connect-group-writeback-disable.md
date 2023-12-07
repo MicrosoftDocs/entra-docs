@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: active-directory
 ms.topic: how-to
 ms.workload: identity
-ms.date: 01/26/2023
+ms.date: 11/06/2023
 ms.subservice: hybrid
 ms.author: billmath
 
@@ -15,6 +15,9 @@ ms.collection: M365-identity-device-management
 ---
 
 # Disable group writeback 
+
+[!INCLUDE [deprecation](~/includes/gwb-v2-deprecation.md)]
+
 This article walks you through disabling group writeback in Microsoft Entra Connect. 
 
 ## Disable group writeback by using the wizard

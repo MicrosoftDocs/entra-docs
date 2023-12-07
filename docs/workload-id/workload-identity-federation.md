@@ -9,9 +9,9 @@ ms.service: active-directory
 ms.subservice: workload-identities
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 09/15/2023
+ms.date: 11/6/2023
 ms.author: ryanwi
-ms.reviewer: shkhalid, udayh
+ms.reviewer: ludwicknick
 ms.custom: aaddev 
 #Customer intent: As a developer, I want to learn about workload identity federation so that I can securely access Microsoft Entra protected resources from external apps and services without needing to manage secrets. 
 ---
@@ -40,6 +40,7 @@ The following scenarios are supported for accessing Microsoft Entra protected re
 - Workloads running in Amazon Web Services (AWS). First, configure a trust relationship between your user-assigned managed identity or app in Microsoft Entra ID and an identity in Amazon Cognito. Then configure your software workload running in AWS to get an access token from Microsoft identity provider and access Microsoft Entra protected resources.  See [Workload identity federation with AWS](https://blog.identitydigest.com/azuread-federate-aws/).
 - Other workloads running in compute platforms outside of Azure. Configure a trust relationship between your [user-assigned managed identity](workload-identity-federation-create-trust-user-assigned-managed-identity.md) or [application](workload-identity-federation-create-trust.md) in Microsoft Entra ID and the external IdP for your compute platform. You can use tokens issued by that platform to authenticate with Microsoft identity platform and call APIs in the Microsoft ecosystem. Use the [client credentials flow](~/identity-platform/v2-oauth2-client-creds-grant-flow.md#third-case-access-token-request-with-a-federated-credential) to get an access token from Microsoft identity platform, passing in the identity provider's JWT instead of creating one yourself using a stored certificate.
 - SPIFFE and SPIRE are a set of platform agnostic, open-source standards for providing identities to your software workloads deployed across platforms and cloud vendors. First, configure a trust relationship between your user-assigned managed identity or app in Microsoft Entra ID and a SPIFFE ID for an external workload. Then configure your external software workload to get an access token from Microsoft identity provider and access Microsoft Entra protected resources.  See [Workload identity federation with SPIFFE and SPIRE](https://blog.identitydigest.com/azuread-federate-spiffe/).
+- Create a new service connection in Azure Pipelines (preview).  [Create an Azure Resource Manager service connection](/azure/devops/pipelines/library/connect-to-azure#create-an-azure-resource-manager-service-connection-using-workload-identity-federation) using workload identity federation.
 
 > [!NOTE]
 > Microsoft Entra ID issued tokens may not be used for federated identity flows. The federated identity credentials flow does not support tokens issued by Microsoft Entra ID.

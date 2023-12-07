@@ -16,8 +16,7 @@ ms.author: barclayn
 
 # Verifiable credentials admin API
 
-[!INCLUDE [Verifiable Credentials announcement](~/../azure-docs-pr/includes/verifiable-credentials-brand.md)]
-
+  
 The Microsoft Entra Verified ID Admin API enables you to manage all aspects of the Verifiable Credential service. It offers a way to set up a brand new service, manage and create Verifiable Credential contracts, revoke Verifiable Credentials and completely opt out the service as well.
 
 > The API is intended for developers comfortable with RESTful APIs and enough permissions on the Microsoft Entra tenant to enable the service
@@ -99,10 +98,12 @@ This endpoint can be used to create or update a Verifiable Credential service in
 | [List Authority](#list-authorities)     | Authority array     | Get a list of all configured Authorities/verifiable credential services     |
 | [Create Authority](#create-authority) | Authority | Create a new authority |
 | [Update authority](#update-authority) | Authority | Update authority |
+| [Delete authority](#delete-authority) | Authority | Delete authority |
 | [Generate Well known DID Configuration](#well-known-did-configuration) | | |
 | [Generate DID Document](#generate-did-document) | | |
 | [Validate Well-known DID config](#validate-well-known-did-configuration) | | |
-| [Rotate Signing Key](#rotate-signing-keys) | | |
+| [Rotate Signing Key](#rotate-signing-key) | Authority | Rotate signing key |
+| [Synchronize with DID Document](#synchronize-with-did-document) | Authority | Synchronize DID document with new signing key |
 
 
 ### Get authority
@@ -137,19 +138,15 @@ Content-type: application/json
     "name": "ExampleAuthorityName",
     "status": "Enabled",
     "didModel": {
-        "did": "did:ion:EiAVvtjqr_Ji8pXGNtherrMW2FPl5Ays9mII2vP_QTgUWA:eyJkZWx...<SNIP>",
+        "did": "did:web:verifiedid.contoso.com",
         "signingKeys": [
-            "https://vccontosokv.vault.azure.net/keys/issuerSigningKeyIon-ffea7eb3-0000-1111-2222-000000000000/5257c49db8164e198b4c5997e8a31ad4"
+            "https://vccontosokv.vault.azure.net/keys/vcSigningKey-ffea7eb3-0000-1111-2222-000000000000/5257c49db8164e198b4c5997e8a31ad4"
         ],
-        "recoveryKeys": [
-            "https://vccontosokv.vault.azure.net/keys/issuerRecoveryKeyIon-ffea7eb3-0000-1111-2222-000000000000/5cfb5458af524da88897522690e01a7e"
-        ],
-        "updateKeys": [
-            "https://vccontosokv.vault.azure.net/keys/issuerUpdateKeyIon-ffea7eb3-0000-1111-2222-000000000000/24494dbbbace4a079422dde943e1b6f0"
-        ],
+        "recoveryKeys": [],
+        "updateKeys": [],
         "encryptionKeys": [],
         "linkedDomainUrls": [
-            "https://www.contoso.com/"
+            "https://verifiedid.contoso.com/"
         ],
         "didDocumentStatus": "published"
     },
@@ -231,22 +228,18 @@ Content-type: application/json
     [
         {
             "id": "ffea7eb3-0000-1111-2222-000000000000",
-            "name": "ContractName",
+            "name": "AuthorityName",
             "status": "Enabled",
             "didModel": {
-                "did": "did:ion:EiAVvtjqr_Ji8pXGNtherrMW2FPl5Ays9mII2vP_QTgUWA:eyJkZWx<SNIP>...",
+                "did": "did:web:verifiedid.contoso.com",
                 "signingKeys": [
-                    "https://vccontosokv.vault.azure.net/keys/issuerSigningKeyIon-ffea7eb3-0000-1111-2222-000000000000/5257c49db8164e198b4c5997e8a31ad4"
+                    "https://vccontosokv.vault.azure.net/keys/vcSigningKey-ffea7eb3-0000-1111-2222-000000000000/5257c49db8164e198b4c5997e8a31ad4"
                 ],
-                "recoveryKeys": [
-                    "https://vccontosokv.vault.azure.net/keys/issuerRecoveryKeyIon-ffea7eb3-0000-1111-2222-000000000000/5cfb5458af524da88897522690e01a7e"
-                ],
-                "updateKeys": [
-                    "https://vccontosokv.vault.azure.net/keys/issuerUpdateKeyIon-ffea7eb3-0000-1111-2222-000000000000/24494dbbbace4a079422dde943e1b6f0"
-                ],
+                "recoveryKeys": [],
+                "updateKeys": [],
                 "encryptionKeys": [],
                 "linkedDomainUrls": [
-                    "https://www.contoso.com/"
+                    "https://verifiedid.contoso.com/"
                 ],
                 "didDocumentStatus": "published"
             },
@@ -259,23 +252,19 @@ Content-type: application/json
         },
         {
             "id": "cc55ba22-0000-1111-2222-000000000000",
-            "name": "APItest6",
+            "name": "AuthorityName2",
             "keyVaultUrl": "https://vccontosokv.vault.azure.net/",
             "status": "Enabled",
             "didModel": {
-                "did": "did:ion:EiD_mGdhdAXOS1BV6c7r-CCjetaoRKuAENEwsRM1_QEHMg:eyJkZWx0YSI<SNIP>....",
+                "did": "did:web:verifiedid2.contoso.com",
                 "signingKeys": [
-                    "https://vccontosokv.vault.azure.net/keys/issuerSigningKeyIon-cc55ba22-0000-1111-2222-000000000000/f8f149eaee194beb83dfca14714ef62a"
+                    "https://vccontosokv.vault.azure.net/keys/vcSigningKey-cc55ba22-0000-1111-2222-000000000000/f8f149eaee194beb83dfca14714ef62a"
                 ],
-                "recoveryKeys": [
-                    "https://vccontosokv.vault.azure.net/keys/issuerRecoveryKeyIon-cc55ba22-0000-1111-2222-000000000000/68f976cc44014eafb354a6fe305b7d4d"
-                ],
-                "updateKeys": [
-                    "https://vccontosokv.vault.azure.net/keys/issuerUpdateKeyIon-cc55ba22-0000-1111-2222-000000000000/b85328af0c1f460ea026fbdda9cd6652"
-                ],
+                "recoveryKeys": [],
+                "updateKeys": [],
                 "encryptionKeys": [],
                 "linkedDomainUrls": [
-                    "https://www.contoso.com/"
+                    "https://verifiedid2.contoso.com/"
                 ],
                 "didDocumentStatus": "published"
             },
@@ -320,7 +309,7 @@ Example message:
 ```
 {
   "name":"ExampleName",
-  "linkedDomainUrl":"https://www.contoso.com/",
+  "linkedDomainUrl":"https://verifiedid.contoso.com/",
   "didMethod": "web",
   "keyVaultMetadata":
   {
@@ -343,7 +332,7 @@ Example message for did:web:
     "name": "APItesta",
     "status": "Enabled",
     "didModel": {
-        "did": "did:web:www.contoso.com",
+        "did": "did:web:verifiedid.contoso.com",
         "signingKeys": [
             "https://vcwingtipskv.vault.azure.net/keys/vcSigningKey-bacf5333-d68c-01c5-152b-8c9039fbd88d/5255b9f2d9b94dc19a369ff0d36e3407"
         ],
@@ -351,7 +340,7 @@ Example message for did:web:
         "updateKeys": [],
         "encryptionKeys": [],
         "linkedDomainUrls": [
-            "https://www.contoso.com/"
+            "https://verifiedid.contoso.com/"
         ],
         "didDocumentStatus": "published"
     },
@@ -377,19 +366,15 @@ Content-type: application/json
     "name": "APItest6",
     "status": "Enabled",
     "didModel": {
-        "did": "did:ion:EiD_mGdhdAXOS1BV6c7r-CCjetaoRKuAENEwsRM1_QEHMg",
+        "did": "did:web:verifiedid.contoso.com",
         "signingKeys": [
-            "https://vccontosokv.vault.azure.net/keys/issuerSigningKeyIon-cc55ba22-0000-1111-2222-000000000000/f8f149eaee194beb83dfca14714ef62a"
+            "https://vccontosokv.vault.azure.net/keys/vcSigningKey-cc55ba22-0000-1111-2222-000000000000/f8f149eaee194beb83dfca14714ef62a"
         ],
-        "recoveryKeys": [
-            "https://vccontosokv.vault.azure.net/keys/issuerRecoveryKeyIon-cc55ba22-0000-1111-2222-000000000000/68f976cc44014eafb354a6fe305b7d4d"
-        ],
-        "updateKeys": [
-            "https://vccontosokv.vault.azure.net/keys/issuerUpdateKeyIon-cc55ba22-0000-1111-2222-000000000000/b85328af0c1f460ea026fbdda9cd6652"
-        ],
+        "recoveryKeys": [],
+        "updateKeys": [],
         "encryptionKeys": [],
         "linkedDomainUrls": [
-            "https://www.contoso.com/"
+            "https://verifiedid.contoso.com/"
         ],
         "didDocumentStatus": "submitted"
     },
@@ -439,6 +424,67 @@ Example message
 }
 ```
 
+### Delete authority
+
+This method can be used to delete an authority. Currently only `did:ion` authorities can be deleted. When you delete an authority, any issued Verified ID credentials becomes invalid and cannot be verified anymore as the issuing authority is gone.
+
+#### HTTP request
+
+`DELETE /beta/verifiableCredentials/authorities/:authorityId`
+
+Replace the value of `:authorityId` with the value of the authority ID you want to delete.
+
+#### Request headers
+
+| Header | Value |
+| -------- | -------- |
+| Authorization     | Bearer (token). Required |
+| Content-Type | application/json |
+
+#### Request body
+
+No request body
+
+#### Response message
+
+Example response message:
+
+Successful delete authority response.
+
+```
+HTTP/1.1 200 OK
+```
+
+If delete of authority was successful but cleanup of Azure Key Vault keys had failed, you get the below response.
+
+```
+HTTP/1.1 400 Bad Request
+Content-type: application/json
+
+{
+"error": {
+        "code": "deleteIssuerSuccessfulButKeyDeletionFailed",
+        "message": "The organization has been opted out of the Verifiable Credentials, but the following keys could not be deleted. To keep your organization secure, delete keys that are not in use. https://kxxxxxx.vault.azure.net/keys/vcSigningKey-9daeexxxxx-0575-23dc-81be-5f6axxxxx/0dcc532adb9a4fcf9902f90xxxxx"
+    }
+}
+
+```
+
+Response message if trying to delete a did:web authority
+
+```
+HTTP/1.1 400 Bad Request
+Content-type: application/json
+
+{
+"error": {
+        "code": "didMethodNotSupported",
+        "message": "The specified DID method is not supported: web"
+    }
+}
+
+```
+
 ### Well-known DID configuration
 
 The `generateWellknownDidConfiguration` method generates the signed did-configuration.json file. The file must be uploaded to the `.well-known` folder in the root of the website hosted for the domain in the linked domain of this verifiable credential instance. Instructions can be found [here](how-to-dnsbind.md#verify-domain-ownership-and-distribute-did-configurationjson-file).
@@ -446,7 +492,6 @@ The `generateWellknownDidConfiguration` method generates the signed did-configur
 #### HTTP request
 
 `POST /v1.0/verifiableCredentials/authorities/:authorityId/generateWellknownDidConfiguration`
-
 
 #### Request headers
 
@@ -541,11 +586,11 @@ HTTP/1.1 200 OK
 Content-type: application/json
 
 {
-    "id": "did:web:www.contoso.com",
+    "id": "did:web:verifiedid.contoso.com",
     "@context": [
         "https://www.w3.org/ns/did/v1",
         {
-            "@base": "did:web:www.contoso.com"
+            "@base": "did:web:verifiedid.contoso.com"
         }
     ],
     "service": [
@@ -554,7 +599,7 @@ Content-type: application/json
             "type": "LinkedDomains",
             "serviceEndpoint": {
                 "origins": [
-                    "https://www.contoso.com/"
+                    "https://verifiedid.contoso.com/"
                 ]
             }
         },
@@ -571,7 +616,7 @@ Content-type: application/json
     "verificationMethod": [
         {
             "id": "#a2518db3b6b44332b3b667928a51b0cavcSigningKey-f0a5b",
-            "controller": "did:web:www.contoso.com",
+            "controller": "did:web:verifiedid.contoso.com",
             "type": "EcdsaSecp256k1VerificationKey2019",
             "publicKeyJwk": {
                 "crv": "secp256k1",
@@ -621,13 +666,13 @@ HTTP/1.1 204 No Content
 Content-type: application/json
 ```
 
-### Rotate signing keys
+### Rotate signing key
 
-The rotate signing keys update the private key for the did:web authority.
+The rotate signing key creates a new private key for the did:web authority. The DID document should be re-registered to reflect the update. When this is done, the [synchronizeWithDidDocument](#synchronize-with-did-document) tells the system to start using the new key for signing.
 
 #### HTTP request
 
-`POST /v1.0/verifiableCredentials/authorities/:authorityId/rotateSigningKey`
+`POST /v1.0/verifiableCredentials/authorities/:authorityId/didInfo/signingKeys/rotate`
 
 #### Request headers
 
@@ -642,11 +687,92 @@ Don't supply a request body for this method.
 
 #### Response message
 
+The `didDocumentStatus` will change to `outOfSync`.
+
 ```
-HTTP/1.1 202 Accepted
+HTTP/1.1 200 OK
 Content-type: application/json
+
+{
+    "id": "bacf5333-d68c-01c5-152b-8c9039fbd88d",
+    "name": "APItesta",
+    "status": "Enabled",
+    "didModel": {
+        "did": "did:web:verifiedid.contoso.com",
+        "signingKeys": [
+            "https://vcwingtipskv.vault.azure.net/keys/vcSigningKey-bacf5333-d68c-01c5-152b-8c9039fbd88d/5255b9f2d9b94dc19a369ff0d36e3407"
+        ],
+        "recoveryKeys": [],
+        "updateKeys": [],
+        "encryptionKeys": [],
+        "linkedDomainUrls": [
+            "https://verifiedid.contoso.com/"
+        ],
+        "didDocumentStatus": "outOfSync"
+    },
+    "keyVaultMetadata": {
+        "subscriptionId": "1853e356-bc86-4e54-8bb8-6db4e5eacdbd",
+        "resourceGroup": "verifiablecredentials",
+        "resourceName": "vcwingtipskv",
+        "resourceUrl": "https://vcwingtipskv.vault.azure.net/"
+    },
+    "linkedDomainsVerified": false
+}
 ```
 
+### Synchronize with DID Document
+
+After [rotating](#rotate-signing-key) the signing key, the DID document should be [re-registered](how-to-register-didwebsite.md#how-do-i-register-my-decentralized-id) to reflect the update. When this is done, the synchronizeWithDidDocument tells the system to start using the new key for signing.
+
+#### HTTP request
+
+`POST /v1.0/verifiableCredentials/authorities/:authorityId/didInfo/synchronizeWithDidDocument`
+
+#### Request headers
+
+| Header | Value |
+| -------- | -------- |
+| Authorization | Bearer (token). Required |
+| Content-Type | application/json |
+
+#### Request Body
+
+Don't supply a request body for this method.
+
+#### Response message
+
+The `didDocumentStatus` will change from `outOfSync` to `published` on a successful call.
+
+```
+HTTP/1.1 200 OK
+Content-type: application/json
+
+{
+    "id": "bacf5333-d68c-01c5-152b-8c9039fbd88d",
+    "name": "APItesta",
+    "status": "Enabled",
+    "didModel": {
+        "did": "did:web:verifiedid.contoso.com",
+        "signingKeys": [
+            "https://vcwingtipskv.vault.azure.net/keys/vcSigningKey-bacf5333-d68c-01c5-152b-8c9039fbd88d/5255b9f2d9b94dc19a369ff0d36e3407"
+        ],
+        "recoveryKeys": [],
+        "updateKeys": [],
+        "encryptionKeys": [],
+        "linkedDomainUrls": [
+            "https://verifiedid.contoso.com/"
+        ],
+        "didDocumentStatus": "published"
+    },
+    "keyVaultMetadata": {
+        "subscriptionId": "1853e356-bc86-4e54-8bb8-6db4e5eacdbd",
+        "resourceGroup": "verifiablecredentials",
+        "resourceName": "vcwingtipskv",
+        "resourceUrl": "https://vcwingtipskv.vault.azure.net/"
+    },
+    "linkedDomainsVerified": false
+}
+```
 
 ## Contracts
 

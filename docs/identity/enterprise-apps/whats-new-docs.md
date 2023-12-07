@@ -1,19 +1,36 @@
 ---
-title: "What's new in Azure Active Directory application management"
-description: "New and updated documentation for the Azure Active Directory application management."
-ms.date: 10/05/2023
+title: "What's new in Microsoft Entra application management"
+description: "New and updated documentation for the Microsoft Entra application management."
+ms.date: 12/05/2023
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: reference
-ms.workload: identity
+
 ms.author: jomondi
 author: omondiatieno
 manager: CelesteDG
 ---
 
-# Azure Active Directory application management: What's new
+# Microsoft Entra application management: What's new
 
-Welcome to what's new in Azure Active Directory (Azure AD) application management documentation. This article lists new docs that have been added and those that have had significant updates in the last three months. To learn what's new with the application management service, see [What's new in Azure AD](~/fundamentals/whats-new.md).
+Welcome to what's new in Microsoft Entra application management documentation. This article lists new docs that have been added and those that have had significant updates in the last three months. To learn what's new with the application management service, see [What's new in Azure AD](~/fundamentals/whats-new.md).
+
+## November
+
+### New articles
+
+- [Tutorial: Configure Datawiza to enable Microsoft Entra multifactor authentication and single sign-on to Oracle Hyperion EPM](datawiza-mfa-sso-oracle-hyperion-epm.md) - New how-to guide for Datawiza integration with Microsoft Entra ID.
+
+## October
+
+### New articles
+
+- [AD FS application migration (preview) overview](migrate-ad-fs-application-overview.md) - New overview article for AD FS application migration.
+- [AD FS application migration (preview) guide](migrate-ad-fs-application-howto.md) - New how-to guide for AD FS application migration.
+
+### Updated articles
+
+- [Tutorial: Migrate Okta federation to Microsoft Entra ID-managed authentication](migrate-okta-federation.md) - Updated PowerShell examples to Microsoft Graph PowerShell.
 
 ## September
 
@@ -89,35 +106,3 @@ Welcome to what's new in Azure Active Directory (Azure AD) application managemen
 - [Create collections on the My Apps portal](access-panel-collections.md)
 - [Unexpected consent prompt when signing in to an application](application-sign-in-unexpected-user-consent-prompt.md)
 - [Manage users and groups assignment to an application](assign-user-or-group-access-portal.md)
-
-## August 2023
-### New articles
-
-- [Manage app consent policies for group owners](manage-group-owner-consent-policies.md) - New how-to guide on how to manage group owner consent policies.
-
-### Updated articles
-
-- [Properties of an enterprise application](application-properties.md) - Updates on the user requirement property
-- [Configure group and team owner consent to applications](configure-user-consent-groups.md) - Updates to examples for configuring group and team owner consent
-- [Configure how users consent to applications](configure-user-consent.md) - Updates to examples for configuring user consent
-- [Manage app consent policies](manage-app-consent-policies.md) - Updates to examples for managing app consent policies
-- [Review the application activity report](migrate-adfs-application-activity.md) - Updates to stale local links
-## July 2023
-
-### New articles
-
-- [Restore revoked permissions granted to applications](restore-permissions.md) - New how-to guide on how to restore previously revoked permissions.
-
-### Updated articles
-
-- [Review permissions granted to enterprise applications](manage-application-permissions.md) - Added portal UI procedures for revoking permissions.
-- [Debug SAML-based single sign-on to applications](debug-saml-sso-issues.md) - Reviewed the article for freshness.
-- [Configure Azure Active Directory SAML token encryption](howto-saml-token-encryption.md) - Added Microsoft Graph PowerShell examples and removed unnecessary steps.
-
-The following PowerShell samples were updated to use Microsoft Graph PowerShell cmdlets.
-- [Export secrets and certs (app registrations)](scripts/powershell-export-all-app-registrations-secrets-and-certs.md)
-- [Export secrets and certs (enterprise apps)](scripts/powershell-export-all-enterprise-apps-secrets-and-certs.md)
-- [Export expiring secrets and certs (app registrations)](scripts/powershell-export-apps-with-expiring-secrets.md)
-
-The following PowerShell sample was added:
-- [Export expiring secrets and certs (enterprise apps)](scripts/powershell-export-enterprise-apps-with-expiring-secrets.md)

@@ -7,20 +7,21 @@ manager: amycolannino
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 10/12/2023
+ms.date: 11/06/2023
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ---
 
-# Provision groups to Active Directory using Microsoft Entra Cloud Sync
+# Provision groups to Active Directory using Microsoft Entra Cloud Sync (Preview)
+
+[!INCLUDE [deprecation](~/includes/gwb-v2-deprecation.md)]
 
 The following document will guide you through configuring cloud sync to synchronize groups to on-premises Active Directory.  This configuration document is specific to on-premises Microsoft Entra Cloud Sync's Group Provision to AD.  For information on a traditional on-premises to cloud configuration see [Configure and new installation - AD to Microsoft Entra ID](how-to-configure.md).
 
  :::image type="content" source="media/how-to-configure/new-ux-configure-19.png" alt-text="Screenshot of enable preview features." lightbox="media/how-to-configure/new-ux-configure-19.png":::
 
-For additional information on this scenario, see [Govern on-premises application access with groups from the cloud]
-(govern-on-premises-groups.md)
+For additional information on this scenario, see [Govern on-premises application access with groups from the cloud](govern-on-premises-groups.md).
 
 ## Prerequisites
 The following prerequisites are required to implement this scenario.
@@ -28,7 +29,7 @@ The following prerequisites are required to implement this scenario.
  - Azure AD account with at least a [Hybrid Administrator](../../role-based-access-control/permissions-reference.md#hybrid-identity-administrator) role.
  - On-premises Active Directory Domain Services environment with Windows Server 2016 operating system or later. 
      - Required for AD Schema attribute  - msDS-ExternalDirectoryObjectId 
- - Provisioning agent with build version [1.1.1367.0](reference-version-history.md#) or later.
+ - Provisioning agent with build version [1.1.1370.0](reference-version-history.md#1113700) or later.
 
  > [!NOTE]
  > The permissions to the service account are assigned during clean install only. In case you're upgrading from the previous version then permissions need to be assigned manually using PowerShell cmdlet: 
@@ -138,13 +139,13 @@ Currently, the AD Schema is not discoverable and there is fixed set of mappings.
 |description|Left(Trim([description]),448)|Expression||
 |dispalyName|displayName|Direct||
 |isSecurityGroup|True|Constant|CANNOT UPDATE IN UI - SHOULD NOT UPDATE</br></br>Not visible in UI|
-|member|members|Direct|CANNOT UPDATE IN UI - SHOULD NOT UPDATE|
+|member|members|Direct|CANNOT UPDATE IN UI - SHOULD NOT UPDATE</br></br>Not visible in UI|
 |msDS-ExternalDirectoryObjectId|Append("Group_",[objectId])|Expression|CANNOT UPDATE IN UI - SHOULD NOT UPDATE</br></br>Used for joining - matching in AD</br></br>Not visible in UI|
 |ObjectGUID|||CANNOT UPDATE IN UI - SHOULD NOT UPDATE</br></br>Read only - anchor in AD</br></br>Not visible in UI|
-|parentDistinguishedName|OU=Users,DC=&lt;domain selected at configuration start&gt;,DC=com|Constant|Default in the UI</br></br>Not visible in UI|
+|parentDistinguishedName|OU=Users,DC=&lt;domain selected at configuration start&gt;,DC=com|Constant|Default in the UI|
 |UniversalScope|True|Constant|CANNOT UPDATE IN UI - SHOULD NOT UPDATE</br></br>Not visible in UI|
 
-Be aware that not all of the above mappings are visible in the portal.  For more information on how to add an attribute mapping see, see [attribute mapping](how-to-attribute-mapping.md#add-an-attribute-mapping---microsoft-entra-id-to-ad).
+Be aware that not all of the above mappings are visible in the portal.  For more information on how to add an attribute mapping see, see [attribute mapping](how-to-attribute-mapping.md#add-an-attribute-mapping---microsoft-entra-id-to-ad-preview).
 
 
 ### Attribute scope filtering
@@ -208,7 +209,7 @@ To create an attribute based filter use the following steps:
 
 :::image type="content" source="media/how-to-configure-entra-to-active-directory/entra-to-ad-7.png" alt-text="Screenshot of the setting up attribute based scoping." lightbox="media/how-to-configure-entra-to-active-directory/entra-to-ad-7.png":::
 
-For more information, see [attribute mapping](how-to-attribute-mapping.md#add-an-attribute-mapping---microsoft-entra-id-to-ad).
+For more information, see [attribute mapping](how-to-attribute-mapping.md#add-an-attribute-mapping---microsoft-entra-id-to-ad-preview).
 
 
 ## On-demand provisioning
@@ -274,5 +275,8 @@ For more information on provisioning logs, see [Enabling provisioning logs](how-
 
 ## Next steps 
 
+- [Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance](govern-on-premises-groups.md)
+- [Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync](migrate-group-writeback.md)
+- [Set up group writeback in entitlement management](~/id-governance/entitlement-management-group-writeback.md)
 - [What is provisioning?](../what-is-provisioning.md)
 - [What is Microsoft Entra Connect cloud sync?](what-is-cloud-sync.md)

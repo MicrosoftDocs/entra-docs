@@ -1,16 +1,15 @@
 ---
 title: Access token claims reference
 description: Claims reference with details on the claims included in access tokens issued by the Microsoft identity platform.
-services: active-directory
 author: cilwerner
 manager: CelesteDG
+ms.author: cwerner
+ms.custom: curation-claims
+ms.date: 05/26/2023
 ms.service: active-directory
 ms.subservice: develop
-ms.workload: identity
 ms.topic: reference
-ms.date: 05/26/2023
-ms.author: cwerner
-ms.custom: aaddev, curation-claims
+#Customer intent:
 ---
 
 # Access token claims reference

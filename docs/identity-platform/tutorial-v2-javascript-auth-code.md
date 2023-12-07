@@ -1,16 +1,15 @@
 ---
 title: "Tutorial: Create a JavaScript single-page app that uses auth code flow"
 description: In this tutorial, you create a JavaScript SPA that can sign in users and use the auth code flow to obtain an access token from the Microsoft identity platform and call the Microsoft Graph API.
-services: active-directory
 author: OwenRichards1
 manager: CelesteDG
+ms.author: owenrichards
+ms.custom: devx-track-js
+ms.date: 10/12/2021
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: tutorial
-ms.workload: identity
-ms.date: 10/12/2021
-ms.author: owenrichards
-ms.custom: aaddev, devx-track-js
+#Customer intent:
 ---
 
 # Tutorial: Sign in users and call the Microsoft Graph API from a JavaScript single-page app (SPA) using auth code flow
@@ -37,15 +36,15 @@ MSAL.js 2.0 improves on MSAL.js 1.0 by supporting the authorization code flow in
 
 The application you create in this tutorial enables a JavaScript SPA to query the Microsoft Graph API by acquiring security tokens from the the Microsoft identity platform. In this scenario, after a user signs in, an access token is requested and added to HTTP requests in the authorization header. Token acquisition and renewal are handled by the Microsoft Authentication Library for JavaScript (MSAL.js).
 
-This tutorial uses the following library:
-
-[msal.js](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-browser) the Microsoft Authentication Library for JavaScript v2.0 browser package
+This tutorial uses [MSAL.js](/javascript/api/@azure/msal-browser/), the Microsoft Authentication Library for JavaScript v2.0 browser package.
 
 ## Get the completed code sample
 
-Prefer to download this tutorial's completed sample project instead? Clone the [ms-identity-javascript-v2](https://github.com/Azure-Samples/ms-identity-javascript-v2) repository. 
+You can download this tutorial's completed sample project instead by cloning the [ms-identity-javascript-v2](https://github.com/Azure-Samples/ms-identity-javascript-v2) repository.
 
-`git clone https://github.com/Azure-Samples/ms-identity-javascript-v2`
+```console
+git clone https://github.com/Azure-Samples/ms-identity-javascript-v2.git
+```
 
 To run the downloaded project on your local development environment, start by creating a localhost server for your application as described in step 1 of [create your project](#create-your-project). Once done, you can configure the code sample by skipping to the [configuration step](#register-your-application).
 
@@ -58,6 +57,7 @@ Once you have [Node.js](https://nodejs.org/en/download/) installed, create a fol
 Next, implement a small [Express](https://expressjs.com/) web server to serve your *index.html* file.
 
 1. First, change to your project directory in your terminal and then run the following `npm` commands:
+
     ```console
     npm init -y
     npm install @azure/msal-browser
@@ -65,7 +65,8 @@ Next, implement a small [Express](https://expressjs.com/) web server to serve yo
     npm install morgan
     npm install yargs
     ```
-2. Next, create file named *server.js* and add the following code:
+
+1. Next, create file named *server.js* and add the following code:
  
    :::code language="js" source="~/../ms-identity-javascript-v2/server.js":::
 
@@ -190,7 +191,7 @@ The first time you sign in to your application, you're prompted to grant it acce
 
 :::image type="content" source="media/tutorial-v2-javascript-auth-code/spa-02-consent-dialog.png" alt-text="Content dialog displayed in web browser":::
 
-If you consent to the requested permissions, the web applications displays your user name, signifying a successful login:
+If you consent to the requested permissions, the web application displays your user name, signifying a successful login:
 
 :::image type="content" source="media/tutorial-v2-javascript-auth-code/spa-03-signed-in.png" alt-text="Results of a successful sign-in in the web browser":::
 

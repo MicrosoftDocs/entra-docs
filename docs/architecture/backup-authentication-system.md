@@ -29,7 +29,7 @@ In addition to Microsoft applications, we support:
 - SaaS applications available in the app gallery, like ADP, Atlassian, AWS, GoToMeeting, Kronos, Marketo, SAP, Trello, Workday, and more.
 - Selected line of business applications, based on their authentication patterns.
 
-Service to service authentication that relies on Microsoft Entra managed identities or are built on Azure services, like virtual machines, cloud storage, Azure AI services, and App Services, receives increased resilience from the back up authentication system. 
+Service to service authentication that relies on managed identities for Azure resources or are built on Azure services, like virtual machines, cloud storage, Azure AI services, and App Services, receives increased resilience from the back up authentication system. 
 
 Microsoft is continuously expanding the number of supported scenarios. 
 

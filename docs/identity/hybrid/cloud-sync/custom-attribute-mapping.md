@@ -8,7 +8,7 @@ ms.service: active-directory
 ms.workload: identity
 ms.custom: ignite-2022, has-azure-ad-ps-ref
 ms.topic: conceptual
-ms.date: 01/12/2023
+ms.date: 11/06/2023
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management

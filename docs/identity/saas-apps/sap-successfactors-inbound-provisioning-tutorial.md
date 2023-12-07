@@ -6,7 +6,7 @@ manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.topic: tutorial
-ms.workload: identity
+
 ms.date: 11/21/2022
 ms.author: chmutali
 ---

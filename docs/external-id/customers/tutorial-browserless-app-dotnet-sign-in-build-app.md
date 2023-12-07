@@ -1,13 +1,13 @@
 ---
 title: "Tutorial: Sign in users in your .NET browserless app"
 description: Learn about how to build a .NET browserless app that signs in users by using Device Code flow.
-services: active-directory
+ 
 author: SHERMANOUKO
 manager: mwongerapk
 
 ms.author: shermanouko
 ms.service: active-directory
-ms.workload: identity
+ 
 ms.custom: devx-track-dotnet
 ms.subservice: ciam
 ms.topic: tutorial
