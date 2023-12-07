@@ -19,6 +19,8 @@
     href: tutorial-configure-custom-password-protection.md
   - name: Enable risk-based sign-in protection
     href: tutorial-risk-based-sspr-mfa.md
+  - name: Enable security notifications
+    href: tutorial-enable-security-notifications-for-audit-logs.md
 - name: Concepts
   expanded: true
   items:

@@ -21,7 +21,7 @@ ms.custom: has-adal-ref, has-azure-ad-ps-ref
 
 We have added a new attribute on user objects in Microsoft Entra ID called CertificateUserIds.
   - **certificateUserIds** attribute are multivalued and can hold up to 5 values.
-  - Each value can be no larger the 1024 characters.
+  - Each value can be no larger than 1024 characters.
   - Each value must be unique. Once a value is present on one user account it cannot be written to any other user account in the same Entra Tenant.
   - The value need not be in email ID format. It can store nonroutable User Principal Names (UPNs) like _bob@woodgrove_ or _bob@local_.
 
@@ -186,7 +186,7 @@ For the configuration, you can use [Microsoft Graph PowerShell](/powershell/micr
 
 Microsoft Entra connect supports syncing values into the certificateUserIds from an on-premises Active Directory environment. On-premises Active Directory supports certificate-based authentication and multiple username bindings. 
 Support for the use of these mapping methods involves populating the Alt-Security-Identities (altSecurityIdentities) attribute on user objects in the on-premises Active Directory. 
-Additionally with [KB5014754](https://support.microsoft.com/en-us/topic/kb5014754-certificate-based-authentication-changes-on-windows-domain-controllers-ad2c23b0-15d8-4340-a468-4d4f3b188f16)—Certificate-based authentication changes on Windows domain controllers many customers may have implemented some of the non-reusable mapping methods (Type=strong) mapping methods to meet the on-premise Active Directory strong certificate binding enforcement requirements. 
+Additionally with [KB5014754](https://support.microsoft.com/en-us/topic/kb5014754-certificate-based-authentication-changes-on-windows-domain-controllers-ad2c23b0-15d8-4340-a468-4d4f3b188f16), certificate-based authentication changes on Windows domain controllers many customers may have implemented some of the non-reusable mapping methods (Type=strong) mapping methods to meet the on-premise Active Directory strong certificate binding enforcement requirements. 
 
 ### Considerations when using Microsoft Entra Connect to sync certificate user IDs 
 
@@ -201,7 +201,7 @@ In order to prevent synchronization errors when syncing values to certificateUse
 >[!NOTE]
 > Some customers will have a valid business justification for mapping a single certificate to more than 1 on-premises Active Directory account. This is usually not the case for all users, but for a subset of users for very specific scenarios. It is recommended to carefully review these scenarios and where possible to only map a certificate to a single user. If a single certificate is needed to map to more then one account in both the on-premise Active Directory and the Entra ID, tenant administrators must implement separate mapping methods.
 
-**Considerations for ongoing synchronization of certificate user IDs **
+**Considerations for ongoing synchronization of certificate user IDs**
 
 - Ensure that the provisioning process for populating the values in on-premises Active Directory implements proper hygiene. Only values associated with current valid certificates are populated
 - Values are removed when the corresponding certificate is expired or revoked.
@@ -255,6 +255,9 @@ To synchronize X509:\<RFC822>RFC822Name, create an outbound synchronization rule
    :::image type="content" border="true" source="./media/concept-certificate-based-authentication-certificateuserids/edit-rule.png" alt-text="Screenshot of how to save a rule.":::
 
 1. Click **OK** to confirm. 
+
+>[!IMPORTANT]
+> The above examples use userPrincipalName atribute as a source attribute in the above transform rule. This can be any available attribute with your organizational appropriate value. For example some organizations will use the mail attribute. For more complex transform rules see [Microsoft Entra Connect Sync: Understanding Declarative Provisioning Expressions](~/identity/hybrid/connect/concept-azure-ad-connect-sync-declarative-provisioning-expressions.md)
 
 > [!NOTE]
 > Make sure you use the latest version of [Microsoft Entra Connect](https://www.microsoft.com/download/details.aspx?id=47594). 
