@@ -102,13 +102,13 @@ There are two ways to get your AAGUID. You can either ask your security key prov
    1. An Authentication Policy Administrator can also issue a [Temporary Access Pass](howto-authentication-temporary-access-pass.md) to allow a user to register a passwordless authentication method.
 1. To add a FIDO2 security key, click **Add method**, and choose **Security key**.
 1. Choose **USB device** or **NFC device**.
-1. Have your key ready and choose **Next**. If you're using Chrome or Edge, the browser might prioritize registration of a cross-device passkey over a device-bound passkey such as a security key. 
+1. Have your key ready and choose **Next**. If you're using Chrome or Edge, the browser might prioritize registration of a passkey that's stored on a mobile device over a passkey that's stored on a security key. 
 
    - Beginning with Windows 11 version 23H2, you can sign in with your work or school account and click **Next**. Below **More choices**, choose **Security key** and click **Next**.
 
      :::image type="content" border="true" source="./media/howto-authentication-passwordless-security-key/save-security-key.png" alt-text="Screenshot of option to save a security key on Windows 11 version 23 H2."::: 
 
-   - On earlier versions of Windows, the browser may show the QR pairing screen to register a cross-device passkey. To register a device-bound passkey instead, insert your security key and touch it to continue. 
+   - On earlier versions of Windows, the browser may show the QR pairing screen to register a passkey that's stored on another mobile device. To register a passkey that's stored on a security key instead, insert your security key and touch it to continue. 
 
      :::image type="content" border="true" source="./media/howto-authentication-passwordless-security-key/try-another-way.png" alt-text="Screenshot of option to choose security key on Windows 10."::: 
 
