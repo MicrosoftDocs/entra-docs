@@ -127,7 +127,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 ## Configure CloudSign SSO
 
-To configure single sign-on on **CloudSign** side, you need to send the downloaded **Federation Metadata XML** and appropriate copied URLs from the application configuration to [CloudSign support team](mailto:contact@cloudsign.jp). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on CloudSign side, you need to send the downloaded **Federation Metadata XML** which you downloaded by following the instructions on the [CloudSign support page](https://help.cloudsign.jp/ja/articles/4000055).
 
 ### Create CloudSign test user
 
