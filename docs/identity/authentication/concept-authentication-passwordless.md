@@ -84,12 +84,13 @@ To get started with passwordless sign-in, complete the following how-to:
 
 MacOS Platform SSO (PSSO) is a new capability on macOS that is enabled using the Microsoft Enterprise Single Sign-on Extension (SSOe). The advantage of PSSO is that it allows users to authenticate with Microsoft Entra ID with smart card, hardware-bound key or their Microsoft Entra ID password. This both improves the end-user experience by not having to remember two separate passwords as well as diminishes the need for admins to manage the local account password. Mac customers in the enterprise have long wanted a solution to use their Microsoft Entra ID password to log on to Macs.
 
+![Example of a pop up window prompting user to register their macOS account with their identity provider using Platform single sign-on.](./media/concept-authentication-passwordless/macos-platform-sso.png)
+
 PSSO allows admins to configure the end-user authentication method in the redirect-type MDM configuration profile. There are three different authentication methods which determines the end-user experience;
 
 - **Secure Enclave key as authentication method:** This provisions a secure enclave backed hardware-bound cryptographic key that is used for SSO across apps that use Microsoft Entra ID for authentication. The user’s local account password is not affected and is required to log on to the Mac.
 - **Smart card:** The user signs in to the machine using an external smart card, or smart card-compatible hard token (eg. Yubikey). Once the device is unlocked, the smart card is used with Microsoft Entra ID to grant SSO across apps that use Microsoft Entra ID for authentication.
 - **Password as authentication method:** This syncs the user’s Microsoft Entra ID password with the local account as well as enables SSO across apps that use Microsoft Entra ID for authentication.
-
 
 Powered by the Microsoft Enterprise SSO plug in, PSSO;
 
@@ -100,7 +101,7 @@ Powered by the Microsoft Enterprise SSO plug in, PSSO;
 
 To enable it, an administrator needs to configure PSSO through Microsoft Intune. Depending on the setup, the end-user can setup their device with PSSO via secure enclave, smart card or password based authentication method.
 
-The following steps show how the sign-in process works with Microsoft Entra ID:
+![Diagram that outlines the steps involved for user sign-in with macOS Platform SSO](./media/concept-authentication-passwordless/macos-platform-single-sign-on-flow.png)
 
 1. A user unlocks macOS using fingerprint or password gesture.
 1. The gesture unlocks the key bag to provide access to UserSecureEnclaveKey.
