@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
-ms.custom: has-azure-ad-ps-ref
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: reference
 ms.date: 11/06/2023
 ms.subservice: hybrid
@@ -275,7 +275,8 @@ Microsoft Entra ID has a limit of 20 sync service accounts.
 - To get the list of existing Microsoft Entra service accounts in your Microsoft Entra instance, run the following command:
 
   ```powershell
-  Get-MgDirectoryRole | where {$_.DisplayName -eq "Directory Synchronization Accounts"} | Get-MgDirectoryRoleMember
+  Get-MgDirectoryRole | where {$_.DisplayName -eq "Directory Synchronization Accounts"} | `
+     Get-MgDirectoryRoleMember
   ```
 
 - To remove unused Microsoft Entra service accounts, run the following command:
