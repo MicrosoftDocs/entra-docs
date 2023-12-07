@@ -14,8 +14,7 @@ ms.author: barclayn
 
 # Microsoft Entra Verified ID-supported standards
 
-[!INCLUDE [Verifiable Credentials announcement](~/../azure-docs-pr/includes/verifiable-credentials-brand.md)]
-
+  
 Microsoft is actively collaborating with members of the Decentralized Identity Foundation (DIF), the W3C Credentials Community Group, and the wider identity community. We’re working with these groups to identify and develop critical standards, and we've implemented the open standards in our services. 
 
 In this article, you'll find the currently supported open standards for Microsoft Entra Verified ID.
@@ -36,7 +35,6 @@ Microsoft Entra Verified ID supports the following open standards:
 | Data model | [Verifiable Credentials Data Model v1.1](https://www.w3.org/TR/vc-data-model) | W3C VC WG |
 | Credential format | [JSON Web Token VC (JWT-VC)](https://www.w3.org/TR/vc-data-model/#json-web-token) - encoded as JSON and signed as a JWS ([RFC7515](https://datatracker.ietf.org/doc/html/rfc7515)) | W3C VC WG /IETF |
 | Entity identifier (issuer, verifier) | [did:web](https://github.com/w3c-ccg/did-method-web) | W3C CCG |
-| Entity identifier (issuer, verifier, user) | [did:ion](https://github.com/decentralized-identity/ion)| DIF |
 | User authentication | [Self-Issued OpenID Provider v2](https://openid.net/specs/openid-connect-self-issued-v2-1_0.html)| OIDF |
 | Presentation | [OpenID for Verifiable Credentials](https://openid.net/specs/openid-connect-4-verifiable-presentations-1_0.html) | OIDF|
 | Query language | [Presentation Exchange v1.0](https://identity.foundation/presentation-exchange/spec/v1.0.0/)| DIF |
