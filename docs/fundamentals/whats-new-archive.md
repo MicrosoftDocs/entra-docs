@@ -2006,7 +2006,7 @@ Temporary Access Pass (TAP) is now generally available. TAP can be used to secur
 
  
 
-Create "nested" groups with Azure AD Dynamic Groups! This feature enables you to build dynamic Azure AD Security Groups and Microsoft 365 groups based on other groups! For example, you can now create Dynamic-Group-A with members of Group-X and Group-Y. For more information, see: [Steps to create a memberOf dynamic group](~/identity/users/groups-dynamic-rule-member-of.md#steps-to-create-a-memberof-dynamic-group).
+Create "nested" groups with Azure AD Dynamic Groups! This feature enables you to build dynamic Azure AD Security Groups and Microsoft 365 groups based on other groups! For example, you can now create Dynamic-Group-A with members of Group-X and Group-Y. For more information, see: [Create a memberOf dynamic group](~/identity/users/groups-dynamic-rule-member-of.md#create-a-memberof-dynamic-group).
  
 
 ---
