@@ -256,6 +256,9 @@ To synchronize X509:\<RFC822>RFC822Name, create an outbound synchronization rule
 
 1. Click **OK** to confirm. 
 
+>[!IMPORTANT]
+> The above examples use userPrincipalName atribute as a source attribute in the above transform rule. This can be any available attribute with your organizational appropriate value. For example some organizations will use the mail attribute. For more complex transform rules see [Microsoft Entra Connect Sync: Understanding Declarative Provisioning Expressions](~/identity/hybrid/connect/concept-azure-ad-connect-sync-declarative-provisioning-expressions.md)
+
 > [!NOTE]
 > Make sure you use the latest version of [Microsoft Entra Connect](https://www.microsoft.com/download/details.aspx?id=47594). 
 
