@@ -70,7 +70,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
    ![Screenshot shows how to edit Basic SAML Configuration.](common/edit-urls.png "Basic Configuration")
 
-1. On the **Basic SAML Configuration** section, the user does not have to perform any step as the app is already pre-integrated with Azure.
+1. On the **Basic SAML Configuration** section, the user does not have to perform any step as the app is already pre-integrated with Microsoft Entra.
 
 1. MyGeotab application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
