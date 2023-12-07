@@ -107,7 +107,7 @@ Credentials are used by [confidential client applications](../../msal-client-app
 
 You can add certificates, client secrets (a string), or federated identity credentials as credentials to your confidential client app registration.
 
-:::image type="content" source="./identity-platform/media/quickstart-register-app/portal-05-app-reg-04-credentials.png" alt-text="Screenshot of the Microsoft Entra admin center, showing the Certificates and secrets pane in an app registration." lightbox="./media/quickstart-register-app/portal-05-app-reg-04-credentials.png":::
+:::image type="content" source="./media/quickstart-register-app/portal-05-app-reg-04-credentials.png" alt-text="Screenshot of the Microsoft Entra admin center, showing the Certificates and secrets pane in an app registration." lightbox="./media/quickstart-register-app/portal-05-app-reg-04-credentials.png":::
 
 ### Add a certificate
 
