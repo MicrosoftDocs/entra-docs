@@ -93,7 +93,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 	c. After the metadata file is successfully uploaded, the **Identifier** and **Reply URL** values get auto populated in Basic SAML Configuration section.
 
 	> [!NOTE]
-    > If the Identifier and Reply URL values are not getting auto populated, then fill the values manually according to your requirement. You can get **Service Provider Metadata** file from the **Configure Lookout Secure Access** section.
+    > If the Identifier and Reply URL values are not getting auto populated, then fill the values manually according to your requirement. You can get **Service Provider Metadata** file from the **[Configure Lookout Secure Access](#configure-lookout-secure-access-sso)** section.
 
 1. Lookout Secure Access application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. For the **Unique User Identifier (Name ID)** attribute, please set Name identifier format as **Unspecified** manually.
 
@@ -143,13 +143,15 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
 
     ![Screenshot shows settings of the configuration.](./media/lookout-secure-access-tutorial/settings.png "SSO Provider")
 
-    1. Click **New**.
+    1. Click **+New**.
 
     1. Enter a valid Name in the **Name** field and select Type as **Identity Provider**.
 
     1. Paste the **App Federation Metadata Url** in the **Metadata Link**  textbox, which you have copied from the Microsoft Entra Admin Center.
 
-    1. Click **Validate** and **Save**. 
+    1. Click **Validate**.
+    
+    1. Click **Save**. 
 
 ### Create Lookout Secure Access test user
 
@@ -161,7 +163,7 @@ In this section, you test your Microsoft Entra single sign-on configuration with
  
 #### SP initiated:
   
-* Go to Lookout Secure Access Sign-on URL directly and initiate the login flow from there.
+* Go to Lookout SSE Management Console URL directly and initiate the login with IDP flow from there.
 
 #### IDP initiated:
  
