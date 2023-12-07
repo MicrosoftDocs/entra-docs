@@ -15,8 +15,7 @@ ms.author: barclayn
 
 # Request Service REST API
 
-[!INCLUDE [Verifiable Credentials announcement](~/../azure-docs-pr/includes/verifiable-credentials-brand.md)]
-
+  
 Microsoft Entra Verified ID includes the Request Service REST API. This API allows you to issue and verify credentials. This article shows you how to start using the Request Service REST API.
 
 ## API access token
@@ -296,8 +295,16 @@ POST https://verifiedid.did.msidentity.com/v1.0/verifiableCredentials/createIssu
 Content-Type: application/json
 Authorization: Bearer  <token>
 
+{...JSON payload...}
+```
+
+# [Issuance request](#tab/issuancerequest)
+
+Issuance request using idTokenHint attestation flow.
+
+```JSON
 {
-    "includeQRCode": true,
+    "includeQRCode": false,
     "callback": {
         "url": "https://contoso.com/api/issuer/issuanceCallback",
         "state": "de19cb6b-36c1-45fe-9409-909a51292a9c",
@@ -320,7 +327,39 @@ Authorization: Bearer  <token>
         "family_name": "Bowen"
     }
 }
-```  
+```
+
+# [with expiry date](#tab/expirydate)
+
+Issuance request using idTokenHint attestation flow that [set the expiry date](issuance-request-api.md#issuance-request-payload).
+
+```JSON
+    "includeQRCode": false,
+    "callback": {
+        "url": "https://contoso.com/api/issuer/issuanceCallback",
+        "state": "de19cb6b-36c1-45fe-9409-909a51292a9c",
+        "headers": {
+            "api-key": "OPTIONAL API-KEY for CALLBACK EVENTS"
+        }
+    },
+    "authority": "did:web:verifiedid.contoso.com",
+    "registration": {
+        "clientName": "Verifiable Credential Expert Sample"
+    },
+    "type": "VerifiedCredentialExpert",
+    "manifestUrl": "https://verifiedid.did.msidentity.com/v1.0/12345678-0000-0000-0000-000000000000/verifiableCredentials/contracts/VerifiedCredentialExpert1",
+    "pin": {
+        "value": "3539",
+        "length": 4
+    },
+    "claims": {
+        "given_name": "Megan",
+        "family_name": "Bowen"
+    },
+    "expirationDate": "2024-12-31T23:59:59.000Z"
+}
+```
+---
 
 For the complete code, see one of the following code samples:
 
@@ -341,7 +380,7 @@ Authorization: Bearer  <token>
 {...JSON payload...}
 ```
 
-# [Presentation request](#tab/request)
+# [Presentation request](#tab/presentationrequest)
 
 Presentation request for a credential with certain type and issuer.
 
@@ -378,7 +417,7 @@ Presentation request for a credential with certain type and issuer.
 }
 ```
 
-# [claims constraints](#tab/constraints)
+# [with claims constraints](#tab/constraints)
 
 Presentation request with [claims constraints](presentation-request-api.md#constraints-type)
 
@@ -416,6 +455,45 @@ Presentation request with [claims constraints](presentation-request-api.md#const
         "validation": {
           "allowRevoked": false,
           "validateLinkedDomain": true
+        }
+      }
+    }
+  ]
+}
+```
+
+# [with FaceCheck](#tab/facecheck)
+
+Presentation request with FaceCheck
+
+```JSON
+{
+  "authority": "did:web:verifiedid.contoso.com",
+  "includeQRCode": false,
+  "includeReceipt": false,
+  "registration": {
+    "clientName": "Contoso Job Application Center",
+    "purpose": "Provide proof of attended courses"
+  },
+  "callback": {
+    "url": "https://contoso.com/api/verifier/presentationCallback",
+    "state": "92d076dd-450a-4247-aa5b-d2e75a1a5d58",
+    "headers": {
+      "api-key": "OPTIONAL API-KEY for CALLBACK EVENTS"
+    }
+  },
+  "requestedCredentials": [
+    {
+      "type": "VerifiedEmployee",
+      "acceptedIssuers": [ "did:web:learn.contoso.com" ],
+      "configuration": {
+        "validation": {
+          "allowRevoked": false,
+          "validateLinkedDomain": true,
+          "faceCheck": {
+            "sourcePhotoClaimName": "photo",
+            "matchConfidenceThreshold": 70
+          }
         }
       }
     }
