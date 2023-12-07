@@ -232,6 +232,8 @@
         href: assetbank-tutorial.md
       - name: Asset Planner
         href: asset-planner-tutorial.md  
+      - name: Assent SSO
+        href: assent-sso-tutorial.md
       - name: AssetSonar
         href: assetsonar-tutorial.md
       - name: Astra Schedule
