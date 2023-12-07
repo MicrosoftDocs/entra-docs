@@ -124,7 +124,7 @@ You can monitor applications accessed via Microsoft Entra Private Access via the
  > [!NOTE]
  > The IP Address listed in the **sourceIp** section is the public IP address of the client and not the IP Address of the Microsoft Security Service Edge Solution Network.
 
-[!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
+[!INCLUDE [Public preview important note](~/global-secure-access/includes/public-preview-important-note.md)]
 
 ## Next steps
 
