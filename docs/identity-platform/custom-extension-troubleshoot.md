@@ -48,7 +48,7 @@ To access the Microsoft Entra sign-in logs:
 1. Select **Sign-in logs**, and then select the latest sign-in log.
 1. For more details, select the **Authentication Events** tab. Information related to the custom authentication extension REST API call is displayed, including any [error codes](#error-codes-reference).
 
-    :::image type="content" source="media/custom-extension-troubleshoot/authentication-events.png" alt-text="Screenshot that shows the authentication events information." :::
+    :::image type="content" source="media/custom-extension-troubleshoot/authentication-events.png" alt-text="Screenshot that shows the authentication events information." lightbox="media/custom-extension-troubleshoot/authentication-events.png":::
 
 ## Error codes reference
 
