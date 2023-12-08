@@ -20,13 +20,13 @@ ms.collection: M365-identity-device-management
 
 # Group writeback in the Entra portal
 
-With the release of provisioning agent [1.1.1370.0](reference-version-history.md#1113700), cloud sync now has the ability to provision groups directly to your on-premises Active Directory environment.  With this, you can use identity governance features to govern access to AD-based applications, such as by including a [group in an entitlement management access package](~/id-governance/entitlement-management-group-writeback.md).  
+With the release of provisioning agent [1.1.1370.0](~/identity/hybrid/cloud-sync/reference-version-history.md#1113700), cloud sync now has the ability to provision groups directly to your on-premises Active Directory environment.  With this, you can use identity governance features to govern access to AD-based applications, such as by including a [group in an entitlement management access package](~/id-governance/entitlement-management-group-writeback.md).  
 
 For more information see [Group Provisioning to AD](~/identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md) and [Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance (Preview)](~/identity/hybrid/cloud-sync/govern-on-premises-groups.md)  
 
 [!INCLUDE [deprecation](~/includes/gwb-v2-deprecation.md)]
 
-If you're using Azure AD Connect group writeback v2, you'll need to move to cloud sync provisioning to AD before you can take advantage of cloud sync group provisioning.  See [Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync](migrate-group-writeback.md)
+If you're using Azure AD Connect group writeback v2, you'll need to move to cloud sync provisioning to AD before you can take advantage of cloud sync group provisioning.  See [Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync](~/identity/hybrid/cloud-sync/migrate-group-writeback.md)
 
 
 >[!NOTE]
