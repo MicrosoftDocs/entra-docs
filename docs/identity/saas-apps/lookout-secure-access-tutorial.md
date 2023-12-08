@@ -28,9 +28,9 @@ Lookout Cloud Security Platform is a data-centric cloud security solution that p
 
 The solution supports these important components of cloud security:
 
-1. Lookout Secure Internet Access: Protection for web or nonweb internet-based traffic. 
-1. Lookout Secure Private Access: Protection for private application traffic.
-1. Lookout Secure Cloud Access: Protection for cloud application traffic.
+- Lookout Secure Internet Access: Protection for web or nonweb internet-based traffic. 
+- Lookout Secure Private Access: Protection for private application traffic.
+- Lookout Secure Cloud Access: Protection for cloud application traffic.
 
 ## Prerequisites
 
@@ -78,17 +78,17 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
 
-   ![Screenshot shows how to edit Basic SAML Configuration.](common/edit-urls.png "Basic Configuration")
+   [ ![Screenshot shows how to edit Basic SAML Configuration.](common/edit-urls.png "Basic Configuration") ](common/edit-urls.png#lightbox)
 
 1. On the **Basic SAML Configuration** section, if you have **Service Provider metadata file**, perform the following steps:
 
 	a. Click **Upload metadata file**.
 
-    ![Screenshot shows to Upload metadata file.](common/upload-metadata.png "Provider")
+    [ ![Screenshot shows to Upload metadata file.](common/upload-metadata.png "Provider") ](common/upload-metadata.png#lightbox)
 
 	b. Click on **folder logo** to select the metadata file and click **Upload**.
 
-	![Screenshot shows to choose metadata file.](common/browse-upload-metadata.png "Metadata")
+	[![Screenshot shows to choose metadata file.](common/browse-upload-metadata.png "Metadata") ](common/browse-upload-metadata.png#lightbox)
 
 	c. After the metadata file is successfully uploaded, the **Identifier** and **Reply URL** values get auto populated in Basic SAML Configuration section.
 
@@ -97,11 +97,11 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 1. Lookout Secure Access application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. For the **Unique User Identifier (Name ID)** attribute, please set Name identifier format as **Unspecified** manually.
 
-    ![Screenshot shows to manage claim.](media/lookout-secure-access-tutorial/claim.png "Claim")
+    [ ![Screenshot shows to manage claim.](media/lookout-secure-access-tutorial/claim.png "Claim") ](media/lookout-secure-access-tutorial/claim.png#lightbox)
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
 
-	![Screenshot shows the Certificate download link.](common/copy-metadataurl.png "Certificate")
+	[ ![Screenshot shows the Certificate download link.](common/copy-metadataurl.png "Certificate") ](common/copy-metadataurl.png#lightbox)
 
 ### Create a Microsoft Entra ID test user
 
@@ -137,11 +137,11 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
 
 1. On the **SSO Groups** tab, click on the download icon of the **SP Metadata** from the Default group. A pop-up appears with SP Metadata details. Click on SP Metadata File button to download the file and upload in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
 
-    ![Screenshot shows to download metadata file.](./media/lookout-secure-access-tutorial/metadata.png "Metadata")
+    [ ![Screenshot shows to download metadata file.](./media/lookout-secure-access-tutorial/metadata.png "Metadata") ](./media/lookout-secure-access-tutorial/metadata.png#lightbox)
 
 1. Navigate to **SSO Providers** tab and perform the following steps.
 
-    ![Screenshot shows settings of the configuration.](./media/lookout-secure-access-tutorial/settings.png "SSO Provider")
+    [ ![Screenshot shows settings of the configuration.](./media/lookout-secure-access-tutorial/settings.png "SSO Provider") ](./media/lookout-secure-access-tutorial/settings.png#lightbox)
 
     1. Click **+New**.
 
@@ -161,11 +161,11 @@ In this section, a user called Britta Simon is created in Lookout Secure Access.
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
  
-#### SP initiated:
+#### SP initiated
   
 * Go to Lookout SSE Management Console URL directly and initiate the login with IDP flow from there.
 
-#### IDP initiated:
+#### IDP initiated
  
 * Click on **Test this application** in Microsoft Entra admin center and you should be automatically signed in to the Lookout Secure Access for which you set up the SSO.
  
