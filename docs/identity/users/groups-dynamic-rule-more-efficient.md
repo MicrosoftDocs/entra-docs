@@ -24,7 +24,7 @@ The team for Microsoft Entra ID, part of Microsoft Entra, receives reports of in
 
 ## Minimize use of MATCH
 
-Minimize the usage of the `match` operator in rules as much as possible. Instead, explore if it's possible to use the `contains`, `startswith`, or `-eq` operators. Considering using other properties that allow you to write rules to select the users you want to be in the group without using the `-match` operator. For example, if you want a rule for the group for all users whose city is Lagos, then instead of using rules like:
+Minimize the usage of the `match` operator in rules as much as possible. Instead, explore if it's possible to use the `startswith`, or `-eq` operators. Considering using other properties that allow you to write rules to select the users you want to be in the group without using the `-match` operator. For example, if you want a rule for the group for all users whose city is Lagos, then instead of using rules like:
 
 - `user.city -match "ago"`
 - `user.city -match ".*?ago.*"`
