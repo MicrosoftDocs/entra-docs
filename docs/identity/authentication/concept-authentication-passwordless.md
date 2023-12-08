@@ -73,9 +73,11 @@ Powered by the Microsoft Enterprise SSO plug in, PSSO;
 - Saves customer organizations money by removing the need for security keys.
 - Advances Zero Trust objectives using integration with the Secure Enclave.
 
-To enable it, an administrator needs to configure PSSO through Microsoft Intune. Depending on the setup, the end-user can setup their device with PSSO via secure enclave, smart card or password based authentication method.
+To enable it, an administrator needs to configure PSSO through Microsoft Intune or other supported MDM. Depending on the setup, the end-user can setup their device with PSSO via secure enclave, smart card or password based authentication method.
 
 ![Diagram that outlines the steps involved for user sign-in with macOS Platform SSO](./media/concept-authentication-passwordless/macos-platform-single-sign-on-flow.png)
+
+### [Secure Enclave](#tab/secure-enclave)
 
 1. A user unlocks macOS using fingerprint or password gesture.
 1. The gesture unlocks the key bag to provide access to UserSecureEnclaveKey.
@@ -84,6 +86,12 @@ To enable it, an administrator needs to configure PSSO through Microsoft Intune.
 1. The operating system (OS) sends a login request to Microsoft Entra ID with an embedded assertion signed with the UserSecureEnclaveKey that resides in the Secure Enclave.
 1. Microsoft Entra ID validates the signed assertion using the user's securely registered public key of UserSecureEnclave key. Microsoft Entra ID validates the signature and nonce. Once the assertion is validated, Microsoft Entra ID creates a [primary refresh token (PRT)](../devices/concept-primary-refresh-token.md) encrypted with the public key of the UserDeviceEncryptionKey that is exchanged during registration and sends the response back to OS.
 1. The OS decrypts and validates the response, retrieves the SSO tokens, stores and and shares it with the SSO extension for providing SSO. The user is able to access macOS, cloud and on-premises applications without the need to authenticate again (SSO).
+
+### [Smart card](#tab/smart-card)
+
+TODO
+
+---
 
 Refer to the macOS Platform SSO landing page for more information on how to configure and deploy PSSO.
 
