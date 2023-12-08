@@ -18,9 +18,16 @@ ms.custom: "it-pro"
 ms.collection: M365-identity-device-management
 ---
 
-# Group writeback in the Azure portal (preview)
+# Group writeback in the Entra portal
 
-Group writeback is a valuable tool for administrators of Microsoft Entra tenants being synced with on-premises Active Directory groups. Microsoft is now previewing new capabilities for group writeback for tenants with a Microsoft Entra ID P1 or P2 license and Microsoft Entra Connect version 2021 December release or later. In this preview, once you have [enabled Microsoft Entra Connect group writeback](~/identity/hybrid/connect/how-to-connect-group-writeback-v2.md), you can specify in the Azure portal which groups you want to write back and what you’d like each group to write back as. You can write Microsoft 365 groups back to on-premises Active Directory as Distribution, Mail-enabled Security, or Security groups, and write Security groups back as Security groups. Groups are written back with a scope of universal​.
+With the release of provisioning agent [1.1.1370.0](reference-version-history.md#1113700), cloud sync now has the ability to provision groups directly to your on-premises Active Directory environment.  With this, you can use identity governance features to govern access to AD-based applications, such as by including a [group in an entitlement management access package](~/id-governance/entitlement-management-group-writeback.md).  
+
+For more information see [Group Provisioning to AD](~/identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md) and [Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance (Preview)](~/identity/hybrid/cloud-sync/govern-on-premises-groups.md)  
+
+[!INCLUDE [deprecation](~/includes/gwb-v2-deprecation.md)]
+
+If you're using Azure AD Connect group writeback v2, you'll need to move to cloud sync provisioning to AD before you can take advantage of cloud sync group provisioning.  See [Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync](migrate-group-writeback.md)
+
 
 >[!NOTE]
 > If you were previously writing Microsoft 365 groups back to on-premises Active Directory as universal distribution groups, they will appear in the Azure portal as not enabled for writeback in both the **Groups** page and in the properties page for a group. These pages display a new property introduced for the preview, “writeback enabled”. This property is not set by the current version of group writeback to ensure backward compatibility with the legacy version of group writeback and to avoid breaking existing customer setups.
