@@ -1629,6 +1629,8 @@
         href: logzio-cloud-observability-for-engineers-tutorial.md
       - name: Looker Analytics Platform
         href: looker-analytics-platform-tutorial.md  
+      - name: Lookout Secure Access
+        href: lookout-secure-access-tutorial.md
       - name: Loop Flow CRM
         href: loop-flow-crm-tutorial.md  
       - name: Lucid (All Products)
