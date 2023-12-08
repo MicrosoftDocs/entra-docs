@@ -44,7 +44,7 @@ For more information about the appID URI of an application, see [Application ID 
 
 Always check that the `tid` in a token matches the tenant ID used to store data with the application. When information is stored for an application in the context of a tenant, it should only be accessed again later in the same tenant. Never allow data in one tenant to be accessed from another tenant.
 
-Validation of the tenant is only the first step, and the checks on subject and actor described in this article are still required. If your intention is to authorize all users in a tenant, it is strongly recommended to explicitly add these users into a group and authorize based on the group. For example, by only checking the tenant ID and the presence of an `oid` claim, your API could inadvertently authorize all service principals in that tenant in addition to users.
+Validation of the tenant is only the first step, and the checks on subject and actor described in this article are still required. If your intention is to authorize all users in a tenant, it's strongly recommended to explicitly add these users into a group and authorize based on the group. For example, by only checking the tenant ID and the presence of an `oid` claim, your API could inadvertently authorize all service principals in that tenant in addition to users.
 
 ## Validate the subject
 
