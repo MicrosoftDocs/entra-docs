@@ -64,7 +64,7 @@ When registration finishes, the Microsoft Entra admin center displays the app re
 
 Your application's code, or more typically an authentication library used in your application, also uses the client ID. The ID is used as part of validating the security tokens it receives from the identity platform.
 
-:::image type="content" source="../../media/quickstart-register-app/portal-02-app-reg-01.png" alt-text="Screenshot of the Microsoft Entra admin center in a web browser, showing an app registration's Overview pane." lightbox="../../media/quickstart-register-app/portal-03-app-reg-02.png":::
+:::image type="content" source="../../media/quickstart-register-app/portal-03-app-reg-02.png" alt-text="Screenshot of the Microsoft Entra admin center in a web browser, showing an app registration's Overview pane." lightbox="../../media/quickstart-register-app/portal-03-app-reg-02.png":::
 
 ## Add a redirect URI
 
