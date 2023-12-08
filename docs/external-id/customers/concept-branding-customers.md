@@ -1,11 +1,11 @@
 ---
 title: Customize the company branding
 description: Learn how to customize the sign-in and sign-up experiences for your customers.
-services: active-directory
+ 
 author: csmulligan
 manager: celestedg
 ms.service: active-directory
-ms.workload: identity
+ 
 ms.subservice: ciam
 ms.topic: conceptual
 ms.date:  04/21/2023

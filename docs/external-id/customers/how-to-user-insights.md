@@ -1,12 +1,12 @@
 ---
 title: Analyze user activity in Microsoft Entra ID for customers
 description: Learn about how to analyze user activity and engagement for your registered application in the customer tenant.
-services: active-directory
+ 
 author: csmulligan
 ms.author: cmulligan
 manager: CelesteDG
 ms.service: active-directory
-ms.workload: identity
+ 
 ms.subservice: ciam
 ms.topic: how-to
 ms.date: 11/03/2023

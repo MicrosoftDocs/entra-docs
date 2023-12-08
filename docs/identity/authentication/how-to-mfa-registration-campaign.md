@@ -7,7 +7,7 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.custom: ignite-2022
 ms.topic: conceptual
-ms.date: 10/25/2023
+ms.date: 11/26/2023
 
 ms.author: justinha
 author: mjsantani
@@ -36,9 +36,12 @@ You can also define how many days a user can postpone, or "snooze," the nudge. I
 
 ## User experience
 
-1. User successfully authenticates using Microsoft Entra multifactor authentication. 
+1. First, the user needs to successfully authenticate by using Microsoft Entra multifactor authentication (MFA). 
 
-1. User sees prompt to set up the Authenticator app to improve their sign-in experience. Only users who are allowed for the Authenticator app push notifications and don't have it currently set up will see the prompt. 
+1. If the user is enabled for Authenticator push notifications and doesn't have it already set up, they get prompted to set up Authenticator to improve their sign-in experience. Note that users might also be prompted to set up other security features, such as . 
+
+   >[!NOTE]
+   >Other security features, such as self-service password reset or security defaults, might also prompt users for setup.  
 
    ![Screenshot of multifactor authentication.](./media/how-to-mfa-registration-campaign/user-prompt.png)
 
@@ -278,7 +281,7 @@ No, the registration campaign is available only for users using Microsoft Entra 
 
 **Can users be nudged within an application?** 
 
-T registration campaign is available only on browsers and not on applications.
+The registration campaign is available only on browsers and not on applications.
 
 **Can users be nudged on a mobile device?** 
 

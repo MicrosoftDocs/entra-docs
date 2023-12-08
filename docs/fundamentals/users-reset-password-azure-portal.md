@@ -40,7 +40,7 @@ Administrators can reset a user's password if the password is forgotten, if the 
 
     The **Alain Charon - Profile** page appears with the **Reset password** option.
 
-    ![User's profile page, with Reset password option highlighted](media/users-reset-password-azure-portal/user-profile-reset-password-link.png)
+   :::image type="content" source="media/users-reset-password-azure-portal/user-profile-reset-password-link.png" alt-text="Screenshot of the User's profile page, with Reset password option highlighted." lightbox="media/users-reset-password-azure-portal/user-profile-reset-password-link.png":::
 
 1. In the **Reset password** page, select **Reset password**.
 

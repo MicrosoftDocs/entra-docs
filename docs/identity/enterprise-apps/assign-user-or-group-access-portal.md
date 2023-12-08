@@ -1,17 +1,17 @@
 ---
 title: Manage users and groups assignment to an application
 description: Learn how to assign and unassign users, and groups, for an app using Microsoft Entra ID for identity management.
-services: active-directory
+
 author: omondiatieno
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
-ms.workload: identity
+
 ms.topic: how-to
 ms.date: 11/22/2022
 ms.author: jomondi
 ms.reviewer: ergreenl
-ms.custom: contperf-fy22q2, contperf-fy22q3, enterprise-apps, has-azure-ad-ps-ref
+ms.custom: enterprise-apps, has-azure-ad-ps-ref
 zone_pivot_groups: enterprise-apps-all
 #customer intent: As an admin, I want to manage user assignment for an app in Microsoft Entra ID using PowerShell
 ---

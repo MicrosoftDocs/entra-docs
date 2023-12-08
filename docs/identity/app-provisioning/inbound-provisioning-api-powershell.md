@@ -13,7 +13,7 @@ ms.author: kenwith
 ms.reviewer: cmmdesai
 ---
 
-# API-driven inbound provisioning with PowerShell script
+# API-driven inbound provisioning with PowerShell script (Public preview)
 
 This tutorial describes how to use a PowerShell script to implement Microsoft Entra ID [API-driven inbound provisioning](inbound-provisioning-api-concepts.md). Using the steps in this tutorial, you can convert a CSV file containing HR data into a bulk request payload and send it to the Microsoft Entra provisioning [/bulkUpload](/graph/api/synchronization-synchronizationjob-post-bulkupload) API endpoint. The article also provides guidance on how the same integration pattern can be used with any system of record. 
 

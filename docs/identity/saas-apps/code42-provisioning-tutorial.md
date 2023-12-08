@@ -1,7 +1,7 @@
 ---
 title: 'Tutorial: Configure Code42 for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Code42.
-services: active-directory
+
 documentationcenter: ''
 author: twimmers
 writer: twimmers
@@ -10,7 +10,7 @@ manager: jeedes
 ms.assetid: ddcb950b-3f9a-4ebb-bf78-4ec42d16d52d
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 11/21/2022

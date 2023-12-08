@@ -1,7 +1,7 @@
 ---
 title: 'Tutorial: Configure Freshservice Provisioning for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Freshservice Provisioning.
-services: active-directory
+
 documentationcenter: ''
 author: twimmers
 writer: twimmers
@@ -10,7 +10,7 @@ manager: jeedes
 ms.assetid: e03ec65a-25ef-4c91-a364-36b2f007443c
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 11/21/2022

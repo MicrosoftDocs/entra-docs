@@ -1,12 +1,12 @@
 ---
 title: "Quickstart: Add sign in to a Node.js/Express web app"
 description: Learn how to run a sample Node.js/Express web app to sign in users
-services: active-directory
+ 
 author: kengaderdus
 manager: mwongerapk
 ms.author: kengaderdus
 ms.service: active-directory
-ms.workload: identity
+ 
 ms.custom: devx-track-js
 ROBOTS: NOINDEX
 ms.subservice: ciam

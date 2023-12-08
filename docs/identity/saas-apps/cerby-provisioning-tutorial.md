@@ -1,14 +1,14 @@
 ---
 title: 'Tutorial: Configure Cerby for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Cerby.
-services: active-directory
+
 author: twimmers
 writer: twimmers
 manager: jeedes
 ms.assetid: 465492d5-4f75-4201-bed4-f45b3be18702
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: thwimmer

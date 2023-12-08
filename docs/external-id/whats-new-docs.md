@@ -1,11 +1,11 @@
 ---
 title: "What's new in Microsoft Entra External ID"
 description: "New and updated documentation for the Microsoft Entra External ID."
-ms.date: 11/01/2023
+ms.date: 12/01/2023
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: reference
-ms.workload: identity
+ 
 ms.author: cmulligan
 author: csmulligan
 manager: CelesteDG
@@ -14,6 +14,14 @@ manager: CelesteDG
 # Microsoft Entra External ID: What's new
 
 Welcome to what's new in Microsoft Entra External ID documentation. This article lists new docs that have been added and those that have had significant updates in the last three months. To learn what's new with the Microsoft Entra ID service, see [What's new in Microsoft Entra ID](~/fundamentals/whats-new.md).
+
+## November 2023
+
+### Updated articles
+
+- [Federation with SAML/WS-Fed identity providers for guest users](direct-federation.md) - Editorial updates
+- [Cross-tenant access overview](cross-tenant-access-overview.md) - Editorial updates
+- [Cross-tenant access settings](cross-tenant-access-settings-b2b-collaboration.md) - Editorial updates
 
 ## October 2023
 
@@ -54,13 +62,5 @@ This month, we renamed Azure Active Directory (Azure AD) to Microsoft Entra ID. 
 - [Add Facebook as an identity provider for External Identities](facebook-federation.md) - Editorial updates
 - [Add Google as an identity provider for B2B guest users](google-federation.md) - Editorial updates
 
-## August 2023
 
-### Updated articles
-
-- [B2B collaboration user claims mapping in Azure Active Directory](claims-mapping.md) - UPN claims behavior update
-- [Self-service sign-up](self-service-sign-up-overview.md) - Customer content reference update 
-- [Cross-tenant access overview](cross-tenant-access-overview.md) - New storage model update
-- [Cross-tenant access settings](cross-tenant-access-settings-b2b-collaboration.md) - New storage model update
-- [Configure B2B direct connect](cross-tenant-access-settings-b2b-direct-connect.md) - New storage model update
 

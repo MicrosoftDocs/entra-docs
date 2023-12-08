@@ -1,13 +1,13 @@
 ---
 title: 'Quickstart: Add an enterprise application'
 description: Add an enterprise application in Microsoft Entra ID.
-services: active-directory
+
 author: omondiatieno
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: quickstart
-ms.workload: identity
+
 ms.date: 03/22/2023
 ms.author: jomondi
 ms.reviewer: ergreenl

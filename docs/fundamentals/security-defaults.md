@@ -54,7 +54,7 @@ To configure security defaults in your directory, you must be assigned at least 
 
 To enable security defaults:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as least a [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator).
 1. Browse to **Identity** > **Overview** > **Properties**.
 1. Select **Manage security defaults**.
 1. Set **Security defaults** to **Enabled**.
@@ -188,7 +188,7 @@ Organizations that choose to implement Conditional Access policies that replace 
 
 To disable security defaults in your directory:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as least a [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator).
 1. Browse to **Identity** > **Overview** > **Properties**.
 1. Select **Manage security defaults**.
 1. Set **Security defaults** to **Disabled (not recommended)**.

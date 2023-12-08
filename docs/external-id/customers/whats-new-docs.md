@@ -1,11 +1,11 @@
 ---
 title: "What's new in Microsoft Entra ID for customers"
 description: "New and updated documentation for the Microsoft Entra ID for customers documentation."
-ms.date: 11/01/2023
+ms.date: 12/01/2023
 ms.service: active-directory
 ms.subservice: ciam
 ms.topic: reference
-ms.workload: identity
+ 
 ms.author: cmulligan
 author: csmulligan
 manager: CelesteDG
@@ -14,6 +14,23 @@ manager: CelesteDG
 # Microsoft Entra ID for customers: What's new
 
 Welcome to what's new in Microsoft Entra ID for customers documentation. This article lists new docs that have been added and those that have had significant updates in the last three months. 
+
+## November 2023
+
+### New articles
+
+- [Gain insights into your app users’ activity](how-to-user-insights.md)
+- [Tutorial: Handle authentication flows in an Angular single-page app](tutorial-single-page-app-angular-sign-in-configure-authentication.md)
+- [Tutorial: Prepare an Angular single-page app for authentication in a customer tenant](tutorial-single-page-app-angular-sign-in-prepare-app.md)
+- [Tutorial: Prepare your customer tenant to authenticate users in an Angular single-page app](tutorial-single-page-app-angular-sign-in-prepare-tenant.md)
+- [Tutorial: Add sign-in and sign-out to an Angular single-page app (SPA) for a customer tenant](tutorial-single-page-app-angular-sign-in-sign-out.md)
+
+### Updated articles
+
+- [Collect user attributes during sign-up](how-to-define-custom-attributes.md) - Editorial updates
+- [Tutorial: Handle authentication flows in a React single-page app](tutorial-single-page-app-react-sign-in-configure-authentication.md) - Fixed the React SPA tutorial
+- [Sign in users in a sample Node.js web application](sample-web-app-node-sign-in.md) - Updated Platform Redirect URI
+- [Create a sign-up and sign-in user flow for customers](how-to-user-flow-sign-up-sign-in-customers.md) - Improved MS Graph API call formatting
 
 ## October 2023
 
@@ -33,25 +50,3 @@ This month, we renamed Azure Active Directory (Azure AD) to Microsoft Entra ID. 
 - [Planning for customer identity and access management (preview)](concept-planning-your-solution.md) - Editorial updates
 - [Create a sign-up and sign-in user flow for customers](how-to-user-flow-sign-up-sign-in-customers.md) - Disable sign-up in a user flow
 
-## August 2023
-
-### New articles
-
-- [Quickstart: Get started with guide walkthrough](quickstart-get-started-guide.md)
-- [Tutorial: Add sign-in and sign-out to a Vanilla JavaScript single-page app for a customer tenant](tutorial-single-page-app-vanillajs-sign-in-sign-out.md)
-- [Sign in users in a sample Node.js CLI application.](sample-cli-app-node-sign-in-users.md)
-- [Tutorial: Prepare a Node.js CLI application for authentication](tutorial-cli-app-node-sign-in-prepare-app.md)
-- [Prepare your customer tenant to sign in users in a Node.js CLI application](tutorial-cli-app-node-sign-in-prepare-tenant.md)
-- [Authenticate users in a Node.js CLI application - Build app](tutorial-cli-app-node-sign-in-sign-out.md)
-- [Tutorial: Use role-based access control in your .NET MAUI](tutorial-desktop-maui-role-based-access-control.md)
-- [Tutorial: Use role-based access control in your .NET MAUI app](tutorial-mobile-maui-role-based-access-control.md)
-
-### Updated articles
-
-- [Collect user attributes during sign-up](how-to-define-custom-attributes.md) - Custom attribute update
-- [Quickstart: Create a tenant (preview)](quickstart-tenant-setup.md) - Get started guide update
-- [Add and manage admin accounts](how-to-manage-admin-accounts.md) - Editorial review
-- [Tutorial: Prepare a Vanilla JavaScript single-page app for authentication in a customer tenant](tutorial-single-page-app-vanillajs-prepare-app.md) - Editorial review
-- [Microsoft Entra ID for customers documentation](index.yml) - Editorial review
-- [Tutorial: Sign in users in .NET MAUI app](tutorial-desktop-app-maui-sign-in-sign-out.md) - Add app roles to .NET MAUI app and receive them in the ID token
-- [Tutorial: Sign in users in .NET MAUI shell app](tutorial-mobile-app-maui-sign-in-sign-out.md) - Add app roles to .NET MAUI app and receive them in the ID token 

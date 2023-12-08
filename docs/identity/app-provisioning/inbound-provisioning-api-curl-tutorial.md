@@ -8,14 +8,15 @@ ms.service: active-directory
 ms.subservice: app-provisioning
 ms.workload: identity
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 09/15/2023
 ms.author: kenwith
 ms.reviewer: cmmdesai
 ---
 
-# Quickstart API-driven inbound provisioning with cURL
+# Quickstart API-driven inbound provisioning with cURL (Public preview)
 
 ## Introduction
+
 [cURL](https://curl.se/) is a popular, free, open-source, command-line tool used by API developers, and it's [available by default on Windows 10/11](https://curl.se/windows/microsoft.html). This tutorial describes how you can quickly test [API-driven inbound provisioning](inbound-provisioning-api-concepts.md) with cURL. 
 
 ## Pre-requisites

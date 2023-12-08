@@ -15,23 +15,11 @@ ms.author: barclayn
 
 # Opt out of Verified ID service
 
-[!INCLUDE [Verifiable Credentials announcement](~/../azure-docs-pr/includes/verifiable-credentials-brand.md)]
-
-In this article:
-
-- The reason why you may need to opt out.
-- The steps required.
-- What happens to your data?
-- Effect on existing verifiable credentials.
-
-
-## Prerequisites
-
-- Complete verifiable credentials onboarding.
+Opting out is the process of resetting your Microsoft Entra Verified ID environment.
 
 ## When do you need to opt out?
 
-Opting out is a one-way operation. After you opt-out, your Microsoft Entra Verified ID environment is reset. Opting out may be required to:
+Opting out is a one-way operation. After the process completes, your Verified ID environment is reset. Opting out may be required to:
 
 - Enable new service capabilities.
 - Reset your service configuration.
@@ -50,7 +38,7 @@ Once an opt-out takes place, you can't recover your DID or conduct any operation
 
 ## Effect on existing verifiable credentials
 
-All verifiable credentials already issued will continue to exist. For the ION trust system, they will not be cryptographically invalidated as your DID remain resolvable through ION.
+All verifiable credentials already issued will continue to exist. For the ION trust system, they won't be cryptographically invalidated as your DID remain resolvable through ION.
 However, when relying parties call the status API, they always receive a failure message.  
 
 ## How to opt-out from the Microsoft Entra Verified ID service?

@@ -1,13 +1,13 @@
 ---
 title: 'Tutorial: Microsoft Entra SSO integration with GitHub Enterprise Server'
 description: Learn how to configure single sign-on between Microsoft Entra ID and GitHub Enterprise Server.
-services: active-directory
+
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.topic: tutorial
 ms.date: 06/21/2023
 ms.author: jeedes

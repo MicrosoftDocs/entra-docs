@@ -1,14 +1,14 @@
 ---
 title: 'Tutorial: Configure Amazon Business for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Amazon Business.
-services: active-directory
+
 author: twimmers
 writer: twimmers
 manager: jeedes
 ms.assetid: 48a929c5-6cfa-44ca-8471-641fa5a35ee0
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.topic: tutorial
 ms.date: 09/08/2023
 ms.author: thwimmer

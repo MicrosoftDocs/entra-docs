@@ -1,11 +1,11 @@
 ---
 title: Add and manage admin accounts
 description: Learn how to add and manage admin accounts in your customer tenant with Microsoft Entra ID for customers.
-services: active-directory
+ 
 author: msmimart
 manager: celestedg
 ms.service: active-directory
-ms.workload: identity
+ 
 ms.subservice: ciam
 ms.topic: how-to
 ms.date: 07/12/2023

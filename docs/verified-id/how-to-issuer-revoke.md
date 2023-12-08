@@ -15,8 +15,7 @@ ms.author: barclayn
 
 # Revoke a previously issued verifiable credential
 
-[!INCLUDE [Verifiable Credentials announcement](~/../azure-docs-pr/includes/verifiable-credentials-brand.md)]
-
+  
 As part of the process of working with verifiable credentials, you not only have to issue credentials, but sometimes you also have to revoke them. In this article, we go over the **Status** property part of the verifiable credential specification and take a closer look at the revocation process, why we want to revoke credentials and some data and privacy implications.
 
 ## Why you want to revoke a verifiable credential?

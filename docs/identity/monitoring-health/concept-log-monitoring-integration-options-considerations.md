@@ -1,14 +1,13 @@
 ---
 title: Microsoft Entra activity log integration options and considerations
 description: Introduction to the options and considerations for integrating Microsoft Entra activity logs with storage and analysis tools.
-services: active-directory
 author: shlipsey3
 manager: amycolannino
 ms.service: active-directory
 ms.topic: conceptual
 ms.workload: identity
 ms.subservice: report-monitor
-ms.date: 08/09/2023
+ms.date: 11/17/2023
 ms.author: sarahlipsey
 ms.reviewer: besiler
 ---
@@ -54,11 +53,11 @@ If your scenario requires that you retain data for more than 30 days *and* you p
 
 If you have a third party SIEM tool, we recommend setting up an Event Hubs namespace and event hub that you can stream your data through. With an event hub, you can stream logs to one of the supported SIEM tools.
 
-If you don't plan on using a third-party SIEM tool, we recommend sending your Microsoft Entra activity logs to Azure Monitor logs. With this integration, you can query your activity logs with Log Analytics. In Addition to Azure Monitor logs, Microsoft Sentinel provides near real-time security detection and threat hunting. If you decide to integrate with SIEM tools later, you can stream your Microsoft Entra activity logs along with your other Azure data through an event hub. 
+If you don't plan on using a third-party SIEM tool, we recommend sending your Microsoft Entra activity logs to Azure Monitor logs. With this integration, you can query your activity logs with Log Analytics. In Addition to Azure Monitor logs, Microsoft Sentinel provides near real-time security detection and threat hunting. If you decide to integrate with SIEM tools later, you can stream your Microsoft Entra activity logs along with your other Azure data through an event hub.
 
 ## Cost considerations
 
-There's a cost for sending data to a Log Analytics workspace, archiving data in a storage account, or streaming logs to an event hub. The amount of data and the cost incurred can vary significantly depending on the tenant size, the number of policies in use, and even the time of day.
+There's a cost for sending data to a Log Analytics workspace, archiving data in a storage account, or streaming logs to an event hub. The amount of data and the cost incurred can vary significantly depending on the tenant size, the number of policies in use, and even the time of day. Changing an existing diagnostic setting might incur new charges.
 
 Because the size and cost for sending logs to an endpoint is difficult to predict, the most accurate way to determine your expected costs is to route your logs to an endpoint for day or two. With this snapshot, you can get an accurate prediction for your expected costs. You can also get an estimate of your costs by downloading a sample of your logs and multiplying accordingly to get an estimate for one day.
 

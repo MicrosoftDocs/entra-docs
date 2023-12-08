@@ -92,27 +92,23 @@ In addition to the features listed above, additional Microsoft Entra features fr
 
 ## Getting started
 
-Check out the [Getting started tab](https://portal.azure.com/#view/Microsoft_AAD_ERM/DashboardBlade/~/GettingStarted) of **Identity Governance** in the Microsoft Entra admin center to start using entitlement management, access reviews, Privileged Identity Management, and Terms of use, and see some common use cases.
-
-![Identity Governance getting started](./media/identity-governance-overview/getting-started.png)
-
+Check out the [Prerequisites before configuring Microsoft Entra ID for identity governance](identity-governance-applications-prepare.md).  Then, visit the [Governance dashboard](https://entra.microsoft.com/#view/Microsoft_Azure_IdentityGovernance/Dashboard.ReactView) in the Microsoft Entra admin center to start using entitlement management, access reviews, lifecycle workflows and Privileged Identity Management.
 
 There are also tutorials for [managing access to resources in entitlement management](entitlement-management-access-package-first.md), [onboarding external users to Microsoft Entra ID through an approval process](entitlement-management-onboard-external-user.md), [governing access to your applications](identity-governance-applications-prepare.md) and the [application's existing users](identity-governance-applications-existing-users.md).
 
-If you have any feedback about Identity Governance features, click **Got feedback?** in the Microsoft Entra admin center to submit your feedback. The team regularly reviews your feedback.
+While each organization may have its own unique requirements, the following configuration guides also provide the baseline policies Microsoft recommends you follow to ensure a more secure and productive workforce.
 
-While there's no perfect solution or recommendation for every customer, the following configuration guides also provide the baseline policies Microsoft recommends you follow to ensure a more secure and productive workforce.
-
-- [Prerequisites for configuring Microsoft Entra ID for identity governance](identity-governance-applications-prepare.md)
 - [Plan an access reviews deployment to manage resource access lifecycle](deploy-access-reviews.md)
-- [Identity and device access configurations](/microsoft-365/enterprise/microsoft-365-policies-configurations)
+- [Zero Trust identity and device access configurations](/microsoft-365/enterprise/microsoft-365-policies-configurations)
 - [Securing privileged access](~/identity/role-based-access-control/security-planning.md)
 
 You may also wish to engage with one of Microsoft's [services and integration partners](services-and-integration-partners.md) to plan your deployment or integrate with the applications and other systems in your environment.
 
+If you have any feedback about Identity Governance features, click **Got feedback?** in the Microsoft Entra admin center to submit your feedback. The team regularly reviews your feedback.
+
 ## Simplifying identity governance tasks with automation
 
-Once you've started using these identity governance features, you can easily automate common identity governance scenarios. The following table shows how to get started for each scenario:
+Once you've started using these identity governance features, you can easily automate common identity governance scenarios. The following table shows how to get started with automation for each scenario:
 
 | Scenario to automate | Automation guide |
 | ------- | --------------------- |
@@ -144,6 +140,7 @@ It's a best practice to use the least privileged role to perform administrative 
 
 ## Next steps
 
+- [What are Lifecycle Workflows?](what-are-lifecycle-workflows.md)
 - [What is Microsoft Entra entitlement management?](entitlement-management-overview.md)
 - [What are Microsoft Entra access reviews?](access-reviews-overview.md)
 - [What is Microsoft Entra Privileged Identity Management?](~/id-governance/privileged-identity-management/pim-configure.md)

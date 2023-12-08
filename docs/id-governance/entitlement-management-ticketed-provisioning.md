@@ -221,7 +221,7 @@ At this point it's time to configure ServiceNow for resuming the entitlement man
 1. To create triggers within ServiceNow, you'd follow these steps:
     1. Select "*Add Trigger*" and then select "*updated*" trigger and run the trigger for every update.
     1. Add a filter condition by updating the condition as shown in the following image:
-        :::image type="content" source="media/entitlement-management-servicenow-integration/entitlement-management-servicenow-call-elm-assignment.png" alt-text="Screenshot of ServiceNow call elm resume API" lightbox="media/entitlement-management-servicenow-integration/entitlement-management-servicenow-call-elm-assignment.png":::
+        :::image type="content" source="media/entitlement-management-servicenow-integration/entitlement-management-servicenow-call-elm-assignment.png" alt-text="Screenshot of ServiceNow call entitlement management resume API" lightbox="media/entitlement-management-servicenow-integration/entitlement-management-servicenow-call-elm-assignment.png":::
     1. Select done.
     1. Select add an action
         :::image type="content" source="media/entitlement-management-servicenow-integration/entitlement-management-servicenow-flow-designer-trigger.png" alt-text="Screenshot of flow diagram trigger." lightbox="media/entitlement-management-servicenow-integration/entitlement-management-servicenow-flow-designer-trigger.png":::
@@ -240,7 +240,7 @@ When an end user requests access to an access package, the request is sent to th
 
 ## Receiving access to the requested access package as an end-user 
 
-The IT Support team works on the ticket create above to do necessary provisions and  close the ServiceNow ticket. When the ticket is closed, ServiceNow triggers a call to resume the Entitlement Management workflow. Once the request is completed, the requestor receives a notification from ELM that the request has been fulfilled. This streamlined workflow ensures that access requests are fulfilled efficiently, and users are notified promptly.
+The IT Support team works on the ticket create above to do necessary provisions and  close the ServiceNow ticket. When the ticket is closed, ServiceNow triggers a call to resume the Entitlement Management workflow. Once the request is completed, the requestor receives a notification from entitlement management that the request has been fulfilled. This streamlined workflow ensures that access requests are fulfilled efficiently, and users are notified promptly.
 
 :::image type="content" source="media/entitlement-management-servicenow-integration/entitlement-management-myaccess-request-history.png" alt-text="Screenshot of My Access request history." lightbox="media/entitlement-management-servicenow-integration/entitlement-management-myaccess-request-history.png":::
 
