@@ -32,10 +32,11 @@ When the attributes of a user or a device change, the system evaluates all dynam
 
 Microsoft Entra ID provides a rule builder to create and update your important rules more quickly. The rule builder supports the construction of up to five expressions. The rule builder makes it easier to form a rule with a few simple expressions, however, it can't be used to reproduce every rule. If the rule builder doesn't support the rule you want to create, you can use the text box.
 
-Here are some examples of advanced rules or syntax for which we recommend that you construct using the text box:
+Here are some examples of advanced rules or syntax that require the use of the text box:
 
 - Rule with more than five expressions
 - The Direct reports rule
+- Rules with -contains or -notContains operator
 - Setting [operator precedence](#operator-precedence)
 - [Rules with complex expressions](#rules-with-complex-expressions); for example, `(user.proxyAddresses -any (_ -contains "contoso"))`
 
