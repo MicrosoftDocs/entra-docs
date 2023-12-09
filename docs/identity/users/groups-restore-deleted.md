@@ -16,7 +16,7 @@ ms.collection: M365-identity-device-management
 ---
 # Restore a deleted Microsoft 365 group in Microsoft Entra ID
 
-When you delete a Microsoft 365 group in Microsoft Entra ID, part of Microsoft Entra, the deleted group is retained but not visible for 30 days from the deletion date. This behavior is so that the group and its contents can be restored if needed. This functionality is restricted exclusively to Microsoft 365 groups in Microsoft Entra ID. It isn't available for security groups and distribution groups. The 30-day group restoration period isn't customizable.
+When you delete a Microsoft 365 group in Microsoft Entra ID, the deleted group is retained but not visible for 30 days from the deletion date. This behavior is so that the group and its contents can be restored if needed. This functionality is restricted exclusively to Microsoft 365 groups in Microsoft Entra ID. It isn't available for security groups and distribution groups. The 30-day group restoration period isn't customizable.
 
 > [!NOTE]
 > Don't use `Remove-MsolGroup` because it purges the group permanently. Always use `Remove-MgBetaGroup` to delete a Microsoft 365 group.
@@ -46,36 +46,35 @@ User | Can restore any deleted Microsoft 365 group that they own
 
 Use the following cmdlets to view the deleted groups. You need to verify that the groups you're interested in weren't permanently purged. These cmdlets are part of the [Microsoft Graph PowerShell module](/powershell/microsoftgraph/installation?view=graph-powershell-1.0&preserve-view=true). For more information about this module, see [Microsoft Graph PowerShell overview](/powershell/microsoftgraph/overview?view=graph-powershell-1.0&preserve-view=true).
 
-1. Run the following cmdlet to display all deleted Microsoft 365 groups in your Microsoft Entra organization that are still available to restore. Install the [Graph](/powershell/microsoftgraph/installation?view=graph-powershell-1.0&preserve-view=true) beta version if it isn't already installed on the machine.
+Run the following cmdlet to display all deleted Microsoft 365 groups in your Microsoft Entra organization that are still available to restore. Install the [Graph](/powershell/microsoftgraph/installation?view=graph-powershell-1.0&preserve-view=true) beta version if it isn't already installed on the machine.
 
+```powershell
+Install-Module Microsoft.Graph.Beta
+Connect-MgGraph -Scopes "Group.ReadWrite.All"
+Get-MgBetaDirectoryDeletedGroup
+```
 
-    ```powershell
-    Install-Module Microsoft.Graph.Beta
-    Connect-MgGraph -Scopes "Group.ReadWrite.All"
-    Get-MgBetaDirectoryDeletedGroup
-    ```
+Alternatively, if you know the object ID of a specific group (and you can get it from the cmdlet in step 1), run the following cmdlet. You need to verify that the specific deleted group wasn't permanently purged.
 
-1. Alternatively, if you know the object ID of a specific group (and you can get it from the cmdlet in step 1), run the following cmdlet. You need to verify that the specific deleted group wasn't permanently purged.
-
-    ```powershell
-    Get-MgBetaDirectoryDeletedGroup -DirectoryObjectId <objectId>
-    ```
+```powershell
+Get-MgBetaDirectoryDeletedGroup -DirectoryObjectId <objectId>
+```
 
 ## Restore your deleted Microsoft 365 group
 
 After you verify that the group is still available to restore, restore the deleted group with one of the following steps. If the group contains documents, SharePoint sites, or other persistent objects, it might take up to 24 hours to fully restore a group and its contents.
 
-1. Run the following cmdlet to restore the group and its contents.
+Run the following cmdlet to restore the group and its contents.
 
-   ```powershell    
-    Restore-MgBetaDirectoryDeletedItem -DirectoryObjectId <objectId>
-    ``` 
+```powershell    
+Restore-MgBetaDirectoryDeletedItem -DirectoryObjectId <objectId>
+``` 
 
-1. Alternatively, you can run the following cmdlet to permanently remove the deleted group.
+Alternatively, you can run the following cmdlet to permanently remove the deleted group.
 
-    ```powershell
-    Remove-MgBetaDirectoryDeletedItem -DirectoryObjectId <objectId>
-    ```
+```powershell
+Remove-MgBetaDirectoryDeletedItem -DirectoryObjectId <objectId>
+```
 
 ## How do you know restoration worked?
 

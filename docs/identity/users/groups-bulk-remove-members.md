@@ -17,7 +17,7 @@ ms.collection: M365-identity-device-management
 
 # Bulk remove group members in Microsoft Entra ID
 
-You can remove a large number of members from a group by using a comma-separated values (CSV) file to remove group members in bulk using the portal for Microsoft Entra ID, part of Microsoft Entra.
+You can remove a large number of members from a group by using a comma-separated values (CSV) file to remove group members in bulk using the portal for Microsoft Entra ID.
 
 ## Understand the CSV template
 

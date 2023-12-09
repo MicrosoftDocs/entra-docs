@@ -18,14 +18,13 @@ ms.collection: M365-identity-device-management
 
 # Bulk download a list of groups in Microsoft Entra ID
 
-You can download a list of all the groups in your organization to a comma-separated values (CSV) file in the portal for Microsoft Entra ID, part of Microsoft Entra. All admins and nonadmin users can download group lists.
+You can download a list of all the groups in your organization to a comma-separated values (CSV) file in the portal for Microsoft Entra ID. All admins and nonadmin users can download group lists.
 
 ## Download a list of groups
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
->[!NOTE]
-> The columns downloaded are predefined.
+The columns downloaded are predefined.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 1. Select **Microsoft Entra ID**.
