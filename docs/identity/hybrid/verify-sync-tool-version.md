@@ -24,7 +24,7 @@ To see what version of the provisioning agent your using, use the following step
 
 [!INCLUDE [active-directory-cloud-sync-how-to-verify-installation](~/includes/entra-cloud-sync-how-to-verify-installation.md)]
 
-## Verfiy connect sync
+## Verify connect sync
 To see what version of connect sync your using, use the following steps:
 
 ### On the local server

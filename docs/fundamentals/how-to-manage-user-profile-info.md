@@ -9,7 +9,7 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: fundamentals
 ms.topic: how-to
-ms.date: 09/12/2023
+ms.date: 12/01/2023
 ms.author: sarahlipsey
 ms.reviewer: jeffsta
 ---
@@ -29,11 +29,13 @@ When new users are created, only a few details are added to their user profile. 
 
 1. Browse to **Identity** > **Users** > **All users**.
 
+   :::image type="content" source="media/how-to-manage-user-profile-info/all-users-page.png" alt-text="Screenshot of the All users page.":::
+
 1. Select a user.
    
 1. There are two ways to edit user profile details. Either select **Edit properties** from the top of the page or select **Properties**.
 
-    ![Screenshot of the overview page for a selected user, with the edit options highlighted.](media/how-to-manage-user-profile-info/user-profile-overview.png)
+   :::image type="content" source="media/how-to-manage-user-profile-info/user-profile-overview.png" alt-text="Screenshot of the overview page for a selected user, with the edit options highlighted.":::
 
 1. After making any changes, select the **Save** button. 
 
@@ -42,14 +44,14 @@ If you selected the **Edit properties** option:
    - To edit properties based on the category, select a category from the top of the page.
    - Select the **Save** button at the bottom of the page to save any changes.
     
-   ![Screenshot a selected user's details, with the detail categories and save button highlighted.](media/how-to-manage-user-profile-info/user-profile-properties-tabbed-view.png)
+   :::image type="content" source="media/how-to-manage-user-profile-info/user-profile-properties-tabbed-view.png" alt-text="Screenshot a selected user's details, with the detail categories and save button highlighted.":::
     
 If you selected the **Properties** tab option:
    - The full list of properties appears for you to review.
    - To edit a property, select the pencil icon next to the category heading.
    - Select the **Save** button at the bottom of the page to save any changes.
     
-   ![Screenshot the Properties tab, with the edit options highlighted.](media/how-to-manage-user-profile-info/user-profile-properties-single-page-view.png)
+   :::image type="content" source="media/how-to-manage-user-profile-info/user-profile-properties-single-page-view.png" alt-text="Screenshot the Properties tab, with the edit options highlighted.":::
 
 ### Profile categories
 
@@ -85,7 +87,7 @@ In the **User settings** area, you can adjust several settings that affect all u
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 1. Browse to **Identity** > **Users** > **User settings**.
 
-[ ![Screenshot of the Microsoft Entra user settings options.](media/how-to-manage-user-profile-info/user-settings.png) ](media/how-to-manage-user-profile-info/user-settings.png#lightbox)
+:::image type="content" source="media/how-to-manage-user-profile-info/user-settings.png" alt-text="Screenshot of the Microsoft Entra user settings options." lightbox="media/how-to-manage-user-profile-info/user-settings.png":::
 
 The following settings can be managed from **User settings**.
 
