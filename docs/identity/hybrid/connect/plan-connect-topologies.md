@@ -28,7 +28,7 @@ Here's the legend for pictures in the article:
 | On-premises Active Directory with filtered import |![Active Directory with filtered import](./media/plan-connect-topologies/legendad2.png) |
 | Microsoft Entra Connect Sync server |![Microsoft Entra Connect Sync server](./media/plan-connect-topologies/legendsync1.png) |
 | Microsoft Entra Connect Sync server “staging mode” |![Microsoft Entra Connect Sync server “staging mode”](./media/plan-connect-topologies/legendsync2.png) |
-| GALSync with Forefront Identity Manager (FIM) 2010 or Microsoft Identity Manager (MIM) 2016 |![GALSync with FIM 2010 or MIM 2016](./media/plan-connect-topologies/legendsync3.png) |
+| GALSync with Microsoft Identity Manager (MIM) 2016 |![GALSync with MIM 2016](./media/plan-connect-topologies/legendsync3.png) |
 | Microsoft Entra Connect Sync server, detailed |![Microsoft Entra Connect Sync server, detailed](./media/plan-connect-topologies/legendsync4.png) |
 | Microsoft Entra ID |![Microsoft Entra ID](./media/plan-connect-topologies/legendaad.png) |
 | Unsupported scenario |![Unsupported scenario](./media/plan-connect-topologies/legendunsupported.png) |
@@ -105,7 +105,7 @@ Common to all these scenarios is that distribution and security groups can conta
 
 A full mesh topology allows users and resources to be located in any forest. Commonly, there are two-way trusts between the forests.
 
-If Exchange is present in more than one forest, there might be (optionally) an on-premises GALSync solution. Every user is then represented as a contact in all other forests. GALSync is commonly implemented through FIM 2010 or MIM 2016. Microsoft Entra Connect cannot be used for on-premises GALSync.
+If Exchange is present in more than one forest, there might be (optionally) an on-premises GALSync solution. Every user is then represented as a contact in all other forests. GALSync is commonly implemented through Microsoft Identity Manager. Microsoft Entra Connect cannot be used for on-premises GALSync.
 
 In this scenario, identity objects are joined via the mail attribute. A user who has a mailbox in one forest is joined with the contacts in the other forests.
 
@@ -174,7 +174,7 @@ This topology implements the following use cases:
 ### GALSync with on-premises sync server
 ![GALSync in a topology for multiple forests and multiple directories](./media/plan-connect-topologies/multiforestmultidirectorygalsync.png)
 
-You can use FIM 2010 or MIM 2016 on-premises to sync users (via GALSync) between two Exchange organizations. The users in one organization appear as foreign users/contacts in the other organization. These different on-premises Active Directory instances can then be synchronized with their own Microsoft Entra tenants.
+You can use Microsoft Identity Manager on-premises to sync users (via GALSync) between two Exchange organizations. The users in one organization appear as foreign users/contacts in the other organization. These different on-premises Active Directory instances can then be synchronized with their own Microsoft Entra tenants.
 
 <a name='using-unauthorized-clients-to-access-the-azure-ad-connect-backend'></a>
 

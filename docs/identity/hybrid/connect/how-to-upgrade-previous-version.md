@@ -47,7 +47,7 @@ For permissions information, see the [permissions required for an upgrade](refer
 > After you've enabled your new Microsoft Entra Connect server to start synchronizing changes to Microsoft Entra ID, you must not roll back to using DirSync or Azure AD Sync. Downgrading from Microsoft Entra Connect to legacy clients, including DirSync and Azure AD Sync, is not supported and can lead to issues such as data loss in Microsoft Entra ID.
 
 ## In-place upgrade
-An in-place upgrade works for moving from Azure AD Sync or Microsoft Entra Connect. It doesn't work for moving from DirSync or for a solution with Forefront Identity Manager (FIM) + Microsoft Entra Connector.
+An in-place upgrade works for moving from Azure AD Sync or Microsoft Entra Connect. It doesn't work for moving from DirSync.
 
 This method is preferred when you have a single server and less than about 100,000 objects. If there are any changes to the out-of-box sync rules, a full import and full synchronization will occur after the upgrade. This method ensures that the new configuration is applied to all existing objects in the system. This run might take a few hours, depending on the number of objects that are in scope of the sync engine. The normal delta synchronization scheduler (which synchronizes every 30 minutes by default) is suspended, but password synchronization continues. You might consider doing the in-place upgrade during the weekend. If there are no changes to the out-of-box configuration with the new Microsoft Entra Connect release, then a normal delta import/sync starts instead.
 
@@ -77,7 +77,7 @@ The two servers can use different versions. For example, the active server that 
 > [!NOTE]
 > Some customers prefer to have three or four servers for this scenario. When the staging server is upgraded, you don't have a backup server for [disaster recovery](how-to-connect-sync-staging-server.md#disaster-recovery). With three or four servers, you can prepare one set of primary/standby servers with the updated version, which ensures that there's always a staging server that's ready to take over.
 
-These steps also work to move from Azure AD Sync or a solution with FIM + Microsoft Entra Connector. These steps don't work for DirSync, but the same swing migration method (also called parallel deployment) with steps for DirSync is in [Upgrade Azure Active Directory Sync (DirSync)](how-to-dirsync-upgrade-get-started.md).
+These steps also work to move from Azure AD Sync or a solution with MIM and the Microsoft Entra Connector. These steps don't work for DirSync, but the same swing migration method (also called parallel deployment) with steps for DirSync is in [Upgrade Azure Active Directory Sync (DirSync)](how-to-dirsync-upgrade-get-started.md).
 
 ### Use a swing migration to upgrade
 1. If you only have one Microsoft Entra Connect server, if you are upgrading from AD Sync, or upgrading from an old version, it's a good idea to install the new version on a new Windows Server. If you already have two Microsoft Entra Connect servers, upgrade the staging server first. and promote the staging to active. It's recommended to always keep a pair of active/staging server running the same version, but it's not required.

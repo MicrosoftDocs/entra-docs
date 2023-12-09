@@ -60,8 +60,6 @@ DirSync/Azure AD Sync will continue to work on April 13, 2017.  However, Microso
 **Q: Which DirSync versions can I upgrade from?**  
 It's supported to upgrade from any DirSync release currently being used. 
 
-**Q: What about the Microsoft Entra Connector for FIM/MIM?**  
-The Microsoft Entra Connector for FIM/MIM has **not** been announced as deprecated. It's at **feature freeze**; no new functionality is added and it receives no bug fixes. Microsoft recommends customers using it to plan to move from it to Microsoft Entra Connect. It's strongly recommended to not start any new deployments using it. This Connector will be announced deprecated in the future.
 
 ## Additional Resources
 * [Integrating your on-premises identities with Microsoft Entra ID](../whatis-hybrid-identity.md)
