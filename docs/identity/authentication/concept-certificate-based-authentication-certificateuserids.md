@@ -19,12 +19,12 @@ ms.custom: has-adal-ref, has-azure-ad-ps-ref
 
 # Mapping to the certificateUserIds attribute in Microsoft Entra ID
 
-We have added a new attribute for user objects in Microsoft Entra ID called certificateUserIds.
+User objects in Microsoft Entra ID have an attribute named certificateUserIds.
 
-  - The certificateUserIds attribute is multivalued and can hold up to 5 values.
-  - Each value can be no larger than 1024 characters.
-  - Each value must be unique. Once a value is present on one user account, it can't be written to any other user account in the same Entra ID tenant.
-  - The value doesn't need to be in email ID format. The certificateUserIds attribute can store nonroutable user principal names (UPNs) like _bob@woodgrove_ or _bob@local_.
+- The certificateUserIds attribute is multivalued and can hold up to 5 values.
+- Each value can be no more than 1024 characters.
+- Each value must be unique. Once a value is present on one user account, it can't be written to any other user account in the same Entra ID tenant.
+- The value doesn't need to be in email ID format. The certificateUserIds attribute can store nonroutable user principal names (UPNs) like _bob@woodgrove_ or _bob@local_.
 
 > [!NOTE]
 > Although each value must be unique in Entra ID, you can map a single certificate to multiple accounts by implementing multiple username bindings. For more information, see [Multiple username bindings](~/identity/authentication/concept-certificate-based-authentication-technical-deep-dive.md#securing-microsoft-entra-configuration-with-multiple-username-bindings).
