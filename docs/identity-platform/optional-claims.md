@@ -10,7 +10,7 @@ ms.reviewer: ludwignick
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: how-to
-#Customer intent:
+#Customer intent: 
 ---
 
 # Configure optional claims

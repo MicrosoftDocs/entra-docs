@@ -10,7 +10,7 @@ ms.reviewer: alamaral
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: reference
-#Customer intent:
+#Customer intent: 
 ---
 
 # SAML token claims reference

@@ -10,7 +10,7 @@ ms.reviewer: ludwignick, jeedes
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: reference
-#Customer intent:
+#Customer intent: 
 ---
 
 # Claims mapping policy type

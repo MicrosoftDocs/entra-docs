@@ -9,7 +9,7 @@ ms.date: 05/12/2023
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: how-to
-#Customer intent:
+#Customer intent: 
 ---
 
 # Create a Microsoft Entra application and service principal that can access resources

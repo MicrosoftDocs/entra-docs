@@ -9,7 +9,7 @@ ms.date: 07/28/2023
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: quickstart
-#Customer intent:
+#Customer intent: 
 ---
 
 # Quickstart: Sign in users and call the Microsoft Graph API from a Python web app

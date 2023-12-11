@@ -10,7 +10,7 @@ ms.reviewer: kkrishna, jmprieur
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: how-to
-#Customer intent:
+#Customer intent: 
 ---
 
 # Add app roles to your application and receive them in the token

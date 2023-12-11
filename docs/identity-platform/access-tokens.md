@@ -9,7 +9,7 @@ ms.date: 8/1/2023
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-#Customer intent:
+#Customer intent: 
 ---
 
 # Access tokens in the Microsoft identity platform

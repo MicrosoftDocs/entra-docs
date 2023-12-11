@@ -10,7 +10,7 @@ ms.reviewer: rahulnagraj, alamaral, jeedes
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: how-to
-#Customer intent:
+#Customer intent: 
 ---
 
 # Customize SAML token claims

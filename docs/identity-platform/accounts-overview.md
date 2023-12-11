@@ -11,7 +11,7 @@ ms.reviewer: shoatman
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-#Customer intent:
+#Customer intent: 
 ---
 
 # Accounts & tenant profiles (Android)

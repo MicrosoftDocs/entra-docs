@@ -11,7 +11,7 @@ ms.reviewer: jmprieur
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-#Customer intent:
+#Customer intent: 
 ---
 
 # Integrating with the Microsoft identity platform

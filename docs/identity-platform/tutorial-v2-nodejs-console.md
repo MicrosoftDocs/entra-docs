@@ -9,7 +9,7 @@ ms.date: 12/12/2021
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: tutorial
-#Customer intent:
+#Customer intent: 
 ---
 
 # Tutorial: Call the Microsoft Graph API in a Node.js console daemon app

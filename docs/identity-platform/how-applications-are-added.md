@@ -10,7 +10,7 @@ ms.reviewer: lenalepa, sureshja
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-#Customer intent:
+#Customer intent: 
 ---
 
 # How and why applications are added to Microsoft Entra ID

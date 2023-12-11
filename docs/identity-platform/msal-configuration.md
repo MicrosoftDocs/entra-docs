@@ -10,7 +10,7 @@ ms.reviewer: shoatman
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: reference
-#Customer intent:
+#Customer intent: 
 ---
 
 # Android Microsoft Authentication Library configuration file

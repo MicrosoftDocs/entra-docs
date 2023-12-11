@@ -10,7 +10,7 @@ ms.reviewer: rahulnagraj, alamaral
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: how-to
-#Customer intent:
+#Customer intent: 
 ---
 
 # Customize claims issued in the JSON web token (JWT) for enterprise applications

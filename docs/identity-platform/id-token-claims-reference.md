@@ -9,7 +9,7 @@ ms.date: 05/30/2023
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: reference
-#Customer intent:
+#Customer intent: 
 ---
 
 # ID token claims reference

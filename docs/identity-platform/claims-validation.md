@@ -9,7 +9,7 @@ ms.date: 04/21/2023
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-#Customer intent:
+#Customer intent: 
 ---
 
 # Secure applications and APIs by validating claims

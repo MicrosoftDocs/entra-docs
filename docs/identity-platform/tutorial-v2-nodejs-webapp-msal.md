@@ -9,7 +9,7 @@ ms.date: 11/09/2022
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: tutorial
-#Customer intent:
+#Customer intent: 
 ---
 
 # Tutorial: Sign in users and acquire a token for Microsoft Graph in a Node.js & Express web app

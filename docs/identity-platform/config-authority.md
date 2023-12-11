@@ -10,7 +10,7 @@ ms.reviewer: oldalton
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-#Customer intent:
+#Customer intent: 
 ---
 
 # Configure MSAL for iOS and macOS to use different identity providers

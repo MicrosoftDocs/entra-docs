@@ -9,7 +9,7 @@ ms.date: 02/17/2021
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: tutorial
-#Customer intent:
+#Customer intent: 
 ---
 
 # Tutorial: Sign in users and call the Microsoft Graph API in an Electron desktop app

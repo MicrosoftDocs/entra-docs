@@ -9,7 +9,7 @@ ms.reviewer: medbhargava
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-#Customer intent:
+#Customer intent: 
 ---
 
 # Migrate away from using email claims for user identification or authorization

@@ -10,7 +10,7 @@ ms.reviewer: manrath, sureshja
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: reference
-#Customer intent:
+#Customer intent: 
 ---
 
 # Validation differences by supported account types (signInAudience)

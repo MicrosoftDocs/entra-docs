@@ -9,7 +9,7 @@ ms.date: 01/19/2023
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: how-to
-#Customer intent:
+#Customer intent: 
 ---
 
 # Request custom claims using MSAL for iOS and macOS
