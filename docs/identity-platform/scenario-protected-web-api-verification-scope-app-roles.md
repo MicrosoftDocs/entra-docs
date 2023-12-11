@@ -4,7 +4,7 @@ description: Verify that the API is only called by applications on behalf of use
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.date: 05/12/2022
+ms.date: 12/15/2023
 ms.reviewer: jmprieur
 ms.service: active-directory
 ms.subservice: develop

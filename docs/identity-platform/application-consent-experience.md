@@ -5,7 +5,7 @@ author: omondiatieno
 manager: CelesteDG
 ms.author: jomondi
 ms.custom: 
-ms.date: 11/01/2022
+ms.date: 12/15/2023
 ms.reviewer: jesakowi, asteen, jawoods
 ms.service: active-directory
 ms.subservice: develop
