@@ -112,7 +112,8 @@ Use a Windows device with the Global Secure Access client installed. Sign in as 
 - Currently assuming standard ports for HTTP/S traffic (ports 80 and 443).
 - *microsoft.com is currently acquired by the Microsoft 365 access profile.
 - IPv6 isn't supported on this platform yet.
-- Remote network connectivity for branch offices is currently not supported. 
+- Hyper-V isn't supported on this platform yet.
+- Remote network connectivity for branch offices is currently not supported.
 - OSI Layer 3/4 (that is, network layer) filtering isn't supported yet.
 - No captive portal support yet. This means that connecting to public WiFi via captive portal access may fail because these endpoints are currently acquired by the client.
 - TLS Termination is in development.
