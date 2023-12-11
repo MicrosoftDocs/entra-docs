@@ -12,4 +12,4 @@ ms.custom: include file
 ---
 
 > [!TIP]
-> Steps in this article may vary slightly based on the portal you start from.
+> Steps in this article might vary slightly based on the portal you start from.
