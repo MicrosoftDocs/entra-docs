@@ -16,10 +16,11 @@ ms.date: 06/09/2023
 
 # Tutorial: Handle authentication flows in a React single-page app
 
-This tutorial is part of a series that demonstrates building a React single-page application (SPA) and preparing it for authentication using the Microsoft Entra admin center. In [part 2 of this series](./tutorial-single-page-app-react-sign-in-prepare-app.md), you created a React SPA and prepared it for authentication with your Microsoft Entra ID for customers tenant. In this tutorial, you'll learn how to handle authentication flows in your app by adding components.
+This tutorial is part 3 of a series that demonstrates building a React single-page application (SPA) and preparing it for authentication using the Microsoft Entra admin center. In [part 2 of this series](./tutorial-single-page-app-react-sign-in-prepare-app.md), you created a React SPA and prepared it for authentication with your Microsoft Entra ID for customers tenant. In this tutorial, you'll learn how to handle authentication flows in your app by adding components.
 In this tutorial;
 
 > [!div class="checklist"]
+>
 > * Add a *DataDisplay* component to the app
 > * Add a *ProfileContent* component to the app
 > * Add a *PageLayout* component to the app

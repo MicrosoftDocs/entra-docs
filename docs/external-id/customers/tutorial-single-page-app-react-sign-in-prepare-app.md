@@ -14,7 +14,7 @@ ms.author: godonnell
 
 # Tutorial: Create a React SPA project for authentication in a customer tenant
 
-This tutorial is part of a series that demonstrates building a React single-page application (SPA) and preparing it for authentication using the Microsoft Entra admin center. In [part 1 of this series](./tutorial-single-page-app-react-sign-in-prepare-tenant.md), you registered an application and configured user flows in your Microsoft Entra ID for customers tenant. This tutorial demonstrates how to create a React single-page app using `npm` and create files needed for authentication and authorization.
+This tutorial is part 2 of a series that demonstrates building a React single-page application (SPA) and preparing it for authentication using the Microsoft Entra admin center. In [part 1 of this series](./tutorial-single-page-app-react-sign-in-prepare-tenant.md), you registered an application and configured user flows in your Microsoft Entra ID for customers tenant. This tutorial demonstrates how to create a React single-page app using `npm` and create files needed for authentication and authorization.
 
 In this tutorial;
 
