@@ -44,11 +44,11 @@ The scenario outlined in this tutorial assumes that you already have the followi
    > [!NOTE] 
    > If federated authentication is already turned on, you can still proceed. See the recommendations in the previous section.
 
-* Determine the type of syncing in Entra ID, and if necessary, create groups for syncing only assigned accounts to the Apple Business Manager Azure AD app:
+* Determine the type of syncing in Mcirosft Entra ID, and if necessary, create groups for syncing only assigned accounts to the Apple Business Manager Azure AD app:
    * Sync only assigned users.
    * Sync all users.
 
-* Have on call an Entra ID administrator with permissions to edit enterprise applications. When both of you are ready, see Use SCIM to import users.
+* Have on call a Microsoft Entra ID administrator with permissions to edit enterprise applications. When both of you are ready, see Use SCIM to import users.
 
 > [!NOTE]
 > Token transfer to Microsoft Entra ID and  establishing a successful connection has to be completed in 4 calendar days or the process has to be started again.
@@ -62,9 +62,9 @@ The scenario outlined in this tutorial assumes that you already have the followi
 
 ## Step 2: Configure Apple Business Manager to support provisioning with Microsoft Entra ID
 
-1. In Apple Business Manager , sign in as a user that has the role of Administrator or People Manager.
+1. In Apple Business Manager, sign in as a user that has the role of Administrator or People Manager.
 
-1. Select your name at the bottom of the sidebar, select Preferences , then select Directory Sync .
+1. Select your name at the bottom of the sidebar, select Preferences, then select Directory Sync.
 
 1. Select Connect next to SCIM, carefully read the warning, select Copy, then select Close.
 
