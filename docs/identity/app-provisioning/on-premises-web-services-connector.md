@@ -33,7 +33,7 @@ The web services connector implements the following functionalities:
 
 - Connector Space Schema configuration: Allows the administrator to configure the connector space schema. The schema configuration will include a listing of Object Types and attributes for a specific implementation. The administrator can specify the object types that will be supported by the Web Service MA. The administrator may also choose here the attributes that will be part of the Connector space Schema.
 
-- Operation Flow configuration: Workflow designer UI for configuring the implementation of FIM operations (Import/Export) per object type through exposed web service operations functions such as:
+- Operation Flow configuration: Workflow designer UI for configuring the implementation of operations (Import/Export) per object type through exposed web service operations functions such as:
 
     - Assignment of parameters from connector space to web service functions.
     - Assignment of parameters from web service functions to the connector space.
