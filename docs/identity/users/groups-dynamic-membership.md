@@ -179,7 +179,7 @@ user.employeehiredate -le 2020-06-10T18:13:20Z
 The **-match** operator is used for matching any regular expression. Examples:
 
 ```
-user.displayName -match "Da.*"   
+user.displayName -match "^Da.*"   
 ```
 `Da`, `Dav`, `David` evaluate to true, aDa evaluates to false.
 
