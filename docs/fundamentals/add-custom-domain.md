@@ -9,7 +9,7 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: fundamentals
 ms.topic: how-to
-ms.date: 09/12/2023
+ms.date: 11/28/2023
 ms.author: barclayn
 ms.reviewer: elkuzmen
 ---
@@ -50,18 +50,18 @@ After you create your directory, you can add your custom domain name.
 
 1. Browse to **Identity** > **Settings** > **Domain names** > **Add custom domain**.
 
-    ![Custom domain names page, with Add custom domain shown](media/add-custom-domain/add-custom-domain.png)
+   :::image type="content" source="media/add-custom-domain/add-custom-domain.png" alt-text="Screenshot of Custom domain names page, with Add custom domain shown.":::
 
 1. In **Custom domain name**, enter your organization's domain, in this example, *contoso.com*. Select **Add domain**.
 
-    ![Custom domain names page, with Add custom domain page](media/add-custom-domain/add-custom-domain-blade.png)
+   :::image type="content" source="media/add-custom-domain/add-custom-domain-blade.png" alt-text="Screenshot of Custom domain names page, with Add custom domain page.":::
 
     > [!IMPORTANT]
     > You must include *.com*, *.net*, or any other top-level extension for this to work. When adding a custom domain, the Password Policy values will be inherited from the initial domain.
 
 1. The unverified domain is added. The **contoso.com** page appears showing the DNS information needed to validate your domain ownership. Save this information.
 
-    ![Contoso page with DNS entry information](media/add-custom-domain/contoso-blade-with-dns-info.png)
+   :::image type="content" source="media/add-custom-domain/contoso-blade-with-dns-info.png" alt-text="Screenshot of Contoso page with DNS entry information.":::
 
 ## Add your DNS information to the domain registrar
 
@@ -84,11 +84,11 @@ To verify your custom domain name, follow these steps:
 
 1. In **Custom domain names**, select the custom domain name. In this example, select **contoso.com**.
 
-    ![Fabrikam - Custom domain names page, with contoso highlighted](media/add-custom-domain/custom-blade-with-contoso-highlighted.png)
+   :::image type="content" source="media/add-custom-domain/custom-blade-with-contoso-highlighted.png" alt-text="Screenshot of Fabrikam - Custom domain names page, with Contoso highlighted.":::
 
 1. On the **contoso.com** page, select **Verify** to make sure your custom domain is properly registered and is valid.
 
-    ![Contoso page with DNS entry information and the Verify button](media/add-custom-domain/contoso-blade-with-dns-info-verify.png)
+   :::image type="content" source="media/add-custom-domain/contoso-blade-with-dns-info-verify.png" alt-text="Screenshot of Contoso page with DNS entry information and the Verify button.":::
 
 ## Common verification issues
 

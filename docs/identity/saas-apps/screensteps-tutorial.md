@@ -1,13 +1,13 @@
 ---
 title: 'Tutorial: Microsoft Entra SSO integration with ScreenSteps'
 description: Learn how to configure single sign-on between Microsoft Entra ID and ScreenSteps.
-services: active-directory
+
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: jeedes
@@ -32,6 +32,7 @@ To get started, you need the following items:
 In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
 
 * ScreenSteps supports **SP** initiated SSO.
+* ScreenSteps supports [Automated user provisioning](screensteps-provisioning-tutorial.md).
 
 > [!NOTE]
 > Identifier of this application is a fixed string value so only one instance can be configured in one tenant.

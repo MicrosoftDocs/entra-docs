@@ -1,13 +1,13 @@
 ---
 title: Microsoft Entra SSO integration with Contentstack
 description: Learn how to configure single sign-on between Microsoft Entra ID and Contentstack.
-services: active-directory
+
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.topic: how-to
 ms.date: 10/27/2023
 ms.author: jeedes
@@ -107,7 +107,10 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 	
 	| Name | Source Attribute|
 	| ----- | --------------- |
-	| roles | user.assignedroles|
+    | first_name | user.givenname |
+    | last_name | user.surname |
+    | email | user.userprincipalname |
+    | roles | user.assignedroles|
 
     > [!NOTE]
     > Please click [here](~/identity-platform/howto-add-app-roles-in-apps.md#app-roles-ui) to know how to configure Role in Microsoft Entra ID.

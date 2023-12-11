@@ -1,13 +1,13 @@
 ---
 title: 'Tutorial: Configure Insight4GRC for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Insight4GRC.
-services: active-directory
+
 author: twimmers
 writer: twimmers
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: thwimmer

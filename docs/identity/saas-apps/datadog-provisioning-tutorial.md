@@ -1,14 +1,14 @@
 ---
 title: 'Tutorial: Configure Datadog for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Datadog.
-services: active-directory
+
 author: twimmers
 writer: twimmers
 manager: jeedes
 ms.assetid: 1f57f4bf-90f9-4a89-90fe-987fd5686d7b
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.topic: tutorial
 ms.date: 08/30/2023
 ms.author: thwimmer

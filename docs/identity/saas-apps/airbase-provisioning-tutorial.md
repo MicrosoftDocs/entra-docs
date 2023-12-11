@@ -1,14 +1,14 @@
 ---
 title: 'Tutorial: Configure Airbase for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Airbase.
-services: active-directory
+
 author: twimmers
 writer: twimmers
 manager: jeedes
 ms.assetid: 1388651c-4527-49bc-97d3-6fbdd203d37f
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.topic: tutorial
 ms.date: 07/26/2023
 ms.author: thwimmer

@@ -1,12 +1,12 @@
 ---
 title: Disable user sign-in for application
 description: How to disable an enterprise application so that no users may sign in to it in Microsoft Entra ID
-services: active-directory
+
 author: omondiatieno
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
-ms.workload: identity
+
 ms.topic: how-to
 ms.date: 2/23/2023
 ms.author: jomondi

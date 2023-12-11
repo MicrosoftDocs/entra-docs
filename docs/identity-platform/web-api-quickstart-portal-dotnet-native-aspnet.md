@@ -1,17 +1,15 @@
 ---
 title: "Quickstart: Call an ASP.NET web API that is protected by the Microsoft identity platform"
 description: In this quickstart, learn how to call an ASP.NET web API that's protected by the Microsoft identity platform from a Windows Desktop (WPF) application.
-services: active-directory
+ROBOTS: NOINDEX
 author: Dickson-Mwendia
 manager: CelesteDG
+ms.author: dmwendia
+ms.custom: devx-track-csharp,  scenarios:getting-started, "languages:ASP.NET", mode-api
+ms.date: 08/16/2022
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-ms.workload: identity
-ms.date: 08/16/2022
-ROBOTS: NOINDEX
-ms.author: dmwendia
-ms.custom: devx-track-csharp, aaddev, identityplatformtop40, "scenarios:getting-started", "languages:ASP.NET", mode-api
 #Customer intent: As an application developer, I want to know how to set up OpenId Connect authentication in a web application that's built by using Node.js with Express.
 ---
 

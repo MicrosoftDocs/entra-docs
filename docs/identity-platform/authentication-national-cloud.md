@@ -1,18 +1,16 @@
 ---
 title: Microsoft Entra authentication & national clouds
 description: Learn about app registration and authentication endpoints for national clouds.
-services: active-directory
 author: henrymbuguakiarie
 manager: CelesteDG
-
+ms.author: henrymbugua
+ms.custom: references_regions
+ms.date: 12/11/2023
+ms.reviewer: negoe
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-ms.workload: identity
-ms.date: 02/06/2023
-ms.author: henrymbugua
-ms.reviewer: negoe
-ms.custom: aaddev,references_regions
+#Customer intent:
 ---
 
 # National clouds
@@ -32,6 +30,9 @@ As you develop your apps, use the endpoints for the cloud instance where you'll 
 ## App registration endpoints
 
 There's a separate Azure portal for each one of the national clouds. To integrate applications with the Microsoft identity platform in a national cloud, you're required to register your application separately in each Azure portal that's specific to the environment.
+
+> [!IMPORTANT]
+> Users with a Microsoft Entra ID guest account can’t access Cost management + Billing features to manage EA enrollments.
 
 The following table lists the base URLs for the Microsoft Entra endpoints used to register an application for each national cloud.
 

@@ -1,7 +1,7 @@
 ---
 title: 'Tutorial: Configure KnowBe4 Security Awareness Training for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to KnowBe4 Security Awareness Training.
-services: active-directory
+
 documentationcenter: ''
 author: twimmers
 writer: Thwimmer
@@ -10,7 +10,7 @@ manager: jeedes
 ms.assetid: e71f7de4-33d0-46cc-85c9-29f24c3e1a25
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 11/21/2022

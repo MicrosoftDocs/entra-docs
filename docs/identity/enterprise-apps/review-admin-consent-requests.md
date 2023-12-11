@@ -1,12 +1,12 @@
 ---
 title: Review and take action on admin consent requests
 description: Learn how to review and take action on admin consent requests that were created after you were designated as a reviewer.
-services: active-directory
+
 author: omondiatieno
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
-ms.workload: identity
+
 ms.topic: how-to
 ms.date: 06/14/2023
 ms.author: jomondi

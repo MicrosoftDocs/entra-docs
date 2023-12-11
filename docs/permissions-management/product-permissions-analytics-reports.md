@@ -8,7 +8,7 @@ ms.service: active-directory
 ms.subservice: ciem
 ms.workload: identity
 ms.topic: how-to
-ms.date: 10/04/2023
+ms.date: 12/01/2023
 ms.author: jfields
 ---
 
@@ -60,7 +60,7 @@ You can view the Permissions Analytics Report information directly in the Permis
 2. Locate the **Permissions Analytics Report** in the list, then select it.
 3. Select which Authorization System you want to generate the PDF download for (AWS, Azure, or GCP).
    >[!NOTE]
-   > (Preview) You can download a PDF report for up to 10 authorization systems at one time. The authorization systems must be part of the same cloud environment (for example, 1- 10 authorization systems that are all on Amazon Web Service (AWS)). 
+   >You can download a PDF report for up to 10 authorization systems at one time. The authorization systems must be part of the same cloud environment (for example, 1- 10 authorization systems that are all on Amazon Web Service (AWS)). 
     
     The following message displays: **Successfully started to generate PDF report**. 
     

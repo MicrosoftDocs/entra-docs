@@ -1,18 +1,15 @@
 ---
 title: Xamarin Android system browser considerations (MSAL.NET)
 description: Learn about considerations for using system browsers on Xamarin Android with the Microsoft Authentication Library for .NET (MSAL.NET).
-services: active-directory
 author: henrymbuguakiarie
 manager: CelesteDG
-
+ms.author: henrymbugua
+ms.custom: devx-track-csharp,  devx-track-dotnet
+ms.date: 10/30/2019
+ms.reviewer: saeeda, Dickson-Mwendia
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-ms.workload: identity
-ms.date: 10/30/2019
-ms.author: henrymbugua
-ms.reviewer: saeeda, Dickson-Mwendia
-ms.custom: devx-track-csharp, aaddev, devx-track-dotnet
 #Customer intent: As an application developer, I want to learn about considerations for using Xamarin Android and MSAL.NET so I can decide if this platform meets my application development needs.
 ---
 

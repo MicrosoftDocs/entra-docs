@@ -6,7 +6,7 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 04/29/2023
+ms.date: 11/28/2023
 
 ms.author: justinha
 author: justinha
@@ -70,7 +70,6 @@ A two-gate policy applies in the following circumstances:
   * Application administrator
   * Application proxy service administrator
   * Authentication administrator
-  * Azure AD Joined Device Local Administrator
   * Billing administrator
   * Compliance administrator
   * Device administrators
@@ -82,6 +81,7 @@ A two-gate policy applies in the following circumstances:
   * Helpdesk administrator
   * Intune administrator
   * Mailbox Administrator
+  * Microsoft Entra Joined Device Local Administrator
   * Partner Tier1 Support
   * Partner Tier2 Support
   * Password administrator

@@ -29,6 +29,8 @@
           href: security-tokens.md
         - name: Microsoft Authentication Library (MSAL)
           href: msal-overview.md
+        - name: Public and confidential client apps
+          href: msal-client-applications.md
         - name: Auth flows supported by MSAL
           href: msal-authentication-flows.md
         - name: Microsoft Graph
@@ -488,6 +490,8 @@
           items:
             - name: Restrict your app to a set of users
               href: howto-restrict-your-app-to-a-set-of-users.md
+            - name: Update your app's requested permissions
+              href: howto-update-permissions.md
             - name: Add app roles in your application
               href: howto-add-app-roles-in-apps.md
             - name: Implement RBAC in your application
@@ -646,8 +650,6 @@
       items:
         - name: Request and cache tokens
           href: msal-acquire-cache-tokens.md
-        - name: Public and confidential client apps
-          href: msal-client-applications.md
         - name: National clouds and MSAL
           displayName: china, germany, gov, 21vianet
           href: msal-national-cloud.md

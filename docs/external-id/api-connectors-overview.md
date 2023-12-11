@@ -1,7 +1,7 @@
 ---
 title: About API connectors in self-service sign-up flows
 description: Use Microsoft Entra API connectors to customize and extend your self-service sign-up user flows by using web APIs. 
-services: active-directory
+ 
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: conceptual
@@ -11,7 +11,7 @@ ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.custom: "it-pro"                 
-ms.collection: engagement-fy23, M365-identity-device-management
+ms.collection: M365-identity-device-management
 ---
 
 # Use API connectors to customize and extend self-service sign-up 

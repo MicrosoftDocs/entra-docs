@@ -232,6 +232,8 @@
         href: assetbank-tutorial.md
       - name: Asset Planner
         href: asset-planner-tutorial.md  
+      - name: Assent SSO
+        href: assent-sso-tutorial.md
       - name: AssetSonar
         href: assetsonar-tutorial.md
       - name: Astra Schedule
@@ -772,6 +774,8 @@
         href: discovery-benefits-sso-tutorial.md
       - name: Displayr
         href: displayr-tutorial.md
+      - name: DLG Learning Center
+        href: dlg-learning-center-tutorial.md
       - name: dmarcian
         href: dmarcian-tutorial.md
       - name: Document360
@@ -1629,6 +1633,8 @@
         href: logzio-cloud-observability-for-engineers-tutorial.md
       - name: Looker Analytics Platform
         href: looker-analytics-platform-tutorial.md  
+      - name: Lookout Secure Access
+        href: lookout-secure-access-tutorial.md
       - name: Loop Flow CRM
         href: loop-flow-crm-tutorial.md  
       - name: Lucid (All Products)
@@ -1769,6 +1775,8 @@
         href: myaryaka-tutorial.md
       - name: My Award Points Top Sub/Top Team
         href: myawardpoints-tutorial.md
+      - name: MyGeotab
+        href: mygeotab-tutorial.md
       - name: My IBISWorld
         href: my-ibisworld-tutorial.md
       - name: myMobilityHQ
@@ -3692,8 +3700,8 @@
         href: workday-writeback-tutorial.md
       - name: Workteam
         href: workteam-provisioning-tutorial.md
-      - name: Workplace by Facebook
-        href: workplace-by-facebook-provisioning-tutorial.md
+      - name: Workplace from Meta 
+        href: workplace-from-meta-provisioning-tutorial.md
       - name: Workgrid
         href: workgrid-provisioning-tutorial.md
       - name: Wrike

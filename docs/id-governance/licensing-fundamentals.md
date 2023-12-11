@@ -10,7 +10,7 @@ ms.service: active-directory
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 11/10/2023
+ms.date: 11/17/2023
 ms.subservice: hybrid
 ms.author: billmath
 ---
@@ -69,21 +69,21 @@ A global administrator in a tenant that has an appropriate prerequisite product,
 
 1. In the product details page, select **Start free trial**.
 
-
 ## Features by license
 
 The following table shows what features are available with each license.  Not all features are available in all clouds; see [Microsoft Entra feature availability](~/identity/authentication/feature-availability.md) for Azure Government.
 
 |Feature|Free|Microsoft Entra ID P1|Microsoft Entra ID P2|Microsoft Entra ID Governance|
 |-----|:-----:|:-----:|:-----:|:-----:|
-|[HR-driven Provisioning](~/identity/app-provisioning/what-is-hr-driven-provisioning.md)||| :white_check_mark: | :white_check_mark: |
+|[API-driven provisioning](../identity/app-provisioning/inbound-provisioning-api-concepts.md)|| :white_check_mark:  | :white_check_mark: | :white_check_mark: |
+|[HR-driven provisioning](~/identity/app-provisioning/what-is-hr-driven-provisioning.md)|| :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[Automated user provisioning to SaaS apps](~/identity/saas-apps/tutorial-list.md)| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[Automated group provisioning to SaaS apps](~/identity/saas-apps/tutorial-list.md)|| :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[Automated provisioning to on-premises apps](~/identity/app-provisioning/on-premises-application-provisioning-architecture.md)|| :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[Conditional Access - Terms of use attestation](~/identity/conditional-access/terms-of-use.md)|| :white_check_mark: | :white_check_mark: | :white_check_mark: |
-|[Entitlement management - Basic entitlement management](entitlement-management-overview.md)|||| :white_check_mark: |  
-|[Entitlement management - Conditional Access Scoping](entitlement-management-external-users.md#review-your-conditional-access-policies)|||| :white_check_mark: |
-|[Entitlement management MyAccess Search](my-access-portal-overview.md)|||| :white_check_mark: |  
+|[Entitlement management - Basic entitlement management](entitlement-management-overview.md)||| :white_check_mark: | :white_check_mark: |  
+|[Entitlement management - Conditional Access Scoping](entitlement-management-external-users.md#review-your-conditional-access-policies)||| :white_check_mark: | :white_check_mark: |
+|[Entitlement management MyAccess Search](my-access-portal-overview.md)||| :white_check_mark: | :white_check_mark: |  
 |[Entitlement management with Verified ID](entitlement-management-verified-id-settings.md)|||| :white_check_mark: |  
 |[Entitlement management + Custom Extensions (Logic Apps)](entitlement-management-logic-apps-integration.md)|||| :white_check_mark: |  
 |[Entitlement management + Auto Assignment Policies](entitlement-management-access-package-auto-assignment-policy.md)|||| :white_check_mark: |
@@ -102,7 +102,7 @@ The following table shows what features are available with each license.  Not al
 |[Access reviews - Machine learning assisted access certifications and reviews](review-recommendations-access-reviews.md#user-to-group-affiliation)|||| :white_check_mark: |
 |[Lifecycle Workflows (LCW)](what-are-lifecycle-workflows.md)|||| :white_check_mark: |
 |[LCW + Custom Extensions (Logic Apps)](lifecycle-workflow-extensibility.md)|||| :white_check_mark: |
-|[Identity governance dashboard (Preview)](governance-dashboard.md)| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+|[Identity governance dashboard (Preview)](governance-dashboard.md)| | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[Insights and reporting - Inactive guest accounts(Preview)](~/identity/users/clean-up-stale-guest-accounts.md)|||| :white_check_mark: |
 
 ## Entitlement Management
@@ -121,7 +121,7 @@ Here are some example license scenarios to help you determine the number of lice
 
 ## Access reviews
 
-Using this feature requires Microsoft Entra ID Governance subscriptions for your organization's users, including for all employees who are reviewing access or having their access reviewed. Some capabilities within this feature may operate with a Microsoft Entra ID P2 subscription.
+Using this feature requires Microsoft Entra ID Governance subscriptions for your organization's users, including for all employees who are reviewing access or having their access reviewed. Some capabilities within this feature might operate with a Microsoft Entra ID P2 subscription.
 
 ### Example license scenarios
 
@@ -137,7 +137,6 @@ Here are some example license scenarios to help you determine the number of lice
 
 ## Lifecycle Workflows
 
-
 With Microsoft Entra ID Governance licenses for Lifecycle Workflows, you can:
 
 - Create, manage, and delete workflows up to the total limit of 50 workflows.
@@ -152,7 +151,7 @@ Using this feature requires Microsoft Entra ID Governance subscriptions for your
 | Scenario | Calculation | Number of licenses |
 | --- | --- | --- |
 | A Lifecycle Workflows Administrator creates a workflow to add new hires in the Marketing department to the Marketing teams group. 250 new hires are assigned to the Marketing teams group via this workflow. | 1 license for the Lifecycle Workflows Administrator, and 250 licenses for the users. | 251 |
-| A Lifecycle Workflows Administrator creates a workflow to pre-offboard a group of employees before their last day of employment. The scope of users who will be pre-offboarded are 40 users. | 40 licenses for users, and 1 license for the Lifecycle Workflows Administrator. | 41 |
+| A Lifecycle Workflows Administrator creates a workflow to pre-offboard a group of employees before their last day of employment. The scope of users who are pre-offboarded is 40 users. | 40 licenses for users, and 1 license for the Lifecycle Workflows Administrator. | 41 |
 
 ## Privileged Identity Management
 
@@ -172,13 +171,10 @@ This feature is available with Microsoft Entra ID P1, P2 and Microsoft Entra ID 
 
 ### License scenarios
 
-
 |Customer License  |Usage limits enforced at tenant level for API-driven provisioning  |
 |---------|---------|
 |Microsoft Entra ID P1 or P2      |   Daily usage quota (number of user records that can be uploaded over 24-hour period): **100K user records (2000 /bulkUpload API calls with each request containing max of 50 records)**.<br><br>Max number of API-driven provisioning jobs for each flow: 2<br>o Max 2 apps for API-driven provisioning to on-premises Active Directory.<br>o Max 2 apps for API-driven provisioning to Microsoft Entra ID.      |
 |Microsoft Entra ID Governance alongside Microsoft Entra ID P1 or P2     | Daily usage quota (number of user records that can be uploaded over 24-hour period): **300K user records  (6000 /bulkUpload API calls with each request containing max of 50 records)**.<br><br>Max number of API-driven provisioning jobs for each flow: 20<br>o Max 20 apps for API-driven provisioning to on-premises Active Directory.<br>o Max 20 apps for API-driven provisioning to Microsoft Entra ID.        |
-
-
 
 ## Licensing FAQs
 
@@ -194,17 +190,20 @@ We anticipate making these licenses available in spring 2024. In the interim, or
 
 For more information, see: [Microsoft Entra ID Governance licensing for business guests](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/microsoft-entra-id-governance-licensing-for-business-guests/ba-p/3575579).
 
-
 ### What happens when a PIM license expires?
 
-If a Microsoft Entra ID P2, Microsoft Entra ID Governance, or trial license expires, Privileged Identity Management features will no longer be available in your directory:
+If a Microsoft Entra ID P2 or Microsoft Entra ID Governance license expires or trial ends, Privileged Identity Management features will no longer be available in your directory. The changes discussed below are applicable to PIM for Microsoft Entra roles, PIM for Azure resources, and PIM for Groups.
 
-- Permanent role assignments to Azure AD roles are unaffected.
-- The Privileged Identity Management service in the Azure portal, and the Graph API cmdlets and PowerShell interfaces of Privileged Identity Management, will no longer be available for users to activate privileged roles, manage privileged access, or perform access reviews of privileged roles.
-- Eligible role assignments of Azure AD roles will be removed, as users will no longer be able to activate privileged roles.
-- Any ongoing access reviews of Azure AD roles will end, and Privileged Identity Management configuration settings are removed.
-- Privileged Identity Management will no longer send emails on role assignment changes.
+- Active permanent assignments are not affected.
+- Active time-bound assignments become active permanent which means they will no longer expire at a designated time.
+- Eligible role assignments will be removed, as users will no longer be able to activate privileged roles.
+- Privileged Identity Management blades on Microsoft Entra portal or Azure portal, API and PowerShell interfaces of Privileged Identity Management, will no longer be available for users to activate roles, manage assignments, or perform access reviews of privileged roles.
+- Any ongoing access reviews of Azure AD roles will end, and Privileged Identity Management configuration settings will be removed.
+- Privileged Identity Management will no longer send emails on role assignment changes and PIM Alerts.
 
+### Will any IGA features and capabilities be added under the Entra ID P2 License?
+
+All currently Generally Available features in Entra ID P2 will remain, but no new IGA features or capabilities will be added to the Entra ID P2 SKU.
 
 ## Next steps
 

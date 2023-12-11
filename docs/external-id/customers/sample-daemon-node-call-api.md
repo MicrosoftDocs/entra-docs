@@ -1,13 +1,13 @@
 ---
 title: Call an API in a sample Node.js daemon application
 description: Learn how to configure a sample Node.js daemon application that calls an API protected Microsoft Entra ID for customers
-services: active-directory
+ 
 author: kengaderdus
 manager: mwongerapk
 
 ms.author: kengaderdus
 ms.service: active-directory
-ms.workload: identity
+ 
 ms.subservice: ciam
 ms.topic: sample
 ms.date: 06/23/2023

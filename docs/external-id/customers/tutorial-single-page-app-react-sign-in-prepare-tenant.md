@@ -1,7 +1,7 @@
 ---
 title: "Tutorial 1 of 5 - Prepare your customer tenant to authenticate users in a React SPA"
 description: Learn how to configure your Microsoft Entra ID for customers tenant for authentication with a React single-page app (SPA).
-services: active-directory
+ 
 author: garrodonnell
 manager: celestedg
 

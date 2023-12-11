@@ -1,13 +1,13 @@
 ---
 title: 'Tutorial: Microsoft Entra SSO integration with Confluence SAML SSO by Microsoft'
 description: Learn how to configure single sign-on between Microsoft Entra ID and Confluence SAML SSO by Microsoft.
-services: active-directory
+
 author: dhivyagana
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: dhivyag
