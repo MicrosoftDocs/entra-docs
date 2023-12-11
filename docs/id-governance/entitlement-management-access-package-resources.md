@@ -125,19 +125,19 @@ For more information, see [Compare groups](/office365/admin/create-groups/compar
 
 You can have Microsoft Entra ID automatically assign users access to a Microsoft Entra enterprise application, including both SaaS applications and your organization's applications integrated with Microsoft Entra ID, when a user is assigned an access package. For applications that integrate with Microsoft Entra ID through federated single sign-on, Microsoft Entra ID issues federation tokens for users assigned to the application.
 
-Applications can have multiple app roles defined in their manifest. When you add an application to an access package, if that application has more than one app role, you need to specify the appropriate role for those users in each access package. If you're developing applications, you can read more about how those roles are added to your applications in [How to: Configure the role claim issued in the SAML token for enterprise applications](~/identity-platform/enterprise-app-role-management.md). If you're using the Microsoft Authentication Libraries, there is also a [code sample](~/identity-platform/sample-v2-code.md) for how to use app roles for access control.
+Applications can have multiple app roles defined in their manifest and managed through the [app roles UI](~/identity-platform/howto-add-app-roles-in-apps.md#app-roles-ui). When you add an application to an access package, if that application has more than one app role, you need to specify the appropriate role for those users in each access package. If you're developing applications, you can read more about how those roles are added to your applications in [How to: Configure the role claim issued in the SAML token for enterprise applications](~/identity-platform/enterprise-app-role-management.md). If you're using the Microsoft Authentication Libraries, there is also a [code sample](~/identity-platform/sample-v2-code.md) for how to use app roles for access control.
 
 > [!NOTE]
-> If an application has multiple roles, and more than one role of that application are in an access package, then the user will receive all those application's roles.  If instead you want users to only have some of the application's roles, then you will need to create multiple access packages in the catalog, with separate access packages for each of the application roles.
+> If an application has multiple app roles, and more than one role of that application are in an access package, then the user will receive all those application's included roles.  If instead you want users to only have some of the application's roles, then you will need to create multiple access packages in the catalog, with separate access packages for each of the app roles.
 
-Once an application role is part of an access package:
+Once an app role is a resource of an access package:
 
-- When a user is assigned that access package, the user is added to that application role, if not already present.
-- When a user's access package assignment expires, their access is removed from the application, unless they have an assignment to another access package that includes that application role.
+- When a user is assigned that access package, the user is added to that app role, if not already present.
+- When a user's access package assignment expires, their access is removed from the application, unless they have an assignment to another access package that includes that app role.
 
 Here are some considerations when selecting an application:
 
-- Applications may also have groups assigned to their app roles as well.  You can choose to add a group in place of an application role in an access package, however then the application won't be visible to the user as part of the access package in the My Access portal.
+- Applications may also have groups assigned to their app roles as well.  You can choose to add a group in place of an application and its role in an access package, however then the application won't be visible to the user as part of the access package in the My Access portal.
 - Microsoft Entra admin center may also show service principals for services that can't be selected as applications.  In particular, **Exchange Online** and **SharePoint Online** are services, not applications that have resource roles in the directory, so they can't be included in an access package.  Instead, use group-based licensing to establish an appropriate license for a user who needs access to those services.
 - Applications that only support Personal Microsoft Account users for authentication, and don't support organizational accounts in your directory, don't have application roles and can't be added to access package catalogs.
 
@@ -149,7 +149,7 @@ Here are some considerations when selecting an application:
 
 1. Select **Select**.
 
-1. In the **Role** list, select an application role.
+1. In the **Role** list, select an app role.
 
     ![Access package - Add resource role for an application](./media/entitlement-management-access-package-resources/application-role.png)
 

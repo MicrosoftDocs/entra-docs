@@ -66,8 +66,8 @@ If you are currently using Azure AD Sync, then you can follow the [same steps](h
 - In-place upgrade to install Connect on the same server.
 - Swing-migration to install Connect on a new server while the existing Azure AD Sync server is still operational.
 
-## Migrate from FIM2010 or MIM2016
-If you are currently using Forefront Identity Manager 2010 or Microsoft Identity Manager 2016 with the Microsoft Entra Connector, then your only option is a migration. Follow the steps described in [swing-migration](how-to-upgrade-previous-version.md#swing-migration). In the steps, replace any mention of Azure AD Sync with FIM2010/MIM2016.
+## Migrate from MIM
+If you are currently using Microsoft Identity Manager 2016 with the Microsoft Entra Connector, then your only option is a migration. Follow the steps described in [swing-migration](how-to-upgrade-previous-version.md#swing-migration). In the steps, replace any mention of Azure AD Sync with MIM 2016.
 
 ## Next steps
 Depending on the option you have selected to use, use the table of content to the left to find your article with the detailed steps.
