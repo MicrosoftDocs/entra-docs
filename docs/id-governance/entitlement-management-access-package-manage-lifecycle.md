@@ -54,10 +54,9 @@ To manage user lifecycle, you'd follow these steps:
     :::image type="content" source="media/entitlement-management-access-package-assignments/govern-user-lifecycle.png" alt-text="Screenshot of the govern user lifecycle selection." lightbox="media/entitlement-management-access-package-assignments/govern-user-lifecycle.png":::
 1. Select save.
 
-## Manage guest user lifecycle programmatically 
+## Manage guest user lifecycle programmatically
 
 To manage user lifecycle programatically using Microsoft Graph, see: [accessPackageSubject resource type](/graph/api/resources/accesspackagesubject). For bulk conversion, see: [ConvertTo-EmGovernedGuest.ps1](https://github.com/JefTek/EntraIdentitySamples/blob/main/PowerShell/IdentityGovernance/GovernedGuests/ConvertTo-EmGovernedGuest.ps1).
-
 
 ## Next steps
 
