@@ -32,7 +32,7 @@ In this tutorial;
 
 ## Change filename and add function to render authenticated information
 
-By default, the application runs via a JavaScript file called *App.js*. It needs to be changed to a *.jsx* file, which is an extension that allows a developer to write HTML in React.
+By default, the application runs via a JavaScript file called *App.js*. It needs to be changed to *.jsx*, which is an extension that allows a developer to write HTML in React.
 
 1. Ensure *App.js* has been renamed to *App.jsx*.
 1. Replace the existing code with the following snippet:
@@ -118,12 +118,12 @@ All the required code snippets have been added, so the application can now be te
     npm start
     ```
 
-1. Open a web browser and navigate to `http://localhost:3000/` if you are not automatically redirected.
+1. Open a web browser and navigate to `http://localhost:3000/` if you aren't automatically redirected.
 1. For the purposes of this tutorial, choose the **Sign in using Popup** option.
 1. After the popup window appears with the sign-in options, select the account with which to sign-in.
-1. A second window may appear indicating that a code will be sent to your email address. If this happens, select **Send code**. Open the email from the sender Microsoft account team, and enter the 7-digit single-use code. Once entered, select **Sign in**.
+1. A second window may appear indicating that a code will be sent to your email address. If this happens, select **Send code**. Open the email from the sender Microsoft account team, and enter the seven digit single-use code. Once entered, select **Sign in**.
 1. For **Stay signed in**, you can select either **No** or **Yes**.
-1. The app will now ask for permission to sign-in and access data. Select **Accept** to continue.
+1. The app asks for permission to sign-in and access data. Select **Accept** to continue.
 
 ## Sign out of the application
 
