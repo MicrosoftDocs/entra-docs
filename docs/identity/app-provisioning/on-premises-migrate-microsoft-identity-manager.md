@@ -16,11 +16,11 @@ ms.collection: M365-identity-device-management
 
 # Export a Microsoft Identity Manager connector for use with the Microsoft Entra ECMA Connector Host
 
-You can import into the Microsoft Entra ECMA Connector Host a configuration for a specific connector from a Forefront Identity Manager Synchronization Service or Microsoft Identity Manager Synchronization Service (MIM Sync) installation. The MIM Sync installation is only used for configuration, not for the ongoing synchronization from Microsoft Entra ID.
+You can import into the Microsoft Entra ECMA Connector Host a configuration for a specific connector from a Microsoft Identity Manager Synchronization Service (MIM Sync) installation. 
 
 
 ## Create a connector configuration in MIM Sync
-This section is included for illustrative purposes, if you wish to set up MIM Sync with a connector. If you already have MIM Sync with your ECMA connector configured, skip to the next section.
+This section is included for illustrative purposes, if you wish to set up MIM Sync with a connector. The MIM Sync installation is only used for the initial configuration, not for the ongoing synchronization from Microsoft Entra ID.  If you already have MIM Sync with your ECMA connector configured, skip to the next section.
 
  1. Prepare a Windows Server 2016 server, which is distinct from the server that will be used for running the Microsoft Entra ECMA Connector Host. This host server should either have a SQL Server 2016 database colocated or have network connectivity to a SQL Server 2016 database. One way to set up this server is by deploying an Azure virtual machine with the image **SQL Server 2016 SP1 Standard on Windows Server 2016**. This server doesn't need internet connectivity other than remote desktop access for setup purposes.
  1. Create an account for use during the MIM Sync installation. It can be a local account on that Windows Server instance. To create a local account, open **Control Panel** > **User Accounts**, and add the user account **mimsync**.

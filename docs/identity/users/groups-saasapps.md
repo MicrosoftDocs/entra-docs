@@ -17,7 +17,7 @@ ms.collection: M365-identity-device-management
 ---
 # Use a group to manage access to SaaS applications
 
-When you use Microsoft Entra ID, part of Microsoft Entra, with a Microsoft Entra ID P1 or P2 license plan, you can use groups to assign access to a software as a service (SaaS) application that's integrated with Microsoft Entra ID.
+When you use Microsoft Entra ID with a Microsoft Entra ID P1 or P2 license plan, you can use groups to assign access to a software as a service (SaaS) application that's integrated with Microsoft Entra ID.
 
 For example, if you want to assign access for a marketing department to use five different SaaS applications, you can create an Office 365 or security group that contains the users in the marketing department. Then you can assign that group to the five SaaS applications that the marketing department needs.
 
@@ -45,10 +45,10 @@ With Microsoft Entra ID, you can save time by managing the membership of the mar
 
 ## Next steps
 
-For more information on Microsoft Entra ID:
+For more information on Microsoft Entra ID, see:
 
 * [Managing access to resources with Microsoft Entra groups](~/fundamentals/concept-learn-about-groups.md)
-* [Application Management in Microsoft Entra ID](~/identity/enterprise-apps/what-is-application-management.md)
+* [Application management in Microsoft Entra ID](~/identity/enterprise-apps/what-is-application-management.md)
 * [Microsoft Entra cmdlets for configuring group settings](~/identity/users/groups-settings-cmdlets.md)
 * [What is Microsoft Entra ID?](~/fundamentals/whatis.md)
 * [Integrating your on-premises identities with Microsoft Entra ID](~/identity/hybrid/whatis-hybrid-identity.md)

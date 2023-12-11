@@ -18,25 +18,25 @@ ms.collection: M365-identity-device-management
 
 # Enforce a naming policy on Microsoft 365 groups in Microsoft Entra ID
 
-To enforce consistent naming conventions for Microsoft 365 groups created or edited by your users, set up a group naming policy for your organizations in Microsoft Entra ID, part of Microsoft Entra. For example, you could use the naming policy to communicate the function of a group, membership, geographic region, or person who created the group. You could also use the naming policy to help categorize groups in the address book. You can use the policy to block specific words from being used in group names and aliases.
+To enforce consistent naming conventions for Microsoft 365 groups created or edited by your users, set up a group naming policy for your organizations in Microsoft Entra ID. For example, you could use the naming policy to communicate the function of a group, membership, geographic region, or person who created the group. You could also use the naming policy to help categorize groups in the address book. You can use the policy to block specific words from being used in group names and aliases.
 
 > [!IMPORTANT]
 > Using a Microsoft Entra ID naming policy for Microsoft 365 groups requires that you possess but not necessarily assign a Microsoft Entra ID P1 license or Microsoft Entra Basic EDU license for each unique user who's a member of one or more Microsoft 365 groups.
 
 The naming policy is applied to creating or editing groups created across workloads, for example, Outlook, Microsoft Teams, SharePoint, Exchange, or Planner, even if no editing changes are made. It's applied to both the group name and group alias. If you set up your naming policy in Microsoft Entra ID and you have an existing Exchange group naming policy, the Microsoft Entra ID naming policy is enforced in your organization.
 
-When a group naming policy is configured, the policy is applied to new Microsoft 365 groups created by users. A naming policy doesn't apply to certain directory roles, such as Global Administrator or User Administrator. (For the complete list of roles exempted from a group naming policy, see the "Roles and permissions" section.) For existing Microsoft 365 groups, the policy won't immediately apply at the time of configuration. After a group owner edits the group name for these groups, the naming policy is enforced, even if no changes are made.
+When a group naming policy is configured, the policy is applied to new Microsoft 365 groups created by users. A naming policy doesn't apply to certain directory roles, such as Global Administrator or User Administrator. (For the complete list of roles exempted from a group naming policy, see the "Roles and permissions" section.) For existing Microsoft 365 groups, the policy isn't immediately applied at the time of configuration. After a group owner edits the group name for these groups, the naming policy is enforced even if no changes are made.
 
 ## Naming policy features
 
 You can enforce a naming policy for groups in two different ways:
 
 - **Prefix-suffix naming policy**: You can define prefixes or suffixes that are then added automatically to enforce a naming convention on your groups. For example, in the group name `GRP\_JAPAN\_My Group\_Engineering`, the prefix is `GRP\_JAPAN\_` and the suffix is `\_Engineering`.
-- **Custom-blocked words**: You can upload a set of blocked words specific to your organization to be blocked in groups created by users. For example, you might use "CEO, Payroll, HR."
+- **Custom-blocked words**: You can upload a set of blocked words specific to your organization to be blocked in groups created by users. For example, you might use `Payroll,CEO,HR`.
 
 ### Prefix-suffix naming policy
 
-The general structure of the naming convention is `Prefix[GroupName]Suffix`. While you can define multiple prefixes and suffixes, you can have only one instance of the [GroupName] in the setting. The prefixes or suffixes can be either fixed strings or user attributes, such as `\[Department\]`, that are substituted based on the user who's creating the group. The total allowable number of characters for your prefix and suffix strings including group name is 63 characters.
+The general structure of the naming convention is `Prefix[GroupName]Suffix`. While you can define multiple prefixes and suffixes, you can have only one instance of the `[GroupName]` in the setting. The prefixes or suffixes can be either fixed strings or user attributes, such as `\[Department\]`, that are substituted based on the user who's creating the group. The total allowable number of characters for your prefix and suffix strings including group name is 63 characters.
 
 Prefixes and suffixes can contain special characters that are supported in a group name and a group alias. Any characters in the prefix or suffix that aren't supported in the group alias are still applied in the group name but removed from the group alias. Because of this restriction, the prefixes and suffixes applied to the group name might be different from the ones applied to the group alias.
 
@@ -102,7 +102,7 @@ Some administrator roles are exempted from these policies, across all group work
 
 ## Install PowerShell cmdlets
 
-Uninstall any older version of Azure Active Directory (Azure AD) PowerShell for the Azure Graph module and install [Azure AD PowerShell for Graph - Public Preview Release 2.0.0.137](https://www.powershellgallery.com/packages/AzureADPreview/2.0.0.137) before you run the PowerShell commands.
+Uninstall any older version of Azure Active Directory (Azure AD) PowerShell for the Microsoft Graph module and install [Azure AD PowerShell for Graph - Public Preview Release 2.0.0.137](https://www.powershellgallery.com/packages/AzureADPreview/2.0.0.137) before you run the PowerShell commands.
 
 [!INCLUDE [Azure AD PowerShell migration](../../includes/aad-powershell-migration-include.md)]
 
@@ -152,7 +152,7 @@ Uninstall any older version of Azure Active Directory (Azure AD) PowerShell for 
   
 ### Set the naming policy and custom-blocked words
 
-1. Set the group name prefixes and suffixes in Azure AD PowerShell. For the feature to work properly, [GroupName] must be included in the setting.
+1. Set the group name prefixes and suffixes in Azure AD PowerShell. For the feature to work properly, `[GroupName]` must be included in the setting.
   
    ``` PowerShell
    $Setting["PrefixSuffixNamingRequirement"] =“GRP_[GroupName]_[Department]"
@@ -170,20 +170,20 @@ Uninstall any older version of Azure Active Directory (Azure AD) PowerShell for 
    Set-AzureADDirectorySetting -Id (Get-AzureADDirectorySetting | where -Property DisplayName -Value "Group.Unified" -EQ).id -DirectorySetting $Setting
    ```
   
-That's it. You've set your naming policy and added your blocked words.
+That's it. You set your naming policy and added your blocked words.
 
 ## Export or import custom-blocked words
 
 For more information, see [Microsoft Entra cmdlets for configuring group settings](~/identity/users/groups-settings-cmdlets.md).
 
-Here's an example of a PowerShell script to export multiple blocked words:
+Here's an example of a PowerShell script to export multiple blocked words.
 
 ``` PowerShell
 $Words = (Get-AzureADDirectorySetting).Values | Where-Object -Property Name -Value CustomBlockedWordsList -EQ 
 Add-Content "c:\work\currentblockedwordslist.txt" -Value $words.value.Split(",").Replace("`"","")  
 ```
 
-Here's an example PowerShell script to import multiple blocked words:
+Here's an example PowerShell script to import multiple blocked words.
 
 ``` PowerShell
 $BadWords = Get-Content "C:\work\currentblockedwordslist.txt"
@@ -231,7 +231,7 @@ You can use the Azure portal or Azure AD PowerShell to remove a naming policy.
 
 After you set a group naming policy in Microsoft Entra ID, when a user creates a group in a Microsoft 365 app, they see:
 
-- A preview of the name according to your naming policy (with prefixes and suffixes) as soon as the user types in the group name.
+- A preview of the name according to your naming policy (with prefixes and suffixes) as soon as the user enters the group name.
 - If the user enters blocked words, they see an error message, so they can remove the blocked words.
 
 Workload | Compliance
@@ -247,10 +247,10 @@ Groups mobile app | Groups created in the Groups mobile app are compliant with t
 Planner | Planner is compliant with the naming policy. Planner shows the naming policy preview when the user enters the plan name. When a user enters a custom-blocked word, an error message appears when the user creates the plan.
 Project for the web | Project for the web is compliant with the naming policy. 
 Dynamics 365 for Customer Engagement | Dynamics 365 for Customer Engagement is compliant with the naming policy. Dynamics 365 shows the naming policy-enforced name when the user enters a group name or group email alias. When the user enters a custom-blocked word, an error message appears with the blocked word so that the user can remove it.
-School Data Sync (SDS) | Groups created through SDS comply with a naming policy, but the naming policy isn't applied automatically. SDS administrators have to append the prefixes and suffixes to class names for which groups need to be created and then uploaded to SDS. Group create or edit would fail otherwise.
+School Data Sync (SDS) | Groups created through SDS comply with a naming policy, but the naming policy isn't applied automatically. SDS administrators have to append the prefixes and suffixes to class names for which groups need to be created and then uploaded to SDS. Otherwise, create or edit for groups would fail.
 Classroom app | Groups created in the Classroom app comply with the naming policy, but the naming policy isn't applied automatically. The naming policy preview isn't shown to users when they enter a classroom group name. Users must enter the enforced classroom group name with prefixes and suffixes. If not, the classroom group create or edit operation fails with errors.
 Power BI | Power BI workspaces are compliant with the naming policy.
-Yammer | When a user signs in to Yammer with their Microsoft Entra account to create a group or edit a group name, the group name complies with the naming policy. This feature applies both to Microsoft 365 connected groups and all other Yammer groups.<br>If a Microsoft 365 connected group was created before the naming policy is in place, the group name won't automatically follow the naming policies. When a user edits the group name, they're prompted to add the prefix and suffix.
+Yammer | When a user signs in to Yammer with their Microsoft Entra account to create a group or edit a group name, the group name complies with the naming policy. This feature applies both to Microsoft 365 connected groups and all other Yammer groups.<br>If a Microsoft 365 connected group was created before the naming policy is in place, the group name doesn't automatically follow the naming policies. When a user edits the group name, they're prompted to add the prefix and suffix.
 StaffHub  | StaffHub teams don't follow the naming policy, but the underlying Microsoft 365 group does. A StaffHub team name doesn't apply the prefixes and suffixes and doesn't check for custom-blocked words. But StaffHub does apply the prefixes and suffixes and removes blocked words from the underlying Microsoft 365 group.
 Exchange PowerShell | Exchange PowerShell cmdlets are compliant with the naming policy. Users receive appropriate error messages with suggested prefixes and suffixes and for custom-blocked words if they don't follow the naming policy in the group name and group alias (mailNickname).
 Azure AD PowerShell cmdlets | Azure AD PowerShell cmdlets are compliant with a naming policy. Users receive appropriate error messages with suggested prefixes and suffixes and for custom-blocked words if they don't follow the naming convention in group names and group alias.
@@ -259,9 +259,9 @@ Microsoft 365 admin center | Microsoft 365 admin center is compliant with a nami
 
 ## Next steps
 
-For more information on Microsoft Entra groups:
+For more information on Microsoft Entra groups, see:
 
-- [See existing groups](~/fundamentals/groups-view-azure-portal.md)
+- [Existing groups](~/fundamentals/groups-view-azure-portal.md)
 - [Expiration policy for Microsoft 365 groups](groups-lifecycle.md)
 - [Manage settings of a group](~/fundamentals/how-to-manage-groups.md)
 - [Manage members of a group](~/fundamentals/how-to-manage-groups.md)

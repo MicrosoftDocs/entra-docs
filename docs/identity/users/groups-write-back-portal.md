@@ -18,23 +18,20 @@ ms.custom: "it-pro"
 ms.collection: M365-identity-device-management
 ---
 
-# Group writeback in the Azure portal (preview)
+# Group writeback in the Microsoft Entra admin center
 
-Group writeback is a valuable tool for administrators of Microsoft Entra tenants being synced with on-premises Active Directory groups. Microsoft is now previewing new capabilities for group writeback for tenants with a Microsoft Entra ID P1 or P2 license and Microsoft Entra Connect version December 2021 release or later.
+With the release of provisioning agent [1.1.1370.0](~/identity/hybrid/cloud-sync/reference-version-history.md#1113700), Cloud Sync now has the ability to provision groups directly to your on-premises Active Directory environment. With this capability, you can use identity governance features to govern access to Active Directory-based applications. For example, you can include a [group in an entitlement management access package](~/id-governance/entitlement-management-group-writeback.md).
 
-In this preview, after you [enable Microsoft Entra Connect group writeback](~/identity/hybrid/connect/how-to-connect-group-writeback-v2.md), you can specify in the Azure portal which groups you want to write back and what you want each group to write back as. You can write Microsoft 365 groups back to on-premises Active Directory as:
+For more information, see [Group provisioning to Active Directory](~/identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md) and [Govern on-premises Active Directory-based apps (Kerberos) using Microsoft Entra ID Governance (preview)](~/identity/hybrid/cloud-sync/govern-on-premises-groups.md).
 
-- Distribution
-- Mail-enabled security
-- Security groups
+[!INCLUDE [deprecation](~/includes/gwb-v2-deprecation.md)]
 
-You can also write Security groups back as Security groups. Groups are written back with a scope of universal​.
+If you're using Azure Active Directory Connect Group Writeback v2, you need to move to Cloud Sync provisioning to Active Directory before you can take advantage of Cloud Sync group provisioning. For more information, see [Migrate Microsoft Entra Connect Sync Group Writeback v2 to Microsoft Entra Cloud Sync](~/identity/hybrid/cloud-sync/migrate-group-writeback.md).
 
 >[!NOTE]
-> If you were previously writing Microsoft 365 groups back to on-premises Active Directory as universal distribution groups, they appear in the Azure portal as not enabled for writeback on both the **Groups** page and on the properties page for a group. These pages display a new property introduced for the preview, `writeback enabled`. This property isn't set by the current version of group writeback to ensure backward compatibility with the legacy version of group writeback and to avoid breaking existing customer setups.
+> If you were previously writing Microsoft 365 groups back to on-premises Active Directory as universal distribution groups, they appear in the Azure portal as not enabled for writeback on both the **Groups** page and the properties page for a group. These pages display a new property introduced for the preview, `writeback enabled`. This property isn't set by the current version of Group Writeback to ensure backward compatibility with the legacy version of Group Writeback and to avoid breaking existing customer setups.
 
 To understand the behavior of `No writeback` in the portal, check the properties of the group in Microsoft Graph.
-
 
 | Portal | Microsoft Graph| Behavior|
 |--------|---------|---------|
@@ -43,8 +40,8 @@ To understand the behavior of `No writeback` in the portal, check the properties
 
 By default, the **Group writeback state** of groups is set to **No writeback**. This means:
 
-- **Microsoft 365 groups**: If the group is ```IsEnabled = null``` and ```onPremisesGroupType = null```, to ensure backward compatibility with older versions of group writeback, the group is written back to your on-premises Active Directory as a distribution group.
-- **Microsoft Entra security groups**: If the group is ```IsEnabled = null``` and ```onPremisesGroupType = null```, then the group isn't written back to your on-premises Active Directory.
+- **Microsoft 365 groups**: If the group is ```IsEnabled = null``` and ```onPremisesGroupType = null```, to ensure backward compatibility with older versions of Group Writeback, the group is written back to your on-premises Active Directory as a distribution group.
+- **Microsoft Entra security groups**: If the group is ```IsEnabled = null``` and ```onPremisesGroupType = null```, the group isn't written back to your on-premises Active Directory.
 
 ## Show writeback columns
 
@@ -60,14 +57,14 @@ The **Writeback enabled** column allows you to turn off the writeback capability
 
 ## Writeback settings in group properties
 
-You can also configure writeback settings for a group on the property page for the group. There's a **Group writeback state** setting that allows you to turn off writeback for the group or to specify the writeback group type. When **No writeback** is selected, the group isn't written back. If you select one of the other writeback types as an option (for example, Security), then you have:
+You can also configure writeback settings for a group on the property page for the group. There's a **Group writeback state** setting that allows you to turn off writeback for the group or to specify the writeback group type. When **No writeback** is selected, the group isn't written back. If you select one of the other writeback types as an option (for example, security), then you have:
 
 - Enabled the group for writeback.
 - Targeted the writeback type as a security group.
 
 :::image type="content" source="./media/groups-write-back-portal/groups-properties-view.png" alt-text="Screenshot that shows changing writeback settings in the group properties." lightbox="media/groups-write-back-portal/groups-properties-view.png":::
 
-## Read the Writeback configuration by using PowerShell
+## Read the writeback configuration by using PowerShell
 
 You can use PowerShell to get a list of writeback-enabled groups by using the following PowerShell Get-MgGroup cmdlet.
 
@@ -82,7 +79,7 @@ CloudGroup1           True
 CloudGroup2           True
 ```
 
-## Read the Writeback configuration by using Graph Explorer
+## Read the writeback configuration by using Graph Explorer
 
 Open [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) and use the endpoint ```https://graph.microsoft.com/beta/groups/{Group_ID}```.
 
