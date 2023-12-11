@@ -27,8 +27,6 @@ The synchronization feature of Microsoft Entra Connect has two components:
 
 This topic explains how the following features of the **Microsoft Entra Connect Sync service** work and how you can configure them using PowerShell.
 
-These settings are configured by the [Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/overview). Download and install it separately from Microsoft Entra Connect. The cmdlets documented in this topic were introduced in the [2016 March release (build 9031.1)](https://social.technet.microsoft.com/wiki/contents/articles/28552.microsoft-azure-active-directory-powershell-module-version-release-history.aspx#Version_9031_1). If you don't have the cmdlets documented in this topic or they don't produce the same result, then make sure you run the latest version.
-
 To see the configuration in your Microsoft Entra directory using the Graph PowerShell, use the following commands:
 
 ```powershell
