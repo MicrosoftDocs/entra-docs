@@ -1,5 +1,5 @@
 ---
-title: "Tutorial 3 of 4: Handle authentication flows in a React SPA"
+title: "Tutorial: Handle authentication flows in a React SPA"
 description: Learn how to configure authentication for a React single-page app (SPA) with your Microsoft Entra ID for customers tenant.
  
 author: garrodonnell
@@ -27,8 +27,7 @@ In this tutorial;
 
 ## Prerequisites
 
-* [Tutorial 1 of 4: Prepare your customer tenant to authenticate users in a React single-page app (SPA)](./tutorial-single-page-app-react-sign-in-prepare-tenant.md).
-* [Tutorial 2 of 4: Create a React SPA project for authentication in a customer tenant](./tutorial-single-page-app-react-sign-in-prepare-app.md).
+* [Tutorial: Prepare your customer tenant to authenticate users in a React single-page app (SPA)](./tutorial-single-page-app-react-sign-in-prepare-tenant.md).
 
 ## Add components to the application
 
