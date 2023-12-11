@@ -13,7 +13,7 @@ ms.custom: developer, devx-track-js
 
 # Prepare customer tenant to call an API in a Node.js web application
 
-In this article, you prepare your Microsoft Entra ID for customers tenant for authorization.
+In this article, you prepare your Microsoft Entra ID for customers tenant for authorization. This article is the first part of a four-part guide.
 
 ## Prerequisite
 

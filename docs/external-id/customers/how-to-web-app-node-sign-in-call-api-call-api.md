@@ -14,11 +14,13 @@ ms.custom: developer, devx-track-js
 
 # Call an API in a Node.js web application
 
-In this article, you learn how to call the ASP.NET API from your Node.js client web app using the access token you acquire in [Acquire access token](how-to-web-app-node-sign-in-call-api-sign-in-acquire-access-token.md#acquire-access-token).
+In this article, you learn how to call the ASP.NET API from your Node.js client web app using the access token you acquire in [Acquire access token](how-to-web-app-node-sign-in-call-api-sign-in-acquire-access-token.md#acquire-access-token). This article is the fourth and last part of a four-part guide series.
 
 ## Prerequisite
 
-- Complete the steps in [Acquire an access token in your Node.js web app](how-to-web-app-node-sign-in-call-api-sign-in-acquire-access-token.md) article. 
+- Complete the steps in the first part of this guide series, [Prepare customer tenant to call an API in a Node.js web application](how-to-web-app-node-sign-in-call-api-prepare-tenant.md).
+- Complete the steps in the second part of this guide series, [Prepare app to call an API in a Node.js web application](how-to-web-app-node-sign-in-call-api-prepare-app.md).
+- Complete the steps in third the part of this guide series [Acquire an access token in your Node.js web app](how-to-web-app-node-sign-in-call-api-sign-in-acquire-access-token.md) article.
 
 ## Update code
 

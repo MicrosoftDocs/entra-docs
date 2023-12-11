@@ -13,11 +13,11 @@ ms.custom: developer, devx-track-js
 
 # Prepare app to call an API in a Node.js web application
 
-In this article, you prepare the app project you created in [Tutorial: Prepare your customer tenant to sign in users in a Node.js web app](tutorial-web-app-node-sign-in-prepare-tenant.md)  
+In this article, you prepare the app project you created in [Tutorial: Prepare your customer tenant to sign in users in a Node.js web app](tutorial-web-app-node-sign-in-prepare-tenant.md). This article is the second part of a four-part guide series.
 
 ## Prerequisites
 
-- Complete the steps in [Prepare customer tenant to call an API in a Node.js web application](how-to-web-app-node-sign-in-call-api-prepare-tenant.md).
+- Complete the steps in the first part of this guide series, [Prepare customer tenant to call an API in a Node.js web application](how-to-web-app-node-sign-in-call-api-prepare-tenant.md).
 
 ## Update project files
 
