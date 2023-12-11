@@ -154,7 +154,7 @@ We recommend having a single tenant in Microsoft Entra ID for an organization. B
 
 This topology implements the following use cases:
 
-* AADConnect can synchronize the users, groups, and contacts from a single Active Directory to multiple Microsoft Entra tenants. These tenants can be in different Azure environments, such as the Microsoft Azure operated by 21Vianet environment or the Azure Government environment, but they could also be in the same Azure environment, such as two tenants that are both in Azure Commercial. For more infomration on options, see [Planning identity for Azure Government applications] (/azure/azure-government/documentation-government-plan-identity).
+* AADConnect can synchronize the users, groups, and contacts from a single Active Directory to multiple Microsoft Entra tenants. These tenants can be in different Azure environments, such as the Microsoft Azure operated by 21Vianet environment or the Azure Government environment, but they could also be in the same Azure environment, such as two tenants that are both in Azure Commercial. For more information on options, see [Planning identity for Azure Government applications] (/azure/azure-government/documentation-government-plan-identity).
 *	The same Source Anchor can be used for a single object in separate tenants (but not for multiple objects in the same tenant). (The verified domain can't be the same in two tenants. More details are needed to enable the same object to have two UPNs.)
 *	You will need to deploy an AADConnect server for every Microsoft Entra tenant you want to synchronize to - one AADConnect server cannot synchronize to more than one Microsoft Entra tenant.
 *	It is supported to have different sync scopes and different sync rules for different tenants.
