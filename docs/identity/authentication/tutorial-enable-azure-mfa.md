@@ -111,9 +111,9 @@ For this tutorial, configure the Conditional Access policy to require multifacto
    > [!TIP]
    > You can choose to apply the Conditional Access policy to **All cloud apps** or **Select apps**. To provide flexibility, you can also exclude certain apps from the policy.
 
-1. Browse the list of available sign-in events that can be used. For this tutorial, select **Microsoft Azure Management** so that the policy applies to sign-in events. Then choose **Select**.
+1. Browse the list of available sign-in events that can be used. For this tutorial, select **Windows Azure Service Management API** so that the policy applies to sign-in events. Then choose **Select**.
 
-   :::image type="content" alt-text="A screenshot of the Conditional Access page, where you select the app, Microsoft Azure Management, to which the new policy will apply." source="media/tutorial-enable-azure-mfa/tutorial-enable-azure-mfa-conditional-access-menu-select-apps.png":::
+   :::image type="content" alt-text="A screenshot of the Conditional Access page, where you select the app, Windows Azure Service Management API, to which the new policy will apply." source="media/tutorial-enable-azure-mfa/tutorial-enable-azure-mfa-conditional-access-menu-select-apps.png":::
 
 <a name='configure-multi-factor-authentication-for-access'></a>
 
