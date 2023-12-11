@@ -151,7 +151,7 @@ When you configure the location condition, you can distinguish between:
 
 - Any location
 - All trusted locations
-- All Network Access locations
+- All Compliant Network locations
 - Selected locations
 
 ### Any location
@@ -171,7 +171,7 @@ Using the trusted IPs section of multifactor authentication's service settings i
 
 If you have these trusted IPs configured, they show up as **MFA Trusted IPs** in the list of locations for the location condition.
 
-### All Network Access locations of my tenant
+### All Compliant Network locations
 
 Organizations with access to Global Secure Access preview features have another location listed that is made up of users and devices that comply with your organization's security policies. For more information, see the section [Enable Global Secure Access signaling for Conditional Access](/entra/global-secure-access/how-to-compliant-network#enable-global-secure-access-signaling-for-conditional-access). It can be used with Conditional Access policies to perform a compliant network check for access to resources.
 
