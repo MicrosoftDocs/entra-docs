@@ -275,8 +275,8 @@ Microsoft Entra ID has a limit of 20 sync service accounts.
 - To get the list of existing Microsoft Entra service accounts in your Microsoft Entra instance, run the following command:
 
   ```powershell
-  Get-MgDirectoryRole | where {$_.DisplayName -eq "Directory Synchronization Accounts"} | `
-     Get-MgDirectoryRoleMember
+  $directoryRoleId = Get-MgDirectoryRole | where {$_.DisplayName -eq "Directory Synchronization Accounts"}
+  Get-MgDirectoryRoleMember -DirectoryRoleId $directoryRoleId.Id | Select -ExpandProperty AdditionalProperties
   ```
 
 - To remove unused Microsoft Entra service accounts, run the following command:
