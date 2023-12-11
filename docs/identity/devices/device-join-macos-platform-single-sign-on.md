@@ -98,7 +98,7 @@ Setting up your device using secure enclave method enables you to use the result
     :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/psso-register-device-prompt.png" alt-text="Screenshot of the registration window prompting sign in with Microsoft.":::
 
 1. If the certificate is not already paired with the local account, the user will see a prompt to use the smart card. Select **Smart card**.
-1. You're prompted to enter the pin for your smart card. Enter your pin and select **OK**. When the correct pin is entered, PSSO registration with smart card authentication is complete.
+1. You're prompted to enter the pin for your smart card. Enter your pin and select **Enter pin for the smart card**. When the correct pin is entered, PSSO registration with smart card authentication is complete.
 1. To check that registration has completed successfully, open the **Terminal** app and run the following command:
 
     ```console
