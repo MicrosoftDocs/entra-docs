@@ -38,26 +38,41 @@ The scenario outlined in this tutorial assumes that you already have the followi
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md).
 * A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (for example, Application Administrator, Cloud Application administrator, Application Owner, or Global Administrator).
 * An Apple Business Manager account with the role of Administrator or People Manager.
+* Configure and verify the domain you want to use. See [Link to new domains](https://support.apple.com/guide/apple-business-manager/link-to-new-domains-axm48c3280c0/1/web/1).
+* Configure (but do not turn on) federated authentication. See [Turn on and test federated authentication](https://support.apple.com/guide/apple-business-manager/axmb02f73f18/1/web/1).
+
+   > [!NOTE] 
+   > If federated authentication is already turned on, you can still proceed. See the recommendations in the previous section.
+
+* Determine the type of syncing in Entra ID, and if necessary, create groups for syncing only assigned accounts to the Apple Business Manager Azure AD app:
+   * Sync only assigned users.
+   * Sync all users.
+
+* Have on call an Entra ID administrator with permissions to edit enterprise applications. When both of you are ready, see Use SCIM to import users.
 
 > [!NOTE]
 > Token transfer to Microsoft Entra ID and  establishing a successful connection has to be completed in 4 calendar days or the process has to be started again.
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-2. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
-3. Determine what data to [map between Microsoft Entra ID and Apple Business Manager](~/identity/app-provisioning/customize-application-attributes.md). 
+1. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine what data to [map between Microsoft Entra ID and Apple Business Manager](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-apple-business-manager-to-support-provisioning-with-azure-ad'></a>
 
 ## Step 2: Configure Apple Business Manager to support provisioning with Microsoft Entra ID
 
-1. In Apple Business Manager, sign in with an account that has the role of Administrator or People Manager.
-2. Click Settings at the bottom of the sidebar click Data Source below Organization Settings, then click Connect to Data Source.
-3. Click Connect next to SCIM, carefully read the warning, click Copy, then click Close.
-[The Connect to SCIM window, which provides a token and a Copy button under it.]
-Leave this window open to copy the Tenant URL from Apple Business Manager to Microsoft Entra ID, which is: `https://federation.apple.com/feeds/business/scim`
+1. In Apple Business Manager , sign in as a user that has the role of Administrator or People Manager.
 
-	![Screenshot of Apple Business Manager token generation.](media/apple-business-manager-provision-tutorial/scim-token.png)
+1. Select your name at the bottom of the sidebar, select Preferences , then select Directory Sync .
+
+1. Select Connect next to SCIM, carefully read the warning, select Copy, then select Close.
+
+   The Connect to SCIM window, which provides a token and a Copy button under it. In the bottom right-hand corner is the window’s Close button.
+
+   Leave this window open to copy the tenant URL from Apple Business Manager to Azure AD.
+
+	![Screenshot of Apple Business Manager token generation.](media/apple-business-manager-provision-tutorial/token.png "Token")
 
    > [!NOTE]
    > The secret token shouldn’t be shared with anyone other than the Microsoft Entra administrator.
@@ -103,8 +118,8 @@ The Microsoft Entra provisioning service allows you to scope who will be provisi
 
 	![Screenshot of Token.](common/provisioning-testconnection-tenanturltoken.png)
 
-> [!NOTE]
->If the connection is successful, Apple Business Manager shows the SCIM connection as active. This process can take up to 60 seconds for Apple Business Manager to reflect the latest connection status.
+   > [!NOTE]
+   >If the connection is successful, Apple Business Manager shows the SCIM connection as active. This process can take up to 60 seconds for Apple Business Manager to reflect the latest connection status.
 
 1. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and check the checkbox - **Send an email notification when a failure occurs**.
 
@@ -150,9 +165,9 @@ This operation starts the initial synchronization of all users and/or groups def
 ## Step 6: Monitor your deployment
 Once you've configured provisioning, use the following resources to monitor your deployment:
 
-1. Use the [provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md) to determine which users have been provisioned successfully or unsuccessfully
-2. Check the [progress bar](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md) to see the status of the provisioning cycle and how close it is to completion
-3. If the provisioning configuration seems to be in an unhealthy state, the application will go into quarantine. Learn more about quarantine states [here](~/identity/app-provisioning/application-provisioning-quarantine-status.md).  
+* Use the [provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md) to determine which users have been provisioned successfully or unsuccessfully
+* Check the [progress bar](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md) to see the status of the provisioning cycle and how close it is to completion
+* If the provisioning configuration seems to be in an unhealthy state, the application will go into quarantine. Learn more about quarantine states [here](~/identity/app-provisioning/application-provisioning-quarantine-status.md).  
 
 ## Additional resources
 
