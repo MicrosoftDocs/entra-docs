@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: active-directory
 ms.topic: how-to
 ms.workload: identity
-ms.custom: has-azure-ad-ps-ref
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.subservice: report-monitor
 ms.date: 11/17/2023
 ms.author: sarahlipsey

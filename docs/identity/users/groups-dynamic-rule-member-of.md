@@ -18,7 +18,7 @@ ms.collection: M365-identity-device-management
 
 # Group membership in a dynamic group (preview) in Microsoft Entra ID
 
-This feature preview in Microsoft Entra ID, part of Microsoft Entra, enables admins to create dynamic groups and administrative units that populate by adding members of other groups using the `memberOf` attribute. Apps that couldn't read group-based membership previously in Microsoft Entra ID can now read the entire membership of these new `memberOf` groups. Not only can these groups be used for apps but they can also be used for licensing assignments.
+This feature preview in Microsoft Entra ID enables admins to create dynamic groups and administrative units that populate by adding members of other groups using the `memberOf` attribute. Apps that couldn't read group-based membership previously in Microsoft Entra ID can now read the entire membership of these new `memberOf` groups. Not only can these groups be used for apps but they can also be used for licensing assignments.
 
 The following diagram illustrates how you could create Dynamic-Group-A with members of Security-Group-X and Security-Group-Y. Members of the groups inside Security-Group-X and Security-Group-Y don't become members of Dynamic-Group-A.
 

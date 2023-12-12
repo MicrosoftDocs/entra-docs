@@ -10,7 +10,7 @@ ms.reviewer: lenalepa, sureshja
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-#Customer intent:
+#Customer intent: As an IT admin, I want to understand how and why applications are added to Microsoft Entra ID and the differences between application objects and service principals, so that I can effectively manage and configure applications in the directory.
 ---
 
 # How and why applications are added to Microsoft Entra ID

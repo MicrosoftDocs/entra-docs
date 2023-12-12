@@ -133,7 +133,7 @@ Azure ABAC builds on Azure RBAC by adding role assignment conditions based on at
 
 ## Conditional Access
 
-Microsoft Entra [Conditional Access](~/identity/conditional-access/concept-conditional-access-cloud-apps.md) can be used to manage access to Azure management endpoints. Conditional Access policies can be applied to the Microsoft Azure Management cloud app to protect the Azure resource management endpoints such as:
+Microsoft Entra [Conditional Access](~/identity/conditional-access/concept-conditional-access-cloud-apps.md) can be used to manage access to Azure management endpoints. Conditional Access policies can be applied to the Windows Azure Service Management API cloud app to protect the Azure resource management endpoints such as:
 
 * Azure Resource Manager Provider (services)
 

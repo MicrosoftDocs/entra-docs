@@ -29,7 +29,7 @@ Target resources (formerly Cloud apps, actions, and authentication context) are 
 
 Many of the existing Microsoft cloud applications are included in the list of applications you can select from.
 
-Administrators can assign a Conditional Access policy to the following cloud apps from Microsoft. Some apps like Office 365 and Microsoft Azure Management include multiple related child apps or services. We continually add more apps, so the following list isn't exhaustive and is subject to change.
+Administrators can assign a Conditional Access policy to the following cloud apps from Microsoft. Some apps like Office 365 and Windows Azure Service Management API include multiple related child apps or services. We continually add more apps, so the following list isn't exhaustive and is subject to change.
 
 - [Office 365](#office-365)
 - Azure Analysis Services
@@ -41,7 +41,7 @@ Administrators can assign a Conditional Access policy to the following cloud app
 - Common Data Service
 - Microsoft Application Insights Analytics
 - [Microsoft Azure Information Protection](/azure/information-protection/faqs#i-see-azure-information-protection-is-listed-as-an-available-cloud-app-for-conditional-accesshow-does-this-work)
-- [Microsoft Azure Management](#microsoft-azure-management)
+- [Windows Azure Service Management API](#windows-azure-service-management-api)
 - Microsoft Defender for Cloud Apps
 - Microsoft Commerce Tools Access Control Portal
 - Microsoft Commerce Tools Authentication Service
@@ -82,9 +82,9 @@ Administrators can exclude the entire Office 365 suite or specific Office 365 cl
 
 A complete list of all services included can be found in the article [Apps included in Conditional Access Office 365 app suite](reference-office-365-application-contents.md).
 
-### Microsoft Azure Management
+### Windows Azure Service Management API
 
-When you target the Microsoft Azure Management application, policy is enforced for tokens issued to a set of services closely bound to the portal. This grouping includes the application IDs of:
+When you target the Windows Azure Service Management API application, policy is enforced for tokens issued to a set of services closely bound to the portal. This grouping includes the application IDs of:
 
 - Azure Resource Manager
 - Azure portal, which also covers the Microsoft Entra admin center
@@ -108,9 +108,9 @@ Because the policy is applied to the Azure management portal and API, services, 
 - Microsoft IoT Central
 
 > [!NOTE]
-> The Microsoft Azure Management application applies to [Azure PowerShell](/powershell/azure/what-is-azure-powershell), which calls the [Azure Resource Manager API](/azure/azure-resource-manager/management/overview). It does not apply to [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview), which calls the [Microsoft Graph API](/graph/overview).
+> The Windows Azure Service Management API application applies to [Azure PowerShell](/powershell/azure/what-is-azure-powershell), which calls the [Azure Resource Manager API](/azure/azure-resource-manager/management/overview). It does not apply to [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview), which calls the [Microsoft Graph API](/graph/overview).
 
-For more information on how to set up a sample policy for Microsoft Azure Management, see [Conditional Access: Require MFA for Azure management](howto-conditional-access-policy-azure-management.md).
+For more information on how to set up a sample policy for Windows Azure Service Management API, see [Conditional Access: Require MFA for Azure management](howto-conditional-access-policy-azure-management.md).
 
 > [!TIP]
 > For Azure Government, you should target the Azure Government Cloud Management API application.
@@ -130,7 +130,7 @@ When a Conditional Access policy targets the Microsoft Admin Portals cloud app, 
 We're continually adding more administrative portals to the list.
 
 > [!NOTE]
-> The Microsoft Admin Portals app applies to interactive sign-ins to the listed admin portals only. Sign-ins to the underlying resources or services like Microsoft Graph or Azure Resource Manager APIs are not covered by this application. Those resources are protected by the [Microsoft Azure Management](#microsoft-azure-management) app. This enables customers to move along the MFA adoption journey for admins without impacting automation that relies on APIs and PowerShell. When you are ready, Microsoft recommends using a [policy requiring administrators perform MFA always](howto-conditional-access-policy-admin-mfa.md) for comprehensive protection.
+> The Microsoft Admin Portals app applies to interactive sign-ins to the listed admin portals only. Sign-ins to the underlying resources or services like Microsoft Graph or Azure Resource Manager APIs are not covered by this application. Those resources are protected by the [Windows Azure Service Management API](#windows-azure-service-management-api) app. This enables customers to move along the MFA adoption journey for admins without impacting automation that relies on APIs and PowerShell. When you are ready, Microsoft recommends using a [policy requiring administrators perform MFA always](howto-conditional-access-policy-admin-mfa.md) for comprehensive protection.
 
 ### Other applications
 

@@ -232,6 +232,8 @@
         href: assetbank-tutorial.md
       - name: Asset Planner
         href: asset-planner-tutorial.md  
+      - name: Assent SSO
+        href: assent-sso-tutorial.md
       - name: AssetSonar
         href: assetsonar-tutorial.md
       - name: Astra Schedule
@@ -772,6 +774,8 @@
         href: discovery-benefits-sso-tutorial.md
       - name: Displayr
         href: displayr-tutorial.md
+      - name: DLG Learning Center
+        href: dlg-learning-center-tutorial.md
       - name: dmarcian
         href: dmarcian-tutorial.md
       - name: Document360
@@ -1185,6 +1189,8 @@
         href: hashicorp-cloud-platform-hcp-tutorial.md
       - name: Hawkeye Platform
         href: hawkeyebsb-tutorial.md
+      - name: HCL BigFix Platform
+        href: hcl-bigfix-platform-tutorial.md
       - name: hCaptcha Enterprise
         href: hcaptcha-enterprise-tutorial.md
       - name: Headspace
@@ -1629,6 +1635,8 @@
         href: logzio-cloud-observability-for-engineers-tutorial.md
       - name: Looker Analytics Platform
         href: looker-analytics-platform-tutorial.md  
+      - name: Lookout Secure Access
+        href: lookout-secure-access-tutorial.md
       - name: Loop Flow CRM
         href: loop-flow-crm-tutorial.md  
       - name: Lucid (All Products)
@@ -1679,6 +1687,8 @@
         href: mcm-tutorial.md
       - name: MDComune Business
         href: mdcomune-business-tutorial.md
+      - name: MemoMeister
+        href: memomeister-tutorial.md
       - name: Menlo Security
         href: menlosecurity-tutorial.md
       - name: Meraki Dashboard
@@ -2307,6 +2317,8 @@
         href: sap-netweaver-tutorial.md
       - name: SAP Qualtrics
         href: qualtrics-tutorial.md
+      - name: SAS Viya SSO
+        href: sas-viya-sso-tutorial.md
       - name: Sauce Labs
         href: sauce-labs-tutorial.md
       - name: Sauce Labs - Mobile and Web Testing
@@ -2555,6 +2567,8 @@
         href: statuspage-tutorial.md
       - name: Stormboard
         href: stormboard-tutorial.md
+      - name: Striim
+        href: striim-tutorial.md
       - name: Styleflow
         href: styleflow-tutorial.md
       - name: SuccessFactors
@@ -2567,6 +2581,8 @@
         href: sumtotalcentral-tutorial.md
       - name: SuperAnnotate
         href: superannotate-tutorial.md
+      - name: Superluminal
+        href: superluminal-tutorial.md
       - name: Supermood
         href: supermood-tutorial.md
       - name: Supply Chain Catalyst

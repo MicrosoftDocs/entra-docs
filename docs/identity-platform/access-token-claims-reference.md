@@ -9,7 +9,7 @@ ms.date: 05/26/2023
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: reference
-#Customer intent:
+#Customer intent: As a developer using the Microsoft identity platform, I want to understand the different access token claims, so that I can use them in my application.
 ---
 
 # Access token claims reference
