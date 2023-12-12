@@ -9,7 +9,7 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: fundamentals
 ms.topic: how-to
-ms.date: 09/12/2023
+ms.date: 11/29/2023
 ms.author: barclayn
 ms.reviewer: jeffsta
 ---
@@ -21,7 +21,7 @@ When a user signs up for a Microsoft cloud service, a new Microsoft Entra tena
 
 While users may only have a single authentication *home* directory, users may participate as guests in multiple directories. You can see both the home and guest directories for each user in Microsoft Entra ID.
 
-:::image type="content" source="media/how-subscriptions-associated-directory/trust-relationship.png" alt-text="Screenshot that shows the trust relationship between Azure subscriptions and Azure active directories.":::
+:::image type="content" source="media/how-subscriptions-associated-directory/trust-relationship.png" alt-text="Screenshot that shows the trust relationship between Azure subscriptions and Microsoft Entra directories.":::
 
 > [!IMPORTANT]
 > When a subscription is associated with a different directory, users who have roles assigned using [Azure role-based access control](/azure/role-based-access-control/role-assignments-portal) lose their access. Classic subscription administrators, including Service Administrator and Co-Administrators, also lose access.
