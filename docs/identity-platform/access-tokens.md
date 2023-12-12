@@ -9,7 +9,7 @@ ms.date: 8/1/2023
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-#Customer intent:
+#Customer intent: As a developer, I want to understand how to validate access tokens, so that I can ensure the security and integrity of the tokens being used in my application.
 ---
 
 # Access tokens in the Microsoft identity platform
