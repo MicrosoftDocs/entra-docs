@@ -1189,6 +1189,8 @@
         href: hashicorp-cloud-platform-hcp-tutorial.md
       - name: Hawkeye Platform
         href: hawkeyebsb-tutorial.md
+      - name: HCL BigFix Platform
+        href: hcl-bigfix-platform-tutorial.md
       - name: hCaptcha Enterprise
         href: hcaptcha-enterprise-tutorial.md
       - name: Headspace
