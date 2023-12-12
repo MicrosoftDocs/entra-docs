@@ -26,7 +26,7 @@ For more information, see [Group provisioning to Active Directory](~/identity/hy
 
 [!INCLUDE [deprecation](~/includes/gwb-v2-deprecation.md)]
 
-If you're using Azure Active Directory Connect Group Writeback v2, you need to move to Cloud Sync provisioning to Active Directory before you can take advantage of Cloud Sync group provisioning. For more information, see [Migrate Microsoft Entra Connect Sync Group Writeback v2 to Microsoft Entra Cloud Sync](~/identity/hybrid/cloud-sync/migrate-group-writeback.md).
+If you're using Microsoft Entra Connect Sync Group Writeback v2, you need to move to Cloud Sync provisioning to Active Directory before you can take advantage of Cloud Sync group provisioning. For more information, see [Migrate Microsoft Entra Connect Sync Group Writeback v2 to Microsoft Entra Cloud Sync](~/identity/hybrid/cloud-sync/migrate-group-writeback.md).
 
 >[!NOTE]
 > If you were previously writing Microsoft 365 groups back to on-premises Active Directory as universal distribution groups, they appear in the Azure portal as not enabled for writeback on both the **Groups** page and the properties page for a group. These pages display a new property introduced for the preview, `writeback enabled`. This property isn't set by the current version of Group Writeback to ensure backward compatibility with the legacy version of Group Writeback and to avoid breaking existing customer setups.
@@ -40,8 +40,8 @@ To understand the behavior of `No writeback` in the portal, check the properties
 
 By default, the **Group writeback state** of groups is set to **No writeback**. This means:
 
-- **Microsoft 365 groups**: If the group is ```IsEnabled = null``` and ```onPremisesGroupType = null```, to ensure backward compatibility with older versions of Group Writeback, the group is written back to your on-premises Active Directory as a distribution group.
-- **Microsoft Entra security groups**: If the group is ```IsEnabled = null``` and ```onPremisesGroupType = null```, the group isn't written back to your on-premises Active Directory.
+- **Microsoft 365 groups**: If the group is ```IsEnabled = null``` and ```onPremisesGroupType = null```, to ensure backward compatibility with older versions of Group Writeback, the group is written back to on-premises Active Directory as a distribution group.
+- **Microsoft Entra security groups**: If the group is ```IsEnabled = null``` and ```onPremisesGroupType = null```, the group isn't written back to on-premises Active Directory.
 
 ## Show writeback columns
 
@@ -51,7 +51,7 @@ On the **All groups** overview page, you can add the group writeback columns **T
 
 ## Writeback column settings
 
-The **Writeback enabled** column allows you to turn off the writeback capability for individual groups. The **Target writeback type** column allows you to specify to which group type you want this cloud group written back in your on-premises Active Directory. For a Microsoft Entra Microsoft 365 group, you can write it back as a security group, a distribution group, or a mail-enabled security group. For a Microsoft Entra security group, you can write it back only as a security group.
+The **Writeback enabled** column allows you to turn off the writeback capability for individual groups. The **Target writeback type** column allows you to specify to which group type you want this cloud group written back in on-premises Active Directory. For a Microsoft Entra Microsoft 365 group, you can write it back as a security group, a distribution group, or a mail-enabled security group. For a Microsoft Entra security group, you can write it back only as a security group.
 
 :::image type="content" source="./media/groups-write-back-portal/all-groups-view.png" alt-text="Screenshot that shows writeback settings columns that are visible on the All groups page." lightbox="media/groups-write-back-portal/all-groups-view.png":::
 
@@ -66,7 +66,7 @@ You can also configure writeback settings for a group on the property page for t
 
 ## Read the writeback configuration by using PowerShell
 
-You can use PowerShell to get a list of writeback-enabled groups by using the following PowerShell Get-MgGroup cmdlet.
+You can use PowerShell to get a list of writeback-enabled groups by using the following PowerShell `Get-MgGroup` cmdlet.
 
 ```powershell-console
 Connect-MgGraph -Scopes @('Group.Read.all')
