@@ -20,8 +20,7 @@ Platform single sign-on (PSSO) is a feature that enables users to sign in to Mac
 ## Prerequisites
 
 - A minimum requirement of macOS 13 Ventura
-- Microsoft Intune [Company Portal app](/mem/intune/apps/apps-company-portal-macos) (version 5.2307.99.2235 only)
-<!-- TODO: here to update once the final version number is known -->
+- Microsoft Intune [Company Portal app](/mem/intune/apps/apps-company-portal-macos)
 - [Microsoft Authenticator](https://support.microsoft.com/account-billing/how-to-use-the-microsoft-authenticator-app-9783c865-0308-42fb-a519-8cf666fe0acc)
 
 > [!NOTE]
@@ -102,8 +101,6 @@ To enroll a Mac using Automated Device Enrollment, follow the steps outlined in 
 To enroll your Mac into Platform SSO, launch the Company Portal app and sign in as an Intune-licensed Microsoft Entra ID user. Follow the Company Access setup flow to complete device enrollment. Once your Mac has been enrolled and the assigned configuration profile and Company Portal app have been installed, Platform SSO will be ready to use.
 
 You can verify the presence of the SSO extension by going to **Settings** > **Privacy** and **security** > **Profiles** on your enrolled Mac. An example is shown in the following screenshot:
-
-<!-- SCREENSHOT HERE -->
 
 ## See also
 
