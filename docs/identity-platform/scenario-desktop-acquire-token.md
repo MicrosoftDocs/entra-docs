@@ -1,16 +1,14 @@
 ---
 title: Acquire a token to call a web API (desktop app)
 description: Learn how to build a desktop app that calls web APIs to acquire a token for the app
-
 author: OwenRichards1
 manager: CelesteDG
+ms.author: owenrichards
+ms.custom: has-adal-ref 
+ms.date: 03/27/2023
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-
-ms.date: 03/27/2023
-ms.author: owenrichards
-ms.custom:  has-adal-ref, 
 #Customer intent: As an application developer, I want to know how to write a desktop app that calls web APIs by using the Microsoft identity platform.
 ---
 

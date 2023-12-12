@@ -9,7 +9,7 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 
 ms.topic: how-to
-ms.date: 10/27/2023
+ms.date: 12/11/2023
 ms.author: jeedes
 
 ---
@@ -64,8 +64,8 @@ To configure and test Microsoft Entra SSO with Contentstack, perform the followi
 
 Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin center.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Contentstack** > **Single sign-on**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator) and browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Now click on **+ New Application** and search for Contentstack then click **Create**. Once created, click on the **Single sign-on** button from the left menu. 
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -97,7 +97,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     |`https://<ENVIRONMENT>-app.contentstack.com/#!/login/sso/<SSO_NAME>`|
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [Contentstack support team](mailto:support@contentstack.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
+	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. You will get these values from the [**Configure Contentstack SSO**](#configure-contentstack-sso) section. If you have queriers, please contact [Contentstack support team](mailto:support@contentstack.com) or follow [Contentstack SSO guide](https://www.contentstack.com/docs/developers/single-sign-on).
 
 1. Contentstack application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
@@ -107,7 +107,10 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 	
 	| Name | Source Attribute|
 	| ----- | --------------- |
-	| roles | user.assignedroles|
+    | first_name | user.givenname |
+    | last_name | user.surname |
+    | email | user.userprincipalname |
+    | roles | user.assignedroles|
 
     > [!NOTE]
     > Please click [here](~/identity-platform/howto-add-app-roles-in-apps.md#app-roles-ui) to know how to configure Role in Microsoft Entra ID.
@@ -148,8 +151,50 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
 
 ## Configure Contentstack SSO
 
-To configure single sign-on on **Contentstack** side, you need to send the downloaded **Certificate (Base64)** and appropriate copied URLs from Microsoft Entra admin center to [Contentstack support team](mailto:support@contentstack.com). They set this setting to have the SAML SSO connection set properly on both sides.
+1. Log in to your Contentstack company site as an administrator.
 
+1. Go to the Organization Settings page and click
+on the **Single Sign-On** tab on the left menu.
+
+1. In the **Single Sign-On** page, navigate to **SSO Configuration** section and perform the following steps:
+
+    1. Enter a valid **SSO Name** and click **Create**.
+        
+        ![Screenshot shows settings of the configuration.](./media/contentstack-tutorial/name.png "SSO Provider")
+
+    1. Copy **Assertion Consumer Service URL** and paste in the **Reply URL** textbox in the **Basic SAML configuration** section in Microsoft Entra admin center.
+
+    1. Copy **Entity ID** and paste in the **Identifier** textbox in the **Basic SAML configuration** section in Microsoft Entra admin center and click **Next**.
+
+        ![Screenshot shows the configuration values.](./media/contentstack-tutorial/values.png "Identifier")
+
+1. Navigate to **Idp Configuration** tab and perform the following steps:
+
+    ![Screenshot shows the login values from Identity.](./media/contentstack-tutorial/admin.png "Identity Provider")
+
+    1. In the **Single Sign-On Url** textbox, paste the **Login URL**, which you have copied from the Microsoft Entra admin center.
+
+    1. Open the downloaded **Certificate (Base64)** from Microsoft Entra admin center and upload into the **Certificate** field.
+
+    1. Click **Next**.
+
+1. In the **User Management** section, enable [**Strict Mode**](https://www.contentstack.com/docs/developers/single-sign-on/set-up-sso-in-contentstack#strict-mode) and click **Next**.
+
+    ![Screenshot shows User Management section.](./media/contentstack-tutorial/manage.png "Users")
+
+1. In the **Test & Enable** section, click **Enable SSO** button and click **Next**.
+
+    ![Screenshot shows the enable testing section.](./media/contentstack-tutorial/test.png "Testing")
+
+1. Once this is enabled, users can access the organization through SSO. If needed, you can also **Disable SSO** from this page as well.
+
+    ![Screenshot shows disabling the access page.](./media/contentstack-tutorial/access.png "Page")
+
+    1. Copy **SSO One-Click URL** and paste in the **Sign on URL** textbox in **Basic SAML configuration** section in the Microsoft Entra admin center, if you wish to configure the application in SP initiated mode.
+
+> [!NOTE]
+> Please refer [Contentstack SSO guide](https://www.contentstack.com/docs/developers/single-sign-on) for more information.
+        
 ### Create Contentstack test user
 
 In this section, a user called Britta Simon is created in Contentstack. Contentstack supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in Contentstack, a new one is created after authentication.

@@ -1,19 +1,16 @@
 ---
 title: "Quickstart: Sign in users and call the Microsoft Graph API from an ASP.NET web app"
 description: Download and run a code sample that shows how an ASP.NET web app can sign in Microsoft Entra users.
-
 author: cilwerner
 manager: CelesteDG
-
+ms.author: cwerner
+ms.custom: devx-track-csharp,  scenarios:getting-started, languages:ASP.NET
+ms.date: 07/28/2023
+ms.reviewer: jmprieur
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: quickstart
-ms.date: 07/28/2023
-ms.author: cwerner
-
-ms.reviewer: jmprieur
-ms.custom: devx-track-csharp,  scenarios:getting-started, languages:ASP.NET
-# Customer intent: As an application developer, I want to see a sample ASP.NET web app that can sign in Microsoft Entra users.
+#Customer intent: As an application developer, I want to see a sample ASP.NET web app that can sign in Microsoft Entra users.
 ---
 
 # Quickstart: Sign in users and call the Microsoft Graph API from an ASP.NET web app

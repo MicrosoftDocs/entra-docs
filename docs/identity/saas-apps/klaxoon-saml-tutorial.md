@@ -33,7 +33,8 @@ To get started, you need the following items:
 
 In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
 
-* Klaxoon SAML supports **SP** initiated SSO
+* Klaxoon SAML supports **SP** initiated SSO.
+* Klaxoon SAML supports [Automated user provisioning](klaxoon-saml-provisioning-tutorial.md).
 
 ## Adding Klaxoon SAML from the gallery
 

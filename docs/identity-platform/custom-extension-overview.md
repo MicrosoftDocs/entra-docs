@@ -1,25 +1,22 @@
 ---
 title: Custom authentication extension 
-titleSuffix: Microsoft identity platform
 description: Use Microsoft Entra custom authentication extensions to customize your user's sign-in experience by using REST APIs or outbound webhooks.
-
 author: omondiatieno
 manager: CelesteDG
-
+ms.author: jomondi
+ms.custom: 
+ms.date: 10/27/2023
+ms.reviewer: JasSuri
 ms.service: active-directory
 ms.subservice: develop
-
 ms.topic: conceptual
-ms.date: 10/27/2023
-ms.author: jomondi
-ms.reviewer: JasSuri
-ms.custom:  
+titleSuffix: Microsoft identity platform
 #Customer intent: As a developer, I want to learn about custom authentication extensions so that I can augment tokens with claims from an external identity system or role management system.
 ---
 
 # Custom authentication extensions (preview)
 
-This article provides an overview of custom authentication extensions for Microsoft Entra ID. Custom authentication extensions allow you to customize the Microsoft Entra authentication experience by integrating with external systems.
+This article provides a high-level, technical overview of [custom authentication extensions](~/external-id/customers/concept-custom-extensions.md) for Microsoft Entra ID. Custom authentication extensions allow you to customize the Microsoft Entra authentication experience by integrating with external systems.
 
 The following diagram depicts the sign-in flow integrated with a custom authentication extension.
 
@@ -59,7 +56,7 @@ To ensure the communications between the custom authentication  extension and yo
 
 ## Custom claims provider
 
-A custom claims provider is a type of custom authentication extension that calls a REST API to fetch claims from external systems. A custom claims provider can be assigned to one or many applications in your directory and maps claims from external systems into tokens.
+A custom claims provider is a type of custom authentication extension that calls a REST API to fetch claims from external systems. A custom claims provider maps claims from external systems into tokens and can be assigned to one or many applications in your directory.
 
 Learn more about [custom claims providers](custom-claims-provider-overview.md).
 

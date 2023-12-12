@@ -12,7 +12,7 @@ ms.author: kenwith
 ms.reviewer: chmutali
 ---
 
-# Troubleshoot inbound provisioning API issues
+# Troubleshoot inbound provisioning API issues (Public preview)
 
 ## Introduction
 

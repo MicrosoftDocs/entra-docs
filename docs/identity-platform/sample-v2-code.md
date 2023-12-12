@@ -1,18 +1,16 @@
 ---
 title: Code samples for Microsoft identity platform authentication and authorization
 description: An index of Microsoft-maintained code samples demonstrating authentication and authorization in several application types, development languages, and frameworks.
-
 author: OwenRichards1
 manager: CelesteDG
-
+ms.author: owenrichards
+ms.custom:
+ms.date: 04/19/2023
+ms.reviewer: jmprieur
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: sample
-
-ms.date: 04/19/2023
-ms.author: owenrichards
-ms.reviewer: jmprieur
-ms.custom:  
+#Customer intent:
 ---
 
 # Microsoft identity platform code samples

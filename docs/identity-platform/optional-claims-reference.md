@@ -1,17 +1,16 @@
 ---
 title: Optional claims reference
 description: Claims reference with details on the optional claims that can be included in tokens in the Microsoft identity platform.
-
 author: cilwerner
 manager: CelesteDG
+ms.author: cwerner
+ms.custom: curation-claims
+ms.date: 06/07/2023
+ms.reviewer: ludwignick
 ms.service: active-directory
 ms.subservice: develop
-
 ms.topic: reference
-ms.date: 06/07/2023
-ms.author: cwerner
-ms.custom:  curation-claims
-ms.reviewer: ludwignick
+#Customer intent:
 ---
 
 # Optional claims reference

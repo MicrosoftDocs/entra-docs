@@ -3,14 +3,14 @@ title: "Tutorial: Create an iOS or macOS app that uses the Microsoft identity pl
 description: Build an iOS or macOS app that uses the Microsoft identity platform to sign in users and get an access token to call the Microsoft Graph API on their behalf.
 author: henrymbuguakiarie
 manager: CelesteDG
-
+ms.author: henrymbugua
+ms.custom: has-adal-ref
+ms.date: 06/27/2023
+ms.reviewer: oldalton
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: tutorial
-ms.date: 06/27/2023
-ms.author: henrymbugua
-ms.reviewer: oldalton
-ms.custom:  has-adal-ref
+#Customer intent:
 ---
 
 # Tutorial: Sign in users and call Microsoft Graph from an iOS or macOS app

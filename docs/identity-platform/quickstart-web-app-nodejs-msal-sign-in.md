@@ -1,19 +1,16 @@
 ---
 title: "Quickstart: Sign in users and call the Microsoft Graph API from a Node.js web application using MSAL Node"
 description: In this quickstart, you learn how to implement authentication with a Node.js web app and the Microsoft Authentication Library (MSAL) for Node.js.
-
 author: cilwerner
 manager: celested
-
+ms.author: cwerner
+ms.custom: scenarios:getting-started, languages:js, devx-track-js
+ms.date: 07/27/2023
+ms.reviewer: jmprieur
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: quickstart
-
-ms.date: 07/27/2023
-ms.author: cwerner
-ms.reviewer: jmprieur
-ms.custom:  scenarios:getting-started, languages:js, devx-track-js
-# Customer intent: As an application developer, I want to know how to set up authentication in a web application built using Node.js and MSAL Node.
+#Customer intent: As an application developer, I want to know how to set up authentication in a web application built using Node.js and MSAL Node.
 ---
 
 # Quickstart: Sign in users and call the Microsoft Graph API from a Node.js web application using MSAL Node

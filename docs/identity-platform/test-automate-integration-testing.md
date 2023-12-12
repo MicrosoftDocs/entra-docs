@@ -1,19 +1,16 @@
 ---
 title: Run automated integration tests
 description: Learn how to run automated integration tests as a user against APIs protected by the Microsoft identity platform. Use the Resource Owner Password Credential Grant (ROPC) auth flow to sign in as a user instead of automating the interactive sign-in prompt UI.
-
 author: cilwerner
 manager: CelesteDG
-
+ms.author: cwerner
+ms.custom: 
+ms.date: 11/30/2021
+ms.reviewer: sahmalik, arcrowe
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: how-to
-
-ms.date: 11/30/2021
-ms.author: cwerner
-ms.reviewer: sahmalik, arcrowe
-ms.custom: 
-# Customer intent: As a developer, I want to use ROPC in automated integration tests against APIs protected by Microsoft identity platform so I don't have to automate the interactive sign-in prompts.
+#Customer intent: As a developer, I want to use ROPC in automated integration tests against APIs protected by Microsoft identity platform so I don't have to automate the interactive sign-in prompts.
 ---
 
 # Run automated integration tests

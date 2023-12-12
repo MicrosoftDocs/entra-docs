@@ -34,8 +34,8 @@ To get started, you need the following items:
 In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
 
 * Cerby supports **SP** initiated SSO.
-
 * Cerby supports **Just In Time** user provisioning.
+* Cerby supports [Automated user provisioning](cerby-provisioning-tutorial.md).
 
 > [!NOTE]
 > Identifier of this application is a fixed string value so only one instance can be configured in one tenant.

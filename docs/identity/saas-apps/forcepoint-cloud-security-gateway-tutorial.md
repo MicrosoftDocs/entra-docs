@@ -36,6 +36,7 @@ For more information, see [Azure built-in roles](~/identity/role-based-access-co
 In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
 
 * Forcepoint Cloud Security Gateway - User Authentication supports **SP** initiated SSO.
+* Forcepoint Cloud Security Gateway - User Authentication supports [Automated user provisioning](forcepoint-cloud-security-gateway-provisioning-tutorial.md).
 
 > [!NOTE]
 > Identifier of this application is a fixed string value so only one instance can be configured in one tenant.

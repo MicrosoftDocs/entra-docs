@@ -1,18 +1,16 @@
 ---
 title: Android MSAL configuration file
 description: An overview of the Android Microsoft Authentication Library (MSAL) configuration file, which represents an application's configuration in Microsoft Entra ID.
-
 author: cilwerner
 manager: CelesteDG
-
+ms.author: cwerner
+ms.custom: 
+ms.date: 09/12/2019
+ms.reviewer: shoatman
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: reference
-
-ms.date: 09/12/2019
-ms.author: cwerner
-ms.custom: 
-ms.reviewer: shoatman
+#Customer intent:
 ---
 
 # Android Microsoft Authentication Library configuration file

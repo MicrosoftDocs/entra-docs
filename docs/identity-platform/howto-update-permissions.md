@@ -1,18 +1,18 @@
 ---
 title: Update an app's requested permissions in Microsoft Entra ID
 description: Learn how developers can stop applications from requesting unnecessary permissions and also add new permissions for applications in the Microsoft identity platform.
-services: active-directory
 author: omondiatieno
 manager: celesteDG
+ms.author: jomondi
+ms.date: 12/05/2023
+ms.reviewer: yuhko, ergreenl
 ms.service: active-directory
 ms.subservice: develop
-ms.workload: identity
 ms.topic: how-to
-ms.date: 11/22/2023
-ms.author: jomondi
-ms.reviewer: yuhko, ergreenl
+ms.workload: identity
+services: active-directory
 zone_pivot_groups: enterprise-apps-with-ms-graph
-
+#Customer intent:
 ---
 # Update an app's requested permissions in Microsoft Entra ID
 
@@ -43,7 +43,7 @@ The following section lists the three main scenarios where you need to update th
 - Replace a permission
 
 > [!NOTE]
-> Updating the requested permissions for your application doesn't automatically grant your app access to the protected resources. Your customers, or the admins in your organization, will need to grant consent to new permissions added, or manually revoke   the permissions themselves.
+> Updating the requested permissions for your application doesn't automatically grant or revoke your app's access to the protected resources. Your customers, or the admins in your organization need to grant consent to new permissions added, or manually revoke the permissions themselves.
 
 ## Add permissions to an application
 

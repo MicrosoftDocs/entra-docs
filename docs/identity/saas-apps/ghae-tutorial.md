@@ -34,6 +34,7 @@ To get started, you need the following items:
 In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
 
 * GHAE supports **SP and IDP** initiated SSO.
+* GHAE supports [Automated user provisioning](ghae-provisioning-tutorial.md).
 
 ## Add GHAE from the gallery
 
