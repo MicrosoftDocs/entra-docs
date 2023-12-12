@@ -82,7 +82,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     `https://web.memomeister.com/login`
 
     > [!NOTE]
-	> The Identifier value is not real. Update the value with the actual Identifier. Contact [MemoMeister support team](support@memomeister.com) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
+	> The Identifier value is not real. Update the value with the actual Identifier. Contact [MemoMeister support team](mailto:support@memomeister.com) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
 
 1. MemoMeister application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
