@@ -3,7 +3,7 @@ title: The Global Secure Access Client for Android (preview)
 description: Install the Global Secure Access Android Client to connect to Microsoft's Security Edge Solutions, Microsoft Entra Internet Access and Private Access.
 ms.service: network-access
 ms.topic: how-to
-ms.date: 11/29/2023
+ms.date: 12/12/2023
 ms.author: kenwith
 author: kenwith
 manager: amycolannino
@@ -43,13 +43,15 @@ Global Secure Access Client for Android supports deployment for the legacy Devic
 - Corporate-owned devices with a work profile
 - Personally-owned devices with a work profile
 
-Third party mobile device management scenarios are also supported. In these scenarios, you need to enable a traffic forwarding profile and configure the app according to the vendor documentation.
+### Third party mobile device management
+
+Third party mobile device management (MDM) scenarios are also supported. In these scenarios, known as *Global Secure Access only mode*, you only need to enable a traffic forwarding profile and configure the app according to the vendor documentation. At that point, users can either download the Defender app from the Google Play store or you can deploy the app using your MDM solution.
 
 ## Deploy Microsoft Defender for Endpoint Android
 
 There are several combinations of deployment modes and scenarios for using the Global Secure Access Client for Android.
 
-Once you enable a traffic forwarding profile and configure your network, the Global Secure Access Android Client appears in the Defender app automatically.
+Once you enable a traffic forwarding profile and configure your network, the Global Secure Access Android Client appears in the Defender app automatically; however, the Global Secure Access client is disabled by default. Users can enable the client from the Defender app. The steps to enable the client are provided in the [Confirm Global Secure Access appears in Defender app](#confirm-global-secure-access-appears-in-defender-app) section.
 
 ### [Device Administrator](#tab/device-administrator)
 
@@ -86,6 +88,8 @@ The detailed process for deploying Defender is as follows:
 1. On the **Review + create** tab, confirm the information is correct and select **Create**.
 1. On the new app details page, select **Device install status** and confirm the app is installed.
 
+Users need to enable the client in the Defender app. Proceed to the next section to confirm the app is installed and for how to enable the client.
+
 ### [Android Enterprise](#tab/android-enterprise)
 
 Follow these steps to add the Microsoft Defender for Endpoint app into your managed Google Play store.
@@ -121,7 +125,7 @@ The detailed process for deploying to the Google Play store is as follows:
 
     ![Screenshot of the Add group option.](media/how-to-install-android-client/intune-google-add-group.png)
 
-After you assign a group, the app is automatically installed in the *work profile* during the next sync of the device via the Company Portal app. Proceed to the next section to confirm the app is installed.
+After you assign a group, the app is automatically installed in the *work profile* during the next sync of the device via the Company Portal app. Users need to enable the client in the Defender app. Proceed to the next section to confirm the app is installed and for how to enable the client.
 
 ---
 
@@ -131,13 +135,13 @@ Because of how the Android client is integrated with Defender for Endpoint, it's
 
 ![Screenshot of the Defender app with the Global Secure Access tile on the dashboard.](media/how-to-install-android-client/defender-endpoint-dashboard.png)
 
+The client is disabled by default when it's deployed to user devices. Users need to enable the client from the Defender app. Tap the toggle to enable the client.
+
+![Screenshot of the disabled Global Secure Access client.](media/how-to-install-android-client/defender-global-secure-access-disabled.png)
+
 Tap on the tile on the dashboard to view the details of the client. When enabled and working properly, the client displays an "Enabled" message. The date and time for when the client connected to Global Secure Access also appears.
 
 ![Screenshot of the enabled Global Secure Access client.](media/how-to-install-android-client/defender-global-secure-access-enabled.png)
-
-To disable the client - so no traffic is forwarded through the service - tap the toggle. The date and time when the client was disabled appears.
-
-![Screenshot of the disabled Global Secure Access client.](media/how-to-install-android-client/defender-global-secure-access-disabled.png)
 
 If the client is unable to connect, a toggle appears to disable the service. Users can come back later to try enabling the client.
 
