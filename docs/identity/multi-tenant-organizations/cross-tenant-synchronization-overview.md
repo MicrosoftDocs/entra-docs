@@ -270,6 +270,12 @@ Does cross-tenant synchronization support deprovisioning users?
   - An attribute on the user changes such that they do not meet the scoping filter conditions defined on the cross-tenant synchronization configuration anymore 
 
 - If the user is blocked from sign-in in the source tenant (accountEnabled = false) they will be blocked from sign-in in the target. This is not a deletion, but an updated to the accountEnabled property.
+- Users are not soft deleted from the target tenant in this scenario:
+  1. Add a user to a group an assign it to the cross-tenant synchornization configuration in the source tenant. 
+  2. Provision the user on-demand or through the incremental cycle. 
+  3. Update account enabled status to false on the user in the source tenant.
+  4. Provision the user on-demand or through the incremental cycle. The account enabled status is changes to false in the target tenant.  
+  5. Remove the user form the group the source tenant.
 
 Does cross-tenant synchronization support restoring users? 
 
