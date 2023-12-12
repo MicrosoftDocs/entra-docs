@@ -35,9 +35,6 @@ In this tutorial, you configure and test Microsoft Entra SSO in a test environme
 
 * MemoMeister supports only **SP** initiated SSO.
 
-> [!NOTE]
-> Identifier of this application is a fixed string value so only one instance can be configured in one tenant.
-
 ## Add MemoMeister from the gallery
 
 To configure the integration of MemoMeister into Microsoft Entra ID, you need to add MemoMeister from the gallery to your list of managed SaaS apps.
@@ -75,14 +72,17 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 1. On the **Basic SAML Configuration** section, perform the following steps:
 
-    a. In the **Identifier (Entity ID)** text box, type the value:
-    `urn:amazon:cognito:sp:eu-central-1_wey0bjFDU`
+    a. In the **Identifier (Entity ID)** text box, type a URL:
+    `urn:amazon:cognito:sp:eu-central-1_<ID>`
 
     b. In the **Reply URL** textbox, type the URL:
     `https://memomeister-production.auth.eu-central-1.amazoncognito.com/saml2/idpresponse`
 
     c. In the **Sign on URL** text box, type the URL:
     `https://web.memomeister.com/login`
+
+    > [!NOTE]
+	> The Identifier value is not real. Update the value with the actual Identifier. Contact [MemoMeister support team](support@memomeister.com) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
 
 1. MemoMeister application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
