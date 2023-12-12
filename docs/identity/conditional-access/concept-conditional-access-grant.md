@@ -2,17 +2,15 @@
 title: Grant controls in Conditional Access policy
 description: Grant controls in a Microsoft Entra Conditional Access policy.
 
-services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 06/26/2023
+ms.date: 12/12/2023
+
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
-ms.reviewer: calebb, sandeo
-
-ms.collection: M365-identity-device-management
+ms.reviewer: lhuangnorth, jogro
 ---
 # Conditional Access: Grant
 
@@ -28,7 +26,7 @@ The control for blocking access considers any assignments and prevents access ba
 
 ## Grant access
 
-Administrators can choose to enforce one or more controls when granting access. These controls include the following options: 
+Administrators can choose to enforce one or more controls when granting access. These controls include the following options:
 
 - [Require multifactor authentication (Microsoft Entra multifactor authentication)](~/identity/authentication/concept-mfa-howitworks.md)
 - [Require authentication strength](#require-authentication-strength)
@@ -65,8 +63,8 @@ Devices must be registered in Microsoft Entra ID before they can be marked as co
 
 The **Require device to be marked as compliant** control:
 
-   - Only supports Windows 10+, iOS, Android, and macOS devices registered with Microsoft Entra ID and enrolled with Intune.
-   - Microsoft Edge in InPrivate mode is considered a non-compliant device.
+- Only supports Windows 10+, iOS, Android, and macOS devices registered with Microsoft Entra ID and enrolled with Intune.
+- Microsoft Edge in InPrivate mode is considered a non-compliant device.
 
 > [!NOTE]
 > On Windows, iOS, Android, macOS, and some third-party web browsers, Microsoft Entra ID identifies the device by using a client certificate that is provisioned when the device is registered with Microsoft Entra ID. When a user first signs in through the browser, the user is prompted to select the certificate. The user must select this certificate before they can continue to use the browser.
@@ -82,12 +80,16 @@ Organizations can choose to use the device identity as part of their Conditional
 When you use the [device-code OAuth flow](~/identity-platform/v2-oauth2-device-code.md), the required grant control for the managed device or a device state condition isn't supported. This is because the device that is performing authentication can't provide its device state to the device that is providing a code. Also, the device state in the token is locked to the device performing authentication. Use the **Require multifactor authentication** control instead.
 
 The **Require Microsoft Entra hybrid joined device** control:
-   - Only supports domain-joined Windows down-level (before Windows 10) and Windows current (Windows 10+) devices.
-   - Doesn't consider Microsoft Edge in InPrivate mode as a Microsoft Entra hybrid joined device.
+
+- Only supports domain-joined Windows down-level (before Windows 10) and Windows current (Windows 10+) devices.
+- Doesn't consider Microsoft Edge in InPrivate mode as a Microsoft Entra hybrid joined device.
 
 ### Require approved client app
 
-Organizations can require that an approved client app is used  to access selected cloud apps. These approved client apps support [Intune app protection policies](/mem/intune/apps/app-protection-policy) independent of any mobile device management solution.
+Organizations can require that an approved client app is used to access selected cloud apps. These approved client apps support [Intune app protection policies](/mem/intune/apps/app-protection-policy) independent of any mobile device management solution.
+
+> [!WARNING]
+> The approved client app grant is retiring in early March 2026. Organizations must transition all current Conditional Access policies that use only the Require Approved Client App grant to Require Approved Client App or Application Protection Policy by March 2026. Additionally, for any new Conditional Access policy, only apply the Require application protection policy grant. For more inforamtion, see the article [Migrate approved client app to application protection policy in Conditional Access](migrate-approved-client-app.md).
 
 To apply this grant control, the device must be registered in Microsoft Entra ID, which requires using a broker app. The broker app can be Microsoft Authenticator for iOS, or either Microsoft Authenticator or Microsoft Company Portal for Android devices. If a broker app isn't installed on the device when the user attempts to authenticate, the user is redirected to the appropriate app store to install the required broker app.
 
@@ -122,13 +124,15 @@ The following client apps support this setting. This list isn't exhaustive and i
 - Microsoft Whiteboard
 - Microsoft 365 Admin
 
-**Remarks**
-   - The approved client apps support the Intune mobile application management feature.
-   -  The **Require approved client app** requirement:
-      - Only supports the iOS and Android for device platform condition.
-      - Requires a broker app to register the device. The broker app can be Microsoft Authenticator for iOS, or either Microsoft Authenticator or Microsoft Company Portal for Android devices.
+#### Remarks
+
+- The approved client apps support the Intune mobile application management feature.
+- The **Require approved client app** requirement:
+   - Only supports the iOS and Android for device platform condition.
+   - Requires a broker app to register the device. The broker app can be Microsoft Authenticator for iOS, or either Microsoft Authenticator or Microsoft Company Portal for Android devices.
 - Conditional Access can't consider Microsoft Edge in InPrivate mode an approved client app.
 - Conditional Access policies that require Microsoft Power BI as an approved client app don't support using Microsoft Entra application proxy to connect the Power BI mobile app to the on-premises Power BI Report Server.
+- WebViews hosted outside of Microsoft Edge do not satisfy the approved client app policy. For example: If an app is trying to load SharePoint in a webview app protection policies fail.
 
 See [Require approved client apps for cloud app access with Conditional Access](./howto-policy-approved-app-or-app-protection.md) for configuration examples.
 
@@ -136,7 +140,7 @@ See [Require approved client apps for cloud app access with Conditional Access](
 
 In Conditional Access policy, you can require that an [Intune app protection policy](/mem/intune/apps/app-protection-policy) is present on the client app before access is available to the selected applications. These mobile application management (MAM) app protection policies allow you to manage and protect your organization's data within specific applications.
 
-To apply this grant control, Conditional Access requires that the device is registered in Microsoft Entra ID, which requires using a broker app. The broker app can be either Microsoft Authenticator for iOS or Microsoft Company Portal for Android devices. If a broker app isn't installed on the device when the user attempts to authenticate, the user is redirected to the app store to install the broker app. App protection policies are generally available for iOS and Android, and in public preview for Microsoft Edge on Windows. [Windows devices support no more than 3 Microsoft Entra user accounts in the same session](~/identity/devices/faq.yml#i-can-t-add-more-than-3-microsoft-entra-user-accounts-under-the-same-user-session-on-a-windows-10-11-device--why). For more information about how to apply policy to Windows devices, see the article [Require an app protection policy on Windows devices (preview)](how-to-app-protection-policy-windows.md).
+To apply this grant control, Conditional Access requires that the device is registered in Microsoft Entra ID, which requires using a broker app. The broker app can be either Microsoft Authenticator for iOS or Microsoft Company Portal for Android devices. If a broker app isn't installed on the device when the user attempts to authenticate, the user is redirected to the app store to install the broker app. The Microsoft Authenticator app can be used as the broker app but doesn't support being targeted as an approved client app. App protection policies are generally available for iOS and Android, and in public preview for Microsoft Edge on Windows. [Windows devices support no more than 3 Microsoft Entra user accounts in the same session](~/identity/devices/faq.yml#i-can-t-add-more-than-3-microsoft-entra-user-accounts-under-the-same-user-session-on-a-windows-10-11-device--why). For more information about how to apply policy to Windows devices, see the article [Require an app protection policy on Windows devices (preview)](how-to-app-protection-policy-windows.md).
 
 Applications must meet certain requirements to support app protection policies. Developers can find more information about these requirements in the section [Apps you can manage with app protection policies](/mem/intune/apps/app-protection-policy#apps-you-can-manage-with-app-protection-policies). 
 
