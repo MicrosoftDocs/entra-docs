@@ -1,5 +1,5 @@
 ---
-title: Protected web API - overview
+title: Protected web API - Overview
 description: Learn how to build a protected web API (overview).
 author: cilwerner
 manager: CelesteDG
@@ -13,11 +13,11 @@ ms.topic: conceptual
 #Customer intent: As an application developer, I want to know how to write a protected web API using the Microsoft identity platform for developers.
 ---
 
-# Scenario: Protected web API
+# Protected web API: Overview
 
 In this scenario, you'll learn how to expose a web API and how to protect it so that only authenticated users can access it.
 
-To use your web API, you either enable authenticated users with both work and school accounts or enable Microsoft personal accounts.
+To use your web API, you can either enable authenticated users with both work and school accounts or enable Microsoft personal accounts.
 
 ## Specifics
 

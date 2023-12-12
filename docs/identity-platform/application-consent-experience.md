@@ -43,12 +43,13 @@ The following diagram and table provide information about the building blocks of
 | 7 | Publisher information  | Displays whether the application is published by Microsoft. |
 | 8 | Permissions | This list contains the permissions being requested by the client application. Users should always evaluate the types of permissions being requested to understand what data the client application will be authorized to access on their behalf if they accept. As an application developer, it's best to request access to the permissions with the least privilege. |
 | 9 | Permission description | This value is provided by the service exposing the permissions. To see the permission descriptions, you must toggle the chevron next to the permission. |
-| 10 | https://myapps.microsoft.com | This is the link where users can review and remove any non-Microsoft applications that currently have access to their data. |
+| 10 | `https://myapps.microsoft.com` | This is the link where users can review and remove any non-Microsoft applications that currently have access to their data. |
 | 11 | Report it here | This link is used to report a suspicious app if you don't trust the app, if you believe the app is impersonating another app, if you believe the app will misuse your data, or for some other reason. |
 
 ## Common scenarios and consent experiences
 
 The following section describes the common scenarios and the expected consent experience for each of them.
+
 ### App requires a permission that the user has the right to grant
 
 In this consent scenario, the user accesses an app that requires a permission set that is within the user's scope of authority. The user is directed to the user consent flow.
@@ -97,6 +98,7 @@ All users in that tenant won't see the consent dialog unless the application req
    > Granting explicit consent using the **Grant permissions** button is currently required for single-page applications (SPA) that use MSAL.js. Otherwise, the application fails when the access token is requested.
 
 ## Common Issues
+
 This section outlines the common issues with the consent experience and possible troubleshooting tips.
 
 - 403 error
@@ -119,7 +121,8 @@ This section outlines the common issues with the consent experience and possible
 ## Troubleshoot known errors
 
 For troubleshooting steps, see [Unexpected error when performing consent to an application](~/identity/enterprise-apps/application-sign-in-unexpected-user-consent-error.md).
-## Next steps
+
+## See also
 
 - Get a step-by-step overview of [how the Microsoft Entra consent framework implements consent](./quickstart-register-app.md).
 - For more depth, learn [how a multi-tenant application can use the consent framework](./howto-convert-app-to-be-multi-tenant.md) to implement "user" and "admin" consent, supporting more advanced multi-tier application patterns.
