@@ -9,7 +9,7 @@ ms.date: 04/21/2023
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-#Customer intent:
+#Customer intent: As a developer building applications with secure authorization, I want to understand the claims based authorization process, so that I can ensure my applications adhere to the most secure practices.
 ---
 
 # Secure applications and APIs by validating claims
@@ -26,7 +26,7 @@ To make sure that your authorization logic is secure, you must validate the foll
 * The actor (client app) is authorized.
 
 > [!NOTE]
->Access tokens are only validated in the web APIs for which they were acquired by a client. The client should not validate access tokens.
+> Access tokens are only validated in the web APIs for which they were acquired by a client. The client should not validate access tokens.
 
 For more information about the claims mentioned in this article, see [Microsoft identity platform access tokens](access-tokens.md).
 
