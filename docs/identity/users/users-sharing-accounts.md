@@ -59,7 +59,7 @@ Microsoft Entra features that enable account sharing include:
 * [App usage dashboard/reports](~/identity/authentication/howto-sspr-reporting.md)
 * End-user access portals
 * [App proxy](~/identity/app-proxy/application-proxy.md)
-* [Active Directory Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.AzureActiveDirectory)
+* [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.AzureActiveDirectory)
 
 ## Sharing an account
 
