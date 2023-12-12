@@ -10,7 +10,7 @@ ms.reviewer: shoatman
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: reference
-#Customer intent: 
+#Customer intent: As a developer using the MSAL for Android, I want to understand the configuration JSON file, so that I can customize the behavior of my public client app and specify the default authority and other settings.
 ---
 
 # Android Microsoft Authentication Library configuration file

@@ -9,7 +9,7 @@ ms.date: 11/09/2022
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: tutorial
-#Customer intent: 
+#Customer intent: As a developer building a Node.js and Express web app, I want to learn how to sign in users and acquire access tokens, so that I can implement secure authentication and access Microsoft Graph data in my application.
 ---
 
 # Tutorial: Sign in users and acquire a token for Microsoft Graph in a Node.js & Express web app

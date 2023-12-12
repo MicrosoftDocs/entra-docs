@@ -10,7 +10,7 @@ ms.reviewer: rahulnagraj, alamaral
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: how-to
-#Customer intent: 
+#Customer intent: As an application developer, I want to customize the claims issued in the JSON web tokens so that I can tailor the information about the user that is included in the token for my enterprise application.
 ---
 
 # Customize claims issued in the JSON web token (JWT) for enterprise applications

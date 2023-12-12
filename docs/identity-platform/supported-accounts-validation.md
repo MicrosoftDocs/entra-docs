@@ -10,7 +10,7 @@ ms.reviewer: manrath, sureshja
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: reference
-#Customer intent: 
+#Customer intent: As a developer registering an application with the Microsoft identity platform, I want to understand the validation differences between supported account types, so that I can ensure that the properties of my application are configured correctly.
 ---
 
 # Validation differences by supported account types (signInAudience)

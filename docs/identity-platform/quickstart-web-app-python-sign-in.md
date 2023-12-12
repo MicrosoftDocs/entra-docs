@@ -9,7 +9,7 @@ ms.date: 07/28/2023
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: quickstart
-#Customer intent: 
+#Customer intent: As a Python web app developer, I want to sign in users and call the Microsoft Graph API, so that I can integrate user authentication and access Microsoft Graph data in my application.
 ---
 
 # Quickstart: Sign in users and call the Microsoft Graph API from a Python web app

@@ -10,7 +10,7 @@ ms.reviewer: kkrishna, jmprieur
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: how-to
-#Customer intent: 
+#Customer intent: As a developer, I want to add app roles to my application using RBAC, so I can assign users and groups to those roles.
 ---
 
 # Add app roles to your application and receive them in the token

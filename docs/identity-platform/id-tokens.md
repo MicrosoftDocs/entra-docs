@@ -10,7 +10,7 @@ ms.reviewer: ludwignick
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-#Customer intent: 
+#Customer intent: As a developer integrating with the Microsoft identity platform, I want to understand how to use ID tokens correctly, so that I can verify user identity and use the claims provided by the tokens for various purposes within my application.
 ---
 
 # ID tokens in the Microsoft identity platform
