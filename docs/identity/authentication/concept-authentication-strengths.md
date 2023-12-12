@@ -17,17 +17,15 @@ ms.collection: M365-identity-device-management
 ---
 # Conditional Access authentication strength 
 
-Authentication strength is a Conditional Access control that allows administrators to specify which combination of authentication methods can be used to access a resource. For example, they can make only phishing-resistant authentication methods available to access a sensitive resource. But to access a nonsensitive resource, they can allow less secure multifactor authentication (MFA) combinations, such as password + text message. 
+Authentication strength is a Conditional Access control that specifies which combinations of authentication methods can be used to access a resource. Users can satisfy the strength requirements by authenticating with any of the allowed combinations. 
+
+For example, an authentication stength can only phishing-resistant authentication methods be used to access a sensitive resource. To access a nonsensitive resource, Authentication Policy Administrators can create another authentication strength that allows less secure multifactor authentication (MFA) combinations, such as password + text message. 
 
 Authentication strength is based on the [Authentication methods policy](concept-authentication-methods.md), where administrators can scope authentication methods for specific users and groups to be used across Microsoft Entra ID federated applications. Authentication strength allows further control over the usage of these methods based upon specific scenarios such as sensitive resource access, user risk, location, and more. 
 
-Administrators can specify an authentication strength to access a resource by creating a Conditional Access policy with the **Require authentication strength** control. They can choose from three built-in authentication strengths: **Multifactor authentication strength**, **Passwordless MFA strength**, and **Phishing-resistant MFA strength**. They can also create a custom authentication strength based on the authentication method combinations they want to allow. 
-
-:::image type="content" border="true" source="./media/concept-authentication-strengths/conditional-access-policy-authentication-strength-grant-control.png" alt-text="Screenshot of a Conditional Access policy with an authentication strength configured in grant controls.":::
-
 ## Scenarios for authentication strengths
 
-Authentication strengths can help customers address scenarios, such as: 
+Authentication strengths can help customers address these scenarios: 
 
 - Require specific authentication methods to access a sensitive resource.
 - Require a specific authentication method when a user takes a sensitive action within an application (in combination with Conditional Access authentication context).
@@ -37,7 +35,15 @@ Authentication strengths can help customers address scenarios, such as:
 
 ## Authentication strengths  
 
-An authentication strength can include a combination of authentication methods. Users can satisfy the strength requirements by authenticating with any of the allowed combinations. For example, the built-in **Phishing-resistant MFA strength** allows the following combinations:
+Administrators can specify an authentication strength to access a resource by creating a Conditional Access policy with the **Require authentication strength** control. They can choose from three built-in authentication strengths: **Multifactor authentication strength**, **Passwordless MFA strength**, and **Phishing-resistant MFA strength**. They can also create a custom authentication strength based on the authentication method combinations they want to allow. 
+
+:::image type="content" border="true" source="./media/concept-authentication-strengths/conditional-access-policy-authentication-strength-grant-control.png" alt-text="Screenshot of a Conditional Access policy with an authentication strength configured in grant controls.":::
+
+### Built-in authentication strengths
+
+Built-in authentication strengths are combinations of authentication methods that are predefined by Microsoft. Built-in authentication strengths are always available and can't be modified. Microsoft will update built-in authentication strengths when new methods become available. 
+
+For an example, the built-in **Phishing-resistant MFA strength** allows the following combinations:
 
 - Windows Hello for Business
 
@@ -47,15 +53,11 @@ An authentication strength can include a combination of authentication methods. 
 
   Or
 
-- Microsoft Entra Certificate-Based Authentication (Multi-Factor)
+- Microsoft Entra certificate-based authentication (Multifactor)
 
 :::image type="content" border="true" source="./media/concept-authentication-strengths/authentication-strength-definitions.png" alt-text="Screenshot showing the phishing-resistant MFA strength definition.":::
 
-### Built-in authentication strengths
-
-Built-in authentication strengths are combinations of authentication methods that are predefined by Microsoft. Built-in authentication strengths are always available and can't be modified. Microsoft will update built-in authentication strengths when new methods become available. 
-
-The following table lists the combinations of authentication methods for each built-in authentication strength. Depending on which methods are available in the authentication methods policy and registered for users, they can use any one of the combinations to sign-in.
+The combinations of authentication methods for each built-in authentication strength are listed in the following table. These combinations include methods that need to be registered by users and enabled in the Authentication methods policy or the legacy MFA settings policy.
 
 -	**MFA strength** - the same set of combinations that could be used to satisfy the **Require multifactor authentication** setting.
 -	**Passwordless MFA strength** - includes authentication methods that satisfy MFA but don't require a password.
@@ -80,7 +82,7 @@ The following table lists the combinations of authentication methods for each bu
 |Email One-time pass (Guest)| | | |
 -->
 
-<sup>1</sup> Something you have refers to one of the following methods: text message, voice, push notification, software OATH token and Hardware OATH token.
+<sup>1</sup> Something you have refers to one of the following methods: text message, voice, push notification, software OATH token, or hardware OATH token.
 
 The following API call can be used to list definitions of all the built-in authentication strengths:
 
@@ -105,7 +107,7 @@ In addition to the three built-in authentication strengths, administrators can c
 #### Update and delete custom authentication strengths
 
 You can edit a custom authentication strength. If it's referenced by a Conditional Access policy, it can't be deleted, and you need to confirm any edit. 
-To check if an authentication strength is referenced by a Conditional Access policy,click **Conditional Access policies** column.
+To check if an authentication strength is referenced by a Conditional Access policy, click the **Conditional Access policies** column.
 
 #### FIDO2 security key advanced options
 Custom authentication strengths allow customers to further restrict the usage of some FIDO2 security keys based on their Authenticator Attestation GUIDs (AAGUIDs). The capability allows administrators to require a FIDO2 key from a specific manufacture in order to access the resource. To require a specific FIDO2 security key, complete the preceding steps to create a custom authentication strength, select **FIDO2 Security Key**, and click **Advanced options**. 
