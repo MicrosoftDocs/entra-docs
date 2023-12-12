@@ -23,7 +23,7 @@ You can view the Microsoft Entra Health SLA attainment and Scenario monitoring (
 1. Sign into the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
 1. Browse to **Identity** > **Monitoring and health** > **Health (preview)**.
 
-![Screenshot of the Microsoft Entra Health landing page.](media/concept-scenario-health/identity-health-landing-page.png)
+![Screenshot of the Microsoft Entra Health landing page.](media/concept-microsoft-entra-health/identity-health-landing-page.png)
 
 ### Enable the Scenario monitoring preview
 
@@ -43,7 +43,7 @@ Hover your mouse over the bar for a month to view the percentage for that month.
 
 You can also view SLA attainment using [Microsoft Graph](/graph/api/resources/serviceactivity?view=graph-rest-beta&preserve-view=true).
 
-![Screenshot of the SLA attainment report.](media/concept-scenario-health/sla-attainment.png)
+![Screenshot of the SLA attainment report.](media/concept-microsoft-entra-health/sla-attainment.png)
 
 ## Scenario monitoring (preview)
 
@@ -60,7 +60,7 @@ Data is aggregated every 15 minutes, for low latency insights into your tenant's
 
 Select **View details** on a tile to view the metrics for that scenario. You can also view these metric streams using [Microsoft Graph](/graph/api//resources/serviceactivity?view=graph-rest-beta&preserve-view=true).
 
-![Screenshot of the the scenario monitoring landing page.](media/concept-scenario-health/scenario-monitoring.png)
+![Screenshot of the the scenario monitoring landing page.](media/concept-microsoft-entra-health/scenario-monitoring.png)
 
 ### Sign-ins requiring a compliant device
 
@@ -70,7 +70,7 @@ This scenario captures each user authentication that satisfies a Conditional Acc
 - [Learn about Conditional Access and Intune](/mem/intune/protect/conditional-access).
 - [Learn about Microsoft Entra joined devices](../devices/concept-directory-join.md).
 
-![Screenshot of the compliant device scenario.](media/concept-scenario-health/scenario-monitoring-compliant-device.png)
+![Screenshot of the compliant device scenario.](media/concept-microsoft-entra-health/scenario-monitoring-compliant-device.png)
 
 ### Sign-ins requiring a managed device
 
@@ -79,7 +79,7 @@ This scenario captures each user authentication that satisfies a Conditional Acc
 - [What is device management](/mem/intune/fundamentals/what-is-device-management)?
 - [Learn about Microsoft Entra hybrid joined devices](../devices/concept-hybrid-join.md).
 
-![Screenshot of the managed device scenario.](media/concept-scenario-health/scenario-monitoring-managed-device.png)
+![Screenshot of the managed device scenario.](media/concept-microsoft-entra-health/scenario-monitoring-managed-device.png)
 
 ### Sign-ins requiring multifactor authentication (MFA)
 
@@ -90,7 +90,7 @@ This scenario also provides an aggregated look at failures of interactive MFA si
 - [Configure Conditional Access for MFA for all users](../conditional-access/howto-conditional-access-policy-all-users-mfa.md).
 - [Troubleshoot common sign-in errors](howto-troubleshoot-sign-in-errors.md).
 
-![Screenshot of the MFA scenario.](media/concept-scenario-health/scenario-monitoring-MFA.png)
+![Screenshot of the MFA scenario.](media/concept-microsoft-entra-health/scenario-monitoring-MFA.png)
 
 ### Sign-ins to applications using SAML authentication
 
@@ -99,4 +99,4 @@ This scenario looks at SAML 2.0 authentication attempts that the Microsoft Entra
 - [Learn how the Microsoft Identity platform uses the SAML protocol](../../identity-platform/saml-protocol-reference.md)
 - [Use a SAML 2.0 IdP for single sign on](../hybrid/connect/how-to-connect-fed-saml-idp.md).
 
-![Screenshot of the SAML scenario.](media/concept-scenario-health/scenario-monitoring-SAML.png)
+![Screenshot of the SAML scenario.](media/concept-microsoft-entra-health/scenario-monitoring-SAML.png)
