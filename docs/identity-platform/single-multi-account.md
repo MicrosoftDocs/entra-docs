@@ -10,7 +10,7 @@ ms.reviewer: shoatman
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-#Customer intent:
+#Customer intent: 
 ---
 
 # Single and multiple account public client apps
