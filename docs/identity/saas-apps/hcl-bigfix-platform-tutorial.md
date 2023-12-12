@@ -76,7 +76,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     `https://<BigFix_WebUI_server_fqdn>/saml`
 
     b. In the **Reply URL** textbox, type a URL using one of the following patterns:
-    
+
     |**Reply URL**|
     |-------------|
     |`https://<BigFix_WebUI_server_fqdn>/saml`|
@@ -87,7 +87,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     `https://<BigFix_WebUI_server_fqdn>/saml`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [HCL BigFix Platform support team](mailto:no_support_email@support.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
+	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [HCL BigFix Platform support team](https://support.hcltechsw.com/csm) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 
@@ -125,11 +125,11 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
 
 ## Configure HCL BigFix Platform SSO
 
-To configure single sign-on on **HCL BigFix Platform** side, you need to send the downloaded **Certificate (Base64)** and appropriate copied URLs from Microsoft Entra admin center to [HCL BigFix Platform support team](mailto:no_support_email@support.com). They set this setting to have the SAML SSO connection set properly on both sides. For more information, please refer this [document](https://help.hcltechsw.com/bigfix/10.0/platform/Platform/Config/c_how_to_configure_bigfix_to_int.html).
+To configure single sign-on on **HCL BigFix Platform** side, you need to send the downloaded **Certificate (Base64)** and appropriate copied URLs from Microsoft Entra admin center to [HCL BigFix Platform support team](https://support.hcltechsw.com/csm). They set this setting to have the SAML SSO connection set properly on both sides. For more information, please refer this [link](https://help.hcltechsw.com/bigfix/10.0/platform/Platform/Config/c_how_to_configure_bigfix_to_int.html).
 
 ### Create HCL BigFix Platform test user
 
-In this section, you create a user called B.Simon in HCL BigFix Platform. Work with [HCL BigFix Platform support team](mailto:no_support_email@support.com) to add the users in the HCL BigFix Platform platform. Users must be created and activated before you use single sign-on.
+In this section, you create a user called B.Simon in HCL BigFix Platform. Work with [HCL BigFix Platform support team](https://support.hcltechsw.com/csm) to add the users in the HCL BigFix Platform platform. Users must be created and activated before you use single sign-on.
 
 ## Test SSO 
 
