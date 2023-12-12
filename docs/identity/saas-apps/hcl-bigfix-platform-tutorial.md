@@ -76,6 +76,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     `https://<BigFix_WebUI_server_fqdn>/saml`
 
     b. In the **Reply URL** textbox, type a URL using one of the following patterns:
+    
     |**Reply URL**|
     |-------------|
     |`https://<BigFix_WebUI_server_fqdn>/saml`|
