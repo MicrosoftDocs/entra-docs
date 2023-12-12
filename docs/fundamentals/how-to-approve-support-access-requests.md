@@ -56,7 +56,7 @@ When you have a pending support access request, you can view and approve that re
 
 1. Select either the **Support request ID** link or **Review for approval** link for the request you need to approve.
 
-   :::image type="content" source="media/how-to-approve-support-access-requests/pending-request-view-details-links.png" alt-text="Screenshot of the pending request with links to view details highlighted.":::
+   :::image type="content" source="media/how-to-approve-support-access-requests/pending-request-view-details-links.png" alt-text="Screenshot of the pending request with links to view details highlighted." lightbox="media/how-to-approve-support-access-requests/pending-request-view-details-links.png":::
 
 ## Approve or reject a support request
 
@@ -69,7 +69,7 @@ When viewing the details of a pending support access request, you can approve or
     - A message appears, indicating this choice may result in slower resolution of your support request.
     - Your support engineer may ask you for data needed to diagnose the issue, and you must collect and provide that information to your support engineer. 
 
-:::image type="content" source="media/how-to-approve-support-access-requests/pending-request-details.png" alt-text="Screenshot of the Support Access requests details page with the Reject and Approve buttons highlighted.":::
+:::image type="content" source="media/how-to-approve-support-access-requests/pending-request-details.png" alt-text="Screenshot of the Support Access requests details page with the Reject and Approve buttons highlighted." lightbox="media/how-to-approve-support-access-requests/pending-request-details.png":::
 
 ## Next steps
 

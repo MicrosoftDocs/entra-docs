@@ -68,7 +68,7 @@ The branding elements are called out in the following example. Text descriptions
 
 There are some scenarios you to consider when you customize the sign-in pages for your organization's tenant-specific applications.
 
-For Microsoft, Software as a Service (SaaS), and multi-tenant applications such as <https://myapps.microsoft.com>, or <https://outlook.com>, the customized sign-in page appears only after the user types their **Email** or **Phone number** and selects the **Next** button. 
+For Microsoft, Software as a Service (SaaS), and multitenant applications such as <https://myapps.microsoft.com>, or <https://outlook.com>, the customized sign-in page appears only after the user types their **Email** or **Phone number** and selects the **Next** button. 
 
 Some Microsoft applications support [Home Realm Discovery](~/identity/enterprise-apps/home-realm-discovery-policy.md) for authentication. In these scenarios, when a customer signs in to a Microsoft Entra common sign-in page, Microsoft Entra ID can use the customer's user name to determine where they should sign in. 
 
@@ -96,7 +96,7 @@ In the following example, the company branding for Woodgrove Groceries appears o
 1. Browse to **Identity** > **User experiences** > **Company branding**.
     - If you currently have a customized sign-in experience, the **Edit** button is available.
 
-   :::image type="content" source="media/how-to-customize-branding/customize-branding-getting-started.png" alt-text="Screenshot of Custom branding landing page with Company branding highlighted in the side menu and Configure button.":::
+   :::image type="content" source="media/how-to-customize-branding/customize-branding-getting-started.png" alt-text="Screenshot of Custom branding landing page with Company branding highlighted in the side menu and Configure button." lightbox="media/how-to-customize-branding/customize-branding-getting-started.png":::
 
 The sign-in experience process is grouped into sections. At the end of each section, select the **Review + create** button to review what you have selected and submit your changes or the **Next** button to move to the next section.
 
@@ -146,7 +146,7 @@ If you haven't enabled the footer, go to the **Layout** section and select **Sho
     >[!IMPORTANT]
     >The default Microsoft 'Terms of Use' link is not the same as the Conditional Access Terms of Use. Seeing the terms here doesn't mean you've accepted those terms and conditions. 
 
-   :::image type="content" source="media/how-to-customize-branding/customize-branding-footer.png" alt-text="Screenshot of customizing branding on the Footer section":::
+   :::image type="content" source="media/how-to-customize-branding/customize-branding-footer.png" alt-text="Screenshot of customizing branding on the Footer section.":::
 
 ### Sign-in form
 
@@ -196,7 +196,7 @@ The process for customizing the experience is the same as the [default sign-in e
 
 Microsoft Entra ID supports right-to-left functionality for languages such as Arabic and Hebrew that are read right-to-left. The layout adjusts automatically, based on the user's browser settings.
 
-:::image type="content" source="media/how-to-customize-branding/right-to-left-language-example.png" alt-text="Screenshot of the sign-in experience in Hebrew, demonstrating the right-to-left layout..":::
+:::image type="content" source="media/how-to-customize-branding/right-to-left-language-example.png" alt-text="Screenshot of the sign-in experience in Hebrew, demonstrating the right-to-left layout.":::
 
 ## Next steps
 

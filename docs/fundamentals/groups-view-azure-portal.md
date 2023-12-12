@@ -35,14 +35,14 @@ Create a new group, named _MDM policy - West_. For more information about creati
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Groups** > **All groups**.
 
-   :::image type="content" source="media/groups-view-azure-portal/create-new-group.png" alt-text="Screenshot of the the All Groups page.":::
+   :::image type="content" source="media/groups-view-azure-portal/create-new-group.png" alt-text="Screenshot of the All Groups page." lightbox="media/groups-view-azure-portal/create-new-group.png":::
 
 1. Select **New group**.
 1. Complete the options in the **Group** page:
    - **Group name**: Type *MDM policy - West*
    - **Membership type**: Select *Assigned*.
 
-   :::image type="content" source="media/groups-view-azure-portal/new-group-page.png" alt-text="Screenshot of the the New group page.":::
+   :::image type="content" source="media/groups-view-azure-portal/new-group-page.png" alt-text="Screenshot of the New group page.":::
 
 1. Select **Create**.
 
@@ -53,7 +53,7 @@ A user must exist before being added as a group member, so you'll need to create
 1. Browse to **Identity** > **Users** > **All users**.
 1. Select  **New user** > **Create new user**.
 
-   :::image type="content" source="media/groups-view-azure-portal/create-new-user-menu.png" alt-text="Screenshot of the the New user page.":::
+   :::image type="content" source="media/groups-view-azure-portal/create-new-user-menu.png" alt-text="Screenshot of the New user page.":::
 
 1. Complete the **User** page:
 
@@ -80,7 +80,7 @@ You can see all the groups for your organization in the **Groups - All groups** 
 
     The **All groups** page appears, showing all your active groups.
 
-    :::image type="content" source="media/groups-view-azure-portal/groups-search.png" alt-text="Screenshot of the 'Groups-All groups' page, showing all existing groups..":::
+    :::image type="content" source="media/groups-view-azure-portal/groups-search.png" alt-text="Screenshot of the 'Groups-All groups' page, showing all existing groups.":::
 
 ## Search for a group
 
