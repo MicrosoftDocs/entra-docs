@@ -33,7 +33,7 @@ To integrate Microsoft Entra ID with Cognism, you need:
 
 In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
 
-* Cognism supports **IDP** initiated SSO.
+* Cognism supports ony **IDP** initiated SSO.
 * Cognism supports **Just In Time** user provisioning.
 
 ## Add Cognism from the gallery
@@ -75,20 +75,20 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
     a. In the **Identifier** text box, type a URL using one of the following patterns:
 
-    |**Identifier**|
-    |--------------|
-    |`https://app.cognism.com/<ID>`|
-    |`https://app-staging.cognism.com/<ID>`|
+    |**Environment**|**URL**|
+    |--------------|-------|
+    |Production|`https://app.cognism.com/<ID>`|
+    |Staging|`https://app-staging.cognism.com/<ID>`|
    
     b. In the **Reply URL** text box, type a URL using one of the following patterns:
 
-    |**Reply URL**|
-    |-------------|
-    |`https://app.cognism.com/api/users/sso/azureSamlResponse/<ID>`|
-    |`https://app-staging.cognism.com/api/users/sso/azureSamlResponse/<ID>`|
+    |**Environment**|**URL**|
+    |---------------|-------|
+    |Production|`https://app.cognism.com/api/users/sso/azureSamlResponse/<ID>`|
+    |Staging|`https://app-staging.cognism.com/api/users/sso/azureSamlResponse/<ID>`|
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier and Reply URL. Contact [Cognism Client support team](mailto:help@cognism.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
+	> These values are not real. Update these values with the actual Identifier and Reply URL. Contact [Cognism support team](mailto:help@cognism.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 
@@ -128,27 +128,27 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
 
 1. Log in to Cognism company site as an administrator.
 
-1. Click on the **Circle** icon on the top right corner and navigate to **Settings** > **Single sign-on** > **Microsoft Azure**, then click **configure**.
+1. Go to **Settings** > **Single sign-on** > **Microsoft Azure** and click **Configure**.
 
     ![Screenshot shows Settings for the configuration.](./media/cognism-tutorial/settings.png "Settings")
 
-1. In the **Microsoft Azure SSO Sonfiguration** section, perform the following steps:
+1. In the **Microsoft Azure SSO Configuration** section, perform the following steps:
 
     ![Screenshot shows the Configuration.](./media/cognism-tutorial/configure.png "Configuration")
 
-    1. Copy the **Identifier (Entity ID)** and paste it in the **Basic SAML Configuration** section in the Microsoft Entra Admin Center.
+    1. Copy the **Identifier (Entity ID)** and paste it in the **Identifier (Entity ID)** textbox in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
 
-    1. Copy the **ACS URL** and paste it in the **Basic SAML Configuration** section in the Microsoft Entra Admin Center.
+    1. Copy the **ACS URL** and paste it in the **Reply URL** textbox in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
 
-    1. In the **Entity ID** textbox, paste the **Microsoft Entra Identifier** which you have copied from the Microsoft Entra admin Center.
+    1. In the **Entity ID** textbox, paste the **Microsoft Entra Identifier** which you have copied from the Microsoft Entra admin center.
 
-    1. In the **X.509 Certificate**  textbox, paste the **Certificate (Base64)** which you have copied from the Microsoft Entra admin Center.
+    1. Open the downloaded **Certificate (Base64)** into Notepad and paste the content into the **X.509 Certificate** textbox.
 
-1. Click **Enable**.
+    1. Click **Enable**.
 
 ### Create Cognism test user
 
-In this section, a user called B.Simon is created in Veracode. Veracode supports just-in-time user provisioning, which is enabled by default. There's no action item for you in this section. If a user doesn't already exist in Veracode, a new one is created after authentication.
+In this section, a user called B.Simon is created in Cognism. Cognism supports just-in-time user provisioning, which is enabled by default. There's no action item for you in this section. If a user doesn't already exist in Cognism, a new one is created after authentication.
 
 ## Test SSO 
 
