@@ -294,6 +294,9 @@ Attribute mappings allow you to define how data should flow between the source t
 
     :::image type="content" source="./media/cross-tenant-synchronization-configure/provisioning-attribute-mapping-displayname-expression.png" alt-text="Screenshot of the Edit Attribute page that shows the displayName attribute with the Expression box." lightbox="./media/cross-tenant-synchronization-configure/provisioning-attribute-mapping-displayname-expression.png":::
 
+> [!NOTE]
+> You can map **custom attributes** (for example Directory Extension attributes from On-Prem) updating the schema of the Cross-Tenant Synchronization. In order to do that the first step require to [configure the Directory Extension in Microsoft Entra Connect Sync](https://learn.microsoft.com/entra/identity/hybrid/connect/how-to-connect-sync-feature-directory-extensions). Configured this option you can go to the Cross-Tenant synchronization page under **Provisioning**, **Mapping**, select the required mapping type and click on "Show Advanced Option" at the bottom of the page. Now click on **Review your schema here** and modify the schema following your required configuration. For example, you can copy a paragraph of the extension attribute and copy it with the required customisation. Remember to download an original copy of the schema as a backup.
+
 ## Step 10: Specify additional provisioning settings
 
 ![Icon for the source tenant.](./media/common/icon-tenant-source.png)<br/>**Source tenant**
