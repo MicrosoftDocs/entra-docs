@@ -2567,6 +2567,8 @@
         href: statuspage-tutorial.md
       - name: Stormboard
         href: stormboard-tutorial.md
+      - name: Striim
+        href: striim-tutorial.md
       - name: Styleflow
         href: styleflow-tutorial.md
       - name: SuccessFactors
