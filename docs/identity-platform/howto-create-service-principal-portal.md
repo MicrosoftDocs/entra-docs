@@ -9,7 +9,7 @@ ms.date: 05/12/2023
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: how-to
-#Customer intent:
+#Customer intent: As a developer, I want to understand how to create a Microsoft Entra application and service principal, so that I can access resources with RBAC and manage permissions for my application.
 ---
 
 # Create a Microsoft Entra application and service principal that can access resources

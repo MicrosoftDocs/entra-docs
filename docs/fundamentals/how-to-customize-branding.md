@@ -9,7 +9,7 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: fundamentals
 ms.topic: how-to
-ms.date: 09/12/2023
+ms.date: 11/29/2023
 ms.author: sarahlipsey
 ms.reviewer: almars
 ---
@@ -68,7 +68,7 @@ The branding elements are called out in the following example. Text descriptions
 
 There are some scenarios you to consider when you customize the sign-in pages for your organization's tenant-specific applications.
 
-For Microsoft, Software as a Service (SaaS), and multi-tenant applications such as <https://myapps.microsoft.com>, or <https://outlook.com>, the customized sign-in page appears only after the user types their **Email** or **Phone number** and selects the **Next** button. 
+For Microsoft, Software as a Service (SaaS), and multitenant applications such as <https://myapps.microsoft.com>, or <https://outlook.com>, the customized sign-in page appears only after the user types their **Email** or **Phone number** and selects the **Next** button. 
 
 Some Microsoft applications support [Home Realm Discovery](~/identity/enterprise-apps/home-realm-discovery-policy.md) for authentication. In these scenarios, when a customer signs in to a Microsoft Entra common sign-in page, Microsoft Entra ID can use the customer's user name to determine where they should sign in. 
 
@@ -85,7 +85,7 @@ For B2B collaboration end-users who perform cross-tenant sign-ins, their home te
 
 In the following example, the company branding for Woodgrove Groceries appears on the left. The example on the right displays the default branding for the user's home tenant.
 
-![Comparison of the branded sign-in experience and the default sign-in experience](media/how-to-customize-branding/b2b-comparison.png)
+:::image type="content" source="media/how-to-customize-branding/b2b-comparison.png" alt-text="Screenshot of comparison of the branded sign-in experience and the default sign-in experience.":::
 
 ## How to navigate the company branding process
 
@@ -96,17 +96,17 @@ In the following example, the company branding for Woodgrove Groceries appears o
 1. Browse to **Identity** > **User experiences** > **Company branding**.
     - If you currently have a customized sign-in experience, the **Edit** button is available.
 
-    ![Custom branding landing page with 'Company branding' highlighted in the side menu and 'Configure' button highlighted in the center of the page](media/how-to-customize-branding/customize-branding-getting-started.png)
+   :::image type="content" source="media/how-to-customize-branding/customize-branding-getting-started.png" alt-text="Screenshot of Custom branding landing page with Company branding highlighted in the side menu and Configure button." lightbox="media/how-to-customize-branding/customize-branding-getting-started.png":::
 
 The sign-in experience process is grouped into sections. At the end of each section, select the **Review + create** button to review what you have selected and submit your changes or the **Next** button to move to the next section.
 
-!['Review + create' and 'Next: Layout' buttons from the bottom of the configure custom branding page](media/how-to-customize-branding/customize-branding-buttons.png)
+:::image type="content" source="media/how-to-customize-branding/customize-branding-buttons.png" alt-text="Screenshot of Review + create and Next: Layout buttons from the bottom of the configure custom branding page.":::
 
 ### Basics
 
 - **Favicon**: Select a PNG or JPG of your logo that appears in the web browser tab.
 
-    ![Screenshot of sample favicons in a web browser.](media/how-to-customize-branding/favicon-example.png)
+   :::image type="content" source="media/how-to-customize-branding/favicon-example.png" alt-text="Screenshot of sample favicons in a web browser.":::
 
 - **Background image**: Select a PNG or JPG to display as the main image on your sign-in page. This image scales and crops according to the window size, but the sign-in prompt may partially block it.
 
@@ -119,7 +119,7 @@ The sign-in experience process is grouped into sections. At the end of each sect
     - Choose one of two **Templates**: Full-screen or partial-screen background. The full-screen background could obscure your background image, so choose the partial-screen background if your background image is important.
     - The details of the **Header** and **Footer** options are set on the next two sections of the process.
     
-    ![Screenshot of the Layout tab.](media/how-to-customize-branding/layout-visual-templates.png)
+   :::image type="content" source="media/how-to-customize-branding/layout-visual-templates.png" alt-text="Screenshot of the Layout tab.":::
 
 - **Custom CSS**: Upload a custom CSS file to replace the Microsoft default style of the page.
     - [Download the CSS template](https://download.microsoft.com/download/7/2/7/727f287a-125d-4368-a673-a785907ac5ab/custom-styles-template-013023.css).
@@ -129,7 +129,7 @@ The sign-in experience process is grouped into sections. At the end of each sect
 
 If you haven't enabled the header, go to the **Layout** section and select **Show header**. Once enabled, select a PNG or JPG to display in the header of the sign-in page.
 
-![Screenshot of the message indicating that the header needs to be enabled.](media/how-to-customize-branding/disabled-header-message.png)
+:::image type="content" source="media/how-to-customize-branding/disabled-header-message.png" alt-text="Screenshot of the message indicating that the header needs to be enabled.":::
 
 ### Footer
 
@@ -146,7 +146,7 @@ If you haven't enabled the footer, go to the **Layout** section and select **Sho
     >[!IMPORTANT]
     >The default Microsoft 'Terms of Use' link is not the same as the Conditional Access Terms of Use. Seeing the terms here doesn't mean you've accepted those terms and conditions. 
 
-    ![Customize branding on the Footer section](media/how-to-customize-branding/customize-branding-footer.png)
+   :::image type="content" source="media/how-to-customize-branding/customize-branding-footer.png" alt-text="Screenshot of customizing branding on the Footer section.":::
 
 ### Sign-in form
 
@@ -196,7 +196,7 @@ The process for customizing the experience is the same as the [default sign-in e
 
 Microsoft Entra ID supports right-to-left functionality for languages such as Arabic and Hebrew that are read right-to-left. The layout adjusts automatically, based on the user's browser settings.
 
-![Screenshot of the sign-in experience in Hebrew, demonstrating the right-to-left layout.](media/how-to-customize-branding/right-to-left-language-example.png)
+:::image type="content" source="media/how-to-customize-branding/right-to-left-language-example.png" alt-text="Screenshot of the sign-in experience in Hebrew, demonstrating the right-to-left layout.":::
 
 ## Next steps
 

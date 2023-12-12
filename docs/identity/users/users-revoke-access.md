@@ -10,7 +10,7 @@ author: barclayn
 ms.author: barclayn
 manager: amycolannino
 ms.reviewer: krbain
-ms.date: 08/31/2023
+ms.date: 11/21/2023
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.collection: M365-identity-device-management
 ---
@@ -103,6 +103,9 @@ As an administrator in Microsoft Entra ID, open PowerShell, run `Connect-MgGraph
 
 >[!NOTE]
 > For information on specific roles that can perform these steps review [Microsoft Entra built-in roles](~/identity/role-based-access-control/permissions-reference.md)
+
+
+[!INCLUDE [Azure AD PowerShell migration](../../includes/aad-powershell-migration-include.md)]
 
 ## When access is revoked
 
