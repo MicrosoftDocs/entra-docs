@@ -33,7 +33,7 @@ To integrate Microsoft Entra ID with MemoMeister, you need:
 
 In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
 
-* MemoMeister supports **SP** initiated SSO.
+* MemoMeister supports only **SP** initiated SSO.
 
 > [!NOTE]
 > Identifier of this application is a fixed string value so only one instance can be configured in one tenant.
