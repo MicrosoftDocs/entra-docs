@@ -130,7 +130,7 @@ In this section, you test your Microsoft Entra single sign-on configuration with
  
 #### SP initiated:
  
-* Click on **Test this application** in Microsoft Entra admin center. This will redirect to SAS Viya SSO Sign on URL where you can initiate the login flow.  
+* Click on **Test this application** in Microsoft Entra admin center. This will redirect to SAS Viya SSO Sign-on URL where you can initiate the login flow.  
  
 * Go to SAS Viya SSO Sign-on URL directly and initiate the login flow from there.
  
