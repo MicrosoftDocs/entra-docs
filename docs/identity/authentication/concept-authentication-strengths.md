@@ -6,7 +6,7 @@ services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 11/06/2023
+ms.date: 12/12/2023
 
 ms.author: justinha
 author: inbarckms
@@ -92,7 +92,7 @@ GET https://graph.microsoft.com/beta/identity/conditionalAccess/authenticationSt
 
 ### Custom authentication strengths
 
-In addition to the three built-in authentication strengths, administrators can create up to 15 of their own custom authentication strengths to exactly suit their requirements. A custom authentication strength can contain any of the supported combinations in the preceding table. 
+Administrators can also create up to 15 of their own custom authentication strengths to exactly suit their requirements. A custom authentication strength can contain any of the supported combinations in the preceding table. After it
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Protection** > **Authentication methods** > **Authentication strengths**.
@@ -109,122 +109,7 @@ In addition to the three built-in authentication strengths, administrators can c
 You can edit a custom authentication strength. If it's referenced by a Conditional Access policy, it can't be deleted, and you need to confirm any edit. 
 To check if an authentication strength is referenced by a Conditional Access policy, click the **Conditional Access policies** column.
 
-#### FIDO2 security key advanced options
-Custom authentication strengths allow customers to further restrict the usage of some FIDO2 security keys based on their Authenticator Attestation GUIDs (AAGUIDs). The capability allows administrators to require a FIDO2 key from a specific manufacture in order to access the resource. To require a specific FIDO2 security key, complete the preceding steps to create a custom authentication strength, select **FIDO2 Security Key**, and click **Advanced options**. 
 
-:::image type="content" border="true" source="./media/concept-authentication-strengths/key.png" alt-text="Screenshot showing Advanced options.":::
-
-Next to **Allowed FIDO2 Keys** click **+**, copy the AAGUID value, and click **Save**.
-
-:::image type="content" border="true" source="./media/concept-authentication-strengths/guid.png" alt-text="Screenshot showing how to add an Authenticator Attestation GUID.":::
-
-## Using authentication strength in Conditional Access
-After you determine the authentication strength you need, you'll need to create a Conditional Access policy to require that authentication strength to access a resource. When the Conditional Access policy gets applied, the authentication strength restricts which authentication methods are allowed.
-<!-- ### Place holder:How to create Conditional Access policy that uses authentication strength
--	Add a note that you can use either require mfa or require auth strengths
-- (JF) Possibly add a reference doc that lists all the definitions of the things you can configure?
--->
-
-### How authentication strength works with the Authentication methods policy
-There are two policies that determine which authentication methods can be used to access resources. If a user is enabled for an authentication method in either policy, they can sign in with that method. 
-
-- **Security** > **Authentication methods** > **Policies** is a more modern way to manage authentication methods for specific users and groups. You can specify users and groups for different methods. You can also configure parameters to control how a method can be used.  
-
-  :::image type="content" border="true" source="./media/concept-authentication-strengths/authentication-methods-policy.png" alt-text="Screenshot of Authentication methods policy.":::
-
-- **Security** > **Multifactor authentication** > **Additional cloud-based multifactor authentication settings** is a legacy way to control multifactor authentication methods for all of the users in the tenant. 
-
-  :::image type="content" border="true" source="./media/concept-authentication-strengths/service-settings.png" alt-text="Screenshot of MFA service settings.":::
-
-Users may register for authentications for which they are enabled, and in other cases, an administrator can configure a user's device with a method, such as certificate-based authentication.
-
-### How an authentication strength policy is evaluated during sign-in 
-
-The authentication strength Conditional Access policy defines which methods can be used. Microsoft Entra ID checks the policy during sign-in to determine the user’s access to the resource. For example, an administrator configures a Conditional Access policy with a custom authentication strength that requires FIDO2 Security Key or Password + text message. The user accesses a resource protected by this policy. During sign-in, all settings are checked to determine which methods are allowed, which methods are registered, and which methods are required by the Conditional Access policy. To be used, a method must be allowed, registered by the user (either before or as part of the access request), and satisfy the authentication strength. 
-
- 
-### How multiple Conditional Access authentication strength policies are evaluated 
-
-In general, when there are multiple Conditional Access policies applicable for a single sign-in, all conditions from all policies must be met. In the same vein, when there are multiple Conditional Access policies which apply authentication strengths to the sign-in, the user must satisfy all of the authentication strength policies. For example, if two different authentication strength policies both require FIDO2, the user can use their FIDO2 security key and satisfy both policies. If the two authentication strength policies have different sets of methods, the user must use multiple methods to satisfy both policies. 
-
-#### How multiple Conditional Access authentication strength policies are evaluated for registering security info 
-
-For security info registration, the authentication strength evaluation is treated differently – authentication strengths that target the user action of **Registering security info** are preferred over other authentication strength policies that target **All cloud apps**. All other grant controls (such as **Require device to be marked as compliant**) from other Conditional Access policies in scope for the sign-in will apply as usual.  
-
-For example, let’s assume Contoso would like to require their users to always sign in with a phishing-resistant authentication method and from a compliant device. Contoso also wants to allow new employees to register these authentication methods using a Temporary Access Pass (TAP). TAP can’t be used on any other resource. To achieve this goal, the admin can take the following steps: 
-
-1. Create a custom authentication strength named **Bootstrap and recovery** that includes the Temporary Access Pass authentication combination, it can also include any of the phishing-resistant MFA methods.  
-1. Create a Conditional Access policy which targets **All cloud apps** and requires **Phishing-resistant MFA** authentication strength AND **Require compliant device** grant controls. 
-1. Create a Conditional Access policy that targets the **Register security information** user action and requires the **Bootstrap and recovery** authentication strength. 
-
-As a result, users on a compliant device would be able to use a Temporary Access Pass to register FIDO2 security keys and then use the newly registered FIDO2 security key to authenticate to other resources (such as Outlook). 
-
->[!NOTE] 
->If multiple Conditional Access policies target the **Register security information** user action, and they each apply an authentication strength, the user must satisfy all such authentication strengths to sign in. 
-
-
-
-## User experience
-
-The following factors determine if the user gains access to the resource: 
-
-- Which authentication method was previously used?
-- Which methods are available for the authentication strength? 
-- Which methods are allowed for user sign-in in the Authentication methods policy?
-- Is the user registered for any available method?
-
-When a user accesses a resource protected by an authentication strength Conditional Access policy, Microsoft Entra ID evaluates if the methods they have previously used satisfy the authentication strength. If a satisfactory method was used, Microsoft Entra ID grants access to the resource. For example, let's say a user signs in with password + text message. They access a resource protected by MFA authentication strength. In this case, the user can access the resource without another authentication prompt.
-
-Let's suppose they next access a resource protected by Phishing-resistant MFA authentication strength. At this point, they'll be prompted to provide a phishing-resistant authentication method, such as Windows Hello for Business. 
-
-If the user hasn't registered for any methods that satisfy the authentication strength, they are redirected to [combined registration](concept-registration-mfa-sspr-combined.md#interrupt-mode). <!-- making this a comment for now because we have a limitation. Once it is fixed we can remove the comment::: Only users who satisfy MFA are redirected to register another strong authentication method.-->
-
-If the authentication strength doesn't include a method that the user can register and use, the user is blocked from sign-in to the resource. 
-
-### Register passwordless authentication methods
-
-The following authentication methods can't be registered as part of combined registration interrupt mode. Make sure users are registered for these methods before you apply a Conditional Access policy that can require them to be used for sign-in. If a user isn't registered for these methods, they can't access the resource until the required method is registered. 
-
-| Method | Registration requirements |
-|--------|---------------------------|
-|[Microsoft Authenticator (phone sign-in)](https://support.microsoft.com/account-billing/add-your-work-or-school-account-to-the-microsoft-authenticator-app-43a73ab5-b4e8-446d-9e54-2a4cb8e4e93c) | Can be registered from the Authenticator app.|
-|[FIDO2 security key](howto-authentication-passwordless-security-key.md) | Can be registered using [combined registration managed mode](concept-registration-mfa-sspr-combined.md#manage-mode). |
-|[Certificate-based authentication](concept-certificate-based-authentication.md) | Requires administrator setup; can't be registered by the user. |
-|[Windows Hello for Business](/windows/security/identity-protection/hello-for-business/hello-prepare-people-to-use) | Can be registered in the Windows Out of Box Experience (OOBE) or the Windows Settings menu.|
-
-
-### Federated user experience  
-For federated domains, MFA may be enforced by Microsoft Entra Conditional Access or by the on-premises federation provider by setting the federatedIdpMfaBehavior. If the federatedIdpMfaBehavior setting is set to enforceMfaByFederatedIdp, the user must authenticate on their federated IdP and can only satisfy the **Federated Multi-Factor** combination of the authentication strength requirement. For more information about the federation settings, see [Plan support for MFA](~/identity/hybrid/connect/migrate-from-federation-to-cloud-authentication.md#plan-support-for-mfa).
-
-If a user from a federated domain has multifactor authentication settings in scope for Staged Rollout, the user can complete multifactor authentication in the cloud and satisfy any of the **Federated single-factor + something you have** combinations. For more information about staged rollout, see [Enable Staged Rollout](how-to-mfa-server-migration-utility.md#enable-staged-rollout).
-
-## External users
-
-The Authentication methods policy is especially useful for restricting external access to sensitive apps in your organization because you can enforce specific authentication methods, such as phishing-resistant methods, for external users.
-
-When you apply an authentication strength Conditional Access policy to external Microsoft Entra users, the policy works together with MFA trust settings in your cross-tenant access settings to determine where and how the external user must perform MFA. A Microsoft Entra user authenticates in their home Microsoft Entra tenant. Then when they access your resource, Microsoft Entra ID applies the policy and checks to see if you've enabled MFA trust. Note that enabling MFA trust is optional for B2B collaboration but is *required* for [B2B direct connect](~/external-id/b2b-direct-connect-overview.md#multi-factor-authentication-mfa).
-
-In external user scenarios, the authentication methods that can satisfy authentication strength vary, depending on whether the user is completing MFA in their home tenant or the resource tenant. The following table indicates the allowed methods in each tenant. If a resource tenant has opted to trust claims from external Microsoft Entra organizations, only those claims listed in the “Home tenant” column below will be accepted by the resource tenant for MFA. If the resource tenant has disabled MFA trust, the external user must complete MFA in the resource tenant using one of the methods listed in the “Resource tenant” column.
-
-|Authentication method  |Home tenant  | Resource tenant  |
-|---------|---------|---------|
-|text message as second factor                         | &#x2705;        | &#x2705; |
-|Voice call                                   | &#x2705;        | &#x2705; |
-|Microsoft Authenticator push notification    | &#x2705;        | &#x2705; |
-|Microsoft Authenticator phone sign-in        | &#x2705;        |          |
-|OATH software token                          | &#x2705;        | &#x2705; |
-|OATH hardware token                          | &#x2705;        |          |
-|FIDO2 security key                           | &#x2705;        |          |
-|Windows Hello for Business                   | &#x2705;        |          |
-
-For more information about how to set authentication strengths for external users, see [Conditional Access: Require an authentication strength for external users](~/identity/conditional-access/howto-conditional-access-policy-authentication-strength-external.md).
-
-### User experience for external users
-
-An authentication strength Conditional Access policy works together with [MFA trust settings](~/external-id/cross-tenant-access-settings-b2b-collaboration.md#to-change-inbound-trust-settings-for-mfa-and-device-claims) in your cross-tenant access settings. First, a Microsoft Entra user authenticates with their own account in their home tenant. Then when this user tries to access your resource, Microsoft Entra ID applies the authentication strength Conditional Access policy and checks to see if you've enabled MFA trust.
-
-- **If MFA trust is enabled**, Microsoft Entra ID checks the user's authentication session for a claim indicating that MFA has been fulfilled in the user's home tenant. See the preceding table for authentication methods that are acceptable for MFA when completed in an external user's home tenant. If the session contains a claim indicating that MFA policies have already been met in the user's home tenant, and the methods satisfy the authentication strength requirements, the user is allowed access. Otherwise, Microsoft Entra ID presents the user with a challenge to complete MFA in the home tenant using an acceptable authentication method.
-- **If MFA trust is disabled**, Microsoft Entra ID presents the user with a challenge to complete MFA in the resource tenant using an acceptable authentication method. (See the table above for authentication methods that are acceptable for MFA by an external user.)
 
 ## Limitations
 
@@ -259,4 +144,8 @@ As a result, users in Contoso can access most of the resources in the tenant usi
 
 ## Next steps
 
+- [How authentication strength works](concept-authentication-strength-howitworks.md)
+- [FIDO2 and CBA adavanced options](concept-authentication-strength-advanced-options.md)
+- [How authentication strength works for external users](concept-authentication-strength-external-users.md)
 - [Troubleshoot authentication strengths](troubleshoot-authentication-strengths.md) 
+
