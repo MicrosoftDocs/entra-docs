@@ -10,7 +10,7 @@ ms.reviewer: ludwignick
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: how-to
-#Customer intent:
+#Customer intent: As an application developer, I want to configure optional claims for my application, so that I can customize the claims returned in ID tokens, access tokens, and SAML tokens based on my specific requirements and scenarios.
 ---
 
 # Configure optional claims

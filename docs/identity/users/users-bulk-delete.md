@@ -1,11 +1,11 @@
 ---
-title: Bulk delete users in the Microsoft Entra ID portal
-description: Delete users in bulk in the Microsoft Entra ID admin center in Microsoft Entra ID 
+title: Bulk delete users in Microsoft Entra ID
+description: Delete users in bulk in Microsoft Entra ID 
 services: active-directory 
 author: barclayn
 ms.author: barclayn
 manager: amycolannino
-ms.date: 11/16/2023
+ms.date: 11/21/2023
 ms.topic: how-to
 ms.service: active-directory
 ms.subservice: enterprise-users

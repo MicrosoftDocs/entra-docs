@@ -10,7 +10,7 @@ ms.reviewer: ludwignick, jeedes
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: reference
-#Customer intent:
+#Customer intent: As an admin managing policies for enterprise apps, I want to understand how claims mapping policies work and different claim sets, so that I can customize the claims included in token..
 ---
 
 # Claims mapping policy type
