@@ -100,7 +100,7 @@ To enroll a Mac using Automated Device Enrollment, follow the steps outlined in 
 
 To enroll your Mac into Platform SSO, launch the Company Portal app and sign in as an Intune-licensed Microsoft Entra ID user. Follow the Company Access setup flow to complete device enrollment. Once your Mac has been enrolled and the assigned configuration profile and Company Portal app have been installed, Platform SSO will be ready to use.
 
-You can verify the presence of the SSO extension by going to **Settings** > **Privacy** and **security** > **Profiles** on your enrolled Mac. An example is shown in the following screenshot:
+You can verify the presence of the SSO extension by going to **Settings** > **Privacy** and **security** > **Profiles** on your enrolled Mac.
 
 ## See also
 
