@@ -55,7 +55,7 @@ To configure and test Microsoft Entra SSO with SAS Viya SSO, perform the followi
 1. **[Configure Microsoft Entra SSO](#configure-microsoft-entra-sso)** - to enable your users to use this feature.
     1. **[Create a Microsoft Entra ID test user](#create-a-microsoft-entra-id-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
     1. **[Assign the Microsoft Entra ID test user](#assign-the-microsoft-entra-id-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
-1. **[Configure SAS Viya SSO SSO](#configure-sas-viya-sso-sso)** - to configure the single sign-on settings on application side.
+1. **[Configure SAS Viya SSO](#configure-sas-viya-sso)** - to configure the single sign-on settings on application side.
     1. **[Create SAS Viya SSO test user](#create-sas-viya-sso-test-user)** - to have a counterpart of B.Simon in SAS Viya SSO that is linked to the Microsoft Entra ID representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
@@ -116,7 +116,7 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
    1. If you are expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
    1. In the **Add Assignment** dialog, click the **Assign** button.
 
-## Configure SAS Viya SSO SSO
+## Configure SAS Viya SSO
 
 To configure single sign-on on **SAS Viya SSO** side, you need to send the **App Federation Metadata Url** to [SAS Viya SSO support team](mailto:support@sas.com). They set this setting to have the SAML SSO connection set properly on both sides.
 
