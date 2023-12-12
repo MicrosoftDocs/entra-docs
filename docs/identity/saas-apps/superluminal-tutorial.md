@@ -9,7 +9,7 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: how-to
-ms.date: 12/08/2023
+ms.date: 12/12/2023
 ms.author: jeedes
 
 ---
@@ -33,7 +33,7 @@ To integrate Microsoft Entra ID with Superluminal, you need:
 
 In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
 
-* Superluminal supports **SP** initiated SSO.
+* Superluminal supports only **SP** initiated SSO.
 * Superluminal supports **Just In Time** user provisioning.
 
 > [!NOTE]
