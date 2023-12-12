@@ -2317,6 +2317,8 @@
         href: sap-netweaver-tutorial.md
       - name: SAP Qualtrics
         href: qualtrics-tutorial.md
+      - name: SAS Viya SSO
+        href: sas-viya-sso-tutorial.md
       - name: Sauce Labs
         href: sauce-labs-tutorial.md
       - name: Sauce Labs - Mobile and Web Testing
