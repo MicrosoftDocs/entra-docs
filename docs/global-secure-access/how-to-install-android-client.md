@@ -20,7 +20,6 @@ This article explains the prerequisites and how to deploy the client onto Androi
 - The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 - At least one Global Secure Access [traffic forwarding profile](concept-traffic-forwarding.md) must be enabled.
 - Device installation permissions on the device are required for installation.
-- The Microsoft Defender for Endpoint on Android firewall/proxy must be configured to [enable access to the Microsoft Defender for Endpoint service URLs](/microsoft-365/security/defender-endpoint/configure-environment).
 - Android devices must be running Android 10.0 or later.
 - Android devices need to be Microsoft Entra registered devices.
   - The Microsoft Authenticator app must be installed on the device if the device isn't managed by your organization.
@@ -45,7 +44,7 @@ Global Secure Access Client for Android supports deployment for the legacy Devic
 
 ### Third party mobile device management
 
-Third party mobile device management (MDM) scenarios are also supported. In these scenarios, known as *Global Secure Access only mode*, you only need to enable a traffic forwarding profile and configure the app according to the vendor documentation. At that point, users can either download the Defender app from the Google Play store or you can deploy the app using your MDM solution.
+Third party mobile device management (MDM) scenarios are also supported. In these scenarios, known as *Global Secure Access only mode*, you only need to enable a traffic forwarding profile and configure the app according to the vendor documentation.
 
 ## Deploy Microsoft Defender for Endpoint Android
 
