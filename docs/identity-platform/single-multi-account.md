@@ -10,7 +10,7 @@ ms.reviewer: shoatman
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-#Customer intent: 
+#Customer intent: As a developer creating a public client app, I want to understand the differences between single and multiple accounts scenarios, so I can implement the correct type for my app.
 ---
 
 # Single and multiple account public client apps
