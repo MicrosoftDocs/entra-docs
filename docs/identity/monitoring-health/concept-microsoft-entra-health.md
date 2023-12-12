@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: active-directory
 ms.topic: conceptual
 ms.subservice: report-monitor
-ms.date: 12/04/2023
+ms.date: 12/11/2023
 ms.author: sarahlipsey
 ms.reviewer: sarbar
 
@@ -41,6 +41,8 @@ In addition to providing global SLA performance, Microsoft Entra ID now provides
 
 Hover your mouse over the bar for a month to view the percentage for that month. A table with the same details appears below the graph.
 
+You can also view SLA attainment using [Microsoft Graph](/graph/api/resources/serviceactivity?view=graph-rest-beta&preserve-view=true).
+
 ![Screenshot of the SLA attainment report.](media/concept-scenario-health/sla-attainment.png)
 
 ## Scenario monitoring (preview)
@@ -48,7 +50,7 @@ Hover your mouse over the bar for a month to view the percentage for that month.
 Many IT administrators spend a considerable amount of time investigating the health of the following key scenarios:
 
 - Interactive user sign-in requests that require Microsoft Entra multifactor authentication.
-- User sign-in requests that require a managed through a Conditional Access policy
+- User sign-in requests that require a managed device through a Conditional Access policy.
 - User sign-in requests that require a compliant device through a Conditional Access policy.
 - User sign-in requests to applications using SAML authentication.
 
@@ -56,14 +58,9 @@ The data associated with each of these scenarios is aggregated into a view that'
 
 Data is aggregated every 15 minutes, for low latency insights into your tenant's health. Each scenario detail page provides trends and totals for that scenario for the last 30 days. You can set the date range to 24 hours, 7 days, or 1 month.
 
-Select **View details** on a tile to view the metrics for that scenario.
+Select **View details** on a tile to view the metrics for that scenario. You can also view these metric streams using [Microsoft Graph](/graph/api//resources/serviceactivity?view=graph-rest-beta&preserve-view=true).
 
 ![Screenshot of the the scenario monitoring landing page.](media/concept-scenario-health/scenario-monitoring.png)
-
-You can also view these metric streams using Microsoft Graph:
-
-- Scenario Monitoring: [Microsoft Entra service activity](/graph/api//resources/serviceactivity?view=graph-rest-beta&preserve-view=true)
-- SLA attainment: [Microsoft Entra authentication](/graph/api/resources/serviceactivity?view=graph-rest-beta&preserve-view=true)
 
 ### Sign-ins requiring a compliant device
 
@@ -103,4 +100,3 @@ This scenario looks at SAML 2.0 authentication attempts that the Microsoft Entra
 - [Use a SAML 2.0 IdP for single sign on](../hybrid/connect/how-to-connect-fed-saml-idp.md).
 
 ![Screenshot of the SAML scenario.](media/concept-scenario-health/scenario-monitoring-SAML.png)
-

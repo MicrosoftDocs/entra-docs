@@ -54,7 +54,7 @@ items:
     expanded: false
     items:
     - name: Microsoft Entra Health
-      href: concept-scenario-health.md
+      href: concept-microsoft-entra-health.md
     - name: Usage and insights report
       href: concept-usage-insights-report.md
   - name: How-to guides 
