@@ -157,7 +157,7 @@ Labels can be swapped at any time by using the same steps as assigning a label t
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 1. Select **Microsoft Entra ID**.
-1. Select **Groups** > **All groups** and select the group that you want to label.
+1. Select **Groups** > **All groups**, and then select the group that you want to label.
 1. On the selected group's page, select **Properties** and select a new sensitivity label from the list.
 1. Select **Save**.
 
