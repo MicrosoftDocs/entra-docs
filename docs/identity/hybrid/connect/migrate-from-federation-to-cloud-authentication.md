@@ -427,10 +427,7 @@ If you plan to keep using AD FS with on-premises & SaaS Applications using SAML 
 
 You can move SaaS applications that are currently federated with ADFS to Microsoft Entra ID. Reconfigure to authenticate with Microsoft Entra ID either via a built-in connector from the [Azure App gallery](https://azuremarketplace.microsoft.com/marketplace/apps/category/azure-active-directory-apps), or by [registering the application in Microsoft Entra ID](~/identity-platform/quickstart-register-app.md).
 
-For more information, see – 
-
-- [Moving application authentication from Active Directory Federation Services to Microsoft Entra ID](~/identity/enterprise-apps/migrate-adfs-apps-stages.md) and
-- [AD FS to Microsoft Entra application migration playbook for developers](/samples/azure-samples/ms-identity-adfs-to-aad/ms-identity-dotnet-adfs-to-aad/)
+For more information, see [Moving application authentication from Active Directory Federation Services to Microsoft Entra ID](~/identity/enterprise-apps/migrate-adfs-apps-stages.md).
 
 ### Remove relying party trust
 
