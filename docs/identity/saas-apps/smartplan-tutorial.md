@@ -85,7 +85,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     `https://www.trpcorp.com/smartplan/sso/<Client_ID>/`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Reply URL and Sign on URL. Contact [Smartplan support team](mailto:darrin.denn@jensenhughes.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
+	> These values are not real. Update these values with the actual Reply URL and Sign on URL. Contact [Smartplan support team](mailto:support@trpcorp.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 
@@ -123,7 +123,7 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
 
 ## Configure Smartplan SSO
 
-To configure single sign-on on **Smartplan** side, you need to send the downloaded **Certificate (Base64)** and appropriate copied URLs from Microsoft Entra admin center to [Smartplan support team](mailto:darrin.denn@jensenhughes.com). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **Smartplan** side, you need to send the downloaded **Certificate (Base64)** and appropriate copied URLs from Microsoft Entra admin center to [Smartplan support team](mailto:support@trpcorp.com). They set this setting to have the SAML SSO connection set properly on both sides.
 
 ### Create Smartplan test user
 
