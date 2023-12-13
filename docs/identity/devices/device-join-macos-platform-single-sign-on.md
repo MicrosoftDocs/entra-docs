@@ -88,7 +88,9 @@ It's recommended for your system administrator to have the Mac enrolled using se
 Setting up your device using secure enclave method enables you to use the resulting credential saved to the Mac as a passkey in the browser. To enable it;
 
 1. Open the **Settings** app, and navigate to **Passwords** > **Password options**.
-1. Under **Password options**, find **Use passwords and passkeys from** and enable **Company Portal** through the toggle switch.
+1. Under **Password Options**, find **Use passwords and passkeys from** and enable **Company Portal** through the toggle switch.
+
+    :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/password-options-enable-passkeys.png" alt-text="Screenshot of the Password Options window indicating that the use of passwords and passkeys from Company Portal has been enabled by a switch.":::
 
 ### [Smart card](#tab/smart-card)
 
