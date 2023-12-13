@@ -67,7 +67,7 @@ When testing external user conversion we recommend you use test accounts or acco
 
 ### Requirements
 
-- Converting external users requires an account with at least the [user administrator](~/identity/role-based-access-control/permissions-reference#user-administrator)
+- Converting external users requires an account with at least the [user administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator)
 role assigned.
 - Only users configured with an authentication method external to the host organization are eligible for conversion. 
     - A check for eligibility is performed via an internal property that stores information regarding external sign in types. If a user is not eligible for conversion the API or PS command will return a 400 "Bad request" with a message that the user isn't eligible.
@@ -86,7 +86,6 @@ Here is a markdown version of the table in the parameters section on the current
 | userPrincipalName | String | Yes | New UPN value for the user. For cloud-only users, the UPN domain must be one that is non-federated¹[1]. For on-prem synced users, you don't need to provide a UPN²[2]³[3]. The user will continue to use the on-prem credentials. |⁴[4]⁵[5]
 | passwordProfile | passwordProfile | Yes | New temporary password for the user and whether to force change password on login. For on-prem synced users, you can't configure a password⁶[6]³[3]. The user will continue to use the on-prem credentials. |⁴[4]⁵[5]
 | mail | String | No | Optional new mail address for cloud users. |
-
 
 
 #### API call that provides the required UPN and password profile.
