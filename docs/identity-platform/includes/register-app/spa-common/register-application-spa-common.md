@@ -25,7 +25,7 @@ To complete registration, provide the application a name, specify the supported 
 
 1. The application's **Overview** pane is displayed when registration is complete. Record the **Directory (tenant) ID** and the **Application (client) ID** to be used in your application source code.
 
-    :::image type="content" source="../../../media/common-register-application/record-identifiers-spa-common.png" alt-text="Screenshot that shows the identifier values on the overview page on the Azure portal" lightbox="../../../media/common-register-application/record-identifiers-spa-common.png":::
+    :::image type="content" source="../../../media/common-register-application/record-identifiers-spa-common.png" alt-text="Screenshot that shows the identifier values on the overview page on the Azure portal." lightbox="../../../media/common-register-application/record-identifiers-spa-common.png":::
 
     >[!NOTE]
     > The **Supported account types** can be changed by referring to [Modify the accounts supported by an application](../../../howto-modify-supported-accounts.md).
