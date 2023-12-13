@@ -90,6 +90,8 @@ Setting up your device using secure enclave method enables you to use the result
 1. Open the **Settings** app, and navigate to **Passwords** > **Password options**.
 1. Under **Password options**, find **Use passwords and passkeys from** and enable **Company Portal** through the toggle switch.
 
+    :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/password-options-enable-passkeys.png" alt-text="Screenshot of the Password Options window indicating that the use of passwords and passkeys from Company Portal has been enabled by a switch.":::
+
 ### [Smart card](#tab/smart-card)
 
 1. You're prompted to register your device with Microsoft Entra ID. Enter your sign-in credentials and select **Next**.
