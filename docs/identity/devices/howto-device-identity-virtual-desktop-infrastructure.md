@@ -70,7 +70,7 @@ Before configuring device identities in Microsoft Entra ID for your VDI environm
 
 <sup>7</sup> **Non-Persistence support for Windows down-level** requires other consideration as documented in the guidance section.
 
-<sup>8</sup> **Microsoft Entra join support** is only available with Azure Virtual Desktop, Windows 365, and any VMs deployed in Microsoft Azure.
+<sup>8</sup> **Microsoft Entra join support** is only available with Azure Virtual Desktop and Windows 365.
 
 ## Microsoft’s guidance
 
