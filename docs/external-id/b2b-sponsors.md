@@ -13,7 +13,7 @@ author: csmulligan
 manager: CelesteDG
 ms.collection: M365-identity-device-management
 
-# Customer intent: As a tenant administrator, I want to know how to add sponsors to guest users in Microsoft Entra External ID.
+# Customer intent: As a B2B organization administrator, I want to track and manage sponsors for guest users, so that I can ensure accountability and proper governance of external partners in my directory.
 ---
 # Sponsors field for B2B users (preview)
 
