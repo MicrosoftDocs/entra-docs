@@ -26,7 +26,7 @@ The objective of this tutorial is to demonstrate the steps to be performed in 4m
 The scenario outlined in this tutorial assumes that you already have the following prerequisites:
 
 * A Microsoft Entra tenant
-* [A 4me tenant](https://www.4me.com/trial/)
+* [A 4me tenant](https://www.4me.com/)
 * A user account in 4me with Admin permissions.
 
 > [!NOTE]
