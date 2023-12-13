@@ -54,8 +54,8 @@ A payload is a set of instructions or settings that can be delivered to a device
 > [!NOTE]
 > Please note that both **Authentication Method (Deprecated)** and **Authentication Method** are available to be selected. This is expected behavior and depending on your version of macOS, will determine what options to select:
 >
-> - If admins only need to manage OS13, only **Authentication Method (Deprecated)** is needed
-> - If admins are managing both OS13 and OS14, both **Authentication Method (Deprecated)** and **Authentication Method** should be added to the configuration profile
+> - If admins only need to manage OS13, only **Authentication Method (Deprecated)** is required to be added to the configuration profile
+> - If admins are managing both OS13 and OS14, both **Authentication Method (Deprecated)** and **Authentication Method** is required to be added to the configuration profile
 
 ### Configure the SSO extension payload
 
@@ -99,9 +99,7 @@ To enroll a Mac using Automated Device Enrollment, follow the steps outlined in 
 
 ### Enrolling a Mac using Device Enrollment
 
-To enroll your Mac into Platform SSO, launch the Company Portal app and sign in as an Intune-licensed Microsoft Entra ID user. Follow the Company Access setup flow to complete device enrollment. Once your Mac is enrolled and the assigned configuration profile and Company Portal app is installed as well, Platform SSO is ready to use.
-
-You can verify the presence of the SSO extension by going to **Settings** > **Privacy** and **security** > **Profiles** on your enrolled Mac.
+To enroll your Mac into Platform SSO, launch the Company Portal app and sign in as an Intune-licensed Microsoft Entra ID user. Follow the Company Access setup flow to complete device enrollment. Once your Mac is enrolled and the assigned configuration profile and Company Portal app is installed, Platform SSO is ready to use. You can verify the presence of the SSO extension by going to **Settings** > **Privacy** and **security** > **Profiles** on your enrolled Mac.
 
 ## See also
 
