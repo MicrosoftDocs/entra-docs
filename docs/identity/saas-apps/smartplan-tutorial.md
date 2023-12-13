@@ -36,6 +36,9 @@ In this tutorial, you configure and test Microsoft Entra SSO in a test environme
 * Smartplan supports both **SP and IDP** initiated SSO.
 * Smartplan supports **Just In Time** user provisioning.
 
+> [!NOTE]
+> Identifier of this application is a fixed string value so only one instance can be configured in one tenant.
+
 ## Add Smartplan from the gallery
 
 To configure the integration of Smartplan into Microsoft Entra ID, you need to add Smartplan from the gallery to your list of managed SaaS apps.
