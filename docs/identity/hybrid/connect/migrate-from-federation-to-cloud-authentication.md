@@ -140,11 +140,6 @@ The following table explains the behavior for each option. For more information,
 
 The **federatedIdpMfaBehavior** setting is an evolved version of the **SupportsMfa** property of the [Set-MsolDomainFederationSettings MSOnline v1 PowerShell cmdlet](/powershell/module/microsoft.graph.identity.directorymanagement/new-mgdomainfederationconfiguration?view=graph-powershell-1.0&preserve-view=true).
 
->[!NOTE] 
->Microsoft MFA Server is nearing the end of support life, and if you're using it you must move to Microsoft Entra multifactor authentication. 
-For more information, see **[Migrate from Microsoft MFA Server to Azure multifactor authentication documentation](~/identity/authentication/how-to-migrate-mfa-server-to-azure-mfa.md)**.
->If you plan to use Microsoft Entra multifactor authentication, we recommend that you use **[combined registration for self-service password reset (SSPR) and multifactor authentication](~/identity/authentication/concept-registration-mfa-sspr-combined.md)** to have your users register their authentication methods once. 
-
 For domains that have already set the **SupportsMfa** property, these rules determine how **federatedIdpMfaBehavior** and **SupportsMfa** work together:
 
 - Switching between **federatedIdpMfaBehavior** and **SupportsMfa** isn't supported.
