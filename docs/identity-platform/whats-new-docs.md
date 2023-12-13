@@ -1,11 +1,11 @@
 ---
 title: "What's new in the Microsoft identity platform docs"
-description: "New and updated documentation for the Microsoft identity platform."
+description: "New and updated articles in the the Microsoft identity platform documentation."
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms.custom: has-adal-ref
-ms.date: 10/04/2023
+ms.date: 12/05/2023
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: reference
@@ -14,7 +14,7 @@ ms.topic: reference
 
 # Microsoft identity platform docs: What's new
 
-Welcome to what's new in the Microsoft identity platform documentation. This article lists new docs that have been added and those that have had significant updates in the last three months.
+Welcome to what's new in the Microsoft identity platform documentation. This article lists new articles that were added or had significant updates in the last three months.
 
 ## November 2023
 
