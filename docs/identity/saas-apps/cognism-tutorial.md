@@ -33,7 +33,7 @@ To integrate Microsoft Entra ID with Cognism, you need:
 
 In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
 
-* Cognism supports ony **IDP** initiated SSO.
+* Cognism supports only **IDP** initiated SSO.
 * Cognism supports **Just In Time** user provisioning.
 
 ## Add Cognism from the gallery
