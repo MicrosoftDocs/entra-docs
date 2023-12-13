@@ -14,7 +14,7 @@ manager: celestedg
 
 ms.collection: M365-identity-device-management
 
-# Customer intent: As a tenant administrator, I want to know what the token looks like for a B2B collaboration user in the resource tenant.
+# Customer intent: As a user of Microsoft Entra B2B collaboration, I want to understand the details and content of user tokens, so that I can effectively manage and authenticate guest accounts in my organization.
 ---
 
 # Understand user tokens in Microsoft Entra B2B collaboration

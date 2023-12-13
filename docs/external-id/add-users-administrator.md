@@ -13,6 +13,8 @@ ms.author: cmulligan
 author: csmulligan
 manager: celestedg
 ms.collection: M365-identity-device-management
+
+# Customer intent: As a user with limited administrator directory roles, I want to add B2B collaboration users in the Microsoft Entra admin center, so that I can invite guest users to the directory, group, or application and manage their access to resources.
 ---
 
 # Add Microsoft Entra B2B collaboration users in the Microsoft Entra admin center

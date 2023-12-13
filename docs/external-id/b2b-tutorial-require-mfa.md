@@ -14,7 +14,7 @@ manager: CelesteDG
 ms.custom: "it-pro, seo-update-azuread-jan"
 ms.collection: M365-identity-device-management
 
-# Customer intent: As a tenant administrator, I want to set up MFA requirement for B2B guest users to protect my apps and resources. 
+# Customer intent: As an IT admin managing external B2B guest users, I want to enforce multifactor authentication for access to cloud or on-premises applications, so that I can ensure the security of our resources and protect against unauthorized access.
 ---
 
 # Tutorial: Enforce multifactor authentication for B2B guest users
