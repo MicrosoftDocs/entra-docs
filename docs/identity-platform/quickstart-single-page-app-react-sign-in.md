@@ -5,8 +5,8 @@ author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms.custom: scenarios:getting-started, languages:JavaScript, devx-track-js
-ms.date: 10/06/2023
-ms.reviewer: j-mantu
+ms.date: 12/13/2023
+ms.reviewer: EmLauber
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: quickstart
@@ -23,36 +23,25 @@ This quickstart uses a sample React single-page app (SPA) to show you how to sig
 * [Node.js](https://nodejs.org/en/download/)
 * [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) or [Visual Studio Code](https://code.visualstudio.com/)
 
-## Register the application in the Microsoft Entra admin center
+## Register the application and record identifiers
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Developer](~/identity/role-based-access-control/permissions-reference.md#application-developer).
-1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the tenant in which you want to register the application from the **Directories + subscriptions** menu.
-1. Browse to **Identity** > **Applications** > **App registrations**.
-1. Select **New registration**.
-1. When the **Register an application** page appears, enter a name for your application, such as *identity-client-app*.
-1. Under **Supported account types**, select **Accounts in any organizational directory and personal Microsoft accounts**.
-1. Select **Register**.
-1. The application's Overview pane displays upon successful registration. Record the **Application (client) ID** and **Directory (tenant) ID** to be used in your application source code.
+[!INCLUDE [Register a single-page application](./includes/register-app/spa-common/register-application-spa-common.md)]
 
-## Add a redirect URI
+## Add a platform redirect URI
 
-1. Under **Manage**, select **Authentication**.
-1. Under **Platform configurations**, select **Add a platform**. In the pane that opens, select **Single-page application**.
-1. Set the **Redirect URIs** value to `http://localhost:3000/`.
-1. Select **Configure** to apply the changes.
-1. Under **Platform Configurations** expand **Single-page application**.
-1. Confirm that for **Grant types** ![Already configured](media/quickstart-v2-javascript/green-check.png), your **Redirect URI** is eligible for the Authorization Code Flow with PKCE.
+[!INCLUDE [Add a platform redirect URI](./includes/register-app/spa-common/add-platform-redirect-spa-port-3000.md)]
 
 ## Clone or download the sample application
 
 To obtain the sample application, you can either clone it from GitHub or download it as a *.zip* file.
 
-- To clone the sample, open a command prompt and navigate to where you wish to create the project, and enter the following command:
+* To clone the sample, open a command prompt and navigate to where you wish to create the project, and enter the following command:
 
     ```console
     git clone https://github.com/Azure-Samples/ms-identity-docs-code-javascript.git
     ```
-- [Download the .zip file](https://github.com/Azure-Samples/ms-identity-docs-code-javascript/tree/main). Extract it to a file path where the length of the name is fewer than 260 characters.
+
+* [Download the .zip file](https://github.com/Azure-Samples/ms-identity-docs-code-javascript/tree/main). Extract it to a file path where the length of the name is fewer than 260 characters.
 
 ## Configure the project
 
@@ -75,11 +64,12 @@ Run the project with a web server by using Node.js:
     npm install
     npm start
     ```
+
 1. Copy the `https` URL that appears in the terminal, for example, `https://localhost:3000`, and paste it into a browser. We recommend using a private or incognito browser session.
 1. Follow the steps and enter the necessary details to sign in with your Microsoft account. You'll be requested an email address so a one time passcode can be sent to you. Enter the code when prompted.
 1. The application will request permission to maintain access to data you have given it access to, and to sign you in and read your profile. Select **Accept**. The following screenshot appears, indicating that you have signed in to the application and have accessed your profile details from the Microsoft Graph API.
 
-    :::image type="content" source="./media/single-page-app-tutorial-04-call-api/display-api-call-results.png" alt-text="Screenshot of React App depicting the results of the API call.":::
+    :::image type="content" source="./media/common-spa/react-spa/display-api-call-results-react-spa.png" alt-text="Screenshot of JavaScript App depicting the results of the API call." lightbox="./media/common-spa/react-spa/display-api-call-results-react-spa.png":::
 
 ## Sign out from the application
 
@@ -90,6 +80,6 @@ A message appears indicating that you have signed out. You can now close the bro
 
 ## Related content
 
-- [Quickstart: Protect an ASP.NET Core web API with the Microsoft identity platform](./quickstart-web-api-aspnet-core-protect-api.md)
+* [Quickstart: Protect an ASP.NET Core web API with the Microsoft identity platform](./quickstart-web-api-aspnet-core-protect-api.md)
 
-- Learn more by building this React SPA from scratch with the following series - [Tutorial: Sign in users and call Microsoft Graph](./tutorial-single-page-app-react-register-app.md)
+* Learn more by building this React SPA from scratch with the following series - [Tutorial: Sign in users and call Microsoft Graph](./tutorial-single-page-app-react-register-app.md)

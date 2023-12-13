@@ -14,7 +14,7 @@ author: csmulligan
 manager: CelesteDG
 
 ms.collection: M365-identity-device-management
-# Customer intent: As a tenant administrator, I want to know how to invite internal users to B2B collaboration.
+# Customer intent: As an IT admin managing internal guest users, I want to invite them to use B2B collaboration, so that they can sign in using their own identities and credentials, eliminating the need for password maintenance or account lifecycle management.
 ---
 
 # Invite internal users to B2B collaboration
