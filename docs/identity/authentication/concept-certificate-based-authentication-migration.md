@@ -29,7 +29,7 @@ A tenant admin could cut the federated domain fully over to Entra ID CBA without
 [Staged Rollout](~/identity/hybrid/connect/how-to-connect-staged-rollout.md) for Certificate-based Authentication (CBA) helps customers transition from performing CBA at a federated IdP to Microsoft Entra ID by selectively moving small set of users to use CBA at Entra ID (no longer being redirected to the federated IdP) with selected groups of users before then converting the domain configuration in Entra ID from federated to managed. Staged rollout is not designed for the domain to remain federated for long periods of time or for large amounts of users.
 
 Watch this quick video demonstrating the migration from ADFS certificate-based authentication to Microsoft Entra CBA
-> [!VIDEO https://www.youtube.com/watch?v=jsKQxo-xGgA]
+> [!VIDEO https://www.youtube.com/embed/jsKQxo-xGgA]
 
 >[!NOTE]
 > When Staged rollout is enabled for a user, the user is considered a managed user and all authentication will happen at Microsoft Entra ID. For a federated Tenant, if CBA is enabled on Staged Rollout, password authentication only works if PHS is enabled too otherwise password authentication will fail.
