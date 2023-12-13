@@ -28,7 +28,7 @@ Platform single sign-on (PSSO) is a feature that enables users to sign in to Mac
 
 ## Configure SSO extension with Microsoft Intune
 
-A payload is a set of instructions or settings that can be delivered to a device via Mobile Device Management (MDM) to configure or manage that device. To configure the macOS SSO extension payload via MDM, you'll need to complete the following steps:
+A payload is a set of instructions or settings that can be delivered to a device via Mobile Device Management (MDM) to configure or manage that device. To configure the macOS SSO extension payload via MDM, you need to complete the following steps:
 
 1. Go to the [Microsoft Intune Admin Center](https://intune.microsoft.com/#home).
 1. In the sidebar, select **Devices** > **macOS** > **Configuration profiles**.
@@ -75,8 +75,8 @@ A payload is a set of instructions or settings that can be delivered to a device
         - **Authentication Method** - `Password`
         - **Authentication Method (Deprecated)**
             - **Password**: choosing this option allows the user to authenticate with Microsoft Entra ID via the user's Microsoft Entra ID password. The local account password is updated and kept in sync with Microsoft Entra ID.
-            - **UserSecureEnclaveKey**: choosing this option allows the user to use a Secure Enclave backed key to authenticate with the Microsoft Entra ID. This authentication method does not affect the local account password.
-            - **SmartCard**: choosing this option allows the user to use a SmartCard to authenticate with the Microsoft Entra ID. Please note that this option is only supported on macOS 14 Sonoma or later.
+            - **UserSecureEnclaveKey**: choosing this option allows the user to use a Secure Enclave backed key to authenticate with the Microsoft Entra ID. This authentication method doesn't affect the local account password.
+            - **SmartCard**: choosing this option allows the user to use a SmartCard to authenticate with the Microsoft Entra ID. This option is only supported on macOS 14 Sonoma or later.
                 - **Registration Token**:
         - `{{DEVICEREGISTRATION}}` - this value must be added exactly as shown, including the double curly braces.
         - **Extension Identifier**- `com.microsoft.CompanyPortalMac.ssoextension`
@@ -85,7 +85,7 @@ A payload is a set of instructions or settings that can be delivered to a device
     :::image type="content" source="./media/enroll-macos-admin/add-settings-from-setting-picker.png" alt-text="Screenshot of adding setting from the settings picker." lightbox="./media/enroll-macos-admin/add-settings-from-setting-picker.png":::
 
 1. Select **Next**.
-1. In the **Scope tags** tab, the default scope tags will be used. Select **Next**.
+1. In the **Scope tags** tab, the default scope tags are used. Select **Next**.
 1. In the **Assignments** tab, select the **+** icon to add a group to assign the profile to. Select **Next**.
 1. In the **Review + create** tab, once you have reviewed the settings, select **Create**.
 
@@ -99,7 +99,7 @@ To enroll a Mac using Automated Device Enrollment, follow the steps outlined in 
 
 ### Enrolling a Mac using Device Enrollment
 
-To enroll your Mac into Platform SSO, launch the Company Portal app and sign in as an Intune-licensed Microsoft Entra ID user. Follow the Company Access setup flow to complete device enrollment. Once your Mac has been enrolled and the assigned configuration profile and Company Portal app have been installed, Platform SSO will be ready to use.
+To enroll your Mac into Platform SSO, launch the Company Portal app and sign in as an Intune-licensed Microsoft Entra ID user. Follow the Company Access setup flow to complete device enrollment. Once your Mac is enrolled and the assigned configuration profile and Company Portal app is installed as well, Platform SSO is ready to use.
 
 You can verify the presence of the SSO extension by going to **Settings** > **Privacy** and **security** > **Profiles** on your enrolled Mac.
 
