@@ -148,7 +148,6 @@ For more information on how to read the Microsoft Entra provisioning logs, see [
 
 * 4me has different SCIM endpoint URLs for test and production environments. The former ends with **.qa** while the latter ends with **.com**
 * 4me generated Secret Tokens have an expiration date of a month from generation.
-* 4me doesn’t support **DELETE** operations
 
 ## Additional resources
 
