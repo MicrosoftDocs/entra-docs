@@ -12,6 +12,8 @@ author: csmulligan
 manager: celestedg
 ms.custom: "it-pro"
 ms.collection: M365-identity-device-management
+
+# Customer intent: As an IT admin managing cross-tenant access settings, I want to configure B2B collaboration and B2B direct connect with external organizations, so that I can control inbound and outbound access and manage trust settings for multi-factor authentication and device claims.
 ---
 
 # Overview: Cross-tenant access with Microsoft Entra External ID

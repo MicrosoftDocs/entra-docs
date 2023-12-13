@@ -14,7 +14,7 @@ author: csmulligan
 manager: celestedg
 
 ms.collection: M365-identity-device-management
-# Customer intent: As a tenant administrator, I want to update the sign-in information for a guest user.
+# Customer intent: As an admin managing guest users in B2B collaboration, I want to reset the redemption status for a guest user, so that I can update their sign-in information and reinvite them without deleting their account.
 ---
 
 # Reset redemption status for a guest user

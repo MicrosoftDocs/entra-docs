@@ -584,6 +584,8 @@
         href: cognidox-tutorial.md
       - name: Cognician
         href: cognician-tutorial.md
+      - name: Cognism
+        href: cognism-tutorial.md
       - name: CoLab
         href: colab-tutorial.md
       - name: Collaborative Innovation
@@ -2499,6 +2501,8 @@
         href: smartlook-tutorial.md
       - name: Smart Map Pro
         href: smart-map-pro-tutorial.md
+      - name: Smartplan
+        href: smartplan-tutorial.md
       - name: SmartRecruiters
         href: smartrecruiters-tutorial.md
       - name: smartvid.io
