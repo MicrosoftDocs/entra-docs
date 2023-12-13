@@ -6,7 +6,7 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: devices
 ms.topic: tutorial
-ms.date: 11/27/2023
+ms.date: 12/13/2023
 ms.author: owenrichards
 author: OwenRichards1
 manager: CelesteDG
@@ -24,7 +24,7 @@ Platform single sign-on (PSSO) is a feature that enables users to sign in to Mac
 - [Microsoft Authenticator](https://support.microsoft.com/account-billing/how-to-use-the-microsoft-authenticator-app-9783c865-0308-42fb-a519-8cf666fe0acc)
 
 > [!NOTE]
-> Currently, Platform SSO is supported only with Microsoft Intune. Support for other third-party MDM providers will be added in the future.
+> Currently, Platform SSO is supported only with Microsoft Intune. Support for other third-party MDM providers will be added in a later release.
 
 ## Configure SSO extension with Microsoft Intune
 
@@ -43,18 +43,19 @@ A payload is a set of instructions or settings that can be delivered to a device
      - Authentication Method (Deprecated)
      - Extension Identifier
      - Platform SSO > Authentication Method (macOS 14 only)
+     - Security > Passcode > Change at Next Auth
      - Screen Locked Behavior
      - Team identifier
      - Type
      - URLs
+
+1. Close the **Setting picker** window.
 
 > [!NOTE]
 > Please note that both **Authentication Method (Deprecated)** and **Authentication Method** are available to be selected. This is expected behavior and depending on your version of macOS, will determine what options to select:
 >
 > - If admins only need to manage OS13, only **Authentication Method (Deprecated)** is needed
 > - If admins are managing both OS13 and OS14, both **Authentication Method (Deprecated)** and **Authentication Method** should be added to the configuration profile
-
-1. Close the **Setting picker** window.
 
 ### Configure the SSO extension payload
 
@@ -81,7 +82,7 @@ A payload is a set of instructions or settings that can be delivered to a device
         - **Extension Identifier**- `com.microsoft.CompanyPortalMac.ssoextension`
         - **Type** -  **Redirect**
 
-    :::image type="content" source="./media/enroll-macos-admin/add-settings-from-setting-picker.png" alt-text="Screenshot of adding setting from the settings picker.":::
+    :::image type="content" source="./media/enroll-macos-admin/add-settings-from-setting-picker.png" alt-text="Screenshot of adding setting from the settings picker." lightbox="./media/enroll-macos-admin/add-settings-from-setting-picker.png":::
 
 1. Select **Next**.
 1. In the **Scope tags** tab, the default scope tags will be used. Select **Next**.
@@ -90,7 +91,7 @@ A payload is a set of instructions or settings that can be delivered to a device
 
 ## Enroll a Mac into MDM
 
-Platform SSO is supported on Macs enrolled using both Automated Device Enrollment and Device Enrollment, running macOS 13 Ventura or later. To enroll a mac, follow the steps outlined in the following sections.
+Platform SSO is supported on Macs enrolled using both Automated Device Enrollment and Device Enrollment, running macOS 13 Ventura or later. To enroll a Mac, follow the steps outlined in the following sections.
 
 ### Enrolling a Mac using Automated Device Enrollment
 
