@@ -12,6 +12,8 @@ ms.date: 05/31/2023
 ms.author: jomondi
 ms.reviewer: alamaral
 ms.custom: not-enterprise-apps
+
+#customer intent: As an IT admin currently using AD FS for application authentication, I want to understand the stages and process of migrating to Microsoft Entra ID, so that I can plan and execute a successful migration and take advantage of the benefits provided by Microsoft Entra ID.
 ---
 
 # Understand the stages of migrating application authentication from AD FS to Microsoft Entra ID
