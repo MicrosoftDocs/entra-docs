@@ -70,12 +70,12 @@ If you don't have any Azure subscriptions, follow the steps below.
 1. Browse to **Home** > **Tenant overview**. 
 1. Select **Upgrade**.
 
-    :::image type="content" source="media/quickstart-trial-setup/upgrade-trial-button.jpg" alt-text="Screenshot of the upgrade trial button."::: 
+    :::image type="content" source="media/quickstart-trial-setup/upgrade-trial-button.jpg" alt-text="Screenshot of the upgrade trial button." lightbox="media/quickstart-trial-setup/upgrade-trial-button.jpg"::: 
 
 1. On the https://signup.azure.com/ page fill in the required information to complete your Azure account setup and select **Sign up** and **Submit**. You'll be redirected to the Azure portal.
 1. To link your new Azure subscription to your tenant, select **Add subscription**.
 
-    :::image type="content" source="media/quickstart-trial-setup/add-subsription.png" alt-text="Screenshot of adding a subscription to the tenant"::: 
+    :::image type="content" source="media/quickstart-trial-setup/add-subsription.png" alt-text="Screenshot of adding a subscription to the tenant" lightbox="media/quickstart-trial-setup/add-subsription.png"::: 
 
 1. Enter the following values:
 
@@ -83,12 +83,12 @@ If you don't have any Azure subscriptions, follow the steps below.
    - **Resource group**: Create a new resource group. It can take a few seconds.
    - **Resource group location**: Select an Azure location.
 
-    :::image type="content" source="media/quickstart-trial-setup/create-resource-group.png" alt-text="Screenshot of creating a resource group."::: 
+    :::image type="content" source="media/quickstart-trial-setup/create-resource-group.png" alt-text="Screenshot of creating a resource group." lightbox="media/quickstart-trial-setup/create-resource-group.png"::: 
 
 1. Select **Add**. 
 1. After a few seconds, you'll see a notification that you successfully linked your subscription to the tenant. From here you can switch to your upgraded tenant. 
 
-    :::image type="content" source="media/quickstart-trial-setup/switch-to-tenant.png" alt-text="Screenshot of the switch to tenant link.":::
+    :::image type="content" source="media/quickstart-trial-setup/switch-to-tenant.png" alt-text="Screenshot of the switch to tenant link." lightbox="media/quickstart-trial-setup/switch-to-tenant.png":::
 
 
 ### Upgrade your free trial with an existing tenant subscription
@@ -100,10 +100,10 @@ If your free trial belongs to an account with an existing Azure subscription, yo
 1. Select **Add Subscription**.
 1. Select a tenant from the menu and select **Switch**.
 
-    :::image type="content" source="media/quickstart-trial-setup/add-existing-subscription.png" alt-text="Screenshot of the existing subscription screen."::: 
+    :::image type="content" source="media/quickstart-trial-setup/add-existing-subscription.png" alt-text="Screenshot of the existing subscription screen." lightbox="media/quickstart-trial-setup/add-existing-subscription.png"::: 
 
 1. Select the subscription and resource group you want to associate with your tenant and select **Add**. Upgrading the trial tenant can take a few seconds.
 1. After a few seconds, you'll see a notification that you successfully linked your subscription to the tenant. From here you can switch to your upgraded tenant. 
 
-    :::image type="content" source="media/quickstart-trial-setup/switch-to-tenant.png" alt-text="Screenshot of the switch to tenant link.":::
+    :::image type="content" source="media/quickstart-trial-setup/switch-to-tenant.png" alt-text="Screenshot of the switch to tenant link." lightbox="media/quickstart-trial-setup/switch-to-tenant.png" :::
 
