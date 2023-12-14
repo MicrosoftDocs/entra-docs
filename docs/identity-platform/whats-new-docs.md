@@ -1,6 +1,6 @@
 ---
 title: "What's new in the Microsoft identity platform docs"
-description: "New and updated articles in the the Microsoft identity platform documentation."
+description: "New and updated articles in the Microsoft identity platform documentation."
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
