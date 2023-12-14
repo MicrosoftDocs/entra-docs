@@ -20,7 +20,7 @@ ms.collection: M365-identity-device-management
 You can configure advanced options for authentication with FIDO2 security keys and certificates when you create a custom authentication strength. Advanced options allow you to further restrict sign in based upon specific properties of a FIDO2 security key or certificate. 
 
 ## FIDO2 security key advanced options
-You can restrict the usage of some FIDO2 security keys based on their Authenticator Attestation GUIDs (AAGUIDs). The capability allows administrators to require a FIDO2 security key from a specific manufacture in order to access the resource. To require a specific FIDO2 security key, first complete the steps to create a [custom authentication strength](concept-authentication-strength-howitworks.md#custom-authentication-strengths). Then select **FIDO2 Security Key**, and click **Advanced options**. 
+You can restrict the usage of some FIDO2 security keys based on their Authenticator Attestation GUIDs (AAGUIDs). The capability allows administrators to require a FIDO2 security key from a specific manufacture in order to access the resource. To require a specific FIDO2 security key, first complete the steps to create a [custom authentication strength](concept-authentication-strengths.md#custom-authentication-strengths). Then select **FIDO2 Security Key**, and click **Advanced options**. 
 
 :::image type="content" border="true" source="./media/concept-authentication-strengths/key.png" alt-text="Screenshot showing Advanced options.":::
 
@@ -31,9 +31,9 @@ Next to **Allowed FIDO2 Keys** click **+**, copy the AAGUID value, and click **S
 
 ## Certificate-based authentication advanced options
 
-You can configure whether certificates are bound in the system to single-factor or multifactor authentication protection levels, based on the certificate issuer or policy ID. You can also require single-factor or multifactor authentication certificates for specific resources, based on Conditional Access authentication strength policy.
+You can configure whether certificates are bound in the system to single-factor or multifactor authentication protection levels, based on the certificate issuer or policy OID. You can also require single-factor or multifactor authentication certificates for specific resources, based on Conditional Access authentication strength policy.
 
-Now you can require a specific certificate issuer or policy OID when users perform certificate-based authentication (CBA) to access sensitive resources. This advanced option controls access to sensitive resources that you only trust to users with certificates issued by specific issuers. 
+By using advanced options, you can require a specific certificate issuer or policy OID when users perform certificate-based authentication (CBA) to access sensitive resources. 
 
 For example, Contoso may issue three different types of multifactor certificates to employees by smart cards. They are distinguished by properties of the certificate, such as Policy OID or issuer:
 
