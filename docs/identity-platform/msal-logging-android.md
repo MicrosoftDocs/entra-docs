@@ -10,7 +10,7 @@ ms.reviewer: saeeda, jmprieur
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-#Customer intent:
+#Customer intent: As an Android developer, I want to enable logging in MSAL for Android using Java, so that I can capture and analyze log messages for troubleshooting and debugging purposes.
 ---
 # Logging in MSAL for Android
 

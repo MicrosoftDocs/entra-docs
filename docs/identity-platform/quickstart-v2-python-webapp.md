@@ -10,7 +10,7 @@ ms.date: 01/24/2023
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-#Customer intent:
+#Customer intent: As a Python web app developer, I want to add sign-in with Microsoft functionality to my application, so that users can sign in with their Microsoft accounts and access the Microsoft Graph API.
 ---
 
 # Quickstart: Add sign-in with Microsoft to a Python web app

@@ -10,7 +10,7 @@ ms.reviewer: joarroyo
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: tutorial
-#Customer intent:
+#Customer intent: As a developer building an Angular single-page application (SPA), I want to sign in users and call the Microsoft Graph API using the authorization code flow with PKCE, so that I can authenticate enterprise users and access Microsoft cloud services and Microsoft Graph.
 ---
 
 # Tutorial: Sign in users and call the Microsoft Graph API from an Angular single-page application (SPA) using auth code flow
