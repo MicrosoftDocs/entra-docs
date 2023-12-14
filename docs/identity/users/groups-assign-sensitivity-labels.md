@@ -81,7 +81,7 @@ If you receive a `Request_BadRequest` error, it's because the settings already e
 
 You also need to synchronize your sensitivity labels to Microsoft Entra ID. For instructions, see [Enable sensitivity labels for containers and synchronize labels](/purview/sensitivity-labels-teams-groups-sites#how-to-enable-sensitivity-labels-for-containers-and-synchronize-labels).
 
-## Assign a label to a new group in the Azure portal
+## Assign a label to a new group in the Microsoft Entra admin center
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 1. Select **Microsoft Entra ID**.
@@ -94,7 +94,7 @@ You also need to synchronize your sensitivity labels to Microsoft Entra ID. For 
 
 Your group is created and the site and group settings associated with the selected label are then automatically enforced.
 
-## Assign a label to an existing group in the Azure portal
+## Assign a label to an existing group in the Microsoft Entra admin center
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 1. Select **Microsoft Entra ID**.
@@ -106,7 +106,7 @@ Your group is created and the site and group settings associated with the select
 
 1. Select **Save** to save your changes.
 
-## Remove a label from an existing group in the Azure portal
+## Remove a label from an existing group in the Microsoft Entra admin center
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 1. Select **Microsoft Entra ID**.
