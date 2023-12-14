@@ -121,7 +121,7 @@ To add a new combinationConfiguration to an existing policy:
 
 Sign in as an Administrator. Click **Run**, type certmgr.msc and press Enter. To check policy OIDs, click **Personal**, right-click the certificate and click **Details**.  
 
-:::image type="content" border="true" source="./media/concept-authentication-strength-advanced-options/certmgr.png" alt-text="Screenshot showing an authority key identifier.":::
+:::image type="content" border="true" source="./media/concept-authentication-strength-advanced-options/certmgr.png" alt-text="Screenshot showing how to check certificate policy OIDs and issuer.":::
 
 ## Next steps
 
