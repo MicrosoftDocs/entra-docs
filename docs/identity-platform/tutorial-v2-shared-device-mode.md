@@ -1,6 +1,6 @@
 ---
 title: "Tutorial: Use shared-device mode with the Microsoft Authentication Library (MSAL) for Android"
-description: In this tutorial, you learn how to prepare an Android device to run in shared mode and run a first-line worker app.
+description: In this tutorial, you learn how to prepare an Android device to run in shared mode and run a frontline worker app.
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
@@ -118,7 +118,7 @@ PublicClientApplication.create(this.getApplicationCOntext(),
 
 ### Detect single vs. multiple account mode
 
-If you're writing an app that will only be used for first-line workers on a shared device, we recommend you write your app to only support single-account mode. This includes most applications that are task focused such as medical records apps, invoice apps, and most line-of-business apps. This will simplify your development as many features of the SDK won't need to be accommodated.
+If you're writing an app that will only be used for frontline workers on a shared device, we recommend you write your app to only support single-account mode. This includes most applications that are task focused such as medical records apps, invoice apps, and most line-of-business apps. This will simplify your development as many features of the SDK won't need to be accommodated.
 
 If your app supports multiple accounts and shared device mode, you must perform a type check and cast to the appropriate interface as shown below.
 
