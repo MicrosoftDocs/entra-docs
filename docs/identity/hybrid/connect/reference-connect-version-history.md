@@ -72,6 +72,21 @@ If you want all the latest features and updates, check this page and install wha
 
 To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade](how-to-connect-install-automatic-upgrade.md).
 
+## 2.3.2.0
+
+### Release status
+12/12/2023: Released for download
+
+### Functional Changes
+- Application scaling with Windows Accessibility font size setting has been added.
+- Group Writeback V2 can no longer be enabled as the feature is being decommissioned. Please see the notice in this [article about group writeback](how-to-connect-group-writeback-enable.md).
+
+### Other Changes
+- SQL related drivers shipped with Microsoft Entra Connect have been updated. ODBC to 17.10.5, OLE DB to 18.6.7.
+- Microsoft Entra Connect Health shipped with Microsoft Entra Connect has been updated to 4.5.2428.0.
+- Fixed a DSSO bug for Azure in China
+
+
 ## 2.2.8.0
 
 ### Release status
