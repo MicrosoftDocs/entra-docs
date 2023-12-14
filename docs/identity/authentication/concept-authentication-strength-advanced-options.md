@@ -37,9 +37,16 @@ By using advanced options, you can require a specific certificate issuer or poli
 
 For example, Contoso issues smart cards to employees with three different types of multifactor certificates. One certificate is for confidential clearance, another for secret clearance, and a third is for top secret clearance. Each one is distinguished by properties of the certificate, such as Policy OID or issuer. Contoso wants to ensure that only users with the appropriate multifactor certificate can access data for each classification.  
 
+The next sections show how to configure advanced options for CBA by using the Microsoft Entra admin center and Microsoft Graph. 
 
-1. Go to https://entra.microsoft.com/?Microsoft_AAD_ConditionalAccess_showCbaAdvancedOptions=true# > Entra ID > Protect and Secure > Conditional Access > Authentication Strength 
-1. Click on New authentication Strength > provide a name > look for Certificate-based authentication (either single-factor or multifactor) and click on the advanced setting underneath.
+### Microsoft Entra admin center
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
+1. Browse to **Protection** > **Authentication methods** > **Authentication strengths**.
+1. Select **New authentication strength**.
+1. Provide a descriptive **Name** for your new authentication strength.
+1. Optionally provide a **Description**.
+1. Below Certificate-based authentication (either single-factor or multifactor), click **Advanced options**.
 
    :::image type="content" border="true" source="./media/concept-authentication-strengths/certificate-advanced-options.png" alt-text="Screenshot showing Advanced options for certificate-based authentication.":::
     
@@ -54,6 +61,67 @@ For example, Contoso issues smart cards to employees with three different types 
      :::image type="content" border="true" source="./media/concept-authentication-strengths/or.png" alt-text="Screenshot showing OR condition.":::
 
 1. Click **Next** to review the configuration, then click **Create**.
+
+
+### Microsoft Graph
+
+To create a new Conditional Access authentication strength policy with Certificate combinationConfiguration:
+
+```html
+POST  /beta/identity/conditionalAccess/authenticationStrengths/policies
+{
+    "displayName": "CBA Restriction",
+    "description": "CBA Restriction with both IssuerSki and OIDs ",
+    "allowedCombinations": [
+        " x509CertificateMultiFactor "
+    ],
+    "combinationConfigurations": [
+        {
+            "@odata.type": "#microsoft.graph.x509CertificateCombinationConfiguration",
+            "appliesToCombinations": [
+                "x509CertificateMultiFactor"
+            ],
+            "allowedIssuerSkis": ["9A4248C6AC8C2931AB2A86537818E92E7B6C97B6"],
+            "allowedPolicyOIDs": [
+                "1.2.3.4.6",
+                "1.2.3.4.5.6"
+            ]
+        }
+    ]
+}
+```
+
+To add a new combinationConfiguration to an existing policy:
+
+>[!NOTE]
+>The **allowedIssuerSkis** is from the Certificate Authority configured in the tenant (issuerSki). For more information, see [List certificateBasedAuthConfigurations](/graph/api/certificatebasedauthconfiguration-list). 
+
+
+### Limitations
+
+- Only one certificate can be used in each browser session. After you sign in with a certificate, it's cached in the browser for the duration of the session. You won't be prompted to choose another certificate if it doesn’t meet the authentication strength requirements. You need to sign out and sign back in to restart the session. Then choose the relevant certificate.
+
+- Certificate Authorities and user certificates should conform to X.509 v3 standard. Specifically, to enforce issuer SKI CBA restrictions, certificates need valid AKIs:
+
+  :::image type="content" border="true" source="./media/concept-authentication-strengths/authority-key-identifier.png" alt-text="Screenshot showing an authority key identifier.":::
+
+  >[!NOTE]
+  >If the certificate doesn't conform, user authentication might succeed, but not satisfy the issuerSki restrictions for the authentication strength policy.
+
+- During sign-in, the first 5 policy OIDs from the end user certificate are considered, and compared with the Policy OIDs configured in the authentication strength policy. If the end user certificate has more than 5 Policy OIDs, the first 5 policy OIDs in lexical order that match the authentication strength requirements are taken into account. 
+
+- For B2B users, let's take an example where Contoso has invited users from Fabrikam to their tenant. In this case, Contoso is the resource tenant and Fabrikam is the home tenant.
+  - When Cross tenant access setting is OFF – meaning when Contoso doesn't accept MFA that was performed by the home tenant. This use case is currently not available. Using CBA on the resource tenant is currently not supported and is on our roadmap. As a result, you cannot restrict which certificate can be used by B2B users, if authentication happens on the resource tenant.
+  - When Cross tenant access setting is ON, Fabrikam and Contoso are on the same Microsoft cloud – meaning, both Fabrikam and Contoso tenants are on the public cloud or on the US Gov cloud. In addition, Contoso trust MFA that was performed on the home tenant. In this case:
+    - Access to a specific resource can be restricted by using the policy OIDs in the custom auth strength policy.
+    - Access to specific resources cannot be restricted by using the Issuer ID in the custom auth strength policy. It is on our roadmap, and we plan to enable this for use case for public preview.
+  - When Cross tenant access setting is ON, Fabrikam and Contoso are not on the same Microsoft cloud – for example, Fabrikam’s tenant is on the public cloud and Contoso’s tenant is on the US Gov cloud – Access to specific resources cannot be restricted by using the Issuer ID or Policy OIDs in the custom auth strength policy. This is on our roadmap and planned for public preview. 
+
+### Check certificate policy OIDs and issuer
+
+Sign in as an Administrator. Click **Run**, type certmgr.msc and press Enter. To check policy OIDs, click **Personal**, right-click the certificate and click **Details**.  
+
+:::image type="content" border="true" source="./media/concept-authentication-strengths/certmgr.png" alt-text="Screenshot showing an authority key identifier.":::
 
 ## Next steps
 
