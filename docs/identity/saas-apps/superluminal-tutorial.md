@@ -9,7 +9,7 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: how-to
-ms.date: 12/12/2023
+ms.date: 12/14/2023
 ms.author: jeedes
 
 ---
@@ -133,7 +133,7 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
 
 ## Configure Superluminal SSO
 
-To configure single sign-on on **Superluminal** side, you need to send the **App Federation Metadata Url** to [Superluminal support team](mailto:info@superluminal.eu). They set this setting to have the SAML SSO connection set properly on both sides.
+Please refer [this](https://portal.superluminal.eu/Documentation#sso) article for setting the SAML SSO connection properly on both sides or contact [Superluminal support team](mailto:info@superluminal.eu) for any queriers.
 
 ### Create Superluminal test user
 

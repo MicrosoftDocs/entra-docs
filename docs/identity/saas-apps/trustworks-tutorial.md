@@ -1,6 +1,6 @@
 ---
-title: Microsoft Entra SSO integration with QueryLayer
-description: Learn how to configure single sign-on between Microsoft Entra ID and QueryLayer.
+title: Microsoft Entra SSO integration with TrustWorks
+description: Learn how to configure single sign-on between Microsoft Entra ID and TrustWorks.
 
 author: jeevansd
 manager: CelesteDG
@@ -9,55 +9,55 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 
 ms.topic: how-to
-ms.date: 10/27/2023
+ms.date: 12/14/2023
 ms.author: jeedes
 
 ---
 
-# Microsoft Entra SSO integration with QueryLayer
+# Microsoft Entra SSO integration with TrustWorks
 
-In this tutorial, you'll learn how to integrate QueryLayer with Microsoft Entra ID. When you integrate QueryLayer with Microsoft Entra ID, you can:
+In this tutorial, you'll learn how to integrate TrustWorks with Microsoft Entra ID. When you integrate TrustWorks with Microsoft Entra ID, you can:
 
-* Control in Microsoft Entra ID who has access to QueryLayer.
-* Enable your users to be automatically signed-in to QueryLayer with their Microsoft Entra accounts.
+* Control in Microsoft Entra ID who has access to TrustWorks.
+* Enable your users to be automatically signed-in to TrustWorks with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
 ## Prerequisites
 
-To integrate Microsoft Entra ID with QueryLayer, you need:
+To integrate Microsoft Entra ID with TrustWorks, you need:
 
 * A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
-* QueryLayer single sign-on (SSO) enabled subscription.
+* TrustWorks single sign-on (SSO) enabled subscription.
 
 ## Scenario description
 
 In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
 
-* QueryLayer supports both **SP and IDP** initiated SSO.
-* QueryLayer supports **Just In Time** user provisioning.
+* TrustWorks supports both **SP and IDP** initiated SSO.
+* TrustWorks supports **Just In Time** user provisioning.
 
-## Add QueryLayer from the gallery
+## Add TrustWorks from the gallery
 
-To configure the integration of QueryLayer into Microsoft Entra ID, you need to add QueryLayer from the gallery to your list of managed SaaS apps.
+To configure the integration of TrustWorks into Microsoft Entra ID, you need to add TrustWorks from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
-1. In the **Add from the gallery** section, type **QueryLayer** in the search box.
-1. Select **QueryLayer** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
+1. In the **Add from the gallery** section, type **TrustWorks** in the search box.
+1. Select **TrustWorks** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
 Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
-## Configure and test Microsoft Entra SSO for QueryLayer
+## Configure and test Microsoft Entra SSO for TrustWorks
 
-Configure and test Microsoft Entra SSO with QueryLayer using a test user called **B.Simon**. For SSO to work, you need to establish a link relationship between a Microsoft Entra user and the related user in QueryLayer.
+Configure and test Microsoft Entra SSO with TrustWorks using a test user called **B.Simon**. For SSO to work, you need to establish a link relationship between a Microsoft Entra user and the related user in TrustWorks.
 
-To configure and test Microsoft Entra SSO with QueryLayer, perform the following steps:
+To configure and test Microsoft Entra SSO with TrustWorks, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-microsoft-entra-sso)** - to enable your users to use this feature.
     1. **[Create a Microsoft Entra ID test user](#create-a-microsoft-entra-id-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
     1. **[Assign the Microsoft Entra ID test user](#assign-the-microsoft-entra-id-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
-1. **[Configure QueryLayer SSO](#configure-querylayer-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create QueryLayer test user](#create-querylayer-test-user)** - to have a counterpart of B.Simon in QueryLayer that is linked to the Microsoft Entra ID representation of user.
+1. **[Configure TrustWorks SSO](#configure-trustworks-sso)** - to configure the single sign-on settings on application side.
+    1. **[Create TrustWorks test user](#create-trustworks-test-user)** - to have a counterpart of B.Simon in TrustWorks that is linked to the Microsoft Entra ID representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 ## Configure Microsoft Entra SSO
@@ -65,7 +65,7 @@ To configure and test Microsoft Entra SSO with QueryLayer, perform the following
 Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin center.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **QueryLayer** > **Single sign-on**.
+1. Browse to **Identity** > **Applications** > **Enterprise applications** > **TrustWorks** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -79,18 +79,19 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
     | **Sign on URL** |
     |-----------------|
-    | `https://app.querylayer.com` |
-    | `https://dev-app.querylayer.com` |
-    | `https://qa-app.querylayer.com` |
-
-1. QueryLayer application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
+    | `https://app.trustworks.io` |
+    | `https://dev-app.trustworks.io`|
+    | `https://qa-app.trustworks.io`|
+    
+1. TrustWorks application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
 	![Screenshot shows the image of attributes configuration.](common/default-attributes.png "Image")
 
-1. In addition to above, QueryLayer application expects few more attributes to be passed back in SAML response which are shown below. These attributes are also pre populated but you can review them as per your requirements.
+1. In addition to above, TrustWorks application expects few more attributes to be passed back in SAML response which are shown below. These attributes are also pre populated but you can review them as per your requirements.
 	
 	| Name  | Source Attribute|
 	| --------------- | --------- |
+    | groups | user.groups |
     | employeeid | user.employeeid |
 	| roles | user.assignedroles|
 
@@ -101,7 +102,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 	![Screenshot shows the Certificate download link.](common/certificatebase64.png "Certificate")
 
-1. On the **Set up QueryLayer** section, copy the appropriate URL(s) based on your requirement.
+1. On the **Set up TrustWorks** section, copy the appropriate URL(s) based on your requirement.
 
 	![Screenshot shows to copy configuration URLs.](common/copy-configuration-urls.png "Metadata")
 
@@ -121,23 +122,23 @@ In this section, you'll create a test user in the Microsoft Entra admin center c
 
 ### Assign the Microsoft Entra ID test user
 
-In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by granting access to QueryLayer.
+In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by granting access to TrustWorks.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **QueryLayer**.
+1. Browse to **Identity** > **Applications** > **Enterprise applications** > **TrustWorks**.
 1. In the app's overview page, select **Users and groups**.
 1. Select **Add user/group**, then select **Users and groups** in the **Add Assignment** dialog.
    1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then click the **Select** button at the bottom of the screen.
    1. If you are expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
    1. In the **Add Assignment** dialog, click the **Assign** button.
 
-## Configure QueryLayer SSO
+## Configure TrustWorks SSO
 
-To configure single sign-on on **QueryLayer** side, you need to send the downloaded **Certificate (Base64)** and appropriate copied URLs from Microsoft Entra admin center to [QueryLayer support team](mailto:contact@querylayer.com). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **TrustWorks** side, you need to send the downloaded **Certificate (Base64)** and appropriate copied URLs from Microsoft Entra admin center to [TrustWorks support team](mailto:contact@trustworks.io). They set this setting to have the SAML SSO connection set properly on both sides.
 
-### Create QueryLayer test user
+### Create TrustWorks test user
 
-In this section, a user called Britta Simon is created in QueryLayer. QueryLayer supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in QueryLayer, a new one is created after authentication.
+In this section, a user called Britta Simon is created in TrustWorks. TrustWorks supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in TrustWorks, a new one is created after authentication.
 
 ## Test SSO 
 
@@ -145,16 +146,16 @@ In this section, you test your Microsoft Entra single sign-on configuration with
  
 #### SP initiated:
  
-* Click on **Test this application** in Microsoft Entra admin center. This will redirect to QueryLayer Sign on URL where you can initiate the login flow.  
+* Click on **Test this application** in Microsoft Entra admin center. This will redirect to TrustWorks Sign on URL where you can initiate the login flow.  
  
-* Go to QueryLayer Sign-on URL directly and initiate the login flow from there.
+* Go to TrustWorks Sign-on URL directly and initiate the login flow from there.
  
 #### IDP initiated:
  
-* Click on **Test this application** in Microsoft Entra admin center and you should be automatically signed in to the QueryLayer for which you set up the SSO.
+* Click on **Test this application** in Microsoft Entra admin center and you should be automatically signed in to the TrustWorks for which you set up the SSO.
  
-You can also use Microsoft My Apps to test the application in any mode. When you click the QueryLayer tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the QueryLayer for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+You can also use Microsoft My Apps to test the application in any mode. When you click the TrustWorks tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the TrustWorks for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Next steps
 
-Once you configure QueryLayer you can enforce session control, which protects exfiltration and infiltration of your organization's sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).
+Once you configure TrustWorks you can enforce session control, which protects exfiltration and infiltration of your organization's sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).
