@@ -20,7 +20,7 @@ ms.collection: M365-identity-device-management
 
 Passwords are a primary attack vector. Bad actors use social engineering, phishing, and spray attacks to compromise passwords. A passwordless authentication strategy mitigates the risk of these attacks.
 
-Microsoft offers the following [three passwordless authentication options](concept-authentication-passwordless.md) that integrate with Microsoft Entra ID:
+Microsoft offers the following [four passwordless authentication options](concept-authentication-passwordless.md) that integrate with Microsoft Entra ID:
 
 * [Microsoft Authenticator](./concept-authentication-passwordless.md#microsoft-authenticator) - turns any iOS or Android phone into a strong, passwordless credential by allowing users to sign into any platform or browser.
 
@@ -43,12 +43,12 @@ The following table lists the passwordless authentication methods by device type
 
 | Device types| Passwordless authentication method |
 | - | - |
-| Dedicated non-windows devices| <li> ***Microsoft Authenticator*** <li> Security keys |
+| Dedicated non-windows devices| <li> ***Microsoft Authenticator*** <li> Security keys <li> ***Platform Single Sign-On Extension for MacOS*** |
 | Dedicated Windows 10 computers (version 1703 and later)| <li> ***Windows Hello for Business*** <li> Security keys |
 | Dedicated Windows 10 computers (before version 1703)| <li> ***Windows Hello for Business*** <li> Microsoft Authenticator app |
 | Shared devices: tablets, and mobile devices| <li> ***Microsoft Authenticator*** <li> One-time password sign-in |
-| Kiosks (Legacy)| ***Microsoft Authenticator*** |
-| Kiosks and shared computers ‎(Windows 10)| <li> ***Security keys*** <li> Microsoft Authenticator app |
+| Kiosks (Legacy)| <li> ***Microsoft Authenticator*** |
+| Kiosks and shared computers (Windows 10)| <li> ***Security keys*** <li> Microsoft Authenticator app |
 
 
 ## Prerequisites 
@@ -93,6 +93,14 @@ Select Windows Hello for Business and [complete the wizard](https://aka.ms/passw
 
 The wizard will use your inputs to craft a step-by-step plan for you to follow.
 
+### MacOS Platform Single Sign-On
+
+To enable macOS Platform Single Sign-On (PSSO), your Mac must have an operating system of at least macOS 13 Ventura, and that the configuration steps are done through the [Microsoft InTune admin center](https://intune.microsoft.com/#home). Note that the smart card authentication method is only supported for macOS 14 Sonoma. Support for other Mobile Device Management (MDM) providers will be added in future releases.
+
+Before PSSO can be enabled, the extension payload must be configured via MDM, with the Mac device enrolled into MDM and the [Mac Company Portal](/mem/intune/user-help/enroll-your-device-in-intune-macos-cp) app installed.
+
+Once the Mac has been configured, a user can setup their Mac device using the new secure enclave key feature, smart card (macOS 14 Sonoma only) or a password authentication method. This enables a user to use their Microsoft Entra ID to log into their Mac device and grant SSO across apps that use Microsoft Entra ID for authentication.
+
 ## Plan the project
 
 When technology projects fail, it's typically because of mismatched expectations on impact, outcomes, and responsibilities. To avoid these pitfalls, [ensure that you're engaging the right stakeholders](~/architecture/deployment-plans.md) and that stakeholder roles in the project are well understood.
@@ -121,9 +129,9 @@ Users register their passwordless method as a part of the **combined security in
 
 For the first-time user who doesn't have a password, admins can provide a [Temporary Access Passcode](howto-authentication-temporary-access-pass.md) to register their security information in [https://aka.ms/mysecurityinfo](https://aka.ms/mysecurityinfo) . This is a time-limited passcode and satisfies strong authentication requirements. **Temporary Access Pass is a per-user process**.
 
-This method can also be used for easy recovery when the user has lost or forgotten their authentication factor such as security key or the Authenticator app but needs to sign in to **register a new strong authentication method**. 
+This method can also be used for easy recovery when the user has lost or forgotten their authentication factor such as security key or the Authenticator app but needs to sign in to **register a new strong authentication method**.
 
->[!NOTE] 
+>[!NOTE]
 > If you can't use the security key or the Authenticator app for some scenarios, multifactor authentication with a username and password along with another registered method can be used as a fallback option.
 
 ## Plan for and deploy Microsoft Authenticator
@@ -204,11 +212,11 @@ There are three types of passwordless sign-in deployments available with securit
 
 * Windows 10 version 1809 supports FIDO2 sign-in and may require software from the FIDO2 key manufacturer to be deployed. We recommend you use version 1903 or later.
 
-**For hybrid Microsoft Entra domain joined devices**, use: 
+**For hybrid Microsoft Entra domain joined devices**, use:
 
-* Windows 10 version 2004 or later. 
+* Windows 10 version 2004 or later.
 
-* Fully patched domain servers running Windows Server 2016 or 2019. 
+* Fully patched domain servers running Windows Server 2016 or 2019.
 
 * Latest version of Microsoft Entra Connect.
 
