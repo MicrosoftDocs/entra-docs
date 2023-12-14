@@ -10,7 +10,7 @@ ms.reviewer: kkrishna, jmprieur
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-#Customer intent:
+#Customer intent: As a web app developer, I want to handle SameSite cookie changes in the Chrome browser, so that I can ensure authentication works correctly and prevent CSRF attacks in my web applications.
 ---
 
 # Handle SameSite cookie changes in Chrome browser
