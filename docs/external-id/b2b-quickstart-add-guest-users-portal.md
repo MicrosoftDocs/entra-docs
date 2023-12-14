@@ -11,7 +11,7 @@ ms.service: active-directory
 ms.subservice: B2B
 ms.custom: it-pro, seo-update-azuread-jan, mode-ui
 ms.collection: M365-identity-device-management
-#Customer intent: As a tenant admin, I want to walk through the B2B invitation workflow so that I can understand how to add a guest user in the Microsoft Entra admin center, and understand the end user experience.
+#Customer intent: As an administrator, I want to add a guest user to my Microsoft Entra directory and send them an invitation, so that they can collaborate with my organization using their own work, school, or social account.
 ---
 
 # Quickstart: Add a guest user and send an invitation

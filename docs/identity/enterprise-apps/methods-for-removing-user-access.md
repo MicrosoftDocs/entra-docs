@@ -12,6 +12,8 @@ ms.date: 11/17/2021
 ms.author: jomondi
 ms.reviewer: ergreenl
 ms.custom: enterprise-apps
+
+#customer intent: As an IT admin managing user access to applications in Microsoft Entra ID, I want to remove specific user or group assignments, disable all user access, delete applications, and disable future user consent operations, so that I can control and secure application access for my organization.
 ---
 
 # Remove user access to applications

@@ -12,14 +12,15 @@ ms.date: 07/12/2023
 ms.author: jomondi
 ms.reviewer: sureshja
 ms.custom: enterprise-apps, has-azure-ad-ps-ref
+
+#customer intent: As an IT admin managing application registrations and enterprise apps in Microsoft Entra ID, I want to export secrets and certificates for app registrations and enterprise apps in my Microsoft Entra tenant, so that I can ensure their security and manage expiring credentials.
 ---
 
 # Azure Active Directory PowerShell examples for Application Management
 
-The following table includes links to PowerShell script examples for Microsoft Entra Application Management. 
+The following table includes links to PowerShell script examples for Microsoft Entra Application Management.
 
 These samples require the [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation) SDK module.
-
 
 | Link | Description |
 |---|---|

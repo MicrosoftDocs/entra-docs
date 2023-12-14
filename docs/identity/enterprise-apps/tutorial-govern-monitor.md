@@ -11,7 +11,7 @@ ms.date: 09/07/2023
 ms.reviewer: saibandaru
 ms.custom: enterprise-apps
 
-# Customer intent: As an administrator of a Microsoft Entra tenant, I want to govern and monitor my applications.
+# Customer intent: As an IT administrator, I want to govern and monitor applications in Microsoft Entra ID, so that I can ensure appropriate access, track user activities through audit logs and sign-ins reports, and send logs to Azure Monitor for storage and analysis.
 ---
 
 # Tutorial: Govern and monitor applications

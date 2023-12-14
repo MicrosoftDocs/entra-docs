@@ -12,6 +12,7 @@ author: csmulligan
 manager: celestedg
 ms.custom: "it-pro, seo-update-azuread-jan"
 ms.collection: M365-identity-device-management
+# Customer intent: As an administrator managing external collaboration, I want to easily invite guest users from the Azure portal, so that I can securely share my company's applications and services with external partners and maintain control over my corporate data.
 ---
 
 # B2B collaboration overview

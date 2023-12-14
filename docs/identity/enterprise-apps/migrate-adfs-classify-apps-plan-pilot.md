@@ -12,6 +12,8 @@ ms.date: 05/30/2023
 ms.author: jomondi
 ms.reviewer: gasinh
 ms.collection: M365-identity-device-management
+
+#customer intent: As an IT admin responsible for app migration, I want to classify and prioritize apps based on business criticality, usage, and lifespan, so that I can plan a successful pilot and migration strategy.
 ---
 
 # Phase 2: Classify apps and plan pilot

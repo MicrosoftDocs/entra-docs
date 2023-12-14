@@ -13,7 +13,7 @@ ms.author: cmulligan
 author: csmulligan
 manager: CelesteDG
 
-# Customer intent: As a tenant administrator, I want to send B2B invitations to multiple external users at the same time so that I can avoid having to send individual invitations to each user.
+# Customer intent: As an Entra admin, I want to learn how to bulk invite external users to my organization using the Entra admin center, so that I can efficiently manage user invitations and onboarding.
 
 ms.collection: M365-identity-device-management
 ms.custom:  

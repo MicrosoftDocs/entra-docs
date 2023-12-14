@@ -14,7 +14,7 @@ ms.reviewer: phsignor
 zone_pivot_groups: enterprise-apps-ms-graph-ms-powershell
 ms.custom: enterprise-apps
 
-#customer intent: As an admin, I want to grant consent on behalf of a single user
+#customer intent: As an IT admin, I want to grant consent on behalf of a single user using PowerShell, so that I can manage access to applications and APIs for that user.
 ---
 
 # Grant consent on behalf of a single user by using PowerShell

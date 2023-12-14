@@ -12,6 +12,8 @@ ms.date: 05/31/2023
 ms.author: jomondi
 ms.reviewer: gasinh
 ms.collection: M365-identity-device-management
+
+#customer intent: As an IT admin responsible for application migration, I want to plan the migration of my application authentication to Microsoft Entra ID, so that I can ensure easy and secure access to applications with a single set of access controls and policies across on-premises and cloud environments.
 ---
 
 # Plan application migration to Microsoft Entra ID

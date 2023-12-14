@@ -12,9 +12,11 @@ ms.date: 05/03/2023
 ms.author: gasinh
 ms.collection: M365-identity-device-management
 ms.custom: not-enterprise-apps
+
+#customer intent: As an IT admin responsible for securing Oracle JD Edwards (JDE), I want to configure F5 BIG-IP Easy Button for single sign-on (SSO) to Oracle JDE using Microsoft Entra ID, so that I can improve the application's security posture and enable SSO between Microsoft Entra ID and BIG-IP published services.
 ---
 
-# Tutorial: Configure F5 BIG-IP Easy Button for SSO to Oracle JDE 
+# Tutorial: Configure F5 BIG-IP Easy Button for SSO to Oracle JDE
 
 In this tutorial, learn to secure Oracle JD Edwards (JDE) using Microsoft Entra ID, with F5 BIG-IP Easy Button Guided Configuration.
 

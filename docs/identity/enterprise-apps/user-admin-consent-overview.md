@@ -13,6 +13,8 @@ ms.author: jomondi
 ms.reviewer: phsignor
 ms.collection: M365-identity-device-management
 ms.custom: enterprise-apps
+
+#customer intent: As an IT admin managing user access to applications, I want to understand the concepts and scenarios around user and admin consent in Microsoft Entra ID, so that I can configure the appropriate settings and permissions for my organization's applications.
 ---
 
 # User and admin consent in Microsoft Entra ID

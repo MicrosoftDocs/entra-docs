@@ -15,7 +15,7 @@ manager: celestedg
 ms.custom: "it-pro, seo-update-azuread-jan"
 ms.collection: M365-identity-device-management
 
-# Customer intent: As a tenant administrator, I want to learn how can my users invite guest users to an app.
+# Customer intent: As an application owner in Microsoft Entra, I want to be able to invite guest users to an app and manage their access, so that I can easily share the app with external users and control their permissions.
 ---
 
 # How users in your organization can invite guest users to an app

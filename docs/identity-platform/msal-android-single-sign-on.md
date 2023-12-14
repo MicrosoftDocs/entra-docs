@@ -10,7 +10,7 @@ ms.service: active-directory
 ms.subservice: develop
 ms.tgt_pltfrm: android
 ms.topic: how-to
-#Customer intent:
+#Customer intent: As an Android app developer, I want to enable cross-app single sign-on (SSO) using MSAL, so that users can enter their credentials once and have them automatically work across applications, providing a seamless user experience.
 ---
 
 # Enable cross-app SSO on Android using MSAL

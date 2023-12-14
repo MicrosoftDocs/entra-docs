@@ -12,7 +12,7 @@ author: csmulligan
 manager: celestedg
 ms.collection: M365-identity-device-management
 
-# Customer intent: As a tenant administrator, I want to give partners access to both on-premises and cloud resources with Microsoft Entra B2B collaboration. 
+# Customer intent: As an IT admin managing a hybrid organization, I want to grant external partners access to on-premises and cloud-based resources using Microsoft Entra B2B collaboration, so that I can easily manage their access and ensure they can use the same credentials for both environments.
 ---
 
 # Microsoft Entra B2B collaboration for hybrid organizations
