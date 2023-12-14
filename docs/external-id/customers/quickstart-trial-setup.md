@@ -8,7 +8,7 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: ciam
 ms.topic: quickstart
-ms.date: 11/17/2023
+ms.date: 12/14/2023
 ms.author: cmulligan
 ms.custom: it-pro
 
@@ -53,7 +53,7 @@ During the free trial period, you'll have access to all product features with fe
 
 ## Get started guide
 
-Once your customer tenant free trial is ready, the next step is to personalize your customer's sign-in and sign-up experience, set up a user in your tenant, and configure a sample app. The get started guide will walk you through all of these steps in just a few minutes. For more information about the next steps, see the [get started guide](quickstart-get-started-guide.md) article. 
+Once your customer tenant free trial is ready, the next step is to personalize your customer's sign-in and sign-up experience, set up a user in your tenant, and configure a sample app. The [get started guide](aka.ms/ciam/free-trial-hero) will walk you through all of these steps in just a few minutes. For more information about the next steps, see the [get started guide](quickstart-get-started-guide.md) article. 
 
 ## Upgrade your free trial by adding an Azure subscription
 
@@ -67,7 +67,7 @@ You can upgrade your 30 days free trial of a tenant with customer configurations
 If you don't have any Azure subscriptions, follow the steps below.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com). <!-- Should we add a role here? The user who signs up is a Global Administrator by default.-->
-1. Browse to **Home** > **Microsoft Entra ID (Azure AD)**.
+1. Browse to **Home** > **Tenant overview**. 
 1. Select **Upgrade**.
 
     :::image type="content" source="media/quickstart-trial-setup/upgrade-trial-button.jpg" alt-text="Screenshot of the upgrade trial button."::: 
@@ -96,7 +96,7 @@ If you don't have any Azure subscriptions, follow the steps below.
 If your free trial belongs to an account with an existing Azure subscription, you can upgrade your free trial with the existing subscription. To associate your free trial with an existing tenant to unlock the full set of features follow the steps below.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com). <!-- Should we add a role here? The user who signs up is a Global Administrator by default.-->
-1. Browse to **Home** > **Microsoft Entra ID (Azure AD)**.
+1. Browse to **Home** > **Tenant overview**. 
 1. Select **Add Subscription**.
 1. Select a tenant from the menu and select **Switch**.
 
