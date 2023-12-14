@@ -67,7 +67,7 @@ The next sections show how to configure advanced options for CBA by using the Mi
 
 To create a new Conditional Access authentication strength policy with Certificate combinationConfiguration:
 
-```html
+```json
 POST  /beta/identity/conditionalAccess/authenticationStrengths/policies
 {
     "displayName": "CBA Restriction",
@@ -92,6 +92,21 @@ POST  /beta/identity/conditionalAccess/authenticationStrengths/policies
 ```
 
 To add a new combinationConfiguration to an existing policy:
+
+```json
+POST beta/identity/conditionalAccess/authenticationStrength/policies/{authenticationStrengthPolicyId}/combinationConfigurations
+
+{
+    "@odata.type": "#microsoft.graph.x509CertificateCombinationConfiguration",
+    "allowedIssuerSkis": [
+        "9A4248C6AC8C2931AB2A86537818E92E7B6C97B6"
+    ],
+    "allowedPolicyOIDs": [],
+    "appliesToCombinations": [
+        "x509CertificateSingleFactor "
+    ]
+}
+```
 
 >[!NOTE]
 >The **allowedIssuerSkis** is from the Certificate Authority configured in the tenant (issuerSki). For more information, see [List certificateBasedAuthConfigurations](/graph/api/certificatebasedauthconfiguration-list). 
