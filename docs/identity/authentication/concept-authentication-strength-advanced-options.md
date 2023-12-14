@@ -53,7 +53,7 @@ For example, Contoso issues smart cards to employees with three different types 
 
      :::image type="content" border="true" source="./media/concept-authentication-strengths/or.png" alt-text="Screenshot showing OR condition.":::
 
-1. When finish click on “next”, review the configuration and click “Create”.
+1. Click **Next** to review the configuration, then click **Create**.
 
 ## Next steps
 
