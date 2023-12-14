@@ -84,7 +84,7 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 ### Other Changes
 - SQL related drivers shipped with Microsoft Entra Connect have been updated. ODBC to 17.10.5, OLE DB to 18.6.7.
 - Microsoft Entra Connect Health shipped with Microsoft Entra Connect has been updated to 4.5.2428.0.
-- Fixed a DSSO bug for Azure China
+- Fixed a DSSO bug for Azure in China
 
 
 ## 2.2.8.0
