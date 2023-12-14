@@ -13,6 +13,8 @@ ms.author: jomondi
 ms.reviewer: phsignor, yuhko
 ms.collection: M365-identity-device-management
 ms.custom: enterprise-apps
+
+#customer intent: As an IT admin troubleshooting issues with user access to Microsoft applications, I want to understand and troubleshoot errors that occur during the process of consenting to an application, so that I can successfully grant the necessary permissions and access the application.
 ---
 
 # Unexpected error when performing consent to an application

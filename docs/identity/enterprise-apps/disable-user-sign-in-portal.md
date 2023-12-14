@@ -14,7 +14,8 @@ ms.reviewer: ergreenl
 ms.custom: it-pro, enterprise-apps, has-azure-ad-ps-ref
 ms.collection: M365-identity-device-management
 zone_pivot_groups: enterprise-apps-all
-#customer intent: As an admin, I want to disable user sign-in for an application so that no user can sign in to it in Microsoft Entra ID.
+
+#customer intent: As an IT administrator, I want to disable user sign-in for an application, so that I can prevent users from accessing the application and issuing tokens.
 ---
 # Disable user sign-in for an application
 
@@ -35,7 +36,7 @@ To disable user sign-in, you need:
 
 :::zone pivot="portal"
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
 1. Search for the application you want to disable a user from signing in, and select the application.
 1. Select **Properties**.

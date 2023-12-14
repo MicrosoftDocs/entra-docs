@@ -13,6 +13,8 @@ ms.author: jomondi
 ms.reviewer: ergreenl
 ms.collection: M365-identity-device-management
 ms.custom: enterprise-apps
+
+#customer intent: As an IT admin managing applications in Microsoft Entra ID, I want to learn how to troubleshoot issues with Microsoft Entra sign-in when the app returns an error message, so that I can effectively manage and secure applications in my organization.
 ---
 
 # An app page shows an error message after the user signs in
@@ -80,7 +82,7 @@ Microsoft Entra ID selects the format for the **NameID** attribute (User Identif
 
 To change which parts of the SAML token are digitally signed by Microsoft Entra ID, follow these steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
 1. Select the application that you want to configure for single sign-on.
 1. After the application loads, select **Single sign-on** in the navigation pane.

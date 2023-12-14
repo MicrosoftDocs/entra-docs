@@ -13,6 +13,8 @@ ms.author: jomondi
 ms.collection: M365-identity-device-management
 ms.reviewer: bokacevi, dacurwin
 ms.custom: not-enterprise-apps
+
+#customer intent: As an IT admin responsible for maintaining control and protecting critical data in cloud apps and services, I want to use Microsoft Defender for Cloud Apps to gain visibility, control data travel, and identify and combat cyber threats across all Microsoft and third-party cloud services, so that I can ensure the security and compliance of my organization's cloud environment.
 ---
 
 # Cloud app visibility and control

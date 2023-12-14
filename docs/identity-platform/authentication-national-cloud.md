@@ -10,7 +10,7 @@ ms.reviewer: negoe
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-#Customer intent:
+#Customer intent: As a developer building an application for a specific national cloud instance, I want to understand the separate environments and endpoints for each national cloud, so that I can register my application correctly and make requests to the appropriate region-specific base URLs.
 ---
 
 # National clouds

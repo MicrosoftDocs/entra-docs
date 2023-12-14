@@ -14,7 +14,7 @@ ms.reviewer: phsignor, yuhko, ergreenl
 ms.custom: enterprise-apps
 zone_pivot_groups: enterprise-apps-minus-former-powershell
 
-#customer intent: As an admin, I want to configure group owner consent to apps accessing group data using Microsoft Entra ID
+#customer intent: As an IT administrator, I want to configure the consent settings for applications, so that I can control which applications can access my organization's data associated with a group or team.
 ---
 
 # Configure group and team owner consent to applications

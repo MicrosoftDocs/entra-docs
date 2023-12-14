@@ -10,7 +10,7 @@ ms.reviewer: brandwe
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-#Customer intent:
+#Customer intent: As a developer, I want to understand how to create a shared device mode app for Android devices, so that I can enable multiple employees to easily share a device and access customer information securely.
 ---
 
 # Shared device mode for Android devices

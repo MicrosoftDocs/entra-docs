@@ -78,7 +78,7 @@ Our guide will walk you through the process of setting up a user and configuring
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com). 
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your customer tenant from the **Directories + subscriptions** menu.
-1. Browse to **Home** > **Go to Microsoft Entra ID** 
+1. Browse to **Home** > **Tenant overview**. 
 1. On the Get started tab, select **Start the guide**.
 
     :::image type="content" source="media/how-to-create-customer-tenant-portal/guide-link.png" alt-text="Screenshot that shows how to start the guide.":::

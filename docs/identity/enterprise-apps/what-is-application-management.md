@@ -12,6 +12,8 @@ ms.date: 12/07/2022
 ms.author: jomondi
 ms.reviewer: ergreenl
 ms.custom: enterprise-apps
+
+#customer intent: As an IT administrator managing applications in Microsoft Entra ID, I want to understand the process of application management, including developing, adding, connecting, managing access, configuring properties, securing the application, governing and monitoring, and cleaning up, so that I can effectively manage applications in the cloud.
 ---
 
 # What is application management in Microsoft Entra ID?
