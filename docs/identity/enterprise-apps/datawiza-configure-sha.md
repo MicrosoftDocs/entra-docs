@@ -12,6 +12,8 @@ ms.date: 01/23/2023
 ms.author: gasinh
 ms.collection: M365-identity-device-management
 ms.custom: kr2b-contr-experiment, not-enterprise-apps
+
+#customer intent: As a system administrator, I want to configure secure hybrid access with Microsoft Entra ID and Datawiza, so that I can enable single sign-on (SSO) and access controls for on-premises and cloud-hosted applications, and transition from legacy web access managers to Microsoft Entra ID without rewriting applications.
 ---
 
 # Tutorial: Configure Secure Hybrid Access with Microsoft Entra ID and Datawiza

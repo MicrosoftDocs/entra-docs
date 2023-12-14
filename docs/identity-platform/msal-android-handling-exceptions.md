@@ -9,7 +9,7 @@ ms.reviewer: negoe
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: troubleshooting
-#Customer intent:
+#Customer intent: As an Android app developer, I want to handle exceptions and errors in MSAL, so that I can troubleshoot my application and provide appropriate error handling to the users.
 ---
 
 # Handle exceptions and errors in MSAL for Android

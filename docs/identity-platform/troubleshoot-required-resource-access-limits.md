@@ -10,7 +10,7 @@ ms.reviewer: phsignor, jawoods
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: reference
-#Customer intent:
+#Customer intent:As an application developer, I want to troubleshoot and resolve the issue of exceeding the configured permissions limit for my app, so that I can ensure that my app can continue to add new permissions and function properly within the limits set by the platform.
 ---
 
 # Troubleshooting the configured permissions limits

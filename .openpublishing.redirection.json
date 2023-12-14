@@ -37,6 +37,16 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity/saas-apps/rivial-data-security-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/rivial-cybersecurity-management-platform-tutorial",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/querylayer-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/trustworks-tutorial",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/saas-apps/workplace-by-facebook-provisioning-tutorial.md",
       "redirect_url": "/entra/identity/saas-apps/workplace-from-meta-provisioning-tutorial",
       "redirect_document_id": false

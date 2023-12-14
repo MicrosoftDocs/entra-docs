@@ -12,7 +12,7 @@ ms.date: 04/25/2023
 ms.author: jomondi
 ms.reviewer: alamaral
 ms.custom: enterprise-apps
-# Customer intent: As an IT admin, I need to know how to implement password-based single sign-on in Microsoft Entra ID.
+# Customer intent: As an application administrator, I want to configure password-based single sign-on (SSO) in Microsoft Entra ID, so that users can sign in to the application with a username and password and have their credentials securely stored and sent to the application after the first sign-on.
 ---
 
 # Add password-based single sign-on to an application

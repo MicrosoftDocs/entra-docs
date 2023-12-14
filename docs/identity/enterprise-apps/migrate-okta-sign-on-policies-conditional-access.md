@@ -11,6 +11,8 @@ ms.date: 01/13/2023
 ms.author: gasinh
 ms.subservice: app-mgmt
 ms.custom: not-enterprise-apps
+
+#customer intent: As an IT admin currently using Okta sign-on policies, I want to migrate to Microsoft Entra Conditional Access, so that I can secure user access in Microsoft Entra ID and connected applications.
 ---
 
 # Tutorial: Migrate Okta sign-on policies to Microsoft Entra Conditional Access

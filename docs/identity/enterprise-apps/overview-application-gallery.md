@@ -12,6 +12,8 @@ ms.date: 01/22/2022
 ms.author: jomondi
 ms.reviewer: ergreenl
 ms.custom: enterprise-apps
+
+#customer intent: As an IT admin, I want to easily find and deploy pre-integrated SaaS applications from the Microsoft Entra application gallery, so that I can provide users with a seamless single sign-on experience and automate user provisioning.
 ---
 
 # Overview of the Microsoft Entra application gallery

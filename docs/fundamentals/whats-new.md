@@ -40,7 +40,7 @@ This page updates monthly, so revisit it regularly. If you're looking for items 
 
 **Type:** Plan for change   
 **Service category:** Provisioning                     
-**Product capability:**  Entra Cloud Sync             
+**Product capability:**  Microsoft Entra Connect Sync             
 
 The public preview of Group Writeback V2 (GWB) in Entra Connect Sync will no longer be available after June 30, 2024. After this date, Connect Sync will no longer support provisioning cloud security groups to Active Directory.
 

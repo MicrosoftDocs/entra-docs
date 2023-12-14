@@ -584,6 +584,8 @@
         href: cognidox-tutorial.md
       - name: Cognician
         href: cognician-tutorial.md
+      - name: Cognism
+        href: cognism-tutorial.md
       - name: CoLab
         href: colab-tutorial.md
       - name: Collaborative Innovation
@@ -2155,8 +2157,8 @@
         href: quarem-tutorial.md
       - name: Quantum Workplace
         href: quantum-workplace-tutorial.md
-      - name: QueryLayer
-        href: querylayer-tutorial.md
+      - name: TrustWorks
+        href: trustworks-tutorial.md
       - name: Questetra BPM Suite
         href: questetra-bpm-suite-tutorial.md
       - name: QuickHelp
@@ -2235,8 +2237,8 @@
         href: riskware-tutorial.md
       - name: Riva
         href: riva-tutorial.md
-      - name: Rivial Data Security
-        href: rivial-data-security-tutorial.md
+      - name: Rivial Cybersecurity Management Platform
+        href: rivial-cybersecurity-management-platform-tutorial.md
       - name: Roadmunk
         href: roadmunk-tutorial.md
       - name: Robin
@@ -2499,6 +2501,8 @@
         href: smartlook-tutorial.md
       - name: Smart Map Pro
         href: smart-map-pro-tutorial.md
+      - name: Smartplan
+        href: smartplan-tutorial.md
       - name: SmartRecruiters
         href: smartrecruiters-tutorial.md
       - name: smartvid.io

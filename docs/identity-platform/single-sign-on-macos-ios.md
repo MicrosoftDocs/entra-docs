@@ -10,7 +10,7 @@ ms.reviewer:
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-#Customer intent:
+#Customer intent:As a developer integrating Microsoft Authentication Library (MSAL) into macOS and iOS apps, I want to configure single sign-on (SSO) between apps and browsers, so that users can seamlessly authenticate without being prompted for credentials.
 ---
 
 # Configure SSO on macOS and iOS

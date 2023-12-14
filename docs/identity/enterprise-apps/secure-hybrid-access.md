@@ -12,6 +12,8 @@ ms.date: 01/17/2023
 ms.author: gasinh
 ms.collection: M365-identity-device-management
 ms.custom: not-enterprise-apps
+
+#customer intent: As an IT admin responsible for securing legacy authentication applications, I want to learn how to protect these applications by connecting them to Microsoft Entra ID, so that I can ensure the security of both on-premises and cloud applications.
 ---
 # Secure hybrid access: Protect legacy apps with Microsoft Entra ID
 
