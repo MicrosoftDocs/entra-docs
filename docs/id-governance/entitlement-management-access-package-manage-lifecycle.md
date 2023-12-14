@@ -11,7 +11,7 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.subservice: compliance
-ms.date: 08/08/2023
+ms.date: 12/11/2023
 ms.author: owinfrey
 ms.reviewer: 
 ms.collection: M365-identity-device-management
@@ -21,7 +21,7 @@ ms.collection: M365-identity-device-management
 
 ---
 
-# Manage guest user lifecycle (preview)  
+# Manage guest user lifecycle
 
 Entitlement management allows you to gain visibility into the state of a guest user's lifecycle through the following viewpoints:
 
@@ -32,7 +32,7 @@ Entitlement management allows you to gain visibility into the state of a guest u
 > [!NOTE]
 > When a guest user is set as **Governed**, based on entitlement management tenant-wide settings their account will be deleted or disabled in specified days after their last access package assignment expires.  Learn more about entitlement management settings here: [Manage external access with Microsoft Entra entitlement management](~/architecture/6-secure-access-entitlement-managment.md).
 
-You can directly convert ungoverned users to be governed by using the **Mark Guests as Governed (preview)** functionality in the top menu bar.
+You can directly convert ungoverned users to be governed by using the **Mark Guests as Governed** functionality in the top menu bar.
 
 ## Manage guest user lifecycle in the Microsoft Entra admin center
 
@@ -50,14 +50,13 @@ To manage user lifecycle, you'd follow these steps:
 
 1. In the left menu, select **Assignments**.
 
-1. On the assignments screen, select the user you want to manage the lifecycle for, and then select **Mark guest as governed (Preview)**.
+1. On the assignments screen, select the user you want to manage the lifecycle for, and then select **Mark guest as governed**.
     :::image type="content" source="media/entitlement-management-access-package-assignments/govern-user-lifecycle.png" alt-text="Screenshot of the govern user lifecycle selection." lightbox="media/entitlement-management-access-package-assignments/govern-user-lifecycle.png":::
 1. Select save.
 
 ## Manage guest user lifecycle programmatically 
 
 To manage user lifecycle programatically using Microsoft Graph, see: [accessPackageSubject resource type](/graph/api/resources/accesspackagesubject). For bulk conversion, see: [ConvertTo-EmGovernedGuest.ps1](https://github.com/JefTek/EntraIdentitySamples/blob/main/PowerShell/IdentityGovernance/GovernedGuests/ConvertTo-EmGovernedGuest.ps1).
-
 
 
 ## Next steps
