@@ -270,7 +270,7 @@ The **Require users to consent on every device** setting enables you to require 
 
 Per-device terms of use have the following constraints:
 
-- The Intune Enrollment app isn't supported. Ensure that it's excluded from any Conditional Access policy requiring Terms of Use policy.
+- The Microsoft Intune Enrollment app `Application ID: d4ebce55-015a-49b5-a083-c84d1797ae8c` isn't supported. Ensure that it's excluded from any Conditional Access policy requiring Terms of Use policy.
 - Microsoft Entra B2B users aren't supported.
 
 ## Delete terms of use
