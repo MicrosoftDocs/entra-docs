@@ -12,6 +12,8 @@ ms.date: 07/14/2023
 ms.author: jomondi
 ms.reviewer: alamaral
 ms.custom: enterprise-apps
+
+#customer intent: As an IT admin managing applications in Microsoft Entra ID, I want to understand why a specific application appears in my all applications list, so that I can effectively manage and troubleshoot application integrations in my tenant.
 ---
 
 # Applications listed in Enterprise applications

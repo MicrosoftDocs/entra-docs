@@ -15,7 +15,7 @@ ms.custom: enterprise-apps
 zone_pivot_groups: enterprise-apps-minus-former-powershell
 
 
-#customer intent: As an admin, I want to configure how end-users consent to applications.
+#customer intent: As an IT admin, I want to configure user consent settings for applications, so that I can control the level of access users have to my organization's data and reduce the risk of malicious applications.
 ---
 
 # Configure how users consent to applications
