@@ -48,17 +48,17 @@ The next sections show how to configure advanced options for CBA by using the Mi
 1. Optionally provide a **Description**.
 1. Below Certificate-based authentication (either single-factor or multifactor), click **Advanced options**.
 
-   :::image type="content" border="true" source="./media/concept-authentication-strengths-advanced-options/certificate-advanced-options.png" alt-text="Screenshot showing Advanced options for certificate-based authentication.":::
+   :::image type="content" border="true" source="./media/concept-authentication-strength-advanced-options/certificate-advanced-options.png" alt-text="Screenshot showing Advanced options for certificate-based authentication.":::
     
 1. Select certificate issuers from the drop-down or type the allowed policy OIDs. 
 
    - If both **Allowed certificate issuer** AND **Allowed Policy OID** are configured, there's an AND relationship. The user has to use a certificate that satisfies both conditions.
 
-     :::image type="content" border="true" source="./media/concept-authentication-strengths-advanced-options/and.png" alt-text="Screenshot showing AND condition.":::
+     :::image type="content" border="true" source="./media/concept-authentication-strength-advanced-options/and.png" alt-text="Screenshot showing AND condition.":::
 
    - Between the **Allowed certificate issuer** list and the **Allowed Policy OID** list, there's an OR relationship. The user has to use a certificate that satisfied one of the issuers or policy OIDs.
 
-     :::image type="content" border="true" source="./media/concept-authentication-strengths-advanced-options/or.png" alt-text="Screenshot showing OR condition.":::
+     :::image type="content" border="true" source="./media/concept-authentication-strength-advanced-options/or.png" alt-text="Screenshot showing OR condition.":::
 
 1. Click **Next** to review the configuration, then click **Create**.
 
@@ -103,7 +103,7 @@ To add a new combinationConfiguration to an existing policy:
 
 - Certificate Authorities and user certificates should conform to X.509 v3 standard. Specifically, to enforce issuer SKI CBA restrictions, certificates need valid AKIs:
 
-  :::image type="content" border="true" source="./media/concept-authentication-strengths/authority-key-identifier.png" alt-text="Screenshot showing an authority key identifier.":::
+  :::image type="content" border="true" source="./media/concept-authentication-strength-advanced-options/authority-key-identifier.png" alt-text="Screenshot showing an authority key identifier.":::
 
   >[!NOTE]
   >If the certificate doesn't conform, user authentication might succeed, but not satisfy the issuerSki restrictions for the authentication strength policy.
@@ -121,7 +121,7 @@ To add a new combinationConfiguration to an existing policy:
 
 Sign in as an Administrator. Click **Run**, type certmgr.msc and press Enter. To check policy OIDs, click **Personal**, right-click the certificate and click **Details**.  
 
-:::image type="content" border="true" source="./media/concept-authentication-strengths-advanced-options/certmgr.png" alt-text="Screenshot showing an authority key identifier.":::
+:::image type="content" border="true" source="./media/concept-authentication-strength-advanced-options/certmgr.png" alt-text="Screenshot showing an authority key identifier.":::
 
 ## Next steps
 
