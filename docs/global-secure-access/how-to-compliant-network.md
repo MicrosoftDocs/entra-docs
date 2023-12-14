@@ -5,7 +5,7 @@ description: Learn how to require known compliant network locations in order to 
 ms.service: network-access
 ms.subservice: 
 ms.topic: how-to
-ms.date: 12/12/2023
+ms.date: 12/14/2023
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -16,9 +16,9 @@ ms.reviewer: mamkumar
 
 Organizations who use Conditional Access along with the Global Secure Access preview, can prevent malicious access to Microsoft apps, third-party SaaS apps, and private line-of-business (LoB) apps using multiple conditions to provide defense-in-depth. These conditions may include device compliance, location, and more to provide protection against user identity or token theft. Global Secure Access introduces the concept of a compliant network within Conditional Access and continuous access evaluation. This compliant network check ensures users connect from a verified network connectivity model for their specific tenant and are compliant with security policies enforced by administrators.
 
-The Global Secure Access Client installed on devices or configured remote network allows administrators to secure resources behind a compliant network with advanced Conditional Access controls. This compliant network makes it easier for administrators to manage and maintain, without having to maintain a list of all of an organization's locations IP addresses. Administrators don't need to hairpin traffic through their organization's VPN egress points to ensure security.
+The Global Secure Access Client installed on devices or users behind configured remote networks allows administrators to secure resources behind a compliant network with advanced Conditional Access controls. This compliant network feature makes it easier for administrators to manage and maintain, without having to maintain a list of all of an organization's locations IP addresses. Administrators don't need to hairpin traffic through their organization's VPN egress points to ensure security.
 
-Continuous Access Evaluation (CAE) is currently supported for SharePoint workloads. With CAE, you can leverage the security of token theft replay protection.
+Continuous Access Evaluation (CAE) with the compliant network feature is currently supported for SharePoint Online. With CAE, you can enforce defense-in-depth with token theft replay protection.
 
 This compliant network check is specific to each tenant.
 
@@ -39,6 +39,7 @@ The compliant network is different than [IPv4, IPv6, or geographic locations](..
 ### Known limitations
 
 - Organizations can protect other Microsoft Entra integrated apps with Conditional Access policies requiring a compliant network check. During the preview, administrators must choose the individual applications from the app picker instead of choosing *All cloud apps*. **Do not choose *All cloud apps*.**
+- Compliant network check is currently not supported for private access apps.
 
 ## Enable Global Secure Access signaling for Conditional Access
 
@@ -55,9 +56,11 @@ To enable the required setting to allow the compliant network check, an administ
 > [!CAUTION]
 > If your organization has active Conditional Access policies based on compliant network check, and you disable Global Secure Access signaling in Conditional Access, you may unintentionally block targeted end-users from being able to access the resources. If you must disable this feature, first delete any corresponding Conditional Access policies.
 
-## Protect Exchange and SharePoint Online behind the compliant network
+## Protect your resources behind the compliant network
 
-The following example shows a Conditional Access policy that requires Exchange Online and SharePoint Online to be accessed from behind a compliant network as part of the preview.
+The compliant network Conditional Access policy can be used to protect your Microsoft 365 and third-party resources.
+
+The following example shows this type of policy. In addition, you can enforce token theft replay protection using CAE for SharePoint Online.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Protection** > **Conditional Access**.
@@ -67,8 +70,8 @@ The following example shows a Conditional Access policy that requires Exchange O
    1. Under **Include**, select **All users**.
    1. Under **Exclude**, select **Users and groups** and choose your organization's [emergency access or break-glass accounts](#user-exclusions).
 1. Under **Target resources** > **Include**, and select **Select apps**.
-   1. Choose **Office 365 Exchange Online** and/or **Office 365 SharePoint Online**.
-   1. Office 365 apps are currently NOT supported, so do not select this option.
+   1. Choose **Office 365 Exchange Online**, and/or **Office 365 SharePoint Online**, and/or any of your third-party SaaS apps.
+   1. The specific *Office 365* cloud app in the app picker is currently NOT supported, so do not select this cloud app.
 1. Under **Conditions** > **Location**.
    1. Set **Configure** to **Yes**
    1. Under **Include**, select **Any location**.
@@ -77,14 +80,16 @@ The following example shows a Conditional Access policy that requires Exchange O
    1. Select **Select**.
 1. Under **Access controls**:
    1. **Grant**, select **Block Access**, and select **Select**.
-   1. **Session**, select **Customize continuous access evalutation** and **Strictly enforce location policies (Preview)** and select **Select**.
+
+  > [!NOTE]
+  > Token theft replay protection is now available for SharePoint Online.
+
+9. If your policy is only targeting SharePoint Online, for **Session**, select **Customize continuous access evaluation** and **Strictly enforce location policies (Preview)** and select **Select**.
 
    :::image type="content" source="media/how-to-compliant-network/ca-policy-cae-settings.png" alt-text="Screenshot of the session control with the continuous access evaluation option highlighted.":::
 
-1. Confirm your settings and set **Enable policy** to **Report-only**.
-1. Select **Create** to create to enable your policy.
-
-After administrators confirm the policy settings using [report-only mode](../identity/conditional-access/howto-conditional-access-insights-reporting.md), an administrator can move the **Enable policy** toggle from **Report-only** to **On**.
+10. Confirm your settings and set **Enable policy** to **On**.
+11. Select the **Create** button to create to enable your policy.
 
 ### User exclusions
 
