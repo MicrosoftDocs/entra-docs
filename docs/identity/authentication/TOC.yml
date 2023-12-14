@@ -46,7 +46,7 @@
       href: concept-authentication-strengths.md
     - name: How authentication strength works
       href: concept-authentication-strength-howitworks.md
-    - name: FIDO2 and CBA adavanced options
+    - name: FIDO2 and CBA advanced options
       href: concept-authentication-strength-advanced-options.md
     - name: External users
       href: concept-authentication-strength-external-users.md
