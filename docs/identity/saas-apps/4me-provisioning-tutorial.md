@@ -148,6 +148,7 @@ For more information on how to read the Microsoft Entra provisioning logs, see [
 
 * 4me has different SCIM endpoint URLs for test and production environments. The former ends with **.qa** while the latter ends with **.com**
 * 4me generated Secret Tokens have an expiration date of a month from generation.
+* 4me doesn’t support **HARD DELETE** of Users. SCIM users are never really deleted in 4me, instead the **active** attribute of the SCIM user will be set to **false** and the related 4me person record will be disabled.
 
 ## Additional resources
 
