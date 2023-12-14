@@ -12,7 +12,7 @@ ms.date: 03/22/2023
 ms.author: jomondi
 ms.reviewer: ergreenl
 ms.custom: mode-other, enterprise-apps
-#Customer intent: As an administrator of a Microsoft Entra tenant, I want to add an enterprise application.
+#customer intent: As an IT admin, I want to add an enterprise application to my Microsoft Entra tenant, so that I can provide my organization with access to pre-integrated applications from the gallery.
 ---
 
 # Quickstart: Add an enterprise application
