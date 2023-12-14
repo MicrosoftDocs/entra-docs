@@ -136,11 +136,11 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
     ![Screenshot shows the SSO Configuration.](./media/hiretual-tutorial/configuration.png "SSO Configuration")
 
-    1. In the **SAML2.O SSO URL** textbox, paste the **User access URL** which you copied previously.
+    1. In the **SAML2.O SSO URL** textbox, paste the **Login URL** which you have copied from the Microsoft Entra admin center.
 
-    1. Copy **Entity ID** value from the metadata file and paste in the **Identity Provider Issuer** textbox.
+    1. In the **Identity Provider Issuer** textbox, paste the **Microsoft Entra Identifier** which you have copied from the Microsoft Entra admin center.
 
-    1. Copy **X509 Certificate** from the metadata file and paste the content in the **Certificate** textbox.
+    1. In the **Certificate** textbox, paste the **App Federation Metadata Url** which you have copied from the Microsoft Entra admin center. 
 
     1. Enable **Single Sign-On Connection Status** button.
 
