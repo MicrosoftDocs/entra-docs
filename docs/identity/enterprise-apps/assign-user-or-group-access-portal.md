@@ -13,7 +13,7 @@ ms.author: jomondi
 ms.reviewer: ergreenl
 ms.custom: enterprise-apps, has-azure-ad-ps-ref
 zone_pivot_groups: enterprise-apps-all
-#customer intent: As an admin, I want to manage user assignment for an app in Microsoft Entra ID using PowerShell
+#customer intent: As an IT admin managing user access to enterprise applications, I want to assign users and groups to an application, so that I can control access and provide easy access to applications for users.
 ---
 
 # Manage users and groups assignment to an application
@@ -22,7 +22,7 @@ This article shows you how to assign users and groups to an enterprise applicati
 
 When you assign a group to an application, only users in the group will have access. The assignment doesn't cascade to nested groups.
 
-Group-based assignment requires Microsoft Entra ID P1 or P2 edition. Group-based assignment is supported for Security groups and Microsoft 365 groups whose `SecurityEnabled` setting is set to `True` only. Nested group memberships aren't currently supported. For more licensing requirements for the features discussed in this article, see the [Microsoft Entra pricing page](https://azure.microsoft.com/pricing/details/active-directory). 
+Group-based assignment requires Microsoft Entra ID P1 or P2 edition. Group-based assignment is supported for Security groups and Microsoft 365 groups whose `SecurityEnabled` setting is set to `True` only. Nested group memberships aren't currently supported. For more licensing requirements for the features discussed in this article, see the [Microsoft Entra pricing page](https://azure.microsoft.com/pricing/details/active-directory).
 
 For greater control, certain types of enterprise applications can be configured to require user assignment. For more information on requiring user assignment for an app, see [Manage access to an application](what-is-access-management.md#requiring-user-assignment-for-an-app).
 
@@ -37,12 +37,12 @@ To assign users to an enterprise application, you need:
 - Microsoft Entra ID P1 or P2 for group-based assignment. For more licensing requirements for the features discussed in this article, see the [Microsoft Entra pricing page](https://azure.microsoft.com/pricing/details/active-directory).
 
 ## Assign users, and groups, to an application
- 
+
 :::zone pivot="portal"
 
 To assign a user or group account to an enterprise application:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
 1. Enter the name of the existing application in the search box, and then select the application from the search results.
 1. Select **Users and groups**, and then select **Add user/group**.
@@ -170,6 +170,7 @@ $assignments | ForEach-Object {
     }
 }
 ```
+
 :::zone-end
 
 :::zone pivot="ms-powershell"
@@ -178,7 +179,8 @@ $assignments | ForEach-Object {
 1. Run `Connect-MgGraph -Scopes "Application.ReadWrite.All", "Directory.ReadWrite.All", "AppRoleAssignment.ReadWrite.All"` and sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Use the following script to assign a user and role to an application:
 
-```powershell    
+```powershell
+
 # Assign the values to the variables
 
 $userId = "<Your user's ID>"
@@ -205,7 +207,9 @@ New-MgUserAppRoleAssignment -UserId $userId -BodyParameter $params |
 
 1. Open an elevated Windows PowerShell command prompt.
 1. Run `Connect-MgGraph -Scopes "Application.ReadWrite.All", "Directory.ReadWrite.All", "AppRoleAssignment.ReadWrite.All"` and sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). Use the following script to remove a user and role from an application.
+
 ```powershell
+
 # Get the user and the service principal
 
 $user = Get-MgUser -UserId <userid>
@@ -241,7 +245,7 @@ $assignments | ForEach-Object {
 
 1. To assign users and groups to an application, sign in to [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer)as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 
-    You'll need to consent to the following permissions: 
+    You'll need to consent to the following permissions:
 
     `Application.ReadWrite.All`, `Directory.ReadWrite.All`, `AppRoleAssignment.ReadWrite.All`.
 
@@ -256,6 +260,7 @@ $assignments | ForEach-Object {
     ```http
     GET https://graph.microsoft.com/v1.0/servicePrincipals?$filter=displayName eq '{appDisplayName}'
     ```
+
     Record the following values from the response body:
 
     - Object ID of the enterprise application
@@ -266,7 +271,9 @@ $assignments | ForEach-Object {
     ```http
     GET https://graph.microsoft.com/v1.0/users/{userPrincipalName}
     ```
+
 1. Assign the user to the application.
+
     ```http
     POST https://graph.microsoft.com/v1.0/servicePrincipals/{resource-servicePrincipal-id}/appRoleAssignedTo
 
@@ -276,6 +283,7 @@ $assignments | ForEach-Object {
     "appRoleId": "ef7437e6-4f94-4a0a-a110-a439eb2aa8f7"
     }
     ```
+
     In the example, both the resource-servicePrincipal-id and resourceId represent the enterprise application.
 
 ## Unassign users, and groups, from an application
@@ -287,16 +295,19 @@ To unassign user and groups from the application, run the following query.
     ```http
     GET https://graph.microsoft.com/v1.0/servicePrincipals?$filter=displayName eq '{appDisplayName}'
     ```
+
 1. Get the list of appRoleAssignments for the application.
 
     ```http
     GET https://graph.microsoft.com/v1.0/servicePrincipals/{id}/appRoleAssignedTo
     ```
+
 1. Remove the appRoleAssignments by specifying the appRoleAssignment ID.
 
     ```http
     DELETE https://graph.microsoft.com/v1.0/servicePrincipals/{resource-servicePrincipal-id}/appRoleAssignedTo/{appRoleAssignment-id}
     ```
+
 :::zone-end
 
 ## Next steps

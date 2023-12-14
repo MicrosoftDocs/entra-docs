@@ -1,5 +1,5 @@
 ---
-title: Convert guest user lifecycle in entitlement management - Microsoft Entra
+title: Convert guest user lifecycle in entitlement management - Microsoft Entra (Preview)
 description: Learn how to convert guest user access package assignments for an access package in entitlement management.
 services: active-directory
 documentationCenter: ''
@@ -11,7 +11,7 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.subservice: compliance
-ms.date: 08/08/2023
+ms.date: 12/11/2023
 ms.author: owinfrey
 ms.reviewer: 
 ms.collection: M365-identity-device-management
@@ -50,14 +50,13 @@ To manage user lifecycle, you'd follow these steps:
 
 1. In the left menu, select **Assignments**.
 
-1. On the assignments screen, select the user you want to manage the lifecycle for, and then select **Mark guest as governed (Preview)**.
+1. On the assignments screen, select the user you want to manage the lifecycle for, and then select **Mark guest as governed (preview)**.
     :::image type="content" source="media/entitlement-management-access-package-assignments/govern-user-lifecycle.png" alt-text="Screenshot of the govern user lifecycle selection." lightbox="media/entitlement-management-access-package-assignments/govern-user-lifecycle.png":::
 1. Select save.
 
 ## Manage guest user lifecycle programmatically 
 
 To manage user lifecycle programatically using Microsoft Graph, see: [accessPackageSubject resource type](/graph/api/resources/accesspackagesubject). For bulk conversion, see: [ConvertTo-EmGovernedGuest.ps1](https://github.com/JefTek/EntraIdentitySamples/blob/main/PowerShell/IdentityGovernance/GovernedGuests/ConvertTo-EmGovernedGuest.ps1).
-
 
 
 ## Next steps

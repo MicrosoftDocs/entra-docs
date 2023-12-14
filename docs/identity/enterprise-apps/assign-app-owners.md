@@ -15,7 +15,7 @@ ms.reviewer: saibandaru
 zone_pivot_groups: enterprise-apps-minus-former-powershell
 ms.custom: enterprise-apps
 
-#Customer intent: As a Microsoft Entra administrator, I want to assign owners to enterprise applications.
+#Customer intent: As an administrator, I want to assign an owner to an enterprise application in Microsoft Entra, so that the owner can manage the organization-specific configuration of the application and perform tasks such as single sign-on, provisioning, and user assignments.
 ---
 
 # Assign enterprise application owners

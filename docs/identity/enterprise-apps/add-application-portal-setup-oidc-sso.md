@@ -12,6 +12,8 @@ ms.date: 04/14/2023
 ms.author: jomondi
 ms.reviewer: ergreenl
 ms.custom: enterprise-apps
+
+#customer intent: As an administrator, I want to add an application that supports OpenID Connect-based single sign-on (SSO) to my Microsoft Entra tenant, so that I can provide a seamless authentication experience for my users.
 ---
 
 # Add an OpenID Connect-based single sign-on application

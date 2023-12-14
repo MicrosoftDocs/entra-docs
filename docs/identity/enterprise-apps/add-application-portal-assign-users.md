@@ -12,7 +12,7 @@ ms.date: 03/23/2023
 ms.author: jomondi
 ms.reviewer: alamaral
 ms.custom: mode-other, enterprise-apps
-#Customer intent: As an administrator of a Microsoft Entra tenant, I want to assign a user to an enterprise application.
+#customer intent: As an IT admin managing user accounts in Microsoft Entra, I want to create a new user account and assign it to an enterprise application, so that I can provide access to the application for the user.
 ---
 
 # Quickstart: Create and assign a user account

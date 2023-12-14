@@ -12,6 +12,8 @@ ms.date: 06/14/2023
 ms.author: jomondi
 ms.reviewer: phsignor
 ms.custom: enterprise-apps
+
+#customer intent: As an administrator, I want to manage consent to applications and evaluate consent requests, so that I can ensure that only apps from verified publishers and selected permissions are allowed. This helps to minimize security risks and prevent the use of unmanaged accounts in third-party applications.
 ---
 
 # Manage consent to applications and evaluate consent requests

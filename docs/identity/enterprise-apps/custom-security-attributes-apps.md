@@ -13,6 +13,7 @@ ms.reviewer: rolyon
 zone_pivot_groups: enterprise-apps-all
 ms.custom: not-enterprise-apps
 
+#customer intent: As an administrator managing custom security attributes for applications in Microsoft Entra ID, I want to assign, update, list, or remove custom security attributes, so that I can define and manage access to enterprise applications based on business-specific attributes.
 ---
 
 # Manage custom security attributes for an application

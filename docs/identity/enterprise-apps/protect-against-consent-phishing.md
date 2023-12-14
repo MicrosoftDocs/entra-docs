@@ -13,7 +13,7 @@ ms.custom: template-concept, enterprise-apps-article
 ms.author: jomondi
 ms.reviewer: tilarso
 
-#Customer intent: As a developer, I want to learn how to protect against application-based consent phishing attacks so I can protect my users from malicious threat actors.
+#Customer intent: As an IT administrator responsible for securing cloud services, I want to understand what consent phishing is and how to mitigate it, so that I can protect my organization's data and prevent unauthorized access to cloud applications.
 ---
 
 # Protect against consent phishing

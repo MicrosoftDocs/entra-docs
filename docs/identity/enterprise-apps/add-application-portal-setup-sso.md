@@ -13,7 +13,7 @@ ms.author: jomondi
 ms.reviewer: ergleenl
 ms.custom: mode-other, enterprise-apps
 
-#Customer intent: As an administrator of a Microsoft Entra tenant, I want to enable single sign-on for an enterprise application.
+#customer intent: As an IT admin, I want to enable single sign-on for an enterprise application in Microsoft Entra, so that my users can sign in using their Microsoft Entra credentials and have a seamless authentication experience.
 ---
 
 # Enable single sign-on for an enterprise application

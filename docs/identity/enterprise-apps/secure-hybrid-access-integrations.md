@@ -13,6 +13,7 @@ ms.author: gasinh
 ms.collection: M365-identity-device-management
 ms.custom: not-enterprise-apps
 
+#customer intent: As an IT admin, I want to integrate legacy applications with Microsoft Entra ID using SAML or OIDC, so that I can enable single sign-on and apply Conditional Access policies for those applications.
 ---
 
 # Secure hybrid access with Microsoft Entra integration
