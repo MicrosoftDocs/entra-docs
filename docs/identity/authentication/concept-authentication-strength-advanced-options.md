@@ -22,7 +22,7 @@ You can configure advanced options for authentication with FIDO2 security keys a
 ## FIDO2 security key advanced options
 You can restrict the usage of some FIDO2 security keys based on their Authenticator Attestation GUIDs (AAGUIDs). The capability allows administrators to require a FIDO2 security key from a specific manufacture in order to access the resource. To require a specific FIDO2 security key, first complete the steps to create a [custom authentication strength](concept-authentication-strengths.md#custom-authentication-strengths). Then select **FIDO2 Security Key**, and click **Advanced options**. 
 
-:::image type="content" border="true" source="./media/concept-authentication-strengths/key.png" alt-text="Screenshot showing Advanced options.":::
+:::image type="content" border="true" source="./media/concept-authentication-strengths/key.png" alt-text="Screenshot showing Advanced options for FIDO2 security key.":::
 
 Next to **Allowed FIDO2 Keys** click **+**, copy the AAGUID value, and click **Save**.
 
@@ -35,19 +35,25 @@ You can configure whether certificates are bound in the system to single-factor 
 
 By using advanced options, you can require a specific certificate issuer or policy OID when users perform certificate-based authentication (CBA) to access sensitive resources. 
 
-For example, Contoso may issue three different types of multifactor certificates to employees by smart cards. They are distinguished by properties of the certificate, such as Policy OID or issuer:
-
-- One for Confidential clearance
-- One for Secret clearance
-- One for Top Secret clearance 
-
-Contoso wants to ensure that only users with the appropriate multifactor certificate can access data for each classification.  
+For example, Contoso issues smart cards to employees with three different types of multifactor certificates. One certificate is for confidential clearance, another for secret clearance, and a third is for top secret clearance. Each one is distinguished by properties of the certificate, such as Policy OID or issuer. Contoso wants to ensure that only users with the appropriate multifactor certificate can access data for each classification.  
 
 
-1.	Go to https://entra.microsoft.com/?Microsoft_AAD_ConditionalAccess_showCbaAdvancedOptions=true# > Entra ID > Protect and Secure > Conditional Access > Authentication Strength 
-2.	Click on New authentication Strength > provide a name > look for Certificate-based authentication (either single factor or multifactor) and click on the advanced setting underneath.
+1. Go to https://entra.microsoft.com/?Microsoft_AAD_ConditionalAccess_showCbaAdvancedOptions=true# > Entra ID > Protect and Secure > Conditional Access > Authentication Strength 
+1. Click on New authentication Strength > provide a name > look for Certificate-based authentication (either single-factor or multifactor) and click on the advanced setting underneath.
 
+   :::image type="content" border="true" source="./media/concept-authentication-strengths/certificate-advanced-options.png" alt-text="Screenshot showing Advanced options for certificate-based authentication.":::
+    
+1. Select certificate issuers from the drop-down or type the allowed policy OIDs. 
 
+   - If both **Allowed certificate issuer** AND **Allowed Policy OID** are configured, there's an AND relationship. The user has to use a certificate that satisfies both conditions.
+
+     :::image type="content" border="true" source="./media/concept-authentication-strengths/and.png" alt-text="Screenshot showing AND condition.":::
+
+   - Between the **Allowed certificate issuer** list and the **Allowed Policy OID** list, there's an OR relationship. The user has to use a certificate that satisfied one of the issuers or policy OIDs.
+
+     :::image type="content" border="true" source="./media/concept-authentication-strengths/or.png" alt-text="Screenshot showing OR condition.":::
+
+1. When finish click on “next”, review the configuration and click “Create”.
 
 ## Next steps
 
