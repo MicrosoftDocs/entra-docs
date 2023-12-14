@@ -12,7 +12,8 @@ ms.date: 10/30/2023
 ms.author: jomondi
 ms.reviewer: alamaral
 ms.custom: enterprise-apps-article
-# Customer intent: As an IT admin, I need to learn about single sign-on and my applications in Microsoft Entra ID.
+
+# Customer intent: As an IT admin responsible for managing user access to applications, I want to understand the different single sign-on (SSO) options available in Microsoft Entra ID, so that I can plan and deploy SSO for our organization's applications efficiently.
 ---
 
 # What is single sign-on in Microsoft Entra ID?
