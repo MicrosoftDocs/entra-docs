@@ -13,7 +13,8 @@ ms.author: jomondi
 ms.reviewer: sureshja
 ms.custom: enterprise-apps, has-azure-ad-ps-ref
 zone_pivot_groups: enterprise-apps-minus-portal
-#Customer intent: As an administrator of a Microsoft Entra tenant, I want to restore a soft deleted enterprise application.
+
+#Customer intent: As an IT admin managing enterprise applications in Microsoft Entra ID, I want to restore a soft deleted enterprise application, so that I can recover its previous configurations and policies within the 30-day window after deletion.
 ---
 
 # Restore an enterprise application in Microsoft Entra ID
