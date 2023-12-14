@@ -338,20 +338,23 @@ For the SSO plug-in to function properly, Apple devices should be allowed to rea
 
 Here is the minimum set of URLs that need to be allowed for the SSO plug-in to function:
 
-  - `*.cdn-apple.com`
-  - `*.networking.apple`
-  - `login.microsoftonline.com`
-  - `login.microsoft.com`
-  - `sts.windows.net`
-  - `login.partner.microsoftonline.cn`
-  - `login.chinacloudapi.cn`
-  - `login.microsoftonline.us`
-  - `login-us.microsoftonline.com`
+  - `app-site-association.cdn-apple.com`
+  - `app-site-association.networking.apple`
+  - `login.microsoftonline.com`(*)
+  - `login.microsoft.com`(*)
+  - `sts.windows.net`(*)
+  - `login.partner.microsoftonline.cn`(*)(**)
+  - `login.chinacloudapi.cn`(*)(**)
+  - `login.microsoftonline.us`(*)(**)
+  - `login-us.microsoftonline.com`(*)(**)
+
+(*) Allowing Microsoft domains is only required on operating system versions released before 2022. On the latest operating system versions, Apple relies fully on its CDN. 
+(**) You only need to allow sovereign cloud domains if you rely on those in your environment. 
 
 > [!WARNING]
-> If your organization uses proxy servers that intercept SSL traffic for scenarios like data loss prevention or tenant restrictions, ensure that traffic to these URLs are excluded from TLS break-and-inspect. Failure to exclude these URLs may cause interference with client certificate authentication, cause issues with device registration, and device-based Conditional Access.
+> If your organization uses proxy servers that intercept SSL traffic for scenarios like data loss prevention or tenant restrictions, ensure that traffic to these URLs are excluded from TLS break-and-inspect. Failure to exclude these URLs will cause interference with client certificate authentication, cause issues with device registration, and device-based Conditional Access. **SSO plugin will not work reliably without fully excluding Apple CDN domains from interception, and you will experience intermittent issues until you do so. **
 
-If your organization blocks these URLs users may see errors like `1012 NSURLErrorDomain error` or `1000 com.apple.AuthenticationServices.AuthorizationError`.
+If your organization blocks these URLs users may see errors like `1012 NSURLErrorDomain error`, `1000 com.apple.AuthenticationServices.AuthorizationError` or `1001 Unexpected`.
 
 Other Apple URLs that may need to be allowed are documented in their support article, [Use Apple products on enterprise networks](https://support.apple.com/HT210060).
 
