@@ -10,7 +10,7 @@ ms.reviewer: joflore, kkrishna
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-#Customer intent:
+#Customer intent: As a developer integrating authentication into my application, I want to understand how to use Conditional Access authentication context, so that I can apply granular policies for access to sensitive data and actions within my app.
 ---
 
 # Developer guide to Conditional Access authentication context

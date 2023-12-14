@@ -12,6 +12,8 @@ ms.author: cmulligan
 author: csmulligan
 manager: celestedg
 ms.collection: M365-identity-device-management
+
+# Customer intent: As an IT admin managing collaboration between organizations, I want to configure B2B direct connect settings, so that I can control inbound and outbound access for users and groups from external organizations and ensure secure collaboration.
 ---
 
 # B2B direct connect overview
