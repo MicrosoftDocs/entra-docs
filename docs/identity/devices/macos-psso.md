@@ -23,7 +23,7 @@ There are three different authentication methods which determines the end-user e
 * **Smart card**: The user signs in to the machine using an external smart card, or smart card-compatible hard token (eg. Yubikey). Once the device is unlocked, the smart card is used with Microsoft Entra ID to grant SSO across apps that use Microsoft Entra ID for authentication.
 * **Password as authentication method**: This syncs the user’s Microsoft Entra ID password with the local account as well as enables SSO across apps that use Microsoft Entra ID for authentication.
 
-Powered by the [Microsoft Enterprise SSO plug in Apple devices](../identity-platform/apple-sso-plugin.md), PSSO;
+Powered by the [Microsoft Enterprise SSO plug in Apple devices](../../identity-platform/apple-sso-plugin.md), PSSO;
 
 * Allows users to go passwordless by using Touch ID.
 * Uses phish resistant credentials, based on Windows Hello for Business technology.
@@ -44,9 +44,9 @@ To deploy Platform SSO for macOS, you'll need the meet following minimum require
 
 You can find more information and instructions on how to deploy Platform SSO for macOS in these articles.
 
-* [Deploy macOS Platform Single Sign-on as an administrator](../identity/devices/enroll-macos-admin.md)
-* [Join a Mac device with Microsoft Entra ID during the out of box experience](../identity/devices/device-join-macos-platform-single-sign-on.md)
-* [Register a Mac device with macOS Platform Single Sign-On using Company Portal](../identity/devices/device-registration-macos-platform-single-sign-on.md)
+* [Deploy macOS Platform Single Sign-on as an administrator](enroll-macos-admin.md)
+* [Join a Mac device with Microsoft Entra ID during the out of box experience](device-join-macos-platform-single-sign-on.md)
+* [Register a Mac device with macOS Platform Single Sign-On using Company Portal](device-registration-macos-platform-single-sign-on.md)
 
 ## Passwordless authentication
 
@@ -54,8 +54,8 @@ Passwords are a primary attack vector for bad actors. They use social engineerin
 
 Learn how you can use Platform SSO for macOS to enable passwordless authentication for your organization.
 
-* [Passwordless authentication options for Microsoft Entra ID](../identity/authentication/concept-authentication-passwordless.md#macos-platform-sso)
-* [Plan a passwordless authentication deployment in Microsoft Entra ID](https://review.learn.microsoft.com/en-us/entra/identity/authentication/howto-authentication-passwordless-deployment)
+* [Passwordless authentication options for Microsoft Entra ID](../../identity/authentication/concept-authentication-passwordless.md#macos-platform-sso)
+* [Plan a passwordless authentication deployment in Microsoft Entra ID](../../identity/authentication/howto-authentication-passwordless-deployment)
 
 ## National Institute of Standards and Technology (NIST)
 
@@ -63,11 +63,11 @@ The National Institute of Standards and Technology (NIST) is a non-regulatory fe
 
 You can learn more about using macOS Platform SSO to meet NIST requirements in these articles.
 
-* [Configure Microsoft Entra ID to meet NIST authenticator assurance levels](../standards/nist-overview.md)
-* [NIST authenticator types and aligned Microsoft Entra methods](../standards/nist-authenticator-types.md).
-* [NIST authenticator assurance level 3 by using Microsoft Entra ID](../standards/nist-authenticator-assurance-level-3)
+* [Configure Microsoft Entra ID to meet NIST authenticator assurance levels](../../standards/nist-overview.md)
+* [NIST authenticator types and aligned Microsoft Entra methods](../../standards/nist-authenticator-types.md).
+* [NIST authenticator assurance level 3 by using Microsoft Entra ID](../../standards/nist-authenticator-assurance-level-3)
 
 ## Troubleshooting 
 
-If you experience issues when implementing macOS Platform SSO, please refer to our documentation on [MacOS Platform single sign-on known issues and troubleshooting](/identity/devices/troubleshoot-macos-platform-single-sign-on-extension.md)
+If you experience issues when implementing macOS Platform SSO, please refer to our documentation on [MacOS Platform single sign-on known issues and troubleshooting](troubleshoot-macos-platform-single-sign-on-extension.md)
 
