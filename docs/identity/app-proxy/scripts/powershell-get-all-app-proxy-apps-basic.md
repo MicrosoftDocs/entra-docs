@@ -9,7 +9,7 @@ ms.subservice: app-proxy
 ms.workload: identity
 ms.custom: has-azure-ad-ps-ref
 ms.topic: sample
-ms.date: 08/29/2022
+ms.date: 12/14/2023
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
@@ -28,7 +28,59 @@ This sample requires the [Microsoft Graph Beta PowerShell module](/powershell/mi
 
 ## Sample script
 
-[!code-azurepowershell[main](~/../powershell_scripts/application-proxy/get-all-appproxy-apps-basic.ps1 "Get all Application Proxy apps")]
+```
+# This sample script gets all Microsoft Entra Application Proxy applications (AppId, Name of the app, ObjID).
+#
+# Version 1.0
+#
+# This script requires PowerShell 5.1 (x64) or beyond and one of the following modules:
+#
+# Microsoft.Graph.Beta ver 2.10 or newer
+#
+# Before you begin:
+#    
+#    Required Microsoft Entra role: Global Administrator or Application Administrator or Application Developer 
+#    or appropriate custom permissions as documented https://learn.microsoft.com/en-us/azure/active-directory/roles/custom-enterprise-app-permissions
+#
+# 
+
+Import-Module Microsoft.Graph.Beta.Applications
+
+Connect-MgGraph -Scope Directory.Read.All -NoWelcome
+
+Write-Host "Reading service principals. This operation might take longer..." -BackgroundColor "Black" -ForegroundColor "Green"
+
+$allApps = Get-MgBetaServicePrincipal -Top 100000 | where-object {$_.Tags -Contains "WindowsAzureActiveDirectoryOnPremApp"}
+
+$numberofAadapApps = 0
+
+Write-Host "List of the configured Microsoft Entra application proxy applications"
+Write-Host
+
+foreach ($item in $allApps) {
+
+ $aadapApp = $null
+ 
+ $aadapAppId =  Get-MgBetaApplication | where-object {$_.AppId -eq $item.AppId}
+ $aadapApp = Get-MgBetaApplication -ApplicationId $aadapAppId.Id -ErrorAction SilentlyContinue -select OnPremisesPublishing | select OnPremisesPublishing -expand OnPremisesPublishing | Format-List -Property InternalUrl, ExternalUrl, AlternateUrl
+ 
+
+  if ($aadapApp -ne $null) {
+   
+  Write-Host $item.DisplayName"(AppId: " $item.AppId ", ObjId:" $item.Id")"
+  Write-Host
+
+  $numberofAadapApps = $numberofAadapApps + 1      
+
+  }
+}
+
+Write-Host "Number of the Microsoft Entra application proxy applications: " $numberofAadapApps
+
+Write-Host "Finished." -BackgroundColor "Black" -ForegroundColor "Green"
+Write-Host "To disconnect from Microsoft Graph, please use the Disconnect-MgGraph cmdlet."
+
+```
 
 ## Script explanation
 
