@@ -16,6 +16,7 @@ ms.author: billmath
 ---
 
 # Microsoft Entra ID Governance licensing fundamentals
+This following document discusses Microsoft Entra ID Governance licensing. It is intended for IT decision makers, IT administrators, and IT professionals who are considering Microsoft Entra ID Governance services for their organizations. 
 
 ## Types of licenses
 
