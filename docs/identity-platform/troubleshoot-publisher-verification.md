@@ -10,6 +10,7 @@ ms.reviewer: xurobert
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: troubleshooting
+#Customer intent: As a developer troubleshooting publisher verification, I want to understand the common issues and potential error codes related to the process, so that I can resolve any issues and successfully complete the verification for my application.
 ---
 
 # Troubleshoot publisher verification

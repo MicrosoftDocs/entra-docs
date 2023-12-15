@@ -10,7 +10,7 @@ ms.reviewer: xurobert
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: how-to
-#Customer intent:
+#Customer intent: As a developer integrating my app with the Microsoft identity platform, I want to complete the publisher verification process for my app registration, so that users can see that my app is publisher verified and trust its authenticity.
 ---
 
 # Mark your app as publisher verified
