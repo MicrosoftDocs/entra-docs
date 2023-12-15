@@ -154,7 +154,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 ## Configure PolicyStat SSO
 
-1. In a different web browser window, log into your PolicyStat company site as an administrator.
+1. In a different web browser window, log in to your PolicyStat company site as an administrator.
 
 1. Click the **Admin** tab, and then click **Single Sign-On Configuration** in left navigation pane.
    
