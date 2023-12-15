@@ -37,14 +37,12 @@ To enable it, an administrator needs to configure PSSO through Microsoft Intune 
 To deploy Platform SSO for macOS, you'll need the meet following minimum requirements.
 
 * macOS 13 Ventura or newer (macOS 14 Sonoma for smart card authentication).
-* [Microsoft Intune Company Portal app](/intune/apps/apps-company-portal-macos) (version 5.2307.99.2235 only)
 * [Microsoft Authenticator](https://support.microsoft.com/en-us/account-billing/how-to-use-the-microsoft-authenticator-app-9783c865-0308-42fb-a519-8cf666fe0acc)
 
 ## Deployment
 
 You can find more information and instructions on how to deploy Platform SSO for macOS in these articles.
 
-* [Deploy macOS Platform Single Sign-on as an administrator](enroll-macos-admin.md)
 * [Join a Mac device with Microsoft Entra ID during the out of box experience](device-join-macos-platform-single-sign-on.md)
 * [Register a Mac device with macOS Platform Single Sign-On using Company Portal](device-registration-macos-platform-single-sign-on.md)
 
