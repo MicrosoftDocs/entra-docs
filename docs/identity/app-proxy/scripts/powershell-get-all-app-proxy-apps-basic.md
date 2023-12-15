@@ -28,7 +28,7 @@ This sample requires the [Microsoft Graph Beta PowerShell module](/powershell/mi
 
 ## Sample script
 
-```
+```powershell
 # This sample script gets all Microsoft Entra Application Proxy applications (AppId, Name of the app, ObjID).
 #
 # Version 1.0
