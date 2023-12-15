@@ -92,9 +92,13 @@ Follow these steps to enable Microsoft Entra SSO.
 
     ![Screenshot shows the User access URL.](./media/hiretual-tutorial/access-url.png "SSO Configuration")
 
-1. On the **Set up single sign-on with SAML** page, In the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
+1. On the **Set-up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 
-	![The Certificate download link](common/copy-metadataurl.png)
+    ![Screenshot shows the Certificate download link.](common/metadataxml.png "Certificate")
+
+1. On the **Set up hireEZ-SSO** section, copy the appropriate URL(s) based on your requirement.
+
+	![Screenshot shows to copy configuration appropriate URL.](common/copy-configuration-urls.png "Attributes")
 
 <a name='create-an-azure-ad-test-user'></a>
 
@@ -136,18 +140,18 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
     ![Screenshot shows the SSO Configuration.](./media/hiretual-tutorial/configuration.png "SSO Configuration")
 
-    1. In the **SAML2.O SSO URL** textbox, paste the **User access URL** which you copied previously.
+    1. In the **SAML2.O SSO URL** textbox, paste the **Login URL** which you have copied from the Microsoft Entra admin center.
 
-    1. Copy **Entity ID** value from the metadata file and paste in the **Identity Provider Issuer** textbox.
+    1. In the **Identity Provider Issuer** textbox, paste the **Microsoft Entra Identifier** which you have copied from the Microsoft Entra admin center.
 
-    1. Copy **X509 Certificate** from the metadata file and paste the content in the **Certificate** textbox.
+    1. Copy the content from the **Federation Metadata XML** file, which you have downloaded from the Microsoft Entra admin center and paste it in the **Certificate** textbox.
 
     1. Enable **Single Sign-On Connection Status** button.
 
     1. Test your Single Sign-On integration first and then enable **Admin SP-Initiated Single Sign-On** button. 
 
     > [!NOTE]
-    > If your Single Sign-On configuration has any errors or you have trouble to login to hireEZ-SSO Web App/Extension after you connected Admin SP-Initiated Single Sign-On, please contact [hireEZ-SSO support team](mailto:support@hiretual.com).
+    > If your Single Sign-On configuration has any errors or you had trouble to login to hireEZ-SSO Web App/Extension after you connected Admin SP-Initiated Single Sign-On, please contact [hireEZ-SSO support team](mailto:support@hiretual.com).
     
 ### Create hireEZ-SSO test user
 
@@ -159,7 +163,7 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-* Click on **Test this application**, this will redirect to hireEZ-SSO Sign on URL where you can initiate the login flow.  
+* Click on **Test this application**, this will redirect to hireEZ-SSO Sign-on URL where you can initiate the login flow.  
 
 * Go to hireEZ-SSO Sign-on URL directly and initiate the login flow from there.
 
@@ -167,7 +171,7 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * Click on **Test this application**, and you should be automatically signed in to the hireEZ-SSO for which you set up the SSO. 
 
-You can also use Microsoft My Apps to test the application in any mode. When you click the hireEZ-SSO tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the hireEZ-SSO for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+You can also use Microsoft My Apps to test the application in any mode. When you click the hireEZ-SSO tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the hireEZ-SSO for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Next steps
 
