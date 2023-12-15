@@ -109,11 +109,11 @@ items:
   - name: Deployment guides
     expanded: false
     items:
-      - name: Deployment guide information for Proof of Concept
+      - name: Deployment guide information
         href: ~/architecture/sse-deployment-guide-intro.md?toc=/entra/global-secure-access/toc.json&bc=/entra/global-secure-access/breadcrumb/toc.json
-      - name: Deployment guide for Microsoft 365 traffic
+      - name: Deploying Microsoft Entra Internet Access for Microsoft 365
         href: ~/architecture/sse-deployment-guide-m365.md?toc=/entra/global-secure-access/toc.json&bc=/entra/global-secure-access/breadcrumb/toc.json
-      - name: Deployment guide for private access traffic
+      - name: Deploying Microsoft Entra Private Access
         href: ~/architecture/sse-deployment-guide-private-access.md?toc=/entra/global-secure-access/toc.json&bc=/entra/global-secure-access/breadcrumb/toc.json
 - name: Reference
   expanded: false
