@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.subservice: report-monitor
 ms.date: 12/15/2023
 ms.author: sarahlipsey
-ms.reviewer: egreenberg14
+ms.reviewer: egreenberg
 
 # Customer intent: As an IT admin, I want to learn how to configure the prerequisites that are required to access the Microsoft Entra API for activity logs so that I can access the data programmatically.
 

@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.subservice: report-monitor
 ms.date: 12/15/2023
 ms.author: sarahlipsey
-ms.reviewer: egreenberg14  
+ms.reviewer: egreenberg
 
 # Customer intent: As a Microsoft Entra administrator, I want a tool that gives me the right level of insights into the sign-in activities in my system so that I can easily diagnose and solve problems when they occur.
 

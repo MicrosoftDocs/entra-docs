@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.subservice: report-monitor
 ms.date: 12/15/2023
 ms.author: sarahlipsey
-ms.reviewer: egreenberg14
+ms.reviewer: egreenberg
 
 # Customer intent: As an IT admin, I want to learn about the different ways to access activity logs in Microsoft Entra ID so that I can choose the right method for my scenario and organization.
 

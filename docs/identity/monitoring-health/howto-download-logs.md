@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.subservice: report-monitor
 ms.date: 12/15/2023
 ms.author: sarahlipsey
-ms.reviewer: egreenberg14
+ms.reviewer: egreenberg
 
 # Customer intent: As an IT admin, I want to learn how to download the audit, sign-in, and provisioning log data for manual storage in Microsoft Entra ID.
 
