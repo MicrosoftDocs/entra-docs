@@ -28,6 +28,8 @@
     href: device-sso-to-on-premises-resources.md
   - name: Primary Refresh Tokens
     href: concept-primary-refresh-token.md
+  - name: macOS Platform Single Sign On Overview 
+    href: macos-psso.md
 - name: How-to guides
   expanded: false
   items:

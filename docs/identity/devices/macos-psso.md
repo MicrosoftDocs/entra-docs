@@ -15,13 +15,13 @@ manager: celested
 
 # macOS Platform Single Sign On (PSSO) Overview (preview)
 
-MacOS Platform single sign-on (PSSO) is a feature that enables users to sign in to Mac devices using their Microsoft Entra ID credentials. This feature provides benefits for admins by simplifying the sign-in process for users and reducing the number of passwords they need to remember. It also allows users to authenticate with Microsoft Entra ID with a smart card or hardware-bound key. This improves the end-user experience by not having to remember two separate passwords as well as diminishes the need for admins to manage the local account password. 
+MacOS Platform single sign-on (PSSO) is a feature that enables users to sign in to Mac devices using their Microsoft Entra ID credentials. This feature provides benefits for admins by simplifying the sign-in process for users and reducing the number of passwords they need to remember. It also allows users to authenticate with Microsoft Entra ID with a smart card or hardware-bound key. This feature improves the end-user experience by not having to remember two separate passwords and diminishes the need for admins to manage the local account password. 
 
-There are three different authentication methods which determines the end-user experience;
+There are three different authentication methods that determine the end-user experience;
 
-* **Secure Enclave key as authentication method**: This provisions a secure enclave backed hardware-bound cryptographic key that is used for SSO across apps that use Microsoft Entra ID for authentication. The user’s local account password is not affected and is required to log on to the Mac.
-* **Smart card**: The user signs in to the machine using an external smart card, or smart card-compatible hard token (eg. Yubikey). Once the device is unlocked, the smart card is used with Microsoft Entra ID to grant SSO across apps that use Microsoft Entra ID for authentication.
-* **Password as authentication method**: This syncs the user’s Microsoft Entra ID password with the local account as well as enables SSO across apps that use Microsoft Entra ID for authentication.
+* **Secure Enclave key as authentication method**: Provisions a secure enclave backed hardware-bound cryptographic key that is used for SSO across apps that use Microsoft Entra ID for authentication. The user’s local account password is not affected and is required to log on to the Mac.
+* **Smart card**: The user signs in to the machine using an external smart card, or smart card-compatible hard token (for example, Yubikey). Once the device is unlocked, the smart card is used with Microsoft Entra ID to grant SSO across apps that use Microsoft Entra ID for authentication.
+* **Password as authentication method**: Syncs the user’s Microsoft Entra ID password with the local account and enables SSO across apps that use Microsoft Entra ID for authentication.
 
 Powered by the [Microsoft Enterprise SSO plug in Apple devices](../../identity-platform/apple-sso-plugin.md), PSSO;
 
@@ -30,11 +30,11 @@ Powered by the [Microsoft Enterprise SSO plug in Apple devices](../../identity-p
 * Saves customer organizations money by removing the need for security keys.
 * Advances Zero Trust objectives using integration with the Secure Enclave.
 
-To enable it, an administrator needs to configure PSSO through Microsoft Intune or other supported MDM. Depending on the setup, the end-user can setup their device with PSSO via secure enclave, smart card or password based authentication method.
+To enable it, an administrator needs to configure PSSO through Microsoft Intune or other supported MDM. Depending on the set up, the end-user can setup their device with PSSO via secure enclave, smart card or password based authentication method.
 
 ## Requirements
 
-To deploy Platform SSO for macOS, you'll need the meet following minimum requirements.
+To deploy Platform SSO for macOS, you need the meet following minimum requirements.
 
 * macOS 13 Ventura or newer (macOS 14 Sonoma for smart card authentication).
 * [Microsoft Authenticator](https://support.microsoft.com/en-us/account-billing/how-to-use-the-microsoft-authenticator-app-9783c865-0308-42fb-a519-8cf666fe0acc)
@@ -67,5 +67,5 @@ You can learn more about using macOS Platform SSO to meet NIST requirements in t
 
 ## Troubleshooting 
 
-If you experience issues when implementing macOS Platform SSO, please refer to our documentation on [MacOS Platform single sign-on known issues and troubleshooting](troubleshoot-macos-platform-single-sign-on-extension.md)
+If you experience issues when implementing macOS Platform SSO, refer to our documentation on [MacOS Platform single sign-on known issues and troubleshooting](troubleshoot-macos-platform-single-sign-on-extension.md)
 
