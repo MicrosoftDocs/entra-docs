@@ -96,7 +96,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
     ![Screenshot shows the Certificate download link.](common/metadataxml.png "Certificate")
 
-1. On the **Set up CloudBees CI** section, copy the appropriate URL(s) based on your requirement.
+1. On the **Set up hireEZ-SSO** section, copy the appropriate URL(s) based on your requirement.
 
 	![Screenshot shows to copy configuration appropriate URL.](common/copy-configuration-urls.png "Attributes")
 
