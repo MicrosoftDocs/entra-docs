@@ -26,6 +26,8 @@ The Microsoft Entra provisioning service supports a [SCIM 2.0](https://techcommu
 
 <a name='download-install-and-configure-the-azure-ad-connect-provisioning-agent-package'></a>
 
+[!INCLUDE [app-provisioning-provisioning-agent-install.md](~/includes/app-provisioning-provisioning-agent-install.md)]
+
 ## Download, install, and configure the Microsoft Entra Connect Provisioning Agent Package
 
 If you have already downloaded the provisioning agent and configured it for another on-premises application, then continue reading in the next section.

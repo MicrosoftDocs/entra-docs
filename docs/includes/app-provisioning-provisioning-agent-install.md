@@ -1,0 +1,25 @@
+## Install and configure the Microsoft Entra Connect Provisioning Agent
+
+If you have already downloaded the provisioning agent and configured it for another on-premises application, then continue reading in the next section.
+ 1. Sign in to the Azure portal.
+ 2. Go to **Enterprise applications** and select **New application**.
+ 3. Search for the **On-premises ECMA app** application, give the app a name, and select **Create** to add it to your tenant.
+ 4. From the menu, navigate to the **Provisioning** page of your application.
+ 5. Select **Get started**.
+ 6. On the **Provisioning** page, change the mode to **Automatic**.
+ 
+ :::image type="content" source="media/app-provisioning-sql/configure-7.png" alt-text="Screenshot of selecting Automatic." lightbox="media/app-provisioning-sql/configure-7.png":::
+
+ 7. Under **On-premises Connectivity**, select **Download and install**, and select **Accept terms & download**.
+ 
+ :::image type="content" source="media/app-provisioning-sql/download-1.png" alt-text="Screenshot of download location for agent." lightbox="media/app-provisioning-sql/download-1.png":::
+     
+ 8. Leave the portal and open the provisioning agent installer, agree to the terms of service, and select **next**.
+ 9. Open the provisioning agent wizard.
+ 10. In the **Select Extension** step, select **On-premises application provisioning** and then select **Next**.
+
+ :::image type="content" source="media/app-provisioning-sql/sync-agent-select-on-premises.png" alt-text="Screenshot that shows how to select on-premises provisioning." lightbox="media/app-provisioning-sql/sync-agent-select-on-premises.png":::
+    
+ 11. The provisioning agent will use the operating system's web browser to display a popup window for you to authenticate to Microsoft Entra ID, and potentially also your organization's identity provider.  If you are using Internet Explorer as the browser on Windows Server, then you may need to add Microsoft web sites to your browser's trusted site list to allow JavaScript to run correctly.
+ 12. Provide credentials for a Microsoft Entra administrator when you're prompted to authorize. The user is required to have the Hybrid Identity Administrator or Global Administrator role.
+ 13. Select **Confirm** to confirm the setting. Once installation is successful, you can select **Exit**, and also close the Provisioning Agent Package installer.
