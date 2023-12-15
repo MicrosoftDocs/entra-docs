@@ -23,7 +23,7 @@ This article describes the logs that you can route to an endpoint with Microsoft
 
 Setting up an endpoint, such as an event hub or storage account, might require different roles and licenses. To create or edit a new diagnostic setting, you need a user who's a **Security Administrator** or **Global Administrator** for the Microsoft Entra tenant.
 
-To help decide which log routing option is best for you, see [How to access activity logs](howto-access-activity-logs.md). The overall process and requirements for each endpoint type are covered in the following articles: 
+To help decide which log routing option is best for you, see [How to access activity logs](howto-access-activity-logs.md). The overall process and requirements for each endpoint type are covered in the following articles:
 
 - [Send logs to a Log Analytics workspace to integrate with Azure Monitor logs](howto-integrate-activity-logs-with-azure-monitor-logs.md)
 - [Archive logs to a storage account](howto-archive-logs-to-storage-account.md)
