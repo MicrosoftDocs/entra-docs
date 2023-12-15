@@ -97,7 +97,7 @@ If the CBA-enabled user can't use an MF cert, such as on mobile device without s
    1. Authentication Policy Administrator adds a phone number and allows voice/text message authentication for the user account.
 
 
-## MFA with single-factor certificate-based authentication
+## MFA with single-factor certificate-based authentication (Preview)
 
 Microsoft Entra CBA can be used as a second factor to meet MFA requirements with single-factor certificates. 
 Some of the supported combinations are:
@@ -204,13 +204,13 @@ Mapping types based on user names and email addresses are considered low-affinit
 |:--------------------------|:----------------------------------------:|:----------------------:|:----:|
 |PrincipalName | `X509:<PN>bob@woodgrove.com` | userPrincipalName <br> onPremisesUserPrincipalName <br> certificateUserIds | low-affinity |
 |RFC822Name	| `X509:<RFC822>user@woodgrove.com` | userPrincipalName <br> onPremisesUserPrincipalName <br> certificateUserIds | low-affinity |
-|IssuerAndSubject | `X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<S>DC=com,DC=contoso,OU=UserAccounts,CN=mfatest` | certificateUserIds | low-affinity |
-|Subject | `X509:<S>DC=com,DC=contoso,OU=UserAccounts,CN=mfatest`  | certificateUserIds | low-affinity |
+|IssuerAndSubject (preview) | `X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<S>DC=com,DC=contoso,OU=UserAccounts,CN=mfatest` | certificateUserIds | low-affinity |
+|Subject (preview)| `X509:<S>DC=com,DC=contoso,OU=UserAccounts,CN=mfatest`  | certificateUserIds | low-affinity |
 |SKI | `X509:<SKI>123456789abcdef` | certificateUserIds | high-affinity |
 |SHA1PublicKey | `X509:<SHA1-PUKEY>123456789abcdef` | certificateUserIds | high-affinity |
-|IssuerAndSerialNumber | `X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<SR>b24134139f069b49997212a86ba0ef48` <br> To get the correct value for serial number, run this command and store the value shown in CertificateUserIds:<br> **Syntax**:<br> `Certutil –dump –v [~certificate path~] >> [~dumpFile path~]` <br> **Example**: <br> `certutil -dump -v firstusercert.cer >> firstCertDump.txt` | certificateUserIds | high-affinity |
+|IssuerAndSerialNumber (preview) | `X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<SR>b24134139f069b49997212a86ba0ef48` <br> To get the correct value for serial number, run this command and store the value shown in CertificateUserIds:<br> **Syntax**:<br> `Certutil –dump –v [~certificate path~] >> [~dumpFile path~]` <br> **Example**: <br> `certutil -dump -v firstusercert.cer >> firstCertDump.txt` | certificateUserIds | high-affinity |
 
-### Define Affinity binding at the tenant level and override with custom rules
+### Define Affinity binding at the tenant level and override with custom rules (Preview)
 
 With this feature an Authentication Policy Administrator can configure whether a user can be authenticated by using low-affinity or high-affinity username binding mapping. You can set **Required affinity binding** for the tenant, which applies to all users. You can also override the tenant-wide default value by creating custom rules based or Issuer and Policy OID, or Policy OID, or Issuer.
 
