@@ -12,6 +12,8 @@ ms.date: 03/03/2023
 ms.author: jomondi
 ms.reviewer: sureshja, saumadan
 ms.custom: enterprise-apps
+
+#customer intent: As an application administrator managing certificates for apps using Microsoft Entra ID as an Identity Provider, I want to generate a list of expiring SAML signing certificates, so that I can proactively renew them before they expire.
 ---
 
 # Application Management certificates frequently asked questions

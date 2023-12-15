@@ -13,15 +13,15 @@ ms.author: jomondi
 ms.reviewer: sureshja
 zone_pivot_groups: enterprise-apps-all
 ms.custom: enterprise-apps, has-azure-ad-ps-ref
-#Customer intent: As an administrator of a Microsoft Entra tenant, I want to delete an enterprise application.
+
+#Customer intent: As an IT admin, I want to delete an enterprise application from my Microsoft Entra tenant, so that I can remove unnecessary applications and manage my tenant efficiently.
 ---
 
 # Delete an enterprise application
 
-In this article, you learn how to delete an enterprise application that was added to your Microsoft Entra tenant. 
+In this article, you learn how to delete an enterprise application that was added to your Microsoft Entra tenant.
 
 When you delete and enterprise application, it's held in a suspended state in the recycle bin for 30 days. During the 30 days, you can [Restore the application](restore-application.md). Deleted items are automatically hard deleted after the 30-day period. For more information on frequently asked questions about deletion and recovery of applications, see [Deleting and recovering applications FAQs](delete-recover-faq.yml).
-
 
 ## Prerequisites
 

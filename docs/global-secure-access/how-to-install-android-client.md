@@ -11,6 +11,9 @@ ms.reviewer: dhruvinshah
 ---
 # Global Secure Access Client for Android (preview)
 
+> [!IMPORTANT]
+> The Android client for Global Secure Access will be available starting December 19th, 2023.
+
 The Global Secure Access Client can be deployed to compliant Android devices using Microsoft Intune and Microsoft Defender for Endpoint on Android. The Android client is built into the Defender for Endpoint Android app, which streamlines how your end users connect to Global Secure Access. The Global Secure Access Android Client makes it easier for your end users to connect to the resources they need without having to manually configure VPN settings on their devices.
 
 This article explains the prerequisites and how to deploy the client onto Android devices.
@@ -87,7 +90,7 @@ The detailed process for deploying Defender is as follows:
 1. On the **Review + create** tab, confirm the information is correct and select **Create**.
 1. On the new app details page, select **Device install status** and confirm the app is installed.
 
-Users need to enable the client in the Defender app. Proceed to the next section to confirm the app is installed and for how to enable the client.
+**Users need to enable the client in the Defender app. It's disabled by default.** Proceed to the next section to confirm the app is installed and for how to enable the client.
 
 ### [Android Enterprise](#tab/android-enterprise)
 
@@ -124,7 +127,9 @@ The detailed process for deploying to the Google Play store is as follows:
 
     ![Screenshot of the Add group option.](media/how-to-install-android-client/intune-google-add-group.png)
 
-After you assign a group, the app is automatically installed in the *work profile* during the next sync of the device via the Company Portal app. Users need to enable the client in the Defender app. Proceed to the next section to confirm the app is installed and for how to enable the client.
+After you assign a group, the app is automatically installed in the *work profile* during the next sync of the device via the Company Portal app.
+
+**Users need to enable the client in the Defender app. It's disabled by default.** Proceed to the next section to confirm the app is installed and for how to enable the client.
 
 ---
 
@@ -134,7 +139,7 @@ Because of how the Android client is integrated with Defender for Endpoint, it's
 
 ![Screenshot of the Defender app with the Global Secure Access tile on the dashboard.](media/how-to-install-android-client/defender-endpoint-dashboard.png)
 
-The client is disabled by default when it's deployed to user devices. Users need to enable the client from the Defender app. Tap the toggle to enable the client.
+**The client is disabled by default when it's deployed to user devices.** Users need to enable the client from the Defender app. Tap the toggle to enable the client.
 
 ![Screenshot of the disabled Global Secure Access client.](media/how-to-install-android-client/defender-global-secure-access-disabled.png)
 

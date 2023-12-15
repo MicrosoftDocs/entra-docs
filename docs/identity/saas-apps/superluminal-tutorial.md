@@ -9,7 +9,7 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: how-to
-ms.date: 12/12/2023
+ms.date: 12/14/2023
 ms.author: jeedes
 
 ---
@@ -133,7 +133,7 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
 
 ## Configure Superluminal SSO
 
-To configure single sign-on on **Superluminal** side, you need to send the **App Federation Metadata Url** to [Superluminal support team](mailto:info@superluminal.eu). They set this setting to have the SAML SSO connection set properly on both sides.
+Please refer [this](https://portal.superluminal.eu/Documentation#sso) article for setting the SAML SSO connection properly on both sides or contact [Superluminal support team](mailto:info@superluminal.eu) for any queriers.
 
 ### Create Superluminal test user
 
@@ -143,9 +143,9 @@ In this section, a user called Britta Simon is created in Superluminal. Superlum
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
  
-* Click on **Test this application** in Microsoft Entra admin center. This will redirect to Superluminal Sign-on URL where you can initiate the login flow.
+* Click on **Test this application** in Microsoft Entra admin center. This will redirect to Superluminal Sign on URL where you can initiate the login flow.
  
-* Go to Superluminal Sign-on URL directly and initiate the login flow from there.
+* Go to Superluminal Sign on URL directly and initiate the login flow from there.
  
 * You can use Microsoft My Apps. When you click the Superluminal tile in the My Apps, this will redirect to Superluminal Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 

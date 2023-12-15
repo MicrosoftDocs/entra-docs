@@ -12,7 +12,8 @@ ms.date: 03/23/2023
 ms.author: jomondi
 ms.reviewer: alamaral
 ms.custom: mode-other, enterprise-apps
-#Customer intent: As an administrator of a Microsoft Entra tenant, I want to search for and view the enterprise applications in the tenant.
+
+#Customer intent: As an enterprise administrator, I want to view and search for enterprise applications in the Microsoft Entra admin center, so that I can manage and configure the applications in my tenant effectively.
 ---
 
 # Quickstart: View enterprise applications

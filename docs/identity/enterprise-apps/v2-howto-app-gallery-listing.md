@@ -12,6 +12,8 @@ ms.date: 09/22/2023
 ms.author: jomondi
 ms.reviewer: ergreenl
 ms.custom: kr2b-contr-experiment, enterprise-apps-article
+
+#customer intent: As a developer, I want to learn about the requirement for submitting my application to the Microsoft Entra application gallery, so that it can be publicly available for users to add to their tenants.
 ---
 
 # Submit a request to publish your application in Microsoft Entra application gallery

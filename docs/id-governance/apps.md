@@ -304,8 +304,10 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | SAML-based apps | | ●  |
 | [SAP Analytics Cloud](~/identity/saas-apps/sap-analytics-cloud-provisioning-tutorial.md) | ● | ● |
 | [SAP Cloud Platform](~/identity/saas-apps/sap-cloud-platform-identity-authentication-provisioning-tutorial.md) | ● | ● |
+| [SAP Fieldglass](~/identity/saas-apps/fieldglass-tutorial.md) | |  ● |
 | [SAP R/3 and ERP](~/identity/app-provisioning/on-premises-sap-connector-configure.md) | ● |  |
 | [SAP HANA](~/identity/saas-apps/saphana-tutorial.md) | ● | ● |
+| [SAP NetWeaver](~/identity/saas-apps/sap-netweaver-tutorial.md) | |  ● |
 | [SAP SuccessFactors to Active Directory](~/identity/saas-apps/sap-successfactors-inbound-provisioning-tutorial.md) | ● | ● |
 | [SAP SuccessFactors to Microsoft Entra ID](~/identity/saas-apps/sap-successfactors-inbound-provisioning-cloud-only-tutorial.md) | ● | ● |
 | [SAP SuccessFactors Writeback](~/identity/saas-apps/sap-successfactors-writeback-tutorial.md) | ● | ● |

@@ -14,7 +14,7 @@ ms.collection: M365-identity-device-management
 ms.reviewer: lenalepa
 ms.custom: enterprise-apps
 
-#customer intent: As an admin, I want to enable and create collections for My Apps portal in Microsoft Entra ID so that I can create a simpler My Apps experience for users.
+#customer intent: As an admin managing the My Apps portal, I want to create collections to better organize the applications available to users, so that they can easily find and access the applications that are relevant to their job role, task, or project.
 ---
 
 # Create collections on the My Apps portal

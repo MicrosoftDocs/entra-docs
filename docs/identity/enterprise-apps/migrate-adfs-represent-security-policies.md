@@ -11,6 +11,8 @@ ms.topic: conceptual
 ms.date: 05/31/2023
 ms.author: jomondi
 ms.reviewer: gasinh
+
+#customer intent: As an IT admin migrating app authentication to Microsoft Entra ID, I want to map authorization and multi-factor authentication rules from AD FS to Microsoft Entra ID, so that I can meet security requirements and make the app migration process easier.
 ---
 
 # Represent AD FS security policies in Microsoft Entra ID: Mappings and examples
