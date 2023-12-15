@@ -59,7 +59,7 @@ Identities can be granted access to many types of applications. Examples include
 
 * Microsoft productivity services such as Exchange Online, Microsoft Teams, and SharePoint Online
 
-* Microsoft IT services such as Azure Sentinel, Microsoft Intune, and Microsoft 365 Defender ATP
+* Microsoft IT services such as Azure Sentinel, Microsoft Intune, and Microsoft Defender XDR ATP
 
 * Microsoft Developer tools such as Azure DevOps and Microsoft Graph API
 

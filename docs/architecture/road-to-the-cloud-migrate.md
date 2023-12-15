@@ -176,7 +176,7 @@ The following tools can help you discover applications that use LDAP:
 
 * [Event1644Reader](/troubleshoot/windows-server/identity/event1644reader-analyze-ldap-query-performance): Sample tool for collecting data on LDAP queries made to domain controllers by using field engineering logs.
 
-* [Microsoft 365 Defender for Identity](/defender-for-identity/monitored-activities): Security solution that uses a sign-in operations monitoring capability. (Note that it captures binds by using LDAP, not Secure LDAP.)
+* [Microsoft Defender XDR for Identity](/defender-for-identity/monitored-activities): Security solution that uses a sign-in operations monitoring capability. (Note that it captures binds by using LDAP, not Secure LDAP.)
 
 * [PSLDAPQueryLogging](https://github.com/RamblingCookieMonster/PSLDAPQueryLogging): GitHub tool for reporting on LDAP queries.
 
@@ -213,7 +213,7 @@ Use the following table to determine what Azure-based tools you can use to repla
 
 | Management area | On-premises (Active Directory) feature | Equivalent Microsoft Entra feature |
 | - | - | -|
-| Security policy management| GPO, Microsoft Configuration Manager| [Microsoft 365 Defender for Cloud](https://azure.microsoft.com/services/security-center/) |
+| Security policy management| GPO, Microsoft Configuration Manager| [Microsoft Defender XDR for Cloud](https://azure.microsoft.com/services/security-center/) |
 | Update management| Microsoft Configuration Manager, Windows Server Update Services| [Azure Automation Update Management](/azure/automation/update-management/overview) |
 | Configuration management| GPO, Microsoft Configuration Manager| [Azure Automation State Configuration](/azure/automation/automation-dsc-overview) |
 | Monitoring| System Center Operations Manager| [Azure Monitor Log Analytics](/azure/azure-monitor/logs/log-analytics-overview) |

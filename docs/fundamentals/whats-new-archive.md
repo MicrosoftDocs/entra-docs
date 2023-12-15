@@ -1728,13 +1728,13 @@ For more information, see: [Block users from viewing their BitLocker keys (previ
 
 ---
 
-### Public Preview- Identity Protection Alerts in Microsoft 365 Defender
+### Public Preview- Identity Protection Alerts in Microsoft Defender XDR
 
 **Type:** New feature  
 **Service category:** Identity Protection  
 **Product capability:** Identity Security & Protection 
 
-Identity Protection risk detections (alerts) are now also available in Microsoft 365 Defender to provide a unified investigation experience for security professionals. For more information, see: [Investigate alerts in Microsoft 365 Defender](/microsoft-365/security/defender/investigate-alerts?view=o365-worldwide&preserve-view=true#alert-sources)
+Identity Protection risk detections (alerts) are now also available in Microsoft Defender XDR to provide a unified investigation experience for security professionals. For more information, see: [Investigate alerts in Microsoft Defender XDR](/microsoft-365/security/defender/investigate-alerts?view=o365-worldwide&preserve-view=true#alert-sources)
 
 
 

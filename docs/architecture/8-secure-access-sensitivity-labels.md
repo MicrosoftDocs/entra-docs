@@ -45,7 +45,7 @@ Sensitivity labels on containers can restrict access to the container, but conte
 
 Team members who need to create sensitivity labels require permissions to: 
 
-* Microsoft 365 Defender portal,
+* Microsoft Defender portal,
 * Microsoft Purview compliance portal, or 
 * [Microsoft Purview compliance portal](/purview/microsoft-365-compliance-center?view=o365-worldwide&preserve-view=true)
 

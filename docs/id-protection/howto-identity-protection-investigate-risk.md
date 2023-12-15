@@ -132,9 +132,9 @@ Organizations may use the following frameworks to begin their investigation into
       1. IP address 
       1. User agent string
    1. If you have access to other security tools like [Microsoft Sentinel](/azure/sentinel/overview), check for corresponding alerts that might indicate a larger issue.
-   1. Organizations with access to [Microsoft 365 Defender](/defender-for-identity/understanding-security-alerts) can follow a user risk event through other related alerts and incidents and the MITRE ATT&CK chain. 
+   1. Organizations with access to [Microsoft Defender XDR](/defender-for-identity/understanding-security-alerts) can follow a user risk event through other related alerts and incidents and the MITRE ATT&CK chain. 
        1. Select the user in the Risky users report.
-       1. Select the **ellipsis (...)** in the toolbar then choose **Investigate with Microsoft 365 Defender**.
+       1. Select the **ellipsis (...)** in the toolbar then choose **Investigate with Microsoft Defender XDR**.
 1. Reach out to the user to confirm if they recognize the sign-in. Methods such as email or Teams may be compromised.
    1. Confirm the information you have such as:
       1. Application
@@ -168,28 +168,28 @@ If more information is shown for the detection:
    1. Validate that no other users in your directory are targets of the same attack. This can be found by the TI_RI_#### number assigned to the rule.
    1. Real-time rules protect against novel attacks identified by Microsoft's threat intelligence. If multiple users in your directory were targets of the same attack, investigate unusual patterns in other attributes of the sign in.
 
-## Investigate risk with Microsoft 365 Defender
+## Investigate risk with Microsoft Defender XDR
 
-Organizations who have deployed [Microsoft 365 Defender](/microsoft-365/security/defender/microsoft-365-defender) and [Microsoft Defender for Identity](/defender-for-identity/what-is) gain extra value from Identity Protection signals. This value comes in the form of enhanced correlation with other data from other parts of the organization and extra [automated investigation and response](/microsoft-365/security/defender/m365d-autoir).
+Organizations who have deployed [Microsoft Defender XDR](/microsoft-365/security/defender/microsoft-365-defender) and [Microsoft Defender for Identity](/defender-for-identity/what-is) gain extra value from Identity Protection signals. This value comes in the form of enhanced correlation with other data from other parts of the organization and extra [automated investigation and response](/microsoft-365/security/defender/m365d-autoir).
 
-:::image type="content" source="media/howto-identity-protection-investigate-risk/investigate-user-in-microsoft-365-defender.png" alt-text="Screenshot showing alerts for a risky user in the Microsoft 365 Defender portal." lightbox="media/howto-identity-protection-investigate-risk/alert-details-in-microsoft-365-defender.png":::
+:::image type="content" source="media/howto-identity-protection-investigate-risk/investigate-user-in-microsoft-365-defender.png" alt-text="Screenshot showing alerts for a risky user in the Microsoft Defender portal." lightbox="media/howto-identity-protection-investigate-risk/alert-details-in-microsoft-365-defender.png":::
 
-In Microsoft 365 Defender Security Professionals and Administrators can make connections to suspicious activity from areas like: 
+In Microsoft Defender XDR Security Professionals and Administrators can make connections to suspicious activity from areas like: 
 
 - Alerts in Defender for Identity 
 - Microsoft Defender for Endpoint
 - Microsoft Defender for Cloud
 - Microsoft Defender for Cloud Apps
  
-For more information about how to investigate suspicious activity using Microsoft 365 Defender, see the articles [Investigate assets in Microsoft Defender for Identity](/defender-for-identity/investigate-assets#investigation-steps-for-suspicious-users) and [Investigate incidents in Microsoft 365 Defender](/microsoft-365/security/defender/investigate-incidents).
+For more information about how to investigate suspicious activity using Microsoft Defender XDR, see the articles [Investigate assets in Microsoft Defender for Identity](/defender-for-identity/investigate-assets#investigation-steps-for-suspicious-users) and [Investigate incidents in Microsoft Defender XDR](/microsoft-365/security/defender/investigate-incidents).
 
 For more information about these alerts and their structure, see the article [Understanding security alerts](/defender-for-identity/understanding-security-alerts).
 
 ### Investigation status
 
-When security personnel investigate risks in Microsoft 365 Defender and Defender for Identity the following states and reasons are returned to Identity Protection in the portal and APIs.
+When security personnel investigate risks in Microsoft Defender XDR and Defender for Identity the following states and reasons are returned to Identity Protection in the portal and APIs.
 
-| Microsoft 365 Defender status | [Microsoft 365 Defender classification](/defender-for-identity/understanding-security-alerts#security-alert-classifications) | Microsoft Entra ID Protection risk state |  Risk detail in Microsoft Entra ID Protection |
+| Microsoft Defender XDR status | [Microsoft Defender XDR classification](/defender-for-identity/understanding-security-alerts#security-alert-classifications) | Microsoft Entra ID Protection risk state |  Risk detail in Microsoft Entra ID Protection |
 | --- | --- | --- | --- |
 | New | False positive | Confirmed safe | `M365DAdminDismissedDetection` |
 | New | Benign true positive | Confirmed safe | `M365DAdminDismissedDetection` |

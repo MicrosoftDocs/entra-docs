@@ -122,7 +122,7 @@ When a Conditional Access policy targets the Microsoft Admin Portals cloud app, 
 - Azure portal
 - Exchange admin center
 - Microsoft 365 admin center
-- Microsoft 365 Defender portal
+- Microsoft Defender portal
 - Microsoft Entra admin center
 - Microsoft Intune admin center
 - Microsoft Purview compliance portal

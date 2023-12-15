@@ -64,7 +64,7 @@ The sheer scale of signals and attacks requires some level of automation just to
 
 ### Manual remediation 
 
-When user remediation isn't enabled, an administrator must manually review them in the reports in the portal, through the API, or in Microsoft 365 Defender. Administrators can perform manual actions to dismiss, confirm safe, or confirm compromise on the risks.
+When user remediation isn't enabled, an administrator must manually review them in the reports in the portal, through the API, or in Microsoft Defender XDR. Administrators can perform manual actions to dismiss, confirm safe, or confirm compromise on the risks.
 
 ## Making use of the data
 
