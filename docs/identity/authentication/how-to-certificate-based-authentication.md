@@ -516,11 +516,6 @@ To enable CBA and configure username bindings using Graph API, complete the foll
                 "x509CertificateField": "RFC822Name",
                 "userProperty": "userPrincipalName",
                 "priority": 2
-            }, 
-            {
-                "x509CertificateField": "PrincipalName",
-                "userProperty": "certificateUserIds",
-                "priority": 3
             }
         ],
         "authenticationModeConfiguration": {
