@@ -5,7 +5,6 @@
       "redirect_url": "/entra/identity/domain-services/delete",
       "redirect_document_id": false
     },
-
     {
       "source_path_from_root": "/docs/identity/hybrid/cloud-sync/index.yml",
       "redirect_url": "/entra/identity/hybrid/index",
@@ -19,6 +18,11 @@
     {
       "source_path_from_root": "/docs/fundamentals/licensing-preview-terms.md",
       "redirect_url": "/entra/fundamentals/licensing-preview-info",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/monitoring-health/howto-configure-prerequisites-for-reporting-api.md",
+      "redirect_url": "/entra/identity/monitoring-health/howto-enable-microsoft-graph-activity-logs",
       "redirect_document_id": false
     },
     {
