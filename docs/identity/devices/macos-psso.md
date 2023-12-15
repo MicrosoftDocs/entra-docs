@@ -54,8 +54,8 @@ Passwords are a primary attack vector for bad actors. They use social engineerin
 
 Learn how you can use Platform SSO for macOS to enable passwordless authentication for your organization.
 
-* [Passwordless authentication options for Microsoft Entra ID](../../identity/authentication/concept-authentication-passwordless.md#macos-platform-sso)
-* [Plan a passwordless authentication deployment in Microsoft Entra ID](../../identity/authentication/howto-authentication-passwordless-deployment)
+* [Passwordless authentication options for Microsoft Entra ID](../../identity/authentication/concept-authentication-passwordless.md#macos-platform-sso.md)
+* [Plan a passwordless authentication deployment in Microsoft Entra ID](../../identity/authentication/howto-authentication-passwordless-deployment.md)
 
 ## National Institute of Standards and Technology (NIST)
 
@@ -65,7 +65,7 @@ You can learn more about using macOS Platform SSO to meet NIST requirements in t
 
 * [Configure Microsoft Entra ID to meet NIST authenticator assurance levels](../../standards/nist-overview.md)
 * [NIST authenticator types and aligned Microsoft Entra methods](../../standards/nist-authenticator-types.md).
-* [NIST authenticator assurance level 3 by using Microsoft Entra ID](../../standards/nist-authenticator-assurance-level-3)
+* [NIST authenticator assurance level 3 by using Microsoft Entra ID](../../standards/nist-authenticator-assurance-level-3.md)
 
 ## Troubleshooting 
 
