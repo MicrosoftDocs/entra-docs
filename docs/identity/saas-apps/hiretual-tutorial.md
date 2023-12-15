@@ -92,9 +92,13 @@ Follow these steps to enable Microsoft Entra SSO.
 
     ![Screenshot shows the User access URL.](./media/hiretual-tutorial/access-url.png "SSO Configuration")
 
-1. On the **Set up single sign-on with SAML** page, In the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
+1. On the **Set-up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 
-	![The Certificate download link](common/copy-metadataurl.png)
+    ![Screenshot shows the Certificate download link.](common/metadataxml.png "Certificate")
+
+1. On the **Set up CloudBees CI** section, copy the appropriate URL(s) based on your requirement.
+
+	![Screenshot shows to copy configuration appropriate URL.](common/copy-configuration-urls.png "Attributes")
 
 <a name='create-an-azure-ad-test-user'></a>
 
@@ -140,7 +144,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
     1. In the **Identity Provider Issuer** textbox, paste the **Microsoft Entra Identifier** which you have copied from the Microsoft Entra admin center.
 
-    1. In the **Certificate** textbox, paste the **App Federation Metadata Url** which you have copied from the Microsoft Entra admin center. 
+    1. In the **Certificate** textbox, paste the **Federation Metadata XML** which you have copied from the Microsoft Entra admin center. 
 
     1. Enable **Single Sign-On Connection Status** button.
 
