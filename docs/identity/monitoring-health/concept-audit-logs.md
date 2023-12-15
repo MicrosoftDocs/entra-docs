@@ -1,16 +1,16 @@
 ---
 title: Learn about the audit logs in Microsoft Entra ID
-description: Learn about the types of identity related events that are captured in Microsoft Entra audit logs.
-services: active-directory
+description: Learn about the types of activities and events that are captured in Microsoft Entra audit logs and how you can use the logs for troubleshooting.
 author: shlipsey3
 manager: amycolannino
 ms.service: active-directory
 ms.topic: conceptual
-ms.workload: identity
 ms.subservice: report-monitor
-ms.date: 10/24/2023
+ms.date: 12/15/2023
 ms.author: sarahlipsey
-ms.reviewer: besiler
+ms.reviewer: egreenberg14
+
+# Customer intent: As an IT admin, I need to know what information is included in the Microsoft Entra audit logs so I know what to look for when I need to troubleshoot an issue.
 
 ---
 
@@ -39,14 +39,14 @@ Audit logs in Microsoft Entra ID provide access to system activity records, ofte
 
 - What groups were recently added?
 - Have the owners of group been changed?
-- What licenses have been assigned to a group or a user?
+- What licenses are to a group or a user?
 
 **Applications:**
 
-- What applications have been added, updated, or removed?
+- What applications were, updated, or removed?
 - Has a service principal for an application changed?
 - Have the names of applications been changed?
- 
+
 > [!NOTE]
 > Entries in the audit logs are system generated and can't be changed or deleted.
 
@@ -71,15 +71,15 @@ Filter the audit data using the options visible in your list such as date range,
 
 ### Archiving and analyzing the audit logs
 
-There are several options available if you need to store the logs for data retention or route them to an analysis tool. Review the [How to access activity logs](howto-access-activity-logs.md) article for details on each option. 
+There are several options available if you need to store the logs for data retention or route them to an analysis tool. Review the [How to access activity logs](howto-access-activity-logs.md) article for details on each option.
 
-You can download the audit logs from the Microsoft Entra admin center, up to 250,000 records, by selecting the **Download** button. The exact number of records varies, based on the number of fields included in your view when you select the **Download** button. You can download the logs in either CSV or JSON format. The number of records you can download is constrained by the [Microsoft Entra report retention policies](reference-reports-data-retention.md).
+You can download the audit logs from the Microsoft Entra admin center, up to 250,000 records, by selecting the **Download** button. The exact number of records varies, based on the number of fields included in your view when you select the **Download** button. You can download the logs in either CSV or JSON format.
 
 ![Screenshot of the download data option.](./media/concept-audit-logs/download.png "Download data")
 
 ## Microsoft 365 activity logs
 
-You can view Microsoft 365 activity logs from the [Microsoft 365 admin center](/microsoft-365/admin/admin-overview/admin-center-overview). Even though Microsoft 365 activity and Microsoft Entra activity logs share many directory resources, only the Microsoft 365 admin center provides a full view of the Microsoft 365 activity logs. 
+You can view Microsoft 365 activity logs from the [Microsoft 365 admin center](/microsoft-365/admin/admin-overview/admin-center-overview). Even though Microsoft 365 activity and Microsoft Entra activity logs share many directory resources, only the Microsoft 365 admin center provides a full view of the Microsoft 365 activity logs.
 
 You can also access the Microsoft 365 activity logs programmatically by using the [Office 365 Management APIs](/office/office-365-management-api/office-365-management-apis-overview).
 

@@ -44,7 +44,7 @@ Log storage within Microsoft Entra varies by report type and license type. You c
 | Microsoft Entra multifactor authentication usage | 30 days | 30 days | 30 days |
 | Microsoft Graph activity logs* | NA | Must be integrated with storage or analytics tools | Must be integrated with storage or analytics tools |
 
-*Microsoft Graph activity logs are only available for Microsoft Entra ID P1 and P2 licenses. Data is not retained unless it's archived to a storage account or integrated with analytics tools.
+*Microsoft Graph activity logs are only available for Microsoft Entra ID P1 and P2 licenses. Data isn't retained unless it's archived to a storage account or integrated with analytics tools.
 
 ### Security signals
 
