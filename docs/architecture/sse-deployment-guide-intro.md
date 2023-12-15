@@ -6,14 +6,14 @@ author: jricketts
 manager: martinco
 ms.service: network-access
 ms.topic: conceptual
-ms.date: 12/5/2023
+ms.date: 12/15/2023
 ms.author: jricketts
 ---
 
 
 # Introduction to Microsoft Security Service Edge Solution Deployment Guide for Proof of Concept
 
-This Proof of Concept (PoC) Deployment Guide helps you to deploy Microsoft's Security Service Edge (SSE) solution that features [Microsoft Entra Internet Access for M365](../global-secure-access/how-to-manage-microsoft-365-profile.md) and Microsoft Entra Private Access. Note that this solution is in Public Preview.
+This Proof of Concept (PoC) Deployment Guide helps you to deploy Microsoft's Security Service Edge (SSE) solution that features [Microsoft Entra Internet Access for Microsoft 365](../global-secure-access/how-to-manage-microsoft-365-profile.md) and Microsoft Entra Private Access. Note that this solution is in Public Preview.
 
 ## Overview
 
@@ -179,9 +179,9 @@ Microsoft Entra Internet Access for M365 and Microsoft Entra Private Access use 
    :::image type="content" source="media/sse-deployment-guide-intro/global-secure-access-client-connection-diagnostics-channels.png" alt-text="Screenshot of the Global Secure Access Client Connection Diagnostics window showing Channels tab.":::
 1. If desired, use the **Client Checker** tool to confirm network connection and traffic routing status.
 
-[!INCLUDE [Public preview important note](~/global-secure-access/includes/public-preview-important-note.md)]
+[!INCLUDE [Public preview important note](../global-secure-access/includes/public-preview-important-note.md)]
 
 ## Next steps
-Deploy and verify [Microsoft Entra Internet Access for M365](sse-deployment-guide-m365.md)
-Deploy and verify [Microsoft Entra Private Access](sse-deployment-guide-private-access.md)
 
+- Deploy and verify [Microsoft Entra Internet Access for M365](sse-deployment-guide-m365.md)
+- Deploy and verify [Microsoft Entra Private Access](sse-deployment-guide-private-access.md)

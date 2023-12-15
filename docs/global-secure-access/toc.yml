@@ -106,6 +106,15 @@ items:
         href: how-to-view-traffic-logs.md
       - name: Event enrichment in Microsoft 365 enriched logs
         href: reference-event-enrichment-logs.md
+  - name: Deployment guides
+    expanded: false
+    items:
+      - name: Deployment guide information for Proof of Concept
+        href: ~/architecture/sse-deployment-guide-intro.md?toc=/entra/global-secure-access/toc.json&bc=/entra/global-secure-access/breadcrumb/toc.json
+      - name: Deployment guide for Microsoft 365 traffic
+        href: ~/architecture/sse-deployment-guide-m365.md?toc=/entra/global-secure-access/toc.json&bc=/entra/global-secure-access/breadcrumb/toc.json
+      - name: Deployment guide for private access traffic
+        href: ~/architecture/sse-deployment-guide-private-access.md?toc=/entra/global-secure-access/toc.json&bc=/entra/global-secure-access/breadcrumb/toc.json
 - name: Reference
   expanded: false
   items:
