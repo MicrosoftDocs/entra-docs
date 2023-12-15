@@ -125,13 +125,13 @@ Follow these steps to enable Microsoft Entra SSO.
 	
 	e. Upon successful authentication, copy/paste the entire claim URL into the appropriate mapping for the name, email and badgeID attributes.
 	
-	* Paste the **Name Attribute** value as **http://schemas.microsoft.com/identity/claims/displayname** or the appropriate claim URL.
+	* Paste the **Name Attribute** value as `http://schemas.microsoft.com/identity/claims/displayname` or the appropriate claim URL.
 
-	* Paste the **Email Attribute** value as **http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name** or the appropriate claim URL.
+	* Paste the **Email Attribute** value as `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name` or the appropriate claim URL.
 
-	* Paste the **Badge Attribute** value as **http://schemas.xmlsoap.org/ws/2005/05/identity/claims/badgeID** or the appropriate claim URL.
+	* Paste the **Badge Attribute** value as `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/badgeID` or the appropriate claim URL.
 
-	* Paste the **Role Attribute** value as **http://schemas.xmlsoap.org/ws/2005/05/identity/claims/groups** or the appropriate claim URL.
+	* Paste the **Role Attribute** value as `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/groups` or the appropriate claim URL.
 
 	f. Click **Save SAML Configuration**.
 
