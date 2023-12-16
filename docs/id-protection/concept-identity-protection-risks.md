@@ -75,6 +75,7 @@ Real-time detections may not show up in reporting for 5 to 10 minutes. Offline d
 | [Possible attempt to access Primary Refresh Token (PRT)](#possible-attempt-to-access-primary-refresh-token-prt) | Offline | Premium |
 | [Anomalous user activity](#anomalous-user-activity) | Offline | Premium |
 | [User reported suspicious activity](#user-reported-suspicious-activity) | Offline | Premium | 
+| [Suspicious API Traffic](#suspicious-api-traffic) | Offline | Premium |
 | [Additional risk detected](#additional-risk-detected-user) | Real-time or Offline | Nonpremium |
 | [Leaked credentials](#leaked-credentials) | Offline | Nonpremium |
 | [Microsoft Entra threat intelligence](#azure-ad-threat-intelligence-user) | Offline | Nonpremium |
@@ -224,6 +225,10 @@ For further investigation of password spray risk detections, see the article [Gu
 #### User reported suspicious activity
 
 **Calculated offline**. This risk detection is reported when a user denies a multifactor authentication (MFA) prompt and [reports it as suspicious activity](~/identity/authentication/howto-mfa-mfasettings.md#report-suspicious-activity). An MFA prompt not initiated by a user may mean their credentials are compromised. 
+
+#### Suspicious API Traffic
+
+**Calculated offline**. This risk detection is reported when abnormal Graph traffic or directory enumeration is observed by a user. Suspicious API traffic may suggest that a user is compromised and conducting reconnaissance in their environment.
 
 ## Nonpremium detections
 
