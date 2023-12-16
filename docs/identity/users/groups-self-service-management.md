@@ -67,7 +67,7 @@ When someone wants access, they request it from the MyApps Groups Access Panel. 
    :::image type="content" source="./media/groups-self-service-management/groups-settings-general.png" alt-text="Screenshot that shows Microsoft Entra groups General settings.":::
 
    > [!NOTE]
-   > In June 2024, the setting **Restrict users access to My Groups** changes to **Restrict users ability to see and edit security groups in My Groups.** If the setting is currently set to **Yes**, users can access My Groups in June 2024 but can't see security groups.
+   > In June 2024, the setting **Restrict users access to My Groups** will change to **Restrict users ability to see and edit security groups in My Groups.** If the setting is currently set to **Yes**, users will be able to access My Groups in June 2024 but won't be able to see security groups.
 
 1. Set **Owners can manage group membership requests in the Access Panel** to **Yes**.
 1. Set **Restrict user ability to access groups features in the Access Panel** to **No**.
