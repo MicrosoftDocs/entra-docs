@@ -10,7 +10,7 @@ ms.reviewer: sureshja
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: reference
-#Customer intent:
+#Customer intent: As an application developer, I want to configure the attributes of an application in the Microsoft Entra admin center or programmatically, so that I can update the application object and define permissions and roles for the app.
 ---
 
 # Microsoft Entra app manifest

@@ -10,7 +10,7 @@ ms.reviewer: ludwignick
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: reference
-#Customer intent:
+#Customer intent: As a developer, I want to stay updated on the changes and updates to the Microsoft identity platform, so that I can ensure the security, usability, and compliance of my applications.
 ---
 
 # What's new for authentication?
