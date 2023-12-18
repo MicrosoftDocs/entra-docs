@@ -7,7 +7,7 @@ ms.service: active-directory
 ms.subservice: B2B
 ms.custom: has-azure-ad-ps-ref
 ms.topic: how-to
-ms.date: 12/02/2022
+ms.date: 12/18/2023
 
 ms.author: cmulligan
 author: csmulligan

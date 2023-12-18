@@ -3616,6 +3616,8 @@
         href: splashtop-provisioning-tutorial.md
       - name: StarLeaf
         href: starleaf-provisioning-tutorial.md
+      - name: Starmind
+        href: starmind-provisioning-tutorial.md
       - name: Storegate
         href: storegate-provisioning-tutorial.md
       - name: SurveyMonkey Enterprise

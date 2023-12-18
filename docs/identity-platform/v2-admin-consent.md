@@ -10,7 +10,7 @@ ms.reviewer: ludwignick
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: reference
-#Customer intent:
+#Customer intent: As an application developer, I want to use the admin consent endpoint in my app, so that the user can request permissions from the organization's admin if needed.
 ---
 
 # Admin consent on the Microsoft identity platform
