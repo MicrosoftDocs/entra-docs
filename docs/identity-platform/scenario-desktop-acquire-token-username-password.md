@@ -32,9 +32,9 @@ The username and password flow also has the following constraints:
 
 Using a username and password is useful in some cases, such as DevOps scenarios. However, if you want to use a username and password in interactive scenarios where you provide your own UI, consider moving away from it.
 
-The preferred flow for acquiring a token silently on Windows is using the [Windows authentication broker](/scenario-desktop-acquire-token-wam.md). Alternatively, developers can also use the [Device code flow](/msal/dotnet/desktop-mobile/device-code-flow.md) on devices without access to the web browser.
+The preferred flow for acquiring a token silently on Windows is using the [Windows authentication broker](/scenario-desktop-acquire-token-wam.md). Alternatively, developers can also use the [Device code flow](/entra/msal/dotnet/desktop-mobile/device-code-flow.md) on devices without access to the web browser.
 
-If you're building a desktop application that signs in users with social identities using the Resource Owner Password Credentials (ROPC) flow, see [how to sign in users with social identities by using Azure AD B2C](/msal/dotnet/acquiring-tokens/desktop-mobile/social-identities)
+If you're building a desktop application that signs in users with social identities using the Resource Owner Password Credentials (ROPC) flow, see [how to sign in users with social identities by using Azure AD B2C](/entra/msal/dotnet/acquiring-tokens/desktop-mobile/social-identities)
 
 
 ## Use the ROPC flow
@@ -317,7 +317,7 @@ The following extract is from the [MSAL Java code samples](https://github.com/Az
 
 # [macOS](#tab/macOS)
 
-This flow isn't supported on MSAL for macOS.
+The ROPC flow isn't supported on MSAL for macOS.
 
 # [Node.js](#tab/nodejs)
 
