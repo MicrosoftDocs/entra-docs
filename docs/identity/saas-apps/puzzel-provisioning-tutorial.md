@@ -94,7 +94,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Review the user attributes that are synchronized from Microsoft Entra ID to Puzzel in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Puzzel for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Puzzel API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
-  |Attribute|Type|Supported for filtering|Required by Puzzel|
+   |Attribute|Type|Supported for filtering|Required by Puzzel|
    |---|---|---|---|
    |userName|String|&check;|&check;
    |active|Boolean||
