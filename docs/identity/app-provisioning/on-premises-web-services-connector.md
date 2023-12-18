@@ -41,7 +41,7 @@ The web services connector implements the following functions:
 
 The computer that runs the provisioning agent should have:
 
-- Connectivity to application's REST or SOAP endpoints, as well as with with outbound connectivity to login.microsoftonline.com, [other Microsoft Online Services](/microsoft-365/enterprise/urls-and-ip-address-ranges) and [Azure](/azure/azure-portal/azure-portal-safelist-urls) domains. An example is a Windows Server 2016 virtual machine hosted in Azure IaaS or behind a proxy. 
+- Connectivity to application's REST or SOAP endpoints, as well as with outbound connectivity to login.microsoftonline.com, [other Microsoft Online Services](/microsoft-365/enterprise/urls-and-ip-address-ranges) and [Azure](/azure/azure-portal/azure-portal-safelist-urls) domains. An example is a Windows Server 2016 virtual machine hosted in Azure IaaS or behind a proxy. 
 - At least 3 GB of RAM, to host a provisioning agent. 
 - .NET Framework 4.7.2 
 - A Windows Server 2016 or a later version. 
@@ -54,7 +54,7 @@ Prior to configuring provisioning, ensure that you:
 
  - A Microsoft Entra tenant with Microsoft Entra ID P1 or Premium P2 (or EMS E3 or E5). 
  
-    [!INCLUDE [active-directory-p1-license.md](entra-p1-license.md)]
+    [!INCLUDE [active-directory-p1-license.md](~/includes/entra-p1-license.md)]
  - The Hybrid Identity Administrator role for configuring the provisioning agent and the Application Administrator or Cloud Application Administrator roles for configuring provisioning in the Azure portal.
  - The Microsoft Entra users to be provisioned to your application must already be populated with any attributes that will be required by your application. 
 
@@ -139,7 +139,7 @@ To connect the Microsoft Entra provisioning agent with your application, follow 
      
      |Property|Description|
      |-----|-----|
-     |Web Service Project |Your web srevices template name.|
+     |Web Service Project |Your web services template name.|
      |Host|Your application's SOAP endpoint host name, e.g. vhcalnplci.dummy.nodomain|
      |Port|Your application's SOAP endpoint port, e.g. 8000|
 
@@ -168,7 +168,7 @@ To connect the Microsoft Entra provisioning agent with your application, follow 
 
 1. On the **Partitions** page, select **Next**.
 
-1. On the **Run Profiles** page, keep the **Export** checkbox selected. Select the **Full import** checkbox and select **Next**. The **Export** run profile will be used when the ECMA Connector host needs to send changes from Microsoft Entra ID to your application to insert, update and delete records.  The **Full Import** run profile will be used when the ECMA Connector host service starts, to read in the current content of your appplication.
+1. On the **Run Profiles** page, keep the **Export** checkbox selected. Select the **Full import** checkbox and select **Next**. The **Export** run profile will be used when the ECMA Connector host needs to send changes from Microsoft Entra ID to your application to insert, update and delete records.  The **Full Import** run profile will be used when the ECMA Connector host service starts, to read in the current content of your application.
 
     
     | Property | Value |
@@ -200,7 +200,7 @@ To connect the Microsoft Entra provisioning agent with your application, follow 
  >[!NOTE]
  >If you use the **Set attribute value** be aware that only boolean values are allowed.
 
- On the **Deprovisioning** page, under Disable flow, select None if will control user account status with a property such as **expirationTime**. Under Delete flow, select None if you do not want to delete users from your application or Delete if you do. Select **Finish**.
+ On the **Deprovisioning** page, under Disable flow, select None if you will control user account status with a property such as **expirationTime**. Under Delete flow, select None if you do not want to delete users from your application or Delete if you do. Select **Finish**.
      
 
 ## 6. Ensure the ECMA2Host service is running
@@ -254,12 +254,12 @@ You'll use the Azure portal to configure the mapping between the Microsoft Entra
  1. Expand **Mappings** and select **Provision Microsoft Entra users**. If this is the first time you've configured the attribute mappings for this application, there will be only one mapping present, for a placeholder.
 
 
-     ![Screenshot that shows provisioning a user.](~/inclues/media\app-provisioning-sql\configure-10.png)
+     ![Screenshot that shows provisioning a user.](~/includes/media\app-provisioning-sql\configure-10.png)
 
  5. To confirm that the schema of your application is available in Microsoft Entra ID, select the **Show advanced options** checkbox and select **Edit attribute list for ScimOnPremises**. Ensure that all the attributes selected in the configuration wizard are listed.  If not, then wait several minutes for the schema to refresh, and then reload the page.  Once you see the attributes listed, then cancel from this page to return to the mappings list.
  6. Now, click on the **userPrincipalName** PLACEHOLDER mapping.  This mapping is added by default when you first configure on-premises provisioning.  
  
-:::image type="content" source="~/includes/media/app-provisioning-sql/configure-11.png" alt-text="Screenshot of placeholder." lightbox="./media/app-provisioning-sql/configure-11.png":::
+:::image type="content" source="~/includes/media/app-provisioning-sql/configure-11.png" alt-text="Screenshot of placeholder." lightbox="~/includes/media/app-provisioning-sql/configure-11.png":::
 
  Change the value to match the following:
  
