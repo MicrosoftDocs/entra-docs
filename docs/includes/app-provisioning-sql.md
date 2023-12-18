@@ -405,7 +405,7 @@ You'll use the Azure portal to configure the mapping between the Microsoft Entra
  1. Ensure that the Microsoft Entra schema includes the attributes that are required by the database. If the database requires users to have an attribute, such as `uidNumber`, and that attribute is not already part of your Microsoft Entra schema for a user, then you will need to use the [directory extension feature](~/identity/app-provisioning/user-provisioning-sync-attributes-for-mapping.md) to add that attribute as an extension.
  1. In the Microsoft Entra admin center, under **Enterprise applications**, select the **On-premises ECMA app** application, and then the **Provisioning** page.
  2. Select **Edit provisioning**, and wait 10 seconds.
- 3. Expand **Mappings** and select the **Provision Azure Active Directory Users** mapping. If this is the first time you've configured the attribute mappings for this application, this will be the only one mapping present, for a placeholder.
+ 3. Expand **Mappings** and select the **Provision Azure Active Directory Users** mapping. If this is the first time you've configured the attribute mappings for this application, this will be the only mapping present, for a placeholder.
 
 
      ![Screenshot that shows provisioning a user.](.\media\app-provisioning-sql\configure-10.png)
