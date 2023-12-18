@@ -63,7 +63,7 @@ The Microsoft Entra provisioning service supports a [SCIM 2.0](https://techcommu
 
  1. In the portal, on the **On-Premises Connectivity** section, select the agent that you deployed and select **Assign Agent(s)**.
 
-      ![Screenshot that shows how to select and assign an agent.](.\\media\app-provisioning-sql\configure-7a.png)
+      ![Screenshot that shows how to select and assign an agent.](~/includes/media/app-provisioning-sql/configure-7a.png)
 
  1. Restart the provisioning agent service or wait 10 minutes before testing connection.
 
