@@ -26,7 +26,7 @@ Microsoft Entra ID includes connectivity to provision into applications that sup
 > - [SOAP](on-premises-web-services-connector.md)
 > - [PowerShell](on-premises-powershell-connector.md)
 
-For connectivity to applications that don't support one of the aforementioned protocols and interfaces, customers and [partners](https://social.technet.microsoft.com/wiki/contents/articles/1589.fim-2010-mim-2016-management-agents-from-partners.aspx) have built custom [ECMA 2.0](/previous-versions/windows/desktop/forefront-2010/hh859557(v=vs.100)) connectors for use with Microsoft Identity Manager (MIM) 2016. These same ECMA2 connectors can be used to provision into apps with the Microsoft Entra provisoning agent and Extensible Connectivity(ECMA) Connector host, without needing MIM sync deployed.
+For connectivity to applications that don't support one of the aforementioned protocols and interfaces, customers and [partners](https://social.technet.microsoft.com/wiki/contents/articles/1589.fim-2010-mim-2016-management-agents-from-partners.aspx) have built custom [ECMA 2.0](/previous-versions/windows/desktop/forefront-2010/hh859557(v=vs.100)) connectors for use with Microsoft Identity Manager (MIM) 2016. These same ECMA2 connectors can be used to provision into apps with the Microsoft Entra provisioning agent and Extensible Connectivity(ECMA) Connector host, without needing MIM sync deployed.
 
 
 ## Exporting and importing a MIM connector
@@ -35,7 +35,7 @@ If you have a custom ECMA 2.0 connector in MIM, you can export its configuration
 To import your connector, you can use the instructions [here](on-premises-migrate-microsoft-identity-manager.md#import-a-connector-configuration).  You will need to copy the DLL for your connector, and any of its prerequisite DLLs, to that same ECMA subdirectory of the Service directory.  After the xml has been imported, continue through the wizard and ensure that all the required fields are populated.
 
 ## Updating a custom connector DLL
-When updating a connector, ensure that the DLL is updated in all the required locations. Use the steps below to properly update your custom connector DLL:
+When updating a connector with a newer build, ensure that the DLL is updated in all the required locations. Use these steps to properly update your custom connector DLL:
 1. Close the Microsoft ECMA2Host Configuration Wizard.
 2. Stop the Microsoft ECMA2Host service.
 3. Manually update the custom connector DLL into each of the following folders.
