@@ -13,10 +13,10 @@ ms.topic: conceptual
 
 # Desktop app that calls web APIs: Acquire a token using username and password
 
-In your desktop applications, you can use the username and password flow, also known as Resource Owner Password Credentials (ROPC), to acquire a token silently. This flow is limited and not recommended, but there are still use cases where it's necessary.
+In your desktop applications, you can use the username and password flow, also known as Resource Owner Password Credentials (ROPC), to acquire a token silently.
 
 >[!WARNING]
-> The username and password flow is **not recommended** as the application will be asking a user for their password directly, which is an insecure pattern. For more information about the risks and challenges the ROPC flow poses, refer to ["What’s the solution to the growing problem of passwords? You, says Microsoft"](https://news.microsoft.com/features/whats-solution-growing-problem-passwords-says-microsoft/).
+> The username and password flow is **not recommended** as the application will be asking a user for their password directly, which is an insecure pattern. For more information about the risks and challenges the ROPC flow poses, refer to ["What’s the solution to the growing problem of passwords?](https://news.microsoft.com/features/whats-solution-growing-problem-passwords-says-microsoft/).
 
 Additionally, by using a username and password, developers give up a number of things, including:
 
@@ -27,18 +27,17 @@ Additionally, by using a username and password, developers give up a number of t
 The username and password flow also has the following constraints:
 
 - The username and password flow isn't compatible with Conditional Access and multi-factor authentication. If your app runs in a Microsoft Entra tenant where the admin requires multi-factor authentication, like most organizations do, you can't use this flow.
-- It only works only for work and school accounts, not personal Microsoft Accounts.
+- It only works for work and school accounts, not personal Microsoft Accounts.
 - The flow is available on .NET desktop and .NET Core, but not on UWP.
 
 Using a username and password is useful in some cases, such as DevOps scenarios. However, if you want to use a username and password in interactive scenarios where you provide your own UI, consider moving away from it.
 
-The preferred flow for acquiring a token silently on Windows is using the [Windows authentication broker](wam.md). Alternatively, developers can also use the [Device code flow](../desktop-mobile/device-code-flow.md) on devices without access to the web browser.
+The preferred flow for acquiring a token silently on Windows is using the [Windows authentication broker](/scenario-desktop-acquire-token-wam.md). Alternatively, developers can also use the [Device code flow](/msal/dotnet/desktop-mobile/device-code-flow.md) on devices without access to the web browser.
 
-## B2C specifics
+If you're building a desktop application that signs in users with social identities using the Resource Owner Password Credentials (ROPC) flow, see [how to sign in users with social identities by using Azure AD B2C](/msal/dotnet/acquiring-tokens/desktop-mobile/social-identities)
 
-For more information, see [Resource Owner Password Credentials (ROPC) with B2C](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/AAD-B2C-specifics#resource-owner-password-credentials-ropc-with-b2c).
 
-## Use it
+## Use the ROPC flow
 
 # [.NET](#tab/dotnet)
 
@@ -322,7 +321,7 @@ This flow isn't supported on MSAL for macOS.
 
 # [Node.js](#tab/nodejs)
 
-This extract is from the [MSAL Node dev samples](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-node-samples/username-password). In the code snippet below, the username and password are hardcoded for illustration purposes only. This should be avoided in production. Instead, a basic UI prompting the user to enter her username/password would be recommended.
+This extract is from the [MSAL Node dev samples](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-node-samples/username-password). In the following code snippet, the username and password are hardcoded for illustration purposes only. This should be avoided in production. Instead, a basic UI prompting the user to enter her username/password would be recommended.
 
 ```javascript
 const msal = require("@azure/msal-node");
