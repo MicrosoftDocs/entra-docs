@@ -10,7 +10,7 @@ ms.reviewer: mahender, jukullam
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: how-to
-#Customer intent:
+#Customer intent: As a developer, I want to deploy a web app in a pipeline and configure App Service authentication using Azure Pipelines, so that I can automate the deployment process and secure access to the web app.
 ---
 
 # Deploy a web app in a pipeline and configure App Service authentication
