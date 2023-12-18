@@ -95,6 +95,5 @@ The following video provides an overview of on-premises provisioning.
 ## Next steps
 
 - [App provisioning](user-provisioning.md)
-- [Generic SQL connector](on-premises-sql-connector-configure.md)
-- [Tutorial: ECMA Connector Host generic SQL connector](tutorial-ecma-sql-connector.md)
-- [Known issues](known-issues.md)
+- [Develop a sample SCIM endpoint](use-scim-to-build-users-and-groups-endpoints.md)
+- [Known issues for provisioning](known-issues.md)
