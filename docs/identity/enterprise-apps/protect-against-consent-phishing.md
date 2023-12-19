@@ -13,12 +13,12 @@ ms.custom: template-concept, enterprise-apps-article
 ms.author: jomondi
 ms.reviewer: tilarso
 
-#Customer intent: As a developer, I want to learn how to protect against application-based consent phishing attacks so I can protect my users from malicious threat actors.
+#Customer intent: As an IT administrator responsible for securing cloud services, I want to understand what consent phishing is and how to mitigate it, so that I can protect my organization's data and prevent unauthorized access to cloud applications.
 ---
 
 # Protect against consent phishing
 
-Productivity is no longer confined to private networks, and work is shifting dramatically toward cloud services. While cloud applications enable employees to be productive remotely, attackers can also use application-based attacks to gain access to valuable organization data. You might be familiar with attacks focused on users, such as email phishing or credential compromise. ***Consent phishing*** is another threat vector to be aware of.
+Productivity is no longer confined to private networks, and work is shifting dramatically toward cloud services. While cloud applications enable employees to be productive remotely, attackers can also use application-based attacks to gain access to valuable organization data. You might be familiar with attacks focused on users, such as email phishing or credential compromise. Consent phishing is another threat vector to be aware of.
 
 This article explores what consent phishing is, what Microsoft does to protect an organization, and what steps organizations can take to stay safe.
 
