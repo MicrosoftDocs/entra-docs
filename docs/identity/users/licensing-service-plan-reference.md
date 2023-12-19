@@ -11,7 +11,7 @@ editor: ''
 
 ms.service: active-directory
 ms.subservice: enterprise-users
-ms.topic: referencef
+ms.topic: reference
 ms.workload: identity
 ms.date: 12/19/2023
 ms.author: nicholak
