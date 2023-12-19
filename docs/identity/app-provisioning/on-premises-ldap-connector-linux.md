@@ -74,7 +74,7 @@ The network address of a directory server is a hostname and a TCP port number, t
 
 You'll need to have an identified account for the connector to authenticate to the directory server already configured in the directory server.  This account is typically identified with a distinguished name and has an associated password or client certificate.  To perform import and export operations on the objects in the connected directory, the connector account must have sufficient permissions within the directory's access control model. The connector needs to have **write** permissions to be able to export, and **read** permissions to be able to import. Permission configuration is performed within the management experiences of the target directory itself.
 
-A directory schema specifies the object classes and attributes that represent a real-world entity in the directory. The connector supports a user being represented with a structural object class, such as `inetOrgPerson`, and optionally additional auxiliary object classes.  In order for the connector to be able to provision users into the directory server, during configuration in the Azure portal you will define mappings from the Microsoft Entra schema to all of the mandatory attributes. This includes the mandatory attributes of the structural object class, any superclasses of that structural object class, and the mandatory attributes of any auxiliary object classes.  In addition, you will likely also configure mappings to some of the optional attributes of these classes.  For example, an OpenLDAP directory server might require an object for a new user to have attributes like the following example.
+A directory schema specifies the object classes and attributes that represent a real-world entity in the directory. The connector supports a user being represented with a structural object class, such as `inetOrgPerson`, and optionally additional auxiliary object classes.  In order for the connector to be able to provision users into the directory server, during configuration in the Azure portal you will define mappings from the Microsoft Entra schema to all of the mandatory attributes. This includes the mandatory attributes of the structural object class, any superclasses of that structural object class, and the mandatory attributes of any auxiliary object classes.  In addition, you will likely also configure mappings to some of the optional attributes of these classes.  An OpenLDAP directory server with the POSIX schema to support Linux authentication might require an object for a new user to have attributes like the following example.
 
 ```
 dn: cn=bsimon,dc=Contoso,dc=lab
@@ -192,7 +192,7 @@ Depending on the options you select, some of the wizard screens might not be ava
      |Server Certificate Details|If `SSL` or `TLS` was specified, the wizard will display the certificate returned by the directory server.  Confirm that the issuer, subject and thumbprint are for the correct directory server.|
      |Mandatory Features Found|The connector also verifies that the mandatory controls are present in the Root DSE. If these controls are not listed, a warning is presented. Some LDAP directories do not list all features in the Root DSE and it is possible that the connector works without issues even if a warning is present.|
      |Supported Controls|The **supported controls** checkboxes control the behavior for certain operations|
-     |Delta Import|The change log DN is the naming context used by the delta change log, for example **cn=changelog**. This value must be specified to be able to do delta import.|
+     |Delta Import|The change log DN is the naming context used by the delta change log, for example **cn=changelog**. This value must be specified to be able to do delta import. If you do not need to implement delta import, then this can be blank.|
      |Password Attribute|If the directory server supports a different password attribute or password hashing, you can specify the destination for password changes.|
      |Partition Names|In the additional partitions list, it is possible to add additional namespaces not automatically detected. For example, this setting can be used if several servers make up a logical cluster, which should all be imported at the same time. Just as Active Directory can have multiple domains in one forest but all domains share one schema, the same can be simulated by entering the additional namespaces in this box. Each namespace can import from different servers and is further configured on the **Configure Partitions and Hierarchies** page.|
     
@@ -345,7 +345,7 @@ In this section, you'll configure the mapping between the Microsoft Entra user's
 
  6. Select **Save**.
 
-## Ensure users to be provisioned to the application have required attributes
+## Ensure users to be provisioned to the directory have required attributes
 
 If there are people who have existing user accounts in the LDAP directory, then you will need to ensure that the Microsoft Entra user representation has the attributes required for matching.
 
@@ -356,45 +356,78 @@ If your users originate in Active Directory Domain Services, and has the attribu
 
 If your users originate in Microsoft Entra ID, then for each new attribute you will need to store on a user, you will need to [define a directory extension](/graph/extensibility-overview?tabs=http#define-the-directory-extension). Then, [update the Microsoft Entra users](/graph/extensibility-overview?tabs=http#update-or-delete-directory-extensions) that are planned to be provisioned, to give each user a value of those attributes.
 
-Once you have the users updated in Microsoft Entra ID, you can use the [Microsoft Graph PowerShell cmdlets](https://www.powershellgallery.com/packages/Microsoft.Graph) to automate checking users for the required attributes.
+### Confirming users via PowerShell
+
+Once you have the users updated in Microsoft Entra ID, you can use the [Microsoft Graph PowerShell cmdlets](https://www.powershellgallery.com/packages/Microsoft.Graph) to automate checking users have all the required attributes.
 
 For example, suppose your provisioning required users to have three attributes `DisplayName`,`surname` and `extension_656b1c479a814b1789844e76b2f459c3_MyNewProperty`. This third attribute will be used to contain the `uidNumber`. You could use the `Get-MgUser` cmdlet to retrieve each user and check if the required attributes are present.  Note that the Graph v1.0 `Get-MgUser` cmdlet does not by default return any of a user's directory extension attributes, unless the attributes are specified in the request as one of the properties to return.
 
-```powershell
-$userPrincipalNames = (
- "alice@contoso.com",
- "bob@contoso.com",
- "carol@contoso.com" )
+This section shows how to interact with Microsoft Entra ID by using [Microsoft Graph PowerShell](https://www.powershellgallery.com/packages/Microsoft.Graph) cmdlets.
 
-$requiredBaseAttributes = ("DisplayName","surname")
-$requiredExtensionAttributes = ("extension_656b1c479a814b1789844e76b2f459c3_MyNewProperty")
+The first time your organization uses these cmdlets for this scenario, you need to be in a Global Administrator role to allow Microsoft Graph PowerShell to be used in your tenant. Subsequent interactions can use a lower-privileged role, such as:
 
-$select = "id"
-foreach ($a in $requiredExtensionAttributes) { $select += ","; $select += $a;}
-foreach ($a in $requiredBaseAttributes) { $select += ","; $select += $a;}
+- User Administrator, if you anticipate creating new users.
+- Application Administrator or [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator), if you're just managing application role assignments.
 
-foreach ($un in $userPrincipalNames) {
-   $nu = Get-MgUser -UserId $un -Property $select -ErrorAction Stop
-   foreach ($a in $requiredBaseAttributes) { if ($nu.$a -eq $null) { write-output "$un missing $a"} }
-   foreach ($a in $requiredExtensionAttributes) { if ($nu.AdditionalProperties.ContainsKey($a) -eq $false) { write-output "$un missing $a" } }
-}
-```
+1. Open PowerShell.
+1. If you don't have the [Microsoft Graph PowerShell modules](https://www.powershellgallery.com/packages/Microsoft.Graph) already installed, install the `Microsoft.Graph.Users` module and others by using this command:
+
+   ```powershell
+   Install-Module Microsoft.Graph
+   ```
+
+   If you already have the modules installed, ensure that you're using a recent version: 
+
+   ```powershell
+   Update-Module microsoft.graph.users,microsoft.graph.identity.governance,microsoft.graph.applications
+   ```
+
+1. Connect to Microsoft Entra ID:
+
+   ```powershell
+   $msg = Connect-MgGraph -ContextScope Process -Scopes "User.Read.All,Application.ReadWrite.All,AppRoleAssignment.ReadWrite.All,EntitlementManagement.ReadWrite.All"
+   ```
+
+2. Construct the list of users, and the attributes to check.
+
+   ```powershell
+   $userPrincipalNames = (
+    "alice@contoso.com",
+    "bob@contoso.com",
+    "carol@contoso.com" )
+
+   $requiredBaseAttributes = ("DisplayName","surname")
+   $requiredExtensionAttributes = ("extension_656b1c479a814b1789844e76b2f459c3_MyNewProperty")
+   ```
+
+1. Query the directory for each of the users.
+
+   ```powershell
+   $select = "id"
+   foreach ($a in $requiredExtensionAttributes) { $select += ","; $select += $a;}
+   foreach ($a in $requiredBaseAttributes) { $select += ","; $select += $a;}
+
+   foreach ($un in $userPrincipalNames) {
+      $nu = Get-MgUser -UserId $un -Property $select -ErrorAction Stop
+      foreach ($a in $requiredBaseAttributes) { if ($nu.$a -eq $null) { write-output "$un missing $a"} }
+      foreach ($a in $requiredExtensionAttributes) { if ($nu.AdditionalProperties.ContainsKey($a) -eq $false) { write-output "$un missing $a" } }
+   }
+   ```
 
 
 ## Collect existing users from the LDAP directory
 
+1. Identify which of the users in that directory are in scope for being users with Linux authentication. This choice will depend on your Linux systems's configuration. For some configurations, any user who exists in an LDAP directory is a valid user. Other configurations might require the user to have a particular attribute or be a member of a group in that directory.
 
-1. Identify which of the users in that directory are in scope for being users with Linux authentication. This choice will depend on your Linux systems's configuration. For some configurations, any user who exists in an LDAP directory is a valid user. Other applications might require the user to have a particular attribute or be a member of a group in that directory.
-
-1. Run a command that retrieves that subset of users from your LDAP directory into a CSV file. Ensure that the output includes the attributes of users that will be used for matching with Microsoft Entra ID. Examples of these attributes are employee ID, account name, and email address.
+1. Run a command that retrieves that subset of users from your LDAP directory into a CSV file. Ensure that the output includes the attributes of users that will be used for matching with Microsoft Entra ID. Examples of these attributes are employee ID, account name or `uid`, and email address.
 
 1. If needed, transfer the CSV file that contains the list of users to a system with the [Microsoft Graph PowerShell cmdlets](https://www.powershellgallery.com/packages/Microsoft.Graph) installed.
 
-1. Now that you have a list of all the users obtained from the application, you'll match those users from the application's data store with users in Microsoft Entra ID.   Before you proceed, review the information about [matching users in the source and target systems](~/identity/app-provisioning/customize-application-attributes.md#matching-users-in-the-source-and-target--systems). 
+1. Now that you have a list of all the users obtained from the directory, you'll match those users from the directory with users in Microsoft Entra ID.   Before you proceed, review the information about [matching users in the source and target systems](~/identity/app-provisioning/customize-application-attributes.md#matching-users-in-the-source-and-target--systems).
 
 [!INCLUDE [active-directory-identity-governance-applications-retrieve-users.md](~/includes/entra-identity-governance-applications-retrieve-users.md)]
 
-## Assign users to the application
+## Assign users to the application in Microsoft Entra ID
 Now that you have the Microsoft Entra ECMA Connector Host talking with Microsoft Entra ID, and the attribute mapping configured, you can move on to configuring who's in scope for provisioning. 
 
 >[!IMPORTANT]
