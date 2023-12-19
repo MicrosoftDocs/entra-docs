@@ -33,7 +33,10 @@ To integrate Microsoft Entra ID with Fareharbor SAML SSO, you need:
 
 In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
 
-* Fareharbor SAML SSO supports **SP** initiated SSO.
+* Fareharbor SAML SSO supports only **SP** initiated SSO.
+
+> [!NOTE]
+> Identifier of this application is a fixed string value so only one instance can be configured in one tenant.
 
 ## Add Fareharbor SAML SSO from the gallery
 
@@ -75,19 +78,19 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     a. In the **Identifier (Entity ID)** text box, type the URL:
     `https://fareharbor.com`
 
-    b. In the **Reply URL** textbox, type a URL one of the following patterns:
+    b. In the **Reply URL** textbox, type one of the following URL/pattern:
 
     |**Reply URL**|
     |-------------|
     |`https://fareharbor.com/api/v1/login/provider/azure/complete/`|
-    |`https://<environment>.fareharbor.com/api/v1/login/provider/azure/complete/`|
+    |`https://<ENVIRONMENT>.fareharbor.com/api/v1/login/provider/azure/complete/`|
     
-    c. In the **Sign on URL** text box, type a URL using one of the following patterns:
+    c. In the **Sign on URL** text box, type one of the following URL/pattern:
 
     |**Sign on URL**|
     |---------------|
     |`https://fareharbor.com/login/`|
-    |` https://<environment >.fareharbor.com/login/`|
+    |` https://<ENVIRONMENT>.fareharbor.com/login/`|
 
 	> [!NOTE]
 	> These values are not real. Update these values with the actual Reply URL and Sign on URL. Contact [Fareharbor SAML SSO support team](mailto:support@fareharbor.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
@@ -132,9 +135,9 @@ To configure single sign-on on **Fareharbor SAML SSO** side, you need to send th
 
 ### Create Fareharbor SAML SSO test user
 
-1. In a different web browser window, sign into Fareharbor SAML SSO website as an administrator.
+1. Log in to Fareharbor SAML SSO company site as an administrator.
 
-1. Go to **settings** > **users and permissions**.
+1. Go to **Settings** > **Users & Permissions**.
 
     ![Screenshot shows how to create users in application.](./media/fareharbor-saml-sso-tutorial/settings.png)
 
@@ -144,9 +147,9 @@ To configure single sign-on on **Fareharbor SAML SSO** side, you need to send th
 
     1. In the **Name** textbox, enter a valid name of the user.
 
-    1. In the **Username** textbox, enter a valid username of the user.
+    1. In the **Username** textbox, enter the username.
 
-    1. In the **Email** textbox, enter azure SSO email address.
+    1. In the **Email** textbox, enter your Azure SSO email address.
 
 ## Test SSO 
 
