@@ -45,9 +45,9 @@ The following error types are available:
 
 - `AuthError`: Base error class for the MSAL.js library, also used for unexpected errors.
 
-- `ClientAuthError`: Error class which denotes an issue with Client authentication. Most errors that come from the library are ClientAuthErrors. These errors result from things like calling a login method when login is already in progress, the user cancels the login, and so on.
+- `ClientAuthError`: Error class that denotes an issue with Client authentication. Most errors that come from the library are ClientAuthErrors. These errors result from things like calling a login method when login is already in progress, the user cancels the login, and so on.
 
-- `ClientConfigurationError`: Error class, extends `ClientAuthError` thrown before requests are made when the given user config parameters are malformed or missing.
+- `ClientConfigurationError`: Error class that extends `ClientAuthError`. It's thrown before requests are made when the given user config parameters are malformed or missing.
 
 - `ServerError`: Error class, represents the error strings sent by the authentication server. These errors may be invalid request formats or parameters, or any other errors that prevent the server from authenticating or authorizing the user.
 
@@ -113,7 +113,7 @@ myMSALObj.acquireTokenSilent(request).then(function (response) {
 
 [!INCLUDE [Active directory error handling claims challenges](./includes/error-handling-and-tips/error-handling-claims-challenges.md)]
 
-When getting tokens silently (using `acquireTokenSilent`) using MSAL.js, your application may receive errors when a [Conditional Access claims challenge](v2-conditional-access-dev-guide.md) such as MFA policy is required by an API you're trying to access.
+When getting tokens silently (using `acquireTokenSilent`) using MSAL.js, your application may receive errors when the API you're trying to access requires a [Conditional Access claims challenge](v2-conditional-access-dev-guide.md) such as MFA policy.
 
 The pattern to handle this error is to make an interactive call to acquire token in MSAL.js such as `acquireTokenPopup` or `acquireTokenRedirect` as in the following example:
 
@@ -145,7 +145,7 @@ See [How to use Continuous Access Evaluation enabled APIs in your applications](
 
 ### Using other frameworks
 
-Using toolkits like Tauri for registered single page applications (SPAs) with the identity platform are not recognized for production apps. SPAs only support URLs that start with `https` for production apps and `http://localhost` for local development. Prefixes like `tauri://localhost` cannot be used for browser apps. This format can only be supported for mobile or web apps as they have a confidential component unlike browser apps.
+Using toolkits like Tauri for registered single page applications (SPAs) with the identity platform is not recognized for production apps. SPAs only support URLs that start with `https` for production apps and `http://localhost` for local development. Prefixes like `tauri://localhost` can't be used for browser apps. This format can only be supported for mobile or web apps as they have a confidential component unlike browser apps.
 
 [!INCLUDE [Active directory error handling retries](./includes/error-handling-and-tips/error-handling-retries.md)]
 
