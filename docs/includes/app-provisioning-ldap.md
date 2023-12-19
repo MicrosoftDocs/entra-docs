@@ -78,7 +78,7 @@ Before deploying the connector to an existing directory server, you'll need to d
  | auxiliary object classes for a user in the directory server | Azure portal **Provisioning** page attribute mappings | For OpenLDAP with the POSIX schema, `posixAccount` and`shadowAccount` |
  | attributes to populate on a new user | Configuration wizard  **Select Attributes** page and Azure portal **Provisioning** page attribute mappings | For AD LDS `msDS-UserAccountDisabled`, `userPrincipalName`, `displayName` and for OpenLDAP `cn`, `gidNumber`, `homeDirectory`, `mail`, `objectClass`, `sn`, `uid`, `uidNumber`, `userPassword` |
  | naming hierarchy required by the directory server | Azure portal **Provisioning** page attribute mappings | Set the DN of a newly created user to be immediately below `CN=CloudUsers,CN=App,DC=Contoso,DC=lab` for AD LDS and `DC=Contoso,DC=lab` for OpenLDAP |
- | attributes for correlating users across Microsoft Entra ID and the directory server | Azure portal **Provisioning** page attribute mappings | For AD LDS, not configured as this example is for an initially empty directory, and or OpenLDAP, `mail` |
+ | attributes for correlating users across Microsoft Entra ID and the directory server | Azure portal **Provisioning** page attribute mappings | For AD LDS, not configured as this example is for an initially empty directory, and for OpenLDAP, `mail` |
  | deprovisioning behavior when a user goes out of scope in Microsoft Entra ID |Configuration wizard **Deprovisioning** page | Delete the user from the directory server |
 
 The network address of a directory server is a hostname and a TCP port number, typically port 389 or 636. Except where the directory server is co-located with the connector on the same Windows Server, or you're using network level security, the network connections from the connector to a directory server need to be protected using SSL or TLS.  The connector supports connecting to a directory server on port 389, and using Start TLS to enable TLS within the session.  The connector also supports connecting to a directory server on port 636 for LDAPS - LDAP over TLS.
@@ -299,7 +299,7 @@ Depending on the options you select, some of the wizard screens might not be ava
 
 ## Ensure ECMA2Host service is running and can read from the directory server
 
-Follow these steps to confirm that the connector host has started and has identified any existing users from the directory server.
+Follow these steps to confirm that the connector host has started and has read any existing users from the directory server into the connector host.
 
  1. On the server running the Microsoft Entra ECMA Connector Host, select **Start**.
  2. Select **run** if needed, then enter **services.msc** in the box.
@@ -414,7 +414,7 @@ In this section, you'll configure the mapping between the Microsoft Entra user's
 
  6. Select **Save**.
 
-## Ensure users to be provisioned to the application have required attributes
+## Ensure users to be provisioned to the application have required attributes in Microsoft Entra ID
 
 If there are people who have existing user accounts in the LDAP directory, then you will need to ensure that the Microsoft Entra user representation has the attributes required for matching.
 
@@ -444,13 +444,33 @@ foreach ($un in $userPrincipalNames) {
 }
 ```
 
+## Collect existing users from the LDAP directory
+
+Many LDAP directories, such as Active Directory, include a command that outputs a list of users.
+
+1. Identify which of the users in that directory are in scope for being users of the application. This choice will depend on your application's configuration. For some applications, any user who exists in an LDAP directory is a valid user. Other applications might require the user to have a particular attribute or be a member of a group in that directory.
+
+1. Run the command that retrieves that subset of users from your LDAP directory. Ensure that the output includes the attributes of users that will be used for matching with Microsoft Entra ID. Examples of these attributes are employee ID, account name, and email address.
+
+   For example, this command on Windows using the AD LDS `csvde` program would produce a CSV file in the current file system directory with the `userPrincipalName` attribute of every person in the directory:
+
+   ```powershell
+   $out_filename = ".\users.csv"
+   csvde -f $out_filename -l userPrincipalName,cn -r "(objectclass=person)"
+   ```
+1. If needed, transfer the CSV file that contains the list of users to a system with the [Microsoft Graph PowerShell cmdlets](https://www.powershellgallery.com/packages/Microsoft.Graph) installed.
+
+1. Now that you have a list of all the users obtained from the application, you'll match those users from the application's data store with users in Microsoft Entra ID.   Before you proceed, review the information about [matching users in the source and target systems](~/identity/app-provisioning/customize-application-attributes.md#matching-users-in-the-source-and-target--systems). 
+
+[!INCLUDE [active-directory-identity-governance-applications-retrieve-users.md](~/includes/entra-identity-governance-applications-retrieve-users.md)]
+
 ## Assign users to an application
 Now that you have the Microsoft Entra ECMA Connector Host talking with Microsoft Entra ID, and the attribute mapping configured, you can move on to configuring who's in scope for provisioning. 
 
 >[!IMPORTANT]
 >If you were signed in using a Hybrid Identity Administrator role, you need to sign-out and sign-in with an account that has the Application Administrator, Cloud Application Administrator or Global Administrator role, for this section.  The Hybrid Identity Administrator role does not have permissions to assign users to applications.
 
-If there are existing users in the LDAP directory, then you should create application role assignments for those existing users. To learn more about how to create application role assignments in bulk, see [governing an application's existing users in Microsoft Entra ID](~/id-governance/identity-governance-applications-existing-users.md).
+If there are existing users in the LDAP directory, then you should create application role assignments for those existing users in Microsoft Entra ID. To learn more about how to create application role assignments in bulk using `New-MgServicePrincipalAppRoleAssignedTo`, see [governing an application's existing users in Microsoft Entra ID](~/id-governance/identity-governance-applications-existing-users.md).
 
 Otherwise, if the LDAP directory is empty, then select a test user from Microsoft Entra ID who has the required attributes and will be provisioned to the application's directory server.
 
