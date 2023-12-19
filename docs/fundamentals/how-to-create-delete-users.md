@@ -8,7 +8,7 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: fundamentals
 ms.topic: how-to
-ms.date: 09/12/2023
+ms.date: 11/30/2023
 ms.author: sarahlipsey
 ms.reviewer: adelle.dimitui
 ---
@@ -26,7 +26,7 @@ Before you create or invite a new user, take some time to review the types of us
 
 - **Internal member**: These users are most likely full-time employees in your organization.
 - **Internal guest**: These users have an account in your tenant, but have guest-level privileges. It's possible they were created within your tenant prior to the availability of B2B collaboration.
-- **External member**: These users authenticate using an external account, but have member access to your tenant. These types of users are common in [multi-tenant organizations](~/identity/multi-tenant-organizations/overview.md#what-is-a-multi-tenant-organization).
+- **External member**: These users authenticate using an external account, but have member access to your tenant. These types of users are common in [multitenant organizations](~/identity/multi-tenant-organizations/overview.md#what-is-a-multi-tenant-organization).
 - **External guest**: These users are true guests of your tenant who authenticate using an external method and who have guest-level privileges. 
 
 For more information abut the differences between internal and external guests and members, see [B2B collaboration properties](~/external-id/user-properties.md).
@@ -52,9 +52,14 @@ The required role of least privilege varies based on the type of user you're add
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 
 1. Browse to **Identity** > **Users** > **All users**.
+
+   :::image type="content" source="media/how-to-create-delete-users/all-users-page.png" alt-text="Screenshot of the All users page.":::
+
 1. Select  **New user** > **Create new user**.
 
-    ![Screenshot of the create new user menu.](media/how-to-create-delete-users/create-new-user-menu.png)
+   :::image type="content" source="media/how-to-create-delete-users/create-new-user-menu.png" alt-text="Screenshot of the create new user menu.":::
+
+1. Complete the remaining tabs in the **New user** page (as shown below).
 
 ### Basics
 
@@ -68,7 +73,7 @@ The **Basics** tab contains the core fields required to create a new user.
 
 Either select the **Review + create** button to create the new user or **Next: Properties** to complete the next section.
 
-![Screenshot of the create new user Basics tab.](media/how-to-create-delete-users/create-new-user-basics-tab.png)
+:::image type="content" source="media/how-to-create-delete-users/create-new-user-basics-tab.png" alt-text="Screenshot of the create new user Basics tab.":::
 
 Either select the **Review + create** button to create the new user or **Next: Properties** to complete the next section.
 
@@ -94,7 +99,7 @@ You can assign the user to an administrative unit, group, or Microsoft Entra rol
 1. From the menu that appears, choose up to 20 groups from the list and select the **Select** button.
 1. Select the **Review + create** button.
 
-    ![Screenshot of the add group assignment process.](media/how-to-create-delete-users/add-group-assignment.png)
+   :::image type="content" source="media/how-to-create-delete-users/add-group-assignment.png" alt-text="Screenshot of the add group assignment process.":::
 
 **To assign a role to the new user**:
 
@@ -120,7 +125,9 @@ The overall process for inviting an external guest user is similar, except for a
 1. Browse to **Identity** > **Users** > **All users**.
 1. Select  **New user** > **Invite external user**.
 
-    ![Screenshot of the invite external user menu option.](media/how-to-create-delete-users/invite-external-user-menu.png)
+   :::image type="content" source="media/how-to-create-delete-users/invite-external-user-menu.png" alt-text="Screenshot of the invite external user menu option.":::
+
+1. Complete the remaining tabs in the **New user** page (as shown below).
 
 ### Basics for external users
 
@@ -130,7 +137,7 @@ In this section, you're inviting the guest to your tenant using *their email add
 - **Display name**: Provide the display name.
 -  **Invitation message**: Select the **Send invite message** checkbox to customize a brief message to the guest. Provide a Cc recipient, if necessary.
 
-![Screenshot of the invite external user Basics tab.](media/how-to-create-delete-users/invite-external-user-basics-tab.png)
+:::image type="content" source="media/how-to-create-delete-users/invite-external-user-basics-tab.png" alt-text="Screenshot of the invite external user Basics tab.":::
 
 ### Guest user invitations
 
@@ -142,7 +149,7 @@ When you invite an external guest user by sending an email invitation, you can c
     - If the invitation state is **PendingAcceptance**, select the **Resend invitation** link to send another email.
     - You can also select the **Properties** for the user and view the **Invitation state**.
 
-![Screenshot of the user details with the invitation status options highlighted.](media/how-to-create-delete-users/external-user-invitation-state.png)
+:::image type="content" source="media/how-to-create-delete-users/external-user-invitation-state.png" alt-text="Screenshot of the user details with the invitation status options highlighted.":::
 
 ## Add other users
 
@@ -166,7 +173,7 @@ To delete a user, follow these steps:
 1. Search for and select the user you want to delete.
 1. Select **Delete user**.
 
-    ![Screenshot of the All users page with a user selected and the Delete button highlighted.](media/how-to-create-delete-users/delete-existing-user.png)
+   :::image type="content" source="media/how-to-create-delete-users/delete-existing-user.png" alt-text="Screenshot of the All users page with a user selected and the Delete button highlighted.":::
 
 The user is deleted and no longer appears on the **All users** page. The user can be seen on the **Deleted users** page for the next 30 days and can be restored during that time. For more information about restoring a user, see [Restore or remove a recently deleted user using Microsoft Entra ID](./users-restore.md).
 

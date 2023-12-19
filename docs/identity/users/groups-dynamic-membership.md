@@ -32,12 +32,13 @@ When the attributes of a user or a device change, the system evaluates all dynam
 
 Microsoft Entra ID provides a rule builder to create and update your important rules more quickly. The rule builder supports the construction of up to five expressions. The rule builder makes it easier to form a rule with a few simple expressions, however, it can't be used to reproduce every rule. If the rule builder doesn't support the rule you want to create, you can use the text box.
 
-Here are some examples of advanced rules or syntax for which we recommend that you construct using the text box:
+Here are some examples of advanced rules or syntax that require the use of the text box:
 
 - Rule with more than five expressions
 - The Direct reports rule
+- Rules with -contains or -notContains operator
 - Setting [operator precedence](#operator-precedence)
-- [Rules with complex expressions](#rules-with-complex-expressions); for example, `(user.proxyAddresses -any (_ -contains "contoso"))`
+- [Rules with complex expressions](#rules-with-complex-expressions); for example, `(user.proxyAddresses -any (_ -startsWith "contoso"))`
 
 > [!NOTE]
 > The rule builder might not be able to display some rules constructed in the text box. You might see a message when the rule builder is not able to display the rule. The rule builder doesn't change the supported syntax, validation, or processing of dynamic group rules in any way.
@@ -130,8 +131,8 @@ dirSyncEnabled |true false |user.dirSyncEnabled -eq true
 
 | Properties | Allowed values | Example |
 | --- | --- | --- |
-| otherMails |Any string value | user.otherMails -contains "alias@domain" |
-| proxyAddresses |SMTP: alias@domain smtp: alias@domain | user.proxyAddresses -contains "SMTP: alias@domain" |
+| otherMails |Any string value | user.otherMails -startsWith "alias@domain" |
+| proxyAddresses |SMTP: alias@domain smtp: alias@domain | user.proxyAddresses -startsWith "SMTP: alias@domain" |
 
 For the properties used for device rules, see [Rules for devices](#rules-for-devices).
 
@@ -178,7 +179,7 @@ user.employeehiredate -le 2020-06-10T18:13:20Z
 The **-match** operator is used for matching any regular expression. Examples:
 
 ```
-user.displayName -match "Da.*"   
+user.displayName -match "^Da.*"   
 ```
 `Da`, `Dav`, `David` evaluate to true, aDa evaluates to false.
 
@@ -225,7 +226,7 @@ The following are examples of properly constructed membership rules with multipl
 
 ```
 (user.department -eq "Sales") -or (user.department -eq "Marketing")
-(user.department -eq "Sales") -and -not (user.jobTitle -contains "SDE")
+(user.department -eq "Sales") -and -not (user.jobTitle -startsWith "SDE")
 ```
 
 ### Operator precedence
@@ -267,7 +268,7 @@ Multi-value properties are collections of objects of the same type. They can be 
 | Properties | Values | Usage |
 | --- | --- | --- |
 | assignedPlans | Each object in the collection exposes the following string properties: capabilityStatus, service, servicePlanId |user.assignedPlans -any (assignedPlan.servicePlanId -eq "efb87545-963c-4e0d-99df-69c6916d9eb0" -and assignedPlan.capabilityStatus -eq "Enabled") |
-| proxyAddresses| SMTP: alias@domain smtp: alias@domain | (user.proxyAddresses -any (\_ -contains "contoso")) |
+| proxyAddresses| SMTP: alias@domain smtp: alias@domain | (user.proxyAddresses -any (\_ -startsWith "contoso")) |
 
 ### Using the -any and -all operators
 
@@ -306,10 +307,10 @@ user.assignedPlans -all (assignedPlan.servicePlanId -ne null)
 
 The underscore (\_) syntax matches occurrences of a specific value in one of the multivalued string collection properties to add users or devices to a dynamic group. It's used with the -any or -all operators.
 
-Here's an example of using the underscore (\_) in a rule to add members based on user.proxyAddress (it works the same for user.otherMails). This rule adds any user with proxy address that contains "contoso" to the group.
+Here's an example of using the underscore (\_) in a rule to add members based on user.proxyAddress (it works the same for user.otherMails). This rule adds any user with proxy address that starts with "contoso" to the group.
 
 ```
-(user.proxyAddresses -any (_ -contains "contoso"))
+(user.proxyAddresses -any (_ -startsWith "contoso"))
 ```
 
 ## Other properties and common rules
@@ -415,10 +416,10 @@ The following device attributes can be used.
  deviceManufacturer | any string value | device.deviceManufacturer -eq "Samsung"
  deviceModel | any string value | device.deviceModel -eq "iPad Air"
  displayName | any string value | device.displayName -eq "Rob iPhone"
- deviceOSType | any string value | (device.deviceOSType -eq "iPad") -or (device.deviceOSType -eq "iPhone")<br>device.deviceOSType -contains "AndroidEnterprise" <br>device.deviceOSType -eq "AndroidForWork"<br>device.deviceOSType -eq "Windows"
+ deviceOSType | any string value | (device.deviceOSType -eq "iPad") -or (device.deviceOSType -eq "iPhone")<br>device.deviceOSType -startsWith "AndroidEnterprise" <br>device.deviceOSType -eq "AndroidForWork"<br>device.deviceOSType -eq "Windows"
  deviceOSVersion | any string value | device.deviceOSVersion -eq "9.1"<br>device.deviceOSVersion -startsWith "10.0.1"
  deviceOwnership | Personal, Company, Unknown | device.deviceOwnership -eq "Company"
- devicePhysicalIds | any string value used by Autopilot, such as all Autopilot devices, OrderID, or PurchaseOrderID  | device.devicePhysicalIDs -any _ -contains "[ZTDId]"<br>(device.devicePhysicalIds -any _ -eq "[OrderID]:179887111881"<br>(device.devicePhysicalIds -any _ -eq "[PurchaseOrderId]:76222342342"
+ devicePhysicalIds | any string value used by Autopilot, such as all Autopilot devices, OrderID, or PurchaseOrderID  | device.devicePhysicalIDs -any _ -startsWith "[ZTDId]"<br>(device.devicePhysicalIds -any _ -eq "[OrderID]:179887111881"<br>(device.devicePhysicalIds -any _ -eq "[PurchaseOrderId]:76222342342"
  deviceTrustType | AzureAD, ServerAD, Workplace | device.deviceTrustType -eq "AzureAD"
  enrollmentProfileName | Apple Device Enrollment Profile name, Android Enterprise Corporate-owned dedicated device Enrollment Profile name, or Windows Autopilot profile name | device.enrollmentProfileName -eq "DEP iPhones"
  extensionAttribute1 | any string value | device.extensionAttribute1 -eq "some string value"
@@ -441,7 +442,7 @@ The following device attributes can be used.
  memberOf | Any string value (valid group object ID) | device.memberof -any (group.objectId -in ['value']) 
  objectId | a valid Microsoft Entra object ID | device.objectId -eq "76ad43c9-32c5-45e8-a272-7b58b58f596d"
  profileType | a valid [profile type](/graph/api/resources/device?view=graph-rest-1.0&preserve-view=true#properties) in Microsoft Entra ID | device.profileType -eq "RegisteredDevice"
- systemLabels | any string matching the Intune device property for tagging Modern Workplace devices | device.systemLabels -contains "M365Managed"
+ systemLabels | any string matching the Intune device property for tagging Modern Workplace devices | device.systemLabels -startsWith "M365Managed"
 
 <!-- docutune:enable -->
 

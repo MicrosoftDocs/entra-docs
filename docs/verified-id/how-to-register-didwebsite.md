@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: decentralized-identity
 ms.topic: how-to
 ms.subservice: verifiable-credentials
-ms.date: 06/14/2022
+ms.date: 12/06/2023
 ms.author: barclayn
 
 #Customer intent: As an administrator, I am looking for information to help me disable 
@@ -15,8 +15,7 @@ ms.author: barclayn
 
 # How to register your decentralized ID for did:web
 
-[!INCLUDE [Verifiable Credentials announcement](~/../azure-docs-pr/includes/verifiable-credentials-brand.md)]
-
+In this article, we go over the steps to register your decentralized ID (DID) for did:web. 
 
 ## Prerequisites
 

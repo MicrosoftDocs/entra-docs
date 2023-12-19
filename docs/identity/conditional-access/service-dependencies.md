@@ -46,7 +46,7 @@ The below table lists some more service dependencies, where the client apps must
 
 | Client apps         | Downstream service                          | Enforcement |
 | :--                 | :--                                         | ---         | 
-| Azure Data Lake     | Microsoft Azure Management (portal and API) | Early-bound |
+| Azure Data Lake     | Windows Azure Service Management API (portal and API) | Early-bound |
 | Microsoft Classroom | Exchange                                    | Early-bound |
 |                     | SharePoint                                  | Early-bound |
 | Microsoft Teams     | Exchange                                    | Early-bound |
@@ -59,14 +59,14 @@ The below table lists some more service dependencies, where the client apps must
 |                     | SharePoint                                  | Late-bound  |
 | Outlook groups      | Exchange                                    | Early-bound |
 |                     | SharePoint                                  | Early-bound |
-| Power Apps          | Microsoft Azure Management (portal and API) | Early-bound |
+| Power Apps          | Windows Azure Service Management API (portal and API) | Early-bound |
 |                     | Windows Azure Active Directory              | Early-bound |
 |                     | SharePoint                                  | Early-bound |
 |                     | Exchange                                    | Early-bound |
 | Power Automate      | Power Apps                                  | Early-bound |
 | Project             | Dynamics CRM                                | Early-bound |
 | Skype for Business  | Exchange                                    | Early-bound |
-| Visual Studio       | Microsoft Azure Management (portal and API) | Early-bound |
+| Visual Studio       | Windows Azure Service Management API (portal and API) | Early-bound |
 | Microsoft Forms     | Exchange                                    | Early-bound |
 |                     | SharePoint                                  | Early-bound |
 | Microsoft To-Do     | Exchange                                    | Early-bound |

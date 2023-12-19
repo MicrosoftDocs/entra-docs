@@ -7,12 +7,14 @@ description: Shows how an admin can add guest users to their directory from a pa
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: how-to
-ms.date: 04/21/2023
+ms.date: 12/14/2023
 
 ms.author: cmulligan
 author: csmulligan
 manager: celestedg
 ms.collection: M365-identity-device-management
+
+# Customer intent: As a user with limited administrator directory roles, I want to add B2B collaboration users in the Microsoft Entra admin center, so that I can invite guest users to the directory, group, or application and manage their access to resources.
 ---
 
 # Add Microsoft Entra B2B collaboration users in the Microsoft Entra admin center
@@ -24,9 +26,7 @@ After you add a guest user to the directory, you can either send the guest user 
 > [!IMPORTANT]
 > You should follow the steps in [How-to: Add your organization's privacy info in Microsoft Entra ID](~/fundamentals/properties-area.md) to add the URL of your organization's privacy statement. As part of the first time invitation redemption process, an invited user must consent to your privacy terms to continue. 
 
-The updated experience for creating new users covered in this article is available as a Microsoft Entra ID preview feature. This feature is enabled by default, but you can opt out by going to **Identity** > **Overview** > **Preview features** and disabling the **Create user experience** feature. For more information about previews, see [Universal License Terms for Online Services](https://www.microsoft.com/licensing/terms/product/ForOnlineServices/all).
-
-Instructions for the legacy create user process can be found in the [Add or delete users](~/fundamentals/add-users.md) article.
+Instructions in this topic provide the basic steps to invite an external user. To learn about all of the properties and settings that you can include when you invite an external user, see [How to create and delete a user](~/fundamentals/how-to-create-delete-users.md).
 
 ## Before you begin
 
@@ -42,9 +42,11 @@ To add B2B collaboration users to the directory, follow these steps:
 
 1. Browse to **Identity** > **Users** > **All users**.
 
+   :::image type="content" source="media/add-users-administrator/all-users-page.png" alt-text="Screenshot of the All users page.":::
+
 1. Select **New user** > **Invite external user** from the menu. 
 
-    ![Screenshot of the invite external user menu option.](media/add-users-administrator/invite-external-user-menu.png)
+   :::image type="content" source="media/add-users-administrator/invite-external-user-menu.png" alt-text="Screenshot of the invite external user menu option.":::
 
 ### Basics
 
@@ -56,7 +58,7 @@ In this section, you're inviting the guest to your tenant using *their email add
 
 -  **Invitation message**: Select the **Send invite message** checkbox to customize a brief message to the guest. Provide a Cc recipient, if necessary.
 
-![Screenshot of the invite external user Basics tab.](media/add-users-administrator/invite-external-user-basics-tab.png)
+:::image type="content" source="media/add-users-administrator/invite-external-user-basics-tab.png" alt-text="Screenshot of the invite external user Basics tab.":::
 
 Either select the **Review + invite** button to create the new user or **Next: Properties** to complete the next section.
 
@@ -86,7 +88,7 @@ You can assign external users to a group, or Microsoft Entra role when the accou
 1. From the menu that appears, choose up to 20 groups from the list and select the **Select** button.
 1. Select the **Review + create** button.
 
-    ![Screenshot of the add group assignment process.](media/add-users-administrator/invite-external-user-assignments-tab.png)
+   :::image type="content" source="media/add-users-administrator/invite-external-user-assignments-tab.png" alt-text="Screenshot of the add group assignment process.":::
 
 **To assign a role to the new user**:
 
@@ -98,7 +100,7 @@ You can assign external users to a group, or Microsoft Entra role when the accou
 
 The final tab captures several key details from the user creation process. Review the details and select the **Invite** button if everything looks good. An email invitation is automatically sent to the user. After you send the invitation, the user account is automatically added to the directory as a guest.
 
- ![Screenshot showing the user list including the new Guest user.](media/add-users-administrator/guest-user-type.png)
+:::image type="content" source="media/add-users-administrator/guest-user-type.png" alt-text="Screenshot showing the user list including the new Guest user.":::
 
 ### External user invitations
 <a name="resend-invitations-to-guest-users"></a>
@@ -110,7 +112,7 @@ When you invite an external guest user by sending an email invitation, you can c
     - If the invitation state is **PendingAcceptance**, select the **Resend invitation** link to send another email and follow the prompts.
     - You can also select the **Properties** for the user and view the **Invitation state**.
 
-![Screenshot of the My Feed section of the user overview page.](media/add-users-administrator/external-user-invitation-state.png)
+:::image type="content" source="media/add-users-administrator/external-user-invitation-state.png" alt-text="Screenshot of the My Feed section of the user overview page.":::
 
    > [!NOTE]
    > Group email addresses aren’t supported; enter the email address for an individual. Also, some email providers allow users to add a plus symbol (+) and additional text to their email addresses to help with things like inbox filtering. However, Microsoft Entra doesn’t currently support plus symbols in email addresses. To avoid delivery issues, omit the plus symbol and any characters following it up to the @ symbol.

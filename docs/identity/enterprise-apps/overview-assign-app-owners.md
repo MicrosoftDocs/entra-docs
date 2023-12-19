@@ -13,12 +13,12 @@ ms.author: jomondi
 ms.reviewer: saibandaru
 ms.custom: enterprise-apps
 
-#Customer intent: As a Microsoft Entra administrator, I want to learn about enterprise application ownership.
+#customer intent: As an owner of an enterprise application in Microsoft Entra ID, I want to be able to manage the organization-specific configuration of the application, add or remove other owners, and have the same permissions as application administrators, so that I can effectively manage and secure the application within my organization.
 ---
 
 # Overview of enterprise application ownership in Microsoft Entra ID
 
-A user in Microsoft Entra ID is automatically added as an application owner when they register an application. The ownership of an enterprise application is assigned by default only when a user with no administrator roles (Global Administrator, Application Administrator etc.) creates a new application registration. In all other cases, ownership isn't assigned by default to an enterprise application. Users can be owners of enterprise applications but groups can't be assigned as owners. 
+A user in Microsoft Entra ID is automatically added as an application owner when they register an application. The ownership of an enterprise application is assigned by default only when a user with no administrator roles (Global Administrator, Application Administrator etc.) creates a new application registration. In all other cases, ownership isn't assigned by default to an enterprise application. Users can be owners of enterprise applications but groups can't be assigned as owners.
 
 As an owner of an enterprise application in Microsoft Entra ID, a user can manage the organization-specific configuration of the application, such as single sign-on, provisioning, and user assignment. An owner can also add or remove other owners. Unlike Global Administrators, owners can manage only the enterprise applications they own. The owners have the same permissions as application administrators scoped to an individual application. To learn more about the permissions that an owner of an application has, see [Ownership permissions](~/fundamentals/users-default-permissions.md#owned-enterprise-applications)
  

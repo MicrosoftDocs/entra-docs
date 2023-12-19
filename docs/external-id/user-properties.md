@@ -12,7 +12,7 @@ author: csmulligan
 manager: celestedg
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done 
 ms.collection: M365-identity-device-management
-# Customer intent: As a tenant administrator, I want to learn about B2B collaboration guest user properties and states before and after invitation redemption.
+# Customer intent: As an IT admin managing external collaboration in Microsoft Entra, I want to understand the properties and management options for B2B collaboration users, so that I can effectively invite and manage external users accessing apps and resources in my organization.
 ---
 
 # Properties of a Microsoft Entra B2B collaboration user

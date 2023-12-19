@@ -136,6 +136,10 @@ For more information, see [Understanding the certificate revocation process](./c
 
 [!INCLUDE [Set-Entra-ID](~/includes/entra-authentication-set-trusted.md)]
 
+### Validate Certificate Authority Configuration
+
+It is important to ensure that the above configuration steps result is Entra ID ability to both validate the certificate authority trust chain and succsessfully aquire the certificate revocation list (CRL) from the configured certificate authority CRL distribution point (CDP) . To assist with this task, it is recommended to install the [MSIdentity Tools](https://aka.ms/msid) PowerShell module and run [Test-MsIdCBATrustStoreConfiguration](https://github.com/AzureAD/MSIdentityTools/wiki/Test-MsIdCBATrustStoreConfiguration). This PowerShell cmdlet will review the Entra tenant certificate authority configuration and surface errors/warnings for common mis-configuration issues. 
+
 ## Step 2: Enable CBA on the tenant
 
 >[!IMPORTANT]
@@ -246,8 +250,10 @@ The username binding policy helps validate the certificate of the user. By defau
 
 To determine how to configure username binding, see [How username binding works](concept-certificate-based-authentication-technical-deep-dive.md#understanding-the-username-binding-policy).
 
+For more information on scenarios using certificateUserIds attribute see [Certificate user IDs](~/identity/authentication/concept-certificate-based-authentication-certificateuserids.md).
+
 >[!IMPORTANT]
->If a username binding policy uses synchronized attributes, such as the onPremisesUserPrincipalName attribute of the user object, be aware that any user with Active Directory Administrators privileges can make changes that impact the onPremisesUserPrincipalName value in Microsoft Entra ID for any synchronized accounts, including users with delegated administrative privilege over synchronized user accounts or administrative rights over the Microsoft Entra Connect Servers.
+>If a username binding policy uses synchronized attributes, such as the certificateUserIds, onPremisesUserPrincipalName, and userPrincipalName attribute of the user object, be aware that accounts with administrative privileges in Active Directory (such as those with delegated rights on user objects or administive rights on the Entra Connect Server) can make changes that impact these attributes in Entra ID. 
 
 1. Create the username binding by selecting one of the X.509 certificate fields to bind with one of the user attributes. The username binding order represents the priority level of the binding. The first one has the highest priority, and so on.
 

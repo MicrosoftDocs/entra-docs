@@ -6,13 +6,13 @@ description: Give partners access to both on-premises and cloud resources with M
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: conceptual
-ms.date: 11/23/2022
+ms.date: 12/18/2023
 ms.author: cmulligan
 author: csmulligan
 manager: celestedg
 ms.collection: M365-identity-device-management
 
-# Customer intent: As a tenant administrator, I want to give partners access to both on-premises and cloud resources with Microsoft Entra B2B collaboration. 
+# Customer intent: As an IT admin managing a hybrid organization, I want to grant external partners access to on-premises and cloud-based resources using Microsoft Entra B2B collaboration, so that I can easily manage their access and ensure they can use the same credentials for both environments.
 ---
 
 # Microsoft Entra B2B collaboration for hybrid organizations
@@ -23,7 +23,7 @@ Microsoft Entra B2B collaboration makes it easy for you to give your external pa
 
 ## Grant B2B users in Microsoft Entra ID access to your on-premises apps
 
-If your organization uses [Microsoft Entra B2B](what-is-b2b.md) collaboration capabilities to invite guest users from partner organizations to your Microsoft Entra ID, you can now provide these B2B users access to on-premises apps.
+If your organization uses Microsoft Entra B2B collaboration capabilities to invite guest users from partner organizations to your Microsoft Entra ID, you can now provide these B2B users access to on-premises apps.
 
 For apps that use SAML-based authentication, you can make these apps available to B2B users through the Azure portal, using Microsoft Entra application proxy for authentication.
 
@@ -47,5 +47,4 @@ For implementation details, see [Grant locally managed partner accounts access t
 ## Next steps
 
 - [Grant Microsoft Entra B2B users access to your on-premises applications](hybrid-cloud-to-on-premises.md)
-- [B2B direct connect](b2b-direct-connect-overview.md)
 - [Grant locally managed partner accounts access to cloud resources using Microsoft Entra B2B collaboration](hybrid-on-premises-to-cloud.md)

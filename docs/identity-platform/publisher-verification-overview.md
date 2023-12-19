@@ -10,7 +10,7 @@ ms.reviewer: xurobert
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-#Customer intent:
+#Customer intent: As a developer integrating my app with the Microsoft identity platform, I want to learn about the publisher verification process, so that my organization can be identified as authentic by Microsoft and my app can gain increased transparency, improved branding, and smoother enterprise adoption.
 ---
 
 # Publisher verification

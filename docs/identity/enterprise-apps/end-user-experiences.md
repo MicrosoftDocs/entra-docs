@@ -12,6 +12,9 @@ ms.date: 12/08/2022
 ms.author: jomondi
 ms.reviewer: lenalepa
 ms.custom: enterprise-apps
+
+#customer intent: As an IT admin with Microsoft Entra ID, I want to deploy applications to end users in my organization, so that they can access the applications through the app launchers such as My Apps and Microsoft 365.
+
 ---
 
 # End-user experiences for applications
@@ -75,7 +78,7 @@ As an admin, you can choose to try out new app launcher features while they are 
 
 To enable or disable previews for your app launchers:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 1. On the left menu, select **App launchers**, then select **Settings**.
 1. Under **Preview settings**, toggle the checkboxes for the previews you want to enable or disable. To opt into a preview, toggle the associated checkbox to the checked state. To opt out of a preview, toggle the associated checkbox to the unchecked state.

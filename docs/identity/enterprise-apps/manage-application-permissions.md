@@ -14,7 +14,8 @@ ms.reviewer: phsignor
 zone_pivot_groups: enterprise-apps-all
 ms.collection: M365-identity-device-management
 ms.custom: enterprise-apps, has-azure-ad-ps-ref
-#customer intent: As an admin, I want to review permissions granted to applications so that I can restrict suspicious or over privileged applications.
+
+#customer intent: As an IT admin, I want to review and revoke permissions granted to applications in my Microsoft Entra tenant, so that I can ensure that only necessary permissions are granted and prevent malicious applications from accessing sensitive data.
 ---
 
 # Review permissions granted to enterprise applications

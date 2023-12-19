@@ -12,6 +12,8 @@ ms.date: 01/02/2023
 ms.author: jomondi
 ms.reviewer: sreyanth, ludwignick
 ms.custom: enterprise-apps, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+
+#customer intent: As an IT admin, I want to understand how to configure Home Realm Discovery (HRD) policies, so that I can control the sign-in behavior for an application and ensure a streamlined authentication experience for users.
 ---
 # Home Realm Discovery for an application
 

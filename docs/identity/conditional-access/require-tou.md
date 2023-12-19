@@ -76,7 +76,7 @@ The scenario in this quickstart uses:
 1. Under Assignments, select **Cloud apps or actions**.
 1. Select **Cloud apps or actions**.
    1. Under Include, choose **Select apps**.
-   1. Select **Microsoft Azure Management**, and then choose **Select**.
+   1. Select **Windows Azure Service Management API**, and then choose **Select**.
 1. Under **Access controls**, select **Grant**.
    1. Select **Grant access**.
    1. Select the terms of use you created previously called **My TOU** and choose **Select**.

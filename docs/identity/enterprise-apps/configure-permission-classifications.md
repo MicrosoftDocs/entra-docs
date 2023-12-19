@@ -13,7 +13,7 @@ ms.author: jomondi
 ms.reviewer: phsignor, jawoods
 ms.custom: has-azure-ad-ps-ref
 zone_pivot_groups: enterprise-apps-all
-#customer intent: As an admin, I want configure permission classifications for applications in Microsoft Entra ID
+#customer intent: As an administrator managing permissions in Microsoft Entra ID, I want to configure permission classifications, so that I can identify the impact of different permissions according to my organization's policies and risk evaluations.
 ---
 
 # Configure permission classifications

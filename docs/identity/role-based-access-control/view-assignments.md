@@ -11,7 +11,7 @@ ms.topic: how-to
 ms.date: 04/15/2022
 ms.author: rolyon
 ms.reviewer: vincesm
-ms.custom: it-pro, has-azure-ad-ps-ref
+ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.collection: M365-identity-device-management
 ---
 # List Microsoft Entra role assignments
@@ -23,7 +23,7 @@ This article describes how to list roles you have assigned in Microsoft Entra ID
 
 ## Prerequisites
 
-- Azure AD PowerShell module when using PowerShell
+- Microsoft Graph PowerShell module when using PowerShell
 - Admin consent when using Graph explorer for Microsoft Graph API
 
 For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
