@@ -35,12 +35,12 @@ Permit Access to All Users in AD FS:
 
 This maps to Microsoft Entra ID in one of the following ways:
 
-1. Set **User assignment required** to **No**.
+1. Set **Assignment required** to **No**.
 
    :::image type="content" source="media/migrate-adfs-represent-security-policies/permit-access-to-all-users-2.png" alt-text="Screenshot shows how to edit access control policy for SaaS apps.":::
 
     > [!Note]
-    > Setting **User assignment required** to **Yes** requires that users are assigned to the application to gain access. When set to **No**, all users have access. This switch doesn't control what users see in the **My Apps** experience.
+    > Setting **Assignment required** to **Yes** requires that users are assigned to the application to gain access. When set to **No**, all users have access. This switch doesn't control what users see in the **My Apps** experience.
 
 1. In the **Users and groups tab**, assign your application to the **All Users** automatic group. You must [enable Dynamic Groups](~/identity/users/groups-create-rule.md) in your Microsoft Entra tenant for the default **All Users** group to be available.
 
@@ -57,7 +57,7 @@ To map this rule to Microsoft Entra ID:
 1. In the [Microsoft Entra admin center](https://entra.microsoft.com/#home), [create a user group](~/fundamentals/how-to-manage-groups.md) that corresponds to the group of users from AD FS.
 1. Assign app permissions to the group:
 
-   :::image type="content" source="media/migrate-adfs-represent-security-policies/allow-a-group-explicitly-2.png" alt-text="Screenshot shows how to add a user assignment to the app.":::
+   :::image type="content" source="media/migrate-adfs-represent-security-policies/allow-a-group-explicitly-2.png" alt-text="Screenshot shows how to add a assignment to the app.":::
 
 ### Example 3: Authorize a specific user
 
