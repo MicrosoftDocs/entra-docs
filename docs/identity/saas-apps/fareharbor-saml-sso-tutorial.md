@@ -85,6 +85,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     c. In the **Sign on URL** text box, type a URL using one of the following patterns:
 
     |**Sign on URL**|
+    |---------------|
     |`https://fareharbor.com/login/`|
     |` https://<environment >.fareharbor.com/login/`|
 
