@@ -55,7 +55,7 @@ To configure and test Microsoft Entra SSO with Fareharbor SAML SSO, perform the 
 1. **[Configure Microsoft Entra SSO](#configure-microsoft-entra-sso)** - to enable your users to use this feature.
     1. **[Create a Microsoft Entra ID test user](#create-a-microsoft-entra-id-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
     1. **[Assign the Microsoft Entra ID test user](#assign-the-microsoft-entra-id-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
-1. **[Configure Fareharbor SAML SSO SSO](#configure-fareharbor-saml-sso-sso)** - to configure the single sign-on settings on application side.
+1. **[Configure Fareharbor SAML SSO](#configure-fareharbor-saml-sso)** - to configure the single sign-on settings on application side.
     1. **[Create Fareharbor SAML SSO test user](#create-fareharbor-saml-sso-test-user)** - to have a counterpart of B.Simon in Fareharbor SAML SSO that is linked to the Microsoft Entra ID representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
@@ -75,14 +75,14 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     a. In the **Identifier (Entity ID)** text box, type the URL:
     `https://fareharbor.com`
 
-    b. In the **Reply URL** textbox, type a URL one of the following pattern:
+    b. In the **Reply URL** textbox, type a URL one of the following patterns:
 
     |**Reply URL**|
     |-------------|
     |`https://fareharbor.com/api/v1/login/provider/azure/complete/`|
     |`https://<environment>.fareharbor.com/api/v1/login/provider/azure/complete/`|
     
-    c. In the **Sign on URL** text box, type a URL using one of the following pattern:
+    c. In the **Sign on URL** text box, type a URL using one of the following patterns:
 
     |**Sign on URL**|
     |`https://fareharbor.com/login/`|
@@ -125,7 +125,7 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
    1. If you are expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
    1. In the **Add Assignment** dialog, click the **Assign** button.
 
-## Configure Fareharbor SAML SSO SSO
+## Configure Fareharbor SAML SSO
 
 To configure single sign-on on **Fareharbor SAML SSO** side, you need to send the downloaded **Certificate (Raw)** and appropriate copied URLs from Microsoft Entra admin center to [Fareharbor SAML SSO support team](mailto:support@fareharbor.com). They set this setting to have the SAML SSO connection set properly on both sides.
 
@@ -137,7 +137,7 @@ To configure single sign-on on **Fareharbor SAML SSO** side, you need to send th
 
     ![Screenshot shows how to create users in application.](./media/fareharbor-saml-sso-tutorial/settings.png)
 
-1. Navigate to **Users** > **New User** and perform thr following steps.
+1. Navigate to **Users** > **New User** and perform the following steps.
 
     ![Screenshot shows how to create new users in page.](./media/fareharbor-saml-sso-tutorial/user.png)
 
