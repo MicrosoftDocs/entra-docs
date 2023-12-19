@@ -91,7 +91,7 @@ Specify MFA rules for a user or a group in Microsoft Entra ID:
 1. Select **Assignments**. Add the user(s) or group(s) for which you want to enforce MFA.
 1. Configure the **Access controls** options as shown in the following screenshots:
 
-   :::image type="content" source="media/migrate-adfs-represent-security-policies/mfa-users-groups.png" alt-text="Screenshot shows the Grant pane where you can grant access.":::
+   :::image type="content" source="media/migrate-adfs-represent-security-policies/mfa-users-groups.png" alt-text="Screenshot shows the Grant pane where you can grant access." lightbox="media/migrate-adfs-represent-security-policies/mfa-users-groups.png":::
 
 ### Example 2: Enforce MFA for unregistered devices
 
