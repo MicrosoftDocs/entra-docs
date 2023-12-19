@@ -3508,6 +3508,8 @@
         href: parsable-provisioning-tutorial.md
       - name: Peripass
         href: peripass-provisioning-tutorial.md  
+      - name: Personify Inc
+        href: personify-inc-provisioning-tutorial.md
       - name: Pingboard
         href: pingboard-provisioning-tutorial.md
       - name: Plandisc
