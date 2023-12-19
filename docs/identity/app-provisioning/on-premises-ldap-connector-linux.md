@@ -42,7 +42,7 @@ This article assumes that the LDAP server is already present in the on-premises 
     [!INCLUDE [active-directory-p1-license.md](~/includes/entra-p1-license.md)]
  - The Hybrid Identity Administrator role for configuring the provisioning agent.
  - The Application Administrator or Cloud Application Administrator roles for configuring provisioning in the Azure portal or Microsoft Entra admin center.
- - The Microsoft Entra users to be provisioned to the LDAP directory must already be populated with the attributes that will be required by the directory server schema and are specific to each user. In particular, each user is required to have a unique number as their User ID number. Before deploying the proisioning agent and assigning users to the directory, you would need to either generate that number from an existing attribute on the user, or extend the Microsoft Entra schema and populate that attribute on the users in scope.  See [Graph extensibility](/graph/extensibility-overview?tabs=http#directory-azure-ad-extensions) for how to create additional directory extensions.
+ - The Microsoft Entra users to be provisioned to the LDAP directory must already be populated with the attributes that will be required by the directory server schema and are specific to each user. In particular, each user is required to have a unique number as their User ID number. Before deploying the provisioning agent and assigning users to the directory, you would need to either generate that number from an existing attribute on the user, or extend the Microsoft Entra schema and populate that attribute on the users in scope.  See [Graph extensibility](/graph/extensibility-overview?tabs=http#directory-azure-ad-extensions) for how to create additional directory extensions.
 
 ### More recommendations and limitations
 The following bullet points are more recommendations and limitations.
@@ -63,10 +63,10 @@ Before deploying the connector to an existing directory server, you'll need to d
  | port number of the directory server| Configuration wizard **Connectivity** page | 636. For LDAP over SSL or TLS (LDAPS), use port 636.  For `Start TLS`, use port 389. |
  | account for the connector to identify itself to the directory server |Configuration wizard **Connectivity** page | `cn=admin,dc=contoso,dc=lab` |
  | password for the connector to authenticate itself to the directory server |Configuration wizard **Connectivity** page | |
- | structural object class for a user in the directory server | Configuration wizard **Object Types** page | F `inetOrgPerson` |
+ | structural object class for a user in the directory server | Configuration wizard **Object Types** page | `inetOrgPerson` |
  | auxiliary object classes for a user in the directory server | Azure portal **Provisioning** page attribute mappings | `posixAccount` and`shadowAccount` |
  | attributes to populate on a new user | Configuration wizard  **Select Attributes** page and Azure portal **Provisioning** page attribute mappings |  `cn`, `gidNumber`, `homeDirectory`, `mail`, `objectClass`, `sn`, `uid`, `uidNumber`, `userPassword` |
- | naming hierarchy required by the directory server | Azure portal **Provisioning** page attribute mappings | Set the DN of a newly created user to be immediately below  `DC=Contoso,DC=lab` f |
+ | naming hierarchy required by the directory server | Azure portal **Provisioning** page attribute mappings | Set the DN of a newly created user to be immediately below  `DC=Contoso,DC=lab` |
  | attributes for correlating users across Microsoft Entra ID and the directory server | Azure portal **Provisioning** page attribute mappings | `mail` |
  | deprovisioning behavior when a user goes out of scope in Microsoft Entra ID |Configuration wizard **Deprovisioning** page | Delete the user from the directory server |
 
@@ -349,11 +349,16 @@ In this section, you'll configure the mapping between the Microsoft Entra user's
 
 If there are people who have existing user accounts in the LDAP directory, then you will need to ensure that the Microsoft Entra user representation has the attributes required for matching.
 
-If you are planning on creating new users in the LDAP directory, then you will need to ensure that the Microsoft Entra representations of those users have the source attributes required by the user schema of the target directory.
+If you are planning on creating new users in the LDAP directory, then you will need to ensure that the Microsoft Entra representations of those users have the source attributes required by the user schema of the target directory.  Each user requires a unique `uid` and a unique `uidNumber`.
 
-You can use the [Microsoft Graph PowerShell cmdlets](https://www.powershellgallery.com/packages/Microsoft.Graph) to automate checking users for the required attributes.
 
-For example, suppose your provisioning required users to have three attributes `DisplayName`,`surname` and `extension_656b1c479a814b1789844e76b2f459c3_MyNewProperty`. You could use the `Get-MgUser` cmdlet to retrieve each user and check if the required attributes are present.  Note that the Graph v1.0 `Get-MgUser` cmdlet does not by default return any of a user's directory extension attributes, unless the attributes are specified in the request as one of the properties to return.
+If your users originate in Active Directory Domain Services, and has the attribute in that directory, then you can use Microsoft Entra Connect or Microsoft Entra Connect cloud sync to configure that the attribute should be synched from Active Directory Domain Services to Microsoft Entra ID, so that it is available for provisioning to other systems.
+
+If your users originate in Microsoft Entra ID, then for each new attribute you will need to store on a user, you will need to [define a directory extension](/graph/extensibility-overview?tabs=http#define-the-directory-extension). Then, [update the Microsoft Entra users](/graph/extensibility-overview?tabs=http#update-or-delete-directory-extensions) that are planned to be provisioned, to give each user a value of those attributes.
+
+Once you have the users updated in Microsoft Entra ID, you can use the [Microsoft Graph PowerShell cmdlets](https://www.powershellgallery.com/packages/Microsoft.Graph) to automate checking users for the required attributes.
+
+For example, suppose your provisioning required users to have three attributes `DisplayName`,`surname` and `extension_656b1c479a814b1789844e76b2f459c3_MyNewProperty`. This third attribute will be used to contain the `uidNumber`. You could use the `Get-MgUser` cmdlet to retrieve each user and check if the required attributes are present.  Note that the Graph v1.0 `Get-MgUser` cmdlet does not by default return any of a user's directory extension attributes, unless the attributes are specified in the request as one of the properties to return.
 
 ```powershell
 $userPrincipalNames = (
@@ -374,6 +379,7 @@ foreach ($un in $userPrincipalNames) {
    foreach ($a in $requiredExtensionAttributes) { if ($nu.AdditionalProperties.ContainsKey($a) -eq $false) { write-output "$un missing $a" } }
 }
 ```
+
 
 ## Assign users to an application
 Now that you have the Microsoft Entra ECMA Connector Host talking with Microsoft Entra ID, and the attribute mapping configured, you can move on to configuring who's in scope for provisioning. 
