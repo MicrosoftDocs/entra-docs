@@ -1,6 +1,6 @@
 ---
 title: Microsoft Entra ID Governance
-description: Microsoft Entra ID Governance allows you to balance your organization's need for security and employee productivity with the right processes and visibility.
+description: Microsoft Entra ID Governance allows you to balance your organization's need for security and end user productivity with the right processes and visibility.
 services: active-directory
 documentationcenter: ''
 author: owinfreyATL
@@ -19,20 +19,21 @@ ms.collection: M365-identity-device-management
 
 # What is Microsoft Entra ID Governance?
 
-Microsoft Entra ID Governance allows you to balance your organization's need for security and employee productivity with the right processes and visibility. It provides you with capabilities to ensure that the right people have the right access to the right resources. These and related Microsoft Entra ID and Enterprise Mobility + Security features allows you to mitigate access risk by protecting, monitoring, and auditing access to critical assets while ensuring employee and business partner productivity.  
+[Microsoft Entra ID Governance](https://www.microsoft.com/security/business/identity-access/microsoft-entra-id-governance) enables organizations to improve productivity, strengthen security and more easily meet compliance and reguatory requirements.  You can use Microsoft Entra ID Governance to automatically ensure that the right people have the right access to the right resources, through this product's capabilities for identity and access process automation, delegation to business groups, and increased visbility.  The features included in Microsoft Entra ID Governance, along with related Microsoft Entra, Microsoft Security and Microsoft Azure products, allows you to mitigate identity and access risks by protecting, monitoring, and auditing access to critical assets.
 
-ID Governance gives organizations the ability to do the following tasks across employees, business partners and vendors, and across services and applications both on-premises and in clouds:
+Specifically, Microsoft Entra ID Governance is an identity governance solution intended to help organizations address these four key questions:
+
+- Which users should have access to which resources?
+- What are those users doing with that access?
+- Are there organizational controls in place for managing access?
+- Can auditors verify that the controls are working effectively?
+
+Microsoft Entra ID Governance gives organizations the ability to do the following tasks for employees, business partners and vendors, managing access across services and applications both on-premises and in clouds:
 
 - Govern the identity lifecycle
 - Govern access lifecycle
 - Secure privileged access for administration
 
-Specifically, it is intended to help organizations address these four key questions:
-
-- Which users should have access to which resources?
-- What are those users doing with that access?
-- Are there effective organizational controls for managing access?
-- Can auditors verify that the controls are working?
 
 ## Identity lifecycle
 
