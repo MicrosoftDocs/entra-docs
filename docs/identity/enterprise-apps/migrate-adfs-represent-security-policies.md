@@ -101,7 +101,7 @@ Specify MFA rules for unregistered devices in Microsoft Entra ID:
 1. Set the **Assignments** to **All users**.
 1. Configure the **Access controls** options as shown below:
 
-   :::image type="content" source="media/migrate-adfs-represent-security-policies/mfa-unregistered-devices.png" alt-text="Screenshot shows the Grant pane where you can grant access and specify other restrictions.":::
+   :::image type="content" source="media/migrate-adfs-represent-security-policies/mfa-unregistered-devices.png" alt-text="Screenshot shows the Grant pane where you can grant access and specify other restrictions." lightbox="media/migrate-adfs-represent-security-policies/mfa-unregistered-devices.png":::
 
 When you set the **For multiple controls** option to **Require one of the selected controls**, it means that if any one of the conditions specified by the checkbox are met by the user, the user is granted access to your app.
 
@@ -114,7 +114,7 @@ Specify MFA rules based on a user's location in Microsoft Entra ID:
 1. [Configure named locations in Microsoft Entra ID](~/identity/conditional-access/location-condition.md). Otherwise, federation from inside your corporate network is trusted.
 1. Configure the **Conditions rules** to specify the locations for which you would like to enforce MFA.
 
-   :::image type="content" source="media/migrate-adfs-represent-security-policies/mfa-location-1.png" alt-text="Screenshot shows the Locations pane for Conditions rules.":::
+   :::image type="content" source="media/migrate-adfs-represent-security-policies/mfa-location-1.png" alt-text="Screenshot shows the Locations pane for Conditions rules." lightbox="media/migrate-adfs-represent-security-policies/mfa-location-1.png":::
 
 1. Configure the **Access controls** options as shown below:
 
@@ -130,7 +130,7 @@ To map the rule to Microsoft Entra ID:
 
 1. In the [Microsoft Entra admin center](https://entra.microsoft.com/#home), select **Enterprise Applications** and then **Single sign-on** to view the SAML-based sign-on configuration:
 
-   :::image type="content" source="media/migrate-adfs-represent-security-policies/map-emit-attributes-as-claims-rule-2.png" alt-text="Screenshot shows the Single sign-on page for your Enterprise Application.":::
+   :::image type="content" source="media/migrate-adfs-represent-security-policies/map-emit-attributes-as-claims-rule-2.png" alt-text="Screenshot shows the Single sign-on page for your Enterprise Application." lightbox="media/migrate-adfs-represent-security-policies/map-emit-attributes-as-claims-rule-2.png":::
 
 1. Select **Edit** (highlighted) to modify the attributes:
 
