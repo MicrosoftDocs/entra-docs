@@ -45,7 +45,7 @@ To ensure that the users can easily and securely access applications, your goal 
 
 [Microsoft Entra ID](~/fundamentals/whatis.md) offers a universal identity platform that provides your employees, partners, and customers a single identity to access the applications they want. The platform boosts collaboration from any platform and device.
 
-:::image type="content" source="media/migrate-adfs-apps-phases-overview/connectivity.png" alt-text="Diagram showing Microsoft Entra connectivity.":::
+:::image type="content" source="media/migrate-adfs-apps-phases-overview/connectivity.png" alt-text="Diagram showing Microsoft Entra connectivity." lightbox="media/migrate-adfs-apps-phases-overview/connectivity.png":::
 
 Microsoft Entra ID has a [full suite of identity management capabilities](~/fundamentals/whatis.md#which-features-work-in-azure-ad). Standardizing your app authentication and authorization to Microsoft Entra ID gets you the benefits that these capabilities provide.
 
