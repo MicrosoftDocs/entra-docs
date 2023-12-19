@@ -204,7 +204,7 @@ var app = PublicClientApplicationBuilder
                 .Build();
 ```
 
-### Step 2: Update AppDelegate to handle the callback
+### Step 2: Update main activity to handle the callback
 
 When MSAL.NET calls the broker, the broker will, in turn, call back to your application with the `OnActivityResult()` method. Since MSAL will wait for the response from the broker, your application needs to route the result to MSAL.NET.
 
