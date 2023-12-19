@@ -3508,6 +3508,8 @@
         href: parsable-provisioning-tutorial.md
       - name: Peripass
         href: peripass-provisioning-tutorial.md  
+      - name: Personify Inc
+        href: personify-inc-provisioning-tutorial.md
       - name: Pingboard
         href: pingboard-provisioning-tutorial.md
       - name: Plandisc
@@ -3532,6 +3534,8 @@
         href: peakon-provisioning-tutorial.md
       - name: Proware
         href: proware-provisioning-tutorial.md
+      - name: Puzzel
+        href: puzzel-provisioning-tutorial.md
       - name: Real Links
         href: real-links-provisioning-tutorial.md
       - name: Recnice
