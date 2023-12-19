@@ -191,7 +191,8 @@ Because multiple custom authentication binding policy rules can be created with 
 1. If one policy OID binds to MFA, all user certificates that include this policy OID as one of the OIDs (A user certificate could have multiple policy OIDs) qualify as MFA.
 1. One certificate issuer can only have one valid strong authentication binding (that is, a certificate can't bind to both single-factor and MFA).
 
->[!IMPORTANT] There is a known issue where an Entra tenant admin configures a CBA authentication policy rule using both Issuer and Policy OID impacts some device registration scenarios including:
+>[!IMPORTANT]
+>There is a known issue where an Entra tenant admin configures a CBA authentication policy rule using both Issuer and Policy OID impacts some device registration scenarios including:
 >- Windows Hello For Business enrollment
 >- Fido2 Security Key registration
 >- Windows Passwordless Phone Sign-in
