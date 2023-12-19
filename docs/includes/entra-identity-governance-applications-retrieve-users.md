@@ -98,29 +98,29 @@ The first time your organization uses these cmdlets for this scenario, you need 
    }
    $dbu_duplicate_count = $dbu_duplicate_list.Count
    if ($dbu_duplicate_count -ne 0) {
-     Write-Error "Unable to locate Azure AD users for $dbu_duplicate_count rows as multiple rows have the same value"
+     Write-Error "Unable to locate Microsoft Entra ID users for $dbu_duplicate_count rows as multiple rows have the same value"
    }
    $dbu_not_matched_count = $dbu_not_matched_list.Count
    if ($dbu_not_matched_count -ne 0) {
-     Write-Error "Unable to locate $dbu_not_matched_count records in Azure AD by querying for $db_match_column_name values in $azuread_match_attr_name."
+     Write-Error "Unable to locate $dbu_not_matched_count records in Microsoft Entra ID by querying for $db_match_column_name values in $azuread_match_attr_name."
    }
    $dbu_match_ambiguous_count = $dbu_match_ambiguous_list.Count
    if ($dbu_match_ambiguous_count -ne 0) {
-     Write-Error "Unable to locate $dbu_match_ambiguous_count records in Azure AD as attribute match ambiguous."
+     Write-Error "Unable to locate $dbu_match_ambiguous_count records in Microsoft Entra ID as attribute match ambiguous."
    }
    $dbu_query_failed_count = $dbu_query_failed_list.Count
    if ($dbu_query_failed_count -ne 0) {
-     Write-Error "Unable to locate $dbu_query_failed_count records in Azure AD as queries returned errors."
+     Write-Error "Unable to locate $dbu_query_failed_count records in Microsoft Entra ID as queries returned errors."
    }
    $azuread_not_enabled_count = $azuread_not_enabled_list.Count
    if ($azuread_not_enabled_count -ne 0) {
-    Write-Error "$azuread_not_enabled_count users in Azure AD are blocked from sign-in."
+    Write-Error "$azuread_not_enabled_count users in Microsoft Entra ID are blocked from sign-in."
    }
    if ($dbu_not_queried_count -ne 0 -or $dbu_duplicate_count -ne 0 -or $dbu_not_matched_count -ne 0 -or $dbu_match_ambiguous_count -ne 0 -or $dbu_query_failed_count -ne 0 -or $azuread_not_enabled_count) {
     Write-Output "You will need to resolve those issues before access of all existing users can be reviewed."
    }
    $azuread_match_count = $azuread_match_id_list.Count
-   Write-Output "Users corresponding to $azuread_match_count records were located in Azure AD." 
+   Write-Output "Users corresponding to $azuread_match_count records were located in Microsoft Entra ID." 
    ```
 
 1. When the script finishes, it will indicate an error if any records from the data source weren't located in Microsoft Entra ID. If not all the records for users from the application's data store could be located as users in Microsoft Entra ID, you'll need to investigate which records didn't match and why.  
@@ -204,27 +204,27 @@ The first time your organization uses these cmdlets for this scenario, you need 
    }
    $dbu_duplicate_count = $dbu_duplicate_list.Count
    if ($dbu_duplicate_count -ne 0) {
-     Write-Error "Unable to locate Azure AD users for $dbu_duplicate_count rows as multiple rows have the same value"
+     Write-Error "Unable to locate Microsoft Entra ID users for $dbu_duplicate_count rows as multiple rows have the same value"
    }
    $dbu_not_matched_count = $dbu_not_matched_list.Count
    if ($dbu_not_matched_count -ne 0) {
-     Write-Error "Unable to locate $dbu_not_matched_count records in Azure AD by querying for $db_match_column_name values in $azuread_match_attr_name."
+     Write-Error "Unable to locate $dbu_not_matched_count records in Microsoft Entra ID by querying for $db_match_column_name values in $azuread_match_attr_name."
    }
    $dbu_match_ambiguous_count = $dbu_match_ambiguous_list.Count
    if ($dbu_match_ambiguous_count -ne 0) {
-     Write-Error "Unable to locate $dbu_match_ambiguous_count records in Azure AD as attribute match ambiguous."
+     Write-Error "Unable to locate $dbu_match_ambiguous_count records in Microsoft Entra ID as attribute match ambiguous."
    }
    $dbu_query_failed_count = $dbu_query_failed_list.Count
    if ($dbu_query_failed_count -ne 0) {
-     Write-Error "Unable to locate $dbu_query_failed_count records in Azure AD as queries returned errors."
+     Write-Error "Unable to locate $dbu_query_failed_count records in Microsoft Entra ID as queries returned errors."
    }
    $azuread_not_enabled_count = $azuread_not_enabled_list.Count
    if ($azuread_not_enabled_count -ne 0) {
-    Write-Warning "$azuread_not_enabled_count users in Azure AD are blocked from sign-in."
+    Write-Warning "$azuread_not_enabled_count users in Microsoft Entra ID are blocked from sign-in."
    }
    if ($dbu_not_queried_count -ne 0 -or $dbu_duplicate_count -ne 0 -or $dbu_not_matched_count -ne 0 -or $dbu_match_ambiguous_count -ne 0 -or $dbu_query_failed_count -ne 0 -or $azuread_not_enabled_count -ne 0) {
     Write-Output "You will need to resolve those issues before access of all existing users can be reviewed."
    }
    $azuread_match_count = $azuread_match_id_list.Count
-   Write-Output "Users corresponding to $azuread_match_count records were located in Azure AD." 
+   Write-Output "Users corresponding to $azuread_match_count records were located in Microsoft Entra ID." 
    ```
