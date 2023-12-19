@@ -381,15 +381,28 @@ foreach ($un in $userPrincipalNames) {
 ```
 
 
-## Assign users to an application
+## Collect existing users from the LDAP directory
+
+
+1. Identify which of the users in that directory are in scope for being users with Linux authentication. This choice will depend on your Linux systems's configuration. For some configurations, any user who exists in an LDAP directory is a valid user. Other applications might require the user to have a particular attribute or be a member of a group in that directory.
+
+1. Run a command that retrieves that subset of users from your LDAP directory into a CSV file. Ensure that the output includes the attributes of users that will be used for matching with Microsoft Entra ID. Examples of these attributes are employee ID, account name, and email address.
+
+1. If needed, transfer the CSV file that contains the list of users to a system with the [Microsoft Graph PowerShell cmdlets](https://www.powershellgallery.com/packages/Microsoft.Graph) installed.
+
+1. Now that you have a list of all the users obtained from the application, you'll match those users from the application's data store with users in Microsoft Entra ID.   Before you proceed, review the information about [matching users in the source and target systems](~/identity/app-provisioning/customize-application-attributes.md#matching-users-in-the-source-and-target--systems). 
+
+[!INCLUDE [active-directory-identity-governance-applications-retrieve-users.md](~/includes/entra-identity-governance-applications-retrieve-users.md)]
+
+## Assign users to the application
 Now that you have the Microsoft Entra ECMA Connector Host talking with Microsoft Entra ID, and the attribute mapping configured, you can move on to configuring who's in scope for provisioning. 
 
 >[!IMPORTANT]
 >If you were signed in using a Hybrid Identity Administrator role, you need to sign-out and sign-in with an account that has the Application Administrator, Cloud Application Administrator or Global Administrator role, for this section.  The Hybrid Identity Administrator role does not have permissions to assign users to applications.
 
-If there are existing users in the LDAP directory, then you should create application role assignments for those existing users. To learn more about how to create application role assignments in bulk, see [governing an application's existing users in Microsoft Entra ID](~/id-governance/identity-governance-applications-existing-users.md).
+If there are existing users in the LDAP directory, then you should create application role assignments for those existing users. To learn more about how to create application role assignments in bulk using `New-MgServicePrincipalAppRoleAssignedTo`, see [governing an application's existing users in Microsoft Entra ID](~/id-governance/identity-governance-applications-existing-users.md).
 
-Otherwise, if the LDAP directory is empty, then select a test user from Microsoft Entra ID who has the required attributes and will be provisioned to the application's directory server.
+If you do not wish to update existing users in the LDAP directory yet, then select a test user from Microsoft Entra ID who has the required attributes and will be provisioned to the directory server.
 
  1. Ensure that the user will select has all the properties that will be mapped to the required attributes of the directory server schema.
  1. In the Azure portal, select **Enterprise applications**.
@@ -423,9 +436,10 @@ Now that your attributes are mapped and an initial user is assigned, you can tes
  [![Screenshot that shows testing on-demand provisioning.](~/includes/media/app-provisioning-ldap\test-2.png)](~/includes/media/app-provisioning-ldap\test-2.png#lightbox)</br>
  6. After several seconds, then the message **Successfully created user in target system** will appear, with a list of the user attributes.
 
+
 ## Start provisioning users
  
-After the test of on-demand provisioning is successful, add the remaining users.
+After the test of on-demand provisioning is successful, add the remaining users.  To learn more about how to create application role assignments in bulk using `New-MgServicePrincipalAppRoleAssignedTo`, see [governing an application's existing users in Microsoft Entra ID](~/id-governance/identity-governance-applications-existing-users.md).
 
  1. In the Azure portal, select the application.
  1. On the left, under **Manage**, select **Users and groups**.
