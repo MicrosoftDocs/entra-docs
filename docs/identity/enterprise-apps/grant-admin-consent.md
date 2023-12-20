@@ -137,7 +137,7 @@ In the following example, the resource API is Microsoft Graph of object ID `7ea9
 
 In this section, you grant application permissions to your enterprise application. Application permissions are permissions your application needs to access a resource API. The permissions are defined by the resource API and granted to your enterprise application, which is the principal application. After you've granted your application access to the resource API, it runs as a background service or daemon without a signed-in user. Application permissions are also known as app roles.
 
-In this section, you grant the Microsoft Graph application (the principal of ID `b0d9b9e3-0ecf-4bfd-8dab-9273dd055a94`) an app role (application permission) of ID `df021288-bdef-4463-88db-98f22de89214` that's exposed by a resource API of ID `7ea9e944-71ce-443d-811c-71e8047b557a`.
+In the following example, you grant the Microsoft Graph application (the principal of ID `b0d9b9e3-0ecf-4bfd-8dab-9273dd055a94`) an app role (application permission) of ID `df021288-bdef-4463-88db-98f22de89214` that's exposed by a resource API of ID `7ea9e944-71ce-443d-811c-71e8047b557a`.
 
 1. Connect to Microsoft Graph PowerShell and sign in as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 
@@ -151,7 +151,7 @@ In this section, you grant the Microsoft Graph application (the principal of ID 
    Get-MgServicePrincipal -Filter "displayName eq 'Microsoft Graph'" -Property AppRoles | Select -ExpandProperty appRoles |fl
    ```
   
-1. Grant the application permission (app role) to the client enterprise application by running the following request.
+1. Grant the application permission (app role) to the principal application by running the following request.
 
 ```powershell
  $params = @{
@@ -221,7 +221,7 @@ You need to sign as a [Global Administrator](~/identity/role-based-access-contro
    GET https://graph.microsoft.com/v1.0/servicePrincipals?$filter=displayName eq 'Microsoft Graph'&$select=id,displayName,appId,appRoles
    ```
 
-1. Grant the application permission (app role) to the client enterprise application by running the following request.
+1. Grant the application permission (app role) to the principal application by running the following request.
 
    ```http
    POST https://graph.microsoft.com/v1.0/servicePrincipals/7ea9e944-71ce-443d-811c-71e8047b557a/appRoleAssignedTo
