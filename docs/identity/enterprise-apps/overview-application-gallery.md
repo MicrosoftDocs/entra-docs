@@ -6,17 +6,19 @@ manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: overview
-ms.date: 12/11/2023
+ms.date: 12/20/2023
 ms.author: jomondi
 ms.reviewer: ergreenl
 ms.custom: enterprise-apps
+
+#customer intent: As an IT admin, I want to easily find and deploy pre-integrated SaaS applications from the Microsoft Entra application gallery, so that I can provide users with a seamless single sign-on experience and automate user provisioning.
 ---
 
 # Overview of the Microsoft Entra application gallery
 
 The Microsoft Entra application gallery is a collection of software as a service (SaaS) [applications](~/identity-platform/app-objects-and-service-principals.md) that are preintegrated with Microsoft Entra ID. The collection contains thousands of applications that make it easy to deploy and configure [single sign-on (SSO)](~/identity-platform/single-sign-on-saml-protocol.md) and [automated user provisioning](~/identity/app-provisioning/user-provisioning.md).
 
-To find the gallery when signed into your tenant, select **Enterprise applications**, select **All applications**, and then select **New application**.
+To find the gallery when signed into your tenant, browse to **Identity** > **Applications** > **Enterprise applications** > **All applications** > **New application**.
 
 :::image type="content" source="media/overview-application-gallery/enterprise-applications.png" alt-text="Screenshot showing the Microsoft Entra application gallery pane in the [Microsoft Entra admin center](https://entra.microsoft.com).":::
 
