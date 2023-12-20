@@ -137,7 +137,7 @@ You are trying to remove a single-valued custom security attribute assignment by
 
 **Solution 3**
 
-Use the [Invoke-MgGraphRequest](/powershell/microsoftgraph/authentication-commands#using-invoke-mggraphrequest) command instead. For more information, see [Remove a single-valued custom security attribute assignment from a user](../identity/users/users-custom-security-attributes.md#remove-a-single-valued-custom-security-attribute-assignment-from-a-user) or [Remove custom security attribute assignments from applications](../identity/enterprise-apps/custom-security-attributes-apps.md#remove-custom-security-attribute-assignments-from-applications-1).
+Use the [Invoke-MgGraphRequest](/powershell/microsoftgraph/authentication-commands#using-invoke-mggraphrequest) command instead. For more information, see [Remove a single-valued custom security attribute assignment from a user](../identity/users/users-custom-security-attributes.md#remove-a-single-valued-custom-security-attribute-assignment-from-a-user) or [Remove custom security attribute assignments from applications](../identity/enterprise-apps/custom-security-attributes-apps.md#remove-custom-security-attribute-assignments-from-applications-using-microsoft-graph-powershell).
 
 ## Symptom - Request_UnsupportedQuery error
 
