@@ -82,7 +82,7 @@ To include resources in an access package, the resources must exist in a catalog
 
   * Groups that originate in Exchange Online as Distribution groups can't be modified in Microsoft Entra ID either, so cannot be added to catalogs.
 
-* Applications can be Microsoft Entra enterprise applications, which include both software as a service (SaaS) applications and your own applications integrated with Microsoft Entra ID.
+* Applications can be Microsoft Entra enterprise applications, which include software as a service (SaaS) applications, on-premises applications, and your own applications integrated with Microsoft Entra ID.
 
   * If your application has not yet been integrated with Microsoft Entra ID, see [govern access for applications in your environment](identity-governance-applications-prepare.md) and [integrate an application with Microsoft Entra ID](identity-governance-applications-integrate.md).
 
