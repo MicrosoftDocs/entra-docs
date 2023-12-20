@@ -97,7 +97,7 @@ If the CBA-enabled user can't use an MF cert, such as on mobile device without s
    1. Authentication Policy Administrator adds a phone number and allows voice/text message authentication for the user account.
 
 
-## MFA with single-factor certificate-based authentication
+## MFA with single-factor certificate-based authentication (Preview)
 
 Microsoft Entra CBA can be used as a second factor to meet MFA requirements with single-factor certificates. 
 Some of the supported combinations are:
@@ -151,6 +151,7 @@ Let's look at an example of a user who has single-factor certificate, and is con
    :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/cert-picker.png" alt-text="Screenshot of how to select a certificate.":::
 
 1. Because the certificate is configured to be single-factor authentication strength, the user needs a second factor to meet MFA requirements. The user sees available second factors, which in this case is passwordless sign-in. Select **Approve a request on my Microsoft Authenticator app**.
+
    :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/second-factor-request.png" alt-text="Screenshot of second factor request.":::
 
 1. You'll get a notification on your phone. Select **Approve Sign-in?**.
@@ -185,7 +186,7 @@ Because multiple custom authentication binding policy rules can be created with 
 1. Next, custom rules using policy OIDs are evaluated. If you have a certificate A with policy OID **1.2.3.4.5** and a derived credential B based on that certificate has a policy OID **1.2.3.4.5.6**, and the custom rule is defined as **Policy OID** with value **1.2.3.4.5** with MFA, only certificate A satisfies MFA, and credential B satisfies only single-factor authentication. If the user used derived credential during sign-in and was configured to have MFA, the user is asked for a second factor for successful authentication.
 1. If there's a conflict between multiple policy OIDs (such as when a certificate has two policy OIDs, where one binds to single-factor authentication and the other binds to MFA) then treat the certificate as a single-factor authentication.
 1. Next, custom rules using issuer CA are evaluated.
-1. If a certificte has both policy OID and Issuer rules matching, the policy OID is always checked first, and if no policy rule is found then the issuer bindings are checked. Policy OID has a higher strong authentication binding priority than the issuer.
+1. If a certificate has both policy OID and Issuer rules matching, the policy OID is always checked first, and if no policy rule is found then the issuer bindings are checked. Policy OID has a higher strong authentication binding priority than the issuer.
 1. If one CA binds to MFA, all user certificates that the CA issues qualify as MFA. The same logic applies for single-factor authentication.
 1. If one policy OID binds to MFA, all user certificates that include this policy OID as one of the OIDs (A user certificate could have multiple policy OIDs) qualify as MFA.
 1. One certificate issuer can only have one valid strong authentication binding (that is, a certificate can't bind to both single-factor and MFA).
@@ -204,13 +205,13 @@ Mapping types based on user names and email addresses are considered low-affinit
 |:--------------------------|:----------------------------------------:|:----------------------:|:----:|
 |PrincipalName | `X509:<PN>bob@woodgrove.com` | userPrincipalName <br> onPremisesUserPrincipalName <br> certificateUserIds | low-affinity |
 |RFC822Name	| `X509:<RFC822>user@woodgrove.com` | userPrincipalName <br> onPremisesUserPrincipalName <br> certificateUserIds | low-affinity |
-|IssuerAndSubject | `X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<S>DC=com,DC=contoso,OU=UserAccounts,CN=mfatest` | certificateUserIds | low-affinity |
-|Subject | `X509:<S>DC=com,DC=contoso,OU=UserAccounts,CN=mfatest`  | certificateUserIds | low-affinity |
+|IssuerAndSubject (preview) | `X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<S>DC=com,DC=contoso,OU=UserAccounts,CN=mfatest` | certificateUserIds | low-affinity |
+|Subject (preview)| `X509:<S>DC=com,DC=contoso,OU=UserAccounts,CN=mfatest`  | certificateUserIds | low-affinity |
 |SKI | `X509:<SKI>123456789abcdef` | certificateUserIds | high-affinity |
 |SHA1PublicKey | `X509:<SHA1-PUKEY>123456789abcdef` | certificateUserIds | high-affinity |
-|IssuerAndSerialNumber | `X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<SR>b24134139f069b49997212a86ba0ef48` <br> To get the correct value for serial number, run this command and store the value shown in CertificateUserIds:<br> **Syntax**:<br> `Certutil –dump –v [~certificate path~] >> [~dumpFile path~]` <br> **Example**: <br> `certutil -dump -v firstusercert.cer >> firstCertDump.txt` | certificateUserIds | high-affinity |
+|IssuerAndSerialNumber (preview) | `X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<SR>b24134139f069b49997212a86ba0ef48` <br> To get the correct value for serial number, run this command and store the value shown in CertificateUserIds:<br> **Syntax**:<br> `Certutil –dump –v [~certificate path~] >> [~dumpFile path~]` <br> **Example**: <br> `certutil -dump -v firstusercert.cer >> firstCertDump.txt` | certificateUserIds | high-affinity |
 
-### Define Affinity binding at the tenant level and override with custom rules
+### Define Affinity binding at the tenant level and override with custom rules (Preview)
 
 With this feature an Authentication Policy Administrator can configure whether a user can be authenticated by using low-affinity or high-affinity username binding mapping. You can set **Required affinity binding** for the tenant, which applies to all users. You can also override the tenant-wide default value by creating custom rules based or Issuer and Policy OID, or Policy OID, or Issuer.
 
@@ -222,7 +223,7 @@ Use the highest priority (lowest number) binding.
 
 1. Look up the user object by using the username or User Principal Name.
 1. Get the list of all username bindings setup by the tenant admin in the CBA auth method configuration ordered by the 'priority' attribute. Today the concept of priority is not exposed in Portal UX. Graph will return you the priority attribute for each binding and they are used in the evaluation process.
-1. If the tenant has high affinity binding enabled or if the certificate values matches a custom rule that required high affinity binding, remove all the low affinity bindings from the list.
+1. If the tenant has high affinity binding enabled or if the certificate value matches a custom rule that required high affinity binding, remove all the low affinity bindings from the list.
 1. Evaluate each binding in the list until a successful authentication occurs.
 1. If the X.509 certificate field of the configured binding is on the presented certificate, Microsoft Entra ID matches the value in the certificate field to the user object attribute value.
    1. If a match is found, user authentication is successful.
@@ -249,7 +250,7 @@ For example, lets suppose you have two username bindings on PrincipalName mapped
 There are scenarios where an organization issues multiple certificates for a single identity. Most commonly this could be a derived credential for a mobile device or can also be for a secondary smartcard or x509 credential holder capable device such as a Yubikey. 
 
 **Cloud only accounts**
-For cloud-only accounts you can map multiple certificates (up to 5) for use by populating the certificateUserIds field (Authorization info in the User Portal) with unique values identifying each certificate. If the organization is using high affinity bindings say Issuer + SerialNumber, values ithin CertificateUserIds may look like the following: 
+For cloud-only accounts you can map multiple certificates (up to 5) for use by populating the certificateUserIds field (Authorization info in the User Portal) with unique values identifying each certificate. If the organization is using high affinity bindings say Issuer + SerialNumber, values within CertificateUserIds may look like the following: 
  
 `X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<SR>b24134139f069b49997212a86ba0ef48`\
 `X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<SR>c11154138u089b48767212a86cd0ef76`
@@ -264,14 +265,14 @@ For synchronized accounts you can map multiple certificates for use by populatin
  
 In this example the first value represents X509Certificate1 and the second value represents X509Certificate2. These values must then be synchronized to the certificateUserIds field in Azure AD.  
 
-### Support for one certificates with multiple Entra user accounts (1:M)
-There are scenarios where an organization need the user to use the same certificate to authenticate into multiple identities. Most commonly this is for administrative accounts. It can also be for developer accounts or temporary duty accounts. In traditional AD the altSecurityIdentities field is used to populate the certificate values and a Hint is used during login to direct AD to the desired account to check for the login. With Microsoft Entra CBA this is different and there is no Hint. Instead, Home Realm Discovery identifies the desired account to check the certificate values. The other key difference is that Microsoft Entra CBA enforces uniqueness in the certificateUserIds field. This means that two accounts cannot both populate the same certificate values. 
+### Support for one certificate with multiple Entra user accounts (1:M)
+There are scenarios where an organization needs the user to use the same certificate to authenticate into multiple identities. Most commonly this is for administrative accounts. It can also be for developer accounts or temporary duty accounts. In traditional AD the altSecurityIdentities field is used to populate the certificate values and a Hint is used during login to direct AD to the desired account to check for the login. With Microsoft Entra CBA this is different and there is no Hint. Instead, Home Realm Discovery identifies the desired account to check the certificate values. The other key difference is that Microsoft Entra CBA enforces uniqueness in the certificateUserIds field. This means that two accounts cannot both populate the same certificate values. 
 
 >[!Important]
 > It is not a very secure configuration to use same credential to authenticate into different Entra ID accounts and it is recommended not to allow one certificate for multiple Entra user accounts.
 
 **Cloud only accounts**
-For cloud-only accounts you need to create multiple username bindings and need to map unique values to each user account that will be utilizing the certificate. Each account will be authenticated into using a differennt username binding. This applies within the boundary of a single directory/tenant (i.e. Tenant admin can map the certificate for use in another directory/tenant as well, as long as the values remain unique per account too).  
+For cloud-only accounts you need to create multiple username bindings and need to map unique values to each user account that will be utilizing the certificate. Each account will be authenticated into using a different username binding. This applies within the boundary of a single directory/tenant (i.e. Tenant admin can map the certificate for use in another directory/tenant as well, as long as the values remain unique per account too).  
  
 Populate the certificateUserIds field (Authorization info in the User Portal) with a unique value identifying the desired certificate. If the organization is using high affinity bindings (i.e. strong authentication) bindings say Issuer + SerialNumber and SKI, this could look like the following: 
 
@@ -283,7 +284,7 @@ User account CertificateUserIds values:\
 `X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<SR>b24134139f069b49997212a86ba0ef48`\
 `X509:<SKI>82b287a25c48af0918ea088d5293712324dfd523`
 
-Now when either user presents the same certificate at sign-in then the user will successfully sign-in because their account matches a unique value on that certificate. One account will be authenticated into using Issuer+SerialNumber and the other using SKI binding.
+Now, when either user presents the same certificate at sign-in the user will successfully sign-in because their account matches a unique value on that certificate. One account will be authenticated into using Issuer+SerialNumber and the other using SKI binding.
 
 >[!Note]
 > The number of accounts that can be used in this manner is limited by the number of username bindings configured on the tenant. If the organization is using only High Affinity bindings the number of accounts supported will be limited to 3. If the organization is also utilizing low affinity bindings then this number increases to 7 accounts (1 PrincipalName, 1 RFC822Name, 1 SubjectKeyIdentifier, 1 SHA1PublicKey, 1 Issuer+Subject, 1 Issuer+SerialNumber, 1 Subject). If the organization implements multiple unique RFC822Names on the certificate then each of these could be utilized for a separate account thus increasing the number beyond 7.

@@ -13,7 +13,7 @@ ms.service: active-directory
 ms.subservice: enterprise-users
 ms.topic: reference
 ms.workload: identity
-ms.date: 10/06/2023
+ms.date: 12/15/2023
 ms.author: nicholak
 ms.reviewer: Nicholak-MS
 ms.custom: "it-pro;seo-update-azuread-jan"
@@ -32,7 +32,7 @@ When [managing licenses in the Azure portal](https://portal.azure.com/#blade/Mic
 - **Service plans included (friendly names)**: A list of service plans (friendly names) in the product that correspond to the string ID and GUID
 
 >[!NOTE]
->This information last updated on October 10th 2023.<br/>You can also download a CSV version of this table [here](https://download.microsoft.com/download/e/3/e/e3e9faf2-f28b-490a-9ada-c6089a1fc5b0/Product%20names%20and%20service%20plan%20identifiers%20for%20licensing.csv).
+>This information last updated on December 15th, 2023.<br/>You can also download a CSV version of this table [here](https://download.microsoft.com/download/e/3/e/e3e9faf2-f28b-490a-9ada-c6089a1fc5b0/Product%20names%20and%20service%20plan%20identifiers%20for%20licensing.csv).
 ><br/>
 
 | Product name | String ID | GUID | Service plans included | Service plans included (friendly names) |
@@ -468,6 +468,7 @@ When [managing licenses in the Azure portal](https://portal.azure.com/#blade/Mic
 | Windows 365 Shared Use 8 vCPU 32 GB 512 GB | Windows_365_S_8vCPU_32GB_512GB | f4dc1de8-8c94-4d37-af8a-1fca6675590a | CPC_S_8C_32GB_512GB (fa0b4021-0f60-4d95-bf68-95036285282a) | Windows 365 Shared Use 8 vCPU, 32 GB, 512 GB (fa0b4021-0f60-4d95-bf68-95036285282a) |
 | Windows Store for Business	| WINDOWS_STORE	| 6470687e-a428-4b7a-bef2-8a291ad947c9	| EXCHANGE_S_FOUNDATION (113feb6c-3fe4-4440-bddc-54d774bf0318)<br/>WINDOWS_STORE (a420f25f-a7b3-4ff5-a9d0-5d58f73b537d) | EXCHANGE FOUNDATION (113feb6c-3fe4-4440-bddc-54d774bf0318)<br/>WINDOWS STORE SERVICE (a420f25f-a7b3-4ff5-a9d0-5d58f73b537d) |
 | Windows Store for Business EDU Faculty | WSFB_EDU_FACULTY | c7e9d9e6-1981-4bf3-bb50-a5bdfaa06fb2 | Windows Store for Business EDU Store_faculty (aaa2cd24-5519-450f-a1a0-160750710ca1) | Windows Store for Business EDU Store_faculty (aaa2cd24-5519-450f-a1a0-160750710ca1) |
+| Workload Identities Premium | Workload_Identities_Premium_CN | 73fa80b5-689f-4db9-bbe4-bd414bc41e44 | AAD_WRKLDID_P1 (84c289f0-efcb-486f-8581-07f44fc9efad)<br/>AAD_WRKLDID_P2 (7dc0e92d-bf15-401d-907e-0884efe7c760) | Azure Active Directory workload identities P1 (84c289f0-efcb-486f-8581-07f44fc9efad)<br/>Azure Active Directory workload identities P2 (7dc0e92d-bf15-401d-907e-0884efe7c760) |
 
 ## Service plans that cannot be assigned at the same time
 
