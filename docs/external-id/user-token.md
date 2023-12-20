@@ -6,7 +6,7 @@ description: User token reference for Microsoft Entra B2B collaboration.
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: conceptual
-ms.date: 12/12/2022
+ms.date: 12/19/2023
 
 ms.author: cmulligan
 author: csmulligan
@@ -37,4 +37,4 @@ Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ilk0dWVLMm9hSU
 
 * [B2B collaboration overview](what-is-b2b.md)
 * [B2B collaboration for hybrid organizations](hybrid-organizations.md)
-* [B2B collaboration user claims mapping](claims-mapping.md)
+
