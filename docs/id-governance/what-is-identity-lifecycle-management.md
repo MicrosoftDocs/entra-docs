@@ -21,8 +21,6 @@ Identity Governance helps organizations achieve a balance between *productivity*
 
 ![Diagram of the Microsoft Entra ID relationship in provisioning with other sources and targets.](media/what-is-identity-lifecycle-management/cloud-1-id-governance.png)
 
-![Diagram of the Microsoft Entra ID relationship in provisioning with other sources and targets.](https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Entra_qqww_Blade7_InfographicImage_1600x900_2x?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=1600&hei=900&qlt=100&fit=constrain)
-
 ## What is a digital identity?
 
 A digital identity is information on an entity used by one or more computing resources, such as operating systems or applications. These entities may represent people, organizations, applications, or devices.  The identity is usually described by the attributes that are associated with it, such as the name, identifiers, and properties such as roles used for access management. These attributes help systems make determinations such who has access to what, and who is allowed to use that resource.  
