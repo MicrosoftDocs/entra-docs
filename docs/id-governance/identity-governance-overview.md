@@ -41,7 +41,7 @@ Identity Governance helps organizations achieve a balance between *productivity*
 
 ![Identity lifecycle](./media/identity-governance-overview/identity-lifecycle.png)
 
-For many organizations, identity lifecycle for employees and other workers is tied to the representation of that person in an HCM (human capital management) or HR system. Organizations need to automate the process of creating an identity for a new employee based on a signal from that system so that the employee can be productive on day 1, and gracefully remove those identities and access when the employee leaves the organization.
+For many organizations, identity lifecycle for employees and other workers is tied to the representation of that person in an HCM (human capital management) or HR system. Organizations need to automate the process of creating an identity for a new employee that is based on a signal from that system so that the employee can be productive on day 1. And organizations need to ensure those identities and access are removed when the employee leaves the organization.
 
 In Microsoft Entra ID Governance, you can automate the identity lifecycle for these individuals using
 
@@ -53,10 +53,10 @@ Organizations also need additional identities, for partners, suppliers and other
 
 In Microsoft Entra ID Governance, you can enable business groups to determine which of these guests should have access, and for how long, using
 
-- [entitlement management](entitlement-management-overview.md) in which you can specify the other organizations whose users are allowed to request access to your organization's resources. When one of those users's request is approved, they are automatically added as [B2B](~/external-id/what-is-b2b.md) guests to your organization's directory, and assigned appropriate access, and the B2B guest user is removed from your organization's directory when they no longer needs access.
-- [access reviews](access-reviews-overview.md) which automates recurring reviews of existing guests already in your organziation's directory, and removes those users from your organization's directory when they no longer need access.
+- [entitlement management](entitlement-management-overview.md) in which you can specify the other organizations whose users are allowed to request access to your organization's resources. When one of those users's request is approved, they are automatically added as [B2B](~/external-id/what-is-b2b.md) guests to your organization's directory, and assigned appropriate access, and the B2B guest user is removed from your organization's directory when they no longer need access.
+- [access reviews](access-reviews-overview.md) that automates recurring reviews of existing guests already in your organization's directory, and removes those users from your organization's directory when they no longer need access.
 
-For more information, see [What is identity liefcycle management](what-is-identity-lifecycle-manaegment.md).
+For more information, see [What is identity lifecycle management](what-is-identity-lifecycle-management.md).
 
 ## Access lifecycle
 
