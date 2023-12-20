@@ -182,6 +182,8 @@
         href: appraisd-tutorial.md
       - name: AppRemo
         href: appremo-tutorial.md
+      - name: AppSecEngineer
+        href: appsecengineer-tutorial.md
       - name: Conviso Platform SSO
         href: appsec-flow-sso-tutorial.md
       - name: Apptio
@@ -746,6 +748,8 @@
         href: deem-mobile-tutorial.md
       - name: Degreed
         href: degreed-tutorial.md
+      - name: Delivery Scheduling Tool
+        href: delivery-scheduling-tool-tutorial.md
       - name: Delivery Solutions
         href: delivery-solutions-tutorial.md
       - name: Deputy
