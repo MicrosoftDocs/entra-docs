@@ -35,9 +35,6 @@ In this tutorial, you configure and test Microsoft Entra SSO in a test environme
 
 * Delivery Scheduling Tool supports both **SP and IDP** initiated SSO.
 
-> [!NOTE]
-> Identifier of this application is a fixed string value so only one instance can be configured in one tenant.
-
 ## Add Delivery Scheduling Tool from the gallery
 
 To configure the integration of Delivery Scheduling Tool into Microsoft Entra ID, you need to add Delivery Scheduling Tool from the gallery to your list of managed SaaS apps.
@@ -97,6 +94,9 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 1. Delivery Scheduling Tool application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
 	![Screenshot shows the image of attributes configuration.](common/default-attributes.png "Image")
+
+    > [!Note]
+    > Please rename **emailaddress** to **EmailAddress**  and remove namespace for all the default attributes under **Additional Claim** Section shown in the above screenshot to work SSO connection properly on both sides as per application side requirement and also map **name** and **Unique User Identifier (Name ID)** attributes to **user.onpremisessamaccountname** in the portal.
 
 1. In addition to above, Delivery Scheduling Tool application expects few more attributes to be passed back in SAML response which are shown below. These attributes are also pre populated but you can review them as per your requirements.
 	
