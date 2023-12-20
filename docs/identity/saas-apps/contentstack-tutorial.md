@@ -9,7 +9,7 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 
 ms.topic: how-to
-ms.date: 12/11/2023
+ms.date: 12/19/2023
 ms.author: jeedes
 
 ---
@@ -65,51 +65,61 @@ To configure and test Microsoft Entra SSO with Contentstack, perform the followi
 Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin center.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator) and browse to **Identity** > **Applications** > **Enterprise applications**.
-1. Now click on **+ New Application** and search for Contentstack then click **Create**. Once created, click on the **Single sign-on** button from the left menu. 
-1. On the **Select a single sign-on method** page, select **SAML**.
+1. Now click on **+ New Application** and search for Contentstack then click **Create**. Once created, now go to **Setup single sign on** or click the **Single sign-on** link from the left menu.
+    
+    ![Screenshot shows the new application creation.](./media/contentstack-tutorial/create.png "app creation")
+
+1. Next, on the **Select a single sign-on method** page, select **SAML**.
+    
+    ![Screenshot shows how to select a single sign-on method.](./media/contentstack-tutorial/single.png "Method")
+
 1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
 
-   ![Screenshot shows how to edit Basic SAML Configuration.](common/edit-urls.png "Basic Configuration")
+   ![Screenshot shows how to edit Basic SAML Configuration.](./media/contentstack-tutorial/edit.png "Basic Configuration")
 
-1. On the **Basic SAML Configuration** section, perform the following steps:
+1. In the **Basic SAML Configuration** section, you need to perform a few steps. To obtain the information necessary for these steps, you will first need to go to the Contentstack application and create **SSO Name** and **ACS URL** in the following manner:
+    
+    a. Log in to your Contentstack account, go to the Organization Settings page, and click on the **Single Sign-On** tab.
 
-    a. In the **Identifier** text box, type a URL using one of the following patterns:
+    ![Screenshot shows the steps for Basic SAML Configuration.](./media/contentstack-tutorial/page.png "Configuration")
 
-    |**Identifier**|
-    |--------------|
-    |`https://app.contentstack.com/<SSO_NAME>`|
-    |`https://<ENVIRONMENT>-app.contentstack.com/<SSO_NAME>`|
+    b. Enter an **SSO Name** of your choice, and click **Create**.
 
-    b. In the **Reply URL** text box, type a URL using one of the following patterns:
+    ![Screenshot shows how to enter or create name.](./media/contentstack-tutorial/names.png "Name Creation")
 
-    |**Reply URL**|
-    |-------------|
-    |`https://app.contentstack.com/api/sso/saml2/<SSO_NAME>`|
-    |`https://<ENVIRONMENT>-app.contentstack.com/api/sso/saml2/<SSO_NAME>`|
+    > [!NOTE]
+    > For example, if your company name is “Acme, Inc.” enter “acme” here. This name will be used as one of the login credentials by the organization users while signing in. The SSO Name can contain only alphabets (in lowercase), numbers (0-9), and/or hyphens (-).
 
-1. Perform the following step, if you wish to configure the application in **SP** initiated mode:
+    c. When you click on **Create**, this will generate the **Assertion Consumer Service URL** or ACS URL, and other details such as **Entity ID**, **Attributes**, and **NameID Format**.
 
-    In the **Sign on URL** text box, type a URL using one of the following patterns:
+    ![Screenshot shows generating the values to configure.](./media/contentstack-tutorial/value.png "Portal")
 
-    |**Sign on URL**|
-    |---------------|
-    |`https://app.contentstack.com/#!/login/sso/<SSO_NAME>`|
-    |`https://<ENVIRONMENT>-app.contentstack.com/#!/login/sso/<SSO_NAME>`|
+1. Back in the **Basic SAML Configuration** section, paste the **Entity ID** and the **ACS URL** generated in the above set of steps, against the **Identifier (Entity ID)** and **Reply URL** sections respectively, and save the entries.
 
-	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. You will get these values from the [**Configure Contentstack SSO**](#configure-contentstack-sso) section. If you have queriers, please contact [Contentstack support team](mailto:support@contentstack.com) or follow [Contentstack SSO guide](https://www.contentstack.com/docs/developers/single-sign-on).
+    1.  In the **Identifier** text box, paste the **Entity ID** value, which you have copied from Contentstack.
+    
+        ![Screenshot shows how to paste the Identifier value.](./media/contentstack-tutorial/entity.png "Identifier")
+
+    1. In the **Reply URL** text box, paste the **ACS URL**, which you have copied from Contentstack.
+
+        ![Screenshot shows how to paste the Reply URL.](./media/contentstack-tutorial/reply.png "Reply Value")
+
+1. This is an optional step. If you wish to configure the application in SP-initiated mode, enter the Sign-on URL against the Sign on URL section:
+
+    ![Screenshot shows how to paste the Sign on URL.](./media/contentstack-tutorial/optional.png "Login Value")
+
+    > [!NOTE]
+    > You will find the **SSO One-Click URL** (i.e., the Sign on URL) when you complete configuring Contentstack SSO.
+    ![Screenshot shows how to enable the access page.](./media/contentstack-tutorial/click.png "Access Page")
 
 1. Contentstack application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
-	![Screenshot shows the image of attributes configuration.](common/default-attributes.png "Image")
+	![Screenshot shows the image of attributes configuration.](./media/contentstack-tutorial/claims.png "Image")
 
-1. In addition to above, Contentstack application expects few more attributes to be passed back in SAML response which are shown below. These attributes are also pre populated but you can review them as per your requirements.
-	
+1. In addition to above, Contentstack application expects a few more attributes to be passed back in SAML response which are shown below. These attributes are also pre populated but you can review them as per your requirements. This is an optional step.
+
 	| Name | Source Attribute|
 	| ----- | --------------- |
-    | first_name | user.givenname |
-    | last_name | user.surname |
-    | email | user.userprincipalname |
     | roles | user.assignedroles|
 
     > [!NOTE]
@@ -158,13 +168,14 @@ on the **Single Sign-On** tab on the left menu.
 
 1. In the **Single Sign-On** page, navigate to **SSO Configuration** section and perform the following steps:
 
-    1. Enter a valid **SSO Name** and click **Create**.
+    1. Enter a valid **SSO Name** of your choice and click **Create**.
         
         ![Screenshot shows settings of the configuration.](./media/contentstack-tutorial/name.png "SSO Provider")
 
-    1. Copy **Assertion Consumer Service URL** and paste in the **Reply URL** textbox in the **Basic SAML configuration** section in Microsoft Entra admin center.
+        > [!NOTE]
+        > For example, if your company name is “Acme, Inc.” enter “acme” here. This name will be used as one of the login credentials by the organization users while signing in. The SSO Name can contain only alphabets (in lowercase), numbers (0-9), and/or hyphens (-).
 
-    1. Copy **Entity ID** and paste in the **Identifier** textbox in the **Basic SAML configuration** section in Microsoft Entra admin center and click **Next**.
+    1. When you click on **Create**, this will generate the **Assertion Consumer Service URL** or ACS URL, and other details such as **Entity ID**, **Attributes**, and **NameID Format** and click **Next**.
 
         ![Screenshot shows the configuration values.](./media/contentstack-tutorial/values.png "Identifier")
 
@@ -178,11 +189,43 @@ on the **Single Sign-On** tab on the left menu.
 
     1. Click **Next**.
 
-1. In the **User Management** section, enable [**Strict Mode**](https://www.contentstack.com/docs/developers/single-sign-on/set-up-sso-in-contentstack#strict-mode) and click **Next**.
+1. Next, you need to create role mapping in Contentstack.
+    > [!NOTE]
+    > You will only be able to view and perform this step if IdP Role Mapping is part of your Contentstack plan.
+
+1. In the **User Management** section of Contentstack's SSO Setup page, you will see [**Strict Mode**](https://www.contentstack.com/docs/developers/single-sign-on/set-up-sso-in-contentstack#strict-mode) (authorize access to organization users only via SSO login) and [**Session Timeout**](https://www.contentstack.com/docs/developers/single-sign-on/set-up-sso-in-contentstack#session-timeout) (define session duration for a user signed in through SSO). Below these options, you will also see the [**Advanced Settings**](https://www.contentstack.com/docs/developers/single-sign-on/set-up-sso-in-contentstack#advanced-settings) option.
 
     ![Screenshot shows User Management section.](./media/contentstack-tutorial/manage.png "Users")
 
-1. In the **Test & Enable** section, click **Enable SSO** button and click **Next**.
+1. Click on the **Advanced Settings** to expand the IdP Role Mapping section to map IdP roles to Contentstack. This is an optional step.
+
+1. In the **Add Role Mapping** section, click on the **+ ADD ROLE MAPPING** link to add the mapping details of an IdP role which includes the following details:
+
+    ![Screenshot shows how to add the mapping details.](./media/contentstack-tutorial/roles.png "Roles Mapping")
+
+    1. In the **IdP Role Identifier**, enter the IdP group/role identifier (for example, "developers"), which you can use the value from your manifest.
+
+    1. For the **Organization Roles**, select either **Admin** or **Member** role to the mapped group/role.
+
+    1. For the **Stack-Level Permissions** (optional) assign stacks and the corresponding stack-level roles to this role. Likewise, you can add more role mappings for your Contentstack organization. To add a new Role mapping, click on **+ ADD ROLE MAPPING** and enter the details.
+
+    1.  Keep **Role Delimiter** blank as Microsoft Entra ID usually returns roles in an array.
+
+    1. Finally, select the **Enable IdP Role Mapping** checkbox to enable the feature and click **Next**.
+
+    > [!NOTE]
+    > Please refer [Contentstack SSO guide](https://www.contentstack.com/docs/developers/single-sign-on) for more information.
+
+1. Before enabling SSO, it is recommended that you need to test the SSO settings configured so far. To do so, perform the following steps:
+
+    1. Click the **Test SSO** button and it will take you to Contentstack’s Login via SSO page where you need to specify your organization's SSO name. 
+    1. Then, click on Continue to go to your IdP sign in page.
+    1. Sign in to your account and if you are able to sign in to your IdP, your test is successful.
+    1. On successful connection, you will see a success message as follows.
+
+    ![Screenshot shows the successful test connection.](./media/contentstack-tutorial/success.png "Connection")
+
+1. Once you have tested your SSO settings, click **Enable SSO** to enable SSO for your Contentstack organization.
 
     ![Screenshot shows the enable testing section.](./media/contentstack-tutorial/test.png "Testing")
 
@@ -190,11 +233,6 @@ on the **Single Sign-On** tab on the left menu.
 
     ![Screenshot shows disabling the access page.](./media/contentstack-tutorial/access.png "Page")
 
-    1. Copy **SSO One-Click URL** and paste in the **Sign on URL** textbox in **Basic SAML configuration** section in the Microsoft Entra admin center, if you wish to configure the application in SP initiated mode.
-
-> [!NOTE]
-> Please refer [Contentstack SSO guide](https://www.contentstack.com/docs/developers/single-sign-on) for more information.
-        
 ### Create Contentstack test user
 
 In this section, a user called Britta Simon is created in Contentstack. Contentstack supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in Contentstack, a new one is created after authentication.
@@ -205,7 +243,7 @@ In this section, you test your Microsoft Entra single sign-on configuration with
  
 #### SP initiated:
  
-* Click on **Test this application** in Microsoft Entra admin center. This will redirect to Contentstack Sign on URL where you can initiate the login flow.  
+* Click on **Test this application** in Microsoft Entra admin center. This will redirect to Contentstack Sign-on URL where you can initiate the login flow.  
  
 * Go to Contentstack Sign-on URL directly and initiate the login flow from there.
  
