@@ -19,7 +19,9 @@ Identity Governance helps organizations achieve a balance between *productivity*
 
 **Identity lifecycle management** is the foundation for Identity Governance, and effective governance at scale requires modernizing the identity lifecycle management infrastructure for applications. Identity Lifecycle Management aims to automate and manage the entire digital identity lifecycle process for individuals affiliated with an organization.
 
-![Diagram of the Microsoft Entra ID relationship in provisioning with other sources and targets](media/what-is-identity-lifecycle-management/cloud-1-id-gov.png)
+![Diagram of the Microsoft Entra ID relationship in provisioning with other sources and targets.](media/what-is-identity-lifecycle-management/cloud-1-id-governance.png)
+
+![Diagram of the Microsoft Entra ID relationship in provisioning with other sources and targets.](https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Entra_qqww_Blade7_InfographicImage_1600x900_2x?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=1600&hei=900&qlt=100&fit=constrain)
 
 ## What is a digital identity?
 
