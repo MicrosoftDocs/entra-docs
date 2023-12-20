@@ -14,6 +14,7 @@ ms.date: 09/21/2023
 ms.author: justinha
 ms.custom: devx-track-azurepowershell, has-azure-ad-ps-ref
 ---
+
 # Enable Microsoft Entra Domain Services using PowerShell
 
 Microsoft Entra Domain Services provides managed domain services such as domain join, group policy, LDAP, Kerberos/NTLM authentication that is fully compatible with Windows Server Active Directory. You consume these domain services without deploying, managing, and patching domain controllers yourself. Domain Services integrates with your existing Microsoft Entra tenant. This integration lets users sign in using their corporate credentials, and you can use existing groups and user accounts to secure access to resources.
@@ -53,26 +54,28 @@ First, create a Microsoft Entra service principal by using a specific applicatio
 
 Create a Microsoft Entra service principal using the [New-AzureADServicePrincipal][New-AzureADServicePrincipal] cmdlet:
 
+
 ```powershell
-New-AzureADServicePrincipal -AppId "2565bd9d-da50-47d4-8b85-4c97f669dc36"
+New-MgServicePrincipal -AppId "2565bd9d-da50-47d4-8b85-4c97f669dc36"
 ```
 
 Now create a Microsoft Entra group named *AAD DC Administrators*. Users added to this group are then granted permissions to perform administration tasks on the managed domain.
 
 First, get the *AAD DC Administrators* group object ID using the [Get-AzureADGroup][Get-AzureADGroup] cmdlet. If the group doesn't exist, create it with the *AAD DC Administrators* group using the [New-AzureADGroup][New-AzureADGroup] cmdlet:
 
+
 ```powershell
 # First, retrieve the object ID of the 'AAD DC Administrators' group.
-$GroupObjectId = Get-AzureADGroup `
+$GroupId = Get-MgGroup `
   -Filter "DisplayName eq 'AAD DC Administrators'" | `
-  Select-Object ObjectId
+  Select-Object Id
 
 # If the group doesn't exist, create it
-if (!$GroupObjectId) {
-  $GroupObjectId = New-AzureADGroup -DisplayName "AAD DC Administrators" `
+if (!$GroupId) {
+  $GroupId = New-MgGroup -DisplayName "AAD DC Administrators" `
     -Description "Delegated group to administer Azure AD Domain Services" `
-    -SecurityEnabled $true `
-    -MailEnabled $false `
+    -SecurityEnabled:$true `
+    -MailEnabled:$false `
     -MailNickName "AADDCAdministrators"
   }
 else {
@@ -377,26 +380,47 @@ To see the managed domain in action, you can [domain-join a Windows VM][windows-
 
 <!-- INTERNAL LINKS -->
 [windows-join]: join-windows-vm.md
+
 [tutorial-ldaps]: tutorial-configure-ldaps.md
+
 [tutorial-phs]: tutorial-configure-password-hash-sync.md
+
 [nsg-overview]: /azure/virtual-network/network-security-groups-overview
+
 [network-ports]: network-considerations.md#network-security-groups-and-required-ports
 
 <!-- EXTERNAL LINKS -->
 [Connect-AzAccount]: /powershell/module/az.accounts/connect-azaccount
+
 [Connect-AzureAD]: /powershell/module/azuread/connect-azuread
+
 [New-AzureADServicePrincipal]: /powershell/module/AzureAD/New-AzureADServicePrincipal
+
 [New-AzureADGroup]: /powershell/module/azuread/new-azureadgroup
+
 [Add-AzureADGroupMember]: /powershell/module/azuread/add-azureadgroupmember
+
 [Get-AzureADGroup]: /powershell/module/azuread/get-azureadgroup
+
 [Get-AzureADUser]: /powershell/module/azuread/get-azureaduser
+
 [Register-AzResourceProvider]: /powershell/module/az.resources/register-azresourceprovider
+
 [New-AzResourceGroup]: /powershell/module/az.resources/new-azresourcegroup
+
 [New-AzVirtualNetworkSubnetConfig]: /powershell/module/az.network/new-azvirtualnetworksubnetconfig
+
 [New-AzVirtualNetwork]: /powershell/module/az.network/new-azvirtualnetwork
+
 [Get-AzSubscription]: /powershell/module/az.accounts/get-azsubscription
+
 [cloud-shell]: /azure/active-directory/develop/configure-app-multi-instancing
+
 [availability-zones]: /azure/reliability/availability-zones-overview
+
 [New-AzNetworkSecurityRuleConfig]: /powershell/module/az.network/new-aznetworksecurityruleconfig
+
 [New-AzNetworkSecurityGroup]: /powershell/module/az.network/new-aznetworksecuritygroup
+
 [Set-AzVirtualNetworkSubnetConfig]: /powershell/module/az.network/set-azvirtualnetworksubnetconfig
+
