@@ -329,7 +329,7 @@ Plan reviews for applications in the following scenarios when:
 * The application has specific compliance requirements to which you must attest.
 * You suspect inappropriate access.
 
-Before you create access reviews for an application, set the **User assignment required?** option to **Yes**. If it's set to **No**, all users in your directory, including external identities, can access the application and you can't review access to the application.
+Before you create access reviews for an application, the application needs to be integrated with Microsoft Entra ID, with users assigned to the app roles, and the **User assignment required?** option on the application set to **Yes**. If it's set to **No**, all users in your directory, including external identities, can access the application and you can't review access to the application.
 
  ![Screenshot that shows planning app assignments.](./media/deploy-access-review/6-plan-applications-assignment-required.png)
 
