@@ -29,8 +29,6 @@ For greater control, certain types of enterprise applications can be configured 
 
 ## Prerequisites
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
-
 To assign users to an enterprise application, you need:
 
 - A Microsoft Entra account with an active subscription. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
@@ -38,6 +36,8 @@ To assign users to an enterprise application, you need:
 - Microsoft Entra ID P1 or P2 for group-based assignment. For more licensing requirements for the features discussed in this article, see the [Microsoft Entra pricing page](https://azure.microsoft.com/pricing/details/active-directory).
 
 :::zone pivot="portal"
+
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 ## Assign users and groups to an application using the Microsoft Entra admin center
 
@@ -53,7 +53,8 @@ To assign a user or group account to an enterprise application:
 1. On the **Add Assignment** pane, select **None Selected** under **Users and groups**.
 1. Search for and select the user or group that you want to assign to the application. For example, `contosouser1@contoso.com` or `contosoteam1@contoso.com`.
 1. Select **Select**.
-1. On the **Add Assignment** pane, select **Assign** at the bottom of the pane.
+1. Under **Select a role**, select the role that you want to assign to the user or group. If you haven't defined any roles yet, the default role is **Default Access**.
+1. On the **Add Assignment** pane, select **Assign** to assign the user or group to the application.
 
 ## Unassign users, and groups, from an application
 
