@@ -91,7 +91,7 @@ To configure data collection:
 3. Click **Create configuration**.
 
 > [!NOTE]
-> The data collection process takes some time; approximately 4-5 hours in most cases. The time frame depends on the size of the authorization system you have and how much data is available for collection.
+> The data collection process takes some time and occurs in approximately 4-5 hour intervals in most cases. The time frame depends on the size of the authorization system you have and how much data is available for collection.
 
 
 ### Onboard Amazon Web Services (AWS)

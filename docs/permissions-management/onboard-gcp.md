@@ -137,7 +137,7 @@ The required commands to run in Google Cloud Shell are listed in the Manage Auth
 
     The **Status** column in the table displays **Collecting Data.**
 
-    The data collection process takes some time; approximately 4-5 hours in most cases. The time frame depends on the size of the authorization system you have and how much data is available for collection.
+    The data collection process takes some time and occurs in approximately 4-5 hour intervals in most cases. The time frame depends on the size of the authorization system you have and how much data is available for collection.
 
 
 
