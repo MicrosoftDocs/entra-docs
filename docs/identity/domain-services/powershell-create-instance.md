@@ -30,8 +30,8 @@ To complete this article, you need the following resources:
 * Install and configure Azure PowerShell.
     * If needed, follow the instructions to [install the Azure PowerShell module and connect to your Azure subscription](/powershell/azure/install-azure-powershell).
     * Make sure that you sign in to your Azure subscription using the [Connect-AzAccount][Connect-AzAccount] cmdlet.
-* Install and configure Azure AD PowerShell.
-    * If needed, follow the instructions to [install the Azure AD PowerShell module and connect to Microsoft Entra ID](/powershell/azure/active-directory/install-adv2).
+* Install and configure MS Graph PowerShell.
+   - If needed, follow the instructions to [install the MS Graph PowerShell module and connect to Microsoft Entra ID](/powershell/microsoftgraph/installation?view=graph-powershell-1.0).
     * Make sure that you sign in to your Microsoft Entra tenant using the [Connect-AzureAD][Connect-AzureAD] cmdlet.
 * You need *global administrator* privileges in your Microsoft Entra tenant to enable Domain Services.
 * You need *Contributor* privileges in your Azure subscription to create the required Domain Services resources.
@@ -52,7 +52,7 @@ Domain Services requires a service principal to authenticate and communicate and
 
 First, create a Microsoft Entra service principal by using a specific application ID named *Domain Controller Services*. The ID value is *2565bd9d-da50-47d4-8b85-4c97f669dc36* for global Azure and *6ba9a5d4-8456-4118-b521-9c5ca10cdf84* for other Azure clouds. Don't change this application ID.
 
-Create a Microsoft Entra service principal using the [New-MgServicePrincipal](/powershell/module/microsoft.graph.applications/new-mgserviceprincipal) cmdlet:
+Create a Microsoft Entra service principal using the [New-AzureADServicePrincipal][New-AzureADServicePrincipal] cmdlet:
 
 ```powershell
 New-AzureADServicePrincipal -AppId "2565bd9d-da50-47d4-8b85-4c97f669dc36"
@@ -60,7 +60,7 @@ New-AzureADServicePrincipal -AppId "2565bd9d-da50-47d4-8b85-4c97f669dc36"
 
 Now create a Microsoft Entra group named *AAD DC Administrators*. Users added to this group are then granted permissions to perform administration tasks on the managed domain.
 
-First, get the *AAD DC Administrators* group object ID using the [Get-MgGroup](/powershell/module/microsoft.graph.groups/get-mggroup) cmdlet. If the group doesn't exist, create it with the *AAD DC Administrators* group using the [New-MgGroup](/powershell/module/microsoft.graph.groups/new-mggroup) cmdlet:
+First, get the *AAD DC Administrators* group object ID using the [Get-AzureADGroup][Get-AzureADGroup] cmdlet. If the group doesn't exist, create it with the *AAD DC Administrators* group using the [New-AzureADGroup][New-AzureADGroup] cmdlet:
 
 ```powershell
 # First, retrieve the object ID of the 'AAD DC Administrators' group.
@@ -81,7 +81,7 @@ else {
 }
 ```
 
-With the *AAD DC Administrators* group created, get the desired user's object ID using the [Get-MgUser](/powershell/module/microsoft.graph.users/get-mguser) cmdlet, then add the user to the group using the [New-MgGroupMember](/powershell/module/microsoft.graph.groups/new-mggroupmember) cmdlet.
+With the *AAD DC Administrators* group created, get the desired user's object ID using the [Get-AzureADUser][Get-AzureADUser] cmdlet, then add the user to the group using the [Add-AzureADGroupMember][Add-AzureADGroupMember] cmdlet.
 
 In the following example, the user object ID for the account with a UPN of `admin@contoso.onmicrosoft.com`. Replace this user account with the UPN of the user you wish to add to the *AAD DC Administrators* group:
 
@@ -390,17 +390,17 @@ To see the managed domain in action, you can [domain-join a Windows VM][windows-
 <!-- EXTERNAL LINKS -->
 [Connect-AzAccount]: /powershell/module/az.accounts/connect-azaccount
 
-[Connect-MgGraph](/powershell/microsoftgraph/authentication-commands?view=graph-powershell-1.0): /powershell/microsoftgraph/authentication-commands?view=graph-powershell-1.0
+[Connect-AzureAD]: /powershell/module/azuread/connect-azuread
 
-[New-MgServicePrincipal](/powershell/module/microsoft.graph.applications/new-mgserviceprincipal): /powershell/module/microsoft.graph.applications/new-mgserviceprincipal
+[New-AzureADServicePrincipal]: /powershell/module/AzureAD/New-AzureADServicePrincipal
 
-[New-MgGroup](/powershell/module/microsoft.graph.groups/new-mggroup): /powershell/module/microsoft.graph.groups/new-mggroup
+[New-AzureADGroup]: /powershell/module/azuread/new-azureadgroup
 
-[New-MgGroupMember](/powershell/module/microsoft.graph.groups/new-mggroupmember): /powershell/module/microsoft.graph.groups/new-mggroupmember
+[Add-AzureADGroupMember]: /powershell/module/azuread/add-azureadgroupmember
 
-[Get-MgGroup](/powershell/module/microsoft.graph.groups/get-mggroup): /powershell/module/microsoft.graph.groups/get-mggroup
+[Get-AzureADGroup]: /powershell/module/azuread/get-azureadgroup
 
-[Get-MgUser](/powershell/module/microsoft.graph.users/get-mguser): /powershell/module/microsoft.graph.users/get-mguser
+[Get-AzureADUser]: /powershell/module/azuread/get-azureaduser
 
 [Register-AzResourceProvider]: /powershell/module/az.resources/register-azresourceprovider
 
