@@ -52,30 +52,28 @@ Domain Services requires a service principal to authenticate and communicate and
 
 First, create a Microsoft Entra service principal by using a specific application ID named *Domain Controller Services*. The ID value is *2565bd9d-da50-47d4-8b85-4c97f669dc36* for global Azure and *6ba9a5d4-8456-4118-b521-9c5ca10cdf84* for other Azure clouds. Don't change this application ID.
 
-Create a Microsoft Entra service principal using the [New-AzureADServicePrincipal][New-AzureADServicePrincipal] cmdlet:
-
+Create a Microsoft Entra service principal using the [New-MgServicePrincipal](/powershell/module/microsoft.graph.applications/new-mgserviceprincipal) cmdlet:
 
 ```powershell
-New-MgServicePrincipal -AppId "2565bd9d-da50-47d4-8b85-4c97f669dc36"
+New-AzureADServicePrincipal -AppId "2565bd9d-da50-47d4-8b85-4c97f669dc36"
 ```
 
 Now create a Microsoft Entra group named *AAD DC Administrators*. Users added to this group are then granted permissions to perform administration tasks on the managed domain.
 
-First, get the *AAD DC Administrators* group object ID using the [Get-AzureADGroup][Get-AzureADGroup] cmdlet. If the group doesn't exist, create it with the *AAD DC Administrators* group using the [New-AzureADGroup][New-AzureADGroup] cmdlet:
-
+First, get the *AAD DC Administrators* group object ID using the [Get-MgGroup](/powershell/module/microsoft.graph.groups/get-mggroup) cmdlet. If the group doesn't exist, create it with the *AAD DC Administrators* group using the [New-MgGroup](/powershell/module/microsoft.graph.groups/new-mggroup) cmdlet:
 
 ```powershell
 # First, retrieve the object ID of the 'AAD DC Administrators' group.
-$GroupId = Get-MgGroup `
+$GroupObjectId = Get-AzureADGroup `
   -Filter "DisplayName eq 'AAD DC Administrators'" | `
-  Select-Object Id
+  Select-Object ObjectId
 
 # If the group doesn't exist, create it
-if (!$GroupId) {
-  $GroupId = New-MgGroup -DisplayName "AAD DC Administrators" `
+if (!$GroupObjectId) {
+  $GroupObjectId = New-AzureADGroup -DisplayName "AAD DC Administrators" `
     -Description "Delegated group to administer Azure AD Domain Services" `
-    -SecurityEnabled:$true `
-    -MailEnabled:$false `
+    -SecurityEnabled $true `
+    -MailEnabled $false `
     -MailNickName "AADDCAdministrators"
   }
 else {
@@ -83,7 +81,7 @@ else {
 }
 ```
 
-With the *AAD DC Administrators* group created, get the desired user's object ID using the [Get-AzureADUser][Get-AzureADUser] cmdlet, then add the user to the group using the [Add-AzureADGroupMember][Add-AzureADGroupMember] cmdlet.
+With the *AAD DC Administrators* group created, get the desired user's object ID using the [Get-MgUser](/powershell/module/microsoft.graph.users/get-mguser) cmdlet, then add the user to the group using the [New-MgGroupMember](/powershell/module/microsoft.graph.groups/new-mggroupmember) cmdlet.
 
 In the following example, the user object ID for the account with a UPN of `admin@contoso.onmicrosoft.com`. Replace this user account with the UPN of the user you wish to add to the *AAD DC Administrators* group:
 
@@ -392,17 +390,17 @@ To see the managed domain in action, you can [domain-join a Windows VM][windows-
 <!-- EXTERNAL LINKS -->
 [Connect-AzAccount]: /powershell/module/az.accounts/connect-azaccount
 
-[Connect-AzureAD]: /powershell/module/azuread/connect-azuread
+[Connect-MgGraph](/powershell/microsoftgraph/authentication-commands?view=graph-powershell-1.0): /powershell/microsoftgraph/authentication-commands?view=graph-powershell-1.0
 
-[New-AzureADServicePrincipal]: /powershell/module/AzureAD/New-AzureADServicePrincipal
+[New-MgServicePrincipal](/powershell/module/microsoft.graph.applications/new-mgserviceprincipal): /powershell/module/microsoft.graph.applications/new-mgserviceprincipal
 
-[New-AzureADGroup]: /powershell/module/azuread/new-azureadgroup
+[New-MgGroup](/powershell/module/microsoft.graph.groups/new-mggroup): /powershell/module/microsoft.graph.groups/new-mggroup
 
-[Add-AzureADGroupMember]: /powershell/module/azuread/add-azureadgroupmember
+[New-MgGroupMember](/powershell/module/microsoft.graph.groups/new-mggroupmember): /powershell/module/microsoft.graph.groups/new-mggroupmember
 
-[Get-AzureADGroup]: /powershell/module/azuread/get-azureadgroup
+[Get-MgGroup](/powershell/module/microsoft.graph.groups/get-mggroup): /powershell/module/microsoft.graph.groups/get-mggroup
 
-[Get-AzureADUser]: /powershell/module/azuread/get-azureaduser
+[Get-MgUser](/powershell/module/microsoft.graph.users/get-mguser): /powershell/module/microsoft.graph.users/get-mguser
 
 [Register-AzResourceProvider]: /powershell/module/az.resources/register-azresourceprovider
 
