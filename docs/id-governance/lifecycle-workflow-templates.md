@@ -34,6 +34,8 @@ The list of templates are as follows:
 - [Pre-Offboarding of an employee](lifecycle-workflow-templates.md#pre-offboarding-of-an-employee)
 - [Offboard an employee](lifecycle-workflow-templates.md#offboard-an-employee)
 - [Post-Offboarding of an employee](lifecycle-workflow-templates.md#post-offboarding-of-an-employee)
+- [Employee group membership changes](lifecycle-workflow-templates.md#employee-group-membership-changes)
+- [Employee job profile change](lifecycle-workflow-templates.md#employee-job-profile-change)
 
 For a complete guide on creating a new workflow from a template, see: [Tutorial: On-boarding users to your organization using Lifecycle workflows with the Microsoft Entra admin center](tutorial-onboard-custom-workflow-portal.md).
 
@@ -202,7 +204,10 @@ The default specific parameters for the **Post-Offboarding of an employee** temp
 |Tasks     | **Remove all licenses for user**, **Remove user from all Teams**, **Delete User Account**     |  ✔️       |
 
 
+### Employee group membership changes
 
+
+### Employee job profile change
 
 ## Next steps
 
