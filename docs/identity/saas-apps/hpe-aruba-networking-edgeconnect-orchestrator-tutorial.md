@@ -136,7 +136,7 @@ In this section, you test your Microsoft Entra single sign-on configuration with
  
 * Click on **Test this application** in Microsoft Entra admin center. This will redirect to HPE Aruba Networking EdgeConnect Orchestrator Sign on URL where you can initiate the login flow.  
  
-* Go to HPE Aruba Networking EdgeConnect Orchestrator Sign-on URL directly and initiate the login flow from there.
+* Go to HPE Aruba Networking EdgeConnect Orchestrator Sign on URL directly and initiate the login flow from there.
  
 #### IDP initiated:
  
