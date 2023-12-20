@@ -8,7 +8,7 @@ ms.service: active-directory
 ms.subservice: ciem
 ms.workload: identity
 ms.topic: how-to
-ms.date: 09/15/2023
+ms.date: 12/20/2023
 ms.author: jfields
 ---
 
@@ -137,7 +137,7 @@ The required commands to run in Google Cloud Shell are listed in the Manage Auth
 
     The **Status** column in the table displays **Collecting Data.**
 
-    The data collection process may take some time, depending on the size of the account and how much data is available for collection.
+    The data collection process takes some time; approximately 4-5 hours in most cases. The time frame depends on the amount of authorization systems you have and how much data is available for collection.
 
 
 
