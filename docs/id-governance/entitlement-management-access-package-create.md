@@ -40,7 +40,7 @@ Here are the high-level steps to create an access package with an initial policy
 
 1. In Identity Governance, start the process to create an access package.
 
-1. Select the catalog where you want to put the access package, that has the necessary resources.
+1. Select the catalog where you want to put the access package and ensure that it has the necessary resources.
 
 1. Add resource roles from resources in the catalog to your access package.
 

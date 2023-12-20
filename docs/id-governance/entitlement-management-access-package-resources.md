@@ -40,7 +40,7 @@ If you need to add resources to an access package, you should check whether the 
 
 1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
 
-1. On the **Access packages** page open the access package you want to check catalog for resources for.
+1. On the **Access packages** page open the access package you want to check to ensure that its catalog has the necessary resources.
 
 1. In the left menu, select **Catalog** and then open the catalog.
 
