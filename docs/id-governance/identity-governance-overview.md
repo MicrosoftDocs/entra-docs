@@ -43,17 +43,18 @@ Identity Governance helps organizations achieve a balance between *productivity*
 
 For many organizations, identity lifecycle for employees and other workers is tied to the representation of that person in an HCM (human capital management) or HR system. Organizations need to automate the process of creating an identity for a new employee that is based on a signal from that system so that the employee can be productive on day 1. And organizations need to ensure those identities and access are removed when the employee leaves the organization.
 
-In Microsoft Entra ID Governance, you can automate the identity lifecycle for these individuals using
+In Microsoft Entra ID Governance, you can automate the identity lifecycle for these individuals using:
 
-- [inbound provisioning from your organization's HR sources](~/identity/app-provisioning/plan-cloud-hr-provision.md), including retrieving from Workday and SuccessFactors, to automatically maintain user identities in both Active Directory and Microsoft Entra ID
-- [lifecycle workflows](what-are-lifecycle-workflows.md) to automate workflow tasks that run at certain key events, such before a new employee is scheduled to start work at the organization, as they change status during their time in the organization, and as they leave the organization. For example, a workflow can be configured to send an email with a temporary access pass to a new user's manager, or a welcome email to the user on their first day.
-- [user provisioning](~/identity/app-provisioning/user-provisioning.md) to create, update and remove user accounts in other applications, with connectors to hundreds of cloud and on-premises applications via SCIM, LDAP and SQL.
+- [inbound provisioning from your organization's HR sources](~/identity/app-provisioning/plan-cloud-hr-provision.md), including retrieving from Workday and SuccessFactors, to automatically maintain user identities in both Active Directory and Microsoft Entra ID.
+- [lifecycle workflows](what-are-lifecycle-workflows.md) to automate workflow tasks that run at certain key events, such before a new employee is scheduled to start work at the organization, as they change status during their time in the organization, and as they leave the organization. For example, a workflow can be configured to send an email with a temporary access pass to a new user's manager, or a welcome email to the user, on their first day.
+- [automatic assignment policies in entitlement management](entitlement-management-access-package-auto-assignment-policy.md) to add and remove a user's group memberships, application roles, and SharePoint site roles, based on changes to the user's attributes.
+- [user provisioning](what-is-provisioning.md) to create, update and remove user accounts in other applications, with connectors to hundreds of cloud and on-premises applications via SCIM, LDAP and SQL.
 
 Organizations also need additional identities, for partners, suppliers and other guests, to enable them to collaborate or have access to resources.
 
-In Microsoft Entra ID Governance, you can enable business groups to determine which of these guests should have access, and for how long, using
+In Microsoft Entra ID Governance, you can enable business groups to determine which of these guests should have access, and for how long, using:
 
-- [entitlement management](entitlement-management-overview.md) in which you can specify the other organizations whose users are allowed to request access to your organization's resources. When one of those users's request is approved, they are automatically added as [B2B](~/external-id/what-is-b2b.md) guests to your organization's directory, and assigned appropriate access, and the B2B guest user is removed from your organization's directory when they no longer need access.
+- [entitlement management](entitlement-management-overview.md) in which you can specify the other organizations whose users are allowed to request access to your organization's resources. When one of those users's request is approved, they are automatically added by entitlement management as a [B2B](~/external-id/what-is-b2b.md) guest to your organization's directory, and assigned appropriate access. And entitlement management automatically removes the B2B guest user from your organization's directory when their access rights expire or are revoked.
 - [access reviews](access-reviews-overview.md) that automates recurring reviews of existing guests already in your organization's directory, and removes those users from your organization's directory when they no longer need access.
 
 For more information, see [What is identity lifecycle management](what-is-identity-lifecycle-management.md).
