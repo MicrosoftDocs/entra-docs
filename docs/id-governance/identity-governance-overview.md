@@ -30,8 +30,8 @@ Specifically, Microsoft Entra ID Governance helps organizations address these fo
 
 With Microsoft Entra ID Governance you can implement the following scenarios for employees, business partners and vendors:
 
-- Govern the identity lifecycle
-- Govern access lifecycle
+- Govern their identity lifecycle
+- Govern their access lifecycle
 - Secure privileged access for administration
 
 
@@ -41,13 +41,28 @@ Identity Governance helps organizations achieve a balance between *productivity*
 
 ![Identity lifecycle](./media/identity-governance-overview/identity-lifecycle.png)
 
-For many organizations, identity lifecycle for employees is tied to the representation of that user in an HCM (human capital management) system.  Microsoft Entra ID P1 or P2, through inbound provisioning, automatically maintains user identities for people represented in Workday and SuccessFactors in both Active Directory and Microsoft Entra ID, as described in the  [cloud HR application to Microsoft Entra user provisioning planning guide](~/identity/app-provisioning/plan-cloud-hr-provision.md). You can then fulfill identity assignments through automatic [user provisioning](~/identity/app-provisioning/user-provisioning.md) and deprovisioning into Microsoft Entra connected apps, including via SCIM, LDAP and SQL. Microsoft Entra ID P1 or P2 also includes [Microsoft Identity Manager](/microsoft-identity-manager/), which can import records from on-premises HCM systems such as SAP HCM, Oracle eBusiness, and Oracle PeopleSoft.
+### Automate the entire employee identity lifecycle orchestrated by HR sources
 
-Increasingly, scenarios require collaboration with people outside your organization. [Microsoft Entra B2B](/azure/active-directory/b2b/) collaboration enables you to securely share your organization's applications and services with guest users and external partners from any organization, while maintaining control over your own corporate data.  [Microsoft Entra entitlement management](entitlement-management-overview.md) enables you to select which organization's users are allowed to request access and be added as [B2B](~/external-id/what-is-b2b.md) guests to your organization's directory, and ensures that these guests are removed when they no longer need access.
+For many organizations, identity lifecycle for employees is tied to the representation of that employee in an HCM (human capital management) system. Organizations wish to automatically create an identity for a new employee via a signal from a HR system, and gracefully remove access when the employee leaves the organization.
 
-Organizations are able to automate the identity lifecycle management process by using [Lifecycle Workflows](what-are-lifecycle-workflows.md). Workflows can be created to automatically run tasks for a user before they enter the organization, as they change states during their time in the organization, and as they leave the organization. For example, a workflow can be configured to send an email with a temporary password to a new user's manager, or a welcome email to the user on their first day.
+In Microsoft Entra ID Governance, you can automate the identity lifecycle using
+
+- [inbound provisioning from your organization's HR sources](~/identity/app-provisioning/plan-cloud-hr-provision.md), including from Workday and SuccessFactors, to automatically maintain user identities in both Active Directory and Microsoft Entra ID
+- [lifecycle workflows](what-are-lifecycle-workflows.md) to automate workflow tasks that run at certain key events, such before a new employee is scheduled to start work at the organization, as they change status during their time in the organization, and as they leave the organization. For example, a workflow can be configured to send an email with a temporary access pass to a new user's manager, or a welcome email to the user on their first day.
+- [user provisioning](~/identity/app-provisioning/user-provisioning.md) to create, update and remove user accounts in other apps, including hundreds of cloud and on-premises apps via SCIM, LDAP and SQL.
+
+### Auomate identity lifecycle when there is no authoritative source
+
+Organizations also need identities for guests and partners to enable them to have access to resources.  
+
+In Microsoft Entra ID Governance, you can enable business groups to allow access to partners, suppliers, and guests securely via
+
+- [Microsoft Entra entitlement management](entitlement-management-overview.md) whhere you can specify which other organizations' users are allowed to request access to your organization's resources and, when approved, be added as [B2B](~/external-id/what-is-b2b.md) guests to your organization's directory. and ensures that these guests do not retain access longer than necessary.
+- [Microsoft Entra access reviews](access-reviews-overview.md) automates recurring reviews of existing guests already in your directory, and remove them when their need for continued access is denied.
 
 ## Access lifecycle
+
+<!-- Assign employee access to resources. Automatically assign app and resource access based on employee group memberships. Ensure that conflicting access (with app administrators and app users, for example) can’t occur with separation of duties. Delegate access decisions to business groups. -->
 
 Organizations need a process to manage access beyond what was initially provisioned for a user when that user's identity was created.  Furthermore, enterprise organizations need to be able to scale efficiently to be able to develop and enforce access policy and controls on an ongoing basis.
 
