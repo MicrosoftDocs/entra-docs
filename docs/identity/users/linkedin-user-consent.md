@@ -8,7 +8,7 @@ ms.service: active-directory
 ms.subservice: enterprise-users
 ms.workload: identity
 ms.topic: how-to
-ms.date: 06/24/2022
+ms.date: 11/21/2023
 ms.author: barclayn
 ms.reviewer: beengen
 ms.custom: "it-pro;seo-update-azuread-jan"
@@ -25,9 +25,11 @@ To see LinkedIn information in Microsoft apps and services, users must consent t
 
 ## Benefits of sharing LinkedIn information
 
-Access to LinkedIn information within Microsoft apps and services makes it easier for your users to connect, engage, and build professional relationships with colleagues, customers, and partners inside and outside your organization. New users can get up to speed faster by connecting with colleagues, learning more about them, and easily accessing more information. Here is an example of how LinkedIn information appears on the profile card in Microsoft apps:
+Access to LinkedIn information within Microsoft apps and services makes it easier for your users to connect, engage, and build professional relationships with colleagues, customers, and partners inside and outside your organization. New users can get up to speed faster by connecting with colleagues, learning more about them, and easily accessing more information. 
 
-![Enabling LinkedIn integration in your organization](./media/linkedin-user-consent/display-example.png)
+Below is an example of how LinkedIn information appears on the profile card in Microsoft apps:
+
+:::image type="content" source="./media/linkedin-user-consent/display-example.png" alt-text="Screenshot of enabling LinkedIn integration in your organization.":::
 
 ## Enable and announce LinkedIn integration
 

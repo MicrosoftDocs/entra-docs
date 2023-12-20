@@ -14,7 +14,7 @@ manager: CelesteDG
 ms.custom: "it-pro, seo-update-azuread-jan"
 ms.collection: M365-identity-device-management
 
-# Customer intent: As a tenant administrator, I want to set up MFA requirement for B2B guest users to protect my apps and resources. 
+# Customer intent: As an IT admin managing external B2B guest users, I want to enforce multifactor authentication for access to cloud or on-premises applications, so that I can ensure the security of our resources and protect against unauthorized access.
 ---
 
 # Tutorial: Enforce multifactor authentication for B2B guest users
@@ -39,7 +39,7 @@ In this tutorial, you will:
 > [!div class="checklist"]
 >
 > - Test the sign-in experience before MFA setup.
-> - Create a Conditional Access policy that requires MFA for access to a cloud app in your environment. In this tutorial, we’ll use the Microsoft Azure Management app to illustrate the process.
+> - Create a Conditional Access policy that requires MFA for access to a cloud app in your environment. In this tutorial, we’ll use the Windows Azure Service Management API app to illustrate the process.
 > - Use the What If tool to simulate MFA sign-in.
 > - Test your Conditional Access policy.
 > - Clean up the test user and policy.
@@ -96,7 +96,7 @@ To complete the scenario in this tutorial, you need:
 
     :::image type="content" source="media/tutorial-mfa/tutorial-mfa-app-access.png" alt-text="Screenshot showing the Cloud apps page and the Select option." lightbox="media/tutorial-mfa/tutorial-mfa-app-access.png":::
 
-1. On the **Select** page, choose **Microsoft Azure Management**, and then choose **Select**.
+1. On the **Select** page, choose **Windows Azure Service Management API**, and then choose **Select**.
 
 1. On the **New** page, in the **Access controls** section, choose the link under **Grant**.
 1. On the **Grant** page, choose **Grant access**, select the **Require multifactor authentication** check box, and then choose **Select**.
@@ -123,9 +123,9 @@ To complete the scenario in this tutorial, you need:
 
 1. Select the link under **Cloud apps, actions, or authentication content**. Choose **Select apps**, and then choose the link under **Select**.
 
-    :::image type="content" source="media/tutorial-mfa/tutorial-mfa-what-if-app.png" alt-text="Screenshot showing the Microsoft Azure Management app selected." lightbox="media/tutorial-mfa/tutorial-mfa-what-if-app.png":::
+    :::image type="content" source="media/tutorial-mfa/tutorial-mfa-what-if-app.png" alt-text="Screenshot showing the Windows Azure Service Management API app selected." lightbox="media/tutorial-mfa/tutorial-mfa-what-if-app.png":::
 
-1. On the **Cloud apps** page, in the applications list, choose **Microsoft Azure Management**, and then choose **Select**.
+1. On the **Cloud apps** page, in the applications list, choose **Windows Azure Service Management API**, and then choose **Select**.
 1. Choose **What If**, and verify that your new policy appears under **Evaluation results** on the **Policies that will apply** tab.
 
     :::image type="content" source="media/tutorial-mfa/tutorial-mfa-whatif-4.png" alt-text="Screenshot showing the results of the What If evaluation.":::

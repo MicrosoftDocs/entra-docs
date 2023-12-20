@@ -12,6 +12,8 @@ ms.date: 05/31/2023
 ms.author: jomondi
 ms.reviewer: alamaral
 ms.custom: not-enterprise-apps
+
+#customer intent: As an IT admin responsible for migrating application access and authentication, I want resources and tools to help me plan and execute the migration to Microsoft Entra ID, so that I can ensure a smooth and secure transition for my organization's applications.
 ---
 
 # Resources for migrating applications to Microsoft Entra ID

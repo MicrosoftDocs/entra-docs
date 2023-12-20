@@ -10,8 +10,8 @@ author: barclayn
 ms.author: barclayn
 manager: amycolannino
 ms.reviewer: krbain
-ms.date: 08/31/2023
-ms.custom: it-pro, has-azure-ad-ps-ref
+ms.date: 11/21/2023
+ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.collection: M365-identity-device-management
 ---
 
@@ -79,28 +79,33 @@ As an admin in the Active Directory, connect to your on-premises network, open P
 
 ### Microsoft Entra environment
 
-As an administrator in Microsoft Entra ID, open PowerShell, run ``Connect-AzureAD``, and take the following actions:
+As an administrator in Microsoft Entra ID, open PowerShell, run `Connect-MgGraph`, and take the following actions:
 
-1. Disable the user in Microsoft Entra ID. Refer to [Set-AzureADUser](/powershell/module/azuread/set-azureaduser).
+1. Disable the user in Microsoft Entra ID. Refer to [Update-MgUser](/powershell/module/microsoft.graph.users/update-mguser).
 
     ```PowerShell
-    Set-AzureADUser -ObjectId johndoe@contoso.com -AccountEnabled $false
+    $User = Get-MgUser -Search UserPrincipalName:'johndoe@contoso.com' -ConsistencyLevel eventual
+    Update-MgUser -UserId $User.Id -AccountEnabled:$false
     ```
 
-2. Revoke the user's Microsoft Entra ID refresh tokens. Refer to [Revoke-AzureADUserAllRefreshToken](/powershell/module/azuread/revoke-azureaduserallrefreshtoken).
+2. Revoke the user's Microsoft Entra ID refresh tokens. Refer to [Revoke-MgUserSignInSession](/powershell/module/microsoft.graph.users.actions/revoke-mgusersigninsession).
 
     ```PowerShell
-    Revoke-AzureADUserAllRefreshToken -ObjectId johndoe@contoso.com
+    Revoke-MgUserSignInSession -UserId $User.Id
     ```
 
-3. Disable the user's devices. Refer to [Get-AzureADUserRegisteredDevice](/powershell/module/azuread/get-azureaduserregistereddevice).
+3. Disable the user's devices. Refer to [Get-MgUserRegisteredDevice](/powershell/module/microsoft.graph.users/get-mguserregistereddevice).
 
     ```PowerShell
-    Get-AzureADUserRegisteredDevice -ObjectId johndoe@contoso.com | Set-AzureADDevice -AccountEnabled $false
+    $Device = Get-MgUserRegisteredDevice -UserId $User.Id 
+    Update-MgDevice -DeviceId $Device.Id -AccountEnabled:$false
     ```
 
 >[!NOTE]
 > For information on specific roles that can perform these steps review [Microsoft Entra built-in roles](~/identity/role-based-access-control/permissions-reference.md)
+
+
+[!INCLUDE [Azure AD PowerShell migration](../../includes/aad-powershell-migration-include.md)]
 
 ## When access is revoked
 

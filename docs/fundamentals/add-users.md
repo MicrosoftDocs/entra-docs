@@ -9,7 +9,7 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: fundamentals
 ms.topic: how-to
-ms.date: 09/12/2023
+ms.date: 11/28/2023
 ms.author: sarahlipsey
 ms.reviewer: krbain
 ---
@@ -31,7 +31,7 @@ You can create a new user for your organization or invite an external user from 
 
 1. Select **New user** > **Create new user** or **Invite external user**.
 
-    ![Screenshot of adding a new user from the All users page.](media/add-users-azure-entra/create-new-user-menu.png)
+   :::image type="content" source="media/add-users-azure-entra/create-new-user-menu.png" alt-text="Screenshot of adding a new user from the All users page.":::
 
 1. On the **New User** page, provide the new user's information:
 
@@ -78,7 +78,7 @@ To delete a user, follow these steps:
 
 1. Select **Delete**.
 
-    ![Screenshot of the All users page with a user selected and the Delete button highlighted.](media/add-users-azure-entra/delete-existing-user.png)
+   :::image type="content" source="media/add-users-azure-entra/delete-existing-user.png" alt-text="Screenshot of the All users page with a user selected and the Delete button highlighted.":::
 
 The user is deleted and no longer appears on the **All users** page. The user can be seen on the **Deleted users** page for the next 30 days and can be restored during that time. For more information about restoring a user, see [Restore or remove a recently deleted user](./users-restore.md).
 

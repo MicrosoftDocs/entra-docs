@@ -12,6 +12,8 @@ ms.date: 12/14/2022
 ms.author: gasinh
 ms.collection: M365-identity-device-management
 ms.custom: not-enterprise-apps
+
+#customer intent: As an IT admin, I want to configure F5 BIG-IP Easy Button for header-based and LDAP single sign-on, so that I can secure header and LDAP-based applications using Microsoft Entra ID and improve the overall security posture of the application.
 ---
 
 # Tutorial: Configure F5 BIG-IP Easy Button for header-based and LDAP single sign-on

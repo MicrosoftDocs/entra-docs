@@ -9,7 +9,7 @@ ms.reviewer: madansr7
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: reference
-#Customer intent:
+#Customer intent:As a developer registering an application with the Microsoft identity platform, I want to understand the restrictions and limitations of redirect URIs, so that I can correctly configure the redirect URI for successful authorization and token retrieval.
 ---
 
 # Redirect URI (reply URL) restrictions and limitations

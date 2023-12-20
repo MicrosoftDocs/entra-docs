@@ -6,7 +6,7 @@ services: active-directory
 author: barclayn
 ms.author: barclayn
 manager: amycolannino
-ms.date: 11/08/2023
+ms.date: 12/13/2023
 ms.topic: how-to
 ms.service: active-directory
 ms.subservice: enterprise-users
@@ -18,31 +18,33 @@ ms.collection: M365-identity-device-management
 
 # Bulk download a list of groups in Microsoft Entra ID
 
-You can download a list of all the groups in your organization to a comma-separated values (CSV) file in the portal for Microsoft Entra ID, part of Microsoft Entra. All admins and non-admin users can download group lists.
+You can download a list of all the groups in your organization to a comma-separated values (CSV) file in the portal for Microsoft Entra ID. All admins and nonadmin users can download group lists.
 
-## To download a list of groups
+## Download a list of groups
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
->[!NOTE]
-> The columns downloaded are pre-defined
+The columns downloaded are predefined.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
-1. Select Microsoft Entra ID.
-1. Select **Groups** > **Download groups**.
-1. On the **Groups download** page, select **Start** to receive a CSV file listing your groups.
+1. Select **Microsoft Entra ID**.
+1. Select **Groups** > **All groups** > **Download groups**.
 
-   :::image type="content" source="./media/groups-bulk-download/bulk-download.png" alt-text="Screenshot of the download groups command is on the All groups page.":::
+      :::image type="content" source="./media/groups-bulk-download/download-groups.png" alt-text="Screenshot of the All groups page with Download groups selected.":::
+
+1. On the **Groups download** page, select **Start** to receive a CSV file that lists your groups.
+
+   :::image type="content" source="./media/groups-bulk-download/bulk-download.png" alt-text="Screenshot that shows the Download groups command is on the All groups page.":::
 
 ## Check download status
 
-You can see the status of all of your pending bulk requests in the **Bulk operation results** page.
+You can see the status of all your pending bulk requests on the **Bulk operation results** page.
 
-:::image type="content" source="./media/groups-bulk-download/bulk-center.png" alt-text="Screenshot of the Check status option in the Bulk Operations Results page." lightbox="./media/groups-bulk-download/bulk-center.png":::
+:::image type="content" source="./media/groups-bulk-download/bulk-center.png" alt-text="Screenshot that shows the Check status option on the Bulk operation results page." lightbox="./media/groups-bulk-download/bulk-center.png":::
 
 ## Bulk download service limits
 
-Each bulk activity to download a group list can run for up to one hour. This enables you to download a list of at least 300,000 groups.
+Each bulk activity to download a group list can run for up to one hour. This time frame enables you to download a list of at least 300,000 groups.
 
 ## Next steps
 

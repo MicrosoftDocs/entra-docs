@@ -167,14 +167,14 @@ Typical targets for review include:
 
 ### Who will create and manage access reviews?
 
-The administrative role required to create, manage, or read an access review depends on the type of resource being reviewed. The following table denotes the roles required for each resource type. Custom roles with permission Microsoft.Authorization/* can create and manage reviews of any resource type, and custom roles with at least permissions Microsoft.Authorization/*/read can read reviews of any resource type.
+The administrative role required to create, manage, or read an access review depends on the type of resource whose membership is being reviewed. The following table denotes the roles required for each resource type.
 
 | Resource type| Create and manage access reviews (creators)| Read access review results |
 | - | - | -|
 | Group or application| Global administrator <p>User administrator<p>Identity Governance administrator<p>Privileged Role administrator (only does reviews for Microsoft Entra role-assignable groups)<p>Group owner ([if enabled by an admin](create-access-review.md#allow-group-owners-to-create-and-manage-access-reviews-of-their-groups))| Global administrator<p>Global reader<p>User administrator<p>Identity Governance administrator<p>Privileged Role administrator<p>Security reader<p>Group owner ([if enabled by an admin](create-access-review.md#allow-group-owners-to-create-and-manage-access-reviews-of-their-groups)) |
 |Microsoft Entra roles| Global administrator <p>Privileged Role administrator|  Global administrator<p>Global reader<p>User administrator<p>Privileged Role administrator<p> <p>Security reader |
-| Azure resource roles| User Access Administrator (for the resource)<p>Resource owner| User Access Administrator (for the resource)<p>Resource owner<p>Reader (for the resource) |
-| Access package| Global administrator<p>User administrator<p>Identity Governance administrator<p>Catalog owner (for the access package)<p>Access package manager (for the access package)| Global administrator<p>Global reader<p>User administrator<p>Identity Governance administrator<p>Catalog owner (for the access package)<p>Access package manager (for the access package)<p>Security reader  |
+| Azure resource roles| User Access Administrator (for the resource)<p>Resource owner<P>Custom roles with Microsoft.Authorization/* permission.| User Access Administrator (for the resource)<p>Resource owner<p>Reader (for the resource)<p>Custom roles with Microsoft.Authorization/*/read permissions. |
+| Access package| Global administrator<p>Identity Governance administrator<p>Catalog owner (for the access package)<p>Access package manager (for the access package)| Global administrator<p>Global reader<p>User administrator<p>Identity Governance administrator<p>Catalog owner (for the access package)<p>Access package manager (for the access package)<p>Security reader  |
 
 For more information, see [Administrator role permissions in Microsoft Entra ID](~/identity/role-based-access-control/permissions-reference.md).
 
@@ -307,9 +307,9 @@ To learn how to review guest users' access to group memberships, see [Manage gue
 
 ### Review access to on-premises groups
 
-Access reviews can't change the group membership of groups that you synchronize from on-premises AD with [Microsoft Entra Connect](~/identity/hybrid/connect/whatis-azure-ad-connect.md). This restriction is because the source of authority is on-premises.  To control access to AD group-based apps, use [Microsoft Entra Cloud Sync group writeback](~/identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md).
+Access reviews can't change the group membership of groups that you synchronize from on-premises AD with [Microsoft Entra Connect](~/identity/hybrid/connect/whatis-azure-ad-connect.md). This restriction is because the source of authority for a group originating in AD is on-premises AD.  To control access to AD group-based apps, use [Microsoft Entra Cloud Sync group writeback](~/identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md).
 
-You can still use access reviews to schedule and maintain regular reviews of on-premises groups. Reviewers will then take action in the on-premises group. This strategy keeps access reviews as the tool for all reviews.
+Until you have migrated to Microsoft Entra ID groups with group writeback, you can still use access reviews to schedule and maintain regular reviews of existing on-premises groups. In this case, admins will then take action in the on-premises group after each review completes. This strategy keeps access reviews as the tool for all reviews.
 
 You can use the results from an access review on on-premises groups and process them further, either by:
 
@@ -329,7 +329,7 @@ Plan reviews for applications in the following scenarios when:
 * The application has specific compliance requirements to which you must attest.
 * You suspect inappropriate access.
 
-Before you create access reviews for an application, set the **User assignment required?** option to **Yes**. If it's set to **No**, all users in your directory, including external identities, can access the application and you can't review access to the application.
+Before you create access reviews for an application, the application needs to be integrated with Microsoft Entra ID, with users assigned to the app roles, and the **User assignment required?** option on the application set to **Yes**. If it's set to **No**, all users in your directory, including external identities, can access the application and you can't review access to the application.
 
  ![Screenshot that shows planning app assignments.](./media/deploy-access-review/6-plan-applications-assignment-required.png)
 

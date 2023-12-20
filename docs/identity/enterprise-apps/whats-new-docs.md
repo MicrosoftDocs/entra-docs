@@ -1,7 +1,7 @@
 ---
 title: "What's new in Microsoft Entra application management"
 description: "New and updated documentation for the Microsoft Entra application management."
-ms.date: 11/02/2023
+ms.date: 12/05/2023
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: reference
@@ -9,11 +9,19 @@ ms.topic: reference
 ms.author: jomondi
 author: omondiatieno
 manager: CelesteDG
+
+#customer intent: As an IT admin responsible for managing applications in Microsoft Entra ID, I want to stay updated on new documentation and significant updates, so that I can effectively manage and troubleshoot application-related issues in the platform.
 ---
 
 # Microsoft Entra application management: What's new
 
 Welcome to what's new in Microsoft Entra application management documentation. This article lists new docs that have been added and those that have had significant updates in the last three months. To learn what's new with the application management service, see [What's new in Azure AD](~/fundamentals/whats-new.md).
+
+## November
+
+### New articles
+
+- [Tutorial: Configure Datawiza to enable Microsoft Entra multifactor authentication and single sign-on to Oracle Hyperion EPM](datawiza-mfa-sso-oracle-hyperion-epm.md) - New how-to guide for Datawiza integration with Microsoft Entra ID.
 
 ## October
 
@@ -100,17 +108,3 @@ Welcome to what's new in Microsoft Entra application management documentation. T
 - [Create collections on the My Apps portal](access-panel-collections.md)
 - [Unexpected consent prompt when signing in to an application](application-sign-in-unexpected-user-consent-prompt.md)
 - [Manage users and groups assignment to an application](assign-user-or-group-access-portal.md)
-
-## August 2023
-
-### New articles
-
-- [Manage app consent policies for group owners](manage-group-owner-consent-policies.md) - New how-to guide on how to manage group owner consent policies.
-
-### Updated articles
-
-- [Properties of an enterprise application](application-properties.md) - Updates on the user requirement property
-- [Configure group and team owner consent to applications](configure-user-consent-groups.md) - Updates to examples for configuring group and team owner consent
-- [Configure how users consent to applications](configure-user-consent.md) - Updates to examples for configuring user consent
-- [Manage app consent policies](manage-app-consent-policies.md) - Updates to examples for managing app consent policies
-- [Review the application activity report](migrate-adfs-application-activity.md) - Updates to stale local links

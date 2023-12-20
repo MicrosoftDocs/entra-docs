@@ -14,7 +14,7 @@ ms.reviewer: phsignor, yuhko, ergreenl
 ms.custom: enterprise-apps
 zone_pivot_groups: enterprise-apps-minus-former-powershell
 
-#customer intent: As an admin, I want to configure group owner consent to apps accessing group data using Microsoft Entra ID
+#customer intent: As an IT administrator, I want to configure the consent settings for applications, so that I can control which applications can access my organization's data associated with a group or team.
 ---
 
 # Configure group and team owner consent to applications
@@ -27,8 +27,6 @@ Group owner consent can be managed in two separate ways: through Microsoft Entra
 
 Before creating the app consent policy to manage your group owner consent, you need to disable the group owner consent setting through the Microsoft Entra admin center. Disabling this setting allows for group owner consent subject to app consent policies. You can learn how to disable the group owner consent setting in various ways in this article. Learn more about [managing group owner consent by app consent policies](manage-group-owner-consent-policies.md) tailored to your needs.
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
-
 ## Prerequisites
 
 To configure group and team owner consent, you need:
@@ -36,7 +34,7 @@ To configure group and team owner consent, you need:
 - A user account. If you don't already have one, you can [create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 - A Global Administrator role.
 
-## Manage group owner consent to apps by directory settings
+## Manage group owner consent to apps using Microsoft Entra admin center
 
 You can configure which users are allowed to consent to apps accessing their groups' or teams' data, or you can disable the setting for all users.
 
@@ -79,7 +77,7 @@ Connect to Microsoft Graph PowerShell and sign in as a [global administrator](~/
     Connect-MgGraph -Scopes "Directory.ReadWrite.All"
     ```
 
-### Retrieve the current setting through directory settings using PowerShell
+### Retrieve the current setting using Microsoft Graph PowerShell
 
 Retrieve the current value for the **Consent Policy Settings** directory settings in your tenant. This requires checking if the directory settings for this feature have been created, and if not, using the values from the corresponding directory settings template.
 
@@ -117,7 +115,7 @@ $enabledValue = $settings.Values | ? { $_.Name -eq "EnableGroupSpecificConsent" 
 $limitedToValue = $settings.Values | ? { $_.Name -eq "ConstrainGroupSpecificConsentToMembersOfGroupId" }
 ```
 
-### Understand the setting values
+### Understand the setting values in Microsoft Graph PowerShell
 
 There are two settings values that define which users would be able to allow an app to access their group's data:
 
@@ -126,7 +124,7 @@ There are two settings values that define which users would be able to allow an 
 | _EnableGroupSpecificConsent_   | Boolean | Flag indicating if groups owners are allowed to grant group-specific permissions. |
 | _ConstrainGroupSpecificConsentToMembersOfGroupId_ | Guid | If _EnableGroupSpecificConsent_ is set to "True" and this value set to a group's object ID, members of the identified group will be authorized to grant group-specific permissions to the groups they own. |
 
-### Update settings values for the desired configuration using PowerShell
+### Update settings values for the desired configuration using Microsoft Graph PowerShell
 
 ```powershell
 # Disable group-specific consent entirely
@@ -146,7 +144,9 @@ $enabledValue.Value = "true"
 $limitedToValue.Value = "{group-object-id}"
 ```
 
-### Save your settings
+### Save your settings using Microsoft Graph PowerShell
+
+```powershell
 
 ```powershell
 # Update an existing directory settings
@@ -161,7 +161,7 @@ To manage group and team owner consent settings through directory setting using 
 
 You need to sign in as a [global administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator). For reading the current user consent settings, consent to `Policy.Read.All` permission. For reading and changing the user consent settings, consent to `Policy.ReadWrite.Authorization` permission.
 
-### Retrieve the current setting from the Microsoft Entra admin center
+### Retrieve the current setting using Microsoft Graph API
 
 Retrieve the current value for the **Consent Policy Settings** from Microsoft Entra admin center in your tenant. This requires checking if the directory settings for this feature have been created, and if not, using the second Microsoft Graph call to create the corresponding directory settings.
 
@@ -238,7 +238,7 @@ POST https://graph.microsoft.com/beta/settings
 }
 ```
 
-### Understand the setting values in Microsoft Graph
+### Understand the setting values in Microsoft Graph API
 
 There are two settings values that define which users would be able to allow an app to access their group's data:
 
@@ -247,7 +247,7 @@ There are two settings values that define which users would be able to allow an 
 | _EnableGroupSpecificConsent_   | Boolean | Flag indicating if groups owners are allowed to grant group-specific permissions. |
 | _ConstrainGroupSpecificConsentToMembersOfGroupId_ | Guid | If _EnableGroupSpecificConsent_ is set to "True" and this value set to a group's object ID, members of the identified group will be authorized to grant group-specific permissions to the groups they own. |
 
-### Update settings values for the desired configuration using Microsoft Graph
+### Update settings values for the desired configuration using Microsoft Graph API
 
 Replace `{directorySettingId}` with the actual ID in the `value` collection when retrieving the current setting
 
@@ -343,7 +343,7 @@ You can configure which users are allowed to consent to apps accessing their gro
 
 To choose which app consent policy governs user consent for applications, you can use the [Microsoft Graph PowerShell](/powershell/microsoftgraph/get-started?view=graph-powershell-1.0&preserve-view=true) module. The cmdlets used here are included in the [Microsoft.Graph.Identity.SignIns](https://www.powershellgallery.com/packages/Microsoft.Graph.Identity.SignIns) module.
 
-Connect to Microsoft Graph PowerShell using the least-privilege permission needed. For reading the current user consent settings, use `Policy.Read.All`. For reading and changing the user consent settings, use `Policy.ReadWrite.Authorization`.
+Connect to Microsoft Graph PowerShell using the least-privilege permission needed. For reading the current user consent settings, use `Policy.Read.All`. For reading and changing the user consent settings, use `Policy.ReadWrite.Authorization`. You need to sign in as a [global administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator)
 
 ```powershell
 # change the profile to beta by using the `Select-MgProfile` command
@@ -354,7 +354,7 @@ Select-MgProfile -Name "beta".
 Connect-MgGraph -Scopes "Policy.ReadWrite.Authorization"
 ```
 
-### Disable group owner consent to use app consent policies
+### Disable group owner consent to use app consent policies using Microsoft Graph PowerShell
 
 1. Check if the `ManagePermissionGrantPoliciesForOwnedResource` is scoped in `group`.
    1. Retrieve the current value for the group owner consent setting.
@@ -387,7 +387,7 @@ Connect-MgGraph -Scopes "Policy.ReadWrite.Authorization"
 
     ```
 
-### Assign an app consent policy to group owners
+### Assign an app consent policy to group owners using Microsoft Graph PowerShell
 
 To allow group owner consent subject to an app consent policy, choose which app consent policy should govern group owners' authorization to grant consent to apps. Ensure that the consent policies (`PermissionGrantPoliciesAssigned`) include the current `ManagePermissionGrantsForSelf.*` policy and other `ManagePermissionGrantsForOwnedResource.*` policies if any while updating the collection. This way, you can maintain your current configuration for user consent settings and other resource consent settings.
 
@@ -428,7 +428,7 @@ Update-MgPolicyAuthorizationPolicy -AuthorizationPolicyId authorizationPolicy -B
 
 Use the [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) to choose which group owner consent policy governs user consent group owners' ability to consent to applications accessing your organization's data for the groups they own.
 
-### Disable group owner consent to use app consent policies using Microsoft Graph
+### Disable group owner consent to use app consent policies using Microsoft Graph API
 
 1. Check if the `ManagePermissionGrantPoliciesForOwnedResource` is scoped in `group`.
    1. Retrieve the current value for the group owner consent setting
@@ -461,7 +461,7 @@ Use the [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) t
     }
    ```
 
-### Assign an app consent policy to group owners using Microsoft Graph
+### Assign an app consent policy to group owners using Microsoft Graph API
 
 To allow group owner consent subject to an app consent policy, choose which app consent policy should govern group owners' authorization to grant consent to apps. Ensure that the consent policies (`PermissionGrantPoliciesAssigned`) include the current `ManagePermissionGrantsForSelf.*` policy and other current `ManagePermissionGrantsForOwnedResource.*` policies if any while updating the collection. This way, you can maintain your current configuration for user consent settings and other resource consent settings.
 

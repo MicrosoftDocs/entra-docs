@@ -16,8 +16,7 @@ ms.author: barclayn
 
 # Request Service REST API presentation specification
 
-[!INCLUDE [Verifiable Credentials announcement](~/../azure-docs-pr/includes/verifiable-credentials-brand.md)]
-
+  
 Microsoft Entra Verified ID includes the Request Service REST API. This API allows you to issue and verify a credential. This article specifies the Request Service REST API for a presentation request. The presentation request asks the user to present a verifiable credential, and then verify the credential.
 Another article describes [how to call the Request Service REST API](get-started-request-api.md).
 
@@ -209,7 +208,7 @@ The callback endpoint is called when a user scans the QR code, uses the deep lin
 |Property |Type |Description |
 |---------|---------|---------|
 | `requestId`| string | Mapped to the original request when the payload was posted to the Verifiable Credentials service.|
-| `requestStatus` |string |The status returned when the request was retrieved by the authenticator app. Possible values: <ul><li>`request_retrieved`: The user scanned the QR code or selected the link that starts the presentation flow.</li><li>`presentation_verified`: The verifiable credential validation completed successfully.</li></ul>    |
+| `requestStatus` |string |The status returned when the request was retrieved by the authenticator app. Possible values: <ul><li>`request_retrieved`: The user scanned the QR code or selected the link that starts the presentation flow.</li><li>`presentation_verified`: The verifiable credential validation completed successfully.</li>li>`presentation_error`: There was an error in the presentation.</li></ul>    |
 | `state` |string| Returns the state value that you passed in the original payload.   |
 | `subject`|string | The verifiable credential user DID.|
 | `verifiedCredentialsData`| array |Returns an array of verifiable credentials requested. For each verifiable credential, it provides: </li><li>The verifiable credential type(s).</li><li>The issuer's DID</li><li>The claims retrieved.</li><li>The verifiable credential issuer's domain. </li><li>The verifiable credential issuer's domain validation status. </li></ul> |
@@ -235,7 +234,7 @@ The following example demonstrates a callback payload after the verifiable crede
   "subject": "did:web:verifiedid.contoso.com",
   "verifiedCredentialsData": [
     {
-      "issuer": "did:ion:issuer...",
+      "issuer": "did:web:issuer...",
       "type": [
         "VerifiableCredential",
         "VerifiedCredentialExpert"

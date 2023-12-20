@@ -11,6 +11,8 @@ ms.topic: troubleshooting
 
 ms.date: 06/15/2023
 ms.custom: enterprise-apps
+
+#customer intent: As an IT admin troubleshooting SAML-based single sign-on issues in Microsoft Entra ID, I want to gather the necessary information and resolve sign-in errors, so that I can ensure successful single sign-on between Microsoft Entra ID and target applications.
 ---
 
 # Debug SAML-based single sign-on to applications

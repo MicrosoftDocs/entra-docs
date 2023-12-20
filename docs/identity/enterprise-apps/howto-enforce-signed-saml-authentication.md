@@ -13,6 +13,8 @@ ms.author: jomondi
 ms.reviewer: alamaral
 ms.collection: M365-identity-device-management
 ms.custom: enterprise-apps
+
+#customer intent: As an IT Admin, I want to enable and disable the enforcement of signed authentication requests and upload public keys for validation, so that I can ensure the security and integrity of the requests made to Microsoft Entra ID.
 --- 
 
 

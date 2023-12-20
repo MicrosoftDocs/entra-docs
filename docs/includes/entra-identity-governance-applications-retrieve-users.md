@@ -47,7 +47,7 @@ The first time your organization uses these cmdlets for this scenario, you need 
 
 1. Choose the column of the *users.csv* file that will match with an attribute of a user in Microsoft Entra ID.
 
-   For example, you might have users in the database where the value in the column named `EMail` is the same value as in the Microsoft Entra attribute `userPrincipalName`:
+   For example, you might have users in a database where the value in the column named `EMail` is the same value as in the Microsoft Entra attribute `userPrincipalName`:
 
    ```powershell
    $db_match_column_name = "EMail"
@@ -56,7 +56,7 @@ The first time your organization uses these cmdlets for this scenario, you need 
 
 1. Retrieve the IDs of those users in Microsoft Entra ID.
 
-   The following PowerShell script uses the `$dbusers`, `$db_match_column_name`, and `$azuread_match_attr_name` values specified earlier. It will query Microsoft Entra ID to locate a user that has an attribute with a matching value for each record in the source file. If there are many users in the database, this script might take several minutes to finish.  If you don't have an attribute in Microsoft Entra ID that has the value, and need to use a `contains` or other filter expression, then you will need to customize this script and that in step 11 below to use a different filter expression.
+   The following PowerShell script uses the `$dbusers`, `$db_match_column_name`, and `$azuread_match_attr_name` values specified earlier. It will query Microsoft Entra ID to locate a user that has an attribute with a matching value for each record in the source file. If there are many users in the source database or directory, this script might take several minutes to finish.  If you don't have an attribute in Microsoft Entra ID that has the value, and need to use a `contains` or other filter expression, then you will need to customize this script and that in step 11 below to use a different filter expression.
 
    ```powershell
    $dbu_not_queried_list = @()
@@ -87,7 +87,7 @@ The first time your organization uses these cmdlets for this scenario, you need 
 
    ```
 
-1. View the results of the previous queries. See if any of the users in the database couldn't be located in Microsoft Entra ID, because of errors or missing matches.
+1. View the results of the previous queries. See if any of the users in the database or directory couldn't be located in Microsoft Entra ID, because of errors or missing matches.
 
    The following PowerShell script will display the counts of records that weren't located:
 
@@ -98,43 +98,43 @@ The first time your organization uses these cmdlets for this scenario, you need 
    }
    $dbu_duplicate_count = $dbu_duplicate_list.Count
    if ($dbu_duplicate_count -ne 0) {
-     Write-Error "Unable to locate Azure AD users for $dbu_duplicate_count rows as multiple rows have the same value"
+     Write-Error "Unable to locate Microsoft Entra ID users for $dbu_duplicate_count rows as multiple rows have the same value"
    }
    $dbu_not_matched_count = $dbu_not_matched_list.Count
    if ($dbu_not_matched_count -ne 0) {
-     Write-Error "Unable to locate $dbu_not_matched_count records in Azure AD by querying for $db_match_column_name values in $azuread_match_attr_name."
+     Write-Error "Unable to locate $dbu_not_matched_count records in Microsoft Entra ID by querying for $db_match_column_name values in $azuread_match_attr_name."
    }
    $dbu_match_ambiguous_count = $dbu_match_ambiguous_list.Count
    if ($dbu_match_ambiguous_count -ne 0) {
-     Write-Error "Unable to locate $dbu_match_ambiguous_count records in Azure AD as attribute match ambiguous."
+     Write-Error "Unable to locate $dbu_match_ambiguous_count records in Microsoft Entra ID as attribute match ambiguous."
    }
    $dbu_query_failed_count = $dbu_query_failed_list.Count
    if ($dbu_query_failed_count -ne 0) {
-     Write-Error "Unable to locate $dbu_query_failed_count records in Azure AD as queries returned errors."
+     Write-Error "Unable to locate $dbu_query_failed_count records in Microsoft Entra ID as queries returned errors."
    }
    $azuread_not_enabled_count = $azuread_not_enabled_list.Count
    if ($azuread_not_enabled_count -ne 0) {
-    Write-Error "$azuread_not_enabled_count users in Azure AD are blocked from sign-in."
+    Write-Error "$azuread_not_enabled_count users in Microsoft Entra ID are blocked from sign-in."
    }
    if ($dbu_not_queried_count -ne 0 -or $dbu_duplicate_count -ne 0 -or $dbu_not_matched_count -ne 0 -or $dbu_match_ambiguous_count -ne 0 -or $dbu_query_failed_count -ne 0 -or $azuread_not_enabled_count) {
     Write-Output "You will need to resolve those issues before access of all existing users can be reviewed."
    }
    $azuread_match_count = $azuread_match_id_list.Count
-   Write-Output "Users corresponding to $azuread_match_count records were located in Azure AD." 
+   Write-Output "Users corresponding to $azuread_match_count records were located in Microsoft Entra ID." 
    ```
 
 1. When the script finishes, it will indicate an error if any records from the data source weren't located in Microsoft Entra ID. If not all the records for users from the application's data store could be located as users in Microsoft Entra ID, you'll need to investigate which records didn't match and why.  
 
    For example, someone's email address and userPrincipalName might have been changed in Microsoft Entra ID without their corresponding `mail` property being updated in the application's data source. Or, the user might have already left the organization but is still in the application's data source. Or there might be a vendor or super-admin account in the application's data source that does not correspond to any specific person in Microsoft Entra ID.
 
-1. If there were users who couldn't be located in Microsoft Entra ID, or weren't active and able to sign in, but you want to have their access reviewed or their attributes updated in the database, you need to update or create Microsoft Entra users for them. You can create users in bulk by using either:
+1. If there were users who couldn't be located in Microsoft Entra ID, or weren't active and able to sign in, but you want to have their access reviewed or their attributes updated in the database or directory, you need to update or create Microsoft Entra users for them. You can create users in bulk by using either:
 
    - A CSV file, as described in [Bulk create users in the Microsoft Entra admin center](~/identity/users/users-bulk-add.md)
    - The [New-MgUser](/powershell/module/microsoft.graph.users/new-mguser?view=graph-powershell-1.0#examples&preserve-view=true) cmdlet  
 
    Ensure that these new users are populated with the attributes required for Microsoft Entra ID to later match them to the existing users in the application, and the attributes required by Microsoft Entra ID, including `userPrincipalName`, `mailNickname` and `displayName`.  The `userPrincipalName` must be unique among all the users in the directory.
 
-   For example, you might have users in the database where the value in the column named `EMail` is the value you want to use as the Microsoft Entra user principal Name, the value in the column `Alias` contains the Microsoft Entra ID mail nickname, and the value in the column `Full name` contains the user's display name:
+   For example, you might have users in a database where the value in the column named `EMail` is the value you want to use as the Microsoft Entra user principal Name, the value in the column `Alias` contains the Microsoft Entra ID mail nickname, and the value in the column `Full name` contains the user's display name:
 
    ```powershell
    $db_display_name_column_name = "Full name"
@@ -204,27 +204,27 @@ The first time your organization uses these cmdlets for this scenario, you need 
    }
    $dbu_duplicate_count = $dbu_duplicate_list.Count
    if ($dbu_duplicate_count -ne 0) {
-     Write-Error "Unable to locate Azure AD users for $dbu_duplicate_count rows as multiple rows have the same value"
+     Write-Error "Unable to locate Microsoft Entra ID users for $dbu_duplicate_count rows as multiple rows have the same value"
    }
    $dbu_not_matched_count = $dbu_not_matched_list.Count
    if ($dbu_not_matched_count -ne 0) {
-     Write-Error "Unable to locate $dbu_not_matched_count records in Azure AD by querying for $db_match_column_name values in $azuread_match_attr_name."
+     Write-Error "Unable to locate $dbu_not_matched_count records in Microsoft Entra ID by querying for $db_match_column_name values in $azuread_match_attr_name."
    }
    $dbu_match_ambiguous_count = $dbu_match_ambiguous_list.Count
    if ($dbu_match_ambiguous_count -ne 0) {
-     Write-Error "Unable to locate $dbu_match_ambiguous_count records in Azure AD as attribute match ambiguous."
+     Write-Error "Unable to locate $dbu_match_ambiguous_count records in Microsoft Entra ID as attribute match ambiguous."
    }
    $dbu_query_failed_count = $dbu_query_failed_list.Count
    if ($dbu_query_failed_count -ne 0) {
-     Write-Error "Unable to locate $dbu_query_failed_count records in Azure AD as queries returned errors."
+     Write-Error "Unable to locate $dbu_query_failed_count records in Microsoft Entra ID as queries returned errors."
    }
    $azuread_not_enabled_count = $azuread_not_enabled_list.Count
    if ($azuread_not_enabled_count -ne 0) {
-    Write-Warning "$azuread_not_enabled_count users in Azure AD are blocked from sign-in."
+    Write-Warning "$azuread_not_enabled_count users in Microsoft Entra ID are blocked from sign-in."
    }
    if ($dbu_not_queried_count -ne 0 -or $dbu_duplicate_count -ne 0 -or $dbu_not_matched_count -ne 0 -or $dbu_match_ambiguous_count -ne 0 -or $dbu_query_failed_count -ne 0 -or $azuread_not_enabled_count -ne 0) {
     Write-Output "You will need to resolve those issues before access of all existing users can be reviewed."
    }
    $azuread_match_count = $azuread_match_id_list.Count
-   Write-Output "Users corresponding to $azuread_match_count records were located in Azure AD." 
+   Write-Output "Users corresponding to $azuread_match_count records were located in Microsoft Entra ID." 
    ```

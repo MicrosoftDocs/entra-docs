@@ -6,12 +6,13 @@ description: Microsoft Entra B2B collaboration supports guest user access so you
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: overview
-ms.date: 02/20/2023
+ms.date: 12/19/2023
 ms.author: cmulligan
 author: csmulligan
 manager: celestedg
 ms.custom: "it-pro, seo-update-azuread-jan"
 ms.collection: M365-identity-device-management
+# Customer intent: As an administrator managing external collaboration, I want to easily invite guest users from the Azure portal, so that I can securely share my company's applications and services with external partners and maintain control over my corporate data.
 ---
 
 # B2B collaboration overview
@@ -53,7 +54,7 @@ As an administrator, you can easily add guest users to your organization in the 
 - Assign guest users to apps or groups.
 - [Send an invitation email](invitation-email-elements.md) that contains a redemption link, or send a direct link to an app you want to share.
 
-:::image type="content" source="media/what-is-b2b/add-a-b2b-user-to-azure-portal.png" alt-text="Screenshot showing the Invite a new guest user invitation entry page." lightbox="media/what-is-b2b/add-a-b2b-user-to-azure-portal-large.png":::
+:::image type="content" source="media/what-is-b2b/add-a-b2b-user.png" alt-text="Screenshot showing the Invite a new guest user invitation entry page." lightbox="media/what-is-b2b/add-a-b2b-user.png":::
 
 - Guest users follow a few simple [redemption steps](redemption-experience.md) to sign in.
 
@@ -69,7 +70,7 @@ You can also use [API connectors](api-connectors-overview.md) to integrate your 
 
 ## Use policies to securely share your apps and services
 
-You can use authentication and authorization policies to protect your corporate content. Conditional Access policies, such as multi-factor authentication, can be enforced:
+You can use authentication and authorization policies to protect your corporate content. Conditional Access policies, such as multifactor authentication, can be enforced:
 
 - At the tenant level.
 - At the application level.

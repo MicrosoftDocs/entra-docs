@@ -232,6 +232,8 @@
         href: assetbank-tutorial.md
       - name: Asset Planner
         href: asset-planner-tutorial.md  
+      - name: Assent SSO
+        href: assent-sso-tutorial.md
       - name: AssetSonar
         href: assetsonar-tutorial.md
       - name: Astra Schedule
@@ -582,6 +584,8 @@
         href: cognidox-tutorial.md
       - name: Cognician
         href: cognician-tutorial.md
+      - name: Cognism
+        href: cognism-tutorial.md
       - name: CoLab
         href: colab-tutorial.md
       - name: Collaborative Innovation
@@ -772,6 +776,8 @@
         href: discovery-benefits-sso-tutorial.md
       - name: Displayr
         href: displayr-tutorial.md
+      - name: DLG Learning Center
+        href: dlg-learning-center-tutorial.md
       - name: dmarcian
         href: dmarcian-tutorial.md
       - name: Document360
@@ -1185,6 +1191,8 @@
         href: hashicorp-cloud-platform-hcp-tutorial.md
       - name: Hawkeye Platform
         href: hawkeyebsb-tutorial.md
+      - name: HCL BigFix Platform
+        href: hcl-bigfix-platform-tutorial.md
       - name: hCaptcha Enterprise
         href: hcaptcha-enterprise-tutorial.md
       - name: Headspace
@@ -1629,6 +1637,8 @@
         href: logzio-cloud-observability-for-engineers-tutorial.md
       - name: Looker Analytics Platform
         href: looker-analytics-platform-tutorial.md  
+      - name: Lookout Secure Access
+        href: lookout-secure-access-tutorial.md
       - name: Loop Flow CRM
         href: loop-flow-crm-tutorial.md  
       - name: Lucid (All Products)
@@ -1679,6 +1689,8 @@
         href: mcm-tutorial.md
       - name: MDComune Business
         href: mdcomune-business-tutorial.md
+      - name: MemoMeister
+        href: memomeister-tutorial.md
       - name: Menlo Security
         href: menlosecurity-tutorial.md
       - name: Meraki Dashboard
@@ -1769,6 +1781,8 @@
         href: myaryaka-tutorial.md
       - name: My Award Points Top Sub/Top Team
         href: myawardpoints-tutorial.md
+      - name: MyGeotab
+        href: mygeotab-tutorial.md
       - name: My IBISWorld
         href: my-ibisworld-tutorial.md
       - name: myMobilityHQ
@@ -2143,8 +2157,8 @@
         href: quarem-tutorial.md
       - name: Quantum Workplace
         href: quantum-workplace-tutorial.md
-      - name: QueryLayer
-        href: querylayer-tutorial.md
+      - name: TrustWorks
+        href: trustworks-tutorial.md
       - name: Questetra BPM Suite
         href: questetra-bpm-suite-tutorial.md
       - name: QuickHelp
@@ -2223,8 +2237,8 @@
         href: riskware-tutorial.md
       - name: Riva
         href: riva-tutorial.md
-      - name: Rivial Data Security
-        href: rivial-data-security-tutorial.md
+      - name: Rivial Cybersecurity Management Platform
+        href: rivial-cybersecurity-management-platform-tutorial.md
       - name: Roadmunk
         href: roadmunk-tutorial.md
       - name: Robin
@@ -2305,6 +2319,8 @@
         href: sap-netweaver-tutorial.md
       - name: SAP Qualtrics
         href: qualtrics-tutorial.md
+      - name: SAS Viya SSO
+        href: sas-viya-sso-tutorial.md
       - name: Sauce Labs
         href: sauce-labs-tutorial.md
       - name: Sauce Labs - Mobile and Web Testing
@@ -2485,6 +2501,8 @@
         href: smartlook-tutorial.md
       - name: Smart Map Pro
         href: smart-map-pro-tutorial.md
+      - name: Smartplan
+        href: smartplan-tutorial.md
       - name: SmartRecruiters
         href: smartrecruiters-tutorial.md
       - name: smartvid.io
@@ -2553,6 +2571,8 @@
         href: statuspage-tutorial.md
       - name: Stormboard
         href: stormboard-tutorial.md
+      - name: Striim
+        href: striim-tutorial.md
       - name: Styleflow
         href: styleflow-tutorial.md
       - name: SuccessFactors
@@ -2565,6 +2585,8 @@
         href: sumtotalcentral-tutorial.md
       - name: SuperAnnotate
         href: superannotate-tutorial.md
+      - name: Superluminal
+        href: superluminal-tutorial.md
       - name: Supermood
         href: supermood-tutorial.md
       - name: Supply Chain Catalyst
@@ -3486,6 +3508,8 @@
         href: parsable-provisioning-tutorial.md
       - name: Peripass
         href: peripass-provisioning-tutorial.md  
+      - name: Personify Inc
+        href: personify-inc-provisioning-tutorial.md
       - name: Pingboard
         href: pingboard-provisioning-tutorial.md
       - name: Plandisc
@@ -3510,6 +3534,8 @@
         href: peakon-provisioning-tutorial.md
       - name: Proware
         href: proware-provisioning-tutorial.md
+      - name: Puzzel
+        href: puzzel-provisioning-tutorial.md
       - name: Real Links
         href: real-links-provisioning-tutorial.md
       - name: Recnice
@@ -3594,6 +3620,8 @@
         href: splashtop-provisioning-tutorial.md
       - name: StarLeaf
         href: starleaf-provisioning-tutorial.md
+      - name: Starmind
+        href: starmind-provisioning-tutorial.md
       - name: Storegate
         href: storegate-provisioning-tutorial.md
       - name: SurveyMonkey Enterprise

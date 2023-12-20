@@ -15,8 +15,7 @@ ms.date: 09/15/2023
 
 # Issue Microsoft Entra Verified ID credentials from an application
 
-[!INCLUDE [Verifiable Credentials announcement](~/../azure-docs-pr/includes/verifiable-credentials-brand.md)]
-
+  
 In this tutorial, you run a sample application from your local computer that connects to your Microsoft Entra tenant. Using the application, you're going to issue and verify a verified credential expert card.
 
 In this article, you learn how to:

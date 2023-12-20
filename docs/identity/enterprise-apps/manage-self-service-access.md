@@ -14,7 +14,7 @@ ms.collection: M365-identity-device-management
 ms.reviewer: ergreenl
 ms.custom: enterprise-apps
 
-#customer intent: As an admin, I want to enable self-service application access so that users can self-discover applications from their My Apps portal.
+#customer intent: As an IT admin, I want to enable self-service application access for my users, so that they can discover and request access to applications without IT intervention. Additionally, I want to have the option to allow business approvers to approve access requests and manage user roles and passwords.
 ---
 
 # Enable self-service application assignment

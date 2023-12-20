@@ -19,6 +19,8 @@
     href: tutorial-configure-custom-password-protection.md
   - name: Enable risk-based sign-in protection
     href: tutorial-risk-based-sspr-mfa.md
+  - name: Enable security notifications
+    href: tutorial-enable-security-notifications-for-audit-logs.md
 - name: Concepts
   expanded: true
   items:
@@ -76,8 +78,6 @@
       href: /microsoft-365/admin/security-and-compliance/set-up-multi-factor-authentication
     - name: FAQ
       href: multi-factor-authentication-faq.yml
-    - name: Operator assistance
-      href: concept-authentication-operator-assistance.md
   - name: Password protection
     items:
     - name: Combined password policy check 
