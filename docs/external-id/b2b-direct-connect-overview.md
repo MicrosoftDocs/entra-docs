@@ -6,7 +6,7 @@ description: Microsoft Entra B2B direct connect lets users from other Microsoft 
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: conceptual
-ms.date: 02/20/2023
+ms.date: 12/19/2023
 
 ms.author: cmulligan
 author: csmulligan
@@ -38,7 +38,7 @@ Microsoft Entra organizations can manage their trust relationships with other Mi
 
 - **Tenant restrictions** determine how your users can access an external organization when they’re using your devices and network, but they’re signed in using an account that was issued to them by the external organization.
 
-- **Trust settings** determine whether your Conditional Access policies will trust the multi-factor authentication (MFA), compliant device, and Microsoft Entra hybrid joined device claims from an external organization when their users access your resources.  
+- **Trust settings** determine whether your Conditional Access policies will trust the multifactor authentication (MFA), compliant device, and Microsoft Entra hybrid joined device claims from an external organization when their users access your resources.  
 
 > [!IMPORTANT]
 > B2B direct connect is possible only when both organizations allow access to and from the other organization. For example, Contoso can allow inbound B2B direct connect from Fabrikam, but sharing isn't possible until Fabrikam also enables outbound B2B direct connect with Contoso. Therefore, you’ll need to coordinate with the external organization’s admin to make sure their cross-tenant access settings allow sharing with you. This mutual agreement is important because B2B direct connect enables limited sharing of data for the users you enable for B2B direct connect.
@@ -88,7 +88,7 @@ In a B2B direct connect scenario, authentication involves a user from a Microsof
 For details about how authentication works in a cross-tenant scenario with Conditional Access policies, see [Authentication and Conditional Access in cross-tenant scenarios](authentication-conditional-access.md).
 
 
-## Multi-factor authentication (MFA)
+## Multifactor authentication (MFA)
 
 If you want to allow B2B direct connect with an external organization and your Conditional Access policies require MFA, you ***must*** configure your inbound [trust settings](cross-tenant-access-settings-b2b-direct-connect.md#to-change-inbound-trust-settings-for-mfa-and-device-state) so that your Conditional Access policies will accept MFA claims from the external organization. This configuration ensures that B2B direct connect users from the external organization are compliant with your Conditional Access policies, and it provides a more seamless user experience.
 
@@ -179,7 +179,7 @@ By enabling B2B connect with an external organization, you're allowing the exter
 
 ### Outbound access
 
-When B2B direct connect is enabled with an external organization, users in the external organization will be able to search for your users by full email address. Matching search results will return limited data about your users, including first name and last name. Your users will need to consent to the external organization’s privacy policies before more of their data is shared. We recommend you review the privacy information that will be provided by the organization and presented to your users.
+When B2B direct connect is enabled with an external organization, users in the external organization will be able to search for your users by full email address. Matching search results will return limited data about your users, including first name and family name. Your users will need to consent to the external organization’s privacy policies before more of their data is shared. We recommend you review the privacy information that will be provided by the organization and presented to your users.
 
 ### Inbound access
 
