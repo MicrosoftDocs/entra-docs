@@ -239,5 +239,5 @@ You need to sign as a [Global Administrator](~/identity/role-based-access-contro
 
 ## Next steps
 
-[Configure how end-users consent to applications](configure-user-consent.md)
-[Configure the admin consent workflow](configure-admin-consent-workflow.md)
+- [Configure how end-users consent to applications](configure-user-consent.md).
+- [Configure the admin consent workflow](configure-admin-consent-workflow.md).
