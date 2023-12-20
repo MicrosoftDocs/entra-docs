@@ -104,7 +104,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
         ![Screenshot shows how to paste the Reply URL.](./media/contentstack-tutorial/reply.png "Reply Value")
 
-1. This is an optional step. If you wish to configure the application in SP-initiated mode, enter the Sign-on URL against the Sign on URL section:
+1. This is an optional step. If you wish to configure the application in SP-initiated mode, enter the Sign-on URL against the Sign-on URL section:
 
     ![Screenshot shows how to paste the Sign on URL.](./media/contentstack-tutorial/optional.png "Login Value")
 
@@ -214,11 +214,11 @@ on the **Single Sign-On** tab on the left menu.
     1. Finally, select the **Enable IdP Role Mapping** checkbox to enable the feature and click **Next**.
 
     > [!NOTE]
-    > Please refer [Contentstack SSO guide](https://www.contentstack.com/docs/developers/single-sign-on) for more information.
+    > For more information, please refer [Contentstack SSO guide](https://www.contentstack.com/docs/developers/single-sign-on).
 
 1. Before enabling SSO, it is recommended that you need to test the SSO settings configured so far. To do so, perform the following steps:
 
-    1. Click the **Test SSO** button and it will take you to Contentstack’s Login via SSO page where you need to specify your organization's SSO name. 
+    1. Click the **Test SSO** button and it will take you to Contentstack’s Log in via SSO page where you need to specify your organization's SSO name. 
     1. Then, click on Continue to go to your IdP sign in page.
     1. Sign in to your account and if you are able to sign in to your IdP, your test is successful.
     1. On successful connection, you will see a success message as follows.
