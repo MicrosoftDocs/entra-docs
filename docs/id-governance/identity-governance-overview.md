@@ -71,7 +71,7 @@ Access changes across apps and groups can be automated based on attribute change
 
 Organizations that previously had been using an on-premises identity governance product can [migrate their organizational role model](identity-governance-organizational-roles.md) to Microsoft Entra ID Governance.
 
-Furthermore, IT can delegate access manaegment decisions to business decision makers.   For example, employees that wish to access confidential customer data in a company's marketing application in Europe may need approval from their manager, a department lead or resource owner, and a security risk officer.  [Microsoft Entra entitlement management](entitlement-management-overview.md) enables you to define how users request access across packages of group and team memberships, app roles, and SharePoint Online roles, and enforce separation of duties checks on access requests.
+Furthermore, IT can delegate access management decisions to business decision makers.   For example, employees that wish to access confidential customer data in a company's marketing application in Europe may need approval from their manager, a department lead or resource owner, and a security risk officer.  [Microsoft Entra entitlement management](entitlement-management-overview.md) enables you to define how users request access across packages of group and team memberships, app roles, and SharePoint Online roles, and enforce separation of duties checks on access requests.
 
  Organizations can also control which guest users have access, including to [on-premises applications](~/external-id/hybrid-cloud-to-on-premises.md).  These access rights can then be regularly reviewed using recurring [Microsoft Entra access reviews](access-reviews-overview.md) for access recertification.
 
