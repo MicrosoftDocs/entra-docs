@@ -32,7 +32,7 @@ In the case where your confidential client application uses _only_ the client cr
 
 A daemon application can request only application permissions to APIs (not delegated permissions). On the **API permissions** page for the application registration, after you've selected **Add a permission** and chosen the API family, choose **Application permissions**, and then select your permissions.
 
-![App permissions and admin consent](media/scenario-daemon-app/app-permissions-and-admin-consent.png)
+:::image type="content" source="media/scenario-daemon-app/app-permissions-and-admin-consent.png" alt-text="Screenshot of app permissions and admin consent." lightbox="media/scenario-daemon-app/app-permissions-and-admin-consent.png":::
 
 The web API that you want to call needs to define _Application permissions (app roles)_, not delegated permissions. For details on how to expose such an API, see [Protected web API: App registration - when your web API is called by a daemon app](scenario-protected-web-api-app-registration.md#if-your-web-api-is-called-by-a-service-or-daemon-app).
 
