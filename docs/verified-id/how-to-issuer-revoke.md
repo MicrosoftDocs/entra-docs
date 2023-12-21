@@ -31,7 +31,7 @@ By using the indexed claim in verifiable credentials, you can search for issued 
 
 1. Go to the **Verified ID** pane in the Azure portal as an admin user with **sign** key permission for Azure Key Vault.
 1. Select the verifiable credential type.
-1. On the left-hand menu, select **Revoke a credential**.
+1. On the leftmost menu, select **Revoke a credential**.
 
    ![Screenshot that shows revoking a credential.](media/how-to-issuer-revoke/settings-revoke.png)
 1. Search for the index claim of the user you want to revoke. Indexing a claim is a requirement for being able to search for a credential.

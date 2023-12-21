@@ -27,7 +27,7 @@ To use the Microsoft Entra Verified ID Network, you need to:
 
 ## What is the Microsoft Entra Verified ID Network?
 
-In our scenario, Proseware is a verifier. Woodgrove is the issuer. The verifier needs to know Woodgrove's issuer DID and the verifiable credential (VC) type that represents Woodgrove employees before it can create a presentation request for a verified credential for Woodgrove employees. The necessary information might come from some kind of manual exchange between the companies, but this approach would be both manual and complex.
+In our scenario, Proseware is a verifier. Woodgrove is the issuer. The verifier needs to know Woodgrove's issuer DID and the verifiable credential type that represents Woodgrove employees before it can create a presentation request for a verified credential for Woodgrove employees. The necessary information might come from some kind of manual exchange between the companies, but this approach would be both manual and complex.
 
 The Microsoft Entra Verified ID Network makes this process easier. Woodgrove, as an issuer, can publish credential types to the Microsoft Entra Verified ID Network. Proseware, as the verifier, can search for published credential types and schemas in the Microsoft Entra Verified ID Network. With this information, Woodgrove can create a [presentation request](presentation-request-api.md#presentation-request-payload) and easily invoke the Request Service API.
   
