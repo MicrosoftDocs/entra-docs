@@ -65,7 +65,7 @@ Integrations with popular applications such as [SAP ECC 7.0](on-premises-sap-con
 For more information, see [the Overview of the generic Web Service connector](/microsoft-identity-manager/reference/microsoft-identity-manager-2016-ma-ws) in the MIM documentation library.
 
 
-## 1. Install and configure the Microsoft Entra Connect Provisioning Agent
+## Install and configure the Microsoft Entra Connect Provisioning Agent
 
  1. Sign in to the Azure portal.
  2. Go to **Enterprise applications** and select **New application**.
@@ -88,7 +88,7 @@ For more information, see [the Overview of the generic Web Service connector](/m
  12. Provide credentials for a Microsoft Entra administrator when you're prompted to authorize. The user is required to have the Hybrid Identity Administrator or Global Administrator role.
  13. Select **Confirm** to confirm the setting. Once installation is successful, you can select **Exit**, and also close the Provisioning Agent Package installer.
 
-## 4. Configure the On-premises ECMA app
+## Configure the On-premises ECMA app
 
  1. In the portal, on the **On-Premises Connectivity** section, select the agent that you deployed and select **Assign Agent(s)**.
 
@@ -96,7 +96,7 @@ For more information, see [the Overview of the generic Web Service connector](/m
 
  2. Keep this browser window open, as you complete the next step of configuration using the configuration wizard.
 
-## 5. Configure the Microsoft Entra ECMA Connector Host certificate
+## Configure the Microsoft Entra ECMA Connector Host certificate
 
  1. On the Windows Server where the provisioning agent is installed, right click the **Microsoft ECMA2Host Configuration Wizard** from the start menu, and run as administrator.  Running as a Windows administrator is necessary for the wizard to create the necessary Windows event logs.
  
@@ -106,11 +106,11 @@ For more information, see [the Overview of the generic Web Service connector](/m
 
  3. Select **Save**.
 
-## 5. Configure the generic web services connector
+## Configure the generic web services connector
 
 In this section, you will create the connector configuration for your application.
 
-### 5.1 Connect the provisioning agent to your application
+### Connect the provisioning agent to your application
 
 To connect the Microsoft Entra provisioning agent with your application, follow these steps:
 
@@ -203,7 +203,7 @@ To connect the Microsoft Entra provisioning agent with your application, follow 
  On the **Deprovisioning** page, under Disable flow, select None if you will control user account status with a property such as **expirationTime**. Under Delete flow, select None if you do not want to delete users from your application or Delete if you do. Select **Finish**.
      
 
-## 6. Ensure the ECMA2Host service is running
+## Ensure the ECMA2Host service is running
 
  1. On the server running the Microsoft Entra ECMA Connector Host, select **Start**.
  2. Enter **run** and enter **services.msc** in the box.
@@ -215,7 +215,7 @@ To connect the Microsoft Entra provisioning agent with your application, follow 
 
  1. If you have recently started the service, and have many user objects in your application, then wait several minutes for the connector to establish a connection with your application and perform the initial full import.
 
-## 7. Configure the application connection in the Azure portal
+## Configure the application connection in the Azure portal
 
 1. Return to the web browser window where you were configuring the application provisioning.
 
@@ -242,7 +242,7 @@ To connect the Microsoft Entra provisioning agent with your application, follow 
 
      ![Screenshot that shows testing an agent.](~/includes/media/app-provisioning-sql\configure-9.png)
 
-## 8. Configure attribute mappings
+## Configure attribute mappings
 
 Now you will map attributes between the representation of the user in Microsoft Entra ID and the representation of the user in your application.
 
@@ -291,7 +291,7 @@ You'll use the Azure portal to configure the mapping between the Microsoft Entra
  
  9. Once all of the mappings have been added, select **Save**.
 
-## 9. Assign users to the application
+## Assign users to the application
 
 Now that you have the Microsoft Entra ECMA Connector Host talking with Microsoft Entra ID, and the attribute mapping configured, you can move on to configuring who's in scope for provisioning.
 
@@ -323,7 +323,7 @@ Otherwise, if there are no current users of the application, then select a test 
 
      [![Screenshot that shows Assign users.](~/includes/media/app-provisioning-sql\app-5.png)](~/includes/media/app-provisioning-sql\app-5.png#lightbox)
      
-## 10. Test provisioning
+## Test provisioning
 
 Now that your attributes are mapped and users are assigned, you can test on-demand provisioning with one of your users.
  
@@ -337,7 +337,7 @@ Now that your attributes are mapped and users are assigned, you can test on-dema
 
  6. After several seconds, then the message **Successfully created user in target system** will appear, with a list of the user attributes.
 
-## 11. Start provisioning users
+## Start provisioning users
 
 1. After on-demand provisioning is successful, return to the provisioning configuration page. Ensure that the scope is set to only assigned users and groups, turn provisioning **On**, and select **Save**.
  
