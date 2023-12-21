@@ -15,10 +15,10 @@ ms.reviewer: arvinh
 
 # Configuring Microsoft Entra ID to provision users into an LDAP directory for Linux authentication
 
-The following documentation provides configuration and tutorial information demonstrating how to provision users from Microsoft Entra ID into an on-premises LDAP directory, so that those users can subsequently log into a Linux system that relies upon that LDAP directory for user authentication.  And when a user is removed from Microsoft Entra ID, they are subsequently no longer able to log into a Linux system.
+The following documentation is a tutorial demonstrating how to govern access to a Linux system. This is implemented by Microsoft Entra ID provisioning users into an on-premises LDAP directory trusted by that Linux system, so that those users can subsequently log into a Linux system that relies upon that LDAP directory for user authentication.  And when a user is removed from Microsoft Entra ID, they are subsequently no longer able to log into a Linux system.
 
 >[!NOTE]
-> The scenario described in this article is only applicable for existing Linux systems that already rely upon a NSS or PAM LDAP module for user identification and authentication.  Linux VMs in Azure or that are Azure Arc-enabled should be instead integrated with Microsoft Entra authentication. You can now use Microsoft Entra ID as a core authentication platform and a certificate authority to SSH into a Linux VM by using Microsoft Entra ID and OpenSSH certificate-based authentication, as described in [Log in to a Linux virtual machine in Azure by using Microsoft Entra ID and OpenSSH](/entra/identity/devices/howto-vm-sign-in-azure-ad-linux).  
+> The scenario described in this article is only applicable for existing Linux systems that already rely upon a Name Services Switch (NSS) or Pluggable Authentication Modules (PAM) LDAP module for user identification and authentication.  Linux VMs in Azure or that are Azure Arc-enabled should be instead integrated with Microsoft Entra authentication. You can now use Microsoft Entra ID as a core authentication platform and a certificate authority to SSH into a Linux VM by using Microsoft Entra ID and OpenSSH certificate-based authentication, as described in [Log in to a Linux virtual machine in Azure by using Microsoft Entra ID and OpenSSH](/entra/identity/devices/howto-vm-sign-in-azure-ad-linux).  
 
 For other scenarios involving provisioning users into LDAP directories, other than for Linux authentication, see [configuring Microsoft Entra ID to provision users into LDAP directories](on-premises-ldap-connector-configure.md).
 
@@ -192,7 +192,7 @@ Depending on the options you select, some of the wizard screens might not be ava
      |Server Certificate Details|If `SSL` or `TLS` was specified, the wizard will display the certificate returned by the directory server.  Confirm that the issuer, subject and thumbprint are for the correct directory server.|
      |Mandatory Features Found|The connector also verifies that the mandatory controls are present in the Root DSE. If these controls are not listed, a warning is presented. Some LDAP directories do not list all features in the Root DSE and it is possible that the connector works without issues even if a warning is present.|
      |Supported Controls|The **supported controls** checkboxes control the behavior for certain operations|
-     |Delta Import|The change log DN is the naming context used by the delta change log, for example **cn=changelog**. This value must be specified to be able to do delta import. If you do not need to implement delta import, then this can be blank.|
+     |Delta Import|The change log DN is the naming context used by the delta change log, for example **cn=changelog**. This value must be specified to be able to do delta import. If you do not need to implement delta import, then this field can be blank.|
      |Password Attribute|If the directory server supports a different password attribute or password hashing, you can specify the destination for password changes.|
      |Partition Names|In the additional partitions list, it is possible to add additional namespaces not automatically detected. For example, this setting can be used if several servers make up a logical cluster, which should all be imported at the same time. Just as Active Directory can have multiple domains in one forest but all domains share one schema, the same can be simulated by entering the additional namespaces in this box. Each namespace can import from different servers and is further configured on the **Configure Partitions and Hierarchies** page.|
     
@@ -417,7 +417,7 @@ The first time your organization uses these cmdlets for this scenario, you need 
 
 ## Collect existing users from the LDAP directory
 
-1. Identify which of the users in that directory are in scope for being users with Linux authentication. This choice will depend on your Linux systems's configuration. For some configurations, any user who exists in an LDAP directory is a valid user. Other configurations might require the user to have a particular attribute or be a member of a group in that directory.
+1. Identify which of the users in that directory are in scope for being users with Linux authentication. This choice will depend on your Linux system's configuration. For some configurations, any user who exists in an LDAP directory is a valid user. Other configurations might require the user to have a particular attribute or be a member of a group in that directory.
 
 1. Run a command that retrieves that subset of users from your LDAP directory into a CSV file. Ensure that the output includes the attributes of users that will be used for matching with Microsoft Entra ID. Examples of these attributes are employee ID, account name or `uid`, and email address.
 
@@ -494,7 +494,7 @@ For other errors, see [troubleshooting on-premises application provisioning](~/i
 If you wish to pause provisioning to this application, on the provisioning configuration page, you can change the provisioning status to **Off**, and select **Save**. This action stops the provisioning service from running in the future.
 
 ## Check that users were successfully provisioned
-After waiting, check the directory server to ensure users are being provisioned. They query you perform to the directory server will depend on what commands your directory server provides.
+After waiting, check the directory server to ensure users are being provisioned. The query you perform to the directory server will depend on what commands your directory server provides.
 
 The following instructions illustrate how to check OpenLDAP on Linux.
 
