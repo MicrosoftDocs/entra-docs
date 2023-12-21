@@ -60,6 +60,11 @@ If you need to add resources to an access package, you should check whether the 
 
 A resource role is a collection of permissions associated with and defined by a resource.  Resources can be made available for users to be assigned if you add resource roles from each of the catalog's resources to your access package. You can add resource roles that are provided by groups, teams, applications, and SharePoint sites.  When a user receives an assignment to an access package, they are added to all the resource roles in the access package.
 
+When they lose an access package assignment, then they are removed from all the resource roles in the access package.
+
+> [NOTE]
+> If users were are added to the resource roles outside of entitlement management, and they need to retain access even if their access package assignments expire, then do not add the resource roles to an access package.
+
 If you want some users to receive different resource roles than others, then you need to create multiple access packages in the catalog, with separate access packages for each of the resource roles.  You can also mark the access packages as [incompatible](entitlement-management-access-package-incompatible.md) with each other so users can't request access to access packages that would give them excessive access.
 
 In particular, applications can have multiple app roles. When you add an application's app role as a resource role to an access package, if that application has more than one app role, you need to specify the appropriate role for those users in the access package.
@@ -67,8 +72,7 @@ In particular, applications can have multiple app roles. When you add an applica
 > [!NOTE]
 > If an application has multiple app roles, and more than one role of that application are in an access package, then the user will receive all those application's included roles.  If instead you want users to only have some of the application's roles, then you will need to create multiple access packages in the catalog, with separate access packages for each of the app roles.
 
-In addition, applications may also rely upon security groups for expresssing permissions.  For example, an application might have a single app role `User` and also check the membership of two groups - a `Ordinary Users` group and a `Administrative Access` groups.  A user of the application can be a member of at most one of those two groups.  If you wished to configure that users could request either permission, then you would put into a catalog three resources: the application, the group `Ordinary Users` and the group `Administrative Access`.
-Then, you would create two access packages, and indicate each access package is incompatible with the other:
+In addition, applications may also rely upon security groups for expresssing permissions.  For example, an application might have a single app role `User` and also check the membership of two groups - a `Ordinary Users` group and a `Administrative Access` groups.  A user of the application can be a member of at most one of those two groups.  If you wished to configure that users could request either permission, then you would put into a catalog three resources: the application, the group `Ordinary Users` and the group `Administrative Access`. Then, you would create in that catalog two access packages, and indicate each access package is [incompatible](entitlement-management-access-package-incompatible.md#scenarios-for-separation-of-duties-checks) with the other:
 
 - a first access package that has two resource roles, the application's app role `User` and membership of the group `Ordinary Users`
 - a second access package that has two resource roles, the application's app role `User` and membership of the group `Administrative Access`
@@ -77,7 +81,7 @@ Then, you would create two access packages, and indicate each access package is 
 
 When a resource role is added to an access package by an admin, users who are already in that resource role, but don't have assignments to the access package, will remain in the resource role, but won't be assigned to the access package. For example, if a user is a member of a group and then an access package is created and that group's member role is added to an access package, the user won't automatically receive an assignment to the access package.
 
-If you want the users to also be assigned to the access package, you can [directly assign users](entitlement-management-access-package-assignments.md#directly-assign-a-user) to an access package using the Microsoft Entra admin center, or in bulk via Graph or PowerShell. The users will then also receive access to the other resource roles in the access package.  However, as those users already have access prior to being added to the access package, when their access package assignment is removed, they remain in the resource role.  For example, if a user was a member of a group, and was assigned to an access package that included group membership for that group as a resource role, and then that user's access package assignment was removed, the user would retain their group membership.
+If you want the users who had a resource role membership to also be assigned to the access package, you can [directly assign users](entitlement-management-access-package-assignments.md#directly-assign-a-user) to an access package using the Microsoft Entra admin center, or in bulk via Graph or PowerShell. The users you assign to the access package will then also receive access to the other resource roles in the access package.  However, as those users who were in the resource role already have access prior to being added to the access package, when their access package assignment is removed, they will be removed from that resource role.
 
 ## Add resource roles
 
@@ -95,7 +99,7 @@ If you want the users to also be assigned to the access package, you can [direct
 
     ![Access package - Add resource roles](./media/entitlement-management-access-package-resources/resource-roles-add.png)
 
-1. Depending on whether you want to add a group, team, application, or SharePoint site, perform the steps in one of the following resource role sections.
+1. Depending on whether you want to add a membership of a group or team, access to an application, or access to a SharePoint site, perform the steps in one of the following resource role sections.
 
 ## Add a group or team resource role
 
