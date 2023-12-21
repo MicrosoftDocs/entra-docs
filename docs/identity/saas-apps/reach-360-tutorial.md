@@ -82,10 +82,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 1. Perform the following step, if you wish to configure the application in **SP** initiated mode:
 
     In the **Sign-on URL** text box, type a URL using the following pattern:
-    `https://<Customer_TenantName>.reach360.com/
-
-    > [!Note]
-    > This is left blank for **IDP** initiated SSO. and **Just In Time** user provisioning.
+    `https://<Customer_TenantName>.reach360.com/`
 
 	> [!NOTE]
 	> These values are not real. Update these values with the actual Identifier and Sign on URL. Contact [Reach 360 support team](mailto:enterprise@articulate.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
