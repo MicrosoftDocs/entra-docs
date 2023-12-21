@@ -307,9 +307,9 @@ To learn how to review guest users' access to group memberships, see [Manage gue
 
 ### Review access to on-premises groups
 
-Access reviews can't change the group membership of groups that you synchronize from on-premises AD with [Microsoft Entra Connect](~/identity/hybrid/connect/whatis-azure-ad-connect.md). This restriction is because the source of authority is on-premises.  To control access to AD group-based apps, use [Microsoft Entra Cloud Sync group writeback](~/identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md).
+Access reviews can't change the group membership of groups that you synchronize from on-premises AD with [Microsoft Entra Connect](~/identity/hybrid/connect/whatis-azure-ad-connect.md). This restriction is because the source of authority for a group originating in AD is on-premises AD.  To control access to AD group-based apps, use [Microsoft Entra Cloud Sync group writeback](~/identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md).
 
-You can still use access reviews to schedule and maintain regular reviews of on-premises groups. Reviewers will then take action in the on-premises group. This strategy keeps access reviews as the tool for all reviews.
+Until you have migrated to Microsoft Entra ID groups with group writeback, you can still use access reviews to schedule and maintain regular reviews of existing on-premises groups. In this case, admins will then take action in the on-premises group after each review completes. This strategy keeps access reviews as the tool for all reviews.
 
 You can use the results from an access review on on-premises groups and process them further, either by:
 
@@ -329,7 +329,7 @@ Plan reviews for applications in the following scenarios when:
 * The application has specific compliance requirements to which you must attest.
 * You suspect inappropriate access.
 
-Before you create access reviews for an application, set the **User assignment required?** option to **Yes**. If it's set to **No**, all users in your directory, including external identities, can access the application and you can't review access to the application.
+Before you create access reviews for an application, the application needs to be integrated with Microsoft Entra ID, with users assigned to the app roles, and the **User assignment required?** option on the application set to **Yes**. If it's set to **No**, all users in your directory, including external identities, can access the application and you can't review access to the application.
 
  ![Screenshot that shows planning app assignments.](./media/deploy-access-review/6-plan-applications-assignment-required.png)
 
