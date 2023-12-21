@@ -27,9 +27,9 @@ The following documentation provides information about the generic web services 
 
 The web services connector implements the following functions:
 
-- SOAP Discovery: Allows the administrator to enter the WSDL path exposed by the target web service. Discovery will produce a tree structure of its hosted web services with their inner  endpoint(s)/operations along with the operation’s Meta data description. There's no limit to the number of discovery operations that can be done (step by step). The discovered operations  are used later to configure the flow of operations that implement the connector’s operations against the data-source (as Import/Export).
+- SOAP Discovery: Allows the administrator to enter the WSDL path exposed by the target web service. Discovery produces a tree structure of the application's hosted web services with their inner  endpoints or operations along with the operation’s Meta data description. There's no limit to the number of discovery operations that can be done (step by step). The discovered operations  are used later to configure the flow of operations that implement the connector’s operations against the data-source (as Import/Export).
 
-- REST Discovery: Allows the administrator to enter Restful service details i.e. Service Endpoint, Resource Path, Method and Parameter details. A user can add an unlimited number of Restful services. The REST services information will be stored in the ```discovery.xml``` file of the ```wsconfig``` project. They'll be used later by the user to configure the Rest Web Service activity in the workflow.
+- REST Discovery: Allows the administrator to enter REST service details, including Service Endpoint, Resource Path, Method and Parameter details. The REST services information will be stored in the ```discovery.xml``` file of the ```wsconfig``` project. They'll be used later by the administrator to configure the Rest Web Service activity in the workflow.
 
 - Schema configuration: Allows the administrator to configure the schema. The schema configuration will include a listing of Object Types and attributes for a specific application. The administrator may choose the attributes that will be part of the schema.
 
@@ -48,7 +48,7 @@ The computer that runs the provisioning agent should have:
 
 Prior to configuring provisioning, ensure that you:
 - Expose the necessary SOAP or REST APIs in your application to create, update and delete users.
-- Create a web services connector template for the ECMA host.  Before deploying in production, you will need to customize the template to meet the needs of your specific environment. Make sure that the ServiceName, EndpointName, and the OperationName are correct.
+
 
 ### Cloud requirements
 
@@ -58,11 +58,6 @@ Prior to configuring provisioning, ensure that you:
  - The Hybrid Identity Administrator role for configuring the provisioning agent and the Application Administrator or Cloud Application Administrator roles for configuring provisioning in the Azure portal.
  - The Microsoft Entra users to be provisioned to your application must already be populated with any attributes that will be required by your application. 
 
-##  Documentation for popular applications
-Integrations with popular applications such as [SAP ECC 7.0](on-premises-sap-connector-configure.md) and Oracle eBusiness Suite can be found [here](https://www.microsoft.com/download/details.aspx?id=51495). You can also configure a template to connect to your own [REST or SOAP API](/microsoft-identity-manager/reference/microsoft-identity-manager-2016-ma-ws).
-
-
-For more information, see [the Overview of the generic Web Service connector](/microsoft-identity-manager/reference/microsoft-identity-manager-2016-ma-ws) in the MIM documentation library.
 
 
 ## Install and configure the Microsoft Entra Connect Provisioning Agent
@@ -106,6 +101,14 @@ For more information, see [the Overview of the generic Web Service connector](/m
 
  3. Select **Save**.
 
+## Create a web services connector template
+
+Before creating the web services connector configuration, you will need to create a web services connector template and customize the template to meet the needs of your specific environment. Make sure that the ServiceName, EndpointName, and the OperationName are correct.
+
+You can find example templates and guidance on how to integrate with popular applications such as [SAP ECC 7.0](on-premises-sap-connector-configure.md) and Oracle eBusiness Suite in the [connectors download package](https://www.microsoft.com/download/details.aspx?id=51495).  You can learn how to create a new project for your data source in the Web Service Configuration Tool using the [workflow guide for SOAP](/microsoft-identity-manager/reference/microsoft-identity-manager-2016-ma-ws-soap).
+
+For more information on how to configure a template to connect to your own application's REST or SOAP API, see [the Overview of the generic Web Service connector](/microsoft-identity-manager/reference/microsoft-identity-manager-2016-ma-ws) in the MIM documentation library.
+
 ## Configure the generic web services connector
 
 In this section, you will create the connector configuration for your application.
@@ -114,7 +117,7 @@ In this section, you will create the connector configuration for your applicatio
 
 To connect the Microsoft Entra provisioning agent with your application, follow these steps:
 
-1. Copy your web service connector [template](https://www.microsoft.com/download/details.aspx?id=51495) `.wsconfig` file into the `C:\Program Files\Microsoft ECMA2Host\Service\ECMA` folder. 
+1. Copy your web service connector template `.wsconfig` file into the `C:\Program Files\Microsoft ECMA2Host\Service\ECMA` folder.
 1. Generate a secret token that will be used for authenticating Microsoft Entra ID to the connector. It should be 12 characters minimum and unique for each application.
 1. If you haven't already done so, launch the **Microsoft ECMA2Host Configuration Wizard** from the Windows Start menu.
 
