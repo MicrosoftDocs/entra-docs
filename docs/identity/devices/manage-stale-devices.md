@@ -7,7 +7,7 @@ ms.service: active-directory
 ms.subservice: devices
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: how-to
-ms.date: 09/27/2022
+ms.date: 12/22/2023
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -146,20 +146,14 @@ A typical routine consists of the following steps:
 To get all devices and store the returned data in a CSV file:
 
 ```PowerShell
-Get-MgDevice -All:$true | `
-   select-object -Property AccountEnabled, DeviceId, DeviceOSType, DeviceOSVersion, `
-   DisplayName, DeviceTrustType, ApproximateLastLogonTimestamp | `
-   export-csv devicelist-summary.csv -NoTypeInformation
+Get-MgDevice -All | select-object -Property AccountEnabled, DeviceId, OperatingSystem, OperatingSystemVersion, DisplayName, TrustType, ApproximateLastSignInDateTime | export-csv devicelist-summary.csv -NoTypeInformation
 ```
 
 If you have a large number of devices in your directory, use the timestamp filter to narrow down the number of returned devices. To get all devices that haven't logged on in 90 days and store the returned data in a CSV file: 
 
 ```PowerShell
 $dt = (Get-Date).AddDays(-90)
-Get-MgDevice -All:$true | Where {$_.ApproximateLastLogonTimeStamp -le $dt} | `
-   select-object -Property AccountEnabled, DeviceId, DeviceOSType, DeviceOSVersion, `
-   DisplayName, DeviceTrustType, ApproximateLastLogonTimestamp | `
-   export-csv devicelist-olderthan-90days-summary.csv -NoTypeInformation
+Get-MgDevice -All | Where {$_.ApproximateLastSignInDateTime -le $dt} | select-object -Property AccountEnabled, DeviceId, OperatingSystem, OperatingSystemVersion, DisplayName, TrustType, ApproximateLastSignInDateTime | export-csv devicelist-olderthan-90days-summary.csv -NoTypeInformation
 ```
 
 > [!WARNING]
@@ -171,10 +165,14 @@ Using the same commands we can pipe the output to the set command to disable the
 
 ```powershell
 $dt = (Get-Date).AddDays(-90)
-$Devices = Get-MgDevice -All:$true | Where {$_.ApproximateLastLogonTimeStamp -le $dt}
+$params = @{
+	accountEnabled = $false
+}
+
+$Devices = Get-MgDevice -All | Where {$_.ApproximateLastSignInDateTime -le $dt}
 foreach ($Device in $Devices) { 
-   Update-MgDevice -DeviceId $Device.Id -AccountEnabled:$false 
-   }
+   Update-MgDevice -DeviceId $Device.Id -BodyParameter $params 
+}
 ```
 
 ### Delete devices
@@ -188,11 +186,10 @@ Building on the [disable devices example](#disable-devices) we look for disabled
 
 ```powershell
 $dt = (Get-Date).AddDays(-120)
-$Devices = Get-MgDevice -All:$true | `
-   Where {($_.ApproximateLastLogonTimeStamp -le $dt) -and ($_.AccountEnabled -eq $false)}
+$Devices = Get-MgDevice -All | Where {($_.ApproximateLastSignInDateTime -le $dt) -and ($_.AccountEnabled -eq $false)}
 foreach ($Device in $Devices) {
    Remove-MgDevice -DeviceId $Device.Id
-   }
+}
 ```
 
 ## What you should know
