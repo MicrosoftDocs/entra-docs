@@ -7,7 +7,7 @@ ms.service: active-directory
 ms.subservice: devices
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: how-to
-ms.date: 02/27/2023
+ms.date: 12/22/2023
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -53,49 +53,45 @@ When you use the **Get-MgDevice** cmdlet to check the service details:
 
 ### Count all Microsoft Entra hybrid joined devices (excluding **Pending** state)
 
-```azurepowershell
-(Get-MgDevice -All | where {($_.DeviceTrustType -eq 'Domain Joined') `
-   -and (([string]($_.AlternativeSecurityIds)).StartsWith("X509:"))}).count
+```powershell
+(Get-MgDevice -All | where {($_.TrustType -eq 'ServerAd') -and ($_.ProfileType -eq 'RegisteredDevice')}).count
 ```
 
 <a name='count-all-hybrid-azure-ad-joined-devices-with-pending-state'></a>
 
 ### Count all Microsoft Entra hybrid joined devices with **Pending** state
 
-```azurepowershell
-(Get-MgDevice -All  | where {($_.DeviceTrustType -eq 'Domain Joined') `
-   -and (-not([string]($_.AlternativeSecurityIds)).StartsWith("X509:"))}).count
+```powershell
+(Get-MgDevice -All | where {($_.TrustType -eq 'ServerAd') -and ($_.ProfileType -ne 'RegisteredDevice')}).count
 ```
 
 <a name='list-all-hybrid-azure-ad-joined-devices'></a>
 
 ### List all Microsoft Entra hybrid joined devices
 
-```azurepowershell
-Get-MgDevice -All | where {($_.DeviceTrustType -eq 'Domain Joined') `
-   -and (([string]($_.AlternativeSecurityIds)).StartsWith("X509:"))}
+```powershell
+Get-MgDevice -All | where {($_.TrustType -eq 'ServerAd') -and ($_.ProfileType -eq 'RegisteredDevice')}
 ```
 
 <a name='list-all-hybrid-azure-ad-joined-devices-with-pending-state'></a>
 
 ### List all Microsoft Entra hybrid joined devices with **Pending** state
 
-```azurepowershell
-Get-MgDevice -All | where {($_.DeviceTrustType -eq 'Domain Joined') `
-   -and (-not([string]($_.AlternativeSecurityIds)).StartsWith("X509:"))}
+```powershell
+Get-MgDevice -All | where {($_.TrustType -eq 'ServerAd') -and ($_.ProfileType -ne 'RegisteredDevice')}
 ```
 
 ### List details of a single device:
 
 1. Enter the following command. Obtain the device ID locally on the device.
 
-   ```azurepowershell
-   $Device = Get-MgDevice -DeviceId <deviceId>
+   ```powershell
+   $Device = Get-MgDevice -DeviceId <ObjectId>
    ```
   
 1. Verify that `AccountEnabled` is set to `True`.
 
-   ```azurepowershell
+   ```powershell
    $Device.AccountEnabled
    ```
 
