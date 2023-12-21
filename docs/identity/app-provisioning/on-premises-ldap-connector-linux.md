@@ -26,7 +26,7 @@ For other scenarios involving provisioning users into LDAP directories, other th
 
 This article assumes that the LDAP server is already present in the on-premises environment, used by one or more Linux or other POSIX systems for user authentication.
 
-![Diagram that shows the architecture for on-premises provisioning from Microsoft Entra ID to an LDAP directory server.](./media/on-premises-ldap-connector-linux/arch-1.png)
+![Diagram that shows the architecture for on-premises provisioning from Microsoft Entra ID to an LDAP directory server.](./media/on-premises-ldap-connector-linux/architecture-1.png)
 
 ### On-premises prerequisites
 
