@@ -62,11 +62,16 @@ A resource role is a collection of permissions associated with and defined by a 
 
 If you want some users to receive different resource roles than others, then you need to create multiple access packages in the catalog, with separate access packages for each of the resource roles.  You can also mark the access packages as [incompatible](entitlement-management-access-package-incompatible.md) with each other so users can't request access to access packages that would give them excessive access.
 
-For example, applications can have multiple app roles. When you add an application's app role as a resource role to an access package, if that application has more than one app role, you need to specify the appropriate role for those users in the access package.
+In particular, applications can have multiple app roles. When you add an application's app role as a resource role to an access package, if that application has more than one app role, you need to specify the appropriate role for those users in the access package.
 
 > [!NOTE]
 > If an application has multiple app roles, and more than one role of that application are in an access package, then the user will receive all those application's included roles.  If instead you want users to only have some of the application's roles, then you will need to create multiple access packages in the catalog, with separate access packages for each of the app roles.
 
+In addition, applications may also rely upon security groups for expresssing permissions.  For example, an application might have a single app role `User` and also check the membership of two groups - a `Ordinary Users` group and a `Administrative Access` groups.  A user of the application can be a member of at most one of those two groups.  If you wished to configure that users could request either permission, then you would put into a catalog three resources: the application, the group `Ordinary Users` and the group `Administrative Access`.
+Then, you would create two access packages, and indicate each access package is incompatible with the other:
+
+- a first access package that has two resource roles, the application's app role `User` and membership of the group `Ordinary Users`
+- a second access package that has two resource roles, the application's app role `User` and membership of the group `Administrative Access`
 
 ## Check if users are already assigned to the resource role
 
