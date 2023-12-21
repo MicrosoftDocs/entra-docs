@@ -127,7 +127,7 @@ For more information, see [Compare groups](/office365/admin/create-groups/compar
 
 1. In the **Role** list, select **Owner** or **Member**.
 
-    You typically select the Member role. If you select the Owner role, that will make the user a owner, which will allow users to add or remove other members or owners.
+    You typically select the Member role. If you select the Owner role, then users will become an owner of the group, which will allow those users to add or remove other members or owners.
 
     ![Access package - Add resource role for a group or team](./media/entitlement-management-access-package-resources/group-role.png)
 
