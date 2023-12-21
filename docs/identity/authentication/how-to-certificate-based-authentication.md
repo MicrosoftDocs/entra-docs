@@ -228,7 +228,7 @@ To enable CBA and configure user bindings in the Microsoft Entra admin center, c
 >Device registration with Workplace Join, Entra ID and Hybrid Entra ID device join scenarios are not impacted. CBA authentication policy rules using either Issuer OR Policy OID are not impacted.
 >To mitigate, admins should :
 >- Edit the certificate-based authentication policy rules currently using both Issuer and Policy OID options and remove either the Issuer or OID requirement and save. OR
->- Remove the authentication policy rule currently using both Issuer and Policy OID and create rules
+>- Remove the authentication policy rule currently using both Issuer and Policy OID and create rules using only issuer or policy OID
 >  
 >We are working to fix the issue.
 
