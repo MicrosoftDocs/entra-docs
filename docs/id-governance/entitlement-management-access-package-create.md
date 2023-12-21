@@ -96,18 +96,19 @@ If you're not sure which resource roles to include, you can skip adding them whi
 
     If you're creating the access package in the general catalog or a new catalog, you can choose any resource from the directory that you own. You must be at least a global administrator, an Identity Governance Administrator, or catalog creator.
 
-    If you're creating the access package in an existing catalog, you can select any resource that's already in the catalog without owning it.
+    >[!NOTE]
+    >You can add dynamic groups to a catalog and to an access package. However, you can select only the owner role when you're managing a dynamic group resource in an access package.
+
+    If you're creating the access package in an existing catalog, you can select any resource that's already in the catalog without needing to be an owner of that resource.
 
     If you're a global administrator, an Identity Governance Administrator, or catalog owner, you have the additional option of selecting resources that you own or administer but that aren't yet in the catalog. If you select resources in the directory but not currently in the selected catalog, these resources are also added to the catalog for other catalog administrators to build access packages with. To see all the resources in the directory that can be added to the catalog, select the **See all** checkbox at the top of the panel. If you want to select only resources that are currently in the selected catalog, leave the **See all** checkbox cleared (the default state).
 
-1. In the **Role** list, select the role that you want users to be assigned for the resource. For more information on selecting the appropriate roles for a resource, read [Add resource roles](entitlement-management-access-package-resources.md#add-resource-roles).
+1. In the **Role** list, select the role that you want users to be assigned for the resource. For more information on selecting the appropriate roles for a resource, see [how to determine which resource roles to include in an access package](entitlement-management-access-package-resources.md#determine-which-resource-roles-to-include-in-an-access-package).
 
     ![Screenshot that shows resource role selection for a new access package.](./media/entitlement-management-access-package-create/resource-roles-role.png)
 
 1. Select **Next: Requests**.
 
->[!NOTE]
->You can add dynamic groups to a catalog and to an access package. However, you can select only the owner role when you're managing a dynamic group resource in an access package.
 
 ## Create request policies
 
