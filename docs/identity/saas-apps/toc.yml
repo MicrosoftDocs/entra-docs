@@ -2679,6 +2679,8 @@
         href: terraform-cloud-tutorial.md
       - name: Terraform Enterprise
         href: terraform-enterprise-tutorial.md
+      - name: Terranova Security Awareness Platform
+        href: terranova-security-awareness-platform-tutorial.md
       - name: TerraTrue
         href: terratrue-tutorial.md  
       - name: tesma
