@@ -63,7 +63,7 @@ A resource role is a collection of permissions associated with and defined by a 
 When they lose an access package assignment, then they are removed from all the resource roles in the access package.
 
 > [!NOTE]
-> If users were are added to the resource roles outside of entitlement management, and they need to retain access even if their access package assignments expire, then do not add the resource roles to an access package.
+> If users were added to the resources outside of entitlement management, and they need to retain access even if they later recieve access package assignemtsn and their access package assignments expire, then do not add the resource roles to an access package.
 
 If you want some users to receive different resource roles than others, then you need to create multiple access packages in the catalog, with separate access packages for each of the resource roles.  You can also mark the access packages as [incompatible](entitlement-management-access-package-incompatible.md) with each other so users can't request access to access packages that would give them excessive access.
 
@@ -72,7 +72,7 @@ In particular, applications can have multiple app roles. When you add an applica
 > [!NOTE]
 > If an application has multiple app roles, and more than one role of that application are in an access package, then the user will receive all those application's included roles.  If instead you want users to only have some of the application's roles, then you will need to create multiple access packages in the catalog, with separate access packages for each of the app roles.
 
-In addition, applications may also rely upon security groups for expressing permissions.  For example, an application might have a single app role `User` and also check the membership of two groups - a `Ordinary Users` group and a `Administrative Access` groups.  A user of the application can be a member of at most one of those two groups.  If you wished to configure that users could request either permission, then you would put into a catalog three resources: the application, the group `Ordinary Users` and the group `Administrative Access`. Then, you would create in that catalog two access packages, and indicate each access package is [incompatible](entitlement-management-access-package-incompatible.md#scenarios-for-separation-of-duties-checks) with the other:
+In addition, applications may also rely upon security groups for expressing permissions.  For example, an application might have a single app role `User` and also check the membership of two groups - a `Ordinary Users` group and a `Administrative Access` groups.  A user of the application must be a member of exactly one of those two groups.  If you wished to configure that users could request either permission, then you would put into a catalog three resources: the application, the group `Ordinary Users` and the group `Administrative Access`. Then, you would create in that catalog two access packages, and indicate each access package is [incompatible](entitlement-management-access-package-incompatible.md#scenarios-for-separation-of-duties-checks) with the other:
 
 - a first access package that has two resource roles, the application's app role `User` and membership of the group `Ordinary Users`
 - a second access package that has two resource roles, the application's app role `User` and membership of the group `Administrative Access`
