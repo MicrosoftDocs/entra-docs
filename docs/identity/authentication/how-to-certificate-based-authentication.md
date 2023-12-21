@@ -219,6 +219,19 @@ To enable CBA and configure user bindings in the Microsoft Entra admin center, c
 
    1. Authenticate with a certificate that has policy OID of 3.4.5.6 and Issued by CN=CBATestRootProd. Authentication should pass and get a multifactor claim.
 
+>[!IMPORTANT]
+>There is a known issue where an Entra tenant admin configures a CBA authentication policy rule using both Issuer and Policy OID impacts some device registration scenarios including:
+>- Windows Hello For Business enrollment
+>- Fido2 Security Key registration
+>- Windows Passwordless Phone Sign-in
+>  
+>Device registration with Workplace Join, Entra ID and Hybrid Entra ID device join scenarios are not impacted. CBA authentication policy rules using either Issuer OR Policy OID are not impacted.
+>To mitigate, admins should :
+>- Edit the certificate-based authentication policy rules currently using both Issuer and Policy OID options and remove either the Issuer or OID requirement and save. OR
+>- Remove the authentication policy rule currently using both Issuer and Policy OID and create rules using only issuer or policy OID
+>  
+>We are working to fix the issue.
+
    To create a rule by Issuer and Serial Number:
 
    1. Add an authentication binding policy that requires any cert issued by CN=CBATestRootProd with policyOID 1.2.3.4.6 needs only high affinity binding (that is, Issuer and serial number are used).

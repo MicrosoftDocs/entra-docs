@@ -112,11 +112,11 @@ This section explains three approaches for how to get a list of users in a comma
 
 This section applies to applications that use an LDAP directory as the underlying data store for users who don't authenticate to Microsoft Entra ID. Many LDAP directories, such as Active Directory, include a command that outputs a list of users.
 
-1. Identify which of the users in that directory are in scope for being users of the application. This choice will depend n your application's configuration. For some applications, any user who exists in an LDAP directory is a valid user. Other applications might require the user to have a particular attribute or be a member of a group in that directory.
+1. Identify which of the users in that directory are in scope for being users of the application. This choice will depend on your application's configuration. For some applications, any user who exists in an LDAP directory is a valid user. Other applications might require the user to have a particular attribute or be a member of a group in that directory.
 
 1. Run the command that retrieves that subset of users from your directory. Ensure that the output includes the attributes of users that will be used for matching with Microsoft Entra ID. Examples of these attributes are employee ID, account name, and email address. 
 
-   For example, this command would produce a CSV file in the current directory with the `userPrincipalName` attribute of every person in the directory:
+   For example, this command would produce a CSV file in the current file system directory with the `userPrincipalName` attribute of every person in the LDAP directory:
 
    ```powershell
    $out_filename = ".\users.csv"

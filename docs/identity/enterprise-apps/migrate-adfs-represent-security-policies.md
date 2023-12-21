@@ -1,6 +1,6 @@
 ---
 title: 'Represent AD FS security policies in Microsoft Entra ID: Mappings and examples'
-description: Learn how to map AD FS security policies to Microsoft Entra ID when migrating app authentication, including authorization and multi-factor authentication rules.
+description: Learn how to map AD FS security policies to Microsoft Entra ID when migrating app authentication, including authorization and multifactor authentication rules.
 
 author: omondiatieno
 manager: CelesteDG
@@ -12,12 +12,12 @@ ms.date: 05/31/2023
 ms.author: jomondi
 ms.reviewer: gasinh
 
-#customer intent: As an IT admin migrating app authentication to Microsoft Entra ID, I want to map authorization and multi-factor authentication rules from AD FS to Microsoft Entra ID, so that I can meet security requirements and make the app migration process easier.
+#customer intent: As an IT admin migrating app authentication to Microsoft Entra ID, I want to map authorization and multifactor authentication rules from AD FS to Microsoft Entra ID, so that I can meet security requirements and make the app migration process easier.
 ---
 
 # Represent AD FS security policies in Microsoft Entra ID: Mappings and examples
 
-In this article, you'll learn how to map authorization and multi-factor authentication rules from AD FS to Microsoft Entra ID when moving your app authentication. Find out how to meet your app owner's security requirements while making the app migration process easier with mappings for each rule.
+In this article, you'll learn how to map authorization and multifactor authentication rules from AD FS to Microsoft Entra ID when moving your app authentication. Find out how to meet your app owner's security requirements while making the app migration process easier with mappings for each rule.
 
 When moving your app authentication to Microsoft Entra ID, create mappings from existing security policies to their equivalent or alternative variants available in Microsoft Entra ID. Ensuring that these mappings can be done while meeting security standards required by your app owners makes the rest of the app migration easier.
 
@@ -35,12 +35,12 @@ Permit Access to All Users in AD FS:
 
 This maps to Microsoft Entra ID in one of the following ways:
 
-1. Set **User assignment required** to **No**.
+1. Set **Assignment required** to **No**.
 
    :::image type="content" source="media/migrate-adfs-represent-security-policies/permit-access-to-all-users-2.png" alt-text="Screenshot shows how to edit access control policy for SaaS apps.":::
 
     > [!Note]
-    > Setting **User assignment required** to **Yes** requires that users are assigned to the application to gain access. When set to **No**, all users have access. This switch doesn't control what users see in the **My Apps** experience.
+    > Setting **Assignment required** to **Yes** requires that users are assigned to the application to gain access. When set to **No**, all users have access. This switch doesn't control what users see in the **My Apps** experience.
 
 1. In the **Users and groups tab**, assign your application to the **All Users** automatic group. You must [enable Dynamic Groups](~/identity/users/groups-create-rule.md) in your Microsoft Entra tenant for the default **All Users** group to be available.
 
@@ -57,7 +57,7 @@ To map this rule to Microsoft Entra ID:
 1. In the [Microsoft Entra admin center](https://entra.microsoft.com/#home), [create a user group](~/fundamentals/how-to-manage-groups.md) that corresponds to the group of users from AD FS.
 1. Assign app permissions to the group:
 
-   :::image type="content" source="media/migrate-adfs-represent-security-policies/allow-a-group-explicitly-2.png" alt-text="Screenshot shows how to add a user assignment to the app.":::
+   :::image type="content" source="media/migrate-adfs-represent-security-policies/allow-a-group-explicitly-2.png" alt-text="Screenshot shows how to add an assignment to the app.":::
 
 ### Example 3: Authorize a specific user
 
@@ -71,9 +71,9 @@ To map this rule to Microsoft Entra ID:
 
   :::image type="content" source="media/migrate-adfs-represent-security-policies/authorize-a-specific-user-2.png" alt-text="Screenshot shows My SaaS apps in Azure.":::
 
-## Map multi-factor authentication rules
+## Map multifactor authentication rules
 
-An on-premises deployment of [Multi-Factor Authentication (MFA)](~/identity/authentication/concept-mfa-howitworks.md) and AD FS still works after the migration because you're federated with AD FS. However, consider migrating to Azure's built-in MFA capabilities that are tied into Microsoft Entra Conditional Access workflows.
+An on-premises deployment of [Multifactor Authentication (MFA)](~/identity/authentication/concept-mfa-howitworks.md) and AD FS still works after the migration because you're federated with AD FS. However, consider migrating to Azure's built-in MFA capabilities that are tied into Microsoft Entra Conditional Access workflows.
 
 The following are examples of types of MFA rules in AD FS, and how you can map them to Microsoft Entra ID based on different conditions.
 
@@ -91,7 +91,7 @@ Specify MFA rules for a user or a group in Microsoft Entra ID:
 1. Select **Assignments**. Add the user(s) or group(s) for which you want to enforce MFA.
 1. Configure the **Access controls** options as shown in the following screenshots:
 
-   :::image type="content" source="media/migrate-adfs-represent-security-policies/mfa-users-groups.png" alt-text="Screenshot shows the Grant pane where you can grant access.":::
+   :::image type="content" source="media/migrate-adfs-represent-security-policies/mfa-users-groups.png" alt-text="Screenshot shows the Grant pane where you can grant access." lightbox="media/migrate-adfs-represent-security-policies/mfa-users-groups.png":::
 
 ### Example 2: Enforce MFA for unregistered devices
 
@@ -101,7 +101,7 @@ Specify MFA rules for unregistered devices in Microsoft Entra ID:
 1. Set the **Assignments** to **All users**.
 1. Configure the **Access controls** options as shown below:
 
-   :::image type="content" source="media/migrate-adfs-represent-security-policies/mfa-unregistered-devices.png" alt-text="Screenshot shows the Grant pane where you can grant access and specify other restrictions.":::
+   :::image type="content" source="media/migrate-adfs-represent-security-policies/mfa-unregistered-devices.png" alt-text="Screenshot shows the Grant pane where you can grant access and specify other restrictions." lightbox="media/migrate-adfs-represent-security-policies/mfa-unregistered-devices.png":::
 
 When you set the **For multiple controls** option to **Require one of the selected controls**, it means that if any one of the conditions specified by the checkbox are met by the user, the user is granted access to your app.
 
@@ -114,7 +114,7 @@ Specify MFA rules based on a user's location in Microsoft Entra ID:
 1. [Configure named locations in Microsoft Entra ID](~/identity/conditional-access/location-condition.md). Otherwise, federation from inside your corporate network is trusted.
 1. Configure the **Conditions rules** to specify the locations for which you would like to enforce MFA.
 
-   :::image type="content" source="media/migrate-adfs-represent-security-policies/mfa-location-1.png" alt-text="Screenshot shows the Locations pane for Conditions rules.":::
+   :::image type="content" source="media/migrate-adfs-represent-security-policies/mfa-location-1.png" alt-text="Screenshot shows the Locations pane for Conditions rules." lightbox="media/migrate-adfs-represent-security-policies/mfa-location-1.png":::
 
 1. Configure the **Access controls** options as shown below:
 
@@ -130,7 +130,7 @@ To map the rule to Microsoft Entra ID:
 
 1. In the [Microsoft Entra admin center](https://entra.microsoft.com/#home), select **Enterprise Applications** and then **Single sign-on** to view the SAML-based sign-on configuration:
 
-   :::image type="content" source="media/migrate-adfs-represent-security-policies/map-emit-attributes-as-claims-rule-2.png" alt-text="Screenshot shows the Single sign-on page for your Enterprise Application.":::
+   :::image type="content" source="media/migrate-adfs-represent-security-policies/map-emit-attributes-as-claims-rule-2.png" alt-text="Screenshot shows the Single sign-on page for your Enterprise Application." lightbox="media/migrate-adfs-represent-security-policies/map-emit-attributes-as-claims-rule-2.png":::
 
 1. Select **Edit** (highlighted) to modify the attributes:
 

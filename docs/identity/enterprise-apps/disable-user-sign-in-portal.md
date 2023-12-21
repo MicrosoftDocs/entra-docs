@@ -30,11 +30,11 @@ To disable user sign-in, you need:
 - A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 - One of the following roles: Global Administrator, Cloud Application Administrator, Application Administrator, or owner of the service principal.
 
-## Disable user sign-in
+:::zone pivot="portal"
+
+## Disable user sign-in using the Microsoft Entra admin center
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
-
-:::zone pivot="portal"
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
@@ -46,6 +46,8 @@ To disable user sign-in, you need:
 :::zone-end
 
 :::zone pivot="aad-powershell"
+
+## Disable user sign-in using Azure AD powershell
 
 You may know the AppId of an app that doesn't appear on the Enterprise apps list. For example, you may have deleted the app or the service principal hasn't yet been created due to the app being preauthorized by Microsoft. You can manually create the service principal for the app and then disable it by using the following Microsoft Graph PowerShell cmdlet.
 
@@ -68,9 +70,12 @@ if ($servicePrincipal) {
     $servicePrincipal = New-AzureADServicePrincipal -AppId $appId -AccountEnabled $false
 }
 ```
+
 :::zone-end
 
 :::zone pivot="ms-powershell"
+
+## Disable user sign-in using Microsoft Graph powershell
 
 You may know the AppId of an app that doesn't appear on the Enterprise apps list. For example, you may have deleted the app or the service principal hasn't yet been created due to the app being preauthorized by Microsoft. You can manually create the service principal for the app and then disable it by using the following Microsoft Graph PowerShell cmdlet.
 
@@ -96,6 +101,8 @@ else {  $servicePrincipal = New-MgServicePrincipal -AppId $appId –AccountEnabl
 
 :::zone pivot="ms-graph"
 
+## Disable user sign-in using Microsoft Graph API
+
 You may know the AppId of an app that doesn't appear on the Enterprise apps list. For example, you may have deleted the app or the service principal hasn't yet been created due to the app being preauthorized by Microsoft. You can manually create the service principal for the app and then disable it by using the following Microsoft Graph PowerShell cmdlet.
 
 To disable sign-in to an application, sign in to [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
@@ -115,8 +122,6 @@ Content-type: application/json
 ```
 
 :::zone-end
-
-
 
 ## Next steps
 
