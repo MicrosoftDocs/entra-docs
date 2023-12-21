@@ -530,7 +530,7 @@ For other errors, see [troubleshooting on-premises application provisioning](~/i
 If you wish to pause provisioning to this application, on the provisioning configuration page, you can change the provisioning status to **Off**, and select **Save**. This action stops the provisioning service from running in the future.
 
 ## Check that users were successfully provisioned
-After waiting, check the directory server to ensure users are being provisioned. They query you perform to the directory server will depend on what commands your directory server provides.
+After waiting, check the directory server to ensure users are being provisioned. The query you perform to the directory server will depend on what commands your directory server provides.
 
 The following instructions illustrate how to check AD LDS.
 
