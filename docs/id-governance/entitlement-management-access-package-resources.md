@@ -62,7 +62,7 @@ A resource role is a collection of permissions associated with and defined by a 
 
 When they lose an access package assignment, then they are removed from all the resource roles in the access package.
 
-> [NOTE]
+> [!NOTE]
 > If users were are added to the resource roles outside of entitlement management, and they need to retain access even if their access package assignments expire, then do not add the resource roles to an access package.
 
 If you want some users to receive different resource roles than others, then you need to create multiple access packages in the catalog, with separate access packages for each of the resource roles.  You can also mark the access packages as [incompatible](entitlement-management-access-package-incompatible.md) with each other so users can't request access to access packages that would give them excessive access.
