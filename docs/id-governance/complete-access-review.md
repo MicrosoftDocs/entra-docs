@@ -92,6 +92,16 @@ To view the results of a completed instance of an access review that is recurrin
  
 To retrieve the results of an access review, both in-progress or completed, select the **Download** button. The resulting CSV file can be viewed in Excel or in other programs that open UTF-8 encoded CSV files.
 
+### Retrieve the results programmatically
+
+You can also retrieve the results of an access review using Microsoft Graph or PowerShell.
+
+you will first need to locate the [instance](/graph/api/resources/accessreviewinstance) of the access review.  If the [accessReviewScheduleDefinition](/graph/api/resources/accessReviewScheduleDefinition) is a recurring access review, instances represent each recurrence. A review that does not recur will have exactly one instance. Instances also represent each unique group being reviewed in the schedule definition. If a schedule definition reviews multiple groups, each group will have a unique instance for each recurrence.  Every instance contains a list of decisions that reviewers can take action on, with one decision per identity being reviewed.
+
+ Once you have identified the instance, to retrieve the decisions using Graph, call the Graph API to [list decisions from an instance](/graph/api/accessreviewinstance-list-decisions).  If this is a multi-stage review, call the Graph API to [list decisions from a multi-stage access review](/graph/api/accessreviewstage-list-decisions). The caller must either be a user in an appropriate role with an application that has the delegated `AccessReview.Read.All` or `AccessReview.ReadWrite.All` permission, or an application with the `AccessReview.Read.All` or `AccessReview.ReadWrite.All` application permission.  For more information, see the tutorial for how to [review a security group](/graph/tutorial-accessreviews-securitygroup).
+
+You can also retrieve the decisions In PowerShell with the `Get-MgIdentityGovernanceAccessReviewDefinitionInstanceDecision` cmdlet from the [Microsoft Graph PowerShell cmdlets for Identity Governance](https://www.powershellgallery.com/packages/Microsoft.Graph.Identity.Governance/) module.  Note that the default page size of ths API is 100 decision items.
+
 ## Apply the changes
  
 If **Auto apply results to resource** was enabled based on your selections in **Upon completion settings**, autoapply will be executed once a review instance completes, or earlier if you manually stop the review.
