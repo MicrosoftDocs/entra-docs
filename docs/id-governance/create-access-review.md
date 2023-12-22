@@ -280,6 +280,15 @@ The prerequisite role is a Global or Identity Governance Administrator.
     > [!NOTE]
     > By default, the setting is set to **No**. To allow group owners to create and manage access reviews, change the setting to **Yes**.
 
+## Creating an access review programmatically
+
+You can also create an access review using Microsoft Graph or PowerShell.
+
+A user in an appropriate role with an application that has the delegated `AccessReview.ReadWrite.All` permission, or an application with the `AccessReview.ReadWrite.All` application permission, can call the Graph API to [create an access review schedule definition](/graph/api/accessreviewset-post-definitions&preserve-view=true).  For more information, see the [access reviews Graph overview](/graph/accessreviews-overview) and the tutorials for how to [review a security group](/graph/tutorial-accessreviews-securitygroup) or [review guests in Microsoft 365 groups](/graph/tutorial-accessreviews-m365group).
+
+You can also create an access review in PowerShell with the `New-MgIdentityGovernanceAccessReviewDefinition` cmdlet from the [Microsoft Graph PowerShell cmdlets for Identity Governance](https://www.powershellgallery.com/packages/Microsoft.Graph.Identity.Governance/) module.  For more information, see the [examples](/graph/api/accessreviewset-post-definitions?view=graph-rest-1.0&tabs=powershell#examples).
+
+
 ## Start the access review
 
 After you've specified the settings for an access review, select **Start**. The access review appears in your list with an indicator of its status.
