@@ -129,7 +129,7 @@ Finally, you'll need to agree on the deprovisioning behavior.  When the connecto
 
  1. Back in the portal, on the **On-Premises Connectivity** section, select the agent that you deployed and select **Assign Agent(s)**.
 
-      ![Screenshot that shows how to select and assign and agent.](~/includes/media/app-provisioning-sql/configure-7a.png)
+      ![Screenshot that shows how to select and assign an agent.](~/includes/media/app-provisioning-sql/configure-7a.png)
 
  2. Keep this browser window open, as you complete the next step of configuration using the configuration wizard.
 
