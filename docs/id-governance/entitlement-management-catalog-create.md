@@ -84,9 +84,9 @@ To include resources in an access package, the resources must exist in a catalog
 
 * Applications can be Microsoft Entra enterprise applications, which include software as a service (SaaS) applications, on-premises applications, and your own applications integrated with Microsoft Entra ID.
 
-  * If your application has not yet been integrated with Microsoft Entra ID, see [govern access for applications in your environment](identity-governance-applications-prepare.md) and [integrate an application with Microsoft Entra ID](identity-governance-applications-integrate.md).
+  * If your application has not yet been integrated with Microsoft Entra ID, see [govern access for applications in your environment](identity-governance-applications-prepare.md) and [integrate an application with Microsoft Entra ID](identity-governance-applications-integrate.md) and add the application to your directory prior to adding it to the catalog.
 
-  * For more information on how to select appropriate resources for applications with multiple roles, see [Add resource roles](entitlement-management-access-package-resources.md#add-resource-roles).
+  * For more information on how to select appropriate resources for applications with multiple roles, see [how to determine which resource roles to include in an access package](entitlement-management-access-package-resources.md#determine-which-resource-roles-to-include-in-an-access-package).
 * Sites can be SharePoint Online sites or SharePoint Online site collections.
 > [!NOTE]
 > Search SharePoint Site by site name or an exact URL as the search box is case sensitive.
