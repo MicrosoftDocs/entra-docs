@@ -383,7 +383,7 @@ Now that the existing users have assignments to an application role, you can con
 1. Follow the instructions in the [guide for creating an access review of groups or applications](create-access-review.md), to create the review of the application's role assignments.  Configure the review to apply results when it completes.
 
    > [!NOTE]
-   > If you create an access review and enable review decision helpers when creating the access review, then the decision helper recommendations are based on the 30-day interval period depending on when the user last signed in to the application using Microsoft Entra ID.
+   > If you enable review decision helpers when creating the access review, then the decision helper recommendations are based on the 30-day interval period depending on when the user last signed in to the application using Microsoft Entra ID.
 
 1. When the access review starts, ask the reviewers to give input. By default, they each receive an email from Microsoft Entra ID with a link to the access panel, where they [review access to the application](perform-access-review.md).
 
@@ -400,9 +400,9 @@ Now that you have a baseline that ensures existing access has been reviewed, the
 
 ### Govern access using entitlement management
 
-In other situations, such as wanting to have different reviewers for each application role, the application is represented by multiple service principals, or you want to have a process for users to request or be assigned access to the application, then you can configure Microsoft Entra ID with an [access package](/powershell/microsoftgraph/tutorial-entitlement-management) for each application role.  Each access package can have a policy for recurring review of assignments made to that access package.  Once the access packages and policies are created, then you can assign the users who have existing application role assignments to the access packages, so their assignments can be reviewed.
+In other situations, such as wanting to have different reviewers for each application role, the application is represented by multiple service principals, or you want to have a process for users to request or be assigned access to the application, then you can configure Microsoft Entra ID with an [access package](/powershell/microsoftgraph/tutorial-entitlement-management) for each application role.  Each access package can have a policy for recurring review of assignments made to that access package.  Once the access packages and policies are created, then you can assign the users who have existing application role assignments to the access packages, so their assignments can be reviewed via the access package.
 
-For more information on how to create the access packages, see [deploy entitlement management policies for automating access assignment](identity-governance-applications-deploy.md#deploy-entitlement-management-policies-for-automating-access-assignment)
+For more information on how to create the access packages and assign users, see [deploy entitlement management policies for automating access assignment](identity-governance-applications-deploy.md#deploy-entitlement-management-policies-for-automating-access-assignment).
 
 
 ## Next steps
