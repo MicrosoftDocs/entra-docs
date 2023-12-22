@@ -224,12 +224,12 @@ A multi-stage review allows the administrator to define two or three sets of rev
 
 ## Include B2B direct connect users and teams accessing Teams Shared Channels in access reviews
 
-You can create access reviews for B2B direct connect users via shared channels in Microsoft Teams. As you collaborate externally, you can use Microsoft Entra access reviews to make sure external access to shared channels stays current. To learn more about Teams Shared Channels and B2B direct connect users, read the [B2B direct connect](~/external-id/b2b-direct-connect-overview.md) article.
+You can create access reviews for B2B direct connect users via shared channels in Microsoft Teams. As you collaborate externally, you can use Microsoft Entra access reviews to make sure external access to shared channels stays current. External users in the shared channels are called B2B direct connect users. To learn more about Teams Shared Channels and B2B direct connect users, read the [B2B direct connect](~/external-id/b2b-direct-connect-overview.md) article.
 
-When you create an access review on a Team with shared channels, your reviewers can review continued need for access of those external users and Teams in the shared channels. External users in the shared channels are called B2B direct connect users. You can review access of B2B connect users and other supported B2B collaboration users and non-B2B internal users in the same review.
+When you create an access review on a Team with shared channels, your reviewers can review continued need for access of those external users and Teams in the shared channels.  You can review access of B2B connect users and other supported B2B collaboration users and non-B2B internal users in the same review.
 
 >[!NOTE]
-> Currently, B2B direct connect users and teams are only included in single-stage reviews. If multi-stage reviews are enabled, the direct connect users and teams won't be included in the access review.
+> Currently, B2B direct connect users and teams are only included in single-stage reviews. If multi-stage reviews are enabled, the B2B direct connect users and teams won't be included in the access review.
 
 B2B direct connect users and teams are included in access reviews of the Teams-enabled Microsoft 365 group that the shared channels are a part of. To create the review, you must be a:
 - Global Administrator
