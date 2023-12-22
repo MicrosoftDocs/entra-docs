@@ -281,6 +281,8 @@ If your application uses an LDAP directory, a SQL database, or supports SCIM, th
    * If the application uses a SQL database, follow the [guide for configuring Microsoft Entra ID to provision users into SQL-based applications](~/identity/app-provisioning/on-premises-sql-connector-configure.md).
    * For other applications, follow steps 1-3 to [configure provisioning via Graph APIs](~/identity/app-provisioning/application-provisioning-configuration-api.md).
 
+1. Check the **Properties** tab for the application.  Verify that the **User assignment required?** option is set to **Yes**. If it's set to **No**, all users in your directory, including external identities, can access the application, and you can't review access to the application.
+
 1. Check the [attribute mappings](~/identity/app-provisioning/customize-application-attributes.md) for provisioning to that application. Make sure that **Match objects using this attribute** is set for the Microsoft Entra attribute and column that you used in the previous sections for matching.  
 
    If these rules aren't using the same attributes that you used earlier, then when application role assignments are created, Microsoft Entra ID might be unable to locate existing users in the application's data store. Microsoft Entra ID might then inadvertently create duplicate users.
@@ -366,11 +368,42 @@ After the Microsoft Entra provisioning service has matched the users based on th
 
 ## Configure access reviews or entitlement management
 
-Once the users are in the application roles, and you have the reviewers identified, then you can govern those users and any additional users who will need access.
+Once the users are in the application roles, and you have the reviewers identified, then you can govern those users and any additional users who will need access, using access reviews or entitlement management.
 
-If the application only has a single application role, the application is represented by a single service principal in your directory, and no additional users will need access to the application, then you can configure Microsoft Entra ID to [start a review](access-reviews-application-preparation.md#create-the-reviews).  Follow the instructions in the [guide for creating an access review of groups or applications](create-access-review.md), to create the review of the application's role assignments.  Configure the review to apply results when it completes.
+- If the application only has a single application role, the application is represented by a single service principal in your directory, and no additional users will need access to the application, then continue with the next section to [review and remove existing access using an access review](#review-and-remove-existing-access-using-an-access-review).
+- Otherwise, continue at the section of this article to [govern access using entitlement management](#govern-access-using-entitlement-management).
+
+### Review and remove existing access using an access review
+
+If the application has multiple application roles, is represented by multiple service principals, or you want to have a process for users to request or be assigned access to the application, then continue at the following section of this article to [govern access using entitlement management](#govern-access-using-entitlement-management).
+
+Now that the existing users have assignments to an application role, you can configure Microsoft Entra ID to [start a review](access-reviews-application-preparation.md#create-the-reviews) of those assignments.
+
+1. For this step, you'll need to be in the `Global administrator` or `Identity Governance administrator` role.
+1. Follow the instructions in the [guide for creating an access review of groups or applications](create-access-review.md), to create the review of the application's role assignments.  Configure the review to apply results when it completes.
+
+   > [!NOTE]
+   > If you create an access review and enable review decision helpers when creating the access review, then the decision helper recommendations are based on the 30-day interval period depending on when the user last signed in to the application using Microsoft Entra ID.
+
+1. When the access review starts, ask the reviewers to give input. By default, they each receive an email from Microsoft Entra ID with a link to the access panel, where they [review access to the application](perform-access-review.md).
+
+1. Once the reviews have started, you can monitor their progress, and update the approvers if needed, until the [access review completes](complete-access-review.md).  You can then confirm that the users, whose access was denied by the reviewers, are having their access removed from the application.
+
+1. If auto-apply wasn't selected when the review was created, then you'll need to apply the review results when it completes.
+1. Wait for the status of the review to change to **Result applied**.  You should expect to see denied users, if any, having their application role assignments being removed in a few minutes.
+
+1. After the results are applied, Microsoft Entra ID will begin deprovisioning denied users from the application. Based on the guidance for [how long will it take to provision users](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md#how-long-will-it-take-to-provision-users), wait for Microsoft Entra provisioning to start deprovisioning the denied users.  Monitor the [provisioning status](~/identity/app-provisioning/check-status-user-account-provisioning.md) through the Portal or [Graph APIs](~/identity/app-provisioning/application-provisioning-configuration-api.md#monitor-the-provisioning-job-status) to ensure that all denied users were removed successfully.
+
+   If you don't see users being deprovisioned, check the [troubleshooting guide for no users being provisioned](~/identity/app-provisioning/application-provisioning-config-problem-no-users-provisioned.md). If you see an error in the provisioning status and are provisioning to an on-premises application, check the [troubleshooting guide for on-premises application provisioning](~/identity/app-provisioning/on-premises-ecma-troubleshoot.md).
+
+Now that you have a baseline that ensures existing access has been reviewed, then you can continue in the next section to configure entitlement management, to enable new access requests.
+
+### Govern access using entitlement management
 
 In other situations, such as wanting to have different reviewers for each application role, the application is represented by multiple service principals, or you want to have a process for users to request or be assigned access to the application, then you can configure Microsoft Entra ID with an [access package](/powershell/microsoftgraph/tutorial-entitlement-management) for each application role.  Each access package can have a policy for recurring review of assignments made to that access package.  Once the access packages and policies are created, then you can assign the users who have existing application role assignments to the access packages, so their assignments can be reviewed.
+
+For more information on how to create the access packages, see [deploy entitlement management policies for automating access assignment](identity-governance-applications-deploy.md#deploy-entitlement-management-policies-for-automating-access-assignment)
+
 
 ## Next steps
 
