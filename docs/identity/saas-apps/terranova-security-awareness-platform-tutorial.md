@@ -83,11 +83,11 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 1. Perform the following step, if you wish to configure the application in **SP** initiated mode:
 
-	In the **Sign-on URL** text box, type a URL using the following pattern:
+	In the **Sign-on URL** text box, type the URL:
     `https://secure.terranovasite.com/`
 
 	> [!NOTE]
-    > The Reply URL value is not real. Update this value with the actual Reply URL. Contact [Terranova Security Awareness Platform support team](mailto:yves.gagnon@fortra.com) to get this value. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
+    > The Reply URL value is not real. Update this value with the actual Reply URL. Contact [Terranova Security Awareness Platform support team](mailto:support.terranova@helpsystems.com) to get this value. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 
@@ -125,11 +125,11 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
 
 ## Configure Terranova Security Awareness Platform SSO
 
-To configure single sign-on on **Terranova Security Awareness Platform** side, you need to send the downloaded **Federation Metadata XML** and appropriate copied URLs from Microsoft Entra admin center to [Terranova Security Awareness Platform support team](mailto:yves.gagnon@fortra.com). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **Terranova Security Awareness Platform** side, you need to send the downloaded **Federation Metadata XML** and appropriate copied URLs from Microsoft Entra admin center to [Terranova Security Awareness Platform support team](mailto:support.terranova@helpsystems.com). They set this setting to have the SAML SSO connection set properly on both sides.
 
 ### Create Terranova Security Awareness Platform test user
 
-In this section, a user called B.Simon is created in Terranova Security Awareness Platform. Work with [Terranova Security Awareness Platform support team](mailto:yves.gagnon@fortra.com) to add the users in the Terranova Security Awareness platform. Users must be created and activated before you use single sign-on.
+In this section, a user called B.Simon is created in Terranova Security Awareness Platform. Work with [Terranova Security Awareness Platform support team](mailto:support.terranova@helpsystems.com) to add the users in the Terranova Security Awareness platform. Users must be created and activated before you use single sign-on.
 
 ## Test SSO
 
