@@ -165,7 +165,7 @@ In this section, you test your Microsoft Entra single sign-on configuration with
  
 #### SP initiated:
  
-* Click on **Test this application** in Microsoft Entra admin center. This will redirect to Reach 360 Sign on URL where you can initiate the login flow.  
+* Click on **Test this application** in Microsoft Entra admin center. This will redirect to Reach 360 sign-on URL where you can initiate the login flow.  
  
 * Go to Reach 360 Sign-on URL directly and initiate the login flow from there.
  
