@@ -284,7 +284,7 @@ The prerequisite role is a Global or Identity Governance Administrator.
     > [!NOTE]
     > By default, the setting is set to **No**. To allow group owners to create and manage access reviews, change the setting to **Yes**.
 
-## Creating an access review programmatically
+## Create an access review programmatically
 
 You can also create an access review using Microsoft Graph or PowerShell.
 
