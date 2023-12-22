@@ -1,6 +1,6 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Axiad Cloud'
-description: Learn how to configure single sign-on between Microsoft Entra ID and Axiad Cloud.
+title: 'Tutorial: Microsoft Entra SSO integration with Axiad Cloud Connector'
+description: Learn how to configure single sign-on between Microsoft Entra ID and Axiad Cloud Connector.
 
 author: jeevansd
 manager: CelesteDG
@@ -9,16 +9,16 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 12/22/2022
 ms.author: jeedes
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Axiad Cloud
+# Tutorial: Microsoft Entra SSO integration with Axiad Cloud Connector
 
-In this tutorial, you'll learn how to integrate Axiad Cloud with Microsoft Entra ID. When you integrate Axiad Cloud with Microsoft Entra ID, you can:
+In this tutorial, you'll learn how to integrate Axiad Cloud Connector with Microsoft Entra ID. When you integrate Axiad Cloud Connector with Microsoft Entra ID, you can:
 
-* Control in Microsoft Entra ID who has access to Axiad Cloud.
-* Enable your users to be automatically signed-in to Axiad Cloud with their Microsoft Entra accounts.
+* Control in Microsoft Entra ID who has access to Axiad Cloud Connector.
+* Enable your users to be automatically signed-in to Axiad Cloud Connector with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
 ## Prerequisites
@@ -26,39 +26,39 @@ In this tutorial, you'll learn how to integrate Axiad Cloud with Microsoft Entra
 To get started, you need the following items:
 
 * A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
-* Axiad Cloud single sign-on (SSO) enabled subscription.
+* Axiad Cloud Connector single sign-on (SSO) enabled subscription.
 
 ## Scenario description
 
 In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
 
-* Axiad Cloud supports **SP** initiated SSO.
-* Axiad Cloud supports [Automated user provisioning](axiad-cloud-provisioning-tutorial.md).
+* Axiad Cloud Connector supports **SP** initiated SSO.
+* Axiad Cloud Connector supports [Automated user provisioning](axiad-cloud-provisioning-tutorial.md).
 
-## Add Axiad Cloud from the gallery
+## Add Axiad Cloud Connector from the gallery
 
-To configure the integration of Axiad Cloud into Microsoft Entra ID, you need to add Axiad Cloud from the gallery to your list of managed SaaS apps.
+To configure the integration of Axiad Cloud Connector into Microsoft Entra ID, you need to add Axiad Cloud Connector from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
-1. In the **Add from the gallery** section, type **Axiad Cloud** in the search box.
-1. Select **Axiad Cloud** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
+1. In the **Add from the gallery** section, type **Axiad Cloud Connector** in the search box.
+1. Select **Axiad Cloud Connector** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
  Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-axiad-cloud'></a>
 
-## Configure and test Microsoft Entra SSO for Axiad Cloud
+## Configure and test Microsoft Entra SSO for Axiad Cloud Connector
 
-Configure and test Microsoft Entra SSO with Axiad Cloud using a test user called **B.Simon**. For SSO to work, you need to establish a link relationship between a Microsoft Entra user and the related user in Axiad Cloud.
+Configure and test Microsoft Entra SSO with Axiad Cloud Connector using a test user called **B.Simon**. For SSO to work, you need to establish a link relationship between a Microsoft Entra user and the related user in Axiad Cloud Connector.
 
-To configure and test Microsoft Entra SSO with Axiad Cloud, perform the following steps:
+To configure and test Microsoft Entra SSO with Axiad Cloud Connector, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
     1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
     1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
-1. **[Configure Axiad Cloud SSO](#configure-axiad-cloud-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Axiad Cloud test user](#create-axiad-cloud-test-user)** - to have a counterpart of B.Simon in Axiad Cloud that is linked to the Microsoft Entra representation of user.
+1. **[Configure Axiad Cloud Connector SSO](#configure-axiad-cloud-sso)** - to configure the single sign-on settings on application side.
+    1. **[Create Axiad Cloud Connector test user](#create-axiad-cloud-test-user)** - to have a counterpart of B.Simon in Axiad Cloud Connector that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -68,7 +68,7 @@ To configure and test Microsoft Entra SSO with Axiad Cloud, perform the followin
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Axiad Cloud** > **Single sign-on**.
+1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Axiad Cloud Connector** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -86,13 +86,13 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://portal-<INSTANCE_NAME>.axiadids.net`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [Axiad Cloud Client support team](mailto:support@axiad.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [Axiad Cloud Connector support team](mailto:support@axiad.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 
 	![The Certificate download link](common/metadataxml.png)
 
-1. On the **Set up Axiad Cloud** section, copy the appropriate URL(s) based on your requirement.
+1. On the **Set up Axiad Cloud Connector** section, copy the appropriate URL(s) based on your requirement.
 
 	![Copy configuration URLs](common/copy-configuration-urls.png)
 
@@ -116,34 +116,34 @@ In this section, you'll create a test user called B.Simon.
 
 ### Assign the Microsoft Entra test user
 
-In this section, you'll enable B.Simon to use single sign-on by granting access to Axiad Cloud.
+In this section, you'll enable B.Simon to use single sign-on by granting access to Axiad Cloud Connector.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Axiad Cloud**.
+1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Axiad Cloud Connector**.
 1. In the app's overview page, find the **Manage** section and select **Users and groups**.
 1. Select **Add user**, then select **Users and groups** in the **Add Assignment** dialog.
 1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then click the **Select** button at the bottom of the screen.
 1. If you're expecting any role value in the SAML assertion, in the **Select Role** dialog, select the appropriate role for the user from the list and then click the **Select** button at the bottom of the screen.
 1. In the **Add Assignment** dialog, click the **Assign** button.
 
-## Configure Axiad Cloud SSO
+## Configure Axiad Cloud Connector SSO
 
-To configure single sign-on on **Axiad Cloud** side, you need to send the downloaded **Federation Metadata XML** and appropriate copied URLs from the application configuration to [Axiad Cloud support team](mailto:support@axiad.com). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **Axiad Cloud Connector** side, you need to send the downloaded **Federation Metadata XML** and appropriate copied URLs from the application configuration to [Axiad Cloud Connector support team](mailto:support@axiad.com). They set this setting to have the SAML SSO connection set properly on both sides.
 
-### Create Axiad Cloud test user
+### Create Axiad Cloud Connector test user
 
-In this section, you create a user called Britta Simon in Axiad Cloud. Work with [Axiad Cloud support team](mailto:support@axiad.com) to add the users in the Axiad Cloud platform. Users must be created and activated before you use single sign-on.
+In this section, you create a user called Britta Simon in Axiad Cloud Connector. Work with [Axiad Cloud Connector support team](mailto:support@axiad.com) to add the users in the Axiad Cloud Connector platform. Users must be created and activated before you use single sign-on.
 
 ## Test SSO
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to Axiad Cloud Sign-on URL where you can initiate the login flow. 
+* Click on **Test this application**, this will redirect to Axiad Cloud Connector Sign-on URL where you can initiate the login flow. 
 
-* Go to Axiad Cloud Sign-on URL directly and initiate the login flow from there.
+* Go to Axiad Cloud Connector Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the Axiad Cloud tile in the My Apps, this will redirect to Axiad Cloud Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you click the Axiad Cloud Connector tile in the My Apps, this will redirect to Axiad Cloud Connector Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Next steps
 
-Once you configure Axiad Cloud you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).
+Once you configure Axiad Cloud Connector you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).
