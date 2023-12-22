@@ -13,7 +13,7 @@ ms.service: active-directory
 ms.subservice: enterprise-users
 ms.topic: reference
 ms.workload: identity
-ms.date: 12/20/2023
+ms.date: 12/22/2023
 ms.author: nicholak
 ms.reviewer: Nicholak-MS
 ms.custom: "it-pro;seo-update-azuread-jan"
@@ -32,7 +32,7 @@ When [managing licenses in the Azure portal](https://portal.azure.com/#blade/Mic
 - **Service plans included (friendly names)**: A list of service plans (friendly names) in the product that correspond to the string ID and GUID
 
 >[!NOTE]
->This information last updated on December 20th, 2023.<br/>You can also download a CSV version of this table [here](https://download.microsoft.com/download/e/3/e/e3e9faf2-f28b-490a-9ada-c6089a1fc5b0/Product%20names%20and%20service%20plan%20identifiers%20for%20licensing.csv).
+>This information last updated on December 22nd, 2023.<br/>You can also download a CSV version of this table [here](https://download.microsoft.com/download/e/3/e/e3e9faf2-f28b-490a-9ada-c6089a1fc5b0/Product%20names%20and%20service%20plan%20identifiers%20for%20licensing.csv).
 ><br/>
 
 | Product name | String ID | GUID | Service plans included | Service plans included (friendly names) |
@@ -409,7 +409,6 @@ When [managing licenses in the Azure portal](https://portal.azure.com/#blade/Mic
 | Power Automate unattended RPA add-on | POWERAUTOMATE_UNATTENDED_RPA | 3539d28c-6e35-4a30-b3a9-cd43d5d3e0e2 |CDS_UNATTENDED_RPA (b475952f-128a-4a44-b82a-0b98a45ca7fb)<br/>EXCHANGE_S_FOUNDATION (113feb6c-3fe4-4440-bddc-54d774bf0318)<br/>POWER_AUTOMATE_UNATTENDED_RPA (0d373a98-a27a-426f-8993-f9a425ae99c5) | 	Common Data Service Unattended RPA (b475952f-128a-4a44-b82a-0b98a45ca7fb)<br/>Exchange Foundation (113feb6c-3fe4-4440-bddc-54d774bf0318)<br/>Power Automate Unattended RPA add-on (0d373a98-a27a-426f-8993-f9a425ae99c5) |
 | Power Automate unattended RPA add-on for Government | POWERAUTOMATE_UNATTENDED_RPA_GCC | 086e9b70-4720-4442-ab6d-3ef32bfb4721 | EXCHANGE_S_FOUNDATION_GOV (922ba911-5694-4e99-a794-73aed9bfeec8)<br/>CDS_UNATTENDED_RPA_GCC (5141c408-df3d-456a-9878-a65119b0a750)<br/>POWER_AUTOMATE_UNATTENDED_RPA_GCC (45e63e9f-6dd9-41fd-bd41-93bfa008c537) | Exchange Foundation for Government (922ba911-5694-4e99-a794-73aed9bfeec8)<br/>Common Data Service Unattended RPA for Government (5141c408-df3d-456a-9878-a65119b0a750)<br/>Power Automate Unattended RPA for Government (45e63e9f-6dd9-41fd-bd41-93bfa008c537) |
 | Power BI | POWER_BI_INDIVIDUAL_USER | e2767865-c3c9-4f09-9f99-6eee6eef861a |	EXCHANGE_S_FOUNDATION (113feb6c-3fe4-4440-bddc-54d774bf0318)<br/>SQL_IS_SSIM (fc0a60aa-feee-4746-a0e3-aecfe81a38dd)<br/>BI_AZURE_P1 (2125cfd7-2110-4567-83c4-c1cd5275163d) |	Exchange Foundation (113feb6c-3fe4-4440-bddc-54d774bf0318)<br/>Microsoft Power BI Information Services Plan 1 (fc0a60aa-feee-4746-a0e3-aecfe81a38dd)<br/>Microsoft Power BI Reporting and Analytics Plan 1 (2125cfd7-2110-4567-83c4-c1cd5275163d) |
-| Power BI (free) | POWER_BI_STANDARD | a403ebcc-fae0-4ca2-8c8c-7a907fd6c235 | EXCHANGE_S_FOUNDATION (113feb6c-3fe4-4440-bddc-54d774bf0318)<br/>BI_AZURE_P0 (2049e525-b859-401b-b2a0-e0a31c4b1fe4) | Exchange Foundation (113feb6c-3fe4-4440-bddc-54d774bf0318)<br/>Power BI (free) (2049e525-b859-401b-b2a0-e0a31c4b1fe4) |
 | Power BI for Office 365 Add-On	| POWER_BI_ADDON	| 45bc2c81-6072-436a-9b0b-3b12eefbc402	| BI_AZURE_P1 (2125cfd7-2110-4567-83c4-c1cd5275163d)<br/>SQL_IS_SSIM (fc0a60aa-feee-4746-a0e3-aecfe81a38dd) |MICROSOFT POWER BI REPORTING AND ANALYTICS PLAN 1 (2125cfd7-2110-4567-83c4-c1cd5275163d)<br/>MICROSOFT POWER BI INFORMATION SERVICES PLAN 1(fc0a60aa-feee-4746-a0e3-aecfe81a38dd) |
 | Power BI Premium P1 | PBI_PREMIUM_P1_ADDON | 7b26f5ab-a763-4c00-a1ac-f6c4b5506945 | EXCHANGE_S_FOUNDATION (113feb6c-3fe4-4440-bddc-54d774bf0318)<br/>PBI_PREMIUM_P1_ADDON (9da49a6d-707a-48a1-b44a-53dcde5267f8) | Exchange Foundation (113feb6c-3fe4-4440-bddc-54d774bf0318)<br/>Power BI Premium P1 (9da49a6d-707a-48a1-b44a-53dcde5267f8) |
 | Power BI Premium P1 GCC | PBI_PREMIUM_P1_ADDON_GCC | f59b22a0-9819-48bf-b01d-715ef2b31027 | EXCHANGE_S_FOUNDATION_GOV (922ba911-5694-4e99-a794-73aed9bfeec8)<br/>PBI_PREMIUM_P1_ADDON_GCC (30df3dbd-5bf6-4d74-9417-cccc096595e4) | Exchange Foundation for Government (922ba911-5694-4e99-a794-73aed9bfeec8)<br/>Power BI Premium P1 for GCC (30df3dbd-5bf6-4d74-9417-cccc096595e4) |
