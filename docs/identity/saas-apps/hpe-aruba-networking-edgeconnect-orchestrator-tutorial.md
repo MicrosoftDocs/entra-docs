@@ -92,7 +92,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 1. On the **Set up HPE Aruba Networking EdgeConnect Orchestrator** section, copy the appropriate URL(s) based on your requirement.
 
-	![Screenshot shows to copy configuration URLs](common/copy-configuration-urls.png "Metadata")
+	![Screenshot shows to copy configuration URLs.](common/copy-configuration-urls.png "Metadata")
 
 ### Create a Microsoft Entra ID test user
 
