@@ -314,9 +314,9 @@ Until you have migrated to Microsoft Entra ID groups with group writeback, you c
 You can use the results from an access review on on-premises groups and process them further, either by:
 
 * Downloading the CSV report from the access review and manually taking action.
-* Using Microsoft Graph to programmatically access results and decisions in completed access reviews.
+* Using Microsoft Graph to [programmatically retrieve the results of decisions of completed access reviews](complete-access-review.md#retrieve-the-results-programmatically).
 
-For example, to access results for a Windows AD-managed group, use this [PowerShell sample script](https://github.com/microsoft/access-reviews-samples/tree/master/AzureADAccessReviewsOnPremises). The script outlines the required Microsoft Graph calls and exports the Windows AD-PowerShell commands to carry out the changes.
+For example, to retrieve results for a Windows Server AD-managed group, use this [PowerShell sample script](https://github.com/microsoft/access-reviews-samples/tree/master/AzureADAccessReviewsOnPremises). The script outlines the required Microsoft Graph calls and exports the Windows Server AD PowerShell commands to carry out the changes.
 
 ## Plan access reviews for applications
 
