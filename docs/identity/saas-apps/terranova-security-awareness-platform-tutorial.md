@@ -135,13 +135,13 @@ In this section, a user called B.Simon is created in Terranova Security Awarenes
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
  
-#### SP initiated:
+#### SP initiated
  
 * Click on **Test this application** in Microsoft Entra admin center. This will redirect to Terranova Security Awareness Platform Sign on URL where you can initiate the login flow.  
  
 * Go to Terranova Security Awareness Platform Sign-on URL directly and initiate the login flow from there.
  
-#### IDP initiated:
+#### IDP initiated
  
 * Click on **Test this application** in Microsoft Entra admin center and you should be automatically signed in to the Terranova Security Awareness Platform for which you set up the SSO.
  
