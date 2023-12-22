@@ -985,6 +985,8 @@
         href: f5-big-ip-sap-erp-easy-button.md    
       - name: FactSet
         href: factset-tutorial.md
+      - name: Fareharbor SAML SSO
+        href: fareharbor-saml-sso-tutorial.md
       - name: Fastly Edge Cloud
         href: fastly-edge-cloud-tutorial.md
       - name: FAX.PLUS
