@@ -112,6 +112,10 @@ The **appRoleAssignments**, **userType**, and **accountExpires** attributes aren
 
 Multivalue directory extensions can't be used in attribute mappings or scoping filters. 
 
+#### Creating a mapping for target object attribute otherMails is unsupported
+
+The target B2B invited user otherMails property is computed in the target directory. Creating a mapping for this property is unsupported as it will result in the property changing to unexpected values during differential synchronization runs.
+
 ## Service issues 
 
 #### Unsupported scenarios
