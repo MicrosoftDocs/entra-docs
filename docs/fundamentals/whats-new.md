@@ -36,7 +36,7 @@ This page updates monthly, so revisit it regularly. If you're looking for items 
 
 ## December 2023
 
-### Public Preview - configurable redemption order for B2B collaboration
+### Public Preview - Configurable redemption order for B2B collaboration
 
 **Type:** New feature   
 **Service category:** B2B                     
