@@ -131,9 +131,9 @@ Use the following steps to add approvers after you select the number of stages.
 
 1. Add the **First Approver** information:
 
-   - If the policy is set to **For users in your directory**, you can select either **Manager as approver** or **Sponsors as approvers (Preview)**. Or, you can add a specific user by selecting **Choose specific approvers**, and then selecting **Add approvers**.
+   - If the policy is set to **For users in your directory**, you can select either **Manager as approver** or **Sponsors as approvers**. Or, you can add a specific user by selecting **Choose specific approvers**, and then selecting **Add approvers**.
 
-     To use **Sponsors as approvers (Preview)** for **Approval**, you must have a Microsoft Entra ID Governance license. For more information, see [Compare generally available features of Microsoft Entra ID](https://www.microsoft.com/security/business/identity-access/microsoft-entra-id-governance?rtc=1).
+     To use **Sponsors as approvers** for **Approval**, you must have a Microsoft Entra ID Governance license. For more information, see [Compare generally available features of Microsoft Entra ID](https://www.microsoft.com/security/business/identity-access/microsoft-entra-id-governance?rtc=1).
 
      ![Screenshot that shows options for a first approver if the policy is set to users in your directory.](./media/entitlement-management-request-policy/approval-single-stage-first-approver-manager.png)
 
@@ -165,7 +165,7 @@ If you selected a two-stage approval, you need to add a second approver:
 
 1. Add the **Second Approver** information:
 
-   - If the users are in your directory, you can select **Sponsors as approvers (Preview)**. Or, add a specific user by selecting **Choose specific approvers** from the dropdown menu, and then selecting **Add approvers**.
+   - If the users are in your directory, you can select **Sponsors as approvers**. Or, add a specific user by selecting **Choose specific approvers** from the dropdown menu, and then selecting **Add approvers**.
 
      ![Screenshot that shows options for a second approver if the policy is set to users in your directory.](./media/entitlement-management-request-policy/in-directory-second-approver.png)
 
@@ -233,9 +233,9 @@ Also, requests can't be forwarded on the last day of the request duration. So in
 
     ![Screenshot that shows the option for enabling new requests and assignments.](./media/entitlement-management-request-policy/enable-requests.png)
 
-1. Go to the [next section](#add-a-verified-id-requirement-preview) to learn how to add a verified ID requirement to your access package. Otherwise, select **Next**.
+1. Go to the [next section](#add-a-verified-id-requirement) to learn how to add a verified ID requirement to your access package. Otherwise, select **Next**.
 
-## Add a verified ID requirement (preview)
+## Add a verified ID requirement
 
 Use the following steps if you want to add a verified ID requirement to your access package policy. Users who want access to the access package need to present the required verified IDs before successfully submitting their request. To learn how to configure your tenant with the Microsoft Entra Verified ID service, see [Introduction to Microsoft Entra Verified ID](~/verified-id/decentralized-identifier-overview.md).
 

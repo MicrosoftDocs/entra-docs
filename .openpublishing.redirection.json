@@ -36,6 +36,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity/saas-apps/skillcast-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/saas-apps/cisco-umbrella-user-management-provisioning-tutorial.md",
       "redirect_url": "/entra/identity/saas-apps/cisco-user-management-for-secure-access-provisioning-tutorial",
       "redirect_document_id": false
@@ -43,6 +48,11 @@
     {
       "source_path_from_root": "/docs/identity/saas-apps/rivial-data-security-tutorial.md",
       "redirect_url": "/entra/identity/saas-apps/rivial-cybersecurity-management-platform-tutorial",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/axiad-cloud-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/axiad-cloud-connector-tutorial",
       "redirect_document_id": false
     },
     {
