@@ -27,7 +27,7 @@ Opting out is a one-way operation. After the process finishes, your Microsoft En
 
 ## What happens to your data?
 
-When you finish opting out of the Microsoft Entra Verified ID service, the following actions take place:
+When you finish opting out of the Microsoft Entra Verified ID service, the following actions occur:
 
 - The decentralized identifier (DID) keys in Azure Key Vault are [soft deleted](/azure/key-vault/general/soft-delete-overview).
 - The issuer object is deleted from our database.

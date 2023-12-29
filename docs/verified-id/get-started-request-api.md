@@ -333,7 +333,7 @@ Issuance request using the `idTokenHint` attestation flow:
 }
 ```
 
-# [with expiry date](#tab/expirydate)
+# [With expiry date](#tab/expirydate)
 
 Issuance request using the `idTokenHint` attestation flow that [sets the expiry date](issuance-request-api.md#issuance-request-payload):
 

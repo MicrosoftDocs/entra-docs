@@ -22,21 +22,23 @@ In this article, we review the steps to rotate your Microsoft Entra Verified ID 
 - Verified ID authority is [manually onboarded](verifiable-credentials-configure-tenant.md), and the signing keys are in your own Azure Key Vault instance. [Quick setup](verifiable-credentials-configure-tenant-quick.md) uses a shared signing key, managed by Microsoft, that you can't rotate yourself.
 - The admin user performing key rotation must have [permission to the keys](verifiable-credentials-configure-tenant.md#set-access-policies-for-the-verified-id-admin-user) in Key Vault.
 
-## Rotate signing keys
+## Rotate the signing keys
 
-The public keys are available in the decentralized identifier (DID) document for anyone in need of verifying signatures produced by an issuer. For an authority using the did:web method, the DID document is available at `https://contoso.com/.well-known/did.json`, where contoso.com is an example. This means that Verified ID shouldn't start signing by using the new key until an updated version is publicly available on the web server. If you're using a multiregion deployment, perhaps with Azure Content Delivery Network, it might take some time for your deployment process to get the updated `did.json` in place.
+The public keys are available in the decentralized identifier (DID) document for anyone who needs to verify signatures produced by an issuer. For an authority using the `did:web` method, the DID document is available at `https://contoso.com/.well-known/did.json`, where contoso.com is an example.
+
+Verified ID shouldn't start signing by using the new key until an updated version is publicly available on the web server. If you're using a multiregion deployment, perhaps with Azure Content Delivery Network, it might take some time for your deployment process to get the updated `did.json` in place.
 
 To help admins perform rotation of signing keys without any service disruption, the process of rotation follows these steps:
 
-1.	Call the [signingKeys/rotate](admin-api.md#rotate-signing-key) API to create a new signing key in Key Vault. The access token in the call must be for an admin user with access to keys in the key vault. This action sets a new **Current** key in the key vault. The previous key is moved to older keys, but it can still be enabled. The response is the authority JSON object with the attribute `didDocumentStatus` having an `outOfSync` value, which indicates that there's a discrepancy between Key Vault and the publicly available `did.json` document.
+1. Call the [signingKeys/rotate](admin-api.md#rotate-signing-key) API to create a new signing key in Key Vault. The access token in the call must be for an admin user with access to keys in the key vault. This action sets a new **Current** key in the key vault. The previous key is moved to older keys, but it can still be enabled. The response is the authority JSON object with the attribute `didDocumentStatus` having an `outOfSync` value, which indicates that there's a discrepancy between Key Vault and the publicly available `did.json` document.
 
     :::image type="content" source="media/how-to-rotate-keys/new-key-in-key-vault.png" alt-text="Screenshot that shows a new key in Key Vault.":::
-1.	Go to [Setup](https://entra.microsoft.com/#view/Microsoft_AAD_DecentralizedIdentity/SetupBlade) in the Verified ID portal. Select **Register Decentralized ID** and copy or download the updated `did.json` file. It now contains the new and the old keys.
+1. Go to [Setup](https://entra.microsoft.com/#view/Microsoft_AAD_DecentralizedIdentity/SetupBlade) in the Verified ID portal. Select **Register Decentralized ID** and copy or download the updated `did.json` file. It now contains the new and the old keys.
 
     :::image type="content" source="media/how-to-register-didwebsite/how-to-register-didwebsite-diddoc.png" alt-text="Screenshot that shows did.json.":::
-1.	Replace `did.json` on all web servers where it was previously deployed. If you edited it manually, make sure it still has valid JSON syntax by using a tool like `https://jsonformatter.org/`. Before you continue, make sure that you can retrieve the new `did.json` document from the internet with a browser.
+1. Replace `did.json` on all web servers where it was previously deployed. If you edited it manually, make sure it still has valid JSON syntax by using a tool like `https://jsonformatter.org/`. Before you continue, make sure that you can retrieve the new `did.json` document from the internet with a browser.
 
-1.	Call the [synchronizeWithDidDocument](admin-api.md#synchronize-with-did-document) API to start using the new signing key. This API call validates that Key Vault and the public `did.json` document match. If they match, the Verified ID authority starts signing by using the new key in Key Vault. The `didDocumentStatus` in the returned authority JSON object has a value of `published`. If the value still is `outOfSync`, there's a discrepancy between Key Vault and the `did.json` document and the previous key is still used for signing.
+1. Call the [synchronizeWithDidDocument](admin-api.md#synchronize-with-did-document) API to start using the new signing key. This API call validates that Key Vault and the public `did.json` document match. If they match, the Verified ID authority starts signing by using the new key in Key Vault. The `didDocumentStatus` in the returned authority JSON object has a value of `published`. If the value still is `outOfSync`, there's a discrepancy between Key Vault and the `did.json` document and the previous key is still used for signing.
 
 ## Do I need to rotate keys in Verified ID?
 
@@ -56,7 +58,7 @@ If a key that was used to sign an issued Verified ID credential isn't in the pub
 
 **First:** Verified ID has a limit of 10 keys that can be used internally. They comprise one current key and nine previous keys. If Key Vault contains 12 keys, Verified ID only loads and uses the first 10. You can't manually edit the `did.json` document to add old keys because that leads to a mismatch between what Verified ID loads and what the `did.json` document holds. Trying to call the [synchronizeWithDidDocument](admin-api.md#synchronize-with-did-document) in this case results in `didDocumentStatus` returning `outOfSync`.
 
-For example, say you have 12 keys in Key Vault and you want Verified ID to not load keys 8 and 9 in the list of keys. You must disable keys 8 and 9 in Key Vault and then perform [steps 2-4](#steps-to-rotate-signing-keys).
+For example, say you have 12 keys in Key Vault and you want Verified ID to not load keys 8 and 9 in the list of keys. You must disable keys 8 and 9 in Key Vault and then perform [steps 2-4](#rotate-the-signing-keys).
 
 **Second:** In this example, if you rotate keys 12 times, Verified ID doesn't load the two oldest keys anymore. Any Verified ID credential issued using those two keys can't be verified anymore.
 
@@ -65,7 +67,7 @@ For example, say you have 12 keys in Key Vault and you want Verified ID to not l
 
 ## Can I rotate keys directly in Key Vault instead of calling the Verified ID API?
 
-You shouldn't use the rotate feature in Key Vault's admin portal because Verified ID performs more tasks when it calls the /signingKeys/rotate API than just rotating the key in Key Vault.
+You shouldn't use the rotate feature in Key Vault's admin portal. Verified ID performs more tasks when it calls the /signingKeys/rotate API than just rotating the key in Key Vault.
 
 ## Next steps
 
