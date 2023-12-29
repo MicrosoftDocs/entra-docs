@@ -23,7 +23,7 @@ Opting out is a one-way operation. After the process finishes, your Microsoft En
 
 - Enable new service capabilities.
 - Reset your service configuration.
-- Switch between trust systems ION and Web.
+- Switch between trust systems ION and web.
 
 ## What happens to your data?
 

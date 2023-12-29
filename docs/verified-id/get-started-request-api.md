@@ -421,7 +421,7 @@ Presentation request for a credential with a certain type and issuer:
 }
 ```
 
-# [with claims constraints](#tab/constraints)
+# [With claims constraints](#tab/constraints)
 
 Presentation request with [claims constraints](presentation-request-api.md#constraints-type):
 
@@ -466,7 +466,7 @@ Presentation request with [claims constraints](presentation-request-api.md#const
 }
 ```
 
-# [with FaceCheck](#tab/facecheck)
+# [With FaceCheck](#tab/facecheck)
 
 Presentation request with FaceCheck:
 

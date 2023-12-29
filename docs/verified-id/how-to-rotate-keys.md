@@ -58,7 +58,7 @@ If a key that was used to sign an issued Verified ID credential isn't in the pub
 
 For example, say you have 12 keys in Key Vault and you want Verified ID to not load keys 8 and 9 in the list of keys. You must disable keys 8 and 9 in Key Vault and then perform [steps 2-4](#steps-to-rotate-signing-keys).
 
-**Second:** For example, if you rotate keys 12 times, Verified ID doesn't load the two oldest keys anymore. Any Verified ID credential issued using those two keys can't be verified anymore.
+**Second:** In this example, if you rotate keys 12 times, Verified ID doesn't load the two oldest keys anymore. Any Verified ID credential issued using those two keys can't be verified anymore.
 
 >[!NOTE]
 > Your key rotation policy needs to be coordinated with the lifetime of issued Verified ID credentials so that credentials are renewed or reissued before an old key is retired. An example of a solution that doesn't work is issuing Verified ID credentials with an expiration date 12 months away and at the same time having a key rotation policy to rotate keys every month. Such a solution is in trouble the last two months of the year because old keys aren't available anymore.
