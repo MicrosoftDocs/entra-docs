@@ -45,6 +45,3 @@ Welcome to what's new in Microsoft Entra ID for customers documentation. This ar
 
 - [Customize the neutral branding in your customer tenant (preview)](how-to-customize-branding-customers.md) - Editorial updates
 - [Customize the language of the authentication experience](how-to-customize-languages-customers.md) - Editorial updates
-
-
-

@@ -40,8 +40,3 @@ Welcome to what's new in Microsoft Entra External ID documentation. This article
 - [Microsoft Entra External ID documentation](index.yml) - Editorial updates
 - [Set up tenant restrictions v2](tenant-restrictions-v2.md) - Added migration section to Tenant restrictions v2
 - [Configure external collaboration settings](external-collaboration-settings-configure.md) - Replaced MSOL/Azure AD references with MS Graph PowerShell references
-
-
-
-
-
