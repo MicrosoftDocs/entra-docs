@@ -1,6 +1,6 @@
 ---
 title: Link your domain to your decentralized identifier (DID) - Microsoft Entra Verified ID
-description: Learn how to link your domain to your decentralized identifier.
+description: Learn how to link your domain to your decentralized identifier (DID).
 documentationCenter: ''
 author: barclayn
 manager: amycolannino
@@ -13,7 +13,7 @@ ms.author: barclayn
 #Customer intent: As an administrator, I want to link my domain to our decentralized identifier.
 ---
 
-# Verify domain ownership to your decentralized identifier (DID)
+# Verify domain ownership to your decentralized identifier
 
 In this article, we review the steps needed to verify your ownership of the domain name you're using for your decentralized identifier (DID).
 

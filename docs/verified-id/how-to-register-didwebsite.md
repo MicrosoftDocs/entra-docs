@@ -24,7 +24,7 @@ In this article, we go over the steps to register your decentralized ID (DID) fo
 
 ## Why do I need to register my decentralized ID?
 
-For the web trust system, you need to register your decentralized ID to be able to issue and verify your credentials. You have to make this information available on your website and complete this registration. Otherwise, your public key isn't made public.
+For the web trust system, you need to register your DID to be able to issue and verify your credentials. You have to make this information available on your website and complete this registration. Otherwise, your public key isn't made public.
 
 ## How do I register my decentralized ID?
 
@@ -56,4 +56,4 @@ The portal verifies that `did.json` is reachable and correct when you select **R
 
 ## Next steps
 
-- [Tutorial for issue a verifiable credential](verifiable-credentials-configure-issuer.md)
+- [Tutorial for issuing a verifiable credential](verifiable-credentials-configure-issuer.md)
