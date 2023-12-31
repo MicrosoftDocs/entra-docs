@@ -104,7 +104,7 @@ There are two ways to get your AAGUID. You can either ask your security key prov
 1. Choose **USB device** or **NFC device**.
 1. Have your key ready and choose **Next**. If you're using Chrome or Edge, the browser might prioritize registration of a passkey that's stored on a mobile device over a passkey that's stored on a security key. 
 
-   - Beginning with Windows 11 version 23H2, you can sign in with your work or school account and click **Next**. Below **More choices**, choose **Security key** and click **Next**.
+   - Beginning with Windows 11 version 23H2, the OS will show the following prompt during sign-in. Below **More choices**, choose **Security key** and click **Next**.
 
      :::image type="content" border="true" source="./media/howto-authentication-passwordless-security-key/save-security-key.png" alt-text="Screenshot of option to save a security key on Windows 11 version 23 H2."::: 
 
