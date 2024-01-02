@@ -25,7 +25,7 @@ In this document, you create a custom attribute set, assign a custom security at
 
 ## Assign roles
 
-Custom security attributes are security sensitive and can only be managed by delegated users. Even global administrators don't have default permissions for custom security attributes. One or more of the following roles should be assigned to the users who manage or report on these attributes.
+Custom security attributes are security sensitive and can only be managed by delegated users. Even Global Administrators don't have default permissions for custom security attributes. One or more of the following roles should be assigned to the users who manage or report on these attributes.
 
 | Role name | Description |
 | --- | --- |
