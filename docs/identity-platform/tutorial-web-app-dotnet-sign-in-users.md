@@ -76,7 +76,7 @@ After installing the NuGet packages and adding necessary code for authentication
 
 ### [Visual Studio Code](#tab/visual-studio-code)
 
-1. In the Explorer bar, select **Pages**, right-click **Shared**, and select **New File**. Give it the name *_LoginPartial.cshtml*.
+In the Explorer bar, select **Pages**, right-click **Shared**, and select **New File**. Give it the name *_LoginPartial.cshtml*.
 
 ### [Visual Studio for Mac](#tab/visual-studio-for-mac)
 
