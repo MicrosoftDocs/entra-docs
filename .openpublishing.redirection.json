@@ -81,22 +81,22 @@
       "redirect_document_id": false
     },
     {
-      "source_path_from_root": "docs/identity-platform/web-app-tutorial-01-register-application.md",
+      "source_path_from_root": "/docs/identity-platform/web-app-tutorial-01-register-application.md",
       "redirect_url": "/entra/identity-platform/tutorial-web-app-dotnet-register-app",
       "redirect_document_id": false
     },
     {
-      "source_path_from_root": "docs/identity-platform/web-app-tutorial-02-prepare-application.md",
+      "source_path_from_root": "/docs/identity-platform/web-app-tutorial-02-prepare-application.md",
       "redirect_url": "/entra/identity-platform/tutorial-web-app-dotnet-prepare-app",
       "redirect_document_id": false
     },
     {
-      "source_path_from_root": "docs/identity-platform/web-app-tutorial-03-sign-in-users.md",
+      "source_path_from_root": "/docs/identity-platform/web-app-tutorial-03-sign-in-users.md",
       "redirect_url": "/entra/identity-platform/tutorial-web-app-dotnet-sign-in-users",
       "redirect_document_id": false
     },
     {
-      "source_path_from_root": "docs/identity-platform/web-app-tutorial-04-call-web-api.md",
+      "source_path_from_root": "/docs/identity-platform/web-app-tutorial-04-call-web-api.md",
       "redirect_url": "/entra/identity-platform/tutorial-web-app-dotnet-call-api",
       "redirect_document_id": false
     }
