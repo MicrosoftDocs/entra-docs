@@ -25,7 +25,7 @@ In this tutorial:
 
 ## Prerequisites
 
-* Completion of the prerequisites and steps in [Tutorial: Prepare an application for authentication](web-app-tutorial-02-prepare-application.md).
+* Completion of the prerequisites and steps in [Tutorial: Prepare an application for authentication](tutorial-web-app-dotnet-prepare-app.md).
 
 ## Install identity packages
 

@@ -26,7 +26,7 @@ In this tutorial:
 
 ## Prerequisites
 
-* Completion of the prerequisites and steps in [Tutorial: Register an application with the Microsoft identity platform](web-app-tutorial-01-register-application.md).
+* Completion of the prerequisites and steps in [Tutorial: Register an application with the Microsoft identity platform](tutorial-web-app-dotnet-register-app.md).
 * You can download an IDE used in this tutorial [here](https://visualstudio.microsoft.com/downloads).
   * Visual Studio 2022
   * Visual Studio Code
@@ -124,7 +124,7 @@ The values recorded earlier will be used in *appsettings.json* to configure the 
 
 1. In your IDE, open *appsettings.json* and replace the file contents with the following snippet:
   
-   :::code language="json" source="~/../ms-identity-docs-code-dotnet/web-app-aspnet/appsettings.json" :::
+   :::code language="json" source="~/../ms-identity-docs-code-dotnet/web-app-aspnet/appsettings.json":::
 
     * `Instance` - The authentication endpoint. Check with the different available endpoints in [National clouds](authentication-national-cloud.md#azure-ad-authentication-endpoints).
     * `TenantId` - The identifier of the tenant where the application is registered. Replace the text in quotes with the **Directory (tenant) ID** value that was recorded earlier from the overview page of the registered application.

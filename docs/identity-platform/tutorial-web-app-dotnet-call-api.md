@@ -48,15 +48,15 @@ In this tutorial:
 
 #### [.NET 6.0](#tab/dotnet6)
 
-    ```powershell
-    dotnet run
-    ```
+```powershell
+dotnet run
+```
 
 #### [.NET 7.0](#tab/dotnet7)
 
-    ```powershell
-    dotnet run --launch-profile https
-    ```
+```powershell
+dotnet run --launch-profile https
+```
 
 ### [Visual Studio for Mac](#tab/visual-studio-for-mac)
 

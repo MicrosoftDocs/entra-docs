@@ -18,6 +18,7 @@ To interact with the Microsoft identity platform, Microsoft Entra ID must be mad
 In this tutorial:
 
 > [!div class="checklist"]
+
 > * Register a web application in a tenant
 > * Record the web application's unique identifiers
 
@@ -41,7 +42,7 @@ To complete registration, provide the application a name and specify the support
 1. Select **New registration**.
 1. Enter a **Name** for the application, such as *NewWebApp1*.
 1. For Supported account types, select **Accounts in this organizational directory only**. For information on different account types, select the **Help me choose** option.
-    - The **Redirect URI (optional)** will be configured at a later stage.
+    * The **Redirect URI (optional)** will be configured at a later stage.
 1. Select **Register**.
 
     :::image type="content" source="./media/web-app-tutorial-01-register-application/register-application.png" alt-text="Screenshot of process to enter a name and select the account type.":::
