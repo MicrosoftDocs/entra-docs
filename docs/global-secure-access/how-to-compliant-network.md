@@ -5,7 +5,7 @@ description: Learn how to require known compliant network locations in order to 
 ms.service: network-access
 ms.subservice: 
 ms.topic: how-to
-ms.date: 12/14/2023
+ms.date: 01/02/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -14,7 +14,7 @@ ms.reviewer: mamkumar
 ---
 # Enable compliant network check with Conditional Access
 
-Organizations who use Conditional Access along with the Global Secure Access preview, can prevent malicious access to Microsoft apps, third-party SaaS apps, and private line-of-business (LoB) apps using multiple conditions to provide defense-in-depth. These conditions may include device compliance, location, and more to provide protection against user identity or token theft. Global Secure Access introduces the concept of a compliant network within Conditional Access and continuous access evaluation. This compliant network check ensures users connect from a verified network connectivity model for their specific tenant and are compliant with security policies enforced by administrators.
+Organizations who use Conditional Access along with the Global Secure Access preview, can prevent malicious access to Microsoft apps, third-party SaaS apps, and private line-of-business (LoB) apps using multiple conditions to provide defense-in-depth. These conditions might include device compliance, location, and more to provide protection against user identity or token theft. Global Secure Access introduces the concept of a compliant network within Conditional Access and continuous access evaluation. This compliant network check ensures users connect from a verified network connectivity model for their specific tenant and are compliant with security policies enforced by administrators.
 
 The Global Secure Access Client installed on devices or users behind configured remote networks allows administrators to secure resources behind a compliant network with advanced Conditional Access controls. This compliant network feature makes it easier for administrators to manage and maintain, without having to maintain a list of all of an organization's locations IP addresses. Administrators don't need to hairpin traffic through their organization's VPN egress points to ensure security.
 
@@ -26,7 +26,7 @@ This compliant network check is specific to each tenant.
   - For example: Contoso can protect their services like Exchange Online and SharePoint Online behind their compliant network check to ensure only Contoso users can access these resources.
   - If another organization like Fabrikam was using a compliant network check, they wouldn't pass Contoso's compliant network check.
 
-The compliant network is different than [IPv4, IPv6, or geographic locations](../identity/conditional-access/location-condition.md) you may configure in Microsoft Entra ID. No administrator upkeep is required.
+The compliant network is different than [IPv4, IPv6, or geographic locations](../identity/conditional-access/location-condition.md) you might configure in Microsoft Entra ID. No administrator upkeep is required.
 
 ## Prerequisites
 
@@ -71,7 +71,7 @@ The following example shows this type of policy. In addition, you can enforce to
    1. Under **Exclude**, select **Users and groups** and choose your organization's [emergency access or break-glass accounts](#user-exclusions).
 1. Under **Target resources** > **Include**, and select **Select apps**.
    1. Choose **Office 365 Exchange Online**, and/or **Office 365 SharePoint Online**, and/or any of your third-party SaaS apps.
-   1. The specific *Office 365* cloud app in the app picker is currently NOT supported, so do not select this cloud app.
+   1. The specific *Office 365* cloud app in the app picker is currently NOT supported, so don't select this cloud app.
 1. Under **Conditions** > **Location**.
    1. Set **Configure** to **Yes**
    1. Under **Include**, select **Any location**.
