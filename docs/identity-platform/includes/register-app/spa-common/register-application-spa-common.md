@@ -4,7 +4,7 @@ author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
 ms.custom:
-ms.date: 12/13/2023
+ms.date: 01/02/2024
 ms.reviewer:
 ms.service: active-directory
 ms.subservice: develop
@@ -21,7 +21,7 @@ To complete registration, provide the application a name, specify the supported 
 1. For **Supported account types**, select **Accounts in this organizational directory only**. For information on different account types, select the **Help me choose** option.
 1. Select **Register**.
 
-    :::image type="content" source="../../../media/common-register-application/register-spa-common.png" alt-text="Screenshot that shows how to enter a name and select the account type in the Azure portal." lightbox="../../../media/common-register-application/record-identifiers-spa-common.png":::
+    :::image type="content" source="../../../media/common-register-application/register-spa-common.png" alt-text="Screenshot that shows how to enter a name and select the account type in the Azure portal." lightbox="../../../media/common-register-application/register-spa-common.png":::
 
 1. The application's **Overview** pane is displayed when registration is complete. Record the **Directory (tenant) ID** and the **Application (client) ID** to be used in your application source code.
 
