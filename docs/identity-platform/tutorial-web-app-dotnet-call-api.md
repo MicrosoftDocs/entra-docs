@@ -44,19 +44,19 @@ Start the application by selecting **Start without debugging**.
 
 ### [Visual Studio Code](#tab/visual-studio-code)
 
-Start the application by typing the following in the terminal:
+1. Start the application by typing the following in the terminal:
 
-#### [.NET 6.0](#tab/dotnet6)
+    #### [.NET 6.0](#tab/dotnet6)
 
-```powershell
-dotnet run
-```
+    ```powershell
+    dotnet run
+    ```
 
-#### [.NET 7.0](#tab/dotnet7)
+    #### [.NET 7.0](#tab/dotnet7)
 
-```powershell
-dotnet run --launch-profile https
-```
+    ```powershell
+    dotnet run --launch-profile https
+    ```
 
 ### [Visual Studio for Mac](#tab/visual-studio-for-mac)
 

@@ -13,7 +13,7 @@ ms.topic: tutorial
 
 # Tutorial: Register an application with the Microsoft identity platform
 
-To interact with the Microsoft identity platform, Microsoft Entra ID must be made aware of the application you create. This tutorial shows you how to register an application in a tenant on the Azure portal.
+To interact with the Microsoft identity platform, Microsoft Entra ID must be made aware of the application you create. This tutorial shows you how to register a web application in a tenant on the Microsoft Entra admin center.
 
 In this tutorial:
 
@@ -25,7 +25,7 @@ In this tutorial:
 ## Prerequisites
 
 * An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/).
-* This Azure account must have permissions to manage applications. Use any of the following roles needed to register the application:
+* This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
   * Application administrator
   * Application developer
   * Cloud application administrator
