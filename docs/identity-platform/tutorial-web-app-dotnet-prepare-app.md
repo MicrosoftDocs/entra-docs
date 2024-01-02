@@ -4,7 +4,7 @@ description: Prepare an ASP.NET Core application for authentication using Visual
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.date: 02/09/2023
+ms.date: 01/02/2024
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: tutorial
@@ -18,6 +18,7 @@ After registration is complete, an ASP.NET web application can be created using 
 In this tutorial:
 
 > [!div class="checklist"]
+
 > * Create an **ASP.NET Core Web App**
 > * Create a self-signed certificate
 > * Configure the settings for the application
@@ -27,9 +28,9 @@ In this tutorial:
 
 * Completion of the prerequisites and steps in [Tutorial: Register an application with the Microsoft identity platform](web-app-tutorial-01-register-application.md).
 * You can download an IDE used in this tutorial [here](https://visualstudio.microsoft.com/downloads).
-    - Visual Studio 2022
-    - Visual Studio Code
-    - Visual Studio 2022 for Mac
+  * Visual Studio 2022
+  * Visual Studio Code
+  * Visual Studio 2022 for Mac
 * A minimum requirement of [.NET Core 6.0 SDK](https://dotnet.microsoft.com/download/dotnet).
 
 ## Create an ASP.NET Core project
@@ -99,6 +100,7 @@ The use of certificates is a suggested way of securing communication between cli
     ```powershell
     dotnet dev-certs https -ep ./certificate.crt --trust
     ```
+
 ---
 
 ### Upload certificate to the portal
@@ -149,4 +151,4 @@ The values recorded earlier will be used in *appsettings.json* to configure the 
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Tutorial: Add sign-in to an application](web-app-tutorial-03-sign-in-users.md)
+> [Tutorial: Add sign-in to an application](tutorial-web-app-dotnet-sign-in-users.md)

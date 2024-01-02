@@ -4,7 +4,7 @@ description: Call an API and display the results.
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.date: 02/09/2023
+ms.date: 01/02/2024
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: tutorial
@@ -18,12 +18,13 @@ The application can now be configured to call an API. For the purposes of this t
 In this tutorial:
 
 > [!div class="checklist"]
+
 > * Call the API and display the results
 > * Test the application
 
 ## Prerequisites
 
-* Completion of the prerequisites and steps in [Tutorial: Add sign in to an application](web-app-tutorial-03-sign-in-users.md).
+* Completion of the prerequisites and steps in [Tutorial: Add sign in to an application](tutorial-web-app-dotnet-sign-in-users.md).
 
 ## Call the API and display the results
 
@@ -38,36 +39,39 @@ In this tutorial:
 ## Test the application
 
 ### [Visual Studio](#tab/visual-studio)
+
 1. Start the application by selecting **Start without debugging**.
 
 ### [Visual Studio Code](#tab/visual-studio-code)
+
 1. Start the application by typing the following in the terminal:
 
-    #### [.NET 6.0](#tab/dotnet6)
+#### [.NET 6.0](#tab/dotnet6)
 
     ```powershell
     dotnet run
     ```
 
-    #### [.NET 7.0](#tab/dotnet7)
+#### [.NET 7.0](#tab/dotnet7)
 
     ```powershell
     dotnet run --launch-profile https
     ```
 
 ### [Visual Studio for Mac](#tab/visual-studio-for-mac)
+
 1. Start the application by selecting the **Play** icon.
 
 ---
 
-2. Depending on your IDE, you may need to enter the application URI into the browser, for example `https://localhost:7100`. After the sign in window appears, select the account in which to sign in with. Ensure the account matches the criteria of the app registration.
+1. Depending on your IDE, you may need to enter the application URI into the browser, for example `https://localhost:7100`. After the sign in window appears, select the account in which to sign in with. Ensure the account matches the criteria of the app registration.
 
     :::image type="content" source="./media/web-app-tutorial-04-call-web-api/pick-account.png" alt-text="Screenshot depicting account options to sign in.":::
- 
+
 1. Upon selecting the account, a second window appears indicating that a code will be sent to your email address. Select **Send code**, and check your email inbox.
 
     :::image type="content" source="./media/web-app-tutorial-04-call-web-api/sign-in-send-code.png" alt-text="Screenshot depicting a screen to send a code to the user's email.":::
- 
+
 1. Open the email from the sender **Microsoft account team**, and enter the 7-digit *single-use code*. Once entered, select **Sign in**.
 
     :::image type="content" source="./media/web-app-tutorial-04-call-web-api/enter-code.png" alt-text="Screenshot depicting the single-use code sign in procedure.":::

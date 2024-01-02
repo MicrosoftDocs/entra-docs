@@ -56,4 +56,4 @@ To complete registration, provide the application a name and specify the support
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Tutorial: Prepare a web application for authentication](web-app-tutorial-02-prepare-application.md)
+> [Tutorial: Prepare a web application for authentication](tutorial-web-app-dotnet-prepare-app.md)
