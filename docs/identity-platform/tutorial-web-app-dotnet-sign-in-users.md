@@ -18,7 +18,7 @@ In the [previous tutorial](tutorial-web-app-dotnet-prepare-app.md), an ASP.NET C
 In this tutorial:
 
 > [!div class="checklist"]
-
+>
 > * Identify and install the NuGet packages that are needed for authentication
 > * Implement authentication in the code
 > * Add the sign in and sign out experiences

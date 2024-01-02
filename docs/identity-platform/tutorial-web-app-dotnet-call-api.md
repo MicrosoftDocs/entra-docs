@@ -18,7 +18,7 @@ The application can now be configured to call an API. For the purposes of this t
 In this tutorial:
 
 > [!div class="checklist"]
-
+>
 > * Call the API and display the results
 > * Test the application
 
@@ -40,11 +40,11 @@ In this tutorial:
 
 ### [Visual Studio](#tab/visual-studio)
 
-1. Start the application by selecting **Start without debugging**.
+Start the application by selecting **Start without debugging**.
 
 ### [Visual Studio Code](#tab/visual-studio-code)
 
-1. Start the application by typing the following in the terminal:
+Start the application by typing the following in the terminal:
 
 #### [.NET 6.0](#tab/dotnet6)
 
@@ -60,7 +60,7 @@ dotnet run --launch-profile https
 
 ### [Visual Studio for Mac](#tab/visual-studio-for-mac)
 
-1. Start the application by selecting the **Play** icon.
+Start the application by selecting the **Play** icon.
 
 ---
 

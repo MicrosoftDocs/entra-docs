@@ -18,7 +18,7 @@ After registration is complete, an ASP.NET web application can be created using 
 In this tutorial:
 
 > [!div class="checklist"]
-
+>
 > * Create an **ASP.NET Core Web App**
 > * Create a self-signed certificate
 > * Configure the settings for the application
