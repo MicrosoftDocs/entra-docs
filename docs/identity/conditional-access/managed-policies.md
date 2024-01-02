@@ -53,7 +53,7 @@ This policy targets Microsoft Entra ID P1 and P2 tenants where security defaults
 
 This policy covers users with [per-user MFA](/azure/active-directory/authentication/howto-mfa-userstates), a configuration that Microsoft no longer recommends. These users are targeted by Conditional Access and required to perform multifactor authentication for all cloud apps.
 
-This policy targets Microsoft Entra ID P1 and P2 tenants where security defaults aren't enabled and there are less than 500 per-user MFA enabled/enforced users. 
+This policy targets licensed users with Microsoft Entra ID P1 and P2, where security defaults policy isn't enabled and there are less than 500 per-user MFA enabled/enforced users. 
 
 ### Multifactor authentication and reauthentication for risky sign-ins
 

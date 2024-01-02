@@ -4,7 +4,7 @@ description: Add sign in to an ASP.NET Core application using Visual Studio.
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.date: 02/09/2023
+ms.date: 01/02/2024
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: tutorial
@@ -13,18 +13,19 @@ ms.topic: tutorial
 
 # Tutorial: Add sign in to an application
 
-In the [previous tutorial](web-app-tutorial-02-prepare-application.md), an ASP.NET Core project was created and configured for authentication. This tutorial will install the required packages and add code that implements authentication to the sign in and sign out experience.
+In the [previous tutorial](tutorial-web-app-dotnet-prepare-app.md), an ASP.NET Core project was created and configured for authentication. This tutorial will install the required packages and add code that implements authentication to the sign in and sign out experience.
 
 In this tutorial:
 
 > [!div class="checklist"]
+>
 > * Identify and install the NuGet packages that are needed for authentication
 > * Implement authentication in the code
 > * Add the sign in and sign out experiences
 
 ## Prerequisites
 
-* Completion of the prerequisites and steps in [Tutorial: Prepare an application for authentication](web-app-tutorial-02-prepare-application.md).
+* Completion of the prerequisites and steps in [Tutorial: Prepare an application for authentication](tutorial-web-app-dotnet-prepare-app.md).
 
 ## Install identity packages
 
@@ -37,13 +38,13 @@ Identity related **NuGet packages** must be installed in the project for authent
 
 ### [Visual Studio Code](#tab/visual-studio-code)
 
-1. In the Visual Studio Code terminal, navigate to *NewWebAppLocal*. 
+1. In the Visual Studio Code terminal, navigate to *NewWebAppLocal*.
 1. Enter the following commands to install the relevant NuGet packages:
 
     ```powershell
     dotnet add package Microsoft.Identity.Web.UI
     dotnet add package Microsoft.Identity.Web.Diagnostics
-    ``` 
+    ```
 
 ### [Visual Studio for Mac](#tab/visual-studio-for-mac)
 
@@ -52,12 +53,13 @@ Identity related **NuGet packages** must be installed in the project for authent
 1. Modify your search to read **Microsoft.Identity.Web.UI** and select **Add Packages**.
 1. In the pop-up, ensure the correct project is selected, then select **Ok**.
 1. Select **Accept** if additional **License Acceptance** windows appear.
+
 ---
 
 ## Implement authentication and acquire tokens
 
 1. Open *Program.cs* and replace the entire file contents with the following snippet:
-   
+
    :::code language="csharp" source="~/../ms-identity-docs-code-dotnet/web-app-aspnet/Program.cs" :::
 
 ## Add the sign in and sign out experience
@@ -74,13 +76,14 @@ After installing the NuGet packages and adding necessary code for authentication
 
 ### [Visual Studio Code](#tab/visual-studio-code)
 
-1. In the Explorer bar, select **Pages**, right-click **Shared**, and select **New File**. Give it the name *_LoginPartial.cshtml*.
+In the Explorer bar, select **Pages**, right-click **Shared**, and select **New File**. Give it the name *_LoginPartial.cshtml*.
 
 ### [Visual Studio for Mac](#tab/visual-studio-for-mac)
 
 1. Expand **Pages**, right-click **Shared**, and then select **Add > Razor page**.
 1. Select **Razor Page - Empty**, and then select **Add**.
 1. Enter *_LoginPartial.cshtml* for the name, and then select **Add**.
+
 ---
 
 ### Edit the *_LoginPartial.cshtml* file
@@ -96,4 +99,4 @@ After installing the NuGet packages and adding necessary code for authentication
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Tutorial: Call an API and display results](web-app-tutorial-04-call-web-api.md)
+> [Tutorial: Call an API and display results](tutorial-web-app-dotnet-call-api.md)

@@ -24,6 +24,7 @@ This tutorial describes the steps you need to do in both Cerby and Microsoft Ent
 > * Create users in Cerby
 > * Remove users in Cerby when they do not require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Cerby
+> * Provision groups and group memberships in Better Stack.
 > * [Single sign-on](cerby-tutorial.md) to Cerby (recommended).
 
 ## Prerequisites
@@ -122,6 +123,16 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |name.familyName|String||&check;
    |externalId|String||
 
+1. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Cerby**.
+
+1. Review the group attributes that are synchronized from Microsoft Entra ID to Cerby in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Cerby for update operations. Select the **Save** button to commit any changes.
+
+   |Attribute|Type|Supported for filtering|Required by Cerby|
+   |---|---|---|---|
+   |displayName|String|&check;|&check;
+   |externalId|String||
+   |members|Reference||
+
 1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 1. To enable the Microsoft Entra provisioning service for Cerby, change the **Provisioning Status** to **On** in the **Settings** section.
@@ -154,6 +165,10 @@ If you need to regenerate the SCIM API authentication token, complete the follow
 
 	>[!NOTE]
 	>The Cerby team is currently developing a self-service solution for regenerating the SCIM API authentication token. To regenerate the token, the Cerby team members must validate their identity.
+
+## Change log
+
+* 01/02/2024 - Added support for **Group Provisioning**.
 
 ## More resources
 
