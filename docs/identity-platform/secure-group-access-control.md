@@ -10,7 +10,8 @@ ms.reviewer: jodah
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-#Customer intent: As a developer, I want to learn how to most securely use Microsoft Entra groups to control access to resources.
+
+#Customer intent: As an application developer, I want to manage access to my application using groups in Microsoft Entra ID, so that I can control and minimize access to resources.
 ---
 
 # Secure access control using groups in Microsoft Entra ID
