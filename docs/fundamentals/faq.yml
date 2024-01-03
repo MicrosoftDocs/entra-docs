@@ -30,7 +30,7 @@ sections:
         answer: |
           To access the Microsoft Entra admin center, each user needs permissions with a valid subscription. If you don't have a paid Microsoft 365 or Microsoft Entra subscription, you will need to activate a free [Azure account](https://azure.microsoft.com/free/) or establish a paid subscription. All Azure subscriptions, whether paid or free, have a trust relationship with a Microsoft Entra tenant. All subscriptions rely on the Microsoft Entra tenant (directory) to authenticate and authorize security principals and devices. 
           
-          For more information, see [How Azure subscriptions are associated with Microsoft Entra ID](./how-subscriptions-associated-directory.md)
+          For more information, see [How Azure subscriptions are associated with Microsoft Entra ID](./how-subscriptions-associated-directory.md).
           
           
           
@@ -45,7 +45,7 @@ sections:
 
           Microsoft Entra paid services, such as Enterprise Mobility + Security (EMS) complement other Microsoft Cloud services like Microsoft 365, with comprehensive enterprise-scale development, management and security solutions.
           
-          For more information, see [The Microsoft Cloud](/microsoft-cloud)
+          For more information, see [The Microsoft Cloud](/microsoft-cloud).
   
 
 
@@ -81,7 +81,7 @@ sections:
           * *.entra.microsoft.eaglex.ic.gov
           * *.entra.microsoftonline.cn    
     
-          For more information, see [Using Microsoft Entra application proxy to publish on-premises apps for remote users](~/identity/app-proxy/what-is-application-proxy.md)
+          For more information, see [Using Microsoft Entra application proxy to publish on-premises apps for remote users](~/identity/app-proxy/what-is-application-proxy.md).
 
     
       
@@ -92,7 +92,7 @@ sections:
         answer: |
          You can usually leave an organization on your own without having to contact an administrator. However, in some cases this option won't be available and you'll need to contact your tenant admin, who can delete your account in the external organization. 
          
-         For more information, see [Leave an organization as an external user](~/external-id/leave-the-organization.md)
+         For more information, see [Leave an organization as an external user](~/external-id/leave-the-organization.md).
           
           
           
@@ -209,7 +209,7 @@ sections:
         answer: |
           With Microsoft Entra ID P1 or P2, you can add and configure any application that you want. Depending on your application's capabilities and your preferences, you can configure SSO and automated provisioning.  
           
-          For more information, see [Single sign-on SAML protocol](~/identity-platform/single-sign-on-saml-protocol.md) and [Develop and plan provisioning for a SCIM endpoint](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md)
+          For more information, see [Single sign-on SAML protocol](~/identity-platform/single-sign-on-saml-protocol.md) and [Develop and plan provisioning for a SCIM endpoint](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md).
           
           
           
@@ -232,7 +232,7 @@ sections:
         answer: |
           Microsoft Entra ID supports many standardized protocols for authentication and authorization, such as SAML 2.0, OpenID Connect, OAuth 2.0, and WS-Federation. Microsoft Entra ID also supports password vaulting and automated sign-in capabilities for apps that only support forms-based authentication.  
           
-          For more information, see [Identity fundamentals](~/fundamentals/identity-fundamental-concepts.md) and [Single sign-on for applications in Microsoft Entra ID](~/identity/enterprise-apps/what-is-single-sign-on.md)
+          For more information, see [Identity fundamentals](~/fundamentals/identity-fundamental-concepts.md) and [Single sign-on for applications in Microsoft Entra ID](~/identity/enterprise-apps/what-is-single-sign-on.md).
           
           
           
@@ -268,4 +268,4 @@ sections:
         answer: |
            No. Microsoft Entra ID doesn't support the Lightweight Directory Access Protocol (LDAP) protocol or Secure LDAP directly. However, it's possible to enable Microsoft Entra Domain Services instance on your Microsoft Entra tenant with properly configured network security groups through Azure Networking to achieve LDAP connectivity. 
            
-           For more information, see [Configure secure LDAP for a Microsoft Entra Domain Services managed domain](/entra/identity/domain-services/tutorial-configure-ldaps)
+           For more information, see [Configure secure LDAP for a Microsoft Entra Domain Services managed domain](/entra/identity/domain-services/tutorial-configure-ldaps).

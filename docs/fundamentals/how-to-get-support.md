@@ -43,7 +43,7 @@ When asking a question, we recommend you follow these best practices:
 - View the *Questions* and *Tags* pages first to search for product and service-related keywords, as you may find a solution that has already been posted. Consider using the filter option to narrow the search results.
 - Submit your questions in the language of the Q&A site you are on. This helps ensure that our community of experts can provide accurate and helpful answers to your question. 
 - Use tags when posting a question. You can select up to 5 tags to describe your question. Choose tags that relate most closely to your scenario. This is important for discoverability of your question among the community experts on Q&A. 
-- Be sure to include all the details of your issue in the **Question details** field. Start by asking *one* question in the body to ensure the highest quality answers. Next, be sure to include the following: 
+- Be sure to include all the details of your issue in the **Question details** field. Start by asking *one* question in the body to ensure the highest quality answers. Next, be sure to include the following details in your request: 
    - A summary of what you are attempting to accomplish
    - Any steps that you've already been taken
    - Any relevant error messages
