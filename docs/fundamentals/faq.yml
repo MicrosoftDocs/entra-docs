@@ -41,7 +41,7 @@ sections:
           
           All users who are set up to use Microsoft Cloud services are defined as user accounts in one or more Microsoft Entra ID instances, providing these accounts access to Microsoft Entra ID.
           
-          For more information, see [Microsoft Entra Plans & Pricing](~/security/business/microsoft-entra-pricing.md)
+          For more information, see [Microsoft Entra Plans & Pricing](https://www.microsoft.com/security/business/microsoft-entra-pricing)
 
           Microsoft Entra paid services, such as Enterprise Mobility + Security (EMS) complement other Microsoft Cloud services like Microsoft 365, with comprehensive enterprise-scale development, management and security solutions.
           
