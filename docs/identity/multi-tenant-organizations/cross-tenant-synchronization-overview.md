@@ -189,7 +189,7 @@ What user attributes can be synchronized?
 
 What attributes can't be synchronized?
 
-- Attributes including (but not limited to) managers, photos, custom security attributes, and user attributes outside of the directory can't be synchronized by cross-tenant synchronization.
+- Attributes including (but not limited to) photos, custom security attributes, and user attributes outside of the directory can't be synchronized by cross-tenant synchronization.
 
 Can I control where user attributes are sourced/managed?
 
