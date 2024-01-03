@@ -152,7 +152,7 @@ Taking into account our learnings in the use of Conditional Access and supportin
 
 Creating a policy for each app isn’t efficient and leads to difficult administration. Conditional Access has a limit of 195 policies per-tenant. We recommend that you **analyze your apps and group them into applications that have the same resource requirements for the same users**. For example, if all Microsoft 365 apps or all HR apps have the same requirements for the same users, create a single policy and include all the apps to which it applies.
 
-Conditional Access policies are contained in a JSON file and that file is bound by a size limit we don't expect a single policy to grow beyond. If you use a long list of GUIDs in your policy, you might hit this limit.  If you encounter these limits, we recommend alternatives like:
+Conditional Access policies are contained in a JSON file and that file is bound by a size limit we don't expect a single policy to grow beyond. If you use a long list of GUIDs in your policy, you might hit this limit. If you encounter these limits, we recommend alternatives like:
 
 * [Use groups or roles to include or exclude Users instead of listing each user individually](concept-conditional-access-users-groups.md).
 * [Use filter for applications to include or exclude applications instead of individually specifying them](concept-filter-for-applications.md).
