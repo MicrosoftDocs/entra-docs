@@ -128,7 +128,7 @@ $roleDefinition = Get-MgRoleManagementDirectoryRoleDefinition -Filter "displayNa
 
 # Get app registration and construct scope for assignment.
 $appRegistration = Get-MgApplication -Filter "displayName eq 'My Filter Photos'"
-$directoryScope = '/' + $appRegistration.objectId
+$directoryScope = '/' + $appRegistration.Id
 
 # Create a scoped role assignment
 $roleAssignment = New-MgRoleManagementDirectoryRoleAssignment -DirectoryScopeId $directoryScope `
