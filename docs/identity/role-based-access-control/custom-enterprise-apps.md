@@ -11,7 +11,7 @@ ms.topic: how-to
 ms.date: 02/04/2022
 ms.author: rolyon
 ms.reviewer: vincesm
-ms.custom: it-pro, has-azure-ad-ps-ref
+ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.collection: M365-identity-device-management
 ---
 
@@ -23,7 +23,7 @@ This article explains how to create a custom role with permissions to manage ent
 
 - Microsoft Entra ID P1 or P2 license
 - Privileged Role Administrator or Global Administrator
-- AzureADPreview module when using PowerShell
+- Microsoft Graph PowerShell SDK installed when using PowerShell
 - Admin consent when using Graph explorer for Microsoft Graph API
 
 For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
@@ -103,18 +103,18 @@ Create a new role using the following PowerShell script:
 
 ```PowerShell
 # Basic role information
-$description = "Manage user and group assignments"
-$displayName = "Can manage user and group assignments for Applications"
+$description = "Can manage user and group assignments for Applications"
+$displayName = "Manage user and group assignments"
 $templateId = (New-Guid).Guid
 
 # Set of permissions to grant
 $allowedResourceAction = @("microsoft.directory/servicePrincipals/appRoleAssignedTo/update")
-$resourceActions = @{'allowedResourceActions'= $allowedResourceAction}
-$rolePermission = @{'resourceActions' = $resourceActions}
+$rolePermission = @{'allowedResourceActions'= $allowedResourceAction}
 $rolePermissions = $rolePermission
 
 # Create new custom admin role
-$customRole = New-AzureADMSRoleDefinition -RolePermissions $rolePermissions -DisplayName $displayName -Description $description -TemplateId $templateId -IsEnabled $true
+$customRole = New-MgRoleManagementDirectoryRoleDefinition -Description $description `
+   -DisplayName $displayName -RolePermissions $rolePermissions -TemplateId $templateId -IsEnabled
 ```
 
 ### Assign the custom role
@@ -123,15 +123,16 @@ Assign the role using this PowerShell script.
 
 ```powershell
 # Get the user and role definition you want to link
-$user = Get-AzureADUser -Filter "userPrincipalName eq 'chandra@example.com'"
-$roleDefinition = Get-AzureADMSRoleDefinition -Filter "displayName eq 'Manage user and group assignments'"
+$user =  Get-MgUser -Filter "userPrincipalName eq 'chandra@example.com'"
+$roleDefinition = Get-MgRoleManagementDirectoryRoleDefinition -Filter "displayName eq 'Manage user and group assignments'"
 
-# Get app registration and construct resource scope for assignment.
-$appRegistration = Get-AzureADApplication -Filter "displayName eq 'My Filter Photos'"
-$resourceScope = '/' + $appRegistration.objectId
+# Get app registration and construct scope for assignment.
+$appRegistration = Get-MgApplication -Filter "displayName eq 'My Filter Photos'"
+$directoryScope = '/' + $appRegistration.objectId
 
 # Create a scoped role assignment
-$roleAssignment = New-AzureADMSRoleAssignment -ResourceScope $resourceScope -RoleDefinitionId $roleDefinition.Id -PrincipalId $user.objectId
+$roleAssignment = New-MgRoleManagementDirectoryRoleAssignment -DirectoryScopeId $directoryScope `
+   -PrincipalId $user.Id -RoleDefinitionId $roleDefinition.Id
 ```
 
 ## Microsoft Graph API
