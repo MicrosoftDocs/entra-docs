@@ -82,7 +82,7 @@ If you don't have Excel, you can create a CSV file in any text editor, such as N
 Run the following command to connect to the tenant:
 
 ```powershell
-Connect-MgGraph -TenantId <YOUR_TENANT_ID>
+Connect-MgGraph -TenantId '<YOUR_TENANT_ID>'
 ```
 
 For example, `Connect-MgGraph -TenantId '11111111-aaaa-2222-bbbb-33333333``.
