@@ -9,7 +9,8 @@ ms.reviewer: jawoods, ludwignick, phsignor
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-#Customer intent:
+
+#Customer intent: As a developer, I want to understand how application-only access works and when to use it, so that I can configure the appropriate app roles and permissions for my application and ensure secure access to resources without user interaction.
 ---
 
 # Understanding application-only access
@@ -30,8 +31,6 @@ In contrast, you should never use application-only access where a user would nor
 
 ![Diagram shows illustration of application permissions vs delegated permissions.](./media/app-only-access-primer/app-only-access.png)
 
-
-
 ## Authorizing an app to make application-only calls
 
 To make app-only calls, you need to assign your client app the appropriate app roles. App roles are also referred to as application-only permissions. They're *app* roles because they grant access only in the context of the resource app that defines the role.
@@ -40,13 +39,13 @@ For example, to read a list of all teams created in an organization, you need to
 
 As a developer, you need to configure all required app-only permissions, also referred to as app roles on your application registration. You can configure your app's requested app-only permissions through the Azure portal or Microsoft Graph. App-only access doesn't support dynamic consent, so you can't request individual permissions or sets of permissions at runtime.
 
-Once you've configured all the permissions your app needs, it must get [admin consent](~/identity/enterprise-apps/grant-admin-consent.md) for it to access the resources. For example, only users with the global admin role can grant app-only permissions (app roles) for the Microsoft Graph API. Users with other admin roles, like application admin and cloud app admin, are able to grant app-only permissions for other resources. 
+Once you've configured all the permissions your app needs, it must get [admin consent](~/identity/enterprise-apps/grant-admin-consent.md) for it to access the resources. For example, only users with the global admin role can grant app-only permissions (app roles) for the Microsoft Graph API. Users with other admin roles, like application admin and cloud app admin, are able to grant app-only permissions for other resources.
 
 Admin users can grant app-only permissions by using the Azure portal or by creating grants programmatically through the Microsoft Graph API. You can also prompt for interactive consent from within your app, but this option isn't preferable since app-only access doesn't require a user.
 
 Consumer users with Microsoft Accounts, like Outlook.com or Xbox Live accounts, can never authorize application-only access.
 Always follow the principle of least privilege: you should never request app roles that your app doesn’t need. This principle helps limit the security risk if your app is compromised and makes it easier for administrators to grant your app access. For example, if your app-only needs to identify users without reading their detailed profile information, you should request the more limited Microsoft Graph `User.ReadBasic.All` app role instead of `User.Read.All`.
- 
+
 ## Designing and publishing app roles for a resource service
 
 If you're building a service on Microsoft Entra ID that exposes APIs for other clients to call, you may wish to support automated access with app roles (app-only permissions). You can define the app roles for your application in the **App roles** section of your app registration in Microsoft Entra admin center. For more information on how to create app roles, see [Declare roles for an application](./howto-add-app-roles-in-apps.md#declare-roles-for-an-application).
@@ -61,8 +60,8 @@ When exposing app roles for others to use, provide clear descriptions of the sce
 The most important thing to remember about app-only access is that the calling app acts on its own behalf and as its own identity. There's no user interaction. If the app has been assigned to a given app role for a resource, then the app has fully unconstrained access to all resources and operations governed by that app role.
 
 Once an app has been assigned to one or more app roles (app-only permissions), it can request an app-only token from Microsoft Entra ID using the [client credentials flow](v2-oauth2-client-creds-grant-flow.md) or any other supported authentication flow. The assigned roles are added to the `roles` claim of the app's access token.
- 
-In some scenarios, the application identity may determine whether access is granted, similarly to user rights in a delegated call. For example, the `Application.ReadWrite.OwnedBy` app role grants an app the ability to manage service principals that the app itself owns. 
+
+In some scenarios, the application identity may determine whether access is granted, similarly to user rights in a delegated call. For example, the `Application.ReadWrite.OwnedBy` app role grants an app the ability to manage service principals that the app itself owns.
 
 ## Application-only access example - Automated email notification via Microsoft Graph
 
@@ -76,8 +75,8 @@ The script runs without any user interaction, therefore the authorization system
 | ----- | ----- | ----- |
 | The script uses Alice’s mailbox to send emails. | 200 – Access granted. Admin allowed the app to send mail as any user. |403 - Unauthorized. Admin hasn’t allowed this client to send emails. |
 | The script creates a dedicated mailbox to send emails. | 200 – Access granted. Admin allowed the app to send mail as any user. | 403 - Unauthorized. Admin hasn’t allowed this client to send emails. |
- 
-The example given is a simple illustration of application authorization. The production Exchange Online service supports many other access scenarios, such as limiting application permissions to specific Exchange Online mailboxes. 
+
+The example given is a simple illustration of application authorization. The production Exchange Online service supports many other access scenarios, such as limiting application permissions to specific Exchange Online mailboxes.
 
 ## Next steps
 

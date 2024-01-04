@@ -112,8 +112,10 @@ Here are some tips and considerations for analyzing the provisioning logs:
 
 - You can use the change ID attribute as unique identifier, which can be helpful when you're interacting with product support, for example.
 
-- You might see skipped events for users who aren't in scope. This behavior is expected, especially when the sync scope is set to all users and groups. The service evaluates all the objects in the tenant, even the ones that are out of scope.
-
+- You might see skipped events for users who aren't in scope. 
+  - Example 1: If you have the scope set to `all users and groups` and setup scoping filters, you may see skipped logs for users that don't meet the scoping criteria.   
+  - Example 2: If you have set the scope to `assigned users and groups`, you may continue to see users in the logs as skipped, even though they are not assigned to the application. This is due to how the provisioning service receives changes from the directory. 
+ 
 - The provisioning logs don't show role imports (applies to AWS, Salesforce, and Zendesk). You can find the logs for role imports in the audit logs.
 
 ## Error codes

@@ -37,6 +37,10 @@ Or, best of all:
 
 - `user.city -eq "Lagos"`
 
+## Minimize use of CONTAINS
+
+Similiar to the use of MATCH. Minimize the usage of the `contains` operator in rules as much as possible. Instead, explore if it's possible to use the `startswith` or `-eq` operators. Utilizing CONTAINS can decrease processing times within Intune based on the tenant. Extension attributes are another avenue that can be used to help with processing time. 
+
 ## Use fewer OR operators
 
 In your rule, identify when it uses various values for the same property linked together with `-or` operators. Instead, use the `-in` operator to group them into a single criterion to make the rule easier to evaluate. For example, instead of having a rule like this:
