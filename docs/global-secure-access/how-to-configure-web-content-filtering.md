@@ -55,7 +55,7 @@ To enable the Microsoft Entra Internet Access forwarding profile to forward user
 1. Enter a name and description for the policy and select **Next**.
 1. Select **Add rule**.
 1. Enter a name, select a [web category](reference-web-content-filtering-categories.md) or a valid FQDN, and then select **Add**.
-     - A valid FQDN can either be written as expected or can include regular expressions using the * character.
+     - Valid FQDNs in this feature can also include wildcards using the asterisk symbol, also known as *.
 1. Select **Next** to review the policy and then select **Create policy**.
 
 ## Create a security profile
