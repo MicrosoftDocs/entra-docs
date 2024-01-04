@@ -6,7 +6,7 @@ services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 12/14/2023
+ms.date: 01/04/2024
 
 ms.author: justinha
 author: inbarckms
@@ -50,7 +50,7 @@ The next sections show how to configure advanced options for CBA by using the Mi
 
    :::image type="content" border="true" source="./media/concept-authentication-strength-advanced-options/certificate-advanced-options.png" alt-text="Screenshot showing Advanced options for certificate-based authentication.":::
     
-1. Select certificate issuers from the drop-down, or type the allowed policy OIDs. 
+1. Select certificate issuers from the drop- menu, or type the allowed policy OIDs. The drop-down menu lists all certificate authorities from the tenant irrespective of whether they're single-factor or multifactor.
 
    - If both **Allowed certificate issuer** AND **Allowed Policy OID** are configured, there's an AND relationship. The user has to use a certificate that satisfies both conditions.
 

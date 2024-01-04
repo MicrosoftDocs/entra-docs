@@ -418,9 +418,9 @@ You can use the built-in **Phishing-resistant MFA** authentication strength. Tha
 
 You can also create a custom authentication strength to allow only CBA to access sensitive resources. You can allow CBA as a single-factor, multifactor, or both. For more information, see [Conditional Access authentication strength](concept-authentication-strengths.md).
 
-### CBA authentication strength with advanced restrictions
+### CBA authentication strength with advanced options
 
-Under CBA auth method policy an admin can determine the strength of the certificate using [authentication binding policy](#understanding-the-authentication-binding-policy) on the CBA auth method. Now you can configure **Advanced options** when you create a custom authentication strength to require a specific certificate to be used, based on issuer and policy OIDs, when users perform CBA to access certain sensitive resources. This feature provides a more precise configuration to determine the certificates and users that can access resources. For more information, see [Advanced options for Conditional Access authentication strength](concept-authentication-strength-advanced-options.md).
+In the CBA Authentication methods policy, an admin can determine the strength of the certificate by using [authentication binding policy](#understanding-the-authentication-binding-policy) on the CBA method. Now you can configure **Advanced options** when you create a custom authentication strength to require a specific certificate to be used, based on issuer and policy OIDs, when users perform CBA to access certain sensitive resources. This feature provides a more precise configuration to determine the certificates and users that can access resources. For more information, see [Advanced options for Conditional Access authentication strength](concept-authentication-strength-advanced-options.md).
 
 ## Understanding Sign-in logs
 
