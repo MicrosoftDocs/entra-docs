@@ -12,7 +12,7 @@ ms.workload: identity
 ms.date: 06/09/2023
 ms.author: rolyon
 ms.reviewer: anandy
-ms.custom: oldportal, it-pro, has-azure-ad-ps-ref
+ms.custom: oldportal, it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.collection: M365-identity-device-management
 ---
 
@@ -24,8 +24,7 @@ In Microsoft Entra ID, you can list the users, groups, or devices in administrat
 
 - Microsoft Entra ID P1 or P2 license for each administrative unit administrator
 - Microsoft Entra ID Free licenses for administrative unit members
-- Azure AD PowerShell module when using PowerShell
-- AzureADPreview module when using PowerShell for devices
+- Microsoft Graph PowerShell SDK installed when using PowerShell
 - Admin consent when using Graph explorer for Microsoft Graph API
 
 For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
@@ -103,49 +102,48 @@ You can list the users, groups, or devices in administrative units using the Mic
 
 ## PowerShell
 
-Use the [Get-AzureADMSAdministrativeUnit](/powershell/module/azuread/get-azureadmsadministrativeunit) and [Get-AzureADMSAdministrativeUnitMember](/powershell/module/azuread/get-azureadmsadministrativeunitmember) commands to list users or groups for an administrative unit.
-
-Use the [Get-AzureADMSAdministrativeUnit (Preview)](/powershell/module/azuread/get-azureadmsadministrativeunit?view=azureadps-2.0-preview&preserve-view=true) and [Get-AzureADMSAdministrativeUnitMember (Preview)](/powershell/module/azuread/get-azureadmsadministrativeunitmember?view=azureadps-2.0-preview&preserve-view=true) commands to list devices for an administrative unit.
+Use the [Get-MgDirectoryAdministrativeUnit](/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdirectoryadministrativeunit) and [Get-MgDirectoryAdministrativeUnitMember](/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdirectoryadministrativeunitmember) commands to list users, groups, or devices for an administrative unit.
 
 > [!NOTE]
-> By default, [Get-AzureADMSAdministrativeUnitMember](/powershell/module/azuread/get-azureadmsadministrativeunitmember) returns only top members of an administrative unit. To retrieve all members, add the `-All $true` parameter.
+> By default, [Get-MgDirectoryAdministrativeUnitMember](/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdirectoryadministrativeunitmember) returns only top members of an administrative unit. To retrieve all members, add the `-All:$true` parameter.
 
 ### List the administrative units for a user
 
 ```powershell
-$userObj = Get-AzureADUser -Filter "UserPrincipalName eq 'bill@example.com'"
-Get-AzureADMSAdministrativeUnit | where { Get-AzureADMSAdministrativeUnitMember -Id $_.Id | where {$_.Id -eq $userObj.ObjectId} }
+$userObj = Get-MgUser -Filter "UserPrincipalName eq 'bill@example.com'"
+Get-MgDirectoryAdministrativeUnit | where { Get-MgDirectoryAdministrativeUnitMember -AdministrativeUnitId $_.Id | where {$_.Id -eq $userObj.Id} }
 ```
 
 ### List the administrative units for a group
 
 ```powershell
-$groupObj = Get-AzureADGroup -Filter "displayname eq 'TestGroup'"
-Get-AzureADMSAdministrativeUnit | where { Get-AzureADMSAdministrativeUnitMember -Id $_.Id | where {$_.Id -eq $groupObj.ObjectId} }
+$groupObj = Get-MgGroup -Filter "DisplayName eq 'TestGroup'"
+Get-MgDirectoryAdministrativeUnit | where { Get-MgDirectoryAdministrativeUnitMember -AdministrativeUnitId $_.Id | where {$_.Id -eq $groupObj.Id} }
 ```
 
 ### List the administrative units for a device
 
 ```powershell
-Get-AzureADMSAdministrativeUnit | where { Get-AzureADMSAdministrativeUnitMember -ObjectId $_.ObjectId | where {$_.ObjectId -eq $deviceObjId} }
+$deviceObj = Get-MgDevice -Filter "DisplayName eq 'Test device'"
+Get-MgDirectoryAdministrativeUnit | where { Get-MgDirectoryAdministrativeUnitMember -AdministrativeUnitId $_.Id | where {$_.Id -eq $deviceObj.Id} }
 ```
 
 ### List the users, groups, and devices for an administrative unit
 
 ```powershell
-$adminUnitObj = Get-AzureADMSAdministrativeUnit -Filter "displayname eq 'Test administrative unit 2'"
-Get-AzureADMSAdministrativeUnitMember -Id $adminUnitObj.Id
+$adminUnitObj = Get-MgDirectoryAdministrativeUnit -Filter "DisplayName eq 'Test administrative unit 2'"
+Get-MgDirectoryAdministrativeUnitMember -AdministrativeUnitId $adminUnitObj.Id
 ```
 
 ### List the groups for an administrative unit
 
 ```powershell
-$adminUnitObj = Get-AzureADMSAdministrativeUnit -Filter "displayname eq 'Test administrative unit 2'"
-foreach ($member in (Get-AzureADMSAdministrativeUnitMember -Id $adminUnitObj.Id)) 
+$adminUnitObj = Get-MgDirectoryAdministrativeUnit -Filter "DisplayName eq 'Test administrative unit 2'"
+foreach ($member in (Get-MgDirectoryAdministrativeUnitMember -AdministrativeUnitId $adminUnitObj.Id)) 
 {
     if($member.OdataType -eq "#microsoft.graph.group")
     {
-        Get-AzureADGroup -ObjectId $member.Id
+        Get-MgGroup -ObjectId $member.Id
     }
 }
 ```
@@ -153,12 +151,12 @@ foreach ($member in (Get-AzureADMSAdministrativeUnitMember -Id $adminUnitObj.Id)
 ### List the devices for an administrative unit
 
 ```powershell
-$adminUnitObj = Get-AzureADMSAdministrativeUnit -Filter "displayname eq 'Test administrative unit 2'"
-foreach ($member in (Get-AzureADMSAdministrativeUnitMember -Id $adminUnitObj.Id)) 
+$adminUnitObj = Get-MgDirectoryAdministrativeUnit -Filter "DisplayName eq 'Test administrative unit 2'"
+foreach ($member in (Get-MgDirectoryAdministrativeUnitMember -AdministrativeUnitId $adminUnitObj.Id)) 
 {
     if($member.ObjectType -eq "Device")
     {
-        Get-AzureADDevice -ObjectId $member.ObjectId
+        Get-MgDevice -ObjectId $member.Id
     }
 }
 ```
