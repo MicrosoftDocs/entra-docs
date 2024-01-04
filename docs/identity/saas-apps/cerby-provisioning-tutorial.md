@@ -24,7 +24,7 @@ This tutorial describes the steps you need to do in both Cerby and Microsoft Ent
 > * Create users in Cerby
 > * Remove users in Cerby when they do not require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Cerby
-> * Provision groups and group memberships in Better Stack.
+> * Provision groups and group memberships in Cerby.
 > * [Single sign-on](cerby-tutorial.md) to Cerby (recommended).
 
 ## Prerequisites
