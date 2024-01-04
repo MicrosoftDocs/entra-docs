@@ -149,7 +149,7 @@ foreach ($member in (Get-MgDirectoryAdministrativeUnitMember -AdministrativeUnit
 {
     if($member.OdataType -eq "#microsoft.graph.group")
     {
-        Get-MgGroup -ObjectId $member.Id
+        Get-MgGroup -GroupId $member.Id
     }
 }
 ```
@@ -162,7 +162,7 @@ foreach ($member in (Get-MgDirectoryAdministrativeUnitMember -AdministrativeUnit
 {
     if($member.ObjectType -eq "Device")
     {
-        Get-MgDevice -ObjectId $member.Id
+        Get-MgDevice -DeviceId $member.Id
     }
 }
 ```
