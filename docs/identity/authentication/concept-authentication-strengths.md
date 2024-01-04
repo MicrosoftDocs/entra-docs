@@ -6,7 +6,7 @@ services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 12/12/2023
+ms.date: 01/04/2024
 
 ms.author: justinha
 author: inbarckms
@@ -109,8 +109,6 @@ Administrators can also create up to 15 of their own custom authentication stren
 You can edit a custom authentication strength. If it's referenced by a Conditional Access policy, it can't be deleted, and you need to confirm any edit. 
 To check if an authentication strength is referenced by a Conditional Access policy, click the **Conditional Access policies** column.
 
-
-
 ## Limitations
 
 - **Conditional Access policies are only evaluated after the initial authentication** - As a result, authentication strength doesn't restrict a user's initial authentication. Suppose you are using the built-in phishing-resistant MFA strength. A user can still type in their password, but they will be required to use a phishing-resistant method such as FIDO2 security key before they can continue.
@@ -122,7 +120,7 @@ To check if an authentication strength is referenced by a Conditional Access pol
 - **Windows Hello for Business** – If the user signed in with Windows Hello for Business as their primary authentication method, it can be used to satisfy an authentication strength requirement that includes Windows Hello for Business. However, if the user signed in with another method like password as their primary authenticating method, and the authentication strength requires Windows Hello for Business, they aren't prompted to sign in with Windows Hello for Business. The user needs to restart the session, choose **Sign-in options**, and select a method required by the authentication strength.
 
 
-## Known isssue
+## Known issue
 
 - **FIDO2 security key Advanced options** - Advanced options aren't supported for external users with a home tenant that is located in a different Microsoft cloud than the resource tenant.
 

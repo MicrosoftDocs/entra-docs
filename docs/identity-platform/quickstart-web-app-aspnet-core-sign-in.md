@@ -15,7 +15,6 @@ ms.topic: quickstart
 
 # Quickstart: Sign in users and call the Microsoft Graph API from an ASP.NET Core web app
 
-
 This quickstart uses a sample ASP.NET Core web app to show you how to sign in users by using the [authorization code flow](./v2-oauth2-auth-code-flow.md) and call the Microsoft Graph API. The sample uses [Microsoft Authentication Library for .NET](/entra/msal/dotnet/) and [Microsoft Identity Web](/entra/msal/dotnet/microsoft-identity-web/) for ASP.NET to handle authentication.
 
 In this article you register a web application in the Microsoft Entra admin center, and download a sample ASP.NET web application. You'll run the sample application, sign in with your personal Microsoft account or a work or school account, and sign out.
@@ -47,12 +46,14 @@ In this article you register a web application in the Microsoft Entra admin cent
 ## Clone or download the sample application
 
 To obtain the sample application, you can either clone it from GitHub or download it as a *.zip* file.
-- To clone the sample, open a command prompt and navigate to where you wish to create the project, and enter the following command:
-    
+
+* To clone the sample, open a command prompt and navigate to where you wish to create the project, and enter the following command:
+
     ```console
     git clone https://github.com/Azure-Samples/ms-identity-docs-code-dotnet.git
     ```
-- [Download the .zip file](https://github.com/Azure-Samples/ms-identity-docs-code-dotnet/archive/refs/heads/main.zip). Extract it to a file path where the length of the name is fewer than 260 characters.
+
+* [Download the .zip file](https://github.com/Azure-Samples/ms-identity-docs-code-dotnet/archive/refs/heads/main.zip). Extract it to a file path where the length of the name is fewer than 260 characters.
 
 ## Create and upload a self-signed certificate
 
@@ -100,9 +101,10 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 1. Find the **Sign out** link in the top right corner of the page, and select it.
 1. You'll be prompted to pick an account to sign out from. Select the account you used to sign in.
 1. A message appears indicating that you have signed out.
-1. Although you have signed out, the application is still running from your terminal. To stop the application in your terminal, press **Ctrl+C**. 
+1. Although you have signed out, the application is still running from your terminal. To stop the application in your terminal, press **Ctrl+C**.
 
 ## Related content
 
-- [Quickstart: Protect an ASP.NET Core web API with the Microsoft identity platform](./quickstart-web-api-aspnet-core-protect-api.md).
-- Create an ASP.NET web app from scratch with the series [Tutorial: Register an application with the Microsoft identity platform](./web-app-tutorial-01-register-application.md).
+* [Quickstart: Protect an ASP.NET Core web API with the Microsoft identity platform](./quickstart-web-api-aspnet-core-protect-api.md).
+
+* Create an ASP.NET web app from scratch with the series [Tutorial: Register an application with the Microsoft identity platform](tutorial-web-app-dotnet-register-app.md).

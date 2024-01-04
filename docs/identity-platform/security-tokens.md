@@ -25,7 +25,9 @@ Many enterprise applications use SAML to authenticate users. For information on 
 
 ## Validate tokens
 
-It's up to the application for which the token was generated, the web app that signed in the user, or the web API being called to validate the token. The authorization server signs the token with a private key. The authorization server publishes the corresponding public key. To validate a token, the app verifies the signature by using the authorization server public key to validate that the signature was created using the private key.
+It's up to the application for which the token was generated, the web app that signed in the user, or the web API being called to validate the token. The authorization server signs the token with a private key. The authorization server publishes the corresponding public key. To validate a token, the app verifies the signature by using the authorization server public key to validate that the signature was created using the private key. For more information, check out the [Secure applications and APIs by validating claims](/entra/identity-platform/claims-validation) article.
+
+We recommend you use the supported [Microsoft Authentication Libraries (MSAL)](/entra/identity-platform/msal-overview) whenever possible. This implements the acquisition, refresh, and validation of tokens for you. It also implements standards-compliant discovery of tenant settings and keys using the tenant’s OpenID well-known discovery document. MSAL supports many different application architectures and platforms including .NET, JavaScript, Java, Python, Android, and iOS.
 
 Tokens are valid for only a limited amount of time, so the authorization server frequently provides a pair of tokens. An access token is provided, which accesses the application or protected resource. A refresh token is provided, which is used to refresh the access token when the access token is close to expiring.
 
@@ -54,6 +56,14 @@ A claim consists of key-value pairs that provide the following types of informat
 * Audience, which is the app for which the token was generated
 * App (the client) that asked for the token
 
+## Token endpoints and issuers
+
+Microsoft Entra ID supports two tenant configurations: A workforce configuration that’s intended for internal use and manages employees and business guests, and a [customer configuration](/entra/external-id/customers/concept-supported-features-customers) which is optimized for isolating consumers and partners in a restricted external-facing directory. While the underlying identity service is identical for both tenant configurations, the login domains and token issuing authority for customer tenants is different. This allows applications to keep workforce and external ID workflows separated if needed.
+
+Microsoft Entra ID workforce tenants authenticate at login.microsoftonline.com with tokens issued by *sts.windows.net*. Workforce tenant tokens are generally interchangeable across tenants and multi-tenant applications so long as underlying trust relationships permit this interoperability. Microsoft Entra ID customer tenants use tenanted endpoints of the form *{tenantname}.ciamlogin.com*. Applications registered to customer tenants must be aware of this separation to receive and validate tokens correctly.
+
+Every Microsoft Entra ID tenant publishes a standards-compliant well-known metadata. This document contains information about the issuer name, the authentication and authorization endpoints, supported scopes and claims. For customer tenants, the document is publicly available at: *https://{tenantname}.ciamlogin.com/{tenantid}/v2.0/.well-known/openid-configuration*. This endpoint returns an issuer value *https://{tenantname}.ciamlogin.com/{tenantid}/v2.0.ciam*.
+
 ## Authorization flows and authentication codes
 
 Depending on how your client is built, it can use one or several of the authentication flows supported by the Microsoft identity platform. The supported flows can produce various tokens and authorization codes and require different tokens to make them work. The following table provides an overview.
@@ -77,3 +87,4 @@ Tokens issued using the implicit flow have a length limitation because they're p
 ## Next steps
 
 * To learn about the basic concepts of authentication and authorization, see [Authentication vs. authorization](authentication-vs-authorization.md).
+

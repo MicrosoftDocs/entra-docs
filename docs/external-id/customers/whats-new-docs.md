@@ -1,7 +1,7 @@
 ---
 title: "What's new in Microsoft Entra ID for customers"
 description: "New and updated documentation for the Microsoft Entra ID for customers documentation."
-ms.date: 12/01/2023
+ms.date: 12/29/2023
 ms.service: active-directory
 ms.subservice: ciam
 ms.topic: reference
@@ -14,6 +14,13 @@ manager: CelesteDG
 # Microsoft Entra ID for customers: What's new
 
 Welcome to what's new in Microsoft Entra ID for customers documentation. This article lists new docs that have been added and those that have had significant updates in the last three months. 
+
+## December 2023
+
+### Updated articles
+
+- [Collect user attributes during sign-up](how-to-define-custom-attributes.md) - Editorial updates
+- [Quickstart: Get started with Microsoft Entra ID for customers (preview)](quickstart-trial-setup.md) - Editorial updates
 
 ## November 2023
 
@@ -38,15 +45,3 @@ Welcome to what's new in Microsoft Entra ID for customers documentation. This ar
 
 - [Customize the neutral branding in your customer tenant (preview)](how-to-customize-branding-customers.md) - Editorial updates
 - [Customize the language of the authentication experience](how-to-customize-languages-customers.md) - Editorial updates
-
-## September 2023
-
-This month, we renamed Azure Active Directory (Azure AD) to Microsoft Entra ID. For more information about the rebranding, see the [New name for Azure Active Directory](~/fundamentals/new-name.md) article.
-
-### Updated articles
-
-- [Quickstart: Get started with our guide to run a sample app and sign in your users (preview)](quickstart-get-started-guide.md) Start the guide updates
-- [Manage Microsoft Entra ID for customers resources with Microsoft Graph](microsoft-graph-operations.md) - Editorial updates
-- [Planning for customer identity and access management (preview)](concept-planning-your-solution.md) - Editorial updates
-- [Create a sign-up and sign-in user flow for customers](how-to-user-flow-sign-up-sign-in-customers.md) - Disable sign-up in a user flow
-

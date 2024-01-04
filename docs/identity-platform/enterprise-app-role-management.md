@@ -10,7 +10,8 @@ ms.reviewer: jeedes
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: how-to
-#Customer intent:
+
+#Customer intent: As a cloud application administrator, I want to customize the role claim in the access token for an enterprise application, so that I can define custom roles and assign them to user accounts.
 ---
 
 # Configure the role claim
@@ -33,7 +34,7 @@ You can customize the role claim in the access token that is received after an a
 
 Use the following steps to locate the enterprise application:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
 1. Enter the name of the existing application in the search box, and then select the application from the search results.
 1. After the application is selected, copy the object ID from the overview pane.

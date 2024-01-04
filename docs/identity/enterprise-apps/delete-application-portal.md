@@ -31,26 +31,29 @@ To delete an enterprise application, you need:
 - One of the following roles: Global Administrator, Cloud Application Administrator, Application Administrator, or owner of the service principal.
 - An [enterprise application added to your tenant](add-application-portal.md)
 
-## Delete an enterprise application
+:::zone pivot="portal"
+
+## Delete an enterprise application using Microsoft Entra admin center
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-:::zone pivot="portal"
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
-1. Enter the name of the existing application in the search box, and then select the application from the search results. In this article, we use the **Azure AD SAML Toolkit 1** as an example.
+1. Enter the name of the existing application in the search box, and then select the application from the search results. In this article, we use the **Microsoft Entra SAML Toolkit 1** as an example.
 1. In the **Manage** section of the left menu, select **Properties**.
 1. At the top of the **Properties** pane, select **Delete**, and then select **Yes** to confirm you want to delete the application from your Microsoft Entra tenant.
 
-    :::image type="content" source="media/delete-application-portal/delete-application.png" alt-text="Delete an enterprise application.":::
+    :::image type="content" source="media/delete-application-portal/delete-application.png" alt-text="Delete an enterprise application." lightbox="media/delete-application-portal/delete-application.png":::
 
 :::zone-end
 
 :::zone pivot="aad-powershell"
 
+## Delete an enterprise application using Azure AD PowerShell
+
 > [!IMPORTANT]
 > Make sure you're using the Azure AD PowerShell module. This is important if you've installed both the [Azure AD PowerShell module](/powershell/module/azuread/?preserve-view=true&view=azureadps-2.0) and the AzureADPreview module.
+
 1. Run the following commands:
 
     ```powershell
@@ -63,20 +66,25 @@ To delete an enterprise application, you need:
    ```powershell
    Connect-AzureAD
    ```
+
 1. Get the list of enterprise applications in your tenant.
-   
+
    ```powershell
    Get-AzureADServicePrincipal
    ```
+
 1. Record the object ID of the enterprise app you want to delete.
 1. Delete the enterprise application.
-   
+
    ```powershell
    Remove-AzureADServicePrincipal -ObjectId 'd4142c52-179b-4d31-b5b9-08940873507b'
    ```
+
 :::zone-end
 
 :::zone pivot="ms-powershell"
+
+## Delete an enterprise application using Microsoft Graph PowerShell
 
 1. Connect to Microsoft Graph PowerShell and sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator):
 
@@ -85,7 +93,7 @@ To delete an enterprise application, you need:
    ```
 
 1. Get the list of enterprise applications in your tenant.
-   
+
    ```powershell
    Get-MgServicePrincipal
    ```
@@ -93,7 +101,7 @@ To delete an enterprise application, you need:
 1. Record the object ID of the enterprise app you want to delete.
 
 1. Delete the enterprise application.
-   
+
    ```powershell
    Remove-MgServicePrincipal -ServicePrincipalId 'd4142c52-179b-4d31-b5b9-08940873507b'
    ```
@@ -101,6 +109,8 @@ To delete an enterprise application, you need:
 :::zone-end
 
 :::zone pivot="ms-graph"
+
+## Delete an enterprise application using Microsoft Graph API
 
 To delete an enterprise application using [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer), you need to sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 
@@ -133,7 +143,7 @@ To delete an enterprise application using [Graph Explorer](https://developer.mic
 
 2. Record the ID of the enterprise app you want to delete.
 3. Delete the enterprise application.
-   
+
    # [HTTP](#tab/http)
    ```http
    DELETE https://graph.microsoft.com/v1.0/servicePrincipals/{servicePrincipal-id}

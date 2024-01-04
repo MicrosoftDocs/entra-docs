@@ -10,7 +10,8 @@ ms.reviewer: jesakowi, asteen, jawoods
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-#Customer intent:
+
+#Customer intent: As an application developer, I want to understand the consent experience in Microsoft Entra ID, so that I can intelligently manage applications for my organization and develop applications with a more seamless consent experience.
 ---
 
 # Consent experience for applications in Microsoft Entra ID

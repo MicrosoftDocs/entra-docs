@@ -4,7 +4,7 @@ description: Prepare an ASP.NET Core application for authentication using Visual
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.date: 02/09/2023
+ms.date: 01/02/2024
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: tutorial
@@ -18,6 +18,7 @@ After registration is complete, an ASP.NET web application can be created using 
 In this tutorial:
 
 > [!div class="checklist"]
+>
 > * Create an **ASP.NET Core Web App**
 > * Create a self-signed certificate
 > * Configure the settings for the application
@@ -25,11 +26,11 @@ In this tutorial:
 
 ## Prerequisites
 
-* Completion of the prerequisites and steps in [Tutorial: Register an application with the Microsoft identity platform](web-app-tutorial-01-register-application.md).
+* Completion of the prerequisites and steps in [Tutorial: Register an application with the Microsoft identity platform](tutorial-web-app-dotnet-register-app.md).
 * You can download an IDE used in this tutorial [here](https://visualstudio.microsoft.com/downloads).
-    - Visual Studio 2022
-    - Visual Studio Code
-    - Visual Studio 2022 for Mac
+  * Visual Studio 2022
+  * Visual Studio Code
+  * Visual Studio 2022 for Mac
 * A minimum requirement of [.NET Core 6.0 SDK](https://dotnet.microsoft.com/download/dotnet).
 
 ## Create an ASP.NET Core project
@@ -99,6 +100,7 @@ The use of certificates is a suggested way of securing communication between cli
     ```powershell
     dotnet dev-certs https -ep ./certificate.crt --trust
     ```
+
 ---
 
 ### Upload certificate to the portal
@@ -108,7 +110,7 @@ To make the certificate available to the application, it must be uploaded into t
 1. Starting from the **Overview** page of the app created earlier, under **Manage**, select **Certificates & secrets** and select the **Certificates (0)** tab.
 1. Select **Upload certificate**.
 
-    :::image type="content" source="./media/web-app-tutorial-02-prepare-application/upload-certificate-inline.png" alt-text="Screenshot of uploading a certificate into a Microsoft Entra tenant." lightbox="./media/web-app-tutorial-02-prepare-application/upload-certificate-expanded.png":::
+    :::image type="content" source="./media/web-app-tutorial-02-prepare-application/upload-certificate.png" alt-text="Screenshot of uploading a certificate into a Microsoft Entra tenant." lightbox="./media/web-app-tutorial-02-prepare-application/upload-certificate.png":::
 
 1. Select the **folder** icon, then browse for and select the certificate that was previously created.
 1. Enter a description for the certificate and select **Add**.
@@ -122,7 +124,7 @@ The values recorded earlier will be used in *appsettings.json* to configure the 
 
 1. In your IDE, open *appsettings.json* and replace the file contents with the following snippet:
   
-   :::code language="json" source="~/../ms-identity-docs-code-dotnet/web-app-aspnet/appsettings.json" :::
+   :::code language="json" source="~/../ms-identity-docs-code-dotnet/web-app-aspnet/appsettings.json":::
 
     * `Instance` - The authentication endpoint. Check with the different available endpoints in [National clouds](authentication-national-cloud.md#azure-ad-authentication-endpoints).
     * `TenantId` - The identifier of the tenant where the application is registered. Replace the text in quotes with the **Directory (tenant) ID** value that was recorded earlier from the overview page of the registered application.
@@ -140,7 +142,7 @@ The values recorded earlier will be used in *appsettings.json* to configure the 
 1. In the left menu, under **Manage**, select **Authentication**.
 1. In **Platform configurations**, select **Add a platform**, and then select **Web**.
 
-    :::image type="content" source="./media/web-app-tutorial-02-prepare-application/select-platform-inline.png" alt-text="Screenshot on how to select the platform for the application." lightbox="./media/web-app-tutorial-02-prepare-application/select-platform-expanded.png":::
+    :::image type="content" source="./media/web-app-tutorial-02-prepare-application/select-platform.png" alt-text="Screenshot on how to select the platform for the application." lightbox="./media/web-app-tutorial-02-prepare-application/select-platform.png":::
 
 1. Under **Redirect URIs**, enter the `applicationURL` and the `CallbackPath`, `/signin-oidc`, in the form of `https://localhost:{port}/signin-oidc`.
 1. Under **Front-channel logout URL**, enter the following URL for signing out, `https://localhost:{port}/signout-oidc`.
@@ -149,4 +151,4 @@ The values recorded earlier will be used in *appsettings.json* to configure the 
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Tutorial: Add sign-in to an application](web-app-tutorial-03-sign-in-users.md)
+> [Tutorial: Add sign-in to an application](tutorial-web-app-dotnet-sign-in-users.md)
