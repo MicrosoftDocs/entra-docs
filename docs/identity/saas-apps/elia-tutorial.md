@@ -88,7 +88,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 	![Screenshot shows the image of attributes configuration.](common/default-attributes.png "Image")
 
    > [!NOTE]
-   > Please select and update the **name** claim to **user.displayname** instead of user.userprincipalname as a Source attribute from the drop down to work SSO connection properly on both sides as per application side requirement and click **Save** as shown below.
+   > Please select and update the **name** claim with **user.displayname** instead of user.userprincipalname as a Source attribute from the drop down manually to work SSO connection properly on both sides as per application side requirement and click **Save** as shown below.
    ![Screenshot shows the image of name claims configuration.](media/elia-tutorial/claims.png "Attribute")
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Certificate (PEM)** and select **PEM certificate download** to download the certificate and save it on your computer.
