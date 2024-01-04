@@ -48,7 +48,7 @@ For more information, see [Prerequisites to use PowerShell or Graph Explorer](pr
 
 Follow these steps to list Microsoft Entra roles using PowerShell.
 
-1. Open a PowerShell window. If necessary, use [Import-Module](/powershell/module/microsoft.powershell.core/import-module) to import Microsoft Graph PowerShell. For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
+1. Open a PowerShell window. If necessary, use [Install-Module](/powershell/module/powershellget/install-module) to install Microsoft Graph PowerShell. For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
 
     ```powershell
     Install-Module Microsoft.Graph -Scope CurrentUser
