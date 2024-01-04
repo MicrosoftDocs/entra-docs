@@ -9,7 +9,7 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 
 ms.topic: how-to
-ms.date: 10/27/2023
+ms.date: 01/04/2024
 ms.author: jeedes
 
 ---
@@ -71,17 +71,25 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 1. On the **Basic SAML Configuration** section, perform the following steps:
 
-    a. In the **Identifier (Entity ID)** text box, type a value using the following pattern:
+   a. In the **Identifier (Entity ID)** text box, type a value using the following pattern:
     `urn:auth0:dev-p0tbk3x9:<CONNECTION-NAME>`
 
-    b. In the **Reply URL** text box, type a URL using the following pattern:
+   b. In the **Reply URL** text box, type a URL using the following pattern:
     `https://dev-p0tbk3x9.us.auth0.com/login/callback?connection=<CONNECTION-NAME>&organization=<ORGANIZATION-ID>`
 
-    c. In the **Sign on URL** text box, type a URL using the following pattern:
+   c. In the **Sign on URL** text box, type a URL using the following pattern:
     `https://elia.one/?organization=<ORGANIZATION-ID>`
 
 	> [!NOTE]
 	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [elia support team](mailto:support@gphy.ca) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
+
+1. elia application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
+
+	![Screenshot shows the image of attributes configuration.](common/default-attributes.png "Image")
+
+   > [!NOTE]
+   > Please select and update the **name** claim to **user.displayname** instead of user.userprincipalname as a Source attribute from the drop down to work SSO connection properly on both sides as per application side requirement and click **Save** as shown below.
+   ![Screenshot shows the image of name claims configuration.](media/elia-tutorial/claims.png "Attribute")
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Certificate (PEM)** and select **PEM certificate download** to download the certificate and save it on your computer.
 

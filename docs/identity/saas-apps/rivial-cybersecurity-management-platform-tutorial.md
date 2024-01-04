@@ -9,7 +9,7 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 
 ms.topic: how-to
-ms.date: 12/14/2023
+ms.date: 01/04/2024
 ms.author: jeedes
 
 ---
@@ -83,16 +83,6 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 	> [!NOTE]
 	> The Identifier is not real. Update the value with the actual Identifier. Contact [Rivial Cybersecurity Management Platform support team](mailto:support@rivialsecurity.com) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
-
-1. Rivial Cybersecurity Management Platform application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
-
-	![Screenshot shows the image of attributes configuration.](common/default-attributes.png "Image")
-
-1. In addition to above, Rivial Cybersecurity Management Platform application expects few more attributes to be passed back in SAML response which are shown below. These attributes are also pre populated but you can review them as per your requirements.
-	
-	| Name  |  Source Attribute|
-	| --------------- | --------- |
-    | phonenumber | user.mobilephone |
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
 
