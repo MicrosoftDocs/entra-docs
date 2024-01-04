@@ -2,18 +2,15 @@
 title: Terms of use in Microsoft Entra ID
 description: Get started using Microsoft Entra terms of use to present information to employees or guests before getting access.
 
-services: active-directory
 ms.service: active-directory
 ms.subservice: compliance
 ms.topic: how-to
-ms.date: 10/10/2023
+ms.date: 01/03/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: siz
-
-ms.collection: M365-identity-device-management
 ---
 # Microsoft Entra terms of use
 
@@ -28,8 +25,9 @@ The following video provides a quick overview of ToU policies.
 >[!VIDEO https://www.youtube.com/embed/tj-LK0abNao]
 
 For more videos, see:
-- [How to deploy a terms of use policy in Microsoft Entra ID](https://www.youtube.com/embed/N4vgqHO2tgY)
-- [How to roll out a terms of use policy in Microsoft Entra ID](https://www.youtube.com/embed/t_hA4y9luCY)
+
+* [How to deploy a terms of use policy in Microsoft Entra ID](https://www.youtube.com/embed/N4vgqHO2tgY)
+* [How to roll out a terms of use policy in Microsoft Entra ID](https://www.youtube.com/embed/t_hA4y9luCY)
 
 ## What can I do with terms of use?
 
@@ -41,10 +39,10 @@ To use and configure Microsoft Entra terms of use policies, you must have:
 
 * A working Microsoft Entra tenant with Microsoft Entra ID P1, or trial license enabled. If needed, [create one for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * Administrators who interact with terms of use must have one or more of the following role assignments depending on the tasks they're performing. To follow the [Zero Trust principle of least privilege](/security/zero-trust/), consider using [Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/pim-configure.md) to just-in-time activate privileged role assignments.
-   * Read terms of use configuration and Conditional Access policies 
+   * Read terms of use configuration and Conditional Access policies.
       * [Security Reader](~/identity/role-based-access-control/permissions-reference.md#security-reader)
       * [Global Reader](~/identity/role-based-access-control/permissions-reference.md#global-reader)
-   * Create or modify terms of use and Conditional Access policies 
+   * Create or modify terms of use and Conditional Access policies.
       * [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator)
       * [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator)
 
@@ -54,23 +52,23 @@ Microsoft Entra terms of use policies use the PDF format to present content. The
 
 ## Add terms of use
 
-Once you've completed your terms of use policy document, use the following procedure to add it.
+Once you complete your terms of use policy document, use the following procedure to add it.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Protection** > **Conditional Access** > **Terms of use**.
 1. Select, **New terms**.
- 
-    ![New term of use pane to specify your terms of use settings](./media/terms-of-use/new-tou.png)
+
+   ![A screenshot showing the new terms of use pane to specify your terms of use settings.](./media/terms-of-use/new-tou.png)
 
 1. In the **Name** box, enter a name for the terms of use policy.
 1. For **Terms of use document**, browse to your finalized terms of use policy PDF and select it.
 1. Select the language for your terms of use policy document. The language option allows you to upload multiple terms of use policies, each with a different language. The version of the terms of use policy that an end user sees is based on their browser preferences.
 1. In the **Display name** box, enter a title that users see when they sign in.
 1. To require end users to view the terms of use policy before accepting them, set **Require users to expand the terms of use** to **On**.
-1. To require end users to accept your terms of use policy on every device they're accessing from, set **Require users to consent on every device** to **On**. Users may be required to install other applications if this option is enabled. For more information, see [Per-device terms of use](#per-device-terms-of-use).
+1. To require end users to accept your terms of use policy on every device they're accessing from, set **Require users to consent on every device** to **On**. Users might be required to install other applications if this option is enabled. For more information, see [Per-device terms of use](#per-device-terms-of-use).
 1. If you want to expire terms of use policy consents on a schedule, set **Expire consents** to **On**. When set to On, two more schedule settings are displayed.
 
-    ![Expire consents settings to set start date, frequency, and duration](./media/terms-of-use/expire-consents.png)
+   ![A screenshot showing showing the expire consents settings to set start date, frequency, and duration.](./media/terms-of-use/expire-consents.png)
 
 1. Use the **Expire starting on** and **Frequency** settings to specify the schedule for terms of use policy expirations. The following table shows the result for a couple of example settings:
 
@@ -94,7 +92,7 @@ Once you've completed your terms of use policy document, use the following proce
    | Bob | Jan 15 | Feb 14 | Mar 16 | Apr 15 |
 
    It's possible to use the **Expire consents** and **Duration before re-acceptance required (days)** settings together, but typically you use one or the other.
-   
+
    > [!IMPORTANT]
    > Users whose consent has expired (regardless of the setting used, **Expire consents** or **Duration before re-acceptance required (days)**) will only be prompted to re-accept the terms if their session has expired.
 
@@ -112,11 +110,7 @@ Once you've completed your terms of use policy document, use the following proce
 
 1. Select **Create**.
 
-    If you selected a custom Conditional Access template, then a new screen appears that allows you to create the custom Conditional Access policy.
-
-   ![New Conditional Access pane if you chose the custom Conditional Access policy template](./media/terms-of-use/custom-policy.png)
-
-   You should now see your new terms of use policies.
+    If you selected a custom Conditional Access template, then a new screen appears that allows you to create the custom Conditional Access policy. You should now see your new terms of use policies.
 
 ## View report of who has accepted and declined
 
@@ -125,21 +119,19 @@ The Terms of use blade shows a count of the users who have accepted and declined
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Protection** > **Conditional Access** > **Terms of use**.
 
-    ![Terms of use blade listing the number of user show have accepted and declined](./media/terms-of-use/view-tou.png)
+    ![A screenshot showing the terms of use blade listing the number of user show have accepted and declined.](./media/terms-of-use/view-tou.png)
 
 1. For a terms of use policy, select the numbers under **Accepted** or **Declined** to view the current state for users.
 
-    ![Terms of use consents pane listing the users that have accepted](./media/terms-of-use/accepted-tou.png)
+    ![A screenshot showing the terms of use consents pane listing the users that have accepted.](./media/terms-of-use/accepted-tou.png)
 
 1. To view the history for an individual user, select the ellipsis (**...**) and then **View History**.
 
-    ![View History context menu for a user](./media/terms-of-use/view-history-menu.png)
+    ![A screenshot showing the View History context menu for a user.](./media/terms-of-use/view-history-menu.png)
 
    In the view history pane, you see a history of all the accepts, declines, and expirations.
 
-   ![View History pane lists the history accepts, declines, and expirations for a user](./media/terms-of-use/view-history-pane.png)
-
-<a name='view-azure-ad-audit-logs'></a>
+   ![A screenshot showing the history of accepts, declines, and expirations for a user.](./media/terms-of-use/view-history-pane.png)
 
 ## View Microsoft Entra audit logs
 
@@ -155,25 +147,25 @@ To get started with Microsoft Entra audit logs, use the following procedure:
 
     You can also select **Download** to download the information in a .csv file for use locally.
 
-   ![Microsoft Entra audit logs screen listing date, target policy, initiated by, and activity](./media/terms-of-use/audit-logs-tou.png)
+   ![A screenshot showing the Microsoft Entra audit logs screen listing date, target policy, initiated by, and activity.](./media/terms-of-use/audit-logs-tou.png)
 
    If you select a log, a pane appears with more activity details.
 
-   ![Activity details for a log showing activity, activity status, initiated by, target policy](./media/terms-of-use/audit-log-activity-details.png)
+   ![A screenshot showing activity details for a log showing activity, activity status, initiated by, target policy.](./media/terms-of-use/audit-log-activity-details.png)
 
 ## What terms of use looks like for users
 
 Once a ToU policy is created and enforced, users, who are in scope, see the following screen during sign-in.
 
-![Example terms of use that appears when a user signs in](./media/terms-of-use/user-tou.png)
+![A screenshot showing an example terms of use policy that appears when a user signs in.](./media/terms-of-use/user-tou.png)
 
 Users can view the terms of use policy and, if necessary, use buttons to zoom in and out.
 
-![View of terms of use with zoom buttons](./media/terms-of-use/zoom-buttons.png)
+![A screenshot showing the detail of a terms of use policy with zoom buttons.](./media/terms-of-use/zoom-buttons.png)
 
 The following screen shows how a ToU policy looks on mobile devices.
 
-![Example terms of use that appears when a user signs in on a mobile device](./media/terms-of-use/mobile-tou.png)
+![A screenshot showing an example terms of use policy that appears when a user signs in on a mobile device.](./media/terms-of-use/mobile-tou.png)
 
 Users are only required to accept the terms of use policy once, and they won't see the terms of use policy again on later sign-ins.
 
@@ -195,15 +187,15 @@ You can edit some details of terms of use policies, but you can't modify an exis
 1. Select the terms of use policy you want to edit.
 1. Select **Edit terms**.
 1. In the Edit terms of use pane, you can change the following options:
-    - **Name** – the internal name of the ToU that isn't shared with end users
-    - **Display name** – the name that end users can see when viewing the ToU
-    - **Require users to expand the terms of use** – Setting this option to **On** forces the end user to expand the terms of use policy document before accepting it.
-    - (Preview) You can **update an existing terms of use** document
-    - You can add a language to an existing ToU
+   * **Name** – the internal name of the ToU that isn't shared with end users
+   * **Display name** – the name that end users can see when viewing the ToU
+   * **Require users to expand the terms of use** – Setting this option to **On** forces the end user to expand the terms of use policy document before accepting it.
+   * (Preview) You can **update an existing terms of use** document
+   * You can add a language to an existing ToU
 
    If there are other settings you would like to change, such as PDF document, require users to consent on every device, expire consents, duration before reacceptance, or Conditional Access policy, you must create a new ToU policy.
 
-    ![Edit showing different language options](./media/terms-of-use/edit-terms-use.png)
+    ![A screenshot showing the ability to edit and provide different language options.](./media/terms-of-use/edit-terms-use.png)
 
 1. Once you're done, select **Save** to save your changes.
 
@@ -214,13 +206,10 @@ You can edit some details of terms of use policies, but you can't modify an exis
 1. Select the terms of use policy you want to edit.
 1. Select **Edit terms**.
 1. For the language that you would like to update a new version, select **Update** under the action column
-
-    ![Edit terms of use pane showing name and expand options](./media/terms-of-use/edit-terms-use.png)
-
 1. In the pane on the right, upload the pdf for the new version
-1. There's also a toggle option here **Require reaccept** if you want to require your users to accept this new version the next time they sign in. If you require your users to reaccept, next time they try to access the resource defined in your Conditional Access policy they'll be prompted to accept this new version. If you don’t require your users to reaccept, their previous consent stays current and only new users who haven't consented before or whose consent expires see the new version. Until the session expires, **Require reaccept** does not require users to accept the new TOU. If you want to ensure reaccept, delete and recreate or create a new TOU for this case.
+1. There's also a toggle option here **Require reaccept** if you want to require your users to accept this new version the next time they sign in. If you require your users to reaccept, next time they try to access the resource defined in your Conditional Access policy they'll be prompted to accept this new version. If you don’t require your users to reaccept, their previous consent stays current and only new users who haven't consented before or whose consent expires see the new version. Until the session expires, **Require reaccept** doesn't require users to accept the new TOU. If you want to ensure reaccept, delete and recreate or create a new TOU for this case.
 
-    ![Edit terms of use re-accept option highlighted](./media/terms-of-use/re-accept.png)
+   ![A screenshot showing the edit terms of use pane with the re-accept option highlighted.](./media/terms-of-use/re-accept.png)
 
 1. Once you've uploaded your new pdf and decided on reaccept, select Add at the bottom of the pane.
 1. You see the most recent version under the Document column.
@@ -233,7 +222,7 @@ You can edit some details of terms of use policies, but you can't modify an exis
 1. Select **Languages and version history**
 1. Select **See previous versions.**
 
-    ![document details including language versions](./media/terms-of-use/document-details.png)
+   ![A screenshot showing document details including language versions.](./media/terms-of-use/document-details.png)
 
 1. You can select the name of the document to download that version
 
@@ -257,7 +246,7 @@ The following procedure describes how to add a ToU language.
 1. Select **Add language** at the bottom of the page.
 1. In the Add terms of use language pane, upload your localized PDF, and select the language.
 
-    ![Terms of use selected and showing the Languages tab in the details pane](./media/terms-of-use/select-language.png)
+   ![A screenshot showing terms of use selected and showing the languages tab in the details pane.](./media/terms-of-use/select-language.png)
 
 1. Select **Add language**.
 1. Select **Save**
@@ -266,12 +255,12 @@ The following procedure describes how to add a ToU language.
 
 ## Per-device terms of use
 
-The **Require users to consent on every device** setting enables you to require end users to accept your terms of use policy on every device they're accessing from. The end user's device must be registered in Microsoft Entra ID. When the device is registered, the device ID is used to enforce the terms of use policy on each device. Their experience is dependent on permissions to join devices as well as the platform and software used, for more information see, [device identity in Microsoft Entra ID](~/identity/devices/overview.md).
+The **Require users to consent on every device** setting enables you to require end users to accept your terms of use policy on every device they're accessing from. The end user's device must be registered in Microsoft Entra ID. When the device is registered, the device ID is used to enforce the terms of use policy on each device. Their experience is dependent on permissions to join devices and the platform or software used. For more information, see [device identity in Microsoft Entra ID](~/identity/devices/overview.md).
 
 Per-device terms of use have the following constraints:
 
-- The Microsoft Intune Enrollment app `Application ID: d4ebce55-015a-49b5-a083-c84d1797ae8c` isn't supported. Ensure that it's excluded from any Conditional Access policy requiring Terms of Use.
-- Microsoft Entra B2B users aren't supported.
+* The Microsoft Intune Enrollment app `Application ID: d4ebce55-015a-49b5-a083-c84d1797ae8c` isn't supported. Ensure that it's excluded from any Conditional Access policy requiring Terms of Use.
+* Microsoft Entra B2B users aren't supported.
 
 ## Delete terms of use
 
@@ -282,10 +271,7 @@ You can delete old terms of use policies using the following procedure.
 1. Select the terms of use policy you want to remove.
 1. Select **Delete terms**.
 1. In the message that appears asking if you want to continue, select **Yes**.
-
-    ![Message asking for confirmation to delete terms of use](./media/terms-of-use/delete-tou.png)
-
-   You should no longer see your terms of use policy.
+   1. You should no longer see your terms of use policy.
 
 ## Service limits
 
@@ -295,9 +281,10 @@ You can add no more than 40 terms per tenant.
 
 User acceptance records are deleted:
 
-- When the admin explicitly deletes the ToU. When this change happens, all the acceptance records associated with that specific ToU are also deleted.
-- When the tenant loses its Microsoft Entra ID P1 or P2 license.
-- When the tenant is deleted.
+* When the admin explicitly deletes the ToU.
+   * When this change happens, all the acceptance records associated with that specific ToU are also deleted.
+* When the tenant loses its Microsoft Entra ID P1 or P2 license.
+* When the tenant is deleted.
 
 ## Policy changes
 
@@ -306,16 +293,16 @@ Conditional Access policies take effect immediately. When this happens, the admi
 > [!IMPORTANT]
 > Users in scope will need to sign-out and sign-in in order to satisfy a new policy if:
 >
-> - a Conditional Access policy is enabled on a terms of use policy
-> - or a second terms of use policy is created
+> * a Conditional Access policy is enabled on a terms of use policy
+> * or a second terms of use policy is created
 
 ## B2B guests
 
-Most organizations have a process in place for their employees to consent to their organization's terms of use policy and privacy statements. But how can you enforce the same consents for Microsoft Entra business-to-business (B2B) guests when they're added via SharePoint or Teams? Using Conditional Access and terms of use policies, you can enforce a policy directly towards B2B guest users. During the invitation redemption flow, the user is presented with the terms of use policy. 
+Most organizations have a process in place for their employees to consent to their organization's terms of use policy and privacy statements. But how can you enforce the same consents for Microsoft Entra business-to-business (B2B) guests when they're added via SharePoint or Teams? Using Conditional Access and terms of use policies, you can enforce a policy directly towards B2B guest users. During the invitation redemption flow, the user is presented with the terms of use policy.
 
-Terms of use policies will only be displayed when the user has a guest account in Microsoft Entra ID. SharePoint Online currently has an [ad hoc external sharing recipient experience](/sharepoint/what-s-new-in-sharing-in-targeted-release) to share a document or a folder that doesn't require the user to have a guest account. In this case, a terms of use policy isn't displayed.
+Terms of use policies are only displayed when the user has a guest account in Microsoft Entra ID. SharePoint Online currently has an [ad hoc external sharing recipient experience](/sharepoint/what-s-new-in-sharing-in-targeted-release) to share a document or a folder that doesn't require the user to have a guest account. In this case, a terms of use policy isn't displayed.
 
-![Users and groups pane - Include tab with All guest users option checked](./media/terms-of-use/b2b-guests.png)
+![A screenshot showing the Conditional Access users and groups pane include tab with All guest users option checked.](./media/terms-of-use/b2b-guests.png)
 
 ## Support for cloud apps
 
@@ -325,19 +312,16 @@ Terms of use policies can be used for different cloud apps, such as Azure Inform
 
 You can configure a Conditional Access policy for the Azure Information Protection app and require a terms of use policy when a user accesses a protected document. This configuration triggers a terms of use policy before a user accessing a protected document for the first time.
 
-![Cloud apps pane with Microsoft Azure Information Protection app selected](./media/terms-of-use/cloud-app-info-protection.png)
-
 ### Microsoft Intune Enrollment
 
 You can configure a Conditional Access policy for the Microsoft Intune Enrollment app and require a terms of use policy before enrollment of a device in Intune. For more information, see the Read [Choosing the right Terms solution for your organization blog post](https://go.microsoft.com/fwlink/?linkid=2010506&clcid=0x409).
 
-![Cloud apps pane with Microsoft Intune app selected](./media/terms-of-use/cloud-app-intune.png)
+![A screenshot showing the Conditional Access Cloud apps pane with Microsoft Intune Enrollment app selected.](./media/terms-of-use/cloud-app-intune.png)
 
 > [!NOTE]
 > The Intune Enrollment app is not supported for [Per-device terms of use](#per-device-terms-of-use).
-
-> [!NOTE]
-> For iOS/iPadOS Automated device enrollment, adding a custom URL to the Microsoft Entra Terms of Use policy doesn't allow for users to open the policy from the URL in Setup Assistant to read it. The policy can be read by the user after Setup Assistant is completed from the Company Portal website, or in the Company Portal app. 
+>
+> For iOS/iPadOS Automated device enrollment, adding a custom URL to the Microsoft Entra Terms of Use policy doesn't allow for users to open the policy from the URL in Setup Assistant to read it. The policy can be read by the user after Setup Assistant is completed from the Company Portal website, or in the Company Portal app.
 
 ## Frequently asked questions
 
@@ -345,7 +329,7 @@ You can configure a Conditional Access policy for the Microsoft Intune Enrollmen
 A: Terms of use can only be accepted when authenticating interactively.
 
 **Q: How do I see when/if a user has accepted a terms of use?**<br />
-A: On the Terms of use blade, select the number under **Accepted**. You can also view or search the accept activity in the Microsoft Entra audit logs. For more information, see View report of who has accepted and declined and [View Microsoft Entra audit logs](#view-azure-ad-audit-logs).
+A: On the Terms of use blade, select the number under **Accepted**. You can also view or search the accept activity in the Microsoft Entra audit logs. For more information, see View report of who has accepted and declined and [View Microsoft Entra audit logs](#view-microsoft-entra-audit-logs).
 
 **Q: How long is information stored?**<br />
 A: The user counts in the terms of use report and who accepted/declined are stored for the life of the terms of use. The Microsoft Entra audit logs are stored for 30 days.
@@ -385,4 +369,4 @@ A: Terms of use utilize the following endpoints for authentication: https://toke
 
 ## Next steps
 
-- [Quickstart: Require terms of use to be accepted before accessing cloud apps](require-tou.md)
+* [Quickstart: Require terms of use to be accepted before accessing cloud apps](require-tou.md)

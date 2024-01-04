@@ -2,18 +2,15 @@
 title: Migrate a classic Conditional Access policy 
 description: This article shows how to migrate a classic Conditional Access policy.
 
-services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 09/21/2023
+ms.date: 01/03/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: nigu
-
-ms.collection: M365-identity-device-management
 ---
 # Migrate from a classic policy
 
@@ -47,4 +44,4 @@ To disable your classic policy, select **Disable** in the **Details** view.
 
 ## Next steps
 
-- [Use report-only mode for Conditional Access to determine the impact of new policy decisions.](concept-conditional-access-report-only.md)
+[Conditional Access template policies](concept-conditional-access-policy-common.md)
