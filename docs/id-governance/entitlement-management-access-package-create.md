@@ -159,73 +159,94 @@ First, retrieve the ID of the catalog (and of the resource and its roles in that
 ```powershell
 Connect-MgGraph -Scopes "EntitlementManagement.ReadWrite.All"
 
-$catalog = Get-MgBetaEntitlementManagementAccessPackageCatalog -Filter "displayName eq 'Marketing'"
-
-$rsc = Get-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageResource -AccessPackageCatalogId $catalog.Id -Filter "resourceType eq 'Application'" -ExpandProperty "accessPackageResourceScopes"
-$filt = "(originSystem eq 'AadApplication' and accessPackageResource/id eq '" + $rsc.Id + "')"
-$rr = Get-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageResourceRole -AccessPackageCatalogId $catalog.Id -Filter $filt -ExpandProperty "accessPackageResource"
+$catalog = Get-MgEntitlementManagementCatalog -Filter "displayName eq 'Marketing'" -All
+if ($catalog -eq $null) { throw "catalog not found" }
+$rsc = Get-MgEntitlementManagementCatalogResource -AccessPackageCatalogId $catalog.id -Filter "originSystem eq 'AadApplication'" -ExpandProperty scopes
+if ($rsc -eq $null) { throw "resource not found" }
+$filt = "(id eq '" + $rsc.Id + "')"
+$rrs = Get-MgEntitlementManagementCatalogResource -AccessPackageCatalogId $catalog.id -Filter $filt -ExpandProperty roles,scopes
 ```
 
 Then, create the access package:
 
 ```powershell
-$params = @{
-    CatalogId = $catalog.id
-    DisplayName = "sales reps"
-    Description = "outside sales representatives"
-}
 
-$ap = New-MgBetaEntitlementManagementAccessPackage -BodyParameter $params
+$params = @{
+    displayName = "sales reps"
+    description = "outside sales representatives"
+    catalog = @{
+        id = $catalog.id
+    }
+}
+$ap = New-MgEntitlementManagementAccessPackage -BodyParameter $params
+
 ```
 
-After you create the access package, assign the resource roles to it.  For example, if you want to include the second resource role of the resource returned earlier as a resource role of the new access package, you can use a script similar to this one:
+After you create the access package, assign the resource roles to it.  For example, if you want to include the first resource role of the resource returned earlier as a resource role of the new access package, you can use a script similar to this one:
 
 ```powershell
+
 $rparams = @{
-    AccessPackageResourceRole = @{
-       OriginId = $rr[2].OriginId
-       DisplayName = $rr[2].DisplayName
-       OriginSystem = $rr[2].OriginSystem
-       AccessPackageResource = @{
-          Id = $rsc.Id
-          ResourceType = $rsc.ResourceType
-          OriginId = $rsc.OriginId
-          OriginSystem = $rsc.OriginSystem
-       }
+    role = @{
+        id =  $rrs.Roles[0].Id
+        displayName =  $rrs.Roles[0].DisplayName
+        description =  $rrs.Roles[0].Description
+        originSystem =  $rrs.Roles[0].OriginSystem
+        originId =  $rrs.Roles[0].OriginId
+        resource = @{
+            id = $rrs.Id
+            originId = $rrs.OriginId
+            originSystem = $rrs.OriginSystem
+        }
     }
-    AccessPackageResourceScope = @{
-       OriginId = $rsc.OriginId
-       OriginSystem = $rsc.OriginSystem
+    scope = @{
+        id = $rsc.Scopes[0].Id
+        originId = $rsc.Scopes[0].OriginId
+        originSystem = $rsc.Scopes[0].OriginSystem
     }
 }
-New-MgBetaEntitlementManagementAccessPackageResourceRoleScope -AccessPackageId $ap.Id -BodyParameter $rparams
+
+New-MgEntitlementManagementAccessPackageResourceRoleScope -AccessPackageId $ap.Id -BodyParameter $rparams
 ```
 
 Finally, create the policies.  In this policy, only the administrator can assign access, and there are no access reviews. For more examples, see [Create an assignment policy through PowerShell](entitlement-management-access-package-request-policy.md#create-an-access-package-assignment-policy-through-powershell) and [Create an accessPackageAssignmentPolicy](/graph/api/entitlementmanagement-post-assignmentpolicies?tabs=http&view=graph-rest-beta&preserve-view=true).
 
 ```powershell
 
+
 $pparams = @{
-    AccessPackageId = $ap.Id
-    DisplayName = "direct"
-    Description = "direct assignments by administrator"
-    AccessReviewSettings = $null
-    RequestorSettings = @{
-        ScopeType = "NoSubjects"
-        AcceptRequests = $true
-        AllowedRequestors = @(
+    displayName = "New Policy"
+    description = "policy for assignment"
+    allowedTargetScope = "notSpecified"
+    specificAllowedTargets = @(
+    )
+    expiration = @{
+        endDateTime = $null
+        duration = $null
+        type = "noExpiration"
+    }
+    requestorSettings = @{
+        enableTargetsToSelfAddAccess = $false
+        enableTargetsToSelfUpdateAccess = $false
+        enableTargetsToSelfRemoveAccess = $false
+        allowCustomAssignmentSchedule = $true
+        enableOnBehalfRequestorsToAddAccess = $false
+        enableOnBehalfRequestorsToUpdateAccess = $false
+        enableOnBehalfRequestorsToRemoveAccess = $false
+        onBehalfRequestors = @(
         )
     }
-    RequestApprovalSettings = @{
-        IsApprovalRequired = $false
-        IsApprovalRequiredForExtension = $false
-        IsRequestorJustificationRequired = $false
-        ApprovalMode = "NoApproval"
-        ApprovalStages = @(
+    requestApprovalSettings = @{
+        isApprovalRequiredForAdd = $false
+        isApprovalRequiredForUpdate = $false
+        stages = @(
         )
+    }
+    accessPackage = @{
+        id = $ap.Id
     }
 }
-New-MgEntitlementManagementAccessPackageAssignmentPolicy -BodyParameter $pparams
+New-MgEntitlementManagementAssignmentPolicy -BodyParameter $pparams
 
 ```
 
