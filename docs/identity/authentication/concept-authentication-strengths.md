@@ -19,7 +19,7 @@ ms.collection: M365-identity-device-management
 
 Authentication strength is a Conditional Access control that specifies which combinations of authentication methods can be used to access a resource. Users can satisfy the strength requirements by authenticating with any of the allowed combinations. 
 
-For example, an authentication stength can only phishing-resistant authentication methods be used to access a sensitive resource. To access a nonsensitive resource, Authentication Policy Administrators can create another authentication strength that allows less secure multifactor authentication (MFA) combinations, such as password + text message. 
+For example, an authentication stength can only phishing-resistant authentication methods be used to access a sensitive resource. To access a nonsensitive resource, administrators can create another authentication strength that allows less secure multifactor authentication (MFA) combinations, such as password + text message. 
 
 Authentication strength is based on the [Authentication methods policy](concept-authentication-methods.md), where administrators can scope authentication methods for specific users and groups to be used across Microsoft Entra ID federated applications. Authentication strength allows further control over the usage of these methods based upon specific scenarios such as sensitive resource access, user risk, location, and more. 
 
@@ -94,7 +94,7 @@ GET https://graph.microsoft.com/beta/identity/conditionalAccess/authenticationSt
 
 Administrators can also create up to 15 of their own custom authentication strengths to exactly suit their requirements. A custom authentication strength can contain any of the supported combinations in the preceding table. After it
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an Administrator.
 1. Browse to **Protection** > **Authentication methods** > **Authentication strengths**.
 1. Select **New authentication strength**.
 1. Provide a descriptive **Name** for your new authentication strength.
