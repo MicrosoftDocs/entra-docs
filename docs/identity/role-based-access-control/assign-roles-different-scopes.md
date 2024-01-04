@@ -85,7 +85,9 @@ Follow these steps to assign Microsoft Entra roles using PowerShell.
 1. Use [New-MgRoleManagementDirectoryRoleAssignment](/powershell/module/microsoft.graph.identity.governance/new-mgrolemanagementdirectoryroleassignment) to assign the role.
 
     ```powershell
-    $roleAssignment = New-MgRoleManagementDirectoryRoleAssignment -DirectoryScopeId $directoryScope -PrincipalId $user.Id -RoleDefinitionId $roleDefinition.Id
+    $roleAssignment = New-MgRoleManagementDirectoryRoleAssignment `
+       -DirectoryScopeId $directoryScope -PrincipalId $user.Id `
+       -RoleDefinitionId $roleDefinition.Id
     ```
  
 ### Microsoft Graph API
@@ -170,7 +172,8 @@ Follow these steps to assign Microsoft Entra roles at administrative unit scope 
 1. Use [Get-MgRoleManagementDirectoryRoleDefinition](/powershell/module/microsoft.graph.identity.governance/get-mgrolemanagementdirectoryroledefinition) to get the role you want to assign.
 
     ```powershell
-    $roleDefinition = Get-MgRoleManagementDirectoryRoleDefinition -Filter "displayName eq 'User Administrator'"
+    $roleDefinition = Get-MgRoleManagementDirectoryRoleDefinition `
+       -Filter "displayName eq 'User Administrator'"
     ```
 
 1. Use [Get-MgDirectoryAdministrativeUnit](/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdirectoryadministrativeunit) to get the administrative unit you want the role assignment to be scoped to.
@@ -183,7 +186,9 @@ Follow these steps to assign Microsoft Entra roles at administrative unit scope 
 1. Use [New-MgRoleManagementDirectoryRoleAssignment](/powershell/module/microsoft.graph.identity.governance/new-mgrolemanagementdirectoryroleassignment) to assign the role.
 
     ```powershell
-    $roleAssignment = New-MgRoleManagementDirectoryRoleAssignment -DirectoryScopeId $directoryScope -PrincipalId $user.Id -RoleDefinitionId $roleDefinition.Id
+    $roleAssignment = New-MgRoleManagementDirectoryRoleAssignment `
+       -DirectoryScopeId $directoryScope -PrincipalId $user.Id `
+       -RoleDefinitionId $roleDefinition.Id
     ```
 
 ### Microsoft Graph API
@@ -285,7 +290,8 @@ Follow these steps to assign Microsoft Entra roles at application scope using Po
 1. Use [Get-MgRoleManagementDirectoryRoleDefinition](/powershell/module/microsoft.graph.identity.governance/get-mgrolemanagementdirectoryroledefinition) to get the role you want to assign.
 
     ```powershell
-    $roleDefinition = Get-MgRoleManagementDirectoryRoleDefinition -Filter "displayName eq 'Application Administrator'"
+    $roleDefinition = Get-MgRoleManagementDirectoryRoleDefinition `
+       -Filter "displayName eq 'Application Administrator'"
     ```
 
 1. Use [Get-MgApplication](/powershell/module/microsoft.graph.applications/get-mgapplication) to get the app registration you want the role assignment to be scoped to.
@@ -298,7 +304,9 @@ Follow these steps to assign Microsoft Entra roles at application scope using Po
 1. Use [New-MgRoleManagementDirectoryRoleAssignment](/powershell/module/microsoft.graph.identity.governance/new-mgrolemanagementdirectoryroleassignment) to assign the role.
 
     ```powershell
-    $roleAssignment = New-MgRoleManagementDirectoryRoleAssignment -DirectoryScopeId $directoryScope -PrincipalId $user.Id -RoleDefinitionId $roleDefinition.Id 
+    $roleAssignment = New-MgRoleManagementDirectoryRoleAssignment `
+       -DirectoryScopeId $directoryScope -PrincipalId $user.Id `
+       -RoleDefinitionId $roleDefinition.Id 
     ```
 
 ### Microsoft Graph API
