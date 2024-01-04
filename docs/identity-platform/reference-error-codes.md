@@ -184,6 +184,7 @@ The `error` field has several possible values - review the protocol documentatio
 | AADSTS50178 | SessionControlNotSupportedForPassthroughUsers - Session control isn't supported for passthrough users. |
 | AADSTS50180 | WindowsIntegratedAuthMissing - Integrated Windows authentication is needed. Enable the tenant for Seamless SSO. |
 | AADSTS50187 | DeviceInformationNotProvided - The service failed to perform device authentication. |
+| AADSTS50192 | Invalid Request - RawCredentialExpectedNotFound - No Credential was included in the sign-in request. Example : user is performing certificate-based authentication (CBA) and no certificate is sent (or Proxy removes) the users certificate in the sign-in request. |
 | AADSTS50194 | Application '{appId}'({appName}) isn't configured as a multitenant application. Usage of the /common endpoint isn't supported for such applications created after '{time}'. Use a tenant-specific endpoint or configure the application to be multitenant. |
 | AADSTS50196 | LoopDetected - A client loop has been detected. Check the app’s logic to ensure that token caching is implemented, and that error conditions are handled correctly.  The app has made too many of the same request in too short a period, indicating that it is in a faulty state or is abusively requesting tokens. |
 | AADSTS50197 | ConflictingIdentities - The user could not be found. Try signing in again. |
