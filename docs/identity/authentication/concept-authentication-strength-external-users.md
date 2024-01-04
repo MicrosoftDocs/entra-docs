@@ -6,7 +6,7 @@ services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 12/12/2023
+ms.date: 01/04/2024
 
 ms.author: justinha
 author: inbarckms
@@ -19,7 +19,7 @@ ms.collection: M365-identity-device-management
 
 The Authentication methods policy is especially useful for restricting external access to sensitive apps in your organization because you can enforce specific authentication methods, such as phishing-resistant methods, for external users.
 
-When you apply an authentication strength Conditional Access policy to external Microsoft Entra users, the policy works together with MFA trust settings in your cross-tenant access settings to determine where and how the external user must perform MFA. A Microsoft Entra user authenticates in their home Microsoft Entra tenant. Then when they access your resource, Microsoft Entra ID applies the policy and checks to see if you've enabled MFA trust. Note that enabling MFA trust is optional for B2B collaboration but is *required* for [B2B direct connect](~/external-id/b2b-direct-connect-overview.md#multi-factor-authentication-mfa).
+When you apply an authentication strength Conditional Access policy to external Microsoft Entra users, the policy works together with MFA trust settings in your cross-tenant access settings to determine where and how the external user must perform MFA. A Microsoft Entra user authenticates in their home Microsoft Entra tenant. Then when they access your resource, Microsoft Entra ID applies the policy and checks to see if you've enabled MFA trust. Note that enabling MFA trust is optional for B2B collaboration but is *required* for [B2B direct connect](~/external-id/b2b-direct-connect-overview.md#multifactor-authentication-mfa).
 
 In external user scenarios, the authentication methods that can satisfy authentication strength vary, depending on whether the user is completing MFA in their home tenant or the resource tenant. The following table indicates the allowed methods in each tenant. If a resource tenant has opted to trust claims from external Microsoft Entra organizations, only those claims listed in the “Home tenant” column below will be accepted by the resource tenant for MFA. If the resource tenant has disabled MFA trust, the external user must complete MFA in the resource tenant using one of the methods listed in the “Resource tenant” column.
 

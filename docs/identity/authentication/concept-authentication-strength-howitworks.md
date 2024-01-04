@@ -40,7 +40,6 @@ Users may register for authentications for which they are enabled, and in other 
 
 The authentication strength Conditional Access policy defines which methods can be used. Microsoft Entra ID checks the policy during sign-in to determine the user’s access to the resource. For example, an administrator configures a Conditional Access policy with a custom authentication strength that requires FIDO2 Security Key or Password + text message. The user accesses a resource protected by this policy. During sign-in, all settings are checked to determine which methods are allowed, which methods are registered, and which methods are required by the Conditional Access policy. To be used, a method must be allowed, registered by the user (either before or as part of the access request), and satisfy the authentication strength. 
 
- 
 ## How multiple Conditional Access authentication strength policies are evaluated 
 
 In general, when there are multiple Conditional Access policies applicable for a single sign-in, all conditions from all policies must be met. In the same vein, when there are multiple Conditional Access policies which apply authentication strengths to the sign-in, the user must satisfy all of the authentication strength policies. For example, if two different authentication strength policies both require FIDO2, the user can use their FIDO2 security key and satisfy both policies. If the two authentication strength policies have different sets of methods, the user must use multiple methods to satisfy both policies. 
@@ -59,8 +58,6 @@ As a result, users on a compliant device would be able to use a Temporary Access
 
 >[!NOTE] 
 >If multiple Conditional Access policies target the **Register security information** user action, and they each apply an authentication strength, the user must satisfy all such authentication strengths to sign in. 
-
-
 
 ## User experience
 
