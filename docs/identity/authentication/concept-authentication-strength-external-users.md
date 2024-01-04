@@ -46,6 +46,6 @@ An authentication strength Conditional Access policy works together with [MFA tr
 ## Next steps
 
 - [Overview](concept-authentication-strengths.md)
-- [FIDO2 and CBA adavanced options](concept-authentication-strength-advanced-options.md)
+- [FIDO2 and CBA advanced options](concept-authentication-strength-advanced-options.md)
 - [How authentication strength works](concept-authentication-strength-howitworks.md)
 - [Troubleshoot authentication strengths](troubleshoot-authentication-strengths.md) 
