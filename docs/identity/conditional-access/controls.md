@@ -38,7 +38,7 @@ The option to create a custom control is in the **Manage** section of the **Cond
 
 ![Custom controls interface in Conditional Access](./media/controls/custom-controls-conditional-access.png)
 
-Clicking **New custom control**, opens a blade with a textbox for the JSON data of your control.  
+Clicking **New custom control** opens a blade with a textbox for the JSON data of your control.  
 
 ![New custom control](./media/controls/new-custom-controls-conditional-access.png)
 

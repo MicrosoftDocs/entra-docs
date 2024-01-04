@@ -32,7 +32,7 @@ If you have a service dependency configured, the policy can apply using early-bo
 
 The following diagram illustrates Microsoft Teams service dependencies. Solid arrows indicate early-bound enforcement the dashed arrow for Planner indicates late-bound enforcement.
 
-![Microsoft Teams service dependencies](./media/service-dependencies/01.png)
+![A diagram showing Microsoft Teams service dependencies.](./media/service-dependencies/01.png)
 
 As a best practice, you should set common policies across related apps and services whenever possible. Having a consistent security posture provides you with the best user experience. For example, setting a common policy across Exchange Online, SharePoint Online, Microsoft Teams, and Skype for business significantly reduces unexpected prompts that might arise from different policies being applied to downstream services.
 
