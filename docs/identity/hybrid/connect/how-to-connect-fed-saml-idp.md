@@ -1,6 +1,6 @@
 ---
 title: 'Microsoft Entra Connect: Use a SAML 2.0 Identity Provider for Single Sign On - Azure'
-description: This document describes using a SAML 2.0 compliant Idp for single sign on.
+description: This document describes using a SAML 2.0 compliant Idp for single sign-on.
 services: active-directory
 author: billmath
 manager: amycolannino
@@ -22,7 +22,7 @@ This document contains information on using a SAML 2.0 compliant SP-Lite profile
 >[!NOTE]
 >For a list of 3rd party Idps that have been tested for use with Microsoft Entra ID see the [Microsoft Entra federation compatibility list](how-to-connect-fed-compatibility.md)
 
-Microsoft supports this sign-on experience as the integration of a Microsoft cloud service, such as Microsoft 365, with your properly configured SAML 2.0 profile-based IdP. SAML 2.0 identity providers are third-party products and therefore Microsoft does not provide support for the deployment, configuration, troubleshooting best practices regarding them. Once properly configured, the integration with the SAML 2.0 identity provider can be tested for proper configuration by using the Microsoft Connectivity Analyzer Tool, which is described in more detail below. For more information about your SAML 2.0 SP-Lite profile-based identity provider, ask the organization that supplied it.
+Microsoft supports this sign-on experience as the integration of a Microsoft cloud service, such as Microsoft 365, with your properly configured SAML 2.0 profile-based IdP. SAML 2.0 identity providers are third-party products and therefore Microsoft doesn't provide support for the deployment, configuration, troubleshooting best practices regarding them. Once properly configured, the integration with the SAML 2.0 identity provider can be tested for proper configuration by using the Microsoft Connectivity Analyzer Tool, which is described in more detail below. For more information about your SAML 2.0 SP-Lite profile-based identity provider, ask the organization that supplied it.
 
 > [!IMPORTANT]
 > Only a limited set of clients are available in this sign-on scenario with SAML 2.0 identity providers, this includes:
@@ -35,14 +35,14 @@ Microsoft supports this sign-on experience as the integration of a Microsoft clo
 >     - Windows 8 Mail Client and Windows 8.1 Mail Client
 >     - Windows 10 Mail Client
 
-All other clients are not available in this sign-on scenario with your SAML 2.0 Identity Provider. For example, the Lync 2010 desktop client is not able to sign in to the service with your SAML 2.0 Identity Provider configured for single sign-on.
+All other clients aren't available in this sign-on scenario with your SAML 2.0 Identity Provider. For example, the Lync 2010 desktop client isn't able to sign in to the service with your SAML 2.0 Identity Provider configured for single sign-on.
 
 <a name='azure-ad-saml-20-protocol-requirements'></a>
 
 ## Microsoft Entra SAML 2.0 protocol requirements
 This document contains detailed requirements on the protocol and message formatting that your SAML 2.0 identity provider must implement to federate with Microsoft Entra ID to enable sign-on to one or more Microsoft cloud services (such as Microsoft 365). The SAML 2.0 relying party (SP-STS) for a Microsoft cloud service used in this scenario is Microsoft Entra ID.
 
-It is recommended that you ensure your SAML 2.0 identity provider output messages be as similar to the provided sample traces as possible. Also, use specific attribute values from the supplied Microsoft Entra metadata where possible. Once you are happy with your output messages, you can test with the Microsoft Connectivity Analyzer as described below.
+It's recommended that you ensure your SAML 2.0 identity provider output messages be as similar to the provided sample traces as possible. Also, use specific attribute values from the supplied Microsoft Entra metadata where possible. Once you're happy with your output messages, you can test with the Microsoft Connectivity Analyzer as described below.
 
 The Microsoft Entra metadata can be downloaded from this URL: [https://nexus.microsoftonline-p.com/federationmetadata/saml20/federationmetadata.xml](https://nexus.microsoftonline-p.com/federationmetadata/saml20/federationmetadata.xml).
 For customers in China using the China-specific instance of Microsoft 365, the following federation endpoint should be used: [https://nexus.partner.microsoftonline-p.cn/federationmetadata/saml20/federationmetadata.xml](https://nexus.partner.microsoftonline-p.cn/federationmetadata/saml20/federationmetadata.xml).
@@ -56,9 +56,9 @@ Microsoft Entra ID can be configured to work with identity providers that use th
 Within the SAML Response message, the Signature node contains information about the digital signature for the message itself. The signature block has the following requirements:
 
 1. The assertion node itself must be signed
-2. The RSA-sha1 algorithm must be used as the DigestMethod. Other digital signature algorithms are not accepted.
+2. The RSA-sha1 algorithm must be used as the DigestMethod. Other digital signature algorithms aren't accepted.
    `<ds:DigestMethod Algorithm="https://www.w3.org/2000/09/xmldsig#sha1"/>`
-3. You may also sign the XML document. 
+3. You can also sign the XML document. 
 4. The Transform Algorithm must match the values in the following sample:
        `<ds:Transform Algorithm="https://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
        <ds:Transform Algorithm="https://www.w3.org/2001/10/xml-exc-c14n#"/>`
@@ -72,8 +72,8 @@ Within the SAML Response message, the Signature node contains information about 
 Bindings are the transport-related communications parameters that are required. The following requirements apply to the bindings
 
 1. HTTPS is the required transport.
-2. Microsoft Entra ID will require HTTP POST for token submission during sign-in.
-3. Microsoft Entra ID will use HTTP POST for the authentication request to the identity provider and REDIRECT for the sign out message to the identity provider.
+2. Microsoft Entra ID requires HTTP POST for token submission during sign-in.
+3. Microsoft Entra ID uses HTTP POST for the authentication request to the identity provider and REDIRECT for the sign out message to the identity provider.
 
 ## Required attributes
 This table shows requirements for specific attributes in the SAML 2.0 message.
@@ -82,7 +82,7 @@ This table shows requirements for specific attributes in the SAML 2.0 message.
 | ----- | ----- |
 |NameID|The value of this assertion must be the same as the Microsoft Entra user’s ImmutableID. It can be up to 64 alpha numeric characters. Any non-html safe characters must be encoded, for example a “+” character is shown as “.2B”.|
 |IDPEmail|The User Principal Name (UPN) is listed in the SAML response as an element with the name IDPEmail The user’s UserPrincipalName (UPN) in Microsoft Entra ID / Microsoft 365. The UPN is in email address format. UPN value in Windows Microsoft 365 (Microsoft Entra ID).|
-|Issuer|Required to be a URI of the identity provider. Do not reuse the Issuer from the sample messages. If you have multiple top-level domains in your Microsoft Entra tenants the Issuer must match the specified URI setting configured per domain.|
+|Issuer|Required to be a URI of the identity provider. Don't reuse the Issuer from the sample messages. If you have multiple top-level domains in your Microsoft Entra tenants, the Issuer must match the specified URI setting configured per domain.|
 
 >[!IMPORTANT]
 >Microsoft Entra ID currently supports the following NameID Format URI for SAML 2.0:urn:oasis:names:tc:SAML:2.0:nameid-format:persistent.
@@ -183,7 +183,7 @@ This section contains guidelines on how to configure your SAML 2.0 identity prov
 ## Add Microsoft Entra metadata
 Your SAML 2.0 identity provider needs to adhere to information about the Microsoft Entra ID relying party. Microsoft Entra ID publishes metadata at https://nexus.microsoftonline-p.com/federationmetadata/saml20/federationmetadata.xml.
 
-It is recommended that you always import the latest Microsoft Entra metadata when configuring your SAML 2.0 identity provider.
+It's recommended that you always import the latest Microsoft Entra metadata when configuring your SAML 2.0 identity provider.
 
 >[!NOTE]
 >Microsoft Entra ID does not read metadata from the identity provider.
@@ -192,22 +192,22 @@ It is recommended that you always import the latest Microsoft Entra metadata whe
 
 ## Add Microsoft Entra ID as a relying party
 
-You must enable communication between your SAML 2.0 identity provider and Microsoft Entra ID. This configuration will be dependent on your specific identity provider and you should refer to documentation for it. You would typically set the relying party ID to the same as the entityID from the Microsoft Entra metadata.
+You must enable communication between your SAML 2.0 identity provider and Microsoft Entra ID. This configuration is dependent on your specific identity provider and you should refer to documentation for it. You would typically set the relying party ID to the same as the entityID from the Microsoft Entra metadata.
 
 >[!NOTE]
 >Verify the clock on your SAML 2.0 identity provider server is synchronized to an accurate time source. An inaccurate clock time can cause federated logins to fail.
 
 ## Install PowerShell for sign-on with SAML 2.0 identity provider
 
-After you have configured your SAML 2.0 identity provider for use with Microsoft Entra sign-on, the next step is to download and install the [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview) module. Once installed, you will use these cmdlets to configure your Microsoft Entra domains as federated domains.
+After you configure your SAML 2.0 identity provider for use with Microsoft Entra sign-on, the next step is to download and install the [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview) module. Once installed, you'll use these cmdlets to configure your Microsoft Entra domains as federated domains.
 
-The Microsoft Graph PowerShell module is a download for managing your organizations data in Microsoft Entra ID. This module installs a set of cmdlets to PowerShell; you run those cmdlets to set up single sign-on access to Microsoft Entra ID and in turn to all of the cloud services you are subscribed to. For instructions about how to download and install the cmdlets, see [Install the Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/installation).
+The Microsoft Graph PowerShell module is a download for managing your organizations data in Microsoft Entra ID. This module installs a set of cmdlets to PowerShell; you run those cmdlets to set up single sign-on access to Microsoft Entra ID and in turn to all of the cloud services you're subscribed to. For instructions about how to download and install the cmdlets, see [Install the Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/installation).
 
 <a name='set-up-a-trust-between-your-saml-identity-provider-and-azure-ad'></a>
 
 ## Set up a trust between your SAML identity provider and Microsoft Entra ID
-Before configuring federation on a Microsoft Entra domain, it must have a custom domain configured. You cannot federate the default domain that is provided by Microsoft. The default domain from Microsoft ends with `onmicrosoft.com`.
-You will run a series of PowerShell cmdlets to add or convert domains for single sign-on.
+Before configuring federation on a Microsoft Entra domain, it must have a custom domain configured. You can't federate the default domain that is provided by Microsoft. The default domain from Microsoft ends with `onmicrosoft.com`.
+You'll run a series of PowerShell cmdlets to add or convert domains for single sign-on.
 
 Each Microsoft Entra domain that you want to federate using your SAML 2.0 identity provider must either be added as a single sign-on domain or converted to be a single sign-on domain from a standard domain. Adding or converting a domain sets up a trust between your SAML 2.0 identity provider and Microsoft Entra ID.
 
@@ -247,7 +247,7 @@ The following procedure walks you through converting an existing standard domain
      -SigningCertificate $MySigningCert
    ```
 
-3. You can obtain the signing certificate base64 encoded string from your IDP metadata file. An example of this location has been provided but may differ slightly based on your implementation.
+3. You can obtain the signing certificate base64 encoded string from your IDP metadata file. An example of this location is provided below but can differ slightly based on your implementation.
 
    ```xml
    <IDPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
@@ -266,12 +266,12 @@ For more information, see [New-MgDomainFederationConfiguration](/powershell/modu
 >[!NOTE]
 >You must use `$ecpUrl = "https://WS2012R2-0.contoso.com/PAOS"` only if you set up an ECP extension for your identity provider. Exchange Online clients, excluding Outlook Web Application (OWA), rely on a POST based active end point. If your SAML 2.0 STS implements an active end point similar to Shibboleth’s ECP implementation of an active end point it may be possible for these rich clients to interact with the Exchange Online service.
 
-Once federation has been configured you can switch back to “non-federated” (or “managed”), however this change takes up to two hours to complete and it requires assigning new random passwords for cloud-based sign-in to each user. Switching back to “managed” may be required in some scenarios to reset an error in your settings. For more information on Domain conversion, see [Remove-MgDomainFederationConfiguration](/powershell/module/microsoft.graph.identity.directorymanagement/remove-mgdomainfederationconfiguration).
+Once federation is configured, you can switch back to “non-federated” (or “managed”), however this change takes up to two hours to complete and it requires assigning new random passwords for cloud-based sign-in to each user. Switching back to “managed” may be required in some scenarios to reset an error in your settings. For more information on Domain conversion, see [Remove-MgDomainFederationConfiguration](/powershell/module/microsoft.graph.identity.directorymanagement/remove-mgdomainfederationconfiguration).
 
 <a name='provision-user-principals-to-azure-ad--microsoft-365'></a>
 
 ## Provision user principals to Microsoft Entra ID / Microsoft 365
-Before you can authenticate your users to Microsoft 365, you must provision Microsoft Entra ID with user principals that correspond to the assertion in the SAML 2.0 claim. If these user principals are not known to Microsoft Entra ID in advance, then they cannot be used for federated sign-in. Either Microsoft Entra Connect or PowerShell can be used to provision user principals.
+Before you can authenticate your users to Microsoft 365, you must provision Microsoft Entra ID with user principals that correspond to the assertion in the SAML 2.0 claim. If these user principals aren't known to Microsoft Entra ID in advance, then they can't be used for federated sign-in. Either Microsoft Entra Connect or PowerShell can be used to provision user principals.
 
 Microsoft Entra Connect can be used to provision principals to your domains in your Microsoft Entra Directory from the on-premises Active Directory. For more detailed information, see [Integrate your on-premises directories with Microsoft Entra ID](../whatis-hybrid-identity.md).
 
@@ -314,16 +314,16 @@ As the administrator, before you verify and manage single sign-on (also called i
 5. Provisioned a known test user principal to Microsoft Entra ID (Microsoft 365) via either PowerShell or Microsoft Entra Connect.
 6. Configure directory synchronization using [Microsoft Entra Connect](../whatis-hybrid-identity.md).
 
-After setting up single sign-on with your SAML 2.0 SP-Lite based identity Provider, you should verify that it is working correctly.
+After setting up single sign-on with your SAML 2.0 SP-Lite based identity Provider, you should verify that it's working correctly.
 
 >[!NOTE]
 >If you converted a domain, rather than adding one, it may take up to 24 hours to set up single sign-on.
 Before you verify single sign-on, you should finish setting up Active Directory synchronization, synchronize your directories, and activate your synced users.
 
-### Use the tool to verify that single sign-on has been set up correctly
-To verify that single sign-on has been set up correctly, you can perform the following procedure to confirm that you are able to sign-in to the cloud service with your corporate credentials.
+### Use the tool to verify that single sign-on is set up correctly
+To verify that single sign-on has been set up correctly, you can perform the following procedure to confirm that you're able to sign-in to the cloud service with your corporate credentials.
 
-Microsoft has provided a tool that you can use to test your SAML 2.0 based identity provider. Before running the test tool, you must have configured a Microsoft Entra tenant to federate with your identity provider.
+Microsoft provides a tool that you can use to test your SAML 2.0 based identity provider. Before running the test tool, you must have configured a Microsoft Entra tenant to federate with your identity provider.
 
 >[!NOTE]
 >The Connectivity Analyzer requires Internet Explorer 10 or later.
@@ -331,30 +331,30 @@ Microsoft has provided a tool that you can use to test your SAML 2.0 based ident
 
 
 1. Download the [Connectivity Analyzer](https://testconnectivity.microsoft.com/?tabid=Client).
-2. Click Install Now to begin downloading and installing the tool.
-3. Select “I can’t set up federation with Office 365, Azure, or other services that use Microsoft Entra ID”.
-4. Once the tool is downloaded and running, you will see the Connectivity Diagnostics window. The tool will step you through testing your federation connection.
-5. The Connectivity Analyzer will open your SAML 2.0 IDP for you to sign-in, enter the credentials for the user principal you are testing:
+2. Select Install Now to begin downloading and installing the tool.
+3. Select “I can’t set up federation with Office 365, Azure, or other services that use Microsoft Entra ID.”
+4. Once the tool is downloaded and running, you'll see the Connectivity Diagnostics window. The tool will step you through testing your federation connection.
+5. The Connectivity Analyzer opens your SAML 2.0 IDP for you to sign-in, enter the credentials for the user principal you're testing:
 
     ![Screenshot that shows the sign-in window for your SAML 2.0 IDP.](./media/how-to-connect-fed-saml-idp/saml1.png)
 
-6.  At the Federation test sign-in window, you should enter an account name and password for the Microsoft Entra tenant that is configured to be federated with your SAML 2.0 identity provider. The tool will attempt to sign-in using those credentials and detailed results of tests performed during the sign-in attempt will be provided as output.
+6.  At the Federation test sign-in window, you should enter an account name and password for the Microsoft Entra tenant that is configured to be federated with your SAML 2.0 identity provider. The tool attempts to sign-in using those credentials and detailed results of tests performed during the sign-in attempt will be provided as output.
 
     ![SAML](./media/how-to-connect-fed-saml-idp/saml2.png)
 
-7. This window shows a failed result of testing. Clicking on Review detailed results will show information about the results for each test that was performed. You can also save the results to disk in order to share them.
+7. This window shows a failed result of testing. Clicking on Review detailed results show information about the results for each test that was performed. You can also save the results to disk in order to share them.
  
 > [!NOTE]
 > The Connectivity analyzer also tests Active Federation using the WS*-based and ECP/PAOS protocols. If you are not using these you can disregard the following error: Testing the Active sign-in flow using your identity provider’s Active federation endpoint.
 
 ### Manually verify that single sign-on has been set up correctly
 
-Manual verification provides additional steps that you can take to ensure that your SAML 2.0 identity Provider is working properly in many scenarios.
-To verify that single sign-on has been set up correctly, complete the following steps:
+Manual verification provides more steps that you can take to ensure that your SAML 2.0 identity Provider is working properly in many scenarios.
+To verify that single sign-on is set up correctly, complete the following steps:
 
 1. On a domain-joined computer, sign-in to your cloud service using the same sign-in name that you use for your corporate credentials.
-2. Click inside the password box. If single sign-on is set up, the password box will be shaded, and you will see the following message: “You are now required to sign-in at &lt;your company&gt;.”
-3. Click the Sign-in at &lt;your company&gt; link. If you are able to sign-in, then single sign-on has been set up.
+2. Select inside the password box. If single sign-on is set up, the password box is shaded, and you'll see the following message: “You're now required to sign-in at &lt;your company&gt;.”
+3. Select the Sign-in at &lt;your company&gt; link. If you're able to sign-in, then single sign-on is set up.
 
 ## Next Steps
 
