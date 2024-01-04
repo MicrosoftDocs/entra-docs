@@ -167,7 +167,7 @@ Follow these steps to view the list of users who have assignments to two access 
 
 ### Identifying users who already have incompatible access programmatically
 
-You can retrieve assignments to an access package using Microsoft Graph, that are scoped to just those users who also have an assignment to another access package.  A user in an administrative role with an application that has the delegated `EntitlementManagement.Read.All` or `EntitlementManagement.ReadWrite.All` permission can call the API to [list additional access](/graph/api/accesspackageassignment-additionalaccess?view=graph-rest-beta&preserve-view=true).
+You can retrieve assignments to an access package using Microsoft Graph, that are scoped to just those users who also have an assignment to another access package.  A user in an administrative role with an application that has the delegated `EntitlementManagement.Read.All` or `EntitlementManagement.ReadWrite.All` permission can call the API to [list additional access](/graph/api/accesspackageassignment-additionalaccess?view=graph-rest-1.0&preserve-view=true).
 
 ### Identifying users who already have incompatible access using PowerShell
 

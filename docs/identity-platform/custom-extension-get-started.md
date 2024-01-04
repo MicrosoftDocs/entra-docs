@@ -11,12 +11,13 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: how-to
 titleSuffix: Microsoft identity platform
-#Customer intent: As an application developer, I want to create and register a custom authentication extensions API so I can source claims from a data store that is external to Microsoft Entra ID.
+
+#Customer intent: As a developer, I want to configure a custom claims provider token issuance event, so that I can add custom claims to a token before it is issued.
 ---
 
 # Configure a custom claim provider token issuance event (preview)
 
-This article describes how to configure and set up a custom claims provider with the [token issuance start event](custom-claims-provider-overview.md#token-issuance-start-event-listener) type. This event is triggered right before the token is issued, and allows you to call a REST API to add claims to the token. 
+This article describes how to configure and set up a custom claims provider with the [token issuance start event](custom-claims-provider-overview.md#token-issuance-start-event-listener) type. This event is triggered right before the token is issued, and allows you to call a REST API to add claims to the token.
 
 This how-to guide demonstrates the token issuance start event with a REST API running in Azure Functions and a sample OpenID Connect application. Before you start, take a look at following video, which demonstrates how to configure Microsoft Entra custom claims provider with Function App:
 
@@ -281,9 +282,8 @@ Content-type: application/json
 Next, you register the custom authentication extension. You register the custom authentication extension by associating it with the app registration for the Azure Function, and your Azure Function endpoint `{Function_Url}`.
 
 1. In Graph Explorer, run the following request. Replace `{Function_Url}` with the hostname of your Azure Function app. Replace `{functionApp_IdentifierUri}` with the identifierUri used in the previous step.
-   - You'll need the *CustomAuthenticationExtension.ReadWrite.All* delegated permission. 
+   - You need the *CustomAuthenticationExtension.ReadWrite.All* delegated permission. 
 
-    # [HTTP](#tab/http)
     ```http
     POST https://graph.microsoft.com/beta/identity/customAuthenticationExtensions
     Content-type: application/json
@@ -310,29 +310,7 @@ Next, you register the custom authentication extension. You register the custom 
         ]
     }
     ```
-    # [C#](#tab/csharp)
-    [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/beta/includes/snippets/csharp/create-customauthenticationextension-from--csharp-snippets.md)]
     
-    # [Go](#tab/go)
-    [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/beta/includes/snippets/go/create-customauthenticationextension-from--go-snippets.md)]
-    
-    # [Java](#tab/java)
-    [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/beta/includes/snippets/java/create-customauthenticationextension-from--java-snippets.md)]
-    
-    # [JavaScript](#tab/javascript)
-    [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/beta/includes/snippets/javascript/create-customauthenticationextension-from--javascript-snippets.md)]
-    
-    # [PHP](#tab/php)
-    [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/beta/includes/snippets/php/create-customauthenticationextension-from--php-snippets.md)]
-    
-    # [PowerShell](#tab/powershell)
-    [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/beta/includes/snippets/powershell/create-customauthenticationextension-from--powershell-snippets.md)]
-    
-    # [Python](#tab/python)
-    [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/beta/includes/snippets/python/create-customauthenticationextension-from--python-snippets.md)]
-
-    ---
-
 1. Record the **id** value of the created custom claims provider object. You'll use the value later in this tutorial in place of `{customExtensionObjectId}`.
 
 ---
@@ -442,9 +420,8 @@ First create an event listener to trigger a custom authentication extension for 
 
 1. Sign in to [Graph Explorer](https://aka.ms/ge) using an account whose home tenant is the tenant you wish to manage your custom authentication extension in.
 1. Run the following request. Replace `{App_to_enrich_ID}` with the app ID of *My Test application* recorded earlier. Replace `{customExtensionObjectId}` with the custom authentication extension ID recorded earlier.
-    - You'll need the *EventListener.ReadWrite.All* delegated permission. 
+    - You need the *EventListener.ReadWrite.All* delegated permission. 
 
-    # [HTTP](#tab/http)
     ```http
     POST https://graph.microsoft.com/beta/identity/authenticationEventListeners
     Content-type: application/json
@@ -470,30 +447,6 @@ First create an event listener to trigger a custom authentication extension for 
         }
     }
     ```
-
-    # [C#](#tab/csharp)
-    [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/beta/includes/snippets/csharp/create-authenticationeventlistener-from--csharp-snippets.md)]
-    
-    # [Go](#tab/go)
-    [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/beta/includes/snippets/go/create-authenticationeventlistener-from--go-snippets.md)]
-    
-    # [Java](#tab/java)
-    [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/beta/includes/snippets/java/create-authenticationeventlistener-from--java-snippets.md)]
-    
-    # [JavaScript](#tab/javascript)
-    [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/beta/includes/snippets/javascript/create-authenticationeventlistener-from--javascript-snippets.md)]
-    
-    # [PHP](#tab/php)
-    [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/beta/includes/snippets/php/create-authenticationeventlistener-from--php-snippets.md)]
-    
-    # [PowerShell](#tab/powershell)
-    [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/beta/includes/snippets/powershell/create-authenticationeventlistener-from--powershell-snippets.md)]
-    
-    # [Python](#tab/python)
-    [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/beta/includes/snippets/python/create-authenticationeventlistener-from--python-snippets.md)]
-    
-    ---
-
 
 Next, create the claims mapping policy, which describes which claims can be issued to an application from a custom claims provider.
 

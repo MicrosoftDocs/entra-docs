@@ -61,7 +61,7 @@ There are two ways to create a catalog programmatically.
 
 ### Create a catalog with Microsoft Graph
 
-You can create a catalog by using Microsoft Graph. A user in an appropriate role with an application that has the delegated `EntitlementManagement.ReadWrite.All` permission, or an application with that application permission, can call the API to [create an accessPackageCatalog](/graph/api/entitlementmanagement-post-accesspackagecatalogs?view=graph-rest-beta&preserve-view=true).
+You can create a catalog by using Microsoft Graph. A user in an appropriate role with an application that has the delegated `EntitlementManagement.ReadWrite.All` permission, or an application with that application permission, can call the API to [create a catalog](/graph/api/entitlementmanagement-post-catalogs?view=graph-rest-1.0&preserve-view=true).
 
 ### Create a catalog with PowerShell
 
@@ -177,7 +177,7 @@ To require attributes for access requests:
 
 ### Add a resource to a catalog programmatically
 
-You can also add a resource to a catalog by using Microsoft Graph. A user in an appropriate role, or a catalog and resource owner, with an application that has the delegated `EntitlementManagement.ReadWrite.All` permission can call the API to [create an accessPackageResourceRequest](/graph/api/entitlementmanagement-post-accesspackageresourcerequests?view=graph-rest-beta&preserve-view=true). An application with the application permission `EntitlementManagement.ReadWrite.All` and permissions to change resources, such as `Group.ReadWrite.All`, can also add resources to the catalog.
+You can also add a resource to a catalog by using Microsoft Graph. A user in an appropriate role, or a catalog and resource owner, with an application that has the delegated `EntitlementManagement.ReadWrite.All` permission can call the API to [create a resourceRequest](/graph/api/entitlementmanagement-post-resourcerequests?view=graph-rest-1.0&preserve-view=true). An application with the application permission `EntitlementManagement.ReadWrite.All` and permissions to change resources, such as `Group.ReadWrite.All`, can also add resources to the catalog.
 
 ### Add a resource to a catalog with PowerShell
 

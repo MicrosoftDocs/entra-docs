@@ -35,7 +35,7 @@ landingContent:
       - linkListType: tutorial
         links:
           - text: ASP.NET
-            url: ./web-app-tutorial-01-register-application.md
+            url: tutorial-web-app-dotnet-register-app.md
           - text: Blazor Server
             url: tutorial-blazor-server.md
           - text: Node.js with Express

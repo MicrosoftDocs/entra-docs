@@ -6,7 +6,7 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 12/06/2023
+ms.date: 01/02/2024
 
 author: justinha
 ms.author: justinha
@@ -29,7 +29,7 @@ Microsoft applications provide native support for FIDO2 authentication in previe
 | macOS            | Microsoft Intune Company Portal | &#10060;       |
 | Android<sup>1</sup> | Authenticator or Company Portal | &#10060;    |
 
-<sup>1</sup>Native app support for FIDO2 on macOS and Android is in development.
+<sup>2</sup>Native app support for FIDO2 on Android is in development.
 
 If a user has an authentication broker installed, they can choose to sign in with a security key when they access an application such as Outlook. They're redirected to sign in with FIDO2, and redirected back to Outlook as a signed in user after successful authentication.
 
@@ -129,7 +129,7 @@ The following are the minimum browser version requirements.
 
 If you're using Chrome or Edge, the browser might prioritize usage of a passkey that's stored on a mobile device over a passkey that's stored on a security key. 
 
-- Beginning with Windows 11 version 23H2, you can sign in with your work or school account and click **Next**. Below **More choices**, choose **Security key** and click **Next**.
+- Beginning with Windows 11 version 23H2, the OS will show the following prompt during sign-in. Below **More choices**, choose **Security key** and click **Next**.
 
   :::image type="content" border="true" source="./media/howto-authentication-passwordless-security-key/security-key.png" alt-text="Screenshot of option to choose security key on Windows 11."::: 
 
