@@ -111,21 +111,27 @@ Use the [Get-MgDirectoryAdministrativeUnit](/powershell/module/microsoft.graph.i
 
 ```powershell
 $userObj = Get-MgUser -Filter "UserPrincipalName eq 'bill@example.com'"
-Get-MgDirectoryAdministrativeUnit | where { Get-MgDirectoryAdministrativeUnitMember -AdministrativeUnitId $_.Id | where {$_.Id -eq $userObj.Id} }
+Get-MgDirectoryAdministrativeUnit | `
+   where { Get-MgDirectoryAdministrativeUnitMember -AdministrativeUnitId $_.Id | `
+   where {$_.Id -eq $userObj.Id} }
 ```
 
 ### List the administrative units for a group
 
 ```powershell
 $groupObj = Get-MgGroup -Filter "DisplayName eq 'TestGroup'"
-Get-MgDirectoryAdministrativeUnit | where { Get-MgDirectoryAdministrativeUnitMember -AdministrativeUnitId $_.Id | where {$_.Id -eq $groupObj.Id} }
+Get-MgDirectoryAdministrativeUnit | `
+   where { Get-MgDirectoryAdministrativeUnitMember -AdministrativeUnitId $_.Id | `
+   where {$_.Id -eq $groupObj.Id} }
 ```
 
 ### List the administrative units for a device
 
 ```powershell
 $deviceObj = Get-MgDevice -Filter "DisplayName eq 'Test device'"
-Get-MgDirectoryAdministrativeUnit | where { Get-MgDirectoryAdministrativeUnitMember -AdministrativeUnitId $_.Id | where {$_.Id -eq $deviceObj.Id} }
+Get-MgDirectoryAdministrativeUnit | `
+   where { Get-MgDirectoryAdministrativeUnitMember -AdministrativeUnitId $_.Id | `
+   where {$_.Id -eq $deviceObj.Id} }
 ```
 
 ### List the users, groups, and devices for an administrative unit
