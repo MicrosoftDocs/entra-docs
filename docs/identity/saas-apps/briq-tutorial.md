@@ -127,7 +127,7 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
 1. In the app's overview page, select **Users and groups**.
 1. Select **Add user/group**, then select **Users and groups** in the **Add Assignment** dialog.
    1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then click the **Select** button at the bottom of the screen.
-   1. If you are expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
+   1. If you're expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
    1. In the **Add Assignment** dialog, click the **Assign** button.
 
 ## Configure Briq SSO
@@ -136,7 +136,7 @@ To configure single sign-on on **Briq** side, you need to send the downloaded **
 
 ### Create Briq test user
 
-In this section, a user called Britta Simon is created in Briq. Briq supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in Briq, a new one is created after authentication.
+In this section, a user called Britta Simon is created in Briq. Briq supports just-in-time user provisioning, which is enabled by default. There's no action item for you in this section. If a user doesn't already exist in Briq, a new one is created after authentication.
 
 ## Test SSO 
 
