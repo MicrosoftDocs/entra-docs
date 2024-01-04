@@ -9,7 +9,7 @@ ms.subservice: app-proxy
 ms.workload: identity
 ms.custom: has-azure-ad-ps-ref
 ms.topic: sample
-ms.date: 08/29/2022
+ms.date: 01/04/2024
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
@@ -28,7 +28,72 @@ This sample requires the [Microsoft Graph Beta PowerShell module](/powershell/mi
 
 ## Sample script
 
-[!code-azurepowershell[main](~/../powershell_scripts/application-proxy/get-all-appproxy-apps-by-connectorgroup.ps1 "Get all Application Proxy Connector groups with the assigned applications")]
+```powershell
+# This sample script gets all Microsoft Entra application proxy connector groups with the assigned applications.
+#
+# Version 1.0
+#
+# This script requires PowerShell 5.1 (x64) or beyond and one of the following modules:
+#
+# Microsoft.Graph.Beta ver 2.10 or newer
+#
+# Before you begin:
+#    
+#    Required Microsoft Entra role: Global Administrator or Application Administrator or Application Developer 
+#    or appropriate custom permissions as documented https://learn.microsoft.com/en-us/azure/active-directory/roles/custom-enterprise-app-permissions
+#
+# 
+
+Import-Module Microsoft.Graph.Beta.Applications
+
+Connect-MgGraph -Scope Directory.Read.All -NoWelcome
+
+Write-Host "Reading service principals. This operation might take longer..." -BackgroundColor "Black" -ForegroundColor "Green" 
+
+$aadapServPrinc = Get-MgBetaServicePrincipal -Top 100000 | where-object {$_.Tags -Contains "WindowsAzureActiveDirectoryOnPremApp"}
+
+Write-Host "Reading Microsoft Entra applications. This operation might take longer..." -BackgroundColor "Black" -ForegroundColor "Green"
+
+$allApps = Get-MgBetaApplication -Top 100000
+
+Write-Host "Reading application. This operation might take longer..." -BackgroundColor "Black" -ForegroundColor "Green"
+
+$aadapApp = $aadapServPrinc | ForEach-Object {$allApps.AppId -match $_.AppId}
+ 
+Write-Host "Reading connector groups. This operation might take longer..." -BackgroundColor "Black" -ForegroundColor "Green"
+
+$aadapConnectorGroups= Get-MgBetaOnPremisePublishingProfileConnectorGroup -OnPremisesPublishingProfileId "applicationProxy" -Top 100000 
+
+Write-Host "Displaying connector groups and assigned applications..." -BackgroundColor "Black" -ForegroundColor "Green"
+Write-Host " "
+
+foreach ($item in $aadapConnectorGroups)
+ {
+  
+   If ($item.ConnectorGroupType -eq "applicationProxy")
+    {  
+        "Connector group: " + $item.Name + " (Id: " + $item.Id+ ") - Region: " + $item.Region;
+          
+        $assignedApps= Get-MgBetaOnPremisePublishingProfileConnectorGroupApplication -ConnectorGroupId $item.Id -OnPremisesPublishingProfileId "applicationProxy";
+    
+        " "; 
+
+        foreach ($item2 in $assignedApps)
+         {
+           
+           $Item2.DisplayName + " (AppId: " + $item2.AppId+ ")"
+         } 
+    
+    " ";
+       
+    }
+           
+ }   
+
+Write-Host ("")
+Write-Host ("Finished.") -BackgroundColor "Black" -ForegroundColor "Green"
+Write-Host "To disconnect from Microsoft Graph, please use the Disconnect-MgGraph cmdlet." 
+```
 
 ## Script explanation
 
