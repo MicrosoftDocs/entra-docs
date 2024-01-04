@@ -111,10 +111,6 @@ POST beta/identity/conditionalAccess/authenticationStrength/policies/{authentica
 }
 ```
 
->[!NOTE]
->The **allowedIssuerSkis** is from the Certificate Authority configured in the tenant (issuerSki). For more information, see [List certificateBasedAuthConfigurations](/graph/api/certificatebasedauthconfiguration-list). 
-
-
 ### Limitations
 
 - Only one certificate can be used in each browser session. After you sign in with a certificate, it's cached in the browser for the duration of the session. You won't be prompted to choose another certificate if it doesn’t meet the authentication strength requirements. You need to sign out and sign back in to restart the session. Then choose the relevant certificate.
