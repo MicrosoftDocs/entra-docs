@@ -11,7 +11,8 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
 titleSuffix: Microsoft identity platform
-#Customer intent: As a developer, I want to learn about custom authentication extensions so that I can augment tokens with claims from an external identity system or role management system.
+
+#Customer intent: As a developer integrating external systems with Microsoft Entra ID, I want to create custom authentication extensions using a REST API, so that I can customize the authentication experience and add business logic based on event types and HTTP response payloads.
 ---
 
 # Custom authentication extensions (preview)
@@ -34,7 +35,7 @@ The following diagram depicts the sign-in flow integrated with a custom authenti
 
 When an event fires, Microsoft Entra ID calls a REST API endpoint that you own. The request to the REST API contains information about the event, the user profile, authentication request data, and other context information.
 
-You can use any programming language, framework, and hosting environment to create and host your custom authentication extensions REST API. For a quick way to get started, use a C# Azure Function. Azure Functions lets you run your code in a serverless environment without having to first create a virtual machine (VM) or publish a web application. 
+You can use any programming language, framework, and hosting environment to create and host your custom authentication extensions REST API. For a quick way to get started, use a C# Azure Function. Azure Functions lets you run your code in a serverless environment without having to first create a virtual machine (VM) or publish a web application.
 
 Your REST API must handle:
 
