@@ -58,7 +58,7 @@ Linking a DID to a domain solves the initial trust problem by allowing any entit
 
 ## How does Verified ID link DIDs and domains?
 
-Verified ID follows the [well-known DID configuration](https://identity.foundation/.well-known/resources/did-configuration/) specification to create the link. The verifiable credentials service links your DID and domain. The service includes the domain information that you provided in your DID and generates the well-known config file:
+Verified ID follows the [well-known DID configuration](https://identity.foundation/.well-known/resources/did-configuration/) specification to create the link. The verifiable credentials service links your DID and domain. The service includes the domain information that you provided in your DID and generates the well-known configuration file:
 
 1. Verified ID uses the domain information you provide during organization setup to write a service endpoint within the DID document. All parties who interact with your DID can see the domain your DID proclaims to be associated with.
   
@@ -76,7 +76,7 @@ Verified ID follows the [well-known DID configuration](https://identity.foundati
     ]
     ```
 
-1. The verifiable credential service in Verified ID generates a compliant well-known configuration resource that you must host on your domain. The configuration file includes a self-issued verifiable credential of the credential type `DomainLinkageCredential`, signed with your DID, that has an origin of your domain. Here's an example of the config doc stored at the root domain URL.
+1. The verifiable credential service in Verified ID generates a compliant well-known configuration resource that you must host on your domain. The configuration file includes a self-issued verifiable credential of the credential type `DomainLinkageCredential`, signed with your DID, that has an origin of your domain. Here's an example of the configuration file stored at the root domain URL.
 
     ```json
     {
