@@ -6,7 +6,7 @@ description: Microsoft Entra B2B collaboration guest user properties and states 
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: how-to
-ms.date: 11/08/2023
+ms.date: 01/04/2024
 ms.author: cmulligan
 author: csmulligan
 manager: celestedg
@@ -41,7 +41,7 @@ Now, let's see what a Microsoft Entra B2B collaboration user looks like in Micro
 
 ### Before invitation redemption
 
-B2B collaboration user accounts are the result of inviting guest users to collaborate by using the guest users' own credentials. When the invitation is initially sent to the guest user, an account is created in your tenant. This account doesn’t have any credentials associated with it because authentication is performed by the guest user's identity provider. The **Identities** property for the guest user account in your directory is set to the host's organization domain until the guest redeems their invitation. The user sending the invitation is added as a default value for the **Sponsor** (preview) attribute on the guest user account. In the admin center, the invited user’s profile will show an **External user state** of **PendingAcceptance**. Querying for `externalUserState` using the Microsoft Graph API will return `Pending Acceptance`.
+B2B collaboration user accounts are the result of inviting guest users to collaborate by using the guest users' own credentials. When the invitation is initially sent to the guest user, an account is created in your tenant. This account doesn’t have any credentials associated with it because authentication is performed by the guest user's identity provider. The **Identities** property for the guest user account in your directory is set to the host's organization domain until the guest redeems their invitation. The user sending the invitation is added as a default value for the **Sponsor** attribute on the guest user account. In the admin center, the invited user’s profile will show an **External user state** of **PendingAcceptance**. Querying for `externalUserState` using the Microsoft Graph API will return `Pending Acceptance`.
 
 ![Screenshot of user profile before redemption.](media/user-properties/before-redemption.png)
 

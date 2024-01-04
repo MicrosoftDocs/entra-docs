@@ -6,7 +6,7 @@ description: Learn best practices and recommendations for business-to-business (
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: conceptual
-ms.date: 05/17/2023
+ms.date: 01/04/2024
 ms.author: cmulligan
 author: csmulligan
 manager: celestedg
@@ -41,7 +41,7 @@ This article contains recommendations and best practices for business-to-busines
 | When developing an app, use UserType to determine guest user experience  | If you're developing an application and you want to provide different experiences for tenant users and guest users, use the UserType property. The UserType claim isn't currently included in the token. Applications should use the Microsoft Graph API to query the directory for the user to get their UserType. |
 | Change the UserType property *only* if the user’s relationship to the organization changes | Although it’s possible to use PowerShell to convert the UserType property for a user from Member to Guest (and vice-versa), you should change this property only if the relationship of the user to your organization changes. See [Properties of a B2B guest user](user-properties.md).|
 | Find out if your environment will be affected by Microsoft Entra directory limits  | Microsoft Entra B2B is subject to Microsoft Entra service directory limits. For details about the number of directories a user can create and the number of directories to which a user or guest user can belong, see [Microsoft Entra service limits and restrictions](~/identity/users/directory-service-limits-restrictions.md).|
-| Manage the B2B account lifecycle with the Sponsor (preview) feature  | A sponsor is a user or group responsible for their guest users. For more details about this new feature see [Sponsor field for B2B users (preview)](b2b-sponsors.md).|
+| Manage the B2B account lifecycle with the Sponsor feature  | A sponsor is a user or group responsible for their guest users. For more details about this new feature see [Sponsor field for B2B users](b2b-sponsors.md).|
 
 ## Next steps
 
