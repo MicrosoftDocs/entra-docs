@@ -77,7 +77,7 @@ The following table provides a comparison between Microsoft Entra Connect and Mi
 | Allow advanced customization for attribute flows |● | |
 | Support for password writeback |● |● |
 | Support for device writeback|● |Customers should use [Cloud Kerberos trust](/windows/security/identity-protection/hello-for-business/hello-hybrid-cloud-kerberos-trust?tabs=intune) for this moving forward|
-| Support for group writeback|● | |
+| Support for group writeback|● |● |
 | Support for merging user attributes from multiple domains|● | |
 | Microsoft Entra Domain Services support|● | |
 | [Exchange hybrid writeback](exchange-hybrid.md) |● |● |
