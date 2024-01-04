@@ -84,7 +84,7 @@ sections:
           The following CRL size limits apply: 
 
            - Interactive sign in download limit: 20 MB (Azure Global includes GCC), 45 MB for (Azure US government, includes GCC High, Dept. of Defense)
-           - Service download limit: 45 MB (Azure Global includes GCC), 150 MB for (Azure US government, includes GCC High, Dept. of Defense)
+           - Service download limit: 65 MB (Azure Global includes GCC), 150 MB for (Azure US government, includes GCC High, Dept. of Defense)
 
             When a CRL download fails, the following message appears: 
             

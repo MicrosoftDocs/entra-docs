@@ -122,6 +122,9 @@ With the web trust system, updating your linked domain isn't supported. You have
 
 ## Linked domain made easy for developers
 
+> [!NOTE]
+> The DID document must be publicly available for DID registration to succeed.
+
 The easiest way for a developer to get a domain to use for a linked domain is to use the Azure Storage static website feature. You can't control what the domain name is, except that it contains your storage account name as part of its hostname.
 
 To quickly set up a domain to use for a linked domain:

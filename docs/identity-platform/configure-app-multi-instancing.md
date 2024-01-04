@@ -10,7 +10,8 @@ ms.reviewer: rahulnagraj, alamaral, jeedes
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: how-to
-#Customer intent:
+
+#Customer intent: As an IT admin responsible for managing multiple instances of the same application within a tenant, I want to configure app multi-instancing, so that I can handle instance-specific claims mapping and roles assignment for each instance.
 ---
 
 # Configure app multi-instancing

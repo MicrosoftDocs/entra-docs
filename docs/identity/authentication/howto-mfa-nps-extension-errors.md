@@ -6,12 +6,12 @@ services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: troubleshooting
-ms.date: 09/13/2023
+ms.date: 01/02/2024
 
 ms.author: justinha
 author: justinha
 manager: amycolannino
-ms.reviewer: michmcla
+ms.reviewer: jupetter
 
 ms.collection: M365-identity-device-management
 ms.custom: 
@@ -28,7 +28,7 @@ If you encounter errors with the NPS extension for Microsoft Entra multifactor a
 | **CLIENT_CERT_INSTALL_ERROR** | There may be an issue with how the client certificate was installed or associated with your tenant. Follow the instructions in [Troubleshooting the MFA NPS extension](howto-mfa-nps-extension.md#troubleshooting) to investigate client cert problems. |
 | **ESTS_TOKEN_ERROR** | Follow the instructions in [Troubleshooting the MFA NPS extension](howto-mfa-nps-extension.md#troubleshooting) to investigate client cert and security token problems. |
 | **HTTPS_COMMUNICATION_ERROR** | The NPS server is unable to receive responses from Microsoft Entra multifactor authentication. Verify that your firewalls are open bidirectionally for traffic to and from `https://adnotifications.windowsazure.com` and that TLS 1.2 is enabled (default). If TLS 1.2 is disabled, user authentication fails and event ID 36871 with source SChannel is entered in the System log in Event Viewer. To verify TLS 1.2 is enabled, see [TLS registry settings](/windows-server/security/tls/tls-registry-settings#tls-dtls-and-ssl-protocol-version-settings). |
-| **HTTP_CONNECT_ERROR** | On the server that runs the NPS extension, verify that you can reach  `https://adnotifications.windowsazure.com` and `https://login.microsoftonline.com/`. If those sites don't load, troubleshoot connectivity on that server. |
+| **HTTP_CONNECT_ERROR** | On the server that runs the NPS extension, verify that you can reach `https://adnotifications.windowsazure.com` and `https://login.microsoftonline.com/`. If those sites don't load, troubleshoot connectivity on that server. |
 | **NPS Extension for Microsoft Entra multifactor authentication (AccessReject):** <br> NPS Extension for Microsoft Entra multifactor authentication only performs Secondary Auth for Radius requests in AccessAccept State. Request received for User username with response state AccessReject, ignoring request. | This error usually reflects an authentication failure in AD or that the NPS server is unable to receive responses from Microsoft Entra ID. Verify that your firewalls are open bidirectionally for traffic to and from `https://adnotifications.windowsazure.com` and `https://login.microsoftonline.com` using ports 80 and 443. It's also important to check that on the DIAL-IN tab of Network Access Permissions, the setting is set to "control access through NPS Network Policy". This error can also trigger if the user isn't assigned a license. |
 | **NPS Extension for Microsoft Entra multifactor authentication (AccessChallenge):** <br> NPS Extension for Microsoft Entra multifactor authentication only performs Secondary Auth for Radius requests in AccessAccept State. Request received for User username with response state AccessChallenge, ignoring request. | This response is used when additional information is required from the user to complete the authentication or authorization process. The NPS server sends a challenge to the user, requesting further credentials or information. It usually precedes an Access-Accept or Access-Reject response. |
 | **REGISTRY_CONFIG_ERROR** | A key is missing in the registry for the application, which may be because the [PowerShell script](howto-mfa-nps-extension.md#install-the-nps-extension) wasn't run after installation. The error message should include the missing key. Make sure you have the key under HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\AzureMfa. |
@@ -100,7 +100,7 @@ If your users are [Having trouble with two-step verification](https://support.mi
 
 ### Health check script
 
-The [Microsoft Entra multifactor authentication NPS Extension health check script](/samples/azure-samples/azure-mfa-nps-extension-health-check/azure-mfa-nps-extension-health-check/) performs several basic health checks when troubleshooting the NPS extension. Here's a quick summary about each available option when the script is run:
+The [Microsoft Entra multifactor authentication NPS Extension health check script](https://github.com/Azure-Samples/azure-mfa-nps-extension-health-check) performs several basic health checks when troubleshooting the NPS extension. Here's a quick summary about each available option when the script is run:
 - Option **1** - to isolate the cause of the issue: if it's an NPS or MFA issue (Export MFA RegKeys, Restart NPS, Test, Import RegKeys, Restart NPS)
 - Option **2** - to check a full set of tests, when not all users can use the MFA NPS Extension (Testing Access to Azure/Create HTML Report)
 - Option **3** - to check a specific set of tests, when a specific user can't use the MFA NPS Extension (Test MFA for specific UPN)
@@ -110,6 +110,6 @@ The [Microsoft Entra multifactor authentication NPS Extension health check scrip
 
 If you need additional help, contact a support professional through [MFA support](https://support.microsoft.com/oas/default.aspx?prid=14947). When contacting us, it's helpful if you can include as much information about your issue as possible. Information you can supply includes the page where you saw the error, the specific error code, the specific session ID, the ID of the user who saw the error, and debug logs.
 
-To collect debug logs for support diagnostics, run the [Microsoft Entra multifactor authentication NPS Extension health check script](/samples/azure-samples/azure-mfa-nps-extension-health-check/azure-mfa-nps-extension-health-check/) on the NPS server and choose option **4** to collect the logs to provide them to Microsoft support.
+To collect debug logs for support diagnostics, run the [Microsoft Entra multifactor authentication NPS Extension health check script](https://github.com/Azure-Samples/azure-mfa-nps-extension-health-check) on the NPS server and choose option **4** to collect the logs to provide them to Microsoft support.
 
 At the end, upload the zip output file generated on the C:\NPS folder and attach it to the support case.
