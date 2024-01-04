@@ -17,10 +17,10 @@ ms.collection: M365-identity-device-management
 ---
 # Advanced options for Conditional Access authentication strength 
 
-You can configure advanced options for authentication with FIDO2 security keys and certificates when you create a custom authentication strength. Advanced options allow you to further restrict sign in based upon specific properties of a FIDO2 security key or certificate. 
+You can configure advanced options for authentication with FIDO2 security keys and certificate-based authentication (CBA) when you create a custom authentication strength. Advanced options allow you to further restrict sign in based upon specific properties of a FIDO2 security key or CBA. 
 
 ## FIDO2 security key advanced options
-You can restrict the usage of some FIDO2 security keys based on their Authenticator Attestation GUIDs (AAGUIDs). The capability allows administrators to require a FIDO2 security key from a specific manufacture in order to access the resource. To require a specific FIDO2 security key, first complete the steps to create a [custom authentication strength](concept-authentication-strengths.md#custom-authentication-strengths). Then select **FIDO2 Security Key**, and click **Advanced options**. 
+You can restrict the usage of FIDO2 security keys based on their Authenticator Attestation GUIDs (AAGUIDs). The capability allows administrators to require a FIDO2 security key from a specific manufacture in order to access the resource. To require a specific FIDO2 security key, first complete the steps to create a [custom authentication strength](concept-authentication-strengths.md#custom-authentication-strengths). Then select **FIDO2 Security Key**, and click **Advanced options**. 
 
 :::image type="content" border="true" source="./media/concept-authentication-strengths/key.png" alt-text="Screenshot showing Advanced options for FIDO2 security key.":::
 
