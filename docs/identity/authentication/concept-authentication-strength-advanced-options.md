@@ -41,7 +41,7 @@ The next sections show how to configure advanced options for CBA by using the Mi
 
 ### Microsoft Entra admin center
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an Administrator.
 1. Browse to **Protection** > **Authentication methods** > **Authentication strengths**.
 1. Select **New authentication strength**.
 1. Provide a descriptive **Name** for your new authentication strength.
@@ -129,7 +129,7 @@ POST beta/identity/conditionalAccess/authenticationStrength/policies/{authentica
 - During sign-in, the first 5 policy OIDs from the end user certificate are considered, and compared with the Policy OIDs configured in the authentication strength policy. If the end user certificate has more than 5 Policy OIDs, the first 5 policy OIDs in lexical order that match the authentication strength requirements are taken into account. 
 
 - For B2B users, let's take an example where Contoso has invited users from Fabrikam to their tenant. In this case, Contoso is the resource tenant and Fabrikam is the home tenant.
-  - When cross-tenant access setting is **Off** – meaning when Contoso doesn't accept MFA that was performed by the home tenant. This use case is currently not available. Using CBA on the resource tenant is currently not supported and is on our roadmap. As a result, you cannot restrict which certificate can be used by B2B users, if authentication happens on the resource tenant.
+  - When cross-tenant access setting is **Off** – meaning when Contoso doesn't accept MFA that was performed by the home tenant. This use case isn't currently available. Using certificate-based authentication on the resource tenant isn't supported.
   - When cross-tenant access setting is **On**, Fabrikam and Contoso are on the same Microsoft cloud – meaning, both Fabrikam and Contoso tenants are on the Azure commercial cloud or on the Azure for US Government cloud. In addition, Contoso trusts MFA that was performed on the home tenant. In this case:
     - Access to a specific resource can be restricted by using the policy OIDs in the custom authentication strength policy.
     - Access to specific resources cannot be restricted by using the Issuer ID in the custom authentication strength policy. It is on our roadmap, and we plan to enable this use case for public preview.
