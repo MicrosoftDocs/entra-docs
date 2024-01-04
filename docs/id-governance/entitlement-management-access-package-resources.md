@@ -218,43 +218,49 @@ You can add a resource role to an access package using Microsoft Graph. A user i
 
 ### Add resource roles to an access package with Microsoft PowerShell
 
-You can also add resource roles to an access package in PowerShell with the cmdlets from the [Microsoft Graph PowerShell cmdlets for Identity Governance](https://www.powershellgallery.com/packages/Microsoft.Graph.Identity.Governance/) beta module version 2.1.x or later beta module version.  This script illustrates using the Graph `beta` profile and Microsoft Graph PowerShell cmdlets module version 2.4.0.
+You can also add resource roles to an access package in PowerShell with the cmdlets from the [Microsoft Graph PowerShell cmdlets for Identity Governance](https://www.powershellgallery.com/packages/Microsoft.Graph.Identity.Governance/) beta module version 2.1.x or later beta module version.
 
-First, you would retrieve the ID of the catalog, and of the resource and its roles in that catalog that you wish to include in the access package, using a script similar to the following.  This assumes there is a single application resource in the catalog.
+First, retrieve the ID of the catalog, and of the resource in that catalog and its scopes and roles, that you want to include in the access package. Use a script similar to the following example. This assumes there is a single application resource in the catalog.
 
 ```powershell
 Connect-MgGraph -Scopes "EntitlementManagement.ReadWrite.All"
 
-$catalog = Get-MgBetaEntitlementManagementAccessPackageCatalog -Filter "displayName eq 'Marketing'"
-
-$rsc = Get-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageResource -AccessPackageCatalogId $catalog.Id -Filter "resourceType eq 'Application'" -ExpandProperty "accessPackageResourceScopes"
-$filt = "(originSystem eq 'AadApplication' and accessPackageResource/id eq '" + $rsc.Id + "')"
-$rr = Get-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageResourceRole -AccessPackageCatalogId $catalog.Id -Filter $filt -ExpandProperty "accessPackageResource"
+$catalog = Get-MgEntitlementManagementCatalog -Filter "displayName eq 'Marketing'" -All
+if ($catalog -eq $null) { throw "catalog not found" }
+$rsc = Get-MgEntitlementManagementCatalogResource -AccessPackageCatalogId $catalog.id -Filter "originSystem eq 'AadApplication'" -ExpandProperty scopes
+if ($rsc -eq $null) { throw "resource not found" }
+$filt = "(id eq '" + $rsc.Id + "')"
+$rrs = Get-MgEntitlementManagementCatalogResource -AccessPackageCatalogId $catalog.id -Filter $filt -ExpandProperty roles,scopes
 ```
 
-Then, assign the resource role from that resource to the access package.  For example, if you wished to include the third resource role of the resource returned earlier as a resource role of an access package, you would use a script similar to the following.
+
+
+Then, assign the resource role from that resource to the access package.  For example, if you wished to include the first resource role of the resource returned earlier as a resource role of an access package, you would use a script similar to the following.
 
 ```powershell
 $apid = "cdd5f06b-752a-4c9f-97a6-82f4eda6c76d"
 
 $rparams = @{
-	AccessPackageResourceRole = @{
-	   OriginId = $rr[2].OriginId
-	   DisplayName = $rr[2].DisplayName
-	   OriginSystem = $rr[2].OriginSystem
-	   AccessPackageResource = @{
-	      Id = $rsc.Id
-	      ResourceType = $rsc.ResourceType
-	      OriginId = $rsc.OriginId
-	      OriginSystem = $rsc.OriginSystem
-	   }
-	}
-	AccessPackageResourceScope = @{
-	   OriginId = $rsc.OriginId
-	   OriginSystem = $rsc.OriginSystem
-	}
+    role = @{
+        id =  $rrs.Roles[0].Id
+        displayName =  $rrs.Roles[0].DisplayName
+        description =  $rrs.Roles[0].Description
+        originSystem =  $rrs.Roles[0].OriginSystem
+        originId =  $rrs.Roles[0].OriginId
+        resource = @{
+            id = $rrs.Id
+            originId = $rrs.OriginId
+            originSystem = $rrs.OriginSystem
+        }
+    }
+    scope = @{
+        id = $rsc.Scopes[0].Id
+        originId = $rsc.Scopes[0].OriginId
+        originSystem = $rsc.Scopes[0].OriginSystem
+    }
 }
-New-MgBetaEntitlementManagementAccessPackageResourceRoleScope -AccessPackageId $apid -BodyParameter $rparams
+
+New-MgEntitlementManagementAccessPackageResourceRoleScope -AccessPackageId $apid -BodyParameter $rparams
 ```
 
 ## Remove resource roles
