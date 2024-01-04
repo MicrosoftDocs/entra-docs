@@ -58,7 +58,7 @@ Once you complete your terms of use policy document, use the following procedure
 1. Browse to **Protection** > **Conditional Access** > **Terms of use**.
 1. Select, **New terms**.
 
-   ![A screenshot showing the new term of use pane to specify your terms of use settings.](./media/terms-of-use/new-tou.png)
+   ![A screenshot showing the new terms of use pane to specify your terms of use settings.](./media/terms-of-use/new-tou.png)
 
 1. In the **Name** box, enter a name for the terms of use policy.
 1. For **Terms of use document**, browse to your finalized terms of use policy PDF and select it.
@@ -255,7 +255,7 @@ The following procedure describes how to add a ToU language.
 
 ## Per-device terms of use
 
-The **Require users to consent on every device** setting enables you to require end users to accept your terms of use policy on every device they're accessing from. The end user's device must be registered in Microsoft Entra ID. When the device is registered, the device ID is used to enforce the terms of use policy on each device. Their experience is dependent on permissions to join devices and the platform or software used, for more information, see [device identity in Microsoft Entra ID](~/identity/devices/overview.md).
+The **Require users to consent on every device** setting enables you to require end users to accept your terms of use policy on every device they're accessing from. The end user's device must be registered in Microsoft Entra ID. When the device is registered, the device ID is used to enforce the terms of use policy on each device. Their experience is dependent on permissions to join devices and the platform or software used. For more information, see [device identity in Microsoft Entra ID](~/identity/devices/overview.md).
 
 Per-device terms of use have the following constraints:
 
@@ -316,7 +316,7 @@ You can configure a Conditional Access policy for the Azure Information Protecti
 
 You can configure a Conditional Access policy for the Microsoft Intune Enrollment app and require a terms of use policy before enrollment of a device in Intune. For more information, see the Read [Choosing the right Terms solution for your organization blog post](https://go.microsoft.com/fwlink/?linkid=2010506&clcid=0x409).
 
-![A screenshot showing the Conditional Access Cloud apps pane with Microsoft Intune Enrollement app selected.](./media/terms-of-use/cloud-app-intune.png)
+![A screenshot showing the Conditional Access Cloud apps pane with Microsoft Intune Enrollment app selected.](./media/terms-of-use/cloud-app-intune.png)
 
 > [!NOTE]
 > The Intune Enrollment app is not supported for [Per-device terms of use](#per-device-terms-of-use).
