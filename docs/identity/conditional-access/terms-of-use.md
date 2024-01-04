@@ -341,7 +341,7 @@ You can configure a Conditional Access policy for the Microsoft Intune Enrollmen
 A: Terms of use can only be accepted when authenticating interactively.
 
 **Q: How do I see when/if a user has accepted a terms of use?**<br />
-A: On the Terms of use blade, select the number under **Accepted**. You can also view or search the accept activity in the Microsoft Entra audit logs. For more information, see View report of who has accepted and declined and [View Microsoft Entra audit logs](#view-azure-ad-audit-logs).
+A: On the Terms of use blade, select the number under **Accepted**. You can also view or search the accept activity in the Microsoft Entra audit logs. For more information, see View report of who has accepted and declined and [View Microsoft Entra audit logs](#view-microsoft-entra-audit-logs).
 
 **Q: How long is information stored?**<br />
 A: The user counts in the terms of use report and who accepted/declined are stored for the life of the terms of use. The Microsoft Entra audit logs are stored for 30 days.
