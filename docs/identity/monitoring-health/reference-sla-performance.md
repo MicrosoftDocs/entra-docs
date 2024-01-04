@@ -7,20 +7,20 @@ ms.service: active-directory
 ms.topic: reference
 ms.workload: identity
 ms.subservice: report-monitor
-ms.date: 12/11/2023
+ms.date: 01/04/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg14
 ---
 
 # SLA performance for Microsoft Entra ID
 
-As an identity admin, you might need to track the Microsoft Entra service-level agreement (SLA) performance to make sure Microsoft Entra ID can support your vital apps. This article shows how the Microsoft Entra service has performed according to the [SLA for Microsoft Entra ID](https://azure.microsoft.com/support/legal/sla/active-directory/v1_1/). 
+As an identity admin, you might need to track the Microsoft Entra service-level agreement (SLA) performance to make sure Microsoft Entra ID can support your vital apps. This article shows how the Microsoft Entra service has performed according to the [SLA for Microsoft Entra ID](https://azure.microsoft.com/support/legal/sla/active-directory/v1_1/).
 
-You can use this article in discussions with app or business owners to help them understand the performance they can expect from Microsoft Entra ID. 
+You can use this article in discussions with app or business owners to help them understand the performance they can expect from Microsoft Entra ID.
 
 ## Service availability commitment
 
-Microsoft offers Premium Microsoft Entra customers the opportunity to get a service credit if Microsoft Entra ID fails to meet the documented SLA. When you request a service credit, Microsoft evaluates the SLA for your specific tenant; however, this global SLA can give you an indication of the general health of Microsoft Entra ID over time. 
+Microsoft offers Premium Microsoft Entra customers the opportunity to get a service credit if Microsoft Entra ID fails to meet the documented SLA. When you request a service credit, Microsoft evaluates the SLA for your specific tenant; however, this global SLA can give you an indication of the general health of Microsoft Entra ID over time.
 
 The SLA covers the following scenarios that are vital to businesses:
 
