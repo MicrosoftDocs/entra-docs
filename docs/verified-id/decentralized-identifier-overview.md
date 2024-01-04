@@ -42,9 +42,9 @@ Microsoft is actively collaborating with members of the Decentralized Identity F
 
 ## What are DIDs?
 
-Before we can understand DIDs, it helps to compare them with other identity systems. Email addresses and social network IDs are human-friendly aliases that  for collaboration but are now overloaded to serve as the control points for data access across many scenarios beyond collaboration. This creates a potential problem, because access to these IDs could be removed at any time.
+Before we can understand DIDs, it helps to compare them with other identity . Email addresses and social network IDs are human-friendly aliases that  for collaboration but are now overloaded to serve as the control points for data access across many scenarios beyond collaboration. This creates a potential problem, because access to these IDs could be removed at any time.
 
-Decentralized Identifiers (DIDs) are different. DIDs are user-generated, self-owned, globally unique identifiers rooted in decentralized systems trust systems. They possess unique characteristics, like greater assurance of immutability, censorship resistance, and tamper evasiveness. These attributes are critical for any ID system intended to provide self-ownership and user control.
+Decentralized Identifiers (DIDs) are different. DIDs are user-generated, self-owned, globally unique identifiers rooted in decentralized trust systems. They possess unique characteristics, like greater assurance of immutability, censorship resistance, and tamper evasiveness. These attributes are critical for any ID system intended to provide self-ownership and user control.
 
 Microsoft’s verifiable credential solution uses decentralized credentials (DIDs) to cryptographically sign as proof that a relying party (verifier) is attesting to information proving they are the owners of a verifiable credential. A basic understanding of DIDs is recommended for anyone creating a verifiable credential solution based on the Microsoft offering.
 
