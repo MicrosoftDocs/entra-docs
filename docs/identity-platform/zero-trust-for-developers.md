@@ -12,8 +12,6 @@ ms.subservice: develop
 ms.topic: conceptual
 
 #Customer intent: As an application developer, I want to increase the security of my applications using Zero Trust principles, so that I can minimize the damage caused by security breaches and meet the security requirements of my customers and users.
-
-As an application developer, I want to increase the security of my applications using Zero Trust principles, so that I can minimize the damage caused by security breaches and meet the security requirements of my customers and users.
 ---
 
 # Increase application security using Zero Trust principles
