@@ -104,6 +104,12 @@ Attribute-mapping expressions can have a maximum of 10,000 characters.
 
 The **appRoleAssignments**, **userType**, and **accountExpires** attributes aren't supported as scoping filters.
 
+::: zone pivot="cross-tenant-synchronization"
+#### OtherMails should not be included in your attribute mappings as a target attribute
+
+The otherMails property is automatically computed in the target tenant. Changes to the user object made directly in the target tenant could result in the otherMails property being updated and override the value set by cross-tenant synchronization. As a result, otherMails should not be included in your cross-tenant synchronization attribute mappings as a target attribute. 
+::: zone-end
+
 #### Multivalue directory extensions
 
 Multivalue directory extensions can't be used in attribute mappings or scoping filters. 
