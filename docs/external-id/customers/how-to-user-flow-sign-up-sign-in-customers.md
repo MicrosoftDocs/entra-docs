@@ -8,7 +8,7 @@ ms.service: active-directory
  
 ms.subservice: ciam
 ms.topic: how-to
-ms.date: 01/05/2024
+ms.date: 01/07/2024
 ms.author: mimart
 ms.reviewer: kengaderdus
 ms.custom: it-pro
@@ -21,6 +21,13 @@ ms.custom: it-pro
 You can create a simple sign-up and sign-in experience for your customers by adding a user flow to your application. The user flow defines the series of sign-up steps customers follow and the sign-in methods they can use (such as email and password, one-time passcodes, or social accounts from [Google](how-to-google-federation-customers.md) or [Facebook](how-to-facebook-federation-customers.md)). You can also collect information from customers during sign-up by selecting from a series of built-in user attributes or adding your own custom attributes.
 
 You can create multiple user flows if you have multiple applications that you want to offer to customers. Or, you can use the same user flow for many applications. However, an application can have only one user flow.
+
+
+> [!TIP]
+> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=EmailAndPassword)
+> 
+> To try out this feature, go to the Woodgrove Groceries demo and start the “Sign-up or sign-in with email and password” use case.
+
 
 ## Prerequisites
 
