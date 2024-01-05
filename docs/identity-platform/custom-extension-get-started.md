@@ -23,6 +23,11 @@ This how-to guide demonstrates the token issuance start event with a REST API ru
 
 > [!VIDEO https://www.youtube.com/embed/fxQGVIwX8_4]
 
+> [!TIP]
+> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=TokenAugmentation)
+> 
+> To try out this feature, go to the Woodgrove Groceries demo and start the “Add claims to security tokens from a REST API” use case.
+
 ## Prerequisites
 
 - Before following this article, read the [custom authentication extensions](custom-extension-overview.md) overview.

@@ -24,9 +24,9 @@ You can create multiple user flows if you have multiple applications that you wa
 
 
 > [!TIP]
-> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=EmailAndPassword)
+> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=OnlineRetail)
 > 
-> To try out this feature, go to the Woodgrove Groceries demo and start the “Sign-up or sign-in with email and password” use case.
+> To try out this feature, go to the Woodgrove Groceries demo and start the “Online retail” use case.
 
 
 ## Prerequisites
