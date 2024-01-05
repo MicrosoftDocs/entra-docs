@@ -92,7 +92,7 @@ GET https://graph.microsoft.com/beta/identity/conditionalAccess/authenticationSt
 
 ### Custom authentication strengths
 
-Administrators can also create up to 15 of their own custom authentication strengths to exactly suit their requirements. A custom authentication strength can contain any of the supported combinations in the preceding table. After it
+Administrators can also create up to 15 of their own custom authentication strengths to exactly suit their requirements. A custom authentication strength can contain any of the supported combinations in the preceding table. 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an Administrator.
 1. Browse to **Protection** > **Authentication methods** > **Authentication strengths**.
@@ -111,7 +111,7 @@ To check if an authentication strength is referenced by a Conditional Access pol
 
 ## Limitations
 
-- **Conditional Access policies are only evaluated after the initial authentication** - As a result, authentication strength doesn't restrict a user's initial authentication. Suppose you are using the built-in phishing-resistant MFA strength. A user can still type in their password, but they will be required to use a phishing-resistant method such as FIDO2 security key before they can continue.
+- **Conditional Access policies are only evaluated after the initial authentication** - As a result, authentication strength doesn't restrict a user's initial authentication. Suppose you are using the built-in phishing-resistant MFA strength. A user can still type in their password, but they are required to sign in with a phishing-resistant method such as FIDO2 security key before they can continue.
 
 - **Require multifactor authentication and Require authentication strength can't be used together in the same Conditional Access policy** - These two Conditional Access grant controls can't be used together because the built-in authentication strength **Multifactor authentication** is equivalent to the **Require multifactor authentication** grant control.
 
@@ -129,7 +129,7 @@ To check if an authentication strength is referenced by a Conditional Access pol
 ### Should I use authentication strength or the Authentication methods policy?
 Authentication strength is based on the Authentication methods policy. The Authentication methods policy helps to scope and configure authentication methods to be used across Microsoft Entra ID by specific users and groups. Authentication strength allows another restriction of methods for specific scenarios, such as sensitive resource access, user risk, location, and more.
 
-For example, the administrator of Contoso wants to allow their users to use Microsoft Authenticator with either push notifications or passwordless authentication mode. The administrator goes to the Microsoft Authenticator settings in the Authentication method policy, scopes the policy for the relevant users and set the **Authentication mode** to **Any**. 
+For example, the administrator of Contoso wants to allow their users to use Microsoft Authenticator with either push notifications or passwordless authentication mode. The administrator goes to the Microsoft Authenticator settings in the Authentication methods policy, scopes the policy for the relevant users, and sets the **Authentication mode** to **Any**. 
 
 Then for Contoso's most sensitive resource, the administrator wants to restrict the access to only passwordless authentication methods. The administrator creates a new Conditional Access policy, using the built-in **Passwordless MFA strength**. 
 
@@ -138,7 +138,7 @@ As a result, users in Contoso can access most of the resources in the tenant usi
 ## Prerequisites
 
 - **Microsoft Entra ID P1** - Your tenant needs to have Microsoft Entra ID P1 license to use Conditional Access. If needed, you can enable a [free trial](https://www.microsoft.com/security/business/get-started/start-free-trial).
-- **Enable combined registration** - Authentication strengths are supported when using [combined MFA and SSPR registration](howto-registration-mfa-sspr-combined.md). Using the legacy registration will result in poor user experience as the user may register methods that aren't required by the authentication method policy.
+- **Enable combined registration** - Authentication strengths are supported when using [combined MFA and SSPR registration](howto-registration-mfa-sspr-combined.md). Using the legacy registration will result in poor user experience as the user may register methods that aren't required by the Authentication methods policy.
 
 ## Next steps
 
