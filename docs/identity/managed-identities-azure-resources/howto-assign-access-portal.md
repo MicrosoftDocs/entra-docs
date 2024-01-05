@@ -13,7 +13,7 @@ ms.subservice: msi
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 01/11/2022
+ms.date: 01/05/2024
 ms.author: barclayn
 ms.collection: M365-identity-device-management
 ---
@@ -48,8 +48,8 @@ After you've enabled managed identity on an Azure resource, such as an [Azure VM
 
 1. Select the role and managed identity. For detailed steps, see [Assign Azure roles using the Azure portal](/azure/role-based-access-control/role-assignments-portal).
 
-    ![Add role assignment page in Azure portal.](~/../azure-docs-pr/includes/role-based-access-control/media/add-role-assignment-page.png)
-     
+    ![Screenshot that shows the page for adding a role assignment.](../../media/common/add-role-assignment-page.png)
+
 ## Next steps
 
 - [Managed identity for Azure resources overview](overview.md)

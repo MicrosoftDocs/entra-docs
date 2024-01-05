@@ -2,18 +2,15 @@
 title: Custom controls in Microsoft Entra Conditional Access
 description: Learn how custom controls in Microsoft Entra Conditional Access work.
 
-services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 07/27/2023
+ms.date: 01/03/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
-ms.reviewer: inbarc
-
-ms.collection: M365-identity-device-management
+ms.reviewer: gkinasewitz
 ---
 # Custom controls (preview)
 
@@ -21,11 +18,11 @@ Custom controls are a preview capability of the Microsoft Entra ID. When using c
 
 > [!NOTE]
 > As Alex Simons mentioned in his blog post [Upcoming changes to Custom Controls](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/upcoming-changes-to-custom-controls/ba-p/1144696):
-> 
+>
 > ...We are planning to replace the current preview with an approach which will allow partner-provided authentication capabilities to work seamlessly with the Microsoft Entra administrator and end user experiences. Today, partner MFA solutions can only function after a password has been entered, don’t serve as MFA for step-up authentication on other key scenarios, and don’t integrate with end user or administrative credential management functions. The new implementation will allow partner-provided authentication factors to work alongside built-in factors for key scenarios including registration, usage, MFA claims, step-up authentication, reporting, and logging.
-> 
+>
 > The current, limited approach will be supported in preview until the new design is completed, previews, and reaches “General Availability.” At that point, we will provide time for customers to migrate to the new implementation. Because of the limitations of the current approach, we will not onboard any new providers until the new capabilities are ready.
-> 
+>
 > We are working closely with customers and providers and will communicate timeline as we get closer...
 
 ## Creating custom controls
@@ -41,7 +38,7 @@ The option to create a custom control is in the **Manage** section of the **Cond
 
 ![Custom controls interface in Conditional Access](./media/controls/custom-controls-conditional-access.png)
 
-Clicking **New custom control**, opens a blade with a textbox for the JSON data of your control.  
+Clicking **New custom control** opens a blade with a textbox for the JSON data of your control.  
 
 ![New custom control](./media/controls/new-custom-controls-conditional-access.png)
 
