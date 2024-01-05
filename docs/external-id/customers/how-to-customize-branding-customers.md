@@ -8,7 +8,7 @@ ms.service: active-directory
  
 ms.subservice: ciam
 ms.topic: how-to
-ms.date: 10/27/2023
+ms.date: 01/07/2024
 ms.author: cmulligan
 ms.custom: it-pro
 
@@ -19,6 +19,11 @@ ms.custom: it-pro
 
 After creating a new customer tenant, you can customize the end-user experience. Create a custom look and feel for users signing in to your apps by configuring **Company branding** settings for your tenant. With these settings, you can add your own background images, colors, company logos, and text to customize the sign-in experiences across your apps.  
 You can also create user flows programmatically using the Company Branding Graph API.
+
+> [!TIP]
+> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=CompanyBranding)
+> 
+> To try out this feature, go to the Woodgrove Groceries demo and start the “Company branding” use case.
 
 ## Prerequisites
 
