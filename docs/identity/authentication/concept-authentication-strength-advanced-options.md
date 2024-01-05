@@ -31,7 +31,7 @@ Next to **Allowed FIDO2 Keys** click **+**, copy the AAGUID value, and click **S
 
 ## Certificate-based authentication advanced options
 
-In the [authentication method policy](how-to-certificate-based-authentication#step-3-configure-authentication-binding-policy), you can configure whether certificates are bound in the system to single-factor or multifactor authentication protection levels, based on the certificate issuer or policy OID. You can also require single-factor or multifactor authentication certificates for specific resources, based on Conditional Access authentication strength policy.
+In the [authentication method policy](how-to-certificate-based-authentication.md#step-3-configure-authentication-binding-policy), you can configure whether certificates are bound in the system to single-factor or multifactor authentication protection levels, based on the certificate issuer or policy OID. You can also require single-factor or multifactor authentication certificates for specific resources, based on Conditional Access authentication strength policy.
 
 By using authentication strength advanced options, you can further restrict sign ins to an application by requiring  a specific certificate issuer or policy OID. 
 
