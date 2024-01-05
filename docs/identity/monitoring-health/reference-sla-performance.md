@@ -1,11 +1,10 @@
 ---
-title: SLA performance for Microsoft Entra ID
+title: Service Level Agreement performance for Microsoft Entra ID
 description: Learn about the service level agreement performance and attainment for authentication services in Microsoft Entra ID
 author: shlipsey3
 manager: amycolannino
 ms.service: active-directory
 ms.topic: reference
-ms.workload: identity
 ms.subservice: report-monitor
 ms.date: 01/04/2024
 ms.author: sarahlipsey
@@ -18,17 +17,14 @@ As an identity admin, you might need to track the Microsoft Entra service-level 
 
 You can use this article in discussions with app or business owners to help them understand the performance they can expect from Microsoft Entra ID.
 
-## Service availability commitment
+## How is SLA measured for Microsoft Entra ID?
 
-Microsoft offers Premium Microsoft Entra customers the opportunity to get a service credit if Microsoft Entra ID fails to meet the documented SLA. When you request a service credit, Microsoft evaluates the SLA for your specific tenant; however, this global SLA can give you an indication of the general health of Microsoft Entra ID over time.
+Details on how downtime is defined and how uptime percentage is calculated are provided in the [SLA for Microsoft Entra ID](https://azure.microsoft.com/support/legal/sla/active-directory/v1_1/).
 
-The SLA covers the following scenarios that are vital to businesses:
+Performance is measured in a way that reflects customer authentication experience, rather than simply reporting on whether the system is available to outside connections. This distinction means that the calculation is based on if:
 
-- **User authentication:** Users are able to sign in to the Microsoft Entra service.
-
-- **App access:** Microsoft Entra ID successfully emits the authentication and authorization tokens required for users to sign in to applications connected to the service.
-
-For full details on SLA coverage and instructions on requesting a service credit, see the [SLA for Microsoft Entra ID](https://azure.microsoft.com/support/legal/sla/active-directory/v1_1/).
+- Users can authenticate
+- Microsoft Entra ID successfully issues tokens for target apps after authentication
 
 ## No planned downtime
 
@@ -38,7 +34,7 @@ You rely on Microsoft Entra ID to provide identity and access management for you
 
 To help you plan for moving workloads to Microsoft Entra ID, we publish past SLA performance. These numbers show the level at which Microsoft Entra ID met the requirements in the [SLA for Microsoft Entra ID](https://azure.microsoft.com/support/legal/sla/active-directory/v1_1/), for all tenants.
 
-The SLA attainment is truncated at three places after the decimal. Numbers aren't rounded up, so actual SLA attainment is higher than indicated.
+The numbers in the table are a global total of Microsoft Entra authentications across all customers and geographies. The number is truncated at three places after the decimal. Numbers aren't rounded up, so actual SLA attainment is higher than indicated.
 
 | Month     | 2021    | 2022    | 2023    |
 | ---       | ---     | ---     | ---     |
@@ -57,21 +53,12 @@ The SLA attainment is truncated at three places after the decimal. Numbers aren'
 
 <a name='how-is-azure-ad-sla-measured-'></a>
 
-### How is SLA measured for Microsoft Entra ID?
-
-SLA for Microsoft Entra ID is measured in a way that reflects customer authentication experience, rather than simply reporting on whether the system is available to outside connections. This distinction means that the calculation is based on if:
-
-- Users can authenticate
-- Microsoft Entra ID successfully issues tokens for target apps after authentication
-  
-The numbers in the table are a global total of Microsoft Entra authentications across all customers and geographies.
-  
 ## Incident history
 
-All incidents that seriously impact Microsoft Entra performance are documented in the [Azure status history](https://azure.status.microsoft/status/history/). Not all events documented in Azure status history are serious enough to cause Microsoft Entra ID to go below its SLA. You can view information about the impact of incidents, and a root cause analysis of what caused the incident and what steps Microsoft took to prevent future incidents.
+All incidents that seriously affect Microsoft Entra performance are documented in the [Azure status history](https://azure.status.microsoft/status/history/). Not all events documented in Azure status history are serious enough to cause Microsoft Entra ID to go below its SLA. You can view information about the impact of incidents, and a root cause analysis of what caused the incident and what steps Microsoft took to prevent future incidents.
 
 ## Next steps
 
 - [Microsoft Entra monitoring and health overview](overview-monitoring-health.md)
-- [Programmatic access to Microsoft Entra reports](./howto-configure-prerequisites-for-reporting-api.md)
-- [Microsoft Entra risk detections](~/id-protection/overview-identity-protection.md)
+- [Programmatic access to Microsoft Entra reports](howto-enable-microsoft-graph-activity-logs.md)
+- [Microsoft Entra risk detections](../../id-protection/overview-identity-protection.md)
