@@ -55,7 +55,7 @@ Azure AD product icons are replaced with the Microsoft Entra ID product icon.
 |:--------------------------:|:-----------------------------------:|
 | ![Azure AD product icon](./media/new-name/azure-ad-icon-1.png)  ![Alternative Azure AD product icon](./media/new-name/azure-ad-icon-2.png) | ![Microsoft Entra ID product icon](./media/new-name/microsoft-entra-id-icon.png) |
 
-You can download the Microsoft Entra ID icon here: [Microsoft Entra architecture icons](/architecture/architecture-icons.md)
+You can download the Microsoft Entra ID icon here: [Microsoft Entra architecture icons](~/architecture/architecture-icons.md)
 
 ### Feature names
 
@@ -73,13 +73,13 @@ The following table lists terminology that's not impacted by the rename. Names a
 | **Correct terminology** | **Details** |
 |-------------------------|-------------|
 | Active Directory <br/><br/>&#8226; Windows Server Active Directory <br/>&#8226; Active Directory Federation Services (AD FS) <br/>&#8226; Active Directory Domain Services (AD DS) <br/>&#8226; Active Directory <br/>&#8226; Any Active Directory feature(s) | Windows Server Active Directory, commonly known as Active Directory, and related features and services associated with Active Directory aren't branded with Microsoft Entra. |
-| Authentication library <br/><br/>&#8226; Azure AD Authentication Library (ADAL) <br/>&#8226; Microsoft Authentication Library (MSAL) |      Azure Active Directory Authentication Library (ADAL) is deprecated. While existing apps that use ADAL continue to work, Microsoft no longer releases security fixes on ADAL. Migrate applications to the Microsoft Authentication Library (MSAL) to avoid putting your app's security at risk. <br/><br/>[Microsoft Authentication Library (MSAL)](/identity-platform/msal-overview.md) - Provides security tokens from the Microsoft identity platform to authenticate users and access secured web APIs to provide secure access to Microsoft Graph, other Microsoft APIs, third-party web APIs, or your own web API. |
+| Authentication library <br/><br/>&#8226; Azure AD Authentication Library (ADAL) <br/>&#8226; Microsoft Authentication Library (MSAL) |      Azure Active Directory Authentication Library (ADAL) is deprecated. While existing apps that use ADAL continue to work, Microsoft no longer releases security fixes on ADAL. Migrate applications to the Microsoft Authentication Library (MSAL) to avoid putting your app's security at risk. <br/><br/>[Microsoft Authentication Library (MSAL)](~/identity-platform/msal-overview.md) - Provides security tokens from the Microsoft identity platform to authenticate users and access secured web APIs to provide secure access to Microsoft Graph, other Microsoft APIs, third-party web APIs, or your own web API. |
 | B2C <br/><br/>&#8226; Azure Active Directory B2C <br/>&#8226; Azure AD B2C | [Azure Active Directory B2C](/azure/active-directory-b2c) isn't being renamed. We're continuing to invest in security, availability, and reliability in Azure AD B2C and our next-generation solution for external identities, [Microsoft Entra External ID](~/external-id/index.yml). |
 |  Graph <br/><br/>&#8226; Azure Active Directory Graph <br/>&#8226; Azure AD Graph <br/>&#8226; Microsoft Graph | Azure Active Directory (Azure AD) Graph is deprecated. There are no further investments in Azure AD Graph and Azure AD Graph APIs have no SLA or maintenance commitment beyond security-related fixes. Investments in new features and functionalities will only be made in Microsoft Graph.<br/><br/>[Microsoft Graph](/graph/) - Grants programmatic access to organization, user, and application data stored in Microsoft Entra ID. |
 | PowerShell <br/><br/>&#8226; Azure Active Directory PowerShell <br/>&#8226; Azure AD PowerShell <br/>&#8226; Microsoft Graph PowerShell | Azure AD PowerShell for Graph is planned for deprecation on March 30, 2024. For more info on the deprecation plans, see the deprecation update. We encourage you to migrate to Microsoft Graph PowerShell, which is the recommended module for interacting with Azure AD. <br/><br/>[Microsoft Graph PowerShell](/powershell/microsoftgraph/overview) - Acts as an API wrapper for the Microsoft Graph APIs and helps administer every Microsoft Entra ID feature that has an API in Microsoft Graph. |
 | Accounts <br/><br/>&#8226; Microsoft account <br/>&#8226; Work or school account | For end user sign-ins and account experiences, follow guidance for work and school accounts in [Sign in with Microsoft branding guidelines](~/identity-platform/howto-add-branding-in-apps.md). |
 | Microsoft identity platform | The Microsoft identity platform encompasses all our identity and access developer assets. It continues to provide the resources to help you build applications that your users and customers can sign in to using their Microsoft identities or social accounts. |
-| <br/>&#8226; Azure AD Sync <br/>&#8226; DirSync | DirSync and Azure AD Sync aren't supported and no longer work. If you're still using DirSync or Azure AD Sync, you must upgrade to Microsoft Entra Connect to resume your sync process. For more info, see [Microsoft Entra Connect](/identity/hybrid/connect/how-to-dirsync-upgrade-get-started.md). |
+| <br/>&#8226; Azure AD Sync <br/>&#8226; DirSync | DirSync and Azure AD Sync aren't supported and no longer work. If you're still using DirSync or Azure AD Sync, you must upgrade to Microsoft Entra Connect to resume your sync process. For more info, see [Microsoft Entra Connect](~/identity/hybrid/connect/how-to-dirsync-upgrade-get-started.md). |
 
 ## Frequently asked questions
 
@@ -99,9 +99,9 @@ The Microsoft Entra product family helps you protect all identities and secure n
 
 | Identity and access management | New identity categories | Network access |
 |---------|---------|---------|
-| [Microsoft Entra ID (previously known as Azure AD)](../index.yml) | [Microsoft Entra Verified ID](/verified-id/index.yml) | [Microsoft Entra Internet Access](https://aka.ms/GlobalSecureAccessDocs) |
-| [Microsoft Entra ID Governance](~/id-governance/index.yml) | [Microsoft Entra Permissions Management](/permissions-management/index.yml) | [Microsoft Entra Private Access](https://aka.ms/GlobalSecureAccessDocs) |
-| [Microsoft Entra External ID](/external-id/index.yml) | [Microsoft Entra Workload ID](/workload-id/index.yml) |  |
+| [Microsoft Entra ID (previously known as Azure AD)](../index.yml) | [Microsoft Entra Verified ID](~/verified-id/index.yml) | [Microsoft Entra Internet Access](https://aka.ms/GlobalSecureAccessDocs) |
+| [Microsoft Entra ID Governance](~/id-governance/index.yml) | [Microsoft Entra Permissions Management](~/permissions-management/index.yml) | [Microsoft Entra Private Access](https://aka.ms/GlobalSecureAccessDocs) |
+| [Microsoft Entra External ID](~/external-id/index.yml) | [Microsoft Entra Workload ID](~/workload-id/index.yml) |  |
 
 ### Where can I manage Microsoft Entra ID?
 
