@@ -1,5 +1,5 @@
 ---
-title: Configure a multitenant organization using the Microsoft Graph API (Preview)
+title: Configure a multitenant organization using the Microsoft Graph API
 description: Learn how to configure a multitenant organization in Microsoft Entra ID using the Microsoft Graph API.
 services: active-directory
 author: rolyon
@@ -15,15 +15,11 @@ ms.custom: it-pro
 #Customer intent: As a dev, devops, or it admin, I want to
 ---
 
-# Configure a multitenant organization using the Microsoft Graph API (Preview)
-
-> [!IMPORTANT]
-> Multitenant organization is currently in PREVIEW.
-> See the [Product Terms](https://aka.ms/EntraPreviewsTermsOfUse) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
+# Configure a multitenant organization using the Microsoft Graph API
 
 This article describes the key steps to configure a multitenant organization using the Microsoft Graph API. This article uses an example owner tenant named *Cairo* and two member tenants named *Berlin* and *Athens*.
 
-If you instead want to use the Microsoft 365 admin center to configure a multitenant organization, see [Set up a multitenant org in Microsoft 365 (Preview)](/microsoft-365/enterprise/set-up-multi-tenant-org) and [Join or leave a multitenant organization in Microsoft 365 (Preview)](/microsoft-365/enterprise/join-leave-multi-tenant-org). To learn how to configure Microsoft Teams for your multitenant organization, see [The new Microsoft Teams desktop client](/microsoftteams/new-teams-desktop-admin).
+If you instead want to use the Microsoft 365 admin center to configure a multitenant organization, see [Set up a multitenant org in Microsoft 365](/microsoft-365/enterprise/set-up-multi-tenant-org) and [Join or leave a multitenant organization in Microsoft 365](/microsoft-365/enterprise/join-leave-multi-tenant-org). To learn how to configure Microsoft Teams for your multitenant organization, see [The new Microsoft Teams desktop client](/microsoftteams/new-teams-desktop-admin).
 
 ## Prerequisites
 
@@ -463,7 +459,7 @@ You delete a multitenant organization by removing all tenants. The process for r
 
 ## Next steps
 
-- [Set up a multitenant org in Microsoft 365 (Preview)](/microsoft-365/enterprise/set-up-multi-tenant-org)
-- [Synchronize users in multitenant organizations in Microsoft 365 (Preview)](/microsoft-365/enterprise/sync-users-multi-tenant-orgs)
+- [Set up a multitenant org in Microsoft 365](/microsoft-365/enterprise/set-up-multi-tenant-org)
+- [Synchronize users in multitenant organizations in Microsoft 365](/microsoft-365/enterprise/sync-users-multi-tenant-orgs)
 - [The new Microsoft Teams desktop client](/microsoftteams/new-teams-desktop-admin)
-- [Configure multitenant organization templates using the Microsoft Graph API (Preview)](./multi-tenant-organization-configure-templates.md)
+- [Configure multitenant organization templates using the Microsoft Graph API](./multi-tenant-organization-configure-templates.md)

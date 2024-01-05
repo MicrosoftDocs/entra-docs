@@ -1,5 +1,5 @@
 ---
-title: What is a multitenant organization in Microsoft Entra ID? (Preview)
+title: What is a multitenant organization in Microsoft Entra ID?
 description: Learn about multitenant organizations in Microsoft Entra ID and Microsoft 365.
 services: active-directory
 author: rolyon
@@ -15,11 +15,7 @@ ms.custom: it-pro
 #Customer intent: As a dev, devops, or it admin, I want to
 ---
 
-# What is a multitenant organization in Microsoft Entra ID? (Preview)
-
-> [!IMPORTANT]
-> Multitenant organization is currently in PREVIEW.
-> See the [Product Terms](https://aka.ms/EntraPreviewsTermsOfUse) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
+# What is a multitenant organization in Microsoft Entra ID?
 
 Multitenant organization is a feature in Microsoft Entra ID and Microsoft 365 that enables you to form a tenant group within your organization. Each pair of tenants in the group is governed by cross-tenant access settings that you can use to configure B2B or cross-tenant synchronization.
 
@@ -52,7 +48,7 @@ Here are the primary benefits of a multitenant organization:
 
 - Improved people search experience across tenants
 
-    Across Microsoft 365 services, the multitenant organization people search experience is a collaboration feature that enables search and discovery of people across multiple tenants. Once enabled, users are able to search and discover synced user profiles in a tenant's global address list and view their corresponding people cards. For more information, see [Microsoft 365 multitenant organization people search (public preview)](/microsoft-365/enterprise/multi-tenant-people-search).
+    Across Microsoft 365 services, the multitenant organization people search experience is a collaboration feature that enables search and discovery of people across multiple tenants. Once enabled, users are able to search and discover synced user profiles in a tenant's global address list and view their corresponding people cards. For more information, see [Microsoft 365 multitenant organization people search](/microsoft-365/enterprise/multi-tenant-people-search).
 
 ## How does a multitenant organization work?
 
@@ -145,7 +141,7 @@ Here are the basic steps to get started using multitenant organization.
 
 ### Step 1: Plan your deployment
 
-For more information, see [Plan for multitenant organizations in Microsoft 365 (Preview)](/microsoft-365/enterprise/plan-multi-tenant-org-overview).
+For more information, see [Plan for multitenant organizations in Microsoft 365](/microsoft-365/enterprise/plan-multi-tenant-org-overview).
 
 ### Step 2: Create your multitenant organization
 
@@ -168,7 +164,7 @@ Your multitenant organization is formed.
 
 Depending on your use case, you may want to synchronize users using one of the following methods:
 
-- [Synchronize users in multitenant organizations in Microsoft 365 (Preview)](/microsoft-365/enterprise/sync-users-multi-tenant-orgs)
+- [Synchronize users in multitenant organizations in Microsoft 365](/microsoft-365/enterprise/sync-users-multi-tenant-orgs)
 - [Configure cross-tenant synchronization](cross-tenant-synchronization-configure.md)
 - [Configure cross-tenant synchronization using PowerShell or Microsoft Graph API](cross-tenant-synchronization-configure-graph.md)
 - Your alternative bulk provisioning engine
@@ -189,5 +185,5 @@ The multitenant organization capability is in preview, and you can start using i
 
 ## Next steps
 
-- [Plan for multitenant organizations in Microsoft 365 (Preview)](/microsoft-365/enterprise/plan-multi-tenant-org-overview)
+- [Plan for multitenant organizations in Microsoft 365](/microsoft-365/enterprise/plan-multi-tenant-org-overview)
 - [What is cross-tenant synchronization?](cross-tenant-synchronization-overview.md)

@@ -1,5 +1,5 @@
 ---
-title: Multitenant organization templates (Preview)
+title: Multitenant organization templates
 description: Learn about multitenant organization templates in Microsoft Entra ID.
 services: active-directory
 author: rolyon
@@ -15,11 +15,7 @@ ms.custom: it-pro
 #Customer intent: As a dev, devops, or it admin, I want to
 ---
 
-# Multitenant organization templates (Preview)
-
-> [!IMPORTANT]
-> Multitenant organization is currently in PREVIEW.
-> See the [Product Terms](https://aka.ms/EntraPreviewsTermsOfUse) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
+# Multitenant organization templates
 
 Administrators staying in control of their resources is a guiding principle for multitenant organization collaboration. Cross-tenant access settings are required for each tenant-to-tenant relationship. Tenant administrators explicitly configure cross-tenant access partner configurations and identity synchronization settings for partner tenants inside the multitenant organization.
 
@@ -102,4 +98,4 @@ The partner tenant that left the multitenant organization must re-examine and am
 
 ## Next steps
 
-- [Configure multitenant organization templates using the Microsoft Graph API (Preview)](./multi-tenant-organization-configure-templates.md)
+- [Configure multitenant organization templates using the Microsoft Graph API](./multi-tenant-organization-configure-templates.md)

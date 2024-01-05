@@ -97,11 +97,7 @@ Here are the primary constraints with using cross-tenant synchronization across 
 
 For more information, see [What is cross-tenant synchronization?](./cross-tenant-synchronization-overview.md).
 
-## Multitenant organization (Preview)
-
-> [!IMPORTANT]
-> Multitenant organization is currently in PREVIEW.
-> See the [Product Terms](https://aka.ms/EntraPreviewsTermsOfUse) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
+## Multitenant organization
 
 [Multitenant organization](./multi-tenant-organization-overview.md) is a feature in Microsoft Entra ID and Microsoft 365 that enables you to form a tenant group within your organization. Each pair of tenants in the group is governed by cross-tenant access settings that you can use to configure B2B or cross-tenant synchronization.
 

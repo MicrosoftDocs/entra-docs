@@ -1,5 +1,5 @@
 ---
-title: Known issues for multitenant organizations (Preview)
+title: Known issues for multitenant organizations
 description: Learn about known issues when you work with multitenant organizations in Microsoft Entra ID.
 services: active-directory
 author: rolyon
@@ -15,11 +15,7 @@ ms.custom: it-pro
 #Customer intent: As a dev, devops, or it admin, I want to
 ---
 
-# Known issues for multitenant organizations (Preview)
-
-> [!IMPORTANT]
-> Multitenant organization is currently in PREVIEW.
-> See the [Product Terms](https://aka.ms/EntraPreviewsTermsOfUse) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
+# Known issues for multitenant organizations
 
 This article discusses known issues to be aware of when you work with multitenant organization functionality across Microsoft Entra ID and Microsoft 365. To provide feedback about the multitenant organization functionality on UserVoice, see [Microsoft Entra UserVoice](https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789?category_id=360892). We watch UserVoice closely so that we can improve the service.
 
@@ -87,7 +83,7 @@ The experiences and issues described in this article have the following scope.
     - By default, new B2B users are provisioned as B2B members, while existing B2B guests remain B2B guests.
     - You can opt to convert B2B guests into B2B members by setting [**Apply this mapping** to **Always**](cross-tenant-synchronization-configure.md#step-9-review-attribute-mappings).
 
-- Microsoft 365 admin center / Microsoft Entra ID: If you're using Microsoft Entra cross-tenant synchronization to provision your users, rather than the Microsoft 365 admin center share users functionality, Microsoft 365 admin center indicates an **Outbound sync status** of **Not configured**. This is expected preview behavior. Currently, Microsoft 365 admin center only shows the status of Microsoft Entra cross-tenant synchronization jobs created and managed by Microsoft 365 admin center and doesn't display Microsoft Entra cross-tenant synchronizations created and managed in Microsoft Entra ID.
+- Microsoft 365 admin center / Microsoft Entra ID: If you're using Microsoft Entra cross-tenant synchronization to provision your users, rather than the Microsoft 365 admin center share users functionality, Microsoft 365 admin center indicates an **Outbound sync status** of **Not configured**. This is expected behavior. Currently, Microsoft 365 admin center only shows the status of Microsoft Entra cross-tenant synchronization jobs created and managed by Microsoft 365 admin center and doesn't display Microsoft Entra cross-tenant synchronizations created and managed in Microsoft Entra ID.
 
 - Microsoft 365 admin center / Microsoft Entra ID: If you view Microsoft Entra cross-tenant synchronization in Microsoft Entra admin center, after adding tenants to or after joining a multitenant organization in Microsoft 365 admin center, you'll see a cross-tenant synchronization configuration with the name MTO_Sync_&lt;TenantID&gt;. Refrain from editing or changing the name if you want Microsoft 365 admin center to recognize the configuration as created and managed by Microsoft 365 admin center.
 
