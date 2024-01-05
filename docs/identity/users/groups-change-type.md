@@ -55,7 +55,7 @@ The following steps are an example of changing a group from static to dynamic me
 ## Change membership type for a group (PowerShell)
 
 > [!NOTE]
-> To change dynamic group properties you will need to use cmdlets from the Microsoft Graph PowerShell module. for more information, see (Install the Microsoft Graph PowerShell SDK)[/powershell/microsoftgraph/installation].
+> To change dynamic group properties you will need to use cmdlets from the Microsoft Graph PowerShell module. for more information, see [Install the Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/installation).
 
 Here is an example of functions that switch membership management on an existing group. In this example, care is taken to correctly manipulate the GroupTypes property and preserve any values that are unrelated to dynamic membership.
 
