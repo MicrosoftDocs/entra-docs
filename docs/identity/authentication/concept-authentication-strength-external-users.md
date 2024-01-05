@@ -33,6 +33,7 @@ In external user scenarios, the authentication methods that can satisfy authenti
 |OATH hardware token                          | &#x2705;        |          |
 |FIDO2 security key                           | &#x2705;        |          |
 |Windows Hello for Business                   | &#x2705;        |          |
+|Certificate-based Authentication             | &#x2705;        |          |
 
 For more information about how to set authentication strengths for external users, see [Conditional Access: Require an authentication strength for external users](~/identity/conditional-access/howto-conditional-access-policy-authentication-strength-external.md).
 
@@ -42,12 +43,6 @@ An authentication strength Conditional Access policy works together with [MFA tr
 
 - **If MFA trust is enabled**, Microsoft Entra ID checks the user's authentication session for a claim indicating that MFA has been fulfilled in the user's home tenant. See the preceding table for authentication methods that are acceptable for MFA when completed in an external user's home tenant. If the session contains a claim indicating that MFA policies have already been met in the user's home tenant, and the methods satisfy the authentication strength requirements, the user is allowed access. Otherwise, Microsoft Entra ID presents the user with a challenge to complete MFA in the home tenant using an acceptable authentication method.
 - **If MFA trust is disabled**, Microsoft Entra ID presents the user with a challenge to complete MFA in the resource tenant using an acceptable authentication method. (See the table above for authentication methods that are acceptable for MFA by an external user.)
-
-## Known issues for B2B and CBA advanced options
-
-An external identity can't perform multifactor authentication to the resource tenant with Microsoft Entra CBA. Instead, have the user perform MFA using CBA in the home tenant, and set up cross tenant settings for the resource tenant to trust MFA from the home tenant.
-
-For more information about how to enable **Trust multifactor authentication from Microsoft Entra tenants**, see [Configure B2B collaboration cross-tenant access](../../external-id/cross-tenant-access-settings-b2b-collaboration.md#to-change-inbound-trust-settings-for-mfa-and-device-claims).
 
 ## Next steps
 
