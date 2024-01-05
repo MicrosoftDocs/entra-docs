@@ -42,7 +42,7 @@ The experiences and issues described in this article have the following scope.
 
 - Self-service of multitenant organization functionality is limited to a maximum of five tenants and 100,000 internal users per tenant. To request a raise in these limits, submit a Microsoft Entra ID or Microsoft 365 admin center support request.
 
-- In the Microsoft Graph APIs, the default limits of five tenants and 100,000 internal users per tenant are only enforced at the time of joining. In Microsoft 365 admin center, the default limits are enforced at multitenant organization creation time and at time of joining. 
+- In the Microsoft Graph APIs, the default limits of five tenants and 100,000 internal users per tenant are only enforced at the time of joining. In Microsoft 365 admin center, the default limits are enforced at multitenant organization creation time and at time of joining.
 
 - There are multiple reasons why a join request might fail. If Microsoft 365 admin center doesn't indicate why a join request isn't succeeding, try examining the join request response by using the Microsoft Graph APIs or Microsoft Graph Explorer.
 
@@ -58,6 +58,7 @@ The experiences and issues described in this article have the following scope.
 
 - To promote B2B guests to B2B members, a source tenant administrator can amend the [attribute mappings](cross-tenant-synchronization-configure.md#step-9-review-attribute-mappings), or a target tenant administrator can [change the userType](~/fundamentals/how-to-manage-user-profile-info.md#add-or-change-profile-information) if the property is not recurringly synchronized.
 
+- B2B user objects have a `originTenantID` property that is either set to null or a valid value when the B2B user object is synchronized or shared in a multitenant organization. If your B2B user object is missing this property, see [Reset redemption status for a guest user](../../external-id/reset-redemption-status.md).
 
 - In [SharePoint OneDrive](/sharepoint/), the promotion of B2B guests to B2B members might not happen automatically. If faced with a user type mismatch between Microsoft Entra ID and SharePoint OneDrive, try [Set-SPUser [-SyncFromAD]](/powershell/module/sharepoint-server/set-spuser).
 
@@ -80,6 +81,8 @@ The experiences and issues described in this article have the following scope.
 - Microsoft 365 admin center / Microsoft Entra ID: Whether you use the Microsoft 365 admin center share users functionality or Microsoft Entra cross-tenant synchronization, the following items apply:
 
     - In the identity platform, both methods are represented as Microsoft Entra cross-tenant synchronization jobs.
+    - Synchronization jobs created with Microsoft Entra ID will not appear in the Microsoft 365 admin center.
+    - If you created your synchronization job in the Microsoft 365 admin center, do not modify it using Microsoft Entra ID, otherwise it will no longer appear in the admin center.
     - You might adjust the attribute mappings to match your organizations' needs.
     - By default, new B2B users are provisioned as B2B members, while existing B2B guests remain B2B guests.
     - You can opt to convert B2B guests into B2B members by setting [**Apply this mapping** to **Always**](cross-tenant-synchronization-configure.md#step-9-review-attribute-mappings).
