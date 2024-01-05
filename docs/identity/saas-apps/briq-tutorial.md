@@ -132,7 +132,7 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
 
 ## Configure Briq SSO
 
-To configure single sign-on on **Briq** side, you need to send the downloaded **Certificate (Base64)** and appropriate copied URLs from Microsoft Entra admin center to [Briq support team](mailto:mohamad@briq.com). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **Briq** side, you need to send the downloaded **Certificate (Base64)** and appropriate copied URLs from Microsoft Entra admin center to [Briq support team](https://briq.com/). They set this setting to have the SAML SSO connection set properly on both sides.
 
 ### Create Briq test user
 
