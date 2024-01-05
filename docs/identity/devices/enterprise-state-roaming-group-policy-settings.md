@@ -29,7 +29,7 @@ The MDM policy settings apply to Windows 10 or newer. Refer to [Devices and endp
 | Name | Description |
 | --- | --- |
 | Allow Microsoft Account Connection |Allows users to authenticate using a Microsoft account on the device |
-| Allow Sync My Settings |Allows users to roam Windows settings and app data; Disabling this policy will disable sync as well as backups on mobile devices |
+| Allow Sync My Settings |Allows users to roam Windows settings and app data; Disabling this policy disables sync and backups on mobile devices |
 
 ## Group Policy settings
 
