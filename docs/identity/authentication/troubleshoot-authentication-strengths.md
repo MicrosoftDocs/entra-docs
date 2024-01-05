@@ -57,10 +57,6 @@ Use the **Sign-ins** log to find more information about the sign-in:
 
   :::image type="content" source="./media/troubleshoot-authentication-strengths/sign-in-logs-control.png" alt-text="Screenshot showing the authentication strength under Conditional Access Policy details in the sign-in log.":::
 
-## Users can't use their FIDO2 security key to sign in
-An administrator can restrict access to specific security keys. When a user tries to sign in by using a key they can't use, this **You can't get there from here** message appears. The user has to restart the session, and sign-in with a different FIDO2 security key.
-
-:::image type="content" border="true" source="./media/troubleshoot-authentication-strengths/restricted-security-key.png" alt-text="Screenshot of a sign-in error when using a restricted FIDO2 security key.":::
 
 ## A user can't register a new method during sign-in 
 
