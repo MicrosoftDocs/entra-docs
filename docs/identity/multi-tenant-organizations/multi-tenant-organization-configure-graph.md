@@ -1,6 +1,6 @@
 ---
-title: Configure a multitenant organization using the Microsoft Graph API (Preview)
-description: Learn how to configure a multitenant organization in Microsoft Entra ID using the Microsoft Graph API.
+title: Configure a multitenant organization using PowerShell or Microsoft Graph API (Preview)
+description: Learn how to configure a multitenant organization in Microsoft Entra ID using Microsoft Graph Powershell or Microsoft Graph API.
 services: active-directory
 author: rolyon
 manager: amycolannino
@@ -15,13 +15,13 @@ ms.custom: it-pro
 #Customer intent: As a dev, devops, or it admin, I want to
 ---
 
-# Configure a multitenant organization using the Microsoft Graph API (Preview)
+# Configure a multitenant organization using PowerShell or Microsoft Graph API (Preview)
 
 > [!IMPORTANT]
 > Multitenant organization is currently in PREVIEW.
 > See the [Product Terms](https://aka.ms/EntraPreviewsTermsOfUse) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
 
-This article describes the key steps to configure a multitenant organization using the Microsoft Graph API. This article uses an example owner tenant named *Cairo* and two member tenants named *Berlin* and *Athens*.
+This article describes the key steps to configure a multitenant organization using Microsoft Graph PowerShell or Microsoft Graph API. This article uses an example owner tenant named *Cairo* and two member tenants named *Berlin* and *Athens*.
 
 If you instead want to use the Microsoft 365 admin center to configure a multitenant organization, see [Set up a multitenant org in Microsoft 365 (Preview)](/microsoft-365/enterprise/set-up-multi-tenant-org) and [Join or leave a multitenant organization in Microsoft 365 (Preview)](/microsoft-365/enterprise/join-leave-multi-tenant-org). To learn how to configure Microsoft Teams for your multitenant organization, see [The new Microsoft Teams desktop client](/microsoftteams/new-teams-desktop-admin).
 
@@ -43,6 +43,34 @@ If you instead want to use the Microsoft 365 admin center to configure a multite
 
 ![Icon for the owner tenant.](../../media/common/icons/entra-id.png)<br/>**Owner tenant**
 
+# [PowerShell](#tab/ms-powershell)
+
+1. Start PowerShell.
+
+1. If necessary, install the [Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/installation).
+
+1. Get the tenant ID of the owner and member tenants and initialize variables.
+
+    ```powershell
+    $OwnerTenantId = "<OwnerTenantId>"
+    $MemberTenantIdB = "<MemberTenantIdB>"
+    $MemberTenantIdA = "<MemberTenantIdA>"
+    ```
+
+1. Use the [Connect-MgGraph](/powershell/microsoftgraph/authentication-commands#using-connect-mggraph) command to sign in to the owner tenant and consent to the following required permissions.
+
+    - `MultiTenantOrganization.ReadWrite.All`
+    - `Policy.Read.All`
+    - `Policy.ReadWrite.CrossTenantAccess`
+    - `Application.ReadWrite.All`
+    - `Directory.ReadWrite.All`
+
+    ```powershell
+    Connect-MgGraph -TenantId $OwnerTenantId -Scopes "MultiTenantOrganization.ReadWrite.All","Policy.Read.All","Policy.ReadWrite.CrossTenantAccess","Application.ReadWrite.All","Directory.ReadWrite.All"
+    ```
+
+# [Microsoft Graph](#tab/ms-graph)
+
 These steps describe how to use Microsoft Graph Explorer, but you can also use Postman, or another REST API client.
 
 1. Start [Microsoft Graph Explorer tool](https://aka.ms/ge).
@@ -59,9 +87,27 @@ These steps describe how to use Microsoft Graph Explorer, but you can also use P
     - `Application.ReadWrite.All`
     - `Directory.ReadWrite.All`
 
+---
+
 ## Step 2: Create a multitenant organization
 
 ![Icon for the owner tenant.](../../media/common/icons/entra-id.png)<br/>**Owner tenant**
+
+# [PowerShell](#tab/ms-powershell)
+
+1. In the owner tenant, use the [New-MgBetaTenantRelationshipMultiTenantOrganizationTenant](/powershell/module/microsoft.graph.beta.identity.signins/new-mgbetatenantrelationshipmultitenantorganizationtenant) command to create your multitenant organization. This operation can take a few minutes.
+
+    ```powershell
+    New-MgBetaTenantRelationshipMultiTenantOrganizationTenant -DisplayName "Cairo"
+    ```
+
+1. Use the [Get-MgBetaTenantRelationshipMultiTenantOrganization](/powershell/module/microsoft.graph.beta.identity.signins/get-mgbetatenantrelationshipmultitenantorganization) command to check that the operation has completed before proceeding.
+
+    ```powershell
+    Get-MgBetaTenantRelationshipMultiTenantOrganization
+    ```
+
+# [Microsoft Graph](#tab/ms-graph)
 
 1. In the owner tenant, use the [Create multiTenantOrganization](/graph/api/tenantrelationship-put-multitenantorganization) API to create your multitenant organization. This operation can take a few minutes.
 
@@ -95,9 +141,31 @@ These steps describe how to use Microsoft Graph Explorer, but you can also use P
     }
     ```
 
+---
+
 ## Step 3: Add tenants
 
 ![Icon for the owner tenant.](../../media/common/icons/entra-id.png)<br/>**Owner tenant**
+
+# [PowerShell](#tab/ms-powershell)
+
+1. In the owner tenant, use the [New-MgBetaTenantRelationshipMultiTenantOrganizationTenant](/powershell/module/microsoft.graph.beta.identity.signins/new-mgbetatenantrelationshipmultitenantorganizationtenant) command to add tenants to your multitenant organization.
+
+    ```powershell
+    New-MgBetaTenantRelationshipMultiTenantOrganizationTenant -TenantID $MemberTenantIdB -DisplayName "Berlin"
+    ```
+
+    ```powershell
+    New-MgBetaTenantRelationshipMultiTenantOrganizationTenant -TenantID $MemberTenantIdA -DisplayName "Athens"
+    ```
+
+1. Use the [Get-MgBetaTenantRelationshipMultiTenantOrganizationTenant](/powershell/module/microsoft.graph.beta.identity.signins/get-mgbetatenantrelationshipmultitenantorganizationtenant) command to verify that the operation has completed before proceeding.
+
+    ```powershell
+    Get-MgBetaTenantRelationshipMultiTenantOrganizationTenant
+    ```
+
+# [Microsoft Graph](#tab/ms-graph)
 
 1. In the owner tenant, use the [Add multiTenantOrganizationMember](/graph/api/multitenantorganization-post-tenants) API to add tenants to your multitenant organization.
 
@@ -179,11 +247,29 @@ These steps describe how to use Microsoft Graph Explorer, but you can also use P
     }
     ```
 
+---
+
 ## Step 4: (Optional) Change the role of a tenant
 
 ![Icon for the owner tenant.](../../media/common/icons/entra-id.png)<br/>**Owner tenant**
 
 By default, tenants added to the multitenant organization are member tenants. Optionally, you can change them to owner tenants, which allow them to add other tenants to the multitenant organization. You can also change an owner tenant to a member tenant.
+
+# [PowerShell](#tab/ms-powershell)
+
+1. In the owner tenant, use the [Update-MgBetaTenantRelationshipMultiTenantOrganizationTenant](/powershell/module/microsoft.graph.beta.identity.signins/update-mgbetatenantrelationshipmultitenantorganizationtenant) command to change a member tenant to an owner tenant.
+
+    ```powershell
+    Update-MgBetaTenantRelationshipMultiTenantOrganizationTenant -MultiTenantOrganizationMemberId $MemberTenantIdB -Role "Owner"
+    ```
+
+1. Use the [Get-MgBetaTenantRelationshipMultiTenantOrganizationTenant](/powershell/module/microsoft.graph.beta.identity.signins/get-mgbetatenantrelationshipmultitenantorganizationtenant) command to verify the change.
+
+    ```powershell
+    Get-MgBetaTenantRelationshipMultiTenantOrganizationTenant -MultiTenantOrganizationMemberId $MemberTenantIdB
+    ```
+
+# [Microsoft Graph](#tab/ms-graph)
 
 1. In the owner tenant, use the [Update multiTenantOrganizationMember](/graph/api/multitenantorganizationmember-update) API to change a member tenant to an owner tenant.
 
@@ -236,11 +322,29 @@ By default, tenants added to the multitenant organization are member tenants. Op
     }
     ```
 
+---
+
 ## Step 5: (Optional) Remove a member tenant
 
 ![Icon for the owner tenant.](../../media/common/icons/entra-id.png)<br/>**Owner tenant**
 
 You can remove any member tenant, including your own. You can't remove owner tenants. Also, you can't remove the original creator tenant, even if it has been changed from owner to member.
+
+# [PowerShell](#tab/ms-powershell)
+
+1. In the owner tenant, use the [Remove-MgBetaTenantRelationshipMultiTenantOrganizationTenant](/powershell/module/microsoft.graph.beta.identity.signins/remove-mgbetatenantrelationshipmultitenantorganizationtenant) command to remove any member tenant. This operation takes a few minutes.
+
+    ```powershell
+    Remove-MgBetaTenantRelationshipMultiTenantOrganizationTenant -MultiTenantOrganizationMemberId <MemberTenantIdD>
+    ```
+
+1. Use the [Get-MgBetaTenantRelationshipMultiTenantOrganizationTenant](/powershell/module/microsoft.graph.beta.identity.signins/get-mgbetatenantrelationshipmultitenantorganizationtenant) command to verify the change.
+
+    ```powershell
+    Get-MgBetaTenantRelationshipMultiTenantOrganizationTenant -MultiTenantOrganizationMemberId <MemberTenantIdD>
+    ```
+
+# [Microsoft Graph](#tab/ms-graph)
 
 1. In the owner tenant, use the [Remove multiTenantOrganizationMember](/graph/api/multitenantorganization-delete-tenants) API to remove any member tenant. This operation takes a few minutes.
 
@@ -298,6 +402,9 @@ You can remove any member tenant, including your own. You can't remove owner ten
         }
     }
     ```
+
+---
+
 ## Step 6: Wait
 
 ![Icon for the member tenant.](../../media/common/icons/entra-id-purple.png)<br/>**Member tenant**
@@ -309,6 +416,24 @@ You can remove any member tenant, including your own. You can't remove owner ten
 ![Icon for the member tenant.](../../media/common/icons/entra-id-purple.png)<br/>**Member tenant**
 
 The Cairo tenant created a multitenant organization and added the Berlin and Athens tenants. In these steps you sign in to the Berlin tenant and join the multitenant organization created by Cairo.
+
+# [PowerShell](#tab/ms-powershell)
+
+1. Start PowerShell.
+
+1. Use the [Connect-MgGraph](/powershell/microsoftgraph/authentication-commands#using-connect-mggraph) command to sign in to the member tenant and consent to the following required permissions.
+
+    - `MultiTenantOrganization.ReadWrite.All`
+    - `Policy.Read.All`
+    - `Policy.ReadWrite.CrossTenantAccess`
+    - `Application.ReadWrite.All`
+    - `Directory.ReadWrite.All`
+
+    ```powershell
+    Connect-MgGraph -TenantId $TargetTenantId -Scopes "MultiTenantOrganization.ReadWrite.All","Policy.Read.All","Policy.ReadWrite.CrossTenantAccess","Application.ReadWrite.All","Directory.ReadWrite.All"
+    ```
+
+# [Microsoft Graph](#tab/ms-graph)
 
 1. Start [Microsoft Graph Explorer tool](https://aka.ms/ge).
 
@@ -324,9 +449,35 @@ The Cairo tenant created a multitenant organization and added the Berlin and Ath
     - `Application.ReadWrite.All`
     - `Directory.ReadWrite.All`
 
+---
+
 ## Step 8: Join the multitenant organization
 
 ![Icon for the member tenant.](../../media/common/icons/entra-id-purple.png)<br/>**Member tenant**
+
+# [PowerShell](#tab/ms-powershell)
+
+1. In the member tenant, use the [Update-MgBetaTenantRelationshipMultiTenantOrganizationJoinRequest](/powershell/module/microsoft.graph.beta.identity.signins/update-mgbetatenantrelationshipmultitenantorganizationjoinrequest) command to join the multitenant organization.
+
+    ```powershell
+    Update-MgBetaTenantRelationshipMultiTenantOrganizationJoinRequest -AddedByTenantId $OwnerTenantId
+    ```
+
+1. Use the [Get-MgBetaTenantRelationshipMultiTenantOrganizationJoinRequest](/powershell/module/microsoft.graph.beta.identity.signins/get-mgbetatenantrelationshipmultitenantorganizationjoinrequest) command to verify the join.
+
+    ```powershell
+    Get-MgBetaTenantRelationshipMultiTenantOrganizationJoinRequest
+    ```
+
+1. Use the [Get-MgBetaTenantRelationshipMultiTenantOrganization](/powershell/module/microsoft.graph.beta.identity.signins/get-mgbetatenantrelationshipmultitenantorganization) command to check the multitenant organization itself. It should reflect the join operation.
+
+    ```powershell
+    Get-MgBetaTenantRelationshipMultiTenantOrganization
+    ```
+
+1. To allow for asynchronous processing, wait **up to 4 hours** before joining a multitenant organization is completed.
+
+# [Microsoft Graph](#tab/ms-graph)
 
 1. In the member tenant, use the [Update multiTenantOrganizationJoinRequestRecord](/graph/api/multitenantorganizationjoinrequestrecord-update) API to join the multitenant organization.
 
@@ -431,6 +582,8 @@ The Cairo tenant created a multitenant organization and added the Berlin and Ath
 
 1. To allow for asynchronous processing, wait **up to 4 hours** before joining a multitenant organization is completed.
 
+---
+
 ## Step 9: (Optional) Leave the multitenant organization
 
 ![Icon for the member tenant.](../../media/common/icons/entra-id-purple.png)<br/>**Member tenant**
@@ -438,6 +591,16 @@ The Cairo tenant created a multitenant organization and added the Berlin and Ath
 You can leave a multitenant organization that you have joined. The process for removing your own tenant from the multitenant organization is the same as the process for removing another tenant from the multitenant organization.
 
 If your tenant is the only multitenant organization owner, you must designate a new tenant to be the multitenant organization owner. For steps, see [Step 4: (Optional) Change the role of a tenant](#step-4-optional-change-the-role-of-a-tenant).
+
+# [PowerShell](#tab/ms-powershell)
+
+- In the tenant, use the [Remove-MgBetaTenantRelationshipMultiTenantOrganizationTenant](/powershell/module/microsoft.graph.beta.identity.signins/remove-mgbetatenantrelationshipmultitenantorganizationtenant) command to remove the tenant. This operation takes a few minutes.
+
+    ```powershell
+    Remove-MgBetaTenantRelationshipMultiTenantOrganizationTenant -MultiTenantOrganizationMemberId <MemberTenantId>
+    ```
+
+# [Microsoft Graph](#tab/ms-graph)
 
 - In the tenant, use the [Remove multiTenantOrganizationMember](/graph/api/multitenantorganization-delete-tenants) API to remove the tenant. This operation takes a few minutes.
 
@@ -447,11 +610,23 @@ If your tenant is the only multitenant organization owner, you must designate a 
     DELETE https://graph.microsoft.com/beta/tenantRelationships/multiTenantOrganization/tenants/{memberTenantId}
     ```
 
+---
+
 ## Step 10: (Optional) Delete the multitenant organization
 
 ![Icon for the owner tenant.](../../media/common/icons/entra-id.png)<br/>**Owner tenant**
 
 You delete a multitenant organization by removing all tenants. The process for removing the final owner tenant is the same as the process for removing all other member tenants.
+
+# [PowerShell](#tab/ms-powershell)
+
+- In the final owner tenant, use the [Remove-MgBetaTenantRelationshipMultiTenantOrganizationTenant](/powershell/module/microsoft.graph.beta.identity.signins/remove-mgbetatenantrelationshipmultitenantorganizationtenant) command to remove the tenant. This operation takes a few minutes.
+
+    ```powershell
+    Remove-MgBetaTenantRelationshipMultiTenantOrganizationTenant -MultiTenantOrganizationMemberId $OwnerTenantId
+    ```
+
+# [Microsoft Graph](#tab/ms-graph)
 
 - In the final owner tenant, use the [Remove multiTenantOrganizationMember](/graph/api/multitenantorganization-delete-tenants) API to remove the tenant. This operation takes a few minutes.
 
@@ -460,6 +635,8 @@ You delete a multitenant organization by removing all tenants. The process for r
     ```http
     DELETE https://graph.microsoft.com/beta/tenantRelationships/multiTenantOrganization/tenants/{ownerTenantId}
     ```
+
+---
 
 ## Next steps
 
