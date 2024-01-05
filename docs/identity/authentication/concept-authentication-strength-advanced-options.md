@@ -106,7 +106,12 @@ POST beta/identity/conditionalAccess/authenticationStrength/policies/{authentica
 }
 ```
 
-### Limitations
+## Limitations
+
+### FIDO2 security key advanced options
+- FIDO2 security key Advanced options - Advanced options aren't supported for external users with a home tenant that is located in a different Microsoft cloud than the resource tenant.
+
+### Certificate-based authentication advanced options
 
 - Only one certificate can be used in each browser session. After you sign in with a certificate, it's cached in the browser for the duration of the session. You won't be prompted to choose another certificate if it doesn’t meet the authentication strength requirements. You need to sign out and sign back in to restart the session. Then choose the relevant certificate.
 
@@ -126,9 +131,18 @@ POST beta/identity/conditionalAccess/authenticationStrength/policies/{authentica
     - Access to specific resources can be restricted by using the "Other certificate issuer by SubjectkeyIdentifier" setting in the custom authentication strength policy.
   - When cross-tenant access setting is **On**, Fabrikam and Contoso aren't on the same Microsoft cloud – for example, Fabrikam’s tenant is on the Azure commercial cloud and Contoso’s tenant is on the Azure for US Government cloud – access to specific resources can't be restricted by using the Issuer ID or Policy OIDs in the custom authentication strength policy. 
 
-### Check certificate policy OIDs and issuer
+## Troubleshooting  authentication strength advanced options
 
-Sign in as an Administrator. Click **Run**, type certmgr.msc and press Enter. To check policy OIDs, click **Personal**, right-click the certificate and click **Details**.  
+### Users can't use their FIDO2 security key to sign in
+An Authentication Policy Administrator can restrict access to specific security keys. When a user tries to sign in by using a key they can't use, this **You can't get there from here** message appears. The user has to restart the session, and sign-in with a different FIDO2 security key.
+
+:::image type="content" border="true" source="./media/troubleshoot-authentication-strengths/restricted-security-key.png" alt-text="Screenshot of a sign-in error when using a restricted FIDO2 security key.":::
+
+
+### How to check certificate policy OIDs and issuer
+
+You can confirm the personal certificate properties matches the configuration in authentication strength advanced options.
+On the user’s device, sign in as an Administrator. Click **Run**, type certmgr.msc and press Enter. To check policy OIDs, click **Personal**, right-click the certificate and click **Details**.  
 
 :::image type="content" border="true" source="./media/concept-authentication-strength-advanced-options/certmgr.png" alt-text="Screenshot showing how to check certificate policy OIDs and issuer.":::
 
