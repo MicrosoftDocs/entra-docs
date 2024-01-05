@@ -75,7 +75,7 @@ Authenticator leverages the native Apple cryptography to achieve FIPS 140, Secur
 Beginning with version 6.2310.7174, Microsoft Authenticator for Android is compliant with FIPS 140-3 for all Microsoft Entra authentications using phishing-resistant device-bound passkeys, push multifactor authentications (MFA), passwordless phone sign-in (PSI), and time-based one-time passcodes (TOTP). For organizations using Intune Company Portal, install version 5.0.6043.0 in addition to the latest version of Authenticator for FIPS compliance. 
 
 ## Determining Microsoft Authenticator registration type in My Security-Info 
-Managining and adding additional Microsoft Authenticator registrations can be performed by users by accessing [MySecurityInfo](https://aka.ms/mysecurityinfo) or by selecting Security info from My Account (see the URLs in the next section). Specific icons are used to differentiate whether the Microsoft Authenticator registration is passwordless phone sign-in or MFA. 
+Managining and adding additional Microsoft Authenticator registrations can be performed by users by accessing [MySecurityInfo](https://aka.ms/mysecurityinfo) (see the URLs in the next section) or by selecting Security info from MyAccount. Specific icons are used to differentiate whether the Microsoft Authenticator registration is passwordless phone sign-in or MFA. 
 
 Authenticator registration type | Icon
 ------ | ------
@@ -83,12 +83,12 @@ Microsoft Authenticator: Passwordless phone sign-in   | <img width="43" alt="Mic
 Microsoft Authenticator: (Notification/Code) | <img width="43" alt="Microsoft Authenticator MFA Capable" src="https://user-images.githubusercontent.com/50213291/211921054-d11983ad-4e0d-4612-9a14-0fef625a9a2a.png">
 
 
-### MySecurityInfo and MyAccount links
+### MySecurityInfo links
 
-Cloud | MySecurityInfo URL | MyAccount URL
+Cloud | MySecurityInfo URL | 
 ------ | ------ | ------
-Azure commercial (includes GCC)   | https://aka.ms/MySecurityInfo | https://aka.ms/MyAccount 
-Azure for US Government (includes GCC High and DoD) | https://aka.ms/MySecurityInfo-us | https://aka.ms/MyAccount-us 
+Azure commercial (includes GCC)   | https://aka.ms/MySecurityInfo 
+Azure for US Government (includes GCC High and DoD) | https://aka.ms/MySecurityInfo-us 
 
 
 ## Next steps
