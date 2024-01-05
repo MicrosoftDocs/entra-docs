@@ -33,12 +33,12 @@ This article walks you through features that allow you to accomplish the task of
 
 You're able to simplify the onboarding of partners to your organization using entitlement management by utilizing the following features:
 
-- By [Configuring custom questions]
-- By [Specifying built-in attributes]
+- By [Configuring custom questions](entitlement-management-onboard.md#configure-custom-questions)
+- By [Specifying built-in attributes](entitlement-management-onboard.md#specify-built-in-attributes)
 
 The following sections show you how these features help you achieve this goal.
 
-### Configure custom questions
+## Configure custom questions
 
 The custom questions feature in entitlement management access packages allows an access package creator to configure questions that the reviewer answers as part of the request process. This allows you to create specific questions for partners during the request process allowing for either a quick approval, or rejection, of requests to resources.
 
@@ -48,7 +48,7 @@ This feature supports different types of questions that includes free form text 
 
 For a step by step guide on this process, see: [Add requestor information to an access package](entitlement-management-access-package-create.md#create-request-policies).
 
-### Specify built-in attributes
+## Specify built-in attributes
 
 When a partner completes a request, you're able to save partner information for later use. This can be done by specifying that built in or custom attributes that persist on the requestor’s user object itself. The attribute collection feature is useful if an app requires the information to function properly, such as with an inventory app that needs the user’s region.
 
