@@ -62,7 +62,7 @@ landingContent:
             url: /microsoft-365/enterprise/set-up-multi-tenant-org
           - text: Join or leave a multitenant organization in Microsoft 365
             url: /microsoft-365/enterprise/join-leave-multi-tenant-org
-          - text: Microsoft Graph API
+          - text: PowerShell or Microsoft Graph API
             url: multi-tenant-organization-configure-graph.md
 
   # Card
