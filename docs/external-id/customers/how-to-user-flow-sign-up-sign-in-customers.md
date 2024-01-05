@@ -8,7 +8,7 @@ ms.service: active-directory
  
 ms.subservice: ciam
 ms.topic: how-to
-ms.date: 11/07/2023
+ms.date: 01/05/2024
 ms.author: mimart
 ms.reviewer: kengaderdus
 ms.custom: it-pro
