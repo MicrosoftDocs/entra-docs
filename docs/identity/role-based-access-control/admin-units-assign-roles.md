@@ -109,7 +109,8 @@ $user = Get-MgUser -Filter "userPrincipalName eq 'Example_UPN'"
 $roleDefinition = Get-MgRoleManagementDirectoryRoleDefinition -Filter "displayName eq 'Example_role_name'"
 $adminUnit = Get-MgDirectoryAdministrativeUnit -Filter "displayName eq 'Example_admin_unit_name'"
 $directoryScope = '/administrativeUnits/' + $adminUnit.Id
-$roleAssignment = New-MgRoleManagementDirectoryRoleAssignment -DirectoryScopeId $directoryScope -PrincipalId $user.Id -RoleDefinitionId $roleDefinition.Id
+$roleAssignment = New-MgRoleManagementDirectoryRoleAssignment -DirectoryScopeId $directoryScope `
+   -PrincipalId $user.Id -RoleDefinitionId $roleDefinition.Id
 ```
 
 ### Microsoft Graph API
