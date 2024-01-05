@@ -1,6 +1,6 @@
 ---
-title: Troubleshoot Microsoft Entra authentication strength 
-description: Learn how to resolve errors when using Microsoft Entra authentication strength.
+title: Troubleshoot Conditional Access authentication strength 
+description: Learn how to resolve errors when using Microsoft Entra Conditional Access authentication strength.
 
 services: multi-factor-authentication
 ms.service: active-directory
@@ -15,9 +15,9 @@ ms.reviewer: inbarc
 
 ms.collection: M365-identity-device-management
 ---
-# Troubleshoot Microsoft Entra authentication strength
+# Troubleshoot Conditional Access authentication strength
 
-This topic covers errors you might see when you use Microsoft Entra authentication strength and how to resolve them.  
+This topic covers errors you might see when you use Microsoft Entra Conditional Access authentication strength and how to resolve them.  
 
 ## A user is asked to sign in with another method, but they don't see a method they expect
 

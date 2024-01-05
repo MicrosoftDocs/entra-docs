@@ -20,7 +20,7 @@ ms.collection: M365-identity-device-management
 You can configure advanced options for authentication with FIDO2 security keys and certificate-based authentication (CBA) when you create a custom authentication strength. Advanced options allow you to further restrict sign in based upon specific properties of a FIDO2 security key or a certificate. 
 
 ## FIDO2 security key advanced options
-You can restrict the usage of FIDO2 security keys based on their Authenticator Attestation GUIDs (AAGUIDs). The capability allows administrators to require a FIDO2 security key from a specific manufacture in order to access the resource. To require a specific FIDO2 security key, first complete the steps to create a [custom authentication strength](concept-authentication-strengths.md#custom-authentication-strengths). Then select **FIDO2 Security Key**, and click **Advanced options**. 
+You can restrict the usage of FIDO2 security keys based on their Authenticator Attestation GUIDs (AAGUIDs). This capability allows administrators to require a FIDO2 security key from a specific manufacturer in order to access the resource. To require a specific FIDO2 security key, first complete the steps to create a [custom authentication strength](concept-authentication-strengths.md#custom-authentication-strengths). Then select **FIDO2 Security Key**, and click **Advanced options**. 
 
 :::image type="content" border="true" source="./media/concept-authentication-strengths/key.png" alt-text="Screenshot showing Advanced options for FIDO2 security key.":::
 
@@ -31,11 +31,11 @@ Next to **Allowed FIDO2 Keys** click **+**, copy the AAGUID value, and click **S
 
 ## Certificate-based authentication advanced options
 
-In the [authentication method policy](how-to-certificate-based-authentication.md#step-3-configure-authentication-binding-policy), you can configure whether certificates are bound in the system to single-factor or multifactor authentication protection levels, based on the certificate issuer or policy OID. You can also require single-factor or multifactor authentication certificates for specific resources, based on Conditional Access authentication strength policy.
+In the [Authentication methods policy](how-to-certificate-based-authentication.md#step-3-configure-authentication-binding-policy), you can configure whether certificates are bound in the system to single-factor or multifactor authentication protection levels, based on the certificate issuer or policy OID. You can also require single-factor or multifactor authentication certificates for specific resources, based on Conditional Access authentication strength policy.
 
-By using authentication strength advanced options, you can further restrict sign ins to an application by requiring  a specific certificate issuer or policy OID. 
+By using authentication strength advanced options, you can require a specific certificate issuer or policy OID to further restrict sign-ins to an application. 
 
-For example, Contoso issues smart cards to employees with three different types of multifactor certificates. One certificate is for confidential clearance, another for secret clearance, and a third is for top secret clearance. Each one is distinguished by properties of the certificate, such as Policy OID or issuer. Contoso wants to ensure that only users with the appropriate multifactor certificate can access data for each classification.  
+For example, Contoso issues smart cards to employees with three different types of multifactor certificates. One certificate is for confidential clearance, another for secret clearance, and a third is for top secret clearance. Each one is distinguished by properties of the certificate, such as policy OID or issuer. Contoso wants to ensure that only users with the appropriate multifactor certificate can access data for each classification.  
 
 The next sections show how to configure advanced options for CBA by using the Microsoft Entra admin center and Microsoft Graph. 
 
@@ -63,13 +63,13 @@ The next sections show how to configure advanced options for CBA by using the Mi
 
 ### Microsoft Graph
 
-To create a new Conditional Access authentication strength policy with Certificate combinationConfiguration:
+To create a new Conditional Access authentication strength policy with certificate combinationConfiguration:
 
 ```json
 POST  /beta/identity/conditionalAccess/authenticationStrengths/policies
 {
     "displayName": "CBA Restriction",
-    "description": "CBA Restriction with both IssuerSki and OIDs ",
+    "description": "CBA Restriction with both IssuerSki and OIDs",
     "allowedCombinations": [
         " x509CertificateMultiFactor "
     ],
@@ -115,33 +115,33 @@ POST beta/identity/conditionalAccess/authenticationStrength/policies/{authentica
 
 - Only one certificate can be used in each browser session. After you sign in with a certificate, it's cached in the browser for the duration of the session. You won't be prompted to choose another certificate if it doesn’t meet the authentication strength requirements. You need to sign out and sign back in to restart the session. Then choose the relevant certificate.
 
-- Certificate Authorities and user certificates should conform to X.509 v3 standard. Specifically, to enforce issuer SKI CBA restrictions, certificates need valid AKIs:
+- Certificate Authorities and user certificates should conform to the X.509 v3 standard. Specifically, to enforce issuer SKI CBA restrictions, certificates need valid AKIs:
 
   :::image type="content" border="true" source="./media/concept-authentication-strength-advanced-options/authority-key-identifier.png" alt-text="Screenshot showing an authority key identifier.":::
 
   >[!NOTE]
   >If the certificate doesn't conform, user authentication might succeed, but not satisfy the issuerSki restrictions for the authentication strength policy.
 
-- During sign-in, the first 5 policy OIDs from the end user certificate are considered, and compared with the Policy OIDs configured in the authentication strength policy. If the end user certificate has more than 5 Policy OIDs, the first 5 policy OIDs in lexical order that match the authentication strength requirements are taken into account. 
+- During sign-in, the first 5 policy OIDs from the end user certificate are considered, and compared with the policy OIDs configured in the authentication strength policy. If the end user certificate has more than 5 policy OIDs, the first 5 policy OIDs in lexical order that match the authentication strength requirements are taken into account. 
 
 - For B2B users, let's take an example where Contoso has invited users from Fabrikam to their tenant. In this case, Contoso is the resource tenant and Fabrikam is the home tenant.
   - When cross-tenant access setting is **Off** (Contoso doesn't accept MFA that was performed by the home tenant) - Using certificate-based authentication on the resource tenant isn't supported.
   - When cross-tenant access setting is **On**, Fabrikam and Contoso are on the same Microsoft cloud – meaning, both Fabrikam and Contoso tenants are on the Azure commercial cloud or on the Azure for US Government cloud. In addition, Contoso trusts MFA that was performed on the home tenant. In this case:
     - Access to a specific resource can be restricted by using the policy OIDs in the custom authentication strength policy.
     - Access to specific resources can be restricted by using the "Other certificate issuer by SubjectkeyIdentifier" setting in the custom authentication strength policy.
-  - When cross-tenant access setting is **On**, Fabrikam and Contoso aren't on the same Microsoft cloud – for example, Fabrikam’s tenant is on the Azure commercial cloud and Contoso’s tenant is on the Azure for US Government cloud – access to specific resources can't be restricted by using the Issuer ID or Policy OIDs in the custom authentication strength policy. 
+  - When cross-tenant access setting is **On**, Fabrikam and Contoso aren't on the same Microsoft cloud – for example, Fabrikam’s tenant is on the Azure commercial cloud and Contoso’s tenant is on the Azure for US Government cloud – access to specific resources can't be restricted by using the issuer ID or policy OIDs in the custom authentication strength policy. 
 
 ## Troubleshooting  authentication strength advanced options
 
 ### Users can't use their FIDO2 security key to sign in
-An Authentication Policy Administrator can restrict access to specific security keys. When a user tries to sign in by using a key they can't use, this **You can't get there from here** message appears. The user has to restart the session, and sign-in with a different FIDO2 security key.
+A Conditional Access Administrator can restrict access to specific security keys. When a user tries to sign in by using a key they can't use, this **You can't get there from here** message appears. The user has to restart the session, and sign-in with a different FIDO2 security key.
 
 :::image type="content" border="true" source="./media/troubleshoot-authentication-strengths/restricted-security-key.png" alt-text="Screenshot of a sign-in error when using a restricted FIDO2 security key.":::
 
 
 ### How to check certificate policy OIDs and issuer
 
-You can confirm the personal certificate properties matches the configuration in authentication strength advanced options.
+You can confirm the personal certificate properties match the configuration in authentication strength advanced options.
 On the user’s device, sign in as an Administrator. Click **Run**, type certmgr.msc and press Enter. To check policy OIDs, click **Personal**, right-click the certificate and click **Details**.  
 
 :::image type="content" border="true" source="./media/concept-authentication-strength-advanced-options/certmgr.png" alt-text="Screenshot showing how to check certificate policy OIDs and issuer.":::
