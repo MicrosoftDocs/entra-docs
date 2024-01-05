@@ -72,7 +72,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 1. On the **Basic SAML Configuration** section, perform the following steps:
 
-    a. In the **Identifier (Entity ID)** text box, type a value using the following pattern:
+    a. In the **Identifier (Entity ID)** text box, type the value using the following pattern:
     `urn:auth0:colossyan:AzureViaSAML`
 
     b. In the **Reply URL** text box, type the URL:
