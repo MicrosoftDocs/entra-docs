@@ -17,17 +17,15 @@ ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
 
 
-#Customer intent: As an administrator, I want to simplify how my organization onboard partners using access governance features.
+#Customer intent: As an administrator, I want to simplify onboarding partners to resources using access governance features.
 
 ---
 
 # Onboard partners with entitlement management
 
-Partner onboarding processes often involve collecting information about the partner to guide decisions about whether to grant access, or how to set up their account properly for the apps and resources they use. For example, before granting a partner access to a particular team, you might want them to share their role in their organization, so the approver knows whether the team is right for them. You could need to set the location attribute for partner guests, the same way you do with employees, because they're using an inventory app.
+Partner onboarding processes often involve collecting information about the partner to guide decisions about whether to grant access, or how to set up their account properly for the apps and resources they use. For example, before granting a partner access to a particular team, you might want them to share their role in their organization, so the approver knows whether the team is right for them. You could need to set the location attribute for partner guests, the same way you do with employees, because they're using a specific application.
 
-In the past, companies built custom forms to gather this information before setting up partner guests and granting access, but those forms were expensive to build and hard to maintain. Entitlement management’s new built-in capabilities automatically provide your approvers and apps with the information they need.
-
-This article walks you through features that allow you to accomplish the task of simplifying partner onboarding.
+In the past, companies built custom forms to gather this information before setting up partner guests and granting access, but those forms were expensive to build and hard to maintain. Entitlement management’s built-in capabilities automatically provide your approvers and apps with the information they need. This article walks you through how these features can be used to onboard a partner to your organization.
 
 ## Onboarding features
 
@@ -40,7 +38,7 @@ The following sections show you how these features help you achieve this goal.
 
 ## Configure custom questions
 
-The custom questions feature in entitlement management access packages allows an access package creator to configure questions that the reviewer answers as part of the request process. This allows you to create specific questions for partners during the request process allowing for either a quick approval, or rejection, of requests to resources.
+The custom questions feature for access packages in entitlement management allows an access package creator to configure questions that the reviewer answers as part of the request process. This allows reviewers to quickly approve, or reject, requests to resources.
 
 :::image type="content" source="media/entitlement-management-onboard/requestor-information-question.png" alt-text="Screenshot of setting requestor information question in access package.":::
 
@@ -50,7 +48,7 @@ For a step by step guide on this process, see: [Add requestor information to an 
 
 ## Specify built-in attributes
 
-When a partner completes a request, you're able to save partner information for later use. This can be done by specifying that built in or custom attributes that persist on the requestor’s user object itself. The attribute collection feature is useful if an app requires the information to function properly, such as with an inventory app that needs the user’s region.
+When a partner completes a request, you're able to save partner information for later use. This can be done by specifying that built in, or custom attributes, persist on the requestor’s user object itself. This attribute collection feature is useful if an app requires the information to function properly, such as with an inventory app that needs the user’s region.
 
 Configuring attributes is a similar experience as configuring custom questions, but it's surfaced on resources in the catalog rather than on individual access packages.
 
