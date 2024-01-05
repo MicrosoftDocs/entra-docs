@@ -31,8 +31,8 @@ In the past, companies built custom forms to gather this information before sett
 
 You're able to simplify the onboarding of partners to your organization using entitlement management by utilizing the following features:
 
-- By [Configuring custom questions](entitlement-management-onboard.md#configure-custom-questions)
-- By [Specifying built-in attributes](entitlement-management-onboard.md#specify-built-in-attributes)
+- [Configure custom questions](entitlement-management-onboard.md#configure-custom-questions)
+- [Specify built-in attributes](entitlement-management-onboard.md#specify-built-in-attributes)
 
 The following sections show you how these features help you achieve this goal.
 
