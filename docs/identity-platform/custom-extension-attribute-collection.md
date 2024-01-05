@@ -30,7 +30,7 @@ This article describes how to extend the user sign-up experience in Microsoft En
     > [!TIP]
     > [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=PostAttributeCollection)
     > 
-    > To try out this feature, go to the Woodgrove Groceries demo and start the “Block a user from continuing the sign-up process” use case, or the “[Validate sign-up attributes](https://woodgrovedemo.com/#usecase=BlockSignUp)” use case.
+    > To try out this feature, go to the Woodgrove Groceries demo and start the “Validate sign-up attributes” use case, or the “[Block a user from continuing the sign-up process](https://woodgrovedemo.com/#usecase=BlockSignUp)” use case.
     
 In addition to creating a custom authentication extension for the attribute collection start and submit events, you need to create a REST API that defines the workflow actions to take for each event. You can use any programming language, framework, and hosting environment to create and host your REST API. This article demonstrates a quick way to get started using a C# Azure Function. With Azure Functions, you run your code in a serverless environment without having to first create a virtual machine (VM) or publish a web application.
 
