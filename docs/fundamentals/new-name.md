@@ -8,7 +8,7 @@ ms.service: active-directory
 ms.subservice: fundamentals
 ms.custom: has-azure-ad-ps-ref
 ms.topic: overview
-ms.date: 09/27/2023
+ms.date: 01/05/2024
 ms.author: celested
 ms.reviewer: nicholepet
 
@@ -55,7 +55,7 @@ Azure AD product icons are replaced with the Microsoft Entra ID product icon.
 |:--------------------------:|:-----------------------------------:|
 | ![Azure AD product icon](./media/new-name/azure-ad-icon-1.png)  ![Alternative Azure AD product icon](./media/new-name/azure-ad-icon-2.png) | ![Microsoft Entra ID product icon](./media/new-name/microsoft-entra-id-icon.png) |
 
-You can download the Microsoft Entra ID icon here: [Microsoft Entra architecture icons](~/architecture/architecture-icons.md)
+You can download the Microsoft Entra ID icon here: [Microsoft Entra architecture icons](/architecture/architecture-icons.md)
 
 ### Feature names
 
@@ -73,13 +73,13 @@ The following table lists terminology that is not impacted by the Azure AD renam
 | **Correct terminology** | **Details** |
 |-------------------------|-------------|
 | Active Directory <br/><br/>&#8226; Windows Server Active Directory <br/>&#8226; Active Directory Federation Services (AD FS) <br/>&#8226; Active Directory Domain Services (AD DS) <br/>&#8226; Active Directory <br/>&#8226; Any Active Directory feature(s) | Windows Server Active Directory, commonly known as Active Directory, and related features and services associated with Active Directory aren't branded with Microsoft Entra. |
-| Authentication library <br/><br/>&#8226; Azure AD Authentication Library (ADAL) <br/>&#8226; Microsoft Authentication Library (MSAL) |      Azure Active Directory Authentication Library (ADAL) is deprecated. While existing apps that use ADAL continue to work, Microsoft will no longer release security fixes on ADAL. Migrate applications to the Microsoft Authentication Library (MSAL) to avoid putting your app's security at risk. <br/><br/>[Microsoft Authentication Library (MSAL)](~/identity-platform/msal-overview.md) - Provides security tokens from the Microsoft identity platform to authenticate users and access secured web APIs to provide secure access to Microsoft Graph, other Microsoft APIs, third-party web APIs, or your own web API. |
+| Authentication library <br/><br/>&#8226; Azure AD Authentication Library (ADAL) <br/>&#8226; Microsoft Authentication Library (MSAL) |      Azure Active Directory Authentication Library (ADAL) is deprecated. While existing apps that use ADAL continue to work, Microsoft will no longer release security fixes on ADAL. Migrate applications to the Microsoft Authentication Library (MSAL) to avoid putting your app's security at risk. <br/><br/>[Microsoft Authentication Library (MSAL)](/identity-platform/msal-overview.md) - Provides security tokens from the Microsoft identity platform to authenticate users and access secured web APIs to provide secure access to Microsoft Graph, other Microsoft APIs, third-party web APIs, or your own web API. |
 | B2C <br/><br/>&#8226; Azure Active Directory B2C <br/>&#8226; Azure AD B2C | [Azure Active Directory B2C](/azure/active-directory-b2c) isn't being renamed. We're continuing to invest in security, availability, and reliability in Azure AD B2C and our next-generation solution for external identities, [Microsoft Entra External ID](~/external-id/index.yml). |
 |  Graph <br/><br/>&#8226; Azure Active Directory Graph <br/>&#8226; Azure AD Graph <br/>&#8226; Microsoft Graph | Azure Active Directory (Azure AD) Graph is deprecated. Going forward, further investment in Azure AD Graph won't be made, and Azure AD Graph APIs have no SLA or maintenance commitment beyond security-related fixes. Investments in new features and functionalities will only be made in Microsoft Graph.<br/><br/>[Microsoft Graph](/graph/) - Grants programmatic access to organization, user, and application data stored in Microsoft Entra ID. |
 | PowerShell <br/><br/>&#8226; Azure Active Directory PowerShell <br/>&#8226; Azure AD PowerShell <br/>&#8226; Microsoft Graph PowerShell | Azure AD PowerShell for Graph is planned for deprecation on March 30, 2024. For more info on the deprecation plans, see the deprecation update. We encourage you to migrate to Microsoft Graph PowerShell, which is the recommended module for interacting with Azure AD. <br/><br/>[Microsoft Graph PowerShell](/powershell/microsoftgraph/overview) - Acts as an API wrapper for the Microsoft Graph APIs and helps administer every Microsoft Entra ID feature that has an API in Microsoft Graph. |
 | Accounts <br/><br/>&#8226; Microsoft account <br/>&#8226; Work or school account | For end user sign-ins and account experiences, follow guidance for work and school accounts in [Sign in with Microsoft branding guidelines](~/identity-platform/howto-add-branding-in-apps.md). |
 | Microsoft identity platform | The Microsoft identity platform encompasses all our identity and access developer assets. It continues to provide the resources to help you build applications that your users and customers can sign in to using their Microsoft identities or social accounts. |
-| <br/>&#8226; Azure AD Sync <br/>&#8226; DirSync | DirSync and Azure AD Sync aren't supported and no longer work. If you're still using DirSync or Azure AD Sync, you must upgrade to Microsoft Entra Connect to resume your sync process. For more info, see [Microsoft Entra Connect](~/identity/hybrid/connect/how-to-dirsync-upgrade-get-started.md). |
+| <br/>&#8226; Azure AD Sync <br/>&#8226; DirSync | DirSync and Azure AD Sync aren't supported and no longer work. If you're still using DirSync or Azure AD Sync, you must upgrade to Microsoft Entra Connect to resume your sync process. For more info, see [Microsoft Entra Connect](/identity/hybrid/connect/how-to-dirsync-upgrade-get-started.md). |
 
 ## Frequently asked questions
 
@@ -99,9 +99,9 @@ The Microsoft Entra product family helps you protect all identities and secure n
 
 | Identity and access management | New identity categories | Network access |
 |---------|---------|---------|
-| [Microsoft Entra ID (previously known as Azure AD)](../index.yml) | [Microsoft Entra Verified ID](~/verified-id/index.yml) | [Microsoft Entra Internet Access](https://aka.ms/GlobalSecureAccessDocs) |
-| [Microsoft Entra ID Governance](~/id-governance/index.yml) | [Microsoft Entra Permissions Management](~/permissions-management/index.yml) | [Microsoft Entra Private Access](https://aka.ms/GlobalSecureAccessDocs) |
-| [Microsoft Entra External ID](~/external-id/index.yml) | [Microsoft Entra Workload ID](~/workload-id/index.yml) |  |
+| [Microsoft Entra ID (previously known as Azure AD)](../index.yml) | [Microsoft Entra Verified ID](/verified-id/index.yml) | [Microsoft Entra Internet Access](https://aka.ms/GlobalSecureAccessDocs) |
+| [Microsoft Entra ID Governance](~/id-governance/index.yml) | [Microsoft Entra Permissions Management](/permissions-management/index.yml) | [Microsoft Entra Private Access](https://aka.ms/GlobalSecureAccessDocs) |
+| [Microsoft Entra External ID](/external-id/index.yml) | [Microsoft Entra Workload ID](/workload-id/index.yml) |  |
 
 ### Where can I manage Microsoft Entra ID?
 
@@ -151,7 +151,7 @@ For more examples, see the glossary of feature name updates in [How to: Rename A
 
 ### Are licenses changing? Are there any changes to pricing?
 
-No. Prices, terms and service level agreements (SLAs) remain the same. Pricing details are available at <https://www.microsoft.com/security/business/microsoft-entra-pricing>.
+No. Prices, terms and service level agreements (SLAs) remain the same.
 
 ### Will Microsoft Entra ID be available as a free service with an Azure subscription?
 
@@ -177,15 +177,7 @@ Many technical components either have low visibility to customers (for example, 
 
 Microsoft identity platform encompasses all our identity and access developer assets. It continues to provide the resources to help you build applications that your users and customers can sign in to using their Microsoft identities or social accounts.
 
-Naming is also not changing for:
-
-- [Microsoft Authentication Library (MSAL)](~/identity-platform/msal-overview.md) – Acquire security tokens from the Microsoft identity platform to authenticate users and access secured web APIs to provide secure access to Microsoft Graph, other Microsoft APIs, third-party web APIs, or your own web API.
-- [Microsoft Graph](/graph/) – Get programmatic access to organizational, user, and application data stored in Microsoft Entra ID.
-- [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview) – Acts as an API wrapper for the Microsoft Graph APIs; helps administer every Microsoft Entra ID feature that has an API in Microsoft Graph.
-- [Windows Server Active Directory](/troubleshoot/windows-server/identity/active-directory-overview), commonly known as “Active Directory”, and all related Windows Server identity services, associated with Active Directory.
-- [Active Directory Federation Services (AD FS)](/windows-server/identity/ad-fs/ad-fs-overview) nor [Active Directory Domain Services (AD DS)](/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview) nor the product name “Active Directory” or any corresponding features.
-- [Azure Active Directory B2C](/azure/active-directory-b2c) continues to be available as an Azure service. The name Azure AD B2C is not changing nor is our commitment to the service and our customers. The service level agreement for Azure AD B2C remains unchanged and we'll continue investments to ensure security, availability, and reliability in both Azure AD B2C as well as our next generation solution for external identities, Microsoft Entra External ID, which is now in public preview.
-- Any deprecated or retired functionality, feature, or service of Azure Active Directory.
+For a detailed list of names that aren't changing, see [What names aren't changing?](#what-names-arent-changing).
 
 ### Are PowerShell cmdlets being renamed?
 
@@ -295,9 +287,9 @@ Only official product names are capitalized, plus Conditional Access and My * ap
 | Date | Change description |
 |------|--------------------|
 | October 12, 2023 | <br/>&#8226;Updated statement about availability of license plans.  <br/>&#8226; Added three other terms in the glossary: "Azure AD connector", "Azure AD license", and "Azure AD Premium" |
-| September 15, 2023 | Added a link to the new article, [How to: Rename Azure AD](how-to-rename-azure-ad.md), updated the description for Azure AD B2C, and added more info about why the name Azure AD is changing. |
-| August 29, 2023 | <br/>&#8226; In the [glossary](#glossary-of-updated-terminology), corrected the entry for "Azure AD activity logs" to separate "Azure AD audit log", which is a distinct type of activity log. <br/>&#8226; Added Azure AD Sync and DirSync to the [What names aren't changing](#what-names-arent-changing) section. |
-| August 18, 2023 | <br/>&#8226; Updated the article to include a new section [Glossary of updated terminology](#glossary-of-updated-terminology), which includes the old and new terminology.<br/>&#8226; Updated info and added link to usage of the Microsoft Entra ID icon, and updates to verbiage in some sections.  |
+| September 15, 2023 | Added a link to the how-to article on renaiming Azure AD, updated the description for Azure AD B2C, and added more info about why the name Azure AD is changing. |
+| August 29, 2023 | <br/>&#8226; In the glossary, corrected the entry for "Azure AD activity logs" to separate "Azure AD audit log", which is a distinct type of activity log. <br/>&#8226; Added Azure AD Sync and DirSync to the "What names aren't changing" section. |
+| August 18, 2023 | <br/>&#8226; Updated the article to include a new section, "Glossary of updated terminology", which includes the old and new terminology.<br/>&#8226; Updated info and added link to usage of the Microsoft Entra ID icon, and updates to verbiage in some sections.  |
 | July 11, 2023 | Published the original guidance as part of the [Microsoft Entra moment and related announcement](https://www.microsoft.com/security/blog/2023/07/11/microsoft-entra-expands-into-security-service-edge-and-azure-ad-becomes-microsoft-entra-id/?culture=en-us&country=us). |
 
 ## Next steps
