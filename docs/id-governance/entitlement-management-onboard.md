@@ -1,6 +1,6 @@
 ---
 title: Onboard partners with entitlement management
-description: Learn how to simplify access to applications and resources for onboarding partners of your organization.
+description: Learn how to simplify approving access to applications and resources for onboarding partners of your organization.
 services: active-directory
 documentationCenter: ''
 author: owinfreyatl
