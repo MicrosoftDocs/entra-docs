@@ -52,14 +52,10 @@ The next sections show how to configure advanced options for CBA by using the Mi
     
 1. You can select certificate issuers from the drop-down menu, type the certificate issuers and type the allowed policy OIDs. The drop-down menu lists all certificate authorities from the tenant irrespective of whether they're single-factor or multifactor.
 
-   - If both **Allowed certificate issuer** AND **Allowed Policy OID** are configured, there's an AND relationship. The user has to use a certificate that satisfies both conditions.
+:::image type="content" border="true" source="./media/concept-authentication-strength-advanced-options/or.png" alt-text="Screenshot showing the configuration options - certificate issuers from the drop-down menu, type the certificate issuers and type the allowed policy OIDs .":::
 
-     :::image type="content" border="true" source="./media/concept-authentication-strength-advanced-options/and.png" alt-text="Screenshot showing AND condition.":::
-
+   - If both **Allowed certificate issuer** AND **Allowed Policy OID** are configured, there's an AND relationship. The user has to use a certificate that satisfies both conditions.  
    - Between the **Allowed certificate issuer** list and the **Allowed Policy OID** list, there's an OR relationship. The user has to use a certificate that satisfied one of the issuers or policy OIDs.
-
-     :::image type="content" border="true" source="./media/concept-authentication-strength-advanced-options/or.png" alt-text="Screenshot showing OR condition.":::
-
    - Use **Other certificate issuer by SubjectkeyIdentifier** if the certificate you would like to use is not uploaded to the **Certificate authorities** in your tenant. This setting can be used for external user scenarios, if the user is authenticating in their home tenant.
 
 1. Click **Next** to review the configuration, then click **Create**.
