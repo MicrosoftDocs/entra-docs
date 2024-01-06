@@ -8,7 +8,7 @@ ms.service: active-directory
 ms.topic: troubleshooting
 ms.subservice: fundamentals
 ms.workload: identity
-ms.date: 01/03/2024
+ms.date: 01/05/2024
 ms.author: sarahlipsey
 ms.reviewer: jeffsta
 ---
@@ -104,7 +104,7 @@ Next, we collect more details about the problem. Providing thorough and detailed
 
     - Selecting **Yes** allows support to gather [advanced diagnostic information](https://azure.microsoft.com/support/legal/support-diagnostic-information-collection/) from the subscription(s) associated with your request.
     - If you prefer not to share this information, select **No**. For more information about the types of files we might collect, see [Advanced diagnostic information logs](/azure/azure-portal/supportability/how-to-create-azure-support-request#advanced-diagnostic-information-logs) section.
-    - In some scenarios, an administrator in your tenant may need to approve Microsoft Support access to your Microsoft Entra ID data.
+    - In some scenarios, an administrator in your tenant may need to approve Microsoft Support access to your Microsoft Entra identity data.
 
 1. In the **Support method** section, select your preferred contact method and support language.
     - Some details are pre-selected for you. 

@@ -1,7 +1,7 @@
 ### YamlMime:FAQ
 metadata:
-  title: Frequently asked questions (FAQ) about Microsoft Entra ID
-  description: Common questions and answers about Microsoft Entra ID, password management, and application access.
+  title: Frequently asked questions (FAQ) about Microsoft Entra, Entra ID, and Azure
+  description: Common questions and answers about Microsoft Entra, Entra ID and Azure, such as password management and application access.
   services: active-directory
   author: barclayn
   manager: amycolannino
@@ -10,32 +10,32 @@ metadata:
   ms.subservice: fundamentals
   ms.workload: identity
   ms.topic: faq
-  ms.date: 01/02/2024
+  ms.date: 01/05/2024
   ms.author: barclayn
   ms.custom: it-pro, seodec18, has-azure-ad-ps-ref
   ms.collection: M365-identity-device-management
 title: Frequently asked questions about Microsoft Entra ID
 summary: |
-  Microsoft Entra ID is a comprehensive identity as a service (IDaaS) solution that spans all aspects of identity, access management, and security.
+  Microsoft Entra ID is a cloud-based identity and access management solution. It is a directory and identity management service that operates in the cloud and offers authentication and authorization services to various Microsoft services, such as Microsoft 365, Dynamics 365, and Microsoft Azure.
   
   For more information, see [What is Microsoft Entra ID?](./whatis.md)
   
   
 
 sections:
-  - name: Help with accessing Microsoft Entra ID
+  - name: Help with accessing Microsoft Entra ID and Azure
     questions:
       - question: |
-          Why do I get "No subscriptions found" when I try to access the Microsoft Entra admin center?
+          Why do I get "No subscriptions found" when I try to access the Microsoft Entra admin center or the Azure portal?
         answer: |
-          To access the Microsoft Entra admin center, each user needs permissions with a valid subscription. If you don't have a paid Microsoft 365 or Microsoft Entra subscription, you will need to activate a free [Azure account](https://azure.microsoft.com/free/) or establish a paid subscription. All Azure subscriptions, whether paid or free, have a trust relationship with a Microsoft Entra tenant. All subscriptions rely on the Microsoft Entra tenant (directory) to authenticate and authorize security principals and devices. 
+          To access the Microsoft Entra admin center or the Azure portal, each user needs permissions with a valid subscription. If you don't have a paid Microsoft 365 or Microsoft Entra subscription, you will need to activate a free [Azure account](https://azure.microsoft.com/free/) or establish a paid subscription. All Azure subscriptions, whether paid or free, have a trust relationship with a Microsoft Entra tenant. All subscriptions rely on the Microsoft Entra tenant (directory) to authenticate and authorize security principals and devices. 
           
           For more information, see [How Azure subscriptions are associated with Microsoft Entra ID](./how-subscriptions-associated-directory.md).
           
           
           
       - question: |
-          What's the relationship between Microsoft Entra ID, Microsoft Azure, and other Microsoft Cloud apps?
+          What's the relationship between Microsoft Entra ID, Microsoft Azure, and other Microsoft Cloud apps, such as Microsoft 365?
         answer: |
           Microsoft Entra ID provides you with common identity and access capabilities to all web services. Whether you are using Microsoft cloud apps, such as Microsoft 365, Power Platform, Dynamics 365, or other Microsoft apps, you're already using Microsoft Entra ID to help turn on sign-on and access management for all cloud services.
           
@@ -52,18 +52,18 @@ sections:
       - question: |
           What are the differences between Owner and Global Administrator?
         answer: |
-          By default, the person who signs up for a Microsoft Entra ID subscription is assigned the Owner role for Azure resources. An Owner can use either a Microsoft account or a work or school account from the directory that the Microsoft Entra subscription is associated with.  This role is also authorized to manage services in the Azure portal.
+          By default, the person who signs up for a Microsoft Entra or Azure subscription is assigned the Owner role for Azure resources. An Owner can use either a Microsoft account or a work or school account from the directory that the Microsoft Entra or Azure subscription is associated with.  This role is also authorized to manage services in the Azure portal.
           
           If others need to sign in and access services by using the same subscription, you can assign them the appropriate [built-in role](/azure/role-based-access-control/built-in-roles). For more information, see [Assign Azure roles using the Azure portal](/azure/role-based-access-control/role-assignments-portal).
           
-          By default, the person who signs up for a Microsoft Entra ID subscription is assigned the Global Administrator role for the directory. The Global Administrator has access to all Microsoft Entra directory features. Microsoft Entra ID has a different set of administrator roles to manage the directory and identity-related features. These administrators will have access to various features in the Azure portal. The administrator's role determines what they can do, like create or edit users, assign administrative roles to others, reset user passwords, manage user licenses, or manage domains.  
+          By default, the person who signs up for a Microsoft Entra or Azure subscription is assigned the Global Administrator role for the directory. The Global Administrator has access to all Microsoft Entra directory features. Microsoft Entra ID has a different set of administrator roles to manage the directory and identity-related features. These administrators will have access to various features in the Azure portal. The administrator's role determines what they can do, like create or edit users, assign administrative roles to others, reset user passwords, manage user licenses, or manage domains.  
           
           For more information, see [Assign a user to administrator roles in Microsoft Entra ID](./how-subscriptions-associated-directory.md) and [Assigning administrator roles in Microsoft Entra ID](~/identity/role-based-access-control/permissions-reference.md).
 
          
           
       - question: |
-          Is there a report that shows when my Microsoft Entra ID user licenses will expire?
+          Is there a report that shows when my Microsoft Entra user licenses will expire?
         answer: |
           No.  This isn't currently available.
           
@@ -73,7 +73,7 @@ sections:
           How can I allow Microsoft Entra ID admin center URLs on my firewall or proxy server?
 
         answer: |
-          To optimize connectivity between your network and the Microsoft Entra ID admin center and its services, you may want to add specific admin center URLs to your allowlist. Doing so can improve performance and connectivity between your local- or wide-area network. Network administrators often deploy proxy servers, firewalls, or other devices, which can help secure and give control over how users access the internet. Rules designed to protect users can sometimes block or slow down legitimate business-related internet traffic. This traffic includes communications between you and Microsoft Entra ID admin center over the URLs listed here.
+          To optimize connectivity between your network and the Microsoft Entra admin center and its services, you may want to add specific admin center URLs to your allowlist. Doing so can improve performance and connectivity between your local- or wide-area network. Network administrators often deploy proxy servers, firewalls, or other devices, which can help secure and give control over how users access the internet. Rules designed to protect users can sometimes block or slow down legitimate business-related internet traffic. This traffic includes communications between you and Microsoft Entra ID admin center over the URLs listed here.
          
           * *.entra.microsoft.com
           * *.entra.microsoft.us
@@ -140,7 +140,7 @@ sections:
         answer: |
           (For example, is it possible to use Microsoft Entra self-service password reset (SSPR) with password write-back and not store passwords in the cloud?)
           
-          This example scenario does not require the on-premises password to be tracked in Microsoft Entra ID. This is because you do not need to synchronize your Active Directory passwords to Microsoft Entra ID to enable write-back. In a federated environment, Microsoft Entra ID single sign-on (SSO) relies on the on-premises directory to authenticate the user. 
+          This example scenario does not require the on-premises password to be tracked in Microsoft Entra. This is because you do not need to synchronize your Active Directory passwords to Microsoft Entra to enable write-back. In a federated environment, Microsoft Entra ID single sign-on (SSO) relies on the on-premises directory to authenticate the user. 
           
           
           
@@ -169,7 +169,7 @@ sections:
           
           For Microsoft 365 users, your admin can reset the password by using the steps outlined in [Reset user passwords](https://support.office.com/article/Admins-Reset-user-passwords-7A5D073B-7FAE-4AA5-8F96-9ECD041ABA9C?ui=en-US&rs=en-US&ad=US).
           
-          For Microsoft Entra ID accounts, admins can reset passwords by using one of the following:
+          For Microsoft Entra accounts, admins can reset passwords by using one of the following:
           
           - [Reset a user's password using Microsoft Entra ID](./users-reset-password-azure-portal.md)
           - [Reset a password using PowerShell](/powershell/module/msonline/set-msoluserpassword)
@@ -181,7 +181,7 @@ sections:
       - question: |
           Are accounts locked after a specific number of failed attempts or is there a more sophisticated strategy used?
         answer: |
-          Microsoft Entra ID uses a more sophisticated strategy to lock accounts.  This is based on the IP of the request and the passwords entered. The duration of the lockout also increases based on the likelihood that it is an attack.  
+          Microsoft Entra uses a more sophisticated strategy to lock accounts.  This is based on the IP of the request and the passwords entered. The duration of the lockout also increases based on the likelihood that it is an attack.  
 
       - question: |
           For certain (common) passwords that get rejected, does this apply to passwords used only in the current directory?
