@@ -31,7 +31,7 @@ To compute the assertion, you can use one of the many JWT libraries in the langu
 | --- | --- |
 | `alg` | Should be **RS256** |
 | `typ` | Should be **JWT** |
-| `x5t` | Base64url-encoded SHA-1 thumbprint of the X.509 certificate's DER encoding. For example, given an X.509 certificate hash of `84E05C1D98BCE3A5421D225B140B36E86A3D5534` (Hex), the `x5t` claim would be `hOBcHZi846VCHSJbFAs26Go9VTQ` (Base64url). |
+| `x5t` | Base64url-encoded SHA-1 thumbprint of the X.509 certificate's DER encoding. For example, given an X.509 certificate hash of `84E05C1D98BCE3A5421D225B140B36E86A3D5534` (Hex), the `x5t` claim would be `hOBcHZi846VCHSJbFAs26Go9VTQ` (Base64url). Note: SHA-2 thumbprint hashing is also currently supported. |
 
 ### Claims (payload)
 
