@@ -75,8 +75,8 @@ This change does not affect:
 - Windows apps that use the Web Account Manager (WAM) or Web Authentication Broker (WAB).  
 
 ### Action needed for embedded web-views
-
-Modify your apps to use the system browser for sign-in. For details, see [Embedded vs System Web UI](/entra/msal/dotnet/acquiring-tokens/using-web-browsers#embedded-vs-system-web-ui) in the MSAL.NET documentation. All MSAL SDKs use the system web-view by default.
+https://learn.microsoft.com/en-us/entra/msal/dotnet/acquiring-tokens/using-web-browsers
+Modify your apps to use the system browser for sign-in. For details, see [Embedded vs system browser](/entra/msal/dotnet/acquiring-tokens/using-web-browsers#embedded-web-view-vs-system-browser) in the MSAL.NET documentation. All MSAL SDKs use the system browser by default.
 
 ### What to expect
 
