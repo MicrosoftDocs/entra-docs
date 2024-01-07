@@ -70,10 +70,10 @@ sections:
         
         
       - question: |
-          How can I allow Microsoft Entra ID admin center URLs on my firewall or proxy server?
+          How can I allow Microsoft Entra admin center URLs on my firewall or proxy server?
 
         answer: |
-          To optimize connectivity between your network and the Microsoft Entra admin center and its services, you may want to add specific admin center URLs to your allowlist. Doing so can improve performance and connectivity between your local- or wide-area network. Network administrators often deploy proxy servers, firewalls, or other devices, which can help secure and give control over how users access the internet. Rules designed to protect users can sometimes block or slow down legitimate business-related internet traffic. This traffic includes communications between you and Microsoft Entra ID admin center over the URLs listed here.
+          To optimize connectivity between your network and the Microsoft Entra admin center and its services, you may want to add specific Microsoft Entra admin center URLs to your allowlist. Doing so can improve performance and connectivity between your local- or wide-area network. Network administrators often deploy proxy servers, firewalls, or other devices, which can help secure and give control over how users access the internet. Rules designed to protect users can sometimes block or slow down legitimate business-related internet traffic. This traffic includes communications between you and Microsoft Entra admin center over the URLs listed here.
          
           * *.entra.microsoft.com
           * *.entra.microsoft.us
