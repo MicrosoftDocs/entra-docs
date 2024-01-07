@@ -148,6 +148,10 @@ Applications can be hidden from the My Apps portal by a user or administrator. A
 
 For more information, see [Create collections on the My Apps portal](access-panel-collections.md).
 
+## Domain Hint
+
+In case there is domain federation and in order for user to be redirected to external federation endpoint for authentication, request to My Apps must contain a domain hint URL parameter such as "domain_hint=example.com".
+
 ## Next steps
 
 Learn more about application management in [What is enterprise application management?](what-is-application-management.md)
