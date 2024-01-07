@@ -35,15 +35,15 @@ sections:
           
           
       - question: |
-          What's the relationship between Microsoft Entra ID, Microsoft Azure, and other Microsoft Cloud apps, such as Microsoft 365?
+          What's the relationship between Microsoft Entra ID, Microsoft Azure, and other Microsoft services, such as Microsoft 365?
         answer: |
-          Microsoft Entra ID provides you with common identity and access capabilities to all web services. Whether you are using Microsoft cloud apps, such as Microsoft 365, Power Platform, Dynamics 365, or other Microsoft apps, you're already using Microsoft Entra ID to help turn on sign-on and access management for all cloud services.
+          Microsoft Entra ID provides you with common identity and access capabilities to all web services. Whether you are using Microsoft services, such as Microsoft 365, Power Platform, Dynamics 365, or other Microsoft products, you're already using Microsoft Entra ID to help turn on sign-on and access management for all cloud services.
           
-          All users who are set up to use Microsoft Cloud services are defined as user accounts in one or more Microsoft Entra ID instances, providing these accounts access to Microsoft Entra ID.
+          All users who are set up to use Microsoft services are defined as user accounts in one or more Microsoft Entra ID instances, providing these accounts access to Microsoft Entra ID.
           
           For more information, see [Microsoft Entra Plans & Pricing](https://www.microsoft.com/security/business/microsoft-entra-pricing)
 
-          Microsoft Entra paid services, such as Enterprise Mobility + Security (EMS) complement other Microsoft Cloud services like Microsoft 365, with comprehensive enterprise-scale development, management and security solutions.
+          Microsoft Entra paid services, such as Enterprise Mobility + Security (EMS) complement other Microsoft services like Microsoft 365, with comprehensive enterprise-scale development, management and security solutions.
           
           For more information, see [The Microsoft Cloud](/microsoft-cloud).
   
