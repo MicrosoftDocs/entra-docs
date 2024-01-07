@@ -4,7 +4,7 @@ description: The types of apps and scenarios supported by the Microsoft identity
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.custom: fasttrack-edit, devx-track-js
+ms.custom: fasttrack-edit
 ms.date: 11/17/2023
 ms.reviewer: saeeda, jmprieur
 ms.service: active-directory
