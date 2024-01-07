@@ -109,7 +109,7 @@ Here are some more details about these group settings:
 
 ## Configure group settings by using Microsoft Graph
 
-To configure the **Users can create security groups in Azure portals, API or PowerShell** setting by using Microsoft Graph, configure the `EnableGroupCreation` object in the `groupSettings` object. For more information, see [Overview of group settings](/graph/group-directory-settings).
+To configure the **Users can create Microsoft 365 groups in Azure portals, API or PowerShell** setting by using Microsoft Graph, configure the `EnableGroupCreation` object in the `groupSettings` object. For more information, see [Overview of group settings](/graph/group-directory-settings).
 
 To configure the **Users can create security groups in Azure portals, API or PowerShell** setting by using Microsoft Graph, update the `allowedToCreateSecurityGroups` property of `defaultUserRolePermissions` in the [authorizationPolicy](/graph/api/resources/authorizationpolicy) object.
 
