@@ -126,7 +126,7 @@ Check the following to confirm that the certificate can be automatically updated
 
 **2. The AD FS federation metadata is publicly accessible.** Check that your federation metadata is publicly accessible by navigating to the following URL from a computer on the public internet (off of the corporate network):
 
-https://(your_FS_name)/federationmetadata/2007-06/federationmetadata.xml
+`https://(your_FS_name)/federationmetadata/2007-06/federationmetadata.xml`
 
 where `(your_FS_name)` is replaced with the federation service host name your organization uses, such as fs.contoso.com.  If you are able to verify both of these settings successfully, you do not have to do anything else.  
 
@@ -151,16 +151,16 @@ On the other hand, if **AutoCertificateRollover** is set to **True**, but your f
 1. Verify that you are logged on to the primary AD FS server.
 2. Check the current signing certificates in AD FS by opening a PowerShell command window, and running the following command:
 
-    PS C:\>Get-ADFSCertificate –CertificateType token-signing
+    `Get-ADFSCertificate -CertificateType Token-Signing`
 
    > [!NOTE]
-   > If you are using AD FS 2.0, you should run Add-Pssnapin Microsoft.Adfs.Powershell first.
+   > If you are using AD FS 2.0, you should run `Add-Pssnapin Microsoft.Adfs.Powershell` first.
    >
    >
 3. Look at the command output at any certificates listed. If AD FS has generated a new certificate, you should see two certificates in the output: one for which the **IsPrimary** value is **True** and the **NotAfter** date is within 5 days, and one for which **IsPrimary** is **False** and **NotAfter** is about a year in the future.
 4. If you only see one certificate, and the **NotAfter** date is within 5 days, you need to generate a new certificate.
-5. To generate a new certificate, execute the following command at a PowerShell command prompt: `PS C:\Update-ADFSCertificate –CertificateType token-signing`.
-6. Verify the update by running the following command again: PS C:\>Get-ADFSCertificate –CertificateType token-signing
+5. To generate a new certificate, execute the following command at a PowerShell command prompt: `Update-ADFSCertificate -CertificateType Token-Signing`.
+6. Verify the update by running the following command again: `Get-ADFSCertificate -CertificateType Token-Signing`
 
 Two certificates should be listed now, one of which has a **NotAfter** date of approximately one year in the future, and for which the **IsPrimary** value is **False**.
 
@@ -168,15 +168,15 @@ Two certificates should be listed now, one of which has a **NotAfter** date of a
 Update Microsoft 365 with the new token signing certificates to be used for the trust, as follows.
 
 1. Open the Azure AD PowerShell module.
-2. Run $cred=Get-Credential. When this cmdlet prompts you for credentials, type your cloud service administrator account credentials.
-3. Run Connect-MsolService –Credential $cred. This cmdlet connects you to the cloud service. Creating a context that connects you to the cloud service is required before running any of the additional cmdlets installed by the tool.
-4. If you are running these commands on a computer that is not the AD FS primary federation server, run Set-MSOLAdfscontext -Computer &lt;AD FS primary server&gt;, where &lt;AD FS primary server&gt; is the internal FQDN name of the primary AD FS server. This cmdlet creates a context that connects you to AD FS.
-5. Run Update-MSOLFederatedDomain –DomainName &lt;domain&gt;. This cmdlet updates the settings from AD FS into the cloud service, and configures the trust relationship between the two.
+2. Run `$cred=Get-Credential`. When this cmdlet prompts you for credentials, type your cloud service administrator account credentials.
+3. Run `Connect-MsolService -Credential $cred`. This cmdlet connects you to the cloud service. Creating a context that connects you to the cloud service is required before running any of the additional cmdlets installed by the tool.
+4. If you are running these commands on a computer that is not the AD FS primary federation server, run `Set-MSOLAdfscontext -Computer <AD FS primary server>`, where &lt;AD FS primary server&gt; is the internal FQDN name of the primary AD FS server. This cmdlet creates a context that connects you to AD FS.
+5. Run `Update-MSOLFederatedDomain -DomainName <domain>`. This cmdlet updates the settings from AD FS into the cloud service, and configures the trust relationship between the two.
 
 > [!NOTE]
 > If you need to support multiple top-level domains, such as contoso.com and fabrikam.com, you must use the **SupportMultipleDomain** switch with any cmdlets. For more information, see [Support for Multiple Top Level Domains](how-to-connect-install-multiple-domains.md).
 >
-> If your tenant is federated with more than one domain, the Update-MsolFederatedDomain needs to be run for all the domains, listed in the output from `Get-MsolDomain -Authentication Federated`. This will ensure that all of the federated domains are updated to the Token-Signing certificate.
+> If your tenant is federated with more than one domain, the `Update-MsolFederatedDomain` needs to be run for all the domains, listed in the output from `Get-MsolDomain -Authentication Federated`. This will ensure that all of the federated domains are updated to the Token-Signing certificate.
 >You can achieve this by running:
 >`Get-MsolDomain -Authentication Federated | % { Update-MsolFederatedDomain -DomainName $_.Name -SupportMultipleDomain }`
 
