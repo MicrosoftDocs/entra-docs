@@ -65,6 +65,15 @@ If the parsing attempt by Microsoft Entra ID fails, you can configure sign-on ma
 1. In the Microsoft Entra ID Configure sign-on page, select **Ok, I was able to sign-in to the app successfully**.
 1. Select **OK**.
 
+## Limitations
+
+For password-based SSO, the end user’s browsers can be:
+
+Internet Explorer 8, 9, 10, 11 -- on Windows 7 or later (limited support)
+Edge on Windows 10 Anniversary Edition or later
+Chrome -- on Windows 7 or later, and on MacOS X or later
+Firefox 26.0 or later -- on Windows XP SP2 or later, and on Mac OS X 10.6 or later
+
 ## Next steps
 
 - [Manage access to apps](what-is-access-management.md)
