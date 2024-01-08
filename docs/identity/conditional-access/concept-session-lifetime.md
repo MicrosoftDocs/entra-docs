@@ -93,18 +93,20 @@ Scenario 2 - User returns outside cycle
 
 ### Require reauthentication every time
 
-There are scenarios where customers might want to require a fresh authentication, every time before a user performs specific actions like:
+There are scenarios where customers might want to require a fresh authentication, every time a user performs specific actions like:
 
-* Accessing sensitive applications
-* Securing resources behind VPN or Network as a Service (NaaS) providers
-* Securing privileged role elevation in PIM​
-* Protecting user sign-ins to Azure Virtual Desktop machines
-* Protecting risky users and risky sign-ins​ identified by Microsoft Entra ID Protection
-* Securing sensitive user actions like Microsoft Intune enrollment
+* Accessing sensitive applications.
+* Securing resources behind VPN or Network as a Service (NaaS) providers.
+* Securing privileged role elevation in PIM​.
+* Protecting user sign-ins to Azure Virtual Desktop machines.
+* Protecting risky users and risky sign-ins​ identified by Microsoft Entra ID Protection.
+* Securing sensitive user actions like Microsoft Intune enrollment.
 
-Sign-in frequency has the ability to trigger **Every time** in addition to hours or days.
+Sign-in frequency set to **every time** works best when the resource has the logic of when a client should get a new token. These resources redirect the user back to Microsoft Entra only once the session expires.
 
-Administrators should limit the number of applications they enforce a policy requiring users to reauthenticate every time with. Triggering reauthentication too frequently can increase security friction to a point that it causes users to experience MFA fatigue and open the door to phishing attempts.
+Administrators should limit the number of applications they enforce a policy requiring users to reauthenticate every time with. Triggering reauthentication too frequently can increase security friction to a point that it causes users to experience MFA fatigue and open the door to phishing attempts. Web applications usually provide a less disruptive experience than their desktop counterparts when require reauthentication every time is enabled.
+
+For applications in the Microsoft 365 stack, we recommend using [time-bassed user sign-in frequency](#user-sign-in-frequency) for a better user experience.
 
 Generally available supported scenarios:
 
@@ -126,7 +128,7 @@ A persistent browser session allows users to remain signed in after closing and 
 
 The Microsoft Entra ID default for browser session persistence allows users on personal devices to choose whether to persist the session by showing a “Stay signed in?” prompt after successful authentication. If browser persistence is configured in AD FS using the guidance in the article [AD FS single sign-on settings](/windows-server/identity/ad-fs/operations/ad-fs-single-sign-on-settings#enable-psso-for-office-365-users-to-access-sharepoint-online), we comply with that policy and persist the Microsoft Entra session as well. You can also configure whether users in your tenant see the “Stay signed in?” prompt by changing the appropriate setting in the [company branding pane](~/fundamentals/how-to-customize-branding.md).
 
-In persistent browsers, cookies stay stored in the user’s device even after a user closes the browser. These cookies could have access to Microsoft Entra artifacts, and those artifacts are useable until token expiry regardless of the Conditional Access policies placed on the resource environment. So, token caching can be in direct violation of desired security policies for authentication. While it might seem convenient to store tokens beyond the current session, doing so can create a security vulnerability by allowing unauthorized access to Microsoft Entra artifacts.
+In persistent browsers, cookies stay stored in the user’s device even after a user closes the browser. These cookies could have access to Microsoft Entra artifacts, and those artifacts are useable until token expiration regardless of the Conditional Access policies placed on the resource environment. So, token caching can be in direct violation of desired security policies for authentication. While it might seem convenient to store tokens beyond the current session, doing so can create a security vulnerability by allowing unauthorized access to Microsoft Entra artifacts.
 
 ## Configuring authentication session controls
 
