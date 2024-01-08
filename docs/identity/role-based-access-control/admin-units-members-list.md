@@ -147,7 +147,7 @@ Get-MgDirectoryAdministrativeUnitMember -AdministrativeUnitId $adminUnitObj.Id
 $adminUnitObj = Get-MgDirectoryAdministrativeUnit -Filter "DisplayName eq 'Test administrative unit 2'"
 foreach ($member in (Get-MgDirectoryAdministrativeUnitMember -AdministrativeUnitId $adminUnitObj.Id)) 
 {
-    if($member.OdataType -eq "#microsoft.graph.group")
+    if($member.AdditionalProperties."@odata.type" -eq "#microsoft.graph.group")
     {
         Get-MgGroup -GroupId $member.Id
     }
@@ -160,7 +160,7 @@ foreach ($member in (Get-MgDirectoryAdministrativeUnitMember -AdministrativeUnit
 $adminUnitObj = Get-MgDirectoryAdministrativeUnit -Filter "DisplayName eq 'Test administrative unit 2'"
 foreach ($member in (Get-MgDirectoryAdministrativeUnitMember -AdministrativeUnitId $adminUnitObj.Id)) 
 {
-    if($member.ObjectType -eq "Device")
+    if($member.AdditionalProperties.ObjectType -eq "Device")
     {
         Get-MgDevice -DeviceId $member.Id
     }
