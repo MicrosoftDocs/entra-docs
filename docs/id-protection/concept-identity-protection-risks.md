@@ -15,6 +15,7 @@ ms.reviewer: chuqiaoshi
 
 ms.collection: M365-identity-device-management
 ---
+
 # What are risk detections?
 
 Risk detections in Microsoft Entra ID Protection include any identified suspicious actions related to user accounts in the directory. Risk detections (both user and sign-in linked) contribute to the overall user risk score that is found in the Risky Users report.
@@ -74,7 +75,8 @@ Real-time detections may not show up in reporting for 5 to 10 minutes. Offline d
 | --- | --- | --- |
 | [Possible attempt to access Primary Refresh Token (PRT)](#possible-attempt-to-access-primary-refresh-token-prt) | Offline | Premium |
 | [Anomalous user activity](#anomalous-user-activity) | Offline | Premium |
-| [User reported suspicious activity](#user-reported-suspicious-activity) | Offline | Premium | 
+| [User reported suspicious activity](#user-reported-suspicious-activity) | Offline | Premium |
+| Suspicious sending patterns| Offline| Premium|
 | [Additional risk detected](#additional-risk-detected-user) | Real-time or Offline | Nonpremium |
 | [Leaked credentials](#leaked-credentials) | Offline | Nonpremium |
 | [Microsoft Entra threat intelligence](#azure-ad-threat-intelligence-user) | Offline | Nonpremium |
@@ -224,6 +226,10 @@ For further investigation of password spray risk detections, see the article [Gu
 #### User reported suspicious activity
 
 **Calculated offline**. This risk detection is reported when a user denies a multifactor authentication (MFA) prompt and [reports it as suspicious activity](~/identity/authentication/howto-mfa-mfasettings.md#report-suspicious-activity). An MFA prompt not initiated by a user may mean their credentials are compromised. 
+
+#### Suspicious sending patterns
+
+**Calculated offline**. This risk detection type is discovered using information provided by [Microsoft Defender for Office](/microsoft-365/security/office-365-security/air-about?view=o365-worldwide) (MDO). This alert is generated when someone in your organization has sent suspicious email and is either at risk of being restricted from sending email or has already been restricted from sending email. This detection moves users to medium risk and only fires in organizations that have deployed MDO. This detection is low-volume and is seen infrequently in most organizations. 
 
 ## Nonpremium detections
 
