@@ -1,6 +1,6 @@
 ---
 title: Conditional Access adaptive session lifetime policies
-description: 
+description: Learn where and when to use adaptive session lifetimes in Conditional Access policies.
 
 ms.service: active-directory
 ms.subservice: conditional-access
