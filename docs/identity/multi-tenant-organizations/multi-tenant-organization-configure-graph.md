@@ -95,16 +95,41 @@ These steps describe how to use Microsoft Graph Explorer, but you can also use P
 
 # [PowerShell](#tab/ms-powershell)
 
-1. In the owner tenant, use the [New-MgBetaTenantRelationshipMultiTenantOrganizationTenant](/powershell/module/microsoft.graph.beta.identity.signins/new-mgbetatenantrelationshipmultitenantorganizationtenant) command to create your multitenant organization. This operation can take a few minutes.
+1. In the owner tenant, use the [Invoke-MgGraphRequest](/powershell/microsoftgraph/authentication-commands#using-invoke-mggraphrequest) command to create your multitenant organization. This operation can take a few minutes.
 
     ```powershell
-    New-MgBetaTenantRelationshipMultiTenantOrganizationTenant -DisplayName "Cairo"
+    $params = @{
+        displayName = "Cairo"
+    }
+    Invoke-MgGraphRequest -Method PUT -Uri "https://graph.microsoft.com/beta/tenantRelationships/multiTenantOrganization" -Body $params
+    ```
+
+    ```Output
+    Name                           Value
+    ----                           -----
+    id                             <MtoIdC>
+    state                          active
+    description
+    @odata.context                 https://graph.microsoft.com/beta/$metadata#tenantRelationships/multiTenantOrganization/…
+    createdDateTime                1/8/2024 7:47:45 PM
+    displayName                    Cairo
     ```
 
 1. Use the [Get-MgBetaTenantRelationshipMultiTenantOrganization](/powershell/module/microsoft.graph.beta.identity.signins/get-mgbetatenantrelationshipmultitenantorganization) command to check that the operation has completed before proceeding.
 
     ```powershell
-    Get-MgBetaTenantRelationshipMultiTenantOrganization
+    Get-MgBetaTenantRelationshipMultiTenantOrganization | Format-List
+    ```
+
+    ```Output
+    CreatedDateTime      : 1/8/2024 7:47:45 PM
+    Description          :
+    DisplayName          : Cairo
+    Id                   : <MtoIdC>
+    JoinRequest          : Microsoft.Graph.Beta.PowerShell.Models.MicrosoftGraphMultiTenantOrganizationJoinRequestRecord
+    State                : active
+    Tenants              :
+    AdditionalProperties : {[@odata.context, https://graph.microsoft.com/beta/$metadata#tenantRelationships/multiTenantOrganization/$entity]}
     ```
 
 # [Microsoft Graph](#tab/ms-graph)
@@ -152,17 +177,55 @@ These steps describe how to use Microsoft Graph Explorer, but you can also use P
 1. In the owner tenant, use the [New-MgBetaTenantRelationshipMultiTenantOrganizationTenant](/powershell/module/microsoft.graph.beta.identity.signins/new-mgbetatenantrelationshipmultitenantorganizationtenant) command to add tenants to your multitenant organization.
 
     ```powershell
-    New-MgBetaTenantRelationshipMultiTenantOrganizationTenant -TenantID $MemberTenantIdB -DisplayName "Berlin"
+    New-MgBetaTenantRelationshipMultiTenantOrganizationTenant -TenantID $MemberTenantIdB -DisplayName "Berlin" | Format-List
     ```
 
     ```powershell
-    New-MgBetaTenantRelationshipMultiTenantOrganizationTenant -TenantID $MemberTenantIdA -DisplayName "Athens"
+    New-MgBetaTenantRelationshipMultiTenantOrganizationTenant -TenantID $MemberTenantIdA -DisplayName "Athens" | Format-List
     ```
 
 1. Use the [Get-MgBetaTenantRelationshipMultiTenantOrganizationTenant](/powershell/module/microsoft.graph.beta.identity.signins/get-mgbetatenantrelationshipmultitenantorganizationtenant) command to verify that the operation has completed before proceeding.
 
     ```powershell
-    Get-MgBetaTenantRelationshipMultiTenantOrganizationTenant
+    Get-MgBetaTenantRelationshipMultiTenantOrganizationTenant | Format-List
+    ```
+
+    ```Output
+    AddedByTenantId      : <OwnerTenantId>
+    AddedDateTime        : 1/8/2024 7:47:45 PM
+    DeletedDateTime      :
+    DisplayName          : Cairo
+    Id                   : <MtoIdC>
+    JoinedDateTime       :
+    Role                 : owner
+    State                : active
+    TenantId             : <OwnerTenantId>
+    TransitionDetails    : Microsoft.Graph.Beta.PowerShell.Models.MicrosoftGraphMultiTenantOrganizationMemberTransitionDetails
+    AdditionalProperties : {[multiTenantOrgLabelType, none]}
+    
+    AddedByTenantId      : <OwnerTenantId>
+    AddedDateTime        : 1/8/2024 8:05:25 PM
+    DeletedDateTime      :
+    DisplayName          : Berlin
+    Id                   : <MtoIdB>
+    JoinedDateTime       :
+    Role                 : member
+    State                : pending
+    TenantId             : <MemberTenantIdB>
+    TransitionDetails    : Microsoft.Graph.Beta.PowerShell.Models.MicrosoftGraphMultiTenantOrganizationMemberTransitionDetails
+    AdditionalProperties : {[multiTenantOrgLabelType, none]}
+    
+    AddedByTenantId      : <OwnerTenantId>
+    AddedDateTime        : 1/8/2024 8:08:47 PM
+    DeletedDateTime      :
+    DisplayName          : Athens
+    Id                   : <MtoIdA>
+    JoinedDateTime       :
+    Role                 : member
+    State                : pending
+    TenantId             : <MemberTenantIdA>
+    TransitionDetails    : Microsoft.Graph.Beta.PowerShell.Models.MicrosoftGraphMultiTenantOrganizationMemberTransitionDetails
+    AdditionalProperties : {[multiTenantOrgLabelType, none]}
     ```
 
 # [Microsoft Graph](#tab/ms-graph)
@@ -260,13 +323,28 @@ By default, tenants added to the multitenant organization are member tenants. Op
 1. In the owner tenant, use the [Update-MgBetaTenantRelationshipMultiTenantOrganizationTenant](/powershell/module/microsoft.graph.beta.identity.signins/update-mgbetatenantrelationshipmultitenantorganizationtenant) command to change a member tenant to an owner tenant.
 
     ```powershell
-    Update-MgBetaTenantRelationshipMultiTenantOrganizationTenant -MultiTenantOrganizationMemberId $MemberTenantIdB -Role "Owner"
+    Update-MgBetaTenantRelationshipMultiTenantOrganizationTenant -MultiTenantOrganizationMemberId $MemberTenantIdB -Role "Owner" | Format-List
     ```
 
 1. Use the [Get-MgBetaTenantRelationshipMultiTenantOrganizationTenant](/powershell/module/microsoft.graph.beta.identity.signins/get-mgbetatenantrelationshipmultitenantorganizationtenant) command to verify the change.
 
     ```powershell
-    Get-MgBetaTenantRelationshipMultiTenantOrganizationTenant -MultiTenantOrganizationMemberId $MemberTenantIdB
+    Get-MgBetaTenantRelationshipMultiTenantOrganizationTenant -MultiTenantOrganizationMemberId $MemberTenantIdB | Format-List
+    ```
+
+    ```Output
+    AddedByTenantId      : <OwnerTenantId>
+    AddedDateTime        : 1/8/2024 8:05:25 PM
+    DeletedDateTime      :
+    DisplayName          : Berlin
+    Id                   : <MtoIdB>
+    JoinedDateTime       :
+    Role                 : owner
+    State                : pending
+    TenantId             : <MemberTenantIdB>
+    TransitionDetails    : Microsoft.Graph.Beta.PowerShell.Models.MicrosoftGraphMultiTenantOrganizationMemberTransitionDetails
+    AdditionalProperties : {[@odata.context, https://graph.microsoft.com/beta/$metadata#tenantRelationships/multiTenantOrganization/tenants/$entity],
+                           [multiTenantOrgLabelType, none]}
     ```
 
 # [Microsoft Graph](#tab/ms-graph)
@@ -342,6 +420,18 @@ You can remove any member tenant, including your own. You can't remove owner ten
 
     ```powershell
     Get-MgBetaTenantRelationshipMultiTenantOrganizationTenant -MultiTenantOrganizationMemberId <MemberTenantIdD>
+    ```
+
+    After the remove command completes, the output is similar to the following. This is an expected error message. It indicates that the tenant has been removed from the multitenant organization.
+
+    ```Output
+    Get-MgBetaTenantRelationshipMultiTenantOrganizationTenant_Get: Unable to read the company information from the directory.
+    
+    Status: 404 (NotFound)
+    ErrorCode: Directory_ObjectNotFound
+    Date: 2024-01-08T20:35:11
+    
+    ...
     ```
 
 # [Microsoft Graph](#tab/ms-graph)
