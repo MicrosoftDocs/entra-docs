@@ -93,8 +93,7 @@ The following example shows this type of policy. In addition, token theft replay
 
 ## Try your compliant network policy
 
-1. On an end-user device with the [Global Secure Access client installed and running](how-to-install-windows-client.md)
-1. Browse to [https://outlook.office.com/mail/](https://outlook.office.com/mail/) or `https://yourcompanyname.sharepoint.com/`, you have access to resources.
+1. On an end-user device with the [Global Secure Access client installed and running](how-to-install-windows-client.md), browse to [https://outlook.office.com/mail/](https://outlook.office.com/mail/) or `https://yourcompanyname.sharepoint.com/`, you have access to resources.
 1. Pause the Global Secure Access client by right-clicking the application in the Windows tray and selecting **Pause**.
 1. Browse to [https://outlook.office.com/mail/](https://outlook.office.com/mail/) or `https://yourcompanyname.sharepoint.com/`, you're blocked from accessing resources with an error message that says **You cannot access this right now**.
 
