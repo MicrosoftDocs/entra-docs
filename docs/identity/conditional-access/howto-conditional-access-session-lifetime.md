@@ -50,7 +50,7 @@ To make sure that your policy works as expected, the recommended best practice i
 1. Choose all required conditions.
 
    > [!NOTE]
-   > Please note that this control requires to choose “All Cloud Apps” as a condition. Browser session persistence is controlled by authentication session token. All tabs in a browser session share a single session token and therefore they all must share persistence state.
+   > This control requires to choose “All Cloud Apps” as a condition. Browser session persistence is controlled by authentication session token. All tabs in a browser session share a single session token and therefore they all must share persistence state.
 
 1. Under **Access controls** > **Session**.
    1. Select **Persistent browser session**.

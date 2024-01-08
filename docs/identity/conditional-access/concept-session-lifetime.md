@@ -114,11 +114,11 @@ Generally available supported scenarios:
 * Require user reauthentication for risky users with the [require password change](concept-conditional-access-grant.md#require-password-change) grant control.
 * Require user reauthentication for risky sign-ins with the [require multifactor authentication](concept-conditional-access-grant.md#require-multifactor-authentication) grant control.
 
-The January 2024 public preview capabilities allow administrators to require authentication for:
+The January 2024 public preview capabilities allow administrators to require authentication with:
 
-* Any [SAML](../../architecture/auth-saml.md) or [OIDC](../../architecture/auth-oidc.md) enabled application.
-* Use with [authentication context](concept-conditional-access-cloud-apps.md#authentication-context).
-* Other [user actions](concept-conditional-access-cloud-apps.md#user-actions).
+* [SAML](../../architecture/auth-saml.md) or [OIDC](../../architecture/auth-oidc.md) enabled applications
+* [Authentication context](concept-conditional-access-cloud-apps.md#authentication-context)
+* Other [user actions](concept-conditional-access-cloud-apps.md#user-actions)
 
 When administrators select **Every time**, it requires full reauthentication when the session is evaluated.
 
