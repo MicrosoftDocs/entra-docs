@@ -77,29 +77,18 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     |**Identifier (Entity ID)**|
     |--------------------------|
     |`https://login.navigocloud.com`|
-    |`https://navigocloud-dev.fusionauth.io`|
-    |`https://navigocloud.com`|
-    |`https://beta.navigocloud.com`|
-    |`https://demo1.navigocloud.com`|
-    |`https://staging.navigocloud.com`|
 
     b. In the **Reply URL** textbox, type one of the following URLs:
 
     |**Reply URL**|
-    |-------------|
-    |`https://navigocloud-dev.fusionauth.io/samlv2/acs`|
+    |-------------|    
     |`https://login.navigocloud.com/samlv2/acs`|
 
     c. In the **Sign on URL** text box, type one of the following URLs:
 
     |**Sign on URL**|
     |---------------|
-    |`https://login.navigocloud.com`|
-    |`https://navigocloud-dev.fusionauth.io`|
-    |`https://navigocloud.com`|
-    |`https://beta.navigocloud.com`|
-    |`https://demo1.navigocloud.com`|
-    |`https://staging.navigocloud.com`|
+    |`https://login.navigocloud.com`|    
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Certificate (Raw)** and select **Download** to download the certificate and save it on your computer.
 
