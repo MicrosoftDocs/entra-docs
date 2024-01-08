@@ -123,11 +123,11 @@ Organizations should monitor sign-in and audit log activity from the emergency a
 
 1. Select a workspace.
 
-1. In your workspace, select **Alerts** > **New alert rule**.
+1. In your workspace, select **Alerts** > **Create** > **Alert rule**.
 
-    1. Under **Resource**, verify that the subscription is the one with which you want to associate the alert rule.
-    1. Under **Condition**, select **Add**.
-    1. Select **Custom log search** under **Signal name**.
+    1. Under **Scope**, verify that the subscription is the one with which you want to associate the alert rule.
+    1. Under **Condition**, click **See all signals**.
+    1. Search for and select **Custom log search** under **Signal name**. Click **Apply**.
     1. Under **Search query**, enter the following query, inserting the object IDs of the two break glass accounts.
         > [!NOTE]
         > For each additional break glass account you want to include, add another "or UserId == "ObjectGuid"" to the query.
