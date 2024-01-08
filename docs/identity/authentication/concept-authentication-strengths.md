@@ -117,8 +117,7 @@ To check if an authentication strength is referenced by a Conditional Access pol
 
 - **Authentication methods that aren't currently supported by authentication strength** - The **Email one-time pass (Guest)** authentication method isn't included in the available combinations.
 
-- **Windows Hello for Business** – If the user signed in with Windows Hello for Business as their primary authentication method, it can be used to satisfy an authentication strength requirement that includes Windows Hello for Business. However, if the user signed in with another method like password as their primary authenticating method, and the authentication strength requires Windows Hello for Business, they aren't prompted to sign in with Windows Hello for Business. The user needs to restart the session, choose **Sign-in options**, and select a method required by the authentication strength.
-
+- **Windows Hello for Business** – If the user signed in with Windows Hello for Business as their primary authentication method, it can be used to satisfy an authentication strength requirement that includes Windows Hello for Business. However, if the user signed in with another method like password as their primary authentication method, and the authentication strength requires Windows Hello for Business, they aren't prompted to sign in with Windows Hello for Business. The user needs to restart the session, choose **Sign-in options**, and select a method required by the authentication strength.
 
 ## Known issue
 
