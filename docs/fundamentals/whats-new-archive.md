@@ -1677,7 +1677,7 @@ For listing your application in the Azure AD app gallery, read the details here:
 
 Customers can now require a fresh authentication each time a user performs a certain action. Forced reauthentication supports requiring a user to reauthenticate during Intune device enrollment, password change for risky users, and risky sign-ins.
 
-For more information, see: [Configure authentication session management with Conditional Access](~/identity/conditional-access/howto-conditional-access-session-lifetime.md#require-reauthentication-every-time)
+For more information, see: [Configure authentication session management with Conditional Access](~/identity/conditional-access/concept-session-lifetime.md#require-reauthentication-every-time)
 
 ---
 

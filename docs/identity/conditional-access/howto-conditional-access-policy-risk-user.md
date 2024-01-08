@@ -52,7 +52,7 @@ After administrators confirm the settings using [report-only mode](howto-conditi
 
 ## Next steps
 
-- [Require reauthentication every time](~/identity/conditional-access/howto-conditional-access-session-lifetime.md#require-reauthentication-every-time)
+- [Require reauthentication every time](~/identity/conditional-access/concept-session-lifetime.md#require-reauthentication-every-time)
 - [Remediate risks and unblock users](~/id-protection/howto-identity-protection-remediate-unblock.md)
 - [Conditional Access common policies](concept-conditional-access-policy-common.md)
 - [Sign-in risk-based Conditional Access](howto-conditional-access-policy-risk.md)

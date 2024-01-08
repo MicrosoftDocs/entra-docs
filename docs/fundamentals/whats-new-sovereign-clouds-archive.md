@@ -300,7 +300,7 @@ Temporary Access Pass (TAP) is now generally available. TAP can be used to secur
 
 In some scenarios customers may want to require a fresh authentication, every time before a user performs specific actions. Sign-in frequency Every time support requiring a user to reauthenticate during Intune device enrollment, password change for risky users and risky sign-ins.
 
-More information: [Configure authentication session management](~/identity/conditional-access/howto-conditional-access-session-lifetime.md#require-reauthentication-every-time).
+More information: [Configure authentication session management](~/identity/conditional-access/concept-session-lifetime.md#require-reauthentication-every-time).
  
 ---
 
