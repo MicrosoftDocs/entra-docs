@@ -229,7 +229,7 @@ If your server has been locked down according to Federal Information Processing 
 1. Go to %programfiles%\Microsoft Azure AD Sync\Bin.
 2. Open miiserver.exe.config.
 3. Go to the configuration/runtime node at the end of the file.
-4. Add the following node: `<enforceFIPSPolicy enabled="false"/>`
+4. Add the following node: `<enforceFIPSPolicy enabled="false" />`
 5. Save your changes.
 6. Reboot for the changes to take effect.
 
@@ -238,7 +238,7 @@ For reference, this snippet is what it should look like:
 ```
     <configuration>
         <runtime>
-            <enforceFIPSPolicy enabled="false"/>
+            <enforceFIPSPolicy enabled="false" />
         </runtime>
     </configuration>
 ```
