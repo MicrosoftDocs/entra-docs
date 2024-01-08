@@ -522,7 +522,7 @@ The Cairo tenant created a multitenant organization and added the Berlin and Ath
     - `Directory.ReadWrite.All`
 
     ```powershell
-    Connect-MgGraph -TenantId $TargetTenantId -Scopes "MultiTenantOrganization.ReadWrite.All","Policy.Read.All","Policy.ReadWrite.CrossTenantAccess","Application.ReadWrite.All","Directory.ReadWrite.All"
+    Connect-MgGraph -TenantId $MemberTenantIdB -Scopes "MultiTenantOrganization.ReadWrite.All","Policy.Read.All","Policy.ReadWrite.CrossTenantAccess","Application.ReadWrite.All","Directory.ReadWrite.All"
     ```
 
 # [Microsoft Graph](#tab/ms-graph)
@@ -552,19 +552,54 @@ The Cairo tenant created a multitenant organization and added the Berlin and Ath
 1. In the member tenant, use the [Update-MgBetaTenantRelationshipMultiTenantOrganizationJoinRequest](/powershell/module/microsoft.graph.beta.identity.signins/update-mgbetatenantrelationshipmultitenantorganizationjoinrequest) command to join the multitenant organization.
 
     ```powershell
-    Update-MgBetaTenantRelationshipMultiTenantOrganizationJoinRequest -AddedByTenantId $OwnerTenantId
+    Update-MgBetaTenantRelationshipMultiTenantOrganizationJoinRequest -AddedByTenantId $OwnerTenantId | Format-List
     ```
 
 1. Use the [Get-MgBetaTenantRelationshipMultiTenantOrganizationJoinRequest](/powershell/module/microsoft.graph.beta.identity.signins/get-mgbetatenantrelationshipmultitenantorganizationjoinrequest) command to verify the join.
 
     ```powershell
-    Get-MgBetaTenantRelationshipMultiTenantOrganizationJoinRequest
+    Get-MgBetaTenantRelationshipMultiTenantOrganizationJoinRequest | Format-List
     ```
 
-1. Use the [Get-MgBetaTenantRelationshipMultiTenantOrganization](/powershell/module/microsoft.graph.beta.identity.signins/get-mgbetatenantrelationshipmultitenantorganization) command to check the multitenant organization itself. It should reflect the join operation.
+    ```Output
+    AddedByTenantId      : <OwnerTenantId>
+    Id                   : <MtoJoinRequestIdB>
+    MemberState          : active
+    Role                 : member
+    TransitionDetails    : Microsoft.Graph.Beta.PowerShell.Models.MicrosoftGraphMultiTenantOrganizationJoinRequestTransitionDetails
+    AdditionalProperties : {[@odata.context, https://graph.microsoft.com/beta/$metadata#tenantRelationships/multiTenantOrganization/joinRequest/$entity]}
+    ```
+
+1. Use the [Get-MgBetaTenantRelationshipMultiTenantOrganizationTenant](/powershell/module/microsoft.graph.beta.identity.signins/get-mgbetatenantrelationshipmultitenantorganizationtenant) command to check the multitenant organization itself. It should reflect the join operation.
 
     ```powershell
-    Get-MgBetaTenantRelationshipMultiTenantOrganization
+    Get-MgBetaTenantRelationshipMultiTenantOrganizationTenant | Format-List
+    ```
+
+    ```Output
+    AddedByTenantId      : <OwnerTenantId>
+    AddedDateTime        : 1/8/2024 8:05:25 PM
+    DeletedDateTime      :
+    DisplayName          : Berlin
+    Id                   : <MtoJoinRequestIdB>
+    JoinedDateTime       : 1/8/2024 9:53:55 PM
+    Role                 : member
+    State                : active
+    TenantId             : <MemberTenantIdB>
+    TransitionDetails    : Microsoft.Graph.Beta.PowerShell.Models.MicrosoftGraphMultiTenantOrganizationMemberTransitionDetails
+    AdditionalProperties : {[multiTenantOrgLabelType, none]}
+    
+    AddedByTenantId      : <OwnerTenantId>
+    AddedDateTime        : 1/8/2024 7:47:45 PM
+    DeletedDateTime      :
+    DisplayName          : Cairo
+    Id                   : <Id>
+    JoinedDateTime       :
+    Role                 : owner
+    State                : active
+    TenantId             : <OwnerTenantId>
+    TransitionDetails    : Microsoft.Graph.Beta.PowerShell.Models.MicrosoftGraphMultiTenantOrganizationMemberTransitionDetails
+    AdditionalProperties : {[multiTenantOrgLabelType, none]}
     ```
 
 1. To allow for asynchronous processing, wait **up to 4 hours** before joining a multitenant organization is completed.
