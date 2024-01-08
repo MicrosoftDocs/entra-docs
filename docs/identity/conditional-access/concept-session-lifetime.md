@@ -55,7 +55,7 @@ Sign-in frequency previously applied to only to the first factor authentication 
 
 ### User sign-in frequency and device identities
 
-On Microsoft Entra joined and Microsoft Entra hybrid joined devices, unlocking the device, or signing in interactively will refresh the Primary Refresh Token (PRT) every 4 hours. The last refresh timestamp recorded for the PRT compared with the current timestamp must be within the time allotted in SIF policy for PRT to satisfy SIF and grant access to a PRT that has an existing MFA claim. On [Microsoft Entra registered devices](~/identity/devices/concept-device-registration.md), unlock/sign-in wouldn't satisfy the SIF policy because the user isn't accessing a Microsoft Entra registered device via a Microsoft Entra account. However, the [Microsoft Entra WAM](~/identity-platform/scenario-desktop-acquire-token-wam.md) plugin can refresh a PRT during native application authentication using WAM.
+On Microsoft Entra joined and Microsoft Entra hybrid joined devices, unlocking the device, or signing in interactively refreshes the Primary Refresh Token (PRT) every 4 hours. The last refresh timestamp recorded for the PRT compared with the current timestamp must be within the time allotted in SIF policy for the PRT to satisfy SIF and grant access to a PRT that has an existing MFA claim. On [Microsoft Entra registered devices](~/identity/devices/concept-device-registration.md), unlock/sign-in wouldn't satisfy the SIF policy because the user isn't accessing a Microsoft Entra registered device via a Microsoft Entra account. However, the [Microsoft Entra WAM](~/identity-platform/scenario-desktop-acquire-token-wam.md) plugin can refresh a PRT during native application authentication using WAM.
 
 > [!NOTE]
 > The timestamp captured from user log-in isn't necessarily the same as the last recorded timestamp of PRT refresh because of the 4-hour refresh cycle. The case when it's the same is when the PRT expired and a user log-in refreshes it for 4 hours. In the following examples, assume SIF policy is set to 1 hour and the PRT is refreshed at 00:00.
@@ -64,14 +64,14 @@ Example 1: *When you continue to work on the same doc in SPO for an hour*
 
 * At 00:00, a user signs in to their Windows 11 Microsoft Entra joined device and starts work on a document stored on SharePoint Online.
 * The user continues working on the same document on their device for an hour.
-* At 01:00, the user is prompted to sign in again based on the sign-in frequency requirement in the Conditional Access policy configured by their administrator.
+* At 01:00, the user is prompted to sign in again. This prompt is based on the sign-in frequency requirement in the Conditional Access policy configured by their administrator.
 
-Example 2: *When pausing work with a background task running in the browser, then interacting again after the SIF policy time has passed*
+Example 2: *When you pause work with a background task running in the browser, then interact again after the SIF policy time elapsed*
 
 * At 00:00, a user signs in to their Windows 11 Microsoft Entra joined device and starts to upload a document to SharePoint Online.
 * At 00:10, the user gets up and takes a break locking their device. The background upload continues to SharePoint Online.
 * At 02:45, the user returns from their break and unlocks the device. The background upload shows completion.
-* At 02:45, the user is prompted to sign in when they interact again based on the sign-in frequency requirement in the Conditional Access policy configured by their administrator since the last sign-in happened at 00:00.
+* At 02:45, the user is prompted to sign in when they interact again. This prompt is based on the sign-in frequency requirement in the Conditional Access policy configured by their administrator since the last sign-in happened at 00:00.
 
 If the client app (under activity details) is a Browser, we defer sign in frequency enforcement of events/policies on background services until the next user interaction.
 
@@ -82,18 +82,18 @@ Scenario 1 - User returns within cycle
 * At 00:00, a user signs into their Windows 11 Microsoft Entra joined device and starts work on a document stored on SharePoint Online.
 * At 00:30, the user gets up and takes a break locking their device.
 * At 00:45, the user returns from their break and unlocks the device.
-* At 01:00, the user is prompted to sign in again based on the sign-in frequency requirement in the Conditional Access policy configured by their administrator, 1 hour after the initial sign-in.
+* At 01:00, the user is prompted to sign in again. This prompt is based on the sign-in frequency requirement in the Conditional Access policy configured by their administrator, 1 hour after the initial sign-in.
 
 Scenario 2 - User returns outside cycle
 
 * At 00:00, a user signs into their Windows 11 Microsoft Entra joined device and starts work on a document stored on SharePoint Online.
 * At 00:30, the user gets up and takes a break locking their device.
 * At 04:45, the user returns from their break and unlocks the device.
-* At 05:45, the user is prompted to sign in again based on the sign-in frequency requirement in the Conditional Access policy configured by their administrator, 1 hour after the PRT was refreshed at 04:45 (over 4hrs after the initial sign-in at 00:00).
+* At 05:45, the user is prompted to sign in again. This prompt is based on the sign-in frequency requirement in the Conditional Access policy configured by their administrator. It's now 1 hour after the PRT was refreshed at 04:45, and over 4 hours since the initial sign-in at 00:00.
 
 ### Require reauthentication every time
 
-There are scenarios where customers may want to require a fresh authentication, every time before a user performs specific actions like:
+There are scenarios where customers might want to require a fresh authentication, every time before a user performs specific actions like:
 
 * Accessing sensitive applications
 * Securing resources behind VPN or Network as a Service (NaaS) providers
@@ -104,7 +104,7 @@ There are scenarios where customers may want to require a fresh authentication
 
 Sign-in frequency has the ability to trigger **Every time** in addition to hours or days.
 
-Administrators should limit the number of applications they enforce this reauthenticate every time behavior on. Triggering reauthentication too frequently may increase security friction to a point that it causes users to experience MFA fatigue and open the door to phishing attempts.
+Administrators should limit the number of applications they enforce a policy requiring users to reauthenticate every time with. Triggering reauthentication too frequently can increase security friction to a point that it causes users to experience MFA fatigue and open the door to phishing attempts.
 
 Supported scenarios:
 
@@ -112,15 +112,15 @@ Supported scenarios:
 * Require user reauthentication for risky users with the [require password change](concept-conditional-access-grant.md#require-password-change) grant control.
 * Require user reauthentication for risky sign-ins with the [require multifactor authentication](concept-conditional-access-grant.md#require-multifactor-authentication) grant control.
 
-When administrators select **Every time**, it will require full reauthentication when the session is evaluated.
+When administrators select **Every time**, it requires full reauthentication when the session is evaluated.
 
 ## Persistence of browsing sessions
 
 A persistent browser session allows users to remain signed in after closing and reopening their browser window.
 
-The Microsoft Entra ID default for browser session persistence allows users on personal devices to choose whether to persist the session by showing a “Stay signed in?” prompt after successful authentication. If browser persistence is configured in AD FS using the guidance in the article [AD FS single sign-on settings](/windows-server/identity/ad-fs/operations/ad-fs-single-sign-on-settings#enable-psso-for-office-365-users-to-access-sharepoint-online), we'll comply with that policy and persist the Microsoft Entra session as well. You can also configure whether users in your tenant see the “Stay signed in?” prompt by changing the appropriate setting in the [company branding pane](~/fundamentals/how-to-customize-branding.md).
+The Microsoft Entra ID default for browser session persistence allows users on personal devices to choose whether to persist the session by showing a “Stay signed in?” prompt after successful authentication. If browser persistence is configured in AD FS using the guidance in the article [AD FS single sign-on settings](/windows-server/identity/ad-fs/operations/ad-fs-single-sign-on-settings#enable-psso-for-office-365-users-to-access-sharepoint-online), we comply with that policy and persist the Microsoft Entra session as well. You can also configure whether users in your tenant see the “Stay signed in?” prompt by changing the appropriate setting in the [company branding pane](~/fundamentals/how-to-customize-branding.md).
 
-In persistent browsers, cookies stay stored in the user’s device even after a user closes the browser. These cookies could have access to Microsoft Entra artifacts, and those artifacts are useable until token expiry regardless of the Conditional Access policies placed on the resource environment. So, token caching can be in direct violation of desired security policies for authentication. While it may seem convenient to store tokens beyond the current session, doing so can create a security vulnerability by allowing unauthorized access to Microsoft Entra artifacts.
+In persistent browsers, cookies stay stored in the user’s device even after a user closes the browser. These cookies could have access to Microsoft Entra artifacts, and those artifacts are useable until token expiry regardless of the Conditional Access policies placed on the resource environment. So, token caching can be in direct violation of desired security policies for authentication. While it might seem convenient to store tokens beyond the current session, doing so can create a security vulnerability by allowing unauthorized access to Microsoft Entra artifacts.
 
 ## Configuring authentication session controls
 
