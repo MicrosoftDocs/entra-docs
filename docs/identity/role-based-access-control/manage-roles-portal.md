@@ -11,7 +11,7 @@ ms.topic: how-to
 ms.date: 02/06/2023
 ms.author: rolyon
 ms.reviewer: vincesm
-ms.custom: it-pro, has-azure-ad-ps-ref
+ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 
 ms.collection: M365-identity-device-management
 ---
@@ -23,7 +23,7 @@ To grant access to users in Microsoft Entra ID, you assign Microsoft Entra roles
 
 - Privileged Role Administrator or Global Administrator. To know who your Privileged Role Administrator or Global Administrator is, see [List Microsoft Entra role assignments](view-assignments.md)
 - Microsoft Entra ID P2 license when using Privileged Identity Management (PIM)
-- AzureADPreview module when using PowerShell
+- [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview) module when using PowerShell
 - Admin consent when using Graph explorer for Microsoft Graph API
 
 For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
@@ -98,7 +98,7 @@ Follow these steps to assign Microsoft Entra roles using PowerShell.
 
 ### Setup
 
-1. Open a PowerShell window and use [Import-Module](/powershell/module/microsoft.powershell.core/import-module) to import the AzureADPreview module. For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
+1. Open a PowerShell window and use [Import-Module](/powershell/module/microsoft.powershell.core/import-module) to import the Microsoft Graph PowerShell module. For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
 
     ```powershell
     Import-Module -Name Microsoft.Graph.Identity.Governance -Force

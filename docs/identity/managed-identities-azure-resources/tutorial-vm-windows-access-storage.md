@@ -13,7 +13,7 @@ ms.subservice: msi
 ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 02/18/2022
+ms.date: 01/05/2024
 ms.author: barclayn
 ms.collection: M365-identity-device-management
 ---
@@ -92,7 +92,7 @@ This section shows how to grant your VM access to an Azure Storage container. Yo
     | System-assigned | Virtual Machine |
     | Select | &lt;your virtual machine&gt; |
 
-    ![Add role assignment page in Azure portal.](~/../azure-docs-pr/includes/role-based-access-control/media/add-role-assignment-page.png)
+    ![Screenshot that shows the page for adding a role assignment.](../../media/common/add-role-assignment-page.png)
 
 ## Access data 
 

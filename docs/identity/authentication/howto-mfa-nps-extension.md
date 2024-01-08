@@ -6,12 +6,12 @@ services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 09/13/2023
+ms.date: 01/02/2024
 
 ms.author: justinha
 author: justinha
 manager: amycolannino
-ms.reviewer: michmcla
+ms.reviewer: jupetter
 
 ms.collection: M365-identity-device-management
 ms.custom: has-azure-ad-ps-ref
@@ -95,7 +95,6 @@ The PowerShell module is also installed through a configuration script you run a
 
 ### Obtain the directory tenant ID
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 As part of the configuration of the NPS extension, you must supply administrator credentials and the ID of your Microsoft Entra tenant. To get the tenant ID, complete the following steps:
 
@@ -246,10 +245,8 @@ To provide load-balancing capabilities or for redundancy, repeat these steps on 
    `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
 
    > [!IMPORTANT]
-   > For customers that use the Azure Government or Microsoft Azure operated by 21Vianet clouds, first edit the `Connect-MsolService` cmdlets in the *AzureMfaNpsExtnConfigSetup.ps1* script to include the *AzureEnvironment* parameters for the required cloud. For example, specify *-AzureEnvironment USGovernment* or *-AzureEnvironment AzureChinaCloud*.
-   >
-   > For more information, see [Connect-MsolService parameter reference](/powershell/module/msonline/connect-msolservice#parameters).
-
+   > For customers that use the Azure Government or Microsoft Azure operated by 21Vianet clouds, first edit the *AzureMfaNpsExtnConfigSetup.ps1* script to include the *AzureEnvironment* parameters for the required cloud. For example, specify *-AzureEnvironment USGovernment* or *-AzureEnvironment AzureChinaCloud*.
+   
    ```powershell
    .\AzureMfaNpsExtnConfigSetup.ps1
    ```
@@ -339,7 +336,7 @@ You can choose to create this key and set it to *FALSE* while your users are onb
 
 ### NPS extension health check script
 
-The [Microsoft Entra multifactor authentication NPS Extension health check script](/samples/azure-samples/azure-mfa-nps-extension-health-check/azure-mfa-nps-extension-health-check/) performs a basic health check when troubleshooting the NPS extension. Run the script and choose one of available options.
+The [Microsoft Entra multifactor authentication NPS Extension health check script](https://github.com/Azure-Samples/azure-mfa-nps-extension-health-check) performs a basic health check when troubleshooting the NPS extension. Run the script and choose one of available options.
 
 ### How to fix the error "Service principal was not found" while running `AzureMfaNpsExtnConfigSetup.ps1` script? 
 

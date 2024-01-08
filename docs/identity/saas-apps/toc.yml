@@ -272,8 +272,8 @@
         href: aws-clientvpn-tutorial.md
       - name: AWS IAM Identity Center
         href: aws-single-sign-on-tutorial.md
-      - name: Axiad Cloud
-        href: axiad-cloud-tutorial.md
+      - name: Axiad Cloud Connector
+        href: axiad-cloud-connector-tutorial.md
       - name: Axway CSOS
         href: axway-csos-tutorial.md  
     - name: B
@@ -746,6 +746,8 @@
         href: deem-mobile-tutorial.md
       - name: Degreed
         href: degreed-tutorial.md
+      - name: Delivery Scheduling Tool
+        href: delivery-scheduling-tool-tutorial.md
       - name: Delivery Solutions
         href: delivery-solutions-tutorial.md
       - name: Deputy
@@ -983,6 +985,8 @@
         href: f5-big-ip-sap-erp-easy-button.md    
       - name: FactSet
         href: factset-tutorial.md
+      - name: Fareharbor SAML SSO
+        href: fareharbor-saml-sso-tutorial.md
       - name: Fastly Edge Cloud
         href: fastly-edge-cloud-tutorial.md
       - name: FAX.PLUS
@@ -1247,6 +1251,8 @@
         href: hownow-webapp-sso-tutorial.md
       - name: Hoxhunt
         href: hoxhunt-tutorial.md
+      - name: HPE Aruba Networking EdgeConnect Orchestrator
+        href: hpe-aruba-networking-edgeconnect-orchestrator-tutorial.md
       - name: HPE SaaS
         href: hpesaas-tutorial.md
       - name: HR2day by Merces
@@ -1807,6 +1813,8 @@
         href: navex-one-tutorial.md
       - name: NAVEX IRM (Lockpath/Keylight)
         href: navex-irm-keylight-lockpath-tutorial.md
+      - name: Navigo Cloud SAML
+        href: navigo-cloud-saml-tutorial.md
       - name: NegometrixPortal Single Sign On (SSO)
         href: negometrixportal-tutorial.md
       - name: NEOGOV
@@ -2157,8 +2165,8 @@
         href: quarem-tutorial.md
       - name: Quantum Workplace
         href: quantum-workplace-tutorial.md
-      - name: QueryLayer
-        href: querylayer-tutorial.md
+      - name: TrustWorks
+        href: trustworks-tutorial.md
       - name: Questetra BPM Suite
         href: questetra-bpm-suite-tutorial.md
       - name: QuickHelp
@@ -2179,6 +2187,8 @@
         href: rally-software-tutorial.md
       - name: raum]für[raum
         href: raumfurraum-tutorial.md  
+      - name: Reach 360
+        href: reach-360-tutorial.md
       - name: ReadCube Papers
         href: readcube-papers-tutorial.md  
       - name: Real Links
@@ -2237,8 +2247,8 @@
         href: riskware-tutorial.md
       - name: Riva
         href: riva-tutorial.md
-      - name: Rivial Data Security
-        href: rivial-data-security-tutorial.md
+      - name: Rivial Cybersecurity Management Platform
+        href: rivial-cybersecurity-management-platform-tutorial.md
       - name: Roadmunk
         href: roadmunk-tutorial.md
       - name: Robin
@@ -2449,8 +2459,6 @@
         href: skedda-tutorial.md
       - name: Sketch
         href: sketch-tutorial.md
-      - name: Skillcast
-        href: skillcast-tutorial.md
       - name: Skilljar
         href: skilljar-tutorial.md
       - name: Skillport
@@ -2501,6 +2509,8 @@
         href: smartlook-tutorial.md
       - name: Smart Map Pro
         href: smart-map-pro-tutorial.md
+      - name: Smartplan
+        href: smartplan-tutorial.md
       - name: SmartRecruiters
         href: smartrecruiters-tutorial.md
       - name: smartvid.io
@@ -2677,6 +2687,8 @@
         href: terraform-cloud-tutorial.md
       - name: Terraform Enterprise
         href: terraform-enterprise-tutorial.md
+      - name: Terranova Security Awareness Platform
+        href: terranova-security-awareness-platform-tutorial.md
       - name: TerraTrue
         href: terratrue-tutorial.md  
       - name: tesma
@@ -3506,6 +3518,8 @@
         href: parsable-provisioning-tutorial.md
       - name: Peripass
         href: peripass-provisioning-tutorial.md  
+      - name: Personify Inc
+        href: personify-inc-provisioning-tutorial.md
       - name: Pingboard
         href: pingboard-provisioning-tutorial.md
       - name: Plandisc
@@ -3530,6 +3544,8 @@
         href: peakon-provisioning-tutorial.md
       - name: Proware
         href: proware-provisioning-tutorial.md
+      - name: Puzzel
+        href: puzzel-provisioning-tutorial.md
       - name: Real Links
         href: real-links-provisioning-tutorial.md
       - name: Recnice
@@ -3614,6 +3630,8 @@
         href: splashtop-provisioning-tutorial.md
       - name: StarLeaf
         href: starleaf-provisioning-tutorial.md
+      - name: Starmind
+        href: starmind-provisioning-tutorial.md
       - name: Storegate
         href: storegate-provisioning-tutorial.md
       - name: SurveyMonkey Enterprise

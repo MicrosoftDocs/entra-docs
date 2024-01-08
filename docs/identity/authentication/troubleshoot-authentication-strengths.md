@@ -5,7 +5,7 @@ description: Learn how to resolve errors when using Microsoft Entra authenticati
 services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
-ms.topic: conceptual
+ms.topic: troubleshooting
 ms.date: 09/27/2023
 
 ms.author: justinha

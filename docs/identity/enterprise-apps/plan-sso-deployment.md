@@ -13,7 +13,8 @@ ms.author: jomondi
 ms.reviewer: alamaral
 ms.collection: M365-identity-device-management
 ms.custom: has-adal-ref, enterprise-apps
-# Customer intent: As an IT admin, I need to learn what it takes to plan a single-sign on deployment for my application in Microsoft Entra ID.
+
+# Customer intent: As an IT admin planning a single sign-on deployment in Microsoft Entra ID, I want to understand the administrative roles required, certificate renewal process, communication plan, licensing requirements, and options for SSO deployment, so that I can effectively plan and implement SSO for my organization's applications.
 ---
 
 # Plan a single sign-on deployment

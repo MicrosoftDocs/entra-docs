@@ -17,7 +17,7 @@ manager: celestedg
 ms.collection: M365-identity-device-management
 adobe-target: true
 
-# Customer intent: As a tenant administrator, I want to make sure that guest users can leave the organization.
+# Customer intent: As a Microsoft Entra B2B collaboration or B2B direct connect user, I want to leave an organization, so that I can stop using apps from that organization and end any association with it.
 ---
 
 # Leave an organization as an external user

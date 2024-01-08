@@ -21,7 +21,7 @@ ms.collection: M365-identity-device-management
 
 >Get notified about when to revisit this page for updates by copying and pasting this URL: `https://learn.microsoft.com/api/search/rss?search=%22Release+notes+-+Azure+Active+Directory%22&locale=en-us` into your ![RSS feed reader icon](./media/whats-new/feed-icon-16x16.png) feed reader.
 
-Microsoft Entra ID (previously known as Azure AD) receives improvements on an ongoing basis. To stay up to date with the most recent developments, this article provides you with information about:
+Microsoft Entra ID (previously known as Azure Active Directory) receives improvements on an ongoing basis. To stay up to date with the most recent developments, this article provides you with information about:
 
 - The latest releases
 - Known issues
@@ -30,9 +30,31 @@ Microsoft Entra ID (previously known as Azure AD) receives improvements on an on
 - Plans for changes
 
 > [!NOTE] 
-> If you're currently using Azure AD today or are have previously deployed Azure AD in your organizations, you can continue to use the service without interruption. All existing deployments, configurations, and integrations continue to function as they do today without any action from you.
+> If you're currently using Azure Active Directory today or are have previously deployed Azure Active Directory in your organizations, you can continue to use the service without interruption. All existing deployments, configurations, and integrations continue to function as they do today without any action from you.
 
 This page updates monthly, so revisit it regularly. If you're looking for items older than six months, you can find them in [Archive for What's new in Azure Active Directory](whats-new-archive.md).
+
+## December 2023
+
+### Public Preview - Configurable redemption order for B2B collaboration
+
+**Type:** New feature   
+**Service category:** B2B                     
+**Product capability:**  B2B/B2C             
+
+With configurable redemption, you can customize the order of identity providers that your guest users can sign in with when they accept your invitation. This lets your override the default configuration order set by Microsoft and use your own. This can be used to help with scenarios like prioritizing a SAML/WS-fed federation above an Entra ID verified domain, disabling certain identity providers as an option during redemption, or even only using something like email one-time pass-code as a redemption option. For more information, see: [Configurable redemption (Preview)](../external-id/cross-tenant-access-overview.md#configurable-redemption-preview).
+
+---
+
+### General Availability - Edits to Dynamic Group Rule Builder
+
+**Type:** Changed feature   
+**Service category:** Group Management                     
+**Product capability:**  Directory             
+
+The dynamic group rule builder has been updated to no longer include the '*contains*' and '*notContains*' operators, as they're less performant. If needed, you can still create dynamic group rules with those operators by typing directly into the text box. For more information, see: [Rule builder in the Azure portal](../identity/users/groups-dynamic-membership.md#rule-builder-in-the-azure-portal).
+
+---
 
 ## November 2023
 
@@ -40,11 +62,11 @@ This page updates monthly, so revisit it regularly. If you're looking for items 
 
 **Type:** Plan for change   
 **Service category:** Provisioning                     
-**Product capability:**  Entra Cloud Sync             
+**Product capability:**  Microsoft Entra Connect Sync             
 
 The public preview of Group Writeback V2 (GWB) in Entra Connect Sync will no longer be available after June 30, 2024. After this date, Connect Sync will no longer support provisioning cloud security groups to Active Directory.
 
-Another similar functionality is offered in Entra Cloud Sync called “*Group Provision to AD*” that maybe used instead of GWB V2 for provisioning cloud security groups to AD. Enhanced functionality in Cloud Sync, along with other new features, are being developed.
+Another similar functionality is offered in Entra Cloud Sync, called “*Group Provision to AD*”, that maybe used instead of GWB V2 for provisioning cloud security groups to AD. Enhanced functionality in Cloud Sync, along with other new features, are being developed.
 
 Customers who use this preview feature in Connect Sync should [switch their configuration from Connect Sync to Cloud Sync](../identity/hybrid/cloud-sync/migrate-group-writeback.md). Customers may choose to move all their hybrid sync to Cloud Sync (if it supports their needs) or Cloud Sync may be run side-by-side and move only cloud security group provisioning to AD onto Cloud Sync.
 
@@ -111,7 +133,7 @@ For more information, see:
 
 Custom security attributes in Microsoft Entra ID are business-specific attributes (key-value pairs) that you can define and assign to Microsoft Entra objects. These attributes can be used to store information, categorize objects, or enforce fine-grained access control over specific Azure resources. Custom security attributes can be used with [Azure attribute-based access control (Azure ABAC)](/azure/role-based-access-control/conditions-overview). For more information, see: [What are custom security attributes in Microsoft Entra ID?](./custom-security-attributes-overview.md).
 
-Changes were made to custom security attribute audit logs for general availability that might impact your daily operations. If you have been using custom security attribute audit logs during the preview, there are the actions you must take before February 2024 to ensure your audit log operations aren't disrupted. For more information, see: [Custom security attribute audit logs](./custom-security-attributes-manage.md#step-6-assign-roles).
+Changes were made to custom security attribute audit logs for general availability that might impact your daily operations. If you have been using custom security attribute audit logs during the preview, there are the actions you must take before February 2024 to ensure your audit log operations aren't disrupted. For more information, see: [Custom security attribute audit logs](./custom-security-attributes-manage.md#custom-security-attribute-audit-logs).
 
 ---
 

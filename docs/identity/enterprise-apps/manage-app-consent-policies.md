@@ -14,7 +14,7 @@ ms.reviewer: phsignor, yuhko
 ms.custom: enterprise-apps
 zone_pivot_groups: enterprise-apps-minus-portal-aad
 
-#customer intent: As an admin, I want to manage app consent policies for enterprise applications in Microsoft Entra ID
+#customer intent: As an IT admin managing app consent policies, I want to view and manage existing app consent policies using Microsoft Graph PowerShell and Microsoft Graph API calls, so that I can control the permissions that apps have to access data in my organization and ensure they meet certain criteria.
 ---
 
 # Manage app consent policies

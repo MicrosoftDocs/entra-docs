@@ -12,6 +12,8 @@ ms.date: 04/14/2023
 ms.author: jomondi
 ms.reviewer: ergreenl
 ms.custom: enterprise-apps
+
+#customer intent: As an administrator, I want to add an application that supports OpenID Connect-based single sign-on (SSO) to my Microsoft Entra tenant, so that I can provide a seamless authentication experience for my users.
 ---
 
 # Add an OpenID Connect-based single sign-on application
@@ -41,7 +43,7 @@ To configure OIDC-based SSO for an application:
 1. The **Browse Microsoft Entra Gallery** pane opens and displays tiles for cloud platforms, on-premises applications, and featured applications. Applications listed in the **Featured applications** section have icons indicating whether they support federated SSO and provisioning. Search for and select the application. In this example, **SmartSheet** is being used.
 1. Select **Sign-up**. Sign in with the user account credentials from Microsoft Entra ID. If you already have a subscription to the application, then user details and tenant information is validated. If the application is not able to verify the user, then it redirects you to sign up for the application service.
 
-    :::image type="content" source="media/add-application-portal-setup-oidc-sso/oidc-sso-configuration.png" alt-text="Complete the consent screen for an application.":::
+    :::image type="content" source="media/add-application-portal-setup-oidc-sso/oidc-sso-configuration.png" alt-text="Complete the consent screen for an application." lightbox="media/add-application-portal-setup-oidc-sso/oidc-sso-configuration.png":::
 
 1. Select **Consent on behalf of your organization** and then select **Accept**. The application is added to your tenant and the application home page appears. To learn more about user and admin consent, see [Understand user and admin consent](~/identity-platform/howto-convert-app-to-be-multi-tenant.md#understand-user-and-admin-consent-and-make-appropriate-code-changes).
 

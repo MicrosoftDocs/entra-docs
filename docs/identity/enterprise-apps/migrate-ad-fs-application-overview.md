@@ -12,6 +12,8 @@ ms.date: 10/25/2023
 ms.author: jomondi
 ms.reviewer: smriti3
 ms.custom: not-enterprise-apps
+
+#customer intent: As an IT admin responsible for migrating applications from AD FS to Microsoft Entra ID, I want to use the AD FS application migration wizard to assess the compatibility of my applications, prioritize them for migration, run migration tests, and receive guidance on configuring new Microsoft Entra applications, so that I can efficiently migrate my applications to the new platform.
 ---
 
 # Overview of AD FS application migration (preview)

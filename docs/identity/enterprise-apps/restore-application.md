@@ -13,7 +13,8 @@ ms.author: jomondi
 ms.reviewer: sureshja
 ms.custom: enterprise-apps, has-azure-ad-ps-ref
 zone_pivot_groups: enterprise-apps-minus-portal
-#Customer intent: As an administrator of a Microsoft Entra tenant, I want to restore a soft deleted enterprise application.
+
+#Customer intent: As an IT admin managing enterprise applications in Microsoft Entra ID, I want to restore a soft deleted enterprise application, so that I can recover its previous configurations and policies within the 30-day window after deletion.
 ---
 
 # Restore an enterprise application in Microsoft Entra ID
@@ -23,8 +24,6 @@ In this article, you learn how to restore a soft deleted enterprise application 
 >[!IMPORTANT]
 >If you deleted an [application registration](~/identity-platform/howto-remove-app.md) in its home tenant through app registrations in the Microsoft Entra admin center, the enterprise application, which is its corresponding service principal also got deleted. If you restore the deleted application registration through the Microsoft Entra admin center, its corresponding service principal, is also restored. You'll therefore be able to recover the service principal's previous configurations, except its previous policies such as Conditional Access policies, which aren't restored.
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
-
 ## Prerequisites
 
 To restore an enterprise application, you need:
@@ -32,14 +31,18 @@ To restore an enterprise application, you need:
 - A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 - One of the following roles: Global Administrator, Cloud Application Administrator, Application Administrator, or owner of the service principal.
 - A [soft deleted enterprise application](delete-application-portal.md) in your tenant.
-## View restorable enterprise applications
 
 Take the following steps to recover a recently deleted enterprise application. For more information on frequently asked questions about deletion and recovery of applications, see [Deleting and recovering applications FAQs](delete-recover-faq.yml).
 
 :::zone pivot="aad-powershell"
 
+## View restorable enterprise applications using Azure AD PowerShell
+
 > [!IMPORTANT]
-> Make sure you're using the Azure AD PowerShell module. This is important if you've installed both the [Azure AD PowerShell](/powershell/module/azuread/?preserve-view=true&view=azureadps-2.0) module and the AzureADPreview module.
+> Make sure you're using the Azure AD PowerShell module. This is important if you've installed both the [Azure AD PowerShell](/powershell/module/azuread/?preserve-view=true&view=azureadps-2.0) module and the AzureADPreview module. 
+
+You need to sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
+
 1. Run the following commands:
 
     ```powershell
@@ -60,31 +63,37 @@ Take the following steps to recover a recently deleted enterprise application. F
    ```
 
 Replace ID with the object ID of the service principal that you want to restore.
- 
+
 :::zone-end
 
 :::zone pivot="ms-powershell"
 
-1. Run `connect-MgGraph -Scopes "Application.ReadWrite.All"` and sign in with a Global Administrator user account.
+## View restorable enterprise applications using Microsoft Graph PowerShell
+
+1. Run `connect-MgGraph -Scopes "Application.ReadWrite.All"`. You need to sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 
 1. To view the recently deleted enterprise applications, run the following command:
-   
+
    ```powershell
    Get-MgDirectoryDeletedItem -DirectoryObjectId <id>
    ```
+
 Replace ID with the object ID of the service principal that you want to restore.
 
 :::zone-end
 
 :::zone pivot="ms-graph"
 
-View and restore recently deleted enterprise applications using [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer).
+## View restorable enterprise applications using Microsoft Graph API
+
+View and restore recently deleted enterprise applications using [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer). You need to sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 
 To get the list of deleted enterprise applications in your tenant, run the following query.
-   
+
    ```http
    GET https://graph.microsoft.com/v1.0/directory/deletedItems/microsoft.graph.servicePrincipal
    ```
+
 From the list of deleted service principals generated, record the ID of the enterprise application you want to restore.
 
 Alternatively, if you want to get the specific enterprise application that was deleted, fetch the deleted service principal and filter the results by the client's application ID (appId) property using the following syntax:
@@ -93,12 +102,11 @@ Alternatively, if you want to get the specific enterprise application that was d
 
 :::zone-end
 
-## Restore an enterprise application  
-
 :::zone pivot="aad-powershell"
 
-1. To restore the enterprise application, run the following command:
+## Restore an enterprise application using Azure AD PowerShell
 
+1. To restore the enterprise application, run the following command:
 
    ```powershell  
    Restore-AzureADMSDeletedDirectoryObject -Id <id>
@@ -110,20 +118,24 @@ Replace ID with the object ID of the service principal that you want to restore.
 
 :::zone pivot="ms-powershell"
 
+## Restore an enterprise application using Microsoft Graph PowerShell
+
 1. To restore the enterprise application, run the following command:
 
-   ```powershell   
+   ```powershell
    Restore-MgDirectoryObject -DirectoryObjectId <id>
    ```
 
 Replace ID with the object ID of the service principal that you want to restore.
 
 :::zone-end
-   
+
 :::zone pivot="ms-graph"
 
+## Restore an enterprise application using Microsoft Graph API
+
 To restore the enterprise application, run the following query:
-   
+
    ```http
    POST https://graph.microsoft.com/v1.0/directory/deletedItems/{id}/restore
    ```
@@ -132,31 +144,37 @@ Replace ID with the object ID of the service principal that you want to restore.
 
 :::zone-end
 
-## Permanently delete an enterprise application
-
 >[!WARNING]
 > Permanently deleting an enterprise application is an irreversible action. Any present configurations on the app will be completely lost. Carefully review the details of the enterprise application to be sure you still want to hard delete it.
 
 :::zone pivot="aad-powershell"
 
+## Permanently delete an enterprise application using Azure AD PowerShell
+
 To permanently delete a soft deleted enterprise application, run the following command:
 
 ```powershell
 Remove-AzureADMSDeletedDirectoryObject -Id <id>
+
 ```
+
 :::zone-end
 
 :::zone pivot="ms-powershell"
-   
+
+## Permanently delete an enterprise application using Microsoft Graph PowerShell
+
 1. To permanently delete the soft deleted enterprise application, run the following command:
-   
+
    ```powershell
    Remove-MgDirectoryDeletedItem -DirectoryObjectId <id>
-   ``` 
+   ```
 
 :::zone-end
 
 :::zone pivot="ms-graph"
+
+## Permanently delete an enterprise application using Microsoft Graph API
 
 To permanently delete a soft deleted enterprise application, run the following query in Microsoft Graph explorer
 
@@ -184,7 +202,6 @@ DELETE https://graph.microsoft.com/v1.0/directory/deletedItems/{object-id}
 [!INCLUDE [sample-code](~/../microsoft-graph/api-reference/v1.0/includes/snippets/php/delete-directory-deleteditem-php-snippets.md)]
 
 ---
-
 
 :::zone-end
 

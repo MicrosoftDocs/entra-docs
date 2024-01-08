@@ -1,6 +1,6 @@
 ---
 title: "What's new in the Microsoft identity platform docs"
-description: "New and updated articles in the the Microsoft identity platform documentation."
+description: "New and updated articles in the Microsoft identity platform documentation."
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
@@ -9,7 +9,7 @@ ms.date: 12/05/2023
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: reference
-#Customer intent:
+#Customer intent: As a developer or IT admin, I want to stay updated on the latest changes and additions to the Microsoft identity platform documentation, so that I can ensure that my applications and systems are using the most current and relevant information.
 ---
 
 # Microsoft identity platform docs: What's new

@@ -37,8 +37,8 @@ If you want to only allow individuals from designated organizations to request a
 There are four ways that entitlement management lets you specify the users that form a connected organization.  It could be
 
 * users in another Microsoft Entra directory (from any Microsoft cloud),
-* users in another non-Azure AD directory that has been configured for direct federation,
-* users in another non-Azure AD directory, whose email addresses all have the same domain name in common, or
+* users in another non-Microsoft directory that has been configured for [SAML/WS-Fed identity provider (IdP) federation](/entra/external-id/direct-federation),
+* users in another non-Microsoft directory, whose email addresses all have the same domain name in common and specific to that organization, or
 * users with a Microsoft Account, such as from the domain *live.com*, if you have a business need for collaboration with users that have no common organization.
 
 For example, suppose you work at Woodgrove Bank and you want to collaborate with two external organizations.  You want to give users from both external organizations access to the same resources, but these two organizations have different configurations:
@@ -62,7 +62,7 @@ How users from the Microsoft Entra directory or domain authenticate depends on t
 
 - Microsoft Entra ID, in the same cloud
 - Microsoft Entra ID, in another cloud
-- [Direct federation](~/external-id/direct-federation.md)
+- [SAML/WS-Fed identity provider (IdP) federation](~/external-id/direct-federation.md)
 - [One-time passcode](~/external-id/one-time-passcode.md) (domain)
 - Microsoft Account
 

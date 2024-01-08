@@ -11,6 +11,8 @@ ms.topic: conceptual
 ms.date: 05/31/2023
 ms.author: jomondi
 ms.reviewer: gasinh
+
+#customer intent: As an IT admin migrating app authentication to Microsoft Entra ID, I want to understand the SAML-based single sign-on (SSO) configuration steps and limitations, so that I can successfully set up SSO for my SaaS applications and map users to specific application roles based on rules.
 ---
 # SAML-based single sign-on: Configuration and Limitations
 
