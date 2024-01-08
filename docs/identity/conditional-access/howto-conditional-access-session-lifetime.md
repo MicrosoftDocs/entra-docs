@@ -5,7 +5,7 @@ description: Customize Microsoft Entra authentication session configuration incl
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 01/04/2024
+ms.date: 01/08/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -39,7 +39,7 @@ To make sure that your policy works as expected, the recommended best practice i
       1. Choose **Periodic reauthentication** and enter a value of hours or days or select **Every time**.
 1. Save your policy.
 
-   > ![Conditional Access policy configured for sign-in frequency](media/howto-conditional-access-session-lifetime/conditional-access-policy-session-sign-in-frequency.png)
+   > ![Screenshot showing a Conditional Access policy configured for sign-in frequency.](media/howto-conditional-access-session-lifetime/conditional-access-policy-session-sign-in-frequency.png)
 
 ### Policy 2: Persistent browser session
 
@@ -86,7 +86,7 @@ Use the [What If tool](what-if-tool.md) to simulate a sign-in from the user to t
 
 ## Prompt tolerance
 
-We factor for five minutes of clock skew, so that we don’t prompt users more often than once every five minutes. If the user has done MFA in the last 5 minutes, and they hit another Conditional Access policy that requires reauthentication, we won't prompt the user. Over-prompting users for reauthentication can impact their productivity and increase the risk of users approving MFA requests they didn’t initiate. Use “Sign-in frequency – every time” only for specific business needs.
+We factor for five minutes of clock skew, so that we don’t prompt users more often than once every five minutes. If the user completed MFA in the last 5 minutes, and they hit another Conditional Access policy that requires reauthentication, we don't prompt the user. Over-prompting users for reauthentication can impact their productivity and increase the risk of users approving MFA requests they didn’t initiate. Use “Sign-in frequency – every time” only for specific business needs.
 
 ## Known issues
 

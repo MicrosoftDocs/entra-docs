@@ -5,7 +5,7 @@ description: Learn where and when to use adaptive session lifetimes in Condition
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 01/04/2024
+ms.date: 01/08/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -45,13 +45,13 @@ The sign-in frequency setting works with apps that implement OAuth2 or OIDC prot
 * Dynamics CRM Online
 * Azure portal
 
-The sign-in frequency setting works with third-party SAML applications and apps that implement OAuth2 or OIDC protocols, as long as they don't drop their own cookies and are redirected back to Microsoft Entra ID for authentication on regular basis.
+As part of the January 2024 public preview sign-in frequency works with third-party SAML applications and apps that implement OAuth2 or OIDC protocols, as long as they don't drop their own cookies and are redirected back to Microsoft Entra ID for authentication on regular basis.
 
 ### User sign-in frequency and multifactor authentication
 
 Sign-in frequency previously applied to only to the first factor authentication on devices that were Microsoft Entra joined, Microsoft Entra hybrid joined, and Microsoft Entra registered. There was no easy way for our customers to re-enforce multifactor authentication on those devices. Based on customer feedback, sign-in frequency applies for MFA as well.
 
-[![Sign in frequency and MFA](media/howto-conditional-access-session-lifetime/conditional-access-flow-chart-small.png)](media/howto-conditional-access-session-lifetime/conditional-access-flow-chart.png#lightbox)
+[![A diagram showing how Sign in frequency and MFA work together.](media/howto-conditional-access-session-lifetime/conditional-access-flow-chart-small.png)](media/howto-conditional-access-session-lifetime/conditional-access-flow-chart.png#lightbox)
 
 ### User sign-in frequency and device identities
 
@@ -60,13 +60,13 @@ On Microsoft Entra joined and Microsoft Entra hybrid joined devices, unlocking t
 > [!NOTE]
 > The timestamp captured from user log-in isn't necessarily the same as the last recorded timestamp of PRT refresh because of the 4-hour refresh cycle. The case when it's the same is when the PRT expired and a user log-in refreshes it for 4 hours. In the following examples, assume SIF policy is set to 1 hour and the PRT is refreshed at 00:00.
 
-Example 1: *When you continue to work on the same doc in SPO for an hour*
+#### Example 1: When you continue to work on the same doc in SPO for an hour
 
 * At 00:00, a user signs in to their Windows 11 Microsoft Entra joined device and starts work on a document stored on SharePoint Online.
 * The user continues working on the same document on their device for an hour.
 * At 01:00, the user is prompted to sign in again. This prompt is based on the sign-in frequency requirement in the Conditional Access policy configured by their administrator.
 
-Example 2: *When you pause work with a background task running in the browser, then interact again after the SIF policy time elapsed*
+#### Example 2: When you pause work with a background task running in the browser, then interact again after the SIF policy time elapsed
 
 * At 00:00, a user signs in to their Windows 11 Microsoft Entra joined device and starts to upload a document to SharePoint Online.
 * At 00:10, the user gets up and takes a break locking their device. The background upload continues to SharePoint Online.
@@ -75,7 +75,7 @@ Example 2: *When you pause work with a background task running in the browser, t
 
 If the client app (under activity details) is a Browser, we defer sign in frequency enforcement of events/policies on background services until the next user interaction.
 
-Example 3: *With 4-hour refresh cycle of primary refresh token from unlock*
+#### Example 3: With four hour refresh cycle of primary refresh token from unlock
 
 Scenario 1 - User returns within cycle
 
@@ -106,11 +106,17 @@ Sign-in frequency has the ability to trigger **Every time** in addition to hours
 
 Administrators should limit the number of applications they enforce a policy requiring users to reauthenticate every time with. Triggering reauthentication too frequently can increase security friction to a point that it causes users to experience MFA fatigue and open the door to phishing attempts.
 
-Supported scenarios:
+Generally available supported scenarios:
 
 * Require user reauthentication during [Intune device enrollment](/mem/intune/fundamentals/deployment-guide-enrollment), regardless of their current MFA status.
 * Require user reauthentication for risky users with the [require password change](concept-conditional-access-grant.md#require-password-change) grant control.
 * Require user reauthentication for risky sign-ins with the [require multifactor authentication](concept-conditional-access-grant.md#require-multifactor-authentication) grant control.
+
+The January 2024 public preview capabilities allow administrators to require authentication for:
+
+* Any [SAML](../../architecture/auth-saml.md) or [OIDC](../../architecture/auth-oidc.md) enabled application.
+* Use with [authentication context](concept-conditional-access-cloud-apps.md#authentication-context).
+* Other [user actions](concept-conditional-access-cloud-apps.md#user-actions).
 
 When administrators select **Every time**, it requires full reauthentication when the session is evaluated.
 
