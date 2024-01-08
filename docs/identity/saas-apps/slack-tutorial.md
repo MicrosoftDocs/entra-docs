@@ -113,8 +113,10 @@ Follow these steps to enable Microsoft Entra SSO.
 
     | Name | Source Attribute |
     | -----|---------|
-    | emailaddress | user.userprincipalname |
-    | email | user.userprincipalname |
+    | first_name | user.givenname |
+    | last_name | user.surname |
+    | User.Email | user.mail |
+    | User.Username | user.userprincipalname |
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 
