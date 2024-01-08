@@ -51,6 +51,8 @@ For a step by step guide on this process, see: [Add requestor information to an 
 
 The custom questions feature allows a requestor to answer questions during the request process for an access package, but you may require an additional layer of security before allowing the external user to access apps within the access package. With the verified IDs feature, you can require that requestors present a verified ID containing those credentials from a trusted issuer. This feature allows an approver to quickly view if the external user’s verifiable credentials were validated when the user presented their credentials within their access package request.
 
+:::image type="content" source="media/entitlement-management-verified-id-settings/select-issuer.png" alt-text="Screenshot showing pick issuer for Microsoft Entra Verified I D.":::
+
 For a step by step guide on this process, see: [Configure Verified ID settings for an access package in entitlement management](entitlement-management-verified-id-settings.md).
 
 ## Specify attributes
