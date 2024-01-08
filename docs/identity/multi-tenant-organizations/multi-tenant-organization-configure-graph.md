@@ -25,6 +25,8 @@ This article describes the key steps to configure a multitenant organization usi
 
 If you instead want to use the Microsoft 365 admin center to configure a multitenant organization, see [Set up a multitenant org in Microsoft 365 (Preview)](/microsoft-365/enterprise/set-up-multi-tenant-org) and [Join or leave a multitenant organization in Microsoft 365 (Preview)](/microsoft-365/enterprise/join-leave-multi-tenant-org). To learn how to configure Microsoft Teams for your multitenant organization, see [The new Microsoft Teams desktop client](/microsoftteams/new-teams-desktop-admin).
 
+:::image type="content" source="./media/multi-tenant-organization-configure-graph/configure-multitenant-organization-diagram.png" alt-text="Diagram that shows a multitenant organization with one owner tenant and two member tenants." lightbox="./media/multi-tenant-organization-configure-graph/configure-multitenant-organization-diagram.png":::
+
 ## Prerequisites
 
 ![Icon for the owner tenant.](../../media/common/icons/entra-id.png)<br/>**Owner tenant**
