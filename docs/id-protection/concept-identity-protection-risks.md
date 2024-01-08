@@ -76,7 +76,7 @@ Real-time detections may not show up in reporting for 5 to 10 minutes. Offline d
 | [Possible attempt to access Primary Refresh Token (PRT)](#possible-attempt-to-access-primary-refresh-token-prt) | Offline | Premium |
 | [Anomalous user activity](#anomalous-user-activity) | Offline | Premium |
 | [User reported suspicious activity](#user-reported-suspicious-activity) | Offline | Premium |
-| Suspicious sending patterns| Offline| Premium|
+| [Suspicious sending patterns](#suspicious-sending-patterns)| Offline| Premium|
 | [Additional risk detected](#additional-risk-detected-user) | Real-time or Offline | Nonpremium |
 | [Leaked credentials](#leaked-credentials) | Offline | Nonpremium |
 | [Microsoft Entra threat intelligence](#azure-ad-threat-intelligence-user) | Offline | Nonpremium |
