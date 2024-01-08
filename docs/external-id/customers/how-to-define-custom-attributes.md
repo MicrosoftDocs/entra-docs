@@ -8,7 +8,7 @@ ms.service: active-directory
  
 ms.subservice: ciam
 ms.topic: how-to
-ms.date: 11/27/2023
+ms.date: 01/07/2024
 ms.author: mimart
 ms.custom: it-pro
 
@@ -50,6 +50,12 @@ In this example:
 - The **terms of use** and **privacy policy** custom attributes are separate, single-select checkboxes with labels containing hyperlinks. You can configure a single checkbox using the **Boolean** data type, which defaults to the **CheckboxSingleSelect** user input type. Use Markdown language to add hyperlinks to the checkbox label.
 
 Other input types are available, including multiselect checkboxes, radio buttons, and free-form text entry fields. Learn how to [create custom user attributes](#create-custom-user-attributes) in this article.
+
+
+> [!TIP]
+> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=CustomAttributes)
+> 
+> To try out this feature, go to the Woodgrove Groceries demo and start the “Collect user attributes during sign-up” use case.
 
 ### Where custom user attributes are stored
 

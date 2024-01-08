@@ -11,7 +11,7 @@ ms.workload: identity
 ms.topic: how-to
 ms.date: 09/06/2023
 ms.author: justinha 
-ms.custom: has-azure-ad-ps-ref
+ms.custom: has-azure-ad-ps-ref, devx-track-azurepowershell
 ---
 # Configure scoped synchronization from Microsoft Entra ID to Microsoft Entra Domain Services using Azure AD PowerShell
 

@@ -19,8 +19,8 @@ Welcome to what's new in Microsoft Entra ID for customers documentation. This ar
 
 ### Updated articles
 
-- [Collect user attributes during sign-up](how-to-define-custom-attributes.md) - Editorial updates
-- [Quickstart: Get started with Microsoft Entra ID for customers (preview)](quickstart-trial-setup.md) - Editorial updates
+- [Collect user attributes during sign-up](how-to-define-custom-attributes.md) - Updated the examples
+- [Quickstart: Get started with Microsoft Entra ID for customers (preview)](quickstart-trial-setup.md) - Added subscription options
 
 ## November 2023
 
