@@ -23,7 +23,7 @@ When setting up a new storage account or security information and event manageme
 
 ## Reporting latency factors
 
-Many factors influence the latency of reporting data. The type of data, the amount of data, and the infrastructure that the reporting tools are built on can all influence latency. If there's a delay in the underlying infrastructure, Azure AD reports may experience a delay in reporting data.
+Many factors influence the latency of reporting data. The type of data, the amount of data, and the infrastructure that the reporting tools are built on can all influence latency. If there's a delay in the underlying infrastructure, Microsoft Entra reports might experience a delay in reporting data.
 
 One key factor in log latency is the path that the data travels from the source event to the logs in the Microsoft Entra admin center. Log data travels through the following systems before it appears in the logs.
 
@@ -34,3 +34,23 @@ One key factor in log latency is the path that the data travels from the source 
 1. Customer views the data in the Microsoft Entra admin center, or their SIEM tool of choice.
 
 There are many more steps in this process that aren't reflected here. Even with these summarized steps, it's easy to see how latency can be introduced into the system.
+
+## Last sign-in
+
+A common question about log latency is related to the last sign-in of a user. You must be using a [Microsoft Entra role](howto-access-activity-logs.md#prerequisites) that grants access to the sign-in logs to see this detail. The last sign-in of a user can be found in several places:
+
+- The **Sign-ins** tile in the **My Feed** section of the user's profile.
+
+  :::image type="content" source="media/reference-log-latency/user-last-sign-in-tile.png" alt-text="Screenshot of an aggregate sign-in expanded to show all rows." lightbox="media/reference-log-latency/user-last-sign-in-tile-expanded.png":::
+
+- The **Last interactive sign-in** and **Last non-interactive sign-in** columns in the **Users** list.
+
+  :::image type="content" source="media/reference-log-latency/users-list-interactive-sign-in-column.png" alt-text="Screenshot of an aggregate sign-in expanded to show all rows." lightbox="media/reference-log-latency/users-list-interactive-sign-in-column.png":::
+
+- The sign-in logs filtered for a particular user.
+
+    :::image type="content" source="media/reference-log-latency/user-filtered-sign-in-logs.png" alt-text="Screenshot of an aggregate sign-in expanded to show all rows." lightbox="media/reference-log-latency/user-filtered-sign-in-logs.png":::
+
+The last sign-in details that appear on the **Sign-ins** tile on the user profile are *not* real-time. The same is true for the details that appear in the **Last interactive sign-in** and **Last non-interactive sign-in** columns in the **Users** list.
+
+If you need to see the most recent sign-in date and time for a user, go to the sign-in logs and filter for that user. The third bullet in the previous list shows an example of the sign-in logs filtered for a particular user.
