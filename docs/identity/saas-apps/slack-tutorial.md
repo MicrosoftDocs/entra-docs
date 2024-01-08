@@ -109,7 +109,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	![image](common/edit-attribute.png)
 
-1. In addition to above, Slack application expects few more attributes to be passed back in SAML response which are shown below. These attributes are also pre populated but you can review them as per your requirements. You also must add the `email` attribute. If the user does not have an email address, map **emailaddress** to **user.userprincipalname** and map **email** to **user.userprincipalname**.
+1. In addition to above, Slack application expects few more attributes to be passed back in SAML response which are shown below. These attributes are also pre populated but you can review them as per your requirements.
 
     | Name | Source Attribute |
     | -----|---------|
