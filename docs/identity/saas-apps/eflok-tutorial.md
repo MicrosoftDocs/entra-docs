@@ -117,7 +117,7 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
 
    ![Screenshot shows the Configuration.](./media/eflok-tutorial/settings.png "Configuration")
 
-   1. In the **SAML Sign-in URL** text box, paste the **Login URL** value, which you copied from the Microsoft Entra admin center.
+   1. In the **SAML Sign-in URL** text box, paste the **Login URL** value, which you have copied from the Microsoft Entra admin center.
 
    1. Open the downloaded **Certificate (Raw)** into Notepad and paste the content into the **Key x509 Certificate** textbox.
 
@@ -127,11 +127,11 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
 
 1. In a different web browser window, sign into eFlok website as an administrator.
 
-1. Go to **Profile settings** > **Organisation Users** and click **Invite organisation members**
+1. Go to **Profile settings** > **Organisation Users** and click **Invite organisation members**.
 
    ![Screenshot shows how to add New User.](./media/eflok-tutorial/invite.png "New User")
 
-1. Perform the following steps.
+1. Perform the following steps in the below page.
 
    ![Screenshot shows a New User section where you enter user information.](./media/eflok-tutorial/user.png "User Information")
 
