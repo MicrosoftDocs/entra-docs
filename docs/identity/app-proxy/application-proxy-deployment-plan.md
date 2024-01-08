@@ -48,6 +48,10 @@ You need to meet the following prerequisites before beginning your implementatio
 
    * Load balancing of the connectors themselves is also not supported, or even necessary.
 
+> [!NOTE]
+> TCP Ports 10200-10201 are utilized by the Application Proxy connector for the purpose of health monitoring.
+>
+
 <a name='important-considerations-before-configuring-azure-ad-application-proxy'></a>
 
 ### Important considerations before configuring Microsoft Entra application proxy
