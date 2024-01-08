@@ -41,15 +41,15 @@ A common question about log latency is related to the last sign-in of a user. Yo
 
 - The **Sign-ins** tile in the **My Feed** section of the user's profile.
 
-  :::image type="content" source="media/reference-log-latency/user-last-sign-in-tile.png" alt-text="Screenshot of an aggregate sign-in expanded to show all rows." lightbox="media/reference-log-latency/user-last-sign-in-tile-expanded.png":::
+  :::image type="content" source="media/reference-log-latency/user-last-sign-in-tile.png" alt-text="Screenshot of the user details page with the Sign-ins tile in the My Feed section highlighted." lightbox="media/reference-log-latency/user-last-sign-in-tile-expanded.png":::
 
 - The **Last interactive sign-in** and **Last non-interactive sign-in** columns in the **Users** list.
 
-  :::image type="content" source="media/reference-log-latency/users-list-interactive-sign-in-column.png" alt-text="Screenshot of an aggregate sign-in expanded to show all rows." lightbox="media/reference-log-latency/users-list-interactive-sign-in-column.png":::
+  :::image type="content" source="media/reference-log-latency/users-list-interactive-sign-in-column.png" alt-text="Screenshot of the all users list with the last interactive sign-in column highlighted." lightbox="media/reference-log-latency/users-list-interactive-sign-in-column.png":::
 
 - The sign-in logs filtered for a particular user.
 
-    :::image type="content" source="media/reference-log-latency/user-filtered-sign-in-logs.png" alt-text="Screenshot of an aggregate sign-in expanded to show all rows." lightbox="media/reference-log-latency/user-filtered-sign-in-logs.png":::
+    :::image type="content" source="media/reference-log-latency/user-filtered-sign-in-logs.png" alt-text="Screenshot of the sign-in logs filtered to a particular user." lightbox="media/reference-log-latency/user-filtered-sign-in-logs.png":::
 
 The last sign-in details that appear on the **Sign-ins** tile on the user profile are *not* real-time. The same is true for the details that appear in the **Last interactive sign-in** and **Last non-interactive sign-in** columns in the **Users** list.
 
