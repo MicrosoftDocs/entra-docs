@@ -205,7 +205,7 @@ Active Directory Federation Services (AD FS). For Microsoft Entra hybrid joined 
 - **Server Error Description**: The error message from the server.
 - **RefreshPrtDiagnostics**: Set the state to *PRESENT* if the acquired PRT diagnostics information is present in the logs.  
    - This field is skipped if no diagnostics information is available.
-   - The diagnostics information fields are same as **AcquirePrtDiagnostics**
+   - The diagnostics information fields are same as **AcquirePrtDiagnostics**.
 
 >[!NOTE]
 > The following Cloud Kerberos diagnostics fields were added in the original release of Windows 11 (version 21H2).
