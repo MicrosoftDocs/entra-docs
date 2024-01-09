@@ -174,11 +174,10 @@ The following scenarios are important to consider when you're reviewing sign-in 
 
 - **User type:** Examples include `member`, `guest`, or `external`.
 
-- **Sign-in log authentication details:**
+- **Authentication details:**
   - **OATH verification code** is logged as the authentication method for both OATH hardware and software tokens (such as the Microsoft Authenticator app).
   - The **Authentication details** tab can initially show incomplete or inaccurate data until log information is fully aggregated. Known examples include:
     - A **satisfied by claim in the token** message is incorrectly displayed when sign-in events are initially logged.
     - The **Primary authentication** row isn't initially logged.
   - If you're unsure of a detail in the logs, gather the **Request ID** and **Correlation ID** to use for further analyzing or troubleshooting.
   - If Conditional Access policies for authentication or session lifetime are applied, they're listed above the sign-in attempts. If you don't see either of those options, those policies aren't currently applied. For more information, see [Conditional Access session controls](~/identity/conditional-access/concept-conditional-access-session.md).
-  - When users are flagged for risk, their sign-in attempts are blocked according to policy. These sign-in attempts might display *false* in the *Succeeded* column for the Password hash sync authentication method. This behavior is expected. No token was issued for the sign-in attempt because the sign-in was blocked by policy.
