@@ -66,4 +66,7 @@ Some methods can't be registered during sign-in, or they need more setup beyond 
 
 ## Next steps
 
-- [Conditional Access authentication strength](concept-authentication-strengths.md)
+- [Built-in Conditional Access authentication strengths](concept-authentication-strengths.md)
+- [Custom Conditional Access authentication strengths](concept-authentication-strength-advanced-options.md)
+- [How authentication strength works for external users](concept-authentication-strength-external-users.md)
+

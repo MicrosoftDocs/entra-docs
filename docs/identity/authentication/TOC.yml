@@ -42,11 +42,9 @@
       href: concept-authentication-security-questions.md
   - name: Authentication strengths
     items:
-    - name: Overview
+    - name: Built-in authentication strengths
       href: concept-authentication-strengths.md
-    - name: How authentication strength works
-      href: concept-authentication-strength-howitworks.md
-    - name: FIDO2 and CBA advanced options
+    - name: Custom authentication strengths
       href: concept-authentication-strength-advanced-options.md
     - name: External users
       href: concept-authentication-strength-external-users.md

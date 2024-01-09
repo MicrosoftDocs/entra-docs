@@ -6,7 +6,7 @@ services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/04/2024
+ms.date: 01/08/2024
 
 ms.author: justinha
 author: inbarckms
@@ -141,8 +141,7 @@ As a result, users in Contoso can access most of the resources in the tenant usi
 
 ## Next steps
 
-- [How authentication strength works](concept-authentication-strength-howitworks.md)
-- [FIDO2 and CBA advanced options](concept-authentication-strength-advanced-options.md)
+- [Custom Conditional Access authentication strengths](concept-authentication-strength-advanced-options.md)
 - [How authentication strength works for external users](concept-authentication-strength-external-users.md)
 - [Troubleshoot authentication strengths](troubleshoot-authentication-strengths.md) 
 

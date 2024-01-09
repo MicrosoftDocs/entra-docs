@@ -1,12 +1,12 @@
 ---
-title: Overview of authentication strength advanced options for FIDO2 security keys and certificate-based authentication in Microsoft Entra ID
-description: Learn how admins can use advanced options for FIDO2 security keys and certificate-based authentication when they configure authentication strength requirements.
+title: Overview of custom authentication strengths and advanced options for FIDO2 security keys and certificate-based authentication in Microsoft Entra ID
+description: Learn how admins can create custom authentication strengths with advanced options for FIDO2 security keys and certificate-based authentication.
 
 services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/04/2024
+ms.date: 01/08/2024
 
 ms.author: justinha
 author: inbarckms
@@ -15,9 +15,25 @@ ms.reviewer: inbarc
 
 ms.collection: M365-identity-device-management
 ---
-# Advanced options for Conditional Access authentication strength 
+# Custom Conditional Acccess authentication strengths
 
-You can configure advanced options for authentication with FIDO2 security keys and certificate-based authentication (CBA) when you create a custom authentication strength. Advanced options allow you to further restrict sign in based upon specific properties of a FIDO2 security key or a certificate. 
+Administrators can also create up to 15 of their own custom authentication strengths to exactly suit their requirements. A custom authentication strength can contain any of the supported combinations in the preceding table. 
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an Administrator.
+1. Browse to **Protection** > **Authentication methods** > **Authentication strengths**.
+1. Select **New authentication strength**.
+1. Provide a descriptive **Name** for your new authentication strength.
+1. Optionally provide a **Description**.
+1. Select any of the available methods you want to allow.
+1. Choose **Next** and review the policy configuration.
+
+   :::image type="content" border="true" source="media/concept-authentication-strengths/authentication-strength-custom.png" alt-text="Screenshot showing the creation of a custom authentication strength.":::
+
+#### Update and delete custom authentication strengths
+
+You can edit a custom authentication strength. If it's referenced by a Conditional Access policy, it can't be deleted, and you need to confirm any edit. 
+To check if an authentication strength is referenced by a Conditional Access policy, click the **Conditional Access policies** column.
+
 
 ## FIDO2 security key advanced options
 You can restrict the usage of FIDO2 security keys based on their Authenticator Attestation GUIDs (AAGUIDs). This capability allows administrators to require a FIDO2 security key from a specific manufacturer in order to access the resource. To require a specific FIDO2 security key, first complete the steps to create a [custom authentication strength](concept-authentication-strengths.md#custom-authentication-strengths). Then select **FIDO2 Security Key**, and click **Advanced options**. 
@@ -148,7 +164,6 @@ On the user’s device, sign in as an Administrator. Click **Run**, type certmgr
 
 ## Next steps
 
-- [Overview](concept-authentication-strengths.md)
-- [How authentication strength works](concept-authentication-strength-howitworks.md)
+- [Built-in Conditional Access authentication strengths](concept-authentication-strengths.md)
 - [How authentication strength works for external users](concept-authentication-strength-external-users.md)
 - [Troubleshoot authentication strengths](troubleshoot-authentication-strengths.md) 
