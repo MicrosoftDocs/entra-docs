@@ -6,7 +6,7 @@ services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/04/2024
+ms.date: 01/09/2024
 
 ms.author: justinha
 author: inbarckms
@@ -95,7 +95,7 @@ If a user from a federated domain has multifactor authentication settings in sco
 
 ## Next steps
 
-- [Overview](concept-authentication-strengths.md)
+- [Bult-in authentication strengths](concept-authentication-strengths.md)
+- [Custom authentication strengths](concept-authentication-strength-advanced-options.md)
 - [How authentication strength works for external users](concept-authentication-strength-external-users.md)
-- [FIDO2 and CBA advanced options](concept-authentication-strength-advanced-options.md)
 - [Troubleshoot authentication strengths](troubleshoot-authentication-strengths.md) 

@@ -90,24 +90,7 @@ The following API call can be used to list definitions of all the built-in authe
 GET https://graph.microsoft.com/beta/identity/conditionalAccess/authenticationStrengths/policies?$filter=policyType eq 'builtIn'
 ```
 
-### Custom authentication strengths
-
-Administrators can also create up to 15 of their own custom authentication strengths to exactly suit their requirements. A custom authentication strength can contain any of the supported combinations in the preceding table. 
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an Administrator.
-1. Browse to **Protection** > **Authentication methods** > **Authentication strengths**.
-1. Select **New authentication strength**.
-1. Provide a descriptive **Name** for your new authentication strength.
-1. Optionally provide a **Description**.
-1. Select any of the available methods you want to allow.
-1. Choose **Next** and review the policy configuration.
-
-   :::image type="content" border="true" source="media/concept-authentication-strengths/authentication-strength-custom.png" alt-text="Screenshot showing the creation of a custom authentication strength.":::
-
-#### Update and delete custom authentication strengths
-
-You can edit a custom authentication strength. If it's referenced by a Conditional Access policy, it can't be deleted, and you need to confirm any edit. 
-To check if an authentication strength is referenced by a Conditional Access policy, click the **Conditional Access policies** column.
+Conditional Access Administrators can also create custom authentication strengths to exactly suit their acceess requirements. For more information, see [Custom Conditional Acccess authentication strengths](concept-authentication-strength-advanced-options.md).
 
 ## Limitations
 
