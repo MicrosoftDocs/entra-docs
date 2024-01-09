@@ -39,7 +39,7 @@ The following sections show you how these features help you achieve this goal.
 
 ## Configure custom questions
 
-The custom questions feature for access packages in entitlement management allows an access package creator to configure questions that the reviewer answers as part of the request process. These questions are useful in situations where the answers can be different on each request, such as a business justification an external user would have for requiring access to the specific access package. They're held on the request object, but aren't available to applications except those that use MS Graph to query the request object. This feature allows reviewers to quickly approve, or reject, requests to resources.
+The custom questions feature for access packages in entitlement management allows an access package creator to configure questions that the reviewer answers as part of the request process. These questions are useful in situations where the answers can be different on each request, such as a business justification an external user would have for requiring access to the specific access package. They're held on the request object, but are only available to applications that use MS Graph to query the request object. This feature allows reviewers to quickly approve, or reject, requests to resources.
 
 :::image type="content" source="media/entitlement-management-onboard/requestor-information-question.png" alt-text="Screenshot of setting requestor information question in access package.":::
 
@@ -49,9 +49,9 @@ For a step by step guide on this process, see: [Add requestor information to an 
 
 ## Verified IDs
 
-The custom questions feature allows a requestor to answer questions during the request process for an access package, but you may require an additional layer of security before allowing the external user to access apps within the access package. With the verified IDs feature, you can require that requestors present a verified ID containing those credentials from a trusted issuer. This feature allows an approver to quickly view if the external user’s verifiable credentials were validated when the user presented their credentials within their access package request.
+The custom questions feature allows a requestor to answer questions during the request process for an access package, but you might require an extra layer of security before allowing the external user to access apps within the access package. With the verified IDs feature, you can require that requestors present a verified ID containing those credentials from a trusted issuer. This feature allows an approver to quickly view if the external user’s verifiable credentials were validated when the user presented their credentials within their access package request.
 
-:::image type="content" source="media/entitlement-management-verified-id-settings/select-issuer.png" alt-text="Screenshot showing pick issuer for Microsoft Entra Verified I D.":::
+:::image type="content" source="media/entitlement-management-verified-id-settings/select-issuer.png" alt-text="Screenshot showing pick issuer for Microsoft Entra Verified ID.":::
 
 For a step by step guide on this process, see: [Configure Verified ID settings for an access package in entitlement management](entitlement-management-verified-id-settings.md).
 
@@ -63,7 +63,7 @@ Configuring attributes is a similar experience as configuring custom questions, 
 
 :::image type="content" source="media/entitlement-management-onboard/specify-attributes.png" alt-text="Screenshot of specifying attribute that persists on user object.":::
 
-When an access package includes a resource configured for attribute collection, the external user is automatically asked for those values in addition to any custom questions specified for the access package itself. The information supplied for these attributes is also presented to the approver and is written into the requestor’s User object  if the request is approved. If your external users are only collaborating with Teams or SharePoint Online, you probably don't need attributes.
+When an access package includes a resource configured for attribute collection, the external user is automatically asked for those values in addition to any custom questions specified for the access package itself. The information supplied for these attributes is also presented to the approver, and is written into the requestor’s User object if the request is approved. If your external users are only collaborating with Teams or SharePoint Online, you probably don't need attributes.
 
 > [!NOTE]
 > The specify attributes feature is cloud only as you are unable to write attributes onto on-premises synched users.
