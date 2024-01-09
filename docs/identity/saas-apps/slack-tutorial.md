@@ -9,7 +9,7 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 
 ms.topic: tutorial
-ms.date: 08/11/2023
+ms.date: 01/09/2024
 ms.author: jeedes
 ---
 
@@ -82,7 +82,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, click the edit/pen icon for **Basic SAML Configuration** to edit the settings.
 
-   ![Edit Basic SAML Configuration](common/edit-urls.png)
+   ![Screenshot shows how to edit Basic SAML Configuration.](common/edit-urls.png "Basic Configuration")
 
 1. On the **Basic SAML Configuration** section, enter the values for the following fields:
 
@@ -107,24 +107,19 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. Slack application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
-	![image](common/edit-attribute.png)
+	![Screenshot shows the image of attributes configuration.](common/default-attributes.png "Image")
 
 1. In addition to above, Slack application expects few more attributes to be passed back in SAML response which are shown below. These attributes are also pre populated but you can review them as per your requirements.
 
-    | Name | Source Attribute |
-    | -----|---------|
-    | first_name | user.givenname |
-    | last_name | user.surname |
-    | User.Email | user.mail |
-    | User.Username | user.userprincipalname |
+    ![Screenshot of the Required Claims.](./media/slack-tutorial/claims.png "Required Claims")
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 
-	![The Certificate download link](common/certificatebase64.png)
+	![Screenshot shows the Certificate download link.](common/certificatebase64.png "Certificate")
 
 1. On the **Set up Slack** section, copy the appropriate URL(s) based on your requirement.
 
-	![Copy configuration URLs](common/copy-configuration-urls.png)
+	![Screenshot shows to copy configuration URLs.](common/copy-configuration-urls.png "Metadata")
 
 <a name='create-an-azure-ad-test-user'></a>
 
@@ -159,9 +154,6 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 1. In the **Add Assignment** dialog, click the **Assign** button.
 
 ## Configure Slack SSO
-
-
-
 
 1. In a different web browser window, sign in to your up Slack company site as an administrator
 
