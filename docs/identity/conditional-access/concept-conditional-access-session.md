@@ -2,18 +2,15 @@
 title: Session controls in Conditional Access policy
 description: What are session controls in a Microsoft Entra Conditional Access policy
 
-services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 03/28/2023
+ms.date: 01/09/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: calebb, vmahtani, ripull
-
-ms.collection: M365-identity-device-management
 ---
 # Conditional Access: Session
 
@@ -29,7 +26,7 @@ For a list of supported applications and how to configure policies, see the arti
 
 ## Conditional Access application control
 
-Conditional Access App Control uses a reverse proxy architecture and is uniquely integrated with Microsoft Entra Conditional Access. Microsoft Entra Conditional Access allows you to enforce access controls on your organization’s apps based on certain conditions. The conditions define what user or group of users, cloud apps, and locations and networks a Conditional Access policy applies to. After you’ve determined the conditions, you can route users to [Microsoft Defender for Cloud Apps](/defender-cloud-apps/what-is-defender-for-cloud-apps) where you can protect data with Conditional Access App Control by applying access and session controls.
+Conditional Access App Control uses a reverse proxy architecture and is uniquely integrated with Microsoft Entra Conditional Access. Microsoft Entra Conditional Access allows you to enforce access controls on your organization’s apps based on certain conditions. The conditions define what user or group of users, cloud apps, and locations and networks a Conditional Access policy applies to. After you determine the conditions, you can route users to [Microsoft Defender for Cloud Apps](/defender-cloud-apps/what-is-defender-for-cloud-apps) where you can protect data with Conditional Access App Control by applying access and session controls.
 
 Conditional Access App Control enables user app access and sessions to be monitored and controlled in real time based on access and session policies. Access and session policies are used within the Defender for Cloud Apps portal to refine filters and set actions to take. With the access and session policies, you can:
 
@@ -46,7 +43,7 @@ For more information, see the article [Deploy Conditional Access App Control for
 
 Sign-in frequency defines the time period before a user is asked to sign in again when attempting to access a resource. Administrators can select a period of time (hours or days) or choose to require reauthentication every time.
 
-Sign-in frequency setting works with apps that have implemented OAUTH2 or OIDC protocols according to the standards. Most Microsoft native apps for Windows, Mac, and Mobile including the following web applications follow the setting.
+Sign-in frequency setting works with apps that implement OAUTH2 or OIDC protocols according to the standards. Most Microsoft native apps for Windows, Mac, and Mobile including the following web applications follow the setting.
 
 - Word, Excel, PowerPoint Online
 - OneNote Online
