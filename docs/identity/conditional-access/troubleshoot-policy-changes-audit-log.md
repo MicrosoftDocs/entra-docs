@@ -2,31 +2,28 @@
 title: Troubleshoot Conditional Access policy changes
 description: Diagnose changes to Conditional Access policy with the Microsoft Entra audit logs.
 
-services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: troubleshooting
-ms.date: 12/02/2022
+ms.date: 01/03/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: calebb, martinco
-
-ms.collection: M365-identity-device-management
 ---
 # Troubleshooting Conditional Access policy changes
 
 The Microsoft Entra audit log is a valuable source of information when troubleshooting why and how Conditional Access policy changes happened in your environment.
 
-Audit log data is only kept for 30 days by default, which may not be long enough for every organization. Organizations can store data for longer periods by changing diagnostic settings in Microsoft Entra ID to: 
+Audit log data is only kept for 30 days by default, which might not be long enough for every organization. Organizations can store data for longer periods by changing diagnostic settings in Microsoft Entra ID to:
 
 - Send data to a Log Analytics workspace
 - Archive data to a storage account
 - Stream data to Event Hubs
 - Send data to a partner solution
- 
-Find these options under **Identity** > **Monitoring & health** > **Diagnostic settings** > **Edit setting**. If you don't have a diagnostic setting, follow the instructions in the article [Create diagnostic settings to send platform logs and metrics to different destinations](/azure/azure-monitor/essentials/diagnostic-settings) to create one. 
+
+Find these options under **Identity** > **Monitoring & health** > **Diagnostic settings** > **Edit setting**. If you don't have a diagnostic setting, follow the instructions in the article [Create diagnostic settings to send platform logs and metrics to different destinations](/azure/azure-monitor/essentials/diagnostic-settings) to create one.
 
 ## Use the audit log
 
@@ -35,7 +32,7 @@ Find these options under **Identity** > **Monitoring & health** > **Diagnostic s
 1. Select the **Date** range you want to query.
 1. From the **Service** filter, select **Conditional Access** and select the **Apply** button.
 
-    The audit logs display all activities, by default. Open the **Activity** filter to narrow down the activities. For a full list of the audit log activities for Conditional Access, see the [Audit log activities](~/identity/monitoring-health/reference-audit-activities.md#conditional-access).
+   The audit logs display all activities, by default. Open the **Activity** filter to narrow down the activities. For a full list of the audit log activities for Conditional Access, see the [Audit log activities](~/identity/monitoring-health/reference-audit-activities.md#conditional-access).
 
 1. Select a row to view the details. The **Modified Properties** tab lists the modified JSON values for the selected audit activity.
 
@@ -183,9 +180,9 @@ Updated policy example:
     "state": "enabled"
 }
 
-``` 
+```
 
-In the example above, the updated policy doesn't include terms of use in grant controls.
+In the previous example, the updated policy doesn't include terms of use in grant controls.
 
 ### Restoring Conditional Access policies
 

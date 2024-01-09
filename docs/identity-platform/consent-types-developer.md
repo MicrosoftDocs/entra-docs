@@ -9,16 +9,16 @@ ms.reviewer: jawoods, ludwignick, phsignor
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-#Customer intent:
+
+#Customer intent: As a developer building an application that requires user consent for accessing resources or APIs, I want to understand the different types of consent available (static, incremental, dynamic) and how to request permissions through consent, so that I can implement the appropriate consent approach in my application and provide a better user experience.
 ---
 # Requesting permissions through consent
 
-
-Applications in the Microsoft identity platform rely on consent in order to gain access to necessary resources or APIs. Different types of consent are better for different application scenarios. Choosing the best approach to consent for your app will help it be more successful with users and organizations. 
+Applications in the Microsoft identity platform rely on consent in order to gain access to necessary resources or APIs. Different types of consent are better for different application scenarios. Choosing the best approach to consent for your app will help it be more successful with users and organizations.
 
 In this article, you'll learn about the different types of consent and how to request permissions for your application through consent.
 
-## Static user consent 
+## Static user consent
 
 In the static user consent scenario, you must specify all the permissions it needs in the app's configuration in the Azure portal. If the user (or administrator, as appropriate) hasn't granted consent for this app, then Microsoft identity platform will prompt the user to provide consent at this time.
 
@@ -55,7 +55,6 @@ The `scope` parameter is a space-separated list of delegated permissions that th
 
 After the user enters their credentials, the Microsoft identity platform checks for a matching record of *user consent*. If the user hasn't consented to any of the requested permissions in the past, and if the administrator hasn't consented to these permissions on behalf of the entire organization, the Microsoft identity platform asks the user to grant the requested permissions.
 
-
 In the following example, the `offline_access` ("Maintain access to data you have given it access to") permission and `User.Read` ("Sign you in and read your profile") permission are automatically included in the initial consent to an application.  These permissions are required for proper application functionality. The `offline_access` permission gives the application access to refresh tokens that are critical for native apps and web apps. The `User.Read` permission gives access to the `sub` claim. It allows the client or application to correctly identify the user over time and access rudimentary user information.
 
 :::image type="content" source="./media/consent-types-developer/request-permissions-through-consent.png" alt-text="Example screenshot that shows work account consent." lightbox="./media/consent-framework/grant-consent.png":::
@@ -84,12 +83,12 @@ You can also configure permissions on your own resources to require admin consen
 
 Some organizations may change the default user consent policy for the tenant. When your application requests access to permissions they're evaluated against these policies. The user may need to request admin consent even when not required by default. To learn how administrators manage consent policies for applications, see [Manage app consent policies](~/identity/enterprise-apps/manage-app-consent-policies.md).
 
->[!NOTE] 
+>[!NOTE]
 >In requests to the authorization, token or consent endpoints for the Microsoft Identity platform, if the resource identifier is omitted in the scope parameter, the resource is assumed to be Microsoft Graph. For example, scope=User.Read is equivalent to `https://graph.microsoft.com/User.Read`.
 
 ### Admin Consent for Application permissions
 
-Application permissions always require admin consent. Application permissions don't have a user context and the consent grant isn't done on behalf of any specific user. Instead, the client application is granted permissions directly, these types of permissions are used only by daemon services and other non-interactive applications that run in the background. Administrators need to configure the permissions upfront and [grant admin consent](~/identity/enterprise-apps/grant-admin-consent.md) through the Azure portal. 
+Application permissions always require admin consent. Application permissions don't have a user context and the consent grant isn't done on behalf of any specific user. Instead, the client application is granted permissions directly, these types of permissions are used only by daemon services and other non-interactive applications that run in the background. Administrators need to configure the permissions upfront and [grant admin consent](~/identity/enterprise-apps/grant-admin-consent.md) through the Azure portal.
 
 ### Admin consent for Multi-tenant applications
 
@@ -103,11 +102,11 @@ Typically, when you build an application that requires admin consent, the applic
 
 - Part of the app's sign-up flow.
 - Part of the app's settings.
-- A dedicated "connect" flow. 
+- A dedicated "connect" flow.
 
 In many cases, it makes sense for the application to show the "connect" view only after a user has signed in with a work Microsoft account or school Microsoft account.
 
-When you sign the user into your app, you can identify the organization to which the admin belongs before you ask them to approve the necessary permissions. Although this step isn't strictly necessary, it can help you create a more intuitive experience for your organizational users. 
+When you sign the user into your app, you can identify the organization to which the admin belongs before you ask them to approve the necessary permissions. Although this step isn't strictly necessary, it can help you create a more intuitive experience for your organizational users.
 
 To sign the user in, follow the [Microsoft identity platform protocol tutorials](./v2-protocols.md).
 
@@ -122,7 +121,8 @@ In general, the permissions should be statically defined for a given application
 
 To configure the list of statically requested permissions for an application:
 
-1. Go to your application in the <a href="https://go.microsoft.com/fwlink/?linkid=2083908" target="_blank">Azure portal - App registrations</a> quickstart experience.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
+1. Browse to **Identity** > **Applications** > **App registrations** > **All applications**.
 1. Select an application, or [create an app](quickstart-register-app.md) if you haven't already.
 1. On the application's **Overview** page, under **Manage**, select **API Permissions** > **Add a permission**.
 1. Select **Microsoft Graph** from the list of available APIs. Then add the permissions that your application requires.
@@ -143,6 +143,7 @@ GET http://localhost/myapp/permissions?tenant=a8990e1f-ff32-408a-9f8e-78d3b9139b
 | `admin_consent` | Will be set to `True`. |
 
 After you've received a successful response from the admin consent endpoint, your application has gained the permissions it requested. Next, you can request a token for the resource you want.
+
 #### Error response
 
 If the admin doesn't approve the permissions for your app, the failed response looks like this:

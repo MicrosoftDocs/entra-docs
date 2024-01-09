@@ -11,7 +11,8 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: how-to
 titleSuffix: Microsoft identity platform
-#Customer intent: As an application developer, I want to source claims from a data store that is external to Microsoft Entra ID.
+
+#Customer intent: As an app administrator, I want to configure a SAML application to receive tokens with claims from an external store, so that I can enrich tokens for existing or new applications using a custom claims provider.
 ---
 
 # Configure a SAML app to receive tokens with claims from an external store (preview)
