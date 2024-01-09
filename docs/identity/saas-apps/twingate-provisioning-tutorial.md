@@ -154,15 +154,15 @@ The default setting is **No** which allows users to log into twingate without be
 
 1. Click on **Properties**.
 
-    ![Provisioning Scope](common/properties.png)
+   ![Properties](common/properties.png)
 
 2. Set **Assignment required** to **Yes**
 
-   ![Provisioning Scope](common/properties-assignment-required.png)
+   ![Properties assignment](common/properties-assignment-required.png)
 
 3. Click on **Save**
 
-   ![Provisioning Scope](common/properties-save.png)
+   ![Properties save](common/properties-save.png)
 
 ## Step 7: Monitor your deployment
 Once you've configured provisioning, use the following resources to monitor your deployment:
