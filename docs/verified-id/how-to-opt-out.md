@@ -54,4 +54,4 @@ All verifiable credentials already issued continue to exist. For the ION trust s
 
 ## Next steps
 
-- Set up verifiable credentials on your [Azure tenant](verifiable-credentials-configure-tenant.md)
+- Set up verifiable credentials on your [Azure tenant](verifiable-credentials-configure-tenant.md).
