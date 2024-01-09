@@ -148,7 +148,23 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 This operation starts the initial synchronization cycle of all users and groups defined in **Scope** in the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running.
 
-## Step 6: Monitor your deployment
+
+## Step 6: Change Assignment required setting
+The default setting is **No** which allows users to log into twingate without being assigned in the enterprise application.
+
+1. Click on **Properties**.
+
+    ![Provisioning Scope](common/properties.png)
+
+2. Set **Assignment required** to **Yes**
+
+   ![Provisioning Scope](common/properties-assignment-required.png)
+
+3. Click on **Save**
+
+   ![Provisioning Scope](common/properties-save.png)
+
+## Step 7: Monitor your deployment
 Once you've configured provisioning, use the following resources to monitor your deployment:
 
 1. Use the [provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md) to determine which users have been provisioned successfully or unsuccessfully
