@@ -23,12 +23,9 @@ Within a Conditional Access policy, an administrator can make use of session con
 
 ## Application enforced restrictions
 
-Organizations can use this control to require Microsoft Entra ID to pass device information to the selected cloud apps. The device information allows cloud apps to know if a connection is from a compliant or domain-joined device and update the session experience. This control only supports Office 365, SharePoint Online, and Exchange Online as selected cloud apps. When selected, the cloud app uses the device information to provide users with a limited or full experience. Limited when the device isn't managed or compliant and full when the device is managed and compliant.
+Organizations can use this control to require Microsoft Entra ID to pass device information to the selected cloud apps. The device information allows cloud apps to know if a connection is from a compliant or domain-joined device and update the session experience.  When selected, the cloud app uses the device information to provide users with a limited or full experience. Limited when the device isn't managed or compliant and full when the device is managed and compliant.
 
-For more information on the use and configuration of app-enforced restrictions, see the following articles:
-
-- [Enabling limited access with SharePoint Online](/sharepoint/control-access-from-unmanaged-devices)
-- [Enabling limited access with Exchange Online](/microsoft-365/security/office-365-security/secure-email-recommended-policies?view=o365-worldwide&preserve-view=true#limit-access-to-exchange-online-from-outlook-on-the-web)
+For a list of supported applications and how to configure policies, see the article [Idle session timeout for Microsoft 365](/microsoft-365/admin/manage/idle-session-timeout-web-apps#details-about-idle-session-timeout).
 
 ## Conditional Access application control
 
