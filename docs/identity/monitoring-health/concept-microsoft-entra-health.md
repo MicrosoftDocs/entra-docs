@@ -37,7 +37,7 @@ Enabling preview feature might take up to 24 hours to populate. Enabling the pre
 
 ## SLA attainment
 
-In addition to providing global SLA performance, Microsoft Entra ID now provides tenant-level SLA performance. The Service Level Agreement (SLA) attainment is the user authentication availability for Microsoft Entra ID. The target SLA threshold is 99.99%.
+In addition to providing global SLA performance, Microsoft Entra ID now provides tenant-level SLA performance for organizations with at least 5000 monthly active users. The Service Level Agreement (SLA) attainment is the user authentication availability for Microsoft Entra ID. For the current availability target and details on how SLA is calculated, see [SLA for Microsoft Entra ID](https://azure.microsoft.com/support/legal/sla/active-directory/v1_1/).
 
 Hover your mouse over the bar for a month to view the percentage for that month. A table with the same details appears below the graph.
 
