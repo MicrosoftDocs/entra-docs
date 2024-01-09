@@ -87,13 +87,16 @@ There are six categories of profile details you may be able to edit.
 
 ## Guidance on user name properties
 
-Microsoft Entra ID provides several field for specifying full and partial names, departments, and titles. In general, we recommend treating every name-related field in Microsoft Entra ID as user-visible data that Microsoft and third-party apps might use in different contexts. Name fields in Microsoft Entra ID should represent the users's preferred name that can be reflected through all Microsoft products.
+Microsoft Entra ID provides several fields for specifying full and partial names, departments, and titles. In general, we recommend treating every name-related field in Microsoft Entra ID as user-visible data that Microsoft and third-party apps might use in different contexts. Name fields in Microsoft Entra ID should represent the users's preferred name that can be reflected through all Microsoft products.
 
 Use the following tips when adding and editing the name properties of a user:
 
-- Ensure the first and last name are names the user would expect to see on their user profile, such as the profile card in Microsoft 365 applications.
-- Use the **display name** field to accommodate the organization's approach or policy for displaying names. Don't use this field as an alternative name for the user, which can lead to an inconsistent representation of the user across those products where first and last name are used and those products where display name is used.
-- We recommend storing legal names or sensitive non-shareable information in a human capital management (HCM) system. This system should be the source of truth for the user's legal name, with appropriate access controls change management workflows, and safeguards.
+- Ensure the first and last name are names the user would expect to see on their user profile, such as the profile card in Microsoft 365 applications or in meeting transcriptions.
+- Use the **display name** field to accommodate your organization's approach or policy for displaying names.
+- Don't use the **display name** field as an alternative name for the user, which can lead to an inconsistent representation of the user across those products where first and last name are used and those products where display name is used.
+- We recommend storing legal names or sensitive non-shareable information in a human capital management (HCM) system.
+  - This system should be the source of truth for the user's legal name, with appropriate access controls change management workflows, and safeguards.
+  - Data from your organization's HCM system can be synced to Microsoft Entra ID using HR driven provisioning. For more information, see [What is HR driven provisioning](../identity/app-provisioning/what-is-hr-driven-provisioning.md).
 
 ### Add or edit the profile picture
 
