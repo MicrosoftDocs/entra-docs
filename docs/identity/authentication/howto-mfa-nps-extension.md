@@ -334,7 +334,7 @@ The [Microsoft Entra multifactor authentication NPS Extension health check scrip
 
 ### How to fix the error "Service principal was not found" while running `AzureMfaNpsExtnConfigSetup.ps1` script? 
 
-If for any reason the "Azure multifactor authentication Client" service principal was not created in the tenant, it can be manually created by running the `New-MsolServicePrincipal` cmdlet as shown below. 
+If for any reason the "Azure multifactor authentication Client" service principal was not created in the tenant, it can be manually created by running PowerShell. 
 
 ```powershell
 Connect-MgGraph -Scopes 'Application.ReadWrite.All'
