@@ -161,13 +161,13 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 	b. Copy the **ShareFile Issuer/ Entity ID** value and paste it into the **Identifier URL** box in the **Basic SAML Configuration** dialog box.
 	
-	c. In **Your IDP Issuer/ Entity ID** textbox, paste the value of **Microsoft Entra Identifier**..
+	c. In **Your IDP Issuer/ Entity ID** textbox, paste the value of **Microsoft Entra Identifier**.
 
 	d. Open the downloaded **Certificate (Base64)** into Notepad and paste the content into the **X.509 Certificate** textbox by clicking **Change** button.
 	
-	e. In **Login URL** textbox, paste the value of **Login URL**..
+	e. In **Login URL** textbox, paste the value of **Login URL**.
 	
-	f. In **Logout URL** textbox, paste the value of **Logout URL**..
+	f. In **Logout URL** textbox, paste the value of **Logout URL**.
 
 	g. In the **Optional Settings**, choose **SP-Initiated Auth Context** as **User Name and Password** and **Exact**.
 
