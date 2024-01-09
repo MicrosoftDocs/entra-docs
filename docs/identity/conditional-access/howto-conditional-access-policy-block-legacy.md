@@ -33,7 +33,7 @@ The following steps will help create a Conditional Access policy to block legacy
 1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
 1. Under **Assignments**, select **Users or workload identities**.
    1. Under **Include**, select **All users**.
-   1. Under **Exclude**, select **Users and groups** and choose any accounts that must maintain the ability to use legacy authentication.
+   1. Under **Exclude**, select **Users and groups** and choose any accounts that must maintain the ability to use legacy authentication. Microsoft recommends you exclude at least one account to prevent yourself from being locked out.
 1. Under **Target resources** > **Cloud apps** > **Include**, select **All cloud apps**.
 1. Under **Conditions** > **Client apps**, set **Configure** to **Yes**.
    1. Check only the boxes **Exchange ActiveSync clients** and **Other clients**.
