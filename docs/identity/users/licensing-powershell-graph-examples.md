@@ -370,6 +370,7 @@ else {
 
 To learn more about the feature set for license management through groups, see the following articles:
 
+* [Upgrade from Azure AD PowerShell to Microsoft Graph PowerShell](/powershell/microsoftgraph/migration-steps)
 * [What is group-based licensing in Microsoft Entra ID?](~/fundamentals/concept-group-based-licensing.md)
 * [Assigning licenses to a group in Microsoft Entra ID](./licensing-groups-assign.md)
 * [Identifying and resolving license problems for a group in Microsoft Entra ID](licensing-groups-resolve-problems.md)
