@@ -45,7 +45,7 @@ The sign-in frequency setting works with apps that implement OAuth2 or OIDC prot
 * Dynamics CRM Online
 * Azure portal
 
-As part of the January 2024 public preview sign-in frequency works with third-party SAML applications and apps that implement OAuth2 or OIDC protocols, as long as they don't drop their own cookies and are redirected back to Microsoft Entra ID for authentication on regular basis.
+Sign-in frequency (SIF) works with third-party SAML applications and apps that implement OAuth2 or OIDC protocols, as long as they don't drop their own cookies and are redirected back to Microsoft Entra ID for authentication on regular basis.
 
 ### User sign-in frequency and multifactor authentication
 
