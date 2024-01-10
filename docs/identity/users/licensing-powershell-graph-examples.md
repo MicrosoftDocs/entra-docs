@@ -18,8 +18,9 @@ ms.author: barclayn
 
 # Microsoft Graph PowerShell group-based licensing examples
 
-Group-based licensing in Microsoft Entra ID, part of Microsoft Entra, is available through the [Azure portal](https://portal.azure.com), and currently there are some useful tasks that can be performed using [Microsoft Graph PowerShell Cmdlets](/powershell/microsoftgraph/get-started). In this article, we go over some examples using Microsoft Graph PowerShell.
+Group-based licensing in Microsoft Entra ID, part of Microsoft Entra, is available through the [Azure portal](https://portal.azure.com). There are useful tasks that can be performedusing [Microsoft Graph PowerShell Cmdlets](/powershell/microsoftgraph/get-started). 
 
+In this article, we go over some examples using Microsoft Graph PowerShell.
 
 [!INCLUDE [Azure AD PowerShell migration](../../includes/aad-powershell-migration-include.md)]
 
