@@ -56,6 +56,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity/saas-apps/adobe-identity-management-provisioning-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/adobe-identity-management-provisioning-saml-tutorial",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/saas-apps/querylayer-tutorial.md",
       "redirect_url": "/entra/identity/saas-apps/trustworks-tutorial",
       "redirect_document_id": false

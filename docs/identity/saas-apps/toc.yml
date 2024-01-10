@@ -3120,8 +3120,8 @@
       items:
       - name: Acunetix 360
         href: acunetix-360-provisioning-tutorial.md
-      - name: Adobe Identity Management
-        href: adobe-identity-management-provisioning-tutorial.md
+      - name: Adobe Identity Management (SAML)
+        href: adobe-identity-management-provisioning-saml-tutorial.md
       - name: Adobe Identity Management (OIDC)
         href: adobe-identity-management-provisioning-oidc-tutorial.md
       - name: Airbase
