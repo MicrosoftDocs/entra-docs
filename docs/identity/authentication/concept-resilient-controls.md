@@ -60,7 +60,7 @@ To unlock admin access to your tenant, you should create emergency access accoun
 
 Incorporate the following access controls in your existing Conditional Access policies for organization:
 
-- Provision multiple authentication methods for each user that rely on different communication channels, for example the Microsoft Authenticator app (internet-based), OATH token (generated on-device), and SMS (telephonic). The following PowerShell script will help you identify in advance, which additional methods your users should register: [Script for Microsoft Entra multifactor authentication authentication method analysis](/samples/azure-samples/azure-mfa-authentication-method-analysis/azure-mfa-authentication-method-analysis/).
+- Provision multiple authentication methods for each user that rely on different communication channels, for example the Microsoft Authenticator app (internet-based), OATH token (generated on-device), and SMS (telephonic).
 - Deploy Windows Hello for Business on Windows 10 devices to satisfy MFA requirements directly from device sign-in.
 - Use trusted devices via [Microsoft Entra hybrid join](~/identity/devices/overview.md) or [Microsoft Intune](/mem/intune/fundamentals/intune-planning-guide). Trusted devices will improve user experience because the trusted device itself can satisfy the strong authentication requirements of policy without an MFA challenge to the user. MFA will then be required when enrolling a new device and when accessing apps or resources from untrusted devices.
 - Use Microsoft Entra ID Protection risk-based policies that prevent access when the user or sign-in is at risk in place of fixed MFA policies.
@@ -261,7 +261,7 @@ Undo the changes you made as part of the activated contingency plan once the ser
 3. Roll back any other changes you made and documented during the disruption.
 4. If you used an emergency access account, remember to regenerate credentials and physically secure the new credentials details as part of your emergency access account procedures.
 5. Continue to [Triage all risk detections reported](~/identity/monitoring-health/concept-sign-ins.md) after the disruption for suspicious activity.
-6. Revoke all refresh tokens that were issued [using PowerShell](/powershell/module/azuread/revoke-azureaduserallrefreshtoken) to target a set of users. Revoking all refresh tokens is important for privileged accounts used during the disruption and doing it will force them to reauthenticate and meet the control of the restored policies.
+6. [Revoke all refresh tokens](~/identity/users/users-revoke-access.md) that were issued to target a set of users. Revoking all refresh tokens is important for privileged accounts used during the disruption and doing it will force them to reauthenticate and meet the control of the restored policies.
 
 ## Emergency options
 
