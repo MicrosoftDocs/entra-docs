@@ -18,7 +18,7 @@ ms.author: barclayn
 
 # Microsoft Graph PowerShell group-based licensing examples
 
-Group-based licensing in Microsoft Entra ID, part of Microsoft Entra, is available through the [Azure portal](https://portal.azure.com), and currently there are some useful tasks that can be performed using the existing [Microsoft Graph PowerShell cmdlets](/powershell/microsoftgraph/azuread-msoline-cmdlet-map) and Microsoft Graph. This document provides examples of what is possible.
+Group-based licensing in Microsoft Entra ID, part of Microsoft Entra, is available through the [Azure portal](https://portal.azure.com), and currently there are some useful tasks that can be performed using [Microsoft Graph PowerShell Cmdlets](/powershell/microsoftgraph/get-started). In this article, we go over some examples using Microsoft Graph PowerShell.
 
 
 [!INCLUDE [Azure AD PowerShell migration](../../includes/aad-powershell-migration-include.md)]
@@ -28,6 +28,8 @@ Group-based licensing in Microsoft Entra ID, part of Microsoft Entra, is availab
 
 > [!WARNING]
 > These samples are provided for demonstration purposes only. We recommend testing them on a smaller scale or in a separate test environment before relying on them in your production environment. You may also need to modify the samples to meet your specific environment's requirements.
+
+Before you begin running cmdlets, make sure you connect to your organization first, by running the `Connect-MgGraph` cmdlet-.
 
 ## Assign licenses to a group
 
@@ -63,7 +65,8 @@ Set-MgGroupLicense -GroupId $groupId -BodyParameter $params
 
 
 ```powershell
-(Get-MgGroup -GroupId 99c4216a-56de-42c4-a4ac-1111cd8c7c41 -Property "AssignedLicenses" | Select-Object -ExpandProperty AssignedLicenses).SkuId
+Get-MgGroup -GroupId 99c4216a-56de-42c4-a4ac-1111cd8c7c41 -Property "AssignedLicenses" |
+    Select-Object -ExpandProperty AssignedLicenses.SkuId 
 
 ```
 
@@ -71,7 +74,11 @@ Set-MgGroupLicense -GroupId $groupId -BodyParameter $params
 
 
 ```powershell
-(Get-MgGroup -GroupId 99c4216a-56de-42c4-a4ac-1111cd8c7c41 -Property "AssignedLicenses" | Select-Object -DisabledServicePlans AssignedLicenses).SkuId
+Get-MgGroup -GroupId 1ad75eeb-7e5a-4367-a493-9214d90d54d0 -Property "AssignedLicenses" | 
+    Select-Object -ExpandProperty AssignedLicenses |
+    ForEach-Object {
+        $_ | Select-Object SkuId, DisabledPlans
+    }
 
 ```
 
