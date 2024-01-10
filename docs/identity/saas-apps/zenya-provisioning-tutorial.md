@@ -1,6 +1,6 @@
 ---
 title: 'Tutorial: Configure Zenya for automatic user provisioning with Microsoft Entra ID'
-description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Zenya.
+description: Learn how to configure Microsoft Entra ID to automatically provision and deprovision user accounts to Zenya.
 
 author: twimmers
 writer: twimmers
@@ -15,7 +15,7 @@ ms.author: thwimmer
 
 # Tutorial: Configure Zenya for automatic user provisioning
 
-The objective of this tutorial is to demonstrate the steps to be performed in Zenya and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to [Zenya](https://www.infoland.nl/). For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). Before you attempt to use this tutorial, be sure that you know and meet all requirements. If you have questions, contact Infoland.
+The objective of this tutorial is to demonstrate the steps to be performed in Zenya and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and deprovision users and/or groups to [Zenya](https://www.infoland.nl/). For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). Before you attempt to use this tutorial, be sure that you know and meet all requirements. If you have questions, contact Infoland.
 
 ## Capabilities supported
 > * Create users in Zenya
