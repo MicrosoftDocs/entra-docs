@@ -73,7 +73,7 @@ On Microsoft Entra joined and Microsoft Entra hybrid joined devices, unlocking t
 * At 02:45, the user returns from their break and unlocks the device. The background upload shows completion.
 * At 02:45, the user is prompted to sign in when they interact again. This prompt is based on the sign-in frequency requirement in the Conditional Access policy configured by their administrator since the last sign-in happened at 00:00.
 
-If the client app (under activity details) is a Browser, we defer sign in frequency enforcement of events/policies on background services until the next user interaction.
+If the client app (under activity details) is a browser, we defer sign in frequency enforcement of events/policies on background services until the next user interaction. On confidential clients, sign-in frequency enforcement on non-interactive sign-ins is deferred until the next interactive sign-in.
 
 #### Example 3: With four hour refresh cycle of primary refresh token from unlock
 
