@@ -196,8 +196,6 @@ The default specific parameters for the **Post-Offboarding of an employee** temp
 |---------|---------|---------|
 |Category     |  Leaver       |  ❌       |
 |Trigger Type     | Trigger and Scope Based        |  ❌       |
-|Days from event     | 7        | ✔️        |
-|Event timing     | After        |  ❌       |
 |Event User attribute     | employeeLeaveDateTime      |   ❌      |
 |Scope type     | Rule based        | ❌        |
 |Execution condition     | (department eq 'Marketing')        |  ✔️       |
@@ -206,13 +204,36 @@ The default specific parameters for the **Post-Offboarding of an employee** temp
 
 ### Employee group membership changes
 
+The **Employee group membership changes** template is designed to configure tasks that will be completed when an employees has a change in a group membership.
+
+The default specific parameters for the **Employee group membership changes** template are as follows:
+
+|Parameter  |Description  |Customizable  |
+|---------|---------|---------|
+|Category     |  mover       |  ❌       |
+|Trigger Type     | Membership change trigger        |  ❌       |
+|Event User attribute     | employeeLeaveDateTime      |   ❌      |
+|Scope type     | Rule based        | ❌        |
+|Execution condition     | (department eq 'Marketing')        |  ✔️       |
+|Tasks     | **Remove access package assignment for user**, **Remove user from all Teams**, **Send email to notify manager of user move**     |  ✔️       |
 
 ### Employee job profile change
+
+The **Employee job profile change** template is designed to configure tasks that will be completed when an employees has a change in job title.
+
+The default specific parameters for the **Employee job profile change** template are as follows:
+
+|Parameter  |Description  |Customizable  |
+|---------|---------|---------|
+|Category     |  mover       |  ❌       |
+|Trigger Type     | Trigger and Scope Based        |  ❌       |
+|Event User attribute     | employeeLeaveDateTime      |   ❌      |
+|Scope type     | Rule based        | ❌        |
+|Execution condition     | (department eq 'Marketing')        |  ✔️       |
+|Tasks     | **Send email to notify manager of user move**, **Remove user from selected groups**, **Remove user from selected Teams**, **Request user access package assignment**    |  ✔️       |
 
 ## Next steps
 
 - [workflowTemplate resource type](/graph/api/resources/identitygovernance-workflowtemplate?view=graph-rest-beta&preserve-view=true)
 - [Lifecycle Workflow tasks and definitions](lifecycle-workflow-tasks.md)
 - [Create a Lifecycle workflow](create-lifecycle-workflow.md)
-
-
