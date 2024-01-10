@@ -54,6 +54,10 @@ Identity related **NuGet packages** must be installed in the project for authent
 1. In the pop-up, ensure the correct project is selected, then select **Ok**.
 1. Select **Accept** if additional **License Acceptance** windows appear.
 
+>[!NOTE]
+> Visual Studio for Mac is scheduled for retirement by August 31, 2024 in accordance with Microsoft’s [Modern Lifecycle Policy](/lifecycle/policies/modern). Visual Studio for Mac 17.6 will continue to be supported until August 31, 2024, with servicing updates for security issues and updated platforms from Apple.
+> Refer to [What's happening to Visual Studio for Mac](/visualstudio/mac/what-happened-to-vs-for-mac) for more information.
+
 ---
 
 ## Implement authentication and acquire tokens

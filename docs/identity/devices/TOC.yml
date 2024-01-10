@@ -85,8 +85,11 @@
     href: faq.yml
   - name: Troubleshoot SSO on Apple devices
     href: troubleshoot-mac-sso-extension-plugin.md
+<<<<<<< HEAD
   - name: Troubleshoot macOS PSSO on Mac
     href: troubleshoot-macos-platform-single-sign-on-extension.md
+=======
+>>>>>>> 4bb2136bfab5e82576170d46753980230871c582
   - name: Enterprise state roaming
     expanded: false
     items:
