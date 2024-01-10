@@ -155,7 +155,6 @@ For more information (in dutch) also read: [`Implementatie SCIM koppeling`](http
 
 This operation starts the initial synchronization of all users and/or groups defined in **Scope** in the **Settings** section. The initial sync takes longer to perform than subsequent syncs, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. 
 
-
 ## Step 6: Monitor your deployment
 Once you've configured provisioning, use the following resources to monitor your deployment:
 
@@ -165,7 +164,8 @@ Once you've configured provisioning, use the following resources to monitor your
 
 ## Change log
 
-* 06/17/2020 - Enterprise extension attribute "Manager" has been removed.
+* 06/17/2020 - Removed support for enterprise extension attribute **urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager**.
+* 10/11/2023 - Added support for core attribute **title** and added support for enterprise extension attributes **urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department** and **urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager**.
 
 ## Additional resources
 
