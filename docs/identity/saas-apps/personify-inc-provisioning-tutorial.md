@@ -80,9 +80,9 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
 
-1. In the **Admin Credentials** section, enter the **Tenant Url** and then click on Authorize, make sure that you enter your Personify Inc account's Admin credentials. Click **Test Connection** to ensure Microsoft Entra ID can connect to Personify Inc. If the connection fails, ensure your Personify Inc account has Admin permissions and try again.
+1. Under the **Admin Credentials** section, input your Personify Inc Tenant URL and Secret Token. Click **Test Connection** to ensure Microsoft Entra ID can connect to Personify Inc. If the connection fails, ensure your Personify Inc account has Admin permissions and try again.
 
- 	![Screenshot of Token.](media/Personify Inc-provisioning-tutorial/authorize.png)
+ 	![Screenshot of Token.](common/provisioning-testconnection-tenanturltoken.png)
 
 1. In the **Notification Email** field, enter the email address of a person who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
 
