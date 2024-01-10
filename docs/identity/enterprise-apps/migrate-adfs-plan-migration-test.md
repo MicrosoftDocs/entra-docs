@@ -12,6 +12,8 @@ ms.date: 05/30/2023
 ms.author: jomondi
 ms.reviewer: gasinh
 ms.collection: M365-identity-device-management
+
+#customer intent: As an IT admin responsible for migrating applications to Microsoft Entra authentication, I want to use the migration tools and guidance provided, so that I can follow the precise steps needed to migrate the applications successfully.
 ---
 # Phase 3: Plan migration and testing
 

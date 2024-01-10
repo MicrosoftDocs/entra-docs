@@ -186,7 +186,7 @@ You can also view and update catalog creators and entitlement management catalog
 For example, to view the entitlement management-specific roles that a particular user or group has been assigned, use the Graph query to list role assignments, and provide the user or group's ID as the value of the `principalId` query filter, as in
 
 ```http
-GET https://graph.microsoft.com/beta/roleManagement/entitlementManagement/roleAssignments?$filter=principalId eq '10850a21-5283-41a6-9df3-3d90051dd111'&$expand=roleDefinition&$select=id,appScopeId,roleDefinition
+GET https://graph.microsoft.com/v1.0/roleManagement/entitlementManagement/roleAssignments?$filter=principalId eq '10850a21-5283-41a6-9df3-3d90051dd111'&$expand=roleDefinition&$select=id,appScopeId,roleDefinition
 ```
 
 For a role that is specific to a catalog, the `appScopeId` in the response indicates the catalog in which the user is assigned a role.  This response only retrieves explicit assignments of that principal to role in entitlement management, it doesn't return results for a user who has access rights via a directory role, or through membership in a group assigned to a role.

@@ -10,7 +10,7 @@ ms.reviewer: jeedes
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: how-to
-#Customer intent:
+#Customer intent: As a developer, I want to understand the requirements for listing a standalone SaaS application on Microsoft AppSource, so that I business users can discover, try, and manage my line-of-business SaaS application.
 ---
 
 # Get AppSource certified for Microsoft Entra ID

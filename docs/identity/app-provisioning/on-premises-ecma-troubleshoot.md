@@ -169,6 +169,7 @@ The provisioning service automatically discovers attributes in your target appli
 
  1. Review the **Select Attributes** page of your ECMA host configuration to check that the attribute has been selected, so that it will be exposed to the Azure portal.
  1. Ensure that the ECMA host service is running.
+ 1. After assigning the agent(s) to the enterprise application, completing the test connection step, and saving the admin credentials, refresh the browser. This will force the provisioning service to make a /schemas request and discover the target attributes. 
  1. Review the ECMA host logs to check that a /schemas request was made, and review the attributes in the response. This information will be valuable for support to troubleshoot the issue.
 
 ## Collect logs from Event Viewer as a zip file

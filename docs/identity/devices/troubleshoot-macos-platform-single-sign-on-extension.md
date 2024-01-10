@@ -10,12 +10,12 @@ ms.date: 11/03/2023
 ms.author: cwerner
 author: cilwerner
 manager: CelesteDG
-ms.reviewer: brianmel
+ms.reviewer: brianmel, miepping
 ---
 
 # MacOS Platform single sign-on known issues and troubleshooting (preview)
 
-This article outlines the current known issues with macOS Platform single sign-on (PSSO) that can be encountered. It provides issue solutions and information on how to report an issue that isn't covered. This article also includes troubleshooting guidance.
+This article outlines the current known issues and common questions with macOS Platform single sign-on (PSSO). It provides issue solutions and information on how to report an issue that isn't covered. This article also includes troubleshooting guidance.
 
 ## Scenarios to validate
 
@@ -55,6 +55,12 @@ If you deregistered your device as a result of an error, and need to re-register
 ### Device migration
 
 Confirm that a previously registered device (with a Workplace Join key in Keychain Access) removes the key after successful PSSO device registration.
+
+## Frequently asked questions
+
+### Can I use macOS PSSO in a hybrid-join deployment?
+
+No, macOS PSSO is only supported in Microsoft Entra join deployments. There are no plans to support hybrid-join deployments, as we recommend that Mac users to go fully cloud based.
 
 ## Known issues
 

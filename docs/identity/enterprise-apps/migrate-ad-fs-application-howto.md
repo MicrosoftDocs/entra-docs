@@ -12,6 +12,8 @@ ms.date: 10/26/2023
 ms.author: jomondi
 ms.reviewer: smriti3
 ms.custom: not-enterprise-apps
+
+#customer intent: As an IT admin currently using AD FS to access applications, I want to migrate my AD FS applications to Microsoft Entra ID using the AD FS application migration wizard, so that I can have a unified experience to discover, evaluate, and configure new Microsoft Entra applications.
 ---
 
 # Use AD FS application migration (preview) to move AD FS apps to Microsoft Entra ID

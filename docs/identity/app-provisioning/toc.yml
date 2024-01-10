@@ -29,6 +29,8 @@ items:
         href: on-premises-sql-connector-configure.md
       - name: Provisioning to LDAP based apps
         href: on-premises-ldap-connector-configure.md
+      - name: Provisioning to LDAP for Linux auth
+        href: on-premises-ldap-connector-linux.md
       - name: Provisioning to PowerShell based apps
         href: on-premises-powershell-connector.md
       - name: Provisioning with the web services connector

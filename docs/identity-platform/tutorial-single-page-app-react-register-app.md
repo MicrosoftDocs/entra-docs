@@ -4,7 +4,8 @@ description: Register an application in a Microsoft Entra tenant.
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.date: 02/27/2023
+ms.date: 12/13/2023
+ms.reviewer: EmLauber
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: tutorial
@@ -18,6 +19,7 @@ To interact with the Microsoft identity platform, Microsoft Entra ID must be mad
 In this tutorial:
 
 > [!div class="checklist"]
+>
 > * Register the application in a tenant
 > * Add a Redirect URI to the application
 > * Record the application's unique identifiers
@@ -32,26 +34,11 @@ In this tutorial:
 
 ## Register the application and record identifiers
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
+[!INCLUDE [Register a single-page application](./includes/register-app/spa-common/register-application-spa-common.md)]
 
-To complete registration, provide the application a name, specify the supported account types, and add a redirect URI. Once registered, the application **Overview** pane displays the identifiers needed in the application source code.
+## Add a platform redirect URI
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
-1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the tenant in which you want to register the application from the **Directories + subscriptions** menu.
-1. Browse to **Identity** > **Applications** > **App registrations**, select **New registration**.
-1. Enter a **Name** for the application, such as *NewSPA1*.
-1. For **Supported account types**, select **Accounts in this organizational directory only**. For information on different account types, select the **Help me choose** option.
-1. Under **Redirect URI (optional)**, use the drop-down menu to select **Single-page-application (SPA)** and enter `http://localhost:3000` into the text box.
-1. Select **Register**.
-
-    :::image type="content" source="./media/single-page-app-tutorial-01-register-app/register-application.png" alt-text="Screenshot that shows how to enter a name and select the account type in the Azure portal.":::
-
-1. The application's **Overview** pane is displayed when registration is complete. Record the **Directory (tenant) ID** and the **Application (client) ID** to be used in your application source code.
-
-    :::image type="content" source="./media/single-page-app-tutorial-01-register-app/record-identifiers.png" alt-text="Screenshot that shows the identifier values on the overview page on the Azure portal.":::
-
-    >[!NOTE]
-    > The **Supported account types** can be changed by referring to [Modify the accounts supported by an application](howto-modify-supported-accounts.md).
+[!INCLUDE [Add a platform redirect URI](./includes/register-app/spa-common/add-platform-redirect-spa-port-3000.md)]
 
 ## Next steps
 

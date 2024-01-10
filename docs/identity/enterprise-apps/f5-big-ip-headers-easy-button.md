@@ -12,6 +12,8 @@ ms.date: 03/27/2023
 ms.author: gasinh
 ms.collection: M365-identity-device-management
 ms.custom: not-enterprise-apps
+
+#customer intent: As an IT administrator, I want to configure F5 BIG-IP Easy Button for header-based SSOLearn, so that I can secure header-based applications with Microsoft Entra ID and improve Zero Trust governance through preauthentication and Conditional Access.
 ---
 
 # Tutorial: Configure F5 BIG-IP Easy Button for header-based SSO

@@ -85,7 +85,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://beatrust.com`
 
     b. In the **Reply URL** text box, type the URL:
-    `https://auth.beatrust.com/__/auth/handler`
+    `https://beatrust.com/__/auth/handler`
 
     c. In the **Sign-on URL** text box, type a URL using  of the following pattern:
     `https://beatrust.com/<org_key>

@@ -2,11 +2,10 @@
 title: What is the identity secure score?
 description: Learn how to use the identity secure score to improve the security posture of your Microsoft Entra tenant.
 
-services: active-directory
 ms.service: active-directory
 ms.subservice: fundamentals
 ms.topic: conceptual
-ms.date: 10/03/2023
+ms.date: 12/15/2023
 
 ms.author: sarahlipsey
 author: shlipsey3
@@ -50,14 +49,14 @@ Every 24 hours, we look at your security configuration and compare your settings
 
 ### Working with improvement actions on the dashboard
 
-Each recommendation is measured based on your configuration. If you're using third-party products to enable a best practice recommendation, you can indicate this configuration in the settings of an improvement action. You may set recommendations to be ignored if they don't apply to your environment. An ignored recommendation doesn't contribute to the calculation of your score.
+Each recommendation is measured based on your configuration. If you're using third-party products to enable a best practice recommendation, you can indicate this configuration in the settings of an improvement action. You might set recommendations to be ignored if they don't apply to your environment. An ignored recommendation doesn't contribute to the calculation of your score.
 
 ![Ignore or mark action as covered by third party](./media/concept-identity-secure-score/identity-secure-score-ignore-or-third-party-reccomendations.png)
 
 - **To address** - You recognize that the improvement action is necessary and plan to address it at some point in the future. This state also applies to actions that are detected as partially, but not fully completed.
 - **Risk accepted** - Security should always be balanced with usability, and not every recommendation works for everyone. When that is the case, you can choose to accept the risk, or the remaining risk, and not enact the improvement action. You aren't awarded any points, and the action isn't visible in the list of improvement actions. You can view this action in history or undo it at any time.
 - **Planned** - There are concrete plans in place to complete the improvement action.
-- **Resolved through third party** and **Resolved through alternate mitigation** - The improvement action has already been addressed by a third-party application or software, or an internal tool. You're awarded the points the action is worth, so your score better reflects your overall security posture. If a third party or internal tool no longer covers the control, you can choose another status. Keep in mind, Microsoft has no visibility into the completeness of implementation if the improvement action is marked as either of these statuses.
+- **Resolved through third party** and **Resolved through alternate mitigation** - The improvement action was addressed by a third-party application or software, or an internal tool. You're awarded the points the action is worth, so your score better reflects your overall security posture. If a third party or internal tool no longer covers the control, you can choose another status. Keep in mind, Microsoft has no visibility into the completeness of implementation if the improvement action is marked as either of these statuses.
 
 ### Working with secure score recommendations
 
@@ -87,21 +86,21 @@ To access identity secure score, you must be assigned one of the following roles
 
 With read and write access, you can make changes and directly interact with identity secure score.
 
-* Global Administrator
-* Security Administrator
-* Exchange Administrator
-* SharePoint Administrator
+- Global Administrator
+- Security Administrator
+- Exchange Administrator
+- SharePoint Administrator
 
 #### Read-only roles
 
 With read-only access, you aren't able to edit status for an improvement action.
 
-* Helpdesk Administrator
-* User Administrator
-* Service Support Administrator
-* Security Reader
-* Security Operator
-* Global Reader
+- Helpdesk Administrator
+- User Administrator
+- Service Support Administrator
+- Security Reader
+- Security Operator
+- Global Reader
 
 ### How are controls scored?
 
@@ -113,7 +112,7 @@ Actions labeled as [Not Scored] are ones you can perform in your organization bu
 
 ### How often is my score updated?
 
-The score is calculated once per day (around 1:00 AM PST). If you make a change to a measured action, the score will automatically update the next day. It may take up to 48 hours for a change to be reflected in your score.
+The score is calculated once per day (around 1:00 AM PST). If you make a change to a measured action, the score will automatically update the next day. It might take up to 48 hours for a change to be reflected in your score.
 
 ![Screenshot of the secure score with the last updated date and time highlighted.](./media/concept-identity-secure-score/secure-score-refresh-time.png)
 
@@ -123,7 +122,7 @@ Head over to the [Microsoft 365 Defender portal](https://security.microsoft.com/
 
 ### Does the secure score measure my risk of getting breached?
 
-No, secure score doesn't express an absolute measure of how likely you're to get breached. It expresses the extent to which you have adopted features that can offset risk. No service can guarantee protection, and the secure score shouldn't be interpreted as a guarantee in any way.
+No, secure score doesn't express an absolute measure of how likely you're to get breached. It expresses the extent to which you adopted features that can offset risk. No service can guarantee protection, and the secure score shouldn't be interpreted as a guarantee in any way.
 
 ### How should I interpret my score?
 

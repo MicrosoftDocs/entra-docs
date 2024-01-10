@@ -10,7 +10,8 @@ ms.reviewer: jawoods, ludwignick, phsignor
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: overview
-#Customer intent: As a developer or admin in the Microsoft identity platform, I want to understand the basic concept about managing how applications access resources through the permissions and consent framework.
+
+#Customer intent: As an application developer, I want to understand the different types of permissions and consent in order to properly request authorization from users and administrators for accessing protected resources in my application.
 ---
 
 # Overview of permissions and consent in the Microsoft identity platform

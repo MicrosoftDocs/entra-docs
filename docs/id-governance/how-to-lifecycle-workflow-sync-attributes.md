@@ -43,7 +43,7 @@ The EmployeeHireDate and EmployeeLeaveDateTime contain dates and times that must
 
 |Scenario|Expression/Format|Target|More Information|
 |-----|-----|-----|-----|
-|Workday to Active Directory User Provisioning|FormatDateTime([StatusHireDate], "yyyy-MM-ddzzz", "yyyyMMddHHmmss.fZ")|On-premises AD string attribute|[Attribute mappings for Workday](~/identity/saas-apps/workday-inbound-tutorial.md#below-are-some-example-attribute-mappings-between-workday-and-active-directory-with-some-common-expressions)|
+|Workday to Active Directory User Provisioning|FormatDateTime([StatusHireDate], ,"yyyy-MM-ddzzz", "yyyyMMddHHmmss.fZ")|On-premises AD string attribute|[Attribute mappings for Workday](~/identity/saas-apps/workday-inbound-tutorial.md#below-are-some-example-attribute-mappings-between-workday-and-active-directory-with-some-common-expressions)|
 |SuccessFactors to Active Directory User Provisioning|FormatDateTime([endDate], ,"M/d/yyyy hh:mm:ss tt","yyyyMMddHHmmss.fZ")|On-premises AD string attribute|[Attribute mappings for SAP Success Factors](~/identity/saas-apps/sap-successfactors-inbound-provisioning-tutorial.md)|
 |Custom import to Active Directory|Must be in the format "yyyyMMddHHmmss.fZ"|On-premises AD string attribute||
 |Microsoft Graph User API|Must be in the format "YYYY-MM-DDThh:mm:ssZ"|EmployeeHireDate and EmployeeLeaveDateTime||

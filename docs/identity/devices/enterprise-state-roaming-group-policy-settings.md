@@ -2,22 +2,19 @@
 title: Group Policy and MDM settings for ESR
 description: Management settings for Enterprise State Roaming
 
-services: active-directory
 ms.service: active-directory
 ms.subservice: devices
 ms.topic: reference
-ms.date: 02/15/2022
+ms.date: 01/04/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: guovivian
-
-ms.collection: M365-identity-device-management
 ---
 # Group Policy and MDM settings
 
-Use these Group Policy and mobile device management (MDM) settings only on corporate-owned devices because these policies are applied to the user’s entire device. Applying an MDM policy to disable settings sync for a personal, user-owned device will negatively impact the use of that device. Additionally, other user accounts on the device will also be affected by the policy.
+Use these Group Policy and mobile device management (MDM) settings only on corporate-owned devices because these policies are applied to the user’s entire device. Applying an MDM policy to disable settings sync for a personal, user-owned device negatively impacts the use of that device. These policies affect other user accounts on the device.
 
 Enterprises that want to manage roaming for personal (unmanaged) devices can use the Microsoft Entra admin center to enable or disable roaming, rather than using Group Policy or MDM.
 The following tables describe the policy settings available.
@@ -32,7 +29,7 @@ The MDM policy settings apply to Windows 10 or newer. Refer to [Devices and endp
 | Name | Description |
 | --- | --- |
 | Allow Microsoft Account Connection |Allows users to authenticate using a Microsoft account on the device |
-| Allow Sync My Settings |Allows users to roam Windows settings and app data; Disabling this policy will disable sync as well as backups on mobile devices |
+| Allow Sync My Settings |Allows users to roam Windows settings and app data; Disabling this policy disables sync and backups on mobile devices |
 
 ## Group Policy settings
 

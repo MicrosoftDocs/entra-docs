@@ -8,7 +8,7 @@ ms.service: active-directory
 ms.subservice: app-provisioning
 ms.workload: identity
 ms.topic: troubleshooting
-ms.date: 10/25/2023
+ms.date: 01/04/2024
 ms.reviewer: arvinh
 zone_pivot_groups: app-provisioning-cross-tenant-synchronization
 ---
@@ -39,10 +39,6 @@ External / B2B users of type `member` created by cross-tenant synchronization ca
 An external user from the source (home) tenant can't be provisioned into another tenant. Internal guest users from the source tenant can't be provisioned into another tenant. Only internal member users from the source tenant can be provisioned into the target tenant. For more information, see [Properties of a Microsoft Entra B2B collaboration user](~/external-id/user-properties.md).
 
 In addition, users that are enabled for SMS sign-in cannot be synchronized through cross-tenant synchronization.
-
-### Provisioning manager attributes
-
-Provisioning manager attributes isn't supported.
 
 ### Updating the showInAddressList property fails
 
@@ -107,6 +103,12 @@ Attribute-mapping expressions can have a maximum of 10,000 characters.
 #### Unsupported scoping filters
 
 The **appRoleAssignments**, **userType**, and **accountExpires** attributes aren't supported as scoping filters.
+
+::: zone pivot="cross-tenant-synchronization"
+#### OtherMails should not be included in your attribute mappings as a target attribute
+
+The otherMails property is automatically computed in the target tenant. Changes to the user object made directly in the target tenant could result in the otherMails property being updated and override the value set by cross-tenant synchronization. As a result, otherMails should not be included in your cross-tenant synchronization attribute mappings as a target attribute. 
+::: zone-end
 
 #### Multivalue directory extensions
 

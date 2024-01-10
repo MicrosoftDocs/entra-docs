@@ -11,7 +11,7 @@ ms.reviewer: jmprieur
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-#Customer intent:
+#Customer intent: As a developer, I want to integrate my application with the Microsoft identity platform, so that I can provide my users with a streamlined sign-in experience and conform to IT policies.
 ---
 
 # Integrating with the Microsoft identity platform
