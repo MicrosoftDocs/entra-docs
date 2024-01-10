@@ -51,7 +51,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 
 ## Step 2: Configure Adobe Identity Management (OIDC) to support provisioning with Microsoft Entra ID
 
-1. Login to [Adobe Admin Console](https://adminconsole.adobe.com/). Navigate to **Settings > Directory Details > Sync**. 
+1. Log in to [Adobe Admin Console](https://adminconsole.adobe.com/). Navigate to **Settings > Directory Details > Sync**. 
 
 1. Click **Add Sync**.
 
