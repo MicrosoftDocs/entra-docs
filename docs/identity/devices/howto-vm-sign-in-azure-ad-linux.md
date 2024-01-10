@@ -6,7 +6,7 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: devices
 ms.topic: how-to
-ms.date: 06/20/2022
+ms.date: 01/05/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -213,7 +213,7 @@ To configure role assignments for your Microsoft Entra ID-enabled Linux VMs:
     | Role | **Virtual Machine Administrator Login** or **Virtual Machine User Login** |
     | Assign access to | User, group, service principal, or managed identity |
 
-    ![Screenshot that shows the page for adding a role assignment.](~/../azure-docs-pr/includes/role-based-access-control/media/add-role-assignment-page.png)
+    ![Screenshot that shows the page for adding a role assignment.](../../media/common/add-role-assignment-page.png)
 
 After a few moments, the security principal is assigned the role at the selected scope.
 

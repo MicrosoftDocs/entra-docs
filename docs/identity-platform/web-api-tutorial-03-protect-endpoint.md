@@ -129,6 +129,11 @@ In this tutorial:
 ### [Visual Studio for Mac](#tab/visual-studio-for-mac)
 
 1. Start the application by selecting **Play the executing solution**.
+
+>[!NOTE]
+> Visual Studio for Mac is scheduled for retirement by August 31, 2024 in accordance with Microsoft’s [Modern Lifecycle Policy](/lifecycle/policies/modern). Visual Studio for Mac 17.6 will continue to be supported until August 31, 2024, with servicing updates for security issues and updated platforms from Apple.
+> Refer to [What's happening to Visual Studio for Mac](/visualstudio/mac/what-happened-to-vs-for-mac) for more information.
+
 ---
 
 The web page `http://localhost:{host}` displays an output similar to the following image. This is because the API is being called without authentication. In order to make an authorized call, refer to [Next steps](#next-steps) for how-to guides on how to access a protected web API.

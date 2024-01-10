@@ -61,7 +61,7 @@ There are two ways to create a catalog programmatically.
 
 ### Create a catalog with Microsoft Graph
 
-You can create a catalog by using Microsoft Graph. A user in an appropriate role with an application that has the delegated `EntitlementManagement.ReadWrite.All` permission, or an application with that application permission, can call the API to [create a catalog](/graph/api/entitlementmanagement-post-catalogs?view=graph-rest-1.0&preserve-view=true).
+You can create a catalog by using Microsoft Graph. A user in an appropriate role with an application that has the delegated `EntitlementManagement.ReadWrite.All` permission, or an application with the `EntitlementManagement.ReadWrite.All`  application permission, can call the API to [create a catalog](/graph/api/entitlementmanagement-post-catalogs?view=graph-rest-1.0&preserve-view=true).
 
 ### Create a catalog with PowerShell
 

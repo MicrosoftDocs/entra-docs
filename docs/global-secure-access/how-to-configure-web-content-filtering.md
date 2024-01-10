@@ -54,7 +54,8 @@ To enable the Microsoft Entra Internet Access forwarding profile to forward user
 1. Select **Create policy**.
 1. Enter a name and description for the policy and select **Next**.
 1. Select **Add rule**.
-1. Enter a name, select a [web category](reference-web-content-filtering-categories.md), and then select **Add**.
+1. Enter a name, select a [web category](reference-web-content-filtering-categories.md) or a valid FQDN, and then select **Add**.
+     - Valid FQDNs in this feature can also include wildcards using the asterisk symbol, *.
 1. Select **Next** to review the policy and then select **Create policy**.
 
 ## Create a security profile
@@ -102,7 +103,8 @@ Use a Windows device with the Global Secure Access client installed. Sign in as 
 1. Browse to **Global Secure Access** > **Monitor** > **Traffic logs** to confirm traffic if blocked or allowed appropriately. It takes approximately 15 minutes for new entries to appear.
 
 > [!NOTE]
-> The current blocking experience for all browsers and processes includes a "Connection Reset" browser error for HTTPS traffic and a "DeniedTraffic" browser error for HTTP traffic.
+> Configuration changes in the Global Secure Access experience related to web content filtering typically take effect in less than 5 minutes. Configuration changes in Conditional Access related to web content filtering take effect in approximately one hour.
+> Additionally, the current blocking experience for all browsers and processes includes a "Connection Reset" browser error for HTTPS traffic and a "DeniedTraffic" browser error for HTTP traffic.
 
 ## Known limitations
 
