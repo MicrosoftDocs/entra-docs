@@ -17,7 +17,7 @@ ms.collection: M365-identity-device-management
 # Create a resilient access control management strategy with Microsoft Entra ID
 
 >[!NOTE]
-> The information contained in this document represents the current view of Microsoft Corporation on the issues discussed as of the date of publication. Because Microsoft must respond to changing market conditions, it should not be interpreted to be a commitment on the part of Microsoft, and Microsoft cannot guarantee the accuracy of any information presented after the date of publication.
+> The information contained in this document represents the current view of Microsoft Corporation on the issues discussed as of the date of publication. Because Microsoft must respond to changing market conditions, it should not be interpreted to be a commitment on the part of Microsoft, and Microsoft can't guarantee the accuracy of any information presented after the date of publication.
 
 Organizations that rely on a single access control, such as multifactor authentication or a single network location, to secure their IT systems are susceptible to access failures to their apps and resources if that single access control becomes unavailable or misconfigured. For example, a natural disaster can result in the unavailability of large segments of telecommunications infrastructure or corporate networks. Such a disruption could prevent end users and administrators from being able to sign in.
 
@@ -54,23 +54,23 @@ To unlock admin access to your tenant, you should create emergency access accoun
 
 ### Mitigating user lockout
 
- To mitigate the risk of user lockout, use Conditional Access policies with multiple controls to give users a choice of how they will access apps and resources. By giving a user the choice between, for example, signing in with MFA **or** signing in from a managed device **or** signing in from the corporate network, if one of the access controls is unavailable the user has other options to continue to work.
+ To mitigate the risk of user lockout, use Conditional Access policies with multiple controls to give users a choice of how they access apps and resources. By giving a user the choice between, for example, signing in with MFA **or** signing in from a managed device **or** signing in from the corporate network, if one of the access controls is unavailable the user has other options to continue to work.
 
 #### Microsoft recommendations
 
 Incorporate the following access controls in your existing Conditional Access policies for organization:
 
-- Provision multiple authentication methods for each user that rely on different communication channels, for example the Microsoft Authenticator app (internet-based), OATH token (generated on-device), and SMS (telephonic).
+- Provision multiple authentication methods for each user that rely on different communication channels, for example, the Microsoft Authenticator app (internet-based), OATH token (generated on-device), and SMS (telephonic).
 - Deploy Windows Hello for Business on Windows 10 devices to satisfy MFA requirements directly from device sign-in.
-- Use trusted devices via [Microsoft Entra hybrid join](~/identity/devices/overview.md) or [Microsoft Intune](/mem/intune/fundamentals/intune-planning-guide). Trusted devices will improve user experience because the trusted device itself can satisfy the strong authentication requirements of policy without an MFA challenge to the user. MFA will then be required when enrolling a new device and when accessing apps or resources from untrusted devices.
+- Use trusted devices via [Microsoft Entra hybrid join](~/identity/devices/overview.md) or [Microsoft Intune](/mem/intune/fundamentals/intune-planning-guide). Trusted devices improve user experience because the trusted device itself can satisfy the strong authentication requirements of policy without an MFA challenge to the user. MFA will then be required when enrolling a new device and when accessing apps or resources from untrusted devices.
 - Use Microsoft Entra ID Protection risk-based policies that prevent access when the user or sign-in is at risk in place of fixed MFA policies.
-- If you are protecting VPN access using Microsoft Entra multifactor authentication NPS extension, consider federating your VPN solution as a [SAML app](~/identity/enterprise-apps/view-applications-portal.md) and determine the app category as recommended below. 
+- If you're protecting VPN access using Microsoft Entra multifactor authentication NPS extension, consider federating your VPN solution as a [SAML app](~/identity/enterprise-apps/view-applications-portal.md) and determine the app category as recommended below. 
 
 >[!NOTE]
 > Risk-based policies require [Microsoft Entra ID P2](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing) licenses.
 
-The following example describes policies you must create to provide a resilient access control for user to access their apps and resources. In this example, you will require a security group **AppUsers** with the target users you want to give access to, a group named **CoreAdmins** with the core administrators, and a group named **EmergencyAccess** with the emergency access accounts.
-This example policy set will grant selected users in **AppUsers**, access to selected apps if they are connecting from a trusted device OR provide strong authentication, for example MFA. It excludes emergency accounts and core administrators.
+The following example describes policies you must create to provide a resilient access control for user to access their apps and resources. In this example, you require a security group **AppUsers** with the target users you want to give access to, a group named **CoreAdmins** with the core administrators, and a group named **EmergencyAccess** with the emergency access accounts.
+This example policy set will grant selected users in **AppUsers**, access to selected apps if they're connecting from a trusted device OR provide strong authentication, for example MFA. It excludes emergency accounts and core administrators.
 
 **Conditional Access mitigation policies set:**
 
@@ -87,23 +87,23 @@ This example policy set will grant selected users in **AppUsers**, access to sel
 
 ### Contingencies for user lockout
 
-Alternatively, your organization can also create contingency policies. To create contingency policies, you must define tradeoff criteria between business continuity, operational cost, financial cost, and security risks. For example, you may activate a contingency policy only to a subset of users, for a subset of apps, for a subset of clients, or from a subset of locations. Contingency policies will give administrators and end users access to apps and resources, during a disruption when no mitigation method was implemented. Microsoft recommends enabling contingency policies in [report-only mode](~/identity/conditional-access/howto-conditional-access-insights-reporting.md) when not in use so that administrators can monitor the potential impact of the policies should they need to be turned on.
+Alternatively, your organization can also create contingency policies. To create contingency policies, you must define tradeoff criteria between business continuity, operational cost, financial cost, and security risks. For example, you may activate a contingency policy only to a subset of users, for a subset of apps, for a subset of clients, or from a subset of locations. Contingency policies give administrators and end users access to apps and resources, during a disruption when no mitigation method was implemented. Microsoft recommends enabling contingency policies in [report-only mode](~/identity/conditional-access/howto-conditional-access-insights-reporting.md) when not in use so that administrators can monitor the potential impact of the policies should they need to be turned on.
 
  Understanding your exposure during a disruption helps reduce your risk and is a critical part of your planning process. To create your contingency plan, first determine the following business requirements of your organization:
 
-1. Determine your mission critical apps ahead of time: What are the apps that you must give access to, even with a lower risk/security posture? Build a list of these apps and make sure your other stakeholders (business, security, legal, leadership) all agree that if all access control goes away, these apps still must continue to run. You are likely going to end up with categories of:
-   * **Category 1 mission critical apps** that cannot be unavailable for more than a few minutes, for example Apps that directly affect the revenue of the organization.
+1. Determine your mission critical apps ahead of time: What are the apps that you must give access to, even with a lower risk/security posture? Build a list of these apps and make sure your other stakeholders (business, security, legal, leadership) all agree that if all access control goes away, these apps still must continue to run. You're likely going to end up with categories of:
+   * **Category 1 mission critical apps** that can't be unavailable for more than a few minutes, for example Apps that directly affect the revenue of the organization.
    * **Category 2 important apps** that the business needs to be accessible within a few hours.
    * **Category 3 low-priority apps** that can withstand a disruption of a few days.
-2. For apps in category 1 and 2, Microsoft recommends you pre-plan what type of level of access you want to allow:
+2. For apps in category 1 and 2, Microsoft recommends you preplan what type of level of access you want to allow:
    * Do you want to allow full access or restricted session, like limiting downloads?
    * Do you want to allow access to part of the app but not the whole app?
    * Do you want to allow information worker access and block administrator access until the access control is restored?
-3. For those apps, Microsoft also recommends you plan which avenues of access you will deliberately open and which ones you will close:
+3. For those apps, Microsoft also recommends you plan which avenues of access you'll deliberately open and which ones you'll close:
    * Do you want to allow browser only access and block rich clients that can save offline data?
    * Do you want to allow access only for users inside the corporate network and keep outside users blocked?
    * Do you want to allow access from certain countries or regions only during the disruption?
-   * Do you want policies to the contingency policies, especially for mission critical apps, to fail or succeed if an alternative access control is not available?
+   * Do you want policies to the contingency policies, especially for mission critical apps, to fail or succeed if an alternative access control isn't available?
 
 #### Microsoft recommendations
 
@@ -113,12 +113,12 @@ A contingency Conditional Access policy is a **backup policy** that omits Micros
 > Disabling policies that enforce security on your users, even temporarily, will reduce your security posture while the contingency plan is in place.
 
 * Configure a set of fallback policies if a disruption in one credential type or one access control mechanism impacts access to your apps. Configure a policy in report-only state that requires Domain Join as a control, as a backup for an active policy that requires a third-party MFA provider.
-* Reduce the risk of bad actors guessing passwords, when MFA is not required, by following the practices in the [password guidance](https://aka.ms/passwordguidance) white paper.
+* Reduce the risk of bad actors guessing passwords, when MFA isn't required, by following the practices in the [password guidance](https://aka.ms/passwordguidance) white paper.
 * Deploy [Microsoft Entra Self-Service Password Reset (SSPR)](./tutorial-enable-sspr.md) and [Microsoft Entra Password Protection](./howto-password-ban-bad-on-premises-deploy.md) to make sure users don’t use common password and terms you choose to ban.
-* Use policies that restrict the access within the apps if a certain authentication level is not attained instead of simply falling back to full access. For example:
+* Use policies that restrict the access within the apps if a certain authentication level isn't attained instead of simply falling back to full access. For example:
   * Configure a backup policy that sends the restricted session claim to Exchange and SharePoint.
   * If your organization uses Microsoft Defender for Cloud Apps, consider falling back to a policy that engages Defender for Cloud Apps and then allow read-only access but not uploads.
-* Name your policies to make sure it is easy to find them during a disruption. Include the following elements in the policy name:
+* Name your policies to make sure it's easy to find them during a disruption. Include the following elements in the policy name:
   * A *label number* for the policy.
   * Text to show, this policy is for emergencies only. For example: **ENABLE IN EMERGENCY**
   * The *disruption* it applies to. For example: **During MFA Disruption**
@@ -127,13 +127,13 @@ A contingency Conditional Access policy is a **backup policy** that omits Micros
   * The *controls* it will apply.
   * The *conditions* it requires.
   
-This naming standard for the contingency policies will be as follows: 
+This naming standard for the contingency policies are as follows: 
 
 ```
 EMnnn - ENABLE IN EMERGENCY: [Disruption][i/n] - [Apps] - [Controls] [Conditions]
 ```
 
-The following example: **Example A - Contingency Conditional Access policy to restore Access to mission-critical Collaboration Apps**, is a typical corporate contingency. In this scenario, the organization typically requires MFA for all Exchange Online and SharePoint Online access, and the disruption in this case is the MFA provider for the customer has an outage (whether Microsoft Entra multifactor authentication, on-premises MFA provider, or third-party MFA). This policy mitigates this outage by allowing specific targeted users access to these apps from trusted Windows devices only when they are accessing the app from their trusted corporate network. It will also exclude emergency accounts and core administrators from these restrictions. The targeted users will then gain access to Exchange Online and SharePoint Online, while other users will still not have access to the apps due to the outage. This example will require a named network location **CorpNetwork** and a security group **ContingencyAccess** with the target users, a group named **CoreAdmins** with the core administrators, and a group named **EmergencyAccess** with the emergency access accounts. The contingency requires four policies to provide the desired access. 
+The following example: **Example A - Contingency Conditional Access policy to restore Access to mission-critical Collaboration Apps**, is a typical corporate contingency. In this scenario, the organization typically requires MFA for all Exchange Online and SharePoint Online access, and the disruption in this case is the MFA provider for the customer has an outage (whether Microsoft Entra multifactor authentication, on-premises MFA provider, or third-party MFA). This policy mitigates this outage by allowing specific targeted users access to these apps from trusted Windows devices only when they're accessing the app from their trusted corporate network. It will also exclude emergency accounts and core administrators from these restrictions. The targeted users will then gain access to Exchange Online and SharePoint Online, while other users will still not have access to the apps due to the outage. This example requires a named network location **CorpNetwork** and a security group **ContingencyAccess** with the target users, a group named **CoreAdmins** with the core administrators, and a group named **EmergencyAccess** with the emergency access accounts. The contingency requires four policies to provide the desired access. 
 
 **Example A - Contingency Conditional Access policies to restore Access to mission-critical Collaboration Apps:**
 
@@ -169,13 +169,13 @@ The following example: **Example A - Contingency Conditional Access policy to re
 Order of activation:
 
 1. Exclude ContingencyAccess, CoreAdmins, and EmergencyAccess from the existing MFA policy. Verify a user in ContingencyAccess can access SharePoint Online and Exchange Online.
-2. Enable Policy 1: Verify users on Domain Joined devices who are not in the exclude groups are able to access Exchange Online and SharePoint Online. Verify users in the Exclude group can access SharePoint Online and Exchange from any device.
-3. Enable Policy 2: Verify users who are not in the exclude group cannot get to SharePoint Online and Exchange Online from their mobile devices. Verify users in the Exclude group can access SharePoint and Exchange from any device (Windows/iOS/Android).
-4. Enable Policy 3: Verify users who are not in the exclude groups cannot access SharePoint and Exchange off the corporate network, even with a domain joined machine. Verify users in the Exclude group can access SharePoint and Exchange from any network.
-5. Enable Policy 4: Verify all users cannot get Exchange Online from the native mail applications on mobile devices.
+2. Enable Policy 1: Verify users on Domain Joined devices who aren't in the exclude groups are able to access Exchange Online and SharePoint Online. Verify users in the Exclude group can access SharePoint Online and Exchange from any device.
+3. Enable Policy 2: Verify users who aren't in the exclude group can't get to SharePoint Online and Exchange Online from their mobile devices. Verify users in the Exclude group can access SharePoint and Exchange from any device (Windows/iOS/Android).
+4. Enable Policy 3: Verify users who aren't in the exclude groups can't access SharePoint and Exchange off the corporate network, even with a domain joined machine. Verify users in the Exclude group can access SharePoint and Exchange from any network.
+5. Enable Policy 4: Verify all users can't get Exchange Online from the native mail applications on mobile devices.
 6. Disable the existing MFA policy for SharePoint Online and Exchange Online.
 
-In this next example, **Example B - Contingency Conditional Access policies to allow mobile access to Salesforce**, a business app’s access is restored. In this scenario, the customer typically requires their sales employees access to Salesforce (configured for single-sign on with Microsoft Entra ID) from mobile devices to only be allowed from compliant devices. The disruption in this case is that there is an issue with evaluating device compliance and the outage is happening at a sensitive time where the sales team needs access to Salesforce to close deals. These contingency policies will grant critical users access to Salesforce from a mobile device so that they can continue to close deals and not disrupt the business. In this example, **SalesforceContingency** contains all the Sales employees who need to retain access and **SalesAdmins** contains necessary admins of Salesforce.
+In this next example, **Example B - Contingency Conditional Access policies to allow mobile access to Salesforce**, a business app’s access is restored. In this scenario, the customer typically requires their sales employees access to Salesforce (configured for single-sign on with Microsoft Entra ID) from mobile devices to only be allowed from compliant devices. The disruption in this case is that there's an issue with evaluating device compliance and the outage is happening at a sensitive time where the sales team needs access to Salesforce to close deals. These contingency policies grants critical users access to Salesforce from a mobile device so that they can continue to close deals and not disrupt the business. In this example, **SalesforceContingency** contains all the Sales employees who need to retain access and **SalesAdmins** contains necessary admins of Salesforce.
 
 **Example B - Contingency Conditional Access policies:**
 
@@ -197,17 +197,17 @@ In this next example, **Example B - Contingency Conditional Access policies to a
 Order of activation:
 
 1. Exclude SalesAdmins and SalesforceContingency from the existing device compliance policy for Salesforce. Verify a user in the SalesforceContingency group can access Salesforce.
-2. Enable Policy 1: Verify users outside of SalesContingency cannot access Salesforce. Verify users in the SalesAdmins and SalesforceContingency can access Salesforce.
-3. Enable Policy 2: Verify users in the SalesContingency group cannot access Salesforce from their Windows/Mac laptops but can still access from their mobile devices. Verify SalesAdmin can still access Salesforce from any device.
+2. Enable Policy 1: Verify users outside of SalesContingency can't access Salesforce. Verify users in the SalesAdmins and SalesforceContingency can access Salesforce.
+3. Enable Policy 2: Verify users in the SalesContingency group can't access Salesforce from their Windows/Mac laptops but can still access from their mobile devices. Verify SalesAdmin can still access Salesforce from any device.
 4. Disable the existing device compliance policy for Salesforce.
 
-### Contingencies for user lockout from on-prem resources (NPS extension)
+### Contingencies for user lockout from on-premises resources (NPS extension)
 
-If you are protecting VPN access using Microsoft Entra multifactor authentication NPS extension, consider federating your VPN solution as a [SAML app](~/identity/enterprise-apps/view-applications-portal.md) and determine the app category as recommended below. 
+If you're protecting VPN access using Microsoft Entra multifactor authentication NPS extension, consider federating your VPN solution as a [SAML app](~/identity/enterprise-apps/view-applications-portal.md) and determine the app category as recommended below. 
 
-If you have deployed Microsoft Entra multifactor authentication NPS extension to protect on-prem resources, such as VPN and Remote Desktop Gateway, with MFA - you should consider in advance if you are ready to disable MFA in a case of emergency.
+If you have deployed Microsoft Entra multifactor authentication NPS extension to protect on-premises resources, such as VPN and Remote Desktop Gateway, with MFA - you should consider in advance if you're ready to disable MFA in a case of emergency.
 
-In this case, you can disable the NPS extension, as a result, the NPS server will only verify primary authentication and will not enforce MFA on the users.
+In this case, you can disable the NPS extension, as a result, the NPS server will only verify primary authentication and won't enforce MFA on the users.
 
 Disable NPS extension: 
 -	Export the HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\AuthSrv\Parameters registry key as a backup. 
@@ -215,13 +215,13 @@ Disable NPS extension:
 -	Restart the Network Policy Service (IAS) service for the changes to take effect 
 -	Determine if primary authentication for VPN is successful.
 
-Once the service has recovered and you are ready to enforce MFA on your users again, enable the NPS extension: 
+Once the service has recovered and you're ready to enforce MFA on your users again, enable the NPS extension: 
 -	Import the registry key from backup HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\AuthSrv\Parameters 
 -	Restart the Network Policy Service (IAS) service for the changes to take effect 
--	Determine if primary authentication as well as secondary authentication for VPN is successful.
+-	Determine if primary authentication and secondary authentication for VPN is successful.
 -	Review NPS server and the VPN log to determine which users have signed in during the emergency window.
 
-### Deploy password hash sync even if you are federated or use pass-through authentication
+### Deploy password hash sync even if you're federated or use pass-through authentication
 
 User lockout can also occur if the following conditions are true:
 
@@ -234,11 +234,11 @@ To be more resilient, your organization should [enable password hash sync](~/ide
  Enable password hash sync using the Microsoft Entra Connect wizard, regardless whether your organization uses federation or pass-through authentication.
 
 >[!IMPORTANT]
-> It is not required to convert users from federated to managed authentication to use password hash sync.
+> It isn't required to convert users from federated to managed authentication to use password hash sync.
 
 ## During a disruption
 
-If you opted for implementing a mitigation plan, you will be able to automatically survive a single access control disruption. However, if you opted to create a contingency plan, you will be able to activate your contingency policies during the access control disruption:
+If you opted for implementing a mitigation plan, you're able to automatically survive a single access control disruption. However, if you opted to create a contingency plan, you're able to activate your contingency policies during the access control disruption:
 
 1. Enable your contingency policies that grant targeted users, access to specific apps, from specific networks.
 2. Disable your regular control-based policies.
@@ -248,7 +248,7 @@ If you opted for implementing a mitigation plan, you will be able to automatical
 Depending on which mitigations or contingencies are used during a disruption, your organization could be granting access with just passwords. No safeguard is a considerable security risk that must be weighed carefully. Organizations must:
 
 1. As part of your change control strategy, document every change and the previous state to be able to roll back any contingencies you implemented as soon as the access controls are fully operational.
-2. Assume that malicious actors will attempt to harvest passwords through password spray or phishing attacks while you disabled MFA. Also, bad actors might already have passwords that previously did not grant access to any resource that can be attempted during this window. For critical users such as executives, you can partially mitigate this risk by resetting their passwords before disabling MFA for them.
+2. Assume that malicious actors will attempt to harvest passwords through password spray or phishing attacks while you disabled MFA. Also, bad actors might already have passwords that previously didn't grant access to any resource that can be attempted during this window. For critical users such as executives, you can partially mitigate this risk by resetting their passwords before disabling MFA for them.
 3. Archive all sign-in activity to identify who access what during the time MFA was disabled.
 4. [Triage all risk detections reported](~/identity/monitoring-health/concept-sign-ins.md) during this window.
 
@@ -265,14 +265,14 @@ Undo the changes you made as part of the activated contingency plan once the ser
 
 ## Emergency options
 
- In case of an emergency and your organization did not previously implement a mitigation or contingency plan, then follow the recommendations in the [Contingencies for user lockout](#contingencies-for-user-lockout) section if they already use Conditional Access policies to enforce MFA.
+ In an emergency and your organization didn't previously implement a mitigation or contingency plan, then follow the recommendations in the [Contingencies for user lockout](#contingencies-for-user-lockout) section if they already use Conditional Access policies to enforce MFA.
  If your organization is using per-user MFA legacy policies, then you can consider the following alternative:
 
 - If you have the corporate network outbound IP address, you can add them as trusted IPs to enable authentication only to the corporate network.
 - If you don’t have the inventory of outbound IP addresses, or you required to enable access inside and outside the corporate network, you can add the entire IPv4 address space as trusted IPs by specifying 0.0.0.0/1 and 128.0.0.0/1.
 
 >[!IMPORTANT]
- > If you broaden the trusted IP addresses to unblock access, risk detections associated with IP addresses (for example, impossible travel or unfamiliar locations) will not be generated.
+ > If you broaden the trusted IP addresses to unblock access, risk detections associated with IP addresses (for example, impossible travel or unfamiliar locations) won't be generated.
 
 >[!NOTE]
  > Configuring [trusted IPs](./howto-mfa-mfasettings.md) for Microsoft Entra multifactor authentication is only available with [Microsoft Entra ID P1 or P2 licenses](./concept-mfa-licensing.md).
