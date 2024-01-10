@@ -155,6 +155,6 @@ For detailed instructions on restricting an app to specific users in a tenant, g
 
 ## Next steps
 
-Learn about [throttling and service limits](test-throttle-service-limits.md) you might hit while setting up a test environment.
+Learn about Microsoft Entra usage constraints and service limits you might hit [here](../identity/users/directory-service-limits-restrictions.md). General Azure subscription and service limits, quotas, and constraints can be found [here](/azure/azure-resource-manager/management/azure-subscription-service-limits).
 
 For more detailed information about test environments, read [Securing Azure environments with Microsoft Entra ID](https://azure.microsoft.com/resources/securing-azure-environments-with-azure-active-directory/).

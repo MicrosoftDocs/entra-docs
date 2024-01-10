@@ -576,8 +576,6 @@
           href: test-setup-environment.md
         - name: Run automated integration tests as a user
           href: test-automate-integration-testing.md
-        - name: Throttling and service limits
-          href: test-throttle-service-limits.md
         - name: Create a service principal using the Azure portal
           href: howto-create-service-principal-portal.md
         - name: Create a service principal using Azure PowerShell
