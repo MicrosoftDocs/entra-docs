@@ -5,7 +5,7 @@ description: Integrate your Remote Desktop Gateway infrastructure with Microsoft
 services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
-ms.custom: has-azure-ad-ps-ref
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: how-to
 ms.date: 10/25/2023
 
