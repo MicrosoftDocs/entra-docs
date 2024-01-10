@@ -47,7 +47,7 @@ sections:
           
       - question: My org on-premise AD users are split into two or more diff tenants in Entra ID. Do I get windows PRT for each tenant on client machine?
         answer: |
-          Windows clients obtains PRT,if the user and the device belongs to the same tenant. User will not get PRT for another tenant if the device not registered or user is not a member there. if two tenant users are trust each other via B2B access. you can always create cross tenant B2B access and trust device claims from your home tenant.
+          Windows clients fetch the PRT from Entra ID,if the user and the device belongs to the same tenant. User will not get PRT for another tenant if the device not registered or user is not a member there. if two tenant users are trust each other via B2B access. you can always create cross tenant B2B access and trust device claims from your home tenant.
           
       - question: I see the device record under the USER info and I see the state as registered. Am I set up correctly to use Conditional Access?
         answer: |
