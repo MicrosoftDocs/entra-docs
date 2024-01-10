@@ -31,7 +31,7 @@ Don't use your production Microsoft Entra tenant if:
 - Configuration changes could negatively impact the critical operation of your production environment.
 - You're unable to create users or other test data in your production tenant.
 - Policies are enabled in your production tenant that require user interaction during authentication. For example, if multi-factor authentication is required for all users, you can't use automated sign-ins for integration testing.
-- Adding non-production resources and/or workload to your production tenant would [exceed service or throttling limits](test-throttle-service-limits.md) for the tenant.
+- Adding non-production resources and/or workload to your production tenant would [exceed service or throttling limits](../identity/users/directory-service-limits-restrictions.md) for the tenant.
 
 If any of these restrictions apply, set up a [test environment in a separate tenant](#set-up-a-test-environment-in-a-separate-tenant).
 
