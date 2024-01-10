@@ -34,15 +34,16 @@ The client must first check with the authentication server for a device and user
 
 From the moment the request is sent, the user has 15 minutes to sign in. This is the default value for `expires_in`. The request should only be made when the user indicates they're ready to sign in.
 
-    ```HTTP
-    // Line breaks are for legibility only.
-    
-    POST https://login.microsoftonline.com/{tenant}/oauth2/v2.0/devicecode
-    Content-Type: application/x-www-form-urlencoded
-    
-    client_id=535fb089-9ff3-47b6-9bfb-4f1264799865
-    &scope=user.read%20openid%20profile
-    ```
+```HTTP
+// Line breaks are for legibility only.
+
+POST https://login.microsoftonline.com/{tenant}/oauth2/v2.0/devicecode
+Content-Type: application/x-www-form-urlencoded
+
+client_id=535fb089-9ff3-47b6-9bfb-4f1264799865
+&scope=user.read%20openid%20profile
+
+```
 
 | Parameter | Condition | Description |
 | --- | --- | --- |
