@@ -57,7 +57,7 @@ For a step by step guide on this process, see: [Configure Verified ID settings f
 
 ## Specify attributes
 
-Sometimes, your app requires an attribute that an external user doesn't have. With the specify attributes feature, you're able to save information for later use when they complete a request. For example, you could have a partner portal application that requires the external user's country code. Unlike with answers to custom questions, these answers should be expected to be permanent, and won't change with each request.
+Your app will sometimes require an attribute that an external user doesn't have. With the specify attributes feature, you're able to save information for later use when they complete a request. For example, you could have a partner portal application that requires the external user's country code. Unlike with answers to custom questions, these answers should be expected to be permanent, and won't change with each request.
 
 Configuring attributes is a similar experience as configuring custom questions, but it's surfaced on apps in the catalog rather than on individual access packages.
 
