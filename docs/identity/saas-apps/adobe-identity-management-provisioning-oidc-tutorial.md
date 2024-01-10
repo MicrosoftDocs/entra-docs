@@ -55,15 +55,15 @@ The scenario outlined in this tutorial assumes that you already have the followi
 
 1. Click **Add Sync**.
 
-    ![Add](media/adobe-identity-management-provisioning-tutorial/add-sync.png)
+    ![Add](media/adobe-identity-management-provisioning-saml-tutorial/add-sync.png)
 
 1. Select **Sync users from Microsoft Azure** and click **Next**.
 
-    ![Screenshot that shows 'Sync users from Microsoft Entra ID' selected.](media/adobe-identity-management-provisioning-tutorial/sync-users.png)
+    ![Screenshot that shows 'Sync users from Microsoft Entra ID' selected.](media/adobe-identity-management-provisioning-saml-tutorial/sync-users.png)
 
 1. Copy and save the **Tenant URL** and the **Secret token**. These values will be entered in the **Tenant URL** and **Secret Token** fields in the Provisioning tab of your Adobe Identity Management (OIDC) application.
 
-    ![Sync](media/adobe-identity-management-provisioning-tutorial/token.png)
+    ![Sync](media/adobe-identity-management-provisioning-saml-tutorial/token.png)
 
 <a name='step-3-add-adobe-identity-management-oidc-from-the-azure-ad-application-gallery'></a>
 
