@@ -1,25 +1,23 @@
 ---
 title: Custom authentication extension 
-titleSuffix: Microsoft identity platform
 description: Use Microsoft Entra custom authentication extensions to customize your user's sign-in experience by using REST APIs or outbound webhooks.
-services: active-directory
 author: omondiatieno
 manager: CelesteDG
-
+ms.author: jomondi
+ms.custom: 
+ms.date: 10/27/2023
+ms.reviewer: JasSuri
 ms.service: active-directory
 ms.subservice: develop
-ms.workload: identity
 ms.topic: conceptual
-ms.date: 10/27/2023
-ms.author: jomondi
-ms.reviewer: JasSuri
-ms.custom: aaddev 
-#Customer intent: As a developer, I want to learn about custom authentication extensions so that I can augment tokens with claims from an external identity system or role management system.
+titleSuffix: Microsoft identity platform
+
+#Customer intent: As a developer integrating external systems with Microsoft Entra ID, I want to create custom authentication extensions using a REST API, so that I can customize the authentication experience and add business logic based on event types and HTTP response payloads.
 ---
 
 # Custom authentication extensions (preview)
 
-This article provides an overview of custom authentication extensions for Microsoft Entra ID. Custom authentication extensions allow you to customize the Microsoft Entra authentication experience by integrating with external systems.
+This article provides a high-level, technical overview of [custom authentication extensions](~/external-id/customers/concept-custom-extensions.md) for Microsoft Entra ID. Custom authentication extensions allow you to customize the Microsoft Entra authentication experience by integrating with external systems.
 
 The following diagram depicts the sign-in flow integrated with a custom authentication extension.
 
@@ -37,7 +35,7 @@ The following diagram depicts the sign-in flow integrated with a custom authenti
 
 When an event fires, Microsoft Entra ID calls a REST API endpoint that you own. The request to the REST API contains information about the event, the user profile, authentication request data, and other context information.
 
-You can use any programming language, framework, and hosting environment to create and host your custom authentication extensions REST API. For a quick way to get started, use a C# Azure Function. Azure Functions lets you run your code in a serverless environment without having to first create a virtual machine (VM) or publish a web application. 
+You can use any programming language, framework, and hosting environment to create and host your custom authentication extensions REST API. For a quick way to get started, use a C# Azure Function. Azure Functions lets you run your code in a serverless environment without having to first create a virtual machine (VM) or publish a web application.
 
 Your REST API must handle:
 
@@ -59,7 +57,7 @@ To ensure the communications between the custom authentication  extension and yo
 
 ## Custom claims provider
 
-A custom claims provider is a type of custom authentication extension that calls a REST API to fetch claims from external systems. A custom claims provider can be assigned to one or many applications in your directory and maps claims from external systems into tokens.
+A custom claims provider is a type of custom authentication extension that calls a REST API to fetch claims from external systems. A custom claims provider maps claims from external systems into tokens and can be assigned to one or many applications in your directory.
 
 Learn more about [custom claims providers](custom-claims-provider-overview.md).
 

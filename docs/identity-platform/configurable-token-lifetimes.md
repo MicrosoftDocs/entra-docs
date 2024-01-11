@@ -1,18 +1,16 @@
 ---
 title: Configurable token lifetimes
 description: Learn how to set lifetimes for access, SAML, and ID tokens issued by the Microsoft identity platform.
-services: active-directory
 author: rwike77
 manager: CelesteDG
-
+ms.author: ryanwi
+ms.custom: 
+ms.date: 10/31/2023
+ms.reviewer: joroja
 ms.service: active-directory
 ms.subservice: develop
-ms.workload: identity
 ms.topic: conceptual
-ms.date: 10/31/2023
-ms.author: ryanwi
-ms.custom: aaddev
-ms.reviewer: joroja
+#Customer intent: As an IT admin, I want to configure the lifetime of access, ID, and SAML tokens for different types of applications, so that I can help mitigate the actions of a malicous actor who has obtained a token.
 ---
 # Configurable token lifetimes in the Microsoft identity platform (preview)
 

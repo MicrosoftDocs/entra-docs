@@ -24,7 +24,7 @@ This article helps you keep track of the versions that have been released and un
 
 You can upgrade your Microsoft Entra Connect server from all supported versions with the latest versions:
 
-You can download the latest version of Microsoft Entra Connect 2.0 from the [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=47594). See the [release notes for the latest V2.0 release](reference-connect-version-history.md#21200).\
+You can download the latest version of Microsoft Entra Connect 2.0 from the [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=47594). See the [release notes for the latest V2.0 release](reference-connect-version-history.md#21200).
 
 Get notified about when to revisit this page for updates by copying and pasting this URL: `https://aka.ms/aadconnectrss` into your ![RSS feed reader icon](media/reference-connect-version-history/feed-icon-16x16.png) feed reader.
 
@@ -71,6 +71,21 @@ Auto-upgrade is meant to push all important updates and critical fixes to you. I
 If you want all the latest features and updates, check this page and install what you need.
 
 To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade](how-to-connect-install-automatic-upgrade.md).
+
+## 2.3.2.0
+
+### Release status
+12/12/2023: Released for download
+
+### Functional Changes
+- Application scaling with Windows Accessibility font size setting has been added.
+- Group Writeback V2 can no longer be enabled as the feature is being decommissioned. Please see the notice in this [article about group writeback](how-to-connect-group-writeback-enable.md).
+
+### Other Changes
+- SQL related drivers shipped with Microsoft Entra Connect have been updated. ODBC to 17.10.5, OLE DB to 18.6.7.
+- Microsoft Entra Connect Health shipped with Microsoft Entra Connect has been updated to 4.5.2428.0.
+- Fixed a DSSO bug for Azure in China
+
 
 ## 2.2.8.0
 

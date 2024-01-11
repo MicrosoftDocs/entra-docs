@@ -1,17 +1,16 @@
 ---
 title: Deploy a web app with App Service auth in a pipeline
 description: Describes how to set up a pipeline in Azure Pipelines to build and deploy a web app to Azure and enable the Azure App Service built-in authentication. The article provides step-by-step instructions on how to configure Azure resources, build and deploy a web application, create a Microsoft Entra app registration, and configure App Service built-in authentication using Azure Pipelines.
-services: active-directory
 author: rwike77
 manager: CelesteDG
-
+ms.author: ryanwi
+ms.custom: 
+ms.date: 07/17/2023
+ms.reviewer: mahender, jukullam
 ms.service: active-directory
 ms.subservice: develop
-ms.custom: 
 ms.topic: how-to
-ms.date: 07/17/2023
-ms.author: ryanwi
-ms.reviewer: mahender, jukullam
+#Customer intent: As a developer, I want to deploy a web app in a pipeline and configure App Service authentication using Azure Pipelines, so that I can automate the deployment process and secure access to the web app.
 ---
 
 # Deploy a web app in a pipeline and configure App Service authentication

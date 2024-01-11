@@ -1,18 +1,16 @@
 ---
 title: Shared device mode for Android devices
 description: Learn how to enable shared device mode to allow frontline workers to share an Android device
-services: active-directory
 author: henrymbuguakiarie
 manager: CelesteDG
-
+ms.author: henrymbugua
+ms.custom: identitypla | Azuretformtop40
+ms.date: 12/05/2023
+ms.reviewer: brandwe
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-ms.workload: identity
-ms.date: 02/06/2023
-ms.author: henrymbugua
-ms.reviewer: brandwe
-ms.custom: aaddev, identitypla | Azuretformtop40
+#Customer intent: As a developer, I want to understand how to create a shared device mode app for Android devices, so that I can enable multiple employees to easily share a device and access customer information securely.
 ---
 
 # Shared device mode for Android devices
@@ -99,14 +97,16 @@ These Microsoft applications support Microsoft Entra shared device mode:
 - [Microsoft Edge](/microsoft-edge/)
 - [Outlook](/mem/intune/apps/app-configuration-policies-outlook)
 - [Microsoft Power Apps](/power-apps/)
-- [Microsoft Power BI Mobile](/power-bi/consumer/mobile/mobile-app-shared-device-mode) (preview)
+- [Microsoft Power BI Mobile](/power-bi/consumer/mobile/mobile-app-shared-device-mode)
 - [Microsoft Viva Engage](/viva/engage/overview) (previously [Yammer](/viva/engage/overview))
+- [Microsoft 365](https://apps.apple.com/us/app-bundle/microsoft-365/id1450038993?mt=12) (in Public Preview)
 
 ## Third-party MDMs that support shared device mode
 
 This third-party Mobile Device Management (MDM) that supports Microsoft Entra shared device mode:
 
 - [VMware Workspace ONE](https://blogs.vmware.com/euc/2023/08/announcing-general-availability-of-shared-device-conditional-access-with-vmware-workspace-one-and-microsoft-entra-id.html)
+- [SOTI MobiControl](https://soti.net/resources/blog/2023/soti-mobicontrol-supports-microsoft-shared-device-mode/)
 
 ## Shared device sign-out and the overall app lifecycle
 

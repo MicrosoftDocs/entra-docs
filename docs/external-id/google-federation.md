@@ -3,16 +3,16 @@
 title: Add Google as an identity provider for B2B
 description: Federate with Google to enable guest users to sign in to your Microsoft Entra apps with their own Gmail accounts.
 
-services: active-directory
+ 
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: how-to
-ms.date: 01/20/2023
+ms.date: 11/28/2023
 
 ms.author: mimart
 author: msmimart
 manager: celestedg
-ms.custom: it-pro, seo-update-azuread-jan, has-adal-ref, has-azure-ad-ps-ref
+ms.custom: it-pro, seo-update-azuread-jan, has-adal-ref, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.collection: M365-identity-device-management
 ---
 
@@ -21,7 +21,7 @@ ms.collection: M365-identity-device-management
 > [!TIP]
 > This article describes adding Google as an identity provider for B2B collaboration. If your tenant is configured for customer identity and access management, see [Add Google as an identity provider](customers/how-to-google-federation-customers.md) for customers.
 
-By setting up federation with Google, you can allow invited users to sign in to your shared apps and resources with their own Gmail accounts, without having to create Microsoft accounts. After you've added Google as one of your application's sign-in options, on the **Sign in** page, a user can simply enter the Gmail address they use to sign in to Google.
+By setting up federation with Google, you can allow invited users to sign in to your shared apps and resources with their own Gmail accounts, without having to create Microsoft accounts. After you add Google as one of your application's sign-in options, on the **Sign in** page, a user can enter the Gmail address they use to sign in to Google.
 
 ![Sign in options for Google users](media/google-federation/sign-in-with-google-overview.png)
 
@@ -30,15 +30,15 @@ By setting up federation with Google, you can allow invited users to sign in to 
 
 > [!IMPORTANT]
 >
-> - **Starting July 12, 2021**, if Microsoft Entra B2B customers set up new Google integrations for use with self-service sign-up or for inviting external users for their custom or line-of-business applications, authentication could be blocked for Gmail users (with the error screen shown below in [What to expect](#what-to-expect)). This issue occurs only if you create Google integration for self-service sign-up user flows or invitations after July 12, 2021 and Gmail authentications in your custom or line-of-business applications haven’t been moved to system web-views. Because system web-views are enabled by default, most apps will not be affected. To avoid the issue, we strongly advise you to move Gmail authentications to system browsers before creating any new Google integrations for self-service sign-up. Please refer to [Action needed for embedded web-views](#action-needed-for-embedded-frameworks).
+> - **Starting July 12, 2021**, if Microsoft Entra B2B customers set up new Google integrations for use with self-service sign-up or for inviting external users for their custom or line-of-business applications, authentication could be blocked for Gmail users (with the error screen shown in [What to expect](#what-to-expect)). This issue occurs only if you create Google integration for self-service sign-up user flows or invitations after July 12, 2021 and Gmail authentications in your custom or line-of-business applications haven’t been moved to system web-views. Because system web-views are enabled by default, most apps will not be affected. To avoid the issue, we strongly advise you to move Gmail authentications to system browsers before creating any new Google integrations for self-service sign-up. Please refer to [Action needed for embedded web-views](#action-needed-for-embedded-frameworks).
 > - **Starting September 30, 2021**, Google is [deprecating web-view sign-in support](https://developers.googleblog.com/2021/06/upcoming-security-changes-to-googles-oauth-2.0-authorization-endpoint.html). If your apps authenticate users with an embedded web-view and you're using Google federation with [Azure AD B2C](/azure/active-directory-b2c/identity-provider-google) or Microsoft Entra B2B for external user invitations or [self-service sign-up](identity-providers.md), Google Gmail users won't be able to authenticate. [Learn more](#deprecation-of-web-view-sign-in-support).
 
 ## What is the experience for the Google user?
 
 You can invite a Google user to B2B collaboration in various ways. For example, you can [add them to your directory via the Microsoft Entra admin center](b2b-quickstart-add-guest-users-portal.md). When they redeem your invitation, their experience varies depending on whether they're already signed in to Google:
 
-- Guest users who aren't signed in to Google will be prompted to do so.
-- Guest users who are already signed in to Google will be prompted to choose the account they want to use. They must choose the account you used to invite them.
+- Guest users who aren't signed in to Google are prompted to do so.
+- Guest users who are already signed in to Google are prompted to choose the account they want to use. They must choose the account you used to invite them.
 
 Guest users who see a "header too long" error can clear their cookies or open a private or incognito window and try to sign in again.
 
@@ -46,7 +46,7 @@ Guest users who see a "header too long" error can clear their cookies or open a 
 
 ## Sign-in endpoints
 
-Google guest users can now sign in to your multi-tenant or Microsoft first-party apps by using a [common endpoint](redemption-experience.md#redemption-process-and-sign-in-through-a-common-endpoint) (in other words, a general app URL that doesn't include your tenant context). During the sign-in process, the guest user chooses **Sign-in options**, and then selects **Sign in to an organization**. The user then types the name of your organization and continues signing in using their Google credentials.
+Google guest users can now sign in to your multitenant or Microsoft first-party apps by using a [common endpoint](redemption-experience.md#redemption-process-and-sign-in-through-a-common-endpoint) (in other words, a general app URL that doesn't include your tenant context). During the sign-in process, the guest user chooses **Sign-in options**, and then selects **Sign in to an organization**. The user then types the name of your organization and continues signing in using their Google credentials.
 
 Google guest users can also use application endpoints that include your tenant information, for example:
 
@@ -61,7 +61,7 @@ You can also give Google guest users a direct link to an application or resource
 Starting September 30, 2021, Google is [deprecating embedded web-view sign-in support](https://developers.googleblog.com/2021/06/upcoming-security-changes-to-googles-oauth-2.0-authorization-endpoint.html). If your apps authenticate users with an embedded web-view and you're using Google federation with [Azure AD B2C](/azure/active-directory-b2c/identity-provider-google) or Microsoft Entra B2B for [external user invitations](google-federation.md) or [self-service sign-up](identity-providers.md), Google Gmail users won't be able to authenticate.
 
 The following are known scenarios that will impact Gmail users:
-- Microsoft apps (e.g. Teams and Power Apps) on Windows 
+- Microsoft apps (for example, Teams and Power Apps) on Windows 
 - Windows apps that use the [WebView](/windows/communitytoolkit/controls/wpf-winforms/webview) control, [WebView2](/microsoft-edge/webview2/), or the older WebBrowser control, for authentication. These apps should migrate to using the Web Account Manager (WAM) flow.
 - Android applications using the WebView UI element 
 - iOS applications using UIWebView/WKWebview 
@@ -84,13 +84,13 @@ Starting September 30, Microsoft will globally roll out a device sign-in flow th
 
 ### How to sign in with the device sign-in flow
 
-The device sign-in flow prompts users who sign in with a Gmail account in an embedded web-view to enter a code in a separate browser before they can finish signing in. If users are signing in with their Gmail account for the first time with no active sessions in the browser, they'll see the following sequence of screens. If an existing Gmail account is already signed in, some of these steps might be eliminated.
+The device sign-in flow prompts users who sign in with a Gmail account in an embedded web-view to enter a code in a separate browser before they can finish signing in. If users are signing in with their Gmail account for the first time with no active sessions in the browser, they see the following sequence of screens. If an existing Gmail account is already signed in, some of these steps might be eliminated.
 
 1. On the **Sign in** screen, the user enters their Gmail address and selects **Next**.
 
    ![Screenshot showing the sign-in screen](media/google-federation/1-sign-in.png)
 
-1. The following screen appears, prompting the user to open a new window, navigate to https://microsoft.com/devicelogin, and enter the 9-digit alphanumeric code displayed.
+1. The following screen appears, prompting the user to open a new window, navigate to https://microsoft.com/devicelogin, and enter the nine digit alphanumeric code displayed.
 
    ![Screenshot showing the 9-digit code](media/google-federation/2-sign-in-code.png)
 
@@ -98,7 +98,7 @@ The device sign-in flow prompts users who sign in with a Gmail account in an emb
 
    ![Screenshot showing the device sign-in page](media/google-federation/3-enter-code.png)
 
-1. If the codes match, for security purposes the user is asked to reenter their email to confirm their app and sign-in location.
+1. If the codes match, the user is asked to reenter their email to confirm their app and sign-in location for security purposes.
 
    ![Screenshot showing the screen for reentering email](media/google-federation/4-sign-in-reenter-email.png)
 
@@ -120,19 +120,19 @@ Alternatively, you can have your existing and new Gmail users sign in with email
 2. [Remove Google Federation](google-federation.md#how-do-i-remove-google-federation).
 3. [Reset redemption status](reset-redemption-status.md) of your Gmail users so they can use email one-time passcode going forward.
 
-If you want to request an extension, impacted customers with affected OAuth client ID(s) should have received an email from Google Developers with the following information regarding a one-time policy enforcement extension, which must be completed by Jan 31, 2022:
+If you want to request an extension, impacted customers with affected OAuth client ID(s) should have received an email from Google Developers with the following information regarding a one-time policy enforcement extension, which must be completed by January 31, 2022:
 
 - "If necessary, you may request a one-time **policy enforcement extension for embedded webviews** for each listed OAuth client ID until January 31, 2022. For clarity, the policy for embedded webviews will be enforced on February 1, 2022 with no exceptions or extensions."
 
 Applications that are migrated to an allowed web-view for authentication won't be affected, and users will be allowed to authenticate via Google as usual.
 
-If applications are not migrated to an allowed web-view for authentication, then affected Gmail users will see the following screen.
+If applications aren't migrated to an allowed web-view for authentication, then affected Gmail users see the following screen.
 
 ![Google sign-in error if apps are not migrated to system browsers](media/google-federation/google-sign-in-error-ewv.png)
 
 ### Distinguishing between CEF/Electron and embedded web-views
 
-In addition to the [deprecation of embedded web-view and framework sign-in support](#deprecation-of-web-view-sign-in-support), Google is also [deprecating Chromium Embedded Framework (CEF) based Gmail authentication](https://developers.googleblog.com/2020/08/guidance-for-our-effort-to-block-less-secure-browser-and-apps.html). For applications built on CEF, such as Electron apps, Google will disable authentication on June 30, 2021. Impacted applications have received notice from Google directly, and are not covered in this documentation.  This document pertains to the embedded web-views described above, which Google will restrict at a separate date on September 30, 2021.
+In addition to the [deprecation of embedded web-view and framework sign-in support](#deprecation-of-web-view-sign-in-support), Google is also [deprecating Chromium Embedded Framework (CEF) based Gmail authentication](https://developers.googleblog.com/2020/08/guidance-for-our-effort-to-block-less-secure-browser-and-apps.html). For applications built on CEF, such as Electron apps, Google will disable authentication on June 30, 2021. Impacted applications have received notice from Google directly, and aren't covered in this documentation.  This document pertains to the embedded web-views described previously, which Google will restrict at a separate date on September 30, 2021.
 
 ### Action needed for embedded frameworks
 
@@ -180,7 +180,7 @@ First, create a new project in the Google Developers Console to obtain a client 
     > [!NOTE]
     > To find your tenant ID, sign in to the [Microsoft Entra admin center](https://entra.microsoft.com). Under **Identity**, select **Overview** and copy the **Tenant ID**.
 
-1. Select **Create**. Copy your client ID and client secret. You'll use them when you add the identity provider in the Microsoft Entra admin center.
+1. Select **Create**. Copy your client ID and client secret. You use them when you add the identity provider in the Microsoft Entra admin center.
 
     ![Screenshot that shows the OAuth client ID and client secret.](media/google-federation/google-auth-client-id-secret.png)
 
@@ -203,20 +203,44 @@ You'll now set the Google client ID and client secret. You can use the Microsoft
    ![Screenshot that shows the Add Google identity provider page.](media/google-federation/google-identity-provider.png)
 
 **To configure Google federation by using PowerShell**
-1. Install the latest version of the Azure AD PowerShell for Graph module ([AzureADPreview](https://www.powershellgallery.com/packages/AzureADPreview)).
-2. Run this command:
-   `Connect-AzureAD`
+
+1. Install the latest version of the [Microsoft Graph PowerShell module](/powershell/microsoftgraph/installation).
+2. Connect to your tenant by using the [Connect-MgGraph](/powershell/microsoftgraph/authentication-commands#using-connect-mggraph) command.
 3. At the sign-in prompt, sign in with the managed Global Administrator account.  
-4. Run the following command: 
-   
-   `New-AzureADMSIdentityProvider -Type Google -Name Google -ClientId <client ID> -ClientSecret <client secret>`
- 
+4. Run the following commands:
+
+   ```powershell
+   $params = @{
+      "@odata.type" = "microsoft.graph.socialIdentityProvider"
+      displayName = "Login with Google"
+      identityProviderType = "Google"
+      clientId = "<client ID>"
+      clientSecret = "<client secret>"
+   }
+
+   New-MgIdentityProvider -BodyParameter $params
+   ```
+
    > [!NOTE]
-   > Use the client ID and client secret from the app you created in "Step 1: Configure a Google developer project." For more information, see [New-AzureADMSIdentityProvider](/powershell/module/azuread/new-azureadmsidentityprovider?view=azureadps-2.0-preview&preserve-view=true). 
+   > Use the client ID and client secret from the app you created in "Step 1: Configure a Google developer project." For more information, see [New-MgIdentityProvider](/powershell/module/microsoft.graph.identity.signins/new-mgidentityprovider).
+
+## Add Google identity provider to a user flow
+
+At this point, the Google identity provider is set up in your Microsoft Entra ID tenant. Users who redeem invitations from you can use Google to sign in. However, if you've created self-service sign-up user flows, you also need to add Google to your user flow sign-in pages. To add the Google identity provider to a user flow:
+
+1. Browse to **Identity** > **External Identities** > **User flows**.
+
+1. Select the user flow where you want to add the Google identity provider.
+
+1. Under Settings, select **Identity providers.**
+
+1. In the identity providers list, select **Google**.
+
+1. Select **Save**.
 
 ## How do I remove Google federation?
 
-You can delete your Google federation setup. If you do so, Google guest users who have already redeemed their invitation won't be able to sign in. But you can give them access to your resources again by [resetting their redemption status](reset-redemption-status.md).
+You can delete your Google federation setup. If you do so, Google guest users who already redeemed their invitation can't sign in. But you can give them access to your resources again by [resetting their redemption status](reset-redemption-status.md).
  
 **To delete Google federation in the Microsoft Entra admin center**
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [External Identity Provider administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
@@ -228,12 +252,15 @@ You can delete your Google federation setup. If you do so, Google guest users wh
 1. Select **Yes** to confirm the deletion. 
 
 **To delete Google federation by using PowerShell** 
-1. Install the latest version of the Azure AD PowerShell for Graph module ([AzureADPreview](https://www.powershellgallery.com/packages/AzureADPreview)).
-2. Run `Connect-AzureAD`.  
-4. In the sign-in prompt, sign in with the managed Global Administrator account.  
-5. Enter the following command:
 
-    `Remove-AzureADMSIdentityProvider -Id Google-OAUTH`
+1. Install the latest version of the [Microsoft Graph PowerShell module](/powershell/microsoftgraph/installation).
+2. Connect to your tenant by using the [Connect-MgGraph](/powershell/microsoftgraph/authentication-commands#using-connect-mggraph) command.
+3. In the sign-in prompt, sign in with the managed Global Administrator account.  
+4. Enter the following command:
+
+   ```powershell
+   Remove-MgIdentityProvider -IdentityProviderBaseId Google-OAUTH
+   ```
 
    > [!NOTE]
-   > For more information, see [Remove-AzureADMSIdentityProvider](/powershell/module/azuread/Remove-AzureADMSIdentityProvider?view=azureadps-2.0-preview&preserve-view=true).
+   > For more information, see [Remove-MgIdentityProvider](/powershell/module/microsoft.graph.identity.signins/remove-mgidentityprovider).

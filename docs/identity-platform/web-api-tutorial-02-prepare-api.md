@@ -1,15 +1,13 @@
 ---
 title: "Tutorial: Create and configure an ASP.NET Core project for authentication"
 description: "Create and configure the API in an IDE, add configuration for authentication and install required packages"
-services: active-directory
 author: cilwerner
-
+manager: CelesteDG
+ms.author: cwerner
+ms.date: 11/1/2022
 ms.service: active-directory
 ms.subservice: develop
-ms.author: cwerner
-manager: CelesteDG
 ms.topic: tutorial
-ms.date: 11/1/2022
 #Customer intent: As an application developer, I want to create an ASP.NET Core project in an IDE, then configure it in such a way that I can add authentication with Microsoft Entra ID.
 ---
 
@@ -67,6 +65,11 @@ Use the following tabs to create an ASP.NET Core project within an IDE.
 1. Accept the default for the **Target Framework** and **Advanced**, then select **Continue**.
 1. Enter a name for the **Project name**, this will be reflected in **Solution Name**. Provide a similar name to the one registered on the Azure portal, such as *NewAPI1*.
 1. Accept the default location for the project or choose a different location, and then select **Create**.
+
+>[!NOTE]
+> Visual Studio for Mac is scheduled for retirement by August 31, 2024 in accordance with Microsoft’s [Modern Lifecycle Policy](/lifecycle/policies/modern). Visual Studio for Mac 17.6 will continue to be supported until August 31, 2024, with servicing updates for security issues and updated platforms from Apple.
+> Refer to [What's happening to Visual Studio for Mac](/visualstudio/mac/what-happened-to-vs-for-mac) for more information.
+
 ---
 
 ## Configure the ASP.NET Core project

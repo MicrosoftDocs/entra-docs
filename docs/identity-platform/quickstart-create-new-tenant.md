@@ -1,17 +1,15 @@
 ---
 title: "Quickstart: Create a Microsoft Entra tenant"
 description: In this quickstart, you learn how to create a Microsoft Entra tenant for use in developing applications that use the Microsoft identity platform for authentication and authorization.
-services: active-directory
 author: OwenRichards1
 manager: CelesteDG
+ms.author: ryanwi
+ms.custom: fasttrack-edit, mode-other
+ms.date: 01/10/2024
+ms.reviewer: jmprieur
 ms.service: active-directory
 ms.subservice: develop
-ms.workload: identity
 ms.topic: quickstart
-ms.date: 07/11/2023
-ms.author: ryanwi
-ms.reviewer: jmprieur
-ms.custom: aaddev, identityplatformtop40, fasttrack-edit, mode-other
 #Customer intent: As an application developer, I need to create a Microsoft identity environment so I can use it to register applications.
 ---
 
@@ -27,14 +25,14 @@ Each Microsoft Entra tenant is distinct and separate from other Microsoft Entra 
 
 An Azure account that has an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 
-## Determining the environment type
+## Determining the type of users you'll create apps for
 
-You can create two types of environments. The environment depends solely on the types of users your app will authenticate. 
+You can create a tenant with two different configurations:  workforce or customer. The environment depends solely on the types of users your app will authenticate. 
 
 This quickstart addresses two scenarios for the type of app you want to build:
 
-* Work and school accounts (Microsoft Entra ID) or Microsoft accounts (such as Outlook.com and Live.com)
-* Social and local (Azure AD B2C) accounts
+* Workforce-facing apps and services for work and school accounts (Microsoft Entra ID) or Microsoft accounts (such as Outlook.com and Live.com)
+* Customer-facing apps and services for social and local accounts
 
 ## Work and school accounts, or personal Microsoft accounts
 
@@ -79,7 +77,7 @@ You'll provide the following information to create your new tenant:
 
 ## Social and local accounts
 
-To begin building external facing applications that sign in social and local accounts, create an Azure AD B2C tenant. To begin, see [Create an Azure AD B2C tenant](/azure/active-directory-b2c/tutorial-create-tenant).
+To begin building external facing applications that sign in social and local accounts, create a tenant with customer configurations. To begin, see [Create a tenant with customer configuration (preview)](../external-id/customers/quickstart-tenant-setup.md).
 
 ## Next steps
 

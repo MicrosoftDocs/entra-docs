@@ -1,18 +1,16 @@
 ---
 title: "Tutorial: Use shared-device mode with the Microsoft Authentication Library (MSAL) for Android"
-description: In this tutorial, you learn how to prepare an Android device to run in shared mode and run a first-line worker app.
-services: active-directory
+description: In this tutorial, you learn how to prepare an Android device to run in shared mode and run a frontline worker app.
 author: henrymbuguakiarie
 manager: CelesteDG
-
+ms.author: henrymbugua
+ms.custom:
+ms.date: 10/24/2023
+ms.reviewer: brandwe
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: tutorial
-ms.workload: identity
-ms.date: 10/24/2023
-ms.author: henrymbugua
-ms.reviewer: brandwe
-ms.custom: aaddev, identityplatformtop40
+#Customer intent: As an Android developer, I want to learn how to enable shared-device mode for an Android app, so that I can configure Android devices to be shared by multiple employees and provide Microsoft Identity backed management of the device.
 ---
 
 # Tutorial: Use shared-device mode in your Android application
@@ -120,7 +118,7 @@ PublicClientApplication.create(this.getApplicationCOntext(),
 
 ### Detect single vs. multiple account mode
 
-If you're writing an app that will only be used for first-line workers on a shared device, we recommend you write your app to only support single-account mode. This includes most applications that are task focused such as medical records apps, invoice apps, and most line-of-business apps. This will simplify your development as many features of the SDK won't need to be accommodated.
+If you're writing an app that will only be used for frontline workers on a shared device, we recommend you write your app to only support single-account mode. This includes most applications that are task focused such as medical records apps, invoice apps, and most line-of-business apps. This will simplify your development as many features of the SDK won't need to be accommodated.
 
 If your app supports multiple accounts and shared device mode, you must perform a type check and cast to the appropriate interface as shown below.
 

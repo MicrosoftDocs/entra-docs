@@ -1,22 +1,19 @@
 ---
-title: Sign in users from a Web app
+title: Web app that signs in users - Overview
 description: Learn how to build a web app that signs in users (overview)
-services: active-directory
 author: cilwerner
 manager: CelesteDG
-
+ms.author: cwerner
+ms.custom: 
+ms.date: 12/15/2023
+ms.reviewer: jmprieur
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-ms.workload: identity
-ms.date: 10/12/2022
-ms.author: cwerner
-ms.reviewer: jmprieur
-ms.custom: aaddev, identityplatformtop40, engagement-fy23
 #Customer intent: As an application developer, I want to know how to write a web app that signs in users by using the Microsoft identity platform.
 ---
 
-# Scenario: Web app that signs in users
+# Web app that signs in users: Overview
 
 Learn all you need to build a web app that uses the Microsoft identity platform to sign in users.
 

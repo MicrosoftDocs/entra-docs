@@ -1,19 +1,19 @@
 ---
 title: Enable single sign-on for an enterprise application
 description: Enable single sign-on for an enterprise application in Microsoft Entra ID.
-services: active-directory
+
 author: omondiatieno
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: how-to
-ms.workload: identity
+
 ms.date: 10/30/2023
 ms.author: jomondi
 ms.reviewer: ergleenl
-ms.custom: contperf-fy22q2, mode-other, enterprise-apps
+ms.custom: mode-other, enterprise-apps
 
-#Customer intent: As an administrator of a Microsoft Entra tenant, I want to enable single sign-on for an enterprise application.
+#customer intent: As an IT admin, I want to enable single sign-on for an enterprise application in Microsoft Entra, so that my users can sign in using their Microsoft Entra credentials and have a seamless authentication experience.
 ---
 
 # Enable single sign-on for an enterprise application

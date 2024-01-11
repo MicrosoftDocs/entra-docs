@@ -1,17 +1,16 @@
 ---
 title: Refresh tokens in the Microsoft identity platform
 description: Learn about refresh tokens that are used in the Microsoft identity platform.
-services: active-directory
 author: cilwerner
 manager: CelesteDG
+ms.author: cwerner
+ms.custom: curation-claims
+ms.date: 06/02/2023
+ms.reviewer: ludwignick
 ms.service: active-directory
 ms.subservice: develop
-ms.workload: identity
 ms.topic: conceptual
-ms.date: 06/02/2023
-ms.author: cwerner
-ms.reviewer: ludwignick
-ms.custom: aaddev, curation-claims
+#Customer intent: As a developer integrating with the Microsoft identity platform, I want to understand how refresh tokens work, so that I can securely manage access to protected resources and obtain new access tokens when needed.
 ---
 
 # Refresh tokens in the Microsoft identity platform

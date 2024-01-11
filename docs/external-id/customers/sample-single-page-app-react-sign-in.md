@@ -1,7 +1,7 @@
 ---
 title: Sign in users in a sample React single-page application
 description: Learn how to configure a sample React single-page app (SPA) to sign in and sign out users.
-services: active-directory
+ 
 author: garrodonnell
 manager: celestedg
 ms.author: godonnell

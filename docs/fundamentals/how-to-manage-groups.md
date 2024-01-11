@@ -9,7 +9,7 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: fundamentals
 ms.topic: how-to
-ms.date: 09/12/2023
+ms.date: 11/30/2023
 ms.author: sarahlipsey
 ms.reviewer: krbain
 
@@ -38,7 +38,7 @@ To create a basic group and add members:
  
 1. Select **New group**.
 
-    ![Screenshot of the 'Microsoft Entra groups' page with 'New group' option highlighted.](media/how-to-manage-groups/new-group.png)
+   :::image type="content" source="media/how-to-manage-groups/new-group.png" alt-text="Screenshot of the 'Microsoft Entra groups' page with 'New group' option highlighted.":::
 
 1. Select a **Group type**. For more information on group types, see the [learn about groups and membership types](concept-learn-about-groups.md) article.
 
@@ -65,7 +65,7 @@ To create a basic group and add members:
     1. Select the link under **Owners** or **Members** to populate a list of every user in your directory.
     1. Choose users from the list and then select the **Select** button at the bottom of the window.
 
-    ![Screenshot of selecting members for your group during the group creation process.](media/how-to-manage-groups/add-members.png)
+   :::image type="content" source="media/how-to-manage-groups/add-members.png" alt-text="Screenshot of selecting members for your group during the group creation process.":::
 
 1. Select **Create**. Your group is created and ready for you to manage other settings.
 
@@ -89,7 +89,7 @@ Need to add multiple members at one time? Learn about the [add members in bulk](
 
 1. Select either **Members** or **Owners**.
 
-    ![Screenshot of the 'Group overview' page with Members and Owners menu options highlighted.](media/how-to-manage-groups/groups-members-owners.png)
+   :::image type="content" source="media/how-to-manage-groups/groups-members-owners.png" alt-text="Screenshot of the Group overview page with Members and Owners menu options highlighted.":::
 
 1. Select **+ Add** (members or owners).
 
@@ -109,7 +109,7 @@ Need to add multiple members at one time? Learn about the [add members in bulk](
 
 1. Check the box next to a name from the list and select the **Remove** button.
 
-    ![Screenshot of group members with a name selected and the Remove button highlighted.](media/how-to-manage-groups/groups-remove-member.png)
+   :::image type="content" source="media/how-to-manage-groups/groups-remove-member.png" alt-text="Screenshot of group members with a name selected and the Remove button highlighted.":::
 
 ## Edit group settings
 
@@ -125,7 +125,7 @@ To edit your group settings:
 
 1. Select **Properties** from the side menu.
 
-    ![Screenshot of the 'Group overview' page with Properties menu option highlighted.](media/how-to-manage-groups/groups-overview.png)
+   :::image type="content" source="media/how-to-manage-groups/groups-overview.png" alt-text="Screenshot of the Group overview page with Properties menu option highlighted.":::
 
 1. Update the **General settings** information as needed, including:
 
@@ -172,7 +172,7 @@ We currently don't support:
 
     For this exercise, we're adding "MDM policy - West" to the "MDM policy - All org" group. The "MDM - policy - West" group will have the same access as the "MDM policy - All org" group.
 
-    ![Screenshot of making a group the member of another group with 'Group membership' from the side menu and 'Add membership' option highlighted.](media/how-to-manage-groups/nested-groups-selected.png)
+   :::image type="content" source="media/how-to-manage-groups/nested-groups-selected.png" alt-text="Screenshot of making a group the member of another group with Group membership from the side menu and 'Add membership' option highlighted.":::
 
 Now you can review the "MDM policy - West - Group memberships" page to see the group and member relationship.
 
@@ -191,7 +191,7 @@ You can remove an existing Security group from another Security group; however, 
 
     For this exercise, we're now going to remove "MDM policy - West" from the "MDM policy - All org" group.
 
-    ![Screenshot of the 'Group membership' page showing both the member and the group details with 'Remove membership' option highlighted.](media/how-to-manage-groups/remove-nested-group.png)
+   :::image type="content" source="media/how-to-manage-groups/remove-nested-group.png" alt-text="Screenshot of the 'Group membership' page showing both the member and the group details with 'Remove membership' option highlighted.":::
 
 ## Delete a group
 

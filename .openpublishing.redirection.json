@@ -1,11 +1,10 @@
 {
-    "redirections": [
-      {
-        "source_path_from_root": "/docs/identity/domain-services/delete-aadds.md",
-        "redirect_url": "/entra/identity/domain-services/delete",
-        "redirect_document_id": false  
-      },
-
+  "redirections": [
+    {
+      "source_path_from_root": "/docs/identity/domain-services/delete-aadds.md",
+      "redirect_url": "/entra/identity/domain-services/delete",
+      "redirect_document_id": false
+    },
     {
       "source_path_from_root": "/docs/identity/hybrid/cloud-sync/index.yml",
       "redirect_url": "/entra/identity/hybrid/index",
@@ -16,33 +15,102 @@
       "redirect_url": "/entra/identity/hybrid/index",
       "redirect_document_id": false
     },
+    {
+      "source_path_from_root": "/docs/fundamentals/licensing-preview-terms.md",
+      "redirect_url": "/entra/fundamentals/licensing-preview-info",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/monitoring-health/howto-configure-prerequisites-for-reporting-api.md",
+      "redirect_url": "/entra/identity/monitoring-health/howto-enable-microsoft-graph-activity-logs",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/index.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/jisc-student-voter-registration-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/skillcast-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/cisco-umbrella-user-management-provisioning-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/cisco-user-management-for-secure-access-provisioning-tutorial",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/rivial-data-security-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/rivial-cybersecurity-management-platform-tutorial",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/axiad-cloud-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/axiad-cloud-connector-tutorial",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/adobe-identity-management-provisioning-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/adobe-identity-management-provisioning-saml-tutorial",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/querylayer-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/trustworks-tutorial",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/workplace-by-facebook-provisioning-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/workplace-from-meta-provisioning-tutorial",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/msal-v1-app-scopes.md",
+      "redirect_url": "/entra/identity-platform/msal-acquire-cache-tokens",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/authentication/multi-factor-authentication-wizard.md",
+      "redirect_url": "/entra/identity/conditional-access/howto-conditional-access-policy-all-users-mfa",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/authentication/concept-authentication-operator-assistance.md",
+      "redirect_url": "/entra/identity/authentication/concept-mfa-howitworks",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/web-app-tutorial-01-register-application.md",
+      "redirect_url": "/entra/identity-platform/tutorial-web-app-dotnet-register-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/web-app-tutorial-02-prepare-application.md",
+      "redirect_url": "/entra/identity-platform/tutorial-web-app-dotnet-prepare-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/web-app-tutorial-03-sign-in-users.md",
+      "redirect_url": "/entra/identity-platform/tutorial-web-app-dotnet-sign-in-users",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/web-app-tutorial-04-call-web-api.md",
+      "redirect_url": "/entra/identity-platform/tutorial-web-app-dotnet-call-api",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/test-throttle-service-limits.md",
+      "redirect_url": "/entra/identity-platform/test-setup-environment",
+      "redirect_document_id": false
+    }
 
-      {
-        "source_path_from_root": "/docs/fundamentals/licensing-preview-terms.md",
-        "redirect_url": "/entra/fundamentals/licensing-preview-info",
-        "redirect_document_id": false
-      },
-      {
-        "source_path_from_root": "/docs/identity/saas-apps/index.md",
-        "redirect_url": "/entra/identity/saas-apps/tutorial-list",
-        "redirect_document_id": false
-      },
-      {
-        "source_path_from_root": "/docs/identity/saas-apps/jisc-student-voter-registration-tutorial.md",
-        "redirect_url": "/entra/identity/saas-apps/tutorial-list",
-        "redirect_document_id": false
-      },
-      {
-        "source_path_from_root": "/docs/identity/saas-apps/cisco-umbrella-user-management-provisioning-tutorial.md",
-        "redirect_url": "/entra/identity/saas-apps/cisco-user-management-for-secure-access-provisioning-tutorial",
-        "redirect_document_id": false
-      },
-      {
-        "source_path_from_root": "/docs/identity-platform/msal-v1-app-scopes.md",
-        "redirect_url": "/entra/identity-platform/msal-acquire-cache-tokens",
-        "redirect_document_id": false
-      }
-
-    ]
-  }
+  ]
+}
 

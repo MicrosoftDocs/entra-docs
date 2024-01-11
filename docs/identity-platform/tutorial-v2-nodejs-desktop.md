@@ -1,16 +1,15 @@
 ---
 title: "Tutorial: Sign in users and call the Microsoft Graph API in an Electron desktop app"
 description: In this tutorial, you build an Electron desktop app that can sign in users and use the auth code flow to obtain an access token from the Microsoft identity platform and call the Microsoft Graph API.
-services: active-directory
 author: cilwerner
 manager: CelesteDG
-
+ms.author: cwerner
+ms.custom: devx-track-js
+ms.date: 02/17/2021
 ms.service: active-directory
 ms.subservice: develop
-ms.custom: devx-track-js
 ms.topic: tutorial
-ms.date: 02/17/2021
-ms.author: cwerner
+#Customer intent: As a developer building an Electron desktop app, I want to learn how to sign in users and call the Microsoft Graph API using the authorization code flow with PKCE, so that I can integrate user authentication and access Microsoft Graph data in my application.
 ---
 
 # Tutorial: Sign in users and call the Microsoft Graph API in an Electron desktop app

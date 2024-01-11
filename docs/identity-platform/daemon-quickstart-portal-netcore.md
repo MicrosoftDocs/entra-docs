@@ -1,18 +1,16 @@
 ---
 title: "Quickstart: Get token & call Microsoft Graph in a console app"
 description: In this quickstart, you learn how a .NET Core sample app can use the client credentials flow to get a token and call Microsoft Graph.
-services: active-directory
+ROBOTS: NOINDEX
 author: OwenRichards1
 manager: CelesteDG
+ms.author: owenrichards
+ms.custom: devx-track-csharp,  scenarios:getting-started, "languages:aspnet-core", mode-api, devx-track-dotnet
+ms.date: 08/22/2022
+ms.reviewer: marsma
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-ms.workload: identity
-ms.date: 08/22/2022
-ROBOTS: NOINDEX
-ms.author: owenrichards
-ms.reviewer: marsma
-ms.custom: devx-track-csharp, aaddev, identityplatformtop40, "scenarios:getting-started", "languages:aspnet-core", mode-api, devx-track-dotnet
 #Customer intent: As an application developer, I want to learn how my .NET Core app can get an access token and call an API that's protected by the Microsoft identity platform by using the client credentials flow.
 ---
 
@@ -82,6 +80,9 @@ ms.custom: devx-track-csharp, aaddev, identityplatformtop40, "scenarios:getting-
 > #### Step 4: Run the application
 > 
 > If you're using Visual Studio or Visual Studio for Mac, press **F5** to run the application. Otherwise, run the application via command prompt, console, or terminal:
+>
+> Visual Studio for Mac is scheduled for retirement by August 31, 2024 in accordance with Microsoft’s [Modern Lifecycle Policy](/lifecycle/policies/modern). Visual Studio for Mac 17.6 will continue to be supported until August 31, 2024, with servicing updates for security issues and updated platforms from Apple.
+> Refer to [What's happening to Visual Studio for Mac](/visualstudio/mac/what-happened-to-vs-for-mac) for more information.
 > 
 > ```dotnetcli
 > cd {ProjectFolder}\1-Call-MSGraph\daemon-console

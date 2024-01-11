@@ -1,6 +1,6 @@
 ---
-title: How to call the Request Service REST API
-description: Learn how to issue and verify by using the Request Service REST API
+title: Call the Request Service REST API
+description: Learn how to issue and verify by using the Request Service REST API.
 documentationCenter: ''
 author: barclayn
 manager: amycolannino
@@ -10,12 +10,10 @@ ms.subservice: verifiable-credentials
 ms.date: 06/16/2022
 ms.author: barclayn
 
-#Customer intent: As an administrator, I am trying to learn how to use the Request Service API and integrate it into my business application.
+#Customer intent: As an administrator, I'm trying to learn how to use the Request Service API and integrate it into my business application.
 ---
 
-# Request Service REST API
-
-[!INCLUDE [Verifiable Credentials announcement](~/../azure-docs-pr/includes/verifiable-credentials-brand.md)]
+# Call the Request Service REST API
 
 Microsoft Entra Verified ID includes the Request Service REST API. This API allows you to issue and verify credentials. This article shows you how to start using the Request Service REST API.
 
@@ -23,11 +21,11 @@ Microsoft Entra Verified ID includes the Request Service REST API. This API allo
 
 Your application needs to include a valid access token with the required permissions so that it can access the Request Service REST API. Access tokens issued by the Microsoft identity platform contain information (scopes) that the Request Service REST API uses to validate the caller. An access token ensures that the caller has the proper permissions to perform the operation they're requesting.
 
-To get an access token, your app must be registered with the Microsoft identity platform, and be authorized by an administrator for access to the Request Service REST API. If you haven't registered the *verifiable-credentials-app* application, see [how to register the app](verifiable-credentials-configure-tenant.md#register-an-application-in-azure-ad) and then [generate an application secret](verifiable-credentials-configure-issuer.md#configure-the-verifiable-credentials-app).
+To get an access token, your app must be registered with the Microsoft identity platform and be authorized by an administrator for access to the Request Service REST API. If you haven't registered the *verifiable-credentials-app* application, see [how to register the app](verifiable-credentials-configure-tenant.md#register-an-application-in-azure-ad) and then [generate an application secret](verifiable-credentials-configure-issuer.md#configure-the-verifiable-credentials-app).
 
 ### Get an access token
 
-Use the [OAuth 2.0 client credentials grant flow](~/identity-platform/v2-oauth2-client-creds-grant-flow.md) to acquire the access token by using the Microsoft identity platform. Use a trusted library for this purpose. In this tutorial, we use the Microsoft Authentication Library [MSAL](~/identity-platform/msal-overview.md). MSAL simplifies adding authentication and authorization to an app that can call a secure web API.
+Use the [OAuth 2.0 client credentials grant flow](~/identity-platform/v2-oauth2-client-creds-grant-flow.md) to acquire the access token by using the Microsoft identity platform. Use a trusted library for this purpose. In this tutorial, we use the Microsoft Authentication Library ([MSAL](~/identity-platform/msal-overview.md)). MSAL simplifies adding authentication and authorization to an app that can call a secure web API.
 
 # [HTTP](#tab/http)
 
@@ -135,11 +133,16 @@ In the preceding code, provide the following parameters:
 | Authority | Required | The directory tenant the application plans to operate against. For example: `https://login.microsoftonline.com/{your-tenant}`. (Replace `your-tenant` with your [tenant ID or name](/azure/active-directory-b2c/tenant-management-read-tenant-name).) |
 | Client ID | Required | The application ID that's assigned to your app. You can find this information in the Azure portal, where you registered your app. |
 | Client secret | Required | The client secret that you generated for your app.|
-| Scopes | Required | Must be set to `3db474b9-6a0c-4840-96ac-1fceb342124f/.default`. This will produce an access token with a **roles** claim of `VerifiableCredential.Create.All`. |
+| Scopes | Required | Must be set to `3db474b9-6a0c-4840-96ac-1fceb342124f/.default`. This setting produces an access token with a **roles** claim of `VerifiableCredential.Create.All`. |
 
-For more information about how to get an access token by using a console app's identity, see one of the following articles: [C#](~/identity-platform/quickstart-v2-netcore-daemon.md), [Python](~/identity-platform/quickstart-v2-python-daemon.md), [Node.js](~/identity-platform/quickstart-v2-nodejs-console.md), or [Java](~/identity-platform/quickstart-v2-java-daemon.md).
+For more information about how to get an access token by using a console app's identity, see one of the following articles:
 
-You can also [access a token request with a certificate](~/identity-platform/v2-oauth2-client-creds-grant-flow.md) instead of client secret.
+- [C#](~/identity-platform/quickstart-v2-netcore-daemon.md)
+- [Python](~/identity-platform/quickstart-v2-python-daemon.md)
+- [Node.js](~/identity-platform/quickstart-v2-nodejs-console.md)
+- [Java](~/identity-platform/quickstart-v2-java-daemon.md)
+
+You can also [access a token request with a certificate](~/identity-platform/v2-oauth2-client-creds-grant-flow.md) instead of a client secret.
 
 # [HTTP](#tab/http)
 
@@ -259,9 +262,9 @@ return result.accessToken();
 
 ## Call the API
 
-To issue or verify a verifiable credential, follow these steps:
+To issue or verify a verifiable credential:
 
-1. Construct an HTTP POST request to the Request Service REST API. The `tenantId` is not needed in the URL anymore as it is present as a claim in the `access_token`.
+1. Construct an HTTP POST request to the Request Service REST API. The tenant ID isn't needed in the URL anymore because it's present as a claim in the access token.
 
     **Issue**
     ```http
@@ -285,7 +288,7 @@ To issue or verify a verifiable credential, follow these steps:
 
 1. Submit the request to the Request Service REST API.
 
-The Request Service API returns an HTTP Status Code `201 Created` on a successful call. If the API call returns an error, please check the [error reference documentation](error-codes.md).
+The Request Service API returns an HTTP Status Code `201 Created` on a successful call. If the API call returns an error, check the [error reference documentation](error-codes.md).
 
 ## Issuance request example
 
@@ -296,8 +299,16 @@ POST https://verifiedid.did.msidentity.com/v1.0/verifiableCredentials/createIssu
 Content-Type: application/json
 Authorization: Bearer  <token>
 
+{...JSON payload...}
+```
+
+# [Issuance request](#tab/issuancerequest)
+
+Issuance request using the `idTokenHint` attestation flow:
+
+```JSON
 {
-    "includeQRCode": true,
+    "includeQRCode": false,
     "callback": {
         "url": "https://contoso.com/api/issuer/issuanceCallback",
         "state": "de19cb6b-36c1-45fe-9409-909a51292a9c",
@@ -320,7 +331,39 @@ Authorization: Bearer  <token>
         "family_name": "Bowen"
     }
 }
-```  
+```
+
+# [With expiry date](#tab/expirydate)
+
+Issuance request using the `idTokenHint` attestation flow that [sets the expiry date](issuance-request-api.md#issuance-request-payload):
+
+```JSON
+    "includeQRCode": false,
+    "callback": {
+        "url": "https://contoso.com/api/issuer/issuanceCallback",
+        "state": "de19cb6b-36c1-45fe-9409-909a51292a9c",
+        "headers": {
+            "api-key": "OPTIONAL API-KEY for CALLBACK EVENTS"
+        }
+    },
+    "authority": "did:web:verifiedid.contoso.com",
+    "registration": {
+        "clientName": "Verifiable Credential Expert Sample"
+    },
+    "type": "VerifiedCredentialExpert",
+    "manifestUrl": "https://verifiedid.did.msidentity.com/v1.0/12345678-0000-0000-0000-000000000000/verifiableCredentials/contracts/VerifiedCredentialExpert1",
+    "pin": {
+        "value": "3539",
+        "length": 4
+    },
+    "claims": {
+        "given_name": "Megan",
+        "family_name": "Bowen"
+    },
+    "expirationDate": "2024-12-31T23:59:59.000Z"
+}
+```
+---
 
 For the complete code, see one of the following code samples:
 
@@ -341,9 +384,9 @@ Authorization: Bearer  <token>
 {...JSON payload...}
 ```
 
-# [Presentation request](#tab/request)
+# [Presentation request](#tab/presentationrequest)
 
-Presentation request for a credential with certain type and issuer.
+Presentation request for a credential with a certain type and issuer:
 
 ```JSON
 {
@@ -378,9 +421,9 @@ Presentation request for a credential with certain type and issuer.
 }
 ```
 
-# [claims constraints](#tab/constraints)
+# [With claims constraints](#tab/constraints)
 
-Presentation request with [claims constraints](presentation-request-api.md#constraints-type)
+Presentation request with [claims constraints](presentation-request-api.md#constraints-type):
 
 ```JSON
 {
@@ -422,6 +465,45 @@ Presentation request with [claims constraints](presentation-request-api.md#const
   ]
 }
 ```
+
+# [With FaceCheck](#tab/facecheck)
+
+Presentation request with FaceCheck:
+
+```JSON
+{
+  "authority": "did:web:verifiedid.contoso.com",
+  "includeQRCode": false,
+  "includeReceipt": false,
+  "registration": {
+    "clientName": "Contoso Job Application Center",
+    "purpose": "Provide proof of attended courses"
+  },
+  "callback": {
+    "url": "https://contoso.com/api/verifier/presentationCallback",
+    "state": "92d076dd-450a-4247-aa5b-d2e75a1a5d58",
+    "headers": {
+      "api-key": "OPTIONAL API-KEY for CALLBACK EVENTS"
+    }
+  },
+  "requestedCredentials": [
+    {
+      "type": "VerifiedEmployee",
+      "acceptedIssuers": [ "did:web:learn.contoso.com" ],
+      "configuration": {
+        "validation": {
+          "allowRevoked": false,
+          "validateLinkedDomain": true,
+          "faceCheck": {
+            "sourcePhotoClaimName": "photo",
+            "matchConfidenceThreshold": 70
+          }
+        }
+      }
+    }
+  ]
+}
+```
 ---
 
 For the complete code, see one of the following code samples:
@@ -433,13 +515,13 @@ For the complete code, see one of the following code samples:
 
 ## Callback events
 
-The request payload contains the [issuance](issuance-request-api.md#callback-events) and [presentation](presentation-request-api.md#callback-events) callback endpoint. The endpoint is part of your web application, and should be publicly available via the HTTPS protocol. The Request Service API calls your endpoint to inform your app on certain events. For example, such events might be when a user scans the QR code, uses the deep link the authenticator app, or finishes the presentation process.
+The request payload contains the [issuance](issuance-request-api.md#callback-events) and [presentation](presentation-request-api.md#callback-events) callback endpoint. The endpoint is part of your web application and should be publicly available via the HTTPS protocol. The Request Service API calls your endpoint to inform your app on certain events. For example, such events might be when a user scans the QR code, uses the deep link to the authenticator app, or finishes the presentation process.
 
-The following diagram describes the call your app makes to the Request Service REST API, and the callbacks to your application.
+The following diagram describes the call your app makes to the Request Service REST API and the callbacks to your application.
 
-![Diagram that describes the call to the API and the callback events.](media/get-started-request-api/callback-events.png)
+![Diagram that shows the call to the API and the callback events.](media/get-started-request-api/callback-events.png)
 
-Configure your endpoint to listen to incoming HTTP POST requests. The following code snippet demonstrates how to handle the issuance callback HTTP request, and how to update the UI accordingly:
+Configure your endpoint to listen to incoming HTTP POST requests. The following code snippet demonstrates how to handle the issuance callback HTTP request and how to update the UI accordingly:
 
 # [HTTP](#tab/http)
 

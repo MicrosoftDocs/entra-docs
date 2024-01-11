@@ -29,6 +29,8 @@ items:
         href: on-premises-sql-connector-configure.md
       - name: Provisioning to LDAP based apps
         href: on-premises-ldap-connector-configure.md
+      - name: Provisioning to LDAP for Linux auth
+        href: on-premises-ldap-connector-linux.md
       - name: Provisioning to PowerShell based apps
         href: on-premises-powershell-connector.md
       - name: Provisioning with the web services connector
@@ -51,7 +53,7 @@ items:
         href: inbound-provisioning-api-postman.md
       - name: Quickstart with Graph Explorer
         href: inbound-provisioning-api-graph-explorer.md
-      - name: Quickstart with Powershell
+      - name: Quickstart with PowerShell
         href: inbound-provisioning-api-powershell.md
       - name: Quickstart with Azure Logic Apps
         href: inbound-provisioning-api-logic-apps.md

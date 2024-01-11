@@ -1,13 +1,13 @@
 ---
 title: 'Tutorial: Configure Workday for automatic user provisioning with on-premises Active Directory'
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Workday.
-services: active-directory
+
 author: cmmdesai
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.topic: tutorial
-ms.workload: identity
+
 ms.date: 11/21/2022
 ms.author: chmutali
 ---

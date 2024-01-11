@@ -1,15 +1,15 @@
 ---
 title: Microsoft Entra SSO integration with Tanium SSO
 description: Learn how to configure single sign-on between Microsoft Entra ID and Tanium SSO.
-services: active-directory
+
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.topic: how-to
-ms.date: 07/14/2023
+ms.date: 11/21/2023
 ms.author: jeedes
 
 ---
@@ -22,7 +22,8 @@ In this article, you learn how to integrate Tanium SSO with Microsoft Entra ID. 
 * Enable your users to be automatically signed-in to Tanium SSO with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
-You'll configure and test Microsoft Entra single sign-on for Tanium SSO in a test environment. Tanium SSO supports both **SP** and **IDP** initiated single sign-on and also **Just In Time** user provisioning.
+You'll configure and test Microsoft Entra single sign-on for Tanium SSO in a test environment. Tanium SSO supports both **SP** and **IDP** initiated single sign-on and also **Just In Time** user provisioning. Tanium SSO also supports [Automated user provisioning](tanium-sso-provisioning-tutorial.md).
+
 
 ## Prerequisites
 

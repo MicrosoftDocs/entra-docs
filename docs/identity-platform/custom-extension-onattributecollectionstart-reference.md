@@ -1,20 +1,15 @@
 ---
 title: OnAttributeCollectionStart reference
-titleSuffix: Microsoft identity platform
 description: Reference documentation for a custom authentication extension that invokes the OnAttributeCollectionStart event for External ID customer configurations.
-services: active-directory
 author: msmimart
 manager: CelesteDG
-
+ms.author: mimart
+ms.date: 10/27/2023
 ms.service: active-directory
 ms.subservice: develop
-ms.workload: identity
 ms.topic: reference
-ms.date: 10/27/2023
-ms.author: mimart
-
+titleSuffix: Microsoft identity platform
 #Customer intent: As a developer, I want to learn about the REST API schema so that I can add workflows to the attribute collection start event in the sign-up flow.
-
 ---
 
 # Custom Extension for OnAttributeCollectionStart event (preview)

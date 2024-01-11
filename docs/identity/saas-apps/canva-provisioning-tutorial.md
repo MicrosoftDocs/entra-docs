@@ -1,14 +1,14 @@
 ---
 title: 'Tutorial: Configure Canva for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Canva.
-services: active-directory
+
 author: twimmers
 writer: twimmers
 manager: jeedes
 ms.assetid: 9bf62920-d9e0-4ed4-a4f6-860cb9563b00
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.topic: tutorial
 ms.date: 08/16/2023
 ms.author: thwimmer

@@ -1,13 +1,13 @@
 ---
 title: Sign in users in a sample Node.js browserless application by using the Device Code flow - Add sign-in support
 description: Learn how to configure a browserless application to sign in and sign out users
-services: active-directory
+ 
 author: Dickson-Mwendia
 manager: mwongerapk
 
 ms.author: dmwendia
 ms.service: active-directory
-ms.workload: identity
+ 
 ms.subservice: ciam
 ms.topic: how-to
 ms.date: 05/09/2023

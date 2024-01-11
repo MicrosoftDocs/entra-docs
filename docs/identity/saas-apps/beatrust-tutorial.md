@@ -1,13 +1,13 @@
 ---
 title: 'Tutorial: Microsoft Entra SSO integration with Beatrust'
 description: Learn how to configure single sign-on between Microsoft Entra ID and Beatrust.
-services: active-directory
+
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: jeedes
@@ -85,7 +85,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://beatrust.com`
 
     b. In the **Reply URL** text box, type the URL:
-    `https://auth.beatrust.com/__/auth/handler`
+    `https://beatrust.com/__/auth/handler`
 
     c. In the **Sign-on URL** text box, type a URL using  of the following pattern:
     `https://beatrust.com/<org_key>

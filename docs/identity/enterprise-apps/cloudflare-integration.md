@@ -1,17 +1,19 @@
 ---
 title: Configure Cloudflare with Microsoft Entra ID for secure hybrid access
 description: In this tutorial, learn how to integrate Cloudflare with Microsoft Entra ID for secure hybrid access 
-services: active-directory
+
 author: gargi-sinha
 manager: martinco
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: how-to
-ms.workload: identity
+
 ms.date: 05/02/2023
 ms.author: gasinh
 ms.collection: M365-identity-device-management
 ms.custom: not-enterprise-apps
+
+#customer intent:As an administrator configuring access policies in Cloudflare Access, I want to learn how to integrate Cloudflare with Microsoft Entra ID, so that I can enforce organizational policies and provide secure access to self-hosted, SaaS, or nonweb applications.
 ---
 
 # Tutorial: Configure Cloudflare with Microsoft Entra ID for secure hybrid access

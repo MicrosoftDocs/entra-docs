@@ -8,11 +8,13 @@ manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: conceptual
-ms.workload: identity
+
 ms.date: 05/31/2022
 ms.author: jomondi
 ms.reviewer: celested
 ms.custom: enterprise-apps
+
+#customer intent: As an IT admin managing applications in Microsoft Entra ID, I want to learn about the key concepts of application management, such as app registrations vs enterprise apps, consent and permissions framework, and app ownership and user assignment, so that I can effectively manage and secure applications in my organization. 
 ---
 
 # Application management videos

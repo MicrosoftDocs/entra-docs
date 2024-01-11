@@ -1,17 +1,19 @@
 ---
 title: Configure F5 BIG-IP Easy Button for Kerberos SSO
 description: Learn to implement secure hybrid access (SHA) with Single Sign-on to Kerberos applications using F5's BIG-IP Easy Button guided configuration.
-services: active-directory
+
 author: gargi-sinha
 manager: martinco
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: how-to
-ms.workload: identity
+
 ms.date: 12/14/2022
 ms.author: gasinh
 ms.collection: M365-identity-device-management
 ms.custom: not-enterprise-apps
+
+#customer intent: As an IT admin, I want to configure F5 BIG-IP Easy Button for Kerberos single sign-on with Microsoft Entra ID, so that I can improve the security posture of legacy applications and enable SSO between Microsoft Entra ID and BIG-IP published services.
 ---
 
 # Tutorial: Configure F5 BIG-IP Easy Button for Kerberos single sign-on

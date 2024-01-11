@@ -1,13 +1,13 @@
 ---
 title: 'Tutorial: Configure Symantec Web Security Service (WSS) for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Symantec Web Security Service (WSS).
-services: active-directory
+
 author: twimmers
 writer: twimmers
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.topic: tutorial
 ms.date: 04/05/2023
 ms.author: thwimmer

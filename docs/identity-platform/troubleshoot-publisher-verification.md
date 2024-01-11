@@ -1,17 +1,16 @@
 ---
 title: Troubleshoot publisher verification
 description: Describes how to troubleshoot publisher verification for the Microsoft identity platform by calling Microsoft Graph APIs.
-services: active-directory
 author: rwike77
 manager: CelesteDG
+ms.author: ryanwi
+ms.custom: 
+ms.date: 08/17/2023
+ms.reviewer: xurobert
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: troubleshooting
-ms.workload: identity
-ms.date: 08/17/2023
-ms.author: ryanwi
-ms.custom: aaddev
-ms.reviewer: xurobert
+#Customer intent: As a developer troubleshooting publisher verification, I want to understand the common issues and potential error codes related to the process, so that I can resolve any issues and successfully complete the verification for my application.
 ---
 
 # Troubleshoot publisher verification
@@ -28,7 +27,7 @@ Below are some common issues that may occur during the process.
 - **I don’t know my Cloud Partner Program ID (Partner One ID) or I don’t know who the primary contact for the account is.** 
     1. Navigate to the [Cloud Partner Program enrollment page](https://partner.microsoft.com/dashboard/account/v3/enrollment/joinnow/basicpartnernetwork/new).
     1. Sign in with a user account in the org's primary Microsoft Entra tenant. 
-    1. If an Cloud Partner Program account already exists, this is recognized and you are added to the account. 
+    1. If a Cloud Partner Program account already exists, this is recognized and you are added to the account. 
     1. Navigate to the [partner profile page](https://partner.microsoft.com/pcv/accountsettings/connectedpartnerprofile) where the Partner One ID and primary account contact will be listed.
 
 - **I don’t know who my Microsoft Entra Global Administrator (also known as company admin or tenant admin) is, how do I find them? What about the Application Administrator or Cloud Application Administrator?**
@@ -47,7 +46,7 @@ Below are some common issues that may occur during the process.
     Your app registrations may have been created using a different user account in this tenant, a personal/consumer account, or in a different tenant. Ensure you're signed in with the correct account in the tenant where your app registrations were created.
 
 - **I'm getting an error related to multi-factor authentication. What should I do?** 
-    Ensure [multi-factor authentication](~/identity/authentication/concept-mfa-licensing.md) is enabled and **required** for the user you're signing in with and for this scenario. For example, MFA could be:
+    Ensure [multifactor authentication](~/identity/authentication/concept-mfa-licensing.md) is enabled and **required** for the user you're signing in with and for this scenario. For example, MFA could be:
     - Always required for the user you're signing in with.
     - [Required for Azure management](~/identity/conditional-access/howto-conditional-access-policy-azure-management.md).
     - [Required for the type of administrator](~/identity/conditional-access/howto-conditional-access-policy-admin-mfa.md) you're signing in with.
@@ -155,7 +154,7 @@ Most commonly caused by the signed-in user not being a member of the proper role
 
 The Partner One ID you provided (`MPNID`) isn't valid. Provide a valid Partner One ID and try again.
     
-Most commonly caused when an Partner One ID is provided which corresponds to a Partner Location Account (PLA). Only Partner Global Accounts are supported. See [Partner Center account structure](/partner-center/account-structure) for more details.
+Most commonly caused when a Partner One ID is provided which corresponds to a Partner Location Account (PLA). Only Partner Global Accounts are supported. See [Partner Center account structure](/partner-center/account-structure) for more details.
 
 **Remediation Steps**
 1. Navigate to your [partner profile](https://partner.microsoft.com/pcv/accountsettings/connectedpartnerprofile) > **Identifiers blade** > **Microsoft Cloud Partners Program Tab**.
@@ -216,7 +215,7 @@ Most commonly caused when verification is being performed via Graph API, and the
 
 ### ApplicationObjectisInvalid 
 
-The target application's object ID is invalid. Please provide a valid ID and try again. 
+The target application's object ID is invalid. Provide a valid ID and try again. 
 
 Most commonly caused when the verification is being performed via Graph API, and the ID of the application provided does not exist. 
 
@@ -292,17 +291,17 @@ Occurs when a consumer account is used for app registration (Hotmail, Messenger,
 
 ### InteractionRequired
 
-Occurs when multi-factor authentication (MFA) hasn't been enabled and performed before attempting to add a verified publisher to the app. See [common issues](#common-issues) for more information. Note: MFA must be performed in the same session when attempting to add a verified publisher. If MFA is enabled but not required to be performed in the session, the request will fail. 
+Occurs when multifactor authentication (MFA) hasn't been enabled and performed before attempting to add a verified publisher to the app. See [common issues](#common-issues) for more information. Note: MFA must be performed in the same session when attempting to add a verified publisher. If MFA is enabled but not required to be performed in the session, the request fails. 
 
-The error message displayed will be: "Due to a configuration change made by your administrator, or because you moved to a new location, you must use multi-factor authentication to proceed."
+The error message displayed will be: "Due to a configuration change made by your administrator, or because you moved to a new location, you must use multifactor authentication to proceed."
 
 **Remediation Steps**
-1. Ensure [multi-factor authentication](~/identity/authentication/concept-mfa-licensing.md) is enabled and **required** for the user you're signing in with and for this scenario
+1. Ensure [multifactor authentication](~/identity/authentication/concept-mfa-licensing.md) is enabled and **required** for the user you're signing in with and for this scenario
 1. Retry Publisher Verification
 
 ### UserUnableToAddPublisher
 
-When a request to add a verified publisher is made, many signals are used to make a security risk assessment. If the user risk state is determined to be ‘AtRisk’, an error, “You're unable to add a verified publisher to this application. Contact your administrator for assistance” will be returned. Please investigate the user risk and take the appropriate steps to remediate the risk (guidance below): 
+When a request to add a verified publisher is made, many signals are used to make a security risk assessment. If the user risk state is determined to be ‘AtRisk’, an error, “You're unable to add a verified publisher to this application. Contact your administrator for assistance” will be returned. Investigate the user risk and take the appropriate steps to remediate the risk (guidance below): 
 
 **Remediation Steps**
 > [Investigate risk](~/id-protection/howto-identity-protection-investigate-risk.md#risky-users)

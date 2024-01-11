@@ -1,18 +1,15 @@
 ---
 title: Build a web app that authenticates users and calls web APIs
 description: Learn how to build a web app that authenticates users and calls web APIs (overview)
-services: active-directory
 author: cilwerner
 manager: CelesteDG
-
+ms.author: cwerner
+ms.custom: 
+ms.date: 01/10/2023
+ms.reviewer: jmprieur
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-ms.workload: identity
-ms.date: 11/4/2022
-ms.author: cwerner
-ms.reviewer: jmprieur
-ms.custom: aaddev, engagement-fy23
 #Customer intent: As an application developer, I want to know how to write a web app that authenticates users and calls web APIs by using the Microsoft identity platform.
 ---
 
@@ -30,7 +27,7 @@ You add authentication to your web app so that it can sign users in and call a w
 
 ![Web app that calls web APIs](./media/scenario-webapp/web-app.svg)
 
-Web apps that call web APIs are confidential client applications. That's why they register a secret (an application password or certificate) with Microsoft Entra ID. This secret is passed in during the call to Microsoft Entra ID to get a token.
+Web apps that call web APIs are confidential client applications, and need to create a secret (an application password or certificate) with Microsoft Entra ID. This secret is passed in during the call to Microsoft Entra ID to get a token.
 
 ## Specifics
 

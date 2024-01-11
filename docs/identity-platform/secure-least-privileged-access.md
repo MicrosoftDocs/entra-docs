@@ -1,18 +1,16 @@
 ---
 title: "Increase application security with the principle of least privilege"
 description: Learn how the principle of least privilege can help increase the security of an application and its data.
-services: active-directory
 author: omondiatieno
 manager: CelesteDG
+ms.author: jomondi
+ms.custom: template-concept
+ms.date: 01/06/2023
+ms.reviewer: yuhko, saumadan
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-ms.workload: identity
-ms.date: 01/06/2023
-ms.custom: template-concept
-ms.author: jomondi
-ms.reviewer: yuhko, saumadan
-# Customer intent: As a developer, I want to learn about the principle of least privilege and the features of the Microsoft identity platform that I can use to make sure my application and its users are restricted to actions and have access to only the data they need perform their tasks.
+#Customer intent: As a developer, I want to learn about the principle of least privilege and the features of the Microsoft identity platform that I can use to make sure my application and its users are restricted to actions and have access to only the data they need perform their tasks.
 ---
 
 # Enhance security with the principle of least privilege

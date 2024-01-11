@@ -1,7 +1,7 @@
 ---
 title: 'Tutorial: Configure Adobe Identity Management (OIDC) for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Adobe Identity Management (OIDC).
-services: active-directory
+
 documentationcenter: ''
 author: twimmers
 writer: twimmers
@@ -10,7 +10,7 @@ manager: jeedes
 ms.assetid: baa54168-d23a-49d8-94d1-28476138cd90
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 11/21/2022
@@ -51,19 +51,19 @@ The scenario outlined in this tutorial assumes that you already have the followi
 
 ## Step 2: Configure Adobe Identity Management (OIDC) to support provisioning with Microsoft Entra ID
 
-1. Login to [Adobe Admin Console](https://adminconsole.adobe.com/). Navigate to **Settings > Directory Details > Sync**. 
+1. Log in to [Adobe Admin Console](https://adminconsole.adobe.com/). Navigate to **Settings > Directory Details > Sync**. 
 
 1. Click **Add Sync**.
 
-    ![Add](media/adobe-identity-management-provisioning-tutorial/add-sync.png)
+    ![Add](media/adobe-identity-management-provisioning-saml-tutorial/add-sync.png)
 
 1. Select **Sync users from Microsoft Azure** and click **Next**.
 
-    ![Screenshot that shows 'Sync users from Microsoft Entra ID' selected.](media/adobe-identity-management-provisioning-tutorial/sync-users.png)
+    ![Screenshot that shows 'Sync users from Microsoft Entra ID' selected.](media/adobe-identity-management-provisioning-saml-tutorial/sync-users.png)
 
 1. Copy and save the **Tenant URL** and the **Secret token**. These values will be entered in the **Tenant URL** and **Secret Token** fields in the Provisioning tab of your Adobe Identity Management (OIDC) application.
 
-    ![Sync](media/adobe-identity-management-provisioning-tutorial/token.png)
+    ![Sync](media/adobe-identity-management-provisioning-saml-tutorial/token.png)
 
 <a name='step-3-add-adobe-identity-management-oidc-from-the-azure-ad-application-gallery'></a>
 

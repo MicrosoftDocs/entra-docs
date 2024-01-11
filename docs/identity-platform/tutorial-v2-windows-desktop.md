@@ -1,18 +1,16 @@
 ---
 title: "Tutorial: Create a Windows Presentation Foundation (WPF) app that uses the Microsoft identity platform for authentication"
 description: In this tutorial, you build a WPF application that uses the Microsoft identity platform to sign in users and get an access token to call the Microsoft Graph API on their behalf.
-services: active-directory
 author: henrymbuguakiarie
 manager: CelesteDG
-
+ms.author: henrymbugua
+ms.custom:
+ms.date: 02/21/2023
+ms.reviewer: jmprieur
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: tutorial
-ms.workload: identity
-ms.date: 02/21/2023
-ms.author: henrymbugua
-ms.reviewer: jmprieur
-ms.custom: aaddev, identityplatformtop40
+#Customer intent: As a developer creating a Windows Presentation Foundation (WPF) desktop app, I want to learn how to sign in users and call the Microsoft Graph API, so that I can integrate authentication and access protected resources in my application.
 ---
 
 # Tutorial: Sign in users and call Microsoft Graph in Windows Presentation Foundation (WPF) desktop app

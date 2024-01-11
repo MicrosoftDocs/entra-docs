@@ -3,14 +3,14 @@ title: 'Tutorial: Configure Tableau Cloud for automatic user provisioning with M
 
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Tableau Cloud.
 
-services: active-directory
+
 author: twimmers
 writer: twimmers
 manager: jeedes
 ms.assetid: b4038c18-2bfd-47cb-8e74-3873dc85a796
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: thwimmer

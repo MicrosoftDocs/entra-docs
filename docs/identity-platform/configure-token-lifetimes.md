@@ -1,18 +1,16 @@
 ---
 title: Set lifetimes for tokens
 description: Learn how to set lifetimes for access tokens issued by Microsoft identity platform. 
-services: active-directory
 author: rwike77
 manager: CelesteDG
-
+ms.author: ryanwi
+ms.custom: 
+ms.date: 11/02/2023
+ms.reviewer: joroja
 ms.service: active-directory
 ms.subservice: develop
-ms.workload: identity
 ms.topic: how-to
-ms.date: 11/02/2023
-ms.author: ryanwi
-ms.custom:  engagement-fy23
-ms.reviewer: joroja
+#Customer intent: As an IT admin, I want to create and assign token lifetime policies to apps and service principals, so that I can control the lifetime of access, SAML, or ID tokens for improved security and authentication management.
 ---
 # Configure token lifetime policies (preview)
 

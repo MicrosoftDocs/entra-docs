@@ -1,13 +1,13 @@
 ---
 title: 'Tutorial: Microsoft Entra SSO integration with Torii'
 description: Learn how to configure single sign-on between Microsoft Entra ID and Torii.
-services: active-directory
+
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: jeedes
@@ -36,6 +36,7 @@ In this tutorial, you configure and test Microsoft Entra SSO in a test environme
 
 * Torii supports **SP and IDP** initiated SSO.
 * Torii supports **Just In Time** user provisioning.
+* Torii supports [Automated user provisioning](torii-provisioning-tutorial.md).
 
 ## Add Torii from the gallery
 

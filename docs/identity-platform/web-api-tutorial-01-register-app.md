@@ -1,15 +1,13 @@
 ---
 title: "Tutorial:  Register a web API with the Microsoft identity platform"
 description: In this tutorial, you learn how to register a web API with the Microsoft identity platform.
-services: active-directory
 author: cilwerner
-
+manager: CelesteDG
+ms.author: cwerner
+ms.date: 11/1/2022
 ms.service: active-directory
 ms.subservice: develop
-ms.author: cwerner
-manager: CelesteDG
 ms.topic: tutorial
-ms.date: 11/1/2022
 #Customer intent: As an application developer, I want to know how to register my application with the Microsoft identity platform so that the security token service can issue access tokens to client applications that request them.
 ---
 
@@ -69,7 +67,7 @@ Once the API is registered, you can configure its permission by defining the sco
     1. Ensure that the **State** is set to **Enabled**.
 1. Select **Add scope**. If the scope has been entered correctly, it'll be listed in the **Expose an API** pane.
 
-    :::image type="content" source="./media/web-api-tutorial-01-register-app/add-a-scope-inline.png" alt-text="Screenshot that shows the field values when adding the scope to an API." lightbox="./media/web-api-tutorial-01-register-app/add-a-scope-expanded.png":::
+    :::image type="content" source="./media/web-api-tutorial-01-register-app/add-a-scope.png" alt-text="Screenshot that shows the field values when adding the scope to an API." lightbox="./media/web-api-tutorial-01-register-app/add-a-scope.png":::
 
 ## Next steps
 

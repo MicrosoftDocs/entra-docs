@@ -1,17 +1,19 @@
 ---
 title: Configure F5 BIG-IP Easy Button for Header-based SSO
 description: Learn to implement secure hybrid access (SHA) with single sign-on (SSO) to header-based applications using F5 BIG-IP Easy Button Guided Configuration.
-services: active-directory
+
 author: gargi-sinha
 manager: martinco
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: how-to
-ms.workload: identity
+
 ms.date: 03/27/2023
 ms.author: gasinh
 ms.collection: M365-identity-device-management
 ms.custom: not-enterprise-apps
+
+#customer intent: As an IT administrator, I want to configure F5 BIG-IP Easy Button for header-based SSOLearn, so that I can secure header-based applications with Microsoft Entra ID and improve Zero Trust governance through preauthentication and Conditional Access.
 ---
 
 # Tutorial: Configure F5 BIG-IP Easy Button for header-based SSO

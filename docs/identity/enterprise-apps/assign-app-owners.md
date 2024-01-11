@@ -1,21 +1,21 @@
 ---
 title: Assign enterprise application owners
 description: Learn how to assign owners to applications in Microsoft Entra ID
-services: active-directory
+
 documentationcenter: ''
 author: omondiatieno
 manager: celesteDG
 ms.service: active-directory
-ms.workload: identity
+
 ms.subservice: app-mgmt
 ms.topic: how-to
-ms.date: 01/26/2023
+ms.date: 12/20/2023
 ms.author: jomondi
 ms.reviewer: saibandaru
 zone_pivot_groups: enterprise-apps-minus-former-powershell
 ms.custom: enterprise-apps
 
-#Customer intent: As a Microsoft Entra administrator, I want to assign owners to enterprise applications.
+#Customer intent: As an administrator, I want to assign an owner to an enterprise application in Microsoft Entra, so that the owner can manage the organization-specific configuration of the application and perform tasks such as single sign-on, provisioning, and user assignments.
 ---
 
 # Assign enterprise application owners
@@ -47,9 +47,7 @@ To assign an owner to an enterprise application:
 
 :::zone pivot="ms-powershell"
 
-Use the following Microsoft Graph PowerShell cmdlet to add an owner to an enterprise application.
-
-You need to sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator) and consent to the `Application.ReadWrite.All` permission.
+To add an owner to an enterprise application using Microsoft Graph PowerShell, you need to sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator) and consent to the `Application.ReadWrite.All` permission.
 
 In the following example, the user's object ID is 8afc02cb-4d62-4dba-b536-9f6d73e9be26 and the applicationId is 46e6adf4-a9cf-4b60-9390-0ba6fb00bf6b.
 
@@ -64,11 +62,12 @@ $params = @{
 
 New-MgServicePrincipalOwnerByRef -ServicePrincipalId '46e6adf4-a9cf-4b60-9390-0ba6fb00bf6b' -BodyParameter $params
 ```
+
 :::zone-end
 
 :::zone pivot="ms-graph"
 
-To assign an owner to an application, sign in to [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
+To assign an owner to an application using Microsoft Graph API, sign in to [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 
 You need to consent to the `Application.ReadWrite.All` permission.
 
@@ -86,7 +85,7 @@ Content-Type: application/json
 :::zone-end
 
 > [!NOTE]
-> If the user setting **Restrict access to Microsoft Entra administration portal** is set to `Yes`, non-admin users aren't able to use the Microsoft Entra admin center to manage the applications they own. For more information about the actions that can be performed on owned enterprise applications, see [Owned enterprise applications](~/fundamentals/users-default-permissions.md#owned-enterprise-applications). 
+> If the user setting **Restrict access to Microsoft Entra administration portal** is set to `Yes`, non-admin users aren't able to use the Microsoft Entra admin center to manage the applications they own. For more information about the actions that can be performed on owned enterprise applications, see [Owned enterprise applications](~/fundamentals/users-default-permissions.md#owned-enterprise-applications).
 
 ## Next steps
 

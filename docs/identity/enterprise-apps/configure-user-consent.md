@@ -1,21 +1,21 @@
 ---
 title: Configure how users consent to applications
 description: Learn how to manage how and when users can consent to applications that request access to your organization's data.
-services: active-directory
+
 author: omondiatieno
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
-ms.workload: identity
+
 ms.topic: how-to
 ms.date: 10/31/2023
 ms.author: jomondi
 ms.reviewer: phsignor, yuhko
-ms.custom: contperf-fy21q2, contperf-fy22q2, enterprise-apps
+ms.custom: enterprise-apps
 zone_pivot_groups: enterprise-apps-minus-former-powershell
 
 
-#customer intent: As an admin, I want to configure how end-users consent to applications.
+#customer intent: As an IT admin, I want to configure user consent settings for applications, so that I can control the level of access users have to my organization's data and reduce the risk of malicious applications.
 ---
 
 # Configure how users consent to applications
@@ -35,9 +35,9 @@ To configure user consent, you need:
 
 ## Configure user consent settings
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
-
 :::zone pivot="portal"
+
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To configure user consent settings through the Microsoft Entra admin center:
 
@@ -116,7 +116,7 @@ $body = @{
 
 :::zone pivot="ms-graph"
 
-Use the [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) to choose which app consent policy governs user consent for applications.
+Use the [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) to choose which app consent policy governs user consent for applications. You need to sign in as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 
 To disable user consent, ensure that the consent policies (`PermissionGrantPoliciesAssigned`) include other current `ManagePermissionGrantsForOwnedResource.*` policies if any while updating the collection. This way, you can maintain your current configuration for user consent settings and other resource consent settings.
 

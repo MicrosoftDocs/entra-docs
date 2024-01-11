@@ -5,12 +5,12 @@ services: active-directory
 author: barclayn
 ms.author: barclayn
 manager: amycolannino
-ms.date: 06/24/2022
+ms.date: 11/18/2023
 ms.topic: how-to
 ms.service: active-directory
 ms.subservice: enterprise-users
 ms.workload: identity
-ms.custom: it-pro, has-azure-ad-ps-ref
+ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.reviewer: krbain
 ms.collection: M365-identity-device-management
 ---
@@ -42,7 +42,7 @@ We’ve made changes to the existing Azure portal controls for guest user permis
 1. Under **External users**, select **Manage external collaboration settings**.
 1. On the **External collaboration settings** page, select **Guest user access is restricted to properties and memberships of their own directory objects** option.
 
-    ![Microsoft Entra external collaboration settings page](./media/users-restrict-guest-permissions/external-collaboration-settings.png)
+   :::image type="content" source="./media/users-restrict-guest-permissions/external-collaboration-settings.png" alt-text="Screenshot of Microsoft Entra external collaboration settings page.":::
 
 1. Select **Save**. The changes can take up to 15 minutes to take effect for guest users.
 
@@ -61,6 +61,9 @@ POST https://graph.microsoft.com/beta/policies/authorizationPolicy/authorization
 ````
 
 Response should be Success 204.
+
+
+[!INCLUDE [Azure AD PowerShell migration](../../includes/aad-powershell-migration-include.md)]
 
 ### Updating the existing value
 
@@ -98,34 +101,39 @@ Example response:
 
 ## Update with PowerShell cmdlets
 
-With this feature, we've added the ability to configure the restricted permissions via PowerShell v2 cmdlets. Get and Set PowerShell cmdlets have been published in version `2.0.2.85`.
+With this feature, we've added the ability to configure the restricted permissions via PowerShell v2 cmdlets. Get and Update PowerShell cmdlets have been published in version `2.0.2.85`.
 
-### Get command: Get-AzureADMSAuthorizationPolicy
-
-Example:
-
-````PowerShell
-PS C:\WINDOWS\system32> Get-AzureADMSAuthorizationPolicy
-
-Id                                                : authorizationPolicy
-OdataType                                         :
-Description                                       : Used to manage authorization related settings across the company.
-DisplayName                                       : Authorization Policy
-EnabledPreviewFeatures                            : {}
-GuestUserRoleId                                   : 10dae51f-b6af-4016-8d66-8c2a99b929b3
-PermissionGrantPolicyIdsAssignedToDefaultUserRole : {user-default-legacy}
-````
-
-### Set command: Set-AzureADMSAuthorizationPolicy
+### Get command: Get-MgPolicyAuthorizationPolicy
 
 Example:
 
-````PowerShell
-PS C:\WINDOWS\system32> Set-AzureADMSAuthorizationPolicy -GuestUserRoleId '2af84b1e-32c8-42b7-82bc-daa82404023b'
-````
+```powershell
+Get-MgPolicyAuthorizationPolicy | Format-List
+```
 
-> [!NOTE]
-> You must enter `authorizationPolicy` as the ID when requested.
+```output
+AllowEmailVerifiedUsersToJoinOrganization : True
+AllowInvitesFrom                          : everyone
+AllowUserConsentForRiskyApps              :
+AllowedToSignUpEmailBasedSubscriptions    : True
+AllowedToUseSspr                          : True
+BlockMsolPowerShell                       : False
+DefaultUserRolePermissions                : Microsoft.Graph.PowerShell.Models.MicrosoftGraphDefaultUserRolePermissions
+DeletedDateTime                           :
+Description                               : Used to manage authorization related settings across the company.
+DisplayName                               : Authorization Policy
+GuestUserRoleId                           : 10dae51f-b6af-4016-8d66-8c2a99b929b3
+Id                                        : authorizationPolicy
+AdditionalProperties                      : {[@odata.context, https://graph.microsoft.com/v1.0/$metadata#policies/authorizationPolicy/$entity]}
+```
+
+### Update command: Update-MgPolicyAuthorizationPolicy
+
+Example:
+
+````powershell
+Update-MgPolicyAuthorizationPolicy -GuestUserRoleId '2af84b1e-32c8-42b7-82bc-daa82404023b'
+````
 
 ## Supported Microsoft 365 services
 
@@ -139,13 +147,15 @@ By supported we mean that the experience is as expected; specifically, that it's
 - Planner in Teams
 - Planner mobile app
 - Planner web app
+- Project for the web
+- Project Operations
 
 ### Services currently not supported
 
 Service without current support might have compatibility issues with the new guest restriction setting.
 
 - Forms
-- Project
+- Project Online
 - Yammer
 - Planner in SharePoint
 

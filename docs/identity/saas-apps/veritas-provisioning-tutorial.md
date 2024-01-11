@@ -1,14 +1,14 @@
 ---
 title: 'Tutorial: Configure Veritas Enterprise Vault.cloud SSO-SCIM for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Veritas Enterprise Vault.cloud SSO-SCIM.
-services: active-directory
+
 author: twimmers
 writer: twimmers
 manager: jeedes
 ms.assetid: e99808ef-a7ff-4fcc-86d4-4cb3060f589b
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.topic: tutorial
 ms.date: 06/05/2023
 ms.author: thwimmer

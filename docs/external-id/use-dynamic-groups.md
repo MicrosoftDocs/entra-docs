@@ -2,7 +2,7 @@
 title: Dynamic groups and B2B collaboration
 description: Shows how to use Microsoft Entra dynamic groups with Microsoft Entra B2B collaboration 
 
-services: active-directory
+ 
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: how-to
@@ -14,9 +14,9 @@ manager: celestedg
 ms.reviewer: mal
 
 ms.collection: M365-identity-device-management
-ms.custom: engagement-fy23
+ms.custom:  
 
-# Customer intent: As a tenant administrator, I want to learn how to use dynamic groups with B2B collaboration. 
+# Customer intent: As an administrator managing user access in Microsoft Entra B2B collaboration, I want to create dynamic groups based on user attributes, so that I can automatically add or remove members from security groups and provide access to applications or cloud resources.
 ---
 
 # Create dynamic groups in Microsoft Entra B2B collaboration

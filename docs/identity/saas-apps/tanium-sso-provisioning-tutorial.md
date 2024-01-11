@@ -1,14 +1,14 @@
 ---
 title: 'Tutorial: Configure Tanium SSO for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Tanium SSO.
-services: active-directory
+
 author: twimmers
 writer: twimmers
 manager: jeedes
 ms.assetid: 967937de3-81c7-4c61-ae7e-7dad6c46411b
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.topic: tutorial
 ms.date: 07/10/2023
 ms.author: thwimmer

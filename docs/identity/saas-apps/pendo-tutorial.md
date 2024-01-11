@@ -1,15 +1,15 @@
 ---
 title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Pendo'
 description: Learn how to configure single sign-on between Microsoft Entra ID and Pendo.
-services: active-directory
+
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 12/12/2023
 ms.author: jeedes
 ---
 
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
 
-* Pendo supports **IDP** initiated SSO.
+* Pendo supports both **SP** and **IDP** initiated SSO.
 
 ## Add Pendo from the gallery
 
@@ -75,7 +75,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. On the **Set-up single sign-on with SAML** page, perform the following steps:
 
-    a. In the **Identifier** text box, enter `PingConnect`. (If this identifier is already used by another application, contact the [Pendo support team](mailto:support@pendo.io).)
+    a. In the **Identifier** text box, enter `PingConnect`. (If this identifier is already used by another application, contact the [Pendo support team](https://support.pendo.io/hc/articles/360034163971-Get-help-with-Pendo-from-Technical-Support).)
     
 
     b. In the **Relay State** text box, type a URL using the following pattern:
@@ -88,7 +88,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	![image](common/edit-attribute.png)
 
-1. On the **Set-up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
+1. On the **Set-up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **App Federation Metadata Url** (preferred) OR plain XML under **Federation Metadata XML** and select **Download** to download the metadata and save it on your computer.
 
 	![The Certificate download link](common/metadataxml.png)
 
@@ -128,19 +128,27 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 ## Configure Pendo SSO
 
-To configure single sign-on on **Pendo** side, you need to send the downloaded **Federation Metadata XML** and appropriate copied URLs from the application configuration to [Pendo support team](mailto:support@pendo.io). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **Pendo** side, you need to send the **App Federation Metadata Url** (preferred) or downloaded **Federation Metadata XML** and appropriate copied URLs from the application configuration to [Pendo support team](https://support.pendo.io/hc/articles/360034163971-Get-help-with-Pendo-from-Technical-Support). They set this setting to have the SAML SSO connection set properly on both sides.
 
 ### Create Pendo test user
 
-In this section, you create a user called Britta Simon in Pendo. Work with [Pendo support team](mailto:support@pendo.io) to add the users in the Pendo platform. Users must be created and activated before you use single sign-on.
+In this section, you create a user called Britta Simon in Pendo. Work with [Pendo support team](https://support.pendo.io/hc/articles/360034163971-Get-help-with-Pendo-from-Technical-Support) to add the users in the Pendo platform. Users must be created and activated before you use single sign-on.
 
 ## Test SSO 
 
-In this section, you test your Microsoft Entra single sign-on configuration with following options.
+In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, and you should be automatically signed in to the Pendo for which you set up the SSO.
+#### SP initiated:
 
-* You can use Microsoft My Apps. When you click the Pendo tile in the My Apps, you should be automatically signed in to the Pendo for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* Click on **Test this application**, this will redirect to Pendo Sign on URL where you can initiate the login flow.  
+
+* Go to Pendo Sign-on URL directly and initiate the login flow from there.
+
+#### IDP initiated:
+
+* Click on **Test this application**, and you should be automatically signed in to the Pendo for which you set up the SSO. 
+
+You can also use Microsoft My Apps to test the application in any mode. When you click the Pendo tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Pendo for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Next steps
 

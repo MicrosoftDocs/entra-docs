@@ -1,14 +1,14 @@
 ---
 title: Enable self-service password reset
 description: Learn how to enable self-service password reset so your customers can reset their own passwords without admin assistance.
-services: active-directory
+ 
 author: csmulligan
 manager: CelesteDG
 ms.service: active-directory
-ms.workload: identity
+ 
 ms.subservice: ciam
 ms.topic: how-to
-ms.date: 07/28/2023
+ms.date: 01/07/2024
 ms.author: cmulligan
 ms.custom: it-pro
 
@@ -26,6 +26,12 @@ The self-service password uses the email one-time passcode (Email OTP) authentic
 The following screenshots show the self-service password rest flow. From the app, the customer chooses to sign-in. On the sign-in page, the user types their email and selects **Next**. If users forgot their password, they choose the **Forgot password?** option. Microsoft Entra ID sends the passcode to email address provided on the first page. The customer needs to type the passcode to continue. 
 
 :::image type="content" source="media/how-to-enable-password-reset-customers/sspr-flow.png" alt-text="Screenshot that shows the self-service password rest flow.":::
+
+
+> [!TIP]
+> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=SSPR)
+> 
+> To try out this feature, go to the Woodgrove Groceries demo and start the “Self-service password reset” use case.
 
 ## Prerequisites
 

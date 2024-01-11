@@ -1,12 +1,12 @@
 ---
 title: Create collections for My Apps portals
 description: Use My Apps collections to Customize My Apps pages for a simpler My Apps experience for your users. Organize applications into groups with separate tabs.
-services: active-directory
+
 author: omondiatieno
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
-ms.workload: identity
+
 ms.topic: how-to
 ms.date: 09/02/2021
 ms.author: jomondi
@@ -14,7 +14,7 @@ ms.collection: M365-identity-device-management
 ms.reviewer: lenalepa
 ms.custom: enterprise-apps
 
-#customer intent: As an admin, I want to enable and create collections for My Apps portal in Microsoft Entra ID so that I can create a simpler My Apps experience for users.
+#customer intent: As an admin managing the My Apps portal, I want to create collections to better organize the applications available to users, so that they can easily find and access the applications that are relevant to their job role, task, or project.
 ---
 
 # Create collections on the My Apps portal

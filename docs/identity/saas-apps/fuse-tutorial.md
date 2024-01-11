@@ -1,13 +1,13 @@
 ---
 title: Microsoft Entra integration with Fuse
 description: Learn how to configure single sign-on between Microsoft Entra ID and Fuse.
-services: active-directory
+
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.topic: how-to
 ms.date: 3/10/2023
 ms.author: jeedes

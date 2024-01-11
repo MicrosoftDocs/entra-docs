@@ -77,7 +77,7 @@ You can use managed identities by following the steps below:
 
 Managed identities for Azure resources can be used to authenticate to services that support Microsoft Entra authentication. For a list of supported Azure services, see [services that support managed identities for Azure resources](./managed-identities-status.md).
 
-## Which operations can I perform using managed identities?
+## Which operations can I perform on managed identities?
 
 Resources that support system assigned managed identities allow you to:
 

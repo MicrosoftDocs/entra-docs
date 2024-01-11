@@ -1,14 +1,14 @@
 ---
 title: 'Tutorial: Configure Maptician for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Maptician.
-services: active-directory
+
 author: twimmers
 writer: twimmers
 manager: jeedes
 ms.assetid: 15ae5ceb-2113-40f8-8d3f-bf8895ef8f42
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.topic: tutorial
 ms.date: 04/04/2023
 ms.author: thwimmer

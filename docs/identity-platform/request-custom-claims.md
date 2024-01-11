@@ -1,17 +1,16 @@
 ---
 title: Request custom claims (MSAL iOS/macOS)
 description: Learn how to request custom claims.
-services: active-directory
 author: cilwerner
 manager: CelesteDG
-
+ms.author: cwerner
+ms.custom:
+ms.date: 01/19/2023
+ms.reviewer: brianmel
 ms.service: active-directory
 ms.subservice: develop
-ms.workload: identity
 ms.topic: how-to
-ms.date: 01/19/2023
-ms.author: cwerner
-ms.custom: aaddev
+#Customer intent: As a developer using MSAL for iOS and macOS, I want to request custom claims in both interactive and silent token acquisition scenarios.
 ---
 
 # Request custom claims using MSAL for iOS and macOS

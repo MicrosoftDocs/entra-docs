@@ -1,15 +1,13 @@
 ---
 title: Call an ASP.NET Core web API with Postman
 description: Learn how to call a protected ASP.NET Core Web API using the Microsoft identity platform and Postman
-services: active-directory
 author: henrymbuguakiarie
-
+manager: CelesteDG
+ms.author: henrymbugua
+ms.date: 05/25/2023
 ms.service: active-directory
 ms.subservice: develop
-ms.author: henrymbugua
-manager: CelesteDG
 ms.topic: how-to
-ms.date: 05/25/2023
 zone_pivot_groups: web-api-howto-prereq
 #Customer intent: As a software developer, I want to call a protected ASP.NET Core Web API using the Microsoft identity platform with Postman
 ---
@@ -100,7 +98,7 @@ Once the API is registered, you can configure its permission by defining the sco
    1. Ensure that the **State** is set to **Enabled**.
 1. Select **Add scope**. If the scope has been entered correctly, it's listed in the **Expose an API** pane.
 
-   :::image type="content" source="./media/web-api-tutorial-01-register-app/add-a-scope-inline.png" alt-text="Screenshot that shows the field values when adding the scope to an API." lightbox="./media/web-api-tutorial-01-register-app/add-a-scope-expanded.png":::
+   :::image type="content" source="./media/web-api-tutorial-01-register-app/add-a-scope.png" alt-text="Screenshot that shows the field values when adding the scope to an API." lightbox="./media/web-api-tutorial-01-register-app/add-a-scope.png":::
 
 ::: zone-end
 

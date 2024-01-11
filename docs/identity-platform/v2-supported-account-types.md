@@ -1,18 +1,16 @@
 ---
 title: Supported account types
 description: Conceptual documentation about audiences and supported account types in applications
-services: active-directory
 author: henrymbuguakiarie
 manager: CelesteDG
-
+ms.author: henrymbugua
+ms.custom:
+ms.date: 02/06/2023
+ms.reviewer: saeeda, jmprieur
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-ms.workload: identity
-ms.date: 02/06/2023
-ms.author: henrymbugua
-ms.reviewer: saeeda, jmprieur
-ms.custom: aaddev, identityplatformtop40
+#Customer intent: As a developer building a multi-tenant web application, I want to understand the supported account types in the Microsoft identity platform, so that I can ensure my application can sign in users from any organization and with their work, school, or personal Microsoft accounts.
 ---
 
 # Supported account types

@@ -38,8 +38,8 @@ items:
       href: quickstart-analyze-sign-in.md
     - name: Analyze provisioning logs
       href: howto-analyze-provisioning-logs.md
-    - name: Configure prerequisites for Reporting API
-      href: howto-configure-prerequisites-for-reporting-api.md
+    - name: Enable Microsoft Graph for activity logs
+      href: howto-enable-microsoft-graph-activity-logs.md
     - name: Access logs with Microsoft Graph  
       href: quickstart-access-log-with-graph-api.md
     - name: Archive logs to a storage account
@@ -53,6 +53,8 @@ items:
   - name: Concepts
     expanded: false
     items:
+    - name: Microsoft Entra Health
+      href: concept-microsoft-entra-health.md
     - name: Usage and insights report
       href: concept-usage-insights-report.md
   - name: How-to guides 
@@ -148,7 +150,7 @@ items:
   items:
   - name: SLA performance for Microsoft Entra ID
     href: reference-sla-performance.md
-  - name: Azure AD PowerShell cmdlets for reporting
+  - name: Microsoft Graph PowerShell cmdlets
     href: reference-powershell-reporting.md
   - name: Audit logs API reference
     href: /graph/api/resources/directoryaudit

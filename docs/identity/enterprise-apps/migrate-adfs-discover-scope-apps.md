@@ -1,17 +1,19 @@
 ---
 title: 'Phase 1: Discover and scope apps'
 description: This article describes phase 1 of planning migration of applications from AD FS to Microsoft Entra ID
-services: active-directory
+
 author: omondiatieno
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: conceptual
-ms.workload: identity
+
 ms.date: 05/30/2023
 ms.author: jomondi
 ms.reviewer: gasinh
 ms.collection: M365-identity-device-management
+
+#customer intent: As an IT admin responsible for app migration, I want to discover and scope the applications in my organization, so that I can determine which apps to migrate, modernize, keep as-is, or deprecate.
 ---
 
 # Phase 1: Discover and scope apps

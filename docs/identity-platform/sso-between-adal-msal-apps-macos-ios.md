@@ -1,18 +1,16 @@
 ---
 title: SSO between ADAL & MSAL apps (iOS/macOS)
 description: Learn how to share SSO between ADAL and MSAL apps
-services: active-directory
 author: henrymbuguakiarie
 manager: CelesteDG
-
+ms.author: henrymbugua
+ms.custom: has-adal-ref
+ms.date: 08/28/2019
+ms.reviewer: 
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-ms.workload: identity
-ms.date: 08/28/2019
-ms.author: henrymbugua
-ms.reviewer: 
-ms.custom: aaddev, has-adal-ref
+#Customer intent: As a developer using ADAL and MSAL apps on macOS and iOS, I want to understand how to implement Single Sign-On (SSO) between these apps, so that I can provide a seamless user experience and migrate from ADAL to MSAL smoothly.
 ---
 
 # How to: SSO between ADAL and MSAL apps on macOS and iOS
@@ -37,7 +35,7 @@ MSAL and ADAL use different account identifiers. ADAL uses UPN as its primary ac
 
 When you receive an `MSALAccount` object in the MSAL result, it contains an account identifier in the `identifier` property. The application should use this identifier for subsequent silent requests.
 
-In addition to `identifier`, `MSALAccount` object contains a displayable identifier called `username`. That translates to `userId` in ADAL. `username` is not considered a unique identifier and can change anytime, so it should only be used for backward compatibility scenarios with ADAL. MSAL supports cache queries using either `username` or `identifier`, where querying by `identifier` is recommended.
+In addition to `identifier`, `MSALAccount` object contains a displayable identifier called `username`. That translates to `userId` in ADAL. `username` isn't considered a unique identifier and can change anytime, so it should only be used for backward compatibility scenarios with ADAL. MSAL supports cache queries using either `username` or `identifier`, where querying by `identifier` is recommended.
 
 Following table summarizes account identifier differences between ADAL and MSAL:
 
@@ -45,7 +43,7 @@ Following table summarizes account identifier differences between ADAL and MSAL:
 | --------------------------------- | ------------------------------------------------------------ | --------------- | ------------------------------ |
 | displayable identifier            | `username`                                                   | `userId`        | `userId`                       |
 | unique non-displayable identifier | `identifier`                                                 | `homeAccountId` | N/A                            |
-| No account id known               | Query all accounts through `allAccounts:` API in `MSALPublicClientApplication` | N/A             | N/A                            |
+| No account ID known               | Query all accounts through `allAccounts:` API in `MSALPublicClientApplication` | N/A             | N/A                            |
 
 This is the `MSALAccount` interface providing those identifiers:
 
@@ -100,7 +98,7 @@ You can save this identifier to use in MSAL for account lookups with the `accoun
 
 #### ADAL's `userId`
 
-If `homeAccountId` is not available, or you only have the displayable identifier, you can use ADAL's `userId` to lookup the account in  MSAL.
+If `homeAccountId` isn't available, or you only have the displayable identifier, you can use ADAL's `userId` to lookup the account in  MSAL.
 
 In MSAL, first look up an account by `username` or `identifier`. Always use `identifier` for querying if you have it, and only use `username` as a fallback. If the account is found, use the account in the `acquireTokenSilent` calls.
 

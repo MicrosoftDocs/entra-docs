@@ -1,17 +1,19 @@
 ---
 title: Troubleshoot SAML-based single sign-on
 description: Troubleshoot issues with a Microsoft Entra app that's configured for SAML-based single sign-on.
-services: active-directory
+
 author: omondiatieno
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
-ms.workload: identity
+
 ms.topic: troubleshooting
 ms.date: 09/07/2023
 ms.author: jomondi
 ms.reviewer: alamaral
 ms.custom: enterprise-apps
+
+#customer intent: As an administrator troubleshooting SAML-based single sign-on, I want step-by-step guidance on how to configure an application, so that I can resolve any configuration issues and ensure successful single sign-on integration with Microsoft Entra ID.
 ---
 
 # Troubleshoot SAML-based single sign-on
@@ -63,7 +65,7 @@ Microsoft Entra ID select the format for the NameID attribute (User Identifier) 
 
 To download the application metadata or certificate from Microsoft Entra ID, follow these steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
 1. Select the application you have configured single sign-on.
 1. Once the application loads, click the **Single sign-on** from the application’s left-hand navigation menu.

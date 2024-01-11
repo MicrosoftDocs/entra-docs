@@ -1,17 +1,15 @@
 ---
 title: "Quickstart: Acquire a token and call Microsoft Graph in a .NET Core console app"
 description: In this quickstart, you learn how a .NET Core sample app can use the client credentials flow to get a token and call Microsoft Graph.
-services: active-directory
 author: OwenRichards1
 manager: CelesteDG
+ms.author: owenrichards
+ms.custom: devx-track-csharp,  'scenarios:getting-started', 'languages:aspnet-core', mode-other, devx-track-dotnet
+ms.date: 03/13/2023
+ms.reviewer: jmprieur
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: quickstart
-ms.workload: identity
-ms.date: 03/13/2023
-ms.author: owenrichards
-ms.reviewer: jmprieur
-ms.custom: devx-track-csharp, aaddev, identityplatformtop40, 'scenarios:getting-started', 'languages:aspnet-core', mode-other, devx-track-dotnet
 #Customer intent: As an application developer, I want to learn how my .NET Core app can get an access token and call an API that's protected by the Microsoft identity platform by using the client credentials flow.
 ---
 
@@ -68,6 +66,10 @@ To register the application and add the registration information to the solution
 [Download the Visual Studio project](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/archive/master.zip)
 
 This project can be run in either Visual Studio or Visual Studio for Mac and can be downloaded from the [code sample](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/archive/master.zip).
+
+>[!NOTE]
+> Visual Studio for Mac is scheduled for retirement by August 31, 2024 in accordance with Microsoft’s [Modern Lifecycle Policy](/lifecycle/policies/modern). Visual Studio for Mac 17.6 will continue to be supported until August 31, 2024, with servicing updates for security issues and updated platforms from Apple.
+> Refer to [What's happening to Visual Studio for Mac](/visualstudio/mac/what-happened-to-vs-for-mac) for more information.
 
 [!INCLUDE [active-directory-develop-path-length-tip](includes/error-handling-and-tips/path-length-tip.md)]
 

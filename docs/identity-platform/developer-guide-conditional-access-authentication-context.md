@@ -1,20 +1,16 @@
 ---
 title: Developer guidance for Microsoft Entra Conditional Access authentication context
 description: Developer guidance and scenarios for Microsoft Entra Conditional Access authentication context
-
-services: active-directory
 author: cilwerner
 manager: CelesteDG
-
+ms.author: cwerner
+ms.custom:
+ms.date: 11/15/2022
+ms.reviewer: joflore, kkrishna
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-ms.date: 11/15/2022
-
-ms.author: cwerner
-ms.reviewer: joflore, kkrishna
-ms.workload: identity
-ms.custom: aaddev
+#Customer intent: As a developer integrating authentication into my application, I want to understand how to use Conditional Access authentication context, so that I can apply granular policies for access to sensitive data and actions within my app.
 ---
 
 # Developer guide to Conditional Access authentication context

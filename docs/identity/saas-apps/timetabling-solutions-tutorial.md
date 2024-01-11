@@ -1,15 +1,15 @@
 ---
 title: 'Tutorial: Microsoft Entra SSO integration with Timetabling Solutions'
 description: Learn how to configure single sign-on between Microsoft Entra ID and Timetabling Solutions.
-services: active-directory
+
 author: jeevansd
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.workload: identity
+
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 12/12/2023
 ms.author: jeedes
 ---
 
@@ -76,10 +76,16 @@ Follow these steps to enable Microsoft Entra SSO.
 
    ![Screenshot shows to edit Basic S A M L Configuration.](common/edit-urls.png "Basic Configuration")
 
-1. On the **Basic SAML Configuration** section, perform the following step:
+1. On the **Basic SAML Configuration** section, perform the following steps:
 
-    In the **Sign-on URL** text box, type the URL:
-    `https://auth.timetabling.education/login`
+    a. In the **Identifier (Entity ID)** text box, type the URL:
+     `https://auth.timetabling.education`
+
+    b. In the **Reply URL (Assertion Consumer Service URL)** text box, type the URL:
+     `https://auth.timetabling.education`
+     
+    c. In the **Sign-on URL** text box, type the URL:
+     `https://auth.timetabling.education`
 
 1. In the **SAML Signing Certificate** section, click **Edit** button to open **SAML Signing Certificate** dialog.
 

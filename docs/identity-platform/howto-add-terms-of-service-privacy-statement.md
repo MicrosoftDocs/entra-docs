@@ -1,18 +1,16 @@
 ---
 title: Terms of Service and privacy statement for apps
 description: Learn how you can configure the terms of service and privacy statement for apps registered to use Microsoft Entra ID.
-services: active-directory
 author: rwike77
 manager: CelesteDG
-
+ms.author: ryanwi
+ms.custom:
+ms.date: 12/15/2023
+ms.reviewer: sureshja
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: how-to
-ms.workload: identity
-ms.date: 03/07/2023
-ms.author: ryanwi
-ms.reviewer: sureshja
-ms.custom: aaddev
+#Customer intent: As an application developer building a multi-tenant app, I want to configure the terms of service and privacy statement for my app, so that I can help gain user's trust and encourage them to consent to using my app.
 ---
 
 # Configure terms of service and privacy statement for an app

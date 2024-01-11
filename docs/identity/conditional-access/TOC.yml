@@ -10,7 +10,7 @@
     href: require-tou.md
 - name: Tutorials
   items:
-  - name: Require multifactor Authentication
+  - name: Require multifactor authentication
     href: ~/identity/authentication/tutorial-enable-azure-mfa.md?toc=/entra/identity/conditional-access/toc.json&bc=/entra/identity/conditional-access/breadcrumb/toc.json
 - name: Concepts
   expanded: false
@@ -62,8 +62,6 @@
   items:
   - name: Plan your Conditional Access deployment
     href: plan-conditional-access.md
-  - name: Conditional Access APIs
-    href: howto-conditional-access-apis.md
   - name: Common Conditional Access policies
     items: 
     - name: Require MFA for administrators
@@ -108,7 +106,7 @@
       href: howto-conditional-access-policy-block-access.md
     - name: Require authentication strength for external users
       href: howto-conditional-access-policy-authentication-strength-external.md
-  - name: Microsoft managed policies
+  - name: Microsoft-managed policies
     href: managed-policies.md
   - name: Configure resilience defaults
     href: resilience-defaults.md
@@ -132,12 +130,8 @@
       href: howto-continuous-access-evaluation-troubleshoot.md
   - name: Approved client app migration
     href: migrate-approved-client-app.md
-  - name: Custom controls
-    href: controls.md
-  - name: Classic policies
-    items:
-    - name: Migrate from classic policies
-      href: policy-migration-mfa.md
+  - name: Conditional Access APIs
+    href: howto-conditional-access-apis.md
 - name: Reference
   items:
   - name: Office 365 application
@@ -154,6 +148,12 @@
       href: /graph/api/resources/ipnamedlocation
     - name: conditionalAccessTemplate
       href: /graph/api/resources/conditionalaccesstemplate
+  - name: Custom controls
+    href: controls.md
+  - name: Classic policies
+    items:
+    - name: Migrate from classic policies
+      href: policy-migration-mfa.md
 - name: Resources
   items:
   - name: Azure feedback forum

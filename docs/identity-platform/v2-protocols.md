@@ -1,17 +1,16 @@
 ---
 title: OAuth 2.0 and OpenID Connect protocols on the Microsoft identity platform
 description: A guide to OAuth 2.0 and OpenID Connect protocols as supported by the Microsoft identity platform.
-services: active-directory
 author: henrymbuguakiarie
 manager: CelesteDG
+ms.author: henrymbugua
+ms.custom: has-adal-ref
+ms.date: 02/27/2023
+ms.reviewer: nickludwig
 ms.service: active-directory
 ms.subservice: develop
-ms.workload: identity
 ms.topic: conceptual
-ms.date: 02/27/2023
-ms.author: henrymbugua
-ms.reviewer: nickludwig
-ms.custom: aaddev, has-adal-ref, engagement-fy23
+#Customer intent: As a developer integrating authentication into my app using the Microsoft identity platform, I want to understand the roles and concepts of OAuth 2.0 and OpenID Connect, so that I can effectively use the platform's documentation, authentication libraries, and endpoints to add authentication to my application.
 ---
 
 # OAuth 2.0 and OpenID Connect (OIDC) in the Microsoft identity platform

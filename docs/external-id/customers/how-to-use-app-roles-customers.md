@@ -1,14 +1,14 @@
 ---
 title: Using role-based access control for apps
 description: Learn how to define application roles for your customer-facing application and assign those roles to users and groups in customer tenants.
-services: active-directory
+ 
 author: msmimart
 manager: celestedg
 ms.service: active-directory
-ms.workload: identity
+ 
 ms.subservice: ciam
 ms.topic: how-to
-ms.date: 06/13/2023
+ms.date: 01/07/2024
 ms.author: mimart
 ms.custom: it-pro
 ---
@@ -25,9 +25,21 @@ Microsoft Entra ID for customers allows you to define application roles for your
 
 When Microsoft Entra ID for customers issues a security token for an authenticated user, it includes the names of the roles you've assigned the user or group in the security token's roles claim. An application that receives that security token in a request can then make authorization decisions based on the values in the roles claim.
 
+
+> [!TIP]
+> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=RBAC)
+> 
+> To try out this feature, go to the Woodgrove Groceries demo and start the “Role-based access control” use case.
+
 ## Groups
 
 Developers can also use security groups to implement RBAC in their applications, where the memberships of the user in specific groups are interpreted as their role memberships. When an organization uses security groups, a groups claim is included in the token. The groups claim specifies the identifiers of all of the groups to which the user is assigned within the current customer tenant.
+
+
+> [!TIP]
+> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=GBAC)
+> 
+> To try out this feature, go to the Woodgrove Groceries demo and start the “Group-based access control” use case.
 
 ## App roles vs. groups
 

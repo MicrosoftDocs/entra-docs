@@ -1,17 +1,17 @@
 ---
 title: Directory extension attributes in claims
 description: Describes directory extension attributes that are used for sending user data to applications in token claims.
-services: active-directory
 author: omondiatieno
 manager: CelesteDG
+ms.author: jomondi
+ms.custom: curation-claims
+ms.date: 05/26/2023
+ms.reviewer: ludwignick, rahulnagraj, alamaral
 ms.service: active-directory
 ms.subservice: develop
-ms.custom: aaddev, curation-claims
-ms.workload: identity
 ms.topic: conceptual
-ms.date: 05/26/2023
-ms.author: jomondi
-ms.reviewer: ludwignick, rahulnagraj, alamaral
+
+#Customer intent: As a developer integrating user data into applications, I want to understand how to use directory extension attributes for sending user data to applications in token claims, so that I can customize the claims emitted in tokens and retrieve the necessary data for my application.
 ---
 # Directory extension attributes in claims
 
@@ -31,19 +31,17 @@ Register directory extension attributes in one of the following ways:
 - Configure Microsoft Entra Connect to create them and to sync data into them from on-premises. See [Microsoft Entra Connect Sync Directory Extensions](~/identity/hybrid/connect/how-to-connect-sync-feature-directory-extensions.md).
 - Use Microsoft Graph to register, set the values of, and read from [directory extensions](/graph/extensibility-overview#directory-azure-ad-extensions). [PowerShell cmdlets](/powershell/azure/active-directory/using-extension-attributes-sample) are also available.
 
-<a name='emit-claims-with-data-from-azure-ad-connect'></a>
-
 ### Emit claims with data from Microsoft Entra Connect
 
 Directory extension attributes created and synced using Microsoft Entra Connect are always associated with the application ID used by Microsoft Entra Connect. These attributes can be used as a source for claims both by configuring them as claims in **Enterprise Applications** configuration in the Portal. After a directory extension attribute is created using AD Connect, it's displayed in the SAML SSO claims configuration.
 
 ### Emit claims using Graph or PowerShell
 
-If a directory extension attribute is registered for using Microsoft Graph or PowerShell, the application can be configured to receive data in that attribute when the user signs in. The application can be configured to receive data in directory extensions that are registered on the application using [optional claims](optional-claims.md) that can be set in the application manifest. 
+If a directory extension attribute is registered for using Microsoft Graph or PowerShell, the application can be configured to receive data in that attribute when the user signs in. The application can be configured to receive data in directory extensions that are registered on the application using [optional claims](optional-claims.md) that can be set in the application manifest.
 
 Multi-tenant applications can then register directory extension attributes for their own use. When the application is provisioned into a tenant, the associated directory extensions become available and consumed for users in that tenant. After the directory extension is available, it can be used to store and retrieve data using Microsoft Graph. The directory extension can also map to claims in tokens the Microsoft identity platform emits to applications.
 
-If an application needs to send claims with data from an extension attribute that's registered on a different application, a [claims mapping policy](./saml-claims-customization.md) must be used to map the extension attribute to the claim. 
+If an application needs to send claims with data from an extension attribute that's registered on a different application, a [claims mapping policy](./saml-claims-customization.md) must be used to map the extension attribute to the claim.
 
 A common pattern for managing directory extension attributes is to register an application specifically for all the directory extensions that you need. When you use this type of application, all the extensions have the same appID in their name.
 
@@ -73,4 +71,5 @@ Where `xxxxxxx` is the appID (or Client ID) of the application that the extensio
 > Case consistency is important when you set directory extension attributes on objects. Extension attribute names aren't case sensitive when being set up, but they are case sensitive when being read from the directory by the token service. If an extension attribute is set on a user object with the name "LegacyId" and on another user object with the name "legacyid", when the attribute is mapped to a claim using the name "LegacyId" the data is successfully retrieved and the claim included in the token for the first user but not the second.
 
 ## Next steps
+
 - Learn how to [customize claims emitted in tokens for a specific app](./saml-claims-customization.md).

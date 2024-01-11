@@ -61,7 +61,7 @@ There are two ways to create a catalog programmatically.
 
 ### Create a catalog with Microsoft Graph
 
-You can create a catalog by using Microsoft Graph. A user in an appropriate role with an application that has the delegated `EntitlementManagement.ReadWrite.All` permission, or an application with that application permission, can call the API to [create an accessPackageCatalog](/graph/api/entitlementmanagement-post-accesspackagecatalogs?view=graph-rest-beta&preserve-view=true).
+You can create a catalog by using Microsoft Graph. A user in an appropriate role with an application that has the delegated `EntitlementManagement.ReadWrite.All` permission, or an application with the `EntitlementManagement.ReadWrite.All`  application permission, can call the API to [create a catalog](/graph/api/entitlementmanagement-post-catalogs?view=graph-rest-1.0&preserve-view=true).
 
 ### Create a catalog with PowerShell
 
@@ -78,15 +78,15 @@ To include resources in an access package, the resources must exist in a catalog
 
 * Groups can be cloud-created Microsoft 365 Groups or cloud-created Microsoft Entra security groups.
 
-  * Groups that originate in an on-premises Active Directory can't be assigned as resources because their owner or member attributes can't be changed in Microsoft Entra ID. To give a user access to an application that uses AD security group memberships, create a new security group in Microsoft Entra ID, configure [group writeback to AD](~/identity/hybrid/connect/how-to-connect-group-writeback-v2.md), and [enable that group to be written to AD](~/identity/users/groups-write-back-portal.md), so that the cloud-created group can be used by an AD-based application.
+  * Groups that originate in an on-premises Active Directory can't be assigned as resources because their owner or member attributes can't be changed in Microsoft Entra ID. To give a user access to an application that uses AD security group memberships, create a new security group in Microsoft Entra ID, configure [group writeback to AD](~/identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md), and [enable that group to be written to AD](entitlement-management-group-writeback.md), so that the cloud-created group can be used by an AD-based application.
 
   * Groups that originate in Exchange Online as Distribution groups can't be modified in Microsoft Entra ID either, so cannot be added to catalogs.
 
-* Applications can be Microsoft Entra enterprise applications, which include both software as a service (SaaS) applications and your own applications integrated with Microsoft Entra ID.
+* Applications can be Microsoft Entra enterprise applications, which include software as a service (SaaS) applications, on-premises applications, and your own applications integrated with Microsoft Entra ID.
 
-  * If your application has not yet been integrated with Microsoft Entra ID, see [govern access for applications in your environment](identity-governance-applications-prepare.md) and [integrate an application with Microsoft Entra ID](identity-governance-applications-integrate.md).
+  * If your application has not yet been integrated with Microsoft Entra ID, see [govern access for applications in your environment](identity-governance-applications-prepare.md) and [integrate an application with Microsoft Entra ID](identity-governance-applications-integrate.md) and add the application to your directory prior to adding it to the catalog.
 
-  * For more information on how to select appropriate resources for applications with multiple roles, see [Add resource roles](entitlement-management-access-package-resources.md#add-resource-roles).
+  * For more information on how to select appropriate resources for applications with multiple roles, see [how to determine which resource roles to include in an access package](entitlement-management-access-package-resources.md#determine-which-resource-roles-to-include-in-an-access-package).
 * Sites can be SharePoint Online sites or SharePoint Online site collections.
 > [!NOTE]
 > Search SharePoint Site by site name or an exact URL as the search box is case sensitive.
@@ -97,7 +97,7 @@ To add resources to a catalog:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
-1. Browse to **Identity governance** > **Catalogs**.
+1. Browse to **Identity governance** > **Entitlement management** > **Catalogs**.
 
 1. On the **Catalogs** page open the catalog you want to add resources to.
 
@@ -177,7 +177,7 @@ To require attributes for access requests:
 
 ### Add a resource to a catalog programmatically
 
-You can also add a resource to a catalog by using Microsoft Graph. A user in an appropriate role, or a catalog and resource owner, with an application that has the delegated `EntitlementManagement.ReadWrite.All` permission can call the API to [create an accessPackageResourceRequest](/graph/api/entitlementmanagement-post-accesspackageresourcerequests?view=graph-rest-beta&preserve-view=true). An application with the application permission `EntitlementManagement.ReadWrite.All` and permissions to change resources, such as `Group.ReadWrite.All`, can also add resources to the catalog.
+You can also add a resource to a catalog by using Microsoft Graph. A user in an appropriate role, or a catalog and resource owner, with an application that has the delegated `EntitlementManagement.ReadWrite.All` permission can call the API to [create a resourceRequest](/graph/api/entitlementmanagement-post-resourcerequests?view=graph-rest-1.0&preserve-view=true). An application with the application permission `EntitlementManagement.ReadWrite.All` and permissions to change resources, such as `Group.ReadWrite.All`, can also add resources to the catalog.
 
 ### Add a resource to a catalog with PowerShell
 
@@ -238,7 +238,7 @@ To assign a user to the catalog owner role:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
-1. Browse to **Identity governance** > **Catalogs**.
+1. Browse to **Identity governance** > **Entitlement management** > **Catalogs**.
 
 1. On the **Catalogs** page open the catalog you want to add administrators to.
 
@@ -260,7 +260,7 @@ To edit a catalog:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
-1. Browse to **Identity governance** > **Catalogs**.
+1. Browse to **Identity governance** > **Entitlement management** > **Catalogs**.
 
 1. On the **Catalogs** page open the catalog you want to edit.
 
@@ -282,7 +282,7 @@ To delete a catalog:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
-1. Browse to **Identity governance** > **Catalogs**.
+1. Browse to **Identity governance** > **Entitlement management** > **Catalogs**.
 
 1. On the **Catalogs** page open the catalog you want to delete.
 

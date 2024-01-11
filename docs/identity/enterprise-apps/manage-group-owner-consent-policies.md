@@ -1,20 +1,20 @@
 ---
 title: Manage app consent policies for group owners  
 description: Learn how to manage built-in and custom app consent policies for group owner to control when consent can be granted.
-services: active-directory
+
 manager: CelesteDG
 author: omondiatieno
 ms.service: active-directory
 ms.subservice: app-mgmt
-ms.workload: identity
+
 ms.topic: how-to
 ms.date: 08/25/2023
 ms.author: jomondi
 ms.reviewer: phsignor, yuhko
-ms.custom: contperf-fy21q2
+ms.custom: 
 zone_pivot_groups: enterprise-apps-minus-portal-aad
 
-#customer intent: As an admin, I want to manage app consent policies for group owner for enterprise applications in Microsoft Entra ID
+#customer intent: As an IT admin managing app consent policies for group owners, I want to view and manage group owner consent policies using Microsoft Graph and Microsoft Graph PowerShell, so that I can control what apps users can consent to and ensure that apps meet certain criteria before accessing data.
 ---
 
 # Manage app consent policies for group owners
