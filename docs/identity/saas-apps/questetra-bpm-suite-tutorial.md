@@ -9,7 +9,7 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 01/11/2024
 ms.author: jeedes
 ---
 # Tutorial: Microsoft Entra SSO integration with Questetra BPM Suite
