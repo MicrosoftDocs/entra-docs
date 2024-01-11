@@ -33,7 +33,7 @@ You're able to simplify the onboarding of external users to your organization us
 
 - [Configure custom questions](entitlement-management-onboard.md#configure-custom-questions)
 - [Specify attributes](entitlement-management-onboard.md#specify-attributes)
-- [Verified IDs]
+- [Verified IDs](entitlement-management-onboard.md#verified-ids)
 
 The following sections show you how these features help you achieve this goal.
 
@@ -72,5 +72,5 @@ For a step by step guide on this process, see: [Add resource attributes in the c
 
 ## Next steps
 
-- [Create an access package in entitlement management](entitlement-management-access-package-create.md)
+- [Tutorial - Onboard external users to Microsoft Entra ID through an approval process](entitlement-management-onboard-external-user.md)
 - [Configure Verified ID settings for an access package in entitlement management](entitlement-management-verified-id-settings.md)
