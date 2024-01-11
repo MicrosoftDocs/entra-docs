@@ -229,7 +229,7 @@ For further investigation of password spray risk detections, see the article [Gu
 
 #### Suspicious sending patterns
 
-**Calculated offline**. This risk detection type is discovered using information provided by [Microsoft Defender for Office](/microsoft-365-docs/blob/public/microsoft-365/security/office-365-security/air-about.md) (MDO). This alert is generated when someone in your organization has sent suspicious email and is either at risk of being restricted from sending email or has already been restricted from sending email. This detection moves users to medium risk and only fires in organizations that have deployed MDO. This detection is low-volume and is seen infrequently in most organizations. 
+**Calculated offline**. This risk detection type is discovered using information provided by [Microsoft Defender for Office](/microsoft-365-docs/blob/public/microsoft-365/security/office-365-security/air-about) (MDO). This alert is generated when someone in your organization has sent suspicious email and is either at risk of being restricted from sending email or has already been restricted from sending email. This detection moves users to medium risk and only fires in organizations that have deployed MDO. This detection is low-volume and is seen infrequently in most organizations. 
 
 ## Nonpremium detections
 
