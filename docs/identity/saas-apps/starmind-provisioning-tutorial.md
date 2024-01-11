@@ -100,7 +100,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |userName|String|&check;|&check;
    |active|Boolean||
    |title|String||
-   |emails[type eq "work"].value|String||&check;
+   |emails[type eq "work"].value|String|&check;|&check;
    |name.givenName|String||
    |name.familyName|String||
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:organization|String||
