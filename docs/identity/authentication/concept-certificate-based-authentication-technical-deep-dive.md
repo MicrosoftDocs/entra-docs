@@ -422,6 +422,12 @@ The user certificate should be configured like this screenshot:
 
 :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/user-certificate.png" alt-text="Screenshot of the user certificate." :::  
 
+**Troubleshooting issues with dynamic variables in sign-in logs**
+While sign-in logs provide all the information to debug an user's sign-in issues, there are times when specific values are required and since sign-in logs does not support dynamic variables, the sign-in logs would have missing information.
+For ex: The failure reason in sign-in log would show something like "The Certificate Revocation List (CRL) failed signature validation. Expected Subject Key Identifier {expectedSKI} does not match CRL Authority Key {crlAK}. Please request your tenant administrator to check the CRL configuration." where {expectedSKI} and {crlAKI} are not populated with correct values.
+
+When users sign-in with CBA fails, please copy the log details from 'More Details' link in the error page. For more detailed info, look at [understanding CBA error page](./concept-certificate-based-authentication-technical-deep-dive.md#understanding-the-certificate-based-authentication-error-page)
+
 ### Test single-factor authentication 
 
 For the first test scenario, configure the authentication policy where the Issuer subject rule satisfies single-factor authentication.
