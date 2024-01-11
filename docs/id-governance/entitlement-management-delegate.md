@@ -137,13 +137,13 @@ A Global administrator can add or remove any group (cloud-created security group
 
 For a user who isn't a global administrator, to add groups, applications, or SharePoint Online sites to a catalog, that user must have *both* the ability to perform actions on that resource, and be a catalog owner role in entitlement management for the catalog. The most common way a user can have the ability to perform actions for a resource is by being in a Microsoft Entra directory role that allows them to administer the resource.  Or for resources that have owners, the user can have the ability to perform actions by having been assigned as an owner of the resource.
 
-The actions which entitlement management checks when a user adds a resource to a catalog are:
+The actions that entitlement management checks when a user adds a resource to a catalog are:
 
 * To add a security group or Microsoft 365 group: the user must be permitted to perform the `microsoft.directory/groups/members/update` and `microsoft.directory/groups/owners/update` actions
 * To add an application: the user must be permitted to perform the `microsoft.directory/servicePrincipals/appRoleAssignedTo/update` action
-* To add a SharePoint Online site: the user must be a SharePoint Administrator or have permitted to manage permissions in the site
+* To add a SharePoint Online site: the user must be a SharePoint Administrator or be in a SharePoint Online site role allowing them to manage permissions in the site
 
-The following table lists some of the role combinations that include the actions which are able to add resources to a catalog. To remove resources from a catalog, you must also have a role or ownership with those same actions.
+The following table lists some of the role combinations that include the actions that allow users in those role combinations to add resources to a catalog. To remove resources from a catalog, you must also have a role or ownership with those same actions.
 
 | Microsoft Entra directory role | Entitlement management role | Can add security group | Can add Microsoft 365 Group | Can add app | Can add SharePoint Online site |
 | --- | :---: | :---: | :---: | :---: | :---: |
