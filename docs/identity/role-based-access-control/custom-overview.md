@@ -93,6 +93,8 @@ If you specify a Microsoft Entra resource as a scope, it can be one of the follo
 - Enterprise applications
 - Application registrations
 
+When a role is assigned over a scope container, such as the Tenant or an Administrative Unit, it grants permissions over the objects they contain but not on the container itself. On the contrary, when a role is assigned over a resource scope, it grants permissions over the resource itself but it does not extend beyond (in particular, it does not extend to the members of a Microsoft Entra group).
+
 For more information, see [Assign Microsoft Entra roles at different scopes](assign-roles-different-scopes.md).
 
 ## Role assignment options
