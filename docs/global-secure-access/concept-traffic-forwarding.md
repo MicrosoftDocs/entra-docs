@@ -21,7 +21,7 @@ This article describes the traffic forwarding profiles and how they work.
 
 **Traffic forwarding** enables you to configure the type of network traffic to tunnel through the Microsoft Entra Private Access and Microsoft Entra Internet Access services. You set up profiles to manage how specific types of traffic are managed. 
 
-When traffic comes through Global Secure Access, the service evaluates the type of traffic first through the **Microsoft 365 profile** and then through the **Private access profile**. Any traffic that doesn't match the first two profiles isn't forwarded to Global Secure Access. 
+When traffic comes through Global Secure Access, the service evaluates the type of traffic first through the **Microsoft 365 access profile**,  then through the **Private access profile**, and finally through the **Internet access profile**. Any traffic that doesn't match these three profiles isn't forwarded to Global Secure Access. 
 
 For each traffic forwarding profile, you can configure three main details:
 
@@ -40,6 +40,12 @@ Microsoft 365 traffic  is forwarded to the service by either connecting through 
 With the Private Access profile, you can route traffic to your private resources. This traffic forwarding profile requires configuring Quick Access, which includes the fully qualified domain names (FQDNs) and IP addresses of the private apps and resources you want to forward to the service. 
 
 Private access traffic can be forwarded to the service by connecting through the [Global Secure Access desktop client](how-to-install-windows-client.md).
+
+## Internet access
+
+With the Internet access profile, you can route traffic to the public internet and SaaS apps. This traffic forwarding profile consists of a pre-populated list of regular expressions for fully qualified domain names (FQDNs) and IP addresses representing the public internet. 
+
+Internet access traffic can be forwarded to the service by connecting through the [Global Secure Access desktop client](how-to-install-windows-client.md).
 
 [!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
 
