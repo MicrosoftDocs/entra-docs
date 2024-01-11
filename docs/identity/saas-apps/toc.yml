@@ -3140,6 +3140,8 @@
         href: alexishr-provisioning-tutorial.md
       - name: Alinto Protect (renamed Cleanmail)
         href: alinto-protect-provisioning-tutorial.md
+      - name: Alohi
+        href: alohi-provisioning-tutorial.md
       - name: ALVAO
         href: alvao-provisioning-tutorial.md
       - name: Amazon Business
