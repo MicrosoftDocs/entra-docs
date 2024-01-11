@@ -3388,6 +3388,8 @@
         href: iris-intranet-provisioning-tutorial.md
       - name: Insight4GRC
         href: insight4grc-provisioning-tutorial.md
+      - name: Insightly SAML
+        href: insightly-saml-provisioning-tutorial.md
       - name: Insite LMS
         href: insite-lms-provisioning-tutorial.md
       - name: introDus Pre and Onboarding Platform
