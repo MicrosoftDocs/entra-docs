@@ -8,10 +8,10 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: reference
 ms.workload: identity
-ms.date: 11/13/2023
+ms.date: 01/10/2024
 ms.author: ryanwi
 ms.custom: aaddev
-ms.reviewer: sureshja
+ms.reviewer: youazhou
 ---
 
 # Migrate your app manifest to Microsoft Graph format
