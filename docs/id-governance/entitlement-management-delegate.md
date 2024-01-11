@@ -135,27 +135,26 @@ A Global administrator can add or remove any group (cloud-created security group
 > [!NOTE]
 > Users that have been assigned the User administrator role will no longer be able to create catalogs or manage access packages in a catalog they do not own.  A User administrator who is a catalog owner can add or remove any group or application in the catalog they own, except for a group configured as assignable to a directory role.  For more information on role-assignable groups, reference [Create a role-assignable group in Microsoft Entra ID](~/identity/role-based-access-control/groups-create-eligible.md). If users in your organization have been assigned the User administrator role to configure catalogs, access packages, or policies in entitlement management, you should instead assign these users the **Identity Governance administrator** role.
 
-For a user who isn't a global administrator, to add groups, applications, or SharePoint Online sites to a catalog, that user must have *both* permissions for that resource, and a catalog owner role in entitlement management for the catalog. A user can have the permissions for that resource by being in a Microsoft Entra directory role that allows them to administer the resource.  Or for resources that have owners, the user can have the permissions by being an owner of the resource.
+For a user who isn't a global administrator, to add groups, applications, or SharePoint Online sites to a catalog, that user must have *both* the ability to perform actions on that resource, and be a catalog owner role in entitlement management for the catalog. The most common way a user can have the ability to perform actions for a resource is by being in a Microsoft Entra directory role that allows them to administer the resource.  Or for resources that have owners, the user can have the ability to perform actions by having been assigned as an owner of the resource.
 
-The permissions which entitlement management checks during resource onboarding are:
+The actions which entitlement management checks when a user adds a resource to a catalog are:
 
-* To add a security group or Microsoft 365 group: `microsoft.directory/groups/members/update` and `microsoft.directory/groups/owners/update`
-* To add an application: `microsoft.directory/servicePrincipals/appRoleAssignedTo/update`
-* To add a SharePoint Online site: the user must be a `SharePoint administrator` or have permissions to `ManagePermissions` in the site
+* To add a security group or Microsoft 365 group: the user must be permitted to perform the `microsoft.directory/groups/members/update` and `microsoft.directory/groups/owners/update` actions
+* To add an application: the user must be permitted to perform the `microsoft.directory/servicePrincipals/appRoleAssignedTo/update` action
+* To add a SharePoint Online site: the user must be a SharePoint Administrator or have permitted to manage permissions in the site
 
-The following table lists some of the role combinations that are able to add resources to a catalog. To remove resources from a catalog, you must have the same roles.
+The following table lists some of the role combinations that include the actions which are able to add resources to a catalog. To remove resources from a catalog, you must also have a role or ownership with those same actions.
 
 | Microsoft Entra directory role | Entitlement management role | Can add security group | Can add Microsoft 365 Group | Can add app | Can add SharePoint Online site |
 | --- | :---: | :---: | :---: | :---: | :---: |
-| [Global administrator](~/identity/role-based-access-control/permissions-reference.md) | n/a |  :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Identity Governance administrator](~/identity/role-based-access-control/permissions-reference.md) | n/a | | | :heavy_check_mark: |  |
-| [Groups administrator](~/identity/role-based-access-control/permissions-reference.md) | Catalog owner | :heavy_check_mark: | :heavy_check_mark: |  |  |
-| [Intune administrator](~/identity/role-based-access-control/permissions-reference.md) | Catalog owner | :heavy_check_mark: | :heavy_check_mark: |  |  |
-| [Exchange administrator](~/identity/role-based-access-control/permissions-reference.md) | Catalog owner |  | :heavy_check_mark: |  |  |
-| [Teams service administrator](~/identity/role-based-access-control/permissions-reference.md) | Catalog owner |  | :heavy_check_mark: |  |  |
-| [SharePoint administrator](~/identity/role-based-access-control/permissions-reference.md) | Catalog owner |  | :heavy_check_mark: |  | :heavy_check_mark: |
-| [Application administrator](~/identity/role-based-access-control/permissions-reference.md) | Catalog owner |  |  | :heavy_check_mark: |  |
-| [Cloud application administrator](~/identity/role-based-access-control/permissions-reference.md) | Catalog owner |  |  | :heavy_check_mark: |  |
+| [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) | n/a |  :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) | n/a | | | :heavy_check_mark: |  |
+| [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator) | Catalog owner | :heavy_check_mark: | :heavy_check_mark: |  |  |
+| [Intune Administrator](~/identity/role-based-access-control/permissions-reference.md#intune-administrator) | Catalog owner | :heavy_check_mark: | :heavy_check_mark: |  |  |
+| [Exchange Administrator](~/identity/role-based-access-control/permissions-reference.md#exchange-administrator) | Catalog owner |  | :heavy_check_mark: |  |  |
+| [SharePoint Administrator](~/identity/role-based-access-control/permissions-reference.md#sharepoint-administrator) | Catalog owner |  | :heavy_check_mark: |  | :heavy_check_mark: |
+| [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) | Catalog owner |  |  | :heavy_check_mark: |  |
+| [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator) | Catalog owner |  |  | :heavy_check_mark: |  |
 | User | Catalog owner | Only if group owner | Only if group owner | Only if app owner |  |
 
 
