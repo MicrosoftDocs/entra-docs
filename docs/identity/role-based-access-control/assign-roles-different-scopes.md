@@ -10,7 +10,7 @@ ms.subservice: roles
 ms.topic: how-to
 ms.date: 02/04/2022
 ms.author: rolyon
-ms.custom: it-pro, has-azure-ad-ps-ref
+ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 
 ms.collection: M365-identity-device-management
 ---
@@ -21,7 +21,7 @@ In Microsoft Entra ID, you typically assign Microsoft Entra roles so that they a
 ## Prerequisites
 
 - Privileged Role Administrator or Global Administrator.
-- AzureADPreview module when using PowerShell.
+- Microsoft Graph PowerShell SDK installed when using PowerShell.
 - Admin consent when using Graph explorer for Microsoft Graph API.
 
 For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
@@ -52,28 +52,28 @@ This section describes how to assign roles at the tenant scope.
 
 Follow these steps to assign Microsoft Entra roles using PowerShell.
 
-1. Open a PowerShell window and use [Import-Module](/powershell/module/microsoft.powershell.core/import-module) to import the AzureADPreview module. For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
+1. Open a PowerShell window. If necessary, use [Install-Module](/powershell/module/powershellget/install-module) to install Microsoft Graph PowerShell. For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
 
     ```powershell
-    Import-Module -Name AzureADPreview -Force
+    Install-Module Microsoft.Graph -Scope CurrentUser
     ```
 
-1. In a PowerShell window, use [Connect-AzureAD](/powershell/module/azuread/connect-azuread) to sign in to your tenant.
+1. In a PowerShell window, use [Connect-MgGraph](/powershell/microsoftgraph/authentication-commands#using-connect-mggraph) to sign in to your tenant.
 
     ```powershell
-    Connect-AzureAD
+    Connect-MgGraph -Scopes "RoleManagement.Read.Directory","User.Read.All","RoleManagement.ReadWrite.Directory"
     ```
 
-1. Use [Get-AzureADUser](/powershell/module/azuread/get-azureaduser) to get the user.
+1. Use [Get-MgUser](/powershell/module/microsoft.graph.users/get-mguser) to get the user.
 
     ```powershell
-    $user = Get-AzureADUser -Filter "userPrincipalName eq 'alice@contoso.com'"
+    $user = Get-MgUser -Filter "userPrincipalName eq 'alice@contoso.com'"
     ```
 
-1. Use [Get-AzureADMSRoleDefinition](/powershell/module/azuread/get-azureadmsroledefinition) to get the role you want to assign.
+1. Use [Get-MgRoleManagementDirectoryRoleDefinition](/powershell/module/microsoft.graph.identity.governance/get-mgrolemanagementdirectoryroledefinition) to get the role you want to assign.
 
     ```powershell
-    $roleDefinition = Get-AzureADMSRoleDefinition -Filter "displayName eq 'Billing Administrator'"
+    $roleDefinition = Get-MgRoleManagementDirectoryRoleDefinition -Filter "displayName eq 'Billing Administrator'"
     ```
 
 1. Set tenant as scope of role assignment.
@@ -82,10 +82,12 @@ Follow these steps to assign Microsoft Entra roles using PowerShell.
     $directoryScope = '/'
     ```
 
-1. Use [New-AzureADMSRoleAssignment](/powershell/module/azuread/new-azureadmsroleassignment) to assign the role.
+1. Use [New-MgRoleManagementDirectoryRoleAssignment](/powershell/module/microsoft.graph.identity.governance/new-mgrolemanagementdirectoryroleassignment) to assign the role.
 
     ```powershell
-    $roleAssignment = New-AzureADMSRoleAssignment -DirectoryScopeId $directoryScope -RoleDefinitionId $roleDefinition.Id -PrincipalId $user.objectId
+    $roleAssignment = New-MgRoleManagementDirectoryRoleAssignment `
+       -DirectoryScopeId $directoryScope -PrincipalId $user.Id `
+       -RoleDefinitionId $roleDefinition.Id
     ```
  
 ### Microsoft Graph API
@@ -149,41 +151,44 @@ This section describes how to assign roles at an [administrative unit](administr
 
 Follow these steps to assign Microsoft Entra roles at administrative unit scope using PowerShell.
 
-1. Open a PowerShell window and use [Import-Module](/powershell/module/microsoft.powershell.core/import-module) to import the AzureADPreview module. For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
+1. Open a PowerShell window. If necessary, use [Install-Module](/powershell/module/powershellget/install-module) to install Microsoft Graph PowerShell. For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
 
     ```powershell
-    Import-Module -Name AzureADPreview -Force
+    Install-Module Microsoft.Graph -Scope CurrentUser
     ```
 
-1. In a PowerShell window, use [Connect-AzureAD](/powershell/module/azuread/connect-azuread) to sign in to your tenant.
+1. In a PowerShell window, use [Connect-MgGraph](/powershell/microsoftgraph/authentication-commands#using-connect-mggraph) to sign in to your tenant.
 
     ```powershell
-    Connect-AzureAD
+    Connect-MgGraph -Scopes "Directory.Read.All","RoleManagement.Read.Directory","User.Read.All","RoleManagement.ReadWrite.Directory"
     ```
 
-1. Use [Get-AzureADUser](/powershell/module/azuread/get-azureaduser) to get the user.
+1. Use [Get-MgUser](/powershell/module/microsoft.graph.users/get-mguser) to get the user.
 
     ```powershell
-    $user = Get-AzureADUser -Filter "userPrincipalName eq 'alice@contoso.com'"
+    $user = Get-MgUser -Filter "userPrincipalName eq 'alice@contoso.com'"
     ```
 
-1. Use [Get-AzureADMSRoleDefinition](/powershell/module/azuread/get-azureadmsroledefinition) to get the role you want to assign.
+1. Use [Get-MgRoleManagementDirectoryRoleDefinition](/powershell/module/microsoft.graph.identity.governance/get-mgrolemanagementdirectoryroledefinition) to get the role you want to assign.
 
     ```powershell
-    $roleDefinition = Get-AzureADMSRoleDefinition -Filter "displayName eq 'User Administrator'"
+    $roleDefinition = Get-MgRoleManagementDirectoryRoleDefinition `
+       -Filter "displayName eq 'User Administrator'"
     ```
 
-1. Use [Get-AzureADMSAdministrativeUnit](/powershell/module/azuread/get-azureadmsadministrativeunit) to get the administrative unit you want the role assignment to be scoped to.
+1. Use [Get-MgDirectoryAdministrativeUnit](/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdirectoryadministrativeunit) to get the administrative unit you want the role assignment to be scoped to.
 
     ```powershell
-    $adminUnit = Get-AzureADMSAdministrativeUnit -Filter "displayName eq 'Seattle Admin Unit'"
+    $adminUnit = Get-MgDirectoryAdministrativeUnit -Filter "displayName eq 'Seattle Admin Unit'"
     $directoryScope = '/administrativeUnits/' + $adminUnit.Id
     ```
 
-1. Use [New-AzureADMSRoleAssignment](/powershell/module/azuread/new-azureadmsroleassignment) to assign the role.
+1. Use [New-MgRoleManagementDirectoryRoleAssignment](/powershell/module/microsoft.graph.identity.governance/new-mgrolemanagementdirectoryroleassignment) to assign the role.
 
     ```powershell
-    $roleAssignment = New-AzureADMSRoleAssignment -DirectoryScopeId $directoryScope -RoleDefinitionId $roleDefinition.Id -PrincipalId $user.objectId
+    $roleAssignment = New-MgRoleManagementDirectoryRoleAssignment `
+       -DirectoryScopeId $directoryScope -PrincipalId $user.Id `
+       -RoleDefinitionId $roleDefinition.Id
     ```
 
 ### Microsoft Graph API
@@ -264,41 +269,44 @@ This section describes how to assign roles at an application registration scope.
 
 Follow these steps to assign Microsoft Entra roles at application scope using PowerShell.
 
-1. Open a PowerShell window and use [Import-Module](/powershell/module/microsoft.powershell.core/import-module) to import the AzureADPreview module. For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
+1. Open a PowerShell window. If necessary, use [Install-Module](/powershell/module/powershellget/install-module) to install Microsoft Graph PowerShell. For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
 
     ```powershell
-    Import-Module -Name AzureADPreview -Force
+    Install-Module Microsoft.Graph -Scope CurrentUser
     ```
 
-1. In a PowerShell window, use [Connect-AzureAD](/powershell/module/azuread/connect-azuread) to sign in to your tenant.
+1. In a PowerShell window, use [Connect-MgGraph](/powershell/microsoftgraph/authentication-commands#using-connect-mggraph) to sign in to your tenant.
 
     ```powershell
-    Connect-AzureAD
+    Connect-MgGraph -Scopes "Application.Read.All","RoleManagement.Read.Directory","User.Read.All","RoleManagement.ReadWrite.Directory"
     ```
 
-1. Use [Get-AzureADUser](/powershell/module/azuread/get-azureaduser) to get the user.
+1. Use [Get-MgUser](/powershell/module/microsoft.graph.users/get-mguser) to get the user.
 
     ```powershell
-    $user = Get-AzureADUser -Filter "userPrincipalName eq 'alice@contoso.com'"
+    $user = Get-MgUser -Filter "userPrincipalName eq 'alice@contoso.com'"
     ```
 
-1. Use [Get-AzureADMSRoleDefinition](/powershell/module/azuread/get-azureadmsroledefinition) to get the role you want to assign.
+1. Use [Get-MgRoleManagementDirectoryRoleDefinition](/powershell/module/microsoft.graph.identity.governance/get-mgrolemanagementdirectoryroledefinition) to get the role you want to assign.
 
     ```powershell
-    $roleDefinition = Get-AzureADMSRoleDefinition -Filter "displayName eq 'Application Administrator'"
+    $roleDefinition = Get-MgRoleManagementDirectoryRoleDefinition `
+       -Filter "displayName eq 'Application Administrator'"
     ```
 
-1. Use [Get-AzureADApplication](/powershell/module/azuread/get-azureadapplication) to get the app registration you want the role assignment to be scoped to.
+1. Use [Get-MgApplication](/powershell/module/microsoft.graph.applications/get-mgapplication) to get the app registration you want the role assignment to be scoped to.
 
     ```powershell
-    $appRegistration = Get-AzureADApplication -Filter "displayName eq 'f/128 Filter Photos'"
-    $directoryScope = '/' + $appRegistration.objectId
+    $appRegistration = Get-MgApplication -Filter "displayName eq 'f/128 Filter Photos'"
+    $directoryScope = '/' + $appRegistration.Id
     ```
 
-1. Use [New-AzureADMSRoleAssignment](/powershell/module/azuread/new-azureadmsroleassignment) to assign the role.
+1. Use [New-MgRoleManagementDirectoryRoleAssignment](/powershell/module/microsoft.graph.identity.governance/new-mgrolemanagementdirectoryroleassignment) to assign the role.
 
     ```powershell
-    $roleAssignment = New-AzureADMSRoleAssignment -DirectoryScopeId $directoryScope -RoleDefinitionId $roleDefinition.Id -PrincipalId $user.objectId
+    $roleAssignment = New-MgRoleManagementDirectoryRoleAssignment `
+       -DirectoryScopeId $directoryScope -PrincipalId $user.Id `
+       -RoleDefinitionId $roleDefinition.Id 
     ```
 
 ### Microsoft Graph API
