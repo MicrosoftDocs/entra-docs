@@ -70,8 +70,6 @@ When an access package includes a resource configured for attribute collection, 
 
 For a step by step guide on this process, see: [Add resource attributes in the catalog](entitlement-management-catalog-create.md#add-resource-attributes-in-the-catalog).
 
-
-
 ## Next steps
 
 - [Create an access package in entitlement management](entitlement-management-access-package-create.md)
