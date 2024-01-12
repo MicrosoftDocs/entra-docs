@@ -102,7 +102,7 @@ Identity related **npm** packages must be installed in the project to enable use
 ### [Visual Studio](#tab/visual-studio)
 
 1. In the **Solution Explorer**, right-click the **npm** option and select **Install new npm packages**.
-1. Search for **@azure/msal-browser**, then select **Install Package**. Repeat for **@azure/msal-react** and **@azure/msal-common**.
+1. Search for **@azure/msal-browser**, then select **Install Package**. Repeat for **@azure/msal-react**.
 1. Search for and install **react-bootstrap**.
 1. Select **Close**.
 
