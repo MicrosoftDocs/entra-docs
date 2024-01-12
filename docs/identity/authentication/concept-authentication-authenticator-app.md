@@ -69,12 +69,12 @@ FIPS 140 is a US government standard that defines minimum security requirements
 ### Microsoft Authenticator for iOS
 Beginning with version 6.6.8, Microsoft Authenticator for iOS is compliant with Federal Information Processing Standard (FIPS) 140 for all Microsoft Entra authentications using phishing-resistant device-bound passkeys, push multi-factor authentications (MFA), passwordless Phone Sign-In (PSI), and time-based one-time passcodes (TOTP). 
 
-Authenticator leverages the native Apple iOS **FIPS validated** cryptographic module(s) to achieve FIPS 140 compliance on Apple iOS devices. For more information about the **FIPS 140 validated** cryptographic modules being used, see: [Apple iOS security certifications](https://support.apple.com/guide/certifications/ios-security-certifications-apc3fa917cb49/1/web/1.0). 
+Authenticator leverages the native Apple iOS **FIPS 140 validated** cryptographic module(s) to achieve FIPS 140 compliance on Apple iOS devices. For more information about the **FIPS 140 validated** cryptographic modules being used, see: [Apple iOS security certifications](https://support.apple.com/guide/certifications/ios-security-certifications-apc3fa917cb49/1/web/1.0). 
 
 ### Microsoft Authenticator for Android
-Beginning with version 6.2310.7174, Microsoft Authenticator for Android is compliant with Federal Information Processing Standard (FIPS) 140 for all Microsoft Entra authentications using phishing-resistant device-bound passkeys, push multifactor authentications (MFA), passwordless phone sign-in (PSI), and time-based one-time passcodes (TOTP). For organizations using Intune Company Portal, install version 5.0.6043.0 in addition to the latest version of Authenticator for FIPS compliance. 
+Beginning with version 6.2310.7174, Microsoft Authenticator for Android is compliant with Federal Information Processing Standard (FIPS) 140 for all Microsoft Entra authentications using phishing-resistant device-bound passkeys, push multifactor authentications (MFA), passwordless phone sign-in (PSI), and time-based one-time passcodes (TOTP). For organizations using Intune Company Portal, install version 5.0.6043.0 in addition to the latest version of Authenticator for FIPS 140 compliance. 
 
-Authenticator leverages the wolfCrypt **FIPS validated** cryptographic module to achieve FIPS 140 compliance on Android devices. For more information about the **FIPS 140 validated** cryptographic modules being used, see: [wolfCrypt](https://www.wolfssl.com/license/fips/). 
+Authenticator leverages the wolfCrypt **FIPS 140 validated** cryptographic module to achieve FIPS 140 compliance on Android devices. For more information about the **FIPS 140 validated** cryptographic modules being used, see: [wolfCrypt](https://www.wolfssl.com/license/fips/). 
 
 > [!Important]
 > No changes in configurations are required in Microsoft Authenticator or the Microsoft Entra admin center to enable FIPS 140 compliance. Beginning with Microsoft Authenticator for iOS version 6.6.8 & Android version 6.2310.7174, Microsoft Entra authentications will be FIPS 140 compliant by default.
