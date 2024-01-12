@@ -32,8 +32,8 @@ In the past, companies built custom forms to gather this information before sett
 You're able to simplify the onboarding of external users to your organization using entitlement management by utilizing the following features:
 
 - [Configure custom questions](entitlement-management-onboard.md#configure-custom-questions)
-- [Specify attributes](entitlement-management-onboard.md#specify-attributes)
 - [Verified IDs](entitlement-management-onboard.md#verified-ids)
+- [Specify attributes](entitlement-management-onboard.md#specify-attributes)
 
 The following sections show you how these features help you achieve this goal.
 
@@ -49,7 +49,7 @@ For a step by step guide on this process, see: [Add requestor information to an 
 
 ## Verified IDs
 
-The custom questions feature allows a requestor to answer questions during the request process for an access package, but you could require an extra layer of security before allowing the external user to access apps within the access package. With the verified IDs feature, you can require that requestors present a verified ID containing those credentials from a trusted issuer. This feature allows an approver to quickly view if the external user’s verifiable credentials were validated when the user presented their credentials within their access package request.
+The custom questions feature allows a requestor to answer questions during the request process for an access package, but you could require an extra layer of security before allowing the external user to access apps within the access package. With the verified IDs feature, you can require that requestors present a verified ID containing credentials from a trusted issuer. This feature allows an approver to quickly view if the external user’s verifiable credentials were validated when the user presented their credentials within their access package request.
 
 :::image type="content" source="media/entitlement-management-verified-id-settings/select-issuer.png" alt-text="Screenshot showing pick issuer for Microsoft Entra Verified ID.":::
 
