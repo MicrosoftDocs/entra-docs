@@ -1,7 +1,7 @@
 ### YamlMime:FAQ
 metadata:
-  title: Frequently asked questions (FAQ) about Microsoft Entra, Entra ID, and Azure
-  description: Common questions and answers about Microsoft Entra, Entra ID and Azure, such as password management and application access.
+  title: Frequently asked questions (FAQ) about Microsoft Entra, Microsoft Entra ID, and Azure
+  description: Common questions and answers about Microsoft Entra, Microsoft Entra ID and Azure, such as password management and application access.
   services: active-directory
   author: barclayn
   manager: amycolannino

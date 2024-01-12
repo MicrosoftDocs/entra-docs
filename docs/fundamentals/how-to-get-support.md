@@ -33,7 +33,7 @@ Start with our Microsoft community members who may have an answer to your questi
 [Microsoft Q&A](/answers/products/) is Microsoft's recommended source for community support. From the Q&A home page, choose one of the following tabs:
 
  - *Questions*: The main page for technical questions and answers at Microsoft.
- - *Tags*: Use tags, which are keywords that categorizes your question with other similar questions.
+ - *Tags*: Use tags, which are keywords that categorize your question with other similar questions.
  - *Help*: Get answers to frequently asked questions, troubleshoot common issues, and discover features related to Microsoft Q&A.
 
 To ask a question, choose the **Ask a question** button at the top right of any Q&A page. You can also get your questions answered faster by using [AI Assist](https://aka.ms/learn-more-ai).
@@ -80,7 +80,7 @@ Next, we'll walk you through some steps to gather information about your problem
 
    If you don't see a subscription in the dropdown, go to **Directory + subscription settings**, and select the subscription from the dropdown list.
 
-1. Depending on the *Issue type* that you selected, you will be prompted to provide more details about the intial request.
+1. Depending on the *Issue type* that you selected, you will be prompted to provide more details about the initial request.
     
    - For *Billing* and *Subscription management* issues, the **Summary** and **Problem type** fields appear.
    - For *Service and subscription limits*, the **Quota type** field appears.
