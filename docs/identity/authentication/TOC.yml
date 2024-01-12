@@ -40,8 +40,12 @@
       href: concept-authentication-phone-options.md
     - name: Security questions
       href: concept-authentication-security-questions.md
-  - name: Authentication strengths
+  - name: Conditional Access authentication strength
     items:
+    - name: Overview
+      href: concept-authentication-strengths.md
+    - name: How authentication strength works
+      href: concept-authentication-strength-how-it-works.md
     - name: Built-in authentication strengths
       href: concept-authentication-strengths.md
     - name: Custom authentication strengths
@@ -326,7 +330,7 @@
     href: /powershell/azure/
   - name: Authentication methods APIs - Microsoft Graph
     href: /graph/api/resources/authenticationmethods-overview
-  - name: Authentication strengths APIs - Microsoft Graph (preview)
+  - name: Authentication strengths APIs - Microsoft Graph 
     href: /graph/api/resources/authenticationstrengths-overview
   - name: Authentication methods policy - Microsoft Graph
     href: /graph/api/resources/authenticationmethodspolicies-overview

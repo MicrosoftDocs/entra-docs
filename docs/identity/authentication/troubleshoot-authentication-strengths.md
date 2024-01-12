@@ -28,7 +28,7 @@ For sign in, the authentication method needs to be:
 - Registered for the user 
 - Enabled by the Authentication methods policy 
 
-For more information, see [How Conditional Access authentication strength works](concept-authentication-strength-howitworks.md).
+For more information, see [How Conditional Access authentication strength works](concept-authentication-strength-how-it-works.md).
 
 To verify if a method can be used:
 
@@ -60,7 +60,7 @@ Use the **Sign-ins** log to find more information about the sign-in:
 
 ## A user can't register a new method during sign-in 
 
-Some methods can't be registered during sign-in, or they need more setup beyond the combined registration. For more information, see [Register passwordless authentication methods](concept-authentication-strength-howitworks.md#register-passwordless-authentication-methods).
+Some methods can't be registered during sign-in, or they need more setup beyond the combined registration. For more information, see [Register passwordless authentication methods](concept-authentication-strength-how-it-works.md#register-passwordless-authentication-methods).
  
 :::image type="content" border="true" source="./media/troubleshoot-authentication-strengths/register.png" alt-text="Screenshot of a sign-in error when they are unable to register the method."::: 
 
