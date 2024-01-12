@@ -6,7 +6,7 @@ services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/08/2024
+ms.date: 01/12/2024
 
 ms.author: justinha
 author: inbarckms
@@ -19,7 +19,7 @@ ms.collection: M365-identity-device-management
 
 Authentication strength is a Conditional Access control that specifies which combinations of authentication methods can be used to access a resource. Users can satisfy the strength requirements by authenticating with any of the allowed combinations. 
 
-For example, an authentication stength can only phishing-resistant authentication methods be used to access a sensitive resource. To access a nonsensitive resource, administrators can create another authentication strength that allows less secure multifactor authentication (MFA) combinations, such as password + text message. 
+For example, an authentication stength can require that only phishing-resistant authentication methods be used to access a sensitive resource. To access a nonsensitive resource, administrators can create another authentication strength that allows less secure multifactor authentication (MFA) combinations, such as password + text message. 
 
 Authentication strength is based on the [Authentication methods policy](concept-authentication-methods.md), where administrators can scope authentication methods for specific users and groups to be used across Microsoft Entra ID federated applications. Authentication strength allows further control over the usage of these methods based upon specific scenarios such as sensitive resource access, user risk, location, and more. 
 
@@ -90,7 +90,7 @@ The following API call can be used to list definitions of all the built-in authe
 GET https://graph.microsoft.com/beta/identity/conditionalAccess/authenticationStrengths/policies?$filter=policyType eq 'builtIn'
 ```
 
-Conditional Access Administrators can also create custom authentication strengths to exactly suit their acceess requirements. For more information, see [Custom Conditional Acccess authentication strengths](concept-authentication-strength-advanced-options.md).
+Conditional Access Administrators can also create custom authentication strengths to exactly suit their access requirements. For more information, see [Custom Conditional Access authentication strengths](concept-authentication-strength-advanced-options.md).
 
 ## Limitations
 
