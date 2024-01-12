@@ -34,7 +34,7 @@ There are two policies that determine which authentication methods can be used t
 
   :::image type="content" border="true" source="./media/concept-authentication-strengths/service-settings.png" alt-text="Screenshot of MFA service settings.":::
 
-Users may register for authentications for which they are enabled, and in other cases, an administrator can configure a user's device with a method, such as certificate-based authentication.
+Users may register for authentication methods for which they are enabled, and in other cases, an administrator can configure a user's device with a method, such as certificate-based authentication.
 
 ## How an authentication strength policy is evaluated during sign-in 
 
