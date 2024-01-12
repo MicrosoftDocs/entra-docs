@@ -6,7 +6,7 @@ services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/04/2024
+ms.date: 01/12/2024
 
 ms.author: justinha
 author: inbarckms
@@ -25,7 +25,7 @@ In external user scenarios, the authentication methods that can satisfy authenti
 
 |Authentication method  |Home tenant  | Resource tenant  |
 |---------|---------|---------|
-|text message as second factor                         | &#x2705;        | &#x2705; |
+|Text message as second factor                         | &#x2705;        | &#x2705; |
 |Voice call                                   | &#x2705;        | &#x2705; |
 |Microsoft Authenticator push notification    | &#x2705;        | &#x2705; |
 |Microsoft Authenticator phone sign-in        | &#x2705;        |          |

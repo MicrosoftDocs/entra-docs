@@ -1,6 +1,6 @@
 ---
 title: Overview of how Microsoft Entra authentication strength works in a Conditional Access policy
-description: Learn how admins can use a Conditional Access Policy to require specific authentication combinations to access a resources.
+description: Learn how admins can use a Conditional Access Policy to require specific authentication combinations to access a resource.
 
 services: multi-factor-authentication
 ms.service: active-directory

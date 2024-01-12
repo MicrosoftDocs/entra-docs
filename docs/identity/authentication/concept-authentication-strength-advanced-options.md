@@ -15,7 +15,7 @@ ms.reviewer: inbarc
 
 ms.collection: M365-identity-device-management
 ---
-# Custom Conditional Acccess authentication strengths
+# Custom Conditional Access authentication strengths
 
 Administrators can also create up to 15 of their own custom authentication strengths to exactly suit their requirements. A custom authentication strength can contain any of the supported combinations in the preceding table. 
 
