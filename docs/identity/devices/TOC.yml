@@ -30,6 +30,8 @@
     href: concept-primary-refresh-token.md
   - name: macOS Platform Single Sign On Overview 
     href: macos-psso.md
+  - name: Enroll macOS Platform SSO as an admin
+    href: enroll-macos-admin.md
 - name: How-to guides
   expanded: false
   items:
@@ -126,4 +128,3 @@
   - name: Stack Overflow
     href: https://stackoverflow.com/questions/tagged/azure-active-directory
   - name: Videos
-    href: https://azure.microsoft.com/documentation/videos/index/?services=active-directory
