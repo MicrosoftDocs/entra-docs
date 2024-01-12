@@ -6,7 +6,7 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 12/14/2023
 
 
 ms.author: justinha
@@ -79,7 +79,7 @@ Now we'll walk through each step:
 
 ## Certificate-based authentication is MFA capable
 
-Microsoft Entra CBA is capable of multifactor authentication (MFA) method. Microsoft Entra CBA can be either single-factor (SF) or multifactor (MF) depending on the tenant configuration. Enabling CBA makes a user potentially capable to complete MFA. A user might need more configuration to complete MFA, and proof up to register other authentication methods when the user is in scope for CBA.
+Microsoft Entra CBA is capable of multifactor authentication (MFA). Microsoft Entra CBA can be either single-factor (SF) or multifactor (MF) depending on the tenant configuration. Enabling CBA makes a user potentially capable to complete MFA. A user might need more configuration to complete MFA, and proof up to register other authentication methods when the user is in scope for CBA.
 
 If the CBA-enabled user only has a Single Factor (SF) certificate and needs to complete MFA:
    1. Use a password and SF certificate.
@@ -409,6 +409,19 @@ As of now, there's no way to manually force or retrigger the download of the CRL
 
 [!INCLUDE [Configure revocation](../../includes/entra-authentication-configure-revocation.md)]
 
+
+## How CBA works with a Conditional Access authentication strength policy
+
+Customers can create a Conditional Access authentication strength policy to specify that CBA be used to access a resource.  
+
+You can use the built-in **Phishing-resistant MFA** authentication strength. That policy only allows authentication methods that are phishing-resistant like CBA, FIDO2 security keys, and Windows Hello for Business. 
+
+You can also create a custom authentication strength to allow only CBA to access sensitive resources. You can allow CBA as a single-factor, multifactor, or both. For more information, see [Conditional Access authentication strength](concept-authentication-strengths.md).
+
+### CBA authentication strength with advanced options
+
+In the CBA Authentication methods policy, an admin can determine the strength of the certificate by using [authentication binding policy](#understanding-the-authentication-binding-policy) on the CBA method. Now you can configure **Advanced options** when you create a custom authentication strength to require a specific certificate to be used, based on issuer and policy OIDs, when users perform CBA to access certain sensitive resources. This feature provides a more precise configuration to determine the certificates and users that can access resources. For more information, see [Advanced options for Conditional Access authentication strength](concept-authentication-strength-advanced-options.md).
+
 ## Understanding Sign-in logs
 
 Sign-in logs provide information about sign-ins and how your resources are used by your users. For more information about sign-in logs, see [Sign-in logs in Microsoft Entra ID](../monitoring-health/concept-sign-ins.md).
@@ -423,7 +436,7 @@ The user certificate should be configured like this screenshot:
 :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/user-certificate.png" alt-text="Screenshot of the user certificate." :::  
 
 ### Troubleshooting sign-in issues with dynamic variables in sign-in logs
-While sign-in logs provide all the information to debug an user's sign-in issues, there are times when specific values are required and since sign-in logs does not support dynamic variables, the sign-in logs would have missing information.
+Although sign-in logs provide all the information to debug a user's sign-in issues, there are times when specific values are required and since sign-in logs does not support dynamic variables, the sign-in logs would have missing information.
 For ex: The failure reason in sign-in log would show something like "The Certificate Revocation List (CRL) failed signature validation. Expected Subject Key Identifier {expectedSKI} does not match CRL Authority Key {crlAK}. Please request your tenant administrator to check the CRL configuration." where {expectedSKI} and {crlAKI} are not populated with correct values.
 
 When users sign-in with CBA fails, please copy the log details from 'More Details' link in the error page. For more detailed info, look at [understanding CBA error page](./concept-certificate-based-authentication-technical-deep-dive.md#understanding-the-certificate-based-authentication-error-page)
