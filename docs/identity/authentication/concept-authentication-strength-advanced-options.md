@@ -68,7 +68,7 @@ The next sections show how to configure advanced options for CBA by using the Mi
     
 1. You can select certificate issuers from the drop-down menu, type the certificate issuers and type the allowed policy OIDs. The drop-down menu lists all certificate authorities from the tenant irrespective of whether they're single-factor or multifactor.
 
-   :::image type="content" border="true" source="./media/concept-authentication-strength-advanced-options/or.png" alt-text="Screenshot showing the configuration options - certificate issuers from the drop-down menu, type the certificate issuers and type the allowed policy OIDs .":::
+   :::image type="content" border="true" source="./media/concept-authentication-strength-advanced-options/or-other-issuer.png" alt-text="Screenshot showing the configuration options - certificate issuers from the drop-down menu, type the certificate issuers and type the allowed policy OIDs .":::
 
    - If both **Allowed certificate issuer** AND **Allowed Policy OID** are configured, there's an AND relationship. The user has to use a certificate that satisfies both conditions.  
    - Between the **Allowed certificate issuer** list and the **Allowed Policy OID** list, there's an OR relationship. The user has to use a certificate that satisfied one of the issuers or policy OIDs.
@@ -158,9 +158,9 @@ A Conditional Access Administrator can restrict access to specific security keys
 ### How to check certificate policy OIDs and issuer
 
 You can confirm the personal certificate properties match the configuration in authentication strength advanced options.
-On the user’s device, sign in as an Administrator. Click **Run**, type certmgr.msc and press Enter. To check policy OIDs, click **Personal**, right-click the certificate and click **Details**.  
+On the user’s device, sign in as an Administrator. Click **Run**, type `certmgr.msc`, and press Enter. To check policy OIDs, click **Personal**, right-click the certificate and click **Details**.  
 
-:::image type="content" border="true" source="./media/concept-authentication-strength-advanced-options/certmgr.png" alt-text="Screenshot showing how to check certificate policy OIDs and issuer.":::
+:::image type="content" border="true" source="./media/concept-authentication-strength-advanced-options/certificate-manager-msc.png" alt-text="Screenshot showing how to check certificate policy OIDs and issuer.":::
 
 ## Next steps
 
