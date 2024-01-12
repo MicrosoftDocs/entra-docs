@@ -1715,6 +1715,8 @@
         href: metatask-tutorial.md
       - name: Meta Work Accounts
         href: meta-work-accounts-tutorial.md  
+      - name: MetLife Legal Plans Member App
+        href: metlife-legal-plans-member-app-tutorial.md
       - name: Mevisio
         href: mevisio-tutorial.md
       - name: Michigan Data Hub Single Sign-On
@@ -3120,8 +3122,8 @@
       items:
       - name: Acunetix 360
         href: acunetix-360-provisioning-tutorial.md
-      - name: Adobe Identity Management
-        href: adobe-identity-management-provisioning-tutorial.md
+      - name: Adobe Identity Management (SAML)
+        href: adobe-identity-management-provisioning-saml-tutorial.md
       - name: Adobe Identity Management (OIDC)
         href: adobe-identity-management-provisioning-oidc-tutorial.md
       - name: Airbase
@@ -3140,6 +3142,8 @@
         href: alexishr-provisioning-tutorial.md
       - name: Alinto Protect (renamed Cleanmail)
         href: alinto-protect-provisioning-tutorial.md
+      - name: Alohi
+        href: alohi-provisioning-tutorial.md
       - name: ALVAO
         href: alvao-provisioning-tutorial.md
       - name: Amazon Business
@@ -3388,6 +3392,8 @@
         href: iris-intranet-provisioning-tutorial.md
       - name: Insight4GRC
         href: insight4grc-provisioning-tutorial.md
+      - name: Insightly SAML
+        href: insightly-saml-provisioning-tutorial.md
       - name: Insite LMS
         href: insite-lms-provisioning-tutorial.md
       - name: introDus Pre and Onboarding Platform

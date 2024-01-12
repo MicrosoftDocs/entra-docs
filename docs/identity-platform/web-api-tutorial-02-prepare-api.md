@@ -65,6 +65,11 @@ Use the following tabs to create an ASP.NET Core project within an IDE.
 1. Accept the default for the **Target Framework** and **Advanced**, then select **Continue**.
 1. Enter a name for the **Project name**, this will be reflected in **Solution Name**. Provide a similar name to the one registered on the Azure portal, such as *NewAPI1*.
 1. Accept the default location for the project or choose a different location, and then select **Create**.
+
+>[!NOTE]
+> Visual Studio for Mac is scheduled for retirement by August 31, 2024 in accordance with Microsoft’s [Modern Lifecycle Policy](/lifecycle/policies/modern). Visual Studio for Mac 17.6 will continue to be supported until August 31, 2024, with servicing updates for security issues and updated platforms from Apple.
+> Refer to [What's happening to Visual Studio for Mac](/visualstudio/mac/what-happened-to-vs-for-mac) for more information.
+
 ---
 
 ## Configure the ASP.NET Core project

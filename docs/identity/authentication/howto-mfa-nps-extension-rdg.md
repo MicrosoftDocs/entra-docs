@@ -5,7 +5,7 @@ description: Integrate your Remote Desktop Gateway infrastructure with Microsoft
 services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
-ms.custom: has-azure-ad-ps-ref
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: how-to
 ms.date: 10/25/2023
 
@@ -179,11 +179,11 @@ To use the script, provide the extension with your Microsoft Entra Admin credent
 
 1. Open an administrative Windows PowerShell prompt.
 1. At the PowerShell prompt, type `cd 'c:\Program Files\Microsoft\AzureMfa\Config'`, and press **ENTER**.
-1. Type `.\AzureMfaNpsExtnConfigSetup.ps1`, and press **ENTER**. The script checks to see if the Azure Active Directory PowerShell module is installed. If not installed, the script installs the module for you.
+1. Type `.\AzureMfaNpsExtnConfigSetup.ps1`, and press **ENTER**. The script checks to see if the PowerShell module is installed. If not installed, the script installs the module for you.
 
-   ![Running AzureMfaNpsExtnConfigSetup.ps1 in Azure AD PowerShell](./media/howto-mfa-nps-extension-rdg/image4.png)
+   ![Running AzureMfaNpsExtnConfigSetup.ps1 in PowerShell](./media/howto-mfa-nps-extension-rdg/image4.png)
   
-1. After the script verifies the installation of the PowerShell module, it displays the Azure Active Directory PowerShell module dialog box. In the dialog box, enter your Microsoft Entra admin credentials and password, and click **Sign In**.
+1. After the script verifies the installation of the PowerShell module, it displays the PowerShell module dialog box. In the dialog box, enter your Microsoft Entra admin credentials and password, and click **Sign In**.
 
    ![Authenticating to Microsoft Entra ID in PowerShell](./media/howto-mfa-nps-extension-rdg/image5.png)
 

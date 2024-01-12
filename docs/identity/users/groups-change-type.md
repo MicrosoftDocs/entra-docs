@@ -12,7 +12,7 @@ ms.topic: how-to
 ms.date: 11/10/2023
 ms.author: barclayn
 ms.reviewer: krbain
-ms.custom: it-pro, has-azure-ad-ps-ref
+ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.collection: M365-identity-device-management
 ---
 
@@ -55,7 +55,7 @@ The following steps are an example of changing a group from static to dynamic me
 ## Change membership type for a group (PowerShell)
 
 > [!NOTE]
-> To change dynamic group properties you will need to use cmdlets from **the preview version of** [PowerShell Version 2](/powershell/azure/active-directory/install-adv2). You can install the preview from the [PowerShell Gallery](https://www.powershellgallery.com/packages/AzureADPreview).
+> To change dynamic group properties you will need to use cmdlets from the Microsoft Graph PowerShell module. for more information, see [Install the Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/installation).
 
 Here is an example of functions that switch membership management on an existing group. In this example, care is taken to correctly manipulate the GroupTypes property and preserve any values that are unrelated to dynamic membership.
 
@@ -68,7 +68,7 @@ function ConvertDynamicGroupToStatic
     Param([string]$groupId)
 
     #existing group types
-    [System.Collections.ArrayList]$groupTypes = (Get-AzureAdMsGroup -Id $groupId).GroupTypes
+    [System.Collections.ArrayList]$groupTypes = (Get-MgGroup -GroupId $groupId).GroupTypes
 
     if($groupTypes -eq $null -or !$groupTypes.Contains($dynamicGroupTypeString))
     {
@@ -80,7 +80,7 @@ function ConvertDynamicGroupToStatic
     $groupTypes.Remove($dynamicGroupTypeString)
 
     #modify the group properties to make it a static group: i) change GroupTypes to remove the dynamic type, ii) pause execution of the current rule
-    Set-AzureAdMsGroup -Id $groupId -GroupTypes $groupTypes.ToArray() -MembershipRuleProcessingState "Paused"
+    Update-MgGroup -GroupId $groupId -GroupTypes $groupTypes.ToArray() -MembershipRuleProcessingState "Paused"
 }
 
 function ConvertStaticGroupToDynamic
@@ -88,7 +88,7 @@ function ConvertStaticGroupToDynamic
     Param([string]$groupId, [string]$dynamicMembershipRule)
 
     #existing group types
-    [System.Collections.ArrayList]$groupTypes = (Get-AzureAdMsGroup -Id $groupId).GroupTypes
+    [System.Collections.ArrayList]$groupTypes = (Get-MgGroup -GroupId $groupId).GroupTypes
 
     if($groupTypes -ne $null -and $groupTypes.Contains($dynamicGroupTypeString))
     {
@@ -98,9 +98,10 @@ function ConvertStaticGroupToDynamic
     $groupTypes.Add($dynamicGroupTypeString)
 
     #modify the group properties to make it a static group: i) change GroupTypes to add the dynamic type, ii) start execution of the rule, iii) set the rule
-    Set-AzureAdMsGroup -Id $groupId -GroupTypes $groupTypes.ToArray() -MembershipRuleProcessingState "On" -MembershipRule $dynamicMembershipRule
+    Update-MgGroup -GroupId $groupId -GroupTypes $groupTypes.ToArray() -MembershipRuleProcessingState "On" -MembershipRule $dynamicMembershipRule
 }
 ```
+
 To make a group static:
 
 ```powershell
