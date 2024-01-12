@@ -228,9 +228,9 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
     a. Turn ON the **SSO profile for your organization**.
 
-    b. In the **Sign-in page URL** field in Google Cloud / G Suite Connector by Microsoft, paste the value of **Login URL**..
+    b. In the **Sign-in page URL** field in Google Cloud / G Suite Connector by Microsoft, paste the value of **Login URL**.
 
-    c. In the **Sign-out page URL** field in Google Cloud / G Suite Connector by Microsoft, paste the value of **Logout URL**..
+    c. In the **Sign-out page URL** field in Google Cloud / G Suite Connector by Microsoft, paste the value of **Logout URL**.
 
     d. In Google Cloud / G Suite Connector by Microsoft, for the **Verification certificate**, upload the certificate that you have downloaded previously.   
 
