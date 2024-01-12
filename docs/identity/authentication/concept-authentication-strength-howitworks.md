@@ -17,7 +17,7 @@ ms.collection: M365-identity-device-management
 ---
 #  How Conditional Access authentication strength works 
 
-This topic explains how Conditional Access authentication strength can restrict which authentication methods are allowed to access a resources.
+This topic explains how Conditional Access authentication strength can restrict which authentication methods are allowed to access a resource.
 <!-- ### Place holder:How to create Conditional Access policy that uses authentication strength
 -	Add a note that you can use either require mfa or require auth strengths
 - (JF) Possibly add a reference doc that lists all the definitions of the things you can configure?
@@ -95,7 +95,7 @@ If a user from a federated domain has multifactor authentication settings in sco
 
 ## Next steps
 
-- [Bult-in authentication strengths](concept-authentication-strengths.md)
+- [Built-in authentication strengths](concept-authentication-strengths.md)
 - [Custom authentication strengths](concept-authentication-strength-advanced-options.md)
 - [How authentication strength works for external users](concept-authentication-strength-external-users.md)
 - [Troubleshoot authentication strengths](troubleshoot-authentication-strengths.md) 
