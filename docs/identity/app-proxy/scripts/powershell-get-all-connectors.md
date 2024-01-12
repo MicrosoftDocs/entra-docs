@@ -9,7 +9,7 @@ ms.subservice: app-proxy
 ms.workload: identity
 ms.custom: has-azure-ad-ps-ref
 ms.topic: sample
-ms.date: 08/29/2022
+ms.date: 01/04/2024
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
@@ -28,7 +28,58 @@ This sample requires the [Microsoft Graph Beta PowerShell module](/powershell/mi
 
 ## Sample script
 
-[!code-azurepowershell[main](~/../powershell_scripts/application-proxy/get-all-connectors.ps1 "Get all connector groups and connectors in the directory")]
+```powershell
+# This sample script gets all Microsoft Entra application proxy Connector groups with the included connectors.
+#
+# Version 1.0
+#
+# This script requires PowerShell 5.1 (x64) or beyond and one of the following modules:
+#
+# Microsoft.Graph.Beta ver 2.10 or newer
+#
+# Before you begin:
+#    
+#    Required Microsoft Entra role: Global Administrator or Application Administrator or Application Developer 
+#    or appropriate custom permissions as documented https://learn.microsoft.com/en-us/azure/active-directory/roles/custom-enterprise-app-permissions
+#
+# 
+
+Import-Module Microsoft.Graph.Beta.Applications
+
+Connect-MgGraph -Scope Directory.Read.All -NoWelcome
+
+Write-Host "Reading Microsoft Entra application proxy connector groups. This operation might take longer..." -BackgroundColor "Black" -ForegroundColor "Green"
+
+$aadapConnectorGroups= Get-MgBetaOnPremisePublishingProfileConnectorGroup -OnPremisesPublishingProfileId "applicationProxy" -Top 100000 
+
+$countAssignedApps, $CountOfConnectorGroups = 0
+
+foreach ($item in $aadapConnectorGroups) {
+   
+     If ($item.ConnectorGroupType -eq "applicationProxy") {
+
+     Write-Host "Connector group: " $item.Name, "(Id:" $item.Id ")" -BackgroundColor "Black" -ForegroundColor "White" 
+     Write-Host "Region: " $item.Region
+     
+     Write-Host " "
+
+     $connectors = Get-MgBetaOnPremisePublishingProfileConnectorGroupMember -ConnectorGroupId $item.Id -OnPremisesPublishingProfileId "applicationProxy" 
+
+     $connectors | ft
+
+     " ";
+
+     $CountOfConnectorGroups = $CountOfConnectorGroups + 1
+
+     }
+}  
+
+Write-Host ("")
+Write-Host ("Number of Microsoft Entra application proxy Connector Groups: $CountOfConnectorGroups")
+Write-Host ("")
+Write-Host ("Finished.") -BackgroundColor "Black" -ForegroundColor "Green"
+Write-Host "To disconnect from Microsoft Graph, please use the Disconnect-MgGraph cmdlet."
+```
 
 ## Script explanation
 
