@@ -58,7 +58,7 @@ Microsoft's MFA server can be integrated with many systems, and you must evaluat
 
 Common ways to think about moving users in batches include moving them by regions, departments, or roles such as administrators. You should move user accounts iteratively, starting with test and pilot groups, and make sure you have a rollback plan in place. 
 
-You can use the [MFA Server Migration Utility](how-to-mfa-server-migration-utility.md) to synchronize MFA data stored in the on-premises Azure MFA Server to Microsoft Entra multifactor authentication and use [Staged Rollout](~/identity/hybrid/connect/how-to-connect-staged-rollout.md) to reroute users to Azure MFA. Staged Rollout helps you test without making any changes to your domain federation settings.
+You can use the [MFA Server Migration Utility](how-to-mfa-server-migration-utility.md) to synchronize MFA data stored in the on-premises Azure MFA Server to Microsoft Entra multifactor authentication and use [Staged Rollout](~/identity/hybrid/connect/how-to-connect-staged-rollout.md) to reroute users to Entra multifactor authentication. Staged Rollout helps you test without making any changes to your domain federation settings.
 
 To help users to differentiate the newly added account from the old account linked to the MFA Server, make sure the Account name for the Mobile App on the MFA Server is named in a way to distinguish the two accounts. 
 For example, the Account name that appears under Mobile App on the MFA Server has been renamed to **On-Premises MFA Server**. 
