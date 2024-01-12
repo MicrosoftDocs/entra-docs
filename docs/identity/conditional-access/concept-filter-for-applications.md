@@ -85,7 +85,7 @@ After administrators confirm the settings using [report-only mode](howto-conditi
 
 ### Step 1: Set up a sample application
 
-If you already have a test application that makes use of a service principal, you can skip this step.
+If you already have a test application that makes use of a service principal, you can skip this step. If you do not have a service principal for a target application, sign into the application or use [New-MgServicePrincipal](https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.applications/new-mgserviceprincipal?view=graph-powershell-1.0) commandlet to create a service principal.
 
 Set up a sample application that, demonstrates how a job or a Windows service can run with an application identity, instead of a user's identity. Follow the instructions in the article [Quickstart: Get a token and call the Microsoft Graph API by using a console app's identity](~/identity-platform/quickstart-v2-netcore-daemon.md) to create this application.
 
