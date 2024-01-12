@@ -9,7 +9,7 @@ ms.subservice: app-proxy
 ms.workload: identity
 ms.custom: has-azure-ad-ps-ref
 ms.topic: sample
-ms.date: 08/29/2022
+ms.date: 01/04/2024
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
@@ -28,7 +28,99 @@ This sample requires the [Microsoft Graph Beta PowerShell module](/powershell/mi
 
 ## Sample script
 
-[!code-azurepowershell[main](~/../powershell_scripts/application-proxy/get-all-custom-domains-and-certs.ps1 "Get all Application Proxy apps using custom domains and certificate information")]
+```powershell
+# This sample script gets all Microsoft Entra application proxy application custom domain applications & uploaded certificates.
+#
+# Version 1.0
+#
+# This script requires PowerShell 5.1 (x64) and one of the following modules:
+#
+# Microsoft.Graph ver 2.10
+#
+# Before you begin:
+#    
+#    Required Microsoft Entra role: Global Administrator or Application Administrator or Application Developer 
+#    or appropriate custom permissions as documented https://learn.microsoft.com/en-us/azure/active-directory/roles/custom-enterprise-app-permissions
+#
+# 
+
+Import-Module Microsoft.Graph.Beta.Applications
+
+Connect-MgGraph -Scope Directory.Read.All -NoWelcome
+
+Write-Host "Reading service principals. This operation might take longer..." -BackgroundColor "Black" -ForegroundColor "Green"
+
+$allApps = Get-MgBetaServicePrincipal -Top 100000 | where-object {$_.Tags -Contains "WindowsAzureActiveDirectoryOnPremApp"}
+
+$numberofAadapApps, $certsNumber = 0, 0
+
+[string[]]$certs = $null
+
+Write-Host "Displaying all custom domain Microsoft Entra application proxy applications and the uploaded certificates..." -BackgroundColor "Black" -ForegroundColor "Green"
+Write-Host " "
+
+foreach ($item in $allApps) {
+
+ $aadapApp, $aadapAppConf, $aadapAppConf1 = $null, $null, $null
+ 
+ $aadapAppId =  Get-MgBetaApplication | where-object {$_.AppId -eq $item.AppId}
+ $aadapAppConf = Get-MgBetaApplication -ApplicationId $aadapAppId.Id -ErrorAction SilentlyContinue -select OnPremisesPublishing | select OnPremisesPublishing -expand OnPremisesPublishing 
+ $aadapAppConf1 = Get-MgBetaApplication -ApplicationId $aadapAppId.Id -ErrorAction SilentlyContinue -select OnPremisesPublishing | select OnPremisesPublishing -expand OnPremisesPublishing `
+  | select verifiedCustomDomainCertificatesMetadata -expand verifiedCustomDomainCertificatesMetadata 
+
+  if (($aadapAppConf -ne $null) -and ($aadapAppConf.ExternalUrl -notmatch ".msappproxy.net")) {
+   
+  Write-Host $item.DisplayName"(AppId: " $item.AppId ", ObjId:" $item.Id")" -BackgroundColor "Black" -ForegroundColor "White"
+  Write-Host
+  Write-Host "External Url: " $aadapAppConf.ExternalUrl
+  Write-Host "Internal Url: " $aadapAppConf.InternalUrl
+  Write-Host "Pre-authentication: " $aadapAppConf.ExternalAuthenticationType
+  Write-Host
+
+  If ($aadapAppConf1.VerifiedCustomDomainCertificatesMetadata.Thumbprint.Length -ne 0) {
+       
+        Write-Host " "
+        Write-Host "SSL Certificate details:"
+        Write-Host "Certificate SubjectName: " $aadapAppConf1.VerifiedCustomDomainCertificatesMetadata.SubjectName
+        Write-Host "Certificate Issuer: " $aadapAppConf1.VerifiedCustomDomainCertificatesMetadata.Issuer
+        Write-Host "Certificate Thumbprint: " $aadapAppConf1.VerifiedCustomDomainCertificatesMetadata.Thumbprint
+        Write-Host "Valid from: " $aadapAppConf1.VerifiedCustomDomainCertificatesMetadata.IssueDate
+        Write-Host "Valid to: " $aadapAppConf1.VerifiedCustomDomainCertificatesMetadata.ExpiryDate
+        Write-Host " "
+
+        if ($null -eq ($aadapAppConf1.VerifiedCustomDomainCertificatesMetadata.Thumbprint | ? { $certs -match $_ })) {
+        
+        
+          $certs += " `r`nSSL Certificate details:`r`nCertificate SubjectName: " + $aadapAppConf1.VerifiedCustomDomainCertificatesMetadata.SubjectName
+          $certs += "Certificate Issuer: " + $aadapAppConf1.VerifiedCustomDomainCertificatesMetadata.Issuer
+          $certs += "Certificate Thumbprint: " + $aadapAppConf1.VerifiedCustomDomainCertificatesMetadata.Thumbprint
+          $certs += "Valid from: " + $aadapAppConf1.VerifiedCustomDomainCertificatesMetadata.IssueDate
+          $certs += "Valid to: " + $aadapAppConf1.VerifiedCustomDomainCertificatesMetadata.ExpiryDate + "`r`n"
+
+          $certsNumber = $certsNumber + 1
+          
+        }
+
+  $numberofAadapApps = $numberofAadapApps + 1      
+     }
+  }
+}
+
+
+Write-Host
+Write-Host "Number of the Microsoft Entra application proxy applications with custom domain: " $numberofAadapApps -BackgroundColor "Black" -ForegroundColor "White"
+Write-Host ("")
+Write-Host ("Number of uploaded certificates: " + $certsNumber) -BackgroundColor "Black" -ForegroundColor "White"
+Write-Host ("")
+Write-Host ("Used certificates:") -BackgroundColor "Black" -ForegroundColor "White"
+Write-Host ("")
+
+$certs 
+
+Write-Host
+Write-Host "Finished." -BackgroundColor "Black" -ForegroundColor "Green"
+Write-Host "To disconnect from Microsoft Graph, please use the Disconnect-MgGraph cmdlet."
+```
 
 ## Script explanation
 
