@@ -206,8 +206,6 @@ To confirm the connector installed and registered correctly:
    - **Microsoft Entra application proxy Connector** enables connectivity.
    - **Microsoft Entra application proxy Connector Updater** is an automated update service. The updater checks for new versions of the connector and updates the connector as needed.
 
-     ![App Proxy Connector services - screenshot](./media/application-proxy-add-on-premises-application/app_proxy_services.png)
-
 1. If the status for the services isn't **Running**, right-click to select each service and choose **Start**.
 
 <a name='add-an-on-premises-app-to-azure-ad'></a>
