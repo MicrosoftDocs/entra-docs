@@ -6,7 +6,7 @@ services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/09/2024
+ms.date: 01/12/2024
 
 ms.author: justinha
 author: inbarckms
@@ -143,7 +143,7 @@ POST beta/identity/conditionalAccess/authenticationStrength/policies/{authentica
 - For B2B users, let's take an example where Contoso has invited users from Fabrikam to their tenant. In this case, Contoso is the resource tenant and Fabrikam is the home tenant.
   - When cross-tenant access setting is **Off** (Contoso doesn't accept MFA that was performed by the home tenant) - Using certificate-based authentication on the resource tenant isn't supported.
   - When cross-tenant access setting is **On**, Fabrikam and Contoso are on the same Microsoft cloud – meaning, both Fabrikam and Contoso tenants are on the Azure commercial cloud or on the Azure for US Government cloud. In addition, Contoso trusts MFA that was performed on the home tenant. In this case:
-    - Access to a specific resource can be restricted by using the policy OIDs in the custom authentication strength policy.
+    - Access to a specific resource can be restricted by using the policy OIDs or the "other certificate issuer by SubjectkeyIdentifier" in the custom authentication strength policy.
     - Access to specific resources can be restricted by using the "Other certificate issuer by SubjectkeyIdentifier" setting in the custom authentication strength policy.
   - When cross-tenant access setting is **On**, Fabrikam and Contoso aren't on the same Microsoft cloud – for example, Fabrikam’s tenant is on the Azure commercial cloud and Contoso’s tenant is on the Azure for US Government cloud – access to specific resources can't be restricted by using the issuer ID or policy OIDs in the custom authentication strength policy. 
 
