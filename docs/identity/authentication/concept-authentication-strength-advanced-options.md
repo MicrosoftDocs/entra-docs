@@ -133,7 +133,7 @@ POST beta/identity/conditionalAccess/authenticationStrength/policies/{authentica
 
 - Certificate Authorities and user certificates should conform to the X.509 v3 standard. Specifically, to enforce issuer SKI CBA restrictions, certificates need valid AKIs:
 
-  :::image type="content" border="true" source="./media/concept-authentication-strength-advanced-options/authority-key-identifier.png" alt-text="Screenshot showing an authority key identifier.":::
+  :::image type="content" border="true" source="./media/concept-authentication-strength-advanced-options/subject-key-identifier.png" alt-text="Screenshot showing an authority key identifier.":::
 
   >[!NOTE]
   >If the certificate doesn't conform, user authentication might succeed, but not satisfy the issuerSki restrictions for the authentication strength policy.
