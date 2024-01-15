@@ -182,6 +182,8 @@
         href: appraisd-tutorial.md
       - name: AppRemo
         href: appremo-tutorial.md
+      - name: AppSecEngineer
+        href: appsecengineer-tutorial.md
       - name: Conviso Platform SSO
         href: appsec-flow-sso-tutorial.md
       - name: Apptio
