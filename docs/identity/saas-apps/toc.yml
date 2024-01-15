@@ -870,6 +870,8 @@
         href: edx-for-business-saml-integration-tutorial.md
       - name: EFI Digital StoreFront
         href: efidigitalstorefront-tutorial.md
+      - name: eFlok
+        href: eflok-tutorial.md
       - name: Egnyte
         href: egnyte-tutorial.md
       - name: Egress
