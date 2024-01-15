@@ -148,7 +148,7 @@ Write-Host "To disconnect from Microsoft Graph, please use the Disconnect-MgGrap
 |[Get-MgBetaServicePrincipalById](/powershell/module/microsoft.graph.beta.applications/get-mgbetaserviceprincipalbyid)| Gets a service principal by id|
 |[Get-MgBetaUser](/powershell/module/microsoft.graph.beta.users/get-mgbetauser)| Gets a user|
 |[Get-MgBetaGroup](/powershell/module/microsoft.graph.beta.groups/get-mgbetagroup)| Gets a group|
-|[Get-MgBetaUserAppRoleAssignment](/powershell/module/microsoft.graph.beta.applications/get-mgbetaapproleassignment)| Gets the application role assignment|
+|[Get-MgBetaUserAppRoleAssignment](/powershell/module/microsoft.graph.beta.applications/get-mgbetagroupapproleassignment)| Gets the application role assignment|
 
 ## Next steps
 
