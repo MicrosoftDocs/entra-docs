@@ -21,10 +21,10 @@ Learn all you need to build a desktop app that calls web APIs.
 
 If you haven't already, create your first application by completing a quickstart:
 
-- [Quickstart: Acquire a token and call Microsoft Graph API from a Windows desktop app](./quickstart-v2-windows-desktop.md)
-- [Quickstart: Acquire a token and call Microsoft Graph API from a UWP app](./quickstart-v2-uwp.md)
-- [Quickstart: Acquire a token and call Microsoft Graph API from a macOS native app](./quickstart-v2-ios.md)
-- [Quickstart: Acquire a token and call Microsoft Graph API from a Node.js & Electron app](./quickstart-v2-nodejs-desktop.md)
+- [Quickstart: Acquire a token and call Microsoft Graph API from a Windows desktop app](./quickstart-desktop-app-wpf-sign-in.md)
+- [Quickstart: Acquire a token and call Microsoft Graph API from a UWP app](./quickstart-desktop-app-uwp-sign-in.md)
+- [Quickstart: Acquire a token and call Microsoft Graph API from a macOS native app](./quickstart-mobile-app-ios-sign-in.md)
+- [Quickstart: Acquire a token and call Microsoft Graph API from a Node.js & Electron app](./quickstart-desktop-app-nodejs-electron-sign-in.md)
 
 ## Overview
 
