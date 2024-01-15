@@ -6,7 +6,7 @@ manager: CelesteDG
 ms.author: shermanouko
 ms.custom: has-adal-ref
 ms.date: 01/15/2024
-ms.reviewer: aiwang, dmwendia
+ms.reviewer: dmwendia
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: how-to 
