@@ -87,7 +87,7 @@ Write-Host "To disconnect from Microsoft Graph, please use the Disconnect-MgGrap
 |---|---|
 |[Connect-MgGraph](/powershell/module/microsoft.graph.authentication/connect-mggraph)| Connects to Microsoft Graph |
 |[Get-MgBetaOnPremisePublishingProfileConnectorGroup](/powershell/module/microsoft.graph.beta.applications/get-mgbetaonpremisepublishingprofileconnectorgroup)| Gets a connector group |
-|[Get-MgBetaOnPremisePublishingProfileConnectorGroupMember](/powershell/module/microsoft.graph.beta.applications/get-mgbetaonpremisespublishingprofileconnectorgroupmember)|Gets the members of a connector group |
+|[Get-MgBetaOnPremisePublishingProfileConnectorGroupMember](/powershell/module/microsoft.graph.beta.applications/get-mgbetaonpremisepublishingprofileconnectorgroupmember)|Gets the members of a connector group |
 
 ## Next steps
 
