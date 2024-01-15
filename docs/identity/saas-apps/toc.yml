@@ -182,6 +182,8 @@
         href: appraisd-tutorial.md
       - name: AppRemo
         href: appremo-tutorial.md
+      - name: AppSecEngineer
+        href: appsecengineer-tutorial.md
       - name: Conviso Platform SSO
         href: appsec-flow-sso-tutorial.md
       - name: Apptio
@@ -596,6 +598,8 @@
         href: colloquial-tutorial.md
       - name: ColorTokens ZTNA
         href: colortokens-ztna-tutorial.md
+      - name: Colossyan SAML
+        href: colossyan-saml-tutorial.md
       - name: Comeet Recruiting Software
         href: comeetrecruitingsoftware-tutorial.md
       - name: Comm100 Live Chat
@@ -866,6 +870,8 @@
         href: edx-for-business-saml-integration-tutorial.md
       - name: EFI Digital StoreFront
         href: efidigitalstorefront-tutorial.md
+      - name: eFlok
+        href: eflok-tutorial.md
       - name: Egnyte
         href: egnyte-tutorial.md
       - name: Egress
@@ -1669,6 +1675,8 @@
         href: mail-luck-tutorial.md
       - name: MailGates
         href: mailgates-tutorial.md
+      - name: Mailosaur
+        href: mailosaur-tutorial.md
       - name: Manabi Pocket
         href: manabipocket-tutorial.md
       - name: Manifestly Checklists
