@@ -126,7 +126,7 @@ sections:
           Why do I see two servers with the same name in the Microsoft Entra Connect Health portal?
         answer: |
           When you remove an agent from a server, the server isn't automatically removed from the Microsoft Entra Connect Health portal. If you manually remove an agent from a server or remove the server itself, you need to manually delete the server entry from the Microsoft Entra Connect Health portal.
-          
+          You need to have Monitoring Contributor role to remove server from Microsoft Entra Connect Health portal.
           You might reimage a server or create a new server with the same details (such as machine name). If you did not remove the already registered server from the Microsoft Entra Connect Health portal, and you installed the agent on the new server, you might see two entries with the same name.
           
           In this case, manually delete the entry that belongs to the older server. The data for this server should be out of date.
@@ -216,7 +216,8 @@ sections:
           When will the agent certificate be automatically renewed before expiration?
         answer: |
           The agent certification will be automatically renewed **6 months** before its expiration date. If it isn't renewed, ensure the network connection of the agent is stable. Restart the agent services or update to the latest version may also solve the issue.
-          
+
+                
 additionalContent: |
 
   ## Related links
