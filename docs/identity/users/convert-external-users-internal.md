@@ -5,7 +5,7 @@ services: active-directory
 author: barclayn
 ms.author: barclayn
 manager: amycolannino
-ms.date: 12/13/2023
+ms.date: 01/16/2024
 ms.topic: how-to
 ms.service: active-directory
 ms.subservice: enterprise-users
@@ -21,17 +21,12 @@ Enterprises go through reorganizations, mergers and acquisitions typically requi
 user’s account and access isn’t disrupted and that their history of activities remains intact as their relationship with the host organization changes
 
 - **Internal users** are users who authenticate with the internal tenant.
-- **External users** are those users who authenticate via a method not managed by the host organization, for example, another organization’s Microsoft Entra ID, Google fed, Microsoft account, etc. While many external users likely have a userType of ‘guest’, there is no formal relation between userType and how a user signs-in. Some external users could have a userType of **member**. These users are also eligible for conversion.
+- **External users** are users who authenticate via a method not managed by the host organization, such as another organization's Microsoft Entra ID, Google federation, or Microsoft account. While many external users may have a userType of 'guest', there is no formal relation between userType and how a user signs in. Some external users may have a userType of 'member', and they are also eligible for conversion.
 
-External user conversion takes external users and converts them into internal users and as part of the conversion process, updates the userType from guest to member. Using the same underlying object ensures the user's account and access to resources isn't disrupted and that their history of activities remains intact as their relationship with the host organization changes.
-
-Customers using cross-tenant sync for their Mergers and Acquisitions (M&A) create B2B external users in their home tenant first. As external users have several restrictions, this conversion capability is key to the tenant migration or consolidation for these customers' (M&A) scenarios.
-
-The API includes the ability to convert on-premises synced external users to synced internal users. When converting a cloud-only external user, the admin must specify the UPN and password for the user, to allow the user to authenticate with the host's organization. The API updates the userType from guest to member and also stamps the "externalUserConvertedOn" attribute with a datetime value indicating when the user was converted. When an on-premises synced user is converted, you can't specify UPN or password. The user continues to use the on-premises credentials, as on-premises synced user is managed on-premises.
+The feature includes the ability to convert on-premises synced external users to synced internal users. When converting a cloud-only external user, the admin must specify the UPN and password for the user, to allow the user to authenticate with the host's organization. The API updates the userType from guest to member and also stamps the "externalUserConvertedOn" attribute with a datetime value indicating when the user was converted. When an on-premises synced user is converted, you can't specify UPN or password. The user continues to use the on-premises credentials, as on-premises synced user is managed on-premises.
 
 External User Conversion can be performed using MS Graph API or the Microsoft Entra ID Portal.
 
-External users are those that authenticate via a method not managed by the host organization (that is, another organization's Microsoft Entra ID, Google federation, Microsoft account, etc.) While many external users likely have a userType of guest there is no formal relation between userType and how a user signs-in. As a result, some external users may have a userType of member. These users will also be eligible for conversion.
 
 >[!NOTE]
 > When an external user is converted the property "convertedToInternalUserDateTime" gets stamped on their object.
@@ -48,15 +43,6 @@ For on-premises synced users where the tenant is a managed, meaning it uses clou
 
 For on-premises synced users where the tenant uses federated authentication and Password Hash Sync (PHS) is enabled, administrators are blocked from setting a new password during conversion. However, if the federated tenant doesn't have PHS enabled, administrators have the option to set a password.
 
-| Tenant Authentication type | Password Hash Sync enabled | Password Hash Sync disabled |
-|---------------------------|----------------------------|-----------------------------|
-| Federated                 | Block Write Password       | Allow Write Password        |
-| Managed                   | Force Write Password       | Force Write Password     |
-
->[!NOTE]
-> Password hash sync does not have the user's password
-
-
 
 ## Testing external user conversion
 
@@ -70,133 +56,26 @@ role assigned.
     - A check for eligibility is performed via an internal property that stores information regarding external sign in types. If a user isn't eligible for conversion the API or PowerShell command will return a 400 "Bad request" with a message that the user isn't eligible.
 - If you are using MSGraph API from your own application, the least privileged permission is required is ‘UserConvertToInternal.ReadWrite.All” permission.
 
-### Converting a user via MS Graph API
-
-Detailed steps on calling Microsoft Graph API are available [here](/graph/call-api)
-
-When converting a user, you can specify which user you’d like to convert via object ID or user principal name (UPN). The following are the required and optional input parameters for the API & PowerShell command.
-
-| Parameter name | Type | Required | Description |
-| -------------- | ---- | -------- | ----------- |
-| userPrincipalName | String | Yes | New UPN value for the user. For cloud-only users, the UPN domain must be one that is non-federated. For on-premises synced users, you don't need to provide a UPN. The user continues to use the on-premises credentials. |
-| passwordProfile | passwordProfile | Yes | New temporary password for the user and whether to force change password on sign in. For on-premises synced users, you can't configure a password. The user continues to use the on-premises credentials. |
-| mail | String | No | Optional new mail address for cloud users. |
+### Converting an External user
 
 
-#### API call that provides the required UPN and password profile.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 
+1. Browse to **Identity** > **Users** > **All users**.
 
-```json
-POST https://graph.microsoft.com/beta/users/{id}/convertExternalToInternalMemberUser
-{
- "userprincipalName": "user1Name",
-"passwordProfile": 
- { 
- "password": "te$tPassw0rd", 
- "forceChangePasswordNextSignIn": "true" 
-}
-}
-```
+1. Select an external user.
+1. As shown in the image below, select **Convert to internal user**
 
-```json
-HTTP/1.1 200 OK
-{
- "id": "ddbc5871-cc95-4b99-a162-ecdc91ece43e"
- "displayName": "user1Name",
- "userPrincipalName": "newUpn@contoso.com",
- "convertedToInternalUserDateTime": "9999-12-31T23:59:59.9999999"
-}
-```
+:::image type="content" source="media/convert-external-users-internal/user-properties.png" alt-text="Screenshot showing the user properties with a red box around the Convert to Internal user option":::
 
-#### converts an on-premises synced user:
+1. In the **Convert to internal user** section, you need to finalize a couple of steps:
+    1. A user principal name
+    1. Choose whether you would like an auto generated password 
+    1. And if you would like to change email address
+1. Once that you have made these last choices, you can choose **Convert**
 
-```
-POST https://graph.microsoft.com/v1.0/users/id/convertExternalToInternalMemberUser
+:::image type="content" source="media/convert-external-users-internal/convert.png" alt-text="Screenshot showing the last set of options that must be chosen prior to converting an external user to an internal user":::
 
-```
-
-The successful response returns the 200 OK status and a payload of the following format:
-
-```json
-HTTP/1.1 200 OK
-
-{
- "id": "ddbc5871-cc95-4b99-a162-ecdc91ece43e"
- "displayName": "user1Name",
- "userPrincipalName": "newUpn@contoso.com",
- "convertedToInternalUserDateTime": "9999-12-31T23:59:59.9999999"
-}
-
-```
-
-#### Example of an error condition when encountering an invalid UPN
-
-```json
-POST https://graph.microsoft.com/beta/users/{id}/convertExternalToInternalMemberUser
-{
- "userPrincipalName": "newUPN@fabrikam.com",
- "passwordProfile: {
- "password": "testPassword",
- "forceChangePasswordNextSignIn": "true"
- }
-}
-
-```
-
-Returns
-
-```json
-
-HTTP/1.1 400 Bad Request
-{
- "message": "UserPrincipalName domain is not a verified domain or shared domain on 
-the company."
-}
-```
-
-#### Example failed operation converting on-premises synced users if UPN or password are provided
-
-```json
-POST https://graph.microsoft.com/v1.0/users/id/convertExternalToInternalMemberUser
-{
- "userprincipalName": "user1Name"
- "passwordProfile": { "password": "te$tPassw0rd", "forceChangePasswordNextSignIn": 
-"true" }
-}
-HTTP/1.1 400 Bad Request
-{
- "error": {
- "code": "badRequest",
- "message": "For users synchronized from on-premises, userPrincipalName and 
-passwordProfile must be empty"
- }
-}
-
-```
-
-#### Example how to retrieve the **convertedToInternalUserDateTime** property
-
-When an external user is converted the property ```convertedToInternalUserDateTime``` is stamped on 
-their object. You can use this property to query for converted users like so:
-
-```json
-GET https://graph.microsoft.com/beta/users?$filter=externalUserConvertedOn ge 2022-
-01-01T00:00:00Z
-HTTP/1.1 200 OK
-{
- "value": [
- {
- "displayName": "user1Name",
- " convertedToInternalUserDateTime" : "2022-01-02T23:59:59.9999999"
- },
- {
- "displayName": "user2Name",
- " convertedToInternalUserDateTime" : "2022-01-03T23:59:59.9999999"
- }
- ]
-}
-
-```
 
 ## Known issues
 
