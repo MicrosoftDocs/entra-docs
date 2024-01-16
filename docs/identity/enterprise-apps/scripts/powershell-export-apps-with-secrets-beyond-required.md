@@ -9,7 +9,7 @@ ms.subservice: app-mgmt
 
 ms.custom: has-azure-ad-ps-ref
 ms.topic: sample
-ms.date: 07/12/2023
+ms.date: 01/15/2024
 ms.author: jomondi
 ms.reviewer: mifarca
 ---

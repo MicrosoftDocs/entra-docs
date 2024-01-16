@@ -1374,7 +1374,7 @@ In the Azure portal, the required permissions list is under API Permissions with
 **Service category:** Conditional Access   
 **Product capability:** User Authentication  
 
-We're announcing Public preview of Authentication strength, a Conditional Access control that allows administrators to specify which authentication methods can be used to access a resource.  For more information, see: [Conditional Access authentication strength (preview)](~/identity/authentication/concept-authentication-strengths.md). You can use custom authentication strengths to restrict access by requiring specific FIDO2 keys using the Authenticator Attestation GUIDs (AAGUIDs), and apply this through Conditional Access policies. For more information, see: [FIDO2 security key advanced options](~/identity/authentication/concept-authentication-strengths.md#fido2-security-key-advanced-options).
+We're announcing Public preview of Authentication strength, a Conditional Access control that allows administrators to specify which authentication methods can be used to access a resource.  For more information, see: [Conditional Access authentication strength (preview)](~/identity/authentication/concept-authentication-strengths.md). You can use custom authentication strengths to restrict access by requiring specific FIDO2 keys using the Authenticator Attestation GUIDs (AAGUIDs), and apply this through Conditional Access policies. 
 
 ---
 

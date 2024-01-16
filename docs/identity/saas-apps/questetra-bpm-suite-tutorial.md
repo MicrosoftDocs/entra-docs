@@ -9,7 +9,7 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 01/11/2024
 ms.author: jeedes
 ---
 # Tutorial: Microsoft Entra SSO integration with Questetra BPM Suite
@@ -81,7 +81,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<subdomain>.questetra.net/saml/SSO/alias/bpm`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier and Sign on URL. You can get these values from **SP Information** section on your **Questetra BPM Suite** company site, which is explained later in the tutorial or contact [Questetra BPM Suite Client support team](https://www.questetra.com/contact/). You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values are not real. Update these values with the actual Identifier and Sign on URL. You can get these values from **SP Information** section on your **Questetra BPM Suite** company site, which is explained later in the tutorial or contact [Questetra BPM Suite Client support team](https://support.questetra.com/support-service/). You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Certificate (Base64)** from the given options as per your requirement and save it on your computer.
 
