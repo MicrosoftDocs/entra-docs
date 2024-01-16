@@ -54,7 +54,6 @@ When testing external user conversion we recommend, you use test accounts or acc
 role assigned.
 - Only users configured with an authentication method external to the host organization are eligible for conversion. 
     - A check for eligibility is performed via an internal property that stores information regarding external sign in types. If a user isn't eligible for conversion the API or PowerShell command will return a 400 "Bad request" with a message that the user isn't eligible.
-- If you are using MSGraph API from your own application, the least privileged permission is required is ‘UserConvertToInternal.ReadWrite.All” permission.
 
 ### Converting an External user
 
@@ -82,19 +81,6 @@ role assigned.
 with the Teams team to actively resolve this issue.
 - Converted users can't access Viva Engage (Yammer).
 - A user can't be converted if they have a role assigned to them.
-
-### Errors
-
-| Scenario | Code | Message |
-| --- | --- | --- |
-| UserPrincipalName email domain doesn't belong to the tenant verified domain list. | 400 | The provided UPN doesn't have a valid domain. |
-| UserPrincipalName is empty. | 400 | The provided UPN can't be empty. |
-| Mail address email domain doesn't belong to the tenant verified domain list. | 400 | The provided UPN doesn't have a valid domain. |
-| Mail address is empty "". | 400 | The mail provided can't be empty. |
-| Password is invalid. | 400 | The provided password isn't valid. |
-| User isn't eligible for conversion. | 400 | The user authentication is already internal and isn't eligible for conversion. |
-| UserPrincipalName name and password should be empty for on-premises users | 400 | For users synchronized from on-premises, userPrincipalName and passwordProfile must be empty |
-| UserState isn't accepted or pending. | 412 | If a user who was previously converted from external to internal is invited again, this error indicates the user can't be converted back to external. Search for any users in tenant matching invited email and confirm user was previously converted via externalUserConvertedOn attribute presence |
 
 
 ## Questions and feedback
