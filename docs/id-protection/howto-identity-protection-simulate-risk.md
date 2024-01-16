@@ -1,6 +1,6 @@
 ---
 title: Simulating risk detections in Microsoft Entra ID Protection
-description: Learn how to simulate risk detections in Identity Protection
+description: Learn how to simulate risk detections in ID Protection
 
 ms.service: active-directory
 ms.subservice: identity-protection
@@ -12,11 +12,11 @@ author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: chuqiaoshi
 ---
-# Simulating risk detections in Identity Protection
+# Simulating risk detections in Microsoft Entra ID Protection
 
 Administrators might want to simulate risk in their environment in order to accomplish the following items:
 
-- Populate data in the Identity Protection environment by simulating risk detections and vulnerabilities.
+- Populate data in the Microsoft Entra ID Protection environment by simulating risk detections and vulnerabilities.
 - Set up risk-based Conditional Access policies and test the effect of these policies.
 
 This article provides you with steps for simulating the following risk detection types:
