@@ -46,7 +46,7 @@ For on-premises synced users where the tenant uses federated authentication and 
 
 ## Testing external user conversion
 
-When testing external user conversion we recommend, you use test accounts or accounts that wouldn't create a disruption if unavailable.
+When testing external user conversion, it is recommended to use test accounts or accounts that would not create a disruption if they are unavailable.
 
 ### Requirements
 
