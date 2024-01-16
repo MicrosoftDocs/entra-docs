@@ -9,7 +9,7 @@ ms.service: active-directory
  
 ms.subservice: ciam
 ms.topic: how-to
-ms.date: 01/07/2024
+ms.date: 01/16/2024
 
 ms.custom: it-pro
 
@@ -20,7 +20,7 @@ ms.custom: it-pro
 The Application user activity (Preview) feature under Usage & insights provides data analytics on user activity and engagement for registered applications in your tenant. You can use this feature to view, query, and analyze user activity data in the Microsoft Entra admin center. This can help you uncover valuable insights that can aid strategic decisions and drive business growth.
 
 > [!TIP]
-> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/dashboard)
+> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=UserInsights)
 > 
 > To try out this feature, go to the Woodgrove Groceries demo and start the “Application user activity” use case.
 
