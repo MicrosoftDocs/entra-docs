@@ -2,18 +2,15 @@
 title: Simulating risk detections in Microsoft Entra ID Protection
 description: Learn how to simulate risk detections in Identity Protection
 
-services: active-directory
 ms.service: active-directory
 ms.subservice: identity-protection
 ms.topic: how-to
-ms.date: 08/22/2022
+ms.date: 01/16/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: chuqiaoshi
-
-ms.collection: M365-identity-device-management
 ---
 # Simulating risk detections in Identity Protection
 
