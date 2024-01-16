@@ -5,9 +5,8 @@ author: shlipsey3
 ms.author: sarahlipsey
 manager: amycolannino
 ms.topic: conceptual
-ms.date: 05/15/2023
+ms.date: 01/16/2024
 ms.service: network-access
-ms.custom: 
 ---
 
 # Global Secure Access (preview) network traffic dashboard
@@ -32,7 +31,7 @@ To access the dashboard:
 
     :::image type="content" source="media/concept-traffic-dashboard/traffic-dashboard.png" alt-text="Screenshot of the Private access profile, with the view applications link highlighted." lightbox="media/concept-traffic-dashboard/traffic-dashboard-expanded.png":::
 
-## Relationship map
+## Global Secure Access snapshot
 
 This widget provides a summary of how many users and devices are using the service and how many applications were secured through the service. 
 
@@ -40,22 +39,24 @@ This widget provides a summary of how many users and devices are using the servi
 - **Devices**: The number of distinct devices seen in the last 24 hours. The data uses the *device ID*.
 - **Workloads**: The number of distinct destinations seen in the last 24 hours. The data uses fully qualified domain names (FQDNs) and IP addresses.
 
-![Screenshot of the relationship map widget.](media/concept-traffic-dashboard/relationship-map.png)
+![Screenshot of the Global Secure Access snapshot widget.](media/concept-traffic-dashboard/snapshot.png)
 
-## Product deployment
+The **Global Secure Access snapshot** defaults to showing all types of traffic, but you can change the filter to show Internet Access, Private Access, or Microsoft 365 traffic.
 
-There are two product deployment widgets that look at the active and inactive devices that you have deployed.
+![Screenshot of the Global Secure Access snapshot widget with the filter open.](media/concept-traffic-dashboard/snapshot-filter.png)
+
+## Device status
+
+The **Device status** widgets display the active and inactive devices that you have deployed.
 
 - **Active devices**: The number of distinct device IDs seen in the last 24 hours and the % change during that time.
 - **Inactive devices**: The number of distinct device IDs that were seen in the last seven days, but not during the last 24 hours. The % change during the last 24 hours is also displayed.
 
-![Screenshot of the product deployment widget.](media/concept-traffic-dashboard/product-deployment.png)
+![Screenshot of the device status widgets.](media/concept-traffic-dashboard/device-status.png)
 
-## Product insights
+## Cross-tenant access
 
-There are two product insights widgets that look at your cross-tenant access and top used applications.
-
-### Cross-tenant access
+Global Secure Access provides visibility into the number of users and devices that are accessing other tenants. This widget displays the following information:
 
 - **Sign-ins**: The number of sign-ins through Microsoft Entra ID to Microsoft 365 in the last 24 hours. This widget provides you with information about the activity in your tenant. 
 - **Total distinct tenants**: The number of distinct tenant IDs seen in the last 24 hours.
@@ -63,17 +64,35 @@ There are two product insights widgets that look at your cross-tenant access and
 - **Users**: The number of distinct user sign-ins to other tenants in the last 24 hours. 
 - **Devices**: The number of distinct devices that signed in to other tenants in the last 24 hours.
 
-![Screenshot of the product insights widget.](media/concept-traffic-dashboard/product-insights.png)
+![Screenshot of the cross-tenant access widget.](media/concept-traffic-dashboard/cross-tenant-access.png)
 
-### Top used destinations
+Select the **Configure tenant restrictions** button to navigate to the **Session management** are of Global Secure Access, where you can check the settings of your tenant restrictions.
 
-The top-visited destinations are displayed in the second product insight widget. You can change this view to look at the following options:
+## Top used destinations
 
-- **Transactions**: Displayed by default and shows the total number of transactions in the last 24 hours. 
+The top-visited destinations defaults to all types of traffic and sorts by the number of transactions. You can select a different traffic type to narrow down the results or filter by the following options:
+
+- **Transactions**: Shows the total number of transactions in the last 24 hours. 
 - **Users**: The number of distinct users (UPN) accessing the destination in the last 24 hours.
 - **Devices**: The number of distinct device IDs accessing the destination in the last 24 hours.
 
-![Screenshot of the top destinations widget with the number of transactions field highlighted.](media/concept-traffic-dashboard/product-insights-top-destinations.png)
+![Screenshot of the top destinations widget with the number of transactions field highlighted.](media/concept-traffic-dashboard/top-destinations.png)
+
+## Web content filtering
+
+The **Web content filtering** widget displays the top categories of web content that were blocked by the service. These categories can be used to determine what sites or categories of sites you may want to block. 
+
+- **Transactions**: Shows the total number of transactions in the last 24 hours. 
+- **Users**: The number of distinct users (UPN) accessing the destination in the last 24 hours.
+- **Devices**: The number of distinct device IDs accessing the destination in the last 24 hours.
+
+![Screenshot of the traffic categories accessed by users and devices.](media/concept-traffic-dashboard/web-content-filtering.png)
+
+## No data available
+
+If your dashboard contains the **No data available** message, you need to onboard your tenant or configure the the required settings to get data to appear on the dashboard. If you see this message, review the [Get started](how-to-get-started-with-global-secure-access.md) guide to onboard your tenant.
+
+![Screenshot of a widget with no data available.](media/concept-traffic-dashboard/no-data-available.png)
 
 [!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
 
