@@ -57,6 +57,7 @@ role assigned.
 
 ### Converting an External user
 
+You can convert external users to internal using the Entra admin center. 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 
