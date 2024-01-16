@@ -277,13 +277,13 @@ You need to have at least one fallback identity provider enabled at any given ti
    - **Trust Microsoft Entra hybrid joined devices**: Allows your Conditional Access policies to trust Microsoft Entra hybrid joined device claims from an external organization when their users access your resources.
 
     :::image type="content" source="media/cross-tenant-access-settings-b2b-collaboration/inbound-trust-settings.png" alt-text="Screenshot showing trust settings.":::
-    
+
 1. (This step applies to **Organizational settings** only.) Review the **Automatic redemption** option:
 
    - **Automatically redeem invitations with the tenant** &lt;tenant&gt;: Check this setting if you want to automatically redeem invitations. If so, users from the specified tenant won't have to accept the consent prompt the first time they access this tenant using cross-tenant synchronization, B2B collaboration, or B2B direct connect. This setting will only suppress the consent prompt if the specified tenant checks this setting for outbound access as well.
 
     :::image type="content" source="~/media/external-identities/inbound-consent-prompt-setting.png" alt-text="Screenshot that shows the inbound Automatic redemption check box.":::
-    
+
 1. Select **Save**.
 
 ### Allow users to sync into this tenant
@@ -333,7 +333,7 @@ With outbound settings, you select which of your users and groups will be able t
    > If you block access for all of your users and groups, you also need to block access to all external applications (on the **External applications** tab).
 
     :::image type="content" source="media/cross-tenant-access-settings-b2b-collaboration/generic-outbound-external-users-groups-target.png" alt-text="Screenshot showing selecting the target users for b2b collaboration.":::
-   
+
 1. If you chose **Select \<your organization\> users and groups**, do the following for each user or group you want to add:
 
    - Select **Add \<your organization\> users and groups**.
@@ -362,7 +362,7 @@ With outbound settings, you select which of your users and groups will be able t
    > If you block access to all external applications, you also need to block access for all of your users and groups (on the **Users and groups** tab).
 
     :::image type="content" source="media/cross-tenant-access-settings-b2b-collaboration/generic-outbound-applications-target.png" alt-text="Screenshot showing application targets for b2b collaboration.":::
-    
+
 1. If you chose **Select external applications**, do the following for each application you want to add:
 
    - Select **Add Microsoft applications** or **Add other applications**.
