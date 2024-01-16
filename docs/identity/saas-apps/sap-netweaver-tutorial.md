@@ -8,7 +8,7 @@ ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 
-ms.custom: has-azure-ad-ps-ref
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: tutorial
 ms.date: 11/21/2022
 ms.author: jeedes
@@ -160,9 +160,11 @@ Follow these steps to enable Microsoft Entra SSO.
 
    > [!NOTE]
    > We have seen few customers reporting an error of incorrect Reply URL configured for their instance. If you receive any such error, you can use following PowerShell script as a work around to set the correct Reply URL for your instance.:
+   >
+   > ```powershell
+   > Update-MgServicePrincipal -ServicePrincipalId $ServicePrincipalObjectId -ReplyUrls "<Your Correct Reply URL(s)>"
    > ```
-   > Set-AzureADServicePrincipal -ObjectId $ServicePrincipalObjectId -ReplyUrls "<Your Correct Reply URL(s)>"
-   > ``` 
+   >
    > ServicePrincipal Object ID is to be set by yourself first or you can pass that also here.
 
 1. SAP NetWeaver application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes. Click **Edit** icon to open User Attributes dialog.
