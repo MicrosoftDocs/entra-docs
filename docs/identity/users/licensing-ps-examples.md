@@ -11,7 +11,7 @@ ms.service: active-directory
 ms.subservice: enterprise-users
 ms.topic: how-to
 ms.workload: identity
-ms.custom: has-azure-ad-ps-ref
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.date: 12/02/2020
 ms.author: barclayn
 ms.reviewer: sumitp
@@ -20,11 +20,10 @@ ms.collection: M365-identity-device-management
 
 # PowerShell and Microsoft Graph examples for group-based licensing in Microsoft Entra ID
 
-Full functionality for group-based licensing in Microsoft Entra ID, part of Microsoft Entra, is available through the [Azure portal](https://portal.azure.com), and currently there are some useful tasks that can be performed using the existing [MSOnline PowerShell
-cmdlets](/powershell/module/msonline/) and Microsoft Graph. This document provides examples of what is possible.
+Full functionality for group-based licensing in Microsoft Entra ID, part of Microsoft Entra, is available through the [Azure portal](https://portal.azure.com), and currently there are some useful tasks that can be performed using the existing Microsoft Graph and [Microsoft Graph PowerShell](/powershell/microsoftgraph/). This document provides examples of what is possible.
 
 > [!NOTE]
-> Before you begin running cmdlets, make sure you connect to your organization first, by running the `Connect-MsolService` cmdlet.
+> Before you begin running cmdlets, make sure you connect to your organization first, by running the [Connect-MgGraph](/powershell/microsoftgraph/authentication-commands#using-connect-mggraph) cmdlet.
 
 > [!WARNING]
 > This code is provided as an example for demonstration purposes. If you intend to use it in your environment, consider testing it first on a small scale, or in a separate test organization. You may have to adjust the code to meet the specific needs of your environment.
@@ -69,14 +68,15 @@ location: https://graph.microsoft.com/v2/d056d009-17b3-4106-8173-cd3978ada898/di
 
 ## View product licenses assigned to a group
 
-The [Get-MsolGroup](/powershell/module/msonline/get-msolgroup) cmdlet can be used to retrieve the group object and check the *Licenses* property: it lists all product licenses currently assigned to the group.
+The [Get-MgGroup](/powershell/module/microsoft.graph.groups/get-mggroup) cmdlet can be used to retrieve the group object and check the *AssignedLicenses* property: it lists all product licenses currently assigned to the group.
 
 ```powershell
-(Get-MsolGroup -ObjectId 99c4216a-56de-42c4-a4ac-e411cd8c7c41).Licenses
-| Select SkuPartNumber
+(Get-MgGroup -GroupId 99c4216a-56de-42c4-a4ac-e411cd8c7c41).AssignedLicenses | Select SkuPartNumber
 ```
-Output:
-```
+
+This is the result:
+
+```output
 SkuPartNumber
 -------------
 ENTERPRISEPREMIUM
@@ -119,19 +119,22 @@ HTTP/1.1 200 OK
 
 You can find all groups with any license assigned by running the following command:
 ```powershell
-Get-MsolGroup -All | Where {$_.Licenses}
-```
-More details can be displayed about what products are assigned:
-```powershell
-Get-MsolGroup -All | Where {$_.Licenses} | Select `
-    ObjectId, `
-    DisplayName, `
-    @{Name="Licenses";Expression={$_.Licenses | Select -ExpandProperty SkuPartNumber}}
+Get-MgGroup -All | Where {$_.Licenses}
 ```
 
-Output:
+More details can be displayed about what products are assigned:
+
+```powershell
+Get-MgGroup -All | Where {$_.Licenses} | Select `
+    Id, `
+    DisplayName, `
+    @{Name="AssignedLicenses";Expression={$_.AssignedLicenses | Select -ExpandProperty SkuPartNumber}}
 ```
-ObjectId                             DisplayName              Licenses
+
+This is the result:
+
+```output
+Id                                   DisplayName              AssignedLicenses
 --------                             -----------              --------
 7023a314-6148-4d7b-b33f-6c775572879a EMS E5 – Licensed users  EMSPREMIUM
 cf41f428-3b45-490b-b69f-a349c8a4c38e PowerBi - Licensed users POWER_BI_STANDARD
@@ -147,30 +150,33 @@ could not be assigned by the group.
 
 ```powershell
 #get all groups with licenses
-Get-MsolGroup -All | Where {$_.Licenses}  | Foreach {
-    $groupId = $_.ObjectId;
+Get-MgGroup -All | Where {$_.AssignedLicenses}  | Foreach {
+    $groupId = $_.Id;
     $groupName = $_.DisplayName;
-    $groupLicenses = $_.Licenses | Select -ExpandProperty SkuPartNumber
+    $groupLicenses = $_.AssignedLicenses | Select -ExpandProperty SkuPartNumber
     $totalCount = 0;
     $licenseAssignedCount = 0;
     $licenseErrorCount = 0;
 
-    Get-MsolGroupMember -All -GroupObjectId $groupId |
-    #get full info about each user in the group
-    Get-MsolUser -ObjectId {$_.ObjectId} |     Foreach {
-        $user = $_;
-        $totalCount++
+    $GroupMembers = Get-MgGroupMember -All -GroupId $groupId 
+    foreach ($GroupMember in $GroupMembers) {
 
-        #check if any licenses are assigned via this group
-        if($user.Licenses | ? {$_.GroupsAssigningLicense -ieq $groupId })
-        {
-            $licenseAssignedCount++
+        #get full info about each user in the group
+        Get-MgUser -UserId $GroupMember.Id |     Foreach {
+            $user = $_;
+            $totalCount++
+
+            #check if any licenses are assigned via this group
+            if($user.AssignedLicenses | ? {$_.GroupsAssigningLicense -ieq $groupId })
+            {
+                $licenseAssignedCount++
+            }
+            #check if user has any licenses that failed to be assigned from this group
+            if ($user.IndirectLicenseErrors | ? {$_.ReferencedObjectId -ieq $groupId })
+            {
+                $licenseErrorCount++
+            }     
         }
-        #check if user has any licenses that failed to be assigned from this group
-        if ($user.IndirectLicenseErrors | ? {$_.ReferencedObjectId -ieq $groupId })
-        {
-            $licenseErrorCount++
-        }     
     }
 
     #aggregate results for this group
@@ -185,9 +191,9 @@ Get-MsolGroup -All | Where {$_.Licenses}  | Foreach {
     } | Format-Table
 ```
 
+The result is the following table:
 
-Output:
-```
+```output
 GroupName         GroupId                              GroupLicenses       TotalUserCount LicensedUserCount LicenseErrorCount
 ---------         -------                              -------------       -------------- ----------------- -----------------
 Dynamics Licen... 9160c903-9f91-4597-8f79-22b6c47eafbf AAD_PREMIUM_P2                   0                 0                 0
@@ -202,16 +208,25 @@ Access to Offi... 11151866-5419-4d93-9141-0603bbf78b42 STANDARDPACK             
 
 ## Get all groups with license errors
 To find groups that contain some users for whom licenses could not be assigned:
+
 ```powershell
-Get-MsolGroup -All -HasLicenseErrorsOnly $true
+Get-MgGroup -All | Where {$_.HasMembersWithLicenseErrors} | Select `
+    Id, `
+    DisplayName, `
+    GroupTypes, `
+    Description }
 ```
-Output:
-```
-ObjectId                             DisplayName             GroupType Description
---------                             -----------             --------- -----------
+
+The result looks like the following example:
+
+```output
+Id                                   DisplayName             GroupType Description
+--                                   -----------             --------- -----------
 11151866-5419-4d93-9141-0603bbf78b42 Access to Office 365 E1 Security  Users who should have E1 licenses
 ```
+
 Use following to get the same data from Microsoft Graph
+
 ```
 GET https://graph.microsoft.com/v1.0/groups?$filter=hasMembersWithLicenseErrors+eq+true
 ```
@@ -248,22 +263,26 @@ Given a group that contains some license-related errors, you can now list all us
 $groupId = '11151866-5419-4d93-9141-0603bbf78b42'
 
 #get all user members of the group
-Get-MsolGroupMember -All -GroupObjectId $groupId |
-    #get full information about user objects
-    Get-MsolUser -ObjectId {$_.ObjectId} |
-    #filter out users without license errors and users with license errors from other groups
-    Where {$_.IndirectLicenseErrors -and $_.IndirectLicenseErrors.ReferencedObjectId -eq $groupId} |
-    #display id, name and error detail. Note: we are filtering out license errors from other groups
-    Select ObjectId, `
-           DisplayName, `
-           @{Name="LicenseError";Expression={$_.IndirectLicenseErrors | Where {$_.ReferencedObjectId -eq $groupId} | Select -ExpandProperty Error}}
+$Members = Get-MgGroupMember -All -GroupId $groupId 
+#get full information about user objects
+Foreach ($Member in $Members) {
+    Get-MgUser -UserId $Member.Id |
+        #filter out users without license errors and users with license errors from other groups
+        Where {$Member.AdditionalProperties.IndirectLicenseErrors -and $Member.AdditionalProperties.IndirectLicenseErrors.ReferencedObjectId -eq $groupId} |
+        #display id, name and error detail. Note: we are filtering out license errors from other groups
+        Select Id, `
+            DisplayName, `
+            @{Name="LicenseError";Expression={$Member.AdditionalProperties.IndirectLicenseErrors | 
+            Where {$Member.AdditionalProperties.IndirectLicenseErrors.ReferencedObjectId -eq $groupId} | 
+            Select -ExpandProperty Error}}
+    }
 ```
 
-Output:
+The result looks like the following example:
 
-```powershell
-ObjectId                             DisplayName      License Error
---------                             -----------      ------------
+```output
+Id                                   DisplayName      License Error
+--                                   -----------      ------------
 6d325baf-22b7-46fa-a2fc-a2500613ca15 Catherine Gibson MutuallyExclusiveViolation
 ```
 
@@ -299,21 +318,21 @@ The following script can be used to get all users who have license errors from o
 > This script enumerates all users in the organization, which might not be optimal for large organizations.
 
 ```powershell
-Get-MsolUser -All | Where {$_.IndirectLicenseErrors } | % {   
+Get-MgUser -All | Where {$_.AdditionalProperties.IndirectLicenseErrors } | % {   
     $user = $_;
-    $user.IndirectLicenseErrors | % {
-            New-Object Object |
-                Add-Member -NotePropertyName UserName -NotePropertyValue $user.DisplayName -PassThru |
-                Add-Member -NotePropertyName UserId -NotePropertyValue $user.ObjectId -PassThru |
-                Add-Member -NotePropertyName GroupId -NotePropertyValue $_.ReferencedObjectId -PassThru |
-                Add-Member -NotePropertyName LicenseError -NotePropertyValue $_.Error -PassThru
+    $user.AdditionalProperties.IndirectLicenseErrors | % {
+        New-Object Object |
+        Add-Member -NotePropertyName UserName -NotePropertyValue $user.DisplayName -PassThru |
+        Add-Member -NotePropertyName UserId -NotePropertyValue $user.Id -PassThru |
+        Add-Member -NotePropertyName GroupId -NotePropertyValue $_.AdditionalProperties.IndirectLicenseErrors.ReferencedObjectId -PassThru |
+        Add-Member -NotePropertyName LicenseError -NotePropertyValue $_.AdditionalProperties.IndirectLicenseErrors -PassThru
         }
     }  
 ```
 
-Output:
+The result looks like the following example:
 
-```powershell
+```output
 UserName         UserId                               GroupId                              LicenseError
 --------         ------                               -------                              ------------
 Anna Bergman     0d0fd16d-872d-4e87-b0fb-83c610db12bc 7946137d-b00d-4336-975e-b1b81b0666d0 MutuallyExclusiveViolation
@@ -325,17 +344,17 @@ Drew Fogarty     f2af28fc-db0b-4909-873d-ddd2ab1fd58c 1ebd5028-6092-41d0-9668-12
 Here is another version of the script that searches only through groups that contain license errors. It may be more optimized for scenarios where you expect to have few groups with problems.
 
 ```powershell
-$groupIds = Get-MsolGroup -All -HasLicenseErrorsOnly $true
+$groupIds = Get-MgGroup -All -Filter "HasMembersWithLicenseErrors eq true"
     foreach ($groupId in $groupIds) {
-    Get-MsolGroupMember -All -GroupObjectId $groupId.ObjectID |
-        Get-MsolUser -ObjectId {$_.ObjectId} |
-        Where {$_.IndirectLicenseErrors -and $_.IndirectLicenseErrors.ReferencedObjectId -eq $groupId.ObjectID} |
-        Select DisplayName, `
-               ObjectId, `
-               @{Name="LicenseError";Expression={$_.IndirectLicenseErrors | Where {$_.ReferencedObjectId -eq $groupId.ObjectID} | Select -ExpandProperty Error}}
- 
-    } 
-``` 
+        $Members = Get-MgGroupMember -All -GroupId $groupId 
+        foreach ($Member in $Members) { Get-Get-MgUser -UserId $Member.Id |
+            Where {$Member.AdditionalProperties.IndirectLicenseErrors -and $Member.AdditionalProperties.IndirectLicenseErrors.ReferencedObjectId -eq $groupId.ObjectID} |
+            Select DisplayName, `
+                   ObjectId, `
+                   @{Name="LicenseError";Expression={$Member.AdditionalProperties.IndirectLicenseErrors | Where {$Member.AdditionalProperties.IndirectLicenseErrors.ReferencedObjectId -eq $groupId.Id} | Select -ExpandProperty Error}}
+        }
+    }
+```
 
 ## Check if user license is assigned directly or inherited from a group
 
@@ -347,7 +366,7 @@ The two sample functions below can be used to analyze the type of assignment on 
 #Returns TRUE if the user has the license assigned directly
 function UserHasLicenseAssignedDirectly
 {
-    Param([Microsoft.Online.Administration.User]$user, [string]$skuId)
+    Param([Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUser]]$user, [string]$skuId)
 
     foreach($license in $user.Licenses)
     {
@@ -379,7 +398,7 @@ function UserHasLicenseAssignedDirectly
 #Returns TRUE if the user is inheriting the license from a group
 function UserHasLicenseAssignedFromGroup
 {
-    Param([Microsoft.Online.Administration.User]$user, [string]$skuId)
+    Param([Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUser]$user, [string]$skuId)
 
     foreach($license in $user.Licenses)
     {
@@ -407,22 +426,22 @@ function UserHasLicenseAssignedFromGroup
 This script executes those functions on each user in the organization, using the SKU ID as input - in this example we are interested in the license for *Enterprise Mobility + Security*, which in our organization is represented with ID *contoso:EMS*:
 
 ```powershell
-#the license SKU we are interested in. use Get-MsolAccountSku to see a list of all identifiers in your organization
+#the license SKU we are interested in. use Get-MgSubscribedSku to see a list of all identifiers in your organization
 $skuId = "contoso:EMS"
 
 #find all users that have the SKU license assigned
-Get-MsolUser -All | where {$_.isLicensed -eq $true -and $_.Licenses.AccountSKUID -eq $skuId} | select `
-    ObjectId, `
+Get-MgUser -All | where {$_.isLicensed -eq $true -and $_.Licenses.AccountSKUID -eq $skuId} | select `
+    Id, `
     @{Name="SkuId";Expression={$skuId}}, `
     @{Name="AssignedDirectly";Expression={(UserHasLicenseAssignedDirectly $_ $skuId)}}, `
     @{Name="AssignedFromGroup";Expression={(UserHasLicenseAssignedFromGroup $_ $skuId)}}
 ```
 
-Output:
+The result looks like this example:
 
-```powershell
-ObjectId                             SkuId       AssignedDirectly AssignedFromGroup
---------                             -----       ---------------- -----------------
+```output
+Id                                   SkuId       AssignedDirectly AssignedFromGroup
+--                                   -----       ---------------- -----------------
 157870f6-e050-4b3c-ad5e-0f0a377c8f4d contoso:EMS             True             False
 1f3174e2-ee9d-49e9-b917-e8d84650f895 contoso:EMS            False              True
 240622ac-b9b8-4d50-94e2-dad19a3bf4b5 contoso:EMS             True              True
@@ -495,7 +514,7 @@ The purpose of this script is to remove unnecessary direct licenses from users w
 #Returns TRUE if the user has the license assigned directly
 function UserHasLicenseAssignedDirectly
 {
-    Param([Microsoft.Online.Administration.User]$user, [string]$skuId)
+    Param([Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUser]$user, [string]$skuId)
 
     $license = GetUserLicense $user $skuId
 
@@ -525,7 +544,7 @@ function UserHasLicenseAssignedDirectly
 #Returns TRUE if the user is inheriting the license from a specific group
 function UserHasLicenseAssignedFromThisGroup
 {
-    Param([Microsoft.Online.Administration.User]$user, [string]$skuId, [Guid]$groupId)
+    Param([Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUser]$user, [string]$skuId, [Guid]$groupId)
 
     $license = GetUserLicense $user $skuId
 
@@ -550,7 +569,7 @@ function UserHasLicenseAssignedFromThisGroup
 #Returns the license object corresponding to the skuId. Returns NULL if not found
 function GetUserLicense
 {
-    Param([Microsoft.Online.Administration.User]$user, [string]$skuId, [Guid]$groupId)
+    Param([Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUser]$user, [string]$skuId, [Guid]$groupId)
     #we look for the specific license SKU in all licenses assigned to the user
     foreach($license in $user.Licenses)
     {
@@ -567,7 +586,7 @@ function GetDisabledPlansForSKU
 {
     Param([string]$skuId, [string[]]$enabledPlans)
 
-    $allPlans = Get-MsolAccountSku | where {$_.AccountSkuId -ieq $skuId} | Select -ExpandProperty ServiceStatus | Where {$_.ProvisioningStatus -ine "PendingActivation" -and $_.ServicePlan.TargetClass -ieq "User"} | Select -ExpandProperty ServicePlan | Select -ExpandProperty ServiceName
+    $allPlans = Get-MgSubscribedSku | where {$_.SkuId -ieq $skuId} | Select -ExpandProperty ServiceStatus | Where {$_.ProvisioningStatus -ine "PendingActivation" -and $_.ServicePlan.TargetClass -ieq "User"} | Select -ExpandProperty ServicePlans | Select -ExpandProperty ServiceName
     $disabledPlans = $allPlans | Where {$enabledPlans -inotcontains $_}
 
     return $disabledPlans
@@ -575,7 +594,7 @@ function GetDisabledPlansForSKU
 
 function GetUnexpectedEnabledPlansForUser
 {
-    Param([Microsoft.Online.Administration.User]$user, [string]$skuId, [string[]]$expectedDisabledPlans)
+    Param([Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUser]$user, [string]$skuId, [string[]]$expectedDisabledPlans)
 
     $license = GetUserLicense $user $skuId
 
@@ -605,7 +624,10 @@ $servicePlansFromGroups = ("EXCHANGE_S_ENTERPRISE", "SHAREPOINTENTERPRISE", "OFF
 $expectedDisabledPlans = GetDisabledPlansForSKU $skuId $servicePlansFromGroups
 
 #process all members in the group and get full info about each user in the group looping through group members. 
-Get-MsolGroupMember -All -GroupObjectId $groupId | Get-MsolUser -ObjectId {$_.ObjectId} | Foreach {
+$Members = Get-MgGroupMember -All -GroupId $groupId 
+Foreach ($member in $Members) {
+
+    Get-MgUser -UserId $Member.Id | Foreach {
         $user = $_;
         $operationResult = "";
 
@@ -624,7 +646,7 @@ Get-MsolGroupMember -All -GroupObjectId $groupId | Get-MsolUser -ObjectId {$_.Ob
                 else
                 {
                     #remove the direct license from user
-                    Set-MsolUserLicense -ObjectId $user.ObjectId -RemoveLicenses $skuId
+                    Set-MgUserLicense -UserId $user.Id -RemoveLicenses $skuId
                     $operationResult = "Removed direct license from user."   
                 }
 
@@ -641,23 +663,26 @@ Get-MsolGroupMember -All -GroupObjectId $groupId | Get-MsolUser -ObjectId {$_.Ob
 
         #format output
         New-Object Object |
-                    Add-Member -NotePropertyName UserId -NotePropertyValue $user.ObjectId -PassThru |
+                    Add-Member -NotePropertyName UserId -NotePropertyValue $user.Id -PassThru |
                     Add-Member -NotePropertyName OperationResult -NotePropertyValue $operationResult -PassThru
     } | Format-Table
+
+}
 #END: executing the script
 ```
 
-Output:
+The result looks like this example:
 
-```powershell
+```output
 UserId                               OperationResult
 ------                               ---------------
 7c7f860f-700a-462a-826c-f50633931362 Removed direct license from user.
 0ddacdd5-0364-477d-9e4b-07eb6cdbc8ea User has extra plans that may be lost - license removal was skipped. Extra plans: SHAREPOINTWAC
 aadbe4da-c4b5-4d84-800a-9400f31d7371 User has no direct license to remove. Skipping.
 ```
+
 > [!NOTE]
-> Please update the values for the variables `$skuId` and `$groupId` which is being targeted for removal of Direct Licenses as per your test environment before running the above script. 
+> Please update the values for the variables `$skuId` and `$groupId` which is being targeted for removal of Direct Licenses as per your test environment before running the above script.
 
 ## Next steps
 
