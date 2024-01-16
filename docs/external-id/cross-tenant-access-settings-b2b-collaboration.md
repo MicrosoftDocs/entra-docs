@@ -115,7 +115,7 @@ With inbound settings, you select which external users and groups will be able t
    - **Block access**: Blocks the users and groups specified under **Applies to** from being invited to B2B collaboration.
 
    :::image type="content" source="media/cross-tenant-access-settings-b2b-collaboration/generic-inbound-external-users-groups-access.png" alt-text="Screenshot showing selecting the user access status for B2B collaboration.":::
-   
+
 1. Under **Applies to**, select one of the following:
 
    - **All external users and groups**: Applies the action you chose under **Access status** to all users and groups from external Microsoft Entra organizations.
@@ -321,8 +321,7 @@ With outbound settings, you select which of your users and groups will be able t
    - **Allow access**: Allows your users and groups specified under **Applies to** to be invited to external organizations for B2B collaboration.
    - **Block access**: Blocks your users and groups specified under **Applies to** from being invited to B2B collaboration. If you block access for all users and groups, this will also block all external applications from being accessed via B2B collaboration.
 
-    :::image type="content" source="" alt-text="":::
-    ![Screenshot showing users and groups access status for b2b collaboration.](media/cross-tenant-access-settings-b2b-collaboration/generic-outbound-external-users-groups-access.png)
+    :::image type="content" source="media/cross-tenant-access-settings-b2b-collaboration/generic-outbound-external-users-groups-access.png" alt-text="Screenshot showing users and groups access status for b2b collaboration.":::
 
 1. Under **Applies to**, select one of the following:
 
