@@ -62,7 +62,7 @@ To obtain the sample application, you can either clone it from GitHub or downloa
     :::code language="JavaScript" source="~/../ms-identity-docs-code-javascript/js-spa/App/authConfig.js":::
 
     * `clientId` - The identifier of the application, also referred to as the client. Replace the text in quotes with the **Application (client) ID** value that was recorded earlier.
-    * `authority` - The identifier of the tenant where the application is registered. Replace the text in quotes with the **Directory (tenant) ID** value that was recorded earlier.
+    * `authority` - The authority is a URL that indicates a directory that MSAL can request tokens from. Replace `Enter_the_Tenant_Info_Here` with the **Directory (tenant) ID** value that was recorded earlier.
     * `redirectUri` - The **Redirect URI** of the application. If necessary, replace the text in quotes with the redirect URI that was recorded earlier.
 
 ## Run the application and sign in
