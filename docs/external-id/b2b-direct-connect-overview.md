@@ -20,7 +20,7 @@ ms.collection: M365-identity-device-management
 
 B2B direct connect is a feature of Microsoft Entra External ID that lets you set up a mutual trust relationship with another Microsoft Entra organization for seamless collaboration. This feature currently works with Microsoft Teams shared channels. With B2B direct connect, users from both organizations can work together using their home credentials and a shared channel in Teams, without having to be added to each other’s organizations as guests. Use B2B direct connect to share resources with external Microsoft Entra organizations. Or use it to share resources across multiple Microsoft Entra tenants within your own organization.
 
-![Diagram illustrating B2B direct connect](media/b2b-direct-connect-overview/b2b-direct-connect-overview.png)
+:::image type="content" source="media/b2b-direct-connect-overview/b2b-direct-connect-overview.png" alt-text="Diagram illustrating B2B direct connect":::
 
 B2B direct connect requires a mutual trust relationship between two Microsoft Entra organizations to allow access to each other's resources. Both the resource organization and the external organization need to mutually enable B2B direct connect in their cross-tenant access settings. When the trust is established, the B2B direct connect user has single sign-on access to resources outside their organization using credentials from their home Microsoft Entra organization.
 
@@ -54,7 +54,7 @@ You can configure organization-specific settings by adding the organization and 
 
 In this example, Contoso wants to block B2B direct connect with all external organizations by default, but allow B2B direct connect for all users, groups, and apps in Fabrikam.
 
-![Example of blocking B2B direct connect by default but allowing an org](media/b2b-direct-connect-overview/b2b-direct-connect-example.png)
+:::image type="content" source="media/b2b-direct-connect-overview/b2b-direct-connect-example.png" alt-text="Example of blocking B2B direct connect by default but allowing an org":::
 
 Contoso sets the following **Default settings** for cross-tenant access:
 
@@ -145,7 +145,7 @@ Microsoft Entra ID includes information about cross-tenant access and B2B direct
 
 - **Microsoft Entra audit logs**: Microsoft Entra audit logs show when inbound and outbound policies are created, updated, or deleted.  
 
-   ![Screenshot showing an audit log](media/b2b-direct-connect-overview/audit-log.png)
+   :::image type="content" source="media/b2b-direct-connect-overview/audit-log.png" alt-text="Screenshot showing an audit log":::
 
 - **Microsoft Entra sign-in logs** Microsoft Entra sign-in logs are available in both the home organization and the resource organization. Once B2B direct connect is enabled, sign-in logs will begin including user object IDs for B2B direct connect users from other tenants. The information reported in each organization varies, for example:
 
@@ -155,7 +155,7 @@ Microsoft Entra ID includes information about cross-tenant access and B2B direct
 
   - In the resource organization, the logs include conditionalAccessPolicies in the Conditional Access tab.  
 
-   [ ![Screenshot showing a sign-in log](media/b2b-direct-connect-overview/sign-in-logs.png) ](media/b2b-direct-connect-overview/sign-in-logs.png#lightbox)
+   :::image type="content" source="media/b2b-direct-connect-overview/sign-in-logs.png" alt-text="Screenshot showing a sign-in log" lightbox="media/b2b-direct-connect-overview/sign-in-logs.png":::
 
 - **Microsoft Entra access reviews**: With Microsoft Entra access reviews, a tenant admin can ensure that external guest users don’t have access to your apps and resources longer than is necessary by configuring a one-time or recurring access review of the external users. [Learn more about access reviews](~/id-governance/access-reviews-overview.md).
 
