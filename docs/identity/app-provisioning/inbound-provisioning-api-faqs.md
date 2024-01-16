@@ -50,8 +50,6 @@ Yes, the provisioning API supports on-premises AD domains as a target.
 
 The /bulkUpload API is available only for apps of the type: "API-driven inbound provisioning to Microsoft Entra ID" and "API-driven inbound provisioning to on-premises Active Directory". You can retrieve the unique API endpoint for each provisioning app from the Provisioning blade home page.  In **Statistics to date** > **View technical information**,copy the **Provisioning API Endpoint** URL. 
 
-  :::image type="content" source="media/inbound-provisioning-api-configure-app/provisioning-api-endpoint.png" alt-text="Screenshot of Provisioning API endpoint." lightbox="media/inbound-provisioning-api-configure-app/provisioning-api-endpoint.png":::
-
 It has the format:
 ```http
 https://graph.microsoft.com/beta/servicePrincipals/{servicePrincipalId}/synchronization/jobs/{jobId}/bulkUpload

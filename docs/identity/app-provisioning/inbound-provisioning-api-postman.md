@@ -41,7 +41,6 @@ In this step, you'll configure the Postman app and invoke the API using the conf
 1. Paste the values in the table for each variable under the column **Initial value** and **Current value**. 
      :::image type="content" source="media/inbound-provisioning-api-postman/postman-authentication-variables.png" alt-text="Screenshot of authentication variables" lightbox="media/inbound-provisioning-api-postman/postman-authentication-variables.png":::     
 1. Open your provisioning app landing page and copy-paste the value of **Job ID** for the `jobId` variable and the value of **Provisioning API endpoint** for the `bulk_upload_endpoint` variable
-      :::image type="content" source="media/inbound-provisioning-api-configure-app/provisioning-api-endpoint.png" alt-text="Screenshot of Provisioning API endpoint." lightbox="media/inbound-provisioning-api-configure-app/provisioning-api-endpoint.png":::
 1. Leave the value of **ms_graph_resource_id** unchanged and save the environment collection. Make sure that both **Initial value** and **Current value** columns are populated. 
 1. Next, open the collection **Microsoft Entra Inbound Provisioning**.
 1. From the **Environment** dropdown, select **Test-API2AAD**.
