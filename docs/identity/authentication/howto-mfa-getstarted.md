@@ -3,7 +3,7 @@ title: Deployment considerations for Microsoft Entra multifactor authentication
 description: Learn about deployment considerations and strategy for successful implementation of Microsoft Entra multifactor authentication
 ms.service: active-directory
 ms.subservice: authentication
-ms.custom: has-azure-ad-ps-ref
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: how-to
 ms.date: 09/13/2023
 ms.author: justinha
@@ -113,39 +113,7 @@ Risk policies include:
 
 ### Convert users from per-user MFA to Conditional Access based MFA
 
-If your users were enabled using per-user enabled and enforced MFA, the following PowerShell can assist you in making the conversion to Conditional Access based MFA.
-
-Run this PowerShell in an ISE window or save as a `.PS1` file to run locally. The operation can only be done by using the [MSOnline module](/powershell/module/msonline/#msonline). 
-
-```PowerShell
-# Sets the MFA requirement state
-function Set-MfaState {
-    [CmdletBinding()]
-    param(
-        [Parameter(ValueFromPipelineByPropertyName=$True)]
-        $ObjectId,
-        [Parameter(ValueFromPipelineByPropertyName=$True)]
-        $UserPrincipalName,
-        [ValidateSet("Disabled","Enabled","Enforced")]
-        $State
-    )
-    Process {
-        Write-Verbose ("Setting MFA state for user '{0}' to '{1}'." -f $ObjectId, $State)
-        $Requirements = @()
-        if ($State -ne "Disabled") {
-            $Requirement =
-                [Microsoft.Online.Administration.StrongAuthenticationRequirement]::new()
-            $Requirement.RelyingParty = "*"
-            $Requirement.State = $State
-            $Requirements += $Requirement
-        }
-        Set-MsolUser -ObjectId $ObjectId -UserPrincipalName $UserPrincipalName `
-                     -StrongAuthenticationRequirements $Requirements
-    }
-}
-# Disable MFA for all users
-Get-MsolUser -All | Set-MfaState -State Disabled
-```
+If your users were enabled using per-user MFA enabled and enforced Microsoft Entra multifactor authentication, we recommend that you enable Conditional Access for all users and then manually disable per-user multifactor authentication. For more information, see [Create a Conditional Access policy](../conditional-access/howto-conditional-access-policy-all-users-mfa.md#create-a-conditional-access-policy).
 
 ## Plan user session lifetime
 

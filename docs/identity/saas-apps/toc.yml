@@ -182,6 +182,8 @@
         href: appraisd-tutorial.md
       - name: AppRemo
         href: appremo-tutorial.md
+      - name: AppSecEngineer
+        href: appsecengineer-tutorial.md
       - name: Conviso Platform SSO
         href: appsec-flow-sso-tutorial.md
       - name: Apptio
@@ -382,6 +384,8 @@
         href: brightidea-tutorial.md
       - name: Brightspace by Desire2Learn
         href: brightspace-desire2learn-tutorial.md
+      - name: Briq
+        href: briq-tutorial.md
       - name: Britive
         href: britive-tutorial.md
       - name: Broadcom DX SaaS
@@ -596,6 +600,8 @@
         href: colloquial-tutorial.md
       - name: ColorTokens ZTNA
         href: colortokens-ztna-tutorial.md
+      - name: Colossyan SAML
+        href: colossyan-saml-tutorial.md
       - name: Comeet Recruiting Software
         href: comeetrecruitingsoftware-tutorial.md
       - name: Comm100 Live Chat
@@ -866,6 +872,8 @@
         href: edx-for-business-saml-integration-tutorial.md
       - name: EFI Digital StoreFront
         href: efidigitalstorefront-tutorial.md
+      - name: eFlok
+        href: eflok-tutorial.md
       - name: Egnyte
         href: egnyte-tutorial.md
       - name: Egress
@@ -1669,6 +1677,8 @@
         href: mail-luck-tutorial.md
       - name: MailGates
         href: mailgates-tutorial.md
+      - name: Mailosaur
+        href: mailosaur-tutorial.md
       - name: Manabi Pocket
         href: manabipocket-tutorial.md
       - name: Manifestly Checklists
@@ -1715,6 +1725,8 @@
         href: metatask-tutorial.md
       - name: Meta Work Accounts
         href: meta-work-accounts-tutorial.md  
+      - name: MetLife Legal Plans Member App
+        href: metlife-legal-plans-member-app-tutorial.md
       - name: Mevisio
         href: mevisio-tutorial.md
       - name: Michigan Data Hub Single Sign-On
@@ -3120,8 +3132,8 @@
       items:
       - name: Acunetix 360
         href: acunetix-360-provisioning-tutorial.md
-      - name: Adobe Identity Management
-        href: adobe-identity-management-provisioning-tutorial.md
+      - name: Adobe Identity Management (SAML)
+        href: adobe-identity-management-provisioning-saml-tutorial.md
       - name: Adobe Identity Management (OIDC)
         href: adobe-identity-management-provisioning-oidc-tutorial.md
       - name: Airbase
@@ -3140,6 +3152,8 @@
         href: alexishr-provisioning-tutorial.md
       - name: Alinto Protect (renamed Cleanmail)
         href: alinto-protect-provisioning-tutorial.md
+      - name: Alohi
+        href: alohi-provisioning-tutorial.md
       - name: ALVAO
         href: alvao-provisioning-tutorial.md
       - name: Amazon Business
@@ -3388,6 +3402,8 @@
         href: iris-intranet-provisioning-tutorial.md
       - name: Insight4GRC
         href: insight4grc-provisioning-tutorial.md
+      - name: Insightly SAML
+        href: insightly-saml-provisioning-tutorial.md
       - name: Insite LMS
         href: insite-lms-provisioning-tutorial.md
       - name: introDus Pre and Onboarding Platform

@@ -102,7 +102,7 @@ Identity related **npm** packages must be installed in the project to enable use
 ### [Visual Studio](#tab/visual-studio)
 
 1. In the **Solution Explorer**, right-click the **npm** option and select **Install new npm packages**.
-1. Search for **@azure/msal-browser**, then select **Install Package**. Repeat for **@azure/msal-react** and **@azure/msal-common**.
+1. Search for **@azure/msal-browser**, then select **Install Package**. Repeat for **@azure/msal-react**.
 1. Search for and install **react-bootstrap**.
 1. Select **Close**.
 
@@ -112,12 +112,12 @@ Identity related **npm** packages must be installed in the project to enable use
 1. Ensure that the correct directory is selected (*reactspalocal*) then enter the following into the terminal to install the relevant `msal` and `bootstrap` packages.
 
     ```powershell
-    npm install @azure/msal-browser @azure/msal-react @azure/msal-common
+    npm install @azure/msal-browser @azure/msal-react
     npm install react-bootstrap bootstrap
     ```
 ---
 
-To learn more about these packages refer to the documentation in [`msal-browser`](/javascript/api/@azure/msal-browser), [`msal-common`](/javascript/api/@azure/msal-common), [`msal-react`](/javascript/api/@azure/msal-react).
+To learn more about these packages refer to the documentation in [`msal-browser`](/javascript/api/@azure/msal-browser) and [`msal-react`](/javascript/api/@azure/msal-react).
 
 ## Creating the authentication configuration file
 
