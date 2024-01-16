@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: active-directory
 ms.topic: reference
 ms.subservice: report-monitor
-ms.date: 01/04/2024
+ms.date: 01/16/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg14
 ---
@@ -31,13 +31,15 @@ One key factor in log latency is the path that the data travels from the source 
 1. Log processors read the event metadata and publish it to the Azure storage queue.
 1. Event metadata is processed and reviewed for success or failure.
 1. Successful events are published to partner services, such as Azure Monitor and Microsoft Graph.
-1. Customer views the data in the Microsoft Entra admin center, or their SIEM tool of choice.
+1. IT admin views the data in the Microsoft Entra admin center, or their SIEM tool of choice.
 
 There are many more steps in this process that aren't reflected here. Even with these summarized steps, it's easy to see how latency can be introduced into the system.
 
 ## Last sign-in
 
-A common question about log latency is related to the last sign-in of a user. You must be using a [Microsoft Entra role](howto-access-activity-logs.md#prerequisites) that grants access to the sign-in logs to see this detail. The last sign-in of a user can be found in several places:
+The last sign-in of a user is one of the most common questions related to log latency. This information is provided by the `signInActivity` property in Microsoft Graph. The `signInActivity` property provides the last interactive and non-interactive sign-in attempt for a user. This property may take up to 24 hours to update. For more information, see [signInActivity resource type](/graph/api/resources/signinactivity?view=graph-rest-beta&preserve-view=true).
+
+You must be using a [Microsoft Entra role](howto-access-activity-logs.md#prerequisites) that grants access to the sign-in logs to see this detail, which is found in several places:
 
 - The **Sign-ins** tile in the **My Feed** section of the user's profile.
 
@@ -51,6 +53,6 @@ A common question about log latency is related to the last sign-in of a user. Yo
 
     :::image type="content" source="media/reference-log-latency/user-filtered-sign-in-logs.png" alt-text="Screenshot of the sign-in logs filtered to a particular user." lightbox="media/reference-log-latency/user-filtered-sign-in-logs.png":::
 
-The last sign-in details that appear on the **Sign-ins** tile on the user profile are *not* real-time. The same is true for the details that appear in the **Last interactive sign-in** and **Last non-interactive sign-in** columns in the **Users** list.
+The last sign-in details that appear on the **Sign-ins** tile on the user profile and the **Last interactive sign-in** and **Last non-interactive sign-in** columns in the **Users** list are *not* real-time.
 
 If you need to see the most recent sign-in date and time for a user, go to the sign-in logs and filter for that user. The third bullet in the previous list shows an example of the sign-in logs filtered for a particular user.

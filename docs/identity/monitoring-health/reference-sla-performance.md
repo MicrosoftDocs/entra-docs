@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: active-directory
 ms.topic: reference
 ms.subservice: report-monitor
-ms.date: 01/04/2024
+ms.date: 01/16/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg14
 ---
