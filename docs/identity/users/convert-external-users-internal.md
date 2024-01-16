@@ -69,13 +69,12 @@ role assigned.
 :::image type="content" source="media/convert-external-users-internal/user-properties.png" alt-text="Screenshot showing the user properties with a red box around the Convert to Internal user option":::
 
 1. In the **Convert to internal user** section, you need to finalize a couple of steps:
-    1. A user principal name
-    1. Choose whether you would like an auto generated password 
-    1. And if you would like to change email address
-1. Once that you have made these last choices, you can choose **Convert**
+    1. A **user principal name**, This value will be the new UPN value for the user. For cloud-only users, the UPN domain must be one that is non-federated. For on-premises synced users, you don't need to provide a UPN. The user continues to use the on-premises credentials. 
+    1. Choose whether you would like an auto generated password
+    1. Checkbox for **Change email address**, allows you to specify an optional new mail address for cloud users.
+1. After reviewing the options and making and choices, you can choose **Convert**
 
 :::image type="content" source="media/convert-external-users-internal/convert.png" alt-text="Screenshot showing the last set of options that must be chosen prior to converting an external user to an internal user":::
-
 
 ## Known issues
 
