@@ -25,7 +25,7 @@ You can view the Microsoft Entra Health SLA attainment and Scenario monitoring (
 
 ![Screenshot of the Microsoft Entra Health landing page.](media/concept-microsoft-entra-health/identity-health-landing-page.png)
 
-### Enable the Scenario monitoring preview
+### Enable the Scenario monitoring preview 
 
 If you'd like to view the **Scenario monitoring (preview)**:
 
