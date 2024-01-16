@@ -181,7 +181,7 @@ After the module is installed, use the following steps to complete each task as 
        ```
 
    > [!WARNING]
-   > Passwords set to `-PasswordPolicies DisablePasswordExpiration` still age based on the `pwdLastSet` attribute. Based on the `pwdLastSet` attribute, if you change the expiration to `-PasswordPolicies None`, all passwords that have a `pwdLastSet` older than 90 days require the user to change them the next time they sign in. This change can affect a large number of users.
+   > Passwords set to `-PasswordPolicies DisablePasswordExpiration` still age based on the `LastPasswordChangeDateTime` attribute. Based on the `LastPasswordChangeDateTime` attribute, if you change the expiration to `-PasswordPolicies None`, all passwords that have a `LastPasswordChangeDateTime` older than 90 days require the user to change them the next time they sign in. This change can affect a large number of users.
 
 ## Next steps
 
