@@ -71,6 +71,8 @@ items:
         href: recommendation-migrate-from-adal-to-msal.md
       - name: Migrate apps from AD FS to Microsoft Entra ID
         href: recommendation-migrate-apps-from-adfs-to-azure-ad.md
+      - name: Migrate from MFA server to Microsoft Entra MFA
+        href: recommendation-migrate-to-microsoft-entra-mfa.md
       - name: Migrate to Microsoft authenticator
         href: recommendation-migrate-to-authenticator.md
       - name: Switch to Conditional Access MFA
