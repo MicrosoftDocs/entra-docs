@@ -20,8 +20,8 @@ Welcome to what's new in Microsoft Entra External ID documentation. This article
 
 ### Updated articles
 
-- [Add Google as an identity provider for B2B guest users](google-federation.md) - Editorial updates
-- [B2B collaboration overview](what-is-b2b.md) - Editorial updates
+- [Add Google as an identity provider for B2B guest users](google-federation.md) - Microsoft Graph PowerShell updates
+- [B2B collaboration overview](what-is-b2b.md) - Screenshot updates
 - [B2B direct connect overview](b2b-direct-connect-overview.md) - Editorial updates
 
 ## November 2023

@@ -13,6 +13,7 @@ ms.topic: sample
 ms.date: 09/15/2023
 ms.author: justinha 
 ---
+
 # Create a Microsoft Entra Domain Services managed domain using an Azure Resource Manager template
 
 Microsoft Entra Domain Services provides managed domain services such as domain join, group policy, LDAP, Kerberos/NTLM authentication that is fully compatible with Windows Server Active Directory. You consume these domain services without deploying, managing, and patching domain controllers yourself. Domain Services integrates with your existing Microsoft Entra tenant. This integration lets users sign in using their corporate credentials, and you can use existing groups and user accounts to secure access to resources.
@@ -26,9 +27,9 @@ To complete this article, you need the following resources:
 * Install and configure Azure PowerShell.
     * If needed, follow the instructions to [install the Azure PowerShell module and connect to your Azure subscription](/powershell/azure/install-azure-powershell).
     * Make sure that you sign in to your Azure subscription using the [Connect-AzAccount][Connect-AzAccount] cmdlet.
-* Install and configure Azure AD PowerShell.
-    * If needed, follow the instructions to [install the Azure AD PowerShell module and connect to Microsoft Entra ID](/powershell/azure/active-directory/install-adv2).
-    * Make sure that you sign in to your Microsoft Entra tenant using the [Connect-AzureAD][Connect-AzureAD] cmdlet.
+* Install and configure MS Graph PowerShell.
+   - If needed, follow the instructions to [install the MS Graph PowerShell module and connect to Microsoft Entra ID](/powershell/microsoftgraph/authentication-commands?view=graph-powershell-1.0).
+   - Make sure that you sign in to your Microsoft Entra tenant using the [Connect-MgGraph](/powershell/microsoftgraph/authentication-commands?view=graph-powershell-1.0) cmdlet.
 * You need [Application Administrator](/azure/active-directory/roles/permissions-reference#application-administrator) and [Groups Administrator](/azure/active-directory/roles/permissions-reference#groups-administrator) Microsoft Entra roles in your tenant to enable Domain Services.
 * You need Domain Services Contributor Azure role to create the required Domain Services resources.
 
@@ -69,22 +70,24 @@ First, register the Microsoft Entra Domain Services resource provider using the 
 Register-AzResourceProvider -ProviderNamespace Microsoft.AAD
 ```
 
-Create a Microsoft Entra service principal using the [New-AzureADServicePrincipal][New-AzureADServicePrincipal] cmdlet for Domain Services to communicate and authenticate itself. A specific application ID is used named *Domain Controller Services* with an ID of *2565bd9d-da50-47d4-8b85-4c97f669dc36* for Azure Global. For other Azure clouds, search for AppId value *6ba9a5d4-8456-4118-b521-9c5ca10cdf84*. 
+Create a Microsoft Entra service principal using the [New-MgServicePrincipal](/powershell/module/microsoft.graph.applications/new-mgserviceprincipal) cmdlet for Domain Services to communicate and authenticate itself. A specific application ID is used named *Domain Controller Services* with an ID of *2565bd9d-da50-47d4-8b85-4c97f669dc36* for Azure Global. For other Azure clouds, search for AppId value *6ba9a5d4-8456-4118-b521-9c5ca10cdf84*. 
+
 
 ```powershell
-New-AzureADServicePrincipal -AppId "2565bd9d-da50-47d4-8b85-4c97f669dc36"
+New-MgServicePrincipal
 ```
 
-Now create a Microsoft Entra group named *AAD DC Administrators* using the [New-AzureADGroup][New-AzureADGroup] cmdlet. Users added to this group are then granted permissions to perform administration tasks on the managed domain.
+Now create a Microsoft Entra group named *AAD DC Administrators* using the [New-MgGroup](/powershell/module/microsoft.graph.groups/new-mggroup) cmdlet. Users added to this group are then granted permissions to perform administration tasks on the managed domain.
+
 
 ```powershell
-New-AzureADGroup -DisplayName "AAD DC Administrators" `
-  -Description "Delegated group to administer Azure AD Domain Services" `
-  -SecurityEnabled $true -MailEnabled $false `
+New-MgGroup -DisplayName "AAD DC Administrators" `
+  -Description "Delegated group to administer Microsoft Entra Domain Services" `
+  -SecurityEnabled:$true -MailEnabled:$false `
   -MailNickName "AADDCAdministrators"
 ```
 
-With the *AAD DC Administrators* group created, add a user to the group using the [Add-AzureADGroupMember][Add-AzureADGroupMember] cmdlet. You first get the *AAD DC Administrators* group object ID using the [Get-AzureADGroup][Get-AzureADGroup] cmdlet, then the desired user's object ID using the [Get-AzureADUser][Get-AzureADUser] cmdlet.
+With the *AAD DC Administrators* group created, add a user to the group using the [New-MgGroupMember](/powershell/module/microsoft.graph.groups/new-mggroupmember) cmdlet. You first get the *AAD DC Administrators* group object ID using the [Get-MgGroup](/powershell/module/microsoft.graph.groups/get-mggroup) cmdlet, then the desired user's object ID using the [Get-MgUser](/powershell/module/microsoft.graph.users/get-mguser) cmdlet.
 
 In the following example, the user object ID for the account with a UPN of `admin@contoso.onmicrosoft.com`. Replace this user account with the UPN of the user you wish to add to the *AAD DC Administrators* group:
 
@@ -128,7 +131,7 @@ As part of the Resource Manager resource definition, the following configuration
 | notificationSettings    | If there are any alerts generated in the managed domain, email notifications can be sent out. <br /><br />*Global administrators* of the Azure tenant and members of the *AAD DC Administrators* group can be *Enabled* for these notifications.<br /><br /> If desired, you can add additional recipients for notifications when there are alerts that require attention.|
 | domainConfigurationType | By default, a managed domain is created as a *User* forest. This type of forest synchronizes all objects from Microsoft Entra ID, including any user accounts created in an on-premises AD DS environment. You don't need to specify a *domainConfiguration* value to create a user forest.<br /><br /> A *Resource* forest only synchronizes users and groups created directly in Microsoft Entra ID. Set the value to *ResourceTrusting* to create a resource forest.<br /><br />For more information on *Resource* forests, including why you may use one and how to create forest trusts with on-premises AD DS domains, see [Domain Services resource forests overview][resource-forests].|
 
-The following condensed parameters definition shows how these values are declared. A user forest named *aaddscontoso.com* is created with all users from Azure AD synchronized to the managed domain:
+The following condensed parameters definition shows how these values are declared. A user forest named *aaddscontoso.com* is created with all users from Entra ID synchronized to the managed domain:
 
 ```json
 "parameters": {
@@ -339,25 +342,45 @@ To see the managed domain in action, you can [domain-join a Windows VM][windows-
 
 <!-- INTERNAL LINKS -->
 [windows-join]: join-windows-vm.md
+
 [tutorial-ldaps]: tutorial-configure-ldaps.md
+
 [tutorial-phs]: tutorial-configure-password-hash-sync.md
+
 [availability-zones]: /azure/reliability/availability-zones-overview
+
 [portal-deploy]: /azure/azure-resource-manager/templates/deploy-portal
+
 [powershell-deploy]: /azure/azure-resource-manager/templates/deploy-powershell
+
 [scoped-sync]: scoped-synchronization.md
+
 [resource-forests]: ./concepts-forest-trust.md
 
 <!-- EXTERNAL LINKS -->
 [Connect-AzAccount]: /powershell/module/Az.Accounts/Connect-AzAccount
-[Connect-AzureAD]: /powershell/module/AzureAD/Connect-AzureAD
-[New-AzureADServicePrincipal]: /powershell/module/AzureAD/New-AzureADServicePrincipal
-[New-AzureADGroup]: /powershell/module/AzureAD/New-AzureADGroup
-[Add-AzureADGroupMember]: /powershell/module/AzureAD/Add-AzureADGroupMember
-[Get-AzureADGroup]: /powershell/module/AzureAD/Get-AzureADGroup
-[Get-AzureADUser]: /powershell/module/AzureAD/Get-AzureADUser
+
+[Connect-MgGraph](/powershell/microsoftgraph/authentication-commands?view=graph-powershell-1.0): /powershell/microsoftgraph/authentication-commands?view=graph-powershell-1.0
+
+[New-MgServicePrincipal](/powershell/module/microsoft.graph.applications/new-mgserviceprincipal): /powershell/module/microsoft.graph.applications/new-mgserviceprincipal
+
+[New-MgGroup](/powershell/module/microsoft.graph.groups/new-mggroup): /powershell/module/microsoft.graph.groups/new-mggroup
+
+[New-MgGroupMember](/powershell/module/microsoft.graph.groups/new-mggroupmember): /powershell/module/microsoft.graph.groups/new-mggroupmember
+
+[Get-MgGroup](/powershell/module/microsoft.graph.groups/get-mggroup): /powershell/module/microsoft.graph.groups/get-mggroup
+
+[Get-MgUser](/powershell/module/microsoft.graph.users/get-mguser): /powershell/module/microsoft.graph.users/get-mguser
+
 [Register-AzResourceProvider]: /powershell/module/Az.Resources/Register-AzResourceProvider
+
 [New-AzResourceGroup]: /powershell/module/Az.Resources/New-AzResourceGroup
+
 [Get-AzSubscription]: /powershell/module/Az.Accounts/Get-AzSubscription
+
 [cloud-shell]: /azure/active-directory/develop/configure-app-multi-instancing
+
 [naming-prefix]: /windows-server/identity/ad-ds/plan/selecting-the-forest-root-domain
+
 [New-AzResourceGroupDeployment]: /powershell/module/az.resources/new-azresourcegroupdeployment
+

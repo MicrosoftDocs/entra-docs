@@ -23,6 +23,11 @@ This how-to guide demonstrates the token issuance start event with a REST API ru
 
 > [!VIDEO https://www.youtube.com/embed/fxQGVIwX8_4]
 
+> [!TIP]
+> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=TokenAugmentation)
+> 
+> To try out this feature, go to the Woodgrove Groceries demo and start the “Add claims to security tokens from a REST API” use case.
+
 ## Prerequisites
 
 - Before following this article, read the [custom authentication extensions](custom-extension-overview.md) overview.
@@ -347,7 +352,7 @@ The following screenshot shows how to register the *My Test application*.
 
 ### 3.1 Get the application ID
 
-In your app registration, under **Overview**, copy the **Application (client) ID**. The app ID is referred to as the `{App_to_enrich_ID}` in later steps. In Microsoft Graph, it's referenced by the **appId** propety.
+In your app registration, under **Overview**, copy the **Application (client) ID**. The app ID is referred to as the `{App_to_enrich_ID}` in later steps. In Microsoft Graph, it's referenced by the **appId** property.
 
 :::image type="content" border="false"source="media/custom-extension-get-started/get-the-test-application-id.png" alt-text="Screenshot that shows how to copy the application ID.":::
 

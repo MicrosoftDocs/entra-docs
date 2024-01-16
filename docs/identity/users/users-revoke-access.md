@@ -131,7 +131,7 @@ Once admins have taken the above steps, the user can't gain new tokens for any a
 
 - Use [Microsoft Defender for Cloud Apps to block data download](/defender-cloud-apps/use-case-proxy-block-session-aad) when appropriate. If the data can only be accessed online, organizations can monitor sessions and achieve real-time policy enforcement.
 
-- Enable [Continuous Access Evaluation (CAE) in Microsoft Entra ID](~/identity/conditional-access/concept-continuous-access-evaluation.md). CAE allows admins to revoke the session tokens and access tokens for applications that are CAE capable.  
+- Use [Continuous Access Evaluation (CAE) in Microsoft Entra ID](~/identity/conditional-access/concept-continuous-access-evaluation.md). CAE allows admins to revoke the session tokens and access tokens for applications that are CAE capable.  
 
 ## Next steps
 

@@ -8,7 +8,7 @@ ms.service: active-directory
 ms.subservice: app-provisioning
 ms.workload: identity
 ms.topic: reference
-ms.date: 09/15/2023
+ms.date: 01/10/2024
 ms.author: kenwith
 ms.reviewer: chmutali
 ---
@@ -177,7 +177,7 @@ The current API only supports inbound data. Here are some options to consider fo
 
 - **Option 1 – SCIM connectivity to HR endpoint/proxy service that in turn updates the HR source**
 
-  - If the system of record provides a SCIM endpoint for user updates (for example Oracle HCM provides an [API endpoint for SCIM updates](https://docs.oracle.com/en/cloud/saas/applications-common/23b/farca/op-hcmrestapi-scim-users-id-patch.html)), you can create a custom SCIM application in the enterprise app gallery and [configure provisioning as documented](use-scim-to-provision-users-and-groups.md#integrate-your-scim-endpoint-with-the-azure-ad-provisioning-service).
+  - If the system of record provides a SCIM endpoint for user updates, you can create a custom SCIM application in the enterprise app gallery and [configure provisioning as documented](use-scim-to-provision-users-and-groups.md#integrate-your-scim-endpoint-with-the-azure-ad-provisioning-service).
   - If the system of record doesn't provide a SCIM endpoint, explore the possibility of setting up a proxy SCIM service, which receives the update and propagate the change to the HR system.
 
 - **Option 2 – Use Microsoft Entra ECMA connector for the writeback scenario**
