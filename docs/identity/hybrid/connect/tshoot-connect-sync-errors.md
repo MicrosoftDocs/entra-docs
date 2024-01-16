@@ -237,7 +237,7 @@ Microsoft Entra ID protects cloud-only objects from being updated through Micros
 This section discussess potential causes and solutions to resolving Error Type 114. 
 
 > [!WARING]
-> Microsoft recommends that customers set up a break glass account before logging in to Microsft Entra Connect. For more info, see [Manage emergency access accounts in Microsoft Entra ID](~/identity/role-based-access-control/security-emergency-access).
+> Microsoft recommends that customers set up a break glass account before logging in to Microsft Entra Connect. For more info, see [Manage emergency access accounts in Microsoft Entra ID](~/identity/role-based-access-control/security-emergency-access.md).
 
 #### Description
 
