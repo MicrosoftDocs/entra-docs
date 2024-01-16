@@ -84,7 +84,7 @@ To complete the scenario in this tutorial, you need:
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Identity** > **Protection** > **Security Center**.
 1. Under **Protect**, select **Conditional Access**.
-1. On the **Conditional Access** page, in the toolbar on the top, select **New policy**.
+1. On the **Conditional Access** page, in the toolbar on the top, select **Create new policy**.
 1. On the **New** page, in the **Name** textbox, type **Require MFA for B2B portal access**.
 1. In the **Assignments** section, choose the link under **Users and groups**.
 1. On the **Users and groups** page, choose **Select users and groups**, and then choose **Guest or external users**. You can assign the policy to different [external user types](authentication-conditional-access.md#assigning-conditional-access-policies-to-external-user-types), built-in directory roles, or users and groups. 
