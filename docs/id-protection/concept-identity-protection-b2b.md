@@ -22,7 +22,7 @@ You can use your organizational credentials to sign-in to another organization a
 
 If you're attempting to sign-in to another organization as a guest and are blocked due to risk, you see the following block message: "Your account is blocked. We've detected suspicious activity on your account." 
 
-![Guest account blocked, contact your organization's administrator](./media/concept-identity-protection-b2b/risky-guest-user-blocked.png)
+![A screenshot showing the error guest account blocked, contact your organization's administrator.](./media/concept-identity-protection-b2b/risky-guest-user-blocked.png)
 
 If your organization enables it, you can use self-service password reset unblock your account and get your credentials back to a safe state.
 1. Go to the [Password reset portal](https://passwordreset.microsoftonline.com/) and initiate the password reset. If self-service password reset isn't enabled for your account and you can't proceed, reach out to your IT administrator with the [following information](#how-to-remediate-a-users-risk-as-an-administrator).

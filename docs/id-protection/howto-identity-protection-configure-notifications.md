@@ -36,7 +36,7 @@ To prevent an overload of e-mails, you only receive one email within a 5-second 
 
 If your organization enabled self-remediation as described in the article, [User experiences with Microsoft Entra ID Protection](concept-identity-protection-user-experience.md) there's a chance that the user might remediate their risk before you have the opportunity to investigate. You can see risky users and risky sign-ins that were already remediated by adding "Remediated" to the **Risk state** filter in either the **Risky users** or **Risky sign-ins** reports.
 
-![Users at risk detected email](./media/howto-identity-protection-configure-notifications/01.png)
+![A screenshot showing a sample users at risk detected email.](./media/howto-identity-protection-configure-notifications/01.png)
 
 ### Configure users at risk detected alerts
 
@@ -57,7 +57,7 @@ It includes:
 - New risky sign-ins detected (in real time)
 - Links to the related reports in Identity Protection
 
-![Weekly digest email](./media/howto-identity-protection-configure-notifications/weekly-digest-email.png)
+![A screenshot showing a sample weekly digest email.](./media/howto-identity-protection-configure-notifications/weekly-digest-email.png)
 
 Users in the Global Administrator, Security Administrator, or Security Reader roles are automatically added to this list. We attempt to send emails to the first 20 members of each role. If a user is enrolled in PIM to elevate to one of these roles on demand, then **they will only receive emails if they are elevated at the time the email is sent**
 
