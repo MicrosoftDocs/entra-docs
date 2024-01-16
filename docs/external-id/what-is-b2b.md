@@ -104,7 +104,7 @@ Microsoft Entra External ID supports external identity providers like Facebook, 
 
 You can [enable integration with SharePoint and OneDrive](/sharepoint/sharepoint-azureb2b-integration) to share files, folders, list items, document libraries, and sites with people outside your organization, while using Azure B2B for authentication and management. The users you share resources with are typically guest users in your directory, and permissions and groups work the same for these guests as they do for internal users. When enabling integration with SharePoint and OneDrive, you also enable the [email one-time passcode](one-time-passcode.md) feature in Microsoft Entra B2B to serve as a fallback authentication method.
 
-![Screenshot of the email one-time-passcode setting.](media/what-is-b2b/enable-email-otp-options.png)
+:::image type="content" source="media/what-is-b2b/enable-email-otp-options.png" alt-text="Screenshot of the email one-time-passcode setting.":::
 
 ## Next steps
 

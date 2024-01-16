@@ -31,7 +31,7 @@ The external identities cross-tenant access settings manage how you collaborate 
 
 The following diagram shows the cross-tenant access inbound and outbound settings. The **Resource Microsoft Entra tenant** is the tenant containing the resources to be shared. In the case of B2B collaboration, the resource tenant is the inviting tenant (for example, your corporate tenant, where you want to invite the external users to). The **User's home Microsoft Entra tenant** is the tenant where the external users are managed.
 
-![Overview diagram of cross-tenant access settings.](media/cross-tenant-access-overview/cross-tenant-access-settings-overview.png)
+:::image type="content" source="media/cross-tenant-access-overview/cross-tenant-access-settings-overview.png" alt-text="Overview diagram of cross-tenant access settings.":::
 
 By default, B2B collaboration with other Microsoft Entra organizations is enabled, and B2B direct connect is blocked. But the following comprehensive admin settings let you manage both of these features.
 
