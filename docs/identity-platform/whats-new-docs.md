@@ -18,13 +18,7 @@ Welcome to what's new in the Microsoft identity platform documentation. This art
 
 ## December 2023
 
-### New articles
-
-No new articles
-
-### Updated articles
-
-No updated articles
+No new or updated articles in December 2023.
 
 ## November 2023
 
