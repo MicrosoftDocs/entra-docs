@@ -45,7 +45,7 @@ You can also view SLA attainment using [Microsoft Graph](/graph/api/resources/se
 
 ![Screenshot of the SLA attainment report.](media/concept-microsoft-entra-health/sla-attainment.png)
 
-## Scenario monitoring (preview)
+## Scenario monitoring (preview) 
 
 Many IT administrators spend a considerable amount of time investigating the health of the following key scenarios:
 
