@@ -103,6 +103,9 @@ landingContent:
             url: faqs.md
           - text: Glossary  
             url: multi-cloud-glossary.md
+          - text: Operations Reference  
+            url: ../architecture/permissions-manage-ops-guide-intro.md
+            
 # Card
   - title: Troubleshoot
     linkLists:
