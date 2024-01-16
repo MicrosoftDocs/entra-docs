@@ -1,6 +1,6 @@
 ---
-title: Claims Customization using PowerShell
-description: This article describes the how to customize claims in Microsoft Entra ID using PowerShell
+title: Claims customization using PowerShell
+description: This article describes how to customize claims in Microsoft Entra ID using PowerShell
 services: active-directory
 documentationcenter: .net
 author: rahul-nagraj
@@ -85,13 +85,13 @@ In this example, you create a policy that removes the [basic claim set](referenc
 In this example, you create a policy that adds the `EmployeeID` and `TenantCountry` to tokens issued to linked service principals. The EmployeeID is emitted as the name claim type in both SAML tokens and JWTs. The TenantCountry is emitted as the country/region claim type in both SAML tokens and JWTs. In this example, we continue to include the basic claims set in the tokens.
 
 1. Create a claims-mapping policy. This policy, linked to specific service principals, adds the EmployeeID and TenantCountry claims to tokens.
-    1. To create the policy, run the following command in your terminal:
+1. To create the policy, run the following command in your terminal:
 
     ```PowerShell
     New-MgPolicyClaimMappingPolicy -Definition @('{"ClaimsMappingPolicy":{"Version":1,"IncludeBasicClaimSet":"true", "ClaimsSchema": [{"Source":"user","ID":"employeeid","SamlClaimType":"http://schemas.xmlsoap.org/ws/2005/05/identity/claims/employeeid","JwtClaimType":"employeeid"},{"Source":"company","ID":"tenantcountry","SamlClaimType":"http://schemas.xmlsoap.org/ws/2005/05/identity/claims/country","JwtClaimType":"country"}]}}') -DisplayName "ExtraClaimsExample"
     ```
 
-    1. To see your new policy, and to get the policy `ObjectId`, run the following command:
+1. To see your new policy, and to get the policy `ObjectId`, run the following command:
 
     ```PowerShell
     Get-MgPolicyClaimMappingPolicy
@@ -108,28 +108,28 @@ In this example, you create a policy that emits a custom claim "JoinedData" to J
     New-MgPolicyClaimMappingPolicy -Definition @('{"ClaimsMappingPolicy":{"Version":1,"IncludeBasicClaimSet":"true", "ClaimsSchema":[{"Source":"user","ID":"extensionattribute1"},{"Source":"transformation","ID":"DataJoin","TransformationId":"JoinTheData","JwtClaimType":"JoinedData"}],"ClaimsTransformations":[{"ID":"JoinTheData","TransformationMethod":"Join","InputClaims":[{"ClaimTypeReferenceId":"extensionattribute1","TransformationClaimType":"string1"}], "InputParameters": [{"ID":"string2","Value":"ext"},{"ID":"separator","Value":"-"}],"OutputClaims":[{"ClaimTypeReferenceId":"DataJoin","TransformationClaimType":"outputClaim"}]}]}}') -DisplayName "TransformClaimsExample"
     ```
 
-    1. To see your new policy, and to get the policy `ObjectId`, run the following command:
+1. To see your new policy, and to get the policy `ObjectId`, run the following command:
 
     ```PowerShell
     Get-MgPolicyClaimMappingPolicy
     ```
 
-## Assign the Claims Mapping policy to your service principal
+## Assign the claims mapping policy to your service principal
 
 To assign the policy to the service principal you will need the `ObjectId` of your claims mapping policy and the `objectId` of the service principal to which the policy must be assigned.
 
 1. To see all your organization's service principals, you can [query the Microsoft Graph API](/graph/api/serviceprincipal-list) or, check them in [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer).
 1. To see all the claims mapping policies in your tenant, and to get the policy `ObjectId`, run the following command:
 
-```PowerShell
-Get-MgPolicyClaimMappingPolicy
-```
+    ```PowerShell
+    Get-MgPolicyClaimMappingPolicy
+    ```
 
 1. When you have the `ObjectId` of your claims mapping policy and the service principal, run the following command:
 
-```PowerShell
-New-MgServicePrincipalClaimMappingPolicyByRef -ServicePrincipalId <servicePrincipalId> -BodyParameter @{"@odata.id" = "https://graph.microsoft.com/v1.0/policies/claimsMappingPolicies/<claimsMappingPolicyId>"}
-```
+    ```PowerShell
+    New-MgServicePrincipalClaimMappingPolicyByRef -ServicePrincipalId <servicePrincipalId> -BodyParameter @{"@odata.id" = "https://graph.microsoft.com/v1.0/policies/claimsMappingPolicies/<claimsMappingPolicyId>"}
+    ```
 
 ## See also
 
