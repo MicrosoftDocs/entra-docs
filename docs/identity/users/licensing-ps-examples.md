@@ -135,7 +135,7 @@ This is the result:
 
 ```output
 Id                                   DisplayName              AssignedLicenses
---------                             -----------              --------
+--                                   -----------              ----------------
 7023a314-6148-4d7b-b33f-6c775572879a EMS E5 – Licensed users  EMSPREMIUM
 cf41f428-3b45-490b-b69f-a349c8a4c38e PowerBi - Licensed users POWER_BI_STANDARD
 962f7189-59d9-4a29-983f-556ae56f19a5 O365 E3 - Licensed users ENTERPRISEPACK
@@ -214,7 +214,7 @@ Get-MgGroup -All | Where {$_.HasMembersWithLicenseErrors} | Select `
     Id, `
     DisplayName, `
     GroupTypes, `
-    Description }
+    Description
 ```
 
 The result looks like the following example:
@@ -366,7 +366,7 @@ The two sample functions below can be used to analyze the type of assignment on 
 #Returns TRUE if the user has the license assigned directly
 function UserHasLicenseAssignedDirectly
 {
-    Param([Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUser]]$user, [string]$skuId)
+    Param([Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUser]$user, [string]$skuId)
 
     foreach($license in $user.Licenses)
     {
