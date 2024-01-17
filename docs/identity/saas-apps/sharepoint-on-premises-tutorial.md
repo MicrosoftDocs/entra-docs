@@ -169,7 +169,7 @@ In this step, you configure a web application in SharePoint to trust the Microso
     
             ![Alternate Access Mappings of extended web application](./media/sharepoint-on-premises-tutorial/sp-alternate-access-mappings-extended-zone.png)
 
-Once the web application is created, you can create a root site collection and add you Windows account as the primary site collection administrator.
+Once the web application is created, you can create a root site collection and add your Windows account as the primary site collection administrator.
 
 1. Create a certificate for the SharePoint site
 
@@ -225,14 +225,14 @@ In the dialog, you need to type the exact value of the userprincipalname, for ex
 > [!IMPORTANT]
 > Be careful to type the exact value of the user you want to invite, and choose the appropriate claim type in the list, otherwise the sharing will not work.
 
-![People picker results without EntraCP](./media/sharepoint-on-premises-tutorial/sp-people-picker-search-no-entracp.png)
+![Screenshot of people picker results without EntraCP.](./media/sharepoint-on-premises-tutorial/sp-people-picker-search-no-entracp.png)
 
 This limitation is because SharePoint does not validate the input from the people picker, which can be confusing and lead to misspellings or users accidentally choosing the wrong claim type.  
 To fix this scenario, an open-source solution called [EntraCP](https://entracp.yvand.net/) can be used to connect SharePoint 2019 / 2016 / 2013 with Microsoft Entra ID and resolve the input against your Microsoft Entra tenant. For more information, see [EntraCP](https://entracp.yvand.net/).
 
 Below is the same search with EntraCP configured: SharePoint returns actual users based on the input:
 
-![People picker results with EntraCP](./media/sharepoint-on-premises-tutorial/sp-people-picker-search-with-entracp.png)
+![Screenshot of people picker results with EntraCP.](./media/sharepoint-on-premises-tutorial/sp-people-picker-search-with-entracp.png)
 
 > [!IMPORTANT]
 > EntraCP isn't a Microsoft product and isn't supported by Microsoft Support. To download, install, and configure EntraCP on the on-premises SharePoint farm, see the [EntraCP](https://entracp.yvand.net/) website. 
@@ -321,7 +321,7 @@ Now, the configuration of EntraCP needs to be updated to reflect that change and
 1. In the section **User identifier property**: Set the **User identifier for 'Guest' users:** to **UserPrincipalName**.
 1. Click Ok
 
-![EntraCP guests accounts configuration](./media/sharepoint-on-premises-tutorial/sp-entracp-attribute-for-guests.png)
+![Screenshot of EntraCP guests accounts configuration.](./media/sharepoint-on-premises-tutorial/sp-entracp-attribute-for-guests.png)
 
 You can now invite any guest user in the SharePoint sites.
 
