@@ -135,7 +135,7 @@ To require attributes for access requests:
 1. Select the attribute type:
 
     1. **Built-in** includes Microsoft Entra user profile attributes.
-    1. **Directory schema extension** provides a way to store more data in Microsoft Entra ID on user objects and other directory objects. This includes groups, tenant details, and service principals. Only extension attributes on user objects can be used to send out claims to applications.
+    1. **Directory schema extension** provides a way to store more data in Microsoft Entra ID users.  You can extend the schema by [creating an extension attribute](~/identity/app-provisioning/user-provisioning-sync-attributes-for-mapping.md#create-an-extension-attribute-in-a-tenant-with-cloud-only-users). These extension attributes on user objects can be used to send out claims to applications during provisioning or single-sign on.
 1. If you chose **Built-in**, select an attribute from the dropdown list. If you chose **Directory schema extension**, enter the attribute name in the text box.
 
     > [!NOTE]
