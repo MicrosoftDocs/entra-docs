@@ -11,7 +11,7 @@ metadata:
   ms.service: active-directory
   ms.workload: identity
   ms.tgt_pltfrm: na
-  ms.custom: has-azure-ad-ps-ref
+  ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
   ms.topic: faq
   ms.date: 02/08/2023
   ms.subservice: hybrid
@@ -204,9 +204,11 @@ sections:
           - You initially were federated with your Microsoft Entra tenant using AD FS for authentication.
           - You switched to having managed users using PTA as authentication.
           
-          This is because the default behavior of tenants created prior to June 15, 2015 was to block UPN changes. If you need to un-block UPN changes you need to run the following PowerShell cmdlet:  
+          This is because the default behavior of tenants created prior to June 15, 2015 was to block UPN changes. If you need to un-block UPN changes you need to run the following PowerShell cmdlet. Get the ID by using the [Get-MgDirectoryOnPremiseSynchronization](/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdirectoryonpremisesynchronization) cmdlet.  
           
-          `Set-MsolDirSyncFeature -Feature SynchronizeUpnForManagedUsers -Enable $True`
+          ```powershell
+          $params = @{ "SynchronizeUpnForManagedUsersEnabled" = "True" }
+          Update-MgDirectoryOnPremiseSynchronization -OnPremisesDirectorySynchronizationId $SynchronizationId -BodyParameter $params
           
           Tenants created after June 15, 2015 have the default behavior of synchronizing UPN changes.   
           
