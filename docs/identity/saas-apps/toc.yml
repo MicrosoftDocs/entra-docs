@@ -1927,6 +1927,8 @@
         href: directory-services-tutorial.md
       - name: XM Fax and XM SendSecure
         href: xm-fax-and-xm-send-secure-tutorial.md
+      - name: Ocurus
+        href: ocurus-tutorial.md
       - name: OpsGenie
         href: opsgenie-tutorial.md
       - name: Optimizely
