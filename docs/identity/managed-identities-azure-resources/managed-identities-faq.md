@@ -2,13 +2,10 @@
 title: Managed identities for Azure resources frequently asked questions"
 description: Frequently asked questions about managed identities
 services: active-directory
-documentationcenter: 
 author: barclayn
 manager: amycolannino
-editor: 
 ms.service: active-directory
 ms.subservice: msi
-ms.devlang: 
 ms.topic: conceptual
 ms.tgt_pltfrm: 
 ms.workload: identity

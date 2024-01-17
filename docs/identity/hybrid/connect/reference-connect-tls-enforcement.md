@@ -12,7 +12,7 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 9/14/2021
 ms.subservice: hybrid
-ms.author: rodejo
+ms.author: billmath
 
 ms.collection: M365-identity-device-management
 ---
