@@ -31,6 +31,10 @@ This article discusses Microsoft Entra services' licensing. It is intended for I
 
 [!INCLUDE [Managed identities](../includes/licensing-managed-identities.md)]
 
+[!INCLUDE [Microsoft Entra Conditional access](../includes/licensing-conditional-access.md)]
+
+## Microsoft Entra ID Governance
+
 ## Microsoft Entra Connect
 
 [!INCLUDE [Information about free tier services](../includes/licensing-free-license.md)]
@@ -40,10 +44,6 @@ This article discusses Microsoft Entra services' licensing. It is intended for I
 [!INCLUDE [Services available in the P1](../includes/licensing-p1-license.md)]
 
 ## Microsoft Entra Conditional Access
-
-[!INCLUDE [Microsoft Entra Conditional access](../includes/licensing-conditional-access.md)]
-
-## Microsoft Entra ID Governance
 
 [!INCLUDE [Microsoft Entra ID Governance](../includes/licensing-governance.md)]
 
@@ -55,7 +55,7 @@ This article discusses Microsoft Entra services' licensing. It is intended for I
 
 [!INCLUDE [Microsoft Entra monitoring and health](../includes/licensing-monitoring-health.md)]
 
-## Microsoft Entra Privileged Identity management
+## Microsoft Entra Privileged Identity Management
 
 [!INCLUDE [Microsoft Entra Privileged Identity](../includes/licensing-pim.md)]
 

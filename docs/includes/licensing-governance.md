@@ -9,7 +9,7 @@ ms.author: billmath
 ms.custom: include file
 ---
 
-The following tables show the licensing requirements for Microsoft Entra ID Governance features.
+The following table shows the licensing requirements for Microsoft Entra ID Governance features. Licensing information and example license scenarios for Entitlement management, Access reviews, and Lifecycle Workflows are provided following the table.
 
 ### Features by license
 
