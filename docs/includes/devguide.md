@@ -8,7 +8,7 @@ manager: mtillman
 editor: ''
 
 ms.service: active-directory
-ms.devlang: na
+
 ms.topic: include
 ms.tgt_pltfrm: na
 ms.workload: identity
