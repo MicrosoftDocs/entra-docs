@@ -125,7 +125,6 @@ The Usage Analytics feature needs to gather and analyze data, so the Microsoft E
  2. Go to the *Security Settings\Local Policies\User Rights Assignment* folder. Double-click **Generate security audits**.
  3. On the **Local Security Setting** tab, verify that the AD FS service account is listed. If it's not listed, select **Add User or Group**, and add the AD FS service account to the list. Then select **OK**.
  4. To enable auditing, open a Command Prompt window as administrator, and then run the following command:
-
     `auditpol.exe /set /subcategory:"Application Generated" /failure:enable /success:enable`
 
  5. Close **Local Security Policy**.
