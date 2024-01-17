@@ -80,7 +80,7 @@ To download and install the Microsoft Entra Connect Health agent:
   - [Download and install the latest version of Microsoft Entra Connect](https://go.microsoft.com/fwlink/?linkid=615771). The health agent for sync is installed as part of the Microsoft Entra Connect installation (version 1.0.9125.0 or later).
 - Get started using Microsoft Entra Connect Health for AD Domain Services:
   - [Download the Microsoft Entra Connect Health agent for AD Domain Services](https://go.microsoft.com/fwlink/?LinkID=820540).
-  - See the [installation instructions](#install-the-agent-for-azure-ad-ds).
+ 
 
 ## Install the agent for AD FS
 
@@ -181,6 +181,26 @@ After enabling AD FS audit logs, you should be able to check the AD FS audit log
 > A group policy can disable AD FS auditing. If AD FS auditing is disabled, usage analytics about login activities are unavailable. Ensure that you have no group policy that disables AD FS auditing.
 >
 
+## Test connectivity to the Microsoft Entra Connect Health service
+
+Occasionally, the Microsoft Entra Connect Health agent loses connectivity with the Microsoft Entra Connect Health service. Causes of this connectivity loss might include network problems, permissions problems, and various other problems.
+
+If the agent can't send data to the Microsoft Entra Connect Health service for longer than two hours, the following alert appears in the portal: **Health Service data is not up to date**.
+
+You can find out whether the affected Microsoft Entra Connect Health agent can upload data to the Microsoft Entra Connect Health service by running the following PowerShell command:
+
+```powershell
+Test-AzureADConnectHealthConnectivity -Role ADFS
+```
+
+The `Role` parameter currently takes the following values:
+
+- `ADFS`
+- `Sync`
+- `ADDS`
+
+> [!NOTE]
+> To use the connectivity tool, you must first register the agent. If you can't complete the agent registration, make sure that you meet all the [requirements](how-to-connect-health-agent-install.md#requirements) for Microsoft Entra Connect Health. Connectivity is tested by default during agent registration.
 
 ## Monitor AD FS using Microsoft Entra Connect Health
 
@@ -196,7 +216,7 @@ You can double-click an active or resolved alert, to open a new blade with addit
 Microsoft Entra Connect Health Usage Analytics analyzes the authentication traffic of your federation servers. You can double-click the usage analytics box, to open the usage analytics blade, which shows you several metrics and groupings.
 
 > [!NOTE]
-> To use Usage Analytics with AD FS, you must ensure that AD FS auditing is enabled. For more information, see [Enable Auditing for AD FS](how-to-connect-health-agent-install.md#enable-auditing-for-ad-fs).
+> To use Usage Analytics with AD FS, you must ensure that AD FS auditing is enabled. For more information, see [Enable Auditing for AD FS](#enable-auditing-for-ad-fs).
 >
 >
 

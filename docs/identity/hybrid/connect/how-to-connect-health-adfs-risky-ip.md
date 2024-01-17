@@ -34,7 +34,7 @@ Microsoft Entra Connect Health now provides the *Risky IP report*, which detects
 - Provides downloadable reports for offline analysis and integration with other systems via automation
 
 > [!NOTE]
-> To use this report, you must ensure that AD FS auditing is enabled. For more information, see [Enable auditing for AD FS](how-to-connect-health-agent-install.md#enable-auditing-for-ad-fs).
+> To use this report, you must ensure that AD FS auditing is enabled. For more information, see [Enable auditing for AD FS](how-to-connect-health-agent-adfs.md#enable-auditing-for-ad-fs).
 >
 > To access this preview release, you need Global Administrator or [Security Reader](~/identity/role-based-access-control/permissions-reference.md#security-reader) permissions.  
 
