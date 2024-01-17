@@ -5,7 +5,6 @@ services: active-directory
 documentationcenter: ''
 author: barclayn
 manager: amycolannino
-editor:
 ms.service: active-directory
 ms.subservice: msi
 ms.topic: tutorial
