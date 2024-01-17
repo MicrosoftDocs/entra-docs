@@ -157,8 +157,8 @@ Applications can have multiple app roles defined in their manifest and managed t
 
 Once an app role is a resource of an access package:
 
-- When a user is assigned that access package, the user is added to that app role, if not already present.
-- When a user's access package assignment expires, their access is removed from the application, unless they have an assignment to another access package that includes that app role.
+- When a user is assigned that access package, the user is added to that app role, if not already present.  If the application requires attributes, the values of the attributes collected from the request will be written onto the user.
+- When a user's access package assignment expires, their access is removed from the application, unless they have an assignment to another access package that includes that app role.  If the application requires attributes, those attributes will be removed from the user.
 
 Here are some considerations when selecting an application:
 
