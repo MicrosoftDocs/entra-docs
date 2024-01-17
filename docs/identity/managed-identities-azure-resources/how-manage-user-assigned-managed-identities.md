@@ -4,7 +4,6 @@ description: Create user-assigned managed identities.
 services: active-directory
 author: barclayn
 manager: amycolannino
-editor:
 ms.service: active-directory
 ms.subservice: msi
 ms.topic: how-to
