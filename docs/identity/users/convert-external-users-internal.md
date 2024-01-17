@@ -21,24 +21,26 @@ Enterprises go through reorganizations, mergers and acquisitions typically requi
 user’s account and access isn’t disrupted and that their history of activities remains intact as their relationship with the host organization changes
 
 - **Internal users** are users who authenticate with the internal tenant.
-- **External users** are users who authenticate via a method not managed by the host organization, such as another organization's Microsoft Entra ID, Google federation, or Microsoft account. While many external users may have a userType of 'guest', there is no formal relation between userType and how a user signs in. Some external users may have a userType of 'member', and they are also eligible for conversion.
+- **External users** are users who authenticate via a method not managed by the host organization, such as another organization's Microsoft Entra ID, Google federation, or Microsoft account. Many external users have a ***userType*** of 'guest', but there's no formal relation between ***userType**** and how a user signs in. Some external users may have a ***userType*** of 'member', and they are also eligible for conversion.
 
-The feature includes the ability to convert on-premises synced external users to synced internal users. When converting a cloud-only external user, the admin must specify the UPN and password for the user, to allow the user to authenticate with the host's organization. The API updates the userType from guest to member and also stamps the "externalUserConvertedOn" attribute with a datetime value indicating when the user was converted. When an on-premises synced user is converted, you can't specify UPN or password. The user continues to use the on-premises credentials, as on-premises synced user is managed on-premises.
+This feature converts on-premises synced external users to synced internal users. When converting a cloud-only external user, the admin must specify the UPN and password for the user, to allow the user to authenticate with the host's organization. The user has its ***userType*** updated from guest to member and also stamps the ***externalUserConvertedOn*** attribute with a datetime value indicating when the user was converted. When an on-premises synced user is converted, you can't specify UPN or password. The user continues to use the on-premises credentials, as on-premises synced users are managed on-premises.
 
-External User Conversion can be performed using MS Graph API or the Microsoft Entra ID Portal.
+External user conversion can be performed using MS Graph API or the Microsoft Entra ID Portal.
 
 
 >[!NOTE]
-> When an external user is converted the property "convertedToInternalUserDateTime" gets stamped on their object.
+> When an external user is converted the property ***convertedToInternalUserDateTime*** gets stamped on their object.
 
 ## Converting external users
 
 It is important to note that a userType of member vs guest doesn't indicate where a user authenticates. Member vs guest only defines the level of permissions the user has in the current tenant. Customers can update the user type for their users, but that alone doesn't change the users' external vs internal state.
 
-Cloud user conversion
+### Cloud user conversion
+
 When a cloud user is converted from external to internal, administrators must specify a UPN and password for the user. This ensures the user can authenticate with the current tenant.
 
-Synched user conversion
+### Synched user conversion
+
 For on-premises synced users where the tenant is a managed, meaning it uses cloud authentication, administrators are required to specify a password during conversion.
 
 For on-premises synced users where the tenant uses federated authentication and Password Hash Sync (PHS) is enabled, administrators are blocked from setting a new password during conversion. However, if the federated tenant doesn't have PHS enabled, administrators have the option to set a password.
@@ -46,7 +48,7 @@ For on-premises synced users where the tenant uses federated authentication and 
 
 ## Testing external user conversion
 
-When testing external user conversion, it is recommended to use test accounts or accounts that would not create a disruption if they are unavailable.
+When testing external user conversion, it is recommended to use test accounts or accounts that wouldn't create a disruption if they are unavailable.
 
 ### Requirements
 
