@@ -119,58 +119,59 @@ To verify that the agent was installed, look for the following services on the s
 
 The Usage Analytics feature needs to gather and analyze data, so the Microsoft Entra Connect Health agent needs the information in the AD FS audit logs. These logs aren't enabled by default. Use the following procedures to enable AD FS auditing and to locate the AD FS audit logs on your AD FS servers.
 
-#### To enable auditing for AD FS on Windows Server 2012 R2
+#### To enable auditing for AD FS 
 
-1. On the Start screen, open **Server Manager**, and then open **Local Security Policy**. Or, on the taskbar, open **Server Manager**, and then select **Tools/Local Security Policy**.
-1. Go to the *Security Settings\Local Policies\User Rights Assignment* folder. Double-click **Generate security audits**.
-1. On the **Local Security Setting** tab, verify that the AD FS service account is listed. If it's not listed, select **Add User or Group**, and add the AD FS service account to the list. Then select **OK**.
-1. To enable auditing, open a Command Prompt window as administrator, and then run the following command:
-
-    `auditpol.exe /set /subcategory:{0CCE9222-69AE-11D9-BED3-505054503030} /failure:enable /success:enable`
-
-1. Close **Local Security Policy**.
-
-    > [!IMPORTANT]
-    > The remaining steps are required only for primary AD FS servers.
-
-1. Open the **AD FS Management** snap-in. (In **Server Manager**, select **Tools** > **AD FS Management**.)
-1. In the **Actions** pane, select **Edit Federation Service Properties**.
-1. In the **Federation Service Properties** dialog, select the **Events** tab.
-1. Select the **Success audits** and **Failure audits** checkboxes, and then select **OK**.
-1. To enable verbose logging through PowerShell, use the following command:
-
-    `Set-AdfsProperties -LOGLevel Verbose`
-
-#### To enable auditing for AD FS on Windows Server 2016
-
-1. On the Start screen, open **Server Manager**, and then open **Local Security Policy**. Or, on the taskbar, open **Server Manager**, and then select **Tools/Local Security Policy**.
-1. Go to the *Security Settings\Local Policies\User Rights Assignment* folder. Double-click **Generate security audits**.
-1. On the **Local Security Setting** tab, verify that the AD FS service account is listed. If it's not listed, select **Add User or Group**, and add the AD FS service account to the list. Then select **OK**.
-1. To enable auditing, open a Command Prompt window as administrator, and then run the following command:
+ 1. On the Start screen, open **Server Manager**, and then open **Local Security Policy**. Or, on the taskbar, open **Server Manager**, and then select **Tools/Local Security Policy**.
+ 2. Go to the *Security Settings\Local Policies\User Rights Assignment* folder. Double-click **Generate security audits**.
+ 3. On the **Local Security Setting** tab, verify that the AD FS service account is listed. If it's not listed, select **Add User or Group**, and add the AD FS service account to the list. Then select **OK**.
+ 4. To enable auditing, open a Command Prompt window as administrator, and then run the following command:
 
     `auditpol.exe /set /subcategory:"Application Generated" /failure:enable /success:enable`
 
-1. Close **Local Security Policy**.
+ 5. Close **Local Security Policy**.
 
     > [!IMPORTANT]
     > The remaining steps are required only for primary AD FS servers.
 
-1. Open the **AD FS Management** snap-in. (In **Server Manager**, select **Tools** > **AD FS Management**.)
-1. In the **Actions** pane, select **Edit Federation Service Properties**.
-1. In the **Federation Service Properties** dialog, select the **Events** tab.
-1. Select the **Success audits** and **Failure audits** checkboxes, and then select **OK**. Success audits and failure audits should be enabled by default.
-1. Open a PowerShell window and run the following command:
+ #### Enable audit properties on the AD FS server
+ 1. Open the **AD FS Management** snap-in. (In **Server Manager**, select **Tools** > **AD FS Management**.)
+ 2. In the **Actions** pane, select **Edit Federation Service Properties**.
+ 3. In the **Federation Service Properties** dialog, select the **Events** tab.
+ 4. Select the **Success audits** and **Failure audits** checkboxes, and then select **OK**. Success audits and failure audits should be enabled by default.
+
+ #### Enable audit properties on AD FS server
+ 
+ >[!IMPORTANT]
+ >This steps is required only for primary AD FS servers.
+
+ 1. Open a PowerShell window and run the following command:
 
     `Set-AdfsProperties -AuditLevel Verbose`
 
 The "basic" audit level is enabled by default. For more information, see [AD FS audit enhancement in Windows Server 2016](/windows-server/identity/ad-fs/technical-reference/auditing-enhancements-to-ad-fs-in-windows-server).
 
-#### To locate the AD FS audit logs
+ #### Verify verbose logging
+ To verify verbose logging is enabled do the following.
 
-1. Open **Event Viewer**.
-2. Go to **Windows Logs**, and then select **Security**.
-3. In the right pane, select **Filter Current Logs**.
-4. For **Event sources**, select **AD FS Auditing**.
+ 1. Open a PowerShell window and run the following command:
+
+    `Get-AdfsProperties`
+ 
+ 2. Verify that the Auditlevel is set to verbose
+
+#### Verify AD FS service account audit settings
+1. Go to the *Security Settings\Local Policies\User Rights Assignment* folder. Double-click **Generate security audits**.
+2. On the **Local Security Setting** tab, verify that the **AD FS service account** is listed. If it's not listed, select Add User or Group, and add the AD FS service account to the list. Then select **OK**.
+3. Close **Local Security Policy**.
+
+#### Review the AD FS audit logs
+After enabling AD FS audit logs, you should be able to check the AD FS audit logs using Event viewer.
+
+ 1. Open **Event Viewer**.
+ 2. Go to **Windows Logs**, and then select **Security**.
+ 3. In the right pane, select **Filter Current Logs**.
+ 4. For **Event sources**, select **AD FS Auditing**.
+ 5. You can get a complete list of AD FS events [here](https://adfshelp.microsoft.com/AdfsEventViewer/GetAdfsEventList).
 
     For more information about audit logs, see [Operations questions](./reference-connect-health-faq.yml).
 
