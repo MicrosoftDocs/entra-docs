@@ -209,6 +209,7 @@ sections:
           ```powershell
           $params = @{ "SynchronizeUpnForManagedUsersEnabled" = "True" }
           Update-MgDirectoryOnPremiseSynchronization -OnPremisesDirectorySynchronizationId $SynchronizationId -BodyParameter $params
+          ```
           
           Tenants created after June 15, 2015 have the default behavior of synchronizing UPN changes.   
           
