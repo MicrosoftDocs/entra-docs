@@ -70,7 +70,7 @@ items:
     - name: Header-based SSO
       href: application-proxy-configure-single-sign-on-with-headers.md
     - name: Kerberos-based SSO
-      href: application-proxy-configure-single-sign-on-with-kcd.md
+      href: how-to-configure-sso-with-kcd.md
     - name: Password-based SSO
       href: application-proxy-configure-single-sign-on-password-vaulting.md
     - name: Network topology

@@ -93,7 +93,7 @@ You've published your web API through Microsoft Entra application proxy. Now, ad
 1. Back on the **Add Assignment** page, select **Assign**.
 
 > [!NOTE]
-> APIs that use integrated Windows authentication might require [additional steps](./application-proxy-configure-single-sign-on-with-kcd.md).
+> APIs that use integrated Windows authentication might require [additional steps](./how-to-configure-sso-with-kcd.md).
 
 ## Register the native app and grant access to the API
 
