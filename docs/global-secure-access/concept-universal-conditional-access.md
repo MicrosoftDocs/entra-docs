@@ -18,7 +18,7 @@ In addition to sending traffic to Global Secure Access (preview), administrators
 
 Conditional Access on traffic profiles provides administrators with enormous control over their security posture. Administrators can enforce [Zero Trust principles](/security/zero-trust/) using policy to manage access to the network. Using traffic profiles allows consistent application of policy. For example, applications that don't support modern authentication can now be protected behind a traffic profile.
 
-This functionality allows administrators to consistently enforce Conditional Access policy based on [traffic profiles](concept-traffic-forwarding.md), not just applications or actions. Administrators can target specific traffic profiles like Microsoft 365 or private, internal resources with these policies. Users can access these configured endpoints or traffic profiles only when they satisfy the configured Conditional Access policies. 
+This functionality allows administrators to consistently enforce Conditional Access policy based on [traffic profiles](concept-traffic-forwarding.md), not just applications or actions. Administrators can target specific traffic profiles like Microsoft 365, private resources, and internet access with these policies. Users can access these configured endpoints or traffic profiles only when they satisfy the configured Conditional Access policies. 
 
 ## Prerequisites
 
@@ -32,7 +32,6 @@ This functionality allows administrators to consistently enforce Conditional Acc
 
 - Continuous access evaluation is not currently supported for Universal Conditional Access for Microsoft 365 traffic.
 - Applying Conditional Access policies to Private Access traffic is not currently supported. To model this behavior, you can apply a Conditional Access policy at the application level for Quick Access and Global Secure Access apps. For more information, see [Apply Conditional Access to Private Access apps](how-to-target-resource-private-access-apps.md).
-- Applying Conditional Access policies to Internet traffic is not currently supported. Internet traffic is in private preview. To request access to the private preview, complete [the private preview interest form](https://aka.ms/entra-ia-preview).
 - Microsoft 365 traffic can be accessed through remote network connectivity without the Global Secure Access Client; however the Conditional Access policy isn't enforced. In other words, Conditional Access policies for the Global Secure Access Microsoft 365 traffic are only enforced when a user has the Global Secure Access Client.
 
 
