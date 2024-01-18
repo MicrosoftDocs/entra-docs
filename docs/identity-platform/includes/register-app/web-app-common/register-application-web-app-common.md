@@ -11,7 +11,7 @@ ms.subservice: develop
 ms.topic: include
 ---
 
-To complete registration, provide the application a name, specify the supported account types, and add a redirect URI. Once registered, the application **Overview** pane displays the identifiers needed in the application source code.
+To complete registration, provide the application a name and specify the supported account types. Once registered, the application **Overview** pane displays the identifiers needed in the application source code.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="../../../media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the tenant in which you want to register the application from the **Directories + subscriptions** menu.
