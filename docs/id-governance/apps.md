@@ -50,9 +50,8 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Adobe Captivate Prime](~/identity/saas-apps/adobecaptivateprime-tutorial.md) |  | ● |
 | [Adobe Creative Cloud](~/identity/saas-apps/adobe-creative-cloud-tutorial.md) |  | ● |
 | [Adobe Experience Manager](~/identity/saas-apps/adobeexperiencemanager-tutorial.md) |  | ● |
-| [Adobe Identity Management](~/identity/saas-apps/adobe-identity-management-provisioning-tutorial.md) | ● | ● |
+| [Adobe Identity Management (SAML)](~/identity/saas-apps/adobe-identity-management-provisioning-saml-tutorial.md) | ● | ● |
 | [Adobe Identity Management (OIDC)](~/identity/saas-apps/adobe-identity-management-provisioning-oidc-tutorial.md) | ● | ● |
-| [Adobe Identity Management (SAML)](~/identity/saas-apps/adobe-identity-management-tutorial.md) |  | ● |
 | [Adobe Sign](~/identity/saas-apps/adobe-echosign-tutorial.md) |  | ● |
 | [Aha!](~/identity/saas-apps/aha-tutorial.md) |  | ● |
 | [Airbase](~/identity/saas-apps/airbase-provisioning-tutorial.md) | ● | ● |
@@ -62,6 +61,7 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Albert](~/identity/saas-apps/albert-provisioning-tutorial.md) | ● |  |
 | [AlertMedia](~/identity/saas-apps/alertmedia-provisioning-tutorial.md) | ● | ● |
 | [AlexisHR](~/identity/saas-apps/alexishr-provisioning-tutorial.md) | ● | ● |
+| [Alohi](~/identity/saas-apps/alohi-provisioning-tutorial.md) | ● | ● |
 | [Alinto Protect (renamed Cleanmail)](~/identity/saas-apps/alinto-protect-provisioning-tutorial.md) | ● | |
 | [Alvao](~/identity/saas-apps/alvao-provisioning-tutorial.md) | ● |  |
 | [Amazon Business](~/identity/saas-apps/amazon-business-provisioning-tutorial.md) | ● | ● |
@@ -89,6 +89,8 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [BIS](~/identity/saas-apps/bis-provisioning-tutorial.md) | ● | ● |
 | [BitaBIZ](~/identity/saas-apps/bitabiz-provisioning-tutorial.md) | ● | ● |
 | [Bizagi Studio for Digital Process Automation](~/identity/saas-apps/bizagi-studio-for-digital-process-automation-provisioning-tutorial.md) | ● | ● |
+| [Blackboard Learn](~/identity/saas-apps/blackboard-learn-tutorial.md) |  | ● |
+| [Blackboard Learn - Shibboleth](~/identity/saas-apps/blackboard-learn-shibboleth-tutorial.md) |  | ● |
 | [BLDNG APP](~/identity/saas-apps/bldng-app-provisioning-tutorial.md) | ● |  |
 | [Blink](~/identity/saas-apps/blink-provisioning-tutorial.md) | ● | ● |
 | [Blinq](~/identity/saas-apps/blinq-provisioning-tutorial.md) | ● |  |
@@ -104,15 +106,25 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [BullseyeTDP](~/identity/saas-apps/bullseyetdp-provisioning-tutorial.md) | ● | ● |
 | [Bustle B2B Transport Systems](~/identity/saas-apps/bustle-b2b-transport-systems-provisioning-tutorial.md) | ● |  |
 | [Canva](~/identity/saas-apps/canva-provisioning-tutorial.md) | ● | ● |
+| [Canvas LMS](~/identity/saas-apps/canvas-lms-tutorial.md) |  | ● |
 | [Cato Networks Provisioning](~/identity/saas-apps/cato-networks-provisioning-tutorial.md) | ● |  |
 | [Cerby](~/identity/saas-apps/cerby-provisioning-tutorial.md) | ● | ● |
+| [Ceridian Dayforce HCM](~/identity/saas-apps/ceridiandayforcehcm-tutorial.md) |  | ● |
 | [Cerner Central](~/identity/saas-apps/cernercentral-provisioning-tutorial.md) | ● | ● |
 | [Chaos](~/identity/saas-apps/chaos-provisioning-tutorial.md) | ● |  |
 | [Chatwork](~/identity/saas-apps/chatwork-provisioning-tutorial.md) | ● | ● |
 | [CheckProof](~/identity/saas-apps/checkproof-provisioning-tutorial.md) | ● | ● |
 | [Cinode](~/identity/saas-apps/cinode-provisioning-tutorial.md) | ● |  |
+| [Cisco AnyConnect](~/identity/saas-apps/cisco-anyconnect.md) |  | ● |
+| [Cisco Cloud](~/identity/saas-apps/ciscocloud-tutorial.md) |  | ● |
+| [Cisco Expressway](~/identity/saas-apps/cisco-expressway-tutorial.md) |  | ● |
+| [Cisco Intersight](~/identity/saas-apps/cisco-intersight-tutorial.md) |  | ● |
+| [Cisco Umbrella](~/identity/saas-apps/cisco-umbrella-tutorial.md) |  | ● |
+| [Cisco Unified Communications Manager](~/identity/saas-apps/cisco-unified-communications-manager-tutorial.md) |  | ● |
+| [Cisco Unity Connection](~/identity/saas-apps/cisco-unity-connection-tutorial.md) |  | ● |
 | [Cisco User Management for Secure Access](~/identity/saas-apps/cisco-user-management-for-secure-access-provisioning-tutorial.md) | ● | ● |
 | [Cisco Webex](~/identity/saas-apps/cisco-webex-provisioning-tutorial.md) | ● | ● |
+| [Cisco Webex Meetings](~/identity/saas-apps/cisco-webex-tutorial.md) |  | ● |
 | [Clarizen One](~/identity/saas-apps/clarizen-one-provisioning-tutorial.md) | ● | ● |
 | [Cleanmail Swiss](~/identity/saas-apps/cleanmail-swiss-provisioning-tutorial.md) | ● |  |
 | [Clebex](~/identity/saas-apps/clebex-provisioning-tutorial.md) | ● | ● |
@@ -126,6 +138,8 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Connecter](~/identity/saas-apps/connecter-provisioning-tutorial.md) | ● |  |
 | [Contentful](~/identity/saas-apps/contentful-provisioning-tutorial.md) | ● | ● |
 | [Cornerstone OnDemand](~/identity/saas-apps/cornerstone-ondemand-provisioning-tutorial.md) | ● | ● |
+| [Coupa](~/identity/saas-apps/coupa-tutorial.md) |  | ● |
+| [Coupa Risk Assess](~/identity/saas-apps/coupa-risk-assess-tutorial.md) |  | ● |
 | [Cybozu](~/identity/saas-apps/cybozu-provisioning-tutorial.md) | ● | ● |
 | [CybSafe](~/identity/saas-apps/cybsafe-provisioning-tutorial.md) | ● |  |
 | [Dagster Cloud](~/identity/saas-apps/dagster-cloud-provisioning-tutorial.md) | ● | ● |
@@ -143,6 +157,7 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Elium](~/identity/saas-apps/elium-provisioning-tutorial.md) | ● | ● |
 | [Embed Signage](~/identity/saas-apps/embed-signage-provisioning-tutorial.md) | ● | ● |
 | [Envoy](~/identity/saas-apps/envoy-provisioning-tutorial.md) | ● | ● |
+| [Equifax Workforce Solutions](~/identity/saas-apps/equifax-workforce-solutions-tutorial.md) |  | ● |
 | [Evercate](~/identity/saas-apps/evercate-provisioning-tutorial.md) | ● |  |
 | [Exium](~/identity/saas-apps/exium-provisioning-tutorial.md) | ● | ● |
 | [Facebook Work Accounts](~/identity/saas-apps/facebook-work-accounts-provisioning-tutorial.md) | ● | ● |
@@ -151,7 +166,7 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Figma](~/identity/saas-apps/figma-provisioning-tutorial.md) | ● | ● |
 | [Flock](~/identity/saas-apps/flock-provisioning-tutorial.md) | ● | ● |
 | [Foodee](~/identity/saas-apps/foodee-provisioning-tutorial.md) | ● | ● |
-| [Forcepoint Cloud Security Gateway - User Authentication](~/identity/saas-apps/forcepoint-cloud-security-gateway-tutorial.md) | ● | ● |
+| [Forcepoint Cloud Security Gateway - User Authentication](~/identity/saas-apps/forcepoint-cloud-security-gateway-provisioning-tutorial.md) | ● | ● |
 | [Fortes Change Cloud](~/identity/saas-apps/fortes-change-cloud-provisioning-tutorial.md) | ● | ● |
 | [Frankli.io](~/identity/saas-apps/frankli-io-provisioning-tutorial.md) | ● | |
 | [Freshservice Provisioning](~/identity/saas-apps/freshservice-provisioning-tutorial.md) | ● | ● |
@@ -281,7 +296,7 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | Oracle Internet Directory | ● |  |
 | Oracle PeopleSoft ERP | ● | ● |
 | Oracle SunONE Directory Server ([LDAP connector](~/identity/app-provisioning/on-premises-ldap-connector-configure.md) ) | ● |  |
- [O'Reilly Learning Platform](~/identity/saas-apps/oreilly-learning-platform-provisioning-tutorial.md) | ● | ● |
+| [O'Reilly Learning Platform](~/identity/saas-apps/oreilly-learning-platform-provisioning-tutorial.md) | ● | ● |
 | [PagerDuty](~/identity/saas-apps/pagerduty-tutorial.md) |  | ● |
 | [Palo Alto Networks Cloud Identity Engine - Cloud Authentication Service](~/identity/saas-apps/palo-alto-networks-cloud-identity-engine-provisioning-tutorial.md) | ● | ● |
 | [Palo Alto Networks SCIM Connector](~/identity/saas-apps/palo-alto-networks-scim-connector-provisioning-tutorial.md) | ● | ● |
@@ -356,6 +371,7 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [SpaceIQ](~/identity/saas-apps/spaceiq-provisioning-tutorial.md) | ● | ● |
 | [Splashtop](~/identity/saas-apps/splashtop-provisioning-tutorial.md) | ● | ● |
 | [StarLeaf](~/identity/saas-apps/starleaf-provisioning-tutorial.md) | ● |  |
+| [Starmind](~/identity/saas-apps/starmind-provisioning-tutorial.md) | ● | ● |
 | [Storegate](~/identity/saas-apps/storegate-provisioning-tutorial.md) | ● |  |
 | [SurveyMonkey Enterprise](~/identity/saas-apps/surveymonkey-enterprise-provisioning-tutorial.md) | ● | ● |
 | [Swit](~/identity/saas-apps/swit-provisioning-tutorial.md) | ● | ● |
