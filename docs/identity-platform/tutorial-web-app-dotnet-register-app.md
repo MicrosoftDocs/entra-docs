@@ -4,7 +4,7 @@ description: In this tutorial, you learn how to register a web application with 
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.date: 01/02/2023
+ms.date: 01/18/2024
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: tutorial
