@@ -25,7 +25,7 @@ The integration of customer capabilities into Microsoft Entra ID means that your
 
 Microsoft Entra Conditional Access brings signals together, to make decisions, and enforce security policies. Conditional Access policies at their simplest are if-then statements; **if** a user wants to access your application, **then** they must complete an action.
 
-Conditional Access policies are enforced after first-factor authentication is completed. For example: If a user's sign-in risk level is high, then they must perform multifactor authentication to gain access. Or most restrictive approach, block access to the application.
+Conditional Access policies are enforced after the user has completed first-factor authentication. For example, if a user's sign-in risk level is high, they must perform multifactor authentication to gain access. Alternatively, the most restrictive approach is to block access to the application.
 
 > [!TIP]
 > [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=CA)
