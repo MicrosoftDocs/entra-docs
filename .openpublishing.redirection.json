@@ -109,7 +109,12 @@
       "source_path_from_root": "/docs/identity-platform/test-throttle-service-limits.md",
       "redirect_url": "/entra/identity-platform/test-setup-environment",
       "redirect_document_id": false
-    }
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/quickstart-web-app-aspnet-core-sign-in.md",
+      "redirect_url": "/entra/identity-platform/quickstart-web-app-dotnet-core-sign-in",
+      "redirect_document_id": false
+    },
 
   ]
 }
