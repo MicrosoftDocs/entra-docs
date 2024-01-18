@@ -337,9 +337,9 @@ items:
     - name: Group and application roles support
       href: reference-group-app-roles-support.md
     - name: Company branding CSS template reference guide
-      href: /azure/active-directory/fundamentals/reference-company-branding-css-template
+      href: /entra/fundamentals/reference-company-branding-css-template
     - name: Help and support options
-      href: ~/identity-platform/developer-support-help-options.md?context=/azure/active-directory/external-identities/customers/context/customers-context
+      href: ~/identity-platform/developer-support-help-options.md?context=/entra/external-id/customers/context/customers-context
     - name: MSAL references 
       items:
         - name: MSAL.NET
