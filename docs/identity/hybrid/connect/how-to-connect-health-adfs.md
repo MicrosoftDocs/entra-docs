@@ -61,7 +61,7 @@ During installation and runtime, the agent needs connectivity to Microsoft Entra
 
 Don't disable security monitoring or inspection of these URLs. Instead, allow them as you would allow other internet traffic.
 
-These URLs allow communication with Microsoft Entra Connect Health service endpoints. Later in this article, you'll learn how to [check outbound connectivity](#test-connectivity-to-the-azure-ad-connect-health-service) by using `Test-AzureADConnectHealthConnectivity`.
+These URLs allow communication with Microsoft Entra Connect Health service endpoints. Later in this article, you'll learn how to [check outbound connectivity](#test-connectivity-to-the-microsoft-entra-connect-health-service) by using `Test-AzureADConnectHealthConnectivity`.
 
 | Domain environment | Required Azure service endpoints |
 | --- | --- |
