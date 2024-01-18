@@ -22,6 +22,7 @@ In this tutorial:
 > * Register a web application in a tenant
 > * Record the web application's unique identifiers
 > * Add a platform redirect URI
+
 ## Prerequisites
 
 * An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/).

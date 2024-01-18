@@ -4,7 +4,7 @@ description: Add sign in to an ASP.NET Core application using Visual Studio.
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.date: 01/02/2024
+ms.date: 01/18/2024
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: tutorial

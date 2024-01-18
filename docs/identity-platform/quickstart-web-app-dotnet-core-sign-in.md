@@ -5,7 +5,7 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: "devx-track-csharp,  scenarios:getting-started, languages:aspnet-core"
-ms.date: 12/04/2023
+ms.date: 01/18/2024
 ms.reviewer: jmprieur
 ms.service: active-directory
 ms.subservice: develop
@@ -43,7 +43,7 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 
 * [Download the .zip file](https://github.com/Azure-Samples/ms-identity-docs-code-dotnet/archive/refs/heads/main.zip). Extract it to a file path where the length of the name is fewer than 260 characters.
 
-## Create and upload a self-signed certificate (*optional*)
+## Create and upload a self-signed certificate
 
 1. Using your terminal, use the following commands to navigate to create a self-signed certificate in the project directory.
 
