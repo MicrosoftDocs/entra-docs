@@ -188,7 +188,7 @@
           href: quickstart-web-app-python-sign-in.md
     - name: Tutorials
       items:
-        - name: ASP.NET
+        - name: ASP.NET Core
           items:
           - name: Register your app
             href: tutorial-web-app-dotnet-register-app.md
