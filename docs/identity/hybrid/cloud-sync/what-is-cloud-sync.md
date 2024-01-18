@@ -90,7 +90,7 @@ The following table provides a comparison between Microsoft Entra Connect and Mi
 | Support for US Government|● |● |
 
 > [!NOTE]
-> For information about synchronizing to Microsoft Entra tenants operated by 21 Vianet, the version of Microsoft 365 specific to China, see [Microsoft 365 operated by 21Vianet](/office365/servicedescriptions/office-365-platform-service-description/microsoft-365-operated-by-21vianet) and [Topologies for Microsoft Entra Connect](/connect/plan-connect-topologies.md).
+> For information about synchronizing to Microsoft Entra tenants operated by 21 Vianet, the version of Microsoft 365 specific to China, see [Microsoft 365 operated by 21Vianet](/office365/servicedescriptions/office-365-platform-service-description/microsoft-365-operated-by-21vianet) and [Topologies for Microsoft Entra Connect](~identity/hybrid/connect/plan-connect-topologies.md).
 
 ## Next steps 
 
