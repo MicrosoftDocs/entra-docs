@@ -124,19 +124,19 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
 
 1. In a different web browser window, sign in to your Tonichi Nexta Meishi company site as an administrator.
 
-1. Click on **SSO** and perform the following steps:
+1. Go to **Admin Settings** > **SSO** and perform the following steps:
 
    ![Screenshot shows the Configuration.](./media/tonichi-nexta-meishi-tutorial/settings.png "Configuration")
 
-    a. Copy **Endpoint URL of tnexta.com** value, paste this value into the **Reply URL** text box in the **Basic SAML Configuration** section.
+    a. Copy **Endpoint URL of tnexta.com** value, paste this value into the **Reply URL** text box in the **Basic SAML Configuration** section in Microsoft Entra admin center.
 
-    b. Copy **Entity ID** value, paste this value into the **Identifier (Entity ID)** text box in the **Basic SAML Configuration** section.
+    b. Copy **Entity ID** value, paste this value into the **Identifier (Entity ID)** text box in the **Basic SAML Configuration** section in Microsoft Entra admin center.
 
-    c. In the **SAML 2.0 Endpoint URL** textbox, paste the **Login URL** value which you copied from the Microsoft Entra admin center.
+    c. In the **SAML 2.0 Endpoint URL** textbox, paste the **Login URL** value, which you have copied from the Microsoft Entra admin center.
     
-    d. In the **Identity Provider Issuer** textbox, paste the **Microsoft Entra Identifier** value which you copied from the Microsoft Entra admin center.
+    d. In the **Identity Provider Issuer** textbox, paste the **Microsoft Entra Identifier** value, which you have copied from the Microsoft Entra admin center.
 
-    e. In the **Idp Single Log Out URL** textbox, paste the **Logout URL** value which you copied from the Microsoft Entra admin center.
+    e. In the **Idp Single Log Out URL** textbox, paste the **Logout URL** value, which you have copied from the Microsoft Entra admin center.
 
     f. Open the downloaded **Certificate (Raw)** into Notepad and paste the content into the **Public Certificate** textbox.
 
@@ -146,11 +146,11 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
 
 1. In a different web browser window, sign into Tonichi Nexta Meishi website as an administrator.
 
-1. Go to **Manage Users** and click **+ ADD USER** 
+1. Go to **Admin Settings** > **Manage Users** and click **+ ADD USER** 
 
    ![Screenshot shows how to add New User.](./media/tonichi-nexta-meishi-tutorial/users.png "New User")
 
-1. In the **ADD SINGLE USER** section perform the following steps:
+1. Perform the following steps in the below page:
 
    ![Screenshot shows a New User section where you enter user information.](./media/tonichi-nexta-meishi-tutorial/profile.png "User Information")
 
@@ -158,7 +158,7 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
 
    1. In the **Email** textbox, enter a valid emailaddress of the user.
 
-   1. Click **SUBMIT**
+   1. Click **SUBMIT**.
 
 ## Test SSO 
 
