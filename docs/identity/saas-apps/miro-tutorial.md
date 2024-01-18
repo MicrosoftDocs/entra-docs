@@ -78,19 +78,34 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. On the **Basic SAML Configuration** section, if you wish to configure the application in **IDP** initiated mode, perform the following step:
 
-    In the **Identifier** text box, type the URL:
-    `https://miro.com/`
+   a. In the **Identifier** text box, type a URL using one of the following pattern:
+
+   |**Identifier**|
+   |--------------|
+   | `https://miro.com/` |
+   | `https://<SUBDOMAIN>.miro.com/<ORG_ID>/<SAMLSETTINGS_ID>` |
+   | `https://miro.com/<ORG_ID>/<SAMLSETTINGS_ID>` |
+   | `https://<domain>.miro.com/<ORG_ID>` |
+
+   b. In the **Reply URL** text box, type a URL using one of the following pattern:
+
+   |**Reply URL**|
+   |-------------|
+   | `https://miro.com/sso/saml` |
+   | `https://<SUBDOMAIN>.miro.com/sso/saml/<ORG_ID>` |
+   | `https://miro.com/sso/saml/<ORG_ID>/<SAMLSETTINGS_ID>` |
+   | `https://<SUBDOMAIN>.miro.com/sso/saml/<ORG_ID>/<SAMLSETTINGS_ID>` |
 
 5. If you wish to configure the application in **SP** initiated mode then in the **Sign-on URL** text box, type the URL:
-    `https://miro.com/sso/login/`
+   `https://miro.com/sso/login/`
 
 1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer. You will need it to configure SSO on the Miro side.
 
-   ![The Certificate download link](common/certificatebase64.png "The Certificate download link")
+   ![Screenshot shows the Certificate download link.](common/certificatebase64.png "The Certificate download link")
 
 1. On the **Set up Miro** section, copy the the Login URL. You will need it to configure SSO on the Miro side.
 
-   ![Copy Login URL](./media/miro-tutorial/login.png "Copy Login URL")
+   ![Screenshot shows to copy Login URL.](./media/miro-tutorial/login.png "Copy Login URL")
 
 <a name='create-an-azure-ad-test-user'></a>
 
