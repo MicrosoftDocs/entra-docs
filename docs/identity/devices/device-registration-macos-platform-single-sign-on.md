@@ -70,27 +70,17 @@ You can register a Mac device with the macOS Platform Single Sign-On (PSSO) usin
 
     :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/psso-register-device-prompt.png" alt-text="Screenshot of the registration window prompting sign in with Microsoft.":::
 
-1. If the certificate is not already paired with the local account, the user will see a prompt to use the smart card. Select **Smart card**.
-1. You're prompted to enter the pin for your smart card. Enter your pin and select **OK**. Upon entering the correct pin, PSSO registration with smart card authentication is complete.
-1. To check that registration has completed successfully, open the **Terminal** app and run the following command:
-
-    ```console
-    app-sso platform -s
-    ```
-
-    >[!NOTE]
-    > On macOS 14 Somona, you can check the PSSO registration status by navigating to **Settings** > **Users and Groups** > **Select user**. To see your device registration status, navigate to **Settings** > **Users and Groups** > **Network account server**. Select **Edit** to see your device status.
-
-1. Check the bottom of the output, and confirm that information similar to the following snippet is shown, which signifies that SSO tokens are retrieved.
-
-    ```console
-    SSO Tokens:
-    Received:
-    YYYY-MM-DD T HH:MM:SS
-    Expiration:
-    YYYY-MM-DD T HH:MM:SS (Not Expired)
-    ```
-
+1. When prompted to **Choose a way to sign in**, select **Use a certificate or smart card**. Select the certificate to use and select **Choose**.
+1. Enter the smart card pin in the **Company Portal** window and select **OK**. 
+1. You're prompted to **Set up {Company} access**. The placeholder "Company" is different depending on your setup. Select **Begin**, then on the next screen, select **Continue**.
+1. You're presented with steps to install the management profile, which should be set up by an administrator using Microsoft Intune. Select **Download profile**.
+1. Open **Settings** > **Privacy & Security** > **Profiles** if it doesn't automatically appear. Select **Management Profile**, then select **Install** to get access to company resources.
+1. Enter your local device password in the **Profiles** window that appears and select **Enroll**.
+1. A **Registration Required** notification appears in the top right of the screen. Hover over the notification and select **Register**.
+1. Enter the smart card pin in the **Platform SSO** window and select **OK**. Repeat this step if prompted to enter the smart card pin again.
+1. To check that registration has completed successfully, navigate to **Settings** and select **Users & Groups**. 
+1. Select **Edit** next to **Network Account Server** and check that **Platform SSO** is listed as **Registered**.
+1. To verify that the smart card is the method used for authentication, navigate to your username in the **Users & Groups** window and select the **Information** icon. **SmartCard** should be listed as the method.
 1. Now that the Mac is correctly set up, you can now use PSSO to access Microsoft app resources, and unlock the device with the smart card pin. You'll need to use the local password to log in after a reboot to unlock the keychain access.
 
 ### [Password](#tab/password)
