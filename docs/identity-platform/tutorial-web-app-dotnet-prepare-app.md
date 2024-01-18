@@ -145,7 +145,7 @@ The values recorded earlier will be used in *appsettings.json* to configure the 
 
 ## Add a platform redirect URI
 
-1. In the Azure portal, under **Manage**, select **App registrations**, and then select the application that was previously created.
+1. In the Microsoft Entra admin center, under **Manage**, select **App registrations**, and then select the application that was previously created.
 1. In the left menu, under **Manage**, select **Authentication**.
 1. In **Platform configurations**, select **Add a platform**, and then select **Web**.
 
