@@ -24,7 +24,7 @@ In this tutorial:
 
 ## Prerequisites
 
-* Completion of the prerequisites and steps in [Tutorial: Add sign in to an application](tutorial-web-app-dotnet-core-sign-in-users.md).
+* Completion of the prerequisites and steps in [Tutorial: Add sign in to an application](tutorial-web-app-dotnet-sign-in-users.md).
 
 ## Call the API and display the results
 
