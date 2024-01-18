@@ -13,7 +13,7 @@ ms.topic: tutorial
 
 # Tutorial: Prepare an application for authentication
 
-After registration is complete, an ASP.NET web application can be created using an integrated development environment (IDE). This tutorial demonstrates how to create an **ASP.NET Core Web App** using an IDE. You'll also create and upload a self-signed certificate to the Azure portal and configure the application for authentication.
+After registration is complete, an ASP.NET Core web application can be created using an integrated development environment (IDE). This tutorial demonstrates how to create an **ASP.NET Core Web App** using an IDE. You'll also create and upload a self-signed certificate to the Azure portal and configure the application for authentication.
 
 In this tutorial:
 
@@ -105,6 +105,9 @@ The use of certificates is a suggested way of securing communication between cli
     dotnet dev-certs https -ep ./certificate.crt --trust
     ```
 
+>[!NOTE]
+> Visual Studio for Mac is scheduled for retirement by August 31, 2024 in accordance with Microsoft’s [Modern Lifecycle Policy](/lifecycle/policies/modern). Visual Studio for Mac 17.6 will continue to be supported until August 31, 2024, with servicing updates for security issues and updated platforms from Apple.
+> Refer to [What's happening to Visual Studio for Mac](/visualstudio/mac/what-happened-to-vs-for-mac) for more information.
 ---
 
 ### Upload certificate to the portal

@@ -13,7 +13,7 @@ ms.topic: tutorial
 
 # Tutorial: Register an application with the Microsoft identity platform
 
-To interact with the Microsoft identity platform, Microsoft Entra ID must be made aware of the application you create. This tutorial shows you how to register an application in a tenant on the Microsoft Entra admin center.
+To interact with the Microsoft identity platform, Microsoft Entra ID must be made aware of the application you create. This tutorial shows you how to register a web application in a tenant on the Microsoft Entra admin center.
 
 In this tutorial:
 
