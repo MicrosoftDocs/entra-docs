@@ -126,11 +126,11 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
 
 ## Configure Ocurus SSO
 
-To configure single sign-on on **Ocurus** side, you need to send the **App Federation Metadata Url** to [Ocurus support team](mailto:Mesa_Santiago@solarturbines.com). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **Ocurus** side, you need to send the **App Federation Metadata Url** to [Ocurus support team](mailto:support@ocurus.com). They set this setting to have the SAML SSO connection set properly on both sides.
 
 ### Create Ocurus test user
 
-In this section, you create a user called B.Simon in Ocurus. Work with [Ocurus support team](mailto:Mesa_Santiago@solarturbines.com) to add the users in the Ocurus platform. Users must be created and activated before you use single sign-on.
+In this section, you create a user called B.Simon in Ocurus. Work with [Ocurus support team](mailto:support@ocurus.com) to add the users in the Ocurus platform. Users must be created and activated before you use single sign-on.
 
 ## Test SSO 
 
