@@ -80,7 +80,7 @@ This list covers errors that your end users might encounter when they try to acc
 ## See also
 * [Enable Application Proxy for Microsoft Entra ID](application-proxy-add-on-premises-application.md)
 * [Publish applications with Application Proxy](application-proxy-add-on-premises-application.md)
-* [Enable single sign-on](application-proxy-configure-single-sign-on-with-kcd.md)
+* [Enable single sign-on](how-to-configure-sso-with-kcd.md)
 * [Enable Conditional Access](./application-proxy-integrate-with-sharepoint-server.md)
 
 

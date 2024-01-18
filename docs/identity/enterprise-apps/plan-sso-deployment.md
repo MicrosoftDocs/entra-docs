@@ -107,7 +107,7 @@ The following SSO protocols are available to use:
 
 - **Disabled** - Choose disabled SSO when the application isn't ready to be configured for SSO.
 
-- **Integrated Windows Authentication (IWA)** - Choose IWA single sign-on for applications that use IWA, or for claims-aware applications. For more information, see [Kerberos Constrained Delegation for single sign-on to your applications with Application Proxy](~/identity/app-proxy/application-proxy-configure-single-sign-on-with-kcd.md).
+- **Integrated Windows Authentication (IWA)** - Choose IWA single sign-on for applications that use IWA, or for claims-aware applications. For more information, see [Kerberos Constrained Delegation for single sign-on to your applications with Application Proxy](~/identity/app-proxy/how-to-configure-sso-with-kcd.md).
 
 - **Header-based** - Choose header-based single sign-on when the application uses headers for authentication. For more information, see [Header-based SSO](~/identity/app-proxy/application-proxy-configure-single-sign-on-with-headers.md).
 
