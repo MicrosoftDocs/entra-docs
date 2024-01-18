@@ -88,6 +88,10 @@ To download and install the Microsoft Entra Connect Health agent:
 > Your AD FS server should be separate from your sync server. Don't install the AD FS agent on your sync server.
 >
 
+> [!NOTE]
+> The health agent for sync is installed as part of the Microsoft Entra Connect installation (version 1.0.9125.0 or later).  If you attempt to install an earlier version of the health agent for AD FS on the Microsoft Entra Connect server, you will get an error.  If you need to install the health agent for AD FS on the machine, you should [download the latest version](https://go.microsoft.com/fwlink/?LinkID=518973) and then uninstall the version that was installed during the Microsoft Entra Connect installation.
+
+
 Before you install the agent, make sure your AD FS server host name is unique and isn't present in the AD FS service.
 
 To start the agent installation, double-click the *.exe* file you downloaded. In the first dialog, select **Install**.
