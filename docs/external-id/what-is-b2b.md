@@ -5,7 +5,7 @@ description: Microsoft Entra B2B collaboration supports guest user access so you
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: overview
-ms.date: 18/01/2024
+ms.date: 01/18/2024
 ms.author: cmulligan
 author: csmulligan
 manager: celestedg
