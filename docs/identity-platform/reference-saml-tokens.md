@@ -10,7 +10,7 @@ ms.reviewer: alamaral
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: reference
-#Customer intent:
+#Customer intent: As a developer integrating with the Microsoft identity platform, I want to understand the format and contents of SAML tokens, so that I can properly handle and validate them in my application.
 ---
 
 # SAML token claims reference

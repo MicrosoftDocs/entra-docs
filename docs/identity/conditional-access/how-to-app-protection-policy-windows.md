@@ -5,7 +5,7 @@ description: Create a Conditional Access policy to require app protection policy
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 11/01/2023
+ms.date: 12/12/2023
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -20,8 +20,7 @@ App protection policies apply [mobile application management (MAM)](/mem/intune/
 
 ## Prerequisites
 
-- [Windows 11 Version 22H2 (OS build 22621)](/windows/release-health/windows11-release-information#windows-11-current-versions) with KB 5031455.
-- Windows 10 Version 2004 (OS build 19045) with KB 5031445.
+- We support applying policy to the Microsoft Edge browser on devices running Windows 11 and Windows 10 version 20H2 and higher with KB5031445.
 - [Configured app protection policy targeting Windows devices](/mem/intune/apps/app-protection-policy-settings-windows).
 - Currently unsupported in sovereign clouds.
 
@@ -76,10 +75,10 @@ Clicking on **Switch Edge profile** opens a window listing their Work or school 
 
    ![Screenshot showing the popup in Microsoft Edge asking user to sign in.](./media/how-to-app-protection-policy-windows/browser-sign-in-continue-with-work-or-school-account.png)
 
-This process opens a window offering to allow Windows to remember your account and automatically sign you in to your apps and websites. 
+This process opens a window offering to allow Windows to remember your account and automatically sign you in to your apps and websites.
 
 > [!CAUTION]
-> You must *CLEAR THE CHECKBOX* **Allow my organization to manage my device**. Leaving this checked enrolls your device in mobile device management (MDM) not mobile application management (MAM). 
+> You must *CLEAR THE CHECKBOX* **Allow my organization to manage my device**. Leaving this checked enrolls your device in mobile device management (MDM) not mobile application management (MAM).
 >
 > Don't select **No, sign in to this app only**.
 

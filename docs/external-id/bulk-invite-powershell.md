@@ -15,7 +15,7 @@ manager: CelesteDG
 ms.custom: has-azure-ad-ps-ref
 
 ms.collection: M365-identity-device-management
-# Customer intent: As a tenant administrator, I want to send B2B invitations to multiple external users at the same time so that I can avoid having to send individual invitations to each user.
+# Customer intent: As an IT admin managing external partners in Microsoft Entra B2B collaboration, I want to use PowerShell to send bulk invitations to guest users, so that I can efficiently add multiple users to my organization and streamline the onboarding process.
 ---
 
 # Tutorial: Use PowerShell to bulk invite Microsoft Entra B2B collaboration users

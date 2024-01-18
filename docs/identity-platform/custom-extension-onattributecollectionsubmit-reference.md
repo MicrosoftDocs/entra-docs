@@ -4,7 +4,7 @@ description: Reference documentation for a custom authentication extension that 
 author: msmimart
 manager: CelesteDG
 ms.author: mimart 
-ms.date: 10/27/2023
+ms.date: 01/11/2024
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: reference
@@ -24,6 +24,11 @@ To modify the sign-up experience for your customer self-service sign-up user flo
 
 This article describes the REST API schema for the OnAttributeCollectionSubmit event. (See also the related article [Custom Extension for OnAttributeCollectionStart event](custom-extension-OnAttributeCollectionStart-reference.md).)
 
+> [!TIP]
+> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=PostAttributeCollection)
+> 
+> To try out this feature, go to the Woodgrove Groceries demo and start the “[Validate sign-up attributes](https://woodgrovedemo.com/#usecase=PostAttributeCollection)” use case, or the “[Block a user from continuing the sign-up process](https://woodgrovedemo.com/#usecase=BlockSignUp)” use case.
+    
 ## REST API schema
 
 To develop your own REST API for the attribute collection submit event, use the following REST API data contract. The schema describes the contract to design the request and response handler.

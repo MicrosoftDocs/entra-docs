@@ -10,7 +10,7 @@ author: barclayn
 ms.author: barclayn
 manager: amycolannino
 ms.reviewer: krbain
-ms.date: 08/31/2023
+ms.date: 11/21/2023
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.collection: M365-identity-device-management
 ---
@@ -104,6 +104,9 @@ As an administrator in Microsoft Entra ID, open PowerShell, run `Connect-MgGraph
 >[!NOTE]
 > For information on specific roles that can perform these steps review [Microsoft Entra built-in roles](~/identity/role-based-access-control/permissions-reference.md)
 
+
+[!INCLUDE [Azure AD PowerShell migration](../../includes/aad-powershell-migration-include.md)]
+
 ## When access is revoked
 
 Once admins have taken the above steps, the user can't gain new tokens for any application tied to Microsoft Entra ID. The elapsed time between revocation and the user losing their access depends on how the application is granting access:
@@ -128,7 +131,7 @@ Once admins have taken the above steps, the user can't gain new tokens for any a
 
 - Use [Microsoft Defender for Cloud Apps to block data download](/defender-cloud-apps/use-case-proxy-block-session-aad) when appropriate. If the data can only be accessed online, organizations can monitor sessions and achieve real-time policy enforcement.
 
-- Enable [Continuous Access Evaluation (CAE) in Microsoft Entra ID](~/identity/conditional-access/concept-continuous-access-evaluation.md). CAE allows admins to revoke the session tokens and access tokens for applications that are CAE capable.  
+- Use [Continuous Access Evaluation (CAE) in Microsoft Entra ID](~/identity/conditional-access/concept-continuous-access-evaluation.md). CAE allows admins to revoke the session tokens and access tokens for applications that are CAE capable.  
 
 ## Next steps
 

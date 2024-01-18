@@ -1,27 +1,24 @@
 ---
 title: Windows roaming settings reference
-description: Settings that will be roamed or backed up in Windows with ESR
+description: Settings that can roam or backed up in Windows with ESR
 
-services: active-directory
 ms.service: active-directory
 ms.subservice: devices
 ms.topic: reference
-ms.date: 03/01/2022
+ms.date: 01/04/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: guovivian
-
-ms.collection: M365-identity-device-management
 ---
 # Windows roaming settings reference
 
-The following is a list of the settings that will be roamed or backed up in Windows 10 or newer. 
+The following lists the settings that can roam or be backed up in Windows 10 or newer.
 
 ## Windows Settings details
 
-List of settings that can be configured to sync in recent Windows versions. 
+List of settings that can be configured to sync in recent Windows versions.
 
 | Settings | Windows 10 (21H1 or newer) |
 | --- | --- |
@@ -42,13 +39,9 @@ Control over these settings can be found in Windows 10 under **Settings** > **Ac
 
 For more information on the Sync behavior for the new Microsoft Edge, see the article [Microsoft Edge Sync](/deployedge/microsoft-edge-enterprise-sync).
 
-Microsoft Edge browser setting group (favorites, reading list) syncing can be enabled or disabled by end users through Microsoft Edge browser Settings menu option.
+Microsoft Edge browser setting group (favorites, reading list) syncing is managed through the Microsoft Edge browser Settings menu option.
 
 ![Account](./media/enterprise-state-roaming-windows-settings-reference/entra-enterprise-state-roaming-edge.png)
-
-For Windows 10 version 1803 or later, Internet Explorer setting group (favorites, typed URLs) syncing can be enabled or disabled by end users through Internet Explorer Settings menu option. 
-
-![Settings](./media/enterprise-state-roaming-windows-settings-reference/entra-enterprise-state-roaming-ie.png)
 
 ## Next steps
 

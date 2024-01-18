@@ -1,26 +1,23 @@
 ---
 title: Simulating risk detections in Microsoft Entra ID Protection
-description: Learn how to simulate risk detections in Identity Protection
+description: Learn how to simulate risk detections in ID Protection
 
-services: active-directory
 ms.service: active-directory
 ms.subservice: identity-protection
 ms.topic: how-to
-ms.date: 08/22/2022
+ms.date: 01/16/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: chuqiaoshi
-
-ms.collection: M365-identity-device-management
 ---
-# Simulating risk detections in Identity Protection
+# Simulating risk detections in Microsoft Entra ID Protection
 
-Administrators may want to simulate risk in their environment in order to accomplish the following items:
+Administrators might want to simulate risk in their environment in order to accomplish the following items:
 
-- Populate data in the Identity Protection environment by simulating risk detections and vulnerabilities.
-- Set up risk-based Conditional Access policies and test the impact of these policies.
+- Populate data in the Microsoft Entra ID Protection environment by simulating risk detections and vulnerabilities.
+- Set up risk-based Conditional Access policies and test the effect of these policies.
 
 This article provides you with steps for simulating the following risk detection types:
 
@@ -49,9 +46,9 @@ The sign-in shows up on the Identity Protection dashboard within 10 - 15 minutes
 
 ## Unfamiliar sign-in properties
 
-To simulate unfamiliar locations, you have to sign in from a location and device your test account hasn't signed in from before.
+To simulate unfamiliar locations, you must use a location and device your test account hasn't used before.
 
-The procedure below uses a newly created:
+The following procedure uses a newly created:
 
 - VPN connection, to simulate new location.
 - Virtual machine, to simulate a new device.
@@ -59,7 +56,7 @@ The procedure below uses a newly created:
 Completing the following procedure requires you to use a user account that has:
 
 - At least a 30-day sign-in history.
-- Microsoft Entra multifactor authentication enabled.
+- Microsoft Entra multifactor authentication.
 
 **To simulate a sign-in from an unfamiliar location, perform the following steps**:
 
@@ -70,7 +67,7 @@ The sign-in shows up on the Identity Protection dashboard within 10 - 15 minutes
 
 ## Atypical travel
 
-Simulating the atypical travel condition is difficult because the algorithm uses machine learning to weed out false-positives such as atypical travel from familiar devices, or sign-ins from VPNs that are used by other users in the directory. Additionally, the algorithm requires a sign-in history of 14 days or 10 logins of the user before it begins generating risk detections. Because of the complex machine learning models and above rules, there's a chance that the following steps won't lead to a risk detection. You might want to replicate these steps for multiple Microsoft Entra accounts to simulate this detection.
+Simulating the atypical travel condition is difficult. The algorithm uses machine learning to weed out false-positives such as atypical travel from familiar devices, or sign-ins from VPNs that are used by other users in the directory. Additionally, the algorithm requires a sign-in history of 14 days or 10 logins of the user before it begins generating risk detections. Because of the complex machine learning models and above rules, there's a chance that the following steps won't trigger a risk detection. You might want to replicate these steps for multiple Microsoft Entra accounts to simulate this detection.
 
 **To simulate an atypical travel risk detection, perform the following steps**:
 
@@ -84,7 +81,7 @@ The sign-in shows up in the Identity Protection dashboard within 2-4 hours.
 
 ## Leaked Credentials for Workload Identities
 
-This risk detection indicates that the application's valid credentials have been leaked. This leak can occur when someone checks in the credentials in a public code artifact on GitHub. Therefore, to simulate this detection, you need a GitHub account and can [sign up a GitHub account](https://docs.github.com/get-started/signing-up-for-github) if you don't have one already.
+This risk detection indicates that the application's valid credentials are leaked. This leak can occur when someone checks in the credentials in a public code artifact on GitHub. Therefore, to simulate this detection, you need a GitHub account and can [sign up a GitHub account](https://docs.github.com/get-started/signing-up-for-github) if you don't have one already.
 
 ### Simulate Leaked Credentials in GitHub for Workload Identities
 
@@ -105,7 +102,7 @@ This risk detection indicates that the application's valid credentials have been
      "AadTenantDomain": "XXXX.onmicrosoft.com",
      "AadTenantId": "99d4947b-XXX-XXXX-9ace-abceab54bcd4",
    ```
-1. In about 8 hours, you'll be able to view a leaked credential detection under **Protection** > **Identity Protection** > **Risk Detection** > **Workload identity detections** where the additional info will contain the URL of your GitHub commit.
+1. In about 8 hours, you're able to view a leaked credential detection under **Protection** > **Identity Protection** > **Risk Detection** > **Workload identity detections** where other info contains the URL of your GitHub commit.
 
 ## Testing risk policies
 

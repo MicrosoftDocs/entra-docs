@@ -12,6 +12,8 @@ ms.date: 09/05/2023
 ms.author: jomondi
 ms.reviewer: lenalepa
 ms.custom: enterprise-apps
+
+#customer intent: As an IT admin troubleshooting application sign-in issues, I want to check a user's account status, reset their password, enable self-service password reset, and verify their authentication contact info, so that I can resolve any problems with their account settings and ensure they can access My Apps.
 ---
 
 # Troubleshoot application sign-in

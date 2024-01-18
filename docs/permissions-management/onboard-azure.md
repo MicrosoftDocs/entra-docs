@@ -8,7 +8,7 @@ ms.service: active-directory
 ms.subservice: ciem
 ms.workload: identity
 ms.topic: how-to
-ms.date: 09/15/2023
+ms.date: 12/20/2023
 ms.author: jfields
 ---
 
@@ -132,8 +132,7 @@ To view status of onboarding after saving the configuration:
 
     The **Status** column in the table displays **Collecting Data.**
 
-    The data collection process will take some time, depending on the size of the account and how much data is available for collection.
-
+    The data collection process takes some time and occurs in approximately 4-5 hour intervals in most cases. The time frame depends on the size of the authorization system you have and how much data is available for collection.
 
 ## Next steps
 

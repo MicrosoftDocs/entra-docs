@@ -13,7 +13,7 @@ ms.author: jomondi
 ms.reviewer: ergreenl
 ms.collection: M365-identity-device-management
 ms.custom: enterprise-apps
-#customer intent: As an admin, I want to configure the admin consent workflow.
+#customer intent: As an admin, I want to configure the admin consent workflow, so that users can request access to applications that require admin consent and I can review and approve those requests.
 ---
 
 # Configure the admin consent workflow

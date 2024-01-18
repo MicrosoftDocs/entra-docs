@@ -2,10 +2,8 @@
 title: Tutorial`:`Use a managed identity to access Azure Cosmos DB - Linux
 description: A tutorial that walks you through the process of using a Linux VM system-assigned managed identity to access Azure Cosmos DB.
 services: active-directory
-documentationcenter: 
 author: barclayn
 manager: amycolannino
-editor: 
 
 ms.service: active-directory
 ms.subservice: msi

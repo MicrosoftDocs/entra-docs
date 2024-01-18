@@ -84,7 +84,7 @@ Use the following instructions to learn how to enhance monitoring of inactive gu
    |Property | Value |
    |:------------|:-------------|
    | **First stage review** |     |
-   | (Preview) Multi-stage review| Check the box|
+   | Multi-stage review| Check the box|
    |Select reviewers | **Users review their own access**|
    | Stage duration (in days) | Enter the number of days |
    |**Second stage review** |            |

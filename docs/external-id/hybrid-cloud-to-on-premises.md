@@ -14,7 +14,7 @@ manager: celestedg
 
 ms.collection: M365-identity-device-management
 
-# Customer intent: As a tenant administrator, I want to enable B2B user access to on-premises apps. 
+# Customer intent: As an organization using Microsoft Entra B2B collaboration, I want to grant B2B users access to our on-premises applications, so that they can authenticate and access these apps using SAML-based authentication or integrated Windows authentication with Kerberos constrained delegation.
 ---
 
 # Grant Microsoft Entra B2B users access to your on-premises applications
