@@ -122,7 +122,7 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
 
 ## Configure Tonichi Nexta Meishi SSO
 
-1. In a different web browser window, sign in to your Tonichi Nexta Meishi company site as an administrator.
+1. Log in to Tonichi Nexta Meishi company site as an administrator.
 
 1. Go to **Admin Settings** > **SSO** and perform the following steps:
 
