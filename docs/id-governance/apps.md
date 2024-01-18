@@ -186,7 +186,7 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [CheckProof](~/identity/saas-apps/checkproof-provisioning-tutorial.md) | ● | ● |
 | [Cheetah For Benelux](~/identity/saas-apps/cheetah-for-benelux-tutorial.md) |  | ● |
 | [Chengliye Smart SMS Platform](~/identity/saas-apps/chengliye-smart-sms-platform-tutorial.md) |  | ● |
-| [ChronicXÂ®](~/identity/saas-apps/chronicx-tutorial.md) |  | ● |
+| [ChronicX®](~/identity/saas-apps/chronicx-tutorial.md) |  | ● |
 | [Chronus SAML](~/identity/saas-apps/chronus-saml-tutorial.md) |  | ● |
 | [Cinode](~/identity/saas-apps/cinode-provisioning-tutorial.md) | ● |  |
 | [Cisco AnyConnect](~/identity/saas-apps/cisco-anyconnect.md) |  | ● |
