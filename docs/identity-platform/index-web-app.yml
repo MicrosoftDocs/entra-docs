@@ -23,7 +23,7 @@ landingContent:
           - text: ASP.NET
             url: quickstart-web-app-aspnet-sign-in.md
           - text: ASP.NET Core
-            url: quickstart-web-app-aspnet-core-sign-in.md
+            url: quickstart-web-app-dotnet-core-sign-in.md
           - text: Java
             url: quickstart-web-app-java-sign-in.md
           - text: Node.js with MSAL

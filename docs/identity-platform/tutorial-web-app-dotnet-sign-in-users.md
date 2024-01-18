@@ -4,7 +4,7 @@ description: Add sign in to an ASP.NET Core application using Visual Studio.
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.date: 01/02/2024
+ms.date: 01/18/2024
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: tutorial
@@ -13,7 +13,7 @@ ms.topic: tutorial
 
 # Tutorial: Add sign in to an application
 
-In the [previous tutorial](tutorial-web-app-dotnet-prepare-app.md), an ASP.NET Core project was created and configured for authentication. This tutorial will install the required packages and add code that implements authentication to the sign in and sign out experience.
+In the [previous tutorial](tutorial-web-app-dotnet-prepare-app.md), an ASP.NET Core project was created and configured for authentication. This tutorial will install the required packages and add code that implements authentication to the sign-in and sign-out experience.
 
 In this tutorial:
 
@@ -44,6 +44,7 @@ Identity related **NuGet packages** must be installed in the project for authent
     ```powershell
     dotnet add package Microsoft.Identity.Web.UI
     dotnet add package Microsoft.Identity.Web.Diagnostics
+    dotnet add package Microsoft.Identity.Web.DownstreamApi 
     ```
 
 ### [Visual Studio for Mac](#tab/visual-studio-for-mac)
@@ -68,7 +69,7 @@ Identity related **NuGet packages** must be installed in the project for authent
 
 ## Add the sign in and sign out experience
 
-After installing the NuGet packages and adding necessary code for authentication, add the sign in and sign out experiences.
+After installing the NuGet packages and adding necessary code for authentication, add the sign-in and sign-out experiences.
 
 ### Create the *_LoginPartial.cshtml* file
 
