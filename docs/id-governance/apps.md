@@ -43,7 +43,7 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | Application | Automated provisioning | Single Sign On (SSO)|
 | :--- | :-:  | :-: |
 | [15five](~/identity/saas-apps/15five-provisioning-tutorial.md) | ● | ● |
-| 389 directory server ([LDAP connector](~/identity/app-provisioning/on-premises-ldap-connector-configure.md) ) | ● |  |
+| [389 directory server (LDAP connector)](~/identity/app-provisioning/on-premises-ldap-connector-configure.md) | ● |  |
 | [4me](~/identity/saas-apps/4me-provisioning-tutorial.md) | ● | ●| 
 | [8x8](~/identity/saas-apps/8x8-provisioning-tutorial.md) | ● | ● |
 | [Acunetix 360](~/identity/saas-apps/acunetix-360-provisioning-tutorial.md) | ● | ● |
@@ -66,7 +66,7 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Alvao](~/identity/saas-apps/alvao-provisioning-tutorial.md) | ● |  |
 | [Amazon Business](~/identity/saas-apps/amazon-business-provisioning-tutorial.md) | ● | ● |
 | [Amazon Web Services (AWS) - Role Provisioning](~/identity/saas-apps/amazon-web-service-tutorial.md) | ● | ● |
-| Apache Directory Server ([LDAP connector](~/identity/app-provisioning/on-premises-ldap-connector-configure.md) ) | ● |  |
+| [Apache Directory Server (LDAP connector)](~/identity/app-provisioning/on-premises-ldap-connector-configure.md) | ● |  |
 | [Appaegis Isolation Access Cloud](~/identity/saas-apps/appaegis-isolation-access-cloud-provisioning-tutorial.md) | ● | ● |
 | [Apple Business Manager](~/identity/saas-apps/apple-business-manager-provision-tutorial.md) | ● |  |
 | [Apple School Manager](~/identity/saas-apps/apple-school-manager-provision-tutorial.md) | ● |  |
@@ -201,8 +201,8 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Hoxhunt](~/identity/saas-apps/hoxhunt-provisioning-tutorial.md) | ● | ● |
 | [Humbol](~/identity/saas-apps/humbol-provisioning-tutorial.md) | ● |  |
 | [Hypervault](~/identity/saas-apps/hypervault-provisioning-tutorial.md) | ● |  |
-| IBM DB2 ([SQL connector](~/identity/app-provisioning/tutorial-ecma-sql-connector.md) ) | ● |  |
-| IBM Tivoli Directory Server ([LDAP connector](~/identity/app-provisioning/on-premises-ldap-connector-configure.md) ) | ● |  |
+| [IBM DB2 (SQL connector)](~/identity/app-provisioning/tutorial-ecma-sql-connector.md) | ● |  |
+| [IBM Tivoli Directory Server (LDAP connector)](~/identity/app-provisioning/on-premises-ldap-connector-configure.md)  | ● |  |
 | [Ideagen Cloud](~/identity/saas-apps/ideagen-cloud-provisioning-tutorial.md) | ● |  |
 | [Ideo](~/identity/saas-apps/ideo-provisioning-tutorial.md) | ● | ● |
 | [Infor CloudSuite](~/identity/saas-apps/infor-cloudsuite-provisioning-tutorial.md) | ● | ● |
@@ -214,7 +214,7 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [InviteDesk](~/identity/saas-apps/invitedesk-provisioning-tutorial.md) | ● |  |
 | [iPass SmartConnect](~/identity/saas-apps/ipass-smartconnect-provisioning-tutorial.md) | ● | ● |
 | [Iris Intranet](~/identity/saas-apps/iris-intranet-provisioning-tutorial.md) | ● | ● |
-| Isode directory server ([LDAP connector](~/identity/app-provisioning/on-premises-ldap-connector-configure.md) ) | ● |  |
+| [Isode directory server (LDAP connector)](~/identity/app-provisioning/on-premises-ldap-connector-configure.md) | ● |  |
 | [Jive](~/identity/saas-apps/jive-provisioning-tutorial.md) | ● | ● |
 | [Jostle](~/identity/saas-apps/jostle-provisioning-tutorial.md) | ● | ● |
 | [Joyn FSM](~/identity/saas-apps/joyn-fsm-provisioning-tutorial.md) | ● |  |
@@ -249,15 +249,15 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [MediusFlow](~/identity/saas-apps/mediusflow-provisioning-tutorial.md) | ● |  |
 | [MerchLogix](~/identity/saas-apps/merchlogix-provisioning-tutorial.md) | ● | ● |
 | [Meta Networks Connector](~/identity/saas-apps/meta-networks-connector-provisioning-tutorial.md) | ● | ● |
-| MicroFocus Novell eDirectory ([LDAP connector](~/identity/app-provisioning/on-premises-ldap-connector-configure.md) ) | ● |  |
+| [MicroFocus Novell eDirectory (LDAP connector)](~/identity/app-provisioning/on-premises-ldap-connector-configure.md) | ● |  |
 | Microsoft 365 | ● | ● |
 | Microsoft Active Directory Domain Services | | ● |
 | Microsoft Azure | ● | ● |
-| Microsoft Azure SQL ([SQL connector](~/identity/app-provisioning/tutorial-ecma-sql-connector.md) ) | ● |  |
+| [Microsoft Azure SQL (SQL connector)](~/identity/app-provisioning/tutorial-ecma-sql-connector.md) | ● |  |
 | [Microsoft Entra Domain Services](/entra/identity/domain-services/synchronization) | ● | ● |
-| Microsoft Lightweight Directory Server (ADAM) ([LDAP connector](~/identity/app-provisioning/on-premises-ldap-connector-configure.md) ) | ● |  |
+| [Microsoft Lightweight Directory Server (ADAM) (LDAP connector)](~/identity/app-provisioning/on-premises-ldap-connector-configure.md) | ● |  |
 | Microsoft SharePoint Server (SharePoint) | ● |  |
-| Microsoft SQL Server ([SQL connector](~/identity/app-provisioning/tutorial-ecma-sql-connector.md) ) | ● |  |
+| [Microsoft SQL Server (SQL connector)](~/identity/app-provisioning/tutorial-ecma-sql-connector.md) | ● |  |
 | [Mindtickle](~/identity/saas-apps/mindtickle-provisioning-tutorial.md) | ● | ● |
 | [Miro](~/identity/saas-apps/miro-provisioning-tutorial.md) | ● | ● |
 | [Mixpanel](~/identity/saas-apps/mixpanel-provisioning-tutorial.md) | ● | ● |
@@ -267,27 +267,27 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Mural Identity](~/identity/saas-apps/mural-identity-provisioning-tutorial.md) | ● | ● |
 | [MX3 Diagnostics](~/identity/saas-apps/mx3-diagnostics-connector-provisioning-tutorial.md) | ● |  |
 | [myPolicies](~/identity/saas-apps/mypolicies-provisioning-tutorial.md) | ● | ● |
-| MySQL ([SQL connector](~/identity/app-provisioning/tutorial-ecma-sql-connector.md) ) | ● |  |
-| NetIQ eDirectory ([LDAP connector](~/identity/app-provisioning/on-premises-ldap-connector-configure.md) ) | ● |  |
+| [MySQL (SQL connector)](~/identity/app-provisioning/tutorial-ecma-sql-connector.md) | ● |  |
+| [NetIQ eDirectory (LDAP connector)](~/identity/app-provisioning/on-premises-ldap-connector-configure.md) | ● |  |
 | [Netpresenter Next](~/identity/saas-apps/netpresenter-provisioning-tutorial.md) | ● |  |
 | [Netskope User Authentication](~/identity/saas-apps/netskope-administrator-console-provisioning-tutorial.md) | ● | ● |
 | [Netsparker Enterprise](~/identity/saas-apps/netsparker-enterprise-provisioning-tutorial.md) | ● | ● |
 | [New Relic by Organization](~/identity/saas-apps/new-relic-by-organization-provisioning-tutorial.md) | ● | ● |
 | [NordPass](~/identity/saas-apps/nordpass-provisioning-tutorial.md) | ● | ● |
 | [Notion](~/identity/saas-apps/notion-provisioning-tutorial.md) | ● | ● |
-| Novell eDirectory ([LDAP connector](~/identity/app-provisioning/on-premises-ldap-connector-configure.md) ) | ● |  |
+| [Novell eDirectory (LDAP connector)](~/identity/app-provisioning/on-premises-ldap-connector-configure.md)  | ● |  |
 | [OfficeSpace Software](~/identity/saas-apps/officespace-software-provisioning-tutorial.md) | ● | ● |
 | [Olfeo SAAS](~/identity/saas-apps/olfeo-saas-provisioning-tutorial.md) | ● | ● |
 | [Oneflow](~/identity/saas-apps/oneflow-provisioning-tutorial.md) | ● | ● |
-| Open DJ ([LDAP connector](~/identity/app-provisioning/on-premises-ldap-connector-configure.md) ) | ● |  |
-| Open DS ([LDAP connector](~/identity/app-provisioning/on-premises-ldap-connector-configure.md) ) | ● |  |
+| [Open DJ (LDAP connector)](~/identity/app-provisioning/on-premises-ldap-connector-configure.md)  | ● |  |
+| [Open DS (LDAP connector)](~/identity/app-provisioning/on-premises-ldap-connector-configure.md)  | ● |  |
 | [OpenForms](~/identity/saas-apps/openforms-provisioning-tutorial.md) | ● |  |
 | [OpenLDAP](~/identity/app-provisioning/on-premises-ldap-connector-configure.md) | ● |  |
 | [OpenText Directory Services](~/identity/saas-apps/open-text-directory-services-provisioning-tutorial.md) | ● | ● |
 | [Oracle Access Manager for Oracle E-Business Suite](~/identity/saas-apps/oracle-access-manager-for-oracle-ebs-tutorial.md) |  | ● |
 | [Oracle Access Manager for Oracle Retail Merchandising](~/identity/saas-apps/oracle-access-manager-for-oracle-retail-merchandising-tutorial.md) |  | ● |
 | [Oracle Cloud Infrastructure Console](~/identity/saas-apps/oracle-cloud-infrastructure-console-provisioning-tutorial.md) | ● | ● |
-| Oracle Database ([SQL connector](~/identity/app-provisioning/tutorial-ecma-sql-connector.md) ) | ● |  |
+| [Oracle Database (SQL connector)](~/identity/app-provisioning/tutorial-ecma-sql-connector.md) | ● |  |
 | Oracle E-Business Suite | ● | ● |
 | [Oracle Fusion ERP](~/identity/saas-apps/oracle-fusion-erp-provisioning-tutorial.md) | ● | ● |
 | [Oracle IDCS for E-Business Suite](~/identity/saas-apps/oracle-idcs-for-ebs-tutorial.md) |  | ● |
@@ -295,7 +295,7 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Oracle IDCS for PeopleSoft](~/identity/saas-apps/oracle-idcs-for-peoplesoft-tutorial.md) |  | ● |
 | Oracle Internet Directory | ● |  |
 | Oracle PeopleSoft ERP | ● | ● |
-| Oracle SunONE Directory Server ([LDAP connector](~/identity/app-provisioning/on-premises-ldap-connector-configure.md) ) | ● |  |
+| [Oracle SunONE Directory Server (LDAP connector)](~/identity/app-provisioning/on-premises-ldap-connector-configure.md) | ● |  |
 | [O'Reilly Learning Platform](~/identity/saas-apps/oreilly-learning-platform-provisioning-tutorial.md) | ● | ● |
 | [PagerDuty](~/identity/saas-apps/pagerduty-tutorial.md) |  | ● |
 | [Palo Alto Networks Cloud Identity Engine - Cloud Authentication Service](~/identity/saas-apps/palo-alto-networks-cloud-identity-engine-provisioning-tutorial.md) | ● | ● |
@@ -315,7 +315,7 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Promapp](~/identity/saas-apps/promapp-provisioning-tutorial.md) | ● |  |
 | [Proware](~/identity/saas-apps/proware-provisioning-tutorial.md) | ● | ● |
 | [Proxyclick](~/identity/saas-apps/proxyclick-provisioning-tutorial.md) | ● | ● |
-| RadiantOne Virtual Directory Server (VDS) ([LDAP connector](~/identity/app-provisioning/on-premises-ldap-connector-configure.md) ) | ● |  |
+| [RadiantOne Virtual Directory Server (VDS) (LDAP connector)](~/identity/app-provisioning/on-premises-ldap-connector-configure.md) | ● |  |
 | [Real Links](~/identity/saas-apps/real-links-provisioning-tutorial.md) | ● | ● |
 | [Recnice](~/identity/saas-apps/recnice-provisioning-tutorial.md) | ● |  |
 | [Reward Gateway](~/identity/saas-apps/reward-gateway-provisioning-tutorial.md) | ● | ● |
