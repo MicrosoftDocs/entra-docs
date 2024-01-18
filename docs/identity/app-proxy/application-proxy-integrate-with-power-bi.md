@@ -28,7 +28,7 @@ This article assumes you've already deployed Report Services and [enabled Applic
 
 ## Step 1: Configure Kerberos Constrained Delegation (KCD)
 
-For on-premises applications that use Windows authentication, you can achieve single sign-on (SSO) with the Kerberos authentication protocol and a feature called Kerberos constrained delegation (KCD). When configured, KCD allows the Application Proxy connector to obtain a Windows token for a user, even if the user hasn’t signed into Windows directly. To learn more about KCD, see [Kerberos Constrained Delegation Overview](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj553400(v=ws.11)) and [Kerberos Constrained Delegation for single sign-on to your apps with Application Proxy](application-proxy-configure-single-sign-on-with-kcd.md).
+For on-premises applications that use Windows authentication, you can achieve single sign-on (SSO) with the Kerberos authentication protocol and a feature called Kerberos constrained delegation (KCD). When configured, KCD allows the Application Proxy connector to obtain a Windows token for a user, even if the user hasn’t signed into Windows directly. To learn more about KCD, see [Kerberos Constrained Delegation Overview](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj553400(v=ws.11)) and [Kerberos Constrained Delegation for single sign-on to your apps with Application Proxy](how-to-configure-sso-with-kcd.md).
 
 There isn’t much to configure on the Reporting Services side. Just be sure to have a valid Service Principal Name (SPN) to enable the proper Kerberos authentication to occur. Also make sure the Reporting Services server is enabled for Negotiate authentication.
 
@@ -66,7 +66,7 @@ To configure KCD, repeat the following steps for each connector machine:
 6. Enter the service account that you're using for Reporting Services. This is the account you added the SPN to within the Reporting Services configuration.
 7. Click **OK**. To save the changes, click **OK** again.
 
-For more information, see [Kerberos Constrained Delegation for single sign-on to your apps with Application Proxy](application-proxy-configure-single-sign-on-with-kcd.md).
+For more information, see [Kerberos Constrained Delegation for single sign-on to your apps with Application Proxy](how-to-configure-sso-with-kcd.md).
 
 <a name='step-2-publish-report-services-through-azure-ad-application-proxy'></a>
 
@@ -90,7 +90,7 @@ Now you're ready to configure Microsoft Entra application proxy.
 
    c. Set **Internal Application SPN** to the value that you set earlier.
 
-   d. Choose the **Delegated Login Identity** for the connector to use on behalf of your users. For more information, see [Working with different on-premises and cloud identities](application-proxy-configure-single-sign-on-with-kcd.md#working-with-different-on-premises-and-cloud-identities).
+   d. Choose the **Delegated Login Identity** for the connector to use on behalf of your users. For more information, see [Working with different on-premises and cloud identities](how-to-configure-sso-with-kcd.md#working-with-different-on-premises-and-cloud-identities).
 
    e. Click **Save** to save your changes.
 
