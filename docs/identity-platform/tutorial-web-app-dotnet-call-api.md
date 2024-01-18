@@ -100,7 +100,7 @@ Start the application by selecting the **Play** icon.
 
 ## Next steps
 
-Learn how to use the Microsoft identity platform by trying out the following tutorial series on how to build a web API.
+Learn how to use the Microsoft identity platform by building a web API with the following tutorial series.
 
 > [!div class="nextstepaction"]
 > [Tutorial: Register a web API with the Microsoft identity platform](web-api-tutorial-01-register-app.md)

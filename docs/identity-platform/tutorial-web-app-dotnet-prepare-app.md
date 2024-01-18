@@ -111,7 +111,6 @@ The use of certificates is a suggested way of securing communication between cli
 
 ---
 
-
 ### Upload certificate to the portal
 
 To make the certificate available to the application, it must be uploaded into the tenant.
