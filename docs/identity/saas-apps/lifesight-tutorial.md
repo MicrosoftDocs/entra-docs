@@ -79,7 +79,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 	| Production |`epav2asrsg_saml`|
 	| Staging |`epav2asrsgtest_saml`|
 
-    b. In the **Reply URL** text box, type a URL using the following pattern:
+    b. In the **Reply URL** text box, type one of the following URLs:
     
     | Environment | URL |
     |------------|------------|
@@ -94,8 +94,8 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 	
 	| Name  |  Source Attribute|
 	| ----- | --------- |
-	| clientid | user.givenname |
-	| uid | user.mail |
+	| clientid | To be agreed with WTW/LifeSight team |
+	| uid | To be agreed with WTW/LifeSight team |
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 
