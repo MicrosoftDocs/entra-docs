@@ -34,9 +34,6 @@ In this tutorial, you configure and test Microsoft Entra SSO in a test environme
 * Miro supports **SP and IDP** initiated SSO and supports **Just In Time** user provisioning.
 * Miro supports [**Automated** user provisioning and deprovisioning](miro-provisioning-tutorial.md) (recommended).
 
-> [!NOTE]
-> Identifier of this application is a fixed string value so only one instance can be configured in one tenant.
-
 ## Add Miro from the gallery
 
 To configure the integration of Miro into Microsoft Entra ID, you need to add Miro from the gallery to your list of managed SaaS apps.
@@ -76,18 +73,18 @@ Follow these steps to enable Microsoft Entra SSO.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
-1. On the **Basic SAML Configuration** section, if you wish to configure the application in **IDP** initiated mode, perform the following step:
+1. On the **Basic SAML Configuration** section, perform the following step:
 
-   a. In the **Identifier** text box, type a URL using one of the following patterns:
+   a. In the **Identifier** text box, type one of the following URL/pattern:
 
    |**Identifier**|
    |--------------|
    | `https://miro.com/` |
    | `https://<SUBDOMAIN>.miro.com/<ORG_ID>/<SAMLSETTINGS_ID>` |
    | `https://miro.com/<ORG_ID>/<SAMLSETTINGS_ID>` |
-   | `https://<domain>.miro.com/<ORG_ID>` |
+   | `https://<SUBDOMAIN>.miro.com/<ORG_ID>` |
 
-   b. In the **Reply URL** text box, type a URL using one of the following patterns:
+   b. In the **Reply URL** text box, type one of the following URL/pattern:
 
    |**Reply URL**|
    |-------------|
@@ -96,8 +93,13 @@ Follow these steps to enable Microsoft Entra SSO.
    | `https://miro.com/sso/saml/<ORG_ID>/<SAMLSETTINGS_ID>` |
    | `https://<SUBDOMAIN>.miro.com/sso/saml/<ORG_ID>/<SAMLSETTINGS_ID>` |
 
-5. If you wish to configure the application in **SP** initiated mode then in the **Sign-on URL** text box, type the URL:
+5. Perform the following step, if you wish to configure the application in **SP** initiated mode:
+
+   In the **Sign-on URL** text box, type the URL:
    `https://miro.com/sso/login/`
+
+   > [!NOTE]
+	> These values are not real. Update these values with the actual Identifier and Reply URL. Contact [Miro support team](mailto:support@miro.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
 
 1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer. You will need it to configure SSO on the Miro side.
 
