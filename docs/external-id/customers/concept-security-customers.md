@@ -8,7 +8,7 @@ ms.service: active-directory
  
 ms.subservice: ciam
 ms.topic: conceptual
-ms.date: 04/28/2023
+ms.date: 01/18/2024
 ms.author: mimart
 ms.custom: it-pro
 
