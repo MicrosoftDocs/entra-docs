@@ -38,4 +38,4 @@ In this tutorial:
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Tutorial: Prepare a web application for authentication](tutorial-web-app-dotnet-core-prepare-app.md)
+> [Tutorial: Prepare a web application for authentication](tutorial-web-app-dotnet-prepare-app.md)
