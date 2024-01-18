@@ -78,7 +78,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. On the **Basic SAML Configuration** section, if you wish to configure the application in **IDP** initiated mode, perform the following step:
 
-   a. In the **Identifier** text box, type a URL using one of the following pattern:
+   a. In the **Identifier** text box, type a URL using one of the following patterns:
 
    |**Identifier**|
    |--------------|
@@ -87,7 +87,7 @@ Follow these steps to enable Microsoft Entra SSO.
    | `https://miro.com/<ORG_ID>/<SAMLSETTINGS_ID>` |
    | `https://<domain>.miro.com/<ORG_ID>` |
 
-   b. In the **Reply URL** text box, type a URL using one of the following pattern:
+   b. In the **Reply URL** text box, type a URL using one of the following patterns:
 
    |**Reply URL**|
    |-------------|
@@ -103,7 +103,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
    ![Screenshot shows the Certificate download link.](common/certificatebase64.png "The Certificate download link")
 
-1. On the **Set up Miro** section, copy the the Login URL. You will need it to configure SSO on the Miro side.
+1. On the **Set up Miro** section, copy the Login URL. You will need it to configure SSO on the Miro side.
 
    ![Screenshot shows to copy Login URL.](./media/miro-tutorial/login.png "Copy Login URL")
 
@@ -170,4 +170,4 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * Click on **Test this application**, in Azure portal and choose to log in as B.Simon. You should be automatically signed in to the Miro subscription for which you set up the SSO. 
 
-You can also use Microsoft My Apps to test the application in any mode. When you click the Miro tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Miro for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+You can also use Microsoft My Apps to test the application in any mode. When you click the Miro tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Miro for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
