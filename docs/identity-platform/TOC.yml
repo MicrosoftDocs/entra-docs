@@ -179,7 +179,7 @@
         - name: ASP.NET 
           href: quickstart-web-app-aspnet-sign-in.md
         - name: ASP.NET Core
-          href: quickstart-web-app-aspnet-core-sign-in.md
+          href: quickstart-web-app-dotnet-core-sign-in.md
         - name: Node.js - MSAL
           href: quickstart-web-app-nodejs-msal-sign-in.md
         - name: Java
