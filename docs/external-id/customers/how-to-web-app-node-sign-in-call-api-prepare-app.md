@@ -7,13 +7,14 @@ ms.author: kengaderdus
 ms.service: active-directory 
 ms.subservice: ciam
 ms.topic: how-to
-ms.date: 11/27/2023
+ms.date: 01/27/2024
 ms.custom: developer, devx-track-js
+#Customer intent: As a developer, I want to learn about how to prepare my Node.js web app so that I can call a web API 
 ---
 
 # Prepare app to call an API in a Node.js web application
 
-In this article, you prepare the app project you created in [Tutorial: Prepare your customer tenant to sign in users in a Node.js web app](tutorial-web-app-node-sign-in-prepare-tenant.md). This article is the second part of a four-part guide series.
+In this article, you prepare the app project you created in [Tutorial: Prepare your customer tenant to sign in users in a Node.js web app](tutorial-web-app-node-sign-in-prepare-tenant.md) to call a wen API. This article is the second part of a four-part guide series.
 
 ## Prerequisites
 

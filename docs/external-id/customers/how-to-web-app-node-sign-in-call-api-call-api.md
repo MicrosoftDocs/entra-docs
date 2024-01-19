@@ -8,13 +8,14 @@ ms.author: kengaderdus
 ms.service: active-directory 
 ms.subservice: ciam
 ms.topic: how-to
-ms.date: 11/26/2023
+ms.date: 01/27/2024
 ms.custom: developer, devx-track-js
+#Customer intent: As a developer, I want to learn about how to call a web API that is protected by Microsoft Entra ID for customers by using an access token.
 ---
 
 # Call an API in a Node.js web application
 
-In this article, you learn how to call the ASP.NET API from your Node.js client web app using the access token you acquire in [Acquire access token](how-to-web-app-node-sign-in-call-api-sign-in-acquire-access-token.md#acquire-access-token). This article is the fourth and last part of a four-part guide series.
+In this article, you learn how to call a web API from your Node.js client web app using the access token you acquire in [Acquire access token](how-to-web-app-node-sign-in-call-api-sign-in-acquire-access-token.md#acquire-access-token). This article is the fourth and last part of a four-part guide series.
 
 ## Prerequisite
 
@@ -116,7 +117,7 @@ In this article, you learn how to call the ASP.NET API from your Node.js client 
         };
     ```
 
-    Each of these functions collects all the information required to call an API. It then delegates the work to the `callEndpointWithToken` function and waits for a response. The `callEndpointWithToken` function is defined in the *fetch.js* file. For example, to create a resource in the API, the `postToDo` function passes an endpoint, an access token, an HTTP method and a request body to the `callEndpointWithToken` function and waits for a response. It then redirects the user to the *todo.hbs* view to show all tasks. 
+    Each of these functions collects all the information required to call an API. It then delegates the work to the `callEndpointWithToken` function and waits for a response. The `callEndpointWithToken` function is defined in the *fetch.js* file. For example, to create a resource in the API, the `postToDo` function passes an endpoint, an access token, an HTTP method and a request body to the `callEndpointWithToken` function and waits for a response. It then redirects the user to the *todo.hbs* view to show all tasks.
 
  1. In your code editor, open *fetch.js* file, then add the following code:
  
