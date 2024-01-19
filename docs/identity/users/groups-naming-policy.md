@@ -31,18 +31,18 @@ When a group naming policy is configured, the policy is applied to new Microsoft
 
 You can enforce a naming policy for groups in two different ways:
 
-- **Prefix-suffix naming policy**: You can define prefixes or suffixes that are then added automatically to enforce a naming convention on your groups. For example, in the group name `GRP\_JAPAN\_My Group\_Engineering`, the prefix is `GRP\_JAPAN\_` and the suffix is `\_Engineering`.
+- **Prefix-suffix naming policy**: You can define prefixes or suffixes that are then added automatically to enforce a naming convention on your groups. For example, in the group name `GRP_JAPAN_My Group_Engineering`, the prefix is `GRP_JAPAN_` and the suffix is `_Engineering`.
 - **Custom blocked words**: You can upload a set of blocked words specific to your organization to be blocked in groups created by users. For example, you might use `Payroll,CEO,HR`.
 
 ### Prefix-suffix naming policy
 
-The general structure of the naming convention is `Prefix[GroupName]Suffix`. While you can define multiple prefixes and suffixes, you can have only one instance of the `[GroupName]` in the setting. The prefixes or suffixes can be either fixed strings or user attributes, such as `\[Department\]`, that are substituted based on the user who's creating the group. The total allowable number of characters for your prefix and suffix strings including group name is 63 characters.
+The general structure of the naming convention is `Prefix[GroupName]Suffix`. While you can define multiple prefixes and suffixes, you can have only one instance of the `[GroupName]` in the setting. The prefixes or suffixes can be either fixed strings or user attributes, such as `[Department]`, that are substituted based on the user who's creating the group. The total allowable number of characters for your prefix and suffix strings including group name is 63 characters.
 
 Prefixes and suffixes can contain special characters that are supported in a group name and a group alias. Any characters in the prefix or suffix that aren't supported in the group alias are still applied in the group name but removed from the group alias. Because of this restriction, the prefixes and suffixes applied to the group name might be different from the ones applied to the group alias.
 
 #### Fixed strings
 
-You can use strings to make it easier to scan and differentiate groups in the global address list and in the left navigation links of group workloads. Some of the common prefixes are keywords like `Grp\_Name`, `\#Name`, and `\_Name`.
+You can use strings to make it easier to scan and differentiate groups in the global address list and in the left navigation links of group workloads. Some of the common prefixes are keywords like `Grp_Name`, `#Name`, and `_Name`.
 
 #### User attributes
 
