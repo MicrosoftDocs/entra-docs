@@ -13,9 +13,9 @@ ms.custom: developer, devx-track-js
 #Customer intent: As a developer, I want to learn about how to call a web API that is protected by Microsoft Entra ID for customers by using an access token.
 ---
 
-# Call an API in a Node.js web application
+# Call a web API in a Node.js web application
 
-In this article, you learn how to call a web API from your Node.js client web app using the access token you acquire in [Acquire access token](how-to-web-app-node-sign-in-call-api-sign-in-acquire-access-token.md#acquire-access-token). This article is the fourth and last part of a four-part guide series.
+In this article, you learn how to call a web API from your Node.js client web app using the access token you acquire in [Acquire access token](how-to-web-app-node-sign-in-call-api-sign-in-acquire-access-token.md#acquire-access-token). The web API is protected by Microsoft Entra ID for customers. This article is the fourth and last part of a four-part guide series.
 
 ## Prerequisite
 
@@ -55,7 +55,7 @@ In this article, you learn how to call a web API from your Node.js client web ap
 
     This file contains express routes for create, read and delete resource in the protected API. Each route uses three middleware functions, which execute in that sequence:
 
-    - `isAuthenticated`, checks whether the user is authenticated.
+    - `isAuthenticated` checks whether the user is authenticated.
     
     - `getToken` requests an access token. You defined this function earlier in [Acquire access token](how-to-web-app-node-sign-in-call-api-sign-in-acquire-access-token.md#acquire-access-token). For example, the create resource route (POST request) requests an access token with read and write permissions.
     
@@ -154,7 +154,7 @@ In this article, you learn how to call a web API from your Node.js client web ap
         };
     ```
 
-    This function makes the actual API call. Notice how you include the access token as a the value of bearer token in the HTTP request header:
+    This function makes the actual API call. Notice how you include the access token as the value of bearer token in the HTTP request header:
     
     ```javascript
         //...        

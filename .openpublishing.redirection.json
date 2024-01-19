@@ -74,10 +74,12 @@
       "source_path_from_root": "/docs/identity-platform/msal-v1-app-scopes.md",
       "redirect_url": "/entra/identity-platform/msal-acquire-cache-tokens",
       "redirect_document_id": false
-    }
+    },
     {
       "source_path_from_root": "/docs/external-id/customers/how-to-web-app-node-sign-in-call-api-overview.md",
       "redirect_url": "/entra/external-id/customers/how-to-web-app-node-sign-in-call-api-prepare-tenant",
+      "redirect_document_id": false
+    },
     {
       "source_path_from_root": "/docs/identity/authentication/multi-factor-authentication-wizard.md",
       "redirect_url": "/entra/identity/conditional-access/howto-conditional-access-policy-all-users-mfa",
