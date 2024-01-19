@@ -81,7 +81,7 @@ The following list describes features and services for productivity gains in hyb
   *  See, [Migrate from federation to cloud authentication](~/identity/hybrid/connect/migrate-from-federation-to-cloud-authentication.md)
 * **Microsoft Entra application proxy** - Enable employees to be productive at any place or time, and from a device. Learn about software as a service (SaaS) apps in the cloud and corporate apps on-premises. Microsoft Entra application proxy enables access without virtual private networks (VPNs) or demilitarized zones (DMZs):
   * See, [Remote access to on-premises applications through Microsoft Entra application proxy](~/identity/app-proxy/application-proxy.md)
-  * See, [Plan a Microsoft Entra application proxy deployment](~/identity/app-proxy/application-proxy-deployment-plan.md)
+  * See, [Plan a Microsoft Entra application proxy deployment](~/identity/app-proxy/conceptual-deployment-plan.md)
 * **Seamless single sign-on (Seamless SSO)** - Use Seamless SSO for user sign-in, on corporate devices connected to a corporate network. Users don't need to enter passwords to sign in to Microsoft Entra ID, and usually don't need to enter usernames. Authorized users access cloud-based apps without extra on-premises components:
   * See, [Microsoft Entra SSO: Quickstart](~/identity/hybrid/connect/how-to-connect-sso-quick-start.md) 
   * See, [Microsoft Entra seamless SSO: Technical deep dive](~/identity/hybrid/connect/how-to-connect-sso-how-it-works.md)

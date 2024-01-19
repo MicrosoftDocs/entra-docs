@@ -8,7 +8,7 @@ ms.service: active-directory
 ms.subservice: app-proxy
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 09/14/2023
+ms.date: 01/19/2024
 ms.author: kenwith
 ---
 
