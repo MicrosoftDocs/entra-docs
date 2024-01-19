@@ -35,7 +35,7 @@ Configure the specific type of single sign-on. The sign-on methods are classifie
 
 -   **Password-based sign-on:** Password-based sign-on can be used for any application that uses username and password fields to sign on. Configuration steps are in [Configure password Single sign-on for a Microsoft Entra gallery application](~/identity/enterprise-apps/configure-password-single-sign-on-non-gallery-applications.md).
 
--   **Integrated Windows authentication:** For applications using integrated Windows authentication (IWA), single sign-on is enabled through Kerberos Constrained Delegation (KCD). This method gives Application Proxy Connectors permission in Active Directory to impersonate users, and to send and receive tokens on their behalf. Details on configuring KCD can be found in the [Single Sign-On with KCD documentation](application-proxy-configure-single-sign-on-with-kcd.md).
+-   **Integrated Windows authentication:** For applications using integrated Windows authentication (IWA), single sign-on is enabled through Kerberos Constrained Delegation (KCD). This method gives Application Proxy Connectors permission in Active Directory to impersonate users, and to send and receive tokens on their behalf. Details on configuring KCD can be found in the [Single Sign-On with KCD documentation](how-to-configure-sso-with-kcd.md).
 
 -   **Header-based sign-on:** Header-based sign-on is used to provide single sign-on capabilities using HTTP headers. To learn more, see [Header-based single sign-on](application-proxy-configure-single-sign-on-with-headers.md).
 
@@ -49,6 +49,6 @@ This option allows an admin to create a link to an application that users first 
 
 ## Next steps
 - [Password vaulting for single sign-on with Application Proxy](application-proxy-configure-single-sign-on-password-vaulting.md)
-- [Kerberos Constrained Delegation for single sign-on with Application Proxy](application-proxy-configure-single-sign-on-with-kcd.md)
+- [Kerberos Constrained Delegation for single sign-on with Application Proxy](how-to-configure-sso-with-kcd.md)
 - [Header-based authentication for single sign-on with Application Proxy](application-proxy-configure-single-sign-on-with-headers.md) 
 - [SAML for single sign-on with Application Proxy](application-proxy-configure-single-sign-on-on-premises-apps.md).

@@ -44,7 +44,7 @@ Use KCD when there's a need to provide remote access, protect with pre-authentic
 
 Explore the following resources to learn more about implementing Windows authentication (KCD) with Microsoft Entra ID.
 
-* [Kerberos-based single sign-on (SSO) in Microsoft Entra ID with Application Proxy](~/identity/app-proxy/application-proxy-configure-single-sign-on-with-kcd.md) describes prerequisites and configuration steps.
+* [Kerberos-based single sign-on (SSO) in Microsoft Entra ID with Application Proxy](~/identity/app-proxy/how-to-configure-sso-with-kcd.md) describes prerequisites and configuration steps.
 * The [Tutorial - Add an on-premises app - Application Proxy in Microsoft Entra ID](~/identity/app-proxy/application-proxy-add-on-premises-application.md) helps you to prepare your environment for use with Application Proxy.
 
 ## Next steps

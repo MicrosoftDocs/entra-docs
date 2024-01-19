@@ -86,7 +86,7 @@ Refer to your software vendor's documentation to understand the load-balancing r
 ## Next steps
 
 - [Enable Application Proxy](application-proxy-add-on-premises-application.md)
-- [Enable single-sign on](application-proxy-configure-single-sign-on-with-kcd.md)
+- [Enable single-sign on](how-to-configure-sso-with-kcd.md)
 - [Enable Conditional Access](./application-proxy-integrate-with-sharepoint-server.md)
 - [Troubleshoot issues you're having with Application Proxy](application-proxy-troubleshoot.md)
 - [Learn how Microsoft Entra architecture supports high availability](~/architecture/architecture.md)

@@ -88,7 +88,7 @@ There are several ways to configure an application for single sign-on, and the m
 
 App Proxy works with apps that use the following native authentication protocol:
 
-* [**Integrated Windows authentication (IWA)**](./application-proxy-configure-single-sign-on-with-kcd.md). For IWA, the Application Proxy connectors use Kerberos Constrained Delegation (KCD) to authenticate users to the Kerberos application.
+* [**Integrated Windows authentication (IWA)**](./how-to-configure-sso-with-kcd.md). For IWA, the Application Proxy connectors use Kerberos Constrained Delegation (KCD) to authenticate users to the Kerberos application.
 
 App Proxy also supports the following authentication protocols with third-party integration or in specific configuration scenarios:
 
