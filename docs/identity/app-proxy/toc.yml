@@ -58,7 +58,7 @@ items:
     - name: Single sign-on with on-prem apps
       href: application-proxy-config-sso-how-to.md
     - name: Planning an Application Proxy deployment
-      href: application-proxy-deployment-plan.md
+      href: conceptual-deployment-plan.md
     - name: Connectors
       href: application-proxy-connectors.md
     - name: Connector groups
