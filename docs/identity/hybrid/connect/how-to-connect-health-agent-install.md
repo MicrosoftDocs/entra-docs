@@ -79,7 +79,7 @@ To download and install the Microsoft Entra Connect Health agent:
   - See the [installation instructions](#install-the-agent-for-azure-ad-ds).
 
 ## Install the agent for AD FS
-For information on installing and monitoring AD FS with the Microsoft Entra Connect Health agent, see [Microsoft Entra Connect Health agents for AD FS](how-to-connect-health-adfs.md)
+For information on installing and monitoring AD FS with the Microsoft Entra Connect Health agent, see [Microsoft Entra Connect Health agents for AD FS](how-to-connect-health-adfs.md).
 
 ## Install the agent for sync
 
