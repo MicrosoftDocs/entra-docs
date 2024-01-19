@@ -123,13 +123,13 @@ Install the Microsoft Graph cmdlets as described in [Install the Microsoft Graph
 
 1. Open a Windows PowerShell window on your computer. You can open it without elevated privileges.
 
-1. Run the following commands to prepare to run the cmdlets.
+1. Run the following command to prepare to run the cmdlets.
   
    ```powershell
    Connect-MgGraph -Scopes "Directory.ReadWrite.All"
    ```
 
-   On the **Sign in to your Account** screen that opens, enter your admin account and password to connect to your service, and select **Sign in**.
+   On the **Sign in to your Account** screen that opens, enter your admin account and password to connect to your service.
 
 1. Follow the steps in [Microsoft Entra cmdlets for configuring group settings](~/identity/users/groups-settings-cmdlets.md) to create group settings for this organization.
 
@@ -251,7 +251,7 @@ You can use the Azure portal or Microsoft Graph PowerShell to remove a naming po
    }
    ```
 
-1. Update the settings.
+1. Update the setting.
   
    ```powershell
    Update-MgBetaDirectorySetting -DirectorySettingId $Setting.Id -BodyParameter $params
