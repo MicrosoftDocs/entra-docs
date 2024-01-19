@@ -71,6 +71,16 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity/app-proxy/application-proxy-configure-single-sign-on-with-kcd.md",
+      "redirect_url": "/entra/identity",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/app-proxy/application-proxy-deployment-plan.md",
+      "redirect_url": "/entra/identity",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity-platform/msal-v1-app-scopes.md",
       "redirect_url": "/entra/identity-platform/msal-acquire-cache-tokens",
       "redirect_document_id": false
@@ -113,11 +123,6 @@
     {
       "source_path_from_root": "/docs/identity-platform/quickstart-web-app-aspnet-core-sign-in.md",
       "redirect_url": "/entra/identity-platform/quickstart-web-app-dotnet-core-sign-in",
-      "redirect_document_id": false
-    },
-    {
-      "source_path_from_root": "/docs/identity/app-proxy/application-proxy-configure-single-sign-on-with-kcd.md",
-      "redirect_url": "/entra/identity",
       "redirect_document_id": false
     }
   ]
