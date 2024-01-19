@@ -5,18 +5,15 @@ author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms.custom:
-ms.date: 05/16/2023
+ms.date: 12/05/2023
 ms.reviewer: brandwe, akgoel23
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-#Customer intent:
+#Customer intent: As an app developer, I want to modify my iOS application to support shared device mode, so that I can ensure the security and privacy of user data on shared devices.
 ---
 
 # Shared device mode for iOS devices
-
-> [!IMPORTANT]
-> This feature [!INCLUDE [PREVIEW BOILERPLATE](./includes/develop-preview.md)]
 
 Frontline workers such as retail associates, flight crew members, and field service workers often use a shared mobile device to perform their work. These shared devices can present security risks if your users share their passwords or PINs, intentionally or not, to access customer and business data on the shared device.
 
@@ -250,7 +247,7 @@ These Microsoft applications support Microsoft Entra shared device mode:
 - [Outlook](/mem/intune/apps/app-configuration-policies-outlook) (in Public Preview)
 - [Microsoft Power Apps](/power-apps/) (in Public Preview)
 - [Microsoft 365](https://apps.apple.com/us/app-bundle/microsoft-365/id1450038993?mt=12) (in Public Preview)
-- [Microsoft Power BI Mobile](/power-bi/consumer/mobile/mobile-app-shared-device-mode) (in Public Preview)
+- [Microsoft Power BI Mobile](/power-bi/consumer/mobile/mobile-app-shared-device-mode)
 
 > [!IMPORTANT]
 > Public preview is provided without a service-level agreement and isn't recommended for production workloads. Some features might be unsupported or have constrained capabilities. For more information, see [Universal License Terms for Online Services](https://www.microsoft.com/licensing/terms/product/ForOnlineServices/all).

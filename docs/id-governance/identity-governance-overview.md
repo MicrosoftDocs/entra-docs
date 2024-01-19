@@ -1,6 +1,6 @@
 ---
 title: Microsoft Entra ID Governance
-description: Microsoft Entra ID Governance allows you to balance your organization's need for security and employee productivity with the right processes and visibility.
+description: Microsoft Entra ID Governance enables you to balance your organization's need for security and end user productivity with the right processes and visibility.
 services: active-directory
 documentationcenter: ''
 author: owinfreyATL
@@ -11,7 +11,7 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: overview
 ms.subservice: compliance
-ms.date: 05/31/2023
+ms.date: 12/15/2023
 ms.author: owinfrey
 ms.reviewer: markwahl-msft
 ms.collection: M365-identity-device-management
@@ -19,20 +19,21 @@ ms.collection: M365-identity-device-management
 
 # What is Microsoft Entra ID Governance?
 
-Microsoft Entra ID Governance allows you to balance your organization's need for security and employee productivity with the right processes and visibility. It provides you with capabilities to ensure that the right people have the right access to the right resources. These and related Microsoft Entra ID and Enterprise Mobility + Security features allows you to mitigate access risk by protecting, monitoring, and auditing access to critical assets while ensuring employee and business partner productivity.  
+[Microsoft Entra ID Governance](https://www.microsoft.com/security/business/identity-access/microsoft-entra-id-governance) is an identity governance solution that enables organizations to improve productivity, strengthen security and more easily meet compliance and regulatory requirements.  You can use Microsoft Entra ID Governance to automatically ensure that the right people have the right access to the right resources, with identity and access process automation, delegation to business groups, and increased visibility.  With the features included in Microsoft Entra ID Governance, along with those in related Microsoft Entra, Microsoft Security and Microsoft Azure products, you can mitigate identity and access risks by protecting, monitoring, and auditing access to critical assets.
 
-ID Governance gives organizations the ability to do the following tasks across employees, business partners and vendors, and across services and applications both on-premises and in clouds:
-
-- Govern the identity lifecycle
-- Govern access lifecycle
-- Secure privileged access for administration
-
-Specifically, it is intended to help organizations address these four key questions:
+Specifically, Microsoft Entra ID Governance helps organizations address these four key questions, for access across services and applications both on-premises and in clouds:
 
 - Which users should have access to which resources?
 - What are those users doing with that access?
-- Are there effective organizational controls for managing access?
-- Can auditors verify that the controls are working?
+- Are there organizational controls in place for managing access?
+- Can auditors verify that the controls are working effectively?
+
+With Microsoft Entra ID Governance you can implement the following scenarios for employees, business partners and vendors:
+
+- Govern the identity lifecycle
+- Govern the access lifecycle
+- Secure privileged access for administration
+
 
 ## Identity lifecycle
 
@@ -40,11 +41,23 @@ Identity Governance helps organizations achieve a balance between *productivity*
 
 ![Identity lifecycle](./media/identity-governance-overview/identity-lifecycle.png)
 
-For many organizations, identity lifecycle for employees is tied to the representation of that user in an HCM (human capital management) system.  Microsoft Entra ID P1 or P2, through inbound provisioning, automatically maintains user identities for people represented in Workday and SuccessFactors in both Active Directory and Microsoft Entra ID, as described in the  [cloud HR application to Microsoft Entra user provisioning planning guide](~/identity/app-provisioning/plan-cloud-hr-provision.md).  Microsoft Entra ID P1 or P2 also includes [Microsoft Identity Manager](/microsoft-identity-manager/), which can import records from on-premises HCM systems such as SAP HCM, Oracle eBusiness, and Oracle PeopleSoft.
+For many organizations, identity lifecycle for employees and other workers is tied to the representation of that person in an HCM (human capital management) or HR system. Organizations need to automate the process of creating an identity for a new employee that is based on a signal from that system so that the employee can be productive on day 1. And organizations need to ensure those identities and access are removed when the employee leaves the organization.
 
-Increasingly, scenarios require collaboration with people outside your organization. [Microsoft Entra B2B](/azure/active-directory/b2b/) collaboration enables you to securely share your organization's applications and services with guest users and external partners from any organization, while maintaining control over your own corporate data.  [Microsoft Entra entitlement management](entitlement-management-overview.md) enables you to select which organization's users are allowed to request access and be added as B2B guests to your organization's directory, and ensures that these guests are removed when they no longer need access.
+In Microsoft Entra ID Governance, you can automate the identity lifecycle for these individuals using:
 
-Organizations are able to automate the identity lifecycle management process by using [Lifecycle Workflows](what-are-lifecycle-workflows.md). Workflows can be created to automatically run tasks for a user before they enter the organization, as they change states during their time in the organization, and as they leave the organization. For example, a workflow can be configured to send an email with a temporary password to a new user's manager, or a welcome email to the user on their first day.
+- [inbound provisioning from your organization's HR sources](~/identity/app-provisioning/plan-cloud-hr-provision.md), including retrieving from Workday and SuccessFactors, to automatically maintain user identities in both Active Directory and Microsoft Entra ID.
+- [lifecycle workflows](what-are-lifecycle-workflows.md) to automate workflow tasks that run at certain key events, such before a new employee is scheduled to start work at the organization, as they change status during their time in the organization, and as they leave the organization. For example, a workflow can be configured to send an email with a temporary access pass to a new user's manager, or a welcome email to the user, on their first day.
+- [automatic assignment policies in entitlement management](entitlement-management-access-package-auto-assignment-policy.md) to add and remove a user's group memberships, application roles, and SharePoint site roles, based on changes to the user's attributes.
+- [user provisioning](what-is-provisioning.md) to create, update and remove user accounts in other applications, with connectors to [hundreds of cloud and on-premises applications](apps.md) via SCIM, LDAP and SQL.
+
+Organizations also need additional identities, for partners, suppliers and other guests, to enable them to collaborate or have access to resources.
+
+In Microsoft Entra ID Governance, you can enable business groups to determine which of these guests should have access, and for how long, using:
+
+- [entitlement management](entitlement-management-overview.md) in which you can specify the other organizations whose users are allowed to request access to your organization's resources. When one of those users's request is approved, they are automatically added by entitlement management as a [B2B](~/external-id/what-is-b2b.md) guest to your organization's directory, and assigned appropriate access. And entitlement management automatically removes the B2B guest user from your organization's directory when their access rights expire or are revoked.
+- [access reviews](access-reviews-overview.md) that automates recurring reviews of existing guests already in your organization's directory, and removes those users from your organization's directory when they no longer need access.
+
+For more information, see [What is identity lifecycle management](what-is-identity-lifecycle-management.md).
 
 ## Access lifecycle
 
@@ -52,67 +65,47 @@ Organizations need a process to manage access beyond what was initially provisio
 
 ![Access lifecycle](./media/identity-governance-overview/access-lifecycle.png)
 
-Typically, IT delegates access approval decisions to business decision makers.  Furthermore, IT can involve the users themselves.  For example, users that access confidential customer data in a company's marketing application in Europe need to know the company's policies. Guest users may be unaware of the handling requirements for data in an organization to which they've been invited.
+With Microsoft Entra ID Governance, IT departments can establish what access rights users should have across various resources, and what enforcement checks such as separation of duties or access removal on job change are necessary.  Microsoft Entra ID has connectors to [hundreds of cloud and on-premises applications](apps.md), and you can integrate your organization's other apps that rely upon [AD groups](entitlement-management-group-writeback.md), [other on-premises directories](~/identity/app-provisioning/on-premises-ldap-connector-configure.md) or [databases](~/identity/app-provisioning/on-premises-sql-connector-configure.md), that have a [SOAP or REST API](~/identity/app-provisioning/on-premises-web-services-connector.md) including [SAP](sap.md), or that implement standards such as [SCIM](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md), SAML or OpenID Connect. When a user attempts to sign into to one of those applications, Microsoft Entra ID enforces [Conditional Access](~/identity/conditional-access/index.yml) policies. For example, Conditional Access policies can include displaying a [terms of use](~/identity/conditional-access/terms-of-use.md) and [ensuring the user has agreed to those terms](~/identity/conditional-access/require-tou.md) prior to being able to access an application. For more information, see [govern access to applications in your environment](identity-governance-applications-prepare.md), including how to [define organizational policies for governing access to applications](identity-governance-applications-define.md), [integrate applications](identity-governance-applications-integrate.md) and [deploy policies](identity-governance-applications-deploy.md).
 
-Organizations can automate the access lifecycle process through technologies such as [dynamic groups](~/identity/users/groups-dynamic-membership.md), coupled with user provisioning to [SaaS apps](~/identity/saas-apps/tutorial-list.md) or [apps integrated with SCIM](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md). Microsoft Entra ID can also provision access to apps that use [AD groups](entitlement-management-group-writeback.md), [other on-premises directories](~/identity/app-provisioning/on-premises-ldap-connector-configure.md) or [databases](~/identity/app-provisioning/on-premises-sql-connector-configure.md), or that have a [SOAP or REST API](~/identity/app-provisioning/on-premises-web-services-connector.md) including [SAP](sap.md).  Organizations can also control which [guest users have access to on-premises applications](~/external-id/hybrid-cloud-to-on-premises.md).  These access rights can then be regularly reviewed using recurring [Microsoft Entra access reviews](access-reviews-overview.md).   [Microsoft Entra entitlement management](entitlement-management-overview.md) also enables you to define how users request access across packages of group and team memberships, application roles, and SharePoint Online roles.  For more information, see the [simplifying identity governance tasks with automation](#simplifying-identity-governance-tasks-with-automation) section below to select the appropriate Microsoft Entra features for your access lifecycle automation scenarios.
+Access changes across apps and groups can be automated based on attribute changes. [Microsoft Entra lifecycle workflows](create-lifecycle-workflow.md) and [Microsoft Entra entitlement management](entitlement-management-overview.md) automatically add and remove users into groups or access packages, so that access to applications and resources is updated. Users can also be moved when their condition within the organization changes to different groups, and can even be removed entirely from all groups or access packages.
 
-Lifecycle access can be automated using workflows. [Workflows can be created](create-lifecycle-workflow.md) to automatically add user to groups, where access to applications and resources are granted. Users can also be moved when their condition within the organization changes to different groups, and can even be removed entirely from all groups.
+Organizations that previously had been using an on-premises identity governance product can [migrate their organizational role model](identity-governance-organizational-roles.md) to Microsoft Entra ID Governance.
 
-When a user attempts to access applications, Microsoft Entra ID enforces [Conditional Access](~/identity/conditional-access/index.yml) policies. For example, Conditional Access policies can include displaying a [terms of use](~/identity/conditional-access/terms-of-use.md) and [ensuring the user has agreed to those terms](~/identity/conditional-access/require-tou.md) prior to being able to access an application. For more information, see [govern access to applications in your environment](identity-governance-applications-prepare.md).
+Furthermore, IT can delegate access management decisions to business decision makers.   For example, employees that wish to access confidential customer data in a company's marketing application in Europe may need approval from their manager, a department lead or resource owner, and a security risk officer.  [Entitlement management](entitlement-management-overview.md) enables you to define how users request access across packages of group and team memberships, app roles, and SharePoint Online roles, and enforce separation of duties checks on access requests.
+
+ Organizations can also control which guest users have access, including to [on-premises applications](~/external-id/hybrid-cloud-to-on-premises.md).  These access rights can then be regularly reviewed using recurring [Microsoft Entra access reviews](access-reviews-overview.md) for access recertification.
+
 
 ## Privileged access lifecycle
 
-Historically, privileged access has been described by other vendors as a separate capability from Identity Governance. However, at Microsoft, we think governing privileged access is a key part of Identity Governance especially given the potential for misuse associated with those administrator rights can cause to an organization. The employees, vendors, and contractors that take on administrative rights need to be governed.
+ Governing privileged access is a key part of modern Identity Governance especially given the potential for misuse associated with administrator rights can cause to an organization. The employees, vendors, and contractors that take on administrative rights need to have their accounts and privileged access rights governed.
 
 ![Privileged access lifecycle](./media/identity-governance-overview/privileged-access-lifecycle.png)
 
-[Microsoft Entra Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/pim-configure.md) provides additional controls tailored to securing access rights for resources, across Microsoft Entra, Azure, and other Microsoft Online Services.  The just-in-time access, and role change alerting capabilities provided by Microsoft Entra PIM, in addition to multi-factor authentication and Conditional Access, provide a comprehensive set of governance controls to help secure your company's resources (directory, Microsoft 365, and Azure resource roles). As with other forms of access, organizations can use access reviews to configure recurring access re-certification for all users in administrator roles.
-
-## Governance capabilities in other Microsoft Entra features
-
-In addition to the features listed above, additional Microsoft Entra features frequently used to provide identity governance scenarios include:
-
-| Capability | Scenario |Feature
-| ------- | --------------------- |-----|
-|Identity lifecycle (employees)|Admins can enable user account provisioning from Workday or SuccessFactors cloud HR, or on-premises HR.|[cloud HR to Microsoft Entra user provisioning](~/identity/app-provisioning/plan-cloud-hr-provision.md)|
-|Identity lifecycle (guests)|Admins can enable self-service guest user onboarding from another Microsoft Entra tenant, direct federation, One Time Passcode (OTP) or Google accounts.  Guest users are automatically provisioned and deprovisioned subject to lifecycle policies.|[Entitlement management](entitlement-management-overview.md) using [B2B](~/external-id/what-is-b2b.md)|
-|Entitlement management|Resource owners can create access packages containing apps, Teams, Microsoft Entra ID and Microsoft 365 groups, and SharePoint Online sites.|[Entitlement management](entitlement-management-overview.md)|
-|Lifecycle Workflows|Admins can enable the automation of the lifecycle process based user conditions.|[Lifecycle Workflows](what-are-lifecycle-workflows.md)|
-|Access requests|End users can request group membership or application access. End users, including guests from other organizations, can request access to access packages.|[Entitlement management](entitlement-management-overview.md)|
-|Workflow|Resource owners can define the approvers and escalation approvers for access requests and approvers for role activation requests.  |[Entitlement management](entitlement-management-overview.md) and [PIM](~/id-governance/privileged-identity-management/pim-configure.md)|
-|Policy and role management|Admin can define Conditional Access policies for run-time access to applications.  Resource owners can define policies for user's access via access packages.|[Conditional Access](~/identity/conditional-access/overview.md) and [Entitlement management](entitlement-management-overview.md) policies|
-|Access certification|Admins can enable recurring access recertification for: SaaS apps, on-premises apps, cloud group memberships, Microsoft Entra ID or Azure Resource role assignments. Automatically remove resource access, block guest access and delete guest accounts.|[Access reviews](access-reviews-overview.md), also surfaced in [PIM](~/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md)|
-|Fulfillment and provisioning|Automatic provisioning and deprovisioning into Microsoft Entra connected apps, including via SCIM, LDAP, SQL and into SharePoint Online sites. |[user provisioning](~/identity/app-provisioning/user-provisioning.md)|
-|Reporting and analytics|Admins can retrieve audit logs of recent user provisioning and sign on activity. Integration with Azure Monitor and 'who has access' via access packages.|[Microsoft Entra reports](~/identity/monitoring-health/overview-monitoring-health.md) and [monitoring](~/identity/monitoring-health/overview-monitoring-health.md)|
-|Privileged access|Just-in-time and scheduled access, alerting, approval workflows for Microsoft Entra roles (including custom roles) and Azure Resource roles.|[Microsoft Entra PIM](~/id-governance/privileged-identity-management/pim-configure.md)|
-|Auditing|Admins can be alerted of creation of admin accounts.|[Microsoft Entra PIM alerts](~/id-governance/privileged-identity-management/pim-how-to-configure-security-alerts.md)|
+[Microsoft Entra Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/pim-configure.md) provides additional controls tailored to securing access rights for resources, across Microsoft Entra, Azure, other Microsoft Online Services and other applications.  The just-in-time access, and role change alerting capabilities provided by Microsoft Entra PIM, in addition to multi-factor authentication and Conditional Access, provide a comprehensive set of governance controls to help secure your company's resources (directory, Microsoft 365, and Azure resource roles). As with other forms of access, organizations can use access reviews to configure recurring access re-certification for all users in privileged administrator roles.
 
 ## License requirements
 [!INCLUDE [active-directory-entra-governance-license.md](~/includes/entra-entra-governance-license.md)]
 
 ## Getting started
 
-Check out the [Getting started tab](https://portal.azure.com/#view/Microsoft_AAD_ERM/DashboardBlade/~/GettingStarted) of **Identity Governance** in the Microsoft Entra admin center to start using entitlement management, access reviews, Privileged Identity Management, and Terms of use, and see some common use cases.
-
-![Identity Governance getting started](./media/identity-governance-overview/getting-started.png)
-
+Check out the [Prerequisites before configuring Microsoft Entra ID for identity governance](identity-governance-applications-prepare.md).  Then, visit the [Governance dashboard](https://entra.microsoft.com/#view/Microsoft_Azure_IdentityGovernance/Dashboard.ReactView) in the Microsoft Entra admin center to start using entitlement management, access reviews, lifecycle workflows and Privileged Identity Management.
 
 There are also tutorials for [managing access to resources in entitlement management](entitlement-management-access-package-first.md), [onboarding external users to Microsoft Entra ID through an approval process](entitlement-management-onboard-external-user.md), [governing access to your applications](identity-governance-applications-prepare.md) and the [application's existing users](identity-governance-applications-existing-users.md).
 
-If you have any feedback about Identity Governance features, click **Got feedback?** in the Microsoft Entra admin center to submit your feedback. The team regularly reviews your feedback.
+While each organization may have its own unique requirements, the following configuration guides also provide the baseline policies Microsoft recommends you follow to ensure a more secure and productive workforce.
 
-While there's no perfect solution or recommendation for every customer, the following configuration guides also provide the baseline policies Microsoft recommends you follow to ensure a more secure and productive workforce.
-
-- [Prerequisites for configuring Microsoft Entra ID for identity governance](identity-governance-applications-prepare.md)
 - [Plan an access reviews deployment to manage resource access lifecycle](deploy-access-reviews.md)
-- [Identity and device access configurations](/microsoft-365/enterprise/microsoft-365-policies-configurations)
+- [Zero Trust identity and device access configurations](/microsoft-365/enterprise/microsoft-365-policies-configurations)
 - [Securing privileged access](~/identity/role-based-access-control/security-planning.md)
 
 You may also wish to engage with one of Microsoft's [services and integration partners](services-and-integration-partners.md) to plan your deployment or integrate with the applications and other systems in your environment.
 
+If you have any feedback about Identity Governance features, click **Got feedback?** in the Microsoft Entra admin center to submit your feedback. The team regularly reviews your feedback.
+
 ## Simplifying identity governance tasks with automation
 
-Once you've started using these identity governance features, you can easily automate common identity governance scenarios. The following table shows how to get started for each scenario:
+Once you've started using these identity governance features, you can easily automate common identity governance scenarios. The following table shows how to get started with automation for each scenario:
 
 | Scenario to automate | Automation guide |
 | ------- | --------------------- |
@@ -144,6 +137,7 @@ It's a best practice to use the least privileged role to perform administrative 
 
 ## Next steps
 
+- [What are Lifecycle Workflows?](what-are-lifecycle-workflows.md)
 - [What is Microsoft Entra entitlement management?](entitlement-management-overview.md)
 - [What are Microsoft Entra access reviews?](access-reviews-overview.md)
 - [What is Microsoft Entra Privileged Identity Management?](~/id-governance/privileged-identity-management/pim-configure.md)

@@ -46,9 +46,9 @@ To complete this article, you need the following resources and privileges:
 * Install and configure Azure PowerShell.
     * If needed, follow the instructions to [install the Azure PowerShell module and connect to your Azure subscription](/powershell/azure/install-azure-powershell).
     * Make sure that you sign in to your Azure subscription using the [Connect-AzAccount][Connect-AzAccount] cmdlet.
-* Install and configure Azure AD PowerShell.
-    * If needed, follow the instructions to [install the Azure AD PowerShell module and connect to Microsoft Entra ID](/powershell/azure/active-directory/install-adv2).
-    * Make sure that you sign in to your Microsoft Entra tenant using the [Connect-AzureAD][Connect-AzureAD] cmdlet.
+* Install and configure MS Graph PowerShell.
+   - If needed, follow the instructions to [install the MS Graph PowerShell module and connect to Microsoft Entra ID](/powershell/microsoftgraph/authentication-commands?view=graph-powershell-1.0).
+   - Make sure that you sign in to your Microsoft Entra tenant using the [Connect-MgGraph](/powershell/microsoftgraph/authentication-commands?view=graph-powershell-1.0) cmdlet.
 * You need [Application Administrator](/azure/active-directory/roles/permissions-reference#application-administrator) and [Groups Administrator](/azure/active-directory/roles/permissions-reference#groups-administrator) Microsoft Entra roles in your tenant to enable Domain Services.
 * You need [Domain Services Contributor](/azure/role-based-access-control/built-in-roles#contributor) Azure role to create the required Domain Services resources.
 
@@ -76,10 +76,11 @@ Domain Services requires a service principal synchronize data from Microsoft Ent
 
 Create a Microsoft Entra service principal for Domain Services to communicate and authenticate itself. A specific application ID is used named *Domain Controller Services* with an ID of *6ba9a5d4-8456-4118-b521-9c5ca10cdf84*. Don't change this application ID.
 
-Create a Microsoft Entra service principal using the [New-AzureADServicePrincipal][New-AzureADServicePrincipal] cmdlet:
+Create a Microsoft Entra service principal using the [New-MgServicePrincipal](/powershell/module/microsoft.graph.applications/new-mgserviceprincipal) cmdlet:
+
 
 ```powershell
-New-AzureADServicePrincipal -AppId "6ba9a5d4-8456-4118-b521-9c5ca10cdf84"
+New-MgServicePrincipal
 ```
 
 ## Create a managed domain 
@@ -411,16 +412,27 @@ For more conceptual information about forest types in Domain Services, see [How 
 
 <!-- INTERNAL LINKS -->
 [concepts-trust]: concepts-forest-trust.md
+
 [create-azure-ad-tenant]: /azure/active-directory/fundamentals/sign-up-organization
+
 [associate-azure-ad-tenant]: /azure/active-directory/fundamentals/how-subscriptions-associated-directory
+
 [create-azure-ad-ds-instance-advanced]: tutorial-create-instance-advanced.md
+
 [Connect-AzAccount]: /powershell/module/az.accounts/connect-azaccount
-[Connect-AzureAD]: /powershell/module/azuread/connect-azuread
+
+[Connect-MgGraph](/powershell/microsoftgraph/authentication-commands?view=graph-powershell-1.0): /powershell/microsoftgraph/authentication-commands?view=graph-powershell-1.0
+
 [New-AzResourceGroup]: /powershell/module/az.resources/new-azresourcegroup
+
 [network-peering]: /azure/virtual-network/virtual-network-peering-overview
-[New-AzureADServicePrincipal]: /powershell/module/azuread/new-azureadserviceprincipal
+
+[New-MgServicePrincipal](/powershell/module/microsoft.graph.applications/new-mgserviceprincipal): /powershell/module/microsoft.graph.applications/new-mgserviceprincipal
+
 [Get-AzureRMSubscription]: /powershell/module/azurerm.profile/get-azurermsubscription
+
 [Install-Script]: /powershell/module/powershellget/install-script
 
 <!-- EXTERNAL LINKS -->
 [powershell-gallery]: https://www.powershellgallery.com/
+

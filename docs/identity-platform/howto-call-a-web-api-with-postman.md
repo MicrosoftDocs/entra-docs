@@ -98,7 +98,7 @@ Once the API is registered, you can configure its permission by defining the sco
    1. Ensure that the **State** is set to **Enabled**.
 1. Select **Add scope**. If the scope has been entered correctly, it's listed in the **Expose an API** pane.
 
-   :::image type="content" source="./media/web-api-tutorial-01-register-app/add-a-scope-inline.png" alt-text="Screenshot that shows the field values when adding the scope to an API." lightbox="./media/web-api-tutorial-01-register-app/add-a-scope-expanded.png":::
+   :::image type="content" source="./media/web-api-tutorial-01-register-app/add-a-scope.png" alt-text="Screenshot that shows the field values when adding the scope to an API." lightbox="./media/web-api-tutorial-01-register-app/add-a-scope.png":::
 
 ::: zone-end
 

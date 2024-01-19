@@ -7,14 +7,14 @@ ms.service: active-directory
 ms.subservice: B2B
 ms.custom: has-azure-ad-ps-ref
 ms.topic: how-to
-ms.date: 12/02/2022
+ms.date: 12/18/2023
 
 ms.author: cmulligan
 author: csmulligan
 manager: celestedg
 
 ms.collection: M365-identity-device-management
-# Customer intent: As a tenant administrator, I want to customize the invitation process with the API.
+# Customer intent: As an organization administrator, I want to customize the invitation process for external users using the Microsoft Graph REST API, so that I can tailor the onboarding experience and control the notifications sent to the users.
 ---
 # Microsoft Entra B2B collaboration API and customization
 

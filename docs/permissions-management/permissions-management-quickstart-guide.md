@@ -9,7 +9,7 @@ ms.service: active-directory
 ms.subservice: ciem
 ms.workload: identity
 ms.topic: quickstart
-ms.date: 11/21/2023
+ms.date: 12/20/2023
 ms.author: jfields
 ---
 
@@ -42,6 +42,7 @@ If the above points are met, continue with:
 
 Ensure you're a Global Administrator. Learn more about [Permissions Management roles and permissions](product-roles-permissions.md). 
 
+:::image type="content" source="media/permissions-management-quickstart-guide/entra-id-roles-sync-azure-environment.png" alt-text="A diagram showing where Entra ID intersect with Azure roles in the Entra ID tenant." lightbox="media/permissions-management-quickstart-guide/entra-id-roles-sync-azure-environment.png":::
  
 ## Step 2: Onboard your multicloud environment
 
@@ -89,6 +90,10 @@ To configure data collection:
 2. Select a cloud environment: **AWS**, **Azure**, or **GCP**.
 3. Click **Create configuration**.
 
+> [!NOTE]
+> The data collection process takes some time and occurs in approximately 4-5 hour intervals in most cases. The time frame depends on the size of the authorization system you have and how much data is available for collection.
+
+
 ### Onboard Amazon Web Services (AWS)
 Since Permissions Management is hosted on Microsoft Entra, there are more steps to take to onboard your AWS environment.  
 
@@ -121,8 +126,6 @@ When you enabled Permissions Management in the Microsoft Entra tenant, an enterp
 1. In the Microsoft Entra tenant where Permissions management is enabled, locate the **Cloud Infrastructure Entitlement Management (CIEM)** enterprise application.  
 
 2. Assign the *Reader* role to the CIEM application to allow Permissions management to read the Microsoft Entra subscriptions in your environment. 
-
-:::image type="content" source="media/permissions-management-quickstart-guide/entra-id-roles-sync-azure-environment.png" alt-text="A diagram showing where Entra ID intersect with Azure roles in the Entra ID tenant." lightbox="media/permissions-management-quickstart-guide/entra-id-roles-sync-azure-environment.png":::
 
 :::image type="content" source="media/permissions-management-quickstart-guide/entra-id-tenant-role-connection-azure-subscriptions.png" alt-text="A diagram showing the connection between the Entra ID role connections to an Azure subscription." lightbox="media/permissions-management-quickstart-guide/entra-id-tenant-role-connection-azure-subscriptions.png":::
 
@@ -168,7 +171,7 @@ To onboard your GCP environment and configure data collection, see [Onboard a GC
 
 ## Summary
 
-Congratulations! You have finished configuring data collection for your environment(s), and the data collection process has begun.  
+Congratulations! You have finished configuring data collection for your environment(s), and the data collection process has begun. The data collection process takes some time; approximately 4-5 hours in most cases. The time frame depends on the amount of authorization systems you've onboarded and how much data is available for collection.  
 
 The status column in your Permissions Management UI shows you which step of data collection you're at.  
 
@@ -179,7 +182,7 @@ The status column in your Permissions Management UI shows you which step of data
 - **Onboarded**: Data collection is complete, and all detected authorization systems are onboarded to Permissions Management. 
 
 > [!NOTE] 
-> Data collection might take time depending on the amount of authorization systems you've onboarded. While the data collection process continues, you can begin setting up [users and groups in Permissions Management](how-to-add-remove-user-to-group.md). 
+> While the data collection process continues, you can begin setting up [users and groups in Permissions Management](how-to-add-remove-user-to-group.md). 
 
 ## Next steps
 

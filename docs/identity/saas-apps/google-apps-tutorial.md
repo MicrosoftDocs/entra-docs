@@ -9,7 +9,7 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 
 ms.topic: tutorial
-ms.date: 08/16/2023
+ms.date: 01/12/2024
 ms.author: jeedes
 ---
 
@@ -170,15 +170,15 @@ Follow these steps to enable Microsoft Entra SSO.
 	![image](common/default-attributes.png)
 
     > [!NOTE]
-    > Ensure that the the SAML Response doesn't include any non-standard ASCII characters in the DisplayName and Surname attributes.
+    > Ensure that the the SAML Response doesn't include any non-standard ASCII characters in the Surname attribute.
 
-1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
+1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 
-	![The Certificate download link](common/certificatebase64.png)
+	![Screenshot shows the Certificate download link.](common/certificatebase64.png "Certificate")
 
 1. On the **Set up Google Cloud / G Suite Connector by Microsoft** section, copy the appropriate URL(s) based on your requirement.
 
-	![Copy configuration URLs](common/copy-configuration-urls.png)
+	![Screenshot shows to copy configuration URLs.](common/copy-configuration-urls.png "Metadata")
 
     ```Logout URL
     https://login.microsoftonline.com/common/wsfederation?wa=wsignout1.0
@@ -228,9 +228,9 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
     a. Turn ON the **SSO profile for your organization**.
 
-    b. In the **Sign-in page URL** field in Google Cloud / G Suite Connector by Microsoft, paste the value of **Login URL**..
+    b. In the **Sign-in page URL** field in Google Cloud / G Suite Connector by Microsoft, paste the value of **Login URL**.
 
-    c. In the **Sign-out page URL** field in Google Cloud / G Suite Connector by Microsoft, paste the value of **Logout URL**..
+    c. In the **Sign-out page URL** field in Google Cloud / G Suite Connector by Microsoft, paste the value of **Logout URL**.
 
     d. In Google Cloud / G Suite Connector by Microsoft, for the **Verification certificate**, upload the certificate that you have downloaded previously.   
 

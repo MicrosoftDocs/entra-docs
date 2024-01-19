@@ -13,6 +13,8 @@ ms.author: jomondi
 ms.reviewer: alamaral
 ms.collection: M365-identity-device-management
 ms.custom: enterprise-apps
+
+#customer intent: As an IT admin troubleshooting issues with user access to Microsoft applications, I want to check if a user account exists in Microsoft Entra ID, so that I can verify if the user is properly registered and has the necessary permissions to access the applications.
 ---
 
 # Problems signing in to a Microsoft application

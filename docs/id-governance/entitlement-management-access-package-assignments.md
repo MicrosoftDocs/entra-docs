@@ -5,7 +5,6 @@ services: active-directory
 documentationCenter: ''
 author: owinfreyATL
 manager: amycolannino
-editor: 
 ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
@@ -61,7 +60,7 @@ To use entitlement management and assign users to access packages, you must have
 
 ## View assignments programmatically
 ### View assignments with Microsoft Graph
-You can also retrieve assignments in an access package using Microsoft Graph.  A user in an appropriate role with an application that has the delegated `EntitlementManagement.Read.All` or `EntitlementManagement.ReadWrite.All` permission can call the API to [list accessPackageAssignments](/graph/api/entitlementmanagement-list-accesspackageassignments?view=graph-rest-beta&preserve-view=true).  An application that has the application permission `EntitlementManagement.Read.All` or `EntitlementManagement.ReadWrite.All` permission can also use this API to retrieve assignments across all catalogs.
+You can also retrieve assignments in an access package using Microsoft Graph.  A user in an appropriate role with an application that has the delegated `EntitlementManagement.Read.All` or `EntitlementManagement.ReadWrite.All` permission can call the API to [list accessPackageAssignments](/graph/api/entitlementmanagement-list-assignments?view=graph-rest-1.0&preserve-view=true).  An application that has the application permission `EntitlementManagement.Read.All` or `EntitlementManagement.ReadWrite.All` permission can also use this API to retrieve assignments across all catalogs.
 
 Microsoft Graph will return the results in pages, and will continue to return a reference to the next page of results in the `@odata.nextLink` property with each response, until all pages of the results have been read. To read all results, you must continue to call Microsoft Graph with the `@odata.nextLink` property returned in each response until the `@odata.nextLink` property is no longer returned, as described in [paging Microsoft Graph data in your app](/graph/paging).
 
@@ -169,7 +168,7 @@ Entitlement management also allows you to directly assign external users to an a
 
 ## Directly assigning users programmatically
 ### Assign a user to an access package with Microsoft Graph
-You can also directly assign a user to an access package using Microsoft Graph.  A user in an appropriate role with an application that has the delegated `EntitlementManagement.ReadWrite.All` permission, or an application with that application permission, can call the API to [create an accessPackageAssignmentRequest](/graph/api/entitlementmanagement-post-accesspackageassignmentrequests?view=graph-rest-beta&preserve-view=true). In this request, the value of the `requestType` property should be `AdminAdd`, and the `accessPackageAssignment` property is a structure that contains the `targetId` of the user being assigned.
+You can also directly assign a user to an access package using Microsoft Graph.  A user in an appropriate role with an application that has the delegated `EntitlementManagement.ReadWrite.All` permission, or an application with the `EntitlementManagement.ReadWrite.All` application permission, can call the API to [create an accessPackageAssignmentRequest](/graph/api/entitlementmanagement-post-assignmentrequests?view=graph-rest-1.0&preserve-view=true). In this request, the value of the `requestType` property should be `adminAdd`, and the `assignment` property is a structure that contains the `targetId` of the user being assigned.
 
 ### Assign a user to an access package with PowerShell
 
@@ -194,7 +193,7 @@ New-MgEntitlementManagementAssignmentRequest -BodyParameter $params
 
 You can also assign multiple users that are in your directory to an access package using PowerShell with the `New-MgBetaEntitlementManagementAccessPackageAssignment` cmdlet from the [Microsoft Graph PowerShell cmdlets for Identity Governance](https://www.powershellgallery.com/packages/Microsoft.Graph.Identity.Governance/) module version 2.4.0 or later. This cmdlet takes as parameters
 * the access package ID, which is included in the response from the `Get-MgEntitlementManagementAccessPackage` cmdlet,
-* the access package assignment policy ID, which is included in the response from the `Get-MgEntitlementManagementAccessPackageAssignmentPolicy`cmdlet,
+* the access package assignment policy ID, which is included in the policy in the `assignmentpolicies` field in the response from the `Get-MgEntitlementManagementAccessPackage` cmdlet,
 * the object IDs of the target users, either as an array of strings, or as a list of user members returned from the `Get-MgGroupMember` cmdlet.
 
 For example, if you want to ensure all the users who are currently members of a group also have assignments to an access package, you can use this cmdlet to create requests for those users who don't currently have assignments.  Note that this cmdlet will only create assignments; it doesn't remove assignments for users who are no longer members of a group.
@@ -211,7 +210,7 @@ $req = New-MgBetaEntitlementManagementAccessPackageAssignment -AccessPackageId $
 
 If you wish to add an assignment for a user who is not yet in your directory, you can use the `New-MgBetaEntitlementManagementAccessPackageAssignmentRequest` cmdlet from the [Microsoft Graph PowerShell cmdlets for Identity Governance](https://www.powershellgallery.com/packages/Microsoft.Graph.Identity.Governance/) beta module version 2.1.x or later beta module version.  This script illustrates using the Graph `beta` profile and Microsoft Graph PowerShell cmdlets module version 2.4.0. This cmdlet takes as parameters
 * the access package ID, which is included in the response from the `Get-MgEntitlementManagementAccessPackage` cmdlet,
-* the access package assignment policy ID, which is included in the response from the `Get-MgEntitlementManagementAccessPackageAssignmentPolicy`cmdlet,
+* the access package assignment policy ID, which is included in policy in the `assignmentpolicies` field in the response from the `Get-MgEntitlementManagementAccessPackage` cmdlet,
 * the email address of the target user.
 
 ```powershell
@@ -268,7 +267,7 @@ You can remove an assignment that a user or an administrator had previously requ
 
 ## Remove an assignment programmatically
 ### Remove an assignment with Microsoft Graph
-You can also remove an assignment of a user to an access package using Microsoft Graph.  A user in an appropriate role with an application that has the delegated `EntitlementManagement.ReadWrite.All` permission, or an application with that application permission, can call the API to [create an accessPackageAssignmentRequest](/graph/api/entitlementmanagement-post-accesspackageassignmentrequests?view=graph-rest-beta&preserve-view=true).  In this request, the value of the `requestType` property should be `AdminRemove`, and the `accessPackageAssignment` property is a structure that contains the `id` property identifying the `accessPackageAssignment` being removed.
+You can also remove an assignment of a user to an access package using Microsoft Graph.  A user in an appropriate role with an application that has the delegated `EntitlementManagement.ReadWrite.All` permission, or an application with the `EntitlementManagement.ReadWrite.All` application permission, can call the API to [create an accessPackageAssignmentRequest](/graph/api/entitlementmanagement-post-assignmentrequests?view=graph-rest-1.0&preserve-view=true).  In this request, the value of the `requestType` property should be `adminRemove`, and the `assignment` property is a structure that contains the `id` property identifying the `accessPackageAssignment` being removed.
 
 ### Remove an assignment with PowerShell
 

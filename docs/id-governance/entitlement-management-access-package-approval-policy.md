@@ -5,7 +5,6 @@ services: active-directory
 documentationCenter: ''
 author: owinfreyATL
 manager: amycolannino
-editor: 
 ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
@@ -216,5 +215,6 @@ In order to make sure users are getting access to the right access packages, you
 After you have configured requestor information in your access package's policy, can view the requestor's responses to the questions. For guidance on seeing requestor information, see [View requestor's answers to questions](entitlement-management-request-approve.md#view-requestors-answers-to-questions).
 
 ## Next steps
+
 - [Change lifecycle settings for an access package](entitlement-management-access-package-lifecycle-policy.md)
 - [View requests for an access package](entitlement-management-access-package-requests.md)

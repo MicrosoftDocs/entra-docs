@@ -13,7 +13,8 @@ ms.author: jomondi
 ms.reviewer: alamaral
 ms.collection: M365-identity-device-management
 ms.custom: has-adal-ref, enterprise-apps
-# Customer intent: As an IT admin, I need to learn what it takes to plan a single-sign on deployment for my application in Microsoft Entra ID.
+
+# Customer intent: As an IT admin planning a single sign-on deployment in Microsoft Entra ID, I want to understand the administrative roles required, certificate renewal process, communication plan, licensing requirements, and options for SSO deployment, so that I can effectively plan and implement SSO for my organization's applications.
 ---
 
 # Plan a single sign-on deployment
@@ -106,7 +107,7 @@ The following SSO protocols are available to use:
 
 - **Disabled** - Choose disabled SSO when the application isn't ready to be configured for SSO.
 
-- **Integrated Windows Authentication (IWA)** - Choose IWA single sign-on for applications that use IWA, or for claims-aware applications. For more information, see [Kerberos Constrained Delegation for single sign-on to your applications with Application Proxy](~/identity/app-proxy/application-proxy-configure-single-sign-on-with-kcd.md).
+- **Integrated Windows Authentication (IWA)** - Choose IWA single sign-on for applications that use IWA, or for claims-aware applications. For more information, see [Kerberos Constrained Delegation for single sign-on to your applications with Application Proxy](~/identity/app-proxy/how-to-configure-sso-with-kcd.md).
 
 - **Header-based** - Choose header-based single sign-on when the application uses headers for authentication. For more information, see [Header-based SSO](~/identity/app-proxy/application-proxy-configure-single-sign-on-with-headers.md).
 

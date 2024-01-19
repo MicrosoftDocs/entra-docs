@@ -11,7 +11,7 @@ ms.topic: how-to
 ms.date: 02/04/2022
 ms.author: rolyon
 ms.reviewer: absinh
-ms.custom: it-pro, has-azure-ad-ps-ref
+ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 
 ms.collection: M365-identity-device-management
 ---
@@ -23,7 +23,7 @@ This article describes how to list the Microsoft Entra built-in and custom roles
 
 ## Prerequisites
 
-- AzureADPreview module when using PowerShell
+- Microsoft Graph PowerShell SDK installed when using PowerShell
 - Admin consent when using Graph explorer for Microsoft Graph API
 
 For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
@@ -48,30 +48,31 @@ For more information, see [Prerequisites to use PowerShell or Graph Explorer](pr
 
 Follow these steps to list Microsoft Entra roles using PowerShell.
 
-1. Open a PowerShell window and use [Import-Module](/powershell/module/microsoft.powershell.core/import-module) to import the AzureADPreview module. For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
+1. Open a PowerShell window. If necessary, use [Install-Module](/powershell/module/powershellget/install-module) to install Microsoft Graph PowerShell. For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
 
     ```powershell
-    Import-Module -Name AzureADPreview -Force
+    Install-Module Microsoft.Graph -Scope CurrentUser
     ```
 
-2. In a PowerShell window, use [Connect-AzureAD](/powershell/module/azuread/connect-azuread) to sign in to your tenant.
+2. In a PowerShell window, use [Connect-MgGraph](/powershell/microsoftgraph/authentication-commands#using-connect-mggraph) to sign in to your tenant.
 
     ```powershell
-    Connect-AzureAD
+    Connect-MgGraph -Scopes "RoleManagement.Read.All"
     ```
-3. Use [Get-AzureADMSRoleDefinition](/powershell/module/azuread/get-azureadmsroledefinition) to get all roles.
+
+3. Use [Get-MgRoleManagementDirectoryRoleDefinition](/powershell/module/microsoft.graph.identity.governance/get-mgrolemanagementdirectoryroledefinition) to get all roles.
 
     ```powershell
-    Get-AzureADMSRoleDefinition
+    Get-MgRoleManagementDirectoryRoleDefinition
     ```
 
 4. To view the list of permissions of a role, use the following cmdlet.
-    
+
     ```powershell
     # Do this avoid truncation of the list of permissions
     $FormatEnumerationLimit = -1
     
-    (Get-AzureADMSRoleDefinition -Filter "displayName eq 'Conditional Access Administrator'").RolePermissions | Format-list
+    (Get-MgRoleManagementDirectoryRoleDefinition -Filter "displayName eq 'Conditional Access Administrator'").RolePermissions | Format-list
     ```
 
 ## Microsoft Graph API

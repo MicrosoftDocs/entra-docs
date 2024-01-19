@@ -5,7 +5,6 @@ services: active-directory
 documentationCenter: ''
 author: owinfreyatl
 manager: amycolannino
-editor: 
 ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
@@ -47,7 +46,7 @@ In entitlement management, you can see who has requested access packages, the po
 If you have a set of users whose requests are in the "Partially Delivered" or "Failed" state, you can retry those requests by using the [reprocess functionality](entitlement-management-reprocess-access-package-requests.md).
 
 ### View requests with Microsoft Graph
-You can also retrieve requests for an access package using Microsoft Graph.  A user in an appropriate role with an application that has the delegated `EntitlementManagement.Read.All` or `EntitlementManagement.ReadWrite.All` permission can call the API to [list accessPackageAssignmentRequests](/graph/api/entitlementmanagement-list-accesspackageassignmentrequests?view=graph-rest-beta&preserve-view=true). While an identity governance administrator can retrieve access package requests from multiple catalogs, if user or application service principal is assigned only to catalog-specific delegated administrative roles, the request must supply a filter to indicate a specific access package, such as: `$expand=accessPackage&$filter=accessPackage/id eq '9bbe5f7d-f1e7-4eb1-a586-38cdf6f8b1ea'`. An application that has the application permission `EntitlementManagement.Read.All` or `EntitlementManagement.ReadWrite.All` permission can also use this API to retrieve requests across all catalogs.
+You can also retrieve requests for an access package using Microsoft Graph.  A user in an appropriate role with an application that has the delegated `EntitlementManagement.Read.All` or `EntitlementManagement.ReadWrite.All` permission can call the API to [list assignmentRequests](/graph/api/entitlementmanagement-list-assignmentrequests?view=graph-rest-1.0&preserve-view=true). While an identity governance administrator can retrieve access package requests from multiple catalogs, if user or application service principal is assigned only to catalog-specific delegated administrative roles, the request must supply a filter to indicate a specific access package, such as: `$expand=accessPackage&$filter=accessPackage/id eq '9bbe5f7d-f1e7-4eb1-a586-38cdf6f8b1ea'`. An application that has the application permission `EntitlementManagement.Read.All` or `EntitlementManagement.ReadWrite.All` permission can also use this API to retrieve requests across all catalogs.
 
 Microsoft Graph will return the results in pages, and will continue to return a reference to the next page of results in the `@odata.nextLink` property with each response, until all pages of the results have been read. To read all results, you must continue to call Microsoft Graph with the `@odata.nextLink` property returned in each response until the `@odata.nextLink` property is no longer returned, as described in [paging Microsoft Graph data in your app](/graph/paging).
 
@@ -72,7 +71,7 @@ You can also remove a completed request that is no longer needed. To remove a re
 
 ### Remove a request with Microsoft Graph
 
-You can also remove a request using Microsoft Graph.  A user in an appropriate role with an application that has the delegated `EntitlementManagement.ReadWrite.All` permission, or an application with that application permission, can call the API to [remove an accessPackageAssignmentRequest](/graph/api/accesspackageassignmentrequest-delete).
+You can also remove a request using Microsoft Graph.  A user in an appropriate role with an application that has the delegated `EntitlementManagement.ReadWrite.All` permission, or an application with the `EntitlementManagement.ReadWrite.All` application permission, can call the API to [remove an accessPackageAssignmentRequest](/graph/api/accesspackageassignmentrequest-delete).
 
 ## Next steps
 

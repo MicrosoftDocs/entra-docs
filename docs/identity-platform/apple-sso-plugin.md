@@ -10,8 +10,9 @@ ms.reviewer: brandwe
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-#Customer intent:
+#Customer intent: As an IT admin managing Apple devices in my organization, I want to enable single sign-on (SSO) for Microsoft Enterprise accounts on macOS, iOS, and iPadOS, so that users can have a seamless authentication experience across all applications that support Apple's enterprise SSO feature.
 ---
+
 # Microsoft Enterprise SSO plug-in for Apple devices
 
 The **Microsoft Enterprise SSO plug-in for Apple devices** provides single sign-on (SSO) for Microsoft Entra accounts on macOS, iOS, and iPadOS across all applications that support Apple's [enterprise single sign-on](https://developer.apple.com/documentation/authenticationservices) feature. The plug-in provides SSO for even old applications that your business might depend on but that don't yet support the latest identity libraries or protocols. Microsoft worked closely with Apple to develop this plug-in to increase your application's usability while providing the best protection available.
@@ -30,6 +31,12 @@ The Microsoft Enterprise SSO plug-in for Apple devices offers the following bene
 - It extends SSO to applications that don't yet use the Microsoft Authentication Library (MSAL).
 - It extends SSO to applications that use OAuth 2, OpenID Connect, and SAML.
 - It is natively integrated with the MSAL, which provides a smooth native experience to the end user when the Microsoft Enterprise SSO plug-in is enabled. 
+
+>[!IMPORTANT]
+> In August of 2023, [Microsoft announced that Platform SSO for macOS devices is coming soon to Entra ID.](https://techcommunity.microsoft.com/t5/microsoft-entra-blog/coming-soon-platform-sso-for-macos/ba-p/3902280).
+>
+> As these features are still under development, the use of Platform SSO features is not yet supported on the Entra ID platform. Limited customer support will be provided once these features enter public preview. 
+
 
 ## Requirements
 
@@ -331,20 +338,24 @@ For the SSO plug-in to function properly, Apple devices should be allowed to rea
 
 Here is the minimum set of URLs that need to be allowed for the SSO plug-in to function:
 
-  - `*.cdn-apple.com`
-  - `*.networking.apple`
-  - `login.microsoftonline.com`
-  - `login.microsoft.com`
-  - `sts.windows.net`
-  - `login.partner.microsoftonline.cn`
-  - `login.chinacloudapi.cn`
-  - `login.microsoftonline.us`
-  - `login-us.microsoftonline.com`
+  - `app-site-association.cdn-apple.com`
+  - `app-site-association.networking.apple`
+  - `login.microsoftonline.com`(*)
+  - `login.microsoft.com`(*)
+  - `sts.windows.net`(*)
+  - `login.partner.microsoftonline.cn`(*)(**)
+  - `login.chinacloudapi.cn`(*)(**)
+  - `login.microsoftonline.us`(*)(**)
+  - `login-us.microsoftonline.com`(*)(**)
+
+(*) Allowing Microsoft domains is only required on operating system versions released before 2022. On the latest operating system versions, Apple relies fully on its CDN. 
+
+(**) You only need to allow sovereign cloud domains if you rely on those in your environment. 
 
 > [!WARNING]
-> If your organization uses proxy servers that intercept SSL traffic for scenarios like data loss prevention or tenant restrictions, ensure that traffic to these URLs are excluded from TLS break-and-inspect. Failure to exclude these URLs may cause interference with client certificate authentication, cause issues with device registration, and device-based Conditional Access.
+> If your organization uses proxy servers that intercept SSL traffic for scenarios like data loss prevention or tenant restrictions, ensure that traffic to these URLs are excluded from TLS break-and-inspect. Failure to exclude these URLs will cause interference with client certificate authentication, cause issues with device registration, and device-based Conditional Access. SSO plugin will not work reliably without fully excluding Apple CDN domains from interception, and you will experience intermittent issues until you do so.
 
-If your organization blocks these URLs users may see errors like `1012 NSURLErrorDomain error` or `1000 com.apple.AuthenticationServices.AuthorizationError`.
+If your organization blocks these URLs users may see errors like `1012 NSURLErrorDomain error`, `1000 com.apple.AuthenticationServices.AuthorizationError` or `1001 Unexpected`.
 
 Other Apple URLs that may need to be allowed are documented in their support article, [Use Apple products on enterprise networks](https://support.apple.com/HT210060).
 

@@ -12,6 +12,8 @@ ms.date: 12/13/2022
 ms.author: gasinh
 ms.collection: M365-identity-device-management
 ms.custom: not-enterprise-apps
+
+#customer intent: As a IT administrator, I want to configure F5 BIG-IP Access Policy Manager for Kerberos authentication, so that I can implement secure hybrid access with single sign-on to Kerberos applications and improve governance and security for my organization.
 ---
 
 # Tutorial: Configure F5 BIG-IP Access Policy Manager for Kerberos authentication

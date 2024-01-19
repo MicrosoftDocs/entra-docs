@@ -10,7 +10,7 @@ ms.reviewer: brandwe
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-#Customer intent:
+#Customer intent: As a developer building applications for frontline workers, I want to understand how to enable shared device mode in my apps using Microsoft Entra ID, so that I can provide a secure and optimized experience for users on shared Android and iOS devices.
 ---
 
 # Overview of shared device mode

@@ -12,6 +12,8 @@ ms.date: 01/07/2021
 ms.author: jomondi
 ms.reviewer: ergreenl
 ms.custom: enterprise-apps
+
+#customer intent: As an IT admin, I want to understand how users are assigned to apps in Microsoft Entra ID, so that I can effectively manage user access and permissions within the system.
 ---
 
 # Understand how users are assigned to apps

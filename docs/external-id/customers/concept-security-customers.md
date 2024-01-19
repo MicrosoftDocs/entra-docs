@@ -8,7 +8,7 @@ ms.service: active-directory
  
 ms.subservice: ciam
 ms.topic: conceptual
-ms.date: 04/28/2023
+ms.date: 01/18/2024
 ms.author: mimart
 ms.custom: it-pro
 
@@ -21,6 +21,16 @@ The integration of customer capabilities into Microsoft Entra ID means that your
 > [!NOTE]
 > In Conditional Access, MFA, and Identity Protection aren't available in free trial customer tenants.
 
+## Conditional Access
+
+Microsoft Entra Conditional Access brings signals together, to make decisions, and enforce security policies. Conditional Access policies at their simplest are if-then statements; **if** a user wants to access your application, **then** they must complete an action.
+
+Conditional Access policies are enforced after the user has completed first-factor authentication. For example, if a user's sign-in risk level is high, they must perform multifactor authentication to gain access. Alternatively, the most restrictive approach is to block access to the application.
+
+> [!TIP]
+> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=CA)
+> 
+> To try out this feature, go to the Woodgrove Groceries demo and start the “Conditional Access and Multifactor authentication” use case.
 
 ## Multifactor authentication
 
@@ -42,6 +52,12 @@ Microsoft Entra [Identity Protection](~/id-protection/overview-identity-protecti
 - Export risk detection data to other tools.
 
 Identity Protection comes with risk reports that can be used to investigate identity risks in customer tenants. For details, see [Investigate risk with Identity Protection in Microsoft Entra ID for customers](how-to-identity-protection-customers.md).
+
+## Analyze user authentication trends for your apps
+
+The Application user activity (Preview) feature under Usage & insights provides data analytics on user activity for registered applications in your tenant. You can use this feature to view, query, and analyze user requests and authentication trends. It can help you track changes, access patterns, and potential security breaches.
+
+For details see [application user activity dashboards](how-to-user-insights.md). 
 
 ## Next steps
 

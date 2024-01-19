@@ -165,6 +165,14 @@ items:
       href: deployment-plans.md
     - name: Azure Active Directory B2C deployment plans
       href: b2c-deployment-plans.md
+    - name: Microsoft Security Service Edge Solution deployment plans
+      items:
+      - name: Introduction
+        href: sse-deployment-guide-intro.md
+      - name: Deploying Microsoft Entra Internet Access for M365
+        href: sse-deployment-guide-m365.md 
+      - name: Deploying Microsoft Entra Private Access
+        href: sse-deployment-guide-private-access.md 
   - name: Microsoft Entra Operations reference
     items:
     - name: Introduction

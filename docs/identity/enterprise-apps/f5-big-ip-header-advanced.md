@@ -12,13 +12,15 @@ ms.date: 03/22/2023
 ms.author: gasinh
 ms.collection: M365-identity-device-management
 ms.custom: not-enterprise-apps
+
+#customer intent: As an IT administrator, I want to configure F5 BIG-IP Access Policy Manager for header-based single sign-on, so that I can implement secure hybrid access with single sign-on to header-based applications using F5 BIG-IP advanced configuration.
 ---
 
-# Tutorial: Configure F5 BIG-IP Access Policy Manager for header-based single sign-on 
+# Tutorial: Configure F5 BIG-IP Access Policy Manager for header-based single sign-on
 
 Learn to implement secure hybrid access (SHA) with single sign-on (SSO) to header-based applications, using F5 BIG-IP advanced configuration. BIG-IP published applications and Microsoft Entra configuration benefits:
 
-* Improved Zero Trust governance through Microsoft Entra preauthentication and Conditional Access 
+* Improved Zero Trust governance through Microsoft Entra preauthentication and Conditional Access
   * See, [What is Conditional Access?](~/identity/conditional-access/overview.md)
   * See, [Zero Trust security](/azure/security/fundamentals/zero-trust)
 * Full SSO between Microsoft Entra ID and BIG-IP published services

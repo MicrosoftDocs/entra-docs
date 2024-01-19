@@ -14,8 +14,7 @@ ms.date: 09/15/2023
 
 # Manual Microsoft Entra Verified ID setup
 
-[!INCLUDE [Verifiable Credentials announcement](~/../azure-docs-pr/includes/verifiable-credentials-brand.md)]
-
+  
 Manual Verified ID setup is the classic way of setting up Verified ID where you as an admin have to configure Azure KeyVault, take care of registering your decentralized ID and verifying your domain.
 
 In this tutorial, you learn how to use the manual setup to configure your Microsoft Entra tenant to use the verifiable credentials service.

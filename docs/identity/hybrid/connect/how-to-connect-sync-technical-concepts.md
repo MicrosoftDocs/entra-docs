@@ -23,11 +23,11 @@ This article is a summary of the topic [Understanding architecture](how-to-conne
 
 Microsoft Entra Connect Sync builds upon a solid metadirectory synchronization platform.
 The following sections introduce the concepts for metadirectory synchronization.
-Building upon MIIS (Microsoft Identity Integration Server), ILM (Identity Lifecycle Manager), and FIM (Forefront Identity Manager), the Azure Active Directory Sync Services provides the next platform for connecting to data sources, synchronizing data between data sources, as well as the provisioning and deprovisioning of identities.
+The Azure Active Directory Sync Services provides a platform for connecting to data sources, synchronizing data between data sources, as well as the provisioning and deprovisioning of identities.
 
 ![Technical Concepts](./media/how-to-connect-sync-technical-concepts/scenario.png)
 
-The following sections provide more details about the following aspects of the FIM Synchronization Service:
+The following sections provide more details about the following aspects of the Synchronization Service:
 
 * Connector
 * Attribute flow

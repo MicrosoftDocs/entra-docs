@@ -1,16 +1,16 @@
 ---
 title: How to manage inactive user accounts
-description: Learn how to detect and resolve Microsoft Entra user accounts that are inactive or obsolete.
+description: Learn how to detect and resolve Microsoft Entra user accounts that are inactive or obsolete using the Microsoft Entra admin center and Microsoft Graph.
 author: shlipsey3
 manager: amycolannino
 ms.service: active-directory
 ms.topic: how-to
-ms.workload: identity
-ms.custom: has-azure-ad-ps-ref
 ms.subservice: report-monitor
-ms.date: 11/17/2023
+ms.date: 12/15/2023
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
+
+# Customer intent: As an IT admin, I need to learn how to detect and resolve Microsoft Entra user accounts that are inactive or obsolete.
 ---
 # How To: Manage inactive user accounts
 
@@ -21,6 +21,16 @@ This article explains a method to handle obsolete user accounts in Microsoft Ent
 >[!NOTE]
 >This article applies only to finding inactive user accounts in Microsoft Entra ID. It does not apply to finding inactive accounts in [Azure AD B2C](/azure/active-directory-b2c/overview).
 
+## Prerequisites
+
+To access the `lastSignInDateTime` property using Microsoft Graph:
+
+- You need a Microsoft Entra ID P1 or P2 edition license.
+
+- You need to grant the app the following Microsoft Graph permissions:
+  - AuditLog.Read.All
+  - User.Read.All
+
 ## What are inactive user accounts?
 
 Inactive accounts are user accounts that aren't required anymore by members of your organization to gain access to your resources. One key identifier for inactive accounts is that they haven't been used *for a while* to sign in to your environment. Because inactive accounts are tied to the sign-in activity, you can use the timestamp of the last time an account attempted to sign in to detect inactive accounts.
@@ -30,7 +40,6 @@ The challenge of this method is to define what *for a while* means for your envi
 The last sign-in provides potential insights into a user's continued need for access to resources.  It can help with determining if group membership or app access is still needed or could be removed. For external user management, you can understand if an external user is still active within the tenant or should be cleaned up.
 
 ## Detect inactive user accounts with Microsoft Graph
-
 <a name="how-to-detect-inactive-user-accounts"></a>
 
 You can detect inactive accounts by evaluating the `lastSignInDateTime` property exposed by the `signInActivity` resource type of the **Microsoft Graph API**. The `lastSignInDateTime` property shows the last time a user attempted to make an interactive sign-in attempt in Microsoft Entra ID. Using this property, you can implement a solution for the following scenarios:
@@ -47,19 +56,13 @@ You can detect inactive accounts by evaluating the `lastSignInDateTime` property
 > [!NOTE]
 > The `signInActivity` property supports `$filter` (`eq`, `ne`, `not`, `ge`, `le`) *but not with any other filterable properties*. You must specify `$select=signInActivity` or `$filter=signInActivity` while [listing users](/graph/api/user-list?view=graph-rest-beta&preserve-view=true), as the signInActivity property is not returned by default.
 
-### What you need to know
+### Considerations for the lastSignInDateTime property
 
 The following details relate to the `lastSignInDateTime` property.
 
 - The `lastSignInDateTime` property is exposed by the [signInActivity resource type](/graph/api/resources/signinactivity) of the [Microsoft Graph API](/graph/overview#whats-in-microsoft-graph).
 
 - The property is *not* available through the Get-MgAuditLogDirectoryAudit cmdlet.
-
-- To access the property, you need a Microsoft Entra ID P1 or P2 edition license.
-
-- To read the property, you need to grant the app the following Microsoft Graph permissions:
-  - AuditLog.Read.All
-  - User.Read.All
 
 - Each interactive sign-in attempt results in an update of the underlying data store. Typically, sign-ins show up in the related sign-in report within 6 hours.
 
@@ -71,7 +74,7 @@ The following details relate to the `lastSignInDateTime` property.
 
 ## How to investigate a single user
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
+[!INCLUDE [portal update](../../includes/portal-update.md)]
 
 If you need to view the latest sign-in activity for a user, you can view the user's sign-in details in Microsoft Entra ID. You can also use the Microsoft Graph **users by name** scenario described in the [previous section](#detect-inactive-user-accounts-with-microsoft-graph).
 

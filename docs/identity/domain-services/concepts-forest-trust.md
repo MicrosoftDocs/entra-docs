@@ -9,7 +9,7 @@ ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 09/13/2023
+ms.date: 11/27/2023
 ms.author: justinha
 ---
 
@@ -24,7 +24,7 @@ The access control mechanisms provided by AD DS and the Windows distributed secu
 The trust path is implemented by the Net Logon service using an authenticated remote procedure call (RPC) connection to the trusted domain authority. A secured channel also extends to other AD DS domains through interdomain trust relationships. This secured channel is used to obtain and verify security information, including security identifiers (SIDs) for users and groups.
 
 >[!NOTE]
->Domain Services only supports one-way transitive trusts where the managed domain will trust other domains, but no other directions or trust types are supported.
+>Domain Services supports multiple forest trust directions, including two-way trusts and one-way trusts that can be either incoming or outgoing. 
 
 For an overview of how trusts apply to Domain Services, see [Forest concepts and features][create-forest-trust].
 
@@ -50,7 +50,7 @@ Some one-way trusts can be either non-transitive or transitive depending on the 
 
 In a two-way trust, *Domain A* trusts *Domain B* and *Domain B* trusts *Domain A*. This configuration means that authentication requests can be passed between the two domains in both directions. Some two-way relationships can be non-transitive or transitive depending on the type of trust being created.
 
-All domain trusts in an AD DS forest are two-way, transitive trusts. When a new child domain is created, a two-way, transitive trust is automatically created between the new child domain and the parent domain.
+All domain trusts in an on-premises AD DS forest are two-way, transitive trusts. When a new child domain is created, a two-way, transitive trust is automatically created between the new child domain and the parent domain.
 
 ### Transitive and non-transitive trusts
 
@@ -91,7 +91,7 @@ For example, when a one-way, forest trust is created between *Forest 1* (the tru
 * Members of *Forest 2* can't access resources located in *Forest 1* using the same trust.
 
 > [!IMPORTANT]
-> Microsoft Entra Domain Services only supports a one-way forest trust to on-premises Active Directory.
+> Microsoft Entra Domain Services supports multiple directions for forest trusts.
 
 ### Forest trust requirements
 
@@ -105,9 +105,9 @@ Before you can create a forest trust, you need to verify you have the correct Do
 
 * When there is no shared root DNS server and the root DNS servers in each forest DNS namespace are use DNS secondary zones are configured in each DNS namespace to route queries for names in the other namespace.
 
-To create a forest trust, you must be a member of the Domain Admins group (in the forest root domain) or the Enterprise Admins group in Active Directory. Each trust is assigned a password that the administrators in both forests must know. Members of Enterprise Admins in both forests can create the trusts in both forests at once and, in this scenario, a password that is cryptographically random is automatically generated and written for both forests.
+To create a forest trust in AD DS, you must be a member of the Domain Admins group (in the forest root domain) or the Enterprise Admins group in Active Directory. Each trust is assigned a password that the administrators in both forests must know. Members of Enterprise Admins in both forests can create the trusts in both forests at once and, in this scenario, a password that is cryptographically random is automatically generated and written for both forests.
 
-A managed domain forest supports up to five one-way outbound forest trusts to on-premises forests. The outbound forest trust for Microsoft Entra Domain Services is created in the Microsoft Entra admin center. You don't manually create the trust with the managed domain itself. The incoming forest trust must be configured by a user with the privileges previously noted in the on-premises Active Directory. 
+A managed domain forest supports up to five one-way outbound forest trusts to on-premises forests. The outbound forest trust for Microsoft Entra Domain Services is created in the Microsoft Entra admin center. The incoming forest trust must be configured by a user with the privileges previously noted in the on-premises Active Directory. 
 
 ## Trust processes and interactions
 

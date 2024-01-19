@@ -6,11 +6,11 @@ author: Dickson-Mwendia
 manager: CelesteDG
 ms.author: dmwendia
 ms.custom: scenarios:getting-started, "languages:Java", devx-track-java, mode-api, devx-track-extended-java
-ms.date: 08/16/2022
+ms.date: 12/19/2023
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-#Customer intent:
+#Customer intent: As a Java web app developer, I want to add sign-in with Microsoft functionality to my application, so that users can authenticate with their Microsoft accounts and access the Microsoft Graph API.
 ---
 # Quickstart: Add sign-in with Microsoft to a Java web app
 

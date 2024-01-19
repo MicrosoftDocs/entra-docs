@@ -13,6 +13,8 @@ ms.author: jomondi
 ms.reviewer: alamaral
 ms.collection: M365-identity-device-management
 ms.custom: enterprise-apps, has-azure-ad-ps-ref
+
+#customer intent: As an IT admin configuring SAML token encryption for Microsoft Entra ID, I want step-by-step instructions on how to upload an X.509 certificate file and activate token encryption, so that I can ensure the SAML assertions emitted for the application are encrypted and secure.
 ---
 
 # Configure Microsoft Entra SAML token encryption

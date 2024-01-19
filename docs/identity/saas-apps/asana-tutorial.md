@@ -86,7 +86,10 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://app.asana.com/-/saml/consume`
 
     c. In the **Sign on URL** text box, type the URL:
-    `https://app.asana.com/`
+    `https://app.asana.com/a/<email_suffix>`
+
+    > [!Note]
+    > If you own many email domains, feel free to use any one of them.
 
 1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Certificate (Base64)** from the given options as per your requirement and save it on your computer.
 

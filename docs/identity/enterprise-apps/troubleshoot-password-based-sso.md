@@ -11,6 +11,8 @@ ms.date: 09/07/2023
 ms.author: jomondi
 ms.reviewer: alamaral
 ms.custom: enterprise-apps
+
+#customer intent: As an IT admin troubleshooting password-based single sign-on (SSO) in My Apps portal, I want to know how to resolve issues with the browser extension, configuration, user assignments, and incorrect credentials, so that I can successfully use password-based SSO for accessing applications.
 ---
 
 # Troubleshoot password-based single sign-on

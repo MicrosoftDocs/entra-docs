@@ -13,6 +13,8 @@ ms.author: jomondi
 ms.reviewer: alamaral
 ms.collection: M365-identity-device-management
 ms.custom: enterprise-apps
+
+#customer intent: As an administrator, I want to configure single sign-on for SAML-supporting Microsoft Entra applications with minimal manual effort, so that I can quickly set up SSO and improve efficiency and accuracy in SSO configuration.
 ---
 
 # One-click app configuration of single sign-on

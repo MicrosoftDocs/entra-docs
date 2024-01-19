@@ -12,7 +12,9 @@ ms.subservice: hybrid
 ms.author: billmath
 ---
 
-# Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance
+# Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance (Preview)
+
+[!INCLUDE [deprecation](~/includes/gwb-v2-deprecation.md)]
 
 **Scenario:**  Manage on-premises applications with Active Directory groups that are provisioned from and managed in the cloud.  Microsoft Entra cloud sync allows you to fully govern application assignments in AD while taking advantage of Microsoft Entra ID Governance features to control and remediate any access related requests.
 

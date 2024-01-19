@@ -6,7 +6,7 @@ description: Guest user properties are configurable in Microsoft Entra B2B colla
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: how-to
-ms.date: 11/24/2022
+ms.date: 12/18/2023
 
 ms.author: cmulligan
 author: csmulligan
@@ -14,14 +14,14 @@ manager: celestedg
 ms.custom: "it-pro, seo-update-azuread-jan"
 ms.collection: M365-identity-device-management
 
-# Customer intent: As a tenant administrator, I want to see access reviews, and system and user activities in my tenant.
+# Customer intent: As an IT admin managing B2B collaboration users, I want to audit and report on guest user activities, so that I can ensure the security and compliance of my organization's resources.
 ---
 
 # Auditing and reporting a B2B collaboration user
 With guest users, you have auditing capabilities similar to with member users.
 
 ## Access reviews
-You can use access reviews to periodically verify whether guest users still need access to your resources. The **Access reviews** feature is available in **Microsoft Entra ID** under **Identity Governance** > **Access reviews**. To learn how to use access reviews, see [Manage guest access with Microsoft Entra access reviews](~/id-governance/manage-guest-access-with-access-reviews.md).
+You can use access reviews to periodically verify whether guest users still need access to your resources. The **Access reviews** feature is available in **Microsoft Entra ID** under **Identity governance** > **Access reviews**. To learn how to use access reviews, see [Manage guest access with Microsoft Entra access reviews](~/id-governance/manage-guest-access-with-access-reviews.md).
 
 ## Audit logs
 
@@ -29,7 +29,7 @@ The Microsoft Entra audit logs provide records of system and user activities, in
 
 :::image type="content" source="media/auditing-and-reporting/audit-log.png" alt-text="Screenshot showing an example of audit log output." lightbox="media/auditing-and-reporting/audit-log-large.png":::
 
-You can dive into each of these events to get the details. For example, let's look at the user update details.
+You can dive into each of these events to get the details. For example, let's look at the user management details.
 
 :::image type="content" source="media/auditing-and-reporting/activity-details.png" alt-text="Screenshot showing an example of activity details output." lightbox="media/auditing-and-reporting/activity-details-large.png":::
 

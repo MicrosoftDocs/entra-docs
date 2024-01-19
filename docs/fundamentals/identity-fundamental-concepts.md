@@ -8,7 +8,7 @@ manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-ms.date: 06/05/2023
+ms.date: 01/10/2024
 ms.author: ryanwi
 ms.reviewer: 
 ---

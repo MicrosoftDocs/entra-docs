@@ -75,7 +75,7 @@ For high availability in your production environment, we recommend having more t
 #### Recommendations for the connector server
 
 1. Physically locate the connector server close to the application servers to optimize performance between the connector and the application. For more information, see [Optimize traffic flow with Microsoft Entra application proxy](application-proxy-network-topology.md).
-1. The connector server and the web applications servers should belong to the same Active Directory domain or span trusting domains. Having the servers in the same domain or trusting domains is a requirement for using single sign-on (SSO) with integrated Windows authentication (IWA) and Kerberos Constrained Delegation (KCD). If the connector server and web application servers are in different Active Directory domains, you need to use resource-based delegation for single sign-on. For more information, see [KCD for single sign-on with Application Proxy](./application-proxy-configure-single-sign-on-with-kcd.md).
+1. The connector server and the web applications servers should belong to the same Active Directory domain or span trusting domains. Having the servers in the same domain or trusting domains is a requirement for using single sign-on (SSO) with integrated Windows authentication (IWA) and Kerberos Constrained Delegation (KCD). If the connector server and web application servers are in different Active Directory domains, you need to use resource-based delegation for single sign-on. For more information, see [KCD for single sign-on with Application Proxy](./how-to-configure-sso-with-kcd.md).
 
 > [!WARNING]
 > If you've deployed Microsoft Entra Password Protection Proxy, do not install Microsoft Entra application proxy and Microsoft Entra Password Protection Proxy together on the same machine. Microsoft Entra application proxy and Microsoft Entra Password Protection Proxy install different versions of the Microsoft Entra Connect Agent Updater service. These different versions are incompatible when installed together on the same machine.
@@ -159,9 +159,6 @@ To install the connector:
 1. Select your username in the upper-right corner. Verify you're signed in to a directory that uses Application Proxy. If you need to change directories, select **Switch directory** and choose a directory that uses Application Proxy.
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Application proxy**.
 1. Select **Download connector service**.
-
-    ![Download connector service to see the Terms of Service](./media/application-proxy-add-on-premises-application/application-proxy-download-connector-service.png)
-
 1. Read the Terms of Service. When you're ready, select **Accept terms & Download**.
 1. At the bottom of the window, select **Run** to install the connector. An install wizard opens.
 1. Follow the instructions in the wizard to install the service. When you're prompted to register the connector with the Application Proxy for your Microsoft Entra tenant, provide your application administrator credentials.
@@ -205,8 +202,6 @@ To confirm the connector installed and registered correctly:
 1. Check to see if the status for the following two services is **Running**.
    - **Microsoft Entra application proxy Connector** enables connectivity.
    - **Microsoft Entra application proxy Connector Updater** is an automated update service. The updater checks for new versions of the connector and updates the connector as needed.
-
-     ![App Proxy Connector services - screenshot](./media/application-proxy-add-on-premises-application/app_proxy_services.png)
 
 1. If the status for the services isn't **Running**, right-click to select each service and choose **Start**.
 
