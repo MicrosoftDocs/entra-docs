@@ -6,7 +6,7 @@ services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 01/09/2024
+ms.date: 01/19/2024
 
 ms.author: justinha
 author: justinha
@@ -114,6 +114,7 @@ The NPS server must be able to communicate with the following URLs over TCP port
 
 Additionally, connectivity to the following URLs is required to complete the [setup of the adapter using the provided PowerShell script](#run-the-powershell-script):
 
+* `https://onegetcdn.azureedge.net`
 * `https://login.microsoftonline.com`
 * `https://provisioningapi.microsoftonline.com`
 * `https://aadcdn.msauth.net`

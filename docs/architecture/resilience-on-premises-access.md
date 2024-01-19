@@ -27,7 +27,7 @@ Users access on premises resources through a URL published via Application Proxy
 
 To implement remote access with Microsoft Entra application proxy, see the following resources.
 
-* [Planning an Application Proxy deployment](~/identity/app-proxy/application-proxy-deployment-plan.md)
+* [Planning an Application Proxy deployment](~/identity/app-proxy/conceptual-deployment-plan.md)
 * [High availability and load balancing best practices](~/identity/app-proxy/application-proxy-high-availability-load-balancing.md)
 * [Configure proxy servers](~/identity/app-proxy/application-proxy-configure-connectors-with-proxy-servers.md)
 * [Design a resilient access control strategy](~/identity/authentication/concept-resilient-controls.md)
