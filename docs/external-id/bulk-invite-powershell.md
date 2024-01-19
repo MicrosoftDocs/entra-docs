@@ -85,8 +85,8 @@ Run the following command to connect to the tenant:
 Connect-MgGraph -TenantId '<YOUR_TENANT_ID>'
 ```
 
-For example, `Connect-MgGraph -TenantId '11111111-aaaa-2222-bbbb-33333333``.
-
+For example, `Connect-MgGraph -TenantId "11111111-aaaa-2222-bbbb-33333333"`. You can also use the tenant domain, but the parameter remains the `-TenantId`. For example, `Connect-MgGraph -TenantId "contoso.onmicrosoft.com"`
+ 
 When prompted, enter your credentials.
 
 ## Send bulk invitations
