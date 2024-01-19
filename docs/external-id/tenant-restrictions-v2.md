@@ -92,13 +92,15 @@ The following table compares the features in each version.
 
 ## Migrate tenant restrictions v1 policies to v2 on the proxy
 
-Migrating tenant restriction policies from v1 to v2 is a one-time operation. After migration, no client-side changes are required. You can make any subsequent server side policy changes via the Microsoft Entra admin center. When enabling TRv2 on proxy, you will be able to enforce TRv2 only on authentication plane. To enable TRv2 on both authentication and data plane you should enable TRv2 client side signaling using [Universal TRv2](#option-1-universal-tenant-restrictions-v2-as-part-of-microsoft-entra-global-secure-access-preview)
+Migrating tenant restriction policies from v1 to v2 is a one-time operation. After migration, no client-side changes are required. You can make any subsequent server side policy changes via the Microsoft Entra admin center. 
 
-1. **Configuring allowed list of partner tenants**
+When enabling TRv2 on proxy, you will be able to enforce TRv2 only on authentication plane. To enable TRv2 on both authentication and data plane you should enable TRv2 client side signaling using [Universal TRv2](#option-1-universal-tenant-restrictions-v2-as-part-of-microsoft-entra-global-secure-access-preview)
+
+Step 1: **Configuring allowed list of partner tenants**
 
 **TRv1:** Tenant Restrictions v1 (TRv1) lets you create an allow list of tenant IDs and/or Microsoft sign-in endpoints to ensure that users access external tenants that your organization authorizes. TRv1 acheived it by adding **`Restrict-Access-To-Tenants: <allowed-tenant-list>`** header on the proxy. For ex: `Restrict-Access-To-Tenants: " contoso.com, fabrikam.com, dogfood.com". [Learn more](~/identity/enterprise-apps/tenant-restrictions.md) about tenant restrictions v1.
   
-**TRv2:** With TRv2, the configuration is moved to the server side cloud policy and there is no need for the TRv1 header. 
+**TRv2:** With Tenant Restrictions v2 (TRv2), the configuration is moved to the server side cloud policy and there is no need for the TRv1 header. 
 
 - On your corporate proxy, you should remove tenant restrictions v1 header, **`Restrict-Access-To-Tenants: <allowed-tenant-list>`**.
 - For each tenant in the allowed-tenant-list, create a partner tenant policy by following the steps at [Step 2: Configure tenant restrictions v2 for specific partners](#step-2-configure-tenant-restrictions-v2-for-specific-partners). Be sure to follow these guidelines:
@@ -108,7 +110,7 @@ Migrating tenant restriction policies from v1 to v2 is a one-time operation. Aft
 > - Create a partner tenant policy for each tenant listed in your v1 allowlist by following the steps at [Step 2: Configure tenant restrictions v2 for specific partners](#step-2-configure-tenant-restrictions-v2-for-specific-partners).
 > - Allow only specific users to access specific applications. This design increases your security posture by limiting access to necessary users only.
 
-2. **Blocking Consumer account or Microsoft Account tenant**
+Step 2: **Blocking Consumer account or Microsoft Account tenant**
 
 **TRv1:** To not allow users to sign in to consumer applications. Trv1 needs the sec-Restrict-Tenant-Access-Policy headerto be injected to traffic visiting login.live.com like **sec-Restrict-Tenant-Access-Policy: restrict-msa`**
 
@@ -117,19 +119,17 @@ Migrating tenant restriction policies from v1 to v2 is a one-time operation. Aft
 - On your corporate proxy, you should remove tenant restrictions v1 header **sec-Restrict-Tenant-Access-Policy: restrict-msa`**.
 - Create a partner tenant policy for Microsoft Accounts tenant by following [Step 2: Configure tenant restrictions v2 for specific partners](#step-2-configure-tenant-restrictions-v2-for-specific-partners). Because user-level assignment isn't available for MSA tenants, the policy applies to all MSA users. However, application-level granularity is available, and you should limit the applications that MSA or consumer accounts can access to only those applications that are necessary.
 
-3. **Enable Tenant restrictions v2 on the corporate proxy**
-
-**TRv2:** You can configure the corporate proxy to enable client-side tagging of the tenant restrictions V2 header by using the following corporate proxy setting:
-`sec-Restrict-Tenant-Access-Policy: <DirectoryID>:<policyGUID>`
-
-where `<DirectoryID>` is your Microsoft Entra tenant ID and `<policyGUID>` is the object ID for your cross-tenant access policy.
- sec-Restrict-Tenant-Access-Policy: restrict-msa`
-
 > [!NOTE]
 >Blocking the MSA tenant will not block user-less traffic for devices, including:
 >
 >- Traffic for Autopilot, Windows Update, and organizational telemetry.
 >- B2B authentication of consumer accounts, or "passthrough" authentication, where Azure apps and Office.com apps use Microsoft Entra ID to sign in consumer users in a consumer context.
+
+Step 3: **Enable Tenant restrictions v2 on the corporate proxy**
+
+**TRv2:** You can configure the corporate proxy to enable client-side tagging of the tenant restrictions V2 header by using the following corporate proxy setting: **`sec-Restrict-Tenant-Access-Policy: <DirectoryID>:<policyGUID>`**
+
+where `<DirectoryID>` is your Microsoft Entra tenant ID and `<policyGUID>` is the object ID for your cross-tenant access policy.
 
 ## Tenant restrictions vs. inbound and outbound settings
 
