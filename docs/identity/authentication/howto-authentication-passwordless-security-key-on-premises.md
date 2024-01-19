@@ -57,8 +57,9 @@ You must also meet the following system requirements:
 - Users must have the following Entra ID attributes populated through Microsoft Entra Connect:
    - onPremisesSamAccountName (accountName in Entra Connect)
    - onPremisesDomainName (domainFQDN in Entra Connect)
+   - onPremisesSecurityIdentifier (objectSID in Entra Connect)
 
-  Entra Connect synchronizes these attributes by default. If you change which attributes to synchronize, make you select accountName and domainFQDN for synchronization.
+  Entra Connect synchronizes these attributes by default. If you change which attributes to synchronize, make you select accountName, domainFQDN, and objectSID for synchronization.
 
 ### Supported scenarios
 
