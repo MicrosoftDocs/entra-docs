@@ -24,6 +24,14 @@ Release date: October 16th, 2023
 - Rebranded the agent for Microsoft Entra
 
 
+## 1.1.1373.0
+
+Release date: January 19th, 2024
+
+### Fixed issues
+Fixed an issue with case-sensitive comparison of domain names and enhanced the error handling.
+
+
 ## 1.1.1365.0
 
 Release date: September 8th, 2023
