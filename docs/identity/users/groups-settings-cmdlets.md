@@ -22,7 +22,7 @@ This article contains instructions for using PowerShell cmdlets to create and up
 > [!IMPORTANT]
 > Some settings require a Microsoft Entra ID P1 license. For more information, see the [Template settings](#template-settings) table.
 
-For more information on how to prevent non-administrator users from creating security groups, set the `AllowedToCreateSecurityGroups` property to False as described in [Update-MgPolicyAuthorizationPolicy](/powershell/module/microsoft.graph.identity.signins/update-mgpolicyauthorizationpolicy).
+For more information on how to prevent nonadministrator users from creating security groups, set the `AllowedToCreateSecurityGroups` property to False as described in [Update-MgPolicyAuthorizationPolicy](/powershell/module/microsoft.graph.identity.signins/update-mgpolicyauthorizationpolicy).
 
 Microsoft 365 groups settings are configured using a Settings object and a SettingsTemplate object. Initially, you don't see any Settings objects in your directory, because your directory is configured with the default settings. To change the default settings, you must create a new settings object using a settings template. Settings templates are defined by Microsoft. There are several different settings templates. To configure Microsoft 365 group settings for your directory, you use the template named "Group.Unified". To configure Microsoft 365 group settings on a single group, use the template named "Group.Unified.Guest". This template is used to manage guest access to a Microsoft 365 group. 
 
@@ -54,7 +54,7 @@ Install the Microsoft Graph cmdlets as described in [Install the Microsoft Graph
 
 These steps create settings at directory level, which apply to all Microsoft 365 groups in the directory.
 
-1. In the DirectorySettings cmdlets, you must specify the ID of the SettingsTemplate you want to use. If you do not know this ID, this cmdlet returns the list of all settings templates:
+1. In the DirectorySettings cmdlets, you must specify the ID of the SettingsTemplate you want to use. If you don't know this ID, this cmdlet returns the list of all settings templates:
   
    ```powershell
    Get-MgBetaDirectorySettingTemplate
@@ -104,7 +104,7 @@ These steps create settings at directory level, which apply to all Microsoft 365
    New-MgBetaDirectorySetting -BodyParameter $params
    ```
 
-1. You can read the values using by using the following commands:
+1. You can read the values by using the following commands:
 
    ```powershell
    $Setting = Get-MgBetaDirectorySetting | where { $_.DisplayName -eq "Group.Unified"}
@@ -162,7 +162,7 @@ To update the value for UsageGuideLinesUrl in the setting template, read the cur
    }
    ```  
 
-1. Save your update by using the [Update-MgBetaDirectorySetting](/powershell/module/microsoft.graph.beta.identity.directorymanagement/update-mgbetadirectorysetting) Save update to the directory:
+1. Update the value by using the [Update-MgBetaDirectorySetting](/powershell/module/microsoft.graph.beta.identity.directorymanagement/update-mgbetadirectorysetting) cmdlet:
 
    ```powershell
    Update-MgBetaDirectorySetting -DirectorySettingId $Setting.Id -BodyParameter $params
@@ -188,7 +188,7 @@ Here are the settings defined in the Group.Unified SettingsTemplate. Unless othe
 |  <ul><li>AllowToAddGuests<li>Type: Boolean<li>Default: True | A boolean indicating whether or not is allowed to add guests to this directory. <br>This setting may be overridden and become read-only if *EnableMIPLabels* is set to *True* and a guest policy is associated with the sensitivity label assigned to the group.<br>If the AllowToAddGuests setting is set to False at the organization level, any AllowToAddGuests setting at the group level is ignored. If you want to enable guest access for only a few groups, you must set AllowToAddGuests to be true at the organization level, and then selectively disable it for specific groups. |
 |  <ul><li>ClassificationList<li>Type: String<li>Default: "" | A comma-delimited list of valid classification values that can be applied to Microsoft 365 groups. <br>This setting does not apply when EnableMIPLabels == True.|
 |  <ul><li>EnableMIPLabels<li>Type: Boolean<li>Default: "False" |The flag indicating whether sensitivity labels published in Microsoft Purview compliance portal can be applied to Microsoft 365 groups. For more information, see [Assign Sensitivity Labels for Microsoft 365 groups](groups-assign-sensitivity-labels.md). |
-|  <ul><li>NewUnifiedGroupWritebackDefault<li>Type: Boolean<li>Default: "True" |The flag that allows an admin to create new Microsoft 365 groups without setting the groupWritebackConfiguration resource type in the request payload. This setting is applicable when group writeback is configured in Microsoft Entra Connect.  "NewUnifiedGroupWritebackDefault" is a global Microfot 365 group setting. Default value is true. Updating the setting value to false will change the default writeback behavior for newly created Microsoft 365 groups, and will not change isEnabled property value for existing Microsoft 365 groups. Group admin will need to explicitly update the group isEnabled property value to change the writeback state for existing Microsoft 365 groups. |
+|  <ul><li>NewUnifiedGroupWritebackDefault<li>Type: Boolean<li>Default: "True" |The flag that allows an admin to create new Microsoft 365 groups without setting the groupWritebackConfiguration resource type in the request payload. This setting is applicable when group writeback is configured in Microsoft Entra Connect.  "NewUnifiedGroupWritebackDefault" is a global Microsoft 365 group setting. Default value is true. Updating the setting value to false will change the default writeback behavior for newly created Microsoft 365 groups, and will not change isEnabled property value for existing Microsoft 365 groups. Group admin will need to explicitly update the group isEnabled property value to change the writeback state for existing Microsoft 365 groups. |
 
 ## Example: Configure Guest policy for groups at the directory level
 
@@ -198,7 +198,7 @@ Here are the settings defined in the Group.Unified SettingsTemplate. Unless othe
    Get-MgBetaDirectorySettingTemplate
    ```
 
-1. To set guest policy for groups at the directory level, you need Group.Unified template
+1. To set guest policy for groups at the directory level, you need the Group.Unified template.
 
    ```powershell
    $Template = Get-MgBetaDirectorySettingTemplate | where -Property Id -Value "62375ab9-6b52-47ed-826b-58e47e0e304b" -EQ
@@ -208,7 +208,7 @@ Here are the settings defined in the Group.Unified SettingsTemplate. Unless othe
 
    ```powershell
    $params = @{
-      templateId = "Template.Id"
+      templateId = "62375ab9-6b52-47ed-826b-58e47e0e304b"
       values = @(
          @{
             name = "AllowToAddGuests"
@@ -365,7 +365,7 @@ This step removes settings at directory level, which apply to all Office groups 
    $Setting = Get-MgBetaGroupSetting -GroupId $GroupId
    ```
 
-1. Update the setting of the group as you need, e.g.
+1. Update the setting of the group as you need:
 
    ```powershell
    $params = @{
