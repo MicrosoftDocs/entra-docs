@@ -92,7 +92,7 @@ The following JSON payload shows an example SCIM schema:
        "givenName":"Barbara"
      },
      "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User": {
-     "Manager": "123456"
+     "manager": "123456"
    },
      "urn:ietf:params:scim:schemas:extension:CustomExtensionName:2.0:User": {
      "tag": "701984",
