@@ -7,7 +7,7 @@ description: Use Microsoft Entra External ID to enable an external user (guest) 
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: how-to
-ms.date: 01/12/2023
+ms.date: 01/19/2024
 
 ms.author: mimart
 author: msmimart
@@ -26,8 +26,6 @@ Microsoft accounts are set up by a user to get access to consumer-oriented Micro
 ## Guest sign-in using Microsoft accounts
 
 Microsoft account is available by default in the list of **External Identities** > **All identity providers**. No further configuration is needed to allow guest users to sign in with their Microsoft account, using either the invitation flow, or a self-service sign-up user flow.
-
-:::image type="content" source="media/microsoft-account/microsoft-account-identity-provider.png" alt-text="Screenshot of Microsoft account in the identity providers list.":::
 
 ### Microsoft account in the invitation flow
 
