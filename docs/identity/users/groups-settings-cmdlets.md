@@ -12,7 +12,7 @@ ms.topic: how-to
 ms.date: 11/15/2023
 ms.author: barclayn
 ms.reviewer: krbain
-ms.custom: it-pro, has-azure-ad-ps-ref
+ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.collection: M365-identity-device-management
 ---
 # Microsoft Entra cmdlets for configuring group settings
@@ -22,11 +22,11 @@ This article contains instructions for using PowerShell cmdlets to create and up
 > [!IMPORTANT]
 > Some settings require a Microsoft Entra ID P1 license. For more information, see the [Template settings](#template-settings) table.
 
-For more information on how to prevent non-administrator users from creating security groups, set `Set-MsolCompanySettings -UsersPermissionToCreateGroupsEnabled $False` as described in [Set-MSOLCompanySettings](/powershell/module/msonline/set-msolcompanysettings).
+For more information on how to prevent non-administrator users from creating security groups, set the `AllowedToCreateSecurityGroups` property to False as described in [Update-MgPolicyAuthorizationPolicy](/powershell/module/microsoft.graph.identity.signins/update-mgpolicyauthorizationpolicy).
 
 Microsoft 365 groups settings are configured using a Settings object and a SettingsTemplate object. Initially, you don't see any Settings objects in your directory, because your directory is configured with the default settings. To change the default settings, you must create a new settings object using a settings template. Settings templates are defined by Microsoft. There are several different settings templates. To configure Microsoft 365 group settings for your directory, you use the template named "Group.Unified". To configure Microsoft 365 group settings on a single group, use the template named "Group.Unified.Guest". This template is used to manage guest access to a Microsoft 365 group. 
 
-The cmdlets are part of the Azure Active Directory PowerShell V2 module. For instructions how to download and install the module on your computer, see the article [Azure Active Directory PowerShell Version 2](/powershell/azure/active-directory/overview). You can install the version 2 release of the module from [the PowerShell gallery](https://www.powershellgallery.com/packages/AzureAD/).
+The cmdlets are part of the [Microsoft Graph PowerShell](/powershell/microsoftgraph/) module. For instructions how to download and install the module on your computer, see [Install the Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/installation).
 
 [!INCLUDE [Azure AD PowerShell migration](../../includes/aad-powershell-migration-include.md)]
 
@@ -35,34 +35,34 @@ The cmdlets are part of the Azure Active Directory PowerShell V2 module. For ins
 
 ## Install PowerShell cmdlets
 
-Be sure to uninstall any older version of the Azure Active Directory PowerShell for Graph module and install [Azure Active Directory PowerShell for Graph - Public Preview Release (later than 2.0.0.137)](https://www.powershellgallery.com/packages/AzureADPreview) before you run the PowerShell commands.
+Install the Microsoft Graph cmdlets as described in [Install the Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/installation).
 
 1. Open the Windows PowerShell app as an administrator.
-2. Uninstall any previous version of AzureADPreview.
+1. Install the Microsoft Graph cmdlets.
   
-   ``` PowerShell
-   Uninstall-Module AzureADPreview
-   Uninstall-Module azuread
+   ```powershell
+   Install-Module Microsoft.Graph -Scope AllUsers
    ```
 
-3. Install the latest version of AzureADPreview.
+1. Install the Microsoft Graph beta cmdlets.
   
-   ``` PowerShell
-   Install-Module AzureADPreview
+   ```powershell
+   Install-Module Microsoft.Graph.Beta -Scope AllUsers
    ```
-   
+
 ## Create settings at the directory level
-These steps create settings at directory level, which apply to all Microsoft 365 groups in the directory. The Get-AzureADDirectorySettingTemplate cmdlet is available only in the [Azure AD PowerShell Preview module for Graph](https://www.powershellgallery.com/packages/AzureADPreview).
+
+These steps create settings at directory level, which apply to all Microsoft 365 groups in the directory.
 
 1. In the DirectorySettings cmdlets, you must specify the ID of the SettingsTemplate you want to use. If you do not know this ID, this cmdlet returns the list of all settings templates:
   
    ```powershell
-   Get-AzureADDirectorySettingTemplate
-
+   Get-MgBetaDirectorySettingTemplate
    ```
+
    This cmdlet call returns all templates that are available:
   
-   ``` PowerShell
+   ```output
    Id                                   DisplayName         Description
    --                                   -----------         -----------
    62375ab9-6b52-47ed-826b-58e47e0e304b Group.Unified       ...
@@ -72,80 +72,104 @@ These steps create settings at directory level, which apply to all Microsoft 365
    898f1161-d651-43d1-805c-3b0b388a9fc2 Custom Policy       Settings ...
    5cf42378-d67d-4f36-ba46-e8b86229381d Password Rule       Settings ...
    ```
-2. To add a usage guideline URL, first you need to get the SettingsTemplate object that defines the usage guideline URL value; that is, the Group.Unified template:
+
+1. To add a usage guideline URL, first you need to get the SettingsTemplate object that defines the usage guideline URL value; that is, the Group.Unified template:
   
    ```powershell
-   $TemplateId = (Get-AzureADDirectorySettingTemplate | where { $_.DisplayName -eq "Group.Unified" }).Id
-   $Template = Get-AzureADDirectorySettingTemplate | where -Property Id -Value $TemplateId -EQ
+   $TemplateId = (Get-MgBetaDirectorySettingTemplate | where { $_.DisplayName -eq "Group.Unified" }).Id
+   $Template = Get-MgBetaDirectorySettingTemplate | where -Property Id -Value $TemplateId -EQ
    ```
-3. Next, create a new settings object based on that template:
-  
-   ```powershell
-   $Setting = $Template.CreateDirectorySetting()
-   ```  
-4. Then update the settings object with a new value. The two examples below change the usage guideline value and enable sensitivity labels. Set these or any other setting in the template as required:
-  
-   ```powershell
-   $Setting["UsageGuidelinesUrl"] = "https://guideline.example.com"
-   $Setting["EnableMIPLabels"] = "True"
-   ```  
-5. Then apply the setting:
-  
-   ```powershell
-   New-AzureADDirectorySetting -DirectorySetting $Setting
-   ```
-6. You can read the values using:
+
+1. Create an object that contains values to be used for the directory setting. These values change the usage guideline value and enable sensitivity labels. Set these or any other setting in the template as required:
 
    ```powershell
+   $params = @{
+      templateId = "$TemplateId"
+      values = @(
+         @{
+            name = "UsageGuidelinesUrl"
+            value = "https://guideline.example.com"
+         }
+         @{
+            name = "EnableMIPLabels"
+            value = "True"
+         }
+      )
+   }
+   ```
+
+1. Create the directory setting by using the [New-MgBetaDirectorySetting](/powershell/module/microsoft.graph.beta.identity.directorymanagement/new-mgbetadirectorysetting):
+
+   ```powershell
+   New-MgBetaDirectorySetting -BodyParameter $params
+   ```
+
+1. You can read the values using by using the following commands:
+
+   ```powershell
+   $Setting = Get-MgBetaDirectorySetting | where { $_.DisplayName -eq "Group.Unified"}
    $Setting.Values
    ```
-   
+
 ## Update settings at the directory level
+
 To update the value for UsageGuideLinesUrl in the setting template, read the current settings from Microsoft Entra ID, otherwise we could end up overwriting existing settings other than the UsageGuideLinesUrl.
 
 1. Get the current settings from the Group.Unified SettingsTemplate:
-   
+
    ```powershell
-   $Setting = Get-AzureADDirectorySetting | ? { $_.DisplayName -eq "Group.Unified"}
-   ```  
-2. Check the current settings:
-   
+   $Setting = Get-MgBetaDirectorySetting | where { $_.DisplayName -eq "Group.Unified"}
+   ```
+
+1. Check the current settings:
+
    ```powershell
    $Setting.Values
    ```
-   
-   Output:
+
+   This command returns the following values:
+
+   ```output
+   Name                            Value
+   ----                            -----
+   EnableMIPLabels                 True
+   CustomBlockedWordsList
+   EnableMSStandardBlockedWords    False
+   ClassificationDescriptions
+   DefaultClassification
+   PrefixSuffixNamingRequirement
+   AllowGuestsToBeGroupOwner       False
+   AllowGuestsToAccessGroups       True
+   GuestUsageGuidelinesUrl
+   GroupCreationAllowedGroupId
+   AllowToAddGuests                True
+   UsageGuidelinesUrl              https://guideline.example.com
+   ClassificationList
+   EnableGroupCreation             True
+   NewUnifiedGroupWritebackDefault True
+   ```
+
+1. To remove the value of UsageGuideLinesUrl, edit the URL to be an empty string:
+
    ```powershell
-    Name                            Value
-    ----                            -----
-    EnableMIPLabels                 True
-    CustomBlockedWordsList
-    EnableMSStandardBlockedWords    False
-    ClassificationDescriptions
-    DefaultClassification
-    PrefixSuffixNamingRequirement
-    AllowGuestsToBeGroupOwner       False
-    AllowGuestsToAccessGroups       True
-    GuestUsageGuidelinesUrl
-    GroupCreationAllowedGroupId
-    AllowToAddGuests                True
-    UsageGuidelinesUrl              https://guideline.example.com
-    ClassificationList
-    EnableGroupCreation             True
-    NewUnifiedGroupWritebackDefault True
-    ```
-3. To remove the value of UsageGuideLinesUrl, edit the URL to be an empty string:
-   
-   ```powershell
-   $Setting["UsageGuidelinesUrl"] = ""
+   $params = @{
+      Values = @(
+         @{
+            Name = "UsageGuidelinesUrl"
+            Value = ""
+         }
+      )
+   }
    ```  
-4. Save update to the directory:
-   
+
+1. Save your update by using the [Update-MgBetaDirectorySetting](/powershell/module/microsoft.graph.beta.identity.directorymanagement/update-mgbetadirectorysetting) Save update to the directory:
+
    ```powershell
-   Set-AzureADDirectorySetting -Id $Setting.Id -DirectorySetting $Setting
+   Update-MgBetaDirectorySetting -DirectorySettingId $Setting.Id -BodyParameter $params
    ```  
 
 ## Template settings
+
 Here are the settings defined in the Group.Unified SettingsTemplate. Unless otherwise indicated, these features require a Microsoft Entra ID P1 license. 
 
 | **Setting** | **Description** |
@@ -167,65 +191,84 @@ Here are the settings defined in the Group.Unified SettingsTemplate. Unless othe
 |  <ul><li>NewUnifiedGroupWritebackDefault<li>Type: Boolean<li>Default: "True" |The flag that allows an admin to create new Microsoft 365 groups without setting the groupWritebackConfiguration resource type in the request payload. This setting is applicable when group writeback is configured in Microsoft Entra Connect.  "NewUnifiedGroupWritebackDefault" is a global Microfot 365 group setting. Default value is true. Updating the setting value to false will change the default writeback behavior for newly created Microsoft 365 groups, and will not change isEnabled property value for existing Microsoft 365 groups. Group admin will need to explicitly update the group isEnabled property value to change the writeback state for existing Microsoft 365 groups. |
 
 ## Example: Configure Guest policy for groups at the directory level
+
 1. Get all the setting templates:
+
    ```powershell
-   Get-AzureADDirectorySettingTemplate
+   Get-MgBetaDirectorySettingTemplate
    ```
-2. To set guest policy for groups at the directory level, you need Group.Unified template
+
+1. To set guest policy for groups at the directory level, you need Group.Unified template
+
    ```powershell
-   $Template = Get-AzureADDirectorySettingTemplate | where -Property Id -Value "62375ab9-6b52-47ed-826b-58e47e0e304b" -EQ
+   $Template = Get-MgBetaDirectorySettingTemplate | where -Property Id -Value "62375ab9-6b52-47ed-826b-58e47e0e304b" -EQ
    ```
-3. Next, create a new settings object based on that template:
+
+1. Set a value for AllowToAddGuests for the specified template:
+
+   ```powershell
+   $params = @{
+      templateId = "Template.Id"
+      values = @(
+         @{
+            name = "AllowToAddGuests"
+            value = "False"
+         }
+      )
+   }
+   ```
+
+1. Next, create a new settings object by using the [New-MgBetaDirectorySetting](/powershell/module/microsoft.graph.beta.identity.directorymanagement/new-mgbetadirectorysetting) cmdlet:
   
    ```powershell
-   $Setting = $template.CreateDirectorySetting()
-   ```  
-4. Then update AllowToAddGuests setting
-   ```powershell
-   $Setting["AllowToAddGuests"] = $False
-   ```  
-5. Then apply the setting:
-  
-   ```powershell
-   Set-AzureADDirectorySetting -Id (Get-AzureADDirectorySetting | where -Property DisplayName -Value "Group.Unified" -EQ).id -DirectorySetting $Setting
+   $Setting = New-MgBetaDirectorySetting -BodyParameter $params
    ```
-6. You can read the values using:
+
+1. You can read the values using:
 
    ```powershell
    $Setting.Values
-   ```   
+   ```
 
 ## Read settings at the directory level
 
 If you know the name of the setting you want to retrieve, you can use the below cmdlet to retrieve the current settings value. In this example, we're retrieving the value for a setting named "UsageGuidelinesUrl." 
 
    ```powershell
-   (Get-AzureADDirectorySetting).Values | Where-Object -Property Name -Value UsageGuidelinesUrl -EQ
+   (Get-MgBetaDirectorySetting).Values | where -Property Name -Value UsageGuidelinesUrl -EQ
    ```
+
 These steps read settings at directory level, which apply to all Office groups in the directory.
 
 1. Read all existing directory settings:
+
    ```powershell
-   Get-AzureADDirectorySetting -All $True
+   Get-MgBetaDirectorySetting -All
    ```
+
    This cmdlet returns a list of all directory settings:
-   ```powershell
+
+   ```output
    Id                                   DisplayName   TemplateId                           Values
    --                                   -----------   ----------                           ------
    c391b57d-5783-4c53-9236-cefb5c6ef323 Group.Unified 62375ab9-6b52-47ed-826b-58e47e0e304b {class SettingValue {...
    ```
 
-2. Read all settings for a specific group:
+1. Read all settings for a specific group:
+
    ```powershell
-   Get-AzureADObjectSetting -TargetObjectId ab6a3887-776a-4db7-9da4-ea2b0d63c504 -TargetType Groups
+   Get-MgBetaGroupSetting -GroupId "ab6a3887-776a-4db7-9da4-ea2b0d63c504"
    ```
 
-3. Read all directory settings values of a specific directory settings object, using Settings ID GUID:
+1. Read all directory settings values of a specific directory settings object, using Settings ID GUID:
+
    ```powershell
-   (Get-AzureADDirectorySetting -Id c391b57d-5783-4c53-9236-cefb5c6ef323).values
+   (Get-MgBetaDirectorySetting -DirectorySettingId "c391b57d-5783-4c53-9236-cefb5c6ef323").values
    ```
+
    This cmdlet returns the names and values in this settings object for this specific group:
-   ```powershell
+
+   ```output
    Name                          Value
    ----                          -----
    ClassificationDescriptions
@@ -243,17 +286,24 @@ These steps read settings at directory level, which apply to all Office groups i
    ```
 
 ## Remove settings at the directory level
+
 This step removes settings at directory level, which apply to all Office groups in the directory.
+
    ```powershell
-   Remove-AzureADDirectorySetting –Id c391b57d-5783-4c53-9236-cefb5c6ef323c
+   Remove-MgBetaDirectorySetting –DirectorySettingId "c391b57d-5783-4c53-9236-cefb5c6ef323c"
    ```
 
 ## Create settings for a specific group
 
-1. Search for the settings template named "Groups.Unified.Guest"
+1. Get the settings templates.
+
    ```powershell
-   Get-AzureADDirectorySettingTemplate
-  
+   Get-MgBetaDirectorySettingTemplate
+   ```
+
+1. In the results, find for the settings template named "Groups.Unified.Guest":
+
+   ```output  
    Id                                   DisplayName            Description
    --                                   -----------            -----------
    62375ab9-6b52-47ed-826b-58e47e0e304b Group.Unified          ...
@@ -262,66 +312,87 @@ This step removes settings at directory level, which apply to all Office groups 
    898f1161-d651-43d1-805c-3b0b388a9fc2 Custom Policy Settings ...
    5cf42378-d67d-4f36-ba46-e8b86229381d Password Rule Settings ...
    ```
-2. Retrieve the template object for the Groups.Unified.Guest template:
+
+1. Retrieve the template object for the Groups.Unified.Guest template:
+
    ```powershell
-   $Template1 = Get-AzureADDirectorySettingTemplate | where -Property Id -Value "08d542b9-071f-4e16-94b0-74abb372e3d9" -EQ
-   ```
-3. Create a new settings object from the template:
-   ```powershell
-   $SettingCopy = $Template1.CreateDirectorySetting()
+   $Template1 = Get-MgBetaDirectorySettingTemplate | where -Property Id -Value "08d542b9-071f-4e16-94b0-74abb372e3d9" -EQ
    ```
 
-4. Set the setting to the required value:
+1. Get the ID of the group you want to apply this setting to:
+
    ```powershell
-   $SettingCopy["AllowToAddGuests"]=$False
+   $GroupId = (Get-MgGroup -Filter "DisplayName eq '<YourGroupName>'").Id
    ```
-5. Get the ID of the group you want to apply this setting to:
+
+1. Create the new setting:
+
    ```powershell
-   $groupID= (Get-AzureADGroup -SearchString "YourGroupName").ObjectId
+   $params = @{
+      templateId = "08d542b9-071f-4e16-94b0-74abb372e3d9"
+      values = @(
+         @{
+            name = "AllowToAddGuests"
+            value = "False"
+         }
+      )
+   }
    ```
-6. Create the new setting for the required group in the directory:
+
+1. Create the group setting:
+
    ```powershell
-   New-AzureADObjectSetting -TargetType Groups -TargetObjectId $groupID -DirectorySetting $SettingCopy
+   New-MgBetaGroupSetting -GroupId $GroupId -BodyParameter $params
    ```
-7. To verify the settings, run this command:
+
+1. To verify the settings, run this command:
+
    ```powershell
-   Get-AzureADObjectSetting -TargetObjectId $groupID -TargetType Groups | fl Values
+   Get-MgBetaGroupSetting -GroupId $GroupId | FL Values
    ```
 
 ## Update settings for a specific group
+
 1. Get the ID of the group whose setting you want to update:
+
    ```powershell
-   $groupID= (Get-AzureADGroup -SearchString "YourGroupName").ObjectId
+   $groupId = (Get-MgGroup -Filter "DisplayName eq '<YourGroupName>'").Id
    ```
-2. Retrieve the setting of the group:
+
+1. Retrieve the setting of the group:
+
    ```powershell
-   $Setting = Get-AzureADObjectSetting -TargetObjectId $groupID -TargetType Groups
+   $Setting = Get-MgBetaGroupSetting -GroupId $GroupId
    ```
-3. Update the setting of the group as you need, e.g.
+
+1. Update the setting of the group as you need, e.g.
+
    ```powershell
-   $Setting["AllowToAddGuests"] = $True
+   $params = @{
+      values = @(
+         @{
+            name = "AllowToAddGuests"
+            value = "True"
+         }
+      )
+   }
    ```
-4. Then get the ID of the setting for this specific group:
+
+1. Then you can set the new value for this setting:
+
    ```powershell
-   Get-AzureADObjectSetting -TargetObjectId $groupID -TargetType Groups
+   Update-MgBetaGroupSetting -DirectorySettingId $Setting.Id -GroupId $GroupId -BodyParameter $params
    ```
-   You will get a response similar to this:
+
+1. You can read the value of the setting to make sure it has been updated correctly:
+
    ```powershell
-   Id                                   DisplayName            TemplateId                             Values
-   --                                   -----------            -----------                            ----------
-   2dbee4ca-c3b6-4f0d-9610-d15569639e1a Group.Unified.Guest    08d542b9-071f-4e16-94b0-74abb372e3d9   {class SettingValue {...
-   ```
-5. Then you can set the new value for this setting:
-   ```powershell
-   Set-AzureADObjectSetting -TargetType Groups -TargetObjectId $groupID -Id 2dbee4ca-c3b6-4f0d-9610-d15569639e1a -DirectorySetting $Setting
-   ```
-6. You can read the value of the setting to make sure it has been updated correctly:
-   ```powershell
-   Get-AzureADObjectSetting -TargetObjectId $groupID -TargetType Groups | fl Values
+   Get-MgBetaGroupSetting -GroupId $GroupId  | FL Values
    ```
 
 ## Cmdlet syntax reference
-You can find more Azure Active Directory PowerShell documentation at [Microsoft Entra Cmdlets](/powershell/azure/active-directory/install-adv2).
+
+You can find more Microsoft Graph PowerShell documentation at [Microsoft Entra Cmdlets](/powershell/microsoftgraph/).
   
 ## Manage group settings using Microsoft Graph
 
