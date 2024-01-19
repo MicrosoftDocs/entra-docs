@@ -7,7 +7,7 @@ description: How to use Email one-time passcode to authenticate B2B guest users 
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: how-to
-ms.date: 02/21/2023
+ms.date: 01/19/2024
 ms.author: mimart
 author: msmimart
 manager: CelesteDG
@@ -96,7 +96,7 @@ The email one-time passcode feature is now turned on by default for all new tena
 
 1. Browse to **Identity** > **External Identities** > **All identity providers**.
 
-1. Select **Email one-time passcode**.
+1. In the **Configured identity providers** list, select **Email one-time passcode**.
 
 1. Under **Email one-time passcode for guests**, select one of the following:
    - **Yes**: The toggle is set to **Yes** by default unless the feature has been explicitly turned it off. To enable the feature, make sure **Yes** is selected.
