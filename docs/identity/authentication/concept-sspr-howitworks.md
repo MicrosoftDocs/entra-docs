@@ -181,13 +181,13 @@ Consider the following example scenario:
 >
 > If you observe issues in receiving notifications, please check your spam settings. 
 
-In Office 365, only Password Administrators, User Administrators, and Global Administrators can receive the password reset request notification emails, in order of priority
+Only Password Administrators, User Administrators, and Global Administrators can receive the password reset request notification emails, in that order of priority:
 
-- If your organization has all the three types of administrators, then only the Password Administrators receive the notification emails. 
+- If your organization has all the three types of administrators, then only Password Administrators receive the notification emails. 
 - If your organization only has User Administrators and Global Administrators, then only User Administrators receive the notification emails. 
 - If your organization only has Global Administrators, then only Global Administrators receive the notification emails.
 
-If you have Password Administrators and you want custom administrators to receive the notification emails, assign them to Password Administrators.
+If you want custom administrators to receive the notification emails, use SSPR customizations and [set up a custom helpdesk link or email](/entra/identity/authentication/tutorial-enable-sspr#set-up-notifications-and-customizations).
 
 ## On-premises integration
 
