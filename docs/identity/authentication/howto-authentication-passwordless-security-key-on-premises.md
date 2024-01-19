@@ -6,7 +6,7 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 01/29/2023
+ms.date: 01/19/2024
 
 ms.author: justinha
 author: justinha
@@ -17,7 +17,7 @@ ms.collection: M365-identity-device-management
 ---
 # Enable passwordless security key sign-in to on-premises resources by using Microsoft Entra ID 
 
-This document discusses how to enable passwordless authentication to on-premises resources for environments with both *Microsoft Entra joined* and *Microsoft Entra hybrid joined* Windows 10 devices. This passwordless authentication functionality provides seamless single sign-on (SSO) to on-premises resources when you use Microsoft-compatible security keys, or with [Windows Hello for Business Cloud trust](/windows/security/identity-protection/hello-for-business/hello-hybrid-cloud-kerberos-trust)
+This topic shows how to enable passwordless authentication to on-premises resources for environments with devices that run Windows 10 version 2004 or later. Devices can be *Microsoft Entra joined* or *Microsoft Entra hybrid joined*. This passwordless authentication functionality provides seamless single sign-on (SSO) to on-premises resources when you use Microsoft-compatible security keys, or with [Windows Hello for Business Cloud trust](/windows/security/identity-protection/hello-for-business/hello-hybrid-cloud-kerberos-trust).
 
 ## Use SSO to sign in to on-premises resources by using FIDO2 keys
 
@@ -45,15 +45,21 @@ You must also meet the following system requirements:
 - Devices must be running Windows 10 version 2004 or later.
 
 - Your Windows Server domain controllers must run Windows Server 2016 or later and have patches installed for the following servers:
-    - [Windows Server 2016](https://support.microsoft.com/help/4534307/windows-10-update-kb4534307)
-    - [Windows Server 2019](https://support.microsoft.com/help/4534321/windows-10-update-kb4534321)
+   - [Windows Server 2016](https://support.microsoft.com/help/4534307/windows-10-update-kb4534307)
+   - [Windows Server 2019](https://support.microsoft.com/help/4534321/windows-10-update-kb4534321)
 
 - AES256_HMAC_SHA1 must be enabled when **Network security: Configure encryption types allowed for Kerberos** policy is [configured](/windows/security/threat-protection/security-policy-settings/network-security-configure-encryption-types-allowed-for-kerberos) on domain controllers.
 
 - Have the credentials required to complete the steps in the scenario:
-    - An Active Directory user who is a member of the Domain Admins group for a domain and a member of the Enterprise Admins group for a forest. Referred to as **$domainCred**.
-    - A Microsoft Entra user who is a member of the Global Administrators role. Referred to as **$cloudCred**.
- 
+   - An Active Directory user who is a member of the Domain Admins group for a domain and a member of the Enterprise Admins group for a forest. Referred to as **$domainCred**.
+   - A Microsoft Entra user who is a member of the Global Administrators role. Referred to as **$cloudCred**.
+
+- Users must have the following Entra ID attributes populated through Microsoft Entra Connect:
+   - onPremisesSamAccountName (accountName in Entra Connect)
+   - onPremisesDomainName (domainFQDN in Entra Connect)
+
+  Entra Connect synchronizes these attributes by default. If you change which attributes to synchronize, make you select accountName and domainFQDN for synchronization.
+
 ### Supported scenarios
 
 The scenario in this article supports SSO in both of the following instances:
