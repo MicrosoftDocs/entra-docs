@@ -19,7 +19,7 @@ ms.topic: conceptual
 > [!div renderon="docs"]
 > Welcome! This probably isn't the page you were expecting. While we work on a fix, this link should take you to the right article:
 >
-> > [Quickstart: Call an ASP.NET web API that is protected by the Microsoft identity platform](quickstart-web-api-aspnet-protect-api.md)
+> > [Quickstart: Call an ASP.NET Core web API that is protected by the Microsoft identity platform](quickstart-web-api-aspnet-protect-api.md)
 > 
 > We apologize for the inconvenience and appreciate your patience while we work to get this resolved.
 
@@ -31,7 +31,7 @@ ms.topic: conceptual
 > 
 > - Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 > - [Microsoft Entra tenant](quickstart-create-new-tenant.md)
-> - [.NET Core SDK 6.0+](https://dotnet.microsoft.com/)
+> - [.NET SDK 6.0+](https://dotnet.microsoft.com/)
 > - [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) or [Visual Studio Code](https://code.visualstudio.com/)
 > 
 > ## Step 1: Register the application

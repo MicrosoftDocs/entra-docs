@@ -29,7 +29,7 @@ In this tutorial:
   - Visual Studio 2022
   - Visual Studio Code
   - Visual Studio 2022 for Mac
-- A minimum requirement of [.NET Core 6.0 SDK](https://dotnet.microsoft.com/download/dotnet).
+- [.NET SDK](https://dotnet.microsoft.com/download/dotnet).
 
 ## Create an ASP.NET Core project
 

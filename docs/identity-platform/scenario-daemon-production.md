@@ -36,7 +36,7 @@ You'll need to explain to your customers how to perform these operations. For mo
   - Instantiating [ConfidentialClientApplication](/dotnet/api/microsoft.identity.client.confidentialclientapplicationbuilder).
   - Calling [AcquireTokenForClient](/dotnet/api/microsoft.identity.client.acquiretokenforclientparameterbuilder?preserve-view=true&view=msal-dotnet-latest&viewFallbackFrom=azure-dotnet).
 - Other samples/tutorials:
-  - [microsoft-identity-platform-console-daemon](https://github.com/Azure-Samples/microsoft-identity-platform-console-daemon) features a small .NET Core daemon console application that displays the users of a tenant querying Microsoft Graph.
+  - [microsoft-identity-platform-console-daemon](https://github.com/Azure-Samples/microsoft-identity-platform-console-daemon) features a small .NET daemon console application that displays the users of a tenant querying Microsoft Graph.
 
     ![Sample daemon app topology](media/scenario-daemon-app/daemon-app-sample.png)
 
@@ -73,7 +73,7 @@ Here are a few links to help you learn more:
 
 # [.NET](#tab/dotnet)
 
-Try the quickstart [Acquire a token and call Microsoft Graph API from a .NET Core console app using app's identity](quickstart-v2-netcore-daemon.md).
+Try the quickstart [Acquire a token and call Microsoft Graph API from a .NET console app using app's identity](quickstart-v2-netcore-daemon.md).
 
 # [Java](#tab/java)
 

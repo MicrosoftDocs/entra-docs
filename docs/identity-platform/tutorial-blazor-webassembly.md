@@ -23,13 +23,13 @@ In this tutorial:
 > - Create a new Blazor WebAssembly app configured to use Microsoft Entra ID for [authentication and authorization](authentication-vs-authorization.md)
 > - Retrieve data from a protected web API, in this case [Microsoft Graph](/graph/overview)
 
-This tutorial uses .NET Core 7.0.
+This tutorial uses .NET 7.0.
 
 We also have a [tutorial for Blazor Server](tutorial-blazor-server.md).
 
 ## Prerequisites
 
-- [.NET Core 7.0 SDK](https://dotnet.microsoft.com/download/dotnet-core/7.0)
+- [.NET SDK](https://dotnet.microsoft.com/download/dotnet-core/7.0)
 - A Microsoft Entra tenant where you can register an app. If you don't have access to a Microsoft Entra tenant, you can get one by registering with the [Microsoft 365 Developer Program](https://developer.microsoft.com/microsoft-365/dev-program) or by creating an [Azure free account](https://azure.microsoft.com/free).
 
 ## Register the app
@@ -39,7 +39,7 @@ Every app that uses Microsoft Entra ID for authentication must be registered wit
 - For **Supported account types**, select **Accounts in this organizational directory only**.
 - Set the **Redirect URI** drop down to **Single-page application (SPA)** and enter `https://localhost:5001/authentication/login-callback`. The default port for an app running on Kestrel is 5001. If the app is available on a different port, specify that port number instead of `5001`.
 
-## Create the app using the .NET Core CLI
+## Create the app using the .NET CLI
 
 To create the application, run the following command. Replace the placeholders in the command with the proper information from your app's overview page and execute the command in a command shell. The output location specified with the `-o|--output` option creates a project folder if it doesn't exist and becomes part of the app's name.
 

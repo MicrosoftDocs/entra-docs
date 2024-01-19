@@ -1,6 +1,6 @@
 ---
-title: "Quickstart: Acquire a token and call Microsoft Graph in a .NET Core console app"
-description: In this quickstart, you learn how a .NET Core sample app can use the client credentials flow to get a token and call Microsoft Graph.
+title: "Quickstart: Acquire a token and call Microsoft Graph in a .NET console app"
+description: In this quickstart, you learn how a .NET sample app can use the client credentials flow to get a token and call Microsoft Graph.
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
@@ -10,12 +10,12 @@ ms.reviewer: jmprieur
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: quickstart
-#Customer intent: As an application developer, I want to learn how my .NET Core app can get an access token and call an API that's protected by the Microsoft identity platform by using the client credentials flow.
+#Customer intent: As an application developer, I want to learn how my .NET app can get an access token and call an API that's protected by the Microsoft identity platform by using the client credentials flow.
 ---
 
-# Quickstart: Acquire a token and call Microsoft Graph in a .NET Core console app
+# Quickstart: Acquire a token and call Microsoft Graph in a .NET console app
 
-The following quickstart uses a code sample to demonstrates how a .NET Core console application can get an access token to call the Microsoft Graph API and display a [list of users](/graph/api/user-list) in the directory. It also demonstrates how a job or a Windows service can run with an application identity, instead of a user's identity. The sample console application in this quickstart is also a daemon application, therefore it's a confidential client application.
+The following quickstart uses a code sample to demonstrates how a .NET console application can get an access token to call the Microsoft Graph API and display a [list of users](/graph/api/user-list) in the directory. It also demonstrates how a job or a Windows service can run with an application identity, instead of a user's identity. The sample console application in this quickstart is also a daemon application, therefore it's a confidential client application.
 
 The following diagram shows how the sample app works:
 
@@ -23,7 +23,7 @@ The following diagram shows how the sample app works:
 
 ## Prerequisites
 
-This quickstart requires [.NET Core 6.0 SDK](https://dotnet.microsoft.com/download).
+This quickstart requires [.NET 6.0 SDK](https://dotnet.microsoft.com/download).
 
 ## Register and download the app
 
@@ -134,7 +134,7 @@ This quickstart application uses a client secret to identify itself as a confide
 
 ## More information
 
-This section provides an overview of the code required to sign in users. The overview can be useful to understand how the code works, what the main arguments are, and how to add sign-in to an existing .NET Core console application.
+This section provides an overview of the code required to sign in users. The overview can be useful to understand how the code works, what the main arguments are, and how to add sign-in to an existing .NET console application.
 
 ### Microsoft.Identity.Web.GraphServiceClient
 

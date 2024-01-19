@@ -77,7 +77,7 @@ msidentity-app-sync --username <username/upn> --tenant-id <tenantID>
 
 ## Optional - Create a development SSL certificate
 
-In order to avoid SSL errors/warnings when browsing the running application, you can use the following on macOS and Windows to generate a self-signed SSL certificate for use by .NET Core.
+In order to avoid SSL errors/warnings when browsing the running application, you can use the following on macOS and Windows to generate a self-signed SSL certificate for use by .NET.
 
 ```dotnetcli
 dotnet dev-certs https --trust

@@ -109,4 +109,4 @@ If the user hasn't provided the correct username or password, or the client hasn
 
 ## Learn more
 
-For an example implementation of the ROPC flow, see the [.NET Core console application](https://github.com/azure-samples/active-directory-dotnetcore-console-up-v2) code sample on GitHub.
+For an example implementation of the ROPC flow, see the [.NET console application](https://github.com/azure-samples/active-directory-dotnetcore-console-up-v2) code sample on GitHub.
