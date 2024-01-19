@@ -86,11 +86,11 @@ landingContent:
             url: self-service-sign-up-user-flow.md
           - text: Define custom attributes for user flows
             url: user-flow-add-custom-attributes.md
-  - title: Multi-tenant organizations 
+  - title: Multitenant organizations 
     linkLists:
       - linkListType: overview
         links:
-          - text: What is a multi-tenant organization in Microsoft Entra ID?
+          - text: What is a multitenant organization in Microsoft Entra ID?
             url: /azure/active-directory/multi-tenant-organizations/overview
       - linkListType: concept
         links:
