@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: active-directory
 ms.topic: reference
 ms.subservice: report-monitor
-ms.date: 01/16/2024
+ms.date: 01/19/2024
 ms.author: sarahlipsey
 ms.reviewer:  jupetter
 ---
@@ -18,7 +18,7 @@ This article covers the recommendation to migrate from MFA server to Microsoft E
 
 ## Description
 
-Azure Multi-Factor Authentication Server (MFA Server) is scheduled for retirement on September 30th, 2024. In an effort to help organizations migrate to Microsoft Entra MFA, this Microsoft Entra recommendation identifies tenants with MFA server activity. This recommendation identifies tenants with active users and MFA attempts for MFA Server in the last 7 days. This recommendation also identifies MFA Server client integrations and lists the clients as a part of the recommendation.
+Azure Multi-Factor Authentication Server (MFA Server) is scheduled for retirement on September 30th, 2024. In an effort to help organizations migrate to Microsoft Entra MFA, this Microsoft Entra recommendation identifies tenants with MFA server activity. This recommendation identifies tenants with active users and MFA attempts for MFA Server in the last 7 days. MFA Server client integrations, including a list of affected clients are also surfaced as a part of this recommendation.
 
 ## Value 
 
