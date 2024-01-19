@@ -23,7 +23,7 @@ The following diagram shows how the sample app works:
 
 ## Prerequisites
 
-This quickstart requires [.NET 6.0 SDK](https://dotnet.microsoft.com/download).
+[.NET SDK](https://dotnet.microsoft.com/download).
 
 ## Register and download the app
 
