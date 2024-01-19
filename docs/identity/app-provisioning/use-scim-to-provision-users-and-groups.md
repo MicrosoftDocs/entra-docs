@@ -67,7 +67,7 @@ To design your schema, follow these steps:
 
 The following table lists an example of required attributes:
 
-|Required app attribute|Mapped SCIM attribute|Mapped Microsoft Entra attribute|
+|Required app attribute/example|Mapped SCIM attribute|Mapped Microsoft Entra attribute|
 |--|--|--|
 |loginName|userName|userPrincipalName|
 |firstName|name.givenName|givenName|
