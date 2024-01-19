@@ -82,7 +82,7 @@ Follow these general guidelines when configuring SaaS apps for B2B (guest) users
 - In the user attributes, to mitigate any issues with mangled user profile disk (UPD) in guest users, always set the user identifier to **user.mail**.
 
 > [!NOTE]
-> The userPrincipalName for a B2B user represents the external user's email address alias@theirdomain as "alias_theirdomain#EXT#@yourdomain". When the userPrincipalName attribute is included in your attribute mappings as a source attribute, and a B2B user is being provisioned, the #EXT# and your domain is stripped from the userPrincipalName, so only their original alias@theirdomain is used for matching or provisioning. If you require the full user principal name including #EXT# and your domain to be present, replace userPrincipalName with originalUserPrincipalName as the source attribute. <br />
+> The userPrincipalName for a [B2B collaboration user](./external-id/user-properties.md) represents the external user's email address alias@theirdomain as "alias_theirdomain#EXT#@yourdomain". When the userPrincipalName attribute is included in your attribute mappings as a source attribute, and a B2B user is being provisioned, the #EXT# and your domain is stripped from the userPrincipalName, so only their original alias@theirdomain is used for matching or provisioning. If you require the full user principal name including #EXT# and your domain to be present, replace userPrincipalName with originalUserPrincipalName as the source attribute. <br />
 userPrincipalName = alias@theirdomain<br />
 originalUserPrincipalName = alias_theirdomain#EXT#@yourdomain
 
