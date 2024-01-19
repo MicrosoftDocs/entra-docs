@@ -93,7 +93,7 @@ ms.topic: conceptual
 >
 > ## More information
 >
-> This section gives an overview of the code required to sign in users. This overview can be useful to understand how the > code works, what the main arguments are, and how to add sign-in to an existing .NET Core console application.
+> This section gives an overview of the code required to sign in users. This overview can be useful to understand how the > code works, what the main arguments are, and how to add sign-in to an existing .NET console application.
 >
 > > [!div class="sxs-lookup"]
 > ### How the sample works
