@@ -65,6 +65,14 @@ sections:
           No, CDP supports only HTTP URLs.
 
       - question: |
+          How do I validate the Certificate Authority configuration?
+        answer: |
+          It is important to ensure that the Certificate Authority configuration in the trust store result is Entra ID ability to both validate the certificate authority trust chain and succsessfully aquire the certificate 
+          revocation list (CRL) from the configured certificate authority CRL distribution point (CDP) . To assist with this task, it is recommended to install the 
+          [MSIdentity Tools](https://aka.ms/msid) PowerShell module and run [Test-MsIdCBATrustStoreConfiguration](https://github.com/AzureAD/MSIdentityTools/wiki/Test-MsIdCBATrustStoreConfiguration). 
+          This PowerShell cmdlet will review the Entra tenant certificate authority configuration and surface errors/warnings for common mis-configuration issues. 
+          
+      - question: |
           How do I turn certificate revocation checking on or off for a particular CA?
         answer: |
           We highly recommend against disabling certificate revocation list (CRL) checking as you won't be able to revoke certificates. 
