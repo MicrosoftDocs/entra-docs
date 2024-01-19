@@ -152,7 +152,7 @@ landingContent:
       - linkListType: how-to-guide
         links:
           - text: Plan application Proxy deployment
-            url: ~/identity/app-proxy/application-proxy-deployment-plan.md
+            url: ~/identity/app-proxy/conceptual-deployment-plan.md
           - text: Set up connectors
             url: ~/identity/app-proxy/application-proxy-connectors.md
           - text: Configure single sign-on

@@ -28,7 +28,7 @@ Before you begin your deployment, ensure you meet the following prerequisites fo
 |----------|--------------|
 |**Cloud-only** identity environment with modern authentication | **No prerequisite tasks** |
 |**Hybrid identity** scenarios | Deploy [Microsoft Entra Connect](~/identity/hybrid/whatis-hybrid-identity.md) and synchronize user identities between the on-premises Active Directory Domain Services (AD DS) and Microsoft Entra ID. |
-| **On-premises legacy applications** published for cloud access| Deploy [Microsoft Entra application proxy](~/identity/app-proxy/application-proxy-deployment-plan.md) |
+| **On-premises legacy applications** published for cloud access| Deploy [Microsoft Entra application proxy](~/identity/app-proxy/conceptual-deployment-plan.md) |
 
 ## Choose authentication methods for MFA
 
