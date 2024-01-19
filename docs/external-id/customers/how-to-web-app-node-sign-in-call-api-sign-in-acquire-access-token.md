@@ -15,7 +15,7 @@ ms.custom: developer, devx-track-js
 
 # Acquire an access token in your Node.js web app
 
-In this article, you update your code, to enable it acquire an access token. You use [Microsoft Authentication Library (MSAL) for Node](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-node) to simplify adding authentication and authorization to your node web application. This article is the third part of a four-part guide series.
+In this article, you update your code, to enable your web app to acquire an access token. You use [Microsoft Authentication Library (MSAL) for Node](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-node) to simplify adding authentication and authorization to your node web application. This article is the third part of a four-part guide series.
 
 ## Prerequisites
 
@@ -47,7 +47,7 @@ In your code editor, open *authConfig.js* file, then update the code by adding t
     };
 ```
 
-In your *authConfig.js* file, replace `Enter_the_Web_Api_Application_Id_Here` with the Application (client) ID of the web API app that you registered in your customers tenant.
+In your *authConfig.js* file, replace `Enter_the_Web_Api_Application_Id_Here` with the Application (client) ID of the web API app that you registered in your customer's tenant.
 
 The `todolistReadScope` and `todolistReadWriteScope` variables hold the web API full scope URLs that you set in your customer tenant. Make sure you export the `protectedResources` object.
 
