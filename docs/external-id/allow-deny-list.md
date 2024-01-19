@@ -85,7 +85,6 @@ Switching from one policy to another discards the existing policy configuration.
 ### Prerequisite
 
 > [!Note]
-
 > The AzureADPreview Module is not a fully supported module as it is in preview. 
 
 To set the allow or blocklist by using PowerShell, you must install the preview version of the Azure AD PowerShell module. Specifically, install the AzureADPreview module version 2.0.0.98 or later.
