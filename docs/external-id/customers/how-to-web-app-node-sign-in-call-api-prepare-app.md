@@ -14,7 +14,7 @@ ms.custom: developer, devx-track-js
 
 # Prepare app to call an API in a Node.js web application
 
-In this article, you prepare the app project you created in [Tutorial: Prepare your customer tenant to sign in users in a Node.js web app](tutorial-web-app-node-sign-in-prepare-tenant.md) to call a wen API. This article is the second part of a four-part guide series.
+In this article, you prepare the app project you created in [Tutorial: Prepare your customer tenant to sign in users in a Node.js web app](tutorial-web-app-node-sign-in-prepare-tenant.md) to call a web API. This article is the second part of a four-part guide series.
 
 ## Prerequisites
 
@@ -84,7 +84,7 @@ In your terminal, install  more Node packages, `axios`, `cookie-parser`, `body-p
         {{/if}}
     ```
     
-    We've added a link that enable you to view a UI, which allows you yo interact with the *ciam-ToDoList-api*. We define the express route for this endpoint later in this guide.
+    We add a link to a UI that enables you interact with the *ciam-ToDoList-api*. We define the express route for this endpoint later in this guide.
 
 1. In your code editor, open `views/todos.hbs` file, then add the following code:
 
