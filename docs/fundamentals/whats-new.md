@@ -560,16 +560,6 @@ Protected actions are high-risk operations, such as altering access policies or 
 
 ---
 
-### General Availability - Conditional Access templates
-
-**Type:** Plan for change         
-**Service category:** Conditional Access                             
-**Product capability:** Identity Security & Protection                  
-
-Conditional Access templates are predefined set of conditions and controls that provide a convenient method to deploy new policies aligned with Microsoft recommendations. Customers are assured that their policies reflect modern best practices for securing corporate assets, promoting secure, optimal access for their hybrid workforce. For more information, see: [Conditional Access templates](~/identity/conditional-access/concept-conditional-access-policy-common.md).
-
----
-
 ### General Availability - Lifecycle Workflows
 
 **Type:** New feature       
@@ -592,19 +582,6 @@ Update the Microsoft Entra ID and Microsoft 365 sign in experience with new Comp
 
 ---
 
-### General Availability - Reset Password on Azure Mobile App
-
-**Type:** New feature       
-**Service category:** Other                            
-**Product capability:** End User Experiences                
-
-The Azure mobile app has been enhanced to empower admins with specific permissions to conveniently reset their users' passwords. Self Service Password Reset will not be supported at this time. However, users can still more efficiently control and streamline their own sign-in and auth methods. The mobile app can be downloaded for each platform here:
-
-- Android: https://aka.ms/AzureAndroidWhatsNew
-- IOS: https://aka.ms/ReferAzureIOSWhatsNew
-
----
-
 ### Public Preview - API-driven inbound user provisioning 
 
 **Type:** New feature       
@@ -614,40 +591,3 @@ The Azure mobile app has been enhanced to empower admins with specific permissio
 With API-driven inbound provisioning, Microsoft Entra ID provisioning service now supports integration with any system of record. Customers and partners can use any automation tool of their choice to retrieve workforce data from any system of record for provisioning into Microsoft Entra ID and connected on-premises Active Directory domains. The IT admin has full control on how the data is processed and transformed with attribute mappings. Once the workforce data is available in Microsoft Entra ID, the IT admin can configure appropriate joiner-mover-leaver business processes using Entra ID Governance Lifecycle Workflows. For more information, see: [API-driven inbound provisioning concepts (Public preview)](~/identity/app-provisioning/inbound-provisioning-api-concepts.md).
 
 ---
-
-### Public Preview - Dynamic Groups based on EmployeeHireDate User attribute
-
-**Type:** New feature       
-**Service category:** Group Management                                
-**Product capability:** Directory                    
-
-This feature enables admins to create dynamic group rules based on the user objects' employeeHireDate attribute. For more information, see: [Properties of type string](~/identity/users/groups-dynamic-membership.md#properties-of-type-string).
-
----
-
-### General Availability - Enhanced Create User and Invite User Experiences
-
-**Type:** Changed feature       
-**Service category:** User Management                                  
-**Product capability:** User Management                      
-
-We have increased the number of properties admins are able to define when creating and inviting a user in the Entra admin portal, bringing our UX to parity with our Create User APIs. Additionally, admins can now add users to a group or administrative unit, and assign roles. For more information, see: [Add or delete users using Azure Active Directory](./add-users.md).
-
----
-
-### Public Preview - Windows MAM
-
-**Type:** New feature       
-**Service category:** Conditional Access                                
-**Product capability:** Identity Security & Protection                    
-
-“*When will you have MAM for Windows?*” is one of our most frequently asked customer questions. We’re happy to report that the answer is: “Now!” We’re excited to offer this new and long-awaited MAM Conditional Access capability in Public Preview for Microsoft Edge for Business on Windows.
-
-Using MAM Conditional Access, Microsoft Edge for Business provides users with secure access to organizational data on personal Windows devices with a customizable user experience. We’ve combined the familiar security features of app protection policies (APP), Windows Defender client threat defense, and Conditional Access, all anchored to Azure AD identity to ensure un-managed devices are healthy and protected before granting data access. This can help businesses to improve their security posture and protect sensitive data from unauthorized access, without requiring full mobile device enrollment.
-
-The new capability extends the benefits of app layer management to the Windows platform via Microsoft Edge for Business. Admins are empowered to configure the user experience and protect organizational data within Microsoft Edge for Business on unmanaged Windows devices.
-
-For more information, see: [Require an app protection policy on Windows devices (preview)](~/identity/conditional-access/how-to-app-protection-policy-windows.md).
-
----
-
