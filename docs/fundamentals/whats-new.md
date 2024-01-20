@@ -42,7 +42,7 @@ This page updates monthly, so revisit it regularly. If you're looking for items 
 **Service category:** B2B                     
 **Product capability:**  B2B/B2C             
 
-With configurable redemption, you can customize the order of identity providers that your guest users can sign in with when they accept your invitation. This lets your override the default configuration order set by Microsoft and use your own. This can be used to help with scenarios like prioritizing a SAML/WS-fed federation above an Entra ID verified domain, disabling certain identity providers as an option during redemption, or even only using something like email one-time pass-code as a redemption option. For more information, see: [Configurable redemption (Preview)](../external-id/cross-tenant-access-overview.md#configurable-redemption-preview).
+With configurable redemption, you can customize the order of identity providers that your guest users can sign in with when they accept your invitation. This lets your override the default configuration order set by Microsoft and use your own. This can be used to help with scenarios like prioritizing a SAML/WS-fed federation above an Microsoft Entra ID verified domain, disabling certain identity providers as an option during redemption, or even only using something like email one-time pass-code as a redemption option. For more information, see: [Configurable redemption (Preview)](../external-id/cross-tenant-access-overview.md#configurable-redemption-preview).
 
 ---
 
@@ -52,7 +52,7 @@ With configurable redemption, you can customize the order of identity providers 
 **Service category:** Group Management                     
 **Product capability:**  Directory             
 
-The dynamic group rule builder has been updated to no longer include the '*contains*' and '*notContains*' operators, as they're less performant. If needed, you can still create dynamic group rules with those operators by typing directly into the text box. For more information, see: [Rule builder in the Azure portal](../identity/users/groups-dynamic-membership.md#rule-builder-in-the-azure-portal).
+The dynamic group rule builder is updated to no longer include the '*contains*' and '*notContains*' operators, as they're less performant. If needed, you can still create dynamic group rules with those operators by typing directly into the text box. For more information, see: [Rule builder in the Azure portal](../identity/users/groups-dynamic-membership.md#rule-builder-in-the-azure-portal).
 
 ---
 
@@ -68,11 +68,11 @@ The public preview of Group Writeback V2 (GWB) in Entra Connect Sync will no lon
 
 Another similar functionality is offered in Entra Cloud Sync, called “*Group Provision to AD*”, that maybe used instead of GWB V2 for provisioning cloud security groups to AD. Enhanced functionality in Cloud Sync, along with other new features, are being developed.
 
-Customers who use this preview feature in Connect Sync should [switch their configuration from Connect Sync to Cloud Sync](../identity/hybrid/cloud-sync/migrate-group-writeback.md). Customers may choose to move all their hybrid sync to Cloud Sync (if it supports their needs) or Cloud Sync may be run side-by-side and move only cloud security group provisioning to AD onto Cloud Sync.
+Customers who use this preview feature in Connect Sync should [switch their configuration from Connect Sync to Cloud Sync](../identity/hybrid/cloud-sync/migrate-group-writeback.md). Customers can choose to move all their hybrid sync to Cloud Sync (if it supports their needs) or Cloud Sync can be run side-by-side and move only cloud security group provisioning to AD onto Cloud Sync.
 
-Customers who provision Microsoft 365 groups to AD may continue using GWB V1 for this capability.  
+Customers who provision Microsoft 365 groups to AD can continue using GWB V1 for this capability.  
 
-Customers may evaluate moving exclusively to Cloud Sync by using this wizard: https://aka.ms/EvaluateSyncOptions
+Customers can evaluate moving exclusively to Cloud Sync by using this wizard: https://aka.ms/EvaluateSyncOptions
 
 ---
 
@@ -80,7 +80,7 @@ Customers may evaluate moving exclusively to Cloud Sync by using this wizard: ht
 
 **Type:** New feature   
 **Service category:** Provisioning                     
-**Product capability:**  AAD Connect Cloud Sync             
+**Product capability:**  Microsoft Entra Connect            
 
 Exchange hybrid capability allows for the coexistence of Exchange mailboxes both on-premises and in Microsoft 365. Microsoft Entra Cloud Sync synchronizes a specific set of Exchange-related attributes from Microsoft Entra ID back into your on-premises directory and to any forests that's disconnected (no network trust needed between them). With this capability, existing customers who have this feature enabled in Microsoft Entra Connect sync can now migrate, and apply, this feature with Microsoft Entra cloud sync. For more information, see: [Exchange hybrid writeback with cloud sync](../identity/hybrid/exchange-hybrid-writeback.md).
 
@@ -102,7 +102,7 @@ Monitor guest accounts at scale with intelligent insights into inactive guest us
 **Service category:** MS Graph                     
 **Product capability:**  End User Experiences             
 
-An extra property has been added to signInActivity API to display the last **successful** sign in time for a specific user, regardless if the sign in was interactive or non-interactive. The data won't be backfilled for this property, so you should expect to be returned only successful signIn data starting on December 8, 2023.
+An extra property has been added to signInActivity API to display the last **successful** sign in time for a specific user, regardless if the sign in was interactive or non-interactive. The data won't be backfilled for this property, so you should expect to be returned only successful sign in data starting on December 8, 2023.
 
 ---
 
@@ -114,9 +114,9 @@ An extra property has been added to signInActivity API to display the last **suc
 
 Starting in November 2023, Microsoft will begin automatically protecting customers with Microsoft managed Conditional Access policies. These are policies that Microsoft creates and enables in customer tenants. The following policies are rolled out to all eligible tenants, who will be notified prior to policy creation :
 
-1. Multi-factor Authentication for admin portals: This policy covers privileged admin roles and requires multi-factor authentication when an admin signs into a Microsoft admin portal.
-1. Multi-factor Authentication for per-user multi-factor authentication users: This policy covers users with per-user multi-factor authentication and requires multi-factor authentication for all cloud apps.
-1. Multi-factor authentication for high-risk sign-ins: This policy covers all users and requires multi-factor authentication and reauthentication for high-risk sign-ins.
+1. Multifactor authentication for admin portals: This policy covers privileged admin roles and requires multifactor authentication when an admin signs into a Microsoft admin portal.
+1. Multifactor authentication for per-user multifactor authentication users: This policy covers users with per-user multifactor authentication and requires multifactor authentication for all cloud apps.
+1. Multifactor authentication for high-risk sign-ins: This policy covers all users and requires multifactor authentication and reauthentication for high-risk sign-ins.
 
 For more information, see:
 
