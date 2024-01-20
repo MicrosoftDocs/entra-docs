@@ -774,7 +774,7 @@ For more information, see: [Require an app protection policy on Windows devices 
 
 ---
 
-### General Availability - New Federated Apps available in Azure AD Application gallery - July 2023
+### General Availability - New Federated Apps available in Microsoft Entra Application gallery - July 2023
 
 **Type:** New feature   
 **Service category:** Enterprise Apps                
@@ -786,11 +786,11 @@ In July 2023 we've added the following 10 new applications in our App gallery wi
 
 You can also find the documentation of all the applications from here https://aka.ms/AppsTutorial.
 
-For listing your application in the Azure AD app gallery, read the details here https://aka.ms/AzureADAppRequest
+For listing your application in the Microsoft Entra app gallery, read the details here https://aka.ms/AzureADAppRequest
 
 ---
 
-### Public Preview - New provisioning connectors in the Azure AD Application Gallery - July 2023
+### Public Preview - New provisioning connectors in the Microsoft Entra Application Gallery - July 2023
 
 **Type:** New feature   
 **Service category:** App Provisioning               
