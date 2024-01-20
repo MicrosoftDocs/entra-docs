@@ -73,7 +73,7 @@ Tenant restrictions v2 can be scoped to specific users, groups, organizations, o
 - Per-user tenant restrictions for Microsoft Accounts.
 
 
-## Compare Tenant restrictions v1 and v2
+## Compare tenant restrictions v1 and v2
 
 The following table compares the features in each version.
 
@@ -98,7 +98,7 @@ When enabling TRv2 on proxy, you will be able to enforce TRv2 only on authentica
 
 Step 1: **Configuring allowed list of partner tenants**
 
-**TRv1:** Tenant Restrictions v1 (TRv1) lets you create an allow list of tenant IDs and/or Microsoft sign-in endpoints to ensure that users access external tenants that your organization authorizes. TRv1 acheived it by adding **`Restrict-Access-To-Tenants: <allowed-tenant-list>`** header on the proxy. For ex: `Restrict-Access-To-Tenants: " contoso.com, fabrikam.com, dogfood.com". [Learn more](~/identity/enterprise-apps/tenant-restrictions.md) about tenant restrictions v1.
+**TRv1:** Tenant Restrictions v1 (TRv1) lets you create an allow list of tenant IDs and/or Microsoft sign-in endpoints to ensure that users access external tenants that your organization authorizes. TRv1 achieved it by adding **`Restrict-Access-To-Tenants: <allowed-tenant-list>`** header on the proxy. For ex: `Restrict-Access-To-Tenants: " contoso.com, fabrikam.com, dogfood.com". [Learn more](~/identity/enterprise-apps/tenant-restrictions.md) about tenant restrictions v1.
   
 **TRv2:** With Tenant Restrictions v2 (TRv2), the configuration is moved to the server side cloud policy and there is no need for the TRv1 header. 
 
@@ -112,7 +112,7 @@ Step 1: **Configuring allowed list of partner tenants**
 
 Step 2: **Blocking Consumer account or Microsoft Account tenant**
 
-**TRv1:** To not allow users to sign in to consumer applications. Trv1 needs the sec-Restrict-Tenant-Access-Policy headerto be injected to traffic visiting login.live.com like **sec-Restrict-Tenant-Access-Policy: restrict-msa`**
+**TRv1:** To not allow users to sign in to consumer applications. Trv1 needs the sec-Restrict-Tenant-Access-Policy header to be injected to traffic visiting login.live.com like **sec-Restrict-Tenant-Access-Policy: restrict-msa`**
 
 **TRv2:** With TRv2, the configuration is moved to the server side cloud policy and there is no need for the TRv1 header. 
 
@@ -401,9 +401,9 @@ To test the tenant restrictions v2 policy on a device, follow these steps.
    - **Microsoft Entra Directory ID**: Enter the **Tenant ID** you recorded earlier. by signing in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an administrator and browsing to **Identity** > **Overview** and selecting the **Overview** tab.
    - **Policy GUID**: The ID for your cross-tenant access policy. It's the **Policy ID** you recorded earlier. You can also find this ID by using the Graph Explorer command [https://graph.microsoft.com/v1.0/policies/crossTenantAccessPolicy/default](https://graph.microsoft.com/v1.0/policies/crossTenantAccessPolicy/default).
 
-[//]: # (BROKEN LINK HttpLinkUnauthorized ABOVE: https://graph.microsoft.com/v1.0/policies/crossTenantAccessPolicy/default)
+    [//]: # (BROKEN LINK HttpLinkUnauthorized ABOVE: https://graph.microsoft.com/v1.0/policies/crossTenantAccessPolicy/default)
 
-   :::image type="content" source="media/tenant-restrictions-v2/windows-cloud-policy-details.png" alt-text="Screenshot of Windows Cloud Policy Details.":::
+     :::image type="content" source="media/tenant-restrictions-v2/windows-cloud-policy-details.png" alt-text="Screenshot of Windows Cloud Policy Details.":::
 
 1. Select **OK**.
 
@@ -444,7 +444,7 @@ Teams by default has open federation, which means we don't block anyone joining 
 > [!NOTE]
 > Microsoft Teams app has dependency on SharePoint Online and Exchange Online apps. We recommend setting the TRv2 policy on the Office 365 app instead of Microsoft Teams Services or SharePoint Online or Exchange Online separately. If you allow/block one of the applications(SPO or EXO etc.) that is part of Office 365 it will also affect apps like Microsoft Teams. Similarly, if Microsoft Teams app is allowed/blocked, SPO and EXO with in Teams app will be impacted.
 
-### Pure Anonymous Meeting join
+### Pure anonymous meeting join
 
 Tenant restrictions v2 automatically block all unauthenticated and externally issued identity access to externally hosted Teams meetings.
 For example, suppose Contoso uses Teams Federation Controls to block the Fabrikam tenant. If someone with a Contoso device uses a Fabrikam account to join a Contoso Teams meeting, they're allowed into the meeting as an anonymous user. Now, if Contoso also enables tenant restrictions v2, Teams blocks anonymous access, and the user isn't able to join the meeting.
