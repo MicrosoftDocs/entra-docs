@@ -6,7 +6,7 @@ description: Shows how an administrator can use the Microsoft Entra admin center
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: how-to
-ms.date: 08/04/2023
+ms.date: 01/18/2024
 
 ms.author: mimart
 author: msmimart
@@ -29,7 +29,7 @@ This article discusses two ways to configure an allow or blocklist for B2B colla
 - You can create either an allowlist or a blocklist. You can't set up both types of lists. By default, whatever domains aren't in the allowlist are on the blocklist, and vice versa. 
 - You can create only one policy per organization. You can update the policy to include more domains, or you can delete the policy to create a new one. 
 - The number of domains you can add to an allowlist or blocklist is limited only by the size of the policy. This limit applies to the number of characters, so you can have a greater number of shorter domains or fewer longer domains. The maximum size of the entire policy is 25 KB (25,000 characters), which includes the allowlist or blocklist and any other parameters configured for other features.
-- This list works independently from OneDrive for Business and SharePoint Online allow/block lists. If you want to restrict individual file sharing in SharePoint Online, you need to set up an allow or blocklist for OneDrive for Business and SharePoint Online. For more information, see [Restricted domains sharing in SharePoint Online and OneDrive for Business](https://support.office.com/article/restricted-domains-sharing-in-sharepoint-online-and-onedrive-for-business-5d7589cd-0997-4a00-a2ba-2320ec49c4e9).
+- This list works independently from OneDrive for Business and SharePoint Online allow/block lists. If you want to restrict individual file sharing in SharePoint Online, you need to set up an allow or blocklist for OneDrive for Business and SharePoint Online. For more information, see [Restrict sharing of SharePoint and OneDrive content by domain](https://support.office.com/article/restricted-domains-sharing-in-sharepoint-online-and-onedrive-for-business-5d7589cd-0997-4a00-a2ba-2320ec49c4e9).
 - The list doesn't apply to external users who have already redeemed the invitation. The list will be enforced after the list is set up. If a user invitation is in a pending state, and you set a policy that blocks their domain, the user's attempt to redeem the invitation will fail.
 - Both allow/block list and cross-tenant access settings are checked at the time of invitation.
 
@@ -45,16 +45,14 @@ This is the most typical scenario, where your organization wants to work with al
 
 To add a blocklist:
 
-
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](/entra/identity/role-based-access-control/permissions-reference#global-administrator).
-2. Browse to **Identity** > **Users** > **User settings**.
-3. Under **External users**, select **Manage external collaboration settings**.
-4. Under **Collaboration restrictions**, select **Deny invitations to the specified domains**.
-5. Under **Target domains**, enter the name of one of the domains that you want to block. For multiple domains, enter each domain on a new line. For example:
+1. Browse to **Identity** > **External Identities** > **External collaboration settings**.
+1. Under **Collaboration restrictions**, select **Deny invitations to the specified domains**.
+1. Under **Target domains**, enter the name of one of the domains that you want to block. For multiple domains, enter each domain on a new line. For example:
 
-    :::image type="content" source="media/allow-deny-list/DenyListSettings.PNG" alt-text="Screenshot showing the deny option with added domains.":::
+    :::image type="content" source="media/allow-deny-list/deny-list-settings.png" alt-text="Screenshot showing the deny option with added domains.":::
  
-6. When you're done, select **Save**.
+1. When you're done, select **Save**.
 
 After you set the policy, if you try to invite a user from a blocked domain, you receive a message saying that the domain of the user is currently blocked by your invitation policy.
  
@@ -67,14 +65,12 @@ If you want to use an allowlist, make sure that you spend time to fully evaluate
 
 To add an allowlist:
 
-
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](/entra/identity/role-based-access-control/permissions-reference#global-administrator).
-2. Browse to **Identity** > **Users** > **User settings**.
-3. Under **External users**, select **Manage external collaboration settings**.
+1. Browse to **Identity** > **External Identities** > **External collaboration settings**.
 4. Under **Collaboration restrictions**, select **Allow invitations only to the specified domains (most restrictive)**.
 5. Under **Target domains**, enter the name of one of the domains that you want to allow. For multiple domains, enter each domain on a new line. For example:
 
-    :::image type="content" source="media/allow-deny-list/AllowlistSettings.PNG" alt-text="Screenshot showing the allow option with added domains.":::
+    :::image type="content" source="media/allow-deny-list/allow-list-settings.png" alt-text="Screenshot showing the allow option with added domains.":::
  
 6. When you're done, select **Save**.
 
@@ -82,7 +78,7 @@ After you set the policy, if you try to invite a user from a domain that's not o
 
 ### Switch from allowlist to blocklist and vice versa 
 
-If you switch from one policy to the other, this discards the existing policy configuration. Make sure to back up details of your configuration before you perform the switch. 
+Switching from one policy to another discards the existing policy configuration. Make sure to back up details of your configuration before you perform the switch. 
 
 ## Set the allow or blocklist policy using PowerShell
 
@@ -170,6 +166,6 @@ Remove-AzureADPolicy -Id $currentpolicy.Id
 - [External collaboration settings](external-collaboration-settings-configure.md).
 
 
-=======
+
 
 
