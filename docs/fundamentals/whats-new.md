@@ -137,7 +137,7 @@ Changes were made to custom security attribute audit logs for general availabili
 
 ---
 
-### Public Preview - New provisioning connectors in the Azure AD Application Gallery - November 2023
+### Public Preview - New provisioning connectors in the Microsoft Entra Application Gallery - November 2023
 
 **Type:** New feature   
 **Service category:** App Provisioning               
@@ -154,11 +154,11 @@ We've added the following new applications in our App gallery with Provisioning 
 - [Team Today](../identity/saas-apps/team-today-provisioning-tutorial.md)
 - [YardiOne](../identity/saas-apps/yardione-provisioning-tutorial.md)
 
-For more information about how to better secure your organization by using automated user account provisioning, see: [Automate user provisioning to SaaS applications with Azure AD](~/identity/app-provisioning/user-provisioning.md).
+For more information about how to better secure your organization by using automated user account provisioning, see: [What is app provisioning in Microsoft Entra ID?](~/identity/app-provisioning/user-provisioning.md).
 
 ---
 
-### General Availability - New Federated Apps available in Azure AD Application gallery - November 2023
+### General Availability - New Federated Apps available in Microsoft Entra Application gallery - November 2023
 
 **Type:** New feature   
 **Service category:** Enterprise Apps                
@@ -324,7 +324,7 @@ For more information, see: [My Access Overview page (preview)](~/id-governance/m
 
 ---
 
-### Public Preview - New provisioning connectors in the Azure AD Application Gallery - October 2023
+### Public Preview - New provisioning connectors in the Microsoft Entra Application Gallery - October 2023
 
 **Type:** New feature   
 **Service category:** App Provisioning               
@@ -341,7 +341,7 @@ We've added the following new applications in our App gallery with Provisioning 
 - [Hypervault](~/identity/saas-apps/hypervault-provisioning-tutorial.md)
 - [Oneflow](~/identity/saas-apps/oneflow-provisioning-tutorial.md)
 
-For more information about how to better secure your organization by using automated user account provisioning, see: [Automate user provisioning to SaaS applications with Azure AD](~/identity/app-provisioning/user-provisioning.md).
+For more information about how to better secure your organization by using automated user account provisioning, see: [What is app provisioning in Microsoft Entra ID?](~/identity/app-provisioning/user-provisioning.md).
 
 ---
 
@@ -396,7 +396,7 @@ With this release, you can now recover applications along with their original se
 
 ---
 
-### Public Preview - New provisioning connectors in the Azure AD Application Gallery - September 2023
+### Public Preview - New provisioning connectors in the Microsoft Entra Application Gallery - September 2023
 
 **Type:** New feature   
 **Service category:** App Provisioning               
@@ -410,7 +410,7 @@ We've added the following new applications in our App gallery with Provisioning 
 - [Postman](~/identity/saas-apps/postman-provisioning-tutorial.md)
 - [Recnice](~/identity/saas-apps/recnice-provisioning-tutorial.md)
 
-For more information about how to better secure your organization by using automated user account provisioning, see: [Automate user provisioning to SaaS applications with Azure AD](~/identity/app-provisioning/user-provisioning.md).
+For more information about how to better secure your organization by using automated user account provisioning, see: [What is app provisioning in Microsoft Entra ID?](~/identity/app-provisioning/user-provisioning.md).
 
 ---
 
@@ -511,7 +511,7 @@ Strictly enforce Conditional Access policies in real-time using Continuous Acces
 
 ---
 
-### Public Preview - New provisioning connectors in the Azure AD Application Gallery - August 2023
+### Public Preview - New provisioning connectors in the Microsoft Entra Application Gallery - August 2023
 
 **Type:** New feature   
 **Service category:** App Provisioning               
@@ -532,7 +532,7 @@ We've added the following new applications in our App gallery with Provisioning 
 - [Xledger](~/identity/saas-apps/xledger-provisioning-tutorial.md)
 
 
-For more information about how to better secure your organization by using automated user account provisioning, see: [Automate user provisioning to SaaS applications with Azure AD](~/identity/app-provisioning/user-provisioning.md).
+For more information about how to better secure your organization by using automated user account provisioning, see: [What is app provisioning in Microsoft Entra ID?](~/identity/app-provisioning/user-provisioning.md).
 
 
 ---
@@ -807,7 +807,7 @@ We've added the following new applications in our App gallery with Provisioning 
 - [Funnel Leasing](~/identity/saas-apps/funnel-leasing-provisioning-tutorial.md)
 
 
-For more information about how to better secure your organization by using automated user account provisioning, see: [Automate user provisioning to SaaS applications with Azure AD](~/identity/app-provisioning/user-provisioning.md).
+For more information about how to better secure your organization by using automated user account provisioning, see: [What is app provisioning in Microsoft Entra ID?](~/identity/app-provisioning/user-provisioning.md).
 
 
 ---
