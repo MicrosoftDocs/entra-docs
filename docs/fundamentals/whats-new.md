@@ -560,41 +560,6 @@ Protected actions are high-risk operations, such as altering access policies or 
 
 ---
 
-### General Availability - Access Reviews for Inactive Users
-
-**Type:** New feature         
-**Service category:** Access Reviews                            
-**Product capability:** Identity Governance                      
-
-This new feature, part of the Microsoft Entra ID Governance SKU, allows admins to review and address stale accounts that haven’t been active for a specified period. Admins can set a specific duration to determine inactive accounts that weren't used for either interactive or non-interactive sign-in activities. As part of the review process, stale accounts can automatically be removed. For more information, see: [Microsoft Entra ID Governance Introduces Two New Features in Access Reviews](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/microsoft-entra-id-governance-introduces-two-new-features-in/ba-p/2466930).
-
----
-
-### General Availability - Automatic assignments to access packages in Microsoft Entra ID Governance
-
-**Type:** Changed feature       
-**Service category:** Entitlement Management                          
-**Product capability:** Entitlement Management                
-
-Microsoft Entra ID Governance includes the ability for a customer to configure an assignment policy in an entitlement management access package that includes an attribute-based rule, similar to dynamic groups, of the users who should be assigned access. For more information, see: [Configure an automatic assignment policy for an access package in entitlement management](~/id-governance/entitlement-management-access-package-auto-assignment-policy.md).
-
----
-
-### General Availability - Custom Extensions in Entitlement Management 
-
-**Type:** New feature       
-**Service category:** Entitlement Management                          
-**Product capability:** Entitlement Management                
-
-Custom extensions in Entitlement Management are now generally available, and allow you to extend the access lifecycle with your organization-specific processes and business logic when access is requested or about to expire. With custom extensions you can create tickets for manual access provisioning in disconnected systems, send custom notifications to additional stakeholders, or automate additional access-related configuration in your business applications such as assigning the correct sales region in Salesforce. You can also leverage custom extensions to embed external governance, risk, and compliance (GRC) checks in the access request.
-
-For more information, see:
-
-- [Microsoft Entra ID Governance Entitlement Management New Generally Available Capabilities](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/microsoft-entra-id-governance-entitlement-management-new/ba-p/2466929)
-- [Trigger Logic Apps with custom extensions in entitlement management](~/id-governance/entitlement-management-logic-apps-integration.md)
-
----
-
 ### General Availability - Conditional Access templates
 
 **Type:** Plan for change         
