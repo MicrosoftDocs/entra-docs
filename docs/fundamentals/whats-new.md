@@ -592,46 +592,6 @@ Update the Microsoft Entra ID and Microsoft 365 sign in experience with new Comp
 
 ---
 
-### General Availability - Enabling customization capabilities for the Self-Service Password Reset (SSPR) hyperlinks, footer hyperlinks and browser icons in Company Branding.
-
-**Type:** Changed feature       
-**Service category:** User Experience and Management                            
-**Product capability:** End User Experiences                  
-
-Update the Company Branding functionality on the Microsoft Entra ID/Microsoft 365 sign in experience to allow customizing Self Service Password Reset (SSPR) hyperlinks, footer hyperlinks, and a browser icon. For more information, see: [Company Branding](~/fundamentals/how-to-customize-branding.md) 
-
----
-
-### General Availability - User-to-Group Affiliation recommendation for group Access Reviews
-
-**Type:** New feature       
-**Service category:** Access Reviews                            
-**Product capability:** Identity Governance                  
-
-This feature provides Machine Learning based recommendations to the reviewers of Azure AD Access Reviews to make the review experience easier and more accurate. The recommendation leverages machine learning based scoring mechanism and compares users’ relative affiliation with other users in the group, based on the organization’s reporting structure. For more information, see:  [Review recommendations for Access reviews](~/id-governance/review-recommendations-access-reviews.md) and [Introducing Machine Learning based recommendations in Azure AD Access reviews](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/introducing-machine-learning-based-recommendations-in-azure-ad/ba-p/2466923)
-
----
-
-### Public Preview - Inactive guest insights
-
-**Type:** New feature       
-**Service category:** Reporting                            
-**Product capability:** Identity Governance                  
-
-Monitor guest accounts at scale with intelligent insights into inactive guest users in your organization. Customize the inactivity threshold depending on your organization’s needs, narrow down the scope of guest users you want to monitor and identify the guest users that may be inactive. For more information, see: [Monitor and clean up stale guest accounts using access reviews](~/identity/users/clean-up-stale-guest-accounts.md).
-
----
-
-### Public Preview - Just-in-time application access with PIM for Groups
-
-**Type:** New feature       
-**Service category:** Privileged Identity Management                            
-**Product capability:** Privileged Identity Management                  
-
-You can minimize the number of persistent administrators in applications such as [AWS](~/identity/saas-apps/aws-single-sign-on-provisioning-tutorial.md#just-in-time-jit-application-access-with-pim-for-groups-preview)/[GCP](~/identity/saas-apps/g-suite-provisioning-tutorial.md#just-in-time-jit-application-access-with-pim-for-groups-preview) and get JIT access to groups in AWS and GCP. While PIM for Groups is publicly available, we’ve released a public preview that integrates PIM with provisioning and reduces the activation delay from 40+ minutes to 1 – 2 minutes.
-
----
-
 ### Public Preview - Graph beta API for PIM security alerts on Azure AD roles
 
 **Type:** New feature       
@@ -759,14 +719,3 @@ Earlier this month we announced the release of [MSAL.NET 4.55.0](https://www.nug
 
 ---
 
-### General Availability - Microsoft Authentication Library for Python 1.23.0
-
-**Type:** New feature       
-**Service category:** Other                                    
-**Product capability:** User Authentication                  
-
-Earlier this month, the Microsoft Authentication Library team announced the release of [MSAL for Python version 1.23.0](https://pypi.org/project/msal/1.23.0/). The new version of the library adds support for better caching when using client credentials, eliminating the need to request new tokens repeatedly when cached tokens exist.
-
-To learn more about MSAL for Python, see: [Microsoft Authentication Library (MSAL) for Python](/entra/msal/python/).
-
----
