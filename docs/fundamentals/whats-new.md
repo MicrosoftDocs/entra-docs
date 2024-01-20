@@ -592,16 +592,6 @@ Update the Microsoft Entra ID and Microsoft 365 sign in experience with new Comp
 
 ---
 
-### Public Preview - Graph beta API for PIM security alerts on Azure AD roles
-
-**Type:** New feature       
-**Service category:** Privileged Identity Management                            
-**Product capability:** Privileged Identity Management                 
-
-Announcing API support (beta) for managing PIM security alerts for Azure AD roles. [Azure Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/index.yml) generates alerts when there's suspicious or unsafe activity in your organization in Azure Active Directory (Azure AD), part of Microsoft Entra. You can now manage these alerts using REST APIs. These alerts can also be [managed through the Azure portal](~/id-governance/privileged-identity-management/pim-resource-roles-configure-alerts.md). For more information, see:  [unifiedRoleManagementAlert resource type](/graph/api/resources/unifiedrolemanagementalert).
-
----
-
 ### General Availability - Reset Password on Azure Mobile App
 
 **Type:** New feature       
@@ -645,16 +635,6 @@ We have increased the number of properties admins are able to define when creati
 
 ---
 
-### General Availability - All Users and User Profile
-
-**Type:** Changed feature       
-**Service category:** User Management                                  
-**Product capability:** User Management                   
-
-The All Users list now features an infinite scroll, and admins can now modify more properties in the User Profile. For more information, see: [How to create, invite, and delete users](~/fundamentals/how-to-create-delete-users.md).
-
----
-
 ### Public Preview - Windows MAM
 
 **Type:** New feature       
@@ -668,54 +648,6 @@ Using MAM Conditional Access, Microsoft Edge for Business provides users with se
 The new capability extends the benefits of app layer management to the Windows platform via Microsoft Edge for Business. Admins are empowered to configure the user experience and protect organizational data within Microsoft Edge for Business on unmanaged Windows devices.
 
 For more information, see: [Require an app protection policy on Windows devices (preview)](~/identity/conditional-access/how-to-app-protection-policy-windows.md).
-
----
-
-### General Availability - New Federated Apps available in Microsoft Entra Application gallery - July 2023
-
-**Type:** New feature   
-**Service category:** Enterprise Apps                
-**Product capability:** 3rd Party Integration          
-
-In July 2023 we've added the following 10 new applications in our App gallery with Federation support:    
-
-[Gainsight SAML](~/identity/saas-apps/gainsight-tutorial.md), [Dataddo](https://www.dataddo.com/), [Puzzel](https://www.puzzel.com/), [Worthix App](~/identity/saas-apps/worthix-app-tutorial.md), [iOps360 IdConnect](https://iops360.com/iops360-id-connect-azuread-single-sign-on/), [Airbase](~/identity/saas-apps/airbase-tutorial.md), [Couchbase Capella - SSO](~/identity/saas-apps/couchbase-capella-sso-tutorial.md), [SSO for Jama Connect®](~/identity/saas-apps/sso-for-jama-connect-tutorial.md), [mediment (メディメント)](https://mediment.jp/), [Netskope Cloud Exchange Administration Console](~/identity/saas-apps/netskope-cloud-exchange-administration-console-tutorial.md), [Uber](~/identity/saas-apps/uber-tutorial.md), [Plenda](https://app.plenda.nl/), [Deem Mobile](~/identity/saas-apps/deem-mobile-tutorial.md), [40SEAS](https://www.40seas.com/), [Vivantio](https://www.vivantio.com/), [AppTweak](https://www.apptweak.com/), [Vbrick Rev Cloud](~/identity/saas-apps/vbrick-rev-cloud-tutorial.md), [OptiTurn](~/identity/saas-apps/optiturn-tutorial.md), [Application Experience with Mist](https://www.mist.com/), [クラウド勤怠管理システムKING OF TIME](~/identity/saas-apps/cloud-attendance-management-system-king-of-time-tutorial.md), [Connect1](~/identity/saas-apps/connect1-tutorial.md), [DB Education Portal for Schools](~/identity/saas-apps/db-education-portal-for-schools-tutorial.md), [SURFconext](~/identity/saas-apps/surfconext-tutorial.md), [Chengliye Smart SMS Platform](~/identity/saas-apps/chengliye-smart-sms-platform-tutorial.md), [CivicEye SSO](~/identity/saas-apps/civic-eye-sso-tutorial.md), [Colloquial](~/identity/saas-apps/colloquial-tutorial.md), [BigPanda](~/identity/saas-apps/bigpanda-tutorial.md), [Foreman](https://foreman.mn/)
-
-You can also find the documentation of all the applications from here https://aka.ms/AppsTutorial.
-
-For listing your application in the Microsoft Entra app gallery, read the details here https://aka.ms/AzureADAppRequest
-
----
-
-### Public Preview - New provisioning connectors in the Microsoft Entra Application Gallery - July 2023
-
-**Type:** New feature   
-**Service category:** App Provisioning               
-**Product capability:** 3rd Party Integration    
-      
-
-We've added the following new applications in our App gallery with Provisioning support. You can now automate creating, updating, and deleting of user accounts for these newly integrated apps:
-
-- [Albert](~/identity/saas-apps/albert-provisioning-tutorial.md)
-- [Rhombus Systems](~/identity/saas-apps/rhombus-systems-provisioning-tutorial.md)
-- [Axiad Cloud](~/identity/saas-apps/axiad-cloud-provisioning-tutorial.md)
-- [Dagster Cloud](~/identity/saas-apps/dagster-cloud-provisioning-tutorial.md)
-- [WATS](~/identity/saas-apps/wats-provisioning-tutorial.md)
-- [Funnel Leasing](~/identity/saas-apps/funnel-leasing-provisioning-tutorial.md)
-
-
-For more information about how to better secure your organization by using automated user account provisioning, see: [What is app provisioning in Microsoft Entra ID?](~/identity/app-provisioning/user-provisioning.md).
-
-
----
-
-### General Availability - Microsoft Authentication Library for .NET 4.55.0
-
-**Type:** New feature       
-**Service category:** Other                                    
-**Product capability:** User Authentication                     
-
-Earlier this month we announced the release of [MSAL.NET 4.55.0](https://www.nuget.org/packages/Microsoft.Identity.Client/4.55.0), the latest version of the [Microsoft Authentication Library for the .NET platform](/entra/msal/dotnet/). The new version introduces support for user-assigned [managed identity](/entra/msal/dotnet/advanced/managed-identity) being specified through object IDs, CIAM authorities in the `WithTenantId` API, better error messages when dealing with cache serialization, and improved logging when using the [Windows authentication broker](/entra/msal/dotnet/acquiring-tokens/desktop-mobile/wam).
 
 ---
 
