@@ -42,7 +42,7 @@ This page updates monthly, so revisit it regularly. If you're looking for items 
 **Service category:** B2B                     
 **Product capability:**  B2B/B2C             
 
-With configurable redemption, you can customize the order of identity providers that your guest users can sign in with when they accept your invitation. This lets your override the default configuration order set by Microsoft and use your own. This can be used to help with scenarios like prioritizing a SAML/WS-fed federation above an Entra ID verified domain, disabling certain identity providers as an option during redemption, or even only using something like email one-time pass-code as a redemption option. For more information, see: [Configurable redemption (Preview)](../external-id/cross-tenant-access-overview.md#configurable-redemption-preview).
+With configurable redemption, you can customize the order of identity providers that your guest users can sign in with when they accept your invitation. This lets your override the default configuration order set by Microsoft and use your own. This can be used to help with scenarios like prioritizing a SAML/WS-fed federation above an Microsoft Entra ID verified domain, disabling certain identity providers as an option during redemption, or even only using something like email one-time pass-code as a redemption option. For more information, see: [Configurable redemption (Preview)](../external-id/cross-tenant-access-overview.md#configurable-redemption-preview).
 
 ---
 
@@ -52,7 +52,7 @@ With configurable redemption, you can customize the order of identity providers 
 **Service category:** Group Management                     
 **Product capability:**  Directory             
 
-The dynamic group rule builder has been updated to no longer include the '*contains*' and '*notContains*' operators, as they're less performant. If needed, you can still create dynamic group rules with those operators by typing directly into the text box. For more information, see: [Rule builder in the Azure portal](../identity/users/groups-dynamic-membership.md#rule-builder-in-the-azure-portal).
+The dynamic group rule builder is updated to no longer include the '*contains*' and '*notContains*' operators, as they're less performant. If needed, you can still create dynamic group rules with those operators by typing directly into the text box. For more information, see: [Rule builder in the Azure portal](../identity/users/groups-dynamic-membership.md#rule-builder-in-the-azure-portal).
 
 ---
 
@@ -68,11 +68,11 @@ The public preview of Group Writeback V2 (GWB) in Entra Connect Sync will no lon
 
 Another similar functionality is offered in Entra Cloud Sync, called “*Group Provision to AD*”, that maybe used instead of GWB V2 for provisioning cloud security groups to AD. Enhanced functionality in Cloud Sync, along with other new features, are being developed.
 
-Customers who use this preview feature in Connect Sync should [switch their configuration from Connect Sync to Cloud Sync](../identity/hybrid/cloud-sync/migrate-group-writeback.md). Customers may choose to move all their hybrid sync to Cloud Sync (if it supports their needs) or Cloud Sync may be run side-by-side and move only cloud security group provisioning to AD onto Cloud Sync.
+Customers who use this preview feature in Connect Sync should [switch their configuration from Connect Sync to Cloud Sync](../identity/hybrid/cloud-sync/migrate-group-writeback.md). Customers can choose to move all their hybrid sync to Cloud Sync (if it supports their needs) or Cloud Sync can be run side-by-side and move only cloud security group provisioning to AD onto Cloud Sync.
 
-Customers who provision Microsoft 365 groups to AD may continue using GWB V1 for this capability.  
+Customers who provision Microsoft 365 groups to AD can continue using GWB V1 for this capability.  
 
-Customers may evaluate moving exclusively to Cloud Sync by using this wizard: https://aka.ms/EvaluateSyncOptions
+Customers can evaluate moving exclusively to Cloud Sync by using this wizard: https://aka.ms/EvaluateSyncOptions
 
 ---
 
@@ -80,7 +80,7 @@ Customers may evaluate moving exclusively to Cloud Sync by using this wizard: ht
 
 **Type:** New feature   
 **Service category:** Provisioning                     
-**Product capability:**  AAD Connect Cloud Sync             
+**Product capability:**  Microsoft Entra Connect            
 
 Exchange hybrid capability allows for the coexistence of Exchange mailboxes both on-premises and in Microsoft 365. Microsoft Entra Cloud Sync synchronizes a specific set of Exchange-related attributes from Microsoft Entra ID back into your on-premises directory and to any forests that's disconnected (no network trust needed between them). With this capability, existing customers who have this feature enabled in Microsoft Entra Connect sync can now migrate, and apply, this feature with Microsoft Entra cloud sync. For more information, see: [Exchange hybrid writeback with cloud sync](../identity/hybrid/exchange-hybrid-writeback.md).
 
@@ -102,7 +102,7 @@ Monitor guest accounts at scale with intelligent insights into inactive guest us
 **Service category:** MS Graph                     
 **Product capability:**  End User Experiences             
 
-An extra property has been added to signInActivity API to display the last **successful** sign in time for a specific user, regardless if the sign in was interactive or non-interactive. The data won't be backfilled for this property, so you should expect to be returned only successful signIn data starting on December 8, 2023.
+An extra property has been added to signInActivity API to display the last **successful** sign in time for a specific user, regardless if the sign in was interactive or non-interactive. The data won't be backfilled for this property, so you should expect to be returned only successful sign in data starting on December 8, 2023.
 
 ---
 
@@ -114,9 +114,9 @@ An extra property has been added to signInActivity API to display the last **suc
 
 Starting in November 2023, Microsoft will begin automatically protecting customers with Microsoft managed Conditional Access policies. These are policies that Microsoft creates and enables in customer tenants. The following policies are rolled out to all eligible tenants, who will be notified prior to policy creation :
 
-1. Multi-factor Authentication for admin portals: This policy covers privileged admin roles and requires multi-factor authentication when an admin signs into a Microsoft admin portal.
-1. Multi-factor Authentication for per-user multi-factor authentication users: This policy covers users with per-user multi-factor authentication and requires multi-factor authentication for all cloud apps.
-1. Multi-factor authentication for high-risk sign-ins: This policy covers all users and requires multi-factor authentication and reauthentication for high-risk sign-ins.
+1. Multifactor authentication for admin portals: This policy covers privileged admin roles and requires multifactor authentication when an admin signs into a Microsoft admin portal.
+1. Multifactor authentication for per-user multifactor authentication users: This policy covers users with per-user multifactor authentication and requires multifactor authentication for all cloud apps.
+1. Multifactor authentication for high-risk sign-ins: This policy covers all users and requires multifactor authentication and reauthentication for high-risk sign-ins.
 
 For more information, see:
 
@@ -137,7 +137,7 @@ Changes were made to custom security attribute audit logs for general availabili
 
 ---
 
-### Public Preview - New provisioning connectors in the Azure AD Application Gallery - November 2023
+### Public Preview - New provisioning connectors in the Microsoft Entra Application Gallery - November 2023
 
 **Type:** New feature   
 **Service category:** App Provisioning               
@@ -154,11 +154,11 @@ We've added the following new applications in our App gallery with Provisioning 
 - [Team Today](../identity/saas-apps/team-today-provisioning-tutorial.md)
 - [YardiOne](../identity/saas-apps/yardione-provisioning-tutorial.md)
 
-For more information about how to better secure your organization by using automated user account provisioning, see: [Automate user provisioning to SaaS applications with Azure AD](~/identity/app-provisioning/user-provisioning.md).
+For more information about how to better secure your organization by using automated user account provisioning, see: [What is app provisioning in Microsoft Entra ID?](~/identity/app-provisioning/user-provisioning.md).
 
 ---
 
-### General Availability - New Federated Apps available in Azure AD Application gallery - November 2023
+### General Availability - New Federated Apps available in Microsoft Entra Application gallery - November 2023
 
 **Type:** New feature   
 **Service category:** Enterprise Apps                
@@ -170,7 +170,7 @@ In November 2023 we've added the following 10 new applications in our App galler
 
 You can also find the documentation of all the applications from here https://aka.ms/AppsTutorial.
 
-For listing your application in the Azure AD app gallery, read the details here https://aka.ms/AzureADAppRequest.
+For listing your application in the Microsoft Entra ID app gallery, read the details here https://aka.ms/AzureADAppRequest.
 
 ---
 
@@ -180,7 +180,7 @@ For listing your application in the Azure AD app gallery, read the details here 
 **Service category:** Microsoft Authenticator App                     
 **Product capability:**  User Authentication             
 
-Beginning with version 6.2310.7174, Microsoft Authenticator for Android is compliant with Federal Information Processing Standard (FIPS 140-3) for all Microsoft Entra authentications, including phishing-resistant device-bound passkeys, push multi-factor authentication (MFA), passwordless phone sign-in (PSI) and time-based one-time passcodes (TOTP). For organizations using Intune Company Portal, it is required to have minimum CP version 5.0.6043.0 in addition to Microsoft Authenticator version 6.2310.7174. Microsoft Authenticator on iOS is already FIPS 140 compliant, as announced last year. For more information, see: [Authentication methods in Microsoft Entra ID - Microsoft Authenticator app](../identity/authentication/concept-authentication-authenticator-app.md).
+Beginning with version 6.2310.7174, Microsoft Authenticator for Android is compliant with Federal Information Processing Standard (FIPS 140-3) for all Microsoft Entra authentications, including phishing-resistant device-bound passkeys, push multifactor authentication (MFA), passwordless phone sign-in (PSI) and time-based one-time passcodes (TOTP). For organizations using Intune Company Portal, it's required to have minimum CP version 5.0.6043.0 in addition to Microsoft Authenticator version 6.2310.7174. Microsoft Authenticator on iOS is already FIPS 140 compliant, as announced last year. For more information, see: [Authentication methods in Microsoft Entra ID - Microsoft Authenticator app](../identity/authentication/concept-authentication-authenticator-app.md).
 
 ---
 
@@ -263,7 +263,7 @@ For more information, see: [Require an app protection policy on Windows devices]
 
 Microsoft Entra ID is the new name for Azure Active Directory (Azure AD). The rename and new product icon are now being deployed across experiences from Microsoft. Most updates will be complete by mid-November of this year. As previously announced, this is just a new name, with no impact on deployments or daily work. There are no changes to capabilities, licensing, terms of service, or support.
 
-From October 15 to November 15, Azure AD emails previously sent from azure-noreply@microsoft.com will start being sent from MSSecurity-noreply@microsoft.com. You may need to update your Outlook rules to match this.  
+From October 15 to November 15, Azure AD emails previously sent from azure-noreply@microsoft.com will start being sent from MSSecurity-noreply@microsoft.com. You might need to update your Outlook rules to match this.  
 
 Additionally, we'll update email content to remove all references of Azure AD where relevant, and include an informational banner that announces this change.
 
@@ -306,7 +306,7 @@ To further protect your organization, Microsoft is now limiting this functionali
 
 In an ever-evolving security landscape, the Microsoft Authenticator is updating its security baseline for Location Based Access Control (LBAC) conditional access policies to disallow authentications where the user may be using a different location than the actual GPS location of the mobile device. Today, it's possible for users to modify the location reported by the device on iOS and Android devices. The Authenticator app will start to deny LBAC authentications where we detect that the user isn't using the actual location of the mobile device where the Authenticator is installed.
 
-In the November 2023 release of the Authenticator app, users who are modifying the location of their device will see a denial message in the app when doing an LBAC authentication. To ensure that users aren’t using older app versions to continue authenticating with a modified location, beginning January 2024, any users that are on Android Authenticator 6.2309.6329 version or prior and iOS Authenticator version 6.7.16 or prior will be blocked from using LBAC. To determine which users are using older versions of the Authenticator app, you may use [our MSGraph APIs](/graph/api/resources/microsoftauthenticatorauthenticationmethod).
+In the November 2023 release of the Authenticator app, users who are modifying the location of their device sees a denial message in the app when doing an LBAC authentication. To ensure that users aren’t using older app versions to continue authenticating with a modified location, beginning January 2024, any users that are on Android Authenticator 6.2309.6329 version or prior and iOS Authenticator version 6.7.16 or prior will be blocked from using LBAC. To determine which users are using older versions of the Authenticator app, you may use [our MSGraph APIs](/graph/api/resources/microsoftauthenticatorauthenticationmethod).
 
 ---
 
@@ -318,13 +318,13 @@ In the November 2023 release of the Authenticator app, users who are modifying t
 
 Today, when users navigate to myaccess.microsoft.com, they land on a list of available access packages in their organization. The new Overview page provides a more relevant place for users to land. The Overview page points them to the tasks they need to complete and helps familiarize users with how to complete tasks in My Access.  
 
-Admins can enable/disable the Overview page preview by signing into the Entra portal and navigating to Entitlement management > Settings > Opt-in Preview Features and locating My Access overview page in the table.
+Admins can enable/disable the Overview page preview by signing into the Microsoft Entra admin center and navigating to Entitlement management > Settings > Opt-in Preview Features and locating My Access overview page in the table.
 
 For more information, see: [My Access Overview page (preview)](~/id-governance/my-access-portal-overview.md#overview-page-preview).
 
 ---
 
-### Public Preview - New provisioning connectors in the Azure AD Application Gallery - October 2023
+### Public Preview - New provisioning connectors in the Microsoft Entra Application Gallery - October 2023
 
 **Type:** New feature   
 **Service category:** App Provisioning               
@@ -341,7 +341,7 @@ We've added the following new applications in our App gallery with Provisioning 
 - [Hypervault](~/identity/saas-apps/hypervault-provisioning-tutorial.md)
 - [Oneflow](~/identity/saas-apps/oneflow-provisioning-tutorial.md)
 
-For more information about how to better secure your organization by using automated user account provisioning, see: [Automate user provisioning to SaaS applications with Azure AD](~/identity/app-provisioning/user-provisioning.md).
+For more information about how to better secure your organization by using automated user account provisioning, see: [What is app provisioning in Microsoft Entra ID?](~/identity/app-provisioning/user-provisioning.md).
 
 ---
 
@@ -361,7 +361,7 @@ The MicrosoftGraphActivityLogs provides administrators full visibility into all 
 **Service category:** Other                     
 **Product capability:** Identity Governance            
 
-Quick Microsoft Entra Verified ID setup, available in preview, removes several configuration steps an admin needs to complete with a single click on a Get started button. The quick setup takes care of signing keys, registering your decentralized ID, and verifying your domain ownership. It also creates a Verified Workplace Credential for you. For more information, see: [Quick Microsoft Entra Verified ID setup](~/verified-id/verifiable-credentials-configure-tenant-quick.md).
+Quick Microsoft Entra Verified ID setup, available in preview, removes several configuration steps an admin needs to complete with a single select on a Get started button. The quick setup takes care of signing keys, registering your decentralized ID, and verifying your domain ownership. It also creates a Verified Workplace Credential for you. For more information, see: [Quick Microsoft Entra Verified ID setup](~/verified-id/verifiable-credentials-configure-tenant-quick.md).
 
 ---
 
@@ -396,7 +396,7 @@ With this release, you can now recover applications along with their original se
 
 ---
 
-### Public Preview - New provisioning connectors in the Azure AD Application Gallery - September 2023
+### Public Preview - New provisioning connectors in the Microsoft Entra Application Gallery - September 2023
 
 **Type:** New feature   
 **Service category:** App Provisioning               
@@ -410,7 +410,7 @@ We've added the following new applications in our App gallery with Provisioning 
 - [Postman](~/identity/saas-apps/postman-provisioning-tutorial.md)
 - [Recnice](~/identity/saas-apps/recnice-provisioning-tutorial.md)
 
-For more information about how to better secure your organization by using automated user account provisioning, see: [Automate user provisioning to SaaS applications with Azure AD](~/identity/app-provisioning/user-provisioning.md).
+For more information about how to better secure your organization by using automated user account provisioning, see: [What is app provisioning in Microsoft Entra ID?](~/identity/app-provisioning/user-provisioning.md).
 
 ---
 
@@ -474,7 +474,7 @@ Visit https://aka.ms/tenant-restrictions-enforcement for more information on ten
 **Service category:** B2B                               
 **Product capability:** B2B/B2C                    
 
-Cross-tenant access settings can be managed with custom roles defined by your organization. This enables you to define your own finely-scoped roles to manage cross-tenant access settings instead of using one of the built-in roles for management. [Learn more about creating your own custom roles](~/external-id/cross-tenant-access-overview.md#custom-roles-for-managing-cross-tenant-access-settings).
+Cross-tenant access settings can be managed with custom roles defined by your organization. This enables you to define your own finely scoped roles to manage cross-tenant access settings instead of using one of the built-in roles for management. [Learn more about creating your own custom roles](~/external-id/cross-tenant-access-overview.md#custom-roles-for-managing-cross-tenant-access-settings).
 
 You can also now protect privileged actions inside of cross-tenant access settings using Conditional Access. For example, you can require MFA before allowing changes to default settings for B2B collaboration. Learn more about [Protected actions](~/identity/role-based-access-control/protected-actions-overview.md).
 
@@ -511,7 +511,7 @@ Strictly enforce Conditional Access policies in real-time using Continuous Acces
 
 ---
 
-### Public Preview - New provisioning connectors in the Azure AD Application Gallery - August 2023
+### Public Preview - New provisioning connectors in the Microsoft Entra Application Gallery - August 2023
 
 **Type:** New feature   
 **Service category:** App Provisioning               
@@ -532,7 +532,7 @@ We've added the following new applications in our App gallery with Provisioning 
 - [Xledger](~/identity/saas-apps/xledger-provisioning-tutorial.md)
 
 
-For more information about how to better secure your organization by using automated user account provisioning, see: [Automate user provisioning to SaaS applications with Azure AD](~/identity/app-provisioning/user-provisioning.md).
+For more information about how to better secure your organization by using automated user account provisioning, see: [What is app provisioning in Microsoft Entra ID?](~/identity/app-provisioning/user-provisioning.md).
 
 
 ---
@@ -545,291 +545,5 @@ For more information about how to better secure your organization by using autom
 
 Real-time enforcement of risk events, revocation events, and Conditional Access location policies is now generally available for workload identities.
 Service principals on line of business (LOB) applications are now protected on access requests to Microsoft Graph. For more information, see: [Continuous access evaluation for workload identities (preview)](~/identity/conditional-access/concept-continuous-access-evaluation-workload.md).
-
----
-
-## July 2023
-
-### General Availability: Azure Active Directory (Azure AD) is being renamed.
-
-**Type:** Changed feature       
-**Service category:**  N/A                          
-**Product capability:** End User Experiences                
-
-**No action is required from you, but you may need to update some of your own documentation.**
-
-Azure AD is being renamed to Microsoft Entra ID. The name change rolls out across all Microsoft products and experiences throughout the second half of 2023. 
-
-Capabilities, licensing, and usage of the product isn't changing. To make the transition seamless for you, the pricing, terms, service level agreements, URLs, APIs, PowerShell cmdlets, Microsoft Authentication Library (MSAL) and developer tooling remain the same.   
-
-Learn more and get renaming details: [New name for Azure Active Directory](new-name.md).
-
----
-
-### General Availability - Include/exclude My Apps in Conditional Access policies
-
-**Type:** Fixed       
-**Service category:** Conditional Access                            
-**Product capability:** End User Experiences                  
-
-My Apps can now be targeted in Conditional Access policies. This solves a top customer blocker. The functionality is available in all clouds. GA also brings a new app launcher, which improves app launch performance for both SAML and other app types. 
-
-Learn More about setting up Conditional Access policies here: [Azure AD Conditional Access documentation](~/identity/conditional-access/index.yml).
-
----
-
-### General Availability - Conditional Access for Protected Actions
-
-**Type:** New feature         
-**Service category:** Conditional Access                            
-**Product capability:** Identity Security & Protection                    
-
-Protected actions are high-risk operations, such as altering access policies or changing trust settings, that can significantly impact an organization's security. To add an extra layer of protection, Conditional Access for Protected Actions lets organizations define specific conditions for users to perform these sensitive tasks. For more information, see: [What are protected actions in Azure AD?](~/identity/role-based-access-control/protected-actions-overview.md).
-
----
-
-### General Availability - Access Reviews for Inactive Users
-
-**Type:** New feature         
-**Service category:** Access Reviews                            
-**Product capability:** Identity Governance                      
-
-This new feature, part of the Microsoft Entra ID Governance SKU, allows admins to review and address stale accounts that haven’t been active for a specified period. Admins can set a specific duration to determine inactive accounts that weren't used for either interactive or non-interactive sign-in activities. As part of the review process, stale accounts can automatically be removed. For more information, see: [Microsoft Entra ID Governance Introduces Two New Features in Access Reviews](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/microsoft-entra-id-governance-introduces-two-new-features-in/ba-p/2466930).
-
----
-
-### General Availability - Automatic assignments to access packages in Microsoft Entra ID Governance
-
-**Type:** Changed feature       
-**Service category:** Entitlement Management                          
-**Product capability:** Entitlement Management                
-
-Microsoft Entra ID Governance includes the ability for a customer to configure an assignment policy in an entitlement management access package that includes an attribute-based rule, similar to dynamic groups, of the users who should be assigned access. For more information, see: [Configure an automatic assignment policy for an access package in entitlement management](~/id-governance/entitlement-management-access-package-auto-assignment-policy.md).
-
----
-
-### General Availability - Custom Extensions in Entitlement Management 
-
-**Type:** New feature       
-**Service category:** Entitlement Management                          
-**Product capability:** Entitlement Management                
-
-Custom extensions in Entitlement Management are now generally available, and allow you to extend the access lifecycle with your organization-specific processes and business logic when access is requested or about to expire. With custom extensions you can create tickets for manual access provisioning in disconnected systems, send custom notifications to additional stakeholders, or automate additional access-related configuration in your business applications such as assigning the correct sales region in Salesforce. You can also leverage custom extensions to embed external governance, risk, and compliance (GRC) checks in the access request.
-
-For more information, see:
-
-- [Microsoft Entra ID Governance Entitlement Management New Generally Available Capabilities](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/microsoft-entra-id-governance-entitlement-management-new/ba-p/2466929)
-- [Trigger Logic Apps with custom extensions in entitlement management](~/id-governance/entitlement-management-logic-apps-integration.md)
-
----
-
-### General Availability - Conditional Access templates
-
-**Type:** Plan for change         
-**Service category:** Conditional Access                             
-**Product capability:** Identity Security & Protection                  
-
-Conditional Access templates are predefined set of conditions and controls that provide a convenient method to deploy new policies aligned with Microsoft recommendations. Customers are assured that their policies reflect modern best practices for securing corporate assets, promoting secure, optimal access for their hybrid workforce. For more information, see: [Conditional Access templates](~/identity/conditional-access/concept-conditional-access-policy-common.md).
-
----
-
-### General Availability - Lifecycle Workflows
-
-**Type:** New feature       
-**Service category:** Lifecycle Workflows                            
-**Product capability:** Identity Governance                  
-
-User identity lifecycle is a critical part of an organization’s security posture, and when managed correctly, can have a positive impact on their users’ productivity for Joiners, Movers, and Leavers. The ongoing digital transformation is accelerating the need for good identity lifecycle management. However, IT and security teams face enormous challenges managing the complex, time-consuming, and error-prone manual processes necessary to execute the required onboarding and offboarding tasks for hundreds of employees at once. This is an ever present and complex issue IT admins continue to face with digital transformation across security, governance, and compliance.
-
-Lifecycle Workflows, one of our newest Microsoft Entra ID Governance capabilities is now generally available to help organizations further optimize their user identity lifecycle. For more information, see: [Lifecycle Workflows is now generally available!](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/lifecycle-workflows-is-now-generally-available/ba-p/2466931)
-
----
-
-### General Availability - Enabling extended customization capabilities for sign-in and sign-up pages in Company Branding capabilities.
-
-**Type:** New feature       
-**Service category:** User Experience and Management                            
-**Product capability:** User Authentication                
-
-Update the Microsoft Entra ID and Microsoft 365 sign in experience with new Company Branding capabilities. You can apply your company’s brand guidance to authentication experiences with predefined templates. For more information, see: [Company Branding](~/fundamentals/how-to-customize-branding.md) 
-
----
-
-### General Availability - Enabling customization capabilities for the Self-Service Password Reset (SSPR) hyperlinks, footer hyperlinks and browser icons in Company Branding.
-
-**Type:** Changed feature       
-**Service category:** User Experience and Management                            
-**Product capability:** End User Experiences                  
-
-Update the Company Branding functionality on the Microsoft Entra ID/Microsoft 365 sign in experience to allow customizing Self Service Password Reset (SSPR) hyperlinks, footer hyperlinks, and a browser icon. For more information, see: [Company Branding](~/fundamentals/how-to-customize-branding.md) 
-
----
-
-### General Availability - User-to-Group Affiliation recommendation for group Access Reviews
-
-**Type:** New feature       
-**Service category:** Access Reviews                            
-**Product capability:** Identity Governance                  
-
-This feature provides Machine Learning based recommendations to the reviewers of Azure AD Access Reviews to make the review experience easier and more accurate. The recommendation leverages machine learning based scoring mechanism and compares users’ relative affiliation with other users in the group, based on the organization’s reporting structure. For more information, see:  [Review recommendations for Access reviews](~/id-governance/review-recommendations-access-reviews.md) and [Introducing Machine Learning based recommendations in Azure AD Access reviews](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/introducing-machine-learning-based-recommendations-in-azure-ad/ba-p/2466923)
-
----
-
-### Public Preview - Inactive guest insights
-
-**Type:** New feature       
-**Service category:** Reporting                            
-**Product capability:** Identity Governance                  
-
-Monitor guest accounts at scale with intelligent insights into inactive guest users in your organization. Customize the inactivity threshold depending on your organization’s needs, narrow down the scope of guest users you want to monitor and identify the guest users that may be inactive. For more information, see: [Monitor and clean up stale guest accounts using access reviews](~/identity/users/clean-up-stale-guest-accounts.md).
-
----
-
-### Public Preview - Just-in-time application access with PIM for Groups
-
-**Type:** New feature       
-**Service category:** Privileged Identity Management                            
-**Product capability:** Privileged Identity Management                  
-
-You can minimize the number of persistent administrators in applications such as [AWS](~/identity/saas-apps/aws-single-sign-on-provisioning-tutorial.md#just-in-time-jit-application-access-with-pim-for-groups-preview)/[GCP](~/identity/saas-apps/g-suite-provisioning-tutorial.md#just-in-time-jit-application-access-with-pim-for-groups-preview) and get JIT access to groups in AWS and GCP. While PIM for Groups is publicly available, we’ve released a public preview that integrates PIM with provisioning and reduces the activation delay from 40+ minutes to 1 – 2 minutes.
-
----
-
-### Public Preview - Graph beta API for PIM security alerts on Azure AD roles
-
-**Type:** New feature       
-**Service category:** Privileged Identity Management                            
-**Product capability:** Privileged Identity Management                 
-
-Announcing API support (beta) for managing PIM security alerts for Azure AD roles. [Azure Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/index.yml) generates alerts when there's suspicious or unsafe activity in your organization in Azure Active Directory (Azure AD), part of Microsoft Entra. You can now manage these alerts using REST APIs. These alerts can also be [managed through the Azure portal](~/id-governance/privileged-identity-management/pim-resource-roles-configure-alerts.md). For more information, see:  [unifiedRoleManagementAlert resource type](/graph/api/resources/unifiedrolemanagementalert).
-
----
-
-### General Availability - Reset Password on Azure Mobile App
-
-**Type:** New feature       
-**Service category:** Other                            
-**Product capability:** End User Experiences                
-
-The Azure mobile app has been enhanced to empower admins with specific permissions to conveniently reset their users' passwords. Self Service Password Reset will not be supported at this time. However, users can still more efficiently control and streamline their own sign-in and auth methods. The mobile app can be downloaded for each platform here:
-
-- Android: https://aka.ms/AzureAndroidWhatsNew
-- IOS: https://aka.ms/ReferAzureIOSWhatsNew
-
----
-
-### Public Preview - API-driven inbound user provisioning 
-
-**Type:** New feature       
-**Service category:** Provisioning                              
-**Product capability:** Inbound to Azure AD                  
-
-With API-driven inbound provisioning, Microsoft Entra ID provisioning service now supports integration with any system of record. Customers and partners can use any automation tool of their choice to retrieve workforce data from any system of record for provisioning into Entra ID and connected on-premises Active Directory domains. The IT admin has full control on how the data is processed and transformed with attribute mappings. Once the workforce data is available in Entra ID, the IT admin can configure appropriate joiner-mover-leaver business processes using Entra ID Governance Lifecycle Workflows. For more information, see: [API-driven inbound provisioning concepts (Public preview)](~/identity/app-provisioning/inbound-provisioning-api-concepts.md).
-
----
-
-### Public Preview - Dynamic Groups based on EmployeeHireDate User attribute
-
-**Type:** New feature       
-**Service category:** Group Management                                
-**Product capability:** Directory                    
-
-This feature enables admins to create dynamic group rules based on the user objects' employeeHireDate attribute. For more information, see: [Properties of type string](~/identity/users/groups-dynamic-membership.md#properties-of-type-string).
-
----
-
-### General Availability - Enhanced Create User and Invite User Experiences
-
-**Type:** Changed feature       
-**Service category:** User Management                                  
-**Product capability:** User Management                      
-
-We have increased the number of properties admins are able to define when creating and inviting a user in the Entra admin portal, bringing our UX to parity with our Create User APIs. Additionally, admins can now add users to a group or administrative unit, and assign roles. For more information, see: [Add or delete users using Azure Active Directory](./add-users.md).
-
----
-
-### General Availability - All Users and User Profile
-
-**Type:** Changed feature       
-**Service category:** User Management                                  
-**Product capability:** User Management                   
-
-The All Users list now features an infinite scroll, and admins can now modify more properties in the User Profile. For more information, see: [How to create, invite, and delete users](~/fundamentals/how-to-create-delete-users.md).
-
----
-
-### Public Preview - Windows MAM
-
-**Type:** New feature       
-**Service category:** Conditional Access                                
-**Product capability:** Identity Security & Protection                    
-
-“*When will you have MAM for Windows?*” is one of our most frequently asked customer questions. We’re happy to report that the answer is: “Now!” We’re excited to offer this new and long-awaited MAM Conditional Access capability in Public Preview for Microsoft Edge for Business on Windows.
-
-Using MAM Conditional Access, Microsoft Edge for Business provides users with secure access to organizational data on personal Windows devices with a customizable user experience. We’ve combined the familiar security features of app protection policies (APP), Windows Defender client threat defense, and Conditional Access, all anchored to Azure AD identity to ensure un-managed devices are healthy and protected before granting data access. This can help businesses to improve their security posture and protect sensitive data from unauthorized access, without requiring full mobile device enrollment.
-
-The new capability extends the benefits of app layer management to the Windows platform via Microsoft Edge for Business. Admins are empowered to configure the user experience and protect organizational data within Microsoft Edge for Business on un-managed Windows devices.
-
-For more information, see: [Require an app protection policy on Windows devices (preview)](~/identity/conditional-access/how-to-app-protection-policy-windows.md).
-
----
-
-### General Availability - New Federated Apps available in Azure AD Application gallery - July 2023
-
-**Type:** New feature   
-**Service category:** Enterprise Apps                
-**Product capability:** 3rd Party Integration          
-
-In July 2023 we've added the following 10 new applications in our App gallery with Federation support:    
-
-[Gainsight SAML](~/identity/saas-apps/gainsight-tutorial.md), [Dataddo](https://www.dataddo.com/), [Puzzel](https://www.puzzel.com/), [Worthix App](~/identity/saas-apps/worthix-app-tutorial.md), [iOps360 IdConnect](https://iops360.com/iops360-id-connect-azuread-single-sign-on/), [Airbase](~/identity/saas-apps/airbase-tutorial.md), [Couchbase Capella - SSO](~/identity/saas-apps/couchbase-capella-sso-tutorial.md), [SSO for Jama Connect®](~/identity/saas-apps/sso-for-jama-connect-tutorial.md), [mediment (メディメント)](https://mediment.jp/), [Netskope Cloud Exchange Administration Console](~/identity/saas-apps/netskope-cloud-exchange-administration-console-tutorial.md), [Uber](~/identity/saas-apps/uber-tutorial.md), [Plenda](https://app.plenda.nl/), [Deem Mobile](~/identity/saas-apps/deem-mobile-tutorial.md), [40SEAS](https://www.40seas.com/), [Vivantio](https://www.vivantio.com/), [AppTweak](https://www.apptweak.com/), [Vbrick Rev Cloud](~/identity/saas-apps/vbrick-rev-cloud-tutorial.md), [OptiTurn](~/identity/saas-apps/optiturn-tutorial.md), [Application Experience with Mist](https://www.mist.com/), [クラウド勤怠管理システムKING OF TIME](~/identity/saas-apps/cloud-attendance-management-system-king-of-time-tutorial.md), [Connect1](~/identity/saas-apps/connect1-tutorial.md), [DB Education Portal for Schools](~/identity/saas-apps/db-education-portal-for-schools-tutorial.md), [SURFconext](~/identity/saas-apps/surfconext-tutorial.md), [Chengliye Smart SMS Platform](~/identity/saas-apps/chengliye-smart-sms-platform-tutorial.md), [CivicEye SSO](~/identity/saas-apps/civic-eye-sso-tutorial.md), [Colloquial](~/identity/saas-apps/colloquial-tutorial.md), [BigPanda](~/identity/saas-apps/bigpanda-tutorial.md), [Foreman](https://foreman.mn/)
-
-You can also find the documentation of all the applications from here https://aka.ms/AppsTutorial.
-
-For listing your application in the Azure AD app gallery, read the details here https://aka.ms/AzureADAppRequest
-
----
-
-### Public Preview - New provisioning connectors in the Azure AD Application Gallery - July 2023
-
-**Type:** New feature   
-**Service category:** App Provisioning               
-**Product capability:** 3rd Party Integration    
-      
-
-We've added the following new applications in our App gallery with Provisioning support. You can now automate creating, updating, and deleting of user accounts for these newly integrated apps:
-
-- [Albert](~/identity/saas-apps/albert-provisioning-tutorial.md)
-- [Rhombus Systems](~/identity/saas-apps/rhombus-systems-provisioning-tutorial.md)
-- [Axiad Cloud](~/identity/saas-apps/axiad-cloud-provisioning-tutorial.md)
-- [Dagster Cloud](~/identity/saas-apps/dagster-cloud-provisioning-tutorial.md)
-- [WATS](~/identity/saas-apps/wats-provisioning-tutorial.md)
-- [Funnel Leasing](~/identity/saas-apps/funnel-leasing-provisioning-tutorial.md)
-
-
-For more information about how to better secure your organization by using automated user account provisioning, see: [Automate user provisioning to SaaS applications with Azure AD](~/identity/app-provisioning/user-provisioning.md).
-
-
----
-
-### General Availability - Microsoft Authentication Library for .NET 4.55.0
-
-**Type:** New feature       
-**Service category:** Other                                    
-**Product capability:** User Authentication                     
-
-Earlier this month we announced the release of [MSAL.NET 4.55.0](https://www.nuget.org/packages/Microsoft.Identity.Client/4.55.0), the latest version of the [Microsoft Authentication Library for the .NET platform](/entra/msal/dotnet/). The new version introduces support for user-assigned [managed identity](/entra/msal/dotnet/advanced/managed-identity) being specified through object IDs, CIAM authorities in the `WithTenantId` API, better error messages when dealing with cache serialization, and improved logging when using the [Windows authentication broker](/entra/msal/dotnet/acquiring-tokens/desktop-mobile/wam).
-
----
-
-### General Availability - Microsoft Authentication Library for Python 1.23.0
-
-**Type:** New feature       
-**Service category:** Other                                    
-**Product capability:** User Authentication                  
-
-Earlier this month, the Microsoft Authentication Library team announced the release of [MSAL for Python version 1.23.0](https://pypi.org/project/msal/1.23.0/). The new version of the library adds support for better caching when using client credentials, eliminating the need to request new tokens repeatedly when cached tokens exist.
-
-To learn more about MSAL for Python, see: [Microsoft Authentication Library (MSAL) for Python](/entra/msal/python/).
 
 ---
