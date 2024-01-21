@@ -22,7 +22,7 @@ This PowerShell script example moves all Microsoft Entra application proxy appli
 
 [!INCLUDE [updated-for-az](~/../azure-docs-pr/includes/updated-for-az.md)]
 
-[!INCLUDE [cloud-shell-try-it.md](~/../azure-docs-pr/includes/cloud-shell-try-it.md)]
+[!INCLUDE [cloud-shell-try-it.md](~/../docs/reusable-content/cloud-shell/cloud-shell-try-it.md)]
 
 This sample requires the [Microsoft Graph Beta PowerShell module](/powershell/microsoftgraph/installation) 2.10 or newer.
 
