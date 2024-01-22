@@ -284,7 +284,7 @@ This procedure shows how to add a single user to Microsoft Entra ID.
 1. Create a new user principal:
 
    ```powershell
-   $PasswordProfile = @{ Password = 'xWwvJ]6NMw+bWH-d' }
+   $PasswordProfile = @{ Password = '<password>' }
 
    New-MgUser `
      -UserPrincipalName "elwoodf1@contoso.com" `
