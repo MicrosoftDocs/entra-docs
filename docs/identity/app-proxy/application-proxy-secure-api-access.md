@@ -142,8 +142,6 @@ The last step is to configure the native app. The code must be added to the *For
 
 1. Edit the native application code in the authentication context of the Microsoft Authentication Library (MSAL) to include this [customized code sample](application-proxy-configure-native-client-application.md#step-4-add-the-microsoft-authentication-library-to-your-code-net-c-sample). 
 
-After you edit the MSAL code sample by updating the indicated parameters, your users can authenticate to native client applications even when they are outside of the corporate network.
-
 Next, configure the native app to connect to Microsoft Entra ID and call the API App Proxy, then update the placeholder values in the *App.config* file of the NativeClient sample app with values from Microsoft Entra ID.
 
 1. Paste the **Directory (tenant) ID** in the `<add key="ida:Tenant" value="" />` field. You can find and copy this value (a GUID) from the **Overview** page of either of your apps.
