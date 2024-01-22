@@ -9,7 +9,7 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 
 ms.topic: tutorial
-ms.date: 22/01/2024
+ms.date: 01/22/2024
 ms.author: jeedes
 
 ---
