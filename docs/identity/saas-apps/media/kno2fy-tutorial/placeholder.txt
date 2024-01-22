@@ -1,0 +1,2 @@
+This file is a placeholder to allow the creation of the kno2fy-tutorial directory under media to allow inclusion of additional images to our tutorial. 
+This will be removed before the final commit. 
