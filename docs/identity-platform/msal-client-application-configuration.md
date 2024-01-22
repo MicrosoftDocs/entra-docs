@@ -111,7 +111,7 @@ If you're a public client app developer who's using MSAL:
 
   | Platform              | Redirect URI                                                                                                                                                                                                                                           |
   | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-  | Desktop app (.NET FW) | `https://login.microsoftonline.com/common/oauth2/nativeclient`                                                                                                                                                                                         |
+  | Desktop app (.NET Framework) | `https://login.microsoftonline.com/common/oauth2/nativeclient`                                                                                                                                                                                         |
   | UWP                   | value of `WebAuthenticationBroker.GetCurrentApplicationCallbackUri()`. This enables single sign-on (SSO) with the browser by setting the value to the result of WebAuthenticationBroker.GetCurrentApplicationCallbackUri(), which you need to register |
   | .NET             | `https://localhost` enables the user to use the system browser for interactive authentication since .NET doesn't have a UI for the embedded web view at the moment.                                                                               |
 

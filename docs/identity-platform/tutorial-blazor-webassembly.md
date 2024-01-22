@@ -14,7 +14,7 @@ ms.topic: tutorial
 
 # Tutorial: Sign in users and call a protected API from a Blazor WebAssembly app
 
-In this tutorial, you build a Blazor WebAssembly app that signs in users and gets data from Microsoft Graph by using the Microsoft identity platform and registering your app in Microsoft Entra ID.
+In this tutorial, you build a Blazor WebAssembly app using .NET 7 that signs in users and gets data from Microsoft Graph by using the Microsoft identity platform and registering your app in Microsoft Entra ID.
 
 In this tutorial:
 
@@ -23,13 +23,11 @@ In this tutorial:
 > - Create a new Blazor WebAssembly app configured to use Microsoft Entra ID for [authentication and authorization](authentication-vs-authorization.md)
 > - Retrieve data from a protected web API, in this case [Microsoft Graph](/graph/overview)
 
-This tutorial uses .NET 7.0.
-
 We also have a [tutorial for Blazor Server](tutorial-blazor-server.md).
 
 ## Prerequisites
 
-- [.NET SDK](https://dotnet.microsoft.com/download/dotnet-core/7.0)
+- [.NET 7](https://dotnet.microsoft.com/download/dotnet-core/7.0)
 - A Microsoft Entra tenant where you can register an app. If you don't have access to a Microsoft Entra tenant, you can get one by registering with the [Microsoft 365 Developer Program](https://developer.microsoft.com/microsoft-365/dev-program) or by creating an [Azure free account](https://azure.microsoft.com/free).
 
 ## Register the app

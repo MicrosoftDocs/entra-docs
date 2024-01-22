@@ -56,7 +56,7 @@ cd PipelinesTest
 
 ### Create an ASP.NET Core web app
 
-1. Open a terminal window on your machine to a working directory. Create a new .NET web app using the [dotnet new webapp](/dotnet/core/tools/dotnet-new#web-options) command, and then change directories into the newly created app.
+1. Open a terminal window on your machine to a working directory. Create a new ASP.NET Core web app using the [dotnet new webapp](/dotnet/core/tools/dotnet-new#web-options) command, and then change directories into the newly created app.
 
     ```dotnetcli
     dotnet new webapp -n PipelinesTest --framework net7.0
@@ -73,7 +73,7 @@ cd PipelinesTest
 
 1. To verify the web app is running, open a web browser and navigate to the app at `https://localhost:5001`.
 
-You see the template ASP.NET Core 7.0 web app displayed in the page. 
+You see the template ASP.NET Core web app displayed in the page. 
 
 :::image type="content" alt-text="Screen shot that shows web app running locally." source="./media/deploy-web-app-authentication-pipeline/web-app-local.png" border="true":::
 
