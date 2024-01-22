@@ -134,6 +134,13 @@ sections:
           There's no quota in Domain Services for domain-joined machines.
 
       - question: |
+          How is time synchronized for virtual machines (VMs) that are joined to a managed domain?
+        answer: |
+          VMs that run on Azure are synchronized with Azure hosts for highly accurate time. 
+          Non-Azure VMs that run on premises need to have Windows Time Services configured for synchronization with an external NTP time source, similarly to domain-joined VMs.
+          For more information, see [Configure the time mechanism for Active Directory Windows Virtual Machines in Azure](/azure/virtual-machines/windows/external-ntpsource-configuration).
+
+      - question: |
           Do I have domain administrator privileges for the managed domain provided by Microsoft Entra Domain Services?
         answer: |
           No. You aren't granted administrative privileges on the managed domain. *Domain Administrator* and *Enterprise Administrator* privileges aren't available for you to use within the domain. Members of the domain administrator or enterprise administrator groups in your on-premises Active Directory are also not granted domain / enterprise administrator privileges on the managed domain.
