@@ -1613,6 +1613,8 @@
         href: lessonly-tutorial.md
       - name: Lexonis TalentScape
         href: lexonis-talentscape-tutorial.md
+      - name: LifeSight
+        href: lifesight-tutorial.md
       - name: Lifesize Cloud
         href: lifesize-cloud-tutorial.md
       - name: LIFT
@@ -2777,8 +2779,8 @@
         href: tracker-software-technologies-tutorial.md  
       - name: TrackVia
         href: trackvia-tutorial.md
-      - name: Traction Guest
-        href: traction-guest-tutorial.md
+      - name: SIS Enterprise
+        href: sis-enterprise-tutorial.md
       - name: Tradeshift
         href: tradeshift-tutorial.md
       - name: Training Platform
