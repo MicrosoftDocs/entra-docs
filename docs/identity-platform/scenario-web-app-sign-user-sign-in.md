@@ -125,7 +125,7 @@ This controller also handles the Azure AD B2C applications.
 
 # [ASP.NET](#tab/aspnet)
 
-In ASP.NET, sign in is triggered from the `SignIn()` method on a controller (for instance, [AccountController.cs#L16-L23](https://github.com/Azure-Samples/ms-identity-aspnet-webapp-openidconnect/blob/a2da310539aa613b77da1f9e1c17585311ab22b7/WebApp/Controllers/AccountController.cs#L16-L23)). This method isn't part of the ASP.NET framework (contrary to what happens in ASP.NET Core). It sends an OpenID sign-in challenge after proposing a redirect URI.
+In ASP.NET, sign in is triggered from the `SignIn()` method on a controller (for instance, [AccountController.cs#L16-L23](https://github.com/Azure-Samples/ms-identity-aspnet-webapp-openidconnect/blob/a2da310539aa613b77da1f9e1c17585311ab22b7/WebApp/Controllers/AccountController.cs#L16-L23)). This method isn't part of the .NET Framework (contrary to what happens in ASP.NET Core). It sends an OpenID sign-in challenge after proposing a redirect URI.
 
 ```csharp
 public void SignIn()
@@ -311,7 +311,7 @@ In previous versions of the ASP.NET Core templates, the `Account` controller was
 
 # [ASP.NET](#tab/aspnet)
 
-In ASP.NET, signing out is triggered from the `SignOut()` method on a controller (for instance, [AccountController.cs#L25-L31](https://github.com/Azure-Samples/ms-identity-aspnet-webapp-openidconnect/blob/a2da310539aa613b77da1f9e1c17585311ab22b7/WebApp/Controllers/AccountController.cs#L25-L31)). This method isn't part of the ASP.NET framework, contrary to what happens in ASP.NET Core. It:
+In ASP.NET, signing out is triggered from the `SignOut()` method on a controller (for instance, [AccountController.cs#L25-L31](https://github.com/Azure-Samples/ms-identity-aspnet-webapp-openidconnect/blob/a2da310539aa613b77da1f9e1c17585311ab22b7/WebApp/Controllers/AccountController.cs#L25-L31)). This method isn't part of the .NET framework, contrary to what happens in ASP.NET Core. It:
 
 - Sends an OpenID sign-out challenge.
 - Clears the cache.
