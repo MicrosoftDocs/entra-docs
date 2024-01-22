@@ -11,7 +11,7 @@ ms.date: 01/22/2024
 ms.author: justinha
 author: justinha
 manager: amycolannino
-ms.reviewer: librown
+ms.reviewer: calui
 
 ms.collection: M365-identity-device-management
 ---
