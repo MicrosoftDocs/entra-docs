@@ -174,15 +174,8 @@ For listing your application in the Microsoft Entra ID app gallery, read the det
 
 ---
 
-### General Availability - Microsoft Authenticator on Android is FIPS 140-3 compliant
-
-**Type:** New feature   
-**Service category:** Microsoft Authenticator App                     
-**Product capability:**  User Authentication             
-
-Beginning with version 6.2310.7174, Microsoft Authenticator for Android is compliant with Federal Information Processing Standard (FIPS 140-3) for all Microsoft Entra authentications, including phishing-resistant device-bound passkeys, push multifactor authentication (MFA), passwordless phone sign-in (PSI) and time-based one-time passcodes (TOTP). For organizations using Intune Company Portal, it's required to have minimum CP version 5.0.6043.0 in addition to Microsoft Authenticator version 6.2310.7174. Microsoft Authenticator on iOS is already FIPS 140 compliant, as announced last year. For more information, see: [Authentication methods in Microsoft Entra ID - Microsoft Authenticator app](../identity/authentication/concept-authentication-authenticator-app.md).
-
----
+> [!NOTE]
+> In new updates from the previous version of the release notes: Microsoft Authenticator is not yet FIPS 140 compliant on Android. Microsoft Authenticator on Android is currently pending FIPS compliance certification to support our customers that may require FIPS validated cryptography.
 
 
 ## October 2023
