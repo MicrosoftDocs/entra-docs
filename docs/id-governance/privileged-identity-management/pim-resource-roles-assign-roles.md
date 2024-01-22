@@ -10,7 +10,7 @@ ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: pim
-ms.date: 09/13/2023
+ms.date: 01/22/2024
 ms.author: barclayn
 ms.custom: pim
 ms.collection: M365-identity-device-management
@@ -56,7 +56,7 @@ Follow these steps to make a user eligible for an Azure resource role.
 
 1. Browse to **Identity governance** > **Privileged Identity Management** > **Azure resources**.
 
-1. Select the **Resource type** you want to manage. For example, such as **Resource**, or **Resource group**.  Then select the resource you want to manage to open its overview page.
+1. Select the **resource type** you want to manage. Start at either the **Management group** dropdown or the **Subscriptions** dropdown, and then further select **Resource groups** or **Resources** as needed. Click the Select button for the resource you want to manage to open its overview page.
 
     ![Screenshot that shows how to select Azure resources.](./media/pim-resource-roles-assign-roles/resources-list.png)
 
@@ -201,7 +201,7 @@ Follow these steps to update or remove an existing role assignment.
 
 1. Select **Azure resources**.
 
-1. Select the **Resource type** you want to manage. For example, such as **Resource**, or **Resource group**.  Then select the resource you want to manage to open its overview page.
+1. Select the **resource type** you want to manage. Start at either the **Management group** dropdown or the **Subscriptions** dropdown, and then further select **Resource groups** or **Resources** as needed. Click the Select button for the resource you want to manage to open its overview page.
 
     ![Screenshot that shows how to select Azure resources to update.](./media/pim-resource-roles-assign-roles/resources-list.png)
 
