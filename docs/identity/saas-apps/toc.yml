@@ -1613,6 +1613,8 @@
         href: lessonly-tutorial.md
       - name: Lexonis TalentScape
         href: lexonis-talentscape-tutorial.md
+      - name: LifeSight
+        href: lifesight-tutorial.md
       - name: Lifesize Cloud
         href: lifesize-cloud-tutorial.md
       - name: LIFT
@@ -2429,6 +2431,8 @@
         href: settlingmusic-tutorial.md
       - name: SevOne Network Monitoring System (NMS)
         href: sevone-network-monitoring-system-tutorial.md
+      - name: ShareCal
+        href: sharecal-tutorial.md
       - name: SharePoint on-premises
         href: sharepoint-on-premises-tutorial.md
       - name: ShareVault
@@ -2765,6 +2769,8 @@
         href: tivitz-tutorial.md
       - name: TonicDM
         href: tonicdm-tutorial.md
+      - name: Tonichi Nexta Meishi
+        href: tonichi-nexta-meishi-tutorial.md
       - name: TOPdesk - Public
         href: topdesk-public-tutorial.md
       - name: TOPdesk - Secure
@@ -2773,8 +2779,8 @@
         href: tracker-software-technologies-tutorial.md  
       - name: TrackVia
         href: trackvia-tutorial.md
-      - name: Traction Guest
-        href: traction-guest-tutorial.md
+      - name: SIS Enterprise
+        href: sis-enterprise-tutorial.md
       - name: Tradeshift
         href: tradeshift-tutorial.md
       - name: Training Platform
