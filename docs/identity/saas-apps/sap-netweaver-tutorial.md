@@ -159,13 +159,18 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<your company instance of SAP NetWeaver>`
 
    > [!NOTE]
-   > Some customers have encountered an error of an incorrect Reply URL configured for their instance. If you receive any such error, first update the ReplyURLs in the application object, as described. Then update the service principal with the ReplyURL by using this PowerShell command:
+   > Some customers have encountered an error of an incorrect Reply URL configured for their instance. If you receive any such error, use these PowerShell commands. First update the Reply URLs in the application object with the Reply URL, then update the service principal. Use the [Get-MgServicePrincipal](/powershell/module/microsoft.graph.applications/get-mgserviceprincipal) to get the Service Principal ID value.
    >
    > ```powershell
-   > Update-MgServicePrincipal -ServicePrincipalId $ServicePrincipalObjectId -ReplyUrls "<Your Correct Reply URL(s)>"
+   > $params = @{
+   >    web = @{
+   >       redirectUris = "<Your Correct Reply URL>"
+   >    }
+   > }
+   > Update-MgApplication -ApplicationId "<Application ID>" -BodyParameter $params
+   > Update-MgServicePrincipal -ServicePrincipalId "<Service Principal ID>" -ReplyUrls "<Your Correct Reply URL>"
    > ```
    >
-   > Use the [Get-MgServicePrincipal](/powershell/module/microsoft.graph.applications/get-mgserviceprincipal) to get the `$ServicePrincipalObjectId` value.
 
 1. SAP NetWeaver application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes. Click **Edit** icon to open User Attributes dialog.
 
