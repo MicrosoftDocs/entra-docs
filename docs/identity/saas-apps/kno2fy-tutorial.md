@@ -67,6 +67,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 
    ![Screenshot shows how to edit Basic SAML Configuration.](common/edit-urls.png "Basic Configuration")
 
+1. Login to https://kno2fy.com as a Network Administrator.
 1. On the **Basic SAML Configuration** section, perform the following steps:
 
     a. In the **Identifier** textbox, type the value:
