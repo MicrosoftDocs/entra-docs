@@ -6,7 +6,7 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 10/31/2023
+ms.date: 01/22/2024
 
 ms.author: justinha
 author: justinha
@@ -144,7 +144,7 @@ The following providers offer FIDO2 security keys of different form factors that
 | [Sentry](https://sentryenterprises.com/) | ![n] | ![n]| ![y]| ![n]|
 | [SmartDisplayer](https://www.smartdisplayer.com/fido) | ![y] | ![y]| ![y]| ![y]|
 | [Swissbit](https://www.swissbit.com/en/products/ishield-key/) | ![n] | ![y]| ![y]| ![n]|
-| [Thales Group](https://cpl.thalesgroup.com/access-management/authenticators/fido-devices) | ![n] | ![y]| ![y]| ![n]|
+| [Thales Group](https://cpl.thalesgroup.com/access-management/authenticators/fido-devices) | ![y] | ![y]| ![y]| ![n]|
 | [Thetis](https://thetis.io/collections/fido2) | ![y] | ![y]| ![y]| ![y]|
 | [Token2 Switzerland](https://www.token2.swiss/shop/product/token2-t2f2-alu-fido2-u2f-and-totp-security-key) | ![y] | ![y]| ![y]| ![n]|
 | [Token Ring](https://www.tokenring.com/) | ![y] | ![n]| ![y]| ![n]|
