@@ -67,7 +67,7 @@ To design your schema, follow these steps:
 
 The following table lists an example of required attributes:
 
-|Required app attribute|Mapped SCIM attribute|Mapped Microsoft Entra attribute|
+|Required app attribute/example|Mapped SCIM attribute|Mapped Microsoft Entra attribute|
 |--|--|--|
 |loginName|userName|userPrincipalName|
 |firstName|name.givenName|givenName|
@@ -92,7 +92,7 @@ The following JSON payload shows an example SCIM schema:
        "givenName":"Barbara"
      },
      "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User": {
-     "Manager": "123456"
+     "manager": "123456"
    },
      "urn:ietf:params:scim:schemas:extension:CustomExtensionName:2.0:User": {
      "tag": "701984",
