@@ -28,7 +28,7 @@ In this tutorial:
 
 ## Prerequisites
 
-- [.NET 7](https://dotnet.microsoft.com/download/dotnet-core/7.0)
+- [.NET 7](https://dotnet.microsoft.com/download/dotnet/7.0)
 - An Azure account that has an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 - The Azure account must have permission to manage applications in Microsoft Entra ID. Any of the following Microsoft Entra roles include the required permissions:
   - [Application administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator)
@@ -59,7 +59,7 @@ This tool will automate the following tasks for you:
 - Store your application secret in user secrets storage
 - Update your appsettings.json with the client-id, tenant-id, and others.
 
-.NET Tools extend the capabilities of the dotnet CLI command. To learn more about .NET Tools, see [.NET Tools](/dotnet/core/tools/global-tools).
+.NET Tools extend the capabilities of the dotnet CLI command. To learn more, see [.NET Tools](/dotnet/core/tools/global-tools).
 
 For more information on user secrets storage, see [safe storage of app secrets during development](/aspnet/core/security/app-secrets).
 
