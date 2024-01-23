@@ -6,13 +6,14 @@ description: Directly federate with a SAML or WS-Fed identity provider so guests
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: how-to
-ms.date: 11/07/2023
+ms.date: 01/23/2024
 
 ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.collection: M365-identity-device-management
+#  Customer intent: As an IT admin setting up federation with SAML/WS-Fed identity providers, I want to configure the required attributes and claims for the SAML 2.0 or WS-Fed protocol, so that guest users can sign in to my Microsoft Entra tenant using their own organizational account.
 ---
 
 # Federation with SAML/WS-Fed identity providers for guest users
@@ -54,7 +55,7 @@ With SAML/WS-Fed IdP federation, guest users sign into your Microsoft Entra tena
 
 ## Sign-in endpoints
 
-SAML/WS-Fed IdP federation guest users can now sign in to your multi-tenant or Microsoft first-party apps by using a [common endpoint](redemption-experience.md#redemption-process-and-sign-in-through-a-common-endpoint) (in other words, a general app URL that doesn't include your tenant context). During the sign-in process, the guest user chooses **Sign-in options**, and then selects **Sign in to an organization**. The user then types the name of your organization and continues signing in using their own credentials.
+SAML/WS-Fed IdP federation guest users can now sign in to your multitenant or Microsoft first-party apps by using a [common endpoint](redemption-experience.md#redemption-process-and-sign-in-through-a-common-endpoint) (in other words, a general app URL that doesn't include your tenant context). During the sign-in process, the guest user chooses **Sign-in options**, and then selects **Sign in to an organization**. The user then types the name of your organization and continues signing in using their own credentials.
 
 SAML/WS-Fed IdP federation guest users can also use application endpoints that include your tenant information, for example:
 
@@ -70,7 +71,7 @@ You can also give guest users a direct link to an application or resource by inc
 
 Yes, you can now set up SAML/WS-Fed IdP federation with other Microsoft Entra ID verified domains. This includes verified domains where the tenant has undergone an [admin takeover](~/identity/users/domains-admin-takeover.md). If the domain you're federating with is Microsoft Entra ID verified, you also need to [configure the **Redemption order** settings (preview)](cross-tenant-access-settings-b2b-collaboration.md) in your cross-tenant access settings for inbound B2B collaboration to make sure that when invited users sign in, they redeem their invitations using the federated IdP instead of Microsoft Entra ID.
 
-Currently, redemption order settings aren't supported across clouds. If the domain you're federating with is Microsoft Entra ID verified in a different Microsoft cloud, Microsoft Entra ID redemption always take precedence.
+Currently, redemption order settings aren't supported across clouds. If the domain you're federating with is Microsoft Entra ID verified in a different Microsoft cloud, Microsoft Entra ID redemption always takes precedence.
 
 **Can I set up SAML/WS-Fed IdP federation with a domain for which an unmanaged (email-verified) tenant exists?**
  
