@@ -152,7 +152,7 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
 
     1. In the **Email** textbox, enter a valid emailaddress of the user.
 
-    1. Invite as **Member** or **Administrator** from the drop down according to your organization requirement.
+    1. Invite as **Member** or **Administrator** from the drop-down according to your organization requirement.
 
 ## Test SSO 
 
