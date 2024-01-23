@@ -72,7 +72,7 @@ You can register a Mac device with the macOS Platform Single Sign-On (PSSO) usin
 
 1. When prompted to **Choose a way to sign in**, select **Use a certificate or smart card**. Select the certificate to use and select **Choose**.
 
-    :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/pssoe-certificate-selection.png" alt-text="Screenshot of the window showing the prompt to choose a certificate.":::
+    :::image type="content" source="media/device-registration-macos-platform-single-sign-on/pssoe-certificate-selection.png" alt-text="Screenshot of the window showing the prompt to choose a certificate.":::
 
 1. Enter the smart card pin in the **Company Portal** window and select **OK**. 
 1. You're prompted to **Set up {Company} access**. The placeholder "Company" is different depending on your setup. Select **Begin**, then on the next screen, select **Continue**.
