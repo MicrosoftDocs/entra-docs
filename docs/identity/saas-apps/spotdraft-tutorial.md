@@ -86,7 +86,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 1. Perform the following step, if you wish to configure the application in **SP** initiated mode:
 
-    In the **Sign-on URL** text box, type a URL using the following pattern:
+    In the **Sign-on URL** text box, type the URL:
     `https://app.spotdraft.com/auth/login-sso`
 
 	> [!NOTE]
