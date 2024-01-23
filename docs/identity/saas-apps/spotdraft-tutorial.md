@@ -78,13 +78,19 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     b. In the **Reply URL** text box, type a URL using the following pattern:
     `https://api.<ClusterID>.spotdraft.com/auth/sso/<WorkspaceID>/callback/`
 
+    c. In the **Relay State** text box, type a URL using the following pattern:
+    `https://api.<Cluster_ID>.spotdraft.com/auth/sso/<Workspace_ID>/callback/`
+
+    d. In the **Logout URL** text box, type a URL using the following pattern:
+    `https://api.<Cluster_ID>.spotdraft.com/auth/sso/<Workspace_ID>/callback/`
+
 1. Perform the following step, if you wish to configure the application in **SP** initiated mode:
 
     In the **Sign-on URL** text box, type a URL using the following pattern:
-    `https://api.<ClusterID>.spotdraft.com/auth/sso/<WorkspaceID>/callback/`
+    `https://app.spotdraft.com/auth/login-sso`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [SpotDraft support team](mailto:support@spotdraft.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
+	> These values are not real. Update these values with the actual Identifier, Reply URL, Relay State and Logout URL. Contact [SpotDraft support team](mailto:support@spotdraft.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Certificate (Raw)** and select **Download** to download the certificate and save it on your computer.
 
