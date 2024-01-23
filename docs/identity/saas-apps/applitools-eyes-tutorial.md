@@ -36,6 +36,9 @@ In this tutorial, you configure and test Microsoft Entra SSO in a test environme
 * Applitools Eyes supports only **SP** initiated SSO.
 * Applitools Eyes supports **Just In Time** user provisioning.
 
+> [!NOTE]
+> Identifier of this application is a fixed string value so only one instance can be configured in one tenant.
+
 ## Add Applitools Eyes from the gallery
 
 To configure the integration of Applitools Eyes into Microsoft Entra ID, you need to add Applitools Eyes from the gallery to your list of managed SaaS apps.
@@ -82,8 +85,11 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     c. In the **Sign on URL** text box, type a URL using the following pattern:
     `https://<SUBDOMAIN>.applitools.com`
 
+    d. In the **Logout URL** text box,
+    `https://<SUBDOMAIN>.applitools.com`
+
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Reply URL and Sign on URL. Contact [Applitools Eyes support team](mailto:support@applitools.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
+	> These values are not real. Update these values with the actual Reply URL, Sign on URL and Logout URL. Contact [Applitools Eyes support team](mailto:support@applitools.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 
