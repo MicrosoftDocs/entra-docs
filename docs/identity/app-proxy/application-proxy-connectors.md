@@ -69,7 +69,9 @@ The connectors are stateless and have no configuration data on the machine. The 
 
 Connectors also poll the server to find out whether there is a newer version of the connector. If one is found, the connectors update themselves.
 
-You can monitor your connectors from the machine they are running on, using either the event log and performance counters. Or you can view their status from the Application Proxy page of the Microsoft Entra admin center:
+You can monitor your connectors from the machine they are running on, using either the event log and performance counters. For more information, see [Monitor and review logs for on-premises Microsoft Entra](~/identity/authentication/howto-password-ban-bad-on-premises-monitor.md)
+
+You can also view their status from the Application Proxy page of the Microsoft Entra admin center:
 
 ![Example: Microsoft Entra application proxy connectors](./media/application-proxy-connectors/app-proxy-connectors.png)
 

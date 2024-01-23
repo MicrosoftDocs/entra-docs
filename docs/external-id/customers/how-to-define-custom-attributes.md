@@ -8,7 +8,7 @@ ms.service: active-directory
  
 ms.subservice: ciam
 ms.topic: how-to
-ms.date: 01/07/2024
+ms.date: 01/23/2024
 ms.author: mimart
 ms.custom: it-pro
 
@@ -164,6 +164,13 @@ On the **Page layout** page, you can indicate which attributes are required and 
 ### To configure a single-select checkbox (CheckboxSingleSelect)
 
 An attribute with a Boolean data type has a user input type of CheckboxSingleSelect. You can modify the text that displays next to the checkbox and include hyperlinks.
+
+> [!TIP]
+> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=PolicyAgreement)
+> 
+> To try out this feature, go to the Woodgrove Groceries demo and start the “Add links to terms of use and privacy policies” use case.
+
+To configure a single-select checkbox, follow these steps:
 
 1. On the **Page layouts** page, find the attribute with data type of **Boolean** that you want to configure.
 
