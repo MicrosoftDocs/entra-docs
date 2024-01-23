@@ -13,7 +13,7 @@ author: msmimart
 manager: celestedg
 ms.custom: it-pro, seo-update-azuread-jan, has-adal-ref, devx-track-linux, has-azure-ad-ps-ref
 ms.collection: M365-identity-device-management
-#  Customer intent: As an IT admin managing B2B collaboration, I want to bulk-invite external users to my organization by using PowerShell or by uploading a .csv file to the admin center or portal, so that I can streamline the onboarding process and save time.
+#customer intent: As an IT admin managing B2B collaboration, I want to bulk-invite external users to my organization by using PowerShell or by uploading a .csv file to the admin center or portal, so that I can streamline the onboarding process and save time.
 ---
 
 # Microsoft Entra B2B collaboration code and PowerShell samples

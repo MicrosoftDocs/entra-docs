@@ -13,7 +13,7 @@ author: msmimart
 manager: celestedg
 ms.custom: "it-pro, seo-update-azuread-jan"
 ms.collection: M365-identity-device-management
-# Customer intent: As an IT admin managing B2B collaboration, I want to configure an allowlist or blocklist for specific organizations, so that I can control  where B2B invitations can be sent by users in my organization.
+#customer intent: As an IT admin managing B2B collaboration, I want to configure an allowlist or blocklist for specific organizations, so that I can control  where B2B invitations can be sent by users in my organization.
 ---
 
 # Allow or block invitations to B2B users from specific organizations

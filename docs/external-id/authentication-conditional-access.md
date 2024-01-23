@@ -14,7 +14,7 @@ author: msmimart
 manager: celestedg
 
 ms.collection: M365-identity-device-management
-#  Customer intent: As an IT admin managing external user access to resources in my organization, I want to understand the authentication flow and Conditional Access policies for external users, so that I can ensure secure access and compliance with our organization's policies.
+#customer intent: As an IT admin managing external user access to resources in my organization, I want to understand the authentication flow and Conditional Access policies for external users, so that I can ensure secure access and compliance with our organization's policies.
 ---
 
 # Authentication and Conditional Access for External ID

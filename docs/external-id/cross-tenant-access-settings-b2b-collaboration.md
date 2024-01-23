@@ -12,7 +12,7 @@ author: msmimart
 manager: celestedg
 ms.custom: "it-pro"
 ms.collection: M365-identity-device-management
-#  Customer intent: As an IT admin managing cross-tenant access settings for B2B collaboration, I want to configure default settings and customize settings for specific organizations, so that I can control the level of access that guests in external organizations have to our resources and ensure business-critical access is not blocked.
+#customer intent: As an IT admin managing cross-tenant access settings for B2B collaboration, I want to configure default settings and customize settings for specific organizations, so that I can control the level of access that guests in external organizations have to our resources and ensure business-critical access is not blocked.
 ---
 
 # Configure cross-tenant access settings for B2B collaboration
