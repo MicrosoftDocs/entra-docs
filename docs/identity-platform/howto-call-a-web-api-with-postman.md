@@ -1,6 +1,6 @@
 ---
 title: Call an ASP.NET Core web API with Postman
-description: Learn how to call a protected ASP.NET Core Web API using the Microsoft identity platform and Postman
+description: Learn how to call a protected ASP.NET Core web API using the Microsoft identity platform and Postman
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
@@ -9,7 +9,7 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: how-to
 zone_pivot_groups: web-api-howto-prereq
-#Customer intent: As a software developer, I want to call a protected ASP.NET Core Web API using the Microsoft identity platform with Postman
+#Customer intent: As a software developer, I want to call a protected ASP.NET Core web API using the Microsoft identity platform with Postman
 ---
 
 # Call an ASP.NET Core web API with Postman

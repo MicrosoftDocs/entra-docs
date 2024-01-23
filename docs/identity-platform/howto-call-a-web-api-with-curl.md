@@ -9,7 +9,7 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: how-to
 zone_pivot_groups: web-api-howto-prereq
-#Customer intent: As a software developer, I want to call a protected ASP.NET Core Web API using the Microsoft identity platform with cURL
+#Customer intent: As a software developer, I want to call a protected ASP.NET Core web API using the Microsoft identity platform with cURL
 ---
 
 # Call an ASP.NET Core web API with cURL 
