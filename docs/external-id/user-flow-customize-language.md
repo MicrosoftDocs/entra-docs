@@ -8,12 +8,12 @@ manager: celestedg
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: how-to
-ms.date: 11/02/2022
+ms.date: 01/23/2024
 ms.author: mimart
 
 ms.collection: M365-identity-device-management
 ms.custom:  
-# Customer intent: As a tenant administrator, I want to modify the user flow language, when the users are signing up via the self-service sign-up user flow.
+#  Customer intent: As a B2B collaboration user, I want to customize the language of the authentication experience in Microsoft Entra External ID, so that I can accommodate different languages for my users and provide a personalized user flow.
 ---
 
 # Language customization in Microsoft Entra External ID
@@ -21,7 +21,7 @@ ms.custom:
 > [!TIP]
 > This article applies to B2B collaboration user flows. If your tenant is configured for customer identity and access management, see [Customize the language of the authentication experience](customers/how-to-customize-languages-customers.md) for customers.
 
-Language customization in Microsoft Entra External ID allows your user flow to accommodate different languages to suit your user's needs. Microsoft provides the translations for [36 languages](#supported-languages). In this article, you'll learn how to customize the attribute names on the [attribute collection page](self-service-sign-up-user-flow.md#select-the-layout-of-the-attribute-collection-form), even if your experience is provided for only a single language.
+Language customization in Microsoft Entra External ID allows your user flow to accommodate different languages to suit your user's needs. Microsoft provides the translations for [36 languages](#supported-languages). In this article, you learn how to customize the attribute names on the [attribute collection page](self-service-sign-up-user-flow.md#select-the-layout-of-the-attribute-collection-form), even if your experience is provided for only a single language.
 
 ## How language customization works
 
@@ -39,7 +39,7 @@ Language customization enables you to customize any string in your user flow.
 1. Select **Languages**.
 1. On the **Languages** page for the user flow, select the language that you want to customize.
 1. Expand the **Attribute collection page**.
-1. Select **Download defaults** (or **Download overrides** if you've previously edited this language).
+1. Select **Download defaults** (or **Download overrides** if you previously edited this language).
 
 These steps give you a JSON file that you can use to start editing your strings.
 
@@ -79,7 +79,7 @@ Replace `<ExtensionAttributeValue>` with the new string to be displayed.
 
 ### Provide a list of values by using LocalizedCollections
 
-If you want to provide a set list of values for responses, you need to create a `LocalizedCollections` attribute. `LocalizedCollections` is an array of `Name` and `Value` pairs. The order for the items will be the order they're displayed. To add `LocalizedCollections`, use the following format:
+If you want to provide a set list of values for responses, you need to create a `LocalizedCollections` attribute. `LocalizedCollections` is an array of `Name` and `Value` pairs. The items are displayed in the order listed. To add `LocalizedCollections`, use the following format:
 
 ```JSON
 {
@@ -104,7 +104,7 @@ If you want to provide a set list of values for responses, you need to create a 
 ```
 
 * `ElementId` is the user attribute that this `LocalizedCollections` attribute is a response to.
-* `Name` is the value that's shown to the user.
+* `Name` is the value shown to the user.
 * `Value` is what is returned in the claim when this option is selected.
 
 ### Upload your changes
@@ -115,7 +115,7 @@ If you want to provide a set list of values for responses, you need to create a 
 1. Select the language that you want to translate to.
 1. Select **Attribute collection page**.
 1. Select the folder icon, and select the JSON file to upload.
-1. The changes are saved to your user flow automatically and you'll find the override under the **Configured** tab.
+1. The changes are saved to your user flow automatically. You can find the override under the **Configured** tab.
 1. To remove or download your customized override file, select the language and expand the **Attribute collection page**. 
 
   :::image type="content" source="media/user-flow-customize-language/language-customization-remove-download-overrides.png" alt-text="Screenshot of removing or downloading the language customization json file."::: 
@@ -128,11 +128,11 @@ When you enable language customization, your previous edits for labels using pag
 
 ### Up-to-date translations
 
-Microsoft is committed to providing the most up-to-date translations for your use. Microsoft continuously improves translations and keeps them in compliance for you. Microsoft will identify bugs and changes in global terminology and make updates that will work seamlessly in your user flow.
+Microsoft is committed to providing the most up-to-date translations for your use. Microsoft continuously improves translations and keeps them in compliance for you. Microsoft identifies bugs and global terminology changes, and makes updates that work seamlessly in your user flow.
 
 ### Support for right-to-left languages
 
-Microsoft currently doesn't provide support for right-to-left languages. You can accomplish this by using custom locales and using CSS to change the way the strings are displayed. If you need this feature, please vote for it on [Azure Feedback](https://feedback.azure.com/d365community/idea/10a7e89c-c325-ec11-b6e6-000d3a4f0789).
+Microsoft currently doesn't provide support for right-to-left languages, but you can use custom locales and CSS to change how strings are displayed. If you need this feature, vote for it on [Azure Feedback](https://feedback.azure.com/d365community/idea/10a7e89c-c325-ec11-b6e6-000d3a4f0789).
 
 ### Social identity provider translations
 
@@ -140,7 +140,7 @@ Microsoft provides the `ui_locales` OIDC parameter to social logins. But some so
 
 ### Browser behavior
 
-Chrome and Firefox both request for their set language. If it's a supported language, it's displayed before the default. Microsoft Edge currently doesn't request a language and goes straight to the default language.
+Chrome and Firefox both request their set language. If the language is supported, it displays instead of the default. Microsoft Edge currently doesn't request a language and uses the default language.
 
 ## Supported languages
 

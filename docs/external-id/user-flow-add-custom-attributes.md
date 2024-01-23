@@ -8,12 +8,12 @@ manager: celestedg
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: how-to
-ms.date: 01/18/2024
+ms.date: 01/23/2024
 ms.author: mimart
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 
-# Customer intent: As a tenant administrator, I want to create custom attributes for the self-service sign-up user flows.
+#  Customer intent: As a B2B collaboration user flow administrator, I want to define custom attributes for user flows in Microsoft Entra, so that I can collect specific information during sign-up and extend the set of attributes stored on a guest account.
 ---
 
 # Define custom attributes for user flows
@@ -53,9 +53,7 @@ The `<extensions-app-id>` is specific to your tenant. To find this identifier, n
 
 1. Select **Create**.
 
-The custom attribute is now available in the list of user attributes and for use in your user flows. A custom attribute is only created the first time it's used in any user flow, and not when you add it to the list of user attributes.
-
-Once you've created a new user using a user flow that uses the newly added custom attribute, the object can be queried in [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer). You should now see **ShoeSize** in the list of attributes collected during the sign-up journey on the user object. You can call the Graph API from your application to get the data from this attribute after it's added to the user object.
+When you add a custom attribute to the list of user attributes, it becomes available for use in your user flows. However, the attribute is only created the first time it’s used in any user flow. Once you’ve created a new user through a user flow that includes the newly added custom attribute, the object can be queried in [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer). You should now see **ShoeSize** in the list of attributes collected during the sign-up journey on the user object. You can call the Graph API from your application to get the data from this attribute after it's added to the user object.
 
 ## Next steps
 
