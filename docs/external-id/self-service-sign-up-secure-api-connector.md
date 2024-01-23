@@ -13,7 +13,7 @@ manager: celestedg
 ms.custom: "it-pro"
 ms.collection: M365-identity-device-management
 
-#  Customer intent: As a developer integrating a REST API within a Microsoft Entra External ID self-service sign-up user flow, I want to secure my API endpoint with authentication, so that only authorized services, such as Microsoft Entra ID, can make calls to my endpoint.
+#customer intent: As a developer integrating a REST API within a Microsoft Entra External ID self-service sign-up user flow, I want to secure my API endpoint with authentication, so that only authorized services, such as Microsoft Entra ID, can make calls to my endpoint.
 ---
 
 # Secure your API used an API connector in Microsoft Entra External ID self-service sign-up user flows

@@ -12,7 +12,7 @@ author: msmimart
 manager: celestedg
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-#  Customer intent: As an IT admin, I want to configure tenant restrictions v2, so that I can control access to external apps and enhance security for users signing in from our networks or devices.
+#customer intent: As an IT admin, I want to configure tenant restrictions v2, so that I can control access to external apps and enhance security for users signing in from our networks or devices.
 ---
 
 # Set up tenant restrictions v2

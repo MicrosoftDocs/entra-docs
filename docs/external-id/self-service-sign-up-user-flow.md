@@ -13,7 +13,7 @@ manager: CelesteDG
 ms.custom: "it-pro"
 ms.collection: M365-identity-device-management
 
-#  Customer intent: As a developer building an application with B2B collaboration user flows, I want to add a self-service sign-up user flow to my app, so that users can sign up for the app and create a new guest account.
+#customer intent: As a developer building an application with B2B collaboration user flows, I want to add a self-service sign-up user flow to my app, so that users can sign up for the app and create a new guest account.
 
 ---
 

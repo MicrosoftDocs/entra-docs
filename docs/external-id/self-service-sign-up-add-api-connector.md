@@ -12,7 +12,7 @@ author: msmimart
 manager: celestedg
 ms.custom: "it-pro"
 ms.collection: M365-identity-device-management
-#  Customer intent: As a user administrator in Microsoft Entra, I want to add an API connector to a user flow after the authentication step or before creating the user, so that I can integrate with web APIs, customize the sign-up experience, and integrate with external systems.
+#customer intent: As a user administrator in Microsoft Entra, I want to add an API connector to a user flow after the authentication step or before creating the user, so that I can integrate with web APIs, customize the sign-up experience, and integrate with external systems.
 ---
 
 # Add an API connector to a user flow
