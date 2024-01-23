@@ -56,7 +56,7 @@ We redesigned the Microsoft Entra admin center's homepage to help you do the fol
 
 - Learn about the product suite 
 - Identify opportunities to maximize feature value 
-- Stay up to date with recent announcements and new features and more!
+- Stay up to date with recent announcements, new features, and more!
 
 See the new experience here: https://entra.microsoft.com/
 
@@ -78,7 +78,7 @@ Cross-tenant synchronization now supports synchronizing the manager attribute ac
 **Service category:** Identity Protection        
 **Product capability:** Identity Security & Protection        
 
-Suspicious sending patterns: This risk detection type is discovered using information provided by Microsoft Defender for Office (MDO). This alert is generated when someone in your organization has sent suspicious email and is either at risk of being restricted from sending email or has already been restricted from sending email. This detection moves users to medium risk and only fires in organizations that have deployed MDO. For more information, see: [What are risk detections?](../id-protection/concept-identity-protection-risks.md).
+The *Suspicious sending patterns* risk detection type is discovered using information provided by Microsoft Defender for Office (MDO). This alert is generated when someone in your organization has sent suspicious email, and is either at risk of being restricted from sending email, or has already been restricted from sending email. This detection moves users to medium risk, and only fires in organizations that have deployed MDO. For more information, see: [What are risk detections?](../id-protection/concept-identity-protection-risks.md).
 
 ---
 
@@ -88,7 +88,7 @@ Suspicious sending patterns: This risk detection type is discovered using inform
 **Service category:** MFA        
 **Product capability:** User Authentication        
 
-We've released a new recommendation in the Microsoft Entra admin center for customers to move off MFA Server to Entra MFA. MFA Server will be retired on September 30th, 2024. Any customers with MFA Server activity in the last 7 days see the recommendation that includes details about their current usage, and steps on how to move to Entra MFA. For more information, see: [Migrate from MFA Server to Microsoft Entra multifactor authentication](../identity/authentication/how-to-migrate-mfa-server-to-azure-mfa.md).
+We've released a new recommendation in the Microsoft Entra admin center for customers to move off MFA Server to Microsoft Entra multifactor authentication. MFA Server will be retired on September 30th, 2024. Any customers with MFA Server activity in the last 7 days see the recommendation that includes details about their current usage, and steps on how to move to Microsoft Entra multifactor authentication. For more information, see: [Migrate from MFA Server to Microsoft Entra multifactor authentication](../identity/authentication/how-to-migrate-mfa-server-to-azure-mfa.md).
 
 ---
 
@@ -102,13 +102,13 @@ To protect customers from emerging identity-based attacks, Microsoft Entra ID Pr
 
 ---
 
-### General Availability - define Azure custom roles with data actions at Management Group scope
+### General Availability - Define Azure custom roles with data actions at Management Group scope
 
 **Type:** Changed feature    
 **Service category:** User Access Management    
 **Product capability:** AuthZ/Access Delegation    
 
-You can create custom roles containing Data Actions at the Management Group level and assign these roles at the subscription scope or below. This allows centrally management of custom roles, significantly reducing administrative overhead by eliminating the need to manage duplicate role definitions across multiple subscriptions. For more information, see: [Azure custom roles](/azure/role-based-access-control/custom-roles).
+You can create custom roles containing Data Actions at the Management Group level, and assign these roles at the subscription scope or below. This allows central management of custom roles, significantly reducing administrative overhead by eliminating the need to manage duplicate role definitions across multiple subscriptions. For more information, see: [Azure custom roles](/azure/role-based-access-control/custom-roles).
 
 ---
 
@@ -118,13 +118,13 @@ You can create custom roles containing Data Actions at the Management Group leve
 **Service category:** User Management    
 **Product capability:** User Management    
 
-*User.ReadBasic.All* allows the app to retrieve basic user properties like ID, display name, first and last name, email address, and photo. Today only delegated *User.ReadBasic.All* is available. We heard customer feedback to enable app-only *User.ReadBasic.All* permission as well, to limit their app access to only basic user properties. 
+*User.ReadBasic.All* allows the app to retrieve basic user properties like ID, display name, first and last name, email address, and photo. Today, only delegated *User.ReadBasic.All* is available. We heard customer feedback to enable app-only *User.ReadBasic.All* permission as well, to limit their app access to only basic user properties. 
 
-With the release of app-only *User.ReadBasic.All*, we also fixed a bug, which enabled the app to filter on properties it shouldn't access with *User.ReadBasic.All*. The issue is now resolved, ensuring that apps with delegated or app-only permission can no longer filter on unauthorized properties. 
+With the release of app-only *User.ReadBasic.All*, we've also fixed a bug, which enabled the app to filter on properties it shouldn't access with *User.ReadBasic.All*. The issue is now resolved, ensuring that apps with delegated or app-only permission can no longer filter on unauthorized properties. 
 
-If your app uses delegated *User.ReadBasic.All* to filter properties beyond its access, it will now encounter a 403 error message, indicating "insufficient privileges to complete the operation." You can grant the app *User.Read.All* permission, to ensure the filter operation succeeds. 
+If your app uses delegated *User.ReadBasic.All* to filter properties beyond its access, it will now encounter a 403 error message, indicating "*insufficient privileges to complete the operation.*" You can grant the app *User.Read.All* permission, to ensure the filter operation succeeds. 
 
-With app-only *User.ReadBasic.All*, you can evaluate the permission needs of apps in your tenant; for those requiring access to basic user properties only, consider granting *User.ReadBasic.All* instead of *User.Read.All*. For more information, see: [Microsoft Graph permissions reference](/graph/permissions-reference).
+With app-only *User.ReadBasic.All*, you can evaluate the permission needs of apps in your tenant. For those requiring access to basic user properties only, consider granting *User.ReadBasic.All* instead of *User.Read.All*. For more information, see: [Microsoft Graph permissions reference](/graph/permissions-reference).
 
 ---
 
