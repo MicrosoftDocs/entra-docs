@@ -20,7 +20,7 @@ This article shows how you can stream your logs to an event hub, to integrate wi
 
 ## Prerequisites
 
-- To stream logs to a SIEM tool, you first need to create an **Azure event hub**. [Learn how to create an event hub](/azure/event-hubs/event-hubs-create).
+- To stream logs to a SIEM tool, you first need to create an **Azure event hub**. Learn how to [create an event hub](/azure/event-hubs/event-hubs-create).
 
 - Once you have an event hub that contains Microsoft Entra activity logs, you can set up the SIEM tool integration using the **Microsoft Entra diagnostic settings**.
 

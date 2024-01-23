@@ -43,7 +43,7 @@ To configure diagnostic settings, you need:
 
 ### Log categories
 
-When you create or edit a diagnostic setting, you can choose which log categories to include. For a description of the available logs, see [Log options for streaming to endpoints](concept-diagnostic-settings-log-options).
+When you create or edit a diagnostic setting, you can choose which log categories to include. For a description of the available logs, see [Log options for streaming to endpoints](concept-diagnostic-settings-logs-options).
 
 You can select one, some, or all of the available logs. Some logs might be part of a preview feature, so even if you select a log category, you might not see any data until the feature is generally available. 
 
@@ -57,7 +57,27 @@ To send your logs to one of the destinations, you must have already configured t
 - [Create an event hub](/azure/event-hubs/event-hubs-create)
 - [Create a storage account](/azure/storage/common/storage-account-create)
 
+### Configure diagnostic settings
+
+For details on configuring diagnostic settings for a specific destination, see the following articles:
+
+- [Integrate logs with Azure monitor logs](howto-integrate-activity-logs-with-azure-monitor-logs.md)
+- [Stream logs to an event hub](howto-stream-logs-to-event-hub.md)
+- [Archive logs to an Azure storage account](howto-archive-logs-to-storage-account.md)
+
+The basic steps for configuring diagnostics settings are as follows:
+
+1. To create a new diagnostic setting, select **Add diagnostic setting**.
+1. Provide a name.
+1. Select the logs you want to include.
+1. Select the destinations you want to send the logs to.
+1. Select the subscription and the destination from the dropdown menus that appear.
+1. Select the **Save** button.
+
+    ![Screenshot of the create diagnostic settings page, with several logs selected to go to a Log Analytics workspace.](media/howto-configure-diagnostic-settings/diagnostic-settings-save.png)
+
 ## Next steps
 
-- [Archive logs to an Azure storage account](howto-archive-logs-to-storage-account.md)
+- [Integrate logs with Azure monitor logs](howto-integrate-activity-logs-with-azure-monitor-logs.md)
 - [Stream logs to an event hub](howto-stream-logs-to-event-hub.md)
+- [Archive logs to an Azure storage account](howto-archive-logs-to-storage-account.md)

@@ -30,7 +30,7 @@ items:
   - name: How-to guides 
     expanded: true
     items:
-    - name: How to access activity logs
+    - name: Access activity logs
       href: howto-access-activity-logs.md
     - name: Customize and filter activity logs
       href: howto-customize-filter-logs.md
