@@ -7,14 +7,14 @@ description: How to use Email one-time passcode to authenticate B2B guest users 
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: how-to
-ms.date: 01/19/2024
+ms.date: 01/23/2024
 ms.author: mimart
 author: msmimart
 manager: CelesteDG
 ms.custom: "it-pro, seo-update-azuread-jan"
 ms.collection: M365-identity-device-management
 
-# Customer intent: As a tenant administrator, I want to make sure that my users can authenticate themselves with one-time passcode.
+#customer intent: As a B2B collaboration administrator, I want to make sure invited users can authenticate using email one-time passcode, so that invited users can sign in using a passcode even when other authentication methods are not available.
 ---
 
 # Email one-time passcode authentication

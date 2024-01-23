@@ -6,7 +6,7 @@ description: Current limitations for Microsoft Entra B2B collaboration
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: conceptual
-ms.date: 02/13/2023
+ms.date: 01/23/2024
 
 ms.author: mimart
 author: msmimart
@@ -15,7 +15,7 @@ ms.reviewer: elisolMS
 
 ms.collection: content-health, M365-identity-device-management
 
-# Customer intent: As a tenant administrator, I want to know about the current limitations for Microsoft Entra B2B collaboration. 
+#  Customer intent: As a user of Microsoft Entra B2B collaboration, I want to understand the limitations and potential issues with the platform, so that I can effectively manage and troubleshoot any authentication or replication problems that may arise.
 ---
 
 # Limitations of Microsoft Entra B2B collaboration

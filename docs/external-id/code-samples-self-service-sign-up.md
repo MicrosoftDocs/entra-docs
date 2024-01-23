@@ -12,7 +12,7 @@ author: msmimart
 manager: celestedg
 ms.custom: "it-pro"
 ms.collection: M365-identity-device-management
-#  Customer intent: As a developer implementing self-service sign-up user flows, I want code samples for applying web APIs using API connectors, so that I can integrate identity verification services like IDology and Experian into my application.
+#customer intent: As a developer implementing self-service sign-up user flows, I want code samples for applying web APIs using API connectors, so that I can integrate identity verification services like IDology and Experian into my application.
 ---
 
 # Samples for External Identities self-service sign-up
