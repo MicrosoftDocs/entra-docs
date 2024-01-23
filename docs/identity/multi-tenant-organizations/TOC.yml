@@ -48,7 +48,7 @@
     - name: Provisioning logs
       href: ../monitoring-health/concept-provisioning-logs.md?toc=/entra/identity/multi-tenant-organizations/toc.json&bc=/entra/identity/multi-tenant-organizations/breadcrumb/toc.json?pivots=cross-tenant-synchronization
     - name: Map custom attributes
-      href: cross-tenant-synchronization-directory-extensions.md
+      href: cross-tenant-synchronization-custom-attributes.md
     - name: Known issues
       href: ../app-provisioning/known-issues.md?toc=/entra/identity/multi-tenant-organizations/toc.json&bc=/entra/identity/multi-tenant-organizations/breadcrumb/toc.json?pivots=cross-tenant-synchronization
 - name: Reference

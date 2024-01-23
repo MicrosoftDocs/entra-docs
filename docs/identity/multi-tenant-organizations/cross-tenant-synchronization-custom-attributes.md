@@ -50,13 +50,13 @@ Once you have one or more directory extensions, you can use them when mapping at
 
 1. Scroll to the bottom of the page and select **Add new mapping**.
 
-    :::image type="content" source="./media/cross-tenant-synchronization-directory-extensions/provisioning-mappings-new-mapping.png" alt-text="Screenshot that shows the Attribute Mappings page with the Add new mapping link." lightbox="./media/cross-tenant-synchronization-directory-extensions/provisioning-mappings-new-mapping.png":::
+    :::image type="content" source="./media/cross-tenant-synchronization-custom-attributes/provisioning-mappings-new-mapping.png" alt-text="Screenshot that shows the Attribute Mappings page with the Add new mapping link." lightbox="./media/cross-tenant-synchronization-custom-attributes/provisioning-mappings-new-mapping.png":::
 
 1. In the **Source attribute** drop-down list, select a source attribute.
 
     If you created a directory extension in the source tenant, select the directory extension.
 
-    :::image type="content" source="./media/cross-tenant-synchronization-directory-extensions/provisioning-mappings-source-attribute.png" alt-text="Screenshot that shows the Edit attribute page with the directory extension listed in Source Attribute." lightbox="./media/cross-tenant-synchronization-directory-extensions/provisioning-mappings-source-attribute.png":::
+    :::image type="content" source="./media/cross-tenant-synchronization-custom-attributes/provisioning-mappings-source-attribute.png" alt-text="Screenshot that shows the Edit attribute page with the directory extension listed in Source Attribute." lightbox="./media/cross-tenant-synchronization-custom-attributes/provisioning-mappings-source-attribute.png":::
 
     If the directory extension is not listed, make sure that the directory extension was created successfully. You can also try to manually add the directory extension to the schema as described in the next section.
 
@@ -86,7 +86,7 @@ If your directory extension was not automatically discovered, you try the follow
 
 1. Scroll to the bottom and select the **Show advanced settings** check box.
 
-    :::image type="content" source="./media/cross-tenant-synchronization-directory-extensions/provisioning-mappings-advanced-settings.png" alt-text="Screenshot that shows the Attribute Mapping page with the advanced options." lightbox="./media/cross-tenant-synchronization-directory-extensions/provisioning-mappings-advanced-settings.png":::
+    :::image type="content" source="./media/cross-tenant-synchronization-custom-attributes/provisioning-mappings-advanced-settings.png" alt-text="Screenshot that shows the Attribute Mapping page with the advanced options." lightbox="./media/cross-tenant-synchronization-custom-attributes/provisioning-mappings-advanced-settings.png":::
 
 1. If you created a directory extension in the source tenant, select the **Edit attribute list for Microsoft Entra ID** link.
 
@@ -94,7 +94,7 @@ If your directory extension was not automatically discovered, you try the follow
 
 1. Add the directory extension and select the appropriate options.
 
-    :::image type="content" source="./media/cross-tenant-synchronization-directory-extensions/provisioning-mappings-advanced-settings-directory-extension.png" alt-text="Screenshot that shows the Attribute Mapping page with the advanced options." lightbox="./media/cross-tenant-synchronization-directory-extensions/provisioning-mappings-advanced-settings-directory-extension.png":::
+    :::image type="content" source="./media/cross-tenant-synchronization-custom-attributes/provisioning-mappings-advanced-settings-directory-extension.png" alt-text="Screenshot that shows the Attribute Mapping page with the advanced options." lightbox="./media/cross-tenant-synchronization-custom-attributes/provisioning-mappings-advanced-settings-directory-extension.png":::
 
 1. Select **Save**.
 
@@ -122,11 +122,11 @@ Follow these steps to add a custom attributes to the schema by manually editing 
 
 1. Scroll to the bottom and select the **Show advanced settings** check box.
 
-    :::image type="content" source="./media/cross-tenant-synchronization-directory-extensions/provisioning-mappings-advanced-settings.png" alt-text="Screenshot that shows the Attribute Mapping page with the advanced options." lightbox="./media/cross-tenant-synchronization-directory-extensions/provisioning-mappings-advanced-settings.png":::
+    :::image type="content" source="./media/cross-tenant-synchronization-custom-attributes/provisioning-mappings-advanced-settings.png" alt-text="Screenshot that shows the Attribute Mapping page with the advanced options." lightbox="./media/cross-tenant-synchronization-custom-attributes/provisioning-mappings-advanced-settings.png":::
 
 1. Select the **Review your schema here** link to open the **Schema editor** page.
 
-    :::image type="content" source="./media/cross-tenant-synchronization-directory-extensions/provisioning-mappings-schema-editor.png" alt-text="Screenshot of the Schema editor page the options to edit the schema in JSON." lightbox="./media/cross-tenant-synchronization-directory-extensions/provisioning-mappings-schema-editor.png":::
+    :::image type="content" source="./media/cross-tenant-synchronization-custom-attributes/provisioning-mappings-schema-editor.png" alt-text="Screenshot of the Schema editor page the options to edit the schema in JSON." lightbox="./media/cross-tenant-synchronization-custom-attributes/provisioning-mappings-schema-editor.png":::
 
 1. Download an original copy of the schema as a backup.
 

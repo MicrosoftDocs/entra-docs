@@ -295,7 +295,7 @@ Attribute mappings allow you to define how data should flow between the source t
     :::image type="content" source="./media/cross-tenant-synchronization-configure/provisioning-attribute-mapping-displayname-expression.png" alt-text="Screenshot of the Edit Attribute page that shows the displayName attribute with the Expression box." lightbox="./media/cross-tenant-synchronization-configure/provisioning-attribute-mapping-displayname-expression.png":::
 
 > [!TIP]
-> You can map *custom attributes* (such as directory extensions from on-premises) by updating the schema of the cross-tenant synchronization. For more information, see [Map custom attributes in cross-tenant synchronization](cross-tenant-synchronization-directory-extensions.md).
+> You can map *custom attributes* (such as directory extensions from on-premises) by updating the schema of the cross-tenant synchronization. For more information, see [Map custom attributes in cross-tenant synchronization](cross-tenant-synchronization-custom-attributes.md).
 
 ## Step 10: Specify additional provisioning settings
 
