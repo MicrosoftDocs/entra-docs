@@ -13,7 +13,7 @@ author: msmimart
 manager: celestedg
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.collection: M365-identity-device-management
-#  Customer intent: As an IT admin setting up federation with SAML/WS-Fed identity providers, I want to configure the required attributes and claims for the SAML 2.0 or WS-Fed protocol, so that guest users can sign in to my Microsoft Entra tenant using their own organizational account.
+#customer intent: As an IT admin setting up federation with SAML/WS-Fed identity providers, I want to configure the required attributes and claims for the SAML 2.0 or WS-Fed protocol, so that guest users can sign in to my Microsoft Entra tenant using their own organizational account.
 ---
 
 # Federation with SAML/WS-Fed identity providers for guest users

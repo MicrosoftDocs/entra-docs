@@ -14,7 +14,7 @@ author: msmimart
 manager: celestedg
 ms.custom: it-pro, seo-update-azuread-jan, has-azure-ad-ps-ref
 ms.collection: M365-identity-device-management
-#  Customer intent: As a B2B collaboration administrator, I want to add Facebook as an identity provider for self-service sign-up user flows, so that users can sign in to applications using their Facebook accounts.
+#customer intent: As a B2B collaboration administrator, I want to add Facebook as an identity provider for self-service sign-up user flows, so that users can sign in to applications using their Facebook accounts.
 ---
 
 # Add Facebook as an identity provider for External Identities
