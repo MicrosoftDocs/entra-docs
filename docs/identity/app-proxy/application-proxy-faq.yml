@@ -9,7 +9,7 @@ metadata:
   ms.subservice: app-proxy
   ms.workload: identity
   ms.topic: faq
-  ms.date: 10/02/2023
+  ms.date: 01/23/2024
   ms.author: kenwith
   ms.reviewer: ashishj
 title: Microsoft Entra application proxy frequently asked questions
@@ -142,6 +142,12 @@ sections:
             You can use either the standard domain suffix `msappproxy.net` or a [custom domain](application-proxy-configure-custom-domain.md).
 
       - question: |
+         Does App Proxy support for sovereign and regional clouds?
+        answer: |
+            Microsoft Entra ID has an App Proxy service that enables users to access on-premises applications by signing in with their Microsoft Entra account.
+            If you have installed connectors in different regions, you can optimize traffic by selecting the closest Application Proxy cloud service region to use with each connector group, see [Optimize traffic flow with Microsoft Entra application proxy](application-proxy-add-on-premises-application.md).
+
+      - question: |
          I am receiving an error about an invalid certificate or possible wrong password
         answer: |
               After you uploaded the SSL certificate, you receive the message "Invalid certificate, possible wrong password" on the portal.
@@ -192,7 +198,7 @@ sections:
               
               Possible solutions/  alternatives:
 
-              - Setup a redirection from `https://www.contoso.com` to `https://contoso.com/#/home/index.html`. The user must first access `https://www.contoso.com`.
+              - Set up a redirection from `https://www.contoso.com` to `https://contoso.com/#/home/index.html`. The user must first access `https://www.contoso.com`.
               - The URL used for the first access attempt must include the “#” character in encoded form (%23). The published server might not accept this.
               - Configure passthrough preauthentication type (not recommended).
               

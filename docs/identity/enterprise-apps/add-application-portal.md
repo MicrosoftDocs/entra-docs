@@ -50,6 +50,10 @@ If you choose to install an application that uses OpenID Connect based SSO, inst
 
 If you're planning to complete the next quickstart, keep the enterprise application that you created. Otherwise, you can consider deleting it to clean up your tenant. For more information, see [Delete an application](delete-application-portal.md).
 
+## Microsoft Graph API
+
+To add an application from the Microsoft Entra gallery programmatically, use the [applicationTemplate: instantiate](/graph/api/applicationtemplate-instantiate) API in Microsoft Graph.
+
 ## Next steps
 
 Learn how to create a user account and assign it to the enterprise application that you added.

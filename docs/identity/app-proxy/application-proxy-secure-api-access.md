@@ -66,7 +66,7 @@ To publish the SecretAPI web API through Application Proxy:
 
    1. Make sure **Pre-Authentication** is set to **Microsoft Entra ID**.
 
-   1. Select **Add** at the top of the page, and wait for the app to be created.
+   1. Select **Create**, and wait for the app to be created.
 
    ![Add API app](./media/application-proxy-secure-api-access/3-add-api-app.png)
 
