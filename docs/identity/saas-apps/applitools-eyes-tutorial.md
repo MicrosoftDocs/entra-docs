@@ -85,8 +85,8 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     c. In the **Sign on URL** text box, type a URL using the following pattern:
     `https://<SUBDOMAIN>.applitools.com`
 
-    d. In the **Logout URL** text box,
-    `https://<SUBDOMAIN>.applitools.com`
+    d. In the **Logout URL** text box, type a URL using the following pattern:
+    `https://<SUBDOMAIN>.applitools.com/api/auth/logout`
 
 	> [!NOTE]
 	> These values are not real. Update these values with the actual Reply URL, Sign on URL and Logout URL. Contact [Applitools Eyes support team](mailto:support@applitools.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
