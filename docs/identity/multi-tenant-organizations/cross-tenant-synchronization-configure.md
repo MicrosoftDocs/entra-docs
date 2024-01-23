@@ -220,7 +220,7 @@ Regardless of the value you selected for **Scope** in the previous step, you can
 
 1. In the source tenant, select **Provisioning** and expand the **Mappings** section.
 
-    :::image type="content" source="./media/cross-tenant-synchronization-configure/provisioning-mappings.png" alt-text="Screenshot that shows the Provisioning page with the Mappings section expanded." lightbox="./media/cross-tenant-synchronization-configure/provisioning-mappings.png":::
+    :::image type="content" source="./media/common/provisioning-mappings.png" alt-text="Screenshot that shows the Provisioning page with the Mappings section expanded." lightbox="./media/common/provisioning-mappings.png":::
 
 1. Select **Provision Azure Active Directory Users** to open the **Attribute Mapping** page.
 
