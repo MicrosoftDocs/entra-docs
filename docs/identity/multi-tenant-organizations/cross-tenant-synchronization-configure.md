@@ -222,7 +222,7 @@ Regardless of the value you selected for **Scope** in the previous step, you can
 
     :::image type="content" source="./media/common/provisioning-mappings.png" alt-text="Screenshot that shows the Provisioning page with the Mappings section expanded." lightbox="./media/common/provisioning-mappings.png":::
 
-1. Select **Provision Azure Active Directory Users** to open the **Attribute Mapping** page.
+1. Select **Provision Microsoft Entra ID Users** to open the **Attribute Mapping** page.
 
 1. Under **Source Object Scope**, select **All records**.
 
@@ -250,7 +250,7 @@ Attribute mappings allow you to define how data should flow between the source t
 
 1. In the source tenant, select **Provisioning** and expand the **Mappings** section.
 
-1. Select **Provision Azure Active Directory Users**.
+1. Select **Provision Microsoft Entra ID Users**.
 
 1. On the **Attribute Mapping** page, scroll down to review the user attributes that are synchronized between tenants in the **Attribute Mappings** section.
 
