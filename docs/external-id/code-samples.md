@@ -6,21 +6,21 @@ description: Code and PowerShell samples for Microsoft Entra B2B collaboration
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: sample
-ms.date: 04/06/2023
+ms.date: 01/23/2024
 
 ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.custom: it-pro, seo-update-azuread-jan, has-adal-ref, devx-track-linux, has-azure-ad-ps-ref
 ms.collection: M365-identity-device-management
-# Customer intent: As a tenant administrator, I want to bulk-invite external users to an organization from email addresses that I've stored in a .csv file.
+#  Customer intent: As an IT admin managing B2B collaboration, I want to bulk-invite external users to my organization by using PowerShell or by uploading a .csv file to the admin center or portal, so that I can streamline the onboarding process and save time.
 ---
 
 # Microsoft Entra B2B collaboration code and PowerShell samples
 
 ## PowerShell example
 
-You can bulk-invite external users to an organization from email addresses that you've stored in a .csv file.
+You can bulk-invite external users to an organization from email addresses you store in a .csv file.
 
 1. Prepare the .csv file
    Create a new .csv file and name it invitations.csv. In this example, the file is saved in C:\data, and contains the following information:
