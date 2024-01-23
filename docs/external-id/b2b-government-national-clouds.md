@@ -13,7 +13,7 @@ author: msmimart
 manager: celestedg
 
 ms.collection: M365-identity-device-management
-#  Customer intent: As an Azure US Government cloud tenant, I want to know if B2B collaboration is available in my tenant, so that I can determine if I can collaborate with other tenants and social users using Microsoft, Google accounts, or email one-time passcode accounts.
+#customer intent: As an Azure US Government cloud tenant, I want to know if B2B collaboration is available in my tenant, so that I can determine if I can collaborate with other tenants and social users using Microsoft, Google accounts, or email one-time passcode accounts.
 ---
 
 # Microsoft Entra B2B in government and national clouds

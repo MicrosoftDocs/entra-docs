@@ -5,7 +5,7 @@ description: Create user flows for apps that your organization builds. Then, use
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: how-to
-ms.date: 01/16/2023
+ms.date: 01/23/2024
 
 ms.author: mimart
 author: msmimart
@@ -13,7 +13,7 @@ manager: CelesteDG
 ms.custom: "it-pro"
 ms.collection: M365-identity-device-management
 
-# Customer intent: As a tenant administrator, I want to set up user flows that allow a user to sign up for an app and create a new guest account. 
+#customer intent: As a developer building an application with B2B collaboration user flows, I want to add a self-service sign-up user flow to my app, so that users can sign up for the app and create a new guest account.
 
 ---
 

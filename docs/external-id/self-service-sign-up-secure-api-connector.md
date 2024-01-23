@@ -5,7 +5,7 @@ description: Secure your custom RESTful APIs used as API connectors in self-serv
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: how-to
-ms.date: 02/15/2023
+ms.date: 01/23/2024
 
 ms.author: mimart
 author: msmimart
@@ -13,7 +13,7 @@ manager: celestedg
 ms.custom: "it-pro"
 ms.collection: M365-identity-device-management
 
-# Customer intent: As a tenant administrator, I want to make sure that I protect my API endpoint with proper authentication. 
+#customer intent: As a developer integrating a REST API within a Microsoft Entra External ID self-service sign-up user flow, I want to secure my API endpoint with authentication, so that only authorized services, such as Microsoft Entra ID, can make calls to my endpoint.
 ---
 
 # Secure your API used an API connector in Microsoft Entra External ID self-service sign-up user flows

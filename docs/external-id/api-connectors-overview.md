@@ -12,7 +12,7 @@ author: msmimart
 manager: celestedg
 ms.custom: "it-pro"                 
 ms.collection: M365-identity-device-management
-# Customer intent: As a developer or IT administrator, I want to use API connectors to customize and extend the self-service sign-up user flows, so that I can integrate with web APIs, customize the sign-up experience, and integrate with external systems for tasks such as approval workflows, identity verification, data validation, attribute manipulation, and running custom business logic.
+#customer intent: As a developer or IT administrator, I want to use API connectors to customize and extend the self-service sign-up user flows, so that I can integrate with web APIs, customize the sign-up experience, and integrate with external systems for tasks such as approval workflows, identity verification, data validation, attribute manipulation, and running custom business logic.
 ---
 
 # Use API connectors to customize and extend self-service sign-up 
