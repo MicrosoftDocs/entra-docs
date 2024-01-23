@@ -115,7 +115,7 @@ In this step, you automatically redeem invitations in the source tenant.
 
 1. Add the target tenant by typing the tenant ID or domain name and selecting **Add**.
 
-    :::image type="content" source="./media/cross-tenant-synchronization-configure/access-settings-organization-add-source.png" alt-text="Screenshot that shows the Add organization pane to add the source tenant." lightbox="./media/cross-tenant-synchronization-configure/access-settings-organization-add-source.png":::
+    :::image type="content" source="./media/cross-tenant-synchronization-configure/access-settings-organization-add-target.png" alt-text="Screenshot that shows the Add organization pane to add the target tenant." lightbox="./media/cross-tenant-synchronization-configure/access-settings-organization-add-target.png":::
 
 1. Under **Outbound access** for the target organization, select **Inherited from default**.
 
