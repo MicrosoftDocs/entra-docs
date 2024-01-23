@@ -71,6 +71,9 @@ You can register a Mac device with the macOS Platform Single Sign-On (PSSO) usin
     :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/psso-register-device-prompt.png" alt-text="Screenshot of the registration window prompting sign in with Microsoft.":::
 
 1. When prompted to **Choose a way to sign in**, select **Use a certificate or smart card**. Select the certificate to use and select **Choose**.
+
+    :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/pssoe-certificate-selection.png" alt-text="Screenshot of the window showing the prompt to choose a certificate.":::
+
 1. Enter the smart card pin in the **Company Portal** window and select **OK**. 
 1. You're prompted to **Set up {Company} access**. The placeholder "Company" is different depending on your setup. Select **Begin**, then on the next screen, select **Continue**.
 
@@ -89,7 +92,10 @@ You can register a Mac device with the macOS Platform Single Sign-On (PSSO) usin
 
     :::image type="content" source="media/device-registration-macos-platform-single-sign-on/pssoe-registration-required-notification.png" alt-text="Screenshot of the Registration Required notification.":::
 
-1. Enter the smart card pin in the **Platform SSO** window and select **OK**. Repeat this step if prompted to enter the smart card pin again. <!--TODO-->
+1. Enter the smart card pin in the **Platform SSO** window and select **OK**. Repeat this step if prompted to enter the smart card pin again. 
+
+    :::image type="content" source="media/device-registration-macos-platform-single-sign-on/pssoe-enter-pin.png" alt-text="Screenshot of the Platform SSO pin entry window.":::
+
 1. To check that registration has completed successfully, navigate to **Settings** and select **Users & Groups**. 
 1. Select **Edit** next to **Network Account Server** and check that **Platform SSO** is listed as **Registered**.
 1. To verify that the smart card is the method used for authentication, navigate to your username in the **Users & Groups** window and select the **Information** icon. **SmartCard** should be listed as the method.
