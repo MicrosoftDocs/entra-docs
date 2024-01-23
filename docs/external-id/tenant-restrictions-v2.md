@@ -5,13 +5,14 @@ description: Use tenant restrictions to control the types of external accounts y
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: how-to
-ms.date: 10/27/2023
+ms.date: 01/23/2024
 
 ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
+#customer intent: As an IT admin, I want to configure tenant restrictions v2, so that I can control access to external apps and enhance security for users signing in from our networks or devices.
 ---
 
 # Set up tenant restrictions v2
