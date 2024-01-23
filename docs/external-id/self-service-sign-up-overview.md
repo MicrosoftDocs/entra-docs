@@ -6,13 +6,14 @@ description: Learn how to allow external users to sign up for your applications 
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: conceptual
-ms.date: 08/14/2023
+ms.date: 01/23/2024
 
 ms.author: mimart
 author: msmimart
 manager: celestedg
 
 ms.collection: M365-identity-device-management
+#  Customer intent: As a developer building an application for external users, I want to enable self-service sign-up functionality, so that users can easily sign up and access my app without intervention.
 ---
 
 # Self-service sign-up
