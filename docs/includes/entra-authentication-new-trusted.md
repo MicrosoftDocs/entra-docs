@@ -3,11 +3,11 @@ author: justinha
 ms.service: active-directory
 ms.custom: has-azure-ad-ps-ref
 ms.topic: include
-ms.date: 02/08/2022
+ms.date: 01/23/2024
 ms.author: justinha
 ---
 
-To create a trusted certificate authority, use the [New-AzureADTrustedCertificateAuthority](/powershell/module/azuread/new-azureadtrustedcertificateauthority) cmdlet and set the **crlDistributionPoint** attribute to a correct value:
+To create a trusted certificate authority, use the [New-MgOrganizationCertificateBasedAuthConfiguration](/powershell/module/microsoft.graph.identity.signins/new-mgorganizationcertificatebasedauthconfiguration) cmdlet and set the **crlDistributionPoint** attribute to a correct value:
 
 ```azurepowershell
     $cert=Get-Content -Encoding byte "[LOCATION OF THE CER FILE]"

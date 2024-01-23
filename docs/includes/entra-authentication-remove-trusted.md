@@ -3,16 +3,14 @@ author: justinha
 ms.service: active-directory
 ms.custom: has-azure-ad-ps-ref
 ms.topic: include
-ms.date: 06/07/2022
+ms.date: 01/23/2024
 ms.author: justinha
 ---
 
-To remove a trusted certificate authority, use the [Remove-AzureADTrustedCertificateAuthority](/powershell/module/azuread/remove-azureadtrustedcertificateauthority) cmdlet:
+To remove a trusted certificate authority, use the [Remove-MgOrganizationCertificateBasedAuthConfiguration](powershell/module/microsoft.graph.identity.signins/remove-mgorganizationcertificatebasedauthconfiguration) cmdlet:
 
-```azurepowershell
-    $c=Get-AzureADTrustedCertificateAuthority
-    Remove-AzureADTrustedCertificateAuthority -CertificateAuthorityInformation $c[2]
+```powershell
+    Remove-MgOrganizationCertificateBasedAuthConfiguration -CertificateBasedAuthConfigurationId <String> -OrganizationId <String>
 ```
 
-You can change the command to remove 0<sup>th</sup> element by changing to
-`Remove-AzureADTrustedCertificateAuthority -CertificateAuthorityInformation $c[0]`.
+
