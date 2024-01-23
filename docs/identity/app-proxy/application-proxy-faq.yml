@@ -9,7 +9,7 @@ metadata:
   ms.subservice: app-proxy
   ms.workload: identity
   ms.topic: faq
-  ms.date: 10/02/2023
+  ms.date: 01/23/2024
   ms.author: kenwith
   ms.reviewer: ashishj
 title: Microsoft Entra application proxy frequently asked questions
@@ -140,6 +140,12 @@ sections:
         answer: |
             Although these suffixes appear in the suffix list, you should not use them. These domain suffixes are not meant to be used with Microsoft Entra application proxy. If you use these domain suffixes, the created Microsoft Entra application proxy application won't work.
             You can use either the standard domain suffix `msappproxy.net` or a [custom domain](application-proxy-configure-custom-domain.md).
+
+      - question: |
+         Does App Proxy support for sovereign and regional clouds?
+        answer: |
+            Microsoft Entra ID has an App Proxy service that enables users to access on-premises applications by signing in with their Microsoft Entra account.
+            If you have installed connectors in different regions, you can optimize traffic by selecting the closest Application Proxy cloud service region to use with each connector group, see [Optimize traffic flow with Microsoft Entra application proxy](application-proxy-add-on-premises-application.md).
 
       - question: |
          I am receiving an error about an invalid certificate or possible wrong password
