@@ -42,19 +42,31 @@ If you don't already have directory extensions, you must create one or more dire
 
 1. Select **Provisioning** and expand the **Mappings** section.
 
-1. Select **Provision Azure Active Directory Users** to open the **Attribute Mapping** page.
+    :::image type="content" source="./media/common/provisioning-mappings.png" alt-text="Screenshot that shows the Provisioning page with the Mappings section expanded." lightbox="./media/common/provisioning-mappings.png":::
+
+1. Select **Provision Microsoft Entra ID Users** to open the **Attribute Mapping** page.
 
 1. Scroll to the bottom of the page and select **Add new mapping**.
 
-1. If you created a directory extension in the source tenant, select the directory extension from the **Source Attribute** drop-down list.
+    :::image type="content" source="./media/cross-tenant-synchronization-directory-extensions/provisioning-mappings-new-mapping.png" alt-text="Screenshot that shows the Attribute Mappings page with the Add new mapping link." lightbox="./media/cross-tenant-synchronization-directory-extensions/provisioning-mappings-new-mapping.png":::
 
-1. If you created a directory extension in the target tenant, select the directory extension from the **Target Attribute** drop-down list.
+1. In the **Source attribute** drop-down list, select a source attribute.
+
+    If you created a directory extension in the source tenant, select the directory extension.
+
+    :::image type="content" source="./media/cross-tenant-synchronization-directory-extensions/provisioning-mappings-source-attribute.png" alt-text="Screenshot that shows the Edit attribute page with the directory extension listed in Source Attribute." lightbox="./media/cross-tenant-synchronization-directory-extensions/provisioning-mappings-source-attribute.png":::
+
+1. In the **Target attribute** drop-down list, select a target attribute.
+
+    If you created a directory extension in the target tenant, select the directory extension.
+
+1. Select **Ok** to save the mapping.
 
 ## Troubleshooting tips
 
 #### Symptom - Directory extension is not listed
 
-When you try to select the directory extension on the **Edit attribute** page, it's not listed in the **Source Attribute** or **Target Attribute** drop-down lists.
+When you try to select the directory extension on the **Edit attribute** page, it's not listed in the **Source attribute** or **Target attribute** drop-down lists.
 
 **Cause 1**
 
@@ -72,13 +84,31 @@ The directory extension was not automatically discovered.
 
 Follow these steps to manually add the directory extension to the schema.
 
-1. Select **Show advanced settings**.
+1. Sign in to the Microsoft Entra admin center of the source tenant using the following link:
 
-1. If you created a directory extension in the source tenant, select the first link **Edit attribute list for Azure Active Directory**.
+    https://entra.microsoft.com/?Microsoft_AAD_Connect_Provisioning_forceSchemaEditorEnabled=true
 
-1. If you created an extension in the target tenant, select the second link **Edit attribute list for Azure Active Directory**.
+1. Browse to **Identity** > **External Identities** > **Cross-tenant synchronization**.
 
-1. Add the directory extension to the list and select **Save**.
+1. Select **Configurations** and then select your configuration.
+
+1. Select **Provisioning** and expand the **Mappings** section.
+
+1. Select **Provision Microsoft Entra ID Users** to open the **Attribute Mapping** page.
+
+1. On the **Attribute Mapping** page, scroll to the bottom and select the **Show advanced settings** check box.
+
+    :::image type="content" source="./media/cross-tenant-synchronization-directory-extensions/provisioning-mappings-advanced-settings.png" alt-text="Screenshot that shows the Attribute Mapping page with the advanced options." lightbox="./media/cross-tenant-synchronization-directory-extensions/provisioning-mappings-advanced-settings.png":::
+
+1. If you created a directory extension in the source tenant, select the **Edit attribute list for Microsoft Entra ID** link.
+
+1. If you created an extension in the target tenant, select the **Edit attribute list for Azure Active Directory (target tenant)** link.
+
+1. Add the directory extension and select the appropriate options.
+
+    :::image type="content" source="./media/cross-tenant-synchronization-directory-extensions/provisioning-mappings-advanced-settings-directory-extension.png" alt-text="Screenshot that shows the Attribute Mapping page with the advanced options." lightbox="./media/cross-tenant-synchronization-directory-extensions/provisioning-mappings-advanced-settings-directory-extension.png":::
+
+1. Select **Save**.
 
 1. Refresh the browser.
 
