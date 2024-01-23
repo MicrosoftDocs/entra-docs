@@ -198,7 +198,7 @@ sections:
               
               Possible solutions/  alternatives:
 
-              - Setup a redirection from `https://www.contoso.com` to `https://contoso.com/#/home/index.html`. The user must first access `https://www.contoso.com`.
+              - Set up a redirection from `https://www.contoso.com` to `https://contoso.com/#/home/index.html`. The user must first access `https://www.contoso.com`.
               - The URL used for the first access attempt must include the “#” character in encoded form (%23). The published server might not accept this.
               - Configure passthrough preauthentication type (not recommended).
               
