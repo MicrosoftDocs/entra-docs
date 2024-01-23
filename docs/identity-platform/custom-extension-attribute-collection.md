@@ -12,7 +12,7 @@ titleSuffix: Microsoft identity platform
 #Customer intent: As an application developer, I want to create and register a custom authentication extensions API so I can add logic to the authentication flow before or after attribute collection.
 ---
 
-# Custom authentication extensions for attribute collection start and submit events
+# Custom authentication extensions for attribute collection start and submit events (preview)
 
 **Applies to:** Microsoft Entra External ID customer configurations
 
