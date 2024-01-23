@@ -43,7 +43,7 @@ To configure diagnostic settings, you need:
 
 ### Log categories
 
-When you create or edit a diagnostic setting, you can choose which log categories to include. For a description of the available logs, see [Log options for streaming to endpoints](concept-diagnostic-settings-logs-options).
+When you create or edit a diagnostic setting, you can choose which log categories to include. For a description of the available logs, see [Log options for streaming to endpoints](concept-diagnostic-settings-logs-options.md).
 
 You can select one, some, or all of the available logs. Some logs might be part of a preview feature, so even if you select a log category, you might not see any data until the feature is generally available. 
 
@@ -57,7 +57,7 @@ To send your logs to one of the destinations, you must have already configured t
 - [Create an event hub](/azure/event-hubs/event-hubs-create)
 - [Create a storage account](/azure/storage/common/storage-account-create)
 
-### Configure diagnostic settings
+## Configure diagnostic settings
 
 For details on configuring diagnostic settings for a specific destination, see the following articles:
 
