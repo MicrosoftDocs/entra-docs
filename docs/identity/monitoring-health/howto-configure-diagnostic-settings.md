@@ -54,6 +54,10 @@ You can send logs to a Log Analytics workspace, stream logs to an event hub, or 
 To send your logs to one of the destinations, you must have already configured that destination. 
 
 - [Configure a Log Analytics workspace](tutorial-configure-log-analytics-workspace.md)
+- [Create an event hub](/azure/event-hubs/event-hubs-create)
+- [Create a storage account](/azure/storage/common/storage-account-create)
+
+## Next steps
+
 - [Archive logs to an Azure storage account](howto-archive-logs-to-storage-account.md)
 - [Stream logs to an event hub](howto-stream-logs-to-event-hub.md)
-
