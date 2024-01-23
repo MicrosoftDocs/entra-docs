@@ -2571,6 +2571,8 @@
         href: sps-production-manager-tutorial.md
       - name: Splunk Enterprise and Splunk Cloud
         href: splunkenterpriseandsplunkcloud-tutorial.md
+      - name: SpotDraft
+        href: spotdraft-tutorial.md
       - name: Spotinst
         href: spotinst-tutorial.md
       - name: SpringCM
