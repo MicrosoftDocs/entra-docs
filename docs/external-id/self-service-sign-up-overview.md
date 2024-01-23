@@ -13,7 +13,7 @@ author: msmimart
 manager: celestedg
 
 ms.collection: M365-identity-device-management
-#  Customer intent: As a developer building an application for external users, I want to enable self-service sign-up functionality, so that users can easily sign up and access my app without intervention.
+#customer intent: As a developer building an application for external users, I want to enable self-service sign-up functionality, so that users can easily sign up and access my app without intervention.
 ---
 
 # Self-service sign-up

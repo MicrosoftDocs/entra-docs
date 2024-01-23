@@ -13,7 +13,7 @@ ms.author: mimart
 
 ms.collection: M365-identity-device-management
 ms.custom:  
-#  Customer intent: As a B2B collaboration user, I want to customize the language of the authentication experience in Microsoft Entra External ID, so that I can accommodate different languages for my users and provide a personalized user flow.
+#customer intent: As a B2B collaboration user, I want to customize the language of the authentication experience in Microsoft Entra External ID, so that I can accommodate different languages for my users and provide a personalized user flow.
 ---
 
 # Language customization in Microsoft Entra External ID

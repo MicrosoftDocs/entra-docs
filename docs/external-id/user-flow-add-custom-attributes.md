@@ -13,7 +13,7 @@ ms.author: mimart
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 
-#  Customer intent: As a B2B collaboration user flow administrator, I want to define custom attributes for user flows in Microsoft Entra, so that I can collect specific information during sign-up and extend the set of attributes stored on a guest account.
+#customer intent: As a B2B collaboration user flow administrator, I want to define custom attributes for user flows in Microsoft Entra, so that I can collect specific information during sign-up and extend the set of attributes stored on a guest account.
 ---
 
 # Define custom attributes for user flows
