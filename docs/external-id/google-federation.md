@@ -14,7 +14,7 @@ author: msmimart
 manager: celestedg
 ms.custom: it-pro, seo-update-azuread-jan, has-adal-ref, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.collection: M365-identity-device-management
-#  Customer intent: As a B2B collaboration administrator, I want to add Google as an identity provider, so that invited users can sign in to shared apps and resources using their Gmail accounts.
+#customer intent: As a B2B collaboration administrator, I want to add Google as an identity provider, so that invited users can sign in to shared apps and resources using their Gmail accounts.
 ---
 
 # Add Google as an identity provider for B2B guest users
