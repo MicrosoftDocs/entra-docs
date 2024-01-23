@@ -35,6 +35,9 @@ In this tutorial, you configure and test Microsoft Entra SSO in a test environme
 
 * Blinq supports only **SP** initiated SSO.
 
+> [!NOTE]
+> Identifier of this application is a fixed string value so only one instance can be configured in one tenant.
+
 ## Add Blinq from the gallery
 
 To configure the integration of Blinq into Microsoft Entra ID, you need to add Blinq from the gallery to your list of managed SaaS apps.
@@ -167,4 +170,3 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 ## Next steps
 
 Once you configure Blinq you can enforce session control, which protects exfiltration and infiltration of your organization's sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).
-
