@@ -46,7 +46,7 @@ With the authentication strength capability in Conditional Access, you can now c
 
 ---
 
-### Generally available - New Entra Home page
+### Generally available - New Microsoft Entra Home page
 
 **Type:** Changed feature    
 **Service category:** N/A    
