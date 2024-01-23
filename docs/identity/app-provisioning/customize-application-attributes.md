@@ -66,7 +66,7 @@ There are four different mapping types supported:
 - **Expression** - the target attribute is populated based on the result of a script-like expression. For more information about expressions, see [Writing Expressions for Attribute-Mappings in Microsoft Entra ID](~/identity/app-provisioning/functions-for-customizing-application-data.md).
 - **None** - the target attribute is left unmodified. However, if the target attribute is ever empty, it's populated with the Default value that you specify.
 
-Along with these four basic types, custom attribute-mappings support the concept of an optional **default** value assignment. The default value assignment ensures that a target attribute is populated with a value if there's not a value in Microsoft Entra ID or on the target object. The most common configuration is to leave this blank. For more information about mapping attributes, see [How Application Provisioning works in Microsoft Entra ID](~/identity/app-provisioning/how-provisioning-works#mapping-attributes.md).
+Along with these four basic types, custom attribute-mappings support the concept of an optional **default** value assignment. The default value assignment ensures that a target attribute is populated with a value if there's not a value in Microsoft Entra ID or on the target object. The most common configuration is to leave this blank. For more information about mapping attributes, see [How Application Provisioning works in Microsoft Entra ID](~/identity/app-provisioning/how-provisioning-works.md#mapping-attributes).
 
 ### Understanding attribute-mapping properties
 
