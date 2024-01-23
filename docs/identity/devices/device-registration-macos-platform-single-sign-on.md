@@ -62,7 +62,7 @@ You can register a Mac device with the macOS Platform Single Sign-On (PSSO) usin
 
 1. You can now use PSSO to access Microsoft app resources.
 
-### [Smart card](#tab/smart-card)
+### [Smart Card](#tab/smart-card)
 
 1. Open the **Company Portal** app and select **Sign in**.
 1. Enter your Microsoft Entra ID credentials and select **Next**.
@@ -73,11 +73,23 @@ You can register a Mac device with the macOS Platform Single Sign-On (PSSO) usin
 1. When prompted to **Choose a way to sign in**, select **Use a certificate or smart card**. Select the certificate to use and select **Choose**.
 1. Enter the smart card pin in the **Company Portal** window and select **OK**. 
 1. You're prompted to **Set up {Company} access**. The placeholder "Company" is different depending on your setup. Select **Begin**, then on the next screen, select **Continue**.
+
+    :::image type="content" source="media/device-registration-macos-platform-single-sign-on/pssoe-company-portal-set-up-access.png" alt-text="Screenshot of the Company portal access setup window.":::
+
 1. You're presented with steps to install the management profile, which should be set up by an administrator using Microsoft Intune. Select **Download profile**.
+
+    :::image type="content" source="media/device-registration-macos-platform-single-sign-on/pssoe-company-portal-install-management-profile.png" alt-text="Screenshot of a Company Portal window requesting the user to download the management profile.":::
+
 1. Open **Settings** > **Privacy & Security** > **Profiles** if it doesn't automatically appear. Select **Management Profile**, then select **Install** to get access to company resources.
+
+    :::image type="content" source="media/device-registration-macos-platform-single-sign-on/pssoe-settings-profiles-install-management-profile.png" alt-text="Screenshot the prompt to install the management profile in settings.":::
+
 1. Enter your local device password in the **Profiles** window that appears and select **Enroll**.
 1. A **Registration Required** notification appears in the top right of the screen. Hover over the notification and select **Register**.
-1. Enter the smart card pin in the **Platform SSO** window and select **OK**. Repeat this step if prompted to enter the smart card pin again.
+
+    :::image type="content" source="media/device-registration-macos-platform-single-sign-on/pssoe-registration-required-notification.png" alt-text="Screenshot of the Registration Required notification.":::
+
+1. Enter the smart card pin in the **Platform SSO** window and select **OK**. Repeat this step if prompted to enter the smart card pin again. <!--TODO-->
 1. To check that registration has completed successfully, navigate to **Settings** and select **Users & Groups**. 
 1. Select **Edit** next to **Network Account Server** and check that **Platform SSO** is listed as **Registered**.
 1. To verify that the smart card is the method used for authentication, navigate to your username in the **Users & Groups** window and select the **Information** icon. **SmartCard** should be listed as the method.

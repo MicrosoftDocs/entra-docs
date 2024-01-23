@@ -92,7 +92,7 @@ Setting up your device using secure enclave method enables you to use the result
 
     :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/password-options-enable-passkeys.png" alt-text="Screenshot of the Password Options window indicating that the use of passwords and passkeys from Company Portal has been enabled by a switch.":::
 
-### [Smart card](#tab/smart-card)
+### [Smart Card](#tab/smart-card)
 
 1. You're prompted to register your device with Microsoft Entra ID. Enter your sign-in credentials and select **Next**.
     1. Your administrator may have configured MFA for the device registration flow. If so, open your **Authenticator** app on your mobile device and complete the MFA flow.
