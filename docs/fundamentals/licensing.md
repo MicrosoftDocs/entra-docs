@@ -18,7 +18,6 @@ This article discusses Microsoft Entra services' licensing. It is intended for I
 >[!IMPORTANT]
 > For licensing information on services not listed here, refer to the service's documentation or the [Microsoft Entra ID pricing page.](https://www.microsoft.com/security/business/microsoft-entra-pricing)
 
-
 ## App provisioning
 
 [!INCLUDE [App provisioning](../includes/licensing-app-provisioning.md)]
@@ -31,9 +30,9 @@ This article discusses Microsoft Entra services' licensing. It is intended for I
 
 [!INCLUDE [Managed identities](../includes/licensing-managed-identities.md)]
 
-[!INCLUDE [Microsoft Entra Conditional access](../includes/licensing-conditional-access.md)]
-
 ## Microsoft Entra ID Governance
+
+[!INCLUDE [Microsoft Entra ID Governance](../includes/licensing-governance.md)]
 
 ## Microsoft Entra Connect
 
@@ -45,7 +44,7 @@ This article discusses Microsoft Entra services' licensing. It is intended for I
 
 ## Microsoft Entra Conditional Access
 
-[!INCLUDE [Microsoft Entra ID Governance](../includes/licensing-governance.md)]
+[!INCLUDE [Microsoft Entra Conditional access](../includes/licensing-conditional-access.md)]
 
 ## Microsoft Entra ID Protection
 
