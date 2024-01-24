@@ -5,20 +5,21 @@ description: Use cross-tenant access settings to manage how you collaborate with
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: how-to
-ms.date: 05/31/2023
+ms.date: 01/23/2024
 
 ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.custom: "it-pro"
 ms.collection: M365-identity-device-management
+#customer intent: As an IT admin managing cross-tenant collaboration with external organizations, I want to configure cross-tenant access settings for B2B direct connect, so that I can lets users from other Microsoft Entra tenants seamlessly sign in to my shared resources via Teams shared channels.
 ---
 
 # Configure cross-tenant access settings for B2B direct connect
 
-Use cross-tenant access settings to manage how you collaborate with other Microsoft Entra organizations through [B2B direct connect](b2b-direct-connect-overview.md). These settings let you determine the level of outbound access your users have to external organizations. They also let you control the level of inbound access that users in external Microsoft Entra organizations will have to your internal resources.
+Use cross-tenant access settings to manage how you collaborate with other Microsoft Entra organizations through [B2B direct connect](b2b-direct-connect-overview.md). These settings let you determine the level of outbound access your users have to external organizations. They also let you control the level of inbound access that users in external Microsoft Entra organizations have to your internal resources.
 
-- **Default settings**: The default cross-tenant access settings apply to all external Microsoft Entra organizations, except organizations for which you've configured individual settings. You can change these default settings. For B2B direct connect, you'll typically leave the default settings as-is and enable B2B direct connect access with organization-specific settings. Initially, your default values are as follows:
+- **Default settings**: The default cross-tenant access settings apply to all external Microsoft Entra organizations, except organizations for which you configure individual settings. You can change these default settings. For B2B direct connect, you typically leave the default settings as-is and enable B2B direct connect access with organization-specific settings. Initially, your default values are as follows:
 
   - **B2B direct connect initial default settings** - By default, outbound B2B direct connect is blocked for your entire tenant, and inbound B2B direct connect is blocked for all external Microsoft Entra organizations.
   - **Organizational settings** - No organizations are added by default.
@@ -34,10 +35,10 @@ Learn more about using cross-tenant access settings to [manage B2B direct connec
 
 - Review the [Important considerations](cross-tenant-access-overview.md#important-considerations) section in the [cross-tenant access overview](cross-tenant-access-overview.md) before configuring your cross-tenant access settings.
 - Decide on the default level of access you want to apply to all external Microsoft Entra organizations.
-- Identify any Microsoft Entra organizations that will need customized settings.
+- Identify any Microsoft Entra organizations that need customized settings.
 - Contact organizations with which you want to set up B2B direct connect. Because B2B direct connect is established through mutual trust, both you and the other organization need to enable B2B direct connect with each other in your cross-tenant access settings.
-- Obtain any required information from external organizations. If you want to apply access settings to specific users, groups, or applications within an external organization, you'll need to obtain these IDs from the organization before you can configure access settings.
-- To configure cross-tenant access settings in the Microsoft Entra admin center, you'll need an account with a Global administrator or Security administrator role. Teams administrators can read cross-tenant access settings, but they can't update these settings.
+- Obtain any required information from external organizations. If you want to apply access settings to specific users, groups, or applications within an external organization, you need to obtain these IDs from the organization before you can configure access settings.
+- To configure cross-tenant access settings in the Microsoft Entra admin center, you need an account with a Global administrator or Security administrator role. Teams administrators can read cross-tenant access settings, but they can't update these settings.
 
 ## Configure default settings
 
@@ -86,7 +87,7 @@ Follow these steps to configure customized settings for specific organizations.
 
 ## Modify inbound access settings
 
-With inbound settings, you select which external users and groups will be able to access the internal applications you choose. Whether you're configuring default settings or organization-specific settings, the steps for changing inbound cross-tenant access settings are the same. As described in this section, you'll navigate to either the **Default** tab or an organization on the **Organizational settings** tab, and then make your changes.
+With inbound settings, you select which external users and groups can access the internal applications you choose. Whether you're configuring default settings or organization-specific settings, the steps for changing inbound cross-tenant access settings are the same. As described in this section, you navigate to either the **Default** tab or an organization on the **Organizational settings** tab, and then make your changes.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
 
@@ -107,9 +108,9 @@ With inbound settings, you select which external users and groups will be able t
 
 1. *If you're configuring settings for an organization,* select one of these options:
 
-   - **Default settings**: The organization will use the settings configured on the **Default** settings tab. If customized settings were already configured for this organization, you'll need to select **Yes** to confirm that you want all settings to be replaced by the default settings. Then select **Save**, and skip the rest of the steps in this procedure.
+   - **Default settings**: The organization uses the settings configured on the **Default** settings tab. If customized settings were already configured for this organization, you need to select **Yes** to confirm that you want all settings to be replaced by the default settings. Then select **Save**, and skip the rest of the steps in this procedure.
 
-   - **Customize settings**: You can customize the settings for this organization, which will be enforced for this organization instead of the default settings. Continue with the rest of the steps in this procedure.
+   - **Customize settings**: You can customize the settings to enforce for this organization instead of the default settings. Continue with the rest of the steps in this procedure.
 
 1. Select **External users and groups**.
 
@@ -173,13 +174,13 @@ With inbound settings, you select which external users and groups will be able t
 
 1. *If you're configuring settings for an organization*, select one of these options:
 
-   - **Default settings**: The organization will use the settings configured on the **Default** settings tab. If customized settings were already configured for this organization, you'll need to select **Yes** to confirm that you want all settings to be replaced by the default settings. Then select **Save**, and skip the rest of the steps in this procedure.
+   - **Default settings**: The organization uses the settings configured on the **Default** settings tab. If customized settings were already configured for this organization, you need to select **Yes** to confirm that you want all settings to be replaced by the default settings. Then select **Save**, and skip the rest of the steps in this procedure.
 
-   - **Customize settings**: You can customize the settings for this organization, which will be enforced for this organization instead of the default settings. Continue with the rest of the steps in this procedure.
+   - **Customize settings**: You can customize the settings to enforce for this organization instead of the default settings. Continue with the rest of the steps in this procedure.
 
 1. Select one or more of the following options:
 
-   - **Trust multi-factor authentication from Microsoft Entra tenants**: Select this checkbox if your Conditional Access policies require multi-factor authentication (MFA). This setting allows your Conditional Access policies to trust MFA claims from external organizations. During authentication, Microsoft Entra ID will check a user's credentials for a claim that the user has completed MFA. If not, an MFA challenge will be initiated in the user's home tenant.  
+   - **Trust multi-factor authentication from Microsoft Entra tenants**: Select this checkbox if your Conditional Access policies require multifactor authentication (MFA). This setting allows your Conditional Access policies to trust MFA claims from external organizations. During authentication, Microsoft Entra ID checks a user's credentials for a claim that the user completed MFA. If not, an MFA challenge is initiated in the user's home tenant.  
 
    - **Trust compliant devices**: Allows your Conditional Access policies to trust compliant device claims from an external organization when their users access your resources.
 
@@ -189,7 +190,7 @@ With inbound settings, you select which external users and groups will be able t
 
 1. (This step applies to **Organizational settings** only.) Review the **Automatic redemption** option:
 
-   - **Automatically redeem invitations with the tenant** &lt;tenant&gt;: Check this setting if you want to automatically redeem invitations. If so, users from the specified tenant won't have to accept the consent prompt the first time they access this tenant using cross-tenant synchronization, B2B collaboration, or B2B direct connect. This setting will only suppress the consent prompt if the specified tenant checks this setting for outbound access as well.
+   - **Automatically redeem invitations with the tenant** &lt;tenant&gt;: Check this setting if you want to automatically redeem invitations. If so, users from the specified tenant won't have to accept the consent prompt the first time they access this tenant using cross-tenant synchronization, B2B collaboration, or B2B direct connect. This setting only suppresses the consent prompt if the specified tenant checks this setting for outbound access as well.
 
     ![Screenshot that shows the inbound Automatic redemption check box.](~/media/external-identities/inbound-consent-prompt-setting.png)
 
@@ -200,7 +201,7 @@ With inbound settings, you select which external users and groups will be able t
 
 ## Modify outbound access settings
 
-With outbound settings, you select which of your users and groups will be able to access the external applications you choose. The detailed steps for modifying outbound cross-tenant access settings are the same whether you're configuring default or organization-specific settings. As described in this section, navigate to the **Default** tab or an organization on the **Organizational settings** tab, and then make your changes.
+With outbound settings, you select which of your users and groups are able to access the external applications you choose. The detailed steps for modifying outbound cross-tenant access settings are the same whether you're configuring default or organization-specific settings. As described in this section, navigate to the **Default** tab or an organization on the **Organizational settings** tab, and then make your changes.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
 
@@ -218,7 +219,7 @@ With outbound settings, you select which of your users and groups will be able t
 
 1. *If you're configuring settings for an organization,* select one of these options:
 
-   - **Default settings**: The organization will use the settings configured on the **Default** settings tab. If customized settings were already configured for this organization, you'll need to select **Yes** to confirm that you want all settings to be replaced by the default settings. Then select **Save**, and skip the rest of the steps in this procedure.
+   - **Default settings**: The organization uses the settings configured on the **Default** settings tab. If customized settings were already configured for this organization, you need to select **Yes** to confirm that you want all settings to be replaced by the default settings. Then select **Save**, and skip the rest of the steps in this procedure.
 
    - **Customize settings**: You can customize the settings for this organization, which will be enforced for this organization instead of the default settings. Continue with the rest of the steps in this procedure.
 
@@ -290,7 +291,7 @@ With outbound settings, you select which of your users and groups will be able t
 
 ## Remove an organization
 
-When you remove an organization from your Organizational settings, the default cross-tenant access settings will go into effect for that organization.
+When you remove an organization from your Organizational settings, the default cross-tenant access settings go into effect for that organization.
 
 > [!NOTE]
 > If the organization is a cloud service provider for your organization (the isServiceProvider property in the Microsoft Graph [partner-specific configuration](/graph/api/resources/crosstenantaccesspolicyconfigurationpartner) is true), you won't be able to remove the organization.

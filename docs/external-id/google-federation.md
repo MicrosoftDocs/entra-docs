@@ -7,13 +7,14 @@ description: Federate with Google to enable guest users to sign in to your Micro
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: how-to
-ms.date: 11/28/2023
+ms.date: 01/23/2024
 
 ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.custom: it-pro, seo-update-azuread-jan, has-adal-ref, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.collection: M365-identity-device-management
+#customer intent: As a B2B collaboration administrator, I want to add Google as an identity provider, so that invited users can sign in to shared apps and resources using their Gmail accounts.
 ---
 
 # Add Google as an identity provider for B2B guest users
@@ -60,7 +61,7 @@ You can also give Google guest users a direct link to an application or resource
 
 Starting September 30, 2021, Google is [deprecating embedded web-view sign-in support](https://developers.googleblog.com/2021/06/upcoming-security-changes-to-googles-oauth-2.0-authorization-endpoint.html). If your apps authenticate users with an embedded web-view and you're using Google federation with [Azure AD B2C](/azure/active-directory-b2c/identity-provider-google) or Microsoft Entra B2B for [external user invitations](google-federation.md) or [self-service sign-up](identity-providers.md), Google Gmail users won't be able to authenticate.
 
-The following are known scenarios that will impact Gmail users:
+The following are known scenarios that affect Gmail users:
 - Microsoft apps (for example, Teams and Power Apps) on Windows 
 - Windows apps that use the [WebView](/windows/communitytoolkit/controls/wpf-winforms/webview) control, [WebView2](/microsoft-edge/webview2/), or the older WebBrowser control, for authentication. These apps should migrate to using the Web Account Manager (WAM) flow.
 - Android applications using the WebView UI element 

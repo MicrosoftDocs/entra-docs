@@ -5,13 +5,14 @@ description: Use Microsoft cloud settings to enable cross-cloud B2B collaboratio
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: how-to
-ms.date: 01/19/2024
+ms.date: 01/23/2024
 
 ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.custom: "it-pro"
 ms.collection: M365-identity-device-management
+#customer intent: As an admin configuring B2B collaboration between partner organizations in different Microsoft Azure clouds, I want to enable collaboration with the partner's cloud, add the partner to my organizational settings, and configure inbound and outbound settings, so that Microsoft Entra B2B collaboration between the organizations is enabled.
 ---
 
 # Configure Microsoft cloud settings for B2B collaboration
