@@ -31,7 +31,7 @@ You'll learn how to:
     - To use Microsoft-hosted agents, your Azure DevOps organization must have access to Microsoft-hosted parallel jobs. [Check your parallel jobs and request a free grant](/azure/devops/pipelines/troubleshooting/troubleshooting#check-for-available-parallel-jobs).
 - A Microsoft Entra [tenant](./quickstart-create-new-tenant.md).
 - A [GitHub account](https://github.com) and Git [setup locally](https://docs.github.com/en/get-started/quickstart/set-up-git).
-- .NET 6.0 or later.
+- A minimum requirement of [.NET 6.0 SDK](https://dotnet.microsoft.com/download/dotnet).
 
 ## Create a sample ASP.NET Core web app
 

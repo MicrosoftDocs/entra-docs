@@ -27,7 +27,7 @@ We also have a [tutorial for Blazor Server](tutorial-blazor-server.md).
 
 ## Prerequisites
 
-- [.NET 7](https://dotnet.microsoft.com/download/dotnet/7.0)
+- [.NET 7 SDK](https://dotnet.microsoft.com/download/dotnet/7.0)
 - A Microsoft Entra tenant where you can register an app. If you don't have access to a Microsoft Entra tenant, you can get one by registering with the [Microsoft 365 Developer Program](https://developer.microsoft.com/microsoft-365/dev-program) or by creating an [Azure free account](https://azure.microsoft.com/free).
 
 ## Register the app

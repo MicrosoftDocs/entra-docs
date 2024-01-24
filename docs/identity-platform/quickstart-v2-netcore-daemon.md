@@ -29,7 +29,7 @@ ms.topic: conceptual
 >
 > ## Prerequisites
 >
-> [.NET SDK](https://dotnet.microsoft.com/download).
+> A minimum requirement of [.NET 6.0 SDK](https://dotnet.microsoft.com/download/dotnet).
 >
 > > [!div class="sxs-lookup"]
 > ### Download and configure your quickstart app

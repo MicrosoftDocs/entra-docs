@@ -23,7 +23,7 @@ The following diagram shows how the sample app works:
 
 ## Prerequisites
 
-[.NET SDK](https://dotnet.microsoft.com/download).
+A minimum requirement of [.NET 7.0 SDK](https://dotnet.microsoft.com/download).
 
 ## Register and download the app
 

@@ -21,7 +21,7 @@ The following quickstart uses a ASP.NET Core web API code sample to demonstrate 
 
 - Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 - [Microsoft Entra tenant](quickstart-create-new-tenant.md)
-- [.NET SDK](https://dotnet.microsoft.com/)
+- A minimum requirement of [.NET 6.0 SDK](https://dotnet.microsoft.com/download/dotnet)
 - [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) or [Visual Studio Code](https://code.visualstudio.com/)
 
 ## Step 1: Register the application
