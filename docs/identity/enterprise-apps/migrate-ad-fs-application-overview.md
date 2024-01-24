@@ -49,6 +49,10 @@ Applications are categorized into following migration statuses:
 
 Application readiness is evaluated based on following predefined AD FS application configuration tests. The tests are run automatically and the results are displayed in the AD FS application migration dashboard as a **Migration status**. If the AD FS configuration isn't compatible with a Microsoft Entra configuration, you get specific guidance on how to address the configuration in Microsoft Entra ID.
 
+## AD FS application migration insights status updates
+
+Once there is an update to the application, internal agents syncs the updates within few minutes. However, AD FS migration insights jobs responsible for evaluating the updates and computes new migration status. Those jobs are scheduled to run every 24 hours, which means data will be computed only once in a day at around 00:00 UTC timezone.
+
 |Result  |Pass/Warning/Fail  |Description  |
 |---------|---------|---------|
 |Test-ADFSRPAdditionalAuthenticationRules <br> At least one nonmigratable rule was detected for AdditionalAuthentication.       | Pass/Warning          | The relying party has rules to prompt for multifactor authentication. To move to Microsoft Entra ID, translate those rules into Conditional Access policies. If you're using an on-premises MFA, we recommend that you move to Microsoft Entra multifactor authentication. [Learn more about Conditional Access](~/identity/authentication/concept-mfa-howitworks.md).        |
