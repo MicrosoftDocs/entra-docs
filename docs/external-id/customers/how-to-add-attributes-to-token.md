@@ -8,7 +8,7 @@ ms.service: active-directory
  
 ms.subservice: ciam
 ms.topic: how-to
-ms.date: 01/07/2024
+ms.date: 01/19/2024
 ms.author: mimart
 ms.custom: it-pro
 
@@ -63,7 +63,7 @@ You can specify which built-in or custom attributes you want to include as claim
 
 1. On the **Attributes & Claims** page, select **Add new claim**.
 1. Enter a **Name**.
-1. Next to **Source**, select **Directory schema extension (Preview)**.
+1. Next to **Source**, select **Directory schema extension**.
 
     :::image type="content" source="media/how-to-add-attributes-to-token/manage-claim-directory-schema.png" alt-text="Screenshot of the Directory schema extension option.":::
 

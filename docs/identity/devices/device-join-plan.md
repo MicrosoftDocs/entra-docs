@@ -181,7 +181,7 @@ Starting with the Windows 10 2004 update, users can also use remote desktop from
 
 ### RADIUS and Wi-Fi authentication
 
-Currently, Microsoft Entra joined devices don't support RADIUS authentication for connecting to Wi-Fi access points, since RADIUS relies on presence of an on-premises computer object. As an alternative, you can use certificates pushed via Intune or user credentials to authenticate to Wi-Fi. 
+Currently, Microsoft Entra joined devices don't support RADIUS authentication using an on-premises computer object and certificate for connecting to Wi-Fi access points, since RADIUS relies on presence of an on-premises computer object in this scenario. As an alternative, you can use certificates pushed via Intune or user credentials to authenticate to Wi-Fi. 
 
 ## Understand your provisioning options
 **Note**: Microsoft Entra joined devices can’t be deployed using  System Preparation Tool (Sysprep) or similar imaging tools

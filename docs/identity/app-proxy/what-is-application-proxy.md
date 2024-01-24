@@ -88,7 +88,7 @@ There are several ways to configure an application for single sign-on, and the m
 
 App Proxy works with apps that use the following native authentication protocol:
 
-* [**Integrated Windows authentication (IWA)**](./application-proxy-configure-single-sign-on-with-kcd.md). For IWA, the Application Proxy connectors use Kerberos Constrained Delegation (KCD) to authenticate users to the Kerberos application.
+* [**Integrated Windows authentication (IWA)**](./how-to-configure-sso-with-kcd.md). For IWA, the Application Proxy connectors use Kerberos Constrained Delegation (KCD) to authenticate users to the Kerberos application.
 
 App Proxy also supports the following authentication protocols with third-party integration or in specific configuration scenarios:
 
@@ -156,7 +156,7 @@ Setup and registration between a connector and the App Proxy service is accompli
 3. The connector starts to "listen" to the App Proxy service.
 4. The admin adds the on-premises application to Microsoft Entra ID and configures settings such as the URLs users need to connect to their apps.
 
-For more information, see [Plan a Microsoft Entra application proxy deployment](./application-proxy-deployment-plan.md).
+For more information, see [Plan a Microsoft Entra application proxy deployment](./conceptual-deployment-plan.md).
 
 It's recommended that you always deploy multiple connectors for redundancy and scale. The connectors, in conjunction with the service, take care of all the high availability tasks and can be added or removed dynamically. Each time a new request arrives it's routed to one of the connectors that is available. When a connector is running, it remains active as it connects to the service. If a connector is temporarily unavailable, it doesn't respond to this traffic. Unused connectors are tagged as inactive and removed after 10 days of inactivity.
 
@@ -202,5 +202,5 @@ Organizations should begin taking advantage of App Proxy today to take advantage
 
 ## Next steps
 
-* For information about planning, operating, and managing Microsoft Entra application proxy, see [Plan a Microsoft Entra application proxy deployment](./application-proxy-deployment-plan.md).
+* For information about planning, operating, and managing Microsoft Entra application proxy, see [Plan a Microsoft Entra application proxy deployment](./conceptual-deployment-plan.md).
 * To schedule a live demo or get a free 90-day trial for evaluation, see [Getting started with Enterprise Mobility + Security](https://www.microsoft.com/cloud-platform/enterprise-mobility-security-trial).

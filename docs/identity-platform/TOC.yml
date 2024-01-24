@@ -179,7 +179,7 @@
         - name: ASP.NET 
           href: quickstart-web-app-aspnet-sign-in.md
         - name: ASP.NET Core
-          href: quickstart-web-app-aspnet-core-sign-in.md
+          href: quickstart-web-app-dotnet-core-sign-in.md
         - name: Node.js - MSAL
           href: quickstart-web-app-nodejs-msal-sign-in.md
         - name: Java
@@ -188,7 +188,7 @@
           href: quickstart-web-app-python-sign-in.md
     - name: Tutorials
       items:
-        - name: ASP.NET
+        - name: ASP.NET Core
           items:
           - name: Register your app
             href: tutorial-web-app-dotnet-register-app.md
@@ -504,10 +504,12 @@
               href: optional-claims.md
             - name: Configure role claim
               href: enterprise-app-role-management.md
-            - name: Customize JWT claims
+            - name: Customize JWT claims using admin center
               href: jwt-claims-customization.md
-            - name: Customize SAML claims
+            - name: Customize SAML claims using admin center
               href: saml-claims-customization.md
+            - name: Customize claims using PowerShell
+              href: claims-customization-powershell.md
             - name: Set an access token lifetime policy
               href: configure-token-lifetimes.md    
             - name: Configure app multi-instancing
@@ -576,8 +578,6 @@
           href: test-setup-environment.md
         - name: Run automated integration tests as a user
           href: test-automate-integration-testing.md
-        - name: Throttling and service limits
-          href: test-throttle-service-limits.md
         - name: Create a service principal using the Azure portal
           href: howto-create-service-principal-portal.md
         - name: Create a service principal using Azure PowerShell

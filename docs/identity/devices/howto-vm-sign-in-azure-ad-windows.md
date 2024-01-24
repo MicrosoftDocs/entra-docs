@@ -454,19 +454,7 @@ Another MFA-related error message is the one described previously: "Your credent
 
 ![Screenshot of the message that says your credentials didn't work.](./media/howto-vm-sign-in-azure-ad-windows/your-credentials-did-not-work.png)
 
-If you've configured a legacy per-user **Enabled/Enforced Microsoft Entra multifactor authentication** setting and you see the error above, you can resolve the problem by removing the per-user MFA setting through these commands:
-
-```
-# Get StrongAuthenticationRequirements configure on a user
-(Get-MsolUser -UserPrincipalName username@contoso.com).StrongAuthenticationRequirements
- 
-# Clear StrongAuthenticationRequirements from a user
-$mfa = @()
-Set-MsolUser -UserPrincipalName username@contoso.com -StrongAuthenticationRequirements $mfa
- 
-# Verify StrongAuthenticationRequirements are cleared from the user
-(Get-MsolUser -UserPrincipalName username@contoso.com).StrongAuthenticationRequirements
-```
+If you've configured a legacy per-user **Enabled/Enforced Microsoft Entra multifactor authentication** setting and you see the error above, you can resolve the problem by removing the per-user MFA setting. For more information, see the article [Enable per-user Microsoft Entra multifactor authentication to secure sign-in events](../authentication/howto-mfa-userstates.md).
 
 If you haven't deployed Windows Hello for Business and if that isn't an option for now, you can configure a Conditional Access policy that excludes the Microsoft Azure Windows Virtual Machine Sign-In app from the list of cloud apps that require MFA. To learn more about Windows Hello for Business, see [Windows Hello for Business overview](/windows/security/identity-protection/hello-for-business/hello-identity-verification).
 

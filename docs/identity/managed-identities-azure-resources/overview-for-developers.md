@@ -5,11 +5,9 @@ services: active-directory
 documentationcenter:
 author: barclayn
 manager: amycolannino
-editor:
 ms.assetid: 0232041d-b8f5-4bd2-8d11-27999ad69370
 ms.service: active-directory
 ms.subservice: msi
-ms.devlang:
 ms.topic: overview
 ms.custom: mvc
 ms.date: 06/15/2022

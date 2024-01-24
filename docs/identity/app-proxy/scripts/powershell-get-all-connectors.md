@@ -9,7 +9,7 @@ ms.subservice: app-proxy
 ms.workload: identity
 ms.custom: has-azure-ad-ps-ref
 ms.topic: sample
-ms.date: 08/29/2022
+ms.date: 01/04/2024
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
@@ -22,23 +22,73 @@ This PowerShell script example lists all Microsoft Entra application proxy conne
 
 [!INCLUDE [updated-for-az](~/../azure-docs-pr/includes/updated-for-az.md)]
 
-[!INCLUDE [cloud-shell-try-it.md](~/../azure-docs-pr/includes/cloud-shell-try-it.md)]
-
-This sample requires the [Azure Active Directory PowerShell 2.0 for Graph module](/powershell/azure/active-directory/install-adv2) or the [Azure Active Directory PowerShell 2.0 for Graph module preview version](/powershell/azure/active-directory/install-adv2?view=azureadps-2.0-preview&preserve-view=true) (AzureADPreview).
+This sample requires the [Microsoft Graph Beta PowerShell module](/powershell/microsoftgraph/installation) 2.10 or newer.
 
 ## Sample script
 
-[!code-azurepowershell[main](~/../powershell_scripts/application-proxy/get-all-connectors.ps1 "Get all connector groups and connectors in the directory")]
+```powershell
+# This sample script gets all Microsoft Entra application proxy Connector groups with the included connectors.
+#
+# Version 1.0
+#
+# This script requires PowerShell 5.1 (x64) or beyond and one of the following modules:
+#
+# Microsoft.Graph.Beta ver 2.10 or newer
+#
+# Before you begin:
+#    
+#    Required Microsoft Entra role: Global Administrator or Application Administrator or Application Developer 
+#    or appropriate custom permissions as documented https://learn.microsoft.com/en-us/azure/active-directory/roles/custom-enterprise-app-permissions
+#
+# 
+
+Import-Module Microsoft.Graph.Beta.Applications
+
+Connect-MgGraph -Scope Directory.Read.All -NoWelcome
+
+Write-Host "Reading Microsoft Entra application proxy connector groups. This operation might take longer..." -BackgroundColor "Black" -ForegroundColor "Green"
+
+$aadapConnectorGroups= Get-MgBetaOnPremisePublishingProfileConnectorGroup -OnPremisesPublishingProfileId "applicationProxy" -Top 100000 
+
+$countAssignedApps, $CountOfConnectorGroups = 0
+
+foreach ($item in $aadapConnectorGroups) {
+   
+     If ($item.ConnectorGroupType -eq "applicationProxy") {
+
+     Write-Host "Connector group: " $item.Name, "(Id:" $item.Id ")" -BackgroundColor "Black" -ForegroundColor "White" 
+     Write-Host "Region: " $item.Region
+     
+     Write-Host " "
+
+     $connectors = Get-MgBetaOnPremisePublishingProfileConnectorGroupMember -ConnectorGroupId $item.Id -OnPremisesPublishingProfileId "applicationProxy" 
+
+     $connectors | ft
+
+     " ";
+
+     $CountOfConnectorGroups = $CountOfConnectorGroups + 1
+
+     }
+}  
+
+Write-Host ("")
+Write-Host ("Number of Microsoft Entra application proxy Connector Groups: $CountOfConnectorGroups")
+Write-Host ("")
+Write-Host ("Finished.") -BackgroundColor "Black" -ForegroundColor "Green"
+Write-Host "To disconnect from Microsoft Graph, please use the Disconnect-MgGraph cmdlet."
+```
 
 ## Script explanation
 
 | Command | Notes |
 |---|---|
-| [Get-AzureADApplicationProxyConnectorGroup](/powershell/module/azuread/get-azureadapplicationproxyconnectorgroup) | Retrieves a list of all connector groups, or if specified, details of the specified connector group. |
-| [Get-AzureADApplicationProxyConnectorGroupMembers](/powershell/module/azuread/get-azureadapplicationproxyconnectorgroupmembers) | Gets all Application Proxy connectors associated with each connector group.|
+|[Connect-MgGraph](/powershell/module/microsoft.graph.authentication/connect-mggraph)| Connects to Microsoft Graph |
+|[Get-MgBetaOnPremisePublishingProfileConnectorGroup](/powershell/module/microsoft.graph.beta.applications/get-mgbetaonpremisepublishingprofileconnectorgroup)| Gets a connector group |
+|[Get-MgBetaOnPremisePublishingProfileConnectorGroupMember](/powershell/module/microsoft.graph.beta.applications/get-mgbetaonpremisepublishingprofileconnectorgroupmember)|Gets the members of a connector group |
 
 ## Next steps
 
-For more information on the Azure AD PowerShell module, see [Azure AD PowerShell module overview](/powershell/azure/active-directory/overview).
+For more information on the Microsoft Graph PowerShell module, see [Microsoft Graph PowerShell overview](/powershell/microsoftgraph/overview).
 
-For other PowerShell examples for Application Proxy, see [Azure AD PowerShell examples for Microsoft Entra application proxy](../application-proxy-powershell-samples.md).
+For other PowerShell examples for Application Proxy, see [Microsoft Entra application proxy PowerShell examples](../application-proxy-powershell-samples.md).

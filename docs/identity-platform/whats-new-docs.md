@@ -16,6 +16,10 @@ ms.topic: reference
 
 Welcome to what's new in the Microsoft identity platform documentation. This article lists new articles that were added or had significant updates in the last three months.
 
+## December 2023
+
+No new or updated articles.
+
 ## November 2023
 
 ### New articles
@@ -38,26 +42,3 @@ Welcome to what's new in the Microsoft identity platform documentation. This art
 ### Updated articles
 
 - [Tutorial: Access Microsoft Graph from a secured app as the user](multi-service-web-app-access-microsoft-graph-as-user.md) - Updating URLs
-
-## September 2023
-
-### New articles
-
-- [Tutorial: Call an API from a React single-page app](tutorial-single-page-app-react-call-api.md) - Get user data from web API
-
-### Updated articles
-
-- [Access tokens in the Microsoft identity platform](access-tokens.md) - Rebranding of Azure Active Directory to Microsoft Entra
-- [Add app roles to your application and receive them in the token](howto-add-app-roles-in-apps.md) - Add clarity to distinguish between app and user roles
-- [How and why applications are added to Microsoft Entra ID](how-applications-are-added.md) - Rebranding of Azure Active Directory to Microsoft Entra
-- [Making your application multitenant](howto-convert-app-to-be-multi-tenant.md) - Rebranding of Azure Active Directory to Microsoft Entra
-- [Microsoft Entra app manifest](reference-app-manifest.md) - Rebranding of Azure Active Directory to Microsoft Entra
-- [Microsoft Entra authentication and authorization error codes](reference-error-codes.md) - Rebranding of Azure Active Directory to Microsoft Entra
-- [Quickstart: Sign in users in a single-page app (SPA) and call the Microsoft Graph API using Angular](quickstart-single-page-app-angular-sign-in.md) - Update SPA quickstarts to use new code sample
-- [Quickstart: Sign in users in a single-page app (SPA) and call the Microsoft Graph API using JavaScript](quickstart-single-page-app-javascript-sign-in.md) - Update SPA quickstarts to use new code sample
-- [Quickstart: Sign in users in a single-page app (SPA) and call the Microsoft Graph API using React](quickstart-single-page-app-react-sign-in.md) - Update SPA quickstarts to use new code sample
-- [Quickstart: Sign in users and call the Microsoft Graph API from an ASP.NET Core web app](quickstart-web-app-aspnet-core-sign-in.md) - Update ASP.NET quickstart to use new code sample
-- [Quickstart: Configure an application to expose a web API](quickstart-configure-app-expose-web-apis.md) - Rebranding of Azure Active Directory to Microsoft Entra
-- [Single sign-on SAML protocol](single-sign-on-saml-protocol.md) - Rebranding of Azure Active Directory to Microsoft Entra
-- [Tutorial: Prepare a Single-page application for authentication](tutorial-single-page-app-react-prepare-spa.md) - Add clarity to the content
-

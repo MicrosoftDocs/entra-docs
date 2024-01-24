@@ -74,18 +74,22 @@ The related information exists for the following device platforms:
 [!INCLUDE [Get-AzureAD](../../includes/entra-authentication-get-trusted.md)]
 
 
-### Add
+To add, modify, or remove a CA, use the Microsoft Entra admin center:
 
-[!INCLUDE [New-AzureAD](../../includes/entra-authentication-new-trusted.md)]
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Browse to **Protection** > **Show more** > **Security Center** (or **Identity Secure Score**) > **Certificate authorities**.
+1. To upload a CA, select **Upload**: 
+   1. Select the CA file.
+   1. Select **Yes** if the CA is a root certificate, otherwise select **No**.
+   1. For **Certificate Revocation List URL**, set the internet-facing URL for the CA base CRL that contains all revoked certificates. If the URL isn't set, authentication with revoked certificates won't fail.
+   1. For **Delta Certificate Revocation List URL**, set the internet-facing URL for the CRL that contains all revoked certificates since the last base CRL was published.
+   1. Select **Add**.
 
-### Remove
+      :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/upload-certificate-authority.png" alt-text="Screenshot of how to upload certification authority file.":::
 
-[!INCLUDE [Remove-AzureAD](../../includes/entra-authentication-remove-trusted.md)]
+1. To delete a CA certificate, select the certificate and select **Delete**.
+1. Select **Columns** to add or delete columns.
 
-
-### Modify
-
-[!INCLUDE [Set-AzureAD](../../includes/entra-authentication-set-trusted.md)]
 
 ## Step 3: Configure revocation
 

@@ -1,23 +1,23 @@
 ---
-title: Troubleshoot Microsoft Entra authentication strength 
-description: Learn how to resolve errors when using Microsoft Entra authentication strength.
+title: Troubleshoot Conditional Access authentication strength 
+description: Learn how to resolve errors when using Microsoft Entra Conditional Access authentication strength.
 
 services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
-ms.topic: troubleshooting
-ms.date: 09/27/2023
+ms.topic: conceptual
+ms.date: 01/12/2024
 
 ms.author: justinha
-author: justinha
+author: inbarckms
 manager: amycolannino
-ms.reviewer: inbarckms
+ms.reviewer: inbarc
 
 ms.collection: M365-identity-device-management
 ---
-# Troubleshoot Microsoft Entra authentication strength
+# Troubleshoot Conditional Access authentication strength
 
-This topic covers errors you might see when you use Microsoft Entra authentication strength and how to resolve them.  
+This topic covers errors you might see when you use Microsoft Entra Conditional Access authentication strength and how to resolve them.  
 
 ## A user is asked to sign in with another method, but they don't see a method they expect
 
@@ -28,7 +28,7 @@ For sign in, the authentication method needs to be:
 - Registered for the user 
 - Enabled by the Authentication methods policy 
 
-For more information, see [How Conditional Access Authentication strength policies are used in combination with the Authentication methods policy](concept-authentication-strengths.md#how-authentication-strength-works-with-the-authentication-methods-policy).
+For more information, see [How Conditional Access authentication strength works](concept-authentication-strength-how-it-works.md).
 
 To verify if a method can be used:
 
@@ -57,17 +57,16 @@ Use the **Sign-ins** log to find more information about the sign-in:
 
   :::image type="content" source="./media/troubleshoot-authentication-strengths/sign-in-logs-control.png" alt-text="Screenshot showing the authentication strength under Conditional Access Policy details in the sign-in log.":::
 
-## Users can't use their FIDO2 security key to sign in
-An Authentication Policy Administrator can restrict access to specific security keys. When a user tries to sign in by using a key they can't use, this **You can't get there from here** message appears. The user has to restart the session, and sign-in with a different FIDO2 security key.
-
-:::image type="content" border="true" source="./media/troubleshoot-authentication-strengths/restricted-security-key.png" alt-text="Screenshot of a sign-in error when using a restricted FIDO2 security key.":::
 
 ## A user can't register a new method during sign-in 
 
-Some methods can't be registered during sign-in, or they need more setup beyond the combined registration. For more information, see [Register passwordless authentication methods](concept-authentication-strengths.md#register-passwordless-authentication-methods).
+Some methods can't be registered during sign-in, or they need more setup beyond the combined registration. For more information, see [Register passwordless authentication methods](concept-authentication-strength-how-it-works.md#register-passwordless-authentication-methods).
  
 :::image type="content" border="true" source="./media/troubleshoot-authentication-strengths/register.png" alt-text="Screenshot of a sign-in error when they are unable to register the method."::: 
 
 ## Next steps
 
-- [Conditional Access authentication strength](concept-authentication-strengths.md)
+- [Built-in Conditional Access authentication strengths](concept-authentication-strengths.md)
+- [Custom Conditional Access authentication strengths](concept-authentication-strength-advanced-options.md)
+- [How authentication strength works for external users](concept-authentication-strength-external-users.md)
+

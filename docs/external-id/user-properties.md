@@ -21,7 +21,7 @@ B2B collaboration is a capability of Microsoft Entra External ID that lets you c
 
 The following table describes B2B collaboration users based on how they authenticate (internally or externally) and their relationship to your organization (guest or member).
 
-![Diagram showing B2B collaboration users.](media/user-properties/table-user-properties.png)
+:::image type="content" source="media/user-properties/table-user-properties.png" alt-text="Diagram showing B2B collaboration users.":::
 
 - **External guest**: Most users who are commonly considered external users or guests fall into this category. This B2B collaboration user has an account in an external Microsoft Entra organization or an external identity provider (such as a social identity), and they have guest-level permissions in the resource organization. The user object created in the resource Microsoft Entra directory has a UserType of Guest.
 - **External member**: This B2B collaboration user has an account in an external Microsoft Entra organization or an external identity provider (such as a social identity) and member-level access to resources in your organization. This scenario is common in organizations consisting of multiple tenants, where users are considered part of the larger organization and need member-level access to resources in the organization’s other tenants. The user object created in the resource Microsoft Entra directory has a UserType of Member.
@@ -43,7 +43,7 @@ Now, let's see what a Microsoft Entra B2B collaboration user looks like in Micro
 
 B2B collaboration user accounts are the result of inviting guest users to collaborate by using the guest users' own credentials. When the invitation is initially sent to the guest user, an account is created in your tenant. This account doesn’t have any credentials associated with it because authentication is performed by the guest user's identity provider. The **Identities** property for the guest user account in your directory is set to the host's organization domain until the guest redeems their invitation. The user sending the invitation is added as a default value for the **Sponsor** (preview) attribute on the guest user account. In the admin center, the invited user’s profile will show an **External user state** of **PendingAcceptance**. Querying for `externalUserState` using the Microsoft Graph API will return `Pending Acceptance`.
 
-![Screenshot of user profile before redemption.](media/user-properties/before-redemption.png)
+:::image type="content" source="media/user-properties/before-redemption.png" alt-text="Screenshot of user profile before redemption.":::
 
 ### After invitation redemption
 
@@ -51,7 +51,7 @@ After the B2B collaboration user accepts the invitation, the **Identities** prop
 
 - If the B2B collaboration user is using a Microsoft account or credentials from another external identity provider, **Identities** reflects the identity provider, for example **Microsoft Account**, **google.com**, or **facebook.com**.
 
-   ![Screenshot of user profile after redemption.](media/user-properties/after-redemption-state-1.png)
+   :::image type="content" source="media/user-properties/after-redemption-state-1.png" alt-text="Screenshot of user profile after redemption.":::
 
 - If the B2B collaboration user is using credentials from another Microsoft Entra organization, **Identities** is **ExternalAzureAD**.
 
@@ -109,10 +109,9 @@ Typically, a Microsoft Entra B2B user and guest user are synonymous. Therefore, 
 
 In the **Users** list, you can use **Add filter** to display only the guest users in your directory.
 
-![Screenshot showing how to add a User type filter for guests.](media/user-properties/add-guest-filter.png)
+:::image type="content" source="media/user-properties/add-guest-filter.png" alt-text="Screenshot showing how to add a User type filter for guests.":::
 
-
-![Screenshot showing the filter for guest users.](media/user-properties/filter-guest-users.png)
+:::image type="content" source="media/user-properties/filter-guest-users.png" alt-text="Screenshot showing the filter for guest users.":::
 
 ## Convert UserType
 
@@ -126,7 +125,7 @@ B2B guest users are not supported in Microsoft Teams shared channels. For access
 
 There may be cases where you want to give your guest users higher privileges. You can add a guest user to any role and even remove the default guest user restrictions in the directory to give a user the same privileges as members. It's possible to turn off the default limitations so that a guest user in the company directory has the same permissions as a member user. For more information, check out the [Restrict guest access permissions in Microsoft Entra External ID](~/identity/users/users-restrict-guest-permissions.md) article.
 
-![Screenshot showing the External users option in the user settings.](media/user-properties/remove-guest-limitations.png)
+:::image type="content" source="media/user-properties/remove-guest-limitations.png" alt-text="Screenshot showing the External users option in the user settings.":::
 
 ## Can I make guest users visible in the Exchange Global Address List?
 

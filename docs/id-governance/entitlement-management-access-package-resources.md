@@ -5,7 +5,6 @@ services: active-directory
 documentationCenter: ''
 author: owinfreyatl
 manager: amycolannino
-editor: 
 ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
@@ -108,7 +107,7 @@ You can have entitlement management automatically add users to a group or a team
 - When a membership of a group or team is a resource role that's part of an access package and a user is assigned to that access package, the user is added as a member to that group or team, if not already present.
 - When a user's access package assignment expires, they're removed from the group or team, unless they currently have an assignment to another access package that includes that same group or team.
 
-You can select any [Microsoft Entra security group or Microsoft 365 Group](~/fundamentals/how-to-manage-groups.md). Administrators can add any group to a catalog; catalog owners can add any group to the catalog if they're owner of the group. Keep the following Microsoft Entra constraints in mind when selecting a group:
+You can select any [Microsoft Entra security group or Microsoft 365 Group](~/fundamentals/how-to-manage-groups.md). Users in an administrator role that can manage groups can add any group to a catalog; catalog owners can add any group to the catalog if they're owner of the group. Keep the following Microsoft Entra constraints in mind when selecting a group:
 
 - When a user, including a guest, is added as a member to a group or team, they can see all the other members of that group or team.
 - Microsoft Entra ID can't change the membership of a group that was synchronized from Windows Server Active Directory using Microsoft Entra Connect, or that was created in Exchange Online as a distribution group.  If you plan to manage access to applications that use AD security groups, see [how to set up group writeback with entitlement management](entitlement-management-group-writeback.md).
@@ -157,8 +156,8 @@ Applications can have multiple app roles defined in their manifest and managed t
 
 Once an app role is a resource of an access package:
 
-- When a user is assigned that access package, the user is added to that app role, if not already present.
-- When a user's access package assignment expires, their access is removed from the application, unless they have an assignment to another access package that includes that app role.
+- When a user is assigned that access package, the user is added to that app role, if not already present.  If the application requires attributes, the values of the attributes collected from the request will be written onto the user.
+- When a user's access package assignment expires, their access is removed from the application, unless they have an assignment to another access package that includes that app role.  If the application required attributes, those attributes will be removed from the user.
 
 Here are some considerations when selecting an application:
 

@@ -49,9 +49,6 @@ The Application Proxy connector is a Windows Server service that directs the tra
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Application proxy**.
 1. Select **Download connector service**. The **Application Proxy Connector Download** page appears.
-
-   ![Application proxy connector download](./media/application-proxy-configure-single-sign-on-with-ping-access/application-proxy-connector-download.png)
-
 1. Follow the installation instructions.
 
 Downloading the connector should automatically enable Application Proxy for your directory, but if not, you can select **Enable Application Proxy**.
