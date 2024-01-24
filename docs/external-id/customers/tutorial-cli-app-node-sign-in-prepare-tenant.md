@@ -1,5 +1,5 @@
 ---
-title: "Tutorial: Prepare your customer tenant to sign in users in a Node.js CLI application"
+title: "Tutorial: Prepare your customer tenant to sign in users in a Node.js CLI app"
 description: Learn how to register and configure a Node.js CLI application to signs in users in a Microsoft Entra ID for customers tenant
  
 author: Dickson-Mwendia
@@ -16,22 +16,21 @@ ms.custom: developer, devx-track-js
 #Customer intent: As a dev, devops, I want to learn how to register and configure a Node.js CLI application to signs in users in a Microsoft Entra ID for customers tenant
 ---
 
-# Prepare your customer tenant to sign in users in a Node.js CLI application
+# Tutorial: Prepare your customer tenant to sign in users in a Node.js CLI app
 
-In this tutorial series, you learn how to build a Node.js command line interface (CLI) application that authenticates users against Microsoft Entra ID for customers. The Node CLI application you build uses the [Microsoft Authentication Library for Node](/javascript/api/%40azure/msal-node) (MSAL Node) to handle authentication.
+This tutorial series demonstrates how to build a Node.js command line interface (CLI) and prepare it for authentication using the Microsoft Entra admin center. You'll use the [Microsoft Authentication Library for Node](/javascript/api/%40azure/msal-node) (MSAL Node) library to authenticate your app with your Microsoft Entra ID for customers tenant. Finally, you'll run the application and test the sign-in and sign-out experiences.
 
-In this article, the first of a three-part tutorial series, you'll;
+In this tutorial;;
 
 > [!div class="checklist"]
 >
-> - Register a Node.js CLI app in the Microsoft Entra admin center. 
-> - Configure the application's platform settings
-> - Grant permissions to the Node CLI app
+> - Register a Node.js CLI app in the Microsoft Entra admin center, and record its identifiers
+> - Define the platform and URLs
+> - Grant permissions to the Node CLI app to access the Microsoft Graph API
 > - Create a sign in and sign out user flow in Microsoft Entra admin center.
-> - Associate your Node.js CLI app with the user flow. 
+> - Associate your Node.js CLI app with a user flow. 
 
 ## Prerequisites
-
 
 - A Microsoft Entra ID for customers tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
 
@@ -66,4 +65,4 @@ Since this app signs in users, add delegated permissions. These permissions allo
 Prepare your app to sign in users in a Microsoft Entra ID for customers tenant:
 
 > [!div class="nextstepaction"]
-> [Prepare your app to sign in users >](tutorial-cli-app-node-sign-in-prepare-app.md)
+> [Part 2: Prepare a Node.js CLI application for authentication](tutorial-cli-app-node-sign-in-prepare-app.md)

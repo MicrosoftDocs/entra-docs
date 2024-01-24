@@ -94,7 +94,7 @@ items:
                 items:
                   - name: Prepare tenant
                     href: tutorial-single-page-app-vanillajs-prepare-tenant.md
-                  - name: Prepare app
+                  - name: Prepare a VanillaJS app
                     href: tutorial-single-page-app-vanillajs-prepare-app.md
                   - name: Configure app for authentication
                     href: tutorial-single-page-app-vanillajs-configure-authentication.md
@@ -104,9 +104,9 @@ items:
             items:
               - name: Sign in users
                 items:
-                  - name: Prepare external tenant
+                  - name: Prepare tenant
                     href: tutorial-single-page-app-react-sign-in-prepare-tenant.md
-                  - name: Create a React project
+                  - name: Create a React app
                     href: tutorial-single-page-app-react-sign-in-prepare-app.md
                   - name: Configure app for authentication
                     href: tutorial-single-page-app-react-sign-in-configure-authentication.md 
@@ -118,7 +118,7 @@ items:
                 items:
                   - name: Prepare tenant
                     href: tutorial-single-page-app-angular-sign-in-prepare-tenant.md
-                  - name: Prepare app
+                  - name: Create an Angular app
                     href: tutorial-single-page-app-angular-sign-in-prepare-app.md
                   - name: Configure app for authentication
                     href: tutorial-single-page-app-angular-sign-in-configure-authentication.md 
@@ -132,7 +132,7 @@ items:
                 items:
                   - name: Prepare tenant 
                     href: tutorial-web-app-node-sign-in-prepare-tenant.md
-                  - name: Prepare app 
+                  - name: Create a Node.js app
                     href: tutorial-web-app-node-sign-in-prepare-app.md
                   - name: Add sign-in and sign-out
                     href: tutorial-web-app-node-sign-in-sign-out.md
@@ -153,19 +153,19 @@ items:
                     href: how-to-web-app-node-sign-in-call-api-sign-in-acquire-access-token.md
                   - name: Call API 
                     href: how-to-web-app-node-sign-in-call-api-call-api.md
-          - name: ASP.NET
+          - name: ASP.NET Core
             items:
               - name: Sign in users
                 items:
                   - name: Prepare tenant
                     href: tutorial-web-app-dotnet-sign-in-prepare-tenant.md
-                  - name: Prepare app
+                  - name: Create an ASP.NET Core app
                     href: tutorial-web-app-dotnet-sign-in-prepare-app.md
                   - name: Sign in and sign out
                     href: tutorial-web-app-dotnet-sign-in-sign-out.md
       - name: Web API
         items: 
-          - name: Protect ASP.NET API
+          - name: Protect ASP.NET Core API
             items:
               - name: Build a protected API 
                 href: tutorial-protect-web-api-dotnet-core-build-app.md
@@ -181,7 +181,7 @@ items:
                     href: how-to-browserless-app-node-sign-in-overview.md
                   - name: Prepare tenant 
                     href: how-to-browserless-app-node-sign-in-prepare-tenant.md
-                  - name: Prepare app 
+                  - name: Create a Node.js app 
                     href: how-to-browserless-app-node-sign-in-prepare-app.md
                   - name: Add sign-in and sign-out
                     href: how-to-browserless-app-node-sign-in-sign-out.md

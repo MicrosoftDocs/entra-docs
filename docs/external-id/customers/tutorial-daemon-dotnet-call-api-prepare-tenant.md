@@ -29,31 +29,31 @@ In this tutorial, you learn how to:
 
 Microsoft Entra ID for customers tenant. If you don't already have one, [sign up for a free trial](https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl).
 
-## 1. Register a web API application
+## Register a web API application
 
 [!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/register-app/register-api-app.md)]
 
-## 2. Configure app roles
+## Configure app roles
 
 [!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/register-app/add-app-role.md)]
 
-## 3. Configure idtyp token claim
+## Configure idtyp token claim
 
 [!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/register-app/add-optional-claims-access.md)]
 
-## 4. Register the daemon app
+## Register the daemon app
 
 [!INCLUDE [active-directory-b2c-register-app](./includes/register-app/register-client-app-common.md)]
 
-## 5. Create a client secret
+## Create a client secret
 
 [!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/register-app/add-app-client-secret.md)]
 
-## 6. Grant API permissions to the daemon app
+## Grant API permissions to the daemon app
 
 [!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/register-app/grant-api-permissions-app-permissions.md)]
 
-## 6. Record your app registration details
+## Record your app registration details
 
 The next step after this tutorial is to build a daemon app that calls your web API. Ensure you have the following details:
 

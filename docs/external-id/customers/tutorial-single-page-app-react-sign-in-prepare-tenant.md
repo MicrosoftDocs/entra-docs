@@ -26,7 +26,7 @@ In this tutorial;
 > * Define the platform and URLs
 > * Grant permissions to the web application to access the Microsoft Graph API
 > * Create a sign-in and sign-out user flow in the Microsoft Entra admin center
-> * Associate your SPA with the user flow
+> * Associate your SPA with a user flow
 
 ## Prerequisites
 
