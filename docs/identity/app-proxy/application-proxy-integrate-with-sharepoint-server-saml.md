@@ -31,14 +31,14 @@ This process requires two Enterprise Applications. One is a SharePoint on-premis
 ## Prerequisites
 
 To complete this configuration, you need the following resources:
- - A SharePoint 2013 farm or newer. The SharePoint farm must be [integrated with Microsoft Entra ID](~/identity/saas-apps/sharepoint-on-premises-tutorial.md).
- - A Microsoft Entra tenant with a plan that includes Application Proxy. Learn more about [Microsoft Entra ID plans and pricing](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
- - A [custom, verified domain](~/fundamentals/add-custom-domain.md) in the Microsoft Entra tenant. The verified domain must match the SharePoint URL suffix.
- - An SSL certificate is required. See the details in [custom domain publishing](./application-proxy-configure-custom-domain.md).
- - On-premises Active Directory users must be synchronized with Microsoft Entra Connect, and must be configure to [sign in to Azure](~/identity/hybrid/connect/plan-connect-user-signin.md). 
- - For cloud-only and B2B guest users, you need to [grant access to a guest account to SharePoint on-premises in the Microsoft Entra admin center](~/identity/saas-apps/sharepoint-on-premises-tutorial.md#manage-guest-users-access).
- - An Application Proxy connector installed and running on a machine within the corporate domain.
-
+- A SharePoint 2013 farm or newer. The SharePoint farm must be [integrated with Microsoft Entra ID](~/identity/saas-apps/sharepoint-on-premises-tutorial.md).
+- A Microsoft Entra tenant with a plan that includes Application Proxy. Learn more about [Microsoft Entra ID plans and pricing](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
+- A Microsoft Office Web Apps Server farm to properly launch Office files from the on-premises SharePoint farm.
+- A [custom, verified domain](~/fundamentals/add-custom-domain.md) in the Microsoft Entra tenant. The verified domain must match the SharePoint URL suffix.
+- An SSL certificate is required. See the details in [custom domain publishing](./application-proxy-configure-custom-domain.md).
+- On-premises Active Directory users must be synchronized with Microsoft Entra Connect, and must be configure to [sign in to Azure](~/identity/hybrid/connect/plan-connect-user-signin.md). 
+- For cloud-only and B2B guest users, you need to [grant access to a guest account to SharePoint on-premises in the Microsoft Entra admin center](~/identity/saas-apps/sharepoint-on-premises-tutorial.md#manage-guest-users-access).
+- An Application Proxy connector installed and running on a machine within the corporate domain.
 
 <a name='step-1-integrate-sharepoint-on-premises-with-azure-ad'></a>
 
