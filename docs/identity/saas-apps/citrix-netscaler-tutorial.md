@@ -89,7 +89,7 @@ To enable Microsoft Entra SSO by using the Azure portal, complete these steps:
 
 1. On the **Set up Single Sign-On with SAML** pane, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
-   ![Edit Basic SAML Configuration](common/edit-urls.png)
+   ![Screenshot shows to edit Basic SAML Configuration.](common/edit-urls.png "Configuration")
 
 1. In the **Basic SAML Configuration** section, to configure the application in **IDP-initiated** mode, perform the following steps:
 
@@ -110,11 +110,11 @@ To enable Microsoft Entra SSO by using the Azure portal, complete these steps:
 
 1. On the **Set up Single Sign-On with SAML** pane, in the **SAML Signing Certificate** section, for **App Federation Metadata Url**, copy the URL and save it in Notepad.
 
-	![The Certificate download link](common/certificatebase64.png)
+	![Screenshot shows the Certificate download link.](common/certificatebase64.png "Certificate")
 
 1. In the **Set up Citrix ADC SAML Connector for Microsoft Entra ID** section, copy the relevant URLs based on your requirements.
 
-	![Copy configuration URLs](common/copy-configuration-urls.png)
+	![Screenshot shows to copy configuration URLs.](common/copy-configuration-urls.png "Metadata")
 
 <a name='create-an-azure-ad-test-user'></a>
 
@@ -166,7 +166,7 @@ To create a virtual server:
     
 1. Select **Add**.
 
-    ![Citrix ADC SAML Connector for Microsoft Entra configuration - Services pane.](./media/citrix-netscaler-tutorial/service.png "Service pane")
+    ![Screenshot of Citrix ADC SAML Connector for Microsoft Entra configuration - Services pane.](./media/citrix-netscaler-tutorial/service.png "Service pane")
 
 1. Set the following values for the web server that's running the applications:
 
@@ -192,7 +192,7 @@ To configure the load balancer:
 
 1. Select **OK**.
 
-    ![Citrix ADC SAML Connector for Microsoft Entra configuration - Basic Settings pane.](./media/citrix-netscaler-tutorial/basic.png "Basic Settings")
+    ![Screenshot of Citrix ADC SAML Connector for Microsoft Entra configuration - Basic Settings pane.](./media/citrix-netscaler-tutorial/basic.png "Basic Settings")
 
 ### Bind the virtual server
 
@@ -200,11 +200,11 @@ To bind the load balancer with the virtual server:
 
 1. In the **Services and Service Groups** pane, select **No Load Balancing Virtual Server Service Binding**.
 
-   ![Citrix ADC SAML Connector for Microsoft Entra configuration - Load Balancing Virtual Server Service Binding pane.](./media/citrix-netscaler-tutorial/binding.png "Binding")
+   ![Screenshot of Citrix ADC SAML Connector for Microsoft Entra configuration - Load Balancing Virtual Server Service Binding pane.](./media/citrix-netscaler-tutorial/binding.png "Binding")
 
 1. Verify the settings as shown in the following screenshot, and then select **Close**.
 
-   ![Citrix ADC SAML Connector for Microsoft Entra configuration - Verify the virtual server services binding.](./media/citrix-netscaler-tutorial/verify.png "Verify Binding")
+   ![Screenshot of Citrix ADC SAML Connector for Microsoft Entra configuration - Verify the virtual server services binding.](./media/citrix-netscaler-tutorial/verify.png "Verify Binding")
 
 ### Bind the certificate
 
@@ -212,11 +212,11 @@ To publish this service as TLS, bind the server certificate, and then test your 
 
 1. Under **Certificate**, select **No Server Certificate**.
 
-   ![Citrix ADC SAML Connector for Microsoft Entra configuration - Server Certificate pane.](./media/citrix-netscaler-tutorial/certificate.png "Certificate Pane")
+   ![Screenshot of Citrix ADC SAML Connector for Microsoft Entra configuration - Server Certificate pane.](./media/citrix-netscaler-tutorial/certificate.png "Certificate Pane")
 
 1. Verify the settings as shown in the following screenshot, and then select **Close**.
 
-   ![Citrix ADC SAML Connector for Microsoft Entra configuration - Verify the certificate.](./media/citrix-netscaler-tutorial/verify-certificate.png "Verify Certificate")
+   ![Screenshot of Citrix ADC SAML Connector for Microsoft Entra configuration - Verify the certificate.](./media/citrix-netscaler-tutorial/verify-certificate.png "Verify Certificate")
 
 <a name='citrix-adc-saml-connector-for-azure-ad-saml-profile'></a>
 
@@ -238,7 +238,7 @@ To create an authentication policy:
     * **Action**: Enter **SAML**, and then select **Add**.
     * **Expression**:  Enter **true**.     
     
-    ![Citrix ADC SAML Connector for Microsoft Entra configuration - Create Authentication Policy pane.](./media/citrix-netscaler-tutorial/policy.png "Policy pane")
+    ![Screenshot of Citrix ADC SAML Connector for Microsoft Entra configuration - Create Authentication Policy pane.](./media/citrix-netscaler-tutorial/policy.png "Policy pane")
 
 1. Select **Create**.
 
@@ -258,7 +258,7 @@ To create an authentication SAML server, go to the **Create Authentication SAML 
 
 1. Select **Create**.
 
-![Citrix ADC SAML Connector for Microsoft Entra configuration - Create Authentication SAML Server pane.](./media/citrix-netscaler-tutorial/authentication.png "Authentication")
+![Screenshot of Citrix ADC SAML Connector for Microsoft Entra configuration - Create Authentication SAML Server pane.](./media/citrix-netscaler-tutorial/authentication.png "Authentication")
 
 ### Create an authentication virtual server
 
@@ -286,15 +286,15 @@ Modify two sections for the authentication virtual server:
 
 1.	On the **Advanced Authentication Policies** pane, select **No Authentication Policy**.
 
-    ![Citrix ADC SAML Connector for Microsoft Entra configuration - Advanced Authentication Policies pane.](./media/citrix-netscaler-tutorial/advanced.png "Advanced Authentication")
+    ![Screenshot of Citrix ADC SAML Connector for Microsoft Entra configuration - Advanced Authentication Policies pane.](./media/citrix-netscaler-tutorial/advanced.png "Advanced Authentication")
 
 1. On the **Policy Binding** pane, select the authentication policy, and then select **Bind**.
 
-    ![Citrix ADC SAML Connector for Microsoft Entra configuration - Policy Binding pane](./media/citrix-netscaler-tutorial/policy-binding.png "Policy Binding")
+    ![Screenshot of Citrix ADC SAML Connector for Microsoft Entra configuration - Policy Binding pane](./media/citrix-netscaler-tutorial/policy-binding.png "Policy Binding")
 
 1. On the **Form Based Virtual Servers** pane, select **No Load Balancing Virtual Server**.
 
-    ![Citrix ADC SAML Connector for Microsoft Entra configuration - Form Based Virtual Servers pane.](./media/citrix-netscaler-tutorial/virtual-server.png "Virtual Server")
+    ![Screenshot of Citrix ADC SAML Connector for Microsoft Entra configuration - Form Based Virtual Servers pane.](./media/citrix-netscaler-tutorial/virtual-server.png "Virtual Server")
 
 1. For **Authentication FQDN**, enter a fully qualified domain name (FQDN) (required).
 
@@ -302,14 +302,14 @@ Modify two sections for the authentication virtual server:
 
 1. Select **Bind**.
 
-    ![Citrix ADC SAML Connector for Microsoft Entra configuration - Load Balancing Virtual Server Binding pane.](./media/citrix-netscaler-tutorial/load.png "Load Balancing")
+    ![Screenshot of Citrix ADC SAML Connector for Microsoft Entra configuration - Load Balancing Virtual Server Binding pane.](./media/citrix-netscaler-tutorial/load.png "Load Balancing")
 
     > [!NOTE]
     > Be sure to select **Done** on the **Authentication Virtual Server Configuration** pane.
 
 1. To verify your changes, in a browser, go to the application URL. You should see your tenant sign-in page instead of the unauthenticated access that you would have seen previously.
 
-    ![Citrix ADC SAML Connector for Microsoft Entra configuration - A sign-in page in a web browser.](./media/citrix-netscaler-tutorial/sign.png "Web Browser")
+    ![Screenshot of Citrix ADC SAML Connector for Microsoft Entra configuration - A sign-in page in a web browser.](./media/citrix-netscaler-tutorial/sign.png "Web Browser")
 
 <a name='configure-citrix-adc-saml-connector-for-azure-ad-sso-for-kerberos-based-authentication'></a>
 
@@ -321,7 +321,7 @@ Modify two sections for the authentication virtual server:
 
 1. Create a user account (in this example, we use _AppDelegation_).
 
-    ![Citrix ADC SAML Connector for Microsoft Entra configuration - Properties pane.](./media/citrix-netscaler-tutorial/properties.png "Properties")
+    ![Screenshot of Citrix ADC SAML Connector for Microsoft Entra configuration - Properties pane.](./media/citrix-netscaler-tutorial/properties.png "Properties")
 
 1. Set up a HOST SPN for this account. 
 
@@ -335,7 +335,7 @@ Modify two sections for the authentication virtual server:
 
 1. Configure delegation for the web server as shown in the following screenshot:
  
-    ![Citrix ADC SAML Connector for Microsoft Entra configuration - Delegation under Properties pane.](./media/citrix-netscaler-tutorial/delegation.png "Delegation")
+    ![Screenshot of Citrix ADC SAML Connector for Microsoft Entra configuration - Delegation under Properties pane.](./media/citrix-netscaler-tutorial/delegation.png "Delegation")
 
     > [!NOTE]
     > In the screenshot example, the internal web server name running the Windows Integrated Authentication (WIA) site is _CWEB2_.
@@ -365,7 +365,7 @@ To configure the Citrix ADC SAML Connector for Microsoft Entra AAA KCD account:
 
 1. Select **OK**.
  
-    ![Citrix ADC SAML Connector for Microsoft Entra configuration - Configure KCD Account pane](./media/citrix-netscaler-tutorial/kcd.png "KCD Account")
+    ![Screenshot of Citrix ADC SAML Connector for Microsoft Entra configuration - Configure KCD Account pane](./media/citrix-netscaler-tutorial/kcd.png "KCD Account")
 
 ### Citrix traffic policy and traffic profile
 
@@ -387,7 +387,7 @@ To configure the Citrix traffic policy and traffic profile:
 
 1. Select **OK**.
 
-    ![Citrix ADC SAML Connector for Microsoft Entra configuration - Configure Traffic Profile pane.](./media/citrix-netscaler-tutorial/traffic.png "Traffic Profile")
+    ![Screenshot of Citrix ADC SAML Connector for Microsoft Entra configuration - Configure Traffic Profile pane.](./media/citrix-netscaler-tutorial/traffic.png "Traffic Profile")
  
 1.	Select **Traffic Policy**.
 
@@ -403,7 +403,7 @@ To configure the Citrix traffic policy and traffic profile:
 
 1. Select **OK**.
 
-    ![Citrix ADC SAML Connector for Microsoft Entra configuration - Configure Traffic Policy pane](./media/citrix-netscaler-tutorial/traffic-policy.png "Traffic Policy")
+    ![Screenshot of Citrix ADC SAML Connector for Microsoft Entra configuration - Configure Traffic Policy pane](./media/citrix-netscaler-tutorial/traffic-policy.png "Traffic Policy")
 
 ### Bind a traffic policy to a virtual server in Citrix
 
@@ -415,13 +415,13 @@ To bind a traffic policy to a virtual server by using the GUI:
 
 1. On the **Load Balancing Virtual Server** pane, under **Advanced Settings**, select **Policies**. All policies that are configured for your NetScaler instance appear in the list.
  
-    ![Citrix ADC SAML Connector for Microsoft Entra configuration - Load Balancing Virtual Server pane.](./media/citrix-netscaler-tutorial/balancing.png "Balancing")
+    ![Screenshot of Citrix ADC SAML Connector for Microsoft Entra configuration - Load Balancing Virtual Server pane.](./media/citrix-netscaler-tutorial/balancing.png "Balancing")
 
-    ![Citrix ADC SAML Connector for Microsoft Entra configuration - Policies dialog box.](./media/citrix-netscaler-tutorial/dialog.png "Dialog")
+    ![Screenshot of Citrix ADC SAML Connector for Microsoft Entra configuration - Policies dialog box.](./media/citrix-netscaler-tutorial/dialog.png "Dialog")
 
 1.	Select the check box next to the name of the policy you want to bind to this virtual server.
  
-    ![Citrix ADC SAML Connector for Microsoft Entra configuration - Load Balancing Virtual Server Traffic Policy Binding pane.](./media/citrix-netscaler-tutorial/pane.png "Pane")
+    ![Screenshot of Citrix ADC SAML Connector for Microsoft Entra configuration - Load Balancing Virtual Server Traffic Policy Binding pane.](./media/citrix-netscaler-tutorial/pane.png "Pane")
 
 1. In the **Choose Type** dialog box:
 
@@ -429,15 +429,15 @@ To bind a traffic policy to a virtual server by using the GUI:
 
     1. For **Choose Type**, select **Request**.
 
-    ![Citrix ADC SAML Connector for Microsoft Entra configuration - Choose Type pane.](./media/citrix-netscaler-tutorial/choose.png "Choose")
+    ![Screenshot of Citrix ADC SAML Connector for Microsoft Entra configuration - Choose Type pane.](./media/citrix-netscaler-tutorial/choose.png "Choose")
 
 1. When the policy is bound, select **Done**.
  
-    ![Citrix ADC SAML Connector for Microsoft Entra configuration - Policies pane.](./media/citrix-netscaler-tutorial/policies.png "Policies")
+    ![Screenshot of Citrix ADC SAML Connector for Microsoft Entra configuration - Policies pane.](./media/citrix-netscaler-tutorial/policies.png "Policies")
 
 1. Test the binding by using the WIA website.
 
-    ![Citrix ADC SAML Connector for Microsoft Entra configuration - A test page in a web browser](./media/citrix-netscaler-tutorial/test.png "Test Page")    
+    ![Screenshot of Citrix ADC SAML Connector for Microsoft Entra configuration - A test page in a web browser](./media/citrix-netscaler-tutorial/test.png "Test Page")    
 
 <a name='create-citrix-adc-saml-connector-for-azure-ad-test-user'></a>
 
