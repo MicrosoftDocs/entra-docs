@@ -73,13 +73,13 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 1. On the **Basic SAML Configuration** section, perform the following steps:
 
     a. In the **Identifier (Entity ID)** text box, type a URL using the following pattern:
-    `http://www.okta.com/Trevanna_ID`
+    `http://www.okta.com/<Trevanna_ID>`
 
     b. In the **Reply URL** text box, type the URL:
-    `https://api.trevannatracks.com/api/v1/authentication/sso/okta`
+    `https://api.trevannatracks.com/api/v1/authentication/sso/entra`
 
     c. In the **Sign on URL** text box, type the URL:
-    `https://api.trevannatracks.com/api/v1/authentication/sso/okta`
+    `https://app.trevannatracks.com/auth/login`
 
 	> [!NOTE]
 	> The Identifier value is not real. Update the value with the actual Identifier. Contact [Trevanna Tracks support team](mailto:hello@trevannatracks.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
