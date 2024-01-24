@@ -170,6 +170,7 @@ The "basic" audit level is enabled by default. For more information, see [AD FS 
 #### Review the AD FS audit logs
 After enabling AD FS audit logs, you should be able to check the AD FS audit logs using Event viewer.
 
+
  1. Open **Event Viewer**.
  2. Go to **Windows Logs**, and then select **Security**.
  3. In the right pane, select **Filter Current Logs**.
@@ -183,6 +184,134 @@ After enabling AD FS audit logs, you should be able to check the AD FS audit log
 > [!WARNING]
 > A group policy can disable AD FS auditing. If AD FS auditing is disabled, usage analytics about login activities are unavailable. Ensure that you have no group policy that disables AD FS auditing.
 >
+
+The following tables provide a list of common events that correspond to audit level events
+
+##### Basic audit level events
+
+|ID|Event Name|Event Description|
+|-----|-----|-----|
+|1200|AppTokenSuccessAudit|The Federation Service issued a valid token. See XML for details.
+Activity ID: %1
+Additional Data
+XML: %2|
+|1201|AppTokenFailureAudit|The Federation Service failed to issue a valid token. See XML for failure details.
+Activity ID: %1
+Additional Data
+XML: %2|
+|1202|FreshCredentialSuccessAudit|The Federation Service validated a new credential. See XML for details.
+Activity ID: %1
+Additional Data
+XML: %2|
+|1203|FreshCredentialFailureAudit|The Federation Service failed to validate a new credential. See XML for failure details.
+Activity ID: %1
+Additional Data
+XML: %2|
+
+##### Verbose audit level events
+
+|ID|Event Name|Event Description|
+|-----|-----|-----|
+|299|TokenIssuanceSuccessAudit|A token was successfully issued for the relying party '%3'.
+See audit 500 with the same Instance ID for issued claims.
+See audit 501 with the same Instance ID for caller identity.
+See audit 502 with the same Instance ID for OnBehalfOf identity, if any.
+See audit 503 with the same Instance ID for ActAs identity, if any.
+Instance ID: %1
+Activity ID: %2
+Relying party: %3|
+|403|RequestReceivedSuccessAudit|An HTTP request was received.
+See audit 510 with the same Instance ID for headers.
+Instance ID: %1
+Activity ID: %2
+Request Details:
+Date And Time: %3
+Client IP: %4
+HTTP Method: %5
+Url Absolute Path: %6
+Query string: %7
+Local Port: %8
+Local IP: %9
+User Agent: %10
+Content Length: %11
+Caller Identity: %12
+Certificate Identity (if any): %13
+Targeted relying party: %14
+Through proxy: %15
+Proxy DNS name: %16|
+|410|RequestContextHeadersSuccessAudit|Following request context headers present :
+Activity ID: %1
+%2: %3
+%4: %5
+%6: %7
+%8: %9
+%10: %11
+%12: %13
+%14: %15|
+|411|SecurityTokenValidationFailureAudit|Token validation failed. See inner exception for more details.
+Additional Data
+Activity ID: %1
+Token Type:
+%2
+Client IP:
+%5
+Error message:
+%3
+Exception details:
+%4|
+|412|AuthenticationSuccessAudit|A token of type '%3' for relying party '%4' was successfully authenticated.
+See audit 501 with the same Instance ID for caller identity.
+Instance ID: %1
+Activity ID: %2|
+|500|IssuedIdentityClaims|More information for the event entry with Instance ID %1. There may be more events with the same Instance ID with more information.
+Instance ID:
+%1
+
+Issued identity:
+%2
+%3
+%4
+%5
+%6
+%7
+%8
+%9
+%10
+%11
+%12
+%13
+%14
+%15
+%16
+%17
+%18
+%19
+%20
+%21|
+|501|CallerIdentityClaims|More information for the event entry with Instance ID %1. There may be more events with the same Instance ID with more information.
+Instance ID:
+%1
+Caller identity:
+%2
+%3
+%4
+%5
+%6
+%7
+%8
+%9
+%10
+%11
+%12
+%13
+%14
+%15
+%16
+%17
+%18
+%19
+%20
+%21|
 
 ## Test connectivity to the Microsoft Entra Connect Health service
 
