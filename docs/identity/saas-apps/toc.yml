@@ -1094,7 +1094,7 @@
       - name: Freight Audit
         href: freight-audit-tutorial.md
       - name: Freightender SSO for TRP (Tender Response Platform)
-        href: freightender-sso-for-trp-(tender-response-platform)-tutorial.md
+        href: freightender-sso-for-trp-tender-response-platform-tutorial.md
       - name: FreshDesk
         href: freshdesk-tutorial.md
       - name: FreshGrade
