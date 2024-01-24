@@ -212,14 +212,17 @@ XML: %2|
 
 |ID|Event Name|Event Description|
 |-----|-----|-----|
-|299|TokenIssuanceSuccessAudit|A token was successfully issued for the relying party '%3'.
-See audit 500 with the same Instance ID for issued claims.
-See audit 501 with the same Instance ID for caller identity.
-See audit 502 with the same Instance ID for OnBehalfOf identity, if any.
-See audit 503 with the same Instance ID for ActAs identity, if any.
-Instance ID: %1
-Activity ID: %2
+|299|TokenIssuanceSuccessAudit|A token was successfully issued for the relying party '%3'. </br> 
+See audit 500 with the same Instance ID for issued claims.</br>
+See audit 501 with the same Instance ID for caller identity.</br>
+See audit 502 with the same Instance ID for OnBehalfOf identity, if any.</br>
+See audit 503 with the same Instance ID for ActAs identity, if any.</br>
+Instance ID: %1</br>
+Activity ID: %2</br>
 Relying party: %3|
+
+
+
 |403|RequestReceivedSuccessAudit|An HTTP request was received.
 See audit 510 with the same Instance ID for headers.
 Instance ID: %1
