@@ -74,6 +74,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 1. On the **Basic SAML Configuration** section, perform the following steps:
 
     a. In the **Identifier** text box, type one of the following URL/pattern:
+    
     |**Identifier**|
     |--------------|
     | `https://trp.freightender.com` |
