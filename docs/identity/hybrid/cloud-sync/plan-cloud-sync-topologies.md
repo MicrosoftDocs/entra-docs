@@ -29,7 +29,7 @@ The information below should be kept in mind, when selecting a solution.
 
 - Users and groups must be uniquely identified across all forests
 - Matching across forests doesn't occur with cloud sync
-- The source anchor for objects is chosen automatically.  It uses ms-DS-ConsistencyGuid if present, otherwise ObjectGUID is used.
+- The source anchor for objects is chosen automatically.  It uses MS-DS-Consistency-Guid if present, otherwise ObjectGUID is used.
 - You can't change the attribute that is used for source anchor.
 
 <a name='single-forest-single-azure-ad-tenant'></a>
@@ -76,8 +76,8 @@ An example would be:
 
 This configuration is advanced and there are a few caveats to this topology: 
 
- 1. You must use `msdsConsistencyGuid` as the source anchor in the cloud sync configuration.
- 2. The `msdsConsistencyGuid` of the user object in the second forest must match that of the corresponding object in Microsoft Entra ID.
+ 1. You must use `MS-DS-Consistency-Guid` as the source anchor in the cloud sync configuration.
+ 2. The `MS-DS-Consistency-Guid` of the user object in the second forest must match that of the corresponding object in Microsoft Entra ID.
  3. You must populate the `UserPrincipalName` attribute and the `Alias` attribute in the second forest and it must match the ones that are synced from the first forest. 
  4. You must remove all attributes from the attribute mapping in the cloud sync configuration that don't have a value or may have a different value in the second forest – you can't have overlapping attribute mappings between the first forest and the second one. 
  5. If there's no matching object in the first forest, for an object that is synced from the second forest, then cloud sync will still create the object in Microsoft Entra ID. The object will only have the attributes that are defined in the mapping configuration of cloud sync for the second forest. 
