@@ -150,7 +150,7 @@ In this section, you test your Microsoft Entra single sign-on configuration with
  
 #### SP initiated:
  
-* Click on **Test this application** in Microsoft Entra admin center. This will redirect to Freightender SSO for TRP (Tender Response Platform) Sign on URL where you can initiate the login flow.  
+* Click on **Test this application** in Microsoft Entra admin center. This will redirect to Freightender SSO for TRP (Tender Response Platform) Sign-on URL where you can initiate the login flow.  
  
 * Go to Freightender SSO for TRP (Tender Response Platform) Sign-on URL directly and initiate the login flow from there.
  
