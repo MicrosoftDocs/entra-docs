@@ -6,7 +6,7 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/02/2024
+ms.date: 01/24/2024
 
 author: justinha
 ms.author: justinha
@@ -26,11 +26,12 @@ Microsoft applications provide native support for FIDO2 authentication in previe
 | Operating system | Authentication broker           | Supports FIDO2 |
 |------------------|---------------------------------|----------------|
 | iOS              | Microsoft Authenticator         | &#x2705;       |
-| macOS            | Microsoft Intune Company Portal | &#10060;       |
-| Android<sup>1</sup> | Authenticator or Company Portal | &#10060;    |
+| macOS            | Microsoft Intune Company Portal <sup>1</sup> | &#x2705;       |
+| Android<sup>2</sup> | Authenticator or Company Portal | &#10060;    |
+
+<sup>1</sup>On macOS, the [Microsoft Enterprise SSO plug-in](/entra/identity-platform/apple-sso-plugin) is required to enable Company Portal as an authentication broker. Devices that run macOS must meet SSO plug-in requirements, including enrollment in mobile device management. 
 
 <sup>2</sup>Native app support for FIDO2 on Android is in development.
-
 If a user has an authentication broker installed, they can choose to sign in with a security key when they access an application such as Outlook. They're redirected to sign in with FIDO2, and redirected back to Outlook as a signed in user after successful authentication.
 
 If the user doesn't have an authentication broker installed, they can still sign in with a security key when they access MSAL-enabled applications that meet the requirements as listed in [Support for FIDO2 authentication](/entra/identity-platform/support-fido2-authentication).
