@@ -91,7 +91,7 @@
       "redirect_document_id": false
     },
     {
-      "source_path_from_root": "/docs/identity/app-proxy/application-proxy-config-sso-how-to.md",
+      "source_path_from_root": "/docs/identity/app-proxy/how-to-configure-sso.md",
       "redirect_url": "/entra/identity",
       "redirect_document_id": false
     },
