@@ -15,7 +15,7 @@ ms.reviewer: ashishj, asteen
 
 # How to configure single sign-on to an Application Proxy application
 
-Single sign-on (SSO) allows your users to access an application without authenticating multiple times. It allows the single authentication to occur in the cloud, against Microsoft Entra ID, and allows the service or Connector to impersonate the user to complete any additional authentication challenges from the application.
+Single sign-on (SSO) allows your users to access an application without authenticating multiple times. It allows the single authentication to occur in the cloud, against Microsoft Entra ID, and allows the service or Connector to impersonate the user to complete any more authentication challenges from the application.
 
 ## How to configure single-sign on
 To configure SSO, first make sure that your application is configured for Pre-Authentication through Microsoft Entra ID.
