@@ -158,6 +158,8 @@ items:
       href: ~/identity/enterprise-apps/custom-security-attributes-apps.md?toc=/entra/fundamentals/toc.json&bc=/entra/fundamentals/breadcrumb/toc.json
     - name: Troubleshoot attributes
       href: custom-security-attributes-troubleshoot.md
+  - name: Microsoft Graph extensions
+    href: /graph/extensibility-overview?toc=/entra/fundamentals/toc.json&bc=/entra/fundamentals/breadcrumb/toc.json
   - name: Frontline worker management
     href: frontline-worker-management.md
   - name: Legacy and deprecated features

@@ -3,12 +3,12 @@ title: 'Tutorial: Configure SuccessFactors inbound provisioning in Microsoft Ent
 description: Learn how to configure inbound provisioning from SuccessFactors to Microsoft Entra ID
 
 author: cmmdesai
-manager: CelesteDG
+manager: amycolannino
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.topic: tutorial
 
-ms.date: 11/21/2022
+ms.date: 01/25/2024
 ms.author: chmutali
 ---
 # Tutorial: Configure SAP SuccessFactors to Microsoft Entra user provisioning
