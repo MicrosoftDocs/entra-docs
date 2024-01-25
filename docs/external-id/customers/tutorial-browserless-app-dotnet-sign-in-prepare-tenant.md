@@ -1,7 +1,6 @@
 ---
-title: "Tutorial: Register and configure .NET browserless app authentication details in a customer tenant"
+title: "Tutorial: Prepare your customer tenant to authenticate users in a .NET browserless app"
 description: Learn how to register and configure .NET browserless app authentication details in a customer tenant so as to sign in users using Device Code flow.
- 
 author: SHERMANOUKO
 manager: mwongerapk
 
@@ -15,9 +14,9 @@ ms.date: 07/24/2023
 #Customer intent: As a dev, devops, I want to learn how to register and configure .NET browserless app authentication details in a customer tenant so as to sign in users using Device Code flow.
 ---
 
-# Tutorial: Register and configure .NET browserless app authentication details in a customer tenant
+# Tutorial: Prepare your customer tenant to authenticate users in a .NET browserless app
 
-In this article, you prepare your Microsoft Entra ID for customers tenant for authentication. This tutorial is part of a series that guides you through the steps of building an app that authenticates users against External ID for Customers using the device code flow.
+This tutorial series demonstrates how to build a .NET browserless app and prepare it for authentication using the Microsoft Entra admin center. You'll build authenticate your app with your Microsoft Entra ID for customers tenant. Finally, you'll run the application and test the sign-in and sign-out experiences.
 
 In this tutorial, you learn how to:
 
@@ -29,7 +28,11 @@ In this tutorial, you learn how to:
 
 ## Prerequisites
 
-Microsoft Entra ID for customers tenant. If you don't already have one, [sign up for a free trial](https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl).
+* A Microsoft Entra ID for customer tenant. If you don't have one, [create a trial tenant](https://aka.ms/ciam-free-trial) or a [tenant with a subscription](./quickstart-tenant-setup.md) before you begin.
+* This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
+    * Application administrator
+    * Application developer
+    * Cloud application administrator
 
 ## Register the browserless app
 
@@ -63,4 +66,4 @@ The next step after this tutorial is to build a WPF desktop app that authenticat
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Sign-in users to your .NET browserless app >](./tutorial-browserless-app-dotnet-sign-in-build-app.md)
+> [Part 2: Sign-in to your .NET browserless app >](./tutorial-browserless-app-dotnet-sign-in-build-app.md)

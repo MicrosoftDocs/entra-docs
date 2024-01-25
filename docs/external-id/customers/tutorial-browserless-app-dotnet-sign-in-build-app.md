@@ -1,7 +1,6 @@
 ---
-title: "Tutorial: Sign in users in your .NET browserless app"
-description: Learn about how to build a .NET browserless app that signs in users by using Device Code flow.
- 
+title: "Tutorial: Add sign-in and sign-out to a .NET browserless app for a customer tenant"
+description: Learn about how to build a .NET browserless app that signs in users by using the Device Code flow.
 author: SHERMANOUKO
 manager: mwongerapk
 
@@ -15,7 +14,7 @@ ms.date: 07/27/2023
 #Customer intent: As a dev, devops, I want to learn about how to enable authentication in my .NET browserless app with Microsoft Entra ID for customers tenant
 ---
 
-# Tutorial: Sign in users to your .NET browserless application
+# Tutorial: Add sign in and sign-out to a .NET browserless app for a customer tenant
 
 In this tutorial, you build your own .NET browserless app and authenticate a user using Microsoft Entra ID for customers.
 
@@ -31,7 +30,7 @@ In this tutorial, you learn how to:
 - Registration details for the browserless app you created in the [prepare tenant tutorial](./tutorial-browserless-app-dotnet-sign-in-prepare-tenant.md). You need the following details:
   - The Application (client) ID of the .NET browserless app that you registered.
   - The Directory (tenant) subdomain where you registered your .NET browserless app.
-- [.NET 7.0](https://dotnet.microsoft.com/download/dotnet/7.0) or later.
+- [.NET 7.0 SDK](https://dotnet.microsoft.com/download/dotnet/7.0) or later.
 - [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 
 ## Create an ASP.NET browserless app
