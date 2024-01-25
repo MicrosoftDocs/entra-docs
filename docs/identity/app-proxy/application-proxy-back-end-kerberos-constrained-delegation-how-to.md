@@ -32,7 +32,7 @@ This article makes the following assumptions:
 
 Microsoft Entra application proxy can be deployed into many types of infrastructures or environments. The architectures vary from organization to organization. The most common causes of KCD-related issues aren't the environments. Simple misconfigurations or general mistakes cause most issues.
 
-For this reason, it's best to make sure you've met all the prerequisites in [Using KCD SSO with the Application Proxy](application-proxy-configure-single-sign-on-with-kcd.md) before you start troubleshooting. Note the section on configuring Kerberos constrained delegation on 2012R2. This process employs a different approach to configuring KCD on previous versions of Windows. Also, be mindful of these considerations:
+For this reason, it's best to make sure you've met all the prerequisites in [Using KCD SSO with the Application Proxy](how-to-configure-sso-with-kcd.md) before you start troubleshooting. Note the section on configuring Kerberos constrained delegation on 2012R2. This process employs a different approach to configuring KCD on previous versions of Windows. Also, be mindful of these considerations:
 
 - It's not uncommon for a domain member server to open a secure channel dialog with a specific domain controller (DC). Then the server might move to another dialog at any given time. So connector hosts aren't restricted to communication with only specific local site DCs.
 - Cross-domain scenarios rely on referrals that direct a connector host to DCs that might be outside of the local network perimeter. In these cases, it's equally important to also send traffic onward to DCs that represent other respective domains. If not, delegation fails.
@@ -58,7 +58,7 @@ How you troubleshoot depends on the issue and the symptoms you observe. Before y
 
 - [Troubleshoot Application Proxy problems and error messages](application-proxy-troubleshoot.md)
 - [Kerberos errors and symptoms](application-proxy-troubleshoot.md#kerberos-errors)
-- [Working with SSO when on-premises and cloud identities aren't identical](application-proxy-configure-single-sign-on-with-kcd.md#working-with-different-on-premises-and-cloud-identities)
+- [Working with SSO when on-premises and cloud identities aren't identical](how-to-configure-sso-with-kcd.md#working-with-different-on-premises-and-cloud-identities)
 
 If you got to this point, then your main issue exists. To start, separate the flow into the following three stages that you can troubleshoot.
 
@@ -83,7 +83,7 @@ The corresponding entries seen in the event log show as events 13019 or 12027. F
 ![Event 12027 from Application Proxy event log](./media/application-proxy-back-end-kerberos-constrained-delegation-how-to/graphic5.png)
 
 1. Use an **A** record in your internal DNS for the application’s address, not a **CName**.
-1. Reconfirm that the connector host has been granted the right to delegate to the designated target account’s SPN. Reconfirm that **Use any authentication protocol** is selected. For more information, see the [SSO configuration article](application-proxy-configure-single-sign-on-with-kcd.md).
+1. Reconfirm that the connector host has been granted the right to delegate to the designated target account’s SPN. Reconfirm that **Use any authentication protocol** is selected. For more information, see the [SSO configuration article](how-to-configure-sso-with-kcd.md).
 1. Verify that there's only one instance of the SPN in existence in Microsoft Entra ID. Issue `setspn -x` from a command prompt on any domain member host.
 1. Check that a domain policy is enforced that limits the [maximum size of issued Kerberos tokens](/archive/blogs/askds/maxtokensize-and-windows-8-and-windows-server-2012). This policy stops the connector from getting a token if it's found to be excessive.
 
@@ -155,7 +155,7 @@ If you still can't make progress, Microsoft support can assist you. Create a sup
 
 ## Other scenarios
 
-- Azure Application Proxy requests a Kerberos ticket before sending its request to an application. Some third-party applications don't like this method of authenticating. These applications expect the more conventional negotiations to take place. The first request is anonymous, which allows the application to respond with the authentication types that it supports through a 401. This type of Kerberos negotiation can be enabled using the steps outlined in this document: [Kerberos Constrained Delegation for single sign-on](application-proxy-configure-single-sign-on-with-kcd.md).
+- Azure Application Proxy requests a Kerberos ticket before sending its request to an application. Some third-party applications don't like this method of authenticating. These applications expect the more conventional negotiations to take place. The first request is anonymous, which allows the application to respond with the authentication types that it supports through a 401. This type of Kerberos negotiation can be enabled using the steps outlined in this document: [Kerberos Constrained Delegation for single sign-on](how-to-configure-sso-with-kcd.md).
 - Multi-hop authentication is commonly used in scenarios where an application is tiered, with a back end and front end, where both require authentication, such as SQL Server Reporting Services. For more details, see [How to configure Kerberos Constrained Delegation for Web Enrollment proxy pages](/troubleshoot/windows-server/identity/configure-kerberos-constrained-delegation).
 
 ## Next steps

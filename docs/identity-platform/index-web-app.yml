@@ -23,7 +23,7 @@ landingContent:
           - text: ASP.NET
             url: quickstart-web-app-aspnet-sign-in.md
           - text: ASP.NET Core
-            url: quickstart-web-app-aspnet-core-sign-in.md
+            url: quickstart-web-app-dotnet-core-sign-in.md
           - text: Java
             url: quickstart-web-app-java-sign-in.md
           - text: Node.js with MSAL
@@ -35,7 +35,7 @@ landingContent:
       - linkListType: tutorial
         links:
           - text: ASP.NET
-            url: ./web-app-tutorial-01-register-application.md
+            url: tutorial-web-app-dotnet-register-app.md
           - text: Blazor Server
             url: tutorial-blazor-server.md
           - text: Node.js with Express

@@ -8,7 +8,7 @@ ms.service: active-directory
 ms.subservice: app-provisioning
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 09/15/2023
+ms.date: 01/23/2024
 ms.author: kenwith
 ms.reviewer: arvinh
 ---
@@ -24,6 +24,9 @@ Before you get started, make sure you're familiar with app management and **sing
 There's a preconfigured set of attributes and attribute-mappings between Microsoft Entra user objects and each SaaS app's user objects. Some apps manage other types of objects along with Users, such as Groups.
 
 You can customize the default attribute-mappings according to your business needs. So, you can change or delete existing attribute-mappings, or create new attribute-mappings.
+
+> [!NOTE]
+> In addition to configuring attribute mappings through the Microsoft Entra interface, you can review, download, and edit the JSON representation of your schema.
 
 ## Editing user attribute-mappings
 
@@ -63,7 +66,7 @@ There are four different mapping types supported:
 - **Expression** - the target attribute is populated based on the result of a script-like expression. For more information about expressions, see [Writing Expressions for Attribute-Mappings in Microsoft Entra ID](~/identity/app-provisioning/functions-for-customizing-application-data.md).
 - **None** - the target attribute is left unmodified. However, if the target attribute is ever empty, it's populated with the Default value that you specify.
 
-Along with these four basic types, custom attribute-mappings support the concept of an optional **default** value assignment. The default value assignment ensures that a target attribute is populated with a value if there's not a value in Microsoft Entra ID or on the target object. The most common configuration is to leave this blank.
+Along with these four basic types, custom attribute-mappings support the concept of an optional **default** value assignment. The default value assignment ensures that a target attribute is populated with a value if there's not a value in Microsoft Entra ID or on the target object. The most common configuration is to leave this blank. For more information about mapping attributes, see [How Application Provisioning works in Microsoft Entra ID](~/identity/app-provisioning/how-provisioning-works.md#mapping-attributes).
 
 ### Understanding attribute-mapping properties
 

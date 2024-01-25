@@ -45,12 +45,12 @@ Learn more:
 
 * [Remote access to on-premises applications through Microsoft Entra application proxy](~/identity/app-proxy/application-proxy.md)
 * [Tutorial: Add an on-premises application for remote access through Application Proxy in Microsoft Entra ID](~/identity/app-proxy/application-proxy-add-on-premises-application.md)
-* [How to configure SSO to an Application Proxy application](~/identity/app-proxy/application-proxy-config-sso-how-to.md)
+* [How to configure SSO to an Application Proxy application](~/identity/app-proxy/how-to-configure-sso.md)
 * [Using Microsoft Entra application proxy to publish on-premises apps for remote users](~/identity/app-proxy/what-is-application-proxy.md)
 
 ### Application publishing and access management
 
-Use Application Proxy remote access as a service to publish applications to users outside the corporate network. Help improve your cloud access management without requiring modification to your on-premises applications. Plan an [Microsoft Entra application proxy deployment](~/identity/app-proxy/application-proxy-deployment-plan.md).
+Use Application Proxy remote access as a service to publish applications to users outside the corporate network. Help improve your cloud access management without requiring modification to your on-premises applications. Plan an [Microsoft Entra application proxy deployment](~/identity/app-proxy/conceptual-deployment-plan.md).
 
 ## Partner integrations for apps: on-premises and legacy authentication
 

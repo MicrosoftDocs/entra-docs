@@ -24,7 +24,7 @@ This article helps you keep track of the versions that have been released and un
 
 You can upgrade your Microsoft Entra Connect server from all supported versions with the latest versions:
 
-You can download the latest version of Microsoft Entra Connect 2.0 from the [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=47594). See the [release notes for the latest V2.0 release](reference-connect-version-history.md#21200).\
+You can download the latest version of Microsoft Entra Connect 2.0 from the [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=47594). See the [release notes for the latest V2.0 release](reference-connect-version-history.md#21200).
 
 Get notified about when to revisit this page for updates by copying and pasting this URL: `https://aka.ms/aadconnectrss` into your ![RSS feed reader icon](media/reference-connect-version-history/feed-icon-16x16.png) feed reader.
 
@@ -48,7 +48,9 @@ Required permissions | For permissions required to apply an update, see [Microso
 > We will begin retiring past versions of Microsoft Entra Connect Sync 2.x 12 months from the date they are superseded by a newer version. 
 > This policy will go into effect on 15 March 2023, when we will retire all versions that are superseded by a newer version on 15 March 2022.
 > 
-> Currently only builds 2.1.16.0 (release August 8th 2022) or later are supported.
+> Currently only builds 2.1.20.0 (release November 9th 2022) or later are supported.  Version 2.1.20 was supperseded by build 2.2.1.0 which was released June 6th 2023.  This means that 2.1.20 will be supported until June 6th, 2024.
+>
+> Build 2.1.19 was released on November 2nd, 2022.  It was superseded by 2.1.20 which was released on November 9th 2022.  Since twelves months (November 9th 2023) have past since this release, 2.1.19 is no longer supported.
 > 
 > If you are not already using the latest release version of Microsoft Entra Connect Sync, you should upgrade your Microsoft Entra Connect Sync software before that date. 
 

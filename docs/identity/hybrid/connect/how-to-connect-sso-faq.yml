@@ -142,7 +142,7 @@ sections:
              Run the following steps on the on-premises server where you're running Microsoft Entra Connect:
           
              1. First, download, and install [Azure AD PowerShell](/powershell/azure/active-directory/overview).
-             2. Navigate to the `$env:ProgramFiles"\Microsoft Entra Connect"` folder.
+             2. Navigate to the `$env:ProgramFiles"\Microsoft Azure Active Directory Connect"` folder.
              3. Import the Seamless SSO PowerShell module using this command: `Import-Module .\AzureADSSO.psd1`.
              4. Run PowerShell as an Administrator. In PowerShell, call `New-AzureADSSOAuthenticationContext`. This command should give you a popup to enter your tenant's Global Administrator or Hybrid Identity Administrator credentials.
              5. Call `Enable-AzureADSSO -Enable $false`.
@@ -157,7 +157,7 @@ sections:
              Follow tasks 1 through 4 if you have disabled Seamless SSO using Microsoft Entra Connect. If you have disabled Seamless SSO using PowerShell instead, jump ahead to task 5.
           
              1. First, download, and install [Azure AD PowerShell](/powershell/azure/active-directory/overview).
-             2. Navigate to the `$env:ProgramFiles"\Microsoft Entra Connect"` folder.
+             2. Navigate to the `$env:ProgramFiles"\Microsoft Azure Active Directory Connect"` folder.
              3. Import the Seamless SSO PowerShell module using this command: `Import-Module .\AzureADSSO.psd1`.
              4. Run PowerShell as an Administrator. In PowerShell, call `New-AzureADSSOAuthenticationContext`. This command should give you a popup to enter your tenant's Global Administrator or Hybrid Identity Administrator credentials.
              5. Call `Get-AzureADSSOStatus | ConvertFrom-Json`. This command provides you the list of AD forests (look at the "Domains" list) on which this feature has been enabled.

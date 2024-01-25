@@ -12,7 +12,7 @@ ms.topic: how-to
 ms.date: 11/15/2023
 ms.author: barclayn                   
 ms.reviewer: krbain
-ms.custom: it-pro, seo-update-azuread-jan, has-azure-ad-ps-ref
+ms.custom: it-pro, seo-update-azuread-jan, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.collection: M365-identity-device-management
 ---
 
@@ -102,37 +102,34 @@ Some administrator roles are exempted from these policies, across all group work
 
 ## Install PowerShell cmdlets
 
-Uninstall any older version of Azure Active Directory (Azure AD) PowerShell for the Microsoft Graph module and install [Azure AD PowerShell for Graph - Public Preview Release 2.0.0.137](https://www.powershellgallery.com/packages/AzureADPreview/2.0.0.137) before you run the PowerShell commands.
+Install the Microsoft Graph cmdlets as described in [Install the Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/installation).
 
 [!INCLUDE [Azure AD PowerShell migration](../../includes/aad-powershell-migration-include.md)]
 
 1. Open the Windows PowerShell app as an administrator.
-1. Uninstall any previous version of `AzureADPreview`.
-  
-   ``` PowerShell
-   Uninstall-Module AzureADPreview
+1. Install the Microsoft Graph cmdlets.
+
+   ```powershell
+   Install-Module Microsoft.Graph -Scope AllUsers
    ```
 
-1. Install the latest version of `AzureADPreview`.
-  
-   ``` PowerShell
-   Install-Module AzureADPreview
-   ```
+1. Install the Microsoft Graph beta cmdlets.
 
-   If you're prompted about accessing an untrusted repository, enter **Y**. It might take a few minutes for the new module to install.
+   ```powershell
+   Install-Module Microsoft.Graph.Beta -Scope AllUsers
+   ```
 
 ## Configure a naming policy in PowerShell
 
 1. Open a Windows PowerShell window on your computer. You can open it without elevated privileges.
 
-1. Run the following commands to prepare to run the cmdlets.
+1. Run the following command to prepare to run the cmdlets.
   
-   ``` PowerShell
-   Import-Module AzureADPreview
-   Connect-AzureAD
+   ```powershell
+   Connect-MgGraph -Scopes "Directory.ReadWrite.All"
    ```
 
-   On the **Sign in to your Account** screen that opens, enter your admin account and password to connect to your service, and select **Sign in**.
+   On the **Sign in to your Account** screen that opens, enter your admin account and password to connect to your service.
 
 1. Follow the steps in [Microsoft Entra cmdlets for configuring group settings](~/identity/users/groups-settings-cmdlets.md) to create group settings for this organization.
 
@@ -140,34 +137,45 @@ Uninstall any older version of Azure Active Directory (Azure AD) PowerShell for 
 
 1. Fetch the current naming policy to view the current settings.
   
-   ``` PowerShell
-   $Setting = Get-AzureADDirectorySetting -Id (Get-AzureADDirectorySetting | where -Property DisplayName -Value "Group.Unified" -EQ).id
+   ```powershell
+   $Setting = Get-MgBetaDirectorySetting -DirectorySettingId (Get-MgBetaDirectorySetting | where -Property DisplayName -Value "Group.Unified" -EQ).id
    ```
   
 1. Display the current group settings.
   
-   ``` PowerShell
+   ```powershell
    $Setting.Values
    ```
   
 ### Set the naming policy and custom blocked words
 
-1. Set the group name prefixes and suffixes in Azure AD PowerShell. For the feature to work properly, `[GroupName]` must be included in the setting.
+1. Get the setting.
+
+   ```powershell
+   $Setting = Get-MgBetaDirectorySetting -DirectorySettingId (Get-MgBetaDirectorySetting | where -Property DisplayName -Value "Group.Unified" -EQ).id
+   ```
+
+1. Set the group name prefixes and suffixes. For the feature to work properly, `[GroupName]` must be included in the setting. Also, set the custom blocked words that you want to restrict.
   
-   ``` PowerShell
-   $Setting["PrefixSuffixNamingRequirement"] =“GRP_[GroupName]_[Department]"
+   ```powershell
+   $params = @{
+      values = @(
+         @{
+            name = "PrefixSuffixNamingRequirement"
+            value = "GRP_[GroupName]_[Department]"
+         }
+         @{
+            name = "CustomBlockedWordsList"
+            value = "Payroll,CEO,HR"
+         }
+      )
+   }
    ```
   
-1. Set the custom blocked words that you want to restrict. The following example illustrates how you can add your own custom words.
+1. Update the settings for the new policy to go into effect, as shown in the following example.
   
-   ``` PowerShell
-   $Setting["CustomBlockedWordsList"]=“Payroll,CEO,HR"
-   ```
-  
-1. Save the settings for the new policy to go into effect, as shown in the following example.
-  
-   ``` PowerShell
-   Set-AzureADDirectorySetting -Id (Get-AzureADDirectorySetting | where -Property DisplayName -Value "Group.Unified" -EQ).id -DirectorySetting $Setting
+   ```powershell
+   Update-MgBetaDirectorySetting -DirectorySettingId $Setting.Id -BodyParameter $params
    ```
   
 That's it. You set your naming policy and added your blocked words.
@@ -178,53 +186,75 @@ For more information, see [Microsoft Entra cmdlets for configuring group setting
 
 Here's an example of a PowerShell script to export multiple blocked words.
 
-``` PowerShell
-$Words = (Get-AzureADDirectorySetting).Values | Where-Object -Property Name -Value CustomBlockedWordsList -EQ 
-Add-Content "c:\work\currentblockedwordslist.txt" -Value $words.value.Split(",").Replace("`"","")  
+```powershell
+$Words = (Get-MgBetaDirectorySetting).Values | where -Property Name -Value CustomBlockedWordsList -EQ 
+Add-Content "c:\work\currentblockedwordslist.txt" -Value $Words.value.Split(",").Replace("`"","")
 ```
 
 Here's an example PowerShell script to import multiple blocked words.
 
-``` PowerShell
+```powershell
 $BadWords = Get-Content "C:\work\currentblockedwordslist.txt"
 $BadWords = [string]::join(",", $BadWords)
-$Settings = Get-AzureADDirectorySetting | Where-Object {$_.DisplayName -eq "Group.Unified"}
-if ($Settings.Count -eq 0)
-    {$Template = Get-AzureADDirectorySettingTemplate | Where-Object {$_.DisplayName -eq "Group.Unified"}
-    $Settings = $Template.CreateDirectorySetting()
-    New-AzureADDirectorySetting -DirectorySetting $Settings
-    $Settings = Get-AzureADDirectorySetting | Where-Object {$_.DisplayName -eq "Group.Unified"}}
-$Settings["CustomBlockedWordsList"] = $BadWords
-Set-AzureADDirectorySetting -Id $Settings.Id -DirectorySetting $Settings 
+$Setting = Get-MgBetaDirectorySetting | where {$_.DisplayName -eq "Group.Unified"}
+if ($Setting.Count -eq 0) {
+   $Template = Get-MgBetaDirectorySettingTemplate | where {$_.DisplayName -eq "Group.Unified"}
+   $Params = @{ templateId = $Template.Id }
+   $Setting = New-MgBetaDirectorySetting -BodyParameter $Params 
+   }
+$params = @{
+   values = @(
+      @{
+         name = "PrefixSuffixNamingRequirement"
+         value = "GRP_[GroupName]_[Department]"
+      }
+      @{
+         name = "CustomBlockedWordsList"
+         value = "$BadWords"
+      }
+   )
+}
+Update-MgBetaDirectorySetting -DirectorySettingId $Setting.Id -BodyParameter $params
 ```
 
 ## Remove the naming policy
 
-You can use the Azure portal or Azure AD PowerShell to remove a naming policy.
+You can use the Azure portal or Microsoft Graph PowerShell to remove a naming policy.
 
 ### Remove the naming policy by using the Azure portal
 
 1. On the **Naming policy** page, select **Delete policy**.
 1. After you confirm the deletion, the naming policy is removed, including all prefix-suffix naming policies and any custom blocked words.
 
-### Remove the naming policy by using Azure AD PowerShell
+### Remove the naming policy by using Microsoft Graph PowerShell
 
-1. Empty the group name prefixes and suffixes in Azure AD PowerShell.
-  
-   ``` PowerShell
-   $Setting["PrefixSuffixNamingRequirement"] =""
+1. Get the setting.
+
+   ```powershell
+   $Setting = Get-MgBetaDirectorySetting -DirectorySettingId (Get-MgBetaDirectorySetting | where -Property DisplayName -Value "Group.Unified" -EQ).id
    ```
+
+1. Empty the group name prefixes and suffixes. Empty the custom blocked words.
   
-1. Empty the custom blocked words.
-  
-   ``` PowerShell
-   $Setting["CustomBlockedWordsList"]=""
+   ```powershell
+   $params = @{
+      values = @(
+         @{
+            name = "PrefixSuffixNamingRequirement"
+            value = ""
+         }
+         @{
+            name = "CustomBlockedWordsList"
+            value = ""
+         }
+      )
+   }
    ```
+
+1. Update the setting.
   
-1. Save the settings.
-  
-   ``` PowerShell
-   Set-AzureADDirectorySetting -Id (Get-AzureADDirectorySetting | where -Property DisplayName -Value "Group.Unified" -EQ).id -DirectorySetting $Setting
+   ```powershell
+   Update-MgBetaDirectorySetting -DirectorySettingId $Setting.Id -BodyParameter $params
    ```
 
 ## Experience across Microsoft 365 apps
@@ -253,7 +283,7 @@ Power BI | Power BI workspaces are compliant with the naming policy.
 Yammer | When a user signs in to Yammer with their Microsoft Entra account to create a group or edit a group name, the group name complies with the naming policy. This feature applies both to Microsoft 365 connected groups and all other Yammer groups.<br>If a Microsoft 365 connected group was created before the naming policy is in place, the group name doesn't automatically follow the naming policies. When a user edits the group name, they're prompted to add the prefix and suffix.
 StaffHub  | StaffHub teams don't follow the naming policy, but the underlying Microsoft 365 group does. A StaffHub team name doesn't apply the prefixes and suffixes and doesn't check for custom blocked words. But StaffHub does apply the prefixes and suffixes and removes blocked words from the underlying Microsoft 365 group.
 Exchange PowerShell | Exchange PowerShell cmdlets are compliant with the naming policy. Users receive appropriate error messages with suggested prefixes and suffixes and for custom blocked words if they don't follow the naming policy in the group name and group alias (mailNickname).
-Azure AD PowerShell cmdlets | Azure AD PowerShell cmdlets are compliant with a naming policy. Users receive appropriate error messages with suggested prefixes and suffixes and for custom blocked words if they don't follow the naming convention in group names and group alias.
+Microsoft Graph PowerShell cmdlets | Microsoft PowerShell cmdlets are compliant with a naming policy. Users receive appropriate error messages with suggested prefixes and suffixes and for custom blocked words if they don't follow the naming convention in group names and group alias.
 Exchange admin center | Exchange admin center is compliant with a naming policy. Users receive appropriate error messages with suggested prefixes and suffixes and for custom blocked words if they don't follow the naming convention in the group name and group alias.
 Microsoft 365 admin center | Microsoft 365 admin center is compliant with a naming policy. When a user creates or edits group names, the naming policy is automatically applied. Users receive appropriate errors when they enter custom blocked words. The Microsoft 365 admin center doesn't yet show a preview of the naming policy and doesn't return custom blocked-word errors when the user enters the group name.
 

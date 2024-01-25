@@ -61,7 +61,7 @@ There are two ways to create a catalog programmatically.
 
 ### Create a catalog with Microsoft Graph
 
-You can create a catalog by using Microsoft Graph. A user in an appropriate role with an application that has the delegated `EntitlementManagement.ReadWrite.All` permission, or an application with that application permission, can call the API to [create an accessPackageCatalog](/graph/api/entitlementmanagement-post-accesspackagecatalogs?view=graph-rest-beta&preserve-view=true).
+You can create a catalog by using Microsoft Graph. A user in an appropriate role with an application that has the delegated `EntitlementManagement.ReadWrite.All` permission, or an application with the `EntitlementManagement.ReadWrite.All`  application permission, can call the API to [create a catalog](/graph/api/entitlementmanagement-post-catalogs?view=graph-rest-1.0&preserve-view=true).
 
 ### Create a catalog with PowerShell
 
@@ -84,9 +84,9 @@ To include resources in an access package, the resources must exist in a catalog
 
 * Applications can be Microsoft Entra enterprise applications, which include software as a service (SaaS) applications, on-premises applications, and your own applications integrated with Microsoft Entra ID.
 
-  * If your application has not yet been integrated with Microsoft Entra ID, see [govern access for applications in your environment](identity-governance-applications-prepare.md) and [integrate an application with Microsoft Entra ID](identity-governance-applications-integrate.md).
+  * If your application has not yet been integrated with Microsoft Entra ID, see [govern access for applications in your environment](identity-governance-applications-prepare.md) and [integrate an application with Microsoft Entra ID](identity-governance-applications-integrate.md) and add the application to your directory prior to adding it to the catalog.
 
-  * For more information on how to select appropriate resources for applications with multiple roles, see [Add resource roles](entitlement-management-access-package-resources.md#add-resource-roles).
+  * For more information on how to select appropriate resources for applications with multiple roles, see [how to determine which resource roles to include in an access package](entitlement-management-access-package-resources.md#determine-which-resource-roles-to-include-in-an-access-package).
 * Sites can be SharePoint Online sites or SharePoint Online site collections.
 > [!NOTE]
 > Search SharePoint Site by site name or an exact URL as the search box is case sensitive.
@@ -135,7 +135,7 @@ To require attributes for access requests:
 1. Select the attribute type:
 
     1. **Built-in** includes Microsoft Entra user profile attributes.
-    1. **Directory schema extension** provides a way to store more data in Microsoft Entra ID on user objects and other directory objects. This includes groups, tenant details, and service principals. Only extension attributes on user objects can be used to send out claims to applications.
+    1. **Directory schema extension** provides a way to store more data in Microsoft Entra ID users.  You can extend the schema by [creating an extension attribute](~/identity/app-provisioning/user-provisioning-sync-attributes-for-mapping.md#create-an-extension-attribute-in-a-tenant-with-cloud-only-users). These extension attributes on user objects can be used to send out claims to applications during provisioning or single-sign on.
 1. If you chose **Built-in**, select an attribute from the dropdown list. If you chose **Directory schema extension**, enter the attribute name in the text box.
 
     > [!NOTE]
@@ -177,7 +177,7 @@ To require attributes for access requests:
 
 ### Add a resource to a catalog programmatically
 
-You can also add a resource to a catalog by using Microsoft Graph. A user in an appropriate role, or a catalog and resource owner, with an application that has the delegated `EntitlementManagement.ReadWrite.All` permission can call the API to [create an accessPackageResourceRequest](/graph/api/entitlementmanagement-post-accesspackageresourcerequests?view=graph-rest-beta&preserve-view=true). An application with the application permission `EntitlementManagement.ReadWrite.All` and permissions to change resources, such as `Group.ReadWrite.All`, can also add resources to the catalog.
+You can also add a resource to a catalog by using Microsoft Graph. A user in an appropriate role, or a catalog and resource owner, with an application that has the delegated `EntitlementManagement.ReadWrite.All` permission can call the API to [create a resourceRequest](/graph/api/entitlementmanagement-post-resourcerequests?view=graph-rest-1.0&preserve-view=true). An application with the application permission `EntitlementManagement.ReadWrite.All` and permissions to change resources, such as `Group.ReadWrite.All`, can also add resources to the catalog.
 
 ### Add a resource to a catalog with PowerShell
 

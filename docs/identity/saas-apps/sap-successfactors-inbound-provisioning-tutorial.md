@@ -2,12 +2,12 @@
 title: 'Tutorial: Configure SuccessFactors inbound provisioning in AD and Microsoft Entra ID'
 description: Learn how to configure inbound provisioning from SuccessFactors
 author: cmmdesai
-manager: CelesteDG
+manager: amycolannino
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.topic: tutorial
 
-ms.date: 11/21/2022
+ms.date: 01/25/2024
 ms.author: chmutali
 ---
 # Tutorial: Configure SAP SuccessFactors to Active Directory user provisioning 

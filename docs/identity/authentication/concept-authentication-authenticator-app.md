@@ -6,11 +6,12 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 11/30/2023
+ms.date: 01/22/2024
 
 ms.author: justinha
 author: justinha
 manager: amycolannino
+ms.reviewer: calui
 
 ms.collection: M365-identity-device-management
 
@@ -62,25 +63,35 @@ Users may have a combination of up to five OATH hardware tokens or authenticator
 
 ## FIPS 140 compliant for Microsoft Entra authentication
 
-Beginning with version 6.6.8, Microsoft Authenticator for iOS is compliant with [Federal Information Processing Standard (FIPS) 140](https://csrc.nist.gov/publications/detail/fips/140/3/final?azure-portal=true) for all Microsoft Entra authentications using push multi-factor authentications (MFA), passwordless Phone Sign-In (PSI), and time-based one-time passcodes (TOTP).  
-
-Consistent with the guidelines outlined in [NIST SP 800-63B](https://pages.nist.gov/800-63-3/sp800-63b.html?azure-portal=true), authenticators are required to use FIPS 140 validated cryptography. This helps federal agencies meet the requirements of [Executive Order (EO) 14028](https://www.whitehouse.gov/briefing-room/presidential-actions/2021/05/12/executive-order-on-improving-the-nations-cybersecurity/?azure-portal=true) and healthcare organizations working with [Electronic Prescriptions for Controlled Substances (EPCS)](/azure/compliance/offerings/offering-epcs-us). 
+Consistent with the guidelines outlined in [NIST SP 800-63B](https://pages.nist.gov/800-63-3/sp800-63b.html?azure-portal=true), authenticators used by US government agencies are required to use FIPS 140 validated cryptography. This helps US government agencies meet the requirements of [Executive Order (EO) 14028](https://www.whitehouse.gov/briefing-room/presidential-actions/2021/05/12/executive-order-on-improving-the-nations-cybersecurity/?azure-portal=true). Additionally, this helps other regulated industries such as healthcare organizations working with [Electronic Prescriptions for Controlled Substances (EPCS)](/azure/compliance/offerings/offering-epcs-us) meet their regulatory requirements.
 
 FIPS 140 is a US government standard that defines minimum security requirements for cryptographic modules in information technology products and systems. Testing against the FIPS 140 standard is maintained by the [Cryptographic Module Validation Program (CMVP)](https://csrc.nist.gov/Projects/cryptographic-module-validation-program?azure-portal=true).
 
-No changes in configurations are required in Microsoft Authenticator or the Microsoft Entra admin center to enable FIPS 140 compliance. Beginning with Microsoft Authenticator for iOS version 6.6.8, Microsoft Entra authentications will be FIPS 140 compliant by default.
+### Microsoft Authenticator for iOS
+Beginning with version 6.6.8, Microsoft Authenticator for iOS is compliant with Federal Information Processing Standard (FIPS) 140 for all Microsoft Entra authentications using phishing-resistant device-bound passkeys, push multi-factor authentications (MFA), passwordless Phone Sign-In (PSI), and time-based one-time passcodes (TOTP). 
 
-Authenticator leverages the native Apple cryptography to achieve FIPS 140, Security Level 1 compliance on Apple iOS devices beginning with Microsoft Authenticator version 6.6.8. For more information about the certifications being used, see the [Apple CoreCrypto module](https://support.apple.com/guide/sccc/security-certifications-for-ios-scccfa917cb49/web?azure-portal=true). 
+Authenticator leverages the native Apple iOS **FIPS 140 validated** cryptographic module(s) to achieve FIPS 140 compliance on Apple iOS devices. For more information about the **FIPS 140 validated** cryptographic modules being used, see: [Apple iOS security certifications](https://support.apple.com/guide/certifications/ios-security-certifications-apc3fa917cb49/1/web/1.0). 
 
-Beginning with version 6.2310.7174, Microsoft Authenticator for Android is compliant with FIPS 140-3 for all Microsoft Entra authentications using phishing-resistant device-bound passkeys, push multifactor authentications (MFA), passwordless phone sign-in (PSI), and time-based one-time passcodes (TOTP). For organizations using Intune Company Portal, install version 5.0.6043.0 in addition to the latest version of Authenticator for FIPS compliance. 
+
+>[!NOTE]
+>In new updates from the previous version of this article: Microsoft Authenticator is not yet FIPS 140 compliant on Android. Microsoft Authenticator on Android is currently pending FIPS compliance certification to support our customers that may require FIPS validated cryptography.
+
 
 ## Determining Microsoft Authenticator registration type in My Security-Info 
-Managining and adding additional Microsoft Authenticator registrations can be performed by users by accessing https://aka.ms/mysecurityinfo or by selecting Security info from  from My Account. Specific icons are used to differentiate whether the Microsoft Authenticator registration is capable of passwordless phone sign-in or MFA. 
+Managining and adding additional Microsoft Authenticator registrations can be performed by users by accessing [MySecurityInfo](https://aka.ms/mysecurityinfo) (see the URLs in the next section) or by selecting Security info from MyAccount. Specific icons are used to differentiate whether the Microsoft Authenticator registration is passwordless phone sign-in or MFA. 
 
 Authenticator registration type | Icon
 ------ | ------
 Microsoft Authenticator: Passwordless phone sign-in   | <img width="43" alt="Microsoft Authenticator passwordless sign-in Capable" src="https://user-images.githubusercontent.com/50213291/211923744-d025cd70-4b88-4603-8baf-db0fc5d28486.png">  
-Microsoft Authenticator: MFA capable | <img width="43" alt="Microsoft Authenticator MFA Capable" src="https://user-images.githubusercontent.com/50213291/211921054-d11983ad-4e0d-4612-9a14-0fef625a9a2a.png">
+Microsoft Authenticator: (Notification/Code) | <img width="43" alt="Microsoft Authenticator MFA Capable" src="https://user-images.githubusercontent.com/50213291/211921054-d11983ad-4e0d-4612-9a14-0fef625a9a2a.png">
+
+
+### MySecurityInfo links
+
+Cloud | MySecurityInfo URL | 
+------ | ------ | ------
+Azure commercial (includes GCC)   | https://aka.ms/MySecurityInfo 
+Azure for US Government (includes GCC High and DoD) | https://aka.ms/MySecurityInfo-us 
 
 
 ## Next steps

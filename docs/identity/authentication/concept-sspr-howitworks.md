@@ -26,7 +26,7 @@ Microsoft Entra self-service password reset (SSPR) gives users the ability to ch
 
 ## How does the password reset process work?
 
-A user can reset or change their password using the [SSPR portal](https://aka.ms/sspr). They must first have registered their desired authentication methods. When a user accesses the SSPR portal, the Azure platform considers the following factors:
+A user can reset or change their password using the [SSPR portal](https://aka.ms/sspr). They must first have registered their desired authentication methods. When a user accesses the SSPR portal, the Microsoft Entra ID platform considers the following factors:
 
 * How should the page be localized?
 * Is the user account valid?
@@ -165,7 +165,7 @@ If this option is set to **Yes**, users resetting their password receive an emai
 
 ### Notify all admins when other admins reset their passwords
 
-If this option is set to **Yes**, then all other Azure administrators receive an email to their primary email address stored in Microsoft Entra ID. The email notifies them that another administrator has changed their password by using SSPR.
+If this option is set to **Yes**, then other administrators receive an email to their primary email address stored in Microsoft Entra ID. The email notifies them that another administrator has changed their password by using SSPR.
 
 Consider the following example scenario:
 
@@ -176,10 +176,19 @@ Consider the following example scenario:
 > [!NOTE]
 > Email notifications from the SSPR service will be sent from the following addresses based on the Azure cloud you are working with: 
 > - Public: msonlineservicesteam@microsoft.com, msonlineservicesteam@microsoftonline.com
-> - China: msonlineservicesteam@oe.21vianet.com, 21Vianetonlineservicesteam@21vianet.com
-> - Government: msonlineservicesteam@azureadnotifications.us, msonlineservicesteam@microsoftonline.us
-
+> - Azure China 21Vianet: msonlineservicesteam@oe.21vianet.com, 21Vianetonlineservicesteam@21vianet.com
+> - Azure for US Government: msonlineservicesteam@azureadnotifications.us, msonlineservicesteam@microsoftonline.us
+>
 > If you observe issues in receiving notifications, please check your spam settings. 
+
+Only Password Administrators, User Administrators, and Global Administrators can receive the password reset request notification emails, in that order of priority:
+
+- If your organization has all the three types of administrators, then only Password Administrators receive the notification emails. 
+- If your organization only has User Administrators and Global Administrators, then only User Administrators receive the notification emails. 
+- If your organization only has Global Administrators, then only Global Administrators receive the notification emails.
+
+If you want custom administrators to receive the notification emails, use SSPR customizations and [set up a custom helpdesk link or email](/entra/identity/authentication/tutorial-enable-sspr#set-up-notifications-and-customizations).
+
 ## On-premises integration
 
 If you have a hybrid environment, you can configure Microsoft Entra Connect to write password change events back from Microsoft Entra ID to an on-premises directory.

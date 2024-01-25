@@ -12,7 +12,7 @@ ms.workload: identity
 ms.date: 11/15/2022
 ms.author: rolyon
 ms.reviewer: anandy
-ms.custom: oldportal, it-pro, has-azure-ad-ps-ref
+ms.custom: oldportal, it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.collection: M365-identity-device-management
 ---
 
@@ -29,7 +29,7 @@ This article describes how to assign Microsoft Entra roles with administrative u
 - Microsoft Entra ID P1 or P2 license for each administrative unit administrator
 - Microsoft Entra ID Free licenses for administrative unit members
 - Privileged Role Administrator or Global Administrator
-- Azure AD PowerShell module when using PowerShell
+- Microsoft Graph PowerShell module when using PowerShell
 - Admin consent when using Graph explorer for Microsoft Graph API
 
 For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
@@ -102,14 +102,15 @@ You can assign a Microsoft Entra role with an administrative unit scope by using
 
 ### PowerShell
 
-Use the [New-AzureADMSRoleAssignment](/powershell/module/azuread/new-azureadmsroleassignment) command and the `DirectoryScopeId` parameter to assign a role with administrative unit scope.
+Use the [New-MgRoleManagementDirectoryRoleAssignment](/powershell/module/microsoft.graph.identity.governance/new-mgrolemanagementdirectoryroleassignment) command and the `DirectoryScopeId` parameter to assign a role with administrative unit scope.
 
 ```powershell
-$user = Get-AzureADUser -Filter "userPrincipalName eq 'Example_UPN'"
-$roleDefinition = Get-AzureADMSRoleDefinition -Filter "displayName eq 'Example_role_name'"
-$adminUnit = Get-AzureADMSAdministrativeUnit -Filter "displayName eq 'Example_admin_unit_name'"
+$user = Get-MgUser -Filter "userPrincipalName eq 'Example_UPN'"
+$roleDefinition = Get-MgRoleManagementDirectoryRoleDefinition -Filter "displayName eq 'Example_role_name'"
+$adminUnit = Get-MgDirectoryAdministrativeUnit -Filter "displayName eq 'Example_admin_unit_name'"
 $directoryScope = '/administrativeUnits/' + $adminUnit.Id
-$roleAssignment = New-AzureADMSRoleAssignment -DirectoryScopeId $directoryScope -RoleDefinitionId $roleDefinition.Id -PrincipalId $user.objectId
+$roleAssignment = New-MgRoleManagementDirectoryRoleAssignment -DirectoryScopeId $directoryScope `
+   -PrincipalId $user.Id -RoleDefinitionId $roleDefinition.Id
 ```
 
 ### Microsoft Graph API
@@ -151,11 +152,11 @@ You can view all the role assignments created with an administrative unit scope 
 
 ### PowerShell
 
-Use the [Get-AzureADMSScopedRoleMembership](/powershell/module/azuread/get-azureadmsscopedrolemembership) command to list role assignments with administrative unit scope.
+Use the [Get-MgDirectoryAdministrativeUnitScopedRoleMember](/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdirectoryadministrativeunitscopedrolemember) command to list role assignments with administrative unit scope.
 
 ```powershell
-$adminUnit = Get-AzureADMSAdministrativeUnit -Filter "displayname eq 'Example_admin_unit_name'"
-Get-AzureADMSScopedRoleMembership -Id $adminUnit.Id | fl *
+$adminUnit = Get-MgDirectoryAdministrativeUnit -Filter "displayname eq 'Example_admin_unit_name'"
+Get-MgDirectoryAdministrativeUnitScopedRoleMember -AdministrativeUnitId $adminUnit.Id | FL *
 ```
 
 ### Microsoft Graph API

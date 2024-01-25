@@ -12,7 +12,7 @@ ms.subservice: msi
 ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 01/11/2022
+ms.date: 01/05/2024
 ms.author: barclayn
 ms.collection: M365-identity-device-management 
 ms.custom: devx-track-azurepowershell, subject-rbac-steps, devx-track-arm-template
@@ -81,7 +81,7 @@ Azure Storage does not natively support Microsoft Entra authentication.  However
     | System-assigned | Virtual Machine |
     | Select | &lt;your Windows virtual machine&gt; |
 
-    ![Add role assignment page in Azure portal.](~/../azure-docs-pr/includes/role-based-access-control/media/add-role-assignment-page.png)
+    ![Screenshot that shows the page for adding a role assignment.](../../media/common/add-role-assignment-page.png)
 
 ## Get an access token using the VM's identity and use it to call Azure Resource Manager 
 

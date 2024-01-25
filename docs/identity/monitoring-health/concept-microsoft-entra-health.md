@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: active-directory
 ms.topic: conceptual
 ms.subservice: report-monitor
-ms.date: 12/11/2023
+ms.date: 01/04/2024
 ms.author: sarahlipsey
 ms.reviewer: sarbar
 
@@ -14,7 +14,7 @@ ms.reviewer: sarbar
 
 # What is Microsoft Entra Health?
 
-Microsoft Entra Health (preview) provides you with the ability to view the health of your Microsoft Entra tenant through a report of service level agreement (SLA) attainment and a set of health metrics you can monitor for key Microsoft Entra ID scenarios. All the data is provided at the tenant level. The scenario monitoring solution is currently in public preview and can be enabled or disabled in the Preview Hub; the SLA Attainment report is generally available.
+Microsoft Entra Health (preview) provides you with the ability to view the health of your Microsoft Entra tenant through a report of service level agreement (SLA) attainment and a set of health metrics you can monitor for key Microsoft Entra ID scenarios. All the data is provided at the tenant level. The scenario monitoring solution is currently in public preview and can be enabled or disabled in the Preview Hub; the SLA Attainment report is available by default.
 
 ## How to access Microsoft Entra Health
 
@@ -25,7 +25,7 @@ You can view the Microsoft Entra Health SLA attainment and Scenario monitoring (
 
 ![Screenshot of the Microsoft Entra Health landing page.](media/concept-microsoft-entra-health/identity-health-landing-page.png)
 
-### Enable the Scenario monitoring preview
+### Enable the Scenario monitoring preview 
 
 If you'd like to view the **Scenario monitoring (preview)**:
 
@@ -37,7 +37,7 @@ Enabling preview feature might take up to 24 hours to populate. Enabling the pre
 
 ## SLA attainment
 
-In addition to providing global SLA performance, Microsoft Entra ID now provides tenant-level SLA performance. The Service Level Agreement (SLA) attainment is the user authentication availability for Microsoft Entra ID. The target SLA threshold is 99.99%.
+In addition to providing global SLA performance, Microsoft Entra ID now provides tenant-level SLA performance for organizations with at least 5000 monthly active users. The Service Level Agreement (SLA) attainment is the user authentication availability for Microsoft Entra ID. For the current availability target and details on how SLA is calculated, see [SLA for Microsoft Entra ID](https://azure.microsoft.com/support/legal/sla/active-directory/v1_1/).
 
 Hover your mouse over the bar for a month to view the percentage for that month. A table with the same details appears below the graph.
 
@@ -45,7 +45,7 @@ You can also view SLA attainment using [Microsoft Graph](/graph/api/resources/se
 
 ![Screenshot of the SLA attainment report.](media/concept-microsoft-entra-health/sla-attainment.png)
 
-## Scenario monitoring (preview)
+## Scenario monitoring (preview) 
 
 Many IT administrators spend a considerable amount of time investigating the health of the following key scenarios:
 

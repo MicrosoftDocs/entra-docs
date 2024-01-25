@@ -9,7 +9,7 @@ ms.service: active-directory
 ms.topic: conceptual
 ms.subservice: roles
 ms.workload: identity
-ms.date: 06/22/2023
+ms.date: 01/02/2024
 ms.author: rolyon
 ms.reviewer: 
 ms.custom: oldportal;it-pro;
@@ -54,15 +54,15 @@ For administrators not explicitly assigned at the restricted management administ
 
 | Operation type | Blocked | Allowed |
 | --- | :---: | :---: |
-| Read standard properties like user principal name, user photo |  | :heavy_check_mark: |
+| Read standard properties like user principal name, user photo |  | :white_check_mark: |
 | Modify any Microsoft Entra properties of the user, group, or device | :x: |  |
 | Delete the user, group, or device | :x: |  |
 | Update password for a user | :x: |  |
 | Modify owners or members of the group in the restricted management administrative unit | :x: |  |
-| Add users, groups, or devices in a restricted management administrative unit to groups in Microsoft Entra ID |  | :heavy_check_mark: |
-| Modify email & mailbox settings in Exchange for the user in the restricted management administrative unit |  | :heavy_check_mark: |
-| Apply policies to a device in a restricted management administrative unit using Intune |  | :heavy_check_mark: |
-| Add or remove a group as a site owner in SharePoint |  | :heavy_check_mark: |
+| Add users, groups, or devices in a restricted management administrative unit to groups in Microsoft Entra ID |  | :white_check_mark: |
+| Modify email & mailbox settings in Exchange for the user in the restricted management administrative unit |  | :white_check_mark: |
+| Apply policies to a device in a restricted management administrative unit using Intune |  | :white_check_mark: |
+| Add or remove a group as a site owner in SharePoint |  | :white_check_mark: |
 
 ## Who can modify objects?
 
@@ -72,8 +72,8 @@ Only administrators with an explicit assignment at the scope of a restricted man
 | --- | :---: | :---: |
 | Global Administrator | :x: |  |
 | Tenant-scoped administrators (including Global Administrator) | :x: |  |
-| Administrators assigned at the scope of restricted management administrative unit |  | :heavy_check_mark: |
-| Administrators assigned at the scope of another restricted management administrative unit of which the object is a member |  | :heavy_check_mark: |
+| Administrators assigned at the scope of restricted management administrative unit |  | :white_check_mark: |
+| Administrators assigned at the scope of another restricted management administrative unit of which the object is a member |  | :white_check_mark: |
 | Administrators assigned at the scope of another regular administrative unit of which the object is a member | :x: |  |
 | Groups Administrator, User Administrator, and other role assigned at the scope of a resource | :x: |  |
 | Owners of groups or devices added to restricted management administrative units | :x: |  |
@@ -83,7 +83,7 @@ Only administrators with an explicit assignment at the scope of a restricted man
 Here are some of the limits and constraints for restricted management administrative units.
 
 - The restricted management setting must be applied during administrative unit creation and can't be changed once the administrative unit is created.
-- Groups in a restricted management administrative unit can't be managed with [Microsoft Entra Privileged Identity Management](~/id-governance/privileged-identity-management/groups-discover-groups.md).
+- Groups in a restricted management administrative unit can't be managed with Microsoft Entra ID Governance features such as [Microsoft Entra Privileged Identity Management](../../id-governance/privileged-identity-management/groups-discover-groups.md) or [Microsoft Entra entitlement management](../../id-governance/entitlement-management-overview.md).
 - Role-assignable groups, when added to a restricted management administrative unit, can't have their membership modified.  Group owners aren't allowed to manage groups in restricted management administrative units and only Global Administrators and Privileged Role Administrators (neither of which can be assigned at administrative unit scope) can modify membership.
 - Certain actions may not be possible when an object is in a restricted management administrative unit, if the required role isn't one of the roles that can be assigned at administrative unit scope.  For example, a Global Administrator in a restricted management administrative unit can't have their password reset by any other administrator in the system, because there's no admin role that can be assigned at the administrative unit scope that can reset the password of a Global Administrator. In such scenarios, the Global Administrator would need to be removed from the restricted management administrative unit first, and then have their password reset by another Global Administrator or Privileged Role Administrator.
 - When deleting a restricted management administrative unit, it can take up to 30 minutes to remove all protections from the former members.

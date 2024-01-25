@@ -301,7 +301,9 @@ The error message displayed will be: "Due to a configuration change made by your
 
 ### UserUnableToAddPublisher
 
-When a request to add a verified publisher is made, many signals are used to make a security risk assessment. If the user risk state is determined to be ‘AtRisk’, an error, “You're unable to add a verified publisher to this application. Contact your administrator for assistance” will be returned. Investigate the user risk and take the appropriate steps to remediate the risk (guidance below): 
+Error: "You're unable to add a verified publisher to this application. Contact your administrator for assistance." 
+
+When a request to add a verified publisher is made, many signals are used to make a security risk assessment. If the user risk state is determined to be ‘AtRisk’, the above error will be returned. Investigate the user risk and take the appropriate steps to remediate the risk (guidance below): 
 
 **Remediation Steps**
 > [Investigate risk](~/id-protection/howto-identity-protection-investigate-risk.md#risky-users)
@@ -317,7 +319,12 @@ When a request to add a verified publisher is made, many signals are used to mak
 
 ### UnableToAddPublisher
 
-When a request to add a verified publisher is made, many signals are used to make a security risk assessment. If the request is determined to be risky an error will be returned. For security reasons, Microsoft doesn't disclose the specific criteria used to determine whether a request is risky or not. If you received this error and believe the "risky" assessment is incorrect, try waiting and resubmitting the verification request. Some customers have reported success after multiple attempts.
+Error: "A verified publisher cannot be added to this application. Please contact your administrator for assistance."
+
+When a request to add a verified publisher is made, many signals are used to make a security risk assessment. If a request is determined to be risky, the above error will be returned. For security reasons, Microsoft doesn't disclose the specific criteria used to determine whether a request is risky or not.
+
+**Remediation Steps**
+> If you believe the "risky" assessment is incorrect, try resubmitting the verification request the next day. It may take some time for the risk state to update.
 
 
 ## Next steps

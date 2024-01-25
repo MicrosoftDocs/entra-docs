@@ -5,7 +5,7 @@ description: Learn how to troubleshoot sign-in errors using Microsoft Entra repo
 author: shlipsey3
 manager: amycolannino
 ms.service: active-directory
-ms.topic: how-to
+ms.topic: troubleshooting
 ms.subservice: report-monitor
 ms.date: 12/15/2023
 ms.author: sarahlipsey

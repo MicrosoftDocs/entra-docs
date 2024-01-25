@@ -9,7 +9,7 @@ ms.service: active-directory
 ms.subservice: enterprise-users
 ms.workload: identity
 ms.topic: how-to
-ms.date: 12/02/2023
+ms.date: 01/12/2024
 ms.author: barclayn
 ms.reviewer: addimitu
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
@@ -112,7 +112,12 @@ After you have all the Azure, Office 365, and Microsoft 365 subscriptions cancel
 
 ## Remove enterprise apps that you can't delete
 
-A few enterprise applications can't be deleted in the Microsoft Entra admin center and might block you from deleting the tenant. Use the following PowerShell procedure to remove those applications:
+A few enterprise applications can't be deleted in the Microsoft Entra admin center and might block you from deleting the tenant. 
+
+> [!WARNING]
+> This code is provided as an example for demonstration purposes. If you intend to use it in your environment, consider testing it first on a small scale, or in a separate test organization. You may have to adjust the code to meet the specific needs of your environment.
+
+Use the following PowerShell code to remove those applications:
 
 1. [Install](/powershell/microsoftgraph/installation) the Microsoft Graph PowerShell module by running the following command:
 
@@ -149,7 +154,7 @@ A few enterprise applications can't be deleted in the Microsoft Entra admin cent
 6. Run the following command to remove any enterprise apps that you can't delete:
 
    ```powershell
-   Get-AzADServicePrincipal | ForEach-Object { Remove-AzADServicePrincipal -ObjectId $_.Id }
+   Get-MgServicePrincipal | ForEach-Object { Remove-MgServicePrincipal -ObjectId $_.Id }
    ```
 
 7. Run the following command to remove applications and service principals:

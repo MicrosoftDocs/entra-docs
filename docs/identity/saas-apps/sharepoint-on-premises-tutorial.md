@@ -11,7 +11,7 @@ ms.custom:
  - has-azure-ad-ps-ref
  - azure-ad-ref-level-one-done
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 01/09/2024
 ms.author: jeedes
 ---
 # Tutorial: Implement federated authentication between Microsoft Entra ID and SharePoint on-premises
@@ -169,7 +169,7 @@ In this step, you configure a web application in SharePoint to trust the Microso
     
             ![Alternate Access Mappings of extended web application](./media/sharepoint-on-premises-tutorial/sp-alternate-access-mappings-extended-zone.png)
 
-Once the web application is created, you can create a root site collection and add you Windows account as the primary site collection administrator.
+Once the web application is created, you can create a root site collection and add your Windows account as the primary site collection administrator.
 
 1. Create a certificate for the SharePoint site
 
@@ -225,17 +225,17 @@ In the dialog, you need to type the exact value of the userprincipalname, for ex
 > [!IMPORTANT]
 > Be careful to type the exact value of the user you want to invite, and choose the appropriate claim type in the list, otherwise the sharing will not work.
 
-![People picker results without AzureCP](./media/sharepoint-on-premises-tutorial/sp-people-picker-search-no-azurecp.png)
+![Screenshot of people picker results without EntraCP.](./media/sharepoint-on-premises-tutorial/sp-people-picker-search-no-entracp.png)
 
 This limitation is because SharePoint does not validate the input from the people picker, which can be confusing and lead to misspellings or users accidentally choosing the wrong claim type.  
-To fix this scenario, an open-source solution called [AzureCP](https://github.com/Yvand/EntraCP) can be used to connect SharePoint 2019 / 2016 / 2013 with Microsoft Entra ID and resolve the input against your Microsoft Entra tenant. For more information, see [AzureCP](https://github.com/Yvand/EntraCP).
+To fix this scenario, an open-source solution called [EntraCP](https://entracp.yvand.net/) can be used to connect SharePoint 2019 / 2016 / 2013 with Microsoft Entra ID and resolve the input against your Microsoft Entra tenant. For more information, see [EntraCP](https://entracp.yvand.net/).
 
-Below is the same search with AzureCP configured: SharePoint returns actual users based on the input:
+Below is the same search with EntraCP configured: SharePoint returns actual users based on the input:
 
-![People picker results with AzureCP](./media/sharepoint-on-premises-tutorial/sp-people-picker-search-with-azurecp.png)
+![Screenshot of people picker results with EntraCP.](./media/sharepoint-on-premises-tutorial/sp-people-picker-search-with-entracp.png)
 
 > [!IMPORTANT]
-> AzureCP isn't a Microsoft product and isn't supported by Microsoft Support. To download, install, and configure AzureCP on the on-premises SharePoint farm, see the [AzureCP](https://github.com/Yvand/EntraCP) website.
+> EntraCP isn't a Microsoft product and isn't supported by Microsoft Support. To download, install, and configure EntraCP on the on-premises SharePoint farm, see the [EntraCP](https://entracp.yvand.net/) website. 
 
 Microsoft Entra user `AzureUser1@demo1984.onmicrosoft.com` can now use his/her identity to sign in to the SharePoint site `https://spsites.contoso.local/`.
 
@@ -271,7 +271,7 @@ Let's create a security group.
 
 Microsoft Entra security groups are identified with their attribute `Id`, which is a GUID (for example, `E89EF0A3-46CC-45BF-93A4-E078FCEBFC45`).  
 Without a custom claims provider, users need to type the exact value (`Id`) of the group in the people picker, and select the corresponding claim type. This is not user-friendly nor reliable.  
-To avoid this, this article uses third-party claims provider [AzureCP](https://github.com/Yvand/EntraCP) to find the group in a friendly way in SharePoint:
+To avoid this, this article uses third-party claims provider [EntraCP](https://entracp.yvand.net/) to find the group in a friendly way in SharePoint:
 
 ![People picker search Microsoft Entra group](./media/sharepoint-on-premises-tutorial/sp-people-picker-search-azure-entra-group.png)
 
@@ -311,17 +311,17 @@ As a conclusion, to ensure that guest accounts are all identified with the same 
 ### Invite guest users in SharePoint
 
 > [!NOTE]
-> This section assumes that claims provider AzureCP is used
+> This section assumes that claims provider EntraCP is used
 
 In the section above, you updated the enterprise application to use a consistent attribute for all guest accounts.  
-Now, the configuration of AzureCP needs to be updated to reflect that change and use the attribute `userprincipalname` for guest accounts:
+Now, the configuration of EntraCP needs to be updated to reflect that change and use the attribute `userprincipalname` for guest accounts:
 
 1. Open the **SharePoint Central Administration** site.
-1. Under **Security**, select **AzureCP global configuration**.
+1. Under **Security**, select **EntraCP global configuration**.
 1. In the section **User identifier property**: Set the **User identifier for 'Guest' users:** to **UserPrincipalName**.
 1. Click Ok
 
-![AzureCP guests accounts configuration](./media/sharepoint-on-premises-tutorial/sp-azurecp-attribute-for-guests.png)
+![Screenshot of EntraCP guests accounts configuration.](./media/sharepoint-on-premises-tutorial/sp-entracp-attribute-for-guests.png)
 
 You can now invite any guest user in the SharePoint sites.
 
@@ -350,39 +350,40 @@ $t.Update()
 
 ![Specify additional web applications](./media/sharepoint-on-premises-tutorial/azure-entra-app-reply-urls.png)
 
-### Configure the lifetime of the security token
+## Configure the lifetime of the security token
 
-By default, Microsoft Entra ID creates a SAML token that is valid for 1 hour.  
-This lifetime cannot be customized in the Azure portal, or using a Conditional Access policy, but it can be done by creating a [custom token lifetime policy](~/identity-platform/configurable-token-lifetimes.md) and apply it to the enterprise application created for SharePoint.  
-To do this, complete the steps below using Windows PowerShell:
+By default, Microsoft Entra ID creates a SAML token that is valid for 1 hour, that cannot be customized in the Azure portal or using a Conditional Access policy.  
+However, it is possible to create a [custom token lifetime policy](~/identity-platform/configurable-token-lifetimes.md), and assign it to the enterprise application you created for SharePoint Server.  
+You can run the script below to achieve this:
 
-1. Install the [Microsoft.Graph.Beta](https://www.powershellgallery.com/packages/Microsoft.Graph.Beta/) module:
+```powershell
+Install-Module Microsoft.Graph
+Connect-MgGraph -Scopes "Policy.ReadWrite.ApplicationConfiguration","Policy.Read.All","Application.ReadWrite.All"
 
-    ```powershell
-    Install-Module Microsoft.Graph -Scope CurrentUser
-    Install-Module Microsoft.Graph.Beta -Scope CurrentUser
-    ```
+$appDisplayName = "SharePoint corporate farm"
+$sp = Get-MgServicePrincipal -Search DisplayName:"$appDisplayName" -ConsistencyLevel eventual
 
-1. Run [Connect-MgGraph](/powershell/module/microsoft.graph.authentication/connect-mggraph) to sign-in as a tenant administrator.
+$oldPolicy = Get-MgServicePrincipalTokenLifetimePolicy -ServicePrincipalId $sp.Id
+if ($null -ne $oldPolicy) {
+	# There can be only 1 TokenLifetimePolicy associated to the service principal (or 0, as by default)
+    Remove-MgServicePrincipalAppManagementPolicy -AppManagementPolicyId $oldPolicy.Id -ServicePrincipalId $sp.Id
+}
 
-1. Run the sample script below to update the application `SharePoint corporate farm` to issue a SAML token valid for 6h (value `06:00:00` of property `AccessTokenLifetime`):
+# Get / create a custom token lifetime policy
+$policyDisplayName = "WebPolicyScenario"
+$policy = Get-MgPolicyTokenLifetimePolicy -Filter "DisplayName eq '$policyDisplayName'"
+if ($null -eq $policy) {
+	$params = @{
+		Definition = @('{"TokenLifetimePolicy":{"Version":1,"AccessTokenLifetime":"4:00:00"}}') 
+		DisplayName = $policyDisplayName
+		IsOrganizationDefault = $false
+	}
+	$policy = New-MgPolicyTokenLifetimePolicy -BodyParameter $params
+}
 
-    ```powershell
-    $appDisplayName = "SharePoint corporate farm"
-
-    $sp = Get-MgBetaServicePrincipal -Search DisplayName:"$appDisplayName" -ConsistencyLevel eventual
-    $oldPolicy = Get-MgBetaServicePrincipalTokenLifetimePolicy -ServicePrincipalId $sp.Id | ?{$_.Type -eq "TokenLifetimePolicy"}
-
-    if ($null -ne $oldPolicy) {
-        # There can be only 1 TokenLifetimePolicy associated to the service principal (or 0, as by default)
-        Remove-MgBetaServicePrincipalAppManagementPolicy -AppManagementPolicyId $oldPolicy.Id -ServicePrincipalId $sp.Id
-    }
-
-    # Create a custom TokenLifetimePolicy in Microsoft Entra ID and add it to the service principal
-    $policy = New-MgBetaPolicyActivityBasedTimeoutPolicy -Definition @('{"TokenLifetimePolicy":{"Version":1,"AccessTokenLifetime":"06:00:00"}}') -DisplayName "Custom token lifetime policy"
-    $params = @{TokenLifetimePolicyId=$policy.Id}
-    New-MgBetaServicePrincipalClaimMappingPolicyByRef -ServicePrincipalId $sp.Id -BodyParameter $params
-    ```
-
-After the script completed, all users who successfully sign-in to the enterprise application will get a SAML 1.1 token valid for 6h in SharePoint.  
-To revert the change, simply remove the custom `TokenLifetimePolicy` object from the service principal, as done at the beginning of the script.
+# Assign the token lifetime policy to an app
+$body = @{
+	"@odata.id" = "https://graph.microsoft.com/v1.0/policies/tokenLifetimePolicies/$($policy.Id)"
+}
+Invoke-GraphRequest -Uri ('https://graph.microsoft.com/v1.0/servicePrincipals/{0}/tokenLifetimePolicies/$ref' -f $sp.Id) -Method POST -Body $body
+```

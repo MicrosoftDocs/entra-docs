@@ -5,7 +5,6 @@ services: active-directory
 documentationCenter: ''
 author: owinfreyATL
 manager: amycolannino
-editor: 
 ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
@@ -314,9 +313,9 @@ Until you have migrated to Microsoft Entra ID groups with group writeback, you c
 You can use the results from an access review on on-premises groups and process them further, either by:
 
 * Downloading the CSV report from the access review and manually taking action.
-* Using Microsoft Graph to programmatically access results and decisions in completed access reviews.
+* Using Microsoft Graph to [programmatically retrieve the results of decisions of completed access reviews](complete-access-review.md#retrieve-the-results-programmatically).
 
-For example, to access results for a Windows AD-managed group, use this [PowerShell sample script](https://github.com/microsoft/access-reviews-samples/tree/master/AzureADAccessReviewsOnPremises). The script outlines the required Microsoft Graph calls and exports the Windows AD-PowerShell commands to carry out the changes.
+For example, to retrieve results for a Windows Server AD-managed group, use this [PowerShell sample script](https://github.com/microsoft/access-reviews-samples/tree/master/AzureADAccessReviewsOnPremises). The script outlines the required Microsoft Graph calls and exports the Windows Server AD PowerShell commands to carry out the changes.
 
 ## Plan access reviews for applications
 
@@ -329,7 +328,7 @@ Plan reviews for applications in the following scenarios when:
 * The application has specific compliance requirements to which you must attest.
 * You suspect inappropriate access.
 
-Before you create access reviews for an application, the application needs to be integrated with Microsoft Entra ID, with users assigned to the app roles, and the **User assignment required?** option on the application set to **Yes**. If it's set to **No**, all users in your directory, including external identities, can access the application and you can't review access to the application.
+Before you create access reviews for an application, the application needs to be integrated with Microsoft Entra ID as an application in your tenant, with users assigned to the app roles, and the **User assignment required?** option on the application set to **Yes**. If it's set to **No**, all users in your directory, including external identities, can access the application and you can't review access to the application.
 
  ![Screenshot that shows planning app assignments.](./media/deploy-access-review/6-plan-applications-assignment-required.png)
 
