@@ -102,16 +102,6 @@ To protect customers from emerging identity-based attacks, Microsoft Entra ID Pr
 
 ---
 
-### General Availability - Define Azure custom roles with data actions at Management Group scope
-
-**Type:** Changed feature    
-**Service category:** User Access Management    
-**Product capability:** AuthZ/Access Delegation    
-
-You can create custom roles containing Data Actions at the Management Group level, and assign these roles at the subscription scope or below. This allows central management of custom roles, significantly reducing administrative overhead by eliminating the need to manage duplicate role definitions across multiple subscriptions. For more information, see: [Azure custom roles](/azure/role-based-access-control/custom-roles).
-
----
-
 ###  App-Only User.ReadBasic.All Permission is now available
 
 **Type:** Fixed    
