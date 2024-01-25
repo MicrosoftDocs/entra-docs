@@ -24,6 +24,10 @@ Two other activity logs are also available to help monitor the health of your te
 
 This article gives you an overview of the user provisioning logs.
 
+## License and role requirements
+
+[!INCLUDE [Microsoft Entra monitoring and health](../../includes/licensing-monitoring-health.md)]
+
 ## What can you do with the provisioning logs?
 
 You can use the provisioning logs to find answers to questions like:
