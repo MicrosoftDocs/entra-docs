@@ -74,13 +74,13 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
    ![Screenshot shows how to edit Basic SAML Configuration.](common/edit-urls.png "Basic Configuration")
 
-1. On the **Basic SAML Configuration** section, the application is preconfigured and the necessary URLs are already prepopulated with Azure. The user needs to save the configuration by clicking the **Save** button.
+1. On the **Basic SAML Configuration** section, the application is preconfigured and the necessary URLs are already prepopulated with Microsoft Entra. The user needs to save the configuration by clicking the **Save** button.
 
 1. Othership Workplace Scheduler application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
 	![Screenshot shows the image of attributes configuration.](common/default-attributes.png "Image")
 
-1. In addition to above, Othership Workplace Scheduler application expects few more attributes to be passed back in SAML response which are shown below. These attributes are also pre populated but you can review them as per your requirements.
+1. In addition to above, Othership Workplace Scheduler application expects few more attributes to be passed back in SAML response, which are shown below. These attributes are also pre populated but you can review them as per your requirements.
 	
 	| Name | Source Attribute |
 	| ---- | ---------------- |
@@ -126,7 +126,7 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
 
 1. Log in to Othership Workplace Scheduler company site as an administrator.
 
-1. Go to **Settings** > **Organisation Settings** > **Organisation Integrations** and click **+ Add** to add SAML 2.0.
+1. Go to **Settings** > **Organisation Settings** > **Organisation Integrations** and click to **+ Add** SAML 2.0.
 
    ![Screenshot shows the path to Configure.](./media/othership-workplace-scheduler-tutorial/settings.png "Settings")
 
