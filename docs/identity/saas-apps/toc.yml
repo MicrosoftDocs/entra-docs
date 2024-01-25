@@ -176,6 +176,8 @@
         href: appinux-tutorial.md
       - name: Applied Mental Health
         href: applied-mental-health-tutorial.md
+      - name: Applitools Eyes
+        href: applitools-eyes-tutorial.md
       - name: AppNeta Performance Monitor
         href: appneta-tutorial.md
       - name: Appraisd
@@ -344,6 +346,8 @@
         href: blackboard-learn-shibboleth-tutorial.md
       - name: Blink
         href: blink-tutorial.md
+      - name: Blinq
+        href: blinq-tutorial.md
       - name: Blockbax
         href: blockbax-tutorial.md  
       - name: BlogIn
@@ -1451,8 +1455,6 @@
         href: jdacloud-tutorial.md
       - name: Jedox
         href: jedox-tutorial.md
-      - name: JFrog Artifactory
-        href: jfrog-artifactory-tutorial.md
       - name: JLL TRIRIGA
         href: jll-tririga-tutorial.md
       - name: JIRA SAML SSO by Microsoft
@@ -2573,6 +2575,8 @@
         href: sps-production-manager-tutorial.md
       - name: Splunk Enterprise and Splunk Cloud
         href: splunkenterpriseandsplunkcloud-tutorial.md
+      - name: SpotDraft
+        href: spotdraft-tutorial.md
       - name: Spotinst
         href: spotinst-tutorial.md
       - name: SpringCM

@@ -5,7 +5,7 @@ description: Learn how to enable users to sign in to Microsoft Entra ID with the
 services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
-ms.custom: has-azure-ad-ps-ref
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: how-to
 ms.date: 09/13/2023
 
@@ -285,18 +285,18 @@ Staged rollout policy allows tenant administrators to enable features for specif
 
 You need *Global Administrator* permissions to complete the following steps:
 
-1. Open a PowerShell session as an administrator, then install the *AzureADPreview* module using the [Install-Module][Install-Module] cmdlet:
+1. Open a PowerShell session as an administrator, then install the *Microsoft.Graph.Beta* module using the [Install-Module][Install-Module] cmdlet:
 
     ```powershell
-    Install-Module AzureADPreview
+    Install-Module Microsoft.Graph.Beta
     ```
 
     If prompted, select **Y** to install NuGet or to install from an untrusted repository.
 
-1. Sign in to your Microsoft Entra tenant as a *Global Administrator* using the [Connect-AzureAD][Connect-AzureAD] cmdlet:
+1. Sign in to your Microsoft Entra tenant using the [Connect-MgGraph](/powershell/microsoftgraph/authentication-commands#using-connect-mggraph) cmdlet:
 
     ```powershell
-    Connect-AzureAD
+    Connect-MgGraph -Scopes "Directory.ReadWrite.All"
     ```
 
     The command returns information about your account, environment, and tenant ID.
@@ -304,32 +304,34 @@ You need *Global Administrator* permissions to complete the following steps:
 1. List all existing staged rollout policies using the following cmdlet:
    
    ```powershell
-   Get-AzureADMSFeatureRolloutPolicy
+   Get-MgBetaPolicyFeatureRolloutPolicy
    ``` 
 
 1. If there are no existing staged rollout policies for this feature, create a new staged rollout policy and take note of the policy ID:
 
    ```powershell
-   $AzureADMSFeatureRolloutPolicy = @{
-      Feature    = "EmailAsAlternateId"
-      DisplayName = "EmailAsAlternateId Rollout Policy"
-      IsEnabled   = $true
+   $MgPolicyFeatureRolloutPolicy = @{
+   Feature    = "EmailAsAlternateId"
+   DisplayName = "EmailAsAlternateId Rollout Policy"
+   IsEnabled   = $true
    }
-   New-AzureADMSFeatureRolloutPolicy @AzureADMSFeatureRolloutPolicy
+   New-MgBetaPolicyFeatureRolloutPolicy @MgPolicyFeatureRolloutPolicy
    ```
 
 1. Find the directoryObject ID for the group to be added to the staged rollout policy. Note the value returned for the *Id* parameter, because it will be used in the next step.
-   
-   ```powershell
-   Get-AzureADMSGroup -SearchString "Name of group to be added to the staged rollout policy"
-   ```
-
-1. Add the group to the staged rollout policy as shown in the following example. Replace the value in the *-Id* parameter with the value returned for the policy ID in step 4 and replace the value in the *-RefObjectId* parameter with the *Id* noted in step 5. It may take up to 1 hour before users in the group can sign in to Microsoft Entra ID with email as an alternate login ID.
 
    ```powershell
-   Add-AzureADMSFeatureRolloutPolicyDirectoryObject -Id "ROLLOUT_POLICY_ID" -RefObjectId "GROUP_OBJECT_ID"
+   Get-MgGroup -Filter "DisplayName eq 'Name of group to be added to the staged rollout policy'"
    ```
-   
+
+1. Add the group to the staged rollout policy as shown in the following example. Replace the value in the *-FeatureRolloutPolicyId* parameter with the value returned for the policy ID in step 4 and replace the value in the *-OdataId* parameter with the *Id* noted in step 5. It may take up to 1 hour before users in the group can sign in to Microsoft Entra ID with email as an alternate login ID.
+
+   ```powershell
+   New-MgBetaDirectoryFeatureRolloutPolicyApplyToByRef `
+      -FeatureRolloutPolicyId "ROLLOUT_POLICY_ID" `
+      -OdataId "https://graph.microsoft.com/v1.0/directoryObjects/{GROUP_OBJECT_ID}"
+   ```
+
 For new members added to the group, it may take up to 24 hours before they can sign in to Microsoft Entra ID with email as an alternate login ID.
 
 ### Removing groups
@@ -337,7 +339,7 @@ For new members added to the group, it may take up to 24 hours before they can s
 To remove a group from a staged rollout policy, run the following command:
 
 ```powershell
-Remove-AzureADMSFeatureRolloutPolicyDirectoryObject -Id "ROLLOUT_POLICY_ID" -ObjectId "GROUP_OBJECT_ID" 
+Remove-MgBetaPolicyFeatureRolloutPolicyApplyToByRef -FeatureRolloutPolicyId "ROLLOUT_POLICY_ID" -DirectoryObjectId "GROUP_OBJECT_ID"
 ```
 
 ### Removing policies
@@ -345,8 +347,8 @@ Remove-AzureADMSFeatureRolloutPolicyDirectoryObject -Id "ROLLOUT_POLICY_ID" -Obj
 To remove a staged rollout policy, first disable the policy then remove it from the system:
 
 ```powershell
-Set-AzureADMSFeatureRolloutPolicy -Id "ROLLOUT_POLICY_ID" -IsEnabled $false 
-Remove-AzureADMSFeatureRolloutPolicy -Id "ROLLOUT_POLICY_ID"
+Update-MgBetaPolicyFeatureRolloutPolicy -FeatureRolloutPolicyId "ROLLOUT_POLICY_ID" -IsEnabled:$false 
+Remove-MgBetaPolicyFeatureRolloutPolicy -FeatureRolloutPolicyId "ROLLOUT_POLICY_ID"
 ```
 
 ## Test user sign-in with an email address
@@ -361,13 +363,15 @@ If users have trouble signing in with their email address, review the following 
 1. If using HRD policy, confirm that the Microsoft Entra ID *HomeRealmDiscoveryPolicy* has the *AlternateIdLogin* definition property set to *"Enabled": true* and the *IsOrganizationDefault* property set to *True*:
 
     ```powershell
-    Get-AzureADPolicy | Where-Object Type -eq "HomeRealmDiscoveryPolicy" | Format-List *
+    Get-MgBetaPolicyHomeRealmDiscoveryPolicy | Format-List *
     ```
+
     If using staged rollout policy, confirm that the Microsoft Entra ID *FeatureRolloutPolicy* has the *IsEnabled* property set to *True*:
 
     ```powershell
-    Get-AzureADMSFeatureRolloutPolicy
+    Get-MgBetaPolicyFeatureRolloutPolicy
     ```
+
 1. Make sure the user account has their email address set in the *ProxyAddresses* attribute in Microsoft Entra ID.
 
 ### Sign-in logs
@@ -383,7 +387,7 @@ Within a tenant, a cloud-only user's UPN may take on the same value as another u
 1. Open a PowerShell session as an administrator, then install the *AzureADPreview* module using the [Install-Module][Install-Module] cmdlet:
 
     ```powershell
-    Install-Module AzureADPreview
+    Install-Module Microsoft.Graph.Beta
     ```
 
     If prompted, select **Y** to install NuGet or to install from an untrusted repository.
@@ -391,14 +395,14 @@ Within a tenant, a cloud-only user's UPN may take on the same value as another u
 1. Sign in to your Microsoft Entra tenant as a *Global Administrator* using the [Connect-AzureAD][Connect-AzureAD] cmdlet:
 
     ```powershell
-    Connect-AzureAD
+    Connect-MgGraph -Scopes "User.Read.All"
     ```
 
 1. Get affected users.
 
     ```powershell
     # Get all users
-    $allUsers = Get-AzureADUser -All $true
+    $allUsers = Get-MgUser -All
     
     # Get list of proxy addresses from all synced users
     $syncedProxyAddresses = $allUsers |
