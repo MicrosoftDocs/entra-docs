@@ -192,11 +192,7 @@ The following tables provide a list of common events that correspond to audit le
 |ID|Event Name|Event Description|
 |-----|-----|-----|
 |1200|AppTokenSuccessAudit|The Federation Service issued a valid token. </br>See XML for details.</br>Activity ID: &#371</br>Additional Data</br>XML: %2|
-
-|1201|AppTokenFailureAudit|The Federation Service failed to issue a valid token. See XML for failure details.
-Activity ID: %1
-Additional Data
-XML: %2|
+|1201|AppTokenFailureAudit|The Federation Service failed to issue a valid token.</br> See XML for failure details.</br>Activity ID: %1</br>Additional Data</br>XML: %2|
 |1202|FreshCredentialSuccessAudit|The Federation Service validated a new credential. See XML for details.
 Activity ID: %1
 Additional Data
