@@ -300,7 +300,7 @@ $graphuri = "https://graph.microsoft.com/v1.0/serviceprincipals/$SPOID"
 $password = $pwd  # password for the pfx file
  
  
-# choose the correct folder name for MSAL based on the PowerShell and .NET version.
+# choose the correct folder name for MSAL based on PowerShell version 5.1 (.Net) or PowerShell Core (.Net Core)
  
 if ($PSVersionTable.PSVersion.Major -gt 5)
     { 
