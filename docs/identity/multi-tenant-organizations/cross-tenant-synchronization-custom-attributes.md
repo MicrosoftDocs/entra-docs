@@ -70,7 +70,7 @@ Once you have one or more directory extensions, you can use them when mapping at
 
 ![Icon for the source tenant.](../../media/common/icons/entra-id-purple.png)<br/>**Source tenant**
 
-If your directory extension was not automatically discovered, you try the following steps to manually add the directory extension to the schema.
+If your directory extension was not automatically discovered, you can try the following steps to manually add the directory extension to the schema.
 
 1. Sign in to the Microsoft Entra admin center of the source tenant using the following link:
 
