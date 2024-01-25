@@ -5,7 +5,7 @@ description: Get an overview of cross-tenant access in Microsoft Entra External 
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: how-to
-ms.date: 11/06/2023
+ms.date: 01/24/2024
 
 ms.author: cmulligan
 author: csmulligan
@@ -89,9 +89,6 @@ You find both primary identity providers and fallback identity providers under t
 Primary identity providers are the ones that have federations with other sources of authentication. Fallback identity providers are the ones that are used, when a user doesn't match a primary identity provider. 
 
 Fallback identity providers can be either Microsoft account (MSA), email one-time passcode, or both. You can't disable both fallback identity providers, but you can disable all primary identity providers and only use fallback identity providers for redemption options. 
-
-> [!NOTE]
-> The Microsoft Entra admin center settings for the configurable redemption feature are currently rolling out to customers. Until the settings are available in the admin center, you can configure the invitation redemption order using the Microsoft Graph REST API (beta version). See [Example 2: Update default invitation redemption configuration](/graph/api/crosstenantaccesspolicyconfigurationdefault-update?view=graph-rest-beta&tabs=http#example-2-update-default-invitation-redemption-configuration&preserve-view=true) in the Microsoft Graph reference documentation.
 
 ### Direct federation for Microsoft Entra ID verified domains (Preview)
 
