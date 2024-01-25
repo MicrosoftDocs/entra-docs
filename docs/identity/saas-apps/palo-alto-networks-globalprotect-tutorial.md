@@ -76,16 +76,19 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. On the **Basic SAML Configuration** section, enter the values for the following fields:
 
-	a. In the **Sign on URL** text box, type a URL using the following pattern:
+    a. In the **Sign on URL** text box, type a URL using the following pattern:
     `https://<Customer Firewall URL>`
 
-    b. In the **Identifier (Entity ID)** text box, type a URL using the following pattern:
+   b. In the **Reply URL (Assertion Consumer Service URL)** text box, type a URL using the following pattern:
+   `https://<Customer Firewall URL>/SAML20/SP/ACS`
+
+    c. In the **Identifier (Entity ID)** text box, type a URL using the following pattern:
     `https://<Customer Firewall URL>/SAML20/SP`
 
 	> [!NOTE]
 	> These values are not real. Update these values with the actual Sign on URL and Identifier. Contact [Palo Alto Networks - GlobalProtect Client support team](https://support.paloaltonetworks.com/support) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
+1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Federation Metadata XML** and select **Download** to download the XML file (which also contains the SAML certificate) and save it on your computer.
 
 	![The Certificate download link](common/metadataxml.png)
 
@@ -141,9 +144,14 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 	a. In the **Profile Name** textbox, provide a name e.g Microsoft Entra GlobalProtect.
 
-	b. In **Identity Provider Metadata**, click **Browse** and select the metadata.xml file which you have downloaded from Azure portal
+	b. In **Identity Provider Metadata**, click **Browse** and select the Federation Metadata XML file which you have downloaded from Azure portal
 
-	c. Click **OK**
+	c. **Optional:** Uncheck Validate Identity Provider certificate. If checked, the Certificate from Azure needs to be uploaded on firewall as well.
+
+	d. Click **OK**
+
+	> [!NOTE]
+	> If the upload fails with the error message `Failed to parse IDP Metadata` check that you have the required administrator privileges on the system and that the profile name doesn't exceed 31 characters.
 
 ### Create Palo Alto Networks - GlobalProtect test user
 
