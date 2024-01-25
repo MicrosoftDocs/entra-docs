@@ -24,18 +24,17 @@ In this tutorial;
 >
 > * Register a SPA in the Microsoft Entra admin center, and record its identifiers
 > * Define the platform and URLs
-> * Grant permissions to the web application to access the Microsoft Graph API
+> * Grant permissions to the SPA to access the Microsoft Graph API
 > * Create a sign-in and sign-out user flow in the Microsoft Entra admin center
 > * Associate your SPA with a user flow
 
 ## Prerequisites
 
-* A customer tenant. If you don't have one, [create a trial tenant](https://aka.ms/ciam-free-trial) or a [tenant with a subscription](./quickstart-tenant-setup.md) before you begin.
+* A Microsoft Entra ID for customer tenant. If you don't have one, [create a trial tenant](https://aka.ms/ciam-free-trial) or a [tenant with a subscription](./quickstart-tenant-setup.md) before you begin.
 * This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
     * Application administrator
     * Application developer
     * Cloud application administrator
-* A Microsoft Entra ID for customers tenant. If you haven't already, [create one now](https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl). You can use an existing customer tenant if you have one.
  
 ## Register the SPA and record identifiers
 

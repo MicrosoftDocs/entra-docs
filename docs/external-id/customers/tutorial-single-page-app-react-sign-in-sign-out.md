@@ -28,7 +28,7 @@ In this tutorial;
 
 ## Prerequisites
 
-* [Tutorial: Prepare your customer tenant to authenticate users in a React single-page app (SPA)](./tutorial-single-page-app-react-sign-in-prepare-tenant.md).
+* [Tutorial: Prepare your customer tenant to authenticate users in a React SPA](./tutorial-single-page-app-react-sign-in-prepare-tenant.md).
 
 ## Change filename and add function to render authenticated information
 
