@@ -5,7 +5,7 @@ author: shlipsey3
 ms.author: sarahlipsey
 manager: amycolannino
 ms.topic: conceptual
-ms.date: 01/16/2024
+ms.date: 01/25/2024
 ms.service: network-access
 ---
 
@@ -21,8 +21,6 @@ The Global Secure Access (preview) network traffic dashboard provides you with v
 This article describes each of the widgets and how you can use the data on the dashboard to monitor and improve your network configurations.
 
 ## How to access the dashboard
-
-Viewing the Global Secure Access dashboard requires a Reports Reader role in Microsoft Entra ID. 
 
 To access the dashboard:
 
