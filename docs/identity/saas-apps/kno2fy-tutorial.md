@@ -67,29 +67,40 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 
    ![Screenshot shows how to edit Basic SAML Configuration.](common/edit-urls.png "Basic Configuration")
 
-1. Login to https://kno2fy.com as a Network Administrator.
+To access the information to setup **Basic SAML Configuration** review the [Microsoft Entra Information Section](#access-microsoft-entra-information-in-kno2fy) below.
 1. On the **Basic SAML Configuration** section, perform the following steps:
 
-    a. In the **Identifier** textbox, type the value:
-    `urn:auth0:kno2:azuread`
+    a. In the **Identifier** textbox, paste the value from:
+    `Identifier (Entity ID)`
 
-    b. In the **Reply URL** textbox, type the URL:
-    `https://auth.kno2fy.com/login/callback?connection=azuread`
+    b. In the **Reply URL** textbox, paste the URL from:
+    `Reply URL (Assertion Consumer Service URL)`
 
-    c. In the **Sign on URL** textbox, type the URL:
-    `https://app.kno2fy.com/account/login/azuread`
+    c. In the **Sign on URL** textbox:
+   **Note** This value will appear once the Kno2fy Identity Provider has been saved.
+   For now leave it blank.
 
-1. On the **Set-up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
+1. Save the **Basic SAML Configuration** section. 
+    
+1. Scroll down and copy the **App Federation Metadata URL** generated.
+1. Continue setup in the [Configure Kno2fy SSO](#configure-kno2fy-sso) section
 
-    ![Screenshot shows the Certificate download link.](common/certificatebase64.png "Certificate")
-
-1. On the **Set up Kno2fy** section, copy the appropriate URL(s) based on your requirement.
-
-	![Screenshot shows to copy configuration appropriate URL.](common/copy-configuration-urls.png "Metadata")
+## Access Microsoft Entra information in Kno2fy
+1. Login to https://kno2fy.com as a Network Administrator.
+1. Click the settings gear in the right-hand corner at the top of the screen.
+1. Under Network, Click **Identity Provider**.
+1. In the dropdown, Select **Microsoft Entra ID**.
+> Kno2fy will display the information needed to setup the **Basic SAML Configuration**
 
 ## Configure Kno2fy SSO
+1. Paste the **App Federation Metadata URL** from Microsoft Entra ID SSO setup into the **App Federation Metadata URL** field inside Kno2fy.
+2. In the **Authentication Settings**, login without SSO will be off by default.
+> To allow time to conduct a login test, the **Allow non-admins to bypass SSO and login with a Kno2 username and password** setting can be enabled temporarily. It is recommended this setting remain off once SSO is fully enabled and setup.
+3. Click the **Save** button to complete the setup.
 
-To configure single sign-on on **Kno2fy** side, you need to send the downloaded **Certificate (Base64)** and appropriate copied URLs from the application configuration to [Kno2fy support team](mailto:support@kno2.com). They set this setting to have the SAML SSO connection set properly on both sides.
+Once complete, an **SSO Integration Activated** banner will appear at the top of the screen.
+Copy the URL and paste the URL into the **Sign on URL** section of the **Basic SAML Configuration** [Configure Microsoft Entra SSO](#configure-microsoft-entra-sso)
+
 
 ### Create Kno2fy test user
 
