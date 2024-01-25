@@ -1738,6 +1738,8 @@ Assign the Microsoft 365 Migration Administrator role to users who need to do th
 > [!NOTE]
 > This role doesn't allow you to migrate from file share sources using the SharePoint admin center. You can use the SharePoint Administrator role to migrate from file share sources.
 
+[Learn more](/sharepointmigration/mm-migration-admin-role)
+
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
