@@ -223,7 +223,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
        > To enable the default login form for admin login on the login page when the force azure login is enabled, add the query parameter in the browser URL.
        > `https://<DOMAIN:PORT>/login.action?force_azure_login=false`
 
-    1. **Enable Use of Application Proxy** checkbox, if you have configured your on-premise atlassian application in an App Proxy setup. For App proxy setup , follow the steps on the [Microsoft Entra application proxy Documentation](~/identity/app-proxy/what-is-application-proxy.md).
+    1. **Enable Use of Application Proxy** checkbox, if you have configured your on-premise atlassian application in an App Proxy setup. For App proxy setup , follow the steps on the [Microsoft Entra application proxy Documentation](~/identity/app-proxy/overview-what-is-app-proxy.md).
 
     1. Click **Save** button to save the settings.
 

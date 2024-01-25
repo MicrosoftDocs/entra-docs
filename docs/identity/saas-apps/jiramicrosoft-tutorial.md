@@ -260,7 +260,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 	k. **Enable Use of Application Proxy** checkbox, if you have configured your on-premises atlassian application in an App Proxy setup.
 
-	* For App proxy setup , follow the steps on the [Microsoft Entra application proxy Documentation](~/identity/app-proxy/what-is-application-proxy.md).
+	* For App proxy setup , follow the steps on the [Microsoft Entra application proxy Documentation](~/identity/app-proxy/overview-what-is-app-proxy.md).
 
 	l. Click **Save** button to save the settings.
 
