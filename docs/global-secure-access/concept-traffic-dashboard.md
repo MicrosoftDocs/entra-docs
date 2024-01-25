@@ -88,7 +88,7 @@ The **Web content filtering** widget displays the top categories of web content 
 
 ## No data available
 
-If your dashboard contains the **No data available** message, you need to onboard your tenant or configure the the required settings to get data to appear on the dashboard. If you see this message, review the [Get started](how-to-get-started-with-global-secure-access.md) guide to onboard your tenant.
+If your dashboard contains the **No data available** message, you need to onboard your tenant or configure the required settings to get data to appear on the dashboard. If you see this message, review the [Get started](how-to-get-started-with-global-secure-access.md) guide to onboard your tenant.
 
 ![Screenshot of a widget with no data available.](media/concept-traffic-dashboard/no-data-available.png)
 
