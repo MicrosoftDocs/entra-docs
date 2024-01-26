@@ -63,4 +63,4 @@ In this tutorial, you'll;
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Part 2: Prepare ASP.NET web app](tutorial-web-app-dotnet-sign-in-prepare-app.md)
+> [Part 2: Prepare an ASP.NET Core web app for authentication in a customer tenant](tutorial-web-app-dotnet-sign-in-prepare-app.md)

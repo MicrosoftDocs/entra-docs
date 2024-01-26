@@ -159,13 +159,13 @@ items:
                 items:
                   - name: Prepare tenant
                     href: tutorial-web-app-dotnet-sign-in-prepare-tenant.md
-                  - name: Prepare ASP.NET Core app
+                  - name: Create ASP.NET Core web app
                     href: tutorial-web-app-dotnet-sign-in-prepare-app.md
                   - name: Sign in and sign out
                     href: tutorial-web-app-dotnet-sign-in-sign-out.md
       - name: Web API
         items: 
-          - name: Protect ASP.NET API
+          - name: Protect an ASP.NET Core API
             items:
               - name: Build a protected API 
                 href: tutorial-protect-web-api-dotnet-core-build-app.md
@@ -212,7 +212,7 @@ items:
             items:
               - name: Prepare tenant
                 href: tutorial-desktop-app-maui-sign-in-prepare-tenant.md
-              - name: Prepare .NET MAUI app
+              - name: Create .NET MAUI app
                 href: tutorial-desktop-app-maui-sign-in-prepare-app.md
               - name: Sign in and sign out
                 href: tutorial-desktop-app-maui-sign-in-sign-out.md
@@ -231,13 +231,13 @@ items:
           items:
           - name: Prepare tenant
             href: tutorial-mobile-app-maui-sign-in-prepare-tenant.md
-          - name: Prepare .NET MAUI app
+          - name: Create .NET MAUI app
             href: tutorial-mobile-app-maui-sign-in-prepare-app.md
           - name: Sign in and sign out
             href: tutorial-mobile-app-maui-sign-in-sign-out.md
           - name: Use role-based access control
             href: tutorial-mobile-maui-role-based-access-control.md
-      - name: Command-line interface (CLI) app
+      - name: .NET CLI
         items:
           - name: Node.js - sign in users
             items:

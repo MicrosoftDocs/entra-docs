@@ -16,7 +16,7 @@ ms.date: 07/24/2023
 
 # Tutorial: Prepare your customer tenant to authenticate users in a .NET browserless app
 
-This tutorial series demonstrates how to build a .NET browserless app and prepare it for authentication using the Microsoft Entra admin center. You'll build authenticate your app with your Microsoft Entra ID for customers tenant. Finally, you'll run the application and test the sign-in and sign-out experiences.
+This tutorial series demonstrates how to build a .NET browserless app and prepare it for authentication using the Microsoft Entra admin center. You'll authenticate your app with your Microsoft Entra ID for customers tenant. Finally, you'll run the application and test the sign-in and sign-out experiences.
 
 In this tutorial, you learn how to:
 
@@ -66,4 +66,4 @@ The next step after this tutorial is to build a WPF desktop app that authenticat
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Part 2: Sign-in to your .NET browserless app](./tutorial-browserless-app-dotnet-sign-in-build-app.md)
+> [Part 2: Add sign-in and sign-out to a .NET browserless app for a customer tenant](./tutorial-browserless-app-dotnet-sign-in-build-app.md)
