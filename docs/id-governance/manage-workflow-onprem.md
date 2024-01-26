@@ -55,25 +55,22 @@ Example: In this article, you will migrate your user databases from IBM Db2 to S
 
 -->
 
+Workflows created by Lifecycle Workflows can be used to manage the lifecycle of synced on-prem users. This allows for greater, and simplified, control of the lifecycle of users within your organization in hybrid environments. In this article, you'll be walked through the steps of enabling a task to be run for an on-prem user.
 
 
-<!---Avoid notes, tips, and important boxes. Readers tend to skip over them. Better to put that info directly into the article text.
 
--->
-
-<!-- 3. Prerequisites --------------------------------------------------------------------
-
-Required: Make Prerequisites the first H2 after the H1. 
-
-* Provide a bulleted list of items that the user needs.
-* Omit any preliminary text to the list.
-* If there aren't any prerequisites, list "None" in plain text, not as a bulleted item.
-
--->
 
 ## Prerequisites
 
-TODO: List the prerequisites
+[!INCLUDE [Microsoft Entra ID Governance license](~/includes/entra-entra-governance-license.md)]
+
+To manage synced on-prem users with Lifecycle Workflows, you must have the following on-prem prerequisites:
+
+1. You must have the [Azure AD provisioning agent](../identity/hybrid/cloud-sync/what-is-provisioning-agent.md) installed in your environment. You can follow the existing installation [prerequisites](../identity/hybrid/cloud-sync/how-to-prerequisites.md) and [steps](../identity/hybrid/cloud-sync/how-to-install.md) in our public documentation. During installation choose “**HR-driven provisioning / Azure AD Connect Cloud Sync**” as “**extension configuration**”. You are not required to add any additional configuration for the provisioning agent, such as the cloud sync configuration, and you can install the provisioning agent even if you are currently using Azure AD Connect Sync for your user synchronization (side-by-side).
+
+1. Ensure the gMSA used by the provisioning agent has the [appropriate permissions](../identity/hybrid/cloud-sync/how-to-prerequisites.md#custom-gmsa-account) to delete user accounts.
+
+1. Enable the Active Directory recycle bin. For a step-by-step guide on this, see: [Active Directory Recycle Bin step-by-step](/windows-server/identity/ad-ds/get-started/adac/introduction-to-active-directory-administrative-center-enhancements--level-100-#active-directory-recycle-bin-step-by-step).
 
 <!-- 4. Task H2s ------------------------------------------------------------------------------
 
