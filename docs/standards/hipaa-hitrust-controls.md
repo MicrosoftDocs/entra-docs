@@ -36,7 +36,7 @@ The following table lists the acronyms and their spelling in this article.
 |ISMS|Information security management system|
 |JEA|Just enough access|
 |JML|Join, move, leave|
-|MFA|Microsoft Entra ID multifactor authentication|
+|MFA|Microsoft Entra multifactor authentication|
 |NIST|National Institute of Standards and Technology, US Dept. of Commerce|
 |PHI| Protected health information|
 |PIM|Priveleged Identity Management|
@@ -59,7 +59,7 @@ The [HIPAA Security Rule (HSR)](https://www.hhs.gov/hipaa/for-professionals/secu
 
 ## HITRUST and HIPAA
 
-HITRUST developed the CSF, which includes security and privacy standards to support healthcare regulations. CSF controls and best practices simplify the task of consolidating multiple sources to ensure compliance with federal legislation, HIPAA security, and privacy rules. HISTRUST CSF is a certifiable security and privacy framework with controls and requirements to demonstrate HIPAA compliance. It’s widely adopted by healthcare organizations. Use the following table to learn about controls.
+HITRUST developed the CSF, which includes security and privacy standards to support healthcare regulations. CSF controls and best practices simplify the task of consolidating sources to ensure compliance with federal legislation, HIPAA security, and privacy rules. HISTRUST CSF is a certifiable security and privacy framework with controls and requirements to demonstrate HIPAA compliance. It’s widely adopted by healthcare organizations. Use the following table to learn about controls.
 
 | Control category | Control category name |
 | - | - |
