@@ -15,7 +15,7 @@ ms.date: 07/27/2023
 
 # Tutorial: Call a protected web API from your .NET daemon app
 
-This tutorial is the final part of a series that demonstrates how to call a protected web API from a .NET daemon app. In this tutorial, you build your client daemon app and call a protected web API. You enable the client daemon app to acquire an access token using its own identity, then call the web API.
+This tutorial is the final part of a series that demonstrates how to call a protected web API from a .NET daemon app. In [part 1 of this series](./tutorial-daemon-dotnet-call-api-prepare-tenant.md), you prepared your customer tenant to authorize a .NET daemon app. In this tutorial, you build your client daemon app and call a protected web API. You enable the client daemon app to acquire an access token using its own identity, then call the web API.
 
 In this tutorial;
 

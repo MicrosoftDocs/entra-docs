@@ -153,7 +153,5 @@ To run and test your Node.js CLI application, ensure you've replaced the placeho
 
 ## See also 
 
-Learn how to: 
-
 - [Enable password reset](how-to-enable-password-reset-customers.md)
 - [Customize branding for your sign-in experience](./how-to-customize-branding-customers.md)

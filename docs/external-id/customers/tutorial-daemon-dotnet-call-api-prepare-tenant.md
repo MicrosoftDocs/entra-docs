@@ -66,7 +66,5 @@ The next step after this tutorial is to build a daemon app that calls your web A
 
 ## Next step
 
-In the next tutorial, you configure your daemon and web API applications.
-
 > [!div class="nextstepaction"]
 > [Part 2: Call a protected web API from your .NET daemon app](tutorial-daemon-dotnet-call-api-build-app.md)
