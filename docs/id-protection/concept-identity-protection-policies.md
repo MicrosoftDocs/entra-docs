@@ -52,16 +52,17 @@ ID Protection analyzes signals about user accounts and calculates a risk score b
 
 A secure password change remediates the user risk and close the risky user event to prevent unnecessary noise for administrators.
 
-## ID Protection policies
+## Migrate ID Protection Risk Policies to Conditional Access
+If you have the legacy User Risk Policy or Sign-in Risk Policy enabled in ID Protection (formerly Identity Protection), we invite you to migrate them to Conditional Access following [these steps](howto-identity-protection-configure-risk-policies.md). Those two legacy risk policies configured in Entra ID Protection will be retired on **October 1, 2026**.
 
-While ID Protection also offers a user interface for creating user risk policy and sign-in risk policy, we highly recommend that you [use Microsoft Entra Conditional Access to create risk-based policies](howto-identity-protection-configure-risk-policies.md) for the following benefits:
-
-- Rich set of conditions to control access: Conditional Access offers a rich set of conditions such as applications and locations for configuration. The risk conditions can be used in combination with other conditions to create policies that best enforce your organizational requirements.
-- Multiple risk-based policies can be put in place to target different user groups or apply different access control for different risk levels.
-- Conditional Access policies can be created through Microsoft Graph API and can be tested first in report-only mode.
-- Manage all access policies in one place in Conditional Access.
-
-If you already have ID Protection risk policies set up, we encourage you to [migrate them to Conditional Access](howto-identity-protection-configure-risk-policies.md#migrate-risk-policies-from-identity-protection-to-conditional-access).
+Configuring risk policies in Conditional Access provides these benefits:
+- Manage all access policies in one place.
+- Report-only mode and Graph API support.
+- Enforce a Sign-in frequency of Every Time to require re-authentication every time.
+- Greater flexibility by combining risk conditions with other conditions like location for granular access control. 
+- Enhanced security with multiple risk-based policies targeting different user groups or risk levels. 
+- Improved diagnostics experience by viewing which risk-based policy applied in Sign-in Logs.
+- Supported by the backup authentication system.
 
 ## Microsoft Entra multifactor authentication registration policy
 
