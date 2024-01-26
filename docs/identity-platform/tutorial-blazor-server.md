@@ -50,7 +50,7 @@ dotnet new blazorserver --auth SingleOrg --calls-graph
 dotnet tool install --global msidentity-app-sync
 ```
 
-This tool will automate the following tasks for you:
+This tool automates the following tasks for you:
 
 - Register your application in Microsoft Entra ID
   - Create a secret for your registered application
