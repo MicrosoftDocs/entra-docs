@@ -63,7 +63,7 @@ The next step after this tutorial is to build a WPF desktop app that authenticat
 - The Application (client) ID of the .NET browserless app that you registered.
 - The Directory (tenant) subdomain where you registered your .NET browserless app. If your primary domain is *contoso.onmicrosoft.com*, your Directory (tenant) subdomain is *contoso*. If you don't have your primary domain, learn how to [read tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
 
-## Next steps
+## Next step
 
 > [!div class="nextstepaction"]
-> [Part 2: Sign-in to your .NET browserless app >](./tutorial-browserless-app-dotnet-sign-in-build-app.md)
+> [Part 2: Sign-in to your .NET browserless app](./tutorial-browserless-app-dotnet-sign-in-build-app.md)
