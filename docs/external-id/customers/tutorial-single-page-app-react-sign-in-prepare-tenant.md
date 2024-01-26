@@ -30,7 +30,7 @@ In this tutorial;
 
 ## Prerequisites
 
-* A Microsoft Entra ID for customer tenant. If you don't have one, [create a trial tenant](https://aka.ms/ciam-free-trial) or a [tenant with a subscription](./quickstart-tenant-setup.md) before you begin.
+* A Microsoft Entra ID for customers tenant. If you don't have one, [create a trial tenant](https://aka.ms/ciam-free-trial) or a [tenant with a subscription](./quickstart-tenant-setup.md) before you begin.
 * This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
     * Application administrator
     * Application developer
@@ -56,7 +56,7 @@ In this tutorial;
 
 [!INCLUDE [add-app-user-flow](./includes/configure-user-flow/add-app-user-flow.md)]
 
-## Next steps
+## Next step
 
 > [!div class="nextstepaction"]
 > [Part 2: Create a React SPA project for authentication in a customer tenant](./tutorial-single-page-app-react-sign-in-prepare-app.md)

@@ -1,5 +1,5 @@
 ---
-title: "Tutorial: Prepare your customer tenant to authorize a .NET daemon application"
+title: "Tutorial: Prepare your customer tenant to authorize a .NET daemon app"
 description: Learn about how to prepare your Microsoft Entra ID for customers tenant to acquire an access token using client credentials flow in your .NET daemon application
  a
 author: SHERMANOUKO
@@ -15,9 +15,7 @@ ms.date: 07/28/2023
 
 # Tutorial: Prepare your customer tenant to authorize a .NET daemon application
 
-The first step in securing your applications is to register them. In this tutorial, you prepare your Microsoft Entra ID for customers tenant for authorization. This tutorial is part of a series that guides you to develop a .NET daemon app that calls your own custom protected web API using Microsoft Entra ID for customers.
-
-In this tutorial, you learn how to:
+In this tutorial series, you learn how build a .NET daemon app that calls your own custom protected web API using Microsoft Entra ID for customers. You'll register an app in Microsoft Entra ID and authenticate your app with your Microsoft Entra ID for customers tenant. Finally, you'll run the app and test the sign-in and sign-out experiences.
 
 > [!div class="checklist"]
 >
@@ -27,7 +25,11 @@ In this tutorial, you learn how to:
 
 ## Prerequisites
 
-Microsoft Entra ID for customers tenant. If you don't already have one, [sign up for a free trial](https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl).
+* A Microsoft Entra ID for customer tenant. If you don't have one, [create a trial tenant](https://aka.ms/ciam-free-trial) or a [tenant with a subscription](./quickstart-tenant-setup.md) before you begin.
+* This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
+    * Application administrator
+    * Application developer
+    * Cloud application administrator
 
 ## Register a web API application
 
@@ -62,7 +64,7 @@ The next step after this tutorial is to build a daemon app that calls your web A
 - The application secret value for the daemon app you created.
 - The Application (client) ID of the web API app you registered.
 
-## Next steps
+## Next step
 
 In the next tutorial, you configure your daemon and web API applications.
 

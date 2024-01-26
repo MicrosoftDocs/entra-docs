@@ -275,7 +275,7 @@ The application uses *authPopup.js* to handle the authentication flow when the u
 
 1. Save the file.
 
-## Next steps
+## Next step
 
 > [!div class="nextstepaction"]
 > [Part 4: Sign in and sign out of the Vanilla JS SPA](./tutorial-single-page-app-vanillajs-sign-in-sign-out.md)

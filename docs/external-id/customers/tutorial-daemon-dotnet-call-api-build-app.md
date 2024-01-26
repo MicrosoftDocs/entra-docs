@@ -1,5 +1,5 @@
 ---
-title: "Tutorial: Call a protected web API from your .NET daemon application"
+title: "Tutorial: Call a protected web API from your .NET daemon app"
 description: Learn about how to call a protected web API from your .NET client daemon app. 
  
 author: SHERMANOUKO
@@ -40,7 +40,7 @@ Before continuing with this tutorial, ensure you have all of the following items
     - `GET /api/todolist` to get all todos.
     - `POST /api/todolist` to add a todo.
 
-- [.NET 7.0](https://dotnet.microsoft.com/download/dotnet/7.0) or later. 
+- [.NET 7.0 SDK](https://dotnet.microsoft.com/download/dotnet/7.0) or later. 
 - [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 
 ##  1. Create a .NET daemon app

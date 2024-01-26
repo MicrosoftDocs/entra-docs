@@ -401,7 +401,7 @@ Functional components are the building blocks of React apps, and are used to bui
 
 1. Save the file.
 
-## Next steps
+## Next step
 
 > [!div class="nextstepaction"]
 > [Part 4: Sign in and sign out of the React SPA](./tutorial-single-page-app-react-sign-in-sign-out.md)

@@ -199,7 +199,7 @@ All parts of the app that require authentication must be wrapped in the [`MsalPr
     );
     ```
 
-## Next steps
+## Next step
 
 > [!div class="nextstepaction"]
 > [Part 3: Handle authentication flows in a React SPA](./tutorial-single-page-app-react-sign-in-configure-authentication.md)

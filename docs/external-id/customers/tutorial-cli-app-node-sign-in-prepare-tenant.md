@@ -18,9 +18,9 @@ ms.custom: developer, devx-track-js
 
 # Tutorial: Prepare your customer tenant to sign in users in a Node.js CLI app
 
-This tutorial series demonstrates how to build a Node.js command line interface (CLI) and prepare it for authentication using the Microsoft Entra admin center. You'll use the [Microsoft Authentication Library for Node](/javascript/api/%40azure/msal-node) (MSAL Node) library to authenticate your app with your Microsoft Entra ID for customers tenant. Finally, you'll run the application and test the sign-in and sign-out experiences.
+This tutorial series demonstrates how to build a Node.js command line interface (CLI) app and prepare it for authentication using the Microsoft Entra admin center. You'll use the [Microsoft Authentication Library for Node](/javascript/api/%40azure/msal-node) (MSAL Node) library to authenticate your app with your Microsoft Entra ID for customers tenant. Finally, you'll run the application and test the sign-in and sign-out experiences.
 
-In this tutorial;;
+In this tutorial;
 
 > [!div class="checklist"]
 >
@@ -32,7 +32,11 @@ In this tutorial;;
 
 ## Prerequisites
 
-- A Microsoft Entra ID for customers tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
+* A Microsoft Entra ID for customer tenant. If you don't have one, [create a trial tenant](https://aka.ms/ciam-free-trial) or a [tenant with a subscription](./quickstart-tenant-setup.md) before you begin.
+* This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
+    * Application administrator
+    * Application developer
+    * Cloud application administrator
 
 ## Register the Node.js CLI app
 
@@ -60,7 +64,7 @@ Since this app signs in users, add delegated permissions. These permissions allo
 [!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/configure-user-flow/add-app-user-flow.md)]
 
 
-## Next steps
+## Next step
 
 Prepare your app to sign in users in a Microsoft Entra ID for customers tenant:
 

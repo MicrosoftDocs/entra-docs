@@ -111,7 +111,7 @@ In this tutorial;
 
 In this code, the **app** variable is initialized with the **express** module and **express** is used to serve the public assets. **MSAL-browser** is served as a static asset and is used to initiate the authentication flow.
 
-## Next steps
+## Next step
 
 > [!div class="nextstepaction"]
 > [Part 3: Handle authentication flows in a Vanilla JS SPA](tutorial-single-page-app-vanillajs-configure-authentication.md)

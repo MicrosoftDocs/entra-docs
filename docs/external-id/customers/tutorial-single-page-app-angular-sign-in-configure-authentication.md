@@ -240,7 +240,7 @@ In this tutorial;
     export class AppRoutingModule { }
     ```
 
-## Next steps
+## Next step
 
 > [!div class="nextstepaction"]
 > [Part 4: Sign in and sign out of the Angular SPA](./tutorial-single-page-app-angular-sign-in-sign-out.md)
