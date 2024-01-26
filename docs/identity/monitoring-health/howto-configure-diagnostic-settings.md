@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: active-directory
 ms.topic: how-to
 ms.subservice: report-monitor
-ms.date: 01/23/2024
+ms.date: 01/26/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
 
@@ -31,7 +31,7 @@ To configure diagnostic settings, you need:
 - **Security Administrator** access for the Microsoft Entra tenant. For more information about least privilege in our documentation, see [Get the most out of documentation](/entra/fundamentals/how-to-navigate).
 - A destination that is already set up. For example, if you want to stream logs to an event hub, you need to create the event hub before you can configure the diagnostic settings.
 
-## Access diagnostic settings
+## How to access diagnostic settings
 
 [!INCLUDE [portal update](../../includes/portal-update.md)]
 
@@ -47,6 +47,8 @@ When you create or edit a diagnostic setting, you can choose which log categorie
 
 You can select one, some, or all of the available logs. Some logs might be part of a preview feature, so even if you select a log category, you might not see any data until the feature is generally available. 
 
+![Screenshot of the log categories in diagnostic settings.](media/howto-configure-diagnostic-settings/diagnostic-settings-log-categories.png)
+
 ### Destination details
 
 You can send logs to a Log Analytics workspace, stream logs to an event hub, or archive logs to a storage account. At this time, the only supported partner solution is Azure Native ISV services. For more information, see [Azure Native ISV services overview](/azure/partner-solutions/overview).
@@ -57,7 +59,9 @@ To send your logs to one of the destinations, you must have already configured t
 - [Create an event hub](/azure/event-hubs/event-hubs-create)
 - [Create a storage account](/azure/storage/common/storage-account-create)
 
-## Configure diagnostic settings
+![Screenshot of the destination options in diagnostic settings.](media/howto-configure-diagnostic-settings/diagnostic-settings-destination-details.png)
+
+## How to configure diagnostic settings
 
 For details on configuring diagnostic settings for a specific destination, see the following articles:
 
