@@ -61,7 +61,11 @@ Alternatively, you can also use the [Enterprise App Configuration Wizard](https:
 1. Click the settings gear in the right-hand corner at the top of the screen.
 1. Under Network, Click **Identity Provider**.
 1. In the dropdown, Select **Microsoft Entra ID**.
+1. Continue setup in [Configure Microsoft Entra SSO](#configure-microsoft-entra-sso) section below.
+    
 > Kno2fy will display the information needed to setup the **Basic SAML Configuration**
+
+![Screenshot of Microsoft Entra Saml Setup Information](media/kno2fy-tutorial/microsoft-entra-setup-data.png "Microsoft Entra Setup Information")
 
 ## Configure Microsoft Entra SSO
 
