@@ -16,25 +16,24 @@ ms.custom: developer, devx-track-js
 
 # Tutorial: Call a web API from your Node.js daemon application
 
-This tutorial demonstrates how to prepare your Node.js daemon client app, then configure it to acquire an access token for calling a web API. The application you build uses [Microsoft Authentication Library (MSAL) for Node](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-node) to simplify adding authorization to your node daemon application.
+This tutorial is the final part of a series that demonstrates how to prepare your Node.js daemon client app using the [OAuth 2.0 client credentials grant flow](~/identity-platform/v2-oauth2-client-creds-grant-flow.md), then configure it to acquire an access token for calling a web API. in [part 1 of this series](./tutorial-daemon-node-call-api-prepare-tenant.md), you registered a web API and daemon app in the Microsoft Entra admin center and granted permissions. This final step demonstrates how to build a Node.js application using the [Microsoft Authentication Library (MSAL) for Node](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-node) to simplify adding authorization to your app.
 
-The [OAuth 2.0 client credentials grant flow](~/identity-platform/v2-oauth2-client-creds-grant-flow.md) permits a web service (confidential client) to use its own credentials, instead of impersonating a user, to authenticate before calling another web service. The client credentials grant flow is commonly used for server-to-server interactions that must run in the background, without immediate interaction with a user.
-
-In this tutorial, you'll:
+In this tutorial;
 
 > [!div class="checklist"]
-> - Create a Node.js app, then install dependencies.
+> - Create a Node.js app in Visual Studio Code, then install dependencies.
 > - Enable the Node.js app to acquire an access token for calling a web API. 
 
 ## Prerequisites
 
-
-- [Node.js](https://nodejs.org).
-- [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
-- Registration details for the Node.js daemon app and web API you created in the [prepare tenant tutorial](tutorial-daemon-node-call-api-prepare-tenant.md).
+- [Tutorial: Prepare your customer tenant to authorize a Node.js daemon application](tutorial-daemon-node-call-api-prepare-tenant.md).
 - A protected web API that is running and ready to accept requests. If you haven't created one, see the [create a protected web API tutorial](./tutorial-protect-web-api-dotnet-core-build-app.md). Ensure this web API is using the app registration details you created in the [prepare tenant tutorial](tutorial-daemon-node-call-api-prepare-tenant.md). Make sure your web API exposes the following endpoints via https:
     - `GET /api/todolist` to get all todos.
     - `POST /api/todolist` to add a todo.
+- [Node.js](https://nodejs.org).
+- Although any integrated development environment (IDE) that supports React applications can be used, this tutorial uses [Visual Studio Code](https://visualstudio.microsoft.com/downloads/).
+- Registration details for the Node.js daemon app and web API you created in the [prepare tenant tutorial](tutorial-daemon-node-call-api-prepare-tenant.md).
+
 
 ## Create the Node.js daemon project
 
@@ -44,7 +43,7 @@ Create a folder to host your Node.js daemon application, such as `ciam-call-api-
 
 1. Create additional folders and files to achieve the following project structure:
 
-    ```
+    ```text
         ciam-call-api-node-daemon/
         ├── auth.js
         └── authConfig.js
@@ -296,6 +295,7 @@ If your daemon app and web API run successfully, you should find the data return
 }
 ```
 
-## Next steps
+## Next step
 
-Learn how to [Use client certificate instead of a secret for authentication in your Node.js confidential app](how-to-web-app-node-use-certificate.md).
+> [!div class="nextstepaction"]
+> [Use client certificate instead of a secret for authentication in your Node.js confidential app](how-to-web-app-node-use-certificate.md).

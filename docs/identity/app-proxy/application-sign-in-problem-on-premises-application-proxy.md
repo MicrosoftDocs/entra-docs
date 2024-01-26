@@ -35,7 +35,7 @@ The following documents can help you to resolve some of the most common issues i
 ## I'm having a problem configuring the Microsoft Entra application proxy in the admin portal
   The following documents can help you to resolve some of the most common issues in this category.
   * [I am having difficulty configuring an application Proxy application](application-proxy-config-how-to.md)
-  * [I don't know how to configure single sign-on to my application Proxy application](application-proxy-config-sso-how-to.md)
+  * [I don't know how to configure single sign-on to my application Proxy application](how-to-configure-sso.md)
   * [I encountered a problem when creating my application in admin portal](application-proxy-config-problem.md)
 
 ## I'm having a problem setting up back-end authentication to my application
