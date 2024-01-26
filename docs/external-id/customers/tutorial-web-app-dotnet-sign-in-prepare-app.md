@@ -1,5 +1,5 @@
 ---
-title: Tutorial - Prepare an ASP.NETCore web app for authentication in a customer tenant
+title: Tutorial - Prepare an ASP.NET Core web app for authentication in a customer tenant
 description: Learn how to prepare an ASP.NET Core web app for authentication with your Microsoft Entra ID for customers tenant.
  
 author: cilwerner
@@ -14,7 +14,7 @@ ms.date: 05/23/2023
 #Customer intent: As a dev, devops, I want to learn about how to enable authentication in my own ASP.NET web app with Microsoft Entra ID for customers tenant.
 ---
 
-# Tutorial: Prepare an ASP.NET web app for authentication in a customer tenant
+# Tutorial: Prepare an ASP.NET Core web app for authentication in a customer tenant
 
 This tutorial is part 2 of a series that demonstrates how to build an ASP.NET Core web application and prepare it for authentication using the Microsoft Entra admin center. In [part 1 of this series](./tutorial-web-app-dotnet-sign-in-prepare-tenant.md), you registered an application and configured user flows in your Microsoft Entra ID for customers tenant. This tutorial demonstrates how to create an ASP.NET Core web app, and configure it for authentication.
 

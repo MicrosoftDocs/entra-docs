@@ -16,7 +16,7 @@ ms.date: 07/27/2023
 
 # Tutorial: Add sign in and sign-out to a .NET browserless app for a customer tenant
 
-This tutorial is the final part of a series to build a .NET browserless app and prepare it for authentication using the Microsoft Entra admin center. In [part 1 of this series](./tutorial-browserless-app-dotnet-sign-in-prepare-tenant.md) In this tutorial, you build your own .NET browserless app and authenticate a user. Finally, you'll test your app by signing in a user.
+This tutorial is the final part of a series to build a .NET browserless app and prepare it for authentication using the Microsoft Entra admin center. In [part 1 of this series](./tutorial-browserless-app-dotnet-sign-in-prepare-tenant.md) you registered an application and configured user flows in your Microsoft Entra ID for customers tenant. In this tutorial, you build your own .NET browserless app and authenticate a user. Finally, you'll test your app by signing in a user.
 
 In this tutorial;
 

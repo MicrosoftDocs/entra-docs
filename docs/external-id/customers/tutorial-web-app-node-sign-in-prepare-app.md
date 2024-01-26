@@ -17,7 +17,7 @@ ms.custom: developer, devx-track-js
 
 # Tutorial: Prepare a Node.js web application for authentication
 
-This tutorial is part 2 of a series that demonstrates building a Node.js web app and preparing it for authentication using the Microsoft Entra admin center. In [part 1 of this series](tutorial-web-app-node-sign-in-prepare-tenant.md) tutorial, you prepared your customer tenant to sign in users. In this tutorial, you create a Node.js(Express) project and organize all the folders and files you require. You enable sign-in to the application you prepare here. This Node.js(Express) web application's views use [Handlebars](https://handlebarsjs.com).
+This tutorial is part 2 of a series that demonstrates building a Node.js web app and preparing it for authentication using the Microsoft Entra admin center. In [part 1 of this series](tutorial-web-app-node-sign-in-prepare-tenant.md) you registered an application and configured user flows in your Microsoft Entra ID for customers tenant. In this tutorial, you create a Node.js(Express) project and organize all the folders and files you require. You enable sign-in to the application you prepare here. This Node.js(Express) web application's views use [Handlebars](https://handlebarsjs.com).
 
 In this tutorial you'll;
 
