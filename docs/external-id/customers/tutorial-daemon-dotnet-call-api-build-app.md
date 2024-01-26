@@ -1,5 +1,5 @@
 ---
-title: "Tutorial: Call a protected web API from your .NET daemon application"
+title: "Tutorial: Call a protected web API from your .NET daemon app"
 description: Learn about how to call a protected web API from your .NET client daemon app. 
  
 author: SHERMANOUKO
@@ -13,37 +13,23 @@ ms.topic: tutorial
 ms.date: 07/27/2023
 ---
 
-# Tutorial: Call a protected web API from your .NET daemon application
+# Tutorial: Call a protected web API from your .NET daemon app
 
-In this tutorial, you build your client daemon app and call a protected web API. You enable the client daemon app to acquire an access token using its own identity, then call the web API.
+This tutorial is the final part of a series that demonstrates how to call a protected web API from a .NET daemon app. In [part 1 of this series](./tutorial-daemon-dotnet-call-api-prepare-tenant.md), you prepared your customer tenant to authorize a .NET daemon app. In this tutorial, you build your client daemon app and call a protected web API. You enable the client daemon app to acquire an access token using its own identity, then call the web API.
 
-In this tutorial, you learn how to:
+In this tutorial;
 
 > [!div class="checklist"]
 >
 > - Configure a daemon app to use it's app registration details.
 > - Build a daemon app that acquires a token on its own behalf and calls a protected web API.
 
-## Prerequisite 
+## Prerequisites
 
-Before continuing with this tutorial, ensure you have all of the following items in place:
+- [Tutorial: Prepare your customer tenant to authorize a .NET daemon application](./tutorial-daemon-dotnet-call-api-prepare-tenant.md)
 
-- Registration details for the daemon app and web API you created in the [prepare app tutorial](tutorial-daemon-dotnet-call-api-prepare-tenant.md). You need the following details:
 
-    - The Application (client) ID of the client daemon app that you registered.
-    - The Directory (tenant) subdomain where you registered your daemon app.
-    - The secret value for the daemon app you created.
-    - The Application (client) ID of the web API app you registered.
-
-- A protected *ToDoList* web API that is running and ready to accept requests. If you haven't created one, see the [create a protected web API tutorial](./tutorial-protect-web-api-dotnet-core-build-app.md). Ensure this web API is using the app registration details you created in the [prepare tenant tutorial](tutorial-daemon-dotnet-call-api-prepare-tenant.md).
-- The base url and port on which the web API is running. For example, 44351. Ensure the API exposes the following endpoints via https:
-    - `GET /api/todolist` to get all todos.
-    - `POST /api/todolist` to add a todo.
-
-- [.NET 7.0](https://dotnet.microsoft.com/download/dotnet/7.0) or later. 
-- [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
-
-##  1. Create a .NET daemon app
+##  Create a .NET daemon app
 
 1. Open your terminal and navigate to the folder where you want your project to live.
 1. Initialize a .NET console app and navigate to its root folder.
@@ -53,7 +39,7 @@ Before continuing with this tutorial, ensure you have all of the following items
     cd ToDoListClient
     ```
 
-## 2. Install packages
+## Install packages
 
 Install `Microsoft.Identity.Web` and `Microsoft.Identity.Web.DownstreamApi` packages:
 
@@ -64,7 +50,7 @@ dotnet add package Microsoft.Identity.Web.DownstreamApi
 
 `Microsoft.Identity.Web` provides the glue between ASP.NET Core, the authentication middleware, and the Microsoft Authentication Library (MSAL) for .NET making it easier for you to add authentication and authorization capabilities to your app. `Microsoft.Identity.Web.DownstreamApi` provides an interface used to call a downstream API.
 
-## 3. Create appsettings.json file an add registration configs
+## Create appsettings.json file an add registration configs
 
 1. Create *appsettings.json* file in the root folder of the app.
 1. Add app registration details to the *appsettings.json* file.
@@ -102,7 +88,7 @@ dotnet add package Microsoft.Identity.Web.DownstreamApi
     |*Enter_the_Web_Api_Application_Id_Here*| The Application (client) ID of the web API app you registered.        |
     |*Web_API_base_url*| The base URL of the web API. For example, `https://localhost:44351/` where 44351 is the port number of the port your API is running on. Your API should already be running and awaiting requests by this stage for you to get this value.|
 
-## 4. Add models
+## Add models
 
 Navigate to the root of your project folder and create a *models* folder. In the *models* folder, create a *ToDo.cs* file and add the following code:
 
@@ -119,7 +105,7 @@ public class ToDo
 }
 ```
 
-## 5. Acquire access token
+## Acquire access token
 
 You have now configured the required items in for your daemon application. In this step, you write the code that enables the daemon app to acquire an access token.
 
@@ -158,7 +144,7 @@ You have now configured the required items in for your daemon application. In th
     var serviceProvider = tokenAcquirerFactory.Build();
     ```
 
-## 6. Call the web API
+## Call the web API
 
 Add code to call your protected web API using the `IDownstreamApi` interface. In this tutorial, you only implement a call to Post a todo and another one to Get all todos. See the other implementations such as Delete and Put in the [sample code](https://github.com/Azure-Samples/ms-identity-ciam-dotnet-tutorial/blob/main/2-Authorization/3-call-own-api-dotnet-core-daemon/ToDoListClient/Program.cs).
 
@@ -207,7 +193,7 @@ void DisplayToDo(ToDo toDo) {
 }
 ```
 
-## 7. Run the client daemon app
+## Run the client daemon app
 
 Navigate to the root folder of the daemon app and run the following command:
 
@@ -236,7 +222,7 @@ In case you run into errors,
 
 The full sample code is [available on GitHub](https://github.com/Azure-Samples/ms-identity-ciam-dotnet-tutorial/tree/main/2-Authorization/3-call-own-api-dotnet-core-daemon).
 
-## 8. Clean up resources
+## Clean up resources
 
 If you don't intend to use the apps you have registered and created in this tutorial, delete them to avoid incurring any costs.
 

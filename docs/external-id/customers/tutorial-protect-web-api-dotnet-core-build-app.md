@@ -1,6 +1,6 @@
 ---
 title: "Tutorial: Secure an ASP.NET web API registered in a customer tenant"
-description: Learn how to secure a ASP.NET web API registered in the Microsoft Entra External ID for customer's tenant
+description: Learn how to secure a ASP.NET web API registered in the Microsoft Entra External ID for customers tenant
  
 author: SHERMANOUKO
 manager: mwongerapk
@@ -15,17 +15,15 @@ ms.custom: developer, devx-track-dotnet
 #Customer intent: As a dev, I want to secure my ASP.NET Core web API registered in the Microsoft Entra ID for customers tenant.
 ---
 
-# Tutorial: Secure an ASP.NET web API registered in a customer tenant
+# Tutorial: Secure an ASP.NET Core web API registered in a customer tenant
 
-Web APIs may contain information that requires user authentication and authorization. Applications can use delegated access, acting on behalf of a signed-in user, or app-only access, acting only as the application's own identity when calling protected web APIs.
+This tutorial series demonstrates how to secure a registered web API in the Microsoft Entra External ID for customers tenant. In this tutorial, you'll build an ASP.NET Core web API that publishes both delegated permissions (scopes) and application permissions (app roles).
 
-In this tutorial, we build a web API that publishes both delegated permissions (scopes) and application permissions (app roles). Client apps such as web apps that acquire tokens on behalf of a signed-in user use the delegated permissions. Client apps such as daemon apps that acquire tokens for themselves use the application permissions. 
-
-In this tutorial, you learn how to:
+In this tutorial;
 
 > [!div class="checklist"]
 >
-> Configure your web API tp use it's app registration details
+> Configure your web API to use it's app registration details
 > Configure your web API to use delegated and application permissions registered in the app registration
 > Protect your web API endpoints
 
@@ -38,7 +36,7 @@ In this tutorial, you learn how to:
     - *ToDoList.Read* and *ToDoList.ReadWrite* as the [delegated permissions (scopes) exposed by the Web API](./how-to-register-ciam-app.md?tabs=webapi&preserve-view=true#expose-permissions). 
     - *ToDoList.Read.All* and *ToDoList.ReadWrite.All* as the [application permissions (app roles) exposed by the Web API](how-to-register-ciam-app.md?tabs=webapi&preserve-view=true#add-app-roles).
 
-- [.NET 7.0](https://dotnet.microsoft.com/download/dotnet/7.0) or later. 
+- [.NET 7.0 SDK](https://dotnet.microsoft.com/download/dotnet/7.0) or later. 
 - [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 
 ## Create an ASP.NET Core web API
@@ -322,7 +320,7 @@ Run your API to ensure that it's running well without any errors using the comma
 
 For a full example of this API code, see the [samples file](https://github.com/Azure-Samples/ms-identity-ciam-dotnet-tutorial/tree/main/2-Authorization/3-call-own-api-dotnet-core-daemon/ToDoListAPI).
 
-## Next steps
+## Next step
 
 > [!div class="nextstepaction"]
-> [Test your protected web API >](./tutorial-protect-web-api-dotnet-core-test-api.md)
+> [Part 2: Test your protected ASP.NET Core web API](./tutorial-protect-web-api-dotnet-core-test-api.md)
