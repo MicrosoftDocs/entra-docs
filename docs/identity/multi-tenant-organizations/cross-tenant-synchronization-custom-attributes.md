@@ -8,7 +8,7 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: multi-tenant-organizations
 ms.topic: how-to
-ms.date: 01/23/2024
+ms.date: 01/29/2024
 ms.author: rolyon
 ms.custom: it-pro
 
@@ -17,7 +17,7 @@ ms.custom: it-pro
 
 # Map custom attributes in cross-tenant synchronization
 
-Custom attributes, such as directory extensions, enable you to extend the schema in Microsoft Entra ID with your own attributes. You can map these custom attributes when provisioning users in cross-tenant synchronization. [Custom security attributes](../../fundamentals/custom-security-attributes-overview.md) are different and are not supported in cross-tenant synchronization.
+Custom attributes, such as directory extensions, enable you to extend the schema in Microsoft Entra ID with your own attributes. You can map these custom attributes when provisioning users in cross-tenant synchronization. [Custom security attributes](../../fundamentals/custom-security-attributes-overview.md) are different and aren't supported in cross-tenant synchronization.
 
 This article describes how to map custom attributes in cross-tenant synchronization.
 
@@ -58,7 +58,7 @@ Once you have one or more directory extensions, you can use them when mapping at
 
     :::image type="content" source="./media/cross-tenant-synchronization-custom-attributes/provisioning-mappings-source-attribute.png" alt-text="Screenshot that shows the Edit attribute page with the directory extension listed in Source Attribute." lightbox="./media/cross-tenant-synchronization-custom-attributes/provisioning-mappings-source-attribute.png":::
 
-    If the directory extension is not listed, make sure that the directory extension was created successfully. You can also try to manually add the directory extension to the schema as described in the next section.
+    If the directory extension isn't listed, make sure that the directory extension was created successfully. You can also try to manually add the directory extension to the schema as described in the next section.
 
 1. In the **Target attribute** drop-down list, select a target attribute.
 
@@ -70,7 +70,7 @@ Once you have one or more directory extensions, you can use them when mapping at
 
 ![Icon for the source tenant.](../../media/common/icons/entra-id-purple.png)<br/>**Source tenant**
 
-If your directory extension was not automatically discovered, you can try the following steps to manually add the directory extension to the schema.
+If your directory extension wasn't automatically discovered, you can try the following steps to manually add the directory extension to the schema.
 
 1. Sign in to the Microsoft Entra admin center of the source tenant using the following link:
 
@@ -109,7 +109,7 @@ If your directory extension was not automatically discovered, you can try the fo
 
 ![Icon for the source tenant.](../../media/common/icons/entra-id-purple.png)<br/>**Source tenant**
 
-Follow these steps to add a custom attributes to the schema by manually editing the schema.
+Follow these steps to add custom attributes to the schema by manually editing the schema.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) of the source tenant.
 
