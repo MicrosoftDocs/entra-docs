@@ -30,7 +30,7 @@ items:
   - name: How-to guides 
     expanded: true
     items:
-    - name: How to access activity logs
+    - name: Access activity logs
       href: howto-access-activity-logs.md
     - name: Customize and filter activity logs
       href: howto-customize-filter-logs.md
@@ -120,6 +120,8 @@ items:
   - name: How-to guides 
     expanded: true
     items:
+    - name: Configure diagnostic settings
+      href: howto-configure-diagnostic-settings.md
     - name: Stream logs to an event hub
       href: howto-stream-logs-to-event-hub.md
     - name: Configure a Log Analytics workspace
