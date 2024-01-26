@@ -133,5 +133,4 @@ All the required code snippets have been added, so the application can now be te
 
 ## See also
 
-> [!div class="nextstepaction"]
 > [Enable self-service password reset](./how-to-enable-password-reset-customers.md)

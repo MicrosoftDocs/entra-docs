@@ -15,7 +15,7 @@ ms.date: 07/28/2023
 
 # Tutorial: Prepare your customer tenant to authorize a .NET daemon application
 
-In this tutorial series, you learn how build a .NET daemon app that calls your own custom protected web API using Microsoft Entra ID for customers. You'll register an app in Microsoft Entra ID and authenticate your app with your Microsoft Entra ID for customers tenant. Finally, you'll run the app and test the sign-in and sign-out experiences.
+In this tutorial series, you'll learn how build a .NET daemon app that calls your own custom protected web API using Microsoft Entra ID for customers. You'll register an app in Microsoft Entra ID and authenticate your app with your Microsoft Entra ID for customers tenant. Finally, you'll run the app and test the sign-in and sign-out experiences.
 
 > [!div class="checklist"]
 >
@@ -69,4 +69,4 @@ The next step after this tutorial is to build a daemon app that calls your web A
 In the next tutorial, you configure your daemon and web API applications.
 
 > [!div class="nextstepaction"]
-> [Build your daemon application >](tutorial-daemon-dotnet-call-api-build-app.md)
+> [Part 2: Call a protected web API from your .NET daemon app](tutorial-daemon-dotnet-call-api-build-app.md)

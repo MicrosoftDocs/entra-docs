@@ -122,7 +122,7 @@ module.exports = {
 };
 ```
 
-## Next steps
+## Next step
 
 Learn how to add sign-in support to a Node.js CLI application:
 
