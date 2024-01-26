@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: active-directory
 ms.subservice: fundamentals
 ms.topic: how-to
-ms.date: 01/03/2024
+ms.date: 01/26/2024
 ms.author: sarahlipsey
 ms.reviewer: adelle.dimitui
 
