@@ -88,6 +88,9 @@ If your directory extension was not automatically discovered, you can try the fo
 
     :::image type="content" source="./media/cross-tenant-synchronization-custom-attributes/provisioning-mappings-advanced-settings.png" alt-text="Screenshot of the Attribute Mapping page with advanced options displayed." lightbox="./media/cross-tenant-synchronization-custom-attributes/provisioning-mappings-advanced-settings.png":::
 
+    > [!TIP]
+    > If you don't see the **Edit attribute list** links, be sure that you are signed in to the Microsoft Entra admin center using the link in Step 1.
+    
 1. If you created a directory extension in the source tenant, select the **Edit attribute list for Microsoft Entra ID** link.
 
 1. If you created an extension in the target tenant, select the **Edit attribute list for Azure Active Directory (target tenant)** link.
@@ -108,9 +111,7 @@ If your directory extension was not automatically discovered, you can try the fo
 
 Follow these steps to add a custom attributes to the schema by manually editing the schema.
 
-1. Sign in to the Microsoft Entra admin center of the source tenant using the following link:
-
-    https://entra.microsoft.com/?Microsoft_AAD_Connect_Provisioning_forceSchemaEditorEnabled=true
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) of the source tenant.
 
 1. Browse to **Identity** > **External Identities** > **Cross-tenant synchronization**.
 
