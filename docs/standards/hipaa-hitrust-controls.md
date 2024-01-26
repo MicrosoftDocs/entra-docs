@@ -48,7 +48,7 @@ The following table lists the acronyms and their spelling in this article.
 
 The HITRUST organization established Common Security Framework (CSF) to standardize and streamline security and privacy requirements for organizations in the healthcare industry. HITRUST CSF was founded in 2007 to address the complex regulatory environment, security challenges, and privacy concerns that organizations face when handling personal data and protected health information (PHI) data. The CSF consists of 14 control categories comprising 49 control objectives, and 156 control specifics. It was built on the primary principles of International Organization for Standardization (ISO) 27001 and ISO 27002.  
 
-The [HITRUST MyCSF](/compliance/offerings/offering-hitrust) tool is available in [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/hitrust1666274640786.hitrust?exp=ubp8&tab=Overview). Use it to manage information security risks, data governance, to comply with information protection regulations, also adhere to national and international standards and best practices. 
+The HITRUST MyCSF tool is available in [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/hitrust1666274640786.hitrust?exp=ubp8&tab=Overview). Use it to manage information security risks, data governance, to comply with information protection regulations, also adhere to national and international standards and best practices. 
 
 > [!NOTE]
 > ISO 27001 is a management standard that specifies the requirements for an information security management system (ISMS). ISO 27002 is a set of best practices to select and implement security controls in the ISO 27001 framework.
