@@ -132,7 +132,7 @@ items:
                 items:
                   - name: Prepare tenant 
                     href: tutorial-web-app-node-sign-in-prepare-tenant.md
-                  - name: Prepare app 
+                  - name: Create Node.js app 
                     href: tutorial-web-app-node-sign-in-prepare-app.md
                   - name: Add sign-in and sign-out
                     href: tutorial-web-app-node-sign-in-sign-out.md
@@ -153,13 +153,13 @@ items:
                     href: how-to-web-app-node-sign-in-call-api-sign-in-acquire-access-token.md
                   - name: Call API 
                     href: how-to-web-app-node-sign-in-call-api-call-api.md
-          - name: ASP.NET
+          - name: ASP.NET Core
             items:
               - name: Sign in users
                 items:
                   - name: Prepare tenant
                     href: tutorial-web-app-dotnet-sign-in-prepare-tenant.md
-                  - name: Prepare app
+                  - name: Prepare ASP.NET Core app
                     href: tutorial-web-app-dotnet-sign-in-prepare-app.md
                   - name: Sign in and sign out
                     href: tutorial-web-app-dotnet-sign-in-sign-out.md
@@ -212,7 +212,7 @@ items:
             items:
               - name: Prepare tenant
                 href: tutorial-desktop-app-maui-sign-in-prepare-tenant.md
-              - name: Prepare app
+              - name: Prepare .NET MAUI app
                 href: tutorial-desktop-app-maui-sign-in-prepare-app.md
               - name: Sign in and sign out
                 href: tutorial-desktop-app-maui-sign-in-sign-out.md
@@ -231,7 +231,7 @@ items:
           items:
           - name: Prepare tenant
             href: tutorial-mobile-app-maui-sign-in-prepare-tenant.md
-          - name: Prepare app
+          - name: Prepare .NET MAUI app
             href: tutorial-mobile-app-maui-sign-in-prepare-app.md
           - name: Sign in and sign out
             href: tutorial-mobile-app-maui-sign-in-sign-out.md
