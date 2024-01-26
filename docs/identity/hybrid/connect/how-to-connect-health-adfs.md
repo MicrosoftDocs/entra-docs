@@ -170,6 +170,7 @@ The "basic" audit level is enabled by default. For more information, see [AD FS 
 #### Review the AD FS audit logs
 After enabling AD FS audit logs, you should be able to check the AD FS audit logs using Event viewer.
 
+
  1. Open **Event Viewer**.
  2. Go to **Windows Logs**, and then select **Security**.
  3. In the right pane, select **Filter Current Logs**.
@@ -183,6 +184,33 @@ After enabling AD FS audit logs, you should be able to check the AD FS audit log
 > [!WARNING]
 > A group policy can disable AD FS auditing. If AD FS auditing is disabled, usage analytics about login activities are unavailable. Ensure that you have no group policy that disables AD FS auditing.
 >
+
+The following tables provide a list of common events that correspond to audit level events
+
+##### Basic audit level events
+
+|ID|Event Name|Event Description|
+|-----|-----|-----|
+|1200|AppTokenSuccessAudit|The Federation Service issued a valid token.| 
+|1201|AppTokenFailureAudit|The Federation Service failed to issue a valid token.|
+|1202|FreshCredentialSuccessAudit|The Federation Service validated a new credential.|
+|1203|FreshCredentialFailureAudit|The Federation Service failed to validate a new credential.|
+
+For more information see the  complete list of AD FS events [here](https://adfshelp.microsoft.com/AdfsEventViewer/GetAdfsEventList).
+
+##### Verbose audit level events
+
+|ID|Event Name|Event Description|
+|-----|-----|-----|
+|299|TokenIssuanceSuccessAudit|A token was successfully issued for the relying party.|
+|403|RequestReceivedSuccessAudit|An HTTP request was received. See audit 510 with the same Instance ID for headers.|
+|410|RequestContextHeadersSuccessAudit|Following request context headers present|
+|411|SecurityTokenValidationFailureAudit|Token validation failed. See inner exception for more details.|
+|412|AuthenticationSuccessAudit|A token of type '%3' for relying party '%4' was successfully authenticated. See audit 501 with the same Instance ID for caller identity.|
+|500|IssuedIdentityClaims|More information for the event entry with Instance ID %1. There may be more events with the same Instance ID with more information.|
+|501|CallerIdentityClaims|More information for the event entry with Instance ID %1. There may be more events with the same Instance ID with more information.|
+
+For more information see the  complete list of AD FS events [here](https://adfshelp.microsoft.com/AdfsEventViewer/GetAdfsEventList).
 
 ## Test connectivity to the Microsoft Entra Connect Health service
 
