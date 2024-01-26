@@ -56,6 +56,13 @@ Alternatively, you can also use the [Enterprise App Configuration Wizard](https:
 
 <a name='configure-azure-ad-sso'></a>
 
+## Access Microsoft Entra information in Kno2fy
+1. Login to https://kno2fy.com as a Network Administrator.
+1. Click the settings gear in the right-hand corner at the top of the screen.
+1. Under Network, Click **Identity Provider**.
+1. In the dropdown, Select **Microsoft Entra ID**.
+> Kno2fy will display the information needed to setup the **Basic SAML Configuration**
+
 ## Configure Microsoft Entra SSO
 
 Complete the following steps to enable Microsoft Entra single sign-on.
@@ -67,7 +74,8 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 
    ![Screenshot shows how to edit Basic SAML Configuration.](common/edit-urls.png "Basic Configuration")
 
-To access the information to setup **Basic SAML Configuration** review the [Microsoft Entra Information Section](#access-microsoft-entra-information-in-kno2fy) below.
+> To access the information to setup **Basic SAML Configuration** review the [Microsoft Entra Information Section](#access-microsoft-entra-information-in-kno2fy) above.
+
 1. On the **Basic SAML Configuration** section, perform the following steps:
 
     a. In the **Identifier** textbox, paste the value from:
@@ -85,12 +93,6 @@ To access the information to setup **Basic SAML Configuration** review the [Micr
 1. Scroll down and copy the **App Federation Metadata URL** generated.
 1. Continue setup in the [Configure Kno2fy SSO](#configure-kno2fy-sso) section
 
-## Access Microsoft Entra information in Kno2fy
-1. Login to https://kno2fy.com as a Network Administrator.
-1. Click the settings gear in the right-hand corner at the top of the screen.
-1. Under Network, Click **Identity Provider**.
-1. In the dropdown, Select **Microsoft Entra ID**.
-> Kno2fy will display the information needed to setup the **Basic SAML Configuration**
 
 ## Configure Kno2fy SSO
 1. Paste the **App Federation Metadata URL** from Microsoft Entra ID SSO setup into the **App Federation Metadata URL** field inside Kno2fy.
