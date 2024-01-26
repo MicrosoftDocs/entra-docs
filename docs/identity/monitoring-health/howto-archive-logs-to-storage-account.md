@@ -40,9 +40,9 @@ To use this feature, you need:
   > [!NOTE]
   > The Diagnostic settings storage retention feature has been deprecated. If you're editing a diagnostic setting created when the retention option was available, those fields are still visible. For details on this change, see [**Migrate from diagnostic settings storage retention to Azure Storage lifecycle management**](/azure/azure-monitor/essentials/migrate-to-azure-storage-lifecycle-policy).
  
-9. Select **Save** to save the setting.
+8. Select **Save** to save the setting.
 
-10. Close the window to return to the diagnostic settings page.
+9. Close the window to return to the diagnostic settings page.
 
 ## Next steps
 
