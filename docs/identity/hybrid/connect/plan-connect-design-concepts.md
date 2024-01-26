@@ -116,7 +116,7 @@ When installing Microsoft Entra Connect with Custom mode, the Microsoft Entra Co
 
 | Setting | Description |
 | --- | --- |
-| Let Azure manage the source anchor for me | Select this option if you want Microsoft Entra ID to pick the attribute for you. If you select this option, Microsoft Entra Connect wizard applies the same [sourceAnchor attribute selection logic used during Express installation](#express-installation). Similar to Express installation, the wizard informs you which attribute has been picked as the Source Anchor attribute after Custom installation completes. |
+| Let Microsoft Entra ID manage the source anchor for me | Select this option if you want Microsoft Entra ID to pick the attribute for you. If you select this option, Microsoft Entra Connect wizard applies the same [sourceAnchor attribute selection logic used during Express installation](#express-installation). Similar to Express installation, the wizard informs you which attribute has been picked as the Source Anchor attribute after Custom installation completes. |
 | A specific attribute | Select this option if you wish to specify an existing AD attribute as the sourceAnchor attribute. |
 
 ### How to enable the ConsistencyGuid feature - Existing deployment
@@ -175,12 +175,12 @@ Suppose you've deployed Microsoft Entra Connect with the ConsistencyGuid feature
 While integrating your on-premises directory with Microsoft Entra ID, it's important to understand how the synchronization settings can affect the way user authenticates. Microsoft Entra ID uses userPrincipalName (UPN) to authenticate the user. However, when you synchronize your users, you must choose the attribute to be used for value of userPrincipalName carefully.
 
 ### Choosing the attribute for userPrincipalName
-When you're selecting the attribute for providing the value of UPN to be used in Azure one should ensure
+When you're selecting the attribute for providing the value of UPN to be used in Microsoft Entra ID one should ensure
 
 * The attribute values conform to the UPN syntax (RFC 822), it should be in the format of username\@domain
 * The suffix in the values matches to one of the verified custom domains in Microsoft Entra ID
 
-In express settings, the assumed choice for the attribute is userPrincipalName. If the userPrincipalName attribute doesn't contain the value you want your users to sign in to Azure, then you must choose **Custom Installation**.
+In express settings, the assumed choice for the attribute is userPrincipalName. If the userPrincipalName attribute doesn't contain the value you want your users to sign in to Microsoft Entra ID, then you must choose **Custom Installation**.
 
 >[!NOTE]
 >It's recommended as a best practice that the UPN prefix contains more than one character.
@@ -188,7 +188,7 @@ In express settings, the assumed choice for the attribute is userPrincipalName. 
 ### Custom domain state and UPN
 It is important to ensure that there's a verified domain for the UPN suffix.
 
-John is a user in contoso.com. You want John to use the on-premises UPN john\@contoso.com to sign in to Azure after you've synced users to your Microsoft Entra directory contoso.onmicrosoft.com. To do so, you need to add and verify contoso.com as a custom domain in Microsoft Entra ID before you can start syncing the users. If the UPN suffix of John, for example contoso.com, doesn't match a verified domain in Microsoft Entra ID, then Microsoft Entra ID replaces the UPN suffix with contoso.onmicrosoft.com.
+John is a user in contoso.com. You want John to use the on-premises UPN john\@contoso.com to sign in to Microsoft Entra ID after you've synced users to your Microsoft Entra directory contoso.onmicrosoft.com. To do so, you need to add and verify contoso.com as a custom domain in Microsoft Entra ID before you can start syncing the users. If the UPN suffix of John, for example contoso.com, doesn't match a verified domain in Microsoft Entra ID, then Microsoft Entra ID replaces the UPN suffix with contoso.onmicrosoft.com.
 
 <a name='non-routable-on-premises-domains-and-upn-for-azure-ad'></a>
 
@@ -197,7 +197,7 @@ Some organizations have non-routable domains, like contoso.local, or simple sing
 
 Read [Add your custom domain name to Microsoft Entra ID](~/fundamentals/add-custom-domain.md) for more info on adding and verifying domains.
 
-Microsoft Entra Connect detects if you're running in a non-routable domain environment and would appropriately warn you from going ahead with express settings. If you're operating in a non-routable domain, then it's likely that the UPN, of the users, have non-routable suffixes too. For example, if you're running under contoso.local, Microsoft Entra Connect suggests you to use custom settings rather than using express settings. Using custom settings, you're able to specify the attribute that should be used as UPN to sign in to Azure after the users are synced to Microsoft Entra ID.
+Microsoft Entra Connect detects if you're running in a non-routable domain environment and would appropriately warn you from going ahead with express settings. If you're operating in a non-routable domain, then it's likely that the UPN, of the users, have non-routable suffixes too. For example, if you're running under contoso.local, Microsoft Entra Connect suggests you to use custom settings rather than using express settings. Using custom settings, you're able to specify the attribute that should be used as UPN to sign in to Microsoft Entra ID after the users are synced to Microsoft Entra ID.
 
 ## Next steps
 Learn more about [Integrating your on-premises identities with Microsoft Entra ID](../whatis-hybrid-identity.md).

@@ -81,7 +81,7 @@ sections:
           * *.entra.microsoft.eaglex.ic.gov
           * *.entra.microsoftonline.cn    
     
-          For more information, see [Using Microsoft Entra application proxy to publish on-premises apps for remote users](~/identity/app-proxy/what-is-application-proxy.md).
+          For more information, see [Using Microsoft Entra application proxy to publish on-premises apps for remote users](~/identity/app-proxy/overview-what-is-app-proxy.md).
 
     
       

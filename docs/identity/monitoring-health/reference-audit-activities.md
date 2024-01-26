@@ -135,7 +135,7 @@ Each time an account is provisioned in your Microsoft Entra tenant, a log for th
 
 ## Application proxy
 
-If you're utilizing [Application Proxy](~/identity/app-proxy/what-is-application-proxy.md) to provide your users with remote access to internal apps, the Application Proxy audit logs can help you keep track of changes to available applications or [Connector groups](~/identity/app-proxy/application-proxy-connector-groups.md).
+If you're utilizing [Application Proxy](~/identity/app-proxy/overview-what-is-app-proxy.md) to provide your users with remote access to internal apps, the Application Proxy audit logs can help you keep track of changes to available applications or [Connector groups](~/identity/app-proxy/application-proxy-connector-groups.md).
 
 |Audit Category|Activity|
 |---|---|
