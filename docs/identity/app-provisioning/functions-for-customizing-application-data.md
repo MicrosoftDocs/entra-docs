@@ -7,7 +7,7 @@ ms.service: active-directory
 ms.subservice: app-provisioning
 ms.workload: identity
 ms.topic: reference
-ms.date: 12/05/2023
+ms.date: 01/26/2024
 ms.author: kenwith
 ms.reviewer: arvinh
 ---
@@ -463,7 +463,10 @@ The following comparison operators can be used in the *condition*:
 **Example:** Set the target attribute value to source country attribute if country="USA", else set target attribute value to source department attribute.
 `IIF([country]="USA",[country],[department])`
 
-#### Known limitations and workarounds for IIF function
+#### Known limitations
+
+This section includes limitations and workarounds for the IIF function. For information about troubleshooting user creation issues, see [Creation fails due to null / empty values](hr-user-creation-issues.md).
+
 * The IIF function currently doesn't support AND and OR logical operators. 
 * To implement AND logic, use nested IIF statement chained along the *trueValue* path. 
   Example: If country="USA" and state="CA", return value "True", else return "False".

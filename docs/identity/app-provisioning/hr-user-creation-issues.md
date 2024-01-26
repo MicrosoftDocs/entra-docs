@@ -7,7 +7,7 @@ ms.service: active-directory
 ms.subservice: app-provisioning
 ms.topic: troubleshooting
 ms.workload: identity
-ms.date: 09/15/2023
+ms.date: 01/26/2024
 ms.author: kenwith
 ms.reviewer: chmutali
 ---
@@ -31,9 +31,10 @@ ms.reviewer: chmutali
 **Recommended resolutions**
 
   Let's say the attribute `BusinessTitle` mapped to AD attribute `jobTitle` may be null or empty in Workday. 
-  * Option 1: Define an expression to check for empty or null values using functions like [IIF](functions-for-customizing-application-data.md#iif), [IsNullOrEmpty](functions-for-customizing-application-data.md#isnullorempty), [Coalesce](functions-for-customizing-application-data.md#coalesce) or [IsPresent](functions-for-customizing-application-data.md#ispresent) and pass a non-blank literal value. 
-  
-     `IIF(IsNullOrEmpty([BusinessTitle]),"N/A",[BusinessTitle])`
+
+  * Option 1: Use the function [Switch](functions-for-customizing-application-data.md#switch) to check for empty or null values and pass a non-blank literal value.
+
+     `Switch([BusinessTitle],[BusinessTitle],"","N/A")`
 
   * Option 2: Use the function [IgnoreFlowIfNullOrEmpty](functions-for-customizing-application-data.md#ignoreflowifnullorempty) to drop empty or null attributes in the payload sent to on-premises Active Directory / Microsoft Entra ID. 
   
