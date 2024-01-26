@@ -91,6 +91,16 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity/app-proxy/what-is-application-proxy.md",
+      "redirect_url": "/entra/identity",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/app-proxy/application-proxy-config-sso-how-to.md",
+      "redirect_url": "/entra/identity",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/app-proxy/whats-new-docs.md",
       "redirect_url": "/entra/identity",
       "redirect_document_id": false

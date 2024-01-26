@@ -1,5 +1,5 @@
 ---
-title: Tutorial - Add sign-in and sign-out to an Angular single-page app (SPA) for a customer tenant
+title: "Tutorial: Add sign-in and sign-out to an Angular SPA for a customer tenant"
 description: Learn how to configure an Angular single-page app (SPA) to sign in and sign out users with your Microsoft Entra External ID for customers tenant.
 services: active-directory
 author: godonnell
@@ -14,15 +14,19 @@ ms.author: godonnell
 #Customer intent: As a developer I want to add sign-in and sign-out functionality to my Angular single-page app
 ---
 
-# Tutorial: Add sign-in and sign-out to an Angular single-page app (SPA) for a customer tenant
+# Tutorial: Add sign-in and sign-out to an Angular SPA for a customer tenant
 
-In the previous article, [Handle authentication flows in an Angular single-page app](./tutorial-single-page-app-angular-sign-in-configure-authentication.md), you added authentication flows to your Angular single-page application and configured the flows to work with your Microsoft Entra External ID for customers tenant. In this article, you'll learn how to add sign in and sign out functionality to the application. Finally, you'll test the application.
+This tutorial is the final part of a series that demonstrates building an Angular single-page application (SPA) and preparing it for authentication using the Microsoft Entra admin center. In [part 3 of this series](./tutorial-single-page-app-angular-sign-in-configure-authentication.md), you added authentication flows to your Angular single-page application and configured the flows to work with your Microsoft Entra External ID for customers tenant. In this article, you'll learn how to add sign in and sign out functionality to the application. Finally, you'll test the application.
 
 In this tutorial;
 
 > [!div class="checklist"]
 > * Add sign-in and sign-out functionality to your app.
 > * Test the application
+
+## Prerequisites
+
+* [Tutorial: Prepare your customer tenant to authenticate users in an Angular SPA](./tutorial-single-page-app-angular-sign-in-prepare-tenant.md).
 
 ## Sign in and sign out users
       
