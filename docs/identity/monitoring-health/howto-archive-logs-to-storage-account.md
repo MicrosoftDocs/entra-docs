@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: active-directory
 ms.topic: how-to
 ms.subservice: report-monitor
-ms.date: 12/15/2023
+ms.date: 01/23/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
 
@@ -22,7 +22,7 @@ If you need to store Microsoft Entra activity logs for longer than the [default 
 To use this feature, you need:
 
 * An Azure subscription. If you don't have an Azure subscription, you can [sign up for a free trial](https://azure.microsoft.com/free/).
-* An Azure storage account you have `ListKeys` permissions for.
+* An Azure storage account you have `ListKeys` permissions for. Learn how to [create a storage account](/azure/storage/common/storage-account-create).
 * A user who's a *Security Administrator* or *Global Administrator* for the Microsoft Entra tenant.
 
 ## Archive logs to an Azure storage account
@@ -37,14 +37,12 @@ To use this feature, you need:
 
     ![Screenshot of the diagnostic settings](media/howto-archive-logs-to-storage-account/diagnostic-settings-storage.png)
 
-8. After the categories are selected, in the **Retention days** field, type in the number of days of retention you need of your log data. By default, this value is *0*, which means that logs are retained in the storage account indefinitely. If you set a different value, events older than the number of days selected are automatically cleaned up.
-
   > [!NOTE]
-  > The Diagnostic settings storage retention feature is being deprecated. For details on this change, see [**Migrate from diagnostic settings storage retention to Azure Storage lifecycle management**](/azure/azure-monitor/essentials/migrate-to-azure-storage-lifecycle-policy).
+  > The Diagnostic settings storage retention feature has been deprecated. If you're editing a diagnostic setting created when the retention option was available, those fields are still visible. For details on this change, see [**Migrate from diagnostic settings storage retention to Azure Storage lifecycle management**](/azure/azure-monitor/essentials/migrate-to-azure-storage-lifecycle-policy).
  
-9. Select **Save** to save the setting.
+8. Select **Save** to save the setting.
 
-10. Close the window to return to the diagnostic settings page.
+9. Close the window to return to the diagnostic settings page.
 
 ## Next steps
 

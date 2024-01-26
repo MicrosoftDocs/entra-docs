@@ -1,6 +1,6 @@
 ---
-title: "Tutorial: Sign in users in a Node.js CLI application- Prepare app"
-description: Learn how to build a Node.js CLI application that signs in users in a Microsoft Entra ID for customers tenant
+title: "Tutorial: Create a Node.js CLI app for authentication"
+description: Learn how to build a Node.js CLI app that signs in users in a Microsoft Entra ID for customers tenant
  
 author: Dickson-Mwendia
 manager: mwongerapk
@@ -18,9 +18,9 @@ ms.custom: developer, devx-track-js
 
 # Tutorial: Prepare a Node.js CLI application for authentication
 
-In this article, you create a Node.js CLI application that signs in users. The client application you build uses the [OAuth 2.0 Authorization Code Flow](~/identity-platform/v2-oauth2-auth-code-flow.md) with Proof Key for Code Exchange (PKCE) for secure user authentication.
+This tutorial is part 2 of a series that demonstrates building a Node.js command line interface (CLI) app and preparing it for authentication using the Microsoft Entra admin center. In [part 1 of this series](./tutorial-cli-app-node-sign-in-prepare-tenant.md), you registered an application and configured user flows in your Microsoft Entra ID for customers tenant. The client application you build uses the [OAuth 2.0 Authorization Code Flow](~/identity-platform/v2-oauth2-auth-code-flow.md) with Proof Key for Code Exchange (PKCE) for secure user authentication.
 
-In this tutorial, you'll: 
+In this tutorial: 
 
 > [!div class="checklist"]
 >
@@ -28,17 +28,15 @@ In this tutorial, you'll:
 > - Install app dependencies
 > - Create the MSAL configuration object
 
-Here, you build a new Node.js CLI app from scratch. If you prefer using a completed code sample for learning, download the [sample Node.js CLI application](https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial/archive/refs/heads/main.zip) from GitHub.
-
 ## Prerequisites
 
-- You've completed the steps in [Prepare your customer tenant to sign in users in a Node.js CLI application](tutorial-cli-app-node-sign-in-prepare-tenant.md)
-
+- [Tutorial: Prepare your customer tenant to sign in users in a Node.js CLI app](tutorial-cli-app-node-sign-in-prepare-tenant.md)
+- Although any integrated development environment (IDE) that supports React applications can be used, this tutorial uses [Visual Studio Code](https://visualstudio.microsoft.com/downloads/).
 - [Node.js](https://nodejs.org).
 
-- [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
-
 ## Create a new Node.js application project
+
+Here, you build a new Node.js CLI app from scratch. If you prefer using a completed code sample for learning, download the [sample Node.js CLI application](https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial/archive/refs/heads/main.zip) from GitHub.
 
 To build the Node.js CLI application from scratch, follow these steps:
 
@@ -124,9 +122,9 @@ module.exports = {
 };
 ```
 
-## Next steps
+## Next step
 
 Learn how to add sign-in support to a Node.js CLI application:
 
 > [!div class="nextstepaction"]
-> [Add sign in and sign out >](tutorial-cli-app-node-sign-in-sign-out.md)
+> [Part 3: Tutorial: Authenticate users in a Node.js CLI app](tutorial-cli-app-node-sign-in-sign-out.md)
