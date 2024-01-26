@@ -80,9 +80,9 @@ HITRUST developed the CSF, which includes security and privacy standards to supp
 
 Learn more on [Microsoft Azure platform is HITRUST CSF certified](https://azure.microsoft.com/blog/microsoft-azure-achieves-hitrust-csf-certification/), which includes identity and access management: 
 
-* [Microsoft Entra ID](~/fundamentals/whatis?branch=main), formerly known as Azure Active Directory
+* [Microsoft Entra ID](~/fundamentals/whatis.md), formerly known as Azure Active Directory
 * Rights management with [Microsoft Purview](https://techcommunity.microsoft.com/t5/healthcare-and-life-sciences/microsoft-purview-compliance-score-part-3-hitrust/ba-p/3614103)
-* [Microsoft Entra multifactor authentication (MFA)](~/identity/authentication/concept-mfa-howitworks?branch=main)
+* [Microsoft Entra multifactor authentication (MFA)](~/identity/authentication/concept-mfa-howitworks.md)
 
 ## Access control categories and recommendations
 
