@@ -116,16 +116,18 @@ After administrators confirm the settings using [report-only mode](~/identity/co
 
 After administrators confirm the settings using [report-only mode](~/identity/conditional-access/howto-conditional-access-insights-reporting.md), they can move the **Enable policy** toggle from **Report-only** to **On**.
 
-## Migrate risk policies from Identity Protection to Conditional Access
+## Migrate risk policies from ID Protection to Conditional Access
 
-While Identity Protection also provides two risk policies with limited conditions, we highly recommend setting up risk-based policies in Conditional Access for the following benefits:
+If you have legacy User Risk Policy or Sign-in Risk Policy enabled in ID Protection, we invite you to migrate them to Conditional Access following the steps in the section below. The legacy risk policies will be retired on **October 1, 2026**.
 
-   - Enhanced diagnostic data
-   - Report-only mode integration
-   - Graph API support
-   - Use more Conditional Access attributes like sign-in frequency in the policy
-
-If you already have risk policies enabled in Identity Protection, we highly recommend that you migrate them to Conditional Access:
+Configuring risk-based policies in Conditional Access provides the following benefits:
+   - Manage all access policies in one place.
+   - Report-only mode and Graph API support.
+   - Use more Conditional Access attributes like sign-in frequency.
+   - Greater flexibility by combining risk conditions with other conditions like location for granular access control.
+   - Enhanced security with multiple risk-based policies targeting different user groups or risk levels.
+   - Improved diagnostics experience by viewing which risk-based policy applied in Sign-in Logs.
+   - Conditional Access policies are supported by the backup authentication system.
 
 ![Screenshots showing the migration of a sign-in risk policy to Conditional Access.](./media/howto-identity-protection-configure-risk-policies/sign-in-risk-policy-migration.png)
 
