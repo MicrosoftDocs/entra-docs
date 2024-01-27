@@ -186,7 +186,7 @@ For listing your application in the Microsoft Entra ID app gallery, read the det
 **Service category:** My Profile/Account                     
 **Product capability:** End User Experiences            
 
-My Sign Ins ([My Sign-Ins (microsoft.com)](https://mysignins.microsoft.com/)) now supports end users managing and changing their passwords. Administrators are able to use Conditional Access registration policies with authentication strengths targeting My Security Info to control the end user experience for changing passwords. Based on the Conditional Access policy, users are able to change their password by entering their existing password, or if they authenticate with MFA and satisfy the Conditional Access policy, can change the password without entering the existing password.
+My Sign Ins ([My Sign-Ins (microsoft.com)](https://mysignins.microsoft.com/)) now supports end users managing and changing their passwords. Users are able to manage passwords in My Security Info and change their password inline. If a user authenticates with a password and an MFA credential, they are able to are able to change their password without entering their existing password.
 
 For more information, see: [Combined security information registration for Microsoft Entra overview](~/identity/authentication/concept-registration-mfa-sspr-combined.md).
 
