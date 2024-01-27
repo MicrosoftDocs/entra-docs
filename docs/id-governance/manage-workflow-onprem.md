@@ -91,13 +91,17 @@ For portal-based procedures, minimize bullets and numbering.
 
 -->
 
-## "\<verb\> * \<noun\>"
-TODO: Add introduction sentence(s)
-[Include a sentence or two to explain only what is needed to complete the procedure.]
-TODO: Add ordered list of procedure steps
-1. Step 1
-1. Step 2
-1. Step 3
+## Edit a task to be compatible with synced on-prem users using the Microsoft Entra Admin center
+
+Account related tasks within workflows can be quickly edited to apply to synced on-prem users. To edit a task in such way using the Microsoft Entra Admin center, you do the following steps:
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](~/identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
+
+1. Browse to **Identity governance** > **Lifecycle workflows** > **workflows**.
+
+1. Select the workflow you want to edit the task within.
+
+1. 
 
 ## "\<verb\> * \<noun\>"
 TODO: Add introduction sentence(s)
