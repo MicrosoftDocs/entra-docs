@@ -26,6 +26,8 @@ You can register a Mac device with the macOS Platform Single Sign-On (PSSO) usin
 
 ## Intune MDM and Microsoft Entra Join using Company Portal
 
+To register a Mac device with PSSO, you must first enroll your device in Microsoft Intune using the Company Portal app. Once enrolled, you can use secure enclave, smart card, or password to register your device with PSSO. 
+
 ### [Secure Enclave](#tab/secure-enclave)
 
 1. Open the **Company Portal** app and select **Sign in**.
@@ -96,10 +98,7 @@ You can register a Mac device with the macOS Platform Single Sign-On (PSSO) usin
 
     :::image type="content" source="media/device-registration-macos-platform-single-sign-on/pssoe-enter-pin.png" alt-text="Screenshot of the Platform SSO pin entry window.":::
 
-1. To check that registration has completed successfully, navigate to **Settings** and select **Users & Groups**. 
-1. Select **Edit** next to **Network Account Server** and check that **Platform SSO** is listed as **Registered**.
-1. To verify that the smart card is the method used for authentication, navigate to your username in the **Users & Groups** window and select the **Information** icon. **SmartCard** should be listed as the method.
-1. Now that the Mac is correctly set up, you can now use PSSO to access Microsoft app resources, and unlock the device with the smart card pin. You'll need to use the local password to log in after a reboot to unlock the keychain access.
+1. You can now use PSSO to access Microsoft app resources, and unlock the device with the smart card pin. You'll need to use the local password to log in after a reboot to unlock the keychain access.
 
 ### [Password](#tab/password)
 
@@ -130,6 +129,14 @@ You can register a Mac device with the macOS Platform Single Sign-On (PSSO) usin
 1. Your device will now show as being in compliance in Company Portal. You can now use PSSO to access Microsoft app resources.
 
 ---
+
+## Check your device registration status
+
+Once you've completed the steps above, it's a good idea to check your device registration status in the **Settings** app.
+
+1. To check that registration has completed successfully, navigate to **Settings** and select **Users & Groups**. 
+1. Select **Edit** next to **Network Account Server** and check that **Platform SSO** is listed as **Registered**.
+1. To verify the method used for authentication, navigate to your username in the **Users & Groups** window and select the **Information** icon. Check the method listed, which should be **Secure enclave**, **Smart Card**, or **Password**.
 
 ## Update your Mac device to enable PSSO
 
