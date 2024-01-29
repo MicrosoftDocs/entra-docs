@@ -315,7 +315,7 @@ As the administrator, before you verify and manage single sign-on (also called i
 5. Provisioned a known test user principal to Microsoft Entra ID (Microsoft 365) via either PowerShell or Microsoft Entra Connect.
 6. Configure directory synchronization using [Microsoft Entra Connect](../whatis-hybrid-identity.md).
 
-After setting up SSO with your SAML 2.0 SP-Lite based identity Provider, you should verify that it's working correctly. For more information about testing SAML-based SSO, see [Test SAML-based single sign-on](/enterprise-apps/debug-saml-sso-issues.md#test-saml-based-single-sign-on)
+After setting up SSO with your SAML 2.0 SP-Lite based identity Provider, you should verify that it's working correctly. For more information about testing SAML-based SSO, see [Test SAML-based single sign-on](~identity/enterprise-apps/debug-saml-sso-issues.md)
 
 >[!NOTE]
 >If you converted a domain, rather than adding one, it may take up to 24 hours to set up single sign-on.
