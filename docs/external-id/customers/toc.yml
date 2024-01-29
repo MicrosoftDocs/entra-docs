@@ -90,7 +90,7 @@ items:
           items:
               - name: Prepare tenant
                 href: tutorial-single-page-app-vanillajs-prepare-tenant.md
-              - name: Prepare app
+              - name: Create JavaScript app
                 href: tutorial-single-page-app-vanillajs-prepare-app.md
               - name: Configure app for authentication
                 href: tutorial-single-page-app-vanillajs-configure-authentication.md
@@ -100,7 +100,7 @@ items:
           items:
               - name: Prepare tenant
                 href: tutorial-single-page-app-react-sign-in-prepare-tenant.md
-              - name: Prepare app
+              - name: Create React app
                 href: tutorial-single-page-app-react-sign-in-prepare-app.md
               - name: Configure app for authentication
                 href: tutorial-single-page-app-react-sign-in-configure-authentication.md
@@ -112,7 +112,7 @@ items:
           items:
                 - name: Prepare tenant 
                   href: tutorial-web-app-node-sign-in-prepare-tenant.md
-                - name: Prepare app 
+                - name: Create Nodejs app 
                   href: tutorial-web-app-node-sign-in-prepare-app.md
                 - name: Add sign-in and sign-out
                   href: tutorial-web-app-node-sign-in-sign-out.md
@@ -120,7 +120,7 @@ items:
           items:
               - name: Prepare tenant
                 href: tutorial-web-app-dotnet-sign-in-prepare-tenant.md
-              - name: Prepare app
+              - name: Create ASP.NET app
                 href: tutorial-web-app-dotnet-sign-in-prepare-app.md
               - name: Sign in and sign out
                 href: tutorial-web-app-dotnet-sign-in-sign-out.md
@@ -140,7 +140,7 @@ items:
               href: how-to-browserless-app-node-sign-in-overview.md
             - name: Prepare tenant 
               href: how-to-browserless-app-node-sign-in-prepare-tenant.md
-            - name: Prepare app 
+            - name: Create Node.js Browserless app 
               href: how-to-browserless-app-node-sign-in-prepare-app.md
             - name: Add sign-in and sign-out
               href: how-to-browserless-app-node-sign-in-sign-out.md
@@ -171,7 +171,7 @@ items:
           items:
             - name: Prepare tenant
               href: tutorial-desktop-app-maui-sign-in-prepare-tenant.md
-            - name: Prepare app
+            - name: Create .NET MAUI app
               href: tutorial-desktop-app-maui-sign-in-prepare-app.md
             - name: Sign in and sign out
               href: tutorial-desktop-app-maui-sign-in-sign-out.md
@@ -190,7 +190,7 @@ items:
         items:
         - name: Prepare tenant
           href: tutorial-mobile-app-maui-sign-in-prepare-tenant.md
-        - name: Prepare app
+        - name: Create .NET MAUI app
           href: tutorial-mobile-app-maui-sign-in-prepare-app.md
         - name: Sign in and sign out
           href: tutorial-mobile-app-maui-sign-in-sign-out.md
@@ -198,12 +198,14 @@ items:
           href: tutorial-mobile-maui-role-based-access-control.md
     - name: Command-line interface (CLI) app
       items:
-          - name: Prepare tenant
-            href: tutorial-cli-app-node-sign-in-prepare-tenant.md
-          - name: Prepare app
-            href: tutorial-cli-app-node-sign-in-prepare-app.md
-          - name: Sign in users
-            href: tutorial-cli-app-node-sign-in-sign-out.md
+        - name: Node.js
+          items:
+            - name: Prepare tenant
+              href: tutorial-cli-app-node-sign-in-prepare-tenant.md
+            - name: Create Node.js CLI app
+              href: tutorial-cli-app-node-sign-in-prepare-app.md
+            - name: Sign in users
+              href: tutorial-cli-app-node-sign-in-sign-out.md
 - name: Concepts
   items: 
     - name: Planning for customer identity and access
@@ -253,7 +255,7 @@ items:
                     items:
                       - name: Prepare tenant 
                         href: how-to-web-app-node-sign-in-call-api-prepare-tenant.md
-                      - name: Prepare client app 
+                      - name: Create Node.js client web app 
                         href: how-to-web-app-node-sign-in-call-api-prepare-app.md
                       - name: Acquire access token
                         href: how-to-web-app-node-sign-in-call-api-sign-in-acquire-access-token.md
