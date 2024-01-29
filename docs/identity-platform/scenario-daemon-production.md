@@ -46,7 +46,7 @@ You'll need to explain to your customers how to perform these operations. For mo
 
   - [microsoft-identity-platform-aspnet-webapp-daemon](https://github.com/Azure-Samples/microsoft-identity-platform-aspnet-webapp-daemon) features an ASP.NET MVC web application that syncs data from Microsoft Graph by using the identity of the application instead of on behalf of a user. This sample also illustrates the admin consent process.
 
-    ![topology](media/scenario-daemon-app/damon-app-sample-web.png)
+    ![topology](media/scenario-daemon-app/daemon-app-sample-web.png)
 
 # [Java](#tab/java)
 
