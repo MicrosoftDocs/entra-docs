@@ -100,7 +100,7 @@ You export `msalConfig`, `REDIRECT_URI`, `TENANT_SUBDOMAIN` and `POST_LOGOUT_RED
 
 ## Add express routes
 
-The Express routes provide the endpoints that enable us the execute operations such as sign in, sign out and view ID token claims.
+The Express routes provide the endpoints that enable us to execute operations such as sign in, sign out and view ID token claims.
 
 ### App entry point 
 
