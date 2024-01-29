@@ -9,7 +9,7 @@ ms.date: 07/17/2020
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: how-to
-#Customer intent:
+#Customer intent: As a developer currently using MSAL.js 1.x with implicit grant flow, I want to migrate my JavaScript single-page app to MSAL.js 2.x with auth code flow, so that I can improve security and take advantage of new features like PKCE and CORS support.
 ---
 
 # Migrate a JavaScript single-page app from implicit grant to auth code flow

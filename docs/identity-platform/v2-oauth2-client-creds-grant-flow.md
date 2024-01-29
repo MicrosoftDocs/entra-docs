@@ -10,7 +10,7 @@ ms.reviewer: ludwignick
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-#Customer intent:
+#Customer intent: As a developer building a web service, I want to understand how to implement the OAuth 2.0 client credentials flow, so that I can authenticate my web service when calling another web service without impersonating a user.
 ---
 
 # Microsoft identity platform and the OAuth 2.0 client credentials flow
