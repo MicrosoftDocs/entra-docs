@@ -17,7 +17,7 @@ ms.custom: developer, devx-track-js
 
 # Tutorial: Add add sign-in and sign-out in your Node.js web application
 
-In [Tutorial: Prepare a Node.js web application for authentication](tutorial-web-app-node-sign-in-prepare-app.md) tutorial, you created a Node.js web app. In this tutorial, you add sign in, sign-up and sign out to the Node.js web app. To simplify adding authentication to the Node.js web app, you use [Microsoft Authentication Library (MSAL) for Node](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-node). The sign-in flow uses OpenID Connect (OIDC) authentication protocol, which securely signs in users. 
+This tutorial is the final part of a series that demonstrates building a Node.js web app and preparing it for authentication using the Microsoft Entra admin center. In [part 2 of this series](tutorial-web-app-node-sign-in-prepare-app.md), you created a Node.js web app and organized all the required files. In this tutorial, you'll add sign in, sign-up and sign out to the Node.js web app. To simplify adding authentication to the Node.js web app, you use [Microsoft Authentication Library (MSAL) for Node](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-node). The sign-in flow uses OpenID Connect (OIDC) authentication protocol, which securely signs in users.
 
 In this tutorial, you'll:
 
@@ -100,7 +100,7 @@ You export `msalConfig`, `REDIRECT_URI`, `TENANT_SUBDOMAIN` and `POST_LOGOUT_RED
 
 ## Add express routes
 
-The Express routes provide the endpoints that enable us the execute operations such as sign in, sign out and view ID token claims.
+The Express routes provide the endpoints that enable us to execute operations such as sign in, sign out and view ID token claims.
 
 ### App entry point 
 
@@ -281,14 +281,8 @@ const givenName = req.session.account.idTokenClaims.given_name
 
 1. Select **Sign out** to sign the user out of the web app or select **View ID token claims** to view all ID token claims. 
 
-## Next steps 
-
-Learn how to: 
+## See also
 
 - [Enable password reset](how-to-enable-password-reset-customers.md).
-
-- [Customize the default branding](how-to-customize-branding-customers.md).
- 
-- [Configure sign-in with Google](how-to-google-federation-customers.md). 
-
+- [Configure sign-in with Google](how-to-google-federation-customers.md).
 - [Use client certificate for authentication in your Node.js web app instead of a client secret](how-to-web-app-node-use-certificate.md).
