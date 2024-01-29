@@ -13,13 +13,13 @@ ms.topic: tutorial
 
 # Tutorial: Prepare an application for authentication
 
-In the [previous tutorial](tutorial-web-app-dotnet-register-app.md), you registered a web application in the Microsoft Entra admin center. This tutorial demonstrates how to create an **ASP.NET Core Web App** using an IDE. You'll also create and upload a self-signed certificate to the Microsoft Entra admin center to secure your application. Finally, you'll configure the application for authentication.
+In the [previous tutorial](tutorial-web-app-dotnet-register-app.md), you registered a web application in the Microsoft Entra admin center. This tutorial demonstrates how to create an ASP.NET Core web app using an IDE. You'll also create and upload a self-signed certificate to the Microsoft Entra admin center to secure your application. Finally, you'll configure the application for authentication.
 
 In this tutorial:
 
 > [!div class="checklist"]
 >
-> * Create an **ASP.NET Core Web App**
+> * Create an ASP.NET Core web app
 > * Create a self-signed certificate
 > * Configure the settings for the application
 > * Define platform settings and URLs
@@ -31,7 +31,7 @@ In this tutorial:
   * Visual Studio 2022
   * Visual Studio Code
   * Visual Studio 2022 for Mac
-* A minimum requirement of [.NET 6.0](https://dotnet.microsoft.com/download/dotnet).
+* A minimum requirement of [.NET 6.0 SDK](https://dotnet.microsoft.com/download/dotnet).
 
 ## Create an ASP.NET Core project
 
@@ -51,7 +51,7 @@ Use the following tabs to create an ASP.NET Core project within an IDE.
 1. Open Visual Studio Code, select **File > Open Folder...**. Navigate to and select the location in which to create your project.
 1. Create a new folder using the **New Folder...** icon in the **Explorer** pane. Provide a name similar to the one registered previously, for example, *NewWebAppLocal*.
 1. Open a new terminal by selecting **Terminal > New Terminal**.
-1. To create an **ASP.NET Core Web App** template, run the following commands in the terminal to change into the directory and create the project:
+1. To create an ASP.NET Core web app template, run the following commands in the terminal to change into the directory and create the project:
 
     ```powershell
     cd NewWebAppLocal

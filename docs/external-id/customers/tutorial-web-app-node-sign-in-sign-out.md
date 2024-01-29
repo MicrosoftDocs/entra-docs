@@ -286,3 +286,5 @@ const givenName = req.session.account.idTokenClaims.given_name
 - [Enable password reset](how-to-enable-password-reset-customers.md).
 - [Configure sign-in with Google](how-to-google-federation-customers.md).
 - [Use client certificate for authentication in your Node.js web app instead of a client secret](how-to-web-app-node-use-certificate.md).
+
+- [Call an API in a Node.js web application](how-to-web-app-node-sign-in-call-api-prepare-tenant.md)

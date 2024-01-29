@@ -180,7 +180,7 @@ options = new SystemWebViewOptions
 };
 
 var result = app.AcquireTokenInteractive(scopes)
-                .WithEmbeddedWebView(false)       // The default in .NET Core
+                .WithEmbeddedWebView(false)       // The default in .NET
                 .WithSystemWebViewOptions(options)
                 .Build();
 ```

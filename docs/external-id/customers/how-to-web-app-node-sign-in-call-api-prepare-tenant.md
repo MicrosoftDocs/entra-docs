@@ -1,90 +1,40 @@
 ---
-title: Sign in users and call an API in a Node.js web application  - prepare your tenant
-description: Learn about how to prepare your Microsoft Entra ID for customers tenant to sign in users and call an API in your own Node.js web application.
- 
+title: Prepare customer tenant to call an API in a Node.js web application
+description: Learn how to prepare your Microsoft Entra ID for customers tenant to sign in users and call an API in your Node.js web application. 
 author: kengaderdus
 manager: mwongerapk
-
 ms.author: kengaderdus
-ms.service: active-directory
- 
+ms.service: active-directory 
 ms.subservice: ciam
 ms.topic: how-to
-ms.date: 07/28/2023
+ms.date: 01/27/2024
 ms.custom: developer, devx-track-js
+#Customer intent: As a developer, devops or IT admin, I want to learn about how to configure my Microsoft Entra ID for customers tenant so that I can call a web API that is protected by Microsoft Entra ID for customers. 
 ---
 
-# Sign in users and call an API in a Node.js web application  - prepare your tenant
+# Prepare customer tenant for calling an API in a Node.js web application
 
-In this article, you prepare your Microsoft Entra ID for customers tenant for authentication and authorization. To prepare your tenant, you do the following tasks:
+In this article, you prepare your Microsoft Entra ID for customers tenant for authorization. This article is the first part of a four-part guide.
 
-- Register a web API and configure permissions/scopes in the Microsoft Entra admin center. 
+## Prerequisite
 
-- Register a client web application and grant it API permissions in the Microsoft Entra admin center.
+- Complete the steps in [Tutorial: Prepare your customer tenant to sign in users in a Node.js web app](tutorial-web-app-node-sign-in-prepare-tenant.md). After you complete this tutorial, you register an app in your customer's tenant, and you've a web app that signs in users. We refer to this web application as the client application. You extend this application to call a protected web API.
 
-- Create a sign in and sign out user flow in Microsoft Entra admin center.
+- Complete the steps in [Tutorial: Secure an ASP.NET web API registered in a customer tenant](tutorial-protect-web-api-dotnet-core-build-app.md). After you complete this tutorial, you register a web API in your customer's tenant, which exposes API permissions and publishes application roles. You also have a secured web API. You call this web API from the client web application.
 
-- Associate your client web application with the user flow. 
-
-After you complete the tasks, you collect:
-
-- *Application (client) ID* for your client web app and one for your web API.
-
-- A *Client secret* for your client web app.
-
-- A *Directory (tenant) ID* for your External ID for customers tenant.
-
-- Web API permissions/scopes. 
-
-- App permissions/roles.
-
-If you've already registered a client web application and a web API in the Microsoft Entra admin center, and created a sign in and sign up user flow, you can skip the steps in this article, then proceed to [Prepare your web application and API](how-to-web-app-node-sign-in-call-api-prepare-app.md).
-
-## Register a web application and a web API
-
-In this step, you create the web and the web API application registrations, and you specify the scopes of your web API.
-
-### Register a web API application
-
-[!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/register-app/register-api-app.md)]
-
-### Configure API scopes
-
-[!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/register-app/add-api-scopes.md)]
-
-### Configure app roles
-
-[!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/register-app/add-app-role.md)]
-
-### Configure idtyp token claim
+## Configure idtyp token claim [optional]
 
 [!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/register-app/add-optional-claims-access.md)]
 
-### Register the web app
-
-[!INCLUDE [active-directory-b2c-register-app](./includes/register-app/register-client-app-common.md)]
-[!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/register-app/add-platform-redirect-url-node.md)]  
-
-### Create a client secret
-
-[!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/register-app/add-app-client-secret.md)]
-
 ### Grant API permissions to the web app
 
-[!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/register-app/grant-api-permission-call-api.md)]
+From the prerequisites, you registered a client app in your customer's tenant. You also registered a web API app in your customers. Now, you need to grant API permissions to your client app:
 
-## Create a user flow 
+[!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/register-app/grant-api-permission-call-api-common.md)]
 
-[!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/configure-user-flow/create-sign-in-sign-out-user-flow.md)] 
-
-##  Associate web application with the user flow
-
-[!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/configure-user-flow/add-app-user-flow.md)]
-
-
-## Next steps
+## Next step
 
 Next, learn how to prepare your web application and API.
 
 > [!div class="nextstepaction"]
-> [Start building your web application and API >](how-to-web-app-node-sign-in-call-api-prepare-app.md)
+> [Start building your web application and API](how-to-web-app-node-sign-in-call-api-prepare-app.md)
