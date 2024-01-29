@@ -24,7 +24,7 @@ ms.reviewer: chmutali
 
 | Troubleshooting | Details |
 |-- | -- |
-| **Issue** | You successfull configured the inbound provisioning app. You're getting null or empty value from the HR app. The create operation fails with the error message: `InvalidAttributeSyntax-LdapErr: The syntax is invalid. The parameter is incorrect. Error in attribute conversion operation, data 0, v3839` |
+| **Issue** | You successfully configured the inbound provisioning app. You're getting null or empty value from the HR app. The create operation fails with the error message: `InvalidAttributeSyntax-LdapErr: The syntax is invalid. The parameter is incorrect. Error in attribute conversion operation, data 0, v3839` |
 | **Cause** | The provisioning service doesn't have a default logic for null value processing. When the provisioning service gets an empty string from the source app, it tries to flow the value "as-is" to the target app. In this case, on-premises Active Directory doesn't support setting empty string values and hence you see the above error. |
 | **Resolution** | Check the provisioning logs. Identify attributes in the target Active Directory that are receiving null or empty string values. Update the attribute mapping for such attributes to use an expression mapping. See recommended resolutions here. |
 
