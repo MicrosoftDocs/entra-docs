@@ -103,7 +103,7 @@ items:
               - name: Prepare app
                 href: tutorial-single-page-app-react-sign-in-prepare-app.md
               - name: Configure app for authentication
-                href: tutorial-single-page-app-react-sign-in-configure-authentication.md 
+                href: tutorial-single-page-app-react-sign-in-configure-authentication.md
               - name: Sign in and sign out
                 href: tutorial-single-page-app-react-sign-in-sign-out.md
     - name: Web app

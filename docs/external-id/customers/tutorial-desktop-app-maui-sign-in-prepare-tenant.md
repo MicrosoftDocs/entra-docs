@@ -1,5 +1,5 @@
 ---
-title: "Tutorial: Register and configure .NET MAUI app in a customer tenant"
+title: "Tutorial: Register and configure a .NET MAUI app in a customer tenant"
 description: The tutorials provide a step-by-step guide on how to register and configure a .NET MAUI desktop app with Microsoft Entra External ID for the customer's tenant.
 author: henrymbuguakiarie
 manager: mwongerapk
@@ -14,13 +14,9 @@ ms.date: 06/05/2023
 
 # Tutorial: Register and configure .NET MAUI app in a customer tenant
 
-This three-part tutorial series demonstrates how to build a .NET Multi-platform App UI (MAUI) desktop app that authenticates using Microsoft Entra ID for customers tenant. 
+This tutorial series demonstrates how to build a .NET Multi-platform App UI (MAUI) desktop app that authenticates using Microsoft Entra ID for customers tenant. You'll register an app within the customer's tenant, create the .NET MAUI desktop app, and you implement the sign-in and sign-out code to enable secure authentication. The .NET MAUI app you create uses cross-platform code while enhancing the default application class with _Window_ platform-specific code.
 
-The tutorial aims to demonstrate how to create a .NET MAUI app that uses cross-platform code while enhancing the default application class with _Window_ platform-specific code.
-
-Part one involves the registration of the .NET MAUI desktop app within the customer's tenant. In part two, you create the .NET MAUI desktop app, while in part three, you implement the sign-in and sign-out code to enable secure authentication.
-
-In this tutorial, you learn how to:
+In this tutorial, you'll;
 
 > [!div class="checklist"]
 >
@@ -30,7 +26,11 @@ In this tutorial, you learn how to:
 
 ## Prerequisites
 
-- Microsoft Entra ID for customers tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
+* A Microsoft Entra ID for customers tenant. If you don't have one, [create a trial tenant](https://aka.ms/ciam-free-trial) or a [tenant with a subscription](./quickstart-tenant-setup.md) before you begin.
+* This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
+    * Application administrator
+    * Application developer
+    * Cloud application administrator
 
 ## Register .NET MAUI desktop app
 
@@ -52,4 +52,4 @@ In this tutorial, you learn how to:
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Tutorial: Sign in users in .NET MAUI app](tutorial-desktop-app-maui-sign-in-prepare-app.md)
+> [Part 2: Create a .NET MAUI shell app, add MSAL SDK, and include an image resource](tutorial-desktop-app-maui-sign-in-prepare-app.md)
