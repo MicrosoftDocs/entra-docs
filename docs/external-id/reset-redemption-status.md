@@ -78,7 +78,6 @@ If a user wants to sign in using a different email:
 
 ```powershell
 Install-Module Microsoft.Graph
-Select-MgProfile -Name v1.0
 Connect-MgGraph -Scopes "User.ReadWrite.All"
 
 $user = Get-MgUser -Filter "startsWith(mail, 'john.doe@fabrikam.net')"
