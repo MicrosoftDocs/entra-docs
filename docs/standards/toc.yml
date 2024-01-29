@@ -70,6 +70,9 @@
     href: hipaa-audit-controls.md
   - name: Additional Controls Safeguard compliance
     href: hipaa-other-controls.md
+- name: Configure HITRUST controls
+  expanded: true
+  items:
   - name: Configure HITRUST controls
     href: hipaa-hitrust-controls.md
 - name: Microsoft Entra ID and PCI-DSS compliance
