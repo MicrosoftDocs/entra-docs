@@ -178,9 +178,9 @@ In this article, you learn how to call a web API from your Node.js client web ap
 
     1. Add the todo router by using the following code:
 
-    ```javascript
-        var todosRouter = require('./routes/todos');
-    ```
+        ```javascript
+            var todosRouter = require('./routes/todos');
+        ```
 
     1. Use the todo router by using the following code:
     

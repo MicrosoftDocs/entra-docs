@@ -53,7 +53,7 @@ The `todolistReadScope` and `todolistReadWriteScope` variables hold the web API 
 
 ## Acquire access token
 
-In your code editor, open *auth/AuthProvider.js* file, then update then add the `getToken` method in the `AuthProvider` class:
+In your code editor, open *auth/AuthProvider.js* file, then update the `getToken` method in the `AuthProvider` class:
 
 ```javascript
     const axios = require('axios');
