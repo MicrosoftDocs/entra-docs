@@ -10,7 +10,7 @@ ms.reviewer: kenwith
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: reference
-#Customer intent:
+#Customer intent: As a developer, I want to authenticate my application using its own credentials, so that I can securely access resources using the Microsoft identity platform.
 ---
 
 # Microsoft identity platform application authentication certificate credentials

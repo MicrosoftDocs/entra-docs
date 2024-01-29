@@ -10,7 +10,7 @@ ms.reviewer: jmprieur
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: sample
-#Customer intent:
+#Customer intent: As a developer working with the Microsoft identity platform, I want to access code samples that demonstrate how to implement authentication and authorization scenarios in different application types and languages, so that I can understand how to integrate the Microsoft identity platform into my own applications.
 ---
 
 # Microsoft identity platform code samples
