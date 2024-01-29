@@ -102,7 +102,7 @@ To learn more about how to configure an MSAL.NET desktop application:
 
 ### Complete example with configuration options
 
-Imagine a .NET Core console application that has the following `appsettings.json` configuration file:
+Imagine a .NET console application that has the following `appsettings.json` configuration file:
 
 ```json
 {
