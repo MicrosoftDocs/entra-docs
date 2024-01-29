@@ -13,9 +13,9 @@ items:
 - name: Quickstarts
   expanded: true
   items: 
-    - name: Start a free trial without a subscription
+    - name: Start a free trial without an Azure subscription
       href: quickstart-trial-setup.md 
-    - name: Create a tenant with a subscription
+    - name: Create a tenant with an Azure subscription
       href: quickstart-tenant-setup.md
     - name: Get started guide walkthrough
       href: quickstart-get-started-guide.md
@@ -103,7 +103,7 @@ items:
               - name: Prepare app
                 href: tutorial-single-page-app-react-sign-in-prepare-app.md
               - name: Configure app for authentication
-                href: tutorial-single-page-app-react-sign-in-configure-authentication.md 
+                href: tutorial-single-page-app-react-sign-in-configure-authentication.md
               - name: Sign in and sign out
                 href: tutorial-single-page-app-react-sign-in-sign-out.md
     - name: Web app
@@ -214,7 +214,7 @@ items:
       href: concept-authentication-methods-customers.md
     - name: Customizing the sign-in look and feel
       href: concept-branding-customers.md
-    - name: Extending auth flows with business logic
+    - name: Add your own business logic
       href: concept-custom-extensions.md
     - name: Security and governance
       href: concept-security-customers.md
@@ -278,22 +278,14 @@ items:
               href: how-to-define-custom-attributes.md
             - name: Add attributes to the token
               href: how-to-add-attributes-to-token.md
-        - name: Advanced extensions
+        - name: Add claims from external systems
           items:
-            - name: Add logic to attribute collection
-              items:
-                - name: Create attribute collection start and submit events
-                  href: ~/identity-platform/custom-extension-attribute-collection.md?context=/entra/external-id/customers/context/customers-context
-                - name: OnAttributeCollectionStart event reference
-                  href: ~/identity-platform/custom-extension-OnAttributeCollectionStart-reference.md?context=/entra/external-id/customers/context/customers-context
-                - name: OnAttributeCollectionSubmit event reference
-                  href: ~/identity-platform/custom-extension-OnAttributeCollectionSubmit-reference.md?context=/entra/external-id/customers/context/customers-context
-            - name: Add claims from external systems
-              items:
-                 - name: Token issuance start event
-                   href: ~/identity-platform/custom-extension-get-started.md?context=/entra/external-id/customers/context/customers-context
-                 - name: Troubleshoot your custom claims provider API
-                   href: ~/identity-platform/custom-extension-troubleshoot.md?context=/entra/external-id/customers/context/customers-context
+           - name: About custom authentication extensions
+             href: ~/identity-platform/custom-extension-overview.md?context=/azure/active-directory/external-identities/customers/context/customers-context
+           - name: Configure a custom claims provider token issuance event
+             href: ~/identity-platform/custom-extension-get-started.md?context=/azure/active-directory/external-identities/customers/context/customers-context
+           - name: Troubleshoot your custom claims provider API
+             href: ~/identity-platform/custom-extension-troubleshoot.md?context=/azure/active-directory/external-identities/customers/context/customers-context
     - name: Secure
       items:
       - name: Multifactor authentication
@@ -306,8 +298,6 @@ items:
           href: how-to-manage-admin-accounts.md
         - name: Manage customer accounts
           href: how-to-manage-customer-accounts.md
-        - name: User activity insights
-          href: how-to-user-insights.md
     - name: Troubleshoot
       items:
         - name: Known issues

@@ -24,12 +24,11 @@ Complete the [Configure initial product](sse-deployment-guide-intro.md#configure
 
 The connector server communicates with Microsoft Security Service Edge Solution as the gateway to your corporate network. It uses outbound connections through 80 and 443 and doesn't require inbound ports. Learn [How to configure connectors for Microsoft Entra Private Access](../global-secure-access/how-to-configure-connectors.md#open-ports).
 
-1. On the connector server, open the [Microsoft Entra admin center](https://entra.microsoft.com). Go to **Global Secure Access (Preview)** > **Connectors**  and then click **Download connector service**.
+1. On the connector server, open the [Microsoft Entra admin center](https://entra.microsoft.com). Go to **Global Secure Access (Preview)** > **Connect** > **Connectors**  and then click **Enable Private Network connectors**. Click **Download connector service**.
    
-     :::image type="content" source="media/sse-deployment-guide-private-access/app-proxy-connector-download-inline.png" alt-text="Screenshot of Global Secure Access, Connectors, Application proxy, Application Proxy Connector Download window." lightbox="media/sse-deployment-guide-private-access/app-proxy-connector-download-extended.png"::: 
+     :::image type="content" source="media/sse-deployment-guide-private-access/enable-private-network-connectors.png" alt-text="Screenshot of Global Secure Access, Connect, Connectors, Private Network Connector, Private Network Connector Download window." lightbox="media/sse-deployment-guide-private-access/enable-private-network-connectors-extended.png"::: 
 1. Follow the installation wizard to install the connector service on your connector server. When prompted, enter your tenant credentials to complete installation.
 1. Confirm that the connector server is installed by ensuring that it appears in the Connectors list.                            
- :::image type="content" source="media/sse-deployment-guide-private-access/app-proxy-inline.png" alt-text="Screenshot of Global Secure Access, Connectors, Application proxy window." lightbox="media/sse-deployment-guide-private-access/app-proxy-extended.png"::: 
 
 In this guide, we use the default connector group with one connector server. In a production environment, you should create connector groups with multiple connector servers. [See detailed guidance for publishing apps on separate networks by using connector groups](../identity/app-proxy/application-proxy-connector-groups.md).
 

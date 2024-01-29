@@ -26,11 +26,11 @@ Your applications might use modern or legacy protocols for authentication. When 
 
 These apps can be reconfigured to authenticate with Microsoft Entra ID either via a built-in connector from the Azure App Gallery, or by registering the custom application in Microsoft Entra ID.
 
-Apps that use older protocols can be integrated using [Application Proxy](~/identity/app-proxy/what-is-application-proxy.md) or any of our [Secure Hybrid Access (SHA) partners](secure-hybrid-access-integrations.md).
+Apps that use older protocols can be integrated using [Application Proxy](~/identity/app-proxy/overview-what-is-app-proxy.md) or any of our [Secure Hybrid Access (SHA) partners](secure-hybrid-access-integrations.md).
 
 For more information, see:
 
-- [Using Microsoft Entra application proxy to publish on-premises apps for remote users](~/identity/app-proxy/what-is-application-proxy.md).
+- [Using Microsoft Entra application proxy to publish on-premises apps for remote users](~/identity/app-proxy/overview-what-is-app-proxy.md).
 - [What is application management?](what-is-application-management.md)
 - [AD FS application activity report to migrate applications to Microsoft Entra ID](migrate-adfs-application-activity.md).
 - [Monitor AD FS using Microsoft Entra Connect Health](~/identity/hybrid/connect/how-to-connect-health-adfs.md).

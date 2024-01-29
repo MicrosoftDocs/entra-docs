@@ -20,8 +20,9 @@ This step-by-step guide explains how to integrate an on-premises SharePoint farm
 ## Prerequisites
 
 To perform the configuration, you need the following resources:
-- A SharePoint 2013 farm or newer.
+- A SharePoint 2013 farm or newer. The SharePoint farm must be [integrated with Microsoft Entra ID](~/identity/saas-apps/sharepoint-on-premises-tutorial.md).
 - A Microsoft Entra tenant with a plan that includes Application Proxy. Learn more about [Microsoft Entra ID plans and pricing](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
+- A Microsoft Office Web Apps Server farm to properly launch Office files from the on-premises SharePoint farm.
 - A [custom, verified domain](~/fundamentals/add-custom-domain.md) in the Microsoft Entra tenant.
 - On-premises Active Directory synchronized with Microsoft Entra Connect, through which users can [sign in to Azure](~/identity/hybrid/connect/plan-connect-user-signin.md).
 - An Application Proxy connector installed and running on a machine within the corporate domain.

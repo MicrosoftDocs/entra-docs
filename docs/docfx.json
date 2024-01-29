@@ -120,6 +120,8 @@
         "identity/*.yml": "Microsoft Entra ID",
         "identity/**/*.md": "Microsoft Entra ID",
         "identity/**/*.yml": "Microsoft Entra ID",
+        "identity/managed-identities-azure-resources/**/*.md": "Managed identities for Azure resources",
+        "identity/managed-identities-azure-resources/**/*.yml": "Managed identities for Azure resources",
         "identity-platform/*.md": "Microsoft identity platform",
         "identity-platform/*.yml": "Microsoft identity platform",
         "permissions-management/*.md": "Microsoft Entra Permissions Management",

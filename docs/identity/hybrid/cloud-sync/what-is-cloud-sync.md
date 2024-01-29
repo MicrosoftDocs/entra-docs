@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: active-directory
 ms.workload: identity
 ms.topic: overview
-ms.date: 11/06/2023
+ms.date: 01/18/2024
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
@@ -88,6 +88,9 @@ The following table provides a comparison between Microsoft Entra Connect and Mi
 | Cross domain references|● |● |
 | On-demand provisioning| |● |
 | Support for US Government|● |● |
+
+> [!NOTE]
+> For information about synchronizing to Microsoft Entra tenants operated by 21 Vianet, the version of Microsoft 365 specific to China, see [Microsoft 365 operated by 21Vianet](/office365/servicedescriptions/office-365-platform-service-description/microsoft-365-operated-by-21vianet) and [Topologies for Microsoft Entra Connect](~/identity/hybrid/connect/plan-connect-topologies.md).
 
 ## Next steps 
 

@@ -7,14 +7,14 @@ description: How to use Email one-time passcode to authenticate B2B guest users 
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: how-to
-ms.date: 02/21/2023
+ms.date: 01/23/2024
 ms.author: mimart
 author: msmimart
 manager: CelesteDG
 ms.custom: "it-pro, seo-update-azuread-jan"
 ms.collection: M365-identity-device-management
 
-# Customer intent: As a tenant administrator, I want to make sure that my users can authenticate themselves with one-time passcode.
+#customer intent: As a B2B collaboration administrator, I want to make sure invited users can authenticate using email one-time passcode, so that invited users can sign in using a passcode even when other authentication methods are not available.
 ---
 
 # Email one-time passcode authentication
@@ -29,7 +29,7 @@ The email one-time passcode feature is a way to authenticate B2B collaboration u
 
 ## Sign-in endpoints
 
-Email one-time passcode guest users can now sign in to your multi-tenant or Microsoft first-party apps by using a [common endpoint](redemption-experience.md#redemption-process-and-sign-in-through-a-common-endpoint) (in other words, a general app URL that doesn't include your tenant context). During the sign-in process, the guest user chooses **Sign-in options**, and then selects **Sign in to an organization**. The user then types the name of your organization and continues signing in using one-time passcode.
+Email one-time passcode guest users can now sign in to your multitenant or Microsoft first-party apps by using a [common endpoint](redemption-experience.md#redemption-process-and-sign-in-through-a-common-endpoint) (in other words, a general app URL that doesn't include your tenant context). During the sign-in process, the guest user chooses **Sign-in options**, and then selects **Sign in to an organization**. The user then types the name of your organization and continues signing in using one-time passcode.
 
 Email one-time passcode guest users can also use application endpoints that include your tenant information, for example:
 
@@ -96,7 +96,7 @@ The email one-time passcode feature is now turned on by default for all new tena
 
 1. Browse to **Identity** > **External Identities** > **All identity providers**.
 
-1. Select **Email one-time passcode**.
+1. In the **Configured identity providers** list, select **Email one-time passcode**.
 
 1. Under **Email one-time passcode for guests**, select one of the following:
    - **Yes**: The toggle is set to **Yes** by default unless the feature has been explicitly turned it off. To enable the feature, make sure **Yes** is selected.

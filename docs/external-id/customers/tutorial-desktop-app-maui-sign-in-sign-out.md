@@ -1,5 +1,5 @@
 ---
-title: "Tutorial: Sign in users in .NET MAUI app"
+title: "Tutorial: Sign in users in .NET MAUI app using a customer tenant"
 description: This tutorial demonstrates how to add sign-in and sign-out code in .NET Multi-platform App UI (.NET MAUI) shell and run the app on the Windows platform.
 author: henrymbuguakiarie
 manager: mwongerapk
@@ -12,9 +12,9 @@ ms.custom: devx-track-dotnet
 ms.date: 06/05/2023
 ---
 
-# Tutorial: Sign in users in .NET MAUI app
+# Tutorial: Sign in users in .NET MAUI app using a customer tenant
 
-This tutorial demonstrates how to add sign-in and sign-out code in .NET Multi-platform App UI (.NET MAUI) shell and run the app on the Windows platform.
+This tutorial is the final part of a series that demonstrates building a how to add sign-in and sign-out code in .NET Multi-platform App UI (.NET MAUI) shell and run the app on the Windows platform. In [part 2 of this series](./tutorial-desktop-app-maui-sign-in-prepare-app.md), you created a .NET MAUI shell app, added MSAL SDK support via MSAL helper classes, installed required libraries, and included an image resource. This final step demonstrates how to add sign-in and sign-out code in .NET Multi-platform App UI (.NET MAUI) shell and run the app on the Windows platform.
 
 In this tutorial, you learn how to:
 
@@ -28,7 +28,7 @@ In this tutorial, you learn how to:
 
 ## Prerequisites
 
-- [Tutorial: Create a .NET MAUI shell app, add MSALClient, and include an image resource](tutorial-desktop-app-maui-sign-in-prepare-app.md)
+- [Tutorial: Register and configure a .NET MAUI app in a customer tenant](./tutorial-desktop-app-maui-sign-in-prepare-tenant.md)
 
 ## Add sign-in and sign-out code
 
@@ -176,7 +176,7 @@ Run the app by pressing _F5_ or select the _play button_ at the top of Visual St
 
    :::image type="content" source="media/how-to-desktop-app-maui-sample-sign-in/maui-desktop-after-sign-in.png" alt-text="Screenshot of the main page in the desktop application after signing in.":::
 
-## Next Steps
+## Next Step
 
 > [!div class="nextstepaction"] 
 > [Tutorial: Add app roles to .NET MAUI app and receive them in the ID token](tutorial-desktop-maui-role-based-access-control.md)
