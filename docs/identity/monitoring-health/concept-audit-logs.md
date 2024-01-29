@@ -23,7 +23,11 @@ Two other activity logs are also available to help monitor the health of your te
 - **[Sign-ins](concept-sign-ins.md)** – Information about sign-ins and how your resources are used by your users.
 - **[Provisioning](concept-provisioning-logs.md)** – Activities performed by the provisioning service, such as the creation of a group in ServiceNow or a user imported from Workday.
 
-This article gives you an overview of the audit logs.
+This article gives you an overview of the audit logs, including what's required to access them, what information they provide, and 
+
+## License and role requirements
+
+[!INCLUDE [Microsoft Entra monitoring and health](../../includes/licensing-monitoring-health.md)]
 
 ## What can you do with audit logs?
 
@@ -60,22 +64,6 @@ Audit logs have a default list view that shows:
 - Status of the activity (success or failure)
 - Target
 - Initiator / actor of an activity (*who*)
-
-### Filtering audit logs
-
-You can customize and filter the list view by clicking the **Columns** button in the toolbar. Editing the columns enables you to add or remove fields from your view.
-
-Filter the audit data using the options visible in your list such as date range, service, category, and activity. For information on the audit log filters, see [How to customize and filter identity logs](howto-customize-filter-logs.md).
-
-![Screenshot of the service filter.](./media/concept-audit-logs/audit-log-service-filter.png)
-
-### Archiving and analyzing the audit logs
-
-There are several options available if you need to store the logs for data retention or route them to an analysis tool. Review the [How to access activity logs](howto-access-activity-logs.md) article for details on each option.
-
-You can download the audit logs from the Microsoft Entra admin center, up to 250,000 records, by selecting the **Download** button. The exact number of records varies, based on the number of fields included in your view when you select the **Download** button. You can download the logs in either CSV or JSON format.
-
-![Screenshot of the download data option.](./media/concept-audit-logs/download.png "Download data")
 
 ## Microsoft 365 activity logs
 

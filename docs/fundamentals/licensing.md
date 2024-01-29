@@ -1,16 +1,12 @@
 ---
 title: 'Microsoft Entra ID licensing'
 description: This article documents licensing requirements for Microsoft Entra ID features.
-services: active-directory
-documentationcenter: ''
 author: barclayn
 manager: amycolannino
-editor: ''
 ms.service: active-directory
 ms.topic: conceptual
-ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 12/01/2023
+ms.date: 01/17/2024
 ms.subservice: hybrid
 ms.author: barclayn
 ---
@@ -20,8 +16,7 @@ ms.author: barclayn
 This article discusses Microsoft Entra services' licensing. It is intended for IT decision makers, IT administrators, and IT professionals who are considering Microsoft Entra services for their organizations. This article isn't intended for end users.
 
 >[!IMPORTANT]
-> For licensing information on services not listed here, refer to the service's documentation or the [Microsoft Entra ID pricing page.](https://azure.microsoft.com/pricing/details/active-directory/)
-
+> For licensing information on services not listed here, refer to the service's documentation or the [Microsoft Entra ID pricing page.](https://www.microsoft.com/security/business/microsoft-entra-pricing)
 
 ## App provisioning
 
@@ -30,6 +25,14 @@ This article discusses Microsoft Entra services' licensing. It is intended for I
 ## Authentication
 
 [!INCLUDE [Authentication](../includes/licensing-authentication.md)]
+
+## Managed identities
+
+[!INCLUDE [Managed identities](../includes/licensing-managed-identities.md)]
+
+## Microsoft Entra ID Governance
+
+[!INCLUDE [Microsoft Entra ID Governance](../includes/licensing-governance.md)]
 
 ## Microsoft Entra Connect
 
@@ -43,27 +46,27 @@ This article discusses Microsoft Entra services' licensing. It is intended for I
 
 [!INCLUDE [Microsoft Entra Conditional access](../includes/licensing-conditional-access.md)]
 
-## Microsoft Entra ID Governance
-
-[!INCLUDE [Microsoft Entra ID Governance](../includes/licensing-governance.md)]
-
 ## Microsoft Entra ID Protection
 
 [!INCLUDE [Microsoft Entra ID Protection](../includes/licensing-identity-protection.md)]
 
-## Managed identities
+## Microsoft Entra monitoring and health
 
-[!INCLUDE [Managed identities](../includes/licensing-managed-identities.md)]
+[!INCLUDE [Microsoft Entra monitoring and health](../includes/licensing-monitoring-health.md)]
+
+## Microsoft Entra Privileged Identity Management
+
+[!INCLUDE [Microsoft Entra Privileged Identity](../includes/licensing-pim.md)]
+
+## Microsoft Entra Verified ID
+
+[!INCLUDE [Microsoft Entra Verified ID](../includes/licensing-verified-id.md)]
 
 ## Multitenant organizations
 
 [!INCLUDE [Multi-tenant organizations](../includes/licensing-multi-tenant-organizations.md)]
 
-## Microsoft Entra Privileged Identity management
-
-[!INCLUDE [Microsoft Entra Privileged Identity](../includes/licensing-pim.md)]
-
-## Role based access control
+## Role-based access control
 
 [!INCLUDE [Roles based access control](../includes/licensing-role-based-access-control.md)]
 
@@ -71,20 +74,12 @@ This article discusses Microsoft Entra services' licensing. It is intended for I
 
 [!INCLUDE [licensing-roles](../includes/licensing-roles.md)]
 
-## Microsoft Entra reporting and monitoring
-
-[!INCLUDE [Microsoft Entra reporting and monitoring](../includes/licensing-reports-monitoring.md)]
-
-## Microsoft Entra Verified ID
-
-[!INCLUDE [Microsoft Entra Verified ID](../includes/licensing-verified-id.md)]
-
 ## Features in preview
 
 [!INCLUDE [features-preview](../includes/licensing-features-preview.md)]
 
 ## Next steps
 
-- [Microsoft Entra pricing](https://azure.microsoft.com/pricing/details/active-directory/)
+- [Microsoft Entra pricing](https://www.microsoft.com/security/business/microsoft-entra-pricing)
 - [Azure AD B2C pricing](https://azure.microsoft.com/pricing/details/active-directory-b2c/)
 
