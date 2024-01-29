@@ -13,7 +13,7 @@ ms.topic: tutorial
 
 # Tutorial: Prepare an application for authentication
 
-In the [previous tutorial](tutorial-web-app-dotnet-register-app.md), you registered a web application in the Microsoft Entra admin center. This tutorial demonstrates how to create an ASP.NET Core web ppp using an IDE. You'll also create and upload a self-signed certificate to the Microsoft Entra admin center to secure your application. Finally, you'll configure the application for authentication.
+In the [previous tutorial](tutorial-web-app-dotnet-register-app.md), you registered a web application in the Microsoft Entra admin center. This tutorial demonstrates how to create an ASP.NET Core web app using an IDE. You'll also create and upload a self-signed certificate to the Microsoft Entra admin center to secure your application. Finally, you'll configure the application for authentication.
 
 In this tutorial:
 
