@@ -310,43 +310,16 @@ As the administrator, before you verify and manage single sign-on (also called i
 
 1. You have reviewed the Microsoft Entra SAML 2.0 Protocol Requirements
 2. You have configured your SAML 2.0 identity provider
-3. Install PowerShell for single sign-on with SAML 2.0 identity provider
+3. Install PowerShell for single sign-on (SSO) with SAML 2.0 identity provider
 4. Set up a trust between SAML 2.0 identity provider and Microsoft Entra ID
 5. Provisioned a known test user principal to Microsoft Entra ID (Microsoft 365) via either PowerShell or Microsoft Entra Connect.
 6. Configure directory synchronization using [Microsoft Entra Connect](../whatis-hybrid-identity.md).
 
-After setting up single sign-on with your SAML 2.0 SP-Lite based identity Provider, you should verify that it's working correctly.
+After setting up SSO with your SAML 2.0 SP-Lite based identity Provider, you should verify that it's working correctly. For more information about testing SAML-based SSO, see [Test SAML-based single sign-on](~identity/enterprise-apps/debug-saml-sso-issues.md#test-saml-based-single-sign-on)
 
 >[!NOTE]
 >If you converted a domain, rather than adding one, it may take up to 24 hours to set up single sign-on.
 Before you verify single sign-on, you should finish setting up Active Directory synchronization, synchronize your directories, and activate your synced users.
-
-### Use the tool to verify that single sign-on is set up correctly
-To verify that single sign-on has been set up correctly, you can perform the following procedure to confirm that you're able to sign-in to the cloud service with your corporate credentials.
-
-Microsoft provides a tool that you can use to test your SAML 2.0 based identity provider. Before running the test tool, you must have configured a Microsoft Entra tenant to federate with your identity provider.
-
->[!NOTE]
->The Connectivity Analyzer requires Internet Explorer 10 or later.
-
-
-
-1. Download the [Connectivity Analyzer](https://testconnectivity.microsoft.com/?tabid=Client).
-2. Select Install Now to begin downloading and installing the tool.
-3. Select “I can’t set up federation with Office 365, Azure, or other services that use Microsoft Entra ID.”
-4. Once the tool is downloaded and running, you'll see the Connectivity Diagnostics window. The tool will step you through testing your federation connection.
-5. The Connectivity Analyzer opens your SAML 2.0 IDP for you to sign-in, enter the credentials for the user principal you're testing:
-
-    ![Screenshot that shows the sign-in window for your SAML 2.0 IDP.](./media/how-to-connect-fed-saml-idp/saml1.png)
-
-6.  At the Federation test sign-in window, you should enter an account name and password for the Microsoft Entra tenant that is configured to be federated with your SAML 2.0 identity provider. The tool attempts to sign-in using those credentials and detailed results of tests performed during the sign-in attempt will be provided as output.
-
-    ![SAML](./media/how-to-connect-fed-saml-idp/saml2.png)
-
-7. This window shows a failed result of testing. Clicking on Review detailed results show information about the results for each test that was performed. You can also save the results to disk in order to share them.
- 
-> [!NOTE]
-> The Connectivity analyzer also tests Active Federation using the WS*-based and ECP/PAOS protocols. If you are not using these you can disregard the following error: Testing the Active sign-in flow using your identity provider’s Active federation endpoint.
 
 ### Manually verify that single sign-on has been set up correctly
 
