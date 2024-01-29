@@ -30,7 +30,7 @@ items:
   - name: How-to guides 
     expanded: true
     items:
-    - name: How to access activity logs
+    - name: Access activity logs
       href: howto-access-activity-logs.md
     - name: Customize and filter activity logs
       href: howto-customize-filter-logs.md
@@ -71,6 +71,8 @@ items:
         href: recommendation-migrate-from-adal-to-msal.md
       - name: Migrate apps from AD FS to Microsoft Entra ID
         href: recommendation-migrate-apps-from-adfs-to-azure-ad.md
+      - name: Migrate from MFA server to Microsoft Entra MFA
+        href: recommendation-migrate-to-microsoft-entra-mfa.md
       - name: Migrate to Microsoft authenticator
         href: recommendation-migrate-to-authenticator.md
       - name: Switch to Conditional Access MFA
@@ -118,6 +120,8 @@ items:
   - name: How-to guides 
     expanded: true
     items:
+    - name: Configure diagnostic settings
+      href: howto-configure-diagnostic-settings.md
     - name: Stream logs to an event hub
       href: howto-stream-logs-to-event-hub.md
     - name: Configure a Log Analytics workspace

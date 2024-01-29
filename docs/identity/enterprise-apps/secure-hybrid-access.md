@@ -22,7 +22,7 @@ In this article, learn to protect your on-premises and cloud legacy authenticati
 * **[Application Proxy](#secure-hybrid-access-with-application-proxy)**:
   * [Remote access to on-premises applications through Microsoft Entra application proxy](~/identity/app-proxy/application-proxy.md)
   * Protect users, apps, and data in the cloud and on-premises 
-  * [Use it to publish on-premises web applications externally](~/identity/app-proxy/what-is-application-proxy.md)
+  * [Use it to publish on-premises web applications externally](~/identity/app-proxy/overview-what-is-app-proxy.md)
   
 * **[Secure hybrid access through Microsoft Entra partner integrations](#partner-integrations-for-apps-on-premises-and-legacy-authentication)**:
 
@@ -45,12 +45,12 @@ Learn more:
 
 * [Remote access to on-premises applications through Microsoft Entra application proxy](~/identity/app-proxy/application-proxy.md)
 * [Tutorial: Add an on-premises application for remote access through Application Proxy in Microsoft Entra ID](~/identity/app-proxy/application-proxy-add-on-premises-application.md)
-* [How to configure SSO to an Application Proxy application](~/identity/app-proxy/application-proxy-config-sso-how-to.md)
-* [Using Microsoft Entra application proxy to publish on-premises apps for remote users](~/identity/app-proxy/what-is-application-proxy.md)
+* [How to configure SSO to an Application Proxy application](~/identity/app-proxy/how-to-configure-sso.md)
+* [Using Microsoft Entra application proxy to publish on-premises apps for remote users](~/identity/app-proxy/overview-what-is-app-proxy.md)
 
 ### Application publishing and access management
 
-Use Application Proxy remote access as a service to publish applications to users outside the corporate network. Help improve your cloud access management without requiring modification to your on-premises applications. Plan an [Microsoft Entra application proxy deployment](~/identity/app-proxy/application-proxy-deployment-plan.md).
+Use Application Proxy remote access as a service to publish applications to users outside the corporate network. Help improve your cloud access management without requiring modification to your on-premises applications. Plan an [Microsoft Entra application proxy deployment](~/identity/app-proxy/conceptual-deployment-plan.md).
 
 ## Partner integrations for apps: on-premises and legacy authentication
 

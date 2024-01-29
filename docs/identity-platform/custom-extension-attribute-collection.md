@@ -4,15 +4,15 @@ description: Learn how to develop and register a Microsoft Entra custom authenti
 author: msmimart
 manager: CelesteDG
 ms.author: mimart
-ms.date: 01/11/2024
+ms.date: 01/23/2024
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: how-to
 titleSuffix: Microsoft identity platform
-#Customer intent: As an application developer, I want to create and register a custom authentication extensions API so I can add logic to the authentication flow before or after attribute collection.
+#customer intent: As a Microsoft Entra External ID customer, I want to extend the user sign-up experience by adding custom actions before and after attribute collection, so that I can customize the attribute collection process and validate user entries.
 ---
 
-# Custom authentication extensions for attribute collection start and submit events
+# Custom authentication extensions for attribute collection start and submit events (preview)
 
 **Applies to:** Microsoft Entra External ID customer configurations
 

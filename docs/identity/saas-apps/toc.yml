@@ -176,6 +176,8 @@
         href: appinux-tutorial.md
       - name: Applied Mental Health
         href: applied-mental-health-tutorial.md
+      - name: Applitools Eyes
+        href: applitools-eyes-tutorial.md
       - name: AppNeta Performance Monitor
         href: appneta-tutorial.md
       - name: Appraisd
@@ -344,6 +346,8 @@
         href: blackboard-learn-shibboleth-tutorial.md
       - name: Blink
         href: blink-tutorial.md
+      - name: Blinq
+        href: blinq-tutorial.md
       - name: Blockbax
         href: blockbax-tutorial.md  
       - name: BlogIn
@@ -1089,6 +1093,8 @@
         href: freedcamp-tutorial.md
       - name: Freight Audit
         href: freight-audit-tutorial.md
+      - name: Freightender SSO for TRP (Tender Response Platform)
+        href: freightender-sso-for-trp-tender-response-platform-tutorial.md
       - name: FreshDesk
         href: freshdesk-tutorial.md
       - name: FreshGrade
@@ -1451,8 +1457,6 @@
         href: jdacloud-tutorial.md
       - name: Jedox
         href: jedox-tutorial.md
-      - name: JFrog Artifactory
-        href: jfrog-artifactory-tutorial.md
       - name: JLL TRIRIGA
         href: jll-tririga-tutorial.md
       - name: JIRA SAML SSO by Microsoft
@@ -1613,6 +1617,8 @@
         href: lessonly-tutorial.md
       - name: Lexonis TalentScape
         href: lexonis-talentscape-tutorial.md
+      - name: LifeSight
+        href: lifesight-tutorial.md
       - name: Lifesize Cloud
         href: lifesize-cloud-tutorial.md
       - name: LIFT
@@ -2429,6 +2435,8 @@
         href: settlingmusic-tutorial.md
       - name: SevOne Network Monitoring System (NMS)
         href: sevone-network-monitoring-system-tutorial.md
+      - name: ShareCal
+        href: sharecal-tutorial.md
       - name: SharePoint on-premises
         href: sharepoint-on-premises-tutorial.md
       - name: ShareVault
@@ -2569,6 +2577,8 @@
         href: sps-production-manager-tutorial.md
       - name: Splunk Enterprise and Splunk Cloud
         href: splunkenterpriseandsplunkcloud-tutorial.md
+      - name: SpotDraft
+        href: spotdraft-tutorial.md
       - name: Spotinst
         href: spotinst-tutorial.md
       - name: SpringCM
@@ -2765,6 +2775,8 @@
         href: tivitz-tutorial.md
       - name: TonicDM
         href: tonicdm-tutorial.md
+      - name: Tonichi Nexta Meishi
+        href: tonichi-nexta-meishi-tutorial.md
       - name: TOPdesk - Public
         href: topdesk-public-tutorial.md
       - name: TOPdesk - Secure
@@ -2773,8 +2785,8 @@
         href: tracker-software-technologies-tutorial.md  
       - name: TrackVia
         href: trackvia-tutorial.md
-      - name: Traction Guest
-        href: traction-guest-tutorial.md
+      - name: SIS Enterprise
+        href: sis-enterprise-tutorial.md
       - name: Tradeshift
         href: tradeshift-tutorial.md
       - name: Training Platform
