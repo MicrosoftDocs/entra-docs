@@ -426,12 +426,12 @@ In the CBA Authentication methods policy, an admin can determine the strength of
 
 Sign-in logs provide information about sign-ins and how your resources are used by your users. For more information about sign-in logs, see [Sign-in logs in Microsoft Entra ID](../monitoring-health/concept-sign-ins.md).
 
-Let's walk through two scenarios, one where the certificate satisfies single-factor authentication and another where the certificate satisfies MFA.
+Let's walk through two scenarios, one where the certificate satisfies single-factor authentication and another where the certificate satisfies MFA to see how sign-in logs are look like.
 
 For the test scenarios, choose a user with a Conditional Access policy that requires MFA. 
 Configure the user binding policy by mapping SAN Principal Name to UserPrincipalName.
 
-The user certificate should be configured like this screenshot:
+The user certificate looks like this screenshot in these test scnarioes:
 
 :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/user-certificate.png" alt-text="Screenshot of the user certificate." :::  
 
