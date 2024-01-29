@@ -132,7 +132,7 @@ items:
                 items:
                   - name: Prepare tenant 
                     href: tutorial-web-app-node-sign-in-prepare-tenant.md
-                  - name: Create a Node.js app
+                  - name: Create Node.js app 
                     href: tutorial-web-app-node-sign-in-prepare-app.md
                   - name: Add sign-in and sign-out
                     href: tutorial-web-app-node-sign-in-sign-out.md
@@ -159,7 +159,7 @@ items:
                 items:
                   - name: Prepare tenant
                     href: tutorial-web-app-dotnet-sign-in-prepare-tenant.md
-                  - name: Create an ASP.NET Core app
+                  - name: Create ASP.NET Core web app
                     href: tutorial-web-app-dotnet-sign-in-prepare-app.md
                   - name: Sign in and sign out
                     href: tutorial-web-app-dotnet-sign-in-sign-out.md
@@ -185,7 +185,7 @@ items:
                     href: how-to-browserless-app-node-sign-in-prepare-app.md
                   - name: Add sign-in and sign-out
                     href: how-to-browserless-app-node-sign-in-sign-out.md
-          - name: .NET​
+          - name: .NET
             items:
               - name: Prepare tenant 
                 href: tutorial-browserless-app-dotnet-sign-in-prepare-tenant.md
@@ -212,7 +212,7 @@ items:
             items:
               - name: Prepare tenant
                 href: tutorial-desktop-app-maui-sign-in-prepare-tenant.md
-              - name: Prepare app
+              - name: Create .NET MAUI app
                 href: tutorial-desktop-app-maui-sign-in-prepare-app.md
               - name: Sign in and sign out
                 href: tutorial-desktop-app-maui-sign-in-sign-out.md
@@ -231,13 +231,13 @@ items:
           items:
           - name: Prepare tenant
             href: tutorial-mobile-app-maui-sign-in-prepare-tenant.md
-          - name: Prepare app
+          - name: Create .NET MAUI app
             href: tutorial-mobile-app-maui-sign-in-prepare-app.md
           - name: Sign in and sign out
             href: tutorial-mobile-app-maui-sign-in-sign-out.md
           - name: Use role-based access control
             href: tutorial-mobile-maui-role-based-access-control.md
-      - name: Command-line interface (CLI) app
+      - name: .NET CLI
         items:
           - name: Node.js - sign in users
             items:
