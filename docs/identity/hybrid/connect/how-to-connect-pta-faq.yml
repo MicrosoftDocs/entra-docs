@@ -13,7 +13,7 @@ metadata:
   ms.tgt_pltfrm: na
   ms.custom: has-azure-ad-ps-ref
   ms.topic: faq
-  ms.date: 02/08/2023
+  ms.date: 01/24/2024
   ms.subservice: hybrid
   ms.author: billmath
   ms.collection: M365-identity-device-management
@@ -113,7 +113,7 @@ sections:
       - question: |
           Can the Pass-through Authentication Agents communicate over an outbound web proxy server?
         answer: |
-          Yes. If Web Proxy Auto-Discovery (WPAD) is enabled in your on-premises environment, Authentication Agents automatically attempt to locate and use a web proxy server on the network.
+          Yes. If Web Proxy Auto-Discovery (WPAD) is enabled in your on-premises environment, Authentication Agents automatically attempt to locate and use a web proxy server on the network. For more information about using the outbound proxy server, see [Work with existing on-premises proxy servers](~/identity/app-proxy/application-proxy-configure-connectors-with-proxy-servers.md#use-the-outbound-proxy-server).
           
           If you don't have WPAD in your environment, you can add proxy information (as shown below) to allow a Pass-through Authentication Agent to communicate with Microsoft Entra ID:
           - Configure proxy information in Internet Explorer before you install the Pass-through Authentication Agent on the server. This allows you to complete the installation of the Authentication Agent, but it will still show up as **Inactive** on the Admin portal.
