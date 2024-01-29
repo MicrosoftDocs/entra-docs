@@ -37,4 +37,4 @@ From the prerequisites, you registered a client app in your customer's tenant. Y
 Next, learn how to prepare your web application and API.
 
 > [!div class="nextstepaction"]
-> [Start building your web application and API >](how-to-web-app-node-sign-in-call-api-prepare-app.md)
+> [Start building your web application and API](how-to-web-app-node-sign-in-call-api-prepare-app.md)

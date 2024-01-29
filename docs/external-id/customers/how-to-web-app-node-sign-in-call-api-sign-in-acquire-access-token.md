@@ -139,4 +139,4 @@ In your code editor, open *auth/AuthProvider.js* file, then update the `getToken
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Call an API >](how-to-web-app-node-sign-in-call-api-call-api.md)
+> [Call an API](how-to-web-app-node-sign-in-call-api-call-api.md)

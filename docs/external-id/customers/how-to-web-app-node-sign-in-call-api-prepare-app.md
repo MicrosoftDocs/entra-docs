@@ -1,5 +1,5 @@
 ---
-title: Prepare app to call an API in a Node.js web application
+title: Create a Node.js web app to call an API
 description: Learn about how to prepare your Node.js client web app to call an API. 
 author: kengaderdus
 manager: mwongerapz
@@ -9,10 +9,10 @@ ms.subservice: ciam
 ms.topic: how-to
 ms.date: 01/27/2024
 ms.custom: developer, devx-track-js
-#Customer intent: As a developer, I want to learn about how to prepare my Node.js web app so that I can call a web API 
+#Customer intent: As a developer, I want to learn about how to start building my Node.js web app so that I can call a web API 
 ---
 
-# Prepare app to call an API in a Node.js web application
+# Create a Node.js web app to call an API
 
 In this article, you prepare the app project you created in [Tutorial: Prepare your customer tenant to sign in users in a Node.js web app](tutorial-web-app-node-sign-in-prepare-tenant.md) to call a web API. This article is the second part of a four-part guide series.
 
@@ -120,4 +120,4 @@ In your terminal, install  more Node packages, `axios`, `cookie-parser`, `body-p
 Next, learn how to sign-in users and acquire an access token:
 
 > [!div class="nextstepaction"]
-> [Sign-in users and acquire an access token >](how-to-web-app-node-sign-in-call-api-sign-in-acquire-access-token.md)
+> [Sign-in users and acquire an access token](how-to-web-app-node-sign-in-call-api-sign-in-acquire-access-token.md)
