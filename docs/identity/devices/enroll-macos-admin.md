@@ -11,11 +11,12 @@ ms.author: owenrichards
 author: OwenRichards1
 manager: CelesteDG
 ms.reviewer: brianmel
+#Customer intent: As an admin, I want to know how to deploy macOS Platform Single Sign-on (PSSO) for a Mac device using the Microsoft Intune admin center.
 ---
 
 # Deploy macOS Platform Single Sign-on as an administrator (preview)
 
-Platform single sign-on (PSSO) is a feature that enables users to sign in to Mac devices using their Microsoft Entra ID credentials. This feature provides benefits for admins by simplifying the sign-in process for users and reducing the number of passwords they need to remember. PSSO is supported on Macs enrolled using both Automated Device Enrollment and Device Enrollment, running macOS 13 Ventura or later.
+In this tutorial, you will learn how to deploy macOS Platform Single sign-on (PSSO) for a Mac device as an administrator in the Microsoft Intune admin center. PSSO is a feature that enables users to sign in to Mac devices using their Microsoft Entra ID credentials. This feature provides benefits for admins by simplifying the sign-in process for users and reducing the number of passwords they need to remember. PSSO is supported on Macs enrolled using both Automated Device Enrollment and Device Enrollment, running macOS 13 Ventura or later.
 
 ## Prerequisites
 
@@ -77,7 +78,7 @@ A payload is a set of instructions or settings that can be delivered to a device
             - **Password**: choosing this option allows the user to authenticate with Microsoft Entra ID via the user's Microsoft Entra ID password. The local account password is updated and kept in sync with Microsoft Entra ID.
             - **UserSecureEnclaveKey**: choosing this option allows the user to use a Secure Enclave backed key to authenticate with the Microsoft Entra ID. This authentication method doesn't affect the local account password.
             - **SmartCard**: choosing this option allows the user to use a SmartCard to authenticate with the Microsoft Entra ID. This option is only supported on macOS 14 Sonoma or later.
-                - **Registration Token**:
+            - **Registration Token**: <!--TODO-->
         - `{{DEVICEREGISTRATION}}` - this value must be added exactly as shown, including the double curly braces.
         - **Extension Identifier**- `com.microsoft.CompanyPortalMac.ssoextension`
         - **Type** -  **Redirect**

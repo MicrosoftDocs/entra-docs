@@ -11,6 +11,7 @@ ms.author: cwerner
 author: cilwerner
 manager: CelesteDG
 ms.reviewer: brianmel, miepping
+#Customer intent: As a customer, I want to understand how to troubleshoot macOS Platform single sign-on (PSSO) issues, have some frequently asked questions answered, and understand different scenarios to validate.
 ---
 
 # MacOS Platform single sign-on known issues and troubleshooting (preview)
@@ -26,6 +27,8 @@ After deploying PSSO on your device, there are a few validation scenarios that y
 Confirm that changes to Microsoft Entra ID password made through self-service password reset (SSPR) are successfully synchronized to the local machine. If a user's Microsoft Entra ID password changes after syncing it to the Mac, the user is prompted to enter their new password within 4 hours.
 
 ### Repair or remove PSSO registration from a device
+
+This section outlines how to repair or remove PSSO registration from a Mac device, depending on the macOS version.
 
 ### [macOS 14](#tab/macOS14)
 
