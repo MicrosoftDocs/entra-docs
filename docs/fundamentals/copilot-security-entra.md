@@ -1,8 +1,8 @@
 ---
 # required metadata
 
-title: Use Security Copilot to get device and policy information
-description: You can use Security Copilot to get information about your Intune data, including devices, apps, policies, and groups managed in Intune. You can also compare policies, get device specific details, and get target info for policies.
+title: Use Security Copilot to respond to identity threats quickly
+description: You can use Security Copilot for Microsoft Entra to investigate and resolve identity risks, assess identities and access with AI-driven intelligence, and complete complex tasks quickly.
 keywords:
 author: rwike77
 ms.author: ryanwi
@@ -25,9 +25,9 @@ Security Copilot is a cloud-based AI platform that provides a natural language c
 
 **Security Copilot integrates with Microsoft Entra**.
 
-If you use [Microsoft Entra ID](/entra/fundamentals/whatis), then you can use Security Copilot to ...
+If you use [Microsoft Entra ID](/entra/fundamentals/whatis), then you can use Security Copilot to investigate and resolve identity risks, assess identities and access with AI-driven intelligence, and complete complex tasks quickly.
 
-Specifically, Security Copilot gets insights from your Microsoft Entra ID data. You can use the system features built into Security Copilot, and use prompts to get more information. This information can help you understand your security posture and possibly troubleshoot device issues.
+Specifically, Security Copilot gets insights from your Microsoft Entra ID data. You can explore sign-ins and risky users and get contextualized insights on how to resolve and what to do to protect the accounts in natural language.  Built on top of real-time machine learning, Security Copilot can help you find gaps in access policies, generate identity workflows, and troubleshoot faster. You can also unlock new skills that allow admins at all levels to complete complex tasks such as incident investigation, sign-in log analysis, and more, to gain savings in time and resources.
 
 This article introduces you to Security Copilot and includes sample prompts that can help Microsoft Entra ID admins.
 
@@ -53,7 +53,7 @@ For more information on writing Security Copilot prompts, go to [Microsoft Secur
 ## Open Security Copilot
 
 1. Go to [Microsoft Security Copilot](https://go.microsoft.com/fwlink/?linkid=2247989) and sign in with your credentials.
-2. By default, Intune should be enabled. To confirm, select **plugins** (bottom left corner):
+2. By default, Microsoft Entra should be enabled. To confirm, select **plugins** (bottom left corner):
 
     :::image type="content" source="./media/copilot-security-entra/security-copilot-plugins.png" alt-text="Screenshot that shows the plugins that are available, enabled, and disabled in Microsoft Security Copilot.":::
 
@@ -150,7 +150,7 @@ Get the details for Microsoft Entra users carrying an elevated risk of compromis
 
 ## Provide feedback
 
-Your feedback on the Intune integration with Security Copilot helps with development. To provide feedback, in Security Copilot, use the feedback buttons at the bottom of each completed prompt:
+Your feedback on the Microsoft Entra integration with Security Copilot helps with development. To provide feedback, in Security Copilot, use the feedback buttons at the bottom of each completed prompt:
 
 :::image type="content" source="./media/copilot-security-entra/security-copilot-prompt-feedback.png" alt-text="Screenshot that shows how to submit feedback on the prompt results in Microsoft Security Copilot.":::
 
@@ -160,11 +160,11 @@ Your options:
 - **Off-target**: The results don't match expectations.
 - **Report**: The results are harmful in some way.
 
-Whenever possible, and when the result is **Off-target**, write a few words explaining what can be done to improve the outcome. If you entered Intune-specific prompts and the results aren't Intune related, then include that information.
+Whenever possible, and when the result is **Off-target**, write a few words explaining what can be done to improve the outcome. If you entered Microsoft Entra-specific prompts and the results aren't Microsoft Entra related, then include that information.
 
 ## Data processing and privacy
 
-When you interact with the Security Copilot to get Intune data, Security Copilot pulls that data from Intune. The prompts, the Intune data that's retrieved, and the output shown in the prompt results is processed and stored within the Security Copilot service.
+When you interact with the Security Copilot to get Microsoft Entra data, Security Copilot pulls that data from Microsoft Entra ID. The prompts, the Microsoft Entra data that's retrieved, and the output shown in the prompt results is processed and stored within the Security Copilot service.
 
 For more information about data privacy in Security Copilot, go to [Privacy and data security in Microsoft Security Copilot](/security-copilot/privacy-data-security).
 
