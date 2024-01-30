@@ -3,7 +3,7 @@ title: Simulate remote network connectivity with Azure virtual networks
 description: Configure Azure resources to simulate remote network connectivity to Microsoft's Security Edge Solutions with Global Secure Access.
 ms.service: network-access
 ms.topic: how-to
-ms.date: 12/01/2023
+ms.date: 01/30/2024
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
@@ -187,6 +187,33 @@ After you create a remote network and add a device link, the configuration detai
     - For more information about viewing these details, see [Configure customer premises equipment](how-to-configure-customer-premises-equipment.md).
 
     ![Screenshot of the view configuration panel.](media/how-to-simulate-remote-network/view-configuration-details-panel.png)
+
+The following diagram connects the key details of these configuration details to their correlating role in the simulated remote network. A text description of the diagram follows the image.
+
+:::image type="content" source="media/how-to-simulate-remote-network/simulate-remote-networks-diagram.png" alt-text="Diagram of the remote network configurations and where the details correlate to the network." lightbox="media/how-to-simulate-remote-network/simulate-remote-networks-diagram-expanded.png":::
+
+The center of the diagram depicts a resource group that contains a virtual machine connected to a virtual network. A virtual network gateway then connects to the local network gateway by a site-to-site redundant VPN connection.
+
+A screenshot of the connectivity details has two sections highlighted. The first highlighted section under localConfigurations contains the following details. These details make up the Global Secure Access gateway, which is your local network gateway.
+
+**Local Network Gateway 1**
+- Public IP address/endpoint: 20.x.x.76
+- ASN: 65476
+- BGP IP address/bgpAddress: 10.2.2.2
+
+**Local Network Gateway 2**
+- Public IP address/endpoint: 4.x.x.193
+- ASN: 65476
+- BGP IP address/bgpAddress: 10.1.1.2
+
+The second highlighted section under peerConfiguration contains the following details. These details make up the virtual network gateway, which is your local router equipment.
+
+**Virtual Network Gateway**
+- Public IP address/endpoint: 20.x.x.1
+- ASN: 65533
+- BGP IP address/bgpAddress: 10.2.2.2
+
+An additional callout points to the virtual network you created in your resource group. The address space for the virtual network is 10.2.0.0/16. The Local BGP address and Peer BGP address cannot be in the same address space.
 
 ## Create local network gateway
 
