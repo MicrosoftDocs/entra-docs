@@ -1,6 +1,6 @@
 ---
 title: Call an ASP.NET Core web API with cURL
-description: Learn how to call a protected ASP.NET Core Web API using the Microsoft identity platform with cURL
+description: Learn how to call a protected ASP.NET Core web API using the Microsoft identity platform with cURL
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
@@ -9,7 +9,7 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: how-to
 zone_pivot_groups: web-api-howto-prereq
-#Customer intent: As a software developer, I want to call a protected ASP.NET Core Web API using the Microsoft identity platform with cURL
+#Customer intent: As a software developer, I want to call a protected ASP.NET Core web API using the Microsoft identity platform with cURL
 ---
 
 # Call an ASP.NET Core web API with cURL 
@@ -36,7 +36,7 @@ This article shows you how to call a protected ASP.NET Core web API using Client
   - Application developer 
   - Cloud application administrator 
 - [Download and install cURL](https://curl.se/download.html) on your workstation computer.  
-- A minimum requirement of [.NET Core 6.0 SDK](https://dotnet.microsoft.com/download/dotnet).
+- A minimum requirement of [.NET 6.0 SDK](https://dotnet.microsoft.com/download/dotnet).
 
 ::: zone-end
 

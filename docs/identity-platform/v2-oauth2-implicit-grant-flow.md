@@ -10,7 +10,7 @@ ms.reviewer: ludwignick
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-#Customer intent:
+#Customer intent: As a developer integrating authentication into my application, I want to understand the limitations of the OAuth 2.0 implicit grant flow and why it is no longer recommended, so that I can choose a more suitable authentication method like the authorization code flow.
 ---
 
 # Microsoft identity platform and OAuth 2.0 implicit grant flow

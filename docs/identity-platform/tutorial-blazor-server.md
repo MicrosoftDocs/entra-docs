@@ -59,7 +59,7 @@ This tool automates the following tasks for you:
 - Store your application secret in user secrets storage
 - Update your appsettings.json with the client-id, tenant-id, and others.
 
-.NET Tools extend the capabilities of the dotnet CLI command. To learn more about .NET Tools, see [.NET Tools](/dotnet/core/tools/global-tools).
+.NET Tools extend the capabilities of the dotnet CLI command. To learn more, see [.NET Tools](/dotnet/core/tools/global-tools).
 
 For more information on user secrets storage, see [safe storage of app secrets during development](/aspnet/core/security/app-secrets).
 
@@ -77,7 +77,7 @@ msidentity-app-sync --username <username/upn> --tenant-id <tenantID>
 
 ## Optional - Create a development SSL certificate
 
-In order to avoid SSL errors/warnings when browsing the running application, you can use the following on macOS and Windows to generate a self-signed SSL certificate for use by .NET Core.
+In order to avoid SSL errors/warnings when browsing the running application, you can use the following on macOS and Windows to generate a self-signed SSL certificate for use by .NET.
 
 ```dotnetcli
 dotnet dev-certs https --trust

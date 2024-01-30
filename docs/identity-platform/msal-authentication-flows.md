@@ -184,7 +184,7 @@ The following constraints apply to the applications using the ROPC flow:
 - Conditional Access is **unsupported**.
 - ROPC works _only_ for work and school accounts.
 - Personal Microsoft accounts (MSA) are **unsupported** by ROPC.
-- ROPC is **supported** in .NET desktop and .NET Core applications.
+- ROPC is **supported** in .NET desktop and ASP.NET Core applications.
 - ROPC is **unsupported** in Universal Windows Platform (UWP) applications.
 - ROPC in Azure AD B2C is supported _only_ for local accounts.
   - For information about ROPC in MSAL.NET and Azure AD B2C, see [Using ROPC with Azure AD B2C](/entra/msal/dotnet/acquiring-tokens/desktop-mobile/social-identities#resource-owner-password-credentials-ropc).
@@ -204,7 +204,7 @@ In the following diagram, the application:
 
 **Compatibility**
 
-Integrated Windows authentication (IWA) is enabled for .NET desktop, .NET Core, and Windows Universal Platform apps.
+Integrated Windows authentication (IWA) is enabled for .NET desktop, .NET, and Windows Universal Platform apps.
 
 IWA supports AD FS-federated users *only* - users created in Active Directory and backed by Microsoft Entra ID. Users created directly in Microsoft Entra ID without Active Directory backing (managed users) can't use this authentication flow.
 
