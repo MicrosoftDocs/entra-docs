@@ -156,11 +156,11 @@ Your feedback on the Microsoft Entra integration with Security Copilot helps wit
 
 Your options:
 
-- **Confirm**: The results match expectations.
-- **Off-target**: The results don't match expectations.
-- **Report**: The results are harmful in some way.
+- **Looks right**: The results match expectations.
+- **Needs improvement**: The results don't match expectations.
+- **Inappropriate**: The results are harmful in some way.
 
-Whenever possible, and when the result is **Off-target**, write a few words explaining what can be done to improve the outcome. If you entered Microsoft Entra-specific prompts and the results aren't Microsoft Entra related, then include that information.
+Whenever possible, and when the result is **Needs improvement**, write a few words explaining what can be done to improve the outcome. If you entered Microsoft Entra-specific prompts and the results aren't Microsoft Entra related, then include that information.
 
 ## Data processing and privacy
 
