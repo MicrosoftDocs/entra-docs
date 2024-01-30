@@ -11,7 +11,7 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.subservice: compliance
-ms.date: 01/29/2023
+ms.date: 01/29/2024
 ms.author: owinfrey
 ms.reviewer: markwahl-msft
 ms.collection: M365-identity-device-management
@@ -34,7 +34,7 @@ Customers who use SAP SuccessFactors can easily bring identities into [Microsoft
 * **Hiring new employees**: When a new employee is added to SuccessFactors, a user account is automatically created in Microsoft Entra ID and optionally Microsoft 365 and [other software as a service (SaaS) applications that Microsoft Entra ID supports](~/identity/app-provisioning/user-provisioning.md). This process includes write-back of the email address to SuccessFactors.
 * **Employee attribute and profile updates**: When an employee record is updated in SuccessFactors (such as name, title, or manager), the employee's user account is automatically updated in Microsoft Entra ID and optionally Microsoft 365 and other SaaS applications that Microsoft Entra ID supports.
 * **Employee terminations**: When an employee is terminated in SuccessFactors, the employee's user account is automatically disabled in Microsoft Entra ID and optionally Microsoft 365 and other SaaS applications that Microsoft Entra ID supports.
-* **Employee rehires**: When an employee is rehired in SuccessFactors, the employee's old account can be automatically reactivated or re-provisioned (depending on your preference) to Microsoft Entra ID and optionally Microsoft 365 and other SaaS applications that Microsoft Entra ID supports.
+* **Employee rehires**: When an employee is rehired in SuccessFactors, the employee's old account can be automatically reactivated or reprovisioned (depending on your preference) to Microsoft Entra ID and optionally Microsoft 365 and other SaaS applications that Microsoft Entra ID supports.
 
 > [!VIDEO https://www.youtube-nocookie.com/embed/66v2FR2-QrY]
 
@@ -50,7 +50,7 @@ In addition to the native provisioning integrations that allow you to manage acc
 
 ### Enable SSO
 
-Along with setting up provisioning for your SAP applications, you can enable SSO for them. Microsoft Entra ID can serve as the identity provider and serve as the authentication authority for your SAP applications. Entra ID can integrate with [SAP NetWeaver using SAML or OAuth](~/identity/saas-apps/sap-netweaver-tutorial.md).  For SAP SaaS and modern apps, [learn how to configure Microsoft Entra ID as the corporate identity provider for your SAP applications via SAP Cloud Identity Services](https://help.sap.com/docs/IDENTITY_AUTHENTICATION/6d6d63354d1242d185ab4830fc04feb1/058c7b14209f4f2d8de039da4330a1c1.html) and see the guides for [SAP Cloud Identity Services](~/identity/saas-apps/sap-hana-cloud-platform-identity-authentication-tutorial.md), [SAP HANA](~/identity/saas-apps/saphana-tutorial.md) and [SAP Fieldglass](~/identity/saas-apps/fieldglass-tutorial.md).
+Along with setting up provisioning for your SAP applications, you can enable SSO for them. Microsoft Entra ID can serve as the identity provider and serve as the authentication authority for your SAP applications. Microsoft Entra ID can integrate with [SAP NetWeaver using SAML or OAuth](~/identity/saas-apps/sap-netweaver-tutorial.md).  For SAP SaaS and modern apps, [learn how to configure Microsoft Entra ID as the corporate identity provider for your SAP applications via SAP Cloud Identity Services](https://help.sap.com/docs/IDENTITY_AUTHENTICATION/6d6d63354d1242d185ab4830fc04feb1/058c7b14209f4f2d8de039da4330a1c1.html) and see the guides for [SAP Cloud Identity Services](~/identity/saas-apps/sap-hana-cloud-platform-identity-authentication-tutorial.md), [SAP HANA](~/identity/saas-apps/saphana-tutorial.md) and [SAP Fieldglass](~/identity/saas-apps/fieldglass-tutorial.md).
 
 ### Provision identities into modern SAP applications
 
@@ -68,13 +68,13 @@ Customers who have yet to transition from applications such as  SAP R/3 and SAP 
 
 ## Trigger custom workflows
 
-When a new employee is hired in your organization, you might need to trigger a workflow within your SAP server. By using the [Microsoft Entra ID Governance lifecycle workflows](lifecycle-workflow-extensibility.md) in conjunction with the [SAP connector in Azure Logic Apps](/azure/logic-apps/logic-apps-using-sap-connector), you can trigger custom actions in SAP upon hiring a new employee.
+When a new employee is hired in your organization, you might need to trigger a workflow within your SAP server. By using the [Microsoft Entra ID Governance lifecycle workflows](lifecycle-workflow-extensibility.md) with the [SAP connector in Azure Logic Apps](/azure/logic-apps/logic-apps-using-sap-connector), you can trigger custom actions in SAP upon hiring a new employee.
 
 ## Check for separation of duties
 
 With separation-of-duties checks in Microsoft Entra ID [entitlement management](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/ensure-compliance-using-separation-of-duties-checks-in-access/ba-p/2466939), customers can ensure that users don't take on excessive access rights:
 
-* Admins and access managers can prevent users from requesting additional access packages if they're already assigned to other access packages or are a member of other groups that are incompatible with the requested access.
+* Admins and access managers can prevent users from requesting extra access packages if they're already assigned to other access packages or are a member of other groups that are incompatible with the requested access.
 * Enterprises with critical regulatory requirements for SAP apps have a single consistent view of access controls. They can then enforce separation-of-duties checks across their financial and other business-critical applications, along with Microsoft Entra integrated applications.
 * With integration with [Pathlock](https://pathlock.com/) and other partner products, customers can take advantage of fine-grained separation-of-duties checks with access packages in Microsoft Entra ID. Over time, this ability will help customers address Sarbanes-Oxley and other compliance requirements.
 
