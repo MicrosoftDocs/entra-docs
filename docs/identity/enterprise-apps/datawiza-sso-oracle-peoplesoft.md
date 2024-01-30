@@ -88,18 +88,18 @@ To integrate Oracle PeopleSoft with Microsoft Entra ID:
 
    ![Screenshot of entries under Add Application.](./media/datawiza-sso-oracle-peoplesoft/add-application.png)
    
-7. Select **Next**.
-8. On the **Configure IdP** dialog, enter information.
+12. Select **Next**.
+13. On the **Configure IdP** dialog, enter information.
 
    >[!Note]
    >DCMC has one-click integration to help complete Microsoft Entra configuration. DCMC calls the Microsoft Graph API to create an application registration on your behalf in your Microsoft Entra tenant. Learn more at docs.datawiza.com in [One Click Integration with Microsoft Entra ID](https://docs.datawiza.com/tutorial/web-app-azure-one-click.html#preview)
 
-9. Select **Create**.
+14. Select **Create**.
 
    ![Screenshot of entries under Configure IDP.](./media/datawiza-sso-oracle-peoplesoft/configure-idp.png)
 
-10. The DAP deployment page appears.
-11. Make a note of the deployment Docker Compose file. The file includes the DAP image, the Provisioning Key and Provision Secret, which pulls the latest configuration and policies from DCMC.
+15. The DAP deployment page appears.
+16. Make a note of the deployment Docker Compose file. The file includes the DAP image, the Provisioning Key and Provision Secret, which pulls the latest configuration and policies from DCMC.
 
    ![Screenshot of three sets of Docker information.](./media/datawiza-sso-oracle-peoplesoft/docker-compose-file.png)
 
