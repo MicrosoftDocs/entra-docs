@@ -28,7 +28,8 @@ To configure diagnostic settings, you need:
 
 - An Azure subscription. If you don't have an Azure subscription, you can [sign up for a free trial](https://azure.microsoft.com/free/).
 - A Microsoft Entra ID P1 or P2 tenant.
-- **Security Administrator** access for the Microsoft Entra tenant. For more information about least privilege in our documentation, see [Get the most out of documentation](/entra/fundamentals/how-to-navigate).
+- **Security Administrator** access to create general diagnostic settings for the Microsoft Entra tenant.
+- **Attribute Log Administrator** access to create diagnostic settings for custom security attribute logs.
 - A destination that is already set up. For example, if you want to stream logs to an event hub, you need to create the event hub before you can configure the diagnostic settings.
 
 ## How to access diagnostic settings
