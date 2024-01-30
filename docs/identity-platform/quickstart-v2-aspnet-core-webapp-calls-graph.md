@@ -150,7 +150,7 @@ ms.topic: conceptual
 > 
 > The GitHub repo that contains the ASP.NET Core code sample referenced in this quickstart includes instructions and more code samples that show you how to:
 > 
-> - Add authentication to a new ASP.NET Core Web application
+> - Add authentication to a new ASP.NET Core web application
 > - Call Microsoft Graph, other Microsoft APIs, or your own web APIs
 > - Add authorization
 > - Sign in users in national clouds or with social identities

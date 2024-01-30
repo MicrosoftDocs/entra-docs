@@ -10,7 +10,7 @@ ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-#Customer intent:
+#Customer intent: As a developer, I want to learn about the Microsoft identity platform and its key components and capabilities, so that I can implement secure authentication in my applications using the Microsoft Authentication Libraries (MSAL).
 ---
 
 # Microsoft identity platform videos

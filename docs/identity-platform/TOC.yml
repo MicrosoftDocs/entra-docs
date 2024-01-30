@@ -176,10 +176,10 @@
       href: index-web-app.yml
     - name: Quickstart
       items: 
-        - name: ASP.NET 
-          href: quickstart-web-app-aspnet-sign-in.md
         - name: ASP.NET Core
           href: quickstart-web-app-dotnet-core-sign-in.md
+        - name: ASP.NET 
+          href: quickstart-web-app-aspnet-sign-in.md
         - name: Node.js - MSAL
           href: quickstart-web-app-nodejs-msal-sign-in.md
         - name: Java
@@ -426,7 +426,7 @@
       href: index-service.yml
     - name: Quickstart
       items:
-        - name: .NET Core
+        - name: .NET
           href: quickstart-console-app-netcore-acquire-token.md
         - name: Java
           href: quickstart-daemon-app-java-acquire-token.md
@@ -436,7 +436,7 @@
           href: quickstart-daemon-app-python-acquire-token.md
     - name: Tutorials
       items:
-        - name: ASP.NET
+        - name: .NET
           href: tutorial-v2-aspnet-daemon-web-app.md
         - name: Node.js
           href: tutorial-v2-nodejs-console.md
@@ -762,7 +762,7 @@
           displayName: ASP.NET Core, Xamarin
           href: /entra/msal/dotnet
         - name: Microsoft.Identity.Web (MSAL wrapper)
-          displayName: auth, library, .NET Core, msal
+          displayName: auth, library, .NET, msal
           href: /entra/msal/dotnet/microsoft-identity-web/
         - name: Application configuration
           href: msal-client-application-configuration.md

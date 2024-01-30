@@ -74,7 +74,7 @@ Create the application using the following steps:
 1. Search for and choose the **WPF App (.NET Framework)** template, and then select Next.
 1. In the **Project name** box, enter a name like _Win-App-calling-MsGraph_.
 1. Choose a **Location** for the project or accept the default option.
-1. In the **Framework**, select **.NET framework 4.8**.
+1. In the **Framework**, select **.NET Framework 4.8**.
 1. Select **Create**.
 
 ## Add MSAL to your project
