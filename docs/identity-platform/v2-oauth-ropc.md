@@ -67,9 +67,6 @@ client_id=535fb089-9ff3-47b6-9bfb-4f1264799865
 | `client_secret`| Sometimes required | If your app is a public client, then the `client_secret` or `client_assertion` can't be included.  If the app is a confidential client, then it must be included.|
 | `client_assertion` | Sometimes required | A different form of `client_secret`, generated using a certificate. For more information, see [certificate credentials](./certificate-credentials.md). |
 
-> [!WARNING]
-> As part of not recommending this flow for use, the official SDKs do not support this flow for confidential clients, those that use a secret or assertion. You may find that the SDK you wish to use does not allow you to add a secret while using ROPC. 
-
 ### Successful authentication response
 
 The following example shows a successful token response:
