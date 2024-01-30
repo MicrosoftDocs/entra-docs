@@ -38,13 +38,13 @@ This article introduces you to Security Copilot and includes sample prompts that
   It might also help to add **Microsoft Entra** to your prompt, like:
 
   - **Tell me more about this Entra user: username@contoso.com**
-  - **Who is the owner of this Entra group: <group-id>**
+  - **Who is the owner of this Entra group: xxxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx **
 
 - Experiment with different prompts and variations to see what works best for your use case. Chat AI models vary, so iterate and refine your prompts based on the results you receive.
 
-- Security Copilot saves your prompt sessions. To see the previous sessions, in Security Copilot, go to the menu > **My investigations**:
+- Security Copilot saves your prompt sessions. To see the previous sessions, in Security Copilot, go to the menu > **My Sessions**:
 
-  :::image type="content" source="./media/security-copilot/security-copilot-menu-my-investigations.png" alt-text="Screenshot that shows the Microsoft Security Copilot menu and My investigations with previous sessions.":::
+  :::image type="content" source="./media/copilot-security-entra/security-copilot-menu-my-sessions.png" alt-text="Screenshot that shows the Microsoft Security Copilot menu and My investigations with previous sessions.":::
 
   For a walkthrough on Security Copilot, including the pin and share feature, go to [Navigating Microsoft Security Copilot](/security-copilot/navigating-security-copilot).
 
@@ -55,7 +55,7 @@ For more information on writing Security Copilot prompts, go to [Microsoft Secur
 1. Go to [Microsoft Security Copilot](https://go.microsoft.com/fwlink/?linkid=2247989) and sign in with your credentials.
 2. By default, Intune should be enabled. To confirm, select **plugins** (bottom left corner):
 
-    :::image type="content" source="./media/security-copilot/security-copilot-plugins.png" alt-text="Screenshot that shows the plugins that are available, enabled, and disabled in Microsoft Security Copilot.":::
+    :::image type="content" source="./media/copilot-security-entra/security-copilot-plugins.png" alt-text="Screenshot that shows the plugins that are available, enabled, and disabled in Microsoft Security Copilot.":::
 
     In **My plugins**, confirm Microsoft Entra is on. Close **Plugins**.
 
@@ -152,7 +152,7 @@ Get the details for Microsoft Entra users carrying an elevated risk of compromis
 
 Your feedback on the Intune integration with Security Copilot helps with development. To provide feedback, in Security Copilot, use the feedback buttons at the bottom of each completed prompt:
 
-:::image type="content" source="./media/security-copilot/security-copilot-prompt-feedback.png" alt-text="Screenshot that shows how to submit feedback on the prompt results in Microsoft Security Copilot.":::
+:::image type="content" source="./media/copilot-security-entra/security-copilot-prompt-feedback.png" alt-text="Screenshot that shows how to submit feedback on the prompt results in Microsoft Security Copilot.":::
 
 Your options:
 
