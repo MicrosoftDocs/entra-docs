@@ -5,7 +5,7 @@ description: Identifying risk-based Conditional Access policies
 ms.service: active-directory
 ms.subservice: identity-protection
 ms.topic: conceptual
-ms.date: 01/16/2024
+ms.date: 01/30/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -20,7 +20,7 @@ Microsoft Entra Conditional Access offers two risk conditions: **Sign-in risk** 
 
 ![Diagram that shows a conceptual risk-based Conditional Access policy.](./media/concept-identity-protection-policies/risk-based-conditional-access-diagram.png)
 
-For example, as shown in the following diagram, if organizations have a sign-in risk policy that requires multifactor authentication when the sign-in risk level is medium or high, their users must complete multifactor authentication when their sign-in risk is medium or high.
+For example, if organizations have a sign-in risk policy that requires multifactor authentication when the sign-in risk level is medium or high, their users must complete multifactor authentication when their sign-in risk is medium or high.
 
 ![Diagram that shows a conceptual risk-based Conditional Access policy with self-remediation.](./media/concept-identity-protection-policies/risk-based-conditional-access-policy-example.png)
 
@@ -52,16 +52,19 @@ ID Protection analyzes signals about user accounts and calculates a risk score b
 
 A secure password change remediates the user risk and close the risky user event to prevent unnecessary noise for administrators.
 
-## ID Protection policies
+## Migrate ID Protection risk policies to Conditional Access
 
-While ID Protection also offers a user interface for creating user risk policy and sign-in risk policy, we highly recommend that you [use Microsoft Entra Conditional Access to create risk-based policies](howto-identity-protection-configure-risk-policies.md) for the following benefits:
+If you have the legacy **user risk policy** or **sign-in risk policy** enabled in ID Protection (formerly Identity Protection), we invite you to [migrate them to Conditional Access](howto-identity-protection-configure-risk-policies.md#migrate-risk-policies-from-identity-protection-to-conditional-access). The legacy risk policies configured in Entra ID Protection will be retired on **October 1, 2026**.
 
-- Rich set of conditions to control access: Conditional Access offers a rich set of conditions such as applications and locations for configuration. The risk conditions can be used in combination with other conditions to create policies that best enforce your organizational requirements.
-- Multiple risk-based policies can be put in place to target different user groups or apply different access control for different risk levels.
-- Conditional Access policies can be created through Microsoft Graph API and can be tested first in report-only mode.
-- Manage all access policies in one place in Conditional Access.
+Configuring risk policies in Conditional Access provides benefits like:
 
-If you already have ID Protection risk policies set up, we encourage you to [migrate them to Conditional Access](howto-identity-protection-configure-risk-policies.md#migrate-risk-policies-from-identity-protection-to-conditional-access).
+- Manage access policies in one location.
+- Report-only mode and Graph API support.
+- Enforce a sign-in frequency of every time to require reauthentication every time.
+- Greater flexibility by combining risk conditions with other conditions like location for granular access control. 
+- Enhanced security with multiple risk-based policies targeting different user groups or risk levels. 
+- Improved diagnostics experience detailing which risk-based policy applied in sign-in Logs.
+- Supported by the backup authentication system.
 
 ## Microsoft Entra multifactor authentication registration policy
 
