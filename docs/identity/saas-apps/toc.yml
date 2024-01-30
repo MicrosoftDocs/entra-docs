@@ -1145,6 +1145,8 @@
         href: github-enterprise-cloud-enterprise-account-tutorial.md  
       - name: GitHub Enterprise Managed User
         href: github-enterprise-managed-user-tutorial.md
+      - name: GitHub Enterprise Managed User - ghe.com
+        href: github-enterprise-managed-user-ghe-com-tutorial.md
       - name: GlassFrog
         href: glassfrog-tutorial.md
       - name: Glia Hub
