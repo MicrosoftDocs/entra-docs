@@ -59,7 +59,7 @@ Migrating single sign-on configuration from Active Directory Federation Services
 
 ### Enable secure remote access to apps
 
-[Microsoft Entra application proxy](~/identity/app-proxy/what-is-application-proxy.md) provides a simple solution for organizations to publish on-premises apps to the cloud for remote users who need access to internal apps in a secure manner. After single sign-on to Microsoft Entra ID, users can access both cloud and on-premises applications through external URLs or the My Apps portal.
+[Microsoft Entra application proxy](~/identity/app-proxy/overview-what-is-app-proxy.md) provides a simple solution for organizations to publish on-premises apps to the cloud for remote users who need access to internal apps in a secure manner. After single sign-on to Microsoft Entra ID, users can access both cloud and on-premises applications through external URLs or the My Apps portal.
 
 Microsoft Entra application proxy offers the following benefits:
 

@@ -28,11 +28,11 @@ landingContent:
     linkLists:
       - linkListType: tutorial
         links:
-          - text: ASP.NET - Register your API
+          - text: ASP.NET Core - Register your API
             url: web-api-tutorial-01-register-app.md
-          - text: ASP.NET - Configure your API
+          - text: ASP.NET Core - Configure your API
             url: web-api-tutorial-02-prepare-api.md
-          - text: ASP.NET - Call your web API
+          - text: ASP.NET Core - Call your web API
             url: web-api-tutorial-03-protect-endpoint.md
         
   - title: "Scenarios in depth"

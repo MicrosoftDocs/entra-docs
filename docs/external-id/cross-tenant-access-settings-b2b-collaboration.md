@@ -5,7 +5,7 @@ description: Use cross-tenant collaboration settings to manage how you collabora
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: how-to
-ms.date: 01/23/2024
+ms.date: 01/24/2024
 
 ms.author: mimart
 author: msmimart
@@ -175,9 +175,6 @@ With inbound settings, you select which external users and groups are able to ac
 ### Configure redemption order (Preview)
 
 To customize the order of identity providers that your guest users can use to sign in when they accept your invitation, follow these steps.
-
-> [!NOTE]
-> The Microsoft Entra admin center settings for the configurable redemption feature are currently rolling out to customers. Until the settings are available in the admin center, you can configure the invitation redemption order using the Microsoft Graph REST API (beta version). See [Example 2: Update default invitation redemption configuration](/graph/api/crosstenantaccesspolicyconfigurationdefault-update?view=graph-rest-beta&tabs=http#example-2-update-default-invitation-redemption-configuration&preserve-view=true) in the Microsoft Graph reference documentation or below in this section.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) using a Global administrator or Security administrator account. Then open the **Identity** service on the left hand side.
 

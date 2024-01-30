@@ -34,7 +34,7 @@ landingContent:
     linkLists:
       - linkListType: tutorial
         links:
-          - text: ASP.NET
+          - text: ASP.NET Core
             url: tutorial-web-app-dotnet-register-app.md
           - text: Blazor Server
             url: tutorial-blazor-server.md

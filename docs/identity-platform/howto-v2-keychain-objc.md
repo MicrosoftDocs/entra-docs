@@ -10,7 +10,7 @@ ms.reviewer: oldalton
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: how-to
-#Customer intent:
+#Customer intent: As a developer using the Microsoft Authentication Library for iOS and macOS (MSAL), I want to configure app entitlements and keychain access groups, so that I can enable silent single sign-on (SSO) between multiple apps distributed by the same Apple developer.
 ---
 
 # Configure keychain

@@ -4,7 +4,7 @@ description: In this tutorial, you set up authentication using the Microsoft ide
 author: henrymbuguakiarie
 ms.author: henrymbugua
 ms.custom: devx-track-dotnet
-ms.date: 02/09/2023
+ms.date: 01/26/2024
 ms.reviewer: janicericketts
 ms.service: active-directory
 ms.subservice: develop
@@ -50,7 +50,7 @@ dotnet new blazorserver --auth SingleOrg --calls-graph
 dotnet tool install --global msidentity-app-sync
 ```
 
-This tool will automate the following tasks for you:
+This tool automates the following tasks for you:
 
 - Register your application in Microsoft Entra ID
   - Create a secret for your registered application
@@ -59,13 +59,13 @@ This tool will automate the following tasks for you:
 - Store your application secret in user secrets storage
 - Update your appsettings.json with the client-id, tenant-id, and others.
 
-.NET Tools extend the capabilities of the dotnet CLI command. To learn more about .NET Tools, see [.NET Tools](/dotnet/core/tools/global-tools).
+.NET Tools extend the capabilities of the dotnet CLI command. To learn more, see [.NET Tools](/dotnet/core/tools/global-tools).
 
 For more information on user secrets storage, see [safe storage of app secrets during development](/aspnet/core/security/app-secrets).
 
 ## Use the Microsoft Identity App Sync Tool
 
-Run the following command to register your app in your tenant and update the .NET configuration of your application. Provide the username/upn belonging to your Azure Account (for instance, `username@domain.com`) and the tenant ID or domain name of the Microsoft Entra ID associated with your Azure Account. If you use an account that is signed in in either Visual Studio, Azure CLI, or Azure PowerShell, you'll benefit from single sign-on (SSO).
+Run the following command to register your app in your tenant and update the .NET configuration of your application. Provide the username/upn belonging to your Azure Account (for instance, `username@domain.com`) and the tenant ID or domain name of the Microsoft Entra ID associated with your Azure Account.
 
 ```dotnetcli
 msidentity-app-sync --username <username/upn> --tenant-id <tenantID>
@@ -77,7 +77,7 @@ msidentity-app-sync --username <username/upn> --tenant-id <tenantID>
 
 ## Optional - Create a development SSL certificate
 
-In order to avoid SSL errors/warnings when browsing the running application, you can use the following on macOS and Windows to generate a self-signed SSL certificate for use by .NET Core.
+In order to avoid SSL errors/warnings when browsing the running application, you can use the following on macOS and Windows to generate a self-signed SSL certificate for use by .NET.
 
 ```dotnetcli
 dotnet dev-certs https --trust
