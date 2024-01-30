@@ -78,7 +78,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     a. In the **Identifier (Entity ID)** text box, type the URL:
     `https://genius.avoxi.com`
 
-    b. In the **Reply URL** text box, type
+    b. In the **Reply URL** text box, type the URL:
     `https://genius.avoxi.com/api/v1/auth/saml/consume`
 
     c. In the **Sign on URL** text box, type the URL:
