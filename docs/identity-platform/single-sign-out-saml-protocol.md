@@ -21,7 +21,7 @@ If the app is [added to the Azure App Gallery](~/identity/enterprise-apps/v2-how
 
 The following diagram shows the workflow of the Microsoft Entra single sign-out process.
 
-![Screenshot of the Microsoft Entra Single Sign Out Workflow.](./media/single-sign-out-saml-protocol/saml-single-sign-out-workflow.png)
+[![Screenshot of the Microsoft Entra Single Sign Out Workflow.](./media/single-sign-out-saml-protocol/saml-single-sign-out-workflow.png)](./media/single-sign-out-saml-protocol/saml-single-sign-out-workflow.png#lightbox)
 
 ## LogoutRequest
 
