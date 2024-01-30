@@ -8,7 +8,7 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.topic: landing-page
 
-ms.date: 11/21/2022
+ms.date: 01/30/2024
 ms.author: jeedes
 ms.reviewer: celested
 ---
@@ -17,7 +17,7 @@ ms.reviewer: celested
 
 To help integrate your cloud-enabled [software as a service (SaaS)](https://azure.microsoft.com/overview/what-is-saas/) and on-premises applications with Microsoft Entra ID, we have developed a collection of tutorials that walk you through configuration.
 
-For a list of all SaaS apps that have been pre-integrated into Microsoft Entra ID, see the [Active Directory Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/category/azure-active-directory-apps).
+For a list of all SaaS apps that have been pre-integrated into Microsoft Entra ID, see the [Microsoft Entra Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/category/azure-active-directory-apps).
 
 Use the [application network portal](~/identity/enterprise-apps/v2-howto-app-gallery-listing.md) to request a [SCIM](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md) enabled application to be added to the gallery for automatic provisioning or a SAML / OIDC enabled application to be added to the gallery for SSO.
 
