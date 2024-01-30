@@ -5,7 +5,7 @@ author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms.custom: devx-track-csharp,  devx-track-dotnet
-ms.date: 08/28/2020
+ms.date: 01/30/2024
 ms.reviewer: saeeda, Dickson-Mwendia
 ms.service: active-directory
 ms.subservice: develop
