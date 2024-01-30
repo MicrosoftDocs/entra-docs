@@ -103,7 +103,7 @@ If your directory extension wasn't automatically discovered, you can try the fol
 
 1. Refresh the browser.
 
-1. Browse to the **Attribute mappings** page and try to add the attribute as described earlier in this article.
+1. Browse to the **Attribute mappings** page and try to map the directory extension as described earlier in this article.
 
 ## Manually add directory extensions by editing the schema
 
@@ -137,7 +137,7 @@ Follow these steps to manually add directory extensions to the schema by using t
 
 1. Refresh the browser.
 
-1. Browse to the **Attribute mappings** page and try to add the attribute as described earlier in this article.
+1. Browse to the **Attribute mappings** page and try to map the directory extension as described earlier in this article.
 
 ## Next steps
 
