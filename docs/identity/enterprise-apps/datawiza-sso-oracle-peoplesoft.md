@@ -1,19 +1,17 @@
 ---
 title: Configure Microsoft Entra multifactor authentication and SSO for Oracle PeopleSoft applications using Datawiza Access Proxy
 description: Enable Microsoft Entra multifactor authentication and SSO for Oracle PeopleSoft application using Datawiza Access Proxy
-
 author: gargi-sinha
 manager: martinco
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: how-to
-
-ms.date: 01/25/2023
+ms.date: 01/30/2024
 ms.author: gasinh
 ms.collection: M365-identity-device-management
 ms.custom: not-enterprise-apps
 
-#customer intent: As an IT admin, I want to configure Datawiza to enable Microsoft Entra multifactor authentication and single sign-on to Oracle PeopleSoft, so that I can enhance the security of user sign-ins and provide seamless access to the application.
+#customer intent: I'm an IT admin, and I want to configure Datawiza to enable Microsoft Entra multifactor authentication (MFA) and single sign-on (SSO) to Oracle PeopleSoft. My goal is to enhance user sign-in security and provide seamless access to applications.
 ---
 
 # Tutorial: Configure Datawiza to enable Microsoft Entra multifactor authentication and single sign-on to Oracle PeopleSoft
