@@ -98,11 +98,11 @@ When using custom domains, you need to create a DNS entry with a CNAME record fo
 
 Alternatively, a dedicated DNS entry with a CNAME record for every individual application segment can be created as follows:
 
-> 'External URL of application segment' > '<yourAADTenantId>.tenant.runtime.msappproxy.net'
+> `External URL of the application segment` > `<yourAADTenantId>.tenant.runtime.msappproxy.net`
 
 Additionally, adding a CNAME record for the application ID in the same DNS zone is required:
 
->'<yourAppId>' > '<yourAADTenantId>.tenant.runtime.msappproxy.net'
+>`<yourAppId>` > `<yourAADTenantId>.tenant.runtime.msappproxy.net`
 
 If the connector group that is assigned to the Complex App is not in the region of the Default connector group, one of the following domain suffix must be used in the DNS entries mentioned above:
 
