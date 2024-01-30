@@ -161,14 +161,18 @@ For this article, we choose the zone redundancy path.
     - **Device type**: Set to **Other**.
     - **IP address**: Public IP address of your virtual network gateway.
     - **Local BGP address**: Private IP address that is *outside* the address space of the virtual network associated with your virtual network gateway.
-      - For example, if the address space of your virtual network is 10.1.0.0/16, then you can use 10.2.0.0 as your Local BGP address.
+      - *For example, if the address space of your virtual network is 10.1.0.0/16, then you can use 10.2.0.0 as your Local BGP address.*
     - **Peer BGP address**: BGP IP address of your virtual network gateway.
     - **Link ASN**: ASN of your virtual network gateway.
     - **Redundancy**: Set to **Zone redundancy**.
     - **Zone redundancy local BGP address**: Private IP address that is *outside* the address space of the virtual network associated with your virtual network gateway. This address must be different from **Local BGP address**.
     - **Bandwidth capacity (Mbps)**: Specify tunnel bandwidth. Available options are 250, 500, 750, and 1000 Mbps.
 
-    ![Screenshot of the device link general details.](media/how-to-simulate-remote-network/virtual-network-device-link-details.png)
+> [!TIP]
+> Local BGP address must be a private IP address that is outside the address space of the virtual network associated with your virtual network gateway. For example, if the address space of your virtual network is 10.1.0.0/16, then you can use 10.2.0.0 as your Local BGP address.
+
+![Screenshot of the device link general details.](media/how-to-simulate-remote-network/virtual-network-device-link-details.png)
+
 1. On the **Add a link - Details** tab leave the default values selected, unless you made a different selection previously, and select the **Next** button.
 1. On the **Add a link - Security** tab, enter the Pre-shared key (PSK) and select the **Save** button. You return to the main **Create a remote network** set of tabs.
 1. On the **Traffic profiles** tab, select the appropriate traffic forwarding profile.
