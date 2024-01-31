@@ -77,11 +77,11 @@ DAP integration architecture includes the following components:
 The following diagram illustrates a user flow with DAP in a customer 
 network.
 
-![Screenshot shows the user flow with DAP in a customer network.](media/datawiza-access-proxy/datawiza-architecture.png)
+   ![Screenshot shows the user flow with DAP in a customer network.](media/datawiza-access-proxy/datawiza-architecture.png)
 
 The following diagram illustrates the user flow from user browser to OWA.
 
-![Screenshot shows the user flow from user browser to owa.](media/datawiza-access-proxy/datawiza-flow-diagram.png)
+   ![Screenshot shows the user flow from user browser to owa.](media/datawiza-access-proxy/datawiza-flow-diagram.png)
 
 | Step | Description |
 |:----|:------|
@@ -220,8 +220,8 @@ Before you create the service principal name (SPN), you can list SPNs and confir
 
     `setspn -A host/dap.datawizatest.com dap`
 
->[!NOTE]
->`host/dap.datawizatest.com` is the unique SPN, and dap is the service account you created.
+   >[!NOTE]
+   >`host/dap.datawizatest.com` is the unique SPN, and dap is the service account you created.
 
 ## Configure Windows Server IIS for Constrained Delegation
 
