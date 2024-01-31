@@ -78,11 +78,14 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 ## Configure the ASP.NET Core sample application
 
 1. In your IDE, open the project folder, _ms-identity-docs-code-dotnet/web-api_, containing the sample.
-1. Open `appsettings.json` file.
-1. Find the the following key:
+1. Open `appsettings.json` file, which contains the following code snippet:
 
-    - `ClientId` and replace the text in quotes with **Application (client) ID** that was recorded earlier from the **Overview** page of the registered application.
-    - `TenantId` and replace the text in quotes with **Directory (tenant) ID** value that was recorded earlier from the **Overview** page of the registered application.
+    :::code language="json" source="~/../ms-identity-docs-code-dotnet/web-api/appsettings.json" :::
+
+    Find the the following key:
+
+    - `ClientId` - The identifier of the application, also referred to as the client. Replace the text in quotes with **Application (client) ID** that was recorded earlier from the **Overview** page of the registered application.
+    - `TenantId` - The identifier of the tenant where the application is registered. Replace the text in quotes with **Directory (tenant) ID** value that was recorded earlier from the **Overview** page of the registered application.
 
 ## Run the sample application
 
