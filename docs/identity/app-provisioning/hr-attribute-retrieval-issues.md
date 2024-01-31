@@ -1,14 +1,14 @@
 ---
 title: Troubleshoot attribute retrieval issues with HR provisioning
 description: Learn how to troubleshoot attribute retrieval issues with HR provisioning
-author: kenwith
+author: jenniferf-skc
 manager: amycolannino
 ms.service: active-directory
 ms.subservice: app-provisioning
 ms.topic: troubleshooting
 ms.workload: identity
-ms.date: 09/15/2023
-ms.author: kenwith
+ms.date: 01/31/2024
+ms.author: jfields
 ms.reviewer: chmutali
 ---
 # Troubleshoot HR attribute retrieval issues
@@ -18,7 +18,7 @@ ms.reviewer: chmutali
 
 | **Applies to** |
 |--|
-| * Workday to on-premises Active Directory user provisioning <br> * Workday to Microsoft Entra user provisioning |
+| * Workday to on-premises Active Directory user provisioning <br> * Workday to Microsoft Entra ID user provisioning |
 | **Issue Description** | 
 | You have just configured the Workday inbound provisioning app and successfully connected to the Workday tenant URL. You ran a test sync and you observed that the provisioning app is not retrieving certain attributes from Workday. Only some attributes are read and provisioned to the target. |
 | **Probable Cause** | 
@@ -30,7 +30,7 @@ ms.reviewer: chmutali
 
 | **Applies to** |
 |--|
-| * Workday to on-premises Active Directory user provisioning <br> * Workday to Microsoft Entra user provisioning |
+| * Workday to on-premises Active Directory user provisioning <br> * Workday to Microsoft Entra ID user provisioning |
 | **Issue Description** | 
 | You have just configured the Workday inbound provisioning app and successfully connected to the Workday tenant URL. You have an integration system configured in Workday and you have configured XPATHs that point to attributes in the Workday Integration System. However, the Microsoft Entra provisioning app isn't fetching values associated with these integration system attributes or calculated fields. |
 | **Cause** | 

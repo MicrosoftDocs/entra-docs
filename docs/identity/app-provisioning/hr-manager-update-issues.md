@@ -1,14 +1,14 @@
 ---
 title: Troubleshoot manager update issues with HR provisioning
 description: Learn how to troubleshoot manager update issues with HR provisioning
-author: kenwith
+author: jenniferf-skc
 manager: amycolannino
 ms.service: active-directory
 ms.subservice: app-provisioning
 ms.topic: troubleshooting
 ms.workload: identity
-ms.date: 09/15/2023
-ms.author: kenwith
+ms.date: 01/31/2024
+ms.author: jfields
 ms.reviewer: chmutali
 ---
 
@@ -16,9 +16,9 @@ ms.reviewer: chmutali
 
 **Applies to:**
 * Workday to on-premises Active Directory user provisioning
-* Workday to Microsoft Entra user provisioning
+* Workday to Microsoft Entra ID user provisioning
 * SAP SuccessFactors to on-premises Active Directory user provisioning
-* SAP SuccessFactors to Microsoft Entra user provisioning
+* SAP SuccessFactors to Microsoft Entra ID user provisioning
 
 ## Understanding how manager reference resolution works
 The Microsoft Entra provisioning service automatically updates manager information so that the user-manager relationship in Microsoft Entra ID is always in sync with your HR data. It uses a process called *manager reference resolution* to accurately update the *manager* attribute. Before going into the process details, it is important to understand how manager information is stored in Microsoft Entra ID and on-premises Active Directory. 
