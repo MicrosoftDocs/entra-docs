@@ -114,8 +114,6 @@ For listing your application in the Microsoft Entra ID app gallery, read the det
 
 ---
 
-
-
 ## December 2023
 
 ### Public Preview - Configurable redemption order for B2B collaboration
