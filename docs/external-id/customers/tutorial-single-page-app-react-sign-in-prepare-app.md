@@ -1,5 +1,5 @@
 ---
-title: Tutorial - Prepare a React single-page app (SPA) for authentication in a customer tenant
+title: "Tutorial: Create a React SPA for authentication in a customer tenant"
 description: Learn how to prepare a React single-page app (SPA) for authentication with your Microsoft Entra ID for customers tenant.
  
 author: garrodonnell
@@ -12,21 +12,22 @@ ms.author: godonnell
 #Customer intent: As a dev, devops, or IT admin, I want to learn how to enable authentication in my own React single-page app
 ---
 
-# Tutorial: Prepare a React single-page app (SPA) for authentication in a customer tenant
+# Tutorial: Create a React SPA for authentication in a customer tenant
 
-In the [previous article](./tutorial-single-page-app-react-sign-in-prepare-tenant.md), you registered an application and configured user flows in your Microsoft Entra ID for customers tenant. This tutorial demonstrates how to create a React single-page app using `npx` and create files needed for authentication and authorization.
+This tutorial is part 2 of a series that demonstrates building a React single-page application (SPA) and preparing it for authentication using the Microsoft Entra admin center. In [part 1 of this series](./tutorial-single-page-app-react-sign-in-prepare-tenant.md), you registered an application and configured user flows in your Microsoft Entra ID for customers tenant. This tutorial demonstrates how to create a React SPA using `npm` and create files needed for authentication and authorization.
 
 In this tutorial;
 
 > [!div class="checklist"]
+>
 > * Create a React project in Visual Studio Code
 > * Install identity and bootstrap packages
 > * Configure the settings for the application
 
 ## Prerequisites
 
-* Completion of the prerequisites and steps in [Prepare your customer tenant to authenticate users in a React single-page app (SPA)](./tutorial-single-page-app-react-sign-in-prepare-tenant.md).
-* Although any integrated development environment (IDE) that supports React applications can be used, this tutorial uses **Visual Studio Code**. You can download it [here](https://visualstudio.microsoft.com/downloads/).
+* [Tutorial: Prepare your customer tenant to authenticate users in a React SPA](./tutorial-single-page-app-react-sign-in-prepare-tenant.md).
+* Although any integrated development environment (IDE) that supports React applications can be used, this tutorial uses [Visual Studio Code](https://visualstudio.microsoft.com/downloads/).
 * [Node.js](https://nodejs.org/en/download/).
 
 ## Create a React project
@@ -198,7 +199,7 @@ All parts of the app that require authentication must be wrapped in the [`MsalPr
     );
     ```
 
-## Next steps
+## Next step
 
 > [!div class="nextstepaction"]
-> [Configure SPA for authentication](./tutorial-single-page-app-react-sign-in-configure-authentication.md)
+> [Part 3: Handle authentication flows in a React SPA](./tutorial-single-page-app-react-sign-in-configure-authentication.md)

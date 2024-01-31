@@ -22,7 +22,7 @@ The scope to request for a client credential flow is the name of the resource fo
 
 # [.NET](#tab/idweb)
 
-Here's an example of defining the scopes for the web API as part of the configuration in an [*appsettings.json*](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/blob/master/2-Call-OwnApi/daemon-console/appsettings.json) file. This example is taken from the [.NET Core console daemon](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2) code sample on GitHub.
+Here's an example of defining the scopes for the web API as part of the configuration in an [*appsettings.json*](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/blob/master/2-Call-OwnApi/daemon-console/appsettings.json) file. This example is taken from the [.NET console daemon](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2) code sample on GitHub.
 
 ```json
 {
@@ -264,7 +264,7 @@ If you get an error message telling you that you used an invalid scope, you prob
 
 ### Did you forget to provide admin consent? Daemon apps need it!
 
-If you get an **Insufficient privileges to complete the operation** error when you call the API, the tenant administrator needs to grant permissions to the application. For guidance on how to grant admin consent for your application, see step 4 in [Quickstart: Acquire a token and call Microsoft Graph in a .NET Core console app](quickstart-console-app-netcore-acquire-token.md#step-4-admin-consent). 
+If you get an **Insufficient privileges to complete the operation** error when you call the API, the tenant administrator needs to grant permissions to the application. For guidance on how to grant admin consent for your application, see step 4 in [Quickstart: Acquire a token and call Microsoft Graph in a .NET console app](quickstart-console-app-netcore-acquire-token.md#step-4-admin-consent). 
 
 If you don't grant admin consent to your application, you'll run into the following error:
 

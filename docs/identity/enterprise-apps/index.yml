@@ -156,7 +156,7 @@ landingContent:
           - text: Set up connectors
             url: ~/identity/app-proxy/application-proxy-connectors.md
           - text: Configure single sign-on
-            url: ~/identity/app-proxy/application-proxy-config-sso-how-to.md
+            url: ~/identity/app-proxy/how-to-configure-sso.md
           - text: Publish native client applications
             url: ~/identity/app-proxy/application-proxy-configure-native-client-application.md
           - text: Publish claims-aware applications
