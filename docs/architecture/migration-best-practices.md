@@ -2,10 +2,10 @@
 title: Best practices to migrate applications and authentication to Microsoft Entra ID
 description: Learn best practices to migrate Active Directory Federation Service (AD FS) to cloud authentication in Microsoft Entra ID
 services: active-directory
-author: gasinh
+author: gargisinha
 manager: martinco
 ms.service: active-directory
-ms.subservice: architecture
+ms.subservice: fundamentals
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 08/17/2022
@@ -127,17 +127,17 @@ Migrate Microsoft Entra ID [legacy policy settings](/azure/active-directory/auth
 
 Because Windows sign-in and other passwordless methods require detailed configuration, enable sign-in with [Microsoft Authenticator](/azure/active-directory/authentication/howto-authentication-passwordless-phone) and [FIDO2 security keys](/azure/active-directory/authentication/howto-authentication-passwordless-security-key). Use groups to manage deployment and scope users.
 
-You can [configure sign-in auto-acceleration using Home Realm Discovery](https://learn.microsoft.com/en-us/azure/active-directory/manage-apps/configure-authentication-for-federated-users-portal?pivots=powershell-hrd). Learn to use auto-acceleration sign-in to skip the username entry screen and automatically forward users to federated sign-in endpoints. [Prevent sign-in auto-acceleration using the Home Realm Discovery policy](/azure/active-directory/manage-apps/prevent-domain-hints-with-home-realm-discovery?pivots=powershell-hrd) to have multiple ways to control how and where users authenticate.
+You can [configure sign-in auto-acceleration using Home Realm Discovery](/azure/active-directory/manage-apps/configure-authentication-for-federated-users-portal?pivots=powershell-hrd). Learn to use auto-acceleration sign-in to skip the username entry screen and automatically forward users to federated sign-in endpoints. [Prevent sign-in auto-acceleration using the Home Realm Discovery policy](/azure/active-directory/manage-apps/prevent-domain-hints-with-home-realm-discovery?pivots=powershell-hrd) to have multiple ways to control how and where users authenticate.
 
 ### Account expiration policies
 
 The **accountExpires** attribute of user account management doesn't synchronize to Microsoft Entra ID. As a result, an [expired Active Directory account](/azure/active-directory/hybrid/connect/how-to-connect-password-hash-synchronization#account-expiration) in an environment configured for password hash synchronization is active in Microsoft Entra ID. Use a scheduled PowerShell script to disable user AD accounts after they expire (such as the [Set-ADUser cmdlet](/powershell/module/activedirectory/set-aduser?view=windowsserver2022-ps)). Conversely, when removing the expiration from an AD account, re-enable the account.
 
-With Microsoft Entra ID, you can [prevent attacks using smart lockout](/azure/active-directory/authentication/howto-password-smart-lockout). Lock accounts in the cloud before locking them on-premises to mitigate brute-force attacks. Have a shorter interval for the cloud, ensuring that the on-premises threshold is at least two to three times greater than the Microsoft Entra ID threshold. Set the Microsoft Entra ID lock-out duration longer than the on-premises duration. When your migration is complete, [configure AD FS Extranet Smart Lockout (ESL) protection](https://learn.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-ad-fs-extranet-smart-lockout-protection).
+With Microsoft Entra ID, you can [prevent attacks using smart lockout](/azure/active-directory/authentication/howto-password-smart-lockout). Lock accounts in the cloud before locking them on-premises to mitigate brute-force attacks. Have a shorter interval for the cloud, ensuring that the on-premises threshold is at least two to three times greater than the Microsoft Entra ID threshold. Set the Microsoft Entra ID lock-out duration longer than the on-premises duration. When your migration is complete, [configure AD FS Extranet Smart Lockout (ESL) protection](/windows-server/identity/ad-fs/operations/configure-ad-fs-extranet-smart-lockout-protection).
 
 ### Plan Conditional Access deployment
 
-Conditional Access policy flexibility requires careful planning. Go to [plan a Microsoft Entra Conditional Access deployment](https://learn.microsoft.com/en-us/azure/active-directory/conditional-access/plan-conditional-access) for planning steps. Here are key points to keep in mind:
+Conditional Access policy flexibility requires careful planning. Go to [plan a Microsoft Entra Conditional Access deployment](/azure/active-directory/conditional-access/plan-conditional-access) for planning steps. Here are key points to keep in mind:
 
 - Draft [Conditional Access policies](/azure/active-directory/conditional-access/concept-conditional-access-policies) with meaningful naming conventions.
 - Use a design decision points spreadsheet with the following fields:
@@ -156,7 +156,7 @@ With Conditional Access, restrict access to [approved, modern authentication-cap
 
 Automatically protect apps based on attributes. To change customer security attributes, use [dynamic filtering](/azure/active-directory/conditional-access/concept-filter-for-applications) of cloud applications to add and remove application policy scope. Use custom security attributes to target Microsoft first-party applications that don't appear in the Conditional Access application picker.
 
-Use the Conditional Access [authentication strength](https://learn.microsoft.com/en-us/azure/active-directory/authentication/concept-authentication-strengths) control to specify which combination of authentication methods access a resource. For example, make phishing-resistant authentication methods available to access a sensitive resource.
+Use the Conditional Access [authentication strength](/azure/active-directory/authentication/concept-authentication-strengths) control to specify which combination of authentication methods access a resource. For example, make phishing-resistant authentication methods available to access a sensitive resource.
 
 Evaluate [custom controls in Conditional Access](/azure/active-directory/conditional-access/controls). Users redirect to a compatible service to satisfy authentication requirements outside Microsoft Entra ID. Microsoft Entra ID verifies the response and, if the user authenticated or validated, then they continue in the Conditional Access flow. As mentioned in [upcoming changes to Custom Controls](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/upcoming-changes-to-custom-controls/ba-p/1144696), partner-provided authentication capabilities work seamlessly with Microsoft Entra ID administrator and end user experiences.
 
@@ -166,7 +166,7 @@ If you use custom MFA providers, consider [migrating from MFA Server to Microsof
 
 Learn how to [migrate to MFA and Microsoft Entra user authentication](/azure/active-directory/authentication/how-to-migrate-mfa-server-to-mfa-user-authentication). Move all applications, MFA service, and user authentication to Microsoft Entra ID.
 
-You can [enable Microsoft Entra multifactor authentication](https://learn.microsoft.com/en-us/azure/active-directory/authentication/tutorial-enable-azure-mfa) and learn how to create Conditional Access policies for user groups, configure policy conditions that prompt for MFA, and test user configuration and use of MFA.
+You can [enable Microsoft Entra multifactor authentication](/azure/active-directory/authentication/tutorial-enable-azure-mfa) and learn how to create Conditional Access policies for user groups, configure policy conditions that prompt for MFA, and test user configuration and use of MFA.
 
 The Network Policy Server (NPS) extension for MFA adds cloud-based MFA capabilities to your authentication infrastructure using your servers. If you use [Microsoft Entra multifactor authentication with NPS](/azure/active-directory/authentication/howto-mfa-nps-extension), determine what can migrate to modern protocols such as Security Assertion Markup Language (SAML) and OAuth2. Evaluate Microsoft Entra ID Application Proxy for remote access and use [secure hybrid access (SHA) to protect legacy apps with Microsoft Entra ID](/azure/active-directory/manage-apps/secure-hybrid-access).
 
@@ -174,7 +174,7 @@ The Network Policy Server (NPS) extension for MFA adds cloud-based MFA capabilit
 
 Use [Connect Health to integrate AD FS sign-ins](/azure/active-directory/hybrid/connect/how-to-connect-health-ad-fs-sign-in) to correlate multiple Event IDs from AD FS, depending on the server version, for information about request and error details. The [Microsoft Entra sign-ins report](/azure/active-directory/reports-monitoring/concept-all-sign-ins) includes information about when users, applications, and managed resources sign in to Microsoft Entra ID and access resources. This information correlates to the Microsoft Entra sign-in report schema and appears in the Microsoft Entra sign-in report user experience. With the report, a Log Analytics stream provides AD FS data. Use and modify the Azure Monitor Workbook template for scenario analysis, such as AD FS account lockouts, bad password attempts, and increases in unexpected sign-in attempts.
 
-Microsoft Entra logs all sign-ins into an Azure tenant that includes internal apps and resources. Review sign-in errors and patterns to gain insight into how users access applications and services. [Sign-in logs in Microsoft Entra ID](/azure/active-directory/reports-monitoring/concept-sign-ins) are useful [activity logs](https://learn.microsoft.com/en-us/azure/active-directory/reports-monitoring/howto-access-activity-logs) for analysis. Configure logs with up to thirty days [data retention](/azure/active-directory/reports-monitoring/reference-reports-data-retention), depending on licensing, and export them to [Azure Monitor](/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-azure-monitor-logs), Sentinel, Splunk, and other security information and event management (SIEM) systems.
+Microsoft Entra logs all sign-ins into an Azure tenant that includes internal apps and resources. Review sign-in errors and patterns to gain insight into how users access applications and services. [Sign-in logs in Microsoft Entra ID](/azure/active-directory/reports-monitoring/concept-sign-ins) are useful [activity logs](/azure/active-directory/reports-monitoring/howto-access-activity-logs) for analysis. Configure logs with up to thirty days [data retention](/azure/active-directory/reports-monitoring/reference-reports-data-retention), depending on licensing, and export them to [Azure Monitor](/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-azure-monitor-logs), Sentinel, Splunk, and other security information and event management (SIEM) systems.
 
 ### Inside corporate network claims
 
@@ -225,4 +225,4 @@ Monitor AD FS activity from [Connect Health Usage Analytics for AD FS](/azure/ac
 - [Manage authentication methods](~/identity/authentication/concept-authentication-methods-manage.md) describes authentication methods to support a variety of sign-in scenarios.
 - [Plan Conditional Access deployment](~/identity/conditional-access/plan-conditional-access.md) explains how to use Conditional Access to automate decisions and enforce organizational access policies for resources.
 - [Microsoft Entra Connect: Cloud authentication via Staged Rollout](~/identity/hybrid/connect/how-to-connect-staged-rollout.md) describes how to selectively test groups of users with cloud authentication capabilities before cutting over your domains.
-- [Active Directory Federation Services (AD FS) decommission guide](https://learn.microsoft.com/en-us/windows-server/identity/ad-fs/decommission/adfs-decommission-guide) has recommended decommissioning steps.
+- [Active Directory Federation Services (AD FS) decommission guide](/windows-server/identity/ad-fs/decommission/adfs-decommission-guide) has recommended decommissioning steps.
