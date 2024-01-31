@@ -5,7 +5,7 @@ author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms.custom: devx-track-csharp, scenarios:getting-started, "languages:aspnet-core", mode-api, 
-ms.date: 04/16/2023
+ms.date: 01/31/2024
 ms.reviewer: jmprieur
 ms.service: active-directory
 ms.subservice: develop
@@ -24,7 +24,7 @@ This quickstart uses an ASP.NET Core web API code sample to demonstrate how to r
 - A minimum requirement of [.NET 6.0 SDK](https://dotnet.microsoft.com/download/dotnet)
 - [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) or [Visual Studio Code](https://code.visualstudio.com/)
 
-## Step 1: Register the application
+## Register the application and record identifiers
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
@@ -63,7 +63,7 @@ Once the API is registered, you can configure its permission by defining the sco
 
     :::image type="content" source="./media/web-api-tutorial-01-register-app/add-a-scope.png" alt-text="Screenshot that shows the field values when adding the scope to an API." lightbox="./media/web-api-tutorial-01-register-app/add-a-scope.png":::
 
-## Step 2: Clone or download the sample application
+## Clone or download the sample application
 
 To obtain the sample application, you can either clone it from GitHub or download it as a _.zip_ file.
 
@@ -75,7 +75,7 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 
 - [Download the .zip file](https://github.com/Azure-Samples/ms-identity-docs-code-dotnet/archive/refs/heads/main.zip). Extract it to a file path where the length of the name is fewer than 260 characters.
 
-## Step 3: Configure the ASP.NET Core project
+## Configure the ASP.NET Core sample application
 
 1. In your IDE, open the project folder, _ms-identity-docs-code-dotnet/web-api_, containing the sample.
 1. Open `appsettings.json` file.
@@ -84,7 +84,7 @@ To obtain the sample application, you can either clone it from GitHub or downloa
     - `{APPLICATION_CLIENT_ID}` and replace it with **Application (client) ID** that was recorded earlier from the **Overview** page of the registered application.
     - `{DIRECTORY_TENANT_ID}` and replace it with the **Directory (tenant) ID** value that was recorded earlier from the **Overview** page of the registered application.
 
-## Step 4: Run the sample app
+## Run the sample application
 
 1. Execute the following command to start the app:
 
