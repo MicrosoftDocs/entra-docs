@@ -154,6 +154,21 @@
       "source_path_from_root": "/docs/identity-platform/quickstart-web-app-aspnet-core-sign-in.md",
       "redirect_url": "/entra/identity-platform/quickstart-web-app-dotnet-core-sign-in",
       "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/web-api-tutorial-01-register-app.md",
+      "redirect_url": "/entra/identity-platform/tutorial-web-api-dotnet-register-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/web-api-tutorial-02-prepare-api.md",
+      "redirect_url": "/entra/identity-platform/tutorial-web-api-dotnet-prepare-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/web-api-tutorial-03-protect-endpoint.md",
+      "redirect_url": "/entra/identity-platform/tutorial-web-api-dotnet-protect-endpoint",
+      "redirect_document_id": false
     }
   ]
 }

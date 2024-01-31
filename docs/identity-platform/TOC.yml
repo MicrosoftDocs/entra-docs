@@ -266,11 +266,11 @@
         - name: ASP.NET
           items: 
           - name: 1 - Register the API
-            href: web-api-tutorial-01-register-app.md
+            href: tutorial-web-api-dotnet-register-app.md
           - name: 2 - Create and configure project 
-            href: web-api-tutorial-02-prepare-api.md
+            href: tutorial-web-api-dotnet-prepare-app.md
           - name: 3 - Protect API endpoint
-            href: web-api-tutorial-03-protect-endpoint.md
+            href: tutorial-web-api-dotnet-protect-endpoint.md
     - name: Samples
       displayName: code samples, example code, code snippets
       href: sample-v2-code.md#web-api
