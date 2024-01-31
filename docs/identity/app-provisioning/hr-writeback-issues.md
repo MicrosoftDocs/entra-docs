@@ -7,7 +7,7 @@ ms.service: active-directory
 ms.subservice: app-provisioning
 ms.topic: troubleshooting
 ms.workload: identity
-ms.date: 001/31/2024
+ms.date: 01/31/2024
 ms.author: jfields
 ms.reviewer: chmutali
 ---
@@ -21,9 +21,9 @@ ms.reviewer: chmutali
 
 | Troubleshooting | Details |
 |-- | -- |
-| **Issue** | You have successfully configured the Writeback app. You are getting null or empty value from Microsoft Entra ID. You expect the provisioning service to clear the corresponding email or phone number value in the HR app. But the operation fails. |
-| **Cause** | The provisioning service does not have a default logic for null value processing. When the provisioning service gets an empty string from the source app, it tries to flow the value "as-is" to the target app. If Workday or SuccessFactors cannot process empty values, then an error is returned. |
-| **Resolution** | Update the attribute mapping to use expression mappings as recommended below. |
+| **Issue** | You successfully configured the Writeback app. You're getting null or empty value from Microsoft Entra ID. You expect the provisioning service to clear the corresponding email or phone number value in the HR app. But the operation fails. |
+| **Cause** | The provisioning service doesn't have a default logic for null value processing. When the provisioning service gets an empty string from the source app, it tries to flow the value "as-is" to the target app. If Workday or SuccessFactors can't process empty values, then an error is returned. |
+| **Resolution** | Update the attribute mapping to use expression mappings as recommended. |
 
 **Recommended resolutions**
 
