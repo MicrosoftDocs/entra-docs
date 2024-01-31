@@ -54,7 +54,10 @@ A secure password change remediates the user risk and close the risky user event
 
 ## Migrate ID Protection risk policies to Conditional Access
 
-If you have the legacy **user risk policy** or **sign-in risk policy** enabled in ID Protection (formerly Identity Protection), we invite you to [migrate them to Conditional Access](howto-identity-protection-configure-risk-policies.md#migrate-risk-policies-to-conditional-access). The legacy risk policies configured in Entra ID Protection will be retired on **October 1, 2026**.
+If you have the legacy **user risk policy** or **sign-in risk policy** enabled in ID Protection (formerly Identity Protection), we invite you to [migrate them to Conditional Access](howto-identity-protection-configure-risk-policies.md#migrate-risk-policies-to-conditional-access). 
+
+> [!WARNING]
+> The legacy risk policies configured in Microsoft Entra ID Protection will be retired on **October 1, 2026**.
 
 Configuring risk policies in Conditional Access provides benefits like:
 
