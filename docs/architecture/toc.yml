@@ -29,9 +29,9 @@ items:
         href: automate-provisioning-to-applications-introduction.md
       - name: Solutions to automate identity provisioning to applications
         href: automate-provisioning-to-applications-solutions.md
-    - name: Multi-tenant user management
+    - name: Multitenant user management
       items:
-      - name: Multi-tenant user management introduction
+      - name: Multitenant user management introduction
         href: multi-tenant-user-management-introduction.md
       - name: Common scenarios
         href: multi-tenant-user-management-scenarios.md
