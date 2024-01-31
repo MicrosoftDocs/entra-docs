@@ -110,6 +110,7 @@ Now you associate applications with the user flow to enable sign-up for those ap
 ## Direct your B2B guests to the user flow
 
 Now that the application is associated with the user flow, your B2B guests will be directed to this user flow for authentication whenever they access the application. They can use:
+
 - The [redemption link](invitation-email-elements.md#accept-invitation-button-or-link-and-redirect-url) in their invitation
 - A [direct link](redemption-experience.md#redemption-process-through-a-direct-link) to the application
 
