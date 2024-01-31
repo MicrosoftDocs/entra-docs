@@ -176,7 +176,7 @@ items:
   - name: Migration best practices
     items:
     - name: Migration best practices
-    - href: migration-best-practices.md
+      href: migration-best-practices.md
   - name: Microsoft Entra Operations reference
     items:
     - name: Introduction
