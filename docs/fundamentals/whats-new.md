@@ -36,16 +36,6 @@ This page updates monthly, so revisit it regularly. If you're looking for items 
 
 ## January 2024
 
-### Public Preview - Granular Certificate-Based Authentication Configuration in Conditional Access
-
-**Type:** New feature    
-**Service category:** Conditional Access    
-**Product capability:** Identity Security & Protection    
-
-With the authentication strength capability in Conditional Access, you can now create a custom authentication strength policy, with advanced certificate-based authentication (CBA) options to allow access based on certificate issuer or policy OIDs. For external users whose MFA is trusted from partners' Microsoft Entra ID tenant, access can also be restricted based on these properties. For more information, see: [Custom Conditional Access authentication strengths](../identity/authentication/concept-authentication-strength-advanced-options.md)
-
----
-
 ### Generally available - New Microsoft Entra Home page
 
 **Type:** Changed feature    
@@ -89,32 +79,6 @@ The *Suspicious sending patterns* risk detection type is discovered using inform
 **Product capability:** User Authentication        
 
 We've released a new recommendation in the Microsoft Entra admin center for customers to move off MFA Server to Microsoft Entra multifactor authentication. MFA Server will be retired on September 30th, 2024. Any customers with MFA Server activity in the last 7 days see the recommendation that includes details about their current usage, and steps on how to move to Microsoft Entra multifactor authentication. For more information, see: [Migrate from MFA Server to Microsoft Entra multifactor authentication](../identity/authentication/how-to-migrate-mfa-server-to-azure-mfa.md).
-
----
-
-### General Availability - Real-time threat intelligence detections
-
-**Type:** New feature    
-**Service category:** Identity Protection    
-**Product capability:** Identity Security & Protection    
-
-To protect customers from emerging identity-based attacks, Microsoft Entra ID Protection now offers real-time threat intelligence detections. When new attack patterns are identified, ID Protection can now rapidly issue new, real-time detections in response to these attacks. These detections utilize Microsoft’s threat intelligence in real-time – meaning ID Protection detects identified patterns of compromise during sign in, and customers are able to leverage risk-based conditional access policies to protect their identities. For more information, see: [Investigate Microsoft Entra threat intelligence detections](../id-protection/howto-identity-protection-investigate-risk.md#investigate-microsoft-entra-threat-intelligence-detections).
-
----
-
-###  App-Only User.ReadBasic.All Permission is now available
-
-**Type:** Fixed    
-**Service category:** User Management    
-**Product capability:** User Management    
-
-*User.ReadBasic.All* allows the app to retrieve basic user properties like ID, display name, first and last name, email address, and photo. Today, only delegated *User.ReadBasic.All* is available. We heard customer feedback to enable app-only *User.ReadBasic.All* permission as well, to limit their app access to only basic user properties. 
-
-With the release of app-only *User.ReadBasic.All*, we've also fixed a bug, which enabled the app to filter on properties it shouldn't access with *User.ReadBasic.All*. The issue is now resolved, ensuring that apps with delegated or app-only permission can no longer filter on unauthorized properties. 
-
-If your app uses delegated *User.ReadBasic.All* to filter properties beyond its access, it will now encounter a 403 error message, indicating "*insufficient privileges to complete the operation.*" You can grant the app *User.Read.All* permission, to ensure the filter operation succeeds. 
-
-With app-only *User.ReadBasic.All*, you can evaluate the permission needs of apps in your tenant. For those requiring access to basic user properties only, consider granting *User.ReadBasic.All* instead of *User.Read.All*. For more information, see: [Microsoft Graph permissions reference](/graph/permissions-reference).
 
 ---
 
