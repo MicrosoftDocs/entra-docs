@@ -17,9 +17,9 @@ ms.collection: M365-identity-device-management
 
 # Best practices to migrate applications and authentication to Microsoft Entra ID
 
-You've heard that [Azure Active Directory is now Microsoft Entra ID](https://www.microsoft.com/security/business/identity-access/microsoft-entra-id) and you're thinking that this might be a good time to migrate your Active Directory Federation Service (AD FS) [to cloud authentication in Microsoft Entra ID](/azure/active-directory/hybrid/connect/migrate-from-federation-to-cloud-authentication). As you review your options, lean into our extensive [resources for migrating apps to Microsoft Entra ID](/azure/active-directory/manage-apps/migration-resources) and the best practice tips in this article.
+You've heard that [Azure Active Directory is now Microsoft Entra ID](https://www.microsoft.com/security/business/identity-access/microsoft-entra-id) and you're thinking it's a good time to migrate your Active Directory Federation Service (AD FS) [to cloud authentication in Microsoft Entra ID](/azure/active-directory/hybrid/connect/migrate-from-federation-to-cloud-authentication). As you review your options, see our extensive [resources to migrate apps to Microsoft Entra ID](/azure/active-directory/manage-apps/migration-resources), and best practices.
 
-Until you're able to migrate AD FS to Microsoft Entra ID, protect your on-premises resources with [Microsoft Defender for Identity](/defender-for-identity/what-is). Proactively find and correct vulnerabilities through assessments, analytics and data intelligence, user investigation priority scoring, and automatic response to compromised identities.
+Until you're able to migrate AD FS to Microsoft Entra ID, protect your on-premises resources with [Microsoft Defender for Identity](/defender-for-identity/what-is). You can poroactively find and correct vulnerabilities. Use assessments, analytics and data intelligence, user investigation priority scoring, and automatic response to compromised identities.
 
 Here are reasons that you might choose not to migrate AD FS:
 
@@ -31,7 +31,7 @@ Here are reasons that you might choose not to migrate AD FS:
 
 ## Migrate applications
 
-Plan a staged application migration rollout and select users to authenticate to Microsoft Entra ID for testing. Reference guidance in the [Plan application migration to Microsoft Entra ID](/azure/active-directory/manage-apps/migrate-adfs-apps-phases-overview) and [Resources for migrating apps to Microsoft Entra ID](/azure/active-directory/manage-apps/migration-resources) articles with attention to the following details.
+Plan a staged application migration rollout and select users to authenticate to Microsoft Entra ID for testing. Use guidance in, [Plan application migration to Microsoft Entra ID](/azure/active-directory/manage-apps/migrate-adfs-apps-phases-overview) and, [Resources to migrate apps to Microsoft Entra ID](/azure/active-directory/manage-apps/migration-resources).
 
 ### Application migration tool
 
@@ -56,11 +56,11 @@ Use the [AD FS to Microsoft Entra ID App Migration Tool](https://github.com/Azur
 - Modern authentication protocols, such as third-party Software-as-a-Service (SaaS) apps in the [Microsoft Entra application gallery](/azure/active-directory/manage-apps/overview-application-gallery) but not through Microsoft Entra ID.
 - Legacy authentication protocols to modernize, such as third-party SaaS apps (not in the gallery, but you can add to the gallery).
 - Federated apps that are using AD FS and can migrate to Microsoft Entra ID.
-- Legacy authentication protocols NOT to modernize. Modernization might exclude those behind Web Application Proxy (WAP) that can use [Microsoft Entra Application Proxy](/azure/active-directory/app-proxy/application-proxy-configure-single-sign-on-with-kcd) and application delivery network/application delivery controllers that can use [Secure Hybrid Access](/azure/active-directory/manage-apps/secure-hybrid-access).
+- Legacy authentication protocols NOT to modernize. Modernization might exclude protocols behind Web Application Proxy (WAP) that can use [Microsoft Entra Application Proxy](/azure/active-directory/app-proxy/application-proxy-configure-single-sign-on-with-kcd) and application delivery network/application delivery controllers that can use [Secure Hybrid Access](/azure/active-directory/manage-apps/secure-hybrid-access).
 - New Line of Business (LoB) apps.
-- Apps for deprecation might include those with functionality that is highly redundant with other systems and have no business owner or usage.
+- Apps for deprecation might have functionality that is redundant with other systems and no business owner or usage.
 
-When choosing the first apps for migration, keep it simple. Criteria can include SaaS apps already in the gallery, apps that support multiple identity provider (IdP) connections, apps for which you have access to a test instance, apps that have simple claim rules, and apps that control audience access.
+When choosing the first apps for migration, keep it simple. Criteria can include SaaS apps in the gallery that support multiple identity provider (IdP) connections. There are apps with test-instance access, apps with simple claim rules, and apps controling audience access.
 
 ### Phase 3: Plan your migration and test
 
@@ -70,7 +70,7 @@ Learn about [Microsoft Entra Application Proxy](/azure/active-directory/app-prox
 
 ### Phase 4: Plan management and insights
 
-After you've migrated apps, follow [management and insight guidance](/azure/active-directory/manage-apps/migrate-adfs-plan-management-insights) to ensure that users can securely access and manage apps. Acquire and share insights into usage and app health.
+After you migrate apps, follow [management and insight guidance](/azure/active-directory/manage-apps/migrate-adfs-plan-management-insights) to ensure that users can securely access and manage apps. Acquire and share insights into usage and app health.
 
 From the [Microsoft Entra admin center](https://entra.microsoft.com/), audit all apps using these methods:
 
@@ -92,7 +92,7 @@ Your app migration plan needs specific attention when your environment includes 
 - **Certificates.** ([AD FS global signing certificate](/windows-server/identity/ad-fs/design/certificate-requirements-for-federation-servers)). In Microsoft Entra ID, you can use one certificate per application or one certificate for all applications. Stagger expiration dates and configure reminders. Delegate certificate management to least-privileged roles. Review common questions and information [related to certificates that Microsoft Entra ID creates](/azure/active-directory/manage-apps/tutorial-manage-certificates-for-federated-single-sign-on) to establish federated SSO to SaaS applications.
 - **Claim rules and basic attribute mapping.** For SaaS applications, you might need only basic attribute-to-claim mapping. Learn how to [customize SAML token claims](/azure/active-directory/develop/saml-claims-customization).
 - **Extract username from UPN.** Microsoft Entra ID supports regex-based transformation (also related to [SAML token claim customization](/azure/active-directory/develop/saml-claims-customization)).
-- **Group claims.** Emit group claims filtered by those of which the user is a member and assigned to the application. You can [configure group claims for applications by using Microsoft Entra ID](/azure/active-directory/hybrid/connect/how-to-connect-fed-group-claims).
+- **Group claims.** Emit group claims filtered by the users who are members and assigned to the application. You can [configure group claims for applications by using Microsoft Entra ID](/azure/active-directory/hybrid/connect/how-to-connect-fed-group-claims).
 - **Web Application Proxy.** Publish with [Microsoft Entra Application Proxy](/azure/active-directory/app-proxy/application-proxy-configure-single-sign-on-with-kcd) to connect securely to on-premises web apps without a VPN. Provide remote access to on-premises web apps and native support for legacy authentication protocols.
 
 ### Application migration process plan
@@ -150,7 +150,7 @@ Conditional Access policy flexibility requires careful planning. Go to [plan a M
 
 ### Conditional Access policies
 
-When you complete first-factor authentication, enforce [Conditional Access policies](/azure/active-directory/conditional-access/concept-conditional-access-policies). Conditional Access isn't first-line defense for scenarios like denial-of-service (DoS) attacks, but it can use signals from these events, such as sign-in risk level and location of a request to determine access. The flow of a Conditional Access policy looks at a session and its conditions, then it feeds results into the central policy engine.
+When you complete first-factor authentication, enforce [Conditional Access policies](/azure/active-directory/conditional-access/concept-conditional-access-policies). Conditional Access isn't first-line defense for scenarios like denial-of-service (DoS) attacks. But Conditional Access can use signals from these events, such as sign-in risk and location of a request to determine access. The flow of a Conditional Access policy looks at a session and its conditions, then it feeds results into the central policy engine.
 
 With Conditional Access, restrict access to [approved, modern authentication-capable, client apps with Intune app protection policies](/azure/active-directory/conditional-access/concept-conditional-access-grant#require-app-protection-policy). For older client apps that might not support app protection policies, restrict access to [approved client apps](/azure/active-directory/conditional-access/concept-conditional-access-grant#require-approved-client-app).
 
@@ -172,7 +172,7 @@ The Network Policy Server (NPS) extension for MFA adds cloud-based MFA capabilit
 
 ### Monitor sign-ins
 
-Use [Connect Health to integrate AD FS sign-ins](/azure/active-directory/hybrid/connect/how-to-connect-health-ad-fs-sign-in) to correlate multiple Event IDs from AD FS, depending on the server version, for information about request and error details. The [Microsoft Entra sign-ins report](/azure/active-directory/reports-monitoring/concept-all-sign-ins) includes information about when users, applications, and managed resources sign in to Microsoft Entra ID and access resources. This information correlates to the Microsoft Entra sign-in report schema and appears in the Microsoft Entra sign-in report user experience. With the report, a Log Analytics stream provides AD FS data. Use and modify the Azure Monitor Workbook template for scenario analysis, such as AD FS account lockouts, bad password attempts, and increases in unexpected sign-in attempts.
+Use [Connect Health to integrate AD FS sign-ins](/azure/active-directory/hybrid/connect/how-to-connect-health-ad-fs-sign-in) to correlate multiple Event IDs from AD FS, depending on the server version, for information about request and error details. The [Microsoft Entra sign-ins report](/azure/active-directory/reports-monitoring/concept-all-sign-ins) includes information about when users, applications, and managed resources sign in to Microsoft Entra ID and access resources. This information correlates to the Microsoft Entra sign-in report schema and appears in the Microsoft Entra sign-in report user experience. With the report, a Log Analytics stream provides AD FS data. Use and modify the Azure Monitor Workbook template for scenario analysis. Examples inclkude AD FS account lockouts, bad password attempts, and increases in unexpected sign-in attempts.
 
 Microsoft Entra logs all sign-ins into an Azure tenant that includes internal apps and resources. Review sign-in errors and patterns to gain insight into how users access applications and services. [Sign-in logs in Microsoft Entra ID](/azure/active-directory/reports-monitoring/concept-sign-ins) are useful [activity logs](/azure/active-directory/reports-monitoring/howto-access-activity-logs) for analysis. Configure logs with up to thirty days [data retention](/azure/active-directory/reports-monitoring/reference-reports-data-retention), depending on licensing, and export them to [Azure Monitor](/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-azure-monitor-logs), Sentinel, Splunk, and other security information and event management (SIEM) systems.
 
@@ -222,7 +222,7 @@ Monitor AD FS activity from [Connect Health Usage Analytics for AD FS](/azure/ac
 - [Resources for migrating apps to Microsoft Entra ID](~/identity/enterprise-apps/migration-resources.md) helps you migrate application access and authentication to Microsoft Entra ID.
 - [Plan application migration to Microsoft Entra ID](~/identity/enterprise-apps/migrate-adfs-apps-phases-overview.md) describes benefits of Microsoft Entra ID and how to plan to migrate your application authentication.
 - [Using Microsoft Entra Connect Health with AD FS](~/identity/hybrid/connect/how-to-connect-health-adfs.md) has documentation about monitoring your AD FS infrastructure with Microsoft Entra Connect Health
-- [Manage authentication methods](~/identity/authentication/concept-authentication-methods-manage.md) describes authentication methods to support a variety of sign-in scenarios.
+- [Manage authentication methods](~/identity/authentication/concept-authentication-methods-manage.md) describes authentication methods to support various sign-in scenarios.
 - [Plan Conditional Access deployment](~/identity/conditional-access/plan-conditional-access.md) explains how to use Conditional Access to automate decisions and enforce organizational access policies for resources.
 - [Microsoft Entra Connect: Cloud authentication via Staged Rollout](~/identity/hybrid/connect/how-to-connect-staged-rollout.md) describes how to selectively test groups of users with cloud authentication capabilities before cutting over your domains.
-- [Active Directory Federation Services (AD FS) decommission guide](/windows-server/identity/ad-fs/decommission/adfs-decommission-guide) has recommended decommissioning steps.
+- [Active Directory Federation Services (AD FS) decommission guide](/windows-server/identity/ad-fs/decommission/adfs-decommission-guide) has decommissioning recommendations.
