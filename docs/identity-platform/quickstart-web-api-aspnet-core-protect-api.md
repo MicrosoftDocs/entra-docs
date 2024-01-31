@@ -79,10 +79,10 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 
 1. In your IDE, open the project folder, _ms-identity-docs-code-dotnet/web-api_, containing the sample.
 1. Open `appsettings.json` file.
-1. Find the placeholder:
+1. Find the the following key:
 
-    - `{APPLICATION_CLIENT_ID}` and replace it with **Application (client) ID** that was recorded earlier from the **Overview** page of the registered application.
-    - `{DIRECTORY_TENANT_ID}` and replace it with the **Directory (tenant) ID** value that was recorded earlier from the **Overview** page of the registered application.
+    - `ClientId` and replace the text in quotes with **Application (client) ID** that was recorded earlier from the **Overview** page of the registered application.
+    - `TenantId` and replace the text in quotes with **Directory (tenant) ID** value that was recorded earlier from the **Overview** page of the registered application.
 
 ## Run the sample application
 
