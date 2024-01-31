@@ -72,4 +72,4 @@ Once the API is registered, you can configure its permission by defining the sco
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Tutorial: Create an ASP.NET Core project and configure the API](web-api-tutorial-02-prepare-api.md)
+> [Tutorial: Create an ASP.NET Core project and configure the API](tutorial-web-api-dotnet-prepare-app.md)
