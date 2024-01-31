@@ -85,17 +85,17 @@ The following diagram illustrates the user flow from user browser to OWA.
 
 | Step | Description |
 |:----|:------|
-| 1. | User browser requests access to DAP-protected OWA.|
-| 2. | The user browser is directed to Microsoft Entra ID.|
-| 3. | The Microsoft Entra sign-in page appears.|
-| 4.|  The user enters credentials.|
-| 5.|  Upon authentication, the user browser is directed to DAP.|
-| 6. | DAP and Microsoft Entra ID exchange tokens.|
-| 7. | Microsoft Entra ID issues the username and relevant information to DAP.|
-| 8.| DAP accesses the KDC with credentials. DAP requests a Kerberos ticket.|
-| 9.| KDC returns a Kerberos ticket.|
+|1.| User browser requests access to DAP-protected OWA.|
+|2.| The user browser is directed to Microsoft Entra ID.|
+|3.| The Microsoft Entra sign-in page appears.|
+|4.|  The user enters credentials.|
+|5.|  Upon authentication, the user browser is directed to DAP.|
+|6.| DAP and Microsoft Entra ID exchange tokens.|
+|7.| Microsoft Entra ID issues the username and relevant information to DAP.|
+|8.| DAP accesses the KDC with credentials. DAP requests a Kerberos ticket.|
+|9.| KDC returns a Kerberos ticket.|
 |10.| DAP redirects the user browser to OWA.|
-| 11.| The OWA resource appears.|
+|11.| The OWA resource appears.|
 
 >[!NOTE]
 >Subsequent user browser requests contain the Kerberos token, which enables access to OWA via DAP.
