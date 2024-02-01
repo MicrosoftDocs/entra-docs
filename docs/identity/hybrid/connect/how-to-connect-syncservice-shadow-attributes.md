@@ -12,6 +12,20 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ---
+---
+title: Microsoft Entra Connect Sync service shadow attributes
+description: Describes how shadow attributes work in Microsoft Entra Connect Sync service.
+services: active-directory
+author: billmath
+ms.service: active-directory
+ms.workload: identity
+manager: amycolannino
+ms.topic: how-to
+ms.date: 11/06/2023
+ms.subservice: hybrid
+ms.author: billmath
+ms.collection: M365-identity-device-management
+---
 # Microsoft Entra Connect Sync service shadow attributes
 Most attributes are represented the same way in Microsoft Entra ID as they are in your on-premises Active Directory. But some attributes have some special handling and the attribute value in Microsoft Entra ID might be different than what Microsoft Entra Connect synchronizes.
 
@@ -62,41 +76,19 @@ ProxyCalc will sanitize an address if ShadowProxyAddresses contains a non-verifi
 
 To be considered a shared resource, the cloud user will have one of the following values set in CloudMSExchRecipientDisplayType 
 
- |Object Display Type|Value (Decimal)|
- |-----|-----|
- |MailboxUser|	0|
- |DistributionGroup|	1|
- |PublicFolder|	2|
- |DynamicDistributionGroup|	3|
- |Organization|	4|
- |PrivateDistributionList|	5|
- |RemoteMailUser|	6|
- |ConferenceRoomMailbox|	7|
- |EquipmentMailbox|	8|
- |ArbitrationMailbox|	10|
- |MailboxPlan|	11|
- |LinkedUser|	12|
- |RoomList|	15|
- |SyncedMailboxUser|	-2147483642|
- |SyncedUDGasUDG|	-2147483391|
- |SyncedUDGasContact|	-2147483386|
- |SyncedPublicFolder|	-2147483130|
- |SyncedDynamicDistributionGroup|	-2147482874|
- |SyncedRemoteMailUser|	-2147482106|
- |SyncedConferenceRoomMailbox|	-2147481850|
- |SyncedEquipmentMailbox|	-2147481594|
- |SyncedUSGasUDG|	-2147481343|
- |SyncedUSGasContact|	-2147481338|
- |ACLableSyncedMailboxUser|	-1073741818|
- |ACLableSyncedRemoteMailUser|	-1073740282|
- |ACLableSyncedUSGasContact|	-1073739514|
- |SyncedUSGasUSG|	-1073739511|
- |SecurityDistributionGroup|	1043741833|
- |SyncedUSGasUSG|	1073739511|
- |ACLableSyncedUSGasContact|	1073739514|
- |RBAC Role Group|	1073741824|
- |ACLableMailboxUser|	1073741824|
- |ACLableRemoteMailUser|	1073741830|
+|Object Display Type|Value (Decimal)|
+|-----|-----|
+|MailboxUser|	0|
+|PublicFolder|	2|
+|ConferenceRoomMailbox|	7|
+|EquipmentMailbox|	8|
+|ArbitrationMailbox|	10|
+|RoomList|	15|
+|TeamMailboxUser|	16|
+|GroupMailbox|	17|
+|SchedulingMailbox|	18|
+|ACLableMailboxUser|	1073741824|
+|ACLableTeamMailboxUser|	1073741840|
 
 
 >[!NOTE]
