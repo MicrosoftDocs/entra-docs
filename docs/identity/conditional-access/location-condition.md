@@ -6,7 +6,7 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 10/16/2023
+ms.date: 02/01/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -35,7 +35,7 @@ The location found using the public IP address a client provides to Microsoft En
 
 ## Named locations
 
-Locations exist under **Protection** > **Conditional Access** > **Named locations**. These named network locations may include locations like an organization's headquarters network ranges, VPN network ranges, or ranges that you wish to block. Named locations are defined by IPv4 and IPv6 address ranges or by countries/regions. 
+Locations exist under **Protection** > **Conditional Access** > **Named locations**. These named network locations might include locations like an organization's headquarters network ranges, VPN network ranges, or ranges that you wish to block. Named locations are defined by IPv4 and IPv6 address ranges or by countries/regions. 
 
 > [!VIDEO https://www.youtube.com/embed/P80SffTIThY]
 
@@ -89,27 +89,28 @@ The first time the user must share their location from the Microsoft Authenticat
 - After 24 hours, the user must open the app and approve the notification.
 - Users who have number matching or additional context enabled in the Microsoft Authenticator app won't receive notifications silently and must open the app to approve notifications.
  
-Every time the user shares their GPS location, the app does jailbreak detection (Using the same logic as the Intune MAM SDK). If the device is jailbroken, the location isn't considered valid, and the user isn't granted access. The Microsoft Authenticator app on Android uses the Google Play Integrity API to facilitate jailbreak detection. If the Google Play Integrity API is unavailable, the request is denied and the user isn't able to access the requested resource unless the Conditional Access policy is disabled.
+Every time the user shares their GPS location, the app does jailbreak detection (Using the same logic as the Intune MAM SDK). If the device is jailbroken, the location isn't considered valid, and the user isn't granted access. The Microsoft Authenticator app on Android uses the Google Play Integrity API to facilitate jailbreak detection. If the Google Play Integrity API is unavailable, the request is denied and the user isn't able to access the requested resource unless the Conditional Access policy is disabled. For more information about the Microsoft Authenticator app, see the article [Common questions about the Microsoft Authenticator app](https://support.microsoft.com/account-billing/common-questions-about-the-microsoft-authenticator-app-12d283d1-bcef-4875-9ae5-ac360e2945dd).
 
 > [!NOTE]
 > A Conditional Access policy with GPS-based named locations in report-only mode prompts users to share their GPS location, even though they aren't blocked from signing in.
 
 GPS location doesn't work with [passwordless authentication methods](~/identity/authentication/concept-authentication-passwordless.md). 
 
-Multiple Conditional Access policies may prompt users for their GPS location before all are applied. Because of the way Conditional Access policies are applied, a user may be denied access if they pass the location check but fail another policy. For more information about policy enforcement, see the article [Building a Conditional Access policy](concept-conditional-access-policies.md).
+Multiple Conditional Access policies might prompt users for their GPS location before all are applied. Because of the way Conditional Access policies are applied, a user might be denied access if they pass the location check but fail another policy. For more information about policy enforcement, see the article [Building a Conditional Access policy](concept-conditional-access-policies.md).
 
 > [!IMPORTANT]
 > Users may receive prompts every hour letting them know that Microsoft Entra ID is checking their location in the Authenticator app. The preview should only be used to protect very sensitive apps where this behavior is acceptable or where access needs to be restricted to a specific country/region.
 
 #### Deny requests with modified location
-Users can modify the location reported by iOS and Android devices. As a result, Microsoft Authenticator is updating its security baseline for location-based Conditional Access policies. Authenticator will deny authentications where the user may be using a different location than the actual GPS location of the mobile device where Authenticator installed.  
 
-In the November 2023 release of Authenticator, users who modify the location of their device will get a denial message in Authenticator when they try location-based authentication. Beginning January 2024, any users that run older Authenticator versions will be blocked from location-based authentication:
+Users can modify the location reported by iOS and Android devices. As a result, Microsoft Authenticator is updating its security baseline for location-based Conditional Access policies. Authenticator denies authentications where the user might be using a different location than the actual GPS location of the mobile device where Authenticator installed.  
+
+In the November 2023 release of Authenticator, users who modify the location of their device get a denial message in Authenticator when they try location-based authentication. Beginning January 2024, any users that run older Authenticator versions are blocked from location-based authentication:
   
 - Authenticator version 6.2309.6329 or earlier on Android
 - Authenticator version 6.7.16 or earlier on iOS
   
-To find which users run older versions of Authenticator, use [Microsft Graph APIs](/graph/api/resources/microsoftauthenticatorauthenticationmethod#properties). 
+To find which users run older versions of Authenticator, use [Microsoft Graph APIs](/graph/api/resources/microsoftauthenticatorauthenticationmethod#properties). 
 
 #### Include unknown countries/regions
 
@@ -127,7 +128,7 @@ On the multifactor authentication service settings page, you can identify corpor
 
 After checking this option, including the named location **MFA Trusted IPs** will apply to any policies with this option selected.
 
-For mobile and desktop applications, which have long lived session lifetimes, Conditional Access is periodically reevaluated. The default is once an hour. When the inside corporate network claim is only issued at the time of the initial authentication, we may not have a list of trusted IP ranges. In this case, it's more difficult to determine if the user is still on the corporate network:
+For mobile and desktop applications, which have long lived session lifetimes, Conditional Access is periodically reevaluated. The default is once an hour. When the inside corporate network claim is only issued at the time of the initial authentication, we might not have a list of trusted IP ranges. In this case, it's more difficult to determine if the user is still on the corporate network:
 
 1. Check if the user’s IP address is in one of the trusted IP ranges.
 1. Check whether the first three octets of the user’s IP address match the first three octets of the IP address of the initial authentication. The IP address is compared with the initial authentication when the inside corporate network claim was originally issued and the user location was validated.
@@ -223,7 +224,7 @@ The IP address used in policy evaluation is the public IPv4 or IPv6 address of t
 
 ### When you might block locations?
 
-A policy that uses the location condition to block access is considered restrictive, and should be done with care after thorough testing. Some instances of using the location condition to block authentication may include:
+A policy that uses the location condition to block access is considered restrictive, and should be done with care after thorough testing. Some instances of using the location condition to block authentication might include:
 
 - Blocking countries/regions where your organization never does business.
 - Blocking specific IP ranges like:
