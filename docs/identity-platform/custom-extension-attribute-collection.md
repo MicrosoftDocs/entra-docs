@@ -726,12 +726,12 @@ To protect your Azure function, follow these steps to integrate Microsoft Entra 
 > If the Azure function app is hosted in a different Azure tenant than the tenant in which your custom authentication extension is registered, skip to [5.1 Using OpenID Connect identity provider](#51-using-openid-connect-identity-provider) step.
 
 1. Sign in to the [Azure portal](https://portal.azure.com).
-1. Navigate and select the function app you [previously published](#step-1-create-an-azure-function-app).
+1. Navigate and select the function app you [previously published](#step-1-create-a-custom-authentication-extensions-rest-api-azure-function-app).
 1. Select **Authentication** in the menu on the left.
 1. Select **Add Identity provider**.  
 1. Select **Microsoft** as the identity provider.
 1. Select **Customer** as the tenant type.
-1. Under **App registration**, enter the `client_id` of the *Azure Functions authentication events API* app registration you [previously created](#step-2-register-a-custom-authentication-extension) when registering the custom claims provider.
+1. Under **App registration**, enter the `client_id` of the *Azure Functions authentication events API* app registration you [previously created](#step-2-create-and-register-a-custom-authentication-extension) when registering the custom claims provider.
 1. For the **Issuer URL**, enter the following URL, where
     - `{domainName}` is the domain name of your customer tenant.
     - `{tenantId}` is the tenant ID of your customer tenant. Your custom authentication extension should be registered here.
