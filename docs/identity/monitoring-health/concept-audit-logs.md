@@ -53,9 +53,9 @@ Audit logs in Microsoft Entra ID provide access to system activity records, ofte
 
 **Custom security attributes:**
 
-- What [custom security attributes](../../fundamentals/custom-security-attributes-overview.md) were added, updated, or removed?
-- What applications have custom security attributes?
-- What users have custom security attributes?
+- What changes were made to [custom security attribute](../../fundamentals/custom-security-attributes-overview.md) definitions or assignments?
+- What updates were made to attribute sets?
+- What custom attribute values were assigned to a user?
 
 > [!NOTE]
 > Entries in the audit logs are system generated and can't be changed or deleted.
@@ -69,7 +69,7 @@ Audit logs default to the **Directory** tab, which displays the following inform
 - Category and name of the activity (*what*) 
 - Status of the activity (success or failure)
 
-A second tab for **Custom Security** displays audit logs for custom security attributes. To view data on this tab, you must have the [Attribute Log Administrator](../identity/role-based-access-control/permissions-reference.md#attribute-log-administrator) or [Attribute Log Reader](../identity/role-based-access-control/permissions-reference.md#attribute-log-reader) role. This audit log shows all activities related to custom security attributes. For more information, see [What are custom security attributes](../../fundamentals/custom-security-attributes-overview.md).
+A second tab for **Custom Security** displays audit logs for custom security attributes. To view data on this tab, you must have the [Attribute Log Administrator](../../identity/role-based-access-control/permissions-reference.md#attribute-log-administrator) or [Attribute Log Reader](../../identity/role-based-access-control/permissions-reference.md#attribute-log-reader) role. This audit log shows all activities related to custom security attributes. For more information, see [What are custom security attributes](../../fundamentals/custom-security-attributes-overview.md).
 
 ![Screenshot of the audit logs, with the Directory and Custom Security tabs highlighted.](media/concept-audit-logs/audit-log-tabs.png)
 
