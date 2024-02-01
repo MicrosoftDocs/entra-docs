@@ -726,16 +726,20 @@ To protect your Azure function, follow these steps to integrate Microsoft Entra 
 > If the Azure function app is hosted in a different Azure tenant than the tenant in which your custom authentication extension is registered, skip to [5.1 Using OpenID Connect identity provider](#51-using-openid-connect-identity-provider) step.
 
 1. Sign in to the [Azure portal](https://portal.azure.com).
-1. In the Function App service, navigate to and select the function app you previously published.
+1. Navigate and select the function app you [previously published](#step-1-create-an-azure-function-app).
 1. Select **Authentication** in the menu on the left.
 1. Select **Add Identity provider**.  
 1. Select **Microsoft** as the identity provider.
-1. Under **App registration**->**App registration type**, select **Pick an existing app registration in this directory** and pick the *Azure Functions authentication events API* app registration you [previously created](#step-2-create-and-register-a-custom-authentication-extension) when registering the custom claims provider.
+1. Select **Customer** as the tenant type.
+1. Under **App registration**, enter the `client_id` of the *Azure Functions authentication events API* app registration you [previously created](#step-2-register-a-custom-authentication-extension) when registering the custom claims provider.
+1. For the **Issuer URL**, enter the following URL, where
+    - `{domainName}` is the domain name of your customer tenant.
+    - `{tenantId}` is the tenant ID of your customer tenant. Your custom authentication extension should be registered here.
 1. Under **Unauthenticated requests**, select **HTTP 401 Unauthorized** as the identity provider.
 1. Unselect the **Token store** option.
 1. Select **Add** to add authentication to your Azure Function.
 
-    :::image type="content" border="true"  source="media/custom-extension-attribute-collection/configure-auth-function-app.png" alt-text="Screenshot that shows how to add authentication to your function app." lightbox="media/custom-extension-attribute-collection/configure-auth-function-app.png":::
+    :::image type="content" border="true"  source="media/custom-extension-get-started/add-identity-provider-auth-function-app-customer.png" alt-text="Screenshot that shows how to add authentication to your function app while in a customer tenant." lightbox="media/custom-extension-get-started/add-identity-provider-auth-function-app-customer.png":::
 
 ### 5.1 Using OpenID Connect identity provider
 
