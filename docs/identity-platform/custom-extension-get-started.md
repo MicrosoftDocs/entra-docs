@@ -34,6 +34,8 @@ This how-to guide demonstrates the token issuance start event with a REST API ru
 
 - To use Azure services, including Azure Functions, you need an Azure subscription. If you don't have an existing Azure account, you may sign up for a [free trial](https://azure.microsoft.com/free/dotnet/) or use your [Visual Studio Subscription](https://visualstudio.microsoft.com/subscriptions/) benefits when you [create an account](https://account.windowsazure.com/Home/Index).
 
+- A Microsoft Entra ID tenant. You can use either a customer or workforce tenant for this how-to guide.
+
 ## Step 1: Create an Azure Function app
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
@@ -171,22 +173,15 @@ In this step, you configure a custom authentication extension, which will be use
     - **Name** - A name for your custom authentication extension. For example, *Token issuance event*.
     - **Target Url** - The `{Function_Url}` of your Azure Function URL.
     - **Description** - A description for your custom authentication extensions.
-
 1. Select **Next**.
-
 1. In **API Authentication**, select the **Create new app registration** option to create an app registration that represents your *function app*.  
-
 1. Give the app a name, for example **Azure Functions authentication events API**.
-
 1. Select **Next**.
-
 1. In **Claims**, enter the attributes that you expect your custom authentication extension to parse from your REST API and will be merged into the token. Add the following claims:
-
     - dateOfBirth
     - customRoles
     - apiVersion
     - correlationId
-
 1. Select **Next** and **Create**, which registers the custom authentication extension and the associated application registration.
 
 # [Microsoft Graph](#tab/microsoft-graph)
@@ -373,9 +368,9 @@ Follow these steps to connect the *My Test application* with your custom authent
 First assign the custom authentication extension as a custom claims provider source:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
-1. Browse to **Identity** > **Applications** > **Application registrations**.
-1. In the **Overview** page, under **Managed application in local directory**, select **My Test application**.
-1. Under **Manage**, select **Single sign-on**.
+1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Under **Manage**, select **All applications**, and then select **My Test application**.
+1. Navigate to **Manage** again, and select **Single sign-on**.
 1. Under **Attributes & Claims**, select **Edit**.
 
     :::image type="content" border="false"  source="./media/custom-extension-get-started/open-id-connect-based-sign-on.png" alt-text="Screenshot that shows how to configure app claims." lightbox="./media/custom-extension-get-started/open-id-connect-based-sign-on.png":::
@@ -393,7 +388,7 @@ Next, assign the attributes from the custom claims provider, which should be iss
     :::image type="content" border="false"  source="media/custom-extension-get-started/manage-claim.png" alt-text="Screenshot that shows how to add a claim mapping to your app." lightbox="media/custom-extension-get-started/manage-claim.png":::
 
 1. Select **Save**.
-1. You can repeat this process to add the `customClaimsProvider.customRoles`, `customClaimsProvider.apiVersion` and `customClaimsProvider.correlationId` attributes.
+1. You can repeat this process to add the `customClaimsProvider.customRoles`, `customClaimsProvider.apiVersion` and `customClaimsProvider.correlationId` attributes, and the corresponding name. It's a good idea to match the name of the claim to the name of the attribute.
 
 # [Microsoft Graph](#tab/microsoft-graph)
 
