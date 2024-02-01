@@ -23,13 +23,7 @@ Workflows created by Lifecycle Workflows can be used to manage the lifecycle of 
 
 [!INCLUDE [Microsoft Entra ID Governance license](~/includes/entra-entra-governance-license.md)]
 
-To manage synced on-premises users with Lifecycle Workflows, you must have the following on-premises prerequisites:
-
-1. You must have the [Microsoft Entra provisioning agent](../identity/hybrid/cloud-sync/what-is-provisioning-agent.md) installed in your environment. You can follow the existing installation [prerequisites](../identity/hybrid/cloud-sync/how-to-prerequisites.md) and [steps](../identity/hybrid/cloud-sync/how-to-install.md) in our public documentation. During installation, choose “**HR-driven provisioning / Azure AD Connect Cloud Sync**” as “**extension configuration**”. You aren't required to add any other configuration for the provisioning agent, such as the cloud sync configuration, and you can install the provisioning agent even if you're currently using Microsoft Entra Connect Sync for your user synchronization (side-by-side).
-
-1. Ensure the gMSA used by the provisioning agent has the [appropriate permissions](../identity/hybrid/cloud-sync/how-to-prerequisites.md#custom-gmsa-account) to delete user accounts.
-
-1. Enable the Active Directory recycle bin. For a step-by-step guide on enabling the recycle bin, see: [Active Directory Recycle Bin step-by-step](/windows-server/identity/ad-ds/get-started/adac/introduction-to-active-directory-administrative-center-enhancements--level-100-#active-directory-recycle-bin-step-by-step).
+To manage synced on-premises users with Lifecycle workflows, you must first set up a few prerequisites within your hybrid environment. For more information on these prerequisites, see:  [Hybrid Prerequisites](lifecycle-workflow-hybrid.md#hybrid-prerequisites).
 
 ## Edit a task to be compatible with synced on-premises users using the Microsoft Entra admin center
 

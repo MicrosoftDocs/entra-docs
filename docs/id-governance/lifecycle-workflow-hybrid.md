@@ -66,7 +66,7 @@ Required. Lead with a light intro that describes what the article covers. Answer
 
 -->
 
-Lifecycle Workflows allow you to create workflows that can be triggered for users based on joiner, mover, or leaver scenarios. With hybrid support, you are able to trigger these workflows for users synced from on-premises Active Directory to Microsoft Entra ID. This allows you to use workflows to automate tasks across the lifecycle of users in your hybrid environment.
+Lifecycle Workflows allow you to create workflows that can be triggered for users based on joiner, mover, or leaver scenarios. With hybrid support, you are able to trigger these workflows for users synced from on-premises Active Directory to Microsoft Entra ID. This is accomplished by allowing you to create a task enabling an on-premises user account, so that you are able to run other tasks in a workflow for the user. You are also able to disable, or even delete, a user account when they are no longer active in your organization. This allows you to use workflows to automate tasks across the lifecycle of users in your hybrid environment. Using Lifecycle Workflows with hybrid users requires additional prerequisites. For more information on these prerequisites, see: [Prerequisites](manage-workflow-onprem.md#prerequisites)
 
 <!-- 3. Prerequisites --------------------------------------------------------------------
 
@@ -75,23 +75,27 @@ language and use a unordered list format.
 
 -->
 
-## Prerequisites
-TODO: [List the prerequisites if appropriate]
+## Hybrid specific tasks
 
-<!-- 4. H2s (Article body)
---------------------------------------------------------------------
+With Lifecycle Workflow's hybrid-specific tasks, you are able to set a flag on the following preexisting tasks so that they run for hybrid users. The following tasks are able to have the hybrid flag set for them:
 
-Required: In a series of H2 sections, the article body should discuss the ideas that explain how "X is a (type of) Y that does Z":
+- Delete user account
+- Disable user account
+- Enable user account
 
-* Give each H2 a heading that sets expectations for the content that follows.
-* Follow the H2 headings with a sentence about how the section contributes to the whole.
-* Describe the concept's critical features in the context of defining what it is.
-* Provide an example of how it's used where, how it fits into the context, or what it does. If it's complex and new to the user, show at least two examples.
-* Provide a non-example if contrasting it will make it clearer to the user what the concept is.
-* Images, code blocks, or other graphical elements come after the text block it illustrates.
-* Don't number H2s.
+The respective flags can be found on their task screen:
 
--->
+:::image type="content" source="media/lifecycle-workflow-hybrid/delete-onprem-user.png" alt-text="Screenshot of delete user onprem flag in task.":::
+
+## Hybrid Prerequisites
+
+To manage synced on-premises users with Lifecycle Workflows, you must have the following on-premises prerequisites:
+
+1. You must have the [Microsoft Entra provisioning agent](../identity/hybrid/cloud-sync/what-is-provisioning-agent.md) installed in your environment. You can follow the existing installation [prerequisites](../identity/hybrid/cloud-sync/how-to-prerequisites.md) and [steps](../identity/hybrid/cloud-sync/how-to-install.md) in our public documentation. During installation, choose “**HR-driven provisioning / Azure AD Connect Cloud Sync**” as “**extension configuration**”. You aren't required to add any other configuration for the provisioning agent, such as the cloud sync configuration, and you can install the provisioning agent even if you're currently using Microsoft Entra Connect Sync for your user synchronization (side-by-side).
+
+1. Ensure the gMSA used by the provisioning agent has the [appropriate permissions](../identity/hybrid/cloud-sync/how-to-prerequisites.md#custom-gmsa-account) to delete user accounts.
+
+1. Enable the Active Directory recycle bin. For a step-by-step guide on enabling the recycle bin, see: [Active Directory Recycle Bin step-by-step](/windows-server/identity/ad-ds/get-started/adac/introduction-to-active-directory-administrative-center-enhancements--level-100-#active-directory-recycle-bin-step-by-step).
 
 ## [Section 1 heading]
 TODO: add your content
