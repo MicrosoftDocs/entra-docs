@@ -19,13 +19,13 @@ ms.collection: M365-identity-device-management
 
 You've heard that [Azure Active Directory is now Microsoft Entra ID](https://www.microsoft.com/security/business/identity-access/microsoft-entra-id) and you're thinking it's a good time to migrate your Active Directory Federation Service (AD FS) [to cloud authentication in Microsoft Entra ID](/azure/active-directory/hybrid/connect/migrate-from-federation-to-cloud-authentication). As you review your options, see our extensive [resources to migrate apps to Microsoft Entra ID](/azure/active-directory/manage-apps/migration-resources), and best practices.
 
-Until you're able to migrate AD FS to Microsoft Entra ID, protect your on-premises resources with [Microsoft Defender for Identity](/defender-for-identity/what-is). You can poroactively find and correct vulnerabilities. Use assessments, analytics and data intelligence, user investigation priority scoring, and automatic response to compromised identities.
+Until you're able to migrate AD FS to Microsoft Entra ID, protect your on-premises resources with [Microsoft Defender for Identity](/defender-for-identity/what-is). You can find and correct vulnerabilities proactively. Use assessments, analytics and data intelligence, user investigation priority scoring, and automatic response to compromised identities.
 
 Here are reasons that you might choose not to migrate AD FS:
 
 - Your environment has flat usernames (such as employee ID).
 - You need more options for [custom multifactor authentication providers](#custom-mfa-solutions).
-- You use device authentication solutions from third-party Mobile Device Management (MDM) systems like VMWare.
+- You use device authentication solutions from third-party Mobile Device Management (MDM) systems like VMware.
 - Your AD FS is dual fed with multiple clouds.
 - You need to air gap networks.
 
@@ -60,7 +60,7 @@ Use the [AD FS to Microsoft Entra ID App Migration Tool](https://github.com/Azur
 - New Line of Business (LoB) apps.
 - Apps for deprecation might have functionality that is redundant with other systems and no business owner or usage.
 
-When choosing the first apps for migration, keep it simple. Criteria can include SaaS apps in the gallery that support multiple identity provider (IdP) connections. There are apps with test-instance access, apps with simple claim rules, and apps controling audience access.
+When choosing the first apps for migration, keep it simple. Criteria can include SaaS apps in the gallery that support multiple identity provider (IdP) connections. There are apps with test-instance access, apps with simple claim rules, and apps controlling audience access.
 
 ### Phase 3: Plan your migration and test
 
@@ -105,7 +105,7 @@ Consider including the following steps in your application migration process.
 - **Switch production instance to use Microsoft Entra ID.** For applications that allow multiple simultaneous IdPs, change the default IdP to Microsoft Entra ID. Otherwise, configure Microsoft Entra ID as the IdP to the production instance. Update the production instance to use the Microsoft Entra ID production application as primary IdP.
 - **Migrate first app, run migration tests, and fix issues.** Reference migration status in [AD FS application activity reports](/azure/active-directory/manage-apps/migrate-adfs-application-activity) that provide guidance on how to address potential migration issues.
 - **Migrate at scale.** Migrate apps and users in phases. Use Microsoft Entra ID to manage migrated apps and users while sufficiently testing authentication.
-- **Remove the federation.** Confirm that your AD FS farm is no longer used for authentication. Fail back, back up, and export related configurations.
+- **Remove the federation.** Confirm that your AD FS farm is no longer used for authentication. Use fail-back, back-up, and export related configurations.
 
 ## Migrate authentication
 
@@ -114,7 +114,7 @@ As you prepare for authentication migration, decide which [authentication method
 - Enable [password hash synchronization (PHS) with Microsoft Entra ID](/azure/active-directory/hybrid/connect/whatis-phs) as a failover, or as the primary end user authentication. Configure [risk detection](/azure/active-directory/identity-protection/concept-identity-protection-risks) as part of Microsoft Entra ID Protection. Review the [identify and remediate risk using Microsoft Graph APIs](/graph/tutorial-riskdetection-api) tutorial and learn how to [implement password hash synchronization with Microsoft Entra Connect Sync](/azure/active-directory/hybrid/connect/how-to-connect-password-hash-synchronization).
 - [Microsoft Entra certificate-based authentication (CBA)](/azure/active-directory/authentication/concept-certificate-based-authentication) authenticates directly against Microsoft Entra ID without the need for a federated IdP. Key benefits include features that help improve security with phish-resistant CBA; meet Executive Order (EO) 14028 requirements for phish-resistant MFA, cut costs and risks associated with on-premises federation infrastructure, and simplify management experience in Microsoft Entra ID with granular controls.
 - [Microsoft Entra Connect: Pass-through Authentication](/azure/active-directory/hybrid/connect/how-to-connect-pta) (PTA) uses a software agent to connect to passwords stored on-premises for validation. Users sign in to cloud apps with the same username and password for on-premises resources, working seamlessly with [Microsoft Entra Conditional Access](~/identity/conditional-access/overview.md) policies. Smart Lockout prevents brute force attacks. Install authentication agents on-premises with current AD infrastructure. Use PTA if regulatory requirements specify that password hashes can't synchronize to Microsoft Entra ID; otherwise, use PHS.
-- Keep the current SSO experience without AD FS. [Seamless single sign-on (SSO)](/azure/active-directory/hybrid/connect/how-to-connect-sso-faq) provides an SSO experience from domain-joined devices in your corpnet (Kerberos). It works with PHS, PTA, and CBA and needs no other on-premises infrastructure. You can let users [sign in to Microsoft Entra ID with email as an alternate login ID](/azure/active-directory/authentication/howto-authentication-use-email-signin) using the same credentials as their on-premises directory environment. Known as hybrid authentication, users need one set of credentials.
+- Keep the current SSO experience without AD FS. [Seamless single sign-on (SSO)](/azure/active-directory/hybrid/connect/how-to-connect-sso-faq) provides an SSO experience from domain-joined devices in your corpnet (Kerberos). It works with PHS, PTA, and CBA and needs no other on-premises infrastructure. You can let users [sign in to Microsoft Entra ID with email as an alternate login ID](/azure/active-directory/authentication/howto-authentication-use-email-signin) using the same credentials as their on-premises directory environment. With hybrid authentication, users need one set of credentials.
 - Recommended: PHS over PTA, [passwordless authentication in Microsoft Entra ID](/azure/active-directory/authentication/howto-authentication-passwordless-deployment) with [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/hello-identity-verification), [FIDO2 security keys](/azure/active-directory/authentication/howto-authentication-passwordless-security-key), or [Microsoft Authenticator](/azure/active-directory/authentication/howto-authentication-passwordless-phone). If you plan to use [Windows Hello for Business hybrid certificate trust](/windows/security/identity-protection/hello-for-business/hello-hybrid-cert-trust), migrate to Cloud trust first to re-enroll all users.
 
 ### Password and authentication policies
@@ -127,7 +127,7 @@ Migrate Microsoft Entra ID [legacy policy settings](/azure/active-directory/auth
 
 Because Windows sign-in and other passwordless methods require detailed configuration, enable sign-in with [Microsoft Authenticator](/azure/active-directory/authentication/howto-authentication-passwordless-phone) and [FIDO2 security keys](/azure/active-directory/authentication/howto-authentication-passwordless-security-key). Use groups to manage deployment and scope users.
 
-You can [configure sign-in auto-acceleration using Home Realm Discovery](/azure/active-directory/manage-apps/configure-authentication-for-federated-users-portal?pivots=powershell-hrd). Learn to use auto-acceleration sign-in to skip the username entry screen and automatically forward users to federated sign-in endpoints. [Prevent sign-in auto-acceleration using the Home Realm Discovery policy](/azure/active-directory/manage-apps/prevent-domain-hints-with-home-realm-discovery?pivots=powershell-hrd) to have multiple ways to control how and where users authenticate.
+You can [configure sign-in autoacceleration using Home Realm Discovery](/azure/active-directory/manage-apps/configure-authentication-for-federated-users-portal?pivots=powershell-hrd). Learn to use autoacceleration sign-in to skip the username entry screen and automatically forward users to federated sign-in endpoints. [Prevent sign-in autoacceleration using the Home Realm Discovery policy](/azure/active-directory/manage-apps/prevent-domain-hints-with-home-realm-discovery?pivots=powershell-hrd) to have multiple ways to control how and where users authenticate.
 
 ### Account expiration policies
 
@@ -150,7 +150,7 @@ Conditional Access policy flexibility requires careful planning. Go to [plan a M
 
 ### Conditional Access policies
 
-When you complete first-factor authentication, enforce [Conditional Access policies](/azure/active-directory/conditional-access/concept-conditional-access-policies). Conditional Access isn't first-line defense for scenarios like denial-of-service (DoS) attacks. But Conditional Access can use signals from these events, such as sign-in risk and location of a request to determine access. The flow of a Conditional Access policy looks at a session and its conditions, then it feeds results into the central policy engine.
+When you complete first-factor authentication, enforce [Conditional Access policies](/azure/active-directory/conditional-access/concept-conditional-access-policies). Conditional Access isn't frontline defense for scenarios like denial-of-service (DoS) attacks. But Conditional Access can use signals from these events, such as sign-in risk and location of a request to determine access. The flow of a Conditional Access policy looks at a session and its conditions, then it feeds results into the central policy engine.
 
 With Conditional Access, restrict access to [approved, modern authentication-capable, client apps with Intune app protection policies](/azure/active-directory/conditional-access/concept-conditional-access-grant#require-app-protection-policy). For older client apps that might not support app protection policies, restrict access to [approved client apps](/azure/active-directory/conditional-access/concept-conditional-access-grant#require-approved-client-app).
 
@@ -172,15 +172,15 @@ The Network Policy Server (NPS) extension for MFA adds cloud-based MFA capabilit
 
 ### Monitor sign-ins
 
-Use [Connect Health to integrate AD FS sign-ins](/azure/active-directory/hybrid/connect/how-to-connect-health-ad-fs-sign-in) to correlate multiple Event IDs from AD FS, depending on the server version, for information about request and error details. The [Microsoft Entra sign-ins report](/azure/active-directory/reports-monitoring/concept-all-sign-ins) includes information about when users, applications, and managed resources sign in to Microsoft Entra ID and access resources. This information correlates to the Microsoft Entra sign-in report schema and appears in the Microsoft Entra sign-in report user experience. With the report, a Log Analytics stream provides AD FS data. Use and modify the Azure Monitor Workbook template for scenario analysis. Examples inclkude AD FS account lockouts, bad password attempts, and increases in unexpected sign-in attempts.
+Use [Connect Health to integrate AD FS sign-ins](/azure/active-directory/hybrid/connect/how-to-connect-health-ad-fs-sign-in) to correlate multiple Event IDs from AD FS, depending on the server version, for information about request and error details. The [Microsoft Entra sign-ins report](/azure/active-directory/reports-monitoring/concept-all-sign-ins) includes information about when users, applications, and managed resources sign in to Microsoft Entra ID and access resources. This information correlates to the Microsoft Entra sign-in report schema and appears in the Microsoft Entra sign-in report user experience. With the report, a Log Analytics stream provides AD FS data. Use and modify the Azure Monitor Workbook template for scenario analysis. Examples include AD FS account lockouts, bad password attempts, and increases in unexpected sign-in attempts.
 
-Microsoft Entra logs all sign-ins into an Azure tenant that includes internal apps and resources. Review sign-in errors and patterns to gain insight into how users access applications and services. [Sign-in logs in Microsoft Entra ID](/azure/active-directory/reports-monitoring/concept-sign-ins) are useful [activity logs](/azure/active-directory/reports-monitoring/howto-access-activity-logs) for analysis. Configure logs with up to thirty days [data retention](/azure/active-directory/reports-monitoring/reference-reports-data-retention), depending on licensing, and export them to [Azure Monitor](/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-azure-monitor-logs), Sentinel, Splunk, and other security information and event management (SIEM) systems.
+Microsoft Entra logs all sign-ins into an Azure tenant that includes internal apps and resources. Review sign-in errors and patterns to gain insight into how users access applications and services. [Sign-in logs in Microsoft Entra ID](/azure/active-directory/reports-monitoring/concept-sign-ins) are useful [activity logs](/azure/active-directory/reports-monitoring/howto-access-activity-logs) for analysis. Configure logs with up to 30 days [data retention](/azure/active-directory/reports-monitoring/reference-reports-data-retention), depending on licensing, and export them to [Azure Monitor](/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-azure-monitor-logs), Sentinel, Splunk, and other security information and event management (SIEM) systems.
 
 ### Inside corporate network claims
 
 Regardless of where requests originate or what resources they access, the [Zero Trust model](/security/zero-trust/zero-trust-overview) teaches us to "never trust, always verify." Secure all locations as if they're outside the corporate network. Declare inside networks as [trusted locations](/azure/active-directory/conditional-access/location-condition) to reduce identity-protection false positives. Enforce MFA for all users and establish [device-based Conditional Access policies](/mem/intune/protect/create-conditional-access-intune).
 
-Run a query on sign-in logs to discover users that connect from inside the corporate network, but are not [hybrid Microsoft Entra ID joined compliant](/azure/active-directory/conditional-access/howto-conditional-access-policy-compliant-device). Consider users on compliant devices and use of unsupported browsers such as Firefox or Chrome without the extension. Instead, use computer domain and compliance status.
+Run a query on sign-in logs to discover users that connect from inside the corporate network, but aren't [hybrid Microsoft Entra ID joined compliant](/azure/active-directory/conditional-access/howto-conditional-access-policy-compliant-device). Consider users on compliant devices and use of unsupported browsers such as Firefox or Chrome without the extension. Instead, use computer domain and compliance status.
 
 ### Staged authentication migration testing and cutover
 
@@ -200,7 +200,7 @@ Update-AzureADSSOForest -OnPremCredentials $creds -PreserveCustomPermissionsOnDe
 
 ## Decommission AD FS
 
-Monitor AD FS activity from [Connect Health Usage Analytics for AD FS](/azure/active-directory/hybrid/connect/how-to-connect-health-adfs#usage-analytics-for-ad-fs). First, [enable auditing for AD FS](/azure/active-directory/hybrid/connect/how-to-connect-health-agent-install#enable-auditing-for-ad-fs). Before you decomission the AD FS farm, ensure there is no AD FS activity. Use the [AD FS decommission guide](/windows-server/identity/ad-fs/decommission/adfs-decommission-guide) and the [AD FS decommission reference](/windows-server/identity/ad-fs/ad-fs-decommission). Here is a summary of key decommission steps.
+Monitor AD FS activity from [Connect Health Usage Analytics for AD FS](/azure/active-directory/hybrid/connect/how-to-connect-health-adfs#usage-analytics-for-ad-fs). First, [enable auditing for AD FS](/azure/active-directory/hybrid/connect/how-to-connect-health-agent-install#enable-auditing-for-ad-fs). Before you decommission the AD FS farm, ensure there's no AD FS activity. Use the [AD FS decommission guide](/windows-server/identity/ad-fs/decommission/adfs-decommission-guide) and the [AD FS decommission reference](/windows-server/identity/ad-fs/ad-fs-decommission). Here's a summary of key decommission steps.
 
 1. Make a [final backup](/windows-server/identity/ad-fs/operations/ad-fs-rapid-restore-tool#create-a-backup) before decommissioning AD FS servers.
 1. Remove AD FS entries from internal and external load balancers.
