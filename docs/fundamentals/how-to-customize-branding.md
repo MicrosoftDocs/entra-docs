@@ -1,15 +1,13 @@
 ---
 title: Add company branding to your organization's sign-in page
 description: Instructions about how to add your organization's custom branding to the Microsoft Entra sign-in experience.
-services: active-directory
 author: shlipsey3
 manager: amycolannino
 
 ms.service: active-directory
-ms.workload: identity
 ms.subservice: fundamentals
 ms.topic: how-to
-ms.date: 11/29/2023
+ms.date: 02/01/2024
 ms.author: sarahlipsey
 ms.reviewer: almars
 ---
@@ -26,11 +24,9 @@ The default sign-in experience is the global look and feel that applies across a
 
 Adding custom branding requires one of the following licenses:
 
-- Microsoft Entra ID P1 or P2
-- Microsoft Entra ID P1 or P2
-- Office 365 (for Office apps)
-
-For more information about licensing and editions, see the [Sign up for Microsoft Entra ID P1 or P2](./get-started-premium.md) article.
+- [Microsoft Entra ID P1 or P2](/security/business/microsoft-entra-pricing)
+- [Microsoft 365 Business Standard](/microsoft-365/business/)
+- [SharePoint (Plan 1)](/microsoft-365/sharepoint/compare-sharepoint-plans)
 
 Microsoft Entra ID P1 or P2 editions are available for customers in China using the worldwide instance of Microsoft Entra ID. Microsoft Entra ID P1 or P2 editions aren't currently supported in the Azure service operated by 21Vianet in China.
 
