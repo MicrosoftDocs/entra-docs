@@ -8,7 +8,7 @@ ms.service: active-directory
 ms.subservice: app-proxy
 ms.workload: identity
 ms.topic: how-to
-ms.date: 01/18/2024
+ms.date: 02/01/2024
 ms.author: kenwith
 ms.reviewer: ashishj
 ms.custom: contperf-fy21q2
