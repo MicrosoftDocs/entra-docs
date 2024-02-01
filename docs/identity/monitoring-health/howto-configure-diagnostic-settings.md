@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: active-directory
 ms.topic: how-to
 ms.subservice: report-monitor
-ms.date: 01/26/2024
+ms.date: 02/01/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
 
@@ -28,7 +28,8 @@ To configure diagnostic settings, you need:
 
 - An Azure subscription. If you don't have an Azure subscription, you can [sign up for a free trial](https://azure.microsoft.com/free/).
 - A Microsoft Entra ID P1 or P2 tenant.
-- **Security Administrator** access for the Microsoft Entra tenant. For more information about least privilege in our documentation, see [Get the most out of documentation](/entra/fundamentals/how-to-navigate).
+- **Security Administrator** access to create general diagnostic settings for the Microsoft Entra tenant.
+- **Attribute Log Administrator** access to create diagnostic settings for [custom security attribute](../../fundamentals/custom-security-attributes-overview.md) logs.
 - A destination that is already set up. For example, if you want to stream logs to an event hub, you need to create the event hub before you can configure the diagnostic settings.
 
 ## How to access diagnostic settings
@@ -36,10 +37,17 @@ To configure diagnostic settings, you need:
 [!INCLUDE [portal update](../../includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator).
-1. Browse to **Identity** > **Monitoring & health** > **Diagnostic settings**.
+1. Browse to **Identity** > **Monitoring & health** > **Diagnostic settings**. The **General** settings appear by default.
 1. Any existing diagnostic settings that have already been configured appear in the table. Select **edit settings** to change an existing setting, or select **Add diagnostic setting** to create a new setting.
 
     ![Screenshot of the Microsoft Entra diagnostic settings page.](media/howto-configure-diagnostic-settings/diagnostic-settings-start.png)
+
+To configure diagnostic settings for the custom security attribute audit logs, select **Custom security attributes**. You must have the **Attribute Log Administrator** role active to view this page. The process to configure diagnostic settings is the same for both categories of logs.
+
+![Screenshot of the custom security attributes page for diagnostic settings.](media/howto-configure-diagnostic-settings/custom-security-attributes.png)
+
+> [!TIP]
+> Microsoft recommends that you keep your custom security attribute audit logs separate from your directory audit logs so that attribute assignments are not revealed inadvertently.
 
 ### Log categories
 
