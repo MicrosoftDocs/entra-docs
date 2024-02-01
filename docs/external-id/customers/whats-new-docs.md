@@ -19,24 +19,24 @@ Welcome to what's new in Microsoft Entra ID for customers documentation. This ar
 
 ### Updated articles
 
-- [Tutorial: Prepare your customer tenant to authenticate users in a .NET browserless app](tutorial-browserless-app-dotnet-sign-in-prepare-tenant.md) - Browserless, desktop, mobile, web app modifications
-- [Tutorial: Prepare your customer tenant to sign in user in .NET WPF application](tutorial-desktop-wpf-dotnet-sign-in-prepare-tenant.md) - Browserless, desktop, mobile, web app modifications
-- [Tutorial: Prepare an ASP.NET Core web app for authentication in a customer tenant](tutorial-web-app-dotnet-sign-in-prepare-app.md) - Browserless, desktop, mobile, web app modifications
-- [Tutorial: Add sign-in and sign-out to an ASP.NET Core web application for a customer tenant](tutorial-web-app-dotnet-sign-in-sign-out.md) - Browserless, desktop, mobile, web app modifications
-- [Security and governance in Microsoft Entra ID for customers](concept-security-customers.md) - Intro to CA
+- [Tutorial: Prepare your customer tenant to authenticate users in a .NET browserless app](tutorial-browserless-app-dotnet-sign-in-prepare-tenant.md) - Minor updates
+- [Tutorial: Prepare your customer tenant to sign in user in .NET WPF application](tutorial-desktop-wpf-dotnet-sign-in-prepare-tenant.md) - Minor updates
+- [Tutorial: Prepare an ASP.NET Core web app for authentication in a customer tenant](tutorial-web-app-dotnet-sign-in-prepare-app.md) - Minor updates
+- [Tutorial: Add sign-in and sign-out to an ASP.NET Core web application for a customer tenant](tutorial-web-app-dotnet-sign-in-sign-out.md) - Minor updates
+- [Security and governance in Microsoft Entra ID for customers](concept-security-customers.md) - Intro to Conditional Access
 - [Using role-based access control for applications](how-to-use-app-roles-customers.md) - Added link to the Woodgrove live demo
 - [Overview of the Woodgrove Groceries demo](overview-solutions-customers.md) - Added link to the Woodgrove live demo
 - [Call a web API in a Node.js web application](how-to-web-app-node-sign-in-call-api-call-api.md) - Rewrote call an API for Node web app to build upon from sign in users tutorial
 - [Create a Node.js web app to call an API](how-to-web-app-node-sign-in-call-api-prepare-app.md) - Rewrote call an API for Node web app to build upon from sign in users tutorial
-- [Prepare customer tenant for calling an API in a Node.js web application](how-to-web-app-node-sign-in-call-api-prepare-tenant.md) - Rewrote call an API for Node web app to build upon from sign in users tutorial
-- [Acquire an access token in your Node.js web app](how-to-web-app-node-sign-in-call-api-sign-in-acquire-access-token.md) - Rewrote call an API for Node web app to build upon from sign in users tutorial
-- [Tutorial: Prepare a Node.js CLI application for authentication](tutorial-cli-app-node-sign-in-prepare-app.md) - Vanilla JS, Angular, React, .NET CLI, Daemon tutorial clarifications
-- [Tutorial: Prepare your customer tenant to sign in users in a Node.js CLI app](tutorial-cli-app-node-sign-in-prepare-tenant.md) - Vanilla JS, Angular, React, .NET CLI, Daemon tutorial clarifications
-- [Tutorial: Call a protected web API from your .NET daemon app](tutorial-daemon-dotnet-call-api-build-app.md) - Vanilla JS, Angular, React, .NET CLI, Daemon tutorial clarifications
-- [Tutorial: Prepare your customer tenant to authorize a .NET daemon application](tutorial-daemon-dotnet-call-api-prepare-tenant.md) - Vanilla JS, Angular, React, .NET CLI, Daemon tutorial clarifications
-- [Tutorial: Call a web API from your Node.js daemon application](tutorial-daemon-node-call-api-build-app.md) - Vanilla JS, Angular, React, .NET CLI, Daemon tutorial clarifications
-- [Tutorial: Prepare your customer tenant to authenticate users in a React SPA](tutorial-single-page-app-react-sign-in-prepare-tenant.md) - Vanilla JS, Angular, React, .NET CLI, Daemon tutorial clarifications
-- [Tutorial: Add sign-in and sign-out to a React SPA for a customer tenant](tutorial-single-page-app-react-sign-in-sign-out.md) - Vanilla JS, Angular, React, .NET CLI, Daemon tutorial clarifications
+- [Prepare customer tenant for calling an API in a Node.js web application](how-to-web-app-node-sign-in-call-api-prepare-tenant.md) - Rewrote call an API
+- [Acquire an access token in your Node.js web app](how-to-web-app-node-sign-in-call-api-sign-in-acquire-access-token.md) - Rewrote call an API 
+- [Tutorial: Prepare a Node.js CLI application for authentication](tutorial-cli-app-node-sign-in-prepare-app.md) - Minor tutorial clarifications
+- [Tutorial: Prepare your customer tenant to sign in users in a Node.js CLI app](tutorial-cli-app-node-sign-in-prepare-tenant.md) - Minor tutorial clarifications
+- [Tutorial: Call a protected web API from your .NET daemon app](tutorial-daemon-dotnet-call-api-build-app.md) - Minor tutorial clarifications
+- [Tutorial: Prepare your customer tenant to authorize a .NET daemon application](tutorial-daemon-dotnet-call-api-prepare-tenant.md) - Minor tutorial clarifications
+- [Tutorial: Call a web API from your Node.js daemon application](tutorial-daemon-node-call-api-build-app.md) - Minor tutorial clarifications
+- [Tutorial: Prepare your customer tenant to authenticate users in a React SPA](tutorial-single-page-app-react-sign-in-prepare-tenant.md) - Minor tutorial clarifications
+- [Tutorial: Add sign-in and sign-out to a React SPA for a customer tenant](tutorial-single-page-app-react-sign-in-sign-out.md) - Minor tutorial clarifications
 
 ## December 2023
 
