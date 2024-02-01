@@ -368,7 +368,7 @@ This is a [privileged role](privileged-roles-permissions.md). Assign the Authent
 Users with this role **cannot** do the following:
 
 - Cannot change the credentials or reset MFA for members and owners of a [role-assignable group](groups-concept.md).
-- Cannot manage MFA settings in the legacy MFA management portal or Hardware OATH tokens. The same functions can be accomplished using the [Microsoft Entra admin center](https://entra.microsoft.com). For more information, see [Update per-user MFA](~/authentication/howto-mfa-userstates.md).
+- Cannot manage MFA settings in the legacy MFA management portal or Hardware OATH tokens.
 
 [!INCLUDE [authentication-table-include](./includes/authentication-table-include.md)]
 
@@ -2061,7 +2061,7 @@ This is a [privileged role](privileged-roles-permissions.md). Assign the Privile
 
 Users with this role **cannot** do the following:
 
-- Cannot manage per-user MFA in the legacy MFA management portal. The same functions can be accomplished using the [Microsoft Entra admin center](https://entra.microsoft.com). For more information, see [Update per-user MFA](~/authentication/howto-mfa-userstates.md).
+- Cannot manage per-user MFA in the legacy MFA management portal.
 
 [!INCLUDE [authentication-table-include](./includes/authentication-table-include.md)]
 
