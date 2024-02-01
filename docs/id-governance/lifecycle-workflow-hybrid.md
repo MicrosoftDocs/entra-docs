@@ -66,7 +66,7 @@ Required. Lead with a light intro that describes what the article covers. Answer
 
 -->
 
-Lifecycle Workflows allow you to create workflows that can be triggered for users based on joiner, mover, or leaver scenarios. With hybrid support, you are able to trigger these workflows for users synced from on-premises Active Directory to Microsoft Entra ID. This is accomplished by allowing you to create a task enabling an on-premises user account, so that you are able to run other tasks in a workflow for the user. You are also able to disable, or even delete, a user account when they are no longer active in your organization. This allows you to use workflows to automate tasks across the lifecycle of users in your hybrid environment. Using Lifecycle Workflows with hybrid users requires additional prerequisites. For more information on these prerequisites, see: [Prerequisites](manage-workflow-onprem.md#prerequisites)
+Lifecycle Workflows allow you to create workflows that can be triggered for users based on joiner, mover, or leaver scenarios. With hybrid support, you are able to trigger these workflows for users synced from on-premises Active Directory to Microsoft Entra ID. This is accomplished by allowing you to create a task enabling an on-premises user account, so that you are able to run other tasks in a workflow for the user. You are also able to disable, or even delete, a user account when they are no longer active in your organization. This allows you to use workflows to automate tasks across the lifecycle of users in your hybrid environment. Using Lifecycle Workflows with hybrid users requires additional prerequisites. For a step by step guide on creating a task for hybrid users, see: [Manage synced on-premises users with workflows](manage-workflow-onprem.md).
 
 <!-- 3. Prerequisites --------------------------------------------------------------------
 
@@ -86,6 +86,8 @@ With Lifecycle Workflow's hybrid-specific tasks, you are able to set a flag on t
 The respective flags can be found on their task screen:
 
 :::image type="content" source="media/lifecycle-workflow-hybrid/delete-onprem-user.png" alt-text="Screenshot of delete user onprem flag in task.":::
+
+For more information on these tasks, see: [Lifecycle Workflow built-in tasks](lifecycle-workflow-tasks.md).
 
 ## Hybrid Prerequisites
 
