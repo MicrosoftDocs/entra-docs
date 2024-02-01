@@ -176,10 +176,10 @@
       href: index-web-app.yml
     - name: Quickstart
       items: 
-        - name: ASP.NET Core
-          href: quickstart-web-app-dotnet-core-sign-in.md
         - name: ASP.NET 
           href: quickstart-web-app-aspnet-sign-in.md
+        - name: ASP.NET Core
+          href: quickstart-web-app-dotnet-core-sign-in.md
         - name: Node.js - MSAL
           href: quickstart-web-app-nodejs-msal-sign-in.md
         - name: Java
@@ -263,13 +263,13 @@
           href: quickstart-web-api-aspnet-core-protect-api.md
     - name: Tutorials
       items:
-        - name: ASP.NET
+        - name: ASP.NET Core
           items: 
-          - name: 1 - Register the API
+          - name: Register the API
             href: tutorial-web-api-dotnet-register-app.md
-          - name: 2 - Create and configure project 
+          - name: Create and configure project 
             href: tutorial-web-api-dotnet-prepare-app.md
-          - name: 3 - Protect API endpoint
+          - name: Protect API endpoint
             href: tutorial-web-api-dotnet-protect-endpoint.md
     - name: Samples
       displayName: code samples, example code, code snippets
