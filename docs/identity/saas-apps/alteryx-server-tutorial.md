@@ -128,13 +128,13 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
 
 1. Select **SAML Authentication** as the **Authentication Type** and perform the following steps:
 
-1. There are 2 options to configure SAML in server. In **Select an option for obtaining metadata required by the IDP**, select either **IDP Metadata URL** or **X509 certificate and IDP SSO URL**
+1. There are two options to configure SAML in server. In **Select an option for obtaining metadata required by the IDP**, select either **IDP Metadata URL** or **X509 certificate and IDP SSO URL**
 
-    1. If you **IDP Metadata URL**, perform the following steps:
+    1. If you selected **IDP Metadata URL**, perform the following steps:
 
         ![Screenshot shows the Configuration.](./media/alteryx-server-tutorial/configure.png "Configuration")
 
-        1. The **ACS Base URL** field will auto-populate and get configured with HTTPS.
+        1. The **ACS Base URL** field will autopopulate and get configured with HTTPS.
 
         1. In the **IDP URL** field, paste the **Microsoft Entra Identifier**, which you have copied from the Microsoft Entra admin center.
 
