@@ -24,9 +24,9 @@ The default sign-in experience is the global look and feel that applies across a
 
 Adding custom branding requires one of the following licenses:
 
-- [Microsoft Entra ID P1 or P2](/security/business/microsoft-entra-pricing)
+- [Microsoft Entra ID P1 or P2](/security/business/microsoft-entra-pricing/)
 - [Microsoft 365 Business Standard](/microsoft-365/business/)
-- [SharePoint (Plan 1)](/microsoft-365/sharepoint/compare-sharepoint-plans)
+- [SharePoint (Plan 1)](/microsoft-365/sharepoint/compare-sharepoint-plans/)
 
 Microsoft Entra ID P1 or P2 editions are available for customers in China using the worldwide instance of Microsoft Entra ID. Microsoft Entra ID P1 or P2 editions aren't currently supported in the Azure service operated by 21Vianet in China.
 
@@ -36,7 +36,7 @@ The **Global Administrator** role is required to customize company branding.
 
 **All branding elements are optional. Default settings will remain, if left unchanged.** For example, if you specify a banner logo but no background image, the sign-in page shows your logo with a default background image from the destination site such as Microsoft 365. Additionally, sign-in page branding doesn't carry over to personal Microsoft accounts. If your users or guests authenticate using a personal Microsoft account, the sign-in page doesn't reflect the branding of your organization.
 
-**Images have different image and file size requirements.** Take note of the image requirements for each option. You may need to use a photo editor to create the right size images. The preferred image type for all images is PNG, but JPG is accepted. 
+**Images have different image and file size requirements.** The image requirements for each option aren't listed in this article. We recommend you review the company branding process to gather the requirements you need. You might need to use a photo editor to create the right size images. The preferred image type for all images is PNG, but JPG is accepted. 
 
 **Use Microsoft Graph with Microsoft Entra company branding.** Company branding can be viewed and managed using Microsoft Graph on the `/beta` endpoint and the `organizationalBranding` resource type. For more information, see the [organizational branding API documentation](/graph/api/resources/organizationalbranding?view=graph-rest-beta&preserve-view=true).
 
@@ -74,12 +74,12 @@ In the following examples, replace the contoso.com with your own tenant name, or
 
 - For Microsoft Outlook `https://outlook.com/contoso.com` 
 - For SharePoint online `https://contoso.sharepoint.com`
-- For my app portal `https://myapps.microsoft.com/?whr=contoso.com` 
+- For My Apps portal `https://myapps.microsoft.com/?whr=contoso.com` 
 - Self-service password reset `https://passwordreset.microsoftonline.com/?whr=contoso.com`
 
 For B2B collaboration end-users who perform cross-tenant sign-ins, their home tenant branding appears, even if there isn't custom branding specified.
 
-In the following example, the company branding for Woodgrove Groceries appears on the left. The example on the right displays the default branding for the user's home tenant.
+In the following example, the company branding for Woodgrove Groceries appears on the left, with the Woodgrove logo, fonts, and custom text. The example on the right displays the default branding for the user's home tenant. The default branding displays the Microsoft logo, fonts, and text.
 
 :::image type="content" source="media/how-to-customize-branding/b2b-comparison.png" alt-text="Screenshot of comparison of the branded sign-in experience and the default sign-in experience.":::
 
@@ -94,7 +94,7 @@ In the following example, the company branding for Woodgrove Groceries appears o
 
    :::image type="content" source="media/how-to-customize-branding/customize-branding-getting-started.png" alt-text="Screenshot of Custom branding landing page with Company branding highlighted in the side menu and Configure button." lightbox="media/how-to-customize-branding/customize-branding-getting-started.png":::
 
-The sign-in experience process is grouped into sections. At the end of each section, select the **Review + create** button to review what you have selected and submit your changes or the **Next** button to move to the next section.
+The sign-in experience process is grouped into sections. At the end of each section, select the **Review + create** button to review what you selected and submit your changes or the **Next** button to move to the next section.
 
 :::image type="content" source="media/how-to-customize-branding/customize-branding-buttons.png" alt-text="Screenshot of Review + create and Next: Layout buttons from the bottom of the configure custom branding page.":::
 
@@ -104,7 +104,7 @@ The sign-in experience process is grouped into sections. At the end of each sect
 
    :::image type="content" source="media/how-to-customize-branding/favicon-example.png" alt-text="Screenshot of sample favicons in a web browser.":::
 
-- **Background image**: Select a PNG or JPG to display as the main image on your sign-in page. This image scales and crops according to the window size, but the sign-in prompt may partially block it.
+- **Background image**: Select a PNG or JPG to display as the main image on your sign-in page. This image scales and crops according to the window size, but the sign-in prompt might partially block it.
 
 - **Page background color**: If the background image isn't able to load because of a slower connection, your selected background color appears instead.
 
@@ -156,7 +156,7 @@ If you haven't enabled the footer, go to the **Layout** section and select **Sho
 
 - **Sign-in page text**: Enter text that appears on the bottom of the sign-in page. You can use this text to communicate additional information, such as the phone number to your help desk or a legal statement. This page is public, so don't provide sensitive information here. This text must be Unicode and can't exceed 1024 characters.
 
-    To begin a new paragraph, use the enter key twice. You can also change text formatting to include bold, italics, an underline, or clickable link. Use the following syntax to add formatting to text: 
+    To begin a new paragraph, press the enter key twice. You can also change text formatting to include bold, italics, an underline, or clickable link. Use the following syntax to add formatting to text: 
 
     - Hyperlink: `[text](link)` 
     - Bold: `**text**` or `__text__`
@@ -174,7 +174,7 @@ If you haven't enabled the footer, go to the **Layout** section and select **Sho
 
 ### Review
 
-All of the available options appear in one list so you can review everything you've customized or left at the default setting. When you're done, select the **Create** button. 
+All of the available options appear in one list so you can review everything you customized or left at the default setting. When you're done, select the **Create** button. 
 
 Once your default sign-in experience is created, select the **Edit** button to make any changes. You can't delete a default sign-in experience after it's created, but you can remove all custom settings.
 
