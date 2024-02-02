@@ -5,7 +5,7 @@ author: Dickson-Mwendia
 manager: CelesteDG
 ms.author: dmwendia
 ms.custom: 
-ms.date: 10/30/2019
+ms.date: 02/01/2024
 ms.reviewer: jmprieur
 ms.service: active-directory
 ms.subservice: develop
@@ -63,7 +63,7 @@ Try the quickstart [Acquire a token and call Microsoft Graph API from a Java con
 
 # [Python](#tab/python)
 
-Try the quickstart [Acquire a token and call Microsoft Graph API from a Python console app using app's identity](quickstart-v2-python-daemon.md).
+Try the quickstart [Acquire a token and call Microsoft Graph API from a Python console app using app's identity](quickstart-daemon-app-python-acquire-token.md).
 
 ---
 
