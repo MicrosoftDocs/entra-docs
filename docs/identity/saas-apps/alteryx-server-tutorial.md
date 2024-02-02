@@ -73,7 +73,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 1. On the **Basic SAML Configuration** section, perform the following steps:
 
     a. In the **Identifier** text box, type a URL using the following pattern:
-    `https://<CustomerName>.domain.extension/webapi/Saml2`
+    `https://<CustomerName>.<DOMAIN>.<EXTENSION>/webapi/Saml2`
 
     b. In the **Reply URL** text box, type a URL using the following pattern:
     `https://<CustomerName>.<DOMAIN>.<EXTENSION>/webapi/Saml2/acs`
@@ -81,7 +81,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 1. Perform the following step, if you wish to configure the application in **SP** initiated mode:
 
     In the **Sign-on URL** text box, type a URL using the following pattern:
-    `https://<CustomerName>.domain.extension/webapi/saml2/signin`
+    `https://<CustomerName>.<DOMAIN>.<EXTENSION>/webapi/saml2/signin`
 
 	> [!NOTE]
 	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [Alteryx Server support team](mailto:support@alteryx.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
@@ -120,27 +120,25 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
 
 1. Log in to Alteryx Server company site as an administrator.
 
-1. Go to **System Settings** > **Server UI** > **General** and select **Enable Server UI SSL/TLS** to make sure SSL is enabled. You must have a certificate installed on the Server; for more information go to [Configuring Alteryx Server for SSL: Obtaining and Installing Certificates.](https://knowledge.alteryx.com/index/s/article/Configuring-Alteryx-Server-for-SSL-Obtaining-and-Installing-Certificates-1583459841225)
+1. Go to **System Settings** > **Server UI** > **General** and select **Enable Server UI SSL/TLS** to make sure SSL is enabled. You must have a certificate installed on the Server. For more information, please refer [Configuring Alteryx Server for SSL: Obtaining and Installing Certificates.](https://knowledge.alteryx.com/index/s/article/Configuring-Alteryx-Server-for-SSL-Obtaining-and-Installing-Certificates-1583459841225)
 
     ![Screenshot shows Settings for the configuration.](./media/alteryx-server-tutorial/settings.png "Settings")
 
-1. Navigate to **System Settings** > **Server UI** > **Authentication**.
+1. Navigate to **System Settings** > **Server UI** > **Authentication** and perform the following steps.
 
-1. Select **SAML Authentication** as the **Authentication Type** and perform the following steps:
+    ![Screenshot shows the Configuration.](./media/alteryx-server-tutorial/configure.png "Configuration")
 
-1. There are two options to configure SAML in server. In **Select an option for obtaining metadata required by the IDP**, select either **IDP Metadata URL** or **X509 certificate and IDP SSO URL**
+    1. Select **SAML Authentication** as the **Authentication Type**.
 
-    1. If you selected **IDP Metadata URL**, perform the following steps:
+    1. Select either **IDP Metadata URL** or **X509 certificate and IDP SSO URL** according to your requirement.
 
-        ![Screenshot shows the Configuration.](./media/alteryx-server-tutorial/configure.png "Configuration")
+    1. The **ACS Base URL** field will autopopulate and get configured with HTTPS.
 
-        1. The **ACS Base URL** field will autopopulate and get configured with HTTPS.
+    1. In the **IDP URL** field, paste the **Microsoft Entra Identifier**, which you have copied from the Microsoft Entra admin center.
 
-        1. In the **IDP URL** field, paste the **Microsoft Entra Identifier**, which you have copied from the Microsoft Entra admin center.
+    1. In the **IDP Metadata URL** field, paste the **App Federation Metadata Url**, which you have copied from the Microsoft Entra admin center.
 
-        1. In the **IDP Metadata URL** field, paste the **App Federation Metadata Url**, which you have copied from the Microsoft Entra admin center.
-
-        1. Click **Verify IDP**.
+    1. Click **Verify IDP**.
 
 ### Create Alteryx Server test user
 
