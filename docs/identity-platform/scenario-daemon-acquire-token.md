@@ -4,7 +4,7 @@ description: Learn how to build a daemon app that calls web APIs (acquiring toke
 author: Dickson-Mwendia
 manager: CelesteDG
 ms.author: dmwendia
-ms.date: 05/12/2022
+ms.date: 02/01/2024
 ms.reviewer: jmprieur
 ms.service: active-directory
 ms.subservice: develop
