@@ -32,7 +32,7 @@ To use security keys for logging in to web apps and services, you must have a br
 These include Microsoft Edge, Chrome, Firefox, and Safari. For more information, see [Browser support of FIDO2 passwordless authentication](fido2-compatibility.md).
 
 >[!NOTE]
->Passkeys (FIDO2) stored on mobile devices along with registering and signing in via WebAuthn QR code is not yet supported by Entra ID.
+>Passkeys (FIDO2) stored on computers and mobile devices along with registering and signing in via WebAuthn QR code is not yet supported by Entra ID.
 
 ## Prepare devices
 
