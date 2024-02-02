@@ -5,7 +5,7 @@ author: Dickson-Mwendia
 manager: CelesteDG
 ms.author: dmwendia
 ms.custom: 
-ms.date: 01/15/2023
+ms.date: 01/15/2024
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
