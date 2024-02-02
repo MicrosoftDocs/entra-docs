@@ -132,6 +132,8 @@
         href: alohi-tutorial.md
       - name: Altamira HRM
         href: altamira-hrm-tutorial.md
+      - name: Alteryx Server
+        href: alteryx-server-tutorial.md
       - name: Altoura
         href: altoura-tutorial.md
       - name: Amazing People Schools
@@ -1127,6 +1129,8 @@
         href: google-apps-tutorial.md
       - name: GaggleAMP
         href: gaggleamp-tutorial.md
+      - name: Genius
+        href: genius-tutorial.md
       - name: Getabstract
         href: getabstract-tutorial.md
       - name: GetThere
@@ -1145,6 +1149,8 @@
         href: github-enterprise-cloud-enterprise-account-tutorial.md  
       - name: GitHub Enterprise Managed User
         href: github-enterprise-managed-user-tutorial.md
+      - name: GitHub Enterprise Managed User - ghe.com
+        href: github-enterprise-managed-user-ghe-com-tutorial.md
       - name: GlassFrog
         href: glassfrog-tutorial.md
       - name: Glia Hub
@@ -2811,6 +2817,8 @@
         href: trend-micro-tutorial.md
       - name: TrendMiner
         href: trendminer-tutorial.md
+      - name: Trevanna Tracks
+        href: trevanna-tracks-tutorial.md
       - name: Tribeloo
         href: tribeloo-tutorial.md
       - name: Navan
