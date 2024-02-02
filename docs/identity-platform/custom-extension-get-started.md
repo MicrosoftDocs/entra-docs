@@ -30,11 +30,12 @@ This how-to guide demonstrates the token issuance start event with a REST API ru
 
 ## Prerequisites
 
-- Before following this article, read the [custom authentication extensions](custom-extension-overview.md) overview.
+- An basic understanding of the concepts covered in [Custom authentication extensions overview](custom-extension-overview.md).
 
-- To use Azure services, including Azure Functions, you need an Azure subscription. If you don't have an existing Azure account, you may sign up for a [free trial](https://azure.microsoft.com/free/dotnet/) or use your [Visual Studio Subscription](https://visualstudio.microsoft.com/subscriptions/) benefits when you [create an account](https://account.windowsazure.com/Home/Index).
+- An Azure subscription with the ability to create Azure Functions. If you don't have an existing Azure account, you may sign up for a [free trial](https://azure.microsoft.com/free/dotnet/) or use your [Visual Studio Subscription](https://visualstudio.microsoft.com/subscriptions/) benefits when you [create an account](https://account.windowsazure.com/Home/Index).
 
 - A Microsoft Entra ID tenant. You can use either a customer or workforce tenant for this how-to guide.
+    - For customer tenants, you'll need a [sign-up and sign-in user flow](~/external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md).
 
 ## Step 1: Create an Azure Function app
 
@@ -44,44 +45,42 @@ In this step, you create an HTTP trigger function API in the Azure portal. The f
 
 1. Sign in to the [Azure portal](https://portal.azure.com) with your administrator account.
 1. From the Azure portal menu or the **Home** page, select **Create a resource**.
-1. In the **New** page, select **Compute** > **Function App**.
-1. On the **Basics** page, use the function app settings as specified in the following table:
+1. Search for or select **Function App** and select **Create**
+1. On the **Basics** page, create a function app using the settings as specified in the following table:
 
     | Setting      | Suggested value  | Description |
     | ------------ | ---------------- | ----------- |
     | **Subscription** | Your subscription | The subscription under which the new function app will be created in. |
     | **[Resource Group](/azure/azure-resource-manager/management/overview)** |  *myResourceGroup* | Select and existing resource group, or name for the new one in which you'll create your function app. |
     | **Function App name** | Globally unique name | A name that identifies the new function app. Valid characters are `a-z` (case insensitive), `0-9`, and `-`.  |
-    |**Publish**| Code | Option to publish code files or a Docker container. For this tutorial, select **Code**. |
+    |**Deploy code or container image**| Code | Option to publish code files or a Docker container. For this tutorial, select **Code**. |
     | **Runtime stack** | .NET | Your preferred programming language. For this tutorial, select **.NET**.  |
     |**Version**| 6 | Version of the .NET runtime. |
     |**Region**| Preferred region | Select a [region](https://azure.microsoft.com/regions/) that's near you or near other services that your functions can access. |
     | **Operating System** | Windows | The operating system is pre-selected for you based on your runtime stack selection. |
     | **Plan type** | Consumption (Serverless) | Hosting plan that defines how resources are allocated to your function app.  |
 
-1. Select **Review + create** to review the app configuration selections and then select **Create**.
+1. Select **Review + create** to review the app configuration selections and then select **Create**. Deployment takes a few minutes.
 
-1. Select the **Notifications** icon in the upper-right corner of the portal and watch for the **Deployment succeeded** message. Then, select **Go to resource** to view your new function app.
+1. Using either the **Notifications** icon in the upper-right corner of the portal or the screen you've been directed to, watch for the **Deployment succeeded** message. Then, select **Go to resource** to view your new function app.
 
 ### 1.1 Create an HTTP trigger function
 
 After the Azure Function app is created, create an HTTP trigger function. The HTTP trigger lets you invoke a function with an HTTP request. This HTTP trigger will be referenced and called by your Microsoft Entra custom authentication extension.
 
-1. Within your **Function App**, from the menu select **Functions**.
+1. Within the **Overview** page of your function app**, scroll down to the **Functions** pane and select **Create function**.
 1. From the top menu, select **+ Create**.
-1. In the **Create Function** window, leave the **Development environment** property as **Develop in portal**, and then select the **HTTP trigger** template.
+1. In the **Create Function** window, leave the **Development environment** property as **Develop in portal**. Under **Template**, select **HTTP trigger**.
 1. Under **Template details**, enter *CustomAuthenticationExtensionsAPI* for the **New Function** property.
 1. For the **Authorization level**, select **Function**.
-1. Select **Create**
-
-The following screenshot demonstrates how to configure the Azure HTTP trigger function.
+1. Select **Create**.
 
 :::image type="content" border="false"source="media/custom-extension-get-started/create-http-trigger-function.png" alt-text="Screenshot that shows how to choose the development environment, and template." lightbox="media/custom-extension-get-started/create-http-trigger-function.png":::
 
 ### 1.2 Edit the function
 
-1. From the menu, select **Code + Test**
-1. Replace the entire code with the following code snippet.
+1. From the menu, under **Developer**, select **Code + Test**.
+1. Replace the entire code with the following snippet, then select **Save**.
 
     ```csharp
     #r "Newtonsoft.Json"
@@ -156,7 +155,7 @@ The following screenshot demonstrates how to configure the Azure HTTP trigger fu
 
     The code starts with reading the incoming JSON object. Microsoft Entra ID sends the [JSON object](./custom-claims-provider-reference.md) to your API. In this example, it reads the correlation ID value. Then, the code returns a collection of claims, including the original correlation ID, the version of your Azure Function, date of birth and custom role that is returned to Microsoft Entra ID.
 
-1. From the top menu, select **Get Function Url**, and copy the URL. In the next step, the function URL will be used and referred to as `{Function_Url}`.
+1. From the top menu, select **Get Function Url**, and copy the **URL** value. In the next step, the function URL will be used and referred to as `{Function_Url}`. It's a good idea to leave your Azure portal window open, as it'll be used again in later steps.
 
 ## Step 2: Register a custom authentication extension
 
@@ -166,8 +165,8 @@ In this step, you configure a custom authentication extension, which will be use
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-developer) and [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
-1. Select **Custom authentication extensions**, and then select **Create a custom authentication extension**.
-1. In **Basics**, select the **tokenIssuanceStart** event and select **Next**.
+1. Select **Custom authentication extensions**, and then select **Create a custom extension**.
+1. In **Basics**, select the **TokenIssuanceStart** event and select **Next**.
 1. In **Endpoint Configuration**, fill in the following properties:
 
     - **Name** - A name for your custom authentication extension. For example, *Token issuance event*.
@@ -293,13 +292,12 @@ Next, you register the custom authentication extension. You register the custom 
 
 ### 2.2 Grant admin consent
 
-After your custom authentication extension is created, open the **Overview** tab of the new custom authentication extension.
+After your custom authentication extension is created, you need to grant permissions to the API. The custom authentication extension uses `client_credentials` to authenticate to the Azure Function App using the `Receive custom authentication extension HTTP requests` permission.
 
-From the **Overview** page, select the **Grant permission** button to give admin consent to the registered app, which allows the custom authentication extension to authenticate to your API. The custom authentication extension uses `client_credentials` to authenticate to the Azure Function App using the `Receive custom authentication extension HTTP requests` permission.
+1. Open **Overview** page of your new custom authentication extension, select **Grant permission**. 
+1. A new window opens requesting permissions to the registered app, which allows the custom authentication extension to authenticate to your API. Select **Accept**. 
 
-The following screenshot shows how to grant permissions.
-
-:::image type="content" border="false"source="./media/custom-extension-get-started/custom-extensions-overview.png" alt-text="Screenshot that shows how grant admin consent." lightbox="media/custom-extension-get-started/custom-extensions-overview.png":::
+    :::image type="content" border="false"source="./media/custom-extension-get-started/custom-extensions-overview.png" alt-text="Screenshot that shows how grant admin consent." lightbox="media/custom-extension-get-started/custom-extensions-overview.png":::
 
 ## Step 3: Configure an OpenID Connect app to receive enriched tokens
 
@@ -310,20 +308,16 @@ Follow these steps to register the **jwt.ms** web application:
 ### 3.1 Register a test web application
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-developer).
-1. Browse to **Identity** > **Applications** > **Application registrations**.
+1. Browse to **Identity** > **Applications** > **App registrations**.
 1. Select **New registration**.
 1. Enter a **Name** for the application. For example, **My Test application**.
 1. Under **Supported account types**, select **Accounts in this organizational directory only**.
 1. In the **Select a platform** dropdown in **Redirect URI**, select **Web** and then enter `https://jwt.ms` in the URL text box.
 1. Select **Register** to complete the app registration.
 
-The following screenshot shows how to register the *My Test application*.
+    :::image type="content" border="false"source="media/custom-extension-get-started/register-test-web-application.png" alt-text="Screenshot that shows how to select the supported account type and redirect URI.":::
 
-:::image type="content" border="false"source="media/custom-extension-get-started/register-test-web-application.png" alt-text="Screenshot that shows how to select the supported account type and redirect URI.":::
-
-### 3.1 Get the application ID
-
-In your app registration, under **Overview**, copy the **Application (client) ID**. The app ID is referred to as the `{App_to_enrich_ID}` in later steps. In Microsoft Graph, it's referenced by the **appId** property.
+1. In the **Overview** page of your app registration, copy the **Application (client) ID**. The app ID is referred to as the `{App_to_enrich_ID}` in later steps. In Microsoft Graph, it's referenced by the **appId** property.
 
 :::image type="content" border="false"source="media/custom-extension-get-started/get-the-test-application-id.png" alt-text="Screenshot that shows how to copy the application ID.":::
 
@@ -348,14 +342,27 @@ The following JSON snippet demonstrates how to configure these properties.
 
 ```json
 {
-  "acceptMappedClaims": true,
-  "accessTokenAcceptedVersion": 2,
-  "appId": "22222222-0000-0000-0000-000000000000",
+	"id": "22222222-0000-0000-0000-000000000000",
+	"acceptMappedClaims": true,
+	"accessTokenAcceptedVersion": 2,  
+    ...
 }
 ```
 
 > [!WARNING]
 > Do not set `acceptMappedClaims` property to `true` for multi-tenant apps, which can allow malicious actors to create claims-mapping policies for your app. Instead [configure a custom signing key](/graph/application-saml-sso-configure-api#option-2-create-a-custom-signing-certificate).
+
+# [Customer tenant](#tab/customer-tenant)
+
+### 3.4 Associate your app with a user flow
+
+A user flow defines the authentication methods a customer can use to sign in to your application and the information they need to provide during sign-up. Complete the steps in [Add an application to a user flow](~/external-id/customers/how-to-user-add-application.md) before continuing.
+
+# [Workforce tenant](#tab/workforce-tenant)
+
+Continue to the next step, [Assign a custom claims provider to your app](#step-4-assign-a-custom-claims-provider-to-your-app).
+
+---
 
 ## Step 4: Assign a custom claims provider to your app
 
@@ -365,12 +372,12 @@ Follow these steps to connect the *My Test application* with your custom authent
 
 # [Microsoft Entra admin center](#tab/entra-admin-center)
 
-First assign the custom authentication extension as a custom claims provider source:
+To assign the custom authentication extension as a custom claims provider source;
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
-1. Under **Manage**, select **All applications**, and then select **My Test application**.
-1. Navigate to **Manage** again, and select **Single sign-on**.
+1. Under **Manage**, select **All applications**, and then select *My Test application* from the list.
+1. From the **Overview** page of *My Test application*, navigate to **Manage**, and select **Single sign-on**.
 1. Under **Attributes & Claims**, select **Edit**.
 
     :::image type="content" border="false"  source="./media/custom-extension-get-started/open-id-connect-based-sign-on.png" alt-text="Screenshot that shows how to configure app claims." lightbox="./media/custom-extension-get-started/open-id-connect-based-sign-on.png":::
@@ -382,13 +389,13 @@ First assign the custom authentication extension as a custom claims provider sou
 
 Next, assign the attributes from the custom claims provider, which should be issued into the token as claims:
 
-1. Select **Add new claim** to add a new claim. Provide a name to the claim you want to be issued, for example **dateOfBirth**.
-1. Under **Source**, select `Attribute`, and choose `customClaimsProvider.DateOfBirth` from the **Source attribute** drop-down box.
+1. Select **Add new claim** to add a new claim. Provide a name to the claim you want to be issued, for example *dateOfBirth*.
+1. Under **Source**, select **Attribute**, and choose *customClaimsProvider.dateOfBirth* from the **Source attribute** drop-down box.
 
     :::image type="content" border="false"  source="media/custom-extension-get-started/manage-claim.png" alt-text="Screenshot that shows how to add a claim mapping to your app." lightbox="media/custom-extension-get-started/manage-claim.png":::
 
 1. Select **Save**.
-1. You can repeat this process to add the `customClaimsProvider.customRoles`, `customClaimsProvider.apiVersion` and `customClaimsProvider.correlationId` attributes, and the corresponding name. It's a good idea to match the name of the claim to the name of the attribute.
+1. Repeat this process to add the *customClaimsProvider.customRoles*, *customClaimsProvider.apiVersion* and *customClaimsProvider.correlationId* attributes, and the corresponding name. It's a good idea to match the name of the claim to the name of the attribute.
 
 # [Microsoft Graph](#tab/microsoft-graph)
 
@@ -481,14 +488,14 @@ To protect your Azure function, follow these steps to integrate Microsoft Entra 
 
 1. Sign in to the [Azure portal](https://portal.azure.com).
 1. Navigate and select the function app you [previously published](#step-1-create-an-azure-function-app).
-1. Select **Authentication** in the menu on the left.
+1. Under **Settings**, select **Authentication**.
 1. Select **Add Identity provider**.  
 1. Select **Microsoft** as the identity provider.
 1. Select **Customer** as the tenant type.
 1. Under **App registration**, enter the `client_id` of the *Azure Functions authentication events API* app registration you [previously created](#step-2-register-a-custom-authentication-extension) when registering the custom claims provider.
-1. For the **Issuer URL**, enter the following URL, where
-    - `{domainName}` is the domain name of your customer tenant.
-    - `{tenantId}` is the tenant ID of your customer tenant. Your custom authentication extension should be registered here.
+1. For the **Issuer URL**, enter the following URL `https://{domainName}.ciamlogin.com/{tenant_id}/oauth2/v2.0`, where
+    - `{domainName}` is the domain name of your customer tenant, in the form `{domainName}.contoso.com`.
+    - `{tenantId}` is the tenant ID of your customer tenant.
 1. Under **Unauthenticated requests**, select **HTTP 401 Unauthorized** as the identity provider.
 1. Unselect the **Token store** option.
 1. Select **Add** to add authentication to your Azure Function.
@@ -545,6 +552,17 @@ If you configured the [Microsoft identity provider](#step-5-protect-your-azure-f
 
 To test your custom claim provider, follow these steps:
 
+# [Customer tenant](#tab/customer-tenant)
+
+1. Open a new private browser and navigate and sign-in through the following URL.
+
+    ```http
+    https://{domainName}.ciamlogin.com/{tenantId}/oauth2/v2.0/authorize?client_id={App_to_enrich_ID}&response_type=id_token&redirect_uri=https://jwt.ms&scope=openid&state=12345&nonce=12345
+    ```
+
+
+# [Workforce tenant](#tab/workforce-tenant)
+
 1. Open a new private browser and navigate and sign-in through the following URL.
 
     ```http
@@ -554,6 +572,7 @@ To test your custom claim provider, follow these steps:
 1. Replace `{tenant-id}` with your tenant ID, tenant name, or one of your verified domain names. For example, `contoso.onmicrosoft.com`.
 1. Replace `{App_to_enrich_ID}` with the [My Test application registration ID](#31-get-the-application-id).  
 1. After logging in, you'll be presented with your decoded token at `https://jwt.ms`. Validate that the claims from the Azure Function are presented in the decoded token, for example, `dateOfBirth`.
+
 
 ## Next steps
 
