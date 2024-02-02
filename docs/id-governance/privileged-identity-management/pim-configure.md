@@ -164,7 +164,7 @@ Privileged Identity Management supports the following scenarios:
 ## Microsoft Graph APIs
 
 You can use Privileged Identity Management programmatically through the following Microsoft Graph APIs:
-- [PIM for role assignments APIs](/graph/api/resources/privilegedidentitymanagementv3-overview)
+- [PIM for Microsoft Entra roles APIs](/graph/api/resources/privilegedidentitymanagementv3-overview)
 - [PIM for groups APIs](/graph/api/resources/privilegedidentitymanagement-for-groups-api-overview)
 
 ## Next steps
