@@ -45,7 +45,7 @@ Privileged Identity Management provides time-based and approval-based role activ
 - Provide **just-in-time** privileged access to Microsoft Entra ID and Azure resources
 - Assign **time-bound** access to resources using start and end dates
 - Require **approval** to activate privileged roles
-- Enforce **multi-factor authentication** to activate any role
+- Enforce **multifactor authentication** to activate any role
 - Use **justification** to understand why users activate
 - Get **notifications** when privileged roles are activated
 - Conduct **access reviews** to ensure users still need roles
@@ -72,7 +72,7 @@ To better understand Privileged Identity Management and its documentation, you s
 | --- | --- | --- |
 | eligible | Type | A role assignment that requires a user to perform one or more actions to use the role. If a user has been made eligible for a role, that means they can activate the role when they need to perform privileged tasks. There's no difference in the access given to someone with a permanent versus an eligible role assignment. The only difference is that some people don't need that access all the time. |
 | active | Type | A role assignment that doesn't require a user to perform any action to use the role. Users assigned as active have the privileges assigned to the role. |
-| activate |  | The process of performing one or more actions to use a role that a user is eligible for. Actions might include performing a multi-factor authentication (MFA) check, providing a business justification, or requesting approval from designated approvers. |
+| activate |  | The process of performing one or more actions to use a role that a user is eligible for. Actions might include performing a multifactor authentication (MFA) check, providing a business justification, or requesting approval from designated approvers. |
 | assigned | State | A user that has an active role assignment. |
 | activated | State | A user that has an eligible role assignment, performed the actions to activate the role, and is now active. Once activated, the user can use the role for a preconfigured period of time before they need to activate again. |
 | permanent eligible | Duration | A role assignment where a user is always eligible to activate the role. |
