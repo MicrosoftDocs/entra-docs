@@ -9,11 +9,12 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 02/02/2024
 ms.author: thwimmer
 ---
 
 # Tutorial: Configure Oracle Cloud Infrastructure Console for automatic user provisioning
+
 > [!NOTE]
 > Integrating with Oracle Cloud Infrastructure Console or Oracle IDCS with a custom / BYOA application is not supported. Using the gallery application as described in this tutorial is supported. The gallery application has been customized to work with the Oracle SCIM server. 
 
@@ -51,25 +52,25 @@ The scenario outlined in this tutorial assumes that you already have the followi
 
 1. Log on to the Oracle Cloud Infrastructure Console admin portal. On the top left corner of the screen navigate to **Identity > Federation**.
 
-	![Oracle Admin](./media/oracle-cloud-infratstructure-console-provisioning-tutorial/identity.png)
+	![Screenshot shows the Oracle Admin.](./media/oracle-cloud-infratstructure-console-provisioning-tutorial/identity.png "Admin")
 
 2. Click on the URL displayed on the page beside Oracle Identity Cloud Service Console.
 
-	![Oracle URL](./media/oracle-cloud-infratstructure-console-provisioning-tutorial/url.png)
+	![Screenshot shows the Oracle URL.](./media/oracle-cloud-infratstructure-console-provisioning-tutorial/url.png "URL")
 
 3. Click on **Add Identity Provider** to create a new identity provider. Save the IdP ID to be used as a part of tenant URL. Select the plus icon beside the **Applications** tab to create an OAuth Client and Grant IDCS Identity Domain Administrator AppRole.
 
-	![Oracle Cloud Icon](./media/oracle-cloud-infratstructure-console-provisioning-tutorial/add.png)
+	![Screenshot shows the Oracle Cloud Icon.](./media/oracle-cloud-infratstructure-console-provisioning-tutorial/add.png "Icon")
 
 4. Follow the screenshots below to configure your application. When the configuration is done, select **Save**.
 
-	![Oracle Configuration](./media/oracle-cloud-infratstructure-console-provisioning-tutorial/configuration.png)
+	![Screenshot shows the Oracle Configuration](./media/oracle-cloud-infratstructure-console-provisioning-tutorial/configuration.png "Configuration")
 
-	![Oracle Token Issuance Policy](./media/oracle-cloud-infratstructure-console-provisioning-tutorial/token-issuance.png)
+	![Screenshot shows the Oracle Token Issuance Policy.](./media/oracle-cloud-infratstructure-console-provisioning-tutorial/token-issuance.png "Policy")
 
 5. Under the configurations tab of your application expand the **General Information** option to retrieve the client ID and client secret.
 
-	![Oracle token generation](./media/oracle-cloud-infratstructure-console-provisioning-tutorial/general-information.png)
+	![Screenshot shows the Oracle token generation.](./media/oracle-cloud-infratstructure-console-provisioning-tutorial/general-information.png "Token")
 
 6. To generate a secret token, encode the client ID and client secret as Base64 in the format **client ID:Client Secret**. Note - this value must be generated with line wrapping disabled (base64 -w 0). Save the secret token. This value will be entered in the **Secret Token** field in the provisioning tab of your Oracle Cloud Infrastructure Console application.
 
@@ -99,33 +100,33 @@ This section guides you through the steps to configure the Microsoft Entra provi
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications**
 
-	![Enterprise applications blade](common/enterprise-applications.png)
+	![Screenshot shows the enterprise applications blade.](common/enterprise-applications.png "Blade")
 
 1. In the applications list, select **Oracle Cloud Infrastructure Console**.
 
-	![The Oracle Cloud Infrastructure Console link in the Applications list](common/all-applications.png)
+	![Screenshot shows the Oracle Cloud Infrastructure Console link in the Applications list](common/all-applications.png "List")
 
-3. Select the **Provisioning** tab.
+1. Select the **Provisioning** tab.
 
-	![Screenshot of the Manage options with the Provisioning option called out.](common/provisioning.png)
+	![Screenshot of the Manage options with the Provisioning option called out.](common/provisioning.png "Provisioning")
 
-4. Set the **Provisioning Mode** to **Automatic**.
+1. Set the **Provisioning Mode** to **Automatic**.
 
 	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
 
-5. Under the **Admin Credentials** section, input the **Tenant URL** in the format `https://<IdP ID>.identity.oraclecloud.com/admin/v1`. For example `https://idcs-0bfd023ff2xx4a98a760fa2c31k92b1d.identity.oraclecloud.com/admin/v1`. Input the secret token value retrieved earlier in **Secret Token**. Click **Test Connection** to ensure Microsoft Entra ID can connect to Oracle Cloud Infrastructure Console. If the connection fails, ensure your Oracle Cloud Infrastructure Console account has admin permissions and try again.
+1. Under the **Admin Credentials** section, input the **Tenant URL** in the format `https://<IdP ID>.identity.oraclecloud.com/admin/v1`. For example `https://idcs-0bfd023ff2xx4a98a760fa2c31k92b1d.identity.oraclecloud.com/admin/v1`. Input the secret token value retrieved earlier in **Secret Token**. Click **Test Connection** to ensure Microsoft Entra ID can connect to Oracle Cloud Infrastructure Console. If the connection fails, ensure your Oracle Cloud Infrastructure Console account has admin permissions and try again.
 
     ![Screenshot shows the Admin Credentials dialog box, where you can enter your Tenant U R L and Secret Token.](./media/oracle-cloud-infratstructure-console-provisioning-tutorial/provisioning.png)
 
-6. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
+1. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
 
-	![Notification Email](common/provisioning-notification-email.png)
+	![Screenshot shows the Notification Email](common/provisioning-notification-email.png "Notification")
 
-7. Select **Save**.
+1. Select **Save**.
 
-8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Oracle Cloud Infrastructure Console**.
+1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Oracle Cloud Infrastructure Console**.
 
-9. Review the user attributes that are synchronized from Microsoft Entra ID to Oracle Cloud Infrastructure Console in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Oracle Cloud Infrastructure Console for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the Oracle Cloud Infrastructure Console API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Oracle Cloud Infrastructure Console in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Oracle Cloud Infrastructure Console for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the Oracle Cloud Infrastructure Console API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
     |Attribute|Type|
     |---|---|
@@ -152,12 +153,15 @@ This section guides you through the steps to configure the Microsoft Entra provi
     |urn:ietf:params:scim:schemas:oracle:idcs:extension:user:User:bypassNotification|Boolean|
     |urn:ietf:params:scim:schemas:oracle:idcs:extension:user:User:isFederatedUser|Boolean|
 
-> [!NOTE]
-> The extension attributes "urn:ietf:params:scim:schemas:oracle:idcs:extension:user:User:bypassNotification" and "urn:ietf:params:scim:schemas:oracle:idcs:extension:user:User:isFederatedUser" are the only custom extension attributes supported.
+    > [!NOTE]
+    > The extension attributes "urn:ietf:params:scim:schemas:oracle:idcs:extension:user:User:bypassNotification" and "urn:ietf:params:scim:schemas:oracle:idcs:extension:user:User:isFederatedUser" are the only custom extension attributes supported.
+    > Oracle Cloud Infrastructure Console's SCIM endpoint expects addresses[type eq "work"].country MUST be in ISO 3166-1 "alpha-2" code format (for example US,UK etc).
+    > So before starting provisioning please check to make sure that all users have their respective "Country or region" field value set in expected format. Else that particular user provisioning will fail.
+    ![Screenshot shows the contact information.](./media/oracle-cloud-infratstructure-console-provisioning-tutorial/contact.png "Conact")
 
-10. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Oracle Cloud Infrastructure Console**.
+1. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Oracle Cloud Infrastructure Console**.
 
-11. Review the group attributes that are synchronized from Microsoft Entra ID to Oracle Cloud Infrastructure Console in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Oracle Cloud Infrastructure Console for update operations. Select the **Save** button to commit any changes.
+1. Review the group attributes that are synchronized from Microsoft Entra ID to Oracle Cloud Infrastructure Console in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Oracle Cloud Infrastructure Console for update operations. Select the **Save** button to commit any changes.
 
     | Attribute | Type |
     |--|--|
@@ -165,19 +169,19 @@ This section guides you through the steps to configure the Microsoft Entra provi
     | externalId | String |
     | members | Reference |
 
-12. To configure scoping filters, refer to the following instructions provided in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-13. To enable the Microsoft Entra provisioning service for Oracle Cloud Infrastructure Console, change the **Provisioning Status** to **On** in the **Settings** section.
+1. To enable the Microsoft Entra provisioning service for Oracle Cloud Infrastructure Console, change the **Provisioning Status** to **On** in the **Settings** section.
 
-	![Provisioning Status Toggled On](common/provisioning-toggle-on.png)
+	![Screenshot shows the Provisioning Status Toggled On.](common/provisioning-toggle-on.png "Status")
 
-14. Define the users and/or groups that you would like to provision to Oracle Cloud Infrastructure Console by choosing the desired values in **Scope** in the **Settings** section.
+1. Define the users and/or groups that you would like to provision to Oracle Cloud Infrastructure Console by choosing the desired values in **Scope** in the **Settings** section.
 
-	![Provisioning Scope](common/provisioning-scope.png)
+	![Screenshot shows the Provisioning Scope](common/provisioning-scope.png "Scope")
 
-15. When you are ready to provision, click **Save**.
+1. When you are ready to provision, click **Save**.
 
-	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
+	![Screenshot shows the Saving Provisioning Configuration](common/provisioning-configuration-save.png "Saving")
 
 This operation starts the initial synchronization cycle of all users and groups defined in **Scope** in the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. 
 
