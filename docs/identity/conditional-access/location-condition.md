@@ -28,7 +28,7 @@ Organizations can use these locations for common tasks like:
 - Requiring multifactor authentication for users accessing a service when they're off the corporate network.
 - Blocking access for users accessing a service from specific countries or regions your organization never operates from.
 
-The location found using the public IP address a client provides to Microsoft Entra ID or GPS coordinates provided by the Microsoft Authenticator app. Conditional Access policies by default apply to all IPv4 and IPv6 addresses. For more information about IPv6 support, see the article [IPv6 support in Microsoft Entra ID](/troubleshoot/azure/active-directory/azure-ad-ipv6-support).
+The location is found using the public IP address a client provides to Microsoft Entra ID or GPS coordinates provided by the Microsoft Authenticator app. Conditional Access policies by default apply to all IPv4 and IPv6 addresses. For more information about IPv6 support, see the article [IPv6 support in Microsoft Entra ID](/troubleshoot/azure/active-directory/azure-ad-ipv6-support).
 
 > [!TIP]
 > Conditional Access policies are enforced after first-factor authentication is completed. Conditional Access isn't intended to be an organization's first line of defense for scenarios like denial-of-service (DoS) attacks, but it can use signals from these events to determine access.

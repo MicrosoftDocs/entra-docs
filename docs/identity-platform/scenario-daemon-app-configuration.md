@@ -5,7 +5,7 @@ author: Dickson-Mwendia
 manager: CelesteDG
 ms.author: dmwendia
 ms.custom: 
-ms.date: 09/19/2020
+ms.date: 02/01/2024
 ms.reviewer: jmprieur
 ms.service: active-directory
 ms.subservice: develop
@@ -351,7 +351,7 @@ Here's the code to build an application with a certificate:
 
 The code itself is exactly the same. The certificate is described in the configuration. 
 There are many ways to get the certificate. For details see https://aka.ms/ms-id-web-certificates.
-Here's how you would do to get your certificate from KeyVault. Microsoft identity delegates to Azure Identity's DefaultAzureCredential, and used Managed identity when available to access the certificate from KeyVault. You can debug your application locally as it, then, uses your developer credentials.
+Here's how you would do to get your certificate from KeyVault. Microsoft identity delegates to Azure Identity's DefaultAzureCredential, and used Managed identity when available to access the certificate from KeyVault. You can debug your application locally as it then uses your developer credentials.
 
 ```json
   "ClientCredentials": [
@@ -448,7 +448,7 @@ app = ConfidentialClientApplicationBuilder.Create(config.ClientId)
 
 # [.NET](#tab/idweb)
 
-Instead of a client secret or a certificate, the confidential client application can also prove its identity by using client assertions. See
+In addition to using a client secret or certificate, confidential client applications can also prove their identity by using client assertions. See
 [CredentialDescription](/dotnet/api/microsoft.identity.abstractions.credentialdescription?view=msal-model-dotnet-latest&preserve-view=true) for details.
 
 # [Java](#tab/java)
