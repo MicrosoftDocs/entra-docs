@@ -132,4 +132,4 @@ Identity related **NuGet packages** must be installed in the project for authent
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Tutorial: Implement a protected endpoint to your API](web-api-tutorial-03-protect-endpoint.md)
+> [Tutorial: Implement a protected endpoint to your API](tutorial-web-api-dotnet-protect-endpoint.md)
