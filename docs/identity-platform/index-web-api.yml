@@ -16,7 +16,7 @@ metadata:
 landingContent:
 
 ## ROW 1 ################################################### ROW 1 ##
-  - title: "Get started fast"
+  - title: "Get started"
     linkLists:
       - linkListType: quickstart
         links:
