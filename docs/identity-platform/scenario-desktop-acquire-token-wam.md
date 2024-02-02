@@ -5,7 +5,7 @@ author: Dickson-Mwendia
 manager: CelesteDG
 ms.author: dmwendia
 ms.custom: 
-ms.date: 12/14/2022
+ms.date: 01/15/2023
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
@@ -14,7 +14,7 @@ ms.topic: conceptual
 
 # Desktop app that calls web APIs: Acquire a token by using WAM
 
-The Microsoft Authentication Library (MSAL) calls Web Account Manager (WAM), a Windows 10+ component that acts as an authentication broker.
+The Microsoft Authentication Library (MSAL) calls Web Account Manager (WAM), a Windows 10+ component that acts as an authentication broker. The broker allows users of your app to benefit from integration with accounts known to Windows, such as the account you signed into your Windows session.
 
 ## WAM value proposition
 
