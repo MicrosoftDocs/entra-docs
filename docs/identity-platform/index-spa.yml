@@ -9,7 +9,7 @@ metadata:
   author: Dickson-Mwendia
   manager: CelesteDG
   ms.author: dmwendia
-  ms.date: 09/21/2023
+  ms.date: 02/02/2024
   ms.service: active-directory
   ms.subservice: develop
   ms.topic: landing-page
@@ -17,7 +17,7 @@ metadata:
 landingContent:
 
 ## ROW 1 ################################################### ROW 1 ##
-  - title: "Get started fast"
+  - title: "Get started"
     linkLists:
       - linkListType: quickstart
         links:
