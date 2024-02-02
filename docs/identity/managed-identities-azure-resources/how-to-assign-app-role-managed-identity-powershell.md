@@ -95,7 +95,7 @@ In this article, you learn how to assign a managed identity to an application ro
 
     ```powershell
     New-MgServicePrincipalAppRoleAssignment `
-        -ServicePrincipalId $managedIdentityObjectId `
+        -ServicePrincipalId $serverServicePrincipalObjectId `
         -PrincipalId $managedIdentityObjectId `
         -ResourceId $serverServicePrincipalObjectId `
         -AppRoleId $appRoleId
