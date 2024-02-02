@@ -64,7 +64,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 
 4. Follow the screenshots below to configure your application. When the configuration is done, select **Save**.
 
-	![Screenshot shows the Oracle Configuration](./media/oracle-cloud-infratstructure-console-provisioning-tutorial/configuration.png "Configuration")
+	![Screenshot shows the Oracle Configuration.](./media/oracle-cloud-infratstructure-console-provisioning-tutorial/configuration.png "Configuration")
 
 	![Screenshot shows the Oracle Token Issuance Policy.](./media/oracle-cloud-infratstructure-console-provisioning-tutorial/token-issuance.png "Policy")
 
@@ -104,7 +104,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. In the applications list, select **Oracle Cloud Infrastructure Console**.
 
-	![Screenshot shows the Oracle Cloud Infrastructure Console link in the Applications list](common/all-applications.png "List")
+	![Screenshot shows the Oracle Cloud Infrastructure Console link in the Applications list.](common/all-applications.png "List")
 
 1. Select the **Provisioning** tab.
 
@@ -120,7 +120,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
 
-	![Screenshot shows the Notification Email](common/provisioning-notification-email.png "Notification")
+	![Screenshot shows the Notification Email.](common/provisioning-notification-email.png "Notification")
 
 1. Select **Save**.
 
@@ -155,8 +155,8 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
     > [!NOTE]
     > Oracle Cloud Infrastructure Console's SCIM endpoint expects `addresses[type eq "work"].country` MUST be in ISO 3166-1 "alpha-2" code format (for example US,UK etc).
-    > So before starting provisioning please check to make sure that all users have their respective "Country or region" field value set in expected format. Else that particular user provisioning will fail.
-    ![Screenshot shows the contact information.](./media/oracle-cloud-infratstructure-console-provisioning-tutorial/contact.png "Conact")
+    > Before starting provisioning please check to make sure that all users have their respective "Country or region" field value set in the expected format or else that particular user provisioning will fail.
+    ![Screenshot shows the contact information.](./media/oracle-cloud-infratstructure-console-provisioning-tutorial/contact.png "Contact")
 
     > [!NOTE]
     > The extension attributes "urn:ietf:params:scim:schemas:oracle:idcs:extension:user:User:bypassNotification" and "urn:ietf:params:scim:schemas:oracle:idcs:extension:user:User:isFederatedUser" are the only custom extension attributes supported.
@@ -179,11 +179,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Define the users and/or groups that you would like to provision to Oracle Cloud Infrastructure Console by choosing the desired values in **Scope** in the **Settings** section.
 
-	![Screenshot shows the Provisioning Scope](common/provisioning-scope.png "Scope")
+	![Screenshot shows the Provisioning Scope.](common/provisioning-scope.png "Scope")
 
 1. When you are ready to provision, click **Save**.
 
-	![Screenshot shows the Saving Provisioning Configuration](common/provisioning-configuration-save.png "Saving")
+	![Screenshot shows the Saving Provisioning Configuration.](common/provisioning-configuration-save.png "Saving")
 
 This operation starts the initial synchronization cycle of all users and groups defined in **Scope** in the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. 
 
