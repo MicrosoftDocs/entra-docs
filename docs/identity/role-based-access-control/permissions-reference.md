@@ -233,7 +233,6 @@ For more information, see [Microsoft Defender for Office 365 permissions in the 
 > | Actions | Description |
 > | --- | --- |
 > | microsoft.office365.protectionCenter/attackSimulator/payload/allProperties/allTasks | Create and manage attack payloads in Attack Simulator |
-> | microsoft.office365.protectionCenter/attackSimulator/reports/allProperties/read | Read reports of attack simulation, responses, and associated training |
 
 ## Attack Simulation Administrator
 
