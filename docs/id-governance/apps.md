@@ -96,6 +96,7 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Appinux](~/identity/saas-apps/appinux-tutorial.md) |  | ● |
 | [Apple Business Manager](~/identity/saas-apps/apple-business-manager-provision-tutorial.md) | ● |  |
 | [Apple School Manager](~/identity/saas-apps/apple-school-manager-provision-tutorial.md) | ● |  |
+| [Applitools Eyes](~/identity/saas-apps/applitools-eyes-tutorial.md) |  | ● |
 | [AppNeta Performance Monitor](~/identity/saas-apps/appneta-tutorial.md) |  | ● |
 | [ARC Facilities](~/identity/saas-apps/arc-facilities-tutorial.md) |  | ● |
 | [Arc Publishing - SSO](~/identity/saas-apps/arc-tutorial.md) |  | ● |
@@ -322,6 +323,7 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [FourKites SAML2.0 SSO for Tracking](~/identity/saas-apps/fourkites-tutorial.md) |  | ● |
 | [Frankli.io](~/identity/saas-apps/frankli-io-provisioning-tutorial.md) | ● | |
 | [Freight Audit](~/identity/saas-apps/freight-audit-tutorial.md) |  | ● |
+| [Freightender SSO for TRP (Tender Response Platform)](~/identity/saas-apps/freightender-sso-for-trp-tender-response-platform-tutorial.md) |  | ● |
 | [Fresh Relevance](~/identity/saas-apps/fresh-relevance-tutorial.md) |  | ● |
 | [Freshservice Provisioning](~/identity/saas-apps/freshservice-provisioning-tutorial.md) | ● | ● |
 | [FTAPI](~/identity/saas-apps/ftapi-tutorial.md) |  | ● |
@@ -690,6 +692,7 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [ServiceChannel](~/identity/saas-apps/servicechannel-tutorial.md) |  | ● |
 | [ServiceNow](~/identity/saas-apps/servicenow-provisioning-tutorial.md) | ● | ● |
 | [ServusConnect](~/identity/saas-apps/servusconnect-tutorial.md) |  | ● |
+| [ShareCal](~/identity/saas-apps/sharecal-tutorial.md) |  | ● |
 | [ShareVault](~/identity/saas-apps/sharevault-tutorial.md) |  | ● |
 | [SharingCloud](~/identity/saas-apps/sharingcloud-tutorial.md) |  | ● |
 | [ShipHazmat](~/identity/saas-apps/shiphazmat-tutorial.md) |  | ● |
@@ -702,6 +705,7 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Signiant Media Shuttle](~/identity/saas-apps/signiant-media-shuttle-tutorial.md) |  | ● |
 | [Sigstr](~/identity/saas-apps/sigstr-tutorial.md) |  | ● |
 | [Simple In/Out](~/identity/saas-apps/simple-in-out-provisioning-tutorial.md) | ● |  |
+| [SIS Enterprise](~/identity/saas-apps/sis-enterprise-tutorial.md) |  | ● |
 | [Sketch](~/identity/saas-apps/sketch-tutorial.md) |  | ● |
 | [Skilljar](~/identity/saas-apps/skilljar-tutorial.md) |  | ● |
 | [Skills Base](~/identity/saas-apps/skillsbase-tutorial.md) |  | ● |
