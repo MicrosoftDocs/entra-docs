@@ -121,7 +121,7 @@ landingContent:
       - linkListType: how-to-guide
         links:
           - text: Configure HITRUST controls
-            url: hipaa-hitrust-controls       
+            url: hipaa-hitrust-controls.md       
   
   # Card
   - title: Achieve PCI-DSS compliance
