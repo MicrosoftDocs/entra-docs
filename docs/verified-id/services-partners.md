@@ -34,7 +34,7 @@ You could select a partner from the list and build seamless end-user experiences
 | ![Screenshot of Predica logo.](media/services-partners/predica.png) | [Verified ID - Predica Group](https://www.predicagroup.com/en/verified-id/) |
 | ![Screenshot of Sphereon logo.](media/services-partners/sphereon.png) | [Sphereon supports customers on Microsoft's Microsoft Entra Verified ID](https://sphereon.com/sphereon-supports-microsofts-entra-verified-id/) |
 | ![Screenshot of Unify logo.](media/services-partners/unify.png) | [Microsoft Entra Verified ID - UNIFY Solutions](https://unifysolutions.net/entra/verified-id/) |
-| ![Screenshot of VO logo.](media/services-partners/vo.png) | [Azure Marketplace offering - Verified Orchestration](https://azuremarketplace.microsoft.com/marketplace/apps/verifiedorchestrationptyltd1695169491637.verified_orchestration1?tab=Overview) |
+| ![Screenshot of VO logo.](media/services-partners/verified-orchestration.png) | [Azure Marketplace offering - Verified Orchestration](https://azuremarketplace.microsoft.com/marketplace/apps/verifiedorchestrationptyltd1695169491637.verified_orchestration1?tab=Overview) |
 | ![Screenshot of Whoiam logo.](media/services-partners/whoiam.png) | [Microsoft Entra Verified ID - WhoIAM](https://www.whoiam.ai/product/microsoft-entra-verified-id/) |
 
 ## Next steps

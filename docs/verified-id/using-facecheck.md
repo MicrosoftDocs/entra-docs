@@ -18,21 +18,19 @@ ms.date: 10/06/2023
 > Face Check is currently in PREVIEW.
 > This information relates to a prerelease product that may be modified before it's released. 
 
+Face Check is a privacy-respecting facial matching. It allows enterprises to perform high-assurance verifications securely, simply, and at scale. Face Check adds a critical layer of trust by performing facial matching between a user’s real-time selfie and a photo. The facial matching is powered by Azure AI services. By sharing only the match results and not any sensitive identity data, Face Check protects user privacy while allowing organizations to be sure the person claiming an identity is really them.
+
+:::image type="content" source="media/using-facecheck/verify-confirm-review.png" alt-text="Screenshot of using Face Check.":::
+
 ## Prerequisites
 
 - [Set up a tenant for Microsoft Entra Verified ID](./verifiable-credentials-configure-tenant-quick.md).
-
-## What is Face Check?
-
-Face Check is a privacy-respecting facial matching. It allows enterprises to perform high-assurance verifications securely, simply, and at scale. Face Check adds a critical layer of trust by performing facial matching between a user’s real-time selfie and a photo.The facial matching is powered by Azure AI services. By sharing only the match results and not any sensitive identity data, Face Check protects user privacy while allowing organizations to be sure the person claiming an identity is really them.
-
-:::image type="content" source="media/using-facecheck/verify-confirm-review.png" alt-text="Screenshot of using Face Check.":::
 
 ## Get started with Face Check using MyAccount
 
 You can easily get started using Face Check by using [MyAccount](https://myaccount.microsoft.com), which can issue `VerifiedEmployee` credentials, and a public test app that Microsoft provides. To get started, you need to perform the following steps:
 
-1. Create a test user in your [Entra tenant](https://entra.microsoft.com/#view/Microsoft_AAD_UsersAndTenants/UserManagementMenuBlade/~/AllUsers/menuId/) and upload a photo of [yourself](https://support.microsoft.com/en-us/office/add-your-profile-photo-to-microsoft-365-2eaf93fd-b3f1-43b9-9cdc-bdcd548435b7#:~:text=1%20Find%20a%20photo%20you%20want%20to%20use,your%20initials%20or%20an%20icon%20...%20See%20More)
+1. Create a test user in your [Entra tenant](https://entra.microsoft.com/#view/Microsoft_AAD_UsersAndTenants/UserManagementMenuBlade/~/AllUsers/menuId/) and upload a photo of [yourself](https://support.microsoft.com/office/add-your-profile-photo-to-microsoft-365-2eaf93fd-b3f1-43b9-9cdc-bdcd548435b7#:~:text=1%20Find%20a%20photo%20you%20want%20to%20use,your%20initials%20or%20an%20icon%20...%20See%20More)
 1. Go to [MyAccount](verifiable-credentials-configure-tenant-quick.md#myaccount-available-now-to-simplify-issuance-of-workplace-credentials), sign in as the test user and issue a `VerifiedEmployee` credential for the user.
 1. Use the [public test app](https://aka.ms/verifiedfacecheck) to present your `VerifiedEmployee` credential using Face Check.
 
@@ -172,7 +170,7 @@ The Azure AI Vision Face API liveness check verifies that it's a real person in 
 
 ### How much does Face Check cost?
 
-Face Check is offered free of cost during the Public Preview period and can used by any Verified ID project. Later in the year we will announce billing models.
+Face Check is offered free of cost during the Public Preview period and can be used by any Verified ID project. Later in the year we will announce billing models.
 
 ### Are you iBeta Level 2 conformant?
 

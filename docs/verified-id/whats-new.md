@@ -21,7 +21,7 @@ This article lists the latest features, improvements, and changes in the Microso
 
 ## January 2024
 
-- [FaceCheck](using-facecheck.md) is now in public preview. It allows enterprises to perform high-assurance verifications by performing facial matching between a user’s real-time selfie and and a photo in the Verified ID credential. FaceCheck is offered free of cost during the Public Preview period and can be leveraged by any Verified ID project. Later in the year we will announce billing models.
+- [FaceCheck](using-facecheck.md) is now in public preview. It allows enterprises to perform high-assurance verifications by performing facial matching between a user’s real-time selfie and a photo in the Verified ID credential. FaceCheck is offered free of cost during the Public Preview period and can be leveraged by any Verified ID project. Later in the year we will announce billing models.
 
 ## December 2023
 

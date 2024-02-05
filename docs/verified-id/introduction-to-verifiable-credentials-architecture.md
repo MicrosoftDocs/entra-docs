@@ -186,7 +186,7 @@ By combining centralized and decentralized identity architectures for operating 
 
 Woodgrove adds new and ends current business relationships with other organizations and needs to determine when centralized and decentralized identity architectures are used.
 
-By combining centralized and decentralized identity architectures, the responsibility and effort associated with identity and proof of identity is distributed, risk is . The user doesn't risk releasing their private information as often or to as many unknown verifiers. Specifically:
+By combining centralized and decentralized identity architectures, the responsibility and effort associated with identity and proof of identity is distributed and risk is lowered. The user doesn't risk releasing their private information as often or to as many unknown verifiers. Specifically:
 
 * In centralized identity architectures, the IDP issues credentials and performs verification of those issued credentials. The IDP processes information about all identities. It either stores them in a directory or retrieves them from a directory. Optionally, IDPs can accept security tokens from other IDP systems, such as social sign-ins or business partners. For a relying party to use identities in the IDP trust boundary, they must be configured to accept the tokens issued by the IDP.
 
