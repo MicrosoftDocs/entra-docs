@@ -41,13 +41,14 @@ You can also define how many days a user can postpone, or "snooze," the nudge. I
 1. If the user is enabled for Authenticator push notifications and doesn't have it already set up, they get prompted to set up Authenticator to improve their sign-in experience. 
 
    >[!NOTE]
-   >Other security features, such as passwordless passkey, self-service password reset or security defaults, might also prompt users for setup.  
+   >Other security features, such as passwordless passkey, self-service password reset or security defaults, might also prompt users for setup. 
 
-   ![Screenshot of multifactor authentication.](./media/how-to-mfa-registration-campaign/user-prompt.png)
+    :::image type="content" source="./media/how-to-mfa-registration-campaign/user-prompt.png" alt-text="Screenshot of multifactor authentication."::: 
 
 1. User taps **Next** and steps through the Authenticator app setup. 
    1. First download the app.  
-   ![Screenshot of download for Microsoft Authenticator.](media/how-to-mfa-registration-campaign/user-downloads-microsoft-authenticator.png)
+
+    :::image type="content" source="./media/how-to-mfa-registration-campaign/user-downloads-microsoft-authenticator.png" alt-text="Screenshot of download for Microsoft Authenticator."::: 
 
    1. See how to set up the Authenticator app. 
 
@@ -71,8 +72,7 @@ You can also define how many days a user can postpone, or "snooze," the nudge. I
 
 1. If a user wishes to not install the Authenticator app, they can tap **Skip for now** to snooze the prompt for up to 14 days, which can be set by an admin. Users with free and trial subscriptions can snooze the prompt up to three times.
 
-   ![Screenshot of snooze option.](media/how-to-mfa-registration-campaign/snooze.png)
-
+    :::image type="content" source="./media/how-to-mfa-registration-campaign/snooze.png" alt-text="Screenshot of snooze option.":::
 
 ## Enable the registration campaign policy using the Microsoft Entra admin center
 
