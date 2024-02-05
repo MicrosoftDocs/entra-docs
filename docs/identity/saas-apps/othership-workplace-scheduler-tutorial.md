@@ -126,7 +126,7 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
 
 1. Log in to Othership Workplace Scheduler company site as an administrator.
 
-1. Go to **Settings** > **Organisation Settings** > **Organisation Integrations** and click to **+ Add** SAML 2.0.
+1. Go to **Settings** > **Organisation Settings** > **Organisation Integrations** and click **+ Add** SAML 2.0.
 
    ![Screenshot shows the path to Configure.](./media/othership-workplace-scheduler-tutorial/settings.png "Settings")
 
