@@ -7,7 +7,7 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.custom: ignite-2022
 ms.topic: conceptual
-ms.date: 11/26/2023
+ms.date: 02/05/2024
 
 ms.author: justinha
 author: mjsantani
@@ -17,7 +17,7 @@ ms.collection: M365-identity-device-management
 #Customer intent: As an identity administrator, I want to encourage users to use the Microsoft Authenticator app in Microsoft Entra ID to improve and secure user sign-in events.
 ---
 
-# How to run a registration campaign to set up Microsoft Authenticator - Microsoft Authenticator
+# How to run a registration campaign to set up Microsoft Authenticator
 
 You can nudge users to set up Microsoft Authenticator during sign-in. Users go through their regular sign-in, perform multifactor authentication as usual, and then get prompted to set up Microsoft Authenticator. You can include or exclude users or groups to control who gets nudged to set up the app. This allows targeted campaigns to move users from less secure authentication methods to Authenticator.  
 
@@ -41,7 +41,7 @@ You can also define how many days a user can postpone, or "snooze," the nudge. I
 1. If the user is enabled for Authenticator push notifications and doesn't have it already set up, they get prompted to set up Authenticator to improve their sign-in experience. 
 
    >[!NOTE]
-   >Other security features, such as self-service password reset or security defaults, might also prompt users for setup.  
+   >Other security features, such as passwordless passkey, self-service password reset or security defaults, might also prompt users for setup.  
 
    ![Screenshot of multifactor authentication.](./media/how-to-mfa-registration-campaign/user-prompt.png)
 
@@ -50,24 +50,24 @@ You can also define how many days a user can postpone, or "snooze," the nudge. I
    ![Screenshot of download for Microsoft Authenticator.](media/how-to-mfa-registration-campaign/user-downloads-microsoft-authenticator.png)
 
    1. See how to set up the Authenticator app. 
-   
-      ![Screenshot of Microsoft Authenticator.](./media/how-to-nudge-authenticator-app/setup.png)
+
+      :::image type="content" source="./media/how-to-nudge-authenticator-app/setup.png" alt-text="Screenshot of Microsoft Authenticator.":::
 
    1. Scan the QR Code. 
 
-      ![Screenshot of QR Code.](./media/how-to-nudge-authenticator-app/scan.png)
+      :::image type="content" source="./media/how-to-nudge-authenticator-app/scan.png" alt-text="Screenshot of QR Code.":::
 
-   1. Approve the test notification.
+   1. Verify your identity.
 
-      ![Screenshot of test notification.](./media/how-to-nudge-authenticator-app/test.png)
+      :::image type="content" source="./media/how-to-nudge-authenticator-app/approved.png" alt-text="Screenshot of Verify your identity screen."::: 
 
-   1. Notification approved.
+   1. Approve the test notification on your device.
 
-      ![Screenshot of confirmation of approval.](./media/how-to-nudge-authenticator-app/approved.png)
+      :::image type="content" source="./media/how-to-nudge-authenticator-app/test.png" alt-text="Screenshot of test notification."::: 
 
    1. Authenticator app is now successfully set up as the user's default sign-in method.
 
-      ![Screenshot of installation complete.](./media/how-to-nudge-authenticator-app/finish.png)
+      :::image type="content" source="./media/how-to-nudge-authenticator-app/finish.png" alt-text="Screenshot of installation complete.":::
 
 1. If a user wishes to not install the Authenticator app, they can tap **Skip for now** to snooze the prompt for up to 14 days, which can be set by an admin. Users with free and trial subscriptions can snooze the prompt up to three times.
 
