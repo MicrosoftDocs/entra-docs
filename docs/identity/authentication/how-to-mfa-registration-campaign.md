@@ -36,16 +36,16 @@ You can also define how many days a user can postpone, or "snooze," the nudge. I
 
 ## User experience
 
-1. First, the user needs to successfully authenticate by using Microsoft Entra multifactor authentication (MFA). 
+1. First, you need to successfully authenticate using Microsoft Entra multifactor authentication (MFA). 
 
-1. If the user is enabled for Authenticator push notifications and doesn't have it already set up, they get prompted to set up Authenticator to improve their sign-in experience. 
+1. If you've enabled for Authenticator push notifications and don't have it already set up, you'll get prompted to set up Authenticator to improve your sign-in experience. 
 
    >[!NOTE]
-   >Other security features, such as passwordless passkey, self-service password reset or security defaults, might also prompt users for setup. 
+   >Other security features, such as passwordless passkey, self-service password reset or security defaults, might also prompt you for setup. 
 
     :::image type="content" source="./media/how-to-mfa-registration-campaign/user-prompt.png" alt-text="Screenshot of multifactor authentication."::: 
 
-1. User taps **Next** and steps through the Authenticator app setup. 
+1. Tap **Next** and step through the Authenticator app setup. 
    1. First download the app.  
 
     :::image type="content" source="./media/how-to-mfa-registration-campaign/user-downloads-microsoft-authenticator.png" alt-text="Screenshot of download for Microsoft Authenticator."::: 
@@ -66,11 +66,11 @@ You can also define how many days a user can postpone, or "snooze," the nudge. I
 
       :::image type="content" source="./media/how-to-mfa-registration-campaign/test.png" alt-text="Screenshot of test notification."::: 
 
-   1. Authenticator app is now successfully set up as the user's default sign-in method.
+   1. Authenticator app is now successfully set up as your default sign-in method.
 
       :::image type="content" source="./media/how-to-mfa-registration-campaign/finish.png" alt-text="Screenshot of installation complete.":::
 
-1. If a user wishes to not install the Authenticator app, they can tap **Skip for now** to snooze the prompt for up to 14 days, which can be set by an admin. Users with free and trial subscriptions can snooze the prompt up to three times.
+1. If you don't want to install the Authenticator app, you can tap **Skip for now** to snooze the prompt for up to 14 days, which can be set by an admin. Users with free and trial subscriptions can snooze the prompt up to three times.
 
     :::image type="content" source="./media/how-to-mfa-registration-campaign/snooze.png" alt-text="Screenshot of snooze option.":::
 
