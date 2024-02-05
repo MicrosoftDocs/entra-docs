@@ -14,7 +14,6 @@ ms.date: 10/06/2023
 
 # Using the Microsoft Authenticator with Verified ID
 
-  
 In this tutorial, you learn how to install the Microsoft Authenticator app and use it for the first time with Verified ID. You use the public end to end demo webapp to issue a verifiable credential to the Authenticator and present verifiable credentials from the Authenticator.
 
 In this article, you learn how to:
