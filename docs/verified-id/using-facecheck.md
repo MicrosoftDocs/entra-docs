@@ -1,5 +1,5 @@
 ---
-title: Tutorial - Using FaceCheck with Verified ID and unlocking high assurance verifications at scale
+title: Tutorial - Using FaceCheck with Verified ID and unlocking high assurance verifications at scale (Preview)
 description: In this tutorial, you learn how to use FaceCheck with Verified ID
 ms.service: decentralized-identity
 ms.subservice: verifiable-credentials
@@ -12,10 +12,11 @@ ms.date: 10/06/2023
 
 ---
 
-# Using Face Check with Verified ID and unlocking high assurance verifications at scale
+# Using Face Check with Verified ID and unlocking high assurance verifications at scale (Preview)
 
-> [!NOTE]
-> Face Check is in public preview.
+> [!IMPORTANT]
+> Face Check is currently in PREVIEW.
+> This information relates to a prerelease product that may be modified before it's released. 
 
 ## Prerequisites
 
