@@ -51,23 +51,23 @@ You can also define how many days a user can postpone, or "snooze," the nudge. I
 
    1. See how to set up the Authenticator app. 
 
-      :::image type="content" source="./media/how-to-nudge-authenticator-app/setup.png" alt-text="Screenshot of Microsoft Authenticator.":::
+      :::image type="content" source="./media/how-to-mfa-registration-campaign/setup.png" alt-text="Screenshot of Microsoft Authenticator.":::
 
    1. Scan the QR Code. 
 
-      :::image type="content" source="./media/how-to-nudge-authenticator-app/scan.png" alt-text="Screenshot of QR Code.":::
+      :::image type="content" source="./media/how-to-mfa-registration-campaign/scan.png" alt-text="Screenshot of QR Code.":::
 
    1. Verify your identity.
 
-      :::image type="content" source="./media/how-to-nudge-authenticator-app/approved.png" alt-text="Screenshot of Verify your identity screen."::: 
+      :::image type="content" source="./media/how-to-mfa-registration-campaign/approved.png" alt-text="Screenshot of Verify your identity screen."::: 
 
    1. Approve the test notification on your device.
 
-      :::image type="content" source="./media/how-to-nudge-authenticator-app/test.png" alt-text="Screenshot of test notification."::: 
+      :::image type="content" source="./media/how-to-mfa-registration-campaign/test.png" alt-text="Screenshot of test notification."::: 
 
    1. Authenticator app is now successfully set up as the user's default sign-in method.
 
-      :::image type="content" source="./media/how-to-nudge-authenticator-app/finish.png" alt-text="Screenshot of installation complete.":::
+      :::image type="content" source="./media/how-to-mfa-registration-campaign/finish.png" alt-text="Screenshot of installation complete.":::
 
 1. If a user wishes to not install the Authenticator app, they can tap **Skip for now** to snooze the prompt for up to 14 days, which can be set by an admin. Users with free and trial subscriptions can snooze the prompt up to three times.
 
