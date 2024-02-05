@@ -114,7 +114,15 @@ landingContent:
             url: hipaa-audit-controls.md
           - text: Configure other safeguards
             url: hipaa-other-controls.md
-            
+ 
+  # Card
+  - title: Achieve HITRUST compliance
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Configure HITRUST controls
+            url: hipaa-hitrust-controls.md       
+  
   # Card
   - title: Achieve PCI-DSS compliance
     linkLists:

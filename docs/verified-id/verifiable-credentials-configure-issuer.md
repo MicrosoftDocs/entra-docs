@@ -195,7 +195,7 @@ Now you'll make modifications to the sample app's issuer code to update it with 
     1. **DidAuthority**: Your Decentralized Identifier
     1. **Credential Manifest**: Your manifest URL
 
-CredentialType is only needed for presentation, so if all you want to do is issuance, it strictly isn't needed.
+    CredentialType is only needed for presentation, so if all you want to do is issuance, it strictly isn't needed.
 
 1. Save the *appsettings.json* file.
 
