@@ -286,13 +286,7 @@ To illustrate the procedure, we'll use the CSV file ```Samples/csv-with-2-record
 
 1. You can verify the update to your provisioning app schema by opening the **Attribute Mapping** page and accessing the **Edit attribute list for API** option under **Advanced options**. 
 
-   :::image type="content" border="true" source="./media/inbound-provisioning-api-powershell/advanced-options.png" alt-text="Screenshot of Attribute Mapping in Advanced options." lightbox="./media/inbound-provisioning-api-powershell/advanced-options.png":::
-
 1. The **Attribute List** shows attributes under the new namespace. 
-
-   :::image type="content" border="true" source="./media/inbound-provisioning-api-powershell/attribute-list.png" alt-text="Screenshot of the attribute list." lightbox="./media/inbound-provisioning-api-powershell/attribute-list.png":::
-
-
 
 ## Get provisioning logs of the latest sync cycles
 

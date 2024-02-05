@@ -1,5 +1,5 @@
 ---
-title: Tutorial - Prepare an Angular single-page app (SPA) for authentication in a customer tenant
+title: "Tutorial: Prepare an Angular SPA for authentication in a customer tenant"
 description: Learn how to prepare an Angular single-page app (SPA) for authentication with your Microsoft Entra External ID for customers tenant.
 author: garrodonnell
 manager: celestedg
@@ -11,9 +11,9 @@ ms.author: godonnell
 #Customer intent: As a dev, devops, or IT admin, I want to learn how to create an Angular single-page app and define basic components and UI elements
 ---
 
-# Tutorial: Prepare an Angular single-page app for authentication in a customer tenant
+# Tutorial: Prepare an Angular SPA for authentication in a customer tenant
 
-In the previous article, [Prepare your customer tenant to authenticate users in an Angular single-page app (SPA)](./tutorial-single-page-app-angular-sign-in-prepare-tenant.md), you registered an application and configured user flows in your Microsoft Entra External ID for customers tenant. This tutorial demonstrates how to create an Angular single-page app using `npm` and configure the user interface.
+This tutorial is part 2 of a series that demonstrates building an Angular single-page application (SPA) and preparing it for authentication using the Microsoft Entra admin center. In [part 1 of this series](./tutorial-single-page-app-angular-sign-in-prepare-tenant.md), you registered an application and configured user flows in your Microsoft Entra ID for customers tenant. This tutorial demonstrates how to create an Angular SPA using `npm` and create files needed for authentication and authorization.
 
 In this tutorial;
 
@@ -24,7 +24,8 @@ In this tutorial;
 
 ## Prerequisites
 
-* Although any integrated development environment (IDE) that supports Angular applications can be used, this tutorial uses **Visual Studio Code**. You can download VS Code [here](https://visualstudio.microsoft.com/downloads/).
+* [Tutorial: Prepare your customer tenant to authenticate users in an Angular SPA](./tutorial-single-page-app-angular-sign-in-prepare-tenant.md).
+* Although any integrated development environment (IDE) that supports React applications can be used, this tutorial uses [Visual Studio Code](https://visualstudio.microsoft.com/downloads/).
 * [Node.js](https://nodejs.org/en/download/).
 
 ## Create an Angular project
@@ -505,4 +506,4 @@ In this section you'll configure the home and guarded components of the applicat
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Configure SPA for authentication](tutorial-single-page-app-angular-sign-in-configure-authentication.md)
+> [Part 3: Handle authentication flows in an Angular SPA](tutorial-single-page-app-angular-sign-in-configure-authentication.md)

@@ -5,7 +5,6 @@ services: active-directory
 documentationCenter: ''
 author: markwahl-msft
 manager: amycolannino
-editor: 
 ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
@@ -30,7 +29,7 @@ This article describes how to create an access package automatic assignment poli
 
 ## Before you begin
 
-You'll need to have attributes populated on the users who will be in scope for being assigned access.  The attributes you can use in the rules criteria of an access package assignment policy are those attributes listed in [supported properties](~/identity/users/groups-dynamic-membership.md#supported-properties), along with [extension attributes and custom extension properties](~/identity/users/groups-dynamic-membership.md#extension-properties-and-custom-extension-properties).  These attributes can be brought into Microsoft Entra ID from [Graph](/graph/api/resources/user), an HR system such as [SuccessFactors](~/identity/app-provisioning/sap-successfactors-integration-reference.md), [Microsoft Entra Connect cloud sync](~/identity/hybrid/cloud-sync/how-to-attribute-mapping.md) or [Microsoft Entra Connect Sync](~/identity/hybrid/connect/how-to-connect-sync-feature-directory-extensions.md).  The rules can include up to 5000 users per policy.
+You'll need to have attributes populated on the users who will be in scope for being assigned access.  The attributes you can use in the rules criteria of an access package assignment policy are those attributes listed in [supported properties](~/identity/users/groups-dynamic-membership.md#supported-properties), along with [extension attributes and custom extension properties](~/identity/users/groups-dynamic-membership.md#extension-properties-and-custom-extension-properties).  These attributes can be brought into Microsoft Entra ID by [patching](~/identity/app-provisioning/user-provisioning-sync-attributes-for-mapping.md#create-an-extension-attribute-for-cloud-only-users-using-microsoft-graph) the [user](/graph/api/resources/user), an HR system such as [SuccessFactors](~/identity/app-provisioning/sap-successfactors-integration-reference.md), [Microsoft Entra Connect cloud sync](~/identity/hybrid/cloud-sync/how-to-attribute-mapping.md) or [Microsoft Entra Connect Sync](~/identity/hybrid/connect/how-to-connect-sync-feature-directory-extensions.md).  The rules can include up to 5000 users per policy.
 
 ## License requirements
 
@@ -85,13 +84,13 @@ There are two ways to create an access package assignment policy for automatic a
 
 ### Create an access package assignment policy through Graph
 
-You can create a policy using Microsoft Graph. A user in an appropriate role with an application that has the delegated `EntitlementManagement.ReadWrite.All` permission, or an application in a catalog role or with the `EntitlementManagement.ReadWrite.All` permission, can call the [create an accessPackageAssignmentPolicy](/graph/api/entitlementmanagement-post-assignmentpolicies?tabs=http&view=graph-rest-1.0&preserve-view=true) API. In your [request payload](/graph/api/resources/accesspackageassignmentpolicy?view=graph-rest-1.0&preserve-view=true), include the `displayName`, `description`, `specificAllowedTargets`, [`automaticRequestSettings`](/graph/api/resources/accesspackageautomaticrequestsettings?view=graph-rest-1.0&preserve-view=true) and `accessPackage` properties of the policy.
+You can create a policy using Microsoft Graph. A user in an appropriate role with an application that has the delegated `EntitlementManagement.ReadWrite.All` permission, or an application in a catalog role or with the `EntitlementManagement.ReadWrite.All` permission, can call the [create an assignmentPolicy](/graph/api/entitlementmanagement-post-assignmentpolicies?tabs=http&view=graph-rest-1.0&preserve-view=true) API. In your [request payload](/graph/api/resources/accesspackageassignmentpolicy?view=graph-rest-1.0&preserve-view=true), include the `displayName`, `description`, `specificAllowedTargets`, [`automaticRequestSettings`](/graph/api/resources/accesspackageautomaticrequestsettings?view=graph-rest-1.0&preserve-view=true) and `accessPackage` properties of the policy.
 
 ### Create an access package assignment policy through PowerShell
 
 You can also create a policy in PowerShell with the cmdlets from the [Microsoft Graph PowerShell cmdlets for Identity Governance](https://www.powershellgallery.com/packages/Microsoft.Graph.Identity.Governance/) module version 1.16.0 or later.
 
-This script below illustrates using the `v1.0` profile, to create a policy for automatic assignment to an access package.  See [create an accessPackageAssignmentPolicy](/graph/api/entitlementmanagement-post-assignmentpolicies?tabs=http&view=graph-rest-v1.0&preserve-view=true) for more examples.
+This script below illustrates using the `v1.0` profile, to create a policy for automatic assignment to an access package.  See [create an assignmentPolicy](/graph/api/entitlementmanagement-post-assignmentpolicies?tabs=http&view=graph-rest-1.0&preserve-view=true) for more examples.
 
 ```powershell
 Connect-MgGraph -Scopes "EntitlementManagement.ReadWrite.All"

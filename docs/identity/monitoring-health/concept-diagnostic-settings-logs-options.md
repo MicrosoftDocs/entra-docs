@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: active-directory
 ms.topic: conceptual
 ms.subservice: report-monitor
-ms.date: 12/15/2023
+ms.date: 02/01/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg14
 
@@ -76,11 +76,11 @@ The `RiskyServicePrincipals` logs provide information about service principals t
 
 ### Service principal risk events
 
-The `ServicePrincipalRiskEvents` logs provide details around the risky sign-in events for service principals. These logs might include any identified suspicious events related to the service principal accounts. For more information, see [Securing workload identities](~/id-protection/concept-workload-identity-risk.md)
+The `ServicePrincipalRiskEvents` provide details around the risky sign-in events for service principals. These logs might include any identified suspicious events related to the service principal accounts. For more information, see [Securing workload identities](~/id-protection/concept-workload-identity-risk.md)
 
 ### Enriched Microsoft 365 audit logs
 
-The `EnrichedOffice365AuditLogs` logs are associated with the enriched logs you can enable for Microsoft Entra Internet Access. Selecting this option doesn't add new logs to your workspace unless your organization is using Microsoft Entra Internet to secure access to your Microsoft 365 traffic *and* you enabled the enriched logs. For more information, see [How to use the Global Secure Access enriched Microsoft 365 logs](/entra/global-secure-access/how-to-view-enriched-logs).
+The `EnrichedOffice365AuditLogs` are associated with the enriched logs you can enable for Microsoft Entra Internet Access. Selecting this option doesn't add new logs to your workspace unless your organization is using Microsoft Entra Internet to secure access to your Microsoft 365 traffic *and* you enabled the enriched logs. For more information, see [How to use the Global Secure Access enriched Microsoft 365 logs](/entra/global-secure-access/how-to-view-enriched-logs).
 
 ### Microsoft Graph activity logs
 
@@ -88,4 +88,8 @@ The `MicrosoftGraphActivityLogs` provide administrators full visibility into all
 
 ### Network access traffic logs
 
-The `NetworkAccessTrafficLogs` logs are associated with Microsoft Entra Internet Access and Microsoft Entra Private Access. The logs are visible in Microsoft Entra ID, but selecting this option doesn't add new logs to your workspace unless your organization is using Microsoft Entra Internet Access and Microsoft Entra Private Access to secure access to your corporate resources. For more information, see [What is Global Secure Access?](/entra/global-secure-access/overview-what-is-global-secure-access).
+The `NetworkAccessTrafficLogs` are associated with Microsoft Entra Internet Access and Microsoft Entra Private Access. The logs are visible in Microsoft Entra ID, but selecting this option doesn't add new logs to your workspace unless your organization is using Microsoft Entra Internet Access and Microsoft Entra Private Access to secure access to your corporate resources. For more information, see [What is Global Secure Access?](/entra/global-secure-access/overview-what-is-global-secure-access).
+
+### Custom security attribute audit logs
+
+The `CustomSecurityAttributeAuditLogs` capture changes to custom security attributes in your Microsoft Entra tenant. To view these logs in the Microsoft Entra audit logs, you need the [Attribute Log Reader](../../identity/role-based-access-control/permissions-reference.md#attribute-log-reader) role. To route these logs to an endpoint, you need the [Attribute Log Administrator](../../identity/role-based-access-control/permissions-reference.md#attribute-log-administrator) role and the [Security Administrator](../../identity/role-based-access-control/permissions-reference.md#security-administrator).

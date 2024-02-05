@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Prepare a Node.js web application for authentication'
+title: 'Tutorial: Prepare a Node.js web application for authentication in a customer tenant'
 description: Learn how to create a Node web app project, then prepare it for authentication
  
 author: kengaderdus
@@ -17,7 +17,7 @@ ms.custom: developer, devx-track-js
 
 # Tutorial: Prepare a Node.js web application for authentication
 
-In [Tutorial: Prepare your customer tenant to sign in users in a Node.js web app](tutorial-web-app-node-sign-in-prepare-tenant.md) tutorial, you prepared your customer tenant to sign in users. In this tutorial, you create a Node.js(Express) project and organize all the folders and files you require. You enable sign-in to the application you prepare here. This Node.js(Express) web application's views use [Handlebars](https://handlebarsjs.com).
+This tutorial is part 2 of a series that demonstrates building a Node.js web app and preparing it for authentication using the Microsoft Entra admin center. In [part 1 of this series](tutorial-web-app-node-sign-in-prepare-tenant.md) you registered an application and configured user flows in your Microsoft Entra ID for customers tenant. In this tutorial, you create a Node.js(Express) project and organize all the folders and files you require. You enable sign-in to the application you prepare here. This Node.js(Express) web application's views use [Handlebars](https://handlebarsjs.com).
 
 In this tutorial you'll;
 
@@ -29,11 +29,10 @@ In this tutorial you'll;
 
 ## Prerequisites
 
+- [Tutorial: Prepare your customer tenant to sign in users in a Node.js web app](tutorial-web-app-node-sign-in-prepare-tenant.md)
+- Although any integrated development environment (IDE) that supports React applications can be used, this tutorial uses [Visual Studio Code](https://visualstudio.microsoft.com/downloads/).
 - [Node.js](https://nodejs.org).
-
 - [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
-
-- You've completed the steps in [Tutorial: Prepare your customer tenant to sign in users in a Node.js web app](tutorial-web-app-node-sign-in-prepare-tenant.md).
 
 ## Create the Node.js project
 
@@ -48,7 +47,7 @@ In this tutorial you'll;
 
 1. Create additional folders and files to achieve the following project structure:
 
-    ```
+    ```text
         ciam-sign-in-node-express-web-app/
         ├── server.js
         └── app.js
@@ -157,7 +156,7 @@ npm install express dotenv hbs express-session axios cookie-parser http-errors m
         }
     ```
 
-## Next steps
+## Next step
 
 > [!div class="nextstepaction"]
-> [Add sign in and sign out >](tutorial-web-app-node-sign-in-sign-out.md)
+> [Part 3: Add add sign-in and sign-out in your Node.js web application](tutorial-web-app-node-sign-in-sign-out.md)

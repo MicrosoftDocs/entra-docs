@@ -9,7 +9,7 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: fundamentals
 ms.topic: how-to
-ms.date: 11/30/2023
+ms.date: 01/05/2024
 ms.author: sarahlipsey
 ms.reviewer: krbain
 
@@ -141,14 +141,16 @@ To edit your group settings:
 
 ## Add or remove a group from another group
 
-You can add an existing Security group to another Security group (also known as nested groups). Depending on the group types, you can add a group as a member of another group, just like a user, which applies settings like roles and access to the nested groups. You'll need the **Groups Administrator** or **User Administrator** role to edit group membership.
+For the security group type, you can add an existing group to another group (also known as nested groups). Depending on the group membership types, you can add a group as a member of another group, just like a user, which applies settings like access permissions and roles to nested groups. But for nested groups, Entra doesn't apply assigned membership to shared resources and applications. 
+
+You'll need the **Groups Administrator** or **User Administrator** role to edit group membership. For more info about security groups, see [What to know before creating a group](concept-learn-about-groups.md#what-to-know-before-creating-a-group).
 
 We currently don't support:
 - Adding groups to a group synced with on-premises Active Directory.
-- Adding Security groups to Microsoft 365 groups.
-- Adding Microsoft 365 groups to Security groups or other Microsoft 365 groups.
-- Assigning apps to nested groups.
-- Applying licenses to nested groups.
+- Adding security groups to Microsoft 365 groups.
+- Adding Microsoft 365 groups to security groups or other Microsoft 365 groups.
+- Assigned membership to shared resources and apps for nested security groups. 
+- Applying licenses to nested security groups. 
 - Adding distribution groups in nesting scenarios.
 - Adding security groups as members of mail-enabled security groups.
 - Adding groups as members of a role-assignable group.

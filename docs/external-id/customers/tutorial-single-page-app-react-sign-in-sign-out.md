@@ -1,5 +1,5 @@
 ---
-title: Tutorial - Add sign-in and sign-out to a React single-page app (SPA) for a customer tenant
+title: "Tutorial: Add sign-in and sign-out to a React SPA for a customer tenant"
 description: Learn how to configure a React single-page app (SPA) to sign in and sign out users with your Microsoft Entra ID for customers tenant.
  
 author: godonnell
@@ -14,24 +14,25 @@ ms.author: godonnell
 #Customer intent: As a developer I want to add sign-in and sign-out functionality to my React single-page app
 ---
 
-# Tutorial: Add sign-in and sign-out to a React single-page app (SPA) for a customer tenant
+# Tutorial: Add sign-in and sign-out to a React SPA for a customer tenant
 
-In the [previous article](./tutorial-single-page-app-react-sign-in-configure-authentication.md), you created a React single-page app (SPA) in Visual Studio Code and configured it for authentication. This tutorial shows you how to add sign-in and sign-out functionality to the app.
+This tutorial is the final part of a series that demonstrates building a React single-page application (SPA) and preparing it for authentication using the Microsoft Entra admin center. In [part 3 of this series](./tutorial-single-page-app-react-sign-in-configure-authentication.md), you created a React SPA in Visual Studio Code and configured it for authentication. This final step shows you how to add sign-in and sign-out functionality to the app.
 
 In this tutorial;
 
 > [!div class="checklist"]
+>
 > * Create a page layout and add the sign in and sign out experience
 > * Replace the default function to render authenticated information
 > * Sign in and sign out of the application using the user flow
 
 ## Prerequisites
 
-* Completion of the prerequisites and steps in [Prepare an single-page app for authentication](./tutorial-single-page-app-react-sign-in-prepare-app.md).
+* [Tutorial: Prepare your customer tenant to authenticate users in a React SPA](./tutorial-single-page-app-react-sign-in-prepare-tenant.md).
 
 ## Change filename and add function to render authenticated information
 
-By default, the application runs via a JavaScript file called *App.js*. It needs to be changed to a *.jsx* file, which is an extension that allows a developer to write HTML in React.
+By default, the application runs via a JavaScript file called *App.js*. It needs to be changed to *.jsx*, which is an extension that allows a developer to write HTML in React.
 
 1. Ensure *App.js* has been renamed to *App.jsx*.
 1. Replace the existing code with the following snippet:
@@ -117,12 +118,12 @@ All the required code snippets have been added, so the application can now be te
     npm start
     ```
 
-1. Open a web browser and navigate to `http://localhost:3000/` if you are not automatically redirected.
+1. Open a web browser and navigate to `http://localhost:3000/` if you aren't automatically redirected.
 1. For the purposes of this tutorial, choose the **Sign in using Popup** option.
 1. After the popup window appears with the sign-in options, select the account with which to sign-in.
-1. A second window may appear indicating that a code will be sent to your email address. If this happens, select **Send code**. Open the email from the sender Microsoft account team, and enter the 7-digit single-use code. Once entered, select **Sign in**.
+1. A second window may appear indicating that a code will be sent to your email address. If this happens, select **Send code**. Open the email from the sender Microsoft account team, and enter the seven digit single-use code. Once entered, select **Sign in**.
 1. For **Stay signed in**, you can select either **No** or **Yes**.
-1. The app will now ask for permission to sign-in and access data. Select **Accept** to continue.
+1. The app asks for permission to sign-in and access data. Select **Accept** to continue.
 
 ## Sign out of the application
 
@@ -130,7 +131,6 @@ All the required code snippets have been added, so the application can now be te
 1. A window appears asking which account to sign out of.
 1. Upon successful sign out, a final window appears advising you to close all browser windows.
 
-## Next steps
+## See also
 
-> [!div class="nextstepaction"]
 > [Enable self-service password reset](./how-to-enable-password-reset-customers.md)

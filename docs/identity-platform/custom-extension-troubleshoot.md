@@ -1,9 +1,9 @@
 ---
 title: Troubleshoot a custom claims provider
 description: Troubleshoot and monitor your custom claims provider API.  Learn how to use logging and Microsoft Entra sign-in logs to find errors and issues in your custom claims provider API.
-author: omondiatieno
+author: cilwerner
 manager: CelesteDG
-ms.author: jomondi
+ms.author: cwerner
 ms.custom: 
 ms.date: 03/06/2023
 ms.reviewer: JasSuri
@@ -11,7 +11,8 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: how-to
 titleSuffix: Microsoft identity platform
-#Customer intent: As an application developer, I want to find errors and issues in my custom claims provider API.
+
+#Customer intent: As a developer integrating external systems with Microsoft Entra ID, I want to troubleshoot issues with my custom claims provider API, so that I can identify and resolve any errors or performance problems affecting the authentication experience.
 ---
 
 # Troubleshoot your custom claims provider API (preview)
@@ -25,13 +26,11 @@ When an API call fails, the error behavior is as follows:
 - For OpenId Connect apps - Microsoft Entra ID redirects the user back to the client application with an error. A token isn't minted.
 - For SAML apps -  Microsoft Entra ID shows the user an error screen in the authentication experience. The user isn't redirected back to the client application.
 
-The error code sent back to the application or the user is generic. To troubleshoot, check the [sign-in logs](#azure-ad-sign-in-logs) for the [error codes](#error-codes-reference).
+The error code sent back to the application or the user is generic. To troubleshoot, check the [sign-in logs](#microsoft-entra-sign-in-logs) for the [error codes](#error-codes-reference).
 
 ## Logging
 
 In order to troubleshoot issues with your custom claims provider REST API endpoint, the REST API must handle logging. Azure Functions and other API-development platforms provide in-depth logging solutions. Use those solutions to get detailed information on your APIs behavior and troubleshoot your API logic.
-
-<a name='azure-ad-sign-in-logs'></a>
 
 ## Microsoft Entra sign-in logs
 
@@ -90,7 +89,7 @@ Your REST API is protected by a Microsoft Entra access token. You can test your 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Application registrations**.
-1. Select the *Azure Functions authentication events API* app registration [you created previously](custom-extension-get-started.md#step-2-register-a-custom-authentication-extension). 
+1. Select the **Azure Functions authentication events API** app registration [you created previously](custom-extension-get-started.md#step-2-register-a-custom-authentication-extension).
 1. Copy the [application ID](custom-extension-get-started.md#22-grant-admin-consent).
 1. If you haven't created an app secret, follow these steps:
     1. Select **Certificates & secrets** > **Client secrets** > **New client secret**.
@@ -176,13 +175,12 @@ To test your API directly from the Postman, follow these steps:
 1. Select **Authorization** and then select **Bearer token**.
 1. Paste the access token you received from Microsoft Entra ID, and run the query.
 
-
 ## Common performance improvements
 
 One of the most common issues is that your custom claims provider API doesn't respond within the two-seconds timeout. If your REST API doesn't respond in subsequent retries, then the authentication fails. To improve the performance of your REST API, follow the below suggestions:
 
 1. If your API accesses any downstream APIs, cache the access token used to call these APIs, so a new token doesn't have to be acquired on every execution.
-1. Performance issues are often related to downstream services. Add logging, which records the process time to call to any downstream services. 
+1. Performance issues are often related to downstream services. Add logging, which records the process time to call to any downstream services.
 1. If you use a cloud provider to host your API, use a hosting plan that keeps the API always "warm". For Azure Functions, it can be either [the Premium plan or Dedicated plan](/azure/azure-functions/functions-scale).
 1. [Run automated integration tests](test-automate-integration-testing.md) for your authentications. You can also use Postman or other tools to test just your API performance.
 

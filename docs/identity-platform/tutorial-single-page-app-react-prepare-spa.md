@@ -4,7 +4,7 @@ description: Register a tenant application and configure it for a React SPA.
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.date: 09/25/2023
+ms.date: 01/31/2024
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: tutorial
@@ -102,7 +102,7 @@ Identity related **npm** packages must be installed in the project to enable use
 ### [Visual Studio](#tab/visual-studio)
 
 1. In the **Solution Explorer**, right-click the **npm** option and select **Install new npm packages**.
-1. Search for **@azure/msal-browser**, then select **Install Package**. Repeat for **@azure/msal-react** and **@azure/msal-common**.
+1. Search for **@azure/msal-browser**, then select **Install Package**. Repeat for **@azure/msal-react**.
 1. Search for and install **react-bootstrap**.
 1. Select **Close**.
 
@@ -112,12 +112,12 @@ Identity related **npm** packages must be installed in the project to enable use
 1. Ensure that the correct directory is selected (*reactspalocal*) then enter the following into the terminal to install the relevant `msal` and `bootstrap` packages.
 
     ```powershell
-    npm install @azure/msal-browser @azure/msal-react @azure/msal-common
+    npm install @azure/msal-browser @azure/msal-react
     npm install react-bootstrap bootstrap
     ```
 ---
 
-To learn more about these packages refer to the documentation in [`msal-browser`](/javascript/api/@azure/msal-browser), [`msal-common`](/javascript/api/@azure/msal-common), [`msal-react`](/javascript/api/@azure/msal-react).
+To learn more about these packages refer to the documentation in [`msal-browser`](/javascript/api/@azure/msal-browser) and [`msal-react`](/javascript/api/@azure/msal-react).
 
 ## Creating the authentication configuration file
 
@@ -129,8 +129,7 @@ To learn more about these packages refer to the documentation in [`msal-browser`
     - `clientId` - The identifier of the application, also referred to as the client. Replace `Enter_the_Application_Id_Here` with the **Application (client) ID** value that was recorded earlier from the overview page of the registered application.
     - `authority` - This is composed of two parts:
         - The *Instance* is endpoint of the cloud provider. Check with the different available endpoints in [National clouds](authentication-national-cloud.md#azure-ad-authentication-endpoints).
-        - The *Tenant ID* is the identifier of the tenant where the application is registered. Replace the `_Enter_the_Tenant_Info_Here` with the **Directory (tenant) ID** value that was recorded earlier from the overview page of the registered application.
-
+        - The *Tenant ID* is the identifier of the tenant where the application is registered. Replace *Enter_the_Tenant_Info_Here* with the **Directory (tenant) ID** value that was recorded earlier from the overview page of the registered application.
 1. Save the file.
 
 ## Modify *index.js* to include the authentication provider

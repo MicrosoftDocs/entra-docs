@@ -41,6 +41,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity/saas-apps/jfrog-artifactory-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/saas-apps/cisco-umbrella-user-management-provisioning-tutorial.md",
       "redirect_url": "/entra/identity/saas-apps/cisco-user-management-for-secure-access-provisioning-tutorial",
       "redirect_document_id": false
@@ -51,8 +56,18 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity/saas-apps/traction-guest-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/sis-enterprise-tutorial",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/saas-apps/axiad-cloud-tutorial.md",
       "redirect_url": "/entra/identity/saas-apps/axiad-cloud-connector-tutorial",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/adobe-identity-management-provisioning-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/adobe-identity-management-provisioning-saml-tutorial",
       "redirect_document_id": false
     },
     {
@@ -66,8 +81,38 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity/app-proxy/application-proxy-configure-single-sign-on-with-kcd.md",
+      "redirect_url": "/entra/identity",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/app-proxy/application-proxy-deployment-plan.md",
+      "redirect_url": "/entra/identity",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/app-proxy/what-is-application-proxy.md",
+      "redirect_url": "/entra/identity",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/app-proxy/application-proxy-config-sso-how-to.md",
+      "redirect_url": "/entra/identity",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/app-proxy/whats-new-docs.md",
+      "redirect_url": "/entra/identity",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity-platform/msal-v1-app-scopes.md",
       "redirect_url": "/entra/identity-platform/msal-acquire-cache-tokens",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/how-to-web-app-node-sign-in-call-api-overview.md",
+      "redirect_url": "/entra/external-id/customers/how-to-web-app-node-sign-in-call-api-prepare-tenant",
       "redirect_document_id": false
     },
     {
@@ -99,8 +144,32 @@
       "source_path_from_root": "/docs/identity-platform/web-app-tutorial-04-call-web-api.md",
       "redirect_url": "/entra/identity-platform/tutorial-web-app-dotnet-call-api",
       "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/test-throttle-service-limits.md",
+      "redirect_url": "/entra/identity-platform/test-setup-environment",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/quickstart-web-app-aspnet-core-sign-in.md",
+      "redirect_url": "/entra/identity-platform/quickstart-web-app-dotnet-core-sign-in",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/web-api-tutorial-01-register-app.md",
+      "redirect_url": "/entra/identity-platform/tutorial-web-api-dotnet-register-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/web-api-tutorial-02-prepare-api.md",
+      "redirect_url": "/entra/identity-platform/tutorial-web-api-dotnet-prepare-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/web-api-tutorial-03-protect-endpoint.md",
+      "redirect_url": "/entra/identity-platform/tutorial-web-api-dotnet-protect-endpoint",
+      "redirect_document_id": false
     }
-
   ]
 }
 

@@ -12,7 +12,7 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 
 ms.tgt_pltfrm: na
-ms.devlang: na
+
 ms.topic: article
 ms.date: 11/28/2022
 ms.author: thwimmer

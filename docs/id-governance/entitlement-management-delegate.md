@@ -31,7 +31,7 @@ In Microsoft Entra ID, you can use role models to manage access at scale through
 
 This article discusses how to use roles to manage aspects within Microsoft Entra entitlement management, for controlling access to the entitlement management resources.
 
-By default, Global administrators and Identity governance administrators can create and manage all aspects of entitlement management. However, the users in these roles may not know all the situations where access packages are required. Typically it's users within the respective departments, teams, or projects who know who they're collaborating with, using what resources, and for how long. Instead of granting unrestricted permissions to non-administrators, you can grant users the least permissions they need to do their job and avoid creating conflicting or inappropriate access rights.
+By default, users in the Global Administrator role or the Identity Governance Administrator role can create and manage all aspects of entitlement management. However, the users in these roles may not know all the situations where access packages are required. Typically it's users within the respective departments, teams, or projects who know who they're collaborating with, using what resources, and for how long. Instead of granting unrestricted permissions to non-administrators, you can grant users the least permissions they need to do their job and avoid creating conflicting or inappropriate access rights.
 
 This video provides an overview of how to delegate access governance from IT administrator to users who aren't administrators.
 
@@ -126,28 +126,37 @@ The following table lists the tasks that the entitlement management roles can do
 | [Hide an access package](entitlement-management-access-package-edit.md#change-the-hidden-setting) | :heavy_check_mark: |  | :heavy_check_mark: | :heavy_check_mark: |  |
 | [Delete an access package](entitlement-management-access-package-edit.md#delete-an-access-package) | :heavy_check_mark: |  | :heavy_check_mark: | :heavy_check_mark: |  |
 
+To determine the least privileged role for a task, you can also reference [Administrator roles by admin task in Microsoft Entra ID](~/identity/role-based-access-control/delegate-by-task.md#entitlement-management).
+
 ## Required roles to add resources to a catalog
 
-A Global administrator can add or remove any group (cloud-created security groups or cloud-created Microsoft 365 Groups), application, or SharePoint Online site in a catalog. A User administrator can add or remove any group or application in a catalog, except for a group configured as assignable to a directory role.  For more information on role-assignable groups, reference [Create a role-assignable group in Microsoft Entra ID](~/identity/role-based-access-control/groups-create-eligible.md).
+A Global administrator can add or remove any group (cloud-created security groups or cloud-created Microsoft 365 Groups), application, or SharePoint Online site in a catalog.
 
 > [!NOTE]
-> Users that have been assigned the User administrator role will no longer be able to create catalogs or manage access packages in a catalog they do not own. If users in your organization have been assigned the User administrator role to configure catalogs, access packages, or policies in entitlement management, you should instead assign these users the **Identity Governance administrator** role.
+> Users that have been assigned the User administrator role will no longer be able to create catalogs or manage access packages in a catalog they do not own.  A User administrator who is a catalog owner can add or remove any group or application in the catalog they own, except for a group configured as assignable to a directory role.  For more information on role-assignable groups, reference [Create a role-assignable group in Microsoft Entra ID](~/identity/role-based-access-control/groups-create-eligible.md). If users in your organization have been assigned the User administrator role to configure catalogs, access packages, or policies in entitlement management, you should instead assign these users the **Identity Governance administrator** role.
 
-For a user who isn't a global administrator, to add groups, applications, or SharePoint Online sites to a catalog, that user must have *both* a Microsoft Entra directory role or ownership of the resource, and a catalog owner entitlement management role for the catalog. The following table lists the role combinations that are required to add resources to a catalog. To remove resources from a catalog, you must have the same roles.
+For a user who isn't a global administrator, to add groups, applications, or SharePoint Online sites to a catalog, that user must have *both* the ability to perform actions on that resource, and be a catalog owner role in entitlement management for the catalog. The most common way a user can have the ability to perform actions for a resource is by being in a Microsoft Entra directory role that allows them to administer the resource.  Or for resources that have owners, the user can have the ability to perform actions by having been assigned as an owner of the resource.
+
+The actions that entitlement management checks when a user adds a resource to a catalog are:
+
+* To add a security group or Microsoft 365 group: the user must be permitted to perform the `microsoft.directory/groups/members/update` and `microsoft.directory/groups/owners/update` actions
+* To add an application: the user must be permitted to perform the `microsoft.directory/servicePrincipals/appRoleAssignedTo/update` action
+* To add a SharePoint Online site: the user must be a SharePoint Administrator or be in a SharePoint Online site role allowing them to manage permissions in the site
+
+The following table lists some of the role combinations that include the actions that allow users in those role combinations to add resources to a catalog. To remove resources from a catalog, you must also have a role or ownership with those same actions.
 
 | Microsoft Entra directory role | Entitlement management role | Can add security group | Can add Microsoft 365 Group | Can add app | Can add SharePoint Online site |
 | --- | :---: | :---: | :---: | :---: | :---: |
-| [Global administrator](~/identity/role-based-access-control/permissions-reference.md) | n/a |  :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Identity Governance administrator](~/identity/role-based-access-control/permissions-reference.md) | n/a | :heavy_check_mark:  | :heavy_check_mark: | :heavy_check_mark: |  |
-| [Intune administrator](~/identity/role-based-access-control/permissions-reference.md) | Catalog owner | :heavy_check_mark: | :heavy_check_mark: |  |  |
-| [Exchange administrator](~/identity/role-based-access-control/permissions-reference.md) | Catalog owner |  | :heavy_check_mark: |  |  |
-| [Teams service administrator](~/identity/role-based-access-control/permissions-reference.md) | Catalog owner |  | :heavy_check_mark: |  |  |
-| [SharePoint administrator](~/identity/role-based-access-control/permissions-reference.md) | Catalog owner |  | :heavy_check_mark: |  | :heavy_check_mark: |
-| [Application administrator](~/identity/role-based-access-control/permissions-reference.md) | Catalog owner |  |  | :heavy_check_mark: |  |
-| [Cloud application administrator](~/identity/role-based-access-control/permissions-reference.md) | Catalog owner |  |  | :heavy_check_mark: |  |
+| [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) | n/a |  :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) | n/a | | | :heavy_check_mark: |  |
+| [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator) | Catalog owner | :heavy_check_mark: | :heavy_check_mark: |  |  |
+| [Intune Administrator](~/identity/role-based-access-control/permissions-reference.md#intune-administrator) | Catalog owner | :heavy_check_mark: | :heavy_check_mark: |  |  |
+| [Exchange Administrator](~/identity/role-based-access-control/permissions-reference.md#exchange-administrator) | Catalog owner |  | :heavy_check_mark: |  |  |
+| [SharePoint Administrator](~/identity/role-based-access-control/permissions-reference.md#sharepoint-administrator) | Catalog owner |  | :heavy_check_mark: |  | :heavy_check_mark: |
+| [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) | Catalog owner |  |  | :heavy_check_mark: |  |
+| [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator) | Catalog owner |  |  | :heavy_check_mark: |  |
 | User | Catalog owner | Only if group owner | Only if group owner | Only if app owner |  |
 
-To determine the least privileged role for a task, you can also reference [Administrator roles by admin task in Microsoft Entra ID](~/identity/role-based-access-control/delegate-by-task.md#entitlement-management).
 
 ## Delegated management of guest user lifecycle
 
@@ -186,7 +195,7 @@ You can also view and update catalog creators and entitlement management catalog
 For example, to view the entitlement management-specific roles that a particular user or group has been assigned, use the Graph query to list role assignments, and provide the user or group's ID as the value of the `principalId` query filter, as in
 
 ```http
-GET https://graph.microsoft.com/beta/roleManagement/entitlementManagement/roleAssignments?$filter=principalId eq '10850a21-5283-41a6-9df3-3d90051dd111'&$expand=roleDefinition&$select=id,appScopeId,roleDefinition
+GET https://graph.microsoft.com/v1.0/roleManagement/entitlementManagement/roleAssignments?$filter=principalId eq '10850a21-5283-41a6-9df3-3d90051dd111'&$expand=roleDefinition&$select=id,appScopeId,roleDefinition
 ```
 
 For a role that is specific to a catalog, the `appScopeId` in the response indicates the catalog in which the user is assigned a role.  This response only retrieves explicit assignments of that principal to role in entitlement management, it doesn't return results for a user who has access rights via a directory role, or through membership in a group assigned to a role.

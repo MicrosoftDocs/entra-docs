@@ -21,7 +21,7 @@ landingContent:
       - linkListType: overview
         links:
           - text: What is Application Proxy?
-            url: what-is-application-proxy.md
+            url: overview-what-is-app-proxy.md
   - title: Get started
     linkLists:
       - linkListType: quickstart

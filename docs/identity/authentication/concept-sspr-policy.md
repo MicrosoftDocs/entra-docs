@@ -14,7 +14,7 @@ manager: amycolannino
 ms.reviewer: tilarso
 
 ms.collection: M365-identity-device-management
-ms.custom: contperf-fy20q4, has-azure-ad-ps-ref
+ms.custom: contperf-fy20q4, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
 # Password policies and account restrictions in Microsoft Entra ID
 
@@ -53,8 +53,8 @@ The following Microsoft Entra password policy options are defined. Unless noted,
 | Characters allowed |A – Z<br>a - z<br>0 – 9<br>@ # $ % ^ & * - _ ! + = [ ] { } &#124; \ : ' , . ? / \` ~ " ( ) ; < ><br>Blank space |
 | Characters not allowed | Unicode characters |
 | Password restrictions |A minimum of 8 characters and a maximum of 256 characters.<br>Requires three out of four of the following types of characters:<br>- Lowercase characters<br>- Uppercase characters<br>- Numbers (0-9)<br>- Symbols (see the previous password restrictions) |
-| Password expiry duration (Maximum password age) |Default value: **90** days. If the tenant was created after 2021, it has no default expiration value. You can check current policy with [Get-MsolPasswordPolicy](/powershell/module/msonline/get-msolpasswordpolicy).<br>The value is configurable by using the `Set-MsolPasswordPolicy` cmdlet from the Azure AD module for PowerShell.|
-| Password expiry (Let passwords never expire) |Default value: **false** (indicates that passwords have an expiration date).<br>The value can be configured for individual user accounts by using the `Set-MsolUser` cmdlet. |
+| Password expiry duration (Maximum password age) |Default value: **90** days. If the tenant was created after 2021, it has no default expiration value. You can check current policy with [Get-MgDomain](/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdomain).<br>The value is configurable by using the [Update-MgDomain](/powershell/module/microsoft.graph.identity.directorymanagement/update-mgdomain) cmdlet from the Microsoft Graph module for PowerShell.|
+| Password expiry (Let passwords never expire) |Default value: **false** (indicates that passwords have an expiration date).<br>The value can be configured for individual user accounts by using the [Update-MgUser](/powershell/module/microsoft.graph.users/update-mguser) cmdlet. |
 | Password change history | The last password *can't* be used again when the user changes a password. |
 | Password reset history | The last password *can* be used again when the user resets a forgotten password. |
 
@@ -112,7 +112,7 @@ A one-gate policy requires one piece of authentication data, such as an email ad
 
 ## Password expiration policies
 
-A *Global Administrator* or *User Administrator* can use the [Azure Active Directory module for PowerShell](/powershell/module/Azuread/) to set user passwords not to expire.
+A *Global Administrator* or *User Administrator* can use the [Microsoft Graph](/powershell/microsoftgraph/) to set user passwords not to expire.
 
 You can also use PowerShell cmdlets to remove the never-expires configuration or to see which user passwords are set to never expire.
 
@@ -123,65 +123,65 @@ This guidance applies to other providers, such as Intune and Microsoft 365, whic
 
 ### Set or check the password policies by using PowerShell
 
-To get started, [download and install the Azure AD PowerShell module](/powershell/module/azuread/) and [connect it to your Microsoft Entra tenant](/powershell/module/azuread/connect-azuread#examples).
+To get started, [download and install the Microsoft Graph PowerShell module](/powershell/microsoftgraph/installation) and [connect it to your Microsoft Entra tenant](/powershell/microsoftgraph/authentication-commands#using-connect-mggraph).
 
 After the module is installed, use the following steps to complete each task as needed.
 
 ### Check the expiration policy for a password
 
-1. Open a PowerShell prompt and [connect to your Microsoft Entra tenant](/powershell/module/azuread/connect-azuread#examples) using a *Global Administrator* or *User Administrator* account.
+1. Open a PowerShell prompt and [connect to your Microsoft Entra tenant](/powershell/microsoftgraph/authentication-commands#using-connect-mggraph) using a *Global Administrator* or *User Administrator* account.
 
 1. Run one of the following commands for either an individual user or for all users:
 
-   * To see if a single user's password is set to never expire, run the following cmdlet. Replace `<user ID>` with the user ID of the user you want to check, such as *driley\@contoso.onmicrosoft.com*:
+   * To see if a single user's password is set to never expire, run the following cmdlet. Replace `<user ID>` with the user ID of the user you want to check:
 
        ```powershell
-       Get-AzureADUser -ObjectId <user ID> | Select-Object @{N="PasswordNeverExpires";E={$_.PasswordPolicies -contains "DisablePasswordExpiration"}}
+       Get-MgUser -UserId <user ID> | Select-Object @{N="PasswordNeverExpires";E={$_.PasswordPolicies -contains "DisablePasswordExpiration"}}
        ```
 
    * To see the **Password never expires** setting for all users, run the following cmdlet:
 
        ```powershell
-       Get-AzureADUser -All $true | Select-Object UserPrincipalName, @{N="PasswordNeverExpires";E={$_.PasswordPolicies -contains "DisablePasswordExpiration"}}
+       Get-MgUser -All | Select-Object UserPrincipalName, @{N="PasswordNeverExpires";E={$_.PasswordPolicies -contains "DisablePasswordExpiration"}}
        ```
 
 ### Set a password to expire
 
-1. Open a PowerShell prompt and [connect to your Microsoft Entra tenant](/powershell/module/azuread/connect-azuread#examples) using a *Global Administrator* or *User Administrator* account.
+1. Open a PowerShell prompt and [connect to your Microsoft Entra tenant](/powershell/microsoftgraph/authentication-commands#using-connect-mggraph) using a *Global Administrator* or *User Administrator* account.
 
 1. Run one of the following commands for either an individual user or for all users:
 
-   * To set the password of one user so that the password expires, run the following cmdlet. Replace `<user ID>` with the user ID of the user you want to check, such as *driley\@contoso.onmicrosoft.com*
+   * To set the password of one user so that the password expires, run the following cmdlet. Replace `<user ID>` with the user ID of the user you want to check:
 
        ```powershell
-       Set-AzureADUser -ObjectId <user ID> -PasswordPolicies None
+       Update-MgUser -UserId <user ID> -PasswordPolicies None
        ```
 
-   * To set the passwords of all users in the organization so that they expire, use the following cmdlet:
+   * To set the passwords of all users in the organization so that they expire, use the following command:
 
        ```powershell
-       Get-AzureADUser -All $true | Set-AzureADUser -PasswordPolicies None
+       Get-MgUser -All | foreach $_ { Update-MgUser -UserId $_.Id -PasswordPolicies None }
        ```
 
 ### Set a password to never expire
 
-1. Open a PowerShell prompt and [connect to your Microsoft Entra tenant](/powershell/module/azuread/connect-azuread#examples) using a *Global Administrator* or *User Administrator* account.
+1. Open a PowerShell prompt and [connect to your Microsoft Entra tenant](/powershell/microsoftgraph/authentication-commands#using-connect-mggraph) using a *Global Administrator* or *User Administrator* account.
 1. Run one of the following commands for either an individual user or for all users:
 
-   * To set the password of one user to never expire, run the following cmdlet. Replace `<user ID>` with the user ID of the user you want to check, such as *driley\@contoso.onmicrosoft.com*
+   * To set the password of one user to never expire, run the following cmdlet. Replace `<user ID>` with the user ID of the user you want to check:
 
        ```powershell
-       Set-AzureADUser -ObjectId <user ID> -PasswordPolicies DisablePasswordExpiration
+       Update-MgUser -UserId <user ID> -PasswordPolicies DisablePasswordExpiration
        ```
 
    * To set the passwords of all the users in an organization to never expire, run the following cmdlet:
 
        ```powershell
-       Get-AzureADUser -All $true | Set-AzureADUser -PasswordPolicies DisablePasswordExpiration
+       Get-MgUser -All | foreach $_ { Update-MgUser -UserId $_.Id -PasswordPolicies DisablePasswordExpiration }
        ```
 
    > [!WARNING]
-   > Passwords set to `-PasswordPolicies DisablePasswordExpiration` still age based on the `pwdLastSet` attribute. Based on the `pwdLastSet` attribute, if you change the expiration to `-PasswordPolicies None`, all passwords that have a `pwdLastSet` older than 90 days require the user to change them the next time they sign in. This change can affect a large number of users.
+   > Passwords set to `-PasswordPolicies DisablePasswordExpiration` still age based on the `LastPasswordChangeDateTime` attribute. Based on the `LastPasswordChangeDateTime` attribute, if you change the expiration to `-PasswordPolicies None`, all passwords that have a `LastPasswordChangeDateTime` older than 90 days require the user to change them the next time they sign in. This change can affect a large number of users.
 
 ## Next steps
 

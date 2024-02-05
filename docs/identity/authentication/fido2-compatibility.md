@@ -6,7 +6,7 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 12/06/2023
+ms.date: 02/01/2024
 
 author: justinha
 ms.author: justinha
@@ -29,7 +29,7 @@ Microsoft applications provide native support for FIDO2 authentication in previe
 | macOS            | Microsoft Intune Company Portal <sup>1</sup> | &#x2705;       |
 | Android<sup>2</sup> | Authenticator or Company Portal | &#10060;    |
 
-<sup>1</sup>On macOS, the [Microsoft Enterprise SSO plug-in](/entra/identity-platform/apple-sso-plugin) is required to enable Company Portal as an authentication broker. macOS devices must meet SSO plug-in requirements, including enrollment in mobile device management. In addition, FIDO2 authentication for initial sign-in to the Company Portal app is not currently supported.
+<sup>1</sup>On macOS, the [Microsoft Enterprise SSO plug-in](/entra/identity-platform/apple-sso-plugin) is required to enable Company Portal as an authentication broker. Devices that run macOS must meet SSO plug-in requirements, including enrollment in mobile device management. 
 
 <sup>2</sup>Native app support for FIDO2 on Android is in development.
 

@@ -8,7 +8,7 @@ ms.service: active-directory
  
 ms.subservice: ciam
 ms.topic: how-to
-ms.date: 07/12/2023
+ms.date: 01/19/2024
 ms.author: mimart
 ms.custom: it-pro
 
@@ -31,10 +31,11 @@ To create a new admin account, follow these steps:
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your customer tenant from the **Directories + subscriptions** menu.
 1. Browse to **Identity** > **Users** > **All users**.
 1. Select **New user** > **Create new user**.
-1. Enter information for this admin:
+1. On the **New user** page, under **Select template**, select **Create user**.
+1. Under **Identity**, enter information for this admin:
   
    - **User name**. *Required*. The user name of the new user. For example, `mary@contoso.com`.
-    - **Name**. *Required*. The first and last name of the new user. For example, *Mary Parker*.
+   - **Name**. *Required*. The first and last name of the new user. For example, *Mary Parker*.
    - **First name**. The first name of the new user. For example, *Mary*.
    - **Last name**. The last name of the new user. For example, *Parker*.
    - **Groups**. *Optional*. You can add the user to one or more existing groups. You can also add the user to groups at a later time.
@@ -55,10 +56,13 @@ You can also invite a new guest user to manage your tenant. To invite an admin, 
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your customer tenant from the **Directories + subscriptions** menu.
 1. Browse to **Identity** > **Users** > **All users**.
 1. Select **New user** > **Invite external user**.
-1. On the **New user** page, enter information for the admin:
+1. On the **New user** page, under **Select template**, select **Invite user**.
+1. Under **Identity**, enter information for the admin:
 
    - **Name**. *Required*. The first and last name of the new user. For example, *Mary Parker*.
    - **Email address**. *Required*. The email address of the user you would like to invite.
+   - **First name**. The first name of the new user. For example, *Mary*.
+   - **Last name**. The last name of the new user. For example, *Parker*.
    - **Personal message**: You add a personal message that will be included in the invite email.
    - **Groups**. *Optional*. You can add the user to one or more existing groups. You can also add the user to groups at a later time.
    - **Roles**: To add administrative permissions for the user, add them to a Microsoft Entra role. You can assign the user to be a Global administrator or one or more of the limited administrator roles in Microsoft Entra ID.

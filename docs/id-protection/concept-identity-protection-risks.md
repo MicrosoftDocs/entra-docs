@@ -5,14 +5,12 @@ description: Explaining risk in Microsoft Entra ID Protection
 ms.service: active-directory
 ms.subservice: identity-protection
 ms.topic: conceptual
-ms.date: 01/02/2024
+ms.date: 02/05/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: chuqiaoshi, emilymakedon
-
-ms.collection: M365-identity-device-management
 ---
 # What are risk detections?
 
@@ -74,6 +72,7 @@ Real-time detections might not show up in reporting for 5 to 10 minutes. Offline
 | [Anomalous user activity](#anomalous-user-activity) | Offline | Premium |
 | [User reported suspicious activity](#user-reported-suspicious-activity) | Offline | Premium |
 | [Suspicious API Traffic](#suspicious-api-traffic) | Offline | Premium |
+| [Suspicious sending patterns](#suspicious-sending-patterns)| Offline| Premium|
 | [Additional risk detected](#additional-risk-detected-user) | Real-time or Offline | Nonpremium |
 | [Leaked credentials](#leaked-credentials) | Offline | Nonpremium |
 | [Microsoft Entra threat intelligence](#microsoft-entra-threat-intelligence-user) | Offline | Nonpremium |
@@ -222,6 +221,10 @@ For further investigation of password spray risk detections, see the article [Gu
 #### Suspicious API traffic
 
 **Calculated offline**. This risk detection is reported when abnormal Graph traffic or directory enumeration is observed by a user. Suspicious API traffic might suggest that a user is compromised and conducting reconnaissance in their environment.
+
+#### Suspicious sending patterns
+
+**Calculated offline**. This risk detection type is discovered using information provided by [Microsoft Defender for Office](/microsoft-365/security/office-365-security/air-about) (MDO). This alert is generated when someone in your organization has sent suspicious email and is either at risk of being restricted from sending email or has already been restricted from sending email. This detection moves users to medium risk and only fires in organizations that have deployed MDO. This detection is low-volume and is seen infrequently in most organizations. 
 
 ## Nonpremium detections
 
