@@ -88,7 +88,7 @@ The following table compares the features available for OAuth 2.0 and OpenID Con
 
 The authority URL is a URL that indicates a directory that MSAL can request tokens from. For customer-facing applications, always use the following format: *&lt;tenant-name&gt;.ciamlogin.com*
 
-The follwoing JSON shows an exmple of a .Net application app settings:
+The following JSON shows an example of a .NET application app settings with an authority URL:
 
 ```json
 {
