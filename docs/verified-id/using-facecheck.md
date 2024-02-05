@@ -145,14 +145,14 @@ Face ID is a vision based biometric security option offer on Apple products for 
 
 ### Is the Face Check biometric vision check performed on the mobile device?
 
-No. The biometric check between the photo and the liveness data captured is performed in the cloud, using [Azure AI Vision Face API](https://learn.microsoft.com/azure/ai-services/computer-vision/overview-identity). The user selfie capture during the process isn't shared with the requesting ID verifying site.
+No. The biometric check between the photo and the liveness data captured is performed in the cloud, using [Azure AI Vision Face API](/azure/ai-services/computer-vision/overview-identity). The user selfie capture during the process isn't shared with the requesting ID verifying site.
 
 ### What happens to the liveness data taken?
 
 When the camera is turned on the mobile device, live footage is captured on the mobile device. This footage is then passed to Verified ID who uses it to invoke services of Azure AI services.
 
 Neither the Microsoft Authenticator, nor Verified ID or Azure AI Services store or keep this data. Furthermore, the footage isn't shared with the verifier application either. The verifier application only gets the confidence score in return. In an AI based system the confidence score is the probability percentage answer for a query to the system. For this scenario the confidence score is the likelihood the Verified ID user photo matches user capture on the mobile device.
-Data and privacy for Azure AI Services can be found [here](https://learn.microsoft.com/legal/cognitive-services/face/data-privacy-security).
+Data and privacy for Azure AI Services can be found [here](/legal/cognitive-services/face/data-privacy-security).
 
 ### Does Face Check Require MS Authenticator?
 
@@ -164,7 +164,7 @@ Today we use a default confidence matching value when verifying the user on par 
 
 ### What is Azure AI Vision Face API?
 
-Azure AI is a suite of cloud services on the Azure Platform. The Azure AI Vision Face API offers services for face detection, face recognition, face match, and liveness check. Entra Verified ID uses face detection, face match, and face liveness check services when performing the FaceCheck. More information can be [here](https://learn.microsoft.com/azure/ai-services/computer-vision/overview-identity).
+Azure AI is a suite of cloud services on the Azure Platform. The Azure AI Vision Face API offers services for face detection, face recognition, face match, and liveness check. Entra Verified ID uses face detection, face match, and face liveness check services when performing the FaceCheck. More information can be [here](/azure/ai-services/computer-vision/overview-identity).
 
 ### What is Face Liveness Check?
 
@@ -198,7 +198,7 @@ Photo Requirements:
 1. Face should be centered within the image and fill at least 50% of the image.
 1. Recommended Face size is 200 pixels x 200 pixels. Face sizes larger than 200 pixels x 200 pixels don't result in better AI quality.
 
-More information on how facial points are detected in the image can be found [here](https://learn.microsoft.com/azure/cognitive-services/computer-vision/how-to/identity-detect-faces)
+More information on how facial points are detected in the image can be found [here](/azure/cognitive-services/computer-vision/how-to/identity-detect-faces)
 
 ## Next steps
 
