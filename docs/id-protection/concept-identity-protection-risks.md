@@ -135,8 +135,8 @@ For further investigation of token based detections, see the article [Token tact
 
 ##### Investigating suspicious browser detections
 
-1. Browser isn't commonly used by the user or activity within the browser doesn't match the users normally behavior.
-   1. **Recommended action**: Mark the sign-in as compromised, and invoke a password reset if not already performed by self-remediation. Block the user if an attacker has access to reset password or perform MFA and reset password and revoke all tokens.
+- Browser isn't commonly used by the user or activity within the browser doesn't match the users normally behavior.
+   - **Recommended action**: Mark the sign-in as compromised, and invoke a password reset if not already performed by self-remediation. Block the user if an attacker has access to reset password or perform MFA and reset password and revoke all tokens.
 
 #### Unfamiliar sign-in properties
 
