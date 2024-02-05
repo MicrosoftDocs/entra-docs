@@ -13,6 +13,9 @@ ms.author: barclayn
 
 # Setting up place of work verification on LinkedIn
 
+> [!NOTE]
+> Place of work verification on LinkedIn is in public preview. Currently, customers with 10K seats of more are prioritized.
+
 If your organization wants its employees to get their place of work verified on LinkedIn, you need to follow these few steps:
 
 1. Setup your Microsoft Entra Verified ID service by following the [quick setup instructions](verifiable-credentials-configure-tenant-quick.md).
