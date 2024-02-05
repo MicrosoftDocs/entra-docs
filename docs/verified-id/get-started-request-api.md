@@ -468,7 +468,7 @@ Presentation request with [claims constraints](presentation-request-api.md#const
 
 # [With FaceCheck](#tab/facecheck)
 
-Presentation request with FaceCheck:
+Presentation request with FaceCheck. When using FaceCheck, the `includeReceipt` must be false as receipt is not supported then.
 
 ```JSON
 {
