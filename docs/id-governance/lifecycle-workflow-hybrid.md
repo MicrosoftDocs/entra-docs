@@ -66,7 +66,7 @@ Required. Lead with a light intro that describes what the article covers. Answer
 
 -->
 
-Lifecycle Workflows allow you to create workflows that can be triggered for users based on joiner, mover, or leaver scenarios. With hybrid support, you are able to trigger these workflows for users synced from on-premises Active Directory to Microsoft Entra ID. This is accomplished by allowing you to create a task enabling an on-premises user account, so that you are able to run other tasks in a workflow for the user. You are also able to disable, or even delete, a user account when they are no longer active in your organization. This allows you to use workflows to automate tasks across the lifecycle of users in your hybrid environment. Using Lifecycle Workflows with hybrid users requires additional prerequisites. For a step by step guide on creating a task for hybrid users, see: [Manage synced on-premises users with workflows](manage-workflow-onprem.md).
+Lifecycle Workflows allow you to create workflows that can be triggered for users based on joiner, mover, or leaver scenarios. With hybrid support, you're able to trigger specific user-based tasks for users synced from on-premises Active Directory to Microsoft Entra ID. This is accomplished by allowing you to create a task enabling an on-premises user account, so that you're able to run other tasks in a workflow for the user. You're also able to disable, or even delete, a user account when they're no longer active in your organization. This allows you to use workflows to automate tasks across the lifecycle of users in your hybrid environment. Using Lifecycle Workflows with hybrid users requires additional prerequisites. For a step by step guide on creating a task for hybrid users, see: [Manage synced on-premises users with workflows](manage-workflow-onprem.md).
 
 <!-- 3. Prerequisites --------------------------------------------------------------------
 
@@ -77,7 +77,7 @@ language and use a unordered list format.
 
 ## Hybrid specific tasks
 
-With Lifecycle Workflow's hybrid-specific tasks, you are able to set a flag on the following preexisting tasks so that they run for hybrid users. The following tasks are able to have the hybrid flag set for them:
+With Lifecycle Workflow's hybrid-specific tasks, you're able to set a flag on the following tasks so that they run for hybrid users. The following tasks are able to have the hybrid flag set for them:
 
 - Delete user account
 - Disable user account
@@ -85,7 +85,7 @@ With Lifecycle Workflow's hybrid-specific tasks, you are able to set a flag on t
 
 The respective flags can be found on their task screen:
 
-:::image type="content" source="media/lifecycle-workflow-hybrid/delete-onprem-user.png" alt-text="Screenshot of delete user onprem flag in task.":::
+:::image type="content" source="media/lifecycle-workflow-hybrid/delete-onprem-user.png" alt-text="Screenshot of delete user on-premises flag in task.":::
 
 For more information on these tasks, see: [Lifecycle Workflow built-in tasks](lifecycle-workflow-tasks.md).
 
@@ -99,66 +99,9 @@ To manage synced on-premises users with Lifecycle Workflows, you must have the f
 
 1. Enable the Active Directory recycle bin. For a step-by-step guide on enabling the recycle bin, see: [Active Directory Recycle Bin step-by-step](/windows-server/identity/ad-ds/get-started/adac/introduction-to-active-directory-administrative-center-enhancements--level-100-#active-directory-recycle-bin-step-by-step).
 
-## [Section 1 heading]
-TODO: add your content
-
-## [Section 2 heading]
-TODO: add your content
-
-## [Section n heading]
-TODO: add your content
-
-<!-- 5. Next step/Related content ------------------------------------------------------------------------ 
-
-Optional: You have two options for manually curated links in this pattern: Next step and Related content. You don't have to use either, but don't use both.
-  - For Next step, provide one link to the next step in a sequence. Use the blue box format
-  - For Related content provide 1-3 links. Include some context so the customer can determine why they would click the link. Add a context sentence for the following links.
-
--->
-
-## Next step
+## Next steps
 
 TODO: Add your next step link(s)
 
 > [!div class="nextstepaction"]
-> [Write concepts](article-concept.md)
-
-<!-- OR -->
-
-## Related content
-
-TODO: Add your next step link(s)
-
-- [Write concepts](article-concept.md)
-
-<!--
-Remove all the comments in this template before you sign-off or merge to the main branch.
--->
-
-
-<!-- 6. Next step/Related content ------------------------------------------------------------------------
-
-Optional: You have two options for manually curated links in this pattern: Next step and Related
-content. You don't have to use either, but don't use both. For Next step, provide one link to the
-next step in a sequence. Use the blue box format For Related content provide 1-3 links. Include some
-context so the customer can determine why they would click the link. Add a context sentence for the
-following links.
-
--->
-
-## Next step
-TODO: Add your next step link(s)
-> [!div class="nextstepaction"]
-> [Write concepts](article-concept.md)
-
-<!-- OR -->
-
-## Related content
-TODO: Add your next step link(s)
-- [Write concepts](article-concept.md)
-
-<!--
-Remove all the comments in this template before you sign-off or merge to the 
-main branch.
-
--->
+> [Manage synced on-premises users with workflows](manage-workflow-onprem.md)
