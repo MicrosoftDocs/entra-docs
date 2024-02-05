@@ -5,7 +5,7 @@ description: Identifying risk-based Conditional Access policies
 ms.service: active-directory
 ms.subservice: identity-protection
 ms.topic: conceptual
-ms.date: 01/30/2024
+ms.date: 02/05/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -64,7 +64,7 @@ Configuring risk policies in Conditional Access provides benefits like:
 - Manage access policies in one location.
 - Report-only mode and Graph API support.
 - Enforce a sign-in frequency of every time to require reauthentication every time.
-- Greater flexibility by combining risk conditions with other conditions like location for granular access control. 
+- Granular access control by combining risk conditions with other conditions like location. 
 - Enhanced security with multiple risk-based policies targeting different user groups or risk levels. 
 - Improved diagnostics experience detailing which risk-based policy applied in sign-in Logs.
 - Supported by the backup authentication system.

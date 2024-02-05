@@ -5,7 +5,7 @@ description: How can users self-remediate when administrators allow it? What is 
 ms.service: active-directory
 ms.subservice: identity-protection
 ms.topic: conceptual
-ms.date: 01/30/2024
+ms.date: 02/05/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -36,13 +36,15 @@ When an administrator enables the Identity Protection policy requiring Microsoft
 
 ## Risk self-remediation
 
-When an administrator configures risk-based Conditional Access policies allowing self-remediation, they appear to a user as a normal multifactor authentication prompt. The process to self-remediate is the same as a normal multifactor authentication sign in. 
+When an administrator configures risk-based Conditional Access policies allowing self-remediation, they appear to a user as a normal multifactor authentication prompt.
+
+When a sign-in is considered at risk and a risk based Conditional Access policy is enabled requiring multifactor authentication, then the user receives a multifactor authentication prompt.
 
 If the user is able to complete multifactor authentication, their risk is remediated and they can sign in.
 
 :::image type="content" source="media/concept-identity-protection-user-experience/conditional-access-mfa-prompt.png" alt-text="A screenshot showing a multifactor authentication prompt at sign in." lightbox="media/concept-identity-protection-user-experience/conditional-access-mfa-prompt.png":::
 
-If there's a user risk, not just a sign in risk, administrators can require a password change in addition to performing multifactor authentication. In that case, a user sees the following extra screen.
+If the user is at risk, not just the sign-in, administrators can configure a user risk policy in Conditional Access to require a password change in addition to performing multifactor authentication. In that case, a user sees the following extra screen.
 
 :::image type="content" source="media/concept-identity-protection-user-experience/conditional-access-password-change-prompt.png" alt-text="A screenshot showing the password change is required prompt when user risk is detected." lightbox="media/concept-identity-protection-user-experience/conditional-access-password-change-prompt.png":::
 
@@ -50,7 +52,7 @@ If there's a user risk, not just a sign in risk, administrators can require a pa
 
 Administrators might choose to block users upon sign-in depending on their risk level. To get unblocked, end users must contact their IT staff, or they can try signing in from a familiar location or device. Self-remediation isn't an option in this case.
 
-:::image type="content" source="media/concept-identity-protection-user-experience/conditional-access-blocked.png" alt-text="A screenshot showing your account is blocked screen.":::
+:::image type="content" source="media/concept-identity-protection-user-experience/conditional-access-blocked.png" alt-text="A screenshot showing your account is blocked screen." lightbox="media/concept-identity-protection-user-experience/conditional-access-blocked.png":::
 
 IT staff can follow the instructions in the section [Unblocking users](howto-identity-protection-remediate-unblock.md#unblocking-based-on-sign-in-risk) to allow users to sign back in.
 

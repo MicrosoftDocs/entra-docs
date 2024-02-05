@@ -5,7 +5,7 @@ description: Enable and configure risk policies in Microsoft Entra ID Protection
 ms.service: active-directory
 ms.subservice: identity-protection
 ms.topic: how-to
-ms.date: 01/30/2024
+ms.date: 02/05/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -132,7 +132,7 @@ If you have risk policies enabled in Microsoft Entra ID, you should plan to migr
    1. Set **Enable policy** to **On** to enable the policy
 1. **Disable** the old risk policies in ID Protection.
    1. Browse to **Protection** > **Identity Protection** > Select the **User risk** or **Sign-in risk** policy.
-   1. Set **Enforce policy** to **Off**
+   1. Set **Enforce policy** to **Disabled**
 1. Create other risk policies if needed in [Conditional Access](~/identity/conditional-access/concept-conditional-access-policy-common.md).
 
 ## Next steps

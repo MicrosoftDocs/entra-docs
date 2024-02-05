@@ -5,17 +5,18 @@ description: In this tutorial, you learn how to enable Microsoft Entra ID Protec
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: tutorial
-ms.date: 01/30/2024
+ms.date: 02/05/2024
 
 ms.author: justinha
 author: justinha
 manager: amycolannino
+ms.reviewer: chuqiaoshi
 
 # Customer intent: As a Microsoft Entra Administrator, I want to learn how to use Microsoft Entra ID Protection to protect users by automatically detecting risk sign-in behavior and prompting for additional forms of authentication or request a password change.
 ---
 # Tutorial: Use risk detections for user sign-ins to trigger Microsoft Entra multifactor authentication or password changes
 
-To protect your users, you can configure risk-based policies in Microsoft Entra ID that automatically respond to risky behaviors. Microsoft Entra ID Protection policies can automatically block a sign-in attempt or require extra action, such as require a password change or prompt for Microsoft Entra multifactor authentication. These policies work with existing Microsoft Entra Conditional Access policies as an extra layer of protection for your organization. Users might never trigger a risky behavior in one of these policies, but your organization is protected if an attempt to compromise your security is made.
+To protect your users, you can configure risk-based Microsoft Entra Conditional Access policies that automatically respond to risky behaviors. These policies can automatically block a sign-in attempt or require extra action, such as require a secure password change or prompting for Microsoft Entra multifactor authentication. These policies work with existing Microsoft Entra Conditional Access policies as an extra layer of protection for your organization. Users might never trigger a risky behavior in one of these policies, but your organization is protected if an attempt to compromise your security is made.
 
 > [!IMPORTANT]
 > This tutorial shows an administrator how to enable risk-based multifactor authentication.
@@ -25,7 +26,7 @@ To protect your users, you can configure risk-based policies in Microsoft Entra 
 In this tutorial, you learn how to:
 
 > [!div class="checklist"]
-> * Understand the available policies for Microsoft Entra ID Protection
+> * Understand the available policies
 > * Enable Microsoft Entra multifactor authentication registration
 > * Enable risk-based password changes
 > * Enable risk-based multifactor authentication
