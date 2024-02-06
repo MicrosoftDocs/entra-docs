@@ -10,7 +10,7 @@ ms.service: active-directory
 ms.topic: how-to
 ms.workload: identity
 ms.subservice: pim
-ms.date: 01/23/2024
+ms.date: 02/06/2024
 ms.author: barclayn
 ms.reviewer: ilyal
 ms.custom: pim
@@ -247,19 +247,19 @@ PIM is now available in the Microsoft Entra and Azure resource roles mobile apps
 
 1.	To activate an eligible Microsoft Entra role assignment, start by downloading the Azure mobile app ([iOS](https://apps.apple.com/us/app/microsoft-azure/id1219013620) | [Android](https://play.google.com/store/apps/details?id=com.microsoft.azure)). You can also download the app by selecting ‘Open in mobile’  from Privileged Identity Management > My roles > Microsoft Entra roles.
 
-    :::image type="content" source="./media/pim-how-to-activate-role/open-mobile.png" alt-text="Screenshot shows how to download the the mobile app." lightbox="./media/pim-resource-roles-assign-roles/resources-abac-update-remove.png":::
+    :::image type="content" source="./media/pim-how-to-activate-role/open-mobile.png" alt-text="Screenshot shows how to download the mobile app." lightbox="./media/pim-resource-roles-assign-roles/resources-abac-update-remove.png":::
 
 1. Open the Azure mobile app and sign in. Click on the **Privileged Identity Management** card and select **My Microsoft Entra roles** to view your eligible and active role assignments.
 
-:::image type="content" source="./media/pim-how-to-activate-role/mobile-app-select-part1.png" alt-text="Screenshot shows how to download the the mobile app." lightbox="./media/pim-how-to-activate-role/mobile-app-select-part1.png":::
+:::image type="content" source="./media/pim-how-to-activate-role/mobile-app-select-part1.png" alt-text="Screenshots of the mobile app showing how a user would view available roles." lightbox="./media/pim-how-to-activate-role/mobile-app-select-part1.png":::
 
 1. Select the role assignment and click on **Action > Activate** under the role assignment details. Complete the steps to active and fill in any required details before clicking ‘Activate’ at the bottom.
 
-:::image type="content" source="./media/pim-how-to-activate-role/mobile-app-select-part2.png" alt-text="Screenshot shows how to download the the mobile app." lightbox="./media/pim-how-to-activate-role/mobile-app-select-part2.png":::
+:::image type="content" source="./media/pim-how-to-activate-role/mobile-app-select-part2.png" alt-text="Screenshot of the mobile app showing how a user fill out the required information" lightbox="./media/pim-how-to-activate-role/mobile-app-select-part2.png":::
 
 1. View the status of your activation requests and your role assignments under **My Microsoft Entra roles**.
 
-:::image type="content" source="./media/pim-how-to-activate-role/mobile-app-select-part3.png" alt-text="Screenshot shows how to download the the mobile app." lightbox="./media/pim-how-to-activate-role/mobile-app-select-part3.png":::
+:::image type="content" source="./media/pim-how-to-activate-role/mobile-app-select-part3.png" alt-text="Screenshot of the mobile app showing the user's role status." lightbox="./media/pim-how-to-activate-role/mobile-app-select-part3.png":::
 
 
 
