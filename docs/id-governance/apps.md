@@ -683,7 +683,7 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Screencast-O-Matic](~/identity/saas-apps/screencast-tutorial.md) |  | ● |
 | [ScreenSteps](~/identity/saas-apps/screensteps-provisioning-tutorial.md) | ● | ● |
 | [SDS & Chemical Information Management](~/identity/saas-apps/sds-chemical-information-management-tutorial.md) |  | ● |
-| [Secure Deliver](~/identity/saas-apps/secure-deliver-provisioning-tutorial.md) |  | ● |
+| [Secure Deliver](~/identity/saas-apps/securedeliver-tutorial.md) |  | ● |
 | [SecureLogin](~/identity/saas-apps/secure-login-provisioning-tutorial.md) | ● |  |
 | [SeekOut](~/identity/saas-apps/seekout-tutorial.md) |  | ● |
 | [Segment](~/identity/saas-apps/segment-provisioning-tutorial.md) | ● | ● |
