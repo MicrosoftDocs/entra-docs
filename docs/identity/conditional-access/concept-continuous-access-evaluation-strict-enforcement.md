@@ -38,7 +38,9 @@ After enabling policies requiring strict location enforcement on a subset of tes
 
    - Admins must ensure all authentication traffic towards Microsoft Entra ID and access traffic to resource providers are from dedicated egress IPs that are known. 
       - Like Exchange Online, Teams, SharePoint Online, and Microsoft Graph
-   - Before administrators turn on Conditional Access policies requiring strict location enforcement, they should ensure that all IP addresses from which your users can access Microsoft Entra ID and resource providers are included in their [IP-based named locations](location-condition.md#ipv4-and-ipv6-address-ranges).
+- Before administrators turn on Conditional Access policies requiring strict location enforcement, they should ensure that all IP addresses from which your users can access Microsoft Entra ID and resource providers are included in their [IP-based named locations](location-condition.md#ipv4-and-ipv6-address-ranges).
+
+- Admins must also review their Conditional Access policies to and ensure that they do not have any policies that do not have CAE support yet. Refer to the [CAE-supported CA policies](/entra/identity/conditional-access/concept-continuous-access-evaluation) for more details.
 
 If administrators don't perform this validation, their users may be negatively impacted. If traffic to Microsoft Entra ID or a CAE supported resource is through a shared or undefinable egress IP, don't enable strict location enforcement in your Conditional Access policies.
 
@@ -50,19 +52,19 @@ If you haven't already, create a new Azure Workbook using the public template "C
 - Add public IP addresses associated with known organizational egress points to their defined [named locations](location-condition.md#named-locations).
 
      [ ![Screenshot of cae-workbook with an example of IP address seen by resource filter.](./media/concept-continuous-access-evaluation-strict-enforcement/continuous-access-evaluation-workbook.png) ](./media/concept-continuous-access-evaluation-strict-enforcement/continuous-access-evaluation-workbook.png#lightbox)
+  
+  The following screenshot shows an example of a client’s access to a resource being blocked. This block is due to policies requiring CAE strict location enforcement being triggered revoking the client’s session. 
 
-The following screenshot shows an example of a client’s access to a resource being blocked. This block is due to policies requiring CAE strict location enforcement being triggered revoking the client’s session. 
+     ![Screenshot of the message a user sees if they are blocked by strict location enforcement.](./media/concept-continuous-access-evaluation-strict-enforcement/blocked-due-to-strict-enforcement.png)
+  
+  This behavior can be verified in the sign-in logs. Look for **IP address (seen by resource)** and investigate adding this IP to [named locations](location-condition.md#named-locations) if experiencing unexpected blocks from Conditional Access on users.
 
-   ![Screenshot of the message a user sees if they are blocked by strict location enforcement.](./media/concept-continuous-access-evaluation-strict-enforcement/blocked-due-to-strict-enforcement.png)
+     ![Screenshot of an sign-in log entry with both IP address and IP address seen by resource.](./media/concept-continuous-access-evaluation-strict-enforcement/activity-details-ip-differs.png)
+  
+  Looking at the **Conditional Access Policy details** tab provides more details of blocked sign-in events. 
 
-This behavior can be verified in the sign-in logs. Look for **IP address (seen by resource)** and investigate adding this IP to [named locations](location-condition.md#named-locations) if experiencing unexpected blocks from Conditional Access on users.
-
-   ![Screenshot of an sign-in log entry with both IP address and IP address seen by resource.](./media/concept-continuous-access-evaluation-strict-enforcement/activity-details-ip-differs.png)
-
-Looking at the **Conditional Access Policy details** tab provides more details of blocked sign-in events. 
-
-   ![Screenshot of Conditional Access Policy detail with the locations that were seen.](./media/concept-continuous-access-evaluation-strict-enforcement/conditional-access-policy-details.png)
-
+     ![Screenshot of Conditional Access Policy detail with the locations that were seen.](./media/concept-continuous-access-evaluation-strict-enforcement/conditional-access-policy-details-authentication-block.png)
+  
 ### Step 4 - Continue deployment
 
 Repeat steps 2 and 3 with expanding groups of users until Strictly Enforce Location Policies are applied across your target user base. Roll out carefully to avoid impacting user experience. 
@@ -75,39 +77,39 @@ Administrators can investigate the Sign-in logs to find cases with **IP address 
 1. Browse to **Identity** > **Monitoring & health** > **Sign-in logs**.
 1. Find events to review by adding filters and columns to filter out unnecessary information.
    1. Add the **IP address (seen by resource)** column and filter out any blank items to narrow the scope. The **IP address (seen by resource)** is blank when that IP seen by Microsoft Entra ID matches the IP address seen by the resource.
-
+   
       [ ![Screenshot showing an example of how to find more information in the sign-in logs.](./media/concept-continuous-access-evaluation-strict-enforcement/sign-in-logs-ip-address-seen-by-resource.png) ](./media/concept-continuous-access-evaluation-strict-enforcement/sign-in-logs-ip-address-seen-by-resource.png#lightbox)
-
-**IP address (seen by resource)** contains filter isn't empty in the following examples: 
+      
+      **IP address (seen by resource)** contains filter isn't empty in the following examples: 
 
 ### Initial authentication
 
 1. Authentication succeeds using a CAE token. 
 
    ![Screenshot showing a successful sign in with a CAE token.](./media/concept-continuous-access-evaluation-strict-enforcement/activity-details-sign-ins-initial-authentication-success.png)
-
+   
 1. The **IP address (seen by resource)** is different from the IP address seen by Microsoft Entra ID. Although the IP address seen by the resource is known, there's no enforcement until the resource redirects the user for reevaluation of the IP address seen by the resource.
 
    ![Screenshot showing IP address and IP address seen by resource in the sign-in log.](./media/concept-continuous-access-evaluation-strict-enforcement/activity-details-ip-differs.png)
-
+   
 1. Microsoft Entra authentication is successful because strict location enforcement isn't applied at the resource level.
 
    ![Screenshot showing that a Conditional Access policy wasn't applied because the location is excluded.](./media/concept-continuous-access-evaluation-strict-enforcement/conditional-access-policy-details-authentication-success.png)
- 
+   
 ### Resource redirect for reevaluation
 
 1. Authentication fails and a CAE token isn't issued.  
 
    ![Screenshot showing a failed authentication.](./media/concept-continuous-access-evaluation-strict-enforcement/activity-details-sign-ins-authentication-fails.png)
-
+   
 1. **IP address (seen by resource)** is different from the IP seen by Microsoft Entra ID. 
 
    ![Screenshot showing a mismatch in IP addresses.](./media/concept-continuous-access-evaluation-strict-enforcement/activity-details-ip-differs.png)
-
+   
 1. Authentication isn't successful because **IP address (seen by resource)** isn't a known [named location](location-condition.md#named-locations) in Conditional Access. 
 
    ![Screenshot showing a Conditional Access policy applied, because the IP address was included in a block rule.](./media/concept-continuous-access-evaluation-strict-enforcement/conditional-access-policy-details-authentication-block.png)
-
+   
 ## Next steps
 
 - [Continuous access evaluation in Microsoft Entra ID](concept-continuous-access-evaluation.md)
