@@ -43,6 +43,10 @@ Account related tasks within workflows can be quickly edited to apply to synced 
     :::image type="content" source="media/manage-workflow-onprem/delete-user-account-task-flag.png" alt-text="Screenshot of setting on-premises flag to delete account.":::
 1. Select **Save**.
 
+## Edit a task to be compatible with synced on-premises users using Microsoft Graph
+
+To manage user tasks to be compatible with synced on-premises users via API using Microsoft Graph, see: [Configure the arguments for built-in Lifecycle Workflow tasks](/graph/identitygovernance-lifecycleworkflows-task-arguments).
+
 ## Next steps
 
 - [Check status of a workflows](check-status-workflow.md)
