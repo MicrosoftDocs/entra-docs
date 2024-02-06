@@ -8,14 +8,14 @@ ms.service: active-directory
 ms.subservice: app-proxy
 ms.workload: identity
 ms.topic: how-to
-ms.date: 09/14/2023
+ms.date: 02/06/2024
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
 
 # Configure custom domains with Microsoft Entra application proxy
 
-When you publish an application through Microsoft Entra application proxy, you create an external URL for your users. This URL gets the default domain *yourtenant.msappproxy.net*. For example, if you publish an app named *Expenses* in your tenant named *Contoso*, the external URL is *https:\//expenses-contoso.msappproxy.net*. If you want to use your own domain name instead of *msappproxy.net*, you can configure a custom domain for your application. 
+When you publish an application through Microsoft Entra application proxy, you create an external URL for your users. This URL gets the default domain *`yourtenant.msappproxy.net`*. For example, if you publish an app named *Expenses* in your tenant named *Contoso*, the external URL is *`https:\//expenses-contoso.msappproxy.net`*. If you want to use your own domain name instead of *`msappproxy.net`*, you can configure a custom domain for your application. 
 
 ## Benefits of custom domains
 
@@ -25,7 +25,7 @@ It's a good idea to set up custom domains for your apps whenever possible. Some 
   
 - Your users will have an easier experience, because they can get to the app with the same URL from inside or outside your network. They don’t need to learn different internal and external URLs, or track their current location. 
 
-- You can control your branding and create the URLs you want. A custom domain can help build your users' confidence, because users see and use a familiar name instead of *msappproxy.net*.
+- You can control your branding and create the URLs you want. A custom domain can help build your users' confidence, because users see and use a familiar name instead of *`msappproxy.net`*.
 
 - Some configurations will only work with custom domains. For example, you need custom domains for apps that use Security Assertion Markup Language (SAML), such as when you’re using Active Directory Federation Services (AD FS) but are unable to use WS-Federation. For more information, see [Work with claims-aware apps in Application Proxy](application-proxy-configure-for-claims-aware-applications.md). 
 
@@ -54,7 +54,7 @@ When you select a custom domain for an external URL, an information bar shows th
 To configure an on-premises app to use a custom domain, you need a verified Microsoft Entra custom domain, a PFX certificate for the custom domain, and an on-premises app to configure. 
 
 > [!IMPORTANT]
-> You are responsible for maintaining DNS records that redirect your custom domains to the *msappproxy.net* domain. If you choose to later delete your application or tenant, make sure to also delete associated DNS records for Application Proxy to prevent misuse of dangling DNS records. 
+> You are responsible for maintaining DNS records that redirect your custom domains to the *`msappproxy.net`* domain. If you choose to later delete your application or tenant, make sure to also delete associated DNS records for Application Proxy to prevent misuse of dangling DNS records. 
 
 ### Create and verify a custom domain
 
@@ -105,12 +105,12 @@ To publish your app through Application Proxy with a custom domain:
    
    ![Add CNAME DNS entry](./media/application-proxy-configure-custom-domain/dns-info.png)
    
-10. Follow the instructions at [Manage DNS records and record sets by using the Microsoft Entra admin center](/azure/dns/dns-operations-recordsets-portal) to add a DNS record that redirects the new external URL to the *msappproxy.net* domain in Azure DNS. If a different DNS provider is used, please contact the vendor for the instructions.
+10. Follow the instructions at [Manage DNS records and record sets by using the Microsoft Entra admin center](/azure/dns/dns-operations-recordsets-portal) to add a DNS record that redirects the new external URL to the *`msappproxy.net`* domain in Azure DNS. If a different DNS provider is used, please contact the vendor for the instructions.
 
    > [!IMPORTANT] 
-   > Ensure that you are properly using a CNAME record that points to the *msappproxy.net* domain. Do not point records to IP addresses or server DNS names since these are not static and may impact the resiliency of the service.
+   > Ensure that you are properly using a CNAME record that points to the *`msappproxy.net`* domain. Do not point records to IP addresses or server DNS names since these are not static and may impact the resiliency of the service.
    
-11. To check that the DNS record is configured correctly, use the [nslookup](https://social.technet.microsoft.com/wiki/contents/articles/29184.nslookup-for-beginners.aspx) command to confirm that your external URL is reachable and the *msapproxy.net* domain appears as an alias.
+11. To check that the DNS record is configured correctly, use the [nslookup](https://social.technet.microsoft.com/wiki/contents/articles/29184.nslookup-for-beginners.aspx) command to confirm that your external URL is reachable and the *`msapproxy.net`* domain appears as an alias.
 
 Your application is now set up to use the custom domain. Be sure to assign users to your application before you test or release it. 
 
@@ -128,11 +128,11 @@ You must use a PFX certificate, to ensure all required intermediate certificates
 
 Most common certificate signature methods are supported such as Subject Alternative Name (SAN). 
 
-You can use wildcard certificates as long as the wildcard matches the external URL. You must use wildcard certificates for [wildcard applications](application-proxy-wildcard.md). If you want to use the certificate to also access subdomains, you must add the subdomain wildcards as subject alternative names in the same certificate. For example, a certificate for *\*.adventure-works.com* won't work for *\*.apps.adventure-works.com* unless you add *\*.apps.adventure-works.com* as a subject alternative name. 
+You can use wildcard certificates as long as the wildcard matches the external URL. You must use wildcard certificates for [wildcard applications](application-proxy-wildcard.md). If you want to use the certificate to also access subdomains, you must add the subdomain wildcards as subject alternative names in the same certificate. For example, a certificate for *\*.adventure-works.com* won't work for *\*.apps.adventure-works.com* unless you add *`*.apps.adventure-works.com`* as a subject alternative name. 
 
-You can use certificates issued by your own public key infrastructure (PKI) if the certificate chain is installed on your client devices. Intune can deploy these certificates to managed devices. For non-managed devices, you must manually install these certificates. 
+You can use certificates issued by your own public key infrastructure (PKI) if the certificate chain is installed on your client devices. Microsoft Intune can deploy these certificates to managed devices. For non-managed devices, you must manually install these certificates. 
 
-We do not recommend using a private root CA since the private root CA would also need to be pushed to client machines, which may introduce many challenges.
+We do not recommend using a private root Certificate Authority (CA) since the private root CA would also need to be pushed to client machines, which may introduce many challenges.
 
 ### Certificate management
 
