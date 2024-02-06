@@ -50,12 +50,12 @@ Aquera also supports over 40 inbound provisioning HRIS sources of record for Ent
 * Company information: https://www.aquera.com/contact-us.html 
 
 #### Popular applications supported
-* Over 40 HRIS Applications: Oracle Cloud HCM, Dayforce, UKG Pro/Ready/Pro Workforce, ADP (all US and international versions), Workday, SAP HR, Greenhouse, iCIMS, SuccessFactors, HiBob, BambooHR, Paylocity, Paycor, PeopleSoft, Cornerstone, Lever,…
-* ERPs: Netsuite, Oracle Cloud ERP, Oracle EBS, SAP ECC, SAP S/4HANA, Sage Intacct, PeopleSoft ERP,…
+* Over 40 HRIS Applications: Oracle Cloud HCM, Dayforce, UKG Pro/Ready/Pro Workforce, ADP (all US and international versions), Workday, SAP HR, Greenhouse, iCIMS, SuccessFactors, HiBob, BambooHR, Paylocity, Paycor, PeopleSoft, Cornerstone, Lever
+* ERPs: Netsuite, Oracle Cloud ERP, Oracle EBS, SAP ECC, SAP S/4HANA, Sage Intacct, PeopleSoft ERP
 * EHRs: Epic, Cerner, PointClickCare, MyAvatar, Homecare Homebase
 * Student Information Systems: Ellucian Banner, PeopleSoft Campus Solutions
-* Databases: Oracle, MySQL, SQLServer, MongoDB, PostgreSQL, AS/400 DB2, DB2, Snowflake, Redshift,...
-* irectories/IDPs: AS/400, RACF, ACF2, TopSecret, OpenLDAP, IDP Directories
+* Databases: Oracle, MySQL, SQLServer, MongoDB, PostgreSQL, AS/400 DB2, DB2, Snowflake, Redshift
+* Directories/IDPs: AS/400, RACF, ACF2, TopSecret, OpenLDAP, IDP Directories
 
 
 
