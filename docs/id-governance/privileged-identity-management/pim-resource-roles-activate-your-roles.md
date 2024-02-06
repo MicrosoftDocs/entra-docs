@@ -237,15 +237,15 @@ PIM is now available in the Microsoft Entra and Azure resource roles mobile apps
 
 1. Open the Azure mobile app and sign in. Click on the ‘Privileged Identity Management’ card and select **My Azure Resource roles** to view your eligible and active role assignments.
 
-    :::image type="content" source="./media/pim-resource-roles-activate-your-roles/mobile-select-role.png" alt-text="Screenshot shows how to download the the mobile app." lightbox="./media/pim-resource-roles-activate-your-roles/mobile-select-role.png":::
+    :::image type="content" source="./media/pim-resource-roles-activate-your-roles/mobile-select-role.png" alt-text="Screenshot of the mobile app showing privileged identity managementand the user's roles" lightbox="./media/pim-resource-roles-activate-your-roles/mobile-select-role.png":::
 
 1. Select the role assignment and click on **Action > Activate** under the role assignment details. Complete the steps to active and fill in any required details before clicking **Activate** at the bottom.
 
-    :::image type="content" source="./media/pim-resource-roles-activate-your-roles/mobile-activate-role.png" alt-text="Screenshot shows how to download the the mobile app." lightbox="./media/pim-resource-roles-activate-your-roles/mobile-activate-role.png":::
+    :::image type="content" source="./media/pim-resource-roles-activate-your-roles/mobile-activate-role.png" alt-text="Screenshot of the mobile app showing the validation process has completed. The image shows an Activate button " lightbox="./media/pim-resource-roles-activate-your-roles/mobile-activate-role.png":::
 
 1. View the status of your activation requests and your role assignments under ‘My Azure Resource roles’.
 
-    :::image type="content" source="./media/pim-resource-roles-activate-your-roles/mobile-activation-processing.png" alt-text="Screenshot shows how to download the the mobile app." lightbox="./media/pim-resource-roles-activate-your-roles/mobile-activation-processing.png":::
+    :::image type="content" source="./media/pim-resource-roles-activate-your-roles/mobile-activation-processing.png" alt-text="Screenshot of the mobile app showing the activation in progress message." lightbox="./media/pim-resource-roles-activate-your-roles/mobile-activation-processing.png":::
 
 ## Next steps
 
