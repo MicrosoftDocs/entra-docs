@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: active-directory
 ms.topic: how-to
 ms.subservice: report-monitor
-ms.date: 02/05/2024
+ms.date: 02/06/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
 
@@ -21,11 +21,12 @@ This article describes how to get started analyzing Microsoft Entra activity log
 
 ## Prerequisites
 
-To get access to the reporting data through the API, you need to have one of the following roles:
+To get access to the reporting data through the API, you need to have one of the following roles and permissions:
 
 - Security Reader
 - Security Administrator
 - Global Administrator
+- `AuditLog.Read.All` or `Directory.Read.All` permissions for Microsoft Graph API access
 
 To make requests to the Microsoft Graph API, you must first:
 
@@ -44,11 +45,14 @@ With all the prerequisites configured, you can run activity log queries in Micro
 
     ![Screenshot of an activity log GET query in Microsoft Graph.](media/howto-configure-prerequisites-for-reporting-api/graph-sample-get-query.png)
 
-You can query Microsoft Graph for ID Protection related information using the [Identity Protection risk detections APIs](/graph/api/resources/identityprotection-overview). Information about tenant provisioning event can be queried with the [provisioning logs API](/graph/api/resources/provisioningobjectsummary).
+### Related APIs
+
+- [Identity Protection APIs](/graph/api/resources/identityprotection-overview).
+- [Provisioning logs API](/graph/api/resources/provisioningobjectsummary).
 
 ## Access reports using Microsoft Graph PowerShell
 
-You can use PowerShell to access the Microsoft Entra reporting API. For more information, see [Microsoft Graph PowerShell overview](/powershell/microsoftgraph/overview).
+You can use PowerShell to access the Microsoft Entra reporting API. For more information, see [Microsoft Graph PowerShell overview](/powershell/microsoftgraph/overview). 
 
 Microsoft Graph PowerShell cmdlets:
 
@@ -77,4 +81,4 @@ Microsoft Graph PowerShell cmdlets:
 
 - [Get started with Microsoft Entra ID Protection and Microsoft Graph](../../id-protection/howto-identity-protection-graph-api.md)
 - [Audit API reference](/graph/api/resources/directoryaudit)
-- [API signIn reference](/graph/api/resources/signin)
+- [Sign-in API reference](/graph/api/resources/signin)
