@@ -320,11 +320,13 @@ items:
       href: /entra/fundamentals/reference-company-branding-css-template
     - name: Help and support options
       href: ~/identity-platform/developer-support-help-options.md?context=/entra/external-id/customers/context/customers-context
-    - name: Native auth
+    - name: Native authentication
       items:
         - name: Native auth overview
+          displayName: Native authentication, Native authentication REST API
           href: reference-native-auth-overview.md 
         - name: Native auth with email OTP
+          displayName: Native authentication with email and one-time password or passcode
           href: reference-native-auth-email-otp.md
         - name: Native auth with email & password
           href: reference-native-auth-email-password.md
