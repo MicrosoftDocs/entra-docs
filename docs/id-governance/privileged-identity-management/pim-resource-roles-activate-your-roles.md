@@ -10,7 +10,7 @@ ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: pim
-ms.date: 01/23/2024
+ms.date: 02/06/2024
 ms.author: barclayn
 ms.reviewer: rianakarim
 ms.custom: pim
@@ -233,19 +233,19 @@ PIM is now available in the Microsoft Entra and Azure resource roles mobile apps
 
 1.	To activate an eligible Microsoft Entra role assignment, start by downloading the Azure mobile app ([iOS](https://apps.apple.com/us/app/microsoft-azure/id1219013620) | [Android](https://play.google.com/store/apps/details?id=com.microsoft.azure)). You can also download the app by selecting **Open in mobile**  from Privileged Identity Management > My roles > Microsoft Entra roles.
 
-    :::image type="content" source="./media/pim-resource-roles-activate-your-roles/download-mobile-app.png" alt-text="Screenshot shows how to download the the mobile app." lightbox="./media/pim-resource-roles-assign-roles/download-mobile-app.png":::
+    :::image type="content" source="./media/pim-resource-roles-activate-your-roles/download-mobile-app.png" alt-text="Screenshot shows how to download the the mobile app." lightbox="./media/pim-resource-roles-activate-your-roles/download-mobile-app.png":::
 
 1. Open the Azure mobile app and sign in. Click on the ‘Privileged Identity Management’ card and select **My Azure Resource roles** to view your eligible and active role assignments.
 
-    :::image type="content" source="./media/pim-resource-roles-activate-your-roles/mobile-select-role.png" alt-text="Screenshot shows how to download the the mobile app." lightbox="./media/pim-resource-roles-assign-roles/mobile-select-role.png":::
+    :::image type="content" source="./media/pim-resource-roles-activate-your-roles/mobile-select-role.png" alt-text="Screenshot shows how to download the the mobile app." lightbox="./media/pim-resource-roles-activate-your-roles/mobile-select-role.png":::
 
 1. Select the role assignment and click on **Action > Activate** under the role assignment details. Complete the steps to active and fill in any required details before clicking **Activate** at the bottom.
 
-    :::image type="content" source="./media/pim-resource-roles-activate-your-roles/mobile-activate-role.png" alt-text="Screenshot shows how to download the the mobile app." lightbox="./media/pim-resource-roles-assign-roles/mobile-activate-role.png":::
+    :::image type="content" source="./media/pim-resource-roles-activate-your-roles/mobile-activate-role.png" alt-text="Screenshot shows how to download the the mobile app." lightbox="./media/pim-resource-roles-activate-your-roles/mobile-activate-role.png":::
 
 1. View the status of your activation requests and your role assignments under ‘My Azure Resource roles’.
 
-    :::image type="content" source="./media/pim-resource-roles-activate-your-roles/mobile-activation-processing.png" alt-text="Screenshot shows how to download the the mobile app." lightbox="./media/pim-resource-roles-assign-roles/mobile-activation-processing.png":::
+    :::image type="content" source="./media/pim-resource-roles-activate-your-roles/mobile-activation-processing.png" alt-text="Screenshot shows how to download the the mobile app." lightbox="./media/pim-resource-roles-activate-your-roles/mobile-activation-processing.png":::
 
 ## Next steps
 
