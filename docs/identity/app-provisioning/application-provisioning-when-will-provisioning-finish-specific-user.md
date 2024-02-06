@@ -34,6 +34,8 @@ The provisioning progress is viewed in the Microsoft Entra admin center at **Ide
 
 ![Provisioning page progress bar](./media/application-provisioning-when-will-provisioning-finish-specific-user/provisioning-progress-bar-section.png)
 
+You can also use Microsoft Graph to programmatically monitor the status of provisioning to an application.  For more information, see [monitor provisioning](application-provisioning-configuration-api.md#step-5-monitor-provisioning).
+
 ## Use provisioning logs to check a user's provisioning status
 
 To see the provisioning status for a selected user, consult the [Provisioning logs (preview)](~/identity/monitoring-health/concept-provisioning-logs.md?context=azure/active-directory/manage-apps/context/manage-apps-context) in Microsoft Entra ID. All operations run by the user provisioning service are recorded in the Microsoft Entra provisioning logs. The logs include read and write operations made to the source and target systems. Associated user data related to read and write operations is also logged.
