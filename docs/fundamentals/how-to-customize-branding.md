@@ -188,9 +188,9 @@ Microsoft Entra ID supports right-to-left functionality for languages such as Ar
 
 There are some scenarios you to consider when you customize the sign-in pages for your organization's tenant-specific applications.
 
-### Software as a Service (SaaS) and multi-tenant applications
+### Software as a Service (SaaS) and multitenant applications
 
-For Microsoft, Software as a Service (SaaS), and multi-enant applications such as <https://myapps.microsoft.com>, or <https://outlook.com>, the customized sign-in page appears only after the user types their **Email** or **Phone number** and selects the **Next** button. 
+For Microsoft, Software as a Service (SaaS), and multitenant applications such as <https://myapps.microsoft.com>, or <https://outlook.com>, the customized sign-in page appears only after the user types their **Email** or **Phone number** and selects the **Next** button. 
 
 ### Home Realm Discovery
 Some Microsoft applications support [Home Realm Discovery](~/identity/enterprise-apps/home-realm-discovery-policy.md) for authentication. In these scenarios, when a customer signs in to a Microsoft Entra common sign-in page, Microsoft Entra ID can use the customer's user name to determine where they should sign in. 
