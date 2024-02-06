@@ -11,8 +11,7 @@ ms.date: 07/27/2023
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
-ms.reviewer: eolasunkanmi
-
+ms.reviewer: sreyanthmora
 ms.collection: M365-identity-device-management
 ---
 # Strictly enforce location policies using continuous access evaluation (preview)
