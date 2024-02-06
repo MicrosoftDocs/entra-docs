@@ -89,7 +89,7 @@ Use the template ID retrieved for your application in the last step to [create a
 
 
 ```msgraph-interactive
-POST https://graph.microsoft.com/beta/applicationTemplates/{id}/instantiate
+POST https://graph.microsoft.com/beta/applicationTemplates/{applicationTemplateId}/instantiate
 Content-type: application/json
 
 {
@@ -140,7 +140,7 @@ Content-type: application/json
 
 ### Retrieve the template for the provisioning connector
 
-Applications in the gallery that are enabled for provisioning have templates to streamline configuration. Use the request below to [retrieve the template for the provisioning configuration](/graph/api/synchronization-synchronization-list-templates?preserve-view=true&tabs=http&view=graph-rest-beta). Note that you will need to provide the ID. The ID refers to the preceding resource, which in this case is the servicePrincipal resource. 
+Applications in the gallery that are enabled for provisioning have templates to streamline configuration. Use the request below to [retrieve the template for the provisioning configuration](/graph/api/synchronization-synchronization-list-templates?preserve-view=true&tabs=http&view=graph-rest-beta). Note that you will need to provide the ID. The ID is that of the servicePrincipal resource, created in the preceding step.
 
 #### Request
 
@@ -217,7 +217,7 @@ Test the connection with the third-party application. The following example is f
 
 #### Request
 ```msgraph-interactive
-POST https://graph.microsoft.com/beta/servicePrincipals/{id}/synchronization/jobs/{id}/validateCredentials
+POST https://graph.microsoft.com/beta/servicePrincipals/{id}/synchronization/jobs/{jobId}/validateCredentials
 
 { 
     "credentials": [ 
