@@ -28,7 +28,7 @@ If your on-premises app uses SAML-based authentication, you can easily make thes
 You must do the following:
 
 - Enable Application Proxy and install a connector. For instructions, see [Publish applications using Microsoft Entra application proxy](~/identity/app-proxy/application-proxy-add-on-premises-application.md).
-- Publish the on-premises SAML-based application through Microsoft Entra application proxy by following the instructions in [SAML single sign-on for on-premises applications with Application Proxy](~/identity/app-proxy/application-proxy-configure-single-sign-on-on-premises-apps.md).
+- Publish the on-premises SAML-based application through Microsoft Entra application proxy by following the instructions in [SAML single sign-on for on-premises applications with Application Proxy](~/identity/app-proxy/conceptual-sso-apps.md).
 - Assign Microsoft Entra B2B Users to the SAML Application.
 
 When you've completed the steps above, your app should be up and running. To test Microsoft Entra B2B access:
