@@ -57,6 +57,7 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [Directory Writers](#directory-writers) | Can read and write basic directory information. For granting access to applications, not intended for users.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 9360feb5-f418-4baa-8175-e2a00bac4301 |
 > | [Domain Name Administrator](#domain-name-administrator) | Can manage domain names in cloud and on-premises. | 8329153b-31d0-4727-b945-745eb3bc5f31 |
 > | [Dynamics 365 Administrator](#dynamics-365-administrator) | Can manage all aspects of the Dynamics 365 product. | 44367163-eba1-44c3-98af-f5787879f96a |
+> | [Dynamics 365 Business Central Administrator](#dynamics-365-business-central-administrator) | Can access Dynamics 365 Business Central environments and perform all administrative tasks on the environments. | 963797fb-eb3b-4cde-8ce3-5878b3f32a3f |
 > | [Edge Administrator](#edge-administrator) | Manage all aspects of Microsoft Edge. | 3f1acade-1e04-4fbc-9b69-f0302cd84aef |
 > | [Exchange Administrator](#exchange-administrator) | Can manage all aspects of the Exchange product. | 29232cdf-9323-42fd-ade2-1d097af3e4de |
 > | [Exchange Recipient Administrator](#exchange-recipient-administrator) | Can create or update Exchange Online recipients within the Exchange Online organization. | 31392ffb-586c-42d1-9346-e59415a2cc4e |
@@ -907,6 +908,27 @@ Users with this role have global permissions within Microsoft Dynamics 365 Onlin
 > | microsoft.office365.serviceHealth/allEntities/allTasks | Read and configure Service Health in the Microsoft 365 admin center |
 > | microsoft.office365.supportTickets/allEntities/allTasks | Create and manage Microsoft 365 service requests |
 > | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
+
+## Dynamics 365 Business Central Administrator
+
+Assign the Dynamics 365 Business Central Administrator role to users who need to do the following tasks:
+
+- Access Dynamics 365 Business Central environments
+- Perform all administrative tasks on environments
+- Manage the lifecycle of customer's environments
+- Supervise the extensions installed on environments
+- Control upgrades of environments
+- Perform data exports of environments
+- Read and configure Azure and Microsoft 365 service health dashboards
+
+This role does not provide any permissions for other Dynamics 365 products.
+
+> [!div class="mx-tableFixed"]
+> | Actions | Description |
+> | --- | --- |
+> | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
+> | microsoft.dynamics365.businessCentral/allEntities/allProperties/allTasks | Manage all aspects of Dynamics 365 Business Central |
+> | microsoft.office365.serviceHealth/allEntities/allTasks | Read and configure Service Health in the Microsoft 365 admin center |
 
 ## Edge Administrator
 
