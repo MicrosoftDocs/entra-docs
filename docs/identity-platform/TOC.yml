@@ -179,7 +179,7 @@
         - name: ASP.NET 
           href: quickstart-web-app-aspnet-sign-in.md
         - name: ASP.NET Core
-          href: quickstart-web-app-aspnet-core-sign-in.md
+          href: quickstart-web-app-dotnet-core-sign-in.md
         - name: Node.js - MSAL
           href: quickstart-web-app-nodejs-msal-sign-in.md
         - name: Java
@@ -188,7 +188,7 @@
           href: quickstart-web-app-python-sign-in.md
     - name: Tutorials
       items:
-        - name: ASP.NET
+        - name: ASP.NET Core
           items:
           - name: Register your app
             href: tutorial-web-app-dotnet-register-app.md
@@ -263,14 +263,14 @@
           href: quickstart-web-api-aspnet-core-protect-api.md
     - name: Tutorials
       items:
-        - name: ASP.NET
+        - name: ASP.NET Core
           items: 
-          - name: 1 - Register the API
-            href: web-api-tutorial-01-register-app.md
-          - name: 2 - Create and configure project 
-            href: web-api-tutorial-02-prepare-api.md
-          - name: 3 - Protect API endpoint
-            href: web-api-tutorial-03-protect-endpoint.md
+          - name: Register the API
+            href: tutorial-web-api-dotnet-register-app.md
+          - name: Create and configure project 
+            href: tutorial-web-api-dotnet-prepare-app.md
+          - name: Protect API endpoint
+            href: tutorial-web-api-dotnet-protect-endpoint.md
     - name: Samples
       displayName: code samples, example code, code snippets
       href: sample-v2-code.md#web-api
@@ -426,7 +426,7 @@
       href: index-service.yml
     - name: Quickstart
       items:
-        - name: .NET Core
+        - name: .NET
           href: quickstart-console-app-netcore-acquire-token.md
         - name: Java
           href: quickstart-daemon-app-java-acquire-token.md
@@ -504,9 +504,9 @@
               href: optional-claims.md
             - name: Configure role claim
               href: enterprise-app-role-management.md
-            - name: Customize JWT claims
+            - name: Customize JWT claims using admin center
               href: jwt-claims-customization.md
-            - name: Customize SAML claims
+            - name: Customize SAML claims using admin center
               href: saml-claims-customization.md
             - name: Set an access token lifetime policy
               href: configure-token-lifetimes.md    
@@ -762,7 +762,7 @@
           displayName: ASP.NET Core, Xamarin
           href: /entra/msal/dotnet
         - name: Microsoft.Identity.Web (MSAL wrapper)
-          displayName: auth, library, .NET Core, msal
+          displayName: auth, library, .NET, msal
           href: /entra/msal/dotnet/microsoft-identity-web/
         - name: Application configuration
           href: msal-client-application-configuration.md
