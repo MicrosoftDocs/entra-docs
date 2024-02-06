@@ -55,7 +55,7 @@ Before you provide SSO for on-premises applications, enable Application Proxy an
 
 2. Select **Microsoft Entra ID** as the **Pre Authentication** method for your application.
 
-3. Copy the **External URL** for the application. You'll need this URL to complete the SAML configuration.
+3. Copy the **External URL** for the application. You need this URL to complete the SAML configuration.
 
 4. Using the test account, try to open the application with the **External URL** to validate that Application Proxy is set up correctly. If there are issues, see [Troubleshoot Application Proxy problems and error messages](application-proxy-troubleshoot.md).
 
