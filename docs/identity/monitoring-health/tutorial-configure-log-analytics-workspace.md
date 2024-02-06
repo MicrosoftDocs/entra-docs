@@ -1,11 +1,10 @@
 ---
-title: Configure a log analytics workspace in Microsoft Entra ID
-description: Learn how to configure a log analytics workspace in Microsoft Entra ID and run Kusto queries on your identity data.
-services: active-directory
+title: Configure a Log Analytics workspace in Microsoft Entra ID
+description: Learn how to configure a Log Analytics workspace in Microsoft Entra ID and run Kusto queries on your identity data.
 ms.service: active-directory
 ms.subservice: report-monitor
 ms.topic: tutorial
-ms.date: 10/10/2023
+ms.date: 02/06/2024
 ms.author: sarahlipsey
 author: shlipsey3
 manager: amycolannino
@@ -15,7 +14,6 @@ ms.reviewer: sandeo
 
 ---
 # Tutorial: Configure a log analytics workspace
-
 
 In this tutorial, you learn how to:
 
@@ -30,9 +28,20 @@ In this tutorial, you learn how to:
 To analyze activity logs with Log Analytics, you need:
 
 - A Microsoft Entra tenant with a [Premium P1 license](~/fundamentals/get-started-premium.md)
-- A Log Analytics workspace *and* access to that workspace
-- The appropriate roles for Azure Monitor *and* Microsoft Entra ID
 
+- A Log Analytics workspace *and* [access to that workspace](/azure/azure-monitor/logs/manage-access)
+
+- The appropriate roles for Azure Monitor:
+  - Monitoring Reader
+  - Log Analytics Reader
+  - Monitoring Contributor
+  - Log Analytics Contributor
+
+- The appropriate roles for Microsoft Entra ID:
+  - Reports Reader
+  - Security Reader
+  - Global Reader
+  - Security Administrator
 
 Familiarize yourself with these articles:
 
@@ -46,26 +55,24 @@ Familiarize yourself with these articles:
 
 - [Azure Monitor Workbooks](/azure/azure-monitor/visualize/workbooks-overview)
 
-
-
 ## Configure Log Analytics
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
+[!INCLUDE [portal updates](../../includes/portal-update.md)]
 
 This procedure outlines how to configure a Log Analytics workspace for your audit and sign-in logs.
 To configure a Log Analytics workspace you need to **create the workspace** and then **configure diagnostic settings**.
 
 ### Create the workspace
 
-1. Sign in to the [Azure portal](https://portal.azure.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator)
+1. Sign in to the [Azure portal](https://portal.azure.com) as at least a [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) and the [Log Analytics Contributor](/azure/azure-monitor/logs/manage-access#log-analytics-contributor) built-in Azure role provides this access.
 
-2. Browse to **Log Analytics workspaces**.
+1. Browse to **Log Analytics workspaces**.
 
-3. Select **Create**.
+1. Select **Create**.
 
     ![Screenshot shows the Add button in the log analytics workspaces page.](./media/tutorial-configure-log-analytics-workspace/add.png)
 
-4.  On the **Create Log Analytics workspace** page, perform the following steps:
+1.  On the **Create Log Analytics workspace** page, perform the following steps:
 
     1. Select your subscription.
 
@@ -77,11 +84,11 @@ To configure a Log Analytics workspace you need to **create the workspace** and 
 
     ![Create log analytics workspace](./media/tutorial-configure-log-analytics-workspace/create-log-analytics-workspace.png)
 
-5. Select **Review + Create**.
+1. Select **Review + Create**.
 
     ![Review and create](./media/tutorial-configure-log-analytics-workspace/review-create.png)
 
-6. Select **Create** and wait for the deployment. You may need to refresh the page to see the new workspace.
+1. Select **Create** and wait for the deployment. You may need to refresh the page to see the new workspace.
 
     ![Create](./media/tutorial-configure-log-analytics-workspace/create-workspace.png)
 
@@ -89,10 +96,9 @@ To configure a Log Analytics workspace you need to **create the workspace** and 
 
 To configure diagnostic settings, you need switch to the Microsoft Entra admin center to send your identity log information to your new workspace.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator).
 
 1. Browse to **Identity** > **Monitoring & health** > **Diagnostic settings**.
-
 
 1. Select **Add diagnostic setting**.
 
