@@ -16,13 +16,11 @@ ms.collection: M365-identity-device-management
 
 # Microsoft Entra ID deployment plans
 
-Azure Active Directory is now Microsoft Entra ID, which can safeguard your organization with cloud identity and access management that connects employees, customers, and partners to their apps, devices, and data. Use the following guidance to help build your plan to deploy Microsoft Entra ID. Learn about business value, planning considerations, and operational procedures. You can use a browser Print to PDF function to create offline documentation.
-
-Learn more on, [What is Microsoft Entra ID?](~/fundamentals/whatis.md)
+Azure Active Directory is now [Microsoft Entra ID](~/fundamentals/whatis.md), which can safeguard your organization with cloud identity and access management. The solution connects employees, customers, and partners to their apps, devices, and data. Use this article's guidance to help build your plan to deploy Microsoft Entra ID. Learn about plan-building basics and then use the following sections for authentication deployment, apps and devices, hybrid scenarios, Identity Governance, and more.
 
 ## Stakeholders and roles
 
-When beginning your deployment plans, include your key stakeholders. Identify and document stakeholders, affected roles, and the areas of ownership and responsibilities that enable an effective deployment. Titles and roles differ from one organization to another, however the ownership areas are similar. See the following table for common roles affected by deployments. 
+When beginning your deployment plans, include your key stakeholders. Identify and document stakeholders, affected roles, and the areas of ownership and responsibilities that enable an effective deployment. Titles and roles differ from one organization to another, however the ownership areas are similar. See the following table for common and influential roles that affect any deployment plan. 
 
 |Role |Responsibility |
 |-|-|
@@ -36,12 +34,13 @@ When beginning your deployment plans, include your key stakeholders. Identify an
 
 ### RACI
 
-Responsible, Accountable, Consulted, and Informed (RACI) is a model for the participation by various roles to complete tasks or deliverables for a project or business process. Use this model to ensure deployment tasks are understood by the roles in your organization.
+Responsible, Accountable, Consulted, and Informed (RACI) is a model for the participation by various roles to complete tasks or deliverables for a project or business process. Use this model to help ensure the roles in your organization understand deployment responsibilities.
 
-* **Responsible** - Those accountable for the correct completion of the task. There is at least one role with a participation type of responsible, although others can be delegated to assist in the work required.
-* **Accountable** - The one ultimately answerable for the correct and thorough completion of the deliverable or task. The Accountable role ensures task prerequisites are met and who delegates the work to those responsible. The Accountable role approves work that Responsible provides. Assign one Accountable for each task or deliverable.
-* **Consulted** - The Consulted role provides guidance, typically a subject-matter expert (SME) and with whom there is two-way communication.
-* **Informed** - Those kept up to date on progress, generally upon completion of a task or deliverable.
+* **Responsible** - The people accountable for the correct completion of the task.
+  * There is at least one Responsible role, although you can delegate others to help deliver the work.
+* **Accountable** - The one ultimately answerable for the correctness and completion of the deliverable or task. The Accountable role ensures task prerequisites are met and delegates work to responsible roles. The Accountable role approves work that Responsible provides. Assign one Accountable for each task or deliverable.
+* **Consulted** - The Consulted role provides guidance, typically a subject-matter expert (SME). 
+* **Informed** - The people kept up to date on progress, generally upon completion of a task or deliverable.
 
 
 ## Authentication deployment
@@ -99,7 +98,7 @@ The following list describes features and services in hybrid scenarios.
 
 ## Identity Governance and reporting
 
-[Microsoft Entra ID Governance](~/id-governance/identity-governance-overview.md) enables organizations to improve productivity, strengthen security and more easily meet compliance and regulatory requirements. You can use Microsoft Entra ID Governance to automatically ensure the right people have the right access to the right resources, with identity and access process automation, delegation to business groups, and increased visibility. Use the following list to learn about identity governance and reporting. Items in the list refer to Microsoft Entra.
+[Microsoft Entra ID Governance](~/id-governance/identity-governance-overview.md) enables organizations to improve productivity, strengthen security and more easily meet compliance and regulatory requirements. Use Microsoft Entra ID Governance to ensure the right people have the right access to the right resources. Improve identity and access process automation, delegation to business groups, and increased visibility. Use the following list to learn about identity governance and reporting. 
 
 Learn more: 
 
