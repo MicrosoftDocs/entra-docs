@@ -98,6 +98,6 @@ To prevent false positives, learn how to [Customize Web Application Firewall rul
 [appgw_quick]: /azure/application-gateway/quick-create-portal
 [appproxy-add-app]: ./application-proxy-add-on-premises-application.md
 [appproxy-optimize]: ./application-proxy-network-topology.md
-[appproxy-custom-domain]: ./application-proxy-configure-custom-domain.md
+[appproxy-custom-domain]: ./how-to-configure-custom-domain.md
 [private-dns]: /azure/dns/private-dns-getstarted-portal
 [waf-logs]: /azure/application-gateway/application-gateway-diagnostics#firewall-log

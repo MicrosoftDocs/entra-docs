@@ -97,6 +97,6 @@ To prevent false positives, learn how to [Customize Web Application Firewall rul
 [front-door-origin]: /azure/frontdoor/origin?pivots=front-door-standard-premium#origin-host-header
 [front-door-tier]: /azure/frontdoor/standard-premium/tier-comparison
 [front-door-custom-domain]: /azure/frontdoor/standard-premium/how-to-add-custom-domain
-[appproxy-custom-domain]: ./application-proxy-configure-custom-domain.md
+[appproxy-custom-domain]: ./how-to-configure-custom-domain.md
 [private-dns]: /azure/dns/private-dns-getstarted-portal
 [waf-logs]: /azure/application-gateway/application-gateway-diagnostics#firewall-log

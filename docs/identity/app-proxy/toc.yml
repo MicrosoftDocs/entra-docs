@@ -99,7 +99,7 @@ items:
     - name: Publish complex distributed application using application segments
       href: application-proxy-configure-complex-application.md
     - name: Configure custom domain
-      href: application-proxy-configure-custom-domain.md
+      href: how-to-configure-custom-domain.md
     - name: Translate inline links
       href: application-proxy-configure-hard-coded-link-translation.md
     - name: Configure claims-aware apps

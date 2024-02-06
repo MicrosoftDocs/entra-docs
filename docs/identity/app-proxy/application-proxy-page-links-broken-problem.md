@@ -33,7 +33,7 @@ There are three ways to resolve this issue. The choices below are in listed in i
     > [!IMPORTANT]
     > In order to make the above changes you require rights to modify application objects in Microsoft Entra ID. The user needs to be assigned [Application Administrator](~/identity/role-based-access-control/delegate-app-roles.md#assign-built-in-application-admin-roles) role which grants application modification rights in Microsoft Entra ID to the user.
 
-2.  If your applications use fully qualified domain names (FQDNs), use [custom domains](application-proxy-configure-custom-domain.md) to publish your applications. This feature allows the same URL to be used both internally and externally.
+2.  If your applications use fully qualified domain names (FQDNs), use [custom domains](how-to-configure-custom-domain.md) to publish your applications. This feature allows the same URL to be used both internally and externally.
 
     This option ensures that the links in your application are externally accessible through Application Proxy since the links within the application to internal URLs are also recognized externally. All links still need to belong to a published application. However, with this option the links do not need to belong to the same application and can belong to multiple applications.
 

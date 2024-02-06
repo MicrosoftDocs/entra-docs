@@ -48,7 +48,7 @@ To get started, make sure you've met these requirements.
 
 ### Custom domains
 
-While [custom domains](./application-proxy-configure-custom-domain.md) are optional for all other applications, they are a prerequisite for wildcard applications. Creating custom domains requires you to:
+While [custom domains](./how-to-configure-custom-domain.md) are optional for all other applications, they are a prerequisite for wildcard applications. Creating custom domains requires you to:
 
 1. Create a verified domain within Azure.
 1. Upload a TLS/SSL certificate in the PFX format to your application proxy.
@@ -194,5 +194,5 @@ If you have multiple applications published for finance and you have `finance.ad
 
 ## Next steps
 
-- To learn more about **Custom domains**, see [Working with custom domains in Microsoft Entra application proxy](./application-proxy-configure-custom-domain.md).
+- To learn more about **Custom domains**, see [Working with custom domains in Microsoft Entra application proxy](./how-to-configure-custom-domain.md).
 - To learn more about **Publishing applications**, see [Publish applications using Microsoft Entra application proxy](application-proxy-add-on-premises-application.md)
