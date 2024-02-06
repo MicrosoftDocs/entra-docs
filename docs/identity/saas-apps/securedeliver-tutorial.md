@@ -36,7 +36,6 @@ In this tutorial, you configure and test Microsoft Entra single sign-on in a tes
 
 * SECURE DELIVER supports **SP** initiated SSO.
 
-* SECURE DELIVER supports [Automated user provisioning](secure-deliver-provisioning-tutorial.md).
 
 ## Add SECURE DELIVER from the gallery
 
