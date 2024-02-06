@@ -92,7 +92,7 @@ To publish your app through Application Proxy with a custom domain:
    
    ![Click to upload a certificate](./media/application-proxy-configure-custom-domain/certificate.png)
    
-7. On the **SSL certificate** page, browse to and select your PFX certificate file. Enter the password for the certificate, and select **Upload Certificate**. For more information about certificates, see the [Certificates for custom domains](#certificates-for-custom-domains) section. If the certificate isn't valid or there's a problem with the password you see an error message. The [Application Proxy FAQ](application-proxy-faq.yml) contains some troubleshooting steps you can try.
+7. On the **SSL certificate** page, browse to and select your PFX certificate file. Enter the password for the certificate, and select **Upload Certificate**. For more information about certificates, see the [Certificates for custom domains](#certificates-for-custom-domains) section. If the certificate isn't valid, or there's a problem with the password, you see an error message. The [Application Proxy FAQ](application-proxy-faq.yml) contains some troubleshooting steps you can try.
    
    ![Upload Certificate](./media/application-proxy-configure-custom-domain/ssl-certificate.png)
    
@@ -140,7 +140,7 @@ All certificate management is through the individual application pages. Go to th
 
 Once a certificate is uploaded for an application, it is automatically applied to **new** apps configured that use the same certificate. You need to reupload the certificate for existing apps in your tenant.
 
-When a certificate expires, you get a warning telling you to upload another certificate. If the certificate is revoked, your users may see a security warning when accessing the app. To update the certificate for an app, navigate to the **Application proxy** page for the app, select **Certificate**, and upload a new certificate. If the old certificate isn't being used by other apps, it's automatically deleted. 
+When a certificate expires, you get a warning telling you to upload another certificate. If the certificate is revoked, your users may see a security warning when accessing the app. To update the certificate for an app, navigate to the **Application proxy** page for the app, select **Certificate**, and upload a new certificate. Old certificates that aren't being used by other apps are automatically deleted. 
 
 ## Next steps
 
