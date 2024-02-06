@@ -436,7 +436,7 @@
           href: quickstart-daemon-app-python-acquire-token.md
     - name: Tutorials
       items:
-        - name: ASP.NET
+        - name: .NET
           href: tutorial-v2-aspnet-daemon-web-app.md
         - name: Node.js
           href: tutorial-v2-nodejs-console.md
@@ -508,6 +508,8 @@
               href: jwt-claims-customization.md
             - name: Customize SAML claims using admin center
               href: saml-claims-customization.md
+            - name: Customize claims using PowerShell
+              href: claims-customization-powershell.md
             - name: Set an access token lifetime policy
               href: configure-token-lifetimes.md    
             - name: Configure app multi-instancing
@@ -576,8 +578,6 @@
           href: test-setup-environment.md
         - name: Run automated integration tests as a user
           href: test-automate-integration-testing.md
-        - name: Throttling and service limits
-          href: test-throttle-service-limits.md
         - name: Create a service principal using the Azure portal
           href: howto-create-service-principal-portal.md
         - name: Create a service principal using Azure PowerShell
