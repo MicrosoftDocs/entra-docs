@@ -2664,7 +2664,6 @@ Assign the User Experience Success Manager role to users who need to do the foll
 
 - Read organizational-level usage reports for Microsoft 365 Apps and services, but not user details
 - View your organization's product feedback, Net Promoter Score (NPS) survey results, and help article views to identify communication and training opportunities
-- View Purchase services and your organization’s products and licenses in the Microsoft 365 admin center, but can’t make purchases or view user-level data
 - Read message center posts and service health data
 
 > [!div class="mx-tableFixed"]
