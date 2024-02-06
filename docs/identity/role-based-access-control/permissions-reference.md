@@ -2666,6 +2666,8 @@ Assign the User Experience Success Manager role to users who need to do the foll
 - View your organization's product feedback, Net Promoter Score (NPS) survey results, and help article views to identify communication and training opportunities
 - Read message center posts and service health data
 
+[Learn more](/microsoft-365/admin/add-users/about-admin-roles)
+
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
