@@ -39,7 +39,7 @@ After enabling policies requiring strict location enforcement on a subset of tes
       - Like Exchange Online, Teams, SharePoint Online, and Microsoft Graph
 - Before administrators turn on Conditional Access policies requiring strict location enforcement, they should ensure that all IP addresses from which your users can access Microsoft Entra ID and resource providers are included in their [IP-based named locations](location-condition.md#ipv4-and-ipv6-address-ranges).
 
-- Admins must also review their Conditional Access policies to and ensure that they do not have any policies that do not have CAE support yet. Refer to the [CAE-supported CA policies](/entra/identity/conditional-access/concept-continuous-access-evaluation) for more details.
+- Admins must review their Conditional Access policies to ensure that they do not have any policies that aren't supported by CAE yet. Refer to the [CAE-supported CA policies](/entra/identity/conditional-access/concept-continuous-access-evaluation) for more details.
 
 If administrators don't perform this validation, their users may be negatively impacted. If traffic to Microsoft Entra ID or a CAE supported resource is through a shared or undefinable egress IP, don't enable strict location enforcement in your Conditional Access policies.
 
