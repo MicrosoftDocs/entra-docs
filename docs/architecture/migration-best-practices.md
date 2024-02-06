@@ -8,7 +8,7 @@ ms.service: active-directory
 ms.subservice: fundamentals
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 08/17/2022
+ms.date: 2/06/2023
 ms.author: gasinh
 ms.reviewer: martinco
 ms.collection: M365-identity-device-management
@@ -31,15 +31,15 @@ Here are reasons that you might choose not to migrate AD FS:
 
 ## Migrate applications
 
-Plan a staged application migration rollout and select users to authenticate to Microsoft Entra ID for testing. Use guidance in, [Plan application migration to Microsoft Entra ID](/azure/active-directory/manage-apps/migrate-adfs-apps-phases-overview) and, [Resources to migrate apps to Microsoft Entra ID](/azure/active-directory/manage-apps/migration-resources).
+Plan a staged application migration rollout and select users to authenticate to Microsoft Entra ID for testing. Use guidance in, [plan application migration to Microsoft Entra ID](/azure/active-directory/manage-apps/migrate-adfs-apps-phases-overview) and, [resources to migrate apps to Microsoft Entra ID](/azure/active-directory/manage-apps/migration-resources).
 
 ### Application migration tool
 
-Currently in preview, [AD FS application migration to move AD FS apps to Microsoft Entra ID](~/identity/enterprise-apps/migrate-ad-fs-application-howto.md) is a guide for IT administrators to migrate AD FS relying party applications from AD FS to Microsoft Entra ID. The AD FS application migration wizard gives you a unified experience to discover, evaluate, and configure new Microsoft Entra applications. It has one-click configuration for basic SAML URLs, claims mapping, and user assignments to integrate an application with Microsoft Entra ID. there's end-to-end support to migrate on-premises AD FS applications, with these features:
+Currently in preview, [AD FS application migration to move AD FS apps to Microsoft Entra ID](~/identity/enterprise-apps/migrate-ad-fs-application-howto.md) is a guide for IT administrators to migrate AD FS relying party applications from AD FS to Microsoft Entra ID. The AD FS application migration wizard gives you a unified experience to discover, evaluate, and configure new Microsoft Entra ID applications. It has one-click configuration for basic SAML URLs, claims mapping, and user assignments to integrate an application with Microsoft Entra ID. There's end-to-end support to migrate on-premises AD FS applications, with these features:
 
 - Evaluate AD FS relying party application sign-in activities to help you identify application usage and impact.
-- Analyze AD FS to Microsoft Entra migration feasibility to help you identify migration blockers and required actions to migrate applications to Microsoft Entra.
-- Configure new Microsoft Entra applications with a one-click application migration process that automatically configures a new Microsoft Entra application for an AD FS application.
+- Analyze AD FS to Microsoft Entra ID migration feasibility to help you identify migration blockers and required actions to migrate applications to Microsoft Entra ID.
+- Configure new Microsoft Entra ID applications with a one-click application migration process that automatically configures a new Microsoft Entra ID application for an AD FS application.
 
 ### Phase 1: Discover and scope apps
 
