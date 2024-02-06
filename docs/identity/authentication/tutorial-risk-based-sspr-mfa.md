@@ -73,8 +73,6 @@ For more information about Microsoft Entra ID Protection, see [What is Microsoft
 
 ## Enable multifactor authentication registration policy
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
-
 Microsoft Entra ID Protection includes a default policy that can help get users registered for Microsoft Entra multifactor authentication. If you use other policies to protect sign-in events, you would need users to have already registered for MFA. When you enable this policy, it doesn't require users to perform MFA at each sign-in event. The policy only checks the registration status for a user and asks them to preregister if needed.
 
 It's recommended to enable this registration policy for users that use multifactor authentication. To enable this policy, complete the following steps:
@@ -85,7 +83,7 @@ It's recommended to enable this registration policy for users that use multifact
 1. Under *Controls*, select **Access**. Make sure the option for *Require Microsoft Entra multifactor authentication registration* is checked, then choose **Select**.
 1. Set **Enforce Policy** to *On*, then select **Save**.
 
-    ![Screenshot of how to require users to register for MFA.](./media/tutorial-risk-based-sspr-mfa/enable-mfa-registration.png)
+:::image type="content" source="media/tutorial-risk-based-sspr-mfa/enable-mfa-registration.png" alt-text="Screenshot of how to require users to register for MFA." lightbox="media/tutorial-risk-based-sspr-mfa/enable-mfa-registration.png":::
 
 ## Enable user risk policy for password change
 
