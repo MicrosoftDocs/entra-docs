@@ -52,17 +52,11 @@ Get specific information about **Microsoft Entra users in the tenant**, details 
 **Sample prompts**:
 
 - Tell me more about Entra user: username@contoso.com 
-
 - Who is this user: "Given_name Surname"
-
 - What is the email for this Entra user:  xxxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx 
-
 - List the active users created in the last x days
-
 - Is this user’s account enabled?
-
 - Show me the authentication method details for Entra user Given_name Surname
-
 - What auth methods does this user have?
 
 ### Get Microsoft Entra group details 
@@ -72,17 +66,11 @@ Get details on **Microsoft Entra groups** in Microsoft Entra ID, like who the gr
 **Sample prompts**:
 
 - Tell me more about this group: xxxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx  
-
 - Who is the owner of this group: Group Name 
-
 - Tell me about the group with the name that starts with 'XYZ'
-
 - Is user@contoso.com a member of this group?
-
 - How many members are in this group:  xxxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx 
-
 - List all groups with names starting with 'XYZ'
-
 - Who created this group?
 
 ### Get Entra sign-in Logs 
@@ -92,9 +80,7 @@ Get information on **sign-in logs** for Microsoft Entra user, like the last X si
 **Sample prompts**:
 
 - Show me the last X sign-ins for this Microsoft Entra user: xxxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx 
-
 - Show me the sign-ins from this location
-
 - Show me failed sign-ins for user@contoso.com
 
 ### Get Entra risky users
@@ -104,7 +90,6 @@ Get the details for Microsoft Entra users carrying an elevated risk of compromis
 **Sample prompts**:
 
 - What is the risk level for user: xxxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx 
-
 - Is this user risky?
 
 ## Providing feedback
