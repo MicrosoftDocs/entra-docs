@@ -1,5 +1,5 @@
 ---
-title: Lifecycle Workflow hybrid capabilities
+title: Lifecycle Workflow hybrid capabilities (preview)
 description: Conceptual article discussing Lifecycle Workflow's hybrid compatibility
 author: owinfreyATL
 ms.author: owinfrey
@@ -14,66 +14,9 @@ ms.custom: template-concept
 #CustomerIntent: As an IT administrator, I want to learn about hybrid support with Lifecycle workflows so that I can manage synced on-premises users using workflows.
 ---
 
-<!--
-Remove all the comments in this template before you sign-off or merge to the  main branch.
-
-This template provides the basic structure of a Concept article pattern. See the [instructions - Concept](../level4/article-concept.md) in the pattern library.
-
-You can provide feedback about this template at: https://aka.ms/patterns-feedback
-
-Concept is an article pattern that defines what something is or explains an abstract idea.
-
-There are several situations that might call for writing a Concept article, including:
-
-* If there's a new idea that's central to a service or product, that idea must be explained so that customers understand the value of the service or product as it relates to their circumstances. A good recent example is the concept of containerization or the concept of scalability.
-* If there's optional information or explanations that are common to several Tutorials or How-to guides, this information can be consolidated and single-sourced in a full-bodied Concept article for you to reference.
-* If a service or product is extensible, advanced users might modify it to better suit their application. It's better that advanced users fully understand the reasoning behind the design choices and everything else "under the hood" so that their variants are more robust, thereby improving their experience.
-
--->
-
-<!-- 1. H1
------------------------------------------------------------------------------
-
-Required. Set expectations for what the content covers, so customers know the content meets their needs. The H1 should NOT begin with a verb.
-
-Reflect the concept that undergirds an action, not the action itself. The H1 must start with:
-
-* "\<noun phrase\> concept(s)", or
-* "What is \<noun\>?", or
-* "\<noun\> overview"
-
-Concept articles are primarily distinguished by what they aren't:
-
-* They aren't procedural articles. They don't show how to complete a task.
-* They don't have specific end states, other than conveying an underlying idea, and don't have concrete, sequential actions for the user to take.
-
-One clear sign of a procedural article would be the use of a numbered list. With rare exception, numbered lists shouldn't appear in Concept articles.
-
--->
-
-# Lifecycle Workflow hybrid capabilities
-
-
-<!-- 2. Introductory paragraph
-----------------------------------------------------------
-
-Required. Lead with a light intro that describes what the article covers. Answer the fundamental “why would I want to know this?” question. Keep it short.
-
-* Answer the fundamental "Why do I want this knowledge?" question.
-* Don't start the article with a bunch of notes or caveats.
-* Don’t link away from the article in the introduction.
-* For definitive concepts, it's better to lead with a sentence in the form, "X is a (type of) Y that does Z."
-
--->
+# Lifecycle Workflow hybrid capabilities (preview)
 
 Lifecycle Workflows allow you to create workflows that can be triggered for users based on joiner, mover, or leaver scenarios. With hybrid support, you're able to trigger specific user-based tasks for users synced from on-premises Active Directory to Microsoft Entra ID. This is accomplished by allowing you to create a task enabling an on-premises user account, so that you're able to run other tasks in a workflow for the user. You're also able to disable, or even delete, a user account when they're no longer active in your organization. This allows you to use workflows to automate tasks across the lifecycle of users in your hybrid environment. Using Lifecycle Workflows with hybrid users requires additional prerequisites. For a step by step guide on creating a task for hybrid users, see: [Manage synced on-premises users with workflows](manage-workflow-onprem.md).
-
-<!-- 3. Prerequisites --------------------------------------------------------------------
-
-Optional: Make **Prerequisites** your first H2 in the article. Use clear and unambiguous
-language and use a unordered list format. 
-
--->
 
 ## Hybrid specific tasks
 
@@ -101,7 +44,5 @@ To manage synced on-premises users with Lifecycle Workflows, you must have the f
 
 ## Next steps
 
-TODO: Add your next step link(s)
-
 > [!div class="nextstepaction"]
-> [Manage synced on-premises users with workflows](manage-workflow-onprem.md)
+> [Manage synced on-premises users with workflows(preview)](manage-workflow-onprem.md)
