@@ -31,6 +31,9 @@ This document focuses on enabling security key based passwordless authentication
 To use security keys for logging in to web apps and services, you must have a browser that supports the WebAuthN protocol. 
 These include Microsoft Edge, Chrome, Firefox, and Safari. For more information, see [Browser support of FIDO2 passwordless authentication](fido2-compatibility.md).
 
+>[!NOTE]
+>Passkeys (FIDO2) stored on computers and mobile devices along with registering and signing in via WebAuthn QR code is not yet supported by Entra ID.
+
 ## Prepare devices
 
 For devices that are joined to Microsoft Entra ID, the best experience is on Windows 10 version 1903 or higher.
@@ -41,7 +44,7 @@ Hybrid-joined devices must run Windows 10 version 2004 or higher.
 
 ### Enable the combined registration experience
 
-Registration features for passwordless authentication methods rely on the combined registration feature. Follow the steps in the article [Enable combined security information registration](howto-registration-mfa-sspr-combined.md), to enable combined registration.
+Registration features for passwordless authentication methods rely on combined MFA/SSPR registration. [Learn more about combined registration](howto-registration-mfa-sspr-combined.md). 
 
 ### Enable FIDO2 security key method
 

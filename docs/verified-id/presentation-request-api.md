@@ -161,6 +161,7 @@ The `Configuration.Validation` provides information about how the presented cred
 |---------|---------|---------|
 | `allowRevoked` |  Boolean | Optional. Determines if a revoked credential should be accepted. Default is `false` (it shouldn't be accepted). |
 | `validateLinkedDomain` |  Boolean | Optional. Determines if the linked domain should be validated. Default is `false`. Setting this flag to `false` means you as a Relying Party application accept credentials from an unverified linked domain. Setting this flag to `true` means the linked domain will be validated and only verified domains will be accepted. |
+| `faceCheck` |  [faceCheck](#facecheck-type) | Optional. Allows requesting a liveness check during presentation. |
 
 ### Constraints type
 
@@ -168,10 +169,19 @@ The `constraints` type contains a collection of claims constraints that must be 
 
 |Property |Type |Description |
 |---------|---------|---------|
-| `claimName` |  string | Optional. Mandatory. Name of the claim for the constraint. |
+| `claimName` |  string | Mandatory. Name of the claim for the constraint. |
 | `values` |  string collection | Set of values that should match the claim value. If you specify multiple values, like ["red", "green", "blue"] it is a match if the claim value in the credential has any of the values in the collection.|
 | `contains` | string |	The constraint evaluates to true if the claim value contains the specified value.|
 | `startsWith` | string |	The constraint evaluates to true if the claim value starts with the specified value.|
+
+### faceCheck type
+
+The faceCheck type contains information for performing liveness check during presentation of a credential. The credential requested must contain a photo of the holder in the claim named by the sourcePhotoClaimName. The presentation will succeed if the liveness check reaches a confidence level equal or greater to what is specified in the property matchConfidenceThreshold. If the threshold is not met, the entire presentation will fail.
+
+|Property |Type |Description |
+|---------|---------|---------|
+| `sourcePhotoClaimName` |  string | Mandatory. The name of the claim in the credential that contains the photo. |
+| `matchConfidenceThreshold` |  integer | Optional. The confidential threshold for a successful check between the photo and the liveness data. Must be an integer between 50 and 100. The default is 70. |
 
 ## Successful response
 

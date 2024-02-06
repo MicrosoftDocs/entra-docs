@@ -467,7 +467,7 @@ Now that your attributes are mapped and an initial user is assigned, you can tes
  4. Select **Provision on demand**.
  5. Search for one of your test users, and select **Provision**.
  [![Screenshot that shows testing on-demand provisioning.](~/includes/media/app-provisioning-ldap\test-2.png)](~/includes/media/app-provisioning-ldap\test-2.png#lightbox)</br>
- 6. After several seconds, then the message **Successfully created user in target system** will appear, with a list of the user attributes.
+ 6. After several seconds, then the message **Successfully created user in target system** will appear, with a list of the user attributes.  If an error appears instead, see [troubleshooting provisioning errors](#troubleshooting-provisioning-errors).
 
 
 ## Start provisioning users
@@ -488,6 +488,8 @@ If an error is shown, then select **View provisioning logs**.  Look in the log f
 If the error message is **Failed to create User**, then check the attributes that are shown against the requirements of the directory schema.
 
 For more information, change to the **Troubleshooting & Recommendations** tab.
+
+If the troubleshooting error message includes that an objectClass value is `invalid per syntax`, then ensure that the provisioning attribute mapping to the `objectClass` attribute includes only names of object classes recognized by the directory server.
 
 For other errors, see [troubleshooting on-premises application provisioning](~/identity/app-provisioning/on-premises-ecma-troubleshoot.md).
 
