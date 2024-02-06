@@ -21,9 +21,14 @@
       "redirect_document_id": false
     },
     {
-      "source_path_from_root": "/docs/identity/monitoring-health/howto-configure-prerequisites-for-reporting-api.md",
-      "redirect_url": "/entra/identity/monitoring-health/howto-enable-microsoft-graph-activity-logs",
-      "redirect_document_id": false
+    "source_path_from_root": "/docs/identity/monitoring-health/howto-configure-prerequisites-for-reporting-api.md",
+    "redirect_url": "/entra/identity/monitoring-health/howto-analyze-activity-logs-with-microsoft-graph",
+    "redirect_document_id": false
+    },
+    {
+    "source_path_from_root": "/docs/identity/monitoring-health/howto-enable-microsoft-graph-activity-logs.md",
+    "redirect_url": "/entra/identity/monitoring-health/howto-analyze-activity-logs-with-microsoft-graph",
+    "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/identity/saas-apps/index.md",
