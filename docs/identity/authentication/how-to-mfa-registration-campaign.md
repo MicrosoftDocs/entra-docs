@@ -107,13 +107,22 @@ To configure the policy using Graph Explorer:
 
    ![Screenshot of Graph Explorer.](./media/how-to-nudge-authenticator-app/permissions.png)
 
-1. Retrieve the Authentication methods policy: `GET https://graph.microsoft.com/beta/policies/authenticationmethodspolicy`
+1. Retrieve the Authentication methods policy: 
+
+   ```json
+   GET https://graph.microsoft.com/v1.0/policies/authenticationmethodspolicy
+   ```
 
 1. Update the registrationEnforcement and authenticationMethodsRegistrationCampaign section of the policy to enable the nudge on a user or group.
 
    ![Screenshot of the API response.](media/how-to-mfa-registration-campaign/response.png)
 
-To update the policy, perform a PATCH on the Authentication Methods Policy with only the updated registrationEnforcement section: `PATCH https://graph.microsoft.com/beta/policies/authenticationmethodspolicy`
+   To update the policy, perform a PATCH on the Authentication Methods Policy with only the updated registrationEnforcement section: 
+
+   ```json
+   PATCH https://graph.microsoft.com/v1.0/policies/authenticationmethodspolicy
+   ```
+
 
 The following table lists **authenticationMethodsRegistrationCampaign** properties.
 
