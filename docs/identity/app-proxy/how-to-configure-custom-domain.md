@@ -138,7 +138,7 @@ We don't recommend using a private root Certificate Authority (CA) since the pri
 
 All certificate management is through the individual application pages. Go to the application's **Application proxy** page to access the **Certificate** field.
 
-You upload a certificate for an application and it's applied to **new** apps configured to use it. However, you need to upload the certificate again for existing apps in your tenant.
+If you upload a certificate then **new** apps will use it. As long as they are configured to use it. However, you need to upload the certificate again for apps that were already there when you uploaded it.
 
 When a certificate expires, you get a warning telling you to upload another certificate. If the certificate is revoked, your users may see a security warning when accessing the app. To update the certificate for an app, navigate to the **Application proxy** page for the app, select **Certificate**, and upload a new certificate. Old certificates that aren't being used by other apps are automatically deleted. 
 
