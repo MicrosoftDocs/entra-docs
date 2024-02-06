@@ -60,29 +60,6 @@ The branding elements are called out in the following example. Text descriptions
 1. **Footer**: Space across the bottom of the page for privacy and Terms of Use information.
 1. **Template**: The layout of the page and sign-in boxes.
 
-### User experience
-
-There are some scenarios you to consider when you customize the sign-in pages for your organization's tenant-specific applications.
-
-For Microsoft, Software as a Service (SaaS), and multitenant applications such as <https://myapps.microsoft.com>, or <https://outlook.com>, the customized sign-in page appears only after the user types their **Email** or **Phone number** and selects the **Next** button. 
-
-Some Microsoft applications support [Home Realm Discovery](~/identity/enterprise-apps/home-realm-discovery-policy.md) for authentication. In these scenarios, when a customer signs in to a Microsoft Entra common sign-in page, Microsoft Entra ID can use the customer's user name to determine where they should sign in. 
-
-For customers who access applications from a custom URL, the `whr` query string parameter, or a domain variable, can be used to apply company branding at the initial sign-in screen, not just after adding the email or phone number. For example, `whr=contoso.com` would appear in the custom URL for the app. With the Home Realm Discover and domain parameter included, the company branding appears immediately in the first sign-in step. Other domain hints can be included.
-
-In the following examples, replace the contoso.com with your own tenant name, or verified domain name:
-
-- For Microsoft Outlook `https://outlook.com/contoso.com` 
-- For SharePoint online `https://contoso.sharepoint.com`
-- For My Apps portal `https://myapps.microsoft.com/?whr=contoso.com` 
-- Self-service password reset `https://passwordreset.microsoftonline.com/?whr=contoso.com`
-
-For B2B collaboration end-users who perform cross-tenant sign-ins, their home tenant branding appears, even if there isn't custom branding specified.
-
-In the following example, the company branding for Woodgrove Groceries appears on the left, with the Woodgrove logo, fonts, and custom text. The example on the right displays the default branding for the user's home tenant. The default branding displays the Microsoft logo, fonts, and text.
-
-:::image type="content" source="media/how-to-customize-branding/b2b-comparison.png" alt-text="Screenshot of comparison of the branded sign-in experience and the default sign-in experience.":::
-
 ## How to navigate the company branding process
 
 [!INCLUDE [portal update](../includes/portal-update.md)]
@@ -191,7 +168,7 @@ All of the available options appear in one list so you can review everything you
 
 Once your default sign-in experience is created, select the **Edit** button to make any changes. You can't delete a default sign-in experience after it's created, but you can remove all custom settings.
 
-### Customize the sign-in experience by browser language
+## Customize the sign-in experience by browser language
 
 You can create a personalized sign-in experience for users who sign in using a specific browser language by customizing the branding elements for that browser language. This customization overrides any configurations made to the default branding. If you don't make any changes to the elements, the default elements are displayed.
 
@@ -206,6 +183,33 @@ The process for customizing the experience is the same as the [default sign-in e
 Microsoft Entra ID supports right-to-left functionality for languages such as Arabic and Hebrew that are read right-to-left. The layout adjusts automatically, based on the user's browser settings.
 
 :::image type="content" source="media/how-to-customize-branding/right-to-left-language-example.png" alt-text="Screenshot of the sign-in experience in Hebrew, demonstrating the right-to-left layout.":::
+
+## User experience
+
+There are some scenarios you to consider when you customize the sign-in pages for your organization's tenant-specific applications.
+
+### Software as a Service (SaaS) and multi-tenant applications
+
+For Microsoft, Software as a Service (SaaS), and multi-enant applications such as <https://myapps.microsoft.com>, or <https://outlook.com>, the customized sign-in page appears only after the user types their **Email** or **Phone number** and selects the **Next** button. 
+
+### Home Realm Discovery
+Some Microsoft applications support [Home Realm Discovery](~/identity/enterprise-apps/home-realm-discovery-policy.md) for authentication. In these scenarios, when a customer signs in to a Microsoft Entra common sign-in page, Microsoft Entra ID can use the customer's user name to determine where they should sign in. 
+
+For customers who access applications from a custom URL, the `whr` query string parameter, or a domain variable, can be used to apply company branding at the initial sign-in screen, not just after adding the email or phone number. For example, `whr=contoso.com` would appear in the custom URL for the app. With the Home Realm Discover and domain parameter included, the company branding appears immediately in the first sign-in step. Other domain hints can be included.
+
+In the following examples, replace the contoso.com with your own tenant name, or verified domain name:
+
+- For Microsoft Outlook `https://outlook.com/contoso.com` 
+- For SharePoint online `https://contoso.sharepoint.com`
+- For My Apps portal `https://myapps.microsoft.com/?whr=contoso.com` 
+- Self-service password reset `https://passwordreset.microsoftonline.com/?whr=contoso.com`
+
+### B2B scenarios
+For B2B collaboration end-users who perform cross-tenant sign-ins, their home tenant branding appears, even if there isn't custom branding specified.
+
+In the following example, the company branding for Woodgrove Groceries appears on the left, with the Woodgrove logo, fonts, and custom text. The example on the right displays the default branding for the user's home tenant. The default branding displays the Microsoft logo, fonts, and text.
+
+:::image type="content" source="media/how-to-customize-branding/b2b-comparison.png" alt-text="Screenshot of comparison of the branded sign-in experience and the default sign-in experience.":::
 
 ## Next steps
 
