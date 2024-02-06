@@ -3632,8 +3632,6 @@
         href: schoolstream-asa-provisioning-tutorial.md
       - name: ScreenSteps
         href: screensteps-provisioning-tutorial.md
-      - name: SECURE DELIVER
-        href: secure-deliver-provisioning-tutorial.md
       - name: SecureLogin
         href: secure-login-provisioning-tutorial.md
       - name: Sentry
