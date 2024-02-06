@@ -33,9 +33,9 @@ Microsoft applications provide native support for FIDO2 authentication in previe
 
 <sup>2</sup>Native app support for FIDO2 on Android is in development.
 
-If a user has an authentication broker installed, they can choose to sign in with a security key when they access an application such as Outlook. They're redirected to sign in with FIDO2, and redirected back to Outlook as a signed in user after successful authentication.
+If a user installed an authentication broker, they can choose to sign in with a security key when they access an application such as Outlook. They're redirected to sign in with FIDO2, and redirected back to Outlook as a signed in user after successful authentication.
 
-If the user doesn't have an authentication broker installed, they can still sign in with a security key when they access MSAL-enabled applications that meet the requirements as listed in [Support for FIDO2 authentication](/entra/identity-platform/support-fido2-authentication).
+If the user hasn't installed an authentication broker, they can still sign in with a security key when they access MSAL-enabled applications that meet the requirements as listed in [Support for FIDO2 authentication](/entra/identity-platform/support-fido2-authentication).
 
 ## Browser support
 
