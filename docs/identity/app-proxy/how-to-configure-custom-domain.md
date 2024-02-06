@@ -21,15 +21,15 @@ When you publish an application through Microsoft Entra application proxy, you c
 
 It's a good idea to set up custom domains for your apps whenever possible. Some reasons to use custom domains include:
 
-- Links between apps work even outside the corporate network. Without a custom domain, if your app has hard-coded internal links to targets outside the Application Proxy, and the links aren't externally resolvable, they will break. When your internal and external URLs are the same, you avoid this problem. If you're not able to use custom domains, see [Redirect hardcoded links for apps published with Microsoft Entra application proxy](./application-proxy-configure-hard-coded-link-translation.md) for other ways to address this issue. 
+- Links between apps work even outside the corporate network. Without a custom domain, if your app is hard-coding internal links to targets outside the Application Proxy, and the links aren't externally resolvable, they break. When your internal and external URLs are the same, you avoid this problem. If you're not able to use custom domains, see [Redirect hardcoded links for apps published with Microsoft Entra application proxy](./application-proxy-configure-hard-coded-link-translation.md) for other ways to address this issue. 
   
-- Your users will have an easier experience, because they can get to the app with the same URL from inside or outside your network. They don’t need to learn different internal and external URLs, or track their current location. 
+- Your users have an easier experience, because they get to the app with the same URL from inside or outside your network. There is no need to learn different internal and external URLs, or track their current location. 
 
 - You can control your branding and create the URLs you want. A custom domain can help build your users' confidence, because users see and use a familiar name instead of *`msappproxy.net`*.
 
-- Some configurations will only work with custom domains. For example, you need custom domains for apps that use Security Assertion Markup Language (SAML), such as when you’re using Active Directory Federation Services (AD FS) but are unable to use WS-Federation. For more information, see [Work with claims-aware apps in Application Proxy](application-proxy-configure-for-claims-aware-applications.md). 
+- Some configurations will only work with custom domains. For example, you need custom domains for apps that use Security Assertion Markup Language (SAML). SAML is used when you’re using Active Directory Federation Services (AD FS) but are unable to use WS-Federation. For more information, see [Work with claims-aware apps in Application Proxy](application-proxy-configure-for-claims-aware-applications.md). 
 
-If you're not able to make the internal and external URLs match, it's not as important to use custom domains, but you can still take advantage of the other benefits. 
+If you're not able to make the internal and external URLs match, it's not as important to use custom domains. But you can still take advantage of the other benefits. 
 
 ## DNS configuration options
 
@@ -38,7 +38,7 @@ There are several options for setting up your DNS configuration, depending on yo
 
 ### Same internal and external URL, different internal and external behavior 
 
-If you don't want your internal users to be directed through the Application Proxy, you can set up a *split-brain DNS*. A split DNS infrastructure directs internal hosts to an internal domain name server, and external hosts to an external domain name server, for name resolution. 
+If you don't want your internal users to be directed through the Application Proxy, you can set up a *split-brain DNS*. A split DNS infrastructure directs name resolution based on host location. Internal hosts are directed to an internal domain name server, and external hosts to an external domain name server.
 
 ![Split-brain DNS](./media/application-proxy-configure-custom-domain/split-brain-dns.png)
 
