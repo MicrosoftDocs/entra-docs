@@ -130,8 +130,6 @@ To configure single sign-on on **SECURE DELIVER** side, you need to send the dow
 
 In this section, you create a user called Britta Simon in SECURE DELIVER. Work with [SECURE DELIVER support team](mailto:iw-sd-support@fujifilm.com) to add the users in the SECURE DELIVER platform. Users must be created and activated before you use single sign-on.
 
-SECURE DELIVER also supports automatic user provisioning, you can find more details [here](./secure-deliver-provisioning-tutorial.md) on how to configure automatic user provisioning.
-
 ## Test SSO 
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
