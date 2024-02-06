@@ -8,7 +8,7 @@ ms.service: active-directory
  
 ms.subservice: ciam
 ms.topic: how-to
-ms.date: 01/30/2024
+ms.date: 02/06/2024
 ms.author: mimart
 ms.custom: it-pro
 
@@ -35,29 +35,25 @@ Follow these steps to use the **Run user flow** feature to test your user flow.
 
 1. Browse to **Identity** > **External Identities** > **User flows**.
 
-1. From the list, select your user flow.
+1. Select your user flow from the list. At least one application with a redirect URI must be associated with this user flow (see the [Prerequisites](#prerequisites)).
 
 1. Select the **Run user flow** button.
 
    :::image type="content" source="media/how-to-test-user-flows/run-user-flow-button.png" alt-text="Screenshot showing the Run user flow button.":::
 
-1. In the **Run user flow** pane, most of the fields are populated with values from the application registration, so you can leave the default values. (At least one application with a redirect URI must be associated with the user flow; see the [Prerequisites](#prerequisites)). Refer to the following table for details about each field.
+1. In the **Run user flow** pane, most of the fields are populated with values from the application registration, so you can leave the default values. For details about each field, refer to the table below.
 
    :::image type="content" source="media/how-to-test-user-flows/run-user-flow-pane.png" alt-text="Screenshot showing the Run user flow pane.":::
-
-   > [!NOTE]
-   > The fields that appear in the Run user flow pane will vary based on the application registration settings.
 
    |Field    |Description  |
    |---------|---------|
    |**Open Id Configuration URL**     | This value is retrieved from the application registration. It's the publicly accessible URL that was assigned to your application when you registered it with Microsoft Entra ID. This URL points to the OpenID configuration document used by client applications to find authentication URLs and public signing keys. The format is: `https://{tenant}.ciamlogin.com/{tenant}.onmicrosoft.com/v2.0/.well-known/openid-configuration?appid=00000000-1111-2222-3333-444444444444`        |
    |**Application**     | This menu lists the applications that are associated with this user flow. At least one application is required. If there are multiple applications, select the one you want to test.       |
    |**Reply URL** / **Redirect URI**   | This value is retrieved from the application registration, and is required for the Run user flow feature to work. Keep the current setting, which is the reply URL or redirect URI (depending on the protocol) that is configured for your application. [Learn more](how-to-register-ciam-app?tabs=spa#about-redirect-uri)       |
-   | **Resource**         | The globally unique Application ID URI assigned to the API. This value is defined when you expose the API during app registration and applies to access tokens only. |
-   | **Scopes**           | The permissions needed by an application to access the data and functionality in the API. This value is defined when you expose the API during app registration and applies to access tokens only.   |
+   |**Resource**     | The **Resource** and **Scopes** values are retrieved from the application registration for a protected web API. These are the values that the access token must contain to allow secure access to the web API. The **Resource** is the globally unique **Application ID URI** assigned to the API during application registration. This value is defined when you expose the API during app registration. [Learn more](../../identity-platform/quickstart-configure-app-expose-web-apis)
+   |**Scopes**     | The **Resource** and **Scopes** values are retrieved from the application registration for a protected web API. These are the values that the access token must contain to allow secure access to the web API. The **Scopes** are the permissions needed by an application to access the data and functionality in the API. These values are defined when you expose the API during app registration. [Learn more](../../identity-platform/quickstart-configure-app-expose-web-apis)
    |**Response type**     | This value is retrieved from the application registration. It's the type of information the client application expects to receive from the authorization server and it determines the grant type that the client uses to obtain a token. The value is *code* for the authorization code flow, or *id_token* or *token* for the hybrid flow.        |
-   |**Access Tokens**     | The values in this section are retrieved from the application registration for a protected web API. These are the values that the access token must contain to allow secure access to the web API. The **Resource** is the globally unique **Application ID URI** assigned to the API during application registration. The **Scopes** are the permissions needed by an application to access the data and functionality in the API. These values are defined when you expose the API during app registration. [Learn more](../../identity-platform/quickstart-configure-app-expose-web-apis)
-   |**Proof Code for Key Exchange**     | The authorization code flow with Proof Key for Code Exchange (PKCE) is recommended for single-page applications (SPAs). With PKCE, an authorization code is delivered instead of a token to the specified reply URL of the application. You can use the autogenerated **Code Verifier** and **Code Challenge** values to test the user flow experience, or you can use the values expected by your application during development so the application can redeem the authorization code for a token. [Learn more](../../identity-platform/v2-oauth2-auth-code-flow?WT.mc_id=Portal-Microsoft_AAD_B2CAdmin)        |
+   |**Proof Code for Key Exchange**     | The authorization code flow with Proof Key for Code Exchange (PKCE) is recommended for single-page applications (SPAs). With PKCE, an authorization code is delivered instead of a token to the specified reply URL of the application. To test the PKCE flow, select the **Specify code challenge** check box. Then you can use the autogenerated **Code Verifier**, **Code Challenge method**, and **Code Challenge** values to test the user flow experience. Or you can use the values expected by your application during development so the application can redeem the authorization code for a token. [Learn more](../../identity-platform/v2-oauth2-auth-code-flow?WT.mc_id=Portal-Microsoft_AAD_B2CAdmin)        |
    |**Localization**     | To test a specific language, select the **Specify ui locales** option and use **Select target language** menu to choose the language. [Learn more](how-to-customize-languages-customers.md)        |
    |**Run user flow endpoint**     | This URL runs the user flow with the selected options. You can use this URL or select the **Run user flow** button.        |
    |||
