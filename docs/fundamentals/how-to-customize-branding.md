@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: active-directory
 ms.subservice: fundamentals
 ms.topic: how-to
-ms.date: 02/01/2024
+ms.date: 02/06/2024
 ms.author: sarahlipsey
 ms.reviewer: almars
 ---
@@ -36,7 +36,7 @@ The **Global Administrator** role is required to customize company branding.
 
 **All branding elements are optional. Default settings will remain, if left unchanged.** For example, if you specify a banner logo but no background image, the sign-in page shows your logo with a default background image from the destination site such as Microsoft 365. Additionally, sign-in page branding doesn't carry over to personal Microsoft accounts. If your users or guests authenticate using a personal Microsoft account, the sign-in page doesn't reflect the branding of your organization.
 
-**Images have different image and file size requirements.** The image requirements for each option aren't listed in this article. We recommend you review the company branding process to gather the requirements you need. You might need to use a photo editor to create the right size images. The preferred image type for all images is PNG, but JPG is accepted. 
+**Images have different image and file size requirements.** We recommend you review the company branding process in the Microsoft Entra admin center to gather the image requirements you need. You might need to use a photo editor to create the right size images. The preferred image type for all images is PNG, but JPG is accepted. 
 
 **Use Microsoft Graph with Microsoft Entra company branding.** Company branding can be viewed and managed using Microsoft Graph on the `/beta` endpoint and the `organizationalBranding` resource type. For more information, see the [organizational branding API documentation](/graph/api/resources/organizationalbranding?view=graph-rest-beta&preserve-view=true).
 
@@ -85,7 +85,7 @@ In the following example, the company branding for Woodgrove Groceries appears o
 
 ## How to navigate the company branding process
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
+[!INCLUDE [portal update](../../includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 
@@ -101,10 +101,14 @@ The sign-in experience process is grouped into sections. At the end of each sect
 ### Basics
 
 - **Favicon**: Select a PNG or JPG of your logo that appears in the web browser tab.
+  - Image size: 32x32 px
+  - Max file size: 5 KB
 
    :::image type="content" source="media/how-to-customize-branding/favicon-example.png" alt-text="Screenshot of sample favicons in a web browser.":::
 
 - **Background image**: Select a PNG or JPG to display as the main image on your sign-in page. This image scales and crops according to the window size, but the sign-in prompt might partially block it.
+  - Image size: 1920x1080 px
+  - Max file size: 300 KB
 
 - **Page background color**: If the background image isn't able to load because of a slower connection, your selected background color appears instead.
 
@@ -124,6 +128,9 @@ The sign-in experience process is grouped into sections. At the end of each sect
 ### Header
 
 If you haven't enabled the header, go to the **Layout** section and select **Show header**. Once enabled, select a PNG or JPG to display in the header of the sign-in page.
+
+- Image size: 245x36 px
+- Max file size: 10 KB
 
 :::image type="content" source="media/how-to-customize-branding/disabled-header-message.png" alt-text="Screenshot of the message indicating that the header needs to be enabled.":::
 
@@ -147,10 +154,16 @@ If you haven't enabled the footer, go to the **Layout** section and select **Sho
 ### Sign-in form
 
 - **Banner logo**: Select a PNG or JPG image file of a banner-sized logo (short and wide) to appear on the sign-in pages.
+  - Image size: 245x36 px
+  - Max file size: 50 KB
 
 - **Square logo (light theme)**: Select a square PNG or JPG image file of your logo to be used in browsers that are using a light color theme. This logo is used to represent your organization on the Microsoft Entra web interface and in Windows.
+  - Image size: 240x240 px
+  - Max file size: 50 KB
 
 - **Square logo (dark theme)** Select a square PNG or JPG image file of your logo to be used in browsers that are using a dark color theme. This logo is used to represent your organization on the Microsoft Entra web interface and in Windows. If your logo looks good on light and dark backgrounds, there's no need to add a dark theme logo.
+  - Image size: 240x240 px
+  - Max file size: 50 KB
 
 - **Username hint text**: Enter hint text for the username input field on the sign-in page. If guests use the same sign-in page, we don't recommend using hint text here.
 
