@@ -14,7 +14,7 @@ ms.custom: template-concept
 
 # Lifecycle workflow execution condition and scheduling
 
-Workflows created using Lifecycle workflows allows you to automate common tasks for users based on where they fall in the joiner, mover, and leaver model of their lifecycle within your organization. These workflows are able to run in two ways, manually(on-demand) for specific users, or based on a schedule if the user meets the defined execution conditions of a workflow. This article describes the difference between the workflow triggers, the conditions for a scheduled workflow, and when they run for users. 
+Workflows created using Lifecycle workflows allows you to automate common tasks for users based on where they fall in the joiner, mover, and leaver model of their lifecycle within your organization. These workflows are able to run in two ways, manually(on-demand) for specific users, or based on a schedule if the user meets the defined execution conditions of a workflow. This article describes the difference between the workflow triggers, the conditions for a scheduled workflow, and when they run for users.
 
 ## Workflow trigger details
 
@@ -28,7 +28,6 @@ The trigger of a workflow defines the conditions for when a workflow runs for us
 - **On-demand only**: The workflow is only triggered manually.
 - **Attribute changes**: The workflow is triggered on schedule when a change to an attribute is met. 
 - **Scope based**: The workflow is triggered on schedule when a scope criteria attribute is met.
-
 
 ## Time based attribute trigger
 
@@ -55,7 +54,6 @@ The **On-demand only** trigger is set to only run the workflow for users you man
 
 When setting a workflow where the trigger type is **on-demand only**, the following details are defined:
 
-
 |Trigger detail  |Description  |
 |---------|---------|
 |Scope type     |  The scope type determines how the scope of the workflow is defined to run. The default for this is *User selection*.       |
@@ -71,16 +69,13 @@ The **Attribute change** trigger allows you to set a trigger based on when an at
 
 When setting a workflow where the trigger type is **Attribute change**, the following details are defined:
 
-
 |Trigger detail  |Description  |
 |---------|---------|
 |Trigger Attribute     | The trigger attribute defines the attribute that is being changed to trigger the workflow to run.        |
 |Action/Operator     |  This defines the change to the attribute that triggers the workflow to run.       |
 |Value     |  The value of the trigger attribute.      |
 
-
 ## Scope based trigger
-
 
 For workflows that are scope-based, the workflow runs on a schedule when trigger conditions for the scope are met.
 
@@ -91,9 +86,7 @@ The scope-based details are made up of the following two parts:
 - Scope type: Narrows the rule.
 - Rule: Where you can set expressions on user properties that define for whom the scheduled workflow runs. You can add extra expressions using **And, And not, Or, Or not** to create complex conditionals, and apply the workflow more granularly across your organization. Lifecycle Workflows supports a [rich set of user properties](/graph/api/resources/identitygovernance-rulebasedsubjectset#supported-user-properties-and-query-parameters) for configuring the scope.
 
-
 When setting a workflow where the trigger type is **scope based**, the following details are defined:
-
 
 |Trigger detail  |Description  |
 |---------|---------|
@@ -115,7 +108,7 @@ For a detailed guide on setting the execution conditions for a workflow, see: [C
 
 ## Execution user scope
 
-When a workflow is scheduled to run you're able to see a list of users who currently meet the conditions for the workflow. The list of users are who the workflow will run for, and is based on the last time the workflow engine evaluated users within your tenant.
+When a workflow is scheduled to run you're able to see a list of users who currently meet the conditions for the workflow. The list of users are who the workflow runs for, and is based on the last time the workflow engine evaluated users within your tenant.
 
 :::image type="content" source="media/lifecycle-workflow-execution-conditions/execution-user-scope.png" alt-text="Screenshot of a list of users in scope of the workflow's execution conditions.":::
 
@@ -125,8 +118,6 @@ If the execution conditions recently changed for the workflow, then the executio
 > There is currently a catch up window for users based on a 3 day period. This means that when a workflow is created, the workflow engine will consider users, who previously met its execution conditions, within 3 days of the scope of the users. For example, if you created a pre-hire workflow to run for users in a certain department 1 week before their hire date, a user who was created within 10 days before their hire date would also fall under the scope of the workflow and have it ran for them.
 
 For a detailed guide on viewing the execution user scope of a specific workflow, see: [Check execution user scope of a workflow](check-workflow-execution-scope.md).
-
-
 
 ## Next steps
 
