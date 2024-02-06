@@ -8,7 +8,7 @@ ms.service: active-directory
 ms.subservice: app-proxy
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 09/13/2023
+ms.date: 02/06/2024
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
@@ -124,6 +124,9 @@ Open the following ports to **outbound** traffic.
 | 443         | All outbound communication with the Application Proxy service |
 
 If your firewall enforces traffic according to originating users, also open ports 80 and 443 for traffic from Windows services that run as a Network Service.
+
+> [!NOTE]
+> Other port errors can occur when there's a networking error on your system. Make sure that it's possible to connect from a browser to a public website and that the ports are open as specified in [Application Proxy prerequisites](application-proxy-add-on-premises-application.md#prerequisites). For more information about troubleshooting issues related to connector errors, see [Troubleshoot Application Proxy problems and error messages](application-proxy-troubleshoot.md#connector-errors).
 
 ### Allow access to URLs
 
