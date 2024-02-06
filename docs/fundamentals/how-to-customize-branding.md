@@ -24,7 +24,7 @@ The default sign-in experience is the global look and feel that applies across a
 
 Adding custom branding requires one of the following licenses:
 
-- [Microsoft Entra ID P1 or P2](https://www.microsoft.comsecurity/business/microsoft-entra-pricing)
+- [Microsoft Entra ID P1 or P2](https://www.microsoft.com/security/business/microsoft-entra-pricing)
 - [Microsoft 365 Business Standard](https://www.microsoft.com/microsoft-365/business)
 - [SharePoint (Plan 1)](https://www.microsoft.com/microsoft-365/sharepoint/compare-sharepoint-plans)
 
