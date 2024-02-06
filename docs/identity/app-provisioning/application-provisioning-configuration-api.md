@@ -281,11 +281,11 @@ HTTP/1.1 204 No Content
 
 ### Monitor the provisioning job status
 
-Now that the provisioning job is running, use the following command to track the progress of the current provisioning cycle as well as statistics to date such as the number of users and groups that have been created in the target system. 
+Now that the provisioning job is running, use the following command to track the progress. Each [synchronization job](/graph/api/resources/synchronization-synchronizationjob) in the response includes the [status](/graph/api/resources/synchronization-synchronizationstatus) of the current provisioning cycle as well as statistics to date such as the number of users and groups that have been created in the target system.
 
 #### Request
 ```msgraph-interactive
-GET https://graph.microsoft.com/beta/servicePrincipals/{id}/synchronization/jobs/{jobId}/
+GET https://graph.microsoft.com/beta/servicePrincipals/{id}/synchronization/jobs
 ```
 
 #### Response
@@ -293,6 +293,7 @@ GET https://graph.microsoft.com/beta/servicePrincipals/{id}/synchronization/jobs
 HTTP/1.1 200 OK
 Content-type: application/json
 
+{ "value": [
 {
     "id": "{jobId}",
     "templateId": "aws",
@@ -321,6 +322,8 @@ Content-type: application/json
           "value": "500"
       }
     ]
+}
+]
 }
 ```
 
