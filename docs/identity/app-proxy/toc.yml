@@ -66,7 +66,7 @@ items:
     - name: High availability and load balancing
       href: application-proxy-high-availability-load-balancing.md
     - name: SAML-based SSO (on-prem apps)
-      href: application-proxy-configure-single-sign-on-on-premises-apps.md
+      href: conceptual-sso-apps.md
     - name: Header-based SSO
       href: application-proxy-configure-single-sign-on-with-headers.md
     - name: Kerberos-based SSO
