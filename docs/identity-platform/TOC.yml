@@ -179,7 +179,7 @@
         - name: ASP.NET 
           href: quickstart-web-app-aspnet-sign-in.md
         - name: ASP.NET Core
-          href: quickstart-web-app-dotnet-core-sign-in.md
+          href: quickstart-web-app-aspnet-core-sign-in.md
         - name: Node.js - MSAL
           href: quickstart-web-app-nodejs-msal-sign-in.md
         - name: Java
@@ -188,7 +188,7 @@
           href: quickstart-web-app-python-sign-in.md
     - name: Tutorials
       items:
-        - name: ASP.NET Core
+        - name: ASP.NET
           items:
           - name: Register your app
             href: tutorial-web-app-dotnet-register-app.md
@@ -263,14 +263,14 @@
           href: quickstart-web-api-aspnet-core-protect-api.md
     - name: Tutorials
       items:
-        - name: ASP.NET Core
+        - name: ASP.NET
           items: 
-          - name: Register the API
-            href: tutorial-web-api-dotnet-register-app.md
-          - name: Create and configure project 
-            href: tutorial-web-api-dotnet-prepare-app.md
-          - name: Protect API endpoint
-            href: tutorial-web-api-dotnet-protect-endpoint.md
+          - name: 1 - Register the API
+            href: web-api-tutorial-01-register-app.md
+          - name: 2 - Create and configure project 
+            href: web-api-tutorial-02-prepare-api.md
+          - name: 3 - Protect API endpoint
+            href: web-api-tutorial-03-protect-endpoint.md
     - name: Samples
       displayName: code samples, example code, code snippets
       href: sample-v2-code.md#web-api
@@ -426,7 +426,7 @@
       href: index-service.yml
     - name: Quickstart
       items:
-        - name: .NET
+        - name: .NET Core
           href: quickstart-console-app-netcore-acquire-token.md
         - name: Java
           href: quickstart-daemon-app-java-acquire-token.md
@@ -436,7 +436,7 @@
           href: quickstart-daemon-app-python-acquire-token.md
     - name: Tutorials
       items:
-        - name: .NET
+        - name: ASP.NET
           href: tutorial-v2-aspnet-daemon-web-app.md
         - name: Node.js
           href: tutorial-v2-nodejs-console.md
@@ -504,12 +504,10 @@
               href: optional-claims.md
             - name: Configure role claim
               href: enterprise-app-role-management.md
-            - name: Customize JWT claims using admin center
+            - name: Customize JWT claims
               href: jwt-claims-customization.md
-            - name: Customize SAML claims using admin center
+            - name: Customize SAML claims
               href: saml-claims-customization.md
-            - name: Customize claims using PowerShell
-              href: claims-customization-powershell.md
             - name: Set an access token lifetime policy
               href: configure-token-lifetimes.md    
             - name: Configure app multi-instancing
@@ -578,6 +576,8 @@
           href: test-setup-environment.md
         - name: Run automated integration tests as a user
           href: test-automate-integration-testing.md
+        - name: Throttling and service limits
+          href: test-throttle-service-limits.md
         - name: Create a service principal using the Azure portal
           href: howto-create-service-principal-portal.md
         - name: Create a service principal using Azure PowerShell
@@ -762,7 +762,7 @@
           displayName: ASP.NET Core, Xamarin
           href: /entra/msal/dotnet
         - name: Microsoft.Identity.Web (MSAL wrapper)
-          displayName: auth, library, .NET, msal
+          displayName: auth, library, .NET Core, msal
           href: /entra/msal/dotnet/microsoft-identity-web/
         - name: Application configuration
           href: msal-client-application-configuration.md
@@ -849,6 +849,10 @@
       href: /graph/api/resources/azure-ad-overview
     - name: Custom claims provider reference
       href: custom-claims-provider-reference.md
+    - name: MSA Server side API reference 
+      href: reference-msa-server-side-api.md
+    - name: Microsoft Entra ID WAM API Reference
+      href: reference-entra-id-wam-api.md
     - name: Attribute collection start custom extension reference
       href: custom-extension-OnAttributeCollectionStart-reference.md
     - name: Attribute collection submit custom extension reference
