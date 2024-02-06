@@ -438,7 +438,7 @@ For Microsoft Graph, the parameters for the **Enable user account** task are as 
 |displayName     |  EnableUserAccount (Customizable by user)       |
 |description     |  Enable user account (Customizable by user)        |
 |taskDefinitionId     |   6fc52c9d-398b-4305-9763-15f42c1676fc      |
-|arguments     |  Can contain the optional argument with a boolean value of either *true* or *false* . If the argument does not exist the task behaves in the same way as if the value is set as false.   |
+|arguments     |  Can contain the optional *enableOnPremisesAccount* argument with a boolean value of either *true* or *false* . If the argument does not exist the task behaves in the same way as if the value is set as false.   |
 
 
 
@@ -513,7 +513,7 @@ For Microsoft Graph, the parameters for the **Disable user account** task are as
 |displayName     |  DisableUserAccount (Customizable by user)       |
 |description     |  Disable user account (Customizable by user)       |
 |taskDefinitionId     |   1dfdfcc7-52fa-4c2e-bf3a-e3919cc12950      |
-|arguments     |  Can contain the optional  argument with a boolean value of either *true* or *false* . If the argument does not exist the task behaves in the same way as if the value is set as false.   |
+|arguments     |  Can contain the optional *disableOnPremisesAccount* argument with a boolean value of either *true* or *false* . If the argument does not exist the task behaves in the same way as if the value is set as false.   |
 
 
 ```Example for usage within the workflow
@@ -810,7 +810,7 @@ For Microsoft Graph, the parameters for the **Delete User** task are as follows:
 |displayName     |  Delete user account (Customizable by user)      |
 |description     |  Delete user account in Microsoft Entra ID (Customizable by user)      |
 |taskDefinitionId     |   8d18588d-9ad3-4c0f-99d0-ec215f0e3dff      |
-|arguments     |  Can contain the optional *deleteOnPremises*  argument with a boolean value of either *true* or *false* . If the argument does not exist the task behaves in the same way as if the value is set as false.   |
+|arguments     |  Can contain the optional *deleteOnPremisesAccount*  argument with a boolean value of either *true* or *false* . If the argument does not exist the task behaves in the same way as if the value is set as false.   |
 
 
 
