@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: active-directory
 ms.workload: identity
 ms.topic: overview
-ms.date: 08/25/2023
+ms.date: 02/06/2024
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
@@ -35,6 +35,29 @@ In cases where an application doesn't support SCIM, partners have built [custom 
 
 ## Available partner-driven integrations
 The descriptions and lists of applications below are provided by the partners themselves. You can use the lists of applications supported to identify a partner that you may want to contact and learn more about.  
+
+
+Aquera
+
+#### Description
+Aquera is the leading provider of SCIM Gateway Services for Microsoft Entra. The SCIM Gateway for Microsoft Entra from Aquera is a cloud-based service providing out-of-the-box connectivity between Entra ID and the provisioning target applications, directories, databases, devices, or third party IDPs that an organization or their partners operate, which are not covered by the Entra Application Gallery. 
+The Aquera SCIM Gateway powers Entra ID to create, update, deactivate, and delete user accounts via Aquera connectors in any cloud or on-premises application, database, directory, device, or third party IDP via the Entra ID SCIM protocol. Aquera has a catalog of over 800 connectors covering these targets, builds additional connectors on-demand, and offers a self-service connector builder for customers to build their own connectors for the Aquera SCIM Gateway. The Aquera connectors support the various integration methods required by each target including REST, SQL, LDAP, SOAP, non-Entra ID compatible SCIM, or web service APIs, admin console automation, SDKs, code libraries, and files via FTP and local file shares. 
+Aquera also supports over 40 inbound provisioning HRIS sources of record for Entra ID, and further provides deep integration with all the major ITSMs supporting automatic generation of joiner, mover, and leaver work tickets in the ITSMs, and fulfilling ITSM self-service access requests via Entra ID. 
+
+#### Contact Information
+* Company website: https://www.aquera.com 
+* Azure Marketplace Listings: https://azuremarketplace.microsoft.com/en-us/marketplace/apps?search=aquera&page=1 
+* Company information: https://www.aquera.com/contact-us.html 
+
+#### Popular applications supported
+* Over 40 HRIS Applications: Oracle Cloud HCM, Dayforce, UKG Pro/Ready/Pro Workforce, ADP (all US and international versions), Workday, SAP HR, Greenhouse, iCIMS, SuccessFactors, HiBob, BambooHR, Paylocity, Paycor, PeopleSoft, Cornerstone, Lever,…
+* ERPs: Netsuite, Oracle Cloud ERP, Oracle EBS, SAP ECC, SAP S/4HANA, Sage Intacct, PeopleSoft ERP,…
+* EHRs: Epic, Cerner, PointClickCare, MyAvatar, Homecare Homebase
+* Student Information Systems: Ellucian Banner, PeopleSoft Campus Solutions
+* Databases: Oracle, MySQL, SQLServer, MongoDB, PostgreSQL, AS/400 DB2, DB2, Snowflake, Redshift,...
+* irectories/IDPs: AS/400, RACF, ACF2, TopSecret, OpenLDAP, IDP Directories
+
+
 
 ### IDMWORKS
 #### Description
