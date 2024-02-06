@@ -182,7 +182,7 @@ For information about connectors, capacity planning, and how they stay up-to-dat
 
 ## Verify the connector installed and registered correctly
 
-You can use the Microsoft Entra admin center or your Windows server to confirm that a new connector installed correctly.
+You can use the Microsoft Entra admin center or your Windows server to confirm that a new connector installed correctly. For information about troubleshooting App Proxy issues, see [Debug Application Proxy application issues](application-proxy-debug-apps.md).
 
 ### Verify the installation through Microsoft Entra admin center
 
