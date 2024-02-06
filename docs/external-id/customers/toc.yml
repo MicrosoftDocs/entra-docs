@@ -320,6 +320,14 @@ items:
       href: /entra/fundamentals/reference-company-branding-css-template
     - name: Help and support options
       href: ~/identity-platform/developer-support-help-options.md?context=/entra/external-id/customers/context/customers-context
+    - name: Native auth
+      items:
+        - name: Native auth overview
+          href: reference-native-auth-overview.md 
+        - name: Native auth with email OTP
+          href: reference-native-auth-email-otp.md
+        - name: Native auth with email & password
+          href: reference-native-auth-email-password.md
     - name: MSAL references 
       items:
         - name: MSAL.NET
