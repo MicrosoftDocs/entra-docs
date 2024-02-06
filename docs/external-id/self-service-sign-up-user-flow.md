@@ -5,7 +5,7 @@ description: Create user flows for apps that your organization builds. Then, use
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: how-to
-ms.date: 01/31/2024
+ms.date: 02/05/2024
 
 ms.author: mimart
 author: msmimart
