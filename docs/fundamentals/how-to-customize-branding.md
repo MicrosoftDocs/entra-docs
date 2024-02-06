@@ -24,9 +24,9 @@ The default sign-in experience is the global look and feel that applies across a
 
 Adding custom branding requires one of the following licenses:
 
-- [Microsoft Entra ID P1 or P2](/security/business/microsoft-entra-pricing/)
-- [Microsoft 365 Business Standard](/microsoft-365/business/)
-- [SharePoint (Plan 1)](/microsoft-365/sharepoint/compare-sharepoint-plans/)
+- [Microsoft Entra ID P1 or P2](/security/business/microsoft-entra-pricing)
+- [Microsoft 365 Business Standard](/https://www.microsoft.com/microsoft-365/business/)
+- [SharePoint (Plan 1)](https://www.microsoft.com/microsoft-365/sharepoint/compare-sharepoint-plans)
 
 Microsoft Entra ID P1 or P2 editions are available for customers in China using the worldwide instance of Microsoft Entra ID. Microsoft Entra ID P1 or P2 editions aren't currently supported in the Azure service operated by 21Vianet in China.
 
@@ -85,7 +85,7 @@ In the following example, the company branding for Woodgrove Groceries appears o
 
 ## How to navigate the company branding process
 
-[!INCLUDE [portal update](../../includes/portal-update.md)]
+[!INCLUDE [portal update](../includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 
