@@ -48,7 +48,7 @@
       href: users-bulk-download.md
     - name: Share user accounts
       href: users-sharing-accounts.md
-    - name: Assign admin roles    
+    - name: Assign users to admin roles    
       href: ../role-based-access-control/manage-roles-portal.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
     - name: User management enhancements
       href: users-search-enhanced.md
