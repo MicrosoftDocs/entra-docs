@@ -59,7 +59,7 @@ Next, if the application implements a provisioning protocol, then you should con
 
      |Application supports| Next steps|
      |----|-----|
-     | SAML 2.0| Deploy the [application proxy](~/identity/app-proxy/application-proxy.md) and configure an application for [SAML SSO](~/identity/app-proxy/application-proxy-configure-single-sign-on-on-premises-apps.md) |
+     | SAML 2.0| Deploy the [application proxy](~/identity/app-proxy/application-proxy.md) and configure an application for [SAML SSO](~/identity/app-proxy/conceptual-sso-apps.md) |
      | Integrated Windows Auth (IWA) | Deploy the [application proxy](~/identity/app-proxy/application-proxy.md), configure an application for [Integrated Windows authentication SSO](~/identity/app-proxy/how-to-configure-sso-with-kcd.md), and set firewall rules to prevent access to the application's endpoints except via the proxy.|
      | header-based authentication | Deploy the [application proxy](~/identity/app-proxy/application-proxy.md) and configure an application for [header-based SSO](~/identity/app-proxy/application-proxy-configure-single-sign-on-with-headers.md) |
 
