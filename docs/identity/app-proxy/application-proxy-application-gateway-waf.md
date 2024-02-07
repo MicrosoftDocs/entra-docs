@@ -7,7 +7,7 @@ ms.service: active-directory
 ms.subservice: app-proxy
 ms.workload: identity
 ms.topic: how-to
-ms.date: 07/22/2022
+ms.date: 02/07/2024
 ms.author: besilvei
 ms.reviewer: ashishj
 ---
