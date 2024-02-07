@@ -31,7 +31,7 @@ In this how-to guide, we'll cover a few common scenarios that can help you under
 
 ## Prerequisites
 
-1. Learn about [how to get an Microsoft Entra tenant](~/external-id/customers/quickstart-tenant-setup.md).
+1. Learn about [how to get a Microsoft Entra tenant](~/external-id/customers/quickstart-tenant-setup.md).
 1. Download the latest [Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/installation).
 
 ## Get started

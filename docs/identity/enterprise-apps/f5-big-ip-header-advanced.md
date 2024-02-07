@@ -239,7 +239,7 @@ Create an APM SSO object.
 
 8. On the **General Purpose** tab, select **HTTP Headers** > **Add Item**.
 
-   ![Screenshot of the the HTTP Headers option.](./media/f5-big-ip-header-advanced/add-item.png)
+   ![Screenshot of the HTTP Headers option.](./media/f5-big-ip-header-advanced/add-item.png)
 
 9. Select **Add new entry**.
 10. Create three HTTP and Header modify entries.

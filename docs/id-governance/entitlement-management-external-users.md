@@ -17,7 +17,7 @@ ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
 
 
-#Customer intent: As a administrator, I want understand how I can govern access for external users in entitlement management.
+#Customer intent: As an administrator, I want understand how I can govern access for external users in entitlement management.
 
 ---
 

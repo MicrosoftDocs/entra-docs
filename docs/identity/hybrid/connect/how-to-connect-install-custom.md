@@ -71,7 +71,7 @@ On the **Connect to Microsoft Entra ID** page, enter a Hybrid Identity Administr
 You might want to use an account in the default *onmicrosoft.com* domain, which comes with your Microsoft Entra tenant. This account is used only to create a service account in Microsoft Entra ID. It's not used after the installation finishes.
  
 >[!NOTE]
->A best practice is to avoid using on-premises synced accounts for Microsoft Entra role assignments. If the on premises account is compromised, this can be used to compromise your Microsoft Entra resources as well.  For a complete list of best practices refer to [Best practices for Microsoft Entra roles](~/identity/role-based-access-control/best-practices.md)
+>A best practice is to avoid using on-premises synced accounts for Microsoft Entra role assignments. If the on-premises account is compromised, this can be used to compromise your Microsoft Entra resources as well.  For a complete list of best practices refer to [Best practices for Microsoft Entra roles](~/identity/role-based-access-control/best-practices.md)
  
 ![Screenshot showing the "Connect to Microsoft Entra ID" page.](./media/how-to-connect-install-custom/connectaad.png)
 

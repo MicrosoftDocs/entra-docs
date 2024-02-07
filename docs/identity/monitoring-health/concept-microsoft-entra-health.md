@@ -60,7 +60,7 @@ Data is aggregated every 15 minutes, for low latency insights into your tenant's
 
 Select **View details** on a tile to view the metrics for that scenario. You can also view these metric streams using [Microsoft Graph](/graph/api//resources/serviceactivity?view=graph-rest-beta&preserve-view=true).
 
-![Screenshot of the the scenario monitoring landing page.](media/concept-microsoft-entra-health/scenario-monitoring.png)
+![Screenshot of the scenario monitoring landing page.](media/concept-microsoft-entra-health/scenario-monitoring.png)
 
 ### Sign-ins requiring a compliant device
 
