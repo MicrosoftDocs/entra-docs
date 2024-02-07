@@ -55,7 +55,7 @@ Use the following tutorials to learn to integrate common tools with Microsoft En
 
 ### Apps not in the gallery
 
-You can integrate applications that don't appear in the gallery, including applications in your organization, or third-party application from vendors. Submit a request to publish your app in the gallery. To learn about integrating apps you develop in-house, see **Integrate apps your developers build**.
+You can integrate applications that don't appear in the gallery, including applications in your organization, or third-party application from vendors. Submit a request to publish your app in the gallery. To learn about integrating apps you develop in-house, see [Integrate apps your developers build](~/fundamentals/five-steps-to-full-application-integration.md#integrate-apps-your-developers-build).
 
 Learn more:
 
