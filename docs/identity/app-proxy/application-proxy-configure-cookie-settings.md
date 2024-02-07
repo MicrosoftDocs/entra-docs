@@ -9,7 +9,7 @@ ms.subservice: app-proxy
 ms.workload: identity
 ms.custom: has-azure-ad-ps-ref
 ms.topic: how-to
-ms.date: 09/14/2023
+ms.date: 02/07/2024
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
