@@ -56,10 +56,10 @@ Before configuring and enabling the provisioning service, you need to identify a
       * Users who are assigned to your Amazon Business app will be placed into this group by default with a Requisitioner role. It is recommended to have this group at the same level as the Default SCIM Parent Group.
       * If a user is provisioned without a group assignment, they will be placed into this group by default with a Requisitioner role.
       * Any de-activated user will remain in this group. Hence, it is recommended to not use any role other than Requisitioner for this group.
-* Note  
-   * The Default SCIM Parent Group can be same as the default group selected for your SSO configuration. 
-   * The Default SCIM Parent Group can be a Legal Entity group. Choosing Legal Entity as the default group is recommended if you have different invoicing templates setup for different groups in your AB Account.
-   * We currently support enabling SCIM for only one Legal Entity in an Amazon Business account.
+>[!NOTE]  
+>- The Default SCIM Parent Group can be the same as the default group selected for your SSO configuration. 
+>- The Default SCIM Parent Group can be a Legal Entity group. Choosing Legal Entity as the default group is recommended if you have different invoicing templates set up for different groups in your AB Account.
+>- We currently support enabling SCIM for only one Legal Entity in an Amazon Business account.
 
 Once your Default SCIM Groups have been identified, go to your Amazon Business account > Business Settings > Identity Management (SCIM) page, enter the details and click Activate. It is necessary to complete this step before proceeding to the next step.
 
