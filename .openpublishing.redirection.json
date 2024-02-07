@@ -117,7 +117,7 @@
     },
     {
       "source_path_from_root": "/docs/identity/app-proxy/application-proxy-config-how-to.md",
-      "redirect_url": "/entra/identity/app-proxy/application-proxy-config-how-to",
+      "redirect_url": "/entra/identity/app-proxy/application-proxy-add-on-premises-application",
       "redirect_document_id": false
     },
     {
