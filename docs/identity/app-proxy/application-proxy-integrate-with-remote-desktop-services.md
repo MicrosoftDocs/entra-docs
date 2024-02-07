@@ -105,7 +105,7 @@ Now that you've configured Remote Desktop, Microsoft Entra application proxy has
 ### Enable the RD Web Client
 If you also want users to be able to use the RD Web Client follow steps at [Set up the Remote Desktop web client for your users](/windows-server/remote/remote-desktop-services/clients/remote-desktop-web-client-admin) to enable this.
 
-The Remote Desktop web client lets users access your organization's Remote Desktop infrastructure through a HTML5-compatible web browser such as Microsoft Edge, Internet Explorer 11, Google Chrome, Safari, or Mozilla Firefox (v55.0 and later).
+The Remote Desktop web client lets users access your organization's Remote Desktop infrastructure through an HTML5-compatible web browser such as Microsoft Edge, Internet Explorer 11, Google Chrome, Safari, or Mozilla Firefox (v55.0 and later).
 
 ## Test the scenario
 

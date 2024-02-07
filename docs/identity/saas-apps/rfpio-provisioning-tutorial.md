@@ -64,7 +64,7 @@ Before configuring RFPIO for automatic user provisioning with Microsoft Entra ID
 
 5.	Save the **SCIM API Token** as this token will not be displayed again for security purpose. This value will be entered in the **Secret Token** field in the Provisioning tab of your RFPIO application.
 
-	![Screenshot of the S C I M section with the the Warning dialog box that appears after you select SUBMIT.](media/rfpio-provisioning-tutorial/auth.png)
+	![Screenshot of the S C I M section with the Warning dialog box that appears after you select SUBMIT.](media/rfpio-provisioning-tutorial/auth.png)
 
 ## Add RFPIO from the gallery
 

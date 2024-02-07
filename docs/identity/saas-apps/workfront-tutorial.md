@@ -157,7 +157,7 @@ The objective of this section is to create a user called Britta Simon in Workfro
 
 4. On the New Person dialog, perform the following steps:
    
-    ![Create an Workfront test user](./media/workfront-tutorial/add-person.png)
+    ![Create a Workfront test user](./media/workfront-tutorial/add-person.png)
    
     a. In the **First Name** textbox, type "Britta."
    

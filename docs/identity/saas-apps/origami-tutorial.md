@@ -177,7 +177,7 @@ In this section, you create a user called Britta Simon in Origami.
 
     f. Click **Save**.
    
-    ![Screenshot that shows the the "Save" button selected.](./media/origami-tutorial/save.png)
+    ![Screenshot that shows the "Save" button selected.](./media/origami-tutorial/save.png)
 
 6. Assign **User Roles** and **Client Access** to the user. 
    
