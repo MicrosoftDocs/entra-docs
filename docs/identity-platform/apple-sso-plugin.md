@@ -41,7 +41,7 @@ macOS Platform Single Sign-on (PSSO) is a new feature powered by the Microsoft E
 - Saves customer organizations money by removing the need for security keys.
 - Advances Zero Trust objectives using integration with Secure Enclave, and smart card authentication methods.
 
-Refer to the [macOS Platform Single Sign On (PSSO) overview](/entra/identity/devices/macos-psso) documentation for further details.
+Refer to the [macOS Platform Single Sign On (PSSO) overview](/../identity/devices/macos-psso.md) documentation for further details.
 
 ## Requirements
 
