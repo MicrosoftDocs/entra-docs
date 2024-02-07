@@ -59,7 +59,7 @@ A backend setting determines how requests reach the backend pool servers.
 
 ## Configure your application to be remotely accessed through Application Proxy in Microsoft Entra ID
  
-As represented in the diagram above, both connector VMs, the Application Gateway, and the backend servers were deployed in the same virtual network in Azure. This setup also applies to applications and connectors deployed on-premises. 
+Both connector VMs, the Application Gateway, and the backend servers are deployed in the same virtual network in Azure. The setup also applies to applications and connectors deployed on-premises. 
 
 For a detailed guide on how to add your application to Application Proxy in Microsoft Entra ID, see [Tutorial: Add an on-premises application for remote access through Application Proxy in Microsoft Entra ID][appproxy-add-app]. For more information about performance considerations concerning the Application Proxy connectors, see [Optimize traffic flow with Microsoft Entra application proxy][appproxy-optimize]. 
  
@@ -67,11 +67,11 @@ For a detailed guide on how to add your application to Application Proxy in Micr
 
 In this example, the same URL was configured as the internal and external URL. Remote clients access the application over the Internet on port 443, through the Application Proxy. Clients connected to the corporate network access the application privately through the Application Gateway directly, also on port 443. For a detailed step on how to configure custom domains in Application Proxy, see [Configure custom domains with Microsoft Entra application proxy][appproxy-custom-domain].
 
-To ensure the connector VMs send requests to the Application Gateway, an [Azure Private DNS zone][private-dns] was created with an A record pointing www.fabrikam.one to the private frontend IP of the Application Gateway.
+An [Azure Private DNS zone][private-dns] is created with an A record. The A record points `www.fabrikam.one` to the private frontend IP address of the Application Gateway. The record ensures the connector VMs send requests to the Application Gateway.
 
 ## Test the application
 
-After [adding a user for testing](./application-proxy-add-on-premises-application.md#add-a-user-for-testing), you can test the application by accessing https://www.fabrikam.one. The user will be prompted to authenticate in Microsoft Entra ID, and upon successful authentication, will access the application. 
+After [adding a user for testing](./application-proxy-add-on-premises-application.md#add-a-user-for-testing), you can test the application by accessing https://www.fabrikam.one. The user is prompted to authenticate in Microsoft Entra ID, and upon successful authentication, accesses the application. 
 
 ![Screenshot of authentication step.](./media/application-proxy-waf/sign-in-2.png)
 ![Screenshot of server response.](./media/application-proxy-waf/application-gateway-response.png)
@@ -82,9 +82,9 @@ To test if the WAF is blocking malicious requests, you can simulate an attack us
 
 ![Screenshot of WAF response.](./media/application-proxy-waf/waf-response.png)
 
-An HTTP 403 response confirms that the request was blocked by the WAF.
+An HTTP 403 response confirms that WAF blocked the request.
 
-The Application Gateway [Firewall logs][waf-logs] provide more details about the request and why it was blocked by the WAF.
+The Application Gateway [Firewall logs][waf-logs] provide more details about the request and why it is blocked by the WAF.
 
 ![Screenshot of waf logs.](./media/application-proxy-waf/waf-log.png)
 
