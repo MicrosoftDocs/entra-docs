@@ -38,7 +38,7 @@ A payload is a set of instructions or settings that can be delivered to a device
 1. Select **Create**.
 1. Provide a **Name** and **Description** for the profile.
 1. On the Configuration settings page, select **Add settings**.
-1. When the **Setting picker** window appears, select **Authentication** > **Extensible Single Sign-On (SSO)**.
+1. When the **Setting picker** window appears, select **Authentication** > **Extensible Single Sign-On (SSO)**, and select the **Use Shared Device Keys** setting.
 1. The following settings need to be selected:
 
      - Authentication Method (Deprecated)
@@ -62,8 +62,18 @@ A payload is a set of instructions or settings that can be delivered to a device
 
 1. In the **Extensible Single Sign-On (SSO)** window, configure the following settings **exactly as shown**:
 
+    - **Authentication Method (Deprecated)**
+            - **Password**: choosing this option allows the user to authenticate with Microsoft Entra ID via the user's Microsoft Entra ID password. The local account password is updated and kept in sync with Microsoft Entra ID.
+            - **UserSecureEnclaveKey**: choosing this option allows the user to use a Secure Enclave backed key to authenticate with the Microsoft Entra ID. This authentication method doesn't affect the local account password.
+            - **SmartCard**: choosing this option allows the user to use a SmartCard to authenticate with the Microsoft Entra ID. This option is only supported on macOS 14 Sonoma or later.
+	- **Extension Identifier**- *com.microsoft.CompanyPortalMac.ssoextension*
+    - **Platform SSO**
+        - **Authentication Method** - *UserSecureEnclaveKey*
+        - **Use Shared Device Keys** - *Enabled*
+    - **Registration Token** - *{{DEVICEREGISTRATION}}* - this value must be added exactly as shown, including the double curly braces.
     - **Screen Locked Behavior**: Do Not Handle
-    - **Team Identifier** - `UBF8T346G9`
+    - **Team Identifier** - *UBF8T346G9*
+    - **Type** - *Redirect*
     - **URLs**:
         - https://login.microsoftonline.com
         - https://login.microsoft.com
@@ -72,20 +82,10 @@ A payload is a set of instructions or settings that can be delivered to a device
         - https://login.chinacloudapi.cn
         - https://login.microsoftonline.us
         - https://login-us.microsoftonline.com
-    - **Platform SSO**
-        - **Authentication Method** - `Password`
-        - **Authentication Method (Deprecated)**
-            - **Password**: choosing this option allows the user to authenticate with Microsoft Entra ID via the user's Microsoft Entra ID password. The local account password is updated and kept in sync with Microsoft Entra ID.
-            - **UserSecureEnclaveKey**: choosing this option allows the user to use a Secure Enclave backed key to authenticate with the Microsoft Entra ID. This authentication method doesn't affect the local account password.
-            - **SmartCard**: choosing this option allows the user to use a SmartCard to authenticate with the Microsoft Entra ID. This option is only supported on macOS 14 Sonoma or later.
-            - **Registration Token**: <!--TODO-->
-        - `{{DEVICEREGISTRATION}}` - this value must be added exactly as shown, including the double curly braces.
-        - **Extension Identifier**- `com.microsoft.CompanyPortalMac.ssoextension`
-        - **Type** -  **Redirect**
 
     :::image type="content" source="./media/enroll-macos-admin/add-settings-from-setting-picker.png" alt-text="Screenshot of adding setting from the settings picker." lightbox="./media/enroll-macos-admin/add-settings-from-setting-picker.png":::
 
-1. Select **Next**.
+1. Select **Review + save**.
 1. In the **Scope tags** tab, the default scope tags are used. Select **Next**.
 1. In the **Assignments** tab, select the **+** icon to add a group to assign the profile to. Select **Next**.
 1. In the **Review + create** tab, once you have reviewed the settings, select **Create**.
