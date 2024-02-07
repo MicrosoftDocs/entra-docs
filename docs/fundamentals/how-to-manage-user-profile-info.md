@@ -1,5 +1,5 @@
 ---
-title: How to manage user profile information
+title: How to manage user profile information in the Microsoft Entra admin center
 description: Instructions for IT admins to learn how to manage a user's profile and settings in Microsoft Entra ID.
 author: shlipsey3
 manager: amycolannino
@@ -7,18 +7,20 @@ manager: amycolannino
 ms.service: active-directory
 ms.subservice: fundamentals
 ms.topic: how-to
-ms.date: 01/03/2024
+ms.date: 02/07/2024
 ms.author: sarahlipsey
 ms.reviewer: jeffsta
 
 # Customer intent: As an IT admin, I need to understand the information contained in the user profile and settings so that I can properly create and manage users in my organization.
 
 ---
-# Add or update a user's profile information and settings
+# Add or update a user's profile information and settings in the Microsoft Entra admin center
+
+The user profile is the digital representation of a user's identity that should, where possible, reflect how the user wants to be represented. The user profile appears in several places across the Microsoft suite, including Outlook, Teams, Windows, and others. Identity information that appears across these tools is sourced from the user profile.
 
 A user's profile information and settings can be managed on an individual basis and for all users in your directory. When you look at these settings together, you can see how permissions, restrictions, and other connections work together.
 
-This article covers how to add user profile information, such as a profile picture and job-specific information. You can also choose to allow users to connect their LinkedIn accounts or restrict access to the Microsoft Entra administration portal. Some settings may be managed in more than one area. For more information about adding new users, see [How to add or delete users in Microsoft Entra ID](./add-users.md).
+This article covers how to add user profile information, such as a profile picture and job title. You can also choose to allow users to connect their LinkedIn accounts or restrict access to the Microsoft Entra administration portal. Some settings may be managed in more than one area, such as the uploading [Organizational data in Microsoft 365](/viva/organizational-data). 
 
 ## Prerequisites
 
@@ -36,7 +38,7 @@ The required role of least privilege varies based on the type of user you're add
 
 When new users are created, only a few details are added to their user profile. If your organization needs more details, they can be added after the user is created.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](../../identity/role-based-access-control/permissions-reference.md#user-administrator).
 
 1. Browse to **Identity** > **Users** > **All users**.
 
@@ -68,7 +70,7 @@ If you selected the **Properties** tab option:
 
 ### Profile categories
 
-There are six categories of profile details you may be able to edit.
+There are six categories of profile details you may be able to edit. Review the [user name guidance](#guidance-on-user-name-properties) before adding or editing user names.
 
 - **Identity:** Add or update other identity values for the user, such as a married last name. You can set this name independently from the values of First name and Last name. For example, you could use it to include initials, a company name, or to change the sequence of names shown. If you have two users with the same name, such as ‘Chris Green,’ you could use the Identity string to set their names to 'Chris B. Green' and 'Chris R. Green.'
 
@@ -89,14 +91,45 @@ There are six categories of profile details you may be able to edit.
 
 Microsoft Entra ID provides several fields for specifying full and partial names, departments, and titles. In general, we recommend treating every name-related field in Microsoft Entra ID as user-visible data that Microsoft and third-party apps might use in different contexts. Name fields in Microsoft Entra ID should represent the users's preferred name that can be reflected through all Microsoft products.
 
+Applications in Microsoft 365 display a user's name as defined by either:
+
+- First and last name stored in Microsoft Entra ID, or
+- Display name stored in Microsoft Entra ID
+
 Use the following tips when adding and editing the name properties of a user:
 
 - Ensure the first and last name are names the user would expect to see on their user profile, such as the profile card in Microsoft 365 applications or in meeting transcriptions.
+- The name a user expects to see might not correspond to their legal name used on formal identity documents.
 - Use the **display name** field to accommodate your organization's approach or policy for displaying names.
 - Don't use the **display name** field as an alternative name for the user, which can lead to an inconsistent representation of the user across those products where first and last name are used and those products where display name is used.
 - We recommend storing legal names or sensitive non-shareable information in a human capital management (HCM) system.
   - This system should be the source of truth for the user's legal name, with appropriate access controls change management workflows, and safeguards.
   - Data from your organization's HCM system can be synced to Microsoft Entra ID using HR driven provisioning. For more information, see [What is HR driven provisioning](../identity/app-provisioning/what-is-hr-driven-provisioning.md).
+
+### User name examples
+
+Review the following examples to understand how the name properties are used in different contexts. For these examples, we're using the name Christopher Green, who goes by Chris Green.
+
+- If your organization supports nicknames, enter this information in the First name and the Display name fields.
+  - First name: Chris
+  - Last name: Green
+  - Display name: Chris Green
+
+- If your organization lists last name first, use the Display name to show the name in the preferred order.
+  - First name: Chris
+  - Last name: Green
+  - Display name: Green, Chris
+
+- If you have two users with the same first and last name, use a middle initial to differentiate them.
+  - First name: Chris B.
+  - Last name: Green
+  - Identity: Chris B. Green
+
+- If a user goes by a different name than their legal name that appears on their formal identification documents, store their legal name in your organization's HCM system and enter their preferred name in Microsoft Entra ID.
+  - Wang Zhihao goes by John Wang
+  - Legal name appears in HCM
+  - First name in Microsoft Entra ID: John
+  - Last name in Microsoft Entra ID: Wang
 
 ### Add or edit the profile picture
 
@@ -140,7 +173,7 @@ The following settings can be managed from **User settings**.
 
 ## Next steps
 
-- [Add or delete users](./add-users.md)
-- [Assign roles to users](./how-subscriptions-associated-directory.md)
-- [Create a basic group and add members](./how-to-manage-groups.md)
-- [View Microsoft Entra enterprise user management documentation](~/identity/users/index.yml)
+- [Add or delete users](add-users.md)
+- [Assign roles to users](how-subscriptions-associated-directory.md)
+- [Create a basic group and add members](how-to-manage-groups.md)
+- [View Microsoft Entra enterprise user management documentation](../identity/users/index.yml)

@@ -19,7 +19,7 @@ Microsoft Entra ID allows you to create several types of users in your tenant, w
 
 This article explains how to create a new user, invite an external guest, and delete a user in your tenant.
 
-[!INCLUDE [GDPR-related guidance](~/../azure-docs-pr/includes/gdpr-hybrid-note.md)]
+[!INCLUDE [GDPR-related guidance](~/azure-docs-pr/includes/gdpr-hybrid-note.md)]
 
 ## Prerequisites
 
