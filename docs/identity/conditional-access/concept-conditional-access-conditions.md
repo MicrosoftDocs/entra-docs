@@ -110,6 +110,9 @@ These conditions are commonly used to:
 
 This setting works with all browsers. However, to satisfy a device policy, like a compliant device requirement, the following operating systems and browsers are supported. Operating Systems and browsers that have fallen out of mainstream support aren’t shown on this list:
 
+> [!NOTE]
+> For Chrome users, Chrome only supports macOS Platform Single Sign-on (PSSO) with browser extensions. Full Chrome functionality for PSSO is a work in progress and is scheduled to be ready by general availability. 
+
 | Operating Systems | Browsers |
 | :-- | :-- |
 | Windows 10 + | Microsoft Edge, [Chrome](#chrome-support), [Firefox 91+](https://support.mozilla.org/kb/windows-sso) |
