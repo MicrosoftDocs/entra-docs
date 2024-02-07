@@ -6,7 +6,7 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/22/2024
+ms.date: 02/07/2024
 
 ms.author: justinha
 author: justinha
@@ -23,11 +23,14 @@ The Microsoft Authenticator app provides an additional level of security to your
 
 Users may receive a notification through the mobile app for them to approve or deny, or use the Authenticator app to generate an OATH verification code that can be entered in a sign-in interface. If you enable both a notification and verification code, users who register the Authenticator app can use either method to verify their identity.
 
+> [!NOTE]
+> In preparation for release of passkey support in Microsoft Authenticator, users may see Authenticator as a passkey provider on iOS and Android devices. Passkeys aren't currently supported in Authenticator, but they will be supported in an upcoming release.
+
 To use the Authenticator app at a sign-in prompt rather than a username and password combination, see [Enable passwordless sign-in with the Microsoft Authenticator](howto-authentication-passwordless-phone.md).
 
 > [!NOTE]
 > - Users don't have the option to register their mobile app when they enable SSPR. Instead, users can register their mobile app at [https://aka.ms/mfasetup](https://aka.ms/mfasetup) or as part of the combined security info registration at [https://aka.ms/setupsecurityinfo](https://aka.ms/setupsecurityinfo).
-> - The Authenticator app may not be supported on beta versions of iOS and Android. In addition, starting October 20th, 2023 the authenticator app on Android will no longer support older verisons of the Android Company Portal. Android users with Company Portal versions below 2111 (5.0.5333.0) will not be able to re-register or register new instances of the authenticator app until they update their Company Portal application to a newer version.
+> - The Authenticator app may not be supported on beta versions of iOS and Android. In addition, starting October 20th, 2023 the Authenticator app on Android no longer supports older verisons of the Android Company Portal. Android users with Company Portal versions below 2111 (5.0.5333.0) can't re-register or register new instances of Authenticator until they update their Company Portal application to a newer version.
 
 ## Passwordless sign-in
 
