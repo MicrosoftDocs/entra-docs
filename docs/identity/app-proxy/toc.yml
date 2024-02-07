@@ -55,7 +55,7 @@ items:
     items: 
     - name: Application Proxy
       href: application-proxy.md
-    - name: Single sign-on with on-prem apps
+    - name: Single sign-on with on-premises apps
       href: how-to-configure-sso.md
     - name: Planning an Application Proxy deployment
       href: conceptual-deployment-plan.md
@@ -65,8 +65,8 @@ items:
       href: application-proxy-connector-groups.md
     - name: High availability and load balancing
       href: application-proxy-high-availability-load-balancing.md
-    - name: SAML-based SSO (on-prem apps)
-      href: application-proxy-configure-single-sign-on-on-premises-apps.md
+    - name: SAML-based SSO (on-premises apps)
+      href: conceptual-sso-apps.md
     - name: Header-based SSO
       href: application-proxy-configure-single-sign-on-with-headers.md
     - name: Kerberos-based SSO
@@ -99,7 +99,7 @@ items:
     - name: Publish complex distributed application using application segments
       href: application-proxy-configure-complex-application.md
     - name: Configure custom domain
-      href: application-proxy-configure-custom-domain.md
+      href: how-to-configure-custom-domain.md
     - name: Translate inline links
       href: application-proxy-configure-hard-coded-link-translation.md
     - name: Configure claims-aware apps
