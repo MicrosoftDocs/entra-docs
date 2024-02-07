@@ -51,7 +51,7 @@ Before you provide SSO for on-premises applications, enable Application Proxy an
 
 1. With the application still open in the Microsoft Entra admin center, select **Application Proxy**. Provide the **Internal URL** for the application. If you're using a custom domain, you also need to upload the TLS/SSL certificate for your application. 
    > [!NOTE]
-   > As a best practice, use custom domains whenever possible for an optimized user experience. Learn more about [Working with custom domains in Microsoft Entra application proxy](application-proxy-configure-custom-domain.md).
+   > As a best practice, use custom domains whenever possible for an optimized user experience. Learn more about [Working with custom domains in Microsoft Entra application proxy](how-to-configure-custom-domain.md).
 
 2. Select **Microsoft Entra ID** as the **Pre Authentication** method for your application.
 
@@ -77,7 +77,7 @@ Before you provide SSO for on-premises applications, enable Application Proxy an
    * For an SP-initiated flow, make sure the back-end application specifies the correct **Reply URL** or Assertion Consumer Service URL for receiving the authentication token.
 
     > [!NOTE]
-    > If the back-end application expects the **Reply URL** to be the Internal URL, you need to either use [custom domains](application-proxy-configure-custom-domain.md) to have matching internal and external URLs or install the My Apps secure sign-in extension on users' devices. This extension will automatically redirect to the appropriate Application Proxy Service. To install the extension, see [My Apps secure sign-in extension](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510#download-and-install-the-my-apps-secure-sign-in-extension).
+    > If the back-end application expects the **Reply URL** to be the Internal URL, you need to either use [custom domains](how-to-configure-custom-domain.md) to have matching internal and external URLs or install the My Apps secure sign-in extension on users' devices. This extension will automatically redirect to the appropriate Application Proxy Service. To install the extension, see [My Apps secure sign-in extension](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510#download-and-install-the-my-apps-secure-sign-in-extension).
     
 ## Test your app
 
