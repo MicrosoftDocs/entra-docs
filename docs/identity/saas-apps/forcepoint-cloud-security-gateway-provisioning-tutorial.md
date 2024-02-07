@@ -33,7 +33,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md). 
 * A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (for example, Application Administrator, Cloud Application administrator, Application Owner, or Global Administrator).
-* An Forcepoint Cloud Security Gateway - User Authentication tenant.
+* A Forcepoint Cloud Security Gateway - User Authentication tenant.
 * A user account in Forcepoint Cloud Security Gateway - User Authentication with Admin permissions.
 
 ## Step 1: Plan your provisioning deployment
