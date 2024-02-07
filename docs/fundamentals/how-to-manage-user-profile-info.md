@@ -38,7 +38,7 @@ The required role of least privilege varies based on the type of user you're add
 
 When new users are created, only a few details are added to their user profile. If your organization needs more details, they can be added after the user is created.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](../../identity/role-based-access-control/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](../identity/role-based-access-control/permissions-reference.md#user-administrator).
 
 1. Browse to **Identity** > **Users** > **All users**.
 
